@@ -6,33 +6,187 @@
   "scriptureReference": "Genesis 15:1-6",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 15"
+      "type": "scripture",
+      "reference": "Genesis 15:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "I am your shield",
+        "count the stars",
+        "it was credited to him as righteousness"
+      ],
+      "hebrewOriginal": "וְהֶאֱמִן בַּיהוָה וַיַּחְשְׁבֶהָ לּוֹ צְדָקָה",
+      "passage": "After these events, the word of the LORD came to Abram in a vision: \"Do not be afraid, Abram. I am your shield, your very great reward.\" But Abram replied, \"O Lord GOD, what can You give me, since I remain childless, and the heir of my house is Eliezer of Damascus?\" Abram continued, \"Behold, You have given me no offspring, so a servant in my household will be my heir.\" Then the word of the LORD came to Abram, saying, \"This one will not be your heir, but one who comes from your own body will be your heir.\" And the LORD took him outside and said, \"Now look to the heavens and count the stars, if you are able.\" Then He told him, \"So shall your offspring be.\" Abram believed the LORD, and it was credited to him as righteousness."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 15:1-6**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 15:1-6 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חָשַׁב",
+      "transliteration": "chashav",
+      "pronunciation": "khaw-SHAV",
+      "meaning": "to reckon, count, credit, account",
+      "rootMeaning": "An accountant's word. Chashav is what you do when you enter a figure in a ledger - you weigh it, assign it, and record it to someone's account. In Genesis 15:6 God reckons Abram's faith and writes the word 'righteous' in the column where Abram could not put it himself.",
+      "usageNote": "The same verb is used for plain bookkeeping (Leviticus 25:27, reckoning the years to a price) and for moral accounting. The point of Genesis 15:6 is the strangeness of the entry: what gets credited as righteousness is not a deed Abram performed but the trust with which he received a promise.",
+      "wordByWord": [
+        {
+          "word": "וְהֶאֱמִן",
+          "transliteration": "vehe'emin",
+          "meaning": "and he believed, he trusted - from the root aman, the same root behind the word amen"
+        },
+        {
+          "word": "בַּיהוָה",
+          "transliteration": "baYHWH",
+          "meaning": "in the LORD - Abram rests his weight on the covenant God by name"
+        },
+        {
+          "word": "וַיַּחְשְׁבֶהָ",
+          "transliteration": "vayyachsheveha",
+          "meaning": "and He credited it, reckoned it, entered it to his account"
+        },
+        {
+          "word": "לּוֹ",
+          "transliteration": "lo",
+          "meaning": "to him, to his account"
+        },
+        {
+          "word": "צְדָקָה",
+          "transliteration": "tzedaqah",
+          "meaning": "righteousness - being right with God, in standing as well as in heart"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָמַן / אָמֵן",
+          "reference": "Aman, the verb for Abram's believing, is the root our amen comes from. To say amen is not to vote agreement; it is to lean on something as firm. Abram's faith is an amen spoken to a promise he could not yet see."
+        }
+      ],
+      "strongsNumber": "H2803",
+      "definition": "to think, plan, reckon, impute, account, credit",
+      "usage": "The grammar is deliberate: Abram is the one who believes, but God is the one who credits. Righteousness here is not earned wages weighed out; it is a standing assigned by the One keeping the ledger."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Righteousness reckoned by faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 4:23-25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Promise Counted, Not a Wage Earned",
+      "body": "Abram is an old man with no son, and God has just told him he will become a great nation. The arithmetic does not work. So God does not argue him into belief. He takes him outside, into the dark, and points up: \"Now look to the heavens and count the stars, if you are able. So shall your offspring be.\"\n\nIt is an impossible sum given to a man with an empty cradle. Abram cannot count the stars any more than he can produce the children they stand for. And that is the point. God is not asking Abram to manage the promise; He is asking Abram to receive it. The next line is one of the quiet hinges of the whole Bible: \"Abram believed the LORD, and it was credited to him as righteousness.\"\n\nNotice the bookkeeping language. Abram has done no great deed in this chapter. He has built nothing, conquered nothing, kept no commandment that earns the entry. He has trusted a word spoken under the stars. And God reaches across the ledger and writes, in the column where a lifetime of works should go, a single word: righteous. The first man Scripture calls righteous by faith is counted so before there is a law to keep or a temple to visit - on the strength of a promise believed in the dark.",
+      "keyInsight": "Righteousness here is not weighed out as wages for work done. It is credited as a gift to faith - God writes in Abram's account a standing Abram could never deposit himself.",
+      "content": "Abram is an old man with no son, and God has just told him he will become a great nation. The arithmetic does not work. So God does not argue him into belief. He takes him outside, into the dark, and points up: \"Now look to the heavens and count the stars, if you are able. So shall your offspring be.\"\n\nIt is an impossible sum given to a man with an empty cradle. Abram cannot count the stars any more than he can produce the children they stand for. And that is the point. God is not asking Abram to manage the promise; He is asking Abram to receive it. The next line is one of the quiet hinges of the whole Bible: \"Abram believed the LORD, and it was credited to him as righteousness.\"\n\nNotice the bookkeeping language. Abram has done no great deed in this chapter. He has built nothing, conquered nothing, kept no commandment that earns the entry. He has trusted a word spoken under the stars. And God reaches across the ledger and writes, in the column where a lifetime of works should go, a single word: righteous. The first man Scripture calls righteous by faith is counted so before there is a law to keep or a temple to visit - on the strength of a promise believed in the dark."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Loan Officer's Empty Hands",
+      "body": "A man I know sat across a desk from a loan officer with nothing the bank wanted. No collateral, no savings, a thin file. By every measure on the form in front of her, the answer was no, and he knew it. He had come anyway because someone with means had promised, in writing, to stand behind whatever he could not cover.\n\nWhen the officer turned her screen around, the line that mattered was not his income. It was a name in the guarantor field - a name with weight he did not have. The standing he walked out with was not earned by him. It was credited to him on the strength of another's word, vouched for by someone the bank trusted.\n\nThat is closer to Genesis 15 than we usually let it be. Abram brings empty hands to God. What changes his standing is not a balance he has built but a promise he leans on - and a God who is willing to enter \"righteous\" beside his name because Abram took Him at His word.",
+      "connectionToTheme": "Right standing with God comes the way credit came across that desk - not from what the empty-handed one earned, but from the trustworthy word he leaned on.",
+      "content": "A man I know sat across a desk from a loan officer with nothing the bank wanted. No collateral, no savings, a thin file. By every measure on the form in front of her, the answer was no, and he knew it. He had come anyway because someone with means had promised, in writing, to stand behind whatever he could not cover.\n\nWhen the officer turned her screen around, the line that mattered was not his income. It was a name in the guarantor field - a name with weight he did not have. The standing he walked out with was not earned by him. It was credited to him on the strength of another's word, vouched for by someone the bank trusted.\n\nThat is closer to Genesis 15 than we usually let it be. Abram brings empty hands to God. What changes his standing is not a balance he has built but a promise he leans on - and a God who is willing to enter \"righteous\" beside his name because Abram took Him at His word."
+    },
+    {
+      "type": "insight",
+      "heading": "Counted Before He Could Count",
+      "body": "Watch the two countings sit side by side. God tells Abram to count the stars, knowing he cannot. In the very same breath the offspring those stars stand for cannot be counted either - there is not yet one child. And then, against all that uncountable impossibility, God does a counting of His own: He counts Abram's faith as righteousness.\n\nThe man who cannot finish God's sum is finished by God's reckoning. Where Abram comes up short, God supplies the entry. This is why Paul keeps returning to this one verse when he wants to say what the gospel is. The standing was credited, not earned; received, not achieved; reckoned to a believer who was still looking up at a sky full of promises he had no power to fulfill.\n\nThis is the hinge the whole Bible turns on, set down at the front of the story so we cannot miss it: God justifies the one who believes Him. Long before Sinai hands down a single command, before there is a single sacrifice to bring, righteousness arrives as a gift answered for by faith.",
+      "historicalContext": "Genesis stands at the head of the Torah, and Abram lives roughly four centuries before Moses. That ordering matters: the man Scripture first calls righteous is reckoned so without the Law, without circumcision (which comes later, in Genesis 17), and without a temple. When Paul argues in Romans 4 and Galatians 3 that righteousness comes by faith and not by works of the Law, he is not inventing a new idea. He is reading Genesis 15:6 and noticing it was always there.",
+      "fascinatingFact": "Genesis 15:6 is among the most quoted Old Testament verses in the New Testament. Paul cites it in Romans 4:3 and Galatians 3:6 to anchor justification by faith, and James cites it in James 2:23 to show that real faith works. Three New Testament passages reach back to one sentence spoken under a desert sky.",
+      "content": "Watch the two countings sit side by side. God tells Abram to count the stars, knowing he cannot. In the very same breath the offspring those stars stand for cannot be counted either - there is not yet one child. And then, against all that uncountable impossibility, God does a counting of His own: He counts Abram's faith as righteousness.\n\nThe man who cannot finish God's sum is finished by God's reckoning. Where Abram comes up short, God supplies the entry. This is why Paul keeps returning to this one verse when he wants to say what the gospel is. The standing was credited, not earned; received, not achieved; reckoned to a believer who was still looking up at a sky full of promises he had no power to fulfill.\n\nThis is the hinge the whole Bible turns on, set down at the front of the story so we cannot miss it: God justifies the one who believes Him. Long before Sinai hands down a single command, before there is a single sacrifice to bring, righteousness arrives as a gift answered for by faith."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Abram brought no work to earn his standing. He trusted a promise he could not fulfill, and God credited that faith to him as righteousness.",
+      "modernApplication": "We are forever trying to build a balance God might accept - the disciplines we keep, the sins we have managed to avoid, the resume of devotion we hope tips the scales. Genesis 15 says the column that matters is not filled by our depositing. It is filled when we take God at His word and let Him do the crediting.",
+      "connectionPoint": "Paul saw that Abram's verse was about more than Abram. \"Now the words 'it was credited to him' were written not only for Abraham, but also for us, to whom righteousness will be credited - for us who believe in Him who raised Jesus our Lord from the dead\" (Romans 4:23-24). The same accounting that justified a childless man under the stars justifies anyone today who trusts the God who raises the dead.",
+      "newTestamentEcho": "The promised offspring multiplied beyond counting finds its center in one descendant. Paul tells the Galatians the gospel was preached to Abraham in advance - \"All nations will be blessed through you\" (Galatians 3:8) - and that those who have faith are counted sons of Abraham (Galatians 3:7). Jesus said it plainly: \"Your father Abraham rejoiced that he would see My day. He saw it and was glad\" (John 8:56). Under those stars Abram was already looking, by faith, toward Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What standing with God are you still trying to earn that He is offering to credit to you as a gift?",
+      "additionalQuestions": [
+        "Where is God asking you to count stars you cannot count - to trust a promise the arithmetic of your life does not support?",
+        "When you imagine your account before God, what are you putting in the column to make it balance? What would change if the entry that mattered was your trust, not your performance?",
+        "Abram believed in the dark, before any of it came true. What promise of God are you being asked to lean your weight on tonight, before you can see it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-surrender",
+      "prayerText": "Lord, I keep trying to earn what You have already offered to give. Take me outside tonight, the way You took Abram, and let me look up at promises too large for me to fulfill. Where I cannot finish the count, do Your own reckoning. Credit to me the righteousness I cannot deposit, and let my whole answer be an amen leaned on Your word - the word that became flesh in Jesus, in whom every promise is yes. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, step outside and look up for a moment. Name one promise of God you cannot make come true by effort, and say a deliberate amen to it - leaning your weight there rather than on what you have built.",
+      "leavingAtCross": [
+        "The ledger of works I keep trying to balance so God will accept me",
+        "The fear that an empty file means God's answer is no",
+        "The pride that wants my standing to be earned so I can call it mine"
+      ],
+      "receivingFromCross": [
+        "Righteousness credited to me as a gift, not weighed out as a wage",
+        "The freedom to trust a promise before I can see it come true",
+        "A place among Abraham's children, blessed by faith in the One in whom all nations are blessed"
+      ],
+      "content": "Tonight, step outside and look up for a moment. Name one promise of God you cannot make come true by effort, and say a deliberate amen to it - leaning your weight there rather than on what you have built."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does it mean that righteousness was 'credited' to Abram rather than earned by him - and why does the bookkeeping language matter?",
+        "Abram had done no great deed in this chapter. On what basis did God count him righteous?",
+        "How does a promise believed under the stars, four centuries before the Law, point forward to the way anyone is made right with God in Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you are working to earn a standing with God instead of receiving it - and talk honestly about why that is hard to let go of.",
+        "Tell each other about a promise of God you are being asked to trust before you can see it. What makes it hard to say amen to it?",
+        "Ask each other: if righteousness is credited and not earned, how does that change the way you'll carry tomorrow?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 4:3",
+          "text": "For what does the Scripture say? \"Abraham believed God, and it was credited to him as righteousness.\""
+        },
+        {
+          "reference": "Romans 4:23-25",
+          "text": "Now the words \"it was credited to him\" were written not only for Abraham, but also for us, to whom righteousness will be credited - for us who believe in Him who raised Jesus our Lord from the dead. He was delivered over to death for our trespasses and was raised to life for our justification."
+        },
+        {
+          "reference": "Galatians 3:6-9",
+          "text": "So also, \"Abraham believed God, and it was credited to him as righteousness.\" Understand, then, that those who have faith are sons of Abraham. The Scripture foresaw that God would justify the Gentiles by faith, and foretold the gospel to Abraham: \"All nations will be blessed through you.\" So those who have faith are blessed along with Abraham, the man of faith."
+        },
+        {
+          "reference": "Hebrews 11:1",
+          "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 15",
+          "note": "Read the whole chapter slowly. Notice that after the crediting of verse 6, God seals the promise with a covenant in verses 7-21 - it is God alone who passes between the pieces, binding Himself to keep what He swore."
+        },
+        {
+          "type": "book",
+          "title": "Romans 4",
+          "note": "Paul's extended meditation on this single verse. Watch how he insists the crediting came before circumcision and apart from the Law, so the promise rests on grace and not on works."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abram",
+      "title": "The Man Counted Righteous by Faith",
+      "description": "Called out of Ur and Haran, Abram followed God toward a land and a future he could not see, carrying a promise of descendants while his wife remained barren and his years grew long. In Genesis 15 he voices his honest doubt - he is still childless - and God answers not with a rebuke but with a sky full of stars. Abram's response, trusting the promise, is the moment Scripture first names a person righteous by faith. Renamed Abraham in Genesis 17, he becomes the father of a people and, the New Testament says, the father of all who believe.",
+      "keyQuote": "O Lord GOD, what can You give me, since I remain childless?",
+      "lessonForUs": "Abram's faith was not the absence of doubt - he asks his hard question out loud first. It was leaning the full weight of his future on God's word in spite of the doubt. That trust, and not a record of deeds, is what God counted as righteousness, and it is still the way an empty-handed person is made right with Him.",
+      "heading": "The Man Counted Righteous by Faith"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2361,
+  "scriptureReference_full": "Genesis 15:1-6",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chashav H2803, 'to reckon/credit'; aman H539, the root behind 'believed' and 'amen'; tzedaqah, 'righteousness') reflects standard lexical sources (Brown-Driver-Briggs; Strong's).",
+    "New Testament use of Genesis 15:6 follows Romans 4:3, 4:23-25; Galatians 3:6-9; and James 2:23."
+  ]
 }

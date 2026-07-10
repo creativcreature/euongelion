@@ -1,38 +1,177 @@
 {
   "day": 247,
-  "title": "Daniel: Messiah Cut Off — Day 2 — Building",
-  "teaser": "Day 247 of Bible 365 — Daniel 7, 9",
+  "title": "The kingdom that will not pass, and the One cut off to give it",
+  "teaser": "Daniel watches a Son of Man receive a dominion that will never end. Five chapters later, that same Anointed One is cut off and has nothing. The two visions are the same hand.",
   "framework": "Daniel 7, 9 — Daniel: Messiah Cut Off",
   "scriptureReference": "Daniel 7, 9",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 247"
+      "type": "scripture",
+      "reference": "Daniel 7:13-14",
+      "translation": "BSB",
+      "emphasis": [
+        "One like the Son of Man",
+        "everlasting dominion",
+        "never be destroyed"
+      ],
+      "hebrewOriginal": "כְּבַר אֱנָשׁ",
+      "passage": "In my vision in the night I continued to watch, and I saw One like the Son of Man coming with the clouds of heaven. He approached the Ancient of Days and was led into His presence. And He was given dominion, glory, and kingship, that the people of every nation and language should serve Him. His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 7, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 7, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "aramaic",
+      "word": "בַּר אֱנָשׁ",
+      "transliteration": "bar enash",
+      "pronunciation": "bar eh-NAHSH",
+      "meaning": "a son of man, a human one, one in the likeness of a man",
+      "rootMeaning": "Bar is the Aramaic word for son; enash means man, mortal, humankind. Together the phrase means simply 'a human being' - but Daniel writes 'one LIKE a son of man,' kebar enash, marking that what he sees only resembles a man. It comes on the clouds, which in the Hebrew Scriptures is something only God does.",
+      "usageNote": "Daniel 7 is written in Aramaic, the working language of the Babylonian and Persian empires that had swallowed Judah. The chapter has just paraded four monstrous beasts up out of a churning sea - empires drawn as predators. Against that bestiary, the figure who finally receives the kingdom is not another beast but a human one. The contrast is the whole point: the kingdoms of the world rise like animals; the kingdom that lasts is given to One in the form of a man.",
+      "wordByWord": [
+        {
+          "word": "כְּ",
+          "transliteration": "ke",
+          "meaning": "like, as - a particle of resemblance; what Daniel sees is in the likeness of a man, not merely a man"
+        },
+        {
+          "word": "בַּר",
+          "transliteration": "bar",
+          "meaning": "son, son of (Aramaic; the Hebrew equivalent is ben)"
+        },
+        {
+          "word": "אֱנָשׁ",
+          "transliteration": "enash",
+          "meaning": "man, mortal, human being"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ὁ υἱὸς τοῦ ἀνθρώπου",
+          "reference": "ho huios tou anthropou - 'the Son of Man,' the exact title Jesus uses of Himself more than any other in the Gospels (Mark 8:31, Mark 14:62). At His trial He answers the high priest by quoting this very vision: 'you will see the Son of Man sitting at the right hand of Power, and coming with the clouds of heaven' (Mark 14:62)."
+        }
+      ],
+      "strongsNumber": "H1247",
+      "definition": "son of man; a human figure - in Daniel 7, one who comes on the clouds and receives an everlasting kingdom",
+      "usage": "When Jesus called Himself 'the Son of Man,' He was not reaching for a humble title. He was reaching for Daniel 7. He was claiming to be the human One the prophet watched receive a dominion that would never pass away."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel: Messiah Cut Off. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the cut-off Anointed (Dan 9:26).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Beasts From the Sea, a Man From the Clouds",
+      "body": "Daniel is an old man now, far from the home he was carried out of as a boy. Empires have come and gone over his head - Babylon, then Persia rising behind it. He has spent a long life serving foreign kings while quietly belonging to another King. And one night, lying on his bed, the visions come.\n\nFirst the sea, then the beasts. A lion with eagle's wings. A bear with ribs in its teeth. A leopard with four heads. And a fourth thing so dreadful Daniel has no animal name for it, only iron teeth and ten horns, devouring and trampling whatever is left. These are the kingdoms of the earth, drawn as Daniel's people experienced them - powerful, hungry, and cruel. If you have ever lived under a power that treated you as something to be consumed, you already understand the imagery.\n\nThen the scene shifts upward. Thrones are set in place. The Ancient of Days takes His seat, His clothing white as snow, His throne flaming with fire. The court is convened and the books are opened. And into that throne room, coming with the clouds of heaven, comes One like a son of man. He approaches the Ancient of Days, and He is given dominion, glory, and kingship - a dominion that will not pass away, a kingdom that will never be destroyed.\n\nRead plainly, this is the answer to every exile's oldest question: who actually wins? The beasts look like they win. They have the teeth and the horns and the armies. But the last word in heaven's courtroom does not go to the beast. It goes to the human One on the clouds, and the kingdom He is handed has no end.",
+      "keyInsight": "The empires of the world rise like animals out of a violent sea. The kingdom that lasts is not another, stronger beast - it is given to One in the likeness of a man, and it will never be destroyed.",
+      "content": "Daniel is an old man now, far from the home he was carried out of as a boy. Empires have come and gone over his head - Babylon, then Persia rising behind it. He has spent a long life serving foreign kings while quietly belonging to another King. And one night, lying on his bed, the visions come.\n\nFirst the sea, then the beasts. A lion with eagle's wings. A bear with ribs in its teeth. A leopard with four heads. And a fourth thing so dreadful Daniel has no animal name for it, only iron teeth and ten horns, devouring and trampling whatever is left. These are the kingdoms of the earth, drawn as Daniel's people experienced them - powerful, hungry, and cruel. If you have ever lived under a power that treated you as something to be consumed, you already understand the imagery.\n\nThen the scene shifts upward. Thrones are set in place. The Ancient of Days takes His seat, His clothing white as snow, His throne flaming with fire. The court is convened and the books are opened. And into that throne room, coming with the clouds of heaven, comes One like a son of man. He approaches the Ancient of Days, and He is given dominion, glory, and kingship - a dominion that will not pass away, a kingdom that will never be destroyed.\n\nRead plainly, this is the answer to every exile's oldest question: who actually wins? The beasts look like they win. They have the teeth and the horns and the armies. But the last word in heaven's courtroom does not go to the beast. It goes to the human One on the clouds, and the kingdom He is handed has no end."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Prayed Toward a Ruin",
+      "body": "Daniel 9 opens with a date and a habit. It is the first year of Darius, and Daniel is reading. He has the scroll of Jeremiah open, counting - seventy years, the prophet had said, before the LORD would bring His people home. Daniel does the math and realizes the seventy years are nearly up.\n\nYou might expect celebration. Instead he turns his face to the Lord with fasting, sackcloth, and ashes, and begins to pray - not a prayer of triumph but of confession. 'We have sinned and done wrong. We have acted wickedly and rebelled.' He keeps saying 'we,' though by any honest account Daniel is among the most faithful men in the Bible. He folds himself into his people's failure. He does not pray as the exception; he prays as one of them.\n\nHere is a man who has every reason to feel vindicated - he was right, he stayed faithful, he outlasted the beasts - and what he does with his vindication is kneel and confess. He prays toward a city that is still a ruin, for a homecoming he can already see on the calendar, in the posture of someone who knows the homecoming was never something his people earned.",
+      "connectionToTheme": "Before God shows Daniel how the Messiah will deal with sin, Daniel is on his knees naming his people's sin as his own - the right posture for receiving an answer about atonement.",
+      "content": "Daniel 9 opens with a date and a habit. It is the first year of Darius, and Daniel is reading. He has the scroll of Jeremiah open, counting - seventy years, the prophet had said, before the LORD would bring His people home. Daniel does the math and realizes the seventy years are nearly up.\n\nYou might expect celebration. Instead he turns his face to the Lord with fasting, sackcloth, and ashes, and begins to pray - not a prayer of triumph but of confession. 'We have sinned and done wrong. We have acted wickedly and rebelled.' He keeps saying 'we,' though by any honest account Daniel is among the most faithful men in the Bible. He folds himself into his people's failure. He does not pray as the exception; he prays as one of them.\n\nHere is a man who has every reason to feel vindicated - he was right, he stayed faithful, he outlasted the beasts - and what he does with his vindication is kneel and confess. He prays toward a city that is still a ruin, for a homecoming he can already see on the calendar, in the posture of someone who knows the homecoming was never something his people earned."
+    },
+    {
+      "type": "insight",
+      "heading": "The King of the Everlasting Kingdom Is the One Cut Off",
+      "body": "Hold Daniel 7 and Daniel 9 in the same hand and something staggering appears.\n\nIn chapter 7, the Son of Man is given a dominion that will not pass away, a kingdom that will never be destroyed. In chapter 9, while Daniel is still on his knees, the angel Gabriel comes with an answer, and it names another Anointed One. 'Seventy weeks are decreed for your people and your holy city,' Gabriel says, 'to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness.' Then comes the line that gives this whole series its name: 'after the sixty-two weeks the Messiah will be cut off and will have nothing.'\n\nMessiah means anointed one. To be 'cut off' in the Hebrew Scriptures is the language of being executed, removed from the land of the living, severed from the people. So set the two visions side by side. One Anointed receives everything - dominion, glory, kingship, a kingdom with no end. Another Anointed is cut off and has nothing. The plain reader of Daniel is left holding two pictures that seem to point in opposite directions.\n\nThe Gospel does not erase the tension; it tells you they are one Person. The same One who comes on the clouds to receive an unending kingdom is the One cut off with nothing - and the cutting-off is how the kingdom comes. Gabriel had already said why the weeks were decreed: to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. The everlasting righteousness of chapter 9 and the everlasting dominion of chapter 7 are not two unrelated promises. They are the same gift, and the price of it is an Anointed One who is cut off.",
+      "historicalContext": "Daniel's seventy weeks have been understood in several ways across the centuries, and faithful Christians still read the timeline differently. But the central claim of verse 26 is not in dispute: an Anointed One is 'cut off' before the city and sanctuary are destroyed. Jesus was crucified around AD 30; the temple in Jerusalem was destroyed by Rome in AD 70. The earliest Christians, reading these chapters, saw the cutting-off of the Messiah and the coming destruction of the sanctuary fall in exactly that order - and they did not think it was an accident.",
+      "fascinatingFact": "At His trial, when the high priest demands to know whether He is the Messiah, Jesus answers by weaving Daniel 7 and Psalm 110 together: 'you will see the Son of Man sitting at the right hand of Power, and coming with the clouds of heaven' (Mark 14:62). He claims the throne of Daniel 7 - and the council condemns Him to be cut off, fulfilling Daniel 9 in the same breath. The verdict that cuts Him off is provoked by His claim to the kingdom that has no end.",
+      "content": "Hold Daniel 7 and Daniel 9 in the same hand and something staggering appears.\n\nIn chapter 7, the Son of Man is given a dominion that will not pass away, a kingdom that will never be destroyed. In chapter 9, while Daniel is still on his knees, the angel Gabriel comes with an answer, and it names another Anointed One. 'Seventy weeks are decreed for your people and your holy city,' Gabriel says, 'to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness.' Then comes the line that gives this whole series its name: 'after the sixty-two weeks the Messiah will be cut off and will have nothing.'\n\nMessiah means anointed one. To be 'cut off' in the Hebrew Scriptures is the language of being executed, removed from the land of the living, severed from the people. So set the two visions side by side. One Anointed receives everything - dominion, glory, kingship, a kingdom with no end. Another Anointed is cut off and has nothing. The plain reader of Daniel is left holding two pictures that seem to point in opposite directions.\n\nThe Gospel does not erase the tension; it tells you they are one Person. The same One who comes on the clouds to receive an unending kingdom is the One cut off with nothing - and the cutting-off is how the kingdom comes. Gabriel had already said why the weeks were decreed: to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. The everlasting righteousness of chapter 9 and the everlasting dominion of chapter 7 are not two unrelated promises. They are the same gift, and the price of it is an Anointed One who is cut off."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Daniel watches one Anointed One receive an everlasting kingdom (chapter 7) and hears of another Anointed One cut off with nothing (chapter 9) - two visions the Gospel reads as one Person, whose cutting-off purchases the kingdom He receives.",
+      "modernApplication": "We instinctively measure power the way the beasts do - by what we can hold onto, what we can refuse to lose. The kingdom that actually lasts came the opposite way: through a King who let Himself be cut off and have nothing. Whatever you are gripping today to feel secure, the durable thing was never the grip. It was the One who opened His hands.",
+      "connectionPoint": "The 'Son of Man' is not a stray phrase in Daniel. It becomes Jesus' favorite name for Himself, and He uses it at the two ends of His mission - to say He must suffer and be killed ('the Son of Man must suffer many things and be rejected,' Mark 8:31), and to claim the throne of Daniel 7 ('coming with the clouds of heaven,' Mark 14:62). The suffering and the throne are held in the same title, exactly as Daniel 7 and 9 are held in the same book.",
+      "newTestamentEcho": "What Daniel saw from a distance, Christ stepped into. He is the Son of Man given an everlasting dominion, and He is the Anointed One cut off with nothing. 'For while we were still helpless, Christ died for the ungodly' (Romans 5:6). The atonement Gabriel promised - an end to sin, everlasting righteousness brought in - is the Gospel, decreed before Daniel was even born."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Daniel prayed 'we have sinned' though he was among the most faithful in his generation. Where do you hold yourself apart from the failures around you, and what would it mean to fold yourself in and confess as one of your people, the way Daniel did?",
+      "additionalQuestions": [
+        "Which vision is easier for you to believe in right now - that Christ reigns with an unending dominion, or that He let Himself be cut off and have nothing for you? Why that one?",
+        "Where in your life do the 'beasts' still look like they are winning? What would change if you really believed the last word belongs to the Son of Man and not to them?",
+        "Daniel waited a lifetime in exile for a kingdom he never saw arrive. What are you being asked to wait for, faithfully, without yet seeing it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Ancient of Days, You sit while the empires rage, and the books are open before You. I confess I am too easily impressed by the beasts - by power that has teeth, by the things I am afraid to lose. Teach me to watch in the night for the One who comes on the clouds. Thank You that the King of the kingdom that will never end is the same One who was cut off and had nothing, for me. End my transgression. Make atonement for my iniquity. Bring in Your everlasting righteousness, and let me belong to the kingdom that will not pass away. Through Christ, the Son of Man and the Anointed cut off. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, before sleep, read Daniel 7:13-14 slowly, then Daniel 9:26, and hold both in mind as one Person. Name one 'beast' you have been afraid of - one power or loss that has had teeth in your imagination - and hand it to the One who already holds the kingdom that will never be destroyed.",
+      "leavingAtCross": [
+        "The fear that the beasts get the last word - that cruel power outlasts faithful waiting",
+        "The instinct to stand apart from my people's failures instead of confessing as one of them",
+        "The lie that security is found in what I refuse to let go of"
+      ],
+      "receivingFromCross": [
+        "A King whose dominion will not pass away and whose kingdom will never be destroyed",
+        "Atonement for iniquity and an everlasting righteousness I did not earn, decreed long before I was born",
+        "The freedom of belonging to the One who was cut off and had nothing, so that I would have everything"
+      ],
+      "content": "Tonight, before sleep, read Daniel 7:13-14 slowly, then Daniel 9:26, and hold both in mind as one Person. Name one 'beast' you have been afraid of - one power or loss that has had teeth in your imagination - and hand it to the One who already holds the kingdom that will never be destroyed."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Daniel 7, the kingdoms of the world are drawn as beasts from the sea, but the everlasting kingdom is given to 'One like the Son of Man.' What is the chapter saying by that contrast?",
+        "Daniel 9:24 lists what the seventy weeks are decreed to accomplish - to end sin, to make atonement, to bring in everlasting righteousness. How does that list change the way you read the 'cutting off' of verse 26?",
+        "Why does it matter that the same Person who receives the unending kingdom (chapter 7) is the One cut off with nothing (chapter 9)?"
+      ],
+      "forAccountabilityPartners": [
+        "Daniel confessed his nation's sin in the first person - 'we have sinned.' Talk about one community you belong to whose failures you have been quick to disown rather than carry.",
+        "Share which is harder for you to trust this week: that Christ truly reigns, or that He truly suffered for you - and why.",
+        "Ask each other: what 'beast' has been loud in your imagination lately, and what would it look like to entrust it to the Son of Man rather than fight it on its own terms?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 7:9-10",
+          "text": "As I continued to watch, thrones were set in place, and the Ancient of Days took His seat. His clothing was white as snow, and the hair of His head was like pure wool. His throne was flaming with fire, and its wheels were all ablaze. A river of fire was flowing, coming out from His presence. Thousands upon thousands attended Him, and myriads upon myriads stood before Him. The court was convened, and the books were opened."
+        },
+        {
+          "reference": "Daniel 9:24",
+          "text": "Seventy weeks are decreed for your people and your holy city to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy Place."
+        },
+        {
+          "reference": "Mark 14:61-62",
+          "text": "Again the high priest questioned Him, 'Are You the Christ, the Son of the Blessed One?' 'I am,' said Jesus, 'and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.'"
+        },
+        {
+          "reference": "Romans 5:6",
+          "text": "For at just the right time, while we were still powerless, Christ died for the ungodly."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 7 and 9",
+          "note": "Read chapter 7 in one sitting, watching the movement from the four beasts to the Son of Man on the clouds. Then read chapter 9, watching it move from Daniel's confession to Gabriel's answer about the seventy weeks and the cutting-off of the Messiah. Notice that the throne and the cross are held in the same book."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Exile Who Saw the Throne",
+      "description": "Carried from Jerusalem to Babylon as a young man, Daniel served the courts of Babylonian and Persian kings for a lifetime while remaining faithful to the God of Israel. In his old age he received the visions of chapters 7-12, including the Son of Man receiving an everlasting kingdom and the seventy weeks decreed for atonement. He prayed Israel's confession as his own and waited a lifetime for a homecoming and a kingdom he saw only from a distance.",
+      "keyQuote": "I saw One like the Son of Man coming with the clouds of heaven... His dominion is an everlasting dominion that will not pass away.",
+      "lessonForUs": "Daniel teaches the posture of the faithful in exile: keep watching in the night, keep confessing as one of your people, and trust that the last word in the courtroom of heaven belongs to the Son of Man - even when the beasts still seem to be winning.",
+      "heading": "The Exile Who Saw the Throne"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2712,
+  "scriptureReference_full": "Daniel 7, 9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Aramaic term bar enash (Daniel 7:13) and the Greek ho huios tou anthropou reflect standard lexical sources. Daniel 7 is composed in Aramaic; Daniel 9 in Hebrew.",
+    "The connection of Daniel 7:13-14 to Jesus' self-designation 'Son of Man' and His use of the vision at His trial (Mark 14:62) reflects the consensus reading of the Gospels; the precise reckoning of the seventy weeks (Daniel 9:24-27) is interpreted variously within historic Christian tradition and is presented here without taking a contested position."
+  ]
 }

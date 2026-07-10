@@ -1,38 +1,198 @@
 {
   "day": 136,
-  "title": "Hezekiah's Reform — Day 3 — Pivot",
-  "teaser": "Day 136 of Bible 365 — 2 Kings 18-20",
+  "title": "Spread It Open Before the LORD",
+  "teaser": "Day 136 of Bible 365 — 2 Kings 18-20. The enemy's letter says no god has ever delivered a city. Hezekiah does not answer it. He carries it into the house of the LORD and spreads it open before the throne.",
   "framework": "2 Kings 18-20 — Hezekiah's Reform",
   "scriptureReference": "2 Kings 18-20",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 136"
+      "type": "scripture",
+      "reference": "2 Kings 19:14-19",
+      "translation": "BSB",
+      "emphasis": [
+        "spread it out before the LORD",
+        "You alone are God",
+        "save us from his hand",
+        "so that all the kingdoms of the earth may know"
+      ],
+      "hebrewOriginal": "וַיִּפְרְשֵׂהוּ חִזְקִיָּהוּ לִפְנֵי יְהוָה",
+      "passage": "So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD. And Hezekiah prayed before the LORD: \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth. Incline Your ear, O LORD, and hear; open Your eyes, O LORD, and see. Listen to the words that Sennacherib has sent to defy the living God. Truly, O LORD, the kings of Assyria have laid waste these nations and their lands. They have cast their gods into the fire and destroyed them, for they were not gods, but only wood and stone—the work of human hands. And now, O LORD our God, please save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 18-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 18-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיִּפְרֹשׂ",
+      "transliteration": "vayyifros",
+      "pronunciation": "vai-yif-ROHSS",
+      "meaning": "and he spread it out, unrolled it, opened it wide",
+      "rootMeaning": "The root paras means to spread, to stretch out, to open wide. It is the gesture of unrolling a scroll flat, but also the word for spreading out the hands in prayer (Exodus 9:29) and for an eagle spreading its wings over its young (Deuteronomy 32:11).",
+      "usageNote": "Hezekiah does not read the threatening letter aloud and argue with it. He paras-es it — lays it open, full length, in the one place where the threat can be read by Someone greater than the one who wrote it. The word that opens a scroll is the same word that opens empty hands. Both are surrender.",
+      "wordByWord": [
+        {
+          "word": "וַיִּקַּח",
+          "transliteration": "vayyiqqach",
+          "meaning": "and he took, received (the letter into his own hands)"
+        },
+        {
+          "word": "וַיִּקְרָאֵם",
+          "transliteration": "vayyiqra'em",
+          "meaning": "and he read them — he did not look away from the words"
+        },
+        {
+          "word": "וַיַּעַל",
+          "transliteration": "vayya'al",
+          "meaning": "and he went up — up to the house of the LORD, the only direction that helps"
+        },
+        {
+          "word": "וַיִּפְרְשֵׂהוּ",
+          "transliteration": "vayyifresehu",
+          "meaning": "and he spread it out — unrolled it flat before the throne"
+        },
+        {
+          "word": "לִפְנֵי יְהוָה",
+          "transliteration": "lifnei YHWH",
+          "meaning": "before the LORD, in the presence of the face of the LORD"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כְּרוּבִים",
+          "reference": "Keruvim — the cherubim Hezekiah names in his prayer. God is enthroned between them, over the ark in the inner sanctuary. The same word guards the way back to Eden in Genesis 3:24; here it shelters a mercy seat. The place of the flaming sword becomes the place a frightened king brings his enemy's letter."
+        }
+      ],
+      "strongsNumber": "H6566",
+      "definition": "paras: to spread out, stretch forth, lay open",
+      "usage": "What Hezekiah does with his hands tells the whole theology. He does not crumple the letter, hide it, or answer it with armies he does not have. He opens it. To spread something out before God is to stop managing it and let Him read it for Himself."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hezekiah's Reform. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who weeps for his city (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Good King Runs Out of Options",
+      "body": "By any measure, Hezekiah was the best king Judah ever had. The record is unusual in its warmth: \"He did what was right in the eyes of the LORD, just as his father David had done\" (2 Kings 18:3). He went further than reform on paper. He tore down the high places, shattered the sacred pillars, and cut down the Asherah poles. He even smashed the bronze serpent Moses had made in the wilderness, because the people had turned a relic of mercy into an idol and were burning incense to it (18:4). Of him alone Scripture says, \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5).\n\nAnd then the best king Judah ever had ran out of options. In the fourteenth year of his reign, Sennacherib king of Assyria swept through the land and captured every fortified city of Judah (18:13). Hezekiah's first move was not faith but cash. He sent word to Lachish: \"I have done wrong; withdraw from me, and I will pay whatever you demand\" (18:14). He stripped the temple to pay it. The tribute bought nothing. Assyria took the silver and sent the army anyway — the Rabshakeh, a field commander with a loud voice and a script, who stood at the wall and shouted in Hebrew so every soldier on the rampart could hear.\n\nThe shout was aimed at one thing: Hezekiah's trust. \"Do not let Hezekiah persuade you to trust in the LORD,\" the commander cried. \"Has the god of any nation ever delivered his land from the hand of the king of Assyria? ... How then can the LORD deliver Jerusalem from my hand?\" (18:30, 33, 35). It was not a bad argument. It was, on its own terms, unanswerable. Assyria really had crushed every nation, burned every god. The empire had the receipts. The question hangs over the whole passage like a blade: how can your God be any different from the gods already in the fire?",
+      "keyInsight": "The Rabshakeh's question is the question every threat asks: name one time your trust actually worked. On the world's terms it cannot be answered. It can only be carried somewhere higher.",
+      "content": "By any measure, Hezekiah was the best king Judah ever had. The record is unusual in its warmth: \"He did what was right in the eyes of the LORD, just as his father David had done\" (2 Kings 18:3). He went further than reform on paper. He tore down the high places, shattered the sacred pillars, and cut down the Asherah poles. He even smashed the bronze serpent Moses had made in the wilderness, because the people had turned a relic of mercy into an idol and were burning incense to it (18:4). Of him alone Scripture says, \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5).\n\nAnd then the best king Judah ever had ran out of options. In the fourteenth year of his reign, Sennacherib king of Assyria swept through the land and captured every fortified city of Judah (18:13). Hezekiah's first move was not faith but cash. He sent word to Lachish: \"I have done wrong; withdraw from me, and I will pay whatever you demand\" (18:14). He stripped the temple to pay it. The tribute bought nothing. Assyria took the silver and sent the army anyway — the Rabshakeh, a field commander with a loud voice and a script, who stood at the wall and shouted in Hebrew so every soldier on the rampart could hear.\n\nThe shout was aimed at one thing: Hezekiah's trust. \"Do not let Hezekiah persuade you to trust in the LORD,\" the commander cried. \"Has the god of any nation ever delivered his land from the hand of the king of Assyria? ... How then can the LORD deliver Jerusalem from my hand?\" (18:30, 33, 35). It was not a bad argument. It was, on its own terms, unanswerable. Assyria really had crushed every nation, burned every god. The empire had the receipts. The question hangs over the whole passage like a blade: how can your God be any different from the gods already in the fire?"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter on the Kitchen Table",
+      "body": "A woman I know kept an envelope on her kitchen table for three weeks without opening it. She knew what it was — the diagnosis, in writing, after the phone call that had already told her. She walked past it on her way to make coffee. She turned it face-down so the return address would stop staring at her. She did everything with that envelope except the one thing it asked of her, which was to be read.\n\nThere are letters like that in most lives. The threat we already know the contents of. The number we cannot pay, the result we cannot change, the words someone said that we keep folding smaller and pushing further back in the drawer. We answer them in the only ways we have. We bargain, the way Hezekiah sent silver to Lachish. We argue back in our heads at three in the morning. We turn the envelope over and hope that not looking is a kind of safety.\n\nWhen she finally opened it, she did not open it alone. She drove to her sister's, and they read it together at a different table. Nothing in the letter changed. Everything about carrying it changed. That is the smaller human shape of what a frightened king did with a scroll: he stopped turning it over, and he carried it up to a table that was not his own.",
+      "connectionToTheme": "Hezekiah's faith is not that he answers the threat but that he refuses to face it alone — he carries the letter up to a presence greater than the one who wrote it.",
+      "content": "A woman I know kept an envelope on her kitchen table for three weeks without opening it. She knew what it was — the diagnosis, in writing, after the phone call that had already told her. She walked past it on her way to make coffee. She turned it face-down so the return address would stop staring at her. She did everything with that envelope except the one thing it asked of her, which was to be read.\n\nThere are letters like that in most lives. The threat we already know the contents of. The number we cannot pay, the result we cannot change, the words someone said that we keep folding smaller and pushing further back in the drawer. We answer them in the only ways we have. We bargain, the way Hezekiah sent silver to Lachish. We argue back in our heads at three in the morning. We turn the envelope over and hope that not looking is a kind of safety.\n\nWhen she finally opened it, she did not open it alone. She drove to her sister's, and they read it together at a different table. Nothing in the letter changed. Everything about carrying it changed. That is the smaller human shape of what a frightened king did with a scroll: he stopped turning it over, and he carried it up to a table that was not his own."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Answer the Letter. He Opened It.",
+      "body": "Here is the hinge of the whole passage, and it turns on a single gesture. \"So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD\" (19:14).\n\nNotice everything he does not do. He does not write back. He does not muster the argument Assyria deserves. He does not call a war council or count the spears on the wall. He takes the letter — the actual document, with the actual blasphemy written on it — carries it up the temple steps, and unrolls it flat in front of the throne. Then he prays the strangest, sanest prayer in the chapter. He agrees with Assyria. \"Truly, O LORD, the kings of Assyria have laid waste these nations and their lands. They have cast their gods into the fire and destroyed them\" (19:17-18). Yes. All of it is true. The empire has burned every god it met.\n\nAnd then the turn: \"for they were not gods, but only wood and stone—the work of human hands\" (19:18). The other nations' gods burned because they were furniture. The Rabshakeh had stacked the LORD on the same shelf as Nisroch and Baal-zebub, and the entire pivot of the passage is that the shelf is a category error. \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth\" (19:15). The Maker of heaven and earth is not one more local deity to be inventoried. Hezekiah's deliverance does not come from a better army or a cleverer answer. It comes because he stopped treating the threat as something he had to handle and laid it open before the One who made the hand that wrote it. The request that follows is not even, first, about survival: \"save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God\" (19:19). Rescue is asked for the sake of God's name, not merely the city's skin.\n\nThe answer came that night without a single soldier of Judah lifting a sword. \"And that very night the angel of the LORD went out and struck down 185,000 men in the camp of the Assyrians\" (19:35). Sennacherib broke camp, went home to Nineveh, and was cut down by his own sons in the temple of his own god (19:36-37). The empire that asked whether any god could deliver became the answer to its own question.",
+      "historicalContext": "Sennacherib's own annals, inscribed on clay prisms now in museums in London, Chicago, and Jerusalem, boast that he shut Hezekiah up \"like a bird in a cage\" inside Jerusalem and lists the tribute he extracted. What the Assyrian record conspicuously does not claim is the one thing a conqueror always claims: he never says he took the city. The empire that recorded every victory in stone left this siege unfinished in its own telling. The silence in Sennacherib's boast is the loudest line in it.",
+      "fascinatingFact": "Hezekiah names God \"enthroned between the cherubim\" (19:15) — the same cherubim that, in Genesis 3:24, were stationed with a flaming sword to guard the way back into Eden after the fall. In the temple, those same guardian figures overshadow the mercy seat, the lid of the ark where atonement blood was sprinkled once a year. The place that once barred the way home had become the place a terrified king brought his worst news and was heard. The flaming sword had become a mercy seat.",
+      "content": "Here is the hinge of the whole passage, and it turns on a single gesture. \"So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD\" (19:14).\n\nNotice everything he does not do. He does not write back. He does not muster the argument Assyria deserves. He does not call a war council or count the spears on the wall. He takes the letter — the actual document, with the actual blasphemy written on it — carries it up the temple steps, and unrolls it flat in front of the throne. Then he prays the strangest, sanest prayer in the chapter. He agrees with Assyria. \"Truly, O LORD, the kings of Assyria have laid waste these nations and their lands. They have cast their gods into the fire and destroyed them\" (19:17-18). Yes. All of it is true. The empire has burned every god it met.\n\nAnd then the turn: \"for they were not gods, but only wood and stone—the work of human hands\" (19:18). The other nations' gods burned because they were furniture. The Rabshakeh had stacked the LORD on the same shelf as Nisroch and Baal-zebub, and the entire pivot of the passage is that the shelf is a category error. \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth\" (19:15). The Maker of heaven and earth is not one more local deity to be inventoried. Hezekiah's deliverance does not come from a better army or a cleverer answer. It comes because he stopped treating the threat as something he had to handle and laid it open before the One who made the hand that wrote it. The request that follows is not even, first, about survival: \"save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God\" (19:19). Rescue is asked for the sake of God's name, not merely the city's skin.\n\nThe answer came that night without a single soldier of Judah lifting a sword. \"And that very night the angel of the LORD went out and struck down 185,000 men in the camp of the Assyrians\" (19:35). Sennacherib broke camp, went home to Nineveh, and was cut down by his own sons in the temple of his own god (19:36-37). The empire that asked whether any god could deliver became the answer to its own question."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hezekiah carries the letter that condemns his city up to the house of the LORD, spreads it open before the throne enthroned between the cherubim, and is delivered \"for My own sake and for the sake of My servant David\" (19:34) — by God's hand alone, not Judah's.",
+      "modernApplication": "We still keep our letters face-down. The threat we cannot pay, the verdict we cannot reverse, the accusation that has the receipts. We bargain like Hezekiah at Lachish, or we argue back at three in the morning. The faith of this passage is not pretending the letter is wrong. It is taking the true and terrible thing and laying it open in front of the One who made the heavens and the earth — and asking Him to be God over it.",
+      "connectionPoint": "Twice God says He will save the city \"for the sake of My servant David\" (19:34; 20:6). David had been dead nearly three hundred years; the promise reaches past the man to the throne and the line. The deliverance of Jerusalem hangs on a promise made to David — the same promise the New Testament opens by tracing: \"the genealogy of Jesus Christ, the son of David\" (Matthew 1:1). Isaiah, the very prophet who carried God's answer to Hezekiah, had already sung of a child who would \"reign on the throne of David ... forevermore\" (Isaiah 9:7). The city was spared for the sake of David's name; the world would be saved for the sake of David's greater Son.",
+      "newTestamentEcho": "Paul describes salvation in Hezekiah's exact gesture, only the document is ours: \"having canceled the debt ascribed to us in the decrees that stood against us. He took it away, nailing it to the cross\" (Colossians 2:14). The letter written against us — every count of it true — was carried up by Christ Himself and spread open, not before a throne to be argued, but on a cross to be answered in His own blood. Hezekiah laid the threat before God and lived; Christ became the answer to the threat written against us, and we live."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What letter are you keeping face-down on the table right now — the threat, verdict, or accusation you have been bargaining with, arguing against, or refusing to read again?",
+      "additionalQuestions": [
+        "Hezekiah's first move was silver, not prayer (18:14). Where have you tried to pay your way out of something before you ever brought it to God?",
+        "Hezekiah agreed that Assyria's record was true and prayed anyway. What true and terrible thing are you afraid to say out loud before God — as if not naming it kept it smaller?",
+        "He asked to be saved 'so that all the kingdoms of the earth may know that You alone are God.' How would it change your prayer to want God's name honored more than your problem solved?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "O LORD, God of Israel, enthroned between the cherubim, You alone are God. You made the heavens and the earth, and You made the hand that wrote the thing I am afraid of. I have been keeping it face-down. I have tried to pay it off and argue it down, and I am out of silver and out of arguments. So tonight I do the only thing left: I bring the letter up and spread it open before You. Every line of it that is true, I will not pretend away. Incline Your ear and hear; open Your eyes and see. Save me from this hand — not first so that I can rest, but so that I will know, and others will see, that You alone are God. For the sake of Your servant David, and of David's greater Son who carried my whole indictment up to the cross and answered it there. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one threat you have been managing on your own. Today, do literally what Hezekiah did: write it down on a piece of paper — the diagnosis, the debt, the accusation, the fear — and set it open somewhere you pray. Do not crumple it or hide it. Leave it spread out, and tell God it is His to read.",
+      "leavingAtCross": [
+        "The silver — every way I keep trying to pay off or buy my way out of what only God can deliver me from",
+        "The 3 a.m. argument — the threat I keep answering in my own head instead of carrying up to the throne",
+        "The category error — treating the living God as one more option on the shelf instead of the Maker of heaven and earth over the whole thing"
+      ],
+      "receivingFromCross": [
+        "A God who is not one deliverer among many but the only one, enthroned over every kingdom and every kitchen table",
+        "The freedom to agree the letter is true and still be unafraid, because the One who reads it is greater than the one who wrote it",
+        "A deliverance I did not earn, given for the sake of David's greater Son, who nailed the decree against me to His cross"
+      ],
+      "content": "Name the one threat you have been managing on your own. Today, do literally what Hezekiah did: write it down on a piece of paper — the diagnosis, the debt, the accusation, the fear — and set it open somewhere you pray. Do not crumple it or hide it. Leave it spread out, and tell God it is His to read."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did Hezekiah do with Sennacherib's letter, and why is the gesture itself — not just the prayer — the turning point of the passage?",
+        "Hezekiah's prayer agrees that Assyria really did destroy the other nations' gods. What single word in 19:18 turns that admission into the ground of his confidence rather than his fear?",
+        "God says twice that He will defend the city 'for the sake of My servant David' (19:34; 20:6). David was long dead — so how does that phrase reach forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one 'letter' you have been keeping face-down — and what your version of 'sending silver to Lachish' has looked like.",
+        "Hezekiah brought the document up to the temple unedited. Practice it together: say the true, hard part of your situation out loud, without softening it, and then pray over it.",
+        "Ask each other: am I more desperate for my problem to be fixed, or for God to be known as God in it? What would the second kind of prayer sound like?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 37:14",
+          "text": "So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD."
+        },
+        {
+          "reference": "Psalm 46:1",
+          "text": "God is our refuge and strength, an ever-present help in times of trouble."
+        },
+        {
+          "reference": "Psalm 46:10",
+          "text": "\"Be still and know that I am God; I will be exalted among the nations, I will be exalted over the earth.\""
+        },
+        {
+          "reference": "Colossians 2:14",
+          "text": "having canceled the debt ascribed to us in the decrees that stood against us. He took it away, nailing it to the cross!"
+        },
+        {
+          "reference": "Matthew 1:1",
+          "text": "This is the record of the genealogy of Jesus Christ, the son of David, the son of Abraham:"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 18-20",
+          "note": "Read all three chapters in one sitting, watching the movement from reform (18:1-8) to siege and propaganda (18:13-37) to the spread-out letter and the answer (19) to Hezekiah's own death-sentence and reprieve (20). Notice that the king who spread Assyria's letter before God in chapter 19 turns his face to the wall and prays again over his own diagnosis in chapter 20 — the same instinct twice."
+        },
+        {
+          "type": "scripture",
+          "title": "Isaiah 36-37",
+          "note": "The prophet Isaiah records the same siege almost word for word. Reading the parallel shows how central this deliverance was to Israel's memory of who their God is."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hezekiah",
+      "title": "King of Judah, Who Spread the Letter Before the LORD",
+      "era": "reigned c. 715-686 BC",
+      "description": "The thirteenth king of Judah and one of only two of whom Scripture says there was none like him in his trust of the LORD. He led a sweeping reform, tearing down idols and even destroying the bronze serpent the people had begun to worship. When Assyria's army besieged Jerusalem and the empire's herald mocked the very idea that the LORD could deliver, Hezekiah did not answer the threat on its own terms. He carried the blasphemous letter into the temple, spread it open before the throne, and prayed that God would save the city for the sake of His own name. That night the siege was broken without a battle. Chapters later, told he would die, he prayed again — and was given fifteen more years.",
+      "keyQuote": "O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth.",
+      "lessonForUs": "Even the best king Judah ever had began by trying to pay his way out of fear. Faith is not never being afraid; it is what you finally do with the letter. Hezekiah's greatness was not that he had no threats but that he learned to stop managing them and spread them open before the One who alone is God.",
+      "heading": "King of Judah, Who Spread the Letter Before the LORD"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2998,
+  "scriptureReference_full": "2 Kings 18-20 (focus: 2 Kings 19:14-19)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (paras H6566; the keruvim of Genesis 3:24 and the mercy seat) reflects standard lexical and canonical sources.",
+    "The note on Sennacherib's annals reflects the surviving Assyrian royal inscriptions (the Taylor, Oriental Institute, and Jerusalem prisms), which record tribute and the 'bird in a cage' boast but never claim the capture of Jerusalem."
+  ]
 }

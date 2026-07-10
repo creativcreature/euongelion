@@ -1,38 +1,187 @@
 {
   "day": 295,
-  "title": "Luke: The Inclusive Christ — Day 1 — Hook",
-  "teaser": "Day 295 of Bible 365 — Luke 1-12",
+  "title": "The song that names the whole Gospel",
+  "teaser": "Before Luke shows you a single miracle, a teenage girl sings the program: the proud scattered, the lowly lifted, the hungry filled. Everything that follows is that song with skin on.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 295"
+      "type": "scripture",
+      "reference": "Luke 1:51-53; 4:18-19",
+      "translation": "BSB",
+      "emphasis": [
+        "exalted the humble",
+        "filled the hungry with good things",
+        "preach good news to the poor"
+      ],
+      "passage": "He has performed mighty deeds with His arm; He has scattered those who are proud in the thoughts of their hearts. He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty. ... \"The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed, to proclaim the year of the Lord's favor.\"",
+      "display": "block"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "εὐαγγελίσασθαι",
+      "transliteration": "euangelisasthai",
+      "pronunciation": "ev-ang-el-EE-sas-thai",
+      "meaning": "to announce good news, to proclaim glad tidings",
+      "rootMeaning": "Built from eu (good) and angelos (messenger) - literally 'to bring a good message.' It is the verb form of euangelion, the word from which we get 'gospel,' and the word this whole platform is named for.",
+      "usageNote": "In Luke 4:18 Jesus reads Isaiah's promise to 'preach good news to the poor' and uses this very verb. Luke loves it: he uses the euangel- family far more than Matthew or Mark, and he keeps aiming it at the people who were used to receiving bad news - the poor, the foreign, the female, the sick, the shamed. The good message is not generic. It has an address.",
+      "wordByWord": [
+        {
+          "word": "εὖ",
+          "transliteration": "eu",
+          "meaning": "well, good"
+        },
+        {
+          "word": "ἄγγελος",
+          "transliteration": "angelos",
+          "meaning": "messenger, one who announces"
+        },
+        {
+          "word": "εὐαγγέλιον",
+          "transliteration": "euangelion",
+          "meaning": "good news, glad tidings - the noun behind our word 'gospel'"
+        },
+        {
+          "word": "πτωχοῖς",
+          "transliteration": "ptochois",
+          "meaning": "to the poor - the destitute, the ones who crouch and beg, those with nothing to leverage"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "εὐαγγελίζομαι",
+          "reference": "The angel uses the same root in Luke 2:10 - 'I bring you good news (euangelizomai) of great joy that will be for all the people' - and he announces it first to night-shift shepherds, not to the palace."
+        }
+      ],
+      "strongsNumber": "G2097",
+      "definition": "to announce good news; to proclaim glad tidings",
+      "usage": "The word that names this whole project sits at the center of Luke's Gospel - and Luke insists it be carried first to the people the world counts last."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Manifesto Sung Before a Single Miracle",
+      "body": "Luke opens with paperwork. He tells Theophilus he has 'carefully investigated everything from the beginning' so that his reader 'may know the certainty of the things you have been taught' (Luke 1:3-4). This is a careful man writing a careful account. So it is striking that before Luke narrates one healing, one parable, one walk on water, he stops the action and lets a pregnant teenager sing.\n\nMary's song - the church has called it the Magnificat for centuries, after its first word in Latin - is not soft. It is one of the most political poems in Scripture. She praises a God who 'has scattered those who are proud,' who 'has brought down rulers from their thrones, but has exalted the humble,' who 'has filled the hungry with good things, but has sent the rich away empty' (Luke 1:51-53). Notice the verbs are already in the past tense. Mary sings as though the reversal has already happened, because in her womb it has begun.\n\nThis is Luke handing you the key on the first page. Everything in chapters 1 through 12 will be this song acted out. The shepherds, the foreigners, the women, the tax collectors, the sick, the sinful - the people the religious and the powerful had quietly written off - keep walking to the front of Luke's story and being told they belong there.",
+      "keyInsight": "Luke gives you the thesis before the evidence. Mary's song is the table of contents for the whole Gospel: God lifts the lowly, and the good news has an address.",
+      "content": "Luke opens with paperwork. He tells Theophilus he has 'carefully investigated everything from the beginning' so that his reader 'may know the certainty of the things you have been taught' (Luke 1:3-4). This is a careful man writing a careful account. So it is striking that before Luke narrates one healing, one parable, one walk on water, he stops the action and lets a pregnant teenager sing.\n\nMary's song - the church has called it the Magnificat for centuries, after its first word in Latin - is not soft. It is one of the most political poems in Scripture. She praises a God who 'has scattered those who are proud,' who 'has brought down rulers from their thrones, but has exalted the humble,' who 'has filled the hungry with good things, but has sent the rich away empty' (Luke 1:51-53). Notice the verbs are already in the past tense. Mary sings as though the reversal has already happened, because in her womb it has begun.\n\nThis is Luke handing you the key on the first page. Everything in chapters 1 through 12 will be this song acted out. The shepherds, the foreigners, the women, the tax collectors, the sick, the sinful - the people the religious and the powerful had quietly written off - keep walking to the front of Luke's story and being told they belong there."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Reading That Started a Riot",
+      "body": "There is a particular kind of homecoming where the town wants you to be exactly who you were when you left. Luke 4 is that homecoming. Jesus comes back to Nazareth, the place He grew up, and on the Sabbath He stands to read. He is handed the scroll of Isaiah. He finds the place He is looking for and reads about the Spirit anointing someone 'to preach good news to the poor,' to free captives, to give sight to the blind, to release the oppressed, to announce 'the year of the Lord's favor' (Luke 4:18-19).\n\nThen He rolls up the scroll, sits down, and says nine words that change everything: 'Today this Scripture is fulfilled in your hearing' (Luke 4:21). The room is electric. But as Jesus keeps speaking, He makes the favor wider than the hometown can stand - reminding them God once fed a foreign widow and healed a foreign general while Israel went without. By the end of the chapter the same neighbors who had admired Him are trying to throw Him off a cliff.\n\nThat is the cost of an inclusive God. Good news for the outsider often lands as bad news for whoever assumed they owned the inside.",
+      "connectionToTheme": "Jesus takes Mary's song and makes it His job description - and the trouble starts the moment the favor reaches past the people who expected to have it first.",
+      "content": "There is a particular kind of homecoming where the town wants you to be exactly who you were when you left. Luke 4 is that homecoming. Jesus comes back to Nazareth, the place He grew up, and on the Sabbath He stands to read. He is handed the scroll of Isaiah. He finds the place He is looking for and reads about the Spirit anointing someone 'to preach good news to the poor,' to free captives, to give sight to the blind, to release the oppressed, to announce 'the year of the Lord's favor' (Luke 4:18-19).\n\nThen He rolls up the scroll, sits down, and says nine words that change everything: 'Today this Scripture is fulfilled in your hearing' (Luke 4:21). The room is electric. But as Jesus keeps speaking, He makes the favor wider than the hometown can stand - reminding them God once fed a foreign widow and healed a foreign general while Israel went without. By the end of the chapter the same neighbors who had admired Him are trying to throw Him off a cliff.\n\nThat is the cost of an inclusive God. Good news for the outsider often lands as bad news for whoever assumed they owned the inside."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Just Sing the Song. He Became It.",
+      "body": "Hold the two scenes side by side and watch them lock together. In Luke 1, Mary sings that God 'has filled the hungry with good things' and 'exalted the humble.' In Luke 4, Jesus reads that He is anointed 'to preach good news to the poor.' The song and the sermon are the same announcement - one in the mouth of the mother, one in the mouth of the Son. And then Luke spends the next eight chapters proving it is not poetry.\n\nThe proof is relentlessly specific. To shepherds on a hillside the angel says the Savior is born 'for all the people' (Luke 2:10-11). At a tax collector's table Jesus says, 'It is not the healthy who need a doctor, but the sick. I have not come to call the righteous, but sinners' (Luke 5:31-32). To a woman the room had labeled sinful He says, 'Your faith has saved you; go in peace' (Luke 7:50). To a crowd of the destitute He says, 'Blessed are you who are poor, for yours is the kingdom of God' (Luke 6:20).\n\nThis is the heart of Luke, and it is the heart of the word euangelion itself. The good news is not an abstraction for people who already have their lives together. It comes, by design, to the ones who have been sent away empty everywhere else - and in Jesus, the singing becomes a body that eats with them, touches them, and calls them by name.",
+      "historicalContext": "Luke wrote for a largely Gentile readership in the Greco-Roman world, dedicating his work to 'most excellent Theophilus' (Luke 1:3), a title suggesting a person of standing. In that world, status was everything: birth, wealth, gender, and ethnicity fixed your place. Luke's relentless attention to shepherds, women, Samaritans, tax collectors, and the poor would have read as genuinely scandalous - a Savior whose favor ran in exactly the wrong direction.",
+      "fascinatingFact": "Luke records more about women, more parables of the lost being found, and more concern for the poor than any other Gospel. The Magnificat (1:46-55) is itself stitched from the song of Hannah (1 Samuel 2) - another lowly woman whose pregnancy God used to reverse the order of things. Luke is telling you, from the first chapter, that this is how God has always worked.",
+      "content": "Hold the two scenes side by side and watch them lock together. In Luke 1, Mary sings that God 'has filled the hungry with good things' and 'exalted the humble.' In Luke 4, Jesus reads that He is anointed 'to preach good news to the poor.' The song and the sermon are the same announcement - one in the mouth of the mother, one in the mouth of the Son. And then Luke spends the next eight chapters proving it is not poetry.\n\nThe proof is relentlessly specific. To shepherds on a hillside the angel says the Savior is born 'for all the people' (Luke 2:10-11). At a tax collector's table Jesus says, 'It is not the healthy who need a doctor, but the sick. I have not come to call the righteous, but sinners' (Luke 5:31-32). To a woman the room had labeled sinful He says, 'Your faith has saved you; go in peace' (Luke 7:50). To a crowd of the destitute He says, 'Blessed are you who are poor, for yours is the kingdom of God' (Luke 6:20).\n\nThis is the heart of Luke, and it is the heart of the word euangelion itself. The good news is not an abstraction for people who already have their lives together. It comes, by design, to the ones who have been sent away empty everywhere else - and in Jesus, the singing becomes a body that eats with them, touches them, and calls them by name."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Mary sang of a God who lifts the lowly and fills the hungry, and Jesus made that song His mission - carrying the good news first to the poor, the foreign, the sick, and the shamed.",
+      "modernApplication": "Most of us learn early to sort ourselves and others into who counts and who doesn't. We can do it with money, with religion, with respectability, even with how put-together we appear on a given Sunday. Luke's Gospel takes that whole filing system and turns it upside down. The question it presses is not 'Am I impressive enough for God's favor?' but 'Have I quietly assumed someone else is too far gone for it?'",
+      "connectionPoint": "Mary's song does not invent this reversal - it inherits it. It echoes Hannah's song (1 Samuel 2:7-8), where God 'raises the poor from the dust.' It runs through the whole prophetic stream that Jesus reads aloud from Isaiah 61. Luke's Gospel is the place where that long promise stops being a hope sung in worship and starts walking around Galilee with a name.",
+      "newTestamentEcho": "What Mary sang and Jesus preached, Jesus then embodied to the end. 'For the Son of Man came to seek and to save the lost' (Luke 19:10) is the whole Gospel compressed into a sentence - and the cross is where the One who lifted the lowly took the lowest place Himself, so the sent-away-empty could be filled."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life do you secretly suspect you are too far gone, too unimpressive, or too late for God's favor - and what would it mean to hear yourself counted among the 'humble' Mary says He has exalted?",
+      "additionalQuestions": [
+        "Be honest: is there a kind of person you have quietly written off as outside the reach of the good news? What would Luke do with them?",
+        "When the favor of God goes to someone you think hasn't earned it, does that feel like good news or like a threat - and what does your answer reveal?",
+        "Mary sang the reversal as already done. Where do you need to start trusting that God has already begun lifting what feels low in your life?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have spent a long time trying to climb to where I thought You kept Your favor. Today let me hear Mary's song the way she meant it - that You lift the lowly, fill the hungry, and have sent good news straight to the people the world sends away. Where I have written anyone off, including myself, undo it. Make me small enough to be exalted by Your hand and not my own. And through Christ, who came to seek and to save the lost, count me among the found. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Read Mary's song slowly once today (Luke 1:46-55), out loud if you can. Then name one place - in yourself or in someone you've quietly counted out - where you will start believing God lifts the lowly.",
+      "leavingAtCross": [
+        "The filing system I use to sort people into who counts and who doesn't",
+        "The quiet belief that God's favor has to be climbed to and earned",
+        "The fear that I am the exception - too far gone for the good news Luke says is for all the people"
+      ],
+      "receivingFromCross": [
+        "A place among the lowly Mary says God has already exalted",
+        "Good news with my name on it, not a generic message for people who have it together",
+        "The freedom to stop sorting and start welcoming the ones Jesus kept calling to the front"
+      ],
+      "content": "Read Mary's song slowly once today (Luke 1:46-55), out loud if you can. Then name one place - in yourself or in someone you've quietly counted out - where you will start believing God lifts the lowly."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does Mary's song in Luke 1 function as a 'table of contents' for the rest of the Gospel - what does it tell you to expect?",
+        "Why does it matter that Jesus uses the same announcement in Luke 4:18 ('good news to the poor') that Mary sings in Luke 1:53 ('filled the hungry with good things')?",
+        "The hometown crowd admired Jesus and then tried to kill Him within the same sermon. What changed - and what does that reveal about the cost of an inclusive God?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one kind of person you find it hardest to imagine at the front of Luke's story being welcomed - and talk about why.",
+        "Where in your own life do you feel more like the 'rich sent away empty' than the 'humble exalted'? Be honest with each other.",
+        "Ask each other: if the good news really has an address, and that address is the lowly, what would change about how we treat the people the world overlooks?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 1:46-48",
+          "text": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed.\""
+        },
+        {
+          "reference": "Luke 2:10-11",
+          "text": "But the angel said to them, \"Do not be afraid! For behold, I bring you good news of great joy that will be for all the people: Today in the city of David a Savior has been born to you. He is Christ the Lord!\""
+        },
+        {
+          "reference": "Luke 5:31-32",
+          "text": "Jesus answered, \"It is not the healthy who need a doctor, but the sick. I have not come to call the righteous, but sinners, to repentance.\""
+        },
+        {
+          "reference": "1 Samuel 2:7-8",
+          "text": "The LORD sends poverty and wealth; He humbles and He exalts. He raises the poor from the dust and lifts the needy from the ash heap."
+        },
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save the lost."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 1-4",
+          "note": "Read the infancy songs (1:46-55, 1:68-79, 2:29-32) and the Nazareth sermon (4:16-30) back to back. Watch how the songs announce the program and the sermon launches it."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Lowly One Who Sang the Gospel First",
+      "era": "1st century, Galilee",
+      "key_trait": "An unmarried young woman of no social standing who became the first to put the meaning of Jesus into words",
+      "description": "A young woman from an obscure Galilean town, engaged but not yet married, with no wealth, status, or platform - exactly the kind of person Luke's Gospel keeps lifting to the front. When God's favor came to her, she answered not with a list of qualifications but with a song that named what her Son would do: scatter the proud, lift the lowly, fill the hungry. She is the first human being in Luke to understand the good news, and she understood it as reversal.",
+      "keyQuote": "He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.",
+      "lessonForUs": "The first person to grasp the Gospel in Luke was not a scholar or a ruler but a powerless young woman - which is, fittingly, the whole point of the song she sang.",
+      "heading": "The Lowly One Who Sang the Gospel First"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2246,
+  "scriptureReference_full": "Luke 1:51-53; 4:18-19 (within Luke 1-12)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (euangelisasthai / euangelion, G2097) reflects standard lexical sources. The Magnificat's dependence on the Song of Hannah (1 Samuel 2) is a long-standing observation in biblical scholarship; 'Magnificat' is the traditional Latin title from the song's first word."
+  ]
 }

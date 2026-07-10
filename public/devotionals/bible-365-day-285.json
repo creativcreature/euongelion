@@ -1,38 +1,181 @@
 {
   "day": 285,
-  "title": "Matthew: Parables + Miracles — Day 5 — Resolution",
-  "teaser": "Day 285 of Bible 365 — Matthew 8-13",
+  "title": "The smallest seed buys the whole field",
+  "teaser": "The kingdom comes hidden and small — a buried seed, a coin in the dirt. By the end of Matthew 13, the thing you almost walked past is worth everything you own.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 285"
+      "type": "scripture",
+      "reference": "Matthew 13:31-33, 44",
+      "translation": "BSB",
+      "emphasis": [
+        "the smallest of all seeds",
+        "the largest of garden plants",
+        "treasure hidden in a field",
+        "sold all he had"
+      ],
+      "passage": "He put before them another parable: “The kingdom of heaven is like a mustard seed that a man planted in his field. Although it is the smallest of all seeds, yet it grows into the largest of garden plants and becomes a tree, so that the birds of the air come and nest in its branches.” He told them still another parable: “The kingdom of heaven is like leaven that a woman took and mixed into three measures of flour, until all of it was leavened.” ... “The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and in his joy he went and sold all he had and bought that field.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "κόκκος σινάπεως",
+      "transliteration": "kokkos sinapeos",
+      "pronunciation": "KOK-koss see-NAH-peh-oss",
+      "meaning": "a grain of mustard, a mustard seed",
+      "rootMeaning": "Kokkos is a single grain or kernel - the smallest unit of a seed. Sinapeos is the mustard plant, whose seed was proverbial in Jewish teaching for the tiniest thing the eye could measure. Together: the least visible beginning of a living thing.",
+      "usageNote": "Jesus uses the mustard seed twice in Matthew - here for the kingdom that grows past all expectation (13:31-32), and later for faith that moves mountains (17:20). In both, the point is the gap between how small a thing starts and how large it ends. The rabbis used the mustard seed the same way, as the standard image for the smallest measurable quantity.",
+      "wordByWord": [
+        {
+          "word": "κόκκος",
+          "transliteration": "kokkos",
+          "meaning": "a grain, a single kernel or seed"
+        },
+        {
+          "word": "σινάπεως",
+          "transliteration": "sinapeos",
+          "meaning": "of mustard - the small-seeded garden plant"
+        },
+        {
+          "word": "βασιλεία τῶν οὐρανῶν",
+          "transliteration": "basileia ton ouranon",
+          "meaning": "the kingdom of the heavens - Matthew's reverent phrase for the reign of God"
+        },
+        {
+          "word": "ζύμη",
+          "transliteration": "zyme",
+          "meaning": "leaven, yeast - the hidden agent that works through the whole lump"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "θησαυρός / thesauros",
+          "reference": "The 'treasure' hidden in the field (13:44) is thesauros - the same word for the storeroom of new and old treasures the discipled scribe brings out (13:52). What is buried in the field becomes what is carried in the house."
+        }
+      ],
+      "strongsNumber": "G2848",
+      "definition": "a grain or kernel; specifically the small seed of the mustard plant",
+      "usage": "Matthew sets the smallest seed (kokkos) beside the largest garden plant in a single breath. The grammar does the theology: the kingdom is named by its beginning and judged by its end, and the two could not look more unalike."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Where the Crowds Thin and the Kingdom Goes Quiet",
+      "body": "By the time you reach Matthew 13, something has shifted. The early chapters were loud with wonder - a leper made clean, a centurion's servant healed from a distance, a storm stilled with a word, a dead girl's hand taken in His. Crowds pressed in. Then, almost without warning, Jesus sits down by the lake and stops explaining. He starts telling stories about dirt.\n\nThe turn is deliberate. Matthew tells us, “Jesus spoke all these things to the crowds in parables. He did not tell them anything without using a parable” (Matthew 13:34). The miracles had drawn a crowd; the parables sort it. Some hear seed and soil and shrug. Others lean in and find they cannot stop thinking about it. The kingdom that arrived with thunder now hides itself in a farmer's field, a handful of yeast, a coin buried in the dark.\n\nThis is not retreat. It is the kingdom's true shape becoming visible. Earlier Jesus had looked at the same crowds and felt it: “when He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd” (Matthew 9:36). The God who heals the body now plants something in the ground that the body cannot yet see - small, slow, and certain.",
+      "keyInsight": "The miracles gathered a crowd; the parables reveal the kingdom. What looks like Jesus going quiet is actually the kingdom showing its real size - hidden, small, and growing past anything the eye first measured.",
+      "content": "By the time you reach Matthew 13, something has shifted. The early chapters were loud with wonder - a leper made clean, a centurion's servant healed from a distance, a storm stilled with a word, a dead girl's hand taken in His. Crowds pressed in. Then, almost without warning, Jesus sits down by the lake and stops explaining. He starts telling stories about dirt.\n\nThe turn is deliberate. Matthew tells us, “Jesus spoke all these things to the crowds in parables. He did not tell them anything without using a parable” (Matthew 13:34). The miracles had drawn a crowd; the parables sort it. Some hear seed and soil and shrug. Others lean in and find they cannot stop thinking about it. The kingdom that arrived with thunder now hides itself in a farmer's field, a handful of yeast, a coin buried in the dark.\n\nThis is not retreat. It is the kingdom's true shape becoming visible. Earlier Jesus had looked at the same crowds and felt it: “when He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd” (Matthew 9:36). The God who heals the body now plants something in the ground that the body cannot yet see - small, slow, and certain."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Reburied the Treasure",
+      "body": "Picture the day laborer in the parable. He is not a treasure hunter; he is hired to work a field that belongs to someone else. His spade strikes something hard. He digs, and there it is - a jar, an old purse, coins that someone long ago buried for safekeeping and never came back for. In a world without banks, the ground was the safe.\n\nNotice what he does. He does not pocket it and run. He buries it again, exactly where it was, and walks away as if nothing happened. Then he does something that looks, from the outside, like a man losing his mind. He sells everything he owns - his tools, his savings, whatever small security he had scraped together - to buy one ordinary field that no one else wanted.\n\nThe neighbors would have shaken their heads. He looked reckless, even foolish. But he was the only one who knew what was actually in the ground. The price that ruined him was the bargain of his life. He did not give things up grudgingly. Matthew is careful with the verb: “in his joy he went and sold all he had.” The selling was not the loss. The selling was how he laid hold of the thing he could not stop thinking about.",
+      "connectionToTheme": "The kingdom is hidden in plain sight, easy to walk past. But the one who sees what it really is does not count the cost as loss - the surrender is joy, because of what is in the field.",
+      "content": "Picture the day laborer in the parable. He is not a treasure hunter; he is hired to work a field that belongs to someone else. His spade strikes something hard. He digs, and there it is - a jar, an old purse, coins that someone long ago buried for safekeeping and never came back for. In a world without banks, the ground was the safe.\n\nNotice what he does. He does not pocket it and run. He buries it again, exactly where it was, and walks away as if nothing happened. Then he does something that looks, from the outside, like a man losing his mind. He sells everything he owns - his tools, his savings, whatever small security he had scraped together - to buy one ordinary field that no one else wanted.\n\nThe neighbors would have shaken their heads. He looked reckless, even foolish. But he was the only one who knew what was actually in the ground. The price that ruined him was the bargain of his life. He did not give things up grudgingly. Matthew is careful with the verb: “in his joy he went and sold all he had.” The selling was not the loss. The selling was how he laid hold of the thing he could not stop thinking about."
+    },
+    {
+      "type": "insight",
+      "heading": "Hidden Since the Foundation of the World",
+      "body": "Run the parables of Matthew 13 in a row and a single shape appears. A seed goes into the ground and disappears before it grows. Yeast vanishes into three measures of flour - enough dough to feed a hundred people - and works unseen until the whole batch is changed. Treasure lies buried where no one is looking. A pearl waits in a merchant's stall among ordinary stones. The kingdom is always, first, hidden.\n\nMatthew tells us this is by design. The parables fulfill the prophet's words: “I will open My mouth in parables; I will utter things hidden since the foundation of the world” (Matthew 13:35). The plan was never loud. It was buried before the first morning, like a seed waiting in the dark for its season.\n\nAnd then the hidden thing grows past all proportion. The smallest seed becomes the largest plant in the garden, a tree where the birds of the air come and nest. That last phrase is borrowed from the prophets, where great empires were pictured as towering trees sheltering the nations in their branches. Jesus takes the image of a world-empire and grows it out of a mustard seed. The kingdom that looks too small to bother with is the one that ends up sheltering everyone.",
+      "historicalContext": "Matthew 13 sits at the structural center of the Gospel - the third of Matthew's five great discourses, placed exactly where the public ministry begins to turn toward the cross. Around this chapter the crowds grow divided, the religious leaders harden, and Jesus increasingly speaks to those with 'ears to hear.' The parables of the kingdom are Matthew's account of how a movement that looked like a Galilean teacher and twelve fishermen could possibly be the reign of God breaking into the world.",
+      "fascinatingFact": "The mustard seed was not literally the smallest seed on earth, and Jesus' first hearers knew it. He is using it the way the rabbis did - as the proverbial image for the tiniest measurable thing. The point is not botany but contrast: name the smallest beginning anyone can picture, then watch it become the largest plant in the garden. The gap is the gospel.",
+      "content": "Run the parables of Matthew 13 in a row and a single shape appears. A seed goes into the ground and disappears before it grows. Yeast vanishes into three measures of flour - enough dough to feed a hundred people - and works unseen until the whole batch is changed. Treasure lies buried where no one is looking. A pearl waits in a merchant's stall among ordinary stones. The kingdom is always, first, hidden.\n\nMatthew tells us this is by design. The parables fulfill the prophet's words: “I will open My mouth in parables; I will utter things hidden since the foundation of the world” (Matthew 13:35). The plan was never loud. It was buried before the first morning, like a seed waiting in the dark for its season.\n\nAnd then the hidden thing grows past all proportion. The smallest seed becomes the largest plant in the garden, a tree where the birds of the air come and nest. That last phrase is borrowed from the prophets, where great empires were pictured as towering trees sheltering the nations in their branches. Jesus takes the image of a world-empire and grows it out of a mustard seed. The kingdom that looks too small to bother with is the one that ends up sheltering everyone."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The kingdom of heaven comes hidden and small - a buried seed, a coin in the dirt, yeast lost in the flour - and grows into the tree that shelters the nations. The one who sees what it truly is sells everything he has, and counts it joy.",
+      "modernApplication": "We are trained to measure worth by size and speed: what trends, what scales, what shows results this quarter. The kingdom keeps refusing those metrics. It looks, today, like a quiet prayer, an unseen kindness, a slow obedience no one is clapping for - the kind of thing easy to walk past as too small to matter. Matthew 13 asks whether you can recognize treasure when it is still buried.",
+      "connectionPoint": "The thread that runs from the mustard seed reaches all the way back through Scripture. A shepherd boy, not the tall brothers, is anointed king (1 Samuel 16). A remnant, not a multitude, carries the promise. God keeps choosing the small, hidden, overlooked thing and growing His whole purpose out of it. Matthew 13 is that pattern set to its clearest music: the least visible beginning, the largest possible end.",
+      "newTestamentEcho": "Jesus does not only tell the parable of the buried treasure - He is it. He comes hidden, a carpenter's son from a town people doubted anything good could come from (John 1:46). He is the seed that, unless it falls into the ground and dies, remains alone, but in dying bears much fruit (John 12:24). At the cross He is buried in a field, in the dark, looking to every onlooker like total loss. On the third day the smallest seed becomes the largest plant in the garden - and the field He sold everything to buy was the world. We are the treasure He found there and counted worth the whole price."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What in your life right now looks too small to matter - a seed you keep meaning to plant, an obedience no one would notice - that the kingdom might be hiding inside?",
+      "additionalQuestions": [
+        "Where have you been measuring the worth of your faith by its size and speed, when Jesus measures it by what it will become?",
+        "The man sold everything 'in his joy.' Is there something God is asking you to let go of that still feels only like loss, not yet like joy? What would it take to see the field?",
+        "When you read the parables of Matthew 13, do you find yourself in the crowd that shrugs, or among those who cannot stop thinking about it? Be honest about which, and why."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I confess how easily I walk past the small and quiet things, hunting for what looks impressive. Forgive me for measuring Your kingdom by the world's scale. Give me eyes to see the treasure while it is still buried - in an ordinary day, in a hidden obedience, in You. You came small, You were planted in the dark, and You rose as the tree where the nations rest. You sold everything to buy the field, and I am what You found in it. Let that be the joy that makes me willing to let go of all the rest. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is the close of the week in Matthew. Before you move on, name one 'mustard seed' - one small, unglamorous act of obedience or trust - and actually plant it today, without waiting to see it grow. Then leave it in the ground and let God be the one who makes it a tree.",
+      "leavingAtCross": [
+        "The habit of measuring the kingdom - and my own faith - by size, speed, and applause",
+        "The fear that what God has given me to do is too small to matter",
+        "The reluctance to let go of lesser things while I wait for the field to look like treasure"
+      ],
+      "receivingFromCross": [
+        "The freedom to plant small seeds and trust the harvest to the Lord of the harvest",
+        "The joy of the man who sold everything, because of what was in the field",
+        "The certainty that the Christ who was buried in the dark is the tree where I am sheltered now"
+      ],
+      "content": "This is the close of the week in Matthew. Before you move on, name one 'mustard seed' - one small, unglamorous act of obedience or trust - and actually plant it today, without waiting to see it grow. Then leave it in the ground and let God be the one who makes it a tree."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Jesus shift from public miracles in Matthew 8-9 to teaching the crowds 'only in parables' by Matthew 13? What is the difference between what a miracle does and what a parable does?",
+        "What single shape do the parables of the seed, the leaven, the hidden treasure, and the pearl all share - and what does that shape say about how the kingdom of God actually comes?",
+        "How does the buried treasure, sold everything to buy the field, point forward to what Christ Himself does at the cross and the empty tomb?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one small, hidden thing in your life this week that you are tempted to dismiss as not mattering. Talk about whether the kingdom might be growing there.",
+        "The man in the parable sold everything 'in his joy.' Tell each other about a time letting go of something for God felt like loss at first and only later felt like gain.",
+        "Ask one another: am I waiting for my faith to look big before I trust it, or am I willing to plant a mustard seed today and leave the growing to God?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 13:16-17",
+          "text": "But blessed are your eyes because they see, and your ears because they hear. For truly I tell you, many prophets and righteous men longed to see what you see but did not see it, and to hear what you hear but did not hear it."
+        },
+        {
+          "reference": "Matthew 13:52",
+          "text": "Then He told them, “For this reason, every scribe who has been discipled in the kingdom of heaven is like a homeowner who brings out of his storeroom new treasures as well as old.”"
+        },
+        {
+          "reference": "Matthew 11:28-30",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light."
+        },
+        {
+          "reference": "John 12:24",
+          "text": "Truly, truly, I tell you, unless a kernel of wheat falls to the ground and dies, it remains alone. But if it dies, it bears much fruit."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 13",
+          "note": "Read the whole chapter in one sitting, watching the four kingdom parables (seed, leaven, treasure, pearl) build to the discipled scribe of verse 52 - the person who has understood, and now carries the treasure out of the storeroom for others."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Discipled Scribe",
+      "title": "The Householder of Matthew 13:52",
+      "description": "At the close of the parables, Jesus draws a portrait of the person who has actually heard Him: 'every scribe who has been discipled in the kingdom of heaven is like a homeowner who brings out of his storeroom new treasures as well as old' (Matthew 13:52). A scribe was a keeper and teacher of the old Scriptures. The one trained for the kingdom does not throw the old away - he sees how the buried treasure of the Law and Prophets and the new treasure of Christ belong in the same storeroom, and he carries both out to feed the household.",
+      "keyQuote": "...like a homeowner who brings out of his storeroom new treasures as well as old.",
+      "lessonForUs": "To finish this week well is to become this householder. You have been given old treasure and new - take what you have seen of Christ in Matthew and carry it out to someone else. The treasure was never meant to stay buried in the field, or hidden in the storeroom.",
+      "heading": "The Householder of Matthew 13:52"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2553,
+  "scriptureReference_full": "Matthew 13:31-33, 44 (anchor); Matthew 8-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (kokkos sinapeos G2848; basileia ton ouranon; zyme) reflects standard New Testament lexical sources. The mustard seed as the proverbial smallest measurable seed, and the 'birds nesting in the branches' as an Old Testament empire-tree image (cf. Ezekiel 17:23, Daniel 4:12), reflect standard commentary on Matthew 13."
+  ]
 }

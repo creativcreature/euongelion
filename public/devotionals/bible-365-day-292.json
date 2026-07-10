@@ -1,38 +1,181 @@
 {
   "day": 292,
-  "title": "Mark: The Suffering Servant — Day 5 — Resolution",
-  "teaser": "Day 292 of Bible 365 — Mark 1-16",
+  "title": "The Centurion Finishes the Sentence",
+  "teaser": "Mark opens by calling Jesus the Son of God. For sixteen chapters no human says it back. The first one who does is a Roman executioner, looking at a corpse.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
   "scriptureReference": "Mark 1-16",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 292"
+      "type": "scripture",
+      "reference": "Mark 10:45; 15:37-39",
+      "translation": "BSB",
+      "emphasis": [
+        "a ransom for many",
+        "breathed His last",
+        "Truly this man was the Son of God"
+      ],
+      "greekOriginal": "δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν",
+      "passage": "For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many. ... But Jesus let out a loud cry and breathed His last. And the veil of the temple was torn in two from top to bottom. When the centurion standing there in front of Jesus saw how He had breathed His last, he said, \"Truly this man was the Son of God!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lytron",
+      "pronunciation": "LOO-tron",
+      "meaning": "ransom, the price paid to set a captive free",
+      "rootMeaning": "Lytron comes from the verb lyo, to loose or untie. A lytron is the payment that unties a prisoner, buys back a slave, or frees a captive of war. It is not a vague gift; it is a specific price laid down so that someone bound can go free.",
+      "usageNote": "Mark uses lytron only once, in 10:45, at the seam of the whole book. Up to that point Jesus has been telling His disciples three times that He must suffer and die, and they have argued each time about who is greatest. Here He names what His death is for: not a tragedy that happens to Him, but a price He gives. The word would have been unmistakable to people who lived in a world of slave markets and prisoners ransomed for silver.",
+      "wordByWord": [
+        {
+          "word": "δοῦναι",
+          "transliteration": "dounai",
+          "meaning": "to give - an active, deliberate handing over, not something taken from Him"
+        },
+        {
+          "word": "τὴν ψυχὴν αὐτοῦ",
+          "transliteration": "tēn psychēn autou",
+          "meaning": "His life, His soul - the whole self, the very breath"
+        },
+        {
+          "word": "λύτρον",
+          "transliteration": "lytron",
+          "meaning": "ransom, the release-price for a captive"
+        },
+        {
+          "word": "ἀντὶ πολλῶν",
+          "transliteration": "anti pollōn",
+          "meaning": "in place of many - anti means instead of, one standing where the many should stand"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπολύτρωσις",
+          "reference": "Apolytrosis, redemption, is built from the same root and runs through Paul: 'In Him we have redemption through His blood' (Ephesians 1:7). The single word Jesus speaks in Mark 10:45 becomes a whole vocabulary of rescue."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "the price of release; a ransom paid to free a captive or slave",
+      "usage": "The little word anti - 'instead of' - is the hinge. Jesus does not say His life is given to encourage the many or inspire the many. He says it is given in place of the many. One stands where the crowd was meant to stand."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "One Question, Sixteen Chapters",
+      "body": "Read Mark straight through and you notice it is built around a single question that will not go away: Who is this? It surfaces the first time He stills a storm - the disciples whisper, \"Who is this? Even the wind and the sea obey Him.\" It surfaces when He forgives a paralyzed man and the scribes mutter that only God can forgive. It surfaces in His own hometown, where people are offended that the carpenter's son talks the way He does.\n\nMark answers the question in his very first line - \"the gospel of Jesus Christ, the Son of God\" - and then, strangely, almost no human in the story is allowed to say it. The demons know and are silenced. At the midpoint Peter blurts out, \"You are the Christ,\" and is immediately told not to tell anyone, because Peter has the title right and the meaning wrong: he is thinking of a conqueror, and Jesus starts talking about being killed.\n\nThis is the famous reticence of Mark. The fastest, plainest, most action-driven of the four Gospels keeps its own central confession under wraps. The reader is left holding the secret the characters cannot seem to say, waiting to see who in the story will finally say it out loud and mean it the way Mark means it.",
+      "keyInsight": "Mark tells you in verse one who Jesus is, then makes you wait the whole book to hear a human being say it back - so that when someone finally does, you will know exactly what it cost to make that confession true.",
+      "content": "Read Mark straight through and you notice it is built around a single question that will not go away: Who is this? It surfaces the first time He stills a storm - the disciples whisper, \"Who is this? Even the wind and the sea obey Him.\" It surfaces when He forgives a paralyzed man and the scribes mutter that only God can forgive. It surfaces in His own hometown, where people are offended that the carpenter's son talks the way He does.\n\nMark answers the question in his very first line - \"the gospel of Jesus Christ, the Son of God\" - and then, strangely, almost no human in the story is allowed to say it. The demons know and are silenced. At the midpoint Peter blurts out, \"You are the Christ,\" and is immediately told not to tell anyone, because Peter has the title right and the meaning wrong: he is thinking of a conqueror, and Jesus starts talking about being killed.\n\nThis is the famous reticence of Mark. The fastest, plainest, most action-driven of the four Gospels keeps its own central confession under wraps. The reader is left holding the secret the characters cannot seem to say, waiting to see who in the story will finally say it out loud and mean it the way Mark means it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Whose Job Was Killing",
+      "body": "A Roman centurion commanded eighty men and had, by the time he reached that rank, almost certainly killed people with his own hands and ordered the killing of many more. On the day Jesus died, this officer's job was simple and grim: stand at the foot of three crosses and make sure the men on them stayed there until they were dead. He had no doubt done it before. Crucifixion was Rome's machinery for keeping order, and he was a competent gear in it.\n\nHe was not a worshiper. He had no stake in Jewish messianic hopes, no place in the story of Israel, no reason to feel anything but professional boredom. He watched men die for a living.\n\nAnd then he watched this one. Mark says the centurion saw how Jesus breathed His last - the loud cry, the way He died - and something in him broke open. The man trained to read death said the truest sentence in the whole Gospel: \"Truly this man was the Son of God.\" The first human being in Mark to confess it plainly is not a disciple, not a priest, not a friend. It is the executioner, looking at a corpse.",
+      "connectionToTheme": "Mark withholds the human confession of Jesus' divine sonship until the cross - and then gives it to the least likely person in the scene, so that the title 'Son of God' is heard for the first time over a dead man, not a victorious one.",
+      "content": "A Roman centurion commanded eighty men and had, by the time he reached that rank, almost certainly killed people with his own hands and ordered the killing of many more. On the day Jesus died, this officer's job was simple and grim: stand at the foot of three crosses and make sure the men on them stayed there until they were dead. He had no doubt done it before. Crucifixion was Rome's machinery for keeping order, and he was a competent gear in it.\n\nHe was not a worshiper. He had no stake in Jewish messianic hopes, no place in the story of Israel, no reason to feel anything but professional boredom. He watched men die for a living.\n\nAnd then he watched this one. Mark says the centurion saw how Jesus breathed His last - the loud cry, the way He died - and something in him broke open. The man trained to read death said the truest sentence in the whole Gospel: \"Truly this man was the Son of God.\" The first human being in Mark to confess it plainly is not a disciple, not a priest, not a friend. It is the executioner, looking at a corpse."
+    },
+    {
+      "type": "insight",
+      "heading": "The Voice That Opened the Sky, and the Voice from the Ground",
+      "body": "Three times in Mark a voice declares who Jesus is. At His baptism the heavens are torn open and a voice says, \"You are My beloved Son.\" On the mountain of transfiguration a cloud says, \"This is My beloved Son. Listen to Him.\" Both are God's own voice, from above. Then comes the third - and it does not fall from the sky. It rises from the dirt at the foot of a cross, out of the mouth of a pagan soldier: \"Truly this man was the Son of God.\"\n\nMark frames it with deliberate craft. At the baptism the heavens are torn open - the Greek word is the same harsh verb of ripping. At the death the temple veil is torn in two from top to bottom - torn open by an unseen hand, from the top down, the way only God tears. The book opens with the sky split so the Father can name the Son, and closes the cross scene with the holy curtain split so anyone can come in. Heaven was torn to let God's voice out; the veil was torn to let our voices in. Between those two tearings, a ransom was paid.\n\nThe centurion's confession is the human echo of the heavenly one. What the Father said over the river, a soldier says over a body. Mark has been waiting the entire book for that sentence, and he lets the wrong man say it on purpose - because the gospel was never a reward for the deserving. It is good news a guilty executioner can stumble into.",
+      "historicalContext": "Mark is widely held to be the earliest of the four Gospels, traditionally linked to John Mark and to Peter's preaching in Rome, likely written around the time Nero's persecution made Roman believers intimately familiar with what it cost to follow a crucified Lord. A Gospel that ends with a Roman soldier confessing Christ would land with particular weight on Christians living under Roman swords.",
+      "fascinatingFact": "The Greek of Mark 15:38-39 ties the torn veil and the centurion's words together: the same evangelist who tore the heavens open in 1:10 tears the temple veil in 15:38, and immediately a Gentile says aloud the title the Father spoke from heaven. The frame is closed. The Son named from above is named from below.",
+      "content": "Three times in Mark a voice declares who Jesus is. At His baptism the heavens are torn open and a voice says, \"You are My beloved Son.\" On the mountain of transfiguration a cloud says, \"This is My beloved Son. Listen to Him.\" Both are God's own voice, from above. Then comes the third - and it does not fall from the sky. It rises from the dirt at the foot of a cross, out of the mouth of a pagan soldier: \"Truly this man was the Son of God.\"\n\nMark frames it with deliberate craft. At the baptism the heavens are torn open - the Greek word is the same harsh verb of ripping. At the death the temple veil is torn in two from top to bottom - torn open by an unseen hand, from the top down, the way only God tears. The book opens with the sky split so the Father can name the Son, and closes the cross scene with the holy curtain split so anyone can come in. Heaven was torn to let God's voice out; the veil was torn to let our voices in. Between those two tearings, a ransom was paid.\n\nThe centurion's confession is the human echo of the heavenly one. What the Father said over the river, a soldier says over a body. Mark has been waiting the entire book for that sentence, and he lets the wrong man say it on purpose - because the gospel was never a reward for the deserving. It is good news a guilty executioner can stumble into."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus said the Son of Man came to give His life as a ransom in place of many; on the cross He pays it, the temple veil is torn from top to bottom, and a Roman executioner is the first human in Mark to confess Him plainly as the Son of God.",
+      "modernApplication": "We still wait for proof on our terms - the sky to open, the storm to obey, the verdict to clear us before we will say Jesus is Lord. But the confession Mark honors is the one made at the cross, by someone with nothing to bargain with, who simply sees the dying Christ for who He is. You do not have to be qualified to say it. The centurion wasn't.",
+      "connectionPoint": "Mark's whole book is a slow unveiling of the question every chapter keeps asking - Who is this? - and the answer is given not in a miracle but in a death. The ransom of 10:45 and the last breath of 15:37 are the same act seen from two sides: what He came to give, and the moment He gave it.",
+      "newTestamentEcho": "Paul tells Timothy that Christ Jesus 'gave Himself as a ransom for all' (1 Timothy 2:6), and the writer to the Hebrews says that by His death the way into the holy place has been opened, 'a new and living way that He opened for us through the veil' (Hebrews 10:20). The curtain Mark watched tear is the door Hebrews invites us to walk through."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you picture Jesus, do you see the One who stilled the storm and silenced the crowds - or the One who breathed His last and was confessed by an executioner? Which one have you been waiting to be impressed by before you trust Him?",
+      "additionalQuestions": [
+        "The centurion confessed Christ with no credentials and a guilty history. What disqualification have you assumed keeps you from saying the same sentence?",
+        "Peter got the title right but the meaning wrong - he wanted a conquering Messiah, not a crucified one. Where are you still hoping for a Jesus who skips the cross?",
+        "A ransom is paid 'in place of many.' What does it change to know your release was bought, not earned?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, the centurion saw You die and finally said it true: Son of God. I have waited for cleaner proof, a quieter storm, a better version of myself before I would say it back. Let me see what he saw - that You did not come to be served but to give Your life as a ransom, in my place. Tear whatever veil still hangs between me and You. Take this last barrier the way the temple curtain was taken, from the top down, by Your hand and not mine. I confess it now, with nothing to offer: truly, You are the Son of God. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Read the closing scene of Mark slowly today - the loud cry, the torn veil, the soldier's words, and the empty tomb that follows. Then say the centurion's sentence out loud as your own, and let the empty tomb tell you the ransom was accepted.",
+      "leavingAtCross": [
+        "The demand that Jesus prove Himself on my terms before I trust Him",
+        "The Peter-instinct that wants a Messiah who conquers and never suffers",
+        "The lie that my history disqualifies me from confessing Christ"
+      ],
+      "receivingFromCross": [
+        "A ransom paid in my place, by the One who came to give His life",
+        "An open way into God's presence, the veil torn from the top down",
+        "The freedom of the centurion: to see the crucified Christ and simply say He is the Son of God"
+      ],
+      "content": "Read the closing scene of Mark slowly today - the loud cry, the torn veil, the soldier's words, and the empty tomb that follows. Then say the centurion's sentence out loud as your own, and let the empty tomb tell you the ransom was accepted."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Mark keep the human confession 'Son of God' hidden for most of the book, and what does it mean that the first person to say it plainly is a Roman centurion?",
+        "How do the two tearings in Mark - the heavens at the baptism and the temple veil at the death - frame the whole Gospel?",
+        "What does the word 'ransom' (lytron) in Mark 10:45 tell us about the meaning of the death described in 15:37?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time you wanted God to prove Himself before you would trust Him. What were you waiting for?",
+        "Peter wanted a Messiah without a cross. Where do each of you still resist the idea that following Jesus runs through suffering and self-denial?",
+        "Say the centurion's confession to each other out loud, and talk about what it costs - and what it frees - to mean it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 1:1",
+          "text": "This is the beginning of the gospel of Jesus Christ, the Son of God."
+        },
+        {
+          "reference": "Mark 8:29",
+          "text": "\"But what about you?\" Jesus asked. \"Who do you say I am?\" Peter answered, \"You are the Christ.\""
+        },
+        {
+          "reference": "Mark 16:6",
+          "text": "But he said to them, \"Do not be alarmed. You are looking for Jesus the Nazarene, who was crucified. He has risen! He is not here! See the place where they put Him.\""
+        },
+        {
+          "reference": "Hebrews 10:19-20",
+          "text": "Therefore, brothers, since we have confidence to enter the Most Holy Place by the blood of Jesus, by a new and living way opened for us through the veil, that is, His body."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "The Gospel of Mark",
+          "note": "Read Mark in one sitting, marking every place someone asks 'Who is this?' or names who Jesus is. Watch the question gather force from chapter 1 to the centurion's answer in chapter 15."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Centurion at the Cross",
+      "title": "The Executioner Who Confessed",
+      "description": "An unnamed Roman officer commanding the detail that crucified Jesus. He had no part in Israel's hopes and no reason for faith; his work was carrying out Rome's death sentences. Yet watching how Jesus died, he became the first human being in Mark to confess plainly, \"Truly this man was the Son of God\" (Mark 15:39) - the human echo of the Father's voice at the baptism and the transfiguration.",
+      "keyQuote": "Truly this man was the Son of God!",
+      "lessonForUs": "The confession Mark has been waiting fifteen chapters to hear comes from the least qualified mouth in the scene. No pedigree, no merit, no clean record - only eyes that finally saw the crucified Christ for who He is. If a Roman executioner can say it and be honored for it, so can you.",
+      "heading": "The Executioner Who Confessed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2379,
+  "scriptureReference_full": "Mark 1-16 (anchored in Mark 10:45; 15:37-39)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lytron, G3083; apolytrosis) reflects standard lexical sources. The parallel between the torn heavens of Mark 1:10 and the torn temple veil of Mark 15:38 (both schizo) is a widely observed feature of Mark's literary structure."
+  ]
 }

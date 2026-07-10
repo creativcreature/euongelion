@@ -1,38 +1,191 @@
 {
   "day": 200,
-  "title": "Proverbs: Daily Wisdom — Day 4 — Application",
-  "teaser": "Day 200 of Bible 365 — Proverbs 3, 8, 16, 22, 31",
+  "title": "Wisdom you can lean your weight on",
+  "teaser": "Proverbs hands you a way to live: trust before you understand, plan and then let go, build a name nobody can buy. And the Wisdom it keeps personifying turns out to have a face.",
   "framework": "Proverbs 3, 8, 16, 22, 31 — Proverbs: Daily Wisdom",
   "scriptureReference": "Proverbs 3, 8, 16, 22, 31",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 200"
+      "type": "scripture",
+      "reference": "Proverbs 3:5-6",
+      "translation": "BSB",
+      "emphasis": [
+        "Trust in the LORD with all your heart",
+        "lean not on your own understanding",
+        "He will make your paths straight"
+      ],
+      "hebrewOriginal": "בְּטַח אֶל־יְהוָה בְּכָל־לִבֶּךָ וְאֶל־בִּינָתְךָ אַל־תִּשָּׁעֵן",
+      "passage": "Trust in the LORD with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Proverbs 3, 8, 16, 22, 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Proverbs 3, 8, 16, 22, 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּטַח",
+      "transliteration": "batach",
+      "pronunciation": "bah-TAKH",
+      "meaning": "to trust, to lean the whole weight of yourself onto something",
+      "rootMeaning": "Batach does not mean to believe a fact is true. It means to throw your weight onto something and let it hold you - the way you trust a chair before you sit, the way a falling body trusts the ground that catches it. The picture is bodily, not intellectual.",
+      "usageNote": "The verb paired with it in verse 5, tisha'en (\"lean\"), is the same word used when a tired man leans on his staff or a king leans on the arm of a servant (2 Kings 5:18). Proverbs sets the two leanings side by side: lean on the LORD, do not lean on your own understanding. You will lean on something. Wisdom is choosing what holds.",
+      "wordByWord": [
+        {
+          "word": "בְּטַח",
+          "transliteration": "betach",
+          "meaning": "trust, put your full weight on"
+        },
+        {
+          "word": "אֶל־יְהוָה",
+          "transliteration": "el-YHWH",
+          "meaning": "in the LORD - the covenant name"
+        },
+        {
+          "word": "בְּכָל־לִבֶּךָ",
+          "transliteration": "bekhol-libbekha",
+          "meaning": "with all your heart - the whole inner self, not the emotions only"
+        },
+        {
+          "word": "וְאֶל־בִּינָתְךָ",
+          "transliteration": "ve'el-binatekha",
+          "meaning": "and on your own understanding, your discernment"
+        },
+        {
+          "word": "אַל־תִּשָּׁעֵן",
+          "transliteration": "al-tisha'en",
+          "meaning": "do not lean, do not prop yourself up"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בִּינָה / בִּינָתְךָ",
+          "reference": "Binah (understanding) is not a bad thing - Proverbs prizes it everywhere. The warning is narrower: do not lean your full weight on it. Use your mind; do not worship it."
+        }
+      ],
+      "strongsNumber": "H982",
+      "definition": "to trust, be confident, feel secure by leaning upon",
+      "usage": "Batach is the verb of a body in motion committing itself - stepping onto ice you cannot see through, resting back into a hand you cannot watch. Proverbs makes faith something you do with your weight, not only your opinions."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Proverbs: Daily Wisdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wisdom personified (1 Cor 1:30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book That Tells You How Monday Goes",
+      "body": "After two hundred days of narrative - patriarchs, plagues, kings, prophets - Proverbs feels almost startlingly practical. It does not tell a story. It tells you how to live on an ordinary Tuesday: how to handle money, how to speak, how to plan, how to raise a child, what to do with anger, what to chase and what to let go.\n\nBut read the five chapters in front of you in order and a single nerve runs through all of them. \"Trust in the LORD with all your heart, and lean not on your own understanding\" (3:5). \"The plans of the heart belong to man, but the reply of the tongue is from the LORD\" (16:1). \"A man's heart plans his course, but the LORD determines his steps\" (16:9). \"There is a way that seems right to a man, but its end is the way of death\" (16:25). Over and over, Proverbs takes your competence in one hand and God's sovereignty in the other and refuses to let go of either.\n\nThis is the application chapter of the whole Proverbs week, and the application is not a list of tips. It is a posture. You plan hard and then hold it loosely. You work with everything you have and you do not trust the work to save you. You bring your best understanding to the table - and you do not lean your weight on it.",
+      "keyInsight": "Proverbs does not pit your effort against God's rule. It tells you to do both with your whole self: plan as if it depends on you, trust as if it depends on Him, because both are true.",
+      "content": "After two hundred days of narrative - patriarchs, plagues, kings, prophets - Proverbs feels almost startlingly practical. It does not tell a story. It tells you how to live on an ordinary Tuesday: how to handle money, how to speak, how to plan, how to raise a child, what to do with anger, what to chase and what to let go.\n\nBut read the five chapters in front of you in order and a single nerve runs through all of them. \"Trust in the LORD with all your heart, and lean not on your own understanding\" (3:5). \"The plans of the heart belong to man, but the reply of the tongue is from the LORD\" (16:1). \"A man's heart plans his course, but the LORD determines his steps\" (16:9). \"There is a way that seems right to a man, but its end is the way of death\" (16:25). Over and over, Proverbs takes your competence in one hand and God's sovereignty in the other and refuses to let go of either.\n\nThis is the application chapter of the whole Proverbs week, and the application is not a list of tips. It is a posture. You plan hard and then hold it loosely. You work with everything you have and you do not trust the work to save you. You bring your best understanding to the table - and you do not lean your weight on it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Spreadsheet and the Open Hand",
+      "body": "A friend of mine builds his year on a spreadsheet. Every January he maps the months: the projects, the income targets, the family trips, the savings line that has to move. He is good at it. The plan is realistic, prayed-over, and wise.\n\nAnd most years, by March, the spreadsheet is wrong. A client folds. A parent gets sick. An unexpected door opens that none of the cells anticipated. The first year this happened he treated it as failure - as proof he had planned badly. Now he treats it as Proverbs 16:9 doing exactly what it says: \"A man's heart plans his course, but the LORD determines his steps.\"\n\nHe still makes the spreadsheet. That is verse 9a - the plans of the heart belong to man, and laziness is never the lesson Proverbs teaches. But he holds it now the way you hold a kite string in wind: with real grip and real give. \"I plan in pencil,\" he told me, \"because the eraser is God's.\" That sentence is not resignation. It is the most practical thing Proverbs asks of anyone: do the work, and then trust the One who moves the pieces you cannot see.",
+      "connectionToTheme": "Proverbs 16:9 is not a reason to stop planning. It is permission to plan without panic, because the outcome was never resting on the plan.",
+      "content": "A friend of mine builds his year on a spreadsheet. Every January he maps the months: the projects, the income targets, the family trips, the savings line that has to move. He is good at it. The plan is realistic, prayed-over, and wise.\n\nAnd most years, by March, the spreadsheet is wrong. A client folds. A parent gets sick. An unexpected door opens that none of the cells anticipated. The first year this happened he treated it as failure - as proof he had planned badly. Now he treats it as Proverbs 16:9 doing exactly what it says: \"A man's heart plans his course, but the LORD determines his steps.\"\n\nHe still makes the spreadsheet. That is verse 9a - the plans of the heart belong to man, and laziness is never the lesson Proverbs teaches. But he holds it now the way you hold a kite string in wind: with real grip and real give. \"I plan in pencil,\" he told me, \"because the eraser is God's.\" That sentence is not resignation. It is the most practical thing Proverbs asks of anyone: do the work, and then trust the One who moves the pieces you cannot see."
+    },
+    {
+      "type": "insight",
+      "heading": "Wisdom Was a Person Before She Was a Proverb",
+      "body": "Then you reach chapter 8, and Proverbs does something the rest of the book has been quietly preparing you for. Wisdom stops being an idea and starts speaking in the first person. \"Does not wisdom call out, and understanding raise her voice?\" (8:1). And then she tells you where she comes from: \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began\" (8:22-23).\n\nShe was there before there was a world to be wise about. \"I was there when He established the heavens, when He inscribed a circle on the face of the deep\" (8:27). And listen to verse 30 - it is one of the warmest lines in the Old Testament: \"Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.\" Creation was not a grim transaction. It was made by a God who had delight at His side, a craftsman rejoicing.\n\nSo when chapter 3 tells you to trust the LORD with all your heart and verse 35 of chapter 8 says \"whoever finds me finds life,\" these are not two different invitations. The wisdom you are told to lean on is not a technique. It is closer to a Person - present before creation, delighting in the world, holding out life to anyone who comes.",
+      "historicalContext": "Israel's wisdom tradition (Job, Proverbs, Ecclesiastes) personifies Wisdom as a woman who calls in the streets and stands at the city gates (Proverbs 1, 8, 9). Chapter 8 takes this furthest, placing Wisdom with God before creation. Ancient Jewish readers heard in these verses a meditation on how the world was made - not by raw power alone, but by a God whose wisdom was His delight.",
+      "fascinatingFact": "Proverbs 8:22-31 became one of the most discussed passages in the early church. When Christians read the New Testament's claim that Christ is \"the wisdom of God\" (1 Corinthians 1:24) and the one through whom all things were created (Colossians 1:16), they returned again and again to these verses - Wisdom, present before the world, the craftsman at the Father's side, His delight. The personified Wisdom of Proverbs 8 reads like a portrait waiting for its name.",
+      "content": "Then you reach chapter 8, and Proverbs does something the rest of the book has been quietly preparing you for. Wisdom stops being an idea and starts speaking in the first person. \"Does not wisdom call out, and understanding raise her voice?\" (8:1). And then she tells you where she comes from: \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began\" (8:22-23).\n\nShe was there before there was a world to be wise about. \"I was there when He established the heavens, when He inscribed a circle on the face of the deep\" (8:27). And listen to verse 30 - it is one of the warmest lines in the Old Testament: \"Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.\" Creation was not a grim transaction. It was made by a God who had delight at His side, a craftsman rejoicing.\n\nSo when chapter 3 tells you to trust the LORD with all your heart and verse 35 of chapter 8 says \"whoever finds me finds life,\" these are not two different invitations. The wisdom you are told to lean on is not a technique. It is closer to a Person - present before creation, delighting in the world, holding out life to anyone who comes."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Proverbs 8 places Wisdom with God before the world was made - His craftsman, His delight - and promises that whoever finds her finds life (8:35). Wisdom, in Proverbs, is something you can only receive, never manufacture.",
+      "modernApplication": "We are fluent in self-trust. The culture catechizes us to lean entirely on our own understanding: follow your gut, trust the process, you've got this. Proverbs does not call your understanding worthless - it calls it the wrong thing to lean your full weight on. The wisdom that holds is the wisdom you go looking for, ask for, and receive on your knees, not the wisdom you generate by being clever enough.",
+      "connectionPoint": "The thread that begins with personified Wisdom in Proverbs 8 runs the length of Scripture. James tells the church that \"if any of you lacks wisdom, he should ask God, who gives generously to all without finding fault\" (James 1:5). Paul writes that in Christ \"are hidden all the treasures of wisdom and knowledge\" (Colossians 2:3). The Wisdom who called out in the streets of Proverbs became, in the fullness of time, a man teaching in the streets of Galilee.",
+      "newTestamentEcho": "Paul names the connection plainly: Christ \"has become for us wisdom from God: our righteousness, holiness, and redemption\" (1 Corinthians 1:30). The Wisdom of Proverbs 8 - present before creation, the craftsman at God's side, His daily delight - is given a face. \"Whoever finds me finds life,\" Wisdom said (8:35); \"I am the way and the truth and the life,\" said Jesus (John 14:6). To trust the LORD with all your heart and lean not on your own understanding is, in the end, to lean your whole weight on Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you leaning hardest on your own understanding right now - and what would it look like to lean that same weight on God instead?",
+      "additionalQuestions": [
+        "Proverbs says to plan your course and trust God to determine your steps (16:9). Which half do you find harder - the planning or the trusting? Why?",
+        "Proverbs 22:1 says a good name is worth more than great riches. If you are honest, which one have you been building lately?",
+        "Wisdom 'calls out' and 'raises her voice' (8:1). Where have you been refusing to hear something you already know is wise?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I lean on so many things that cannot hold me - my own cleverness, my plans, the name I am trying to build. Today I want to lean on You with all my heart. Take the spreadsheet of my life and hold it in Your hands; let me plan in pencil and trust You with the eraser. Thank You that the wisdom You ask me to seek is not a trick to learn but a Person to know - Christ, in whom all the treasures of wisdom are hidden. Whoever finds Him finds life. Let me be one who finds Him today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one decision you are currently white-knuckling - leaning on your own understanding to figure it out. Make your plan as wisely as you can, then physically open your hands and say verse 6 aloud: \"In all my ways I acknowledge You; make my paths straight.\" Plan fully; hold loosely.",
+      "leavingAtCross": [
+        "The exhausting belief that the outcome rests entirely on how well I plan",
+        "The reflex to lean my whole weight on my own understanding",
+        "The name I keep trying to build for myself instead of receiving from God"
+      ],
+      "receivingFromCross": [
+        "Wisdom as a gift to be asked for, not a performance to be pulled off",
+        "The freedom to plan hard and still sleep, because God determines the steps",
+        "Christ Himself, who became for me wisdom from God - my righteousness, holiness, and redemption"
+      ],
+      "content": "Today, name one decision you are currently white-knuckling - leaning on your own understanding to figure it out. Make your plan as wisely as you can, then physically open your hands and say verse 6 aloud: \"In all my ways I acknowledge You; make my paths straight.\" Plan fully; hold loosely."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Proverbs 16:9 says man plans his course but the LORD determines his steps. How is this different from simply telling people not to plan at all?",
+        "In Proverbs 8, what does Wisdom say about where she was before the world was made - and why did early Christians connect this to Christ?",
+        "The Hebrew word batach (trust) pictures leaning your whole body weight onto something. How does that change what 'trust in the LORD' actually asks of you?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you are leaning on your own understanding more than on God right now.",
+        "Proverbs 22:1 prizes a good name over riches. Ask each other: what are you spending your energy building - a reputation, a bank balance, or a character God would call good?",
+        "Talk about the difference between planning wisely and controlling anxiously. Where is the line for you, and how do you know when you have crossed it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Proverbs 16:9",
+          "text": "A man's heart plans his course, but the LORD determines his steps."
+        },
+        {
+          "reference": "Proverbs 22:1",
+          "text": "A good name is more desirable than great riches; favor is better than silver and gold."
+        },
+        {
+          "reference": "1 Corinthians 1:30",
+          "text": "It is because of Him that you are in Christ Jesus, who has become for us wisdom from God: our righteousness, holiness, and redemption."
+        },
+        {
+          "reference": "Colossians 2:3",
+          "text": "In whom are hidden all the treasures of wisdom and knowledge."
+        },
+        {
+          "reference": "James 1:5",
+          "text": "Now if any of you lacks wisdom, he should ask God, who gives generously to all without finding fault, and it will be given to him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Proverbs 8:22-31",
+          "note": "Read Wisdom's self-description slowly, then read Colossians 1:15-17 and John 1:1-3 beside it. Watch how the portrait of personified Wisdom finds its face."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Lady Wisdom",
+      "title": "The Voice Calling in the Streets",
+      "description": "Throughout Proverbs, wisdom is not pictured as a quality but as a woman who calls aloud at the city gates, sets a table, and invites the simple to come and live (Proverbs 1, 8, 9). In chapter 8 she describes herself as present with God before creation - His craftsman, His daily delight - and promises that whoever finds her finds life (8:35). She is the book's central invitation: wisdom is not earned by the brilliant but received by those who answer her call.",
+      "keyQuote": "For whoever finds me finds life and obtains the favor of the LORD.",
+      "lessonForUs": "Wisdom in Proverbs is never a prize for the clever. She calls in the open street, available to anyone who will stop and listen. The early church heard her voice and recognized it - the Wisdom who called before creation is the Christ who calls still: come, and find life.",
+      "heading": "The Voice Calling in the Streets"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2157,
+  "scriptureReference_full": "Proverbs 3, 8, 16, 22, 31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (batach H982; tisha'en / sha'an) reflects standard lexical sources.",
+    "The connection of Proverbs 8:22-31 to Christ as the wisdom of God reflects the historic Christian reading reflected in 1 Corinthians 1:24, 30; Colossians 1:15-17; 2:3; and John 1:1-3."
+  ]
 }

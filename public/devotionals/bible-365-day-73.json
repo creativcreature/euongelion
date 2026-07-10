@@ -1,38 +1,184 @@
 {
   "day": 73,
   "title": "Three hundred",
-  "teaser": "Day 73 of Bible 365 — Judges 7",
+  "teaser": "Day 73 of Bible 365 — Judges 7. God thins an army to three hundred and hides the fire in breakable clay, so the victory can only be read one way.",
   "framework": "Judges 7 — God wins by reduction",
   "scriptureReference": "Judges 7",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 73"
+      "type": "scripture",
+      "reference": "Judges 7:2, 7, 16, 20-21",
+      "translation": "BSB",
+      "emphasis": [
+        "You have too many people",
+        "lest Israel glorify themselves over Me",
+        "a torch",
+        "they shattered their jars"
+      ],
+      "hebrewOriginal": "פֶּן־יִתְפָּאֵר עָלַי יִשְׂרָאֵל לֵאמֹר יָדִי הוֹשִׁיעָה לִּי",
+      "passage": "Then the LORD said to Gideon, \"You have too many people for Me to deliver Midian into their hands, lest Israel glorify themselves over Me, saying, 'My own hand has saved me.'\" ... Then the LORD said to Gideon, \"With the three hundred men who lapped the water I will save you and deliver the Midianites into your hand. But all the others are to go home.\" ... And he divided the three hundred men into three companies and gave each man a ram's horn in one hand and a large jar in the other, containing a torch. ... The three companies blew their horns and shattered their jars. Holding the torches in their left hands and the horns in their right hands, they shouted, \"A sword for the LORD and for Gideon!\" Each Israelite took his position around the camp, and the entire Midianite army fled, crying out as they ran."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Judges 7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Judges 7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֲרֹד",
+      "transliteration": "Harod",
+      "pronunciation": "khah-ROHD",
+      "meaning": "trembling, the spring of trembling",
+      "rootMeaning": "Harod comes from the root charad, to tremble, shudder, be terrified. The army camps at the spring of Harod - the spring of trembling - and that is exactly where God's first cut is made: the fearful and trembling are sent home.",
+      "usageNote": "The same root charad describes Isaac trembling violently when he realizes he has blessed Jacob (Genesis 27:33), and the people of Israel trembling at the foot of Sinai (Exodus 19:16). At Harod the place name and the test become one thing: the spring of trembling sifts out those who tremble.",
+      "wordByWord": [
+        {
+          "word": "פֶּן",
+          "transliteration": "pen",
+          "meaning": "lest, so that not - God's stated reason for the reduction"
+        },
+        {
+          "word": "יִתְפָּאֵר",
+          "transliteration": "yitpa'er",
+          "meaning": "boast, glorify oneself, claim the glory"
+        },
+        {
+          "word": "עָלַי",
+          "transliteration": "alai",
+          "meaning": "over Me, against Me - the glory would be stolen from God"
+        },
+        {
+          "word": "יָדִי הוֹשִׁיעָה לִּי",
+          "transliteration": "yadi hoshia li",
+          "meaning": "my own hand has saved me - the lie God refuses to let Israel tell"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הוֹשִׁיעָה / יֵשׁוּעַ",
+          "reference": "Hoshia, has saved, shares the root yasha with the name Yeshua (Jesus) - the LORD saves. The whole battle is fought over whose hand does the saving."
+        }
+      ],
+      "strongsNumber": "H2767",
+      "definition": "Harod; a spring near the hill of Moreh, name derived from charad, to tremble",
+      "usage": "Gideon's three hundred are not the brave who stayed; they are simply what is left after God removes both the fearful and the careless. The qualification is not their strength. It is that they remain after God has done the subtracting."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God wins by reduction. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ glorified through weakness (2 Cor 12:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Too Many to Win",
+      "body": "Gideon has finally raised an army. Thirty-two thousand men are camped beside the spring of Harod, the smoke of the Midianite camp visible to the north in the valley. After a lifetime of being overrun every harvest, Israel has numbers. And then God says the strangest sentence a commander can hear on the eve of battle: \"You have too many people.\"\n\nNot too few. Too many. And God says why, plainly, so no one can miss it: \"lest Israel glorify themselves over Me, saying, 'My own hand has saved me.'\" The danger here is not military. The danger is theological. A large army can win and then misremember the win. They can stand over the bodies of Midian and tell themselves a lie - that they did this, that the rescue came from their own strength. God will not deliver a victory that can be misread that way.\n\nSo the thinning begins. First the fearful are sent home: twenty-two thousand turn back, and ten thousand remain. Then God says it is still too many, and brings them down to the water for a second sifting - those who lap the water like a dog kept apart from those who kneel to drink. The number left is three hundred. From thirty-two thousand to three hundred: God has subtracted ninety-nine out of every hundred men, and only then does He say, \"With the three hundred men who lapped the water I will save you.\"",
+      "keyInsight": "God's first concern before the battle is not whether Israel can win, but whether they will be able to tell the truth about who won. He reduces the army to make a lie impossible.",
+      "content": "Gideon has finally raised an army. Thirty-two thousand men are camped beside the spring of Harod, the smoke of the Midianite camp visible to the north in the valley. After a lifetime of being overrun every harvest, Israel has numbers. And then God says the strangest sentence a commander can hear on the eve of battle: \"You have too many people.\"\n\nNot too few. Too many. And God says why, plainly, so no one can miss it: \"lest Israel glorify themselves over Me, saying, 'My own hand has saved me.'\" The danger here is not military. The danger is theological. A large army can win and then misremember the win. They can stand over the bodies of Midian and tell themselves a lie - that they did this, that the rescue came from their own strength. God will not deliver a victory that can be misread that way.\n\nSo the thinning begins. First the fearful are sent home: twenty-two thousand turn back, and ten thousand remain. Then God says it is still too many, and brings them down to the water for a second sifting - those who lap the water like a dog kept apart from those who kneel to drink. The number left is three hundred. From thirty-two thousand to three hundred: God has subtracted ninety-nine out of every hundred men, and only then does He say, \"With the three hundred men who lapped the water I will save you.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Surgeon Who Counted Down",
+      "body": "A friend who trained as a surgeon told me about the moment her hands stopped shaking. Early on, she said, she walked into every operation carrying a long mental list of everything she knew - every technique, every contingency, every backup plan. The list was supposed to make her feel ready. It made her freeze.\n\nWhat finally steadied her was not adding more. It was a senior surgeon who made her name out loud the three things that actually mattered for the cut in front of her, and let the rest go. Three. Not thirty. The reduction did not make her weaker; it made her able to move. She said the strange thing was how much of what she had been clutching turned out to be noise dressed up as preparation.\n\nI think of her when I read about Gideon at the water. We assume that strength is accumulation - more people, more resources, more options, more margin. But there is a kind of largeness that only hides us from the truth and freezes us in place. Sometimes the most honest thing God can do for us is take ninety-nine percent of it away, until what is left is small enough that we can finally see who is actually holding the knife.",
+      "connectionToTheme": "Reduction is not punishment; it is clarity. Stripped down to three hundred, Israel can no longer hide the truth of who wins behind the size of the crowd.",
+      "content": "A friend who trained as a surgeon told me about the moment her hands stopped shaking. Early on, she said, she walked into every operation carrying a long mental list of everything she knew - every technique, every contingency, every backup plan. The list was supposed to make her feel ready. It made her freeze.\n\nWhat finally steadied her was not adding more. It was a senior surgeon who made her name out loud the three things that actually mattered for the cut in front of her, and let the rest go. Three. Not thirty. The reduction did not make her weaker; it made her able to move. She said the strange thing was how much of what she had been clutching turned out to be noise dressed up as preparation.\n\nI think of her when I read about Gideon at the water. We assume that strength is accumulation - more people, more resources, more options, more margin. But there is a kind of largeness that only hides us from the truth and freezes us in place. Sometimes the most honest thing God can do for us is take ninety-nine percent of it away, until what is left is small enough that we can finally see who is actually holding the knife."
+    },
+    {
+      "type": "insight",
+      "heading": "The Light Was Inside the Jar",
+      "body": "Watch what God arms the three hundred with. Not swords drawn for the charge - those come later, and barely. Each man gets three things: a ram's horn in one hand, and in the other a large clay jar with a torch burning inside it. The fire is real, but it is hidden, sealed inside a vessel of baked clay that any blow could shatter.\n\nThen comes the moment the whole night turns on. At Gideon's signal the three hundred do not attack. They break their own jars. \"The three companies blew their horns and shattered their jars. Holding the torches in their left hands and the horns in their right hands, they shouted, 'A sword for the LORD and for Gideon!'\" In the dark, in a single instant, three hundred points of fire blaze out of the broken clay all around the camp, and Midian panics and turns its swords on itself.\n\nThe victory is won at the moment the vessels are broken. The light was always inside; it could only be seen once the clay was destroyed. A loaf of stale barley bread tumbling into the camp, a torch hidden in a clay pot, three hundred men where there should have been thirty thousand - God has assembled the most unimpressive arsenal in Scripture, precisely so that no one watching could possibly say, \"My own hand has saved me.\"",
+      "historicalContext": "Midian and the eastern peoples had been raiding Israel's harvests for seven years (Judges 6:1-6), camping in the land like locusts and leaving no sustenance. The valley between the spring of Harod and the hill of Moreh would have been packed with their tents and camels. Three hundred men encircling that camp at night was, by every ordinary measure, absurd.",
+      "fascinatingFact": "The men attack with their hands full of horn and torch - no hand free for a sword in the first moment. The shout \"A sword for the LORD and for Gideon\" is raised by men who, at that instant, are holding no swords at all. The rout in verse 22 is Midian's own blades turned against Midian: the LORD set every man's sword against his neighbor. Israel's three hundred mostly stood and held their light.",
+      "content": "Watch what God arms the three hundred with. Not swords drawn for the charge - those come later, and barely. Each man gets three things: a ram's horn in one hand, and in the other a large clay jar with a torch burning inside it. The fire is real, but it is hidden, sealed inside a vessel of baked clay that any blow could shatter.\n\nThen comes the moment the whole night turns on. At Gideon's signal the three hundred do not attack. They break their own jars. \"The three companies blew their horns and shattered their jars. Holding the torches in their left hands and the horns in their right hands, they shouted, 'A sword for the LORD and for Gideon!'\" In the dark, in a single instant, three hundred points of fire blaze out of the broken clay all around the camp, and Midian panics and turns its swords on itself.\n\nThe victory is won at the moment the vessels are broken. The light was always inside; it could only be seen once the clay was destroyed. A loaf of stale barley bread tumbling into the camp, a torch hidden in a clay pot, three hundred men where there should have been thirty thousand - God has assembled the most unimpressive arsenal in Scripture, precisely so that no one watching could possibly say, \"My own hand has saved me.\""
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God reduces Gideon's army from thirty-two thousand to three hundred and arms them with horns and torches hidden in clay jars - so that when Midian falls, the only possible explanation is that the LORD did it.",
+      "modernApplication": "We build the army first and ask God to bless it: more savings, more credentials, more contacts, more contingency - then a margin so wide that if things work out, we can quietly credit ourselves. God's pattern in Gideon is the reverse. He often thins what we are leaning on, not to abandon us, but so that when deliverance comes we cannot mistake its source. The empty hand is not a problem He has to solve around. It is frequently the condition He is after.",
+      "connectionPoint": "Paul, who knew his own weakness intimately, drew the same line straight back through Gideon's clay jars: \"Now we have this treasure in jars of clay to show that this surpassingly great power is from God and not from us\" (2 Corinthians 4:7). The vessel is meant to be unimpressive. The breaking is not the failure of the plan; the breaking is how the light gets out.",
+      "newTestamentEcho": "What Gideon's night enacted, the cross fulfilled. \"God chose the weak things of the world to shame the strong... so that no one may boast in His presence\" (1 Corinthians 1:27, 29). At Calvary the vessel was broken in earnest - and the broken One is exactly where the power of God to save was finally and fully revealed. \"My power is perfected in weakness,\" Christ said (2 Corinthians 12:9). Three hundred at Harod was a rehearsal; the empty tomb was the morning the lie that we save ourselves died for good."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you quietly building an army so large that, if it works out, you'll be able to say 'my own hand saved me'?",
+      "additionalQuestions": [
+        "What are you clutching as 'preparation' that might actually be noise keeping you from moving?",
+        "Is there something God seems to be thinning right now - and can you imagine it as clarity rather than abandonment?",
+        "What light might already be inside you that can only be seen once something gets broken open?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I keep counting my own thirty-two thousand - the savings, the backup plans, the wide margin that lets me believe I'll have done it myself. Sift me down to three hundred if You must. Take what I am leaning on that isn't You. Let me carry the light without needing to be the light, and when the vessel breaks, let what shines out be unmistakably Yours. Not my hand, but Yours, saving me. A sword for the LORD. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been treating as your true source of security - a number in an account, a backup plan, a person, an achievement. Hold it open before God for five minutes and say out loud: 'This is not the hand that saves me.' Ask Him to be your three hundred.",
+      "leavingAtCross": [
+        "The lie 'my own hand has saved me' - the credit I quietly keep for myself",
+        "The belief that more is always safer, that the bigger army is the faithful one",
+        "The fear that being reduced means being abandoned"
+      ],
+      "receivingFromCross": [
+        "The freedom of being small in the hands of a God who is not",
+        "Permission to carry light I did not generate and cannot claim",
+        "The promise that when the vessel breaks, the glory that comes out is God's and that is good news, not loss"
+      ],
+      "content": "Today, name one thing you have been treating as your true source of security - a number in an account, a backup plan, a person, an achievement. Hold it open before God for five minutes and say out loud: 'This is not the hand that saves me.' Ask Him to be your three hundred."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why did God say Israel had 'too many' men - what was the danger He named in verse 2?",
+        "What were the two siftings that reduced the army from thirty-two thousand to three hundred, and what did each one remove?",
+        "How does a torch hidden in a clay jar, revealed only when the jar is broken, point forward to the way God works through weakness - and ultimately through the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the 'army' you've been building so you can feel secure - and talk about whether any of it has quietly become the thing you trust instead of God.",
+        "Where is God thinning something in your life right now? Talk through whether it feels like punishment or like clarity, and why.",
+        "Ask each other: if it all worked out tomorrow, would you be able to honestly say it was God's hand and not your own?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Judges 7:13-14",
+          "text": "And as Gideon arrived, a man was telling his friend about a dream. \"Behold, I had a dream,\" he said, \"and I saw a loaf of barley bread come tumbling into the Midianite camp. It struck the tent so hard that the tent overturned and collapsed.\" His friend replied: \"This is nothing less than the sword of Gideon son of Joash, the Israelite. God has delivered Midian and the whole camp into his hand.\""
+        },
+        {
+          "reference": "1 Corinthians 1:27, 29",
+          "text": "But God chose the foolish things of the world to shame the wise; God chose the weak things of the world to shame the strong... so that no one may boast in His presence."
+        },
+        {
+          "reference": "2 Corinthians 4:7",
+          "text": "Now we have this treasure in jars of clay to show that this surpassingly great power is from God and not from us."
+        },
+        {
+          "reference": "2 Corinthians 12:9",
+          "text": "But He said to me, \"My grace is sufficient for you, for My power is perfected in weakness.\" Therefore I will boast all the more gladly in my weaknesses, so that the power of Christ may rest on me."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Judges 6-8",
+          "note": "Read the whole Gideon cycle: the reluctant call and the fleece (ch. 6), the reduction and the rout (ch. 7), and the troubling aftermath (ch. 8), where the man God used so visibly later makes an ephod that Israel turns into a snare. Even the deliverer is a clay jar."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Gideon",
+      "title": "The Least in His Father's House",
+      "era": "Period of the Judges, roughly 12th century BC",
+      "key_trait": "A fearful, hesitant man whom God called a mighty warrior, then made strong by making him small",
+      "description": "When the angel of the LORD first called him, Gideon was threshing wheat in a winepress to hide it from Midian, and he protested that his clan was the weakest in Manasseh and he the least in his father's house (Judges 6:15). He asked for sign after sign. This is the man God chose - and then God removed ninety-nine percent of the army He gave him, so that the deliverance could never be credited to Gideon's strength. He bows in worship at the enemy's own dream before he ever lifts a horn.",
+      "keyQuote": "Get up, for the LORD has delivered the camp of Midian into your hand.",
+      "lessonForUs": "God did not wait for Gideon to become impressive. He worked through a frightened man and a shrinking army on purpose, because the point was never Gideon's adequacy - it was God's sufficiency. The same God still calls the least and saves through the small.",
+      "heading": "The Least in His Father's House"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1948,
+  "scriptureReference_full": "Judges 7:2, 7, 16, 20-21",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew place-name study (Harod / charad, H2767) and the yasha root linking hoshia to the name Yeshua reflect standard lexical sources."
+  ]
 }

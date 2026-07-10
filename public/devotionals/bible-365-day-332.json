@@ -1,38 +1,183 @@
 {
   "day": 332,
-  "title": "Acts: Pentecost + Spread — Day 3 — Pivot",
-  "teaser": "Day 332 of Bible 365 — Acts 1-10",
+  "title": "The Fire That Will Not Stay in One Room",
+  "teaser": "At Pentecost the ascended Christ pours out His own Spirit — and the gospel that began in one upper room cannot be kept in any room at all.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 332"
+      "type": "scripture",
+      "reference": "Acts 2:1-4, 32-33",
+      "translation": "BSB",
+      "emphasis": [
+        "a mighty rushing wind",
+        "tongues like flames of fire",
+        "He has poured out what you now see and hear"
+      ],
+      "passage": "When the day of Pentecost came, they were all together in one place. Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting. They saw tongues like flames of fire that separated and came to rest on each of them. And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them. ... God has raised this Jesus to life, to which we are all witnesses. Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear.",
+      "display": "block"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "μάρτυς",
+      "transliteration": "martys",
+      "pronunciation": "MAR-toos",
+      "meaning": "witness; one who testifies to what they have seen",
+      "rootMeaning": "A martys is someone who stands up and says what they personally saw and heard - the word belongs first to a courtroom, not a battlefield. It names a person giving evidence, telling the truth about an event they can vouch for with their own eyes.",
+      "usageNote": "It is the word Jesus uses in Acts 1:8 - \"you will be My witnesses\" - and the word Peter uses again and again in Acts: \"to which we are all witnesses\" (2:32), \"we are witnesses of all that He did\" (10:39). The whole book of Acts runs on the testimony of people who were in the room when Jesus rose. Because so many of these witnesses later died for refusing to retract their testimony, the Greek word martys eventually gave us the English word \"martyr.\"",
+      "wordByWord": [
+        {
+          "word": "ἔσεσθέ",
+          "transliteration": "esesthe",
+          "meaning": "you will be - a promise about identity, not a command to try harder"
+        },
+        {
+          "word": "μου",
+          "transliteration": "mou",
+          "meaning": "My - witnesses belonging to Jesus, testifying about Him"
+        },
+        {
+          "word": "μάρτυρες",
+          "transliteration": "martyres",
+          "meaning": "witnesses - those who say what they saw with their own eyes"
+        },
+        {
+          "word": "ἕως ἐσχάτου τῆς γῆς",
+          "transliteration": "heos eschatou tes ges",
+          "meaning": "to the ends of the earth - the outermost edge, where the witnesses had never been"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δύναμις",
+          "reference": "Dynamis (power) in Acts 1:8 - \"you will receive power.\" It is the root behind \"dynamite\" and \"dynamic.\" The witnesses are not told to be impressive; they are told to wait for power that comes from outside them."
+        }
+      ],
+      "strongsNumber": "G3144",
+      "definition": "a witness; one who gives sworn testimony to what they have personally seen or heard",
+      "usage": "In Acts the witnesses never testify to a theory. They testify to a Person they watched die and then ate breakfast with after He rose."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Center of the Whole Year Is a Doorway Flung Open",
+      "body": "If you read Acts 1 through 10 in one sitting, you feel a building pressure, like a hand on the back of the church pushing it out the door.\n\nIt begins quietly. Jesus, risen, spends forty days with His followers, then is taken up while they watch (Acts 1:9). Two men in white ask the obvious question: why are you standing here staring at the sky? Before He goes, He gives them one instruction and one promise. The instruction: don't leave Jerusalem yet. The promise: \"you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" (Acts 1:8). That single sentence is the table of contents for the rest of the book. Jerusalem, then Judea and Samaria, then the ends of the earth - the gospel moving outward in widening rings.\n\nThen comes Pentecost. A hundred and twenty ordinary people are gathered in one room when the sound of a rushing wind fills the house and what looks like fire settles on each of them. They spill into the street speaking languages they never learned, and pilgrims from across the known world each hear the wonders of God in their own native tongue. Peter - who weeks earlier had denied even knowing Jesus to a servant girl - stands up and preaches to thousands. Three thousand are baptized that day. The room could not hold what God poured into it.\n\nFrom there the rings widen exactly as Jesus said. The lame are healed, the apostles are jailed and keep preaching, Stephen is killed and the scattering only spreads the fire. Philip carries it to Samaria and to an Ethiopian official on a desert road. Saul, the church's fiercest enemy, is knocked flat and made its boldest voice. And by chapter 10, the gospel reaches a place no one expected it to go: the house of a Roman soldier.",
+      "keyInsight": "Acts 1:8 is not a strategy the church invented. It is a promise the church received - and the whole book is simply that promise keeping itself, ring by widening ring.",
+      "content": "If you read Acts 1 through 10 in one sitting, you feel a building pressure, like a hand on the back of the church pushing it out the door.\n\nIt begins quietly. Jesus, risen, spends forty days with His followers, then is taken up while they watch (Acts 1:9). Two men in white ask the obvious question: why are you standing here staring at the sky? Before He goes, He gives them one instruction and one promise. The instruction: don't leave Jerusalem yet. The promise: \"you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" (Acts 1:8). That single sentence is the table of contents for the rest of the book. Jerusalem, then Judea and Samaria, then the ends of the earth - the gospel moving outward in widening rings.\n\nThen comes Pentecost. A hundred and twenty ordinary people are gathered in one room when the sound of a rushing wind fills the house and what looks like fire settles on each of them. They spill into the street speaking languages they never learned, and pilgrims from across the known world each hear the wonders of God in their own native tongue. Peter - who weeks earlier had denied even knowing Jesus to a servant girl - stands up and preaches to thousands. Three thousand are baptized that day. The room could not hold what God poured into it.\n\nFrom there the rings widen exactly as Jesus said. The lame are healed, the apostles are jailed and keep preaching, Stephen is killed and the scattering only spreads the fire. Philip carries it to Samaria and to an Ethiopian official on a desert road. Saul, the church's fiercest enemy, is knocked flat and made its boldest voice. And by chapter 10, the gospel reaches a place no one expected it to go: the house of a Roman soldier."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Soldier and the Fisherman",
+      "body": "Cornelius was a centurion, an officer in the Italian Regiment stationed at Caesarea. He commanded a hundred men and answered to Rome. He was also, Luke tells us, a man who prayed to the God of Israel and gave generously to the poor - a Gentile standing at the edge of a faith that had a fence around it. He was close, but he was outside.\n\nPeter was inside, and comfortable there. A Jewish fisherman, raised to keep separate from Gentile houses, certain about who was in and who was out. It took a vision of a sheet full of unclean animals, repeated three times, to pry him loose. While he was still turning it over in his mind, three men from Cornelius arrived at his door.\n\nSo the soldier sends for the fisherman, and the fisherman comes - which by itself broke every rule Peter had been taught. He walks into a Roman house full of Gentiles and says the line that changes everything: \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right\" (Acts 10:34-35). And as Peter is still preaching, before he can even finish, the Spirit falls on the whole roomful of Gentiles, exactly as it fell on the Jews at Pentecost. The believers who came with Peter are simply astounded.",
+      "connectionToTheme": "The fire that fell in one Jewish upper room in Acts 2 falls again in a Roman officer's living room in Acts 10 - proof that the gospel was never meant to stay among one people, and that no fence we build can stand where the Spirit decides to fall.",
+      "content": "Cornelius was a centurion, an officer in the Italian Regiment stationed at Caesarea. He commanded a hundred men and answered to Rome. He was also, Luke tells us, a man who prayed to the God of Israel and gave generously to the poor - a Gentile standing at the edge of a faith that had a fence around it. He was close, but he was outside.\n\nPeter was inside, and comfortable there. A Jewish fisherman, raised to keep separate from Gentile houses, certain about who was in and who was out. It took a vision of a sheet full of unclean animals, repeated three times, to pry him loose. While he was still turning it over in his mind, three men from Cornelius arrived at his door.\n\nSo the soldier sends for the fisherman, and the fisherman comes - which by itself broke every rule Peter had been taught. He walks into a Roman house full of Gentiles and says the line that changes everything: \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right\" (Acts 10:34-35). And as Peter is still preaching, before he can even finish, the Spirit falls on the whole roomful of Gentiles, exactly as it fell on the Jews at Pentecost. The believers who came with Peter are simply astounded."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Leave; He Multiplied His Presence",
+      "body": "The disciples watched Jesus go up into a cloud, and you can hardly blame them for standing there staring. The One who had walked beside them, eaten with them, raised the dead in front of them - gone, behind a cloud. It must have felt like the worst kind of absence.\n\nBut read Peter's sermon ten days later and you see what the ascension actually accomplished. \"Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear\" (Acts 2:33). The wind, the fire, the languages - this is Jesus. Not a substitute for Him. Not a consolation prize for His absence. This is the ascended Christ doing from the throne what He could not do while He was bound to one body in one Galilean village: be fully present to every person in every place at once.\n\nWhile He walked the earth, only the people in His town could hear Him. Now, by His Spirit, a soldier in Caesarea and a fisherman in Joppa and a pilgrim from Egypt and a reader in your room can all be reached at the same moment. The cloud did not take Jesus away from the world. It enthroned Him over it, so that He could fill it.",
+      "historicalContext": "Pentecost was already an ancient Jewish festival, the Feast of Weeks, celebrated fifty days after Passover. It marked the wheat harvest and, in Jewish tradition, the giving of the Law at Sinai - where fire and a loud sound also came down on a mountain. Luke is deliberate: at the first Pentecost after the resurrection, God writes His Spirit not on tablets of stone but on human hearts, and the harvest gathered in is people from every nation.",
+      "fascinatingFact": "Peter quotes the prophet Joel to explain the day: \"In the last days, God says, I will pour out My Spirit on all people\" (Acts 2:17). The word \"all\" is the seed of everything that follows. By the time you reach the Roman soldier's house in chapter 10, \"all people\" has stopped being a phrase in a sermon and become a roomful of Gentiles filled with the same Spirit.",
+      "content": "The disciples watched Jesus go up into a cloud, and you can hardly blame them for standing there staring. The One who had walked beside them, eaten with them, raised the dead in front of them - gone, behind a cloud. It must have felt like the worst kind of absence.\n\nBut read Peter's sermon ten days later and you see what the ascension actually accomplished. \"Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear\" (Acts 2:33). The wind, the fire, the languages - this is Jesus. Not a substitute for Him. Not a consolation prize for His absence. This is the ascended Christ doing from the throne what He could not do while He was bound to one body in one Galilean village: be fully present to every person in every place at once.\n\nWhile He walked the earth, only the people in His town could hear Him. Now, by His Spirit, a soldier in Caesarea and a fisherman in Joppa and a pilgrim from Egypt and a reader in your room can all be reached at the same moment. The cloud did not take Jesus away from the world. It enthroned Him over it, so that He could fill it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The risen and ascended Christ poured out the Holy Spirit at Pentecost, and that Spirit drove His witnesses outward - Jerusalem, Samaria, and finally into a Gentile household - in fulfillment of His own promise in Acts 1:8.",
+      "modernApplication": "We still tend to believe God moves where we expect Him and stops at the fences we are comfortable with. Acts dismantles that. The Spirit fell on the people Peter had been taught to avoid, before Peter even finished his sentence. The God you meet here is harder to manage and far kinder than the one we domesticate.",
+      "connectionPoint": "This is the hinge of the whole canon. From Genesis, God promised Abraham that all the families of the earth would be blessed through him (Genesis 12:3). For two thousand years that promise narrowed to one family, one nation, one fenced people. At Pentecost the fence comes down and the blessing begins to flow out to every nation - exactly as promised. Acts 1-10 is the moment the river that had been gathering since Abraham finally breaks its banks.",
+      "newTestamentEcho": "What Jesus had told Nicodemus - that the Spirit \"blows wherever it wishes\" (John 3:8) - the church now watches happen. And what He promised the night before He died, that He would send another Helper who would be with them forever (John 14:16), arrives in wind and fire. The gift He spoke of in the upper room is poured out from the throne.",
+      "question": "Where have you quietly assumed the Spirit would not, or should not, go - and what if He is already there?"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who is the person, or the kind of person, you have unconsciously placed outside the reach of God's mercy - and what would change if you believed the Spirit was already at work in them?",
+      "additionalQuestions": [
+        "Jesus told the disciples to wait for power before they went out. Where in your life are you trying to do God's work on your own strength instead of waiting to receive His?",
+        "Peter had to be told three times before he would cross the threshold into a Gentile home. What threshold is God asking you to cross that your upbringing or comfort tells you not to?",
+        "If the ascension means Christ is not absent but present everywhere by His Spirit, where do you most need to remember that He is already in the room with you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "open-handed",
+      "prayerText": "Lord Jesus, exalted to the Father's right hand, You did not leave us. You poured out Your Spirit, and You pour Him out still. Forgive me for the fences I keep building around Your mercy, deciding in advance who is in and who is out. Make me a witness - not to a theory, but to what I have seen of You. Give me power I do not have on my own, and send me where You are already at work, even into the rooms I would never have chosen to enter. Fall on me as You fell on them. Amen.",
+      "scriptureEcho": "Acts 2:33",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one person or group you have written off as beyond reach - too far gone, too different, too closed. This week, do one concrete thing toward them as if the Spirit were already there ahead of you: a prayer by name, a message, a meal, a door opened. Cross one threshold you have been taught to keep shut.",
+      "leavingAtCross": [
+        "The fence I keep around God's mercy, deciding who deserves to be inside",
+        "The belief that I must generate the power and the courage myself",
+        "The comfortable certainty about who is in and who is out"
+      ],
+      "receivingFromCross": [
+        "The promise that the ascended Christ is present everywhere by His Spirit, including here",
+        "Power that comes from outside me, given to those who wait for it",
+        "A place in the widening rings - a small part in a story that runs all the way to the ends of the earth"
+      ],
+      "content": "Name one person or group you have written off as beyond reach - too far gone, too different, too closed. This week, do one concrete thing toward them as if the Spirit were already there ahead of you: a prayer by name, a message, a meal, a door opened. Cross one threshold you have been taught to keep shut."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the relationship between the promise of Acts 1:8 and the rest of the book - how does \"Jerusalem, Judea and Samaria, and the ends of the earth\" map onto what actually happens through chapter 10?",
+        "According to Peter in Acts 2:33, who poured out the Holy Spirit at Pentecost, and what does that tell you about what the ascension accomplished?",
+        "Why was it such a shock that the Spirit fell on Cornelius and his household, and what did it settle once and for all about who the gospel is for?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'fence' you have caught yourself building - one kind of person you find it hard to believe God is pursuing.",
+        "Talk about the difference between working for God in your own strength and waiting to receive His power. Which is your default, and why?",
+        "Ask each other: who is the Cornelius in your life right now - the person already on the edge of faith that God may be sending you across a threshold to reach?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
+        },
+        {
+          "reference": "Acts 2:17",
+          "text": "In the last days, God says, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams."
+        },
+        {
+          "reference": "Acts 2:38-39",
+          "text": "Peter replied, \"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit. This promise belongs to you and your children and to all who are far off—to all whom the Lord our God will call to Himself.\""
+        },
+        {
+          "reference": "Acts 10:44-45",
+          "text": "While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message. All the circumcised believers who had accompanied Peter were astounded that the gift of the Holy Spirit had been poured out even on the Gentiles."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 1-10",
+          "note": "Read the ten chapters in one sitting and trace the widening rings of Acts 1:8 - mark every new place and new kind of person the gospel reaches, from the upper room to Cornelius' house."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Peter",
+      "title": "The Fisherman Who Opened the Door",
+      "description": "Simon Peter, a Galilean fisherman, was the disciple who walked on water and then sank, who swore loyalty and then denied Jesus three times before a rooster crowed. In Acts he is transformed: the same man who feared a servant girl now preaches to thousands at Pentecost and stands trial before the authorities without flinching. It is Peter whom God sends, against everything he was raised to believe, to be the first to carry the gospel into a Gentile home.",
+      "keyQuote": "I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right.",
+      "lessonForUs": "Peter's courage was not native to him; it was poured out on him. The difference between the man who denied Jesus and the man who opened the door for the nations is Pentecost. What God did in Peter, He offers to do in anyone who will wait to receive His Spirit rather than rely on their own.",
+      "heading": "The Fisherman Who Opened the Door"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2500,
+  "scriptureReference_full": "Acts 1-10 (Acts 1:8; 2:1-4, 17, 32-33, 38-39; 10:34-47)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (martys, G3144; dynamis) reflects standard lexical sources. The festival background of Pentecost (Feast of Weeks / Shavuot, fiftieth day after Passover, traditionally associated with the giving of the Law at Sinai) reflects standard Jewish and historical sources."
+  ]
 }

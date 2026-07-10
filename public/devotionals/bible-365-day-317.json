@@ -6,33 +6,185 @@
   "scriptureReference": "John 8-14",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 317"
+      "type": "scripture",
+      "reference": "John 8:12, 58",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the light of the world",
+        "before Abraham was born, I am",
+        "they picked up stones"
+      ],
+      "greekOriginal": "πρὶν Ἀβραὰμ γενέσθαι ἐγὼ εἰμί",
+      "passage": "Once again, Jesus spoke to the people and said, “I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.” ... “Truly, truly, I tell you,” Jesus declared, “before Abraham was born, I am!” At this, they picked up stones to throw at Him. But Jesus was hidden and went out of the temple area."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 8-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 8-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγὼ εἰμί",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am; I myself am",
+      "rootMeaning": "Egō is the emphatic Greek pronoun “I” - it is already built into the verb, so adding it puts the speaker forward on purpose. Eimi is the plain present of “to be.” Said together this way, with the pronoun stressed and nothing following it, the words stop sounding like ordinary speech and start sounding like a name.",
+      "usageNote": "John hangs the whole middle of his Gospel on this phrase. Sometimes Jesus completes it - I am the light of the world (8:12), the good shepherd (10:11), the resurrection and the life (11:25), the way and the truth and the life (14:6). But in 8:58 He lets it stand alone, with no predicate at all: before Abraham was born, I am. That bare form is what the Greek Old Testament puts in God's mouth at the burning bush.",
+      "wordByWord": [
+        {
+          "word": "πρὶν",
+          "transliteration": "prin",
+          "meaning": "before, prior to"
+        },
+        {
+          "word": "Ἀβραὰμ",
+          "transliteration": "Abraam",
+          "meaning": "Abraham - the father of the nation, dead two thousand years"
+        },
+        {
+          "word": "γενέσθαι",
+          "transliteration": "genesthai",
+          "meaning": "to come into being, to be born - a verb for things that begin"
+        },
+        {
+          "word": "ἐγὼ",
+          "transliteration": "egō",
+          "meaning": "I - the emphatic pronoun, deliberately spoken"
+        },
+        {
+          "word": "εἰμί",
+          "transliteration": "eimi",
+          "meaning": "I am - present tense, not “I was”"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה / ἐγὼ εἰμι ὁ ὤν",
+          "reference": "At the burning bush God names Himself to Moses: “I AM WHO I AM” (Exodus 3:14). The Greek translation Jesus' hearers read renders it ego eimi ho on - “I am the One who is.” When Jesus drops the predicate and simply says I am, He is reaching for that bush, that voice, that name."
+        }
+      ],
+      "strongsNumber": "G1473 / G1510",
+      "definition": "the emphatic first-person pronoun joined to the present indicative of “to be”; in John, a claim to the divine name",
+      "usage": "The crowd does not misunderstand Him and walk away confused. They reach for stones. In their world only one sentence earns stoning on the spot - a man taking the name of God onto his own lips. Their violence is the surest commentary on what they heard Him claim."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: True Vine + Way + Truth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our way to the Father (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Seven Times He Says It, and Each Time the Room Tightens",
+      "body": "If you read John 8 through 14 in one sitting, you start to hear a refrain. Jesus keeps saying two small words and then finishing the sentence in ways no rabbi finished a sentence. I am the light of the world. I am the good shepherd. I am the resurrection and the life. I am the way and the truth and the life. The pattern is so steady it feels almost rehearsed - except that each time He says it, the temperature in the room rises.\n\nThis is the building section of the story, and what is being built is a collision. In chapter 8 the argument is about Abraham. The crowd is proud of their father; Jesus tells them their father rejoiced to see His day. They scoff: You are not yet fifty years old, and You have seen Abraham? And then Jesus answers with the sentence that breaks the conversation open: “Truly, truly, I tell you, before Abraham was born, I am!” He does not say “I was.” A man who existed before Abraham would say “I was.” He says “I am” - present tense, standing outside of time, the grammar of the One who told Moses His name from a burning bush.\n\nThe crowd understands Him perfectly. That is why the next verse is not a question but a handful of stones. By the time you reach chapter 14, the claims have not softened; they have sharpened to a single point. “I am the way and the truth and the life. No one comes to the Father except through Me.” The light, the shepherd, the resurrection, the way - they were never separate slogans. They were one Person, saying His own name, over and over, until the whole city had to decide what to do with Him.",
+      "keyInsight": "John is not stacking up nice metaphors. He is building a case, claim upon claim, until the only two honest responses left are worship or stones.",
+      "content": "If you read John 8 through 14 in one sitting, you start to hear a refrain. Jesus keeps saying two small words and then finishing the sentence in ways no rabbi finished a sentence. I am the light of the world. I am the good shepherd. I am the resurrection and the life. I am the way and the truth and the life. The pattern is so steady it feels almost rehearsed - except that each time He says it, the temperature in the room rises.\n\nThis is the building section of the story, and what is being built is a collision. In chapter 8 the argument is about Abraham. The crowd is proud of their father; Jesus tells them their father rejoiced to see His day. They scoff: You are not yet fifty years old, and You have seen Abraham? And then Jesus answers with the sentence that breaks the conversation open: “Truly, truly, I tell you, before Abraham was born, I am!” He does not say “I was.” A man who existed before Abraham would say “I was.” He says “I am” - present tense, standing outside of time, the grammar of the One who told Moses His name from a burning bush.\n\nThe crowd understands Him perfectly. That is why the next verse is not a question but a handful of stones. By the time you reach chapter 14, the claims have not softened; they have sharpened to a single point. “I am the way and the truth and the life. No one comes to the Father except through Me.” The light, the shepherd, the resurrection, the way - they were never separate slogans. They were one Person, saying His own name, over and over, until the whole city had to decide what to do with Him."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sentence That Could Not Be Filed Away",
+      "body": "A friend of mine spent years in a job where he was good at making things vague. He drafted the careful memo, the statement that committed no one to anything, the apology that never quite said sorry. It was a craft, and he was proud of it, until the day his daughter asked him a question he could not answer sideways: “Do you actually love Mom, or do you just live here?” There was no soft version of that. He had to say yes or he had to say no, and either answer would change the house.\n\nThat is what Jesus does to a crowd that wants Him kept manageable. People had room for a teacher, a healer, a prophet who said wise things they could quote and shelve. What they could not file away was a man standing in the temple saying the name of God about Himself. “Before Abraham was born, I am.” You cannot half-believe a sentence like that. You cannot admire it from a polite distance. It walks up to you the way that little girl walked up to her father and asks for a yes or a no.\n\nThe stones in John 8 are ugly, but they are at least honest. The crowd took the claim seriously enough to want Him dead for it. The danger for us is gentler and worse: to read “I am the way and the truth and the life” the way my friend wrote his memos - nodding, agreeing in general, committing to nothing.",
+      "connectionToTheme": "The building tension of John 8-14 forces a verdict; the only dishonest response to Jesus' “I am” is to treat it as something you can admire without deciding about.",
+      "content": "A friend of mine spent years in a job where he was good at making things vague. He drafted the careful memo, the statement that committed no one to anything, the apology that never quite said sorry. It was a craft, and he was proud of it, until the day his daughter asked him a question he could not answer sideways: “Do you actually love Mom, or do you just live here?” There was no soft version of that. He had to say yes or he had to say no, and either answer would change the house.\n\nThat is what Jesus does to a crowd that wants Him kept manageable. People had room for a teacher, a healer, a prophet who said wise things they could quote and shelve. What they could not file away was a man standing in the temple saying the name of God about Himself. “Before Abraham was born, I am.” You cannot half-believe a sentence like that. You cannot admire it from a polite distance. It walks up to you the way that little girl walked up to her father and asks for a yes or a no.\n\nThe stones in John 8 are ugly, but they are at least honest. The crowd took the claim seriously enough to want Him dead for it. The danger for us is gentler and worse: to read “I am the way and the truth and the life” the way my friend wrote his memos - nodding, agreeing in general, committing to nothing."
+    },
+    {
+      "type": "insight",
+      "heading": "The Truth That Sets Free Is a Person, Not a Position",
+      "body": "Earlier in the same chapter Jesus had said something we love to quote out of context: “Then you will know the truth, and the truth will set you free.” We carve it over library doors and treat it as a slogan for inquiry in general - find facts, escape ignorance. But read the whole sentence. “If you continue in My word, you are truly My disciples. Then you will know the truth, and the truth will set you free.” The truth He promises is not a body of information you collect. It is tethered to His word, to remaining with Him, to discipleship. A few verses later He will give that truth a face: “I am... the truth.”\n\nThis is why the building section refuses to stay academic. A position can be held at arm's length. A person asks for trust. When Jesus says “I am the truth,” He is not offering a worldview to be evaluated alongside others; He is offering Himself to be followed or rejected. The freedom on the far side of that truth is not the freedom of having figured everything out. It is the freedom of a sheep that has stopped running because it finally recognizes the shepherd's voice - “I am the good shepherd; the good shepherd lays down His life for the sheep.”\n\nNotice the order John is laying down for us. The escalating “I am” claims are not random. They circle a single truth: the One making them is the I AM of the burning bush, now standing in flesh in the temple courts. Tomorrow's reading turns the whole arc on that hinge. For now it is enough to feel the pressure building, and to let the question land where the crowd let it land - on the matter of who exactly is doing the talking.",
+      "historicalContext": "John's Gospel was written for a community that already worshiped Jesus and was being pressed to explain how a crucified Galilean could be confessed as God. The seven completed “I am” sayings, framed by the absolute “I am” of 8:58, were John's deliberate answer: the claims are not later church invention but Jesus' own words, gathered and ordered so the reader cannot miss the divine name running underneath them.",
+      "fascinatingFact": "In John 18, when the arresting party comes for Jesus in the garden, He asks whom they seek and answers, “I am He” - again the bare ego eimi - and John records that the soldiers “drew back and fell to the ground.” The same two words that drew stones in chapter 8 knock an armed cohort flat in chapter 18. John wants you to feel the weight of the name before you ever reach the cross.",
+      "content": "Earlier in the same chapter Jesus had said something we love to quote out of context: “Then you will know the truth, and the truth will set you free.” We carve it over library doors and treat it as a slogan for inquiry in general - find facts, escape ignorance. But read the whole sentence. “If you continue in My word, you are truly My disciples. Then you will know the truth, and the truth will set you free.” The truth He promises is not a body of information you collect. It is tethered to His word, to remaining with Him, to discipleship. A few verses later He will give that truth a face: “I am... the truth.”\n\nThis is why the building section refuses to stay academic. A position can be held at arm's length. A person asks for trust. When Jesus says “I am the truth,” He is not offering a worldview to be evaluated alongside others; He is offering Himself to be followed or rejected. The freedom on the far side of that truth is not the freedom of having figured everything out. It is the freedom of a sheep that has stopped running because it finally recognizes the shepherd's voice - “I am the good shepherd; the good shepherd lays down His life for the sheep.”\n\nNotice the order John is laying down for us. The escalating “I am” claims are not random. They circle a single truth: the One making them is the I AM of the burning bush, now standing in flesh in the temple courts. Tomorrow's reading turns the whole arc on that hinge. For now it is enough to feel the pressure building, and to let the question land where the crowd let it land - on the matter of who exactly is doing the talking."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Standing in the temple, Jesus took the name God spoke at the burning bush - I AM - onto His own lips, and the crowd reached for stones because they understood Him exactly.",
+      "modernApplication": "We rarely throw stones; we are more polite. We turn “I am the way and the truth and the life” into one inspiring quote among many, agree with it warmly, and never let it cost us a decision. But a claim to be the only way to the Father is either an outrage to be opposed or a name to be worshiped. It was never built to be admired.",
+      "connectionPoint": "From Exodus 3 to John 8 the same name runs like a thread. At the bush, I AM sends Moses to set a people free. In the temple, I AM stands in the flesh and says the truth will set you free. The name that called Israel out of Egypt is now calling the world out of darkness, and it is doing so with a human voice that can be heard, followed, or stoned.",
+      "newTestamentEcho": "The building reaches its rest two chapters later, when the bare “I am” finally takes an object that gathers all the others: “I am the way and the truth and the life. No one comes to the Father except through Me” (John 14:6). And to Philip's plea to be shown the Father, the answer is total: “Anyone who has seen Me has seen the Father” (John 14:9). The name from the bush now has a face you can look at and live."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which is more your habit with Jesus - reaching for stones, or reaching for the memo that agrees with Him without committing to anything?",
+      "additionalQuestions": [
+        "Where have you been treating “the truth” as information to collect rather than a Person to remain with?",
+        "When Jesus says “I am the way... no one comes to the Father except through Me,” what in you wants to soften that into something more manageable, and why?",
+        "If you really heard His voice as the good shepherd's, what running might you finally be able to stop?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You did not leave us the option of admiring You from a distance. You said the name of God about Yourself, and now I have to decide. Forgive me for the times I have nodded along to “the way and the truth and the life” while committing to nothing. I do not want to reach for stones, and I do not want to reach for the careful, half-hearted version of faith either. Let me hear Your voice as the shepherd's voice. Set me free with the truth that is not a position but a Person - You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read John 8 through 14 with one pen in hand and underline every “I am.” Don't analyze them yet - just count them, and let the repetition do its work. Then sit with the bare one in 8:58 and ask the honest question the crowd asked, not with stones but with your whole heart: who is this, that He says the name of God about Himself?",
+      "leavingAtCross": [
+        "The polite, committed-to-nothing version of faith that agrees with Jesus and risks nothing on Him",
+        "The instinct to keep Jesus manageable - a teacher I can quote and shelve rather than a Lord I must answer",
+        "The habit of treating truth as facts I collect instead of a Person I follow"
+      ],
+      "receivingFromCross": [
+        "The clarity of a claim that forces a real decision instead of a vague nod",
+        "The shepherd's voice that lets a tired runner finally stop",
+        "The truth that sets free - not because I have figured it out, but because He has come near"
+      ],
+      "content": "Today, read John 8 through 14 with one pen in hand and underline every “I am.” Don't analyze them yet - just count them, and let the repetition do its work. Then sit with the bare one in 8:58 and ask the honest question the crowd asked, not with stones but with your whole heart: who is this, that He says the name of God about Himself?"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that Jesus says “before Abraham was born, I am” rather than “I was”? What does the present tense claim?",
+        "What links the burning bush of Exodus 3 to the temple courts of John 8, and why did the crowd respond with stones?",
+        "How does the full sentence in John 8:31-32 change the way we usually quote “the truth will set you free”?"
+      ],
+      "forAccountabilityPartners": [
+        "Where in your life are you most tempted to keep Jesus admirable but manageable, agreeing with Him without letting Him cost you anything?",
+        "Talk honestly about John 14:6 - “no one comes to the Father except through Me.” What is hard about that claim, and what is freeing about it?",
+        "Ask each other: if you truly heard Jesus as the good shepherd who lays down His life for the sheep, what fear or striving could you set down this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, “I AM WHO I AM. This is what you are to say to the Israelites: ‘I AM has sent me to you.’”"
+        },
+        {
+          "reference": "John 8:31-32",
+          "text": "So He said to the Jews who had believed Him, “If you continue in My word, you are truly My disciples. Then you will know the truth, and the truth will set you free.”"
+        },
+        {
+          "reference": "John 10:11",
+          "text": "I am the good shepherd. The good shepherd lays down His life for the sheep."
+        },
+        {
+          "reference": "John 11:25-26",
+          "text": "Jesus said to her, “I am the resurrection and the life. Whoever believes in Me will live, even though he dies. And everyone who lives and believes in Me will never die. Do you believe this?”"
+        },
+        {
+          "reference": "John 14:6",
+          "text": "Jesus answered, “I am the way and the truth and the life. No one comes to the Father except through Me.”"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 8-14",
+          "note": "Read the whole span in one sitting and mark every “I am.” Watch how the seven completed sayings frame the single absolute “I am” of 8:58, and how the rising opposition tracks the rising claims."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Crowd in the Temple Courts",
+      "title": "Those Who Heard the Name and Reached for Stones",
+      "description": "The hearers in John 8 are not villains in a costume; they are devout, Scripture-loving people who knew exactly what Jesus was claiming. They were proud descendants of Abraham, zealous for the one God who had no rivals and no equals. When a man said “before Abraham was born, I am,” they did not mishear Him. They heard the name from the burning bush on a human tongue, and out of real reverence for that name they picked up stones. Their tragedy is not that they took Jesus too seriously, but that, taking Him seriously, they refused to believe He could be telling the truth.",
+      "keyQuote": "At this, they picked up stones to throw at Him.",
+      "lessonForUs": "The crowd shows us that there is no neutral way to stand in front of “I am.” They understood the claim and rejected it; the modern temptation is to keep the claim and rob it of meaning. Both miss Him. The third path is the hardest and the only one that ends in life: to hear the name, believe it, and fall down - not to throw stones, but to worship.",
+      "heading": "Those Who Heard the Name and Reached for Stones"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2176,
+  "scriptureReference_full": "John 8:12, 31-32, 58-59; 10:11; 11:25-26; 14:6, 9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (ego eimi, G1473/G1510) reflects standard lexical sources; the connection of John's absolute “I am” to the Septuagint of Exodus 3:14 (ego eimi ho on) is a widely held reading in Johannine scholarship."
+  ]
 }

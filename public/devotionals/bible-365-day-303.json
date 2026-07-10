@@ -1,38 +1,187 @@
 {
   "day": 303,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 2 — Building",
-  "teaser": "Day 303 of Bible 365 — Luke 15, 24",
+  "title": "The Search Party of One",
+  "teaser": "A shepherd leaves ninety-nine to chase one. A woman tears her house apart for a single coin. Before the lost can come home, Someone goes looking.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
-  "scriptureReference": "Luke 15, 24",
+  "scriptureReference": "Luke 15:1-10",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 303"
+      "type": "scripture",
+      "reference": "Luke 15:1-10",
+      "translation": "BSB",
+      "emphasis": [
+        "go after the one that is lost, until he finds it",
+        "Rejoice with me, for I have found my lost sheep!",
+        "joy in the presence of God's angels over one sinner who repents"
+      ],
+      "greekOriginal": "πορεύεται ἐπὶ τὸ ἀπολωλὸς ἕως εὕρῃ αὐτό",
+      "passage": "Now all the tax collectors and sinners were gathering around to listen to Jesus. So the Pharisees and scribes began to grumble: \"This man welcomes sinners and eats with them.\" Then Jesus told them this parable: \"What man among you, if he has a hundred sheep and loses one of them, does not leave the ninety-nine in the pasture and go after the one that is lost, until he finds it? And when he finds it, he joyfully puts it on his shoulders, comes home, and calls together his friends and neighbors to tell them, 'Rejoice with me, for I have found my lost sheep!' In the same way, I tell you that there will be more joy in heaven over one sinner who repents than over ninety-nine righteous ones who do not need to repent. Or what woman who has ten silver coins and loses one of them does not light a lamp, sweep her house, and search carefully until she finds it? And when she finds it, she calls together her friends and neighbors to say, 'Rejoice with me, for I have found my lost coin.' In the same way, I tell you, there is joy in the presence of God's angels over one sinner who repents.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀπολωλός",
+      "transliteration": "apololos",
+      "pronunciation": "ah-poh-loh-LOSS",
+      "meaning": "lost, perished, gone astray and unable to find the way back",
+      "rootMeaning": "From apollymi, to destroy utterly, to lose, to be ruined. Lukas does not pick a soft word for the missing sheep. The animal is not merely misplaced; it is in danger of being destroyed - exposed, helpless, as good as dead unless something comes for it.",
+      "usageNote": "The same root runs through the whole chapter and out the far side of it. The sheep is apololos. The coin is apololos. The younger brother, when the father finally explains himself, was apololos kai heurethe - lost and found (Luke 15:24). And in Luke 19:10 Jesus names His whole errand with it: He came to seek and to save to apololos, the lost. One word ties the three parables to the mission of Christ Himself.",
+      "wordByWord": [
+        {
+          "word": "πορεύεται",
+          "transliteration": "poreuetai",
+          "meaning": "he goes, he sets out on a journey - active, deliberate travel"
+        },
+        {
+          "word": "ἐπὶ",
+          "transliteration": "epi",
+          "meaning": "after, toward - in pursuit of"
+        },
+        {
+          "word": "τὸ ἀπολωλὸς",
+          "transliteration": "to apololos",
+          "meaning": "the lost one, the perishing thing"
+        },
+        {
+          "word": "ἕως",
+          "transliteration": "heos",
+          "meaning": "until - the search has no clock on it, only an end: finding"
+        },
+        {
+          "word": "εὕρῃ",
+          "transliteration": "heure",
+          "meaning": "he finds, he locates - the verb the chapter keeps returning to"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "χαρά / chara",
+          "reference": "Joy. It appears at the end of every search in this chapter - joy on the shepherd's shoulders, joy in the woman's house, joy in heaven. The word for finding and the word for joy are stitched together in Luke 15."
+        }
+      ],
+      "strongsNumber": "G622",
+      "definition": "to destroy, to lose; in the passive participle, that which is lost or perishing",
+      "usage": "The little word heos, until, carries the weight of the parable. The shepherd does not search for a reasonable amount of time. He searches until. The outcome is fixed before the journey begins: he will not stop while the one is still out there."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Parables, One Complaint",
+      "body": "Luke tells us exactly why Jesus said these things. The tax collectors and sinners - the people respectable Israel had written off - were crowding in to listen to Him. And the Pharisees and scribes were standing at the edge, muttering: \"This man welcomes sinners and eats with them.\" That grumble is the question the whole chapter answers. Why does He let those people near Him? Why does He seem glad about it?\n\nJesus answers with a question of His own. \"What man among you, if he has a hundred sheep and loses one of them, does not leave the ninety-nine in the pasture and go after the one that is lost?\" It is meant to be obvious. Of course you go. A sheep alone in the open country is a dead sheep by morning. You leave the flock that is safe and you go out into the dark after the one that is not. Then He says it again in a different key: a woman with ten silver coins loses one, and she lights a lamp, sweeps the whole house, and searches carefully until she finds it. A single coin. She turns the place upside down for it.\n\nNotice what Jesus has done. The Pharisees see the sinners as a problem to be kept at a distance. Jesus reframes them as the lost thing the owner cannot rest without. The grumblers think the issue is who Jesus eats with. He tells them the issue is that something precious is missing, and the One it belongs to has gone looking.",
+      "keyInsight": "The parables do not argue that the lost are not really lost. They argue about what the loss does to the One who owns them. To God, the missing one is not a write-off. It is a search that does not end until.",
+      "content": "Luke tells us exactly why Jesus said these things. The tax collectors and sinners - the people respectable Israel had written off - were crowding in to listen to Him. And the Pharisees and scribes were standing at the edge, muttering: \"This man welcomes sinners and eats with them.\" That grumble is the question the whole chapter answers. Why does He let those people near Him? Why does He seem glad about it?\n\nJesus answers with a question of His own. \"What man among you, if he has a hundred sheep and loses one of them, does not leave the ninety-nine in the pasture and go after the one that is lost?\" It is meant to be obvious. Of course you go. A sheep alone in the open country is a dead sheep by morning. You leave the flock that is safe and you go out into the dark after the one that is not. Then He says it again in a different key: a woman with ten silver coins loses one, and she lights a lamp, sweeps the whole house, and searches carefully until she finds it. A single coin. She turns the place upside down for it.\n\nNotice what Jesus has done. The Pharisees see the sinners as a problem to be kept at a distance. Jesus reframes them as the lost thing the owner cannot rest without. The grumblers think the issue is who Jesus eats with. He tells them the issue is that something precious is missing, and the One it belongs to has gone looking."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Coin in the Floorboards",
+      "body": "A coin cannot wander off. That is what makes the second parable land differently than the first. A sheep is foolish; it nibbles its way over a ridge and is gone. But a coin is lost in the house. It rolls into a crack between the floorboards, slides under a jar, settles into the dust of a corner the lamp never reaches. It did nothing. It is simply where the light does not fall.\n\nI have lost things like that - not by running off, but by going still and quiet in a place no one thinks to look. There are people lost that way too. Not out wrecking their lives in some far country, just slowly slid out of sight. Stopped being asked about. Faded from the group text. Still inside the house, technically, and entirely unfound.\n\nThe woman does not shrug and say nine is plenty. She lights a lamp in the daytime and sweeps every corner and gets down on the floor and feels along the seams of the room until her fingers close on the cold edge of it. That is the picture Jesus gives of God going after a person who has simply gone dark. Not a casual glance. A lamp, a broom, and the floor.",
+      "connectionToTheme": "The lost coin shows that you do not have to run away to be lost. You can go quietly missing inside the very house - and still be searched for as if you were the only thing in it.",
+      "content": "A coin cannot wander off. That is what makes the second parable land differently than the first. A sheep is foolish; it nibbles its way over a ridge and is gone. But a coin is lost in the house. It rolls into a crack between the floorboards, slides under a jar, settles into the dust of a corner the lamp never reaches. It did nothing. It is simply where the light does not fall.\n\nI have lost things like that - not by running off, but by going still and quiet in a place no one thinks to look. There are people lost that way too. Not out wrecking their lives in some far country, just slowly slid out of sight. Stopped being asked about. Faded from the group text. Still inside the house, technically, and entirely unfound.\n\nThe woman does not shrug and say nine is plenty. She lights a lamp in the daytime and sweeps every corner and gets down on the floor and feels along the seams of the room until her fingers close on the cold edge of it. That is the picture Jesus gives of God going after a person who has simply gone dark. Not a casual glance. A lamp, a broom, and the floor."
+    },
+    {
+      "type": "insight",
+      "heading": "The Search Begins Before the Sheep Knows It Is Lost",
+      "body": "Set these two parables beside almost every religion humanity has invented and the difference is stark. The usual shape of religion is a lost thing climbing back toward a distant, waiting deity - the right rituals, the right effort, the long road home. Here the shape is reversed. The sheep is not climbing anywhere. The coin cannot climb at all. The whole motion of the story belongs to the owner, who leaves, who goes, who lights, who sweeps, who searches, until.\n\nAnd the searching starts before the lost one has done a single thing. The sheep is not repenting on the hillside; it is bleating in the brambles, more stuck the more it struggles. The coin is doing nothing but lying in the dark. Repentance, in these parables, is not the cause of the search. It is what it feels like, from the inside, to finally be found - to feel the shepherd's hands close around you and lift.\n\nThis is the verse the whole chapter is reaching toward, said plainly a few chapters earlier: \"For the Son of Man came to seek and to save the lost\" (Luke 19:10). Not to wait for. To seek. The shepherd in the parable is not a metaphor for a principle. He is a self-portrait. Jesus is telling the grumbling Pharisees who He is and why He eats with sinners: He is the One who goes after the one.",
+      "historicalContext": "In first-century Judaism, a respected teacher guarded his honor by guarding his table. Whom you ate with declared whom you endorsed. By welcoming tax collectors - Jews who collaborated with Rome to extort their own neighbors - and open sinners, Jesus was not being careless about holiness; He was making a deliberate claim about God. Luke sets these parables exactly here, against the scribes' complaint, so the reader cannot miss it: this is what God is like.",
+      "fascinatingFact": "The ten silver coins were likely drachmas. Some readers across the centuries have suggested the woman's ten coins may have been a strung headdress or dowry piece, where one missing coin breaks the whole set - which would explain the frantic search over a single day's wage. Scripture does not say this outright, so it is best held as a possible background, not a certainty. What the text is certain about is the joy when the missing one is found.",
+      "content": "Set these two parables beside almost every religion humanity has invented and the difference is stark. The usual shape of religion is a lost thing climbing back toward a distant, waiting deity - the right rituals, the right effort, the long road home. Here the shape is reversed. The sheep is not climbing anywhere. The coin cannot climb at all. The whole motion of the story belongs to the owner, who leaves, who goes, who lights, who sweeps, who searches, until.\n\nAnd the searching starts before the lost one has done a single thing. The sheep is not repenting on the hillside; it is bleating in the brambles, more stuck the more it struggles. The coin is doing nothing but lying in the dark. Repentance, in these parables, is not the cause of the search. It is what it feels like, from the inside, to finally be found - to feel the shepherd's hands close around you and lift.\n\nThis is the verse the whole chapter is reaching toward, said plainly a few chapters earlier: \"For the Son of Man came to seek and to save the lost\" (Luke 19:10). Not to wait for. To seek. The shepherd in the parable is not a metaphor for a principle. He is a self-portrait. Jesus is telling the grumbling Pharisees who He is and why He eats with sinners: He is the One who goes after the one."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus answers the charge that He welcomes sinners by telling of a shepherd who leaves the ninety-nine to chase one lost sheep, and a woman who tears her house apart for one lost coin - and in both, the joy belongs first to the one who searched.",
+      "modernApplication": "We are tempted to believe God is the ninety-nine kind of God - pleased with the ones already accounted for, indifferent to the one who slipped off. So we either work to stay among the ninety-nine, or we assume that having strayed, we are simply written off. Both miss the parable. The point is not that you must get back to the flock. The point is that Someone has already left the flock to come out after you.",
+      "connectionPoint": "Luke 15 is the heart of a much longer search that runs the length of the Gospel. The God who walked the garden in the cool of the evening calling \"Where are you?\" (Genesis 3:9) is the same God who walks the open country after one sheep. The thread does not stop at the parable; it runs all the way to a hill outside Jerusalem, where the Shepherd lays down His life for the sheep (John 10:11), and then to a road to Emmaus, where the risen Christ falls into step beside two who had given up and walks them home.",
+      "newTestamentEcho": "What the shepherd does in the story, Christ did in the flesh. He did not stay in the safety of heaven and wait for the lost to find their way up. He came down into the dark of the open country, was Himself counted among the sinners He ate with, and went after the one - all the way to the cross. The joy in heaven that Jesus describes is not over our cleverness in finding God. It is over the Shepherd finding us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of the two lost things are you more like right now - the sheep that wandered off, or the coin that simply went quiet in a corner where the light stopped falling?",
+      "additionalQuestions": [
+        "Have you been living as though God is the kind of owner who is fine with ninety-nine and indifferent to the one? Where did that picture of Him come from?",
+        "If repentance is what being found feels like from the inside, what would it mean to stop struggling in the brambles and let yourself be lifted?",
+        "Is there someone in your own house - your family, your church, your circle - who has gone quiet and unfound? What would it look like to light a lamp for them?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have believed You were waiting at a distance for me to make my own way back. Forgive me. You are the Shepherd who leaves the ninety-nine and comes out into the dark after the one. I have wandered like the sheep and gone quiet like the coin, and still You search. Find me where I have gone still. Lift me, even before I understand that I was lost. And let the joy of being found be Yours first, and then mine. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the corner you have gone quiet in - the place the light stopped falling - and instead of trying to climb back on your own, simply say to God: I am here, come and find me. Then light one lamp for someone else who has gone dark: a message, a call, a name you ask after.",
+      "leavingAtCross": [
+        "The picture of God as an owner content with the ninety-nine and indifferent to the one",
+        "The belief that I must find my own way back before God will move toward me",
+        "The shame of having gone quiet in a corner where I assumed no one would look"
+      ],
+      "receivingFromCross": [
+        "A Shepherd who has already left the flock and come out after me",
+        "The truth that the search began before I did anything to deserve it",
+        "A place in the joy of heaven - not because I found God, but because He found me"
+      ],
+      "content": "Today, name the corner you have gone quiet in - the place the light stopped falling - and instead of trying to climb back on your own, simply say to God: I am here, come and find me. Then light one lamp for someone else who has gone dark: a message, a call, a name you ask after."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What specific complaint of the Pharisees and scribes is Jesus answering with these two parables, and how do the parables answer it?",
+        "In both stories, who does all the moving - the lost thing, or the owner? What does that reversal say about how God relates to the lost?",
+        "How does Luke 19:10, 'the Son of Man came to seek and to save the lost,' turn the shepherd of the parable into a portrait of Christ Himself?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly: are you more the wandering sheep or the quiet coin right now, and why?",
+        "Talk about a time you felt written off as one of the lost - and whether you have let yourself believe God came looking for you.",
+        "Name one person who has gone quiet and unfound in your shared circle, and decide together one concrete way to light a lamp for them this week."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save the lost."
+        },
+        {
+          "reference": "Luke 15:24",
+          "text": "For this son of mine was dead and is alive again! He was lost and is found! So they began to celebrate."
+        },
+        {
+          "reference": "Ezekiel 34:11-12",
+          "text": "For this is what the Lord GOD says: Behold, I Myself will search for My flock and seek them out... so I will seek out My flock and rescue them from all the places to which they were scattered."
+        },
+        {
+          "reference": "John 10:11",
+          "text": "I am the good shepherd. The good shepherd lays down His life for the sheep."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15",
+          "note": "Read the whole chapter in one sitting. Watch the lost thing get smaller and the searcher's cost get larger: a sheep among a hundred, a coin among ten, a son who is one of two. Notice that joy ends every search - and that tomorrow's reading turns to the third and longest of the three lost-and-found stories."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Shepherd Who Goes After the One",
+      "title": "The Searcher of Luke 15",
+      "era": "First century — the Galilean ministry of Jesus",
+      "description": "Across the three parables of Luke 15, the searcher is the same figure under three faces: a shepherd, a woman, and a father. In each, something precious goes missing and the owner cannot rest. Jesus tells these stories about Himself, in answer to those scandalized that He eats with sinners. The shepherd who leaves the ninety-nine is the Son of Man who came to seek and to save the lost (Luke 19:10), and who would name Himself the Good Shepherd laying down His life for the sheep (John 10:11).",
+      "keyQuote": "Rejoice with me, for I have found my lost sheep!",
+      "lessonForUs": "We spend our religious energy trying to climb back to a waiting God. The parables undo that. The God of Luke 15 does not wait; He searches - lamp lit, house swept, hillside crossed - until. Your part is not to find your way home unaided. It is to let yourself be found.",
+      "heading": "The Searcher of Luke 15"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1625,
+  "scriptureReference_full": "Luke 15:1-10",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (apololos, G622; poreuetai; heos; chara) reflects standard lexical sources. The suggestion that the woman's ten coins formed a strung headdress or dowry piece is a long-held interpretive tradition, noted here as possible background rather than as stated by the text."
+  ]
 }

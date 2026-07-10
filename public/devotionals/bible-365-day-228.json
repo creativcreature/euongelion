@@ -1,38 +1,186 @@
 {
   "day": 228,
-  "title": "Isaiah: Suffering Servant — Day 4 — Application",
-  "teaser": "Day 228 of Bible 365 — Isaiah 40-55",
+  "title": "By His stripes, the wound that is not yours",
+  "teaser": "Day 228 of Bible 365 — Isaiah pictures a Servant pierced for transgressions that are not His. The application is to stop carrying what was already carried.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 228"
+      "type": "scripture",
+      "reference": "Isaiah 53:4-6",
+      "translation": "BSB",
+      "emphasis": [
+        "pierced for our transgressions",
+        "by His stripes we are healed",
+        "the LORD has laid upon Him the iniquity of us all"
+      ],
+      "hebrewOriginal": "וְהוּא מְחֹלָל מִפְּשָׁעֵנוּ מְדֻכָּא מֵעֲוֺנֹתֵינוּ מוּסַר שְׁלוֹמֵנוּ עָלָיו וּבַחֲבֻרָתוֹ נִרְפָּא־לָנוּ",
+      "passage": "Surely He took on our infirmities and carried our sorrows; yet we considered Him stricken by God, struck down and afflicted. But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מְחֹלָל",
+      "transliteration": "mecholal",
+      "pronunciation": "meh-kho-LAHL",
+      "meaning": "pierced through, bored, wounded fatally",
+      "rootMeaning": "From the root chalal, to bore through or pierce. It is not a scratch or a bruise; it is the word for a body run through, the kind of wound a soldier dies of. The same root names the slain in battle.",
+      "usageNote": "Three days of this week have circled the Servant from a distance - who He is, why He suffers, what it means. Today the verbs land on a person: pierced, crushed, struck. Isaiah does not soften them. Whatever else this Servant is, He is being killed, and the prophet wants us to feel the violence of it before we are told who profits from it.",
+      "wordByWord": [
+        {
+          "word": "מְחֹלָל",
+          "transliteration": "mecholal",
+          "meaning": "pierced through, run through"
+        },
+        {
+          "word": "מִפְּשָׁעֵנוּ",
+          "transliteration": "mippeshaeinu",
+          "meaning": "for our transgressions - our acts of rebellion, the crossing of a line"
+        },
+        {
+          "word": "מְדֻכָּא",
+          "transliteration": "medukka",
+          "meaning": "crushed, broken to pieces"
+        },
+        {
+          "word": "מוּסַר שְׁלוֹמֵנוּ",
+          "transliteration": "musar shelomeinu",
+          "meaning": "the discipline that brings our peace - chastisement that produces shalom"
+        },
+        {
+          "word": "וּבַחֲבֻרָתוֹ",
+          "transliteration": "uvachavurato",
+          "meaning": "and by His stripe, His welt, the mark a lash leaves"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלוֹם",
+          "reference": "Shalom is buried inside shelomeinu - 'our peace.' Isaiah does not mean a quiet feeling. Shalom is wholeness, things set right, the breach between God and a straying people closed. The peace is ours; the discipline that bought it fell on someone else."
+        }
+      ],
+      "strongsNumber": "H2490",
+      "definition": "to bore through, pierce, wound fatally; from the root chalal",
+      "usage": "Mecholal is the hinge of the verse. The Servant is not pierced by His own transgressions but mippeshaeinu - 'because of ours.' The little prefix mi- carries the whole gospel: the cause of the wound is on one side, the wound itself on the other."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Confession That Changes Its Mind",
+      "body": "Listen to who is speaking. Verse 4 begins with a confession the speakers are ashamed of: \"we considered Him stricken by God, struck down and afflicted.\" That is what they thought when they first saw the Servant suffer. They drew the ordinary conclusion - that a man this broken must be a man God is punishing. Suffering meant guilt. The math was simple, and the math was wrong.\n\nThen verse 5 turns on a single word: \"But.\" But He was pierced for our transgressions. The speakers realize their reckoning was backwards. The wounds were never the proof of His sin; they were the weight of theirs. \"He was crushed for our iniquities; the punishment that brought us peace was upon Him.\" Every clause has the same shape - His suffering, our benefit. His piercing, our peace. His stripes, our healing. The grammar itself is a substitution, His name swapped for ours in the place of consequence.\n\nVerse 6 names how this came to be. \"We all like sheep have gone astray, each one has turned to his own way.\" That is the honest diagnosis: not a few bad people, but all of us, each wandering off in his own private direction. And then the most loaded verb in the chapter: \"the LORD has laid upon Him the iniquity of us all.\" The straying was ours, the laying was God's. The Servant did not seize the burden; it was set on Him by the same LORD against whom the sheep had wandered.",
+      "keyInsight": "The deepest error this passage corrects is not unbelief but a kind of moral arithmetic: the assumption that the one who suffers must be the one who deserves it. Isaiah says the math runs the other way. The Innocent suffers so the guilty go free.",
+      "content": "Listen to who is speaking. Verse 4 begins with a confession the speakers are ashamed of: \"we considered Him stricken by God, struck down and afflicted.\" That is what they thought when they first saw the Servant suffer. They drew the ordinary conclusion - that a man this broken must be a man God is punishing. Suffering meant guilt. The math was simple, and the math was wrong.\n\nThen verse 5 turns on a single word: \"But.\" But He was pierced for our transgressions. The speakers realize their reckoning was backwards. The wounds were never the proof of His sin; they were the weight of theirs. \"He was crushed for our iniquities; the punishment that brought us peace was upon Him.\" Every clause has the same shape - His suffering, our benefit. His piercing, our peace. His stripes, our healing. The grammar itself is a substitution, His name swapped for ours in the place of consequence.\n\nVerse 6 names how this came to be. \"We all like sheep have gone astray, each one has turned to his own way.\" That is the honest diagnosis: not a few bad people, but all of us, each wandering off in his own private direction. And then the most loaded verb in the chapter: \"the LORD has laid upon Him the iniquity of us all.\" The straying was ours, the laying was God's. The Servant did not seize the burden; it was set on Him by the same LORD against whom the sheep had wandered."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Bill Marked Paid",
+      "body": "A friend told me about the winter his furnace died and the repair bill came to more than the rent. He set the invoice on the kitchen table where he could see it, and for two weeks he carried it everywhere in his mind - did the sums at red lights, lay awake assigning blame to himself for not saving. The number was a wound he kept reopening.\n\nWhen he finally called to set up a payment plan, the woman on the line went quiet, then said: \"Sir, this account shows a zero balance. Someone paid it last Tuesday.\" His brother had called the company and covered it without a word. For two weeks he had carried a debt that was already gone. The weight was real. The reason for it was not.\n\nThat is the strange ache of Isaiah 53 applied to an ordinary life. Many of us are carrying an account that has been settled. We keep doing the sums on our failures, reopening the same wound, certain the balance is still owed - while the page reads paid in a hand that is not ours. The application of this passage is not to try harder to pay. It is to believe the brother who already did.",
+      "connectionToTheme": "Isaiah's Servant bears the iniquity of straying sheep; the living-it-out is learning to stop carrying a debt that has already been laid on Him and settled.",
+      "content": "A friend told me about the winter his furnace died and the repair bill came to more than the rent. He set the invoice on the kitchen table where he could see it, and for two weeks he carried it everywhere in his mind - did the sums at red lights, lay awake assigning blame to himself for not saving. The number was a wound he kept reopening.\n\nWhen he finally called to set up a payment plan, the woman on the line went quiet, then said: \"Sir, this account shows a zero balance. Someone paid it last Tuesday.\" His brother had called the company and covered it without a word. For two weeks he had carried a debt that was already gone. The weight was real. The reason for it was not.\n\nThat is the strange ache of Isaiah 53 applied to an ordinary life. Many of us are carrying an account that has been settled. We keep doing the sums on our failures, reopening the same wound, certain the balance is still owed - while the page reads paid in a hand that is not ours. The application of this passage is not to try harder to pay. It is to believe the brother who already did."
+    },
+    {
+      "type": "insight",
+      "heading": "The Healing Is in the Wound",
+      "body": "Hold the strangest phrase in the passage up to the light: \"by His stripes we are healed.\" A stripe is the welt a whip raises. Isaiah says our healing comes by way of His injury - not in spite of His wounds but through them. The thing that broke Him is the thing that mends us.\n\nThis is why the application of Isaiah 53 is never \"be wounded enough and you will earn it.\" The wound that heals is not yours. You are not asked to absorb your own punishment in slow installments of guilt and self-repair. The punishment that brought us peace was already upon Him - past tense, finished, located on a body that was not ours. Healing is something you receive from another's scars, the way a transfusion gives you blood that someone else's body made.\n\nWhich means the most practical move you can make today is also the hardest: to stop volunteering for a sentence already served. Much of what we call conscience is really an attempt to keep paying - to suffer a little so we feel the books are balanced. Isaiah's word to that instinct is gentle and absolute. The books are balanced. They were balanced on Him. Lay it down.",
+      "historicalContext": "Isaiah 52:13 to 53:12 is the fourth and final 'Servant Song' in this section of Isaiah. Long before the New Testament, Jewish readers wrestled with the identity of this Servant - sometimes reading him as the nation Israel, sometimes as a coming individual. The earliest Christians, reading the same scroll, heard in these verses the clearest pre-crucifixion portrait of what the cross would mean.",
+      "fascinatingFact": "The center of the passage is a courtroom reversal. In verse 4 the watchers reckon the Servant guilty ('stricken by God'); by verse 6 they confess the guilt was theirs and the verdict fell on Him. The whole song moves a single distance - the distance from 'He deserves this' to 'I deserved this, and He took it.'",
+      "content": "Hold the strangest phrase in the passage up to the light: \"by His stripes we are healed.\" A stripe is the welt a whip raises. Isaiah says our healing comes by way of His injury - not in spite of His wounds but through them. The thing that broke Him is the thing that mends us.\n\nThis is why the application of Isaiah 53 is never \"be wounded enough and you will earn it.\" The wound that heals is not yours. You are not asked to absorb your own punishment in slow installments of guilt and self-repair. The punishment that brought us peace was already upon Him - past tense, finished, located on a body that was not ours. Healing is something you receive from another's scars, the way a transfusion gives you blood that someone else's body made.\n\nWhich means the most practical move you can make today is also the hardest: to stop volunteering for a sentence already served. Much of what we call conscience is really an attempt to keep paying - to suffer a little so we feel the books are balanced. Isaiah's word to that instinct is gentle and absolute. The books are balanced. They were balanced on Him. Lay it down."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Isaiah's Servant is pierced for transgressions that are not His own; the LORD lays the iniquity of straying sheep on Him, and by His stripes the sheep are healed.",
+      "modernApplication": "We are fluent in self-punishment. We rehearse old failures, refuse to let ourselves off the hook, treat lingering guilt as a kind of integrity. Isaiah 53 confronts that whole economy: the punishment was already carried, so the lived response is not deeper self-flagellation but the harder discipline of receiving what was finished for us.",
+      "connectionPoint": "Seven centuries after Isaiah, an Ethiopian official sat in a chariot reading this exact passage and could not place the sufferer. \"He was led like a sheep to the slaughter,\" he read aloud, \"and as a lamb before the shearer is silent, so He did not open His mouth\" (Acts 8:32). Philip, sent to that road, \"began with this very Scripture and told him the good news about Jesus\" (Acts 8:35). The first recorded answer to 'who is this Servant?' was a name: Jesus.",
+      "newTestamentEcho": "Peter, who had watched the trial where Jesus did not open His mouth, later wrote the verdict back into Isaiah's own words: \"He Himself bore our sins in His body on the tree... By His stripes you are healed. For you were like sheep going astray, but now you have returned to the Shepherd and Overseer of your souls\" (1 Peter 2:24-25). The straying sheep of Isaiah 53:6 are the same sheep who have now come home."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Name one specific wound you are still carrying as if you must pay for it yourself. What would it mean to believe it was already laid on Him?",
+      "additionalQuestions": [
+        "Where do you still operate on the old math - assuming that if you suffer enough over a failure, you will somehow make it right?",
+        "Isaiah says 'each one has turned to his own way.' What is your own way - the particular direction you tend to wander when you stop trusting God?",
+        "What would change in how you spoke to yourself this week if you took 'by His stripes we are healed' as literally true of your most shameful memory?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been doing the sums again - keeping a ledger You already closed. I confess that some of my guilt is not humility but unbelief, a refusal to let the wound that healed me be enough. You were pierced for transgressions I committed, crushed for iniquities I can name. The punishment that brought me peace was Yours, not mine. Teach me the hard rest of receiving it. Where I have been straying in my own direction, lead me home to the Shepherd of my soul. By Your stripes, heal the place I have kept reopening. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, take the one failure you keep replaying and say over it, out loud, the literal words of the text: \"He was pierced for my transgressions. By His stripes I am healed.\" Then leave that ledger on the table and do not pick it back up. When the instinct to keep paying returns, name it as unbelief and lay it down again.",
+      "leavingAtCross": [
+        "The private ledger of failures I keep reopening as if the debt were still mine",
+        "The belief that suffering over my sin is the same thing as being forgiven of it",
+        "My own way - the direction I wander whenever I stop trusting that the work is finished"
+      ],
+      "receivingFromCross": [
+        "A wound that heals me though it was not mine to bear",
+        "The shalom that comes from a discipline that fell on Another",
+        "The right to come home to the Shepherd who carried the straying on Himself"
+      ],
+      "content": "Today, take the one failure you keep replaying and say over it, out loud, the literal words of the text: \"He was pierced for my transgressions. By His stripes I am healed.\" Then leave that ledger on the table and do not pick it back up. When the instinct to keep paying returns, name it as unbelief and lay it down again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In verse 4 the watchers 'considered Him stricken by God.' What did they assume, and what did the word 'But' in verse 5 correct?",
+        "Trace the pattern across verses 4-5: in each line, who suffers and who benefits? What does that repeated shape tell you about what Isaiah is describing?",
+        "Verse 6 ends, 'the LORD has laid upon Him the iniquity of us all.' Who does the laying, and why does it matter that it was God's act and not the Servant's choice alone?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one wound you have been carrying as a debt you still owe. Say to each other plainly, 'That was already laid on Him.'",
+        "Talk honestly about the difference between godly conviction and the kind of self-punishment that is really unbelief. How do you tell them apart?",
+        "Ask each other: what is your 'own way' - the direction you wander when you stop trusting - and how can the other help you turn back toward the Shepherd this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 53:7",
+          "text": "He was oppressed and afflicted, yet He did not open His mouth. He was led like a lamb to the slaughter, and as a sheep before her shearers is silent, so He did not open His mouth."
+        },
+        {
+          "reference": "Acts 8:35",
+          "text": "Then Philip began with this very Scripture and told him the good news about Jesus."
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. \"By His stripes you are healed.\""
+        },
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 52:13-53:12",
+          "note": "Read the whole fourth Servant Song in one sitting, watching the movement from 'we considered Him stricken' (53:4) to 'He bore the sin of many' (53:12). Mark every place where His suffering produces our good."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Suffering Servant",
+      "title": "The One Pierced for Our Transgressions",
+      "description": "The central figure of Isaiah's fourth Servant Song (Isaiah 52:13-53:12). He is despised, rejected, silent under oppression, pierced and crushed - not for His own wrongdoing, for the text insists 'He had done no violence, nor was any deceit in His mouth' (53:9), but for the transgressions of others. The New Testament writers, beginning with Jesus' own followers, read this portrait as fulfilled in Christ: the Lamb led silently to slaughter, bearing the sin of many and making intercession for the transgressors (53:12).",
+      "keyQuote": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "lessonForUs": "If the wound that heals you was never yours to bear, then the most faithful thing you can do is stop trying to bear it. The Servant's silence under suffering was not weakness; it was the willingness to carry what was laid on Him so that the straying could come home.",
+      "heading": "The One Pierced for Our Transgressions"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2296,
+  "scriptureReference_full": "Isaiah 53:4-6 (within Isaiah 40-55)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mecholal H2490, from the root chalal; shalom within shelomeinu) reflects standard lexical sources. Identification of Isaiah 52:13-53:12 as the fourth Servant Song reflects standard scholarly usage; the range of pre-Christian Jewish readings (individual vs. corporate Servant) is noted as historical context, not adjudicated."
+  ]
 }

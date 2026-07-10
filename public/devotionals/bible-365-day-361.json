@@ -1,38 +1,181 @@
 {
   "day": 361,
-  "title": "Revelation: New Heaven + New Earth — Day 4 — Application",
-  "teaser": "Day 361 of Bible 365 — Revelation 21-22",
+  "title": "The City That Comes Down to You",
+  "teaser": "Heaven is not where you climb. It is the city God lowers — and the day you stop building your own.",
   "framework": "Revelation 21-22 — Revelation: New Heaven + New Earth",
   "scriptureReference": "Revelation 21-22",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 361"
+      "type": "scripture",
+      "reference": "Revelation 21:2-5",
+      "translation": "BSB",
+      "emphasis": [
+        "coming down out of heaven from God",
+        "the dwelling place of God is with man",
+        "I make all things new"
+      ],
+      "greekOriginal": "Ἰδοὺ καινὰ ποιῶ πάντα",
+      "passage": "I saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a loud voice from the throne saying: \"Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God. 'He will wipe away every tear from their eyes,' and there will be no more death or mourning or crying or pain, for the former things have passed away.\" And the One seated on the throne said, \"Behold, I make all things new.\" Then He said, \"Write this down, for these words are faithful and true.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Revelation 21-22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Revelation 21-22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "καινός",
+      "transliteration": "kainos",
+      "pronunciation": "kai-NOSS",
+      "meaning": "new in kind, fresh, unprecedented in quality",
+      "rootMeaning": "Greek has two words for new. Neos means new in time - the next one, the recent one, what was not here yesterday. Kainos means new in nature - not a replacement of the same thing, but something of a different and better quality. When the throne says 'I make all things new,' it uses kainos.",
+      "usageNote": "John writes kaine Ierousalem (a new Jerusalem) with kainos, not neos. The point is not that God scraps the world and starts a second one from scratch. It is that the world is made new in kind - renewed, healed, glorified - the way a resurrected body is the same body and yet utterly transformed.",
+      "wordByWord": [
+        {
+          "word": "Ἰδοὺ",
+          "transliteration": "idou",
+          "meaning": "Behold, look - a call to fix your eyes and see"
+        },
+        {
+          "word": "καινὰ",
+          "transliteration": "kaina",
+          "meaning": "new things - new in kind, not merely new in time"
+        },
+        {
+          "word": "ποιῶ",
+          "transliteration": "poio",
+          "meaning": "I make, I am making - present tense, an act already underway"
+        },
+        {
+          "word": "πάντα",
+          "transliteration": "panta",
+          "meaning": "all things, the whole of it - nothing left out of the renewal"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "καινὴ κτίσις",
+          "reference": "Paul uses the same root in 2 Corinthians 5:17 - 'if anyone is in Christ, he is a new creation (kaine ktisis); the old has passed away, the new has come.' The renewal Revelation shows over the whole cosmos has already begun, person by person, in everyone joined to Christ."
+        }
+      ],
+      "strongsNumber": "G2537",
+      "definition": "new, fresh; new in respect to quality and character rather than time",
+      "usage": "The verb is present, not future: 'I make all things new,' not 'I will one day make.' The renewal of all things is something the One on the throne is doing, and the future John sees is its finished form."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Revelation: New Heaven + New Earth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ returns; come, Lord Jesus (Rev 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Heaven Does Not Go Up. It Comes Down.",
+      "body": "After three days inside this vision - new heaven, new earth, the pivot at the center - today is the day it asks something of you. And the first thing it asks is that you put down a picture you have carried a long time.\n\nMost of us imagine the end as a departure. The soul leaves the body, the saved leave the earth, the doors close on a world left behind. It is the picture in the hymns and the cartoons and the jokes about clouds and harps. But it is not the picture John is given. He does not watch people rise. He watches a city descend: \"I saw the holy city, the new Jerusalem, coming down out of heaven from God.\" The direction of the last chapter of the Bible is downward. Heaven comes to earth.\n\nAnd when it lands, a voice names what has happened in the plainest words in the book: \"Behold, the dwelling place of God is with man, and He will dwell with them.\" This is the sentence the whole Bible has been reaching toward. It is Eden, where God walked in the cool of the day. It is the tabernacle, a tent pitched so God could live in the middle of the camp. It is the temple in Jerusalem, stone built around the same hope. Every one of those was God moving toward us, and us hiding among the trees. Here, at the end, the hiding is over. God moves in for good, and no one runs.\n\nNotice what fills the new city - and what is missing from it. There is a river clear as crystal, a tree bearing fruit every month, leaves for the healing of the nations. There is no more death, no mourning, no crying, no pain. And John says something that should stop a religious person cold: \"I saw no temple in the city.\" The one building every faithful Israelite would have looked for is not there. The temple was always a place to go and meet a God otherwise hidden. In the new city there is nothing to travel to. \"The Lord God Almighty and the Lamb are its temple.\" You do not go to where God is. God is the air of the place.",
+      "keyInsight": "The Bible does not end with us escaping earth for heaven. It ends with heaven coming down to earth, and God moving in to stay. The whole story has been God closing the distance.",
+      "content": "After three days inside this vision - new heaven, new earth, the pivot at the center - today is the day it asks something of you. And the first thing it asks is that you put down a picture you have carried a long time.\n\nMost of us imagine the end as a departure. The soul leaves the body, the saved leave the earth, the doors close on a world left behind. It is the picture in the hymns and the cartoons and the jokes about clouds and harps. But it is not the picture John is given. He does not watch people rise. He watches a city descend: \"I saw the holy city, the new Jerusalem, coming down out of heaven from God.\" The direction of the last chapter of the Bible is downward. Heaven comes to earth.\n\nAnd when it lands, a voice names what has happened in the plainest words in the book: \"Behold, the dwelling place of God is with man, and He will dwell with them.\" This is the sentence the whole Bible has been reaching toward. It is Eden, where God walked in the cool of the day. It is the tabernacle, a tent pitched so God could live in the middle of the camp. It is the temple in Jerusalem, stone built around the same hope. Every one of those was God moving toward us, and us hiding among the trees. Here, at the end, the hiding is over. God moves in for good, and no one runs.\n\nNotice what fills the new city - and what is missing from it. There is a river clear as crystal, a tree bearing fruit every month, leaves for the healing of the nations. There is no more death, no mourning, no crying, no pain. And John says something that should stop a religious person cold: \"I saw no temple in the city.\" The one building every faithful Israelite would have looked for is not there. The temple was always a place to go and meet a God otherwise hidden. In the new city there is nothing to travel to. \"The Lord God Almighty and the Lamb are its temple.\" You do not go to where God is. God is the air of the place."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House She Stopped Building",
+      "body": "A woman I know spent eleven years building a house she never finished. She had the lot, the plans, a binder thick with paint chips and tile samples. Every spare weekend something else needed redoing - the foundation had settled wrong, the permit had lapsed, the contractor had vanished with the deposit. She used to say, with a tired laugh, that the house was where she was going to finally rest, just as soon as it was done.\n\nIt was never done. Her father died in a rented apartment with bare walls, and in the weeks after, sorting his small rooms, she realized he had spent the last decade of his life in a home he was always almost ready to enjoy.\n\nThere is a version of the spiritual life that is exactly that house. We are forever building our way up to God - the right habits, the cleaned-up record, the version of ourselves we will finally present once the work is done. We treat heaven like a structure we are responsible to complete and then move into. Revelation undoes the whole project in one image. The city is not built by us, waiting at the top of our effort. It comes down, finished, from God. The bride does not sew her own wedding dress out of fig leaves and good intentions. She is \"adorned\" - dressed by Another - and the door is already open.",
+      "connectionToTheme": "We exhaust ourselves building our own way up to God. The end of the story is a city we did not build, lowered to us complete - the rest we kept postponing, given.",
+      "content": "A woman I know spent eleven years building a house she never finished. She had the lot, the plans, a binder thick with paint chips and tile samples. Every spare weekend something else needed redoing - the foundation had settled wrong, the permit had lapsed, the contractor had vanished with the deposit. She used to say, with a tired laugh, that the house was where she was going to finally rest, just as soon as it was done.\n\nIt was never done. Her father died in a rented apartment with bare walls, and in the weeks after, sorting his small rooms, she realized he had spent the last decade of his life in a home he was always almost ready to enjoy.\n\nThere is a version of the spiritual life that is exactly that house. We are forever building our way up to God - the right habits, the cleaned-up record, the version of ourselves we will finally present once the work is done. We treat heaven like a structure we are responsible to complete and then move into. Revelation undoes the whole project in one image. The city is not built by us, waiting at the top of our effort. It comes down, finished, from God. The bride does not sew her own wedding dress out of fig leaves and good intentions. She is \"adorned\" - dressed by Another - and the door is already open."
+    },
+    {
+      "type": "insight",
+      "heading": "Made New, Not Made Over",
+      "body": "Everything turns on one Greek word. When the throne declares, \"Behold, I make all things new,\" the word for new is kainos, not neos. Neos would mean a second world, a fresh start that throws the first one away. Kainos means this world made new in kind - healed, restored, raised. The same creation, transfigured beyond what it could become on its own.\n\nThat single word holds the whole hope together. Your body is not discarded; it is raised. The earth is not deleted; it is renewed - \"there will be no more death or mourning or crying or pain, for the former things have passed away.\" The tears are not denied; they are wiped, one by one, by a hand. God does not answer the brokenness of this age by replacing the people who suffered it. He answers it by making them new and keeping them.\n\nAnd here is the part that should reach into today: the verb is present tense. \"I make all things new\" - not \"I will, someday.\" The renewal John shows finished over the whole cosmos is the same renewal already begun in anyone joined to Christ. Paul names it with the same root: \"if anyone is in Christ, he is a new creation\" (2 Corinthians 5:17). The city that comes down at the end is the public, cosmic form of what God has quietly been doing inside his people all along. The end is not a different mercy than the one you live on now. It is that mercy, finished.",
+      "historicalContext": "Revelation was written to seven churches under the long pressure of the Roman Empire near the end of the first century - congregations facing economic exclusion, social shame, and in places outright violence for refusing to call Caesar lord. John does not promise them an exit from the world. He promises them the world remade, and a city no empire can build or burn. The vision was pastoral before it was ever a puzzle: hold on, because the One on the throne is making all things new.",
+      "fascinatingFact": "The Bible opens and closes in a garden city watered by a river, with the tree of life at the center. Genesis 2 sets it; Revelation 22 restores it - the same river, the same tree, now \"for the healing of the nations.\" But there is a difference. In Eden a flaming sword barred the way back to the tree. In the new Jerusalem the gates \"will never be shut.\" The sword is gone. Between those two trees stands a cross.",
+      "content": "Everything turns on one Greek word. When the throne declares, \"Behold, I make all things new,\" the word for new is kainos, not neos. Neos would mean a second world, a fresh start that throws the first one away. Kainos means this world made new in kind - healed, restored, raised. The same creation, transfigured beyond what it could become on its own.\n\nThat single word holds the whole hope together. Your body is not discarded; it is raised. The earth is not deleted; it is renewed - \"there will be no more death or mourning or crying or pain, for the former things have passed away.\" The tears are not denied; they are wiped, one by one, by a hand. God does not answer the brokenness of this age by replacing the people who suffered it. He answers it by making them new and keeping them.\n\nAnd here is the part that should reach into today: the verb is present tense. \"I make all things new\" - not \"I will, someday.\" The renewal John shows finished over the whole cosmos is the same renewal already begun in anyone joined to Christ. Paul names it with the same root: \"if anyone is in Christ, he is a new creation\" (2 Corinthians 5:17). The city that comes down at the end is the public, cosmic form of what God has quietly been doing inside his people all along. The end is not a different mercy than the one you live on now. It is that mercy, finished."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The holy city comes down from God complete; there is no temple in it, because the Lord God and the Lamb are its temple, and the Lamb is its lamp. God's dwelling is finally with man, and He wipes away every tear.",
+      "modernApplication": "You can stop building your way up to God. The structure you keep almost finishing - the cleaned-up life you mean to present once it's ready - was never the entrance. The entrance comes down to you, opened by the Lamb. Today's work is not to climb but to come: to live now as someone whose home is already secured, dressed in righteousness you did not sew.",
+      "connectionPoint": "Day two of this vision built the ache - a world groaning, a creation longing to be set free, the gap between the way things are and the way they should be. Today that ache meets its answer. The longing is not naive. It is prophetic. The home you have ached for is real, it is coming down, and the One on the throne calls it 'faithful and true.'",
+      "newTestamentEcho": "John names the city's center without a single shadow: 'I saw no temple in the city, because the Lord God Almighty and the Lamb are its temple. And the city has no need of sun or moon to shine on it, because the glory of God illuminates the city, and the Lamb is its lamp' (Revelation 21:22-23). The slain Lamb of chapter 5 is the light and the temple of chapter 21. Every road in the Bible runs to Him - and at the very end He speaks for Himself: 'Yes, I am coming soon. Amen. Come, Lord Jesus!' (Revelation 22:20)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you still building your way up to God on - the habit, the record, the version of yourself you mean to present once it's finished? What would change today if you believed the city comes down to you instead?",
+      "additionalQuestions": [
+        "John saw no temple in the city. Where in your life have you been treating God as somewhere you go rather than the One who has come to dwell with you?",
+        "The throne says, 'I make all things new' - present tense. Where do you most need to trust that the renewal is already underway and not only a far-off promise?",
+        "If God is wiping away every tear with His own hand, which tear would you bring to be wiped today instead of hidden?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord God, I have spent so long building - climbing toward You on a house I can never finish, sewing a covering out of my own good intentions. Forgive me for treating Your nearness as something I earn my way up to. Thank You that the city comes down. Thank You that the Lamb is its light and its temple, and that the gates are never shut. Make me new now, the way You will make all things new then. Wipe the tear I have been hiding. Until the day You come to stay, hold me as someone already home. Yes, come, Lord Jesus. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been building your way up to God with - one performance, one record you keep, one version of yourself you are waiting to be 'finished' before you come close. Set it down on purpose. Then live one ordinary hour as someone whose home is already secured: do the next thing not to earn the city, but as someone the city is coming down to.",
+      "leavingAtCross": [
+        "The half-built house - the cleaned-up life I keep meaning to present to God once it's ready",
+        "The belief that heaven is somewhere I climb to rather than the home God lowers",
+        "The tear I have been hiding instead of bringing to the hand that wipes it"
+      ],
+      "receivingFromCross": [
+        "A city I did not build, coming down from God complete, with gates that are never shut",
+        "The Lamb as my temple and my light - no distance left to travel to reach God",
+        "The promise that the renewal already begun in me is the very mercy that will one day make all things new"
+      ],
+      "content": "Today, name one thing you have been building your way up to God with - one performance, one record you keep, one version of yourself you are waiting to be 'finished' before you come close. Set it down on purpose. Then live one ordinary hour as someone whose home is already secured: do the next thing not to earn the city, but as someone the city is coming down to."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In John's vision, which direction does the holy city move - and why does that overturn the common picture of 'going up to heaven'?",
+        "Why is there no temple in the new Jerusalem, and what does that say about how close God finally comes?",
+        "What is the difference between kainos and neos, and how does that one word shape whether the end is a replacement of this world or a renewal of it?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you have been quietly building your way up to God instead of receiving the home He lowers - and what it would look like to set it down this week.",
+        "Talk about the line 'He will wipe away every tear from their eyes.' Which tear is hardest for you to imagine God touching, and why?",
+        "Ask each other: if the renewal of all things has already begun in you, where should it be showing in the next seven days?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Revelation 21:22-23",
+          "text": "But I saw no temple in the city, because the Lord God Almighty and the Lamb are its temple. And the city has no need of sun or moon to shine on it, because the glory of God illuminates the city, and the Lamb is its lamp."
+        },
+        {
+          "reference": "Revelation 22:1-2",
+          "text": "Then the angel showed me a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb down the middle of the main street of the city. On either side of the river stood a tree of life, bearing twelve kinds of fruit and yielding a fresh crop for each month. And the leaves of the tree are for the healing of the nations."
+        },
+        {
+          "reference": "Revelation 22:20",
+          "text": "He who testifies to these things says, \"Yes, I am coming soon.\" Amen. Come, Lord Jesus!"
+        },
+        {
+          "reference": "2 Corinthians 5:17",
+          "text": "Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Revelation 21-22",
+          "note": "Read the two chapters in one sitting, watching the movement: the city descends (21:2), God dwells (21:3), the temple is missing because the Lamb is its center (21:22), the river and tree of life return from Eden (22:1-2), and the book ends not with a doctrine but a longing - 'Come, Lord Jesus' (22:20)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John of Patmos",
+      "title": "The Exile Who Saw the City Come Down",
+      "description": "Traditionally identified with the apostle John, the writer of Revelation received this vision while exiled on the island of Patmos 'because of the word of God and the testimony of Jesus' (Revelation 1:9). An old man, cut off from his churches, under an empire that demanded worship of Caesar, he was shown not an escape from the world but the world made new - a city lowered from heaven where God dwells with His people and every tear is wiped away.",
+      "keyQuote": "I saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband.",
+      "lessonForUs": "John wrote the most hope-filled ending in human literature from a prison island. The vision did not depend on his circumstances improving; it reframed them. The home he ached for was real and coming down - and so he could outlast Rome by simply holding on, and praying the last prayer of the Bible: Come, Lord Jesus.",
+      "heading": "The Exile Who Saw the City Come Down"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2020,
+  "scriptureReference_full": "Revelation 21-22",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (kainos, G2537; the kainos/neos distinction) reflects standard lexical sources (BDAG, Thayer). The garden-to-city inclusio between Genesis 2-3 and Revelation 22, and the present-tense force of poio in Revelation 21:5, are widely noted in commentary on the Apocalypse."
+  ]
 }

@@ -1,38 +1,179 @@
 {
   "day": 111,
   "title": "Divided Kingdom — Day 6 — Deeper Dive",
-  "teaser": "Day 111 of Bible 365 — 1 Kings 12-16",
+  "teaser": "Day 111 of Bible 365 — 1 Kings 12-16. A king splits a nation over a rough answer, and a frightened rival builds gods to keep his throne. Yet a lamp keeps burning for David.",
   "framework": "1 Kings 12-16 — Divided Kingdom",
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 111"
+      "type": "scripture",
+      "reference": "1 Kings 12:13-16",
+      "translation": "BSB",
+      "emphasis": [
+        "the king answered the people harshly",
+        "What portion do we have in David",
+        "To your tents, O Israel"
+      ],
+      "passage": "And the king answered the people harshly. He rejected the advice of the elders and spoke to them as the young men had advised, saying, \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" So the king did not listen to the people, and indeed this turn of events was from the LORD, to fulfill the word He had spoken to Jeroboam son of Nebat through Ahijah the Shilonite. When all Israel saw that the king had refused to listen to them, they answered the king: \"What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!\" So the Israelites went home."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עֲקְרַבִּים",
+      "transliteration": "aqrabbim",
+      "pronunciation": "ak-rah-BEEM",
+      "meaning": "scorpions",
+      "rootMeaning": "The plural of aqrab, scorpion. In Rehoboam's threat it is almost certainly figurative - a kind of barbed lash, a whip whose knots bit like a sting. The young men reach for the most painful image they can find and hand it to a new king as a slogan.",
+      "usageNote": "The contrast in 12:11 and 12:14 is built on a single escalation: my father used shotim (whips); I will use aqrabbim (scorpions). The wise word the elders offered was the opposite escalation - downward, toward service: \"speak kind words to them\" (12:7). Rehoboam had two vocabularies in front of him, gentleness and stinging, and he chose the sting.",
+      "wordByWord": [
+        {
+          "word": "שֹׁטִים",
+          "transliteration": "shotim",
+          "meaning": "whips, lashes - the instrument of Solomon's heavy yoke"
+        },
+        {
+          "word": "עֲקְרַבִּים",
+          "transliteration": "aqrabbim",
+          "meaning": "scorpions - a sharper, barbed scourge; the upgrade Rehoboam promises"
+        },
+        {
+          "word": "יָעַץ",
+          "transliteration": "yaʿats",
+          "meaning": "to advise, counsel - the verb behind Rehoboam's question, \"How do you advise me to respond?\" (12:6, 12:9); he sought counsel from two sides and heeded the wrong one"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֹל",
+          "reference": "ol, \"yoke\" (12:4, 12:11). Israel asks for a lighter yoke; the same word later names the easy yoke Jesus offers in Matthew 11:30. The crowd at Shechem wanted what only the true Son of David would finally give."
+        }
+      ],
+      "strongsNumber": "H6137",
+      "definition": "a scorpion; figuratively, a barbed scourge or knotted whip",
+      "usage": "A king is handed the language of stinging and the language of serving on the same morning. The whole northern kingdom walks out the door over which one he speaks."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Kingdom That Fell Apart Over an Answer",
+      "body": "Solomon is buried, and his son Rehoboam goes north to Shechem to be made king. The northern tribes come with one request: your father's reign was glorious, but it was heavy - the building projects, the forced labor, the taxes. Lighten the load, and we will serve you gladly.\n\nRehoboam asks for three days to decide, and in those three days he holds two councils. First he consults the elders who had stood in Solomon's court. Their counsel is almost startling in a throne room: \"If you will be a servant to these people and serve them this day... they will be your servants forever\" (12:7). Become their servant, and you will keep their hearts. Then he turns to the young men he grew up with, and they hand him a swagger: tell them your little finger is thicker than your father's waist; tell them you will trade whips for scorpions.\n\nHe chooses the swagger. \"And the king answered the people harshly\" (12:13). The text is careful not to let us read this as mere bad luck or bad temper. It says \"this turn of events was from the LORD\" - the kingdom's tearing fulfilled a word God had already spoken through the prophet Ahijah, a judgment on the idolatry of Solomon's later years. Human folly and divine purpose run down the same channel. Rehoboam is fully responsible for his cruelty, and God is fully at work in the result. So Israel walks out: \"What portion do we have in David?\" Ten tribes go home. Two are left to the house of David. A united kingdom, the high-water mark of the whole Old Testament, splits in a single conversation, and it never comes back together.",
+      "keyInsight": "Israel asked for a lighter yoke and was offered scorpions. The kingdom did not break over a war or a famine - it broke over a young king who would rather be feared than serve.",
+      "content": "Solomon is buried, and his son Rehoboam goes north to Shechem to be made king. The northern tribes come with one request: your father's reign was glorious, but it was heavy - the building projects, the forced labor, the taxes. Lighten the load, and we will serve you gladly.\n\nRehoboam asks for three days to decide, and in those three days he holds two councils. First he consults the elders who had stood in Solomon's court. Their counsel is almost startling in a throne room: \"If you will be a servant to these people and serve them this day... they will be your servants forever\" (12:7). Become their servant, and you will keep their hearts. Then he turns to the young men he grew up with, and they hand him a swagger: tell them your little finger is thicker than your father's waist; tell them you will trade whips for scorpions.\n\nHe chooses the swagger. \"And the king answered the people harshly\" (12:13). The text is careful not to let us read this as mere bad luck or bad temper. It says \"this turn of events was from the LORD\" - the kingdom's tearing fulfilled a word God had already spoken through the prophet Ahijah, a judgment on the idolatry of Solomon's later years. Human folly and divine purpose run down the same channel. Rehoboam is fully responsible for his cruelty, and God is fully at work in the result. So Israel walks out: \"What portion do we have in David?\" Ten tribes go home. Two are left to the house of David. A united kingdom, the high-water mark of the whole Old Testament, splits in a single conversation, and it never comes back together."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Bridge That Was Never Lit",
+      "body": "Jeroboam now rules ten tribes, and almost the first thing he does is look at a road. The road runs south, down to Jerusalem, where the Temple is, where the festivals are kept, where the altar of the LORD stands in the city of David. And Jeroboam does the math that frightened men do.\n\nHe says it in his own heart, and Scripture lets us hear it: \"If these people go up to offer sacrifices in the house of the LORD at Jerusalem, their hearts will return to their lord, Rehoboam king of Judah; then they will kill me\" (12:27). Worship is a kind of gravity. If the people keep going south three times a year to meet God where God put His Name, sooner or later their loyalty will follow their worship home. Jeroboam can feel his throne sliding toward Jerusalem every time a pilgrim packs for the journey.\n\nHe could trust the God who had just handed him a kingdom through a prophet. Instead he decides to cut the road. He will give the people something closer, easier, more convenient - and tie their devotion to himself instead of to the God who gave him the crown.",
+      "connectionToTheme": "Jeroboam's first political act is to make worship convenient so that it will serve his throne rather than draw the people to God.",
+      "content": "Jeroboam now rules ten tribes, and almost the first thing he does is look at a road. The road runs south, down to Jerusalem, where the Temple is, where the festivals are kept, where the altar of the LORD stands in the city of David. And Jeroboam does the math that frightened men do.\n\nHe says it in his own heart, and Scripture lets us hear it: \"If these people go up to offer sacrifices in the house of the LORD at Jerusalem, their hearts will return to their lord, Rehoboam king of Judah; then they will kill me\" (12:27). Worship is a kind of gravity. If the people keep going south three times a year to meet God where God put His Name, sooner or later their loyalty will follow their worship home. Jeroboam can feel his throne sliding toward Jerusalem every time a pilgrim packs for the journey.\n\nHe could trust the God who had just handed him a kingdom through a prophet. Instead he decides to cut the road. He will give the people something closer, easier, more convenient - and tie their devotion to himself instead of to the God who gave him the crown."
+    },
+    {
+      "type": "insight",
+      "heading": "Gods Made to Keep a Throne",
+      "body": "Here is the center of these five chapters, and it is worth slowing down to see exactly what Jeroboam does. \"The king made two golden calves and said to the people, 'Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt'\" (12:28). One calf he places at Bethel in the south of his territory, one at Dan in the far north. Now no one has to travel far. Worship is convenient again.\n\nThe words should make any reader of the Bible go cold, because they are almost exactly the words shouted at the foot of Mount Sinai when Aaron made the first golden calf: \"These, O Israel, are your gods, who brought you up out of the land of Egypt\" (Exodus 32:4). Jeroboam is not inventing a new religion. He is reaching back for the oldest counterfeit Israel ever had, dusting it off, and offering it as official policy. And the genius of it - the awful, ordinary genius - is that he does not tell the people to stop worshiping the God who saved them. He tells them they can keep that God, right here, no journey required, in a shape he controls.\n\nThat is what an idol so often is. Not always a different god, but the true God reshaped into something convenient, portable, and obedient to my fear. Jeroboam was not faithless because he forgot the Exodus; he was faithless because he turned the God of the Exodus into a tool for protecting his crown. \"This thing became a sin\" (12:30), and the phrase \"the sins of Jeroboam, which he caused Israel to commit\" becomes the tolling refrain over king after king for the rest of the books of Kings. A throne saved by a manufactured god is a throne already lost.",
+      "historicalContext": "Bethel and Dan were ancient sanctuary sites long before Jeroboam, which is part of why his choice was so shrewd - he gave old, familiar holy places a new official cult. Archaeologists have uncovered a large high place at Tel Dan with a monumental altar platform, fitting the biblical picture of a royal worship center established to rival Jerusalem.",
+      "fascinatingFact": "The calf or young bull in the ancient Near East was often a pedestal - the animal a god was imagined to stand upon - rather than the god itself. Many scholars think Jeroboam may have intended the calves as thrones for the invisible LORD, not replacements for Him. If so, it makes the warning sharper, not softer: even a sincere attempt to 'house' the true God in a manageable image, on our terms and for our convenience, is named in Scripture as the sin that sank a kingdom.",
+      "content": "Here is the center of these five chapters, and it is worth slowing down to see exactly what Jeroboam does. \"The king made two golden calves and said to the people, 'Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt'\" (12:28). One calf he places at Bethel in the south of his territory, one at Dan in the far north. Now no one has to travel far. Worship is convenient again.\n\nThe words should make any reader of the Bible go cold, because they are almost exactly the words shouted at the foot of Mount Sinai when Aaron made the first golden calf: \"These, O Israel, are your gods, who brought you up out of the land of Egypt\" (Exodus 32:4). Jeroboam is not inventing a new religion. He is reaching back for the oldest counterfeit Israel ever had, dusting it off, and offering it as official policy. And the genius of it - the awful, ordinary genius - is that he does not tell the people to stop worshiping the God who saved them. He tells them they can keep that God, right here, no journey required, in a shape he controls.\n\nThat is what an idol so often is. Not always a different god, but the true God reshaped into something convenient, portable, and obedient to my fear. Jeroboam was not faithless because he forgot the Exodus; he was faithless because he turned the God of the Exodus into a tool for protecting his crown. \"This thing became a sin\" (12:30), and the phrase \"the sins of Jeroboam, which he caused Israel to commit\" becomes the tolling refrain over king after king for the rest of the books of Kings. A throne saved by a manufactured god is a throne already lost."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Out of fear of losing his throne, Jeroboam made worship convenient - two golden calves, one near and one far, the true God reshaped into something he could keep close and control.",
+      "modernApplication": "Few of us cast metal calves. But the move is familiar: we keep God, we just file Him down to a size that fits the life we have already decided to protect. A faith with the demands removed. A version of Jesus who blesses our ambitions and never crosses them. Worship we can do without changing direction, without the inconvenient journey of repentance. It feels like devotion. It is often just fear, building a god that will leave our thrones alone.",
+      "connectionPoint": "The sin of Jeroboam runs as a dark thread through the rest of Kings - king after king \"walked in the way of Jeroboam.\" But against that thread runs a brighter one. For all the chaos of these chapters, God keeps His promise: \"for the sake of David, the LORD his God gave him a lamp in Jerusalem\" (15:4). The house of David is corrupt, divided, and small - yet a lamp is not allowed to go out, because a King is coming through that line who will not save His throne by making a convenient god.",
+      "newTestamentEcho": "Gabriel tells Mary of her son: \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever\" (Luke 1:32-33). Jeroboam built calves to protect a throne and lost it; Jesus, the true Son of David, refused every shortcut to a crown and went to a cross instead - and so He keeps the throne forever. The lamp God would not let go out was burning toward Him. Small wonder John ends his first letter with the warning Jeroboam never heard: \"Little children, keep yourselves from idols\" (1 John 5:21)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you quietly reshaped God into something more convenient - a faith with the costly parts filed off, so it won't disturb a throne you are protecting?",
+      "additionalQuestions": [
+        "Rehoboam was offered the counsel to serve and chose the counsel to dominate. Where in your life are you being offered the servant's road and reaching instead for the scorpion?",
+        "Jeroboam's idol was driven by one fear: losing what he had. What fear is shaping your worship right now - and what would it look like to bring that fear to God instead of building around it?",
+        "The northern tribes wanted a God close enough that they would not have to travel. What 'journey' of obedience or repentance have you been avoiding by keeping a more convenient version of faith near at hand?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess how easily I do what Jeroboam did. I keep You near, but I file You down. I want a God who guards my throne and never asks for it. Forgive me for the convenient faith I have built out of fear. Tear down the calves I have set up at the edges of my life, the ones that let me worship without being changed. Thank You that through all of Israel's failure You kept a lamp burning for David, and that the lamp was burning toward Jesus, the true King who would not save His crown with a shortcut but gave Himself for me. Give me the courage to make the journey to where You actually are, and to let You be God on Your terms. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'golden calf of convenience' - one place you have shrunk God to protect a throne of your own. Don't rush to fix it. Bring it honestly to God in prayer, and ask Him to take back the territory you have been guarding from Him.",
+      "leavingAtCross": [
+        "The convenient, controllable god I have shaped out of fear of losing what I have",
+        "The instinct to dominate rather than serve when my position feels threatened",
+        "The faith I keep close precisely because it never asks me to change direction"
+      ],
+      "receivingFromCross": [
+        "The true Son of David, who would not save His throne with a shortcut and so reigns forever",
+        "The freedom to let God be God on His own terms, not mine",
+        "The mercy of the lamp God refused to let go out - a faithfulness larger than my failures"
+      ],
+      "content": "Today, name one 'golden calf of convenience' - one place you have shrunk God to protect a throne of your own. Don't rush to fix it. Bring it honestly to God in prayer, and ask Him to take back the territory you have been guarding from Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What two pieces of counsel did Rehoboam receive, and what does his choice reveal about the difference between ruling to be served and ruling to serve?",
+        "Why did Jeroboam make the golden calves - what specific fear drove him, and how does that fear change the way you understand idolatry?",
+        "How do the words 'Here, O Israel, are your gods, who brought you up out of the land of Egypt' connect 1 Kings 12 to Exodus 32, and what is the point of that echo?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about one 'convenient' adjustment each of you has made to your faith - a demand quietly removed, a journey avoided. What fear is underneath it?",
+        "Rehoboam answered harshly when he was asked for relief. Where do you tend to dominate instead of serve when you feel your position is threatened?",
+        "Ask each other: if God kept a lamp burning for David through all of Israel's failure, what does that say about His faithfulness to you in the middle of yours?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 32:4",
+          "text": "He took the gold from their hands, and with an engraving tool he fashioned it into a molten calf. And they said, \"These, O Israel, are your gods, who brought you up out of the land of Egypt!\""
+        },
+        {
+          "reference": "1 Kings 11:36",
+          "text": "I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
+        },
+        {
+          "reference": "1 Kings 15:4",
+          "text": "Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem by raising up a son to succeed him and to make Jerusalem strong."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        },
+        {
+          "reference": "1 John 5:21",
+          "text": "Little children, keep yourselves from idols."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read the whole stretch in one sitting, watching two refrains: 'the sins of Jeroboam, which he caused Israel to commit,' and the quiet promise of a 'lamp' kept for David's sake. The first is the disease; the second is the thread of grace running underneath it."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeroboam son of Nebat",
+      "title": "First King of the Northern Kingdom",
+      "description": "An able administrator under Solomon, promised the ten northern tribes by the prophet Ahijah, and given them by God Himself. Yet within weeks of his crowning, fear of losing the people's loyalty drove him to manufacture two golden calves at Bethel and Dan and to reroute Israel's worship away from Jerusalem. For the rest of 1 and 2 Kings he is the measuring stick of failure: king after king is condemned for walking 'in the way of Jeroboam,' the man who 'caused Israel to commit sin.'",
+      "keyQuote": "Here, O Israel, are your gods, who brought you up out of the land of Egypt.",
+      "lessonForUs": "Jeroboam shows that the most dangerous idolatry is rarely a switch to a foreign god - it is the true God remade into something convenient and controllable, built to protect a throne we are unwilling to surrender. The fear that 'I might lose what I have' has founded more idols than open rebellion ever did.",
+      "heading": "First King of the Northern Kingdom"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2144,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The verbal parallel between 1 Kings 12:28 and Exodus 32:4 is widely noted in standard commentary on Kings. The observation that ancient Near Eastern bull imagery often functioned as a divine pedestal rather than the deity itself reflects mainstream scholarship; the monumental high place and altar platform at Tel Dan are attested by archaeological excavation."
+  ]
 }

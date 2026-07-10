@@ -1,38 +1,185 @@
 {
   "day": 184,
-  "title": "Job: Suffering + Mystery — Day 2 — Building",
-  "teaser": "Day 184 of Bible 365 — Job 1-2, 38-42",
+  "title": "Worship in the dust",
+  "teaser": "Everything is taken in a single day, and Job falls to the ground — not to curse, but to worship. The blameless man who suffers without cause kneels where Christ would one day kneel.",
   "framework": "Job 1-2, 38-42 — Job: Suffering + Mystery",
   "scriptureReference": "Job 1-2, 38-42",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 184"
+      "type": "scripture",
+      "reference": "Job 1:20-22; 2:9-10",
+      "translation": "BSB",
+      "emphasis": [
+        "He fell to the ground and worshiped",
+        "The LORD gave, and the LORD has taken away",
+        "Should we accept from God only good and not adversity?"
+      ],
+      "hebrewOriginal": "יְהוָה נָתַן וַיהוָה לָקָח יְהִי שֵׁם יְהוָה מְבֹרָךְ",
+      "passage": "Then Job stood up, tore his robe, and shaved his head. He fell to the ground and worshiped, saying: \"Naked I came from my mother's womb, and naked I will return. The LORD gave, and the LORD has taken away. Blessed be the name of the LORD.\" In all this, Job did not sin or charge God with wrongdoing. ... Then Job's wife said to him, \"Do you still retain your integrity? Curse God and die!\" \"You speak as a foolish woman speaks,\" he told her. \"Should we accept from God only good and not adversity?\" In all this, Job did not sin in what he said."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Job 1-2, 38-42**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Job 1-2, 38-42 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תָּם",
+      "transliteration": "tam",
+      "pronunciation": "TAHM",
+      "meaning": "blameless, whole, complete, of one piece",
+      "rootMeaning": "Tam does not mean sinless. It comes from a root meaning whole, finished, undivided - a thing that is all of one piece, with nothing held back and no seam where it might come apart.",
+      "usageNote": "The narrator calls Job tam in the first verse (Job 1:1), and God Himself uses the word twice when speaking of him (Job 1:8; 2:3). When Job's wife asks whether he will still retain his 'integrity,' she is reaching for the same idea - the wholeness of a man who has not split into two people, one for the good days and another for the ruin.",
+      "wordByWord": [
+        {
+          "word": "תָּם",
+          "transliteration": "tam",
+          "meaning": "blameless, whole, undivided"
+        },
+        {
+          "word": "וְיָשָׁר",
+          "transliteration": "veyashar",
+          "meaning": "and upright - straight, level, not crooked"
+        },
+        {
+          "word": "יְרֵא אֱלֹהִים",
+          "transliteration": "yere Elohim",
+          "meaning": "fearing God - holding God in awe"
+        },
+        {
+          "word": "וְסָר מֵרָע",
+          "transliteration": "vesar mera",
+          "meaning": "and turning from evil - shunning what is wrong"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תֻּמָּה",
+          "reference": "Tummah, the noun in Job 2:9 ('your integrity'), is the same root made into a thing you can hold or lose. Job's wife is not asking whether he is perfect; she is asking whether he is still whole, still one person, after everything that made him himself has been buried."
+        }
+      ],
+      "strongsNumber": "H8535",
+      "definition": "perfect, complete, blameless; morally innocent and undivided in heart",
+      "usage": "Tam is not a claim that Job never sinned. It is a description of a life with no double bottom - a man whose worship of God on the day he was rich and his worship of God on the day he was childless and covered in sores came from the same undivided heart."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Job: Suffering + Mystery. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the answer to \"Why?\" (John 11:35).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Naked I Came, and Naked I Will Return",
+      "body": "The book opens with a picture of a settled life. Job is the greatest man of the east: seven sons, three daughters, thousands of livestock, a household so full it needs a feast schedule to keep up with itself. He is called blameless and upright, a man who fears God and shuns evil. And then, in the space of a single chapter, all of it is taken. Four messengers arrive one after another, each interrupting the last, each ending with the same broken phrase: \"and I alone have escaped to tell you.\" Raiders take the oxen and donkeys. Fire takes the sheep. More raiders take the camels. And a wind off the desert flattens the house where all ten of his children are eating, and they are gone.\n\nWatch what Job does with the unbearable. He stands up. He tears his robe and shaves his head - the old, honest gestures of a body that cannot hold grief inside the skin. And then he falls to the ground. We expect the next word to be a scream, or a curse, or silence. The next word is worshiped.\n\nWhat he says from the dust is not a denial of the loss. \"Naked I came from my mother's womb, and naked I will return.\" He is not pretending the children were never his. He is remembering that they were never, finally, his to keep - that he entered the world holding nothing and will leave it the same way, and that everything in between was given. \"The LORD gave, and the LORD has taken away. Blessed be the name of the LORD.\" The narrator, who has shown us heaven's wager and earth's ruin, sets down a single verdict over the scene: in all this, Job did not sin or charge God with wrongdoing.",
+      "keyInsight": "Job's worship is not the absence of grief; it is grief that has not let go of God. He blesses the Name with a torn robe and a shaved head, holding loss and trust in the same trembling hands.",
+      "content": "The book opens with a picture of a settled life. Job is the greatest man of the east: seven sons, three daughters, thousands of livestock, a household so full it needs a feast schedule to keep up with itself. He is called blameless and upright, a man who fears God and shuns evil. And then, in the space of a single chapter, all of it is taken. Four messengers arrive one after another, each interrupting the last, each ending with the same broken phrase: \"and I alone have escaped to tell you.\" Raiders take the oxen and donkeys. Fire takes the sheep. More raiders take the camels. And a wind off the desert flattens the house where all ten of his children are eating, and they are gone.\n\nWatch what Job does with the unbearable. He stands up. He tears his robe and shaves his head - the old, honest gestures of a body that cannot hold grief inside the skin. And then he falls to the ground. We expect the next word to be a scream, or a curse, or silence. The next word is worshiped.\n\nWhat he says from the dust is not a denial of the loss. \"Naked I came from my mother's womb, and naked I will return.\" He is not pretending the children were never his. He is remembering that they were never, finally, his to keep - that he entered the world holding nothing and will leave it the same way, and that everything in between was given. \"The LORD gave, and the LORD has taken away. Blessed be the name of the LORD.\" The narrator, who has shown us heaven's wager and earth's ruin, sets down a single verdict over the scene: in all this, Job did not sin or charge God with wrongdoing."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Kept Setting the Table",
+      "body": "A friend of mine lost her husband and, four months later, the job that had been the one fixed point in the wreckage. For a while she stopped cooking. Then one evening she set the table for one, lit the candle they used to light together, and said grace out loud to an empty room. She told me she did not feel anything holy while she did it. Her voice shook. She was furious and exhausted and not at all sure God was listening.\n\nBut she set the table anyway, and she said the words anyway, because she had decided that her grief would not get to decide who God was. The candle was lit in spite of how she felt, not because of it.\n\nThat is closer to Job in the dust than the serene face we sometimes paint on him. His robe is torn. His head is shaved. His body is on the ground. Worship here is not a mood that descended on him; it is a thing he did with a broken voice, because the Name was true before the disaster and is true after it. He blessed God not because the blessing made sense, but because, even now, God was still God.",
+      "connectionToTheme": "Worship in suffering is often something we do with shaking hands before we feel anything at all - an act of trust offered from the floor, not a feeling that lifts us off it.",
+      "content": "A friend of mine lost her husband and, four months later, the job that had been the one fixed point in the wreckage. For a while she stopped cooking. Then one evening she set the table for one, lit the candle they used to light together, and said grace out loud to an empty room. She told me she did not feel anything holy while she did it. Her voice shook. She was furious and exhausted and not at all sure God was listening.\n\nBut she set the table anyway, and she said the words anyway, because she had decided that her grief would not get to decide who God was. The candle was lit in spite of how she felt, not because of it.\n\nThat is closer to Job in the dust than the serene face we sometimes paint on him. His robe is torn. His head is shaved. His body is on the ground. Worship here is not a mood that descended on him; it is a thing he did with a broken voice, because the Name was true before the disaster and is true after it. He blessed God not because the blessing made sense, but because, even now, God was still God."
+    },
+    {
+      "type": "insight",
+      "heading": "Without Cause",
+      "body": "There is a phrase tucked into chapter two that changes how we read the whole disaster. God says to the accuser, \"He still retains his integrity, even though you incited Me against him to ruin him without cause.\" Without cause. The sores, the silence, the freshly dug graves - none of it is punishment. Job is not reaping what he sowed. He is the blameless man, and the suffering falls on him precisely because he is blameless, as a kind of terrible compliment from heaven that he never asked for and is never told about.\n\nThis is the wound at the center of the book, and it is the wound at the center of so many real lives: the suffering that has no readable reason, that cannot be explained by a hidden sin or a lesson we failed to learn. Job's three friends will spend thirty-five chapters trying to find the cause, because a universe where suffering has causes is easier to live in than one where it sometimes does not. But the reader has been let in on a secret the friends never get: there is no cause down here to find. The only thing visible on earth is a good man on the ground, and a wife asking the most honest question in the book - do you still retain your integrity? - and a man answering, with everything he had to lose already lost, should we accept from God only good and not adversity?",
+      "historicalContext": "Job belongs to Israel's Wisdom Literature alongside Proverbs and Ecclesiastes, but it works against the grain of easy wisdom. Proverbs tends to promise that the righteous prosper; Job is the long, faithful protest against treating that promise as a formula. The setting is patriarchal and non-Israelite - 'the land of Uz,' a man who offers his own sacrifices with no priest, no temple, no Law in sight - which lets the book ask its question at the level of every human being, not just the covenant nation.",
+      "fascinatingFact": "Job's wife speaks only one line in the entire book, and she has been judged harshly for it for centuries. But notice she has buried the same ten children he has. 'Curse God and die' may be less a temptation than a grief-maddened mercy - a wife who cannot bear to watch her husband suffer and would rather he be released than be slowly destroyed. Job does not strike back at her. He calls her words foolish, then keeps loving the God who has not yet said a word.",
+      "content": "There is a phrase tucked into chapter two that changes how we read the whole disaster. God says to the accuser, \"He still retains his integrity, even though you incited Me against him to ruin him without cause.\" Without cause. The sores, the silence, the freshly dug graves - none of it is punishment. Job is not reaping what he sowed. He is the blameless man, and the suffering falls on him precisely because he is blameless, as a kind of terrible compliment from heaven that he never asked for and is never told about.\n\nThis is the wound at the center of the book, and it is the wound at the center of so many real lives: the suffering that has no readable reason, that cannot be explained by a hidden sin or a lesson we failed to learn. Job's three friends will spend thirty-five chapters trying to find the cause, because a universe where suffering has causes is easier to live in than one where it sometimes does not. But the reader has been let in on a secret the friends never get: there is no cause down here to find. The only thing visible on earth is a good man on the ground, and a wife asking the most honest question in the book - do you still retain your integrity? - and a man answering, with everything he had to lose already lost, should we accept from God only good and not adversity?"
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Job, the blameless man, is ruined 'without cause,' falls to the ground in the dust of total loss, and worships - blessing the Name of the God who gave and has taken away.",
+      "modernApplication": "Most of us meet the book of Job not in a single catastrophic day but in the slow ones: the diagnosis with no clear reason, the prayer that goes unanswered, the grief that outlasts everyone else's patience. The temptation is to demand a cause before we will worship - to make our trust conditional on first getting an explanation. Job worships before any explanation comes, and the explanation, when God finally speaks, is not a reason at all but a Person.",
+      "connectionPoint": "Job's response runs as a thread through the whole of Scripture. James points back to it directly: 'You have heard of Job's perseverance and have seen the outcome from the Lord. The Lord is full of compassion and mercy' (James 5:11). And from the depths of his suffering Job reaches forward to something he cannot yet see clearly: 'I know that my Redeemer lives, and in the end He will stand upon the earth ... in my flesh I will see God' (Job 19:25-26). The blameless sufferer aches for a Redeemer who will stand on the earth in flesh - and centuries later, One does.",
+      "newTestamentEcho": "What Job did in the dust of Uz, Christ does in the dust of Gethsemane. The truly blameless Man - the only One who ever suffered wholly without cause - falls facedown and prays, 'My Father ... not as I will, but as You will' (Matthew 26:39). Job is the shadow; Christ is the substance. Job blessed the Name through the loss of everything he had; Christ blessed the Father's will through the loss of His own life, and so became the Redeemer Job longed to see stand upon the earth."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you waiting for an explanation before you are willing to worship - and what would it look like to bless the Name from the floor, before the answer comes?",
+      "additionalQuestions": [
+        "Job says, 'Naked I came... and naked I will return.' What are you holding right now as if it were finally yours to keep, rather than something you have been given?",
+        "Job's wife asks, 'Do you still retain your integrity?' Is your trust in God one piece, or do you have one faith for the good days and another for the ruin?",
+        "Have you ever worshiped with a shaking voice, not because you felt like it, but because you decided your grief would not get to decide who God is? What happened?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You gave, and where You have taken away, I do not understand. I will not pretend the loss is small or that my heart is steady. But I bring You what Job brought You from the ground - a torn life and a stubborn trust that You are still good when I cannot see the cause. Keep me whole. Do not let me split into one person for the easy days and another for the hard ones. And thank You that the blameless One knelt in His own dust and prayed 'not as I will, but as You will' - so that even my worship is carried by His. In the name of Jesus, my Redeemer who lives. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one loss or unanswered question you have been holding back from God until He explains it. Without demanding the explanation, say one honest sentence of trust over it out loud - 'The LORD gave, and the LORD has taken away; blessed be the name of the LORD' - and let that be your worship from the floor.",
+      "leavingAtCross": [
+        "The demand that God hand me a reason before I will trust Him",
+        "The belief that real worship requires that I first feel like worshiping",
+        "The grip on what was always given, not owned - as if I could lose nothing"
+      ],
+      "receivingFromCross": [
+        "Permission to grieve with a torn robe and worship in the same breath",
+        "A wholeness of heart that does not split between the good days and the ruin",
+        "A Redeemer who suffered without cause and lives - who stands on the earth, and will"
+      ],
+      "content": "Today, name one loss or unanswered question you have been holding back from God until He explains it. Without demanding the explanation, say one honest sentence of trust over it out loud - 'The LORD gave, and the LORD has taken away; blessed be the name of the LORD' - and let that be your worship from the floor."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does God reveal in Job 2:3 about the cause of Job's suffering - and why does it matter that the reader knows this while the friends never do?",
+        "Job tears his robe and shaves his head, and then he worships. What does it mean that grief and worship happen in the same moment, in the same body?",
+        "How does Job's cry 'I know that my Redeemer lives' (Job 19:25) point past his own story toward Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you have been waiting for an explanation from God before you were willing to trust Him again.",
+        "Job's worship was an act, not a feeling. Talk about a time you obeyed God or worshiped Him before any feeling caught up - and what that cost.",
+        "Ask each other: 'Where is your faith one piece, and where have you split it into a good-day faith and a hard-day faith?'"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Job 2:13",
+          "text": "Then they sat on the ground with him for seven days and seven nights, but no one spoke a word to him because they saw how intense his suffering was."
+        },
+        {
+          "reference": "Job 13:15",
+          "text": "Though He slay me, I will hope in Him. I will still defend my ways to His face."
+        },
+        {
+          "reference": "Job 19:25-26",
+          "text": "But I know that my Redeemer lives, and in the end He will stand upon the earth. Even after my skin has been destroyed, yet in my flesh I will see God."
+        },
+        {
+          "reference": "James 5:11",
+          "text": "See how blessed we consider those who have persevered. You have heard of Job's perseverance and have seen the outcome from the Lord. The Lord is full of compassion and mercy."
+        },
+        {
+          "reference": "Matthew 26:39",
+          "text": "Going a little farther, He fell facedown and prayed, \"My Father, if it is possible, let this cup pass from Me. Yet not as I will, but as You will.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Job 1-2",
+          "note": "Read the two opening chapters in one sitting, watching the camera move between the heavenly council and the earthly disaster - and notice that the friends' best act of comfort is the seven days they say nothing (2:13)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Job",
+      "title": "The Blameless Man Who Worshiped in the Dust",
+      "description": "A man of the land of Uz, called by God Himself blameless and upright, fearing God and shunning evil. In a single day he lost his wealth and all ten of his children; soon after, his health. He is the great test case of Scripture's hardest question: can a person love God for nothing - not for the gifts, but for God? Through nearly forty chapters he protests, argues, despairs, and refuses both to curse God and to lie about his own innocence. In the end God answers him not with reasons but with His own presence, and Job says, 'My ears had heard of You, but now my eyes have seen You' (Job 42:5).",
+      "keyQuote": "The LORD gave, and the LORD has taken away. Blessed be the name of the LORD.",
+      "lessonForUs": "Job teaches that faith is not the same as understanding. He never receives the explanation we keep expecting - but he receives God, and that turns out to be the answer the explanation could never have been. His worship from the dust is the rehearsal; Christ's worship from Gethsemane is the fulfillment.",
+      "heading": "The Blameless Man Who Worshiped in the Dust"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1648,
+  "scriptureReference_full": "Job 1-2, 38-42",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tam / tummah, H8535) reflects standard lexical sources; tam denotes wholeness and undivided integrity rather than sinless perfection."
+  ]
 }

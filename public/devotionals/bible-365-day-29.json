@@ -6,33 +6,181 @@
   "scriptureReference": "Genesis 37",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 29"
+      "type": "scripture",
+      "reference": "Genesis 37:23-28",
+      "translation": "BSB",
+      "emphasis": [
+        "stripped him of his robe",
+        "threw him into the pit",
+        "sold him for twenty shekels of silver"
+      ],
+      "hebrewOriginal": "וַיַּפְשִׁיטוּ אֶת־יוֹסֵף אֶת־כֻּתָּנְתּוֹ אֶת־כְּתֹנֶת הַפַּסִּים אֲשֶׁר עָלָיו",
+      "passage": "So when Joseph came to his brothers, they stripped him of his robe—the robe of many colors he was wearing—and they took him and threw him into the pit. Now the pit was empty, with no water in it... Then Judah said to his brothers, \"What profit will we gain if we kill our brother and cover up his blood? Come, let us sell him to the Ishmaelites and not lay a hand on him; for he is our brother, our own flesh.\" And they agreed. So when the Midianite traders passed by, his brothers pulled Joseph out of the pit and sold him for twenty shekels of silver to the Ishmaelites, who took him to Egypt."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 37**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 37 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כְּתֹנֶת פַּסִּים",
+      "transliteration": "ketonet passim",
+      "pronunciation": "keh-TOH-net pas-SEEM",
+      "meaning": "a long robe, traditionally rendered \"a coat of many colors\" or \"an ornamented tunic\"",
+      "rootMeaning": "Ketonet is the same plain word for a body-length tunic that God sewed for Adam in Genesis 3:21. Passim is uncertain - it may mean \"many colors,\" or \"reaching to the palms and soles\" (long sleeves, full length), the dress of someone who does not labor. Either way it marks the wearer as set apart, favored, exempt.",
+      "usageNote": "The phrase appears again in only one other place in Scripture: the robe Tamar wears in 2 Samuel 13:18, described as the garment worn by the virgin daughters of the king. So the ketonet passim is not a work coat - it is royal, set-apart clothing. Jacob dresses one son like a prince in front of ten sons who herd the flocks. The robe is the wound before a word is ever spoken.",
+      "wordByWord": [
+        {
+          "word": "וַיַּפְשִׁיטוּ",
+          "transliteration": "vayyaphshitu",
+          "meaning": "and they stripped off, they flayed away - the same root used for stripping the skin from a sacrifice"
+        },
+        {
+          "word": "כֻּתָּנְתּוֹ",
+          "transliteration": "kuttonto",
+          "meaning": "his tunic, the garment against his body"
+        },
+        {
+          "word": "כְּתֹנֶת הַפַּסִּים",
+          "transliteration": "ketonet happassim",
+          "meaning": "the robe of many colors, the ornamented tunic"
+        },
+        {
+          "word": "אֲשֶׁר עָלָיו",
+          "transliteration": "asher alav",
+          "meaning": "which was upon him - what he was wearing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּתְנוֹת עוֹר",
+          "reference": "Genesis 3:21 - the \"garments of skin\" God made for Adam use the same word, ketonet. The first robe in Scripture is one God puts on; this robe in Genesis 37 is one brothers tear off. Scripture's whole drama of covering and stripping runs through this single word."
+        }
+      ],
+      "strongsNumber": "H3801",
+      "definition": "ketonet (H3801): a tunic, a long shirt-like garment worn next to the skin; passim (H6446): possibly \"colorful\" or \"reaching the extremities\"",
+      "usage": "The verb vayyaphshitu - \"they stripped him\" - is violent and bare. The first thing the brothers do is undress him: they take off the sign of love before they take his freedom. The robe goes before the body does."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Betrayal that God will use. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ betrayed by His own (John 1:11).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Wound Was Sewn Before It Was Spoken",
+      "body": "Genesis 37 opens quietly, with a genealogy line and a teenager. \"When Joseph was seventeen years old, he was tending the flock with his brothers... and he brought their father a bad report about them.\" Three sentences in, the trouble is already laid out. There is a favored son, ten unfavored sons, and a father who cannot keep his love evenly distributed.\n\nThen the text does something deliberate. \"Now Israel loved Joseph more than his other sons, because Joseph had been born to him in his old age; so he made him a robe of many colors.\" The favoritism is not hidden in Jacob's heart. He stitches it into a garment and puts it on the boy's shoulders, where ten brothers have to look at it every morning. \"When Joseph's brothers saw that their father loved him more than any of them, they hated him and could not speak a kind word to him.\"\n\nNotice the order. The hatred comes before the dreams. We tend to remember Joseph as the boy who couldn't stop talking about his visions, and the dreams certainly pour fuel on the fire. But Scripture is careful: the brothers hated him because of the robe first. The dreams - the sheaves bowing, the sun and moon and eleven stars bowing - arrive into a household that is already poisoned. By the time Joseph says \"my sheaf rose and stood upright, while your sheaves gathered around and bowed down to mine,\" the brothers are not hearing prophecy. They are hearing the favored one rub it in.\n\nThis is the peshat, the plain sense, and it is painfully ordinary. A family is torn apart not by some grand evil but by partiality, envy, and a coat. The greatest betrayal in Genesis grows out of the most common soil in the world: a parent who plays favorites and children who keep score.",
+      "keyInsight": "The hatred came before the dreams. Joseph's brothers did not turn on him because God was speaking through him; they turned on him because their father had already taught them, with a coat, that Joseph mattered more.",
+      "content": "Genesis 37 opens quietly, with a genealogy line and a teenager. \"When Joseph was seventeen years old, he was tending the flock with his brothers... and he brought their father a bad report about them.\" Three sentences in, the trouble is already laid out. There is a favored son, ten unfavored sons, and a father who cannot keep his love evenly distributed.\n\nThen the text does something deliberate. \"Now Israel loved Joseph more than his other sons, because Joseph had been born to him in his old age; so he made him a robe of many colors.\" The favoritism is not hidden in Jacob's heart. He stitches it into a garment and puts it on the boy's shoulders, where ten brothers have to look at it every morning. \"When Joseph's brothers saw that their father loved him more than any of them, they hated him and could not speak a kind word to him.\"\n\nNotice the order. The hatred comes before the dreams. We tend to remember Joseph as the boy who couldn't stop talking about his visions, and the dreams certainly pour fuel on the fire. But Scripture is careful: the brothers hated him because of the robe first. The dreams - the sheaves bowing, the sun and moon and eleven stars bowing - arrive into a household that is already poisoned. By the time Joseph says \"my sheaf rose and stood upright, while your sheaves gathered around and bowed down to mine,\" the brothers are not hearing prophecy. They are hearing the favored one rub it in.\n\nThis is the peshat, the plain sense, and it is painfully ordinary. A family is torn apart not by some grand evil but by partiality, envy, and a coat. The greatest betrayal in Genesis grows out of the most common soil in the world: a parent who plays favorites and children who keep score."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Brother Who Drove Him to the Station",
+      "body": "I know two brothers who haven't spoken in eleven years. The break did not come over money or marriage or the things you'd expect. It came over a kitchen table, the family one, the one their mother left behind. One brother assumed it was his. The other had already loaded it into a truck.\n\nWhat stunned everyone was how fast a lifetime of shared rooms and shared jokes turned to silence. They had built forts together. One had driven the other to the train station every August for college. And then a table sat between them, and neither would move it, and the years simply closed over the gap.\n\nThis is how betrayal usually works. Not in a single cinematic moment, but in a slow accumulation of small unfair things, until one day someone does what cannot be undone. Joseph's brothers did not wake up planning murder. They woke up resentful, the way they had woken up resentful for years, and then he came walking toward them across the field in that coat, alone, and the resentment found a chance. \"Here comes that dreamer,\" they said. The cruelty was practiced before it was acted. It usually is.",
+      "connectionToTheme": "Betrayal rarely arrives as a stranger. It is almost always a brother - someone who knew us, who shared a table, in whom resentment had been quietly hardening for a long time.",
+      "content": "I know two brothers who haven't spoken in eleven years. The break did not come over money or marriage or the things you'd expect. It came over a kitchen table, the family one, the one their mother left behind. One brother assumed it was his. The other had already loaded it into a truck.\n\nWhat stunned everyone was how fast a lifetime of shared rooms and shared jokes turned to silence. They had built forts together. One had driven the other to the train station every August for college. And then a table sat between them, and neither would move it, and the years simply closed over the gap.\n\nThis is how betrayal usually works. Not in a single cinematic moment, but in a slow accumulation of small unfair things, until one day someone does what cannot be undone. Joseph's brothers did not wake up planning murder. They woke up resentful, the way they had woken up resentful for years, and then he came walking toward them across the field in that coat, alone, and the resentment found a chance. \"Here comes that dreamer,\" they said. The cruelty was practiced before it was acted. It usually is."
+    },
+    {
+      "type": "insight",
+      "heading": "Twenty Pieces of Silver and an Empty Pit",
+      "body": "Watch the brothers move, step by step, because the text slows down to let us. First they plot to kill him: \"Come now, let us kill him and throw him into one of the pits. We can say that a vicious animal has devoured him.\" Reuben, the oldest, flinches and buys time: \"Do not shed his blood. Throw him into this pit.\" So they strip the robe and drop him into a cistern - and here Scripture adds a detail it did not have to add: \"Now the pit was empty, with no water in it.\"\n\nThen comes the line that turns brothers into traffickers. \"And as they sat down to eat a meal\" - they sat down to eat, with Joseph in the pit below them - \"they looked up and saw a caravan of Ishmaelites.\" Judah does the math out loud: \"What profit will we gain if we kill our brother and cover up his blood? Come, let us sell him.\" Twenty shekels of silver. Under the law that would later be given, that is exactly the valuation set on a boy between five and twenty years old (Leviticus 27:5). They turned their own flesh into a transaction and went back to their meal.\n\nHere is the thing the chapter forces you to sit with: God does not appear. There is no voice from heaven, no intervention, no rescue. The brothers carry out their evil completely and get away with it completely. They dip the robe in goat's blood, send it to their father, and watch him break: \"It is my son's robe! A vicious animal has devoured him.\" Jacob tears his clothes - the same verb, in a sense, as the stripping of Joseph - and refuses to be comforted. The chapter ends in a lie believed and a father in sackcloth, with the only true word buried in a single line: \"Meanwhile, the Midianites sold Joseph in Egypt...\" Meanwhile. While the family grieves a death that did not happen, God is already moving the favored son toward the place he will one day save them from famine. The silence is not absence. The pit is empty of water, but it is not empty of God.",
+      "historicalContext": "A cistern (bor) in the ancient Near East was a bell-shaped pit cut into rock to collect rainwater - narrow at the top, wide below, impossible to climb out of. An empty cistern was a known makeshift prison; Jeremiah would later be lowered into one and sink in the mud (Jeremiah 38:6). Twenty shekels of silver was a real, ordinary price - Leviticus 27:5 sets it as the valuation of a male between five and twenty years old. The brothers did not undervalue Joseph in their rage; they sold him at market rate, which is somehow worse.",
+      "fascinatingFact": "Genesis 37 never once mentions God. Not in the dreams, not in the pit, not in the sale, not in the grief. It is one of the few chapters in Genesis where the LORD is entirely silent. Yet the narrator quietly tells us in 50:20 what was happening the whole time: \"You intended to harm me, but God intended it for good.\" The God absent from the dialogue of chapter 37 turns out to be the author of the whole arc.",
+      "content": "Watch the brothers move, step by step, because the text slows down to let us. First they plot to kill him: \"Come now, let us kill him and throw him into one of the pits. We can say that a vicious animal has devoured him.\" Reuben, the oldest, flinches and buys time: \"Do not shed his blood. Throw him into this pit.\" So they strip the robe and drop him into a cistern - and here Scripture adds a detail it did not have to add: \"Now the pit was empty, with no water in it.\"\n\nThen comes the line that turns brothers into traffickers. \"And as they sat down to eat a meal\" - they sat down to eat, with Joseph in the pit below them - \"they looked up and saw a caravan of Ishmaelites.\" Judah does the math out loud: \"What profit will we gain if we kill our brother and cover up his blood? Come, let us sell him.\" Twenty shekels of silver. Under the law that would later be given, that is exactly the valuation set on a boy between five and twenty years old (Leviticus 27:5). They turned their own flesh into a transaction and went back to their meal.\n\nHere is the thing the chapter forces you to sit with: God does not appear. There is no voice from heaven, no intervention, no rescue. The brothers carry out their evil completely and get away with it completely. They dip the robe in goat's blood, send it to their father, and watch him break: \"It is my son's robe! A vicious animal has devoured him.\" Jacob tears his clothes - the same verb, in a sense, as the stripping of Joseph - and refuses to be comforted. The chapter ends in a lie believed and a father in sackcloth, with the only true word buried in a single line: \"Meanwhile, the Midianites sold Joseph in Egypt...\" Meanwhile. While the family grieves a death that did not happen, God is already moving the favored son toward the place he will one day save them from famine. The silence is not absence. The pit is empty of water, but it is not empty of God."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Joseph, the beloved son, is stripped of his robe by his own brothers, thrown into a pit, and sold for twenty pieces of silver to traders bound for Egypt - and the God who never speaks in the chapter is the one steering it toward salvation.",
+      "modernApplication": "Most of us will never be sold into slavery, but most of us know what it is to be wounded by the people closest to us - a sibling, a parent, a friend, a spouse - and to find heaven apparently silent while it happens. Genesis 37 refuses to pretend that betrayal is rare or that God always interrupts it. He often does not. What it promises instead is that the silence is not the end of the sentence.",
+      "connectionPoint": "The pattern set here - a beloved son, hated without cause, sold for silver, handed over by his own, descending so that others might be saved - is one Scripture returns to again and again. Joseph is the first clear sketch of it. Psalm 105:17-18 looks back and says God \"sent a man before them - Joseph, sold as a slave. They bruised his feet with shackles.\" Sent. The brothers thought they were getting rid of him; God was sending him ahead.",
+      "newTestamentEcho": "The shape of Joseph's story finds its fullness in Christ. Like Joseph, Jesus is the beloved Son (Matthew 3:17) who \"came to His own, and His own did not receive Him\" (John 1:11). Like Joseph, He is handed over by one of His own twelve for silver - and Judah, the brother who proposes the sale here, gives his very name to Judas, who proposes the next one for thirty pieces (Matthew 26:14-16). Like Joseph, Jesus is stripped of His robe (John 19:23-24), descends into the pit of death, and is raised to the place of power - where, like Joseph before his brothers, He holds the lives of those who betrayed Him and says not vengeance but mercy: \"You intended to harm me, but God intended it for good, to accomplish... the saving of many lives\" (Genesis 50:20)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life has someone close to you stripped something from you - and where has it felt, in the silence afterward, as though God simply let it happen?",
+      "additionalQuestions": [
+        "Joseph's brothers sat down to eat with him in the pit beneath them. Is there a relationship where you have learned to enjoy your own life while someone you wronged is still in the pit?",
+        "The hatred started with a coat, not the dreams. What small, ongoing unfairness in your own family or friendships has been quietly hardening into something you don't want to name?",
+        "Can you name a 'meanwhile' in your own past - a season that felt like pure loss while you were in it, where you can now see God was sending you somewhere?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You know the pits I have been thrown into, and You know the ones I have thrown others into. I bring You the wounds I carry from people who were supposed to love me, and the silence I have blamed You for. Where I am Joseph - betrayed, stripped, sold - help me believe that You are still steering, even when You say nothing. Where I am the brother - resentful, keeping score, dressing my grievance as justice - soften me before I do what cannot be undone. Teach me, like the Son who was sold for silver, to answer betrayal not with vengeance but with the slow miracle of mercy. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'meanwhile' out loud - one painful place in your life where God has seemed silent - and choose, for one day, to hold it the way Joseph's story asks you to: not 'God is absent,' but 'God is sending me somewhere I cannot yet see.'",
+      "leavingAtCross": [
+        "The bitterness I keep nursing toward someone who wounded me, dressing it up as fairness",
+        "The belief that God's silence in my suffering means God's absence from it",
+        "The resentment that hardens a little more every time I keep score with the people closest to me"
+      ],
+      "receivingFromCross": [
+        "The promise that what was meant for harm can be turned by God for good",
+        "The freedom to release vengeance because the ending is not mine to write",
+        "The presence of the beloved Son who was also stripped, also sold, and who walks with me through the pit"
+      ],
+      "content": "Today, name one 'meanwhile' out loud - one painful place in your life where God has seemed silent - and choose, for one day, to hold it the way Joseph's story asks you to: not 'God is absent,' but 'God is sending me somewhere I cannot yet see.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to the order of the text, what made Joseph's brothers hate him first - the dreams, or the robe? Why does that order matter?",
+        "Genesis 37 never mentions God once. How does that silence change the way you read the brothers' success and Jacob's grief?",
+        "What does the single word 'Meanwhile' in verse 36 reveal that none of the characters in the chapter can yet see?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about a family relationship where favoritism or being overlooked is still doing quiet damage.",
+        "Share a 'pit' season you've been through - and whether you can yet see any 'meanwhile' in it, or whether it still just feels like loss.",
+        "Ask each other: who is the person you'd most struggle to say to, the way Joseph eventually did, 'God intended it for good'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 50:20",
+          "text": "As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this—to preserve the lives of many people."
+        },
+        {
+          "reference": "Genesis 37:11",
+          "text": "And his brothers were jealous of him, but his father kept in mind what he had said."
+        },
+        {
+          "reference": "Psalm 105:17-18",
+          "text": "He sent a man before them— Joseph, sold as a slave. They bruised his feet with shackles and placed his neck in irons,"
+        },
+        {
+          "reference": "John 1:11",
+          "text": "He came to His own, and His own did not receive Him."
+        },
+        {
+          "reference": "Matthew 26:15",
+          "text": "and asked, \"What are you willing to give me if I hand Him over to you?\" And they set out for him thirty pieces of silver."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 37-50",
+          "note": "Read the Joseph narrative as one continuous story. Watch how the betrayal of chapter 37 is held open, unresolved, all the way to the reconciliation and the verdict of 50:20 - 'God intended it for good.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Beloved Son, Sold by His Brothers",
+      "era": "Patriarchal period, roughly the early second millennium BC",
+      "description": "The eleventh son of Jacob and first son of Rachel, born in Jacob's old age and loved beyond measure. At seventeen he is the favored boy in the ornamented robe and the dreamer of dreams his brothers cannot stand. In Genesis 37 his brothers strip him, throw him in a pit, and sell him for twenty shekels of silver into Egypt. What looks like the end of his story is the beginning of God's: the slave will become the savior of the family that discarded him.",
+      "keyQuote": "You intended to harm me, but God intended it for good.",
+      "lessonForUs": "Joseph teaches us how to read our own betrayals. The pit was real, the silence was real, the years of slavery and prison were real - and none of it was outside the hand of God. The beloved son who was sold is the first clear shadow of the beloved Son who would be handed over, and who would answer His betrayers with salvation instead of revenge.",
+      "heading": "The Beloved Son, Sold by His Brothers"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2322,
+  "scriptureReference_full": "Genesis 37",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ketonet passim, ketonet H3801, pas H6446) reflects standard lexical sources; the rendering of passim as either 'many colors' or 'reaching the extremities' is noted in standard commentary. The price of twenty shekels is read against Leviticus 27:5; the thirty shekels of Exodus 21:32 belongs to Judas, not Joseph."
+  ]
 }

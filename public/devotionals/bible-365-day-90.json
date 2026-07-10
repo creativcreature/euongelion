@@ -6,33 +6,172 @@
   "scriptureReference": "Psalm 22",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 90"
+      "type": "scripture",
+      "reference": "Psalm 22:1-2, 16-18, 22, 27",
+      "translation": "BSB",
+      "emphasis": [
+        "why have You forsaken me?",
+        "they have pierced my hands and feet",
+        "cast lots for my clothing",
+        "I will proclaim Your name to my brothers",
+        "All the ends of the earth will remember"
+      ],
+      "hebrewOriginal": "אֵלִי אֵלִי לָמָה עֲזַבְתָּנִי",
+      "passage": "My God, my God, why have You forsaken me? Why are You so far from saving me, so far from my words of groaning? I cry out by day, O my God, but You do not answer, and by night, but I have no rest. ... For dogs surround me; a band of evil men encircles me; they have pierced my hands and feet. I can count all my bones; they stare and gloat over me. They divide my garments among them and cast lots for my clothing. ... I will proclaim Your name to my brothers; I will praise You in the assembly. ... All the ends of the earth will remember and turn to the LORD. All the families of the nations will bow down before Him."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עֲזַבְתָּנִי",
+      "transliteration": "azavtani",
+      "pronunciation": "ah-zav-TAH-nee",
+      "meaning": "You have forsaken me, You have abandoned me, You have let me go",
+      "rootMeaning": "From the root azav (H5800), to leave, loosen, let go. It is the word used when a man leaves his father and mother (Genesis 2:24), and the word God uses to promise He will never do it: 'I will never leave you nor forsake you.' Here David turns that same word into a question flung straight up at heaven.",
+      "usageNote": "When Jesus cries out from the cross He does not say it in David's Hebrew but in the Aramaic of His own street: 'Eloi, Eloi, lema sabachthani?' (Mark 15:34). Sabachthani carries azav's exact sense - to be left, abandoned, given over. The dying King prays the dying psalmist's word in His mother tongue.",
+      "wordByWord": [
+        {
+          "word": "אֵלִי",
+          "transliteration": "Eli",
+          "meaning": "my God - the possessive holds on even while the question accuses"
+        },
+        {
+          "word": "לָמָה",
+          "transliteration": "lamah",
+          "meaning": "why, for what reason - not a request for data but a cry for a face"
+        },
+        {
+          "word": "עֲזַבְתָּנִי",
+          "transliteration": "azavtani",
+          "meaning": "You have forsaken me - the verb azav with 'me' fused onto its end"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עָזַב / עֲזַבְתָּנִי",
+          "reference": "The same root stands behind Deuteronomy 31:6, 'He will never leave you nor forsake you,' and Hebrews 13:5, which quotes it. Psalm 22 lets a believer hold both at once: the felt absence and the sworn promise, in a single breath."
+        }
+      ],
+      "strongsNumber": "H5800",
+      "definition": "to leave, forsake, loose, let go, abandon",
+      "usage": "Notice what the psalmist does not drop. He says azavtani - forsaken me - but he says it to Eli, my God. The complaint is addressed, not abandoned. Even the accusation is a kind of clinging."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Lament heard from the cross. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ quoted this from the cross (Mark 15:34).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Prayer Honest Enough to Sound Like Despair",
+      "body": "Psalm 22 opens with the worst sentence in the Bible. \"My God, my God, why have You forsaken me?\" There is no soft landing, no throat-clearing, no \"nevertheless I will trust.\" The first thing out of the psalmist's mouth is the feeling that God has walked out of the room.\n\nWe are told this is a psalm of David, written to be sung in worship. Sit with that. The people of God gathered and put this in their hymnbook. They did not edit the abandonment out. They handed their children a song that begins by accusing God of going far away, of not answering by day or by night, of leaving a sufferer to groan into silence.\n\nReading it plainly, before any other layer, this is simply what it says it is: a man at the end of himself. He is mocked by everyone who walks past (verse 7). They throw his own faith back in his teeth - \"He trusts in the LORD, let the LORD deliver him\" (verse 8). His body is failing. He is poured out like spilled water, his bones out of joint, his strength dried up like a broken piece of pottery, his tongue stuck to the roof of his mouth (verses 14 and 15). And then the line that stops every Christian reader cold: \"they have pierced my hands and feet\" (verse 16).\n\nDavid was never crucified. Crucifixion did not yet exist in his world. He wrote down his own anguish - and wrote, without knowing it, the exact shape of a death a thousand years away."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Patient Who Could Not Pray Nicely",
+      "body": "A hospital chaplain once told me about a woman she sat with through a long night on an oncology ward. The woman had been a faithful churchgoer her whole life, and now she was furious. \"I can't pray,\" she said. \"Everything that comes out of my mouth sounds like a complaint against God.\"\n\nThe chaplain did not tell her to calm down or to count her blessings. She opened a Bible to Psalm 22 and read it aloud, slowly, all the way to the bottom. When she finished, the woman was crying - not from grief this time, but from something closer to relief. \"That's in there?\" she said. \"I'm allowed to say that?\"\n\nShe had spent decades believing that real faith meant only the polite prayers, the grateful ones, the ones that resolve. No one had told her that the songbook of God's own people contains a prayer that begins by asking God why He left. She prayed Psalm 22 that night, word for word, because she could not find her own words and these were truer than anything she could have invented.",
+      "connectionToTheme": "Psalm 22 gives words to the believer whose pain has outrun their vocabulary - and shows that such words belong inside worship, not outside it.",
+      "content": "A hospital chaplain once told me about a woman she sat with through a long night on an oncology ward. The woman had been a faithful churchgoer her whole life, and now she was furious. \"I can't pray,\" she said. \"Everything that comes out of my mouth sounds like a complaint against God.\"\n\nThe chaplain did not tell her to calm down or to count her blessings. She opened a Bible to Psalm 22 and read it aloud, slowly, all the way to the bottom. When she finished, the woman was crying - not from grief this time, but from something closer to relief. \"That's in there?\" she said. \"I'm allowed to say that?\"\n\nShe had spent decades believing that real faith meant only the polite prayers, the grateful ones, the ones that resolve. No one had told her that the songbook of God's own people contains a prayer that begins by asking God why He left. She prayed Psalm 22 that night, word for word, because she could not find her own words and these were truer than anything she could have invented."
+    },
+    {
+      "type": "insight",
+      "heading": "The Psalm Jesus Was Praying While He Died",
+      "body": "Here is the center of the day, the place everything else turns on. When Jesus hangs on the cross, at the ninth hour, He cries out: \"Eloi, Eloi, lema sabachthani?\" - \"My God, my God, why have You forsaken Me?\" (Mark 15:34). He is not making up new words in His agony. He is praying Psalm 22, line one.\n\nAnd once you hear the first line, the whole psalm rises up around the cross like a photograph developing. The crowd that gathers at Golgotha mocks Him in almost the psalm's exact words: let God rescue him, if God delights in him (compare verse 8 with Matthew 27:43). His hands and feet are pierced by nails (verse 16). The soldiers, John tells us, divide His outer garments and then gamble for the seamless tunic rather than tear it - and John says plainly this happened \"to fulfill the Scripture\" of verse 18 (John 19:23-24). The thirst, the staring crowd, the body wrenched out of joint - the psalm written a thousand years early reads like an eyewitness account.\n\nThis is what the early church saw and could not get over. The most God-forsaken-sounding words in Scripture turn out to be the words of the Son of God Himself - not a sign that He had stopped trusting the Father, but the opening line of a prayer He prayed to the very end.",
+      "historicalContext": "Crucifixion as the Romans practiced it - stretching a victim on a wooden beam, fixing the hands and feet, leaving the body to suffocate under its own weight over hours - was unknown in Israel in David's tenth-century-BC reign. The Persians and later the Romans developed it. Yet Psalm 22:14-18 describes exactly that death: limbs pulled from their sockets, a body able to count its own exposed bones, hands and feet pierced. David described a method of execution that would not be invented for centuries.",
+      "fascinatingFact": "A crucified man could not draw a full breath without pushing up on his nailed feet. Speaking required that same agonizing push. For Jesus to cry out the first line of Psalm 22 in a loud voice, He had to lift His whole pierced weight to do it. The Gospels are telling us He spent His dying breath beginning a psalm - and a psalm does not stop at its first line.",
+      "content": "Here is the center of the day, the place everything else turns on. When Jesus hangs on the cross, at the ninth hour, He cries out: \"Eloi, Eloi, lema sabachthani?\" - \"My God, my God, why have You forsaken Me?\" (Mark 15:34). He is not making up new words in His agony. He is praying Psalm 22, line one.\n\nAnd once you hear the first line, the whole psalm rises up around the cross like a photograph developing. The crowd that gathers at Golgotha mocks Him in almost the psalm's exact words: let God rescue him, if God delights in him (compare verse 8 with Matthew 27:43). His hands and feet are pierced by nails (verse 16). The soldiers, John tells us, divide His outer garments and then gamble for the seamless tunic rather than tear it - and John says plainly this happened \"to fulfill the Scripture\" of verse 18 (John 19:23-24). The thirst, the staring crowd, the body wrenched out of joint - the psalm written a thousand years early reads like an eyewitness account.\n\nThis is what the early church saw and could not get over. The most God-forsaken-sounding words in Scripture turn out to be the words of the Son of God Himself - not a sign that He had stopped trusting the Father, but the opening line of a prayer He prayed to the very end."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Psalm 22 does not end where it begins. After the abandonment and the piercing, the psalm pivots hard at verse 22: \"I will proclaim Your name to my brothers; I will praise You in the assembly.\" The forsaken sufferer is not dead in despair - he is suddenly alive in a crowd of worshipers, declaring that God 'has not despised or detested the torment of the afflicted' (verse 24).",
+      "modernApplication": "When your prayer can only manage the first line - the why, the silence, the feeling of being left - you are not failing at faith. You are standing exactly where the psalm starts, and where your Lord Himself once stood. The honest cry is not the opposite of trust. In Psalm 22 it is the doorway to it.",
+      "connectionPoint": "The turn in the psalm is not the sufferer talking himself into feeling better. Verse 24 names what changed: God 'has not hidden His face from him, but has attended to his cry for help.' The deliverance is real, and only after it does the praise pour out. The psalm refuses to skip the agony to get to the joy - it goes through.",
+      "newTestamentEcho": "Hebrews puts verse 22 directly into the mouth of the risen Christ: \"I will proclaim Your name to My brothers; I will sing Your praises in the assembly\" (Hebrews 2:12). The same Jesus who prayed the psalm's first line from the cross is heard, on the far side of resurrection, praying its closing lines - now calling the rescued 'My brothers.' The whole arc, from 'why have You forsaken Me' to 'all the ends of the earth will remember and turn to the LORD,' is His."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the prayer you have been afraid to pray because it sounds more like an accusation than worship?",
+      "additionalQuestions": [
+        "Where in your life right now does it feel like God has gone far away and is not answering 'by day' or 'by night'? Can you say that to Him, in those words?",
+        "Psalm 22 holds the felt absence ('You have forsaken me') and the remembered faithfulness ('in You our fathers trusted') in the same breath. Which of those two is easier for you to say honestly today, and why?",
+        "Jesus prayed this psalm to the very end, not just its first line. What would it look like for you to keep praying past the 'why' and toward the 'I will praise You in the assembly'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-lament",
+      "prayerText": "My God, my God - I am keeping the 'my,' even when I cannot feel the nearness. There are days You seem far from saving me, far from my words of groaning, and I have stopped pretending otherwise. Thank You that this complaint is not unbelief; thank You that Your own Son prayed it before me, with nails in His hands. Teach me to pray the whole psalm, not only its first line. Carry me from the 'why' toward the 'You have not hidden Your face,' in Your time, by Your hand. And until then, do not be far from me, for trouble is near. In the name of the One who was forsaken so that I would never be. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, pray Psalm 22 out loud, slowly, the whole way through - from the 'why have You forsaken me' to the 'all the ends of the earth will remember.' Do not stop at the part that matches your mood. Let the psalm carry you past it.",
+      "leavingAtCross": [
+        "The lie that honest complaint to God is the same thing as a loss of faith",
+        "The pressure to skip the lament and arrive at gratitude before I have actually felt anything",
+        "The fear that if I say 'You have forsaken me' out loud, God will take offense and leave for real"
+      ],
+      "receivingFromCross": [
+        "Permission to bring God the prayer that sounds like an accusation, because His own Son prayed it first",
+        "A Savior who was truly forsaken in my place, so that the silence I sometimes feel is never the final word over me",
+        "The promise of the psalm's ending: a rescued crowd, a coming feast, and the ends of the earth turning home"
+      ],
+      "content": "Today, pray Psalm 22 out loud, slowly, the whole way through - from the 'why have You forsaken me' to the 'all the ends of the earth will remember.' Do not stop at the part that matches your mood. Let the psalm carry you past it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Psalm 22 was written for Israel to sing in worship. What does it tell you about God that He gave His people a song beginning with 'why have You forsaken me'?",
+        "Name three specific details in Psalm 22 that appear at the crucifixion of Jesus. Why does it matter that David wrote them a thousand years before crucifixion existed?",
+        "The psalm turns at verse 22 from groaning to praise. What does verse 24 say actually caused the turn - and why is that different from simply 'thinking positively'?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'first line' prayer you have been carrying - a why, a how long, a where are You - that you have not said out loud to anyone.",
+        "Talk about whether your spiritual life has room for lament, or whether you have quietly assumed that good Christians only pray grateful prayers.",
+        "Ask each other: if Jesus prayed Psalm 22 all the way to its hopeful end, what would it look like this week to refuse to stop praying at the 'why'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 15:34",
+          "text": "At the ninth hour, Jesus cried out in a loud voice, \"Eloi, Eloi, lema sabachthani?\" which means, \"My God, My God, why have You forsaken Me?\""
+        },
+        {
+          "reference": "John 19:23-24",
+          "text": "When the soldiers had crucified Jesus, they divided His garments into four parts, one for each soldier, with the tunic remaining... \"Let us not tear it. Instead, let us cast lots to see who will get it.\" This was to fulfill the Scripture: \"They divided My garments among them, and cast lots for My clothing.\""
+        },
+        {
+          "reference": "Hebrews 2:12",
+          "text": "He says: \"I will proclaim Your name to My brothers; I will sing Your praises in the assembly.\""
+        },
+        {
+          "reference": "Psalm 22:24",
+          "text": "For He has not despised or detested the torment of the afflicted. He has not hidden His face from him, but has attended to his cry for help."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 22",
+          "note": "Read all 31 verses in one sitting, marking where the tone shifts from lament (verses 1-21) to praise (verses 22-31). Notice the single hinge at verse 22 and what verse 24 says made the difference."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Shepherd-King Who Wrote His Pain into Worship",
+      "description": "Israel's second king, a shepherd, warrior, and poet who composed many of the psalms. David knew abandonment from the inside - hunted by Saul, betrayed by his own son, often crying out from caves and exile. In Psalm 22 he turned his rawest anguish into a song for the whole assembly to sing. He could not have known that his words would one day be prayed, line for line, by his greatest descendant nailed to a Roman cross.",
+      "keyQuote": "My God, my God, why have You forsaken me?",
+      "lessonForUs": "David did not clean up his grief before bringing it to God; he set it to music and handed it to the congregation. The most honest prayer in Scripture became the prayer of Christ Himself - proof that there is no part of your pain that cannot be brought into worship.",
+      "heading": "The Shepherd-King Who Wrote His Pain into Worship"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2309,
+  "scriptureReference_full": "Psalm 22",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Cross-references: Mark 15:34; Matthew 27:43, 46; John 19:23-24; Hebrews 2:12; Deuteronomy 31:6; Hebrews 13:5 (all BSB).",
+    "Hebrew word study (azavtani, root azav, H5800) reflects standard lexical sources. The connection of Psalm 22 to the crucifixion is drawn directly from the New Testament's own citations and from broad historic Christian reading across traditions."
+  ]
 }

@@ -1,38 +1,192 @@
 {
   "day": 27,
   "title": "Limp through life",
-  "teaser": "Day 27 of Bible 365 — Genesis (deeper)",
+  "teaser": "Jacob wrestles God in the dark and walks away wounded, renamed, and blessed. The hand that struck his hip is the hand that held him all night.",
   "framework": "Genesis (deeper) — Brokenness as the gift",
   "scriptureReference": "Genesis (deeper)",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 27"
+      "type": "scripture",
+      "reference": "Genesis 32:24-31",
+      "translation": "BSB",
+      "emphasis": [
+        "Jacob was left all alone",
+        "I will not let you go unless you bless me",
+        "Israel",
+        "I have seen God face to face",
+        "he was limping because of his hip"
+      ],
+      "hebrewOriginal": "וַיִּוָּתֵר יַעֲקֹב לְבַדּוֹ וַיֵּאָבֵק אִישׁ עִמּוֹ עַד עֲלוֹת הַשָּׁחַר",
+      "passage": "So Jacob was left all alone, and there a man wrestled with him until daybreak. When the man saw that he could not overpower Jacob, he struck the socket of Jacob's hip and dislocated it as they wrestled. Then the man said, \"Let me go, for it is daybreak.\" But Jacob replied, \"I will not let you go unless you bless me.\" \"What is your name?\" the man asked. \"Jacob,\" he replied. Then the man said, \"Your name will no longer be Jacob, but Israel, because you have struggled with God and with men, and you have prevailed.\" And Jacob requested, \"Please tell me your name.\" But he replied, \"Why do you ask my name?\" Then he blessed Jacob there. So Jacob named the place Peniel, saying, \"Indeed, I have seen God face to face, and yet my life was spared.\" The sun rose above him as he passed by Penuel, and he was limping because of his hip."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis (deeper)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis (deeper) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יִשְׂרָאֵל",
+      "transliteration": "Yisra'el",
+      "pronunciation": "yis-raw-ALE",
+      "meaning": "Israel — he struggles with God, God strives",
+      "rootMeaning": "Most likely from sarah, to strive, contend, or persist, joined to El, God. The name the man gives can be heard two ways at once: the one who wrestles with God, and the God who wrestles with him. It is a name built out of a fight that was not lost.",
+      "usageNote": "The night before, Jacob's name (Ya'aqov) meant heel-grabber, supplanter - the man who came out of the womb gripping his brother's heel and spent his life gripping for advantage. At Peniel that grip is broken at the hip and renamed at the mouth. The whole nation, the whole story, will carry forward the name given to a limping man at dawn.",
+      "wordByWord": [
+        {
+          "word": "וַיִּוָּתֵר",
+          "transliteration": "vayyivvater",
+          "meaning": "and he was left, left behind, left over - alone"
+        },
+        {
+          "word": "לְבַדּוֹ",
+          "transliteration": "levaddo",
+          "meaning": "by himself, all alone"
+        },
+        {
+          "word": "וַיֵּאָבֵק",
+          "transliteration": "vayye'avek",
+          "meaning": "and he wrestled - a rare verb, close to avak, dust; literally to get dusty, to grapple in the dirt"
+        },
+        {
+          "word": "שָׂרִיתָ",
+          "transliteration": "sarita",
+          "meaning": "you have struggled, contended, held your ground"
+        },
+        {
+          "word": "וַתּוּכָל",
+          "transliteration": "vattukhal",
+          "meaning": "and you have prevailed, you were able, you overcame"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פְּנִיאֵל",
+          "reference": "Peniel means face of God. Jacob names the place not for what he did but for what he saw: he met God face to face in the dark and lived to feel the sun rise on him."
+        },
+        {
+          "word": "אָבָק / יֵּאָבֵק",
+          "reference": "The verb for wrestled (ye'avek) sounds like avak, dust. The grappling kicks up the dust of the ground - the same dust man was made from. Jacob fights in the dirt he came from, and is remade."
+        }
+      ],
+      "strongsNumber": "H3478",
+      "definition": "Israel; the name given to Jacob meaning 'he struggles with God' or 'God strives'",
+      "usage": "The verb vayye'avek is used almost nowhere else in the Hebrew Bible. Scripture reaches for a strange, dusty word because this is a strange night - a man clutching God in the dark and refusing, even wounded, to let go."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Brokenness as the gift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s weakness our strength (2 Cor 12:9-10).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Left Alone on the Wrong Side of the River",
+      "body": "Jacob has spent his whole life on the make. He grabbed his twin's heel in the womb, bought the birthright with stew, stole the blessing with goatskin on his arms, and ran. Twenty years later he is running again - this time toward home, and toward Esau, the brother he cheated, who is coming to meet him with four hundred men. So Jacob does what Jacob always does: he plans. He splits his camp in two so half might survive. He sends wave after wave of gifts ahead to soften the brother he fears. He prays a real prayer, and then keeps managing the outcome anyway.\n\nThen, in the dark, he sends everyone he loves across the river - his wives, his maidservants, his eleven sons, everything he owns - and the text says something small and enormous: \"So Jacob was left all alone.\" For the first time in the story, the schemer has nothing left to arrange. No advantage to seize, no brother to deceive, no flock to drive ahead as a buffer. Just a man, a riverbank, and the dark.\n\nThat is when the wrestling starts. \"There a man wrestled with him until daybreak.\" Scripture does not name the man yet; it lets us feel Jacob's confusion - an attacker out of nowhere, in the night, on the far side of the water. Only by the end will Jacob understand that the One he had been running toward and the One he had been running from were the same, and that the fight he could not win was the fight he was never meant to lose."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Could Not Put It Down",
+      "body": "A friend of mine carried a failing marriage the way you carry a glass too full - both hands, slow steps, certain that if he just gripped hard enough nothing would spill. He managed it for years: read the books, scheduled the talks, kept the peace, controlled what he could. The white-knuckle work of holding it together became his whole life.\n\nThen it broke anyway, in the small hours when the house was quiet and there was no one left to perform for. He told me later that the worst night was also the first honest one. \"I stopped trying to fix it,\" he said, \"and I just held on to God and wouldn't stop crying.\" He didn't get the outcome he'd been managing toward. He got something he hadn't known to ask for - a self that no longer ran on control, and a faith that finally had his weight on it.\n\nHe walks differently now. Gentler with people who are still gripping. There is a kind of strength that only shows up after the grip is broken, when a person stops wrestling for the upper hand and starts holding on for dear life. Jacob, alone in the dark, is about to learn the difference.",
+      "connectionToTheme": "Jacob's wrestling is every soul that has run out of things to manage and discovers, in the dark, that holding on to God is not weakness but the only strength that lasts.",
+      "content": "A friend of mine carried a failing marriage the way you carry a glass too full - both hands, slow steps, certain that if he just gripped hard enough nothing would spill. He managed it for years: read the books, scheduled the talks, kept the peace, controlled what he could. The white-knuckle work of holding it together became his whole life.\n\nThen it broke anyway, in the small hours when the house was quiet and there was no one left to perform for. He told me later that the worst night was also the first honest one. \"I stopped trying to fix it,\" he said, \"and I just held on to God and wouldn't stop crying.\" He didn't get the outcome he'd been managing toward. He got something he hadn't known to ask for - a self that no longer ran on control, and a faith that finally had his weight on it.\n\nHe walks differently now. Gentler with people who are still gripping. There is a kind of strength that only shows up after the grip is broken, when a person stops wrestling for the upper hand and starts holding on for dear life. Jacob, alone in the dark, is about to learn the difference."
+    },
+    {
+      "type": "insight",
+      "heading": "The Wound and the Blessing Come from the Same Hand",
+      "body": "Watch the order carefully, because the whole night turns on it. First the man strikes the socket of Jacob's hip and dislocates it. Then Jacob, now crippled, says, \"I will not let you go unless you bless me.\" The wound comes before the blessing - and the same hand gives both.\n\nThis is the gift hidden in the brokenness. As long as Jacob could win, he was fighting to overpower. The moment his hip went out, he could no longer wrestle for the upper hand; all he could do was cling. The blow that broke him is what changed the grip from grasping to holding on. He stops trying to prevail over God and starts refusing to let go of God - and that, Scripture says, is when he prevailed: not by being strong, but by holding fast to Strength itself after being broken by it.\n\nSo the new name is born from a wound. \"Your name will no longer be Jacob, but Israel.\" Heel-grabber becomes God-wrestler, and he limps away with the proof in his body. The limp is not the failure of the night; it is the souvenir of the blessing. For the rest of his life, every step will say the same thing: I was broken here, and here I was renamed.",
+      "historicalContext": "Genesis sits at the head of Israel's whole story, and this is the night Israel gets its name. The prophet Hosea, centuries later, looks back to this exact scene to interpret his nation's heart: \"In the womb he grasped his brother's heel, and in his vigor he wrestled with God. Yes, he struggled with the angel and prevailed; he wept and sought His favor …\" (Hosea 12:3-4). Hosea adds a detail Genesis only implies - Jacob wept. The wrestling was not a contest of muscle but a desperate, tearful clinging.",
+      "fascinatingFact": "Jacob asks the man's name and is refused - \"Why do you ask my name?\" - yet he walks away naming the place Peniel, \"face of God.\" He never gets the name; he gets the face. And his astonishment is not that he saw God, but that he survived it: \"I have seen God face to face, and yet my life was spared.\" In the rest of the Old Testament, to see God's face is to die (Exodus 33:20). Jacob is the man who saw and lived - and limped away into the sunrise.",
+      "content": "Watch the order carefully, because the whole night turns on it. First the man strikes the socket of Jacob's hip and dislocates it. Then Jacob, now crippled, says, \"I will not let you go unless you bless me.\" The wound comes before the blessing - and the same hand gives both.\n\nThis is the gift hidden in the brokenness. As long as Jacob could win, he was fighting to overpower. The moment his hip went out, he could no longer wrestle for the upper hand; all he could do was cling. The blow that broke him is what changed the grip from grasping to holding on. He stops trying to prevail over God and starts refusing to let go of God - and that, Scripture says, is when he prevailed: not by being strong, but by holding fast to Strength itself after being broken by it.\n\nSo the new name is born from a wound. \"Your name will no longer be Jacob, but Israel.\" Heel-grabber becomes God-wrestler, and he limps away with the proof in his body. The limp is not the failure of the night; it is the souvenir of the blessing. For the rest of his life, every step will say the same thing: I was broken here, and here I was renamed."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jacob meets God face to face in the dark, is wounded in the wrestling, refuses to let go without a blessing, and limps away renamed - alive after seeing the face that no one was supposed to see and live.",
+      "modernApplication": "Most of us are still Jacob before the river - managing the outcome, sending gifts ahead of our fear, splitting our hearts into camps so half might survive. The thing we are most afraid of is being left all alone with God, with nothing to arrange. But that riverbank is exactly where the name we cannot give ourselves gets given. Sometimes God has to break the grip before He can hand us the blessing, and the wound we resent turns out to be the place He renamed us.",
+      "connectionPoint": "Jacob's astonishment - \"I have seen God face to face, and yet my life was spared\" - is the deepest hope of the whole Bible. To see God should mean to die. Yet here a man sees and lives. The thread runs straight from Peniel to Bethlehem: \"The Word became flesh and made His dwelling among us. We have seen His glory\" (John 1:14). In Christ, God comes close enough to be grasped, held, even struck - so that when we see Him face to face, our life is spared.",
+      "newTestamentEcho": "What Jacob lived in one night, the gospel makes the shape of the whole Christian life. Paul pleaded three times for his thorn to be removed, and heard instead: \"My grace is sufficient for you, for My power is perfected in weakness\" (2 Corinthians 12:9). The wound stays; the blessing comes through it. \"When I am weak, then I am strong.\" And the One who lets Himself be held and broken so we might be blessed is Christ Himself - struck for us at Calvary, where the innocent is wounded so the limping are renamed children of God."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still wrestling for the upper hand - and what would it mean to stop trying to win and simply refuse to let go of God?",
+      "additionalQuestions": [
+        "What have you been managing so tightly that you have never let yourself be left all alone with God?",
+        "Is there a wound you have resented as pure loss that might, looking again, be the place you were renamed?",
+        "Jacob said, 'I will not let you go unless you bless me.' What would it sound like for you to hold on to God like that tonight?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have spent so long gripping - for control, for advantage, for a version of my life I could manage. Tonight, leave me alone with You long enough to stop. Where I am wrestling You for the upper hand, break my grip. Where I am wounded and resentful, show me the blessing You hid inside the wound. I will not let You go unless You bless me. Rename me, and let me limp into tomorrow holding on to nothing but You - through Christ, who was struck for me so that I could see Your face and live. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, walk on purpose. Notice your own steps, and let the small ache of being human remind you that the strongest thing you can do is not to overpower your trouble but to hold on to God through it. Name one grip you are ready to loosen - one outcome you have been white-knuckling - and pray Jacob's words over it: I will not let You go unless You bless me.",
+      "leavingAtCross": [
+        "The need to win - to come out of every struggle with the upper hand",
+        "The exhausting work of managing the outcome so I never have to be left alone with God",
+        "The shame of my limp, as if the wound were proof that God is against me"
+      ],
+      "receivingFromCross": [
+        "A blessing that comes through the wound, not around it",
+        "A new name given by God that no failure of mine can take back",
+        "The strength that only shows up when my own grip is finally broken"
+      ],
+      "content": "Today, walk on purpose. Notice your own steps, and let the small ache of being human remind you that the strongest thing you can do is not to overpower your trouble but to hold on to God through it. Name one grip you are ready to loosen - one outcome you have been white-knuckling - and pray Jacob's words over it: I will not let You go unless You bless me."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that Jacob was 'left all alone' before the wrestling began - what did he have to lose before God could rename him?",
+        "The man strikes Jacob's hip and then blesses him. What does the order of wound-then-blessing teach about how God works in our brokenness?",
+        "Jacob says he saw God face to face and lived. How does that astonishment point forward to seeing God in the face of Jesus Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are still wrestling God for control instead of holding on to Him in trust.",
+        "Talk about a wound in your life that, looking back, turned out to carry a blessing you could not have received any other way.",
+        "Ask each other: what new name - what truer identity - is God trying to give you that your old striving keeps you from receiving?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 12:3-4",
+          "text": "In the womb he grasped his brother's heel, and in his vigor he wrestled with God. Yes, he struggled with the angel and prevailed; he wept and sought His favor; he found Him at Bethel and spoke with Him there—"
+        },
+        {
+          "reference": "Genesis 35:10",
+          "text": "And God said to him, \"Though your name is Jacob, you will no longer be called Jacob. Instead, your name will be Israel.\" So God named him Israel."
+        },
+        {
+          "reference": "2 Corinthians 12:9",
+          "text": "But He said to me, \"My grace is sufficient for you, for My power is perfected in weakness.\" Therefore I will boast all the more gladly in my weaknesses, so that the power of Christ may rest on me."
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 32",
+          "note": "Read the whole chapter slowly. Notice how much Jacob arranges (vv. 1-21) before he is finally left with nothing to arrange (v. 24), and let the dawn of verse 31 land - the sun rising on a renamed, limping man."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jacob (Israel)",
+      "title": "The Heel-Grabber Who Became God-Wrestler",
+      "era": "Patriarchal period, roughly 2nd millennium BC",
+      "key_trait": "A grasping, scheming man broken and renamed in a night-long wrestling with God",
+      "description": "Younger twin of Esau, son of Isaac, grandson of Abraham. Jacob's name meant 'heel-grabber,' and he lived up to it - taking his brother's birthright and blessing by cunning. After twenty years of exile he returns home in fear and is met on the riverbank by God Himself. Wrestling until dawn, wounded in the hip, he refuses to let go without a blessing and is renamed Israel. He becomes the father of the twelve tribes - a whole people who carry forward the name given to a limping man.",
+      "keyQuote": "I will not let you go unless you bless me.",
+      "lessonForUs": "God does not wait until we are strong and sorted to meet us; He meets us alone in the dark, breaks the grip we cannot loosen ourselves, and hands us a blessing through the very wound we would have avoided. The limp is not the proof we lost. It is the proof we were held.",
+      "heading": "The Heel-Grabber Who Became God-Wrestler"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2631,
+  "scriptureReference_full": "Genesis 32:24-31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (Yisra'el H3478; the sarah / El etymology; vayye'avek and its resonance with avak, dust; Peniel as 'face of God') reflects standard lexical sources. Hosea 12:3-4 is cited as the canonical inner-biblical interpretation of the Jabbok wrestling."
+  ]
 }

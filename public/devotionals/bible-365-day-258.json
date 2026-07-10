@@ -1,38 +1,177 @@
 {
   "day": 258,
-  "title": "Hosea, Joel, Amos — Day 6 — Deeper Dive",
-  "teaser": "Day 258 of Bible 365 — Selected",
+  "title": "The Spirit poured out on all flesh",
+  "teaser": "Three prophets diagnose the same drought — a people gone deaf to God. Joel names the cure: not more sacrifice, but a Spirit poured out on everyone who calls.",
   "framework": "Selected — Hosea, Joel, Amos",
-  "scriptureReference": "Selected",
+  "scriptureReference": "Joel 2:28-32",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 258"
+      "type": "scripture",
+      "reference": "Joel 2:28-32",
+      "translation": "BSB",
+      "emphasis": [
+        "I will pour out My Spirit on all people",
+        "everyone who calls on the name of the LORD will be saved",
+        "the great and awesome Day of the LORD"
+      ],
+      "hebrewOriginal": "וְהָיָה אַחֲרֵי־כֵן אֶשְׁפּוֹךְ אֶת־רוּחִי עַל־כָּל־בָּשָׂר",
+      "passage": "And afterward, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions. Even on My menservants and maidservants, I will pour out My Spirit in those days. I will show wonders in the heavens and on the earth, blood and fire and columns of smoke. The sun will be turned to darkness and the moon to blood before the coming of the great and awesome Day of the LORD. And everyone who calls on the name of the LORD will be saved; for on Mount Zion and in Jerusalem there will be deliverance, as the LORD has promised, among the remnant called by the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֶשְׁפּוֹךְ",
+      "transliteration": "eshpokh",
+      "pronunciation": "esh-POKE",
+      "meaning": "I will pour out, I will pour forth",
+      "rootMeaning": "From shaphak, to pour out, spill, or shed. It is the verb used for spilling blood, for emptying a jar to its last drop, for pouring a drink-offering out before God. Nothing is held back; the container is turned all the way over.",
+      "usageNote": "Joel chooses a word usually spent on liquids and on lives. The Spirit is not measured out by spoonfuls to the deserving few; He is poured the way you pour water on dry ground - generously, downward, until the parched thing drinks.",
+      "wordByWord": [
+        {
+          "word": "אֶשְׁפּוֹךְ",
+          "transliteration": "eshpokh",
+          "meaning": "I will pour out (first person - God Himself does the pouring)"
+        },
+        {
+          "word": "אֶת־רוּחִי",
+          "transliteration": "et-ruchi",
+          "meaning": "My Spirit, My breath - the same ruach that hovered over the waters in Genesis 1"
+        },
+        {
+          "word": "עַל־כָּל־בָּשָׂר",
+          "transliteration": "al-kol-basar",
+          "meaning": "on all flesh - the whole of frail, mortal humanity, not one favored class"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רוּחַ / ruach",
+          "reference": "The word for Spirit also means breath and wind. In Hosea, Joel, and Amos, the people have grown deaf and dry; ruach is the breath that returns to a body that had stopped breathing (compare Ezekiel 37:9-10)."
+        }
+      ],
+      "strongsNumber": "H8210",
+      "definition": "to pour out, pour forth, spill, shed (used of liquids, of blood, and of the Spirit)",
+      "usage": "Twice in two verses Joel repeats eshpokh - I will pour out, I will pour out. The repetition is not redundancy. It is a promise said twice so a doubting people will believe it once."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Prophets, One Diagnosis",
+      "body": "For five days this week we have walked with three of the earliest writing prophets. Hosea marries an unfaithful wife so Israel can watch God love a people who keep wandering. Joel stands in a field stripped bare by locusts and reads the ruin like a sermon. Amos, a shepherd from the south, walks north into the comfortable kingdom and tells the rich exactly what their religion is costing the poor. Three different men, three different decades, one shared diagnosis: the people have gone deaf to God.\n\nIt is worth hearing how blunt that diagnosis gets. Amos has God say, \"I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies\" (Amos 5:21). The worship was running; the heart had stopped. Hosea names what God actually wanted underneath all of it: \"For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings\" (Hosea 6:6). And Amos warns of a hunger worse than any locust: \"not a famine of bread or a thirst for water, but a famine of hearing the words of the LORD\" (Amos 8:11). The deepest drought in these books is not in the soil. It is in the soul of a people who can no longer hear the God they are still singing to.\n\nThat is the wall every one of these prophets runs into. They can name the deafness. They can plead for return - Hosea begs, \"Come, let us return to the LORD\" (Hosea 6:1), and Joel cries, \"rend your hearts and not your garments\" (Joel 2:13). But none of them can reach inside a person and make a dead ear hear. The diagnosis is exact. The cure is beyond the diagnosing prophet's hands.",
+      "keyInsight": "All three prophets press the same wound: God's people have grown deaf to Him while the worship keeps running. A prophet can name that deafness. Only God can cure it from the inside.",
+      "content": "For five days this week we have walked with three of the earliest writing prophets. Hosea marries an unfaithful wife so Israel can watch God love a people who keep wandering. Joel stands in a field stripped bare by locusts and reads the ruin like a sermon. Amos, a shepherd from the south, walks north into the comfortable kingdom and tells the rich exactly what their religion is costing the poor. Three different men, three different decades, one shared diagnosis: the people have gone deaf to God.\n\nIt is worth hearing how blunt that diagnosis gets. Amos has God say, \"I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies\" (Amos 5:21). The worship was running; the heart had stopped. Hosea names what God actually wanted underneath all of it: \"For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings\" (Hosea 6:6). And Amos warns of a hunger worse than any locust: \"not a famine of bread or a thirst for water, but a famine of hearing the words of the LORD\" (Amos 8:11). The deepest drought in these books is not in the soil. It is in the soul of a people who can no longer hear the God they are still singing to.\n\nThat is the wall every one of these prophets runs into. They can name the deafness. They can plead for return - Hosea begs, \"Come, let us return to the LORD\" (Hosea 6:1), and Joel cries, \"rend your hearts and not your garments\" (Joel 2:13). But none of them can reach inside a person and make a dead ear hear. The diagnosis is exact. The cure is beyond the diagnosing prophet's hands."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Well That Ran Dry",
+      "body": "A friend of mine farmed the same dry county her grandfather had. The summer the well finally failed, she did everything a careful farmer does. She rationed. She hauled water in barrels from town. She mulched the roots and prayed over the forecast. For weeks she kept the crop alive by the strength of her own two arms, carrying the future of the farm one heavy load at a time.\n\nWhat she could not do was make it rain. She could carry water to the field. She could not pour water on the whole county. Her effort was real, and it was not nothing - but it was the wrong size for the problem. The land did not need a woman with barrels. It needed the sky to open.\n\nWhen the rain finally came, she stood out in it and wept. Not because her hauling had been useless, but because it had been so small, and the thing the ground actually needed had come for free, from above, on everything at once. That is the gap Joel is standing in. He has carried what water he can to a deaf people. Then God says: stop hauling. I will pour out My Spirit on all flesh.",
+      "connectionToTheme": "The prophet's pleading is like carrying barrels to a parched field - real, costly, and far too small. The drought of a deaf heart needs rain from above, poured out on everyone at once.",
+      "content": "A friend of mine farmed the same dry county her grandfather had. The summer the well finally failed, she did everything a careful farmer does. She rationed. She hauled water in barrels from town. She mulched the roots and prayed over the forecast. For weeks she kept the crop alive by the strength of her own two arms, carrying the future of the farm one heavy load at a time.\n\nWhat she could not do was make it rain. She could carry water to the field. She could not pour water on the whole county. Her effort was real, and it was not nothing - but it was the wrong size for the problem. The land did not need a woman with barrels. It needed the sky to open.\n\nWhen the rain finally came, she stood out in it and wept. Not because her hauling had been useless, but because it had been so small, and the thing the ground actually needed had come for free, from above, on everything at once. That is the gap Joel is standing in. He has carried what water he can to a deaf people. Then God says: stop hauling. I will pour out My Spirit on all flesh."
+    },
+    {
+      "type": "insight",
+      "heading": "On All Flesh, Not the Few",
+      "body": "Read Joel's list slowly and watch who it leaves out. Sons and daughters. Old men and young men. Menservants and maidservants. In Joel's world the Spirit had rested mostly on a handful of kings and prophets - the credentialed, the chosen, the named. Joel takes that short list and breaks it wide open. Daughters prophesy. Slaves dream. The young see what only elders were supposed to see, and the old still dream when the young assume they are finished. Every line in the promise reaches the person the old order would have skipped.\n\nThis is the answer to the deafness Hosea and Amos diagnosed. The cure is not a better class of religious professional. It is God's own breath, His ruach, set loose inside ordinary people - the maidservant, the teenager, the worn-out old man - so that the knowledge of God Hosea longed for is no longer carried by a few experts but breathed into the many. The famine of hearing ends not when one great prophet shouts louder, but when God puts His Spirit in everyone.\n\nAnd notice the verb again: eshpokh, I will pour out. You do not pour onto a sealed jar. To pour out the Spirit on all flesh is to assume the flesh has been opened - that the deaf ear will finally hear because God Himself will be inside it.",
+      "historicalContext": "Hosea, Joel, and Amos prophesied to the northern kingdom of Israel and its neighbors in the eighth century BC, in the decades before Assyria swept the north into exile. They wrote to a prosperous, religiously active people whose worship had outlived their faithfulness - which is why their books read less like predictions and more like a physician's chart.",
+      "fascinatingFact": "Joel never dates his prophecy or names a king, which is unusual among the prophets. The book is anchored not to a throne but to a locust plague and a promised Day of the LORD - as if Joel means his words to keep finding new fields and new generations long after the original swarm is gone.",
+      "content": "Read Joel's list slowly and watch who it leaves out. Sons and daughters. Old men and young men. Menservants and maidservants. In Joel's world the Spirit had rested mostly on a handful of kings and prophets - the credentialed, the chosen, the named. Joel takes that short list and breaks it wide open. Daughters prophesy. Slaves dream. The young see what only elders were supposed to see, and the old still dream when the young assume they are finished. Every line in the promise reaches the person the old order would have skipped.\n\nThis is the answer to the deafness Hosea and Amos diagnosed. The cure is not a better class of religious professional. It is God's own breath, His ruach, set loose inside ordinary people - the maidservant, the teenager, the worn-out old man - so that the knowledge of God Hosea longed for is no longer carried by a few experts but breathed into the many. The famine of hearing ends not when one great prophet shouts louder, but when God puts His Spirit in everyone.\n\nAnd notice the verb again: eshpokh, I will pour out. You do not pour onto a sealed jar. To pour out the Spirit on all flesh is to assume the flesh has been opened - that the deaf ear will finally hear because God Himself will be inside it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Joel promised a day when God would pour out His Spirit on all flesh - sons and daughters, young and old, servant and free - so that the deafness diagnosed by Hosea and Amos would be cured from the inside, and everyone who called on the LORD's name would be saved.",
+      "modernApplication": "We still try to fix a soul-deep deafness with surface effort - more activity, better worship, a harder week of trying to feel close to God. Joel says the dry ground cannot be solved by hauling barrels. What we need is poured from above and offered to everyone, including the ones the room would skip. You do not earn rain. You stand out in it.",
+      "connectionPoint": "Joel's promise hung unfulfilled for roughly eight hundred years - a sealed envelope passed down the generations. Then, on the morning of Pentecost, the Spirit fell on a room of ordinary people and they spilled into the street speaking of God. When the crowd called it madness, Peter stood up and said, \"this is what was spoken by the prophet Joel\" (Acts 2:16). He quoted these exact verses. The envelope was finally opened, and Joel's name was on it.",
+      "newTestamentEcho": "Peter declares that the One who poured out the Spirit that morning was the crucified and risen Jesus, now exalted (Acts 2:33). And the last line of Joel's promise - \"everyone who calls on the name of the LORD will be saved\" (Joel 2:32) - is taken up word for word by Paul and applied to Jesus: \"Everyone who calls on the name of the Lord will be saved\" (Romans 10:13). The Name you now call on for the deliverance Joel promised is the name of Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been hauling barrels - working hard at the surface of a thirst that can only be answered by rain from above?",
+      "additionalQuestions": [
+        "Hosea said God desires the knowledge of Him more than sacrifice. Is there a place where your activity for God has quietly replaced your nearness to Him?",
+        "Joel's promise deliberately includes the people the old order skipped. Who do you assume God's Spirit would pass over - and what if Joel meant them too?",
+        "To 'call on the name of the LORD' is the simplest thing in the passage and the hardest to actually do. What would it mean to call on Him honestly today, with nothing impressive in your hands?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been carrying barrels to a field that needs the sky to open. I confess the weeks I kept the religion running while my heart went quiet, the worship that moved while I did not. You said You desire to be known, not merely served. So pour out Your Spirit on me - not a measured spoonful for the deserving, but rain on dry ground. Open the ear that has gone deaf. And here, with nothing in my hands worth showing You, I call on Your name. By Your own promise, save me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been trying to fix in your spiritual life by sheer effort - and instead of working harder at it, set it down and simply call on the Lord about it, in plain words, once in the morning and once before you sleep.",
+      "leavingAtCross": [
+        "The exhausting belief that closeness to God is something I manufacture by hauling enough barrels",
+        "The deafness I have let settle in while the outward worship kept running",
+        "The quiet assumption that God's Spirit is for the credentialed few and would skip someone like me"
+      ],
+      "receivingFromCross": [
+        "A Spirit poured out, not measured out - rain on the dry ground of me",
+        "The knowledge of God that Hosea longed for, breathed in from the inside rather than studied from outside",
+        "The plain promise that everyone who calls on the name of the Lord is saved - and the Name is Jesus"
+      ],
+      "content": "Today, name one thing you have been trying to fix in your spiritual life by sheer effort - and instead of working harder at it, set it down and simply call on the Lord about it, in plain words, once in the morning and once before you sleep."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the single diagnosis Hosea, Joel, and Amos all share about God's people - and why can't the prophet himself cure it?",
+        "Why does it matter that Joel says God will pour out His Spirit on 'all flesh' - servants, daughters, young and old - rather than on prophets and kings alone?",
+        "How does Peter's sermon at Pentecost (Acts 2:16-21) show that Joel 2:28-32 was finally fulfilled, and in whom?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one 'barrel' you have been hauling - one place you are working hard on the surface of a thirst only God can answer.",
+        "Hosea 6:6 says God desires the knowledge of Him over sacrifice. Where has 'doing for God' crowded out 'knowing God' in each of your lives?",
+        "Pray Joel 2:32 over one another out loud - calling on the name of the Lord, by name, for the specific deliverance each of you needs."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Amos 8:11",
+          "text": "Behold, the days are coming, declares the Lord GOD, when I will send a famine on the land— not a famine of bread or a thirst for water, but a famine of hearing the words of the LORD."
+        },
+        {
+          "reference": "Acts 2:16-17",
+          "text": "No, this is what was spoken by the prophet Joel: 'In the last days, God says, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.'"
+        },
+        {
+          "reference": "Romans 10:13",
+          "text": "for, \"Everyone who calls on the name of the Lord will be saved.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joel 2 and Acts 2",
+          "note": "Read Joel 2:28-32 and Acts 2:14-21 side by side. Mark every word Peter quotes verbatim, and notice the one place he adapts it ('in the last days'). Ask why a fisherman reached for an eighth-century farmer's poem to explain what just happened."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joel",
+      "title": "Son of Pethuel, Prophet of the Outpoured Spirit",
+      "description": "Joel son of Pethuel (Joel 1:1) prophesied in Judah, likely in the eighth century BC, against the backdrop of a devastating locust plague that he read as a sign of the Day of the LORD. His short book moves from ruin to repentance to an astonishing promise: that God would one day pour out His Spirit on all flesh. He never names a king or dates his words, and that openness proved fitting - centuries later, Peter stood in Jerusalem and declared Joel's promise fulfilled in the risen Christ (Acts 2:16).",
+      "keyQuote": "And afterward, I will pour out My Spirit on all people.",
+      "lessonForUs": "Joel teaches us to read disaster honestly and still wait for rain. He could name the drought and call for torn hearts, but the cure he promised was not in his power to give - it was God's own Spirit, poured out generations later through Jesus. Sometimes faithfulness is naming the thirst clearly and trusting the One who alone can flood the field.",
+      "heading": "Son of Pethuel, Prophet of the Outpoured Spirit"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1789,
+  "scriptureReference_full": "Joel 2:28-32",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (eshpokh / shaphak, H8210; ruach) reflects standard lexical sources.",
+    "Pentecost fulfillment of Joel 2:28-32 follows Peter's own citation in Acts 2:16-21; the Joel 2:32 / Romans 10:13 link is the explicit New Testament reuse of Joel's closing line."
+  ]
 }

@@ -1,38 +1,188 @@
 {
   "day": 55,
   "title": "The Lord bless you",
-  "teaser": "Day 55 of Bible 365 — Numbers 6:22-27",
+  "teaser": "The oldest words ever prayed over God's people are not advice but a gift — the LORD's own face, turned toward you. And the last thing Jesus did before heaven was lift His hands and say them.",
   "framework": "Numbers 6:22-27 — Aaronic blessing",
   "scriptureReference": "Numbers 6:22-27",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 55"
+      "type": "scripture",
+      "reference": "Numbers 6:22-27",
+      "translation": "BSB",
+      "emphasis": [
+        "May the LORD bless you and keep you",
+        "cause His face to shine upon you",
+        "lift up His countenance toward you and give you peace",
+        "So they shall put My name on the Israelites"
+      ],
+      "hebrewOriginal": "יְבָרֶכְךָ יְהוָה וְיִשְׁמְרֶךָ",
+      "passage": "Then the LORD said to Moses, \"Tell Aaron and his sons: This is how you are to bless the Israelites. Say to them: 'May the LORD bless you and keep you; may the LORD cause His face to shine upon you and be gracious to you; may the LORD lift up His countenance toward you and give you peace.' So they shall put My name on the Israelites, and I will bless them.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Numbers 6:22-27**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 6:22-27 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּרַךְ",
+      "transliteration": "barakh",
+      "pronunciation": "bah-RAHKH",
+      "meaning": "to bless, to kneel, to bestow good",
+      "rootMeaning": "The same three-letter root behind barakh (to bless) lies behind berekh, the word for knee. To bless and to kneel grow from one root. To bless someone is, at its oldest, to bend the knee toward them - to lower yourself so that good can be handed down. When God blesses, the Most High stoops.",
+      "usageNote": "In Numbers 6 the priests are commanded to barakh the people, but verse 27 is careful to say who actually does the blessing: \"I will bless them.\" The priest speaks the words; the LORD supplies the gift. The man with raised hands is only the channel - the source is always God Himself.",
+      "wordByWord": [
+        {
+          "word": "יְבָרֶכְךָ",
+          "transliteration": "yevarekheka",
+          "meaning": "may He bless you - the verb barakh, with 'you' folded right into the word"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name, spoken three times across the blessing"
+        },
+        {
+          "word": "וְיִשְׁמְרֶךָ",
+          "transliteration": "veyishmereka",
+          "meaning": "and may He keep you - shamar, to guard, watch over, hedge about like a shepherd over a flock"
+        },
+        {
+          "word": "פָּנָיו",
+          "transliteration": "panav",
+          "meaning": "His face, His presence - what shines, what is lifted toward you"
+        },
+        {
+          "word": "שָׁלוֹם",
+          "transliteration": "shalom",
+          "meaning": "peace - not merely the absence of war but wholeness, everything set right"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פָּנִים / שָׁלוֹם",
+          "reference": "The blessing climbs from being kept, to a face that shines, to a face lifted toward you, and lands on shalom. Peace is not one item on the list - it is where the whole blessing is going. The end of the LORD turning His face toward a person is wholeness."
+        }
+      ],
+      "strongsNumber": "H1288",
+      "definition": "to kneel; by implication, to bless God (as an act of adoration), or man (as a benefit)",
+      "usage": "The Aaronic blessing is built on a deliberate rising count: three words in the first line, five in the second, seven in the third, in the Hebrew. The blessing widens as it goes, like a hand opening. God does not ration what He gives."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Aaronic blessing. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the everlasting blessing (Eph 1:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Words You Do Not Make Up",
+      "body": "Most blessings are improvised. We say \"take care\" or \"all the best\" and mean well by it, but the words are ours, reaching for a good we cannot actually deliver. The blessing in Numbers 6 is different. God does not tell Aaron to bless the people however he sees fit. He writes the words out and hands them over: \"This is how you are to bless the Israelites. Say to them...\" The priest is not the author of the blessing. He is the mouth for it.\n\nThat matters more than it first appears. Israel had just been organized for the long march through the wilderness - counted, arranged tribe by tribe, set in order around the tabernacle at the camp's center. They were a people who would spend forty years between a slavery behind them and a promise ahead of them, with nothing but sand and manna in between. And the word God gives them to carry into that wilderness is not a strategy. It is a benediction. Before they take a single step, they are told what God intends toward them: to bless, to keep, to shine, to be gracious, to lift His face, to give peace.\n\nNotice the verbs are all His. The people do nothing in these three lines. They do not march, build, fight, or even pray. They simply stand and receive a face turned toward them. The oldest recorded words of worship in the people of God are words in which God does everything and His people are given everything.",
+      "keyInsight": "A blessing is not a wish. It is a transfer. God authors the words and supplies the gift; the priest only carries it. Before Israel does anything in the wilderness, God tells them what He will do.",
+      "content": "Most blessings are improvised. We say \"take care\" or \"all the best\" and mean well by it, but the words are ours, reaching for a good we cannot actually deliver. The blessing in Numbers 6 is different. God does not tell Aaron to bless the people however he sees fit. He writes the words out and hands them over: \"This is how you are to bless the Israelites. Say to them...\" The priest is not the author of the blessing. He is the mouth for it.\n\nThat matters more than it first appears. Israel had just been organized for the long march through the wilderness - counted, arranged tribe by tribe, set in order around the tabernacle at the camp's center. They were a people who would spend forty years between a slavery behind them and a promise ahead of them, with nothing but sand and manna in between. And the word God gives them to carry into that wilderness is not a strategy. It is a benediction. Before they take a single step, they are told what God intends toward them: to bless, to keep, to shine, to be gracious, to lift His face, to give peace.\n\nNotice the verbs are all His. The people do nothing in these three lines. They do not march, build, fight, or even pray. They simply stand and receive a face turned toward them. The oldest recorded words of worship in the people of God are words in which God does everything and His people are given everything."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Smallest Bible Ever Found",
+      "body": "In 1979, in a burial cave at Ketef Hinnom, on a slope just outside the old city of Jerusalem, an archaeologist's team uncovered two tiny rolled strips of silver, each no bigger than a cigarette. They had been worn as amulets, close to the body of whoever was buried there. When specialists finally unrolled them - the silver so brittle it took years to do safely - they found words scratched into the metal in old Hebrew script.\n\nThe words were these: \"May the LORD bless you and keep you; may the LORD cause His face to shine upon you and give you peace.\" The Aaronic blessing. The scrolls date to around 600 BC, before the exile to Babylon. They are the oldest fragment of any biblical text ever discovered - older than the Dead Sea Scrolls by centuries.\n\nSit with what that means. Someone, twenty-six hundred years ago, loved these words enough to have them inscribed on silver and buried with them, as if to carry the blessing past the edge of death itself. Long before there was a Bible to hold, before chapters and verses, before printing, this is the line God's people clutched in the dark: the LORD bless you, the LORD keep you, His face turned toward you.",
+      "connectionToTheme": "The blessing was never theory. Real people wore these exact words against their skin into the grave, trusting that the God who keeps the living keeps the dying too.",
+      "content": "In 1979, in a burial cave at Ketef Hinnom, on a slope just outside the old city of Jerusalem, an archaeologist's team uncovered two tiny rolled strips of silver, each no bigger than a cigarette. They had been worn as amulets, close to the body of whoever was buried there. When specialists finally unrolled them - the silver so brittle it took years to do safely - they found words scratched into the metal in old Hebrew script.\n\nThe words were these: \"May the LORD bless you and keep you; may the LORD cause His face to shine upon you and give you peace.\" The Aaronic blessing. The scrolls date to around 600 BC, before the exile to Babylon. They are the oldest fragment of any biblical text ever discovered - older than the Dead Sea Scrolls by centuries.\n\nSit with what that means. Someone, twenty-six hundred years ago, loved these words enough to have them inscribed on silver and buried with them, as if to carry the blessing past the edge of death itself. Long before there was a Bible to hold, before chapters and verses, before printing, this is the line God's people clutched in the dark: the LORD bless you, the LORD keep you, His face turned toward you."
+    },
+    {
+      "type": "insight",
+      "heading": "The Whole Blessing Is a Face",
+      "body": "Read the three lines slowly and you notice they are not a list of separate gifts. They are one gift, said three ways, and at the center of it is a face. The LORD blesses and keeps. The LORD makes His face shine. The LORD lifts up His countenance - His face again. Strip the blessing down and what God promises His people is not stuff. It is His face turned toward them.\n\nThat is the deepest fear underneath everything else: that God has turned away. That He is angry, distant, done with us, looking elsewhere. To this fear the blessing speaks one thing over and over - His face is toward you, not against you; lit up, not clouded; lifted toward you, the way a parent's whole expression brightens when a child walks into the room. \"The LORD cause His face to shine upon you\" is the language of dawn. It is the sun coming up on someone who has been sitting in the dark, sure the night was permanent.\n\nAnd then verse 27 tells us how this happens: \"So they shall put My name on the Israelites, and I will bless them.\" The blessing is God writing His own name over His people, the way you write your name on what belongs to you. To be blessed is to be claimed - named, owned, His. The peace at the end of the blessing, the shalom, is simply what it feels like to live under a face that will not turn away and a name that will not let go.",
+      "historicalContext": "The priests pronounced this blessing daily at the tabernacle, and later in the temple, with hands raised over the assembled people. By Jesus' day it closed the temple service in Jerusalem every morning. To this day it is spoken over congregations and over children at the Sabbath table, hands laid on their heads - the longest continuously prayed words in the history of God's people.",
+      "fascinatingFact": "The name of the LORD appears exactly three times in the blessing, once in each line - and Israel was a people for whom the threefold repetition of the holy Name carried enormous weight. Centuries later the church would read these three appearances of the one Name as the first faint outline of a truth not yet spoken: one God, blessing His people as Father, Son, and Spirit.",
+      "content": "Read the three lines slowly and you notice they are not a list of separate gifts. They are one gift, said three ways, and at the center of it is a face. The LORD blesses and keeps. The LORD makes His face shine. The LORD lifts up His countenance - His face again. Strip the blessing down and what God promises His people is not stuff. It is His face turned toward them.\n\nThat is the deepest fear underneath everything else: that God has turned away. That He is angry, distant, done with us, looking elsewhere. To this fear the blessing speaks one thing over and over - His face is toward you, not against you; lit up, not clouded; lifted toward you, the way a parent's whole expression brightens when a child walks into the room. \"The LORD cause His face to shine upon you\" is the language of dawn. It is the sun coming up on someone who has been sitting in the dark, sure the night was permanent.\n\nAnd then verse 27 tells us how this happens: \"So they shall put My name on the Israelites, and I will bless them.\" The blessing is God writing His own name over His people, the way you write your name on what belongs to you. To be blessed is to be claimed - named, owned, His. The peace at the end of the blessing, the shalom, is simply what it feels like to live under a face that will not turn away and a name that will not let go."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God gives Israel words of blessing in which He does everything: He blesses, keeps, shines His face, is gracious, lifts His countenance, gives peace - and puts His own name over His people.",
+      "modernApplication": "We are restless for a thousand smaller blessings - the outcome, the result, the relief - and miss that the blessing God most wants to give is Himself, His face turned toward us. You do not have to perform your way into being seen. The face is already lit. The question is whether you will stand still long enough to receive it instead of striving for everything you think it owes you.",
+      "connectionPoint": "Where does the face of God finally shine? Paul names the place exactly: \"God, who said, 'Let light shine out of darkness,' made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ\" (2 Corinthians 4:6). The shining face the priests prayed for over a wilderness people turns out to have a name. It is the face of Christ.",
+      "newTestamentEcho": "The very last thing Jesus did on earth was pronounce this kind of blessing. \"When Jesus had led them out as far as Bethany, He lifted up His hands and blessed them. While He was blessing them, He left them and was carried up into heaven\" (Luke 24:50-51). The great High Priest raised His hands like Aaron - and was still blessing as He ascended. The benediction never stopped. He is blessing His people still."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where, lately, have you been afraid that God has turned His face away from you - and what would change if you took the blessing at its word that His face is turned toward you, shining, lifted, not against you?",
+      "additionalQuestions": [
+        "Which blessing are you straining for - an outcome, a result, a fix - that may be standing in for the one thing the blessing actually promises: God Himself?",
+        "If to be blessed is to have God's name written over you, where in your life are you still living as though you belonged to no one?",
+        "Whose head could you lay a hand on this week - a child, a friend, someone in the dark - to speak these words over them, not as your wish but as God's gift?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have spent so long watching the door for some smaller blessing that I forgot to look up at Your face. Turn it toward me now. Let it shine on the part of me that has been sitting in the dark, certain You had turned away. Keep me when I cannot keep myself. Write Your name over me again, and let that be enough. Give me peace - not the kind I can manufacture, but the wholeness that comes from a face that will not look away. In the name of Jesus, in whose face Your glory finally shone. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Once today, speak the blessing out loud - over yourself in the mirror, over a sleeping child, over a name you are worried about. Say the actual words: \"May the LORD bless you and keep you...\" Let them leave your mouth as a gift you are handing on, not a wish you are hoping comes true.",
+      "leavingAtCross": [
+        "The fear that God has turned His face away from me",
+        "The habit of chasing a hundred smaller blessings while ignoring the One who gives them",
+        "The belief that I have to earn the look on God's face"
+      ],
+      "receivingFromCross": [
+        "A face turned toward me, shining and lifted, in the face of Jesus Christ",
+        "God's own name written over me, claiming me as His",
+        "Shalom - the wholeness of belonging to a God who will not look away"
+      ],
+      "content": "Once today, speak the blessing out loud - over yourself in the mirror, over a sleeping child, over a name you are worried about. Say the actual words: \"May the LORD bless you and keep you...\" Let them leave your mouth as a gift you are handing on, not a wish you are hoping comes true."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Who actually does the blessing in Numbers 6 - the priest or the LORD? Which verse settles it, and why does the difference matter?",
+        "The blessing names a face three times. What is the deepest human fear it answers, and how?",
+        "How does Jesus lifting His hands to bless His disciples at the ascension (Luke 24:50-51) complete what Aaron began?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a season when it felt like God had turned His face away. What did you do with that?",
+        "Name one smaller 'blessing' you have been chasing in place of God Himself. What would it look like to loosen your grip on it?",
+        "Speak the Aaronic blessing over one another out loud before you part - then talk about how it felt to receive words you did not earn."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 67:1",
+          "text": "May God be gracious to us and bless us, and cause His face to shine upon us, Selah"
+        },
+        {
+          "reference": "2 Corinthians 4:6",
+          "text": "For God, who said, \"Let light shine out of darkness,\" made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ."
+        },
+        {
+          "reference": "Luke 24:50-51",
+          "text": "When Jesus had led them out as far as Bethany, He lifted up His hands and blessed them. While He was blessing them, He left them and was carried up into heaven."
+        },
+        {
+          "reference": "Ephesians 1:3",
+          "text": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly realms."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 6:22-27",
+          "note": "Read the blessing aloud three times, once for each line, and watch how it widens - from being kept, to a face that shines, to a face lifted toward you, landing on peace."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Aaron",
+      "title": "The High Priest Who Blessed With Lifted Hands",
+      "description": "Brother of Moses and Israel's first high priest, set apart to stand between God and the people. To Aaron and his sons God entrusted the blessing of Numbers 6 - words they did not compose but were commanded to carry. Day after day Aaron raised his hands over the assembled people and spoke the LORD's name over them three times. His office pointed beyond itself: every priest who lifted his hands to bless was a shadow of the great High Priest to come, who would lift His own hands over His people and be blessing them still as He rose.",
+      "keyQuote": "May the LORD bless you and keep you; may the LORD cause His face to shine upon you and be gracious to you.",
+      "lessonForUs": "Aaron's hands were empty; the blessing they carried was not his to invent or to withhold. Like him, we are not the source of any good we hand on - only the channel. The work of a blessed people is to receive a face turned toward them, and then to turn and speak that same gift over someone else in the dark.",
+      "heading": "The High Priest Who Blessed With Lifted Hands"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2381,
+  "scriptureReference_full": "Numbers 6:22-27",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The barakh / berekh (bless / kneel) shared root and the H1288 lexical sense reflect standard Hebrew lexical sources.",
+    "The Ketef Hinnom silver scrolls (KH1 and KH2), excavated by Gabriel Barkay in 1979 and dated to c. 600 BC, preserve a form of the Aaronic blessing and are widely regarded as the oldest extant biblical text fragments."
+  ]
 }

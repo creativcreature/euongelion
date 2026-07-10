@@ -1,38 +1,186 @@
 {
   "day": 108,
-  "title": "Divided Kingdom — Day 3 — Pivot",
-  "teaser": "Day 108 of Bible 365 — 1 Kings 12-16",
+  "title": "Too Far to Go Up",
+  "teaser": "The kingdom splits in two not over taxes but over worship. Jeroboam builds altars close to home so no one has to go up to Jerusalem — and a nation learns to worship what costs it nothing.",
   "framework": "1 Kings 12-16 — Divided Kingdom",
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 108"
+      "type": "scripture",
+      "reference": "1 Kings 12:26-28, 30",
+      "translation": "BSB",
+      "emphasis": [
+        "said in his heart",
+        "Going up to Jerusalem is too much for you",
+        "this thing became a sin"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר הַמֶּלֶךְ עֲלוֹתְכֶם יְרוּשָׁלִַם רַב־לָכֶם הִנֵּה אֱלֹהֶיךָ יִשְׂרָאֵל אֲשֶׁר הֶעֱלוּךָ מֵאֶרֶץ מִצְרָיִם",
+      "passage": "Jeroboam said in his heart, \"Now the kingdom might revert to the house of David. If these people go up to offer sacrifices in the house of the LORD at Jerusalem, their hearts will return to their lord, Rehoboam king of Judah; then they will kill me and return to Rehoboam king of Judah.\" After seeking advice, the king made two golden calves and said to the people, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.\" ... And this thing became a sin; the people walked as far as Dan to worship before one of the calves."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רַב־לָכֶם",
+      "transliteration": "rav-lakhem",
+      "pronunciation": "rahv-lah-KHEM",
+      "meaning": "too much for you, more than enough, enough already",
+      "rootMeaning": "Rav means great, much, many. Joined to lakhem (for you), the phrase says, in effect, \"that's plenty\" or \"that's too far\" - a dismissal dressed as kindness. Jeroboam uses it to make the long climb to Jerusalem sound like a burden God never meant His people to carry.",
+      "usageNote": "The same two words, rav-lakhem, are spoken by Korah against Moses and Aaron in Numbers 16:3 - \"You have gone too far!\" - and then turned back on Korah by Moses in 16:7. It is the language of someone deciding for themselves how much worship is reasonable. Jeroboam puts that phrase in God's mouth.",
+      "wordByWord": [
+        {
+          "word": "עֲלוֹתְכֶם",
+          "transliteration": "alotkhem",
+          "meaning": "your going up - the verb for pilgrimage, ascending to the temple"
+        },
+        {
+          "word": "יְרוּשָׁלִַם",
+          "transliteration": "Yerushalayim",
+          "meaning": "Jerusalem - the one place God chose to put His name"
+        },
+        {
+          "word": "רַב",
+          "transliteration": "rav",
+          "meaning": "much, great, too much"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lakhem",
+          "meaning": "for you, to you"
+        },
+        {
+          "word": "אֱלֹהֶיךָ",
+          "transliteration": "eloheikha",
+          "meaning": "your gods (or your God) - the very word Aaron used at the first golden calf"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עָלָה",
+          "reference": "Alah, to go up - the root behind alotkhem. To worship in Jerusalem you went up; the city sits high in the Judean hills. Jeroboam's whole strategy is to spare people the climb. Centuries later the true King will not be spared it (Luke 18:31)."
+        }
+      ],
+      "strongsNumber": "H7227",
+      "definition": "rav: abundant, much, great; in 'rav-lakhem,' an idiom meaning 'enough,' 'too much for you'",
+      "usage": "Jeroboam frames the journey to the true altar as an imposition - 'that's too much to ask of you' - and offers a god you can reach without leaving home."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Kingdom Splits Over a Sentence",
+      "body": "By the time we reach 1 Kings 12, Solomon is dead and the gold of his empire has gone cold. His son Rehoboam goes to Shechem expecting a coronation. Instead he meets a grievance: the people are crushed under Solomon's building debts and forced labor, and they ask for relief. The young king listens to the wrong advisors, threatens to make the yoke heavier, and the north walks out. \"What portion do we have in David?\" they cry. \"To your tents, O Israel!\" One sentence too hard, and a united kingdom tears down the middle - ten tribes under Jeroboam in the north, two under Rehoboam in the south.\n\nBut the political wound is not the deepest one. Jeroboam, now king of the north, does the math in his heart: as long as his people travel south to Jerusalem to worship, their loyalty will follow the road home. So he solves a worship problem with a building project. He casts two golden calves, sets one at Bethel and one at Dan - one at each end of his territory - and tells the nation, \"Going up to Jerusalem is too much for you.\"\n\nReread that line slowly. He does not forbid worship. He relocates it and makes it easier. He keeps the language of faith - \"Here, O Israel, are your gods, who brought you up out of the land of Egypt\" - the very words spoken at Sinai's golden calf, the very God of the exodus invoked over molten metal. The form survives. The substance is hollowed out. And chapters 13 through 16 simply count the cost: king after king in the north \"walked in the way of Jeroboam and in the sin he had caused Israel to commit,\" until Omri and then Ahab \"did more to provoke the LORD\" than anyone before them.",
+      "keyInsight": "The kingdom did not divide first and lose its worship second. It lost its worship and the division followed. When the altar moves to wherever is convenient, the people are already scattered, whatever the map still says.",
+      "content": "By the time we reach 1 Kings 12, Solomon is dead and the gold of his empire has gone cold. His son Rehoboam goes to Shechem expecting a coronation. Instead he meets a grievance: the people are crushed under Solomon's building debts and forced labor, and they ask for relief. The young king listens to the wrong advisors, threatens to make the yoke heavier, and the north walks out. \"What portion do we have in David?\" they cry. \"To your tents, O Israel!\" One sentence too hard, and a united kingdom tears down the middle - ten tribes under Jeroboam in the north, two under Rehoboam in the south.\n\nBut the political wound is not the deepest one. Jeroboam, now king of the north, does the math in his heart: as long as his people travel south to Jerusalem to worship, their loyalty will follow the road home. So he solves a worship problem with a building project. He casts two golden calves, sets one at Bethel and one at Dan - one at each end of his territory - and tells the nation, \"Going up to Jerusalem is too much for you.\"\n\nReread that line slowly. He does not forbid worship. He relocates it and makes it easier. He keeps the language of faith - \"Here, O Israel, are your gods, who brought you up out of the land of Egypt\" - the very words spoken at Sinai's golden calf, the very God of the exodus invoked over molten metal. The form survives. The substance is hollowed out. And chapters 13 through 16 simply count the cost: king after king in the north \"walked in the way of Jeroboam and in the sin he had caused Israel to commit,\" until Omri and then Ahab \"did more to provoke the LORD\" than anyone before them."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Gym Card He Never Used",
+      "body": "A friend told me once about the rowing machine in his basement. He bought it in January, the expensive kind, because the gym was a twenty-minute drive and twenty minutes felt like too much on a dark winter morning. The machine would put the workout right there, no commute, no excuse. By March it held a laundry basket and a coil of Christmas lights.\n\nWhat he discovered was not that the drive had been the problem. The drive had been the discipline. The friction of getting in the car, parking, walking past people who were already sweating - all of that was doing quiet work in him that the convenient machine could not do. When he removed the cost, he did not get more of the thing. He got a piece of furniture shaped like the thing.\n\nJeroboam's calves were rowing machines for the soul. He looked at the long road to Jerusalem and decided the road was the burden. He was wrong. The road was the worship. The walk up into the hills, the leaving of ordinary life behind, the standing in the one place God had chosen and not the place most convenient to the king - that was not the cost of meeting God. That was, in part, the meeting. Take away the going up, and you are left with a golden shape of God that asks nothing and changes no one.",
+      "connectionToTheme": "Jeroboam's golden calves promised worship without the climb - and what looks like access made easy is often substance hollowed out.",
+      "content": "A friend told me once about the rowing machine in his basement. He bought it in January, the expensive kind, because the gym was a twenty-minute drive and twenty minutes felt like too much on a dark winter morning. The machine would put the workout right there, no commute, no excuse. By March it held a laundry basket and a coil of Christmas lights.\n\nWhat he discovered was not that the drive had been the problem. The drive had been the discipline. The friction of getting in the car, parking, walking past people who were already sweating - all of that was doing quiet work in him that the convenient machine could not do. When he removed the cost, he did not get more of the thing. He got a piece of furniture shaped like the thing.\n\nJeroboam's calves were rowing machines for the soul. He looked at the long road to Jerusalem and decided the road was the burden. He was wrong. The road was the worship. The walk up into the hills, the leaving of ordinary life behind, the standing in the one place God had chosen and not the place most convenient to the king - that was not the cost of meeting God. That was, in part, the meeting. Take away the going up, and you are left with a golden shape of God that asks nothing and changes no one."
+    },
+    {
+      "type": "insight",
+      "heading": "Said in His Heart",
+      "body": "The whole catastrophe begins with four quiet words: \"Jeroboam said in his heart.\" Before the calves are cast, before Bethel and Dan, before the long line of kings who copy him, there is one man calculating privately what he can afford to do to God's worship in order to protect what he has built. The sin of the divided kingdom is conceived in a sentence no one else could hear.\n\nThat is how the deep idolatries usually arrive. Not as a fist raised against God, but as a reasonable thought said in the heart: this is too much to ask; surely God would understand; there must be an easier way that comes to the same thing. Jeroboam never announces, \"Let us abandon the LORD.\" He announces, \"Going up to Jerusalem is too much for you\" - and he says it as though he were doing the people a kindness. The text refuses the spin. It says flatly, three times across these chapters, that this thing became a sin and that Jeroboam caused Israel to sin.\n\nNotice what he keeps and what he changes. He keeps the name of the God of the exodus. He keeps the festivals, even if he moves them a month (12:32-33). He keeps the appearance of devotion entire. What he changes is the one thing he was never given to change: where and how and on whose terms the holy God may be approached. And that single edit, said first in the privacy of a worried heart, divides a people for generations.",
+      "historicalContext": "The books of 1-2 Kings are written from the standpoint of Judah and the Jerusalem temple, almost certainly compiled during or after the Babylonian exile. The author is asking the question every exile asks: how did we lose everything? His answer runs straight back to this chapter. Every northern king is measured against \"the sin of Jeroboam son of Nebat,\" the man who taught a nation to worship near home rather than to go up to the place God chose.",
+      "fascinatingFact": "Jeroboam set his calves at Bethel and Dan - the southern and northern edges of his kingdom - so that no Israelite anywhere had far to go. Convenience was the entire design. Bethel means \"house of God,\" the place where Jacob had once seen the ladder to heaven (Genesis 28). Jeroboam took a site already heavy with God's presence and installed a counterfeit there, so the substitution would feel like continuity.",
+      "content": "The whole catastrophe begins with four quiet words: \"Jeroboam said in his heart.\" Before the calves are cast, before Bethel and Dan, before the long line of kings who copy him, there is one man calculating privately what he can afford to do to God's worship in order to protect what he has built. The sin of the divided kingdom is conceived in a sentence no one else could hear.\n\nThat is how the deep idolatries usually arrive. Not as a fist raised against God, but as a reasonable thought said in the heart: this is too much to ask; surely God would understand; there must be an easier way that comes to the same thing. Jeroboam never announces, \"Let us abandon the LORD.\" He announces, \"Going up to Jerusalem is too much for you\" - and he says it as though he were doing the people a kindness. The text refuses the spin. It says flatly, three times across these chapters, that this thing became a sin and that Jeroboam caused Israel to sin.\n\nNotice what he keeps and what he changes. He keeps the name of the God of the exodus. He keeps the festivals, even if he moves them a month (12:32-33). He keeps the appearance of devotion entire. What he changes is the one thing he was never given to change: where and how and on whose terms the holy God may be approached. And that single edit, said first in the privacy of a worried heart, divides a people for generations."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "To keep his crown, Jeroboam built two convenient altars so the people would not have to go up to Jerusalem - and a nation learned to worship a god who cost them nothing and asked nothing of them.",
+      "modernApplication": "We rarely renounce God outright. We relocate Him to wherever is convenient - a faith we can reach without leaving the comfortable shape of our lives, a worship trimmed of anything that would require us to go up and out of ourselves. The danger Jeroboam models is not unbelief. It is belief made easy enough that it no longer touches the center.",
+      "connectionPoint": "The wound of the divided kingdom is, at root, a divided worship - people split off from the one place God had chosen to put His name. Every northern king after Jeroboam inherits the same fracture, and the prophets spend centuries calling a scattered people back to one Lord and one true altar. The longing of these chapters is for a King who will not relocate worship for His own convenience, and for a place where the divided can be made one again.",
+      "newTestamentEcho": "Where Jeroboam told Israel that going up to Jerusalem was too much for them, Jesus \"resolutely set out for Jerusalem\" (Luke 9:51) and told His disciples, \"We are going up to Jerusalem, and everything... will be fulfilled\" (Luke 18:31). He refuses every shortcut Jeroboam took. At that very city He makes His own body the true temple (John 2:19-21), and on the cross He becomes our peace, \"who has made the two one and has torn down the dividing wall of hostility\" (Ephesians 2:14). The divided kingdom is finally healed not by a better king in Samaria but by the King who went up to the place Jeroboam taught a nation to avoid."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you quietly told yourself that the costly road to God is \"too much\" - and built something more convenient in its place?",
+      "additionalQuestions": [
+        "Jeroboam kept the name of God and the look of worship while hollowing out its substance. Where might the form of your faith be intact while the heart of it has been relocated to wherever is easiest?",
+        "His sin began as a sentence \"said in his heart.\" What reasonable-sounding thought have you been rehearsing privately that, if followed, would move you away from God while feeling like wisdom?",
+        "What is one \"going up\" - one act of worship or obedience that costs you something - that you have been avoiding because the easier version comes \"to the same thing\"?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I confess the calves I have built close to home - the convenient versions of You I can reach without being changed. Forgive me for the sentences I have said in my heart, the quiet edits where I decided what You ask is too much. You are not too far to go up to. You came down and went up to Jerusalem so that I would never have to bridge the distance myself. Make me one again, in You. Tear down the walls I have built for my own comfort, and let me worship You on Your terms and not mine. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the most convenient version of God you have settled for - the one that asks nothing of you - and today choose one specific \"going up\" instead: a hard prayer, a delayed obedience, a costly honesty. Walk the road you have been avoiding, even a few steps.",
+      "leavingAtCross": [
+        "The calf at Bethel - the convenient god I can reach without being changed",
+        "The sentence said in my heart that calls compromise wisdom and calls obedience 'too much'",
+        "The instinct to keep the look of worship while moving its substance somewhere safer"
+      ],
+      "receivingFromCross": [
+        "A King who went up to Jerusalem so I would never have to close the distance to God on my own",
+        "The unity I cannot manufacture - peace with God and with one another, made by Him who is our peace",
+        "Freedom from the exhausting work of building counterfeit altars near every comfort"
+      ],
+      "content": "Name the most convenient version of God you have settled for - the one that asks nothing of you - and today choose one specific \"going up\" instead: a hard prayer, a delayed obedience, a costly honesty. Walk the road you have been avoiding, even a few steps."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was Jeroboam actually afraid of, and how did building the golden calves at Bethel and Dan answer that fear?",
+        "The text says Jeroboam kept the name and language of the God of the exodus over his golden calves. Why does keeping the form while changing the substance make the sin more dangerous, not less?",
+        "How does Jesus 'going up to Jerusalem' in the Gospels directly answer Jeroboam's claim that 'going up to Jerusalem is too much for you'?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'convenient altar' in your life - a way you have made faith easier by quietly removing its cost.",
+        "Talk about a sentence you have caught yourself 'saying in your heart' lately that sounds reasonable but moves you away from God.",
+        "Ask each other: what is one costly 'going up' God may be asking of you this week, and how can we hold each other to it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 12:16",
+          "text": "When all Israel saw that the king had refused to listen to them, they answered the king: \"What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!\" So the Israelites went home."
+        },
+        {
+          "reference": "1 Kings 14:9",
+          "text": "You have done more evil than all who came before you. You have proceeded to make for yourself other gods and molten images to provoke Me, and you have flung Me behind your back."
+        },
+        {
+          "reference": "Luke 9:51",
+          "text": "As the day of His ascension approached, Jesus resolutely set out for Jerusalem."
+        },
+        {
+          "reference": "Ephesians 2:14",
+          "text": "For He Himself is our peace, who has made the two one and has torn down the dividing wall of hostility."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read the chapters straight through, watching the refrain: each northern king is measured by whether he 'walked in the sin of Jeroboam.' Notice how a single act of convenient worship becomes the standard the whole north is judged by."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeroboam son of Nebat",
+      "title": "First King of the Northern Kingdom",
+      "description": "An able administrator under Solomon, raised up by the prophet Ahijah and promised a lasting house if he would walk in God's ways (1 Kings 11:38). Given a kingdom, he feared losing it - and to secure his throne he reinvented Israel's worship, casting golden calves at Bethel and Dan so the people would not go up to Jerusalem. He kept the name of the LORD and changed everything else. From then on, Scripture measures every northern king against 'the sin of Jeroboam, which he caused Israel to commit.'",
+      "keyQuote": "Going up to Jerusalem is too much for you.",
+      "lessonForUs": "Jeroboam was not an atheist; he was a manager protecting what he had built. His ruin began the moment he decided that the costly worship of the true God was an inconvenience he could edit. The most dangerous idolatry keeps the language of faith and quietly moves the altar somewhere easier.",
+      "heading": "First King of the Northern Kingdom"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2172,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew note on rav-lakhem ('too much for you') reflects standard lexical sources and the parallel idiom in Numbers 16:3, 7."
+  ]
 }

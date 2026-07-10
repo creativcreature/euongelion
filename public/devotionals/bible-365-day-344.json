@@ -1,38 +1,174 @@
 {
   "day": 344,
-  "title": "1 Corinthians: Love + Resurrection — Day 1 — Hook",
-  "teaser": "Day 344 of Bible 365 — 1 Cor 13, 15",
+  "title": "The one thing that never falls",
+  "teaser": "Paul ranks love above prophecy, knowledge, even faith. Why? Because love is built from the same stuff as the resurrection — it belongs to the world that death cannot touch.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 344"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8, 13; 15:20, 54-55",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "the greatest of these is love",
+        "the firstfruits",
+        "Death has been swallowed up in victory"
+      ],
+      "greekOriginal": "ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed... And now these three remain: faith, hope, and love; but the greatest of these is love... But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep... When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: \"Death has been swallowed up in victory.\" \"Where, O Death, is your victory? Where, O Death, is your sting?\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "οὐδέποτε πίπτει",
+      "transliteration": "oudepote piptei",
+      "pronunciation": "oo-DEH-po-teh PIP-tay",
+      "meaning": "never falls, never collapses, never gives out",
+      "rootMeaning": "Piptei is the verb piptō - to fall. It is the word for a building that collapses, a soldier who drops in battle, a leaf that drops from a tree, a star that falls from the sky. Oudepote means 'not ever, on no occasion.' So when Paul writes that love 'never fails,' the picture underneath the English is physical: love is the one structure that never comes crashing down.",
+      "usageNote": "Most English Bibles render the phrase 'love never fails,' which is true but quiet. The Greek is louder. Paul has just listed the impressive gifts the Corinthians prized - prophecy, tongues, knowledge - and used three different verbs for how each one ends: prophecies are made idle, tongues are stilled, knowledge is set aside. Then he reaches love and changes the picture entirely. Love does not fall. The same verb piptō shows up in 1 Corinthians 15 when Paul speaks of those who 'have fallen asleep' in death. Death is a kind of falling. Love is the thing in us that refuses to.",
+      "wordByWord": [
+        {
+          "word": "ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love - self-giving love, the love that wills the good of another"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, not at any time, on no occasion ever"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, collapses, drops, gives way"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπαρχή / aparchē",
+          "reference": "In 1 Corinthians 15:20 Christ is called the 'firstfruits' (aparchē) of those who have fallen asleep - the first sheaf of a harvest that guarantees the rest. The same Paul who says love never falls says the risen Christ is the first of a crop that death cannot keep in the ground."
+        }
+      ],
+      "strongsNumber": "G4098",
+      "definition": "piptō: to fall, to fall down, to collapse, to fail or come to an end",
+      "usage": "Paul stacks three gifts that end - and one love that does not. The verb he chooses for love's permanence is the same family of words Scripture uses for death itself, which is why chapter 13 and chapter 15 belong together: the love that never falls is held up by the resurrection that lifts the fallen."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Gifts That End, One That Doesn't",
+      "body": "The church in Corinth was gifted and proud of it. They could speak in tongues. They had prophets. They prized knowledge so highly that some of them used it to look down on weaker believers. Paul does not tell them these gifts are fake. He tells them something more unsettling: every one of them has an expiration date.\n\nIn chapter 13 he lays it out plainly. Prophecies will cease. Tongues will be restrained. Knowledge will be dismissed. These are not small things; they are the very abilities the Corinthians built their reputations on. And Paul says, in effect, that each one is scaffolding. Useful now, gone later. The day is coming when we will see face to face, and you do not need a prophecy about the One standing in front of you.\n\nThen comes the line that turns the whole chapter: love never falls. Out of everything the Corinthians could do, only love survives the transition into the world to come. That is why Paul ends with the ranking - faith, hope, and love remain, but the greatest of these is love. Faith will give way to sight. Hope will give way to having. Love alone makes the crossing unchanged, because love is the one gift that is already a piece of eternity.",
+      "keyInsight": "Paul is not saying love is the nicest of the gifts. He is saying love is the only one built to outlast death. Everything else in the Christian life is a tool for the journey; love is the destination already arriving.",
+      "content": "The church in Corinth was gifted and proud of it. They could speak in tongues. They had prophets. They prized knowledge so highly that some of them used it to look down on weaker believers. Paul does not tell them these gifts are fake. He tells them something more unsettling: every one of them has an expiration date.\n\nIn chapter 13 he lays it out plainly. Prophecies will cease. Tongues will be restrained. Knowledge will be dismissed. These are not small things; they are the very abilities the Corinthians built their reputations on. And Paul says, in effect, that each one is scaffolding. Useful now, gone later. The day is coming when we will see face to face, and you do not need a prophecy about the One standing in front of you.\n\nThen comes the line that turns the whole chapter: love never falls. Out of everything the Corinthians could do, only love survives the transition into the world to come. That is why Paul ends with the ranking - faith, hope, and love remain, but the greatest of these is love. Faith will give way to sight. Hope will give way to having. Love alone makes the crossing unchanged, because love is the one gift that is already a piece of eternity."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What She Kept Asking For",
+      "body": "A hospice nurse once described the strange consistency of the questions people ask at the end. She had sat with the brilliant and the simple, the religious and the indifferent, and she noticed that in the last weeks the conversation almost always narrowed to the same small set of names. Hardly anyone asked about their portfolio. No one asked her to bring their diplomas to the bedside. They asked whether their daughter had called. They asked her to read a letter again. They wanted to know who was in the room.\n\nOne woman, sharp her whole life and proud of how much she knew, spent her last clear afternoon not reciting any of it. She held her son's hand and said his name, over and over, like she was trying to memorize it for a journey. Everything she had accumulated - the knowledge, the competence, the standing - had quietly fallen away. What was left standing was the smallest and the largest thing at once: love.\n\nThat is Paul's whole point in two chapters. Stand at the edge where everything gets tested, and watch what falls and what doesn't. The gifts fall. The achievements fall. Love is still on its feet.",
+      "connectionToTheme": "At the threshold where death strips everything else away, the one thing left standing is the one thing Paul said would never fall - confirming that love already belongs to the world on the other side of dying.",
+      "content": "A hospice nurse once described the strange consistency of the questions people ask at the end. She had sat with the brilliant and the simple, the religious and the indifferent, and she noticed that in the last weeks the conversation almost always narrowed to the same small set of names. Hardly anyone asked about their portfolio. No one asked her to bring their diplomas to the bedside. They asked whether their daughter had called. They asked her to read a letter again. They wanted to know who was in the room.\n\nOne woman, sharp her whole life and proud of how much she knew, spent her last clear afternoon not reciting any of it. She held her son's hand and said his name, over and over, like she was trying to memorize it for a journey. Everything she had accumulated - the knowledge, the competence, the standing - had quietly fallen away. What was left standing was the smallest and the largest thing at once: love.\n\nThat is Paul's whole point in two chapters. Stand at the edge where everything gets tested, and watch what falls and what doesn't. The gifts fall. The achievements fall. Love is still on its feet."
+    },
+    {
+      "type": "insight",
+      "heading": "Why the Two Chapters Belong Together",
+      "body": "It is easy to read 1 Corinthians 13 at a wedding and 1 Corinthians 15 at a funeral and never notice that Paul wrote them two chapters apart, to the same church, as one argument. Pull them back together and a claim emerges that neither makes alone.\n\nIn chapter 13, Paul says love is the one thing that never falls. In chapter 15, he explains why anything at all can stand again: Christ has been raised from the dead, the firstfruits of those who have fallen asleep. Death came through a man; resurrection comes through a man. What was sown perishable is raised imperishable. The whole chapter is about the reversal of falling - bodies that dropped into the ground get up.\n\nSo love is not permanent by some sentimental rule that 'love lasts forever.' Love is permanent because it is woven from the same fabric as the resurrection. The new creation Christ opened by rising is a world made of self-giving love, because the God who fills it is love. To love now is to practice the only language they speak there. That is why, of faith, hope, and love, love is the greatest - faith and hope are how we hold on in a world that is still falling, but love is what we will be doing forever in the world that has been raised.",
+      "historicalContext": "Paul wrote 1 Corinthians around AD 53-55 from Ephesus, to a fractious congregation in the Roman port city of Corinth. The Corinthians ranked the flashy gifts highest and some doubted a bodily resurrection at all (15:12). Paul answers both errors at once: he dethrones their prized gifts by exalting love (ch. 13), then grounds love's permanence in the bodily resurrection they were tempted to deny (ch. 15). The two chapters are the two halves of a single correction.",
+      "fascinatingFact": "Paul never uses the common Greek words for romantic love (eros) or even friendship (philia) in chapter 13. He uses agapē almost exclusively - a word that was rare and colorless in ordinary Greek until the early church filled it with the meaning of God's self-giving. The Corinthians could not have learned this love from their culture. They learned it at a cross, and Paul tells them it will outlast the grave.",
+      "content": "It is easy to read 1 Corinthians 13 at a wedding and 1 Corinthians 15 at a funeral and never notice that Paul wrote them two chapters apart, to the same church, as one argument. Pull them back together and a claim emerges that neither makes alone.\n\nIn chapter 13, Paul says love is the one thing that never falls. In chapter 15, he explains why anything at all can stand again: Christ has been raised from the dead, the firstfruits of those who have fallen asleep. Death came through a man; resurrection comes through a man. What was sown perishable is raised imperishable. The whole chapter is about the reversal of falling - bodies that dropped into the ground get up.\n\nSo love is not permanent by some sentimental rule that 'love lasts forever.' Love is permanent because it is woven from the same fabric as the resurrection. The new creation Christ opened by rising is a world made of self-giving love, because the God who fills it is love. To love now is to practice the only language they speak there. That is why, of faith, hope, and love, love is the greatest - faith and hope are how we hold on in a world that is still falling, but love is what we will be doing forever in the world that has been raised."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a gifted, anxious church that prophecy, tongues, and knowledge will all end, but love never falls - because love belongs to the resurrection world Christ opened when He rose as the firstfruits of those who had fallen asleep.",
+      "modernApplication": "We still rank ourselves by what the Corinthians ranked themselves by: what we know, what we can do, what we produce. We measure a life by output and forget that almost none of it crosses the finish line with us. Paul invites a quieter audit - not 'what have I accomplished?' but 'what have I loved, and how?' That is the only part of today that is being built into forever.",
+      "connectionPoint": "The hymn to love in chapter 13 and the trumpet of resurrection in chapter 15 are one promise read from two angles. Love is the conduct of the age that is coming; resurrection is the power that brings that age in. To learn to love now is to start living, ahead of time, in the world death cannot reach.",
+      "newTestamentEcho": "John says it plainly: 'God is love' (1 John 4:8). If the deepest truth about God is love, and if the resurrection raises us into God's unending presence, then love is not merely something we will keep - it is the very air of the place we are going. Paul's 'love never falls' and John's 'God is love' are the same note held in two registers."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If you measured this past week not by what you accomplished but by how you loved, what would stand and what would fall?",
+      "additionalQuestions": [
+        "Which of your 'gifts' - your competence, your knowledge, your usefulness - have you quietly come to rank above love, the way the Corinthians did?",
+        "Where in your life are you exhausting yourself on scaffolding - things real and useful now, but with an expiration date - while neglecting the one thing being built into eternity?",
+        "If love is the language of the world the resurrection opens, where is God inviting you to start practicing it today, ahead of time?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I spend my strength on so many things that will not last. I measure myself by what I know and what I can do, and I let love come last. Forgive me. Teach me the one thing that never falls. Because Christ is risen, the firstfruits of all who sleep, let me live now in the world He opened - where the greatest thing is not to be impressive but to love. Make my small acts of love today part of what You are raising forever. Through Jesus Christ, who loved me to the end and did not stay in the ground. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, pick one ordinary act of love that no one will applaud - a phone call, an apology, a patient silence, a hidden kindness - and do it on purpose, as a rehearsal for eternity. Then name one thing you have been over-valuing - a skill, a status, a busyness - and consciously set it below love for the day.",
+      "leavingAtCross": [
+        "The habit of ranking myself by what I know and what I can do",
+        "The fear that a life of quiet love is a wasted, small life",
+        "The pride that prized my gifts above the people they were given for"
+      ],
+      "receivingFromCross": [
+        "The freedom of knowing love is the one thing that crosses the grave with me",
+        "Christ as the firstfruits - the guarantee that what is sown in love is raised, not lost",
+        "A new measure for my days: not output, but love that never falls"
+      ],
+      "content": "Today, pick one ordinary act of love that no one will applaud - a phone call, an apology, a patient silence, a hidden kindness - and do it on purpose, as a rehearsal for eternity. Then name one thing you have been over-valuing - a skill, a status, a busyness - and consciously set it below love for the day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Paul lists three gifts that end and one that remains. What are the three, and what single word does he use for the one that 'never falls'?",
+        "Why does Paul connect love's permanence (chapter 13) to the resurrection of the dead (chapter 15)? What does one have to do with the other?",
+        "Of faith, hope, and love, why is love called the greatest - what happens to faith and hope in the world to come that does not happen to love?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'gift' or strength you tend to rank above love. How does it show up - and at whose expense?",
+        "Talk honestly about what it would mean to measure your week by love rather than productivity. What would have to change Monday morning?",
+        "Ask each other: where is the resurrection actually changing how you live now, not just what you hope for later?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 13:4-7",
+          "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no account of wrongs. Love takes no pleasure in evil, but rejoices in the truth. It bears all things, believes all things, hopes all things, endures all things."
+        },
+        {
+          "reference": "1 Corinthians 15:57-58",
+          "text": "But thanks be to God, who gives us the victory through our Lord Jesus Christ! Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain."
+        },
+        {
+          "reference": "1 John 4:8",
+          "text": "Whoever does not love does not know God, because God is love."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters back to back in one sitting, watching how 'love never falls' (13:8) and 'the dead will be raised' (15:52) are two halves of one promise."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Corinthians",
+      "era": "c. AD 5 - c. AD 65",
+      "description": "A trained Pharisee and former persecutor of the church, Paul met the risen Christ on the road to Damascus and spent the rest of his life planting churches across the Roman world. He wrote 1 Corinthians to a divided, gifted, immature congregation he loved fiercely. Knowing what it was to lose everything he had once ranked highest - status, certainty, religious achievement - he was uniquely able to tell the Corinthians that their prized gifts would fade and only love would stand.",
+      "keyQuote": "And now these three remain: faith, hope, and love; but the greatest of these is love.",
+      "lessonForUs": "The man who once measured his worth by knowledge and zeal learned, at the feet of a risen Christ, that the only thing worth building a life on is the love that does not fall. If Paul could re-rank his whole life around it, so can we.",
+      "heading": "Apostle to the Corinthians"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1834,
+  "scriptureReference_full": "1 Corinthians 13:8, 13; 15:20, 54-55",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapē; oudepote piptei, piptō G4098; aparchē 'firstfruits') reflects standard lexical sources for 1 Corinthians 13 and 15."
+  ]
 }

@@ -6,33 +6,190 @@
   "scriptureReference": "Leviticus 19:1-18",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 54"
+      "type": "scripture",
+      "reference": "Leviticus 19:1-2, 9-10, 13, 17-18",
+      "translation": "BSB",
+      "emphasis": [
+        "Be holy because I, the LORD your God, am holy",
+        "Leave them for the poor and the foreigner",
+        "love your neighbor as yourself"
+      ],
+      "hebrewOriginal": "וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ אֲנִי יְהוָה",
+      "passage": "Then the LORD said to Moses, \"Speak to the whole congregation of Israel and tell them: Be holy because I, the LORD your God, am holy.\" ... \"When you reap the harvest of your land, you are not to reap to the very edges of your field or gather the gleanings of your harvest. You must not strip your vineyard bare or gather its fallen grapes. Leave them for the poor and the foreigner. I am the LORD your God.\" ... \"You must not defraud your neighbor or rob him. You must not withhold until morning the wages due a hired hand.\" ... \"You must not harbor hatred against your brother in your heart. Directly rebuke your neighbor, so that you will not incur guilt on account of him. Do not seek revenge or bear a grudge against any of your people, but love your neighbor as yourself. I am the LORD.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Leviticus 19:1-18**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Leviticus 19:1-18 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָדוֹשׁ",
+      "transliteration": "qadosh",
+      "pronunciation": "kah-DOSH",
+      "meaning": "holy, sacred, set apart",
+      "rootMeaning": "The root q-d-sh carries the sense of being cut off, separated, devoted to a purpose other than the ordinary. To be qadosh is not first to be morally clean but to belong to God and so to be marked off for Him.",
+      "usageNote": "We usually picture holiness as distance - the saint on the hill, the temple behind the veil, the person too pure to be touched. Leviticus 19 takes that same word and points it the other way. The God who is qadosh tells His people that the shape of their set-apartness is how they treat the field hand, the deaf man, the immigrant gathering grapes at the edge of the row.",
+      "wordByWord": [
+        {
+          "word": "קְדֹשִׁים",
+          "transliteration": "qedoshim",
+          "meaning": "holy ones - the command is plural: be a holy people, together"
+        },
+        {
+          "word": "תִּהְיוּ",
+          "transliteration": "tihyu",
+          "meaning": "you shall be - a calling spoken over them before it is a rule"
+        },
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "because - the reason is not reward but resemblance"
+        },
+        {
+          "word": "אֲנִי יְהוָה",
+          "transliteration": "ani YHWH",
+          "meaning": "I am the LORD - the refrain that closes line after line of this chapter"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רֵעַ (rea, H7453)",
+          "reference": "The word for neighbor in verse 18 - friend, companion, the person near you. Not a category of stranger but the one actually within reach."
+        },
+        {
+          "word": "אָהַב (ahav, H157)",
+          "reference": "The verb love in verse 18. In Hebrew it is rarely only a feeling; it is loyalty you can act on, a love with hands."
+        }
+      ],
+      "strongsNumber": "H6918",
+      "definition": "sacred, holy; set apart for God",
+      "usage": "Seven times in these eighteen verses God signs the command with His own name - I am the LORD. Holiness here is not a ladder Israel climbs to reach Him. It is a likeness He stamps on them because they are His."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Holiness toward neighbor. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the holy and good neighbor (Luke 10:33).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Holiness Wears Work Gloves",
+      "body": "Leviticus has a reputation. People reading the Bible in a year often run aground here, between the grain offerings and the skin diseases, and decide the heart of God must be hiding in a friendlier book. Then they reach chapter 19 and something shifts. God tells Moses to gather the whole congregation - not just the priests, the whole assembly - and over them He speaks one sentence the rest of the chapter spends itself explaining: \"Be holy because I, the LORD your God, am holy.\"\n\nIt sounds like a summons to retreat from the world. It is the opposite. Watch where holiness goes. It goes to the edge of the harvest field, where God forbids the landowner from reaping every last stalk - leave the corners, leave what falls, leave it for the poor and the foreigner who have no field of their own. It goes to the end of a workday, where the wages of a hired hand may not be held back until morning, because a day laborer needs to eat tonight. It goes to the deaf man, who cannot hear you mock him, and the blind man, who cannot see the stone you set in his path - the two people in the village least able to defend themselves, named specifically, protected by name.\n\nThis is what the original hearers would have understood, standing in the wilderness with God's tent in their midst. Holiness was not a feeling they were meant to generate. It was a society they were meant to become - one shaped so unmistakably by the character of God that a stranger could walk through it and conclude there must be a different kind of God behind a different kind of people.",
+      "keyInsight": "The command to be holy is not a call to withdraw from people. In Leviticus 19, holiness is measured at the edge of the field, the end of the workday, and the back of the line - in how the strong treat the weak.",
+      "content": "Leviticus has a reputation. People reading the Bible in a year often run aground here, between the grain offerings and the skin diseases, and decide the heart of God must be hiding in a friendlier book. Then they reach chapter 19 and something shifts. God tells Moses to gather the whole congregation - not just the priests, the whole assembly - and over them He speaks one sentence the rest of the chapter spends itself explaining: \"Be holy because I, the LORD your God, am holy.\"\n\nIt sounds like a summons to retreat from the world. It is the opposite. Watch where holiness goes. It goes to the edge of the harvest field, where God forbids the landowner from reaping every last stalk - leave the corners, leave what falls, leave it for the poor and the foreigner who have no field of their own. It goes to the end of a workday, where the wages of a hired hand may not be held back until morning, because a day laborer needs to eat tonight. It goes to the deaf man, who cannot hear you mock him, and the blind man, who cannot see the stone you set in his path - the two people in the village least able to defend themselves, named specifically, protected by name.\n\nThis is what the original hearers would have understood, standing in the wilderness with God's tent in their midst. Holiness was not a feeling they were meant to generate. It was a society they were meant to become - one shaped so unmistakably by the character of God that a stranger could walk through it and conclude there must be a different kind of God behind a different kind of people."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Corner of the Field",
+      "body": "A farmer I know runs a small operation on rented ground, the kind of margin where every bushel matters. A few years back his combine could finally reach right up against the fence lines - new equipment, tighter turns, less waste. The first season he ran it that way he gained maybe a few hundred dollars of grain he used to leave behind.\n\nThat autumn an older woman from down the road, who had quietly gleaned his far corners for years without ever asking, simply stopped coming. He hadn't noticed her in the first place. He only noticed the silence where she used to be.\n\nThe next year he set the header to stop short of the corners again, on purpose. When someone asked why he was leaving good grain in the ground, he didn't have a verse ready. He just said it felt wrong to take all of it. He had stumbled, without naming it, onto Leviticus 19 - the law that the edge of your field is not entirely yours, that some portion of your success was never meant to be harvested by you, because someone else's supper lives in the corners.",
+      "connectionToTheme": "Holiness is rarely dramatic. Often it is a decision, made before God, to leave some of what you could rightfully take - so that someone with less can gather it without having to beg.",
+      "content": "A farmer I know runs a small operation on rented ground, the kind of margin where every bushel matters. A few years back his combine could finally reach right up against the fence lines - new equipment, tighter turns, less waste. The first season he ran it that way he gained maybe a few hundred dollars of grain he used to leave behind.\n\nThat autumn an older woman from down the road, who had quietly gleaned his far corners for years without ever asking, simply stopped coming. He hadn't noticed her in the first place. He only noticed the silence where she used to be.\n\nThe next year he set the header to stop short of the corners again, on purpose. When someone asked why he was leaving good grain in the ground, he didn't have a verse ready. He just said it felt wrong to take all of it. He had stumbled, without naming it, onto Leviticus 19 - the law that the edge of your field is not entirely yours, that some portion of your success was never meant to be harvested by you, because someone else's supper lives in the corners."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sentence Jesus Lifted Out",
+      "body": "Eighteen verses of holiness build toward one line, and it is the line Jesus would later pull out of this very chapter and set at the center of everything: \"love your neighbor as yourself. I am the LORD.\"\n\nNotice the order. Before love, God forbids the things love cannot survive: do not harbor hatred against your brother, do not seek revenge, do not bear a grudge. Hidden hatred, the slow accounting of wrongs, the grudge kept warm for years - these are named first, because they are the quiet machinery by which neighbor-love dies. Only then does the command turn positive: love. The same chapter that protects the deaf and the day laborer reaches into the human heart and forbids the grudge.\n\nWhat holds it all together is the refrain stamped at the end of line after line: I am the LORD. The reason to leave the corners, pay the wages, drop the grudge, love the neighbor is not that it pays off. It is that the God who said these words is like this - and His people are meant to look like Him.",
+      "historicalContext": "Leviticus 19 sits at the heart of what scholars call the Holiness Code (Leviticus 17-26), the section of the law most concerned with how a redeemed people should live among one another and among the nations. Much of it echoes the Ten Commandments in different words - honoring parents, keeping Sabbath, refusing idols, not stealing, not bearing false witness - reframed around a single thread: the holiness of God worked out in the treatment of the neighbor.",
+      "fascinatingFact": "When a scribe asked Jesus which commandment was greatest, He answered with two verses. The first was the Shema from Deuteronomy 6:5, love God. The second was Leviticus 19:18, love your neighbor as yourself. Jesus said, \"No other commandment is greater than these\" (Mark 12:31). The verse that the year-long Bible reader almost skipped is one of the two on which Jesus said all the Law and the Prophets hang (Matthew 22:40).",
+      "content": "Eighteen verses of holiness build toward one line, and it is the line Jesus would later pull out of this very chapter and set at the center of everything: \"love your neighbor as yourself. I am the LORD.\"\n\nNotice the order. Before love, God forbids the things love cannot survive: do not harbor hatred against your brother, do not seek revenge, do not bear a grudge. Hidden hatred, the slow accounting of wrongs, the grudge kept warm for years - these are named first, because they are the quiet machinery by which neighbor-love dies. Only then does the command turn positive: love. The same chapter that protects the deaf and the day laborer reaches into the human heart and forbids the grudge.\n\nWhat holds it all together is the refrain stamped at the end of line after line: I am the LORD. The reason to leave the corners, pay the wages, drop the grudge, love the neighbor is not that it pays off. It is that the God who said these words is like this - and His people are meant to look like Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "To Israel in the wilderness, holiness meant becoming a people whose ordinary economic and social life - harvest, wages, justice, speech - bore the unmistakable fingerprints of the God who redeemed them. \"Be holy because I am holy\" was a calling to resemble their Redeemer in the marketplace, not only at the altar.",
+      "modernApplication": "We tend to file holiness under private disciplines - quiet times, clean habits, what we avoid. Leviticus 19 drags it out into where we earn and spend and speak. How promptly you pay people, whether you leave margin in your success for those who have none, how you talk about the person who is not in the room - that is where your holiness is actually being measured, the same place it was measured in the harvest fields of Israel.",
+      "connectionPoint": "The phrase \"love your neighbor as yourself\" travels straight out of this chapter into the mouth of Jesus, and from there into the rest of the New Testament. Paul writes that \"the entire law is fulfilled in a single decree: Love your neighbor as yourself\" (Galatians 5:14). James calls it \"the royal law\" (James 2:8). The corner of the field and the wages of the laborer are not left behind in Leviticus; they become the shape of Christian love.",
+      "newTestamentEcho": "Jesus does not merely repeat Leviticus 19:18; He embodies it and then deepens it. Asked to define neighbor, He tells of a Samaritan who crosses a road, binds a stranger's wounds, and pays his bill (Luke 10:25-37). And in the upper room He says, \"Love one another. As I have loved you, so you also must love one another\" (John 13:34) - the old command now measured not by self-love but by the love of the One who laid down His life. The Holy One of Leviticus 19 came near and loved His neighbors to the end."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your everyday economic life - work, spending, hiring - have you been reaping to the very edges, when God is asking you to leave the corners?",
+      "additionalQuestions": [
+        "Is there a grudge you have been keeping warm - a wrong you have carefully kept account of? Leviticus names the grudge before it names love. What would it cost you to let it go?",
+        "Who are the 'deaf' and the 'blind' in your world - the people least able to notice or resist how you treat them when no one is watching?",
+        "The chapter says 'directly rebuke your neighbor' - not gossip, not a cold shoulder, but an honest word. Is there someone you have been quietly resenting whom love would require you to actually talk to?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy God, You are set apart, and yet the shape of Your holiness bends toward the poor at the edge of the field and the laborer waiting on his pay. Forgive me for the holiness I have imagined that keeps its hands clean by keeping its distance. I confess the grudges I have kept warm, the corners I have reaped bare, the people I have mistreated because they could not see or could not answer. Make me holy as You are holy - not aloof, but near; not spotless in private and hard in public, but loving my neighbor as myself. Teach me the love that came near in Jesus, who loved His neighbors to the end. I am Yours, and You are the LORD. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, identify one 'corner of the field' - one place where you have been taking all of it - and deliberately leave some for someone with less: pay a person early, tip past the line, forgive a debt, hand over the margin. And name one grudge to God and ask Him to take it before the day ends.",
+      "leavingAtCross": [
+        "The idea that I can be holy while keeping people at arm's length",
+        "The grudge I have been keeping warm and feeding in secret",
+        "The habit of reaping to the very edges - taking everything I can, leaving nothing in the corners for anyone else"
+      ],
+      "receivingFromCross": [
+        "A holiness that looks like the love of Christ, not the distance of the Pharisee",
+        "Freedom from the slow accounting of who has wronged me",
+        "The dignity of belonging to the LORD, and being made to resemble Him in how I treat the people right in front of me"
+      ],
+      "content": "Today, identify one 'corner of the field' - one place where you have been taking all of it - and deliberately leave some for someone with less: pay a person early, tip past the line, forgive a debt, hand over the margin. And name one grudge to God and ask Him to take it before the day ends."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Leviticus 19, where does God locate holiness - in private religious purity, or in concrete treatment of the poor, the worker, the vulnerable, and the neighbor? What does that tell you about what 'holy' actually means?",
+        "Why do you think God forbids hatred, revenge, and grudges in verses 17-18 before He commands 'love your neighbor'? What is the relationship between the two?",
+        "Seven times in this passage God ends a command with 'I am the LORD.' What reason for obedience does that refrain give - and how is it different from obeying for reward?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one 'edge of the field' you tend to reap bare - one place you take all of it when you could leave margin for someone with less.",
+        "Name one grudge you are currently keeping. Talk honestly about what it would mean to release it, and whether love requires a direct, honest conversation rather than silence.",
+        "Ask each other: who is the 'neighbor' I am most tempted to define narrowly, and what would it look like to love that person as myself this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Leviticus 19:18",
+          "text": "Do not seek revenge or bear a grudge against any of your people, but love your neighbor as yourself. I am the LORD."
+        },
+        {
+          "reference": "Matthew 22:39-40",
+          "text": "And the second is like it: 'Love your neighbor as yourself.' All the Law and the Prophets hang on these two commandments."
+        },
+        {
+          "reference": "Galatians 5:14",
+          "text": "The entire law is fulfilled in a single decree: 'Love your neighbor as yourself.'"
+        },
+        {
+          "reference": "James 2:8",
+          "text": "If you really fulfill the royal law stated in Scripture, 'Love your neighbor as yourself,' you are doing well."
+        },
+        {
+          "reference": "1 Peter 1:15-16",
+          "text": "But just as He who called you is holy, so be holy in all you do, for it is written: 'Be holy, because I am holy.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Leviticus 19",
+          "note": "Read the whole chapter in one sitting, watching how the refrain 'I am the LORD' divides it. Notice how laws about offerings, harvest, wages, justice, speech, and the heart all sit side by side under the one heading: be holy as I am holy."
+        },
+        {
+          "type": "book",
+          "title": "Luke 10:25-37",
+          "note": "Read Jesus' parable of the Good Samaritan as His commentary on Leviticus 19:18 - His answer to the question 'who is my neighbor?'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "Mediator of the Holiness Code",
+      "description": "The LORD speaks Leviticus 19 to the whole congregation through Moses, the one who stood between God and Israel - carrying God's words down to the people and the people's needs up to God. Drawn from the Nile, raised in Pharaoh's house, called from a burning bush, Moses spent forty years learning that the God who is utterly holy is also the God who hears the cry of slaves and forbids the mistreatment of the weak. Here he relays a law in which the very holiness of God is defined by mercy at the margins.",
+      "keyQuote": "Speak to the whole congregation of Israel and tell them: Be holy because I, the LORD your God, am holy.",
+      "lessonForUs": "Moses gave Israel a mediated word about a holiness they could not produce on their own. The New Testament names a greater Mediator - Jesus, who did not merely deliver the command to love the neighbor but lived it perfectly and gave Himself for the very people who failed it. The holiness Leviticus describes, Christ supplies.",
+      "heading": "Mediator of the Holiness Code"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2537,
+  "scriptureReference_full": "Leviticus 19:1-18",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qadosh H6918, rea H7453, ahav H157) reflects standard lexical sources (Brown-Driver-Briggs / Strong's). The Holiness Code framing of Leviticus 17-26 reflects standard scholarly description.",
+    "New Testament citation of Leviticus 19:18 by Jesus (Matthew 22:39, Mark 12:31), Paul (Galatians 5:14), and James (James 2:8) per the biblical text."
+  ]
 }

@@ -1,38 +1,176 @@
 {
   "day": 299,
   "title": "Luke: The Inclusive Christ — Day 5 — Resolution",
-  "teaser": "Day 299 of Bible 365 — Luke 1-12",
+  "teaser": "Mary sang it before He was born: the proud scattered, the lowly lifted, the hungry filled. Luke 1-12 is that song set loose in the world.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 299"
+      "type": "scripture",
+      "reference": "Luke 1:46-53",
+      "translation": "BSB",
+      "emphasis": [
+        "He has looked with favor on the humble state of His servant",
+        "He has brought down rulers from their thrones, but has exalted the humble",
+        "He has filled the hungry with good things"
+      ],
+      "greekOriginal": "ἐπέβλεψεν ἐπὶ τὴν ταπείνωσιν τῆς δούλης αὐτοῦ",
+      "passage": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. For the Mighty One has done great things for me. Holy is His name. His mercy extends to those who fear Him, from generation to generation. He has performed mighty deeds with His arm; He has scattered those who are proud in the thoughts of their hearts. He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ταπείνωσις",
+      "transliteration": "tapeinōsis",
+      "pronunciation": "tah-PAY-no-sis",
+      "meaning": "low estate, humble condition, lowliness",
+      "rootMeaning": "From tapeinos, low to the ground, of no account, the opposite of high and lifted up. Tapeinōsis is not a virtue Mary is claiming; it is a position she is describing - the bottom of the social ladder, the place nobody looks.",
+      "usageNote": "In the Greek world tapeinos was an insult. To call a person lowly was to call them small, servile, beneath notice. Mary takes the word the world used as a put-down and makes it the very place God chose to look. The same root runs through Luke's whole Gospel: it is the tax collector who goes home justified because he humbled (tapeinoō) himself (Luke 18:14).",
+      "wordByWord": [
+        {
+          "word": "ἐπέβλεψεν",
+          "transliteration": "epeblepsen",
+          "meaning": "He looked upon, He regarded with attention - the gaze of someone who deliberately turns to see"
+        },
+        {
+          "word": "ἐπὶ τὴν ταπείνωσιν",
+          "transliteration": "epi tēn tapeinōsin",
+          "meaning": "upon the low estate, the humble condition"
+        },
+        {
+          "word": "τῆς δούλης αὐτοῦ",
+          "transliteration": "tēs doulēs autou",
+          "meaning": "of His servant-girl, His bondwoman - the feminine of doulos, a slave"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ὑψόω / ταπεινόω",
+          "reference": "Luke pairs hypsoō (to lift up) and tapeinoō (to bring low) again and again. The Magnificat states the pattern; the parables and reversals of Luke 1-12 act it out: the lifted are brought low, the lowly are lifted."
+        }
+      ],
+      "strongsNumber": "G5014",
+      "definition": "lowness, low estate, humiliation; the condition of being brought down or held down",
+      "usage": "The word names where God chose to look first - not the throne room, but the servant-girl in a forgotten town. The whole arc of Luke is the unfolding of that one glance."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Song That Tells You How to Read the Rest",
+      "body": "Twelve chapters is a long way to travel, and it is easy to finish Luke 1-12 carrying a hundred separate scenes and no single thread. So before the week closes, go back to the first song anyone sings in this Gospel.\n\nA pregnant teenager in a hill-country village opens her mouth, and what comes out is not a lullaby. It is a manifesto. \"He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\" Mary is not describing what she hopes God might do someday. The verbs are past tense, settled, done. She speaks as though the great reversal has already happened - because in her, it has. God looked past every palace in the empire and chose a servant-girl to carry the King.\n\nEverything that follows in Luke is that song being acted out. Read the next eleven chapters with the Magnificat in your ear and the pattern jumps off the page. The Savior is announced first to shepherds, the night-shift laborers nobody invited to anything. In Nazareth He stands up and reads His own job description from Isaiah: good news to the poor, freedom to the captives, sight to the blind. When John sends from prison to ask if Jesus is really the One, Jesus answers with a list of who is being touched - the blind, the lame, the lepers, the deaf, the dead, the poor. Not the powerful. The overlooked. Luke is not collecting random kindnesses. He is showing you a God whose attention runs downhill.",
+      "keyInsight": "Luke 1-12 is the Magnificat in motion. Mary names the pattern in a song; Jesus lives it out scene by scene - God's favor falling first on the people the world ranks last.",
+      "content": "Twelve chapters is a long way to travel, and it is easy to finish Luke 1-12 carrying a hundred separate scenes and no single thread. So before the week closes, go back to the first song anyone sings in this Gospel.\n\nA pregnant teenager in a hill-country village opens her mouth, and what comes out is not a lullaby. It is a manifesto. \"He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\" Mary is not describing what she hopes God might do someday. The verbs are past tense, settled, done. She speaks as though the great reversal has already happened - because in her, it has. God looked past every palace in the empire and chose a servant-girl to carry the King.\n\nEverything that follows in Luke is that song being acted out. Read the next eleven chapters with the Magnificat in your ear and the pattern jumps off the page. The Savior is announced first to shepherds, the night-shift laborers nobody invited to anything. In Nazareth He stands up and reads His own job description from Isaiah: good news to the poor, freedom to the captives, sight to the blind. When John sends from prison to ask if Jesus is really the One, Jesus answers with a list of who is being touched - the blind, the lame, the lepers, the deaf, the dead, the poor. Not the powerful. The overlooked. Luke is not collecting random kindnesses. He is showing you a God whose attention runs downhill."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Seat Nobody Wanted",
+      "body": "A friend who teaches grade school told me about the morning she rearranged her classroom. For years the desks had faced front in tidy rows, and for years the same handful of confident kids got called on while the quiet ones disappeared into the back corners.\n\nSo she pulled every desk into a circle. No back row. No front. The first thing she noticed was who started talking - children who had not raised a hand all semester, now in her line of sight, suddenly worth hearing. She had not changed the children. She had changed where she was looking.\n\nThat is the smallest picture I have of what the Magnificat says God did. He did not wait for the lowly to climb into the front row. He turned His chair toward the back of the room. \"He has looked with favor on the humble state of His servant\" - the verb is simply that He looked, deliberately, at the person the seating chart had written off. The shepherds in their field, the widow at Nain, the woman who wept on His feet: none of them earned the glance. They simply were where God had decided to look.",
+      "connectionToTheme": "God's grace begins not with the lowly reaching up but with God turning to look down - the same deliberate gaze Mary celebrates becomes the shape of every encounter in Luke 1-12.",
+      "content": "A friend who teaches grade school told me about the morning she rearranged her classroom. For years the desks had faced front in tidy rows, and for years the same handful of confident kids got called on while the quiet ones disappeared into the back corners.\n\nSo she pulled every desk into a circle. No back row. No front. The first thing she noticed was who started talking - children who had not raised a hand all semester, now in her line of sight, suddenly worth hearing. She had not changed the children. She had changed where she was looking.\n\nThat is the smallest picture I have of what the Magnificat says God did. He did not wait for the lowly to climb into the front row. He turned His chair toward the back of the room. \"He has looked with favor on the humble state of His servant\" - the verb is simply that He looked, deliberately, at the person the seating chart had written off. The shepherds in their field, the widow at Nain, the woman who wept on His feet: none of them earned the glance. They simply were where God had decided to look."
+    },
+    {
+      "type": "insight",
+      "heading": "Past Tense in a Present Mess",
+      "body": "The strangest thing about Mary's song is its grammar. She sings of thrones already toppled and the proud already scattered while she is standing in an occupied country under an emperor named Augustus, pregnant and unmarried, with no power to topple anyone. By every visible measure the proud are still on their thrones. Rome will still be Rome for centuries. So why the past tense?\n\nBecause Mary is reading reality from God's decision rather than from the morning's headlines. When the Mighty One has set His mind to lift the lowly, the lifting is as good as done - the news simply has not reached everyone yet. She sings the end of the story in the middle of the trouble.\n\nThis is the resolution Luke 1-12 hands you. The reversal is not a reward you wait to see proven before you trust it. It began the moment God looked at a servant-girl and did not look away. Twelve chapters later, the pattern has touched shepherds and lepers and tax collectors and a dead boy at Nain - small, scattered evidence that the song was true all along. The thrones have not all fallen yet. But the One who fills the hungry has already started setting the table.",
+      "historicalContext": "Mary's song is woven from the Hebrew Scriptures she would have heard her whole life - especially the song of Hannah in 1 Samuel 2, another lowly woman who praised a God who \"raises the poor from the dust\" and \"brings low and exalts.\" Luke, traditionally a Gentile physician writing for a Gentile reader named Theophilus, opens his Gospel by rooting the inclusive Christ deep in Israel's oldest songs of reversal.",
+      "fascinatingFact": "The Magnificat takes its name from its first word in Latin, Magnificat anima mea Dominum - \"My soul magnifies the Lord.\" For most of Church history it has been sung daily at evening prayer, which means a teenage refugee's protest song about toppled thrones has been the most-recited revolutionary lyric in human history, chanted nightly in cathedrals built by the powerful.",
+      "content": "The strangest thing about Mary's song is its grammar. She sings of thrones already toppled and the proud already scattered while she is standing in an occupied country under an emperor named Augustus, pregnant and unmarried, with no power to topple anyone. By every visible measure the proud are still on their thrones. Rome will still be Rome for centuries. So why the past tense?\n\nBecause Mary is reading reality from God's decision rather than from the morning's headlines. When the Mighty One has set His mind to lift the lowly, the lifting is as good as done - the news simply has not reached everyone yet. She sings the end of the story in the middle of the trouble.\n\nThis is the resolution Luke 1-12 hands you. The reversal is not a reward you wait to see proven before you trust it. It began the moment God looked at a servant-girl and did not look away. Twelve chapters later, the pattern has touched shepherds and lepers and tax collectors and a dead boy at Nain - small, scattered evidence that the song was true all along. The thrones have not all fallen yet. But the One who fills the hungry has already started setting the table."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Mary sang that God looks with favor on the lowly, scatters the proud, brings down rulers, and fills the hungry - a great reversal sung in the past tense before her child had even drawn breath.",
+      "modernApplication": "Most of us spend a good deal of energy trying to be the kind of person God would notice - impressive, useful, sorted out, near the front. The Magnificat undoes the whole strategy. God's gaze does not climb toward our highlights; it turns toward our lowliness. The part of your life you are most tempted to hide - the unimpressive, unfinished, overlooked part - is exactly the place this song says God is already looking.",
+      "connectionPoint": "The thread Mary names runs the length of Scripture. Hannah sang it first over a different miracle child: \"He raises the poor from the dust and lifts the needy from the ash heap\" (1 Samuel 2:8). The prophets carried it: God \"dwells with the contrite and lowly in spirit\" (Isaiah 57:15). James lands it on the church: \"God opposes the proud but gives grace to the humble\" (James 4:6). The Magnificat is one voice in a very long choir singing that God's attention runs downhill.",
+      "newTestamentEcho": "The reversal Mary sang, her Son embodied. The One who exalts the humble \"humbled Himself and became obedient to death - even death on a cross\" (Philippians 2:8). Christ did not merely announce that God lifts the lowly; He became lowly Himself, taking the form of a servant - the same word, doulos, Mary used of herself - so that the song could come true in person."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you assumed you are too lowly, too small, or too overlooked for God to turn and look - and what would change if the Magnificat were telling the truth about that exact place?",
+      "additionalQuestions": [
+        "Mary sang the reversal in the past tense while still living in the trouble. What promise of God could you start speaking as already settled, even though you cannot yet see it?",
+        "Be honest: are you more drawn to be among the impressive and lifted, or among the lowly God says He favors? What does that pull cost you?",
+        "Across Luke 1-12 the good news reaches shepherds, lepers, and tax collectors first. Who are the 'back-row' people in your world that God might be asking you to turn your chair toward?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Mighty One, You looked with favor on the lowly, and You have not changed. I confess how hard I work to be impressive enough to deserve Your gaze, as if You needed the front row of my life and could not bear the back. Turn Your chair toward the part of me I keep hidden. Where I am proud, scatter the thoughts of my heart gently. Where I am hungry, fill me with good things. And let me sing Your reversal in the past tense, trusting it is already done, even while I still wait to see it. Through Christ, who became a servant so the lowly could be lifted. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week wraps where it began - with a song about who God looks at. Read the Magnificat (Luke 1:46-55) out loud once before you sleep. Then name the one lowly, overlooked place in your life you assumed God had passed over, and offer it to Him as the very seat He chose to turn toward.",
+      "leavingAtCross": [
+        "The exhausting project of making myself impressive enough to be worth God's attention",
+        "The lie that the overlooked, unfinished parts of my life are beneath His notice",
+        "The pride that keeps me looking up at the front row instead of around at the people He favors"
+      ],
+      "receivingFromCross": [
+        "The settled news that God has already looked with favor on the lowly - and that includes me",
+        "Freedom to stop climbing and let myself be found at the bottom, where His gaze begins",
+        "A song to sing in the past tense over present trouble: the proud scattered, the lowly lifted, the hungry filled"
+      ],
+      "content": "This week wraps where it began - with a song about who God looks at. Read the Magnificat (Luke 1:46-55) out loud once before you sleep. Then name the one lowly, overlooked place in your life you assumed God had passed over, and offer it to Him as the very seat He chose to turn toward."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Mary sing of toppled thrones and scattered pride in the past tense when, in her own day, the proud were still firmly on their thrones?",
+        "Across Luke 1-12, name three groups of people the good news reaches first. What do they have in common, and what does that tell you about where God looks?",
+        "How does the Greek word tapeinōsis ('low estate') reframe what we usually mean by 'humility' - is Mary boasting in a virtue, or describing a position?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'back-row' part of your life you have quietly assumed God overlooks. Why that part?",
+        "Talk about the difference between trying to be impressive for God and being found by God in your lowliness. Which one have you been living in lately?",
+        "Ask each other: who are the overlooked people in our lives that God may be asking us to turn and truly look at this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 2:10-11",
+          "text": "But the angel said to them, \"Do not be afraid! For behold, I bring you good news of great joy that will be for all the people: Today in the city of David a Savior has been born to you. He is Christ the Lord!"
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "\"The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed,"
+        },
+        {
+          "reference": "Luke 6:20-21",
+          "text": "Looking up at His disciples, Jesus said: \"Blessed are you who are poor, for yours is the kingdom of God. Blessed are you who hunger now, for you will be filled. Blessed are you who weep now, for you will laugh."
+        },
+        {
+          "reference": "1 Samuel 2:8a",
+          "text": "He raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 1-12",
+          "note": "Re-read the week's passage with the Magnificat (1:46-55) as your lens. Mark each scene where the good news reaches the lowly first - the shepherds (2:8-20), Nazareth (4:18-19), the Beatitudes (6:20-21), the widow at Nain (7:11-17), Jesus' answer to John (7:22). Watch the song become a story."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Servant Who Sang the Reversal",
+      "description": "A young woman from an obscure Galilean village, betrothed but not yet married, with no rank or power the empire would recognize. When the angel's word made her the mother of the Messiah, her response was not a lullaby but a song stitched from Israel's Scriptures - the Magnificat - declaring that God topples the proud and lifts the lowly. Luke gives her the first sustained human voice in his Gospel, and the rest of the book proves her right.",
+      "keyQuote": "For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed.",
+      "lessonForUs": "Mary did not become worthy of God's gaze; she was simply where God chose to look. Her song teaches the lowly to read their lives not by what the world ranks but by where God turns His eyes - and to sing the end of the story in the middle of the trouble.",
+      "heading": "The Servant Who Sang the Reversal"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1798,
+  "scriptureReference_full": "Luke 1-12 (anchor: Luke 1:46-53, the Magnificat)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tapeinōsis G5014, from tapeinos G5011) reflects standard lexical sources. The connection between the Magnificat and the Song of Hannah (1 Samuel 2) is a longstanding observation in biblical scholarship."
+  ]
 }

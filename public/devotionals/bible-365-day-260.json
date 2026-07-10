@@ -1,38 +1,187 @@
 {
   "day": 260,
-  "title": "Jonah: Mercy on Enemies — Day 1 — Hook",
-  "teaser": "Day 260 of Bible 365 — Jonah 1-4",
+  "title": "The Prophet Who Ran from a Merciful God",
+  "teaser": "Jonah didn't flee Nineveh because he feared failure. He fled because he feared God would forgive the people he hated. The book ends on a question God leaves open for us.",
   "framework": "Jonah 1-4 — Jonah: Mercy on Enemies",
   "scriptureReference": "Jonah 1-4",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 260"
+      "type": "scripture",
+      "reference": "Jonah 1:1-3; 4:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "Get up! Go to the great city of Nineveh",
+        "away from the presence of the LORD",
+        "gracious and compassionate God"
+      ],
+      "hebrewOriginal": "כִּי יָדַעְתִּי כִּי אַתָּה אֵל־חַנּוּן וְרַחוּם אֶרֶךְ אַפַּיִם וְרַב־חֶסֶד",
+      "passage": "Now the word of the LORD came to Jonah son of Amittai, saying, \"Get up! Go to the great city of Nineveh and preach against it, because its wickedness has come up before Me.\" Jonah, however, got up to flee to Tarshish, away from the presence of the LORD. He went down to Joppa and found a ship bound for Tarshish. So he paid the fare and went aboard to sail for Tarshish, away from the presence of the LORD. ... Jonah, however, was greatly displeased, and he became angry. So he prayed to the LORD, saying, \"O LORD, is this not what I said while I was still in my own country? This is why I was so quick to flee toward Tarshish. I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion - One who relents from sending disaster.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jonah 1-4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jonah 1-4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חַנּוּן וְרַחוּם",
+      "transliteration": "channun werachum",
+      "pronunciation": "khan-NOON veh-rah-KHOOM",
+      "meaning": "gracious and compassionate",
+      "rootMeaning": "Channun comes from chen, favor freely given to someone who has not earned it. Rachum comes from rechem, the womb - it is the tenderness a mother feels for the child she carried. Together they describe a God whose kindness is unearned and whose mercy is felt in the gut.",
+      "usageNote": "Jonah is not inventing a description of God. He is quoting Scripture back to God's face. The phrase comes from Exodus 34:6, where the LORD passes before Moses and names Himself: \"compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness.\" Israel treasured those words; they recur in the Psalms and the prophets as the high-water mark of who God is. Jonah knows them by heart - and in chapter 4 he hurls them at God as an accusation.",
+      "wordByWord": [
+        {
+          "word": "אֵל",
+          "transliteration": "el",
+          "meaning": "God, the Mighty One"
+        },
+        {
+          "word": "חַנּוּן",
+          "transliteration": "channun",
+          "meaning": "gracious, giving favor that was not earned"
+        },
+        {
+          "word": "וְרַחוּם",
+          "transliteration": "werachum",
+          "meaning": "and compassionate - mercy felt in the womb, gut-deep tenderness"
+        },
+        {
+          "word": "אֶרֶךְ אַפַּיִם",
+          "transliteration": "erech appayim",
+          "meaning": "long of nostrils - an idiom for slow to anger, patient"
+        },
+        {
+          "word": "וְרַב־חֶסֶד",
+          "transliteration": "werav chesed",
+          "meaning": "and great in chesed - abounding in loyal, covenant love"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רַחוּם / רֶחֶם",
+          "reference": "Rachum (compassionate) shares its root with rechem, the womb. Hebrew hears God's mercy not as a cool decision but as the visceral ache of a parent for a child - the same word-family used for the mother's love in 1 Kings 3:26."
+        }
+      ],
+      "strongsNumber": "H2587",
+      "definition": "gracious, merciful; quick to show unearned favor",
+      "usage": "The bitter irony of the book hangs on this word. Jonah ran not because he doubted God's mercy but because he was certain of it - and could not bear the thought of it landing on Nineveh."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jonah: Mercy on Enemies. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Jonah (Matt 12:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Ran Because He Knew Exactly Who God Is",
+      "body": "Most of us learned Jonah as the man swallowed by a fish. But the fish is not the point of the book, and the fish is not why Jonah ran. Read his own confession in chapter 4 and the whole story turns inside out. \"O LORD, is this not what I said while I was still in my own country? This is why I was so quick to flee toward Tarshish. I knew that You are a gracious and compassionate God.\"\n\nJonah did not flee because he feared the mission would fail. He fled because he feared it would succeed. Nineveh was the capital of Assyria, the empire that would soon grind Israel into the dust. These were not strangers; they were the enemy - cruel, violent, the people who burned villages and stacked skulls. When God said, \"Go preach to Nineveh,\" Jonah heard the unbearable possibility underneath the command: they might repent, and God might forgive them.\n\nSo a prophet of the LORD bought a ticket in the opposite direction. Tarshish was the far western edge of the known world; Nineveh lay east. Three times in three verses the text repeats where he was headed: away from the presence of the LORD. Jonah would rather drown than watch grace reach his enemies. That is the engine of the whole book.",
+      "keyInsight": "Jonah's problem was never a weak theology of God's mercy. It was an airtight one. He knew God was gracious - and he hated that the grace was not his to ration.",
+      "content": "Most of us learned Jonah as the man swallowed by a fish. But the fish is not the point of the book, and the fish is not why Jonah ran. Read his own confession in chapter 4 and the whole story turns inside out. \"O LORD, is this not what I said while I was still in my own country? This is why I was so quick to flee toward Tarshish. I knew that You are a gracious and compassionate God.\"\n\nJonah did not flee because he feared the mission would fail. He fled because he feared it would succeed. Nineveh was the capital of Assyria, the empire that would soon grind Israel into the dust. These were not strangers; they were the enemy - cruel, violent, the people who burned villages and stacked skulls. When God said, \"Go preach to Nineveh,\" Jonah heard the unbearable possibility underneath the command: they might repent, and God might forgive them.\n\nSo a prophet of the LORD bought a ticket in the opposite direction. Tarshish was the far western edge of the known world; Nineveh lay east. Three times in three verses the text repeats where he was headed: away from the presence of the LORD. Jonah would rather drown than watch grace reach his enemies. That is the engine of the whole book."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name He Couldn't Pray For",
+      "body": "A pastor I trust once described the hardest moment of his ministry. A man had wrecked his family - betrayed his wife, abandoned his kids, left wreckage behind him for years. The pastor had sat with the wife through all of it. Then one Sunday the man came forward, broken, asking for prayer, saying God had finally gotten hold of him.\n\nThe pastor told me the truth: in that moment he did not want it to be real. Some part of him wanted the man to stay condemned, because forgiveness felt like letting him off. He prayed the words, but his heart was standing on the dock in Joppa, watching a ship pull away.\n\nThere is a name like that for most of us. A person whose ruin would feel like justice and whose mercy would feel like an insult. We do not say it out loud in church. But Jonah did. Jonah said it to God's face: I knew You would forgive them, and I could not stand it.",
+      "connectionToTheme": "Jonah's anger is not ancient and foreign. It lives in anyone who has ever found a name they would rather God judge than save.",
+      "content": "A pastor I trust once described the hardest moment of his ministry. A man had wrecked his family - betrayed his wife, abandoned his kids, left wreckage behind him for years. The pastor had sat with the wife through all of it. Then one Sunday the man came forward, broken, asking for prayer, saying God had finally gotten hold of him.\n\nThe pastor told me the truth: in that moment he did not want it to be real. Some part of him wanted the man to stay condemned, because forgiveness felt like letting him off. He prayed the words, but his heart was standing on the dock in Joppa, watching a ship pull away.\n\nThere is a name like that for most of us. A person whose ruin would feel like justice and whose mercy would feel like an insult. We do not say it out loud in church. But Jonah did. Jonah said it to God's face: I knew You would forgive them, and I could not stand it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sign That Outran the Prophet",
+      "body": "Here is the strange grace at the center of the book. Jonah ran from God, and God used even his running. Thrown into the sea, swallowed by a great fish, Jonah spent three days and three nights in the dark before being vomited onto dry land - and then, finally, walked east to Nineveh. The reluctant preacher gave the shortest, surliest sermon in Scripture: \"Forty more days and Nineveh will be overturned!\" Eight words. No mention of God, no offer of mercy, not even a verb of hope. And the entire city repented anyway.\n\nThat detail matters. The mercy of God did not depend on the warmth of His messenger. Jonah wanted to fail; God succeeded through him regardless. The man who resented grace became its courier.\n\nCenturies later Jesus reached back to this exact story. \"As Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth\" (Matthew 12:40). Jonah went down into the deep and came up to bring mercy to enemies - and he hated it. Jesus went down into death and rose to bring mercy to enemies - and He longed for it. From the cross He prayed for the very people driving the nails: \"Father, forgive them, for they do not know what they are doing\" (Luke 23:34). Jonah is the sign turned the right way at last. Where the prophet fled his enemies, the greater than Jonah died for His.",
+      "historicalContext": "Nineveh was the heart of the Neo-Assyrian Empire, a power Israel had every reason to dread. Assyrian kings boasted in their own inscriptions of flaying captives and piling heads outside conquered cities. Within a generation or two of Jonah, Assyria would devour the northern kingdom of Israel entirely (722 BC). To Jonah's first readers, Nineveh was not an abstraction. It was the nation that would erase them.",
+      "fascinatingFact": "Jonah is the only prophetic book in the Old Testament that ends with a question - and God asks it, not the prophet. \"Should I not care about the great city of Nineveh, which has more than 120,000 people who cannot tell their right hand from their left?\" (4:11). The book stops there. We never hear Jonah's answer. The silence is deliberate: the question is handed to the reader.",
+      "content": "Here is the strange grace at the center of the book. Jonah ran from God, and God used even his running. Thrown into the sea, swallowed by a great fish, Jonah spent three days and three nights in the dark before being vomited onto dry land - and then, finally, walked east to Nineveh. The reluctant preacher gave the shortest, surliest sermon in Scripture: \"Forty more days and Nineveh will be overturned!\" Eight words. No mention of God, no offer of mercy, not even a verb of hope. And the entire city repented anyway.\n\nThat detail matters. The mercy of God did not depend on the warmth of His messenger. Jonah wanted to fail; God succeeded through him regardless. The man who resented grace became its courier.\n\nCenturies later Jesus reached back to this exact story. \"As Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth\" (Matthew 12:40). Jonah went down into the deep and came up to bring mercy to enemies - and he hated it. Jesus went down into death and rose to bring mercy to enemies - and He longed for it. From the cross He prayed for the very people driving the nails: \"Father, forgive them, for they do not know what they are doing\" (Luke 23:34). Jonah is the sign turned the right way at last. Where the prophet fled his enemies, the greater than Jonah died for His."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God sent His prophet to the enemy capital and relented from disaster when the city turned, because He is gracious and compassionate, slow to anger, abounding in loving devotion - even toward Nineveh.",
+      "modernApplication": "We are quick to celebrate mercy when it falls on us and slow to bless it when it falls on people we have decided do not deserve it. The hardest line of the Lord's Prayer is not \"give us this day our daily bread.\" It is \"forgive us our debts, as we forgive our debtors\" - the prayer of someone who has stopped standing on the dock at Joppa.",
+      "connectionPoint": "The mercy Jonah resented is the thread the whole canon is pulling. God told Abraham that through his offspring all the families of the earth would be blessed (Genesis 12:3) - not just Israel, but the nations, even the dreaded ones. Jonah is that promise dragged kicking to Nineveh. Isaiah saw it as a banquet God spreads for all peoples (Isaiah 25:6). Peter, on a rooftop, finally grasped it: \"God does not show favoritism\" (Acts 10:34). The enemy was always meant to be invited.",
+      "newTestamentEcho": "\"The men of Nineveh will stand at the judgment with this generation and condemn it; for they repented at the preaching of Jonah, and now One greater than Jonah is here\" (Matthew 12:41). The pagans of Nineveh turned at eight grudging words. Jesus' warning is sharp: a worse sermon to worse people brought more repentance than the perfect Word made flesh found among His own."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Is there a name - a person, a group, an enemy - whose forgiveness by God would feel to you less like good news and more like an injustice?",
+      "additionalQuestions": [
+        "Jonah fled because he was sure of God's mercy. Where in your life does God's grace toward someone else feel threatening rather than glad?",
+        "The book ends with God's question unanswered. If God asked you, 'Should I not care about them?' - who is the 'them' you would struggle to say yes about?",
+        "Jonah preached eight cold words and a city was saved. Where might God be using you despite the reluctance in your heart?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have stood on the dock at Joppa more times than I would admit. There are names I have wanted You to judge and not save. Forgive me for rationing a mercy that was never mine to ration. You are gracious and compassionate, slow to anger, abounding in loving devotion - and I am glad of it for myself. Make me glad of it for my enemies. Greater than Jonah, You went down into death and rose with forgiveness on Your lips for the ones who killed You. Put that same heart in me. Teach me to care about the city I would rather see overturned. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one person whose forgiveness would be hardest for you to celebrate. Today, pray for them by name - not that they would be punished, but that God would be gracious and compassionate toward them, the way He has been toward you.",
+      "leavingAtCross": [
+        "The instinct to ration God's mercy, deciding who has earned it and who has not",
+        "The secret satisfaction in imagining an enemy condemned",
+        "The pride that hears 'go to Nineveh' and books passage to Tarshish"
+      ],
+      "receivingFromCross": [
+        "The freedom of a mercy I did not earn, extended without my permission to people I would not have chosen",
+        "A heart that can finally answer God's closing question with yes",
+        "The example of the greater Jonah, who prayed forgiveness over His own executioners"
+      ],
+      "content": "Name the one person whose forgiveness would be hardest for you to celebrate. Today, pray for them by name - not that they would be punished, but that God would be gracious and compassionate toward them, the way He has been toward you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why did Jonah really run - and how does his own confession in chapter 4 differ from the way the story is usually told?",
+        "What does it mean that the book of Jonah ends on a question God asks, with the prophet's answer left blank?",
+        "How does Jonah's three days in the fish, and his mission to enemies, point forward to Christ - and where does the parallel break and become its opposite?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly: is there a person or group whose redemption you would secretly rather not see? Say the name out loud.",
+        "Talk about a time God used you in spite of your reluctance, the way He used Jonah's eight grudging words.",
+        "Ask each other: where am I standing on the dock at Joppa right now, sailing away from a mercy God is asking me to carry?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jonah 3:10",
+          "text": "When God saw their actions - that they had turned from their evil ways - He relented from the disaster He had threatened to bring upon them."
+        },
+        {
+          "reference": "Jonah 4:11",
+          "text": "So should I not care about the great city of Nineveh, which has more than 120,000 people who cannot tell their right hand from their left, and many cattle as well?"
+        },
+        {
+          "reference": "Exodus 34:6",
+          "text": "Then the LORD passed in front of Moses and called out: 'The LORD, the LORD God, is compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness.'"
+        },
+        {
+          "reference": "Matthew 12:41",
+          "text": "The men of Nineveh will stand at the judgment with this generation and condemn it; for they repented at the preaching of Jonah, and now One greater than Jonah is here."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jonah 1-4",
+          "note": "Read the whole book in one sitting - it takes about ten minutes. Watch how the pagan sailors and the pagan city respond to God more readily than the prophet does, and notice that the story stops on God's unanswered question."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jonah son of Amittai",
+      "title": "The Reluctant Prophet of Mercy",
+      "description": "A prophet of the northern kingdom of Israel, named in 2 Kings 14:25 as one who spoke God's word in the days of Jeroboam II. Commanded to preach to Nineveh, the capital of Israel's deadliest enemy, Jonah fled in the opposite direction - not because he doubted God but because he was certain God would forgive a people he wanted destroyed. Swallowed by a great fish, delivered to dry land, and finally obedient, he watched the whole city repent and then sat down outside the walls, furious, hoping God would still strike. The book ends with God reasoning with His angry prophet, and with Jonah's silence.",
+      "keyQuote": "I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion - One who relents from sending disaster.",
+      "lessonForUs": "Jonah is the believer who has the theology exactly right and the heart entirely wrong. Knowing that God is merciful is not the same as wanting His mercy for everyone. The question God leaves hanging over Jonah hangs over us: will we let God love the people we cannot?",
+      "heading": "The Reluctant Prophet of Mercy"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1463,
+  "scriptureReference_full": "Jonah 1-4 (quoting Jonah 1:1-3; 3:4, 10; 4:1-2, 11)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (channun werachum, H2587/H7349) reflects standard lexical sources; the rachum/rechem (compassion/womb) resonance is a widely noted feature of the root. The Exodus 34:6 confession quoted by Jonah (4:2) is the recurring 'mercy formula' echoed across the Psalms and Prophets.",
+    "Assyrian self-descriptions of cruelty are attested in royal annals (e.g., the inscriptions of Ashurnasirpal II); the fall of Israel's northern kingdom to Assyria is dated to 722 BC."
+  ]
 }

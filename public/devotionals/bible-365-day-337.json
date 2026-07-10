@@ -1,38 +1,181 @@
 {
   "day": 337,
-  "title": "Romans: Justified by Faith — Day 1 — Hook",
-  "teaser": "Day 337 of Bible 365 — Romans 1-8",
+  "title": "The verdict comes first",
+  "teaser": "Paul does not begin Romans with how to be good. He begins with a courtroom — and a sentence already passed. Day 1 of justified by faith.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 337"
+      "type": "scripture",
+      "reference": "Romans 5:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "justified through faith",
+        "peace with God",
+        "this grace in which we stand"
+      ],
+      "greekOriginal": "Δικαιωθέντες οὖν ἐκ πίστεως εἰρήνην ἔχομεν πρὸς τὸν Θεὸν διὰ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ",
+      "passage": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ, through whom we have gained access by faith into this grace in which we stand. And we rejoice in the hope of the glory of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δικαιόω",
+      "transliteration": "dikaioō",
+      "pronunciation": "dee-kai-OH-oh",
+      "meaning": "to declare righteous, to acquit, to pronounce just",
+      "rootMeaning": "Dikaioō is a verb borrowed from the law court. It does not mean to make someone gradually better. It means to issue a verdict - to declare a person in the right before the bench. The related noun dikaiosynē is the standing the verdict creates: being counted righteous.",
+      "usageNote": "Paul leans on this word group more heavily in Romans than anywhere else he writes. In Romans 5:1 it stands in the past tense and the passive voice: we have been justified - the action is finished, and Someone other than us performed it.",
+      "wordByWord": [
+        {
+          "word": "δικαιωθέντες",
+          "transliteration": "dikaiōthentes",
+          "meaning": "having been justified - past, passive, done to us not by us"
+        },
+        {
+          "word": "ἐκ πίστεως",
+          "transliteration": "ek pisteōs",
+          "meaning": "out of faith, on the basis of trust rather than performance"
+        },
+        {
+          "word": "εἰρήνην ἔχομεν",
+          "transliteration": "eirēnēn echomen",
+          "meaning": "we have peace - not a feeling but a state, the war ended"
+        },
+        {
+          "word": "πρὸς τὸν Θεόν",
+          "transliteration": "pros ton Theon",
+          "meaning": "with God, toward God - the relationship itself made right"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δίκαιος / δικαιοσύνη",
+          "reference": "Dikaios means righteous; dikaiosynē means righteousness. Romans 1:17 says the gospel reveals 'the righteousness of God' - the same root. The verdict in chapter 5 is God sharing His own standing with people who had none."
+        }
+      ],
+      "strongsNumber": "G1344",
+      "definition": "to render or declare righteous; to acquit; a forensic, courtroom term for a legal verdict of innocence",
+      "usage": "Because dikaioō is a verdict and not a process, justification is something a person receives whole, not something earned by degrees. The court does not say 'almost'; it says 'righteous,' and the gavel falls."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Starts in a Courtroom, Not a Classroom",
+      "body": "Most of us would expect a letter about the Christian life to open with instructions. Be kind. Try harder. Here is the list. Paul does the opposite. For three full chapters he builds a case - and it is a case for the prosecution. The wrath of God is being revealed against all godlessness, he writes (Romans 1:18). Then he closes every escape: the openly wicked stand guilty, the respectable moralist stands guilty, the religious insider stands guilty. There is no one righteous, not even one.\n\nBy the end of chapter three the room is silent. And into that silence Paul drops the sentence the whole letter turns on: 'all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:23-24). Justified - declared in the right - freely. The verdict the courtroom could not earn is simply given.\n\nThis is why Romans does not begin with how to be good. It begins with a sentence already passed. Before there is a single command about how to live, there is an announcement about how we stand. Paul will get to the living. But he refuses to let it come first, because a life built on top of an unsettled verdict is a life that never stops auditioning.",
+      "keyInsight": "Romans front-loads the verdict on purpose. We are not told to become righteous so that God will accept us; we are told God has declared us righteous, and only then how to live.",
+      "content": "Most of us would expect a letter about the Christian life to open with instructions. Be kind. Try harder. Here is the list. Paul does the opposite. For three full chapters he builds a case - and it is a case for the prosecution. The wrath of God is being revealed against all godlessness, he writes (Romans 1:18). Then he closes every escape: the openly wicked stand guilty, the respectable moralist stands guilty, the religious insider stands guilty. There is no one righteous, not even one.\n\nBy the end of chapter three the room is silent. And into that silence Paul drops the sentence the whole letter turns on: 'all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:23-24). Justified - declared in the right - freely. The verdict the courtroom could not earn is simply given.\n\nThis is why Romans does not begin with how to be good. It begins with a sentence already passed. Before there is a single command about how to live, there is an announcement about how we stand. Paul will get to the living. But he refuses to let it come first, because a life built on top of an unsettled verdict is a life that never stops auditioning."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Kept Re-Reading the Letter",
+      "body": "A friend told me about the year his father was being investigated at work. For months the house held its breath. His father came home each night and read his own emails again, looking for the line that would clear him, rehearsing what he would say if they called him in. He could not sit through dinner. He could not sleep. The not-knowing had crawled into everything.\n\nThen the letter came. Cleared. No charges. And my friend said the strangest thing happened: his father read it once, set it on the counter, and went outside and watered the garden he had ignored all year. The thing that had eaten him alive was simply over, and now there was a whole life waiting that the fear had been hiding.\n\nThat is the order Paul insists on. First the letter that clears you. Then the garden. Most of us try to water the garden while the case is still open - performing, proving, hoping the verdict will eventually come in - and we wonder why nothing grows. Romans says the verdict is already in. You can put the case down.",
+      "connectionToTheme": "Justification is the cleared letter set on the counter. Until a person believes the case is actually closed, every good thing they do is just more evidence-gathering for a trial that is already over.",
+      "content": "A friend told me about the year his father was being investigated at work. For months the house held its breath. His father came home each night and read his own emails again, looking for the line that would clear him, rehearsing what he would say if they called him in. He could not sit through dinner. He could not sleep. The not-knowing had crawled into everything.\n\nThen the letter came. Cleared. No charges. And my friend said the strangest thing happened: his father read it once, set it on the counter, and went outside and watered the garden he had ignored all year. The thing that had eaten him alive was simply over, and now there was a whole life waiting that the fear had been hiding.\n\nThat is the order Paul insists on. First the letter that clears you. Then the garden. Most of us try to water the garden while the case is still open - performing, proving, hoping the verdict will eventually come in - and we wonder why nothing grows. Romans says the verdict is already in. You can put the case down."
+    },
+    {
+      "type": "insight",
+      "heading": "Just, and the Justifier",
+      "body": "There is a problem buried in 'justified freely,' and Paul knows it. A judge who simply waves guilt away is not righteous; he is corrupt. If God acquits the guilty by overlooking the guilt, He has stopped being just. So how can the verdict be free for us without being a lie?\n\nPaul answers in one of the most loaded sentences in the New Testament. God presented Christ 'as the atoning sacrifice through faith in His blood,' he writes, and He did this 'so as to be just and to justify the one who has faith in Jesus' (Romans 3:25-26). The cost did not disappear. It moved. The guilt was not ignored; it was carried. God remains the just Judge - sin is still condemned, fully - but it is condemned in His own Son rather than in us. By the time Paul reaches chapter eight he says it plainly: God 'condemned sin in the flesh' of Christ (Romans 8:3), so that for us 'there is now no condemnation' (Romans 8:1).\n\nThis is the hinge the whole letter swings on. The peace of Romans 5:1 is not God lowering His standard. It is God meeting His own standard Himself, in the place where we should have stood. The verdict is free to us because it was unspeakably expensive to Him.",
+      "historicalContext": "Paul wrote Romans around AD 57, most likely from Corinth, to a church he had not yet visited. The Roman believers were a mix of Jews and Gentiles who did not fully trust one another, and Paul's courtroom argument cuts the ground out from under both: neither the law-keeper nor the outsider can stand before God on their own record. The verdict levels the room before it fills it.",
+      "fascinatingFact": "The word translated 'atoning sacrifice' in Romans 3:25 is hilastērion - the same Greek word the Greek Old Testament uses for the mercy seat, the lid of the ark of the covenant where blood was sprinkled on the Day of Atonement. Paul is saying Jesus is the meeting place where wrath and mercy are reconciled - the courtroom and the altar are the same place.",
+      "content": "There is a problem buried in 'justified freely,' and Paul knows it. A judge who simply waves guilt away is not righteous; he is corrupt. If God acquits the guilty by overlooking the guilt, He has stopped being just. So how can the verdict be free for us without being a lie?\n\nPaul answers in one of the most loaded sentences in the New Testament. God presented Christ 'as the atoning sacrifice through faith in His blood,' he writes, and He did this 'so as to be just and to justify the one who has faith in Jesus' (Romans 3:25-26). The cost did not disappear. It moved. The guilt was not ignored; it was carried. God remains the just Judge - sin is still condemned, fully - but it is condemned in His own Son rather than in us. By the time Paul reaches chapter eight he says it plainly: God 'condemned sin in the flesh' of Christ (Romans 8:3), so that for us 'there is now no condemnation' (Romans 8:1).\n\nThis is the hinge the whole letter swings on. The peace of Romans 5:1 is not God lowering His standard. It is God meeting His own standard Himself, in the place where we should have stood. The verdict is free to us because it was unspeakably expensive to Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "By faith, apart from works of the law, God declares the guilty righteous - not by ignoring their guilt, but by carrying it in Christ, so that He is both 'just and the justifier' of the one who trusts Jesus (Romans 3:26-28).",
+      "modernApplication": "Many of us live as though our standing with God rises and falls with our last good day or our last failure. We are still working the case - tallying, comparing, bracing for the call to come in. Paul says the call already came, and the verdict is righteous. You are not auditioning. You are accepted, and now you get to live like it.",
+      "connectionPoint": "Justification by faith is not a single verse but the spine of the whole letter. It runs from the gospel as 'the power of God for salvation to everyone who believes' (Romans 1:16), through Abraham who was counted righteous because he believed (Romans 4:5), to the unbreakable love no power in creation can sever (Romans 8:38-39). Day one of this reading sets the foundation the next days will build on: settled standing, then transformed living.",
+      "newTestamentEcho": "The peace Paul announces was purchased, not pronounced cheaply. 'Since we have now been justified by His blood, how much more shall we be saved from wrath through Him' (Romans 5:9). The God who 'did not spare His own Son but gave Him up for us all' (Romans 8:32) is the same God who hands you the verdict for free."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still living as if the case is open - performing, proving, bracing for a verdict that Romans says is already in?",
+      "additionalQuestions": [
+        "When you imagine standing before God, do you picture a Judge about to rule, or a Judge who has already ruled in your favor at the cost of His Son? Which one runs your daily life?",
+        "What good thing have you been doing mostly as evidence - to settle a verdict - rather than as a free response to a verdict already settled?",
+        "If you truly believed there is 'now no condemnation' for you, what would you stop carrying today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Just and gracious God, I have spent so long working a case I cannot win - tallying my days, dreading the verdict, trying to clear my own name. Thank You that in Christ You were both the Judge and the One judged in my place. Thank You that the sentence has already fallen, and it fell on Him. Let me hear the verdict today and believe it: justified, at peace, with no condemnation left. Quiet the part of me that keeps re-reading the file. Teach me to live from Your acceptance and not for it. Through Jesus my Lord, in whom I stand. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one way you have been trying to earn a standing you already have. Then read Romans 5:1 and Romans 8:1 slowly, out loud, twice - and let the order sink in: the verdict comes first, the life comes after. Carry one phrase with you all day: 'no condemnation.'",
+      "leavingAtCross": [
+        "The exhausting habit of treating God's acceptance as something I re-earn each morning",
+        "The fear that one bad day reopens a case Christ already closed",
+        "The quiet belief that I must become righteous before God will receive me"
+      ],
+      "receivingFromCross": [
+        "A verdict I did not earn and cannot un-earn - declared righteous, freely, by grace",
+        "Peace with God that is a settled fact and not a passing mood",
+        "Permission to stop auditioning and start living from a love that nothing can separate me from"
+      ],
+      "content": "Today, name one way you have been trying to earn a standing you already have. Then read Romans 5:1 and Romans 8:1 slowly, out loud, twice - and let the order sink in: the verdict comes first, the life comes after. Carry one phrase with you all day: 'no condemnation.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Paul spend three chapters making the case for human guilt before he announces the good news of justification? What would be lost if he skipped straight to grace?",
+        "What does the courtroom word 'justified' (dikaioō) mean, and why does it matter that it is a verdict rather than a slow process of becoming better?",
+        "How can God be 'just and the justifier' at the same time? Where did the cost of the verdict go?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about whether you live more like the verdict is still pending or already settled - and what tips you back into 'working the case.'",
+        "Name one area where you have been doing good things as evidence to earn standing, rather than as a free response to standing already given.",
+        "Ask each other: if 'there is now no condemnation' is true of you, what one weight could you put down this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 1:16-17",
+          "text": "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes... For the gospel reveals the righteousness of God that comes by faith from start to finish, just as it is written: 'The righteous will live by faith.'"
+        },
+        {
+          "reference": "Romans 3:23-24",
+          "text": "for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus."
+        },
+        {
+          "reference": "Romans 4:5",
+          "text": "However, to the one who does not work, but believes in Him who justifies the wicked, his faith is credited as righteousness."
+        },
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 1-5",
+          "note": "Read these chapters in one sitting to feel the movement: the case for guilt (1-3), the verdict of justification (3-4), and the peace it secures (5). Watch how often the word 'justified' appears."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Gentiles, Prisoner of Grace",
+      "description": "A Pharisee trained under Gamaliel and once a fierce persecutor of the church, Paul was confronted by the risen Christ on the road to Damascus and spent the rest of his life announcing the gospel he had tried to destroy. He wrote Romans around AD 57 to a church he had never met, laying out his most careful account of how a holy God can declare guilty people righteous without ceasing to be just.",
+      "keyQuote": "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes.",
+      "lessonForUs": "Paul, of all people, had a record he could never outrun - he had hunted Christians. That he could write so confidently of 'no condemnation' tells us justification is not for people with clean files. It is for the guilty who trust the One who carried their guilt.",
+      "heading": "Apostle to the Gentiles, Prisoner of Grace"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2261,
+  "scriptureReference_full": "Romans 5:1-2 (within Romans 1-8)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dikaioō G1344, dikaiosynē, hilastērion) reflects standard New Testament lexical sources; the hilastērion / mercy-seat connection follows the Septuagint usage of the term."
+  ]
 }

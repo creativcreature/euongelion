@@ -1,38 +1,188 @@
 {
   "day": 222,
-  "title": "Isaiah: Holy One of Israel — Day 5 — Resolution",
-  "teaser": "Day 222 of Bible 365 — Isaiah 6, 9, 11, 25",
+  "title": "The Holy One Who Came Close",
+  "teaser": "Isaiah saw the thrice-holy God on a throne so high it could not be approached — and then watched that same Holy One be born a child, judge for the poor, and swallow death whole.",
   "framework": "Isaiah 6, 9, 11, 25 — Isaiah: Holy One of Israel",
   "scriptureReference": "Isaiah 6, 9, 11, 25",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 222"
+      "type": "scripture",
+      "reference": "Isaiah 6:1-3, 5, 7; 9:6; 25:8",
+      "translation": "BSB",
+      "emphasis": [
+        "Holy, holy, holy",
+        "your sin is atoned for",
+        "a child is born",
+        "He will swallow up death forever"
+      ],
+      "hebrewOriginal": "קְדוֹשׁ יִשְׂרָאֵל",
+      "passage": "In the year that King Uzziah died, I saw the Lord seated on a throne, high and exalted; and the train of His robe filled the temple. Above Him stood seraphim... And they were calling out to one another: \"Holy, holy, holy is the LORD of Hosts; all the earth is full of His glory.\" ... Then I said: \"Woe is me, for I am ruined, because I am a man of unclean lips...\" ... And with it he touched my mouth and said: \"Now that this has touched your lips, your iniquity is removed and your sin is atoned for.\" ... For unto us a child is born, unto us a son is given... And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace. ... He will swallow up death forever. The Lord GOD will wipe away the tears from every face."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 6, 9, 11, 25**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 6, 9, 11, 25 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קְדוֹשׁ יִשְׂרָאֵל",
+      "transliteration": "qedosh Yisrael",
+      "pronunciation": "keh-DOSH yis-rah-AYL",
+      "meaning": "the Holy One of Israel",
+      "rootMeaning": "Qadosh means set apart, other, cut off from the common. To be holy is to be in a category by yourself - not merely very good, but of a different order entirely. Joined to Yisrael, the name becomes a paradox: the Wholly Other has bound Himself to one small people.",
+      "usageNote": "\"The Holy One of Israel\" is Isaiah's signature name for God. It appears about twenty-five times in this one book - more than in the entire rest of the Old Testament combined. It runs through both halves of Isaiah like a thread, holding the whole prophecy together. The seraphim's threefold \"qadosh, qadosh, qadosh\" in 6:3 is the only place in Scripture an attribute of God is repeated three times for emphasis.",
+      "wordByWord": [
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy, set apart, utterly other"
+        },
+        {
+          "word": "קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ",
+          "transliteration": "qadosh qadosh qadosh",
+          "meaning": "holy, holy, holy - the superlative by triple repetition, the highest degree the Hebrew can reach"
+        },
+        {
+          "word": "יְהוָה צְבָאוֹת",
+          "transliteration": "YHWH tseva'ot",
+          "meaning": "the LORD of Hosts - the LORD commanding the armies of heaven"
+        },
+        {
+          "word": "יִשְׂרָאֵל",
+          "transliteration": "Yisrael",
+          "meaning": "Israel - the people this Holy One chose to belong to"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "קֹדֶשׁ קָדָשִׁים",
+          "reference": "Qodesh qadashim, the Most Holy Place - the same triple-grade construction. The seraphim sing what the Temple was built to picture: a holiness so complete it has to be guarded behind a veil."
+        }
+      ],
+      "strongsNumber": "H6918",
+      "definition": "holy; set apart; sacred; the One who is wholly other",
+      "usage": "Isaiah does not soften the word. The Holy One is the God before whom a righteous prophet says \"Woe is me, I am ruined.\" And yet this is the same God who, four chapters later, is given to us as a child."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Holy One of Israel. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Holy One (Mark 1:24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Name That Holds the Book Together",
+      "body": "Isaiah began his ministry the year King Uzziah died, and what he saw that year never left him. A throne, high and lifted up. A robe whose hem alone filled the temple. Burning creatures who covered their own faces and cried out a word three times: \"Holy, holy, holy is the LORD of Hosts.\" The doorposts shook. The room filled with smoke. And a man who had likely preached holiness his whole life suddenly understood it for the first time, and the only thing he could say was, \"Woe is me, for I am ruined.\"\n\nThat vision gave Isaiah the name he would use for God more than any prophet before or after: the Holy One of Israel. He says it again and again, in oracles of judgment and oracles of comfort, until you cannot read the book without hearing it. The name carries two truths that should not be able to sit in the same breath. Holy One: utterly set apart, of another order, dangerous to approach. Of Israel: bound by covenant to a particular, failing, beloved people. The transcendent God has a return address.\n\nWhat the original hearers needed to feel is the weight of that holiness before they ever heard the comfort. Isaiah's contemporaries had grown casual about God - going through the motions of worship while their hearts and their politics ran elsewhere. So the prophet shows them the throne first. Before anyone is told God is near, they are made to understand Who it is that is drawing near. The comfort means nothing until you have stood in the smoke.",
+      "keyInsight": "Isaiah names God \"the Holy One of Israel\" more than the rest of the Old Testament combined - a name that yokes utter otherness to covenant nearness, and refuses to let either go.",
+      "content": "Isaiah began his ministry the year King Uzziah died, and what he saw that year never left him. A throne, high and lifted up. A robe whose hem alone filled the temple. Burning creatures who covered their own faces and cried out a word three times: \"Holy, holy, holy is the LORD of Hosts.\" The doorposts shook. The room filled with smoke. And a man who had likely preached holiness his whole life suddenly understood it for the first time, and the only thing he could say was, \"Woe is me, for I am ruined.\"\n\nThat vision gave Isaiah the name he would use for God more than any prophet before or after: the Holy One of Israel. He says it again and again, in oracles of judgment and oracles of comfort, until you cannot read the book without hearing it. The name carries two truths that should not be able to sit in the same breath. Holy One: utterly set apart, of another order, dangerous to approach. Of Israel: bound by covenant to a particular, failing, beloved people. The transcendent God has a return address.\n\nWhat the original hearers needed to feel is the weight of that holiness before they ever heard the comfort. Isaiah's contemporaries had grown casual about God - going through the motions of worship while their hearts and their politics ran elsewhere. So the prophet shows them the throne first. Before anyone is told God is near, they are made to understand Who it is that is drawing near. The comfort means nothing until you have stood in the smoke."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Coal Before the Commission",
+      "body": "Reread chapter 6 slowly and notice the order of events, because the order is the whole point.\n\nIsaiah sees the holiness. He breaks - \"Woe is me, I am ruined, a man of unclean lips.\" He does not volunteer. He does not feel qualified. He feels undone. And only then does one of the seraphim fly to him with a glowing coal taken from the altar, press it to his mouth, and say: \"Now that this has touched your lips, your iniquity is removed and your sin is atoned for.\"\n\nThe atonement comes from the altar - the place of sacrifice - and it is brought to Isaiah; he does not climb up to get it. He could not have. The coal finds the man on the floor. And it is only after his lips are cleansed that he hears the question, \"Whom shall I send?\" and can finally answer, \"Here am I. Send me.\"\n\nWe usually get this backwards. We think we must clean ourselves up enough to be useful, and then God might call us. Isaiah's vision says the opposite. The Holy One does not wait at a distance for us to become approachable. He sends the coal. He closes the gap Himself. The cleansing is the beginning, not the reward.",
+      "connectionToTheme": "The Holy One does not demand that Isaiah ascend to His holiness; He sends fire from the altar down to a broken man's mouth. Holiness reaches first.",
+      "content": "Reread chapter 6 slowly and notice the order of events, because the order is the whole point.\n\nIsaiah sees the holiness. He breaks - \"Woe is me, I am ruined, a man of unclean lips.\" He does not volunteer. He does not feel qualified. He feels undone. And only then does one of the seraphim fly to him with a glowing coal taken from the altar, press it to his mouth, and say: \"Now that this has touched your lips, your iniquity is removed and your sin is atoned for.\"\n\nThe atonement comes from the altar - the place of sacrifice - and it is brought to Isaiah; he does not climb up to get it. He could not have. The coal finds the man on the floor. And it is only after his lips are cleansed that he hears the question, \"Whom shall I send?\" and can finally answer, \"Here am I. Send me.\"\n\nWe usually get this backwards. We think we must clean ourselves up enough to be useful, and then God might call us. Isaiah's vision says the opposite. The Holy One does not wait at a distance for us to become approachable. He sends the coal. He closes the gap Himself. The cleansing is the beginning, not the reward."
+    },
+    {
+      "type": "insight",
+      "heading": "The Throne Became a Manger",
+      "body": "Hold chapter 6 and chapter 9 side by side, because together they are the resolution this whole week has been building toward.\n\nIn chapter 6, holiness is so high that a prophet is leveled by it. The throne is lifted up; the hem alone fills the room; the seraphim hide their faces. You would think the only fitting response of such a God to such a world is the judgment Isaiah is sent to announce. And then, three chapters later, the same prophet writes: \"For unto us a child is born, unto us a son is given... And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.\"\n\nRead those titles again. Mighty God. Everlasting Father. These are not the names of a great king. They are the names of the One on the throne. Isaiah is saying that the Holy One of Israel - the God too holy to look at - is the child being born. The seraphim covered their faces before Him; now He has a face you can look into. The hem of His robe filled the temple; now He is wrapped in cloth and laid where animals feed.\n\nThis is the secret folded inside the name all along. \"Holy One of Israel\" was never only about distance. The of Israel half was a promise that the otherness would come close. In chapter 6 we learn how high the throne is. In chapter 9 we learn that the One on it chose to be born among us. The holiness did not lower its standard; it lowered itself. And chapter 11 shows what He does once He arrives - not crush the poor but judge for them, not exploit the lowly but decide for them, until the wolf lies down with the lamb and a little child leads them. The Holy One is mighty, and the first thing His might does is defend the weak.",
+      "historicalContext": "Isaiah 9:6 was spoken into a moment of national terror, with Assyria's armies threatening Judah's survival. The promised child was first heard as a royal hope - a son of David's line who would finally rule with justice. Only with the fullness of the titles does it become clear no ordinary king is meant; the Hebrew piles up names that belong to God alone.",
+      "fascinatingFact": "Centuries later, the apostle John would write of Isaiah's throne-room vision: \"Isaiah said these things because he saw Jesus' glory and spoke about Him\" (John 12:41). For John, the Lord high and lifted up in chapter 6 and the child born in chapter 9 were never two figures. Isaiah had seen one glory - the glory of Christ - from both ends.",
+      "content": "Hold chapter 6 and chapter 9 side by side, because together they are the resolution this whole week has been building toward.\n\nIn chapter 6, holiness is so high that a prophet is leveled by it. The throne is lifted up; the hem alone fills the room; the seraphim hide their faces. You would think the only fitting response of such a God to such a world is the judgment Isaiah is sent to announce. And then, three chapters later, the same prophet writes: \"For unto us a child is born, unto us a son is given... And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.\"\n\nRead those titles again. Mighty God. Everlasting Father. These are not the names of a great king. They are the names of the One on the throne. Isaiah is saying that the Holy One of Israel - the God too holy to look at - is the child being born. The seraphim covered their faces before Him; now He has a face you can look into. The hem of His robe filled the temple; now He is wrapped in cloth and laid where animals feed.\n\nThis is the secret folded inside the name all along. \"Holy One of Israel\" was never only about distance. The of Israel half was a promise that the otherness would come close. In chapter 6 we learn how high the throne is. In chapter 9 we learn that the One on it chose to be born among us. The holiness did not lower its standard; it lowered itself. And chapter 11 shows what He does once He arrives - not crush the poor but judge for them, not exploit the lowly but decide for them, until the wolf lies down with the lamb and a little child leads them. The Holy One is mighty, and the first thing His might does is defend the weak."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Isaiah saw the Holy One of Israel high and lifted up on a throne, then announced that this same God would be born as a child, rule with justice for the poor, and one day swallow up death forever and wipe away every tear.",
+      "modernApplication": "We tend to keep our two pictures of God in separate rooms. There is the distant God - holy, demanding, best kept at arm's length - and the cozy God who only ever comforts. Isaiah will not let us split Him. The God who shook the doorposts is the God in the manger. You do not get the comfort by shrinking the holiness; you get it because the Holy One Himself chose to come within reach.",
+      "connectionPoint": "Isaiah holds the whole arc in one vision: holiness (chapter 6), the child who is God-with-us (chapter 9), the righteous King who defends the lowly (chapter 11), and the final feast where the shroud over all peoples is torn away (chapter 25). What the prophet saw stretched across centuries, the New Testament gathers into one Person.",
+      "newTestamentEcho": "When an unclean spirit met Jesus in Mark 1:24, it cried out, \"I know who You are - the Holy One of God!\" Isaiah's name for the LORD had walked into a synagogue. And at the cross and the empty tomb, chapter 25 came true: \"Death has been swallowed up in victory\" (1 Corinthians 15:54). The Holy One who atoned for Isaiah's lips with a coal from the altar became the altar Himself - \"the Lamb of God, who takes away the sin of the world\" (John 1:29)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which half of \"the Holy One of Israel\" is harder for you to believe right now - that God is holy enough to undo you, or near enough to want you?",
+      "additionalQuestions": [
+        "Isaiah did not feel ready when the call came; he felt ruined. Where are you waiting to feel qualified before you respond to God, when He may simply be waiting to send the coal?",
+        "Read the four titles of Isaiah 9:6 slowly. Which one does your heart most need to hear God is to you this week - Wonderful Counselor, Mighty God, Everlasting Father, or Prince of Peace?",
+        "Isaiah 25 promises a day when God wipes away the tears from every face. What tears are you carrying that you need to bring under that promise?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy, holy, holy LORD - I have not let You be as holy as You are, and so I have not let You be as near as You long to be. Like Isaiah, I am a man of unclean lips, and I cannot climb to Your throne. So send the coal. Touch what is unclean in me from Your own altar. Thank You that the One the seraphim hide their faces before is the child born for us, the King who decides for the poor, the God who swallows death and wipes every tear. Holy One of Israel - be my Holy One too. Here am I. Amen.",
+      "scriptureEcho": "Isaiah 6:3, 8",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, sit for five quiet minutes with the seraphim's one word: Holy, holy, holy. Let it be heavy before it is comforting. Then say the four titles of Isaiah 9:6 out loud and remember that the One the angels could not look at chose to be looked at - for you.",
+      "leavingAtCross": [
+        "The small, manageable god I prefer because he never shakes the doorposts",
+        "The belief that I must clean myself up before God will have anything to do with me",
+        "The fear that God's holiness is only ever bad news for someone like me"
+      ],
+      "receivingFromCross": [
+        "A coal from the altar that I did not earn and could not reach - my iniquity removed, my sin atoned for",
+        "A Holy One who came close enough to be born, to be looked at, to be touched",
+        "The promise of the mountain where death is swallowed forever and every tear is wiped away"
+      ],
+      "content": "Today, sit for five quiet minutes with the seraphim's one word: Holy, holy, holy. Let it be heavy before it is comforting. Then say the four titles of Isaiah 9:6 out loud and remember that the One the angels could not look at chose to be looked at - for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Isaiah show us the throne and the smoke (chapter 6) before he shows us the child and the comfort (chapter 9)? What is lost if you skip straight to the comfort?",
+        "In Isaiah 6, what is the order of events - cleansing, calling, or volunteering first? What does that order teach about how God uses people?",
+        "How do the four titles of the child in Isaiah 9:6 reveal that the One being born is the same Holy One Isaiah saw on the throne?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about which you find easier to relate to: a God who is high and holy, or a God who is near and comforting - and what it would cost you to hold both at once.",
+        "Isaiah answered \"Here am I, send me\" only after he was cleansed, not before. Where is each of you waiting to feel ready instead of letting God ready you?",
+        "Isaiah 25:8 promises God will wipe away every tear. Name one grief you can begin to bring under that promise, and pray it over each other."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 11:1-2",
+          "text": "Then a shoot will spring up from the stump of Jesse, and a Branch from his roots will bear fruit. The Spirit of the LORD will rest on Him - the Spirit of wisdom and understanding, the Spirit of counsel and strength, the Spirit of knowledge and fear of the LORD."
+        },
+        {
+          "reference": "Isaiah 11:6",
+          "text": "The wolf will live with the lamb, and the leopard will lie down with the goat; the calf and young lion and fatling will be together, and a little child will lead them."
+        },
+        {
+          "reference": "Isaiah 25:8-9",
+          "text": "He will swallow up death forever. The Lord GOD will wipe away the tears from every face... And in that day it will be said, \"Surely this is our God; we have waited for Him, and He has saved us.\""
+        },
+        {
+          "reference": "John 12:41",
+          "text": "Isaiah said these things because he saw Jesus' glory and spoke about Him."
+        },
+        {
+          "reference": "Revelation 4:8",
+          "text": "Day and night they never stop saying: \"Holy, Holy, Holy, is the Lord God Almighty, who was and is and is to come!\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 6 and 9",
+          "note": "Read both chapters in one sitting. Watch how the prophet moves from the throne too high to approach (ch. 6) to the child given to us (ch. 9) - the same glory, seen from both ends."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Isaiah",
+      "title": "The Prophet Who Saw the Holy One",
+      "description": "An eighth-century BC prophet in Judah whose ministry began \"in the year that King Uzziah died\" with a vision of the LORD enthroned in the temple. Undone by God's holiness and then cleansed by a coal from the altar, Isaiah answered the call to speak for God through decades of national crisis. More than any other writer of Scripture, he names God \"the Holy One of Israel\" - and within a few chapters announces that this Holy One will be born a child, reign in righteousness, and abolish death itself.",
+      "keyQuote": "Woe is me, for I am ruined... for my eyes have seen the King, the LORD of Hosts.",
+      "lessonForUs": "Isaiah teaches us not to choose between God's holiness and God's nearness. He saw the throne that ruined him and the child who saved him, and understood at last they were the same Lord - the Holy One who came close.",
+      "heading": "The Prophet Who Saw the Holy One"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2268,
+  "scriptureReference_full": "Isaiah 6, 9, 11, 25",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qedosh Yisrael, qadosh H6918) reflects standard lexical sources. The observation that \"Holy One of Israel\" appears more often in Isaiah than the rest of the Old Testament combined is a widely noted feature of the book.",
+    "The identification of Isaiah's throne-room vision with the glory of Christ follows John 12:41."
+  ]
 }

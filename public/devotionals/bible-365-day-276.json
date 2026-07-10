@@ -6,33 +6,176 @@
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 276"
+      "type": "scripture",
+      "reference": "Matthew 5:17; 6:33",
+      "translation": "BSB",
+      "emphasis": [
+        "I have not come to abolish them, but to fulfill them",
+        "seek first the kingdom of God and His righteousness"
+      ],
+      "greekOriginal": "μὴ νομίσητε ὅτι ἦλθον καταλῦσαι τὸν νόμον ἢ τοὺς προφήτας· οὐκ ἦλθον καταλῦσαι ἀλλὰ πληρῶσαι.",
+      "passage": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them. ... But seek first the kingdom of God and His righteousness, and all these things will be added unto you."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "πληρόω",
+      "transliteration": "plēroō",
+      "pronunciation": "play-RAH-oh",
+      "meaning": "to fill full, to complete, to bring to its intended fullness",
+      "rootMeaning": "From plērēs, 'full.' Not to add to something half-finished, and not to cancel it, but to fill it up to the brim until it reaches what it was always reaching toward. A net is plēroō-ed when it is full of fish. A word is plēroō-ed when the thing it promised arrives.",
+      "usageNote": "Matthew uses this verb again and again for prophecy coming true: 'this happened to fulfill what was spoken' runs like a refrain from the birth narratives onward (Matthew 1:22; 2:15; 2:23; 4:14). When Jesus says in 5:17 that He came to fulfill the Law and the Prophets, He is claiming to be the place where every earlier promise finally fills out into its full shape.",
+      "wordByWord": [
+        {
+          "word": "οὐκ ἦλθον",
+          "transliteration": "ouk ēlthon",
+          "meaning": "I did not come — a statement about His whole purpose in coming"
+        },
+        {
+          "word": "καταλῦσαι",
+          "transliteration": "katalysai",
+          "meaning": "to loose down, to tear down, to demolish (used of dismantling a building)"
+        },
+        {
+          "word": "ἀλλὰ",
+          "transliteration": "alla",
+          "meaning": "but rather — a sharp contrast, not a softening"
+        },
+        {
+          "word": "πληρῶσαι",
+          "transliteration": "plērōsai",
+          "meaning": "to fill full, to complete, to bring to fullness"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δικαιοσύνη / dikaiosynē",
+          "reference": "'Righteousness' — the word that anchors the Sermon (Matthew 5:6, 5:10, 5:20, 6:33). It is both something to hunger for and something to be given; the Sermon refuses to let us separate the two."
+        }
+      ],
+      "strongsNumber": "G4137",
+      "definition": "to make full, to complete, to fulfill, to accomplish",
+      "usage": "Jesus sets katalysai (tear down) against plērōsai (fill full). The Law is not scaffolding to be knocked away now that the King has come; it is a vessel He came to fill to overflowing with His own life."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A King Is Named, and a Kingdom Is Announced",
+      "body": "Matthew opens not with a star or a stable but with a list of names — Abraham, David, fourteen generations and fourteen more — as if to say: this story has been a long time coming. Then an angel tells Joseph what to call the child: \"you are to give Him the name Jesus, because He will save His people from their sins\" (Matthew 1:21). Before the baby can speak, His name is a sentence about what He will do. The other name Matthew gives Him is Immanuel, \"God with us\" (1:23). A King is named twice over: He saves, and He is God-near.\n\nThe King grows up, and the first word He preaches is the same word John the Baptist had been shouting in the wilderness: \"Repent, for the kingdom of heaven is near\" (4:17). Near. Not built by Rome, not won by a sword, not somewhere over the horizon — near, the way a person standing beside you is near. Matthew tells us Jesus went through Galilee \"teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness\" (4:23). The kingdom arrives the way light arrives in a room: suddenly the sick are well and the crowds are following a carpenter up a hillside to hear Him talk.\n\nAnd then He sits down — the posture a rabbi took to teach with authority — and gives the kingdom its constitution. We call it the Sermon on the Mount. It is the longest stretch of Jesus' teaching Matthew records in one place, and it begins not with a command but with a blessing.",
+      "keyInsight": "Matthew front-loads the name before the teaching. The One who climbs the mountain to describe an impossible righteousness is the same One named, before birth, to save His people from their sins. Hold those together and the whole Sermon changes color.",
+      "content": "Matthew opens not with a star or a stable but with a list of names — Abraham, David, fourteen generations and fourteen more — as if to say: this story has been a long time coming. Then an angel tells Joseph what to call the child: \"you are to give Him the name Jesus, because He will save His people from their sins\" (Matthew 1:21). Before the baby can speak, His name is a sentence about what He will do. The other name Matthew gives Him is Immanuel, \"God with us\" (1:23). A King is named twice over: He saves, and He is God-near.\n\nThe King grows up, and the first word He preaches is the same word John the Baptist had been shouting in the wilderness: \"Repent, for the kingdom of heaven is near\" (4:17). Near. Not built by Rome, not won by a sword, not somewhere over the horizon — near, the way a person standing beside you is near. Matthew tells us Jesus went through Galilee \"teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness\" (4:23). The kingdom arrives the way light arrives in a room: suddenly the sick are well and the crowds are following a carpenter up a hillside to hear Him talk.\n\nAnd then He sits down — the posture a rabbi took to teach with authority — and gives the kingdom its constitution. We call it the Sermon on the Mount. It is the longest stretch of Jesus' teaching Matthew records in one place, and it begins not with a command but with a blessing."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Entrance Exam With No Questions",
+      "body": "A friend of mine spent a year studying for a single licensing exam — flash cards on the bathroom mirror, practice tests at 5 a.m., the whole house arranged around the day he would finally be measured. He passed. And the strange thing he told me afterward was how empty the passing felt, because the exam had only ever measured whether he was good enough to be let in.\n\nWhen people first hear the Sermon on the Mount, they often hear it as that kind of exam. Be perfect. Don't even be angry. Don't even look with lust. Love your enemies. It sounds like the hardest entrance test ever written, and most of us fail it by breakfast. If that is what the Sermon is, the only honest response is despair.\n\nBut look at how Jesus opens. He does not say, \"Blessed are the disciplined, the impressive, the morally elite.\" He says, \"Blessed are the poor in spirit, for theirs is the kingdom of heaven\" (Matthew 5:3). The first people He calls blessed are the ones who have come to the exam with nothing to write. The kingdom does not begin with a passing grade. It begins with empty hands held open.",
+      "connectionToTheme": "The Sermon is not the entrance exam for the kingdom. It is the King describing the kind of life that grows inside people He has already welcomed empty-handed.",
+      "content": "A friend of mine spent a year studying for a single licensing exam — flash cards on the bathroom mirror, practice tests at 5 a.m., the whole house arranged around the day he would finally be measured. He passed. And the strange thing he told me afterward was how empty the passing felt, because the exam had only ever measured whether he was good enough to be let in.\n\nWhen people first hear the Sermon on the Mount, they often hear it as that kind of exam. Be perfect. Don't even be angry. Don't even look with lust. Love your enemies. It sounds like the hardest entrance test ever written, and most of us fail it by breakfast. If that is what the Sermon is, the only honest response is despair.\n\nBut look at how Jesus opens. He does not say, \"Blessed are the disciplined, the impressive, the morally elite.\" He says, \"Blessed are the poor in spirit, for theirs is the kingdom of heaven\" (Matthew 5:3). The first people He calls blessed are the ones who have come to the exam with nothing to write. The kingdom does not begin with a passing grade. It begins with empty hands held open."
+    },
+    {
+      "type": "insight",
+      "heading": "Be Perfect — and Here Is Your Daily Bread",
+      "body": "Stand at the center of the Sermon and two lines pull against each other. \"Be perfect, therefore, as your heavenly Father is perfect\" (Matthew 5:48). And, a few breaths later, \"Give us this day our daily bread\" (6:11). One line sets a ceiling no human has ever touched. The other puts a beggar's request in our mouths: feed me, today, like a child who cannot stock the pantry.\n\nThat tension is the genius of the kingdom, not a contradiction in it. Jesus raises the standard to its full height — not adultery only but the lustful look, not murder only but the contemptuous word — until no one can imagine climbing it. And in the same sermon He teaches us to pray for bread we cannot grow and forgiveness we cannot earn, and He says the Father already \"knows that you need them\" (6:32). The righteousness the King requires turns out to be the righteousness He commands us to seek and receive: \"Seek first the kingdom of God and His righteousness, and all these things will be added unto you\" (6:33). Added. Not achieved. Handed over.\n\nThis is why the Sermon does not crush the poor in spirit — it is addressed to them. The ceiling of 5:48 and the open palm of 6:11 meet in one place: a King who demands perfect righteousness and then, on a different hill, supplies it. He came not to tear down the Law but to fill it full (5:17), and what He fills full of His own obedience He gives away as daily bread to people who arrive with nothing.",
+      "historicalContext": "Matthew writes for a community steeped in the Hebrew Scriptures, which is why he keeps showing Jesus 'fulfilling' what the prophets spoke. To a first-century ear, a new teacher who set Himself above Moses would be a scandal — yet Jesus insists He has not come to abolish Moses but to bring the Law to the fullness it was always pointing toward. He teaches 'as one who had authority, and not as their scribes' (Matthew 7:29): the scribes cited earlier authorities; Jesus speaks as the authority.",
+      "fascinatingFact": "Matthew arranges Jesus' teaching into five great discourses, and many scholars have noticed the echo of the five books of Moses. The Sermon on the Mount is the first of the five. Where Moses went up the mountain to receive the Law, Jesus goes up the mountain to give it — quietly claiming a place the original audience reserved for God alone.",
+      "content": "Stand at the center of the Sermon and two lines pull against each other. \"Be perfect, therefore, as your heavenly Father is perfect\" (Matthew 5:48). And, a few breaths later, \"Give us this day our daily bread\" (6:11). One line sets a ceiling no human has ever touched. The other puts a beggar's request in our mouths: feed me, today, like a child who cannot stock the pantry.\n\nThat tension is the genius of the kingdom, not a contradiction in it. Jesus raises the standard to its full height — not adultery only but the lustful look, not murder only but the contemptuous word — until no one can imagine climbing it. And in the same sermon He teaches us to pray for bread we cannot grow and forgiveness we cannot earn, and He says the Father already \"knows that you need them\" (6:32). The righteousness the King requires turns out to be the righteousness He commands us to seek and receive: \"Seek first the kingdom of God and His righteousness, and all these things will be added unto you\" (6:33). Added. Not achieved. Handed over.\n\nThis is why the Sermon does not crush the poor in spirit — it is addressed to them. The ceiling of 5:48 and the open palm of 6:11 meet in one place: a King who demands perfect righteousness and then, on a different hill, supplies it. He came not to tear down the Law but to fill it full (5:17), and what He fills full of His own obedience He gives away as daily bread to people who arrive with nothing."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus opens the kingdom by blessing the poor in spirit, raises the Law to a height no one can climb, and then teaches those same people to ask the Father for daily bread, forgiveness, and rescue — gifts, not wages.",
+      "modernApplication": "We are fluent in the entrance-exam version of faith: be good enough, try harder, clean yourself up before you approach. The Sermon refuses that script. It tells the anxious and the failing to stop striving after what the Gentiles strive after, and instead to seek first the kingdom — to come empty-handed to a Father who already knows what they need before they ask.",
+      "connectionPoint": "Matthew 1-7 is the dawn of a single arc that runs through the whole Gospel: a King is named to save His people from their sins, announces that the kingdom is near, and describes the righteousness of that kingdom — a righteousness so total that only He can supply it. The Sermon sets the standard; the cross pays it; the resurrection vindicates the King who did both.",
+      "newTestamentEcho": "What the Sermon requires, Christ became. \"God made Him who knew no sin to be sin for us, so that in Him we might become the righteousness of God\" (2 Corinthians 5:21). The 'be perfect' of Matthew 5:48 is not a demand left hanging over us; it is met in the One who fulfilled all righteousness and gives it away."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Have you been hearing the Sermon on the Mount as an entrance exam you keep failing — or as the King describing a life He gives to people He has already welcomed empty-handed?",
+      "additionalQuestions": [
+        "Where are you striving after what 'the Gentiles strive after' (Matthew 6:32) — security, image, control — instead of seeking first the kingdom?",
+        "When you pray 'give us this day our daily bread,' what would it mean to actually live as a child who cannot stock the pantry, and trust the Father who already knows your needs?",
+        "Which of the Beatitudes describes you most honestly today: poor in spirit, mourning, hungry for righteousness? Jesus calls that person blessed. Can you receive that?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "King Jesus, named before You were born to save Your people from their sins — save me. I have heard Your sermon as a ladder and worn myself out climbing it. Today I come poor in spirit, with empty hands. I cannot make the righteousness You require, so I ask You for it as daily bread. Be perfect on my behalf where I never could. Fill full in me the Law I keep tearing down. And teach me to seek first Your kingdom, trusting that my Father already knows what I need. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Pray the Lord's Prayer (Matthew 6:9-13) once, slowly, out loud — and stop on the line 'Give us this day our daily bread.' Name the one thing you have been trying to earn or manufacture this week, and ask the Father to give it instead. Receive today's portion; leave tomorrow to Him.",
+      "leavingAtCross": [
+        "The exhausting belief that I must pass the entrance exam before God will have me",
+        "Striving after what 'the Gentiles strive after' — image, security, control — as if my Father did not already know what I need",
+        "The anxiety about tomorrow that Jesus tells me to set down today"
+      ],
+      "receivingFromCross": [
+        "The blessing Jesus pronounces over the poor in spirit — the kingdom belongs to the empty-handed",
+        "A righteousness that is added, not achieved, supplied by the King who fulfilled the Law",
+        "Daily bread: enough grace for today, from a Father who knows my needs before I ask"
+      ],
+      "content": "Pray the Lord's Prayer (Matthew 6:9-13) once, slowly, out loud — and stop on the line 'Give us this day our daily bread.' Name the one thing you have been trying to earn or manufacture this week, and ask the Father to give it instead. Receive today's portion; leave tomorrow to Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Matthew names Jesus twice before the Sermon — 'He will save His people from their sins' and 'God with us.' How do those names change the way you hear the commands He gives on the mountain?",
+        "What is the difference between hearing 'Be perfect' as an entrance exam and hearing it as a description of righteousness the King supplies?",
+        "Jesus says He came not to abolish the Law but to fulfill — to fill full — the Law and the Prophets. What does it mean that He fulfills the standard rather than lowers it?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one part of the Sermon on the Mount you have been treating as a measuring stick for your worth. How is that working?",
+        "Talk about where you are 'striving after what the Gentiles strive after' and what it would look like this week to seek first the kingdom instead.",
+        "Pray the Lord's Prayer together, then ask each other: what is the daily bread you most need to receive rather than earn right now?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 1:21",
+          "text": "She will give birth to a Son, and you are to give Him the name Jesus, because He will save His people from their sins.”"
+        },
+        {
+          "reference": "Matthew 4:17",
+          "text": "From that time on Jesus began to preach, “Repent, for the kingdom of heaven is near.”"
+        },
+        {
+          "reference": "Matthew 7:24-25",
+          "text": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock."
+        },
+        {
+          "reference": "2 Corinthians 5:21",
+          "text": "God made Him who knew no sin to be sin for us, so that in Him we might become the righteousness of God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7",
+          "note": "Read the Sermon on the Mount in one sitting, watching how every command bends back toward the Father who blesses the poor in spirit and feeds His children daily bread."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus of Nazareth",
+      "title": "The King Who Fulfills the Law",
+      "era": "1st century AD, Galilee and Judea",
+      "description": "The promised Son of David and Son of Abraham, named before His birth to 'save His people from their sins' (Matthew 1:21) and called Immanuel, 'God with us' (1:23). He opens His public ministry announcing that the kingdom of heaven is near and ascends a mountain to teach its righteousness with an authority the crowds had never heard. He claims not to abolish the Law of Moses but to fill it full — a claim only its Author could make.",
+      "keyQuote": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them.",
+      "lessonForUs": "The same King who sets the standard impossibly high is the One who came to meet it for us. We do not climb the Sermon to reach Him; we receive His fulfilled righteousness as daily bread and let Him build our house on the rock.",
+      "heading": "The King Who Fulfills the Law"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2259,
+  "scriptureReference_full": "Matthew 1-7 (Matthew 5:17; 6:33 anchor)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (plēroō, G4137) reflects standard lexical sources (BDAG; Strong's Greek Concordance). The five-discourse structure of Matthew and its echo of the Pentateuch is a widely held observation in Matthean scholarship."
+  ]
 }

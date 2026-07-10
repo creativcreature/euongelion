@@ -1,38 +1,176 @@
 {
   "day": 365,
   "title": "Come, Lord Jesus",
-  "teaser": "Day 365 of Bible 365 — Revelation 22:20-21",
+  "teaser": "The Bible does not end with a doctrine or a command. It ends with a prayer, addressed to a Person, longing for Him to come.",
   "framework": "Revelation 22:20-21 — Final benediction — the year ends pointing forward",
   "scriptureReference": "Revelation 22:20-21",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 365"
+      "type": "scripture",
+      "reference": "Revelation 22:20-21",
+      "translation": "BSB",
+      "emphasis": [
+        "Yes, I am coming soon",
+        "Come, Lord Jesus",
+        "The grace of the Lord Jesus be with all the saints"
+      ],
+      "greekOriginal": "Ἔρχου, Κύριε Ἰησοῦ.",
+      "passage": "He who testifies to these things says, \"Yes, I am coming soon.\" Amen. Come, Lord Jesus! The grace of the Lord Jesus be with all the saints. Amen."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Revelation 22:20-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Revelation 22:20-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "Ἔρχου, Κύριε Ἰησοῦ",
+      "transliteration": "erchou, Kyrie Iēsou",
+      "pronunciation": "ER-khoo, KOO-ree-eh ee-ay-SOO",
+      "meaning": "Come, Lord Jesus",
+      "rootMeaning": "Erchou is a command, but the gentlest kind - a present-tense plea, \"keep coming, come now.\" It is not the voice of someone giving orders to a servant. It is the voice of someone waiting at a window, asking the one they love to come home.",
+      "usageNote": "Paul ends 1 Corinthians with the Aramaic form of the same cry, Marana tha - \"Our Lord, come!\" (1 Corinthians 16:22). It was among the oldest prayers the church prayed, old enough that Greek-speaking believers kept saying it in Aramaic, the language Jesus Himself spoke. By the time John writes it here, it is already the heartbeat of the waiting church.",
+      "wordByWord": [
+        {
+          "word": "Ἔρχου",
+          "transliteration": "erchou",
+          "meaning": "come - a present imperative, a plea more than a command"
+        },
+        {
+          "word": "Κύριε",
+          "transliteration": "Kyrie",
+          "meaning": "Lord - the title the Greek Old Testament used to render the divine name YHWH"
+        },
+        {
+          "word": "Ἰησοῦ",
+          "transliteration": "Iēsou",
+          "meaning": "Jesus - \"the LORD saves,\" the Nazarene now addressed in prayer"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "Μαρανα θα / Marana tha",
+          "reference": "The Aramaic equivalent in 1 Corinthians 16:22 - the church's prayer was old enough to survive untranslated, like a word a child keeps from a parent's first language."
+        }
+      ],
+      "strongsNumber": "G2064",
+      "definition": "to come, to arrive; here a present imperative addressed to the risen Christ",
+      "usage": "Notice who the prayer is aimed at. Throughout Scripture, prayer is directed to God. Here, in the Bible's last petition, the church prays to Jesus and calls Him Kyrie - the name reserved for God. The closing line of the canon is, quietly, a confession of who Jesus is."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Final benediction — the year ends pointing forward. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ returns; the whole Bible points here (Rev 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Last Word Is an Answered Longing",
+      "body": "You have read for a year. Three hundred sixty-five days of beginnings and exiles, kings and prophets, a manger and a cross and an empty tomb. And here, on the last page, the whole library narrows to a single exchange of two short sentences.\n\nFirst, a promise: \"Yes, I am coming soon.\" The speaker is the one who has testified to everything in the book - the risen Jesus Himself, who two verses earlier called Himself the Alpha and the Omega, the First and the Last (Revelation 22:13). He does not end the Bible by summarizing its lessons. He ends it by giving His word that He will return.\n\nThen, an answer. The church does not respond with a theology, a program, or a resolution. She responds with three words: \"Come, Lord Jesus.\" The promise comes from heaven; the prayer rises from earth, and they meet on the final line. The Bible closes not on a period but on a longing - a door left open, footsteps expected.",
+      "keyInsight": "The Bible's last sentence is not a command to us; it is a prayer from us, addressed to a Person we are still waiting for. Scripture ends with the church on tiptoe.",
+      "content": "You have read for a year. Three hundred sixty-five days of beginnings and exiles, kings and prophets, a manger and a cross and an empty tomb. And here, on the last page, the whole library narrows to a single exchange of two short sentences.\n\nFirst, a promise: \"Yes, I am coming soon.\" The speaker is the one who has testified to everything in the book - the risen Jesus Himself, who two verses earlier called Himself the Alpha and the Omega, the First and the Last (Revelation 22:13). He does not end the Bible by summarizing its lessons. He ends it by giving His word that He will return.\n\nThen, an answer. The church does not respond with a theology, a program, or a resolution. She responds with three words: \"Come, Lord Jesus.\" The promise comes from heaven; the prayer rises from earth, and they meet on the final line. The Bible closes not on a period but on a longing - a door left open, footsteps expected."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Porch Light Left Burning",
+      "body": "There is a house in the town where my mother grew up that always had a light on over the back door. For years I assumed it was carelessness. Then someone told me the reason. A son had gone off to a war and not written for a long time, and his mother could not bring herself to be certain he was gone. So she left the light burning, every night, so that if he ever came up the lane in the dark he would know the house was still his, still waiting, still home.\n\nThat is what the last line of the Bible sounds like. Not a tidy ending, where the family agrees the absent one is never coming and turns the light off. An open ending. A light left burning. \"Come, Lord Jesus\" is the prayer of a household that has decided, against the long dark and the unanswered years, to keep the door unlocked and the lamp lit.\n\nFaith, in the end, is not first a set of conclusions. It is a posture. It is the way a person waits.",
+      "connectionToTheme": "Closing the Bible is meant to leave you not with a finished argument but with a lit lamp - the waiting posture of a people who still expect the One who promised to come.",
+      "content": "There is a house in the town where my mother grew up that always had a light on over the back door. For years I assumed it was carelessness. Then someone told me the reason. A son had gone off to a war and not written for a long time, and his mother could not bring herself to be certain he was gone. So she left the light burning, every night, so that if he ever came up the lane in the dark he would know the house was still his, still waiting, still home.\n\nThat is what the last line of the Bible sounds like. Not a tidy ending, where the family agrees the absent one is never coming and turns the light off. An open ending. A light left burning. \"Come, Lord Jesus\" is the prayer of a household that has decided, against the long dark and the unanswered years, to keep the door unlocked and the lamp lit.\n\nFaith, in the end, is not first a set of conclusions. It is a posture. It is the way a person waits."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sword Down, the Gate Open",
+      "body": "Hold the first page of the Bible against this last one. On the third page of Scripture, a man and a woman are driven out of a garden, and God stations cherubim and a whirling sword of flame to guard the way to the tree of life (Genesis 3:24). The story begins with the tree of life closed off, the way home barred, an exile under a drawn blade.\n\nNow read where the year has carried you. In Revelation 22, the angel shows John the tree of life again - no longer guarded, growing on both sides of a river that flows from the throne, bearing fruit every month, its leaves for the healing of the nations (Revelation 22:1-2). The sword is gone. The gate is open. The tree the flaming blade once kept us from is now standing in the middle of the city we are invited into.\n\nThe whole Bible is the distance between those two trees. It is the story of how the sword came down and the gate came open - and it cost the One who promises \"I am coming soon\" His own blood to do it. That is why the prayer can be \"Come.\" The way back was not forced; it was opened, by the Lamb who was slain.",
+      "historicalContext": "Revelation was written to seven real churches in Asia Minor near the end of the first century, congregations under pressure - some facing exclusion, some facing worse for refusing to call Caesar 'Lord.' To people who had everything to fear from waiting, John hands not an escape but a name to call into the dark: \"Come, Lord Jesus.\" The prayer was forged by suffering people, not comfortable ones.",
+      "fascinatingFact": "The Bible opens \"In the beginning, God created\" and closes \"The grace of the Lord Jesus be with all the saints.\" It begins with creation and ends with grace. Everything between the first verse and the last is the account of how a holy God carried sinful people from one to the other - from being made to being saved.",
+      "content": "Hold the first page of the Bible against this last one. On the third page of Scripture, a man and a woman are driven out of a garden, and God stations cherubim and a whirling sword of flame to guard the way to the tree of life (Genesis 3:24). The story begins with the tree of life closed off, the way home barred, an exile under a drawn blade.\n\nNow read where the year has carried you. In Revelation 22, the angel shows John the tree of life again - no longer guarded, growing on both sides of a river that flows from the throne, bearing fruit every month, its leaves for the healing of the nations (Revelation 22:1-2). The sword is gone. The gate is open. The tree the flaming blade once kept us from is now standing in the middle of the city we are invited into.\n\nThe whole Bible is the distance between those two trees. It is the story of how the sword came down and the gate came open - and it cost the One who promises \"I am coming soon\" His own blood to do it. That is why the prayer can be \"Come.\" The way back was not forced; it was opened, by the Lamb who was slain."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus' last recorded promise in Scripture is \"Yes, I am coming soon,\" and the church's last recorded prayer is \"Come, Lord Jesus\" - a promise and a longing, sealed with His grace upon all the saints.",
+      "modernApplication": "We are good at endings that close the book and move on. The Bible refuses that ending. It leaves us living in the middle of an unfinished sentence - already redeemed, not yet home, asked to spend our days as people who genuinely expect Someone. To pray \"Come, Lord Jesus\" is to let that expectation reshape how you wait, work, grieve, and hope this ordinary week.",
+      "connectionPoint": "The cry runs back through the whole canon you have read this year. Israel waited for a coming King through every exile and every prophet. The first believers prayed Marana tha over bread and wine (1 Corinthians 16:22). John, an old man on a prison island, ends the Bible with the same three words. The longing is one long thread, and you are now holding the end of it.",
+      "newTestamentEcho": "Jesus had already promised it in the upper room: \"If I go and prepare a place for you, I will come back and welcome you into My presence, so that you also may be where I am\" (John 14:3). Revelation's \"I am coming soon\" is that promise, kept in view until the very last line of Scripture - and \"every eye will see Him\" when it is fulfilled (Revelation 1:7)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the Bible ends with a longing and not a conclusion, what would change in your week if you actually lived as someone expecting Jesus to come?",
+      "additionalQuestions": [
+        "After a year of reading, what is the one passage you would most want to be holding if He came tomorrow - and why that one?",
+        "Where in your life have you quietly turned off the porch light - decided He is not coming, at least not to this - and what would it look like to relight it?",
+        "Can you pray \"Come, Lord Jesus\" honestly today, or does part of you hesitate? Bring the hesitation to Him too; He is not afraid of it."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "expectant-hope",
+      "prayerText": "Lord Jesus, I have read for a year, and it ends here, with You. Thank You that the way to the tree of life is no longer guarded by a sword but opened by Your blood. You said You are coming soon, and I believe You. So I pray the oldest prayer Your people know: Come, Lord Jesus. Until You do, keep the lamp of my heart burning, and let Your grace - the last word of Your whole book - be enough for me today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, close the year by praying the Bible's last prayer out loud, slowly, three times: \"Come, Lord Jesus.\" Then pick one place in your life where you have stopped expecting Him - a relationship, a wound, a hope you shelved - and bring it to Him as something you are still waiting on Him to come into.",
+      "leavingAtCross": [
+        "The habit of reading God's word as information to finish rather than a Person to wait for",
+        "The quiet despair that decides He is not coming - at least not to this part of my life",
+        "The need to tie my story up neatly when Scripture itself leaves the ending open and waiting"
+      ],
+      "receivingFromCross": [
+        "His own promise as the last word over my year: \"Yes, I am coming soon\"",
+        "A way home that is no longer barred by a flaming sword but opened by the Lamb",
+        "His grace upon me - the final line of the whole Bible - to carry me until He comes"
+      ],
+      "content": "Today, close the year by praying the Bible's last prayer out loud, slowly, three times: \"Come, Lord Jesus.\" Then pick one place in your life where you have stopped expecting Him - a relationship, a wound, a hope you shelved - and bring it to Him as something you are still waiting on Him to come into."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Who is the speaker of \"Yes, I am coming soon,\" and who answers \"Come, Lord Jesus\" - and why does it matter that the church prays this to Jesus rather than only about Him?",
+        "How does the tree of life in Revelation 22:1-2 answer the flaming sword of Genesis 3:24, and what does the whole Bible turn out to be the story of?",
+        "Why might Scripture end with a longing and a benediction of grace rather than a final command or a tidy conclusion?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one thing this year of reading changed in how you see God, yourself, or the long story Scripture tells.",
+        "Name one area where you have stopped expecting Jesus to come, and ask each other to keep praying \"Come, Lord Jesus\" over it with you.",
+        "Decide together what comes next - another year, a slower second pass, or simply keeping the lamp lit - so the reading does not end where the calendar does."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:24",
+          "text": "So He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life."
+        },
+        {
+          "reference": "Revelation 22:1-2",
+          "text": "Then the angel showed me a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb down the middle of the main street of the city. On either side of the river stood a tree of life, bearing twelve kinds of fruit and yielding a fresh crop for each month. And the leaves of the tree are for the healing of the nations."
+        },
+        {
+          "reference": "1 Corinthians 16:22",
+          "text": "If anyone does not love the Lord, let him be under a curse. Come, O Lord!"
+        },
+        {
+          "reference": "John 14:3",
+          "text": "And if I go and prepare a place for you, I will come back and welcome you into My presence, so that you also may be where I am."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Revelation 21-22",
+          "note": "Read the closing two chapters as the answer to Genesis 1-3: a new heaven and new earth, the city with open gates, the tree of life unguarded, and the last prayer of the Bible. Then turn back to Genesis 1:1 and read the first sentence again, holding both ends of the story at once."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John of Patmos",
+      "title": "The Last Writer of Scripture",
+      "description": "By tradition the apostle John, an old man exiled to the island of Patmos for the word of God and the testimony of Jesus (Revelation 1:9). He had walked with Jesus in Galilee, leaned against Him at the last supper, and stood near the cross. Decades later, alone on a prison island, he is given a vision of the end of all things - and given the task of writing the closing words of the entire Bible.",
+      "keyQuote": "He who testifies to these things says, \"Yes, I am coming soon.\" Amen. Come, Lord Jesus!",
+      "lessonForUs": "The man who knew Jesus longest did not end his life with answers but with longing. After everything he had seen, his final written words were a prayer for Jesus to come. If the disciple closest to Jesus still waited with that ache, our own waiting is not a failure of faith - it is the shape of it.",
+      "heading": "The Last Writer of Scripture"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2175,
+  "scriptureReference_full": "Revelation 22:20-21",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (erchou G2064; Kyrie; the Aramaic Marana tha of 1 Corinthians 16:22) reflects standard lexical sources."
+  ]
 }

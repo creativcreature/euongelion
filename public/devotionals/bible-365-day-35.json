@@ -1,38 +1,185 @@
 {
   "day": 35,
   "title": "Rest in providence",
-  "teaser": "Day 35 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: trust the long arc",
-  "scriptureReference": "Sabbath",
+  "teaser": "Day 35 of Bible 365 — Sabbath. Joseph looks at the brothers who sold him and says it three times: God sent me. Today you stop trying to read your story while it is still being written, and rest.",
+  "framework": "Genesis 45:5-8 — Sabbath: trust the long arc",
+  "scriptureReference": "Genesis 45:5-8",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 35"
+      "type": "scripture",
+      "reference": "Genesis 45:5-8",
+      "translation": "BSB",
+      "emphasis": [
+        "it was to save lives that God sent me before you",
+        "to preserve you as a remnant on the earth",
+        "it was not you who sent me here, but God"
+      ],
+      "hebrewOriginal": "כִּי לְמִחְיָה שְׁלָחַנִי אֱלֹהִים לִפְנֵיכֶם",
+      "passage": "And now, do not be distressed or angry with yourselves that you sold me into this place, because it was to save lives that God sent me before you. For the famine has covered the land these two years, and there will be five more years without plowing or harvesting. God sent me before you to preserve you as a remnant on the earth and to save your lives by a great deliverance. Therefore it was not you who sent me here, but God, who has made me a father to Pharaoh—lord of all his household and ruler over all the land of Egypt."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שְׁלָחַנִי",
+      "transliteration": "shelachani",
+      "pronunciation": "sheh-lah-KHAH-nee",
+      "meaning": "He sent me",
+      "rootMeaning": "From shalach, to send, to send off, to send ahead. The same plain verb a king uses for a messenger or an army uses for a scout - someone dispatched on purpose, toward a destination the sender already has in mind.",
+      "usageNote": "Joseph says it three times in four verses - God sent me before you, God sent me before you, it was God who sent me here. He does not say God allowed it, or God rescued me after the fact. He uses the verb of deliberate dispatch. The pit, the caravan, the slave block, the prison - read forward they were betrayal; read backward Joseph calls them a sending.",
+      "wordByWord": [
+        {
+          "word": "כִּי לְמִחְיָה",
+          "transliteration": "ki lemichyah",
+          "meaning": "because for preservation-of-life - the word michyah means a keeping-alive, a means of survival"
+        },
+        {
+          "word": "שְׁלָחַנִי",
+          "transliteration": "shelachani",
+          "meaning": "He sent me - the verb shalach with 'me' attached as its object"
+        },
+        {
+          "word": "אֱלֹהִים",
+          "transliteration": "Elohim",
+          "meaning": "God - placed last in the Hebrew, the subject landing like the answer to a riddle"
+        },
+        {
+          "word": "לִפְנֵיכֶם",
+          "transliteration": "lifneichem",
+          "meaning": "before you, ahead of you - sent on ahead, the way a host goes first to prepare a room"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלַח",
+          "reference": "The same verb shalach is what Pharaoh refuses to do with Israel one book later - 'Let My people go' is, in Hebrew, 'send My people' (Exodus 5:1). Joseph was sent down into Egypt so that, generations later, a people could be sent up out of it."
+        }
+      ],
+      "strongsNumber": "H7971",
+      "definition": "to send, send away, send forth, dispatch on a mission",
+      "usage": "The grammar carries the whole sermon. Joseph could have said 'you sent me' - and it would have been true; his brothers did sell him. Instead he changes the subject of the sentence. The brothers did the selling; God did the sending. Both are real. Joseph simply tells you which verb the years were spelling."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: trust the long arc. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ holds all things (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Days of Pit, and Now the Reading",
+      "body": "For six days this week we have lived inside Joseph's worst years. We watched his brothers strip off his coat and drop him into a dry cistern and sit down to eat lunch while he screamed. We watched him carried into Egypt and sold like livestock. We watched him do everything right in Potiphar's house and get thrown into prison for it anyway. We watched him interpret a cupbearer's dream and then be forgotten in that cell for two more years. If you had stopped the story on any of those days and asked Joseph what God was doing, the honest answer would have been: I cannot see it from here.\n\nNow the famine has come, and his brothers are standing in front of him - not knowing him, bowing for grain, exactly as a teenage dream once told them they would. Joseph could take the whole thing in his hands like a weapon. He has the power; he is lord of Egypt. Instead he sends his servants out of the room, and he weeps so loudly the whole house hears it, and the first words he says are not an accusation. They are an interpretation. \"It was to save lives that God sent me before you.\"\n\nThat is the gift of a Sabbath. Six days you live the story forward, in the dark, not knowing. One day you stop and read it backward, in the light, and let someone who has been through worse tell you what it was for.",
+      "keyInsight": "Joseph never received an explanation in the pit. He received it at the end, looking back. Providence is almost always read in reverse - which is exactly why you cannot read it while you are still falling.",
+      "content": "For six days this week we have lived inside Joseph's worst years. We watched his brothers strip off his coat and drop him into a dry cistern and sit down to eat lunch while he screamed. We watched him carried into Egypt and sold like livestock. We watched him do everything right in Potiphar's house and get thrown into prison for it anyway. We watched him interpret a cupbearer's dream and then be forgotten in that cell for two more years. If you had stopped the story on any of those days and asked Joseph what God was doing, the honest answer would have been: I cannot see it from here.\n\nNow the famine has come, and his brothers are standing in front of him - not knowing him, bowing for grain, exactly as a teenage dream once told them they would. Joseph could take the whole thing in his hands like a weapon. He has the power; he is lord of Egypt. Instead he sends his servants out of the room, and he weeps so loudly the whole house hears it, and the first words he says are not an accusation. They are an interpretation. \"It was to save lives that God sent me before you.\"\n\nThat is the gift of a Sabbath. Six days you live the story forward, in the dark, not knowing. One day you stop and read it backward, in the light, and let someone who has been through worse tell you what it was for."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter She Could Not Have Written Then",
+      "body": "A woman I know lost her job in the same month her marriage ended. She told me afterward that the worst part was not the loss itself but the silence around it - the sense that she was being moved by forces she could not see toward a destination no one would name. She kept asking the question we all ask in the cistern: what is this for? And heaven did not answer. Not in words. Not on her timetable.\n\nFour years later she runs a small shelter for women coming out of the exact situation she was in. She told me she could not have planned it, could not have prayed her way to it, would never have chosen the road that led there. \"If you had handed me a map in that first month,\" she said, \"I would have torn it up. It went straight through everything I was afraid of.\" And then she said the thing I keep thinking about: \"I couldn't see it as a sending. I could only see it as a falling. The sending part you only see from the other end.\"\n\nThat is Joseph in the room with his brothers. He is at the other end. He is not pretending the pit was good - he will weep over it the rest of his life. He is telling them what the falling turned out to be carrying.",
+      "connectionToTheme": "The same event is a betrayal read forward and a sending read backward. Sabbath is the day we trust that the story has an 'other end,' even when we are not standing on it yet.",
+      "content": "A woman I know lost her job in the same month her marriage ended. She told me afterward that the worst part was not the loss itself but the silence around it - the sense that she was being moved by forces she could not see toward a destination no one would name. She kept asking the question we all ask in the cistern: what is this for? And heaven did not answer. Not in words. Not on her timetable.\n\nFour years later she runs a small shelter for women coming out of the exact situation she was in. She told me she could not have planned it, could not have prayed her way to it, would never have chosen the road that led there. \"If you had handed me a map in that first month,\" she said, \"I would have torn it up. It went straight through everything I was afraid of.\" And then she said the thing I keep thinking about: \"I couldn't see it as a sending. I could only see it as a falling. The sending part you only see from the other end.\"\n\nThat is Joseph in the room with his brothers. He is at the other end. He is not pretending the pit was good - he will weep over it the rest of his life. He is telling them what the falling turned out to be carrying."
+    },
+    {
+      "type": "insight",
+      "heading": "Two True Sentences About the Same Pit",
+      "body": "Hold Joseph's two famous lines side by side. Here, in chapter 45: \"It was not you who sent me here, but God.\" Five chapters later, after their father dies and the brothers panic that Joseph will finally take revenge: \"What you intended against me for evil, God intended for good\" (Genesis 50:20).\n\nNotice what Joseph does not do. He does not erase his brothers' guilt. He does not say it was all part of the plan, so no harm done. The same Hebrew sentence holds two subjects and two verbs that never collapse into one: you intended, God intended. The selling was a real sin with real malice behind it. The sending was a real providence with real mercy behind it. They are not the same act seen twice. They are two agents acting in one event - and Joseph refuses to flatten either one to make the other easier to hold.\n\nThis is the deep thing a Sabbath teaches. Rest does not require you to call the evil good. Joseph never does. Rest requires you to believe that over the evil, working through it without excusing it, there was a hand spelling a word you could not read yet - and that the word was life. 'To preserve you as a remnant on the earth.' The brothers wrote one sentence with the pit. God was writing a different sentence with the same ink.",
+      "historicalContext": "Centuries later, Israel's hymnbook turned Joseph's story into a song about exactly this. Psalm 105 retells it: 'He sent a man before them - Joseph, sold as a slave. They bruised his feet with shackles and placed his neck in irons, until his prediction came true and the word of the LORD proved him right' (Psalm 105:17-19). The psalm keeps both truths Joseph kept: the iron on his neck was real, and God had sent him.",
+      "fascinatingFact": "Joseph stands at the seam between two books. Genesis ends with the family safe in Egypt because God sent one man ahead to keep them alive. Exodus opens with that same family enslaved in the same Egypt, crying for deliverance. The providence that preserved them in Genesis becomes the bondage they are rescued from in Exodus - and the verb shalach, 'send,' carries straight across: Joseph was sent down so Israel could later be sent up. The long arc is longer than even Joseph could see.",
+      "content": "Hold Joseph's two famous lines side by side. Here, in chapter 45: \"It was not you who sent me here, but God.\" Five chapters later, after their father dies and the brothers panic that Joseph will finally take revenge: \"What you intended against me for evil, God intended for good\" (Genesis 50:20).\n\nNotice what Joseph does not do. He does not erase his brothers' guilt. He does not say it was all part of the plan, so no harm done. The same Hebrew sentence holds two subjects and two verbs that never collapse into one: you intended, God intended. The selling was a real sin with real malice behind it. The sending was a real providence with real mercy behind it. They are not the same act seen twice. They are two agents acting in one event - and Joseph refuses to flatten either one to make the other easier to hold.\n\nThis is the deep thing a Sabbath teaches. Rest does not require you to call the evil good. Joseph never does. Rest requires you to believe that over the evil, working through it without excusing it, there was a hand spelling a word you could not read yet - and that the word was life. 'To preserve you as a remnant on the earth.' The brothers wrote one sentence with the pit. God was writing a different sentence with the same ink."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Joseph, sold by his brothers and lifted to the right hand of Pharaoh, looks back over years of betrayal and prison and names them a sending: 'God sent me before you to preserve you as a remnant on the earth and to save your lives by a great deliverance.'",
+      "modernApplication": "On a Sabbath you are not asked to finish reading your own story. You are asked to set the book down mid-chapter and trust the Author. Most of us exhaust ourselves trying to interpret our hard years while we are still living them - demanding the meaning before the end. Today the demand can stop. You do not have to see the sending. You only have to trust the One who sends.",
+      "connectionPoint": "Joseph's pattern - betrayed by his own, sold for silver, descending into the depths, raised up to save the very ones who handed him over - runs like a thread the whole length of Scripture and is finally woven whole in the Gospels. The brothers' two sentences become one cross. Peter preaches it in Jerusalem: Jesus was 'delivered up by God's set plan and foreknowledge,' and 'you, by the hands of the lawless, put Him to death' (Acts 2:23). You intended evil; God intended good - now spoken not over a pit but over a tomb.",
+      "newTestamentEcho": "What Joseph saw in one family, Paul promises over every life: 'We know that God works all things together for the good of those who love Him, who are called according to His purpose' (Romans 8:28). And the Sabbath this providence leads to is named in Hebrews: 'There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His' (Hebrews 4:9-10). Joseph rested at the far end of his story. Jesus invites us to rest before we reach ours: 'Come to Me, all you who are weary and burdened, and I will give you rest' (Matthew 11:28)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What chapter of your story are you trying to read while you are still falling through it - demanding to know the sending before you can see the other end?",
+      "additionalQuestions": [
+        "Joseph held two true sentences at once: 'you sold me' and 'God sent me,' without collapsing either. Where in your life are you tempted to flatten a hard truth - either by denying real harm, or by denying God's hand over it?",
+        "Joseph wept before he interpreted. What grief are you still carrying that has not yet been allowed its tears - and might rest, not resolution, be the thing it needs today?",
+        "If you could not see your hardest season as a 'sending' yet, what would it look like to trust the Sender anyway, the way you trust a road you cannot see the end of?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have been trying to read my own story while it is still being written, and the strain of it has worn me out. There are chapters I cannot interpret. There is harm I will not pretend was good. But today I set the book down. I believe that over the things meant against me, You are spelling a word I cannot see yet, and that the word is life. I do not need the whole meaning today. I only need to trust the One who sends. Let me rest the way Joseph rested at the far end - and the way Your Son invites me to rest before I get there. I come to You weary. Give me rest. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath - there is no chapter to finish and no meaning to extract. Sit for ten unhurried minutes and let one line hold you: 'It was not you who sent me here, but God,' or simply 'God sent me before you.' Bring God the one hard season you keep trying to interpret, and instead of demanding what it was for, hand Him the book and let it stay open where it is. The Author has not stopped writing.",
+      "leavingAtCross": [
+        "The exhausting need to know what every hard year was for, right now, before the end",
+        "The two false comforts: pretending the harm wasn't real, or pretending God's hand wasn't over it",
+        "The grief I have rushed past without ever letting it weep"
+      ],
+      "receivingFromCross": [
+        "Rest that does not depend on understanding - trust in the Sender before I can see the sending",
+        "The freedom to hold both truths Joseph held, without flattening either one",
+        "The promise that the long arc bends toward life, fixed not by a pit but by an empty tomb"
+      ],
+      "content": "Today is a Sabbath - there is no chapter to finish and no meaning to extract. Sit for ten unhurried minutes and let one line hold you: 'It was not you who sent me here, but God,' or simply 'God sent me before you.' Bring God the one hard season you keep trying to interpret, and instead of demanding what it was for, hand Him the book and let it stay open where it is. The Author has not stopped writing."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Joseph says 'God sent me' three times in four verses, never 'God allowed it.' Why does the difference between sending and allowing matter for how you read your own past?",
+        "How does Joseph hold his brothers' guilt and God's providence together without using one to cancel the other? What goes wrong when we collapse the two?",
+        "Joseph could read his story as a sending only from the far end. What does that say about why providence is so hard to see from inside the hard season?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one season you can now read backward as a 'sending' that felt only like a 'falling' while you were in it. What changed your reading?",
+        "Talk about a hard thing you are still inside of - and practice saying, out loud, 'I cannot see the sending yet, but I trust the Sender.' How does it feel to say it?",
+        "Ask each other: where am I demanding the meaning of something before its end - and what would it look like to rest instead?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 50:20",
+          "text": "As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this—to preserve the lives of many people."
+        },
+        {
+          "reference": "Psalm 105:17-19",
+          "text": "He sent a man before them— Joseph, sold as a slave. They bruised his feet with shackles and placed his neck in irons, until his prediction came true and the word of the LORD proved him right."
+        },
+        {
+          "reference": "Romans 8:28",
+          "text": "And we know that God works all things together for the good of those who love Him, who are called according to His purpose."
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His."
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 45 and 50",
+          "note": "Read Joseph's two interpretations together - 'God sent me before you' (45:5-8) and 'you intended evil, God intended good' (50:20) - watching how he keeps both his brothers' guilt and God's providence in view without dissolving either."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Son Sold, the Brother Who Wept",
+      "description": "The eleventh son of Jacob and the firstborn of Rachel, given a coat that marked him as favored and a pair of dreams his brothers could not forgive. They sold him into Egypt for twenty pieces of silver. Through slavery, false accusation, and years forgotten in prison, the text keeps quietly repeating that 'the LORD was with him' - until the day a famine brought his brothers bowing before the very man they had thrown away. He had the power to destroy them and used it to feed them. He stands at the close of Genesis as the clearest Old Testament picture of a beloved son betrayed by his own, brought low, and raised to save them.",
+      "keyQuote": "It was not you who sent me here, but God.",
+      "lessonForUs": "Joseph did not get an explanation in the pit; he got one at the end, and he gave it through tears. On the Sabbath we learn his rest: you do not have to read your story while you are still falling through it. You only have to trust the One sending you ahead - the same hand that, in Christ, turned the worst Friday in history into the morning that saves the world."
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2674,
+  "scriptureReference_full": "Genesis 45:5-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shalach / shelachani, H7971, 'to send'; the threefold repetition in Genesis 45:5,7,8; the link to shalach in Exodus 5:1) reflects standard lexical sources.",
+    "Psalm 105:17-19 is Israel's hymnic retelling of the Joseph narrative; Genesis 50:20 is Joseph's parallel interpretation; Acts 2:23 supplies the dual-agency pattern (human intent / divine plan) applied to the cross."
+  ]
 }

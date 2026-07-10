@@ -1,38 +1,193 @@
 {
   "day": 352,
-  "title": "Hebrews: Faith Hall + Endurance — Day 2 — Building",
-  "teaser": "Day 352 of Bible 365 — Hebrews 11-12",
+  "title": "The witnesses who never saw the finish",
+  "teaser": "A whole roll call of the faithful died with the promise still unfulfilled. They ran in the dark — and Scripture says they were waiting for us, and for the One who would finish what none of them could.",
   "framework": "Hebrews 11-12 — Hebrews: Faith Hall + Endurance",
   "scriptureReference": "Hebrews 11-12",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 352"
+      "type": "scripture",
+      "reference": "Hebrews 11:1, 13, 39-40; 12:1",
+      "translation": "BSB",
+      "emphasis": [
+        "assurance of what we hope for",
+        "died in faith, without having received the things they were promised",
+        "they would be made perfect",
+        "a great cloud of witnesses"
+      ],
+      "greekOriginal": "Ἔστιν δὲ πίστις ἐλπιζομένων ὑπόστασις, πραγμάτων ἔλεγχος οὐ βλεπομένων",
+      "passage": "Now faith is the assurance of what we hope for and the certainty of what we do not see. ... All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar. And they acknowledged that they were strangers and exiles on the earth. ... These were all commended for their faith, yet they did not receive what was promised. God had planned something better for us, so that together with us they would be made perfect. ... Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hebrews 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hebrews 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὑπόστασις",
+      "transliteration": "hypostasis",
+      "pronunciation": "hoo-PAW-stah-sis",
+      "meaning": "substance, foundation, that which stands under; assurance, title-deed",
+      "rootMeaning": "From hypo (under) and stasis (a standing). Literally, a standing-under - the solid thing that holds up everything resting on it. Greek-speaking merchants used it for the title-deed to a property: the document that made a future inheritance legally real before you ever set foot on the land.",
+      "usageNote": "In Hebrews 11:1 the writer does not say faith hopes for substance; he says faith IS the substance of what is hoped for. The same word names the foundation under a building and the deed in a man's hand. Faith is not wishing harder. It is the underlying reality that lets a person live now as though the unseen promise were already in the bank.",
+      "wordByWord": [
+        {
+          "word": "πίστις",
+          "transliteration": "pistis",
+          "meaning": "faith, trust, faithfulness"
+        },
+        {
+          "word": "ἐλπιζομένων",
+          "transliteration": "elpizomenon",
+          "meaning": "of the things being hoped for"
+        },
+        {
+          "word": "ὑπόστασις",
+          "transliteration": "hypostasis",
+          "meaning": "substance, foundation, assurance - the thing that stands underneath"
+        },
+        {
+          "word": "πραγμάτων",
+          "transliteration": "pragmaton",
+          "meaning": "of matters, of realities, of concrete things"
+        },
+        {
+          "word": "ἔλεγχος",
+          "transliteration": "elenchos",
+          "meaning": "proof, certainty, evidence that convinces"
+        },
+        {
+          "word": "οὐ βλεπομένων",
+          "transliteration": "ou blepomenon",
+          "meaning": "of things not being seen"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ὑπόστασις",
+          "reference": "The same word appears in Hebrews 1:3, where the Son is called the exact representation of God's hypostasis - His very being. Faith's substance and God's substance share a name: what faith stands on is finally a Person."
+        }
+      ],
+      "strongsNumber": "G5287",
+      "definition": "a setting under; substance, foundation, steadfastness of mind, assurance, the title-deed to a future possession",
+      "usage": "The word turns faith from a feeling into a foundation. The people in Hebrews 11 were not optimists. They held the title-deed to a country they never entered, and they lived their whole lives on the strength of a document signed by God."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hebrews: Faith Hall + Endurance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the founder + perfecter (Heb 12:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Hall of Heroes Who Lost",
+      "body": "Hebrews 11 is usually read like a victory wall - a corridor of trophies. By faith Abel offered a better sacrifice. By faith Enoch was taken up. By faith Noah built the ark, Abraham went out not knowing where he was going, Sarah conceived past hope, Moses left Pharaoh's palace for a slave people. Then the writer speeds up, breathless: Gideon, Barak, Samson, Jephthah, David, Samuel, the prophets, who through faith conquered kingdoms, shut the mouths of lions, quenched the raging fire, escaped the edge of the sword.\n\nBut keep reading, because the wall turns. The same sentence that says some escaped the sword says others were put to death by it. Others were tortured and refused their release. They were stoned, they were sawed in two. They went around in sheepskins and goatskins, destitute, oppressed, and mistreated. They wandered in deserts and hid in caves and holes in the ground. By the same faith. There is no asterisk separating the winners from the losers. The man who shut the lions' mouths and the man the lions ate are both hung in this gallery, both labeled the same word: faith.\n\nThen comes the line that re-reads the whole chapter. Twice the writer stops to say it plainly. In verse 13: \"All these people died in faith, without having received the things they were promised.\" In verse 39: \"These were all commended for their faith, yet they did not receive what was promised.\" The hall of fame is a hall of people who died still waiting. Whatever faith is, it is not a guarantee that you will see the thing arrive in your lifetime.",
+      "keyInsight": "The faith chapter is not a list of people who got what they wanted. It is a list of people who held a promise so real to them that they were willing to die without it ever being delivered.",
+      "content": "Hebrews 11 is usually read like a victory wall - a corridor of trophies. By faith Abel offered a better sacrifice. By faith Enoch was taken up. By faith Noah built the ark, Abraham went out not knowing where he was going, Sarah conceived past hope, Moses left Pharaoh's palace for a slave people. Then the writer speeds up, breathless: Gideon, Barak, Samson, Jephthah, David, Samuel, the prophets, who through faith conquered kingdoms, shut the mouths of lions, quenched the raging fire, escaped the edge of the sword.\n\nBut keep reading, because the wall turns. The same sentence that says some escaped the sword says others were put to death by it. Others were tortured and refused their release. They were stoned, they were sawed in two. They went around in sheepskins and goatskins, destitute, oppressed, and mistreated. They wandered in deserts and hid in caves and holes in the ground. By the same faith. There is no asterisk separating the winners from the losers. The man who shut the lions' mouths and the man the lions ate are both hung in this gallery, both labeled the same word: faith.\n\nThen comes the line that re-reads the whole chapter. Twice the writer stops to say it plainly. In verse 13: \"All these people died in faith, without having received the things they were promised.\" In verse 39: \"These were all commended for their faith, yet they did not receive what was promised.\" The hall of fame is a hall of people who died still waiting. Whatever faith is, it is not a guarantee that you will see the thing arrive in your lifetime."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cathedral Mason",
+      "body": "There is a kind of work that no one ever sees finished. The great medieval cathedrals took a hundred and fifty, sometimes two hundred years to build. A stonemason who set the foundation stones as a young apprentice would be dead long before the last spire went up. His son might lay courses he would never see crowned. His grandson might carve gargoyles for a roofline three generations off.\n\nImagine asking one of those first masons, on his knees in the cold with a chisel, what he was building. He could not point to it. There was no cathedral - only a muddy footprint, a few feet of wall, a plan in another man's head. And yet he cut every stone true, as if the whole soaring thing already stood, because in a sense it did. The deed was signed. The drawing existed. He was not guessing. He was building on a foundation he could describe but never enter.\n\nThat is the posture of Hebrews 11. Abraham looked for a city with foundations whose architect and builder is God, and lived his whole life in a tent. He was the mason on his knees in the mud, cutting stones for a city he saw only from far off, and welcomed anyway.",
+      "connectionToTheme": "Faith is the title-deed in the hand of a builder who will not live to walk through the finished door - and works as if he will, because the One who drew the plans does not lie.",
+      "content": "There is a kind of work that no one ever sees finished. The great medieval cathedrals took a hundred and fifty, sometimes two hundred years to build. A stonemason who set the foundation stones as a young apprentice would be dead long before the last spire went up. His son might lay courses he would never see crowned. His grandson might carve gargoyles for a roofline three generations off.\n\nImagine asking one of those first masons, on his knees in the cold with a chisel, what he was building. He could not point to it. There was no cathedral - only a muddy footprint, a few feet of wall, a plan in another man's head. And yet he cut every stone true, as if the whole soaring thing already stood, because in a sense it did. The deed was signed. The drawing existed. He was not guessing. He was building on a foundation he could describe but never enter.\n\nThat is the posture of Hebrews 11. Abraham looked for a city with foundations whose architect and builder is God, and lived his whole life in a tent. He was the mason on his knees in the mud, cutting stones for a city he saw only from far off, and welcomed anyway."
+    },
+    {
+      "type": "insight",
+      "heading": "Made Perfect Together, Not Apart",
+      "body": "The strangest verse in the chapter is the last one, and it is easy to read straight past it. After the long list of the faithful dead, verse 40 says: \"God had planned something better for us, so that together with us they would be made perfect.\"\n\nStop on the word together. Abraham, Moses, the prophets, the tortured and the stoned - they are not yet complete. The text says so. They were commended, they died in faith, and they are still waiting to be \"made perfect.\" And the thing they are waiting for is not a private reward held in escrow for the worthy. It is us. God planned that they would be perfected together with us - that the whole hall of witnesses, ancient and modern, would cross the finish line as one people or not at all.\n\nThis is why faith could carry them through caves and chains without the promise in hand. They were never running a solo race for a solo prize. They were laying the lower courses of a single building, and the keystone had not yet been set. None of them could complete it alone. None of them was meant to. The promise was always going to be finished by Someone none of them had yet seen - and finished for all of them at once.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure to abandon Christ and return to the older, safer forms of their ancestral faith. The writer answers not by dismissing the ancestors but by enlisting them: your fathers in the faith ran the same race you are running, endured worse than you have endured, and are now in the stands cheering you on. To quit would be to break ranks with Abraham and Moses, who held on with far less light than you have been given.",
+      "fascinatingFact": "The Greek for \"made perfect\" in verse 40 is teleiothosin, from teleios - to be brought to the goal, completed, finished. It is the same root behind teleo, the verb John records Jesus crying from the cross: tetelestai, \"It is finished.\" The completion the whole chapter waits for is spoken into being on a Roman cross, in a single word.",
+      "content": "The strangest verse in the chapter is the last one, and it is easy to read straight past it. After the long list of the faithful dead, verse 40 says: \"God had planned something better for us, so that together with us they would be made perfect.\"\n\nStop on the word together. Abraham, Moses, the prophets, the tortured and the stoned - they are not yet complete. The text says so. They were commended, they died in faith, and they are still waiting to be \"made perfect.\" And the thing they are waiting for is not a private reward held in escrow for the worthy. It is us. God planned that they would be perfected together with us - that the whole hall of witnesses, ancient and modern, would cross the finish line as one people or not at all.\n\nThis is why faith could carry them through caves and chains without the promise in hand. They were never running a solo race for a solo prize. They were laying the lower courses of a single building, and the keystone had not yet been set. None of them could complete it alone. None of them was meant to. The promise was always going to be finished by Someone none of them had yet seen - and finished for all of them at once."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The entire roll call of the faithful died without receiving the promise, because God planned that they would be made perfect only together with us - the whole company completed at once by something none of them had yet seen.",
+      "modernApplication": "You are tempted to measure faith by arrival: the prayer answered, the diagnosis reversed, the prodigal home, the calling vindicated in your lifetime. Hebrews 11 quietly refuses that scoreboard. Some of the most faithful people in Scripture died with the muddy footprint and the unbuilt wall. Faithfulness is not whether you saw it finished. It is whether you kept cutting true stones in the dark.",
+      "connectionPoint": "Chapter 11 ends with a cloud of witnesses who could not finish. Chapter 12 opens by telling us where to look: not at the witnesses, but past them, to Jesus, the author and perfecter of faith, who endured the cross and sat down. The hall of heroes does not point to itself. Every faithful life in the gallery is an arrow aimed at the One who ran the race they could not complete.",
+      "newTestamentEcho": "\"And without faith it is impossible to please God, because anyone who approaches Him must believe that He exists and that He rewards those who earnestly seek Him\" (Hebrews 11:6). The reward, it turns out, is not a thing God hands over. It is the city He prepared, the better resurrection, the new covenant sealed in blood that speaks a better word than the blood of Abel (Hebrews 12:24)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What promise are you still holding that has not arrived - and would you call yourself faithful for waiting, or a failure for not yet seeing it?",
+      "additionalQuestions": [
+        "If faith is a title-deed and not a feeling, what does it change to know your hope is a document signed by God rather than a mood you have to keep up?",
+        "Whose faithfulness laid the foundation stones you are now standing on - parents, teachers, believers who died before they saw their prayers for you answered?",
+        "Where are you tempted to break ranks with the cloud of witnesses and quit, because the wall is only a few courses high and you cannot see the cathedral yet?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess how often I measure my faith by what has arrived. Forgive me for treating the unanswered prayer as proof You have forgotten. Teach me the faith of the ones who died still waiting - who held the deed and never entered the land, and called You faithful anyway. Set me among that cloud of witnesses. Help me throw off the weight I have been dragging and run the part of the race that is mine, with my eyes lifted to the One who finished what none of them could. Until I see it, let the promise be substance enough. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one stone you are cutting that you may never see crowned - a prayer you have prayed for years, a person you keep loving without return, a faithfulness no one is applauding. Today, cut it true anyway, on the strength of a promise signed by God, and let that be enough for one day.",
+      "leavingAtCross": [
+        "The scoreboard that says my faith only counts if I see the answer in my lifetime",
+        "The quiet despair that reads an unfinished wall as a wasted life",
+        "The temptation to break ranks and quit because I cannot yet see the city"
+      ],
+      "receivingFromCross": [
+        "The title-deed to an unshakable kingdom I have not yet entered but already own",
+        "A place in a cloud of witnesses that stretches back to Abel and forward past my death",
+        "The freedom to run my leg of the race knowing Someone else has already finished it"
+      ],
+      "content": "Name one stone you are cutting that you may never see crowned - a prayer you have prayed for years, a person you keep loving without return, a faithfulness no one is applauding. Today, cut it true anyway, on the strength of a promise signed by God, and let that be enough for one day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does Hebrews 11:1 mean when it calls faith the 'assurance' or substance (hypostasis) of what we hope for, rather than a feeling of optimism?",
+        "Both the people who escaped the sword and the people who died by it are listed under the same word - faith. What does that do to the popular idea that faith is measured by good outcomes?",
+        "Why does it matter that verse 40 says the witnesses are made perfect 'together with us' rather than each one on their own?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one promise or prayer you have been carrying for years without resolution. How is your faith holding up under the waiting?",
+        "Talk about a believer who shaped your faith and died before they saw their prayers for you answered. What stones did they cut that you are now standing on?",
+        "Ask each other: what 'encumbrance' or entangling sin is making the race harder to run right now, and what would it look like to throw it off this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11:10",
+          "text": "For he was looking forward to the city with foundations, whose architect and builder is God."
+        },
+        {
+          "reference": "Hebrews 11:16",
+          "text": "Instead, they were longing for a better country, a heavenly one. Therefore God is not ashamed to be called their God, for He has prepared a city for them."
+        },
+        {
+          "reference": "Hebrews 12:2",
+          "text": "Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
+        },
+        {
+          "reference": "Hebrews 12:24",
+          "text": "...to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11",
+          "note": "Read the whole chapter in one sitting, marking each 'by faith.' Notice where the list turns from escaping the sword (v. 34) to dying by it (v. 37) - and that the writer never changes the word he uses for both."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The Stranger Who Built on Foundations He Never Touched",
+      "description": "Called out of Ur to a land he would only ever camp in, Abraham obeyed and went without knowing where he was going (Hebrews 11:8). He dwelt in the promised land as a stranger in a foreign country, living in tents - because he was looking forward to the city with foundations whose architect and builder is God (11:9-10). He is the pattern of the whole chapter: a man who held the deed to a country he never settled, and was tested to the point of offering up Isaac, the son the promise depended on. He died in faith, without having received the things he was promised, and welcomed them from afar.",
+      "keyQuote": "By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going.",
+      "lessonForUs": "Abraham's whole life was foundation work for a city he never entered. If the father of the faithful could build true on a promise he saw only from far off, then your unfinished walls and unanswered prayers are not evidence of weak faith - they are exactly what faith looks like from inside the building.",
+      "heading": "The Stranger Who Built on Foundations He Never Touched"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1718,
+  "scriptureReference_full": "Hebrews 11:1, 13, 39-40; 12:1",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (hypostasis, G5287; teleioo, teleios) reflects standard lexical sources (BDAG, Thayer); the title-deed sense of hypostasis is widely attested in Hellenistic commercial papyri and noted in standard commentaries on Hebrews 11:1.",
+    "The shared root between teleioo ('made perfect,' Heb 11:40) and tetelestai ('It is finished,' John 19:30) is a lexical observation from the Greek text, offered as connection, not as a claim of authorial intent."
+  ]
 }

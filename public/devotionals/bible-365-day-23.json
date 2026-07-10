@@ -1,38 +1,186 @@
 {
   "day": 23,
-  "title": "Jacob’s ladder",
-  "teaser": "Day 23 of Bible 365 — Genesis 28:10-22",
+  "title": "The ladder he didn't build",
+  "teaser": "A liar runs into the dark with a stone for a pillow, and heaven opens over his head. God meets Jacob before Jacob ever asks.",
   "framework": "Genesis 28:10-22 — Heaven touches earth in mercy",
   "scriptureReference": "Genesis 28:10-22",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 23"
+      "type": "scripture",
+      "reference": "Genesis 28:10-22",
+      "translation": "BSB",
+      "emphasis": [
+        "a ladder that rested on the earth with its top reaching up to heaven",
+        "I am with you",
+        "Surely the LORD is in this place, and I was unaware of it"
+      ],
+      "hebrewOriginal": "וְהִנֵּה יְהוָה נִצָּב עָלָיו",
+      "passage": "Meanwhile Jacob left Beersheba and set out for Haran. On reaching a certain place, he spent the night there because the sun had set. And taking one of the stones from that place, he put it under his head and lay down to sleep. And Jacob had a dream about a ladder that rested on the earth with its top reaching up to heaven, and God's angels were going up and down the ladder. And there at the top the LORD was standing and saying, \"I am the LORD, the God of your father Abraham and the God of Isaac. I will give you and your descendants the land on which you now lie. Your descendants will be like the dust of the earth, and you will spread out to the west and east and north and south. All the families of the earth will be blessed through you and your offspring. Look, I am with you, and I will watch over you wherever you go, and I will bring you back to this land. For I will not leave you until I have done what I have promised you.\" When Jacob woke up, he thought, \"Surely the LORD is in this place, and I was unaware of it.\" And he was afraid and said, \"How awesome is this place! This is none other than the house of God; this is the gate of heaven!\" Early the next morning, Jacob took the stone that he had placed under his head, and he set it up as a pillar. He poured oil on top of it, and he called that place Bethel, though previously the city had been named Luz. Then Jacob made a vow, saying, \"If God will be with me and watch over me on this journey, and if He will provide me with food to eat and clothes to wear, so that I may return safely to my father's house, then the LORD will be my God. And this stone I have set up as a pillar will be God's house, and of all that You give me I will surely give You a tenth.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 28:10-22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 28:10-22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "סֻלָּם",
+      "transliteration": "sullam",
+      "pronunciation": "soo-LAHM",
+      "meaning": "a ladder, a stairway, a ramp set against something",
+      "rootMeaning": "From the root salal, to lift up, to raise, to build up a way - the same root behind a highway cast up or a siege ramp heaped against a wall. A sullam is a raised way between a lower place and a higher one.",
+      "usageNote": "This is the only time the word sullam appears in the entire Hebrew Bible. Whatever Jacob saw, Scripture had no second occasion to name it. Many readers picture rungs, but the root points more toward a ramp or stairway leaning against the sky - the kind of monumental stair that climbed the great towers of Mesopotamia, the land Jacob was fleeing toward.",
+      "wordByWord": [
+        {
+          "word": "וְהִנֵּה",
+          "transliteration": "vehinneh",
+          "meaning": "and behold - the word that grabs the sleeper's eyes and ours, look"
+        },
+        {
+          "word": "סֻלָּם",
+          "transliteration": "sullam",
+          "meaning": "a ladder, a raised stairway"
+        },
+        {
+          "word": "מֻצָּב אַרְצָה",
+          "transliteration": "mutsav artsah",
+          "meaning": "set firmly toward the earth, planted in the ground"
+        },
+        {
+          "word": "וְרֹאשׁוֹ מַגִּיעַ הַשָּׁמָיְמָה",
+          "transliteration": "verosho maggia hashamaymah",
+          "meaning": "and its top reaching to the heavens"
+        },
+        {
+          "word": "נִצָּב עָלָיו",
+          "transliteration": "nitsav alav",
+          "meaning": "standing over it, or standing beside him - the Hebrew can hold both"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בֵּית־אֵל",
+          "reference": "Beth-El, house of God - the name Jacob gives the place in verse 19. The stairway he sees is the thing the name describes: where the house of God touches the floor of the world."
+        }
+      ],
+      "strongsNumber": "H5551",
+      "definition": "a stairway or ladder; a raised way connecting earth and heaven",
+      "usage": "Because sullam occurs only here, every later reader has had to lean on the picture rather than the word: a way that does not begin on earth and strain upward, but stands fixed on the ground with its top already lost in heaven - reaching down before anyone climbs up."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Heaven touches earth in mercy. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the true ladder (John 1:51).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Ran Out of Daylight, Not Out of God",
+      "body": "Jacob is not on a pilgrimage. He is running. A few verses earlier he has cheated his brother Esau out of the blessing, lying to his blind father with goat-skin on his arms, and now Esau wants him dead. His mother sends him north to Haran with a thin cover story. So the man who leaves Beersheba is a deceiver fleeing the wreckage of his own scheming, alone, with whatever he could carry.\n\nThen one ordinary detail decides everything: \"the sun had set.\" He has run out of daylight. There is no inn, no family, no plan for the night - just a certain place and a stone for a pillow. This is not a holy site he chose. It is wherever the dark caught him.\n\nAnd it is there, with a fugitive asleep on the bare ground, that heaven opens. A stairway stands fixed on the earth, its top in the sky, and the angels of God are going up and down it. At the top stands the LORD. Notice what Jacob did not do. He did not build this. He did not summon it. The ladder is not a project Jacob raises to reach God. It is already there when he lies down, planted in the ground beside his head while he sleeps - the way down to him opened before he ever tries to climb up.",
+      "keyInsight": "Jacob does not climb to God. God's stairway is already standing on the earth before Jacob ever closes his eyes. Grace reaches the ground first.",
+      "content": "Jacob is not on a pilgrimage. He is running. A few verses earlier he has cheated his brother Esau out of the blessing, lying to his blind father with goat-skin on his arms, and now Esau wants him dead. His mother sends him north to Haran with a thin cover story. So the man who leaves Beersheba is a deceiver fleeing the wreckage of his own scheming, alone, with whatever he could carry.\n\nThen one ordinary detail decides everything: \"the sun had set.\" He has run out of daylight. There is no inn, no family, no plan for the night - just a certain place and a stone for a pillow. This is not a holy site he chose. It is wherever the dark caught him.\n\nAnd it is there, with a fugitive asleep on the bare ground, that heaven opens. A stairway stands fixed on the earth, its top in the sky, and the angels of God are going up and down it. At the top stands the LORD. Notice what Jacob did not do. He did not build this. He did not summon it. The ladder is not a project Jacob raises to reach God. It is already there when he lies down, planted in the ground beside his head while he sleeps - the way down to him opened before he ever tries to climb up."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Light Left On Down the Hall",
+      "body": "There is a particular kind of night a person knows when they have done the thing they cannot take back. Maybe it was a lie that finally came apart, or a relationship they torched, or a version of themselves they don't recognize in the mirror anymore. You lie down in the dark certain that whatever else is true, you have walked beyond the reach of any good thing. The running has stopped only because your legs gave out.\n\nA man I know spent a night like that in his car in a parking lot, having burned through the trust of nearly everyone who loved him. He told me later that what undid him was not a sermon or a verse. It was noticing, around three in the morning, that he had assumed God was somewhere back where he used to be - back before the wreckage - and that he had driven away from Him. And then the strange thought: what if God had not stayed behind. What if God was in the parking lot.\n\nThat is Jacob's morning exactly. He wakes and says it out loud: \"Surely the LORD is in this place, and I was unaware of it.\" Not, I climbed back to God. But: He was here the whole time, in the last place I'd have looked - the dirt where I collapsed.",
+      "connectionToTheme": "We assume God stays back where we left Him, in the life before our failure. Jacob discovers God is already in the place we ran to, waiting in the dark we thought we'd reached alone.",
+      "content": "There is a particular kind of night a person knows when they have done the thing they cannot take back. Maybe it was a lie that finally came apart, or a relationship they torched, or a version of themselves they don't recognize in the mirror anymore. You lie down in the dark certain that whatever else is true, you have walked beyond the reach of any good thing. The running has stopped only because your legs gave out.\n\nA man I know spent a night like that in his car in a parking lot, having burned through the trust of nearly everyone who loved him. He told me later that what undid him was not a sermon or a verse. It was noticing, around three in the morning, that he had assumed God was somewhere back where he used to be - back before the wreckage - and that he had driven away from Him. And then the strange thought: what if God had not stayed behind. What if God was in the parking lot.\n\nThat is Jacob's morning exactly. He wakes and says it out loud: \"Surely the LORD is in this place, and I was unaware of it.\" Not, I climbed back to God. But: He was here the whole time, in the last place I'd have looked - the dirt where I collapsed."
+    },
+    {
+      "type": "insight",
+      "heading": "A Promise With No Conditions Attached",
+      "body": "Listen to what the LORD says from the top of the stairway, and listen for what is missing. \"I am the LORD, the God of your father Abraham and the God of Isaac. I will give... your descendants will be like the dust of the earth... All the families of the earth will be blessed through you... Look, I am with you, and I will watch over you wherever you go... I will not leave you until I have done what I have promised you.\"\n\nEvery verb is God's. I will give, I will watch over, I will bring you back, I will not leave. There is not a single \"if\" in it. God does not say, \"If you stop lying, I will bless you,\" or \"Once you make this right with Esau, I will be your God.\" He speaks the covenant of Abraham over a man who is, at this very moment, a thief on the run with the stolen blessing in his hands. The promise is not Jacob's reward for becoming good. It is God's gift to him while he is still a fraud.\n\nThis is the scandal at the heart of the passage, and it is the scandal at the heart of the gospel: God binds Himself to people before they have done anything to deserve it, and refuses to make His faithfulness wait on theirs.",
+      "historicalContext": "Bethel sits on the central ridge route through the hill country, a day's hard walk north of Jerusalem and just inside the land promised to Abraham. Jacob is at the edge - the last threshold of the promised land before the long road to Haran. God's pledge \"I will bring you back to this land\" is not abstract; it is spoken on the very ground God is swearing to return him to. Twenty years later Jacob does come back, and God sends him again to Bethel (Genesis 35:1) to build the altar he first only marked with a stone.",
+      "fascinatingFact": "Jacob renames the place Bethel, \"house of God,\" but the text quietly tells us its old name was Luz, which means \"almond tree\" or, by some readings, \"turning aside.\" An ordinary roadside grove with a forgettable name becomes the gate of heaven - not because the place changed, but because Jacob's eyes were opened to what was always true of it.",
+      "content": "Listen to what the LORD says from the top of the stairway, and listen for what is missing. \"I am the LORD, the God of your father Abraham and the God of Isaac. I will give... your descendants will be like the dust of the earth... All the families of the earth will be blessed through you... Look, I am with you, and I will watch over you wherever you go... I will not leave you until I have done what I have promised you.\"\n\nEvery verb is God's. I will give, I will watch over, I will bring you back, I will not leave. There is not a single \"if\" in it. God does not say, \"If you stop lying, I will bless you,\" or \"Once you make this right with Esau, I will be your God.\" He speaks the covenant of Abraham over a man who is, at this very moment, a thief on the run with the stolen blessing in his hands. The promise is not Jacob's reward for becoming good. It is God's gift to him while he is still a fraud.\n\nThis is the scandal at the heart of the passage, and it is the scandal at the heart of the gospel: God binds Himself to people before they have done anything to deserve it, and refuses to make His faithfulness wait on theirs."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Bethel, a stairway stands fixed on the earth with its top in heaven, and the angels of God are ascending and descending on it. Heaven has opened over a sleeping fugitive who did nothing to open the sky - the way between earth and heaven set down to him while he could not lift a finger.",
+      "modernApplication": "We spend enormous energy trying to build our own ladder up to God - through performance, religious effort, the carefully managed life that we hope will finally make us acceptable. Jacob's dream says the ladder was never ours to build. The way between heaven and earth is something God sets down to us, and it stands while we sleep.",
+      "connectionPoint": "Centuries later, sitting under a fig tree, a man named Nathanael meets Jesus, and Jesus tells him: \"Truly, truly, I tell you, you will all see heaven open and the angels of God ascending and descending on the Son of Man\" (John 1:51). Jesus is quoting Bethel. He takes the one image of the stairway and puts Himself in its place. The sullam Jacob saw was a shadow; Christ says, I am the real thing - the open door between heaven and earth, the place where God's traffic touches the ground.",
+      "newTestamentEcho": "What Jacob saw in a dream, John saw in flesh: \"The Word became flesh and made His dwelling among us\" (John 1:14). The house of God is no longer a stone on a hillside. It is a Person. In Christ, heaven came down the ladder all the way to the dirt where we sleep - and the gate of heaven now has a face."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you assumed God stayed behind - in the life before your failure, the place you were before you ran - so that the dark you're in now feels like a place He can't be?",
+      "additionalQuestions": [
+        "What ladder have you been building to climb up to God? What would it mean to stop building and notice the one He has already set down?",
+        "God's promise to Jacob had no conditions. Where are you living as though God's faithfulness is waiting on yours - as though He'll meet you only after you've cleaned yourself up?",
+        "Jacob said, 'Surely the LORD is in this place, and I was unaware of it.' Where might God already be present that you have been walking past unaware?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have spent so long trying to climb to You, and so much of it was just running away. Meet me where the dark caught me. Thank You that the stairway was never mine to build - that You set Yourself down to the ground in Jesus, the true gate of heaven, while I was still asleep and still a mess. Where I assumed You stayed behind, show me that You are already here. I am with you, You said. Let that be the last word over me tonight, before I have fixed a single thing. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name out loud the 'certain place' you are actually in - the situation, the failure, the ordinary unremarkable spot where the dark caught you - and say over it Jacob's morning words: 'Surely the LORD is in this place.' Then leave one small marker, the way Jacob set up his stone: a note, a verse on your phone, a circled date, so you remember God was here before you knew it.",
+      "leavingAtCross": [
+        "The exhausting ladder I keep building to climb up to a God I assume is far off",
+        "The belief that God stayed back in my better days and can't be found in the wreckage",
+        "The fear that His promise to me is waiting on me getting my life right first"
+      ],
+      "receivingFromCross": [
+        "A stairway I did not build and never had to climb - Christ Himself, the gate of heaven, set down to the ground",
+        "The covenant 'I am with you... I will not leave you,' spoken before I have fixed anything",
+        "The freedom to wake up, like Jacob, and find God already in the last place I expected"
+      ],
+      "content": "Today, name out loud the 'certain place' you are actually in - the situation, the failure, the ordinary unremarkable spot where the dark caught you - and say over it Jacob's morning words: 'Surely the LORD is in this place.' Then leave one small marker, the way Jacob set up his stone: a note, a verse on your phone, a circled date, so you remember God was here before you knew it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Jacob did nothing to open the sky - the stairway was already standing when he lay down. Why does it matter for understanding grace that the way between heaven and earth is something God sets down, not something we build up?",
+        "What is striking about the things God promises Jacob, given who Jacob is and what he has just done? What word is missing from God's promise that you might expect to be there?",
+        "How does Jesus' word to Nathanael in John 1:51 reach back and claim Jacob's dream for Himself?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a 'certain place' where the dark caught you - a low point you assumed was beyond God's reach. Looking back, was He there?",
+        "Talk honestly about the ladder you tend to build to climb up to God. What does your version of earning His acceptance usually look like?",
+        "Jacob marked the place with a stone he could come back to. What 'stone' could each of you set up this week as a marker that God met you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:51",
+          "text": "Then He declared, \"Truly, truly, I tell you, you will all see heaven open and the angels of God ascending and descending on the Son of Man.\""
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "Genesis 35:1",
+          "text": "Then God said to Jacob, \"Arise, go up to Bethel, and settle there. Build an altar there to the God who appeared to you when you fled from your brother Esau.\""
+        },
+        {
+          "reference": "Hebrews 13:5",
+          "text": "...for God has said: \"Never will I leave you, never will I forsake you.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 27-35",
+          "note": "Read Jacob's whole arc - the stolen blessing, Bethel, the years with Laban, the wrestling at Peniel, and his return to Bethel in chapter 35. Watch the God who said 'I am with you' keep that promise across twenty years."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jacob",
+      "title": "The Deceiver Met at Bethel",
+      "description": "Grandson of Abraham, son of Isaac, twin brother of Esau. His name plays on the Hebrew for 'heel-grabber' and 'supplanter' - and he lives up to it, buying Esau's birthright for stew and stealing the blessing with a disguise. In Genesis 28 he is a fugitive fleeing his brother's anger when God meets him in a dream and binds Himself to him with an unconditional promise. The man who tried to grab the blessing by deceit receives it, in the end, as a gift. Decades later God renames him Israel, and the whole nation carries that name.",
+      "keyQuote": "Surely the LORD is in this place, and I was unaware of it.",
+      "lessonForUs": "God did not wait for Jacob to become honest before meeting him. He met the schemer in the dark, made the first promise, and stayed faithful across twenty years of Jacob's slow change. If God could do that for the heel-grabber, the deceiver, the runaway - He can find you in your certain place too.",
+      "heading": "The Deceiver Met at Bethel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2671,
+  "scriptureReference_full": "Genesis 28:10-22",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (sullam, H5551; the salal root; Bethel/Luz) reflects standard lexical sources. The note that sullam is a hapax legomenon (occurring only here in the Hebrew Bible) and the ramp/stairway sense are standard observations in Genesis commentary."
+  ]
 }

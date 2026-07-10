@@ -1,38 +1,179 @@
 {
   "day": 193,
-  "title": "Psalms of Trust — Day 4 — Application",
-  "teaser": "Day 193 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "When trust means waiting in the dark",
+  "teaser": "The trust psalms keep doing one stubborn thing: they wait. Day 193 sits with the watchman's ache, and the anchor already on the far side of the curtain.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 193"
+      "type": "scripture",
+      "reference": "Psalm 27:13-14; 130:5-6",
+      "translation": "BSB",
+      "emphasis": [
+        "Wait patiently for the LORD",
+        "I wait for the LORD; my soul does wait",
+        "more than watchmen wait for the morning"
+      ],
+      "hebrewOriginal": "קַוֵּה אֶל־יְהוָה חֲזַק וְיַאֲמֵץ לִבֶּךָ וְקַוֵּה אֶל־יְהוָה",
+      "passage": "Still I am certain to see the goodness of the LORD in the land of the living. Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD! ... I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָוָה",
+      "transliteration": "qavah",
+      "pronunciation": "kah-VAH",
+      "meaning": "to wait, to hope, to expect with tension",
+      "rootMeaning": "The root carries the picture of a cord pulled taut. The related noun qav is a measuring line, and tiqvah, the word for hope, is literally a stretched rope. To qavah is not to sit idle until something happens; it is to be strung tight toward an outcome you cannot yet see, leaning your whole weight on a promise that has not arrived.",
+      "usageNote": "Psalm 27:14 stacks the verb twice around a command: qavveh el-YHWH ... qavveh el-YHWH — 'wait for the LORD ... wait for the LORD.' The repetition is the point. The psalmist is not informing himself; he is bracing himself, the way you say a hard thing twice to make your own body believe it.",
+      "wordByWord": [
+        {
+          "word": "קַוֵּה",
+          "transliteration": "qavveh",
+          "meaning": "wait! hope! — an imperative, a command spoken to the soul"
+        },
+        {
+          "word": "אֶל־יְהוָה",
+          "transliteration": "el-YHWH",
+          "meaning": "toward the LORD — the waiting has a direction, an address"
+        },
+        {
+          "word": "חֲזַק",
+          "transliteration": "chazaq",
+          "meaning": "be strong, take a firm grip"
+        },
+        {
+          "word": "וְיַאֲמֵץ לִבֶּךָ",
+          "transliteration": "veya'amets libbecha",
+          "meaning": "and let your heart be courageous — literally, let your heart be made firm"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "Tiqvah, the noun for hope, comes from the same root and means a cord or line (Joshua 2:18, the scarlet cord in Rahab's window). Biblical hope is not a mood. It is a rope tied to something fixed, holding while you hang in the dark."
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, to look eagerly for, to hope; from a root meaning to bind together, as by twisting a cord",
+      "usage": "Psalm 130 reaches for the same posture without the verb, comparing the soul to watchmen who wait for the morning. The watchman cannot make the sun rise. He can only keep his eyes on the eastern wall, certain it will."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Trust, It Turns Out, Is Mostly Waiting",
+      "body": "By the time you reach this stretch of the Psalter you have heard the trust psalms make their great claims. Psalm 121 promises a keeper who never sleeps. Psalm 139 says there is no corner of the cosmos, not the heights or Sheol or the farthest sea, where God's hand cannot reach you. Psalm 27 calls the LORD light and salvation and asks, almost defiantly, whom shall I fear? These are mountaintop sentences.\n\nBut read the same psalms a second time and notice what they do with their feet. Psalm 27 ends not on the summit but on a command repeated through clenched teeth: wait for the LORD, wait for the LORD. Psalm 130 cries out of the depths and then does the hardest thing a drowning person can do — it stops thrashing and waits, my soul waits for the Lord more than watchmen wait for the morning. Even Psalm 90, gazing back over a thousand generations, asks God to teach us to number our days. The trust is real. So is the not-yet.\n\nThis is the application the trust psalms keep pressing, and it is harder than the claims. Anyone can sing that God is light when the room is bright. The psalmist sings it while still standing in the dark, with the morning not yet up, his only proof a rope he cannot see the far end of. That is what biblical trust mostly is: not the rescue, but the waiting that comes before it, held steady toward a God who has not yet shown His hand."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Night Shift",
+      "body": "A friend of mine spent two years working overnight security at a hospital. The job, he said, was almost entirely waiting. Long corridors, the hum of a vending machine, the clock crawling. He told me the thing nobody warns you about is how the dark plays with time. At three in the morning a quiet shift feels like it will never end, and you start to wonder if the morning is actually coming or if you have simply been forgotten on the wrong side of the night.\n\nWhat got him through, he said, was a habit. Around four he would walk to the east-facing windows on the fifth floor and just stand there. Nothing was happening yet. The sky was as black as it had been at midnight. But he had stood at that window enough mornings to know the order of things: first a thinning at the bottom of the dark, then gray, then a line of dirty gold over the parking deck. He could not make any of it come faster. He could only put himself where he would see it first.\n\nThat is the watchman of Psalm 130. He is not naive about the dark; he is standing in it. He simply knows which way to face. His soul waits for the Lord more than watchmen wait for the morning — and the second time the line is repeated, you can feel him steadying his own legs with it.",
+      "connectionToTheme": "Waiting on God is not passive helplessness. It is the trained discipline of facing the right direction in the dark, certain of a morning you cannot yet see.",
+      "content": "A friend of mine spent two years working overnight security at a hospital. The job, he said, was almost entirely waiting. Long corridors, the hum of a vending machine, the clock crawling. He told me the thing nobody warns you about is how the dark plays with time. At three in the morning a quiet shift feels like it will never end, and you start to wonder if the morning is actually coming or if you have simply been forgotten on the wrong side of the night.\n\nWhat got him through, he said, was a habit. Around four he would walk to the east-facing windows on the fifth floor and just stand there. Nothing was happening yet. The sky was as black as it had been at midnight. But he had stood at that window enough mornings to know the order of things: first a thinning at the bottom of the dark, then gray, then a line of dirty gold over the parking deck. He could not make any of it come faster. He could only put himself where he would see it first.\n\nThat is the watchman of Psalm 130. He is not naive about the dark; he is standing in it. He simply knows which way to face. His soul waits for the Lord more than watchmen wait for the morning — and the second time the line is repeated, you can feel him steadying his own legs with it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Waiting Has Already Been Done Ahead of You",
+      "body": "Here is the turn that keeps these psalms from being mere stoicism. The watchman waits for a morning he cannot guarantee. The Christian waits differently, because the morning has already broken somewhere ahead of us and sent word back.\n\nThe letter to the Hebrews picks up exactly the rope-language of qavah and ties it to a person: 'We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where Jesus our forerunner has entered on our behalf' (Hebrews 6:19-20). Read that against Psalm 130. The psalmist throws his hope toward a God he cannot see, into the depths, and holds. Hebrews tells us where the far end of that rope is now fastened. It is not tied to a maybe. It is anchored behind the curtain, in the very presence of God, secured by a Man who has already gone through.\n\nThe word the writer uses, forerunner, is the runner who goes ahead and arrives first so the others can follow. Jesus did the longest waiting in the dark that has ever been done — three days behind a sealed stone, on the far side of every promise — and came out the other side into the morning. So when Psalm 27 commands the soul to wait, and Psalm 130 strains toward a dawn it cannot see, the believer is not waiting for a sunrise that might not come. We are holding a rope whose far end is already tied off, by Someone who has already reached the morning and is holding it for us.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure to give up and go back. Its argument leans constantly on the Psalms and the temple. When the writer speaks of hope entering 'behind the curtain,' the original readers heard the veil of the Most Holy Place, the one room no one entered but the high priest, once a year, with blood. To say a forerunner has gone in and stayed is to say the waiting room of the old covenant has been opened from the inside.",
+      "fascinatingFact": "The Greek word translated 'forerunner' in Hebrews 6:20, prodromos, appears only here in the entire New Testament. In ordinary Greek it described a scout sent ahead of an army, or the smaller boats that carried the anchor forward into a harbor and dropped it so the larger ship could be hauled safely in. The image is precise: the anchor of our hope was carried ahead and set down inside the harbor before we ever arrived at the mouth of it.",
+      "content": "Here is the turn that keeps these psalms from being mere stoicism. The watchman waits for a morning he cannot guarantee. The Christian waits differently, because the morning has already broken somewhere ahead of us and sent word back.\n\nThe letter to the Hebrews picks up exactly the rope-language of qavah and ties it to a person: 'We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where Jesus our forerunner has entered on our behalf' (Hebrews 6:19-20). Read that against Psalm 130. The psalmist throws his hope toward a God he cannot see, into the depths, and holds. Hebrews tells us where the far end of that rope is now fastened. It is not tied to a maybe. It is anchored behind the curtain, in the very presence of God, secured by a Man who has already gone through.\n\nThe word the writer uses, forerunner, is the runner who goes ahead and arrives first so the others can follow. Jesus did the longest waiting in the dark that has ever been done — three days behind a sealed stone, on the far side of every promise — and came out the other side into the morning. So when Psalm 27 commands the soul to wait, and Psalm 130 strains toward a dawn it cannot see, the believer is not waiting for a sunrise that might not come. We are holding a rope whose far end is already tied off, by Someone who has already reached the morning and is holding it for us."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The trust psalms do not promise the rescue arrives quickly. They command the soul to wait for the LORD, to face the dark like a watchman certain of a morning he cannot yet see, and to put his hope in God's word while he waits (Psalm 27:14; 130:5-6).",
+      "modernApplication": "Most of the trusting we are actually asked to do happens in the gap — after the prayer, before the answer; after the diagnosis, before the result; after you did the right thing, before anyone noticed. We are tempted to read God's silence as God's absence and to start thrashing. The psalms teach a different posture: stand still, keep facing the right window, and hold the rope.",
+      "connectionPoint": "Psalm 27 calls the LORD 'my light and my salvation.' Jesus stands up in the temple and says, 'I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life' (John 8:12). The psalm's confidence finds its name. The light the watchman waits for is a Person, and He has promised that those who follow Him do their waiting with the light already in hand.",
+      "newTestamentEcho": "What the psalmist hoped, Christ secured. 'We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where Jesus our forerunner has entered on our behalf' (Hebrews 6:19-20). The rope of qavah, flung toward an unseen God, is tied off in the presence of God by the One who went ahead."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you waiting in the dark right now — and have you started reading God's silence as God's absence?",
+      "additionalQuestions": [
+        "Psalm 27 repeats 'wait for the LORD' twice, like a person steadying their own legs. What is the one true sentence you most need to say to your soul twice today?",
+        "The watchman cannot make the morning come; he can only face the right window. What would it look like, this week, to stop trying to force the outcome and instead simply put yourself where you would see God first?",
+        "If the anchor of your hope is already fastened behind the curtain by Christ, does that change how heavy the waiting feels — or are you still holding a rope you suspect is tied to nothing?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-waiting",
+      "prayerText": "Lord, You are my light and my salvation, but right now I am standing in the dark, and the morning has not come. Teach me to wait the way the watchman waits — not by closing my eyes, but by facing the right direction. Where I have been thrashing, still me. Where I have read Your silence as Your absence, forgive me. Thank You that the far end of my rope is not tied to a maybe; it is anchored behind the curtain by Jesus, who went ahead of me into the dark and came out into the morning. Hold the rope, Lord. I will keep waiting for You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you are waiting on God for, and choose the watchman's posture instead of the thrashing one. Pick a single sentence of trust from these psalms — 'wait for the LORD,' or 'in His word I put my hope' — and say it out loud to your own soul, twice, the way Psalm 27 does. Then stop trying to force the morning, and simply face the right window for five quiet minutes.",
+      "leavingAtCross": [
+        "The lie that God's silence is God's absence",
+        "The thrashing — the frantic effort to force an outcome only God can give",
+        "The fear that I am holding a rope tied to nothing"
+      ],
+      "receivingFromCross": [
+        "An anchor for my soul, firm and secure, already fastened behind the curtain",
+        "The freedom to wait without panic, because the morning has already broken ahead of me",
+        "A forerunner who went into the longest dark and came out, and is holding the far end for me"
+      ],
+      "content": "Today, name one thing you are waiting on God for, and choose the watchman's posture instead of the thrashing one. Pick a single sentence of trust from these psalms — 'wait for the LORD,' or 'in His word I put my hope' — and say it out loud to your own soul, twice, the way Psalm 27 does. Then stop trying to force the morning, and simply face the right window for five quiet minutes."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew verb qavah ('wait/hope') picture, and how does the image of a taut cord change what 'waiting on God' means — passive idleness, or active tension toward a promise?",
+        "Why does Psalm 27:14 command 'wait for the LORD' twice, and what does that repetition tell you about who the psalmist is really speaking to?",
+        "How does Hebrews 6:19-20 turn the psalmist's blind hope into something secure — where, and by whom, is the far end of the rope now fastened?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one situation where you are currently waiting on God, and be honest about whether you are facing the right window or thrashing.",
+        "Talk about the difference between waiting that is trust and waiting that is just resignation. How can you tell them apart in your own life?",
+        "Ask each other: do you actually believe the rope is tied to something — to Christ behind the curtain — or are you living as if your hope is anchored to nothing?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 121:1-2",
+          "text": "I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth."
+        },
+        {
+          "reference": "Psalm 139:7-8",
+          "text": "Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there."
+        },
+        {
+          "reference": "John 8:12",
+          "text": "Once again, Jesus spoke to the people and said, \"I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.\""
+        },
+        {
+          "reference": "Hebrews 6:19-20",
+          "text": "We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where Jesus our forerunner has entered on our behalf. He has become a high priest forever in the order of Melchizedek."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 130",
+          "note": "Read it slowly aloud, twice, the way the watchman line is repeated. Notice the order: the cry from the depths comes first (vv. 1-2), forgiveness second (vv. 3-4), and only then the waiting (vv. 5-6). Hope is built on mercy already given, not on the rescue not yet arrived."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Watchman of Psalm 130",
+      "title": "The Soul That Waits for the Morning",
+      "description": "Not a named individual but the figure the psalmist becomes: a sentry posted through the night, whose entire job is to stay awake, keep facing east, and be the first to announce the dawn. He has no power to summon the sun. His only certainty is that the morning has never once failed to come, and his only task is to wait for it without leaving his post. The psalmist says his soul waits like this — and then, as if to brace himself, says it again.",
+      "keyQuote": "My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning.",
+      "lessonForUs": "We are rarely asked to manufacture our own rescue; we are asked to keep our post in the dark and face the right direction. And unlike the watchman, we wait for a morning that has already dawned in Christ and sent word back — the rope is tied off, the forerunner is through, the light is coming.",
+      "heading": "The Soul That Waits for the Morning"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2331,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 (focus: Psalm 27:13-14; 130:5-6)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qavah, H6960; tiqvah) reflects standard lexical sources. The prodromos ('forerunner') note on Hebrews 6:20 reflects standard New Testament Greek lexicography (its nautical and military sense of a scout or anchor-boat sent ahead)."
+  ]
 }

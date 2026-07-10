@@ -1,38 +1,188 @@
 {
   "day": 65,
   "title": "Rahab’s red cord",
-  "teaser": "Day 65 of Bible 365 — Joshua 2",
+  "teaser": "A foreign woman ties a scarlet cord in her window and her whole house is spared when the wall falls. The thread that saves the outsider runs all the way to Bethlehem.",
   "framework": "Joshua 2 — Mercy through unlikely faith",
   "scriptureReference": "Joshua 2",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 65"
+      "type": "scripture",
+      "reference": "Joshua 2:9-13, 18, 21",
+      "translation": "BSB",
+      "emphasis": [
+        "I know that the LORD has given you this land",
+        "the LORD your God is God in the heavens above and on the earth below",
+        "this scarlet cord in the window",
+        "she tied the scarlet cord in the window"
+      ],
+      "hebrewOriginal": "אֶת־תִּקְוַת חוּט הַשָּׁנִי הַזֶּה תִּקְשְׁרִי בַּחַלּוֹן",
+      "passage": "And [Rahab] said to them, \"I know that the LORD has given you this land and that the fear of you has fallen on us, so that all who dwell in the land are melting in fear of you. For we have heard how the LORD dried up the waters of the Red Sea before you when you came out of Egypt, and what you did to Sihon and Og, the two kings of the Amorites across the Jordan, whom you devoted to destruction. When we heard this, our hearts melted and everyone's courage failed because of you, for the LORD your God is God in the heavens above and on the earth below. Now therefore, please swear to me by the LORD that you will indeed show kindness to my family, because I showed kindness to you. Give me a sure sign that you will spare the lives of my father and mother, my brothers and sisters, and all who belong to them, and that you will deliver us from death.\" ... [The men said:] \"unless, when we enter the land, you have tied this scarlet cord in the window through which you let us down...\" ... \"Let it be as you say,\" she replied, and she sent them away. And when they had gone, she tied the scarlet cord in the window."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תִּקְוָה",
+      "transliteration": "tiqvah",
+      "pronunciation": "teek-VAH",
+      "meaning": "a cord, a line of twisted thread; and, from the same root, hope, expectation",
+      "rootMeaning": "From the root qavah, which means to twist or bind together strands, and from there to stretch out toward, to wait expectantly. The same act that makes a strong cord - many threads pulled taut into one line - became the Hebrew picture of hope: a person stretched out toward something not yet here.",
+      "usageNote": "In Joshua 2:18 and 2:21 the spies and Rahab call her red thread a tiqvat chut hashani - literally a cord, a line, of scarlet thread. Elsewhere the very same word tiqvah is the ordinary Hebrew word for hope, as when Jeremiah writes that God has plans 'to give you a future and a hope' (Jeremiah 29:11). Hebrew readers heard one word doing two jobs: the thing she ties in the window is, by its own name, a 'hope' hung where everyone could see it.",
+      "wordByWord": [
+        {
+          "word": "אֶת־תִּקְוַת",
+          "transliteration": "et-tiqvat",
+          "meaning": "the cord, line of - the construct form of tiqvah, a twisted line"
+        },
+        {
+          "word": "חוּט",
+          "transliteration": "chut",
+          "meaning": "thread, string"
+        },
+        {
+          "word": "הַשָּׁנִי",
+          "transliteration": "hashani",
+          "meaning": "the scarlet, the crimson - the deep red of a dyed cord"
+        },
+        {
+          "word": "הַזֶּה",
+          "transliteration": "hazzeh",
+          "meaning": "this - this very one, the rope you just used"
+        },
+        {
+          "word": "תִּקְשְׁרִי בַּחַלּוֹן",
+          "transliteration": "tiqshri ba-challon",
+          "meaning": "you shall tie in the window - bind it where it can be seen"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "The same noun, tiqvah, names both Rahab's cord and Israel's hope (Jeremiah 29:11; Proverbs 23:18). The rope she lowered the spies down with becomes the rope she ties up as a sign - the line that saved their lives becomes the line that saves hers."
+        }
+      ],
+      "strongsNumber": "H8615",
+      "definition": "a cord, a line; (by metaphor) expectation, hope",
+      "usage": "It is worth being careful here. The narrator's plain meaning is concrete: a red rope tied in a window. The overlap with the word for 'hope' is real in the Hebrew lexicon, not invented, and it is the kind of resonance the Bible's first readers would have caught - but Scripture does not stop to explain it. We let the thread be a thread, and notice, quietly, what it is called."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mercy through unlikely faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ in the lineage of the unlikely (Matt 1:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Confession of the Last Person You'd Expect",
+      "body": "Israel is camped at Shittim, on the wrong side of the Jordan, looking across at a walled city that has every reason to keep them out. Joshua sends two spies. They cross over, slip into Jericho, and the first door that opens to them belongs to the least respectable person in town: Rahab, named plainly in the text as a prostitute. Within hours the king's men are hammering at her door.\n\nWhat happens next is the hinge of the chapter. Rahab hides the spies under drying flax on her roof, sends the soldiers chasing shadows toward the river, and then climbs up to the two men in the dark to tell them why. Listen to what comes out of the mouth of a Canaanite woman with no standing, no covenant, no synagogue: \"I know that the LORD has given you this land... for the LORD your God is God in the heavens above and on the earth below.\"\n\nThat is not a guess. It is a creed. She has never read the Law. She has only heard the rumors - the sea that opened, the kings that fell - and from rumor she has reasoned her way to the one true conclusion. The whole city has heard the same news and chosen terror; their hearts are 'melting,' the text says twice. Rahab hears the same news and chooses faith. The difference between her and Jericho is not information. It is what she does with the fear. She turns hers into surrender."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Asked to Be on the Other Side",
+      "body": "There is a moment in chaplaincy work that older ministers talk about quietly. A man is brought into a hospital after years of running from everything decent, and somewhere in the small hours he stops a passing nurse, or a stranger, and says the thing Rahab said: I know which way this is going, and I want to be on the right side of it before it's too late.\n\nHe cannot undo the years. He cannot produce a clean record or a respectable history. All he can do is what Rahab did - tell the truth about who is really in charge, and ask, plainly, to be spared. Not because he has earned it. Because mercy is being offered and he would be a fool to let it pass.\n\nThat is the posture of this whole chapter. Rahab does not negotiate from strength; she has none. She negotiates from honesty. 'I showed you kindness; now swear you'll show kindness to me. Give me a sure sign that you will deliver us from death.' It is the prayer of the thief on the cross centuries early: remember me. And like that thief, she is heard.",
+      "connectionToTheme": "Faith, in Joshua 2, does not look like a clean life. It looks like an honest one - a person with nothing to bargain with asking to be on the side of the God who is clearly winning."
+    },
+    {
+      "type": "insight",
+      "heading": "A Sign in the Window, and a Door That Must Stay Shut",
+      "body": "The spies give Rahab terms, and the terms are strangely specific. Tie this scarlet cord in the window. Bring your father, your mother, your brothers, your whole family inside your house. And then the line that should make us sit up: 'If anyone goes out the door of your house into the street, his blood will be on his own head... But if a hand is laid on anyone with you in the house, his blood will be on our heads.'\n\nA red sign on the house. The family gathered inside. Safety strictly bounded by staying behind the marked door while judgment passes through the city outside. If that pattern sounds familiar, it should. It is the shape of Passover. In Egypt, Israel painted blood on the doorframe, stayed inside until morning, and the destroyer passed over the marked house (Exodus 12). Now, on the edge of the Promised Land, a Canaanite household is saved by exactly the same arrangement - a red mark, a sheltered house, a family that must not step outside the covering.\n\nRahab would have known nothing of Passover. The spies may not have planned the echo. But the Author of the story did. Israel was once the marked household spared in a foreign land; now Israel becomes the agent of the same mercy to a foreigner. The scarlet cord is Jericho's doorpost.",
+      "historicalContext": "Jericho sits in the Jordan Valley near one of the oldest continuously settled sites known to archaeology. Its houses, as Joshua 2:15 notes, were built into the casemate walls of the city - which is why Rahab could lower the spies straight down the outer face and why her window faced the open country. When chapter 6 records the wall falling, it also records, pointedly, that Rahab's house and family were brought out alive (Joshua 6:22-23, 25).",
+      "fascinatingFact": "Scripture follows Rahab past her rescue and refuses to drop her. She 'lived among the Israelites to this day' (Joshua 6:25). Centuries later Matthew names her in the genealogy of Jesus: 'Salmon was the father of Boaz by Rahab' (Matthew 1:5) - making the Canaanite prostitute the great-great-grandmother of King David, and an ancestor of the Messiah. Hebrews 11 lists her among the heroes of faith; James holds her up as proof that real faith acts (Hebrews 11:31; James 2:25)."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A foreign woman with no covenant and no merit is spared from a city's destruction because she trusted the God of Israel and tied a scarlet cord in her window - the agreed sign that judgment would pass over her marked house.",
+      "modernApplication": "We are tempted to believe we are too far gone, too compromised, too late to the faith to count - that mercy is for the lifelong insiders and we are the people on the wall, the wrong side of the door. Rahab is in the Bible to end that argument. The question was never whether her past disqualified her. The question was whether she would trust the God who was clearly coming, and hang the sign He gave her where it could be seen.",
+      "connectionPoint": "The thread runs in two directions at once. Backward, the scarlet cord rhymes with the Passover blood that spared Israel's firstborn (Exodus 12:13) - red on the house, the family inside, judgment passing over. Forward, it rhymes with the cross: one death, marked in blood, by which an undeserving household is delivered. Rahab does not merely picture this gospel; she is grafted into its very lineage, named four generations before David and listed in Matthew's opening genealogy of the Christ.",
+      "newTestamentEcho": "By faith the prostitute Rahab, because she welcomed the spies in peace, did not perish with those who were disobedient (Hebrews 11:31). The God who spared a Canaanite by a scarlet sign would, in the line that ran through her own house, send the Lamb whose blood marks and saves everyone who shelters under it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of your past have you decided puts you on the wrong side of the door - too compromised for the mercy God is offering?",
+      "additionalQuestions": [
+        "Rahab acted on a rumor of God before she had any proof for herself. What have you heard about God that you have not yet acted on?",
+        "The whole city heard the same news Rahab did and chose terror. What is the difference between fear that hardens and fear that surrenders?",
+        "What would it look like, this week, to hang your own 'scarlet cord' - one visible act that says you are trusting God to deliver you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent too long counting the reasons I am the wrong kind of person for Your mercy. Rahab had a worse record than mine and You wrote her into the family of Christ. So I will stop bargaining from a strength I do not have and ask You plainly, the way she did: give me a sure sign, and deliver me from death. I tie my hope where You can see it. Let the judgment that should fall pass over the house I shelter in - the house marked by the blood of Your Son. Bring my whole family inside. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have used as proof you are disqualified from God's mercy - and hand it to Him as Rahab handed over her past. Then take one concrete, visible step of trust: a conversation, a confession, a return to prayer. Tie the cord in the window.",
+      "leavingAtCross": [
+        "The belief that my history puts me permanently on the wrong side of the door",
+        "The instinct to bargain with God from a strength I do not actually have",
+        "The fear that hardens into self-protection instead of softening into surrender"
+      ],
+      "receivingFromCross": [
+        "A deliverance I did not earn, secured by a blood-marked house I only have to stay inside",
+        "A place in the family - the same family that runs from Rahab's window to the manger in Bethlehem",
+        "The freedom to act on what I have heard about God before I have all the proof I want"
+      ],
+      "content": "Today, name one thing you have used as proof you are disqualified from God's mercy - and hand it to Him as Rahab handed over her past. Then take one concrete, visible step of trust: a conversation, a confession, a return to prayer. Tie the cord in the window."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did Rahab actually confess about the LORD in Joshua 2:11, and why is it remarkable coming from her?",
+        "How does the spies' arrangement - a scarlet cord, the family gathered inside, a door that must not be opened - echo the first Passover in Exodus 12?",
+        "The whole city heard the same news Rahab heard. Why did the same report produce terror in Jericho and faith in Rahab?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one part of your past you have quietly treated as a disqualification from God. Say it out loud to one another.",
+        "Talk about the difference between fear that drives you away from God and fear that drives you toward Him - which has been truer of you lately?",
+        "Ask each other: what is one visible 'scarlet cord' step of trust you could take this week, and how will the other person check in on it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Joshua 6:25",
+          "text": "And Joshua spared Rahab the prostitute, with her father's household and all who belonged to her, because she hid the men Joshua had sent to spy out Jericho. So she has lived among the Israelites to this day."
+        },
+        {
+          "reference": "Exodus 12:13",
+          "text": "The blood on the houses where you are staying will distinguish them; when I see the blood, I will pass over you. No plague will fall on you to destroy you when I strike the land of Egypt."
+        },
+        {
+          "reference": "Matthew 1:5",
+          "text": "Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth, Obed the father of Jesse."
+        },
+        {
+          "reference": "Hebrews 11:31",
+          "text": "By faith the prostitute Rahab, because she welcomed the spies in peace, did not perish with those who were disobedient."
+        },
+        {
+          "reference": "James 2:25",
+          "text": "In the same way, was not even Rahab the prostitute justified by her actions when she welcomed the spies and sent them off on another route?"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 2 and 6:22-25",
+          "note": "Read the spy story and its payoff together. Watch Rahab move from rumor (2:10) to confession (2:11) to action (2:21), then to rescue (6:23) and a permanent home among God's people (6:25)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Rahab",
+      "title": "The Canaanite Who Believed Before She Belonged",
+      "description": "A prostitute living in the wall of Jericho on the eve of its fall. With no covenant, no Law, and nothing to bargain with but honesty, she hid Israel's spies, confessed that the LORD is God of heaven and earth, and asked to be delivered from death. She tied the scarlet cord, her household was spared when the wall came down, and she made her home among Israel. Scripture honors her three times after: in the faith roll of Hebrews 11, in James as proof that faith acts, and most stunningly in Matthew's genealogy, where she stands as an ancestor of King David and of Jesus the Messiah.",
+      "keyQuote": "I know that the LORD has given you this land... for the LORD your God is God in the heavens above and on the earth below.",
+      "lessonForUs": "If God could write a Canaanite prostitute into the bloodline of His own Son, then no past is too far gone for His mercy. What saves is not a clean record but an honest faith that hangs its hope where everyone can see it.",
+      "heading": "The Canaanite Who Believed Before She Belonged"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2041,
+  "scriptureReference_full": "Joshua 2 (esp. 2:9-13, 18, 21)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tiqvah / tiqvat chut hashani, H8615) reflects standard lexical sources; the cord/hope overlap of tiqvah is attested in the lexicon (cf. Jeremiah 29:11) and noted here without overreading the narrator's plain sense.",
+    "Christ-connection and Passover typology derived from the passage and its canonical echoes (Exodus 12:13; Joshua 6:25; Matthew 1:5; Hebrews 11:31; James 2:25)."
+  ]
 }

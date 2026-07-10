@@ -6,33 +6,178 @@
   "scriptureReference": "Joshua 3-4",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 66"
+      "type": "scripture",
+      "reference": "Joshua 3:13-17; 4:6-7, 21-23",
+      "translation": "BSB",
+      "emphasis": [
+        "stand up in a heap",
+        "stood firm on dry ground in the middle of the Jordan",
+        "What do these stones mean to you?",
+        "just as He did to the Red Sea"
+      ],
+      "hebrewOriginal": "מָה הָאֲבָנִים הָאֵלֶּה לָכֶם",
+      "passage": "\"When the feet of the priests who carry the ark of the LORD—the Lord of all the earth—touch down in the waters of the Jordan, its flowing waters will be cut off and will stand up in a heap.\" ... The priests carrying the ark of the covenant of the LORD stood firm on dry ground in the middle of the Jordan, while all Israel crossed over the dry ground, until the entire nation had crossed the Jordan. ... \"In the future, when your children ask, 'What do these stones mean to you?' you are to tell them, 'The waters of the Jordan were cut off before the ark of the covenant of the LORD.' ... 'Israel crossed the Jordan on dry ground.' For the LORD your God dried up the waters of the Jordan before you until you had crossed over, just as He did to the Red Sea, which He dried up before us until we had crossed over.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 3-4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 3-4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "גִּלְגָּל",
+      "transliteration": "Gilgal",
+      "pronunciation": "gil-GAHL",
+      "meaning": "circle of stones; a rolling, a wheel",
+      "rootMeaning": "Built on the root galal, 'to roll.' The name carries the picture of something turned over - a circle, a wheel, a stone rolled into place. It is the name of the field where the twelve river-stones are stood up, and it becomes Israel's first home on the promised side of the water.",
+      "usageNote": "Two chapters later God says of this same ground, 'Today I have rolled away the reproach of Egypt from you' - so the place was called Gilgal (Joshua 5:9), a deliberate play on galal. The stones rolled out of the riverbed and the shame rolled off the people in the same place, by the same word.",
+      "wordByWord": [
+        {
+          "word": "אֲבָנִים",
+          "transliteration": "avanim",
+          "meaning": "stones - ordinary river rock, not carved or shaped"
+        },
+        {
+          "word": "זִכָּרוֹן",
+          "transliteration": "zikkaron",
+          "meaning": "memorial, a thing that makes you remember; the same word used for the Passover (Exodus 12:14)"
+        },
+        {
+          "word": "גָּלַל",
+          "transliteration": "galal",
+          "meaning": "to roll, to roll away - the root behind the name Gilgal"
+        },
+        {
+          "word": "כָּרַת",
+          "transliteration": "karat",
+          "meaning": "to cut off - used here of the waters 'cut off,' and elsewhere of cutting a covenant"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "גָּלַל / גִּלְגָּל",
+          "reference": "The same rolling-root reappears at the empty tomb: the stone is rolled away from the door (Mark 16:4). What is sealed by water and stone, God rolls open so His people can cross from death into life."
+        }
+      ],
+      "strongsNumber": "H1537",
+      "definition": "Gilgal; a circle (of stones); from galal, to roll",
+      "usage": "The plainness matters. God does not ask for a monument of bronze or a carved pillar. He asks for twelve river-stones, the kind any child could pick up - ordinary enough that a child would have to ask what they were for. The whole point is the asking."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Stones of remembrance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the living stone (1 Pet 2:4-6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The River That Had To Be Crossed",
+      "body": "For forty years the people had been moving and never arriving. A whole generation died in the wilderness within sight of a land they were told was theirs. Now the wandering is over, and only one thing stands between Israel and the promise: the Jordan, swollen and overflowing its banks throughout the harvest season (Joshua 3:15). The river is at its worst exactly when they must cross it.\n\nNotice how God orders the crossing. The ark goes first - and the ark goes nowhere by itself. Priests carry it. Living men have to walk down to the edge of a flooding river and put their feet in before anything happens. \"As soon as the priests carrying the ark reached the Jordan and their feet touched the water's edge, the flowing water stood still\" (Joshua 3:15-16). The miracle does not clear the path so they can step out in safety. They step out, and then the path appears.\n\nAnd then the strangest detail of the whole account: the priests carry the ark down into the riverbed and stop. \"The priests carrying the ark of the covenant of the LORD stood firm on dry ground in the middle of the Jordan, while all Israel crossed over\" (Joshua 3:17). The presence of God goes down into the place of death-water and holds it back - not from the safety of the bank, but from the middle - and stays there, standing firm, until every last person has passed over. The crossing is safe because Someone is standing in the river.",
+      "keyInsight": "The water did not part so the ark could cross. The ark went down into the river and held the water back so the people could cross. God's presence does not wait on the safe shore; it stands firm in the middle of the flood until the last one is through.",
+      "content": "For forty years the people had been moving and never arriving. A whole generation died in the wilderness within sight of a land they were told was theirs. Now the wandering is over, and only one thing stands between Israel and the promise: the Jordan, swollen and overflowing its banks throughout the harvest season (Joshua 3:15). The river is at its worst exactly when they must cross it.\n\nNotice how God orders the crossing. The ark goes first - and the ark goes nowhere by itself. Priests carry it. Living men have to walk down to the edge of a flooding river and put their feet in before anything happens. \"As soon as the priests carrying the ark reached the Jordan and their feet touched the water's edge, the flowing water stood still\" (Joshua 3:15-16). The miracle does not clear the path so they can step out in safety. They step out, and then the path appears.\n\nAnd then the strangest detail of the whole account: the priests carry the ark down into the riverbed and stop. \"The priests carrying the ark of the covenant of the LORD stood firm on dry ground in the middle of the Jordan, while all Israel crossed over\" (Joshua 3:17). The presence of God goes down into the place of death-water and holds it back - not from the safety of the bank, but from the middle - and stays there, standing firm, until every last person has passed over. The crossing is safe because Someone is standing in the river."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What Are the Stones For?",
+      "body": "There is a low stone wall on the back acre of a farm I know in eastern Tennessee. It is too short to keep anything in and too crooked to mark a boundary. When the grandchildren ask what it is for, the old man tells them: their great-grandfather cleared that field by hand the spring after he came home from the war, and he stacked every stone he pulled out of the dirt right there, because he had promised God in a foxhole that if he lived he would make something grow.\n\nThe wall does nothing. It holds nothing back, fences nothing in. Its entire job is to make a child ask, so that an old man can tell.\n\nThat is exactly what God commanded at the Jordan. Twelve men carried twelve stones out of the riverbed and stood them up at Gilgal, and the only instruction attached to them was about a future conversation: \"When your children ask their fathers, 'What is the meaning of these stones?' you are to tell them, 'Israel crossed the Jordan on dry ground'\" (Joshua 4:21-22). The stones are not a trophy. They are a question waiting to be asked - a way of making sure the next generation gets told what the water did, and Who held it back.",
+      "connectionToTheme": "Memory is not automatic. God builds the asking into the landscape - plain stones a child can't help but wonder about - so the rescue gets told and not forgotten.",
+      "content": "There is a low stone wall on the back acre of a farm I know in eastern Tennessee. It is too short to keep anything in and too crooked to mark a boundary. When the grandchildren ask what it is for, the old man tells them: their great-grandfather cleared that field by hand the spring after he came home from the war, and he stacked every stone he pulled out of the dirt right there, because he had promised God in a foxhole that if he lived he would make something grow.\n\nThe wall does nothing. It holds nothing back, fences nothing in. Its entire job is to make a child ask, so that an old man can tell.\n\nThat is exactly what God commanded at the Jordan. Twelve men carried twelve stones out of the riverbed and stood them up at Gilgal, and the only instruction attached to them was about a future conversation: \"When your children ask their fathers, 'What is the meaning of these stones?' you are to tell them, 'Israel crossed the Jordan on dry ground'\" (Joshua 4:21-22). The stones are not a trophy. They are a question waiting to be asked - a way of making sure the next generation gets told what the water did, and Who held it back."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Heaps of Stones",
+      "body": "Read chapter 4 slowly and you find not one set of stones but two. Twelve are carried up out of the river and stood at Gilgal, where the people can see them (Joshua 4:8, 20). But there is another twelve: \"Joshua also set up twelve stones in the middle of the Jordan, in the place where the priests who carried the ark of the covenant stood. And the stones are there to this day\" (Joshua 4:9).\n\nOne memorial stands in the camp, in the light, where it can be visited and explained. The other stands at the bottom of the river, in the exact spot where the priests held back the flood - and then the water came roaring back over it. \"The waters of the Jordan returned to their course and overflowed all the banks as before\" (Joshua 4:18). No one would ever see those stones again.\n\nWhy mark a place no eye can reach? Because the deepest part of the rescue happens where no one is watching - down in the middle of the death-water, where the weight was actually borne. The stones we can see say a crossing happened. The stones under the water say it cost something to stand there. Salvation has a visible side we tell our children about, and a hidden side, sunk in the deep, that only God fully sees.",
+      "historicalContext": "Joshua follows the Torah as Israel's account of entering the land, and it was read by a people who already kept the Passover every spring with its own command: when your children ask what this means, you tell them the rescue story (Exodus 12:26-27). The Jordan stones and the Passover meal do the same work - they turn a one-time deliverance into a story every generation has to hear and retell.",
+      "fascinatingFact": "The crossing is dated to \"the tenth day of the first month\" (Joshua 4:19) - the very day the Passover lamb was to be selected (Exodus 12:3). Israel walks into the land on dry ground on the day their fathers were choosing the lamb in Egypt. The deliverance that began at the Red Sea is being completed, on schedule, forty years later.",
+      "content": "Read chapter 4 slowly and you find not one set of stones but two. Twelve are carried up out of the river and stood at Gilgal, where the people can see them (Joshua 4:8, 20). But there is another twelve: \"Joshua also set up twelve stones in the middle of the Jordan, in the place where the priests who carried the ark of the covenant stood. And the stones are there to this day\" (Joshua 4:9).\n\nOne memorial stands in the camp, in the light, where it can be visited and explained. The other stands at the bottom of the river, in the exact spot where the priests held back the flood - and then the water came roaring back over it. \"The waters of the Jordan returned to their course and overflowed all the banks as before\" (Joshua 4:18). No one would ever see those stones again.\n\nWhy mark a place no eye can reach? Because the deepest part of the rescue happens where no one is watching - down in the middle of the death-water, where the weight was actually borne. The stones we can see say a crossing happened. The stones under the water say it cost something to stand there. Salvation has a visible side we tell our children about, and a hidden side, sunk in the deep, that only God fully sees."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The ark - the presence of God - is carried down into the flooding Jordan and stands firm in the very middle of the river, holding back the water, until the last of the people has crossed over onto dry ground into the promised land.",
+      "modernApplication": "There is always a Jordan between you and what God has promised - a flooded thing, at its worst right when you have to cross it: a diagnosis, a grief, a decision, a death. The promise is not that the river will be drained before you reach the bank. It is that you do not cross alone, and you do not cross first. Someone has gone down into the deep ahead of you and is standing firm in the middle until you are through.",
+      "connectionPoint": "Centuries later, John the Baptist stood in this same river, and Jesus came down into its waters to be baptized (Matthew 3:13). The Jordan that Israel crossed on dry ground is the Jordan Christ stepped into - identifying Himself with a people who needed to be brought across. From there He walks toward another crossing the psalmist called a flood: 'I have drifted into deep waters, where the flood engulfs me' (Psalm 69:2).",
+      "newTestamentEcho": "What the priests did with the ark, Christ did with His body. He went down into the deep waters of death and stood firm there - 'the place where the priests stood' - so that His people could pass over on dry ground from death to life. On the night He was betrayed He left His own twelve-stone memorial: bread and a cup, with a command to keep telling the story - 'Do this in remembrance of Me' (1 Corinthians 11:24-25). The Table is the church's heap of stones, the answer we hand our children when they ask what it means."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What flooded river is standing between you and what God has promised right now - and what would it change to believe He is already standing in the middle of it?",
+      "additionalQuestions": [
+        "Where in your life is God asking you to put your feet in the water before you can see the path? What is keeping you on the bank?",
+        "What are the 'stones' in your own story - the moments you could point to and say, 'God brought me across there'? When did you last tell someone about one?",
+        "There are stones in your life no one will ever see, hidden under the water of what it cost. How does it sit with you that God sees those, and remembers?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-surrender",
+      "prayerText": "Lord of all the earth, I am standing on the bank of a river I cannot cross by myself. Thank You that You do not call me out onto water You have not already gone down into. Stand firm for me in the middle of this flood. Hold back what would drown me until I am through. And when I reach the other side, give me stones to stand up - plain reminders I can point to, and the courage to tell whoever asks what You did and what it cost You. Through Christ, who went down into the deep waters ahead of me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Set up one stone today. Write down, in a sentence or two, one specific time God carried you across something you could not cross alone - and then say it out loud to one person before the day is over. Make the rescue tellable.",
+      "leavingAtCross": [
+        "The fear that I have to drain the river myself before I can cross it",
+        "The forgetting that lets yesterday's rescue slip away unmarked and untold",
+        "The lie that I am standing on the bank alone"
+      ],
+      "receivingFromCross": [
+        "A God who goes down into the deep water first and stands firm until I am through",
+        "Dry ground under my feet in the middle of what should have drowned me",
+        "A story worth telling, and children who will ask what the stones mean"
+      ],
+      "content": "Set up one stone today. Write down, in a sentence or two, one specific time God carried you across something you could not cross alone - and then say it out loud to one person before the day is over. Make the rescue tellable."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What had to happen before the water stood still - did the river part first, or did the priests step in first? Why does the order matter?",
+        "There are two sets of twelve stones in Joshua 4. Where is each one, and what does each remember?",
+        "How does the crossing of the Jordan point both backward to the Red Sea and forward to Christ going down into the waters of death?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one 'Jordan' you are facing right now - something you cannot cross under your own power.",
+        "Share one stone from your own past: a time God brought you through. Notice whether you have ever told anyone before.",
+        "Ask each other: who in my life is watching to see whether I keep telling these stories - and have I gone quiet?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 14:21-22",
+          "text": "Then Moses stretched out his hand over the sea, and all that night the LORD drove back the sea with a strong east wind... and the Israelites went through the sea on dry ground, with walls of water on their right and on their left."
+        },
+        {
+          "reference": "Exodus 12:26-27",
+          "text": "When your children ask you, 'What does this service mean to you?' you are to reply, 'It is the Passover sacrifice to the LORD...'"
+        },
+        {
+          "reference": "Matthew 3:13",
+          "text": "At that time Jesus came from Galilee to the Jordan to be baptized by John."
+        },
+        {
+          "reference": "1 Corinthians 11:24-25",
+          "text": "...and when He had given thanks, He broke it and said, 'This is My body, which is for you; do this in remembrance of Me.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 3-5",
+          "note": "Read straight through to chapter 5:9, where God says at this same place, 'Today I have rolled away the reproach of Egypt,' and the ground is named Gilgal. Watch how crossing, stones, and the rolling-away of shame come together in one location."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joshua son of Nun",
+      "title": "The One Who Led Israel Across",
+      "description": "Moses' aide and successor, the man charged with bringing Israel into the land Moses only saw from a distance. At the Jordan, God tells him, 'Today I will begin to exalt you in the sight of all Israel, so they may know that I am with you just as I was with Moses' (Joshua 3:7) - and on that day the people revered him as they had revered Moses (Joshua 4:14). His Hebrew name, Yehoshua, means 'the LORD saves'; its shortened form is the name later given to Jesus.",
+      "keyQuote": "Consecrate yourselves, for tomorrow the LORD will do wonders among you.",
+      "lessonForUs": "Joshua's whole authority came from the fact that God was with him - not from his own strength. He led by sending the ark ahead and putting the priests' feet in the water first. The leader who lasts is the one who goes where God's presence goes, and tells the people why.",
+      "heading": "The One Who Led Israel Across"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1965,
+  "scriptureReference_full": "Joshua 3-4",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (Gilgal H1537 from the root galal, 'to roll'; the galal wordplay made explicit in Joshua 5:9; zikkaron 'memorial' as in Exodus 12:14) reflects standard lexical sources.",
+    "The dating of the crossing to the tenth day of the first month (Joshua 4:19), the day appointed for selecting the Passover lamb (Exodus 12:3), is a plain reading of the two texts together."
+  ]
 }

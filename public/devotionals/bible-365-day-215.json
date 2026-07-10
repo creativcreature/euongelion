@@ -1,38 +1,179 @@
 {
   "day": 215,
-  "title": "Song of Songs: Covenant Love — Day 5 — Resolution",
-  "teaser": "Day 215 of Bible 365 — Song 2, 6, 8",
+  "title": "Strong as death: love that holds",
+  "teaser": "On the last page of the Song, love asks to be worn like a seal — and turns out to be the one thing the grave cannot drown.",
   "framework": "Song 2, 6, 8 — Song of Songs: Covenant Love",
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 215"
+      "type": "scripture",
+      "reference": "Song of Songs 8:6-7; 2:16",
+      "translation": "BSB",
+      "emphasis": [
+        "Set me as a seal over your heart",
+        "love is as strong as death",
+        "My beloved is mine and I am his"
+      ],
+      "hebrewOriginal": "שִׂימֵנִי כַחוֹתָם עַל־לִבֶּךָ כַּחוֹתָם עַל־זְרוֹעֶךָ כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned. ... My beloved is mine and I am his; he pastures his flock among the lilies."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חוֹתָם",
+      "transliteration": "chotam",
+      "pronunciation": "kho-TAHM",
+      "meaning": "a seal, a signet, the engraved stone that marks something as belonging to you",
+      "rootMeaning": "From a root meaning to close up or seal shut. A chotam was a personal signet - often a stone in a ring or hung on a cord - pressed into wax or clay to sign a document. It carried your name and your authority. It said: this is mine, and I stand behind it.",
+      "usageNote": "When the bride says \"Set me as a seal over your heart, as a seal upon your arm,\" she is not asking for jewelry. A seal was never decoration; it was identity. She wants to be carried where a man kept what mattered most - close to the chest, worn on the working arm - and marked as his beyond question.",
+      "wordByWord": [
+        {
+          "word": "שִׂימֵנִי",
+          "transliteration": "simeni",
+          "meaning": "set me, place me, fix me"
+        },
+        {
+          "word": "כַחוֹתָם",
+          "transliteration": "kachotam",
+          "meaning": "as a seal, like a signet"
+        },
+        {
+          "word": "עַל־לִבֶּךָ",
+          "transliteration": "al-libekha",
+          "meaning": "over your heart"
+        },
+        {
+          "word": "עַזָּה כַמָּוֶת",
+          "transliteration": "azzah kammavet",
+          "meaning": "strong as death, fierce as the grave"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חָתַם",
+          "reference": "The same root names the sealing of a covenant document. To be sealed is to be made legally, permanently someone's - which is why the bride reaches for this word and not a softer one."
+        }
+      ],
+      "strongsNumber": "H2368",
+      "definition": "a signet, seal; the engraved device used to authenticate and to mark ownership",
+      "usage": "A signet could not be lent out casually - to hand someone your seal was to hand them your name. The bride asks to become that for her beloved: the mark he never takes off, the authority he carries on his own body."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Where the Song Comes to Rest",
+      "body": "The Song of Songs has been, for seven chapters, a circling conversation - two voices finding each other, losing each other in the streets at night, calling across vineyards and hills. It is the one book in the Bible that is, on its plain surface, simply about the love between a man and a woman. No battle, no king's downfall, no prophet's warning. Just longing, delight, and the ache of wanting to be near.\n\nNow, at the end, the circling stops and the bride says the one thing the whole book has been building toward. She does not say \"I feel close to you\" or \"I enjoy you.\" She says: \"Set me as a seal over your heart, as a seal upon your arm.\" Make me yours in a way that does not come off. And then she gives the reason, and the reason is enormous: \"For love is as strong as death.\"\n\nThat is a strange sentence to land on in a love poem. Death is the one force everyone in the ancient world agreed was undefeated. It took kings and beggars alike; it could not be bribed or outrun. To say love is its equal - azzah kammavet, fierce as the grave - is to say that this thing between two people is not a passing warmth. It is a power on the scale of the only power no one escapes. The Song has been playful, even teasing, for chapters. Here it turns and looks death in the face and does not blink."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Ring She Wouldn't Take Off",
+      "body": "An older woman I knew kept wearing her wedding ring for eleven years after her husband died. It had worn thin at the bottom from decades of dishes and garden soil, and her daughter once gently suggested she might have it resized, or set aside, or remade into something new.\n\nShe said no. Not because she was stuck, and not because she could not imagine a life after him. She said the ring was not a feeling she was preserving. It was a fact she was still wearing. \"We promised,\" she said. \"The promise didn't die when he did.\"\n\nThat is closer to what the bride means than the soft thing we usually call love. She is not asking to be a pleasant memory. She is asking to be a seal - the mark that stays on the body, the claim that outlasts the moment that made it. The woman with the thin gold ring understood the Song without ever quoting it: love that is real wants to be permanent, and permanence costs something, and she was glad to pay it.",
+      "connectionToTheme": "The bride asks not for a feeling but for a seal - a permanent mark of belonging - because covenant love is something you wear, not merely something you feel.",
+      "content": "An older woman I knew kept wearing her wedding ring for eleven years after her husband died. It had worn thin at the bottom from decades of dishes and garden soil, and her daughter once gently suggested she might have it resized, or set aside, or remade into something new.\n\nShe said no. Not because she was stuck, and not because she could not imagine a life after him. She said the ring was not a feeling she was preserving. It was a fact she was still wearing. \"We promised,\" she said. \"The promise didn't die when he did.\"\n\nThat is closer to what the bride means than the soft thing we usually call love. She is not asking to be a pleasant memory. She is asking to be a seal - the mark that stays on the body, the claim that outlasts the moment that made it. The woman with the thin gold ring understood the Song without ever quoting it: love that is real wants to be permanent, and permanence costs something, and she was glad to pay it."
+    },
+    {
+      "type": "insight",
+      "heading": "Mighty Waters Cannot Quench It",
+      "body": "Read the bride's claim slowly, because she stacks the strongest images the ancient mind had for things that cannot be stopped. Love is as strong as death. Its jealousy is as unrelenting as Sheol, the grave that never gives back what it takes. Its sparks are fiery flames, the fiercest blaze of all. And then the turn: mighty waters cannot quench love; rivers cannot sweep it away.\n\nIn the world of the Song, the deep waters were chaos itself - the flood, the sea, the force that drowns and erases. The bride says that even that cannot put this fire out. Death cannot outmuscle it; the chaos-waters cannot extinguish it; and no amount of money can buy it - \"if a man were to give all the wealth of his house for love, his offer would be utterly scorned.\" Love is not a commodity. It is not strong because the lovers are strong. It is strong because it is the kind of thing it is.\n\nThis is the Song's last and largest claim, and it is the reason the book ends here and not on a softer note. Covenant love is not the most fragile thing in the world, easily lost. It is the most durable - stronger than the grave, deeper than the flood, beyond the reach of every price.",
+      "historicalContext": "The Song of Songs was sung at weddings and treasured in Israel's wisdom tradition. By the time it was gathered into the canon, Israel already knew a God who described Himself as a husband to His people - jealous for them, refusing to let them go (Hosea 2:19-20). A poem about a seal, a fire the floods cannot drown, and a love fierce as the grave did not read as merely private. It read as a window onto how God Himself loves.",
+      "fascinatingFact": "Song of Songs 8:6 contains one of only two places in the entire book where the name of God may appear - in the phrase rendered \"the fiercest blaze of all,\" the Hebrew shalhevetyah ends in -yah, a possible shortened form of the divine name. Scholars debate it, but if it is there, the single flash of God's name in the whole Song lands on exactly this line: the flame that no water can drown.",
+      "content": "Read the bride's claim slowly, because she stacks the strongest images the ancient mind had for things that cannot be stopped. Love is as strong as death. Its jealousy is as unrelenting as Sheol, the grave that never gives back what it takes. Its sparks are fiery flames, the fiercest blaze of all. And then the turn: mighty waters cannot quench love; rivers cannot sweep it away.\n\nIn the world of the Song, the deep waters were chaos itself - the flood, the sea, the force that drowns and erases. The bride says that even that cannot put this fire out. Death cannot outmuscle it; the chaos-waters cannot extinguish it; and no amount of money can buy it - \"if a man were to give all the wealth of his house for love, his offer would be utterly scorned.\" Love is not a commodity. It is not strong because the lovers are strong. It is strong because it is the kind of thing it is.\n\nThis is the Song's last and largest claim, and it is the reason the book ends here and not on a softer note. Covenant love is not the most fragile thing in the world, easily lost. It is the most durable - stronger than the grave, deeper than the flood, beyond the reach of every price."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The bride asks to be set as a seal on her beloved's heart and arm, because love is as strong as death and no flood can drown it - a permanent claim, not a passing feeling.",
+      "modernApplication": "We live in an age of love that keeps its exits open - the relationship you can leave when the feeling fades, the commitment with a clause. The Song speaks against the grain: love worth having is love that wants to be sealed, that says \"mine\" out loud and means it past the point of easy escape. That is frightening, because permanence can be hurt. It is also the only kind of love that can actually hold a human being.",
+      "connectionPoint": "Across the whole of Scripture, this strong-as-death love keeps turning out to be the way God loves His people. He calls Israel His bride (Isaiah 62:5), grieves like a wounded husband when she strays (Hosea 11), and promises a wedding at the end of all things (Revelation 19:7). The Song gives us the human picture - a seal, a fire, a claim the grave cannot break - and the rest of the Bible tells us Whose love that picture was always describing.",
+      "newTestamentEcho": "Paul takes the language of two becoming one flesh and says plainly what it was always pointing toward: \"This mystery is profound, but I am speaking about Christ and the church\" (Ephesians 5:32). The bride asked for a love as strong as death. In Christ, the Bridegroom answered by loving His church and giving Himself up for her (Ephesians 5:25) - and then proving His love stronger than death by walking out of the grave."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been settling for a love that keeps its exits open, when what your heart actually longs for is to be sealed - to belong to someone, and to God, past the point of easy escape?",
+      "additionalQuestions": [
+        "The bride says \"My beloved is mine and I am his.\" Can you say that about your relationship with God - both halves of it - and which half is harder for you to believe?",
+        "What \"mighty waters\" have tried to drown a love in your life - grief, distance, failure, time? What did you learn about whether that love could be quenched?",
+        "If love is as strong as death, what does that mean for the people you have lost, and for the One who says His love for you outlasts the grave?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-gratitude",
+      "prayerText": "Lord, I have been afraid of love that asks for everything, because everything is exactly what I am afraid to lose. Thank You that Your love came first, and came strong - as strong as death, stronger, because You broke death open. Set me as a seal over Your heart. Let me belong to You the way the bride longed to belong: marked, claimed, carried where You keep what You will not let go. Teach me to love like that - past the easy exits, through the deep waters, all the way home. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is the last day of the Song. Don't rush past it. Sit for five minutes with one line - \"love is as strong as death\" or \"my beloved is mine and I am his\" - and ask the Lord to make it true of how you love Him and one other person. Then do one small, concrete thing today that seals a love instead of keeping its exit open: a word said out loud, a promise kept, a return to someone you drifted from.",
+      "leavingAtCross": [
+        "The fear that to love permanently is to set myself up to be destroyed",
+        "The habit of keeping an exit open in every love so nothing can fully claim me",
+        "The lie that the love I have lost was swept away for good"
+      ],
+      "receivingFromCross": [
+        "A Bridegroom whose love for me is stronger than the grave that could not hold Him",
+        "The freedom to belong - to say \"I am His\" without flinching",
+        "The promise that no flood, no failure, and no death can quench the love that has sealed me"
+      ],
+      "content": "This is the last day of the Song. Don't rush past it. Sit for five minutes with one line - \"love is as strong as death\" or \"my beloved is mine and I am his\" - and ask the Lord to make it true of how you love Him and one other person. Then do one small, concrete thing today that seals a love instead of keeping its exit open: a word said out loud, a promise kept, a return to someone you drifted from."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is a chotam (seal), and why does it matter that the bride asks to be one rather than simply asking to be loved?",
+        "The bride compares love to death, the grave, fire, and mighty waters. What is she claiming about love by setting it against those four things?",
+        "How does Paul's line in Ephesians 5:32 - \"I am speaking about Christ and the church\" - reframe what the Song's love poem was pointing toward all along?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where you have been keeping the exit open. Talk honestly about what it would cost, and give, to seal it instead.",
+        "Where do you find it hardest to believe that God's love for you is 'as strong as death' - that no failure of yours can quench it?",
+        "Ask each other: what 'mighty waters' are testing a love in your life right now, and how can we pray it through rather than let it be swept away?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Song of Songs 2:10-12",
+          "text": "My beloved calls to me, \"Arise, my darling. Come away with me, my beautiful one. For now the winter is past; the rain is over and gone. The flowers have appeared in the countryside; the season of singing has come...\""
+        },
+        {
+          "reference": "Hosea 2:19-20",
+          "text": "So I will betroth you to Me forever; I will betroth you in righteousness and justice, in loving devotion and compassion. And I will betroth you in faithfulness, and you will know the LORD."
+        },
+        {
+          "reference": "Ephesians 5:25, 32",
+          "text": "Husbands, love your wives, just as Christ loved the church and gave Himself up for her... This mystery is profound, but I am speaking about Christ and the church."
+        },
+        {
+          "reference": "Revelation 19:7",
+          "text": "Let us rejoice and be glad and give Him the glory. For the marriage of the Lamb has come, and His bride has made herself ready."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs 8",
+          "note": "Read the final chapter aloud, slowly. Notice how the playful longing of chapter 2 hardens, in the best sense, into the unbreakable claim of chapter 8 - the seal, the fire, the waters that cannot quench."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Bride (the Shulammite)",
+      "title": "The Woman Who Asked to Be Sealed",
+      "description": "The central voice of the Song of Songs - a woman in love, by turns delighted, anxious, searching, and finally sure. She speaks more than any other figure in the book, and the Song ends on her words, not her beloved's. Read on its plain surface, she is a real woman naming what human love is for. Read with the whole canon, she becomes the picture of every soul that has ever longed to belong wholly to God and to be wholly wanted in return.",
+      "keyQuote": "My beloved is mine and I am his.",
+      "lessonForUs": "She does not finally ask to be admired or pursued or enjoyed. She asks to be sealed - to belong. That instinct in her is the same ache in us, and it finds its rest only in the Bridegroom whose love for us was indeed as strong as death, and proved stronger.",
+      "heading": "The Woman Who Asked to Be Sealed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1682,
+  "scriptureReference_full": "Song of Songs 2, 6, 8 (esp. 8:6-7; 2:10-13, 16; 6:3)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chotam, H2368; azzah kammavet, 'strong as death') reflects standard lexical sources. The possible -yah ending of shalhevetyah in 8:6 ('the fiercest blaze of all') as a shortened divine name is noted but debated among scholars."
+  ]
 }

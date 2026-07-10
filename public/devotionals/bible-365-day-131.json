@@ -1,38 +1,182 @@
 {
   "day": 131,
   "title": "Northern Prophets — Day 5 — Resolution",
-  "teaser": "Day 131 of Bible 365 — Amos, Hosea, Micah",
+  "teaser": "Three angry prophets reach the same verdict — and then each one breaks. The God who hates their worship cannot give them up.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
   "scriptureReference": "Amos, Hosea, Micah",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 131"
+      "type": "scripture",
+      "reference": "Micah 6:8",
+      "translation": "BSB",
+      "emphasis": [
+        "act justly",
+        "love mercy",
+        "walk humbly with your God"
+      ],
+      "hebrewOriginal": "הִגִּיד לְךָ אָדָם מַה־טּוֹב וּמָה־יְהוָה דּוֹרֵשׁ מִמְּךָ כִּי אִם־עֲשׂוֹת מִשְׁפָּט וְאַהֲבַת חֶסֶד וְהַצְנֵעַ לֶכֶת עִם־אֱלֹהֶיךָ",
+      "passage": "He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "steadfast love, loyal kindness, covenant mercy",
+      "rootMeaning": "Not a soft feeling but a fierce, committed loyalty - the love that keeps its promise to someone who has no claim left on you. The kind of devotion that should have ended, and didn't.",
+      "usageNote": "Micah 6:8 says God requires us to love chesed - not merely to do it. The same word names what God Himself does in Micah 7:18, where He 'delights in loving devotion' (chesed). We are asked to love the very thing that is keeping us alive.",
+      "wordByWord": [
+        {
+          "word": "עֲשׂוֹת מִשְׁפָּט",
+          "transliteration": "asot mishpat",
+          "meaning": "to do justice - to make things right for the wronged, not just to avoid wrong"
+        },
+        {
+          "word": "אַהֲבַת חֶסֶד",
+          "transliteration": "ahavat chesed",
+          "meaning": "to love mercy - to be in love with loyal, undeserved kindness"
+        },
+        {
+          "word": "הַצְנֵעַ לֶכֶת",
+          "transliteration": "hatzne'a lekhet",
+          "meaning": "to walk humbly, to walk modestly - literally, to make walking small"
+        },
+        {
+          "word": "עִם־אֱלֹהֶיךָ",
+          "transliteration": "im-Eloheikha",
+          "meaning": "with your God - the requirement ends not in a rule but in a companion"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֶסֶד / Hosea 6:6",
+          "reference": "Hosea uses chesed when he says God desires 'mercy, not sacrifice.' Centuries later Jesus quotes that line twice (Matthew 9:13; 12:7) and aims it at the religious. The word the prophets pleaded for is the word Christ defends."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "kindness, loyal love, covenant faithfulness, mercy",
+      "usage": "Chesed is the load-bearing word of the Hebrew prophets. When everything else collapses - the temple, the throne, the land - chesed is the thread God refuses to cut."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Prophets, One Verdict, One Surprise",
+      "body": "We have spent the week with three men who would not be quiet. Amos, a shepherd from the south sent north to the rich. Hosea, told to marry a wife who would break his heart so he would feel what God felt. Micah, the country prophet from Moresheth who saw both Samaria and Jerusalem on the same chopping block. Different lives, one message - and by the fifth day the message has become unmistakable.\n\nAll three say the same thing about religion that has gone hollow. Amos hears God say, \"I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies\" (Amos 5:21). Hosea hears, \"I desire mercy, not sacrifice\" (Hosea 6:6). Micah stages a courtroom where a desperate worshiper offers more and more - rams, rivers of oil, even his firstborn - and God answers, almost wearily, that this was never what He wanted. He has already shown them what is good: do justice, love mercy, walk humbly. The crowded altar was a way of not having to do any of it.\n\nThat is the verdict. It is severe and it is fair, and if the three prophets stopped there we would close the book convicted and crushed. But none of them stops there. Each one, having brought the full weight of judgment down, suddenly cannot keep going - and breaks into a promise so tender it is almost embarrassing to overhear.",
+      "keyInsight": "The prophets' indictment is real and earned. What no reader expects is that the same God who hates the empty worship cannot bring Himself to abandon the worshipers.",
+      "content": "We have spent the week with three men who would not be quiet. Amos, a shepherd from the south sent north to the rich. Hosea, told to marry a wife who would break his heart so he would feel what God felt. Micah, the country prophet from Moresheth who saw both Samaria and Jerusalem on the same chopping block. Different lives, one message - and by the fifth day the message has become unmistakable.\n\nAll three say the same thing about religion that has gone hollow. Amos hears God say, \"I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies\" (Amos 5:21). Hosea hears, \"I desire mercy, not sacrifice\" (Hosea 6:6). Micah stages a courtroom where a desperate worshiper offers more and more - rams, rivers of oil, even his firstborn - and God answers, almost wearily, that this was never what He wanted. He has already shown them what is good: do justice, love mercy, walk humbly. The crowded altar was a way of not having to do any of it.\n\nThat is the verdict. It is severe and it is fair, and if the three prophets stopped there we would close the book convicted and crushed. But none of them stops there. Each one, having brought the full weight of judgment down, suddenly cannot keep going - and breaks into a promise so tender it is almost embarrassing to overhear."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter He Couldn't Finish",
+      "body": "A man I know spent a week writing a letter to his grown son, who had emptied the family account and disappeared for two years. He told me he wrote it three times. The first draft was all the facts - the dates, the amounts, the lies. Every line was true and every line was deserved.\n\nHe got two pages in and stopped. He started again, harder this time, because the boy needed to hear it straight. He got further. And then, he said, he wrote the sentence 'You are no longer' - and could not write the next word. He sat with the pen for an hour. What he finally mailed began with the facts and ended, against everything he had meant to say, with 'Come home. The room is the way you left it.'\n\nThat is the shape of these three prophet books. The indictment is complete; the case is airtight. And then God reaches the sentence where the verdict should land, and something in Him turns. Hosea hears it as a question God asks Himself out loud: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!' (Hosea 11:8).",
+      "connectionToTheme": "The prophets are not soft on sin - they are merciless about it. The shock is that the God who names the sin in full is the same God who cannot finish the sentence that ends the relationship.",
+      "content": "A man I know spent a week writing a letter to his grown son, who had emptied the family account and disappeared for two years. He told me he wrote it three times. The first draft was all the facts - the dates, the amounts, the lies. Every line was true and every line was deserved.\n\nHe got two pages in and stopped. He started again, harder this time, because the boy needed to hear it straight. He got further. And then, he said, he wrote the sentence 'You are no longer' - and could not write the next word. He sat with the pen for an hour. What he finally mailed began with the facts and ended, against everything he had meant to say, with 'Come home. The room is the way you left it.'\n\nThat is the shape of these three prophet books. The indictment is complete; the case is airtight. And then God reaches the sentence where the verdict should land, and something in Him turns. Hosea hears it as a question God asks Himself out loud: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!' (Hosea 11:8)."
+    },
+    {
+      "type": "insight",
+      "heading": "Every Thunderclap Breaks Into a Promise",
+      "body": "Watch the turn happen three times, in three books, and you stop calling it a coincidence and start calling it the pattern of God.\n\nHosea brings Israel to the edge of being unmade - Admah and Zeboiim, the cities wiped out beside Sodom - and then God says, 'I will not execute the full fury of My anger... For I am God and not man - the Holy One among you - and I will not come in wrath' (Hosea 11:9). Here is the strangest line in the prophets: God's mercy is grounded not in His being soft, but in His being holy. He will not destroy because He is not a man whose patience runs out. His holiness is the reason the wrath stops.\n\nMicah, having torn down the empty altar, ends his book on his knees: 'Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance?... You will cast out all our sins into the depths of the sea' (Micah 7:18-19). Not filed away. Not suspended. Drowned.\n\nAmos, the harshest of the three, the one who heard God say He hated the feasts, closes with a vineyard so abundant the plowman cannot keep up with the reaper, and a ruin rebuilt: 'In that day I will restore the fallen tent of David. I will repair its gaps, restore its ruins' (Amos 9:11). Three prophets. Three thunderclaps. Three promises that the storm was never the last word.",
+      "historicalContext": "Amos, Hosea, and Micah all prophesied in the eighth century BC, as the northern kingdom of Israel drifted toward the Assyrian conquest of 722 BC. They watched a real nation die. Yet the closing oracles of mercy were preserved, copied, and carried into exile - because Israel learned that the God who let the kingdom fall had refused, in the same breath, to let the people go.",
+      "fascinatingFact": "Amos 9:11 - the rebuilt 'fallen tent of David' - is the verse James stands up and quotes at the Jerusalem Council in Acts 15:16-17, to explain why Gentiles are streaming into the church. The early Christians read Amos's last promise as fulfilled in the risen Jesus, the heir of David, gathering 'all the nations that bear My name.' The vineyard Amos saw was the church.",
+      "content": "Watch the turn happen three times, in three books, and you stop calling it a coincidence and start calling it the pattern of God.\n\nHosea brings Israel to the edge of being unmade - Admah and Zeboiim, the cities wiped out beside Sodom - and then God says, 'I will not execute the full fury of My anger... For I am God and not man - the Holy One among you - and I will not come in wrath' (Hosea 11:9). Here is the strangest line in the prophets: God's mercy is grounded not in His being soft, but in His being holy. He will not destroy because He is not a man whose patience runs out. His holiness is the reason the wrath stops.\n\nMicah, having torn down the empty altar, ends his book on his knees: 'Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance?... You will cast out all our sins into the depths of the sea' (Micah 7:18-19). Not filed away. Not suspended. Drowned.\n\nAmos, the harshest of the three, the one who heard God say He hated the feasts, closes with a vineyard so abundant the plowman cannot keep up with the reaper, and a ruin rebuilt: 'In that day I will restore the fallen tent of David. I will repair its gaps, restore its ruins' (Amos 9:11). Three prophets. Three thunderclaps. Three promises that the storm was never the last word."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Micah asks the question that haunts all three books: how can a holy God satisfy His own justice and still keep His chesed - still love and not let go? The prophets demand justice, mercy, and a humble walk, and no one in Israel managed all three at once.",
+      "modernApplication": "We are still trying to buy our way out of the third requirement with the first two. We will give money, hours, even sacrifice - rams and rivers of oil - if it lets us skip the humble walk, the daily, unglamorous nearness to God that no offering can replace. Micah 6:8 quietly refuses the trade. God does not want our largest gift. He wants us walking beside Him.",
+      "connectionPoint": "Micah 6:8 names three things God requires: do justice, love mercy, walk humbly with God. Hold them up against any human life and they pull apart - the just person grows hard, the merciful person grows soft, the humble person hides. Only one figure in all of Scripture does all three at full strength at once, and never once trades one for another.",
+      "newTestamentEcho": "What three prophets could only demand and promise, Jesus came and was. He did perfect justice - 'let justice roll on like a river,' Amos cried (Amos 5:24), and Christ turned over the tables and stood with the poor. He loved mercy - twice He quoted Hosea, 'I desire mercy, not sacrifice' (Matthew 9:13; 12:7), and ate with the people the religious threw away. And He walked humbly with God to the point of a cross. The justice Micah required and the chesed Micah pleaded for met in one man: the Holy One who, exactly as Hosea said, came among us not as a man whose patience fails (Hosea 11:9) - and then went further than the prophets dared, casting our sins not merely into the sea but onto Himself."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of Micah's three requirements do you skip by overdoing the other two - and what 'rams and rivers of oil' do you offer God so you won't have to simply walk with Him?",
+      "additionalQuestions": [
+        "Read Hosea 11:8 slowly: 'How could I give you up?' Do you believe God says that over you, or do you assume He has already finished the sentence?",
+        "Micah says God 'casts our sins into the depths of the sea' (7:19). Is there a sin you keep diving back down to retrieve? What would it mean to leave it drowned?",
+        "Amos saw a ruin rebuilt and a vineyard overflowing. Where in your life have you given up on restoration that God may not have given up on?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy One among us, You have shown me what is good, and I have spent my strength avoiding it. I have brought You everything except a humble walk. Forgive the worship I used as a way of not loving mercy. Thank You that You are God and not man, that Your anger does not outlast Your chesed, that You could not finish the sentence that would have ended me. In Jesus, the justice and the mercy I could never hold together became one face. Cast my sins into the depths of the sea, and teach me to walk - quietly, daily, beside You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, pick the one of Micah's three you most avoid - justice, mercy, or the humble walk - and do a single small, concrete thing in that direction with no audience and no offering attached. Walk with God in the part you keep trying to buy your way out of.",
+      "leavingAtCross": [
+        "The crowded altar - the religious activity I use to avoid actually doing justice and loving mercy",
+        "The fear that God has already finished the sentence on me",
+        "The sins I keep retrieving from the sea God threw them into"
+      ],
+      "receivingFromCross": [
+        "A God whose mercy is grounded in His holiness, not His weakness - He will not come in wrath",
+        "The justice, mercy, and humble walk I could never hold together, held perfectly for me in Christ",
+        "A rebuilt ruin and an overflowing vineyard - the promise that restoration was always God's last word"
+      ],
+      "content": "This week, pick the one of Micah's three you most avoid - justice, mercy, or the humble walk - and do a single small, concrete thing in that direction with no audience and no offering attached. Walk with God in the part you keep trying to buy your way out of."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What single message did Amos, Hosea, and Micah all preach about religion that has gone hollow - and what does God say He actually wants instead (Amos 5:21; Hosea 6:6; Micah 6:8)?",
+        "In Hosea 11:9, God gives a surprising reason for stopping His wrath: 'For I am God and not man.' How does His holiness become the ground of His mercy rather than the obstacle to it?",
+        "How do the three things Micah 6:8 requires - justice, mercy, a humble walk - find their fulfillment in the one life of Jesus?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name the requirement of Micah 6:8 you find hardest, and one offering you tend to substitute for it.",
+        "Talk honestly about whether you believe God says 'How could I give you up?' over you - or whether you live as if the sentence is already finished.",
+        "Ask each other: what restoration in your life have you written off that God's pattern in these prophets suggests He has not?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 11:8-9",
+          "text": "How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred! I will not execute the full fury of My anger... For I am God and not man - the Holy One among you - and I will not come in wrath."
+        },
+        {
+          "reference": "Micah 7:18-19",
+          "text": "Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance - who does not retain His anger forever, because He delights in loving devotion? He will again have compassion on us; He will vanquish our iniquities. You will cast out all our sins into the depths of the sea."
+        },
+        {
+          "reference": "Amos 9:11",
+          "text": "In that day I will restore the fallen tent of David. I will repair its gaps, restore its ruins, and rebuild it as in the days of old."
+        },
+        {
+          "reference": "Acts 15:16-17",
+          "text": "After this I will return and rebuild the fallen tent of David. Its ruins I will rebuild, and I will restore it, so that the remnant of men may seek the Lord, and all the Gentiles who are called by My name."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hosea 11, Micah 6-7, Amos 9",
+          "note": "Read the closing chapters of all three prophets in one sitting, marking where the indictment ends and the promise begins. Notice that the turn always comes after the verdict, never instead of it."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Micah of Moresheth",
+      "title": "The Country Prophet Who Reduced Religion to Three Words",
+      "description": "A prophet from the rural town of Moresheth in Judah, contemporary with Isaiah, who prophesied during the reigns of Jotham, Ahaz, and Hezekiah as the northern kingdom collapsed (Micah 1:1). He saw judgment fall on both Samaria and Jerusalem, yet his book ends not in ruin but in wonder - 'Who is a God like You?' - the question that may be hidden inside his own name, which means 'Who is like the LORD?'",
+      "keyQuote": "He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?",
+      "lessonForUs": "Micah stripped away the rams and the rivers of oil and left three plain things no offering can replace. We still try to swap the humble walk for a bigger gift. Micah, and the Christ who fulfilled him, quietly hand the gift back and ask us to walk.",
+      "heading": "The Country Prophet Who Reduced Religion to Three Words"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2306,
+  "scriptureReference_full": "Amos 5:21,24; 9:11-13 · Hosea 6:6; 11:8-9 · Micah 6:6-8; 7:18-19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed, H2617; mishpat) reflects standard lexical sources.",
+    "The reading of Amos 9:11 as fulfilled in Christ follows James's citation at the Jerusalem Council (Acts 15:16-17); Jesus' twofold quotation of Hosea 6:6 is recorded in Matthew 9:13 and 12:7."
+  ]
 }

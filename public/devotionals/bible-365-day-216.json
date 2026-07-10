@@ -1,38 +1,182 @@
 {
   "day": 216,
-  "title": "Song of Songs: Covenant Love — Day 6 — Deeper Dive",
-  "teaser": "Day 216 of Bible 365 — Song 2, 6, 8",
+  "title": "Love as strong as death",
+  "teaser": "The Song's lovers beg to be sealed against every flood that would sweep love away. At the empty tomb, the Bridegroom proves His love is the one death could not quench.",
   "framework": "Song 2, 6, 8 — Song of Songs: Covenant Love",
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 216"
+      "type": "scripture",
+      "reference": "Song of Songs 2:10-13; 6:3; 8:6-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Arise, come away",
+        "I belong to my beloved",
+        "love is as strong as death",
+        "Mighty waters cannot quench love"
+      ],
+      "hebrewOriginal": "כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "My beloved calls to me, “Arise, my darling. Come away with me, my beautiful one. For now the winter is past; the rain is over and gone. The flowers have appeared in the countryside; the season of singing has come, and the cooing of turtledoves is heard in our land. The fig tree ripens its figs; the blossoming vines spread their fragrance. Arise, come away, my darling; come away with me, my beautiful one.” ... I belong to my beloved and he belongs to me; he pastures his flock among the lilies. ... Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עַזָּה כַמָּוֶת אַהֲבָה",
+      "transliteration": "azzah khammavet ahavah",
+      "pronunciation": "ah-ZAH kha-MA-vet a-ha-VAH",
+      "meaning": "love is fierce, strong, unyielding — as death itself",
+      "rootMeaning": "Ahavah is the plain word for love, the love between friends, parents, spouses, and between God and His people. Az means strong, fierce, hard to overpower — the same root used for a fortified city or a defiant force. The Song does not say love is sweet as honey or soft as a flower. It says love is az, as strong as death: the one power in human experience nothing has ever talked its way out of.",
+      "usageNote": "The comparison is deliberate and shocking. Death is the great undefeated fact of the ancient world. The poet reaches for the only thing that loses to nothing, and says: love is its equal. The next line escalates - jealousy (qin'ah, a guarding zeal, not pettiness) is as unrelenting as Sheol, the grave that never gives back what it takes.",
+      "wordByWord": [
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "for, because - giving the reason for the seal"
+        },
+        {
+          "word": "עַזָּה",
+          "transliteration": "azzah",
+          "meaning": "strong, fierce, mighty, unyielding"
+        },
+        {
+          "word": "כַמָּוֶת",
+          "transliteration": "khammavet",
+          "meaning": "as death, like death itself"
+        },
+        {
+          "word": "אַהֲבָה",
+          "transliteration": "ahavah",
+          "meaning": "love"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חוֹתָם",
+          "reference": "chotam, the seal of 8:6 - a signet ring or stamp pressed into wax or clay to mark something as belonging, binding, and authorized. To ask to be set as a seal is to ask to be made the lover's own mark, carried where it cannot fall off."
+        }
+      ],
+      "strongsNumber": "H5794",
+      "definition": "az / azzah: strong, fierce, mighty, hard to overcome",
+      "usage": "The flame imagery that follows, shalhevetyah, is the only place in Scripture the divine name appears woven into a word in the Song - literally a flame of Yah, suggesting this fierce love burns with a fire that is more than human."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Love Poem That Refused to Be Tamed",
+      "body": "The Song of Songs almost did not make it into the Bible. It names no commandment, never says the word God outright, and reads like exactly what it is: a love poem, full of vineyards and spices and two people who cannot stop describing each other. Ancient readers argued about whether something this earthy belonged among the sacred scrolls. The rabbi Akiva ended the argument with a line that has held for two thousand years - that all the writings are holy, but the Song of Songs is the holy of holies.\n\nHe was not embarrassed by the love poem. He saw what it was carrying. Across these eight chapters the man and the woman circle each other through longing, absence, searching, and reunion. In chapter 2 he stands at the wall and calls her out into the spring: the winter is over, the flowers are up, arise and come away. In chapter 6 the chorus has lost track of him and she answers with the line the whole Song turns on - I belong to my beloved and he belongs to me. Mutual, total, unembarrassed belonging.\n\nThen in chapter 8 the woman says the boldest thing in the book. She asks to be made a seal over his heart and on his arm - a signet pressed permanently into the one she loves - and she gives her reason. Love, she says, is as strong as death. This is not a greeting-card sentiment. It is a claim made with the one comparison no ancient hearer could shrug off.",
+      "keyInsight": "The Song was received as the holiest of the holy writings not in spite of being a love poem but because of it - the love between two people is the nearest human picture of the love God has for His own.",
+      "content": "The Song of Songs almost did not make it into the Bible. It names no commandment, never says the word God outright, and reads like exactly what it is: a love poem, full of vineyards and spices and two people who cannot stop describing each other. Ancient readers argued about whether something this earthy belonged among the sacred scrolls. The rabbi Akiva ended the argument with a line that has held for two thousand years - that all the writings are holy, but the Song of Songs is the holy of holies.\n\nHe was not embarrassed by the love poem. He saw what it was carrying. Across these eight chapters the man and the woman circle each other through longing, absence, searching, and reunion. In chapter 2 he stands at the wall and calls her out into the spring: the winter is over, the flowers are up, arise and come away. In chapter 6 the chorus has lost track of him and she answers with the line the whole Song turns on - I belong to my beloved and he belongs to me. Mutual, total, unembarrassed belonging.\n\nThen in chapter 8 the woman says the boldest thing in the book. She asks to be made a seal over his heart and on his arm - a signet pressed permanently into the one she loves - and she gives her reason. Love, she says, is as strong as death. This is not a greeting-card sentiment. It is a claim made with the one comparison no ancient hearer could shrug off."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Floodwater Could Not Carry",
+      "body": "A friend of mine lost her husband of fifty-one years in the spring. For weeks the grief came at her like weather - waves with no warning, in the cereal aisle, at a stoplight, halfway through a sentence about something else entirely. She told me she kept waiting for the love to drain out with him, the way a tub empties when you pull the plug. She expected the feeling to recede now that he was gone.\n\nIt did not. If anything it stood firmer. \"I keep thinking it should be over,\" she said, \"and it just keeps not being over.\" She still set two cups out some mornings. She still narrated her day to him in the car. The death that took the man could not take the love that had been built on him.\n\nThat is exactly what the Song claims, centuries before either of us was born. Mighty waters cannot quench love; rivers cannot sweep it away. My friend was standing in the floodwater and reporting back: the water is everywhere, and the love is still here. It is not that grief is small. It is that love turned out to be the larger thing.",
+      "connectionToTheme": "The Song's claim that love is stronger than death is not abstract poetry; it is what the bereaved discover when the floodwater of grief arrives and the love refuses to be swept off.",
+      "content": "A friend of mine lost her husband of fifty-one years in the spring. For weeks the grief came at her like weather - waves with no warning, in the cereal aisle, at a stoplight, halfway through a sentence about something else entirely. She told me she kept waiting for the love to drain out with him, the way a tub empties when you pull the plug. She expected the feeling to recede now that he was gone.\n\nIt did not. If anything it stood firmer. \"I keep thinking it should be over,\" she said, \"and it just keeps not being over.\" She still set two cups out some mornings. She still narrated her day to him in the car. The death that took the man could not take the love that had been built on him.\n\nThat is exactly what the Song claims, centuries before either of us was born. Mighty waters cannot quench love; rivers cannot sweep it away. My friend was standing in the floodwater and reporting back: the water is everywhere, and the love is still here. It is not that grief is small. It is that love turned out to be the larger thing."
+    },
+    {
+      "type": "insight",
+      "heading": "As Strong As Death — Until One Day, Stronger",
+      "body": "Stand at the center of chapter 8 and read it slowly. Love is as strong as death. The poem reaches for the most undefeated thing it can name and says love is its match. But notice the ceiling the line accepts. As strong as death is a tie, not a victory. The Song, on its own terms, can promise a love that death cannot overpower - a love that stands in the floodwater. It cannot promise a love that empties the grave. That is as far as a love poem can see.\n\nThis is why the Song was received as the holy of holies and not merely a beautiful piece of literature. It draws the picture and leaves the frame open. It says: here is what love at full strength looks like - a seal you cannot pry off, a flame that is somehow a flame of God Himself, a fire no flood can drown. And then it points past its own horizon. Set me as a seal over your heart. Keep me there. Carry me where I cannot fall.\n\nThe whole Bible has been moving toward Someone who would take that fierce, sealing, death-matching love and push it one step further than any poem could. Not love as strong as death - love that walked into death and came back out the far side, with the seal still on His heart.",
+      "historicalContext": "The Song was sung at Passover in Jewish tradition, the festival of deliverance, when Israel remembered being brought out of slavery by a God who had bound Himself to them in covenant. To sing a love poem at the feast of redemption is to say out loud what the Song hints: the love between the man and the woman is the nearest mirror of the covenant love between God and His people.",
+      "fascinatingFact": "The Hebrew of 8:6 ends with the word shalhevetyah - a blazing flame - which most scholars read as containing a short form of the divine name, Yah. If so, it is the only place the name of God surfaces in the entire Song, and it surfaces precisely here: love's fiercest flame is a flame of the LORD.",
+      "content": "Stand at the center of chapter 8 and read it slowly. Love is as strong as death. The poem reaches for the most undefeated thing it can name and says love is its match. But notice the ceiling the line accepts. As strong as death is a tie, not a victory. The Song, on its own terms, can promise a love that death cannot overpower - a love that stands in the floodwater. It cannot promise a love that empties the grave. That is as far as a love poem can see.\n\nThis is why the Song was received as the holy of holies and not merely a beautiful piece of literature. It draws the picture and leaves the frame open. It says: here is what love at full strength looks like - a seal you cannot pry off, a flame that is somehow a flame of God Himself, a fire no flood can drown. And then it points past its own horizon. Set me as a seal over your heart. Keep me there. Carry me where I cannot fall.\n\nThe whole Bible has been moving toward Someone who would take that fierce, sealing, death-matching love and push it one step further than any poem could. Not love as strong as death - love that walked into death and came back out the far side, with the seal still on His heart."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Love is as strong as death; mighty waters cannot quench it. The Song asks to be sealed onto the beloved's heart and arm, bound to him by a love no flood can sweep away.",
+      "modernApplication": "We try to secure love the way the Song's lovers feared we might fail to - with proof, with performance, with the wealth of the house spent to buy what cannot be bought. The Song says that offer is scorned. Love that holds is not purchased and not earned; it is the kind you are sealed into and then learn to live inside. The daily work is small and unglamorous: catch the little foxes - 2:15 - the small resentments and neglects that ruin the vineyard while no one is watching.",
+      "connectionPoint": "Scripture keeps reaching for marriage to say what God's love is like. The prophets call Israel God's bride. Paul tells husbands to love their wives as Christ loved the church and gave Himself up for her, and then says plainly that he is speaking about Christ and the church (Ephesians 5:25-32). The love poem was never only about two people in a vineyard. It was rehearsing the love at the heart of the universe.",
+      "newTestamentEcho": "What the Song could only set side by side - love and death, as equals - Christ broke open. He did not merely match death; He went down into it for His bride and rose. And the seal the woman begged for, He gives: when you belong to Him, Paul says, you are marked with the promised Holy Spirit, the seal and the down payment of an inheritance that death cannot reach (Ephesians 1:13-14; 2 Corinthians 1:22)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to buy or earn a love that can only be received - spending the wealth of the house for what is meant to be given?",
+      "additionalQuestions": [
+        "The Song asks to be set as a seal, kept where it cannot fall off. Do you live as someone sealed by a love you cannot lose, or as someone still auditioning for one?",
+        "What are the little foxes in your closest relationship right now - the small, quiet things ruining the vineyard while you are not looking?",
+        "When the floodwater of grief, fear, or failure rises, what do you actually believe gets swept away - and what stays?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so much trying to earn a love I was only ever meant to receive. I have feared that the floodwater would finally carry me off - that grief, or failure, or my own coldness would prove stronger than Your love for me. Set me as a seal over Your heart. Keep me where I cannot fall off. Teach me to live as one already loved with a love as strong as death and stronger - the love of the Bridegroom who went into the grave and came back out, with my name still on His heart. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place you have been trying to secure love by performance, and deliberately stop spending there. Then catch one little fox - go quietly mend the one small neglected thing in your closest relationship before it grows.",
+      "leavingAtCross": [
+        "The exhausting project of earning a love that can only be received",
+        "The fear that some flood - grief, failure, my own coldness - is finally stronger than God's love for me",
+        "The little foxes I have let run loose in the vineyard because they seemed too small to chase"
+      ],
+      "receivingFromCross": [
+        "A love proven stronger than death at an empty tomb",
+        "The seal of the Spirit, marking me as His and guaranteeing what death cannot touch",
+        "Permission to stop auditioning and start living as one already, finally, fully loved"
+      ],
+      "content": "Today, name one place you have been trying to secure love by performance, and deliberately stop spending there. Then catch one little fox - go quietly mend the one small neglected thing in your closest relationship before it grows."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that the Song compares love to death rather than to something gentle - and what does the comparison admit it cannot yet promise?",
+        "What does the woman mean when she asks to be set as a seal over her beloved's heart and arm, and what does a seal do?",
+        "How does the resurrection take the Song's claim - love as strong as death - and carry it past its own ceiling?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you still try to earn love instead of receiving it, in a relationship or with God.",
+        "Talk honestly about the little foxes in your life - the small, recurring things eroding a relationship you care about.",
+        "Ask each other: do you live as someone sealed by a love you cannot lose, and what would change tomorrow if you did?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Song of Songs 2:15",
+          "text": "Catch for us the foxes— the little foxes that ruin the vineyards— for our vineyards are in bloom."
+        },
+        {
+          "reference": "Ephesians 5:31-32",
+          "text": "\"For this reason a man will leave his father and mother and be united to his wife, and the two will become one flesh.\" This mystery is profound, but I am speaking about Christ and the church."
+        },
+        {
+          "reference": "Ephesians 1:13-14",
+          "text": "And in Him, having heard and believed the word of truth, the gospel of your salvation, you were sealed with the promised Holy Spirit, who is the pledge of our inheritance until the redemption of those who are God's possession."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life... will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs 8:5-7",
+          "note": "Read the Song's climactic stanza slowly, noticing the movement from the seal (a request to belong) to the reason (love as strong as death) to the flood (love that cannot be quenched or bought)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Shulammite",
+      "title": "The Bride Who Asked to Be Sealed",
+      "description": "The female voice of the Song, called the Shulammite in 6:13, who carries more of the poem's lines than any other speaker. She is the one who declares I belong to my beloved and he belongs to me, who searches the city when he is gone, and who speaks the Song's boldest words: set me as a seal, for love is as strong as death. In her, Jewish and Christian readers alike have heard the voice of the beloved people of God - Israel, and the church - answering the love of the One who first loved them.",
+      "keyQuote": "I belong to my beloved and he belongs to me; he pastures his flock among the lilies.",
+      "lessonForUs": "She does not earn her beloved's love or buy it; she receives it, and then asks to be bound to it forever. Her instinct is the right one for us: not to secure love by effort, but to ask to be sealed by a love already given - the love of the Bridegroom who proved it stronger than death.",
+      "heading": "The Bride Who Asked to Be Sealed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2199,
+  "scriptureReference_full": "Song of Songs 2:10-13; 6:3; 8:6-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (azzah khammavet ahavah; chotam H2858; az H5794) reflects standard lexical sources. The reading of shalhevetyah (8:6) as containing a short form of the divine name, and Rabbi Akiva's 'holy of holies' statement (Mishnah Yadayim 3:5), are well-attested in classical Jewish tradition."
+  ]
 }

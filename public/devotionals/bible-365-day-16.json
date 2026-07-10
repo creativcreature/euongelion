@@ -1,38 +1,198 @@
 {
   "day": 16,
   "title": "El Shaddai",
-  "teaser": "Day 16 of Bible 365 — Genesis 17:1-8",
+  "teaser": "Day 16 of Bible 365 — Genesis 17:1-8. At ninety-nine, with no son and no land, Abram hears a name for God big enough to carry an impossible promise.",
   "framework": "Genesis 17:1-8 — God Almighty, the covenant-binder",
   "scriptureReference": "Genesis 17:1-8",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 16"
+      "type": "scripture",
+      "reference": "Genesis 17:1-8",
+      "translation": "BSB",
+      "emphasis": [
+        "I am God Almighty",
+        "Walk before Me and be blameless",
+        "an everlasting covenant",
+        "to be your God"
+      ],
+      "hebrewOriginal": "אֲנִי־אֵל שַׁדַּי הִתְהַלֵּךְ לְפָנַי וֶהְיֵה תָמִים",
+      "passage": "When Abram was ninety-nine years old, the LORD appeared to him and said, \"I am God Almighty. Walk before Me and be blameless. I will establish My covenant between Me and you, and I will multiply you exceedingly.\"\n\nThen Abram fell facedown, and God said to him, \"As for Me, this is My covenant with you: You will be the father of many nations. No longer will you be called Abram, but your name will be Abraham, for I have made you a father of many nations. I will make you exceedingly fruitful; I will make nations of you, and kings will descend from you. I will establish My covenant as an everlasting covenant between Me and you and your descendants after you, to be your God and the God of your descendants after you. And to you and your descendants I will give the land where you are residing—all the land of Canaan—as an eternal possession; and I will be their God.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 17:1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 17:1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֵל שַׁדַּי",
+      "transliteration": "El Shaddai",
+      "pronunciation": "ale shah-DAI",
+      "meaning": "God Almighty; the all-sufficient God",
+      "rootMeaning": "El is the simplest, oldest word for God - strength itself. Shaddai is harder to pin down. The most common reading ties it to the root for overpowering might, the God who is able. An older tradition hears in it the word for breast (shad) - the God who nourishes and sustains, who has enough to give and gives it.",
+      "usageNote": "Genesis 17:1 is the first time God names Himself El Shaddai in Scripture. He chooses this name at the exact moment the promise looks most impossible - Abram is ninety-nine, Sarah is barren, and there is still no son. The name is the answer to the math: I am the God for whom this is not too much.",
+      "wordByWord": [
+        {
+          "word": "אֲנִי",
+          "transliteration": "ani",
+          "meaning": "I, I myself - God names Himself before He names what He will do"
+        },
+        {
+          "word": "אֵל",
+          "transliteration": "El",
+          "meaning": "God - the ancient word for divine strength"
+        },
+        {
+          "word": "שַׁדַּי",
+          "transliteration": "Shaddai",
+          "meaning": "Almighty, all-sufficient, the one who is more than enough"
+        },
+        {
+          "word": "הִתְהַלֵּךְ לְפָנַי",
+          "transliteration": "hithallekh lefanai",
+          "meaning": "walk before Me, walk in My presence - a life lived in the open, under His face"
+        },
+        {
+          "word": "תָמִים",
+          "transliteration": "tamim",
+          "meaning": "blameless, whole, complete - not flawless, but undivided"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הִתְהַלֵּךְ / וַיִּתְהַלֵּךְ",
+          "reference": "The same verb form, walk, is used of Enoch who walked with God (Genesis 5:24) and of God walking in the garden in the breeze of the day (Genesis 3:8). El Shaddai invites Abram back into that lost rhythm: a life walked in God's company."
+        }
+      ],
+      "strongsNumber": "H7706",
+      "definition": "Shaddai: Almighty, the all-powerful and all-sufficient God",
+      "usage": "Abram has spent twenty-four years waiting on a promise (he was seventy-five when he was first called, Genesis 12:4). El Shaddai is not a new God arriving late. It is the old God revealing how much He has, just when Abram has run out."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God Almighty, the covenant-binder. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The covenant ratified at the cross (Heb 8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A New Name for God, A New Name for the Man",
+      "body": "Twenty-four years had passed since God first told Abram to leave his country and go to a land he would be shown. In that time Abram had received the promise of a son so many times the words must have begun to feel worn. He had tried to help God keep them - through Hagar, through Ishmael. And now he is ninety-nine, the age when a body is finished hoping for children, and God appears again.\n\nThe first thing God does is give a name - His own. \"I am God Almighty.\" El Shaddai. He does not begin with the promise; He begins with Himself. The promise is only as good as the One making it, so God hands Abram His name before He hands him anything else. Walk before Me, He says, and be blameless - tamim, whole, undivided. Not perfect. Undivided. Stop splitting your trust between Me and your own arrangements.\n\nThen the names multiply. Abram, exalted father, becomes Abraham, father of a multitude - a name that is almost a joke for a childless man, except that God has just put His own all-sufficiency behind it. To rename someone in the ancient world was to claim them, to declare what they would become. God renames Abraham into the promise. Every time anyone says his name from now on, they will be saying what El Shaddai has decided to do.",
+      "keyInsight": "God reveals His name El Shaddai at the precise moment the promise becomes humanly impossible. The all-sufficient God shows Himself not when Abraham is strong, but when Abraham is finished.",
+      "content": "Twenty-four years had passed since God first told Abram to leave his country and go to a land he would be shown. In that time Abram had received the promise of a son so many times the words must have begun to feel worn. He had tried to help God keep them - through Hagar, through Ishmael. And now he is ninety-nine, the age when a body is finished hoping for children, and God appears again.\n\nThe first thing God does is give a name - His own. \"I am God Almighty.\" El Shaddai. He does not begin with the promise; He begins with Himself. The promise is only as good as the One making it, so God hands Abram His name before He hands him anything else. Walk before Me, He says, and be blameless - tamim, whole, undivided. Not perfect. Undivided. Stop splitting your trust between Me and your own arrangements.\n\nThen the names multiply. Abram, exalted father, becomes Abraham, father of a multitude - a name that is almost a joke for a childless man, except that God has just put His own all-sufficiency behind it. To rename someone in the ancient world was to claim them, to declare what they would become. God renames Abraham into the promise. Every time anyone says his name from now on, they will be saying what El Shaddai has decided to do."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Deed With No House On It",
+      "body": "A man I knew kept a folded paper in his Bible for most of his adult life. It was a deed - real, notarized - to a small piece of land in a country he had been forced to leave as a boy. His family had fled with almost nothing, and the property had long since been taken by someone else. There was no house on it anymore that belonged to him. He would never live there. By every visible measure the paper was worthless.\n\nHe kept it anyway, and once, when I asked him why, he said something I have never forgotten. \"It is not about whether I get the land back. It is that my father held this. It says who we are.\"\n\nAbraham is handed a promise like that. God tells him the whole land of Canaan will belong to his descendants as an eternal possession - and Abraham will spend the rest of his life as a resident foreigner in it, owning, in the end, only the cave where he buries his wife. He dies holding a deed to a country he never possesses. But the deed says who he is, and Whose he is. The land is signed in the name of El Shaddai, and a promise in that name does not expire just because the man holding it runs out of years.",
+      "connectionToTheme": "Abraham receives a promise he will not see fulfilled in his lifetime - and treasures it anyway, because its worth rests on the name of the One who signed it, not on the holder living to collect.",
+      "content": "A man I knew kept a folded paper in his Bible for most of his adult life. It was a deed - real, notarized - to a small piece of land in a country he had been forced to leave as a boy. His family had fled with almost nothing, and the property had long since been taken by someone else. There was no house on it anymore that belonged to him. He would never live there. By every visible measure the paper was worthless.\n\nHe kept it anyway, and once, when I asked him why, he said something I have never forgotten. \"It is not about whether I get the land back. It is that my father held this. It says who we are.\"\n\nAbraham is handed a promise like that. God tells him the whole land of Canaan will belong to his descendants as an eternal possession - and Abraham will spend the rest of his life as a resident foreigner in it, owning, in the end, only the cave where he buries his wife. He dies holding a deed to a country he never possesses. But the deed says who he is, and Whose he is. The land is signed in the name of El Shaddai, and a promise in that name does not expire just because the man holding it runs out of years."
+    },
+    {
+      "type": "insight",
+      "heading": "The Word That Comes Twice: Everlasting",
+      "body": "Read verses 7 and 8 slowly and you notice God doubling down. He calls it an everlasting covenant. He calls the land an eternal possession. And twice, like a refrain, the heart of the whole thing: \"to be your God,\" \"I will be their God.\"\n\nStrip away the nations and the kings and the land, and what is left is the smallest, largest promise in the Bible: I will be your God. Everything else is the setting; this is the jewel. God does not finally promise Abraham things. He promises Abraham Himself. The covenant is not a transaction where God supplies descendants and territory in exchange for circumcision and obedience. It is God binding His own being to a man and his children forever - I will be theirs, and they will be Mine.\n\nThat is why the word everlasting matters so much here. A covenant that depended on Abraham's strength would last exactly as long as Abraham did. But El Shaddai is staking the covenant on His own all-sufficiency. The everlasting in everlasting covenant is not Abraham's. It is God's.",
+      "historicalContext": "Genesis stands at the head of the Torah, and Israel read its whole national life out of these covenant promises. Centuries later, in exile and after, when the land was lost and the nation scattered, this passage was their anchor: the covenant was everlasting because El Shaddai had bound Himself, not because Israel had kept faith. The promise outlived every failure to keep it.",
+      "fascinatingFact": "The phrase \"to be your God and the God of your descendants after you\" becomes the covenant formula echoed all through Scripture - at Sinai, through the prophets, and finally in the last book of the Bible, where John hears it spoken over the new creation: \"They will be His people, and God Himself will be with them as their God\" (Revelation 21:3). The sentence God speaks to one old man in Genesis 17 is the sentence the whole Bible is moving toward.",
+      "content": "Read verses 7 and 8 slowly and you notice God doubling down. He calls it an everlasting covenant. He calls the land an eternal possession. And twice, like a refrain, the heart of the whole thing: \"to be your God,\" \"I will be their God.\"\n\nStrip away the nations and the kings and the land, and what is left is the smallest, largest promise in the Bible: I will be your God. Everything else is the setting; this is the jewel. God does not finally promise Abraham things. He promises Abraham Himself. The covenant is not a transaction where God supplies descendants and territory in exchange for circumcision and obedience. It is God binding His own being to a man and his children forever - I will be theirs, and they will be Mine.\n\nThat is why the word everlasting matters so much here. A covenant that depended on Abraham's strength would last exactly as long as Abraham did. But El Shaddai is staking the covenant on His own all-sufficiency. The everlasting in everlasting covenant is not Abraham's. It is God's."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "El Shaddai binds Himself to Abraham in an everlasting covenant, promising one seed through whom many nations will be blessed - and staking the whole promise on His own all-sufficiency, not on Abraham's strength.",
+      "modernApplication": "We still try to keep our promises in our own strength, and still measure God's promises by what our circumstances can produce. Abraham at ninety-nine is every person who has done the math on a promise and concluded it is too late. The name El Shaddai is the answer that does not depend on your math: God is more than enough, precisely where you are not.",
+      "connectionPoint": "Paul reads Genesis 17 with care and finds a hidden hinge in the wording. God said the covenant was for Abraham and his seed - and Scripture says seed, singular, not seeds. \"The promises were spoken to Abraham and to his seed. The Scripture does not say, 'and to seeds,' meaning many, but 'and to your seed,' meaning One, who is Christ\" (Galatians 3:16). The many nations promised to Abraham come true through one descendant, and through Him the door opens to everyone: \"if you belong to Christ, then you are Abraham's seed and heirs according to the promise\" (Galatians 3:29).",
+      "newTestamentEcho": "The everlasting covenant Abraham could not keep, Christ kept and sealed in His own blood. Hebrews names it plainly: \"the God of peace, who through the blood of the eternal covenant brought back from the dead our Lord Jesus, that great Shepherd of the sheep\" (Hebrews 13:20). The covenant El Shaddai swore over one childless man is ratified at the cross and the empty tomb - and its old refrain, \"I will be their God,\" comes true at last when God Himself comes to dwell with His people (Revelation 21:3)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you quietly decided a promise of God has run out of time for you - and what would it change to hand that exact place to El Shaddai, the God who is more than enough?",
+      "additionalQuestions": [
+        "God told Abraham to walk before Him and be blameless - tamim, undivided. Where is your trust currently split between God and your own backup arrangements?",
+        "Abraham was renamed into a promise he could not yet see. What name do you live under - your failures, your circumstances, your fears - and what name does God speak over you instead?",
+        "The core of the covenant was not things but God Himself: 'I will be your God.' Is that enough for you today, or are you waiting on the things?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-surrender",
+      "prayerText": "El Shaddai, God Almighty, God who is more than enough - I have done the math on Your promises and found myself short. Forgive the divided trust, the Hagar arrangements I make when the waiting gets long. You named Yourself before You named what You would do; let that be enough for me tonight. Walk with me again in the cool of the day. Rename me into Your promise. And where I have run out of years and strength, be for me what You were for Abraham: the God who is able to do what He has promised. Through Christ, the one Seed in whom every promise is yes. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one promise of God you have privately written off as too late or too unlikely for someone like you. Say it out loud, and over it say the name El Shaddai - God Almighty, more than enough. Then walk through the day as someone living under a new name, not the old one.",
+      "leavingAtCross": [
+        "The math I have done that concludes God's promise has expired for me",
+        "The divided heart that trusts God halfway and keeps a backup plan running",
+        "The old name I have worn - my failures, my barrenness, my too-late"
+      ],
+      "receivingFromCross": [
+        "A covenant that rests on God's all-sufficiency, not on my strength to keep it",
+        "A new name spoken over me by the God who renames people into His promises",
+        "The deepest gift of the covenant, won in Christ's blood: not things, but God Himself - 'I will be your God'"
+      ],
+      "content": "Today, name one promise of God you have privately written off as too late or too unlikely for someone like you. Say it out loud, and over it say the name El Shaddai - God Almighty, more than enough. Then walk through the day as someone living under a new name, not the old one."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God reveal the name El Shaddai at this exact moment - when Abraham is ninety-nine and the promise of a son looks impossible? What does the timing teach about how God shows His power?",
+        "Twice in verses 7 and 8 God says the real heart of the covenant. What is it - and why does it matter that He promises Himself rather than only things?",
+        "The covenant is called everlasting. On whose strength does that everlasting rest - Abraham's, or God's - and how does Hebrews 13:20 show where it finally lands?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one promise of God you have quietly decided is too late for your life. Why did you write it off?",
+        "God called Abraham to be tamim - undivided. Name one 'backup plan' you keep running because you don't fully trust God with an area of your life.",
+        "Ask each other: if the deepest gift of the covenant is God Himself and not what He gives, where am I still chasing the gifts instead of the Giver?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 15:6",
+          "text": "Abram believed the LORD, and it was credited to him as righteousness."
+        },
+        {
+          "reference": "Romans 4:20-21",
+          "text": "Yet he did not waver through disbelief in the promise of God, but was strengthened in his faith and gave glory to God, being fully persuaded that God was able to do what He had promised."
+        },
+        {
+          "reference": "Galatians 3:16",
+          "text": "The promises were spoken to Abraham and to his seed. The Scripture does not say, \"and to seeds,\" meaning many, but \"and to your seed,\" meaning One, who is Christ."
+        },
+        {
+          "reference": "Hebrews 13:20",
+          "text": "Now may the God of peace, who through the blood of the eternal covenant brought back from the dead our Lord Jesus, that great Shepherd of the sheep..."
+        },
+        {
+          "reference": "Revelation 21:3",
+          "text": "Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 17",
+          "note": "Read the whole chapter, watching how the everlasting covenant is sealed with a sign (circumcision, vv. 9-14), then carried into Sarah's renaming and the promise of Isaac (vv. 15-22)."
+        },
+        {
+          "type": "book",
+          "title": "Romans 4",
+          "note": "Paul's full meditation on Abraham's faith - how a man 'against all hope, in hope believed' a promise his body could not produce."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The Father of a Multitude, by the Power of El Shaddai",
+      "era": "approximately 2000 BC, Middle Bronze Age, the patriarchal period",
+      "key_trait": "Faith in a promise his own strength could never fulfill",
+      "description": "Called out of Ur and Haran around the age of seventy-five, Abraham spent the rest of his life as a resident foreigner in the land God promised would one day belong to his descendants. In Genesis 17, at ninety-nine and still without the promised son, he meets God as El Shaddai and is renamed from Abram into the very promise he cannot yet see. He fathered Isaac at one hundred, and the New Testament holds him up as the pattern of faith for everyone who believes - the father of all who trust the God who keeps covenant.",
+      "keyQuote": "Then Abram fell facedown.",
+      "lessonForUs": "Abraham did not believe because the promise looked possible. He believed because of the name behind it. When you have run out of strength, that is not the end of faith - it is exactly where El Shaddai reveals Himself.",
+      "heading": "The Father of a Multitude, by the Power of El Shaddai"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2352,
+  "scriptureReference_full": "Genesis 17:1-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (El Shaddai, H7706): the etymology is genuinely debated. The most widely held reading connects Shaddai to overpowering might; an older tradition associates it with shad (breast), the nourishing, all-sufficient God. Both are noted in standard lexical sources; the devotional flags the uncertainty rather than asserting one origin as settled."
+  ]
 }

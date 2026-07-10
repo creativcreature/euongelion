@@ -1,38 +1,181 @@
 {
   "day": 206,
-  "title": "Ecclesiastes: Vanity + God — Day 3 — Pivot",
-  "teaser": "Day 206 of Bible 365 — Ecclesiastes 1, 3, 12",
+  "title": "Eternity in a Restless Heart",
+  "teaser": "The Teacher chased everything under the sun and found vapor. Then he names the ache no vapor explains: God set eternity in us — and only the One above the sun can fill it.",
   "framework": "Ecclesiastes 1, 3, 12 — Ecclesiastes: Vanity + God",
   "scriptureReference": "Ecclesiastes 1, 3, 12",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 206"
+      "type": "scripture",
+      "reference": "Ecclesiastes 3:11; 1:2-3; 12:13",
+      "translation": "BSB",
+      "emphasis": [
+        "set eternity in the hearts of men",
+        "Futility of futilities",
+        "Fear God and keep His commandments"
+      ],
+      "hebrewOriginal": "גַּם אֶת־הָעֹלָם נָתַן בְּלִבָּם",
+      "passage": "\"Futility of futilities,\" says the Teacher, \"futility of futilities! Everything is futile!\" What does a man gain from all his labor, at which he toils under the sun? ... He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end. ... When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ecclesiastes 1, 3, 12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ecclesiastes 1, 3, 12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הָעֹלָם",
+      "transliteration": "ha-olam",
+      "pronunciation": "ha-oh-LAHM",
+      "meaning": "eternity, the ages, the far horizon of time",
+      "rootMeaning": "Olam carries the sense of the hidden, the distant, what is out past the edge of sight - time stretched so far in both directions that the eye loses it. To say God set olam in the human heart is to say He planted a homesickness for the unending in a creature who lives by the clock.",
+      "usageNote": "The same word names God Himself - El Olam, 'the Everlasting God' (Genesis 21:33). In Ecclesiastes 3:11 the Teacher uses it for what God has buried inside us: a capacity for the eternal that nothing temporary can fill, and that the mind cannot finally map.",
+      "wordByWord": [
+        {
+          "word": "גַּם",
+          "transliteration": "gam",
+          "meaning": "also, even - adding a deeper layer to what was just said"
+        },
+        {
+          "word": "אֶת־הָעֹלָם",
+          "transliteration": "et-ha-olam",
+          "meaning": "the eternity, the age-long horizon"
+        },
+        {
+          "word": "נָתַן",
+          "transliteration": "natan",
+          "meaning": "He has given, He has set, He has placed deliberately"
+        },
+        {
+          "word": "בְּלִבָּם",
+          "transliteration": "be-libbam",
+          "meaning": "in their heart - the seat of will, longing, and understanding"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֶבֶל / הָעֹלָם",
+          "reference": "Hevel is the vapor the Teacher keeps grasping and losing - thirty-eight times in the book. Olam is the thing that never disappears. The whole tension of Ecclesiastes lives in the gap between these two words: a heart wired for olam, trapped in a world that keeps turning to hevel."
+        }
+      ],
+      "strongsNumber": "H5769",
+      "definition": "long duration, antiquity, futurity; the eternal, the everlasting horizon of time",
+      "usage": "God did not merely make us mortal and leave it there. He set the eternal inside the mortal, so that nothing under the sun would ever quite be enough."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ecclesiastes: Vanity + God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the meaning beneath vanity (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Man Who Tried Everything Under the Sun",
+      "body": "Ecclesiastes opens like a door slamming. \"Futility of futilities,\" the Teacher says - hevel, vapor, breath you can see in the cold and never hold. He has the resources to test the question to its floor, and he does. Pleasure, building projects, gardens, wealth, music, wisdom, work. He withholds nothing his eyes desire. And every road dead-ends in the same word: vapor, a chasing after the wind.\n\nNotice the phrase he uses for the arena of his search: under the sun. It appears again and again, almost a refrain. Everything he weighs, he weighs under the sun - inside the closed system of a world where generations come and go, the sun rises and sets and hurries back, the rivers run to a sea that is never full. Round and round, nothing new. Within that circle, he is right. Take the most beautiful things in life - work, family, achievement, even wisdom - and seal them off under the sun, with no horizon above it, and they really do thin out into vapor in your hand.\n\nThis is Day 3, the turn. For two days the question has been building: if even the wisest, richest life ends in 'futility,' what is the point of any of it? The Teacher does not answer by denying the emptiness. He answers by widening the frame.",
+      "keyInsight": "The Teacher's verdict is true within the limit he names - everything is vapor under the sun. The pivot is not that he was wrong, but that the sun is not the ceiling.",
+      "content": "Ecclesiastes opens like a door slamming. \"Futility of futilities,\" the Teacher says - hevel, vapor, breath you can see in the cold and never hold. He has the resources to test the question to its floor, and he does. Pleasure, building projects, gardens, wealth, music, wisdom, work. He withholds nothing his eyes desire. And every road dead-ends in the same word: vapor, a chasing after the wind.\n\nNotice the phrase he uses for the arena of his search: under the sun. It appears again and again, almost a refrain. Everything he weighs, he weighs under the sun - inside the closed system of a world where generations come and go, the sun rises and sets and hurries back, the rivers run to a sea that is never full. Round and round, nothing new. Within that circle, he is right. Take the most beautiful things in life - work, family, achievement, even wisdom - and seal them off under the sun, with no horizon above it, and they really do thin out into vapor in your hand.\n\nThis is Day 3, the turn. For two days the question has been building: if even the wisest, richest life ends in 'futility,' what is the point of any of it? The Teacher does not answer by denying the emptiness. He answers by widening the frame."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Promotion That Tasted Like Nothing",
+      "body": "A friend told me about the night he made partner. He had wanted it for eleven years. He had missed his daughter's recitals for it, eaten dinner at his desk for it, learned to sleep four hours for it. The email came at 9:40 p.m. He read it twice. He waited for the feeling he had been promising himself the whole decade.\n\nIt did not come. He sat in the blue light of the laptop in a quiet house and felt, of all things, the wind. Not grief exactly. Just the strange flatness of arriving somewhere you spent years climbing toward and finding the view is smaller than the photograph.\n\nHe is not a religious man, or he wasn't then. But he said something that night that the Teacher could have written three thousand years ago: \"I keep getting the thing, and the thing keeps not being the thing.\" He had a heart built for a horizon, and he kept trying to satisfy it with the next rung, which is to say, under the sun.",
+      "connectionToTheme": "The Teacher's 'vapor' is not a depressive's complaint; it is the honest report of a heart that was made for eternity trying to live on the temporary.",
+      "content": "A friend told me about the night he made partner. He had wanted it for eleven years. He had missed his daughter's recitals for it, eaten dinner at his desk for it, learned to sleep four hours for it. The email came at 9:40 p.m. He read it twice. He waited for the feeling he had been promising himself the whole decade.\n\nIt did not come. He sat in the blue light of the laptop in a quiet house and felt, of all things, the wind. Not grief exactly. Just the strange flatness of arriving somewhere you spent years climbing toward and finding the view is smaller than the photograph.\n\nHe is not a religious man, or he wasn't then. But he said something that night that the Teacher could have written three thousand years ago: \"I keep getting the thing, and the thing keeps not being the thing.\" He had a heart built for a horizon, and he kept trying to satisfy it with the next rung, which is to say, under the sun."
+    },
+    {
+      "type": "insight",
+      "heading": "Eternity in the Heart Is the Reason Nothing Is Enough",
+      "body": "Everything turns on one sentence in chapter three. \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.\"\n\nRead it slowly, because it is the hinge of the whole book. The Teacher is not saying life is meaningless. He is saying God planted something in us that life under the sun cannot match. He set olam - eternity, the unending - inside creatures bound to seasons. That is why the promotion tastes like nothing. That is why every season, even the good ones - the time to plant, to build, to embrace, to dance - arrives and then turns over into its opposite, and we are left aching for something that does not turn over. The ache is not a malfunction. It is a homing signal. We were built with a capacity for the eternal, and then handed a world of vapor, so that we would look up.\n\nAnd here is the mercy hidden in the limit: 'they cannot fathom the work God has done from beginning to end.' We were never meant to solve eternity by climbing. The horizon in our hearts is not a problem to crack but a Person to meet.",
+      "historicalContext": "Ecclesiastes belongs to Israel's Wisdom Literature, alongside Job, Proverbs, and the Psalms. Where Proverbs maps how life usually rewards wisdom, Ecclesiastes presses the harder case: what happens when you push wisdom to its edge and life still refuses to add up? It refuses cheap answers. Its honesty is exactly why it survived in the canon - Israel kept the book that admits the ache rather than papering over it.",
+      "fascinatingFact": "The phrase 'under the sun' appears around thirty times in Ecclesiastes and nowhere else in the Hebrew Bible. It is the Teacher's signature for the closed horizon - reality measured with the sun as its ceiling. The entire argument of the book is what happens to that horizon when God, who is 'above' it, sets eternity inside the people living beneath it.",
+      "content": "Everything turns on one sentence in chapter three. \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.\"\n\nRead it slowly, because it is the hinge of the whole book. The Teacher is not saying life is meaningless. He is saying God planted something in us that life under the sun cannot match. He set olam - eternity, the unending - inside creatures bound to seasons. That is why the promotion tastes like nothing. That is why every season, even the good ones - the time to plant, to build, to embrace, to dance - arrives and then turns over into its opposite, and we are left aching for something that does not turn over. The ache is not a malfunction. It is a homing signal. We were built with a capacity for the eternal, and then handed a world of vapor, so that we would look up.\n\nAnd here is the mercy hidden in the limit: 'they cannot fathom the work God has done from beginning to end.' We were never meant to solve eternity by climbing. The horizon in our hearts is not a problem to crack but a Person to meet."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God set eternity in human hearts, then placed those hearts in a world of vapor under the sun, so that no created thing could finally satisfy the longing He Himself had planted.",
+      "modernApplication": "You feel it every time the thing you wanted arrives and the satisfaction does not stay - the new job, the relationship, the milestone, the screen you keep refreshing. The restlessness is not a flaw to fix with a better plan. It is eternity in you, refusing to settle for what is merely under the sun.",
+      "connectionPoint": "The Teacher names the ache but cannot, within his own horizon, reach what it points to - he can only counsel us to remember our Creator and fear God (Ecclesiastes 12:1, 13). The book ends pointing up and out, at something above the sun it cannot quite name.",
+      "newTestamentEcho": "What the Teacher could only ache toward, the Gospel names. In Christ 'all things hold together' (Colossians 1:17) - the One who is above the sun stepped under it. The eternity set in our hearts finds its match when the eternal Word becomes flesh, and Jesus offers the living water after which a person 'will never thirst again' (John 4:14). The horizon in the heart was always Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been trying to fill an eternity-shaped longing with something that lives and dies under the sun?",
+      "additionalQuestions": [
+        "Name the last 'thing' you were sure would satisfy you. Did the satisfaction stay? What does that tell you about the size of the longing?",
+        "When you feel restless even after a good day, do you treat it as a problem to fix or as a signal pointing somewhere?",
+        "Ecclesiastes says we 'cannot fathom' God's work from beginning to end. Where are you exhausted from trying to figure out what you were only ever meant to trust?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God, You set eternity in me, and I have spent so much of my life trying to fill it with vapor. I have chased the next thing and the next, and the ache has only grown. Tonight I stop pretending the restlessness is something to manage. It is homesickness for You. You are above the sun I keep measuring my life beneath. In Christ, who holds all things together, fill what only You can fill. Quiet my grasping. Let me rest in the One the Teacher could only point toward. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'under the sun' thing you have been asking to do an eternal job - to make you finally feel enough. Hold it honestly before God, thank Him for it as a gift without demanding it be your savior, and let the leftover ache turn you toward Christ instead of toward the next rung.",
+      "leavingAtCross": [
+        "The belief that the next achievement, purchase, or milestone will finally make me feel whole",
+        "The exhaustion of trying to fathom from beginning to end what I was meant to trust",
+        "The shame of feeling empty after the very things that were supposed to fill me"
+      ],
+      "receivingFromCross": [
+        "The truth that my restlessness is eternity in me, not a defect to hide",
+        "Permission to enjoy good things as gifts without demanding they be God",
+        "The One who is above the sun, in whom all things hold together and the deep thirst is finally met"
+      ],
+      "content": "Today, name one 'under the sun' thing you have been asking to do an eternal job - to make you finally feel enough. Hold it honestly before God, thank Him for it as a gift without demanding it be your savior, and let the leftover ache turn you toward Christ instead of toward the next rung."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Teacher's repeated phrase 'under the sun' tell us about the limits of the world he is measuring - and why does the verdict 'vapor' hold true inside that limit?",
+        "How does Ecclesiastes 3:11 - 'He has set eternity in the hearts of men' - reframe the emptiness of chapter one as longing rather than mere despair?",
+        "Why does the book that begins 'Futility of futilities' end with 'Fear God and keep His commandments' - what has shifted between the opening and the closing?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a time you 'got the thing' and it did not satisfy the way you expected. What were you actually longing for?",
+        "Talk honestly about the difference between enjoying a good gift and demanding it be your meaning. Where do you cross that line?",
+        "Ask each other: what would change this week if you treated your restlessness as homesickness for God instead of a problem to outwork?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ecclesiastes 12:1",
+          "text": "Remember your Creator in the days of your youth, before the days of adversity come and the years approach of which you will say, \"I find no pleasure in them.\""
+        },
+        {
+          "reference": "Ecclesiastes 12:7",
+          "text": "before the dust returns to the ground from which it came and the spirit returns to God who gave it."
+        },
+        {
+          "reference": "Colossians 1:17",
+          "text": "He is before all things, and in Him all things hold together."
+        },
+        {
+          "reference": "John 4:14",
+          "text": "But whoever drinks the water I give him will never thirst. Indeed, the water I give him will become in him a spring of water welling up to eternal life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 1, 3, and 12",
+          "note": "Read the three chapters as a frame: the opening verdict (1), the catalog of times turning on the eternity verse (3:11), and the closing summons (12). Watch how 'under the sun' gives way to 'remember your Creator.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Qoheleth (The Teacher)",
+      "title": "The Teacher Who Searched to the Edge",
+      "description": "The voice of Ecclesiastes, traditionally connected to Solomon - 'the son of David, king in Jerusalem.' He is the man with the means to test life's promises all the way to the bottom: wisdom, wealth, pleasure, work, building. His honesty is the gift of the book. He will not pretend the vapor is gold. But he is also the one who names the deeper thing under the emptiness - the eternity God set in the human heart - and who ends not in despair but in a summons to remember the Creator.",
+      "keyQuote": "He has made everything beautiful in its time. He has also set eternity in the hearts of men.",
+      "lessonForUs": "The Teacher gives us permission to be honest about the ache that even our best seasons leave behind - and then points us past the sun toward the only One large enough to fill what He Himself placed in us.",
+      "heading": "The Teacher Who Searched to the Edge"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "Ecclesiastes 3:11; 1:2-3; 12:1, 7, 13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (olam, H5769; hevel, H1892) reflects standard lexical sources. 'Under the sun' as a signature phrase unique to Ecclesiastes is widely noted in commentary on the book."
+  ]
 }

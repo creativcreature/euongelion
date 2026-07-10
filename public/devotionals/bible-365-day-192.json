@@ -1,38 +1,198 @@
 {
   "day": 192,
-  "title": "Psalms of Trust — Day 3 — Pivot",
-  "teaser": "Day 192 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "More Than Watchmen Wait for the Morning",
+  "teaser": "Eight psalms of trust circle one quiet verb: wait. Not the wait of a man who has given up, but of a watchman certain the sun will rise. The morning he waited for has a name.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 192"
+      "type": "scripture",
+      "reference": "Psalm 130:5-6; 27:1; 121:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "more than watchmen wait for the morning",
+        "The LORD is my light and my salvation",
+        "From where does my help come?"
+      ],
+      "hebrewOriginal": "קִוִּיתִי יְהוָה קִוְּתָה נַפְשִׁי וְלִדְבָרוֹ הוֹחָלְתִּי",
+      "passage": "I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning. ... The LORD is my light and my salvation— whom shall I fear? The LORD is the stronghold of my life— whom shall I dread? ... I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָוָה",
+      "transliteration": "qavah",
+      "pronunciation": "kah-VAH",
+      "meaning": "to wait, to hope, to look for with expectation",
+      "rootMeaning": "The root carries the picture of a cord pulled taut. To qavah is not to sit idle; it is to be stretched toward something, leaning forward, the whole self bent in one direction like a rope under tension. The same family of words gives the noun tiqvah, hope, and the line of scarlet cord Rahab hung from her window in Joshua 2.",
+      "usageNote": "Qavah anchors two of today's psalms. Psalm 27:14 doubles it for force — 'Wait patiently for the LORD... Wait patiently for the LORD' — bracketing courage between two commands to wait. Psalm 130:5 pairs it with yachal, to hope, so that waiting and hoping become the same act seen from two sides. Hebrew refuses to let waiting collapse into passivity. The one who waits is doing something: holding the line until the answer comes.",
+      "wordByWord": [
+        {
+          "word": "קִוִּיתִי",
+          "transliteration": "qivviti",
+          "meaning": "I waited, I hoped — I held myself taut toward Him"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD, the covenant name of God"
+        },
+        {
+          "word": "נַפְשִׁי",
+          "transliteration": "naphshi",
+          "meaning": "my soul, my whole living self, my throat that thirsts"
+        },
+        {
+          "word": "וְלִדְבָרוֹ",
+          "transliteration": "velidvaro",
+          "meaning": "and for His word — the thing the waiting leans on"
+        },
+        {
+          "word": "הוֹחָלְתִּי",
+          "transliteration": "hochalti",
+          "meaning": "I have hoped, I have waited expectantly"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה / tiqvah",
+          "reference": "The noun 'hope' grows from the same root as qavah. It is also the word for a literal cord or line. Hope, in Hebrew, is a rope you hold while you wait — the same image behind the scarlet line of Rahab (Joshua 2:18) and the name of Israel's anthem, Hatikvah, 'The Hope.'"
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, look for, hope; to be in expectation; literally, to bind together by twisting, to stretch like a cord",
+      "usage": "When the psalmist says 'My soul waits for the Lord more than watchmen wait for the morning,' the verb is qavah — not killing time, but a sentry leaning into the dark, certain the line he holds runs all the way to sunrise."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Hinge Word of the Whole Collection",
+      "body": "Read these eight psalms in one sitting and a single posture keeps surfacing. Psalm 1 plants a tree by the water and lets it stand through every season. Psalm 8 looks up at a sky full of stars and asks how the God who made them could possibly notice a creature so small. Psalm 19 hears the heavens preaching without a word. Psalm 27 stares fear in the face and refuses to blink. Psalm 90 measures a human life against the mountains and asks to be taught how short it is. Psalm 121 lifts its eyes to the hills. Psalm 130 cries up from the bottom of a pit. Psalm 139 discovers there is nowhere in the universe God is not.\n\nDifferent voices, different weather. Yet underneath them runs one verb, and it is not the verb you would expect from a collection called trust. It is not 'conquer.' It is not 'understand.' It is wait. 'Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD' (Psalm 27:14). 'I wait for the LORD; my soul does wait, and in His word I put my hope' (Psalm 130:5).\n\nThis is the pivot, and it costs us something to see it. We came looking for trust and assumed it would feel like certainty — like having the answer in hand. The psalms hand us a different thing entirely. Trust, in these songs, is the discipline of leaning into a dark you cannot yet read, holding a cord you cannot yet see the far end of, because of the One who tied the other end.",
+      "keyInsight": "Trust in these psalms is not the absence of darkness or the possession of answers. It is a verb — qavah — the taut, forward-leaning posture of a watchman who keeps his eyes east because he knows the One who keeps the sun.",
+      "content": "Read these eight psalms in one sitting and a single posture keeps surfacing. Psalm 1 plants a tree by the water and lets it stand through every season. Psalm 8 looks up at a sky full of stars and asks how the God who made them could possibly notice a creature so small. Psalm 19 hears the heavens preaching without a word. Psalm 27 stares fear in the face and refuses to blink. Psalm 90 measures a human life against the mountains and asks to be taught how short it is. Psalm 121 lifts its eyes to the hills. Psalm 130 cries up from the bottom of a pit. Psalm 139 discovers there is nowhere in the universe God is not.\n\nDifferent voices, different weather. Yet underneath them runs one verb, and it is not the verb you would expect from a collection called trust. It is not 'conquer.' It is not 'understand.' It is wait. 'Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD' (Psalm 27:14). 'I wait for the LORD; my soul does wait, and in His word I put my hope' (Psalm 130:5).\n\nThis is the pivot, and it costs us something to see it. We came looking for trust and assumed it would feel like certainty — like having the answer in hand. The psalms hand us a different thing entirely. Trust, in these songs, is the discipline of leaning into a dark you cannot yet read, holding a cord you cannot yet see the far end of, because of the One who tied the other end."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Last Watch of the Night",
+      "body": "An ancient city did not have clocks. It had watchmen. Through the night a man stood on the wall in shifts, and the longest, coldest, hardest shift was the last one — the watch that ran from the deepest dark until dawn. By then the fires had burned low and the body had given up most of its warmth and the mind had run out of things to think about. The fourth watch was when a man most wanted to lie down.\n\nAnd it was exactly then that the watchman could not. Because the last watch is the one the whole night has been waiting for. His job was not to make the sun rise; he had no power over that. His job was to keep facing east. To not turn around. To hold the post until the gray line cracked open over the hills and he could finally call down that the morning had come.\n\nThe psalmist takes that man — that specific, shivering, exhausted man — and says: that is my soul tonight. 'My soul waits for the Lord more than watchmen wait for the morning' (Psalm 130:6). He says it twice, the way you repeat a thing to yourself in the dark to keep your nerve. More than watchmen wait for the morning. The morning is not a maybe. It has never once failed to come. The waiting is hard precisely because the dawn is certain.",
+      "connectionToTheme": "The watchman does not manufacture the dawn; he keeps facing the place it will appear. Trust is not making God act — it is refusing to turn from the east while it is still dark.",
+      "content": "An ancient city did not have clocks. It had watchmen. Through the night a man stood on the wall in shifts, and the longest, coldest, hardest shift was the last one — the watch that ran from the deepest dark until dawn. By then the fires had burned low and the body had given up most of its warmth and the mind had run out of things to think about. The fourth watch was when a man most wanted to lie down.\n\nAnd it was exactly then that the watchman could not. Because the last watch is the one the whole night has been waiting for. His job was not to make the sun rise; he had no power over that. His job was to keep facing east. To not turn around. To hold the post until the gray line cracked open over the hills and he could finally call down that the morning had come.\n\nThe psalmist takes that man — that specific, shivering, exhausted man — and says: that is my soul tonight. 'My soul waits for the Lord more than watchmen wait for the morning' (Psalm 130:6). He says it twice, the way you repeat a thing to yourself in the dark to keep your nerve. More than watchmen wait for the morning. The morning is not a maybe. It has never once failed to come. The waiting is hard precisely because the dawn is certain."
+    },
+    {
+      "type": "insight",
+      "heading": "Why the Pit and the Stars Are in the Same Songbook",
+      "body": "It is worth noticing what the editors of the Psalter did not do. They did not file the bright psalms in one drawer and the dark ones in another. Psalm 8, gazing up at a heaven crowded with stars, sits in the same collection as Psalm 130, crying up from a pit so deep the speaker can barely see the rim. Psalm 139's confidence that God is everywhere — 'If I make my bed in Sheol, You are there' — is bound into the same scroll as Psalm 90's grief that our days are a sigh that passes.\n\nThis is deliberate, and it is the secret of how the trust psalms actually work. Trust is not a mood you summon on the good days. It is a thread strong enough to run through both. The same man who can say 'The LORD is my light and my salvation — whom shall I fear?' (Psalm 27:1) is the man who also says, eight verses later, 'Hide not Your face from me.' Confidence and pleading live in one breath. The psalms never ask you to pick.\n\nWhat holds the bright and the dark together is not the psalmist's feelings, which swing wildly, but the object of his waiting, which does not move. Notice where every one of these songs finally points: not inward to a better attitude, but outward and upward to a Person. 'My help comes from the LORD, the Maker of heaven and earth' (Psalm 121:2). The God who hung the stars of Psalm 8 is the same God reaching into the pit of Psalm 130. Because He does not change between the heights and the depths, the cord of hope reaches both.",
+      "historicalContext": "These eight psalms span the breadth of the Psalter's traditions: Psalm 1 opens the whole book as a wisdom poem; Psalm 8 and 19 are creation hymns; Psalm 90 bears the superscription 'A prayer of Moses,' the oldest voice in the collection; Psalm 130 is one of the fifteen Songs of Ascents (120-134) sung by pilgrims climbing the road up to Jerusalem. Israel sang them on festival days and at funerals, in coronations and in exile. They were never meant to describe a single feeling. They were meant to carry a people through every kind of night.",
+      "fascinatingFact": "Psalm 130 became one of the most quoted texts of the Reformation. Martin Luther grouped it among what he called the 'Pauline Psalms' — the songs he believed taught the gospel of grace most clearly — because of one line: 'If You, O LORD, kept track of iniquities, then who, O Lord, could stand? But with You there is forgiveness' (Psalm 130:3-4). The whole logic of waiting rests there: we can wait for God in the dark because, when morning comes, He arrives carrying forgiveness rather than a ledger.",
+      "content": "It is worth noticing what the editors of the Psalter did not do. They did not file the bright psalms in one drawer and the dark ones in another. Psalm 8, gazing up at a heaven crowded with stars, sits in the same collection as Psalm 130, crying up from a pit so deep the speaker can barely see the rim. Psalm 139's confidence that God is everywhere — 'If I make my bed in Sheol, You are there' — is bound into the same scroll as Psalm 90's grief that our days are a sigh that passes.\n\nThis is deliberate, and it is the secret of how the trust psalms actually work. Trust is not a mood you summon on the good days. It is a thread strong enough to run through both. The same man who can say 'The LORD is my light and my salvation — whom shall I fear?' (Psalm 27:1) is the man who also says, eight verses later, 'Hide not Your face from me.' Confidence and pleading live in one breath. The psalms never ask you to pick.\n\nWhat holds the bright and the dark together is not the psalmist's feelings, which swing wildly, but the object of his waiting, which does not move. Notice where every one of these songs finally points: not inward to a better attitude, but outward and upward to a Person. 'My help comes from the LORD, the Maker of heaven and earth' (Psalm 121:2). The God who hung the stars of Psalm 8 is the same God reaching into the pit of Psalm 130. Because He does not change between the heights and the depths, the cord of hope reaches both."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The psalmist cries out of the depths and then sets his whole soul to wait — 'more than watchmen wait for the morning' — certain that the LORD will come carrying forgiveness and not a ledger of sins.",
+      "modernApplication": "Most of our waiting is not patient at all; it is anxious refreshing. We wait the way you wait for test results or a text back — bracing for the worst, scanning for control. The trust psalms teach a different waiting: a watchman's wait, where the eyes stay fixed on the place the help will appear, and the waiting itself becomes an act of confidence rather than a knot of dread.",
+      "connectionPoint": "The thread of waiting that runs through these eight psalms runs forward into the Gospels and finally pulls taut at a tomb. Psalm 130 waits 'more than watchmen wait for the morning,' down 'out of the depths.' Psalm 16, in the same Psalter, sings 'You will not abandon my soul to Sheol' — the line Peter quotes at Pentecost to explain the resurrection (Acts 2:27-31). The morning the watchmen waited for stopped being a metaphor on the third day.",
+      "newTestamentEcho": "Mary Magdalene came to the tomb 'early, while it was still dark' (John 20:1) — in the watchman's hour, before sunrise. She came to wait by a grave, expecting only death. Instead the morning the psalms longed for stood up alive in the garden. Christ Himself takes the image: 'I am... the bright Morning Star' (Revelation 22:16). The One who descended into the depths of Psalm 130 rose with the dawn the watchman strained to see — so that every soul that now waits for the LORD is waiting for a sunrise that has already once broken every grave it touched."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you waiting on right now — and is it an anxious, bracing wait, or a watchman's wait that keeps facing the place the help will come?",
+      "additionalQuestions": [
+        "Psalm 27:1 asks 'whom shall I fear?' Name the fear you would have to set down to answer that question honestly tonight.",
+        "Psalm 130 begins 'out of the depths.' Where are the depths for you right now — and what would it mean to cry up from there instead of pretending you are on solid ground?",
+        "If hope, in Hebrew, is a cord you hold in the dark (tiqvah), what is the cord you are holding — and Who is on the other end of it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, my light and my salvation, it is dark and I am tired of waiting. I confess I have been refreshing the screen of my own life, bracing for bad news, sure that if You kept track of my failures I could not stand. Teach me the watchman's wait tonight. Turn my face east and hold it there. Let me lean on Your word the way a rope leans on the post it is tied to. And when I cannot see the morning, remind me that it has a name, that He came up out of the depths before me, and that the dawn I am waiting for has already broken once and will break again. Until it does, keep my soul taut toward You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, before sleep, pick one line from these psalms and let it be your watch-word — the phrase you hold while it is dark. 'The LORD is my light and my salvation,' or 'My help comes from the LORD,' or 'With You there is forgiveness.' When you wake before you want to, say it once into the dark instead of reaching for your phone. Practice the watchman's wait for one night.",
+      "leavingAtCross": [
+        "The anxious, bracing wait that treats every silence from God as bad news on the way",
+        "The fear that if God kept track of my failures, I could not stand before Him",
+        "The lie that trust means I should already have the answer in hand"
+      ],
+      "receivingFromCross": [
+        "A watchman's wait — eyes fixed on the place the help will come, because the One who keeps the sunrise does not slumber",
+        "The forgiveness Psalm 130 promised, carried to me by the One who rose at dawn",
+        "Permission to hold confidence and pleading in the same breath, the way the psalms do"
+      ],
+      "content": "Tonight, before sleep, pick one line from these psalms and let it be your watch-word — the phrase you hold while it is dark. 'The LORD is my light and my salvation,' or 'My help comes from the LORD,' or 'With You there is forgiveness.' When you wake before you want to, say it once into the dark instead of reaching for your phone. Practice the watchman's wait for one night."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew verb qavah ('wait') actually picture — and how is it different from the way we usually use the word 'wait'?",
+        "Why did the editors of the Psalter keep the bright psalms (8, 19) and the dark psalms (90, 130) in the same collection instead of separating them?",
+        "How does Psalm 130's image of waiting 'more than watchmen wait for the morning' connect to the morning of the resurrection?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one thing you are currently waiting on that feels like the longest, coldest watch of the night.",
+        "Talk honestly about whether you find it easier to say 'whom shall I fear?' (Psalm 27:1) or 'out of the depths I cry' (Psalm 130:1) — and what that reveals about where you are.",
+        "Ask each other: what would change this week if you waited like a watchman certain of dawn, rather than like a person bracing for bad news?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 27:14",
+          "text": "Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD!"
+        },
+        {
+          "reference": "Psalm 130:3-4",
+          "text": "If You, O LORD, kept track of iniquities, then who, O Lord, could stand? But with You there is forgiveness, so that You may be feared."
+        },
+        {
+          "reference": "Psalm 121:7-8",
+          "text": "The LORD will guard you from all evil; He will preserve your soul. The LORD will watch over your coming and going, both now and forevermore."
+        },
+        {
+          "reference": "John 20:1",
+          "text": "Early on the first day of the week, while it was still dark, Mary Magdalene went to the tomb and saw that the stone had been removed from the entrance."
+        },
+        {
+          "reference": "Revelation 22:16",
+          "text": "I, Jesus, have sent My angel to give you this testimony for the churches. I am the Root and the Offspring of David, the bright Morning Star."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "passage",
+          "title": "Psalm 130 (the De Profundis)",
+          "note": "Read all eight verses slowly, twice. The first time, notice the movement from the depths (v.1) up to redemption in abundance (v.7). The second time, read it as the prayer of someone waiting for resurrection morning."
+        },
+        {
+          "type": "passage",
+          "title": "Psalm 27 alongside Psalm 130",
+          "note": "Set the most confident trust psalm (27, 'whom shall I fear?') next to the most desperate (130, 'out of the depths'). Watch how the same verb — wait — anchors both. That shared verb is the whole lesson."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Watchman",
+      "title": "The Sentry Who Waits for the Morning",
+      "era": "Ancient Near East; the recurring figure of Psalm 130:6",
+      "key_trait": "Faithful waiting in the dark toward a dawn he is certain of but cannot yet see",
+      "description": "The watchman is the unnamed figure the psalmist reaches for to describe his own soul. Stationed on the city wall through the night, he had no power to summon the sun and no certainty of when it would break — only the certainty that it would. His task was not to act but to stay: to keep his post, keep his eyes east, and not lie down before the gray light came. Israel knew this figure intimately; the prophets used him too, asking 'Watchman, what is left of the night?' (Isaiah 21:11). In Psalm 130 he becomes the icon of trust — not a hero who fixes the dark, but a faithful man who waits in it.",
+      "keyQuote": "My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning.",
+      "lessonForUs": "You may not be able to end the night you are in. You can do what the watchman does: keep your post, keep facing the place the light will come, and refuse to turn around before dawn. The morning the psalmist waited for came up out of a tomb. It is still coming for you.",
+      "heading": "The Sentry Who Waits for the Morning"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2414,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qavah, H6960; related tiqvah) reflects standard lexical sources (BDB, Strong's). The root sense of a cord pulled taut and its link to tiqvah/'hope' and the scarlet line of Joshua 2 is a widely noted lexical observation.",
+    "Luther's grouping of Psalm 130 among the 'Pauline Psalms' is recorded in his prefaces and lectures on the Psalms."
+  ]
 }

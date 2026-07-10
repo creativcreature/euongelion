@@ -1,38 +1,183 @@
 {
   "day": 198,
-  "title": "Proverbs: Daily Wisdom — Day 2 — Building",
-  "teaser": "Day 198 of Bible 365 — Proverbs 3, 8, 16, 22, 31",
+  "title": "The Wisdom That Was There First",
+  "teaser": "Proverbs tells you to get wisdom. Proverbs 8 lets wisdom speak — and what answers is not a thing but a Person, already at God's side before the mountains were set.",
   "framework": "Proverbs 3, 8, 16, 22, 31 — Proverbs: Daily Wisdom",
   "scriptureReference": "Proverbs 3, 8, 16, 22, 31",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 198"
+      "type": "scripture",
+      "reference": "Proverbs 8:22-31",
+      "translation": "BSB",
+      "emphasis": [
+        "The LORD created me as His first course",
+        "I was brought forth",
+        "a skilled craftsman at His side",
+        "His delight day by day"
+      ],
+      "hebrewOriginal": "וָאֶהְיֶה אֶצְלוֹ אָמוֹן וָאֶהְיֶה שַׁעֲשֻׁעִים יוֹם יוֹם",
+      "passage": "The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began. When there were no watery depths, I was brought forth, when no springs were overflowing with water. Before the mountains were settled, before the hills, I was brought forth, before He made the land or fields, or any of the dust of the earth. I was there when He established the heavens, when He inscribed a circle on the face of the deep, when He established the clouds above, when the fountains of the deep gushed forth, when He set a boundary for the sea, so that the waters would not surpass His command, when He marked out the foundations of the earth. Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence. I was rejoicing in His whole world, delighting together in the sons of men."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Proverbs 3, 8, 16, 22, 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Proverbs 3, 8, 16, 22, 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אָמוֹן",
+      "transliteration": "amon",
+      "pronunciation": "ah-MOHN",
+      "meaning": "a skilled craftsman, a master worker; or, by another reading, a little child, a nursling",
+      "rootMeaning": "From the same root family as aman, to be firm, faithful, to support - the root behind the word amen. An amon is one in whom the work can be trusted: the master builder whose hand the structure can lean on.",
+      "usageNote": "Proverbs 8:30 is the only place this exact form appears, and translators have argued over it for two thousand years. Many read amon as craftsman or architect - wisdom as the master worker at God's side. An old Jewish reading hears the related sense of nursling or little child - wisdom as the delight playing before the Father. The BSB chooses craftsman; the early Church heard both, and saw in both the Son who was with God at the beginning and through whom all things were made.",
+      "wordByWord": [
+        {
+          "word": "וָאֶהְיֶה אֶצְלוֹ",
+          "transliteration": "va'ehyeh etzlo",
+          "meaning": "then I was beside Him, at His side - close, intimate, not a tool but a companion"
+        },
+        {
+          "word": "אָמוֹן",
+          "transliteration": "amon",
+          "meaning": "skilled craftsman, master worker (or: nursling, little child)"
+        },
+        {
+          "word": "שַׁעֲשֻׁעִים",
+          "transliteration": "sha'ashuim",
+          "meaning": "delight, delights - a plural of intensity, sheer gladness"
+        },
+        {
+          "word": "יוֹם יוֹם",
+          "transliteration": "yom yom",
+          "meaning": "day by day, day after day - an unbroken, daily joy"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָמֵן",
+          "reference": "Amen comes from the same root: that which is firm, sure, trustworthy. The wisdom that built the world is the wisdom you can stake your weight on - the original 'amen' under the foundations."
+        }
+      ],
+      "strongsNumber": "H525",
+      "definition": "an architect, master workman, or (by an alternate vocalization) a foster-child / nursling",
+      "usage": "The word holds two pictures at once: wisdom as the master builder whose hands frame the heavens, and wisdom as the cherished child rejoicing before the Father. Scripture lets both stand, and the Son fulfills both."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Proverbs: Daily Wisdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wisdom personified (1 Cor 1:30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book That Keeps Telling You to Buy Something It Won't Name",
+      "body": "Read Proverbs straight through and you notice it is relentless about one purchase. Get wisdom. Get understanding. Buy the truth and do not sell it. Trust in the LORD with all your heart and lean not on your own understanding (Proverbs 3:5). It hands you proverb after proverb the way a parent hands a child rules for crossing the street: short, practical, life-or-death. A good name is worth more than great riches (22:1). Pride goes before destruction (16:18). Train up a child in the way he should go (22:6). The plans are yours, but the LORD determines your steps (16:9).\n\nFor most of the book, wisdom feels like a skill you acquire - good judgment, a steady tongue, the discipline to fear the LORD and turn from evil. It is the kind of thing you would expect from the wisest king Israel ever had, jotting down what he learned about living well under heaven.\n\nThen you reach chapter 8, and something strange happens. Wisdom stops being a quality you collect. Wisdom opens her mouth and speaks. And what she says is not advice. It is autobiography. She says: I was there. Before the mountains were settled, before the springs ran, before there was any dust to make a person from - I was already beside Him.",
+      "keyInsight": "Proverbs spends most of its pages urging you to get wisdom, then in chapter 8 lets wisdom speak for herself - and reveals she is not a skill to acquire but Someone who was present at the founding of the world.",
+      "content": "Read Proverbs straight through and you notice it is relentless about one purchase. Get wisdom. Get understanding. Buy the truth and do not sell it. Trust in the LORD with all your heart and lean not on your own understanding (Proverbs 3:5). It hands you proverb after proverb the way a parent hands a child rules for crossing the street: short, practical, life-or-death. A good name is worth more than great riches (22:1). Pride goes before destruction (16:18). Train up a child in the way he should go (22:6). The plans are yours, but the LORD determines your steps (16:9).\n\nFor most of the book, wisdom feels like a skill you acquire - good judgment, a steady tongue, the discipline to fear the LORD and turn from evil. It is the kind of thing you would expect from the wisest king Israel ever had, jotting down what he learned about living well under heaven.\n\nThen you reach chapter 8, and something strange happens. Wisdom stops being a quality you collect. Wisdom opens her mouth and speaks. And what she says is not advice. It is autobiography. She says: I was there. Before the mountains were settled, before the springs ran, before there was any dust to make a person from - I was already beside Him."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manual and the Maker",
+      "body": "A friend of mine restores old timber-frame barns, the kind raised before anyone wrote anything down. When he started, he bought every book on joinery he could find - charts of mortise angles, tables of load and span, rules for which way the grain should run. He memorized them. He could quote them. And his first frame still came out wrong, racked and leaning, because the rules in the book assumed something the book never said out loud: that you already understood why a building stands up.\n\nWhat changed him was not another manual. It was an old carpenter who let him work at his elbow for a season. The man rarely explained. He just built, day after day, and let my friend watch the hands that already knew. The rules finally made sense not when he read them better, but when he stood beside someone for whom the rules were simply how he saw.\n\nProverbs is full of rules. Trust, don't lean, fear the LORD, weigh your motives, guard your name. But chapter 8 quietly tells you where the rules come from. They are not the wisdom. They are the visible edge of a Person who was a skilled craftsman at God's side when the foundations of the earth were marked out - and who would rather have you at His elbow than hand you another list.",
+      "connectionToTheme": "The proverbs are the visible rules; chapter 8 reveals the Craftsman behind them, who was present at creation and wants the reader beside Him, not merely informed.",
+      "content": "A friend of mine restores old timber-frame barns, the kind raised before anyone wrote anything down. When he started, he bought every book on joinery he could find - charts of mortise angles, tables of load and span, rules for which way the grain should run. He memorized them. He could quote them. And his first frame still came out wrong, racked and leaning, because the rules in the book assumed something the book never said out loud: that you already understood why a building stands up.\n\nWhat changed him was not another manual. It was an old carpenter who let him work at his elbow for a season. The man rarely explained. He just built, day after day, and let my friend watch the hands that already knew. The rules finally made sense not when he read them better, but when he stood beside someone for whom the rules were simply how he saw.\n\nProverbs is full of rules. Trust, don't lean, fear the LORD, weigh your motives, guard your name. But chapter 8 quietly tells you where the rules come from. They are not the wisdom. They are the visible edge of a Person who was a skilled craftsman at God's side when the foundations of the earth were marked out - and who would rather have you at His elbow than hand you another list."
+    },
+    {
+      "type": "insight",
+      "heading": "Wisdom Was Delighting in You Before You Existed",
+      "body": "Sit with the most startling line in the chapter. The skilled craftsman at God's side was His delight day by day, rejoicing always in His presence - and then: rejoicing in His whole world, delighting together in the sons of men (Proverbs 8:30-31).\n\nBefore there was a single human being, before the dust was gathered to make the first one, wisdom was already rejoicing over the sons of men. The joy ran ahead of the people. The architect of the heavens, marking out the foundations of the earth, was already glad about you - not the improved version, not the wise version you keep failing to become, but you, who had not yet been made.\n\nThis is the quiet reversal at the center of the book. Proverbs spends chapter after chapter telling you to chase wisdom, to seek her, to find her like silver. Chapter 8 lets you overhear that while you were nowhere yet to be found, wisdom was already delighting in the thought of you. Proverbs 8:35 says it plainly: whoever finds me finds life and obtains the favor of the LORD. You spend the book looking. The shock is that you were the thing being looked forward to first.",
+      "historicalContext": "Proverbs 8 belongs to Israel's Wisdom Literature alongside Job and Ecclesiastes. In this poem, Wisdom is personified - given a voice and a story - a literary move that lets the abstract become almost a face. Ancient readers, both Jewish and Christian, found this figure so vivid and so close to God that they could not treat her as mere metaphor; she clearly stands at the seam between God and His world.",
+      "fascinatingFact": "Proverbs 8:22-31 is one of the most quoted Old Testament passages in the early centuries of the Church. The phrase the LORD 'created me' or 'brought me forth' became the storm-center of the fourth-century debates about Christ. How the Church read this single poem helped shape how it confessed the eternal Son in the Nicene Creed.",
+      "content": "Sit with the most startling line in the chapter. The skilled craftsman at God's side was His delight day by day, rejoicing always in His presence - and then: rejoicing in His whole world, delighting together in the sons of men (Proverbs 8:30-31).\n\nBefore there was a single human being, before the dust was gathered to make the first one, wisdom was already rejoicing over the sons of men. The joy ran ahead of the people. The architect of the heavens, marking out the foundations of the earth, was already glad about you - not the improved version, not the wise version you keep failing to become, but you, who had not yet been made.\n\nThis is the quiet reversal at the center of the book. Proverbs spends chapter after chapter telling you to chase wisdom, to seek her, to find her like silver. Chapter 8 lets you overhear that while you were nowhere yet to be found, wisdom was already delighting in the thought of you. Proverbs 8:35 says it plainly: whoever finds me finds life and obtains the favor of the LORD. You spend the book looking. The shock is that you were the thing being looked forward to first."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Wisdom in Proverbs 8 is no mere skill but a voice that claims to have been at God's side before the world was made - the master craftsman through whom the foundations of the earth were marked out, and His daily delight.",
+      "modernApplication": "We still treat wisdom as information to acquire: the right framework, the better habit, the productivity system, the hot take that finally makes sense of everything. Proverbs lets us hear that the wisdom we are scrolling for is not a download but a Person - and that the smartest move is not to master more rules but to stand at His elbow and watch how He builds.",
+      "connectionPoint": "From the first pages of the New Testament, the Church read Proverbs 8 with Christ in view. Paul calls Christ 'the wisdom of God' and says He 'has become for us wisdom from God' (1 Corinthians 1:24, 30). The Son is 'the firstborn over all creation,' the one in whom 'all things were created,' who holds the foundations together (Colossians 1:15-17). John opens with the Word who 'was with God in the beginning,' through whom 'all things were made' (John 1:1-3). The craftsman of Proverbs 8 and the Word of John 1 are doing the same work at the same side of the same God.",
+      "newTestamentEcho": "What Proverbs personifies, the Gospel gives a face and a name. The Wisdom who was 'a skilled craftsman at His side' became the carpenter from Nazareth who took up real tools, and the wisdom 'rejoicing in the sons of men' before they existed is the Christ who, 'for the joy set before Him, endured the cross' (Hebrews 12:2). Proverbs 8:35 said whoever finds wisdom finds life; Jesus says, 'I am the way and the truth and the life' (John 14:6). The voice in the poem and the voice on the mountain are one."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Have you been treating wisdom as something to acquire - a better rule, a sharper insight - rather than as Someone to stand beside?",
+      "additionalQuestions": [
+        "Where in your life are you leaning hard on your own understanding (Proverbs 3:5), confident in a way that seems right to you (Proverbs 16:25)?",
+        "If the wisdom of God was already 'delighting in the sons of men' before you were made, how does that change the way you imagine God thinking about you?",
+        "What would it look like this week to commit your works to the LORD (Proverbs 16:3) instead of perfecting them alone first?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have chased wisdom like a thing to be bought, and I have leaned on my own understanding more than I want to admit. Thank You that the wisdom I keep searching for is Your Son, who was beside You before the mountains were set, the craftsman through whom You framed the world - and who was already delighting in people like me before we had a name. Teach me to fear You and turn from evil. Let me stand at His elbow and learn how You build. Make my crooked ways straight, not by my cleverness, but by Your hand. Through Christ, who is the wisdom of God. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before solving the thing in front of you, name it out loud to God and 'commit your works to the LORD' (Proverbs 16:3). Then pick one decision you would normally reason through alone, and stop to ask the Wisdom who built the world how He sees it - before you act.",
+      "leavingAtCross": [
+        "The habit of leaning on my own understanding and trusting the way that merely seems right to me",
+        "The belief that wisdom is one more thing to acquire, master, and own",
+        "The quiet pride that goes before a fall - certainty in my own eyes"
+      ],
+      "receivingFromCross": [
+        "Christ Himself as the wisdom of God, given to me, not earned by me",
+        "The assurance that I was delighted in before I was ever made",
+        "Straight paths I did not have to map alone - the LORD determining the steps I plan"
+      ],
+      "content": "Today, before solving the thing in front of you, name it out loud to God and 'commit your works to the LORD' (Proverbs 16:3). Then pick one decision you would normally reason through alone, and stop to ask the Wisdom who built the world how He sees it - before you act."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Proverbs 8, what does Wisdom claim about herself that goes far beyond being a human skill or good judgment?",
+        "How does the early Church's reading of Proverbs 8 connect this 'craftsman' figure to Christ in John 1 and Colossians 1?",
+        "What is the reversal hidden in Proverbs 8:30-31 - who was seeking whom, and when?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are 'wise in your own eyes' (Proverbs 3:7) and reluctant to bring God into the decision.",
+        "Talk about the difference between collecting wise advice and actually walking beside the One who is wisdom.",
+        "Ask each other: where is your understanding so confident that you have stopped asking God to make your path straight?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Proverbs 3:5-6",
+          "text": "Trust in the LORD with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight."
+        },
+        {
+          "reference": "1 Corinthians 1:30",
+          "text": "It is because of Him that you are in Christ Jesus, who has become for us wisdom from God: our righteousness, holiness, and redemption."
+        },
+        {
+          "reference": "Colossians 1:16-17",
+          "text": "For in Him all things were created, things in heaven and on earth... all things were created through Him and for Him. He is before all things, and in Him all things hold together."
+        },
+        {
+          "reference": "John 1:1-3",
+          "text": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Proverbs 8",
+          "note": "Read the whole chapter aloud, slowly. Watch the moment Wisdom shifts from giving counsel (vv. 1-21) to telling her own story from before creation (vv. 22-31). Notice where the joy is aimed."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Personified Wisdom",
+      "title": "The Craftsman at God's Side",
+      "description": "In Proverbs, Wisdom is given a voice and a story. She calls out in the streets, sets her table, and in chapter 8 tells of standing beside God before the world was made - the skilled craftsman through whom the foundations of the earth were marked out, the Father's daily delight, already rejoicing over the sons of men. Jewish readers honored her as the deepest mark of God on His world. Christians, hearing 1 Corinthians, Colossians, and John, came to see in this figure the eternal Son - the Wisdom of God who later took on flesh.",
+      "keyQuote": "Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.",
+      "lessonForUs": "The wisdom Proverbs tells you to seek is not finally a possession but a Person. To 'find wisdom' is, in the end, to find Christ - and to discover He was delighting in you long before you went looking for Him.",
+      "heading": "The Craftsman at God's Side"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2399,
+  "scriptureReference_full": "Proverbs 3, 8, 16, 22, 31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (amon, H525, Proverbs 8:30) reflects standard lexical sources; the craftsman / nursling ambiguity and the link to the aman root (faithful, firm; the source of amen) are widely noted in Hebrew lexicons and commentary.",
+    "The reading of Proverbs 8:22-31 in light of Christ as the Wisdom of God follows the historic Christian interpretation reflected in 1 Corinthians 1:24, 30; Colossians 1:15-17; and John 1:1-3, and informed the fourth-century Nicene confession of the eternal Son."
+  ]
 }

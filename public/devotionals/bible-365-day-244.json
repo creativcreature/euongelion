@@ -1,38 +1,182 @@
 {
   "day": 244,
-  "title": "Ezekiel: Dry Bones Live — Day 6 — Deeper Dive",
-  "teaser": "Day 244 of Bible 365 — Ezekiel 36-37",
+  "title": "Breath for the Bones That Gave Up",
+  "teaser": "Day 244 of Bible 365 — Ezekiel 36-37. A whole valley of dry bones, and one question: can these live? Only the same breath that made Adam, and the same Spirit the risen Christ breathed on His own.",
   "framework": "Ezekiel 36-37 — Ezekiel: Dry Bones Live",
   "scriptureReference": "Ezekiel 36-37",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 244"
+      "type": "scripture",
+      "reference": "Ezekiel 37:3-6",
+      "translation": "BSB",
+      "emphasis": [
+        "can these bones come to life?",
+        "only You know",
+        "I will cause breath to enter you",
+        "Then you will know that I am the LORD"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר אֵלַי בֶּן־אָדָם הֲתִחְיֶינָה הָעֲצָמוֹת הָאֵלֶּה",
+      "passage": "Then He asked me, \"Son of man, can these bones come to life?\" \"O Lord GOD,\" I replied, \"only You know.\" And He said to me, \"Prophesy concerning these bones and tell them, 'Dry bones, hear the word of the LORD! This is what the Lord GOD says to these bones: I will cause breath to enter you, and you will come to life. I will attach tendons to you and make flesh grow upon you and cover you with skin. I will put breath within you so that you will come to life. Then you will know that I am the LORD.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ezekiel 36-37**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ezekiel 36-37 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רוּחַ",
+      "transliteration": "ruach",
+      "pronunciation": "ROO-akh",
+      "meaning": "breath, wind, Spirit",
+      "rootMeaning": "Moving air. The same word can name the wind that crosses a field, the breath in your chest, and the Spirit of God. Ezekiel 37 leans on all three meanings at once - the passage is impossible to translate without choosing, and every choice loses something.",
+      "usageNote": "Ruach appears ten times across Ezekiel 37:1-14, more thickly packed than almost anywhere else in the Hebrew Bible. In a single sentence (37:9) the translators must render it three different ways: 'Prophesy to the breath... Come from the four winds, O breath.' Wind, breath, Spirit - one word doing the work of three.",
+      "wordByWord": [
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "breath / wind / Spirit"
+        },
+        {
+          "word": "הֲתִחְיֶינָה",
+          "transliteration": "hatichyenah",
+          "meaning": "can they live? - from chayah, to live, the same root behind 'living'"
+        },
+        {
+          "word": "הָעֲצָמוֹת",
+          "transliteration": "ha'atsamot",
+          "meaning": "the bones"
+        },
+        {
+          "word": "בֶּן־אָדָם",
+          "transliteration": "ben-adam",
+          "meaning": "son of man - literally 'son of Adam,' God's name for Ezekiel throughout"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רוּחַ אֱלֹהִים",
+          "reference": "The same ruach hovers over the waters in Genesis 1:2, and God breathes (a related word, neshamah) the breath of life into Adam in Genesis 2:7. Ezekiel's valley is the creation account run in reverse, then forward again - dust given breath a second time."
+        }
+      ],
+      "strongsNumber": "H7307",
+      "definition": "wind, breath, spirit; the moving, life-giving air",
+      "usage": "When God tells Ezekiel to prophesy to the ruach in 37:9, He is not asking the prophet to summon a weather system. He is calling the very Spirit who hovered at creation to do the one thing only the Creator can do: turn assembled matter into a living person."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ezekiel: Dry Bones Live. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ resurrects the dead (John 11:25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Valley Full of the Worst Thing",
+      "body": "The hand of the LORD sets Ezekiel down in the middle of a valley, and the first thing he reports is the floor. It is covered in bones. Not a battlefield with the recently fallen - God walks him all around among them, and Ezekiel notices two things: there are a great many, and they are very dry. Dry means old. Dry means picked clean, bleached by years of sun, past the point where anyone would imagine a rescue. This is not a place of dying. It is a place where dying finished its work long ago.\n\nThen God asks the only question that matters there: \"Son of man, can these bones come to life?\" It is a strange thing to ask a man standing in an open grave. The honest answer is no. Bones do not reassemble. The longer they have been dry, the more obviously no. But Ezekiel does not say no, and he does not pretend to a faith he cannot feel. He says, \"O Lord GOD, only You know.\" It is one of the most truthful sentences a person can pray. Not yes. Not no. Just: this is past me, and it is not past You.\n\nGod tells him to preach to the bones. To open his mouth and address the dead. And Ezekiel, who has every reason to feel foolish, does it - and the valley begins to rattle. Bone finds bone. Tendon stretches across joint. Flesh grows; skin closes over. The exiles in Babylon, the original audience, would have recognized themselves in this picture immediately, because they had already given the eulogy. Look back at verse 11 and you hear their exact words: \"Our bones are dried up, and our hope has perished; we are cut off.\" They were not asking whether God could rebuild Jerusalem. They had stopped asking. They had decided.",
+      "keyInsight": "God does not begin with the people who still have hope. He begins in the valley with the ones who have already buried themselves - and asks whether the deadest thing they know can live.",
+      "content": "The hand of the LORD sets Ezekiel down in the middle of a valley, and the first thing he reports is the floor. It is covered in bones. Not a battlefield with the recently fallen - God walks him all around among them, and Ezekiel notices two things: there are a great many, and they are very dry. Dry means old. Dry means picked clean, bleached by years of sun, past the point where anyone would imagine a rescue. This is not a place of dying. It is a place where dying finished its work long ago.\n\nThen God asks the only question that matters there: \"Son of man, can these bones come to life?\" It is a strange thing to ask a man standing in an open grave. The honest answer is no. Bones do not reassemble. The longer they have been dry, the more obviously no. But Ezekiel does not say no, and he does not pretend to a faith he cannot feel. He says, \"O Lord GOD, only You know.\" It is one of the most truthful sentences a person can pray. Not yes. Not no. Just: this is past me, and it is not past You.\n\nGod tells him to preach to the bones. To open his mouth and address the dead. And Ezekiel, who has every reason to feel foolish, does it - and the valley begins to rattle. Bone finds bone. Tendon stretches across joint. Flesh grows; skin closes over. The exiles in Babylon, the original audience, would have recognized themselves in this picture immediately, because they had already given the eulogy. Look back at verse 11 and you hear their exact words: \"Our bones are dried up, and our hope has perished; we are cut off.\" They were not asking whether God could rebuild Jerusalem. They had stopped asking. They had decided."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Word She Stopped Saying",
+      "body": "A woman I know stopped using the word \"future\" for about two years. She did not announce it. She just noticed, later, that it had quietly dropped out of her vocabulary - the way you stop reaching for a railing on a staircase you have finally memorized. A marriage had ended in a way she had sworn it never would. The faith she had carried since childhood felt, she said, \"like a coat that no longer fit anyone I recognized.\" When people at church asked how she was praying, she told them the truth: she wasn't. There were no words left. There were only the bones of a life that used to be assembled, scattered now across a floor she could not look at.\n\nWhat she remembers is not a moment of sudden belief. It is smaller than that. A friend kept showing up - kept saying ordinary, true things into the silence, the way Ezekiel kept preaching to a valley that gave him no encouragement to continue. The friend did not have the power to put her back together. She just kept speaking the word over the dryness anyway. And somewhere in the second year, without fanfare, the woman caught herself using the word \"future\" again in a sentence. She said it surprised her more than anyone. She had not decided to hope. The hope had been breathed back in from somewhere outside her, while she wasn't watching.",
+      "connectionToTheme": "The bones do not vote themselves back to life, and they are not scolded into it. Life comes from outside the valley - carried in on a word someone was faithful enough to keep speaking over the dryness.",
+      "content": "A woman I know stopped using the word \"future\" for about two years. She did not announce it. She just noticed, later, that it had quietly dropped out of her vocabulary - the way you stop reaching for a railing on a staircase you have finally memorized. A marriage had ended in a way she had sworn it never would. The faith she had carried since childhood felt, she said, \"like a coat that no longer fit anyone I recognized.\" When people at church asked how she was praying, she told them the truth: she wasn't. There were no words left. There were only the bones of a life that used to be assembled, scattered now across a floor she could not look at.\n\nWhat she remembers is not a moment of sudden belief. It is smaller than that. A friend kept showing up - kept saying ordinary, true things into the silence, the way Ezekiel kept preaching to a valley that gave him no encouragement to continue. The friend did not have the power to put her back together. She just kept speaking the word over the dryness anyway. And somewhere in the second year, without fanfare, the woman caught herself using the word \"future\" again in a sentence. She said it surprised her more than anyone. She had not decided to hope. The hope had been breathed back in from somewhere outside her, while she wasn't watching."
+    },
+    {
+      "type": "insight",
+      "heading": "Why God Acts - and It Is Not Because You Earned It",
+      "body": "Before the bones in chapter 37, there is a sentence in chapter 36 that holds the whole vision together, and it is one of the most bracing things God says anywhere. Twice, plainly, He tells Israel why He is about to save them: \"It is not for your sake that I will act, O house of Israel, but for My holy name\" (36:22). Then He says it again from the other side: \"I will show the holiness of My great name... Then the nations will know that I am the LORD\" (36:23).\n\nThis is the center the whole passage turns on, and it cuts two ways at once. On one edge it is humbling: the restoration is not a reward. The exiles did nothing to deserve the breath that is coming. God is not impressed into action by their improvement, because there is no improvement - there are only dry bones. But the other edge is the more startling, and it is pure relief. Because the reason God acts is anchored in His own character and not in their performance, the rescue does not depend on the bones being good enough to merit it. A salvation grounded in your worthiness is only as secure as your worthiness. A salvation grounded in God's commitment to His own name is as secure as God. This is why the new heart in 36:26 is a gift and not a transaction: \"I will remove your heart of stone and give you a heart of flesh.\" The deadest part of you - the part that cannot feel, cannot repent, cannot soften itself - is precisely the part God reserves for Himself to replace. You do not perform the surgery. You receive it.",
+      "historicalContext": "Ezekiel prophesied to the exiles in Babylon after Jerusalem and its Temple fell in 586 BC. To that community, the language of being gathered from the nations and brought back to the land (36:24) was not metaphor first - it was a literal promise about a literal return, which began under Cyrus of Persia in 538 BC. The vision had a near horizon they could touch and a far horizon they could not yet see.",
+      "fascinatingFact": "Ezekiel 37 is among the readings the synagogue assigns for Passover, the festival of deliverance - and the vision of the valley of dry bones became one of the most painted scenes in Jewish art, including the murals of the third-century synagogue at Dura-Europos in Syria, where the bones are shown rising whole. Long before the New Testament, this passage was Israel's great picture of hope reaching past the grave.",
+      "content": "Before the bones in chapter 37, there is a sentence in chapter 36 that holds the whole vision together, and it is one of the most bracing things God says anywhere. Twice, plainly, He tells Israel why He is about to save them: \"It is not for your sake that I will act, O house of Israel, but for My holy name\" (36:22). Then He says it again from the other side: \"I will show the holiness of My great name... Then the nations will know that I am the LORD\" (36:23).\n\nThis is the center the whole passage turns on, and it cuts two ways at once. On one edge it is humbling: the restoration is not a reward. The exiles did nothing to deserve the breath that is coming. God is not impressed into action by their improvement, because there is no improvement - there are only dry bones. But the other edge is the more startling, and it is pure relief. Because the reason God acts is anchored in His own character and not in their performance, the rescue does not depend on the bones being good enough to merit it. A salvation grounded in your worthiness is only as secure as your worthiness. A salvation grounded in God's commitment to His own name is as secure as God. This is why the new heart in 36:26 is a gift and not a transaction: \"I will remove your heart of stone and give you a heart of flesh.\" The deadest part of you - the part that cannot feel, cannot repent, cannot soften itself - is precisely the part God reserves for Himself to replace. You do not perform the surgery. You receive it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God promises a cleansing with clean water (36:25), a heart transplant from stone to flesh (36:26), and His own Spirit placed within His people (36:27) - and then, in the valley, He demonstrates it: dry bones stand up as a vast army when the ruach enters them.",
+      "modernApplication": "We are fluent in self-rescue. We try to talk ourselves into feeling again, manufacture hope by force of will, white-knuckle our way back to a faith that has gone dry. Ezekiel's valley says, kindly, that this is not how the dead come back. You do not breathe yourself alive. The breath has to come from outside you, from the four winds, from God - and the good news is that He is the one who insists on giving it.",
+      "connectionPoint": "Two promises in chapter 36 land in the same place. Clean water sprinkled to cleanse from impurity (36:25) runs forward into the washing of new birth; the indwelling Spirit (36:27) is exactly what the New Testament says every believer receives. What Ezekiel saw in vision, the church receives in fact - a heart of flesh and the Spirit of God living inside.",
+      "newTestamentEcho": "On the evening of His resurrection, Jesus stood among His frightened disciples, breathed on them, and said, \"Receive the Holy Spirit\" (John 20:22). The Greek word John chooses for 'breathed' is the rare word the Greek Old Testament uses in Genesis 2:7, when God breathed life into Adam, and in Ezekiel 37, when the breath enters the slain. The risen Christ is doing in that room what God did in Eden and what the Spirit did in the valley: putting living breath into dust. And His own empty tomb is the down payment - the first of the dry bones to stand."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you already given the eulogy - quietly decided that some relationship, calling, or part of your own heart is too dry to live again?",
+      "additionalQuestions": [
+        "God asks Ezekiel, 'Can these bones live?' If God asked you that about the deadest thing you are carrying, could you honestly say with Ezekiel, 'Only You know' - leaving the verdict to Him instead of closing it yourself?",
+        "The exiles said, 'Our hope has perished; we are cut off.' What sentence have you stopped saying, or started saying, that tells you where your hope actually stands right now?",
+        "If your rescue does not depend on your being good enough to deserve it, but on God's commitment to His own name, what changes about how you come to Him today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord GOD, only You know whether these bones can live. I have looked at the dry places in me long enough to have my own opinion, and my opinion is no. I bring You that opinion now, and I lay it down. Breathe on what I have buried. Come from the four winds and put Your Spirit in me - not because I have earned it, but because of Your own great name. Take the heart of stone I cannot soften and give me a heart of flesh. I am not asking to feel alive by tonight. I am asking You to be the kind of God who raises what I have already grieved. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one 'dry bone' - a hope you have privately written off - and refuse to give it the final word today. Instead of declaring it dead or forcing it back to life, hand it to God in the words of Ezekiel: 'Only You know.' Then leave it in His hands for twenty-four hours without picking it back up.",
+      "leavingAtCross": [
+        "The eulogy I have already delivered over a part of my life God has not buried",
+        "The exhausting project of breathing myself back to life by willpower",
+        "The lie that God acts for me only when I have made myself worth acting for"
+      ],
+      "receivingFromCross": [
+        "A heart of flesh in place of the stone I could never soften myself",
+        "The Spirit of God placed within me, the same breath that raised Christ from the dead",
+        "A hope anchored in God's commitment to His own name, which is as secure as He is"
+      ],
+      "content": "Name one 'dry bone' - a hope you have privately written off - and refuse to give it the final word today. Instead of declaring it dead or forcing it back to life, hand it to God in the words of Ezekiel: 'Only You know.' Then leave it in His hands for twenty-four hours without picking it back up."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Ezekiel says the bones were 'very dry.' Why does that detail matter for what God is about to prove, and what does dryness represent for the exiles in verse 11?",
+        "In Ezekiel 36:22, God states twice why He acts to save Israel. What reason does He give, and why is that reason actually more comforting than if He had said He acts because they deserve it?",
+        "The single Hebrew word ruach is translated 'breath,' 'wind,' and 'Spirit' in this chapter. How does that one word connect the valley of bones to creation in Genesis and to Jesus breathing on His disciples in John 20?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one area where you have quietly stopped praying because it felt past hope. Don't fix it - just name it out loud.",
+        "Ezekiel had to preach to the bones before anything moved. Where is God asking you to keep speaking truth over a dry situation before you see any result?",
+        "Ask each other: do you live more like your standing with God depends on your performance, or on His commitment to His own name? Be honest about which one you actually feel."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ezekiel 37:11",
+          "text": "Then He said to me, \"Son of man, these bones are the whole house of Israel. Look, they are saying, 'Our bones are dried up, and our hope has perished; we are cut off.'\""
+        },
+        {
+          "reference": "Genesis 2:7",
+          "text": "Then the LORD God formed man from the dust of the ground and breathed the breath of life into his nostrils, and the man became a living being."
+        },
+        {
+          "reference": "John 20:22",
+          "text": "And when He had said this, He breathed on them and said, \"Receive the Holy Spirit.\""
+        },
+        {
+          "reference": "Ephesians 2:4-5",
+          "text": "But because of His great love for us, God, who is rich in mercy, made us alive with Christ even when we were dead in our trespasses. It is by grace you have been saved!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ezekiel 36-37",
+          "note": "Read both chapters together in one sitting. Watch how the promises of chapter 36 - clean water, a new heart, God's own Spirit - become the visible drama of chapter 37, where the Spirit enters the bones and they stand."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Ezekiel",
+      "title": "The Priest Who Preached to the Dead",
+      "description": "A priest exiled to Babylon with the first wave of captives around 597 BC, called by God to prophesy to a people who had lost their land, their Temple, and their hope. God repeatedly addresses him as 'son of man' - 'son of Adam' - a reminder that the prophet is himself only dust given breath. His visions are among the strangest and most vivid in Scripture, and the valley of dry bones is his most enduring: a promise that the God who scattered His people for their sin would gather them, cleanse them, and breathe them back to life for the sake of His own name.",
+      "keyQuote": "O Lord GOD, only You know.",
+      "lessonForUs": "When God shows you the deadest thing you know and asks if it can live, you do not have to manufacture certainty or surrender to despair. Ezekiel's faith was not a confident yes - it was an honest refusal to close the verdict God had not closed. He left the question with the only One who could answer it, and then did the obedient thing in front of him: he kept speaking the word over the dryness.",
+      "heading": "The Priest Who Preached to the Dead"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2666,
+  "scriptureReference_full": "Ezekiel 36:22-27; 37:1-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ruach, H7307) reflects standard lexical sources; the tenfold concentration of ruach in Ezekiel 37:1-14 and its triple sense of wind/breath/Spirit are widely noted in commentary. The Greek verb for 'breathed' (enephysesen) in John 20:22 matches the Septuagint of Genesis 2:7 and Ezekiel 37:9. The Dura-Europos synagogue murals (3rd century AD) depicting the dry-bones vision are a documented archaeological find."
+  ]
 }

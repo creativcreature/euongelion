@@ -1,38 +1,188 @@
 {
   "day": 19,
   "title": "On the mountain it will be provided",
-  "teaser": "Day 19 of Bible 365 — Genesis 22:1-14",
+  "teaser": "Day 19 of Bible 365 — Genesis 22:1-14. A father climbs Moriah to give up his only son, and learns that the lamb was never his to find. God provides it.",
   "framework": "Genesis 22:1-14 — Substitutionary lamb",
   "scriptureReference": "Genesis 22:1-14",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 19"
+      "type": "scripture",
+      "reference": "Genesis 22:1-14",
+      "translation": "BSB",
+      "emphasis": [
+        "your only son",
+        "God Himself will provide the lamb",
+        "in place of his son",
+        "On the mountain of the LORD it will be provided"
+      ],
+      "hebrewOriginal": "וַיִּקְרָא אַבְרָהָם שֵׁם־הַמָּקוֹם הַהוּא יְהוָה יִרְאֶה",
+      "passage": "Some time later God tested Abraham and said to him, \"Abraham!\" \"Here I am,\" he answered. \"Take your son,\" God said, \"your only son Isaac, whom you love, and go to the land of Moriah. Offer him there as a burnt offering on one of the mountains, which I will show you.\" So Abraham got up early the next morning, saddled his donkey, and took along two of his servants and his son Isaac. He split the wood for a burnt offering and set out for the place God had designated. On the third day Abraham looked up and saw the place in the distance. \"Stay here with the donkey,\" Abraham told his servants. \"The boy and I will go over there to worship, and then we will return to you.\" Abraham took the wood for the burnt offering and placed it on his son Isaac. He himself carried the fire and the sacrificial knife, and the two of them walked on together. Then Isaac said to his father Abraham, \"My father!\" \"Here I am, my son,\" he replied. \"The fire and the wood are here,\" said Isaac, \"but where is the lamb for the burnt offering?\" Abraham answered, \"God Himself will provide the lamb for the burnt offering, my son.\" And the two walked on together. When they arrived at the place God had designated, Abraham built the altar there and arranged the wood. He bound his son Isaac and placed him on the altar, atop the wood. Then Abraham reached out his hand and took the knife to slaughter his son. Just then the angel of the LORD called out to him from heaven, \"Abraham, Abraham!\" \"Here I am,\" he replied. \"Do not lay a hand on the boy or do anything to him,\" said the angel, \"for now I know that you fear God, since you have not withheld your only son from me.\" Then Abraham looked up and saw behind him a ram in a thicket, caught by its horns. So he went and took the ram and offered it as a burnt offering in place of his son. And Abraham called that place The LORD Will Provide. So to this day it is said, \"On the mountain of the LORD it will be provided.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 22:1-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 22:1-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יְהוָה יִרְאֶה",
+      "transliteration": "YHWH yireh",
+      "pronunciation": "yah-WEH yir-EH",
+      "meaning": "The LORD will see / The LORD will provide",
+      "rootMeaning": "The verb ra'ah means to see. From the same root comes the idea of God seeing to a need - to provide, in Hebrew, is first of all to set eyes on what is lacking before the one who lacks it ever arrives.",
+      "usageNote": "Abraham uses this verb in verse 8 - \"God Himself will provide [yireh] the lamb\" - and again in verse 14 to name the place: YHWH-yireh. The same word frames the whole climb: a promise on the way up, a memorial on the way down. What Abraham believed before any evidence becomes the name of the mountain after.",
+      "wordByWord": [
+        {
+          "word": "וַיִּקְרָא",
+          "transliteration": "vayyiqra",
+          "meaning": "and he called, he named"
+        },
+        {
+          "word": "אַבְרָהָם",
+          "transliteration": "Avraham",
+          "meaning": "Abraham - father of a multitude"
+        },
+        {
+          "word": "שֵׁם־הַמָּקוֹם",
+          "transliteration": "shem-hammaqom",
+          "meaning": "the name of the place"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of God"
+        },
+        {
+          "word": "יִרְאֶה",
+          "transliteration": "yireh",
+          "meaning": "He will see, He will provide, He will see to it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רָאָה / יִרְאֶה",
+          "reference": "The same root that gives yireh (He will see/provide) sits inside the play of verse 14: the LORD will see (yireh), and on this mountain the LORD will be seen (yera'eh). Provision and presence run on one verb - where God sees to the need, God is also seen."
+        }
+      ],
+      "strongsNumber": "H7200",
+      "definition": "ra'ah: to see, to look, to perceive; in the causative and idiomatic sense, to provide, to see to a matter",
+      "usage": "The name Abraham gives the mountain is not a thank-you for a lucky escape. It is a confession turned into a place: the God who tests is the God who provides, and the provision was His to make all along."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Substitutionary lamb. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The Lamb provided (John 1:29).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Question on the Way Up",
+      "body": "The chapter opens with a sentence that should stop us: \"Some time later God tested Abraham.\" Tested. The Hebrew does not soften it. God asks for the one thing He had spent twenty-five years giving - the son of the promise, the boy through whom every nation was to be blessed. \"Take your son, your only son Isaac, whom you love.\" The words pile up like a hand pressing slowly on a bruise. Each one names what the command will cost.\n\nAbraham says almost nothing. He rises early, splits the wood himself, and walks three days with the knife and the fire and the boy. Scripture refuses to tell us what he felt. It only tells us what he did, and twice it records the same small, unbearable line: \"the two of them walked on together.\"\n\nThen the silence breaks. Isaac, carrying the wood on his own back, asks the question the whole chapter has been holding its breath against: \"The fire and the wood are here, but where is the lamb for the burnt offering?\" A son carries the wood for his own death up a hill and asks his father where the sacrifice is. And Abraham, who has no ram and no escape that he can see, answers: \"God Himself will provide the lamb.\" He does not know how. He has staked everything on a verb - yireh, He will see to it - and kept climbing.",
+      "keyInsight": "The center of the story is not Abraham's knife but Abraham's sentence: God Himself will provide the lamb. The faith being tested was never that Abraham could find a sacrifice - it was that God would.",
+      "content": "The chapter opens with a sentence that should stop us: \"Some time later God tested Abraham.\" Tested. The Hebrew does not soften it. God asks for the one thing He had spent twenty-five years giving - the son of the promise, the boy through whom every nation was to be blessed. \"Take your son, your only son Isaac, whom you love.\" The words pile up like a hand pressing slowly on a bruise. Each one names what the command will cost.\n\nAbraham says almost nothing. He rises early, splits the wood himself, and walks three days with the knife and the fire and the boy. Scripture refuses to tell us what he felt. It only tells us what he did, and twice it records the same small, unbearable line: \"the two of them walked on together.\"\n\nThen the silence breaks. Isaac, carrying the wood on his own back, asks the question the whole chapter has been holding its breath against: \"The fire and the wood are here, but where is the lamb for the burnt offering?\" A son carries the wood for his own death up a hill and asks his father where the sacrifice is. And Abraham, who has no ram and no escape that he can see, answers: \"God Himself will provide the lamb.\" He does not know how. He has staked everything on a verb - yireh, He will see to it - and kept climbing."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hand That Stops the Hand",
+      "body": "A friend of mine spent the worst week of his life beside a hospital bed where his daughter lay after a car accident, machines breathing for her. He told me the only prayer he had left was not words. It was his open hands, palms up, on the edge of the mattress - the gesture of a man letting go of the one thing he could not bear to lose.\n\nThe strange mercy, he said, was not that she lived, though she did. It came earlier, in the moment his hands opened. Something he had clenched his whole life - the belief that his love could keep her safe, that holding tight enough was the same as protecting - came loose. He stopped being her god and started being her father again.\n\nThat is the country Abraham walks into on Moriah. His hand is already raised; in his heart he has already given the boy back. And it is exactly there - knife caught at the top of its arc - that heaven shouts his name twice and stops him: \"Do not lay a hand on the boy.\" The test was never whether Abraham would lose Isaac. It was whether he would hold him with open hands, and find that the God who asked was the God who provides.",
+      "connectionToTheme": "Provision does not arrive while our fists are clenched. It arrives at the top of the raised hand - in the moment we finally let go of what we were trying to keep by force.",
+      "content": "A friend of mine spent the worst week of his life beside a hospital bed where his daughter lay after a car accident, machines breathing for her. He told me the only prayer he had left was not words. It was his open hands, palms up, on the edge of the mattress - the gesture of a man letting go of the one thing he could not bear to lose.\n\nThe strange mercy, he said, was not that she lived, though she did. It came earlier, in the moment his hands opened. Something he had clenched his whole life - the belief that his love could keep her safe, that holding tight enough was the same as protecting - came loose. He stopped being her god and started being her father again.\n\nThat is the country Abraham walks into on Moriah. His hand is already raised; in his heart he has already given the boy back. And it is exactly there - knife caught at the top of its arc - that heaven shouts his name twice and stops him: \"Do not lay a hand on the boy.\" The test was never whether Abraham would lose Isaac. It was whether he would hold him with open hands, and find that the God who asked was the God who provides."
+    },
+    {
+      "type": "insight",
+      "heading": "The Ram Behind, the Lamb Ahead",
+      "body": "Watch carefully what God provides and what He does not. Abraham promised a lamb: \"God Himself will provide the lamb,\" he told Isaac on the way up. But when he lifts his eyes at the top, he sees a ram - caught by its horns in a thicket, offered \"in place of his son.\" A ram, not a lamb. The rescue is real and enough for that day; Isaac walks down alive because something innocent died in his stead. Yet the precise word Abraham spoke, the lamb, is left hanging in the air.\n\nThat is no slip of vocabulary. Genesis stands at the head of the whole Bible, and here it plants a promise it does not yet keep. A father's only son carries the wood for his own sacrifice up a mountain; a substitute dies so the son goes free; and the exact lamb that was promised never appears in the thicket - it waits two thousand years to walk up another ridge of the same range. The ram could not take away sin; no animal can. So the verb Abraham spoke - God will provide - stays unfinished until John points across the Jordan and says, \"Look, the Lamb of God, who takes away the sin of the world.\"",
+      "historicalContext": "Moriah names a specific ridge. 2 Chronicles 3:1 records that Solomon later built the Temple \"on Mount Moriah,\" where the LORD had appeared. The mountain where God told Abraham He would provide became the mountain where lambs were offered daily for the sins of Israel - the name Abraham gave the place came to describe an entire way of worship.",
+      "fascinatingFact": "The wordplay in verse 14 barely survives translation. The verb behind \"will provide\" (yireh) and the one behind \"will be seen\" (yera'eh) share one Hebrew root. Abraham's saying holds both: on this mountain the LORD provides, and on this mountain the LORD is seen.",
+      "content": "Watch carefully what God provides and what He does not. Abraham promised a lamb: \"God Himself will provide the lamb,\" he told Isaac on the way up. But when he lifts his eyes at the top, he sees a ram - caught by its horns in a thicket, offered \"in place of his son.\" A ram, not a lamb. The rescue is real and enough for that day; Isaac walks down alive because something innocent died in his stead. Yet the precise word Abraham spoke, the lamb, is left hanging in the air.\n\nThat is no slip of vocabulary. Genesis stands at the head of the whole Bible, and here it plants a promise it does not yet keep. A father's only son carries the wood for his own sacrifice up a mountain; a substitute dies so the son goes free; and the exact lamb that was promised never appears in the thicket - it waits two thousand years to walk up another ridge of the same range. The ram could not take away sin; no animal can. So the verb Abraham spoke - God will provide - stays unfinished until John points across the Jordan and says, \"Look, the Lamb of God, who takes away the sin of the world.\""
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On Mount Moriah, a father offers up his only son, and at the last moment God provides a substitute - a ram dies \"in place of his son,\" and Isaac walks down the mountain alive.",
+      "modernApplication": "We tend to read this story as Abraham, asked to surrender what we love most. That reading is true, and the open hand it requires is real. But the deepest comfort comes when we stop being Abraham and become Isaac: the one bound, who could not save himself, for whom a substitute was provided. You are not asked to supply the sacrifice. You are the one for whom it is supplied.",
+      "connectionPoint": "Moriah opens a thread that runs the length of Scripture. Isaac carries the wood for his own offering up the hill (Genesis 22:6), as Jesus would carry His own cross out to Golgotha (John 19:17). The father does not withhold his only son (Genesis 22:12); Paul says God \"did not spare His own Son but gave Him up for us all\" (Romans 8:32). Hebrews even says Abraham reasoned God could raise the dead, \"and in a sense, he did receive Isaac back\" on the third day (Hebrews 11:19). Only son, carried wood, third day, substitute provided - the pattern is the gospel sketched in advance.",
+      "newTestamentEcho": "On Moriah the son was spared because a ram was caught. At the cross the world was spared because the Son was not - this time the Father did not withhold His only Son. The lamb Abraham promised but could not produce arrived the day John saw Jesus and said, \"Look, the Lamb of God, who takes away the sin of the world\" (John 1:29). Jesus put it plainly: \"Your father Abraham rejoiced that he would see My day. He saw it and was glad\" (John 8:56). Abraham named the mountain for a provision he could only believe was coming. We name it for One who has come."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the Isaac you are carrying up the mountain - the thing you love so much you have started trying to keep it with clenched hands?",
+      "additionalQuestions": [
+        "Abraham answered Isaac's hardest question with \"God Himself will provide\" before he had any evidence. Where in your life are you being asked to speak that sentence into a future you cannot yet see?",
+        "Is it easier for you to imagine yourself as Abraham, asked to give something up, or as Isaac, bound and unable to save yourself? What does each picture teach you about God?",
+        "What would it feel like to climb your own Moriah believing that the provision is God's to make, not yours to find?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-surrender",
+      "prayerText": "Father, You see what I am carrying up the mountain - the thing I love, the thing I am afraid to set down. Teach me Abraham's open hand. Teach me to keep walking when I cannot yet see the provision, trusting that You have already seen to it. Thank You that I am not finally asked to supply the lamb - that You did not withhold Your own Son, but gave Him up for me, the Lamb You provided on the mountain. Where I am bound and cannot free myself, be my substitute and my rescue. On the mountain of the LORD, let me be provided for. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the Isaac in your life out loud today - the person, hope, or security you are gripping hardest. Hold it before God with open hands for five minutes and pray Abraham's sentence over it: \"God Himself will provide.\" Then climb your day trusting the provision is His to make.",
+      "leavingAtCross": [
+        "The clenched grip on the thing I love, as if holding tighter were the same as keeping it safe",
+        "The lie that I have to be Abraham - the one who supplies the sacrifice - when I am really Isaac, the one for whom it is supplied",
+        "The fear that the God who tests is not also the God who provides"
+      ],
+      "receivingFromCross": [
+        "The open hand that can hold what I love without making it my god",
+        "The Lamb God provided when no animal ever could - His own Son, given in my place",
+        "The freedom to walk up hard mountains saying \"the LORD will provide\" before I can see how"
+      ],
+      "content": "Name the Isaac in your life out loud today - the person, hope, or security you are gripping hardest. Hold it before God with open hands for five minutes and pray Abraham's sentence over it: \"God Himself will provide.\" Then climb your day trusting the provision is His to make."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Abraham promised Isaac a lamb, but God provided a ram. Why does that small difference in words matter for how the whole Bible reads this story?",
+        "What does the name Abraham gives the mountain - The LORD Will Provide - tell us about what the test was really measuring?",
+        "How does a son carrying the wood for his own sacrifice up Moriah point forward to Jesus carrying His own cross to Golgotha?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'Isaac' you are currently holding with a closed fist, and talk about what an open hand would actually look like this week.",
+        "Discuss the difference between trying to supply your own rescue and receiving the one God provides. Which do you default to under pressure?",
+        "Ask each other: where are you being asked to say 'God Himself will provide' before you can see the provision?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        },
+        {
+          "reference": "Romans 8:32",
+          "text": "He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?"
+        },
+        {
+          "reference": "Hebrews 11:17-19",
+          "text": "By faith Abraham, when he was tested, offered up Isaac on the altar... Abraham reasoned that God could raise the dead, and in a sense, he did receive Isaac back from death."
+        },
+        {
+          "reference": "2 Chronicles 3:1",
+          "text": "Then Solomon began to build the house of the LORD in Jerusalem on Mount Moriah, where the LORD had appeared to his father David..."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 22:1-19",
+          "note": "Read the whole account slowly, marking every repetition: 'your only son,' 'the two of them walked on together,' and the verb yireh in verses 8 and 14. The repetitions are the author's way of pointing."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Isaac",
+      "title": "The Bound Son Who Was Spared",
+      "description": "The long-awaited son of Abraham and Sarah, child of the promise, born when his parents were past hope. In Genesis 22 he is old enough to carry the wood and to notice that no animal has come with them. He asks the one question that exposes everything - \"where is the lamb?\" - then lets himself be bound and laid on the altar. Jewish tradition calls this episode the Akedah, \"the binding.\" Isaac is the son who could not save himself, for whom a substitute was provided.",
+      "keyQuote": "The fire and the wood are here, but where is the lamb for the burnt offering?",
+      "lessonForUs": "We instinctively read this story as Abraham and ask whether we could surrender what we love. But Isaac's place is the truer one for us: bound, unable to free ourselves, alive only because something innocent died in our stead. The lamb Isaac asked for arrived at last on another mountain, and His name is Jesus.",
+      "heading": "The Bound Son Who Was Spared"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2644,
+  "scriptureReference_full": "Genesis 22:1-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (YHWH-yireh, the root ra'ah / yireh, H7200) reflects standard lexical sources; the yireh / yera'eh ('provide' / 'be seen') wordplay in Genesis 22:14 is widely noted in Hebrew commentary on the passage.",
+    "The traditional designation of this episode as the Akedah ('the binding' of Isaac) reflects long-standing Jewish interpretive tradition."
+  ]
 }

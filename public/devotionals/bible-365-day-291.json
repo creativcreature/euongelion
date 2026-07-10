@@ -1,38 +1,186 @@
 {
   "day": 291,
-  "title": "Mark: The Suffering Servant — Day 4 — Application",
-  "teaser": "Day 291 of Bible 365 — Mark 1-16",
+  "title": "The Ransom and the Towel",
+  "teaser": "James and John want thrones. Jesus hands them a basin. The whole Gospel of Mark turns on one sentence: the King came to be spent.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
   "scriptureReference": "Mark 1-16",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 291"
+      "type": "scripture",
+      "reference": "Mark 10:42-45",
+      "translation": "BSB",
+      "emphasis": [
+        "not be this way among you",
+        "must be your servant",
+        "give His life as a ransom for many"
+      ],
+      "greekOriginal": "οὐκ ἦλθεν διακονηθῆναι ἀλλὰ διακονῆσαι καὶ δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν",
+      "passage": "So Jesus called them together and said, \"You know that those regarded as rulers of the Gentiles lord it over them, and their superiors exercise authority over them. But it shall not be this way among you. Instead, whoever wants to become great among you must be your servant, and whoever wants to be first must be the slave of all. For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lytron",
+      "pronunciation": "LOO-tron",
+      "meaning": "a ransom, the price paid to set a captive free",
+      "rootMeaning": "Lytron comes from the verb lyo, meaning to loose or release. In the ancient world it named the sum laid down to buy back a prisoner of war or to purchase the freedom of a slave. It is not a vague gift; it is a price that secures a release.",
+      "usageNote": "Jesus does not say He gives His life as an example, or an inspiration, or a tragedy. He says He gives it as a lytron - a release-price - anti pollon, in the place of many. The little word anti normally means 'instead of': one stands where many should have stood.",
+      "wordByWord": [
+        {
+          "word": "δοῦναι",
+          "transliteration": "dounai",
+          "meaning": "to give - to hand over freely, not to have taken"
+        },
+        {
+          "word": "τὴν ψυχὴν αὐτοῦ",
+          "transliteration": "ten psychen autou",
+          "meaning": "His life, His very soul - not merely His effort but His whole self"
+        },
+        {
+          "word": "λύτρον",
+          "transliteration": "lytron",
+          "meaning": "a ransom, a release-price"
+        },
+        {
+          "word": "ἀντὶ",
+          "transliteration": "anti",
+          "meaning": "in the place of, instead of - one standing where others should stand"
+        },
+        {
+          "word": "πολλῶν",
+          "transliteration": "pollon",
+          "meaning": "of many - the great number He came to set free"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διάκονος / δοῦλος",
+          "reference": "Diakonos is the table-waiter, the one who serves; doulos is the bondslave, the lowest in the household. Jesus uses both for greatness in His kingdom (Mark 10:43-44), then names Himself the one who out-serves them all."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "the price of release; a ransom paid to liberate a captive or slave",
+      "usage": "Mark uses lytron only here. The single occurrence carries enormous weight: it is the one word in which the whole Gospel explains why the Servant must die."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "They Asked for Thrones; He Offered a Cross",
+      "body": "By Mark chapter 10 the road is already pointed at Jerusalem, and Jesus has told the Twelve plainly, three separate times, that He is going there to be handed over, mocked, killed, and after three days to rise. The third time, the ink is barely dry on the prediction when James and John step up with a request: \"Grant that one of us may sit at Your right hand and the other at Your left in Your glory.\"\n\nIt is almost unbearable to read. He has just described His own execution, and they are negotiating cabinet positions. They heard \"glory\" and stopped listening. When the other ten find out, they are indignant - not because the request was crass, but because James and John got there first. The whole Twelve are playing the same game.\n\nSo Jesus gathers them and draws the line that runs through everything He is about to do. The rulers of the Gentiles lord it over people; that is how power normally works, then and now. \"But it shall not be this way among you.\" In His kingdom the arrow of greatness is reversed. The great one is the servant. The first is the slave of all. And then, so they cannot mistake this for a nice piece of advice, He grounds it in Himself: the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\n\nThis is the day in this series where we live it out, and Mark refuses to let \"living it out\" float free of the cross. The towel is not separable from the ransom. We serve because we have been served - bought, in fact, at a price.",
+      "keyInsight": "Christian service is not a strategy for becoming great. It is the shape a person takes once they understand they were ransomed and not merely advised.",
+      "content": "By Mark chapter 10 the road is already pointed at Jerusalem, and Jesus has told the Twelve plainly, three separate times, that He is going there to be handed over, mocked, killed, and after three days to rise. The third time, the ink is barely dry on the prediction when James and John step up with a request: \"Grant that one of us may sit at Your right hand and the other at Your left in Your glory.\"\n\nIt is almost unbearable to read. He has just described His own execution, and they are negotiating cabinet positions. They heard \"glory\" and stopped listening. When the other ten find out, they are indignant - not because the request was crass, but because James and John got there first. The whole Twelve are playing the same game.\n\nSo Jesus gathers them and draws the line that runs through everything He is about to do. The rulers of the Gentiles lord it over people; that is how power normally works, then and now. \"But it shall not be this way among you.\" In His kingdom the arrow of greatness is reversed. The great one is the servant. The first is the slave of all. And then, so they cannot mistake this for a nice piece of advice, He grounds it in Himself: the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\n\nThis is the day in this series where we live it out, and Mark refuses to let \"living it out\" float free of the cross. The towel is not separable from the ransom. We serve because we have been served - bought, in fact, at a price."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manager Who Stopped Counting",
+      "body": "A man I know spent two decades climbing inside a company, measuring every relationship by what it could return. He kept a private ledger in his head - who owed him a favor, who had crossed him, who was useful. He was, by every external measure, great. He was also, by his own later admission, exhausting to be around and quietly miserable.\n\nWhat undid the ledger was not a productivity book. It was a slow dawning, over a hard year, that his whole life had been spent trying to be served - to arrive somewhere where finally people would arrange themselves around him. And one ordinary evening, reading Mark with a group he had joined mostly to network, the sentence landed: the Son of Man did not come to be served.\n\nHe told me later it felt less like a command than like the bottom dropping out of a calculation he had been running for forty years. If the King of everything came to spend Himself, then the throne he had been clawing toward was empty all along - the wrong direction entirely. He started, awkwardly, to serve. Not to win anything. There was nothing left to win. He had already been bought.",
+      "connectionToTheme": "The reversal Jesus names in Mark 10 is not extra effort poured into the old game of greatness. It is being released from the game entirely by the One who already paid.",
+      "content": "A man I know spent two decades climbing inside a company, measuring every relationship by what it could return. He kept a private ledger in his head - who owed him a favor, who had crossed him, who was useful. He was, by every external measure, great. He was also, by his own later admission, exhausting to be around and quietly miserable.\n\nWhat undid the ledger was not a productivity book. It was a slow dawning, over a hard year, that his whole life had been spent trying to be served - to arrive somewhere where finally people would arrange themselves around him. And one ordinary evening, reading Mark with a group he had joined mostly to network, the sentence landed: the Son of Man did not come to be served.\n\nHe told me later it felt less like a command than like the bottom dropping out of a calculation he had been running for forty years. If the King of everything came to spend Himself, then the throne he had been clawing toward was empty all along - the wrong direction entirely. He started, awkwardly, to serve. Not to win anything. There was nothing left to win. He had already been bought."
+    },
+    {
+      "type": "insight",
+      "heading": "One Sentence Holds the Whole Gospel",
+      "body": "Mark 10:45 is sometimes called the verse where the whole of Mark is gathered into a single line, and it is easy to see why. Mark opens by announcing \"the gospel of Jesus Christ, the Son of God\" (1:1) and spends the first half pressing one question on the reader: who is this man whom even the wind and sea obey? By chapter 8 Peter has the title right - \"You are the Christ\" - but no idea what it costs. From there the road bends down toward Jerusalem, and Jesus tells them, again and again, where it ends.\n\nMark 10:45 is the verse that says why. The Son of Man - Daniel's exalted figure who receives an everlasting kingdom - does not arrive to be waited on. He comes to serve, and the service is His death, and the death is a ransom. Two truths usually kept apart are welded here in one breath: He is the highest, and He is the lowest; He reigns, and He is spent.\n\nWatch how Mark proves it is not metaphor. At the crucifixion, when Jesus has breathed His last, it is a Roman centurion - a Gentile soldier, one of the very rulers who lord it over others - who says, \"Truly this man was the Son of God\" (15:39). The first human in Mark to confess Jesus' full identity at the cross is an outsider, standing over a corpse. The ransom has already begun to set many free, and it began with the kind of man you would least expect.",
+      "historicalContext": "Behind Mark 10:45 stands Isaiah 53, the song of the Servant who is \"pierced for our transgressions\" and on whom \"the LORD has laid the iniquity of us all\" (Isaiah 53:5-6). Jesus folds that ancient portrait into a single phrase: the suffering Servant gives Himself as the ransom-price. Mark's first readers, many under Roman pressure, would have heard a crucified Messiah not as a defeat to explain away but as the very point.",
+      "fascinatingFact": "Mark is built around predictions: three times (8:31, 9:31, 10:33-34) Jesus foretells His death and resurrection, and each time the disciples respond by arguing about status. Mark 10:45 answers all three at once - it is the only place He tells them not just that He will die, but what His death is for.",
+      "content": "Mark 10:45 is sometimes called the verse where the whole of Mark is gathered into a single line, and it is easy to see why. Mark opens by announcing \"the gospel of Jesus Christ, the Son of God\" (1:1) and spends the first half pressing one question on the reader: who is this man whom even the wind and sea obey? By chapter 8 Peter has the title right - \"You are the Christ\" - but no idea what it costs. From there the road bends down toward Jerusalem, and Jesus tells them, again and again, where it ends.\n\nMark 10:45 is the verse that says why. The Son of Man - Daniel's exalted figure who receives an everlasting kingdom - does not arrive to be waited on. He comes to serve, and the service is His death, and the death is a ransom. Two truths usually kept apart are welded here in one breath: He is the highest, and He is the lowest; He reigns, and He is spent.\n\nWatch how Mark proves it is not metaphor. At the crucifixion, when Jesus has breathed His last, it is a Roman centurion - a Gentile soldier, one of the very rulers who lord it over others - who says, \"Truly this man was the Son of God\" (15:39). The first human in Mark to confess Jesus' full identity at the cross is an outsider, standing over a corpse. The ransom has already begun to set many free, and it began with the kind of man you would least expect."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus reverses the world's whole picture of greatness - the great one serves, the first is slave of all - and roots the reversal in His own ransoming death for many.",
+      "modernApplication": "We still measure greatness the way the Gentile rulers did: by who answers to us, who waits on us, whose attention we command. Even our service can quietly become a way of climbing - a resume line, a way to be admired for humility. Mark 10:45 cuts under all of it. You are not serving your way up to God. You are serving because the climb is finished; the ransom is paid.",
+      "connectionPoint": "The pattern set here runs straight through the New Testament. Paul tells the Philippians to have the mind of Christ, \"who, existing in the form of God, did not consider equality with God something to be grasped, but emptied Himself, taking the form of a servant\" (Philippians 2:6-7) - the same descent Mark describes. The towel and the throne belong together because in Jesus they always did.",
+      "newTestamentEcho": "Earlier in Mark, Jesus had already told the Twelve, \"If anyone wants to be first, he must be the last of all and the servant of all\" (Mark 9:35), and \"If anyone wants to come after Me, he must deny himself and take up his cross and follow Me\" (Mark 8:34). Day 4 is where those words stop being abstract: the cross we take up is shaped like His, and the life we lose for His sake is the only one we keep (Mark 8:35)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to be served - quietly arranging things so that people, attention, or comfort gather around you?",
+      "additionalQuestions": [
+        "James and John heard 'glory' and stopped listening to the cross. Which parts of Jesus' words do you tend to skip past because they cost too much?",
+        "Think of one relationship where you keep a ledger of who owes you. What would it mean to tear it up because you have already been ransomed?",
+        "Is there a place where you serve in order to be admired for serving? How would Mark 10:45 reorder that?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You did not come to be served, but to serve, and to give Your life as a ransom for many - for me among the many. Forgive me for the thrones I keep angling toward while You hold out a basin and a towel. I confess the ledger I keep, the credit I crave, the small ways I lord it over the people nearest me. You were spent for me when I could not pay; teach me to be spent for others without keeping count. Make me last, that I might be where You are. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one act of genuine service that no one will see and that cannot be repaid - and when you notice yourself wanting credit for it, hand that wanting back to God. Let the act be a small echo of the ransom, not a brick in your own throne.",
+      "leavingAtCross": [
+        "The ledger I keep of who owes me and who has wronged me",
+        "The instinct to measure my worth by who waits on me",
+        "Service performed for an audience, so I can be admired for being humble"
+      ],
+      "receivingFromCross": [
+        "The freedom of a debt already paid - I do not serve my way up to God",
+        "The dignity of the lowest place, where Jesus Himself went first",
+        "A heart that can spend itself for others because it has been bought, not bargained for"
+      ],
+      "content": "Today, do one act of genuine service that no one will see and that cannot be repaid - and when you notice yourself wanting credit for it, hand that wanting back to God. Let the act be a small echo of the ransom, not a brick in your own throne."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between the way the 'rulers of the Gentiles' exercise greatness and the greatness Jesus describes for His followers?",
+        "Why does it matter that Jesus calls His death a 'ransom' (lytron) and not simply an example to follow?",
+        "How does the centurion's confession at the cross (Mark 15:39) show that the ransom 'for many' had already begun to do its work?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been chasing a 'throne' - a place where people serve you - and talk about what it would mean to step toward the basin instead.",
+        "Where do you most easily slip into serving for credit? Ask each other how you can tell the difference in your own heart.",
+        "Talk about what it changes, day to day, to believe your standing with God was bought by Christ and is not earned by your service."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 8:34-35",
+          "text": "Then Jesus called the crowd to Him along with His disciples, and He told them, \"If anyone wants to come after Me, he must deny himself and take up his cross and follow Me. For whoever wants to save his life will lose it, but whoever loses his life for My sake and for the gospel will save it.\""
+        },
+        {
+          "reference": "Mark 9:35",
+          "text": "Sitting down, Jesus called the Twelve and said, \"If anyone wants to be first, he must be the last of all and the servant of all.\""
+        },
+        {
+          "reference": "Isaiah 53:5-6",
+          "text": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
+        },
+        {
+          "reference": "Philippians 2:6-7",
+          "text": "Who, existing in the form of God, did not consider equality with God something to be grasped, but emptied Himself, taking the form of a servant, being made in human likeness."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Mark 10:32-45",
+          "note": "Read the third passion prediction and the request of James and John together, in one sitting. Watch how Jesus answers status-anxiety not with a rebuke but with the offer of His own cup."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "James and John",
+      "title": "The Sons of Zebedee, Who Asked for Thrones",
+      "description": "Brothers and fishermen, among the first Jesus called and part of His inner three. In Mark 10 they ask, just after Jesus foretells His death, to sit at His right and left in glory - and so they become the mirror in which every reader sees their own appetite for status. Jesus does not cast them off; He tells them they will indeed drink His cup. Tradition remembers that they did: James was among the first apostles to be martyred (Acts 12:2), and John served the church into old age. The men who asked for the highest seats were sent down the road of the towel and the cross.",
+      "keyQuote": "Grant that one of us may sit at Your right hand and the other at Your left in Your glory.",
+      "lessonForUs": "The disciples closest to Jesus still wanted to be served. He did not shame the desire for greatness out of them; He redirected it, pointing greatness down toward the servant's place where He Himself was already going. Our hunger to matter is not killed by the gospel - it is reordered by the ransom.",
+      "heading": "The Sons of Zebedee, Who Asked for Thrones"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2139,
+  "scriptureReference_full": "Mark 10:42-45",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lytron, G3083; diakonos; doulos; the substitutionary force of anti) reflects standard lexical sources; the connection of Mark 10:45 to the Servant of Isaiah 53 is widely recognized in commentary."
+  ]
 }

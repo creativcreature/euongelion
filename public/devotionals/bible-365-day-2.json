@@ -6,62 +6,176 @@
   "scriptureReference": "Genesis 1:26-31",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 2"
+      "type": "scripture",
+      "reference": "Genesis 1:26-31",
+      "translation": "BSB",
+      "emphasis": [
+        "Let Us make man in Our image",
+        "in the image of God He created him",
+        "it was very good"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר אֱלֹהִים נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ כִּדְמוּתֵנוּ",
+      "passage": "Then God said, “Let Us make man in Our image, after Our likeness, to rule over the fish of the sea and the birds of the air, over the livestock, and over all the earth itself and every creature that crawls upon it.” So God created man in His own image; in the image of God He created him; male and female He created them. God blessed them and said to them, “Be fruitful and multiply, and fill the earth and subdue it; rule over the fish of the sea and the birds of the air and every creature that crawls upon the earth.” Then God said, “Behold, I have given you every seed-bearing plant on the face of all the earth, and every tree whose fruit contains seed. They will be yours for food. And to every beast of the earth and every bird of the air and every creature that crawls upon the earth—everything that has the breath of life in it—I have given every green plant for food.” And it was so. And God looked upon all that He had made, and indeed, it was very good. And there was evening, and there was morning—the sixth day."
     },
     {
-      "number": 2,
-      "heading": "BEFORE YOU DID ANYTHING",
-      "type": "text",
-      "content": "Yesterday we sat with the start of everything. Today we meet ourselves inside that start.\n\nGod has made stars and oceans and birds. He has named light and dark. And then, on the sixth day, He pauses.\n\nHe does not pause to make a better fish. He pauses to make you.\n\nBefore you ever earned a paycheck, before anyone praised you, before anyone wrote you off, God spoke a word over your kind. He said it was good. He said it was very good.\n\nYour worth was settled before your résumé existed. Settle in. This is where Genesis is taking us.",
-      "wordCount": 101
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "צֶלֶם",
+      "transliteration": "tselem",
+      "pronunciation": "TSEH-lem",
+      "meaning": "image, statue, representative likeness",
+      "rootMeaning": "Tselem names a carved or cast figure - a statue, an image, a representation that stands in for the one it depicts. It is a physical, public word, not a vague inner feeling.",
+      "usageNote": "Across the ancient Near East a tselem was the statue a king set up at the edge of his territory to say, in effect, I rule here even where I am not standing. Genesis takes that royal word and hands it to every human being. We are the living statues God places across His creation.",
+      "wordByWord": [
+        {
+          "word": "נַעֲשֶׂה",
+          "transliteration": "na'aseh",
+          "meaning": "let us make - a deliberate, first-person plural resolve"
+        },
+        {
+          "word": "אָדָם",
+          "transliteration": "adam",
+          "meaning": "man, humankind - kin to adamah, the ground he is drawn from"
+        },
+        {
+          "word": "בְּצַלְמֵנוּ",
+          "transliteration": "betsalmenu",
+          "meaning": "in our image - the representative likeness"
+        },
+        {
+          "word": "כִּדְמוּתֵנוּ",
+          "transliteration": "kidemutenu",
+          "meaning": "after our likeness - resembling, corresponding to"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צֶלֶם / דְּמוּת",
+          "reference": "Tselem (image) is paired with demut (likeness). The same two words return in Genesis 5:3, where Adam fathers a son in his own likeness, after his image - the language of a father and his child, now used of God and us."
+        }
+      ],
+      "strongsNumber": "H6754",
+      "definition": "an image, a representative figure or statue; that which stands in for another",
+      "usage": "What surrounding cultures carved in stone and reserved for kings, the God of Israel does with ordinary people. Every human being is a tselem - a living likeness set in the world to make the unseen God visible."
     },
     {
-      "number": 3,
-      "heading": "THE WORD GOD USED",
-      "type": "text",
-      "content": "Read the passage slowly:\n\n*\"Then God said, 'Let Us make man in Our image, after Our likeness, to rule over the fish of the sea and the birds of the air, over the livestock, and over all the earth itself and every creature that crawls upon it.' So God created man in His own image; in the image of God He created him; male and female He created them. God blessed them and said, 'Be fruitful and multiply, and fill the earth and subdue it...' God looked upon all that He had made, and indeed, it was very good. And there was evening, and there was morning—the sixth day.\"* (Genesis 1:26-31, BSB, abridged)\n\nThe Hebrew word for image is **צֶלֶם** (*tselem*). In the ancient Near East, a *tselem* was usually a statue. Kings would set up images of themselves at the edges of their territory to declare, *I rule here, even when I am not standing here.* That is the word Moses chooses for us.\n\nWhat the surrounding cultures did with stone, the God of Israel does with people. Every human being is a living statue at the edge of His kingdom, declaring His rule, bearing His likeness, reflecting His face into the world.\n\nNotice also the strange plural: *Let Us make.* Christians have long heard the Trinity humming under that line. It is not a knockdown proof. It is more like an early echo of what John 1 will sing out loud: God was never alone, and the One who made you was already a fellowship of love.",
-      "wordCount": 259
+      "type": "teaching",
+      "heading": "He Paused, and the Pause Was for You",
+      "body": "Yesterday we sat with the beginning of everything: light called out of dark, water parted from sky, the world taking shape under a single voice. Today we meet ourselves inside that beginning.\n\nWatch the rhythm of the sixth day break. All week the pattern has been steady - God speaks, and it is so. Let there be light. Let the waters teem. Let the land bring forth. The commands go outward, impersonal, vast. Then, at the last, the rhythm changes. God does not say, Let there be a man. He says, “Let Us make man in Our image, after Our likeness.” For the first time the Creator deliberates before He creates. He leans in.\n\nThe plural is strange and deliberate: not let Me, but “Let Us.” Christians have long heard the triune God humming under that line - the Father, the Son, and the Spirit who hovered over the waters in verse 2, taking counsel together before fashioning the one creature meant to bear their likeness. This is not yet the full doctrine of the Trinity; that comes into focus only in the light of Christ. But it is an early note of something the rest of Scripture will make plain: the God who made you was never a solitary maker. You were spoken into being out of a fellowship of love, and made to reflect it.",
+      "keyInsight": "Every other creature is summoned into existence. Humanity alone is deliberated over. Before you did one thing, the triune God leaned in and resolved to make you bear His likeness.",
+      "content": "Yesterday we sat with the beginning of everything: light called out of dark, water parted from sky, the world taking shape under a single voice. Today we meet ourselves inside that beginning.\n\nWatch the rhythm of the sixth day break. All week the pattern has been steady - God speaks, and it is so. Let there be light. Let the waters teem. Let the land bring forth. The commands go outward, impersonal, vast. Then, at the last, the rhythm changes. God does not say, Let there be a man. He says, “Let Us make man in Our image, after Our likeness.” For the first time the Creator deliberates before He creates. He leans in.\n\nThe plural is strange and deliberate: not let Me, but “Let Us.” Christians have long heard the triune God humming under that line - the Father, the Son, and the Spirit who hovered over the waters in verse 2, taking counsel together before fashioning the one creature meant to bear their likeness. This is not yet the full doctrine of the Trinity; that comes into focus only in the light of Christ. But it is an early note of something the rest of Scripture will make plain: the God who made you was never a solitary maker. You were spoken into being out of a fellowship of love, and made to reflect it."
     },
     {
-      "number": 4,
-      "heading": "THE DIGNITY YOU CANNOT EARN OR LOSE",
-      "type": "text",
-      "content": "If image is the foundation, then everything modern life hands you about identity is upside down.\n\nYou were not made worthy by what you produce. You were made worthy by Whose likeness you carry. Calvin, in his Institutes, put it bluntly: the imago Dei extends to the whole person, so that there is no part of us, however broken, in which some sparks do not glow. He wrote that even when staring down at human cruelty in his own century. The image is defaced in us, but it is not erased.\n\nThis is the doctrine that quietly underwrites everything Scripture will later say about the unborn, the enslaved, the foreigner, the dying, the difficult neighbor, and the enemy across the line. They are tselem too. So is the person you scrolled past with contempt this morning.\n\nAnd this is the dignity Christ comes to restore. Paul calls Him \"the image of the invisible God\" (Colossians 1:15). The blurred picture of God in us is brought back into focus by the perfect picture of God among us. \"Just as we have borne the image of the earthly man, so also shall we bear the image of the heavenly Man\" (1 Corinthians 15:49).",
-      "wordCount": 201
+      "type": "story",
+      "heading": "The Name on the Wristband",
+      "content": "In the hours after a baby is born, before the child has done anything at all, a nurse fastens a small printed band around the wrist. No achievements are recorded on it. No résumé, no grades, no income. Just a name, a weight, a time. And from that moment the whole hospital treats the band as if it carries the weight of a person, because it does. The dignity was never earned. It was simply true.\n\nI watched this happen with my niece. She had been alive for forty minutes. She had accomplished, by any measure the working world counts, absolutely nothing. And the room was full of people who would have laid down their lives for her. Her worth was not a verdict still being decided. It was a fact she was handed, asleep, before she knew her own name.\n\nThis is the order Genesis insists on. God does not make a creature and then wait to see whether it earns its keep. He makes humanity, looks at the whole of it, and pronounces it “very good” - before the first day of work, before the first word is spoken back to Him. The verdict comes first. The life is lived inside it.",
+      "connectionToTheme": "Dignity in Genesis is given, not achieved - pronounced over humanity before we have done a single thing, the way worth is fastened to a newborn before she has earned anything at all.",
+      "body": "In the hours after a baby is born, before the child has done anything at all, a nurse fastens a small printed band around the wrist. No achievements are recorded on it. No résumé, no grades, no income. Just a name, a weight, a time. And from that moment the whole hospital treats the band as if it carries the weight of a person, because it does. The dignity was never earned. It was simply true.\n\nI watched this happen with my niece. She had been alive for forty minutes. She had accomplished, by any measure the working world counts, absolutely nothing. And the room was full of people who would have laid down their lives for her. Her worth was not a verdict still being decided. It was a fact she was handed, asleep, before she knew her own name.\n\nThis is the order Genesis insists on. God does not make a creature and then wait to see whether it earns its keep. He makes humanity, looks at the whole of it, and pronounces it “very good” - before the first day of work, before the first word is spoken back to Him. The verdict comes first. The life is lived inside it."
     },
     {
-      "number": 5,
-      "heading": "WHAT THIS ASKS OF YOU TODAY",
-      "type": "text",
-      "content": "Image-bearing is not a feeling. It is a fact you live inside.\n\nIt means the tired person across from you at breakfast is a walking statue of God. So is the coworker who annoys you. So is the political opponent you find hardest to listen to. So is the version of yourself you are quickest to despise.\n\nN. T. Wright argues that the human vocation in Genesis 1 is priestly: we exist to reflect God's wise care into creation, and to gather creation's praise back to Him. That is your job description, before any other job description.\n\nSo today, try this. When you meet someone you would rather diminish, pause for one second and remember the word tselem. Do not perform kindness. Just stop dismissing them in your head. Let the image you both carry become visible again.",
-      "wordCount": 138
+      "type": "insight",
+      "heading": "A Living Statue at the Edge of the Kingdom",
+      "content": "Hold the word tselem and the whole passage clicks into focus. In the ancient world, a king who could not be everywhere set up an image of himself at the borders of his land - a statue declaring, This territory belongs to me; my rule reaches here. That image was not the king, but it carried the king's authority and made his presence felt where he could not personally stand.\n\nGenesis takes that royal logic and turns it inside out. God does not carve one statue and station it at one border. He makes a whole species of living images and scatters them across the entire earth. Every human face is meant to be a place where the unseen God becomes visible. That is what the call to “rule” means in verse 26 - not to exploit creation, but to represent its true King, to care for the world the way He would, on His behalf.\n\nThis is why the verdict in verse 31 is not merely “good,” the word used over the earlier days, but “very good.” The creation was complete only once it held a creature who could reflect the Creator's own face back into it. You are not an accessory to the world God made. You are the part of it built to bear His likeness.",
+      "historicalContext": "Genesis 1 stands at the head of the Torah, the lens Israel read everything else through. Israel knew the world of royal statues firsthand - Egypt and Mesopotamia filled their temples and borders with images of kings and gods. Against that backdrop, the claim that every human - slave and free, ruler and infant - is the living image of the one true God was not a quiet idea. It was a quiet revolution.",
+      "fascinatingFact": "Hebrew distinguishes the verdicts. After the earlier days God sees that it is tov, good. Only after humanity is made does He call the whole tov me'od - very good, exceedingly good. The intensifier appears nowhere else in the chapter. The creation week peaks not at the sun or the seas, but at the creature made to mirror Him.",
+      "body": "Hold the word tselem and the whole passage clicks into focus. In the ancient world, a king who could not be everywhere set up an image of himself at the borders of his land - a statue declaring, This territory belongs to me; my rule reaches here. That image was not the king, but it carried the king's authority and made his presence felt where he could not personally stand.\n\nGenesis takes that royal logic and turns it inside out. God does not carve one statue and station it at one border. He makes a whole species of living images and scatters them across the entire earth. Every human face is meant to be a place where the unseen God becomes visible. That is what the call to “rule” means in verse 26 - not to exploit creation, but to represent its true King, to care for the world the way He would, on His behalf.\n\nThis is why the verdict in verse 31 is not merely “good,” the word used over the earlier days, but “very good.” The creation was complete only once it held a creature who could reflect the Creator's own face back into it. You are not an accessory to the world God made. You are the part of it built to bear His likeness."
     },
     {
-      "number": 6,
-      "heading": "A PRAYER",
+      "type": "bridge",
+      "ancientTruth": "On the sixth day God deliberated, then made humanity - male and female - in His own image, blessed them, and pronounced the whole creation very good. Human dignity is grounded in whose likeness we carry, not in what we produce.",
+      "modernApplication": "Almost everything modern life tells you about your worth runs the other way. You are weighed by output, ranked by followers, priced by productivity, and quietly retired the moment you stop performing. Genesis cuts under all of it: your value was settled on the sixth day, before your first paycheck and beyond your last. It cannot be earned, and it cannot be fired.",
+      "connectionPoint": "The image is the doctrine that quietly underwrites everything Scripture will later say about the vulnerable: the unborn, the foreigner, the enslaved, the dying, the difficult neighbor, even the enemy across the line. They are tselem too. So is the stranger you scrolled past with contempt, and so is the version of yourself you are quickest to despise. To diminish any of them is to deface an image of God.",
+      "newTestamentEcho": "The image cracked but did not vanish in the fall, and the whole gospel is its repair. Paul calls Christ “the image of the invisible God” (Colossians 1:15) - the blurred picture of God in us brought back into perfect focus by the flawless picture of God among us. He took our likeness so that we might be remade into His: “Just as we have borne the likeness of the earthly man, so also shall we bear the likeness of the heavenly man” (1 Corinthians 15:49)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you trying to earn a dignity God says you were already given - and who in your life are you tempted to treat as less than a living image of God?",
+      "additionalQuestions": [
+        "Whose worth do you quietly measure by what they produce - including your own? What would change if you saw the verdict 'very good' spoken over them before any of that?",
+        "Genesis says you were made to make the unseen God visible. Where in your ordinary day is your face meant to be a place someone glimpses Him?",
+        "Name one person you found easy to dismiss this week. What would it cost you to remember they are tselem too?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
       "type": "prayer",
-      "content": "Father,\n\nYou made me on purpose, in Your image, before I had done anything good or bad.\n\nGive me eyes today to see Your face in the people I am tempted to write off: the loud one, the difficult one, the one whose politics I cannot stand, the one I pretend not to notice.\n\nReshape me into the likeness of Christ, who is Your true image.\n\nAmen.",
-      "wordCount": 67
+      "posture": "honest-confession",
+      "prayerText": "Father, You made me on purpose, in Your image, before I had done one good or one shameful thing. Forgive me for trying to earn what You already gave, and for despising in others the likeness You placed in them. Give me eyes today to see Your face in the people I am quickest to write off - the loud one, the difficult one, the one whose politics I cannot stand, the one I pretend not to notice, and the one in the mirror. Reshape the blurred image in me into the likeness of Christ, who is Your true and perfect Image. Let me make You a little more visible in the world before this day is done. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, when I meet someone I would rather diminish or dismiss, I will pause for one breath and silently name the truth: this person is a living image of God. I will not perform kindness. I will simply stop reducing them in my mind, and let the image we both carry become visible again.",
+      "leavingAtCross": [
+        "The lie that my worth is a verdict still being earned by my output",
+        "The contempt I carry for people I have quietly decided are worth less",
+        "The shame that makes me despise the image of God in my own reflection"
+      ],
+      "receivingFromCross": [
+        "A dignity given on the sixth day that I did not earn and cannot lose",
+        "The freedom to rest from proving myself, because the verdict is already 'very good'",
+        "The slow remaking of my defaced image into the likeness of Christ, the true Image"
+      ],
+      "content": "Today, when I meet someone I would rather diminish or dismiss, I will pause for one breath and silently name the truth: this person is a living image of God. I will not perform kindness. I will simply stop reducing them in my mind, and let the image we both carry become visible again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What changes in the rhythm of the sixth day when God comes to make humanity - and why does that change matter?",
+        "What did a tselem mean in the ancient world, and how does that royal word reshape what it means that you are made in God's image?",
+        "Genesis calls only humanity 'very good,' not merely 'good.' What does that intensifier say about where you stand in the order of creation?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place you are tempted to measure your worth - or someone else's - by productivity. Talk about what 'very good before you did anything' would change.",
+        "Confess one kind of person you find easy to dismiss as less than fully an image of God. Pray for new eyes toward them.",
+        "Ask each other: where is God inviting you to make Him more visible to the people around you this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 5:1-2",
+          "text": "This is the book of the generations of Adam. In the day that God created man, He made him in His own likeness. Male and female He created them, and He blessed them. And in the day they were created, He called them man."
+        },
+        {
+          "reference": "Psalm 8:4-5",
+          "text": "what is man that You are mindful of him, or the son of man that You care for him? You made him a little lower than the angels; You crowned him with glory and honor."
+        },
+        {
+          "reference": "Colossians 1:15",
+          "text": "The Son is the image of the invisible God, the firstborn over all creation."
+        },
+        {
+          "reference": "1 Corinthians 15:49",
+          "text": "And just as we have borne the likeness of the earthly man, so also shall we bear the likeness of the heavenly man."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 1:26-31",
+          "note": "Read the sixth day slowly alongside Genesis 5:1-3, watching the same words - image and likeness - move from God-and-humanity to father-and-child."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Adam",
+      "title": "Humanity, Made in the Image of God",
+      "description": "Adam - the Hebrew word means humankind, drawn from the adamah, the ground - names the creature God deliberated over on the sixth day and made, male and female, in His own image. Given the world to fill and to keep, humanity was crowned with a dignity it never earned and pronounced 'very good' before it had done anything at all. Scripture frames the whole story that follows around this image: defaced in the fall, and restored in Christ, the second Adam, who is the true and perfect Image of the invisible God (Romans 5:18-19; Colossians 1:15).",
+      "keyQuote": "So God created man in His own image; in the image of God He created him; male and female He created them.",
+      "lessonForUs": "Your worth was settled before your résumé existed. You did not climb into the image of God; you woke up inside it. The task of a lifetime is not to earn that dignity but to let Christ bring the blurred image back into focus.",
+      "heading": "Humanity, Made in the Image of God"
     }
   ],
-  "totalWords": 766,
+  "panels": [],
+  "totalWords": 2340,
   "scriptureReference_full": "Genesis 1:26-31 (BSB)",
   "sources": [
-    {
-      "author": "John Calvin",
-      "work": "Institutes of the Christian Religion",
-      "reference": "Book II, Chapter 2, Section 12 (1559)",
-      "use": "On the imago Dei extending to the whole person despite the Fall"
-    },
-    {
-      "author": "N. T. Wright",
-      "work": "Surprised by Hope",
-      "reference": "HarperOne, 2008",
-      "use": "On the priestly vocation of image-bearers in Genesis 1"
-    }
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tselem H6754; the tselem/demut pairing in Genesis 1:26 and 5:3) reflects standard lexical sources. The royal-image background - that an ancient Near Eastern king set up images of himself to represent his rule throughout his territory - is a widely held reading in modern Old Testament scholarship."
   ]
 }

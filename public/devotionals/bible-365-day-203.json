@@ -1,38 +1,185 @@
 {
   "day": 203,
-  "title": "Proverbs: Daily Wisdom — Day 7 — Sabbath",
-  "teaser": "Day 203 of Bible 365 — Proverbs 3, 8, 16, 22, 31",
+  "title": "Wisdom was there before the world",
+  "teaser": "Proverbs keeps saying: trust the LORD, not your own understanding. Then in chapter 8, Wisdom turns out to be a Person — there before the world, and the New Testament knows His name.",
   "framework": "Proverbs 3, 8, 16, 22, 31 — Proverbs: Daily Wisdom",
   "scriptureReference": "Proverbs 3, 8, 16, 22, 31",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 203"
+      "type": "scripture",
+      "reference": "Proverbs 3:5-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Trust in the LORD with all your heart",
+        "lean not on your own understanding",
+        "fear the LORD"
+      ],
+      "hebrewOriginal": "בְּטַח אֶל־יְהוָה בְּכָל־לִבֶּךָ וְאֶל־בִּינָתְךָ אַל־תִּשָּׁעֵן",
+      "passage": "Trust in the LORD with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight. Be not wise in your own eyes; fear the LORD and turn away from evil."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Proverbs 3, 8, 16, 22, 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Proverbs 3, 8, 16, 22, 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יִרְאַת יְהוָה",
+      "transliteration": "yir'at YHWH",
+      "pronunciation": "yir-AHT yah-WEH",
+      "meaning": "the fear of the LORD; reverent awe before God",
+      "rootMeaning": "Yir'ah comes from yare, to fear or be in awe. It is not the fear that runs away from a threat; it is the fear that stands still before something far greater than itself. When the object is the LORD, it becomes reverence - the kind of awe that reorders a whole life.",
+      "usageNote": "This phrase is the doorway and the spine of the whole book. Proverbs 1:7 opens with it - \"The fear of the LORD is the beginning of knowledge\" - and 9:10 names it again as wisdom begins to build her house: \"The fear of the LORD is the beginning of wisdom.\" Everything in between is what that reverence looks like on an ordinary Tuesday: how you handle money, speech, anger, marriage, work.",
+      "wordByWord": [
+        {
+          "word": "יִרְאַת",
+          "transliteration": "yir'at",
+          "meaning": "fear of, reverent awe of"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the personal covenant name of God"
+        },
+        {
+          "word": "רֵאשִׁית",
+          "transliteration": "reshit",
+          "meaning": "beginning, first thing, head - the same word that opens Genesis"
+        },
+        {
+          "word": "חָכְמָה",
+          "transliteration": "chokmah",
+          "meaning": "wisdom; skill for living well, not just knowing much"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רֵאשִׁית / רֵאשׁ",
+          "reference": "Reshit (beginning) shares its root with rosh (head). Wisdom does not begin where information ends; it begins where the heart bows. The fear of the LORD is not the lowest rung of knowledge but its head - the thing every other thing hangs from."
+        }
+      ],
+      "strongsNumber": "H3374",
+      "definition": "fear, reverence, awe; in the construct 'fear of the LORD,' reverent submission to God",
+      "usage": "Note what kind of beginning this is. Proverbs does not say cleverness is the beginning of wisdom, or schooling, or experience. It says reverence is. A person can be brilliant and foolish at once. Wisdom starts somewhere lower and harder than the mind: it starts on the knees."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Proverbs: Daily Wisdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wisdom personified (1 Cor 1:30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Wisdom Is Not Mostly About Being Smart",
+      "body": "Proverbs reads like a father leaning close, saying the same few things from a hundred angles, because he loves a son who is about to leave the house. Trust the LORD with all your heart. Do not lean on your own understanding. Do not be wise in your own eyes. The book repeats this not because the son is dull, but because it is the hardest lesson a capable person ever learns.\n\nNotice the strange instruction tucked into chapter 3: \"lean not on your own understanding.\" That is an odd thing to find in a book about wisdom. You would expect the opposite - sharpen your understanding, lean on it harder. But the father knows something. He knows that the most dangerous fool is not the man with no understanding; it is the man with just enough to trust himself completely. \"Be not wise in your own eyes,\" he says, because wisdom in your own eyes is exactly where folly likes to hide.\n\nSo the whole book hangs from a posture, not an IQ. The fear of the LORD comes first, and then everything else - the proverbs about money and anger and the tongue and the marriage bed - falls into place behind it. Take away the reverence and you are left with clever sayings about getting ahead. Keep the reverence, and the same sayings become a way of walking with God through an ordinary week.",
+      "keyInsight": "Proverbs does not promise to make you smarter. It offers something a clever person can still lack entirely: the reverence that lets you trust God exactly where you cannot understand Him.",
+      "content": "Proverbs reads like a father leaning close, saying the same few things from a hundred angles, because he loves a son who is about to leave the house. Trust the LORD with all your heart. Do not lean on your own understanding. Do not be wise in your own eyes. The book repeats this not because the son is dull, but because it is the hardest lesson a capable person ever learns.\n\nNotice the strange instruction tucked into chapter 3: \"lean not on your own understanding.\" That is an odd thing to find in a book about wisdom. You would expect the opposite - sharpen your understanding, lean on it harder. But the father knows something. He knows that the most dangerous fool is not the man with no understanding; it is the man with just enough to trust himself completely. \"Be not wise in your own eyes,\" he says, because wisdom in your own eyes is exactly where folly likes to hide.\n\nSo the whole book hangs from a posture, not an IQ. The fear of the LORD comes first, and then everything else - the proverbs about money and anger and the tongue and the marriage bed - falls into place behind it. Take away the reverence and you are left with clever sayings about getting ahead. Keep the reverence, and the same sayings become a way of walking with God through an ordinary week."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Surgeon Who Stopped Trusting His Hands",
+      "body": "A surgeon I once heard about had a flawless record and the steady confidence to match it. He trusted his own understanding the way you trust the floor beneath your feet - without thinking about it at all. Then one ordinary morning a routine operation went sideways for reasons he could not see and could not stop, and a patient he expected to save did not survive.\n\nHe told a friend afterward that the hardest part was not the grief, sharp as it was. It was discovering that the thing he had leaned on his whole career - his own competence - could not hold the weight he had quietly placed on it. He had been wise in his own eyes. The floor he never questioned had a seam in it after all.\n\nHe did not become a worse surgeon. He became a humbler one. He started praying before he scrubbed in, not as a superstition but as a confession: I am skilled, and my skill is not enough, and there is Someone over this room I did not put there. That is not the failure of wisdom. In Proverbs, that is the beginning of it.",
+      "connectionToTheme": "\"Lean not on your own understanding\" is not advice for the foolish. It is the lesson the capable spend their whole lives resisting - and the doorway into real wisdom when they finally stop.",
+      "content": "A surgeon I once heard about had a flawless record and the steady confidence to match it. He trusted his own understanding the way you trust the floor beneath your feet - without thinking about it at all. Then one ordinary morning a routine operation went sideways for reasons he could not see and could not stop, and a patient he expected to save did not survive.\n\nHe told a friend afterward that the hardest part was not the grief, sharp as it was. It was discovering that the thing he had leaned on his whole career - his own competence - could not hold the weight he had quietly placed on it. He had been wise in his own eyes. The floor he never questioned had a seam in it after all.\n\nHe did not become a worse surgeon. He became a humbler one. He started praying before he scrubbed in, not as a superstition but as a confession: I am skilled, and my skill is not enough, and there is Someone over this room I did not put there. That is not the failure of wisdom. In Proverbs, that is the beginning of it."
+    },
+    {
+      "type": "insight",
+      "heading": "Then Wisdom Stands Up and Speaks",
+      "body": "Watch what happens in chapter 8. For seven chapters wisdom has been a thing to get, a treasure to dig for, more precious than rubies. Then suddenly wisdom is not an it but a She - she calls out from the heights, she raises her voice at the crossroads, and she begins to speak in the first person about where she comes from.\n\nWhat she says is staggering. \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began.\" And then, in the most tender line in the book: \"Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.\" Before there was an earth to be wise about, Wisdom was already there, beside God, the joy of His company. And the same chapter that opened Proverbs - the LORD founding the earth by wisdom, establishing the heavens by understanding (3:19) - turns out to mean this: the world was made by Wisdom, and Wisdom was a Person delighting at the Maker's side.\n\nThis is the hinge of the whole book, and it is why a book of practical sayings is finally a book about God. Wisdom is not a technique you master. Wisdom is Someone you find. \"Whoever finds me finds life,\" she says, \"and obtains the favor of the LORD\" (8:35). The fear of the LORD that began the book and the Wisdom who delighted before creation are the same reverence reaching for the same Person.",
+      "historicalContext": "Proverbs sits in Israel's Wisdom Literature alongside Job, Psalms, and Ecclesiastes. Chapter 8's portrait of Wisdom present at creation, rejoicing before God, was read with awe by the earliest church. When the New Testament writers reached for words to say who Jesus was before His birth, they reached here - and to Genesis 1 and John 1 - because the categories were already waiting in this chapter.",
+      "fascinatingFact": "Proverbs 8:30 calls Wisdom amon - a word that can mean a skilled craftsman or master worker, and can also be heard as a little child cared for and held. Both readings have been treasured for centuries. Either way, the picture is intimacy: Wisdom is not a tool God uses and sets down, but a presence God delights in, day after day, before there was a single day for us to count.",
+      "content": "Watch what happens in chapter 8. For seven chapters wisdom has been a thing to get, a treasure to dig for, more precious than rubies. Then suddenly wisdom is not an it but a She - she calls out from the heights, she raises her voice at the crossroads, and she begins to speak in the first person about where she comes from.\n\nWhat she says is staggering. \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began.\" And then, in the most tender line in the book: \"Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.\" Before there was an earth to be wise about, Wisdom was already there, beside God, the joy of His company. And the same chapter that opened Proverbs - the LORD founding the earth by wisdom, establishing the heavens by understanding (3:19) - turns out to mean this: the world was made by Wisdom, and Wisdom was a Person delighting at the Maker's side.\n\nThis is the hinge of the whole book, and it is why a book of practical sayings is finally a book about God. Wisdom is not a technique you master. Wisdom is Someone you find. \"Whoever finds me finds life,\" she says, \"and obtains the favor of the LORD\" (8:35). The fear of the LORD that began the book and the Wisdom who delighted before creation are the same reverence reaching for the same Person."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In Proverbs 8, Wisdom speaks as a Person present with God before the world was made - the LORD's first course, His skilled craftsman, His delight - and promises that whoever finds her finds life and the favor of the LORD.",
+      "modernApplication": "We still chase wisdom as a skill set - the right framework, the better system, the productivity hack that finally makes life work. Proverbs lets us chase it that way for seven chapters, then quietly turns the search into a relationship. The wisdom that holds is not information we acquire but a Person we come to trust.",
+      "connectionPoint": "What Proverbs 8 sketches in poetry, the New Testament names. John opens his Gospel exactly where Proverbs 8 stands: \"In the beginning was the Word, and the Word was with God, and the Word was God\" (John 1:1) - the One beside the Father before creation, through whom all things were made. Paul says it plainly: Christ is \"the wisdom of God\" (1 Corinthians 1:24), the One who \"has become for us wisdom from God\" (1 Corinthians 1:30), the One in whom \"are hidden all the treasures of wisdom and knowledge\" (Colossians 2:3). The Wisdom who rejoiced at the Maker's side has a name.",
+      "newTestamentEcho": "\"Whoever finds me finds life,\" Wisdom says in Proverbs 8:35. Centuries later a carpenter from Nazareth would say, \"I am the way and the truth and the life\" (John 14:6). The promise Proverbs made about Wisdom, Jesus made about Himself - because He is the Wisdom of God in the flesh, and to find Him is to find the life Proverbs spent thirty-one chapters pointing toward."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you leaning hardest on your own understanding right now - and what would it mean to trust the LORD there instead?",
+      "additionalQuestions": [
+        "Proverbs says wisdom begins with reverence, not cleverness. Is there a place where you are smart and still foolish - capable, but quietly trusting yourself instead of God?",
+        "If wisdom is finally a Person to be found rather than a skill to be mastered, how does that change the way you go looking for it?",
+        "Proverbs 16:9 says, 'A man's heart plans his course, but the LORD determines his steps.' Where are you making plans you have not yet committed to God?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am wiser in my own eyes than I want to admit. I make my plans and call them prayer; I lean on my own understanding and call it faith. Teach me the fear that is the beginning of wisdom - the awe that trusts You exactly where I cannot see the ground. I have been hunting for wisdom as if it were a thing to seize. Let me find instead that it was a Person all along - Christ, the Wisdom of God, who was beside You before the world and delights in me still. In all my ways today, I acknowledge You. Make my paths straight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is no assignment to complete, only a posture to take up. Sit for five quiet minutes with one line from Proverbs: \"Trust in the LORD with all your heart, and lean not on your own understanding.\" Name one decision you have been carrying alone, and hand it over before you stand up.",
+      "leavingAtCross": [
+        "The quiet confidence that I can think my way through anything if I am clever enough",
+        "The plans I have made and never actually committed to God",
+        "The habit of being wise in my own eyes and calling it being responsible"
+      ],
+      "receivingFromCross": [
+        "The fear of the LORD that is the beginning of wisdom, not its enemy",
+        "A Person to trust where my understanding runs out",
+        "The promise that the One who determines my steps was beside the Father before the world, and delights in me still"
+      ],
+      "content": "Today is a sabbath day - there is no assignment to complete, only a posture to take up. Sit for five quiet minutes with one line from Proverbs: \"Trust in the LORD with all your heart, and lean not on your own understanding.\" Name one decision you have been carrying alone, and hand it over before you stand up."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does a book about wisdom tell its reader to 'lean not on your own understanding'? What does that reveal about where real wisdom begins?",
+        "In Proverbs 8, what does Wisdom claim about herself - where she was, what she was, and what she did before the world was made?",
+        "How do John 1:1 and 1 Corinthians 1:24 help you read Proverbs 8 - and who do the New Testament writers say this Wisdom turned out to be?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are 'wise in your own eyes' - capable enough that you have stopped asking God about it.",
+        "Talk about the difference between getting wiser and growing in the fear of the LORD. Have you ever mistaken one for the other?",
+        "Ask each other: if wisdom is a Person to be found rather than a skill to be earned, where do you most need to go looking for Him this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Proverbs 9:10",
+          "text": "The fear of the LORD is the beginning of wisdom, and knowledge of the Holy One is understanding."
+        },
+        {
+          "reference": "Proverbs 8:30",
+          "text": "Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence."
+        },
+        {
+          "reference": "Proverbs 16:9",
+          "text": "A man's heart plans his course, but the LORD determines his steps."
+        },
+        {
+          "reference": "1 Corinthians 1:30",
+          "text": "It is because of Him that you are in Christ Jesus, who has become for us wisdom from God: our righteousness, holiness, and redemption."
+        },
+        {
+          "reference": "Colossians 2:3",
+          "text": "in whom are hidden all the treasures of wisdom and knowledge."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Proverbs 8",
+          "note": "Read the whole chapter slowly, watching Wisdom move from calling out in the streets (vv. 1-11) to speaking of her place beside God before creation (vv. 22-31). Then read John 1:1-3 beside it and notice how the two passages rhyme."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Lady Wisdom (Chokmah)",
+      "title": "Wisdom Personified, Who Spoke Before the World",
+      "description": "Throughout Proverbs, wisdom is given a voice and a presence - calling out in the streets, building her house, setting her table. In chapter 8 she speaks of her origin: created by the LORD as His first course, established from everlasting, a skilled craftsman at His side and His daily delight before the earth began. The early church read this portrait alongside John 1 and 1 Corinthians 1 and recognized in it the eternal Son, Christ the Wisdom of God, through whom all things were made.",
+      "keyQuote": "The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began.",
+      "lessonForUs": "Wisdom was never first a thing to acquire; she was always a Person to find. The reverence Proverbs calls 'the fear of the LORD' is the same reverence the Gospels call following Jesus - and to find Him is to find the life the whole book was promising.",
+      "heading": "Wisdom Personified, Who Spoke Before the World"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2149,
+  "scriptureReference_full": "Proverbs 3, 8, 16, 22, 31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (yir'at YHWH H3374; reshit; chokmah; amon in Proverbs 8:30) reflects standard lexical sources. The dual sense of amon as 'craftsman' and 'little child' is widely noted in the commentary tradition; both readings are held, not resolved here."
+  ]
 }

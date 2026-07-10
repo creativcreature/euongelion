@@ -1,38 +1,177 @@
 {
   "day": 345,
-  "title": "1 Corinthians: Love + Resurrection — Day 2 — Building",
-  "teaser": "Day 345 of Bible 365 — 1 Cor 13, 15",
+  "title": "The Only Thing That Outlasts the Funeral",
+  "teaser": "Paul says love never fails — then spends a whole chapter on why the dead rise. Read them together and the reason love endures becomes a Person.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 345"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:7-8, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "endures all things",
+        "Love never fails",
+        "the greatest of these is love"
+      ],
+      "greekOriginal": "ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "It bears all things, believes all things, hopes all things, endures all things. Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed. ... And now these three remain: faith, hope, and love; but the greatest of these is love."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "οὐδέποτε πίπτει",
+      "transliteration": "oudepote piptei",
+      "pronunciation": "oo-DEH-po-teh PIP-tay",
+      "meaning": "never falls, never fails, never collapses",
+      "rootMeaning": "Piptei is the ordinary Greek verb for falling - a leaf falling, a building falling, a soldier falling in battle, a person dropping dead. Oudepote means not-ever, at no point in time. Paul does not say love is strong; he says love is the one thing that never goes down.",
+      "usageNote": "The same verb pipto describes the house built on sand that 'fell - and great was its fall' (Matthew 7:27), and the seed that 'fell' on the path (Luke 8:5). Against that backdrop, Paul's claim is startling: prophecy stops, tongues fall silent, knowledge is set aside - but love is the one structure in the universe that never comes down.",
+      "wordByWord": [
+        {
+          "word": "ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love - self-giving, willed love, the kind God shows"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, not at any time"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, fails, collapses, drops"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μένει",
+          "reference": "Menei (1 Cor 13:13) - faith, hope, and love 'remain' or 'abide.' Three things stay standing when everything else falls; love is named the greatest of the three."
+        }
+      ],
+      "strongsNumber": "G4098",
+      "definition": "to fall, to fall down, to fall to ruin, to fail",
+      "usage": "Paul borrows the language of collapse - of buildings and bodies that go down - and denies it to love alone. Everything that ends is contrasted with the one thing that does not."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Why the Love Chapter and the Resurrection Chapter Are Two Chapters Apart",
+      "body": "We pull 1 Corinthians 13 out for weddings and read it like a poem about tenderness. Paul wrote it as an argument. The Corinthians were proud of their flashier gifts - speaking in tongues, prophecy, deep knowledge - and Paul lines those gifts up and says each one will run out. Prophecies will cease. Tongues will fall silent. Knowledge will be set aside. They are scaffolding, useful for the building going up, taken down once it stands.\n\nThen comes the line: \"Love never fails.\" Not love is nicer. Love does not collapse. Of all the things the Corinthians prized, only one will still be standing when the others are gone.\n\nKeep reading past chapter 13 and you find out why Paul is so sure. Two chapters later he turns to the resurrection of the dead, and he is just as blunt: \"If Christ has not been raised, our preaching is worthless, and so is your faith\" (15:14). The same letter that says love outlasts everything also says everything hangs on whether one grave stayed empty. These are not two unrelated topics filed near each other. The love that never falls and the Lord who would not stay down are the same claim, said twice.",
+      "keyInsight": "Paul does not praise love as a feeling that lasts a while. He insists it is the single thing in creation that never collapses - and he stakes that claim on a body that came out of a tomb.",
+      "content": "We pull 1 Corinthians 13 out for weddings and read it like a poem about tenderness. Paul wrote it as an argument. The Corinthians were proud of their flashier gifts - speaking in tongues, prophecy, deep knowledge - and Paul lines those gifts up and says each one will run out. Prophecies will cease. Tongues will fall silent. Knowledge will be set aside. They are scaffolding, useful for the building going up, taken down once it stands.\n\nThen comes the line: \"Love never fails.\" Not love is nicer. Love does not collapse. Of all the things the Corinthians prized, only one will still be standing when the others are gone.\n\nKeep reading past chapter 13 and you find out why Paul is so sure. Two chapters later he turns to the resurrection of the dead, and he is just as blunt: \"If Christ has not been raised, our preaching is worthless, and so is your faith\" (15:14). The same letter that says love outlasts everything also says everything hangs on whether one grave stayed empty. These are not two unrelated topics filed near each other. The love that never falls and the Lord who would not stay down are the same claim, said twice."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Widower Read at the Graveside",
+      "body": "A man I knew buried his wife after fifty-one years. At the graveside, with the casket still above the open ground, he asked to read something. Everyone expected the love chapter - patient, kind, the wedding words again.\n\nHe read chapter 15 instead. \"What is sown is perishable; it is raised imperishable. It is sown in dishonor; it is raised in glory. It is sown in weakness; it is raised in power.\" Then he stopped and said, quietly, that he had read chapter 13 to her at their wedding, and he was reading chapter 15 to her now, and he had finally understood that they were the same chapter the whole time. The love he promised her in his thirties only made sense, he said, if there was something on the far side of the dirt they were standing on.\n\nHe was right, and he had read his Bible better than most of us. Love that ends at the funeral is a beautiful thing that fails. Love that does not fail needs a doorway out of the grave, or it is just a kind word over a hole in the ground.",
+      "connectionToTheme": "The love of chapter 13 only keeps its promise - that it never fails - because of the resurrection of chapter 15. Take the empty tomb away and even the truest love is buried with its object.",
+      "content": "A man I knew buried his wife after fifty-one years. At the graveside, with the casket still above the open ground, he asked to read something. Everyone expected the love chapter - patient, kind, the wedding words again.\n\nHe read chapter 15 instead. \"What is sown is perishable; it is raised imperishable. It is sown in dishonor; it is raised in glory. It is sown in weakness; it is raised in power.\" Then he stopped and said, quietly, that he had read chapter 13 to her at their wedding, and he was reading chapter 15 to her now, and he had finally understood that they were the same chapter the whole time. The love he promised her in his thirties only made sense, he said, if there was something on the far side of the dirt they were standing on.\n\nHe was right, and he had read his Bible better than most of us. Love that ends at the funeral is a beautiful thing that fails. Love that does not fail needs a doorway out of the grave, or it is just a kind word over a hole in the ground."
+    },
+    {
+      "type": "insight",
+      "heading": "Read the List Again - It Is a Portrait",
+      "body": "Go back over chapter 13 slowly and notice that Paul never defines love with an adjective. He defines it with verbs - things love does and refuses to do. \"Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no account of wrongs.\" Then, two verses later: \"It bears all things, believes all things, hopes all things, endures all things.\"\n\nNow set that list next to one Man. Patient with disciples who never quite understood. Not self-seeking - \"the Son of Man came not to be served, but to serve.\" Keeping no account of wrongs - \"Father, forgive them, for they do not know what they are doing.\" Bearing all things, enduring all things, all the way to a cross. Every clause in the love chapter reads like a description of Jesus written before the Gospels were collected. Paul is not handing the Corinthians an ideal to admire. He is handing them a face.\n\nAnd here is where chapter 13 reaches forward to chapter 15. The reason this love \"endures all things\" and \"never fails\" is that the One who lived it was buried on a Friday and would not stay buried. Love endured all things - including death - and walked back out. That is why Paul can say it never falls. It already went down into the one place everything falls, and it got up.",
+      "historicalContext": "Corinth was a Roman colony rebuilt in 44 BC, a port city famous for commerce, status-seeking, and rival philosophical claims about the afterlife. Many Corinthians, shaped by Greek thinking, found the idea of a bodily resurrection embarrassing - the soul might survive, but who would want the body back? Paul writes chapter 15 straight into that resistance, insisting the resurrection is not a metaphor for the soul's survival but a physical event: a body sown perishable, raised imperishable.",
+      "fascinatingFact": "Chapter 15 contains what scholars widely regard as the oldest summary of the gospel in the New Testament - \"that Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day\" (15:3-4). Paul calls it something \"I received\" and \"passed on,\" a fixed formula already being recited by Christians within a few years of the crucifixion, before a single Gospel was written down.",
+      "content": "Go back over chapter 13 slowly and notice that Paul never defines love with an adjective. He defines it with verbs - things love does and refuses to do. \"Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no account of wrongs.\" Then, two verses later: \"It bears all things, believes all things, hopes all things, endures all things.\"\n\nNow set that list next to one Man. Patient with disciples who never quite understood. Not self-seeking - \"the Son of Man came not to be served, but to serve.\" Keeping no account of wrongs - \"Father, forgive them, for they do not know what they are doing.\" Bearing all things, enduring all things, all the way to a cross. Every clause in the love chapter reads like a description of Jesus written before the Gospels were collected. Paul is not handing the Corinthians an ideal to admire. He is handing them a face.\n\nAnd here is where chapter 13 reaches forward to chapter 15. The reason this love \"endures all things\" and \"never fails\" is that the One who lived it was buried on a Friday and would not stay buried. Love endured all things - including death - and walked back out. That is why Paul can say it never falls. It already went down into the one place everything falls, and it got up."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a status-hungry church that their prized gifts will all run out, and only love will be left standing - because the love he means is the cross-shaped, grave-defeating love of the risen Christ, the firstfruits of those who have fallen asleep.",
+      "modernApplication": "We still build our lives on the things Paul said would be taken down - what we know, what we can do, the gifts that make us impressive. When those run out, and they will, the question is whether anything is left holding the structure up. Paul says one thing remains: a love we did not generate and cannot lose, anchored in a Friday grave that came up empty.",
+      "connectionPoint": "Chapter 13 and chapter 15 are held together by a single thread that runs through the whole of Scripture: the love of God is not a feeling that fades but a commitment that outlasts death. \"Love is as strong as death,\" sings the Song of Songs (8:6); \"many waters cannot quench love.\" Paul goes one step further - love is not merely as strong as death, it is stronger, because in Christ love walked into death and came back out.",
+      "newTestamentEcho": "Paul's logic is sealed at the end of chapter 15: \"Where, O Death, is your victory? Where, O Death, is your sting? ... thanks be to God, who gives us the victory through our Lord Jesus Christ\" (15:55, 57). The love that never fails and the death that lost its sting meet in the same name."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you building your life on right now - and is it something Paul says will be taken down, or something that remains?",
+      "additionalQuestions": [
+        "When you read the list in chapter 13 - patient, kind, keeps no account of wrongs, bears all things - whose face comes to mind? Does it come naturally to read it as a portrait of Jesus, or had you only read it as an instruction?",
+        "If the resurrection were not true, which of your hopes would have to be buried with it? Sit honestly with that list.",
+        "Where do you most need the kind of love that endures rather than the kind that runs out?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so much of my life building on the things You said would be taken down - what I know, what I can do, the parts of me that look impressive to others. I have read Your love chapter at weddings and missed that it was a portrait of You. Teach me to see it: patient, kind, keeping no account of my wrongs, bearing all things, all the way to a cross. And because You did not stay in the grave, let me trust the one thing that never falls. When my own scaffolding comes down, let love be what is left standing. Through Christ, the firstfruits, who turned the funeral into a doorway. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read 1 Corinthians 13:4-8 out loud once - and the second time, replace the word 'love' with the name 'Jesus' in each line. Notice which lines suddenly fit, and which ones convict you. Let the gap between the two readings be your prayer.",
+      "leavingAtCross": [
+        "The habit of building my worth on gifts and knowledge that Paul says will run out",
+        "The quiet fear that love ends at the graveside and good things do not last",
+        "Reading the love chapter as a standard I keep failing instead of a Person who never fails me"
+      ],
+      "receivingFromCross": [
+        "A love defined not by my effort but by the One who bore all things to the end",
+        "The confidence that the resurrection makes love the one thing in the universe that does not collapse",
+        "Freedom to stop bracing against loss and rest on what remains: faith, hope, and the love that is greatest"
+      ],
+      "content": "Today, read 1 Corinthians 13:4-8 out loud once - and the second time, replace the word 'love' with the name 'Jesus' in each line. Notice which lines suddenly fit, and which ones convict you. Let the gap between the two readings be your prayer."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does Paul mean when he says love 'never fails' (oudepote piptei) - and how is that different from saying love is strong or lasting?",
+        "Why does Paul put the love chapter and the resurrection chapter in the same letter? What holds them together?",
+        "How does reading chapter 13 as a portrait of Christ change the way you hear its commands?"
+      ],
+      "forAccountabilityPartners": [
+        "Read chapter 13 aloud to each other and name, line by line, where you have seen this love in Christ - and where you have failed to live it.",
+        "Talk honestly about what would have to change in you if the resurrection of chapter 15 is literally true.",
+        "Ask each other: what are you building on right now that Paul says will one day be taken down - and what would it look like to build on what remains?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 15:3-4",
+          "text": "For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day according to the Scriptures,"
+        },
+        {
+          "reference": "1 Corinthians 15:20",
+          "text": "But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep."
+        },
+        {
+          "reference": "1 Corinthians 15:55, 57",
+          "text": "Where, O Death, is your victory? Where, O Death, is your sting? ... But thanks be to God, who gives us the victory through our Lord Jesus Christ!"
+        },
+        {
+          "reference": "Song of Songs 8:6-7",
+          "text": "for love is as strong as death... Many waters cannot quench love; rivers cannot sweep it away."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters in one sitting, as Paul wrote them. Watch how the gifts that 'cease' in chapter 13 and the death that is 'swallowed up in victory' in chapter 15 both point to the one love that remains."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul the Apostle",
+      "title": "Letter-Writer to a Divided Church",
+      "era": "wrote 1 Corinthians around AD 53-55, from Ephesus",
+      "description": "A former persecutor of the church who met the risen Christ on the road to Damascus, Paul writes to a young, gifted, quarreling congregation in Corinth. He had founded the church himself and stayed eighteen months. Now, hearing of their divisions and their pride in spiritual gifts, he writes to reorder their values - placing love above every gift and the resurrection beneath every hope. He claims, in this very letter, to have seen the risen Lord himself.",
+      "keyQuote": "And now these three remain: faith, hope, and love; but the greatest of these is love.",
+      "lessonForUs": "Paul does not pit love against doctrine or feeling against fact. He grounds the tenderest words in the New Testament on the hardest claim in the New Testament - that a dead man rose. Hold both, as he did, and love stops being fragile.",
+      "heading": "Letter-Writer to a Divided Church"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1556,
+  "scriptureReference_full": "1 Corinthians 13:7-8, 13 (with 15:3-4, 20, 42-44, 54-57)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapē oudepote piptei, piptō G4098) reflects standard lexical sources. Dating of 1 Corinthians (c. AD 53-55, from Ephesus) follows mainstream New Testament scholarship; the date of Corinth's refounding as a Roman colony (44 BC) is standard historical record."
+  ]
 }

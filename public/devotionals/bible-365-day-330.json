@@ -1,38 +1,182 @@
 {
   "day": 330,
-  "title": "Acts: Pentecost + Spread — Day 1 — Hook",
-  "teaser": "Day 330 of Bible 365 — Acts 1-10",
+  "title": "The Wind That Will Not Stay in One Room",
+  "teaser": "Jesus is lifted out of sight, and ten days later a sound like wind fills one room in Jerusalem — and never stops moving outward. Pentecost is not a memory. It is the engine of everything after.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 330"
+      "type": "scripture",
+      "reference": "Acts 1:8; 2:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "you will receive power",
+        "to the ends of the earth",
+        "a sound like a mighty rushing wind",
+        "all filled with the Holy Spirit"
+      ],
+      "greekOriginal": "ἀλλὰ λήμψεσθε δύναμιν ἐπελθόντος τοῦ Ἁγίου Πνεύματος ἐφ’ ὑμᾶς, καὶ ἔσεσθέ μου μάρτυρες",
+      "passage": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.” ... When the day of Pentecost came, they were all together in one place. Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting. They saw tongues like flames of fire that separated and came to rest on each of them. And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "μάρτυς",
+      "transliteration": "martys",
+      "pronunciation": "MAR-tooss",
+      "meaning": "witness; one who testifies to what he has seen",
+      "rootMeaning": "A legal term first - the person who stands up in court and says what he saw with his own eyes. Not an advocate arguing a case, not a hired voice. A witness simply tells what happened to him.",
+      "usageNote": "Jesus does not tell the disciples to win arguments or build an institution. He says, \"You will be My witnesses\" - people who report what they have seen Him do. Within a generation the cost of that testimony grew so high that the Greek word martys passed into English as \"martyr.\" To witness to the risen Christ and to die for Him became, for many, the same act.",
+      "wordByWord": [
+        {
+          "word": "λήμψεσθε",
+          "transliteration": "lempsesthe",
+          "meaning": "you will receive - the power is given, not generated"
+        },
+        {
+          "word": "δύναμιν",
+          "transliteration": "dynamin",
+          "meaning": "power, ability; the root behind \"dynamic\" and \"dynamite\""
+        },
+        {
+          "word": "μάρτυρες",
+          "transliteration": "martyres",
+          "meaning": "witnesses - those who tell what they have seen"
+        },
+        {
+          "word": "ἕως ἐσχάτου τῆς γῆς",
+          "transliteration": "heos eschatou tes ges",
+          "meaning": "to the end of the earth - the farthest edge of the map"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πνεῦμα / πνοή",
+          "reference": "Pneuma is the word for Spirit in Acts 2:4; pnoe, used in 2:2 of the \"rushing wind,\" is its cousin. In both Hebrew (ruach) and Greek, the same word carries breath, wind, and Spirit at once. At Pentecost the wind you cannot see fills a house you can."
+        }
+      ],
+      "strongsNumber": "G3144",
+      "definition": "a witness; one who attests by word or deed to what he has personally seen or experienced",
+      "usage": "The witness does not have to be eloquent. He has to be there, and he has to tell the truth. Peter, who had denied Jesus three times in a courtyard, becomes the first great witness in Acts - which tells you the power for it does not come from the witness."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Leaves, and the Room Fills",
+      "body": "The book of Acts opens with a goodbye. Jesus, risen and unmistakably alive, gathers His followers, gives them one last instruction, and is \"taken up\" while they watch, until a cloud hides Him from their sight. Then He is gone. Eleven men stand on a hillside staring up at an empty sky.\n\nIt is worth feeling how strange that is. The whole story until now has been about His presence - His voice, His hands, His footsteps on the road. And the sequel to the Gospels begins with His absence. If you have ever stood at a gate watching someone you love walk away, you know the particular silence of that moment.\n\nBut Jesus had not left them empty-handed. Before He rose out of view He said, \"You will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.\" That sentence is the table of contents for the entire book. Jerusalem - that is chapters 1 through 7. Judea and Samaria - that is chapters 8 through 12. The ends of the earth - that is chapters 13 to the end, Paul carrying the message toward Rome. Acts is simply this verse, unfolding.\n\nSo they wait. For ten days a small frightened community prays in an upstairs room. And then, on the morning of Pentecost, the absence ends in a way no one expected. Not Jesus walking back through the door, but a sound like wind filling the whole house, and fire resting on each of them, and ordinary Galileans suddenly speaking the good news in languages they had never learned. The One who went up has come back down - not in a body they can touch, but in a Spirit they cannot contain.",
+      "keyInsight": "Acts begins with the ascension - Jesus going up and out of sight - precisely so that Pentecost can be read for what it is: not a substitute for His presence, but its enlargement. He withdrew His body so His Spirit could fill not one room but the whole earth.",
+      "content": "The book of Acts opens with a goodbye. Jesus, risen and unmistakably alive, gathers His followers, gives them one last instruction, and is \"taken up\" while they watch, until a cloud hides Him from their sight. Then He is gone. Eleven men stand on a hillside staring up at an empty sky.\n\nIt is worth feeling how strange that is. The whole story until now has been about His presence - His voice, His hands, His footsteps on the road. And the sequel to the Gospels begins with His absence. If you have ever stood at a gate watching someone you love walk away, you know the particular silence of that moment.\n\nBut Jesus had not left them empty-handed. Before He rose out of view He said, \"You will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.\" That sentence is the table of contents for the entire book. Jerusalem - that is chapters 1 through 7. Judea and Samaria - that is chapters 8 through 12. The ends of the earth - that is chapters 13 to the end, Paul carrying the message toward Rome. Acts is simply this verse, unfolding.\n\nSo they wait. For ten days a small frightened community prays in an upstairs room. And then, on the morning of Pentecost, the absence ends in a way no one expected. Not Jesus walking back through the door, but a sound like wind filling the whole house, and fire resting on each of them, and ordinary Galileans suddenly speaking the good news in languages they had never learned. The One who went up has come back down - not in a body they can touch, but in a Spirit they cannot contain."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Language He Was Born Hearing",
+      "body": "A man I know grew up speaking one language at home and another at school, and for most of his childhood the two never met. Church was in the school language - formal, learned, a little distant. Then one Sunday a visiting preacher, by accident, prayed in the language my friend's grandmother had used to put him to bed. He told me he started crying before he understood why. Something had reached past the part of him that listens and landed in the part of him that belongs.\n\nThat is the detail in Acts 2 most of us read past. When the Spirit fell, the crowd in Jerusalem heard the message \"each in his own native language.\" There were Parthians, Medes, Egyptians, Romans, Arabs - a whole map gathered for the feast. God could have given everyone one heavenly tongue. Instead He gave the disciples every listener's mother tongue.\n\nThe message of the risen Christ did not arrive as a foreign import to be translated later. It arrived already speaking the language each person was born hearing. The good news, from its first public morning, refused to belong to only one kind of person.",
+      "connectionToTheme": "Pentecost is not the start of one new religion in one new dialect. It is the moment the gospel proves it can be spoken in every human language at once - the first sign that it was always meant for the ends of the earth.",
+      "content": "A man I know grew up speaking one language at home and another at school, and for most of his childhood the two never met. Church was in the school language - formal, learned, a little distant. Then one Sunday a visiting preacher, by accident, prayed in the language my friend's grandmother had used to put him to bed. He told me he started crying before he understood why. Something had reached past the part of him that listens and landed in the part of him that belongs.\n\nThat is the detail in Acts 2 most of us read past. When the Spirit fell, the crowd in Jerusalem heard the message \"each in his own native language.\" There were Parthians, Medes, Egyptians, Romans, Arabs - a whole map gathered for the feast. God could have given everyone one heavenly tongue. Instead He gave the disciples every listener's mother tongue.\n\nThe message of the risen Christ did not arrive as a foreign import to be translated later. It arrived already speaking the language each person was born hearing. The good news, from its first public morning, refused to belong to only one kind of person."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sermon Names the Crime and Offers the Cure",
+      "body": "When the wind and fire draw a crowd, Peter stands up to explain. His sermon climbs to one blunt sentence: \"Let all Israel know with certainty that God has made this Jesus, whom you crucified, both Lord and Christ.\" He does not soften the accusation. The people listening had a hand in the death of the man God raised.\n\nAnd here is the hinge of the whole book. The crowd \"were cut to the heart\" and asked, \"Brothers, what shall we do?\" Peter does not answer with a program or a membership requirement. He answers with a door held open: \"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.\"\n\nNotice the shape of it. The same Spirit that fell on the disciples in the upper room is now promised to the very crowd that had shouted for the crucifixion. The power was never a reward for the worthy. It was a gift extended first to those who most needed forgiving. Three thousand were baptized that day. The room that held a hundred and twenty became a community no room could hold - and by chapter 10 the door swings open even to Cornelius, a Roman officer, as Peter says aloud, \"God does not show favoritism.\"",
+      "historicalContext": "Pentecost (in Greek, pentekoste, \"fiftieth\") was already an ancient Jewish harvest feast held fifty days after Passover, drawing Jewish pilgrims from across the Roman world to Jerusalem. That is why so many languages were in one city on one morning. The Spirit fell on the day the largest, most international crowd of the year was gathered - the harvest feast became the first harvest of the Church.",
+      "fascinatingFact": "Peter, the man preaching with such boldness in Acts 2, is the same Peter who weeks earlier had denied even knowing Jesus to a servant girl by a fire (Luke 22:54-62). Nothing about Peter's courage explains the change. The only new thing between the courtyard and the sermon is the Spirit poured out at Pentecost.",
+      "content": "When the wind and fire draw a crowd, Peter stands up to explain. His sermon climbs to one blunt sentence: \"Let all Israel know with certainty that God has made this Jesus, whom you crucified, both Lord and Christ.\" He does not soften the accusation. The people listening had a hand in the death of the man God raised.\n\nAnd here is the hinge of the whole book. The crowd \"were cut to the heart\" and asked, \"Brothers, what shall we do?\" Peter does not answer with a program or a membership requirement. He answers with a door held open: \"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.\"\n\nNotice the shape of it. The same Spirit that fell on the disciples in the upper room is now promised to the very crowd that had shouted for the crucifixion. The power was never a reward for the worthy. It was a gift extended first to those who most needed forgiving. Three thousand were baptized that day. The room that held a hundred and twenty became a community no room could hold - and by chapter 10 the door swings open even to Cornelius, a Roman officer, as Peter says aloud, \"God does not show favoritism.\""
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus ascends out of sight and, ten days later, pours out the Holy Spirit on His waiting followers - filling one room in Jerusalem with a power meant to carry His witness to the ends of the earth.",
+      "modernApplication": "We often treat the Christian life as something we have to generate by willpower - more discipline, more effort, more performance, until we burn out and conclude we were never cut out for it. Acts says the opposite. The first thing the disciples were told to do was wait and receive. The power for the witness is given, not summoned. You are not the wind; you are the room the wind fills.",
+      "connectionPoint": "Acts 1:8 is not a one-time map of the early church. It is the pattern of how God's good news has always moved - outward, never settling, always one neighbor and one language further than the people carrying it expected. The same Spirit who crossed from Jerusalem to Samaria to Rome is the reason the message ever reached you, in whatever language you were born hearing.",
+      "newTestamentEcho": "The wind that filled the upper room is the same Spirit Jesus had promised the night before He died: \"I will ask the Father, and He will give you another Advocate to be with you forever\" (John 14:16). Pentecost is that promise kept. What He pledged in private, He poured out in public."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been trying to generate, by sheer effort, something that was only ever meant to be received as a gift?",
+      "additionalQuestions": [
+        "The disciples spent ten days waiting before the Spirit came. When was the last time you waited on God without filling the silence with activity?",
+        "Acts begins with Jesus leaving so His Spirit could spread. Is there a presence or comfort you are gripping so tightly that it cannot become a blessing to anyone beyond you?",
+        "The gospel came to the crowd in their own native language. Who in your life needs to hear it in theirs - not your words, but spoken into the place where they actually live?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have so often tried to be the wind when You only ever asked me to be the room. Forgive the exhaustion of my own effort. Like the disciples in the upper room, teach me to wait, and to receive. Fill what is empty in me with Your Spirit - the same Spirit that turned a frightened denier into a witness. And let what You pour in not stay in one room. Send it outward, through me, in the language someone near me was born hearing. In the name of Jesus, who went up so that You could come down. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before doing anything else today, sit still for five minutes and ask nothing - simply wait, the way the disciples waited, and let the line settle on you: \"You will receive power.\" Then name one person to whom you could carry one true word of the good news this week, in their language, not yours.",
+      "leavingAtCross": [
+        "The belief that the Christian life runs on my willpower and burns out when my willpower does",
+        "The instinct to fill every silence rather than wait on God",
+        "The quiet assumption that the good news belongs to people like me and is foreign to people who aren't"
+      ],
+      "receivingFromCross": [
+        "A power that is given, not generated - the Spirit poured out, not earned",
+        "The freedom of being the room the wind fills, not the wind itself",
+        "A place in a story that has been moving outward for two thousand years and has not stopped"
+      ],
+      "content": "Before doing anything else today, sit still for five minutes and ask nothing - simply wait, the way the disciples waited, and let the line settle on you: \"You will receive power.\" Then name one person to whom you could carry one true word of the good news this week, in their language, not yours."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does Acts 1:8 - Jerusalem, Judea and Samaria, the ends of the earth - serve as a map for the whole book of Acts?",
+        "Why does it matter that the crowd at Pentecost heard the message each in his own native language, rather than in one shared tongue?",
+        "What is the only thing that changed between Peter denying Jesus in the courtyard and Peter preaching boldly at Pentecost - and what does that tell you about where the power comes from?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time you tried to manufacture spiritual growth by effort alone. What happened?",
+        "Pentecost began with ten days of waiting. What would it look like, practically, for each of you to build real waiting into this week?",
+        "Ask each other: who is the 'Cornelius' in your life - the person you've quietly assumed the good news isn't for - and what would it mean to treat them the way Peter learned to?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 2:38",
+          "text": "Peter replied, “Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.”"
+        },
+        {
+          "reference": "Acts 2:42",
+          "text": "They devoted themselves to the apostles’ teaching and to the fellowship, to the breaking of bread and to prayer."
+        },
+        {
+          "reference": "Acts 10:34-35",
+          "text": "Then Peter began to speak: “I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right.”"
+        },
+        {
+          "reference": "John 14:16",
+          "text": "And I will ask the Father, and He will give you another Advocate to be with you forever."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 1-2",
+          "note": "Read the ascension (1:9-11), the ten days of waiting and prayer (1:12-26), and the day of Pentecost (2:1-47) in one sitting, watching how absence turns into outpouring."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Peter (Simon Peter)",
+      "title": "The Fisherman Who Became the First Witness",
+      "description": "A Galilean fisherman, leader among the twelve apostles, who famously denied Jesus three times on the night of His arrest. In Acts he is the first to preach after Pentecost, the voice who explains the rushing wind and the fire to a bewildered crowd, and later the one God uses to open the door of the gospel to the Gentiles through Cornelius (Acts 10). His transformation from the courtyard to the sermon is Acts' first proof that the power belongs to the Spirit, not to the witness.",
+      "keyQuote": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.",
+      "lessonForUs": "If the Spirit could make a witness out of the man who denied even knowing Jesus, then no failure in your past disqualifies you from being filled and sent. The wind fills the room that knows it is empty.",
+      "heading": "The Fisherman Who Became the First Witness"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2136,
+  "scriptureReference_full": "Acts 1:8; 2:1-4, 36-39, 42, 46-47; 10:34-35, 43",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (martys, G3144; dynamis; pneuma/pnoe) reflects standard lexical sources. The fourfold geographic outline of Acts (Jerusalem; Judea and Samaria; ends of the earth) tracking Acts 1:8 is a longstanding observation in Acts scholarship."
+  ]
 }

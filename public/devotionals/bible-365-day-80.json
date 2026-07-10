@@ -1,38 +1,187 @@
 {
   "day": 80,
   "title": "We want a king",
-  "teaser": "Day 80 of Bible 365 — 1 Samuel 8",
+  "teaser": "Israel asks for a king like the nations have — and God tells Samuel the ache underneath the request: it is not Samuel they have rejected, but Me.",
   "framework": "1 Samuel 8 — Desiring what wounds us",
   "scriptureReference": "1 Samuel 8",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 80"
+      "type": "scripture",
+      "reference": "1 Samuel 8:4-7, 19-20",
+      "translation": "BSB",
+      "emphasis": [
+        "appoint a king to judge us like all the other nations",
+        "they have rejected Me as their king",
+        "We must have a king over us",
+        "like all the other nations"
+      ],
+      "hebrewOriginal": "כִּי לֹא אֹתְךָ מָאָסוּ כִּי־אֹתִי מָאֲסוּ מִמְּלֹךְ עֲלֵיהֶם",
+      "passage": "So all the elders of Israel gathered together and came to Samuel at Ramah. \"Look,\" they said, \"you are old, and your sons do not walk in your ways. Now appoint a king to judge us like all the other nations.\" But when they said, \"Give us a king to judge us,\" their demand was displeasing in the sight of Samuel; so he prayed to the LORD. And the LORD said to Samuel, \"Listen to the voice of the people in all that they say to you. For it is not you they have rejected, but they have rejected Me as their king.\" ... Nevertheless, the people refused to listen to Samuel. \"No!\" they said. \"We must have a king over us. Then we will be like all the other nations, with a king to judge us, to go out before us, and to fight our battles.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מָאַס",
+      "transliteration": "ma'as",
+      "pronunciation": "mah-AHS",
+      "meaning": "to reject, to refuse, to spurn, to cast away as worthless",
+      "rootMeaning": "Ma'as is stronger than simply declining. It is the verb for throwing something away because you have judged it of no value - the rejected stone of Psalm 118:22, the despised servant of Isaiah 53:3. It names not a polite no but a turning of the back.",
+      "usageNote": "In verse 7 the LORD uses ma'as twice in a single breath: \"it is not you they have rejected (ma'as), but they have rejected (ma'as) Me as their king.\" The doubling is the wound. Samuel feels personally spurned, and God gently moves the rejection up the chain to where it actually lands - on Himself.",
+      "wordByWord": [
+        {
+          "word": "כִּי לֹא אֹתְךָ",
+          "transliteration": "ki lo otkha",
+          "meaning": "for it is not you"
+        },
+        {
+          "word": "מָאָסוּ",
+          "transliteration": "ma'asu",
+          "meaning": "they have rejected, they have spurned"
+        },
+        {
+          "word": "כִּי־אֹתִי",
+          "transliteration": "ki oti",
+          "meaning": "but it is Me"
+        },
+        {
+          "word": "מָאֲסוּ",
+          "transliteration": "ma'asu",
+          "meaning": "they have rejected"
+        },
+        {
+          "word": "מִמְּלֹךְ עֲלֵיהֶם",
+          "transliteration": "mimmelokh aleihem",
+          "meaning": "from reigning over them"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מָאַס / מֶלֶךְ",
+          "reference": "Ma'as (reject) sits one verse away from melekh (king). Israel wants a melekh so badly that they ma'as the only King they had. The two words frame the whole tragedy: to gain a king they could see, they threw away the King they could not."
+        }
+      ],
+      "strongsNumber": "H3988",
+      "definition": "to reject, refuse, despise, cast away, abhor",
+      "usage": "The same verb returns to indict Saul: because he rejected (ma'as) the word of the LORD, the LORD has rejected (ma'as) him as king (1 Samuel 15:23, 26). The king they chose to escape rejection becomes the next thing rejected. Ma'as is a hall of mirrors until grace breaks it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Desiring what wounds us. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the king we needed (Luke 1:32-33).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day Israel Asked to Be Like Everyone Else",
+      "body": "Samuel is old. His sons, set up to judge after him, have done what so many sons of good men do: they have taken the office and turned it toward money, accepting bribes and bending justice. The elders of Israel see the future and do not like it. So they gather, travel to Ramah, and make a request that sounds entirely reasonable: \"Now appoint a king to judge us like all the other nations.\"\n\nOn the surface it is a governance problem with a governance solution. The judges have failed; install a king. But Samuel does not hear administration. He hears something underneath, and it stings him, and he does the one right thing an old prophet can do with a sting: he prays.\n\nThe LORD's answer reframes everything. \"It is not you they have rejected, but they have rejected Me as their king.\" Israel already had a King. From the burning bush to the Red Sea to the manna in the wilderness, the LORD Himself had gone out before them and fought their battles. The request for a king \"like all the other nations\" was not first a complaint about Samuel's sons. It was a quiet trade: exchange the invisible King who had carried them for a visible one they could point to, parade, and, when needed, blame. The phrase \"like all the other nations\" is the tell. Israel was made to be unlike the nations - a people whose only sovereign was God. They were asking to give that back.",
+      "keyInsight": "Israel's request for a king was not mainly a leadership upgrade. It was the human heart's oldest exchange: trading the King we cannot see and cannot control for one we can.",
+      "content": "Samuel is old. His sons, set up to judge after him, have done what so many sons of good men do: they have taken the office and turned it toward money, accepting bribes and bending justice. The elders of Israel see the future and do not like it. So they gather, travel to Ramah, and make a request that sounds entirely reasonable: \"Now appoint a king to judge us like all the other nations.\"\n\nOn the surface it is a governance problem with a governance solution. The judges have failed; install a king. But Samuel does not hear administration. He hears something underneath, and it stings him, and he does the one right thing an old prophet can do with a sting: he prays.\n\nThe LORD's answer reframes everything. \"It is not you they have rejected, but they have rejected Me as their king.\" Israel already had a King. From the burning bush to the Red Sea to the manna in the wilderness, the LORD Himself had gone out before them and fought their battles. The request for a king \"like all the other nations\" was not first a complaint about Samuel's sons. It was a quiet trade: exchange the invisible King who had carried them for a visible one they could point to, parade, and, when needed, blame. The phrase \"like all the other nations\" is the tell. Israel was made to be unlike the nations - a people whose only sovereign was God. They were asking to give that back."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manager They Begged For",
+      "body": "A friend of mine ran a small design studio with three other people. For years they made decisions around a kitchen table - slow, sometimes messy, but theirs. As the work grew they got tired of the messiness. They wanted someone to set the schedule, settle the arguments, carry the weight. So they hired a manager from a bigger firm, someone who ran things \"the way real companies do.\"\n\nHe did exactly what they asked. He set the schedule. He settled the arguments. He also took the best clients for himself, reorganized their hours around his targets, and within a year three of the four founders were working longer for less, answering to a man they had begged to come rule them.\n\nMy friend said the strange part was that no one had tricked them. They had asked for it. They had wanted, more than they wanted their freedom, to be relieved of the burden of being responsible to one another. A king will gladly take that burden. He will also take your sons, your fields, and a tenth of everything else, and he will not give the freedom back.",
+      "connectionToTheme": "Israel is not deceived into wanting a king; they are warned in detail and want one anyway. The ache to hand our weight to a visible ruler is older than any one bad decision - and the ruler always takes more than we offered.",
+      "content": "A friend of mine ran a small design studio with three other people. For years they made decisions around a kitchen table - slow, sometimes messy, but theirs. As the work grew they got tired of the messiness. They wanted someone to set the schedule, settle the arguments, carry the weight. So they hired a manager from a bigger firm, someone who ran things \"the way real companies do.\"\n\nHe did exactly what they asked. He set the schedule. He settled the arguments. He also took the best clients for himself, reorganized their hours around his targets, and within a year three of the four founders were working longer for less, answering to a man they had begged to come rule them.\n\nMy friend said the strange part was that no one had tricked them. They had asked for it. They had wanted, more than they wanted their freedom, to be relieved of the burden of being responsible to one another. A king will gladly take that burden. He will also take your sons, your fields, and a tenth of everything else, and he will not give the freedom back."
+    },
+    {
+      "type": "insight",
+      "heading": "God Says Yes to the Thing That Will Cost Them",
+      "body": "Read the chapter again and notice the most unsettling line. After the rejection, after Samuel's careful warning about all a king will take - sons for chariots, daughters for kitchens, a tenth of the harvest, and finally \"you yourselves will become his slaves\" - the people still refuse to listen. And God says: \"Listen to their voice. Appoint a king for them.\"\n\nHe gives them what they ask. This is not God losing the argument. It is something far more sobering: God handing a people the very thing He has just told them will wound them, because they have set their hearts on it. The judgment is not lightning. The judgment is the king. Hosea will later put words to it - \"So in My anger I gave you a king, and in My wrath I took him away\" (Hosea 13:11). Sometimes the most frightening answer God gives is yes.\n\nAnd yet even here mercy is at work. Notice that God does not abandon them to the monarchy and walk off. He warns them first, in detail, sparing nothing. Then He stays in the story - choosing, correcting, and eventually raising up a king after His own heart, and from that line a King who would never take but only give. The yes that looks like surrender is, in the long view, God refusing to stop working even through the thing His people chose against Him.",
+      "historicalContext": "1 Samuel 8 sits at the hinge between the era of the judges and the era of the kings. For roughly three centuries Israel had no central monarch; the LORD raised up judges in crisis and was Himself understood as the nation's true King (Judges 8:23; 1 Samuel 12:12). The demand at Ramah, around 1050 BC, ends that arrangement. Saul will be anointed in the next chapters, David after him - and the prophets will spend centuries measuring every king against the King who was rejected here.",
+      "fascinatingFact": "God's instruction to Samuel is not \"refuse them\" but \"solemnly warn them and show them the manner of the king.\" Israel is not deceived. Verse by verse Samuel tells them exactly what a king will take - and the word \"take\" drums through the warning six times - yet they answer, \"No! We must have a king over us.\" They choose the bondage with their eyes open. That detail is in the text so no later reader could say they did not know.",
+      "content": "Read the chapter again and notice the most unsettling line. After the rejection, after Samuel's careful warning about all a king will take - sons for chariots, daughters for kitchens, a tenth of the harvest, and finally \"you yourselves will become his slaves\" - the people still refuse to listen. And God says: \"Listen to their voice. Appoint a king for them.\"\n\nHe gives them what they ask. This is not God losing the argument. It is something far more sobering: God handing a people the very thing He has just told them will wound them, because they have set their hearts on it. The judgment is not lightning. The judgment is the king. Hosea will later put words to it - \"So in My anger I gave you a king, and in My wrath I took him away\" (Hosea 13:11). Sometimes the most frightening answer God gives is yes.\n\nAnd yet even here mercy is at work. Notice that God does not abandon them to the monarchy and walk off. He warns them first, in detail, sparing nothing. Then He stays in the story - choosing, correcting, and eventually raising up a king after His own heart, and from that line a King who would never take but only give. The yes that looks like surrender is, in the long view, God refusing to stop working even through the thing His people chose against Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel rejects the LORD as their King and demands a human king \"like all the other nations,\" and God grants the request even after warning them all it will cost.",
+      "modernApplication": "We still trade the unseen King for visible ones. We crown the boss whose approval orders our week, the platform whose numbers set our mood, the relationship we ask to give us a worth only God can give. Like Israel, we rarely choose these kings in ignorance. We are usually warned by experience exactly what they take - and we hand ourselves over anyway, because a king we can see feels safer than a King we must trust.",
+      "connectionPoint": "The thread that opens here runs the length of Scripture. The rejected King keeps coming back: in the psalmist's stone the builders rejected becoming the cornerstone (Psalm 118:22), in Isaiah's servant who was despised and rejected (Isaiah 53:3), in the prophets' endless ache for a shepherd-king who would not fleece the flock. Every failed king deepens the longing for the one true King the human heart keeps refusing and keeps needing.",
+      "newTestamentEcho": "The rejection of 1 Samuel 8 reaches its end outside Jerusalem, when the people once more refuse their King - \"We have no king but Caesar\" (John 19:15) - and crucify Him. Yet the angel had already announced the answer to Mary: \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end\" (Luke 1:32-33). The King Israel rejected at Ramah is the King who lets Himself be rejected at Golgotha - and reigns anyway, forever, the one ruler who took only our sin and gave us everything."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What visible king have you been asking to rule the place in your life that belongs to God - and what has it already started to take?",
+      "additionalQuestions": [
+        "Where do you catch yourself wanting to be \"like all the other nations\" - to be normal, accepted, unremarkable - more than you want to belong to God?",
+        "When God's leadership feels invisible and slow, what visible substitute are you tempted to crown in its place?",
+        "Have you ever been clearly warned about something that would cost you, and chosen it anyway? What was the ache underneath the choice?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "King of heaven, I confess I have wanted kings I can see. I have handed my fields and my freedom to rulers who only take - approval, image, the people whose verdict I let decide my worth. Forgive me for the trade I keep making, the unseen King for the visible one. You heard Israel's no and stayed in their story; stay in mine. Be the King I cannot manage and do not deserve, the one who reigns by giving Himself away. Reign over the part of me I have been governing on my own. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one \"king\" you have crowned - a person, a metric, an approval - and consciously hand that throne back to God. When you feel the pull to seek that king's verdict, pause and pray one line: \"You are my King; I will wait for You.\"",
+      "leavingAtCross": [
+        "The longing to be \"like all the other nations\" - normal, approved, unremarkable - at the cost of belonging to God",
+        "The visible kings I keep crowning because trusting the unseen King feels too slow and too risky",
+        "The lie that handing my weight to a ruler I can control will finally make me safe"
+      ],
+      "receivingFromCross": [
+        "A King who was rejected so that my rejection of Him would not be the last word",
+        "Freedom from kings that only take, given by the one King who only gives",
+        "The promise of a kingdom that will never end, ruled by the Son of David enthroned forever"
+      ],
+      "content": "Today, name one \"king\" you have crowned - a person, a metric, an approval - and consciously hand that throne back to God. When you feel the pull to seek that king's verdict, pause and pray one line: \"You are my King; I will wait for You.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to verse 7, who does the LORD say Israel has actually rejected - and why does that matter more than the complaint about Samuel's sons?",
+        "Samuel warns the people in detail about what a king will take, yet they still demand one. What does it tell you about the human heart that they choose it with their eyes open?",
+        "Why is God's answer - \"Listen to their voice. Appoint a king for them\" - more sobering than a flat refusal would have been?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one visible \"king\" you have let rule a corner of your life that belongs to God. What has it taken from you so far?",
+        "Talk about a time you were warned a choice would cost you and made it anyway. What were you really after underneath the choice?",
+        "Ask each other: where is God's leadership feeling invisible right now, and what would it look like to trust Him there this week instead of crowning a substitute?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 8:7",
+          "text": "And the LORD said to Samuel, \"Listen to the voice of the people in all that they say to you. For it is not you they have rejected, but they have rejected Me as their king.\""
+        },
+        {
+          "reference": "1 Samuel 12:12",
+          "text": "But when you saw that Nahash king of the Ammonites was moving against you, you said to me, 'No, we must have a king to rule over us'—even though the LORD your God was your king."
+        },
+        {
+          "reference": "Hosea 13:11",
+          "text": "So in My anger I gave you a king, and in My wrath I took him away."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 8-12",
+          "note": "Read the whole rise of the monarchy in one sitting - the demand (ch. 8), the anointing of Saul (chs. 9-10), and Samuel's farewell warning (ch. 12), where he names the rejection out loud one more time."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Samuel",
+      "title": "The Last Judge of Israel",
+      "description": "Samuel was the prophet, priest, and final judge who stood at the seam between the age of the judges and the age of the kings. Given to God by his mother Hannah before his birth, he grew up in the LORD's house and became the voice through whom God spoke to a generation. When the elders demanded a king, the request stung him personally - but rather than fight it, he prayed, and then obeyed God's hard instruction to grant it. He anointed both Saul and David, holding the painful office of installing the very monarchy that marked Israel's turning from God as King.",
+      "keyQuote": "It is not you they have rejected, but they have rejected Me as their king.",
+      "lessonForUs": "Samuel's first response to being rejected was prayer, not retaliation - and God's gentle word lifted the wound off Samuel and placed it where it truly fell, on Himself. When we feel spurned by people, the same God invites us to bring the sting to Him before we carry it into the world.",
+      "heading": "The Last Judge of Israel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2183,
+  "scriptureReference_full": "1 Samuel 8 (quoting vv. 4-7, 19-20)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ma'as, H3988) reflects standard lexical sources; cross-references to 1 Samuel 15:23, 26 trace the verb's reuse within the books of Samuel."
+  ]
 }

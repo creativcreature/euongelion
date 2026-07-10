@@ -1,38 +1,188 @@
 {
   "day": 213,
-  "title": "Song of Songs: Covenant Love — Day 3 — Pivot",
-  "teaser": "Day 213 of Bible 365 — Song 2, 6, 8",
+  "title": "Strong as Death",
+  "teaser": "At the center of the Song, love is sealed on the heart and named with one syllable of God's own name — a flame that the grave could not put out and floodwaters could not drown.",
   "framework": "Song 2, 6, 8 — Song of Songs: Covenant Love",
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 213"
+      "type": "scripture",
+      "reference": "Song of Songs 8:6-7; 2:16; 6:3",
+      "translation": "BSB",
+      "emphasis": [
+        "Set me as a seal over your heart",
+        "love is as strong as death",
+        "Mighty waters cannot quench love",
+        "My beloved is mine and I am his"
+      ],
+      "hebrewOriginal": "שִׂימֵנִי כַחוֹתָם עַל־לִבֶּךָ כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned. ... My beloved is mine and I am his; he pastures his flock among the lilies. ... I belong to my beloved and he belongs to me."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שַׁלְהֶבֶתְיָה",
+      "transliteration": "shalhevetyah",
+      "pronunciation": "shal-HEH-vet-yah",
+      "meaning": "a mighty flame; literally, a flame of Yah",
+      "rootMeaning": "Shalhevet is a flame or blaze. The short ending -yah is the abbreviated form of the divine name, the same syllable that closes the word hallelu-yah ('praise Yah'). The Berean Standard Bible renders the whole word as 'the fiercest blaze of all.'",
+      "usageNote": "This is the only place in the entire Song of Songs where the name of God appears, and even here it is hidden inside another word, fused to the end of a flame. The book never once says 'God' out loud, yet at its exact center, where love is being weighed against death, the divine name flickers into view for a single syllable.",
+      "wordByWord": [
+        {
+          "word": "רְשָׁפֶיהָ",
+          "transliteration": "reshafeha",
+          "meaning": "its sparks, its arrows of fire"
+        },
+        {
+          "word": "רִשְׁפֵּי",
+          "transliteration": "rishpei",
+          "meaning": "flames, burning shafts"
+        },
+        {
+          "word": "אֵשׁ",
+          "transliteration": "esh",
+          "meaning": "fire"
+        },
+        {
+          "word": "שַׁלְהֶבֶת",
+          "transliteration": "shalhevet",
+          "meaning": "a great flame, a blaze"
+        },
+        {
+          "word": "יָה",
+          "transliteration": "yah",
+          "meaning": "the shortened name of the LORD, as in halleluyah"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חוֹתָם",
+          "reference": "Hotam means a seal or signet - the engraved stamp pressed into wax or clay to mark something as owned, authorized, and inviolable. To be set as a seal on the heart is to be made the one mark that cannot be erased."
+        }
+      ],
+      "strongsNumber": "H7957",
+      "definition": "flame, blaze; the fierce flame of Yah",
+      "usage": "Hebrew scholars have long debated whether the -yah here is a true reference to the divine name or simply an intensifier ('a flame of God' as a Hebrew way of saying 'a superlative flame'). Either way, the effect is the same: at the heart of the Song, love burns with a fire that is more than human."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book That Almost Never Names God",
+      "body": "The Song of Songs is the strangest book in the Bible, and the church has known it from the beginning. It is a collection of love poems - a man and a woman trading praise of each other's bodies, longing across distances, finding each other in vineyards and gardens and city streets at night. There is no law here, no temple, no covenant ceremony, no miracle. There is barely even a mention of God.\n\nFor centuries, readers have asked why such a book belongs in Scripture at all. Two answers have run side by side, and both are old. One reads the Song plainly: this is the love between a husband and wife, and God has placed it in His book so that we would know that married love, the desire of one body for another, is not shameful but good - good enough to be holy, good enough to be sung. The other reads the Song as a picture: the longing between the bride and her beloved is an image of the longing between God and His people, between Christ and the church. The Jewish tradition heard Israel and the LORD in these poems. The Christian tradition heard the soul and her Savior.\n\nYou do not have to choose only one. The plain meaning is the foundation, and the picture rises out of it. The reason human love can stand for divine love is that human love was made in its image. We long for one another because we were made by a God who is, in Himself, love poured out and received.",
+      "keyInsight": "The Song honors married love as good in itself, and lets that love become a window onto the love of God. The two readings do not compete; the second grows out of the first.",
+      "content": "The Song of Songs is the strangest book in the Bible, and the church has known it from the beginning. It is a collection of love poems - a man and a woman trading praise of each other's bodies, longing across distances, finding each other in vineyards and gardens and city streets at night. There is no law here, no temple, no covenant ceremony, no miracle. There is barely even a mention of God.\n\nFor centuries, readers have asked why such a book belongs in Scripture at all. Two answers have run side by side, and both are old. One reads the Song plainly: this is the love between a husband and wife, and God has placed it in His book so that we would know that married love, the desire of one body for another, is not shameful but good - good enough to be holy, good enough to be sung. The other reads the Song as a picture: the longing between the bride and her beloved is an image of the longing between God and His people, between Christ and the church. The Jewish tradition heard Israel and the LORD in these poems. The Christian tradition heard the soul and her Savior.\n\nYou do not have to choose only one. The plain meaning is the foundation, and the picture rises out of it. The reason human love can stand for divine love is that human love was made in its image. We long for one another because we were made by a God who is, in Himself, love poured out and received."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What She Asked For at the End",
+      "body": "A woman I knew sat with her husband through the last months of his illness. They had been married more than fifty years. Near the end, when he could no longer say much, she told me she found herself returning to one thing she wanted him to know - not that she would manage, not that the children would be cared for, but simply: you are mine, and I am yours, and that does not stop here.\n\nShe was not quoting the Song. She had probably never read it closely. But she had arrived, by way of grief, at the exact place the Song stands. When love is pressed against death - when the thing that threatens to undo it is the grave itself - what love reaches for is not a feeling but a claim. Set me as a seal over your heart. Mark me as yours so deeply that nothing can pry the mark loose. Make me belong to you in a way the grave cannot cancel.\n\nThat is what the bride asks for at the center of the Song. Not more romance. A seal. Something stamped and permanent, strong enough to hold when everything else is being taken away.",
+      "connectionToTheme": "When love meets its hardest test - death - it asks not for more feeling but for permanence, for a covenant claim that the grave cannot break.",
+      "content": "A woman I knew sat with her husband through the last months of his illness. They had been married more than fifty years. Near the end, when he could no longer say much, she told me she found herself returning to one thing she wanted him to know - not that she would manage, not that the children would be cared for, but simply: you are mine, and I am yours, and that does not stop here.\n\nShe was not quoting the Song. She had probably never read it closely. But she had arrived, by way of grief, at the exact place the Song stands. When love is pressed against death - when the thing that threatens to undo it is the grave itself - what love reaches for is not a feeling but a claim. Set me as a seal over your heart. Mark me as yours so deeply that nothing can pry the mark loose. Make me belong to you in a way the grave cannot cancel.\n\nThat is what the bride asks for at the center of the Song. Not more romance. A seal. Something stamped and permanent, strong enough to hold when everything else is being taken away."
+    },
+    {
+      "type": "insight",
+      "heading": "Stronger Than the One Thing That Wins",
+      "body": "Everything in this world loses to death. Empires lose to it. Beauty loses to it. The strongest body and the sharpest mind lose to it. Death is the undefeated power at the end of every human story, and the Song knows this. It does not pretend otherwise.\n\nSo when the bride says love is as strong as death, she is not paying a compliment. She is making the boldest claim a person can make. She is naming the one force in all of creation that does not lose to the grave. And then she presses it further: mighty waters cannot quench love; rivers cannot sweep it away. In the Bible, the great waters are the image of chaos, of the deep, of everything that drowns and undoes. Love stands in the flood and does not go out, like a fire that water cannot put out - because the flame at its heart is a flame of Yah.\n\nThen comes the line that exposes every counterfeit: if a man were to give all the wealth of his house for love, his offer would be utterly scorned. Love cannot be bought. It can only be given and received. The richest man alive cannot purchase it, and the next chapter quietly proves the point: Solomon, with his thousand shekels and his leased vineyards, is set against a single bride who simply says, my own vineyard is mine to give. All his silver buys him nothing the poorest faithful heart already owns.",
+      "historicalContext": "The Song is traditionally associated with Solomon, Israel's wealthiest king, who according to 1 Kings 11:3 had hundreds of wives and concubines. Read against that backdrop, chapter 6's 'sixty queens and eighty concubines, and maidens without number' becomes pointed: the king who collected love by the score is answered by one bride who is 'unique,' and chapter 8 declares that all his wealth could never buy what she freely gives.",
+      "fascinatingFact": "Song 8:6 sits very near the literary center of the book, and it is the theological hinge of the whole Song. Everything before it - the longing, the searching through the night, the praise of the beloved's face and form - flows toward this single demand: set me as a seal. The poems are not aimless desire. They are reaching for a covenant.",
+      "content": "Everything in this world loses to death. Empires lose to it. Beauty loses to it. The strongest body and the sharpest mind lose to it. Death is the undefeated power at the end of every human story, and the Song knows this. It does not pretend otherwise.\n\nSo when the bride says love is as strong as death, she is not paying a compliment. She is making the boldest claim a person can make. She is naming the one force in all of creation that does not lose to the grave. And then she presses it further: mighty waters cannot quench love; rivers cannot sweep it away. In the Bible, the great waters are the image of chaos, of the deep, of everything that drowns and undoes. Love stands in the flood and does not go out, like a fire that water cannot put out - because the flame at its heart is a flame of Yah.\n\nThen comes the line that exposes every counterfeit: if a man were to give all the wealth of his house for love, his offer would be utterly scorned. Love cannot be bought. It can only be given and received. The richest man alive cannot purchase it, and the next chapter quietly proves the point: Solomon, with his thousand shekels and his leased vineyards, is set against a single bride who simply says, my own vineyard is mine to give. All his silver buys him nothing the poorest faithful heart already owns."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At the center of the Song, the bride asks to be sealed over her beloved's heart, and declares that love is as strong as death, that no flood can drown it, and that no fortune can purchase it.",
+      "modernApplication": "We try to make love safe with everything except a covenant. We test it, hedge it, keep an exit, measure what it costs us. The Song asks for the opposite: a seal, a claim, a love we are willing to be permanently marked by. That kind of love feels dangerous precisely because it cannot be undone - and that is the only kind strong enough to hold against death.",
+      "connectionPoint": "The Song's deepest longing - for a love stronger than the grave - is a longing the book itself cannot satisfy. Two human lovers, however devoted, are both going to die. The poems reach for something the poems cannot supply. They are a question waiting for an answer that only one Bridegroom could give.",
+      "newTestamentEcho": "Paul takes the love of husband and wife and says plainly what the Song only hinted: 'This mystery is profound, but I am speaking about Christ and the church' (Ephesians 5:32). The bride who begged to be set as a seal is answered by a Bridegroom who said, 'Greater love has no one than this, that he lay down his life for his friends' (John 15:13) - and then proved love stronger than death by walking out of His own grave."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you holding love at a safe distance - keeping an exit open - when what you most long for is to be sealed, to belong, to be claimed?",
+      "additionalQuestions": [
+        "The bride asks to be 'a seal over your heart.' What would it mean to let yourself be that permanently marked as belonging to Christ - and what makes that frightening?",
+        "Have you ever tried to buy love, or to earn it, the way Solomon tried with his silver? What did it cost you, and what did it fail to buy?",
+        "Christ has already set you 'as a seal' - sealed by the Spirit (Ephesians 1:13). Sit with the difference between trying to make yourself loved and receiving a love that has already claimed you."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have kept so many exits open. I have tested love instead of trusting it, measured it instead of giving it, tried to earn what can only be received. At the center of Your Song You let one flame of Your own name flicker into view - love as strong as death, a fire the flood cannot drown. That love I see most clearly at the cross, where the Bridegroom would not let His bride go even into the grave. Set me as a seal over Your heart. Mark me as Yours. Let me stop holding back, and belong. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where you have been keeping love conditional - a relationship, a friendship, your walk with God - and take one concrete step toward a covenant posture instead of a contract posture: speak the commitment out loud, write it down, or simply receive that in Christ you are already sealed, already claimed, and stop trying to earn it.",
+      "leavingAtCross": [
+        "The exits I keep open so that love can never cost me too much",
+        "The quiet belief that love must be purchased, performed, or deserved",
+        "The fear that to be sealed - permanently claimed - is to be trapped rather than held"
+      ],
+      "receivingFromCross": [
+        "A love that is as strong as death and stronger - proven by an empty tomb",
+        "The seal of the Spirit, a mark of belonging that no flood can wash away",
+        "The freedom of the bride who can finally say, 'My beloved is mine and I am his'"
+      ],
+      "content": "Today, name one place where you have been keeping love conditional - a relationship, a friendship, your walk with God - and take one concrete step toward a covenant posture instead of a contract posture: speak the commitment out loud, write it down, or simply receive that in Christ you are already sealed, already claimed, and stop trying to earn it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that the bride asks for a 'seal' rather than simply for more affection? What does a seal claim that a feeling does not?",
+        "The only trace of God's name in the whole Song hides inside the word for 'flame' (shalhevetyah). Why might it be fitting that the divine name appears exactly here, where love is weighed against death?",
+        "How does the Song's demand for a love 'as strong as death' point beyond any human marriage to the love of Christ for His church?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about the difference between loving someone as a contract (with conditions and exits) and loving them as a covenant (sealed, without an escape hatch). Where do you each tend to keep the exits open?",
+        "Share one way you have tried to 'buy' love - through performance, money, usefulness, or pleasing - and what it failed to purchase.",
+        "Ask each other: what would change this week if you truly believed Christ has already set you as a seal over His heart?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Song of Songs 2:16",
+          "text": "My beloved is mine and I am his; he pastures his flock among the lilies."
+        },
+        {
+          "reference": "Ephesians 5:31-32",
+          "text": "'For this reason a man will leave his father and mother and be united to his wife, and the two will become one flesh.' This mystery is profound, but I am speaking about Christ and the church."
+        },
+        {
+          "reference": "Ephesians 1:13",
+          "text": "And in Him, having heard and believed the word of truth - the gospel of your salvation - you were sealed with the promised Holy Spirit."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life... will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs 8",
+          "note": "Read the whole chapter slowly, watching how it moves from longing (vv. 1-4) to the great declaration about love and death (vv. 6-7) to the vineyard that money cannot buy (vv. 11-12)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Shulammite Bride",
+      "title": "The Beloved of the Song",
+      "description": "The unnamed woman at the heart of the Song of Songs, called 'the Shulammite' in chapter 6. She is the one who searches, longs, praises, and finally speaks the book's boldest words - asking to be set as a seal over her beloved's heart and declaring that love is as strong as death. Against a king with countless wives, she stands as the 'unique' one, the single bride who freely gives the love that no fortune could ever purchase. The Christian tradition has long heard in her voice the church longing for Christ, and the soul longing for God.",
+      "keyQuote": "Set me as a seal over your heart... for love is as strong as death.",
+      "lessonForUs": "She refuses to make love safe. She asks instead to be permanently claimed - and in doing so she becomes a picture of every soul that stops bargaining with God and finally says, 'I am my beloved's, and my beloved is mine.'",
+      "heading": "The Beloved of the Song"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2171,
+  "scriptureReference_full": "Song of Songs 2, 6, 8 (key text: Song 8:6-7; 2:16; 6:3)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shalhevetyah, H7957; hotam, seal) reflects standard lexical sources. The debate over whether the -yah ending of shalhevetyah refers to the divine name or functions as an intensive superlative is noted in standard Hebrew lexicons and commentaries on the Song of Songs.",
+    "The dual reading of the Song (married love as good in itself, and as a figure of God's love for His people / Christ and the church) reflects the long-standing Jewish and Christian interpretive traditions; the Christ-and-church reading is grounded in Ephesians 5:31-32."
+  ]
 }

@@ -1,38 +1,186 @@
 {
   "day": 329,
-  "title": "John: Garden, Cross, Resurrection — Day 7 — Sabbath",
-  "teaser": "Day 329 of Bible 365 — John 15-21",
+  "title": "Mary Thought He Was the Gardener",
+  "teaser": "From the upper room to an empty tomb: Jesus says 'remain,' then 'It is finished,' then stands in a garden at dawn — and the first witness mistakes the risen Lord for the man who tends the ground.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 329"
+      "type": "scripture",
+      "reference": "John 15:5; 19:30; 20:15-16",
+      "translation": "BSB",
+      "emphasis": [
+        "apart from Me you can do nothing",
+        "It is finished",
+        "Thinking He was the gardener",
+        "Mary"
+      ],
+      "greekOriginal": "μείνατε ἐν ἐμοί, κἀγὼ ἐν ὑμῖν",
+      "passage": "I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing. ... When Jesus had received the sour wine, He said, \"It is finished.\" And bowing His head, He yielded up His spirit. ... \"Woman, why are you weeping?\" Jesus asked. \"Whom are you seeking?\" Thinking He was the gardener, she said, \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\" Jesus said to her, \"Mary.\" She turned and said to Him in Hebrew, \"Rabboni!\" (which means \"Teacher\")."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "μένω",
+      "transliteration": "menō",
+      "pronunciation": "MEH-no",
+      "meaning": "to remain, abide, stay, dwell, continue",
+      "rootMeaning": "To stay in one place; to keep on living somewhere; to not leave. It is the ordinary Greek word for staying the night, lodging, remaining where you are - and Jesus reaches for that plain word to describe how a person lives in Him.",
+      "usageNote": "John 15 uses menō about eleven times in a single stretch - more densely than anywhere else in the New Testament. It is the load-bearing verb of the whole farewell, and it does not mean 'try harder.' It means 'stay put.' The fruit Jesus speaks of is not what you produce by effort but what grows from a branch that simply refuses to leave the vine.",
+      "wordByWord": [
+        {
+          "word": "μείνατε",
+          "transliteration": "meinate",
+          "meaning": "remain, abide (a command: stay)"
+        },
+        {
+          "word": "ἐν ἐμοί",
+          "transliteration": "en emoi",
+          "meaning": "in Me"
+        },
+        {
+          "word": "κἀγὼ",
+          "transliteration": "kagō",
+          "meaning": "and I (Myself)"
+        },
+        {
+          "word": "ἐν ὑμῖν",
+          "transliteration": "en hymin",
+          "meaning": "in you"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "τετέλεσται",
+          "reference": "Tetelestai - 'It is finished' (John 19:30). A single word in Greek, in the perfect tense: not only done, but done and standing done forever. The vine that told the branches to remain in Him first finished the work that makes the remaining possible."
+        }
+      ],
+      "strongsNumber": "G3306",
+      "definition": "to stay, abide, remain, continue, dwell, endure",
+      "usage": "Jesus does not say 'work in Me' or 'achieve in Me.' He says menō - stay. The whole Christian life, in John's telling, is the art of not leaving."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Chapters That Begin in a Room and End at a Tomb",
+      "body": "On the last night of His life, Jesus is still talking. John gives more space to that one evening than any other Gospel - chapter after chapter of a man saying goodbye who keeps insisting it is not really goodbye. He reaches for a picture from the vineyard: I am the vine, you are the branches. The point is almost embarrassingly simple. A branch does not strain to produce grapes. A branch stays connected, and the life of the vine does the rest. \"Apart from Me,\" He says, \"you can do nothing.\"\n\nThen the talking stops and the dying begins. The same voice that said remain says, from the cross, \"It is finished\" - and in Greek it is one word, tetelestai, the word a merchant wrote across a paid bill. Paid in full. The work is done. He bows His head and gives up His spirit.\n\nAnd then John, who has been watching all of this, does something the other Gospel writers do not. He tells us where the tomb was. \"At the place where Jesus was crucified, there was a garden, and in the garden a new tomb\" (John 19:41). John wants us standing in a garden when the sun comes up.",
+      "keyInsight": "These six chapters move from 'remain in Me' to 'It is finished' to an empty grave in a garden. The command to abide is grounded in a finished work and proven by an empty tomb - in that order.",
+      "content": "On the last night of His life, Jesus is still talking. John gives more space to that one evening than any other Gospel - chapter after chapter of a man saying goodbye who keeps insisting it is not really goodbye. He reaches for a picture from the vineyard: I am the vine, you are the branches. The point is almost embarrassingly simple. A branch does not strain to produce grapes. A branch stays connected, and the life of the vine does the rest. \"Apart from Me,\" He says, \"you can do nothing.\"\n\nThen the talking stops and the dying begins. The same voice that said remain says, from the cross, \"It is finished\" - and in Greek it is one word, tetelestai, the word a merchant wrote across a paid bill. Paid in full. The work is done. He bows His head and gives up His spirit.\n\nAnd then John, who has been watching all of this, does something the other Gospel writers do not. He tells us where the tomb was. \"At the place where Jesus was crucified, there was a garden, and in the garden a new tomb\" (John 19:41). John wants us standing in a garden when the sun comes up."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Came to Tend a Body",
+      "body": "She came in the dark, before anyone else, while it was still cold enough to see her breath. Mary Magdalene was not coming to a resurrection. She was coming to a corpse. She had the spices and the grief of someone who intends to do for the dead the last small kindnesses the living can still do - wash the body, wrap it again, sit with it.\n\nThe stone is rolled away. The tomb is empty. She does the most human thing imaginable: she assumes a theft. Someone has taken Him, and now she cannot even grieve properly. Through her tears a man is standing there in the half-light of the garden, and she does not look closely. Why would she? She has a task. So she speaks to him the way you speak to staff - the groundskeeper, the man who would know who moved what. \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\"\n\nShe is asking the risen Lord of life where she can find His dead body. And He lets her, for one more moment. Then He says one word - her name. \"Mary.\" And the whole world turns over.",
+      "connectionToTheme": "The first witness to the resurrection mistook the risen Christ for the gardener - and in John's careful telling, that mistake is closer to the truth than she knew.",
+      "content": "She came in the dark, before anyone else, while it was still cold enough to see her breath. Mary Magdalene was not coming to a resurrection. She was coming to a corpse. She had the spices and the grief of someone who intends to do for the dead the last small kindnesses the living can still do - wash the body, wrap it again, sit with it.\n\nThe stone is rolled away. The tomb is empty. She does the most human thing imaginable: she assumes a theft. Someone has taken Him, and now she cannot even grieve properly. Through her tears a man is standing there in the half-light of the garden, and she does not look closely. Why would she? She has a task. So she speaks to him the way you speak to staff - the groundskeeper, the man who would know who moved what. \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\"\n\nShe is asking the risen Lord of life where she can find His dead body. And He lets her, for one more moment. Then He says one word - her name. \"Mary.\" And the whole world turns over."
+    },
+    {
+      "type": "insight",
+      "heading": "She Was Almost Right",
+      "body": "\"Thinking He was the gardener.\" John records the mistake without a flicker of explanation, and it is the most loaded line in the chapter. Because in the deepest sense, she was not wrong.\n\nThe Bible opens in a garden, with a man given the ground to keep and a walk with God in the cool of the day. Sin closes that garden; a flaming sword guards the way back, and the gardener is exiled into thorns. The whole long story is the story of getting back into the garden. And here, at dawn, in a garden, the second Adam stands up out of a grave - and the first thing the first witness does is take Him for the gardener.\n\nShe meant the man who tends the plot. But the One standing before her is the true Keeper of the garden, come to undo the exile, planting the first green shoot of a new creation in the soil of a graveyard. Her mistake is the truth in disguise. The risen Christ is the Gardener - of a world being made new.",
+      "historicalContext": "John has been pointing at this from his opening line: 'In the beginning' (John 1:1) deliberately echoes Genesis 1:1. The resurrection happens on the first day of the week (John 20:1) - the day creation began. A first-century reader steeped in the Scriptures would feel the garden, the new beginning, and the undoing of Eden's exile all pressing in at once.",
+      "fascinatingFact": "John alone tells us the tomb sat in a garden (John 19:41), and John alone records Mary mistaking Jesus for the gardener (John 20:15). The two details are seven verses apart and clearly meant to be read together. The Evangelist who began his Gospel echoing Genesis ends it in a garden at first light - on purpose.",
+      "content": "\"Thinking He was the gardener.\" John records the mistake without a flicker of explanation, and it is the most loaded line in the chapter. Because in the deepest sense, she was not wrong.\n\nThe Bible opens in a garden, with a man given the ground to keep and a walk with God in the cool of the day. Sin closes that garden; a flaming sword guards the way back, and the gardener is exiled into thorns. The whole long story is the story of getting back into the garden. And here, at dawn, in a garden, the second Adam stands up out of a grave - and the first thing the first witness does is take Him for the gardener.\n\nShe meant the man who tends the plot. But the One standing before her is the true Keeper of the garden, come to undo the exile, planting the first green shoot of a new creation in the soil of a graveyard. Her mistake is the truth in disguise. The risen Christ is the Gardener - of a world being made new."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Bible's story begins in a garden lost and closed behind us, and ends with the risen Christ standing in a garden at dawn, mistaken for the gardener - the true Keeper of the ground come to undo the exile.",
+      "modernApplication": "You probably came to your faith, some mornings, the way Mary came to the tomb - to tend something you assumed was dead. A prayer life that feels like a corpse. A hope you are mostly here to bury with dignity. The resurrection does not begin with your effort or your spices. It begins when the One you thought was absent speaks your name.",
+      "connectionPoint": "The thread runs straight through Scripture. Eden's gate is shut and the way guarded (Genesis 3:23-24). Then a vine says 'remain in Me' (John 15:5), a voice says 'It is finished' (John 19:30), and a Gardener stands up in a grave-garden at dawn. The closing pages of the Bible reopen the garden for good: the tree of life is back, its leaves for the healing of the nations, and the curse is gone (Revelation 22:2-3).",
+      "newTestamentEcho": "Paul names it plainly: 'For as in Adam all die, so in Christ all will be made alive' (1 Corinthians 15:22). The first Adam was put out of the garden; the last Adam (1 Corinthians 15:45) rises in one. What Genesis closed, the empty tomb opens."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What in your life have you come to bury, assuming it is dead - and what would it mean to hear the risen Christ speak your name over it instead?",
+      "additionalQuestions": [
+        "Jesus said the branch does nothing but remain (John 15:5). Where are you straining to produce fruit you were only ever asked to stay connected for?",
+        "Mary recognized Him not by His face but by her name on His lips. When have you known God was near not by sight but by being personally addressed?",
+        "If the resurrection means a new creation has already begun, what is one place in your life you have given up on too soon?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Risen Lord, I have come to the tomb so often with spices and not with hope, ready to tend what I had decided was dead. Forgive me for mistaking You for the gardener when You are the Keeper of every garden, the One who makes all things new. Speak my name the way You spoke hers. Let me stop straining and simply remain in You, the vine my whole life hangs from. Your work is finished; let me rest in it. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath - there is nothing to finish, because He already said 'It is finished.' Sit quietly for five minutes and let one of three words hold you: 'remain,' 'finished,' or your own name on His lips. Do not produce. Do not tend a grave. Simply stay connected to the vine and let Him do the growing.",
+      "leavingAtCross": [
+        "The exhausting belief that I must produce the fruit myself, apart from the vine",
+        "The grief that comes to bury what I have decided God cannot raise",
+        "The instinct to look for the living among the dead"
+      ],
+      "receivingFromCross": [
+        "A finished work I did not do and could not do, paid in full",
+        "A garden reopened, an exile undone, a new creation already begun",
+        "My own name spoken by the risen Christ, who knows me by it"
+      ],
+      "content": "Today is a sabbath - there is nothing to finish, because He already said 'It is finished.' Sit quietly for five minutes and let one of three words hold you: 'remain,' 'finished,' or your own name on His lips. Do not produce. Do not tend a grave. Simply stay connected to the vine and let Him do the growing."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that John alone tells us the tomb was in a garden and alone records Mary mistaking Jesus for the gardener? What is he inviting us to see?",
+        "What does 'tetelestai' - 'It is finished' - mean, and how does a finished work change the meaning of the command to 'remain in Me'?",
+        "How does the resurrection in a garden answer the exile from the garden in Genesis 3?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing you have been treating as dead - a relationship, a calling, a hope - that you have stopped asking God to raise.",
+        "Talk about the difference between straining to bear fruit and simply remaining in the vine. Which one describes your week?",
+        "Ask each other: when did you last hear God address you personally - not a general truth, but your own name?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 19:41",
+          "text": "Now there was a garden at the place where Jesus was crucified, and in the garden a new tomb, in which no one had yet been laid."
+        },
+        {
+          "reference": "John 16:33",
+          "text": "I have told you these things so that in Me you may have peace. In the world you will have tribulation. But take courage; I have overcome the world!"
+        },
+        {
+          "reference": "John 20:28",
+          "text": "Thomas replied, \"My Lord and my God!\""
+        },
+        {
+          "reference": "1 Corinthians 15:22",
+          "text": "For as in Adam all die, so in Christ all will be made alive."
+        },
+        {
+          "reference": "Revelation 22:2-3",
+          "text": "On either side of the river stood a tree of life... And there will be no more curse."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 15-21",
+          "note": "Read it in one sitting if you can. Watch the movement from the upper room (15-17) to the garden of arrest (18) to the cross (19) to the garden of resurrection (20) to the lakeshore breakfast where Peter is restored three times (21)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary Magdalene",
+      "title": "First Witness of the Resurrection",
+      "description": "A woman from Magdala on the Sea of Galilee, freed by Jesus from seven demons (Luke 8:2) and counted among those who supported His ministry. She stayed at the cross when most had fled, and came to the tomb at dawn to anoint a body. There, in the garden, she became the first person to see the risen Christ and the first sent to tell the others - which is why the early church called her 'the apostle to the apostles.'",
+      "keyQuote": "I have seen the Lord!",
+      "lessonForUs": "She did not earn the first sighting by strong faith - she came expecting a corpse. Christ met her in her grief and her low expectations, and turned a search for the dead into the announcement of life. The resurrection finds us where we are, not where we think we ought to be.",
+      "heading": "First Witness of the Resurrection"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1707,
+  "scriptureReference_full": "John 15-21",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (menō G3306; tetelestai, perfect passive of teleō G5055) reflects standard lexical sources (BDAG, Thayer). The garden/gardener and Genesis-Eden resonance in John 19:41 and 20:15 is a widely noted reading among New Testament commentators."
+  ]
 }

@@ -1,38 +1,176 @@
 {
   "day": 75,
   "title": "Where you go, I will go",
-  "teaser": "Day 75 of Bible 365 — Ruth 1",
+  "teaser": "Day 75 of Bible 365 — Ruth 1. A widow comes home empty, and a foreigner who owes her nothing refuses to let go. Loyal love walks into Bethlehem at the start of the harvest.",
   "framework": "Ruth 1 — Loyal love in loss",
   "scriptureReference": "Ruth 1",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 75"
+      "type": "scripture",
+      "reference": "Ruth 1:16-17, 20-22",
+      "translation": "BSB",
+      "emphasis": [
+        "your people will be my people, and your God will be my God",
+        "Call me Mara",
+        "the beginning of the barley harvest"
+      ],
+      "hebrewOriginal": "כִּי אֶל־אֲשֶׁר תֵּלְכִי אֵלֵךְ וּבַאֲשֶׁר תָּלִינִי אָלִין עַמֵּךְ עַמִּי וֵאלֹהַיִךְ אֱלֹהָי",
+      "passage": "But Ruth replied: \"Do not urge me to leave you or to turn from following you. For wherever you go, I will go, and wherever you live, I will live; your people will be my people, and your God will be my God. Where you die, I will die, and there I will be buried. May the LORD punish me, and ever so severely, if anything but death separates you and me.\" ... \"Do not call me Naomi,\" she replied. \"Call me Mara, because the Almighty has dealt quite bitterly with me. I went away full, but the LORD has brought me back empty.\" ... So Naomi returned from the land of Moab with her daughter-in-law Ruth the Moabitess. And they arrived in Bethlehem at the beginning of the barley harvest."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ruth 1**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ruth 1 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, loyal love, covenant kindness",
+      "rootMeaning": "Chesed is love that has decided. It is not a feeling that comes and goes but kindness that has bound itself to a person and will not let go - the steady faithfulness God shows His covenant people, and the kind He looks for in return.",
+      "usageNote": "Naomi uses the word first, in verse 8, when she sends her daughters-in-law away: \"May the LORD show you loving devotion, as you have shown to your dead and to me.\" She names chesed even as she releases them - and then Ruth becomes the answer to Naomi's own blessing. The whole book of Ruth is a small, true story acting out what chesed looks like when a person lives it all the way to the end.",
+      "wordByWord": [
+        {
+          "word": "אֶל־אֲשֶׁר תֵּלְכִי אֵלֵךְ",
+          "transliteration": "el-asher telki elekh",
+          "meaning": "wherever you go, I will go"
+        },
+        {
+          "word": "עַמֵּךְ עַמִּי",
+          "transliteration": "ammekh ammi",
+          "meaning": "your people, my people - two words, the whole conversion"
+        },
+        {
+          "word": "וֵאלֹהַיִךְ אֱלֹהָי",
+          "transliteration": "v'elohayikh elohai",
+          "meaning": "and your God, my God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נָעֳמִי / מָרָא",
+          "reference": "Naomi means \"pleasant\" or \"sweet\"; Mara means \"bitter.\" When the widow asks the town to rename her Mara, she is reading her own life as an undoing of her name. The reader, holding the whole book, knows the name will not stick."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "kindness, steadfast love, covenant faithfulness; love that keeps its commitments",
+      "usage": "Ruth's vow in verses 16-17 is chesed spoken out loud. She owes Naomi nothing - no husband ties them now, no law compels her, her own people and gods are a day's walk back. She binds herself anyway, by oath, for life and past it: \"if anything but death separates you and me.\""
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Loyal love in loss. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s covenant love (Heb 13:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Full House, Emptied",
+      "body": "Ruth opens in the days when the judges ruled - a stretch of Israel's history when, as the book of Judges keeps saying, everyone did what was right in their own eyes. There is a famine in Bethlehem, which is a quiet scandal all by itself: Bethlehem means \"house of bread,\" and the house of bread has run out. So a man named Elimelech takes his wife Naomi and their two sons east, across the Jordan, into Moab - the country of an old enemy - to wait out the hunger.\n\nThen the losses come, fast and flat in the telling. Elimelech dies. The two sons marry Moabite women, Orpah and Ruth. Ten years pass. Both sons die. In three short verses Naomi goes from a wife with a household to a widow with two foreign daughters-in-law and no men left to provide or protect. In that world, that is not sorrow only; it is exposure. She has no standing, no income, no future she can see.\n\nSo when she hears the famine has lifted at home, she sets out for Bethlehem and tells the young women to go back - back to their mothers' homes, back to a chance at marriage and life. She blesses them with the word chesed and means it. She is trying to release them from a sinking ship while there is still time. Orpah weeps and turns back, and the text does not blame her; she does the sensible, even the loving thing. But Ruth clings.",
+      "keyInsight": "Naomi reads her life as a story of being emptied by God's own hand - \"I went away full, but the LORD has brought me back empty.\" She is honest before she is comforted. The book lets her grief stand without rushing to fix it.",
+      "content": "Ruth opens in the days when the judges ruled - a stretch of Israel's history when, as the book of Judges keeps saying, everyone did what was right in their own eyes. There is a famine in Bethlehem, which is a quiet scandal all by itself: Bethlehem means \"house of bread,\" and the house of bread has run out. So a man named Elimelech takes his wife Naomi and their two sons east, across the Jordan, into Moab - the country of an old enemy - to wait out the hunger.\n\nThen the losses come, fast and flat in the telling. Elimelech dies. The two sons marry Moabite women, Orpah and Ruth. Ten years pass. Both sons die. In three short verses Naomi goes from a wife with a household to a widow with two foreign daughters-in-law and no men left to provide or protect. In that world, that is not sorrow only; it is exposure. She has no standing, no income, no future she can see.\n\nSo when she hears the famine has lifted at home, she sets out for Bethlehem and tells the young women to go back - back to their mothers' homes, back to a chance at marriage and life. She blesses them with the word chesed and means it. She is trying to release them from a sinking ship while there is still time. Orpah weeps and turns back, and the text does not blame her; she does the sensible, even the loving thing. But Ruth clings."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The One Who Wouldn't Go Home",
+      "body": "A friend of mine sat with her mother through the last year of a long illness. Somewhere in the middle of it the easy company fell away - the people who came when there was something to celebrate stopped coming when there was only a slow, unglamorous dying to keep watch over. She told me the loneliness of those months surprised her more than the grief.\n\nOne person stayed. Not the closest one on paper, not family even, but a woman from down the street who simply kept showing up - Tuesdays, then more than Tuesdays, sitting in the quiet, handling the small ugly tasks that illness makes, asking for nothing. When my friend tried to release her - you don't have to do this, you have your own life - the woman waved it off and stayed.\n\nThat is the exact shape of what Ruth does. Naomi gives her every honorable reason to leave: there are no more sons, no marriage waiting, no obligation left between them. Go home. And Ruth, who could walk back to her own people and start again, refuses the off-ramp. She does not promise to visit. She binds her whole future to a bitter old woman with nothing to give her: where you go, where you live, where you die, where you are buried. The clinging is the point.",
+      "connectionToTheme": "Loyal love is most itself when it has every reason to leave and stays anyway - not for what it can get, but because it has decided whom it belongs to.",
+      "content": "A friend of mine sat with her mother through the last year of a long illness. Somewhere in the middle of it the easy company fell away - the people who came when there was something to celebrate stopped coming when there was only a slow, unglamorous dying to keep watch over. She told me the loneliness of those months surprised her more than the grief.\n\nOne person stayed. Not the closest one on paper, not family even, but a woman from down the street who simply kept showing up - Tuesdays, then more than Tuesdays, sitting in the quiet, handling the small ugly tasks that illness makes, asking for nothing. When my friend tried to release her - you don't have to do this, you have your own life - the woman waved it off and stayed.\n\nThat is the exact shape of what Ruth does. Naomi gives her every honorable reason to leave: there are no more sons, no marriage waiting, no obligation left between them. Go home. And Ruth, who could walk back to her own people and start again, refuses the off-ramp. She does not promise to visit. She binds her whole future to a bitter old woman with nothing to give her: where you go, where you live, where you die, where you are buried. The clinging is the point."
+    },
+    {
+      "type": "insight",
+      "heading": "A Moabite Chooses the God of Israel",
+      "body": "Listen to what Ruth actually swears. \"Your people will be my people, and your God will be my God.\" In two short clauses a Moabite woman crosses every line her birth set for her. Moab was the nation that hired Balaam to curse Israel and seduced them at Peor (Numbers 22-25); Deuteronomy 23 names Moabites as those kept at a distance from the assembly. Ruth knows what she is and where she comes from. She binds herself to Naomi's people and to Naomi's God anyway - and she seals it with an oath in the LORD's own name, the covenant name, the very God Naomi is at that moment accusing of dealing bitterly with her.\n\nThat is the hinge of the whole chapter, and it is easy to miss because it is so quiet. Naomi has just said God's hand has gone out against her. The reasonable response to a God who empties you is to walk back to gods who promise full barns. Orpah does the reasonable thing. Ruth does the faithful one. She chooses the God who has, by every visible measure, given her nothing but graves - and she chooses Him by binding herself to one of His grieving, emptied-out people.\n\nThe writer drops one detail at the very end of the chapter, almost in passing: they reached Bethlehem at the beginning of the barley harvest. Naomi came back empty, and she walked into a town where the grain was just coming in. The God she accused of emptying her was already setting a harvest in motion - and standing beside her, unnoticed, was the loyal love through whom He would do it.",
+      "historicalContext": "Ruth is set \"in the days when the judges ruled\" but reads as a deliberate counter-story to that violent, fragmented era. Where Judges ends in chaos and a fractured nation, Ruth tells of two destitute women and one act of loyal love that quietly repairs a family line - and, the genealogy at the book's end reveals, the royal line itself.",
+      "fascinatingFact": "Naomi's lament \"I went away full, but the LORD has brought me back empty\" is the chapter's emotional low point - and it is undercut in the very next breath. She says she returned empty, but verse 22 has just told us she returned with Ruth. The reader sees what grief cannot yet see: the empty hands are already holding the future.",
+      "content": "Listen to what Ruth actually swears. \"Your people will be my people, and your God will be my God.\" In two short clauses a Moabite woman crosses every line her birth set for her. Moab was the nation that hired Balaam to curse Israel and seduced them at Peor (Numbers 22-25); Deuteronomy 23 names Moabites as those kept at a distance from the assembly. Ruth knows what she is and where she comes from. She binds herself to Naomi's people and to Naomi's God anyway - and she seals it with an oath in the LORD's own name, the covenant name, the very God Naomi is at that moment accusing of dealing bitterly with her.\n\nThat is the hinge of the whole chapter, and it is easy to miss because it is so quiet. Naomi has just said God's hand has gone out against her. The reasonable response to a God who empties you is to walk back to gods who promise full barns. Orpah does the reasonable thing. Ruth does the faithful one. She chooses the God who has, by every visible measure, given her nothing but graves - and she chooses Him by binding herself to one of His grieving, emptied-out people.\n\nThe writer drops one detail at the very end of the chapter, almost in passing: they reached Bethlehem at the beginning of the barley harvest. Naomi came back empty, and she walked into a town where the grain was just coming in. The God she accused of emptying her was already setting a harvest in motion - and standing beside her, unnoticed, was the loyal love through whom He would do it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A foreign widow with no obligation left binds herself by covenant oath to a bitter, emptied woman and to her God - \"your people will be my people, and your God will be my God\" - and her loyal love carries them both into Bethlehem at the start of the harvest.",
+      "modernApplication": "Most of us know how to show up for people when there is something in it for us, or when the season is bright. Chesed is what love looks like when the season turns - when a friend has nothing left to offer, when the company thins out, when staying means handling the unglamorous middle of someone else's suffering. Ruth's question is not whether you feel love but whether you have decided it.",
+      "connectionPoint": "Ruth's vow runs forward through the whole book and out the far side of it. The Moabite outsider who clung to Naomi becomes the wife of Boaz, the mother of Obed, the grandmother of Jesse, and the great-grandmother of David (Ruth 4:17). The barley harvest she walked into was the first hint of a redemption far larger than one family's bread.",
+      "newTestamentEcho": "Matthew opens his Gospel by naming Ruth in the line of Jesus: \"Boaz the father of Obed by Ruth... and Jesse the father of David the king\" (Matthew 1:5-6). The loyal love of a Moabite is woven into the genealogy of Christ - the outsider grafted in, the empty made full. And the town she entered at harvest, Bethlehem, the house of bread, is where the true Bread of Life would be born (John 6:35)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you being offered an honorable off-ramp - a reasonable, even loving reason to stop showing up for someone - and what would it mean to cling instead?",
+      "additionalQuestions": [
+        "Naomi was honest with God before she was comforted by Him: \"the Almighty has dealt quite bitterly with me.\" Is there a grief you have been managing instead of naming? What would it look like to say it plainly?",
+        "Ruth bound herself to the God of Israel by binding herself to one of His people. Who has carried you toward God simply by refusing to leave?",
+        "Whose 'barley harvest' might you be standing beside right now, unnoticed - a person whose empty hands God could fill partly through you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess that my love too often follows the easy seasons and thins out when there is nothing left to gain. Teach me chesed - love that has decided, that clings when clinging costs. Where I feel emptied, like Naomi, let me be honest with You before I am comforted. And where You have set a quiet harvest in motion that I cannot yet see, give me the faith Ruth had: to choose You as my God even with empty hands. You who brought a Moabite into the line of David, and the Bread of Life into Bethlehem - bring me home full. Through Christ, in whom every emptiness is finally answered. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one person in a hard season who has stopped being convenient to love. This week, show up for them once with no agenda - a visit, a task, a presence that asks nothing back. Let that be your small act of chesed.",
+      "leavingAtCross": [
+        "The version of love that only shows up when the season is bright",
+        "The reasonable off-ramps I take when staying gets costly",
+        "The grief I have been managing in silence instead of naming before God"
+      ],
+      "receivingFromCross": [
+        "A love that has decided - chesed that clings past what it can get",
+        "Permission to come to God empty and honest, like Naomi, and be met",
+        "The promise that the God who emptied Naomi was already moving a harvest, and is moving one for me"
+      ],
+      "content": "Name one person in a hard season who has stopped being convenient to love. This week, show up for them once with no agenda - a visit, a task, a presence that asks nothing back. Let that be your small act of chesed."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that Ruth, a Moabite, swears her oath in the name of the LORD - the covenant God of Israel - and not by the gods of her own people?",
+        "Naomi says she returned 'empty,' but the text says she returned with Ruth. What does the gap between her words and the facts reveal about grief, and about how God works in it?",
+        "How does Ruth's loyal love (chesed) toward Naomi end up serving a redemption far bigger than the two of them - all the way to the line of David and of Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a relationship where you have been looking for an honorable reason to step back. Talk honestly about whether that is wisdom or self-protection.",
+        "Share a season when someone showed you chesed - stayed when they had every reason to go. What did it do in you?",
+        "Ask each other: where might God be asking you to be the loyal love that quietly carries someone toward Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ruth 1:8",
+          "text": "Then Naomi said to her two daughters-in-law, \"Go back, each of you to your mother's home. May the LORD show you loving devotion, as you have shown to your dead and to me.\""
+        },
+        {
+          "reference": "Ruth 4:17",
+          "text": "The neighbor women said, \"A son has been born to Naomi,\" and they named him Obed. He became the father of Jesse, the father of David."
+        },
+        {
+          "reference": "Matthew 1:5-6",
+          "text": "Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth, Obed the father of Jesse, and Jesse the father of David the king."
+        },
+        {
+          "reference": "John 6:35",
+          "text": "Jesus answered, \"I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ruth 1",
+          "note": "Read the chapter watching for the word 'return' (shuv), which repeats again and again - everyone is returning somewhere. Notice who returns to what, and to whom."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Ruth",
+      "title": "The Moabite Who Clung",
+      "description": "A Moabite woman widowed young, daughter-in-law to Naomi. Where her sister-in-law Orpah sensibly returned to her own people, Ruth bound herself by oath to Naomi and to the God of Israel and walked into Bethlehem a destitute foreigner. Through her loyal love she became the wife of Boaz, mother of Obed, and great-grandmother of King David - and so is named in the genealogy of Jesus (Matthew 1:5).",
+      "keyQuote": "For wherever you go, I will go, and wherever you live, I will live; your people will be my people, and your God will be my God.",
+      "lessonForUs": "Ruth had every reason to leave and no obligation to stay. She is what chesed looks like with skin on: love that has decided, that clings past advantage, and that God weaves quietly into a redemption far larger than the one clinging could ever see.",
+      "heading": "The Moabite Who Clung"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2382,
+  "scriptureReference_full": "Ruth 1",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed, H2617; Naomi/Mara wordplay) reflects standard lexical sources. Genealogical placement of Ruth in the line of David and of Christ follows Ruth 4:17 and Matthew 1:5-6."
+  ]
 }

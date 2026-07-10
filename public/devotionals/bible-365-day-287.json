@@ -1,38 +1,186 @@
 {
   "day": 287,
-  "title": "Matthew: Parables + Miracles — Day 7 — Sabbath",
-  "teaser": "Day 287 of Bible 365 — Matthew 8-13",
+  "title": "The Rest That Has a Name",
+  "teaser": "Across Matthew 8-13 Jesus heals every sickness, stills the storm, and tells the kingdom's secrets. At the center He says one thing: come to Me, and I will give you rest.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 287"
+      "type": "scripture",
+      "reference": "Matthew 11:28-30",
+      "translation": "BSB",
+      "emphasis": [
+        "Come to Me",
+        "I will give you rest",
+        "rest for your souls"
+      ],
+      "greekOriginal": "Δεῦτε πρός με πάντες οἱ κοπιῶντες καὶ πεφορτισμένοι, κἀγὼ ἀναπαύσω ὑμᾶς.",
+      "passage": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀναπαύσω",
+      "transliteration": "anapausō",
+      "pronunciation": "ah-nah-POW-soh",
+      "meaning": "I will give rest, I will refresh, I will cause to cease from labor",
+      "rootMeaning": "From ana (again, back) and pauō (to stop, to cause to cease). Anapausis is the rest that comes when a load is set down - not the rest of doing nothing, but the rest of being relieved of what was crushing you.",
+      "usageNote": "The same root names the Sabbath rest of the Greek Old Testament: in Exodus 16:23 the seventh day is called a sabbaton anapausis, a 'sabbath of rest.' When Jesus says kago anapausō hymas - 'and I will give you rest' - He is using the Sabbath word and putting Himself where the day used to stand. Four chapters later He will say it plainly: 'the Son of Man is Lord of the Sabbath' (Matthew 12:8).",
+      "wordByWord": [
+        {
+          "word": "Δεῦτε",
+          "transliteration": "deute",
+          "meaning": "come here, come now - a summons, not a suggestion"
+        },
+        {
+          "word": "πρός με",
+          "transliteration": "pros me",
+          "meaning": "to Me - the rest is a direction toward a Person"
+        },
+        {
+          "word": "οἱ κοπιῶντες",
+          "transliteration": "hoi kopiōntes",
+          "meaning": "those who are laboring to exhaustion, worn out by toil"
+        },
+        {
+          "word": "πεφορτισμένοι",
+          "transliteration": "pephortismenoi",
+          "meaning": "having been loaded down - a perfect tense, a burden piled on and still pressing"
+        },
+        {
+          "word": "κἀγὼ ἀναπαύσω ὑμᾶς",
+          "transliteration": "kagō anapausō hymas",
+          "meaning": "and I, I Myself, will give you rest"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ζυγός / zygos",
+          "reference": "The 'yoke' (Matthew 11:29) was a rabbi's word for his teaching - the 'yoke of the Torah' a disciple took on. Jesus offers His own yoke instead, and calls it easy: chrēstos, well-fitting, kind."
+        }
+      ],
+      "strongsNumber": "G373",
+      "definition": "to cause to rest, to give intermission from labor, to refresh",
+      "usage": "Anapausō is in the future active - 'I will' - and the I is emphatic. Jesus does not point the weary toward a practice that might eventually rest them. He says the rest is something He hands over, the way you hand someone a chair."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Chapters of a Tired World",
+      "body": "Read Matthew 8 through 13 in one sitting and the first thing you feel is the sheer weight of need pressing in on Jesus. A leper kneels in the dust and is touched - the first thing the chapters tell us Jesus does with His hand is touch what no one else would touch (8:3). A centurion's servant, a fever-stricken woman, a storm that nearly swallows the boat, two men no town could hold, a paralytic let down through a roof, a bleeding woman, a dead girl, blind men, a mute man. By evening of the very first day, Matthew writes, 'He drove out the spirits with a word and healed all the sick' (8:16).\n\nThen Matthew does something deliberate. He stops the action to tell us why it matters: 'This was to fulfill what was spoken through the prophet Isaiah: He took on our infirmities and carried our diseases' (8:17). The healings are not Jesus showing off power. They are Jesus doing the prophet's job description for the coming LORD - lifting off people the load they could not carry, and carrying it Himself.\n\nThat word carried is the thread. All through these chapters the crowds are described as exhausted. 'When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd' (9:36). Harassed. Helpless. Loaded down. Then, in chapter 11, surrounded by that tiredness, Jesus turns and says the sentence the whole section has been leaning toward: 'Come to Me, all you who are weary and burdened, and I will give you rest.'",
+      "keyInsight": "The miracles of Matthew 8-13 are not random displays of power - they are the prophet's promise made flesh: the LORD has come to carry what His people cannot.",
+      "content": "Read Matthew 8 through 13 in one sitting and the first thing you feel is the sheer weight of need pressing in on Jesus. A leper kneels in the dust and is touched - the first thing the chapters tell us Jesus does with His hand is touch what no one else would touch (8:3). A centurion's servant, a fever-stricken woman, a storm that nearly swallows the boat, two men no town could hold, a paralytic let down through a roof, a bleeding woman, a dead girl, blind men, a mute man. By evening of the very first day, Matthew writes, 'He drove out the spirits with a word and healed all the sick' (8:16).\n\nThen Matthew does something deliberate. He stops the action to tell us why it matters: 'This was to fulfill what was spoken through the prophet Isaiah: He took on our infirmities and carried our diseases' (8:17). The healings are not Jesus showing off power. They are Jesus doing the prophet's job description for the coming LORD - lifting off people the load they could not carry, and carrying it Himself.\n\nThat word carried is the thread. All through these chapters the crowds are described as exhausted. 'When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd' (9:36). Harassed. Helpless. Loaded down. Then, in chapter 11, surrounded by that tiredness, Jesus turns and says the sentence the whole section has been leaning toward: 'Come to Me, all you who are weary and burdened, and I will give you rest.'"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Could Not Put It Down",
+      "body": "A friend of mine carried his father's failing business for three years before he told anyone how heavy it had become. He woke at four most mornings with the numbers already running. He answered emails at red lights. When people asked how he was, he said 'busy' the way you say a password - quickly, so no one looks too closely.\n\nWhat finally undid him was not a crisis. It was a quiet Sunday when his daughter asked him to push her on the swing and he found he could not be there for it. His body was on the playground; his mind was three loads away, still carrying. He sat down on the wood chips and, for the first time in years, wept - not because the burden was unfair, but because he had forgotten he was allowed to set it down.\n\nThat is the exact word the crowds in Matthew wear: pephortismenoi, loaded down, the load still on. Jesus does not walk up to such people and add a rule. He walks up and says, here, give it to Me. The strange mercy of the invitation is that it assumes you are tired. It does not scold you for it. It meets you there.",
+      "connectionToTheme": "The weariness Jesus names in Matthew 11 is not laziness or sin - it is the ordinary crushing weight of a life that has forgotten it was ever allowed to rest in Someone.",
+      "content": "A friend of mine carried his father's failing business for three years before he told anyone how heavy it had become. He woke at four most mornings with the numbers already running. He answered emails at red lights. When people asked how he was, he said 'busy' the way you say a password - quickly, so no one looks too closely.\n\nWhat finally undid him was not a crisis. It was a quiet Sunday when his daughter asked him to push her on the swing and he found he could not be there for it. His body was on the playground; his mind was three loads away, still carrying. He sat down on the wood chips and, for the first time in years, wept - not because the burden was unfair, but because he had forgotten he was allowed to set it down.\n\nThat is the exact word the crowds in Matthew wear: pephortismenoi, loaded down, the load still on. Jesus does not walk up to such people and add a rule. He walks up and says, here, give it to Me. The strange mercy of the invitation is that it assumes you are tired. It does not scold you for it. It meets you there."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Say 'Rest.' He Said 'Come to Me.'",
+      "body": "Notice where the rest is located. Jesus does not say, 'Find rest.' He does not hand out a technique, a quieter schedule, a better boundary. He says, 'Come to Me... and I will give you rest.' The rest is not a state He describes; it is a gift He carries, and the only way to it is toward His person.\n\nThis is why the next line is a yoke. 'Take My yoke upon you and learn from Me' (11:29). A yoke sounds like more weight, not less - until you remember that a yoke is what lets two oxen pull together, the stronger one bearing the grade. Jesus is not offering the absence of all burden. He is offering to be the one in the yoke beside you, taking the part of the load that was breaking your neck. That is why He can call it light: 'My yoke is easy and My burden is light' (11:30).\n\nAnd this lands on the seventh day on purpose. Israel had a whole day built around stopping - a weekly rehearsal of trust, the Sabbath. By Matthew 12:8 Jesus says the day belongs to Him: 'the Son of Man is Lord of the Sabbath.' Put the verses side by side and the picture is unmistakable. The rest the seventh day was always pointing at is not a square on the calendar. It is a Person you can come to on any day, and He is gentle, and He is not tired of you.",
+      "historicalContext": "In first-century Judaism a rabbi's body of teaching was commonly called his 'yoke,' and to become a disciple was to 'take the yoke' of that teacher. Some rabbis' yokes were famously heavy - hundreds of fence-rules built around the Law. Jesus uses the same image but inverts the expectation: His yoke is chrēstos, kind and well-fitting, because He carries it with the disciple rather than laying it on them and walking away.",
+      "fascinatingFact": "The invitation in Matthew 11:28-30 sits almost exactly at the midpoint of the section that runs from the miracles of chapters 8-9 to the kingdom parables of chapter 13. The healings show what He does for the burdened; the parables show the kingdom growing quietly like a mustard seed; and between them stands the invitation that explains both - come to Me. The structure itself preaches: the center of all this power is an open hand.",
+      "content": "Notice where the rest is located. Jesus does not say, 'Find rest.' He does not hand out a technique, a quieter schedule, a better boundary. He says, 'Come to Me... and I will give you rest.' The rest is not a state He describes; it is a gift He carries, and the only way to it is toward His person.\n\nThis is why the next line is a yoke. 'Take My yoke upon you and learn from Me' (11:29). A yoke sounds like more weight, not less - until you remember that a yoke is what lets two oxen pull together, the stronger one bearing the grade. Jesus is not offering the absence of all burden. He is offering to be the one in the yoke beside you, taking the part of the load that was breaking your neck. That is why He can call it light: 'My yoke is easy and My burden is light' (11:30).\n\nAnd this lands on the seventh day on purpose. Israel had a whole day built around stopping - a weekly rehearsal of trust, the Sabbath. By Matthew 12:8 Jesus says the day belongs to Him: 'the Son of Man is Lord of the Sabbath.' Put the verses side by side and the picture is unmistakable. The rest the seventh day was always pointing at is not a square on the calendar. It is a Person you can come to on any day, and He is gentle, and He is not tired of you."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Across Matthew 8-13 Jesus does what Isaiah said the LORD Himself would do - He takes on our infirmities and carries our diseases (8:17) - and then names the gift He has been giving all along: 'Come to Me, all you who are weary and burdened, and I will give you rest.'",
+      "modernApplication": "Most of us are not avoiding rest because we are lazy. We are avoiding it because we believe, somewhere under the surface, that everything will fall apart the moment we stop carrying it. Jesus' invitation goes underneath the schedule to the belief: the world does not rest on your shoulders, and you were never meant to be its yoke. Come to Me. Hand it over. Learn a different way to pull.",
+      "connectionPoint": "The Sabbath was always a weekly arrow, and Matthew shows where it pointed. The day that taught Israel to stop and trust finds its meaning in the One who says 'the Son of Man is Lord of the Sabbath' (12:8) and then offers Himself as the resting place: 'you will find rest for your souls' (11:29). Hebrews later says it outright - 'there remains a Sabbath rest for the people of God' (Hebrews 4:9) - and that rest is entered not by trying harder but by trusting the One who has already done the carrying.",
+      "newTestamentEcho": "What the seventh day rehearsed, Christ fulfills. The bruised reed He will not break and the smoldering wick He will not snuff out (12:20); He bears the load to the cross, where the carried becomes the crucified, and rises so that the weary have somewhere to come. The rest of God is no longer only a day. It has a name, and the name is Jesus."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the burden you are still carrying right now - the one you would name if someone asked you honestly, 'How heavy is it?'",
+      "additionalQuestions": [
+        "When Jesus says 'Come to Me,' what makes it hard for you to actually come - to stop, to hand it over, to trust that He will carry it?",
+        "Where have you been treating rest as one more task to achieve rather than a gift to receive from a Person?",
+        "What would change this week if you believed the world does not, in fact, rest on your shoulders?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You see how loaded down I am, and You do not scold me for being tired. Today, on this day of rest, I bring You the weight I have been carrying alone - the one I am almost too used to carrying to name. Take my yoke; give me Yours. Teach me Your gentleness. Let me learn what it is to pull beside You instead of dragging the world behind me. You are Lord of the Sabbath; be the rest of my soul tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to finish and no task to complete. Sit quietly for five minutes and let one line carry you: 'Come to Me... and I will give you rest.' Name to God the one burden you have been carrying alone, and out loud or in your heart, hand it over.",
+      "leavingAtCross": [
+        "The belief that everything depends on me and will collapse the moment I stop",
+        "The habit of saying 'busy' so no one sees how heavy it has become",
+        "The instinct to treat rest as one more thing to earn"
+      ],
+      "receivingFromCross": [
+        "A yoke that fits, shared with the One strong enough to bear the grade",
+        "Rest that is a Person to come to, not a state I have to manufacture",
+        "The promise that the Lord of the Sabbath is gentle, and is not tired of me"
+      ],
+      "content": "Today is a sabbath day - there is nothing to finish and no task to complete. Sit quietly for five minutes and let one line carry you: 'Come to Me... and I will give you rest.' Name to God the one burden you have been carrying alone, and out loud or in your heart, hand it over."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Matthew pause the healings to quote Isaiah - 'He took on our infirmities and carried our diseases' (8:17)? What does it tell you about what the miracles are for?",
+        "Jesus says 'Come to Me,' not simply 'rest.' Why does it matter that the rest is found in a Person rather than in a practice?",
+        "How does 'the Son of Man is Lord of the Sabbath' (12:8) reframe what the weekly day of rest was always pointing toward?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the heaviest thing you are carrying right now. Say it plainly to each other, without softening it.",
+        "Talk about what 'coming to Jesus' with that burden would actually look like this week - not in theory, but in your real schedule.",
+        "Ask each other: where are you treating rest as laziness or weakness instead of trust?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 8:17",
+          "text": "This was to fulfill what was spoken through the prophet Isaiah: “He took on our infirmities and carried our diseases.”"
+        },
+        {
+          "reference": "Matthew 9:36",
+          "text": "When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd."
+        },
+        {
+          "reference": "Matthew 12:8",
+          "text": "For the Son of Man is Lord of the Sabbath.”"
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God’s rest also rests from his own work, just as God did from His."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 8-13",
+          "note": "Read the whole stretch in one sitting, watching the rhythm: miracles that lift off burdens (8-9), the mission and the invitation (10-11), the Lord of the Sabbath (12), the kingdom that grows quietly from the smallest seed (13). Notice how 'Come to Me' (11:28) sits at the center."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus of Nazareth",
+      "title": "The Lord of the Sabbath",
+      "description": "In Matthew 8-13 Jesus moves through the towns of Galilee healing every sickness, stilling a storm with a word, freeing the demon-oppressed, and teaching the kingdom in parables. Matthew frames the whole sweep with Isaiah's promise that the coming LORD would carry His people's infirmities (8:17), and at its heart places Jesus' own invitation to the weary (11:28-30). When the religious leaders challenge Him over the Sabbath, He answers that 'the Son of Man is Lord of the Sabbath' (12:8) - the day of rest belongs to Him because He is the rest it always pointed toward.",
+      "keyQuote": "Come to Me, all you who are weary and burdened, and I will give you rest.",
+      "lessonForUs": "The rest Israel kept one day a week was never the point in itself - it was a weekly arrow aimed at a Person. Jesus does not merely command rest; He gives it, He shares the yoke, and He is gentle with the worn-out. The most faithful thing a tired soul can do is come.",
+      "heading": "The Lord of the Sabbath"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2296,
+  "scriptureReference_full": "Matthew 8-13 (anchored on Matthew 11:28-30)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (anapausō / anapausis G373; zygos, the rabbinic 'yoke' of teaching) reflects standard lexical sources; the Sabbath resonance draws on the Septuagint's use of anapausis for the seventh-day rest (e.g., Exodus 16:23)."
+  ]
 }

@@ -1,38 +1,181 @@
 {
   "day": 306,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 5 — Resolution",
-  "teaser": "Day 306 of Bible 365 — Luke 15, 24",
+  "title": "Found, then recognized in the breaking of bread",
+  "teaser": "The Shepherd who searched until He found the one sheep is Himself the risen Stranger on the Emmaus road — and the joy of Luke 15 becomes the bread of Luke 24.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 306"
+      "type": "scripture",
+      "reference": "Luke 15:4-6; 24:30-32",
+      "translation": "BSB",
+      "emphasis": [
+        "go after the one that is lost, until he finds it",
+        "Rejoice with me, for I have found my lost sheep",
+        "Then their eyes were opened and they recognized Jesus",
+        "Were not our hearts burning within us"
+      ],
+      "greekOriginal": "ἕως εὕρῃ αὐτό",
+      "passage": "“What man among you, if he has a hundred sheep and loses one of them, does not leave the ninety-nine in the pasture and go after the one that is lost, until he finds it? And when he finds it, he joyfully puts it on his shoulders, comes home, and calls together his friends and neighbors to tell them, ‘Rejoice with me, for I have found my lost sheep!’” ... “While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus—and He disappeared from their sight. They asked each other, ‘Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?’”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "εὑρίσκω",
+      "transliteration": "heuriskō",
+      "pronunciation": "hyoo-RIS-ko",
+      "meaning": "to find, to discover, to recover what was lost",
+      "rootMeaning": "The ordinary verb for finding — a coin under the furniture, a road in the dark, a face in a crowd. In Luke 15 it lands like a bell, struck once in each parable, always followed by joy.",
+      "usageNote": "Luke 15 rings the same word three times at the same place: the shepherd searches 'until he finds it' (heurē), the woman 'searches carefully until she finds it,' the father announces 'he was lost and is found' (heurethē). Then Luke 24 quietly reuses it: the two from Emmaus run back and 'found the Eleven' (heuron). The verb that drives the parables of search becomes the verb of resurrection morning.",
+      "wordByWord": [
+        {
+          "word": "ἕως",
+          "transliteration": "heōs",
+          "meaning": "until — the search has no clock, only an end: when the lost is recovered"
+        },
+        {
+          "word": "εὕρῃ",
+          "transliteration": "heurē",
+          "meaning": "he should find — the subjunctive of a search still underway, leaning toward its outcome"
+        },
+        {
+          "word": "εὑρέθη",
+          "transliteration": "heurethē",
+          "meaning": "he was found — passive: the prodigal does not find himself; he is found"
+        },
+        {
+          "word": "ἀνέζησεν",
+          "transliteration": "anezēsen",
+          "meaning": "he came back to life — the father's word for a son who 'was dead and is alive again'"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπόλλυμι / apollymi",
+          "reference": "The counterweight to heuriskō: 'to lose, to perish.' The sheep is 'lost' (apolōlos), the son 'was lost.' Luke 19:10 gathers both verbs into one sentence: the Son of Man came 'to seek and to save what was lost' (to apolōlos)."
+        }
+      ],
+      "strongsNumber": "G2147",
+      "definition": "to come upon, find, or recover by search or after effort",
+      "usage": "Luke alone of the Gospels stacks three lost-and-found parables back to back, and each turns on this single verb. By the time the same word reappears at the end of the Emmaus road, the reader has been taught to hear it as the sound of heaven's joy."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Parables of Search, Read on the Other Side of Easter",
+      "body": "Five days ago this thread opened with grumbling. \"This man welcomes sinners and eats with them,\" the Pharisees said of Jesus, and out of that complaint came three of the most famous stories ever told: a shepherd leaving ninety-nine sheep to chase one, a woman lighting a lamp and sweeping every corner for one coin, a father running down a road to a son who had thrown his life away. Three searches, three findings, three parties. Heaven, Jesus says, throws a party like that over one person who turns back.\n\nNotice what the parables do not say. They do not say the lost found their own way home. The sheep is carried on the shoulders. The coin cannot move at all; it waits in the dust until the lamp finds it. Even the prodigal, who does get up and walk, is met while he is \"still in the distance\" by a father already running. In every case the decisive movement is the seeker's, not the lost. That is the peshat, the plain sense: God is the one who goes looking.\n\nNow set that beside Luke 24, the chapter where the same Gospel ends. Two disciples are walking away from Jerusalem, away from the empty tomb and the rumors, toward a village called Emmaus, \"about seven miles\" out. They are not searching for Jesus. As far as they know, the search is over and it failed — \"we had hoped He was the one who was going to redeem Israel,\" they will say. And it is into exactly that despair, on the road of their leaving, that \"Jesus Himself came up and walked along with them.\" The Shepherd of the parable has become the Stranger on the road. He has come looking again, and the ones He is finding are His own."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Long Way to a Familiar Door",
+      "body": "A friend told me about the months after his father died — how he kept driving the long way home from work, past the house he grew up in, even though it added twenty minutes and the house belonged to strangers now. He couldn't have told you what he was looking for. He wasn't looking. He was just going somewhere away from where the grief was loudest, taking the slow road because the fast one led to an empty kitchen.\n\nOne evening a man was out front raking the new owners' leaves. He waved. My friend stopped, embarrassed, and the man asked if he'd like to see the backyard tree his kids had carved their names into. They stood under it as the light went. My friend said he didn't go looking for comfort that night. It came up the road and found him while he was driving away from it.\n\nThat is the shape of Emmaus. The two disciples are taking the long road out of town, talking over the worst week of their lives, and the comfort they have stopped expecting falls into step beside them. They do not recognize Him for miles. But He is already there, already walking, already turning their grief into a conversation.",
+      "connectionToTheme": "The lost are not always running toward home; sometimes they are walking away from it, and the One who seeks them simply joins the road they are already on.",
+      "content": "A friend told me about the months after his father died — how he kept driving the long way home from work, past the house he grew up in, even though it added twenty minutes and the house belonged to strangers now. He couldn't have told you what he was looking for. He wasn't looking. He was just going somewhere away from where the grief was loudest, taking the slow road because the fast one led to an empty kitchen.\n\nOne evening a man was out front raking the new owners' leaves. He waved. My friend stopped, embarrassed, and the man asked if he'd like to see the backyard tree his kids had carved their names into. They stood under it as the light went. My friend said he didn't go looking for comfort that night. It came up the road and found him while he was driving away from it.\n\nThat is the shape of Emmaus. The two disciples are taking the long road out of town, talking over the worst week of their lives, and the comfort they have stopped expecting falls into step beside them. They do not recognize Him for miles. But He is already there, already walking, already turning their grief into a conversation."
+    },
+    {
+      "type": "insight",
+      "heading": "Dead and Alive Again, Lost and Found — Said Twice",
+      "body": "The father's verdict over the prodigal is the most extravagant line in Luke 15: \"For this son of mine was dead and is alive again! He was lost and is found!\" Two pairs of opposites, said in one breath — death reversed into life, lostness reversed into finding. The whole chapter has been climbing toward this sentence.\n\nHere is what the resolution of this thread asks us to see. In Luke 15 those words are a parable — a father's poetry about a son who only felt like he had died. In Luke 24 the same two reversals stop being poetry and become a body. Jesus was actually dead; on the third day He is actually alive again. The disciples on the road have actually lost Him; at a table in Emmaus they actually find Him. What the parable could only picture, the resurrection makes literal. The Shepherd told a story about searching until He found the one; then He went into the far country of death itself to do it.\n\nThis is why the recognition comes at a meal. \"This man welcomes sinners and eats with them\" was the accusation that started the whole thread. At Emmaus, He is still doing exactly that — taking bread, breaking it, handing it to two failures who had given up on Him. The complaint of Luke 15:2 becomes the gospel of Luke 24:30. The thing they grumbled about turns out to be the thing that saves the world: the risen Lord, still eating with the lost.",
+      "historicalContext": "Emmaus lay roughly seven miles from Jerusalem — a walk of two or three hours, the kind of distance that fills with conversation. Luke names one traveler, Cleopas (24:18); the other is unnamed, which let early readers, and lets us, slip into the second pair of sandals. Luke's careful 'orderly account' (1:3) deliberately ends his Gospel at a table, the same place his Jesus was always found.",
+      "fascinatingFact": "Luke records the recognition happening 'in the breaking of the bread' (24:35) — the same fourfold action of Jesus the night He was betrayed: He took, blessed, broke, gave (22:19). The disciples' eyes open not when He argues them into belief on the road, though their hearts burn, but when His hands repeat the gesture of the table. They knew Him by the way He broke bread.",
+      "content": "The father's verdict over the prodigal is the most extravagant line in Luke 15: \"For this son of mine was dead and is alive again! He was lost and is found!\" Two pairs of opposites, said in one breath — death reversed into life, lostness reversed into finding. The whole chapter has been climbing toward this sentence.\n\nHere is what the resolution of this thread asks us to see. In Luke 15 those words are a parable — a father's poetry about a son who only felt like he had died. In Luke 24 the same two reversals stop being poetry and become a body. Jesus was actually dead; on the third day He is actually alive again. The disciples on the road have actually lost Him; at a table in Emmaus they actually find Him. What the parable could only picture, the resurrection makes literal. The Shepherd told a story about searching until He found the one; then He went into the far country of death itself to do it.\n\nThis is why the recognition comes at a meal. \"This man welcomes sinners and eats with them\" was the accusation that started the whole thread. At Emmaus, He is still doing exactly that — taking bread, breaking it, handing it to two failures who had given up on Him. The complaint of Luke 15:2 becomes the gospel of Luke 24:30. The thing they grumbled about turns out to be the thing that saves the world: the risen Lord, still eating with the lost."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus told of a shepherd who goes after the lost sheep 'until he finds it,' then carries it home rejoicing — and Luke ends his Gospel with that same Lord, risen, walking up the Emmaus road to find two who had stopped looking for Him.",
+      "modernApplication": "Most of us picture the spiritual life as our search for God: the right book, the better habit, the morning we finally feel something. Luke 15 and 24 quietly reverse the arrow. The decisive movement is His toward you. He is the one walking up the road you are taking away from Him, falling into step, willing to be mistaken for a stranger until your eyes open.",
+      "connectionPoint": "From the shepherd's shoulders to the father's embrace to the breaking of bread, one motion runs the length of these chapters: God seeking, God finding, God feeding. The party in heaven over one sinner who repents (15:7) and the burning hearts on the road (24:32) are the same joy from two sides — heaven's and ours.",
+      "newTestamentEcho": "Luke states the thread outright a few chapters earlier: 'For the Son of Man came to seek and to save what was lost' (Luke 19:10). The parables show the seeking; the resurrection completes the saving. The shepherd who would not stop at ninety-nine would not stop at the grave either."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which road are you actually on right now — searching for God, or quietly walking away from a hope that disappointed you? Where might He already be falling into step beside you?",
+      "additionalQuestions": [
+        "The disciples' eyes were 'kept from recognizing Him' for most of the walk. Looking back over the last year, where do you suspect Jesus was present that you didn't recognize until later?",
+        "Their hearts were 'burning within' them before they knew who He was. When have you felt that burn — a stirring you couldn't name — and what was it pointing toward?",
+        "They recognized Him in the breaking of bread, an ordinary act made holy. What ordinary moment in your week could become the place you look for Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have spent a lot of energy looking for You, and I am tired. Tonight let me hear the truth of these chapters: that You are the one who searches, who goes after the one until You find it, who walks up the road I am taking away from home. Where my eyes are kept shut, open them. Where my heart has gone cold, set it burning again. And when I sit down to eat, ordinary and unaware, break the bread and let me know You. You were dead and are alive; I was lost and am found. Stay with me, for it is nearly evening. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "Luke 24:29"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is the resolution of the thread, so let it land somewhere ordinary. At one meal in the next day, slow down before you eat. Take the bread (or whatever is in front of you), give thanks out loud, and ask the risen Christ to make Himself known to you the way He did at Emmaus — not in a vision, but in the breaking of ordinary bread. Then carry one phrase into sleep: 'was lost and is found.'",
+      "leavingAtCross": [
+        "The exhausting belief that finding God is finally up to my searching",
+        "The despair of the road away from Jerusalem — the hope I quietly buried this year",
+        "The fear that I am the one sheep too far gone to be worth the search"
+      ],
+      "receivingFromCross": [
+        "A Shepherd who goes after the lost 'until He finds it,' and does not stop short of the grave",
+        "The promise that my eyes can be opened — that recognition is His gift, not my achievement",
+        "A place at the table where the risen Lord still eats with sinners, and means me"
+      ],
+      "content": "This is the resolution of the thread, so let it land somewhere ordinary. At one meal in the next day, slow down before you eat. Take the bread, give thanks out loud, and ask the risen Christ to make Himself known to you the way He did at Emmaus — not in a vision, but in the breaking of ordinary bread. Then carry one phrase into sleep: 'was lost and is found.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In all three parables of Luke 15, who does the finding — the lost thing, or the one who searches? Why does that pattern matter for how we think about coming back to God?",
+        "The father says the prodigal 'was dead and is alive again.' How does Luke 24 turn that line from a parable into something literal?",
+        "Why does Luke have the disciples recognize Jesus 'in the breaking of the bread' rather than in His teaching on the road?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly: are you on the searching road or the leaving road right now? No fixing — just name it.",
+        "Share one moment from this past season where, looking back, you think Jesus was walking with you before you recognized Him.",
+        "Plan one shared meal this week where you'll pause, give thanks, and treat the table as a place to look for Him."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:24",
+          "text": "For this son of mine was dead and is alive again! He was lost and is found! So they began to celebrate."
+        },
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save what was lost."
+        },
+        {
+          "reference": "Luke 24:31-32",
+          "text": "Then their eyes were opened and they recognized Jesus—and He disappeared from their sight. They asked each other, \"Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?\""
+        },
+        {
+          "reference": "Luke 24:35",
+          "text": "Then the two told what had happened on the road, and how they had recognized Jesus in the breaking of the bread."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15 and Luke 24",
+          "note": "Read the two chapters back to back in one sitting, watching the verb 'find' (and its shadow, 'lost') move from the parables into the resurrection account."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cleopas and His Companion",
+      "title": "The Two on the Emmaus Road",
+      "description": "Two followers of Jesus, leaving Jerusalem on resurrection afternoon for a village seven miles off. Luke names only Cleopas (24:18); the second is left unnamed. They had hoped Jesus 'was the one who was going to redeem Israel,' and they were walking away from that buried hope when the risen Christ joined them, unrecognized, opened the Scriptures to them, and was finally known to them in the breaking of bread — at which point they ran the seven miles back to Jerusalem that same hour.",
+      "keyQuote": "Were not our hearts burning within us as He spoke with us on the road?",
+      "lessonForUs": "The unnamed companion is room left in the story for you. Like them, you may meet Christ first as a stranger on a road you didn't mean to be walking — and only afterward realize your heart had been burning the whole time. Recognition, when it comes, sends you running back toward the people you left.",
+      "heading": "The Two on the Emmaus Road"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2138,
+  "scriptureReference_full": "Luke 15:1-10, 20-24; 24:13-16, 25-35",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (heuriskō G2147; apollymi; anezēsen) reflects standard lexical sources; the threefold use of 'find' across the Luke 15 parables and its reappearance in Luke 24 is a feature of the Greek text."
+  ]
 }

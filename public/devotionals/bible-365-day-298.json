@@ -1,38 +1,176 @@
 {
   "day": 298,
-  "title": "Luke: The Inclusive Christ — Day 4 — Application",
-  "teaser": "Day 298 of Bible 365 — Luke 1-12",
+  "title": "Go and Do Likewise",
+  "teaser": "Luke keeps widening the circle: the poor, the sinner, the foreigner, the half-dead man in the ditch. On Day 4 the question turns from who is in to which one of them will you become.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 298"
+      "type": "scripture",
+      "reference": "Luke 10:33-37",
+      "translation": "BSB",
+      "emphasis": [
+        "had compassion",
+        "took care of him",
+        "Go and do likewise"
+      ],
+      "greekOriginal": "Σαμαρίτης δέ τις ὁδεύων ἦλθεν κατʼ αὐτὸν καὶ ἰδὼν ἐσπλαγχνίσθη",
+      "passage": "But when a Samaritan on a journey came upon him, he looked at him and had compassion. He went to him and bandaged his wounds, pouring on oil and wine. Then he put him on his own animal, brought him to an inn, and took care of him. ... \"Which of these three do you think was a neighbor to the man who fell into the hands of robbers?\" \"The one who showed him mercy,\" replied the expert in the law. Then Jesus told him, \"Go and do likewise.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐσπλαγχνίσθη",
+      "transliteration": "esplanchnisthē",
+      "pronunciation": "es-plangkh-NIS-thay",
+      "meaning": "he was moved with compassion; his gut turned over with mercy",
+      "rootMeaning": "From splanchna, the inward organs - the heart, liver, intestines. The Greeks located the deepest feelings not in the head but in the bowels. To be 'moved with compassion' is to feel another person's wound in your own body, a turning-over in the gut that you did not choose.",
+      "usageNote": "Luke uses this verb only three times, and the three uses light up the whole book. In 7:13 the Lord feels it for a widow burying her only son. In 10:33 a despised Samaritan feels it for a stranger in a ditch. In 15:20 a father feels it and runs for a son who wasted everything. Same word, three times - the compassion of Jesus, the compassion of the outsider, and the compassion of God the Father are written with one verb.",
+      "wordByWord": [
+        {
+          "word": "Σαμαρίτης",
+          "transliteration": "Samaritēs",
+          "meaning": "a Samaritan - the half-breed heretic a Jewish listener would least expect to be the hero"
+        },
+        {
+          "word": "ἰδὼν",
+          "transliteration": "idōn",
+          "meaning": "having seen, having looked - the priest and Levite also saw, and passed by; seeing is not the same as letting it move you"
+        },
+        {
+          "word": "ἐσπλαγχνίσθη",
+          "transliteration": "esplanchnisthē",
+          "meaning": "he was gutted with compassion - the verb that turns the whole parable"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πλησίον",
+          "reference": "Plēsion, 'neighbor,' literally 'the one near.' The lawyer asked Jesus to define who qualifies as his neighbor. Jesus refuses the question and asks instead which man became a neighbor - turning a noun he wanted to limit into a verb he had to do."
+        }
+      ],
+      "strongsNumber": "G4697",
+      "definition": "to be moved as to one's inward parts; to feel deep compassion, to have pity",
+      "usage": "The Samaritan's mercy is not a feeling that stays inside him. The verb moves immediately into hands: he went, he bandaged, he poured, he lifted, he carried, he paid. Compassion in Luke is something you can watch with your eyes."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Circle Keeps Getting Wider",
+      "body": "For three days now Luke has been doing one thing over and over, and once you see it you cannot stop seeing it. He keeps drawing a circle, and then drawing it wider.\n\nIt starts before Jesus is even born. Mary sings that God has brought down rulers from their thrones but exalted the humble, filled the hungry with good things but sent the rich away empty (Luke 1:52-53). Then Jesus stands up in His hometown synagogue, unrolls Isaiah, and says the Spirit has anointed Him to preach good news to the poor, liberty to the captives, sight to the blind, release to the oppressed (Luke 4:18-19). When the religious experts complain that He eats with tax collectors and sinners, He answers that it is not the healthy who need a doctor but the sick, and that He came to call sinners, not the righteous (Luke 5:31-32). He blesses the poor, the hungry, the weeping (Luke 6:20-21). He lets a woman with a reputation wash His feet with her tears and tells her, in front of everyone, that her sins are forgiven and her faith has saved her (Luke 7:47-50).\n\nThis is Day 4. The teaching is not new information. By now you know what Luke's Jesus is like. The poor, the sick, the sinner, the foreigner, the woman, the outsider - the ones everyone else steps around - keep ending up at the center of His attention. Today the question is no longer who is inside the circle. Today the question is what you are going to do with your own two hands.",
+      "keyInsight": "Day 4 is not about learning that Jesus welcomes outsiders. You already know that. It is about discovering that the welcome was always meant to travel through you.",
+      "content": "For three days now Luke has been doing one thing over and over, and once you see it you cannot stop seeing it. He keeps drawing a circle, and then drawing it wider.\n\nIt starts before Jesus is even born. Mary sings that God has brought down rulers from their thrones but exalted the humble, filled the hungry with good things but sent the rich away empty (Luke 1:52-53). Then Jesus stands up in His hometown synagogue, unrolls Isaiah, and says the Spirit has anointed Him to preach good news to the poor, liberty to the captives, sight to the blind, release to the oppressed (Luke 4:18-19). When the religious experts complain that He eats with tax collectors and sinners, He answers that it is not the healthy who need a doctor but the sick, and that He came to call sinners, not the righteous (Luke 5:31-32). He blesses the poor, the hungry, the weeping (Luke 6:20-21). He lets a woman with a reputation wash His feet with her tears and tells her, in front of everyone, that her sins are forgiven and her faith has saved her (Luke 7:47-50).\n\nThis is Day 4. The teaching is not new information. By now you know what Luke's Jesus is like. The poor, the sick, the sinner, the foreigner, the woman, the outsider - the ones everyone else steps around - keep ending up at the center of His attention. Today the question is no longer who is inside the circle. Today the question is what you are going to do with your own two hands."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Did Not Lower His Window",
+      "content": "There is a stretch of road most of us know - maybe a literal off-ramp, maybe a hallway at work, maybe a name in our phone we let ring out. A place where need is visible and inconvenient at the same time.\n\nA friend told me once about the morning he drove past the same man at the same intersection for the third week running. He had perfected the small theater of not seeing: eyes forward, a sudden interest in the radio, the light mercifully turning green. He was not a cruel man. He gave to causes. He had reasons - he was late, he was unsure it would help, he had heard you should not. And all of his reasons were the reasons of the priest and the Levite, who also saw, and also had somewhere to be, and also kept moving.\n\nThen one morning the man at the intersection was holding a cardboard sign that said only a first name and the word son. My friend said it was the word son that undid him - the reminder that this was someone's child, the way he was someone's child. He pulled over. He was clumsy about it; he did almost everything wrong. But he had stopped lowering the window of his heart, and that was the whole turn.",
+      "connectionToTheme": "The priest and the Levite were not villains. They were busy, careful, religious men with good reasons not to stop - which is exactly why their failure is so easy to repeat.",
+      "body": "There is a stretch of road most of us know - maybe a literal off-ramp, maybe a hallway at work, maybe a name in our phone we let ring out. A place where need is visible and inconvenient at the same time.\n\nA friend told me once about the morning he drove past the same man at the same intersection for the third week running. He had perfected the small theater of not seeing: eyes forward, a sudden interest in the radio, the light mercifully turning green. He was not a cruel man. He gave to causes. He had reasons - he was late, he was unsure it would help, he had heard you should not. And all of his reasons were the reasons of the priest and the Levite, who also saw, and also had somewhere to be, and also kept moving.\n\nThen one morning the man at the intersection was holding a cardboard sign that said only a first name and the word son. My friend said it was the word son that undid him - the reminder that this was someone's child, the way he was someone's child. He pulled over. He was clumsy about it; he did almost everything wrong. But he had stopped lowering the window of his heart, and that was the whole turn."
+    },
+    {
+      "type": "insight",
+      "heading": "The Lawyer Asked the Wrong Question",
+      "content": "Notice how Jesus refuses to answer the question He was asked. The expert in the law wanted a definition: \"Who is my neighbor?\" It is a question about boundaries. Tell me where the circle ends, so I know where my duty stops. Tell me who counts, so I can be sure I am not failing the ones who do.\n\nJesus tells a story and then hands the question back upside down. He does not say who your neighbor is. He asks which of the three men became a neighbor. The lawyer wanted to locate the edge of his obligation; Jesus moved the whole word from a noun to a verb. Neighbor is not a category you draw a line around. It is something you do to the next half-dead person God puts in your road.\n\nAnd then the detail that would have stunned the original listener: the hero is a Samaritan. To a Jewish audience, the Samaritan was the heretic, the half-breed, the one you crossed the road to avoid. Jesus could have made the hero an ordinary Jew helping a Samaritan. Instead He makes the despised outsider the one who shows mercy, and the respectable insiders the ones who walk by. The man in the ditch is saved by exactly the person he would have despised. That is Luke's whole gospel pressed into one road: the people you have written off may be the very ones through whom God's mercy reaches you - and the mercy you have received is now yours to carry.",
+      "historicalContext": "Jews and Samaritans had despised each other for centuries, a hatred rooted in rival temples, rival claims, and the old wound of the divided kingdom. A first-century Jewish traveler would have considered a Samaritan ritually unclean and theologically corrupt. The road from Jerusalem down to Jericho was real, steep, and notorious for bandits - the listeners knew exactly the kind of ambush Jesus described.",
+      "fascinatingFact": "The Samaritan does six things the priest and Levite did not: he came near, bandaged, poured on oil and wine, lifted the man onto his own animal, brought him to an inn, and paid for his care - and promised to pay more on his return. Luke records compassion not as a feeling but as a sequence of verbs you could have filmed.",
+      "body": "Notice how Jesus refuses to answer the question He was asked. The expert in the law wanted a definition: \"Who is my neighbor?\" It is a question about boundaries. Tell me where the circle ends, so I know where my duty stops. Tell me who counts, so I can be sure I am not failing the ones who do.\n\nJesus tells a story and then hands the question back upside down. He does not say who your neighbor is. He asks which of the three men became a neighbor. The lawyer wanted to locate the edge of his obligation; Jesus moved the whole word from a noun to a verb. Neighbor is not a category you draw a line around. It is something you do to the next half-dead person God puts in your road.\n\nAnd then the detail that would have stunned the original listener: the hero is a Samaritan. To a Jewish audience, the Samaritan was the heretic, the half-breed, the one you crossed the road to avoid. Jesus could have made the hero an ordinary Jew helping a Samaritan. Instead He makes the despised outsider the one who shows mercy, and the respectable insiders the ones who walk by. The man in the ditch is saved by exactly the person he would have despised. That is Luke's whole gospel pressed into one road: the people you have written off may be the very ones through whom God's mercy reaches you - and the mercy you have received is now yours to carry."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus told a despised Samaritan's mercy as the answer to a lawyer's question about boundaries, then said simply: Go and do likewise.",
+      "modernApplication": "We are fluent in the lawyer's question. We want to know where the obligation ends - which causes, which people, which version of deserving qualifies for our compassion. Jesus keeps changing the subject from who deserves it to who you are becoming. The half-dead man on your road this week is rarely convenient and almost never the one you would have chosen.",
+      "connectionPoint": "Day 4 mirrors Day 2's question - who counts as in - and answers it with your hands instead of your theology. The same circle Luke kept widening across chapters 1 through 12 is now wide enough to reach the person you have been driving past.",
+      "newTestamentEcho": "The earliest Christian readers heard something under the parable that the lawyer could not yet see. The true Good Samaritan is Jesus Himself: the One despised and rejected by His own people, who came down the dangerous road we travel, found us robbed and beaten and half-dead in our sin, and did not pass by. He bound our wounds, carried us at the cost of His own body, and paid in full what we could never repay (Romans 5:6-8). 'Go and do likewise' is not first a command we strain to obey; it is mercy we have already received, asking to keep moving outward through us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who is the person on your road right now that you keep seeing and keep passing - and what reason have you been giving yourself for not stopping?",
+      "additionalQuestions": [
+        "The lawyer wanted to know where his duty ended. Where have you quietly drawn the line that marks the edge of your own compassion?",
+        "The Samaritan's mercy turned immediately into action - he went, bandaged, carried, paid. What is one verb your compassion could become this week?",
+        "If the true Good Samaritan is Jesus, and you are the man in the ditch He stopped for, how does being rescued change the way you look at the next person who needs rescuing?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You did not pass me by. You came down my road, found me half-dead, and carried me at the cost of Your own life. Forgive me for the careful theater of not seeing - the eyes forward, the good reasons, the green light I was grateful for. Move my gut the way Yours was moved. Make my compassion into hands. Show me the one You have already put on my road, and give me the courage to stop, to come near, and to do likewise. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week I will stop for one person I have been passing - make one phone call, cross one road, do one inconvenient act of mercy with my actual hands - and let the welcome I received from Christ travel one person further.",
+      "leavingAtCross": [
+        "The lawyer's question - the quiet need to know where my duty to others ends",
+        "The careful art of not seeing the need that is right in front of me",
+        "The reasons I keep ready for why this one is not mine to stop for"
+      ],
+      "receivingFromCross": [
+        "The memory that I am the man in the ditch, found and carried by a mercy I did not earn",
+        "A compassion that does not stay a feeling but becomes a sequence of verbs",
+        "Permission to be clumsy and stop anyway, because stopping is the whole turn"
+      ],
+      "content": "This week I will stop for one person I have been passing - make one phone call, cross one road, do one inconvenient act of mercy with my actual hands - and let the welcome I received from Christ travel one person further."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Jesus refuse to answer 'Who is my neighbor?' and ask instead which man became a neighbor - and what does that change about the kind of obligation He is describing?",
+        "Why would making the hero a Samaritan, rather than a Jew, have shocked Jesus' first listeners, and how does that connect to everything Luke shows about Jesus in chapters 1 through 12?",
+        "How does seeing Jesus as the true Good Samaritan - the One who stopped for us - reframe the command 'Go and do likewise'?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one person or kind of person you tend to 'cross the road' to avoid, and talk honestly about why.",
+        "Share one specific, inconvenient act of mercy you will do this week, and ask your partner to check in on it.",
+        "Ask each other: where have you been more like the lawyer wanting limits than the Samaritan who simply stopped?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 4:18-19",
+          "text": "\"The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed, to proclaim the year of the Lord's favor.\""
+        },
+        {
+          "reference": "Luke 1:52-53",
+          "text": "He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty."
+        },
+        {
+          "reference": "Luke 5:31-32",
+          "text": "Jesus answered, \"It is not the healthy who need a doctor, but the sick. I have not come to call the righteous, but sinners, to repentance.\""
+        },
+        {
+          "reference": "Romans 5:8",
+          "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 10:25-37",
+          "note": "Read the parable of the Good Samaritan slowly, watching the six verbs of the Samaritan's mercy and the way Jesus turns the lawyer's noun ('neighbor') into a verb ('became a neighbor')."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Good Samaritan",
+      "title": "The Despised Outsider Who Became the Neighbor",
+      "description": "A traveler in Jesus' parable (Luke 10:25-37), belonging to a people Jews regarded as heretical half-breeds. Where a priest and a Levite saw a beaten man and crossed to the other side, the Samaritan came near, was moved with compassion, and spent his own time, oil, animal, and money to save a stranger who would likely have despised him. Jesus made him the hero precisely because his hearers would not have.",
+      "keyQuote": "He looked at him and had compassion.",
+      "lessonForUs": "The Samaritan is both a mirror and a window. He shows us the mercy we are called to do - 'Go and do likewise' - and he points beyond himself to Christ, the rejected One who came down our road, found us half-dead, and carried us home at His own expense. We love because we were first carried.",
+      "heading": "The Despised Outsider Who Became the Neighbor"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2049,
+  "scriptureReference_full": "Luke 10:33-37 (within Luke 1-12)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (splanchnizomai, G4697) reflects standard lexical sources; the threefold use in Luke 7:13, 10:33, and 15:20 is a widely noted feature of Luke's vocabulary of compassion."
+  ]
 }

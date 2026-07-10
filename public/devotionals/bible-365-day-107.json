@@ -1,38 +1,182 @@
 {
   "day": 107,
-  "title": "Divided Kingdom — Day 2 — Building",
-  "teaser": "Day 107 of Bible 365 — 1 Kings 12-16",
+  "title": "The kingdom tears, and a name is spoken",
+  "teaser": "Ten tribes walk away over one harsh word, golden calves go up at Bethel and Dan — and into the wreckage God speaks a name three hundred years early.",
   "framework": "1 Kings 12-16 — Divided Kingdom",
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 107"
+      "type": "scripture",
+      "reference": "1 Kings 12:13-16",
+      "translation": "BSB",
+      "emphasis": [
+        "I will add to your yoke",
+        "What portion do we have in David",
+        "this turn of events was from the LORD"
+      ],
+      "hebrewOriginal": "מָה־לָּנוּ חֵלֶק בְּדָוִד",
+      "passage": "And the king answered the people harshly. He rejected the advice of the elders and spoke to them as the young men had advised, saying, \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" ... When all Israel saw that the king had refused to listen to them, they answered the king: \"What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!\" So the Israelites went home,"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֵלֶק",
+      "transliteration": "cheleq",
+      "pronunciation": "KHEH-lek",
+      "meaning": "portion, share, allotted inheritance",
+      "rootMeaning": "From a root meaning to divide or apportion. A cheleq is your assigned piece of something larger - the field measured out to a family, the share handed to each tribe when the land was divided. To have a portion is to belong; to lose it is to be cut off from the whole.",
+      "usageNote": "When the ten northern tribes shout \"What portion (cheleq) do we have in David?\" they are not just resigning from a tax dispute. They are renouncing their share in the house God had promised would never lack a man on the throne. The word that should have bound them to the covenant becomes the word they use to walk out of it.",
+      "wordByWord": [
+        {
+          "word": "מָה",
+          "transliteration": "mah",
+          "meaning": "what"
+        },
+        {
+          "word": "לָּנוּ",
+          "transliteration": "lanu",
+          "meaning": "to us, for us"
+        },
+        {
+          "word": "חֵלֶק",
+          "transliteration": "cheleq",
+          "meaning": "portion, share, inheritance"
+        },
+        {
+          "word": "בְּדָוִד",
+          "transliteration": "be-David",
+          "meaning": "in David"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֵלֶק",
+          "reference": "The Levites were given no cheleq of land because the LORD Himself was their portion (Numbers 18:20). The psalmist takes the same word and turns it into worship: \"The LORD is my chosen portion\" (Psalm 16:5). The very thing the northern tribes throw away is the thing the faithful learn to treasure."
+        }
+      ],
+      "strongsNumber": "H2506",
+      "definition": "a portion, share, or apportioned allotment",
+      "usage": "The tragedy of the split is hidden in this one word. A people created to share an inheritance in God's anointed king decides it would rather have no portion in him at all."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How a Kingdom Comes Apart",
+      "body": "Solomon is dead, and the question on the table at Shechem is simple: will the new king ease the burden his father laid on the people? The elders who served Solomon give Rehoboam the answer of long experience. \"If you will be a servant to these people and serve them this day,\" they tell him, \"they will be your servants forever.\" It is the oldest wisdom about leadership in the book: bend low, and people will follow you for life.\n\nRehoboam asks instead the men he grew up with, and they hand him the language of a strongman. So he answers the people harshly: \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" In a single sentence the kingdom of David and Solomon snaps in two. Ten tribes turn north. \"What portion do we have in David?\" they cry, and they go home.\n\nWhat happens next is worse than a tax revolt. Jeroboam, now king over the north, does the math of a frightened man. If his people keep traveling south to worship at the temple in Jerusalem, he reasons, \"their hearts will return to their lord, Rehoboam.\" So he builds two golden calves, sets one in Bethel and one in Dan, and tells the people, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods.\" He invents a more convenient worship, closer to home, easier on the legs - and the rest of First Kings narrates the slow poisoning that follows. Nadab, Baasha, Omri, and finally Ahab each \"did evil in the sight of the LORD,\" each walking \"in the way of Jeroboam.\" The phrase repeats like a drumbeat through these five chapters. One man's shortcut becomes a nation's groove.",
+      "keyInsight": "A kingdom does not usually come apart over one catastrophe. It comes apart over one hard word, followed by a hundred convenient substitutes for the worship that would have held it together.",
+      "content": "Solomon is dead, and the question on the table at Shechem is simple: will the new king ease the burden his father laid on the people? The elders who served Solomon give Rehoboam the answer of long experience. \"If you will be a servant to these people and serve them this day,\" they tell him, \"they will be your servants forever.\" It is the oldest wisdom about leadership in the book: bend low, and people will follow you for life.\n\nRehoboam asks instead the men he grew up with, and they hand him the language of a strongman. So he answers the people harshly: \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" In a single sentence the kingdom of David and Solomon snaps in two. Ten tribes turn north. \"What portion do we have in David?\" they cry, and they go home.\n\nWhat happens next is worse than a tax revolt. Jeroboam, now king over the north, does the math of a frightened man. If his people keep traveling south to worship at the temple in Jerusalem, he reasons, \"their hearts will return to their lord, Rehoboam.\" So he builds two golden calves, sets one in Bethel and one in Dan, and tells the people, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods.\" He invents a more convenient worship, closer to home, easier on the legs - and the rest of First Kings narrates the slow poisoning that follows. Nadab, Baasha, Omri, and finally Ahab each \"did evil in the sight of the LORD,\" each walking \"in the way of Jeroboam.\" The phrase repeats like a drumbeat through these five chapters. One man's shortcut becomes a nation's groove."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Shorter Road Home",
+      "body": "A friend of mine grew up driving forty minutes each Sunday to the church his grandparents had founded. When he had children of his own, the drive started to feel like a tax. There was a newer church six minutes away with a good parking lot and a service that ended on time. Nothing was wrong with it. He moved his family there, and for a while it was a relief.\n\nWhat he noticed only years later was not that the closer church had failed him. It was that the move had quietly taught his children that worship is something you fit into the gaps of a convenient life - that the question to ask of God is always \"how far is it from here?\" He had not rejected anything. He had simply chosen, over and over, the shorter road home.\n\nJeroboam never told Israel to stop worshiping. He told them worship was now easier. He gave them a calf in Bethel and a calf in Dan so they would not have to make the climb up to Jerusalem. And the people, who would have resisted an order to abandon God, happily accepted an invitation to find Him closer to where they already were.",
+      "connectionToTheme": "Counterfeit worship rarely arrives as open rebellion. It arrives as a convenience - a closer, easier substitute for the costly thing that would have held the heart in place.",
+      "content": "A friend of mine grew up driving forty minutes each Sunday to the church his grandparents had founded. When he had children of his own, the drive started to feel like a tax. There was a newer church six minutes away with a good parking lot and a service that ended on time. Nothing was wrong with it. He moved his family there, and for a while it was a relief.\n\nWhat he noticed only years later was not that the closer church had failed him. It was that the move had quietly taught his children that worship is something you fit into the gaps of a convenient life - that the question to ask of God is always \"how far is it from here?\" He had not rejected anything. He had simply chosen, over and over, the shorter road home.\n\nJeroboam never told Israel to stop worshiping. He told them worship was now easier. He gave them a calf in Bethel and a calf in Dan so they would not have to make the climb up to Jerusalem. And the people, who would have resisted an order to abandon God, happily accepted an invitation to find Him closer to where they already were."
+    },
+    {
+      "type": "insight",
+      "heading": "A Name Spoken Three Centuries Early",
+      "body": "Stand back from the rubble and notice two sentences the narrator drops into it that change everything.\n\nThe first comes the moment the kingdom splits. Rehoboam plays the tyrant, the people walk out, and then the text says something startling: \"this turn of events was from the LORD, to fulfill the word He had spoken to Jeroboam son of Nebat through Ahijah the Shilonite.\" The fracture is genuinely Rehoboam's foolishness and genuinely the people's defection - and it is not outside God's hand. The same chapter that records a kingdom falling records that the fall did not catch God off guard or out of reach. Human pride does real damage; sovereignty is never canceled by it.\n\nThe second is even sharper. While Jeroboam is standing at his new altar in Bethel, burning incense to his calf, a man of God arrives from Judah and cries out against the altar itself: \"O altar, O altar, this is what the LORD says: 'A son named Josiah will be born to the house of David, and upon you he will sacrifice the priests of the high places.'\" God names the man who will one day tear that altar down - by name - roughly three hundred years before Josiah is born. Into the very ceremony built to keep Israel away from Jerusalem, God speaks the name of a coming son of David. The counterfeit kingdom is given an expiration date in advance, and it is written into a true king not yet born.\n\nThis is the deep grammar of the divided kingdom. Men tear; God keeps a promise. The throne of David looks shattered, but the line is not lost - it is being carried forward toward a Son whose kingdom will not divide.",
+      "historicalContext": "First and Second Kings were almost certainly compiled in their final form during or after the Babylonian exile, for a people who had watched the northern kingdom be \"uprooted from this good land\" and scattered, exactly as Ahijah had warned (1 Kings 14:15). To exiles asking whether God had lost control when the kingdom fell, the narrator answers: the split itself was foretold, the judgment was named in advance, and a son of David is still coming. The history is written as hope.",
+      "fascinatingFact": "Josiah, the king named here three centuries early, finally arrives in 2 Kings 23. He goes to Bethel, pulls down Jeroboam's altar, burns it to powder, and burns human bones upon it - then asks about a lone grave he has spared, and is told it belongs to the very man of God who prophesied this day. The word spoken at the altar in 1 Kings 13 comes true to the letter, and the narrator makes sure we see it land.",
+      "content": "Stand back from the rubble and notice two sentences the narrator drops into it that change everything.\n\nThe first comes the moment the kingdom splits. Rehoboam plays the tyrant, the people walk out, and then the text says something startling: \"this turn of events was from the LORD, to fulfill the word He had spoken to Jeroboam son of Nebat through Ahijah the Shilonite.\" The fracture is genuinely Rehoboam's foolishness and genuinely the people's defection - and it is not outside God's hand. The same chapter that records a kingdom falling records that the fall did not catch God off guard or out of reach. Human pride does real damage; sovereignty is never canceled by it.\n\nThe second is even sharper. While Jeroboam is standing at his new altar in Bethel, burning incense to his calf, a man of God arrives from Judah and cries out against the altar itself: \"O altar, O altar, this is what the LORD says: 'A son named Josiah will be born to the house of David, and upon you he will sacrifice the priests of the high places.'\" God names the man who will one day tear that altar down - by name - roughly three hundred years before Josiah is born. Into the very ceremony built to keep Israel away from Jerusalem, God speaks the name of a coming son of David. The counterfeit kingdom is given an expiration date in advance, and it is written into a true king not yet born.\n\nThis is the deep grammar of the divided kingdom. Men tear; God keeps a promise. The throne of David looks shattered, but the line is not lost - it is being carried forward toward a Son whose kingdom will not divide."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel walks away from the house of David, and Jeroboam gives them golden calves at Bethel and Dan so worship will be convenient and their hearts will stay home - and the whole northern kingdom rots from that one substitution.",
+      "modernApplication": "We rarely renounce God outright. We relocate Him somewhere closer and easier. We build the worship that fits the commute, the schedule, the version of faith that asks nothing of the legs or the will. The calf is never honest about being a calf; it always says, \"this is your God, and look how much nearer I am.\"",
+      "connectionPoint": "The cry that tore the kingdom - \"What portion do we have in David?\" - is the question the whole rest of Scripture answers. The Levites had no land because the LORD was their portion; the psalmist sang, \"The LORD is my chosen portion.\" The divided kingdom is what happens to people who decide they want no share in God's anointed king. The gospel is the invitation back: to take, again, a portion in the Son of David.",
+      "newTestamentEcho": "Jesus is the true Son of David the man of God was pointing toward. Where Rehoboam answered, \"I will add to your yoke... I will scourge you with scorpions,\" Jesus says, \"Take My yoke upon you... for My yoke is easy and My burden is light\" (Matthew 11:29-30) - and then was Himself scourged so the burden would fall on Him and not on us. He is the king who will not divide His kingdom, the place of worship that no calf can counterfeit: \"Destroy this temple, and in three days I will raise it up again\" (John 2:19). What Jeroboam fractured, Christ gathers."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you traded the harder, truer worship for a closer, easier substitute - and told yourself nothing was lost?",
+      "additionalQuestions": [
+        "Rehoboam asked the wrong counselors and lost a kingdom. Whose voices are you actually listening to about the most important things in your life?",
+        "Jeroboam's calves were built out of fear that people's hearts would 'return' somewhere he could not control. What fear is quietly shaping the way you keep God at a manageable distance?",
+        "If God could speak Josiah's name three hundred years before he was born, what does that say about the situations in your life that look broken beyond repair?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have built my own Bethels - the closer altar, the easier worship, the God I can reach without leaving where I already am. Forgive me for the convenient calves. I have said with the ten tribes, more often than I knew, 'What portion do we have in David?' Give me again my portion in Your Son. Where my life feels torn in two, remind me that no fracture is outside Your hand, and that You can speak a name into the rubble that turns the whole story toward hope. Take the heavy yoke I cannot carry, and give me Yours, which is light. Through Jesus, the Son of David, whose kingdom does not divide. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'convenient calf' - a place you have relocated worship or surrender to make it easier and quieter than it should be. Don't tear it down by willpower; bring it to the true King and ask Him to be your portion there instead.",
+      "leavingAtCross": [
+        "The convenient worship I have built so I never have to make the climb",
+        "The harsh and grasping way I use whatever small power I hold over others",
+        "The lie that a thing torn in my life is therefore lost beyond God's reach"
+      ],
+      "receivingFromCross": [
+        "A portion in the true Son of David that no division can take from me",
+        "A yoke that is easy and a burden that is light, carried first by Him",
+        "The confidence that God speaks names of hope into wreckage, centuries ahead of time"
+      ],
+      "content": "Today, name one 'convenient calf' - a place you have relocated worship or surrender to make it easier and quieter than it should be. Don't tear it down by willpower; bring it to the true King and ask Him to be your portion there instead."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What advice did the elders give Rehoboam, and what did he choose instead - and what did that one choice cost?",
+        "Why did Jeroboam build the golden calves at Bethel and Dan? What was he actually afraid of?",
+        "How can the same event - the splitting of the kingdom - be both Rehoboam's foolishness and 'from the LORD' at the same time?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have chosen the shorter, easier road in your walk with God, the way the tribes chose the calves over the climb.",
+        "Talk honestly about a place in your life that feels torn or divided. What would it mean to believe it is not outside God's hand?",
+        "Ask each other: who are the 'young men I grew up with' whose voices I trust more than I should - and who are the 'elders' I should be listening to instead?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 12:28",
+          "text": "After seeking advice, the king made two golden calves and said to the people, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.\""
+        },
+        {
+          "reference": "1 Kings 13:2",
+          "text": "And he cried out against the altar by the word of the LORD, \"O altar, O altar, this is what the LORD says: 'A son named Josiah will be born to the house of David, and upon you he will sacrifice the priests of the high places who burn incense upon you, and human bones will be burned upon you.'\""
+        },
+        {
+          "reference": "1 Kings 14:8",
+          "text": "I tore the kingdom away from the house of David and gave it to you. But you were not like My servant David, who kept My commandments and followed Me with all his heart, doing only what was right in My eyes."
+        },
+        {
+          "reference": "Matthew 11:29-30",
+          "text": "Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read the five chapters in one sitting and count how many times you meet the phrase 'walked in the way of Jeroboam' and 'did evil in the sight of the LORD.' The repetition is the point: one man's shortcut became a national groove."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeroboam son of Nebat",
+      "title": "First King of the Northern Kingdom",
+      "description": "Once a capable official under Solomon, Jeroboam was promised ten tribes by the prophet Ahijah and became the first king of Israel after the split. Rather than trust the promise that had given him a kingdom, he tried to secure it himself - building golden calves at Bethel and Dan so his people would not travel south to worship in Jerusalem. His name becomes the Bible's shorthand for institutionalized counterfeit worship: king after king is condemned for walking 'in the way of Jeroboam.'",
+      "keyQuote": "Going up to Jerusalem is too much for you. Here, O Israel, are your gods.",
+      "lessonForUs": "Jeroboam received a kingdom by promise and lost it by management. The fear that drives us to build our own convenient substitutes for God is almost always the fear that, left to Himself, God will not keep us where we want to stay. Trust travels the harder road; fear builds a closer calf.",
+      "heading": "First King of the Northern Kingdom"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2568,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (cheleq, H2506) reflects standard lexical sources; the Levites' portion (Numbers 18:20) and Psalm 16:5 are cited as canonical parallels.",
+    "The fulfillment of the Bethel-altar prophecy in Josiah's reign is recorded in 2 Kings 23:15-18."
+  ]
 }

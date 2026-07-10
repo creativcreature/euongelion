@@ -1,38 +1,181 @@
 {
   "day": 182,
-  "title": "Esther: For Such a Time — Day 7 — Sabbath",
-  "teaser": "Day 182 of Bible 365 — Esther 4-7",
+  "title": "The Night the King Could Not Sleep",
+  "teaser": "God is never named in Esther, yet His hand is on every page. On the one night the whole story turns, the King who governs heaven keeps a Persian king awake — and a people are saved through one who risks death to stand before a throne.",
   "framework": "Esther 4-7 — Esther: For Such a Time",
   "scriptureReference": "Esther 4-7",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 182"
+      "type": "scripture",
+      "reference": "Esther 4:14, 16; 6:1",
+      "translation": "BSB",
+      "emphasis": [
+        "for such a time as this",
+        "if I perish, I perish",
+        "sleep escaped the king"
+      ],
+      "hebrewOriginal": "בַּלַּיְלָה הַהוּא נָדְדָה שְׁנַת הַמֶּלֶךְ",
+      "passage": "For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father’s house will perish. And who knows if perhaps you have come to the kingdom for such a time as this?” ... After that, I will go to the king, even though it is against the law. And if I perish, I perish! ... That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Esther 4-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Esther 4-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נָדְדָה שְׁנַת הַמֶּלֶךְ",
+      "transliteration": "nadedah shenat hammelekh",
+      "pronunciation": "naw-deh-DAH sheh-NAT ham-MEH-lekh",
+      "meaning": "the king's sleep fled; sleep wandered away from the king",
+      "rootMeaning": "Nadad means to flee, to wander, to take flight - the word used for a bird startled off its nest or a fugitive driven from home. It is not that the king lay restless; his sleep was chased away, as if something outside him would not let his eyes close.",
+      "usageNote": "Esther is the one book of the Bible that never mentions God's name. And yet here, at the exact center of the rescue, the Hebrew uses an agent-less verb: sleep fled. No cause is given. The storyteller leaves the gap open on purpose, so the reader will fill it with the only Name the book refuses to print.",
+      "wordByWord": [
+        {
+          "word": "בַּלַּיְלָה הַהוּא",
+          "transliteration": "ballaylah hahu",
+          "meaning": "on that night - the single night the whole plot turns"
+        },
+        {
+          "word": "נָדְדָה",
+          "transliteration": "nadedah",
+          "meaning": "fled, wandered off, took flight"
+        },
+        {
+          "word": "שְׁנַת",
+          "transliteration": "shenat",
+          "meaning": "the sleep of"
+        },
+        {
+          "word": "הַמֶּלֶךְ",
+          "transliteration": "hammelekh",
+          "meaning": "the king - Xerxes, the most powerful man on earth, unable to rest"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הַמֶּלֶךְ",
+          "reference": "Hammelekh, 'the king,' appears more than 190 times in Esther, far more than any name. Jewish readers have long noticed that wherever the unqualified word 'the king' falls, the text quietly gestures past Xerxes to the King no human throne can rival - the One ruling the night Xerxes cannot govern his own eyes."
+        }
+      ],
+      "strongsNumber": "H5074",
+      "definition": "to retreat, flee, depart, wander, take flight",
+      "usage": "The same root describes scattered exiles and frightened birds. That the verb falls on a king's sleep is the joke and the glory of the book: the man who commands 127 provinces cannot command rest, because Someone has other plans for the dark."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Esther: For Such a Time. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s timing perfect (Gal 4:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Four Chapters With No Miracle and No Mention of God",
+      "body": "By the time we reach Esther 4, the trap has shut. Haman, the king's second-in-command, has bought a royal decree to destroy every Jew in the empire on a single appointed day. Mordecai sits in sackcloth at the gate. And the only person inside the palace who might intervene is a young queen who has kept her people a secret - and who has not been summoned to the king in thirty days. To approach him uninvited is a capital crime.\n\nMordecai's message to her is blunt. Do not imagine your palace will save you. If you stay silent, rescue will come from somewhere else, but you will not be part of it. And then the line the whole book is remembered for: \"And who knows if perhaps you have come to the kingdom for such a time as this?\"\n\nNotice how carefully that is said. Mordecai does not claim to read the mind of God. He says \"who knows.\" He says \"perhaps.\" He is certain deliverance will come - relief and deliverance for the Jews will arise from another place - but he holds the exact mechanism with open hands. That is what faith sounds like inside a book where God is never named: total confidence that He acts, total humility about how. Esther answers by calling a three-day fast and walking toward the throne with a sentence that has steadied frightened believers for twenty-five centuries: \"If I perish, I perish.\"",
+      "keyInsight": "Esther never names God, and never records a miracle. Its whole argument is made by coincidences stacked so high they collapse into providence - the claim that the God who is never mentioned is never absent.",
+      "content": "By the time we reach Esther 4, the trap has shut. Haman, the king's second-in-command, has bought a royal decree to destroy every Jew in the empire on a single appointed day. Mordecai sits in sackcloth at the gate. And the only person inside the palace who might intervene is a young queen who has kept her people a secret - and who has not been summoned to the king in thirty days. To approach him uninvited is a capital crime.\n\nMordecai's message to her is blunt. Do not imagine your palace will save you. If you stay silent, rescue will come from somewhere else, but you will not be part of it. And then the line the whole book is remembered for: \"And who knows if perhaps you have come to the kingdom for such a time as this?\"\n\nNotice how carefully that is said. Mordecai does not claim to read the mind of God. He says \"who knows.\" He says \"perhaps.\" He is certain deliverance will come - relief and deliverance for the Jews will arise from another place - but he holds the exact mechanism with open hands. That is what faith sounds like inside a book where God is never named: total confidence that He acts, total humility about how. Esther answers by calling a three-day fast and walking toward the throne with a sentence that has steadied frightened believers for twenty-five centuries: \"If I perish, I perish.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Phone Call That Came Too Early",
+      "body": "A friend of mine spent four years on a kidney transplant list and had stopped expecting the call. Then one ordinary Tuesday her phone rang at 5:40 in the morning - a stranger an hour away had died in an accident, and the match was almost perfect. What undid her, she told me later, was not the surgery. It was the timing. If that man had left his house ninety seconds earlier or later, she said, I would not be here.\n\nShe does not pretend to know why a stranger died so she could live. What she will say is this: \"I cannot prove God did it. But I cannot make myself believe it was nothing.\"\n\nThat is exactly the posture Esther asks of us. The book hands you no voice from heaven, no parted sea, no fire on a mountain. It hands you a sleepless night, a chronicle opened to the right page, a powerful man arriving in the courtyard at the precise wrong moment for himself. It refuses to draw the arrow for you. It lays the coincidences down, one after another, until honesty has to choose: nothing, or Someone.",
+      "connectionToTheme": "Esther works the way most of our lives work - not by visible miracles, but by a thread of timing so improbable that calling it luck starts to feel like the harder faith.",
+      "content": "A friend of mine spent four years on a kidney transplant list and had stopped expecting the call. Then one ordinary Tuesday her phone rang at 5:40 in the morning - a stranger an hour away had died in an accident, and the match was almost perfect. What undid her, she told me later, was not the surgery. It was the timing. If that man had left his house ninety seconds earlier or later, she said, I would not be here.\n\nShe does not pretend to know why a stranger died so she could live. What she will say is this: \"I cannot prove God did it. But I cannot make myself believe it was nothing.\"\n\nThat is exactly the posture Esther asks of us. The book hands you no voice from heaven, no parted sea, no fire on a mountain. It hands you a sleepless night, a chronicle opened to the right page, a powerful man arriving in the courtyard at the precise wrong moment for himself. It refuses to draw the arrow for you. It lays the coincidences down, one after another, until honesty has to choose: nothing, or Someone."
+    },
+    {
+      "type": "insight",
+      "heading": "The Hinge Is a Man Who Cannot Sleep",
+      "body": "Everything in this rescue turns on one verse, and it is the least dramatic verse in it. Esther has thrown her first banquet. Haman has gone home and built a gallows to hang Mordecai in the morning. The decree against the Jews still stands. And then: \"That night sleep escaped the king.\"\n\nThat is the whole hinge. Not an angel, not a dream, not a prophet. Insomnia. Xerxes calls for the imperial chronicles to be read aloud - the cure for a wakeful night - and the reader lands on the page recording how Mordecai once foiled an assassination plot and was never rewarded. So at dawn, when Haman arrives to ask permission to hang Mordecai, the king instead asks him how to honor a man the king delights in. Haman, sure it must be himself, designs a lavish public parade - and is ordered to lead Mordecai through the streets in it.\n\nStack the pieces. Esther delays her petition one day. Haman builds his gallows that night. The king cannot sleep. The scroll opens to Mordecai. Haman walks in at the one moment his pride will hang him. Remove any single coincidence and the Jews die. The author's quiet argument is unmistakable: the God who is never named is the One keeping a king awake. Providence here is not loud. It is a man who simply cannot close his eyes.",
+      "historicalContext": "Esther is set in Susa, the winter capital of the Persian Empire, during the reign of Xerxes I (Ahasuerus), who ruled 486 to 465 BC. The story unfolds among the Jews who did not return to Judah after the exile but remained scattered across the empire - which is why a book about hidden, dispersed believers, governed by a God who works behind the scenes rather than at Sinai, spoke so directly to them.",
+      "fascinatingFact": "Esther is read aloud each year at the feast of Purim, and Jewish tradition treats its 'reversals' as the signature of divine authorship: Haman builds a gallows for Mordecai and hangs on it himself; the decree to destroy the Jews becomes the day they are delivered; the man who plotted to be honored is made to honor his enemy. In Esther, the only thing overturned is the plot of the wicked.",
+      "content": "Everything in this rescue turns on one verse, and it is the least dramatic verse in it. Esther has thrown her first banquet. Haman has gone home and built a gallows to hang Mordecai in the morning. The decree against the Jews still stands. And then: \"That night sleep escaped the king.\"\n\nThat is the whole hinge. Not an angel, not a dream, not a prophet. Insomnia. Xerxes calls for the imperial chronicles to be read aloud - the cure for a wakeful night - and the reader lands on the page recording how Mordecai once foiled an assassination plot and was never rewarded. So at dawn, when Haman arrives to ask permission to hang Mordecai, the king instead asks him how to honor a man the king delights in. Haman, sure it must be himself, designs a lavish public parade - and is ordered to lead Mordecai through the streets in it.\n\nStack the pieces. Esther delays her petition one day. Haman builds his gallows that night. The king cannot sleep. The scroll opens to Mordecai. Haman walks in at the one moment his pride will hang him. Remove any single coincidence and the Jews die. The author's quiet argument is unmistakable: the God who is never named is the One keeping a king awake. Providence here is not loud. It is a man who simply cannot close his eyes."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Esther risks her life by entering the king's presence uninvited - 'if I perish, I perish' - and stands between her condemned people and the throne, so that they will not be destroyed.",
+      "modernApplication": "Most of our deliverances come the way Esther's did: not by a voice from the sky, but by a hidden hand arranging timing we only recognize in hindsight - a delayed flight, a chance conversation, a night you could not sleep. Faith is not pretending to see the hand; it is trusting it is there even in a book that never says the Name.",
+      "connectionPoint": "Esther steps into the throne room under penalty of death to plead for a people marked for destruction, and the king extends the golden scepter so that she may live and they may be spared. That is the shape of the whole gospel: an intercessor who enters the presence of the King, willing to perish, so that the condemned might receive life. Where Esther said 'if I perish, I perish' and was spared, Christ said the same and was not - He perished, and by perishing made the petition succeed.",
+      "newTestamentEcho": "What Esther foreshadows, Christ fulfills. She approached an earthly throne uninvited and risked death; Jesus is our great High Priest who 'always lives to intercede' for us (Hebrews 7:25), having entered not a copy of the true sanctuary but heaven itself, to appear in God's presence on our behalf (Hebrews 9:24). The book where God is never named points to the One who is the express image of God made flesh - the hidden providence of Esther becoming the visible Word of John 1:14."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your own story can you now see a 'sleepless night of the king' - a piece of timing you once called coincidence, that you would tell differently today?",
+      "additionalQuestions": [
+        "Mordecai said 'who knows' and 'perhaps' even while he was certain God would act. Where are you demanding to know how God will work before you are willing to trust that He will?",
+        "Esther moved toward the danger with 'if I perish, I perish.' What costly, frightening thing might you have been placed exactly here, now, to do?",
+        "If God's hand is most often hidden rather than dramatic, how might that change the way you read this ordinary week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You are the God who is at work even when I cannot see Your name on the page. Forgive me for calling Your providence luck, and for needing a miracle before I will trust You in the ordinary. Thank You for the true Esther, who entered the throne room willing to perish - and did - so that I would not. Where You have placed me for such a time as this, give me Esther's courage; where I am afraid of the cost, steady me with her words. And on the nights I cannot sleep, let me remember that You do not slumber, and that You are still turning the story toward rescue. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to accomplish. Sit quietly and trace backward one rescue or provision in your life you have always called coincidence. Tell it again slowly, this time as a place the hidden God was working, and let the retelling become thanks.",
+      "leavingAtCross": [
+        "The habit of calling God's providence 'luck' so I never have to thank anyone",
+        "The fear that paralyzes me at the threshold of a costly, right thing",
+        "The demand to know exactly how God will act before I will trust that He will"
+      ],
+      "receivingFromCross": [
+        "The peace of a God who is present even when He is not named",
+        "Esther's courage to say 'if I perish, I perish' and step toward the throne",
+        "An intercessor who entered the King's presence and gave His life so I would not perish"
+      ],
+      "content": "Today is a sabbath day - there is nothing to accomplish. Sit quietly and trace backward one rescue or provision in your life you have always called coincidence. Tell it again slowly, this time as a place the hidden God was working, and let the retelling become thanks."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Esther is the only book in the Bible that never names God. How does that absence actually become the book's argument rather than a problem?",
+        "Why is the king's sleepless night (6:1) the true hinge of the rescue, and what would have happened if any one of the coincidences around it had fallen differently?",
+        "How does Esther's willingness to perish before the throne point forward to Christ - and where does the pattern break, so that her people and ours could be saved?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one moment of timing in your life that you find hard to call mere coincidence, and why.",
+        "Mordecai held certainty about God and humility about method together. Talk about where you struggle to keep those two from pulling apart.",
+        "Name one frightening, costly thing each of you suspects you may have been placed 'for such a time as this' to do - and pray over it together."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Esther 4:14",
+          "text": "For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father’s house will perish. And who knows if perhaps you have come to the kingdom for such a time as this?”"
+        },
+        {
+          "reference": "Esther 7:10",
+          "text": "So they hanged Haman on the gallows he had prepared for Mordecai. Then the fury of the king subsided."
+        },
+        {
+          "reference": "Romans 8:28",
+          "text": "And we know that God works all things together for the good of those who love Him, who are called according to His purpose."
+        },
+        {
+          "reference": "Hebrews 7:25",
+          "text": "Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Esther 4-7",
+          "note": "Read the four chapters in one sitting and mark every coincidence of timing. Watch how the empty space where God's name should be becomes the most crowded space in the book."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esther (Hadassah)",
+      "title": "The Queen Who Stood Between a Throne and a Death Sentence",
+      "description": "A Jewish orphan raised by her cousin Mordecai among the exiles in Susa, made queen of Persia without the king knowing she was a Jew. When Haman's decree threatened her people, she fasted three days, entered the king's presence uninvited at the risk of her life, and exposed the plot - turning a sentence of annihilation into deliverance.",
+      "keyQuote": "After that, I will go to the king, even though it is against the law. And if I perish, I perish!",
+      "lessonForUs": "Esther was not placed in the palace by accident, and neither were you placed where you are. She shows us what faith looks like when God is silent and the cost is real: you do the right and frightening thing, you say 'if I perish, I perish,' and you trust the hidden hand to be at work even on the nights it gives no sign.",
+      "heading": "The Queen Who Stood Between a Throne and a Death Sentence"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2284,
+  "scriptureReference_full": "Esther 4-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Esther is the one book of the Hebrew canon in which the divine name does not appear; the reading of its 'reversals' and hidden providence reflects long-standing Jewish and Christian interpretive tradition associated with the feast of Purim."
+  ]
 }

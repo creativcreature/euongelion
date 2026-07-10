@@ -6,33 +6,184 @@
   "scriptureReference": "Daniel 7, 9",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 251"
+      "type": "scripture",
+      "reference": "Daniel 7:13-14; 9:25-26",
+      "translation": "BSB",
+      "emphasis": [
+        "One like the Son of Man",
+        "His dominion is an everlasting dominion",
+        "the Messiah will be cut off and will have nothing"
+      ],
+      "hebrewOriginal": "וְאַחֲרֵי הַשָּׁבֻעִים שִׁשִּׁים וּשְׁנַיִם יִכָּרֵת מָשִׁיחַ וְאֵין לוֹ",
+      "passage": "In my vision in the night I continued to watch, and I saw One like the Son of Man coming with the clouds of heaven. He approached the Ancient of Days and was led into His presence. And He was given dominion, glory, and kingship, that the people of every nation and language should serve Him. His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed. ... Know and understand this: From the issuance of the decree to restore and rebuild Jerusalem, until the Messiah, the Prince, there will be seven weeks and sixty-two weeks. It will be rebuilt with streets and a trench, but in times of distress. Then after the sixty-two weeks the Messiah will be cut off and will have nothing."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 7, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 7, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יִכָּרֵת",
+      "transliteration": "yikkareth",
+      "pronunciation": "yik-kah-RAYT",
+      "meaning": "he will be cut off, severed, killed",
+      "rootMeaning": "From the root karath, to cut. The same verb is used for felling a tree, for severing a covenant by cutting an animal in two, and for the death penalty of being cut off from one's people. It is a violent word: not a slow fading but a clean, decisive severing.",
+      "usageNote": "In Daniel 9:26 the Anointed One (mashiach) is the subject of yikkareth - the Messiah Himself is the one cut off. The phrase that follows, ve'ein lo, literally reads 'and there is nothing to Him' or 'and He has nothing' - stripped, dispossessed, left with empty hands.",
+      "wordByWord": [
+        {
+          "word": "וְאַחֲרֵי",
+          "transliteration": "ve'acharei",
+          "meaning": "and after - placing the cutting off at a fixed point in time, not the end of all things"
+        },
+        {
+          "word": "מָשִׁיחַ",
+          "transliteration": "mashiach",
+          "meaning": "anointed one, Messiah - the very word that becomes Christ in Greek"
+        },
+        {
+          "word": "יִכָּרֵת",
+          "transliteration": "yikkareth",
+          "meaning": "he will be cut off, severed by death"
+        },
+        {
+          "word": "וְאֵין לוֹ",
+          "transliteration": "ve'ein lo",
+          "meaning": "and He has nothing - dispossessed, with nothing left to Him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּרַת בְּרִית",
+          "reference": "karath berith, to 'cut a covenant' (Genesis 15:18). A covenant in Israel was made by cutting; here the Anointed One is Himself the one cut, which is how the new covenant is made (Luke 22:20)."
+        },
+        {
+          "word": "נִגְזַר",
+          "reference": "nigzar, 'cut off,' the verb Isaiah uses of the Servant in Isaiah 53:8 - 'He was cut off from the land of the living.' Daniel and Isaiah describe the same death with the same image."
+        }
+      ],
+      "strongsNumber": "H3772",
+      "definition": "to cut off, cut down, sever; to be killed or destroyed; to cut (a covenant)",
+      "usage": "The terror and the comfort of Daniel 9:26 live in this one verb. The Messiah is not defeated by accident or overpowered by enemies; He is cut off at an appointed time, and the cutting is the point - the severing of the one accomplishes the atoning of the many promised one verse earlier."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel: Messiah Cut Off. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the cut-off Anointed (Dan 9:26).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Visions, One Christ",
+      "body": "Daniel was a man who saw things at night. Carried into Babylon as a boy, he spent a long life in the courtrooms of foreign kings, and at the edges of that life God gave him visions that reach past every empire he served. Chapter 7 and chapter 9 hold two of them, and at first they seem to pull in opposite directions.\n\nIn chapter 7 Daniel watches the night sky tear open. Thrones are set in place. The Ancient of Days takes His seat, His clothing white as snow, His throne flaming with fire. And then a figure comes - 'One like the Son of Man, coming with the clouds of heaven.' He is led into the presence of the Ancient of Days, and He is given what no beast in the vision could keep: dominion, glory, and kingship. 'His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed.' This is exaltation. This is a coronation no death can touch.\n\nThen chapter 9. Daniel is on his knees, confessing his people's sin, when the angel Gabriel comes with an answer that is not about Israel's return from exile alone but about something further off. Seventy weeks are decreed, Gabriel says - decreed to finish transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. And at the center of that span stands a single line: 'after the sixty-two weeks the Messiah will be cut off and will have nothing.' This is not coronation. This is a killing.\n\nHold the two visions side by side and the tension is sharp. One Anointed One reigns forever; one Anointed One is cut off and left with nothing. Daniel does not resolve it. He writes both down and lets them stand, two true things that should not both be true of the same person. The book closes without telling us how a King whose kingdom can never be destroyed could also be severed from the land of the living.",
+      "keyInsight": "Daniel 7 and Daniel 9 describe the same figure from opposite ends: a Son of Man enthroned forever, and an Anointed One cut off with nothing. The book sets both down and leaves the contradiction open.",
+      "content": "Daniel was a man who saw things at night. Carried into Babylon as a boy, he spent a long life in the courtrooms of foreign kings, and at the edges of that life God gave him visions that reach past every empire he served. Chapter 7 and chapter 9 hold two of them, and at first they seem to pull in opposite directions.\n\nIn chapter 7 Daniel watches the night sky tear open. Thrones are set in place. The Ancient of Days takes His seat, His clothing white as snow, His throne flaming with fire. And then a figure comes - 'One like the Son of Man, coming with the clouds of heaven.' He is led into the presence of the Ancient of Days, and He is given what no beast in the vision could keep: dominion, glory, and kingship. 'His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed.' This is exaltation. This is a coronation no death can touch.\n\nThen chapter 9. Daniel is on his knees, confessing his people's sin, when the angel Gabriel comes with an answer that is not about Israel's return from exile alone but about something further off. Seventy weeks are decreed, Gabriel says - decreed to finish transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. And at the center of that span stands a single line: 'after the sixty-two weeks the Messiah will be cut off and will have nothing.' This is not coronation. This is a killing.\n\nHold the two visions side by side and the tension is sharp. One Anointed One reigns forever; one Anointed One is cut off and left with nothing. Daniel does not resolve it. He writes both down and lets them stand, two true things that should not both be true of the same person. The book closes without telling us how a King whose kingdom can never be destroyed could also be severed from the land of the living."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Title He Chose for Himself",
+      "body": "Centuries after Daniel, a man stood on trial for His life before the high priest of Israel. The charges had not stuck. Witnesses contradicted each other. And then the high priest asked the question that mattered: 'Are You the Christ, the Son of the Blessed One?'\n\nUp to that point the prisoner had stayed silent. Now He answered with a sentence stitched out of Daniel: 'I am, and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.' Every man in that room knew the source. He had just claimed to be the figure Daniel watched come into the presence of the Ancient of Days - the one given everlasting dominion. He had claimed the throne of chapter 7.\n\nAnd it was that claim that got Him cut off. The high priest tore his robes; the verdict was death. Within hours the man who said He was the Son of Man coming on the clouds was the Anointed One with nothing - stripped of His clothes, abandoned by His friends, severed from the land of the living outside the city wall. He spoke Daniel 7 over Himself, and they answered with Daniel 9. The trial joined the two visions in a single afternoon.",
+      "connectionToTheme": "Jesus deliberately took Daniel 7's 'Son of Man' as His own title under oath - and that claim led directly to His being 'cut off,' fulfilling Daniel 9 in the same hours.",
+      "content": "Centuries after Daniel, a man stood on trial for His life before the high priest of Israel. The charges had not stuck. Witnesses contradicted each other. And then the high priest asked the question that mattered: 'Are You the Christ, the Son of the Blessed One?'\n\nUp to that point the prisoner had stayed silent. Now He answered with a sentence stitched out of Daniel: 'I am, and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.' Every man in that room knew the source. He had just claimed to be the figure Daniel watched come into the presence of the Ancient of Days - the one given everlasting dominion. He had claimed the throne of chapter 7.\n\nAnd it was that claim that got Him cut off. The high priest tore his robes; the verdict was death. Within hours the man who said He was the Son of Man coming on the clouds was the Anointed One with nothing - stripped of His clothes, abandoned by His friends, severed from the land of the living outside the city wall. He spoke Daniel 7 over Himself, and they answered with Daniel 9. The trial joined the two visions in a single afternoon."
+    },
+    {
+      "type": "insight",
+      "heading": "Cut Off For, Not Cut Off From",
+      "body": "Look closely at the order of the words in Daniel 9. Verse 24 lists what the seventy weeks are decreed to accomplish: to finish transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. Then verse 26 names the means: 'the Messiah will be cut off and will have nothing.' The atonement comes first in the announcement; the cutting off comes after. The two are not separate events sitting near each other - the cutting off is how the atonement is made.\n\nThis is the seam where Daniel and Isaiah meet. Isaiah had written of a Servant who 'was cut off from the land of the living,' and the next line tells you why: 'He was stricken for the transgression of My people' (Isaiah 53:8). Daniel uses the same image and sets it beside the same purpose. The Messiah is not cut off because He failed, and not cut off in His own place. He is cut off for transgression that is not His own, so that the everlasting righteousness can be brought in for people who had none.\n\nThis is why the two visions are not finally a contradiction. The Son of Man receives an indestructible kingdom in chapter 7 precisely because the Anointed One was willing to be destroyed in chapter 9. The throne and the cross are the same story told from two ends. He does not reign instead of dying; He reigns through having died. The dominion that 'will not pass away' is held by the one who, for a span of hours, had nothing.",
+      "historicalContext": "Daniel was written for a people in exile, who knew what it was to be cut off - cut off from their land, their temple, their king. Chapter 9 opens with Daniel reading Jeremiah's promise that the exile would last seventy years, and praying it home. Gabriel's answer stretches the horizon: beyond the seventy years of exile lie seventy 'weeks' of years, and beyond Israel's restoration lies the deeper exile - the estrangement from God that only an atoning death can end.",
+      "fascinatingFact": "The Aramaic phrase in Daniel 7:13, bar enash, simply means 'a son of man' - a human being. What makes the vision startling is the company: this human figure is brought into the very presence of the Ancient of Days and given worship from 'every nation and language,' worship the Old Testament reserves for God alone. Daniel sees a man who is given what only God should receive, and never tells us how that can be.",
+      "content": "Look closely at the order of the words in Daniel 9. Verse 24 lists what the seventy weeks are decreed to accomplish: to finish transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness. Then verse 26 names the means: 'the Messiah will be cut off and will have nothing.' The atonement comes first in the announcement; the cutting off comes after. The two are not separate events sitting near each other - the cutting off is how the atonement is made.\n\nThis is the seam where Daniel and Isaiah meet. Isaiah had written of a Servant who 'was cut off from the land of the living,' and the next line tells you why: 'He was stricken for the transgression of My people' (Isaiah 53:8). Daniel uses the same image and sets it beside the same purpose. The Messiah is not cut off because He failed, and not cut off in His own place. He is cut off for transgression that is not His own, so that the everlasting righteousness can be brought in for people who had none.\n\nThis is why the two visions are not finally a contradiction. The Son of Man receives an indestructible kingdom in chapter 7 precisely because the Anointed One was willing to be destroyed in chapter 9. The throne and the cross are the same story told from two ends. He does not reign instead of dying; He reigns through having died. The dominion that 'will not pass away' is held by the one who, for a span of hours, had nothing."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Daniel saw two things that could not both be true of one man: a Son of Man given everlasting dominion (Daniel 7:14), and an Anointed One cut off with nothing (Daniel 9:26).",
+      "modernApplication": "We tend to want a God who is only one of these - a triumphant King who never suffers, or a tender sufferer who never reigns. Daniel refuses to let us choose. The Christ who meets us is enthroned and was crucified, and He meets the parts of us that are both still hoping for vindication and still bleeding from a wound.",
+      "connectionPoint": "What Daniel held open as a tension, the Gospel closes as a person. The everlasting kingdom of chapter 7 is purchased by the cutting off of chapter 9; the crucified Messiah and the reigning Son of Man are one Jesus, in that order - first the cross, then the clouds.",
+      "newTestamentEcho": "At His trial Jesus took Daniel 7 onto His own lips: 'you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven' (Mark 14:62). John saw the rest of it come true: 'Behold, He is coming with the clouds, and every eye will see Him - even those who pierced Him' (Revelation 1:7). The pierced one and the coming one are the same."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which Christ have you been carrying lately - only the reigning King, or only the suffering Savior? What changes when you hold both at once?",
+      "additionalQuestions": [
+        "Daniel wrote down two visions he could not reconcile and trusted God with the gap. Where are you being asked to hold a tension open rather than force it shut?",
+        "The Messiah was 'cut off and had nothing' so that you would not finally be cut off. Where in your life do you most need to know you will not be severed from God?",
+        "Jesus claimed the throne of Daniel 7 in the very moment that sent Him to the cross of Daniel 9. What might faithfulness cost you that also leads somewhere you cannot yet see?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, Son of Man and Anointed One, You did not stay on the throne where Daniel saw You. You came down into the cutting off, into the place where there was nothing left to You, and You did it for transgression that was mine and not Yours. Thank You that You were severed so that I would not be. When I am tempted to want only Your power or only Your tenderness, give me the whole of You - crucified and reigning. Hold open in me the things I cannot yet resolve, the way Daniel held open his visions, and let me trust the King who first had nothing. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read Daniel 7:13-14 and Daniel 9:24-26 slowly, side by side, and write down the one line from each that you most need to hear right now. Carry both into your day - the dominion that will not pass away, and the Messiah who was cut off for you.",
+      "leavingAtCross": [
+        "The half-Christ I prefer - a King with no wounds, or a Savior with no crown",
+        "The fear that following Him faithfully will only ever cost and never lead anywhere",
+        "The lie that my failures have finally cut me off from God"
+      ],
+      "receivingFromCross": [
+        "A Savior who was cut off with nothing so that I would never be severed from Him",
+        "A King whose dominion can never pass away or be destroyed",
+        "The freedom to hold open the tensions I cannot resolve, trusting the God who reconciled the deepest one in His own Son"
+      ],
+      "content": "Today, read Daniel 7:13-14 and Daniel 9:24-26 slowly, side by side, and write down the one line from each that you most need to hear right now. Carry both into your day - the dominion that will not pass away, and the Messiah who was cut off for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew verb yikkareth ('cut off') add to your understanding of Daniel 9:26 that the English alone might miss?",
+        "How does the order of Daniel 9:24-26 - atonement named first, the cutting off named after - show that the Messiah's death is the means of the atonement, not its failure?",
+        "In what way do Daniel 7 (the enthroned Son of Man) and Daniel 9 (the Anointed One cut off) describe the same person, and where does Scripture join them?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a tension in your faith you have tried to force shut too quickly. What would it look like to hold it open the way Daniel held his two visions?",
+        "Share which side of Christ you lean toward - the reigning King or the suffering Savior - and why you think you lean that way.",
+        "Ask each other: where do you most need to hear that you will not be cut off from God, and how can we remind each other of that this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 7:9-10",
+          "text": "As I continued to watch, thrones were set in place, and the Ancient of Days took His seat. His clothing was white as snow, and the hair of His head was like pure wool. His throne was flaming with fire, and its wheels were all ablaze. A river of fire was flowing, coming out from His presence. Thousands upon thousands attended Him, and myriads upon myriads stood before Him. The court was convened, and the books were opened."
+        },
+        {
+          "reference": "Daniel 7:27",
+          "text": "Then the sovereignty, dominion, and greatness of the kingdoms under all of heaven will be given to the people, the saints of the Most High. His kingdom will be an everlasting kingdom, and all rulers will serve and obey Him."
+        },
+        {
+          "reference": "Isaiah 53:8",
+          "text": "By oppression and judgment He was taken away, and who can recount His descendants? For He was cut off from the land of the living; He was stricken for the transgression of My people."
+        },
+        {
+          "reference": "Mark 14:62",
+          "text": "\"I am,\" said Jesus, \"and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.\""
+        },
+        {
+          "reference": "Revelation 1:7",
+          "text": "Behold, He is coming with the clouds, and every eye will see Him - even those who pierced Him. And all the tribes of the earth will mourn because of Him. So shall it be! Amen."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 7 and 9",
+          "note": "Read the two visions in one sitting, marking every word about the Son of Man in chapter 7 and every word about the Anointed One in chapter 9. Notice what each vision gives the figure, and what each takes away."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Exile Who Saw the Son of Man",
+      "description": "Taken to Babylon as a young captive around 605 BC, Daniel served in the courts of Babylonian and Persian kings across a lifetime in exile. He is remembered for the lions' den, but the second half of his book turns to visions that look past every empire he served. Confessing his people's sin in chapter 9, he received from the angel Gabriel the prophecy of the seventy weeks and the Anointed One who would be cut off; in chapter 7 he had already seen the Son of Man come on the clouds to receive an everlasting kingdom. He held both, and recorded both, without being shown how they meet.",
+      "keyQuote": "I saw One like the Son of Man coming with the clouds of heaven.",
+      "lessonForUs": "Daniel teaches us to receive what God reveals even when we cannot yet reconcile it - to write down both the throne and the cutting off, and to trust that the God who gave both will one day join them. In Christ, He did.",
+      "heading": "The Exile Who Saw the Son of Man"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2608,
+  "scriptureReference_full": "Daniel 7:13-14; 9:24-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (yikkareth, root karath H3772; mashiach) reflects standard lexical sources. The link between Daniel 9:26 and Isaiah 53:8 rests on the shared imagery of the Anointed One/Servant being 'cut off' for the transgression of others."
+  ]
 }

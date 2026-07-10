@@ -1,38 +1,194 @@
 {
   "day": 86,
-  "title": "I will establish a throne forever",
-  "teaser": "Day 86 of Bible 365 — 2 Samuel 7",
+  "title": "You wanted to build Him a house",
+  "teaser": "David offers God a cedar house. God answers by promising David a house no axe could ever fell — a throne that outlives every king who sits on it.",
   "framework": "2 Samuel 7 — Davidic covenant",
   "scriptureReference": "2 Samuel 7",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 86"
+      "type": "scripture",
+      "reference": "2 Samuel 7:1-2, 11-13, 16",
+      "translation": "BSB",
+      "emphasis": [
+        "a house of cedar",
+        "He Himself will establish a house for you",
+        "the throne of his kingdom forever",
+        "established forever"
+      ],
+      "hebrewOriginal": "וְנֶאְמַן בֵּיתְךָ וּמַמְלַכְתְּךָ עַד־עוֹלָם לְפָנֶיךָ כִּסְאֲךָ יִהְיֶה נָכוֹן עַד־עוֹלָם",
+      "passage": "After the king had settled into his palace and the LORD had given him rest from all his enemies around him, he said to Nathan the prophet, \"Here I am, living in a house of cedar, while the ark of God remains in a tent.\" ... \"I will give you rest from all your enemies. The LORD declares to you that He Himself will establish a house for you. And when your days are fulfilled and you rest with your fathers, I will raise up your descendant after you, who will come from your own body, and I will establish his kingdom. He will build a house for My Name, and I will establish the throne of his kingdom forever. ... Your house and kingdom will endure forever before Me, and your throne will be established forever.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Samuel 7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Samuel 7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בַּיִת",
+      "transliteration": "bayit",
+      "pronunciation": "BAH-yit",
+      "meaning": "house, household, dynasty, temple",
+      "rootMeaning": "Bayit is the ordinary word for a building you live in - four walls and a roof. But the same word stretches to mean the people inside the walls (a household), and stretches further to mean a family that outlasts the building (a dynasty). One word holds the structure, the family, and the future.",
+      "usageNote": "The whole chapter turns on this one word said two ways. David wants to build the LORD a bayit of cedar - a temple. The LORD answers that He will build David a bayit instead - not a building, but a line of descendants on a throne. The gift David offered upward is returned, immeasurably larger, coming down.",
+      "wordByWord": [
+        {
+          "word": "וְנֶאְמַן",
+          "transliteration": "vene'eman",
+          "meaning": "and it will be made firm, faithful, established - the root of 'amen'"
+        },
+        {
+          "word": "בֵּיתְךָ",
+          "transliteration": "beitcha",
+          "meaning": "your house, your dynasty"
+        },
+        {
+          "word": "וּמַמְלַכְתְּךָ",
+          "transliteration": "umamlachtecha",
+          "meaning": "and your kingdom"
+        },
+        {
+          "word": "עַד־עוֹלָם",
+          "transliteration": "ad-olam",
+          "meaning": "forever, to the vanishing point of time"
+        },
+        {
+          "word": "כִּסְאֲךָ",
+          "transliteration": "kis'acha",
+          "meaning": "your throne"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בֵּית־לֶחֶם",
+          "reference": "Beit-lechem (Bethlehem) means 'house of bread' - the town of David's birth, and a thousand years later, the birthplace of the descendant in whom this promise of a forever house finally stood up (Micah 5:2; Luke 2:4)."
+        }
+      ],
+      "strongsNumber": "H1004",
+      "definition": "a house; by extension a household, family, lineage, or dynasty; also a temple",
+      "usage": "When God says 'He Himself will establish a house for you,' the verb does the tender work: David does not build this house, and David cannot guard it. It is established for him, by Another, while he sleeps."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Davidic covenant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the eternal throne (Luke 1:32-33).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The King Who Wanted to Give God a Roof",
+      "body": "The chapter opens on a rare evening of quiet. The wars are over for now. David has a palace - cedar walls, the best timber the ancient world could buy, hauled down from the forests of Lebanon. And as he settles into it, something starts to bother him. He says it out loud to Nathan the prophet: \"Here I am, living in a house of cedar, while the ark of God remains in a tent.\"\n\nIt is a good impulse, and an honest one. The presence of God still lived in the fabric tabernacle Israel had carried through the wilderness, while the king slept under polished wood. David wants to fix the imbalance. He wants to build God a house worthy of God. Nathan, hearing only the goodness of it, says go ahead: \"Go and do all that is in your heart, for the LORD is with you.\"\n\nBut that night the word of the LORD comes to Nathan and gently overturns the whole plan. The first thing God does is ask a question that reframes everything: \"Are you the one to build for Me a house to dwell in?\" God reminds David that He has never once complained about the tent. He has moved with His people, journeyed with them, gone wherever they went. The God of Israel is not a deity who needs to be housed. He is the One who houses.",
+      "keyInsight": "David sets out to do something for God and is quietly stopped - not because the wish was wrong, but because David had the direction of the gift backwards.",
+      "content": "The chapter opens on a rare evening of quiet. The wars are over for now. David has a palace - cedar walls, the best timber the ancient world could buy, hauled down from the forests of Lebanon. And as he settles into it, something starts to bother him. He says it out loud to Nathan the prophet: \"Here I am, living in a house of cedar, while the ark of God remains in a tent.\"\n\nIt is a good impulse, and an honest one. The presence of God still lived in the fabric tabernacle Israel had carried through the wilderness, while the king slept under polished wood. David wants to fix the imbalance. He wants to build God a house worthy of God. Nathan, hearing only the goodness of it, says go ahead: \"Go and do all that is in your heart, for the LORD is with you.\"\n\nBut that night the word of the LORD comes to Nathan and gently overturns the whole plan. The first thing God does is ask a question that reframes everything: \"Are you the one to build for Me a house to dwell in?\" God reminds David that He has never once complained about the tent. He has moved with His people, journeyed with them, gone wherever they went. The God of Israel is not a deity who needs to be housed. He is the One who houses."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Gift Returned, Larger",
+      "body": "There is a moment some parents know. A small child, four or five years old, decides to buy the parent a birthday present. The child has no money, so the dollars come from the parent's own wallet, pressed quietly into a little hand at the store. The child picks something, wraps it badly, and presents it glowing with pride. And the parent receives it as if it were the rarest thing on earth - because the love behind it is real, even though the resources were never the child's to begin with.\n\nDavid is the child at the store. He wants to give God a house, forgetting for a moment that the cedar, the kingdom, the very breath to want it - all of it was given to him first. God does not scold him for this. But He will not let the evening end with David thinking he is the giver.\n\nSo God reverses it. You want to build Me a house? He says, in effect. Sit down. I am going to build you one. And the house God describes is nothing David could have hammered together: a line of sons on a throne, a kingdom that does not end, His own fatherhood over David's heir. The little gift David offered up is handed back to him a thousand times larger, and this time it is unmistakably grace.",
+      "connectionToTheme": "We come to God with what we want to do for Him, and discover He has already been the one doing - and the gift He gives back dwarfs anything we brought.",
+      "content": "There is a moment some parents know. A small child, four or five years old, decides to buy the parent a birthday present. The child has no money, so the dollars come from the parent's own wallet, pressed quietly into a little hand at the store. The child picks something, wraps it badly, and presents it glowing with pride. And the parent receives it as if it were the rarest thing on earth - because the love behind it is real, even though the resources were never the child's to begin with.\n\nDavid is the child at the store. He wants to give God a house, forgetting for a moment that the cedar, the kingdom, the very breath to want it - all of it was given to him first. God does not scold him for this. But He will not let the evening end with David thinking he is the giver.\n\nSo God reverses it. You want to build Me a house? He says, in effect. Sit down. I am going to build you one. And the house God describes is nothing David could have hammered together: a line of sons on a throne, a kingdom that does not end, His own fatherhood over David's heir. The little gift David offered up is handed back to him a thousand times larger, and this time it is unmistakably grace."
+    },
+    {
+      "type": "insight",
+      "heading": "The Word That Would Not Fit Inside Solomon",
+      "body": "Read God's promise slowly and one word starts to strain against its own frame: forever. \"I will establish the throne of his kingdom forever.\" \"Your house and kingdom will endure forever before Me, and your throne will be established forever.\"\n\nIn the near term, the descendant is Solomon. He is the one who will build the temple of stone, the house for God's Name that David only dreamed of. That part of the promise comes true within a generation. But Solomon dies. So does his son, and his son, and eventually the throne of David falls altogether - the city burns, the last king is led away in chains, and for centuries no son of David sits on any throne at all. The kingdom that was promised forever appears, from the ground, to simply end.\n\nWhich means the word forever was always reaching past the men it landed on. Solomon's temple was real but temporary. Solomon's reign was glorious but mortal. The promise was larger than any single son could carry. From the night Nathan spoke it, Israel held a covenant whose own language demanded a king it had not yet seen - a son of David whose throne death could not vacate. The faithful learned to wait. The prophets learned to sing about it. The word forever became a question the whole rest of the Old Testament keeps asking: who is the king this was really about?",
+      "historicalContext": "Nathan's oracle is dated to roughly 1000 BC, near the height of David's reign in Jerusalem. It became the foundation of what scholars call the Davidic covenant - the conviction, carried through the monarchy and deep into exile, that God had bound Himself irrevocably to David's line. When the throne fell in 586 BC, this promise did not die with it; it migrated into hope. Psalms 89 and 132 wrestle with it openly, and the prophets reach for it again and again (Isaiah 9:7; Jeremiah 23:5; Ezekiel 37:24-25).",
+      "fascinatingFact": "The single word 'forever' (ad-olam) appears three times in the span of these few verses, hammered in like a nail. Hebrew rarely repeats this way by accident. The triple insistence is the text's own way of telling the reader that the promise will outrun every visible kingdom - that its fulfillment lies somewhere beyond the page where it was written.",
+      "content": "Read God's promise slowly and one word starts to strain against its own frame: forever. \"I will establish the throne of his kingdom forever.\" \"Your house and kingdom will endure forever before Me, and your throne will be established forever.\"\n\nIn the near term, the descendant is Solomon. He is the one who will build the temple of stone, the house for God's Name that David only dreamed of. That part of the promise comes true within a generation. But Solomon dies. So does his son, and his son, and eventually the throne of David falls altogether - the city burns, the last king is led away in chains, and for centuries no son of David sits on any throne at all. The kingdom that was promised forever appears, from the ground, to simply end.\n\nWhich means the word forever was always reaching past the men it landed on. Solomon's temple was real but temporary. Solomon's reign was glorious but mortal. The promise was larger than any single son could carry. From the night Nathan spoke it, Israel held a covenant whose own language demanded a king it had not yet seen - a son of David whose throne death could not vacate. The faithful learned to wait. The prophets learned to sing about it. The word forever became a question the whole rest of the Old Testament keeps asking: who is the king this was really about?"
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God promises David a son whose throne will be established forever, and calls Himself that son's Father: \"I will be his Father, and he will be My son.\" The near fulfillment is Solomon; the word forever waits for someone Solomon could only foreshadow.",
+      "modernApplication": "We still come to God mostly as builders - measuring what we can offer Him, what we can construct for Him, what our effort might earn. The Davidic covenant interrupts that posture at the root. The throne that matters was never one we could build. It was given, established by God Himself, and finally filled by a Son we could only receive.",
+      "connectionPoint": "Israel carried this promise through centuries of waiting, singing it in the psalms, reaching for it in the prophets, holding the throne empty and the word 'forever' unspent.",
+      "newTestamentEcho": "When the angel Gabriel comes to a young woman in Nazareth, he speaks 2 Samuel 7 back to her almost word for word: \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end\" (Luke 1:32-33). The forever throne of Nathan's oracle had been waiting a thousand years for an occupant who would not die - and now it had one. The Son who is also God's Son, born in David's town of Bethlehem, raised from a borrowed tomb so that death could not unseat Him, is the house God promised to build all along. David offered a roof of cedar; God answered with a King who would never need a successor."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you, like David, trying to build something for God - and what might change if you let Him show you what He has already been building for you?",
+      "additionalQuestions": [
+        "What good intention have you assumed God wanted, only to sense Him gently redirecting it? How did you respond?",
+        "David sat down before the LORD and asked, 'Who am I?' When was the last time the size of God's grace made you sit down rather than get to work?",
+        "The promise hung unfulfilled for a thousand years. What promise of God are you being asked to hold and wait on right now, before you can see how it ends?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "humble-receiving",
+      "prayerText": "Lord, like David I keep arriving with my hands full of what I want to build for You - my plans, my proving, my house of cedar. Forgive me for forgetting that every plank of it was Yours first. Teach me to sit down before You the way David did and simply ask, \"Who am I, that You have brought me this far?\" Thank You that the throne I could never build, You established Yourself - and that the King who sits on it forever came not to be served by my building, but to build me into His own house. Let that be enough tonight. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "2 Samuel 7:18"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before you reach for anything you mean to do for God this week, sit down first - the way David did - and name three things God has already built for you that you did not earn and could not have made. Let the giving start with receiving.",
+      "leavingAtCross": [
+        "The quiet assumption that I am God's benefactor - that He needs what I bring",
+        "The restlessness that cannot receive a gift without immediately repaying it",
+        "The fear that a promise unfulfilled in my timing is a promise that failed"
+      ],
+      "receivingFromCross": [
+        "A house I did not build and cannot lose, established by God Himself",
+        "A King whose throne death could not empty, born of David's line for me",
+        "The freedom to sit down before God in wonder instead of always standing to work"
+      ],
+      "content": "Before you reach for anything you mean to do for God this week, sit down first - the way David did - and name three things God has already built for you that you did not earn and could not have made. Let the giving start with receiving."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does the single Hebrew word bayit ('house') hold the whole chapter together - what does it mean when David says it, and what does it mean when God says it back?",
+        "Why does the word 'forever' strain against Solomon as its fulfillment? What does that tension point the reader to expect?",
+        "What is the significance of David's response - going in, sitting down before the LORD, and asking 'Who am I?' - rather than getting up to build?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'house of cedar' you have been trying to build for God - one way you have been measuring your worth by what you offer Him.",
+        "Talk about the difference between serving God as a benefactor and receiving from God as a child. Which posture comes more naturally to you, and why?",
+        "Ask each other: what promise of God are you holding right now whose fulfillment you cannot yet see - and how are you waiting on it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 89:3-4",
+          "text": "I have made a covenant with My chosen one, I have sworn to David My servant: I will establish your offspring forever and build up your throne for all generations."
+        },
+        {
+          "reference": "Isaiah 9:7",
+          "text": "Of the increase of His government and peace there will be no end. He will reign on the throne of David and over his kingdom, to establish and sustain it with justice and righteousness from that time and forevermore."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end."
+        },
+        {
+          "reference": "Acts 2:30",
+          "text": "But he was a prophet and knew that God had promised him on oath that He would place one of his descendants on his throne."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Samuel 7",
+          "note": "Read the whole chapter in one sitting, watching the word 'house' move from David's offer (vv. 1-2) to God's reversal (vv. 11-16) to David's stunned response (vv. 18-29)."
+        },
+        {
+          "type": "book",
+          "title": "Psalm 89",
+          "note": "A long meditation on this exact covenant - first celebrating it, then wrestling with God when the throne seems to have fallen. The honest companion to a promise that takes a thousand years to keep."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Shepherd-King Who Was Given a House",
+      "description": "The second king of Israel, taken from tending sheep to ruling a nation. By 2 Samuel 7 his wars have quieted and he reigns from Jerusalem in a cedar palace. His instinct to honor God by building Him a temple is genuine - but God redirects it, promising instead to build David an everlasting dynasty. David's response is not protest but worship: he goes in, sits down before the LORD, and marvels. He is remembered as the man after God's own heart, and the king from whose line the promised forever-King would come.",
+      "keyQuote": "Who am I, O Lord GOD, and what is my house, that You have brought me this far?",
+      "lessonForUs": "David teaches us how to receive grace too large to repay: not by rushing back to work, but by sitting down in wonder. The right answer to a gift that dwarfs you is not productivity - it is worship.",
+      "heading": "The Shepherd-King Who Was Given a House"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2393,
+  "scriptureReference_full": "2 Samuel 7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (bayit, H1004) reflects standard lexical sources; the dating of Nathan's oracle (c. 1000 BC) and the fall of the throne (586 BC) follow conventional biblical chronology.",
+    "The 'house of bread' etymology of Bethlehem (beit-lechem) and its link to David and the Messiah reflects Micah 5:2 read alongside Luke 2:4."
+  ]
 }

@@ -1,38 +1,187 @@
 {
   "day": 350,
-  "title": "1 Corinthians: Love + Resurrection — Day 7 — Sabbath",
-  "teaser": "Day 350 of Bible 365 — 1 Cor 13, 15",
+  "title": "The Only Thing That Walks Out of the Grave",
+  "teaser": "Paul ends his hardest letter with love that never fails and a Christ who was raised first. The two chapters are one promise: Love stepped out of the tomb ahead of us.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 350"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8-13; 15:20, 54-57",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "then we shall see face to face",
+        "the firstfruits of those who have fallen asleep",
+        "Death has been swallowed up in victory"
+      ],
+      "greekOriginal": "ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed. For we know in part and we prophesy in part, but when the perfect comes, the partial passes away. ... Now we see but a dim reflection as in a mirror; then we shall see face to face. Now I know in part; then I shall know fully, even as I am fully known. And now these three remain: faith, hope, and love; but the greatest of these is love. ... But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep. ... When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: \"Death has been swallowed up in victory.\" \"Where, O Death, is your victory? Where, O Death, is your sting?\" The sting of death is sin, and the power of sin is the law. But thanks be to God, who gives us the victory through our Lord Jesus Christ!"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀπαρχή",
+      "transliteration": "aparchē",
+      "pronunciation": "ah-par-KHAY",
+      "meaning": "firstfruits; the first portion of a harvest offered to God",
+      "rootMeaning": "From apo (from) and archē (beginning). Literally the from-the-beginning portion - the first sheaf cut from a field, lifted up before God as a pledge that the whole crop behind it is coming.",
+      "usageNote": "Paul does not call the risen Christ the only fruit of resurrection. He calls Him the firstfruits. In Israel a farmer brought the first ripe sheaf to the priest while the rest of the harvest still stood green in the field (Leviticus 23:10-11). The offering was an act of confidence: what God has begun in this one handful, He will finish in the whole field. To say Christ is aparchē is to say His empty tomb is the first sheaf of a harvest that has our names on it.",
+      "wordByWord": [
+        {
+          "word": "ἀπό",
+          "transliteration": "apo",
+          "meaning": "from, out of"
+        },
+        {
+          "word": "ἀρχή",
+          "transliteration": "archē",
+          "meaning": "beginning, first, origin"
+        },
+        {
+          "word": "ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love - self-giving, covenant love, the love God is"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, not at any time"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, collapses, fails, falls to the ground"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πίπτει / πίπτω",
+          "reference": "The verb behind 'never fails' (piptei) is the ordinary word for falling - a building falls, a soldier falls, a leaf falls. Paul piles up things that will fall: prophecy ceases, tongues are stilled, knowledge is dismissed. Then love - the one thing that does not fall. The same falling-word will reappear in chapter 15, where what was sown perishable falls into the ground and is raised imperishable."
+        }
+      ],
+      "strongsNumber": "G536",
+      "definition": "firstfruits; the first installment that guarantees the rest of the harvest",
+      "usage": "Across the New Testament aparchē is a word of pledge: Christ the firstfruits of the dead (1 Corinthians 15:20), the Spirit as firstfruits of our redemption (Romans 8:23). It always means the same thing - the first piece is proof the whole is on its way."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Chapters, One Promise",
+      "body": "First Corinthians is a hard letter. Paul spends most of it cleaning up a messy church - divisions over which teacher to follow, lawsuits between believers, confusion at the Lord's Table, a congregation so impressed with its own spiritual gifts that it had begun to come apart over them. It is not the letter you would expect to contain the most beautiful paragraph ever written about love, or the most confident paragraph ever written about resurrection. Yet here they both are, two chapters apart, and they are not two subjects. They are one promise told twice.\n\nChapter 13 makes a strange claim about love. Paul does not say love is the kindest gift or the warmest gift. He says it is the one that does not fall. Prophecy will cease. Tongues will be stilled. Even knowledge - the thing the Corinthians prized most - will be dismissed, set aside like a child's first attempts at speech. All of it is partial, Paul says, a dim reflection in a polished-bronze mirror. But love never fails. In a chapter surrounded by things that pass, love is the thing left standing.\n\nThen chapter 15 tells you why. The reason anything survives death is that Someone already has. \"Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The love that never fails in chapter 13 is not an abstract virtue floating above the wreckage. It has a face. It walked out of a tomb on the third day. Love does not fail because Love was raised first.",
+      "keyInsight": "Love and resurrection are not two themes in Paul's letter. They are the same hope. Love never fails because the One who is love did not stay dead.",
+      "content": "First Corinthians is a hard letter. Paul spends most of it cleaning up a messy church - divisions over which teacher to follow, lawsuits between believers, confusion at the Lord's Table, a congregation so impressed with its own spiritual gifts that it had begun to come apart over them. It is not the letter you would expect to contain the most beautiful paragraph ever written about love, or the most confident paragraph ever written about resurrection. Yet here they both are, two chapters apart, and they are not two subjects. They are one promise told twice.\n\nChapter 13 makes a strange claim about love. Paul does not say love is the kindest gift or the warmest gift. He says it is the one that does not fall. Prophecy will cease. Tongues will be stilled. Even knowledge - the thing the Corinthians prized most - will be dismissed, set aside like a child's first attempts at speech. All of it is partial, Paul says, a dim reflection in a polished-bronze mirror. But love never fails. In a chapter surrounded by things that pass, love is the thing left standing.\n\nThen chapter 15 tells you why. The reason anything survives death is that Someone already has. \"Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The love that never fails in chapter 13 is not an abstract virtue floating above the wreckage. It has a face. It walked out of a tomb on the third day. Love does not fail because Love was raised first."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Reading at Both Ends of the Day",
+      "body": "There is a verse in this passage you have almost certainly heard out loud. \"Love is patient, love is kind.\" It is read at weddings - in the white dress, the held breath, the whole future still ahead. Two people stand at the front of a room and promise a love that bears all things, believes all things, hopes all things, endures all things, and everyone present wants to believe it can be done.\n\nThe same chapter gets read again, years later, at funerals. The white dress is gone. The future the two people promised has arrived and then run out. And someone stands at a different front of a different room and reads the same words: love never fails.\n\nIt is a strange thing to read the same sentence at a wedding and a graveside, and to mean it both times. At one end of a life it sounds like a hope. At the other end it sounds like a defiance. Paul wrote it to do both. He wrote chapter 13 so it could be read over a grave and still be true - because he had already decided to write chapter 15. The love that endures all things endures the last thing, too. It endures death, because the One who is love did.",
+      "connectionToTheme": "The same words read over a marriage and over a grave carry the same weight only because Christ was raised. Resurrection is what lets 1 Corinthians 13 be true at a funeral.",
+      "content": "There is a verse in this passage you have almost certainly heard out loud. \"Love is patient, love is kind.\" It is read at weddings - in the white dress, the held breath, the whole future still ahead. Two people stand at the front of a room and promise a love that bears all things, believes all things, hopes all things, endures all things, and everyone present wants to believe it can be done.\n\nThe same chapter gets read again, years later, at funerals. The white dress is gone. The future the two people promised has arrived and then run out. And someone stands at a different front of a different room and reads the same words: love never fails.\n\nIt is a strange thing to read the same sentence at a wedding and a graveside, and to mean it both times. At one end of a life it sounds like a hope. At the other end it sounds like a defiance. Paul wrote it to do both. He wrote chapter 13 so it could be read over a grave and still be true - because he had already decided to write chapter 15. The love that endures all things endures the last thing, too. It endures death, because the One who is love did."
+    },
+    {
+      "type": "insight",
+      "heading": "The Mirror and the Face",
+      "body": "Chapter 13 closes with two ways of seeing. \"Now we see but a dim reflection as in a mirror; then we shall see face to face. Now I know in part; then I shall know fully, even as I am fully known.\" In Paul's day a mirror was polished metal - it gave you a real image, but blurred, darkened, partial. That, he says, is faith now. Not blindness. A dim reflection. Enough to know there is a face, not yet enough to see it clearly.\n\nThe word that turns the dim mirror into a clear face is one word: then. \"Then we shall see face to face.\" Paul does not explain in chapter 13 when then is. He waits two chapters and answers in chapter 15. Then is resurrection. The day the perishable is clothed with the imperishable is the day the mirror is set down and the face is finally seen.\n\nThis is why the chapters need each other. Without chapter 15, the face-to-face of chapter 13 is just a lovely sentiment about heaven. With chapter 15, it is an appointment. The same body that the firstfruits were raised in is the body in which we will see. Faith and hope, Paul says, remain - but they remain for now. In the resurrection, faith becomes sight and hope becomes having. Only love survives the crossing unchanged, because love is the one thing that was already true face to face. It is what God is. It is what we were made to do forever.",
+      "historicalContext": "Corinth was a Greek city soaked in a culture that prized wisdom, eloquence, and status. Many there could accept an immortal soul drifting free of the body, but the bodily resurrection of the dead struck them as crude - some in the church were saying there is no resurrection at all (1 Corinthians 15:12). Paul's whole argument answers them: strip out the empty tomb and the love-chapter has nothing to stand on. \"If Christ has not been raised, your faith is futile\" (15:17).",
+      "fascinatingFact": "Paul places his great hymn to love in chapter 13, directly between the chapter on spiritual gifts (12) and the chapter on resurrection (15) - love is literally the center of the structure. The gifts that so divided the Corinthians are the things that pass; the resurrection is the thing that comes; and love is the bridge between them, the one reality that touches both the now and the forever.",
+      "content": "Chapter 13 closes with two ways of seeing. \"Now we see but a dim reflection as in a mirror; then we shall see face to face. Now I know in part; then I shall know fully, even as I am fully known.\" In Paul's day a mirror was polished metal - it gave you a real image, but blurred, darkened, partial. That, he says, is faith now. Not blindness. A dim reflection. Enough to know there is a face, not yet enough to see it clearly.\n\nThe word that turns the dim mirror into a clear face is one word: then. \"Then we shall see face to face.\" Paul does not explain in chapter 13 when then is. He waits two chapters and answers in chapter 15. Then is resurrection. The day the perishable is clothed with the imperishable is the day the mirror is set down and the face is finally seen.\n\nThis is why the chapters need each other. Without chapter 15, the face-to-face of chapter 13 is just a lovely sentiment about heaven. With chapter 15, it is an appointment. The same body that the firstfruits were raised in is the body in which we will see. Faith and hope, Paul says, remain - but they remain for now. In the resurrection, faith becomes sight and hope becomes having. Only love survives the crossing unchanged, because love is the one thing that was already true face to face. It is what God is. It is what we were made to do forever."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a divided, anxious church that love never fails and that Christ has been raised as the firstfruits - the first sheaf of a harvest that includes everyone joined to Him.",
+      "modernApplication": "We still rank our gifts the way Corinth did - who is more useful, more impressive, more right. Paul's two chapters quietly reorder the whole scale. The gifts you measure each other by will all be set aside. The love you show the person you find hardest to love will not. And the death that makes you guard your time, your image, and your heart so tightly has already lost.",
+      "connectionPoint": "The thread runs the length of Scripture. Israel brought the firstfruits of the harvest to God as a pledge of the rest (Leviticus 23:10). On the morning after a Sabbath, the priest waved the first sheaf before the LORD. Centuries later, on the morning after a Sabbath, a tomb stood open - the first sheaf of a far greater harvest lifted up before God. What the wave-offering pictured, the empty tomb fulfilled.",
+      "newTestamentEcho": "\"Death has been swallowed up in victory. Where, O Death, is your victory? Where, O Death, is your sting?\" Paul borrows the taunt from Hosea 13:14 and Isaiah 25:8 - prophets who sang of a day when God would swallow up death forever. At the empty tomb, Paul says, that day arrived. \"Thanks be to God, who gives us the victory through our Lord Jesus Christ\" (1 Corinthians 15:57)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If love is the only thing that walks out of the grave, what are you spending your life on that will not - and what would it look like to spend a little more of it on love today?",
+      "additionalQuestions": [
+        "Read the description of love in 13:4-7 slowly, putting your own name where the word love appears. Where does it stop being true? Sit with that without rushing to fix it.",
+        "Paul says you now see a dim reflection, and that one day you will see face to face. What is one thing about God you are content to know only in part for now?",
+        "If the resurrection of Christ is true, what fear that runs your life has already been answered - and have you let it land?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You are the firstfruits - the first sheaf of a harvest with my name in it. On a day made for rest, let me rest in that. Where I have ranked myself by my gifts, teach me love. Where I have feared death, remind me that You walked out of the grave ahead of me. I cannot yet see Your face; I see a dim reflection, and even that is enough to hope. Hold me there until faith becomes sight. Thanks be to God, who gives us the victory through You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a sabbath day - nothing to achieve. Sit for five quiet minutes and let one line hold you: \"Love never fails,\" or \"the firstfruits of those who have fallen asleep.\" Bring God the one relationship, or the one fear of death, you have been carrying alone, and let the risen Christ stand in it with you.",
+      "leavingAtCross": [
+        "The need to measure my worth by my gifts the way Corinth measured theirs",
+        "The quiet fear that death gets the last word over the people I love",
+        "The grip that keeps love patient and kind for everyone except the one who is hardest"
+      ],
+      "receivingFromCross": [
+        "A love that does not fall, because the One who is love was raised",
+        "The pledge of the firstfruits - that what God began in the empty tomb He will finish in me",
+        "A coming day when the dim mirror is set down and I see Him face to face"
+      ],
+      "content": "This is a sabbath day - nothing to achieve. Sit for five quiet minutes and let one line hold you: \"Love never fails,\" or \"the firstfruits of those who have fallen asleep.\" Bring God the one relationship, or the one fear of death, you have been carrying alone, and let the risen Christ stand in it with you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Paul lists things that will cease - prophecy, tongues, knowledge - and one thing that never fails. Why does he set love apart from even the good and spiritual gifts?",
+        "What does Paul mean by calling Christ the firstfruits, and how does that one word turn the resurrection from a single past event into a promise about your future?",
+        "How does chapter 15 answer the question chapter 13 leaves open - when is the then in 'then we shall see face to face'?"
+      ],
+      "forAccountabilityPartners": [
+        "Read 13:4-7 aloud to each other, one verse at a time, and name where each of you finds it hardest to live out right now.",
+        "Talk honestly about how the fear of death - your own, or someone you love - actually shapes your days. Then read 15:54-57 over each other.",
+        "Ask each other: if love is the only thing that survives the grave, what is one thing you want to start spending less of your life on, and one thing you want to spend more?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Leviticus 23:10-11",
+          "text": "When you enter the land that I am giving you and you reap its harvest, you are to bring to the priest a sheaf of the firstfruits of your harvest. And he shall wave the sheaf before the LORD so that it may be accepted on your behalf."
+        },
+        {
+          "reference": "Isaiah 25:8",
+          "text": "He will swallow up death forever. The Lord GOD will wipe away the tears from every face."
+        },
+        {
+          "reference": "Romans 8:23",
+          "text": "And not only that, but we ourselves, who have the firstfruits of the Spirit, groan inwardly as we wait eagerly for our adoption as sons, the redemption of our bodies."
+        },
+        {
+          "reference": "1 John 3:2",
+          "text": "Beloved, we are now children of God, and what we will be has not yet been revealed. We know that when Christ appears, we will be like Him, for we will see Him as He is."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters back to back in one sitting, watching how 'love never fails' (13:8) and 'death has been swallowed up in victory' (15:54) say the same thing from two directions."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul the Apostle",
+      "title": "Last of All, He Appeared to Me Also",
+      "description": "Once a persecutor of the church, Paul met the risen Christ on the road to Damascus and became His apostle to the nations. Writing to the troubled church at Corinth around the mid-50s AD, he had every reason to lead with rebuke. Instead he hands them the church's earliest creed - 'Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day' (15:3-4) - and the most enduring words ever written on love. He had seen the firstfruits with his own eyes.",
+      "keyQuote": "And last of all He appeared to me also, as to one of untimely birth.",
+      "lessonForUs": "The man who wrote 'love never fails' had once made it his work to destroy the people he now called beloved. He knew firsthand that the love which does not fail is the love that found him - and that the resurrection he preached was not a theory but a face he had seen.",
+      "heading": "Last of All, He Appeared to Me Also"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2141,
+  "scriptureReference_full": "1 Corinthians 13:8-13; 15:3-8, 20-22, 54-58",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapē; aparchē, firstfruits, G536; piptei, 'fails/falls') reflects standard lexical sources. The early creed of 1 Corinthians 15:3-5 is widely regarded by scholars as pre-Pauline tradition Paul received and passed on."
+  ]
 }

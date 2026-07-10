@@ -1,38 +1,171 @@
 {
   "day": 126,
-  "title": "Elisha Ministry — Day 7 — Sabbath",
-  "teaser": "Day 126 of Bible 365 — 2 Kings 4-13",
+  "title": "Wash, and be clean",
+  "teaser": "Across ten chapters of Elisha's life, the smallest acts carry God. A widow's jars. A river. A dead man's bones. On the Sabbath, sit with how God heals.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 126"
+      "type": "scripture",
+      "reference": "2 Kings 5:13-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Wash and be cleansed",
+        "his flesh was restored",
+        "like that of a little child"
+      ],
+      "hebrewOriginal": "רְחַץ וּטְהָר",
+      "passage": "Naaman's servants, however, approached him and said, \"My father, if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, 'Wash and be cleansed'?\" So Naaman went down and dipped himself in the Jordan seven times, according to the word of the man of God, and his flesh was restored and became like that of a little child, and he was clean."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "טָהֵר",
+      "transliteration": "taher",
+      "pronunciation": "tah-HARE",
+      "meaning": "to be clean, to be pure, to be made ceremonially and physically whole",
+      "rootMeaning": "Taher is not first about hygiene. It is the word for being fit to come near - clean enough to stand in the courts of God, to rejoin the camp, to be touched again. Leprosy did not only sicken the body; it pushed a person outside the circle of belonging. To be taher is to be brought back in.",
+      "usageNote": "It is the same word the priest pronounces over a healed leper in Leviticus 13-14, and the word a heart cries for in Psalm 51:7: \"Purify me ... and I will be clean.\" When Elisha's messenger tells the great Syrian general to wash and be taher, he is offering more than a cure. He is offering a way back to the table of the living.",
+      "wordByWord": [
+        {
+          "word": "רְחַץ",
+          "transliteration": "rechats",
+          "meaning": "wash, bathe - an ordinary act, the thing anyone can do"
+        },
+        {
+          "word": "וּטְהָר",
+          "transliteration": "uthar",
+          "meaning": "and be clean - the result God gives that no scrubbing earns"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "טָהוֹר",
+          "reference": "Tahor, the adjective 'clean/pure', describes the gold of the tabernacle and the incense burned before God (Exodus 25:11; 30:35). The same purity demanded of holy things is the purity offered to an unclean foreigner in a muddy river."
+        }
+      ],
+      "strongsNumber": "H2891",
+      "definition": "to be clean, pure; to be pronounced or made ritually and physically clean",
+      "usage": "The verb carries a quiet scandal: cleanness comes not by a grand religious gesture but by stooping to a small, almost insulting instruction. Naaman wanted a ceremony worthy of his rank. God gave him a wash worthy of a child."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Ten Chapters of Small Things Carrying God",
+      "body": "Stand back from this week and look at the whole of it at once. From 2 Kings 4 through 13, the prophet Elisha moves through the ordinary life of a small, divided, anxious nation, and almost everything he touches is small.\n\nA widow is about to lose her two sons to a creditor. All she has is one jar of oil. Elisha tells her to borrow empty vessels from her neighbors and start pouring, and the oil does not stop until the last jar is full. A foreign general arrives with horses, gold, and a letter from his king, expecting a spectacle - and is told to wash in a river he considers beneath him. A boy dies in his mother's arms, and the prophet shuts the door, lays his own body over the child, mouth to mouth and hand to hand, until the boy sneezes seven times and opens his eyes. A servant panics at an army on the hills, and Elisha prays one sentence: open his eyes. The hills are full of fire.\n\nNothing here is large in the world's accounting. A jar. A river. A borrowed pot. A whispered prayer. And yet through each small thing, the living God arrives. This is the plain shape of the whole week, and it is the shape of how God still tends a life: not usually by the great thing we keep waiting for, but through what is already in the house.",
+      "keyInsight": "Across ten chapters, God does not heal Israel through grand machinery. He works through one jar of oil, one wash in a muddy river, one prayer - the small obedience that is already within reach.",
+      "content": "Stand back from this week and look at the whole of it at once. From 2 Kings 4 through 13, the prophet Elisha moves through the ordinary life of a small, divided, anxious nation, and almost everything he touches is small.\n\nA widow is about to lose her two sons to a creditor. All she has is one jar of oil. Elisha tells her to borrow empty vessels from her neighbors and start pouring, and the oil does not stop until the last jar is full. A foreign general arrives with horses, gold, and a letter from his king, expecting a spectacle - and is told to wash in a river he considers beneath him. A boy dies in his mother's arms, and the prophet shuts the door, lays his own body over the child, mouth to mouth and hand to hand, until the boy sneezes seven times and opens his eyes. A servant panics at an army on the hills, and Elisha prays one sentence: open his eyes. The hills are full of fire.\n\nNothing here is large in the world's accounting. A jar. A river. A borrowed pot. A whispered prayer. And yet through each small thing, the living God arrives. This is the plain shape of the whole week, and it is the shape of how God still tends a life: not usually by the great thing we keep waiting for, but through what is already in the house."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The General Who Almost Went Home",
+      "body": "Naaman had every reason to expect ceremony. He was the commander of Aram's army, a man through whom, the text says, the LORD had given victory to a nation that was not even His own. He came to Israel with horses and chariots and a fortune in silver and gold, carrying a king's letter, ready for a healing worthy of his rank.\n\nWhat he got was a messenger at the door - not even the prophet himself - and a sentence so plain it stung: go wash seven times in the Jordan. Naaman was furious. He had pictured the prophet sweeping out, calling on the name of his God, waving a hand over the diseased skin with proper drama. \"Are not the ... rivers of Damascus better than all the waters of Israel?\" he demanded, and turned for home in a rage. The cure was too small. It offended him.\n\nIt was his servants - the lowest people in his entourage, unnamed, the ones who carried his bags - who saved him. \"My father,\" they said, \"if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, 'Wash and be cleansed'?\" And Naaman went down, and dipped seven times, and came up with the skin of a child. Healing waited on the far side of a small obedience he almost refused because it was too small.",
+      "connectionToTheme": "God's healing came to Naaman not through the grandeur he expected but through a humble, repeatable act - and he nearly missed it because it was beneath him.",
+      "content": "Naaman had every reason to expect ceremony. He was the commander of Aram's army, a man through whom, the text says, the LORD had given victory to a nation that was not even His own. He came to Israel with horses and chariots and a fortune in silver and gold, carrying a king's letter, ready for a healing worthy of his rank.\n\nWhat he got was a messenger at the door - not even the prophet himself - and a sentence so plain it stung: go wash seven times in the Jordan. Naaman was furious. He had pictured the prophet sweeping out, calling on the name of his God, waving a hand over the diseased skin with proper drama. \"Are not the ... rivers of Damascus better than all the waters of Israel?\" he demanded, and turned for home in a rage. The cure was too small. It offended him.\n\nIt was his servants - the lowest people in his entourage, unnamed, the ones who carried his bags - who saved him. \"My father,\" they said, \"if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, 'Wash and be cleansed'?\" And Naaman went down, and dipped seven times, and came up with the skin of a child. Healing waited on the far side of a small obedience he almost refused because it was too small."
+    },
+    {
+      "type": "insight",
+      "heading": "The Outsider Gets In",
+      "body": "Hold two details from this week side by side. First: of all the lepers in Israel, the one the story lingers over is not an Israelite at all. Naaman is a Syrian, a commander of the army that raided Israel's borders. The clean water of the Jordan flows for the foreigner, the outsider, the enemy. Second: the cleansing comes through the most ordinary means imaginable, a wash in a brown river, refused at first precisely because it was so plain.\n\nCenturies later, in His hometown synagogue, Jesus reaches back to this exact moment to explain Himself. \"There were many lepers in Israel in the time of Elisha the prophet,\" He says, \"yet not one of them was cleansed - only Naaman the Syrian\" (Luke 4:27). His neighbors try to throw Him off a cliff for it. They understood what He was saying: the mercy of God is not the private property of the insiders. It spills over the borders to the people no one expected.\n\nThe Sabbath rest of this passage is partly this: you do not have to be the right kind of person, or do the impressive thing, to be made clean. You have to stop demanding a grander cure than the one God is offering, and go down to the water.",
+      "historicalContext": "Elisha ministered in the northern kingdom of Israel during the ninth century BC, a period of near-constant conflict with Aram (Syria) to the northeast. Naaman was an officer of that hostile power. For a story of Israel's God healing an enemy general - and for that healing to come through a humble Israelite servant girl's testimony (2 Kings 5:2-3) - to be told approvingly is a striking thing in its own setting.",
+      "fascinatingFact": "The number seven runs quietly through the week as a marker of completion: Naaman dips seven times; the dead boy sneezes seven times before opening his eyes (2 Kings 4:35). In Hebrew thought seven signals fullness - the work carried all the way to its rest, the healing made whole and not partial.",
+      "content": "Hold two details from this week side by side. First: of all the lepers in Israel, the one the story lingers over is not an Israelite at all. Naaman is a Syrian, a commander of the army that raided Israel's borders. The clean water of the Jordan flows for the foreigner, the outsider, the enemy. Second: the cleansing comes through the most ordinary means imaginable, a wash in a brown river, refused at first precisely because it was so plain.\n\nCenturies later, in His hometown synagogue, Jesus reaches back to this exact moment to explain Himself. \"There were many lepers in Israel in the time of Elisha the prophet,\" He says, \"yet not one of them was cleansed - only Naaman the Syrian\" (Luke 4:27). His neighbors try to throw Him off a cliff for it. They understood what He was saying: the mercy of God is not the private property of the insiders. It spills over the borders to the people no one expected.\n\nThe Sabbath rest of this passage is partly this: you do not have to be the right kind of person, or do the impressive thing, to be made clean. You have to stop demanding a grander cure than the one God is offering, and go down to the water."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Elisha cleanses a leper without ever touching him - through a messenger, a command, and a wash in the Jordan, the unclean man is made whole. And when Elisha himself dies, his very bones still carry the power of life: a corpse thrown into his tomb touches his bones and stands up alive (2 Kings 13:20-21).",
+      "modernApplication": "We still want our healing to come on our terms - large, dignified, deserved. We are slow to believe that the cure could be as small as obedience, as near as the water already in front of us, as plain as showing up to be washed.",
+      "connectionPoint": "Naaman points past himself. When Jesus meets a leper in Mark 1, the man kneels and says, \"If You are willing, You can make me clean.\" Elisha had cleansed at a distance, through a river; but Jesus does what no priest would dare - \"moved with compassion, He reached out His hand and touched the man\" (Mark 1:41). The Holy One touches the unclean, and instead of becoming defiled, He makes the man clean. Where Elisha sent the leper to the water, Christ becomes the water; where Elisha's dead bones gave one man life, Christ's risen body gives life to all who touch Him by faith.",
+      "newTestamentEcho": "\"Then a leper came to Jesus, begging on his knees: 'If You are willing, You can make me clean.' Moved with compassion, Jesus reached out His hand and touched the man. 'I am willing,' He said. 'Be clean!' And immediately the leprosy left him, and the man was cleansed.\" (Mark 1:40-42)"
+    },
+    {
+      "type": "reflection",
+      "prompt": "What healing have you been waiting for in a grand form, while God has been offering it in something small enough to insult you?",
+      "additionalQuestions": [
+        "Like Naaman, do you find the simple, repeatable obediences (showing up, confessing, forgiving, resting) too small to take seriously? Why?",
+        "Who are the 'servants' in your life - the unimpressive voices - who have told you the truth you didn't want to hear?",
+        "Where are you the outsider, sure you are the wrong kind of person for God's mercy? What would it mean to go down to the water anyway?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I keep waiting for the great thing - the dramatic rescue, the cure worthy of my pride. Forgive me for despising what is small. Like Naaman, I almost turned for home in a rage at how plain Your mercy is. Today, on this day of rest, quiet me. Show me the one obedience already within reach - the jar in my house, the water in front of me - and give me the humility to go down into it. Make me clean, the way only You can, the way I cannot earn. Through Christ, who touched the leper and was not defiled. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath - nothing to achieve, nothing to prove. Sit with one phrase from the week: \"Wash, and be clean.\" Name the small obedience you have been calling too small. Then simply rest in the truth that the God who filled a widow's jars and washed a foreign general clean is still tending the ordinary details of your life.",
+      "leavingAtCross": [
+        "The pride that needs my healing to look impressive before I will accept it",
+        "The lie that I am the wrong kind of person for God's mercy to reach",
+        "The habit of waiting for the great thing while ignoring the small obedience in front of me"
+      ],
+      "receivingFromCross": [
+        "Cleanness I could never scrub into my own skin, given as a gift",
+        "The God who reaches out and touches what everyone else calls unclean",
+        "Rest in a Lord who works through jars and rivers and ordinary days"
+      ],
+      "content": "Today is a Sabbath - nothing to achieve, nothing to prove. Sit with one phrase from the week: \"Wash, and be clean.\" Name the small obedience you have been calling too small. Then simply rest in the truth that the God who filled a widow's jars and washed a foreign general clean is still tending the ordinary details of your life."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why was Naaman angry at the instruction to wash in the Jordan, and what did his anger reveal about what he expected from God?",
+        "What is the significance of the one cleansed leper in this week being a foreigner and an enemy of Israel?",
+        "How does the way Elisha healed (at a distance, through a river) differ from the way Jesus heals the leper in Mark 1 - and what does that difference reveal about Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'too small' obedience you have been avoiding because it doesn't feel significant enough.",
+        "Talk about a time an unimpressive person told you a truth you needed to hear, the way Naaman's servants did.",
+        "Ask each other: where do you still believe you have to clean yourself up before God will receive you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 4:6-7",
+          "text": "When all the jars were full, she said to her son, \"Bring me another.\" But he replied, \"There are no more jars.\" Then the oil stopped flowing. She went and told the man of God, and he said, \"Go, sell the oil, and pay your debt. Then you and your sons can live on the remainder.\""
+        },
+        {
+          "reference": "2 Kings 6:16-17",
+          "text": "\"Do not be afraid,\" Elisha answered, \"for those who are with us are more than those who are with them.\" Then Elisha prayed, \"O LORD, please open his eyes that he may see.\" And the LORD opened the eyes of the young man, and he saw that the hills were full of horses and chariots of fire all around Elisha."
+        },
+        {
+          "reference": "2 Kings 13:21",
+          "text": "Once, as the Israelites were burying a man, suddenly they saw a band of raiders, so they threw the man's body into Elisha's tomb. And as soon as his body touched the bones of Elisha, the man was revived and stood up on his feet."
+        },
+        {
+          "reference": "Luke 4:27",
+          "text": "And there were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed - only Naaman the Syrian."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 4-13",
+          "note": "Read the Elisha narratives slowly in one sitting, watching for the recurring pattern: a small, ordinary means (a jar, a river, a prayer, a meal) through which the living God arrives."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Naaman",
+      "title": "The Syrian General Made Clean",
+      "description": "Commander of the army of Aram (Syria), Israel's hostile neighbor - a great and highly regarded man, and a leper. Through the testimony of a captured Israelite servant girl he came to Elisha for healing, nearly refused the humble instruction to wash in the Jordan, and was cleansed only when his servants persuaded him to obey the small thing. He left declaring there was no God in all the earth except in Israel (2 Kings 5:15).",
+      "keyQuote": "Wash and be cleansed.",
+      "lessonForUs": "Naaman almost forfeited his healing because it was too plain for his pride. The mercy of God still tends to arrive smaller and humbler than we expect - and Jesus pointed to this very outsider to show that grace reaches past every border we would draw around it.",
+      "heading": "The Syrian General Made Clean"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2022,
+  "scriptureReference_full": "2 Kings 4-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (taher, H2891; tahor) reflects standard lexical sources and the cleanness language of Leviticus 13-14 and Psalm 51:7."
+  ]
 }

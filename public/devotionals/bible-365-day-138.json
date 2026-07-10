@@ -1,38 +1,173 @@
 {
   "day": 138,
-  "title": "Hezekiah's Reform — Day 5 — Resolution",
-  "teaser": "Day 138 of Bible 365 — 2 Kings 18-20",
+  "title": "Fifteen Borrowed Years",
+  "teaser": "Hezekiah tears down the idols and trusts the LORD — then meets a wall no reform can climb: his own deathbed. On the third day, he is told, you will rise and go up to the house of the LORD.",
   "framework": "2 Kings 18-20 — Hezekiah's Reform",
   "scriptureReference": "2 Kings 18-20",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 138"
+      "type": "scripture",
+      "reference": "2 Kings 20:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "Put your house in order",
+        "I have seen your tears",
+        "On the third day",
+        "fifteen years"
+      ],
+      "hebrewOriginal": "חִזְקִיָּהוּ",
+      "passage": "In those days Hezekiah became mortally ill. The prophet Isaiah son of Amoz came to him and said, \"This is what the LORD says: 'Put your house in order, for you are about to die; you will not recover.'\" Then Hezekiah turned his face to the wall and prayed to the LORD, saying, \"Please, O LORD, remember how I have walked before You faithfully and with wholehearted devotion; I have done what was good in Your sight.\" And Hezekiah wept bitterly. ... \"Go back and tell Hezekiah the leader of My people that this is what the LORD, the God of your father David, says: 'I have heard your prayer; I have seen your tears. I will surely heal you. On the third day from now you will go up to the house of the LORD. I will add fifteen years to your life. And I will deliver you and this city from the hand of the king of Assyria. I will defend this city for My sake and for the sake of My servant David.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 18-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 18-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חִזְקִיָּהוּ",
+      "transliteration": "Chizqiyyahu",
+      "pronunciation": "khiz-kee-YAH-hoo",
+      "meaning": "Yahweh is my strength; the LORD strengthens",
+      "rootMeaning": "Built from the root chazaq, to be strong, to take hold, to grow firm, joined to the divine name Yah. The name is not a boast about the king's strength but a confession about whose strength holds him up.",
+      "usageNote": "The same root chazaq runs through the whole story under the surface. It is the word for being brave in battle, for a grip that will not let go, for a heart hardened past changing. Hezekiah's life keeps testing what his own name says: when the strength is the LORD's, the reform stands, the city is spared, the deathbed is reversed. When the strength becomes his own, the treasure house gets thrown open to Babylon.",
+      "wordByWord": [
+        {
+          "word": "חָזַק",
+          "transliteration": "chazaq",
+          "meaning": "to be strong, to hold fast, to take firm hold"
+        },
+        {
+          "word": "יָהוּ",
+          "transliteration": "yahu",
+          "meaning": "a short form of the divine name Yahweh, the LORD"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֲזַק וֶאֱמָץ",
+          "reference": "Chazaq we'ematz, 'be strong and courageous' - the charge God gives Joshua (Joshua 1:9). The strength commanded there is never self-generated; it rests on 'the LORD your God is with you wherever you go.'"
+        }
+      ],
+      "strongsNumber": "H2396",
+      "definition": "Hezekiah, 'Yahweh strengthens' - king of Judah, son of Ahaz, reigned in Jerusalem",
+      "usage": "A king whose very name preaches the sermon his life keeps relearning: the strength that saves was never his to manufacture."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hezekiah's Reform. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who weeps for his city (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The King Who Did What Was Right - and Still Hit a Wall He Could Not Climb",
+      "body": "By the time we reach the end of his story, Hezekiah has done almost everything a king of Judah could do right. He removed the high places. He shattered the sacred pillars and cut down the Asherah poles. He even smashed the bronze snake Moses had made centuries earlier, because the people had started burning incense to it - a relic of a real miracle had quietly become an idol, and Hezekiah was willing to break a sacred heirloom rather than let it steal worship from God. The narrator gives him a verdict given to no other king: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him.\"\n\nThat trust was tested by something far larger than him. The Assyrian army, the empire that had already swallowed the northern kingdom of Israel, came up against Jerusalem, and its field commander stood at the wall and mocked the living God to the faces of the people. Hezekiah did not negotiate first. He tore his clothes, put on sackcloth, and went into the house of the LORD. When the Assyrian king sent a threatening letter, Hezekiah \"received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD.\" He laid the threat open in front of God like a child showing a parent the thing that frightens them, and prayed, \"O LORD our God, please save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God.\" That night the angel of the LORD went out and the siege was broken before a single Judean sword was drawn.\n\nReform, trust, deliverance. By any measure Hezekiah's reign is a success story. And then comes the wall that no reform can tear down and no army can be sent away from: \"In those days Hezekiah became mortally ill.\" Isaiah arrives, not with comfort, but with an order: \"Put your house in order, for you are about to die; you will not recover.\" The best king since David is told to go home and prepare to die.",
+      "keyInsight": "Hezekiah's reforms could pull down every idol in Judah and his prayer could turn back an empire - but neither could keep him out of the grave. The story has been building toward the one enemy reform cannot defeat: death itself.",
+      "content": "By the time we reach the end of his story, Hezekiah has done almost everything a king of Judah could do right. He removed the high places. He shattered the sacred pillars and cut down the Asherah poles. He even smashed the bronze snake Moses had made centuries earlier, because the people had started burning incense to it - a relic of a real miracle had quietly become an idol, and Hezekiah was willing to break a sacred heirloom rather than let it steal worship from God. The narrator gives him a verdict given to no other king: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him.\"\n\nThat trust was tested by something far larger than him. The Assyrian army, the empire that had already swallowed the northern kingdom of Israel, came up against Jerusalem, and its field commander stood at the wall and mocked the living God to the faces of the people. Hezekiah did not negotiate first. He tore his clothes, put on sackcloth, and went into the house of the LORD. When the Assyrian king sent a threatening letter, Hezekiah \"received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD.\" He laid the threat open in front of God like a child showing a parent the thing that frightens them, and prayed, \"O LORD our God, please save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God.\" That night the angel of the LORD went out and the siege was broken before a single Judean sword was drawn.\n\nReform, trust, deliverance. By any measure Hezekiah's reign is a success story. And then comes the wall that no reform can tear down and no army can be sent away from: \"In those days Hezekiah became mortally ill.\" Isaiah arrives, not with comfort, but with an order: \"Put your house in order, for you are about to die; you will not recover.\" The best king since David is told to go home and prepare to die."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "Turned to the Wall",
+      "body": "There is a particular thing people do when the news is the worst kind. They turn away. A man hears the scan results and walks to the window. A woman gets the call and faces the kitchen sink, both hands flat on the counter, her back to the room. It is not avoidance exactly. It is the body's way of going somewhere private to meet something too large for company.\n\nHezekiah does it in front of us. \"Then Hezekiah turned his face to the wall and prayed to the LORD.\" The strongest king Judah ever had, the one the empire could not break, turns his face to a wall and weeps bitterly. He does not summon his counselors. He does not call for his physicians. He turns to the wall, and into that small private dark he says the only thing he has: \"Please, O LORD, remember how I have walked before You.\"\n\nIt is worth sitting with how human this is. The man who spread an enemy's letter open before God now spreads his own death open the same way. He has nowhere left to take it but to the LORD. And that, it turns out, is exactly the right place to be standing.",
+      "connectionToTheme": "Even the strongest faith eventually meets the wall it cannot reform away - and the godly response is not pretending otherwise, but turning that wall into the place where you pray.",
+      "content": "There is a particular thing people do when the news is the worst kind. They turn away. A man hears the scan results and walks to the window. A woman gets the call and faces the kitchen sink, both hands flat on the counter, her back to the room. It is not avoidance exactly. It is the body's way of going somewhere private to meet something too large for company.\n\nHezekiah does it in front of us. \"Then Hezekiah turned his face to the wall and prayed to the LORD.\" The strongest king Judah ever had, the one the empire could not break, turns his face to a wall and weeps bitterly. He does not summon his counselors. He does not call for his physicians. He turns to the wall, and into that small private dark he says the only thing he has: \"Please, O LORD, remember how I have walked before You.\"\n\nIt is worth sitting with how human this is. The man who spread an enemy's letter open before God now spreads his own death open the same way. He has nowhere left to take it but to the LORD. And that, it turns out, is exactly the right place to be standing."
+    },
+    {
+      "type": "insight",
+      "heading": "On the Third Day, You Will Go Up",
+      "body": "Read God's answer slowly, because every clause is doing work: \"I have heard your prayer; I have seen your tears. I will surely heal you. On the third day from now you will go up to the house of the LORD. I will add fifteen years to your life.\"\n\nHeard. Seen. Healed. And then a strange, precise promise: not just that he will live, but that on the third day he will rise from his deathbed and go up to the house of the LORD. The man given over to death is given a third day, and on that day he climbs out of dying and walks into worship.\n\nNotice what the fifteen years are. They are not Hezekiah's by right; they are added. He cannot earn them, manufacture them, or hold them. He receives them as a gift dropped into a life that had already been declared over. This is what makes his reign more than a hero story. The best king since David cannot defeat death by being good. The grave is not impressed by reform. Life on the far side of death is something only God can give, and He gives it as sheer gift - heard prayer, seen tears, added years. The strongest man in Judah is, at the last, a man being kept alive by mercy. So are we all.",
+      "historicalContext": "Hezekiah reigned over Judah in the late eighth century BC, roughly 715 to 686 BC, in the shadow of the Assyrian empire that destroyed the northern kingdom of Israel in 722 BC. The siege he survived is the famous campaign of Sennacherib around 701 BC - an event corroborated outside the Bible by Sennacherib's own annals, which boast of shutting Hezekiah up 'like a bird in a cage' in Jerusalem, but conspicuously never claim to have taken the city. Hezekiah's water tunnel, mentioned at the close of the account, can still be walked today beneath Jerusalem.",
+      "fascinatingFact": "Hezekiah even asks for proof, and God offers a sign in the most fragile thing there is: a shadow. \"Would you like the shadow to go forward ten steps, or back ten steps?\" Hezekiah chooses the harder sign - backward - and the shadow on the stairway of Ahaz retreats the ten steps it had descended. The God who can run time backward on a sundial can certainly add fifteen years to a dying man.",
+      "content": "Read God's answer slowly, because every clause is doing work: \"I have heard your prayer; I have seen your tears. I will surely heal you. On the third day from now you will go up to the house of the LORD. I will add fifteen years to your life.\"\n\nHeard. Seen. Healed. And then a strange, precise promise: not just that he will live, but that on the third day he will rise from his deathbed and go up to the house of the LORD. The man given over to death is given a third day, and on that day he climbs out of dying and walks into worship.\n\nNotice what the fifteen years are. They are not Hezekiah's by right; they are added. He cannot earn them, manufacture them, or hold them. He receives them as a gift dropped into a life that had already been declared over. This is what makes his reign more than a hero story. The best king since David cannot defeat death by being good. The grave is not impressed by reform. Life on the far side of death is something only God can give, and He gives it as sheer gift - heard prayer, seen tears, added years. The strongest man in Judah is, at the last, a man being kept alive by mercy. So are we all."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hezekiah, mortally ill and beyond recovery, turns his face to the wall and prays - and God answers, 'On the third day from now you will go up to the house of the LORD,' and adds fifteen years to a life that was already over.",
+      "modernApplication": "Most of us are not facing a sickbed today, but every one of us is living on added time. The years we have are not our possession; they are gift, kept open by a mercy we did not arrange and cannot guarantee. The honest response is not Hezekiah's later complacency - 'Will there not at least be peace and security in my lifetime?' - but daily gratitude for life we are only borrowing.",
+      "connectionPoint": "Hezekiah's borrowed fifteen years are a shadow of the thing every reader of this story longs for: not a postponement of death, but its defeat. His added years still ran out - 'Hezekiah rested with his fathers.' The promise had a ceiling. Scripture keeps the longing alive precisely because Hezekiah cannot fully satisfy it.",
+      "newTestamentEcho": "The phrase God speaks to Hezekiah - 'on the third day you will go up to the house of the LORD' - is the very shape of the gospel said in advance. Centuries later another Son of David, mortally ill not from sickness but from bearing the sin of the world, is laid in a grave, and on the third day rises and goes up - not merely to the temple, but as the true temple, the place where God and humanity finally meet (John 2:19-21). Hezekiah received fifteen added years and then died. Christ rose to a life that does not run out, and offers it not as borrowed time but as everlasting life. 'I am the resurrection and the life. Whoever believes in Me will live, even though he dies' (John 11:25)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If you knew, the way Hezekiah suddenly knew, that your years were added and not earned - given, not owed - what would you stop treating as guaranteed?",
+      "additionalQuestions": [
+        "Hezekiah's reforms were real and good, yet they could not save him from the grave. Where might you be quietly trusting your own faithfulness to do what only God's mercy can do?",
+        "When the worst news comes, do you turn your face to a wall and pray, or do you turn first to your counselors, your plans, your physicians? What does your first instinct reveal?",
+        "After the deliverance, Hezekiah grew complacent and asked only for 'peace in my lifetime.' Where has past rescue made you spiritually lazy instead of grateful?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, my God, I have spent today as though it were owed to me. Forgive me. Every breath I have is added time, kept open by Your mercy and not by my goodness. Like Hezekiah, I turn my face from the noise to the only One who can hear and see and heal. Thank You that You hear prayers and see tears. Thank You that there is a third day - that the grave was not the last word for the Son of David who rose, and need not be the last word for me. Teach me to hold my borrowed years with open hands, and to spend them going up to Your house. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name your time as borrowed. Choose one thing you have been treating as guaranteed - tomorrow, your health, a relationship, the chance to put something right - and act on it today as one living on added years. Then spend five quiet minutes thanking God not for what you accomplished, but simply for the day He gave.",
+      "leavingAtCross": [
+        "The quiet assumption that my years are owed to me, mine to spend as I please",
+        "The trust in my own faithfulness to do what only God's mercy can do",
+        "Hezekiah's later complacency - settling for 'peace in my lifetime' instead of living grateful and awake"
+      ],
+      "receivingFromCross": [
+        "Every day received as added time, sheer gift, kept open by mercy",
+        "The peace of the third day - that the grave is not the last word for those who are Christ's",
+        "Freedom to hold my life with open hands, spending it going up to the house of the LORD"
+      ],
+      "content": "Today, name your time as borrowed. Choose one thing you have been treating as guaranteed - tomorrow, your health, a relationship, the chance to put something right - and act on it today as one living on added years. Then spend five quiet minutes thanking God not for what you accomplished, but simply for the day He gave."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Hezekiah is given the highest verdict of any king of Judah, yet he still becomes mortally ill. What does the story teach by letting his reform and his deathbed sit side by side?",
+        "What is the significance of God adding the years rather than Hezekiah earning or extending them? Why does it matter that they are a gift?",
+        "How does the promise 'on the third day you will go up to the house of the LORD' point forward to the resurrection of Christ - and how is Christ's rising more than Hezekiah's recovery?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time you 'turned your face to the wall' - met something too large to face in company - and what you did with it.",
+        "Where are each of you trusting your own track record of faithfulness to do what only God's mercy can do?",
+        "Hezekiah's rescue made him complacent. Name one past answered prayer that you have stopped being grateful for, and thank God for it together."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 18:5",
+          "text": "Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him."
+        },
+        {
+          "reference": "2 Kings 19:34",
+          "text": "I will defend this city and save it for My own sake and for the sake of My servant David."
+        },
+        {
+          "reference": "Isaiah 38:5",
+          "text": "Go and tell Hezekiah that this is what the LORD, the God of your father David, says: I have heard your prayer; I have seen your tears. Behold, I will add fifteen years to your life."
+        },
+        {
+          "reference": "John 11:25",
+          "text": "Jesus said to her, 'I am the resurrection and the life. Whoever believes in Me will live, even though he dies.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 18-20 and Isaiah 36-39",
+          "note": "Read the parallel account in Isaiah alongside Kings. Isaiah preserves Hezekiah's own psalm of thanksgiving after his recovery (Isaiah 38:9-20) - the deathbed turned to song."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hezekiah",
+      "title": "King of Judah Whose Name Means 'The LORD Is My Strength'",
+      "description": "Thirteenth king of Judah, son of the wicked Ahaz, who reigned from Jerusalem in the late eighth century BC. He purged the land of idols, trusted the LORD against the Assyrian empire, and saw Jerusalem delivered without battle. Struck with a mortal illness, he prayed and was granted fifteen added years and a sign of the shadow turning back. Yet near the end he opened his treasure house to envoys from Babylon and grew content with peace in his own lifetime - and the prophet warned that what he displayed would one day be carried off to Babylon. A man genuinely faithful, genuinely flawed, and genuinely kept alive by mercy.",
+      "keyQuote": "Please, O LORD, remember how I have walked before You faithfully and with wholehearted devotion.",
+      "lessonForUs": "Hezekiah is proof that even our best faithfulness cannot purchase one extra day - and that the God who hears prayer and sees tears gives life as gift. His borrowed fifteen years still ran out; the third day he was promised points past him to the One whose rising never does.",
+      "heading": "King of Judah Whose Name Means 'The LORD Is My Strength'"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1971,
+  "scriptureReference_full": "2 Kings 18-20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (Chizqiyyahu, root chazaq, H2396/H2388) reflects standard lexical sources.",
+    "Historical note on Sennacherib's 701 BC campaign reflects the standard reading of Sennacherib's Annals (the Taylor Prism / Oriented Prism), which records besieging Hezekiah but not capturing Jerusalem; Hezekiah's tunnel and the Siloam inscription are archaeologically attested in Jerusalem."
+  ]
 }

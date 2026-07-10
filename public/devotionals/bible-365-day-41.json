@@ -1,38 +1,184 @@
 {
   "day": 41,
-  "title": "When God hardens hearts",
-  "teaser": "Day 41 of Bible 365 — Exodus (deeper)",
-  "framework": "Exodus (deeper) — The mystery of judgment",
-  "scriptureReference": "Exodus (deeper)",
+  "title": "The heart God hardened, the heart God broke",
+  "teaser": "Day 41 of Bible 365 — Pharaoh's hardened heart and the mystery of judgment. The same God who hardened a heart to display His name would one day display that name by giving His own Son up to death.",
+  "framework": "Exodus 9:12, 16; 10:1-2 — The mystery of judgment",
+  "scriptureReference": "Exodus 9:12, 16; 10:1-2",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 41"
+      "type": "scripture",
+      "reference": "Exodus 9:12, 16; 10:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD hardened Pharaoh's heart",
+        "I have raised you up for this very purpose",
+        "that I might display My power",
+        "that My name might be proclaimed in all the earth",
+        "so that all of you may know that I am the LORD"
+      ],
+      "hebrewOriginal": "וַיְחַזֵּק יְהוָה אֶת־לֵב פַּרְעֹה",
+      "passage": "But the LORD hardened Pharaoh's heart, and he would not listen to them, just as the LORD had said to Moses. ... But I have raised you up for this very purpose, that I might display My power to you, and that My name might be proclaimed in all the earth. ... Then the LORD said to Moses, \"Go to Pharaoh, for I have hardened his heart and the hearts of his officials, that I may perform these miraculous signs of Mine among them, and that you may tell your children and grandchildren how severely I dealt with the Egyptians when I performed miraculous signs among them, so that all of you may know that I am the LORD.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus (deeper)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus (deeper) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חָזַק",
+      "transliteration": "chazaq",
+      "pronunciation": "khah-ZAHK",
+      "meaning": "to make strong, to make firm, to make hard or stubborn",
+      "rootMeaning": "The root means to be strong, to fasten, to seize. When applied to a heart, it does not mean God poured evil in. It means He made firm what was already there - He let a hard man become fully himself, strengthened in the direction he had already chosen.",
+      "usageNote": "Exodus uses three different verbs for the hardening, and the choice matters. Chazaq (to make strong/firm) appears in 9:12; kabed (to make heavy, dull, unresponsive, the root behind 'glory') describes a heart grown thick; and qashah (to make hard, stiff) is used in 7:3. Across the plague cycle the text is careful to balance the actors: Pharaoh hardens his own heart (8:15, 8:32) before the words 'the LORD hardened' first appear as the cause in 9:12, and he hardens it again afterward (9:34). The man who hardens himself meets a God who hardens him further.",
+      "wordByWord": [
+        {
+          "word": "וַיְחַזֵּק",
+          "transliteration": "vaychazzeq",
+          "meaning": "and He made strong, He made firm - the causative form: God strengthened the resolve already there"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name, the one whose 'name might be proclaimed in all the earth'"
+        },
+        {
+          "word": "אֶת־לֵב",
+          "transliteration": "et-lev",
+          "meaning": "the heart - in Hebrew not the seat of feeling but of will, mind, and decision"
+        },
+        {
+          "word": "פַּרְעֹה",
+          "transliteration": "par'oh",
+          "meaning": "Pharaoh - 'great house,' the title of Egypt's god-king who claimed not to know the LORD (5:2)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּבֵד",
+          "reference": "Kabed (to make heavy/dull) is the same root behind kavod, glory - literally 'weight.' Pharaoh's heart grows heavy and unresponsive while God's weight, His glory, grows heavier still over Egypt. The hardening and the glory share a root."
+        }
+      ],
+      "strongsNumber": "H2388",
+      "definition": "to be strong, to strengthen, to make firm, to harden",
+      "usage": "Chazaq is an ordinary, good word - the same verb God speaks to Joshua, 'Be strong (chazaq) and courageous' (Joshua 1:6). The horror of Exodus 9:12 is that the strength that should steady a man toward God is here turned to set him against Him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: The mystery of judgment. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s mercy held back (2 Pet 3:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Hardest Sentence in the Story",
+      "body": "Of all the lines in the plague narrative, this is the one that stops the careful reader cold: \"But the LORD hardened Pharaoh's heart.\" Not Pharaoh hardened his own heart - though the text says that too, more than once, before this verse. Here the cause is named as God. He made the stubborn man more stubborn. He strengthened the very resistance He was about to judge.\n\nWe would prefer the story without this sentence. We can make peace with a God who waits patiently while a tyrant refuses Him again and again. What unsettles us is a God who appears, at a certain point, to push the refusal further along - and then bring down judgment on the man for refusing.\n\nNotice first what the text does not say. It does not say God forced an innocent man to sin. Through the early plagues, the verbs belong to Pharaoh: he hardened his heart, and he would not listen (8:15, 8:32). A man chose, and chose, and chose. Only after that self-hardening does Scripture first name the LORD as the cause (9:12). The hardening from heaven falls on a heart already set like flint by its owner. God did not make a soft heart hard. He confirmed a hard heart in its hardness - He handed a man fully over to the road he had insisted on walking.",
+      "keyInsight": "Before Scripture ever names the LORD as the one who hardened Pharaoh, it has already shown Pharaoh hardening himself. The judgment from God falls on a heart already made hard by its own choosing.",
+      "content": "Of all the lines in the plague narrative, this is the one that stops the careful reader cold: \"But the LORD hardened Pharaoh's heart.\" Not Pharaoh hardened his own heart - though the text says that too, more than once, before this verse. Here the cause is named as God. He made the stubborn man more stubborn. He strengthened the very resistance He was about to judge.\n\nWe would prefer the story without this sentence. We can make peace with a God who waits patiently while a tyrant refuses Him again and again. What unsettles us is a God who appears, at a certain point, to push the refusal further along - and then bring down judgment on the man for refusing.\n\nNotice first what the text does not say. It does not say God forced an innocent man to sin. Through the early plagues, the verbs belong to Pharaoh: he hardened his heart, and he would not listen (8:15, 8:32). A man chose, and chose, and chose. Only after that self-hardening does Scripture first name the LORD as the cause (9:12). The hardening from heaven falls on a heart already set like flint by its owner. God did not make a soft heart hard. He confirmed a hard heart in its hardness - He handed a man fully over to the road he had insisted on walking."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Door That Locks From Inside",
+      "body": "There is a moment some people describe after years of refusing something they once felt drawn to. A man tells you he used to feel a pull toward prayer, toward honesty, toward turning around. He resisted it once, found he could. Resisted it again, found it easier. And then one day he noticed the pull was gone. Not silenced from outside - he had simply stopped being able to feel it. The door, he said, had locked. And the strange thing was that he had turned the key himself, click by click, until the last turn was made for him.\n\nC. S. Lewis put words to this when he wrote that the doors of hell are locked on the inside. He did not mean people want to be lost. He meant that a will, left long enough to its own refusals, can become a thing that no longer wants the door open - and that God, terribly, lets a person have the self they have insisted on.\n\nThat is the shape of Pharaoh's heart. The LORD's hardening is not a hand reaching in to make a good man evil. It is a hand withdrawing the restraint that had held a determined man back from the full weight of himself. Judgment here is partly this: God lets a man finally, fully, be who he has decided to be.",
+      "connectionToTheme": "God's hardening is most often pictured not as a force poured in, but as a restraint withdrawn - the terrible mercy removed that had kept a stubborn will from arriving at its own destination.",
+      "content": "There is a moment some people describe after years of refusing something they once felt drawn to. A man tells you he used to feel a pull toward prayer, toward honesty, toward turning around. He resisted it once, found he could. Resisted it again, found it easier. And then one day he noticed the pull was gone. Not silenced from outside - he had simply stopped being able to feel it. The door, he said, had locked. And the strange thing was that he had turned the key himself, click by click, until the last turn was made for him.\n\nC. S. Lewis put words to this when he wrote that the doors of hell are locked on the inside. He did not mean people want to be lost. He meant that a will, left long enough to its own refusals, can become a thing that no longer wants the door open - and that God, terribly, lets a person have the self they have insisted on.\n\nThat is the shape of Pharaoh's heart. The LORD's hardening is not a hand reaching in to make a good man evil. It is a hand withdrawing the restraint that had held a determined man back from the full weight of himself. Judgment here is partly this: God lets a man finally, fully, be who he has decided to be."
+    },
+    {
+      "type": "insight",
+      "heading": "Hardened So That - Read the Purpose Clause",
+      "body": "The hardest verses come attached to a reason, and the reason changes everything. \"I have raised you up for this very purpose, that I might display My power to you, and that My name might be proclaimed in all the earth\" (9:16). And again: \"that I may perform these miraculous signs of Mine among them, and that you may tell your children and grandchildren ... so that all of you may know that I am the LORD\" (10:1-2).\n\nThe hardening is not God taking pleasure in a man's ruin. It is bent toward revelation. A softer Pharaoh, who let Israel go after the second plague, would have produced a quieter exodus and a smaller knowledge of God. The resistance that God strengthened became the dark backdrop against which His name blazed - to Egypt, to Israel, and to every generation since that has read the story to its children.\n\nThis is the mystery of judgment in miniature. God's justice on hard hearts is never merely the end of the matter. It is always, also, a proclamation - the world learning who the LORD is. Even wrath, in Exodus, serves the making-known of His name. The plagues are a sermon written in fire and water and dust, and the text of the sermon is: I am the LORD.",
+      "historicalContext": "Exodus was Israel's founding story, read at Passover for over three thousand years. By the time it was written down, the events were already a national catechism: the hardening, the plagues, and the deliverance were how a freed people taught their children who their God was. The purpose clauses ('that you may tell your children') are built into the narrative itself - the story is self-consciously a story meant to be retold.",
+      "fascinatingFact": "Paul quotes Exodus 9:16 almost word for word in Romans 9:17 - 'I raised you up for this very purpose, that I might display My power in you, and that My name might be proclaimed in all the earth' - and then draws the conclusion that has troubled and steadied readers ever since: 'God has mercy on whom He wants to have mercy, and He hardens whom He wants to harden' (Romans 9:18). Pharaoh's hard heart became, in Paul's hands, the great test case for the freedom and the mercy of God.",
+      "content": "The hardest verses come attached to a reason, and the reason changes everything. \"I have raised you up for this very purpose, that I might display My power to you, and that My name might be proclaimed in all the earth\" (9:16). And again: \"that I may perform these miraculous signs of Mine among them, and that you may tell your children and grandchildren ... so that all of you may know that I am the LORD\" (10:1-2).\n\nThe hardening is not God taking pleasure in a man's ruin. It is bent toward revelation. A softer Pharaoh, who let Israel go after the second plague, would have produced a quieter exodus and a smaller knowledge of God. The resistance that God strengthened became the dark backdrop against which His name blazed - to Egypt, to Israel, and to every generation since that has read the story to its children.\n\nThis is the mystery of judgment in miniature. God's justice on hard hearts is never merely the end of the matter. It is always, also, a proclamation - the world learning who the LORD is. Even wrath, in Exodus, serves the making-known of His name. The plagues are a sermon written in fire and water and dust, and the text of the sermon is: I am the LORD."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The LORD hardened Pharaoh's heart 'that My name might be proclaimed in all the earth' - turning a tyrant's resistance into a stage for the revelation of who God is.",
+      "modernApplication": "We meet the same question whenever the world's evil seems to run unchecked, or when our own hearts grow strangely cold to things that once moved us. Exodus does not let us off the hook of God's sovereignty, nor does it let us off the hook of our own choices. It asks us to hold both, and to watch where God is pointing: not at the ruin, but at His name being made known through it.",
+      "connectionPoint": "Paul reaches back to this exact passage in Romans 9 to wrestle with the same mystery, and then lands somewhere that lights up the whole question: 'For God has consigned everyone to disobedience so that He may have mercy on everyone' (Romans 11:32). Hardening, in the end, is not God's last word over the earth. Mercy is. The same justice that displayed His power over Pharaoh is the justice that would one day fall, not on a hard-hearted king, but on the soft and willing heart of His own Son.",
+      "newTestamentEcho": "At the cross the purpose clause of Exodus reaches its depth. There God's power is displayed and His name proclaimed in all the earth - not by a heart hardened against Him, but by a heart that prayed 'not My will, but Yours.' Jesus said, 'And I, when I am lifted up from the earth, will draw everyone to Myself' (John 12:32). The God who hardened Pharaoh to make His name known is the God who let His own Son be lifted up - so that the name made known would, at the last, be the name of mercy."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you felt a pull toward God grow quieter the longer you put it off - and is that quieting something you have chosen, click by click?",
+      "additionalQuestions": [
+        "Exodus says both that Pharaoh hardened himself and that God hardened him. Which half of that do you instinctively skip over, and what does that tell you about how you picture God?",
+        "When you see evil seeming to win in the world, can you make room for the possibility that God is not absent but is working His name to be known through it - even when you cannot yet see how?",
+        "Is there a restraint, a conviction, a check on your own heart that you have been quietly asking God to remove? What would it mean to ask Him instead to keep it firmly in place?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I do not fully understand the hardening of Pharaoh's heart, and I will not pretend that I do. But I trust that You are just, and that Your name is being made known even through the things that frighten me. Search my own heart tonight. Where I have hardened it - choice by choice, refusal by refusal - soften it again before the door locks. Do not hand me over to the self I have been insisting on. Keep firm in me every conviction I have been trying to wear down. And thank You that the last word over the earth is not a hardened heart but a willing one - the heart of Your Son, lifted up to draw me home. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where your heart has been quietly hardening - one nudge you have been ignoring, one conviction you have been wearing down. Before it sets like flint, bring it into the light and ask God to soften it now, while it is still soft enough to move.",
+      "leavingAtCross": [
+        "The picture of God as cruel, that I form whenever I read the hard verses without reading the purpose underneath them",
+        "The refusals I have repeated until they have nearly stopped feeling like refusals",
+        "The pride that, like Pharaoh's, says 'I do not know the LORD, and I will not be told'"
+      ],
+      "receivingFromCross": [
+        "A God whose judgments, even the hardest, are bent toward the making-known of His name",
+        "The mercy that is His last word over the earth, proven at the cross",
+        "A heart that can still be softened today, because the One lifted up is drawing me even now"
+      ],
+      "content": "Today, name one place where your heart has been quietly hardening - one nudge you have been ignoring, one conviction you have been wearing down. Before it sets like flint, bring it into the light and ask God to soften it now, while it is still soft enough to move."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Before Exodus 9:12 says 'the LORD hardened Pharaoh's heart,' how many times has the text already said Pharaoh hardened his own heart - and why does that order matter?",
+        "What two purposes does God give for the hardening in 9:16 and 10:1-2? What do they tell you about the aim of His judgment?",
+        "How does Paul's use of this passage in Romans 9 and 11 reframe the hardening - and where does he say the whole thing is finally heading?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about a time your own heart grew hard toward something you once cared about. Could you feel it happening, or only notice afterward?",
+        "Where do you each find the hardening of Pharaoh most difficult to accept about God - and what does Exodus actually claim, versus what we assume it claims?",
+        "Ask each other: is there a conviction in your life you have been quietly hoping God will let you stop feeling? Pray instead that He keeps it firm."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 8:15",
+          "text": "When Pharaoh saw that there was relief, however, he hardened his heart and would not listen to Moses and Aaron, just as the LORD had said."
+        },
+        {
+          "reference": "Romans 9:17-18",
+          "text": "For the Scripture says to Pharaoh: \"I raised you up for this very purpose, that I might display My power in you, and that My name might be proclaimed in all the earth.\" Therefore God has mercy on whom He wants to have mercy, and He hardens whom He wants to harden."
+        },
+        {
+          "reference": "Romans 11:32",
+          "text": "For God has consigned everyone to disobedience so that He may have mercy on everyone."
+        },
+        {
+          "reference": "John 12:32",
+          "text": "And I, when I am lifted up from the earth, will draw everyone to Myself."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 7-11",
+          "note": "Read the whole plague cycle in one sitting, tracking every time the heart is hardened. Mark in two colors: where Pharaoh hardens himself, and where the LORD is named as the cause. Watch the order in which they appear."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Pharaoh",
+      "title": "The King Who Would Not Be Told",
+      "description": "The unnamed god-king of Egypt who first answered Moses, \"Who is the LORD that I should obey His voice and let Israel go? I do not know the LORD\" (Exodus 5:2). Across the ten plagues his heart is hardened more than twenty times - sometimes by his own choosing, sometimes by the LORD - until the sea closes over his army. He stands in Scripture as the great picture of a will set against God, and of how that will, left to itself and finally confirmed in itself, becomes the dark canvas on which God's name is written for all the earth to read.",
+      "keyQuote": "Who is the LORD that I should obey His voice and let Israel go? I do not know the LORD, and I will not let Israel go.",
+      "lessonForUs": "Pharaoh's heart did not harden in a single moment; it set like clay in the sun, one refusal at a time. The warning is not that God might suddenly turn against a soft heart - it is that a heart can refuse the light so long that it loses the ability to want it. The mercy is that yours is still soft enough, today, to ask Him to keep it that way.",
+      "heading": "The King Who Would Not Be Told"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2309,
+  "scriptureReference_full": "Exodus 9:12, 16; 10:1-2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chazaq H2388; with kabed and qashah noted) reflects standard lexical sources for the three hardening verbs used across Exodus 4-14.",
+    "The image of a will locked 'on the inside' draws on C. S. Lewis, The Problem of Pain (1940) and The Great Divorce (1945)."
+  ]
 }

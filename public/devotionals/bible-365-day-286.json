@@ -1,38 +1,182 @@
 {
   "day": 286,
-  "title": "Matthew: Parables + Miracles — Day 6 — Deeper Dive",
-  "teaser": "Day 286 of Bible 365 — Matthew 8-13",
+  "title": "Treasure in the field",
+  "teaser": "The kingdom comes hidden — in a sown seed, a touched leper, a carpenter's son. Why Jesus buried His clearest words inside stories, and what He paid to buy the field.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 286"
+      "type": "scripture",
+      "reference": "Matthew 13:10-13, 44-46",
+      "translation": "BSB",
+      "emphasis": [
+        "Why do You speak to the people in parables?",
+        "treasure hidden in a field",
+        "sold all he had"
+      ],
+      "greekOriginal": "Ὁμοία ἐστὶν ἡ βασιλεία τῶν οὐρανῶν θησαυρῷ κεκρυμμένῳ ἐν τῷ ἀγρῷ",
+      "transliteration": "Homoia estin hē basileia tōn ouranōn thēsaurō kekrymmenō en tō agrō",
+      "passage": "Then the disciples came to Jesus and asked, \"Why do You speak to the people in parables?\" He replied, \"The knowledge of the mysteries of the kingdom of heaven has been given to you, but not to them. Whoever has will be given more, and he will have an abundance. Whoever does not have, even what he has will be taken away from him. This is why I speak to them in parables: 'Though seeing, they do not see; though hearing, they do not hear or understand.' ... The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and in his joy he went and sold all he had and bought that field. Again, the kingdom of heaven is like a merchant in search of fine pearls. When he found one very precious pearl, he went away and sold all he had and bought it.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "παραβολή",
+      "transliteration": "parabolē",
+      "pronunciation": "pah-rah-bo-LAY",
+      "meaning": "a parable; literally a 'throwing alongside'",
+      "rootMeaning": "From para (beside) and ballō (to throw). A parable sets one thing down beside another so the second can be seen by the light of the first. It does not define; it places a familiar picture next to an unfamiliar truth and lets you feel the resemblance.",
+      "usageNote": "Matthew uses parabolē far more than any other Gospel. In chapter 13 alone Jesus throws seven of them down in a row, and Matthew says plainly that 'He did not tell them anything without using a parable' (13:34). The form is not decoration. It is the chosen shape of how the kingdom shows up: alongside ordinary life, never overhead.",
+      "wordByWord": [
+        {
+          "word": "παρά",
+          "transliteration": "para",
+          "meaning": "beside, alongside"
+        },
+        {
+          "word": "βάλλω",
+          "transliteration": "ballō",
+          "meaning": "to throw, to cast, to place"
+        },
+        {
+          "word": "μυστήριον",
+          "transliteration": "mystērion",
+          "meaning": "a mystery — not a riddle to solve but something once hidden, now disclosed to those given to see it"
+        },
+        {
+          "word": "βασιλεία τῶν οὐρανῶν",
+          "transliteration": "basileia tōn ouranōn",
+          "meaning": "the kingdom of the heavens — God's reign breaking into the ordinary world"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מָשָׁל / mashal",
+          "reference": "The Hebrew word behind the Greek parabolē is mashal — proverb, comparison, riddle. When Matthew 13:35 says 'I will open My mouth in parables,' he is quoting Psalm 78:2, where the psalmist promises to 'utter things hidden since the foundation of the world.' Jesus does not borrow the form by accident; He stands in the long line of Israel's teachers who hid truth in story so it would be carried, not just heard."
+        }
+      ],
+      "strongsNumber": "G3850",
+      "definition": "a placing of one thing beside another for comparison; a parable, similitude",
+      "usage": "A parabolē hides and reveals at the same time. To the crowd it is a memorable story; to the one given the secret of the kingdom it opens like a door. The same sentence is a wall and a window, depending on who is listening."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Why He Buried the Clearest Words Inside Stories",
+      "body": "By Matthew 13 the disciples are puzzled, and they ask the obvious question. The crowds keep coming. The teaching keeps landing as stories about farmers, seeds, weeds, yeast, nets full of fish. Why not just say it plainly? \"Why do You speak to the people in parables?\"\n\nJesus answers in a way that unsettles us. The parables, He says, both reveal and conceal. \"The knowledge of the mysteries of the kingdom of heaven has been given to you, but not to them.\" To one kind of listener the story opens; to another it stays shut, a tale about dirt. He quotes Isaiah: though seeing, they do not see. This is not God playing favorites with information. It is a description of what truth does when it meets a heart that has already decided not to be moved. The story slips past the guard a direct command would have alerted. It waits. It can be carried home and chewed on. It can ambush you a week later, in the dark.\n\nLook at the six chapters this reading covers, and notice the pattern. In Matthew 8 and 9 the kingdom arrives as power you could miss: Jesus reaches out and touches a leper, a thing no clean man would do, and says \"I am willing. Be clean.\" In chapter 11, the kingdom arrives as an invitation so gentle it sounds like weakness: \"Come to Me, all you who are weary and burdened, and I will give you rest.\" In chapter 12 it arrives as a claim hidden in a Sabbath argument: \"something greater than the temple is here.\" And in chapter 13 it arrives, finally, as treasure buried in a field where no one would think to look. The same kingdom, the same King, the whole way through — and in every scene it comes disguised as the ordinary, recognized only by those whose eyes have been opened.",
+      "keyInsight": "A parable is a wall and a window at once. It hides the kingdom from a heart that has stopped listening and opens it to one given eyes to see — which is why Jesus can teach the deepest truths in the plainest stories and still not be understood.",
+      "content": "By Matthew 13 the disciples are puzzled, and they ask the obvious question. The crowds keep coming. The teaching keeps landing as stories about farmers, seeds, weeds, yeast, nets full of fish. Why not just say it plainly? \"Why do You speak to the people in parables?\"\n\nJesus answers in a way that unsettles us. The parables, He says, both reveal and conceal. \"The knowledge of the mysteries of the kingdom of heaven has been given to you, but not to them.\" To one kind of listener the story opens; to another it stays shut, a tale about dirt. He quotes Isaiah: though seeing, they do not see. This is not God playing favorites with information. It is a description of what truth does when it meets a heart that has already decided not to be moved. The story slips past the guard a direct command would have alerted. It waits. It can be carried home and chewed on. It can ambush you a week later, in the dark.\n\nLook at the six chapters this reading covers, and notice the pattern. In Matthew 8 and 9 the kingdom arrives as power you could miss: Jesus reaches out and touches a leper, a thing no clean man would do, and says \"I am willing. Be clean.\" In chapter 11, the kingdom arrives as an invitation so gentle it sounds like weakness: \"Come to Me, all you who are weary and burdened, and I will give you rest.\" In chapter 12 it arrives as a claim hidden in a Sabbath argument: \"something greater than the temple is here.\" And in chapter 13 it arrives, finally, as treasure buried in a field where no one would think to look. The same kingdom, the same King, the whole way through — and in every scene it comes disguised as the ordinary, recognized only by those whose eyes have been opened."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Field Nobody Wanted",
+      "body": "There is an old way of buying land in the ancient Near East, and Jesus is counting on His hearers knowing it. A laborer is plowing a field he does not own. His blade catches on something — a jar, a chest, coins gone green with age. Someone, generations back, buried their savings before a war and never came back for them. The law of the day was rough but clear: treasure belonged to whoever owned the ground.\n\nSo the man does something that, from the outside, looks like ruin. He covers the treasure back over. He tells no one. He goes home and sells everything he has — the ox, the tools, maybe the house — and with the whole price of his life he buys one unremarkable field. The neighbors shake their heads. He has lost his mind. He has traded everything for dirt.\n\nBut he is not grieving. Matthew gives us one word the neighbors cannot see behind: joy. \"In his joy he went and sold all he had.\" The cost is total and the man is laughing. He is not making a sacrifice. He is making the trade of his life, and he knows exactly what is in that ground.",
+      "connectionToTheme": "The kingdom is hidden in plain ground, looks like a bad investment to everyone watching, and is worth everything to the one who has actually seen what is buried there.",
+      "content": "There is an old way of buying land in the ancient Near East, and Jesus is counting on His hearers knowing it. A laborer is plowing a field he does not own. His blade catches on something — a jar, a chest, coins gone green with age. Someone, generations back, buried their savings before a war and never came back for them. The law of the day was rough but clear: treasure belonged to whoever owned the ground.\n\nSo the man does something that, from the outside, looks like ruin. He covers the treasure back over. He tells no one. He goes home and sells everything he has — the ox, the tools, maybe the house — and with the whole price of his life he buys one unremarkable field. The neighbors shake their heads. He has lost his mind. He has traded everything for dirt.\n\nBut he is not grieving. Matthew gives us one word the neighbors cannot see behind: joy. \"In his joy he went and sold all he had.\" The cost is total and the man is laughing. He is not making a sacrifice. He is making the trade of his life, and he knows exactly what is in that ground."
+    },
+    {
+      "type": "insight",
+      "heading": "Who Is Selling Everything to Buy the Field?",
+      "body": "For most of church history the treasure parable has been read one way: the kingdom is the treasure, you are the man, and following Jesus is worth selling everything to have. That reading is true and it is good. But turn the parable over and a second face appears.\n\nWho, in the whole story of the Bible, sells absolutely everything He has to buy a field He found something precious hidden in? Read the parable again with the field as the world and the treasure as the people in it. The merchant who gave up all he had for one pearl. The man who emptied his hands for the joy of what was buried in common ground. Paul writes that Christ Jesus, though He was in the form of God, emptied Himself, taking the form of a servant (Philippians 2:6-7). The writer of Hebrews says it was \"for the joy set before Him\" that He endured the cross (Hebrews 12:2). The same joy. The same total price. The same ordinary-looking field.\n\nThis is why the parables stay hidden until eyes are opened. The deepest one is about the Teacher Himself. The kingdom does not arrive as a conquering army you cannot miss. It arrives as a carpenter's son so unremarkable that His own hometown took offense and asked, \"Where did this man get such wisdom?\" (Matthew 13:54-57). He is the treasure, telling you about treasure. He is the one selling all He has, describing a man who sells all he has. The crowd heard a story about a lucky farmer. The Church learned to hear, hidden inside it, the price of its own redemption.",
+      "historicalContext": "Matthew arranges his Gospel around five great blocks of Jesus' teaching, deliberately echoing the five books of Moses. Chapter 13, the parable discourse, sits at the center. By placing the seven kingdom parables here, between the gathering opposition of chapters 11-12 and the rejection at Nazareth that closes chapter 13, Matthew frames the whole question: the kingdom is breaking in, and the issue is no longer whether it is present, but who has been given eyes to see it.",
+      "fascinatingFact": "Matthew 13:35 tells us Jesus taught in parables to fulfill Psalm 78:2 — \"I will open My mouth in parables; I will utter things hidden since the foundation of the world.\" The Greek word for those hidden things, kekrymmena, shares a root with the treasure that is hidden, kekrymmenō, in verse 44. The form of the teaching and the content of the teaching are the same word: things hidden, now found.",
+      "content": "For most of church history the treasure parable has been read one way: the kingdom is the treasure, you are the man, and following Jesus is worth selling everything to have. That reading is true and it is good. But turn the parable over and a second face appears.\n\nWho, in the whole story of the Bible, sells absolutely everything He has to buy a field He found something precious hidden in? Read the parable again with the field as the world and the treasure as the people in it. The merchant who gave up all he had for one pearl. The man who emptied his hands for the joy of what was buried in common ground. Paul writes that Christ Jesus, though He was in the form of God, emptied Himself, taking the form of a servant (Philippians 2:6-7). The writer of Hebrews says it was \"for the joy set before Him\" that He endured the cross (Hebrews 12:2). The same joy. The same total price. The same ordinary-looking field.\n\nThis is why the parables stay hidden until eyes are opened. The deepest one is about the Teacher Himself. The kingdom does not arrive as a conquering army you cannot miss. It arrives as a carpenter's son so unremarkable that His own hometown took offense and asked, \"Where did this man get such wisdom?\" (Matthew 13:54-57). He is the treasure, telling you about treasure. He is the one selling all He has, describing a man who sells all he has. The crowd heard a story about a lucky farmer. The Church learned to hear, hidden inside it, the price of its own redemption."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus taught the crowds in parables — stories about seeds, fields, yeast, and buried treasure — so that the mysteries of the kingdom were both revealed to those given eyes to see and concealed from those who had already stopped listening.",
+      "modernApplication": "We tend to want God to arrive unmistakably — a sign in the sky, a voice that ends all argument, proof that leaves no room for doubt. But the kingdom in Matthew comes the way it always comes: hidden in the ordinary, easy to walk past, requiring not more information but a changed heart to recognize. The question is rarely whether God is speaking. It is whether we are the kind of listener a parable can reach.",
+      "connectionPoint": "The seven parables of Matthew 13 are not seven separate lessons. They circle one claim: God's reign is here, growing quietly like a mustard seed and a hidden lump of yeast, more valuable than everything else combined, and visible only to those whose ears have been opened. The miracles of chapters 8 and 9 say the same thing in a different key — the kingdom touches lepers, calms storms, and forgives sins, but you have to have eyes to see Who is doing it.",
+      "newTestamentEcho": "Paul carries the same word forward. The gospel he preaches is \"the mystery hidden for ages and generations but now revealed to His saints\" (Colossians 1:26). What was buried in the field of Israel's Scriptures, hinted at in every mashal and shadow, is finally dug up and held in the light: Christ in you, the hope of glory. The treasure had a name all along."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your ordinary life — your work, your home, the people you walk past — might the kingdom be buried in plain sight, waiting for eyes that have learned to look?",
+      "additionalQuestions": [
+        "Have you been waiting for God to speak in a way you cannot miss, while He has been speaking in parables you have walked past?",
+        "If Christ is the man who sold all He had for the joy of what was hidden in the field, how does it change the way you read the cost of your own life?",
+        "What is one thing you have been clinging to as treasure that you would, if your eyes were truly opened, gladly trade for the field?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You hid the kingdom in stories so I would have to come close to find it. Forgive me for the days I have looked for You in the spectacular and missed You in the ordinary — in the seed, in the stranger, in the quiet. Give me the eyes the disciples were given, that I might see what many longed to see. And let me hear, hidden in the parable, the deepest thing of all: that You are the One who sold everything He had, for joy, to buy the field where I was buried. Make me glad to be found. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, slow down once in front of something completely ordinary — a meal, a face, an hour of work — and ask God to show you the kingdom hidden in it. Treat the ground in front of you as a field that might hold treasure, and look as if you mean to find it.",
+      "leavingAtCross": [
+        "The demand that God prove Himself in a way I cannot miss before I will trust Him",
+        "The hardened, half-listening heart that hears parables and walks away unchanged",
+        "The fear that following Christ is a loss to grieve rather than a treasure to celebrate"
+      ],
+      "receivingFromCross": [
+        "Eyes given to see the kingdom where many before me longed to see and did not",
+        "The joy of the man in the field, who counted the whole price worth one buried thing",
+        "The knowledge that I am the treasure Christ emptied Himself, for joy, to buy"
+      ],
+      "content": "Today, slow down once in front of something completely ordinary — a meal, a face, an hour of work — and ask God to show you the kingdom hidden in it. Treat the ground in front of you as a field that might hold treasure, and look as if you mean to find it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why, according to Jesus, do the parables both reveal the kingdom to some and conceal it from others — and what does that say about what understanding actually requires?",
+        "How do the miracles of Matthew 8-9 and the parables of Matthew 13 make the same point about how the kingdom arrives?",
+        "What changes when you read the parable of the hidden treasure with Christ as the man who sells all He has?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place in your ordinary week where you suspect God has been speaking in a way you have been too busy or too guarded to hear.",
+        "Talk honestly about the cost the man in the parable paid — and whether following Christ has felt to you more like a sacrifice or like the trade in the field.",
+        "Ask each other: what treasure are you still clutching that you would let go of if you really believed what was buried in the field?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 11:28-30",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light."
+        },
+        {
+          "reference": "Matthew 13:34-35",
+          "text": "Jesus spoke all these things to the crowds in parables. He did not tell them anything without using a parable. So was fulfilled what was spoken through the prophet: \"I will open My mouth in parables; I will utter things hidden since the foundation of the world.\""
+        },
+        {
+          "reference": "Philippians 2:6-7",
+          "text": "Who, existing in the form of God, did not consider equality with God something to be grasped, but emptied Himself, taking the form of a servant, being made in human likeness."
+        },
+        {
+          "reference": "Colossians 1:26-27",
+          "text": "The mystery that was hidden for ages and generations but is now revealed to His saints... which is Christ in you, the hope of glory."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 13",
+          "note": "Read all seven kingdom parables in one sitting — sower, weeds, mustard seed, yeast, hidden treasure, pearl, net — and watch how each one says the kingdom is hidden, small, and worth everything."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus the Teacher",
+      "title": "The One Who Hid the Kingdom in Stories",
+      "description": "In Matthew 8-13, Jesus moves through Galilee teaching, healing, and gathering both crowds and opposition. He touches lepers, calms a storm, forgives sins, sends out twelve disciples, and finally sits in a boat and teaches the gathered crowds in a chain of parables about the kingdom of heaven. He is unmistakably powerful and deliberately hidden at once — recognized by His disciples as the Christ, dismissed by His hometown as the carpenter's son. He is the kingdom He describes, walking ordinary roads.",
+      "keyQuote": "The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and in his joy he went and sold all he had and bought that field.",
+      "lessonForUs": "The same Jesus who said the kingdom is worth selling everything to gain is Himself the One who sold everything, for joy, to gain us. To follow Him is not to make a grim sacrifice but to discover what the man in the field already knew: that what is buried in this ordinary ground is worth the whole price of a life.",
+      "heading": "The One Who Hid the Kingdom in Stories"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2734,
+  "scriptureReference_full": "Matthew 8-13 (anchored in Matthew 13:10-13, 44-46)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (parabolē G3850, mystērion) reflects standard lexical sources; the Hebrew mashal background and the Psalm 78:2 citation in Matthew 13:35 follow the text of Matthew itself."
+  ]
 }

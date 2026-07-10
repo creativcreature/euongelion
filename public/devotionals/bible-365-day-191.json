@@ -1,38 +1,185 @@
 {
   "day": 191,
-  "title": "Psalms of Trust — Day 2 — Building",
-  "teaser": "Day 191 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "Watchmen Waiting for Morning",
+  "teaser": "Eight psalms, one posture: a soul that waits on the LORD more than watchmen wait for the morning. Trust is not certainty about tomorrow — it is keeping watch beside the One who already knows you.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 191"
+      "type": "scripture",
+      "reference": "Psalm 130:5-6; 27:1; 121:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "I wait for the LORD",
+        "more than watchmen wait for the morning",
+        "The LORD is my light and my salvation",
+        "My help comes from the LORD"
+      ],
+      "hebrewOriginal": "נַפְשִׁי לַאדֹנָי מִשֹּׁמְרִים לַבֹּקֶר שֹׁמְרִים לַבֹּקֶר",
+      "passage": "I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning. ... The LORD is my light and my salvation— whom shall I fear? The LORD is the stronghold of my life— whom shall I dread? ... I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָוָה",
+      "transliteration": "qavah",
+      "pronunciation": "kah-VAH",
+      "meaning": "to wait, to hope, to look for with expectation",
+      "rootMeaning": "The root carries the picture of a cord or line being pulled taut. To wait, in Hebrew, is not slack passivity but tension held — a rope stretched toward the thing it is bound to. The one who waits is leaning forward, weight on the line, expecting it to hold.",
+      "usageNote": "When Psalm 130 says 'I wait for the LORD,' the word underneath is not the dull endurance of a person killing time. It is the strained, watchful waiting of someone who has tied their whole weight to a promise and is leaning into it. The same root gives us tiqvah, the ordinary Hebrew word for hope — the hope of Israel is a hope that pulls.",
+      "wordByWord": [
+        {
+          "word": "קִוִּיתִי",
+          "transliteration": "qivviti",
+          "meaning": "I have waited, I have hoped — the verb is intensive, a waiting with the whole self"
+        },
+        {
+          "word": "נַפְשִׁי",
+          "transliteration": "nafshi",
+          "meaning": "my soul, my very life-breath — not just my patience but the core of me"
+        },
+        {
+          "word": "שֹׁמְרִים",
+          "transliteration": "shomrim",
+          "meaning": "watchmen, guards — those who keep watch through the night"
+        },
+        {
+          "word": "לַבֹּקֶר",
+          "transliteration": "labboqer",
+          "meaning": "for the morning, toward the dawn"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "Tiqvah — 'hope' — comes from the same root as qavah. In Joshua 2, Rahab's scarlet cord is a tiqvah, a literal line of rope that becomes her one thread of rescue. Hebrew never lets hope drift far from a cord that holds weight."
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, to look for, to hope; to bind together as by twisting (the underlying sense of a cord)",
+      "usage": "Across the trust-psalms the same posture keeps returning under different words — wait, hope, lift up my eyes, gaze, take refuge. Psalm 130's qavah gives the whole cluster its spine: a soul stretched taut toward a God it cannot yet see, sure He will come like the morning."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Songs, One Posture",
+      "body": "Read today's eight psalms in a single sitting and something quiet happens. They are not arguing the same point; they are taking the same stance. Psalm 1 plants a person like a tree beside water. Psalm 8 sets a small human under a vast sky and asks why God should bother to remember him. Psalm 19 lets the heavens preach and the Law revive. Psalm 27 says the LORD is light, so fear has nowhere to stand. Psalm 90 measures our days against a God who was there before the mountains. Psalm 121 lifts tired eyes to the hills. Psalm 130 cries up out of the depths. Psalm 139 finds that God was already there, in the heights and in Sheol both.\n\nDifferent rooms, but the same floor underneath them: a person who has stopped trying to manufacture their own security and has leaned their weight on Someone else. That leaning is what the Hebrew calls trust. It is not the absence of fear — Psalm 27 names the dread it has to answer, Psalm 130 is shouting from the bottom of a pit. It is fear that has found something solid to lean on.\n\nThe original singers were not philosophers in a quiet study. The psalms of ascent like 121 and 130 were sung on the road, by ordinary pilgrims climbing the long rise to Jerusalem, footsore, exposed, lifting their eyes to the very hills where bandits hid. 'From where does my help come?' is not a poet's flourish. It is a real question asked on a real road by people who knew exactly what could go wrong before they reached the gate.",
+      "keyInsight": "Trust in these psalms is not a feeling that fear has gone. It is the decision to put your weight on God while the fear is still in the room.",
+      "content": "Read today's eight psalms in a single sitting and something quiet happens. They are not arguing the same point; they are taking the same stance. Psalm 1 plants a person like a tree beside water. Psalm 8 sets a small human under a vast sky and asks why God should bother to remember him. Psalm 19 lets the heavens preach and the Law revive. Psalm 27 says the LORD is light, so fear has nowhere to stand. Psalm 90 measures our days against a God who was there before the mountains. Psalm 121 lifts tired eyes to the hills. Psalm 130 cries up out of the depths. Psalm 139 finds that God was already there, in the heights and in Sheol both.\n\nDifferent rooms, but the same floor underneath them: a person who has stopped trying to manufacture their own security and has leaned their weight on Someone else. That leaning is what the Hebrew calls trust. It is not the absence of fear — Psalm 27 names the dread it has to answer, Psalm 130 is shouting from the bottom of a pit. It is fear that has found something solid to lean on.\n\nThe original singers were not philosophers in a quiet study. The psalms of ascent like 121 and 130 were sung on the road, by ordinary pilgrims climbing the long rise to Jerusalem, footsore, exposed, lifting their eyes to the very hills where bandits hid. 'From where does my help come?' is not a poet's flourish. It is a real question asked on a real road by people who knew exactly what could go wrong before they reached the gate."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Longest Hour Is Before Light",
+      "body": "Ask anyone who has worked a night shift and they will tell you the same thing: the hardest stretch is not midnight. It is the hour before dawn. By then the body has run out of its reserves, the dark feels permanent, and the morning you were promised seems like a rumor someone made up to keep you at your post.\n\nThe watchman in Psalm 130 knows this hour. His whole job is to stand on the wall and wait for a light he cannot hasten by a single minute. He cannot pull the sun over the horizon. He cannot argue the night into ending sooner. He can only keep his eyes on the east and trust that what has come every morning of his life will come again. And then the psalmist says something startling: my soul waits for the Lord more than that. More than the most tired man on the wall, staring east, certain the light is coming — that is how my soul waits for You.\n\nThere is a woman I know who sat through a season like that with a sick child, awake at three and four in the morning, watching a monitor, unable to fix anything, able only to stay. She said the strangest gift of those nights was learning that she was not, in fact, holding her child together by the force of her attention. She was keeping watch beside the One who was. The waiting did not make her powerful. It made her trusting. And every morning, the light came up over the houses across the street whether she had earned it or not.",
+      "connectionToTheme": "Trust does not speed up the dawn. It keeps watch through the dark, leaning toward a morning it is sure will come because the One who sends it has never failed to send it.",
+      "content": "Ask anyone who has worked a night shift and they will tell you the same thing: the hardest stretch is not midnight. It is the hour before dawn. By then the body has run out of its reserves, the dark feels permanent, and the morning you were promised seems like a rumor someone made up to keep you at your post.\n\nThe watchman in Psalm 130 knows this hour. His whole job is to stand on the wall and wait for a light he cannot hasten by a single minute. He cannot pull the sun over the horizon. He cannot argue the night into ending sooner. He can only keep his eyes on the east and trust that what has come every morning of his life will come again. And then the psalmist says something startling: my soul waits for the Lord more than that. More than the most tired man on the wall, staring east, certain the light is coming — that is how my soul waits for You.\n\nThere is a woman I know who sat through a season like that with a sick child, awake at three and four in the morning, watching a monitor, unable to fix anything, able only to stay. She said the strangest gift of those nights was learning that she was not, in fact, holding her child together by the force of her attention. She was keeping watch beside the One who was. The waiting did not make her powerful. It made her trusting. And every morning, the light came up over the houses across the street whether she had earned it or not."
+    },
+    {
+      "type": "insight",
+      "heading": "He Searched You First",
+      "body": "Here is the turn that holds all eight psalms together, and it is easy to miss because we read these songs as our reaching toward God. But trust does not rest on the strength of our reaching. It rests on the fact that He reached first.\n\nPsalm 139 says it plainly: 'O LORD, You have searched me and known me.' Before the psalmist ever lifts his eyes to the hills, before he waits for any morning, God has already gone over every corner of him — sitting and rising, the thoughts from afar, the word still unformed on the tongue. Then comes the famous attempt to flee. 'Where can I go to escape Your Spirit? ... If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there.' The psalmist runs to the highest height and the lowest pit and finds the same thing in both places: God, already arrived, hand already outstretched — 'even there Your hand will guide me; Your right hand will hold me fast.'\n\nThis is why the waiting of Psalm 130 is not a gamble. The reason a soul can lean its whole weight on God and trust the line to hold is that the God it leans on is not a stranger it is hoping to win over. He is the One who searched it before it knew to look for Him, who was waiting in the depths before it ever cried out of them. We do not earn His attention by climbing high enough or sinking low enough to get noticed. He was already in both places. The watchman waits for a morning that is, in the end, simply God keeping the appointment He made before the mountains were born — the same God Psalm 90 says is our dwelling place through all generations. To trust Him is not to take a risk on a possibility. It is to rest in a Person who has already proven He will not leave.",
+      "historicalContext": "The Psalter was Israel's hymnbook, sung in temple worship and carried into exile when the temple was gone. By the time these psalms were gathered and ordered, Israel had lived through enough collapse — conquest, captivity, return — to know that trust could not rest on circumstances staying stable. It had to rest on the character of God Himself. The trust-psalms are not the songs of people whose lives went smoothly. They are the songs of people who learned, the hard way, that the only floor that never gave out was the LORD.",
+      "fascinatingFact": "Psalm 139 uses the language of a legal investigation — 'searched,' 'known,' 'tested' — the vocabulary of a courtroom examination. Yet the psalm ends not in dread of being exposed but in welcome: 'Search me, O God, and know my heart.' The one place we most fear being fully seen becomes the one place we most want to be, once we know Who is doing the looking.",
+      "content": "Here is the turn that holds all eight psalms together, and it is easy to miss because we read these songs as our reaching toward God. But trust does not rest on the strength of our reaching. It rests on the fact that He reached first.\n\nPsalm 139 says it plainly: 'O LORD, You have searched me and known me.' Before the psalmist ever lifts his eyes to the hills, before he waits for any morning, God has already gone over every corner of him — sitting and rising, the thoughts from afar, the word still unformed on the tongue. Then comes the famous attempt to flee. 'Where can I go to escape Your Spirit? ... If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there.' The psalmist runs to the highest height and the lowest pit and finds the same thing in both places: God, already arrived, hand already outstretched — 'even there Your hand will guide me; Your right hand will hold me fast.'\n\nThis is why the waiting of Psalm 130 is not a gamble. The reason a soul can lean its whole weight on God and trust the line to hold is that the God it leans on is not a stranger it is hoping to win over. He is the One who searched it before it knew to look for Him, who was waiting in the depths before it ever cried out of them. We do not earn His attention by climbing high enough or sinking low enough to get noticed. He was already in both places. The watchman waits for a morning that is, in the end, simply God keeping the appointment He made before the mountains were born — the same God Psalm 90 says is our dwelling place through all generations. To trust Him is not to take a risk on a possibility. It is to rest in a Person who has already proven He will not leave."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A soul waits for the LORD more than watchmen wait for the morning, leaning its full weight on a God who searched it and knew it before it ever cried out of the depths — and who promises redemption in abundance, that 'He will redeem Israel from all iniquity' (Psalm 130:7-8).",
+      "modernApplication": "We are not short on things to keep watch over: a diagnosis, a marriage, a child who has gone quiet, a future we cannot see past the next month. The temptation is to believe that our anxious watching is what holds it all together — that if we stop staring, the dark wins. The psalms reorder that. Your watching does not hold the world up. It simply keeps you awake beside the One who does. Trust is not the end of the night shift. It is keeping the night shift in company.",
+      "connectionPoint": "Psalm 130 cries out of the depths and answers itself with a promise of redemption — not earned, but waited for, 'redemption in abundance.' The whole Old Testament leans on that line the way a watchman leans toward the east. It is a waiting that runs the length of Scripture, an unspent hope held taut across centuries, looking for the morning God promised to send.",
+      "newTestamentEcho": "The morning came. The redemption Psalm 130 waited for arrived in the One Psalm 27 already named: 'The LORD is my light and my salvation.' Jesus called Himself the light of the world (John 8:12), was raised 'early on the first day of the week' as the dawn was breaking (Mark 16:2), and is named 'the bright Morning Star' in the last chapter of Scripture (Revelation 22:16). Every watchman who ever leaned toward the east, waiting for a light he could not hasten, was waiting — without fully knowing it — for the morning of the resurrection. In Christ the LORD keeps the appointment, and 'He will redeem Israel from all iniquity' becomes a finished thing."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the night you are keeping watch over right now — the thing you cannot fix by the force of your attention, only stay beside?",
+      "additionalQuestions": [
+        "Where have you been acting as though your anxious watching is what holds your life together? What would it feel like to keep watch beside God instead of in place of Him?",
+        "Psalm 139 says God searched you and knew you before you ever sought Him. Does being fully known by God feel more like exposure or like rest — and why?",
+        "The watchman cannot hasten the dawn by a single minute. What are you trying to force into arriving sooner that you may need to wait for instead?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-waiting",
+      "prayerText": "LORD, You have searched me and known me — there is no height I could climb to escape You and no depth I could sink to where You are not already waiting. So tonight I stop pretending my watching holds the world together. I lift my eyes to the hills. My help comes from You, the Maker of heaven and earth. Teach me to wait for You the way a tired watchman waits for the morning: leaning my whole weight on the line, sure the light is coming because You have never once failed to send it. You are my light and my salvation; I will not be afraid of the dark. Amen.",
+      "scripture_echo": "Psalm 130:5-6; 121:1-2; 27:1; 139:1",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, name one thing you have been anxiously watching as though it depended on you. Hand it over in one sentence — 'My help comes from the LORD' — and let yourself wait, leaning, instead of straining to fix it. Keep the watch beside God rather than in place of Him.",
+      "leavingAtCross": [
+        "The belief that my anxious watching is what holds my life together",
+        "The exhaustion of trying to hasten a dawn I cannot speed by a single minute",
+        "The fear that being fully known by God means being condemned by Him"
+      ],
+      "receivingFromCross": [
+        "A God who searched me and knew me before I ever sought Him, and stays",
+        "The freedom to wait without manufacturing my own security",
+        "The certainty that the Morning Star has already risen, and the redemption I wait for is a finished thing"
+      ],
+      "content": "Tonight, name one thing you have been anxiously watching as though it depended on you. Hand it over in one sentence — 'My help comes from the LORD' — and let yourself wait, leaning, instead of straining to fix it. Keep the watch beside God rather than in place of Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word qavah ('wait') picture, and how does the image of a cord pulled taut change what 'waiting on the LORD' means?",
+        "Why is the waiting of Psalm 130 described as not a gamble but a rest? What does Psalm 139 add that makes trust possible?",
+        "How does the watchman waiting for the morning point forward to Christ, the 'bright Morning Star' raised at dawn?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the night you are each keeping watch over right now — the situation you can only stay beside, not fix.",
+        "Talk honestly about whether being fully known by God feels like exposure or rest, and why.",
+        "Ask each other: where am I straining to hasten a dawn I need to wait for — and what would trusting look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 90:1-2",
+          "text": "Lord, You have been our dwelling place through all generations. Before the mountains were born or You brought forth the earth and the world, from everlasting to everlasting You are God."
+        },
+        {
+          "reference": "Psalm 27:14",
+          "text": "Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD!"
+        },
+        {
+          "reference": "Psalm 139:23-24",
+          "text": "Search me, O God, and know my heart; test me and know my concerns. See if there is any offensive way in me; lead me in the way everlasting."
+        },
+        {
+          "reference": "Revelation 22:16",
+          "text": "I am the Root and the Offspring of David, the bright Morning Star."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 130",
+          "note": "Read it slowly aloud three times, listening for the movement: out of the depths (vv. 1-2), the question of standing (vv. 3-4), the waiting watchman (vv. 5-6), the promised redemption (vv. 7-8)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Watchman of Psalm 130",
+      "title": "The One Who Waits for Morning",
+      "era": "Ancient Israel — the psalms of ascent, sung by pilgrims and temple worshipers",
+      "key_trait": "Faithful waiting through the dark for a light he cannot hasten",
+      "description": "Not a named individual but the figure the psalmist reaches for to picture trust: the night-watchman on the city wall, staring east through the longest hour, certain the morning will come. He cannot pull the sun over the horizon. His only work is to stay at his post and wait. The psalmist says his soul waits for the LORD even more than this — a waiting with the whole self, a cord pulled taut toward God. He stands at the front of a long line of watchers across Scripture, all leaning toward the same promised dawn.",
+      "keyQuote": "My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning.",
+      "lessonForUs": "Trust is not the power to end the night. It is the faithfulness to keep watch through it, leaning toward a morning we are sure of — because the One who sends it searched us, knew us, and has never failed to keep the appointment.",
+      "heading": "The One Who Waits for Morning"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2197,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qavah H6960; tiqvah) reflects standard lexical sources; the cord/taut-line sense of the root is widely noted in Hebrew lexica (BDB, HALOT)."
+  ]
 }

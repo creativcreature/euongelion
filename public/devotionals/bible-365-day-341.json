@@ -1,38 +1,178 @@
 {
   "day": 341,
-  "title": "Romans: Justified by Faith — Day 5 — Resolution",
-  "teaser": "Day 341 of Bible 365 — Romans 1-8",
+  "title": "Nothing left to separate us",
+  "teaser": "Eight chapters of argument end not in a doctrine but in a Person: if God did not spare His own Son, the case against you is closed.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 341"
+      "type": "scripture",
+      "reference": "Romans 8:31-34, 38-39",
+      "translation": "BSB",
+      "emphasis": [
+        "If God is for us, who can be against us?",
+        "did not spare His own Son",
+        "It is God who justifies",
+        "nothing will be able to separate us"
+      ],
+      "greekOriginal": "οὔτε θάνατος οὔτε ζωὴ ... δυνήσεται ἡμᾶς χωρίσαι ἀπὸ τῆς ἀγάπης τοῦ Θεοῦ τῆς ἐν Χριστῷ Ἰησοῦ τῷ Κυρίῳ ἡμῶν",
+      "passage": "What then shall we say in response to these things? If God is for us, who can be against us? He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things? Who will bring any charge against God's elect? It is God who justifies. Who is there to condemn us? For Christ Jesus, who died, and more than that was raised to life, is at the right hand of God-and He is interceding for us. ... For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὑπερνικῶμεν",
+      "transliteration": "hypernikōmen",
+      "pronunciation": "hoo-per-nee-KOH-men",
+      "meaning": "we are more than conquerors; we overwhelmingly conquer",
+      "rootMeaning": "Paul takes the ordinary word for winning, nikaō (to conquer, to be victorious - the root behind the goddess Nike and the runner's victory), and welds the prefix hyper onto its front. Hyper means over, beyond, above. So the word is not 'we win' but 'we win past winning' - a victory that overshoots the finish line.",
+      "usageNote": "Hypernikaō appears only once in the entire New Testament, here in Romans 8:37. Paul seems to have coined it. He is not reaching for a word that already existed; he is building one, because no available verb was large enough to carry what he means. The everyday word would have said the believer barely survives the trouble, distress, persecution, famine, nakedness, danger, and sword he has just listed. Paul refuses 'barely.' He stacks hyper on top of the verb so the sentence overflows.",
+      "wordByWord": [
+        {
+          "word": "ὑπερ-",
+          "transliteration": "hyper-",
+          "meaning": "over, beyond, above, more than - the prefix that pushes the verb past its limit"
+        },
+        {
+          "word": "νικάω",
+          "transliteration": "nikaō",
+          "meaning": "to conquer, to overcome, to be victorious"
+        },
+        {
+          "word": "-ωμεν",
+          "transliteration": "-ōmen",
+          "meaning": "we - the first-person plural ending; this is a victory shared, not won alone"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διὰ τοῦ ἀγαπήσαντος ἡμᾶς",
+          "reference": "dia tou agapēsantos hēmas, 'through Him who loved us' (Romans 8:37). The conquering is not ours to generate. The same verse that calls us more than conquerors names the One we conquer through - and the verb for His love is in the past tense, pointing back to a finished act at the cross."
+        }
+      ],
+      "strongsNumber": "G5245",
+      "definition": "to be more than a conqueror, to gain a surpassing victory",
+      "usage": "The grammar quietly carries the whole argument of Romans 1-8: the victory is overwhelming (hyper), it is shared (-ōmen, we), and it is borrowed - it comes 'through Him who loved us,' not through how well we held on."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Chapters of Argument End in a Question",
+      "body": "Paul has been building this letter like a lawyer assembling a case. He opened by announcing he is not ashamed of the gospel, because it is the power of God for salvation (Romans 1:16). Then he turned the indictment on everyone: the pagan who suppresses the truth, the moralist who judges others while doing the same things, the religious insider who has the law and breaks it. By chapter 3 the verdict is total - 'all have sinned and fall short of the glory of God' (Romans 3:23). No one walks out of that courtroom innocent.\n\nThen the argument turns. The same verse that condemns keeps going: those who have sinned 'are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Justified - declared righteous, the gavel coming down in your favor not because the evidence changed but because Another paid. By chapter 5 Paul can say it plainly: 'since we have been justified through faith, we have peace with God through our Lord Jesus Christ' (Romans 5:1). By chapter 8 the courtroom has gone quiet: 'there is now no condemnation for those who are in Christ Jesus' (Romans 8:1).\n\nAnd having proved all of that, Paul does not end with a doctrine. He ends with a question, and then a dare. 'If God is for us, who can be against us?' He is not asking because he is unsure. He is asking the way a man asks who has already looked at every possible accuser and found the docket empty.",
+      "keyInsight": "Romans does not climb toward a definition of grace; it climbs toward a Person who is for us. The argument is settled not by a clause but by the fact that God 'did not spare His own Son.'",
+      "content": "Paul has been building this letter like a lawyer assembling a case. He opened by announcing he is not ashamed of the gospel, because it is the power of God for salvation (Romans 1:16). Then he turned the indictment on everyone: the pagan who suppresses the truth, the moralist who judges others while doing the same things, the religious insider who has the law and breaks it. By chapter 3 the verdict is total - 'all have sinned and fall short of the glory of God' (Romans 3:23). No one walks out of that courtroom innocent.\n\nThen the argument turns. The same verse that condemns keeps going: those who have sinned 'are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Justified - declared righteous, the gavel coming down in your favor not because the evidence changed but because Another paid. By chapter 5 Paul can say it plainly: 'since we have been justified through faith, we have peace with God through our Lord Jesus Christ' (Romans 5:1). By chapter 8 the courtroom has gone quiet: 'there is now no condemnation for those who are in Christ Jesus' (Romans 8:1).\n\nAnd having proved all of that, Paul does not end with a doctrine. He ends with a question, and then a dare. 'If God is for us, who can be against us?' He is not asking because he is unsure. He is asking the way a man asks who has already looked at every possible accuser and found the docket empty."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Charge That Was Already Dropped",
+      "body": "A woman I know carried a bankruptcy for years after it was legally discharged. The court had closed the case. The debt was, in the eyes of the law, gone. But every time the phone rang with an unfamiliar number, her stomach dropped. She kept a folder of old statements in a drawer she would not open, as if the collectors might still appear with the numbers in hand.\n\nWhat finally changed her was not a feeling. It was a single sheet of paper - the discharge order, with a judge's signature - that a lawyer slid across a table and said, 'Read who signed this. The one person whose word outranks every collector has already ruled. They can call. They cannot collect.'\n\nThat is the difference Romans 8 keeps insisting on. The question is not whether anyone will bring a charge against you. Things will. Your memory will. People who knew the worst version of you will. The accuser of the brethren makes it his whole occupation. The question Paul asks is sharper: 'Who is there to condemn us?' - because the only One whose verdict is final has already signed His name, and He signed it in favor of the guilty.",
+      "connectionToTheme": "Accusations keep coming after the verdict is in. Romans 8 does not promise the phone stops ringing; it tells you who already signed the order, and that His ruling outranks every voice that calls.",
+      "content": "A woman I know carried a bankruptcy for years after it was legally discharged. The court had closed the case. The debt was, in the eyes of the law, gone. But every time the phone rang with an unfamiliar number, her stomach dropped. She kept a folder of old statements in a drawer she would not open, as if the collectors might still appear with the numbers in hand.\n\nWhat finally changed her was not a feeling. It was a single sheet of paper - the discharge order, with a judge's signature - that a lawyer slid across a table and said, 'Read who signed this. The one person whose word outranks every collector has already ruled. They can call. They cannot collect.'\n\nThat is the difference Romans 8 keeps insisting on. The question is not whether anyone will bring a charge against you. Things will. Your memory will. People who knew the worst version of you will. The accuser of the brethren makes it his whole occupation. The question Paul asks is sharper: 'Who is there to condemn us?' - because the only One whose verdict is final has already signed His name, and He signed it in favor of the guilty."
+    },
+    {
+      "type": "insight",
+      "heading": "The Logic of the Greater Gift",
+      "body": "The hinge of the whole passage is one sentence: 'He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?' (Romans 8:32).\n\nPaul is reasoning from the greater to the lesser. If God has already done the hardest, costliest, most unthinkable thing - handing over His own Son - then every smaller mercy is settled in advance. The expensive gift guarantees the cheaper ones. You do not have to wonder whether God will give you what you need to make it home, because the bill that could have bankrupted heaven has already been paid, and the Father paid it willingly.\n\nThere is a word buried under that phrase that the first readers would have felt. 'Did not spare His own Son' echoes Genesis 22, where God says to Abraham, 'you have not withheld your son, your only son.' On Mount Moriah a ram died and Isaac walked down the mountain alive. At Calvary there was no ram. The Son Himself is the offering, and this time the Father does not stay the hand. The pattern Abraham only acted out in shadow, God carried all the way through.",
+      "historicalContext": "Romans was written around AD 57, likely from Corinth, to a church in the capital of the empire that Paul had not yet visited. The Roman congregation was a fragile mix of Jewish believers, some returning after the emperor Claudius's earlier expulsion of Jews from the city, and Gentile believers who had filled the gap. Much of Romans 1-8 is laying a common foundation under both groups: the same condemnation, the same justification, the same Spirit, the same unbreakable love - so that neither side could claim a higher footing before God.",
+      "fascinatingFact": "Romans 8 opens and closes on the same note, like a frame. It begins 'there is now no condemnation' (8:1) and ends with nothing 'able to separate us from the love of God' (8:39). No condemnation behind us, no separation ahead of us - and between those two walls, the entire Christian life is meant to be lived.",
+      "content": "The hinge of the whole passage is one sentence: 'He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?' (Romans 8:32).\n\nPaul is reasoning from the greater to the lesser. If God has already done the hardest, costliest, most unthinkable thing - handing over His own Son - then every smaller mercy is settled in advance. The expensive gift guarantees the cheaper ones. You do not have to wonder whether God will give you what you need to make it home, because the bill that could have bankrupted heaven has already been paid, and the Father paid it willingly.\n\nThere is a word buried under that phrase that the first readers would have felt. 'Did not spare His own Son' echoes Genesis 22, where God says to Abraham, 'you have not withheld your son, your only son.' On Mount Moriah a ram died and Isaac walked down the mountain alive. At Calvary there was no ram. The Son Himself is the offering, and this time the Father does not stay the hand. The pattern Abraham only acted out in shadow, God carried all the way through."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul, having proven the whole world guilty, declares that for those in Christ the case is closed: God justifies, Christ intercedes, and no power in creation can separate them from God's love.",
+      "modernApplication": "You can be forgiven and still feel on trial. The accusations arrive in your own voice, late at night, listing what you did and what you failed to do. Romans 8 does not tell you to argue back harder. It tells you to stop defending a case that the Judge has already decided in your favor - and to let the verdict, not the feeling, be the last word.",
+      "connectionPoint": "The same thread runs the length of Scripture. In Genesis the LORD did not finally spare on Moriah what He would one day give on Calvary. Isaiah saw it coming: the Servant 'pierced for our transgressions' on whom the LORD laid the iniquity of us all (Isaiah 53:5-6). Zechariah heard heaven silence the accuser who stood to condemn the priest Joshua: 'The LORD rebuke you, Satan' (Zechariah 3:1-2). Romans gathers all of it into a single courtroom and announces the verdict.",
+      "newTestamentEcho": "The One whom the Father 'did not spare' is the One who now stands at the right hand of God 'interceding for us' (Romans 8:34). The Lamb who was slain is the Advocate who pleads - so the death that closed the case and the life that keeps it closed are the same Christ. As the apostle John would write, 'we have an advocate with the Father - Jesus Christ, the Righteous One' (1 John 2:1)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What charge are you still defending against, even though the One whose verdict is final has already ruled in your favor?",
+      "additionalQuestions": [
+        "When the accusations come in your own voice late at night, whose verdict are you treating as final - yours, or God's?",
+        "Paul says God 'freely gives us all things' along with His Son. What are you asking God for as though it were harder for Him to give than the Son He already gave?",
+        "Read the list in Romans 8:35 and 38-39 slowly. Which item on that list - which trouble, which fear, which power - is the one you secretly believe could still separate you from His love?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You did not spare Your own Son. I have spent so long bracing for a sentence that You have already set aside. Quiet the voice that keeps reopening a case You closed at the cross. When I hear the accusations tonight - the old ones, the true ones - let me hear Christ interceding louder, at Your right hand, for me. I am not more than a conqueror because I held on well. I am more than a conqueror through Him who loved me. Let that be the last word over me as I rest. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, name out loud the one charge you keep carrying - the thing you are most afraid is still on the record. Then say over it the verdict of Romans 8:1: 'There is now no condemnation for those who are in Christ Jesus.' Let the sentence God already passed be the one you fall asleep under.",
+      "leavingAtCross": [
+        "The case I keep reopening against myself after God has already closed it",
+        "The fear that some failure on my list is bigger than the Son God gave for it",
+        "The exhausting work of defending a verdict that was never mine to win"
+      ],
+      "receivingFromCross": [
+        "A discharge signed by the only Judge whose ruling is final",
+        "An Advocate at God's right hand who is interceding for me right now",
+        "A love that nothing in all creation - not death, not my own worst day - can reach in and undo"
+      ],
+      "content": "Tonight, name out loud the one charge you keep carrying - the thing you are most afraid is still on the record. Then say over it the verdict of Romans 8:1: 'There is now no condemnation for those who are in Christ Jesus.' Let the sentence God already passed be the one you fall asleep under."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Paul ends eight chapters of argument with a question - 'If God is for us, who can be against us?' Why does he answer the question about condemnation by pointing to what God did with His Son rather than to anything we have done?",
+        "How does Romans 8:32 reason from the greater gift to the lesser ones - and what does that logic say about the things you are afraid God will withhold?",
+        "Romans 8 opens with 'no condemnation' (8:1) and closes with 'no separation' (8:39). What is meant to happen in the life lived between those two walls?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one accusation that still feels true about you even though you believe you are forgiven. What would it look like to treat God's verdict, not the accusation, as final?",
+        "Talk about the difference between feeling forgiven and being justified. Which one does Romans rest your peace on, and why does that matter on a hard night?",
+        "Ask each other: which item on Paul's list in Romans 8:38-39 is the one you secretly fear could separate you from God - and let the other person speak the verse back over you."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        },
+        {
+          "reference": "Romans 5:1",
+          "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ,"
+        },
+        {
+          "reference": "Romans 3:23-24",
+          "text": "for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus."
+        },
+        {
+          "reference": "Isaiah 53:5-6",
+          "text": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 8",
+          "note": "Read the whole chapter in one sitting, watching how it moves from 'no condemnation' (v. 1) through the Spirit of sonship (vv. 14-17) and the groaning of creation (vv. 18-25) to the unbreakable love (vv. 31-39). The chapter is itself a chiasm, ending where it began: nothing against us, nothing able to separate us."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle, Former Accuser",
+      "description": "The man who wrote 'who will bring any charge against God's elect?' had once been the chief one bringing charges. He stood approving as Stephen was stoned (Acts 7:58-8:1) and went house to house dragging believers to prison (Acts 8:3). When Paul insists no accusation can stand against those God has justified, he is not speaking as a man who never deserved the charges. He is speaking as the accuser himself, who met the risen Christ on the Damascus road and discovered that the verdict over him had already been changed.",
+      "keyQuote": "I am convinced that nothing will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+      "lessonForUs": "The certainty of Romans 8 is not the confidence of a man who has never failed. It is the confidence of a man who failed grievously, was found by grace, and learned that the love which reached him there is the love nothing can reach in and undo. If it held Paul, it can hold you.",
+      "heading": "Apostle, Former Accuser"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1782,
+  "scriptureReference_full": "Romans 8:31-34, 38-39 (within Romans 1-8)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (hypernikōmen, G5245; nikaō; hyper-) reflects standard New Testament lexical sources; the hapax legomenon observation is widely noted in Romans commentary.",
+    "Historical setting of Romans (c. AD 57, Corinthian origin, mixed Jewish-Gentile congregation in Rome following Claudius's expulsion) reflects mainstream New Testament scholarship."
+  ]
 }

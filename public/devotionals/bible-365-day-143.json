@@ -1,38 +1,193 @@
 {
   "day": 143,
-  "title": "Josiah Finds the Book — Day 3 — Pivot",
-  "teaser": "Day 143 of Bible 365 — 2 Kings 22-23",
+  "title": "The Book Was in the House the Whole Time",
+  "teaser": "Day 143 of Bible 365 — 2 Kings 22-23. In the temple Josiah was repairing, a forgotten scroll turns up, and a king tears his clothes at what his fathers had lost.",
   "framework": "2 Kings 22-23 — Josiah Finds the Book",
   "scriptureReference": "2 Kings 22-23",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 143"
+      "type": "scripture",
+      "reference": "2 Kings 22:8, 10-11, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "I have found the Book of the Law",
+        "he tore his clothes",
+        "great is the wrath of the LORD"
+      ],
+      "hebrewOriginal": "סֵפֶר הַתּוֹרָה מָצָאתִי בְּבֵית יְהוָה",
+      "passage": "Then Hilkiah the high priest said to Shaphan the scribe, \"I have found the Book of the Law in the house of the LORD!\" And he gave it to Shaphan, who read it. ... Moreover, Shaphan the scribe told the king, \"Hilkiah the priest has given me a book.\" And Shaphan read it in the presence of the king. When the king heard the words of the Book of the Law, he tore his clothes ... \"For great is the wrath of the LORD that burns against us because our fathers have not obeyed the words of this book by doing all that is written about us.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 22-23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 22-23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מָצָא",
+      "transliteration": "matsa",
+      "pronunciation": "mah-TSAH",
+      "meaning": "to find, to discover, to come upon",
+      "rootMeaning": "Matsa is the verb you use for finding something you were not searching for - a lost coin underfoot, a spring in the desert, a thing that was there all along and suddenly surfaces. Hilkiah does not say he wrote the book or earned it. He says he found it.",
+      "usageNote": "The word lands with weight because of where the finding happens: be-veit YHWH, in the house of the LORD. The Law was not lost in a foreign country or a burned-out ruin. It was lost inside the very temple built to guard it. The most sacred building in Judah had misplaced the very thing it existed to keep.",
+      "wordByWord": [
+        {
+          "word": "סֵפֶר",
+          "transliteration": "sefer",
+          "meaning": "book, scroll, written document"
+        },
+        {
+          "word": "הַתּוֹרָה",
+          "transliteration": "ha-torah",
+          "meaning": "the Law, the instruction, the teaching"
+        },
+        {
+          "word": "מָצָאתִי",
+          "transliteration": "matsati",
+          "meaning": "I have found - first person, a discovery announced"
+        },
+        {
+          "word": "בְּבֵית",
+          "transliteration": "be-veit",
+          "meaning": "in the house of"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD, the covenant name of God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תּוֹרָה",
+          "reference": "Torah comes from yarah, to throw or to shoot - and so, to point. The Law is not first a list of rules but a finger aimed at the direction a life should go. Josiah hears a scroll that points, and turns his whole reign to follow where it points."
+        }
+      ],
+      "strongsNumber": "H4672",
+      "definition": "to find, attain to, secure; to come upon, light upon",
+      "usage": "Matsa carries no boasting. A thing is found, not manufactured. The reform of Judah begins not with a king's idea but with a discovery the king did not plan."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Josiah Finds the Book. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Word (John 1:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Repair Crew Finds the Word in the Rubble",
+      "body": "Josiah was eight years old when he became king. He grew up in a Judah that had spent two generations forgetting God on purpose. His grandfather Manasseh had filled the temple with idols, set altars to the host of heaven in its courts, and burned children in the Valley of Ben-hinnom. By the time Josiah is a young man, the worship of the LORD has been so buried under foreign altars that the scroll of God's own covenant has gone missing inside God's own house.\n\nIn the eighteenth year of his reign Josiah sends his scribe Shaphan to organize the temple repairs - count the money, pay the carpenters and masons, fix the damage. It is a maintenance project. Nobody is looking for a revival. And in the middle of that ordinary work, the high priest Hilkiah comes up with a sentence that would change the nation: \"I have found the Book of the Law in the house of the LORD.\"\n\nIt had been there the whole time. Not destroyed - lost. Stacked behind something, shelved and forgotten, present in the building but absent from the life of the people who ran it. You can keep the house of God in good repair and still not know what is written in the box at the back of it. Josiah's generation proves that the most dangerous way to lose the Word is not to attack it but to neglect it - to let it sit, unread, behind the busyness of keeping the institution running."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Bible on the Shelf",
+      "body": "A man I know inherited his father's house and, with it, his father's study Bible - a heavy thing with a cracked spine that sat on the shelf for years while he meant to get to it. After the funeral he finally opened it and found the margins crowded with his father's handwriting: questions, dates, a wife's name beside a verse about the worth of a good woman, a son's name beside a verse about discipline. The book had been in the house the entire time the man had felt fatherless and unguided. The voice he had been missing was sitting twelve feet from where he ate breakfast.\n\nHe told me he did not cry at the funeral. He cried at the shelf.\n\nJosiah's tears are that kind. When Shaphan reads the scroll aloud, the king tears his clothes - the ancient sign of grief too large to keep inside the body. He is not weeping over a rule he broke last week. He is weeping over a whole inheritance his fathers let slip, a voice that was speaking the entire time no one was listening. The grief is sharp precisely because the loss was unnecessary. The book was never far away. It was only unopened.",
+      "connectionToTheme": "What broke Josiah was not that God's Word was unavailable, but that it had been available and ignored - the loss was a choice, and the recovery is grief before it is reform.",
+      "content": "A man I know inherited his father's house and, with it, his father's study Bible - a heavy thing with a cracked spine that sat on the shelf for years while he meant to get to it. After the funeral he finally opened it and found the margins crowded with his father's handwriting: questions, dates, a wife's name beside a verse about the worth of a good woman, a son's name beside a verse about discipline. The book had been in the house the entire time the man had felt fatherless and unguided. The voice he had been missing was sitting twelve feet from where he ate breakfast.\n\nHe told me he did not cry at the funeral. He cried at the shelf.\n\nJosiah's tears are that kind. When Shaphan reads the scroll aloud, the king tears his clothes - the ancient sign of grief too large to keep inside the body. He is not weeping over a rule he broke last week. He is weeping over a whole inheritance his fathers let slip, a voice that was speaking the entire time no one was listening. The grief is sharp precisely because the loss was unnecessary. The book was never far away. It was only unopened."
+    },
+    {
+      "type": "insight",
+      "heading": "The Tender Heart God Cannot Ignore",
+      "body": "Watch the order of what Josiah does, because the order is the whole lesson. He hears the words. He tears his clothes. He weeps. And only then does he send to inquire of the LORD - through the prophetess Huldah, who lived in Jerusalem in the Second District. The reform of the entire nation, all of chapter 23, comes after the broken heart of chapter 22. Action follows grief; it does not replace it.\n\nAnd notice what God says back. Through Huldah the LORD does not first praise Josiah's coming program of tearing down altars. He names something quieter: \"Because your heart was tender and you humbled yourself before the LORD ... and because you have torn your clothes and wept before Me, I have heard you, declares the LORD\" (22:19). God responds not to the king's power but to the king's softness. The Hebrew word behind \"tender\" is the word for a heart that can still be wounded, still moved, not yet calloused over by years of getting away with it.\n\nThis is the pivot of the whole reading and the whole week. The Word, recovered, does its first work not on the high places out in the country but on the heart in the throne room. Before Josiah cleanses a single shrine, the scroll has already cleansed him. Reform that does not begin in a torn heart only rearranges the idols.",
+      "historicalContext": "Many scholars connect the scroll Hilkiah found with the book of Deuteronomy, or a portion of it - the curses for covenant-breaking in Deuteronomy 28 would explain why Josiah, hearing the words, immediately fears \"great wrath\" against a people who had forsaken those words. What we know for certain from the text is narrower and enough: it was the Book of the Covenant (23:2), and hearing it read aloud broke the king.",
+      "fascinatingFact": "Huldah the prophetess is consulted while the prophet Jeremiah and the prophet Zephaniah were both alive and active in Judah. Scripture simply records that the king's men went to her, and that the word of the LORD came true through her. The text does not explain the choice; it lets her stand, named and trusted, as the one through whom God answered a weeping king.",
+      "content": "Watch the order of what Josiah does, because the order is the whole lesson. He hears the words. He tears his clothes. He weeps. And only then does he send to inquire of the LORD - through the prophetess Huldah, who lived in Jerusalem in the Second District. The reform of the entire nation, all of chapter 23, comes after the broken heart of chapter 22. Action follows grief; it does not replace it.\n\nAnd notice what God says back. Through Huldah the LORD does not first praise Josiah's coming program of tearing down altars. He names something quieter: \"Because your heart was tender and you humbled yourself before the LORD ... and because you have torn your clothes and wept before Me, I have heard you, declares the LORD\" (22:19). God responds not to the king's power but to the king's softness. The Hebrew word behind \"tender\" is the word for a heart that can still be wounded, still moved, not yet calloused over by years of getting away with it.\n\nThis is the pivot of the whole reading and the whole week. The Word, recovered, does its first work not on the high places out in the country but on the heart in the throne room. Before Josiah cleanses a single shrine, the scroll has already cleansed him. Reform that does not begin in a torn heart only rearranges the idols."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A lost scroll is found in the temple, read aloud, and a king tears his clothes - then makes a covenant to follow the LORD with all his heart and soul, and turns to the LORD as no king before or after him ever did (23:25).",
+      "modernApplication": "Most of us do not need a Bible we have never owned; we need to open the one already on the shelf. The Word is not far off. It is in the house, behind the noise of keeping life running. The question Josiah's story puts to us is not whether we have access to Scripture but whether we will let it be read aloud long enough to break and reorder us.",
+      "connectionPoint": "Josiah's reform was the greatest in Judah's history, and it still was not enough. Chapter 23 ends with a hard sentence: even after all his faithfulness, \"the LORD did not turn away from the fury of His burning anger\" against the sin of Manasseh (23:26). A good king with a tender heart could lead a nation back to the Book, but he could not himself become the obedience the Book demanded. He could read the covenant. He could not keep it for everyone. The story leaves a gap a king alone cannot fill.",
+      "newTestamentEcho": "Centuries later, another Son of David stands in the synagogue at Nazareth, unrolls a scroll, reads it aloud, and says, \"Today this Scripture is fulfilled in your hearing\" (Luke 4:21). Where Josiah found the Word and grieved that it had been lost, Jesus is the Word made flesh (John 1:14), come to be lost and found in a far deeper way - rejected by His own and laid in a tomb, then discovered alive. He kept the covenant Josiah could only read, with all His heart and soul and strength, and bore the very wrath Josiah feared so that a tender-hearted people could be more than reformed. They could be remade."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of God's Word have you kept in the house but left unopened - present, available, and unread long enough to go quiet?",
+      "additionalQuestions": [
+        "Josiah's reform began with a torn heart, not a to-do list. When did Scripture last move you to grief before it moved you to action?",
+        "Are there 'high places' in your life you have managed and maintained rather than torn down - compromises you keep in good repair?",
+        "If someone read your inherited faith aloud to you today, would it sound like a living covenant or a forgotten scroll?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, the Word has been in my house the whole time, and too often I have left it on the shelf and lived as though I had no instruction. Forgive the idols I have kept in good repair while neglecting Your voice. Give me the tender heart You gave Josiah - one that can still be broken by what You say, still moved before it is too late. Read Yourself aloud to me until I tear what needs tearing. And thank You for Christ, who kept the covenant I cannot keep and bore the wrath I could not survive, so that I am not only reformed but made new. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, open the Word you already own and read one passage aloud, slowly, the way Shaphan read to the king. Do not study it to fix anyone else. Let it be read over you. Then name one 'high place' - one quiet compromise you have been maintaining - and ask God for the tender heart that would rather tear it down than keep it.",
+      "leavingAtCross": [
+        "The Bible kept as a respected object on the shelf rather than a living voice in the room",
+        "The high places I maintain - compromises I keep in good repair instead of tearing down",
+        "The hard, get-away-with-it heart that no longer flinches at what God says"
+      ],
+      "receivingFromCross": [
+        "A Word that is near me, in my mouth and in my heart, ready to be opened",
+        "A tender heart that God hears and does not despise",
+        "The covenant kept on my behalf by Christ, who became the obedience I could not produce"
+      ],
+      "content": "Today, open the Word you already own and read one passage aloud, slowly, the way Shaphan read to the king. Do not study it to fix anyone else. Let it be read over you. Then name one 'high place' - one quiet compromise you have been maintaining - and ask God for the tender heart that would rather tear it down than keep it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Where, exactly, was the Book of the Law found - and why does that location make the loss so striking?",
+        "What did Josiah do the moment he heard the words read, and what did the LORD say He was responding to in the king?",
+        "Why was even Josiah's record-breaking reform 'not enough' to turn away God's anger, and how does that gap point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one part of Scripture you have 'kept in the house' but not opened - and set a specific day this week to read it aloud together.",
+        "Talk honestly about a 'high place' each of you has been maintaining rather than removing. What would it cost to tear it down?",
+        "Ask each other: when did God's Word last break your heart before it changed your behavior - and what happened next?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 22:19",
+          "text": "Because your heart was tender and you humbled yourself before the LORD when you heard what I spoke against this place and against its people ... and because you have torn your clothes and wept before Me, I have heard you, declares the LORD."
+        },
+        {
+          "reference": "2 Kings 23:25",
+          "text": "Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses."
+        },
+        {
+          "reference": "Deuteronomy 30:14",
+          "text": "But the word is very near you; it is in your mouth and in your heart, so that you may obey it."
+        },
+        {
+          "reference": "Luke 4:21",
+          "text": "And He began by saying, \"Today this Scripture is fulfilled in your hearing.\""
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 22-23",
+          "note": "Read both chapters in one sitting, watching the movement from discovery (22:8) to grief (22:11) to inquiry (22:14) to covenant (23:3) to reform (23:4-24) - and then to the sober word that the reform was still not enough (23:26-27)."
+        },
+        {
+          "type": "book",
+          "title": "2 Chronicles 34-35",
+          "note": "The Chronicler tells the same story with added detail, including the great Passover Josiah kept and his death at Megiddo."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Josiah",
+      "title": "The Boy King Who Wept Over a Scroll",
+      "description": "Crowned at eight years old, Josiah reigned thirty-one years in Jerusalem and did what was right in the eyes of the LORD, not turning to the right or the left (22:1-2). When a temple repair turned up the lost Book of the Law, he tore his clothes, made a public covenant before the LORD, and led the most thorough reform in Judah's history - tearing down altars Solomon had built generations before and his grandfather Manasseh had multiplied. Scripture says no king before or after turned to the LORD as wholly as he did. He died young, struck down by Pharaoh Neco at Megiddo (23:29-30).",
+      "keyQuote": "Go and inquire of the LORD for me, for the people, and for all Judah concerning the words in this book that has been found.",
+      "lessonForUs": "Josiah shows that a tender heart matters more to God than an inherited religion in good repair - and that even the best reformer cannot become the obedience the Word requires. For that, the people of God needed a King who would not only read the covenant but keep and fulfill it.",
+      "heading": "The Boy King Who Wept Over a Scroll"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2477,
+  "scriptureReference_full": "2 Kings 22-23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (matsa H4672; torah from the root yarah) reflects standard lexical sources. The widely held scholarly identification of the found scroll with Deuteronomy (or a portion of it) is noted as a scholarly view, not as certainty stated by the text itself."
+  ]
 }

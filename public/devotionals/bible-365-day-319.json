@@ -1,38 +1,182 @@
 {
   "day": 319,
-  "title": "John: True Vine + Way + Truth — Day 4 — Application",
-  "teaser": "Day 319 of Bible 365 — John 8-14",
+  "title": "When You Don't Know the Way",
+  "teaser": "Thomas asks for a map. Jesus offers Himself. The way to the Father was never a route to memorize - it is a Person to follow.",
   "framework": "John 8-14 — John: True Vine + Way + Truth",
   "scriptureReference": "John 8-14",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 319"
+      "type": "scripture",
+      "reference": "John 14:5-6",
+      "translation": "BSB",
+      "emphasis": [
+        "we do not know where You are going",
+        "I am the way and the truth and the life",
+        "No one comes to the Father except through Me"
+      ],
+      "greekOriginal": "ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή",
+      "passage": "Thomas said to Him, \"Lord, we do not know where You are going, so how can we know the way?\" Jesus answered, \"I am the way and the truth and the life. No one comes to the Father except through Me.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 8-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 8-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὁδός",
+      "transliteration": "hodos",
+      "pronunciation": "ho-DOSS",
+      "meaning": "road, path, way, journey - the actual track your feet take",
+      "rootMeaning": "Hodos is not an abstract idea of direction. It is the dusty road itself - the thing under your sandals, the route between two towns. When Jesus says \"I am the way,\" He uses the most physical, walkable word available, not a word for philosophy.",
+      "usageNote": "Before they were ever called Christians, the first believers were called followers of \"the Way\" (Acts 9:2; 24:14). The name stuck because they did not think of faith as agreeing with ideas. They thought of it as walking a road behind a Person.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ εἰμι",
+          "transliteration": "egō eimi",
+          "meaning": "I am - the same words God speaks from the burning bush (Exodus 3:14), placed on Jesus' lips"
+        },
+        {
+          "word": "ἡ ὁδὸς",
+          "transliteration": "hē hodos",
+          "meaning": "the way, the road - and the definite article makes it the only one"
+        },
+        {
+          "word": "ἡ ἀλήθεια",
+          "transliteration": "hē alētheia",
+          "meaning": "the truth - literally the un-hidden, what is no longer concealed"
+        },
+        {
+          "word": "ἡ ζωή",
+          "transliteration": "hē zōē",
+          "meaning": "the life - not mere existence but life as God has it, life that does not end"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐγώ εἰμι (egō eimi)",
+          "reference": "John strings seven of these together: the bread (6:35), the light (8:12), the gate (10:9), the good shepherd (10:11), the resurrection and the life (11:25), the way, the truth, and the life (14:6), and the true vine (15:1). Each one finishes the same sentence God started in the wilderness."
+        }
+      ],
+      "strongsNumber": "G3598",
+      "definition": "a road, a traveled way; figuratively, a course of conduct or way of life",
+      "usage": "Because hodos means a literal road, Jesus' claim cannot be softened into \"one helpful perspective among many.\" A road either reaches the destination or it does not. He says He is the one that does."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: True Vine + Way + Truth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our way to the Father (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Thomas Asks for Directions; Jesus Hands Him a Person",
+      "body": "It is the last night. In a few hours Jesus will be arrested, and He knows it. So He gathers the eleven in an upstairs room, washes their feet, and begins to say goodbye in a way they cannot yet follow. \"Where I am going, you cannot come now,\" He tells them. Then, gently: \"Do not let your hearts be troubled... I am going there to prepare a place for you... You know the way to the place where I am going.\"\n\nThomas says what everyone is thinking. He is not the doubter here so much as the honest one. \"Lord, we do not know where You are going, so how can we know the way?\" It is the most reasonable question in the room. Give us the address. Draw us a map. Tell us the steps, and we will take them.\n\nJesus does not give him a map. He gives him Himself. \"I am the way and the truth and the life. No one comes to the Father except through Me.\" Notice what He refuses to do. He will not reduce the road to a list of instructions Thomas can carry away and follow without Him. The way is not information. The way is a Person, and you reach the Father by staying close to that Person - not by mastering directions and then walking alone.\n\nThis is the same voice that has been speaking all through these chapters. Back in chapter 8 He said, \"I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.\" Light you do not study; light you walk in. Same with the way.",
+      "keyInsight": "Thomas wanted a route he could memorize and walk on his own. Jesus gives him something both harder and kinder: not directions to follow without Him, but a Person to follow with.",
+      "content": "It is the last night. In a few hours Jesus will be arrested, and He knows it. So He gathers the eleven in an upstairs room, washes their feet, and begins to say goodbye in a way they cannot yet follow. \"Where I am going, you cannot come now,\" He tells them. Then, gently: \"Do not let your hearts be troubled... I am going there to prepare a place for you... You know the way to the place where I am going.\"\n\nThomas says what everyone is thinking. He is not the doubter here so much as the honest one. \"Lord, we do not know where You are going, so how can we know the way?\" It is the most reasonable question in the room. Give us the address. Draw us a map. Tell us the steps, and we will take them.\n\nJesus does not give him a map. He gives him Himself. \"I am the way and the truth and the life. No one comes to the Father except through Me.\" Notice what He refuses to do. He will not reduce the road to a list of instructions Thomas can carry away and follow without Him. The way is not information. The way is a Person, and you reach the Father by staying close to that Person - not by mastering directions and then walking alone.\n\nThis is the same voice that has been speaking all through these chapters. Back in chapter 8 He said, \"I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.\" Light you do not study; light you walk in. Same with the way."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hand on the Sleeve",
+      "body": "A friend told me about taking her father, newly blind from a stroke, through an airport he had flown out of a hundred times. She tried at first to narrate it: forty feet to the escalator, then a left, gate B12 is the third on the right. He stopped after a few steps. None of it helped. The map in his head no longer matched a world he could no longer see.\n\nSo she stopped describing the way and simply gave him her arm. He put his hand on her sleeve, and they walked. She did not tell him where the turns were. She just turned, and he turned with her, because he was holding on. He arrived at the gate not because he had memorized the route but because he stayed attached to someone who knew it.\n\nThat is closer to what Jesus offers Thomas than any set of directions could be. Most of us want the airport narrated - the steps, the timeline, the certainty of knowing what comes next. What we are given instead is an arm to hold. \"I am the way.\" Not here is the way; follow it on your own. But here I am; stay close, and you will get home.",
+      "connectionToTheme": "Thomas wanted the route described from a distance. Jesus offers what a blind man in a strange place actually needs - not narration but a hand to hold and a person who knows the turns.",
+      "content": "A friend told me about taking her father, newly blind from a stroke, through an airport he had flown out of a hundred times. She tried at first to narrate it: forty feet to the escalator, then a left, gate B12 is the third on the right. He stopped after a few steps. None of it helped. The map in his head no longer matched a world he could no longer see.\n\nSo she stopped describing the way and simply gave him her arm. He put his hand on her sleeve, and they walked. She did not tell him where the turns were. She just turned, and he turned with her, because he was holding on. He arrived at the gate not because he had memorized the route but because he stayed attached to someone who knew it.\n\nThat is closer to what Jesus offers Thomas than any set of directions could be. Most of us want the airport narrated - the steps, the timeline, the certainty of knowing what comes next. What we are given instead is an arm to hold. \"I am the way.\" Not here is the way; follow it on your own. But here I am; stay close, and you will get home."
+    },
+    {
+      "type": "insight",
+      "heading": "Three Words, One Person",
+      "body": "Read the sentence again and watch what He does with the word \"and.\" He does not say He shows you the way, teaches you the truth, and gives you life - three services He performs. He says He is all three. The way, the truth, and the life are not gifts handed over from a distance; they are names for Himself.\n\nThis is why the rest of these chapters refuse to stay theoretical. To Pilate's world, truth is a debate. Here, truth is a face. To the philosophers, life is a question to argue. Here, life walks into a graveyard at Bethany and says to a grieving sister, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies\" (John 11:25). He does not point Martha to a doctrine about the last day she already believed. He points her to Himself, standing in front of her, four days too late by every human calendar and exactly on time by His.\n\nSo when life goes dark and you do not know the way, the help on offer is not a better map. It is a Person near enough to hold. The way is not a what. The way is a Who.",
+      "historicalContext": "John writes his Gospel late in the first century, decades after the resurrection, to communities that already knew the other accounts. He arranges Jesus' words around seven \"I am\" statements that deliberately echo the divine name revealed to Moses, \"I AM WHO I AM\" (Exodus 3:14). To a Jewish reader, Jesus saying \"before Abraham was born, I am\" (John 8:58) was not a riddle - it was the reason they picked up stones. He was claiming the name only God may wear.",
+      "fascinatingFact": "John 14:6 is the sixth of the seven \"I am\" sayings, and it is the only one that gathers three predicates into a single breath - the way, the truth, and the life. Ancient readers heard it as a compressed summary of the whole Gospel: He is the road you travel (the way), the reality you trust (the truth), and the destination itself (the life).",
+      "content": "Read the sentence again and watch what He does with the word \"and.\" He does not say He shows you the way, teaches you the truth, and gives you life - three services He performs. He says He is all three. The way, the truth, and the life are not gifts handed over from a distance; they are names for Himself.\n\nThis is why the rest of these chapters refuse to stay theoretical. To Pilate's world, truth is a debate. Here, truth is a face. To the philosophers, life is a question to argue. Here, life walks into a graveyard at Bethany and says to a grieving sister, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies\" (John 11:25). He does not point Martha to a doctrine about the last day she already believed. He points her to Himself, standing in front of her, four days too late by every human calendar and exactly on time by His.\n\nSo when life goes dark and you do not know the way, the help on offer is not a better map. It is a Person near enough to hold. The way is not a what. The way is a Who."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On the night before He died, Jesus answered a frightened disciple's request for directions by offering not a route but Himself: \"I am the way and the truth and the life.\"",
+      "modernApplication": "We are a generation drowning in directions - life-hacks, frameworks, ten-step plans for marriage, money, and meaning. We collect maps and stay lost. Jesus' answer to Thomas reorders the whole project: stop trying to walk the way on your own steam and instead stay close to the One who is the way. Following is not first about getting the steps right. It is about not letting go of His arm.",
+      "connectionPoint": "Across these chapters Jesus keeps refusing to be a teacher you can learn from and then leave. \"If you continue in My word,\" He says, \"you are truly My disciples. Then you will know the truth, and the truth will set you free\" (John 8:31-32). Freedom is not in the information; it is in the continuing - in staying with Him. And He insists the staying is mutual: in the very next chapter He will call Himself the true vine and tell them, \"Remain in Me, and I will remain in you\" (John 15:4). The way is walked by abiding, not by achieving.",
+      "newTestamentEcho": "Philip presses for more - \"Show us the Father, and that will be enough for us.\" Jesus' reply is the whole point of John's Gospel: \"Anyone who has seen Me has seen the Father\" (John 14:9). You do not climb past Jesus to reach God. To have Him is to have arrived."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you demanding a map - the steps, the timeline, the certainty of what comes next - when what is actually being offered is a hand to hold?",
+      "additionalQuestions": [
+        "When you cannot see the way forward, is your instinct to find better information or to stay closer to Jesus? What does that reveal?",
+        "Thomas felt safe enough to admit, \"We do not know where You are going.\" What is the honest thing you have not yet said out loud to God about your own confusion?",
+        "What would change today if you treated following Jesus less as keeping rules correctly and more as not letting go of His arm?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I keep asking You for directions when You keep offering me Yourself. I want the map so I can walk it alone; You want my hand on Your arm. Forgive me for studying the way instead of staying close to the Way. When I cannot see the road ahead, let it be enough that You are holding it - and holding me. I do not know where You are going. I only know I want to be where You are. Lead, and I will turn when You turn. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Pick the one decision this week where you most want a guaranteed map - the job, the relationship, the conversation you are dreading. Before you act, take it to Jesus the way Thomas did, out loud and honest: \"I do not know the way.\" Then take one small, faithful step in His direction without waiting for the whole route to be revealed. Walking with Him is how the next turn becomes visible.",
+      "leavingAtCross": [
+        "The demand for a full map before I am willing to take a single step",
+        "The exhausting project of walking the way under my own power, on my own information",
+        "The lie that following Jesus means having my future figured out"
+      ],
+      "receivingFromCross": [
+        "A Person to hold onto rather than a route to memorize",
+        "The freedom to walk in the dark because the Light is walking beside me",
+        "The promise that the One who is the way has already gone ahead to prepare the place"
+      ],
+      "content": "Pick the one decision this week where you most want a guaranteed map - the job, the relationship, the conversation you are dreading. Before you act, take it to Jesus the way Thomas did, out loud and honest: \"I do not know the way.\" Then take one small, faithful step in His direction without waiting for the whole route to be revealed. Walking with Him is how the next turn becomes visible."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between asking Jesus for a map and holding onto Jesus as the way - in who does the walking, what you rely on, and how you handle not knowing what comes next?",
+        "Why does it matter that Jesus says He is the way, the truth, and the life rather than that He shows, teaches, and gives them?",
+        "How does Jesus' answer to Philip - \"Anyone who has seen Me has seen the Father\" - explain why no one comes to the Father except through Him?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been collecting directions - books, advice, plans - while quietly staying lost. What would it look like to stop studying the way and start following the Way?",
+        "Talk about a season when you could not see the road ahead. Was Jesus more like a map you had lost or an arm you were holding? How did it actually feel?",
+        "Ask each other: where is Jesus asking you to take a step before the whole route is clear, trusting Him to show the next turn as you walk?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 8:12",
+          "text": "Once again, Jesus spoke to the people and said, \"I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.\""
+        },
+        {
+          "reference": "John 8:31-32",
+          "text": "If you continue in My word, you are truly My disciples. Then you will know the truth, and the truth will set you free."
+        },
+        {
+          "reference": "John 10:9, 11",
+          "text": "I am the gate. If anyone enters through Me, he will be saved... I am the good shepherd. The good shepherd lays down His life for the sheep."
+        },
+        {
+          "reference": "John 11:25",
+          "text": "Jesus said to her, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 13-14",
+          "note": "Read the upper-room farewell slowly, watching how Jesus moves from washing feet (13:1-17) to the new commandment (13:34) to Thomas' question (14:5) - service, love, and direction all answered by the same Person."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Thomas",
+      "title": "The Disciple Who Asked Out Loud",
+      "description": "One of the twelve, often remembered only for doubting the resurrection (John 20:24-25). But he is also the disciple willing to say what others were afraid to admit. Earlier he had urged the rest, \"Let us also go, so that we may die with Him\" (John 11:16) - loyal even when he expected the worst. In the upper room he speaks the room's confusion plainly: we do not know where You are going. His honesty draws out one of the greatest sentences Jesus ever spoke.",
+      "keyQuote": "Lord, we do not know where You are going, so how can we know the way?",
+      "lessonForUs": "Thomas teaches that confusion spoken honestly to Jesus is not a failure of faith - it is the doorway to it. The question that admits \"I do not know the way\" is exactly the one that receives the answer, \"I am the way.\"",
+      "heading": "The Disciple Who Asked Out Loud"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "John 14:5-6 (within John 8-14)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (hodos G3598; egō eimi) reflects standard lexical sources; the link between the Johannine \"I am\" sayings and Exodus 3:14 is the consensus reading of New Testament scholarship.",
+    "The early church's self-designation as followers of \"the Way\" is attested in Acts (e.g., Acts 9:2; 24:14)."
+  ]
 }

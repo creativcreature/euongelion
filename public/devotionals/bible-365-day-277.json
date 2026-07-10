@@ -1,38 +1,183 @@
 {
   "day": 277,
-  "title": "Matthew: Kingdom Begins — Day 4 — Application",
-  "teaser": "Day 277 of Bible 365 — Matthew 1-7",
+  "title": "The House the Storm Couldn't Take",
+  "teaser": "The Sermon on the Mount ends not with a rule but with a builder. Hearing the King's words is the easy part. Acting on them is the foundation.",
   "framework": "Matthew 1-7 — Matthew: Kingdom Begins",
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 277"
+      "type": "scripture",
+      "reference": "Matthew 7:24-27",
+      "translation": "BSB",
+      "emphasis": [
+        "hears these words of Mine and acts on them",
+        "built his house on the rock",
+        "does not act on them",
+        "and great was its collapse"
+      ],
+      "greekOriginal": "Πᾶς οὖν ὅστις ἀκούει μου τοὺς λόγους τούτους καὶ ποιεῖ αὐτούς",
+      "passage": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock. But everyone who hears these words of Mine and does not act on them is like a foolish man who built his house on sand. The rain fell, the torrents raged, and the winds blew and beat against that house, and it fell—and great was its collapse!”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ποιέω",
+      "transliteration": "poieō",
+      "pronunciation": "poy-EH-oh",
+      "meaning": "to do, to make, to act on, to put into practice",
+      "rootMeaning": "Poieō is the ordinary Greek verb for making and doing - the word a builder uses, the word a craftsman uses. It is the root behind the English word 'poem': a poem is literally 'a thing made.' At the close of the Sermon, Jesus does not ask whether you admired His words. He asks whether you made something of them.",
+      "usageNote": "The same verb runs through the whole Sermon's ending like a hammer. The wise man hears and 'acts on' (poiei) Jesus' words (7:24); the foolish man hears and 'does not act on' (mē poiōn) them (7:26); and only the one who 'does' (poiōn) the will of the Father enters the kingdom (7:21). Three times the dividing line is not knowledge but doing.",
+      "wordByWord": [
+        {
+          "word": "πᾶς ὅστις",
+          "transliteration": "pas hostis",
+          "meaning": "everyone who - no exceptions, no insiders exempt"
+        },
+        {
+          "word": "ἀκούει",
+          "transliteration": "akouei",
+          "meaning": "hears, listens to (the root of our word 'acoustic')"
+        },
+        {
+          "word": "τοὺς λόγους τούτους",
+          "transliteration": "tous logous toutous",
+          "meaning": "these words - the whole Sermon He has just spoken"
+        },
+        {
+          "word": "καὶ ποιεῖ αὐτούς",
+          "transliteration": "kai poiei autous",
+          "meaning": "and acts on them, does them, puts them into practice"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀκούω / ποιέω",
+          "reference": "Hearing (akouō) and doing (poieō) are set side by side on purpose. James, writing to scattered believers, presses the same pair: 'Be doers of the word, and not hearers only' (James 1:22). The Sermon and the letter agree - the gap between hearing and doing is where houses fall."
+        }
+      ],
+      "strongsNumber": "G4160",
+      "definition": "to make, do, perform, carry out, put into practice",
+      "usage": "Jesus chooses the most physical verb available - the one for building and crafting - to describe what should happen to His words once they are heard. They are not meant to be stored. They are meant to be built."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Whole Mountain Comes Down to a House",
+      "body": "For three chapters the King has been speaking. Matthew opens his Gospel with a genealogy and a baby, a star and a flight into Egypt, a wilderness and a voice from heaven - and then, in chapter five, Jesus goes up on a mountain, sits down the way a teacher sits, and begins. Blessed are the poor in spirit. You are the salt of the earth. Love your enemies. Do not store up treasures on earth. Seek first the kingdom. Ask, and it will be given. Three chapters of the most quoted words ever spoken.\n\nAnd then it ends - not with a summary, not with a doctrine, but with a man building a house. The whole towering Sermon narrows to one practical question: now that you have heard all this, what will you do with it?\n\nNotice that Jesus describes two men, and they are almost identical. Both hear the same words. Both build a house. Both face the same weather - the rain, the torrents, the wind come for both of them equally. There is only one difference between them, and it is not how much they heard. It is what they did. One acted on the words. One did not. The Sermon does not divide the crowd into the informed and the ignorant. It divides them into the doers and the hearers-only - and the dividing happens not in the listening but in the living.",
+      "keyInsight": "The Sermon on the Mount does not end by asking whether you understood it. It ends by asking whether you built on it. Two men hear the same words and face the same storm; the only difference between a house that stands and a house that collapses is doing.",
+      "content": "For three chapters the King has been speaking. Matthew opens his Gospel with a genealogy and a baby, a star and a flight into Egypt, a wilderness and a voice from heaven - and then, in chapter five, Jesus goes up on a mountain, sits down the way a teacher sits, and begins. Blessed are the poor in spirit. You are the salt of the earth. Love your enemies. Do not store up treasures on earth. Seek first the kingdom. Ask, and it will be given. Three chapters of the most quoted words ever spoken.\n\nAnd then it ends - not with a summary, not with a doctrine, but with a man building a house. The whole towering Sermon narrows to one practical question: now that you have heard all this, what will you do with it?\n\nNotice that Jesus describes two men, and they are almost identical. Both hear the same words. Both build a house. Both face the same weather - the rain, the torrents, the wind come for both of them equally. There is only one difference between them, and it is not how much they heard. It is what they did. One acted on the words. One did not. The Sermon does not divide the crowd into the informed and the ignorant. It divides them into the doers and the hearers-only - and the dividing happens not in the listening but in the living."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Inspection You Don't See Coming",
+      "body": "A builder I knew used to say you can tell everything about a house from a thing you will never look at: the footing, the part poured below the dirt before the first wall ever goes up. Two houses on the same street can look the same from the curb - same paint, same porch, same lamp glowing in the front window. One of them is anchored to something solid underneath. The other is resting on fill that was never compacted, because compacting it was slow and nobody could see the difference anyway.\n\nFor years there is no difference. The houses age side by side, indistinguishable. Then a season of hard rain comes, the kind that does not let up, and the ground turns to water. One house settles a hairline crack and holds. The other does not crack - it goes, all at once, the way Jesus describes it: great was its collapse.\n\nThat is the unnerving thing about the two builders. Right up until the storm, you could not have told them apart. The wise man's obedience was invisible. He looked no more religious, no more impressive, than his neighbor. The whole difference was buried under the floor, in the part of life no one sees - the forgiveness offered when no one was watching, the enemy actually loved, the secret prayer prayed to a Father who sees in secret. The Sermon's righteousness is mostly underground. And the storm is the only inspector that ever checks the footing.",
+      "connectionToTheme": "Hearing the King's words and acting on them looks, for a long time, exactly like hearing them and admiring them. The difference is invisible until pressure arrives - which is precisely why so many build on sand without ever meaning to.",
+      "content": "A builder I knew used to say you can tell everything about a house from a thing you will never look at: the footing, the part poured below the dirt before the first wall ever goes up. Two houses on the same street can look the same from the curb - same paint, same porch, same lamp glowing in the front window. One of them is anchored to something solid underneath. The other is resting on fill that was never compacted, because compacting it was slow and nobody could see the difference anyway.\n\nFor years there is no difference. The houses age side by side, indistinguishable. Then a season of hard rain comes, the kind that does not let up, and the ground turns to water. One house settles a hairline crack and holds. The other does not crack - it goes, all at once, the way Jesus describes it: great was its collapse.\n\nThat is the unnerving thing about the two builders. Right up until the storm, you could not have told them apart. The wise man's obedience was invisible. He looked no more religious, no more impressive, than his neighbor. The whole difference was buried under the floor, in the part of life no one sees - the forgiveness offered when no one was watching, the enemy actually loved, the secret prayer prayed to a Father who sees in secret. The Sermon's righteousness is mostly underground. And the storm is the only inspector that ever checks the footing."
+    },
+    {
+      "type": "insight",
+      "heading": "The Rock Is a Person",
+      "body": "Read the parable closely and a strange thing surfaces. Jesus says the wise man builds on the rock by hearing and acting on 'these words of Mine.' The foundation is not the law of Moses in general. It is not religion in general. It is specifically His words - the words He alone has just spoken with an authority the crowds had never heard before (Matthew 7:28-29).\n\nNo rabbi taught like this. They taught by citing those who came before them: Moses said, Rabbi Hillel held, the tradition records. Jesus says, 'You have heard that it was said... but I tell you.' He puts His own word in the place reserved for God's word - and then He says your entire house stands or falls on whether you build on it. A teacher points you to the foundation. Jesus says He is the foundation.\n\nThis is the quiet claim under the whole Sermon. Obeying these words is not finally a matter of following good advice. It is a matter of trusting a Person enough to put the full weight of your life on what He says - which is something you only do for someone you believe is who He says He is.",
+      "historicalContext": "Matthew writes for a community steeped in the Hebrew Scriptures, where 'the Rock' is one of God's own names. Moses sang of it: 'He is the Rock, His work is perfect' (Deuteronomy 32:4). The psalmists cried, 'The LORD is my rock and my fortress' (Psalm 18:2). For a first-century Jewish reader, to hear Jesus make obedience to His words the rock that outlasts the flood was to hear an unmistakable echo - the King is standing where only God stands.",
+      "fascinatingFact": "Matthew brackets the entire Sermon with the mountain. Jesus goes up the mountain to teach (5:1), the way Moses went up Sinai to receive the law. But the contrast is the point: Moses came down carrying tablets he had received; Jesus sits down and speaks the words as His own. The new law is not handed to the mountain. It is the One on the mountain.",
+      "content": "Read the parable closely and a strange thing surfaces. Jesus says the wise man builds on the rock by hearing and acting on 'these words of Mine.' The foundation is not the law of Moses in general. It is not religion in general. It is specifically His words - the words He alone has just spoken with an authority the crowds had never heard before (Matthew 7:28-29).\n\nNo rabbi taught like this. They taught by citing those who came before them: Moses said, Rabbi Hillel held, the tradition records. Jesus says, 'You have heard that it was said... but I tell you.' He puts His own word in the place reserved for God's word - and then He says your entire house stands or falls on whether you build on it. A teacher points you to the foundation. Jesus says He is the foundation.\n\nThis is the quiet claim under the whole Sermon. Obeying these words is not finally a matter of following good advice. It is a matter of trusting a Person enough to put the full weight of your life on what He says - which is something you only do for someone you believe is who He says He is."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus closes the Sermon on the Mount by making one thing the difference between a life that stands and a life that collapses: not hearing His words, but acting on them. The rock is obedience to His specific words - and the rock, finally, is Him.",
+      "modernApplication": "We are wired to mistake hearing for having. We listen to the sermon, save the verse, nod at the truth, and feel as though something has happened - when nothing has yet been built. The good word that stays in the ear and never reaches the hands is sand. Today the question is not whether you agree with Jesus. It is whether there is one specific thing He has said that you will actually do before the day ends.",
+      "connectionPoint": "The pattern of hearing-and-doing runs from the mountain through the whole New Testament. James presses it bluntly: be doers of the word and not hearers only, who deceive themselves (James 1:22). Jesus says it of His own family: 'Whoever does the will of My Father in heaven is My brother and sister and mother' (Matthew 12:50). The kingdom Matthew has been announcing since chapter one is not entered by applause but by allegiance.",
+      "newTestamentEcho": "Paul finishes what the parable hints. 'No one can lay a foundation other than the one already laid, which is Jesus Christ' (1 Corinthians 3:11). The rock the wise man builds on is not a principle but a Person - the King who spoke the Sermon is Himself the foundation it points to."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Of everything Jesus says in the Sermon on the Mount, name the one command you have most thoroughly heard and most carefully avoided doing. What would it cost you to build on it this week?",
+      "additionalQuestions": [
+        "Where in your life have you mistaken being moved by a truth for obeying it? What did you feel had been settled that was, in fact, never built?",
+        "The two houses looked identical until the storm. What pressure is currently testing your foundation - and what is it revealing about what you actually built on?",
+        "Jesus makes obedience to 'these words of Mine' the rock. Is your trust finally in His teaching, or in the Teacher? How would the difference show up in a hard week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have heard so much. I have nodded at words that should have remade me, and walked away as though hearing them were the same as obeying them. Forgive me for building on sand while telling myself it was rock. You did not give me good advice to admire; You gave me Yourself to build on. Show me the one thing today that I have heard from You and never done, and give me the will to do it - quietly, where no one sees, in the part of the house that only the storm will test. Be my foundation. Hold me when the rain comes. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before today ends, take one specific command from the Sermon on the Mount - reconcile with someone (5:23-24), forgive a debt (6:12), give in secret (6:3-4), stop worrying about tomorrow (6:34), or do to someone what you would want done to you (7:12) - and actually do it. Not study it. Do it. Build one stone into the foundation.",
+      "leavingAtCross": [
+        "The comfortable lie that hearing a truth and being changed by it are the same thing",
+        "The religion that looks solid from the curb but was never anchored underneath",
+        "The fear that doing what Jesus said will cost more than I can afford"
+      ],
+      "receivingFromCross": [
+        "A foundation I did not lay and cannot wash away - Christ Himself, already poured",
+        "The freedom to obey in secret, for an audience of One who sees what no one else does",
+        "The promise that the house built on His words will still be standing when the storm has done its worst"
+      ],
+      "content": "Before today ends, take one specific command from the Sermon on the Mount - reconcile with someone (5:23-24), forgive a debt (6:12), give in secret (6:3-4), stop worrying about tomorrow (6:34), or do to someone what you would want done to you (7:12) - and actually do it. Not study it. Do it. Build one stone into the foundation."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the single difference between the wise builder and the foolish builder - and what is NOT a difference between them?",
+        "Why does it matter that Jesus makes the foundation 'these words of Mine' rather than righteousness or religion in general?",
+        "The storm comes for both houses equally. What does that tell you about what obedience does and does not promise to spare you?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one command of Jesus you have heard for years and quietly never obeyed. Say it out loud - naming the sand is the first stone of the rock.",
+        "Talk about a storm that once tested your foundation. What held? What collapsed? What did it reveal about what you had actually built on?",
+        "Choose one specific act of obedience from the Sermon this week and ask your partner to check in with you about whether you did it - not whether you agreed with it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 7:21",
+          "text": "Not everyone who says to Me, 'Lord, Lord,' will enter the kingdom of heaven, but only he who does the will of My Father in heaven."
+        },
+        {
+          "reference": "Matthew 7:28-29",
+          "text": "When Jesus had finished saying these things, the crowds were astonished at His teaching, because He taught as one who had authority, and not as their scribes."
+        },
+        {
+          "reference": "James 1:22",
+          "text": "Be doers of the word, and not hearers only. Otherwise, you are deceiving yourselves."
+        },
+        {
+          "reference": "1 Corinthians 3:11",
+          "text": "For no one can lay a foundation other than the one already laid, which is Jesus Christ."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7",
+          "note": "Read the whole Sermon on the Mount in one sitting, then read 7:24-27 again as its conclusion. Watch how every command leads to the same closing question: will you build on this?"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus, the Teacher on the Mountain",
+      "title": "The King Who Is the Foundation",
+      "description": "In Matthew 5-7, Jesus sits down on a mountain and delivers the Sermon on the Mount - the charter of the kingdom He has come to bring. He teaches not by citing earlier authorities but on His own authority, repeatedly saying 'but I tell you,' and the crowds are astonished, for He speaks as no scribe ever had (7:28-29). At the Sermon's close He stakes everything on a single thing: whether His hearers act on His words. The wise build on the rock of obedience to Him; the rock, Matthew's whole Gospel reveals, is Christ Himself.",
+      "keyQuote": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock.",
+      "lessonForUs": "Jesus does not ask to be admired; He asks to be built upon. To hear His words and act on them is not to follow a system of ethics but to entrust the whole weight of your life to a Person - the One who claims the place that belongs to God alone, and who proves worthy of it.",
+      "heading": "The King Who Is the Foundation"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2201,
+  "scriptureReference_full": "Matthew 7:24-27 (within Matthew 1-7)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (poieō, G4160; akouō) reflects standard lexical sources; the 'poem / thing made' note follows the common derivation of English 'poem' from Greek poiēma.",
+    "'The LORD is the Rock' background draws on Deuteronomy 32:4 and Psalm 18:2 (BSB)."
+  ]
 }

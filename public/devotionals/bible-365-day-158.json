@@ -1,38 +1,192 @@
 {
   "day": 158,
-  "title": "Fall of Jerusalem + Lamentations — Day 4 — Application",
-  "teaser": "Day 158 of Bible 365 — Lamentations",
+  "title": "Mercy You Have to Speak Out Loud",
+  "teaser": "The city is ash and the prophet is bankrupt of comfort. Then he does the bravest thing in the Bible: he makes himself remember out loud that mercy is new every morning.",
   "framework": "Lamentations — Fall of Jerusalem + Lamentations",
-  "scriptureReference": "Lamentations",
+  "scriptureReference": "Lamentations 3:21-26",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 158"
+      "type": "scripture",
+      "reference": "Lamentations 3:21-26",
+      "translation": "BSB",
+      "emphasis": [
+        "Yet I call this to mind",
+        "His mercies never fail",
+        "new every morning",
+        "wait quietly for the salvation of the LORD"
+      ],
+      "hebrewOriginal": "חַסְדֵי יְהוָה כִּי לֹא־תָמְנוּ כִּי לֹא־כָלוּ רַחֲמָיו׃ חֲדָשִׁים לַבְּקָרִים רַבָּה אֱמוּנָתֶךָ",
+      "passage": "Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness! “The LORD is my portion,” says my soul, “therefore I will hope in Him.” The LORD is good to those who wait for Him, to the soul who seeks Him. It is good to wait quietly for the salvation of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Lamentations**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Lamentations and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, steadfast love, covenant loyalty, mercy",
+      "rootMeaning": "Chesed is love that has made a promise. It is not a feeling that comes and goes but loyalty that holds, the kind of love bound to a commitment - so it keeps showing up even when the other side has failed.",
+      "usageNote": "In verse 22 the noun appears in the plural, chasdei - the loving devotions of the LORD. Right beside it stands rachamim, His tender mercies, a word built on the root for womb. The two words together say it twice: covenant loyalty that will not quit, and gut-level tenderness that aches over the one it loves.",
+      "wordByWord": [
+        {
+          "word": "חַסְדֵי יְהוָה",
+          "transliteration": "chasdei YHWH",
+          "meaning": "the loving devotions of the LORD - His covenant loyalties"
+        },
+        {
+          "word": "לֹא־תָמְנוּ",
+          "transliteration": "lo tamnu",
+          "meaning": "we are not consumed, we are not finished off"
+        },
+        {
+          "word": "רַחֲמָיו",
+          "transliteration": "rachamav",
+          "meaning": "His tender mercies, His compassions (from the root for womb)"
+        },
+        {
+          "word": "חֲדָשִׁים לַבְּקָרִים",
+          "transliteration": "chadashim labbekarim",
+          "meaning": "new to the mornings - fresh with every daybreak"
+        },
+        {
+          "word": "רַבָּה אֱמוּנָתֶךָ",
+          "transliteration": "rabbah emunatecha",
+          "meaning": "great is Your faithfulness, Your firm reliability"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱמוּנָה / emunah",
+          "reference": "Faithfulness here is emunah - the same root as amen. It does not mean a warm feeling; it means something you can put your weight on, a load-bearing wall. The prophet is not saying God feels reliable. He is saying God holds the roof up."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; especially the covenant love of God toward His people",
+      "usage": "Chesed is the great word the Hebrew Scriptures use for God's stubborn, promise-keeping love. That this word surfaces at the bottom of Lamentations, in a book where almost every other line is grief, is the whole point: the love that surfaces here was buried under ash, and the prophet has to dig for it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Fall of Jerusalem + Lamentations. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wept over Jerusalem (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Hope That Has to Be Talked Into Existence",
+      "body": "By the time you reach the middle of Lamentations, the prophet has run out of softer words. The city is rubble. The Temple, the one place on earth where heaven and earth were said to meet, is a burned shell. Mothers have buried children. Famine has done what the Babylonian army did not finish. And the man holding the pen has been saying so, verse after verse, with a courage that refuses to look away: \"He has worn away my flesh and skin... He has walled me in so I cannot escape\" (3:4, 7).\n\nThen, in verse 21, the whole book turns on four small words: \"Yet I call this to mind.\" The Hebrew is more deliberate than it sounds in English. He is not reporting a mood that arrived. He is performing an act of the will. He reaches back into memory, takes hold of one thing, and drags it to the front of his attention on purpose. And only because he has done that hard inner labor can he add: \"and therefore I have hope.\"\n\nNotice the order. The hope does not come first and produce the memory. The memory comes first - chosen, deliberate, almost forced - and the hope follows it. This is not a man whose feelings have improved. This is a man who decides what he will rehearse while his feelings are still in pieces.\n\nWhat does he call to mind? Not that things will get better. Not that the loss was secretly fine. He calls to mind a fact about God's character that the ruins have not changed: \"Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness\" (3:22-23). The chesed of God is the reason there is anyone left alive to grieve. The very breath he is using to lament is itself mercy he did not earn.",
+      "keyInsight": "Hope in Lamentations is not a feeling that descends. It is a memory the sufferer chooses to rehearse out loud while the city is still smoking - and the feeling, sometimes, follows the words.",
+      "content": "By the time you reach the middle of Lamentations, the prophet has run out of softer words. The city is rubble. The Temple, the one place on earth where heaven and earth were said to meet, is a burned shell. Mothers have buried children. Famine has done what the Babylonian army did not finish. And the man holding the pen has been saying so, verse after verse, with a courage that refuses to look away: \"He has worn away my flesh and skin... He has walled me in so I cannot escape\" (3:4, 7).\n\nThen, in verse 21, the whole book turns on four small words: \"Yet I call this to mind.\" The Hebrew is more deliberate than it sounds in English. He is not reporting a mood that arrived. He is performing an act of the will. He reaches back into memory, takes hold of one thing, and drags it to the front of his attention on purpose. And only because he has done that hard inner labor can he add: \"and therefore I have hope.\"\n\nNotice the order. The hope does not come first and produce the memory. The memory comes first - chosen, deliberate, almost forced - and the hope follows it. This is not a man whose feelings have improved. This is a man who decides what he will rehearse while his feelings are still in pieces.\n\nWhat does he call to mind? Not that things will get better. Not that the loss was secretly fine. He calls to mind a fact about God's character that the ruins have not changed: \"Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness\" (3:22-23). The chesed of God is the reason there is anyone left alive to grieve. The very breath he is using to lament is itself mercy he did not earn."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sticky Note on the Bathroom Mirror",
+      "body": "A friend of mine went through the kind of year that does not have a tidy name. A diagnosis, then a death, then the slow discovery that the death had emptied the accounts too. She told me that for months she could not pray. She would sit down to pray and find that nothing came except the same flat complaint, looping.\n\nWhat she did instead sounded almost too small to mention. She wrote one sentence on a sticky note and pressed it to the corner of the bathroom mirror: \"His mercies are new every morning.\" And every morning, before anything else, before the grief had its first word, she read it out loud. Some mornings she read it and felt nothing and went back to bed. She kept reading it.\n\nShe told me, much later, that she did not think the sentence had fixed anything. The losses were still losses. But she said the act of saying it - of putting that one true thing into the air of the bathroom before the day could fill the air with everything else - was the thing that kept her from drowning. \"I wasn't reminding God,\" she said. \"I was reminding me. He already knew.\"\n\nThat is exactly what the prophet does in verse 21. He preaches to himself. He says the true thing out loud into a ruined room, not because he feels it, but because it is true and he needs to hear his own mouth say it.",
+      "connectionToTheme": "Calling mercy to mind is not a feeling that arrives; it is a discipline you practice out loud, often before the heart agrees, the way the prophet rehearses God's chesed over the ash of Jerusalem.",
+      "content": "A friend of mine went through the kind of year that does not have a tidy name. A diagnosis, then a death, then the slow discovery that the death had emptied the accounts too. She told me that for months she could not pray. She would sit down to pray and find that nothing came except the same flat complaint, looping.\n\nWhat she did instead sounded almost too small to mention. She wrote one sentence on a sticky note and pressed it to the corner of the bathroom mirror: \"His mercies are new every morning.\" And every morning, before anything else, before the grief had its first word, she read it out loud. Some mornings she read it and felt nothing and went back to bed. She kept reading it.\n\nShe told me, much later, that she did not think the sentence had fixed anything. The losses were still losses. But she said the act of saying it - of putting that one true thing into the air of the bathroom before the day could fill the air with everything else - was the thing that kept her from drowning. \"I wasn't reminding God,\" she said. \"I was reminding me. He already knew.\"\n\nThat is exactly what the prophet does in verse 21. He preaches to himself. He says the true thing out loud into a ruined room, not because he feels it, but because it is true and he needs to hear his own mouth say it."
+    },
+    {
+      "type": "insight",
+      "heading": "New Every Morning, Because Morning Keeps Coming",
+      "body": "Stay with the strange phrase: His mercies are new every morning. Why morning? Because the prophet has noticed something the catastrophe could not cancel - the sun came up again. After the night Jerusalem fell, there was a morning. After the funerals, another morning. The mercy he points to is not abstract; it is the bare, repeated fact of being given one more day in which God has not finished with His people.\n\nThis is why the verse refuses to lie. It does not say the morning is happy. It does not promise the new day will be easier than the last. It says the mercy is new - that whatever you carry into this morning, you are not carrying it on yesterday's strength. Yesterday's grace got you through yesterday and then expired, the way manna in the wilderness bred worms if you hoarded it overnight (Exodus 16:20). You cannot stockpile mercy. You can only receive today's. And today's is here, because the morning is here.\n\nThen comes the line that holds the whole book up: \"It is good to wait quietly for the salvation of the LORD\" (3:26). Waiting, in Hebrew, is not passive sulking. It is the taut, leaning posture of someone watching the horizon for a rescuer they are sure is coming. The prophet does not yet see the salvation. He waits for it as a fact, the way you wait for a dawn you cannot see but have watched arrive every day of your life.",
+      "historicalContext": "Lamentations is built as a series of acrostic poems - in chapters 1, 2, and 4 each stanza begins with the next letter of the Hebrew alphabet, aleph to tav, A to Z. Chapter 3 triples it: three lines for each letter, the most intense acrostic in the book. Grief that thorough is also that ordered. Even shattered, the prophet refuses chaos; he spells his sorrow all the way through the alphabet, and at the dead center of the most structured chapter he plants the words about mercy. The hope is not an accident of mood. It is set, deliberately, in the architectural heart of the lament.",
+      "fascinatingFact": "These verses (3:22-23) are the seed of the hymn most of the English-speaking church knows by heart - \"Great Is Thy Faithfulness,\" written by Thomas Chisholm in 1923. Chisholm was a man of poor health and modest means who said he had simply experienced God's faithfulness across an ordinary, often difficult life. The most sung line of confidence in modern hymnody was quarried straight out of the saddest book in the Bible.",
+      "content": "Stay with the strange phrase: His mercies are new every morning. Why morning? Because the prophet has noticed something the catastrophe could not cancel - the sun came up again. After the night Jerusalem fell, there was a morning. After the funerals, another morning. The mercy he points to is not abstract; it is the bare, repeated fact of being given one more day in which God has not finished with His people.\n\nThis is why the verse refuses to lie. It does not say the morning is happy. It does not promise the new day will be easier than the last. It says the mercy is new - that whatever you carry into this morning, you are not carrying it on yesterday's strength. Yesterday's grace got you through yesterday and then expired, the way manna in the wilderness bred worms if you hoarded it overnight (Exodus 16:20). You cannot stockpile mercy. You can only receive today's. And today's is here, because the morning is here.\n\nThen comes the line that holds the whole book up: \"It is good to wait quietly for the salvation of the LORD\" (3:26). Waiting, in Hebrew, is not passive sulking. It is the taut, leaning posture of someone watching the horizon for a rescuer they are sure is coming. The prophet does not yet see the salvation. He waits for it as a fact, the way you wait for a dawn you cannot see but have watched arrive every day of your life."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the ruins of Jerusalem, the prophet deliberately calls one thing to mind - that God's covenant love did not run out, that His mercies are new every morning - and on that single rehearsed fact he stakes his hope and waits quietly for a salvation he cannot yet see.",
+      "modernApplication": "When your own life takes a hit you did not choose, the temptation is to wait until you feel hopeful before you act hopeful. Lamentations reverses it. You speak the true thing first - out loud, in the morning, before the heart agrees - and you let your feelings catch up to the fact rather than waiting on them to lead. Mercy is not less real on the mornings you cannot feel it.",
+      "connectionPoint": "The prophet waited for a salvation he could only name in the dark. Centuries later, the salvation he waited for had a face. The mercies that are \"new every morning\" reach their truest morning at an empty tomb, on the first day of the week, when the One who entered the worst forsakenness came out the far side of it alive (Luke 24:1-6).",
+      "newTestamentEcho": "Jesus stood on the road into this same city and \"wept over it\" (Luke 19:41) - the only person in Scripture who lamented Jerusalem the way Lamentations does and also did something about it. On the cross He prayed Israel's lament Himself - \"My God, My God, why have You forsaken Me?\" (Matthew 27:46) - taking the unanswered cry of the ruined city into His own mouth. The prophet hoped God's mercies would not fail; at the cross and the empty tomb, God proved they could not, and Paul could finally write that nothing \"in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord\" (Romans 8:39)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the one true thing about God you most need to call to mind out loud tomorrow morning - before the day fills the air with everything else?",
+      "additionalQuestions": [
+        "Where in your life are you waiting for hope to feel real before you will speak it? What would it mean to say it first and let the feeling follow?",
+        "The prophet grieved honestly for two full chapters before he reached for hope. Are you rushing past your lament, or refusing to leave it? Which is your danger?",
+        "Yesterday's mercy expired overnight, like manna. What is the specific, new mercy of this particular morning - the proof that God is not yet finished with you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am not going to pretend the rubble is not rubble. You see what has fallen, and so do I, and I will not lie about it to make You comfortable. But here, in the middle of it, I am going to do what the prophet did. I call this to mind: Your loving devotion has not run out, or I would not be here to grieve. Your mercies are new this morning, even the mornings I cannot feel them. Great is Your faithfulness. You are my portion; therefore I will hope in You. Teach me to wait quietly, leaning toward a salvation I cannot yet see but have watched You provide before. And thank You that the One I wait for already wept over a ruined city and walked out of a borrowed grave. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "Lamentations 3:24"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tomorrow, before you check your phone or speak to anyone, say one true thing about God out loud - even if you feel nothing. Begin with the prophet's own words: \"His mercies are new every morning.\" Say it to the empty room. You are not informing God; you are preaching to yourself, and letting the fact lead the feeling.",
+      "leavingAtCross": [
+        "The belief that I have to feel hopeful before I am allowed to act hopeful",
+        "The instinct to hoard yesterday's strength instead of receiving this morning's mercy",
+        "The fear that the size of my loss has used up the supply of God's love"
+      ],
+      "receivingFromCross": [
+        "Permission to grieve honestly and to hope deliberately in the same breath",
+        "A mercy that is new every morning because the morning keeps coming",
+        "A salvation with a face - the One who wept over the city and rose from the grave"
+      ],
+      "content": "Tomorrow, before you check your phone or speak to anyone, say one true thing about God out loud - even if you feel nothing. Begin with the prophet's own words: \"His mercies are new every morning.\" Say it to the empty room. You are not informing God; you are preaching to yourself, and letting the fact lead the feeling."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In verse 21 the prophet says, \"Yet I call this to mind, and therefore I have hope.\" What comes first - the hope or the memory? Why does the order matter for how you handle a hard season?",
+        "What does the Hebrew word chesed mean, and why is it striking that this word surfaces at the lowest point of the saddest book in the Bible?",
+        "Why does the prophet say God's mercies are new every morning rather than simply that they are great? What does the daily, expiring nature of mercy ask of you?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one true thing about God you find hardest to believe in your current season - and let the other person say it back to you out loud.",
+        "Talk about the difference between rushing past lament and refusing to leave it. Which one are you doing right now?",
+        "Agree on one sentence of Scripture each of you will speak aloud every morning this week, and check in on whether the feeling ever caught up to the words."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 1:12",
+          "text": "Is this nothing to you, all you who pass by? Look around and see! Is there any sorrow like mine, which was inflicted on me, which the LORD made me suffer on the day of His fierce anger?"
+        },
+        {
+          "reference": "Lamentations 3:40",
+          "text": "Let us examine and test our ways, and turn back to the LORD."
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, \"If only you had known on this day what would bring you peace! But now it is hidden from your eyes.\""
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life... nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Lamentations 3",
+          "note": "Read the whole chapter in one sitting, watching the movement from \"He has driven me away\" (vv. 1-18) to \"Yet I call this to mind\" (vv. 21-26) and back into appeal (vv. 40-66). Mark the exact verse where the language turns."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Weeping Prophet",
+      "title": "The Voice of Lamentations",
+      "era": "586 BC, in the ruins of Jerusalem",
+      "description": "Lamentations is traditionally tied to Jeremiah, the prophet who watched the Babylonians breach Jerusalem's walls, burn the Temple, and march Judah into exile in 586 BC. He had warned the city for forty years; now he sits in the ash of everything he warned them about and refuses to look away from the grief - and refuses, also, to let the grief have the last word. He neither denies the catastrophe nor surrenders to it. At the book's dead center he turns and rehearses, out loud, the loving devotion of the LORD.",
+      "keyTrait": "Honest enough to lament without flinching, faithful enough to hope without lying",
+      "keyQuote": "Yet I call this to mind, and therefore I have hope.",
+      "lessonForUs": "You do not have to choose between telling the truth about your pain and trusting the goodness of God. The prophet does both in the same chapter, in the same breath. Grieve all the way down - then, from the bottom, call mercy to mind out loud.",
+      "summary": "Traditionally Jeremiah, who watched Jerusalem fall and wrote its grief into the most ordered poetry in Scripture - and planted hope at its exact center.",
+      "heading": "The Voice of Lamentations"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2622,
+  "scriptureReference_full": "Lamentations 3:21-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617, rachamim, emunah) reflects standard lexical sources.",
+    "The hymn 'Great Is Thy Faithfulness' (Thomas O. Chisholm, 1923) draws its refrain from Lamentations 3:22-23; biographical note reflects standard hymnological accounts."
+  ]
 }

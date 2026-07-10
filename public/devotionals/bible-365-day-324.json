@@ -1,38 +1,183 @@
 {
   "day": 324,
-  "title": "John: Garden, Cross, Resurrection — Day 2 — Building",
-  "teaser": "Day 324 of Bible 365 — John 15-21",
+  "title": "Back into the garden",
+  "teaser": "John tells the end of the story in gardens. The first man hid in one; the second walks into one on His own feet and asks the question Himself: \"Whom are you seeking?\"",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 324"
+      "type": "scripture",
+      "reference": "John 18:1, 4-6, 11",
+      "translation": "BSB",
+      "emphasis": [
+        "they entered a garden",
+        "Whom are you seeking?",
+        "I am He",
+        "the cup the Father has given Me"
+      ],
+      "greekOriginal": "Τίνα ζητεῖτε; ... Ἐγώ εἰμι.",
+      "passage": "After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden. ... Jesus, knowing all that was coming upon Him, stepped forward and asked them, \"Whom are you seeking?\" \"Jesus of Nazareth,\" they answered. Jesus said, \"I am He.\" And Judas His betrayer was standing there with them. When Jesus said, \"I am He,\" they drew back and fell to the ground. ... \"Put your sword back in its sheath!\" Jesus said to Peter. \"Shall I not drink the cup the Father has given Me?\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "Ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am; it is I; I am He",
+      "rootMeaning": "Two small words: the pronoun egō (I) joined to eimi (am). On the surface it is the plainest possible way to answer \"Are you the one?\" - simply, \"I am.\" Underneath, it is the name God gives Himself at the burning bush: \"I AM has sent you\" (Exodus 3:14).",
+      "usageNote": "John has Jesus say egō eimi all through his Gospel - I am the bread, the light, the door, the good shepherd, the resurrection, the way, the true vine. In the garden the predicate falls away and only the name is left. The soldiers ask for Jesus of Nazareth; He answers with the name spoken from the bush, and an armed cohort goes down in the dirt.",
+      "wordByWord": [
+        {
+          "word": "Τίνα",
+          "transliteration": "tina",
+          "meaning": "whom, which one"
+        },
+        {
+          "word": "ζητεῖτε",
+          "transliteration": "zēteite",
+          "meaning": "are you seeking, are you looking for"
+        },
+        {
+          "word": "Ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "am, exist"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "Τίνα ζητεῖτε",
+          "reference": "\"Whom are you seeking?\" is the first thing the risen Jesus says to Mary at the tomb as well (John 20:15). The same question opens the arrest in one garden and the resurrection in another - asked, both times, by the One being sought."
+        }
+      ],
+      "strongsNumber": "G1473",
+      "definition": "egō (G1473), the first-person pronoun, here in the emphatic construction egō eimi, \"I am\"",
+      "usage": "John reports that the moment Jesus speaks the name, the arresting party \"drew back and fell to the ground.\" The arrest happens because He lets it - the soldiers cannot take a man who has just knocked them flat with two words. He is not captured; He surrenders."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Went Out to a Garden",
+      "body": "Watch where John puts the scene. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden.\" The other Gospels name the place Gethsemane and tell us about the sweat and the cup and the sleeping friends. John, who tells us less, makes sure we notice one thing they leave plain: this is a garden. He will use the word again at the cross - \"there was a garden in the place where Jesus was crucified\" (19:41) - and once more at the tomb, where Mary, weeping, mistakes the risen Lord for the gardener (20:15). John frames the whole end of the story in gardens.\n\nThe last time a man stood in a garden facing God, he was hiding among the trees, and God came walking and called, \"Where are you?\" (Genesis 3:9). The garden was where it went wrong. Now another Man comes to a garden in the dark, and the movement reverses. He does not hide. \"Jesus, knowing all that was coming upon Him, stepped forward.\" He is the one who walks toward the trouble. And the question changes hands. In Eden, God asks the hiding man, \"Where are you?\" In Gethsemane, the Man asks the crowd that has come to seize Him, \"Whom are you seeking?\"\n\nThat is the building of this whole movement. The cross does not come upon Jesus like an accident. He walks out to it, across a valley, into a garden, on His own feet, with His eyes open to everything that is coming.",
+      "keyInsight": "John sets the arrest in a garden on purpose. The first Adam hid among the trees when God came looking; the second Adam steps forward in the dark and does the looking Himself.",
+      "content": "Watch where John puts the scene. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden.\" The other Gospels name the place Gethsemane and tell us about the sweat and the cup and the sleeping friends. John, who tells us less, makes sure we notice one thing they leave plain: this is a garden. He will use the word again at the cross - \"there was a garden in the place where Jesus was crucified\" (19:41) - and once more at the tomb, where Mary, weeping, mistakes the risen Lord for the gardener (20:15). John frames the whole end of the story in gardens.\n\nThe last time a man stood in a garden facing God, he was hiding among the trees, and God came walking and called, \"Where are you?\" (Genesis 3:9). The garden was where it went wrong. Now another Man comes to a garden in the dark, and the movement reverses. He does not hide. \"Jesus, knowing all that was coming upon Him, stepped forward.\" He is the one who walks toward the trouble. And the question changes hands. In Eden, God asks the hiding man, \"Where are you?\" In Gethsemane, the Man asks the crowd that has come to seize Him, \"Whom are you seeking?\"\n\nThat is the building of this whole movement. The cross does not come upon Jesus like an accident. He walks out to it, across a valley, into a garden, on His own feet, with His eyes open to everything that is coming."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The One Who Walked Toward the Door",
+      "body": "There is a particular kind of courage in a person who walks toward the thing everyone else is running from. A firefighter going up a stairwell while the building empties down it. A father stepping in front of his family when the headlights swing wrong on a dark road. A doctor who keeps walking the ward when the word for what is in the air is one everyone fears.\n\nNone of them is taken by surprise. That is the part that catches you. They know what is on the other side of the door, and they go through it anyway, because someone they love is in there.\n\nJohn keeps insisting on this about Jesus. He is not ambushed in the dark. He goes out across the valley knowing all that is coming. When the lanterns and torches and weapons come up the path, He does not wait to be found among the trees. He steps forward. \"Whom are you seeking?\" Then, to the soldiers who have come for Him: \"So if you are looking for Me, let these men go.\" Even the arrest, He bends toward shelter for the people behind Him. He is the one walking toward the door, and He is holding it so the others can get out.",
+      "connectionToTheme": "Jesus is not captured in the garden; He surrenders there. He walks toward the cross with open eyes, and even in the surrender He is covering the people He loves.",
+      "content": "There is a particular kind of courage in a person who walks toward the thing everyone else is running from. A firefighter going up a stairwell while the building empties down it. A father stepping in front of his family when the headlights swing wrong on a dark road. A doctor who keeps walking the ward when the word for what is in the air is one everyone fears.\n\nNone of them is taken by surprise. That is the part that catches you. They know what is on the other side of the door, and they go through it anyway, because someone they love is in there.\n\nJohn keeps insisting on this about Jesus. He is not ambushed in the dark. He goes out across the valley knowing all that is coming. When the lanterns and torches and weapons come up the path, He does not wait to be found among the trees. He steps forward. \"Whom are you seeking?\" Then, to the soldiers who have come for Him: \"So if you are looking for Me, let these men go.\" Even the arrest, He bends toward shelter for the people behind Him. He is the one walking toward the door, and He is holding it so the others can get out."
+    },
+    {
+      "type": "insight",
+      "heading": "The Cup He Would Not Put Down",
+      "body": "Peter does the thing most of us would do. He has a sword, and there is a crowd with torches coming for the person he loves, so he swings it and takes off a man's ear. It is brave and it is useless, and Jesus stops him at once: \"Put your sword back in its sheath! Shall I not drink the cup the Father has given Me?\"\n\nThat one line carries the weight of the whole night. \"The cup\" in the prophets is the cup of God's judgment, the wine of His wrath that the guilty must drink (Isaiah 51:17; Jeremiah 25:15). Jesus, who is guilty of nothing, takes that cup out of our hands and lifts it to His own lips. Peter wants to fight His way out of it. Jesus will not let him. The hardest thing in the garden is not the soldiers; it is the cup, and He chooses it.\n\nHere is what the surrender means. The soldiers fell to the ground at two words - He could have walked free anytime He liked. He does not. He stays, He lets Himself be bound, He drinks the cup. The chains in this scene are not strong enough to hold Him. Love is.",
+      "historicalContext": "In the Hebrew prophets, \"the cup\" is a settled image for the portion of God's judgment a person or nation must drink (Psalm 75:8; Isaiah 51:17; Jeremiah 25:15-16). A first-century reader steeped in those Scriptures would not hear Jesus' question as a vague metaphor. He is naming the cup of wrath - and asking whether He should refuse to drink what the guilty had earned.",
+      "fascinatingFact": "John alone records that the arresting party \"drew back and fell to the ground\" when Jesus said \"I am He.\" The same two words that lay them in the dirt are the words God speaks at the burning bush. John lets the reader see, for one flash, that the bound prisoner is the I AM - and that the binding is permitted, not imposed.",
+      "content": "Peter does the thing most of us would do. He has a sword, and there is a crowd with torches coming for the person he loves, so he swings it and takes off a man's ear. It is brave and it is useless, and Jesus stops him at once: \"Put your sword back in its sheath! Shall I not drink the cup the Father has given Me?\"\n\nThat one line carries the weight of the whole night. \"The cup\" in the prophets is the cup of God's judgment, the wine of His wrath that the guilty must drink (Isaiah 51:17; Jeremiah 25:15). Jesus, who is guilty of nothing, takes that cup out of our hands and lifts it to His own lips. Peter wants to fight His way out of it. Jesus will not let him. The hardest thing in the garden is not the soldiers; it is the cup, and He chooses it.\n\nHere is what the surrender means. The soldiers fell to the ground at two words - He could have walked free anytime He liked. He does not. He stays, He lets Himself be bound, He drinks the cup. The chains in this scene are not strong enough to hold Him. Love is."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the first garden, a man hid from God among the trees, and God came walking and asked, \"Where are you?\" In the garden across the Kidron, the second Man does not hide; He steps forward into the torchlight and asks the question Himself: \"Whom are you seeking?\"",
+      "modernApplication": "We are still the ones who hide. When God comes near, the old instinct is to get among the trees - to go quiet, to keep busy, to look fine. The garden of John 18 says the search now runs the other way. The One we hide from is the One who walks toward us in the dark, on His own feet, having drunk the cup so the question can finally be safe to answer.",
+      "connectionPoint": "John's gardens trace the whole arc of Scripture. Eden was lost in a garden (Genesis 3); Jesus was arrested in a garden (John 18:1), crucified and buried in a garden (John 19:41), and raised in a garden, where Mary took Him for the gardener (John 20:15). The story that broke in a garden is mended in one. Paul names the logic of it: \"For as in Adam all die, so in Christ all will be made alive\" (1 Corinthians 15:22).",
+      "newTestamentEcho": "What this scene builds toward, the cross completes. The cup Jesus would not put down in the garden, He drains on the cross - \"It is finished\" (John 19:30). The Man who said \"I am He\" and let Himself be bound is the same Lamb of God who takes away the sin of the world (John 1:29). The garden is where He says yes to it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When God comes near, where do you go to hide - and what would it take to step forward instead of into the trees?",
+      "additionalQuestions": [
+        "Jesus asks, \"Whom are you seeking?\" If He turned and asked you that tonight, what would your honest answer be - what are you actually looking for?",
+        "Where in your life are you Peter, swinging a sword to fight your way out of a cup God may be asking you to drink?",
+        "What does it change to know that the chains did not hold Jesus in the garden - that He stayed because He chose to, for you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You walked into the garden when You could have walked away. You stepped forward when I would have hidden among the trees. Thank You that the question now comes from You - not \"Where are you?\" spoken to a man in hiding, but \"Whom are you seeking?\" spoken by the One I most need to find. You drank the cup I had earned and would not put it down, even when love was the only thing holding You there. Make me brave enough to step out of the trees and answer You honestly tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, find one place you have been hiding - one thing you keep among the trees so no one sees it - and step forward instead. Name it out loud to God and let Him answer the search He started.",
+      "leavingAtCross": [
+        "The instinct to hide among the trees when I sense God coming near",
+        "The sword I keep drawing to fight my way out of cups I was never meant to dodge",
+        "The lie that my chains are stronger than His love - that I am too far gone to be sought"
+      ],
+      "receivingFromCross": [
+        "A God who walks toward me in the dark on His own feet, knowing all that it will cost Him",
+        "The cup taken from my hands and drunk by the only One innocent enough to drink it",
+        "The freedom to step out of the trees and be found, because the search is His and the answer is safe"
+      ],
+      "content": "Tonight, find one place you have been hiding - one thing you keep among the trees so no one sees it - and step forward instead. Name it out loud to God and let Him answer the search He started."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "John deliberately calls the place of the arrest, the place of the cross, and the place of the resurrection all 'gardens.' What is he asking the reader to remember about the first garden in Genesis 3?",
+        "Why does John say the soldiers 'drew back and fell to the ground' when Jesus said 'I am He'? What does that detail tell us about who is really in control of the arrest?",
+        "What does Jesus mean by 'the cup the Father has given Me,' and why does He refuse to let Peter fight His way out of it?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'tree' you have been hiding behind lately - one way you stay out of sight when God comes near.",
+        "Talk about a 'cup' in your life right now - something hard you would rather fight your way out of than drink. What would it look like to stop swinging the sword?",
+        "Ask each other: when Jesus says 'Whom are you seeking?', what are you actually looking for - and is it Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:9",
+          "text": "But the LORD God called out to the man, \"Where are you?\""
+        },
+        {
+          "reference": "John 19:41",
+          "text": "Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid."
+        },
+        {
+          "reference": "John 20:15",
+          "text": "\"Woman, why are you weeping?\" Jesus asked. \"Whom are you seeking?\" Thinking He was the gardener, she said, \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\""
+        },
+        {
+          "reference": "1 Corinthians 15:22",
+          "text": "For as in Adam all die, so in Christ all will be made alive."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 18-20",
+          "note": "Read these chapters in one sitting, watching for the word 'garden' (18:1; 19:41; 20:15) and the question 'Whom are you seeking?' (18:4, 7; 20:15). Notice how the end of John's Gospel keeps walking the reader back into a garden."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus in the Garden",
+      "title": "The Second Adam, Who Stepped Forward",
+      "description": "John's passion begins where the human story began - in a garden. Jesus crosses the Kidron Valley in the dark, knowing everything that is coming, and walks into the garden He had often used with His disciples. When the armed party arrives, He does not hide as the first man did; He steps forward and asks the question, names Himself with the name of God, and lets Himself be bound. He refuses Peter's sword and chooses the cup. He is the second Adam, undoing in a garden what was lost in a garden (Romans 5:18-19).",
+      "keyQuote": "Shall I not drink the cup the Father has given Me?",
+      "lessonForUs": "Where the first Adam hid and was sought, the second Adam stepped forward and did the seeking. The God we are tempted to hide from is the One who walks toward us in the dark - and has already drunk the cup that made the hiding necessary.",
+      "heading": "The Second Adam, Who Stepped Forward"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2105,
+  "scriptureReference_full": "John 15-21 (anchor: John 18:1, 4-6, 11)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi, G1473) reflects standard lexical sources; the burning-bush resonance with Exodus 3:14 is a widely recognized feature of John's 'I am' sayings.",
+    "The 'cup' as the cup of divine judgment draws on its consistent use in the Hebrew prophets (Psalm 75:8; Isaiah 51:17; Jeremiah 25:15-16)."
+  ]
 }

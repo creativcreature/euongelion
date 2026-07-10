@@ -1,38 +1,197 @@
 {
   "day": 101,
-  "title": "Solomon's Drift — Day 3 — Pivot",
-  "teaser": "Day 101 of Bible 365 — 1 Kings 11",
+  "title": "The slow theft of a divided heart",
+  "teaser": "Solomon's heart did not turn in a day. It leaned, then loved, then followed. And still God keeps a lamp burning for David's house.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 101"
+      "type": "scripture",
+      "reference": "1 Kings 11:1-4, 9",
+      "translation": "BSB",
+      "emphasis": [
+        "loved many foreign women",
+        "turn your hearts after their gods",
+        "his wives turned his heart away",
+        "not wholeheartedly devoted",
+        "his heart had turned away"
+      ],
+      "hebrewOriginal": "וַיְהִי לְעֵת זִקְנַת שְׁלֹמֹה נָשָׁיו הִטּוּ אֶת־לְבָבוֹ אַחֲרֵי אֱלֹהִים אֲחֵרִים וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו",
+      "passage": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women. These women were from the nations about which the LORD had told the Israelites, \"You must not intermarry with them, for surely they will turn your hearts after their gods.\" Yet Solomon clung to these women in love. He had seven hundred wives of royal birth and three hundred concubines—and his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. ... Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הִטּוּ אֶת־לְבָבוֹ",
+      "transliteration": "hittu et-levavo",
+      "pronunciation": "hee-TOO et le-vah-VO",
+      "meaning": "they turned aside his heart; they bent his heart away",
+      "rootMeaning": "The verb is natah (H5186): to stretch out, bend, incline, turn aside. It is the same word used for pitching a tent, extending a hand, or tilting a scale. It does not describe a sudden break. It describes a lean - a slow bending in one direction until the whole frame leans with it. The heart here is levav (H3824), the inner center where loyalty and will are set.",
+      "usageNote": "The narrator uses natah three times, like a hammer on the same nail. In verse 2 the danger is named: these wives will turn (natah) your hearts after their gods. In verse 3 the verdict lands: his wives turned (natah) his heart away. In verse 4 it is sealed. The grammar is doing what the chapter is about - the same bending verb keeps repeating because the same bending kept happening, a little more each year.",
+      "wordByWord": [
+        {
+          "word": "וַיְהִי לְעֵת זִקְנַת שְׁלֹמֹה",
+          "transliteration": "vayhi le'et ziqnat Shelomoh",
+          "meaning": "and it happened at the time of Solomon's old age - the turning is dated to his last years, not his first"
+        },
+        {
+          "word": "נָשָׁיו",
+          "transliteration": "nashav",
+          "meaning": "his wives - the very alliances he chose for himself"
+        },
+        {
+          "word": "הִטּוּ",
+          "transliteration": "hittu",
+          "meaning": "they turned aside, they bent (natah) - a gradual inclining, not a sudden snap"
+        },
+        {
+          "word": "אֶת־לְבָבוֹ",
+          "transliteration": "et-levavo",
+          "meaning": "his heart, his inner center of loyalty and will"
+        },
+        {
+          "word": "לְבָבוֹ שָׁלֵם",
+          "transliteration": "levavo shalem",
+          "meaning": "his heart whole, complete, undivided - shalem shares the root of shalom: a heart at peace because it is all in one place"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלֵם / שָׁלוֹם",
+          "reference": "Shalem (whole, undivided) is the root behind shalom (peace) and behind Solomon's own name, Shelomoh. The man named for wholeness ends the chapter with a heart no longer shalem. The tragedy is written into his name."
+        }
+      ],
+      "strongsNumber": "H5186",
+      "definition": "natah: to stretch out, extend, bend, turn aside, incline",
+      "usage": "Solomon's heart was not seized. It was inclined - bent slowly, by what he loved, until it leaned away from the God who had appeared to him twice."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "It Says He Grew Old Before It Says He Fell",
+      "body": "The man in this chapter is the wisest king Israel ever had. He built the temple. He prayed the great prayer of dedication. God appeared to him twice - once at Gibeon to offer him anything he asked, and once after the temple was finished to warn him. This is not a fool. This is the king the whole nation looked to as proof that wisdom and obedience could fill a throne at once.\n\nSo notice how carefully the narrator times the collapse. It does not say Solomon rebelled. It says, \"when Solomon grew old, his wives turned his heart after other gods.\" The fall is dated to his last years. For most of his reign he held the line. The drift was so slow that you could have stood beside him for decades and never seen the day he changed - because there was no such day. There was a marriage, and then another, and then a high place built east of Jerusalem for a wife who wept for her own gods, and then another, until the skyline of the holy city was studded with altars to Chemosh and Molech and the king barely noticed he had built them.\n\nLong before this, the law had named the danger exactly. A king of Israel \"must not take many wives for himself, lest his heart go astray\" (Deuteronomy 17:17). Solomon knew that verse; the law required kings to copy it out by hand. He could quote the warning and walk straight into it - because the warning was about the heart, and the heart does not announce its turning. It just leans, a degree at a time, toward whatever it is allowed to love without limit.",
+      "keyInsight": "Apostasy in Scripture is rarely a decision. It is a direction. Solomon never chose to abandon God; he chose, again and again, the small accommodations that bent his heart until one day it was facing the wrong way and had been for years.",
+      "content": "The man in this chapter is the wisest king Israel ever had. He built the temple. He prayed the great prayer of dedication. God appeared to him twice - once at Gibeon to offer him anything he asked, and once after the temple was finished to warn him. This is not a fool. This is the king the whole nation looked to as proof that wisdom and obedience could fill a throne at once.\n\nSo notice how carefully the narrator times the collapse. It does not say Solomon rebelled. It says, \"when Solomon grew old, his wives turned his heart after other gods.\" The fall is dated to his last years. For most of his reign he held the line. The drift was so slow that you could have stood beside him for decades and never seen the day he changed - because there was no such day. There was a marriage, and then another, and then a high place built east of Jerusalem for a wife who wept for her own gods, and then another, until the skyline of the holy city was studded with altars to Chemosh and Molech and the king barely noticed he had built them.\n\nLong before this, the law had named the danger exactly. A king of Israel \"must not take many wives for himself, lest his heart go astray\" (Deuteronomy 17:17). Solomon knew that verse; the law required kings to copy it out by hand. He could quote the warning and walk straight into it - because the warning was about the heart, and the heart does not announce its turning. It just leans, a degree at a time, toward whatever it is allowed to love without limit."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Boat That Came In Sideways",
+      "body": "A sailor I knew described running aground in a fog on water he had crossed a hundred times. He had a heading and he trusted it. What he did not have was any way to feel the current pushing him a few degrees off course the whole way across - not enough to notice in any single minute, more than enough to put him on the rocks by the far shore.\n\nWhen the hull finally scraped, he said the strange thing was how reasonable every choice had felt. He had never once decided to steer toward the rocks. He had trusted his heading and stopped checking it against anything fixed, because checking felt unnecessary on water he knew so well.\n\nThat is the shape of Solomon's ruin. No single marriage looked like idolatry. No single altar felt like the end of the kingdom. Each was a small lean, reasonable in the moment, none of them an alarm. The current was his own affections, pulling steadily toward what he loved. By the time the hull scraped, the heart that built the temple was facing Chemosh, and the man had never once decided to turn.",
+      "connectionToTheme": "Drift does not feel like rebellion from the inside. It feels like a string of reasonable choices on familiar water, while the current you stopped checking carries you a few degrees off until you are on the rocks.",
+      "content": "A sailor I knew described running aground in a fog on water he had crossed a hundred times. He had a heading and he trusted it. What he did not have was any way to feel the current pushing him a few degrees off course the whole way across - not enough to notice in any single minute, more than enough to put him on the rocks by the far shore.\n\nWhen the hull finally scraped, he said the strange thing was how reasonable every choice had felt. He had never once decided to steer toward the rocks. He had trusted his heading and stopped checking it against anything fixed, because checking felt unnecessary on water he knew so well.\n\nThat is the shape of Solomon's ruin. No single marriage looked like idolatry. No single altar felt like the end of the kingdom. Each was a small lean, reasonable in the moment, none of them an alarm. The current was his own affections, pulling steadily toward what he loved. By the time the hull scraped, the heart that built the temple was facing Chemosh, and the man had never once decided to turn."
+    },
+    {
+      "type": "insight",
+      "heading": "And Yet There Is a Lamp",
+      "body": "Read the judgment and you brace for the kingdom to end. God says, \"I will tear the kingdom away from you and give it to your servant.\" The tearing is real. Ten tribes will be ripped from the house of David, and the nation will never again be whole. But listen to how God limits His own sentence.\n\n\"I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name\" (1 Kings 11:36). The kingdom is torn, but not extinguished. One tribe is left, not because Solomon earned it, but \"for the sake of My servant David.\" A lamp is kept burning in the dark, deliberately, against the wind of everything Solomon has done.\n\nThis is the pivot the whole chapter turns on. The strict justice of the moment - a divided heart producing a divided kingdom - runs into something stronger than justice: a promise God made to David that Solomon's failure cannot revoke. God will discipline the line. He says so plainly: \"I will humble David's descendants - but not forever.\" The lamp is not Solomon's faithfulness. The lamp is God's. And God refuses to let it go out.",
+      "historicalContext": "First Kings was almost certainly compiled during or after the Babylonian exile, when the kingdom had not merely divided but collapsed entirely, and the people sat in a foreign land asking whether God's promises to David had failed. To those readers, 1 Kings 11 is both warning and lifeline: the divided heart of a king tore the nation apart - and even so, God kept a lamp burning. The promise outlasted the punishment.",
+      "fascinatingFact": "The image of the lamp (Hebrew nir) recurs across the books of Kings as a fixed sign of God's covenant loyalty to David, returning even when later kings are wicked (1 Kings 15:4; 2 Kings 8:19). It is the narrator's quiet refrain: no matter how dark the throne grows, the lamp God lit for David has not been allowed to go out.",
+      "content": "Read the judgment and you brace for the kingdom to end. God says, \"I will tear the kingdom away from you and give it to your servant.\" The tearing is real. Ten tribes will be ripped from the house of David, and the nation will never again be whole. But listen to how God limits His own sentence.\n\n\"I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name\" (1 Kings 11:36). The kingdom is torn, but not extinguished. One tribe is left, not because Solomon earned it, but \"for the sake of My servant David.\" A lamp is kept burning in the dark, deliberately, against the wind of everything Solomon has done.\n\nThis is the pivot the whole chapter turns on. The strict justice of the moment - a divided heart producing a divided kingdom - runs into something stronger than justice: a promise God made to David that Solomon's failure cannot revoke. God will discipline the line. He says so plainly: \"I will humble David's descendants - but not forever.\" The lamp is not Solomon's faithfulness. The lamp is God's. And God refuses to let it go out."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart was turned away by what he loved without limit, and the kingdom was torn in two as a result - yet God left a lamp burning for David's house, a sworn promise that the failure of the son could not cancel.",
+      "modernApplication": "You are unlikely to fall by one dramatic choice. You are far more likely to fall the way Solomon did: by a hundred small accommodations to whatever your heart is allowed to love without limit - a relationship, an ambition, a comfort, a screen - until one day your loyalties are bent and you cannot name the morning they turned. The guarding of the heart is daily work because the bending is daily.",
+      "connectionPoint": "The lamp God kept for David was never really about Solomon, or even about David. It was about a Son still to come. The kingdom that Solomon's divided heart split, God promised to give whole and forever to one descendant of David whose heart would not divide. The thread that begins with a single tribe spared in 1 Kings 11 runs the whole length of Scripture and arrives at a manger.",
+      "newTestamentEcho": "To a young woman in Nazareth the angel says of her son: \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end\" (Luke 1:32-33). Where Solomon's heart was turned (natah) away, Jesus says the whole law hangs on a heart turned wholly toward God: \"Love the Lord your God with all your heart\" (Matthew 22:37) - and He is the only Son of David who ever kept it. The lamp lit in the dark of 1 Kings 11 has a name: \"I am the Root and the Offspring of David, the bright Morning Star\" (Revelation 22:16)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been steering by a trusted heading without checking it against anything fixed - and what current has been quietly bending you a few degrees off?",
+      "additionalQuestions": [
+        "Solomon could quote the warning and still walk into it. What is something you know is unwise that you have made peace with because it felt small?",
+        "What are you currently loving without limit - and is it the kind of love that keeps your heart whole, or the kind that bends it?",
+        "When you imagine God looking at your divided heart, do you expect only the tearing, or can you also believe there is a lamp He refuses to let go out?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am more like Solomon than I want to admit. I can recite the warning and still drift toward it. Show me where my heart has been quietly bending - the small accommodations I stopped noticing, the things I have let myself love without limit. Where I am off course by a few degrees, correct me before the hull scrapes. Make my heart shalem again - whole, undivided, devoted to You and not to half a dozen lesser things. And thank You that even when David's house failed, You kept a lamp burning. Thank You that the lamp has a name, and His kingdom will never end. Turn my heart back to the Son of David, who loved You with all of His. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one small accommodation you have stopped noticing - one current bending your heart a few degrees off course - and bring it into the light before it grows. Then check your heading against something fixed: open the Word, and let it correct you before the drift does.",
+      "leavingAtCross": [
+        "The small accommodations I have made peace with because each one felt too minor to matter",
+        "The thing I have let myself love without limit, the love that bends my heart instead of keeping it whole",
+        "The lie that I would feel it the day my heart turned - that drift announces itself"
+      ],
+      "receivingFromCross": [
+        "A heart that can be made shalem again - whole and undivided - by the Spirit's daily correction",
+        "The freedom of checking my heading against something fixed instead of trusting my own sense of the water",
+        "The lamp God refused to let go out: the Son of David whose kingdom will never end and whose heart was never divided"
+      ],
+      "content": "Today, name one small accommodation you have stopped noticing - one current bending your heart a few degrees off course - and bring it into the light before it grows. Then check your heading against something fixed: open the Word, and let it correct you before the drift does."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "The narrator dates Solomon's fall to when he 'grew old.' Why does it matter that the collapse came at the end of a faithful reign and not the beginning?",
+        "The verb natah ('to bend, turn aside') appears three times in the chapter. What is the narrator showing us by repeating the same word?",
+        "God tears the kingdom yet leaves one tribe 'for the sake of My servant David.' How does that single spared tribe point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you could 'quote the warning and walk into it anyway' - something you know is unwise but have made peace with.",
+        "Talk about the difference between a love that keeps your heart whole (shalem) and a love that bends it away. Where is each at work in you right now?",
+        "Ask each other: what is one fixed thing you can check your heading against this week, so the drift gets caught early?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 17:17",
+          "text": "He must not take many wives for himself, lest his heart go astray. He must not accumulate for himself large amounts of silver and gold."
+        },
+        {
+          "reference": "1 Kings 11:36",
+          "text": "I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
+        },
+        {
+          "reference": "Proverbs 4:23",
+          "text": "Guard your heart with all diligence, for from it flow springs of life."
+        },
+        {
+          "reference": "Matthew 22:37",
+          "text": "Jesus declared, \"'Love the Lord your God with all your heart and with all your soul and with all your mind.'\""
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        },
+        {
+          "reference": "Revelation 22:16",
+          "text": "I, Jesus, have sent My angel to give you this testimony for the churches. I am the Root and the Offspring of David, the bright Morning Star."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter watching the three turnings of the heart (vv. 2, 3, 4), then the tearing of the kingdom (vv. 11-13, 29-39), then the lamp God refuses to put out (v. 36)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wise King Whose Heart Bent",
+      "description": "Son of David, third king of Israel, builder of the temple, and the man Scripture names as the wisest who ever lived. God appeared to him twice and warned him explicitly. Yet in his old age the many alliances and loves he gathered for himself slowly inclined his heart away from the LORD, and the kingdom he ruled was torn from his son. His name, Shelomoh, means 'his peace' - from shalem, whole - and his story is the ache of a man named for wholeness who ended divided.",
+      "keyQuote": "his wives turned his heart away.",
+      "lessonForUs": "Wisdom did not save Solomon, because the danger was never to his mind - it was to his heart. If the wisest man alive could be bent a degree at a time by what he loved without limit, then guarding the heart is not a beginner's task we outgrow. It is the daily work of a lifetime, and it points us to the only Son of David who never had to do it from a deficit.",
+      "heading": "The Wise King Whose Heart Bent"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2600,
+  "scriptureReference_full": "1 Kings 11:1-4, 9 (full chapter context)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (natah H5186; levav H3824; shalem and its relation to shalom and the name Shelomoh) reflects standard lexical sources.",
+    "The recurring 'lamp' (nir) for David as a sign of covenant loyalty across the books of Kings (1 Kings 11:36; 15:4; 2 Kings 8:19) reflects the narrator's own refrain."
+  ]
 }

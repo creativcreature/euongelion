@@ -1,38 +1,186 @@
 {
   "day": 271,
-  "title": "Minor Prophets: Wait + Hope — Day 5 — Resolution",
-  "teaser": "Day 271 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
-  "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
-  "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
+  "title": "The Last Word Is Sunrise",
+  "teaser": "The Old Testament ends not with a verdict but with a sunrise. After Habakkuk's long wait, God's final promise is healing light rising over those who feared His name.",
+  "framework": "Malachi 4:1-3 (capstone of Hab, Zeph, Hag, Zech, Mal)",
+  "scriptureReference": "Malachi 4:1-3",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 271"
+      "type": "scripture",
+      "reference": "Malachi 4:1-3",
+      "translation": "BSB",
+      "emphasis": [
+        "the sun of righteousness will rise",
+        "healing in its wings",
+        "leap like calves from the stall"
+      ],
+      "hebrewOriginal": "וְזָרְחָה לָכֶם יִרְאֵי שְׁמִי שֶׁמֶשׁ צְדָקָה וּמַרְפֵּא בִּכְנָפֶיהָ",
+      "passage": "\"For behold, the day is coming, burning like a furnace, when all the arrogant and every evildoer will be stubble; the day is coming when I will set them ablaze,\" says the LORD of Hosts. \"Not a root or branch will be left to them.\" \"But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall. Then you will trample the wicked, for they will be ashes under the soles of your feet on the day I am preparing,\" says the LORD of Hosts."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שֶׁמֶשׁ צְדָקָה",
+      "transliteration": "shemesh tzedaqah",
+      "pronunciation": "SHEH-mesh tse-da-KAH",
+      "meaning": "sun of righteousness",
+      "rootMeaning": "Shemesh is the ordinary word for the sun - the one that climbs every morning whether you slept or not. Tzedaqah is righteousness: not only being right, but setting things right, the active putting-back-to-order of a world that has gone crooked. Joined together, the phrase names a sunrise that does not merely shine on the world but mends it.",
+      "usageNote": "These are the last lines of the Hebrew prophets - the final paragraph before four centuries of silence between the Testaments. After all the warnings of Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi, the closing image God leaves His people to hold in the dark is not a sword. It is a sunrise.",
+      "wordByWord": [
+        {
+          "word": "וְזָרְחָה",
+          "transliteration": "vezarchah",
+          "meaning": "and it will rise, will dawn - the verb used of the sun coming up over the horizon"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lakem",
+          "meaning": "for you - the light rises on your behalf, in your favor"
+        },
+        {
+          "word": "יִרְאֵי שְׁמִי",
+          "transliteration": "yir'ei shemi",
+          "meaning": "those who fear My name - the ones who kept waiting in reverence"
+        },
+        {
+          "word": "שֶׁמֶשׁ צְדָקָה",
+          "transliteration": "shemesh tzedaqah",
+          "meaning": "sun of righteousness"
+        },
+        {
+          "word": "וּמַרְפֵּא בִּכְנָפֶיהָ",
+          "transliteration": "umarpe bikhnafeha",
+          "meaning": "and healing in its wings - the rays of the rising sun pictured as wings carrying a cure"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּנָף",
+          "reference": "Kanaf, 'wing,' is the same word used for the edge or 'corners' of a garment. The first rays of dawn are the sun's outstretched wings; later a sick woman would reach for the edge - the kanaf - of one Man's robe and be healed (Matthew 9:20-21)."
+        }
+      ],
+      "strongsNumber": "H8121",
+      "definition": "shemesh (H8121), the sun; with tzedaqah (H6666), righteousness - together, the rising sun whose light brings setting-right and healing",
+      "usage": "The 'wings' of the sun (marpe bikhnafeha) is a gentle, agricultural image: a person too sick to stand stepping out into morning light and finding strength to leap, the way young cattle bolt from a winter stall into spring pasture."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How the Old Testament Decides to End",
+      "body": "For five days this week the minor prophets have been teaching one hard thing: how to wait. Habakkuk stood on his watchtower and complained that God was slow and the wicked were winning, and the answer he got was not relief but instruction - \"the vision awaits an appointed time... though it lingers, wait for it\" (Habakkuk 2:3). Zephaniah saw a day of wrath and, past it, a God singing over His people. Haggai told a discouraged remnant rebuilding a shabby temple that its latter glory would outshine the first. Zechariah saw a king coming, humble, on a donkey. And now Malachi, last of them all, sets down his pen.\n\nNotice how he chooses to end. He could have ended on the furnace - verse 1 is full of it, the arrogant burning like stubble, not a root or branch left. That would have been a fitting close for a people who had grown cynical, who said worship was pointless and asked \"where is the God of justice?\" But God does not let the book close on fire. He turns, in verse 2, and addresses a different group entirely: \"But for you who fear My name.\" For the ones still waiting in the dark, still showing up, still afraid that the long silence meant abandonment - for them the final word is a sunrise.\n\nThis is not an accident of editing. The order of the Hebrew Bible was settled with care, and someone decided that the last thing God's people would read before the lights went down for four hundred years would be a promise of morning. They were being handed a lamp to carry into a long night: hold on, the sun is coming up, and when it does it will not scorch you - it will heal you."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Window Facing East",
+      "body": "There is a particular kind of waiting that belongs to a hospital room at four in the morning. A friend told me about sitting up through the worst night of her daughter's illness, watching monitors, listening for breathing, doing the math on how many hours until the doctors came back on rounds. She said the thing she did, again and again, was look at the window. It was black. She kept looking anyway.\n\nShe wasn't expecting a miracle through the glass. She was watching for the gray. Because she knew that if she could just hang on until the sky changed color, the night would be survivable. The dawn would not fix the diagnosis. But the dawn would mean she had made it through, and that nurses would come, and that the world had not actually ended in the dark.\n\nThat is roughly the posture Malachi leaves Israel in. He is not promising them that the morning will undo every hard thing. He is promising them that there will be a morning - that the window facing east is not lying, that the people who keep their eyes on it through the silent years will not be put to shame. \"You will go out and leap like calves from the stall.\" Anyone who has watched livestock let out after a long penned-up winter knows exactly what that looks like: graceless, unbridled, almost comic joy. That is the promise. Not survival with a stiff upper lip. Leaping.",
+      "connectionToTheme": "The wait the prophets describe is not passive resignation but an eastward watch - holding on through the dark on the strength of a promised sunrise."
+    },
+    {
+      "type": "insight",
+      "heading": "Healing in Its Wings",
+      "body": "Here is the line on which the whole week, and arguably the whole Old Testament, turns: \"the sun of righteousness will rise with healing in its wings.\"\n\nStay with how strange that pairing is. Righteousness, in the verse just before it, is a furnace - it burns the arrogant to stubble. Righteousness setting the world right ought to be terrible news for a world full of crooked people, and verse 1 makes no apology for that. But then the same righteousness rises like a sun on a second group, and what it brings them is not fire but healing. The identical light is judgment to one and medicine to another. What makes the difference is not that some people are sinless and others are not; it is the fear of His name - the ones who kept reverently waiting versus the ones who concluded God was not coming and lived accordingly.\n\nAnd notice that the healing is in the rising. The sun does not first appear and then, as a separate act, hand out cures. To be reached by this dawn is to be healed by it. The light and the mending are the same event. That is the hidden mercy folded into the last sentence of the prophets: the day everyone dreads as the day of reckoning is, for those who waited on God, the day their long sickness finally breaks - and they step out of the stall and leap.",
+      "historicalContext": "Malachi prophesied to the post-exilic community around 430 BC, perhaps a century after the temple was rebuilt under Haggai and Zechariah. The first thrill of return had worn off. Priests were cutting corners, marriages were breaking, tithes were withheld, and people muttered that serving God was futile (Malachi 3:14). Into that flat, disappointed mood God speaks His last recorded word for four centuries: a sunrise is still coming.",
+      "fascinatingFact": "The Hebrew prophets close on Malachi 4, but Christian Bibles place the Prophets last in the Old Testament so that the final line before the Gospels is Malachi's promise of \"Elijah\" preparing the way (4:5-6). Turn one page and John the Baptist arrives in the wilderness doing exactly that - the silence ends right where the prophet said it would."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Malachi seals the Old Testament with a promise to those still waiting in the dark: the sun of righteousness will rise with healing in its wings, and they will leap like freed calves.",
+      "modernApplication": "Most faith is lived in the gray hour before dawn - the diagnosis not yet good, the prayer not yet answered, the silence not yet broken. Malachi does not tell you the night is short. He tells you which direction to keep your eyes. The waiting itself becomes an act of faith: you face east because you trust the sun more than the dark.",
+      "connectionPoint": "Every prophet this week leaned forward toward a coming One. Haggai's greater glory filling the house (2:9), Zechariah's humble King on a donkey (9:9), Zephaniah's God singing over His people (3:17), and now Malachi's healing sunrise - five fingers on one hand, all pointing past four silent centuries toward a single morning.",
+      "newTestamentEcho": "When the silence finally broke, the first prophet in four hundred years stood in the temple, was filled with the Spirit, and reached for Malachi's exact image. Zechariah, naming what his son would announce, sang that \"the Dawn will visit us from on high, to shine on those who live in darkness and in the shadow of death, to guide our feet into the path of peace\" (Luke 1:78-79). Malachi's sun of righteousness has a name. And a sick woman, reaching in a crowd for the edge - the kanaf, the wing - of His garment, was healed the moment she touched it (Matthew 9:20-21). Healing in His wings, exactly as promised."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you sitting in the gray hour before dawn - waiting on something God has not yet done?",
+      "additionalQuestions": [
+        "Malachi's people had concluded that serving God was futile (3:14). Is there a place where the long silence has tempted you to the same conclusion - and what would it mean to keep facing east anyway?",
+        "The same sunrise is judgment to one group and healing to another, and the difference is the fear of His name. What does reverent waiting look like for you this week, as opposed to just enduring?",
+        "If the day you have been dreading turned out to be the day your long sickness finally broke - what would change about how you wait for it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "hopeful-trust",
+      "prayerText": "Father, I have been watching a black window for a long time, and some nights I am not sure the morning is real. Thank You that You did not let the prophets close on the furnace, but on the sunrise. Thank You that the Dawn You promised has a name, and that He rose with healing in His wings. Where I am still waiting in the dark, turn my face east. Let me trust the sun more than the night. And when the morning comes, teach me to leap. Through Christ, the Sun of Righteousness. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one thing you are still waiting on God for, and write it where you will see it tomorrow. Beside it, write Malachi's promise: the sun of righteousness will rise with healing in its wings. This week, when the waiting feels pointless, practice facing east - return to that promise instead of to the verdict your fear keeps drafting.",
+      "leavingAtCross": [
+        "The conclusion that the long silence means God is not coming",
+        "The cynicism that says reverent waiting is wasted effort",
+        "The dread that the day I'm waiting for can only bring a reckoning"
+      ],
+      "receivingFromCross": [
+        "A promised sunrise that heals as it rises, not a furnace that consumes",
+        "The freedom to wait facing east, trusting the light more than the dark",
+        "The joy Malachi pictures - leaping like a freed calf when the morning finally comes"
+      ],
+      "content": "Name the one thing you are still waiting on God for, and write it where you will see it tomorrow. Beside it, write Malachi's promise: the sun of righteousness will rise with healing in its wings. This week, when the waiting feels pointless, practice facing east."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that the Old Testament ends on a sunrise rather than on the furnace of verse 1?",
+        "The same 'sun of righteousness' brings judgment to one group and healing to another. According to the passage, what makes the difference?",
+        "How do the five minor prophets read this week (Habakkuk, Zephaniah, Haggai, Zechariah, Malachi) each lean toward the same coming morning?"
+      ],
+      "forAccountabilityPartners": [
+        "Share the one thing each of you is currently waiting on God for, and name what 'facing east' would look like in that situation.",
+        "Talk about a season when the silence tempted you to conclude God had stopped acting - what brought you back to the window?",
+        "Ask each other: where have you already seen the 'healing in His wings' arrive, even partially - and how can remembering that steady the next wait?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Habakkuk 2:3",
+          "text": "For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay."
+        },
+        {
+          "reference": "Habakkuk 3:17-18",
+          "text": "Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls, yet I will exult in the LORD; I will rejoice in the God of my salvation!"
+        },
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "text": "Rejoice greatly, O Daughter of Zion! Shout in triumph, O Daughter of Jerusalem! See, your King comes to you, righteous and victorious, humble and riding on a donkey, on a colt, the foal of a donkey."
+        },
+        {
+          "reference": "Luke 1:78-79",
+          "text": "because of the tender mercy of our God, by which the Dawn will visit us from on high, to shine on those who live in darkness and in the shadow of death, to guide our feet into the path of peace."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Malachi 3-4",
+          "note": "Read the last two chapters in one sitting, watching the mood move from the people's complaint that God is unjust (3:13-15) to the scroll of remembrance for those who feared Him (3:16-18) to the closing sunrise (4:1-3)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Malachi",
+      "title": "The Last of the Prophets Before the Silence",
+      "description": "Malachi (the name means 'My messenger') prophesied to the discouraged post-exilic community around 430 BC, roughly a century after the temple was rebuilt. He confronted half-hearted worship, broken covenants, and a people who muttered that serving God was futile - and then, into that flat disappointment, he spoke the final recorded word of the Old Testament: a coming day, a refining fire, and for those who feared God's name, a healing sunrise. After him came four centuries of prophetic silence, broken only when John the Baptist arrived in the wilderness, the 'Elijah' Malachi had promised, to prepare the way.",
+      "keyQuote": "But for you who fear My name, the sun of righteousness will rise with healing in its wings.",
+      "lessonForUs": "Malachi teaches the discipline of the eastward watch. He does not pretend the night is short or the silence painless. He simply hands the waiting a promise and tells them where to look - and then trusts God to keep the appointment, which, four hundred years later, God did.",
+      "heading": "The Last of the Prophets Before the Silence"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1709,
+  "scriptureReference_full": "Malachi 4:1-3",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shemesh tzedaqah, H8121 / H6666; kanaf as garment-edge) reflects standard lexical sources (e.g., BDB, HALOT) and the Masoretic Text of Malachi 4:2."
+  ]
 }

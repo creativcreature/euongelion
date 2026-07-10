@@ -6,33 +6,177 @@
   "scriptureReference": "Genesis 41",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 31"
+      "type": "scripture",
+      "reference": "Genesis 41:14-16, 39-41, 43",
+      "translation": "BSB",
+      "emphasis": [
+        "quickly brought out of the dungeon",
+        "I myself cannot do it",
+        "but God will give Pharaoh a sound answer",
+        "Bow the knee!"
+      ],
+      "hebrewOriginal": "בִּלְעָדָי אֱלֹהִים יַעֲנֶה אֶת־שְׁלוֹם פַּרְעֹה",
+      "passage": "So Pharaoh sent for Joseph, who was quickly brought out of the dungeon. After he had shaved and changed his clothes, he went in before Pharaoh. Pharaoh said to Joseph, \"I had a dream, and no one can interpret it. But I have heard it said of you that when you hear a dream you can interpret it.\" \"I myself cannot do it,\" Joseph replied, \"but God will give Pharaoh a sound answer.\" ... Then Pharaoh said to Joseph, \"Since God has made all this known to you, there is no one as discerning and wise as you. You shall be in charge of my house, and all my people are to obey your commands. Only with regard to the throne will I be greater than you.\" Pharaoh also told Joseph, \"I hereby place you over all the land of Egypt.\" ... He had Joseph ride in his second chariot, with men calling out before him, \"Bow the knee!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 41**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 41 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בִּלְעָדָי",
+      "transliteration": "bil'aday",
+      "pronunciation": "bil-ah-DAI",
+      "meaning": "apart from me, it is not in me, not of my own doing",
+      "rootMeaning": "Bil'aday means \"without me\" or \"apart from me.\" Joseph's first words to the most powerful man on earth are a denial of his own power: this is not in me. The God-given answer comes from somewhere other than the interpreter.",
+      "usageNote": "The same construction appears in Genesis 14:24 and later in the prophets when the LORD declares, \"there is no Savior but Me\" (Isaiah 43:11). Joseph stands before a throne and uses the word a creature should use - emptying himself of credit before he is handed a kingdom.",
+      "wordByWord": [
+        {
+          "word": "בִּלְעָדָי",
+          "transliteration": "bil'aday",
+          "meaning": "apart from me, it is not in me to do this"
+        },
+        {
+          "word": "אֱלֹהִים",
+          "transliteration": "Elohim",
+          "meaning": "God - the Creator, named four times by Joseph in this scene"
+        },
+        {
+          "word": "יַעֲנֶה",
+          "transliteration": "ya'aneh",
+          "meaning": "He will answer, He will give a reply"
+        },
+        {
+          "word": "שְׁלוֹם",
+          "transliteration": "shalom",
+          "meaning": "peace, welfare, well-being - here, \"a sound answer\" that sets Pharaoh at peace"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צָפְנַת פַּעְנֵחַ",
+          "reference": "Zaphenath-paneah, the Egyptian name Pharaoh gives Joseph in verse 45. The exact sense is debated, but ancient and traditional readings render it something like \"revealer of secrets\" or \"the god speaks and he lives\" - a foreign court's way of naming what Joseph already knew: the secret belonged to God."
+        }
+      ],
+      "strongsNumber": "H1107",
+      "definition": "apart from, besides, without; used to disclaim that a thing lies within one's own power",
+      "usage": "Joseph could have taken the credit and bought his freedom with it. Instead he gives it away in his opening sentence. The man with nothing left tells the man with everything that the only thing worth having - the answer - is not his to give."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God lifts the lowly. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ exalted from death (Phil 2:8-9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Forgotten Man God Did Not Forget",
+      "body": "When chapter 41 opens, Joseph has been forgotten on purpose. Two years earlier he interpreted a dream for Pharaoh's cupbearer and asked one thing in return: remember me. The text told us plainly that the cupbearer did not remember Joseph; he forgot him. So the favored son who was sold by his brothers, framed by his master's wife, and thrown into a dungeon now sits in that dungeon while the one man who could have spoken for him says nothing for two full years.\n\nThen Pharaoh dreams. Seven fat cows swallowed by seven gaunt ones. Seven full heads of grain swallowed by seven thin ones. He wakes troubled and summons every magician and wise man in Egypt - the entire credentialed machinery of the most advanced empire on earth - and not one of them can tell him what it means. The wisdom of Egypt comes up empty in front of its own king.\n\nIt is only then that the cupbearer remembers. \"Today I recall my failures,\" he says (v. 9), and tells Pharaoh about a Hebrew prisoner who reads dreams. So Pharaoh sends for Joseph, who is, in the words of the text, \"quickly brought out of the dungeon.\" The timing is not Joseph's. He did not engineer his release; he could not even get a man to keep a promise. The release comes when God's clock strikes, not before - and not one hour late.",
+      "keyInsight": "Joseph spends two silent years between the promise and the lifting. The point of the waiting is not that God forgot him. It is that the rescue, when it comes, will so plainly be God's doing that no one - not Joseph, not Pharaoh - will be able to credit anyone else.",
+      "content": "When chapter 41 opens, Joseph has been forgotten on purpose. Two years earlier he interpreted a dream for Pharaoh's cupbearer and asked one thing in return: remember me. The text told us plainly that the cupbearer did not remember Joseph; he forgot him. So the favored son who was sold by his brothers, framed by his master's wife, and thrown into a dungeon now sits in that dungeon while the one man who could have spoken for him says nothing for two full years.\n\nThen Pharaoh dreams. Seven fat cows swallowed by seven gaunt ones. Seven full heads of grain swallowed by seven thin ones. He wakes troubled and summons every magician and wise man in Egypt - the entire credentialed machinery of the most advanced empire on earth - and not one of them can tell him what it means. The wisdom of Egypt comes up empty in front of its own king.\n\nIt is only then that the cupbearer remembers. \"Today I recall my failures,\" he says (v. 9), and tells Pharaoh about a Hebrew prisoner who reads dreams. So Pharaoh sends for Joseph, who is, in the words of the text, \"quickly brought out of the dungeon.\" The timing is not Joseph's. He did not engineer his release; he could not even get a man to keep a promise. The release comes when God's clock strikes, not before - and not one hour late."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name on the Bottom of the List",
+      "body": "A friend of mine spent four years on a transplant waiting list. She described the strange arithmetic of it: every morning she woke up still waiting, which felt like being passed over, and every morning the call still hadn't come, which felt like being forgotten. She learned to stop reading the silence as a verdict. The list was real. Her name was on it. The absence of news was not the absence of care.\n\nWhen the call finally came, it came fast - a few hours' notice, a scramble to the hospital, a door held open that had been shut for years. She told me the speed of it almost frightened her. After all the slow waiting, the lifting happened in an afternoon.\n\nThat is the shape of Joseph's two years. The dungeon does not feel like favor. The unanswered request does not feel like care. But the name is on the list. And when the door opens it opens fast - \"quickly brought out\" - because the One who kept the appointment was never the cupbearer, and never Joseph, and was never asleep.",
+      "connectionToTheme": "The long silence before the lifting is not proof that God has forgotten you. The rescue comes at His hour, and when it comes it is plainly His.",
+      "content": "A friend of mine spent four years on a transplant waiting list. She described the strange arithmetic of it: every morning she woke up still waiting, which felt like being passed over, and every morning the call still hadn't come, which felt like being forgotten. She learned to stop reading the silence as a verdict. The list was real. Her name was on it. The absence of news was not the absence of care.\n\nWhen the call finally came, it came fast - a few hours' notice, a scramble to the hospital, a door held open that had been shut for years. She told me the speed of it almost frightened her. After all the slow waiting, the lifting happened in an afternoon.\n\nThat is the shape of Joseph's two years. The dungeon does not feel like favor. The unanswered request does not feel like care. But the name is on the list. And when the door opens it opens fast - \"quickly brought out\" - because the One who kept the appointment was never the cupbearer, and never Joseph, and was never asleep."
+    },
+    {
+      "type": "insight",
+      "heading": "From the Pit to the Right Hand",
+      "body": "Watch the verbs pile up once Pharaoh decides. He removes his own signet ring and puts it on Joseph's finger. He clothes him in fine linen. He places a gold chain around his neck. He has him ride in the second chariot. And he sends heralds ahead of the chariot to make the whole land do one thing: bow.\n\nThat is the center of the chapter, and it is the center of the whole Joseph story. The man who was stripped of his coat and thrown in a pit by his brothers is dressed by a king and given a ring. The man who was sold for twenty pieces of silver is set over the economy of an empire. The man who interpreted a dream for two prisoners now feeds the world. Pharaoh keeps only the throne for himself; everything else passes into the hands of the Hebrew who came up out of the dungeon that morning. \"Only with regard to the throne will I be greater than you\" (v. 40).\n\nAnd notice why. Pharaoh says it out loud: \"Since God has made all this known to you, there is no one as discerning and wise as you\" (v. 39). The exaltation is not a reward for ambition. It lands on the man who had just said, \"I myself cannot do it.\" In Scripture this is the pattern, not the exception. The lowly are lifted; the empty hands are the ones that get filled; the one who refuses the credit is the one God can safely raise.",
+      "historicalContext": "Egypt in this era ran on grain. The Nile's flood fed the whole region, and a multi-year failure of that flood was a known catastrophe - famines lasting several years are attested in Egyptian records. Joseph's plan to store a fifth of the harvest through seven fat years is not folklore; it is sober statecraft, the kind a vizier really exercised. The text grounds a theological claim - God lifts the lowly - inside a hard, historical machinery of administration and survival.",
+      "fascinatingFact": "Joseph is thirty years old when he enters Pharaoh's service (v. 46) - the same age at which, centuries later, Jesus begins His public ministry (Luke 3:23). The Bible rarely wastes a number. The man lifted to feed a starving world steps into his work at thirty, a quiet rhyme the careful reader is left to hear.",
+      "content": "Watch the verbs pile up once Pharaoh decides. He removes his own signet ring and puts it on Joseph's finger. He clothes him in fine linen. He places a gold chain around his neck. He has him ride in the second chariot. And he sends heralds ahead of the chariot to make the whole land do one thing: bow.\n\nThat is the center of the chapter, and it is the center of the whole Joseph story. The man who was stripped of his coat and thrown in a pit by his brothers is dressed by a king and given a ring. The man who was sold for twenty pieces of silver is set over the economy of an empire. The man who interpreted a dream for two prisoners now feeds the world. Pharaoh keeps only the throne for himself; everything else passes into the hands of the Hebrew who came up out of the dungeon that morning. \"Only with regard to the throne will I be greater than you\" (v. 40).\n\nAnd notice why. Pharaoh says it out loud: \"Since God has made all this known to you, there is no one as discerning and wise as you\" (v. 39). The exaltation is not a reward for ambition. It lands on the man who had just said, \"I myself cannot do it.\" In Scripture this is the pattern, not the exception. The lowly are lifted; the empty hands are the ones that get filled; the one who refuses the credit is the one God can safely raise."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God lifts a forgotten prisoner out of a dungeon, sets him at the right hand of the throne, puts the king's own ring on his hand, and commands a whole land to bow the knee before him - so that when famine comes, every nation finds bread in his hands and lives.",
+      "modernApplication": "You measure your standing by your résumé, your reach, your reviews. Joseph's standing came entirely from outside himself - given by a king, on the basis of a God-given gift he refused to claim as his own. The lifting that lasts is the kind you receive, not the kind you climb toward.",
+      "connectionPoint": "The pattern set in this chapter runs straight down the spine of Scripture. Hannah sings that the LORD \"raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor\" (1 Samuel 2:8). Mary sings the same song over the Christ in her womb: \"He has brought down rulers from their thrones, but has exalted the humble\" (Luke 1:52). Joseph in Pharaoh's chariot is one early verse of that long hymn.",
+      "newTestamentEcho": "What Joseph foreshadows, Christ fulfills. Joseph emptied himself of credit - \"I myself cannot do it\" - and was lifted from the pit to the right hand of the throne, with a whole land made to bow. Paul says of Jesus that He \"humbled Himself and became obedient to death... Therefore God exalted Him to the highest place and gave Him the name above all names, that at the name of Jesus every knee should bow\" (Philippians 2:8-10). The heralds cried \"Bow the knee!\" before Joseph's chariot; before the risen Christ, every knee will."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you sitting in a kind of dungeon, having done the right thing - and reading God's silence as proof that He has forgotten you?",
+      "additionalQuestions": [
+        "Joseph's first words before the throne were \"I myself cannot do it.\" What credit are you holding onto that you would have to lay down before God could safely lift you?",
+        "What promise has someone failed to keep on your behalf - and how might God be the One who remembers when people forget?",
+        "If your standing were given to you, the way Joseph's was, rather than climbed toward, what would change in how you carry yourself today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-trust",
+      "prayerText": "Father, I have been waiting in a place that does not feel like favor, and I have read Your silence as forgetting. Teach me Joseph's two years - that You keep the appointment when no one else does, and that the door opens at Your hour, fast and sure. Empty my hands of the credit I cling to, so that whatever You lift in me is plainly Yours. And when I cannot do it, give the sound answer Yourself. Through Christ, lifted from the grave to the highest place, before whom every knee will bow. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been straining to make happen by your own power - one room you keep trying to break out of. Set it down with Joseph's words: \"I myself cannot do it, but God will give a sound answer.\" Then do the small, faithful next thing in front of you, and leave the lifting to Him.",
+      "leavingAtCross": [
+        "The reading of God's silence as proof that I have been forgotten",
+        "The credit I grasp for the gifts that were never mine to begin with",
+        "The frantic effort to engineer my own release on my own clock"
+      ],
+      "receivingFromCross": [
+        "The promise that my name is on the list even when no news comes",
+        "Hands emptied enough that what God lifts in me is plainly His",
+        "Bread for a famine I cannot survive on my own, held out by the One who was lifted to give it"
+      ],
+      "content": "Today, name one thing you have been straining to make happen by your own power - one room you keep trying to break out of. Set it down with Joseph's words: \"I myself cannot do it, but God will give a sound answer.\" Then do the small, faithful next thing in front of you, and leave the lifting to Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the narrator make a point of telling us that all the magicians and wise men of Egypt failed before Joseph was ever called - and what does their failure say about where true wisdom comes from?",
+        "Joseph spent two full years in the dungeon after asking the cupbearer to remember him. What does the timing of his release teach about whose clock the rescue runs on?",
+        "Pharaoh says he exalts Joseph because 'God has made all this known to you.' How does that reason connect Joseph's lowering and his lifting into a single pattern?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'dungeon' season where you waited a long time before anything moved - and what you came to believe about God in the silence.",
+        "Joseph refused the credit before he was given the kingdom. Name one place you tend to grab credit, and ask each other what it would look like to lay it down.",
+        "Ask each other: where is God asking you to trust His timing for a lifting you cannot arrange yourself?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 41:9",
+          "text": "Then the chief cupbearer said to Pharaoh, \"Today I recall my failures.\""
+        },
+        {
+          "reference": "1 Samuel 2:8",
+          "text": "He raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor."
+        },
+        {
+          "reference": "Luke 1:52",
+          "text": "He has brought down rulers from their thrones, but has exalted the humble."
+        },
+        {
+          "reference": "Philippians 2:8-10",
+          "text": "He humbled Himself and became obedient to death - even death on a cross. Therefore God exalted Him to the highest place and gave Him the name above all names, that at the name of Jesus every knee should bow."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 41",
+          "note": "Read the whole chapter in one sitting, tracing the movement from dungeon (v. 14) to confession (v. 16) to interpretation (vv. 25-32) to exaltation (vv. 39-43) to bread for the nations (vv. 56-57)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Prisoner Lifted to the Right Hand of Egypt",
+      "description": "The favored son of Jacob, sold into slavery by his brothers and imprisoned on a false charge, who interpreted Pharaoh's dream by the wisdom of God and was raised in a single day from the dungeon to second-in-command over all Egypt. Through the famine that followed, the brother who was sold for silver became the one through whom his family - and many nations - were kept alive. Later he would tell those same brothers, \"You intended to harm me, but God intended it for good\" (Genesis 50:20).",
+      "keyQuote": "I myself cannot do it, but God will give Pharaoh a sound answer.",
+      "lessonForUs": "Joseph's lifting was given, not seized - and it landed on the man who refused the credit. The God who lifted a forgotten prisoner to feed a starving world is the same God who lifted His own Son from the grave to give bread that does not run out.",
+      "heading": "The Prisoner Lifted to the Right Hand of Egypt"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2136,
+  "scriptureReference_full": "Genesis 41 (esp. 41:14-16, 39-43)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew vocabulary (bil'aday H1107; the meaning of Zaphenath-paneah, Genesis 41:45) reflects standard lexical sources; the precise sense of the Egyptian name Zaphenath-paneah is debated among scholars and is flagged as such."
+  ]
 }

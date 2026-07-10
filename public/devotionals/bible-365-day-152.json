@@ -1,38 +1,186 @@
 {
   "day": 152,
-  "title": "Jeremiah Weeping Prophet — Day 5 — Resolution",
-  "teaser": "Day 152 of Bible 365 — Jeremiah 1-29",
+  "title": "A future, written into exile",
+  "teaser": "The weeping prophet's last word to the exiles is not rescue but a letter: build, plant, pray for Babylon — for I know the plans I have for you.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 152"
+      "type": "scripture",
+      "reference": "Jeremiah 29:4-7, 11-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Build houses and settle down",
+        "Seek the prosperity of the city",
+        "I know the plans I have for you",
+        "a future and a hope",
+        "I will be found by you"
+      ],
+      "hebrewOriginal": "לָתֵת לָכֶם אַחֲרִית וְתִקְוָה",
+      "passage": "This is what the LORD of Hosts, the God of Israel, says to all the exiles who were carried away from Jerusalem to Babylon: \"Build houses and settle down. Plant gardens and eat their produce. Take wives and have sons and daughters. Take wives for your sons and give your daughters in marriage, so that they too may have sons and daughters. Multiply there; do not decrease. Seek the prosperity of the city to which I have sent you as exiles. Pray to the LORD on its behalf, for if it prospers, you too will prosper.\" ... \"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope. Then you will call upon Me and come and pray to Me, and I will listen to you. You will seek Me and find Me when you search for Me with all your heart. I will be found by you, declares the LORD, and I will restore you from captivity and gather you from all the nations and places to which I have banished you, declares the LORD. I will restore you to the place from which I sent you into exile.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אַחֲרִית וְתִקְוָה",
+      "transliteration": "acharit ve-tikvah",
+      "pronunciation": "akh-ah-REET veh-teek-VAH",
+      "meaning": "a latter end and a hope; a future with a thread to hold",
+      "rootMeaning": "Acharit comes from achar, 'behind' or 'after' - the end toward which a thing is moving, its outcome, what comes after the present hardship. Tikvah comes from qavah, 'to wait, to stretch out, to bind together.' Its concrete root is a cord - the same word names the scarlet cord Rahab hangs from her window in Joshua 2:18. Hope, in Hebrew, is not a mood. It is a rope.",
+      "usageNote": "God promises the exiles an acharit - not an escape from Babylon now, but an after that is coming. And He gives them a tikvah, a cord to hold while they wait for it. The two words land together at the end of verse 11, the floor under a people who have lost everything.",
+      "wordByWord": [
+        {
+          "word": "לָתֵת",
+          "transliteration": "latet",
+          "meaning": "to give - the plans are a gift, not a wage they earned"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lachem",
+          "meaning": "to you (plural) - spoken to the whole community in exile, not one favored individual"
+        },
+        {
+          "word": "אַחֲרִית",
+          "transliteration": "acharit",
+          "meaning": "a latter end, an outcome, the future toward which God is bending the story"
+        },
+        {
+          "word": "וְתִקְוָה",
+          "transliteration": "ve-tikvah",
+          "meaning": "and a hope - literally a cord, something to bind onto and wait"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "קָוָה / תִּקְוָה",
+          "reference": "Qavah, the root of tikvah, is the verb behind 'they who wait on the LORD will renew their strength' (Isaiah 40:31). To hope and to wait are the same act in Hebrew: holding the cord until the One on the other end pulls you home."
+        }
+      ],
+      "strongsNumber": "H8615",
+      "definition": "a cord; figuratively, expectancy, hope, that which is longed for",
+      "usage": "Tikvah is first of all a literal rope (Joshua 2:18, 21). When it means hope, the picture stays underneath the word: something taut between where you are and where you are promised to be."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Letter the Weeping Prophet Mailed to Babylon",
+      "keyInsight": "God's most quoted promise of a future and a hope was mailed to a refugee camp, and His plans run straight through the seventy years of exile rather than around them.",
+      "body": "For four days this week we have walked with the prophet who could not stop crying. Jeremiah said it plainly: \"Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people\" (Jeremiah 9:1). He had been called as a young man, told God had put His words in his mouth, and then made to preach a message no one wanted: the city will fall, the Temple will burn, Judah is going to Babylon in chains. He was beaten for it, thrown in a cistern for it, called a traitor for it. The tears were not weakness. They were the cost of telling the truth to people who loved the lie.\n\nNow comes the strangest turn in the whole book. The exiles are already gone, dragged 900 miles east to Babylon, and false prophets there are promising a quick rescue - pack light, it will all be over in two years. Jeremiah, still back in Jerusalem, writes them a letter. And the letter does not say what grief usually wants to say. It does not say, hold on, you'll be home soon. It says the opposite. Build houses. Plant gardens. Marry, have children, let your children marry. Settle in. You will be there seventy years. Then, into that long sentence, God drops the line a thousand devotionals have lifted out of context: \"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope.\"\n\nHere is what we usually miss. That promise is not whispered to a person on a good day. It is mailed to a refugee camp. It is God's word to people who have lost their country, their Temple, their certainty that He was even on their side - and what He gives them is not a fast exit but an acharit, an after, and a tikvah, a cord to hold while the after takes its time arriving.",
+      "content": "For four days this week we have walked with the prophet who could not stop crying. Jeremiah said it plainly: \"Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people\" (Jeremiah 9:1). He had been called as a young man, told God had put His words in his mouth, and then made to preach a message no one wanted: the city will fall, the Temple will burn, Judah is going to Babylon in chains. He was beaten for it, thrown in a cistern for it, called a traitor for it. The tears were not weakness. They were the cost of telling the truth to people who loved the lie.\n\nNow comes the strangest turn in the whole book. The exiles are already gone, dragged 900 miles east to Babylon, and false prophets there are promising a quick rescue - pack light, it will all be over in two years. Jeremiah, still back in Jerusalem, writes them a letter. And the letter does not say what grief usually wants to say. It does not say, hold on, you'll be home soon. It says the opposite. Build houses. Plant gardens. Marry, have children, let your children marry. Settle in. You will be there seventy years. Then, into that long sentence, God drops the line a thousand devotionals have lifted out of context: \"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope.\"\n\nHere is what we usually miss. That promise is not whispered to a person on a good day. It is mailed to a refugee camp. It is God's word to people who have lost their country, their Temple, their certainty that He was even on their side - and what He gives them is not a fast exit but an acharit, an after, and a tikvah, a cord to hold while the after takes its time arriving."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Garden in the Internment Camp",
+      "body": "During the Second World War, more than a hundred thousand people of Japanese descent on the American West Coast were forced from their homes and held behind wire in remote camps - Manzanar, Tule Lake, Heart Mountain. They had committed no crime. They lost businesses, farms, neighbors, years.\n\nAnd in the dust of those camps, people planted gardens. At Manzanar, where the wind never stopped and the ground was hard alkaline desert, internees hauled rock and rerouted water and built ponds, stone bridges, and gardens that visitors still walk through today. They were not pretending they were free. They knew exactly where they were. But they refused to let the camp have the last word about whether life was worth tending while they waited.\n\nThat is almost exactly what God tells the exiles to do. Not 'pretend Babylon is home.' Not 'give up because Babylon is not home.' Something harder and braver than either: live - really live - in the place you did not choose, because the God who sent you there has not finished writing your story.",
+      "connectionToTheme": "Hope in exile is not denial and not despair. It is planting a garden in ground you do not own, because you trust the One who put you there to one day take you home.",
+      "content": "During the Second World War, more than a hundred thousand people of Japanese descent on the American West Coast were forced from their homes and held behind wire in remote camps - Manzanar, Tule Lake, Heart Mountain. They had committed no crime. They lost businesses, farms, neighbors, years.\n\nAnd in the dust of those camps, people planted gardens. At Manzanar, where the wind never stopped and the ground was hard alkaline desert, internees hauled rock and rerouted water and built ponds, stone bridges, and gardens that visitors still walk through today. They were not pretending they were free. They knew exactly where they were. But they refused to let the camp have the last word about whether life was worth tending while they waited.\n\nThat is almost exactly what God tells the exiles to do. Not 'pretend Babylon is home.' Not 'give up because Babylon is not home.' Something harder and braver than either: live - really live - in the place you did not choose, because the God who sent you there has not finished writing your story."
+    },
+    {
+      "type": "insight",
+      "heading": "The Plans Were Never a Shortcut",
+      "body": "\"I know the plans I have for you\" is one of the most quoted verses in the Bible, stitched onto graduation cards and coffee mugs and read as a promise of smooth roads ahead. Read it where it actually sits and it means something far deeper and far more useful.\n\nThe plans God knows do not skip the seventy years. They run straight through them. God says, in the same breath, that the future is good and that it is not yet - that He intends to prosper His people and that the prosperity is on the far side of a long captivity they cannot shorten. The promise does not lift them out of exile. It walks them through it.\n\nAnd notice the doorway He gives them inside the waiting: \"Then you will call upon Me... You will seek Me and find Me when you search for Me with all your heart. I will be found by you.\" The Temple is rubble. The whole machinery of how they used to reach God is gone. So God tells them the machinery was never the point. In Babylon, with no Temple, no altar, no priest nearby, they can still seek Him with their whole heart - and the promise is not 'maybe.' It is 'I will be found by you.' Exile did not put God out of reach. It stripped away everything that was standing between them and Him.",
+      "historicalContext": "Jeremiah's letter (chapter 29) was written around 597 BC, after the first deportation to Babylon under King Jehoiachin but before Jerusalem's final destruction in 586 BC. The 'seventy years' became a fixed marker of the exile; the prophet Daniel, reading Jeremiah's scroll decades later in Babylon, counts the years from it and turns to prayer (Daniel 9:2-3). Jeremiah's hardest sermon became another generation's reason to hope.",
+      "fascinatingFact": "The command to 'seek the prosperity of the city' (29:7) is startling: God tells His exiled people to pray for the welfare of Babylon - the empire that destroyed them. Their flourishing is bound up with their captors' flourishing. It is one of the Old Testament's clearest seeds of the call to love your enemies and bless those who persecute you.",
+      "content": "\"I know the plans I have for you\" is one of the most quoted verses in the Bible, stitched onto graduation cards and coffee mugs and read as a promise of smooth roads ahead. Read it where it actually sits and it means something far deeper and far more useful.\n\nThe plans God knows do not skip the seventy years. They run straight through them. God says, in the same breath, that the future is good and that it is not yet - that He intends to prosper His people and that the prosperity is on the far side of a long captivity they cannot shorten. The promise does not lift them out of exile. It walks them through it.\n\nAnd notice the doorway He gives them inside the waiting: \"Then you will call upon Me... You will seek Me and find Me when you search for Me with all your heart. I will be found by you.\" The Temple is rubble. The whole machinery of how they used to reach God is gone. So God tells them the machinery was never the point. In Babylon, with no Temple, no altar, no priest nearby, they can still seek Him with their whole heart - and the promise is not 'maybe.' It is 'I will be found by you.' Exile did not put God out of reach. It stripped away everything that was standing between them and Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God mails a promise of a future and a hope to people in chains, and tells them His plans run through the seventy years of exile, not around them - and that there, with no Temple, He will still be found by those who seek Him with their whole heart.",
+      "modernApplication": "You may be living somewhere you never chose: a diagnosis, a marriage gone quiet, a city you moved to and never loved, a season that has dragged on past every timeline you set for it. The temptation is to refuse to unpack until it's over - to live on hold. Jeremiah's letter says the holy thing is to build a house and plant a garden here, in the not-yet, trusting that the God who allowed the exile has already written its end.",
+      "connectionPoint": "Exile is one of Scripture's deepest threads. Israel waits seventy years in Babylon. The whole New Testament calls believers 'foreigners and exiles' (1 Peter 2:11) and 'citizens of heaven' living abroad (Philippians 3:20). The Bible never promises we will feel at home in this age. It promises a God who is found by those who seek Him through it, and a homecoming He has already fixed.",
+      "newTestamentEcho": "The weeping prophet has a greater echo. Jesus, coming over the hill and seeing Jerusalem, weeps over the same city Jeremiah wept over: \"If only you had known on this day what would bring you peace\" (Luke 19:42). And the gathering Jeremiah promised - 'I will gather you from all the nations' - is the very thing Jesus says He came to do: to gather God's scattered children together as a hen gathers her chicks (Matthew 23:37). The future and the hope mailed to Babylon are finally signed in His name."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you living 'on hold' right now - refusing to build or plant because you are waiting for a season you did not choose to be over?",
+      "additionalQuestions": [
+        "Which exile are you in - a place, a relationship, a body, a waiting - that God has not yet ended but has not abandoned?",
+        "What would it look like this week to 'plant a garden' there: to invest in real life in the very place you wish you weren't?",
+        "Jeremiah 29:13 says you will find God when you seek Him with your whole heart. What has been getting in the way of a whole-hearted seeking?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord of Hosts, You know the plans You have for me, and I confess I do not. I have been holding my breath, refusing to live until this season is over. Teach me to build a house here, to plant a garden in ground I did not choose, to trust that You are writing an after I cannot yet see. Where the Temple of my certainty has fallen, let me find that You were never in the building - You were always within reach of a whole heart. Be found by me here. And gather me, in the end, all the way home. Through Christ, who wept over the city and came to gather us in. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, name the 'Babylon' you are living in - the season you keep waiting to be over - and do one concrete thing to live in it rather than around it: a real conversation, a small project begun, a garden literal or figurative planted. As you do, hold the cord of Jeremiah 29:11 and seek God with your whole heart, trusting He will be found.",
+      "leavingAtCross": [
+        "The refusal to live until my circumstances change",
+        "The belief that God is only reachable when life is back to normal",
+        "The despair that says this exile has no end and no point"
+      ],
+      "receivingFromCross": [
+        "An acharit - a future God has already written, good and certain even when slow",
+        "A tikvah - a cord to hold while I wait, fastened to the God who keeps His word",
+        "The promise that the God who weeps over the city is the God who gathers His children home"
+      ],
+      "content": "This week, name the 'Babylon' you are living in - the season you keep waiting to be over - and do one concrete thing to live in it rather than around it: a real conversation, a small project begun, a garden literal or figurative planted. As you do, hold the cord of Jeremiah 29:11 and seek God with your whole heart, trusting He will be found."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God tell the exiles to build houses and plant gardens in Babylon instead of promising a quick rescue? What does that reveal about how His 'plans to prosper' actually work?",
+        "Jeremiah 29:11 is usually quoted alone. How does reading it inside verses 4-14 - the long exile, the seeking, the gathering - change what it means?",
+        "What does it mean that God can be 'found' with no Temple, by a people in captivity, when they seek Him with their whole heart?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the season each of you is tempted to merely endure rather than fully live. What would 'planting a garden' there look like this month?",
+        "Talk honestly about the gap between the future you wanted and the one you are in. Where is it hardest to believe God's plans are good?",
+        "Pray Jeremiah 29:7 together: ask God to bless not only your own waiting but the welfare of the 'city' - the people and place - you've been sent to."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 9:1",
+          "text": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people."
+        },
+        {
+          "reference": "Daniel 9:2-3",
+          "text": "...I, Daniel, understood from the sacred books, according to the word of the LORD to Jeremiah the prophet, that the desolation of Jerusalem would last seventy years. So I turned my attention to the Lord God to seek Him by prayer and petition, with fasting, sackcloth, and ashes."
+        },
+        {
+          "reference": "1 Peter 2:11",
+          "text": "Beloved, I urge you, as foreigners and exiles, to abstain from the desires of the flesh, which war against your soul."
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, \"If only you had known on this day what would bring you peace! But now it is hidden from your eyes.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 29",
+          "note": "Read the whole chapter slowly: the letter to the exiles (vv. 1-9), the seventy years and the plans (vv. 10-14), and the warning against the false prophets who promised a quick rescue (vv. 15-32). Notice how the famous promise sits inside a command to settle in and wait."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet",
+      "era": "Late 7th to early 6th century BC (active c. 627-586 BC)",
+      "key_trait": "Faithfulness to a heartbreaking message, sustained over forty years of rejection",
+      "description": "Called as a young man in Judah's final decades, Jeremiah was given the unbearable task of announcing Jerusalem's fall and the Babylonian exile to a people who refused to hear it. He was beaten, imprisoned, lowered into a muddy cistern, and branded a traitor - yet he kept speaking, and kept weeping. His grief was not despair; it was love that would not look away. In chapter 29 the same prophet who wept over the city's ruin writes the exiles their truest comfort: a future and a hope, on the far side of seventy years.",
+      "keyQuote": "Oh, that my head were a spring of water, and my eyes a fountain of tears!",
+      "lessonForUs": "The one who loves a people enough to weep over them is also the one who can be trusted to speak hope into their exile. Jeremiah's tears and Jeremiah's promise come from the same heart - and both point ahead to the One who wept over Jerusalem and gathers His children home.",
+      "heading": "The Weeping Prophet"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2564,
+  "scriptureReference_full": "Jeremiah 29:4-7, 11-14 (with Jeremiah 9:1)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (acharit, tikvah / qavah H8615) reflects standard lexical sources; the concrete 'cord' sense of tikvah is attested in Joshua 2:18, 21. The Hebrew phrase quoted (lifted from Jeremiah 29:11, Masoretic Text) is the standard, uncontested reading.",
+    "Historical detail on the Manzanar gardens reflects the documented record of WWII Japanese American incarceration and the National Park Service site at Manzanar; presented as illustration, not as a verified named individual's quotation."
+  ]
 }

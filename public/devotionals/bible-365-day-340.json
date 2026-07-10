@@ -1,38 +1,183 @@
 {
   "day": 340,
-  "title": "Romans: Justified by Faith — Day 4 — Application",
-  "teaser": "Day 340 of Bible 365 — Romans 1-8",
+  "title": "Count it true before you feel it",
+  "teaser": "Romans says you are already acquitted. Day 4 asks the harder thing: to live as if the verdict that frees you is real before your feelings catch up.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 340"
+      "type": "scripture",
+      "reference": "Romans 8:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "no condemnation",
+        "set you free",
+        "He thus condemned sin in the flesh",
+        "according to the Spirit"
+      ],
+      "hebrewOriginal": "",
+      "passage": "Therefore, there is now no condemnation for those who are in Christ Jesus. For in Christ Jesus the law of the Spirit of life set you free from the law of sin and death. For what the law was powerless to do in that it was weakened by the flesh, God did by sending His own Son in the likeness of sinful man, as an offering for sin. He thus condemned sin in the flesh, so that the righteous standard of the law might be fulfilled in us, who do not walk according to the flesh but according to the Spirit."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λογίζομαι",
+      "transliteration": "logizomai",
+      "pronunciation": "lo-GID-zo-mai",
+      "meaning": "to count, reckon, credit, calculate; to enter on a ledger as a settled fact",
+      "rootMeaning": "An accountant's word. Logizomai comes from logos, an account or reckoning. It is what a bookkeeper does when a figure is entered in the column where it belongs - not a guess about how the books might look, but a record of what is already true.",
+      "usageNote": "Paul has been using this word for four chapters. In Romans 4 he says faith was 'credited' (logizomai) to Abraham as righteousness, and that God 'credits' righteousness to the one who trusts Him. Then, at the hinge of his argument, the verb turns from something God does to us into something we are commanded to do: 'count' (logizesthe) yourselves dead to sin. The same ledger word that described our acquittal now describes our daily task.",
+      "wordByWord": [
+        {
+          "word": "λογίζεσθε",
+          "transliteration": "logizesthe",
+          "meaning": "count, reckon - a present-tense command: keep on counting it true"
+        },
+        {
+          "word": "ἑαυτοὺς",
+          "transliteration": "heautous",
+          "meaning": "yourselves - the figure to be entered on the ledger is you"
+        },
+        {
+          "word": "νεκροὺς",
+          "transliteration": "nekrous",
+          "meaning": "dead - to sin"
+        },
+        {
+          "word": "ζῶντας",
+          "transliteration": "zontas",
+          "meaning": "living, alive - to God in Christ Jesus"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "κατάκριμα",
+          "reference": "Katakrima (Romans 8:1) is the legal word for a sentence of condemnation handed down by a court. Paul says there is now 'no katakrima' for those in Christ - the verdict has already been read, and it was acquittal."
+        }
+      ],
+      "strongsNumber": "G3049",
+      "definition": "to reckon, count, compute, calculate; to account, to credit",
+      "usage": "Logizomai is not wishful thinking. It is treating a settled fact as the settled fact it is. Paul does not tell us to feel dead to sin or to manufacture a mood; he tells us to count what God has already recorded."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Verdict Came First",
+      "body": "For seven chapters Paul has been building a courtroom. Every human being, Jew and Gentile, stands accused; no one is righteous, not even one. Then comes the turn the whole letter exists for: God credits righteousness to people who could never earn it, on the basis of Christ, received by faith. By chapter five Paul can say it plainly - 'since we have been justified through faith, we have peace with God through our Lord Jesus Christ.' The case is closed. The gavel has fallen. The verdict is not guilty.\n\nAnd then chapter eight opens with the sentence that holds the whole letter together: 'Therefore, there is now no condemnation for those who are in Christ Jesus.' Notice the word now. Not someday, when you have improved. Not eventually, if you keep it up. Now - already, in the present, while you are still the person you were this morning.\n\nThis is Day four of Romans, the day the teaching has to become something you can stand on. And the order matters more than almost anything in the Christian life. The verdict comes before the living, not after it. God does not acquit the people who manage to stop sinning. He acquits guilty people on the basis of His Son, and the new life that follows grows out of the acquittal - it does not pay for it. Get that order backwards and faith becomes an exhausting audition. Get it right and everything changes.",
+      "keyInsight": "In Romans, the verdict precedes the living. You are not working toward acquittal; you are working out from an acquittal that has already been declared.",
+      "content": "For seven chapters Paul has been building a courtroom. Every human being, Jew and Gentile, stands accused; no one is righteous, not even one. Then comes the turn the whole letter exists for: God credits righteousness to people who could never earn it, on the basis of Christ, received by faith. By chapter five Paul can say it plainly - 'since we have been justified through faith, we have peace with God through our Lord Jesus Christ.' The case is closed. The gavel has fallen. The verdict is not guilty.\n\nAnd then chapter eight opens with the sentence that holds the whole letter together: 'Therefore, there is now no condemnation for those who are in Christ Jesus.' Notice the word now. Not someday, when you have improved. Not eventually, if you keep it up. Now - already, in the present, while you are still the person you were this morning.\n\nThis is Day four of Romans, the day the teaching has to become something you can stand on. And the order matters more than almost anything in the Christian life. The verdict comes before the living, not after it. God does not acquit the people who manage to stop sinning. He acquits guilty people on the basis of His Son, and the new life that follows grows out of the acquittal - it does not pay for it. Get that order backwards and faith becomes an exhausting audition. Get it right and everything changes."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Pardon He Couldn't Believe",
+      "body": "A friend of mine spent years inside for something he did at nineteen. When the parole came through, the officer told me he had to explain it to him three times. The man kept asking what the catch was. He had lived so long as an inmate that the identity had grown into him; even with the paperwork in his hand, he stood up slowly the first morning, half expecting a guard to tell him to sit back down.\n\nIt took months. He would reach for his ID and brace for someone to check it and find the old record. He would walk into a room and wait to be told he didn't belong. The pardon was complete and legal from the first day. But living as a free man - moving through an ordinary morning as though the cell were really behind him - that took practice. The freedom was a fact long before it was a feeling.\n\nThat gap is exactly where Romans 8 finds most of us. The verdict is real. The cell is open. And still we get up bracing for a condemnation that has already been carried away.",
+      "connectionToTheme": "Justification is a finished legal fact the moment we trust Christ; learning to live inside that fact - to stop bracing for a sentence already spent - is the daily work Paul calls 'counting' it true.",
+      "content": "A friend of mine spent years inside for something he did at nineteen. When the parole came through, the officer told me he had to explain it to him three times. The man kept asking what the catch was. He had lived so long as an inmate that the identity had grown into him; even with the paperwork in his hand, he stood up slowly the first morning, half expecting a guard to tell him to sit back down.\n\nIt took months. He would reach for his ID and brace for someone to check it and find the old record. He would walk into a room and wait to be told he didn't belong. The pardon was complete and legal from the first day. But living as a free man - moving through an ordinary morning as though the cell were really behind him - that took practice. The freedom was a fact long before it was a feeling.\n\nThat gap is exactly where Romans 8 finds most of us. The verdict is real. The cell is open. And still we get up bracing for a condemnation that has already been carried away."
+    },
+    {
+      "type": "insight",
+      "heading": "Count It Before You Feel It",
+      "body": "Here is the pivot of the whole Christian life, and Paul hands it to us as a command in the imperative: 'So you too must count yourselves dead to sin, but alive to God in Christ Jesus' (Romans 6:11). The verb is logizesthe - keep on reckoning it true. It is the language of the ledger, not the language of the mood.\n\nThis is the part we keep getting wrong. We wait to feel dead to sin before we believe we are, and the feeling never quite arrives, so we conclude the whole thing must not have worked. But Paul does not say feel it. He says count it - enter it in the column where it belongs, because God already has. The same word that recorded your righteousness in chapter four is now the verb for your daily discipline in chapter six. You reckon true what the Judge has already recorded.\n\nSo the application of justification is not 'try harder to be acceptable.' It is the opposite. It is: stop trying to earn what you already possess, and start living from it. When the old desire rises and the old shame whispers that nothing has really changed, you do not argue with your feelings or grit your teeth. You count. You say: that account is closed. Christ settled it. I am dead to that and alive to God - not because I feel it this minute, but because it is written.",
+      "historicalContext": "Romans was written around AD 57, likely from Corinth, to a church Paul had not yet visited - a mixed congregation of Jewish and Gentile believers in the empire's capital. The argument of chapters 1 through 8 moves deliberately: humanity's guilt (1-3), justification by faith with Abraham as the proof (4-5), then the question Paul knew his teaching would raise - if grace covers sin, why not keep sinning? (6-7) - answered by the freedom of life in the Spirit (8). Day four sits in that pastoral turn, where doctrine is pressed into daily obedience.",
+      "fascinatingFact": "Romans 8:1 and 8:3 hold the gospel in two words that are almost the same. There is 'no condemnation' (katakrima) for those in Christ - because God 'condemned' (katakrino) sin in the flesh of His own Son. The judgment did not disappear. It fell. It simply fell on Christ instead of on us, which is exactly why our column can be marked clear.",
+      "content": "Here is the pivot of the whole Christian life, and Paul hands it to us as a command in the imperative: 'So you too must count yourselves dead to sin, but alive to God in Christ Jesus' (Romans 6:11). The verb is logizesthe - keep on reckoning it true. It is the language of the ledger, not the language of the mood.\n\nThis is the part we keep getting wrong. We wait to feel dead to sin before we believe we are, and the feeling never quite arrives, so we conclude the whole thing must not have worked. But Paul does not say feel it. He says count it - enter it in the column where it belongs, because God already has. The same word that recorded your righteousness in chapter four is now the verb for your daily discipline in chapter six. You reckon true what the Judge has already recorded.\n\nSo the application of justification is not 'try harder to be acceptable.' It is the opposite. It is: stop trying to earn what you already possess, and start living from it. When the old desire rises and the old shame whispers that nothing has really changed, you do not argue with your feelings or grit your teeth. You count. You say: that account is closed. Christ settled it. I am dead to that and alive to God - not because I feel it this minute, but because it is written."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells the Roman believers to count themselves dead to sin and alive to God, and then to act on the count: 'do not present the parts of your body to sin as instruments of wickedness, but present yourselves to God as those who have been brought from death to life' (Romans 6:13).",
+      "modernApplication": "The reckoning is not meant to stay in your head. It moves into your hands, your schedule, your phone, the words you choose at the kitchen table. To 'present the parts of your body' is gloriously ordinary: it is what you do with the next hour, the next conversation, the next temptation - offered to God as someone already brought from death to life, not bargaining for a life you hope to be given.",
+      "connectionPoint": "Romans 6 answers the obvious objection to grace. If God acquits us freely, why not keep sinning? Paul's answer is not a new rulebook but a new identity: you died with Christ and were raised with Him, so sin is no longer your master - 'you are not under law, but under grace' (Romans 6:14). Holiness is not the price of acceptance; it is the shape acceptance takes once it gets into a person.",
+      "newTestamentEcho": "The same logic flowers in Romans 12:1, where Paul gathers the whole argument into one plea: 'Therefore I urge you, brothers, on account of God's mercy, to offer your bodies as living sacrifices.' On account of the mercy - that is the order again. Mercy first, offering after. We give ourselves because we have already been given everything."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you still living as if the verdict were 'guilty' - bracing for a condemnation that, according to Romans 8:1, has already been carried away?",
+      "additionalQuestions": [
+        "What would change in the next twenty-four hours if you actually counted yourself 'dead to sin, but alive to God' instead of waiting to feel it?",
+        "Which 'part of your body' - your hands, your words, your attention, your screen - is the one God is asking you to present to Him today?",
+        "Is your faith functioning more like an audition you might fail, or like a verdict you can rest in? What tells you which?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess that I keep getting the order backwards. I try to earn what You have already given, and I brace for a sentence Your Son has already carried. Today, let me count it true: no condemnation, because You condemned sin in the flesh of Christ and not in me. Where I have presented myself to the old master out of habit, take back the ground. Make me alive to You - not someday, when I feel it, but now, on the strength of what is already written. Through Jesus Christ our Lord, in whom there is peace with You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, when the old shame or the old pull rises, do not argue and do not grit your teeth. Say one sentence out loud: 'There is now no condemnation - I am dead to that and alive to God in Christ Jesus.' Then present the very next thing in your hands - a task, a word, a choice - to God, as someone already brought from death to life.",
+      "leavingAtCross": [
+        "The instinct to earn an acceptance Christ has already secured",
+        "The habit of bracing for a condemnation that fell on Jesus instead of me",
+        "The lie that says nothing has really changed because I do not feel changed"
+      ],
+      "receivingFromCross": [
+        "A finished verdict: no condemnation, declared now and not someday",
+        "The freedom to count myself dead to sin and alive to God on God's word, not my mood",
+        "A new master - grace, not law - and the dignity of presenting my ordinary day to Him"
+      ],
+      "content": "Today, when the old shame or the old pull rises, do not argue and do not grit your teeth. Say one sentence out loud: 'There is now no condemnation - I am dead to that and alive to God in Christ Jesus.' Then present the very next thing in your hands - a task, a word, a choice - to God, as someone already brought from death to life."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter so much that 'no condemnation' comes at the start of Romans 8, on the basis of Christ, rather than at the end as a reward for good behavior?",
+        "What does the accounting word logizomai ('count, reckon') tell us about how we are meant to handle a truth we do not yet feel?",
+        "How does Romans 8:3 - God condemning sin in the flesh of His own Son - explain how there can be 'no condemnation' for us in 8:1?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are still trying to earn God's acceptance rather than living from it. What would 'counting it true' look like there this week?",
+        "Talk about the gap between knowing you are forgiven and feeling it. Where is that gap widest for you right now?",
+        "Choose one concrete 'part of your body' - your tongue, your hands, your attention - to present to God this week, and tell each other how it goes."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 5:1",
+          "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ,"
+        },
+        {
+          "reference": "Romans 6:11",
+          "text": "So you too must count yourselves dead to sin, but alive to God in Christ Jesus."
+        },
+        {
+          "reference": "Romans 8:15",
+          "text": "For you did not receive a spirit of slavery that returns you to fear, but you received the Spirit of sonship, by whom we cry, “Abba! Father!”"
+        },
+        {
+          "reference": "Romans 8:31-32",
+          "text": "What then shall we say in response to these things? If God is for us, who can be against us? He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 6-8",
+          "note": "Read these three chapters in one sitting, watching the movement from death-with-Christ (6) to the honest struggle of 'the good I want to do' (7) to the freedom of life in the Spirit (8). Notice how often Paul reasons from what is already true to how we should now live."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Gentiles, Author of Romans",
+      "era": "c. AD 5-67",
+      "description": "A trained Pharisee who once persecuted the church, Paul met the risen Christ on the road to Damascus and spent the rest of his life proclaiming the gospel he had tried to destroy. He wrote Romans around AD 57, near the end of his third missionary journey, as a careful presentation of that gospel to a church in the capital he had never met. No one wrote more searchingly about the gap between the good we want and the evil we do - and no one wrote more freely about the grace that closes it.",
+      "keyQuote": "What a wretched man I am! Who will rescue me from this body of death? Thanks be to God, through Jesus Christ our Lord!",
+      "lessonForUs": "Paul does not write Romans 7 as a man who has it together; he writes as someone who knows the struggle from the inside and answers it not with self-improvement but with a Rescuer. The man who said 'nothing good lives in me' is the same man who said 'there is now no condemnation.' Both are true at once - which is precisely why the command is to count it, not to feel it.",
+      "heading": "Apostle to the Gentiles, Author of Romans"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2375,
+  "scriptureReference_full": "Romans 8:1-4 (with Romans 5:1; 6:11-14; 8:31-32)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (logizomai, G3049; katakrima/katakrino) reflects standard lexical sources; the link between the 'crediting' of Romans 4 and the 'counting' command of Romans 6:11 is a widely recognized feature of Paul's argument."
+  ]
 }

@@ -1,38 +1,185 @@
 {
   "day": 119,
-  "title": "Elijah Cycles — Day 7 — Sabbath",
-  "teaser": "Day 119 of Bible 365 — 1 Kings 17-19, 2 Kings 2",
+  "title": "The God Who Was Not in the Fire",
+  "teaser": "The day after fire fell from heaven, the prophet begged to die. God answered with bread, sleep, and a whisper.",
   "framework": "1 Kings 17-19, 2 Kings 2 — Elijah Cycles",
   "scriptureReference": "1 Kings 17-19, 2 Kings 2",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 119"
+      "type": "scripture",
+      "reference": "1 Kings 19:11-12",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD was not in the wind",
+        "a still, small voice"
+      ],
+      "hebrewOriginal": "וְאַחַר הָאֵשׁ קוֹל דְּמָמָה דַקָּה",
+      "passage": "Then the LORD said, \"Go out and stand on the mountain before the LORD. Behold, the LORD is about to pass by.\" And a great and mighty wind tore into the mountains and shattered the rocks before the LORD, but the LORD was not in the wind. After the wind there was an earthquake, but the LORD was not in the earthquake. After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 17-19, 2 Kings 2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 17-19, 2 Kings 2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קוֹל דְּמָמָה דַקָּה",
+      "transliteration": "qol demamah daqqah",
+      "pronunciation": "kohl deh-mah-MAH dak-KAH",
+      "meaning": "a still, small voice; a sound of thin silence",
+      "rootMeaning": "Qol is voice or sound. Demamah means stillness, a hush, a quieting. Daqqah means thin, fine, crushed small - the same word used for finely ground powder. Stacked together the phrase is almost untranslatable: a thin, crushed silence that somehow has a voice.",
+      "usageNote": "The phrase appears here and nowhere else in this exact form. Older translations render it 'a still, small voice'; some modern ones try 'a sound of sheer silence' or 'a gentle whisper.' The strangeness is the point. After three of the loudest things in nature - hurricane, earthquake, wildfire - the text reaches for a paradox, a silence so fine it can be heard.",
+      "wordByWord": [
+        {
+          "word": "וְאַחַר",
+          "transliteration": "ve'achar",
+          "meaning": "and after - the deliberate fourth beat, set apart from the three before it"
+        },
+        {
+          "word": "הָאֵשׁ",
+          "transliteration": "ha'esh",
+          "meaning": "the fire - the very thing Elijah had called down on Carmel"
+        },
+        {
+          "word": "קוֹל",
+          "transliteration": "qol",
+          "meaning": "a voice, a sound"
+        },
+        {
+          "word": "דְּמָמָה",
+          "transliteration": "demamah",
+          "meaning": "stillness, a hush, the absence of noise"
+        },
+        {
+          "word": "דַקָּה",
+          "transliteration": "daqqah",
+          "meaning": "thin, fine, crushed small"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דְּמָמָה",
+          "reference": "The same word names the calm in Psalm 107:29, when God 'calmed the storm to a whisper, and the waves of the sea were hushed.' The sailors there meet the God Elijah met: the One who is found on the far side of the noise."
+        }
+      ],
+      "strongsNumber": "H1827",
+      "definition": "demamah: a calm, a hush, silence; from a root meaning to be still or to grow quiet",
+      "usage": "Elijah had just watched fire fall from the sky and consume an altar in front of a nation. So when the wind and quake and fire roll past the cave and God is in none of them, the prophet is being un-taught. The God he served with spectacle now speaks in the one register Elijah has not been listening for."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elijah Cycles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Elijah (Matt 17:1-8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day After the Mountain",
+      "body": "The day before, Elijah had stood on Mount Carmel and won. He had faced four hundred and fifty prophets of Baal alone, soaked an altar in water until it overflowed, and prayed one short prayer. Then the fire of the LORD fell and consumed the sacrifice, the wood, the stones, and the dust, and it licked up the water in the trench (1 Kings 18:38). A whole nation fell on its faces crying, \"The LORD, He is God!\" Elijah even outran a chariot to Jezreel with the hand of the LORD upon him. If there was ever a man at the height of his calling, it was Elijah on that road.\n\nThen Queen Jezebel sent word that she would have him dead by morning, and the man who had just faced down an army ran. He ran a full day into the wilderness, sat under a broom tree, and asked God to kill him. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers\" (1 Kings 19:4). This is the same week. The prophet of fire is suicidal in the desert one day after the greatest victory of his life.\n\nNotice what God does not do. He does not lecture Elijah about ingratitude. He does not remind him that fire just fell from the sky. An angel simply touches the sleeping man and says, \"Get up and eat.\" There is a cake of bread baked over hot coals and a jar of water by his head. Elijah eats and lies back down. The angel comes a second time, touches him again, and says something almost unbearably tender: \"Get up and eat, or the journey will be too much for you\" (1 Kings 19:7). Before God gives Elijah a single word of correction, He gives him food and a nap.",
+      "keyInsight": "God's first response to a burned-out prophet is not a sermon but a meal and sleep. Sometimes the holiest thing exhaustion needs is rest, not resolve.",
+      "content": "The day before, Elijah had stood on Mount Carmel and won. He had faced four hundred and fifty prophets of Baal alone, soaked an altar in water until it overflowed, and prayed one short prayer. Then the fire of the LORD fell and consumed the sacrifice, the wood, the stones, and the dust, and it licked up the water in the trench (1 Kings 18:38). A whole nation fell on its faces crying, \"The LORD, He is God!\" Elijah even outran a chariot to Jezreel with the hand of the LORD upon him. If there was ever a man at the height of his calling, it was Elijah on that road.\n\nThen Queen Jezebel sent word that she would have him dead by morning, and the man who had just faced down an army ran. He ran a full day into the wilderness, sat under a broom tree, and asked God to kill him. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers\" (1 Kings 19:4). This is the same week. The prophet of fire is suicidal in the desert one day after the greatest victory of his life.\n\nNotice what God does not do. He does not lecture Elijah about ingratitude. He does not remind him that fire just fell from the sky. An angel simply touches the sleeping man and says, \"Get up and eat.\" There is a cake of bread baked over hot coals and a jar of water by his head. Elijah eats and lies back down. The angel comes a second time, touches him again, and says something almost unbearably tender: \"Get up and eat, or the journey will be too much for you\" (1 Kings 19:7). Before God gives Elijah a single word of correction, He gives him food and a nap."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Pastor Who Could Not Pray",
+      "body": "A friend of mine planted a church that grew faster than anyone expected. For three years he ran on adrenaline and answered prayer - new families every month, a building that filled up, baptisms in a borrowed lake. People told him he was anointed, and on the good Sundays he believed them.\n\nThen one Tuesday he sat in his car in the church parking lot and could not make himself go in. Nothing dramatic had happened. No scandal, no crisis. He just had nothing left, and the emptiness frightened him more than any crisis would have, because he could not explain it. He had been most successful and felt most dead in the same season.\n\nWhat brought him back was not a conference or a breakthrough. His wife made him sleep. A counselor made him eat lunch at noon like a human being. An old mentor took him fishing and barely talked about God at all. Months later he told me, \"I kept waiting for God to set me straight. Instead He let me sleep.\" He had assumed his burnout was a spiritual failure that needed rebuking. It turned out his body and soul simply needed what the angel gave Elijah: bread, water, and rest, twice, before a single word about what came next.",
+      "connectionToTheme": "Like Elijah, the people closest to collapse are often the ones who just had their biggest win. God's mercy frequently arrives first as ordinary care - food, water, sleep - before it arrives as a word.",
+      "content": "A friend of mine planted a church that grew faster than anyone expected. For three years he ran on adrenaline and answered prayer - new families every month, a building that filled up, baptisms in a borrowed lake. People told him he was anointed, and on the good Sundays he believed them.\n\nThen one Tuesday he sat in his car in the church parking lot and could not make himself go in. Nothing dramatic had happened. No scandal, no crisis. He just had nothing left, and the emptiness frightened him more than any crisis would have, because he could not explain it. He had been most successful and felt most dead in the same season.\n\nWhat brought him back was not a conference or a breakthrough. His wife made him sleep. A counselor made him eat lunch at noon like a human being. An old mentor took him fishing and barely talked about God at all. Months later he told me, \"I kept waiting for God to set me straight. Instead He let me sleep.\" He had assumed his burnout was a spiritual failure that needed rebuking. It turned out his body and soul simply needed what the angel gave Elijah: bread, water, and rest, twice, before a single word about what came next."
+    },
+    {
+      "type": "insight",
+      "heading": "He Was Not in the Fire",
+      "body": "When Elijah finally reaches Horeb, the same mountain where Moses met God, the LORD tells him to stand outside and wait, for He is about to pass by. Then comes a procession of everything spectacular. A wind so violent it shatters rock. An earthquake. A fire. Three times the text says the same shocking thing: the LORD was not in the wind, not in the earthquake, not in the fire. And after the fire came a still, small voice.\n\nThis is the un-teaching of Elijah. Every dramatic sign on that mountain is exactly the kind of sign Elijah had built his ministry around. Fire from heaven was his trademark; it was how God answered on Carmel. But here God lets the fire roll by empty, as if to say: I was in the fire that day for the sake of a wavering nation, but I am not only the God of fire. The prophet who could call down lightning had to learn that the God he served was also, and finally, a whisper. The wind tears the mountains, and God lets it pass. Then a thin silence, and Elijah wraps his face in his cloak, because now he knows the LORD has come.\n\nThere is mercy in this for everyone who has ever mistaken the loud thing for the holy thing. We assume God moves in the dramatic - the packed room, the emotional high, the answered prayer with sparks on it. Sometimes He does. But the burned-out prophet is taught that the deepest meeting comes after all of that has passed, in the register the noise had been drowning out.",
+      "historicalContext": "Horeb is another name for Sinai, the mountain where God gave the Law to Moses in cloud, thunder, and fire (Exodus 19). By sending Elijah there, the narrative deliberately echoes that first encounter - and then quietly overturns its expectations. At Sinai God had come in fire and quaking; to Elijah on the same ground, God comes in the absence of all of it. The reader who knows Exodus is meant to feel the contrast.",
+      "fascinatingFact": "Twice on the mountain God asks Elijah the very same question: \"What are you doing here, Elijah?\" (1 Kings 19:9, 13). Both times Elijah gives the identical, self-pitying answer almost word for word - \"I am the only one left.\" God's reply corrects him gently: He has reserved seven thousand in Israel who have not bowed to Baal (1 Kings 19:18). Elijah was never as alone as exhaustion told him he was.",
+      "content": "When Elijah finally reaches Horeb, the same mountain where Moses met God, the LORD tells him to stand outside and wait, for He is about to pass by. Then comes a procession of everything spectacular. A wind so violent it shatters rock. An earthquake. A fire. Three times the text says the same shocking thing: the LORD was not in the wind, not in the earthquake, not in the fire. And after the fire came a still, small voice.\n\nThis is the un-teaching of Elijah. Every dramatic sign on that mountain is exactly the kind of sign Elijah had built his ministry around. Fire from heaven was his trademark; it was how God answered on Carmel. But here God lets the fire roll by empty, as if to say: I was in the fire that day for the sake of a wavering nation, but I am not only the God of fire. The prophet who could call down lightning had to learn that the God he served was also, and finally, a whisper. The wind tears the mountains, and God lets it pass. Then a thin silence, and Elijah wraps his face in his cloak, because now he knows the LORD has come.\n\nThere is mercy in this for everyone who has ever mistaken the loud thing for the holy thing. We assume God moves in the dramatic - the packed room, the emotional high, the answered prayer with sparks on it. Sometimes He does. But the burned-out prophet is taught that the deepest meeting comes after all of that has passed, in the register the noise had been drowning out."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The prophet who called down fire is restored not by more fire but by bread, water, sleep, and a still, small voice on the mountain.",
+      "modernApplication": "We are wired like Elijah - to measure God's nearness by the volume of our experience. The loud weekend, the moving worship set, the answered prayer with a story attached. But the morning after the mountain, when the adrenaline is gone and you cannot feel anything, God has not left. He may simply be waiting in the quiet you keep skipping past, with bread for the body and a voice too gentle to hear over the noise.",
+      "connectionPoint": "Elijah's wilderness food carried him forty days to the mountain of God; the same Lord who fed a prophet under a broom tree later told the weary, \"Come to Me, all you who are weary and burdened, and I will give you rest\" (Matthew 11:28). And on a different mountain, Elijah himself would stand again - this time beside the One whose face shone like the sun.",
+      "newTestamentEcho": "At the Transfiguration, Moses and Elijah appear talking with Jesus (Matthew 17:3). The Father's voice from the cloud does not say, \"Look at the fire.\" It says, \"This is My beloved Son, in whom I am well pleased. Listen to Him\" (Matthew 17:5). The God who once spoke after the fire in a thin silence now speaks His final word in a Son - and the still, small voice has a face."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been waiting for God in the fire - the dramatic answer, the big experience - while He has been speaking in a quiet you keep rushing past?",
+      "additionalQuestions": [
+        "Elijah crashed the day after his greatest victory. Has your own emptiness ever come right after a 'win'? What did you assume was wrong with you?",
+        "When you imagine God meeting you in burnout, do you picture a rebuke or a meal? Why?",
+        "What ordinary care - sleep, food, a walk, an honest friend - might be the angel's touch you have been treating as a distraction from the spiritual work?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have looked for You in the fire and missed You in the silence. I have measured Your nearness by how much I feel, and I have nothing left to feel today. Thank You that You did not rebuke the prophet under the tree, but fed him and let him sleep. Do that for me. Quiet the wind and the quaking long enough that I can hear the voice the noise has been hiding. And when I have nothing to offer, remind me that I was never as alone as my exhaustion told me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is no task to finish. Do the unspectacular, faithful thing: eat a real meal slowly, get to bed early, and sit five quiet minutes with one phrase - \"the LORD was not in the fire\" or \"a still, small voice.\" Let God meet you in the register you usually skip.",
+      "leavingAtCross": [
+        "The belief that God's nearness is measured by how loud or dramatic the experience feels",
+        "The lie of exhaustion that says I am the only one left and no one understands",
+        "The shame of crashing after a victory, as though tiredness were a spiritual failure"
+      ],
+      "receivingFromCross": [
+        "Bread for the body and rest for the soul, given before any word of correction",
+        "A God who is found on the far side of the noise, in a thin and gentle silence",
+        "The Son whose voice is the Father's final word - and to whom the still, small voice always pointed"
+      ],
+      "content": "Today is a sabbath day - there is no task to finish. Do the unspectacular, faithful thing: eat a real meal slowly, get to bed early, and sit five quiet minutes with one phrase - \"the LORD was not in the fire\" or \"a still, small voice.\" Let God meet you in the register you usually skip."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What three loud things pass by the cave before God speaks - and what does the text say about where the LORD was in each one?",
+        "Why is it significant that God feeds Elijah and lets him sleep before saying anything about his complaint?",
+        "How does the still, small voice on Horeb point forward to the way God speaks 'in these last days' through the Son (Hebrews 1:1-2)?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time you felt closest to burnout right after a season of 'success.' What did you need that you were too busy to give yourself?",
+        "Where are each of you straining to hear God in the dramatic while ignoring the quiet? Name one quiet practice you have been skipping.",
+        "Elijah was wrong that he was the only one left. Tell each other one way you have felt alone in your faith lately - and let the other person be part of the 'seven thousand' who are still standing with you."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 19:7",
+          "text": "A second time the angel of the LORD returned and touched him, saying, \"Get up and eat, or the journey will be too much for you.\""
+        },
+        {
+          "reference": "Psalm 107:29",
+          "text": "He calmed the storm to a whisper, and the waves of the sea were hushed."
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        },
+        {
+          "reference": "Hebrews 1:1-2",
+          "text": "On many past occasions and in many different ways, God spoke to our fathers through the prophets. But in these last days He has spoken to us by His Son, whom He appointed heir of all things, and through whom He made the universe."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 17-19",
+          "note": "Read the whole Elijah arc in one sitting, watching the rhythm: provision at the brook and the widow's jar (17), fire on Carmel (18), collapse and the whisper at Horeb (19). Notice how often God sustains Elijah through ordinary food and water."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elijah the Tishbite",
+      "title": "The Prophet of Fire, Restored by a Whisper",
+      "description": "A prophet from Gilead who confronted King Ahab and Queen Jezebel in Israel's deepest idolatry. He shut the sky for years, was fed by ravens and a widow's never-empty jar, raised her son from death, and called down fire on Mount Carmel. Yet immediately after his greatest triumph he collapsed in despair and asked to die. God restored him not with another miracle of power but with food, sleep, and a still, small voice - and later took him up in a whirlwind by a chariot of fire (2 Kings 2:11), leaving his cloak and a double portion of his spirit to Elisha.",
+      "keyQuote": "I have had enough, LORD. Take my life, for I am no better than my fathers.",
+      "lessonForUs": "If the prophet who called down fire could break down the day after his victory and still be met with tenderness, then your exhaustion is not disqualifying. God knows the journey is too much for you, and He feeds you for it - often in the quiet, long before He gives you the next word.",
+      "heading": "The Prophet of Fire, Restored by a Whisper"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1736,
+  "scriptureReference_full": "1 Kings 17-19, 2 Kings 2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qol demamah daqqah, demamah H1827) reflects standard lexical sources. The 'thin silence' rendering follows the literal force of demamah ('hush, stillness') and daqqah ('fine, thin')."
+  ]
 }

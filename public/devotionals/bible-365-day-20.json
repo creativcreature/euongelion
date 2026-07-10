@@ -1,38 +1,177 @@
 {
   "day": 20,
-  "title": "What faith costs",
-  "teaser": "Day 20 of Bible 365 — Genesis 22 (deeper)",
+  "title": "Here I am, all the way up",
+  "teaser": "Day 20 of Bible 365 — Genesis 22 (deeper). Abraham says \"Here I am\" three times and walks his son up the mountain. What faith costs, and what God provides.",
   "framework": "Genesis 22 (deeper) — Surrender as worship",
   "scriptureReference": "Genesis 22 (deeper)",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 20"
+      "type": "scripture",
+      "reference": "Genesis 22:1-2, 7-8, 11-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Here I am",
+        "your only son Isaac, whom you love",
+        "God Himself will provide the lamb",
+        "the two of them walked on together",
+        "The LORD Will Provide"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר אַבְרָהָם אֱלֹהִים יִרְאֶה־לּוֹ הַשֶּׂה לְעֹלָה בְּנִי",
+      "passage": "Some time later God tested Abraham and said to him, \"Abraham!\" \"Here I am,\" he answered. \"Take your son,\" God said, \"your only son Isaac, whom you love, and go to the land of Moriah. Offer him there as a burnt offering on one of the mountains, which I will show you.\" ... Then Isaac said to his father Abraham, \"My father!\" \"Here I am, my son,\" he replied. \"The fire and the wood are here,\" said Isaac, \"but where is the lamb for the burnt offering?\" Abraham answered, \"God Himself will provide the lamb for the burnt offering, my son.\" And the two walked on together. ... Just then the angel of the LORD called out to him from heaven, \"Abraham, Abraham!\" \"Here I am,\" he replied. \"Do not lay a hand on the boy or do anything to him,\" said the angel, \"for now I know that you fear God, since you have not withheld your only son from me.\" Then Abraham looked up and saw behind him a ram in a thicket, caught by its horns. So he went and took the ram and offered it as a burnt offering in place of his son. And Abraham called that place The LORD Will Provide. So to this day it is said, \"On the mountain of the LORD it will be provided.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 22 (deeper)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 22 (deeper) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הִנֵּנִי",
+      "transliteration": "hineni",
+      "pronunciation": "hee-NEH-nee",
+      "meaning": "Here I am; behold, me",
+      "rootMeaning": "From hinneh, \"behold,\" with the first-person ending: literally \"behold me.\" It is not a report of location but a giving of the self - the answer of someone who is fully present and at the other's disposal.",
+      "usageNote": "Abraham says hineni three times in this chapter: to God who calls him (v. 1), to Isaac who calls him \"My father\" (v. 7), and to the angel who stops his hand (v. 11). The same word is later spoken by Moses at the bush (Exodus 3:4), by Samuel in the night (1 Samuel 3:4), and by Isaiah before the throne (Isaiah 6:8). It is the word of the available heart.",
+      "wordByWord": [
+        {
+          "word": "הִנֵּה",
+          "transliteration": "hinneh",
+          "meaning": "behold, look, here"
+        },
+        {
+          "word": "־נִי",
+          "transliteration": "-ni",
+          "meaning": "me (the first-person ending fused to the word)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יִרְאֶה (yireh) / יְהוָה יִרְאֶה (YHWH Yireh)",
+          "reference": "Abraham names the mountain YHWH Yireh, \"The LORD Will Provide\" or \"The LORD Will See To It\" (v. 14). The verb ra'ah, \"to see,\" carries both senses: God sees the need and God sees to the need. The same root sits inside Abraham's answer in v. 8 - \"God Himself will see to the lamb.\""
+        }
+      ],
+      "strongsNumber": "H2009",
+      "definition": "behold; here am I - a particle of presence and readiness, spoken by one who answers a call fully",
+      "usage": "Hineni is the opposite of Adam's hiding in Genesis 3. Where Adam goes silent among the trees, Abraham steps forward and offers himself: behold, me."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Surrender as worship. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s Gethsemane \"yes\" (Luke 22:42).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Times He Says, \"Here I Am\"",
+      "body": "We have stood on this mountain before. Earlier we read Genesis 22 for its outline - the test, the obedience, the ram in the thicket. Read it again slowly and a quieter pattern surfaces, carried by one small word Abraham keeps saying.\n\nGod calls, \"Abraham!\" and he answers, \"Here I am.\" The boy calls, \"My father!\" and the old man answers, \"Here I am, my son.\" The angel calls from heaven, \"Abraham, Abraham!\" and again, \"Here I am.\" Three times the same Hebrew word, hineni - not \"here is my location\" but \"here is all of me, at your disposal.\" Abraham is fully present to God who asks the unbearable thing, fully present to the son who asks the unanswerable question, and fully present when heaven finally stops his hand.\n\nNotice what the text refuses to give us. We get no window into Abraham's churning heart on the three-day walk. Scripture is silent where we most want noise. It does not tell us he wept, though surely he did; it does not tell us he argued, the way he had argued for Sodom a few chapters earlier. It tells us only that he rose early, split the wood himself, and walked. The original audience - a people who knew the surrounding nations sacrificed their children to Molech - would have read this not as God endorsing such horror but as God leading His friend to the brink of it and then, decisively, refusing it. The test was never about Isaac's death. It was about whether Abraham would hold anything back from the God who had given him everything.",
+      "keyInsight": "Faith is not the absence of cost. Abraham's \"Here I am\" is spoken with a knife in his pack and his only son beside him. Surrender that costs nothing was never asked of him - or of us.",
+      "content": "We have stood on this mountain before. Earlier we read Genesis 22 for its outline - the test, the obedience, the ram in the thicket. Read it again slowly and a quieter pattern surfaces, carried by one small word Abraham keeps saying.\n\nGod calls, \"Abraham!\" and he answers, \"Here I am.\" The boy calls, \"My father!\" and the old man answers, \"Here I am, my son.\" The angel calls from heaven, \"Abraham, Abraham!\" and again, \"Here I am.\" Three times the same Hebrew word, hineni - not \"here is my location\" but \"here is all of me, at your disposal.\" Abraham is fully present to God who asks the unbearable thing, fully present to the son who asks the unanswerable question, and fully present when heaven finally stops his hand.\n\nNotice what the text refuses to give us. We get no window into Abraham's churning heart on the three-day walk. Scripture is silent where we most want noise. It does not tell us he wept, though surely he did; it does not tell us he argued, the way he had argued for Sodom a few chapters earlier. It tells us only that he rose early, split the wood himself, and walked. The original audience - a people who knew the surrounding nations sacrificed their children to Molech - would have read this not as God endorsing such horror but as God leading His friend to the brink of it and then, decisively, refusing it. The test was never about Isaac's death. It was about whether Abraham would hold anything back from the God who had given him everything."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Walk Up the Hill",
+      "body": "A man I know spent years trying to give his son a faith he could believe in himself. When the boy was finally diagnosed - a long word, a hard road, surgeries stacked like cordwood - the man told me he stopped praying for outcomes. \"I can't make the deal anymore,\" he said. \"I used to pray, God, fix this and I'll serve You harder. Now I just walk into the room and say, here I am. I don't know what You're doing. I'm here.\"\n\nHe described the worst morning, carrying his son down a hospital corridor toward a set of doors he was not allowed to walk through. The boy asked him a question he could not answer - the same shape as Isaac's question on the mountain, the one no father is ready for. And all he had was a version of Abraham's reply: a trust he could not see the bottom of, spoken anyway, because the alternative was to let go of the only hand still holding him.\n\nThat is the texture of real surrender. It is not serene. It is a father putting one foot in front of the other up a hill he did not choose, still answering when his name is called.",
+      "connectionToTheme": "Surrender is rarely felt as peace in the moment. It is most often the decision to keep saying \"Here I am\" while carrying what you cannot put down.",
+      "content": "A man I know spent years trying to give his son a faith he could believe in himself. When the boy was finally diagnosed - a long word, a hard road, surgeries stacked like cordwood - the man told me he stopped praying for outcomes. \"I can't make the deal anymore,\" he said. \"I used to pray, God, fix this and I'll serve You harder. Now I just walk into the room and say, here I am. I don't know what You're doing. I'm here.\"\n\nHe described the worst morning, carrying his son down a hospital corridor toward a set of doors he was not allowed to walk through. The boy asked him a question he could not answer - the same shape as Isaac's question on the mountain, the one no father is ready for. And all he had was a version of Abraham's reply: a trust he could not see the bottom of, spoken anyway, because the alternative was to let go of the only hand still holding him.\n\nThat is the texture of real surrender. It is not serene. It is a father putting one foot in front of the other up a hill he did not choose, still answering when his name is called."
+    },
+    {
+      "type": "insight",
+      "heading": "God Himself Will Provide the Lamb",
+      "body": "The center of the chapter is a sentence Abraham says without fully understanding it. Isaac, carrying the wood on his own back up the slope, asks the only logical question: the fire is here, the wood is here, \"but where is the lamb for the burnt offering?\" His father answers, \"God Himself will provide the lamb for the burnt offering, my son. And the two walked on together.\"\n\nWatch the words. Abraham does not say, \"You are the lamb, my son.\" He does not say, \"There is no lamb.\" He says God will see to it - the Hebrew yireh, the same root from which he will name the place. He is speaking better than he knows. On that day God does provide, but not the lamb Isaac asked about: He provides a ram, caught by its horns in a thicket behind them, offered \"in place of his son.\" A substitute dies so the beloved son goes free.\n\nAnd then the chapter does something strange with geography and time. Abraham names the mountain The LORD Will Provide, and the narrator adds, \"So to this day it is said, 'On the mountain of the LORD it will be provided.'\" That is a verb in waiting. It points the reader past the ram, past Abraham's own lifetime, to a provision still coming on that same range of hills - a lamb God had not yet shown.",
+      "historicalContext": "The land of Moriah (v. 2) is named again in only one other place in Scripture: 2 Chronicles 3:1, where Solomon builds the Temple \"on Mount Moriah, where the LORD had appeared to his father David.\" Israel's whole sacrificial system - the altar where lambs died so a sinful people could draw near - would stand on the very ridge where Abraham first heard, \"God Himself will provide the lamb.\"",
+      "fascinatingFact": "Genesis 22 holds the first occurrence of the word \"love\" in the Bible (v. 2, \"whom you love\") and the first time anyone is called to give up an \"only son.\" The Scripture's opening lesson in love is a father, a beloved son, and a mountain - a pattern the New Testament will say was prophecy all along.",
+      "content": "The center of the chapter is a sentence Abraham says without fully understanding it. Isaac, carrying the wood on his own back up the slope, asks the only logical question: the fire is here, the wood is here, \"but where is the lamb for the burnt offering?\" His father answers, \"God Himself will provide the lamb for the burnt offering, my son. And the two walked on together.\"\n\nWatch the words. Abraham does not say, \"You are the lamb, my son.\" He does not say, \"There is no lamb.\" He says God will see to it - the Hebrew yireh, the same root from which he will name the place. He is speaking better than he knows. On that day God does provide, but not the lamb Isaac asked about: He provides a ram, caught by its horns in a thicket behind them, offered \"in place of his son.\" A substitute dies so the beloved son goes free.\n\nAnd then the chapter does something strange with geography and time. Abraham names the mountain The LORD Will Provide, and the narrator adds, \"So to this day it is said, 'On the mountain of the LORD it will be provided.'\" That is a verb in waiting. It points the reader past the ram, past Abraham's own lifetime, to a provision still coming on that same range of hills - a lamb God had not yet shown."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On Moriah, God asks Abraham for his only son, whom he loves, and at the last moment provides a ram to die in the son's place. Isaac walks back down the mountain alive because a substitute took the altar.",
+      "modernApplication": "We still build altars for the things we cannot bear to lose - the child, the marriage, the dream, the reputation, the certainty about how our story turns out. The question Moriah asks is not whether God will take them, but whether we trust Him enough to open our hands. Surrender here is worship, not loss: it is naming God greater than the gift.",
+      "connectionPoint": "Abraham's word \"God Himself will provide the lamb\" hangs unfinished for two thousand years. Isaac asked, \"Where is the lamb?\" and no full answer came on Moriah - only a ram, a stopgap. The answer comes when John the Baptist looks at Jesus and says, \"Look, the Lamb of God, who takes away the sin of the world!\" (John 1:29). The lamb Abraham promised was finally shown.",
+      "newTestamentEcho": "What Abraham was spared, God was not. Paul writes that God \"did not spare His own Son, but gave Him up for us all\" (Romans 8:32) - the exact thing the angel praised Abraham for being willing to do, now done by the Father Himself. The hand stopped over Isaac was not stopped at the cross. On the mountain of the LORD, it was provided."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the Isaac you are carrying up the mountain right now - the thing you love that you cannot imagine surrendering?",
+      "additionalQuestions": [
+        "When God or life calls your name, is your honest answer closer to Adam's hiding or Abraham's \"Here I am\"? Why?",
+        "Abraham trusted God's character before he understood God's plan. Where are you being asked to walk on without seeing how it ends?",
+        "What would it look like to hold the thing you love with open hands today - not to lose it, but to stop gripping it as if God were not good?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-surrender",
+      "prayerText": "Father, You know the thing I am carrying up the hill - the one I cannot say out loud without my voice breaking. Teach me to answer when You call, the way Abraham did: here I am, all of me. I do not understand what You are doing. I am afraid of what it might cost. But You did not spare Your own Son for me, so I will trust that the hand You hold over what I love is the hand of the One who provides. On the mountain, You will see to it. Help me to keep walking on. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name your Isaac today - out loud, to God. Take the one thing you are gripping hardest and, for five minutes, practice open hands: \"This is Yours. I trust You to see to it.\" You are not throwing it away. You are returning it to the One who gave it.",
+      "leavingAtCross": [
+        "The grip - the way I hold the gift as though God were not good enough to be trusted with it",
+        "The bargaining prayer that says God, fix this and then I'll obey",
+        "The fear that surrender means loss, when on Moriah it meant a son walked back down the mountain alive"
+      ],
+      "receivingFromCross": [
+        "The freedom of open hands - worship that costs something and is still called good",
+        "A God who provides the lamb Himself, so I never have to be my own substitute",
+        "The promise that the hand held over what I love is the hand of the Father who gave His only Son"
+      ],
+      "content": "Name your Isaac today - out loud, to God. Take the one thing you are gripping hardest and, for five minutes, practice open hands: \"This is Yours. I trust You to see to it.\" You are not throwing it away. You are returning it to the One who gave it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Abraham says \"Here I am\" three times - to God, to Isaac, and to the angel. What does each one cost him, and what do they reveal about real surrender?",
+        "Why does it matter that God provides a ram \"in place of his son\" rather than simply calling off the test? What is the difference between cancellation and substitution?",
+        "The narrator says, \"On the mountain of the LORD it will be provided\" - a promise still in the future tense. How does Genesis 22 point past itself to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name your Isaac to each other - the thing you would find hardest to lay on the altar - and pray over it together.",
+        "Talk honestly about the bargaining prayers you still pray. Where are you trying to make a deal with God instead of trusting Him?",
+        "Ask each other: when has obeying God before you understood Him turned out to be the walk that mattered most?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 22:5",
+          "text": "\"Stay here with the donkey,\" Abraham told his servants. \"The boy and I will go over there to worship, and then we will return to you.\""
+        },
+        {
+          "reference": "2 Chronicles 3:1",
+          "text": "Then Solomon began to build the house of the LORD in Jerusalem on Mount Moriah, where the LORD had appeared to his father David. This was the place that David had prepared on the threshing floor of Ornan the Jebusite."
+        },
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!"
+        },
+        {
+          "reference": "Romans 8:32",
+          "text": "He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?"
+        },
+        {
+          "reference": "Hebrews 11:19",
+          "text": "Abraham reasoned that God could raise the dead, and in a sense, he did receive Isaac back from death."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 22",
+          "note": "Read the whole chapter aloud, marking every time the word \"together\" and the word \"son\" appear. Notice how the narrative slows on the walk and speeds up at the altar."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The Father Who Said \"Here I Am\"",
+      "description": "Called out of Ur and promised descendants like the stars, Abraham waited decades for the one son through whom every promise was supposed to come. On Moriah he was asked to give that son back. Scripture calls him the friend of God (James 2:23) and the father of all who believe (Romans 4:11) - not because he understood, but because he obeyed and trusted that God could be trusted even with Isaac.",
+      "keyQuote": "God Himself will provide the lamb for the burnt offering, my son.",
+      "lessonForUs": "Abraham did not have the cross to look back on; we do. If he could climb the mountain trusting that God would provide, how much more can we open our hands, knowing the Lamb has already been given.",
+      "heading": "The Father Who Said \"Here I Am\""
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2409,
+  "scriptureReference_full": "Genesis 22:1-2, 7-8, 11-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (hineni, from hinneh + first-person suffix; yireh/YHWH Yireh from the root ra'ah, \"to see\") reflects standard lexical sources. The identification of Moriah with the Temple mount follows 2 Chronicles 3:1."
+  ]
 }

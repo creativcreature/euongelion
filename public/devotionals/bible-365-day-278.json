@@ -1,38 +1,186 @@
 {
   "day": 278,
-  "title": "Matthew: Kingdom Begins — Day 5 — Resolution",
-  "teaser": "Day 278 of Bible 365 — Matthew 1-7",
+  "title": "Built on the rock of His word",
+  "teaser": "The Sermon ends not with applause but with a choice: hear and build, or hear and walk away. The King has spoken — everything now rests on whether you act on what He said.",
   "framework": "Matthew 1-7 — Matthew: Kingdom Begins",
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 278"
+      "type": "scripture",
+      "reference": "Matthew 7:24-29",
+      "translation": "BSB",
+      "emphasis": [
+        "hears these words of Mine and acts on them",
+        "its foundation was on the rock",
+        "He taught as one who had authority"
+      ],
+      "greekOriginal": "ἐξεπλήσσοντο οἱ ὄχλοι ἐπὶ τῇ διδαχῇ αὐτοῦ· ἦν γὰρ διδάσκων αὐτοὺς ὡς ἐξουσίαν ἔχων καὶ οὐχ ὡς οἱ γραμματεῖς αὐτῶν.",
+      "passage": "\"Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock. But everyone who hears these words of Mine and does not act on them is like a foolish man who built his house on sand. The rain fell, the torrents raged, and the winds blew and beat against that house, and it fell—and great was its collapse!\" When Jesus had finished saying these things, the crowds were astonished at His teaching, because He taught as one who had authority, and not as their scribes."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐξουσία",
+      "transliteration": "exousia",
+      "pronunciation": "ex-oo-SEE-ah",
+      "meaning": "authority, the right to act, power that belongs to the one who exercises it",
+      "rootMeaning": "From ek (out of) and eimi (to be) - literally 'out of being,' the freedom and right that flows from who someone is. Not borrowed power, but power that is one's own by nature.",
+      "usageNote": "Matthew uses exousia at the seams of the Kingdom story. The crowds are astonished here in 7:29; in 8:9 a centurion recognizes that Jesus commands the way a soldier obeys orders; in 9:6 Jesus heals to prove He has authority on earth to forgive sins; and at the very end, in 28:18, the risen Christ declares, 'All authority in heaven and on earth has been given to Me.' The astonishment in chapter 7 is the first ripple of that final claim.",
+      "wordByWord": [
+        {
+          "word": "ἐξεπλήσσοντο",
+          "transliteration": "exeplessonto",
+          "meaning": "they were astonished, struck out of themselves - the verb pictures being knocked back by a blow"
+        },
+        {
+          "word": "οἱ ὄχλοι",
+          "transliteration": "hoi ochloi",
+          "meaning": "the crowds - ordinary people, not scholars or officials"
+        },
+        {
+          "word": "τῇ διδαχῇ",
+          "transliteration": "te didache",
+          "meaning": "the teaching - what was taught, the content of the Sermon"
+        },
+        {
+          "word": "ἐξουσίαν ἔχων",
+          "transliteration": "exousian echon",
+          "meaning": "having authority - holding it, not citing it from someone else"
+        },
+        {
+          "word": "οἱ γραμματεῖς",
+          "transliteration": "hoi grammateis",
+          "meaning": "the scribes - the experts who taught by quoting other authorities"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δύναμις (dynamis)",
+          "reference": "Dynamis is raw power or ability; exousia is the right to use it. A storm has dynamis. A king has exousia. Jesus has both - but the crowds notice the second, because His words carry the weight of a rightful King, not a clever scholar."
+        }
+      ],
+      "strongsNumber": "G1849",
+      "definition": "the power of rule or government; the right and might to act; delegated influence or sovereign jurisdiction",
+      "usage": "The scribes taught by appeal: 'Rabbi So-and-so says.' Jesus taught by assertion: 'But I tell you.' Six times in the Sermon He sets His own word over the received tradition (Matthew 5:22, 28, 32, 34, 39, 44). Exousia is the word for the difference the crowds felt but could not name."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Sermon Ends With a Building Site",
+      "body": "For three chapters the crowd has been climbing. They have heard the poor in spirit called blessed and the merciful promised mercy. They have heard murder traced back to anger and adultery back to a look. They have been taught how to pray, told not to store up treasure that rust eats, commanded to seek first the Kingdom and trust the Father for the rest. It is the longest stretch of Jesus' teaching anywhere in the Gospels, and it has been relentless. By the time He reaches the final words, the listeners must be wondering what to do with all of it.\n\nJesus does not end with a summary. He ends with a construction site. Two men, He says, build houses. From the outside the houses may look the same - same walls, same roof, same front door. The difference is buried where no one can see it: the foundation. One man dug down to rock. The other built on sand because it was faster and the weather was fine. Then the rain came, as rain always does, and one house stood while the other did not merely fall but collapsed - and 'great was its collapse.'\n\nNotice the one thing the two builders have in common. Both of them heard. Jesus does not contrast the man who listened with the man who skipped the sermon. He contrasts 'everyone who hears these words of Mine and acts on them' with 'everyone who hears these words of Mine and does not act on them.' The dividing line of the whole Sermon is not between those who heard and those who did not. It runs straight through the crowd of those who heard - and it is drawn by what they did next.",
+      "keyInsight": "The Sermon on the Mount does not end with information to admire. It ends with a foundation to dig. Hearing is not the test. Building is.",
+      "content": "For three chapters the crowd has been climbing. They have heard the poor in spirit called blessed and the merciful promised mercy. They have heard murder traced back to anger and adultery back to a look. They have been taught how to pray, told not to store up treasure that rust eats, commanded to seek first the Kingdom and trust the Father for the rest. It is the longest stretch of Jesus' teaching anywhere in the Gospels, and it has been relentless. By the time He reaches the final words, the listeners must be wondering what to do with all of it.\n\nJesus does not end with a summary. He ends with a construction site. Two men, He says, build houses. From the outside the houses may look the same - same walls, same roof, same front door. The difference is buried where no one can see it: the foundation. One man dug down to rock. The other built on sand because it was faster and the weather was fine. Then the rain came, as rain always does, and one house stood while the other did not merely fall but collapsed - and 'great was its collapse.'\n\nNotice the one thing the two builders have in common. Both of them heard. Jesus does not contrast the man who listened with the man who skipped the sermon. He contrasts 'everyone who hears these words of Mine and acts on them' with 'everyone who hears these words of Mine and does not act on them.' The dividing line of the whole Sermon is not between those who heard and those who did not. It runs straight through the crowd of those who heard - and it is drawn by what they did next."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House on the Wash",
+      "body": "In the dry country of the American Southwest there are stretches of ground called arroyos - wide, flat, sandy beds where water runs only a few times a year. The rest of the time they are inviting: level, easy to clear, easy to build on. Every so often a family puts a house there, because the lot is cheap and the sun is bright three hundred days a year.\n\nThen comes the day, sometimes years later, when a storm breaks miles upstream in country the homeowner cannot even see. The water gathers, funnels into the dry bed, and arrives as a wall. There is no warning at the house itself - the sky overhead may still be blue. The flood does not knock. It takes the foundation out from under everything at once, and what looked permanent for a decade is gone in an hour.\n\nThe builders Jesus describes are not lazy and diligent. They are both working hard; both end up with a finished house. The only difference is whether they did the slow, invisible, unrewarded work of digging down to something that would hold when the weather they could not see finally came. That is the question the Sermon leaves hanging over the crowd, and over us: not whether the house looks finished, but what it is standing on when nobody is watching the sky.",
+      "connectionToTheme": "Both builders hear the same words and finish the same-looking house. The Sermon's test is hidden underground - in whether what we heard became the foundation we actually built on.",
+      "content": "In the dry country of the American Southwest there are stretches of ground called arroyos - wide, flat, sandy beds where water runs only a few times a year. The rest of the time they are inviting: level, easy to clear, easy to build on. Every so often a family puts a house there, because the lot is cheap and the sun is bright three hundred days a year.\n\nThen comes the day, sometimes years later, when a storm breaks miles upstream in country the homeowner cannot even see. The water gathers, funnels into the dry bed, and arrives as a wall. There is no warning at the house itself - the sky overhead may still be blue. The flood does not knock. It takes the foundation out from under everything at once, and what looked permanent for a decade is gone in an hour.\n\nThe builders Jesus describes are not lazy and diligent. They are both working hard; both end up with a finished house. The only difference is whether they did the slow, invisible, unrewarded work of digging down to something that would hold when the weather they could not see finally came. That is the question the Sermon leaves hanging over the crowd, and over us: not whether the house looks finished, but what it is standing on when nobody is watching the sky."
+    },
+    {
+      "type": "insight",
+      "heading": "What Made the Crowd Step Back",
+      "body": "When Jesus finished, Matthew records that the crowds were astonished, 'because He taught as one who had authority, and not as their scribes.' The Greek word for astonished, exeplessonto, is violent - it means to be struck, knocked back, left reeling. Something in how He spoke physically moved them.\n\nIt was not volume and it was not novelty. The scribes were learned men who taught by stacking authorities: this rabbi said this, that rabbi said that, here is where the tradition lands. They were careful, and they were good at it. But every sentence pointed away from themselves to someone with more weight. Jesus did the opposite. Six times in this Sermon He said, 'You have heard that it was said... but I tell you,' setting His own bare word over the inherited tradition. No footnote. No 'as the prophet teaches.' Just 'I tell you.'\n\nA man who talks that way is either out of his mind, or he is who He has been claiming to be since the first page of Matthew. The genealogy called Him the son of David and son of Abraham. The angel said He would save His people from their sins. Isaiah's word was attached to Him: Immanuel, God with us. The voice from heaven at His baptism called Him beloved Son. By the time He says 'I tell you,' Matthew has spent seven chapters telling us why He has the right. The crowd feels the authority. The reader has been shown its source.",
+      "historicalContext": "Matthew writes the first Gospel as a deliberate bridge from Israel's Scriptures to the Kingdom of Jesus. He opens with a genealogy rooting Jesus in Abraham and David, repeatedly notes that events happened 'to fulfill what was spoken by the prophet,' and arranges Jesus' teaching into five great discourses - of which the Sermon on the Mount is the first. A largely Jewish audience would have heard the echo of Moses receiving the Law on Sinai, and met someone teaching from the mountain not as Moses did, by relaying God's words, but as God's own Son.",
+      "fascinatingFact": "Matthew brackets Jesus' five discourses with the same formula. Each one ends, 'When Jesus had finished saying these things' (Matthew 7:28; 11:1; 13:53; 19:1; 26:1). The first time He finishes, the crowds are astonished at His authority. The last time He finishes - just before the cross - He has told them the Son of Man will be handed over to be crucified. The authority that astonished them in chapter 7 is the same authority that will lay itself down in chapter 26.",
+      "content": "When Jesus finished, Matthew records that the crowds were astonished, 'because He taught as one who had authority, and not as their scribes.' The Greek word for astonished, exeplessonto, is violent - it means to be struck, knocked back, left reeling. Something in how He spoke physically moved them.\n\nIt was not volume and it was not novelty. The scribes were learned men who taught by stacking authorities: this rabbi said this, that rabbi said that, here is where the tradition lands. They were careful, and they were good at it. But every sentence pointed away from themselves to someone with more weight. Jesus did the opposite. Six times in this Sermon He said, 'You have heard that it was said... but I tell you,' setting His own bare word over the inherited tradition. No footnote. No 'as the prophet teaches.' Just 'I tell you.'\n\nA man who talks that way is either out of his mind, or he is who He has been claiming to be since the first page of Matthew. The genealogy called Him the son of David and son of Abraham. The angel said He would save His people from their sins. Isaiah's word was attached to Him: Immanuel, God with us. The voice from heaven at His baptism called Him beloved Son. By the time He says 'I tell you,' Matthew has spent seven chapters telling us why He has the right. The crowd feels the authority. The reader has been shown its source."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus ends the Sermon on the Mount by reducing the whole Kingdom to a single hinge: not whether you heard His words, but whether you built your life on them. And the crowd disperses astonished, sensing that the One who spoke holds an authority the scribes only borrowed.",
+      "modernApplication": "We are fluent hearers. We can stream a thousand sermons, save the verse to our phones, agree warmly with every word - and never lay a single stone on the rock. Familiarity with what Jesus said quietly substitutes itself for obedience to it. The Sermon insists those are two different houses, and only one of them is standing after the storm.",
+      "connectionPoint": "The rock is not, finally, a principle - it is a Person. Matthew has been building to this since chapter 1. Paul would later say it plainly to a divided church: 'For no one can lay a foundation other than the one already laid, which is Jesus Christ' (1 Corinthians 3:11). The wise builder is not the one with the best technique. It is the one who dug down past every other footing until he reached Christ Himself, and built there.",
+      "newTestamentEcho": "What Jesus claims here, the whole New Testament confesses there. The same Christ who taught 'as one who had authority' on a Galilean hillside stands at the end of Matthew and says, 'All authority in heaven and on earth has been given to Me' (Matthew 28:18). The crowd in chapter 7 felt the first tremor of a claim that runs all the way to the empty tomb. The Kingdom He announced begins in His word - and rests on His risen life."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you a hearer of Jesus' words who has not yet become a builder on them - the place where you nod in agreement but have laid no stone?",
+      "additionalQuestions": [
+        "Think of the last teaching of Jesus that genuinely moved you. What did you actually do differently because of it? If the honest answer is 'nothing,' what does that reveal?",
+        "The two houses looked identical until the storm. What in your life looks settled and finished on the surface but has never been dug down to the rock underneath?",
+        "The crowd was astonished at Jesus' authority but then went home. Astonishment is not obedience. Where have you mistaken being moved by Jesus for following Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have heard so many of Your words. I have admired them, quoted them, even been moved to tears by them - and then built my house somewhere else. Forgive me for mistaking applause for obedience. You spoke with an authority the crowd could feel and could not explain, and I confess that authority is real: You are who Matthew says You are, the Son who saves His people from their sins, God with us. So let me dig. Take me down past the sand of my opinions and my comfort and my self-made footings until I reach You, the only foundation that will hold. Build my life on Your word, and let it stand when the rain comes. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Choose one thing Jesus said in the Sermon on the Mount that you have only ever heard, and today take one concrete action on it - reconcile with the person you are angry at (5:23-24), forgive a debt, give in secret, pray the Lord's Prayer slowly and mean it, or stop chasing the treasure that rust eats. Hear, then build. One stone, laid today, on the rock.",
+      "leavingAtCross": [
+        "The comfortable habit of admiring Jesus' words without acting on them",
+        "The illusion that a house standing in fair weather is a house built on rock",
+        "The pride that lets me be astonished by Christ's authority and still ignore it"
+      ],
+      "receivingFromCross": [
+        "A foundation I did not invent and cannot be talked out of - Christ Himself",
+        "The freedom to build slowly and unseen, knowing what I build on will hold",
+        "The settled confidence that when the storm comes, the house on the rock does not fall"
+      ],
+      "content": "Choose one thing Jesus said in the Sermon on the Mount that you have only ever heard, and today take one concrete action on it - reconcile with the person you are angry at (5:23-24), forgive a debt, give in secret, pray the Lord's Prayer slowly and mean it, or stop chasing the treasure that rust eats. Hear, then build. One stone, laid today, on the rock."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the one thing the wise builder and the foolish builder have in common - and why does it matter that Jesus draws the line where He does?",
+        "Why were the crowds astonished at how Jesus taught? What was different between His authority and the scribes' way of teaching?",
+        "How do the seven chapters before the Sermon (the genealogy, the virgin birth, Immanuel, the baptism, the temptation) explain where Jesus' authority comes from?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one teaching of Jesus you have heard for years but have never actually acted on. Say it out loud to each other.",
+        "Talk honestly about a place where your life looks settled on the surface but has never been dug down to Christ as the foundation.",
+        "Ask each other: what is one stone each of us can lay this week - one act of obedience to something Jesus plainly said?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 4:17",
+          "text": "From that time on Jesus began to preach, \"Repent, for the kingdom of heaven is near.\""
+        },
+        {
+          "reference": "Matthew 5:17",
+          "text": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them."
+        },
+        {
+          "reference": "Matthew 28:18",
+          "text": "Then Jesus came to them and said, \"All authority in heaven and on earth has been given to Me.\""
+        },
+        {
+          "reference": "1 Corinthians 3:11",
+          "text": "For no one can lay a foundation other than the one already laid, which is Jesus Christ."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7",
+          "note": "Read the whole Sermon on the Mount in one sitting, then read 7:24-29 again. Watch how the closing parable of the two builders gathers up everything that came before and turns it into a single question: hear, or hear and build?"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus the Teacher",
+      "title": "The King Who Speaks With His Own Authority",
+      "description": "Matthew introduces Jesus as the long-promised son of David and son of Abraham, conceived by the Holy Spirit, named to save His people from their sins, and called Immanuel - God with us. In chapters 1 through 7 He is baptized, declared the beloved Son, tested in the wilderness, and begins to preach the Kingdom. The Sermon on the Mount is His inaugural address, and it ends with the crowds reeling at an authority they have never heard from a teacher: He does not cite the tradition, He fulfills it. The Kingdom of heaven does not arrive as a program but as a Person, speaking.",
+      "keyQuote": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock.",
+      "lessonForUs": "Jesus never asks to be admired. He asks to be built upon. The same word that astonished the crowd is the word He sets before us today - and the only safe response to a King who speaks with this much authority is not applause, but to start digging down to Him.",
+      "heading": "The King Who Speaks With His Own Authority"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2445,
+  "scriptureReference_full": "Matthew 7:24-29 (within Matthew 1-7)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (exousia, G1849; exeplessonto) reflects standard lexical sources; the dynamis/exousia distinction is a common observation in New Testament lexical commentary."
+  ]
 }

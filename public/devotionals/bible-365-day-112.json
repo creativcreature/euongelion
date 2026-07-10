@@ -6,33 +6,171 @@
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 112"
+      "type": "scripture",
+      "reference": "1 Kings 12:13-16; 15:4",
+      "translation": "BSB",
+      "emphasis": [
+        "the king answered the people harshly",
+        "What portion do we have in David",
+        "the LORD his God gave him a lamp in Jerusalem"
+      ],
+      "hebrewOriginal": "נִיר",
+      "passage": "And the king answered the people harshly. He rejected the advice of the elders and spoke to them as the young men had advised, saying, \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" ... When all Israel saw that the king had refused to listen to them, they answered the king: \"What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!\" So the Israelites went home ... Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem by raising up a son to succeed him and to make Jerusalem strong."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נִיר",
+      "transliteration": "nir",
+      "pronunciation": "neer",
+      "meaning": "a lamp, a light kept burning",
+      "rootMeaning": "Nir names a small clay lamp - the oil-fed flame a household kept alive overnight so the house would not wake in darkness. To keep a lamp meant to keep a line, a name, a future from going out.",
+      "usageNote": "The word arrives like a pulse through these chapters. God promises David \"a lamp before Me in Jerusalem\" (1 Kings 11:36). When Abijam reigns badly, the text says God still \"gave him a lamp in Jerusalem\" for David's sake (15:4). The northern kingdom has no such promise; only the house of David is told a flame will not be let go out.",
+      "wordByWord": [
+        {
+          "word": "נִיר",
+          "transliteration": "nir",
+          "meaning": "lamp, kept light"
+        },
+        {
+          "word": "בִּירוּשָׁלִָם",
+          "transliteration": "birushalayim",
+          "meaning": "in Jerusalem - the city where God set His Name"
+        },
+        {
+          "word": "לְמַעַן דָּוִד",
+          "transliteration": "lema'an David",
+          "meaning": "for the sake of David - not for the king's worthiness, but for a promise older than the king"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נֵר",
+          "reference": "Ner, the ordinary word for lamp, stands behind Psalm 132:17, \"I have prepared a lamp for My anointed.\" The royal lamp of the David promise and the household lamp on the windowsill are the same small, stubborn light - one kept by God, one kept by a family against the night."
+        }
+      ],
+      "strongsNumber": "H5216",
+      "definition": "a lamp or light; figuratively, a continuing line or succession kept alive",
+      "usage": "In the books of Kings nir becomes almost a covenant word. Kingdoms rise and fall and provoke God to anger, but the lamp He set for David is spoken of as something He Himself keeps lit - a flame the failures of the kings cannot finally blow out."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How a Kingdom Comes Apart",
+      "body": "It begins with a single conversation. Solomon is dead. His son Rehoboam goes to Shechem, where all Israel has gathered to make him king, and the people ask for one thing: lighten the load. \"Your father put a heavy yoke on us,\" they say. \"Lighten the burden ... and we will serve you.\" It is a reasonable request from a tired people, and Rehoboam has three days to answer.\n\nThe older men who had served Solomon give him wise counsel: be a servant to these people this day, speak kind words, and they will be your servants forever. But Rehoboam sets that aside and listens instead to the young men he grew up with. And so \"the king answered the people harshly,\" boasting that where his father used whips, he would use scorpions.\n\nThe kingdom tears in one sentence. Ten tribes walk away with a cry that echoes for centuries: \"What portion do we have in David ... To your tents, O Israel!\" From this day on, there are two kingdoms - Judah in the south, Israel in the north - and they will mostly war, wander, and decline. A king with the chance to bind a people together chose instead to crush them, and a man who would not carry a yoke lost a nation.",
+      "keyInsight": "The kingdom does not fall to an invading army. It falls to a young king who would rather be feared than be a servant. Pride is the first crack, and the crack runs the length of the whole story.",
+      "content": "It begins with a single conversation. Solomon is dead. His son Rehoboam goes to Shechem, where all Israel has gathered to make him king, and the people ask for one thing: lighten the load. \"Your father put a heavy yoke on us,\" they say. \"Lighten the burden ... and we will serve you.\" It is a reasonable request from a tired people, and Rehoboam has three days to answer.\n\nThe older men who had served Solomon give him wise counsel: be a servant to these people this day, speak kind words, and they will be your servants forever. But Rehoboam sets that aside and listens instead to the young men he grew up with. And so \"the king answered the people harshly,\" boasting that where his father used whips, he would use scorpions.\n\nThe kingdom tears in one sentence. Ten tribes walk away with a cry that echoes for centuries: \"What portion do we have in David ... To your tents, O Israel!\" From this day on, there are two kingdoms - Judah in the south, Israel in the north - and they will mostly war, wander, and decline. A king with the chance to bind a people together chose instead to crush them, and a man who would not carry a yoke lost a nation."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manager Who Used Scorpions",
+      "body": "I once watched a new manager inherit a team that was already worn thin. In his first week the team came to him almost exactly the way Israel came to Rehoboam: the hours are crushing us, they said, ease the load and we are yours.\n\nHe had the same three days, though he didn't know it. The people who had been there longest told him quietly to start by listening. The people his own age, hungry to look strong, told him to set the tone hard so no one would test him. He chose the second voice. He answered harshly. He let them know the load was about to get heavier, not lighter.\n\nWithin a year half the team was gone. The ones who stayed gave him their hours but never their hearts. He had mistaken being feared for being followed, and he spent the rest of his time there managing the wreckage of a single early conversation. I have thought about Rehoboam every time since. The yoke we refuse to carry for others has a way of becoming the weight that breaks us.",
+      "connectionToTheme": "Rehoboam's scorpions are not ancient and far away. Every leader, parent, and friend is handed the same fork - serve the weary or master them - and the choice splits more than kingdoms.",
+      "content": "I once watched a new manager inherit a team that was already worn thin. In his first week the team came to him almost exactly the way Israel came to Rehoboam: the hours are crushing us, they said, ease the load and we are yours.\n\nHe had the same three days, though he didn't know it. The people who had been there longest told him quietly to start by listening. The people his own age, hungry to look strong, told him to set the tone hard so no one would test him. He chose the second voice. He answered harshly. He let them know the load was about to get heavier, not lighter.\n\nWithin a year half the team was gone. The ones who stayed gave him their hours but never their hearts. He had mistaken being feared for being followed, and he spent the rest of his time there managing the wreckage of a single early conversation. I have thought about Rehoboam every time since. The yoke we refuse to carry for others has a way of becoming the weight that breaks us."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sin of Jeroboam, and the Lamp That Would Not Go Out",
+      "body": "The north gets its own king, Jeroboam, and he makes a calculation that shapes everything after him. He reasons in his heart that if his people keep going up to Jerusalem to worship, their hearts will return to the house of David - so he builds two golden calves, one in Bethel and one in Dan, and tells Israel, \"Here, O Israel, are your gods, who brought you up out of the land of Egypt.\" It is the same lie as the golden calf at Sinai, now built into the foundation of a kingdom. \"And this thing became a sin.\"\n\nFor the rest of First and Second Kings, the worst thing the text can say about a northern king is that he walked \"in the way of Jeroboam ... and in his sin, which he had caused Israel to commit.\" Omri does worse than all before him; Ahab does worse than Omri, marries Jezebel, and serves Baal. The line bends downward.\n\nAnd yet, threaded through the decline, one quiet refrain keeps repeating in the south. Abijam reigns badly - \"his heart was not as fully devoted to the LORD his God\" - and the verdict should be ruin. Instead: \"Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem.\" Not because the king earned it. For the sake of David, and the promise made to David, God keeps a flame lit that no failing son manages to put out.",
+      "historicalContext": "First and Second Kings were likely assembled during or after the Babylonian exile, by people who already knew how the story ends: the north falls to Assyria in 722 BC, the south to Babylon in 586 BC, and the lamp seems extinguished, the temple in ashes. They wrote down the long, honest record of why - and they kept writing down the lamp refrain anyway, as if the promise outran the catastrophe.",
+      "fascinatingFact": "When the man of God cries out against Jeroboam's altar at Bethel, he names a king who will not be born for roughly three hundred years: \"A son named Josiah will be born to the house of David\" (1 Kings 13:2). The lamp God keeps for David is not sentiment. It is a future He has already spoken into the dark - and Josiah, when he finally comes, does exactly what the word foretold.",
+      "content": "The north gets its own king, Jeroboam, and he makes a calculation that shapes everything after him. He reasons in his heart that if his people keep going up to Jerusalem to worship, their hearts will return to the house of David - so he builds two golden calves, one in Bethel and one in Dan, and tells Israel, \"Here, O Israel, are your gods, who brought you up out of the land of Egypt.\" It is the same lie as the golden calf at Sinai, now built into the foundation of a kingdom. \"And this thing became a sin.\"\n\nFor the rest of First and Second Kings, the worst thing the text can say about a northern king is that he walked \"in the way of Jeroboam ... and in his sin, which he had caused Israel to commit.\" Omri does worse than all before him; Ahab does worse than Omri, marries Jezebel, and serves Baal. The line bends downward.\n\nAnd yet, threaded through the decline, one quiet refrain keeps repeating in the south. Abijam reigns badly - \"his heart was not as fully devoted to the LORD his God\" - and the verdict should be ruin. Instead: \"Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem.\" Not because the king earned it. For the sake of David, and the promise made to David, God keeps a flame lit that no failing son manages to put out."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A nation splits because a king will not carry his people's yoke; the kings that follow mostly make matters worse - yet God keeps a lamp burning in Jerusalem for David's sake, a flame the failures of the line cannot extinguish.",
+      "modernApplication": "We still divide the same way Israel divided - over who will carry the weight and who will only add to it. And we still hope our story holds together because of how well we perform, when the only thing that has ever held it together is a promise we did not earn and a light we did not light.",
+      "connectionPoint": "The lamp refrain runs forward through the whole canon. The kings of the divided kingdom are an extended portrait drawn in the negative: a long succession of sons of David who could not keep the kingdom, could not carry the people, could not stay faithful - sketching, by their absence, the shape of the one Son of David who could. The Gospel of Matthew opens by tracing that exact line, from David through Rehoboam and the failing kings, all the way down to Jesus (Matthew 1:6-16).",
+      "newTestamentEcho": "Where Rehoboam said, \"I will add to your yoke,\" the true Son of David says, \"Take My yoke upon you ... for My yoke is easy and My burden is light\" (Matthew 11:29-30). And the lamp God refused to let go out for David's sake becomes a person: \"I am the Light of the world\" (John 8:12). Zechariah, holding the infant John, names what the divided centuries had been waiting for - that through God's tender mercy, \"the Dawn will visit us from on high, to shine on those who live in darkness\" (Luke 1:78-79)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you adding to someone's yoke instead of helping to carry it - and where are you the one quietly asking for the load to be lightened?",
+      "additionalQuestions": [
+        "Rehoboam had two sets of voices in his ear. Whose counsel are you listening to right now - the ones who tell you to serve, or the ones who tell you to look strong?",
+        "What part of your life feels like it is held together only by your own performance? What would it mean to trust the lamp God keeps lit rather than the one you keep feeding?",
+        "Jeroboam built his calves to keep people from going home to worship. What 'closer, easier god' have you set up to avoid the longer walk to the real one?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have answered harshly when I could have served. I have added to the yoke of people who only asked me to lighten it, and I have built smaller, closer gods to spare myself the longer walk home to You. Forgive the pride that splits things apart. Thank You that my future has never rested on a faithful king, but on the lamp You keep burning - the promise You made to David, kept whole in Jesus, the Light You will not let go out. Let me rest in that tonight, and not in my own performance. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - nothing to fix, nothing to prove. Sit for five quiet minutes with the line, \"for the sake of David, the LORD gave him a lamp in Jerusalem,\" and let it become, \"for the sake of Jesus, God keeps a light burning for me.\" Bring Him the one yoke you have been refusing to carry, and the one you have been carrying alone, and lay both down.",
+      "leavingAtCross": [
+        "The pride that answers harshly to look strong, and would rather be feared than be a servant",
+        "The golden calves - the closer, easier gods I build so I won't have to make the longer walk home",
+        "The belief that my life holds together because of how well I perform"
+      ],
+      "receivingFromCross": [
+        "A King from David's line whose yoke is easy and whose burden is light",
+        "A lamp I did not light and cannot put out, kept burning for the sake of Another",
+        "Rest from the work of holding my own story together"
+      ],
+      "content": "Today is a sabbath day - nothing to fix, nothing to prove. Sit for five quiet minutes with the line, \"for the sake of David, the LORD gave him a lamp in Jerusalem,\" and let it become, \"for the sake of Jesus, God keeps a light burning for me.\" Bring Him the one yoke you have been refusing to carry, and the one you have been carrying alone, and lay both down."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did the people actually ask Rehoboam for, and what did he answer instead? What did that one answer cost?",
+        "Why did Jeroboam build the golden calves at Bethel and Dan - what was he afraid would happen if the people kept worshiping in Jerusalem?",
+        "The text keeps repeating that God gave a lamp 'for the sake of David,' not for the sake of the king reigning. Why does that distinction matter for how we read the whole sad chronicle of kings?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where you have been adding to someone's yoke. What would it look like this week to lighten it instead?",
+        "Talk honestly about a 'golden calf' - a smaller, more convenient god you've set up to avoid the harder, truer worship. What does it promise you?",
+        "Ask each other: where are you depending on the lamp God keeps lit, and where are you still anxiously feeding your own?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 11:36",
+          "text": "I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
+        },
+        {
+          "reference": "1 Kings 12:7",
+          "text": "If you will be a servant to these people and serve them this day, and if you will respond by speaking kind words to them, they will be your servants forever."
+        },
+        {
+          "reference": "Matthew 11:29-30",
+          "text": "Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light."
+        },
+        {
+          "reference": "John 8:12",
+          "text": "Once again, Jesus spoke to the people and said, 'I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read it in one sitting, tracking two things: the recurring verdict 'he did evil in the sight of the LORD ... in the way of Jeroboam,' and the quieter refrain of the lamp God keeps in Jerusalem for David's sake. Notice how the second outlasts the first."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Rehoboam",
+      "title": "The King Who Would Not Lighten the Yoke",
+      "description": "Solomon's son and successor, and the last king to reign over a united Israel. Asked by a weary people to ease their burden, he scorned the elders' counsel to serve them, threatened to scourge them with scorpions, and within a day lost ten of the twelve tribes. He kept Judah only because of the promise made to his grandfather David - the lamp God had pledged to keep burning in Jerusalem.",
+      "keyQuote": "Whereas my father made your yoke heavy, I will add to your yoke.",
+      "lessonForUs": "Rehoboam is the warning that stands at the head of the divided kingdom: the power to bind people together and the power to break them apart sit in the same throne, and pride almost always reaches for the breaking. He also shows us grace from the underside - he kept anything at all only because of a promise he had nothing to do with, the same way we are kept.",
+      "heading": "The King Who Would Not Lighten the Yoke"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1845,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (nir, H5216, 'lamp') reflects standard lexical sources; the lamp/covenant motif tracks the text's own repeated formula in 1 Kings 11:36 and 15:4 and Psalm 132:17."
+  ]
 }

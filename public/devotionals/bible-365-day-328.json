@@ -1,38 +1,177 @@
 {
   "day": 328,
-  "title": "John: Garden, Cross, Resurrection — Day 6 — Deeper Dive",
-  "teaser": "Day 328 of Bible 365 — John 15-21",
+  "title": "Three gardens, one second Adam",
+  "teaser": "John tells the whole Passion between gardens. Jesus is seized in one, buried beside another, and on Easter is mistaken for the gardener of a third. The first Adam lost a garden; the second Adam takes it back.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 328"
+      "type": "scripture",
+      "reference": "John 18:1; 19:41; 20:15",
+      "translation": "BSB",
+      "emphasis": [
+        "they entered a garden",
+        "in the garden a new tomb",
+        "Thinking He was the gardener"
+      ],
+      "greekOriginal": "Τετέλεσται",
+      "passage": "After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden. ... Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid. ... \"Woman, why are you weeping?\" Jesus asked. \"Whom are you seeking?\" Thinking He was the gardener, she said, \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "Τετέλεσται",
+      "transliteration": "tetelestai",
+      "pronunciation": "te-TE-le-stai",
+      "meaning": "It is finished; it has been brought to completion",
+      "rootMeaning": "From teleo, to complete, accomplish, bring to its appointed end. The form is perfect tense: an action completed in the past whose effect stands permanently in the present. Not 'it is over,' but 'it is, and remains, done.'",
+      "usageNote": "Outside the Bible this very word was written across business documents and tax receipts in the first century to mark a debt 'paid in full.' From the cross in John 19:30, Jesus does not gasp that He is finished. He announces that the work is finished - the account closed, the price met, nothing left owing.",
+      "wordByWord": [
+        {
+          "word": "τε-",
+          "transliteration": "te-",
+          "meaning": "reduplication marking the perfect tense - a completed, standing result"
+        },
+        {
+          "word": "τέλ-",
+          "transliteration": "tel-",
+          "meaning": "the root telos - goal, end, the point everything was aiming at"
+        },
+        {
+          "word": "-εσται",
+          "transliteration": "-estai",
+          "meaning": "perfect passive ending - it has been finished, by another, and it stays finished"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "τέλος / telos",
+          "reference": "The noun telos means the end as in aim or completion, not mere stopping. Jesus had already prayed in John 17:4 that He had finished (teleioo) the work the Father gave Him to do. The cry from the cross is that prayer answered out loud."
+        }
+      ],
+      "strongsNumber": "G5055",
+      "definition": "to bring to a close, to complete, to fulfill, to accomplish in full",
+      "usage": "John records it as a single Greek word so the whole of salvation hangs on one breath: the work is done, and it stays done."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "John Tells the Passion Between Gardens",
+      "body": "By chapter 15 the upper room is behind them. Jesus has washed feet, broken bread, and spoken the longest unbroken speech in the Gospels - the vine, the Helper, the prayer in chapter 17 that the disciples be kept and made one. Then the words end and the night moves. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden\" (18:1).\n\nJohn alone tells us it was a garden. Matthew, Mark, and Luke name the place Gethsemane; John steps back and names the kind of place. He does the same thing at the end. When the body is taken down, John writes, \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid\" (19:41). And on the third morning, when Mary turns and sees a man she does not yet recognize, John tells us why she mistook Him: she was \"thinking He was the gardener\" (20:15).\n\nThree gardens, set deliberately at the seams of the story - the garden of the arrest, the garden of the tomb, the garden of the morning. John is the only Evangelist who frames the Passion this way, and he is not decorating. He is pointing all the way back to the first pages of Scripture, to the garden where it all went wrong.",
+      "keyInsight": "John frames the entire Passion between gardens on purpose. Where the Bible's first crisis unfolded in a garden, John stages the rescue in one too - the same setting, the wrong put right.",
+      "content": "By chapter 15 the upper room is behind them. Jesus has washed feet, broken bread, and spoken the longest unbroken speech in the Gospels - the vine, the Helper, the prayer in chapter 17 that the disciples be kept and made one. Then the words end and the night moves. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden\" (18:1).\n\nJohn alone tells us it was a garden. Matthew, Mark, and Luke name the place Gethsemane; John steps back and names the kind of place. He does the same thing at the end. When the body is taken down, John writes, \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid\" (19:41). And on the third morning, when Mary turns and sees a man she does not yet recognize, John tells us why she mistook Him: she was \"thinking He was the gardener\" (20:15).\n\nThree gardens, set deliberately at the seams of the story - the garden of the arrest, the garden of the tomb, the garden of the morning. John is the only Evangelist who frames the Passion this way, and he is not decorating. He is pointing all the way back to the first pages of Scripture, to the garden where it all went wrong."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Locked Garden Behind the House",
+      "body": "There was a house I knew growing up with a walled garden behind it that no one used anymore. The old woman who had planted it was gone, and her family had nailed the gate shut rather than tend it. You could see it from the upstairs window: roses gone wild, a stone bench under leaves, a place clearly made for someone to walk in the evening - sealed off, going to seed, because the one who loved it had left and no one knew how to bring it back.\n\nI used to think that was the saddest thing about the house. A garden is not a wilderness; it is wilderness that someone chose, planted, and kept. When the keeper leaves, it does not simply pause. It closes. The gate goes up. The walk ends.\n\nThe Bible opens with exactly that kind of garden, and exactly that kind of loss. People made to walk with God in the cool of the evening hide instead, and the gate is sealed behind them with a flaming sword. From that moment the whole story is a question with no human answer: who will get us back into the garden? John's reply is to march the rescue straight back onto garden ground - and to put, on Easter morning, a gardener at the empty tomb.",
+      "connectionToTheme": "A garden is kept wilderness; when its keeper is lost, it closes. John answers Eden's sealed gate by setting the resurrection in a garden and placing a gardener there at dawn.",
+      "content": "There was a house I knew growing up with a walled garden behind it that no one used anymore. The old woman who had planted it was gone, and her family had nailed the gate shut rather than tend it. You could see it from the upstairs window: roses gone wild, a stone bench under leaves, a place clearly made for someone to walk in the evening - sealed off, going to seed, because the one who loved it had left and no one knew how to bring it back.\n\nI used to think that was the saddest thing about the house. A garden is not a wilderness; it is wilderness that someone chose, planted, and kept. When the keeper leaves, it does not simply pause. It closes. The gate goes up. The walk ends.\n\nThe Bible opens with exactly that kind of garden, and exactly that kind of loss. People made to walk with God in the cool of the evening hide instead, and the gate is sealed behind them with a flaming sword. From that moment the whole story is a question with no human answer: who will get us back into the garden? John's reply is to march the rescue straight back onto garden ground - and to put, on Easter morning, a gardener at the empty tomb."
+    },
+    {
+      "type": "insight",
+      "heading": "Mary Was Not Entirely Wrong",
+      "body": "When Mary turns from the empty tomb and sees a man through her tears, John says she supposes He is the gardener. Most readers hear a poignant mistake - grief blurring her sight, the truth one heartbeat away. That is there. But John, who has spent two gardens preparing us, lets the irony stand: in the deepest sense she is not wrong at all.\n\nThe first human task in Scripture was to keep a garden. Adam was put in Eden \"to work it and keep it,\" and Adam failed - the ground was cursed, the gate was shut, the keeper was cast out. Now, in a garden, on the first day of a new week, the second Adam stands alive in the dawn, and the woman in front of Him takes Him for the gardener. She is reaching for the wrong man and touching the right truth. He is the keeper of the garden - not of beds and hedges, but of the whole creation Adam lost. The grave could not hold the one whose job is to make things grow.\n\nThat is why John staged it this way. The resurrection is not only a man walking out of a tomb. It is the gardener back at His work, and the gate that was sealed with a sword swung open from inside.",
+      "historicalContext": "John's Gospel opens by reaching back over the whole Old Testament to its first words: \"In the beginning was the Word.\" That phrase deliberately echoes Genesis 1:1. A writer who begins his Gospel in the language of creation's first chapter, and who alone among the four ends the Passion with three gardens and a misidentified gardener, is reading the resurrection as the new Genesis - creation begun again on the first day of a new week.",
+      "fascinatingFact": "John times the resurrection to the calendar with care. Mary comes \"early on the first day of the week, while it was still dark\" (20:1). The first day of the week is the day light was first made in Genesis. John has the new creation begin in the dark, before sunrise, exactly where the old one did - and this time the gate stays open.",
+      "content": "When Mary turns from the empty tomb and sees a man through her tears, John says she supposes He is the gardener. Most readers hear a poignant mistake - grief blurring her sight, the truth one heartbeat away. That is there. But John, who has spent two gardens preparing us, lets the irony stand: in the deepest sense she is not wrong at all.\n\nThe first human task in Scripture was to keep a garden. Adam was put in Eden \"to work it and keep it,\" and Adam failed - the ground was cursed, the gate was shut, the keeper was cast out. Now, in a garden, on the first day of a new week, the second Adam stands alive in the dawn, and the woman in front of Him takes Him for the gardener. She is reaching for the wrong man and touching the right truth. He is the keeper of the garden - not of beds and hedges, but of the whole creation Adam lost. The grave could not hold the one whose job is to make things grow.\n\nThat is why John staged it this way. The resurrection is not only a man walking out of a tomb. It is the gardener back at His work, and the gate that was sealed with a sword swung open from inside."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "John frames the Passion between three gardens and, on Easter, has Mary mistake the risen Jesus for the gardener - reading the resurrection against Eden, where the first keeper of a garden lost it and was shut out.",
+      "modernApplication": "We still live east of the closed gate. We feel it in the parts of our lives that have gone to seed - relationships nailed shut, hopes left wild, a sense that the walk with God we were made for has been fenced off and we have no key. The good news John tells is not advice about better gardening. It is that the Keeper has come back and the gate is open.",
+      "connectionPoint": "Genesis ends its third chapter with people driven from a garden and cherubim guarding the way back (Genesis 3:24). Scripture's whole arc bends toward getting them home - and its last pages return to a garden city with a tree of life and a river, where \"there will no longer be any curse\" (Revelation 22:1-3). John's three gardens are the hinge in the middle: the Keeper enters the dark to take the curse, and walks back out into the dawn.",
+      "newTestamentEcho": "Paul names the pattern plainly: \"For as in Adam all die, so in Christ all will be made alive\" (1 Corinthians 15:22). And he calls the risen Jesus exactly what John's empty-garden scene hints - \"the last Adam, a life-giving spirit\" (1 Corinthians 15:45). The first Adam lost the garden; the last Adam is found standing in one, alive."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is there a sealed-off garden - a place you have nailed the gate shut and stopped tending because it hurt too much, or because you decided nothing could grow there again?",
+      "additionalQuestions": [
+        "When you picture meeting the risen Jesus, do you, like Mary, expect to find Him somewhere other than where He actually is? Where have you stopped looking for Him?",
+        "Jesus told the disciples, \"Apart from Me you can do nothing\" (John 15:5). What have you been trying to keep alive by your own effort that He is offering to tend instead?",
+        "\"It is finished\" was spoken over a debt paid in full. What are you still trying to pay off that Christ has already closed the account on?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, true vine and second Adam, You went into the dark garden so I would not be locked out of the bright one. Over my sealed-off places, my wild and shut-up gardens, speak the word You spoke from the cross: finished. Tend what I have given up on. Find me where I am still looking in the wrong direction, and call my name the way You called Mary's. Let me hear it, turn, and follow. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Read John 18 through 20 in one sitting today, watching only for the gardens - the one He enters at night, the one His tomb sits in, the one Mary mistakes Him for the keeper of. Then name one sealed-off place in your own life and, instead of fixing it, hand its key to the Keeper in prayer.",
+      "leavingAtCross": [
+        "The lie that the gardens I have given up on are beyond growing again",
+        "The instinct to keep tending my life by my own effort, apart from the vine",
+        "The debts I keep trying to pay that Christ already marked 'finished'"
+      ],
+      "receivingFromCross": [
+        "A risen Keeper who walked back into the garden the first Adam lost",
+        "The standing, completed word over my sin: it is finished, paid in full",
+        "The promise that the gate sealed with a sword has been opened from the inside"
+      ],
+      "content": "Read John 18 through 20 in one sitting today, watching only for the gardens - the one He enters at night, the one His tomb sits in, the one Mary mistakes Him for the keeper of. Then name one sealed-off place in your own life and, instead of fixing it, hand its key to the Keeper in prayer."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Name the three gardens in John 18-20 and what happens in each. Why might John, alone among the four Gospels, frame the Passion this way?",
+        "What does the Greek word tetelestai (\"It is finished,\" John 19:30) mean in the perfect tense, and why does it matter that the work stays finished rather than simply stopping?",
+        "How does Mary mistaking Jesus for the gardener connect the resurrection back to Adam's first task in Eden?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one garden in your life that has gone to seed - and what it would mean to let the Keeper back through the gate.",
+        "Talk about the difference between hearing 'I am finished' (defeat) and 'It is finished' (a debt paid). Where do you confuse the two?",
+        "Ask each other: where are you, like Mary, weeping at a tomb while the risen Christ is already standing beside you, unrecognized?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:23-24",
+          "text": "Therefore the LORD God banished him from the Garden of Eden to work the ground from which he had been taken. So He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life."
+        },
+        {
+          "reference": "John 19:30",
+          "text": "When Jesus had received the sour wine, He said, \"It is finished.\" And bowing His head, He yielded up His spirit."
+        },
+        {
+          "reference": "1 Corinthians 15:45",
+          "text": "So it is written: \"The first man Adam became a living being\"; the last Adam a life-giving spirit."
+        },
+        {
+          "reference": "Revelation 22:1-3",
+          "text": "Then the angel showed me a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb... No longer will there be any curse."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 18-21",
+          "note": "Read the arrest, trial, crucifixion, and resurrection straight through in one sitting, marking every mention of a garden, the first day of the week, and the word 'finished.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary Magdalene",
+      "title": "First Witness in the Garden",
+      "description": "A woman from Magdala on the Sea of Galilee whom Jesus had freed from seven demons (Luke 8:2), and who stood at the cross when most of the disciples had fled (John 19:25). On Easter morning she came to the tomb while it was still dark, found the stone rolled away, and - weeping, certain the body had been stolen - became the first person to see and speak with the risen Christ. She mistook Him for the gardener until He spoke her name.",
+      "keyQuote": "I have seen the Lord!",
+      "lessonForUs": "Mary teaches us that recognition often comes not when we figure Christ out, but when He calls our name. She was staring straight at the risen Jesus and still saw only a gardener - until one word, her own name, turned grief into worship. Sometimes the Lord is nearer and more alive than our tears can yet see.",
+      "heading": "First Witness in the Garden"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1742,
+  "scriptureReference_full": "John 15-21 (anchored in John 18:1; 19:30, 41; 20:1, 15)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tetelestai, teleo G5055) reflects standard lexical sources; the first-century receipt usage ('paid in full') is widely noted in New Testament commentary on John 19:30.",
+    "The reading of John's three-garden framing and the gardener-Adam typology reflects a long stream of Christian interpretation from the Church Fathers forward; it is offered as interpretation, not as a claim the text states explicitly."
+  ]
 }

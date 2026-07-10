@@ -1,38 +1,181 @@
 {
   "day": 76,
-  "title": "Boaz the redeemer",
-  "teaser": "Day 76 of Bible 365 — Ruth 4",
+  "title": "The redeemer who would not refuse",
+  "teaser": "At the gate, one kinsman says \"I cannot.\" Another says \"I am buying.\" The whole line to David — and to Christ — turns on a redeemer willing to pay.",
   "framework": "Ruth 4 — The kinsman who restores",
   "scriptureReference": "Ruth 4",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 76"
+      "type": "scripture",
+      "reference": "Ruth 4:1-10",
+      "translation": "BSB",
+      "emphasis": [
+        "kinsman-redeemer",
+        "I cannot redeem it",
+        "I am buying",
+        "raise up the name of the deceased"
+      ],
+      "hebrewOriginal": "גֹּאֵל",
+      "passage": "Meanwhile, Boaz went to the gate and sat down there. Soon the kinsman-redeemer of whom he had spoken came along, and Boaz said, \"Come over here, my friend, and sit down.\" So he went over and sat down. Then Boaz took ten of the elders of the city and said, \"Sit here,\" and they did so. And he said to the kinsman-redeemer, \"Naomi, who has returned from the land of Moab, is selling the piece of land that belonged to our brother Elimelech. I thought I should inform you that you may buy it back in the presence of those seated here and in the presence of the elders of my people. If you want to redeem it, do so. But if you will not redeem it, tell me so I may know, because there is no one but you to redeem it, and I am next after you.\" \"I will redeem it,\" he replied. Then Boaz said, \"On the day you buy the land from Naomi and also from Ruth the Moabitess, you must also acquire the widow of the deceased in order to raise up the name of the deceased on his inheritance.\" The kinsman-redeemer replied, \"I cannot redeem it myself, or I would jeopardize my own inheritance. Take my right of redemption, because I cannot redeem it.\" ... So the kinsman-redeemer removed his sandal and said to Boaz, \"Buy it for yourself.\" At this, Boaz said to the elders and all the people, \"You are witnesses today that I am buying from Naomi all that belonged to Elimelech, Chilion, and Mahlon. Moreover, I have acquired Ruth the Moabitess, Mahlon's widow, as my wife, to raise up the name of the deceased through his inheritance, so that his name will not disappear from among his brothers or from the gate of his home. You are witnesses today.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ruth 4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ruth 4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "גֹּאֵל",
+      "transliteration": "go'el",
+      "pronunciation": "go-AYL",
+      "meaning": "kinsman-redeemer; one who buys back",
+      "rootMeaning": "From the verb ga'al, to redeem, to buy back, to act as the near relative whose duty is to recover what a poorer kinsman has lost. The go'el is not a stranger doing charity; he is family, and the law gives him the first claim and the first responsibility.",
+      "usageNote": "The same word names the relative who buys back sold land (Leviticus 25:25), the one who ransoms a kinsman sold into servitude (Leviticus 25:48), and the avenger of a slain relative's blood (Numbers 35). The thread running through all of them is family that does not abandon family. Isaiah later takes this exact word and gives it to God Himself: \"Your Redeemer is the Holy One of Israel\" (Isaiah 41:14).",
+      "wordByWord": [
+        {
+          "word": "גָּאַל",
+          "transliteration": "ga'al",
+          "meaning": "to redeem, to buy back, to reclaim what was lost"
+        },
+        {
+          "word": "גֹּאֵל",
+          "transliteration": "go'el",
+          "meaning": "the redeemer; the near kinsman bound to recover his relative's loss"
+        },
+        {
+          "word": "גְּאֻלָּה",
+          "transliteration": "ge'ullah",
+          "meaning": "the right of redemption; the price and claim of buying back"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "גֹּאֲלִי",
+          "reference": "go'ali, \"my Redeemer\" - the word Job uses in his most hopeful breath: \"I know that my Redeemer lives, and in the end He will stand upon the earth\" (Job 19:25)."
+        }
+      ],
+      "strongsNumber": "H1350",
+      "definition": "to act as kinsman-redeemer; to redeem, avenge, ransom, buy back",
+      "usage": "In Ruth, go'el is repeated until it almost rings. The book is asking, behind the harvest and the gleaning, a single question: who will pay to bring the lost ones home? The answer in chapter 4 is a man at a gate who says, of a debt and a widow that were never his to begin with, \"I am buying.\""
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: The kinsman who restores. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Kinsman-Redeemer (Heb 2:14-15).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Kinsmen at the Gate",
+      "body": "The city gate of Bethlehem was the courthouse of the ancient world. Land changed hands there. Disputes were settled there. The elders sat there. So when Boaz \"went to the gate and sat down,\" everyone watching knew that something legal was about to happen in the open, where it could be witnessed and remembered.\n\nBoaz has a problem he means to solve in public. Naomi has come home from Moab with nothing but a Moabite daughter-in-law and a piece of family land she cannot keep. There is a closer relative than Boaz - a man the text never names, called only \"the kinsman-redeemer\" - and by law his claim comes first. Boaz could have quietly arranged things in his own favor. Instead he calls the man over, seats ten elders as witnesses, and lays the whole matter out honestly: the field is for sale, the right of redemption is yours, and I am next after you.\n\nThe nearer kinsman says yes immediately. \"I will redeem it.\" Of course he will - a field is an asset. Then Boaz adds the part that changes everything. To take the land you must also take Ruth the Moabitess, the widow, and raise up an heir in the dead man's name. Now the math is different. Any son born would carry the dead man's name and inherit the very field just purchased. The redeemer would spend his own money to enlarge someone else's house. And so the answer reverses: \"I cannot redeem it myself, or I would jeopardize my own inheritance.\"",
+      "keyInsight": "The nearer kinsman was not wicked. He was careful. He would redeem what added to his estate and refused what would cost him. Redemption that protects itself is not redemption at all.",
+      "content": "The city gate of Bethlehem was the courthouse of the ancient world. Land changed hands there. Disputes were settled there. The elders sat there. So when Boaz \"went to the gate and sat down,\" everyone watching knew that something legal was about to happen in the open, where it could be witnessed and remembered.\n\nBoaz has a problem he means to solve in public. Naomi has come home from Moab with nothing but a Moabite daughter-in-law and a piece of family land she cannot keep. There is a closer relative than Boaz - a man the text never names, called only \"the kinsman-redeemer\" - and by law his claim comes first. Boaz could have quietly arranged things in his own favor. Instead he calls the man over, seats ten elders as witnesses, and lays the whole matter out honestly: the field is for sale, the right of redemption is yours, and I am next after you.\n\nThe nearer kinsman says yes immediately. \"I will redeem it.\" Of course he will - a field is an asset. Then Boaz adds the part that changes everything. To take the land you must also take Ruth the Moabitess, the widow, and raise up an heir in the dead man's name. Now the math is different. Any son born would carry the dead man's name and inherit the very field just purchased. The redeemer would spend his own money to enlarge someone else's house. And so the answer reverses: \"I cannot redeem it myself, or I would jeopardize my own inheritance.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Estate Lawyer Saw",
+      "body": "A woman I know spent years as a probate attorney, the person families call when someone dies and there is property to sort out. She told me the same scene plays out over and over. Relatives are glad to help with anything that comes attached to a benefit. They will gladly take the lake house, the savings, the share that grows their own position.\n\nIt is the burdens that reveal who people really are. The aging aunt with no money and a long decline ahead. The sibling's debt that someone has to absorb. The disabled cousin who will need care for forty years and give nothing back to anyone's balance sheet. \"That,\" she said, \"is where I find out who actually loves this family and who only loves their inheritance.\"\n\nThe nameless kinsman at Bethlehem's gate loved his inheritance. He is not a villain; he is most of us. We will redeem what pays us back. We grow quiet when the cost runs in only one direction. The Bible does not even keep his name - the man who chose his estate over a widow is remembered as no one in particular. The one who paid is remembered forever.",
+      "connectionToTheme": "The closer kinsman shows the shape of self-protecting love; Boaz shows the shape of love that pays. The difference is not feeling but cost.",
+      "content": "A woman I know spent years as a probate attorney, the person families call when someone dies and there is property to sort out. She told me the same scene plays out over and over. Relatives are glad to help with anything that comes attached to a benefit. They will gladly take the lake house, the savings, the share that grows their own position.\n\nIt is the burdens that reveal who people really are. The aging aunt with no money and a long decline ahead. The sibling's debt that someone has to absorb. The disabled cousin who will need care for forty years and give nothing back to anyone's balance sheet. \"That,\" she said, \"is where I find out who actually loves this family and who only loves their inheritance.\"\n\nThe nameless kinsman at Bethlehem's gate loved his inheritance. He is not a villain; he is most of us. We will redeem what pays us back. We grow quiet when the cost runs in only one direction. The Bible does not even keep his name - the man who chose his estate over a widow is remembered as no one in particular. The one who paid is remembered forever."
+    },
+    {
+      "type": "insight",
+      "heading": "He Acquired the Moabitess",
+      "body": "Listen to what Boaz actually says he is buying. Not just a field. \"I have acquired Ruth the Moabitess, Mahlon's widow, as my wife, to raise up the name of the deceased.\" He names her people on purpose. Ruth is a Moabite, an outsider from a nation Israel was warned to keep at arm's length. She brings no dowry, no standing, no advantage - only a dead husband's debt and a foreign accent. To take her is to spend himself on someone the law gave him no profit in redeeming.\n\nThat is the deepest layer of this chapter, and it is easy to miss under all the legal procedure. Redemption in Scripture is never God rescuing the deserving. It is the worthy one binding himself to the unworthy, paying a price the rescued one could never raise, and counting the cost worth it. Boaz does not redeem Ruth because she is a good investment. He redeems her because he has decided to love her, and love at the gate of Bethlehem looks like a man emptying his own pocket to give a dead man a future and a foreign widow a home.\n\nThe nearer kinsman asked the reasonable question: what will this cost me? Boaz asked a different one: what will it cost her if I do not? Everything in this story - and everything that flows out of it - turns on which question a redeemer is willing to ask.",
+      "historicalContext": "Under Israelite law, the kinsman-redeemer (Leviticus 25:25) recovered family land that poverty had forced a relative to sell, keeping the inheritance within the family across generations. Layered over this was the levirate duty (Deuteronomy 25:5-10), in which a near relative married a childless widow to \"raise up\" a son in the dead man's name. Boaz takes on both obligations at once - land and widow together - which is precisely why the nearer kinsman draws back.",
+      "fascinatingFact": "The closer relative is never given a name in the entire book - some translations render Boaz's greeting as a deliberately vague \"so-and-so.\" The man so worried about preserving his own name in his inheritance is the one whose name vanishes from Scripture entirely, while the dead Mahlon, whose name he refused to raise up, is recorded forever.",
+      "content": "Listen to what Boaz actually says he is buying. Not just a field. \"I have acquired Ruth the Moabitess, Mahlon's widow, as my wife, to raise up the name of the deceased.\" He names her people on purpose. Ruth is a Moabite, an outsider from a nation Israel was warned to keep at arm's length. She brings no dowry, no standing, no advantage - only a dead husband's debt and a foreign accent. To take her is to spend himself on someone the law gave him no profit in redeeming.\n\nThat is the deepest layer of this chapter, and it is easy to miss under all the legal procedure. Redemption in Scripture is never God rescuing the deserving. It is the worthy one binding himself to the unworthy, paying a price the rescued one could never raise, and counting the cost worth it. Boaz does not redeem Ruth because she is a good investment. He redeems her because he has decided to love her, and love at the gate of Bethlehem looks like a man emptying his own pocket to give a dead man a future and a foreign widow a home.\n\nThe nearer kinsman asked the reasonable question: what will this cost me? Boaz asked a different one: what will it cost her if I do not? Everything in this story - and everything that flows out of it - turns on which question a redeemer is willing to ask."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Bethlehem's gate, Boaz pays the full price the nearer kinsman would not - acquiring a destitute Moabite widow, raising up a name for the dead, and binding her to himself as wife at cost to his own inheritance.",
+      "modernApplication": "You may carry the quiet conviction that you are the unredeemable one - too far outside, too much debt, too little to offer, the relative no careful kinsman would choose. The gospel meets you exactly there. The price was never something you could raise. It was always something a Redeemer chose to pay.",
+      "connectionPoint": "Generations later, a descendant of Boaz and Ruth would be born in this same town of Bethlehem - \"famous in Bethlehem,\" the elders prayed (Ruth 4:11). The genealogy that closes the book runs straight from Boaz to Obed to Jesse to David, and the New Testament picks up the same line: \"Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth, Obed the father of Jesse\" (Matthew 1:5). Two outsider women, Rahab and Ruth, stand in the family tree of the King.",
+      "newTestamentEcho": "What Boaz did in miniature, Christ did for the world. \"Now since the children have flesh and blood, He too shared in their humanity, so that by His death He might destroy him who holds the power of death\" (Hebrews 2:14). He became kin to us in order to redeem us; \"God sent His Son, born of a woman, born under the law, to redeem those under the law, that we might receive our adoption as sons\" (Galatians 4:4-5). The greater Boaz did not jeopardize His inheritance to save His bride - He gave it entirely."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you the careful kinsman - willing to help where it pays you back, but quietly stepping aside when the cost runs only one direction?",
+      "additionalQuestions": [
+        "Have you been living as though your standing with God depends on a price you could raise yourself? What would change if you believed it was already paid?",
+        "Is there a Ruth in your life - someone outside, costly, with nothing to offer back - whom you have been treating as a bad investment rather than a person to love?",
+        "When you read \"I am buying... you are witnesses,\" do you hear it as a transaction or as a vow? What is the difference?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been the careful kinsman more often than I want to admit - quick to redeem what added to me, quiet when the cost ran the other way. And yet You came to the gate for me anyway. You named my people, my poverty, my debt, and You said, \"I am buying.\" Thank You that my redemption was never a price I could raise, but a price You chose to pay. Make me less afraid of being loved this freely. And make me, in turn, the kind of person who pays - who loves the outsider, the costly, the ones who can give nothing back. In the name of my Redeemer, who became my kin to bring me home. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Identify one person in your life whom you have quietly written off as too costly - too needy, too far gone, too much trouble for the return. This week, take one concrete step toward them that costs you something and asks nothing back: a visit, a payment, a hard phone call, an hour of presence. Let it be your small echo of \"I am buying.\"",
+      "leavingAtCross": [
+        "The careful arithmetic that helps only where it pays me back",
+        "The lie that my place with God depends on a price I could ever raise",
+        "The instinct to step aside, like the nameless kinsman, when love runs in only one direction"
+      ],
+      "receivingFromCross": [
+        "A redemption already purchased in full, witnessed and sworn, that I did not earn and cannot lose",
+        "A name and a future given to me though I came as the outsider with nothing to offer",
+        "The freedom to love the costly ones, because I have first been loved at full cost"
+      ],
+      "content": "Identify one person in your life whom you have quietly written off as too costly - too needy, too far gone, too much trouble for the return. This week, take one concrete step toward them that costs you something and asks nothing back: a visit, a payment, a hard phone call, an hour of presence. Let it be your small echo of \"I am buying.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the nearer kinsman change his answer from \"I will redeem it\" to \"I cannot redeem it\" - what exactly shifted the math for him?",
+        "What does it mean that Boaz redeems Ruth even though she is a Moabite outsider who brings him no advantage? How does that shape what biblical redemption actually is?",
+        "Trace the line from Boaz and Ruth to David (Ruth 4:17-22) and on to Christ (Matthew 1:5). Why does it matter that two outsider women stand in the King's family tree?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been the careful kinsman - helping where it benefits you, withdrawing where the cost runs one way.",
+        "Talk honestly about whether you secretly believe your standing with God still depends on something you have to pay or perform.",
+        "Ask each other: who is the costly outsider in your life right now, and what would \"I am buying\" look like toward them this month?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Leviticus 25:25",
+          "text": "If your brother becomes impoverished and sells some of his property, his nearest of kin may come and redeem what his brother has sold."
+        },
+        {
+          "reference": "Job 19:25",
+          "text": "But I know that my Redeemer lives, and in the end He will stand upon the earth."
+        },
+        {
+          "reference": "Matthew 1:5",
+          "text": "Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth, Obed the father of Jesse."
+        },
+        {
+          "reference": "Hebrews 2:14-15",
+          "text": "Now since the children have flesh and blood, He too shared in their humanity, so that by His death He might destroy him who holds the power of death, that is, the devil, and free those who all their lives were held in slavery by their fear of death."
+        },
+        {
+          "reference": "Galatians 4:4-5",
+          "text": "But when the time had fully come, God sent His Son, born of a woman, born under the law, to redeem those under the law, that we might receive our adoption as sons."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ruth 1-4",
+          "note": "Read the whole short book in one sitting, watching the word 'redeem' (go'el) recur. Notice how a story that opens with famine, death, and emptiness (1:21) closes with harvest, a child, and a full lap (4:16)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Boaz",
+      "title": "The Kinsman-Redeemer of Bethlehem",
+      "description": "A landowner of Bethlehem, a man of standing and integrity, and a relative of Naomi's late husband Elimelech. When a nearer kinsman declined the costly duty of redeeming Naomi's land and marrying the widowed Ruth, Boaz took both obligations on himself - publicly, at the city gate, before ten elders and all the people. Through his redemption, Ruth the Moabite became great-grandmother to King David, placing Boaz in the direct line that leads to Jesus Christ (Matthew 1:5).",
+      "keyQuote": "I am buying from Naomi all that belonged to Elimelech, Chilion, and Mahlon... You are witnesses today.",
+      "lessonForUs": "Boaz redeemed where it cost him and offered no return, choosing a foreign widow over the careful protection of his own estate. He is a living shadow of the Redeemer to come - the one who became our kin, paid in full what we never could, and counted us, the outsiders, worth the price.",
+      "heading": "The Kinsman-Redeemer of Bethlehem"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2058,
+  "scriptureReference_full": "Ruth 4",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0 Universal).",
+    "Hebrew word study (go'el / ga'al, H1350) reflects standard lexical sources; the legal background draws on Leviticus 25:25 and the levirate provision of Deuteronomy 25:5-10."
+  ]
 }

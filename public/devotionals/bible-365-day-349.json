@@ -1,38 +1,178 @@
 {
   "day": 349,
-  "title": "1 Corinthians: Love + Resurrection — Day 6 — Deeper Dive",
-  "teaser": "Day 349 of Bible 365 — 1 Cor 13, 15",
+  "title": "The Love That Outlives the Grave",
+  "teaser": "Paul's hymn to love and his defense of resurrection are one argument: love is the only thing strong enough to survive death, because Christ rose.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 349"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8, 13; 15:20, 54-55",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "the greatest of these is love",
+        "the firstfruits",
+        "Death has been swallowed up in victory"
+      ],
+      "greekOriginal": "ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed. ... And now these three remain: faith, hope, and love; but the greatest of these is love. ... But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep. ... When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: \"Death has been swallowed up in victory.\" \"Where, O Death, is your victory? Where, O Death, is your sting?\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀγάπη",
+      "transliteration": "agapē",
+      "pronunciation": "ah-GAH-pay",
+      "meaning": "love — the self-giving, choosing kind of love that seeks the good of another",
+      "rootMeaning": "Agapē is the love that is decided rather than merely felt. It is not warmth that rises and falls with mood, but a settled commitment to seek another's good, even at cost to oneself. It is the word the New Testament reaches for to describe how God loves us.",
+      "usageNote": "Paul uses agapē nine times in 1 Corinthians 13. The same word names what God does at the cross (Romans 5:8) and what Christ's people are commanded to do for one another (John 13:34). When Paul says this love 'never fails,' the verb is piptei — it never falls, never collapses, never gives out.",
+      "wordByWord": [
+        {
+          "word": "ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love — self-giving, committed love"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, at no time"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, collapses, fails — the same root used of a building that falls or a flower that drops"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπαρχή / aparchē",
+          "reference": "Firstfruits (1 Corinthians 15:20). In Israel's harvest the first sheaf was offered to God as a pledge that the whole field would follow. Paul calls the risen Christ the aparchē — the first sheaf of a resurrection that will sweep in everyone who belongs to Him."
+        }
+      ],
+      "strongsNumber": "G26",
+      "definition": "love; specifically the deliberate, self-giving love that wills the good of another",
+      "usage": "Agapē is not one virtue on a list; in chapter 13 it is the air the other virtues breathe. Strip it out and prophecy, tongues, knowledge, even martyrdom go hollow. Paul says you can do everything right and be nothing, if love is missing."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Why Love and Resurrection Belong in the Same Letter",
+      "body": "We tend to read 1 Corinthians 13 at weddings and 1 Corinthians 15 at funerals, as if Paul wrote two unrelated masterpieces and a clumsy editor stapled them together. But in the letter itself only chapter 14 stands between them, and the seam is not an accident.\n\nIn chapter 13 Paul ranks the gifts the Corinthians were fighting over and finds them all temporary. Prophecies will cease. Tongues will fall silent. Knowledge will be set aside. \"We know in part and we prophesy in part, but when the perfect comes, the partial passes away.\" Everything the church prizes has an expiration date stamped on it — everything except faith, hope, and love. And of those three, love is greatest, because faith will become sight and hope will become possession, but love will simply go on. \"Love never fails.\"\n\nThat is an enormous claim, and chapter 13 does not prove it. It asserts it. The proof comes two chapters later. How can Paul be certain that love outlasts the grave that swallows everything else? Because the man who loved us most has already walked out of His tomb. \"Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The love of chapter 13 is durable because the resurrection of chapter 15 is real.",
+      "keyInsight": "Chapter 13 says love never fails; chapter 15 says why. Love outlasts death because Love Himself outlasted death. The empty tomb is the foundation under the wedding reading.",
+      "content": "We tend to read 1 Corinthians 13 at weddings and 1 Corinthians 15 at funerals, as if Paul wrote two unrelated masterpieces and a clumsy editor stapled them together. But in the letter itself only chapter 14 stands between them, and the seam is not an accident.\n\nIn chapter 13 Paul ranks the gifts the Corinthians were fighting over and finds them all temporary. Prophecies will cease. Tongues will fall silent. Knowledge will be set aside. \"We know in part and we prophesy in part, but when the perfect comes, the partial passes away.\" Everything the church prizes has an expiration date stamped on it — everything except faith, hope, and love. And of those three, love is greatest, because faith will become sight and hope will become possession, but love will simply go on. \"Love never fails.\"\n\nThat is an enormous claim, and chapter 13 does not prove it. It asserts it. The proof comes two chapters later. How can Paul be certain that love outlasts the grave that swallows everything else? Because the man who loved us most has already walked out of His tomb. \"Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The love of chapter 13 is durable because the resurrection of chapter 15 is real."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cards in the Bottom Drawer",
+      "body": "A widow I knew kept a shoebox of birthday cards in the bottom drawer of her dresser, every one of them signed by a husband who had been dead for eleven years. She did not read them to be sad. She read them, she said, to remember that the love was not a feeling she had made up. It had been written down, in his hand, before either of them knew how the story would end.\n\nThe gifts her husband once had were gone with him. He had been quick with numbers, good with his hands, full of opinions about the news. All of it ceased on a Tuesday in March. But the love did not cease. It outlasted his cleverness and his strength and his health, the way Paul says it would: prophecy ceases, knowledge is dismissed, the body is sown in weakness — and love keeps going.\n\nShe was not sentimental about it. She knew the cards were paper, and paper rots. What she clung to was not the ink but the promise underneath it: that the One who taught her husband to love is the One who rose, and that a love anchored in a risen Christ is not a memory she is preserving but a person she will see again.",
+      "connectionToTheme": "The widow's instinct is Paul's argument in miniature: the gifts of a life end, but love grounded in the resurrection does not — because the lover is held by the One who conquered death.",
+      "content": "A widow I knew kept a shoebox of birthday cards in the bottom drawer of her dresser, every one of them signed by a husband who had been dead for eleven years. She did not read them to be sad. She read them, she said, to remember that the love was not a feeling she had made up. It had been written down, in his hand, before either of them knew how the story would end.\n\nThe gifts her husband once had were gone with him. He had been quick with numbers, good with his hands, full of opinions about the news. All of it ceased on a Tuesday in March. But the love did not cease. It outlasted his cleverness and his strength and his health, the way Paul says it would: prophecy ceases, knowledge is dismissed, the body is sown in weakness — and love keeps going.\n\nShe was not sentimental about it. She knew the cards were paper, and paper rots. What she clung to was not the ink but the promise underneath it: that the One who taught her husband to love is the One who rose, and that a love anchored in a risen Christ is not a memory she is preserving but a person she will see again."
+    },
+    {
+      "type": "insight",
+      "heading": "If Christ Is Not Raised, Even Love Is Vapor",
+      "body": "Paul is willing to follow his own logic to a brutal edge. \"If Christ has not been raised,\" he writes, \"our preaching is worthless, and so is your faith.\" And then the sentence that should stop us: \"If our hope in Christ is for this life alone, we are to be pitied more than all men.\"\n\nNotice he does not say a faithless world is to be envied for its freedom, or admired for its honesty. He says the Christian without resurrection is the most pitiable creature alive — because we have spent our one life loving and forgiving and laying ourselves down for a kingdom that, if the tomb is still full, does not exist. Without Easter, the love of chapter 13 is just the most beautiful way to waste a life.\n\nThis is why the two chapters cannot be separated without gutting both. Take resurrection out of chapter 15 and chapter 13 becomes a lovely lie — a hymn to a love that the grave will silence like everything else. But Paul will not let us have the love without the empty tomb, or the empty tomb without the love. \"But Christ has indeed been raised.\" That one word, but, is the hinge the whole letter swings on. Because He rose, the love that never fails has somewhere to stand.",
+      "historicalContext": "Some in the Corinthian church, shaped by a Greek philosophical world that prized the immortality of the soul but recoiled at the resurrection of the body, were saying there is no resurrection of the dead (15:12). Paul answers not with abstract comfort but with an early creed he had himself received — that Christ died, was buried, and was raised on the third day — and a list of witnesses, most of them still alive and able to be questioned when he wrote (15:5-8).",
+      "fascinatingFact": "1 Corinthians 15:3-4 is widely regarded by scholars as one of the oldest pieces of Christian tradition we possess, a confession Paul says he 'received' and 'passed on' — meaning it was already being recited as settled belief within a few years of the crucifixion, long before any Gospel was written down.",
+      "content": "Paul is willing to follow his own logic to a brutal edge. \"If Christ has not been raised,\" he writes, \"our preaching is worthless, and so is your faith.\" And then the sentence that should stop us: \"If our hope in Christ is for this life alone, we are to be pitied more than all men.\"\n\nNotice he does not say a faithless world is to be envied for its freedom, or admired for its honesty. He says the Christian without resurrection is the most pitiable creature alive — because we have spent our one life loving and forgiving and laying ourselves down for a kingdom that, if the tomb is still full, does not exist. Without Easter, the love of chapter 13 is just the most beautiful way to waste a life.\n\nThis is why the two chapters cannot be separated without gutting both. Take resurrection out of chapter 15 and chapter 13 becomes a lovely lie — a hymn to a love that the grave will silence like everything else. But Paul will not let us have the love without the empty tomb, or the empty tomb without the love. \"But Christ has indeed been raised.\" That one word, but, is the hinge the whole letter swings on. Because He rose, the love that never fails has somewhere to stand."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a divided, gift-obsessed church that every spiritual power they prize will one day be set aside, and that only faith, hope, and love remain — with love the greatest, because Christ has been raised as the firstfruits and death itself has been swallowed up in victory.",
+      "modernApplication": "We still rank ourselves by gifts — the platform, the productivity, the knowledge, the visible results. Paul's audit is merciless and freeing: none of it will survive you. The one thing you do today that will still exist a thousand years from now is the love you give, because it is rooted in the One who cannot die again.",
+      "connectionPoint": "The 'firstfruits' image runs straight back into Israel's harvest law (Leviticus 23:10), where the first sheaf was a pledge of the full crop to come. Paul takes that pledge-language and lays it over the empty tomb: the risen Christ is the first sheaf, and everyone joined to Him is the harvest that must follow. The resurrection is not a single miracle that happened to Jesus; it is the leading edge of what happens to all who are His.",
+      "newTestamentEcho": "Paul's triumph-cry over death — \"Death has been swallowed up in victory. Where, O Death, is your victory? Where, O Death, is your sting?\" — gathers up Isaiah 25:8 and Hosea 13:14 and hands them to the church as a song. What the prophets longed for, the resurrection of Christ secured: \"But thanks be to God, who gives us the victory through our Lord Jesus Christ.\""
+    },
+    {
+      "type": "reflection",
+      "prompt": "If everything you are currently proud of — your skills, your output, your reputation — will one day be 'dismissed' like Paul says, what would change about how you spend today?",
+      "additionalQuestions": [
+        "Where are you measuring your worth by a gift that will not last, rather than by a love that will?",
+        "Is there a grief you are carrying as if death has the final word? How does 'the firstfruits of those who have fallen asleep' speak to it?",
+        "Paul says a faith without resurrection is to be pitied. Do you live as though Easter actually happened — or as though this life is all there is?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I spend so much of my strength on things that will be set aside — the cleverness, the output, the name I am trying to make. Teach me the one thing that lasts. Anchor my love in Your empty tomb, so it does not fail when I am weak or grieving or afraid. You are the firstfruits; let me live as though the harvest is coming. And when death stands over the people I love, let me answer it with Your own words: where is your victory now? Thanks be to God, who gives us the victory through You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'gift' you have been using to prove your worth — and deliberately spend it in plain, unrewarded love for one person, as practice in the only thing that will outlast you.",
+      "leavingAtCross": [
+        "The need to be impressive, measured by gifts that will all be set aside",
+        "The quiet despair that treats death as the last word over the people I love",
+        "The temptation to keep love as a feeling instead of a daily, costly choice"
+      ],
+      "receivingFromCross": [
+        "A love that is anchored in a risen Christ and therefore cannot finally fail",
+        "Real hope at the graveside, because Christ is the firstfruits and I am part of the harvest",
+        "Freedom to pour myself out today, knowing my labor in the Lord is not in vain"
+      ],
+      "content": "Today, name one 'gift' you have been using to prove your worth — and deliberately spend it in plain, unrewarded love for one person, as practice in the only thing that will outlast you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Paul say love is greater than faith and hope, when all three 'remain'? What happens to faith and hope when Christ returns that does not happen to love?",
+        "What does Paul mean by calling the risen Christ the 'firstfruits,' and what does that promise about those who belong to Him?",
+        "How does chapter 15 supply the proof for the claim chapter 13 only asserts — that 'love never fails'?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about a gift or accomplishment you are tempted to build your identity on. What would it mean to hold it as temporary?",
+        "Where is each of you living as if 'this life is all there is'? How would believing the resurrection reshape that area this week?",
+        "Pray for one another at the point of a real grief, using Paul's words: 'Death has been swallowed up in victory.'"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 15:3-4",
+          "text": "For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day according to the Scriptures."
+        },
+        {
+          "reference": "1 Corinthians 15:58",
+          "text": "Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain."
+        },
+        {
+          "reference": "Isaiah 25:8",
+          "text": "He will swallow up death forever. The Lord GOD will wipe away the tears from every face and remove the disgrace of His people from all the earth. For the LORD has spoken."
+        },
+        {
+          "reference": "Romans 5:8",
+          "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters in one sitting, ignoring the chapter break for once, and watch how the hymn to love (13) and the defense of resurrection (15) lean on each other."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul the Apostle",
+      "title": "Witness to the Risen Christ, Author to a Divided Church",
+      "description": "Once a persecutor of the church, Paul met the risen Jesus on the road to Damascus and spent the rest of his life proclaiming Him. Writing to a quarrelsome, gifted, status-hungry church in Corinth around the mid-50s AD, he refuses to flatter their talents. Instead he hands them the most famous description of love ever written and then grounds it in the bodily resurrection he insists he himself witnessed.",
+      "keyQuote": "If our hope in Christ is for this life alone, we are to be pitied more than all men.",
+      "lessonForUs": "Paul will not let love float free of fact. He stakes everything — his preaching, his suffering, his hope — on whether a tomb outside Jerusalem is empty. If it is, then love is the most realistic thing in the world. If it is not, he would rather we know we are wasting our lives. He gives us no third option, and that honesty is itself a gift.",
+      "heading": "Witness to the Risen Christ, Author to a Divided Church"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1681,
+  "scriptureReference_full": "1 Corinthians 13, 15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapē G26; piptei; aparchē, firstfruits) reflects standard lexical sources.",
+    "The dating of the creed in 1 Corinthians 15:3-4 as among the earliest Christian tradition reflects broad scholarly consensus on Paul's 'received / passed on' formula."
+  ]
 }

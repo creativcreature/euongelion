@@ -6,33 +6,172 @@
   "scriptureReference": "Joshua 1:1-9",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 64"
+      "type": "scripture",
+      "reference": "Joshua 1:1-9",
+      "translation": "BSB",
+      "emphasis": [
+        "Moses My servant is dead",
+        "Be strong and courageous",
+        "I will never leave you nor forsake you",
+        "the LORD your God is with you wherever you go"
+      ],
+      "hebrewOriginal": "חֲזַק וֶאֱמָץ",
+      "passage": "Now after the death of His servant Moses, the LORD spoke to Joshua son of Nun, Moses’ assistant, saying, “Moses My servant is dead. Now therefore arise, you and all these people, and cross over the Jordan into the land that I am giving to the children of Israel. I have given you every place where the sole of your foot will tread, just as I promised to Moses. Your territory shall extend from the wilderness and Lebanon to the great River Euphrates—all the land of the Hittites—and west as far as the Great Sea. No one shall stand against you all the days of your life. As I was with Moses, so will I be with you; I will never leave you nor forsake you. Be strong and courageous, for you shall give these people the inheritance of the land that I swore to their fathers I would give them. Above all, be strong and very courageous. Be careful to observe all the law that My servant Moses commanded you. Do not turn from it to the right or to the left, so that you may prosper wherever you go. This Book of the Law must not depart from your mouth; meditate on it day and night, so that you may be careful to do everything written in it. For then you will prosper and succeed in all you do. Have I not commanded you to be strong and courageous? Do not be afraid; do not be discouraged, for the LORD your God is with you wherever you go.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 1:1-9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 1:1-9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֲזַק וֶאֱמָץ",
+      "transliteration": "chazaq ve'ematz",
+      "pronunciation": "khah-ZAHK veh-eh-MOTZ",
+      "meaning": "be strong and courageous; be firm and be resolute",
+      "rootMeaning": "Chazaq means to be strong, to hold fast, to grip something so it cannot slip away - the same verb used for grasping a hand. Amatz means to be firm, alert, steady, to brace yourself. Together they are less a pep talk than a posture: take hold, and do not let go.",
+      "usageNote": "The phrase rings out three times in nine verses (vv. 6, 7, 9), and Joshua had heard it before - Moses said the very same words over him in front of all Israel (Deuteronomy 31:7). What sits underneath every repetition is not Joshua's nerve but God's nearness: 'be strong... for the LORD your God is with you.' The command and the reason are never far apart.",
+      "wordByWord": [
+        {
+          "word": "חֲזַק",
+          "transliteration": "chazaq",
+          "meaning": "be strong, hold fast, grip firmly"
+        },
+        {
+          "word": "וֶ",
+          "transliteration": "ve",
+          "meaning": "and"
+        },
+        {
+          "word": "אֱמָץ",
+          "transliteration": "ematz",
+          "meaning": "be courageous, be firm, brace yourself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יְהוֹשֻׁעַ",
+          "reference": "Yehoshua, the name we render 'Joshua,' means 'the LORD saves.' It is the same name that, in its shortened Aramaic form Yeshua, would later be given to a child in Nazareth and rendered into Greek as Iesous - Jesus (Matthew 1:21). The man commanded to be strong and the Savior who would say 'I am with you always' carry one name."
+        }
+      ],
+      "strongsNumber": "H2388",
+      "definition": "chazaq (H2388): to be or grow strong, to seize, to hold fast, to be courageous",
+      "usage": "The grammar matters: chazaq ve'ematz is an imperative, a command. But a command to feel brave is cruel if you have no reason to. God never issues it bare. Each time He says 'be strong,' He immediately gives the ground for it - the land already given, the promise already sworn, and above all His own presence that will not quit."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God’s presence is the strength. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ with us always (Matt 28:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The First Word to the New Leader Is About a Grave",
+      "body": "The book of Joshua opens at a funeral. Moses - the man who had stood in the burning bush's light, parted a sea, climbed the mountain, and carried a complaining nation on his back for forty years - is dead. The greatest leader Israel had ever known, or would know for centuries, is gone. And into that silence God speaks: 'Moses My servant is dead. Now therefore arise.'\n\nIt is a strange thing to say first. We might expect a word of comfort, a season of mourning, a careful succession plan. Instead God names the loss plainly and then, in the same breath, says move. Notice He does not pretend Moses was small. Twice in these verses God calls him 'My servant,' an honor He gives to few. The grief is real and the loss is named. But the work of God did not die with the man who led it. The promise was never anchored to Moses. It was anchored to God.\n\nJoshua had spent his whole adult life in Moses' shadow - his assistant, the text says, the one who lingered at the tent of meeting after everyone else went home (Exodus 33:11). Now the shadow is gone and the noonday sun is on him. The Jordan is at flood stage. Behind him, forty years of wandering; ahead, walled cities and a land full of giants. Into that gap God speaks the words He will repeat three times before the chapter ends: be strong and courageous.\n\nBut read carefully and you will see the command is never the center. Five separate times in nine verses God ties Joshua's courage to His own presence. 'As I was with Moses, so will I be with you.' 'I will never leave you nor forsake you.' 'The LORD your God is with you wherever you go.' Joshua is not told to manufacture bravery out of his own chest. He is told to be brave because Someone is going with him who has never once let go.",
+      "keyInsight": "God does not command courage and then leave you to find it. Every 'be strong' in this passage is welded to a promise of His presence. The strength He asks for is the strength of holding the hand that is already holding you.",
+      "content": "The book of Joshua opens at a funeral. Moses - the man who had stood in the burning bush's light, parted a sea, climbed the mountain, and carried a complaining nation on his back for forty years - is dead. The greatest leader Israel had ever known, or would know for centuries, is gone. And into that silence God speaks: 'Moses My servant is dead. Now therefore arise.'\n\nIt is a strange thing to say first. We might expect a word of comfort, a season of mourning, a careful succession plan. Instead God names the loss plainly and then, in the same breath, says move. Notice He does not pretend Moses was small. Twice in these verses God calls him 'My servant,' an honor He gives to few. The grief is real and the loss is named. But the work of God did not die with the man who led it. The promise was never anchored to Moses. It was anchored to God.\n\nJoshua had spent his whole adult life in Moses' shadow - his assistant, the text says, the one who lingered at the tent of meeting after everyone else went home (Exodus 33:11). Now the shadow is gone and the noonday sun is on him. The Jordan is at flood stage. Behind him, forty years of wandering; ahead, walled cities and a land full of giants. Into that gap God speaks the words He will repeat three times before the chapter ends: be strong and courageous.\n\nBut read carefully and you will see the command is never the center. Five separate times in nine verses God ties Joshua's courage to His own presence. 'As I was with Moses, so will I be with you.' 'I will never leave you nor forsake you.' 'The LORD your God is with you wherever you go.' Joshua is not told to manufacture bravery out of his own chest. He is told to be brave because Someone is going with him who has never once let go."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Phone Call You Were Not Ready For",
+      "body": "A friend of mine ran a small business with his father for nineteen years. His father was the one who knew the customers by name, who could smell a bad deal across the room, who had built the whole thing from a single truck. My friend was good, but he was the assistant. He carried the bags. He learned by watching.\n\nThen one Tuesday his father had a stroke, and within a week he was gone. My friend told me the strangest part was not the grief, though that was its own ocean. It was the phone. It kept ringing. Orders, suppliers, a payroll due Friday. The business did not pause to let him mourn. He stood in his father's office, in his father's chair, with his father's handwriting still on the whiteboard, and he did not feel ready. He felt like a fraud playing a part too big for him.\n\nWhat got him through, he said, was not a sudden surge of confidence. It was something his father had said offhand years before, walking the lot at closing: 'You already know more than you think. And you're not doing this alone.' He had no idea, when he said it, how much weight those words would one day have to carry.\n\nThat is roughly where Joshua stands. Not in a surge of self-belief, but in a borrowed, repeated promise that he is not doing this alone - that the One who carried the man before him will carry him too.",
+      "connectionToTheme": "Like an heir thrust into a role he never felt ready for, Joshua's courage does not rise from inside him. It is given from outside, in the steady repeated promise of a presence that does not depend on his competence.",
+      "content": "A friend of mine ran a small business with his father for nineteen years. His father was the one who knew the customers by name, who could smell a bad deal across the room, who had built the whole thing from a single truck. My friend was good, but he was the assistant. He carried the bags. He learned by watching.\n\nThen one Tuesday his father had a stroke, and within a week he was gone. My friend told me the strangest part was not the grief, though that was its own ocean. It was the phone. It kept ringing. Orders, suppliers, a payroll due Friday. The business did not pause to let him mourn. He stood in his father's office, in his father's chair, with his father's handwriting still on the whiteboard, and he did not feel ready. He felt like a fraud playing a part too big for him.\n\nWhat got him through, he said, was not a sudden surge of confidence. It was something his father had said offhand years before, walking the lot at closing: 'You already know more than you think. And you're not doing this alone.' He had no idea, when he said it, how much weight those words would one day have to carry.\n\nThat is roughly where Joshua stands. Not in a surge of self-belief, but in a borrowed, repeated promise that he is not doing this alone - that the One who carried the man before him will carry him too."
+    },
+    {
+      "type": "insight",
+      "heading": "Courage Reads at Night",
+      "body": "Tucked between the commands to be strong is an instruction that seems, at first, to belong to a different conversation. Before God sends Joshua against a single fortified city, He tells him what to do with his mouth and his nights: 'This Book of the Law must not depart from your mouth; meditate on it day and night.'\n\nThink about how unmilitary that is. The Jordan is in flood. Jericho's walls are waiting. And the strategic priority God hands His new general is not a battle plan but a reading habit. The Hebrew word for 'meditate,' hagah, does not mean to empty the mind. It means to mutter, to murmur, to chew the words under your breath the way a person chews bread - the same word the very first psalm uses for the one whose 'delight is in the Law of the LORD, and on His law he meditates day and night' (Psalm 1:2).\n\nHere is the quiet center of the whole passage. The courage God asks for is not nerve summoned in the moment of crisis. It is grown slowly, in private, in the dark, by a man muttering God's words to himself until they become the soil his decisions grow out of. The brave man at the river is the man who has been reading at night. Strength is not first felt at the wall. It is fed long before, at the lamp.",
+      "historicalContext": "Joshua leads at the seam between two eras: the wilderness generation that came out of Egypt has died off (Numbers 14), and a new generation must take the land promised to Abraham, Isaac, and Jacob. The 'Book of the Law' God tells him to meditate on is the Torah delivered through Moses - making Joshua perhaps the first leader in Israel explicitly charged to govern by a written, fixed Scripture rather than by fresh oracle alone.",
+      "fascinatingFact": "The phrase 'do not turn from it to the right or to the left' (v. 7) is a steering image - the same way you might say 'keep it between the lines.' Centuries later the kings of Israel would be measured by exactly this metric: did they 'turn aside to the right or the left' from the law (Deuteronomy 17:20). Joshua is given the standard every leader after him would be judged against.",
+      "content": "Tucked between the commands to be strong is an instruction that seems, at first, to belong to a different conversation. Before God sends Joshua against a single fortified city, He tells him what to do with his mouth and his nights: 'This Book of the Law must not depart from your mouth; meditate on it day and night.'\n\nThink about how unmilitary that is. The Jordan is in flood. Jericho's walls are waiting. And the strategic priority God hands His new general is not a battle plan but a reading habit. The Hebrew word for 'meditate,' hagah, does not mean to empty the mind. It means to mutter, to murmur, to chew the words under your breath the way a person chews bread - the same word the very first psalm uses for the one whose 'delight is in the Law of the LORD, and on His law he meditates day and night' (Psalm 1:2).\n\nHere is the quiet center of the whole passage. The courage God asks for is not nerve summoned in the moment of crisis. It is grown slowly, in private, in the dark, by a man muttering God's words to himself until they become the soil his decisions grow out of. The brave man at the river is the man who has been reading at night. Strength is not first felt at the wall. It is fed long before, at the lamp."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God commands Joshua to be strong and courageous, not by reaching inside himself, but because 'I will never leave you nor forsake you' - the courage rests entirely on the promise of God's unbroken presence as Israel crosses into the land.",
+      "modernApplication": "The thing in front of you may not be a walled city, but it is real: the diagnosis, the empty chair where someone used to sit, the role you never felt qualified for, the morning you have to get up and do it again. The Bible's answer to fear is rarely 'try to feel braver.' It is a Person who promises to go with you - and a habit of feeding on His words at night so the promise is already in you when the river is at flood.",
+      "connectionPoint": "The promise God gives Joshua is not a one-time word for one man. The same sentence - 'Never will I leave you, never will I forsake you' - is lifted up centuries later by the writer of Hebrews and handed to ordinary believers facing fear and need (Hebrews 13:5). What was spoken to a general at the Jordan turns out to belong to anyone who follows the God who keeps it.",
+      "newTestamentEcho": "The deepest echo is hidden in a name. 'Joshua' is Yehoshua - 'the LORD saves' - the very name later given, in its shortened form Yeshua, to the child of Nazareth: Jesus (Matthew 1:21). Hebrews makes the point explicit: the rest Joshua won by conquest was never the final rest, 'for if Joshua had given them rest, God would not have spoken later about another day' (Hebrews 4:8-9). The first Joshua led God's people into a land; the last Joshua leads them into God Himself. And His final promise on earth was the same one given at the Jordan, made permanent: 'Surely I am with you always, even to the end of the age' (Matthew 28:20)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life right now is God saying 'arise' - some next step you keep delaying because you do not feel ready, or because someone who used to lead you is gone?",
+      "additionalQuestions": [
+        "God told Joshua to be brave because He was present, not because Joshua was capable. Whose presence are you trying to draw courage from - your own competence, or God's nearness?",
+        "What would it look like, this week, to 'meditate day and night' on God's words the way Joshua was told to - not to feel productive, but to grow the courage you will need later?",
+        "Name the 'flood-stage Jordan' in front of you. What is the smallest first step across it that obedience asks of you today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been standing at the edge of things, afraid to move. There are graves behind me and walls ahead, and I do not feel strong. Thank You that You never once asked me to be brave alone. You said it to Joshua and You say it to me: be strong and courageous, for the LORD your God is with you wherever you go. Make Your word my food in the dark hours, so that when the river is at flood I am already holding Your hand. And thank You for the truer Joshua, Jesus, whose name means You save - who crossed every Jordan ahead of me and promised to be with me to the very end. Let that be enough to make me rise. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been afraid to begin. Before you do anything else with it, do the unmilitary thing God told Joshua to do first: read. Take five minutes, read Joshua 1:9 out loud, slowly, three times, and let the reason for courage - 'the LORD your God is with you' - settle deeper than the fear. Then take one concrete step across your Jordan.",
+      "leavingAtCross": [
+        "The belief that courage has to come from inside me, manufactured on my own",
+        "The fear that the work falls apart because the person who carried it is gone",
+        "The lie that I have to feel ready before I am allowed to obey"
+      ],
+      "receivingFromCross": [
+        "A presence that has promised never to leave or forsake me",
+        "Permission to rise and move while the grief is still real",
+        "The rest the first Joshua could only point to, given fully in Jesus"
+      ],
+      "content": "Today, name one thing you have been afraid to begin. Before you do anything else with it, do the unmilitary thing God told Joshua to do first: read. Take five minutes, read Joshua 1:9 out loud, slowly, three times, and let the reason for courage - 'the LORD your God is with you' - settle deeper than the fear. Then take one concrete step across your Jordan."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "God repeats 'be strong and courageous' three times in nine verses. Each time, what reason does He attach to the command - and what does that tell you about where biblical courage actually comes from?",
+        "Why would God, sending Joshua into battle, make meditating on Scripture 'day and night' the priority instead of a military strategy? What does that reveal about how strength is grown?",
+        "How does the meaning of Joshua's name (Yehoshua, 'the LORD saves') and the argument of Hebrews 4:8 connect this passage to Jesus and the rest He gives?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name one 'Jordan at flood stage' you are facing - a step you sense God is calling you to take but keep avoiding because you do not feel ready.",
+        "Talk honestly about where you tend to look for courage: your own ability, other people's approval, or God's presence. Which has actually held when things got hard?",
+        "Commit together to one rhythm of 'meditating day and night' this week - a verse, a chapter, a fixed time - and agree to ask each other next week whether you kept it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 31:7-8",
+          "text": "Then Moses called for Joshua and said to him in the presence of all Israel, “Be strong and courageous, for you will go with this people into the land that the LORD swore to their fathers to give them... The LORD Himself goes before you; He will be with you. He will never leave you nor forsake you. Do not be afraid or discouraged.”"
+        },
+        {
+          "reference": "Psalm 1:2",
+          "text": "But his delight is in the Law of the LORD, and on His law he meditates day and night."
+        },
+        {
+          "reference": "Hebrews 4:8-9",
+          "text": "For if Joshua had given them rest, God would not have spoken later about another day. There remains, then, a Sabbath rest for the people of God."
+        },
+        {
+          "reference": "Matthew 28:20",
+          "text": "...And surely I am with you always, even to the end of the age."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 1",
+          "note": "Read the whole chapter and count how many times God ties a command to be brave to a promise that He will be present. Then read Deuteronomy 31:1-8 to see the same words first spoken over Joshua by Moses."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joshua",
+      "title": "Son of Nun, Moses’ Successor",
+      "description": "An Ephraimite born in slavery in Egypt, Joshua first appears leading Israel's army against Amalek (Exodus 17) and serving as Moses' personal assistant, lingering at the tent of meeting (Exodus 33:11). He was one of only two spies who trusted God's promise about the land while ten counseled fear (Numbers 14). After forty years of waiting, he is commissioned to lead Israel across the Jordan and into Canaan. His name, Yehoshua - 'the LORD saves' - is the Hebrew name later carried by Jesus, making Joshua a living signpost: the man who leads God's people into the promised land foreshadows the One who leads them into the promised rest.",
+      "keyQuote": "As for me and my house, we will serve the LORD!",
+      "lessonForUs": "Joshua's strength was never self-made. He spent decades as an assistant, a spy, a waiter on God before he ever led. When his turn came, his courage rested not on his résumé but on a promise: 'I will never leave you nor forsake you.' The same promise, in fuller form, is ours in Christ.",
+      "heading": "Son of Nun, Moses’ Successor"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2865,
+  "scriptureReference_full": "Joshua 1:1-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chazaq ve'ematz, chazaq H2388; hagah 'meditate') reflects standard lexical sources. The identification of Yehoshua/Yeshua as the Hebrew name behind the Greek Iesous ('Jesus') is the standard onomastic observation reflected in Matthew 1:21 and the argument of Hebrews 4:8-9."
+  ]
 }

@@ -1,38 +1,193 @@
 {
   "day": 150,
-  "title": "Jeremiah Weeping Prophet — Day 3 — Pivot",
-  "teaser": "Day 150 of Bible 365 — Jeremiah 1-29",
+  "title": "The Prophet Who Could Not Stop Weeping",
+  "teaser": "Day 150 of Bible 365 — Jeremiah is called before he is born and broken by the message he carries. The God who appoints him weeps through him first.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 150"
+      "type": "scripture",
+      "reference": "Jeremiah 9:1; 1:5",
+      "translation": "BSB",
+      "emphasis": [
+        "Oh, that my head were a spring of water",
+        "Before I formed you in the womb I knew you",
+        "I would weep day and night"
+      ],
+      "hebrewOriginal": "מִי־יִתֵּן רֹאשִׁי מַיִם וְעֵינִי מְקוֹר דִּמְעָה",
+      "passage": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people. ... \"Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "דִּמְעָה",
+      "transliteration": "dim'ah",
+      "pronunciation": "deem-AH",
+      "meaning": "tears, weeping",
+      "rootMeaning": "From a root meaning to shed tears, to drip. Dim'ah is not a single tear but the steady welling of grief - what spills over when the heart can no longer hold what it carries.",
+      "usageNote": "In Jeremiah 9:1 the prophet wishes his head were a maqor - a spring or fountain - of dim'ah, an unending source rather than a passing cry. The same word names the tears God keeps in a bottle (Psalm 56:8) and the tears Hezekiah wept toward the wall (2 Kings 20:5). Jeremiah does not want fewer tears; he wants more, because the loss in front of him is too large for an ordinary amount of grief.",
+      "wordByWord": [
+        {
+          "word": "מִי־יִתֵּן",
+          "transliteration": "mi-yitten",
+          "meaning": "who would give - a Hebrew way of crying 'Oh, that...!', a longing wish"
+        },
+        {
+          "word": "רֹאשִׁי",
+          "transliteration": "roshi",
+          "meaning": "my head"
+        },
+        {
+          "word": "מַיִם",
+          "transliteration": "mayim",
+          "meaning": "water"
+        },
+        {
+          "word": "וְעֵינִי",
+          "transliteration": "ve'eini",
+          "meaning": "and my eye"
+        },
+        {
+          "word": "מְקוֹר",
+          "transliteration": "maqor",
+          "meaning": "spring, fountain, source"
+        },
+        {
+          "word": "דִּמְעָה",
+          "transliteration": "dim'ah",
+          "meaning": "tears, weeping"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מָקוֹר / maqor",
+          "reference": "The same word for fountain Jeremiah longs for here is the word he uses against the people in Jeremiah 2:13 - they have forsaken the LORD, 'the fountain of living water.' Jeremiah weeps a fountain because the people abandoned the Fountain."
+        }
+      ],
+      "strongsNumber": "H1832",
+      "definition": "tears, the act of weeping",
+      "usage": "The wish 'who would give my head water' is not poetic exaggeration; it is a man asking for a body that could grieve at the scale of the disaster he sees coming."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Called Before He Could Refuse",
+      "body": "Open Jeremiah and the first thing God says to him is older than he is. \"Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.\" Jeremiah did not volunteer. He did not study for the role and apply. Before he had a face, he had an assignment.\n\nHis first reaction is to back away. \"Ah, Lord GOD, I surely do not know how to speak, for I am only a child!\" It is the honest protest of someone handed a weight he can already feel will crush him. God does not argue him into confidence. He does something more sober: He removes the excuse and stays. \"Do not say, 'I am only a child.' For to everyone I send you, you must go... Do not be afraid of them, for I am with you to deliver you.\" Then the LORD reaches out, touches Jeremiah's mouth, and says, \"Behold, I have put My words in your mouth.\"\n\nThat touch sets the terms of the next forty years. Jeremiah will preach to a nation in its final decline - through the reigns of Josiah, Jehoiakim, and Zedekiah, right up to the day Jerusalem is dragged into exile (Jeremiah 1:2-3). He will be appointed \"over nations and kingdoms to uproot and tear down, to destroy and overthrow, to build and plant.\" Four words of demolition before two of hope. He is mostly going to say things no one wants to hear, to people who will not listen, in a city that is running out of time."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Doctor Who Knew",
+      "body": "I once sat with a physician who had to tell a family the scan was bad. She had delivered news like this many times. What I remember is that she cried in the hallway first, alone, before she went in steady. When I asked her about it later, she said the day she could walk into that room without it costing her something was the day she should quit.\n\nShe was not weak. She was the opposite. The tears were the proof that she still saw the people in front of her as people and not as a problem to dispatch. Her grief was the receipt of her love.\n\nJeremiah is that doctor on the scale of a whole nation. He sees the scan - the idolatry, the injustice, the armies gathering on the horizon - and he reads it correctly. \"The harvest has passed, the summer has ended, but we have not been saved\" (Jeremiah 8:20). He cannot deliver that diagnosis numbly. \"For the brokenness of the daughter of my people I am crushed. I mourn; horror has gripped me\" (Jeremiah 8:21). He is the truest kind of messenger: the one whose own heart breaks on the message before it ever reaches the room.",
+      "connectionToTheme": "Jeremiah's weeping is not a failure of nerve. It is the evidence that the prophet still loves the people he must warn.",
+      "content": "I once sat with a physician who had to tell a family the scan was bad. She had delivered news like this many times. What I remember is that she cried in the hallway first, alone, before she went in steady. When I asked her about it later, she said the day she could walk into that room without it costing her something was the day she should quit.\n\nShe was not weak. She was the opposite. The tears were the proof that she still saw the people in front of her as people and not as a problem to dispatch. Her grief was the receipt of her love.\n\nJeremiah is that doctor on the scale of a whole nation. He sees the scan - the idolatry, the injustice, the armies gathering on the horizon - and he reads it correctly. \"The harvest has passed, the summer has ended, but we have not been saved\" (Jeremiah 8:20). He cannot deliver that diagnosis numbly. \"For the brokenness of the daughter of my people I am crushed. I mourn; horror has gripped me\" (Jeremiah 8:21). He is the truest kind of messenger: the one whose own heart breaks on the message before it ever reaches the room."
+    },
+    {
+      "type": "insight",
+      "heading": "Whose Tears Are These?",
+      "body": "Here is the turn the whole book hides in plain sight. When Jeremiah weeps, we are not only watching a sensitive man overwhelmed by his job. Read the laments of chapters 8 and 9 closely and the voices blur on purpose: it is hard to tell where Jeremiah's grief ends and God's begins. \"Listen to the cry of the daughter of my people... Why have they provoked Me to anger?\" (Jeremiah 8:19). The Me is God. The weeping is the prophet's. They have become one lament.\n\nThis is the deep thing the weeping prophet shows us. The God who threatens judgment is not detached from the people He must judge. He is not far off, tallying offenses. His own heart is breaking. Jeremiah's tears are a window onto the tears of God - the grief of a Father over children who will not come home, a grief so real it needs a human face to make it visible.\n\nAnd Jeremiah cannot quit, even when he wants to. \"If I say, 'I will not mention Him or speak any more in His name,' His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail\" (Jeremiah 20:9). The word that breaks him is the word he cannot stop carrying. The fire and the tears are the same fire.",
+      "historicalContext": "Jeremiah prophesied in Judah's final decades, roughly 627 BC until the fall of Jerusalem in 587 BC. Chapters 1-29 move through the reigns of the last kings, the false-prophet conflicts, and culminate in his letter to those already carried off to Babylon. He watched the nation he loved go down, and lived to write to its survivors.",
+      "fascinatingFact": "Jeremiah 29 - the chapter that ends today's span - is a letter the prophet sends to exiles already in Babylon. Into a season of total loss he writes the most quoted line in the book: \"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope\" (Jeremiah 29:11). The weeping prophet is also the one entrusted to deliver God's hope - because only a man who had wept that much could be trusted to say it without it sounding cheap.",
+      "content": "Here is the turn the whole book hides in plain sight. When Jeremiah weeps, we are not only watching a sensitive man overwhelmed by his job. Read the laments of chapters 8 and 9 closely and the voices blur on purpose: it is hard to tell where Jeremiah's grief ends and God's begins. \"Listen to the cry of the daughter of my people... Why have they provoked Me to anger?\" (Jeremiah 8:19). The Me is God. The weeping is the prophet's. They have become one lament.\n\nThis is the deep thing the weeping prophet shows us. The God who threatens judgment is not detached from the people He must judge. He is not far off, tallying offenses. His own heart is breaking. Jeremiah's tears are a window onto the tears of God - the grief of a Father over children who will not come home, a grief so real it needs a human face to make it visible.\n\nAnd Jeremiah cannot quit, even when he wants to. \"If I say, 'I will not mention Him or speak any more in His name,' His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail\" (Jeremiah 20:9). The word that breaks him is the word he cannot stop carrying. The fire and the tears are the same fire."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jeremiah weeps day and night over a people headed for ruin, and his tears turn out to be God's own grief given a human face. \"Oh, that my head were a spring of water, and my eyes a fountain of tears!\"",
+      "modernApplication": "We tend to assume that if God is angry at sin, He must be cold toward sinners - that judgment and tenderness cannot share the same heart. Jeremiah ruins that assumption. The same God who warns most severely grieves most deeply. If you have ever feared that God is merely fed up with you, the weeping prophet says: look again. He is not done; He is heartbroken, and heartbreak is what love does when it has not given up.",
+      "connectionPoint": "The line Jeremiah opens runs straight through Scripture. Centuries later another Man stands over the same city and weeps the same kind of tears: \"As Jesus approached Jerusalem and saw the city, He wept over it\" (Luke 19:41). \"O Jerusalem, Jerusalem... how often I have longed to gather your children together, as a hen gathers her chicks under her wings, but you were unwilling!\" (Matthew 23:37). What welled up in Jeremiah's eyes became a flood at Gethsemane and the cross.",
+      "newTestamentEcho": "Jesus is the weeping prophet brought to full term. Where Jeremiah longed for eyes that were a fountain of tears, Jesus actually weeps over the city - and then does what Jeremiah never could: He carries the judgment Himself. The grief of God that Jeremiah only voiced, Christ embodied and bore. \"He was despised and rejected by men, a man of sorrows, acquainted with grief\" (Isaiah 53:3)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you tried to deliver hard truth - or hear it - without letting it cost you any tears? What did that numbness protect you from, and what did it hide?",
+      "additionalQuestions": [
+        "Jeremiah could not stop speaking even when it cost him everything - the word was a 'fire shut up in his bones.' Is there something true you have been holding in that you are growing weary of carrying?",
+        "If God's response to a wandering people is to weep over them, how does that change the picture of God you carry into your own failures?",
+        "Who in your life are you tempted to write off as a 'problem' rather than weep over as a person?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have often pictured You as patient running thin, as a judge tired of me. Jeremiah shows me a God who weeps. Forgive me for the numbness I have mistaken for strength - for delivering hard things coldly, and for hearing hard things about myself without letting them land. Give me a heart that grieves what You grieve and loves what You love. Where I have been written off in my own mind, remind me that You wept over Jerusalem and still went to the cross. Put Your word in my mouth, and Your tears in my eyes. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one person or situation you have gone numb toward - someone you've filed under 'lost cause.' Instead of fixing or arguing, spend two honest minutes grieving it before God the way He grieves it. Let yourself feel the loss as loss. That ache, brought to God, is the beginning of intercession.",
+      "leavingAtCross": [
+        "The cold picture of God as a judge merely fed up with me",
+        "The numbness I have called strength - the habit of saying and hearing hard things without feeling them",
+        "The instinct to write off people as problems rather than weep over them as the beloved"
+      ],
+      "receivingFromCross": [
+        "A God whose heart breaks over the people He must warn - the same God who broke His own heart to save them",
+        "Permission to grieve what is genuinely broken instead of pretending it is fine",
+        "A future and a hope spoken not cheaply, but by the One who wept first"
+      ],
+      "content": "Today, name one person or situation you have gone numb toward - someone you've filed under 'lost cause.' Instead of fixing or arguing, spend two honest minutes grieving it before God the way He grieves it. Let yourself feel the loss as loss. That ache, brought to God, is the beginning of intercession."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does it tell us about God that He calls Jeremiah 'before I formed you in the womb' - that the assignment came before the man?",
+        "In the laments of Jeremiah 8-9, why is it hard to tell where Jeremiah's grief ends and God's begins, and why does that matter?",
+        "How does Jeremiah's weeping over Jerusalem point forward to Jesus weeping over the same city in Luke 19:41?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you have confused going numb with being strong.",
+        "Talk about whether you instinctively picture God as fed up with you or grieving over you - and where that picture came from.",
+        "Ask each other: who is the 'daughter of my people' in your life right now - the person or community you are called to weep over rather than give up on?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 2:13",
+          "text": "For My people have committed two evils: They have forsaken Me, the fountain of living water, and they have dug their own cisterns - broken cisterns that cannot hold water."
+        },
+        {
+          "reference": "Jeremiah 20:9",
+          "text": "His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail."
+        },
+        {
+          "reference": "Jeremiah 29:11",
+          "text": "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope."
+        },
+        {
+          "reference": "Luke 19:41",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it."
+        },
+        {
+          "reference": "Isaiah 53:3",
+          "text": "He was despised and rejected by men, a man of sorrows, acquainted with grief."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 1, 8-9, 20, 29",
+          "note": "Read the call (ch. 1), the laments (ch. 8-9), the 'fire in my bones' confession (ch. 20), and the letter to the exiles (ch. 29) in one sitting. Watch how the same man holds both the heaviest grief and the brightest hope in the book."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet",
+      "description": "A priest's son from Anathoth, called by God before his birth to prophesy through Judah's last forty years, from Josiah's reign to the fall of Jerusalem in 587 BC. He warned a nation that would not listen, was mocked, beaten, and imprisoned, and lived to watch the disaster he had foretold. Yet he is also the one God trusted to write hope to the exiles. Tradition has long named him the author of Lamentations - the book of tears poured out over the fallen city he could not save.",
+      "keyQuote": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people.",
+      "lessonForUs": "Jeremiah teaches us that grief and faithfulness belong together. The point was never to harden himself against the pain of his people, but to let God's own heartbreak run through him - and in that, he became a living portrait of the God who would one day weep over Jerusalem in person.",
+      "heading": "The Weeping Prophet"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1972,
+  "scriptureReference_full": "Jeremiah 1-29 (anchored in Jeremiah 1:4-10; 8:18-22; 9:1; 20:7-9; 29:11-13)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (dim'ah, H1832; maqor) reflects standard lexical sources. The blurring of the prophet's grief with God's in Jeremiah 8-9 is a widely recognized feature of the laments; no specific commentator is quoted here."
+  ]
 }

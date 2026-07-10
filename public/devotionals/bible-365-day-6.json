@@ -6,52 +6,193 @@
   "scriptureReference": "Genesis 3:15",
   "chiastic_position": "deeper",
   "pardesLevel": "sod",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 6"
+      "type": "scripture",
+      "reference": "Genesis 3:15",
+      "translation": "BSB",
+      "emphasis": [
+        "enmity",
+        "her seed",
+        "He will crush your head",
+        "strike his heel"
+      ],
+      "hebrewOriginal": "וְאֵיבָה אָשִׁית בֵּינְךָ וּבֵין הָאִשָּׁה וּבֵין זַרְעֲךָ וּבֵין זַרְעָהּ הוּא יְשׁוּפְךָ רֹאשׁ וְאַתָּה תְּשׁוּפֶנּוּ עָקֵב",
+      "passage": "And I will put enmity between you and the woman, and between your seed and her seed. He will crush your head, and you will strike his heel."
     },
     {
-      "number": 2,
-      "heading": "WHEN THE FIRST GOOD NEWS COMES",
-      "type": "text",
-      "content": "Take a breath here. We are still on the third page of the Bible, and the world is already broken. Adam has hidden. Eve has hidden. The ground will start to push back against the hands that work it. A relationship that was naked and unashamed has put on the first clothing made of blame.\n\nAnd into that wreckage, God speaks. Not first to the man. Not first to the woman. He turns to the serpent and says something stranger than a punishment. He makes a promise. The very first promise on the lips of God after the fall is not a sentence written against us. It is a sentence written for us. Listen for it.",
-      "wordCount": 116
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "זֶרַע",
+      "transliteration": "zera",
+      "pronunciation": "ZEH-rah",
+      "meaning": "seed, offspring, descendant, line of descendants",
+      "rootMeaning": "From a root that means to sow or scatter seed. Zera is what a farmer drops into the ground and what a family carries into the next generation - the same word covers a single grain and a whole harvest.",
+      "usageNote": "Zera is a collective noun. In Hebrew it can mean an entire line of descendants or one specific descendant, and the form does not tell you which. Genesis 3:15 leaves that door open on purpose: there will be a seed of the woman. Whether the promise lands on a people or on a person, the text does not yet say.",
+      "wordByWord": [
+        {
+          "word": "וְאֵיבָה",
+          "transliteration": "ve'eivah",
+          "meaning": "and enmity, hostility - a settled, lasting hatred"
+        },
+        {
+          "word": "זַרְעֲךָ",
+          "transliteration": "zar'akha",
+          "meaning": "your seed - the offspring of the serpent"
+        },
+        {
+          "word": "זַרְעָהּ",
+          "transliteration": "zar'ah",
+          "meaning": "her seed - the offspring of the woman"
+        },
+        {
+          "word": "הוּא",
+          "transliteration": "hu",
+          "meaning": "He, that one - singular, masculine; the verse narrows from 'seed' to a single 'He'"
+        },
+        {
+          "word": "יְשׁוּפְךָ",
+          "transliteration": "yeshufekha",
+          "meaning": "He will crush you, strike you (at the head)"
+        },
+        {
+          "word": "עָקֵב",
+          "transliteration": "aqev",
+          "meaning": "heel - the part struck from below, the wound that does not kill the head"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הוּא / זֶרַע",
+          "reference": "The verse opens with a collective 'seed' and then shifts to the singular pronoun hu, 'He.' The grammar itself leans from a line of people toward a single descendant - the same narrowing Paul will later trace all the way to Christ (Galatians 3:16)."
+        }
+      ],
+      "strongsNumber": "H2233",
+      "definition": "seed; offspring, descendants; a sowing of grain",
+      "usage": "The same word that promises Abraham descendants as numberless as the stars (Genesis 15:5) is the word spoken here over the serpent. From the very first promise, the seed of the woman is set against the seed of the snake - two lines, one war, running through the whole of Scripture."
     },
     {
-      "number": 3,
-      "heading": "THE PROMISE INSIDE THE CURSE",
-      "type": "text",
-      "content": "Here is what God says to the serpent in the BSB:\n\n**\"And I will put enmity between you and the woman, and between your seed and her seed; He will crush your head, and you will strike His heel.\"** (Genesis 3:15)\n\nReaders since the second century have called this verse the *protoevangelium*: the first announcement of the Good News. The Gospel before the Gospel. It arrives early, embedded in a curse spoken over the snake, but its center of gravity points all the way forward to a Cross.\n\nThe ancient Near East heard cosmic-combat stories like this all the time. The hero gods of Babylon and Canaan crushed serpentine chaos to bring order. Genesis takes that grammar and rewrites it. The serpent is not a rival deity; he is a creature. The hero is not a god of the storm; He is a man, born of a woman, who will take a wound to His heel in order to break the head of the one who hates us.\n\nJewish readers heard the same hint. The Aramaic Targum Onkelos, paraphrasing the Hebrew for synagogue use centuries before Jesus, already read the woman's seed as a coming Messianic figure. Hebrew Scripture was already leaning forward, even when it did not know His name.",
-      "wordCount": 211
+      "type": "teaching",
+      "heading": "The Gospel Smuggled Into a Curse",
+      "body": "We are still on the third page of the Bible, and the world is already broken. Adam has hidden. Eve has hidden. The ground is about to push back against the hands that work it. A relationship that was once naked and unashamed has put on the first clothing made of blame.\n\nAnd into that wreckage God speaks. Watch the order. He turns to the serpent first - before the woman, before the man - and what He says is not only a curse. Folded inside it is a promise: \"I will put enmity between you and the woman, and between your seed and her seed. He will crush your head, and you will strike his heel.\"\n\nReaders since the early centuries of the church have called this verse the protoevangelium - the first gospel, the gospel before the Gospel. It arrives buried in a sentence spoken against a snake, but its weight points all the way forward to a hill outside Jerusalem. The ancient world told cosmic-combat stories like this constantly: a hero-god crushing a serpent of chaos to bring the world to order. Genesis takes that familiar shape and rewrites every part of it. The serpent is not a rival god; he is a creature, made by the same hands he now resists. The hero is not a storm-god; he is a descendant of the woman, born into the very family the snake has just wounded. And the victory will not come without cost. The one who crushes the head will first take a strike to the heel.",
+      "keyInsight": "The very first thing God says after the fall is not a sentence written against us but a promise written for us - a seed is coming who will undo the serpent's work.",
+      "content": "We are still on the third page of the Bible, and the world is already broken. Adam has hidden. Eve has hidden. The ground is about to push back against the hands that work it. A relationship that was once naked and unashamed has put on the first clothing made of blame.\n\nAnd into that wreckage God speaks. Watch the order. He turns to the serpent first - before the woman, before the man - and what He says is not only a curse. Folded inside it is a promise: \"I will put enmity between you and the woman, and between your seed and her seed. He will crush your head, and you will strike his heel.\"\n\nReaders since the early centuries of the church have called this verse the protoevangelium - the first gospel, the gospel before the Gospel. It arrives buried in a sentence spoken against a snake, but its weight points all the way forward to a hill outside Jerusalem. The ancient world told cosmic-combat stories like this constantly: a hero-god crushing a serpent of chaos to bring the world to order. Genesis takes that familiar shape and rewrites every part of it. The serpent is not a rival god; he is a creature, made by the same hands he now resists. The hero is not a storm-god; he is a descendant of the woman, born into the very family the snake has just wounded. And the victory will not come without cost. The one who crushes the head will first take a strike to the heel."
     },
     {
-      "number": 4,
-      "heading": "THE SEED, THE SERPENT, AND THE CROSS",
-      "type": "text",
-      "content": "Pay attention to one Hebrew detail. The word for \"seed,\" *zera*, is a collective noun. It can mean an entire line of descendants, or one specific descendant. Genesis 3:15 leaves the door open. Paul walks straight through it. Writing to the Galatians, he insists the promises were spoken \"to Abraham and to his seed... that is, Christ\" (Galatians 3:16). Then, a chapter later: \"when the fullness of time had come, God sent His Son, born of a woman, born under the Law\" (Galatians 4:4). The serpent is told there will be a Seed. The Apostle tells us who.\n\nThe early church saw this clearly. Irenaeus, writing around 180 AD, called this verse the very beginning of the Gospel and read the head-crushing as the work of Christ on the Cross. The bruised heel ends the serpent's reign. Justin Martyr made the same connection a generation earlier. Calvin would later write, \"Although in the whole human race Christ alone is the head, yet the apostle teaches that all the godly are partakers of this victory.\"\n\nWhich is why Paul, near the end of Romans, lifts his eyes and says, \"The God of peace will soon crush Satan under your feet\" (Romans 16:20). The head-crushing began at Calvary. It is still finishing in us. It will be complete when He returns. One promise, three movements: announced in Eden, accomplished on the Cross, completed at His coming.",
-      "wordCount": 234
+      "type": "story",
+      "heading": "The Promise My Mother Made at the Door",
+      "body": "When I was small and afraid of the dark, my mother had a habit I did not understand until much later. She would not promise that nothing in the house would ever frighten me again. She would promise, instead, that she would come. \"If you call,\" she would say, standing in the doorway with the hall light behind her, \"I will come, every time.\" It was not a promise that the fear was unreal. It was a promise that something stronger than the fear was already on its way.\n\nThat is what God hands the human race on its worst day. He does not pretend the wound is unreal; the curses that follow are heavy and true. But before any of them lands fully, He gives a word: a seed is coming. Whatever hisses at you in the dark - and it will - there is One on the way whose heel is already set toward the serpent's head.",
+      "connectionToTheme": "The protoevangelium works the way a parent's promise works in the dark: spoken before the long night, it holds everything that follows, because the One who gave it always comes.",
+      "content": "When I was small and afraid of the dark, my mother had a habit I did not understand until much later. She would not promise that nothing in the house would ever frighten me again. She would promise, instead, that she would come. \"If you call,\" she would say, standing in the doorway with the hall light behind her, \"I will come, every time.\" It was not a promise that the fear was unreal. It was a promise that something stronger than the fear was already on its way.\n\nThat is what God hands the human race on its worst day. He does not pretend the wound is unreal; the curses that follow are heavy and true. But before any of them lands fully, He gives a word: a seed is coming. Whatever hisses at you in the dark - and it will - there is One on the way whose heel is already set toward the serpent's head."
     },
     {
-      "number": 5,
-      "heading": "A GOSPEL FOR YOUR ACTUAL DAY",
-      "type": "text",
-      "content": "Sit with this for a minute, because it changes how you read the rest of your Bible, and how you read your own life.\n\nThe Good News is not something God came up with later, after a Plan A had failed. The Good News was already loaded into the first sentence God spoke after the fall. Before there was a Law, before there was a temple, before there was a king, there was a promise: a Seed, a wound, a crushed head.\n\nWhich means the next time you find yourself reading a hard chapter, a flood, a wandering tribe, a long stretch of failed kings, you are not reading a record of God's frustration. You are reading the slow, patient unfolding of a promise He made on the worst day in human history. He has been keeping it ever since.",
-      "wordCount": 140
+      "type": "insight",
+      "heading": "One Word, Three Movements",
+      "body": "Hold the whole arc of the Bible against this one verse and it lays out in three movements.\n\nFirst, it is announced. In Eden, into the rubble of the fall, God says there will be a seed of the woman who crushes the serpent's head. Nothing is fulfilled yet; a word is simply planted, like the seed it names.\n\nSecond, it is accomplished. Paul tells the Galatians the promises were spoken \"to Abraham and to his seed... meaning One, who is Christ\" (Galatians 3:16), and that \"when the time had fully come, God sent His Son, born of a woman\" (Galatians 4:4). Born of a woman - the exact shape of the Eden promise. At the cross the serpent strikes the heel: Christ is wounded, and dies. Yet Hebrews says it was precisely \"by His death\" that He destroyed \"him who holds the power of death, that is, the devil\" (Hebrews 2:14). The strike to the heel was the very blow that crushed the head, and the cross became His public triumph over the powers (Colossians 2:15).\n\nThird, it is completed. Paul tells the Romans, \"The God of peace will soon crush Satan under your feet\" (Romans 16:20) - same verb, same enemy, but now the crushing reaches all the way down into ordinary lives. What began in a garden, and was won on a cross, is still finishing in us, and will be finished when He comes.",
+      "historicalContext": "Genesis stands at the head of the Torah, the foundation Israel read everything else against. The promise of an offspring runs as a spine through the whole book - to Abraham, to Isaac, to Jacob, to Judah - and on through David's line, until the New Testament writers gather every thread of 'seed' into one name. Genesis 3:15 is where that thread is first tied.",
+      "fascinatingFact": "John names the dragon of his vision \"that ancient serpent called the devil and Satan\" (Revelation 12:9; 20:2). The last book of the Bible reaches back to the first to name the enemy - the same serpent of Eden, finally crushed. Scripture opens and closes on the same villain, and the same victory.",
+      "content": "Hold the whole arc of the Bible against this one verse and it lays out in three movements.\n\nFirst, it is announced. In Eden, into the rubble of the fall, God says there will be a seed of the woman who crushes the serpent's head. Nothing is fulfilled yet; a word is simply planted, like the seed it names.\n\nSecond, it is accomplished. Paul tells the Galatians the promises were spoken \"to Abraham and to his seed... meaning One, who is Christ\" (Galatians 3:16), and that \"when the time had fully come, God sent His Son, born of a woman\" (Galatians 4:4). Born of a woman - the exact shape of the Eden promise. At the cross the serpent strikes the heel: Christ is wounded, and dies. Yet Hebrews says it was precisely \"by His death\" that He destroyed \"him who holds the power of death, that is, the devil\" (Hebrews 2:14). The strike to the heel was the very blow that crushed the head, and the cross became His public triumph over the powers (Colossians 2:15).\n\nThird, it is completed. Paul tells the Romans, \"The God of peace will soon crush Satan under your feet\" (Romans 16:20) - same verb, same enemy, but now the crushing reaches all the way down into ordinary lives. What began in a garden, and was won on a cross, is still finishing in us, and will be finished when He comes."
     },
     {
-      "number": 6,
-      "heading": "A PRAYER FOR EYES TO SEE",
+      "type": "bridge",
+      "ancientTruth": "Into the curse spoken over the serpent, God hides the first promise of rescue: a seed of the woman who will crush the serpent's head, while taking a wound to his own heel in the doing of it.",
+      "modernApplication": "You do not have to feel the victory to stand on the promise. On the days the serpent is loudest - the old accusation, the familiar shame, the voice that says nothing will ever change - the gospel does not begin with your strength against him. It begins with a word God spoke over your head before you were born, and a heel already set against the snake.",
+      "connectionPoint": "The thread runs the whole length of Scripture - from the seed promised to Abraham, through Judah and David, to a child born of a virgin. Paul gathers every strand and says it was always pointing to 'One, who is Christ' (Galatians 3:16). The garden planted the seed; the cross is where it bore its fruit.",
+      "newTestamentEcho": "What Eden promised, the cross accomplished. John points at Jesus and says, \"Look, the Lamb of God, who takes away the sin of the world\" (John 1:29). The serpent struck His heel; by that very wound He crushed the serpent's head, \"that by His death He might destroy him who holds the power of death\" (Hebrews 2:14). The first gospel and the finished gospel are one promise, kept."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is the serpent loudest in your life right now - and what would change if you answered him not with your own strength, but with the promise of the seed who has already crushed his head?",
+      "additionalQuestions": [
+        "When you read the hard chapters of the Bible - the floods, the failed kings, the long waiting - can you hear them as the slow keeping of a promise rather than a record of God's frustration?",
+        "What 'heel wounds' in your own story have turned out, in time, to be the very place God did His deepest work?",
+        "If God's first word after the fall was a promise and not a verdict, how does that change the way you imagine Him turning toward you today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
       "type": "prayer",
-      "content": "Father, give me eyes to see the Gospel even where I expect a curse. Teach me that Your first word after my fall was a promise, not a verdict. Where the serpent still hisses in my thoughts today (accusation, shame, despair), let me hear instead the older voice of Eden: a Seed is coming, and His heel has already done the work. Crush what hates me. Keep what loves me. In the name of Jesus, the long-promised Seed of the woman. Amen.",
-      "wordCount": 82
+      "posture": "honest-confession",
+      "prayerText": "Father, give me eyes to see the Gospel even where I expect only a curse. Teach me that Your first word over my fall was a promise, not a sentence. Where the serpent still hisses in my thoughts today - accusation, shame, the quiet despair that says nothing will change - let me hear instead the older voice of Eden: a seed is coming, and His heel has already done the work. Crush what hates me. Keep what loves me. Hold me in the promise on the days I cannot feel the victory. In the name of Jesus, the long-promised Seed of the woman, who was wounded that the serpent might be undone. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, when the familiar accusing voice starts - the shame, the old script that says you are beyond changing - answer it once, out loud or under your breath, with the promise instead of your own defense: a seed has come, and the serpent's head is already crushed. Let the word God spoke first be the word you speak back.",
+      "leavingAtCross": [
+        "The lie that the gospel was God's Plan B, improvised after Eden failed",
+        "The habit of fighting the serpent with my own strength, on my own merits",
+        "The fear that the hard chapters of my story are a record of God giving up on me"
+      ],
+      "receivingFromCross": [
+        "A promise older than the curse - that a seed of the woman would crush the serpent's head",
+        "The freedom to stand on the word even on the days I cannot feel the win",
+        "The certainty that the wound to His heel was the very blow that broke the one who hates me"
+      ],
+      "content": "Today, when the familiar accusing voice starts - the shame, the old script that says you are beyond changing - answer it once, out loud or under your breath, with the promise instead of your own defense: a seed has come, and the serpent's head is already crushed. Let the word God spoke first be the word you speak back."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why do readers call Genesis 3:15 the protoevangelium - the 'first gospel' - when it is spoken as part of a curse over the serpent?",
+        "What does it mean that the Hebrew word for 'seed' (zera) can point to either a whole line of people or one specific descendant, and how does Paul read it in Galatians 3:16?",
+        "Trace the three movements of the promise: where is it announced, where is it accomplished, and where is it still being completed?"
+      ],
+      "forAccountabilityPartners": [
+        "Where in your own life is the serpent's voice loudest right now - and what would it look like to meet it with the promise rather than with willpower?",
+        "Talk about a 'heel wound' in your story - a place of real cost or loss - and whether you can yet see God working through it rather than around it.",
+        "Ask each other: when you read God's first words after the fall, do you instinctively expect a sentence or a search? Why?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Galatians 3:16",
+          "text": "The promises were spoken to Abraham and to his seed. The Scripture does not say, \"and to seeds,\" meaning many, but \"and to your seed,\" meaning One, who is Christ."
+        },
+        {
+          "reference": "Galatians 4:4-5",
+          "text": "But when the time had fully come, God sent His Son, born of a woman, born under the law, to redeem those under the law, that we might receive our adoption as sons."
+        },
+        {
+          "reference": "Hebrews 2:14",
+          "text": "Now since the children have flesh and blood, He too shared in their humanity, so that by His death He might destroy him who holds the power of death, that is, the devil."
+        },
+        {
+          "reference": "Romans 16:20",
+          "text": "The God of peace will soon crush Satan under your feet. The grace of our Lord Jesus Christ be with you."
+        },
+        {
+          "reference": "Revelation 12:9",
+          "text": "And the great dragon was hurled down - that ancient serpent called the devil and Satan, the deceiver of the whole world. He was hurled to the earth, and his angels with him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 3:14-24",
+          "note": "Read the rest of the chapter slowly. Notice that the promise of verse 15 comes before the curses on the woman and the man, and before the exile from the garden. The hope is spoken first."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Eve",
+      "title": "The Mother of All the Living",
+      "description": "The first woman, drawn from Adam's side and given to him as a companion. Deceived by the serpent, she ate, and gave to her husband. Yet it is her 'seed' - her offspring - that God names as the serpent's undoing. In the same chapter where she falls, Adam names her Eve, 'because she would be the mother of all the living' (Genesis 3:20) - a name given in hope on the day of judgment, because the One who would crush the serpent would come through her line.",
+      "keyQuote": "And I will put enmity between you and the woman, and between your seed and her seed.",
+      "lessonForUs": "God's first promise of rescue runs straight through the one the serpent thought he had won. Where the enemy works his deepest damage, God plants His deepest hope - and He often brings the remedy through the very place the wound was made.",
+      "heading": "The Mother of All the Living"
     }
   ],
-  "totalWords": 783,
+  "panels": [],
+  "totalWords": 1952,
+  "scriptureReference_full": "Genesis 3:15",
   "sources": [
-    "Irenaeus of Lyon. *Against Heresies*, Book III, Chapter 23 (c. 180 AD). Earliest sustained reading of Genesis 3:15 as the protoevangelium fulfilled in Christ.",
-    "John Calvin. *Commentaries on the Epistle of Paul the Apostle to the Romans*, on Romans 16:20 (1540). On the church's participation in Christ's victory over the serpent."
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The reading of Genesis 3:15 as the protoevangelium - the first announcement of the Gospel - is the historic, broad Christian reading, attested from the early centuries of the church onward; the three-movement frame (announced in Eden, accomplished at the cross, completed at Christ's return) follows the New Testament's own use of the verse in Galatians 3:16, Hebrews 2:14, Romans 16:20, and Revelation 12:9; 20:2.",
+    "Hebrew word study (zera, H2233) reflects standard lexical sources; the shift from collective 'seed' to the singular pronoun hu ('He') is a feature of the Masoretic Hebrew text."
   ],
   "scriptureTranslation": "BSB"
 }

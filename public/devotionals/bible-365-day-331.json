@@ -1,38 +1,193 @@
 {
   "day": 331,
-  "title": "Acts: Pentecost + Spread — Day 2 — Building",
-  "teaser": "Day 331 of Bible 365 — Acts 1-10",
+  "title": "The Fire That Sends",
+  "teaser": "Ten days they wait in an upstairs room. Then wind, fire, and a borrowed tongue — and the same Spirit who raised Jesus is poured out so the news can run to the ends of the earth.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 331"
+      "type": "scripture",
+      "reference": "Acts 2:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "all together in one place",
+        "a mighty rushing wind",
+        "tongues like flames of fire",
+        "filled with the Holy Spirit"
+      ],
+      "greekOriginal": "καὶ ἐπλήσθησαν πάντες Πνεύματος Ἁγίου",
+      "passage": "When the day of Pentecost came, they were all together in one place. Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting. They saw tongues like flames of fire that separated and came to rest on each of them. And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δύναμις",
+      "transliteration": "dynamis",
+      "pronunciation": "DOO-na-mis",
+      "meaning": "power, ability, strength to do",
+      "rootMeaning": "Dynamis is not raw force pushing from outside; it is the capacity to actually do a thing - the strength that turns into action. Our words dynamic and dynamite both come from it, though the Greek points less to an explosion and more to a sustained ability that was not there before.",
+      "usageNote": "In Acts 1:8 the risen Jesus does not tell the eleven to go and try harder. He tells them to wait until they receive dynamis when the Holy Spirit comes upon them. The power and the Person arrive together: the ability to witness is not a technique the disciples acquire but a Presence they are given.",
+      "wordByWord": [
+        {
+          "word": "λήμψεσθε",
+          "transliteration": "lēmpsesthe",
+          "meaning": "you will receive - something handed to you, not produced by you"
+        },
+        {
+          "word": "δύναμιν",
+          "transliteration": "dynamin",
+          "meaning": "power, ability to act"
+        },
+        {
+          "word": "ἐπελθόντος",
+          "transliteration": "epelthontos",
+          "meaning": "having come upon - the Spirit coming over them like a covering"
+        },
+        {
+          "word": "τοῦ Ἁγίου Πνεύματος",
+          "transliteration": "tou Hagiou Pneumatos",
+          "meaning": "the Holy Spirit - the same word, pneuma, that means breath and wind"
+        },
+        {
+          "word": "μάρτυρες",
+          "transliteration": "martyres",
+          "meaning": "witnesses - the word that will later become 'martyr'"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πνεῦμα / πνοή",
+          "reference": "Pneuma (Spirit) and pnoē (the rushing wind of Acts 2:2) share a root. The same breath that hovered over the waters in Genesis and was breathed into Adam now fills a house in Jerusalem. Luke wants the reader to hear creation happening again."
+        }
+      ],
+      "strongsNumber": "G1411",
+      "definition": "power, might, strength; the inherent ability to accomplish something",
+      "usage": "Jesus promises dynamis not so the disciples can feel powerful, but so they can be witnesses - the power is aimed outward, toward people who have not yet heard."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Ten Days of Waiting, Then Wind",
+      "body": "The book of Acts opens with an order to do nothing. The risen Jesus has spent forty days proving He is alive, and now, just before He ascends, His last instruction is not 'go' but 'wait.' Stay in Jerusalem, He says, until you are clothed with power from on high. So they wait - the eleven, the women, Mary, the brothers of Jesus - about a hundred and twenty people praying in an upstairs room while the city outside fills with pilgrims for the feast.\n\nPentecost was already an old festival before that morning. Fifty days after Passover, Israel brought the firstfruits of the wheat harvest to the Temple and remembered the giving of the Law at Sinai - the day God came down on a mountain in fire and smoke and a sound that made the people tremble. Luke is writing for readers who know all of this. So when he describes a sound like a mighty rushing wind and tongues like flames of fire coming to rest on each person, he is not reaching for special effects. He is telling us that God has come down again - not onto a mountain this time, but onto people, and not to give a Law written on stone but to write Himself onto hearts.\n\nNotice the detail that the fire 'separated and came to rest on each of them.' The flame does not hover over the group as a single cloud. It divides, and a piece of it settles on every single head. Whatever happened in that room, it happened to each person individually. No one was a spectator.",
+      "keyInsight": "Pentecost is Sinai answered. At the mountain God came down in fire to give a Law on stone tablets the people could not keep; in the upper room He comes down in fire to give the Spirit, who keeps the Law from the inside.",
+      "content": "The book of Acts opens with an order to do nothing. The risen Jesus has spent forty days proving He is alive, and now, just before He ascends, His last instruction is not 'go' but 'wait.' Stay in Jerusalem, He says, until you are clothed with power from on high. So they wait - the eleven, the women, Mary, the brothers of Jesus - about a hundred and twenty people praying in an upstairs room while the city outside fills with pilgrims for the feast.\n\nPentecost was already an old festival before that morning. Fifty days after Passover, Israel brought the firstfruits of the wheat harvest to the Temple and remembered the giving of the Law at Sinai - the day God came down on a mountain in fire and smoke and a sound that made the people tremble. Luke is writing for readers who know all of this. So when he describes a sound like a mighty rushing wind and tongues like flames of fire coming to rest on each person, he is not reaching for special effects. He is telling us that God has come down again - not onto a mountain this time, but onto people, and not to give a Law written on stone but to write Himself onto hearts.\n\nNotice the detail that the fire 'separated and came to rest on each of them.' The flame does not hover over the group as a single cloud. It divides, and a piece of it settles on every single head. Whatever happened in that room, it happened to each person individually. No one was a spectator."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Languages in the Street",
+      "body": "When the sound brings the crowd running, the strangest part is not the noise. It is that everyone hears their own language. Jerusalem at Pentecost was packed with Jews who had been born all over the known world - Parthians, Medes, Egyptians, visitors from Rome, people whose daily speech was Aramaic or Greek or Latin or a dozen regional tongues. And each of them hears these Galileans declaring the wonders of God in the dialect of their own hometown.\n\nThink about what that undoes. Generations earlier, at a tower in Babel, human beings tried to make a name for themselves and reach heaven by their own building, and God scattered them by confusing their language - so that the project collapsed in a babble no one could understand. Pentecost runs that morning in reverse. The languages are not confused; they are bridged. The barrier that broke humanity apart becomes the very thing the Spirit uses to gather it back.\n\nSome in the crowd sneer that the disciples are drunk. It is nine in the morning. The mockery is its own kind of evidence: something has happened here that the ordinary categories cannot hold, and the only explanation a cynic can reach for is the bottle.",
+      "connectionToTheme": "The Spirit's first public act is to make the gospel hearable across every language - the spread to 'the ends of the earth' begins not with travel but with translation.",
+      "content": "When the sound brings the crowd running, the strangest part is not the noise. It is that everyone hears their own language. Jerusalem at Pentecost was packed with Jews who had been born all over the known world - Parthians, Medes, Egyptians, visitors from Rome, people whose daily speech was Aramaic or Greek or Latin or a dozen regional tongues. And each of them hears these Galileans declaring the wonders of God in the dialect of their own hometown.\n\nThink about what that undoes. Generations earlier, at a tower in Babel, human beings tried to make a name for themselves and reach heaven by their own building, and God scattered them by confusing their language - so that the project collapsed in a babble no one could understand. Pentecost runs that morning in reverse. The languages are not confused; they are bridged. The barrier that broke humanity apart becomes the very thing the Spirit uses to gather it back.\n\nSome in the crowd sneer that the disciples are drunk. It is nine in the morning. The mockery is its own kind of evidence: something has happened here that the ordinary categories cannot hold, and the only explanation a cynic can reach for is the bottle."
+    },
+    {
+      "type": "insight",
+      "heading": "Who Is Doing the Pouring",
+      "body": "Peter stands up to explain, and the center of his sermon is not the wind or the fire. It is a Person. He preaches Jesus crucified, then says, 'God has raised this Jesus to life, to which we are all witnesses.' And then the line that holds the whole chapter together: 'Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear.'\n\nFollow the movement carefully. The Father gives the Spirit to the exalted Son. The Son pours that Spirit out on His people. So the fire in the room is not an impersonal energy that the disciples tapped into. It is the gift of the risen, ascended Christ - proof that He is alive and enthroned, doing from heaven exactly what He promised to do before He left. The wind they feel is, in the deepest sense, evidence of where Jesus is.\n\nThis is why Peter can move straight from Pentecost to the resurrection. The Spirit being poured out is the receipt. You cannot see the ascended Christ at the right hand of God; you can see what He is sending down. The flames are His signature.",
+      "historicalContext": "Acts is the second volume of a single work; the Gospel of Luke records 'all that Jesus began to do and teach' (Acts 1:1), implying that Acts records what the risen Jesus continues to do, now by His Spirit through the church. Luke writes as a careful historian, addressing the same Theophilus, having 'carefully investigated everything from the beginning' (Luke 1:3).",
+      "fascinatingFact": "Peter quotes the prophet Joel - 'I will pour out My Spirit on all people' - to explain the morning. Joel had promised this 'pouring out' centuries before, with no idea how it could happen. Acts 2:33 names the mechanism Joel could not have seen: the Spirit is poured out by a crucified and risen Man now seated at God's right hand.",
+      "content": "Peter stands up to explain, and the center of his sermon is not the wind or the fire. It is a Person. He preaches Jesus crucified, then says, 'God has raised this Jesus to life, to which we are all witnesses.' And then the line that holds the whole chapter together: 'Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear.'\n\nFollow the movement carefully. The Father gives the Spirit to the exalted Son. The Son pours that Spirit out on His people. So the fire in the room is not an impersonal energy that the disciples tapped into. It is the gift of the risen, ascended Christ - proof that He is alive and enthroned, doing from heaven exactly what He promised to do before He left. The wind they feel is, in the deepest sense, evidence of where Jesus is.\n\nThis is why Peter can move straight from Pentecost to the resurrection. The Spirit being poured out is the receipt. You cannot see the ascended Christ at the right hand of God; you can see what He is sending down. The flames are His signature."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The exalted Christ receives the promised Holy Spirit from the Father and pours Him out on His waiting people, turning frightened disciples into bold witnesses and beginning the spread of the gospel from Jerusalem outward.",
+      "modernApplication": "We are tempted to believe the work of God depends on our competence - the right strategy, enough energy, a better version of ourselves. Acts begins with a command to wait precisely because the mission was never going to run on human fuel. The power to live and speak for Christ is received, not manufactured. You do not have to be impressive. You have to be filled.",
+      "connectionPoint": "Pentecost is the second panel of a story that started ten days earlier on a hilltop. Jesus said, 'You will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth' (Acts 1:8). That single sentence is the map of the whole book - Jerusalem in chapters 1-7, Judea and Samaria in 8-12, the ends of the earth from chapter 13 on. By chapter 10, the Spirit falls on the Gentile household of Cornelius, and Peter says, 'I now truly understand that God does not show favoritism' (Acts 10:34). The fire that began in one room is already crossing the first great wall.",
+      "newTestamentEcho": "What the disciples receive is exactly what Jesus had promised in the upper room the night before He died: 'I will ask the Father, and He will give you another Advocate to be with you forever - the Spirit of truth' (John 14:16-17). Pentecost is that promise kept. The Christ who washed their feet now sends them His own breath."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been trying to manufacture power that can only be received - striving to be enough on your own strength?",
+      "additionalQuestions": [
+        "The disciples were told to wait before they were told to go. Is there a place where God may be asking you to wait and be filled before you act?",
+        "Peter preached the same Jesus he had denied weeks earlier. What changed was not his courage but his filling. What might the Spirit be ready to do through the very weakness you are ashamed of?",
+        "Pentecost reversed Babel by making the gospel hearable in every language. Who in your life speaks a 'language' - a culture, a wound, a worldview - that you have assumed is beyond the gospel's reach?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "expectant-waiting",
+      "prayerText": "Risen and exalted Lord, You are not a memory but a living King, seated at the Father's right hand, still pouring out Your Spirit. I confess how often I have tried to do Your work on my own fuel and called the exhaustion faithfulness. Teach me to wait. Fill the room of my ordinary life with Your wind. Make me a witness not by my eloquence but by Your presence, and let the news of You reach, through me, someone I had written off. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you do anything for God, sit still for five minutes and ask to be filled. Name one task you have been carrying on sheer willpower, and consciously hand it to the Spirit before you touch it. Then notice who God puts in your path who speaks a 'language' you assumed was closed.",
+      "leavingAtCross": [
+        "The belief that the work of God rises or falls on my competence",
+        "The exhaustion of trying to manufacture a power that can only be received",
+        "The quiet assumption that some people, or some cultures, are beyond the reach of the good news"
+      ],
+      "receivingFromCross": [
+        "The promised Holy Spirit, poured out by the living Christ who is enthroned and at work",
+        "The freedom to wait and be filled instead of striving and burning out",
+        "A place in a mission that runs to the ends of the earth and does not depend on me"
+      ],
+      "content": "Today, before you do anything for God, sit still for five minutes and ask to be filled. Name one task you have been carrying on sheer willpower, and consciously hand it to the Spirit before you touch it. Then notice who God puts in your path who speaks a 'language' you assumed was closed."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to Acts 2:33, who pours out the Holy Spirit, and where did He receive the Spirit He pours out?",
+        "How does Pentecost echo and reverse the story of the tower of Babel?",
+        "Why does Jesus tell the disciples to wait in Jerusalem before going out, and what does that reveal about the source of their mission?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are running on willpower instead of the Spirit, and ask each other what it would look like to wait and be filled first.",
+        "Talk about a time you saw God use your weakness rather than your strength to reach someone.",
+        "Who is one person in your life who speaks a 'language' you have assumed the gospel cannot reach? Pray for them together."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
+        },
+        {
+          "reference": "Acts 2:38-39",
+          "text": "Peter replied, \"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit. This promise belongs to you and your children and to all who are far off - to all whom the Lord our God will call to Himself.\""
+        },
+        {
+          "reference": "Acts 10:34-36",
+          "text": "Then Peter began to speak: \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right. He has sent this message to the people of Israel, proclaiming the gospel of peace through Jesus Christ, who is Lord of all.\""
+        },
+        {
+          "reference": "John 14:16-17",
+          "text": "And I will ask the Father, and He will give you another Advocate to be with you forever - the Spirit of truth."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 2",
+          "note": "Read Peter's whole sermon (Acts 2:14-41), watching how he moves from the Spirit poured out, to the resurrection, to the call: 'Repent and be baptized.' The Spirit's arrival is never the point in itself - it always points to the risen Christ."
+        },
+        {
+          "type": "book",
+          "title": "Acts 10",
+          "note": "Read the story of Cornelius to see the fire of chapter 2 cross the wall between Jew and Gentile. The same Spirit, the same gospel, a far larger room."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Peter",
+      "title": "The Fisherman Who Found His Voice",
+      "description": "Simon Peter, a Galilean fisherman, was the disciple who walked on water and then sank, who swore loyalty and then denied Jesus three times before a charcoal fire. On the morning of Pentecost, the same man who hid behind locked doors stands before thousands in Jerusalem and preaches Christ crucified and risen - and three thousand are added that day. The difference between the denial and the sermon is not a self-improvement plan; it is the Spirit poured out on him by the Lord he had failed.",
+      "keyQuote": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.",
+      "lessonForUs": "If the Spirit could turn Peter's worst failure into the launching point of the church, then your past disqualifies you far less than you fear. The power was never in him, and it is not in you. It is received - and the One who pours it out already knows everything you have done.",
+      "heading": "The Fisherman Who Found His Voice"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1646,
+  "scriptureReference_full": "Acts 1-10 (anchored in Acts 2:1-4)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dynamis G1411; pneuma/pnoē resonance) reflects standard lexical sources (BDAG, Strong's). The Pentecost-as-reversed-Babel reading and the Sinai-Pentecost parallel are widely held in historic Christian interpretation.",
+    "Joel citation: Peter quotes Joel 2:28-32 in Acts 2:17-21."
+  ]
 }

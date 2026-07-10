@@ -6,33 +6,177 @@
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 110"
+      "type": "scripture",
+      "reference": "1 Kings 12:7, 14; 15:4",
+      "translation": "BSB",
+      "emphasis": [
+        "If you will be a servant to these people",
+        "I will add to your yoke",
+        "the LORD his God gave him a lamp in Jerusalem"
+      ],
+      "hebrewOriginal": "וַיִּתֶּן־לוֹ יְהוָה אֱלֹהָיו נִיר בִּירוּשָׁלִָם",
+      "passage": "They replied, \"If you will be a servant to these people and serve them this day, and if you will respond by speaking kind words to them, they will be your servants forever.\" ... and spoke to them as the young men had advised, saying, \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" ... Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem by raising up a son to succeed him and to make Jerusalem strong."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נִיר",
+      "transliteration": "nir",
+      "pronunciation": "neer",
+      "meaning": "lamp, a kept-burning light",
+      "rootMeaning": "Nir names the single flame left burning in a house overnight - the lamp no one lets go out. It is close kin to ner, the ordinary word for a lamp, but carries the sense of a light deliberately kept alive so the house is never wholly dark.",
+      "usageNote": "The promise of a nir in Jerusalem is made first in 1 Kings 11:36 - \"so that My servant David will always have a lamp before Me\" - and then quietly invoked again here in 15:4, after a king who did not deserve it. The same image returns for Abijam's failures and is held up against David's faithfulness. The lamp is never about the worth of the current king; it is about a word God spoke and refuses to break.",
+      "wordByWord": [
+        {
+          "word": "וַיִּתֶּן",
+          "transliteration": "vayyitten",
+          "meaning": "and He gave - the action is God's, not the king's"
+        },
+        {
+          "word": "יְהוָה אֱלֹהָיו",
+          "transliteration": "YHWH Elohav",
+          "meaning": "the LORD his God - the covenant name bound to a king who broke covenant"
+        },
+        {
+          "word": "נִיר",
+          "transliteration": "nir",
+          "meaning": "a lamp, a light kept burning"
+        },
+        {
+          "word": "בִּירוּשָׁלִָם",
+          "transliteration": "birushalayim",
+          "meaning": "in Jerusalem - the one place God chose to put His Name"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נֵר / נִיר",
+          "reference": "Ner (lamp) lights the tabernacle menorah that must never go dark (Exodus 27:20-21). The nir kept in David's line is the same stubborn flame transposed onto a dynasty: a light God will not permit to be snuffed."
+        }
+      ],
+      "strongsNumber": "H5216",
+      "definition": "a lamp; figuratively, a kept light, a surviving heir who keeps a house from going dark",
+      "usage": "The verb vayyitten makes the grammar of grace plain: the king did not earn the lamp, sustain the lamp, or deserve the lamp. God gave it. The whole of 1 Kings 15 turns on who is the subject of the giving."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Kingdom Tears Over a Single Word",
+      "body": "Solomon is barely cold in the ground when the whole nation gathers at Shechem to crown his son. They come with one request, and it is not unreasonable: \"Your father put a heavy yoke on us. But now you should lighten the burden of your father's service and the heavy yoke he put on us, and we will serve you.\" Lighten the load, and we are yours.\n\nRehoboam asks for three days to decide, and in those three days the kingdom is lost. He brings the question first to the elders who had served Solomon, the men who remember what holds a people together. Their counsel is one of the most overlooked sentences in the Old Testament: \"If you will be a servant to these people and serve them this day... they will be your servants forever.\" Become their servant, and you keep them forever. Then Rehoboam asks the friends he grew up with, and they tell him to be hard, to out-Solomon Solomon. He chooses them. \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\"\n\nTen tribes walk out. \"What portion do we have in David... To your tents, O Israel!\" One word - servant or scorpion - and the kingdom splits down the middle, never to be whole again in the Old Testament. The narrator quietly adds that this turn of events was from the LORD, fulfilling a word He had already spoken. The tearing is judgment. But the way it tears is a king who would not stoop to serve.",
+      "keyInsight": "The kingdom does not split over taxes or tribes. It splits the moment a king is offered the chance to be a servant and chooses to be a tyrant instead. Everything that follows is the long ache of a throne that refused to bend.",
+      "content": "Solomon is barely cold in the ground when the whole nation gathers at Shechem to crown his son. They come with one request, and it is not unreasonable: \"Your father put a heavy yoke on us. But now you should lighten the burden of your father's service and the heavy yoke he put on us, and we will serve you.\" Lighten the load, and we are yours.\n\nRehoboam asks for three days to decide, and in those three days the kingdom is lost. He brings the question first to the elders who had served Solomon, the men who remember what holds a people together. Their counsel is one of the most overlooked sentences in the Old Testament: \"If you will be a servant to these people and serve them this day... they will be your servants forever.\" Become their servant, and you keep them forever. Then Rehoboam asks the friends he grew up with, and they tell him to be hard, to out-Solomon Solomon. He chooses them. \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\"\n\nTen tribes walk out. \"What portion do we have in David... To your tents, O Israel!\" One word - servant or scorpion - and the kingdom splits down the middle, never to be whole again in the Old Testament. The narrator quietly adds that this turn of events was from the LORD, fulfilling a word He had already spoken. The tearing is judgment. But the way it tears is a king who would not stoop to serve."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manager Who Would Not Carry the Box",
+      "body": "A man I worked under years ago lost his team in a single afternoon, and I watched it happen. The crew had asked for one small thing - a lighter Friday, an earlier end to a brutal stretch of overtime. The older supervisors told him to give it; you spend a little goodwill now and they will follow you anywhere. He didn't. He stood in the warehouse with everyone watching and said, in effect, that if they thought this was hard, he was just getting started. He thought hardness looked like strength.\n\nBy the next month half of them were gone, and the ones who stayed had gone quiet in the particular way people go quiet when they have decided they no longer belong to you. He kept the title. He lost the people. He never understood that the elders' counsel and the warehouse floor were saying the same thing: authority that will not serve cannot hold.\n\nI think of him every time I read Rehoboam, because the tragedy is not that the young king was cruel for cruelty's sake. He was scared, and he mistook a heavy hand for a strong one. Most of us, handed a little power and a little fear, reach for the scorpion. We almost never reach for the towel.",
+      "connectionToTheme": "Rehoboam's failure is not exotic. It is the ordinary human reflex to answer a request for mercy with a show of force - and it costs us the very people we were trying to keep.",
+      "content": "A man I worked under years ago lost his team in a single afternoon, and I watched it happen. The crew had asked for one small thing - a lighter Friday, an earlier end to a brutal stretch of overtime. The older supervisors told him to give it; you spend a little goodwill now and they will follow you anywhere. He didn't. He stood in the warehouse with everyone watching and said, in effect, that if they thought this was hard, he was just getting started. He thought hardness looked like strength.\n\nBy the next month half of them were gone, and the ones who stayed had gone quiet in the particular way people go quiet when they have decided they no longer belong to you. He kept the title. He lost the people. He never understood that the elders' counsel and the warehouse floor were saying the same thing: authority that will not serve cannot hold.\n\nI think of him every time I read Rehoboam, because the tragedy is not that the young king was cruel for cruelty's sake. He was scared, and he mistook a heavy hand for a strong one. Most of us, handed a little power and a little fear, reach for the scorpion. We almost never reach for the towel."
+    },
+    {
+      "type": "insight",
+      "heading": "A Lamp God Refuses to Let Go Out",
+      "body": "Read these five chapters straight through and they feel like a downward staircase. Jeroboam, terrified that worshipers walking to Jerusalem will drift back to Rehoboam, builds two golden calves and tells Israel, \"Here, O Israel, are your gods, who brought you up out of the land of Egypt\" - the very words spoken over the calf at Sinai, now made national policy. He installs priests who are not Levites and plants shrines on the high places. In the south, Judah does no better: high places, sacred pillars, Asherah poles \"on every high hill and under every green tree.\" Then the kings begin to blur together, each \"did evil in the sight of the LORD\" stacked on the last, until Omri is worse than all before him and Ahab is worse than Omri, marrying Jezebel and bowing to Baal.\n\nAnd yet. Tucked into the middle of the wreckage, after a king whose \"heart was not as fully devoted to the LORD,\" comes one stubborn sentence: \"Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem.\" Nevertheless. The Hebrew nir is a single flame kept burning so a house is never wholly dark. Israel's calf-shrines flare up and burn out. The lamp in David's line does not. It is not kept lit by the goodness of the kings - most of them are bad - but by a promise God made and will not unmake.\n\nThis is the resolution the whole arc has been moving toward. The kingdom tears, and tears, and tears. But God keeps one lamp burning in the dark, because He had sworn He would.",
+      "historicalContext": "The split happened around 930 BC, after Solomon's death. The northern kingdom (Israel, ten tribes, capital eventually at Samaria) and the southern kingdom (Judah, with Jerusalem and the temple) would never reunite politically. Every northern king in 1 Kings is judged a failure; in the south the line of David staggers on, kept alive by the covenant of 2 Samuel 7 rather than by the kings' own faithfulness.",
+      "fascinatingFact": "The judgment is not vague. In 1 Kings 13:2, a nameless man of God cries out against Jeroboam's altar and names the king who will one day defile it: \"A son named Josiah will be born to the house of David.\" Josiah arrives roughly three hundred years later (2 Kings 23) and does exactly that. The lamp God keeps burning in David's house is the same line through which He keeps every word He speaks - including the word of judgment on the calf-altars.",
+      "content": "Read these five chapters straight through and they feel like a downward staircase. Jeroboam, terrified that worshipers walking to Jerusalem will drift back to Rehoboam, builds two golden calves and tells Israel, \"Here, O Israel, are your gods, who brought you up out of the land of Egypt\" - the very words spoken over the calf at Sinai, now made national policy. He installs priests who are not Levites and plants shrines on the high places. In the south, Judah does no better: high places, sacred pillars, Asherah poles \"on every high hill and under every green tree.\" Then the kings begin to blur together, each \"did evil in the sight of the LORD\" stacked on the last, until Omri is worse than all before him and Ahab is worse than Omri, marrying Jezebel and bowing to Baal.\n\nAnd yet. Tucked into the middle of the wreckage, after a king whose \"heart was not as fully devoted to the LORD,\" comes one stubborn sentence: \"Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem.\" Nevertheless. The Hebrew nir is a single flame kept burning so a house is never wholly dark. Israel's calf-shrines flare up and burn out. The lamp in David's line does not. It is not kept lit by the goodness of the kings - most of them are bad - but by a promise God made and will not unmake.\n\nThis is the resolution the whole arc has been moving toward. The kingdom tears, and tears, and tears. But God keeps one lamp burning in the dark, because He had sworn He would."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A king refuses to be a servant, and the kingdom is torn in two. Yet God keeps a single lamp burning in David's line - not because the kings deserve it, but because He swore to David that the light would not go out.",
+      "modernApplication": "We are all small Rehoboams. Handed authority over a team, a marriage, a household, a self, our reflex under pressure is to clamp down rather than to serve. And we are all citizens of a divided kingdom - the fractures run through our families, our churches, our own divided hearts. The lamp God keeps is the quiet assurance that the brokenness we cause is not the final word He speaks.",
+      "connectionPoint": "The thread runs the length of Scripture. The lamp promised in 1 Kings 11:36 and kept in 15:4 is the Davidic covenant of 2 Samuel 7:16 - \"your throne will be established forever.\" The prophets carry it forward: a shoot from the stump of Jesse (Isaiah 11:1), a righteous Branch raised up for David (Jeremiah 23:5). The flame never quite goes out, even through exile, even when the throne sits empty for centuries.",
+      "newTestamentEcho": "The lamp lands in a person. Luke opens with the angel telling Mary that her son will be given \"the throne of His father David\" and will reign over a kingdom with no end (Luke 1:32-33). And where Rehoboam would not serve, this King says, \"I am among you as one who serves\" (Luke 22:27), takes up the towel, and is broken - His own body torn - so that the dividing wall is brought down and the divided are made one (Ephesians 2:14). The torn kingdom finds its resolution not in another strong king, but in a servant King whose tearing heals."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been handed a little authority - and reached for the scorpion instead of the towel?",
+      "additionalQuestions": [
+        "The elders told Rehoboam that the way to keep people forever was to serve them. Where in your life is fear telling you the opposite - that you have to be hard to be respected?",
+        "What is the 'golden calf' you reach for when the real, costly worship feels like 'too much'? What convenient substitute have you set up because the true thing felt like too long a journey?",
+        "Read the word \"nevertheless\" in 1 Kings 15:4 over your own failures. Where do you most need to believe that God keeps a lamp burning that you did not light and cannot extinguish?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have been Rehoboam more often than I want to admit - quick with the heavy hand, slow to take up the towel, mistaking hardness for strength and losing the people I was meant to keep. I have built my own quick calves because the real worship felt like too far to walk. Forgive me. And thank You for the nevertheless. Thank You that the lamp in David's house was never about the goodness of the king, and that the light You keep in my life was never about the steadiness of my heart. You kept that flame burning all the way down to the servant King, who was torn so the divided could be one. Keep me near that light tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, find the one place where you hold power over someone - and choose the elders' counsel over the young men's. Serve before you assert. Speak the kind word first. And when you fail at it, do not despair: rest in the nevertheless. The lamp God keeps in your life was lit by His promise, not your performance.",
+      "leavingAtCross": [
+        "The reflex to answer a request for mercy with a show of force",
+        "The lie that hardness is the same thing as strength",
+        "The quick, convenient calves I build because true worship feels too costly"
+      ],
+      "receivingFromCross": [
+        "A King who was among us as the One who serves, and took up the towel",
+        "The nevertheless - a lamp kept burning by God's promise and not my worth",
+        "The unbroken Davidic line that ran all the way down to the One who heals the divided"
+      ],
+      "content": "This week, find the one place where you hold power over someone - and choose the elders' counsel over the young men's. Serve before you assert. Speak the kind word first. And when you fail at it, do not despair: rest in the nevertheless. The lamp God keeps in your life was lit by His promise, not your performance."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What exactly did the elders advise Rehoboam to do, and why would becoming a servant have secured the people 'forever'?",
+        "Why did Jeroboam build the golden calves at Bethel and Dan - what fear was driving him, and what did the calves let the people avoid?",
+        "What does the word 'nevertheless' in 1 Kings 15:4 reveal about why the lamp in David's line kept burning, given that Abijam's heart 'was not as fully devoted to the LORD'?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where you currently hold the heavier hand. Are you serving it or scourging it?",
+        "Talk honestly about your 'golden calves' - the easier, closer substitutes you reach for when real obedience feels like too long a walk.",
+        "Ask each other: where do you most need to hear the word 'nevertheless' spoken over your own failures right now?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 11:36",
+          "text": "I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
+        },
+        {
+          "reference": "2 Samuel 7:16",
+          "text": "Your house and kingdom will endure forever before Me, and your throne will be established forever."
+        },
+        {
+          "reference": "Luke 22:27",
+          "text": "For who is greater, the one who reclines at the table or the one who serves? Is it not the one who reclines? But I am among you as one who serves."
+        },
+        {
+          "reference": "Ephesians 2:14",
+          "text": "For He Himself is our peace, who has made the two one and has torn down the dividing wall of hostility."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read all five chapters in one sitting, tracking two threads at once: the downward spiral of the kings (count how many 'did evil in the sight of the LORD') and the stubborn survival of the lamp in David's house."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Rehoboam",
+      "title": "The King Who Would Not Serve",
+      "description": "Son of Solomon and Naamah the Ammonite, Rehoboam became king of the united Israel around 930 BC at age forty-one. Offered the throne of his grandfather David's whole kingdom, he was asked only to lighten the yoke his father had laid on the people. He sought counsel from his father's elders, who told him to become a servant - and then rejected it for the bravado of his peers. Ten tribes seceded the same day, and the kingdom never reunited. He reigned seventeen years over Judah, where the people also turned to high places and idolatry.",
+      "keyQuote": "Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.",
+      "lessonForUs": "Rehoboam had one chance to keep a kingdom, and the price was a towel he would not pick up. His story is the dark mirror of the gospel: where the first son of David grasped for power and lost the people, the final Son of David emptied Himself, served, and gathered the divided home.",
+      "heading": "The King Who Would Not Serve"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2267,
+  "scriptureReference_full": "1 Kings 12-16 (esp. 12:7, 14; 15:4)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (nir, H5216) reflects standard lexical sources; the 'lamp kept burning in David's line' theme follows the explicit promise of 1 Kings 11:36 and 15:4 within the book itself.",
+    "Christological reading of the servant King and the torn-yet-reunited kingdom follows the canonical trajectory from 2 Samuel 7 through Luke 1:32-33, Luke 22:27, and Ephesians 2:14; consistent with Nicene orthodoxy."
+  ]
 }

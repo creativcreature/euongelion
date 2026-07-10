@@ -1,38 +1,191 @@
 {
   "day": 326,
-  "title": "John: Garden, Cross, Resurrection — Day 4 — Application",
-  "teaser": "Day 326 of Bible 365 — John 15-21",
+  "title": "Do you love Me? Then feed",
+  "teaser": "Jesus lays down His life for His friends, then rises and asks Peter one question three times. Love, in John, is never a feeling left to itself. It is proven by staying, and finished by feeding.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 326"
+      "type": "scripture",
+      "reference": "John 15:13; 21:15-17",
+      "translation": "BSB",
+      "emphasis": [
+        "Greater love has no one than this",
+        "do you love Me",
+        "Feed My sheep"
+      ],
+      "greekOriginal": "ἀγαπᾷς με; ... φιλῶ σε ... βόσκε τὰ πρόβατά μου",
+      "passage": "Greater love has no one than this, that he lay down his life for his friends. ... When they had finished eating, Jesus asked Simon Peter, \"Simon son of John, do you love Me more than these?\" \"Yes, Lord,\" he answered, \"You know I love You.\" Jesus replied, \"Feed My lambs.\" Jesus asked a second time, \"Simon son of John, do you love Me?\" \"Yes, Lord,\" he answered, \"You know I love You.\" Jesus told him, \"Shepherd My sheep.\" Jesus asked a third time, \"Simon son of John, do you love Me?\" Peter was deeply hurt that Jesus had asked him a third time, \"Do you love Me?\" \"Lord, You know all things,\" he replied. \"You know I love You.\" Jesus said to him, \"Feed My sheep.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀγαπάω / φιλέω",
+      "transliteration": "agapaō / phileō",
+      "pronunciation": "ah-gah-PAH-oh / fee-LEH-oh",
+      "meaning": "to love (with settled, committed devotion) / to love (with the warmth of affection, friendship)",
+      "rootMeaning": "Agapaō is the verb behind the love that gives itself away and keeps no record. Phileō is the love of the close friend, the warm bond that delights in the other. In the lakeshore dialogue, Jesus first asks Peter twice with agapaō; Peter answers all three times with phileō; and the third time Jesus comes down to Peter's word and asks with phileō too.",
+      "usageNote": "Readers have long debated whether John means the two words to carry different weights here or whether he is simply varying his vocabulary, as he does elsewhere. The text does not settle it for us. What is plain is that the question is asked three times - once, the early church saw, for each time Peter denied Him by a charcoal fire (John 18:18). The risen Christ rebuilds over the exact place that broke.",
+      "wordByWord": [
+        {
+          "word": "ἀγαπᾷς με;",
+          "transliteration": "agapas me?",
+          "meaning": "do you love Me? - Jesus' question the first two times"
+        },
+        {
+          "word": "φιλῶ σε",
+          "transliteration": "philō se",
+          "meaning": "I love You - Peter's answer, the warm word, all three times"
+        },
+        {
+          "word": "βόσκε",
+          "transliteration": "boske",
+          "meaning": "feed, give pasture to"
+        },
+        {
+          "word": "ποίμαινε",
+          "transliteration": "poimaine",
+          "meaning": "shepherd, tend, care for as a flock"
+        },
+        {
+          "word": "τὰ πρόβατά μου",
+          "transliteration": "ta probata mou",
+          "meaning": "My sheep - the flock stays His; Peter only tends what belongs to Christ"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀγάπη",
+          "reference": "The noun agapē is the love Paul says never fails (1 Corinthians 13:8); the love by which God commends Himself to us while we were still sinners (Romans 5:8). John 15:13 shows where that love goes when it is real - all the way to laying down a life."
+        }
+      ],
+      "strongsNumber": "G25 / G5368",
+      "definition": "agapaō (G25): to love, in a committed, self-giving sense; phileō (G5368): to love as a friend, with affection",
+      "usage": "By the end of the exchange the two words have folded into one act with no word at all: \"Feed My sheep.\" Whatever shade of love Peter can muster, Jesus turns it toward a flock. Love that stops at the feeling has not yet become the thing Jesus is asking for."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "From the Upper Room to the Lakeshore",
+      "body": "These seven chapters are the long last act of John's Gospel, and Day 4 is where we live inside them rather than watch from a distance. They open in an upstairs room the night before the cross. Jesus has washed feet, broken bread, and now He talks the way people talk when there is not much time left. \"I am the vine and you are the branches,\" He says. \"Remain in Me\" (John 15:5, 15:4). And then the sentence the whole night has been moving toward: \"Greater love has no one than this, that he lay down his life for his friends\" (John 15:13).\n\nFrom there the story descends. A garden across the Kidron. An arrest. A courtyard where Peter, who had sworn he would lay down his life for Jesus, instead warms his hands at a charcoal fire and says three times that he does not know the man. A trial. A hill. And on the cross, when the sour wine has touched His lips, three words that are not a defeat but a completion: \"It is finished\" (John 19:30). The love of 15:13 is not a saying. It is a deed, carried all the way down.\n\nThen the tomb is empty, and the same Lord who said \"As the Father has sent Me, so also I am sending you\" (John 20:21) does something almost ordinary. He builds a fire on a beach, cooks breakfast for tired fishermen, and turns to the one who denied Him. Day 4 is application: here is what the cross is for. Not admiration from a safe distance, but a question put to your face - and a flock put in your hands.",
+      "keyInsight": "John 15-21 moves love from a word spoken at a table, to a death on a hill, to a question on a beach. The arc does not let love stay a sentiment. It drives it toward a deed and then hands the deed to us.",
+      "content": "These seven chapters are the long last act of John's Gospel, and Day 4 is where we live inside them rather than watch from a distance. They open in an upstairs room the night before the cross. Jesus has washed feet, broken bread, and now He talks the way people talk when there is not much time left. \"I am the vine and you are the branches,\" He says. \"Remain in Me\" (John 15:5, 15:4). And then the sentence the whole night has been moving toward: \"Greater love has no one than this, that he lay down his life for his friends\" (John 15:13).\n\nFrom there the story descends. A garden across the Kidron. An arrest. A courtyard where Peter, who had sworn he would lay down his life for Jesus, instead warms his hands at a charcoal fire and says three times that he does not know the man. A trial. A hill. And on the cross, when the sour wine has touched His lips, three words that are not a defeat but a completion: \"It is finished\" (John 19:30). The love of 15:13 is not a saying. It is a deed, carried all the way down.\n\nThen the tomb is empty, and the same Lord who said \"As the Father has sent Me, so also I am sending you\" (John 20:21) does something almost ordinary. He builds a fire on a beach, cooks breakfast for tired fishermen, and turns to the one who denied Him. Day 4 is application: here is what the cross is for. Not admiration from a safe distance, but a question put to your face - and a flock put in your hands."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Third Time He Asked",
+      "body": "A friend of mine came back to faith after years away. He told me the hardest part was not believing again. It was believing he could be trusted with anything again. He had walked out on a marriage, a church, a list of people who had counted on him. \"I can say I love God,\" he said. \"What I cannot imagine is Him handing me anything to hold.\"\n\nThe thing that finally turned for him was small. An older man at his new church asked him to drive a widow to her chemotherapy appointments every Thursday. No microphone, no platform, no second chance to prove himself in front of the people who had watched him fail. Just a car, a calendar, and one frightened woman who needed someone to show up.\n\nHe told me later that the first Thursday he sat in the parking lot and cried, because he understood that this was the answer to a question he had been too ashamed to ask out loud. Do you love Me? Then here - feed this one. Not your love announced. Your love spent on someone who cannot pay it back, in a place where no one is keeping score but Me.",
+      "connectionToTheme": "Restoration in John does not come through a speech Peter gives. It comes through a question he answers and a task he is trusted with. Love proves itself not by declaring but by feeding.",
+      "content": "A friend of mine came back to faith after years away. He told me the hardest part was not believing again. It was believing he could be trusted with anything again. He had walked out on a marriage, a church, a list of people who had counted on him. \"I can say I love God,\" he said. \"What I cannot imagine is Him handing me anything to hold.\"\n\nThe thing that finally turned for him was small. An older man at his new church asked him to drive a widow to her chemotherapy appointments every Thursday. No microphone, no platform, no second chance to prove himself in front of the people who had watched him fail. Just a car, a calendar, and one frightened woman who needed someone to show up.\n\nHe told me later that the first Thursday he sat in the parking lot and cried, because he understood that this was the answer to a question he had been too ashamed to ask out loud. Do you love Me? Then here - feed this one. Not your love announced. Your love spent on someone who cannot pay it back, in a place where no one is keeping score but Me."
+    },
+    {
+      "type": "insight",
+      "heading": "He Asks Over the Same Fire That Broke You",
+      "body": "John gives us a detail he expects us to feel. In the courtyard, the night of the denials, Peter stood and warmed himself at a charcoal fire (John 18:18). The word John uses there for fire, anthrakia, appears only one other time in the whole New Testament: on the beach, where the risen Jesus has lit a charcoal fire and is cooking breakfast (John 21:9). Peter denied his Lord three times over a charcoal fire. Now, over a charcoal fire, he is asked three times if he loves Him.\n\nThis is not Jesus rubbing salt in the wound. It is the opposite. He does not pretend the denial never happened, and He does not make Peter grovel through it. He walks Peter back to the exact place the break occurred and rebuilds him there, denial for question, three for three, until the wound is not hidden but healed. The deepest mercy is not the kind that avoids the painful place. It is the kind that goes back to it on purpose and makes it the site of a commission.\n\nAnd notice what the love is for. After every \"Yes, Lord,\" Jesus does not say, \"Good, now you may rest.\" He says, \"Feed.\" \"Shepherd.\" \"Feed.\" The risen Christ does not collect declarations of affection. He turns love outward, toward sheep that are still His, never Peter's. To love Jesus and to feed His flock are, in this conversation, the same sentence. The cross of John 15:13 lays down its life for friends; the beach of John 21 hands that very love to a forgiven man and tells him to spend it on others.",
+      "historicalContext": "John's Gospel is widely held to be the last of the four written, looking back across decades of the church's life. By the time it circulated, Peter had long since died as a martyr in Rome - the very death Jesus hints at in John 21:18-19, \"you will stretch out your hands... to indicate the kind of death by which Peter would glorify God.\" The first readers knew the end of Peter's story. They read the lakeshore restoration knowing the denier had, in the end, laid down his life for his Friend after all.",
+      "fascinatingFact": "The rare Greek word for a charcoal fire, anthrakia, occurs in the entire New Testament only twice - John 18:18 and John 21:9 - linking the place of Peter's denial to the place of his restoration. It is the kind of detail an eyewitness remembers and a careful writer does not waste.",
+      "content": "John gives us a detail he expects us to feel. In the courtyard, the night of the denials, Peter stood and warmed himself at a charcoal fire (John 18:18). The word John uses there for fire, anthrakia, appears only one other time in the whole New Testament: on the beach, where the risen Jesus has lit a charcoal fire and is cooking breakfast (John 21:9). Peter denied his Lord three times over a charcoal fire. Now, over a charcoal fire, he is asked three times if he loves Him.\n\nThis is not Jesus rubbing salt in the wound. It is the opposite. He does not pretend the denial never happened, and He does not make Peter grovel through it. He walks Peter back to the exact place the break occurred and rebuilds him there, denial for question, three for three, until the wound is not hidden but healed. The deepest mercy is not the kind that avoids the painful place. It is the kind that goes back to it on purpose and makes it the site of a commission.\n\nAnd notice what the love is for. After every \"Yes, Lord,\" Jesus does not say, \"Good, now you may rest.\" He says, \"Feed.\" \"Shepherd.\" \"Feed.\" The risen Christ does not collect declarations of affection. He turns love outward, toward sheep that are still His, never Peter's. To love Jesus and to feed His flock are, in this conversation, the same sentence. The cross of John 15:13 lays down its life for friends; the beach of John 21 hands that very love to a forgiven man and tells him to spend it on others."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus lays down His life for His friends (John 15:13), finishes the work on the cross (John 19:30), rises, and restores Peter not by reviewing his failure but by asking three times, \"Do you love Me?\" - and then placing a flock in his hands.",
+      "modernApplication": "We are fluent in saying we love God. We are far less fluent in letting that love be measured by who we actually feed - the difficult relative, the lonely neighbor, the person at church no one else sits with. Jesus is not impressed by the declaration and uninterested in the deed. In John, the declaration is only real when it walks out to the sheep.",
+      "connectionPoint": "The whole canon has been building a single covenant word: love that keeps its promise even when the people break theirs. Hosea marries the unfaithful; God says \"I will not execute the fury of My anger\" (Hosea 11:9); the shepherd of Ezekiel 34 says, \"I Myself will tend My flock.\" John 15-21 is where that shepherding love arrives in person, lays itself down, rises, and then deputizes a forgiven failure to keep tending the flock until the Shepherd returns.",
+      "newTestamentEcho": "Peter never forgot the beach. Decades later he writes to scattered, suffering churches and signs himself a \"fellow elder,\" urging, \"Shepherd God's flock... not lording it over those entrusted to you, but being examples\" (1 Peter 5:1-3). The man fed on the lakeshore spent the rest of his life feeding. And he points past himself: \"when the Chief Shepherd appears, you will receive the unfading crown of glory\" (1 Peter 5:4). The flock was always Christ's."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If Jesus asked you the question He asked Peter - \"Do you love Me?\" - and then waited to hand you one person to feed, who do you already sense it would be?",
+      "additionalQuestions": [
+        "Where is your own \"charcoal fire\" - the place you failed Him - and what would it mean to let Him meet you there rather than around it?",
+        "Have you mistaken telling God you love Him for actually feeding the people He has put in front of you? Where is the gap?",
+        "Whose love do you find easier to accept: the love that admires you, or the love that walks back into your worst night and rebuilds you anyway?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You laid down Your life for Your friends, and I am one of them only because You chose me first. Thank You that You do not avoid the places I have failed You, but come back to them on purpose. Ask me again. \"Do you love Me?\" You know I do, though my love is small and warmer than it is brave. Take it anyway, and turn it outward. Show me the one You are handing me to feed, and let me not look away. Until the Chief Shepherd appears, make my love a deed and not just a word. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one person who is hard for you to love and do one concrete thing to feed them - a meal, a visit, a message, a ride, an hour of your attention - without telling anyone you did it. Let your love for Christ be measured, this once, by what you actually carried to one of His sheep.",
+      "leavingAtCross": [
+        "The shame of my own charcoal-fire failures, which I keep walking around instead of letting Him heal",
+        "Love for God that lives in what I say and never reaches who I feed",
+        "The lie that I am too far gone to be trusted with anything that matters"
+      ],
+      "receivingFromCross": [
+        "A Lord who comes back to the exact place I broke and rebuilds me there",
+        "Restoration that does not erase my failure but commissions me past it",
+        "A flock to feed - the dignity of being trusted again with what He loves"
+      ],
+      "content": "Today, name one person who is hard for you to love and do one concrete thing to feed them - a meal, a visit, a message, a ride, an hour of your attention - without telling anyone you did it. Let your love for Christ be measured, this once, by what you actually carried to one of His sheep."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Jesus ask Peter the question three times, and what earlier scene in John does the three-fold question deliberately mirror?",
+        "In this conversation, what does Jesus tell Peter to do after each time Peter says he loves Him - and what does that reveal about what love means in John's Gospel?",
+        "How does the saying of John 15:13 (\"Greater love has no one than this...\") become a deed by the time you reach John 19:30 and John 21?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'charcoal fire' in your past - a place you failed - and talk about whether you have let Christ meet you there or only tried to move on from it.",
+        "Tell each other one person Christ seems to be handing you to feed, and let the other person check in next week on whether you actually did.",
+        "Ask each other honestly: is my love for God more in what I say or in who I serve - and where is the gap?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 15:4-5",
+          "text": "Remain in Me, and I will remain in you. Just as no branch can bear fruit by itself unless it remains in the vine, neither can you bear fruit unless you remain in Me. I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing."
+        },
+        {
+          "reference": "John 19:30",
+          "text": "When Jesus had received the sour wine, He said, \"It is finished.\" And bowing His head, He yielded up His spirit."
+        },
+        {
+          "reference": "John 20:21",
+          "text": "Again Jesus said to them, \"Peace be with you. As the Father has sent Me, so also I am sending you.\""
+        },
+        {
+          "reference": "John 21:18-19",
+          "text": "Truly, truly, I tell you, when you were young, you dressed yourself and walked where you wanted; but when you are old, you will stretch out your hands, and someone else will dress you and lead you where you do not want to go.” Jesus said this to indicate the kind of death by which Peter would glorify God. And after He had said this, He told him, “Follow Me.”"
+        },
+        {
+          "reference": "1 Peter 5:2-4",
+          "text": "Be shepherds of God's flock that is among you, watching over them not out of compulsion, but because it is God's will... And when the Chief Shepherd appears, you will receive the crown of glory that will never fade away."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 21",
+          "note": "Read the whole chapter slowly, watching the movement from the empty net (vv. 1-6), to recognition (v. 7), to the charcoal fire and breakfast (vv. 9-14), to the three questions and three commands (vv. 15-17), to \"Follow Me\" (v. 19)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Simon Peter",
+      "title": "The Denier, Restored and Sent",
+      "description": "A Galilean fisherman, son of John, the disciple who walked on water and then sank, who swore he would die for Jesus and then denied Him three times over a charcoal fire the night of the arrest. In John 21 the risen Christ does not lecture him; He cooks him breakfast, asks three times if he loves Him, and three times commissions him to feed and shepherd the flock. Tradition holds that Peter was later martyred in Rome under Nero - stretching out his hands, as Jesus foretold, finally laying down his life for the Friend who had laid down His first.",
+      "keyQuote": "Lord, You know all things. You know I love You.",
+      "lessonForUs": "Peter is the patron saint of every believer who has failed badly and feared they were finished. His restoration tells us that Christ's love does not avoid our worst night but returns to it, and that the proof He looks for is not a flawless record but a love willing to be spent on His sheep.",
+      "heading": "The Denier, Restored and Sent"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1499,
+  "scriptureReference_full": "John 15:13; 21:15-17 (within John 15-21)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapaō G25, phileō G5368; boskō, poimainō; anthrakia) reflects standard lexical sources. The text does not itself resolve whether the agapaō/phileō variation in John 21 is theologically weighted or stylistic; this is noted as debated rather than asserted.",
+    "The threefold restoration mirroring Peter's threefold denial (John 18:17, 25-27), and the anthrakia link between John 18:18 and 21:9, are widely observed in the Christian interpretive tradition."
+  ]
 }

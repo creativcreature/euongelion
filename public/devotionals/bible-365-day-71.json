@@ -1,38 +1,191 @@
 {
   "day": 71,
   "title": "After that generation",
-  "teaser": "Day 71 of Bible 365 — Judges 2:6-23",
+  "teaser": "One generation saw God split rivers and topple walls. The next had never met Him. The book of Judges begins with a funeral and a forgetting.",
   "framework": "Judges 2:6-23 — The cycle of forgetting",
   "scriptureReference": "Judges 2:6-23",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 71"
+      "type": "scripture",
+      "reference": "Judges 2:6-23",
+      "translation": "BSB",
+      "emphasis": [
+        "another generation rose up who did not know the LORD",
+        "Then the LORD raised up judges",
+        "But when the judge died"
+      ],
+      "hebrewOriginal": "וַיָּקָם דּוֹר אַחֵר אַחֲרֵיהֶם אֲשֶׁר לֹא־יָדְעוּ אֶת־יְהוָה",
+      "passage": "After Joshua had dismissed the people, the Israelites went out to take possession of the land, each to his own inheritance. And the people served the LORD throughout the days of Joshua and of the elders who outlived him, who had seen all the great works that the LORD had done for Israel. And Joshua son of Nun, the servant of the LORD, died at the age of 110. They buried him in the land of his inheritance, at Timnath-heres in the hill country of Ephraim, north of Mount Gaash. After that whole generation had also been gathered to their fathers, another generation rose up who did not know the LORD or the works that He had done for Israel. And the Israelites did evil in the sight of the LORD and served the Baals. Thus they forsook the LORD, the God of their fathers, who had brought them out of the land of Egypt, and they followed after various gods of the peoples around them. They bowed down to them and provoked the LORD to anger, for they forsook Him and served Baal and the Ashtoreths. Then the anger of the LORD burned against Israel, and He delivered them into the hands of those who plundered them. He sold them into the hands of their enemies all around, whom they were no longer able to resist. Wherever Israel marched out, the hand of the LORD was against them to bring calamity, just as He had sworn to them. So they were greatly distressed. Then the LORD raised up judges, who saved them from the hands of those who plundered them. Israel, however, did not listen to their judges. Instead, they prostituted themselves with other gods and bowed down to them. They quickly turned from the way of their fathers, who had walked in obedience to the LORD’s commandments; they did not do as their fathers had done. Whenever the LORD raised up a judge for the Israelites, He was with that judge and saved them from the hands of their enemies while the judge was still alive; for the LORD was moved to pity by their groaning under those who oppressed them and afflicted them. But when the judge died, the Israelites became even more corrupt than their fathers, going after other gods to serve them and bow down to them. They would not give up their evil practices and stubborn ways. So the anger of the LORD burned against Israel, and He said, “Because this nation has transgressed the covenant I laid down for their fathers and has not heeded My voice, I will no longer drive out before them any of the nations Joshua left when he died. In this way I will test whether Israel will keep the way of the LORD by walking in it as their fathers did.” That is why the LORD had left those nations in place and had not driven them out immediately by delivering them into the hand of Joshua."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Judges 2:6-23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Judges 2:6-23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יָדַע",
+      "transliteration": "yada",
+      "pronunciation": "yah-DAH",
+      "meaning": "to know - not to know about, but to know by experience, relationship, encounter",
+      "rootMeaning": "Yada is the deep Hebrew verb for knowing. It is the word used when Scripture says a husband and wife knew one another (Genesis 4:1) and when God says to Jeremiah, \"Before I formed you in the womb I knew you\" (Jeremiah 1:5). It never means filing a fact away. It means being bound to someone by lived experience.",
+      "usageNote": "Judges 2:10 says the new generation did not yada the LORD or the works He had done. They were not short on information - the stories were everywhere, the Jordan crossing was a song, the walls of Jericho were a local legend. What they lacked was the knowing that comes only from having stood there. They inherited the facts and lost the encounter.",
+      "wordByWord": [
+        {
+          "word": "וַיָּקָם",
+          "transliteration": "vayyaqom",
+          "meaning": "and there rose up, there arose"
+        },
+        {
+          "word": "דּוֹר אַחֵר",
+          "transliteration": "dor acher",
+          "meaning": "another generation, a different generation"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "transliteration": "asher",
+          "meaning": "who, which"
+        },
+        {
+          "word": "לֹא־יָדְעוּ",
+          "transliteration": "lo-yade'u",
+          "meaning": "did not know - had no living acquaintance with"
+        },
+        {
+          "word": "אֶת־יְהוָה",
+          "transliteration": "et-YHWH",
+          "meaning": "the LORD, by His covenant name"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דַּעַת",
+          "reference": "Da'at, the noun from this same root, is what Hosea grieves: \"My people are destroyed for lack of knowledge\" (Hosea 4:6). The exact word for the loss in Judges becomes the prophets' diagnosis of the whole nation centuries later."
+        }
+      ],
+      "strongsNumber": "H3045",
+      "definition": "to know, perceive, recognize, be acquainted with - by experience and relationship, not mere information",
+      "usage": "The whole tragedy of Judges is carried in this one negated verb. The generation that crossed the Jordan knew God; the next merely knew of Him. Faith was not argued away. It simply was not handed across the gap between one generation and the next."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: The cycle of forgetting. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the eternal remembrance (1 Cor 11:25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Funeral, and Then a Forgetting",
+      "body": "The book of Judges opens the way many declines begin - quietly, at a graveside. Joshua dies at a hundred and ten, the servant of the LORD, and is buried at Timnath-heres in the hill country of Ephraim. The generation that buried him had seen everything: the sea standing up like walls, the manna on the ground each morning, the river holding its breath while a nation walked across on dry stone. They served the LORD all their days, the text says, and the days of the elders who outlived Joshua. While the eyewitnesses lived, the faith held.\n\nThen comes one of the saddest sentences in the Old Testament. \"After that whole generation had also been gathered to their fathers, another generation rose up who did not know the LORD or the works that He had done for Israel.\" Notice the writer does not say they rejected God. He says they did not know Him. The catastrophe is not a war or a famine; it is a handoff that failed. The stories were still being told, but the people telling them had been there, and the people hearing them had not, and somewhere in that gap the living God became a family legend.\n\nWhat follows is the engine of the whole book. They forsook the LORD and served the Baals - the local storm gods who promised rain and harvest. God lets the consequences fall; enemies plunder them until they groan. Then, moved to pity, He raises up a judge - a deliverer - who rescues them while he lives. But verse 19 lands like a hammer: \"when the judge died, the Israelites became even more corrupt than their fathers.\" Rescue, relapse, rescue, relapse. The cycle does not break. It only spins faster.",
+      "keyInsight": "Israel's collapse did not begin with rebellion. It began with a generation that knew the stories but had never met the God in them. Faith is never more than one un-told generation from being lost.",
+      "content": "The book of Judges opens the way many declines begin - quietly, at a graveside. Joshua dies at a hundred and ten, the servant of the LORD, and is buried at Timnath-heres in the hill country of Ephraim. The generation that buried him had seen everything: the sea standing up like walls, the manna on the ground each morning, the river holding its breath while a nation walked across on dry stone. They served the LORD all their days, the text says, and the days of the elders who outlived Joshua. While the eyewitnesses lived, the faith held.\n\nThen comes one of the saddest sentences in the Old Testament. \"After that whole generation had also been gathered to their fathers, another generation rose up who did not know the LORD or the works that He had done for Israel.\" Notice the writer does not say they rejected God. He says they did not know Him. The catastrophe is not a war or a famine; it is a handoff that failed. The stories were still being told, but the people telling them had been there, and the people hearing them had not, and somewhere in that gap the living God became a family legend.\n\nWhat follows is the engine of the whole book. They forsook the LORD and served the Baals - the local storm gods who promised rain and harvest. God lets the consequences fall; enemies plunder them until they groan. Then, moved to pity, He raises up a judge - a deliverer - who rescues them while he lives. But verse 19 lands like a hammer: \"when the judge died, the Israelites became even more corrupt than their fathers.\" Rescue, relapse, rescue, relapse. The cycle does not break. It only spins faster."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Recipe Card With No Hands",
+      "body": "There is a recipe in my mother's handwriting that I cannot make. I have the card. The ingredients are listed, the oven temperature is there, the steps are numbered in her looping cursive. But there was a thing she did with her hands at the counter - a way of knowing when the dough was right that she never wrote down because it was not the kind of thing you write. She knew it. I have only the card.\n\nThat is the gap Judges describes. The new generation held the card. They had the names, the festivals, the songs about the Jordan. What they did not have was the counter - the standing-there, the watching-her-hands knowing that only the first generation possessed. And a recipe you cannot actually make is, after a while, just a piece of paper in a drawer.\n\nThis is why the writer is so careful with his words. He does not accuse the children of throwing the card away. He says they did not know. The Baals down the road, by contrast, were not a legend. They were the neighbors' working faith, tied to this season's rain and this year's crop - present tense, hands on the counter. Between a God you have only heard about and a god your neighbors are actively serving, the second will almost always win.",
+      "connectionToTheme": "Inherited faith that stays information - a card without hands - cannot survive contact with a rival faith that is being actively lived. Knowing about God is not the same as knowing Him, and only one of the two gets passed down.",
+      "content": "There is a recipe in my mother's handwriting that I cannot make. I have the card. The ingredients are listed, the oven temperature is there, the steps are numbered in her looping cursive. But there was a thing she did with her hands at the counter - a way of knowing when the dough was right that she never wrote down because it was not the kind of thing you write. She knew it. I have only the card.\n\nThat is the gap Judges describes. The new generation held the card. They had the names, the festivals, the songs about the Jordan. What they did not have was the counter - the standing-there, the watching-her-hands knowing that only the first generation possessed. And a recipe you cannot actually make is, after a while, just a piece of paper in a drawer.\n\nThis is why the writer is so careful with his words. He does not accuse the children of throwing the card away. He says they did not know. The Baals down the road, by contrast, were not a legend. They were the neighbors' working faith, tied to this season's rain and this year's crop - present tense, hands on the counter. Between a God you have only heard about and a god your neighbors are actively serving, the second will almost always win."
+    },
+    {
+      "type": "insight",
+      "heading": "The Deliverer Keeps Dying",
+      "body": "Sit with the rhythm of this passage and you find a cruelty hidden inside the mercy. \"Whenever the LORD raised up a judge for the Israelites, He was with that judge and saved them ... while the judge was still alive.\" And then: \"But when the judge died, the Israelites became even more corrupt than their fathers.\"\n\nThere it is - the fatal clause. While the judge was still alive. Othniel, Ehud, Deborah, Gideon, Samson - each one a genuine rescue, each one a real gift of God's pity for a groaning people. And each one mortal. The deliverance had an expiration date stamped on it the day the deliverer was born, because the deliverer would die, and when he died the rescue died with him. Israel did not need a better judge. A better judge would still have a funeral. They needed a judge who would not stay in the grave - one whose deliverance did not end when his heart did.\n\nThis is the ache the whole book is built to create. Judges is not finally a book about Israel's failure. It is a book about the limits of every human rescue, written to make a people long for a Deliverer who cannot be buried. The cycle of Judges is the question. It does not contain its own answer.",
+      "historicalContext": "Judges covers the roughly three centuries between Joshua's death and the rise of the monarchy under Saul and David, when Israel had no central king and \"everyone did what was right in his own eyes\" (Judges 21:25). The repeated cycle - sin, oppression, crying out, deliverance, peace, relapse - is the deliberate literary skeleton of the entire book, and chapter 2 is the writer's own preview of the pattern before the individual stories begin.",
+      "fascinatingFact": "The Hebrew word for the leaders God raises up is shophet - usually translated \"judge,\" but closer to \"deliverer\" or \"vindicator.\" These were not robed figures behind a bench. They were rescuers raised for a crisis. The book is named for an office that, by design, could never outlive the person who held it.",
+      "content": "Sit with the rhythm of this passage and you find a cruelty hidden inside the mercy. \"Whenever the LORD raised up a judge for the Israelites, He was with that judge and saved them ... while the judge was still alive.\" And then: \"But when the judge died, the Israelites became even more corrupt than their fathers.\"\n\nThere it is - the fatal clause. While the judge was still alive. Othniel, Ehud, Deborah, Gideon, Samson - each one a genuine rescue, each one a real gift of God's pity for a groaning people. And each one mortal. The deliverance had an expiration date stamped on it the day the deliverer was born, because the deliverer would die, and when he died the rescue died with him. Israel did not need a better judge. A better judge would still have a funeral. They needed a judge who would not stay in the grave - one whose deliverance did not end when his heart did.\n\nThis is the ache the whole book is built to create. Judges is not finally a book about Israel's failure. It is a book about the limits of every human rescue, written to make a people long for a Deliverer who cannot be buried. The cycle of Judges is the question. It does not contain its own answer."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God's pity raised up deliverer after deliverer, and each one saved Israel only while he was alive. When the judge died, the rescue died, and the people sank lower than before. The deliverance kept ending at a graveside.",
+      "modernApplication": "We still reach for deliverers who cannot outlast their own mortality - the leader, the mentor, the movement, the person whose presence held our faith together. When they fail or fade or die, our knowing of God can collapse with them, because it was propped on a human rescue instead of rooted in God Himself.",
+      "connectionPoint": "Judges leaves a God-shaped ache the book cannot fill: a longing for a Deliverer who will not die and leave His people to relapse. That ache runs straight through the Old Testament's hunger for a king, and the prophets' promise of a new covenant in which \"they will all know Me, from the least of them to the greatest\" (Jeremiah 31:34) - the very knowing, yada, that the generation in Judges lost.",
+      "newTestamentEcho": "The Deliverer Judges longs for is the one the writer of Hebrews names: a priest and rescuer who, \"because Jesus lives forever, He has a permanent priesthood. Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them\" (Hebrews 7:24-25). Christ is the Judge who does not die and stay dead. His rescue has no \"while He was still alive\" clause - because He is risen, and the cycle finally breaks."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your faith are you living off a recipe card - the inherited stories, the right answers - rather than off your own encounter with the living God?",
+      "additionalQuestions": [
+        "Whose faith have you been leaning on - a parent's, a pastor's, a friend's - in a way that might not survive the day they are gone?",
+        "What are the present-tense Baals down your road: the working faiths of the people around you that promise this season's rain and harvest?",
+        "If your knowing of God is propped up by a person or a place or a feeling, what would it look like to anchor it instead in Christ, who does not die?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I do not want to merely know about You. I have the stories; give me the encounter. Where my faith has been a card without hands, an inheritance I never made my own, meet me at the counter and teach me the knowing that only comes from standing in Your presence. Forgive the deliverers I have leaned on who were never meant to carry that weight. Anchor me in Christ, the Judge who does not die, whose rescue does not end at a grave. Let me be a generation that knows You - and hands the knowing on. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you genuinely know about God from your own experience - not a verse you were taught, but something you have actually walked through with Him. Tell it to one person in your life who is younger in the faith, in plain words. Hand the knowing across the gap.",
+      "leavingAtCross": [
+        "The secondhand faith that knows the stories but has never met the God inside them",
+        "The deliverers I have leaned on as if they could not die and leave me",
+        "The quiet drift that lets the living God become a family legend"
+      ],
+      "receivingFromCross": [
+        "A first-person knowing of God that is mine and not only my parents'",
+        "A Deliverer who is risen and does not leave me to relapse",
+        "The calling to be one link in the chain that hands faith to the next generation, unbroken"
+      ],
+      "content": "Today, name one thing you genuinely know about God from your own experience - not a verse you were taught, but something you have actually walked through with Him. Tell it to one person in your life who is younger in the faith, in plain words. Hand the knowing across the gap."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What exactly is the difference between the first generation that 'served the LORD' and the second that 'did not know the LORD' - and how did the second still have all the stories?",
+        "Why does the phrase 'while the judge was still alive' make the cycle of Judges impossible to break with a human deliverer?",
+        "How does the Hebrew word yada (to know by experience, not by information) change the way you read Judges 2:10?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one piece of your faith you suspect is inherited - true, but never yet made your own by experience.",
+        "Name a 'deliverer' you have leaned on whose absence would shake your faith, and talk honestly about why.",
+        "Ask each other: who is the younger believer in your life, and what is one true thing about God you could hand them this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Judges 21:25",
+          "text": "In those days there was no king in Israel; everyone did what was right in his own eyes."
+        },
+        {
+          "reference": "Deuteronomy 6:6-7",
+          "text": "These words I am commanding you today are to be upon your hearts. And you shall teach them diligently to your children and speak of them when you sit at home and when you walk along the road, when you lie down and when you get up."
+        },
+        {
+          "reference": "Hosea 4:6",
+          "text": "My people are destroyed for lack of knowledge. Because you have rejected knowledge, I will also reject you as My priests."
+        },
+        {
+          "reference": "Jeremiah 31:34",
+          "text": "No longer will each man teach his neighbor or his brother, saying, 'Know the LORD,' because they will all know Me, from the least of them to the greatest, declares the LORD."
+        },
+        {
+          "reference": "Hebrews 7:24-25",
+          "text": "But because Jesus lives forever, He has a permanent priesthood. Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Judges 2:6-23",
+          "note": "Read the passage slowly and watch for the five-beat cycle the writer lays down here as a preview: the people sin, God hands them to enemies, they groan, He raises a deliverer, the deliverer dies and they relapse. Then watch that exact pattern play out in the chapters that follow."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joshua son of Nun",
+      "title": "The Servant of the LORD",
+      "era": "Late second millennium BC",
+      "key_trait": "The last leader of the eyewitness generation - the bridge that, once gone, was not rebuilt",
+      "description": "Moses' successor, who led Israel across the Jordan and into the land. Judges 2 records his death at 110 and his burial at Timnath-heres. He is called, as Moses was, 'the servant of the LORD' - a title of honor given to very few. Crucially, the text marks his death as the dividing line: while Joshua and the elders who had seen God's works were alive, Israel served the LORD; once that generation was gathered to its fathers, the knowing was not handed on, and the long descent began.",
+      "keyQuote": "As for me and my house, we will serve the LORD.",
+      "lessonForUs": "Joshua's own life ended faithful; what failed was the transfer. A generation can be devoted to God and still lose the next, not through scandal but through silence - by assuming the children will inherit the encounter along with the stories. They will not, unless we hand it to them on purpose."
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2695,
+  "scriptureReference_full": "Judges 2:6-23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (yada, H3045; da'at) reflects standard lexical sources; the shophet ('judge/deliverer') note reflects standard Old Testament scholarship on the book of Judges."
+  ]
 }

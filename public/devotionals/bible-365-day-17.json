@@ -1,38 +1,185 @@
 {
   "day": 17,
   "title": "Three visitors at Mamre",
-  "teaser": "Day 17 of Bible 365 — Genesis 18:1-15",
+  "teaser": "Three strangers stand at the door in the heat of the day. Abraham runs to feed them, and the meal turns out to be God Himself, come to keep an impossible promise.",
   "framework": "Genesis 18:1-15 — God appears at our table",
   "scriptureReference": "Genesis 18:1-15",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 17"
+      "type": "scripture",
+      "reference": "Genesis 18:1-15",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD appeared to Abraham",
+        "Is anything too difficult for the LORD?",
+        "your wife Sarah will have a son"
+      ],
+      "hebrewOriginal": "הֲיִפָּלֵא מֵיְהוָה דָּבָר",
+      "passage": "Then the LORD appeared to Abraham by the Oaks of Mamre in the heat of the day, while he was sitting at the entrance of his tent. And Abraham looked up and saw three men standing nearby. When he saw them, he ran from the entrance of his tent to meet them and bowed low to the ground. \"My lord,\" said Abraham, \"if I have found favor in your sight, please do not pass your servant by. Let a little water be brought, that you may wash your feet and rest yourselves under the tree. And I will bring a bit of bread so that you may refresh yourselves. This is why you have passed your servant's way. After that, you may continue on your way.\" \"Yes,\" they replied, \"you may do as you have said.\" So Abraham hurried into the tent and said to Sarah, \"Quick! Prepare three seahs of fine flour, knead it, and bake some bread.\" Meanwhile, Abraham ran to the herd, selected a tender and choice calf, and gave it to a servant, who hurried to prepare it. Then Abraham brought curds and milk and the calf that had been prepared, and he set them before the men and stood by them under the tree as they ate. \"Where is your wife Sarah?\" they asked. \"There, in the tent,\" he replied. Then the LORD said, \"I will surely return to you at this time next year, and your wife Sarah will have a son!\" Now Sarah was behind him, listening at the entrance to the tent. And Abraham and Sarah were already old and well along in years; Sarah had passed the age of childbearing. So she laughed to herself, saying, \"After I am worn out and my master is old, will I now have this pleasure?\" And the LORD asked Abraham, \"Why did Sarah laugh and say, 'Can I really bear a child when I am old?' Is anything too difficult for the LORD? At the appointed time I will return to you—in about a year—and Sarah will have a son.\" But Sarah was afraid, so she denied it and said, \"I did not laugh.\" \"No,\" replied the LORD, \"but you did laugh.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 18:1-15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 18:1-15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הֲיִפָּלֵא",
+      "transliteration": "hayippale",
+      "pronunciation": "ha-yip-pa-LEH",
+      "meaning": "Is it too wonderful, too hard, beyond reach?",
+      "rootMeaning": "From the root pala (פלא), which does not mean merely 'difficult.' It means wonderful, extraordinary, surpassing - the kind of thing that makes you stop and marvel. The same root names God's 'wonders' at the Red Sea. So the LORD's question to Abraham is not 'Is anything too heavy for Me to lift?' but 'Is any wonder beyond Me to work?'",
+      "usageNote": "The verb pala is used again and again of God's acts that human strength cannot reach: the plagues, the parting sea, the deeds of Psalm 77 that the worshiper rehearses in the dark. To call the promised birth a pele is to file it with the Exodus - a miracle, not a long shot.",
+      "wordByWord": [
+        {
+          "word": "הֲ",
+          "transliteration": "ha",
+          "meaning": "the question-marker: 'Is it...?'"
+        },
+        {
+          "word": "יִפָּלֵא",
+          "transliteration": "yippale",
+          "meaning": "too wonderful, surpassing, beyond reach (passive of pala)"
+        },
+        {
+          "word": "מֵיְהוָה",
+          "transliteration": "me-YHWH",
+          "meaning": "for the LORD, from the LORD"
+        },
+        {
+          "word": "דָּבָר",
+          "transliteration": "davar",
+          "meaning": "a word, a thing, a matter - the same noun for what is spoken and what is done"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צָחַק",
+          "reference": "Tzachaq - to laugh. Sarah's laugh in verse 12 is the very root that names the promised child: Yitzchaq, Isaac, 'he laughs.' The doubting laugh and the joyful laugh share one word, and God will fold the first into the second."
+        },
+        {
+          "word": "פֶּלֶא",
+          "reference": "Pele - 'Wonder.' Isaiah names the coming child Pele Yo'etz, 'Wonderful Counselor' (Isaiah 9:6). The God for whom nothing is too pala will Himself be born as the Wonder."
+        }
+      ],
+      "strongsNumber": "H6381",
+      "definition": "to be wonderful, surpassing, extraordinary; to be too hard or beyond ordinary reach",
+      "usage": "When God asks 'hayippale,' He is not measuring the size of the obstacle. He is naming the category: this birth belongs to the realm of His wonders, where age and barrenness simply do not count against Him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God appears at our table. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The greater Visitor (John 1:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "God Comes to Lunch",
+      "body": "It is the hottest part of the day, the hour when the desert sends every sane person under cover. Abraham is doing exactly that - sitting in the shade at the mouth of his tent by the great oaks of Mamre, ninety-nine years old, the heat pressing down. He looks up. Three men are standing nearby. No introduction, no warning. Just travelers, where travelers rarely come.\n\nWatch how fast an old man can move. Abraham runs - the text says it twice, he ran to meet them and later ran to the herd. He bows to the ground, begs them not to pass him by, calls himself their servant. He promises 'a bit of bread' and then quietly orders a feast: three measures of fine flour, a tender calf, curds and milk. The understatement is the courtesy. You offer little and bring much. And then, having served, he does not sit. He stands by them under the tree as they eat, the posture of a host watching to see that his guests lack nothing.\n\nThe reader knows what Abraham does not yet fully grasp. Verse 1 has already said it: 'the LORD appeared to Abraham.' One of the three is no stranger at all. The covenant God who had spoken to Abraham in visions and at night now sits down in the dust and lets a human being wash His feet and feed Him lunch. The ancient world told stories of gods who tested mortals by arriving disguised; Scripture tells the truer story, where the living God genuinely comes near, genuinely receives a meal, and is genuinely host of the promise even while He is guest at the table.",
+      "keyInsight": "The covenant God does not summon Abraham to a mountain or a temple. He arrives at the tent flap in the heat of the day and lets Himself be fed. Holiness, here, looks like a guest.",
+      "content": "It is the hottest part of the day, the hour when the desert sends every sane person under cover. Abraham is doing exactly that - sitting in the shade at the mouth of his tent by the great oaks of Mamre, ninety-nine years old, the heat pressing down. He looks up. Three men are standing nearby. No introduction, no warning. Just travelers, where travelers rarely come.\n\nWatch how fast an old man can move. Abraham runs - the text says it twice, he ran to meet them and later ran to the herd. He bows to the ground, begs them not to pass him by, calls himself their servant. He promises 'a bit of bread' and then quietly orders a feast: three measures of fine flour, a tender calf, curds and milk. The understatement is the courtesy. You offer little and bring much. And then, having served, he does not sit. He stands by them under the tree as they eat, the posture of a host watching to see that his guests lack nothing.\n\nThe reader knows what Abraham does not yet fully grasp. Verse 1 has already said it: 'the LORD appeared to Abraham.' One of the three is no stranger at all. The covenant God who had spoken to Abraham in visions and at night now sits down in the dust and lets a human being wash His feet and feed Him lunch. The ancient world told stories of gods who tested mortals by arriving disguised; Scripture tells the truer story, where the living God genuinely comes near, genuinely receives a meal, and is genuinely host of the promise even while He is guest at the table."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Place Set for No One",
+      "body": "There is an old custom, kept in some homes still, of laying one extra place at the table - a plate, a cup, a chair pulled in - for the guest who has not come. Sometimes it is explained as a seat for Elijah. Sometimes it is simpler than that: a way of refusing to assume that the door is closed for the evening.\n\nI knew a woman who did this through a long widowhood, every meal, alone in a quiet kitchen. A neighbor once asked her, gently, whether it made the loneliness worse - the empty chair across the table night after night. She said no. She said it kept her from believing she was finished. As long as the place was set, she was a person who might still be visited. The chair was not for the dead. It was a refusal to stop expecting the living.\n\nAbraham, sitting in the heat at the door of his tent, is a man with a place still set. He has been waiting twenty-five years for a promise that has long since outrun his body. He could have gone inside, drawn the flap, and called the matter closed. Instead he is at the threshold, watching the road - and that is exactly where the LORD finds him.",
+      "connectionToTheme": "Hospitality is not only a kindness to the stranger; it is a posture of the soul that has not yet given up on being visited. Abraham keeps the door open, and God walks through it.",
+      "content": "There is an old custom, kept in some homes still, of laying one extra place at the table - a plate, a cup, a chair pulled in - for the guest who has not come. Sometimes it is explained as a seat for Elijah. Sometimes it is simpler than that: a way of refusing to assume that the door is closed for the evening.\n\nI knew a woman who did this through a long widowhood, every meal, alone in a quiet kitchen. A neighbor once asked her, gently, whether it made the loneliness worse - the empty chair across the table night after night. She said no. She said it kept her from believing she was finished. As long as the place was set, she was a person who might still be visited. The chair was not for the dead. It was a refusal to stop expecting the living.\n\nAbraham, sitting in the heat at the door of his tent, is a man with a place still set. He has been waiting twenty-five years for a promise that has long since outrun his body. He could have gone inside, drawn the flap, and called the matter closed. Instead he is at the threshold, watching the road - and that is exactly where the LORD finds him."
+    },
+    {
+      "type": "insight",
+      "heading": "The Laugh That Becomes a Name",
+      "body": "The meal is finished. Then the Guest does what no traveler should know to do: He asks for Sarah by name. And He makes a promise with a deadline on it - 'I will surely return to you at this time next year, and your wife Sarah will have a son.'\n\nSarah is just behind the tent flap, listening. She is past ninety. The text is blunt about it: she 'had passed the age of childbearing.' And so she laughs - not out loud, to herself, the bitter little laugh of a woman who has heard this promise before and watched it die in her body. 'After I am worn out and my master is old, will I now have this pleasure?'\n\nGod hears the laugh she thought was silent. But notice how He answers. He does not scold her into faith. He asks a question that is really the center of the whole chapter, and arguably of the whole Bible: 'Is anything too difficult for the LORD?' The Hebrew word is stronger than difficult - is anything too wonderful, too surpassing, for Him? It is the language of His Red Sea wonders, dropped quietly into a conversation about an old woman's body. The God who split a sea can open a womb. Barrenness is not a wall to Him; it is a canvas.\n\nAnd here is the mercy hidden in the grammar. Sarah's laugh, tzachaq, is the very sound that will name the child: Yitzchaq, Isaac, 'he laughs.' God takes the laugh of her unbelief and writes it onto the baby's birth certificate. The doubt does not disqualify the promise. The promise swallows the doubt and turns it into joy - so that every time she calls the boy's name across the camp for the rest of her life, she will be laughing again, differently now.",
+      "historicalContext": "Genesis 18 sits at the hinge of the Abraham story. In chapter 12 God had spoken a promise; in chapter 15 He cut a covenant in the dark; in chapter 17 He named the son in advance and sealed the covenant in flesh. Now, in chapter 18, the promise arrives at a table with a date attached. The whole movement of these chapters is from word, to covenant, to a meal where the impossible birth is announced face to face - the promise pressing toward flesh.",
+      "fascinatingFact": "Isaac is the first of a recurring pattern Scripture seems to delight in: the child who should not exist. Isaac from a barren, aged Sarah; Samson from the barren wife of Manoah; Samuel from a weeping Hannah; John the Baptist from Elizabeth, 'well along in years.' Each impossible birth raises the stakes of the question 'Is anything too wonderful for the LORD?' - until the line crests in a birth that needs no father at all.",
+      "content": "The meal is finished. Then the Guest does what no traveler should know to do: He asks for Sarah by name. And He makes a promise with a deadline on it - 'I will surely return to you at this time next year, and your wife Sarah will have a son.'\n\nSarah is just behind the tent flap, listening. She is past ninety. The text is blunt about it: she 'had passed the age of childbearing.' And so she laughs - not out loud, to herself, the bitter little laugh of a woman who has heard this promise before and watched it die in her body. 'After I am worn out and my master is old, will I now have this pleasure?'\n\nGod hears the laugh she thought was silent. But notice how He answers. He does not scold her into faith. He asks a question that is really the center of the whole chapter, and arguably of the whole Bible: 'Is anything too difficult for the LORD?' The Hebrew word is stronger than difficult - is anything too wonderful, too surpassing, for Him? It is the language of His Red Sea wonders, dropped quietly into a conversation about an old woman's body. The God who split a sea can open a womb. Barrenness is not a wall to Him; it is a canvas.\n\nAnd here is the mercy hidden in the grammar. Sarah's laugh, tzachaq, is the very sound that will name the child: Yitzchaq, Isaac, 'he laughs.' God takes the laugh of her unbelief and writes it onto the baby's birth certificate. The doubt does not disqualify the promise. The promise swallows the doubt and turns it into joy - so that every time she calls the boy's name across the camp for the rest of her life, she will be laughing again, differently now."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The LORD comes to Abraham's tent as a guest, lets Himself be fed, and announces life to a body everyone agrees is finished - sealing it with the question 'Is anything too wonderful for the LORD?'",
+      "modernApplication": "We tend to file our hardest hopes under 'past the age' - too late, too broken, too dead to bother God with. The marriage, the prodigal, the calling buried years ago, the prayer we stopped praying because we got tired of being disappointed. Genesis 18 does not promise that every closed womb opens on our timetable. It promises something harder and better: the One who keeps the promise still comes to the table, and the impossible is His native territory, not ours.",
+      "connectionPoint": "Centuries later another angel stands before another woman and says of another impossible birth, 'For no word from God will ever fail' (Luke 1:37) - the same confidence given to Sarah, that no promise of His outruns His power, now spoken to Mary. The God who visited Abraham's tent comes again, this time not as a guest who eats a meal but as the child who is the meal: 'the bread of life' who says, 'if anyone hears My voice and opens the door, I will come in and dine with him' (John 6:35; Revelation 3:20). The impossible promise reaches its appointed time not in a tent at Mamre but in a tomb that could not hold Him.",
+      "newTestamentEcho": "Abraham's three visitors at Mamre have been read by the Church for centuries as a window onto the God who would come near in the flesh - the Lord who lets Himself be received, fed, and welcomed by His own creatures. What was foreshadowed at the tent flap is fulfilled in the One who 'became flesh and made His dwelling among us' (John 1:14) and asks, still, to be let in."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of your hopes have you quietly filed under 'past the age' - too late, too dead, not worth bringing to God anymore?",
+      "additionalQuestions": [
+        "Abraham was found at the threshold, watching the road. Where in your life are you still keeping the door open, and where have you drawn the flap and called the matter closed?",
+        "Sarah laughed the laugh of someone who had been disappointed before. Is your hesitation toward God really unbelief - or is it grief that has stopped expecting? What would you say if He asked you directly, 'Why did you laugh?'",
+        "If you genuinely believed 'nothing is too wonderful for the LORD,' what is the one impossible thing you would dare to name to Him today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have laughed Sarah's laugh more times than I would admit out loud - the quiet laugh of someone tired of hoping. You heard it then; You hear mine now. Forgive me for filing my hardest hopes under 'too late' and shutting the door on them. Teach me to sit at the threshold again, watching the road. And where I have only ever measured the size of the obstacle, let me hear Your question instead: is anything too wonderful for You? Come to my table. I will set a place. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one hope you have quietly buried as 'past the age,' and bring it back to God in a single honest sentence today - not demanding the outcome, but reopening the door. Then go do one concrete act of welcome for someone who shows up unannounced, as if the Lord Himself were standing at your tent flap.",
+      "leavingAtCross": [
+        "The bitter little laugh that has stopped expecting good from God",
+        "The instinct to measure my hopes by the size of the obstacle instead of the size of God",
+        "The closed door - the hope I drew the flap on because I got tired of being disappointed"
+      ],
+      "receivingFromCross": [
+        "A God for whom nothing is too wonderful, who works in barren and finished places",
+        "The freedom to keep a place set, to stay at the threshold watching the road",
+        "The joy that swallows my doubt - the laugh of unbelief turned into the name of a gift"
+      ],
+      "content": "Name one hope you have quietly buried as 'past the age,' and bring it back to God in a single honest sentence today - not demanding the outcome, but reopening the door. Then go do one concrete act of welcome for someone who shows up unannounced, as if the Lord Himself were standing at your tent flap."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Verse 1 tells the reader 'the LORD appeared to Abraham' before Abraham seems to know who his guests are. What difference does it make that we, the readers, know the Guest's identity from the start?",
+        "The Hebrew behind 'too difficult' (pala) means 'too wonderful' - the language of God's great miracles. How does that change the weight of the question 'Is anything too difficult for the LORD?'",
+        "Sarah's laugh (tzachaq) becomes Isaac's name (Yitzchaq, 'he laughs'). What does it tell you about God that He builds the child's name out of the mother's doubt?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one hope you have quietly given up on, and why you stopped expecting it.",
+        "Talk honestly about the difference between unbelief and grief - is your hesitation toward God 'I don't think He can' or 'I'm tired of being disappointed'?",
+        "Ask each other: what would it look like this week to leave the door open - to live as people who still expect to be visited?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 21:6",
+          "text": "Then Sarah said, \"God has made me laugh, and everyone who hears of this will laugh with me.\""
+        },
+        {
+          "reference": "Luke 1:37",
+          "text": "For no word from God will ever fail."
+        },
+        {
+          "reference": "Hebrews 13:2",
+          "text": "Do not neglect to show hospitality to strangers, for by so doing some people have entertained angels without knowing it."
+        },
+        {
+          "reference": "Hebrews 11:11",
+          "text": "By faith Sarah, even though she was barren and beyond the proper age, was enabled to conceive a child, because she considered Him faithful who had promised."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 18-21",
+          "note": "Read straight through from the visit at Mamre to Isaac's birth, watching the promise of 18:14 land in 21:1-7 - and notice how Sarah's laugh changes key between the two scenes."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Sarah",
+      "title": "The Woman Who Laughed, Then Laughed Again",
+      "description": "Wife of Abraham and mother of the covenant child Isaac. For most of her life she was barren, and by Genesis 18 she is past ninety and 'well along in years.' Overhearing the promise of a son, she laughs in disbelief behind the tent flap - and is gently caught at it by the Lord, who hears the laugh she thought was silent. A year later she holds the impossible child and laughs again, this time for joy, naming him out of her own astonishment.",
+      "keyQuote": "After I am worn out and my master is old, will I now have this pleasure?",
+      "lessonForUs": "Sarah is the patron saint of the disappointed believer - the one who has heard the promise so long that hope curdled into a bitter little laugh. God neither pretends the laugh did not happen nor lets it have the last word. He keeps the promise anyway, and Hebrews 11 remembers her not for the laugh but for the faith underneath it.",
+      "heading": "The Woman Who Laughed, Then Laughed Again"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2505,
+  "scriptureReference_full": "Genesis 18:1-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (pala / hayippale, H6381; tzachaq and the naming of Yitzchaq) reflects standard lexical sources. The reading of Abraham's three visitors at Mamre as a window onto the God who draws near in the flesh follows a long line of Christian interpretation; the devotional takes no position on contested questions of how the three figures relate to one another."
+  ]
 }

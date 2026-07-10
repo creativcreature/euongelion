@@ -1,38 +1,193 @@
 {
   "day": 99,
-  "title": "Solomon's Drift — Day 1 — Hook",
-  "teaser": "Day 99 of Bible 365 — 1 Kings 11",
+  "title": "The Lamp He Would Not Let Go Out",
+  "teaser": "Solomon, the wisest king, drifts a thousand small steps from God. The kingdom tears. But a single tribe is held back — a lamp God refuses to extinguish for David's sake.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 99"
+      "type": "scripture",
+      "reference": "1 Kings 11:4, 9-13, 36",
+      "translation": "BSB",
+      "emphasis": [
+        "his wives turned his heart away",
+        "his heart had turned away",
+        "I will tear the kingdom away from you",
+        "a lamp before Me in Jerusalem"
+      ],
+      "hebrewOriginal": "לְמַעַן הֱיוֹת־נִיר לְדָוִיד־עַבְדִּי כָּל־הַיָּמִים לְפָנַי בִּירוּשָׁלִַם",
+      "passage": "For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. ... Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice. Although He had warned Solomon explicitly not to follow other gods, Solomon did not keep the LORD's command. Then the LORD said to Solomon, \"Because you have done this and have not kept My covenant and My statutes, which I have commanded you, I will tear the kingdom away from you and give it to your servant. Nevertheless, for the sake of your father David, I will not do it during your lifetime; I will tear it out of the hand of your son. Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David and for the sake of Jerusalem, which I have chosen.\" ... I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נִיר",
+      "transliteration": "nir",
+      "pronunciation": "neer",
+      "meaning": "a lamp, a light kept burning",
+      "rootMeaning": "Nir names the small clay lamp that is never allowed to go dark - the night-light kept lit on the household stand so the house is never wholly in shadow. It carries the idea of a fire that is fed, tended, never extinguished. To have a nir before the LORD is to have a flame God Himself keeps from guttering out.",
+      "usageNote": "The same image returns in 2 Kings 8:19 - \"He had promised to maintain a lamp for David and his descendants forever\" - and in Psalm 132:17, \"I have prepared a lamp for My anointed one.\" The word that holds the Davidic line together across the whole story is not throne or crown but lamp: the one thing in the house you do not let go out at night.",
+      "wordByWord": [
+        {
+          "word": "לְמַעַן",
+          "transliteration": "lema'an",
+          "meaning": "so that, for the purpose that"
+        },
+        {
+          "word": "הֱיוֹת",
+          "transliteration": "heyot",
+          "meaning": "there would be, that there might exist"
+        },
+        {
+          "word": "נִיר",
+          "transliteration": "nir",
+          "meaning": "a lamp, a light kept burning"
+        },
+        {
+          "word": "לְדָוִיד עַבְדִּי",
+          "transliteration": "leDavid avdi",
+          "meaning": "for David My servant"
+        },
+        {
+          "word": "כָּל־הַיָּמִים",
+          "transliteration": "kol-hayyamim",
+          "meaning": "all the days, always, continually"
+        },
+        {
+          "word": "לְפָנַי בִּירוּשָׁלִַם",
+          "transliteration": "lefanai birushalayim",
+          "meaning": "before Me in Jerusalem"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נֵר / אוֹר",
+          "reference": "Nir (the kept flame) is cousin to ner, the ordinary lamp, and stands near or, light itself. When Jesus says \"I am the light of the world\" (John 8:12), He speaks as the One in whom David's nir finally burns without end."
+        }
+      ],
+      "strongsNumber": "H5216",
+      "definition": "a lamp; figuratively, the perpetuity of a dynasty - a light kept lit so the house is never dark",
+      "usage": "God does not promise Solomon a throne untouched or a kingdom intact. He promises a lamp - one small, stubborn flame, kept burning by His own hand, for the sake of a man already dead. The kingdom can tear; the lamp will not go out."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How the Wisest Man Lost His Heart",
+      "body": "Solomon did not fall the way you would expect a king to fall. There is no single catastrophe in 1 Kings 11, no night of madness, no public crime. The man who asked God for wisdom and was given more than anyone before him drifts so quietly that the text has to slow down and name the years: \"when Solomon grew old.\" The fall took a lifetime.\n\nThe verb the chapter keeps returning to is turn. His wives turned his heart after other gods. His heart had turned away from the LORD. Not snapped, not broke - turned, the way a ship turns a single degree off course and arrives, weeks later, at a coast it never meant to reach. Each foreign altar Solomon built was a small kindness to a wife he loved, a reasonable accommodation, a diplomatic courtesy. None of them felt like apostasy on the day he laid the stones. Added up across a reign, they were exactly that.\n\nThe detail Scripture will not let us miss is in verse 9: this happened to a man \"who had appeared to him twice.\" Solomon was not a stranger to God. He had seen Him. He had heard Him at Gibeon and again after the Temple was built. The drift is more sobering precisely because the evidence was so strong. You can have an encounter with God in your past and a heart turned away from Him in your present, and the distance between the two can be built one small permission at a time.",
+      "content": "Solomon did not fall the way you would expect a king to fall. There is no single catastrophe in 1 Kings 11, no night of madness, no public crime. The man who asked God for wisdom and was given more than anyone before him drifts so quietly that the text has to slow down and name the years: \"when Solomon grew old.\" The fall took a lifetime.\n\nThe verb the chapter keeps returning to is turn. His wives turned his heart after other gods. His heart had turned away from the LORD. Not snapped, not broke - turned, the way a ship turns a single degree off course and arrives, weeks later, at a coast it never meant to reach. Each foreign altar Solomon built was a small kindness to a wife he loved, a reasonable accommodation, a diplomatic courtesy. None of them felt like apostasy on the day he laid the stones. Added up across a reign, they were exactly that.\n\nThe detail Scripture will not let us miss is in verse 9: this happened to a man \"who had appeared to him twice.\" Solomon was not a stranger to God. He had seen Him. He had heard Him at Gibeon and again after the Temple was built. The drift is more sobering precisely because the evidence was so strong. You can have an encounter with God in your past and a heart turned away from Him in your present, and the distance between the two can be built one small permission at a time.",
+      "keyInsight": "Solomon did not reject God in a moment. He accommodated other gods a little at a time, until a heart that had seen the LORD twice was no longer wholeheartedly His. Drift is not decided; it is permitted."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Path Worn Across the Lawn",
+      "body": "There is a thing landscape architects know and try to plan around. When a new campus or park opens, the designers lay out the walkways where they think people should go. And then they wait. Within a year, the grass tells the truth. A bare dirt line appears, cutting the corner the pavement refused to cut, worn by thousands of feet each choosing the shorter way. Planners have a name for these accidental paths: desire lines. No one decided to make them. Everyone made them.\n\nWhat is striking is that not one of those footsteps was an act of rebellion. Each person was simply late, or tired, or carrying something heavy, and the diagonal was three steps shorter. The path was never chosen. It was accumulated. By the time it is a rut in the earth, no single walker could point to the day they decided to wear it.\n\nThis is how Solomon's heart turned. Not a decision to abandon the LORD - a thousand small diagonals across the lawn, each one reasonable, each one shorter, until there was a worn track running straight to Chemosh and Molech and a man could not remember when the grass had last been whole.",
+      "connectionToTheme": "A drifting heart is rarely the product of one decision. It is a desire line worn across the soul by a thousand small, reasonable shortcuts - none of them rebellion, all of them a path.",
+      "content": "There is a thing landscape architects know and try to plan around. When a new campus or park opens, the designers lay out the walkways where they think people should go. And then they wait. Within a year, the grass tells the truth. A bare dirt line appears, cutting the corner the pavement refused to cut, worn by thousands of feet each choosing the shorter way. Planners have a name for these accidental paths: desire lines. No one decided to make them. Everyone made them.\n\nWhat is striking is that not one of those footsteps was an act of rebellion. Each person was simply late, or tired, or carrying something heavy, and the diagonal was three steps shorter. The path was never chosen. It was accumulated. By the time it is a rut in the earth, no single walker could point to the day they decided to wear it.\n\nThis is how Solomon's heart turned. Not a decision to abandon the LORD - a thousand small diagonals across the lawn, each one reasonable, each one shorter, until there was a worn track running straight to Chemosh and Molech and a man could not remember when the grass had last been whole."
+    },
+    {
+      "type": "insight",
+      "heading": "Tear and Nevertheless",
+      "body": "Listen to the shape of God's sentence in verses 11 through 13, because the whole gospel is hiding in its grammar. \"I will tear the kingdom away from you.\" That is justice, and it is real - the kingdom genuinely splits, and never reunites in Solomon's line. But the sentence does not end where justice ends. It turns on a single word: Nevertheless.\n\n\"Nevertheless, for the sake of your father David, I will not do it during your lifetime.\" \"Yet I will not tear the whole kingdom away.\" \"I will give one tribe to your son.\" Three times the verdict is real and three times mercy keeps one thread from snapping. And notice the ground of the mercy. It is never \"for the sake of Solomon,\" who has earned nothing here. It is \"for the sake of My servant David\" - a man already in his grave - and \"for the sake of Jerusalem, which I have chosen.\" The kindness Solomon receives is not owed to Solomon at all. It is borrowed against the faithfulness of another, and against a promise God made long before Solomon drifted.\n\nThis is the deepest pattern in Scripture surfacing at the front of the kings: judgment that is honest and mercy that is grounded outside the guilty party. God does not pretend the drift did not happen. He also does not let it have the last word. Between the tearing and the total ruin He plants one word - nevertheless - and on that word He hangs a lamp.",
+      "historicalContext": "1 Kings was compiled for a people who had lived the consequence - the kingdom did tear, into Israel in the north and Judah in the south, and the north fell to Assyria in 722 BC, the south to Babylon in 586 BC. Reading 1 Kings 11 in exile, Israel was not reading ancient history. They were reading the diagnosis of their own captivity, and looking for the one thing the chapter promised would survive it.",
+      "fascinatingFact": "God's mercy clause turns entirely on a man who is already dead. \"For the sake of My servant David\" appears again and again - in verses 12, 13, 32, 34, and 36 - long after David's bones are buried. The living king's only inheritance of grace is what the buried king secured. The kindness runs forward from a faithfulness that is already finished.",
+      "content": "Listen to the shape of God's sentence in verses 11 through 13, because the whole gospel is hiding in its grammar. \"I will tear the kingdom away from you.\" That is justice, and it is real - the kingdom genuinely splits, and never reunites in Solomon's line. But the sentence does not end where justice ends. It turns on a single word: Nevertheless.\n\n\"Nevertheless, for the sake of your father David, I will not do it during your lifetime.\" \"Yet I will not tear the whole kingdom away.\" \"I will give one tribe to your son.\" Three times the verdict is real and three times mercy keeps one thread from snapping. And notice the ground of the mercy. It is never \"for the sake of Solomon,\" who has earned nothing here. It is \"for the sake of My servant David\" - a man already in his grave - and \"for the sake of Jerusalem, which I have chosen.\" The kindness Solomon receives is not owed to Solomon at all. It is borrowed against the faithfulness of another, and against a promise God made long before Solomon drifted.\n\nThis is the deepest pattern in Scripture surfacing at the front of the kings: judgment that is honest and mercy that is grounded outside the guilty party. God does not pretend the drift did not happen. He also does not let it have the last word. Between the tearing and the total ruin He plants one word - nevertheless - and on that word He hangs a lamp."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart drifts and the kingdom is sentenced to tear, yet God refuses to let it tear completely: He keeps one tribe so that \"My servant David will always have a lamp before Me in Jerusalem\" - a flame preserved not for the guilty, but for the sake of a faithful man and a promise.",
+      "modernApplication": "Your standing before God on your worst day does not rest on how brightly you have managed to keep your own lamp burning. Solomon could not keep his. The lamp that holds is the one God tends Himself, for the sake of Another, by a promise He made before you drifted and keeps after you have.",
+      "connectionPoint": "Trace the lamp forward and it never goes out. When wicked kings deserved to be destroyed, 2 Kings 8:19 says the LORD \"was unwilling to destroy Judah, since He had promised to maintain a lamp for David and his descendants forever.\" Psalm 132:17 puts the same flame in God's own hands: \"I have prepared a lamp for My anointed one.\" The thread God spared from Solomon's wreckage runs, century after century, toward one descendant of David.",
+      "newTestamentEcho": "The lamp comes to its end at a manger. Gabriel tells Mary of her son, \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end\" (Luke 1:32-33). The flame God would not let go out in 1 Kings 11 is the throne that has no end in Luke 1 - and the One who sits on it says, \"I am the light of the world\" (John 8:12). Solomon could not stay faithful; Christ is the faithful King forever (Hebrews 1:8). The lamp was always Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is the desire line in your own life right now - the worn path you never decided to make, built from a hundred small, reasonable shortcuts away from God?",
+      "additionalQuestions": [
+        "Solomon had seen God twice and still drifted. What past experience of God are you trusting to hold you, while your present heart quietly turns elsewhere?",
+        "What 'small accommodation' have you made - a thing that felt like kindness, or peace-keeping, or just being reasonable - that is slowly becoming an altar?",
+        "If your standing with God rested on a lamp He keeps for you rather than one you keep for Him, what would loosen in you tonight?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I know how Solomon's heart turned, because I know my own. Not in one defiant night, but in a hundred quiet diagonals, each one reasonable, until I had worn a path away from You I never meant to walk. Show me the desire lines in me. Where I have built small altars to things I love more than You, tear them down gently. And thank You - thank You - that my hope was never the lamp I keep, but the lamp You tend: kept burning for the sake of Another, in Christ the Son of David, whose kingdom will not end. Be my nevertheless tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one desire line - one small, reasonable shortcut away from God you have been quietly wearing into your week. Don't try to fix your whole heart. Just stand at the edge of that one worn path, tell God the truth about it, and ask Him to keep the lamp burning while you turn back a single degree.",
+      "leavingAtCross": [
+        "The thousand small accommodations I never named as drift",
+        "The belief that a past encounter with God excuses a present turning away",
+        "The exhausting project of keeping my own lamp lit by my own faithfulness"
+      ],
+      "receivingFromCross": [
+        "A lamp God tends Himself, kept burning for the sake of Another",
+        "An honest verdict that does not pretend my drift away didn't happen - and a 'nevertheless' that does not let it win",
+        "Christ the Son of David, the faithful King whose kingdom and whose light will never end"
+      ],
+      "content": "Today, name one desire line - one small, reasonable shortcut away from God you have been quietly wearing into your week. Don't try to fix your whole heart. Just stand at the edge of that one worn path, tell God the truth about it, and ask Him to keep the lamp burning while you turn back a single degree."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does the word 'turn' describe the way Solomon fell - and why does that make his drift more like ours than a single dramatic sin would?",
+        "On what basis does God show Solomon mercy in verses 12-13? Whose faithfulness grounds it, and why does that matter?",
+        "What is the 'lamp' God promises to keep in verse 36, and how does it run forward through 2 Kings 8:19 and Psalm 132:17 to Luke 1:32-33?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'desire line' the other can see in your life that you might have stopped noticing - a small, reasonable path away from God you've worn smooth.",
+        "Talk honestly about the danger of coasting on a past experience of God while the present heart drifts. Where is that happening for each of you?",
+        "Ask each other: do you live as though you keep your own lamp lit, or as though God keeps it for you in Christ? How would the second change this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Samuel 7:12-13",
+          "text": "When your days are fulfilled and you rest with your fathers, I will raise up your descendant after you... and I will establish the throne of his kingdom forever."
+        },
+        {
+          "reference": "2 Kings 8:19",
+          "text": "Yet for the sake of His servant David, the LORD was unwilling to destroy Judah, since He had promised to maintain a lamp for David and his descendants forever."
+        },
+        {
+          "reference": "Psalm 132:17",
+          "text": "There I will make a horn grow for David; I have prepared a lamp for My anointed one."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter slowly, watching the movement from love (v. 1) to turning (vv. 3-9) to the torn kingdom (vv. 11-13, 31-35) to the lamp that is kept (v. 36) - and end on the 'but not forever' of verse 39."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wisest King, Who Drifted",
+      "description": "Son of David and Bathsheba, third king of Israel, builder of the Temple, given wisdom and wealth beyond any before him. God appeared to him twice. Yet across a long reign, his many foreign wives turned his heart, and the king who once prayed for an understanding heart ended his days building high places to Chemosh and Molech. His story is the front-of-the-canon warning that wisdom received is not the same as faithfulness kept - and that even the wisest heart can be lost one small permission at a time.",
+      "keyQuote": "His wives turned his heart away.",
+      "lessonForUs": "If the wisest man who ever lived could drift this far on a thousand small accommodations, none of us is too sharp, too experienced, or too far along to lose our hearts the same quiet way. Our hope is not a lamp we are clever enough to keep, but the lamp God kept for David - which never went out, and burns now in Christ the Son of David.",
+      "heading": "The Wisest King, Who Drifted"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2598,
+  "scriptureReference_full": "1 Kings 11:4, 9-13, 36",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (nir, H5216) reflects standard lexical sources; the 'lamp' as a figure for the perpetuity of the Davidic dynasty is drawn directly from the canonical usage in 2 Kings 8:19 and Psalm 132:17.",
+    "The 'desire lines' illustration refers to a well-documented practice in landscape architecture and urban planning; no specific person or quotation is attributed."
+  ]
 }

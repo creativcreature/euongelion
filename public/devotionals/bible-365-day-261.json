@@ -1,38 +1,183 @@
 {
   "day": 261,
-  "title": "Jonah: Mercy on Enemies — Day 2 — Building",
-  "teaser": "Day 261 of Bible 365 — Jonah 1-4",
+  "title": "The Prophet Who Ran Downhill",
+  "teaser": "Sent east to his enemies, Jonah runs west to the sea. Every step is a descent — down to Joppa, down into the ship, down into sleep — and the God he flees is already in the water ahead of him.",
   "framework": "Jonah 1-4 — Jonah: Mercy on Enemies",
   "scriptureReference": "Jonah 1-4",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 261"
+      "type": "scripture",
+      "reference": "Jonah 1:1-3",
+      "translation": "BSB",
+      "emphasis": [
+        "Get up! Go to the great city of Nineveh",
+        "Jonah, however, got up to flee to Tarshish",
+        "away from the presence of the LORD"
+      ],
+      "hebrewOriginal": "וַיָּקָם יוֹנָה לִבְרֹחַ תַּרְשִׁישָׁה מִלִּפְנֵי יְהוָה",
+      "passage": "Now the word of the LORD came to Jonah son of Amittai, saying, \"Get up! Go to the great city of Nineveh and preach against it, because its wickedness has come up before Me.\" Jonah, however, got up to flee to Tarshish, away from the presence of the LORD. He went down to Joppa and found a ship bound for Tarshish. So he paid the fare and went aboard to sail for Tarshish, away from the presence of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jonah 1-4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jonah 1-4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מִלִּפְנֵי יְהוָה",
+      "transliteration": "milliphnei YHWH",
+      "pronunciation": "mee-lif-NAY a-do-NAI",
+      "meaning": "away from the presence of the LORD; from before the face of the LORD",
+      "rootMeaning": "The word at the center is panim - face, presence, the front of a person turned toward you. Milliphnei means literally 'from the face of.' To flee milliphnei YHWH is to try to get out from in front of God's face, to put yourself somewhere His attention does not reach.",
+      "usageNote": "The phrase appears twice in a single verse (Jonah 1:3), bracketing Jonah's flight like two walls. The narrator wants you to feel the absurdity: a Hebrew prophet, who in the next breath confesses that the LORD 'made the sea and the dry land' (1:9), is sailing onto that very sea to escape the One who made it. There is no milliphnei. There is nowhere that is not before His face.",
+      "wordByWord": [
+        {
+          "word": "מִן",
+          "transliteration": "min",
+          "meaning": "from, away from"
+        },
+        {
+          "word": "לִפְנֵי",
+          "transliteration": "liphnei",
+          "meaning": "to the face of, before, in the presence of"
+        },
+        {
+          "word": "פָּנִים",
+          "transliteration": "panim",
+          "meaning": "face, presence - the root underneath liphnei"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "וַיֵּרֶד / yarad",
+          "reference": "The verb 'to go down' (yarad) drums through chapter 1: Jonah went down to Joppa, went down into the ship (1:3, 5), and in the storm went down into a deep sleep. Flight from God's face is always, in Jonah, a journey downward - and it does not stop until the sea floor (2:6)."
+        }
+      ],
+      "strongsNumber": "H6440",
+      "definition": "panim: the face, the presence; figuratively the favor or attention of a person",
+      "usage": "Psalm 139 asks the question Jonah is trying to answer with his feet: 'Where can I flee from Your presence?' The psalmist concludes there is no such place - in the heights, in the depths, in the sea, God is already there. Jonah will learn the same truth the hard way, from inside a fish."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jonah: Mercy on Enemies. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Jonah (Matt 12:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Sent East, He Ran West",
+      "body": "The book opens with a command and a direction. \"Get up! Go to the great city of Nineveh.\" Nineveh sat far to the east and inland, the proud capital of Assyria - the empire that would one day grind Israel's northern kingdom into the dust. To a prophet of Israel, no errand could be less welcome. God was sending Jonah toward the people he most wanted to see destroyed.\n\nSo Jonah got up - and went the opposite way. Tarshish was the far western edge of the known world, as far from Nineveh as a ship could carry him. He went down to Joppa, paid the fare, and boarded. Twice in one verse the narrator tells us why: he was fleeing \"away from the presence of the LORD.\" Jonah is not a man who has stopped believing in God. He is a man who believes in God and runs anyway, because he is afraid he knows exactly what kind of God he serves.\n\nWatch the geography of the heart here. Every verb is a descent. Down to Joppa. Down into the lowest part of the ship. Down into a sleep so deep that a heathen captain has to wake him while the vessel groans toward splitting apart. Sin in this book is not a leap upward into forbidden heights; it is a sinking, a settling lower and lower, until the runaway is lying unconscious in the hold while everyone above him fights for their lives.",
+      "keyInsight": "Jonah's problem was never that he doubted God. His problem was that he believed God was merciful - and could not bear the thought of that mercy spent on his enemies.",
+      "content": "The book opens with a command and a direction. \"Get up! Go to the great city of Nineveh.\" Nineveh sat far to the east and inland, the proud capital of Assyria - the empire that would one day grind Israel's northern kingdom into the dust. To a prophet of Israel, no errand could be less welcome. God was sending Jonah toward the people he most wanted to see destroyed.\n\nSo Jonah got up - and went the opposite way. Tarshish was the far western edge of the known world, as far from Nineveh as a ship could carry him. He went down to Joppa, paid the fare, and boarded. Twice in one verse the narrator tells us why: he was fleeing \"away from the presence of the LORD.\" Jonah is not a man who has stopped believing in God. He is a man who believes in God and runs anyway, because he is afraid he knows exactly what kind of God he serves.\n\nWatch the geography of the heart here. Every verb is a descent. Down to Joppa. Down into the lowest part of the ship. Down into a sleep so deep that a heathen captain has to wake him while the vessel groans toward splitting apart. Sin in this book is not a leap upward into forbidden heights; it is a sinking, a settling lower and lower, until the runaway is lying unconscious in the hold while everyone above him fights for their lives."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Long Way Around",
+      "body": "A man I know once drove ninety minutes out of his way to avoid a stretch of highway that ran past the hospital where his father had died. He told himself it was traffic. It was not traffic. For two years he reorganized his whole map of the city around one place he refused to pass.\n\nWe think of running away as a burst of speed. More often it is the opposite - a slow, deliberate, exhausting effort to build a life with a certain door bricked over. The energy Jonah spends getting to Joppa, finding the right ship, counting out the fare, settling into the hold to sleep is the energy of avoidance, and avoidance is rarely lazy. It is one of the hardest things a person does.\n\nThe thing he was fleeing was not punishment. Jonah will say it plainly in chapter four: he ran because he knew the LORD was \"a gracious and compassionate God, slow to anger, abounding in loving devotion.\" He could not stomach the possibility that this kindness might reach Nineveh. So he took the long way around - and discovered, as runaways always do, that the road he chose to escape God led straight back into His hands.",
+      "connectionToTheme": "The effort we pour into avoiding God is rarely about unbelief. More often we are running from something we are afraid is true about Him - here, that His mercy might be wider than ours.",
+      "content": "A man I know once drove ninety minutes out of his way to avoid a stretch of highway that ran past the hospital where his father had died. He told himself it was traffic. It was not traffic. For two years he reorganized his whole map of the city around one place he refused to pass.\n\nWe think of running away as a burst of speed. More often it is the opposite - a slow, deliberate, exhausting effort to build a life with a certain door bricked over. The energy Jonah spends getting to Joppa, finding the right ship, counting out the fare, settling into the hold to sleep is the energy of avoidance, and avoidance is rarely lazy. It is one of the hardest things a person does.\n\nThe thing he was fleeing was not punishment. Jonah will say it plainly in chapter four: he ran because he knew the LORD was \"a gracious and compassionate God, slow to anger, abounding in loving devotion.\" He could not stomach the possibility that this kindness might reach Nineveh. So he took the long way around - and discovered, as runaways always do, that the road he chose to escape God led straight back into His hands."
+    },
+    {
+      "type": "insight",
+      "heading": "The Pagans Pray; The Prophet Sleeps",
+      "body": "The storm exposes everyone. The LORD hurls a great wind onto the sea, and the ship begins to come apart. Now look who does what. The sailors - pagan men, each with his own god - cry out, throw the cargo overboard, do everything human hands can do. The prophet of the true God is asleep below deck. It takes a foreign captain to preach the first sermon in the book: \"How can you sleep? Get up and call upon your God.\"\n\nThe irony is sharp and deliberate. The men who do not know the LORD behave better than the man who does. When the lot falls on Jonah and he finally speaks, his confession is theologically perfect - \"I worship the LORD, the God of the heavens, who made the sea and the dry land\" - and completely disconnected from his conduct. He can recite who God is while sailing in the wrong direction. Then comes the strangest mercy of the chapter: Jonah tells them the storm will stop if they throw him overboard. The sailors, horrified, row harder to save the man who is sinking their ship. They pray for forgiveness before they finally do it. When they cast him in and the sea goes still, these pagan men fear the LORD, offer sacrifice, and make vows. Jonah's disobedience, swallowed by the deep, somehow ends with a boatload of Gentiles worshiping his God. Even the prophet's running is bent toward mercy he did not intend.",
+      "historicalContext": "Jonah son of Amittai is named once outside this book - in 2 Kings 14:25 - as a prophet active during the reign of Jeroboam II of Israel, in the first half of the eighth century BC. Assyria was the rising terror of that world; within a generation of Jeroboam its armies would begin dismantling the northern kingdom, and in 722 BC Samaria would fall. To send an Israelite prophet to call Nineveh to repentance was to ask him to seek the welfare of the nation poised to destroy his own.",
+      "fascinatingFact": "The first recorded act of worship of the true God in the book of Jonah is performed not by the prophet but by pagan sailors (1:16). The book is built on this reversal: outsiders repent and worship, while the insider sulks. It is one of the most pointed critiques of religious privilege in all of Scripture - and it comes from inside Israel's own prophetic tradition.",
+      "content": "The storm exposes everyone. The LORD hurls a great wind onto the sea, and the ship begins to come apart. Now look who does what. The sailors - pagan men, each with his own god - cry out, throw the cargo overboard, do everything human hands can do. The prophet of the true God is asleep below deck. It takes a foreign captain to preach the first sermon in the book: \"How can you sleep? Get up and call upon your God.\"\n\nThe irony is sharp and deliberate. The men who do not know the LORD behave better than the man who does. When the lot falls on Jonah and he finally speaks, his confession is theologically perfect - \"I worship the LORD, the God of the heavens, who made the sea and the dry land\" - and completely disconnected from his conduct. He can recite who God is while sailing in the wrong direction. Then comes the strangest mercy of the chapter: Jonah tells them the storm will stop if they throw him overboard. The sailors, horrified, row harder to save the man who is sinking their ship. They pray for forgiveness before they finally do it. When they cast him in and the sea goes still, these pagan men fear the LORD, offer sacrifice, and make vows. Jonah's disobedience, swallowed by the deep, somehow ends with a boatload of Gentiles worshiping his God. Even the prophet's running is bent toward mercy he did not intend."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jonah is hurled into a raging sea so that the men in the ship will not perish, and at the cost of his going down the storm is stilled. He spends three days and three nights in the belly of the fish before he is brought up alive onto dry land.",
+      "modernApplication": "We still draw our maps around the people we have decided God's mercy should not reach - the family member we have written off, the political enemy, the group we secretly hope gets what it deserves. Jonah's flight is not exotic. It is the ordinary shape of a heart that wants grace for itself and judgment for the people it fears. The question the book presses is not 'will God forgive me?' but 'can I bear it if He forgives them?'",
+      "connectionPoint": "Jonah's three days in the deep do not stay buried in the eighth century BC. Centuries later, when a hostile crowd demands a sign, Jesus reaches back to this exact scene and makes it the one sign He will give them - the one moment in the prophet's story that points past the prophet to Himself.",
+      "newTestamentEcho": "Jesus said, \"For as Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth\" (Matthew 12:40). Jonah went down so the sailors might live; Christ went down into death so that we might. Then Jesus adds the sting Jonah would have hated: \"The men of Nineveh will stand at the judgment with this generation and condemn it; for they repented at the preaching of Jonah, and now One greater than Jonah is here\" (Matthew 12:41)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who is your Nineveh - the person or group you would rather not see receive the mercy you want for yourself?",
+      "additionalQuestions": [
+        "Where in your life are you spending real energy taking 'the long way around' to avoid something God has clearly asked of you?",
+        "Jonah's words about God were exactly right while his feet were going exactly wrong. Where is your theology more obedient than your life?",
+        "The pagan sailors prayed while the prophet slept. Is there someone 'outside' your faith whose response to trouble quietly rebukes your own?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I know how to run while still believing in You. I have my Tarshish, my hold below deck, my long way around. Show me the command I have been sailing away from, and the face I have been trying to put behind me. Forgive me for wanting Your kindness for myself and Your judgment for the people I fear. You made the sea and the dry land; there is nowhere I can go where You are not already waiting. Meet me there, and turn me back toward Nineveh. Through Christ, who went down into the deep for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name your Nineveh out loud today - the person or group you would rather see judged than saved. Then pray, by name, the one prayer Jonah refused to pray: ask God to be merciful to them. Notice what rises in you while you do it.",
+      "leavingAtCross": [
+        "The map I have drawn to avoid the one place God keeps sending me",
+        "My quiet hope that God's mercy will stop short of the people I fear or resent",
+        "The comfort of a faith that confesses God correctly and obeys Him barely"
+      ],
+      "receivingFromCross": [
+        "A God whose presence I cannot outrun - and would not want to",
+        "The freedom of a mercy so wide it includes both me and my enemy",
+        "The Son of Man who went down into the deep so that I, and they, might be raised"
+      ],
+      "content": "Name your Nineveh out loud today - the person or group you would rather see judged than saved. Then pray, by name, the one prayer Jonah refused to pray: ask God to be merciful to them. Notice what rises in you while you do it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Jonah is sent east to Nineveh and runs west to Tarshish. What does this say about what he was actually afraid of - punishment, or mercy?",
+        "Trace the word 'down' through Jonah 1. What does the direction of his flight reveal about the direction of all avoidance?",
+        "Why does it matter that the pagan sailors worship the LORD before the prophet ever obeys Him?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other the name of one 'Nineveh' - a person or group you struggle to want God's mercy for.",
+        "Where are you currently taking 'the long way around' to avoid an assignment you suspect God has given you?",
+        "Talk honestly about a time your beliefs about God were sound while your behavior was sailing the other direction. What pulled you back?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 14:25",
+          "text": "He restored the boundary of Israel from Lebo-hamath to the Sea of the Arabah, according to the word that the LORD, the God of Israel, had spoken through His servant Jonah son of Amittai, the prophet from Gath-hepher."
+        },
+        {
+          "reference": "Psalm 139:7-8",
+          "text": "Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there."
+        },
+        {
+          "reference": "Jonah 1:9",
+          "text": "\"I am a Hebrew,\" replied Jonah. \"I worship the LORD, the God of the heavens, who made the sea and the dry land.\""
+        },
+        {
+          "reference": "Matthew 12:40-41",
+          "text": "For as Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth. The men of Nineveh will stand at the judgment with this generation and condemn it; for they repented at the preaching of Jonah, and now One greater than Jonah is here."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jonah 1",
+          "note": "Read the chapter in one sitting, watching the repeated word 'down' (Joppa, the ship, sleep, the sea) and noticing how the pagan sailors' actions mirror and rebuke the prophet's."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jonah son of Amittai",
+      "title": "The Reluctant Prophet of Gath-hepher",
+      "era": "8th century BC (reign of Jeroboam II)",
+      "description": "A genuine prophet of the northern kingdom of Israel, named in 2 Kings 14:25 as one through whom God spoke a word of national restoration. Sent to call Nineveh - capital of Assyria, Israel's looming destroyer - to repentance, Jonah instead fled by sea, was thrown overboard in a storm, swallowed by a great fish, and only then carried back to obey. His story is less about a fish than about a heart that found God's mercy unbearable when aimed at an enemy.",
+      "keyQuote": "I am a Hebrew. I worship the LORD, the God of the heavens, who made the sea and the dry land.",
+      "lessonForUs": "You can be entirely right about who God is and entirely wrong about where you are going. Jonah's flight exposes the gap between confessing a merciful God and being willing to live inside that mercy - especially when it reaches the people we would rather see judged.",
+      "heading": "The Reluctant Prophet of Gath-hepher"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1614,
+  "scriptureReference_full": "Jonah 1-4",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (milliphnei YHWH, panim H6440; the 'down'/yarad motif of Jonah 1) reflects standard lexical sources and the plain reading of the Hebrew text.",
+    "Historical placement of Jonah son of Amittai follows 2 Kings 14:25 and the standard dating of Jeroboam II's reign."
+  ]
 }

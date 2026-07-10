@@ -1,38 +1,189 @@
 {
   "day": 36,
   "title": "A slave’s cry",
-  "teaser": "Day 36 of Bible 365 — Exodus 1-2",
+  "teaser": "Day 36 of Bible 365 — Exodus 1-2. A new king forgets Joseph, an empire builds itself on Hebrew backs, and for chapters God seems silent. Then a wordless groan goes up, and heaven moves.",
   "framework": "Exodus 1-2 — God hears the oppressed",
   "scriptureReference": "Exodus 1-2",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 36"
+      "type": "scripture",
+      "reference": "Exodus 2:23-25",
+      "translation": "BSB",
+      "emphasis": [
+        "cried out",
+        "God heard their groaning",
+        "He remembered His covenant",
+        "God saw the Israelites and took notice"
+      ],
+      "hebrewOriginal": "וַיִּשְׁמַע אֱלֹהִים אֶת־נַאֲקָתָם וַיִּזְכֹּר אֱלֹהִים אֶת־בְּרִיתוֹ אֶת־אַבְרָהָם אֶת־יִצְחָק וְאֶת־יַעֲקֹב",
+      "passage": "After a long time, the king of Egypt died. The Israelites groaned and cried out under their burden of slavery, and their cry for deliverance from bondage ascended to God. So God heard their groaning, and He remembered His covenant with Abraham, Isaac, and Jacob. God saw the Israelites and took notice."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 1-2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 1-2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיִּזְכֹּר",
+      "transliteration": "vayyizkor",
+      "pronunciation": "vai-yiz-KORE",
+      "meaning": "and He remembered, called to mind, acted on what He had not forgotten",
+      "rootMeaning": "From zakar (H2142). In Hebrew, to remember is rarely about retrieving a fact one had lost. It means to bring something to the front of attention and then to act on it. When God remembers His covenant, He is not recalling a promise He had misplaced — He is moving on it.",
+      "usageNote": "Exodus 2:24-25 stacks four verbs of attention back to back: God heard (shama), remembered (zakar), saw (raah), and knew or took notice (yada). After a chapter and a half of divine silence, the text suddenly will not stop telling you that God is paying attention. The pile-up is the point.",
+      "wordByWord": [
+        {
+          "word": "וַיִּשְׁמַע",
+          "transliteration": "vayyishma",
+          "meaning": "and He heard — not merely registered sound, but listened and was moved (shama, H8085)"
+        },
+        {
+          "word": "נַאֲקָתָם",
+          "transliteration": "naaqatam",
+          "meaning": "their groaning — the wordless cry of pain too deep for speech (naaqah, H5009)"
+        },
+        {
+          "word": "וַיִּזְכֹּר",
+          "transliteration": "vayyizkor",
+          "meaning": "and He remembered — brought to mind and acted on (zakar, H2142)"
+        },
+        {
+          "word": "בְּרִיתוֹ",
+          "transliteration": "berito",
+          "meaning": "His covenant — the binding promise made to Abraham, Isaac, and Jacob"
+        },
+        {
+          "word": "וַיֵּדַע",
+          "transliteration": "vayyeda",
+          "meaning": "and He knew, took notice — knowledge that draws close, not distant observation (yada, H3045)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מֹשֶׁה / מָשָׁה",
+          "reference": "Moses (Moshe) is named in 2:10 from the verb mashah, to draw out: 'I drew him out of the water.' The deliverer's own name is a rescue from drowning. The one Pharaoh's decree should have killed in the Nile is pulled living from the Nile and given a name that means pulled-out."
+        }
+      ],
+      "strongsNumber": "H2142",
+      "definition": "zakar: to remember, be mindful of, call to mind — and to act on what is remembered",
+      "usage": "When Scripture says God remembered, deliverance is about to begin. He remembered Noah, and the waters receded. He remembered Abraham, and Lot was rescued. He remembers His covenant here, and Egypt's hold is finished — though Israel cannot see it yet."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God hears the oppressed. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ identifies with the oppressed (Luke 4:18).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Chapter Where God Says Nothing",
+      "body": "Exodus opens with a list of names — the sons of Israel who came down to Egypt, seventy souls in all. It reads like the close of a family story. Joseph had risen, the famine had been survived, the brothers had been reconciled. Genesis ended with a coffin in Egypt and a promise that God would surely visit His people. Then Exodus turns the page, and the names give way to numbers.\n\nThe Israelites were fruitful and increased rapidly; they multiplied and became exceedingly numerous, so that the land was filled with them. That sentence is no accident. It is the language of Genesis 1 — be fruitful and multiply — pressed into a single oppressed people. God's first command to humanity is still running, quietly, inside an empire that does not yet feel threatened.\n\nThen comes the hinge of the whole book: a new king, who did not know Joseph, came to power in Egypt. One forgotten name, and a civilization tips toward cruelty. Pharaoh looks at a thriving people and sees only a threat to be managed. He appoints taskmasters. He works the Israelites ruthlessly and makes their lives bitter with hard labor in brick and mortar. When forced labor fails to break them, he commands the midwives to kill the boys at birth. When the midwives — Shiphrah and Puah, named while Pharaoh is left nameless — quietly refuse because they feared God, he escalates to genocide: every son born to the Hebrews you must throw into the Nile.\n\nAnd through all of it, for a chapter and more, God does not speak. He sends no prophet. He works no plague. The reader, who knows the covenant, keeps waiting for heaven to answer — and heaven seems shut.",
+      "keyInsight": "The book of deliverance opens with God apparently silent and an empire apparently winning. Scripture lets the silence sit, because most of us pray from inside it.",
+      "content": "Exodus opens with a list of names — the sons of Israel who came down to Egypt, seventy souls in all. It reads like the close of a family story. Joseph had risen, the famine had been survived, the brothers had been reconciled. Genesis ended with a coffin in Egypt and a promise that God would surely visit His people. Then Exodus turns the page, and the names give way to numbers.\n\nThe Israelites were fruitful and increased rapidly; they multiplied and became exceedingly numerous, so that the land was filled with them. That sentence is no accident. It is the language of Genesis 1 — be fruitful and multiply — pressed into a single oppressed people. God's first command to humanity is still running, quietly, inside an empire that does not yet feel threatened.\n\nThen comes the hinge of the whole book: a new king, who did not know Joseph, came to power in Egypt. One forgotten name, and a civilization tips toward cruelty. Pharaoh looks at a thriving people and sees only a threat to be managed. He appoints taskmasters. He works the Israelites ruthlessly and makes their lives bitter with hard labor in brick and mortar. When forced labor fails to break them, he commands the midwives to kill the boys at birth. When the midwives — Shiphrah and Puah, named while Pharaoh is left nameless — quietly refuse because they feared God, he escalates to genocide: every son born to the Hebrews you must throw into the Nile.\n\nAnd through all of it, for a chapter and more, God does not speak. He sends no prophet. He works no plague. The reader, who knows the covenant, keeps waiting for heaven to answer — and heaven seems shut."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Basket and the River That Was Supposed to Kill Him",
+      "body": "A man of the house of Levi marries a daughter of Levi, and a son is born under a death sentence. His mother hides him three months — the length a desperate love can buy against an empire. When she can hide him no longer, she does something strange and brave. She takes a papyrus basket, coats it with tar and pitch, lays the child inside, and sets him among the reeds along the bank of the Nile.\n\nRead it slowly. Pharaoh's law says: throw every Hebrew son into the Nile. The mother obeys the letter and defies the heart of it. She puts her son into the very river meant to drown him — sealed, floating, waiting. The Hebrew word for her little vessel is the same word used for one other object in all of Scripture: tevah, the ark Noah built. Two arks, two waters that should have meant death, two times a remnant rides through judgment and comes out alive.\n\nAnd who finds the basket? Pharaoh's own daughter, come down to bathe. She opens it, sees the crying boy, and has compassion on him. The daughter of the man trying to kill Hebrew sons reaches into the killing river and lifts one out — then pays his own mother to nurse him. The child grows, and she names him Moses, because, she says, I drew him out of the water. The empire's river becomes the cradle of the empire's undoing. None of it looks like rescue while it is happening. It looks like a mother letting go of a basket and walking away.",
+      "connectionToTheme": "Long before God speaks, He is already at work in the dark — bending Pharaoh's river, Pharaoh's law, and Pharaoh's own household toward the deliverance no one can yet see.",
+      "content": "A man of the house of Levi marries a daughter of Levi, and a son is born under a death sentence. His mother hides him three months — the length a desperate love can buy against an empire. When she can hide him no longer, she does something strange and brave. She takes a papyrus basket, coats it with tar and pitch, lays the child inside, and sets him among the reeds along the bank of the Nile.\n\nRead it slowly. Pharaoh's law says: throw every Hebrew son into the Nile. The mother obeys the letter and defies the heart of it. She puts her son into the very river meant to drown him — sealed, floating, waiting. The Hebrew word for her little vessel is the same word used for one other object in all of Scripture: tevah, the ark Noah built. Two arks, two waters that should have meant death, two times a remnant rides through judgment and comes out alive.\n\nAnd who finds the basket? Pharaoh's own daughter, come down to bathe. She opens it, sees the crying boy, and has compassion on him. The daughter of the man trying to kill Hebrew sons reaches into the killing river and lifts one out — then pays his own mother to nurse him. The child grows, and she names him Moses, because, she says, I drew him out of the water. The empire's river becomes the cradle of the empire's undoing. None of it looks like rescue while it is happening. It looks like a mother letting go of a basket and walking away."
+    },
+    {
+      "type": "insight",
+      "heading": "Heaven Answered a Groan, Not a Sermon",
+      "body": "Here is the center of these two chapters, and it is easy to miss because it is so quiet. After a long time, the king of Egypt died. The Israelites groaned and cried out under their burden of slavery, and their cry for deliverance from bondage ascended to God.\n\nNotice what reaches heaven. Not a polished prayer. Not a theology of suffering. Not even a request, exactly. The text says they groaned. The Hebrew is naaqah — the involuntary cry that comes out of a body in pain, the sound you make when there are no words left. The slaves do not pray toward God so much as their agony simply rises, the way smoke rises. And it ascends to God.\n\nThen the verbs come, four of them, fast: God heard their groaning, and He remembered His covenant with Abraham, Isaac, and Jacob. God saw the Israelites and took notice. After more than a chapter of total silence, Scripture floods the page with God's attention. He was never absent. He was never unaware. He was keeping covenant in the dark, while the bricks piled up and the babies died and the people assumed the heavens were empty. The silence was not absence. It was the long pause before deliverance, and the thing that ended the silence was not eloquence. It was a groan.",
+      "historicalContext": "Exodus stands at the foundation of Israel's identity. Every later generation read its own crises against this story: God hears slaves, God remembers covenant, God acts to set free. The Passover, the prophets' cry against injustice, the hope of return from exile — all of it draws from this well. When Israel suffered, they did not ask whether God could deliver; they asked Him to do again what He did at the Nile.",
+      "fascinatingFact": "Verses 24 and 25 contain no human action at all — only God hearing, remembering, seeing, knowing. It is the only thing that happens in the entire scene, and from the reader's vantage point it is everything. The deliverance Israel will spend the next fourteen chapters living through has already, in these two verses, begun in the heart of God.",
+      "content": "Here is the center of these two chapters, and it is easy to miss because it is so quiet. After a long time, the king of Egypt died. The Israelites groaned and cried out under their burden of slavery, and their cry for deliverance from bondage ascended to God.\n\nNotice what reaches heaven. Not a polished prayer. Not a theology of suffering. Not even a request, exactly. The text says they groaned. The Hebrew is naaqah — the involuntary cry that comes out of a body in pain, the sound you make when there are no words left. The slaves do not pray toward God so much as their agony simply rises, the way smoke rises. And it ascends to God.\n\nThen the verbs come, four of them, fast: God heard their groaning, and He remembered His covenant with Abraham, Isaac, and Jacob. God saw the Israelites and took notice. After more than a chapter of total silence, Scripture floods the page with God's attention. He was never absent. He was never unaware. He was keeping covenant in the dark, while the bricks piled up and the babies died and the people assumed the heavens were empty. The silence was not absence. It was the long pause before deliverance, and the thing that ended the silence was not eloquence. It was a groan."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel's wordless groaning ascended to God, and He heard it, remembered His covenant, saw His people, and took notice — beginning a deliverance no slave could see.",
+      "modernApplication": "You may be praying from inside your own silent chapter — a stretch where the bricks keep coming, the river keeps rising, and heaven seems shut. Exodus says the silence is not the same as absence. The God who heard a groan beneath an empire hears the cry you cannot put into words.",
+      "connectionPoint": "This is the pattern the whole of Scripture trusts: the oppressed cry, and God comes down. It is exactly how Jesus describes His own mission. In the Nazareth synagogue He opens the scroll and reads, 'The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives... to release the oppressed' (Luke 4:18). The God who heard slaves groaning in Egypt put on flesh and came to the captives Himself.",
+      "newTestamentEcho": "Moses was a son hidden from a king's slaughter, drawn alive out of the water that was meant to kill him, who would lead his people out of slavery. Matthew tells of another infant — sons slaughtered by another fearful king, a child carried down into Egypt and called back out of it (Matthew 2:13-15), drawn up through the waters of baptism, who leads His people out of a deeper bondage than Egypt's. The deliverer drawn from the Nile points forward to the Deliverer who hears every groan and answers it with His own life."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you concluded that God's silence means God's absence — and what would change if the silence were instead the long pause before deliverance?",
+      "additionalQuestions": [
+        "Israel's groaning reached heaven before it became words. What is the wordless cry you have not yet dared to bring to God?",
+        "Shiphrah and Puah feared God more than Pharaoh and quietly defied an evil law. Where is God asking for that kind of quiet, costly faithfulness from you?",
+        "When you read that 'God heard, remembered, saw, took notice,' which of those four do you most need to believe is true of God toward you right now?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God of Abraham, Isaac, and Jacob, I have spent days assuming Your silence was Your absence. Forgive me. You heard a groan beneath an empire; hear the cry I can barely put into words. Where I am making bricks for a Pharaoh that will never be satisfied, set me free. Where I am hiding a fragile hope in a basket, watch over it on the water. You remember Your covenant when I forget mine. Draw me out, as You drew Moses, and let me trust that the deliverance has already begun in You. Through Christ, who came to proclaim liberty to the captives. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name your Egypt out loud to God — the burden, the silence, the thing you have stopped asking Him to change — and then read Exodus 2:23-25 slowly, letting the four verbs land: He heard, He remembered, He saw, He took notice. Carry one of those four words with you into the day.",
+      "leavingAtCross": [
+        "The belief that God's silence in my suffering means He has forgotten me",
+        "The exhaustion of making bricks for a master that can never be satisfied",
+        "The fear that my prayers have to be eloquent before God will hear them"
+      ],
+      "receivingFromCross": [
+        "The promise that my wordless groan ascends to a God who hears",
+        "The truth that God remembers His covenant even when I cannot feel it",
+        "A Deliverer who came to the captives Himself and was drawn up through the water ahead of me"
+      ],
+      "content": "Today, name your Egypt out loud to God — the burden, the silence, the thing you have stopped asking Him to change — and then read Exodus 2:23-25 slowly, letting the four verbs land: He heard, He remembered, He saw, He took notice. Carry one of those four words with you into the day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does it tell us about God that the book of deliverance opens with Him apparently silent for more than a chapter while Israel suffers?",
+        "Why does it matter that what 'ascended to God' was a wordless groan rather than a formal prayer?",
+        "How does Moses — a Hebrew son drawn alive out of the killing river — point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where God has felt silent lately. What has that silence tempted you to believe about Him?",
+        "Shiphrah and Puah are named while Pharaoh is not. Talk about where obeying God might mean quietly disobeying a powerful pressure in your own life.",
+        "Ask each other: which of the four verbs — heard, remembered, saw, took notice — do you most need to hear God say over you this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 50:24",
+          "text": "Then Joseph said to his brothers, “I am about to die, but God will surely visit you and bring you up from this land to the land He promised on oath to Abraham, Isaac, and Jacob.”"
+        },
+        {
+          "reference": "Exodus 3:7",
+          "text": "The LORD said, “I have indeed seen the affliction of My people in Egypt. I have heard them crying out because of their oppressors, and I am aware of their sufferings."
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "“The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed,"
+        },
+        {
+          "reference": "Romans 8:26",
+          "text": "In the same way, the Spirit helps us in our weakness. For we do not know how we ought to pray, but the Spirit Himself intercedes for us with groans too deep for words."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 1-2",
+          "note": "Read both chapters in one sitting, watching the structure: silence and oppression (ch. 1), a hidden deliverer drawn from the water (2:1-22), and the groan that finally reaches heaven (2:23-25)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Shiphrah and Puah",
+      "title": "The Midwives Who Feared God",
+      "era": "Egypt, before the Exodus",
+      "key_trait": "Quiet, costly defiance of evil out of reverence for God",
+      "description": "Two Hebrew midwives commanded by Pharaoh himself to kill every Hebrew boy at birth. They refused — not by open rebellion, but by simply continuing to let the boys live, because, Scripture says, they feared God more than they feared the king. In a chapter where the most powerful man on earth is left nameless, these two ordinary women are named and remembered. God dealt well with them and gave them families of their own.",
+      "keyQuote": "The midwives, however, feared God and did not do as the king of Egypt had instructed; they let the boys live.",
+      "lessonForUs": "Deliverance in Exodus does not begin with a hero on a mountain. It begins with two women doing one faithful, dangerous thing in the dark, trusting a God who seemed silent. Most obedience looks like that — small, unseen, and braver than it feels.",
+      "heading": "The Midwives Who Feared God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2316,
+  "scriptureReference_full": "Exodus 1-2 (anchor: Exodus 2:23-25)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (zakar H2142, shama H8085, naaqah H5009, yada H3045; mashah / Moshe) reflects standard lexical sources. The tevah parallel between Moses' basket (Exodus 2:3) and Noah's ark (Genesis 6:14) is a feature of the Hebrew text noted across standard commentary."
+  ]
 }

@@ -1,38 +1,186 @@
 {
   "day": 335,
-  "title": "Acts: Pentecost + Spread — Day 6 — Deeper Dive",
-  "teaser": "Day 335 of Bible 365 — Acts 1-10",
+  "title": "The One Who Pours",
+  "teaser": "At Pentecost the rushing wind and the flames are not the Spirit replacing the absent Jesus. They are the exalted Jesus, distributing His own life to a frightened room - and then, in Cornelius's house, to the whole far-off world.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 335"
+      "type": "scripture",
+      "reference": "Acts 2:32-33",
+      "translation": "BSB",
+      "emphasis": [
+        "Exalted, then, to the right hand of God",
+        "He has received from the Father the promised Holy Spirit",
+        "has poured out what you now see and hear"
+      ],
+      "greekOriginal": "τῇ δεξιᾷ οὖν τοῦ Θεοῦ ὑψωθεὶς τήν τε ἐπαγγελίαν τοῦ Πνεύματος τοῦ Ἁγίου λαβὼν παρὰ τοῦ Πατρὸς ἐξέχεεν τοῦτο ὃ ὑμεῖς βλέπετε καὶ ἀκούετε",
+      "passage": "God has raised this Jesus to life, to which we are all witnesses. Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐξέχεεν",
+      "transliteration": "execheen",
+      "pronunciation": "ex-EH-kheh-en",
+      "meaning": "He poured out, He emptied out, He spilled",
+      "rootMeaning": "From ek (out) and cheo (to pour). It is the verb you would use for emptying a vessel completely - tipping it until nothing is held back. Peter does not say the Spirit arrived; he says the Spirit was poured.",
+      "usageNote": "The same verb describes Christ's own blood being poured out for the forgiveness of sins (Matthew 26:28). At Pentecost the One who was poured out now does the pouring. What was spent on the cross is now lavished on the church.",
+      "wordByWord": [
+        {
+          "word": "ὑψωθεὶς",
+          "transliteration": "hypsotheis",
+          "meaning": "having been exalted, lifted high"
+        },
+        {
+          "word": "τῇ δεξιᾷ τοῦ Θεοῦ",
+          "transliteration": "te dexia tou Theou",
+          "meaning": "to / by the right hand of God - the place of authority"
+        },
+        {
+          "word": "λαβὼν",
+          "transliteration": "labon",
+          "meaning": "having received, taken into His hand"
+        },
+        {
+          "word": "ἐπαγγελίαν",
+          "transliteration": "epangelian",
+          "meaning": "the promise - what the Father pledged"
+        },
+        {
+          "word": "ἐξέχεεν",
+          "transliteration": "execheen",
+          "meaning": "He poured out, emptied completely"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐκχέω / שָׁפַךְ (ekcheo / shaphak)",
+          "reference": "Peter is quoting Joel 2:28, where God says shaphak - 'I will pour out My Spirit on all flesh.' The Greek ekcheo carries the prophet's word forward: the long-promised flood has arrived, and it has a name and a face."
+        }
+      ],
+      "strongsNumber": "G1632",
+      "definition": "to pour out, shed forth, spill; used of liquids and, figuratively, of the Spirit lavishly given",
+      "usage": "The verb is active and personal. The Spirit is not a force that leaks into history on its own. He is poured - deliberately, by a hand at the right hand of God."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Wind Has a Name",
+      "body": "Read the opening of Acts slowly and you notice an absence about to be filled. Jesus has been raised; for forty days He has eaten with His friends and spoken of the kingdom. Then He tells them to wait. \"Do not leave Jerusalem,\" He says, \"but wait for the gift the Father promised\" (Acts 1:4). And then, in front of them, He is taken up, and the sky closes over the place where He stood.\n\nSo the disciples wait in a room. They are not waiting for a feeling or a strategy. They are waiting for a Person they have been promised but do not yet possess. Then the day of Pentecost comes. \"Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting. They saw tongues like flames of fire that separated and came to rest on each of them\" (Acts 2:2-3). Wind and fire - the two images Israel had always used for the presence of God on the mountain.\n\nWhen the crowd gathers, bewildered, Peter stands and explains what the wind and fire actually are. He does not point to himself. He points up. The Jesus they crucified, he says, God raised and exalted to His right hand, \"and has poured out what you now see and hear\" (Acts 2:33). The thing shaking the building is not a replacement for the Christ who left. It is the Christ who left, now reaching back down with full hands.",
+      "keyInsight": "Pentecost is not the Spirit standing in for an absent Jesus. It is the exalted Jesus distributing His own life. The wind has a name, and the name is the One they nailed up.",
+      "content": "Read the opening of Acts slowly and you notice an absence about to be filled. Jesus has been raised; for forty days He has eaten with His friends and spoken of the kingdom. Then He tells them to wait. \"Do not leave Jerusalem,\" He says, \"but wait for the gift the Father promised\" (Acts 1:4). And then, in front of them, He is taken up, and the sky closes over the place where He stood.\n\nSo the disciples wait in a room. They are not waiting for a feeling or a strategy. They are waiting for a Person they have been promised but do not yet possess. Then the day of Pentecost comes. \"Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting. They saw tongues like flames of fire that separated and came to rest on each of them\" (Acts 2:2-3). Wind and fire - the two images Israel had always used for the presence of God on the mountain.\n\nWhen the crowd gathers, bewildered, Peter stands and explains what the wind and fire actually are. He does not point to himself. He points up. The Jesus they crucified, he says, God raised and exalted to His right hand, \"and has poured out what you now see and hear\" (Acts 2:33). The thing shaking the building is not a replacement for the Christ who left. It is the Christ who left, now reaching back down with full hands."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Inheritance Nobody Could Touch",
+      "body": "A friend of mine spent two years as the executor of his father's estate. There was money set aside for the grandchildren, real and promised and theirs by name in the will - and for two years not one of them could touch a dollar of it. The estate had to clear probate. Someone had to be seated at the right desk, with the right authority, before the promised thing could be poured into anyone's account.\n\nThe disciples in that upper room are living in the gap between a promise and its release. The gift is real. The Father pledged it. But it cannot be distributed until the right Person is seated at the right hand.\n\nThat is why Peter's sentence runs in the exact order it does: exalted first, then received, then poured out. The seating comes before the spending. The Spirit who fills the house is the proof, in wind and flame, that the will has cleared - that Jesus is enthroned, that the inheritance is no longer pending, that what was held in heaven is now being handed down to a frightened room full of fishermen.",
+      "connectionToTheme": "The Spirit is poured out only after Christ is enthroned - the gift follows the seating, the inheritance follows the One who holds the right to distribute it.",
+      "content": "A friend of mine spent two years as the executor of his father's estate. There was money set aside for the grandchildren, real and promised and theirs by name in the will - and for two years not one of them could touch a dollar of it. The estate had to clear probate. Someone had to be seated at the right desk, with the right authority, before the promised thing could be poured into anyone's account.\n\nThe disciples in that upper room are living in the gap between a promise and its release. The gift is real. The Father pledged it. But it cannot be distributed until the right Person is seated at the right hand.\n\nThat is why Peter's sentence runs in the exact order it does: exalted first, then received, then poured out. The seating comes before the spending. The Spirit who fills the house is the proof, in wind and flame, that the will has cleared - that Jesus is enthroned, that the inheritance is no longer pending, that what was held in heaven is now being handed down to a frightened room full of fishermen."
+    },
+    {
+      "type": "insight",
+      "heading": "Poured Out, Then Pouring",
+      "body": "Hold two scenes side by side and the whole book opens up. In Acts 2 the Spirit is poured out on Jews gathered in Jerusalem - the very city where Jesus died, the very people Peter calls to repent. Three thousand are added in a day. It would be easy to read this as a closed circle: the gift returning home to Israel.\n\nThen comes Acts 10, and the circle breaks. Peter, a Jew who would not have entered a Gentile home a week earlier, stands in the house of Cornelius, a Roman officer, and says, \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him\" (Acts 10:34-35). And while he is still speaking, the same thing happens again: \"the Holy Spirit fell upon all who heard his message,\" and the believers who came with Peter were \"astounded that the gift of the Holy Spirit had been poured out even on the Gentiles\" (Acts 10:44-45).\n\nSame verb. Same pouring. Different room. What the exalted Christ began in a Jerusalem upstairs He carries, in eight chapters, into a Roman household - and the only thing that changed is how far the pouring reached. The fire that fell on Peter is the fire that fell on Cornelius. The gift was never meant to pool; it was always meant to spread.",
+      "historicalContext": "Pentecost (Greek for 'fiftieth') was the Feast of Weeks, fifty days after Passover - a harvest festival that drew Jewish pilgrims to Jerusalem 'from every nation under heaven' (Acts 2:5). Luke is precise about this. The Spirit is poured out on the one day the city is most full of the scattered nations of Israel, foreshadowing the wider scattering of the gospel that the book will trace from Jerusalem to Rome.",
+      "fascinatingFact": "Peter's words at Cornelius's house - 'poured out even on the Gentiles' - use the same root as Joel's prophecy that God would pour His Spirit on 'all flesh.' In Acts 10 the church watches a centuries-old promise stretch past the boundary they assumed it stopped at. The astonishment in verse 45 is the sound of a wall coming down.",
+      "content": "Hold two scenes side by side and the whole book opens up. In Acts 2 the Spirit is poured out on Jews gathered in Jerusalem - the very city where Jesus died, the very people Peter calls to repent. Three thousand are added in a day. It would be easy to read this as a closed circle: the gift returning home to Israel.\n\nThen comes Acts 10, and the circle breaks. Peter, a Jew who would not have entered a Gentile home a week earlier, stands in the house of Cornelius, a Roman officer, and says, \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him\" (Acts 10:34-35). And while he is still speaking, the same thing happens again: \"the Holy Spirit fell upon all who heard his message,\" and the believers who came with Peter were \"astounded that the gift of the Holy Spirit had been poured out even on the Gentiles\" (Acts 10:44-45).\n\nSame verb. Same pouring. Different room. What the exalted Christ began in a Jerusalem upstairs He carries, in eight chapters, into a Roman household - and the only thing that changed is how far the pouring reached. The fire that fell on Peter is the fire that fell on Cornelius. The gift was never meant to pool; it was always meant to spread."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The exalted Christ receives the promised Spirit from the Father and pours Him out - first on Jews at Pentecost, then on Gentiles in Cornelius's house - so that the gift of God reaches 'all who are far off' (Acts 2:39).",
+      "modernApplication": "If you have ever felt too far off, too late, too foreign to the family of God to belong, Acts answers before you finish the thought. The pouring reached a Roman soldier who knew none of the customs and had never set foot in the temple. The question in Acts is never whether you are near enough. It is whether the One who pours has reached your room yet.",
+      "connectionPoint": "Acts 1-10 traces a single river widening. Jesus maps the course before He leaves: 'you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth' (Acts 1:8). Pentecost is the headwaters in Jerusalem. The scattering after Stephen carries it into Samaria. Cornelius opens it to the nations. The same Spirit, poured by the same exalted Christ, keeps breaking past every edge.",
+      "newTestamentEcho": "Peter ends the Pentecost sermon with the reach already built in: 'This promise belongs to you and your children and to all who are far off - to all whom the Lord our God will call to Himself' (Acts 2:39). The 'far off' is not an afterthought added in chapter 10. It was in the promise from the first day."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you waiting in an 'upper room' - holding a promise you have been given but do not yet feel you possess?",
+      "additionalQuestions": [
+        "When you picture the Holy Spirit, do you picture an impersonal force, or the personal gift of the Christ who knows your name? What changes if it is the second?",
+        "Is there a room - a person, a group, a kind of people - you have quietly assumed the pouring of God does not reach? What would Acts 10 say to that assumption?",
+        "Peter had to repent of his own boundary before he could see God's. Where might God be widening a circle you have drawn too small?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, exalted at the Father's right hand, You did not leave us as orphans. You received the promise and You poured it out - and You are pouring still. Where I have waited as though the gift were withheld, fill the room. Where I have drawn the circle too small, astound me as You astounded Peter. Pour out on me what I cannot manufacture: Your own life, given freely to one who was far off and has been called near. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place you have been treating the Spirit as absent or withheld - and pray, out loud, the one line of Acts 2:39 over it: 'to all who are far off.' Then ask the exalted Christ to pour into that exact room.",
+      "leavingAtCross": [
+        "The fear that the gift of God has passed me by, or arrived too late",
+        "The boundary I have drawn around who the Spirit is allowed to reach",
+        "The habit of treating the Holy Spirit as a force rather than the personal gift of Christ Himself"
+      ],
+      "receivingFromCross": [
+        "The Spirit poured out by the exalted Jesus - not earned, but given",
+        "A place in the 'all who are far off' the promise was always meant to include",
+        "The astonishment of watching God's circle prove wider than my own"
+      ],
+      "content": "Today, name one place you have been treating the Spirit as absent or withheld - and pray, out loud, the one line of Acts 2:39 over it: 'to all who are far off.' Then ask the exalted Christ to pour into that exact room."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Peter's sentence at Pentecost, what comes first - the pouring out of the Spirit, or Christ being exalted to the right hand? Why does the order matter?",
+        "What is the same, and what is different, between the outpouring in Acts 2 and the outpouring in Cornelius's house in Acts 10?",
+        "How does Acts 2:39 - 'to all who are far off' - show that the spread to the Gentiles was promised from the very first day, not invented later?"
+      ],
+      "forAccountabilityPartners": [
+        "Where are you living in the gap between a promise God has made and a gift you do not yet feel you hold? Talk about the waiting.",
+        "Name one 'Cornelius' in your life - a person or kind of person you have quietly assumed is outside God's reach. What would it cost you to be astonished instead?",
+        "Ask each other: do I relate to the Holy Spirit as the personal gift of Jesus, or as something vaguer and more distant? Why?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
+        },
+        {
+          "reference": "Acts 2:17",
+          "text": "'In the last days, God says, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.'"
+        },
+        {
+          "reference": "Acts 2:39",
+          "text": "This promise belongs to you and your children and to all who are far off - to all whom the Lord our God will call to Himself."
+        },
+        {
+          "reference": "Acts 10:44-45",
+          "text": "While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message. All the circumcised believers who had accompanied Peter were astounded that the gift of the Holy Spirit had been poured out even on the Gentiles."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 2 and Acts 10",
+          "note": "Read both outpouring scenes back to back. Watch for the repeated language of 'poured out' and 'the gift,' and notice how the second scene deliberately echoes the first in a Gentile home."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cornelius",
+      "title": "The Centurion God Reached",
+      "description": "A Roman centurion stationed in Caesarea, described as devout and God-fearing, generous to the poor and given to prayer - yet a Gentile, outside the covenant boundaries Israel had long observed. Through paired visions, God sends Peter to his house, and while Peter is still preaching, the Holy Spirit falls on Cornelius and his household exactly as on the believers at Pentecost. He becomes the hinge on which the gospel turns outward to the nations.",
+      "keyQuote": "Can anyone withhold the water to baptize these people? They have received the Holy Spirit just as we have!",
+      "lessonForUs": "Cornelius did not earn his way in by becoming a Jew first; the exalted Christ poured out on him the same gift He poured out in Jerusalem. The proof that you belong to the family of God is not your pedigree but the Spirit given to you - and that Spirit is given to the far off.",
+      "heading": "The Centurion God Reached"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1791,
+  "scriptureReference_full": "Acts 1-10 (anchor: Acts 2:32-33)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (execheen / ekcheo, G1632) reflects standard lexical sources; the link to Joel 2:28 (shaphak) follows Peter's own citation in Acts 2:16-17."
+  ]
 }

@@ -1,38 +1,181 @@
 {
   "day": 325,
-  "title": "John: Garden, Cross, Resurrection — Day 3 — Pivot",
-  "teaser": "Day 325 of Bible 365 — John 15-21",
+  "title": "She thought He was the gardener",
+  "teaser": "John sets the cross and the empty tomb in a garden, and lets Mary mistake the risen Christ for the gardener. She is not wrong. He is.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 325"
+      "type": "scripture",
+      "reference": "John 19:41; 20:14-16",
+      "translation": "BSB",
+      "emphasis": [
+        "there was a garden",
+        "Thinking He was the gardener",
+        "Mary",
+        "Rabboni"
+      ],
+      "greekOriginal": "ἐκεῖνη δοκοῦσα ὅτι ὁ κηπουρός ἐστιν",
+      "passage": "Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid... When she had said this, she turned around and saw Jesus standing there; but she did not recognize that it was Jesus. \"Woman, why are you weeping?\" Jesus asked. \"Whom are you seeking?\" Thinking He was the gardener, she said, \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\" Jesus said to her, \"Mary.\" She turned and said to Him in Hebrew, \"Rabboni!\" (which means \"Teacher\")."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "κῆπος / κηπουρός",
+      "transliteration": "kēpos / kēpouros",
+      "pronunciation": "KAY-poss / kay-poo-ROSS",
+      "meaning": "garden / gardener, keeper of a garden",
+      "rootMeaning": "Kēpos is a planted, enclosed garden - an orchard or vineyard kept by hand, not a wild field. Kēpouros joins kēpos to ouros, a watcher or guardian: the one who tends and guards the garden.",
+      "usageNote": "John is the only Gospel writer who calls the place of the crucifixion a kēpos, and he says it three times in two chapters (18:1, 18:26, 19:41). No other evangelist puts a garden at the cross. When Mary takes the risen Jesus for the kēpouros in 20:15, John has been preparing the word for pages. The mistake is the point.",
+      "wordByWord": [
+        {
+          "word": "δοκοῦσα",
+          "transliteration": "dokousa",
+          "meaning": "supposing, thinking - she formed a wrong opinion that turned out truer than she knew"
+        },
+        {
+          "word": "κηπουρός",
+          "transliteration": "kēpouros",
+          "meaning": "the gardener, the keeper of the garden"
+        },
+        {
+          "word": "ἐστιν",
+          "transliteration": "estin",
+          "meaning": "he is - a statement of fact, not a guess, in the grammar"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "גַּן (gan)",
+          "reference": "The Hebrew word for the Garden of Eden in Genesis 2:8, rendered kēpos in the Greek Old Testament the early church read. The garden where the man was placed \"to cultivate and keep it\" (Genesis 2:15) is the same kind of place John names at the tomb."
+        }
+      ],
+      "strongsNumber": "G2779",
+      "definition": "kēpos: a garden, a planted and enclosed plot of ground; kēpouros (G2780): its keeper",
+      "usage": "Mary's error is the kind the Gospel of John loves: a person says something mistaken on the surface that is exactly right underneath. She thinks she is talking to the man who tends this garden. She is."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Why John Keeps Saying Garden",
+      "body": "By Day 3 of this stretch we have moved through the last things Jesus said before He died. The vine and the branches in chapter 15. The promise of the Spirit in chapter 16. The long prayer of chapter 17, where He lifts His eyes and says, \"Father, the hour has come.\" Then the arrest, the trial, the cross. John walks us through all of it. And as he does, he keeps using a word the other Gospels never use for these scenes.\n\nA garden. Jesus crosses the Kidron Valley and goes into a garden to pray and be betrayed (18:1). A servant remembers seeing Peter there: \"Didn't I see you with Him in the garden?\" (18:26). And when it is over, John tells us where they laid the body: \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb\" (19:41). Matthew, Mark, and Luke describe a tomb cut from rock. Only John plants a garden around it.\n\nThis is not decoration. John opened his Gospel by reaching back past Bethlehem, past Abraham, all the way to the first words of the Bible: \"In the beginning was the Word\" (1:1). He has been telling the whole human story from its source. And the human story begins in a garden - a planted, enclosed place where God put the man \"to cultivate and keep it\" (Genesis 2:15), and where, when everything broke, the man hid among the trees and heard God walking in the cool of the day. John has been carrying that garden the whole time. Now, at the end, he sets the cross down inside one.",
+      "keyInsight": "The other Gospels put the resurrection at a tomb. John puts it in a garden - because he is telling the story of the human race, and that story started in a garden and is being mended in one.",
+      "content": "By Day 3 of this stretch we have moved through the last things Jesus said before He died. The vine and the branches in chapter 15. The promise of the Spirit in chapter 16. The long prayer of chapter 17, where He lifts His eyes and says, \"Father, the hour has come.\" Then the arrest, the trial, the cross. John walks us through all of it. And as he does, he keeps using a word the other Gospels never use for these scenes.\n\nA garden. Jesus crosses the Kidron Valley and goes into a garden to pray and be betrayed (18:1). A servant remembers seeing Peter there: \"Didn't I see you with Him in the garden?\" (18:26). And when it is over, John tells us where they laid the body: \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb\" (19:41). Matthew, Mark, and Luke describe a tomb cut from rock. Only John plants a garden around it.\n\nThis is not decoration. John opened his Gospel by reaching back past Bethlehem, past Abraham, all the way to the first words of the Bible: \"In the beginning was the Word\" (1:1). He has been telling the whole human story from its source. And the human story begins in a garden - a planted, enclosed place where God put the man \"to cultivate and keep it\" (Genesis 2:15), and where, when everything broke, the man hid among the trees and heard God walking in the cool of the day. John has been carrying that garden the whole time. Now, at the end, he sets the cross down inside one."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Wrong Name That Was Right",
+      "body": "A woman I knew lost her husband in the spring. For weeks afterward she would catch sight of a man at a distance - in the grocery line, across the parking lot, mowing a yard two streets over - and her chest would jump before her mind caught up. The shoulders were right. The walk was right. And then he would turn, and it was someone else, and she would have to grieve all over again in the produce aisle.\n\nGrief does that. It hangs the face you have lost over every stranger, and every time, the stranger turns and it is not him.\n\nMary Magdalene comes to the tomb before sunrise, while it is still dark, and the stone is gone and the body is gone, and she stands there weeping. A man speaks to her out of the half-light. She assumes he works there. Of course she does - it is a garden, someone tends it, who else would be up at this hour. \"Sir, if you have carried Him off, tell me where you have put Him.\" She is not seeing a ghost or a vision. She is seeing, she thinks, the gardener. And then he says one word. Her name. \"Mary.\" And the face she has been hanging over every stranger turns - and this time it is Him.",
+      "connectionToTheme": "Mary's mistake is not foolishness; it is grief and the dim light of dawn. But John lets the mistake stand on the page because, beneath the grief, she has correctly identified who is keeping this garden.",
+      "content": "A woman I knew lost her husband in the spring. For weeks afterward she would catch sight of a man at a distance - in the grocery line, across the parking lot, mowing a yard two streets over - and her chest would jump before her mind caught up. The shoulders were right. The walk was right. And then he would turn, and it was someone else, and she would have to grieve all over again in the produce aisle.\n\nGrief does that. It hangs the face you have lost over every stranger, and every time, the stranger turns and it is not him.\n\nMary Magdalene comes to the tomb before sunrise, while it is still dark, and the stone is gone and the body is gone, and she stands there weeping. A man speaks to her out of the half-light. She assumes he works there. Of course she does - it is a garden, someone tends it, who else would be up at this hour. \"Sir, if you have carried Him off, tell me where you have put Him.\" She is not seeing a ghost or a vision. She is seeing, she thinks, the gardener. And then he says one word. Her name. \"Mary.\" And the face she has been hanging over every stranger turns - and this time it is Him."
+    },
+    {
+      "type": "insight",
+      "heading": "She Was Not Wrong",
+      "body": "Here is the pivot the whole reading has been climbing toward. Mary calls Him the gardener by mistake. But John, who chose every word in this scene on purpose, lets the mistake sit there uncorrected on the page - because in the deepest sense, she is exactly right.\n\nThe human story began with a man set in a garden to keep it, and a keeper who failed. Adam was the first gardener, and he let the garden go to ruin; thorns came up, the ground was cursed, and the man was sent out east of Eden with a flaming sword behind him. From that day the whole Bible is the story of a garden lost and a way back barred. And now, in another garden, before another sunrise, a second Man is standing where the first one fell. He has just worn a crown of thorns - the very curse of the cursed ground, twisted and pressed onto His head (19:5; compare Genesis 3:18). He has died inside the garden and come out of the tomb inside the garden, alive.\n\nPaul will later call Him exactly this: the last Adam, the second man (1 Corinthians 15:45-47). Mary reaches for the nearest plain word for the figure in front of her - the one who tends the garden - and hands the risen Christ His truest title without knowing she has done it. He is the Gardener. He has come back to the garden the first one lost, to keep what could not be kept, and to make it grow again.",
+      "historicalContext": "First-century tombs of the wealthy were often hewn into rock within walled garden estates outside the city, so a real gardener in a real garden is entirely natural to the scene - John is not inventing a setting, he is noticing a true one and seeing what it means.",
+      "fascinatingFact": "John frames his Gospel between two gardens. It opens by echoing Genesis - \"In the beginning\" (1:1) - and it closes with crucifixion and resurrection set in a kēpos. The book that begins where the Bible begins ends by walking the human story back into a garden and leaving it there, alive, with the curse worn out on a cross.",
+      "content": "Here is the pivot the whole reading has been climbing toward. Mary calls Him the gardener by mistake. But John, who chose every word in this scene on purpose, lets the mistake sit there uncorrected on the page - because in the deepest sense, she is exactly right.\n\nThe human story began with a man set in a garden to keep it, and a keeper who failed. Adam was the first gardener, and he let the garden go to ruin; thorns came up, the ground was cursed, and the man was sent out east of Eden with a flaming sword behind him. From that day the whole Bible is the story of a garden lost and a way back barred. And now, in another garden, before another sunrise, a second Man is standing where the first one fell. He has just worn a crown of thorns - the very curse of the cursed ground, twisted and pressed onto His head (19:5; compare Genesis 3:18). He has died inside the garden and come out of the tomb inside the garden, alive.\n\nPaul will later call Him exactly this: the last Adam, the second man (1 Corinthians 15:45-47). Mary reaches for the nearest plain word for the figure in front of her - the one who tends the garden - and hands the risen Christ His truest title without knowing she has done it. He is the Gardener. He has come back to the garden the first one lost, to keep what could not be kept, and to make it grow again."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In a garden, the first man hid from God's voice and was sent out under a curse, with thorns coming up from cursed ground. In another garden, the risen Christ - crowned with those very thorns - stands alive at dawn and calls a weeping woman by name.",
+      "modernApplication": "We still tend gardens we cannot keep: the marriage, the body, the family, the faith we are watching go to seed despite our work. The whole human project of keeping the garden ourselves is the thing the cross exposes and the resurrection answers. The Gardener has come back to the plot we ruined - not to scold the keeping out of us, but to do the keeping Himself.",
+      "connectionPoint": "Earlier in this same week Jesus had told the disciples, \"I am the true vine, and My Father is the keeper of the vineyard... apart from Me you can do nothing\" (15:1, 15:5). On Thursday He calls Himself the vine the Father tends. On Sunday Mary calls Him the gardener who tends the vine. The image folds shut: the one who is the true planting is also the true planter, and He keeps what we could not.",
+      "newTestamentEcho": "\"So it is written: 'The first man Adam became a living being'; the last Adam a life-giving spirit... The first man was of the dust of the earth, the second man from heaven\" (1 Corinthians 15:45, 47). And in the garden that very evening, Jesus breathes on the disciples and says, \"Receive the Holy Spirit\" (John 20:22) - the same breath God breathed into the dust of the first man (Genesis 2:7), now breathed into the new humanity by the second."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What garden in your life have you been trying to keep on your own strength - and what would it mean to let the true Gardener tend it instead of you?",
+      "additionalQuestions": [
+        "Mary did not recognize Jesus until He said her name. Where are you looking for God in general, when He is waiting to meet you in the particular - in the calling of your own name?",
+        "She mistook the risen Christ for an ordinary worker in an ordinary place. Where might you be standing in front of Him right now without recognizing Him?",
+        "The crown of thorns was made from the curse of the cursed ground. What curse in your own life are you asking Him to wear instead of you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, true Gardener, I have worn myself out keeping a garden I could not keep. I have watched good ground go to thorns and called it my failure. This morning, like Mary, I have been weeping at a tomb and missing You standing right there. Speak my name. Turn me around. Take the curse I keep trying to carry, the one You already wore as a crown, and breathe Your life into the dust of me. Keep what I could not keep. I give You the garden. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one garden you have been trying to keep alone - a relationship, a habit, a piece of your faith - and out loud, hand the keeping of it to the risen Christ. Then watch for the moment He calls your name in the particular, not the general.",
+      "leavingAtCross": [
+        "The exhausting belief that the garden lives or dies by my keeping alone",
+        "The grief that keeps hanging the lost face over every stranger and never lets the living Christ turn around",
+        "The curse I keep trying to wear myself, when He has already worn it as a crown of thorns"
+      ],
+      "receivingFromCross": [
+        "A Gardener who has come back to the very ground that was lost, to keep it Himself",
+        "My own name, spoken by the One I mistook for a stranger",
+        "The breath of new life - the same breath that first made dust into a living being, now breathed into me"
+      ],
+      "content": "Today, name one garden you have been trying to keep alone - a relationship, a habit, a piece of your faith - and out loud, hand the keeping of it to the risen Christ. Then watch for the moment He calls your name in the particular, not the general."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Which word does John use for the place of the cross and tomb that the other three Gospels never use - and why does it matter that he says it three times?",
+        "In what sense is Mary's mistake about the gardener actually correct? What does it reveal about who Jesus is?",
+        "How does Jesus breathing on the disciples in John 20:22 connect back to the very first chapters of Genesis, and what does that breath begin?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a garden in your life that is going to thorns despite your work. What would it look like to hand the keeping of it to Christ this week?",
+        "Mary recognized Jesus only when He spoke her name. Talk about a time God met you not in general truth but in something specific and personal.",
+        "Ask each other: where might the risen Christ be standing right in front of you, and you have mistaken Him for someone ordinary?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:15",
+          "text": "Then the LORD God took the man and placed him in the Garden of Eden to cultivate and keep it."
+        },
+        {
+          "reference": "Genesis 2:7",
+          "text": "Then the LORD God formed man from the dust of the ground and breathed the breath of life into his nostrils, and the man became a living being."
+        },
+        {
+          "reference": "John 15:5",
+          "text": "I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing."
+        },
+        {
+          "reference": "John 20:22",
+          "text": "When He had said this, He breathed on them and said, \"Receive the Holy Spirit.\""
+        },
+        {
+          "reference": "1 Corinthians 15:45",
+          "text": "So it is written: \"The first man Adam became a living being\"; the last Adam a life-giving spirit."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 18-20",
+          "note": "Read straight through, watching for the word 'garden' (18:1, 18:26, 19:41) and the word 'gardener' (20:15). Mark how John frames the cross and resurrection inside one planted place."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary Magdalene",
+      "title": "First Witness of the Resurrection",
+      "description": "A woman from Magdala on the Sea of Galilee, freed by Jesus from seven demons (Luke 8:2), who followed Him, stood near the cross, and came to the tomb while it was still dark. She is the first person to see the risen Christ and the first sent to announce Him to the others - in John's account, an apostle to the apostles. She is also, on that morning, the first human being to stand in the new garden with the second Adam and not know it yet.",
+      "keyQuote": "I have seen the Lord!",
+      "lessonForUs": "Mary did not reason her way to the resurrection; she was found by it. She came to keep a dead man and was met by a living one who knew her name. Recognition came not when she got the theology right but when He spoke - which is still how it comes.",
+      "heading": "First Witness of the Resurrection"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2154,
+  "scriptureReference_full": "John 19:41; 20:14-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (kēpos G2779, kēpouros G2780) reflects standard lexical sources; the garden framing of John 18-20 and the last-Adam reading (1 Corinthians 15:45-47) are widely noted in the Christian interpretive tradition."
+  ]
 }

@@ -1,38 +1,189 @@
 {
   "day": 318,
-  "title": "John: True Vine + Way + Truth — Day 3 — Pivot",
-  "teaser": "Day 318 of Bible 365 — John 8-14",
+  "title": "The Road That Is a Person",
+  "teaser": "Thomas asks for a map. Jesus answers with Himself. The way to the Father is not a route you find but a Person you follow.",
   "framework": "John 8-14 — John: True Vine + Way + Truth",
   "scriptureReference": "John 8-14",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 318"
+      "type": "scripture",
+      "reference": "John 14:5-7",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the way and the truth and the life",
+        "No one comes to the Father except through Me"
+      ],
+      "greekOriginal": "ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή",
+      "passage": "\"Lord,\" said Thomas, \"we do not know where You are going, so how can we know the way?\" Jesus answered, \"I am the way and the truth and the life. No one comes to the Father except through Me. If you had known Me, you would know My Father as well. From now on you do know Him and have seen Him.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 8-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 8-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am",
+      "rootMeaning": "Egō is the emphatic 'I' - Greek already carries the 'I' inside the verb, so adding egō is like saying 'I myself.' Eimi is the simple verb 'to be.' Together they land with a weight the grammar does not strictly need: I, myself, am.",
+      "usageNote": "John records seven of these sayings with a stated image - the bread, the light, the door, the good shepherd, the resurrection, the way, the vine - and a handful with no image at all, where Jesus simply says 'I am.' In John 8:58 He tells the crowd, 'Before Abraham was born, I am' - and they pick up stones, because they heard Him claim the name God gave at the burning bush.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I - the emphatic, unnecessary 'I myself'"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "am, exist"
+        },
+        {
+          "word": "ἡ ὁδὸς",
+          "transliteration": "hē hodos",
+          "meaning": "the way, the road, the path"
+        },
+        {
+          "word": "ἡ ἀλήθεια",
+          "transliteration": "hē alētheia",
+          "meaning": "the truth, what is real and unhidden"
+        },
+        {
+          "word": "ἡ ζωή",
+          "transliteration": "hē zōē",
+          "meaning": "the life - not mere existence but life itself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+          "reference": "ehyeh asher ehyeh - 'I AM WHO I AM,' the name God speaks to Moses at the burning bush (Exodus 3:14). When the Greek Old Testament renders it, God says egō eimi - the very phrase on Jesus' lips in John."
+        }
+      ],
+      "strongsNumber": "G1473",
+      "definition": "I am; the first-person present of the verb 'to be,' rendered emphatic by the added pronoun egō",
+      "usage": "The single definite article governs all three nouns in 14:6 - the way, the truth, the life - binding them into one claim. Jesus does not say He shows the way or teaches the truth or grants the life. He says He is each of them."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: True Vine + Way + Truth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our way to the Father (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Thomas Asks for a Map and Gets a Face",
+      "body": "It is the last night. The bread has been broken, the feet have been washed, and Judas has gone out into the dark. Jesus tells the eleven who are left that He is going somewhere they cannot yet follow, and that they know the way to the place He is going. Thomas, honest in the way frightened people are honest, says what the others are thinking: \"Lord, we do not know where You are going, so how can we know the way?\"\n\nIt is a fair question. Thomas wants what we all want when the ground shifts - a route, a set of directions he can hold in his hand and check against the road. He is asking for a map. He gets, instead, a face. \"I am the way and the truth and the life.\"\n\nJesus does not correct the question by handing over better information. He answers a question about a road with a claim about Himself. The way to the Father is not a system to master or a list of steps to complete in order; it is a Person to know and walk beside. Everything Thomas wanted - the destination, the directions, the assurance that he would arrive - turns out to be standing in the room with him, looking him in the eye.\n\nJohn has been building to this all along. Across these chapters Jesus keeps saying egō eimi - I am - and attaching it to the plainest things a person needs to live: light, when you are lost in the dark (8:12); a shepherd, when you are exposed and afraid (10:11); resurrection, when you are standing at a grave (11:25). Now, when His friends are about to lose Him and have no idea where the road goes, He says: I am the way.",
+      "keyInsight": "Thomas asked for directions. Jesus gave him a Person. The way to God is not information we acquire but a relationship we are invited into - and the relationship is with the One speaking.",
+      "content": "It is the last night. The bread has been broken, the feet have been washed, and Judas has gone out into the dark. Jesus tells the eleven who are left that He is going somewhere they cannot yet follow, and that they know the way to the place He is going. Thomas, honest in the way frightened people are honest, says what the others are thinking: \"Lord, we do not know where You are going, so how can we know the way?\"\n\nIt is a fair question. Thomas wants what we all want when the ground shifts - a route, a set of directions he can hold in his hand and check against the road. He is asking for a map. He gets, instead, a face. \"I am the way and the truth and the life.\"\n\nJesus does not correct the question by handing over better information. He answers a question about a road with a claim about Himself. The way to the Father is not a system to master or a list of steps to complete in order; it is a Person to know and walk beside. Everything Thomas wanted - the destination, the directions, the assurance that he would arrive - turns out to be standing in the room with him, looking him in the eye.\n\nJohn has been building to this all along. Across these chapters Jesus keeps saying egō eimi - I am - and attaching it to the plainest things a person needs to live: light, when you are lost in the dark (8:12); a shepherd, when you are exposed and afraid (10:11); resurrection, when you are standing at a grave (11:25). Now, when His friends are about to lose Him and have no idea where the road goes, He says: I am the way."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Guide Who Would Not Send Them Ahead",
+      "body": "A friend who guides hikers told me about the stretch of trail that scares people most - a long traverse above a drop, where the path narrows and the footing turns to loose rock. Newcomers always ask for the same thing. They want the route described in advance, every turn named, so they can run it in their heads and feel ready before they take a step.\n\nHe gives them the description. Then he tells them it will not be enough. \"You can memorize the whole traverse,\" he says, \"and still freeze when you see the drop. What gets people across is not the map. It's me, three feet in front of you, saying step here, now here, you're fine, keep coming.\"\n\nThat is the difference between directions and a guide. Directions hand you a route and leave you alone with it. A guide does not leave. He walks the hard stretch first and keeps his voice in front of you the whole way down.\n\nThomas wanted the traverse described. Jesus offered to be the guide who does not send His friends ahead into the dark, but goes first and stays close - whose voice is three feet in front of you on the part of the road you were most afraid to walk.",
+      "connectionToTheme": "A map can be memorized and still leave you frozen at the edge. A guide who goes first and stays near is what actually gets you across - and that is what Jesus offers Thomas instead of directions.",
+      "content": "A friend who guides hikers told me about the stretch of trail that scares people most - a long traverse above a drop, where the path narrows and the footing turns to loose rock. Newcomers always ask for the same thing. They want the route described in advance, every turn named, so they can run it in their heads and feel ready before they take a step.\n\nHe gives them the description. Then he tells them it will not be enough. \"You can memorize the whole traverse,\" he says, \"and still freeze when you see the drop. What gets people across is not the map. It's me, three feet in front of you, saying step here, now here, you're fine, keep coming.\"\n\nThat is the difference between directions and a guide. Directions hand you a route and leave you alone with it. A guide does not leave. He walks the hard stretch first and keeps his voice in front of you the whole way down.\n\nThomas wanted the traverse described. Jesus offered to be the guide who does not send His friends ahead into the dark, but goes first and stays close - whose voice is three feet in front of you on the part of the road you were most afraid to walk."
+    },
+    {
+      "type": "insight",
+      "heading": "One Article, Three Names, One Person",
+      "body": "Read the Greek of John 14:6 slowly and a small grammatical detail opens the whole verse. Jesus does not say, 'I am a way, and a truth, and a life,' as though offering three separate gifts. A single definite article stands in front of all three nouns: the way, the truth, the life. The grammar binds them. They are not three things He hands out. They are three names for one Person, and the Person is Himself.\n\nThis is why the next line is not arrogance but the only honest conclusion: \"No one comes to the Father except through Me.\" A wise teacher who merely points at a road is one signpost among many, and we may politely choose another. But Jesus does not point at the road; He says He is the road. A signpost can be bypassed. A bridge cannot - if it is the only span across the gorge, then crossing means crossing it.\n\nAnd this is the same voice that spoke from the burning bush. When Moses asked God His name, God answered, 'I AM' (Exodus 3:14) - and in 8:58 Jesus makes the link unmistakable: \"Before Abraham was born, I am.\" The crowd reaches for stones because they understood exactly what He meant. The One who says 'I am the way' is claiming the name spoken from the fire that did not consume - now standing in an upper room, telling frightened friends He will not leave them as orphans.",
+      "historicalContext": "John wrote for communities steeped in the Hebrew Scriptures, who would hear egō eimi and remember the name revealed to Moses at Horeb. The Septuagint - the Greek Old Testament read widely in the first century - renders the divine name with that same phrase, which is why the 'I am' sayings carry a charge no English reader catches at first glance. They are deliberate echoes of the burning bush.",
+      "fascinatingFact": "John records the 'I am' claims as a deliberate set. Seven join 'I am' to a vivid image - bread, light, door, good shepherd, resurrection, the way, and (in the very next chapter) the true vine. Several others drop the image and let the bare 'I am' stand, most sharply in 8:58. The framework for this reading - True Vine, Way, Truth - gathers up exactly these sayings.",
+      "content": "Read the Greek of John 14:6 slowly and a small grammatical detail opens the whole verse. Jesus does not say, 'I am a way, and a truth, and a life,' as though offering three separate gifts. A single definite article stands in front of all three nouns: the way, the truth, the life. The grammar binds them. They are not three things He hands out. They are three names for one Person, and the Person is Himself.\n\nThis is why the next line is not arrogance but the only honest conclusion: \"No one comes to the Father except through Me.\" A wise teacher who merely points at a road is one signpost among many, and we may politely choose another. But Jesus does not point at the road; He says He is the road. A signpost can be bypassed. A bridge cannot - if it is the only span across the gorge, then crossing means crossing it.\n\nAnd this is the same voice that spoke from the burning bush. When Moses asked God His name, God answered, 'I AM' (Exodus 3:14) - and in 8:58 Jesus makes the link unmistakable: \"Before Abraham was born, I am.\" The crowd reaches for stones because they understood exactly what He meant. The One who says 'I am the way' is claiming the name spoken from the fire that did not consume - now standing in an upper room, telling frightened friends He will not leave them as orphans."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When Thomas asked for the route to the Father, Jesus did not give directions. He gave Himself: \"I am the way and the truth and the life. No one comes to the Father except through Me.\" The way to God is a Person, not a procedure.",
+      "modernApplication": "We are still asking Thomas's question. We want the steps, the practice, the system that will get us to God if we just follow it correctly - the right method, the right discipline, the right amount of effort. And like Thomas, we keep being handed a face instead of a formula. The Christian life is not a route you master and then walk alone. It is a Person you follow, who walks the hard stretch first and keeps His voice in front of you.",
+      "connectionPoint": "This claim gathers the whole story to a point. The way to God had always run through a place and a person - tabernacle, temple, priest, sacrifice. In Jesus the way stops being a system and becomes a Person who is also the destination. The next chapter says it again from another angle: 'I am the true vine' (John 15:1) - not a path to life beside Him, but life only in Him, branch joined to vine.",
+      "newTestamentEcho": "The early church took Him at His word. Before they were called Christians, the first believers were simply called followers of 'the Way' (Acts 9:2; 24:14) - because they had grasped that the road and the Person were one and the same. And Hebrews picks up the upper-room promise: through Jesus we have 'a new and living way' opened into God's presence (Hebrews 10:20), a way that is living because it is a living Lord."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you asking Jesus for a map - a set of steps, a clear route - when He is offering you Himself instead?",
+      "additionalQuestions": [
+        "Thomas admitted out loud that he did not know the way. What is the honest thing you have been afraid to say out loud about where you are with God?",
+        "What would change if you stopped trying to master the route to God and started simply following the One who says He is the road?",
+        "Jesus tells His friends not to let their hearts be troubled (John 14:1, 27). What is troubling your heart tonight - and what would it mean to bring it to a Person rather than solve it as a problem?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-surrender",
+      "prayerText": "Lord Jesus, I have been asking for a map - the steps, the certainty, the route I could walk on my own. Tonight I hear You answer Thomas, and me, the same way: not with directions, but with Yourself. You are the way; I do not have to find it. You are the truth; I do not have to manufacture it. You are the life; I cannot earn it. Where my heart is troubled, quiet it. Go first on the part of the road I am most afraid to walk, and keep Your voice in front of me. I follow not a path but a Person - and the Person is You, the great I AM, who will not leave me as an orphan. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, stop building the route. Name one place where you have been treating God like a destination to reach by your own effort, and instead simply walk with Jesus there - talk to Him about it the way you would talk to someone three feet in front of you on a hard trail.",
+      "leavingAtCross": [
+        "The need for a map - the demand to see the whole route before I take a step",
+        "The quiet belief that getting to God is a system I can master if I try hard enough",
+        "The troubled heart that treats faith as a problem to solve rather than a Person to follow"
+      ],
+      "receivingFromCross": [
+        "A Person instead of a procedure - the way that is also the One who walks it with me",
+        "The truth that I am not finding the road; the road came looking for me",
+        "The peace Jesus leaves with His friends, given not as the world gives, but as the great I AM gives"
+      ],
+      "content": "Today, stop building the route. Name one place where you have been treating God like a destination to reach by your own effort, and instead simply walk with Jesus there - talk to Him about it the way you would talk to someone three feet in front of you on a hard trail."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Thomas asked for the way to a place. How does Jesus answer a question about a road with a claim about Himself - and why does that change everything?",
+        "Why do the listeners in John 8:58 reach for stones when Jesus says 'Before Abraham was born, I am'? What did they understand that we can miss?",
+        "What is the difference between following directions and following a guide - and how does that picture the difference between religion as a system and faith as following a Person?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been asking God for a map - clear steps, a guaranteed route - rather than walking with Jesus through it.",
+        "Talk honestly, the way Thomas did, about a place where you genuinely do not know the way forward.",
+        "Ask each other: where do you most need to hear Jesus say tonight, 'Do not let your heart be troubled' - and what would it look like to trust the Person instead of demanding the plan?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "John 8:58",
+          "text": "\"Truly, truly, I tell you,\" Jesus declared, \"before Abraham was born, I am!\""
+        },
+        {
+          "reference": "John 14:27",
+          "text": "Peace I leave with you; My peace I give to you. I do not give to you as the world gives. Do not let your hearts be troubled; do not be afraid."
+        },
+        {
+          "reference": "John 15:5",
+          "text": "I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing."
+        },
+        {
+          "reference": "Hebrews 10:19-20",
+          "text": "Therefore, brothers, since we have confidence to enter the Most Holy Place by the blood of Jesus, by the new and living way opened for us through the curtain of His body..."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "passage",
+          "title": "John 8-14 (the 'I am' sayings)",
+          "note": "Read through these chapters watching for every time Jesus says 'I am.' Notice which sayings attach to an image and which stand bare, and how each one meets a specific human fear - darkness, exposure, death, lostness."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Thomas",
+      "title": "The Disciple Who Asked Out Loud",
+      "description": "One of the Twelve, often remembered only for doubting the resurrection until he saw the wounds (John 20:24-29). But Thomas's instinct all along was honesty: he says what others are afraid to say. Earlier he is ready to follow Jesus toward danger (John 11:16); here in the upper room he admits plainly that he does not know where Jesus is going. His confusion is the reason we have John 14:6 at all - the answer came because someone was honest enough to ask the question.",
+      "keyQuote": "Lord, we do not know where You are going, so how can we know the way?",
+      "lessonForUs": "Thomas teaches us that admitting we do not know the way is not the failure of faith - it is often the doorway to it. The honest question 'how can we know the way?' is what drew out the answer, 'I am the way.' God can work with the disciple who says what is true about his own confusion.",
+      "heading": "The Disciple Who Asked Out Loud"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2279,
+  "scriptureReference_full": "John 14:5-7 (within John 8-14)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi, G1473; hē hodos / hē alētheia / hē zōē in John 14:6) reflects standard lexical sources. The egō eimi / Septuagint Exodus 3:14 connection is a widely held reading in New Testament scholarship."
+  ]
 }

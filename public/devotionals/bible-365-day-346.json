@@ -1,38 +1,176 @@
 {
   "day": 346,
-  "title": "1 Corinthians: Love + Resurrection — Day 3 — Pivot",
-  "teaser": "Day 346 of Bible 365 — 1 Cor 13, 15",
+  "title": "Love never fails, because Love was raised",
+  "teaser": "Paul says love outlasts everything — and then explains why: Christ is the firstfruits. Love endures because the Lover walked out of the tomb.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 346"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8, 13; 15:20-22",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "the greatest of these is love",
+        "the firstfruits of those who have fallen asleep"
+      ],
+      "greekOriginal": "ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed... And now these three remain: faith, hope, and love; but the greatest of these is love... But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep. For since death came through a man, the resurrection of the dead comes also through a man. For as in Adam all die, so in Christ all will be made alive."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "οὐδέποτε πίπτει",
+      "transliteration": "oudepote piptei",
+      "pronunciation": "oo-DEH-po-teh PIP-tay",
+      "meaning": "never falls, never fails, never collapses",
+      "rootMeaning": "Piptei is from pipto, the ordinary Greek verb for falling down - a wall that crumbles, a leaf that drops, a soldier who falls in battle. Oudepote is the strongest 'never' Greek can build: not-ever, at no point, in no circumstance. Paul does not say love is unlikely to fail. He says love, at no point ever, falls down.",
+      "usageNote": "The same verb pipto is used for buildings collapsing (Matthew 7:27, the house on sand 'fell with a great crash') and for empires toppling (Revelation 18:2, 'Fallen, fallen is Babylon'). Everything in this passage that can fall, Paul names: prophecies cease, tongues are stilled, knowledge is dismissed. Love is the one thing left standing when the dust settles.",
+      "wordByWord": [
+        {
+          "word": "ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love - self-giving, willed love, the kind God has for the world"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, at no time, not ever"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, falls down, collapses, fails"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπαρχή",
+          "reference": "Aparche (1 Cor 15:20), translated 'firstfruits' - the first sheaf of the harvest brought to God as the promise that the whole field is coming. Paul reaches for this word, not for love, but for the risen Christ. The two chapters are joined here: love does not fall because the firstfruits has already risen."
+        }
+      ],
+      "strongsNumber": "G4098",
+      "definition": "pipto: to fall, to fall down, to fall to ruin, to fail or come to an end",
+      "usage": "Paul stacks three things that fall away - prophecy, tongues, knowledge - against the one thing that does not. The grammar itself is an argument: everything you can build collapses eventually; love is of a different order entirely."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Chapters, One Argument",
+      "body": "We tend to read 1 Corinthians 13 at weddings and 1 Corinthians 15 at funerals, as if they belonged to different rooms of the house. Paul wrote them as one breath of an argument, with chapter 14 about orderly worship tucked between. Pull the two together and you can see why he put them where he did.\n\nChapter 13 makes a claim that should stop us: 'Love never fails.' Read in context, it is not sentimental. Paul has just spent two chapters on the flashy gifts the Corinthians prized - tongues, prophecy, knowledge - and he tells them every one of those gifts has an expiration date. 'Where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed.' Then the line that holds: love, and only love, does not fall.\n\nBut a careful reader should push back. How does Paul know love never fails? Everything we have ever loved has, in fact, ended. The people we love die. The love itself feels like it dies with them. On what ground can Paul say love is the one thing that outlasts the collapse of everything else?",
+      "keyInsight": "Paul does not leave 'love never fails' floating as a feeling. Two chapters later he gives it a foundation: a tomb that did not stay shut.",
+      "content": "We tend to read 1 Corinthians 13 at weddings and 1 Corinthians 15 at funerals, as if they belonged to different rooms of the house. Paul wrote them as one breath of an argument, with chapter 14 about orderly worship tucked between. Pull the two together and you can see why he put them where he did.\n\nChapter 13 makes a claim that should stop us: 'Love never fails.' Read in context, it is not sentimental. Paul has just spent two chapters on the flashy gifts the Corinthians prized - tongues, prophecy, knowledge - and he tells them every one of those gifts has an expiration date. 'Where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed.' Then the line that holds: love, and only love, does not fall.\n\nBut a careful reader should push back. How does Paul know love never fails? Everything we have ever loved has, in fact, ended. The people we love die. The love itself feels like it dies with them. On what ground can Paul say love is the one thing that outlasts the collapse of everything else?"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Card She Kept Reading",
+      "body": "A friend of mine lost her husband of forty-one years to a slow illness. In the last weeks he could no longer speak well, so he wrote her a short card and left it on the kitchen counter. It said almost nothing - the weather, the dog, that he was grateful. At the bottom: 'Still yours.'\n\nFor a year after the funeral she read that card every morning. She told me once, quietly, that the hardest thing was not missing him. The hardest thing was the fear that the love itself was over - that it had been a thing of his lungs and his hands, and that when those stopped, the love was a candle blown out. She could grieve a man. She did not know how to grieve a love that had simply ceased to exist.\n\nThat fear is exactly the one Paul is answering. He is not telling the Corinthians that nice feelings persist. He is telling a church full of people who had buried friends that the love between them was not a property of the body that died. It belongs to something that does not fall.",
+      "connectionToTheme": "The deepest grief is not losing a person but fearing the love itself has ended. Paul's two chapters speak directly to that fear: love does not fall, because it is anchored in One who rose.",
+      "content": "A friend of mine lost her husband of forty-one years to a slow illness. In the last weeks he could no longer speak well, so he wrote her a short card and left it on the kitchen counter. It said almost nothing - the weather, the dog, that he was grateful. At the bottom: 'Still yours.'\n\nFor a year after the funeral she read that card every morning. She told me once, quietly, that the hardest thing was not missing him. The hardest thing was the fear that the love itself was over - that it had been a thing of his lungs and his hands, and that when those stopped, the love was a candle blown out. She could grieve a man. She did not know how to grieve a love that had simply ceased to exist.\n\nThat fear is exactly the one Paul is answering. He is not telling the Corinthians that nice feelings persist. He is telling a church full of people who had buried friends that the love between them was not a property of the body that died. It belongs to something that does not fall."
+    },
+    {
+      "type": "insight",
+      "heading": "Firstfruits Is a Farming Word, Not a Funeral Word",
+      "body": "Notice the word Paul chooses for the risen Christ: firstfruits. In Greek, aparche. It is a harvest word. In Israel, when the barley first ripened, the very first sheaf was cut and brought to the priest and lifted before God (Leviticus 23:10-11). One sheaf. Not the harvest - the promise of the harvest. You waved the first armful precisely because the whole field behind it was about to come in.\n\nWhen Paul calls the risen Jesus 'the firstfruits of those who have fallen asleep,' he is making a deliberate claim. Christ is not an exception - the one man who happened to come back. He is the first sheaf. His resurrection is not an isolated wonder; it is a sample of what is coming for everyone joined to Him. 'For as in Adam all die, so in Christ all will be made alive.'\n\nNow chapter 13 stands on something solid. Love never fails because the One who is love was raised first, and where the firstfruits has gone, the harvest follows. Every grave of every person we have loved in Christ is, in Paul's image, a field after the first sheaf has been cut. The waving has already happened. The reaping is only a matter of time.",
+      "historicalContext": "The Corinthian church had members who openly doubted a bodily resurrection of the dead (1 Cor 15:12). Paul does not argue philosophy at them. He plants his whole answer on a public, datable event he says hundreds of living witnesses could still confirm: 'He appeared to more than five hundred brothers at once, most of whom are still living' (15:6). His argument for love that never fails is finally an argument about an empty tomb.",
+      "fascinatingFact": "The firstfruits offering was waved 'on the day after the Sabbath' (Leviticus 23:11) - the first day of the week. Christians read this with quiet wonder: Christ, the true firstfruits, rose on the first day of the week, the morning after the Sabbath. The harvest festival's timing and the resurrection's timing line up like a hand into a glove.",
+      "content": "Notice the word Paul chooses for the risen Christ: firstfruits. In Greek, aparche. It is a harvest word. In Israel, when the barley first ripened, the very first sheaf was cut and brought to the priest and lifted before God (Leviticus 23:10-11). One sheaf. Not the harvest - the promise of the harvest. You waved the first armful precisely because the whole field behind it was about to come in.\n\nWhen Paul calls the risen Jesus 'the firstfruits of those who have fallen asleep,' he is making a deliberate claim. Christ is not an exception - the one man who happened to come back. He is the first sheaf. His resurrection is not an isolated wonder; it is a sample of what is coming for everyone joined to Him. 'For as in Adam all die, so in Christ all will be made alive.'\n\nNow chapter 13 stands on something solid. Love never fails because the One who is love was raised first, and where the firstfruits has gone, the harvest follows. Every grave of every person we have loved in Christ is, in Paul's image, a field after the first sheaf has been cut. The waving has already happened. The reaping is only a matter of time."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a divided, grieving church that love never fails - and grounds the claim in the firstfruits, Christ raised bodily from the dead as the promise of a harvest of resurrection for all who are His.",
+      "modernApplication": "You can love someone with everything in you and still be quietly terrified that death gets the last word - that love is just chemistry that stops. Paul answers that terror not with a slogan but with a date and a tomb. The love you give in Christ is not a candle that goes out. It is the first sheaf of a field already promised.",
+      "connectionPoint": "Chapter 13 and chapter 15 lean on each other. Without the resurrection, 'love never fails' is a beautiful lie we tell at funerals. Without love, the resurrection is just the resuscitation of bodies with no point. Held together, they say: the universe ends not in collapse but in love that was raised and cannot fall.",
+      "newTestamentEcho": "Paul reaches the same place in Romans: 'Neither death nor life... will be able to separate us from the love of God that is in Christ Jesus our Lord' (Romans 8:38-39). The love that never fails in 1 Corinthians 13 is the love nothing can separate us from in Romans 8 - and the resurrection is why."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What love in your life are you secretly afraid death has already ended - and what would change if you believed it was the first sheaf of a harvest, not a candle blown out?",
+      "additionalQuestions": [
+        "Paul names prophecy, tongues, and knowledge as things that fall away. What are you building your life on right now that, honestly, has an expiration date?",
+        "If 'love never fails' rests on Christ being raised, how does the empty tomb change the way you grieve someone you have lost?",
+        "Where do you need the partial - the 'dim reflection in a mirror' - to be enough for today, trusting you will one day 'know fully, even as I am fully known'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, raised as the firstfruits, I confess I have grieved as though love were a candle that goes out. I have loved people into the ground and feared the love went down with them. Teach me that because You walked out of the tomb, the love I give in You does not fall. Make me patient and kind today, slow to anger, keeping no account of wrongs - not because I am strong, but because the love I am asked to give is the love that conquered death. Hold the people I have buried; hold the love I thought I had lost. Until I see face to face, let the first sheaf be enough. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one person you love and one fear about that love ending. Then say out loud, slowly: 'Love never fails, because Christ has been raised, the firstfruits.' Let the resurrection carry the weight your love cannot carry on its own.",
+      "leavingAtCross": [
+        "The fear that love is only chemistry that stops when the body stops",
+        "The grief that quietly believes death got the final word over someone I loved",
+        "The exhausting effort to make my love strong enough to last forever on its own"
+      ],
+      "receivingFromCross": [
+        "Love that does not fall, anchored in a tomb that did not stay shut",
+        "The promise that those who have fallen asleep in Christ are a field after the first sheaf, not a candle blown out",
+        "Freedom to love patiently today, because the lasting is His work, not mine"
+      ],
+      "content": "Today, name one person you love and one fear about that love ending. Then say out loud, slowly: 'Love never fails, because Christ has been raised, the firstfruits.' Let the resurrection carry the weight your love cannot carry on its own."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Paul list prophecy, tongues, and knowledge as things that 'cease,' 'are restrained,' and 'are dismissed' right before saying love never fails? What is the contrast doing?",
+        "What does the farming word 'firstfruits' (aparche) claim about Christ's resurrection that the word 'miracle' would not?",
+        "How does 1 Corinthians 15 give a foundation to the promise of 1 Corinthians 13 - so that 'love never fails' is more than a feeling?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one love or relationship you have grieved as 'over,' and talk about what it would mean to see it as the first sheaf of a harvest rather than an ending.",
+        "Read 1 Corinthians 13:4-7 aloud, replacing 'love' with your own name. Where does it ring true, and where does it expose you?",
+        "Ask each other: where am I building on something with an expiration date - and what would it look like to build on the love that does not fall?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 15:54-55",
+          "text": "When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: \"Death has been swallowed up in victory.\" \"Where, O Death, is your victory? Where, O Death, is your sting?\""
+        },
+        {
+          "reference": "1 Corinthians 15:57",
+          "text": "But thanks be to God, who gives us the victory through our Lord Jesus Christ!"
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        },
+        {
+          "reference": "Leviticus 23:10-11",
+          "text": "...you are to bring to the priest a sheaf of the firstfruits of your harvest. And he shall wave the sheaf before the LORD so that it may be accepted on your behalf; the priest is to wave it on the day after the Sabbath."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters in one sitting, skipping nothing in between, and watch how the claim 'love never fails' in chapter 13 gets its foundation in the risen 'firstfruits' of chapter 15."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle, Letter-Writer to Corinth",
+      "description": "A former persecutor of the church who met the risen Christ on the road to Damascus and named himself the last witness of the resurrection - 'last of all He appeared to me also, as to one of untimely birth' (1 Cor 15:8). Writing to a fractured, gifted, arguing church in Corinth around AD 53-55, Paul refuses to let them prize spiritual fireworks over love, and refuses to let them doubt the resurrection of the body. He binds the two together: love that lasts and a Lord who was raised.",
+      "keyQuote": "And now these three remain: faith, hope, and love; but the greatest of these is love.",
+      "lessonForUs": "Paul never lets love float free of fact. He grounds the most quoted poem about love in human history on a public, witnessed, bodily resurrection. If we want a love that does not fall, we cannot have it apart from the firstfruits who rose.",
+      "heading": "Apostle, Letter-Writer to Corinth"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1595,
+  "scriptureReference_full": "1 Corinthians 13:8, 13; 15:20-22 (with 15:54-58)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (oudepote piptei from pipto, G4098; agape; aparche, 'firstfruits') reflects standard lexical sources. The link between the firstfruits offering (Leviticus 23:10-11, waved 'the day after the Sabbath') and the resurrection on the first day of the week is a longstanding reading in the Christian tradition."
+  ]
 }

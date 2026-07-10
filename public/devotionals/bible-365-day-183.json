@@ -1,38 +1,181 @@
 {
   "day": 183,
-  "title": "Job: Suffering + Mystery — Day 1 — Hook",
-  "teaser": "Day 183 of Bible 365 — Job 1-2, 38-42",
+  "title": "He never gets His answer. He gets God.",
+  "teaser": "Job demands a reason for his suffering. God arrives in a whirlwind and asks the questions instead. The answer to \"Why?\" turns out to be a Who.",
   "framework": "Job 1-2, 38-42 — Job: Suffering + Mystery",
   "scriptureReference": "Job 1-2, 38-42",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 183"
+      "type": "scripture",
+      "reference": "Job 1:1, 20-22; 2:10; 38:1-4; 42:5-6",
+      "translation": "BSB",
+      "emphasis": [
+        "blameless and upright",
+        "Blessed be the name of the LORD",
+        "out of the whirlwind",
+        "now my eyes have seen You"
+      ],
+      "hebrewOriginal": "תָּם וְיָשָׁר",
+      "passage": "There was a man in the land of Uz whose name was Job. And this man was blameless and upright, fearing God and shunning evil. ... Then Job stood up, tore his robe, and shaved his head. He fell to the ground and worshiped, saying: \"Naked I came from my mother's womb, and naked I will return. The LORD gave, and the LORD has taken away. Blessed be the name of the LORD.\" In all this, Job did not sin or charge God with wrongdoing. ... \"Should we accept from God only good and not adversity?\" In all this, Job did not sin in what he said. ... Then the LORD answered Job out of the whirlwind and said: \"Who is this who obscures My counsel by words without knowledge? Now brace yourself like a man; I will question you, and you shall inform Me. Where were you when I laid the foundations of the earth?\" ... \"My ears had heard of You, but now my eyes have seen You. Therefore I retract my words, and I repent in dust and ashes.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Job 1-2, 38-42**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Job 1-2, 38-42 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תָּם",
+      "transliteration": "tam",
+      "pronunciation": "TAHM",
+      "meaning": "blameless, complete, whole, of one piece",
+      "rootMeaning": "Tam does not mean sinless or perfect in the sense of flawless. It means whole - undivided, all of a piece, with nothing held back and nothing two-faced. A tam person is the same on the inside as the outside.",
+      "usageNote": "The book introduces Job with this word in 1:1 and lets the whole story put pressure on it. The accuser's wager in chapters 1-2 is essentially a challenge to the word tam: take away Job's comfort and his wholeness will crack into a curse. It does not. The same root names the unblemished animal required for sacrifice (tamim), the creature whole enough to be offered.",
+      "wordByWord": [
+        {
+          "word": "תָּם",
+          "transliteration": "tam",
+          "meaning": "blameless, whole, complete, with integrity"
+        },
+        {
+          "word": "וְיָשָׁר",
+          "transliteration": "ve-yashar",
+          "meaning": "and upright, straight - going the direct way"
+        },
+        {
+          "word": "יְרֵא אֱלֹהִים",
+          "transliteration": "yere Elohim",
+          "meaning": "fearing God - reverent before Him"
+        },
+        {
+          "word": "וְסָר מֵרָע",
+          "transliteration": "ve-sar me-ra",
+          "meaning": "and turning from evil - actively shunning it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תָּמִים",
+          "reference": "Tamim, from the same root, is the word for the unblemished lamb of the sacrifices (Exodus 12:5). The whole man and the whole offering share one root - a quiet hint that wholeness and sacrifice belong together."
+        }
+      ],
+      "strongsNumber": "H8535",
+      "definition": "complete, whole, blameless, of integrity",
+      "usage": "Tam is the claim the entire book of Job is built to test. If suffering only ever falls on the guilty, then a tam man should never suffer. Job's existence breaks that math on the first page - and the rest of the book lives in the fracture."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Job: Suffering + Mystery. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the answer to \"Why?\" (John 11:35).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Math That Job Breaks",
+      "body": "The book opens by telling you the one thing the characters inside it never learn. Job is blameless. We are shown the throne room, the wager, the accuser's challenge - and then the camera drops to earth, where Job has no idea any of it happened. He will spend forty chapters demanding to know why, and the reader, holding the secret of chapters 1 and 2, will want to lean into the page and tell him. We never get to.\n\nThat gap is the whole design. Job's friends arrive with a tidy machine: suffering is the output of sin, so if you are suffering, you must have sinned. Confess, and the machine will run in reverse and restore you. It is clean, it is fair, and it is wrong - the very first verse has already told us so. Job is tam, whole, and he is in the ash heap anyway. The friends are defending God's justice with an equation that the book has already broken.\n\nSo Job does something braver than agreeing with them. He keeps insisting he is innocent and keeps demanding an audience with God - not to curse Him, but to ask Him to His face: why? He wants the one thing the friends cannot give and the prologue will not let him have. He wants a reason."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Question Everyone Keeps Answering For God",
+      "body": "A woman I know lost a child and then lost her church, because too many people could not sit in the room without explaining it. One told her God needed another angel. One asked, gently, whether there was unconfessed sin. One handed her a verse about all things working together and left before she could answer.\n\nNone of them were cruel. Every one of them was Job's friends. Faced with grief they could not fix, they reached for the machine - the explanation that would make the suffering make sense, mostly so they could stop feeling the terror of a world where the blameless bleed for no reason they can see.\n\nWhat she remembered, years later, was the one friend who came, sat on the floor of the nursery that never got used, and said nothing for a long time. \"She didn't tell me why,\" the woman said. \"She just refused to leave.\" That friend had stumbled onto the thing the book of Job is trying to teach: when you cannot answer the why, you can still refuse to leave. It is, as it turns out, what God Himself does.",
+      "connectionToTheme": "Job's comforters speak the most religious words in the book and are the ones God rebukes - because they used true things about God to avoid the harder work of staying present to real suffering."
+    },
+    {
+      "type": "insight",
+      "heading": "God Answers \"Why?\" With \"Who?\"",
+      "body": "After thirty-seven chapters of argument, God finally speaks - and He does not answer the question. He never tells Job about the wager. He never explains the dead children, the boils, the ruin. Instead, out of the whirlwind, He asks Job a question of His own: \"Who is this who obscures My counsel by words without knowledge? Where were you when I laid the foundations of the earth?\"\n\nThen come four chapters of more questions - about the sea and the storehouses of snow, the wild donkey and the eagle, the morning stars singing at creation. It can read like evasion, even like a rebuke for asking. But look closer. God does not crush Job; He gives him a tour. He walks him out of the small courtroom where suffering is a case to be tried and into the vast, wild, tended world where God is holding everything at once - including the parts Job cannot see, including Job. The point is not \"how dare you ask.\" The point is: \"You are speaking about a story far larger than the chapter you can read. Will you trust the One writing it?\"\n\nAnd that, strangely, is enough. Job's last words are not \"now I understand.\" They are \"now my eyes have seen You.\" He never gets his answer. He gets God. It turns out the deepest need underneath the question \"Why?\" was never a reason. It was a Presence."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God answers the suffering, blameless Job not with an explanation but with His own presence and a flood of questions, beginning, \"Who is this who obscures My counsel by words without knowledge?\" - and the voice comes out of the whirlwind.",
+      "modernApplication": "We still want the machine: a reason that makes the pain compute, a sentence that closes the case. Job tells us the truth no one wants on the worst day - that God more often gives Himself than gives a reason, and that this is not God dodging the question but answering a deeper one we did not know we were asking.",
+      "connectionPoint": "The voice that thunders out of the whirlwind asking \"Who is this?\" does not stay in the storm forever. Centuries later, a boat is sinking on the Sea of Galilee, and a carpenter stands up and speaks to the wind and the waves the way the LORD spoke to the sea in Job 38. The storm goes flat calm. And the men in the boat, terrified, ask the exact question God had asked Job: \"Who is this, that even the wind and the sea obey Him?\" (Mark 4:41). The One who answered Job out of the whirlwind has climbed into the boat.",
+      "newTestamentEcho": "Job is the blameless man who suffers what he did not deserve, will not curse God, and is finally vindicated - and at the end, before God restores anything, Job prays for the friends who wounded him (Job 42:8-10). The pattern is unmistakable. The truly blameless One, Jesus, suffers the undeserved, refuses to curse, prays \"Father, forgive them\" over His tormentors (Luke 23:34), and is vindicated by resurrection. Job's question, \"Where is God when the innocent suffer?\", is answered most fully not from a whirlwind but from a cross - where God is the innocent, suffering, with us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you demanding a reason from God - and what would change if, instead of the reason, you were given God Himself?",
+      "additionalQuestions": [
+        "When you sit with someone who is suffering, are you more like Job's friends, reaching for an explanation, or like the friend who simply refused to leave?",
+        "Job worshiped before he understood anything - \"the LORD gave, and the LORD has taken away.\" Is there something you can bless God for tonight without first being told why it happened?",
+        "What is the difference, for you, between trusting an explanation and trusting a Person?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have wanted reasons more than I have wanted You. When the answer did not come, I assumed You were not there. Forgive me. Like Job, I have spoken of things too wonderful for me to know. Quiet my arguments. Walk me out of the small courtroom where I keep putting You on trial, and show me the world You are holding - and that You are holding me. I cannot see the whole story. Help me trust the One who is writing it. And where I cannot understand, let me still say, with Job, blessed be Your name. Through Christ, who answered my deepest why by stepping into the storm with me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been demanding an explanation for. Instead of asking God \"why\" one more time, sit with it for five minutes and ask only \"who are You, here, in this?\" Let the question move from the reason to the Presence.",
+      "leavingAtCross": [
+        "The demand that God justify Himself to me before I will trust Him",
+        "The friends' machine - the belief that suffering is always a verdict on the sufferer",
+        "The lie that a God who will not explain must be a God who is not there"
+      ],
+      "receivingFromCross": [
+        "A Presence that is better than an explanation",
+        "Permission to grieve honestly without losing my faith",
+        "The promise that the One who answered out of the whirlwind has come close enough to suffer beside me"
+      ],
+      "content": "Today, name one thing you have been demanding an explanation for. Instead of asking God \"why\" one more time, sit with it for five minutes and ask only \"who are You, here, in this?\" Let the question move from the reason to the Presence."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the word tam (blameless, whole) tell us about Job on the very first page - and why does it break his friends' theology?",
+        "When God finally speaks from the whirlwind, what does He give Job instead of an explanation, and why is that enough for Job?",
+        "How does Job's reply, \"My ears had heard of You, but now my eyes have seen You,\" describe a change that is deeper than getting an answer?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time you were one of Job's friends - when you reached for an explanation because the silence was too hard to sit in.",
+        "Where are each of you currently asking God \"why?\" - and what would it look like to ask \"who are You in this?\" instead?",
+        "Job prayed for the friends who wounded him before he was restored. Is there someone whose clumsy comfort hurt you that you could pray for this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Job 1:21",
+          "text": "Naked I came from my mother's womb, and naked I will return. The LORD gave, and the LORD has taken away. Blessed be the name of the LORD."
+        },
+        {
+          "reference": "Job 38:4",
+          "text": "Where were you when I laid the foundations of the earth? Tell Me, if you have understanding."
+        },
+        {
+          "reference": "Job 42:5",
+          "text": "My ears had heard of You, but now my eyes have seen You."
+        },
+        {
+          "reference": "Mark 4:41",
+          "text": "Overwhelmed with fear, they asked one another, \"Who is this, that even the wind and the sea obey Him?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Job 1-2 and 38-42",
+          "note": "Read the prologue (1-2) and the LORD's answer (38-42) in one sitting, skipping the middle debate. Notice that you know the secret Job never learns - and ask why the book withholds it from him on purpose."
+        },
+        {
+          "type": "book",
+          "title": "Job 42:7-10",
+          "note": "Read the ending closely: God rebukes the friends for not speaking accurately about Him, and restores Job only after Job prays for them. Mercy precedes restoration."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Job",
+      "title": "The Blameless Man Who Demanded an Audience with God",
+      "description": "A wealthy, God-fearing man from the land of Uz, described in the book's first verse as blameless and upright. In a single day he loses his children, his livestock, and his health, with no idea that any of it is unfolding in a contest he cannot see. He refuses both his wife's counsel to curse God and his friends' demand that he confess hidden sin. He holds his integrity and his grief together, and he keeps reaching for God - not to be comforted with theology, but to be answered in person. In the end he is, though not in the way he expected.",
+      "keyQuote": "My ears had heard of You, but now my eyes have seen You.",
+      "lessonForUs": "Job teaches us that faith is not the absence of hard questions but the refusal to stop bringing them to God. He shows that worship can survive a why that is never answered - because the deepest thing the suffering heart needs is not a reason, but the One who comes close.",
+      "heading": "The Blameless Man Who Demanded an Audience with God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1785,
+  "scriptureReference_full": "Job 1:1, 20-22; 2:9-10; 38:1-4, 7; 42:1-10",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tam / tamim, H8535) reflects standard lexical sources; the connection between tam (the whole person) and tamim (the unblemished offering) follows the shared triliteral root."
+  ]
 }

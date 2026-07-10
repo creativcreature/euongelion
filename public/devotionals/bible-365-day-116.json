@@ -1,38 +1,176 @@
 {
   "day": 116,
-  "title": "Elijah Cycles — Day 4 — Application",
-  "teaser": "Day 116 of Bible 365 — 1 Kings 17-19, 2 Kings 2",
+  "title": "After the fire, the whisper",
+  "teaser": "Elijah won on Carmel and then begged to die under a bush. God did not rebuke the burned-out prophet — He fed him, let him sleep, and came in a whisper.",
   "framework": "1 Kings 17-19, 2 Kings 2 — Elijah Cycles",
   "scriptureReference": "1 Kings 17-19, 2 Kings 2",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 116"
+      "type": "scripture",
+      "reference": "1 Kings 19:11-13",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD was not in the wind",
+        "a still, small voice",
+        "What are you doing here, Elijah?"
+      ],
+      "hebrewOriginal": "וְאַחַר הָרַעַשׁ אֵשׁ לֹא בָאֵשׁ יְהוָה וְאַחַר הָאֵשׁ קוֹל דְּמָמָה דַקָּה",
+      "passage": "Then the LORD said, \"Go out and stand on the mountain before the LORD. Behold, the LORD is about to pass by.\" And a great and mighty wind tore into the mountains and shattered the rocks before the LORD, but the LORD was not in the wind. After the wind there was an earthquake, but the LORD was not in the earthquake. After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice. When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave. Suddenly a voice came to him and said, \"What are you doing here, Elijah?\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 17-19, 2 Kings 2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 17-19, 2 Kings 2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קוֹל דְּמָמָה דַקָּה",
+      "transliteration": "qol demamah daqqah",
+      "pronunciation": "kohl deh-mah-MAH dak-KAH",
+      "meaning": "a still small voice; a sound of thin silence",
+      "rootMeaning": "Qol is a voice or a sound. Demamah is stillness, hush, the quiet after a storm dies down. Daqqah means fine, thin, crushed small - the same root used for dust ground to powder. Put together, the phrase is almost a contradiction: a sound made of silence, a voice so fine it is barely there.",
+      "usageNote": "Older English renders it 'a still small voice.' Some modern translations try 'a sound of sheer silence' or 'a gentle whisper.' The strangeness is the point - Hebrew is reaching for something the wind and earthquake and fire are not. The three loud signs were the ways God had shown up before: wind over Sinai, the earth shaking, fire on Carmel the day before. Now He comes in the one register a worn-out man can actually bear.",
+      "wordByWord": [
+        {
+          "word": "קוֹל",
+          "transliteration": "qol",
+          "meaning": "voice, sound"
+        },
+        {
+          "word": "דְּמָמָה",
+          "transliteration": "demamah",
+          "meaning": "stillness, calm, a hush"
+        },
+        {
+          "word": "דַקָּה",
+          "transliteration": "daqqah",
+          "meaning": "thin, fine, crushed small"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דְּמָמָה",
+          "reference": "The same word names the calm God brings in Psalm 107:29 - 'He calmed the storm to a whisper, and the waves of the sea were hushed.' The hush that meets Elijah on the mountain is the hush God speaks over the panicking sailor."
+        }
+      ],
+      "strongsNumber": "H1827",
+      "definition": "demamah: a quiet, a calm, a still hush",
+      "usage": "The phrase places God not in the spectacular but in the quiet that follows it. Elijah had just called down fire in front of a nation. He learns at Horeb that the God of the fire prefers to do His deepest work in a voice you have to stop and lean toward to hear."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elijah Cycles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Elijah (Matt 17:1-8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day After the Greatest Day",
+      "body": "Yesterday's reading left Elijah on top of the world, and on top of Mount Carmel. He had stood alone against four hundred and fifty prophets of Baal and dared them to call down fire. They could not. He soaked his own altar with water until it ran in the trench, prayed one plain sentence, and the fire of the LORD fell and consumed the sacrifice, the wood, the stones, and the dust, and it licked up the water in the trench. A whole nation fell on its faces crying, \"The LORD, He is God!\" It was the single most public victory of his life.\n\nDay 116 opens on the morning after. One threat from Queen Jezebel - and Elijah, who had just faced down an army of false prophets, ran. He ran south out of Israel entirely, left his servant behind, walked a day deeper into the wilderness, sat down under a solitary broom tree, and prayed to die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\" The man who called down heaven's fire now wanted the lights turned off.\n\nThis is the part of the story that does not fit our instinct about how God treats His tired servants. We brace for the lecture. We expect God to remind Elijah of yesterday's miracle and ask him why his faith is so small. Instead, God lets him sleep. Then an angel touches him - twice - with the same gentle, practical word: \"Get up and eat.\" Bread is baking on hot stones. There is water in a jar. Before God says one word about Elijah's mission, He feeds the prophet's body and lets the prophet rest. The first thing heaven does for a man who wants to die is make him a meal.",
+      "keyInsight": "Burnout is not always a faith problem to be scolded. Sometimes it is a body that has run out of bread and sleep, and the most spiritual thing God offers is not a rebuke but a nap and a meal.",
+      "content": "Yesterday's reading left Elijah on top of the world, and on top of Mount Carmel. He had stood alone against four hundred and fifty prophets of Baal and dared them to call down fire. They could not. He soaked his own altar with water until it ran in the trench, prayed one plain sentence, and the fire of the LORD fell and consumed the sacrifice, the wood, the stones, and the dust, and it licked up the water in the trench. A whole nation fell on its faces crying, \"The LORD, He is God!\" It was the single most public victory of his life.\n\nDay 116 opens on the morning after. One threat from Queen Jezebel - and Elijah, who had just faced down an army of false prophets, ran. He ran south out of Israel entirely, left his servant behind, walked a day deeper into the wilderness, sat down under a solitary broom tree, and prayed to die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\" The man who called down heaven's fire now wanted the lights turned off.\n\nThis is the part of the story that does not fit our instinct about how God treats His tired servants. We brace for the lecture. We expect God to remind Elijah of yesterday's miracle and ask him why his faith is so small. Instead, God lets him sleep. Then an angel touches him - twice - with the same gentle, practical word: \"Get up and eat.\" Bread is baking on hot stones. There is water in a jar. Before God says one word about Elijah's mission, He feeds the prophet's body and lets the prophet rest. The first thing heaven does for a man who wants to die is make him a meal."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Pastor Who Quit on a Tuesday",
+      "body": "A friend of mine planted a church and watched it grow for nine years. The Sunday everyone still talks about was the one where the building was so full they ran out of chairs and people stood along the back wall. He preached, he prayed, he shook every hand at the door. Then he drove home, sat in the car in his own driveway with the engine off, and could not make himself walk inside. He told me later that he sat there long enough that the porch light came on by its motion sensor and went dark again twice.\n\nThe full room had not felt like a triumph. It had felt like one more thing that depended on him not falling apart. The next morning he typed a resignation letter he never sent, and instead wrote three words to a mentor: \"I'm so tired.\"\n\nThe mentor did not send Scripture. He did not ask about my friend's quiet time or his theology of suffering. He drove over with two sandwiches and made my friend eat one in the kitchen, then told him to go to bed at eight o'clock for a week and call when he had slept. \"We'll talk about God,\" he said, \"after you've slept and eaten. He's not going anywhere.\" It was, my friend said, the most pastoral thing anyone did for him that whole year - and it was almost exactly what an angel once did under a broom tree.",
+      "connectionToTheme": "Like Elijah after Carmel, a person can win the public victory and collapse the next morning - and God's first care is often a meal and a bed, not a sermon.",
+      "content": "A friend of mine planted a church and watched it grow for nine years. The Sunday everyone still talks about was the one where the building was so full they ran out of chairs and people stood along the back wall. He preached, he prayed, he shook every hand at the door. Then he drove home, sat in the car in his own driveway with the engine off, and could not make himself walk inside. He told me later that he sat there long enough that the porch light came on by its motion sensor and went dark again twice.\n\nThe full room had not felt like a triumph. It had felt like one more thing that depended on him not falling apart. The next morning he typed a resignation letter he never sent, and instead wrote three words to a mentor: \"I'm so tired.\"\n\nThe mentor did not send Scripture. He did not ask about my friend's quiet time or his theology of suffering. He drove over with two sandwiches and made my friend eat one in the kitchen, then told him to go to bed at eight o'clock for a week and call when he had slept. \"We'll talk about God,\" he said, \"after you've slept and eaten. He's not going anywhere.\" It was, my friend said, the most pastoral thing anyone did for him that whole year - and it was almost exactly what an angel once did under a broom tree."
+    },
+    {
+      "type": "insight",
+      "heading": "Not in the Wind, Not in the Fire",
+      "body": "Strengthened by that food, Elijah walks forty days to Horeb - the same mountain, also called Sinai, where Moses once met God in thunder and smoke and fire. Elijah hides in a cave there, and God asks him a question that is really an invitation: \"What are you doing here, Elijah?\" Elijah answers with his grievance. He has been zealous; the people have abandoned the covenant; he is the only one left and they want him dead.\n\nThen God stages something deliberate. He tells Elijah to stand on the mountain, and one by one the old signs of His power come through. A wind so violent it shatters rock - but the text says plainly, the LORD was not in the wind. An earthquake - the LORD was not in the earthquake. A fire - and Elijah, of all people, would have braced for the fire, because fire was how God had answered just days before. But the LORD was not in the fire. And after the fire came a still, small voice. That is when Elijah covers his face. He recognizes the presence not in the spectacle but in the hush.\n\nHere is the quiet correction. Elijah had been living as though everything depended on the next big display of power - one more Carmel, one more fire from heaven to fix Israel. God shows him that the loud, decisive miracle was real, but it was never where God mainly lived. God meets the broken prophet in a whisper, and then sends him back down the mountain with three names to anoint and one staggering fact: seven thousand others have not bowed to Baal. Elijah was never the only one. He only felt that way because he was exhausted, and exhaustion lies.",
+      "historicalContext": "Horeb is Mount Sinai, where the covenant was given to Moses (Exodus 19-20) amid wind, earthquake, and fire. Elijah's return to that exact mountain is not random - he is going back to the place where God first showed up in power. By placing God in the whisper rather than the wind, earthquake, and fire, the text gently reframes the whole Sinai memory: the God of the dramatic covenant has always also been the God who speaks softly to one despairing man in a cave.",
+      "fascinatingFact": "Elijah gives God the identical complaint twice, word for word - 'I am the only one left, and they are seeking my life as well' - once before the whisper and once after. God does not argue him out of the feeling. He answers it: there are seven thousand he knows nothing about, and there is work, and there is a successor, Elisha, who will carry the cloak after him. The cure for 'I'm the only one' was never a better argument. It was a meal, a whisper, a partner, and a task.",
+      "content": "Strengthened by that food, Elijah walks forty days to Horeb - the same mountain, also called Sinai, where Moses once met God in thunder and smoke and fire. Elijah hides in a cave there, and God asks him a question that is really an invitation: \"What are you doing here, Elijah?\" Elijah answers with his grievance. He has been zealous; the people have abandoned the covenant; he is the only one left and they want him dead.\n\nThen God stages something deliberate. He tells Elijah to stand on the mountain, and one by one the old signs of His power come through. A wind so violent it shatters rock - but the text says plainly, the LORD was not in the wind. An earthquake - the LORD was not in the earthquake. A fire - and Elijah, of all people, would have braced for the fire, because fire was how God had answered just days before. But the LORD was not in the fire. And after the fire came a still, small voice. That is when Elijah covers his face. He recognizes the presence not in the spectacle but in the hush.\n\nHere is the quiet correction. Elijah had been living as though everything depended on the next big display of power - one more Carmel, one more fire from heaven to fix Israel. God shows him that the loud, decisive miracle was real, but it was never where God mainly lived. God meets the broken prophet in a whisper, and then sends him back down the mountain with three names to anoint and one staggering fact: seven thousand others have not bowed to Baal. Elijah was never the only one. He only felt that way because he was exhausted, and exhaustion lies."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "After the greatest victory of his life, Elijah collapses, asks to die, and is met by God not with a rebuke but with bread, sleep, a whisper, and the truth that he was never as alone as he felt.",
+      "modernApplication": "We tend to evaluate our walk with God by the loud moments - the conference high, the answered prayer, the Sunday the room was full. So when the loud moments end and the tiredness sets in, we assume God has gone quiet because we have failed. Elijah teaches the opposite. The let-down after the mountaintop is not a sign God has left. It is often exactly where the still small voice begins, in the register you can only hear once the noise dies down.",
+      "connectionPoint": "Elijah ran to Horeb wanting to die and was fed by an angel so the journey would not overwhelm him. Centuries later Jesus would say, 'Come to Me, all you who are weary and burdened, and I will give you rest' (Matthew 11:28). The angel's bread under the broom tree and the Bread of Life calling the weary are the same divine instinct toward the exhausted: come, eat, rest, you do not carry this alone.",
+      "newTestamentEcho": "On another mountain, in glory, Moses and Elijah appear beside the transfigured Christ, speaking with Him about His departure - His coming death - which He was about to accomplish at Jerusalem (Luke 9:30-31). The prophet who once begged God to take his life now stands radiant beside the One who will lay His own life down. The still small voice at Horeb has become a beloved Son, of whom the Father says, 'Listen to Him' (Matthew 17:5)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you running on empty and bracing for God to scold you, when He may simply be saying, 'Get up and eat'?",
+      "additionalQuestions": [
+        "What is your broom tree - the place you go when you have had enough and want the lights turned off? What would it look like to be honest with God there instead of hiding it?",
+        "Have you been listening for God only in the wind, earthquake, and fire - the dramatic answers - and missing the still small voice in the quiet?",
+        "Elijah felt he was the only one left. Who are the 'seven thousand' in your life - the unseen others walking the same road - that your exhaustion has hidden from you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have run further than I meant to, and some days I have had enough. Thank You that You do not meet my emptiness with a lecture. Feed me. Let me rest. Quiet the wind and the earthquake and the fire in my head long enough that I can hear the still small voice. Remind me I am not the only one, that the work does not rest on me alone, and that the One Moses and Elijah stood beside in glory carries what I cannot. Speak softly. I am listening. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one Elijah-under-the-broom-tree thing for your own depleted body and soul: eat a real meal slowly, or go to bed early, or sit in five minutes of deliberate quiet with no input - and let that be the spiritual act, not a distraction from one. Then name out loud, to God, the place you have been pretending you are fine.",
+      "leavingAtCross": [
+        "The lie that exhaustion is a faith failure I should be able to push through",
+        "The belief that God speaks to me only in dramatic, loud answers",
+        "The isolating feeling that I am the only one left carrying this"
+      ],
+      "receivingFromCross": [
+        "Permission to be fed and to rest as a gift from God, not a guilty escape",
+        "Ears tuned to the still small voice in the quiet after the noise",
+        "The truth that there are seven thousand others, and a Savior who carries the weight I cannot"
+      ],
+      "content": "Today, do one Elijah-under-the-broom-tree thing for your own depleted body and soul: eat a real meal slowly, or go to bed early, or sit in five minutes of deliberate quiet with no input - and let that be the spiritual act, not a distraction from one. Then name out loud, to God, the place you have been pretending you are fine."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did God do for Elijah first - before any conversation about his mission - and what does that order teach about how God cares for the burned out?",
+        "Why is it significant that 'the LORD was not in the wind,' the earthquake, or the fire, but in the still small voice - especially given what God had just done at Carmel the day before?",
+        "How does God answer Elijah's complaint that he is the only one left, and what does that reveal about the way exhaustion distorts what we believe to be true?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a recent 'morning after the mountaintop' - a let-down that followed a high - and whether you read God's quiet as absence or as a whisper.",
+        "Name one practical way you can 'get up and eat' this week - rest, a meal, a real day off - and ask your partner to check that you actually did it.",
+        "Ask each other: where have you been listening for God only in the dramatic, and what might the still small voice be saying that you have been too loud to hear?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 19:4",
+          "text": "while he himself traveled on a day's journey into the wilderness. He sat down under a broom tree and prayed that he might die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\""
+        },
+        {
+          "reference": "1 Kings 19:18",
+          "text": "Nevertheless, I have reserved seven thousand in Israel - all whose knees have not bowed to Baal and whose mouths have not kissed him."
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        },
+        {
+          "reference": "Luke 9:30-31",
+          "text": "Suddenly two men, Moses and Elijah, began talking with Jesus. They appeared in glory and spoke about His departure, which He was about to accomplish at Jerusalem."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 19",
+          "note": "Read the whole chapter in one sitting, watching the rhythm God uses on a broken man: sleep, food, sleep, food, journey, question, whisper, then - only then - a task and a partner."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elijah the Tishbite",
+      "title": "The Prophet Who Asked to Die, and Was Fed Instead",
+      "description": "A prophet from Gilead during the reign of Ahab and Jezebel, Elijah confronted Baal worship in Israel - shutting up the sky, being fed by ravens and a Sidonian widow, raising her son, and calling down fire on Mount Carmel. Yet immediately after his greatest triumph he fled in despair to Horeb, where God met him not in wind, earthquake, or fire but in a still small voice. He never died: he was taken up to heaven in a whirlwind by a chariot of fire, leaving his cloak - and a double portion of his spirit - to Elisha (2 Kings 2:11-14).",
+      "keyQuote": "I have had enough, LORD. Take my life, for I am no better than my fathers.",
+      "lessonForUs": "The same servant who calls down fire can collapse under a bush the next day, and God does not love him less for it. Elijah's despair is recorded without shame so that we would know our own burnout has a precedent in Scripture - and a God who answers it with bread, rest, and a whisper.",
+      "heading": "The Prophet Who Asked to Die, and Was Fed Instead"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2363,
+  "scriptureReference_full": "1 Kings 17-19, 2 Kings 2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qol demamah daqqah; demamah H1827) reflects standard lexical sources. Horeb is identified with Mount Sinai per the biblical text (Exodus 3:1; 1 Kings 19:8)."
+  ]
 }

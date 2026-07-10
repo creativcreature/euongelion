@@ -1,38 +1,187 @@
 {
   "day": 296,
   "title": "Luke: The Inclusive Christ — Day 2 — Building",
-  "teaser": "Day 296 of Bible 365 — Luke 1-12",
+  "teaser": "Before Jesus speaks a word, His mother sings the shape of His kingdom: the proud scattered, the lowly lifted, the hungry filled. Luke is built on that song.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 296"
+      "type": "scripture",
+      "reference": "Luke 1:46-52",
+      "translation": "BSB",
+      "emphasis": [
+        "the humble state of His servant",
+        "He has brought down rulers from their thrones",
+        "but has exalted the humble"
+      ],
+      "greekOriginal": "καθεῖλεν δυνάστας ἀπὸ θρόνων καὶ ὕψωσεν ταπεινούς",
+      "passage": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. For the Mighty One has done great things for me. Holy is His name. His mercy extends to those who fear Him, from generation to generation. He has performed mighty deeds with His arm; He has scattered those who are proud in the thoughts of their hearts. He has brought down rulers from their thrones, but has exalted the humble.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ταπείνωσις / ταπεινός",
+      "transliteration": "tapeinōsis / tapeinos",
+      "pronunciation": "tah-PAY-no-sis / tah-pay-NOSS",
+      "meaning": "low estate, humble condition; the one who is lowly, brought low",
+      "rootMeaning": "From a root meaning low to the ground. In the Greek world tapeinos was almost an insult - it described the groveling, the servile, the socially beneath. Mary takes the despised word and makes it the place God looks.",
+      "usageNote": "Mary uses tapeinōsis of her own 'humble state' in verse 48, and one breath later God 'exalts the tapeinous' - the lowly - in verse 52. The same root names both her and the people her Son will lift. Luke will keep returning to it: shepherds, lepers, a tax collector, a sinful woman, a centurion's slave. The song names what the whole Gospel then enacts.",
+      "wordByWord": [
+        {
+          "word": "ἐπέβλεψεν",
+          "transliteration": "epeblepsen",
+          "meaning": "He looked upon, He turned His gaze toward - the deliberate look of one who chooses to see"
+        },
+        {
+          "word": "ταπείνωσιν",
+          "transliteration": "tapeinōsin",
+          "meaning": "low estate, lowliness, humble condition"
+        },
+        {
+          "word": "καθεῖλεν",
+          "transliteration": "katheilen",
+          "meaning": "He pulled down, took down from a height - used of demolishing"
+        },
+        {
+          "word": "δυνάστας",
+          "transliteration": "dynastas",
+          "meaning": "rulers, the powerful - the root of our word dynasty"
+        },
+        {
+          "word": "ὕψωσεν",
+          "transliteration": "hypsōsen",
+          "meaning": "He lifted high, He exalted - the opposite motion to katheilen"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ταπεινός",
+          "reference": "The same word Jesus uses of Himself in Matthew 11:29 - 'I am gentle and humble (tapeinos) in heart.' The King who lifts the lowly is Himself, by His own description, the lowly One."
+        }
+      ],
+      "strongsNumber": "G5014",
+      "definition": "lowliness, low estate, humiliation; the condition of being brought low",
+      "usage": "The verbs of the Magnificat move in two directions at once - katheilen pulls down, hypsōsen lifts up - and they pivot on a single hinge: where God chooses to look."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Whole Gospel Is Hidden in a Song",
+      "body": "Luke is the longest of the four Gospels, and he is about to spend twenty-four chapters showing us a Savior who keeps ending up with the wrong people. He eats with tax collectors. He lets a woman with a reputation wash His feet in public. He praises a Samaritan, heals on the wrong day, touches what was untouchable. By the time you reach the cross you can almost predict it: wherever the religious world has drawn a line, Jesus will be standing on the far side of it.\n\nBut before any of that happens - before the Sermon on the Plain, before the parables, before a single miracle - a teenage girl in a small town opens her mouth and sings the entire thing in advance. \"He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\" Mary is not describing her circumstances. By every visible measure nothing has changed. Rome still rules. Herod is still on his throne. She is still poor, still young, still nobody. The verbs are past tense - He has done this - because in the eyes of faith it is as good as done. The child in her is the doing of it.\n\nThis is what \"building\" means in the arc of these chapters. Luke is laying a foundation, and the foundation is a reversal. The God of this Gospel does not climb the ladder of power and reward the people at the top. He turns the ladder over. Read everything that follows Luke 1 against the song of Luke 1, and the shape of it never changes.",
+      "keyInsight": "Before Jesus does anything, His mother announces the logic of everything He will do: God looks where the world looks past, and lifts what the world looks down on.",
+      "content": "Luke is the longest of the four Gospels, and he is about to spend twenty-four chapters showing us a Savior who keeps ending up with the wrong people. He eats with tax collectors. He lets a woman with a reputation wash His feet in public. He praises a Samaritan, heals on the wrong day, touches what was untouchable. By the time you reach the cross you can almost predict it: wherever the religious world has drawn a line, Jesus will be standing on the far side of it.\n\nBut before any of that happens - before the Sermon on the Plain, before the parables, before a single miracle - a teenage girl in a small town opens her mouth and sings the entire thing in advance. \"He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\" Mary is not describing her circumstances. By every visible measure nothing has changed. Rome still rules. Herod is still on his throne. She is still poor, still young, still nobody. The verbs are past tense - He has done this - because in the eyes of faith it is as good as done. The child in her is the doing of it.\n\nThis is what \"building\" means in the arc of these chapters. Luke is laying a foundation, and the foundation is a reversal. The God of this Gospel does not climb the ladder of power and reward the people at the top. He turns the ladder over. Read everything that follows Luke 1 against the song of Luke 1, and the shape of it never changes."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name They Skipped",
+      "body": "A friend who teaches third grade told me about a roll call she never forgot. New school, first week, and she was reading names off a printout in the order the office had given them - alphabetical by last name, which always put the same child near the bottom. Day after day his name came last. By Thursday she noticed he had stopped looking up when she reached it. He had learned where he came in the list.\n\nSo on Friday she started from the bottom. His name came first. She told me his head snapped up like she had called a stranger's. It took him a second to realize she meant him.\n\nThat is closer to the Magnificat than anything in a commentary. The world has a printout, and most of us already know where our name falls on it - by income, by influence, by the rooms we are let into. Mary's song is God reading the list from the bottom. \"He has looked with favor on the humble state of His servant.\" He started where everyone else had stopped looking, and the person whose head snaps up is the one who had learned to expect to come last.",
+      "connectionToTheme": "The Magnificat is not abstract theology - it is the specific experience of being seen first by the One whose gaze decides what counts.",
+      "content": "A friend who teaches third grade told me about a roll call she never forgot. New school, first week, and she was reading names off a printout in the order the office had given them - alphabetical by last name, which always put the same child near the bottom. Day after day his name came last. By Thursday she noticed he had stopped looking up when she reached it. He had learned where he came in the list.\n\nSo on Friday she started from the bottom. His name came first. She told me his head snapped up like she had called a stranger's. It took him a second to realize she meant him.\n\nThat is closer to the Magnificat than anything in a commentary. The world has a printout, and most of us already know where our name falls on it - by income, by influence, by the rooms we are let into. Mary's song is God reading the list from the bottom. \"He has looked with favor on the humble state of His servant.\" He started where everyone else had stopped looking, and the person whose head snaps up is the one who had learned to expect to come last."
+    },
+    {
+      "type": "insight",
+      "heading": "An Old Song in a New Mouth",
+      "body": "Mary did not compose the Magnificat out of thin air. Centuries before her, another woman who had been overlooked - Hannah, barren and mocked - sang almost the same words: \"He raises the poor from the dust and lifts the needy from the ash heap, to seat them with nobles\" (1 Samuel 2:8). Hannah sang it over the birth of Samuel, the prophet who would anoint a shepherd boy as king over a nation that wanted someone taller.\n\nMary is singing Hannah's song again, and that is the point. The reversal is not a new idea Jesus brings. It is the oldest pattern in the story of God - older than Luke, older than David, woven through the whole of Israel's memory. God chooses the younger brother, the barren woman, the stammering shepherd, the smallest tribe. When Mary sings, she is not announcing a surprise. She is naming a habit. The God who is about to do the greatest reversal in history - lifting the dead to life - has been rehearsing it in smaller keys since the beginning.\n\nThat is why this belongs in the 'building' day. Luke is showing you that the inclusive Christ is not an innovation. He is the fulfillment of something God has been saying all along, to anyone who would read the list from the bottom.",
+      "historicalContext": "Mary's song closely echoes the Song of Hannah in 1 Samuel 2:1-10. Both are sung by women on the far side of social power, both celebrate God reversing the fortunes of the proud and the lowly, and both are tied to the birth of a child who will change Israel's history. Luke, a careful historian writing for the 'most excellent Theophilus' (Luke 1:3), wants his Greek-speaking reader to hear the deep continuity between Israel's God and the child in the manger.",
+      "fascinatingFact": "The Magnificat has been sung in the daily evening prayer of the Church for over fifteen hundred years. There are stretches of history where governments grew nervous about it - a song that says God pulls rulers down from thrones has, at various times, been considered too dangerous to recite in public. A teenage girl's hymn has a reputation among the powerful.",
+      "content": "Mary did not compose the Magnificat out of thin air. Centuries before her, another woman who had been overlooked - Hannah, barren and mocked - sang almost the same words: \"He raises the poor from the dust and lifts the needy from the ash heap, to seat them with nobles\" (1 Samuel 2:8). Hannah sang it over the birth of Samuel, the prophet who would anoint a shepherd boy as king over a nation that wanted someone taller.\n\nMary is singing Hannah's song again, and that is the point. The reversal is not a new idea Jesus brings. It is the oldest pattern in the story of God - older than Luke, older than David, woven through the whole of Israel's memory. God chooses the younger brother, the barren woman, the stammering shepherd, the smallest tribe. When Mary sings, she is not announcing a surprise. She is naming a habit. The God who is about to do the greatest reversal in history - lifting the dead to life - has been rehearsing it in smaller keys since the beginning.\n\nThat is why this belongs in the 'building' day. Luke is showing you that the inclusive Christ is not an innovation. He is the fulfillment of something God has been saying all along, to anyone who would read the list from the bottom."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Before His birth, the kingdom of Jesus was sung as a great reversal: the proud scattered, rulers pulled from thrones, the hungry filled, and the humble - the tapeinous, the ones the world looks past - lifted up.",
+      "modernApplication": "We still keep the printout. We still know, mostly without saying it, who matters in a room and who does not - who gets the benefit of the doubt, who gets interrupted, who gets seen. The Magnificat asks an uncomfortable question of anyone who has climbed a few rungs: when God reads the list from the bottom, am I cheering for the reversal, or quietly hoping He does not get to my name?",
+      "connectionPoint": "What Mary sings in Luke 1, Jesus preaches in Luke 4, standing in the synagogue at Nazareth: 'The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor' (Luke 4:18). And when John the Baptist later doubts from prison, Jesus answers by pointing to the same reversal happening in front of him: 'the blind receive sight, the lame walk... and the good news is preached to the poor' (Luke 7:22). The song is the blueprint; the chapters are the building.",
+      "newTestamentEcho": "The God who exalts the humble will, in the end, do it to His own Son. Paul writes that Christ 'humbled (etapeinōsen) Himself and became obedient to death - even death on a cross. Therefore God exalted (hyperypsōsen) Him to the highest place' (Philippians 2:8-9). The pattern Mary sang over the cradle is the pattern God works out at the cross: the lowly One, brought lowest of all, lifted highest of all."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where do you fall on the world's list right now - and how does that change what the Magnificat sounds like to you?",
+      "additionalQuestions": [
+        "Mary sings of God 'looking with favor on the humble state of His servant.' Where in your life do you most need to be seen - and do you believe God is already looking there?",
+        "Is there a 'reversal' in this song you would secretly rather God did not carry out? What does that reveal about where you are standing?",
+        "Whose name have you skipped to the bottom of the list lately - at work, at church, in your own attention? What would it look like to read from the bottom this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, my soul does not always magnify You the way Mary's did. Too often it magnifies the list - who is above me, who is below, where I am trying to climb. Thank You that You read from the bottom, that You look with favor on the lowly state of Your servants, and that You looked at me. Where I am brought low, lift me. Where I have grown proud in the thoughts of my heart, scatter that gently. And teach me to sing Mary's song even before I can see it come true - to call done in faith what You have promised to do. Through the One who humbled Himself, and whom You exalted. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read the world's list from the bottom. Find one person you usually look past - a name you skip, a face you tune out - and give them your full attention, the way God gives His. Then come back and read Luke 1:46-52 once more, out loud if you can, and notice which line you most need to be true.",
+      "leavingAtCross": [
+        "The quiet scorekeeping that decides who in a room is worth my attention",
+        "The fear that being lowly means being forgotten",
+        "The pride in the thoughts of my heart that the song says God scatters"
+      ],
+      "receivingFromCross": [
+        "The favor of a God who looks first at the humble state of His servant",
+        "A place in the oldest pattern in Scripture - the lowly lifted, the empty filled",
+        "The freedom to sing the reversal as already done, because the One who promised it is already at work"
+      ],
+      "content": "Today, read the world's list from the bottom. Find one person you usually look past - a name you skip, a face you tune out - and give them your full attention, the way God gives His. Then come back and read Luke 1:46-52 once more, out loud if you can, and notice which line you most need to be true."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Mary sing in the past tense - 'He has brought down rulers... He has exalted the humble' - when, on the surface, none of it has visibly happened yet?",
+        "How does the Greek word tapeinōsis connect Mary's own situation in verse 48 to the people God lifts in verse 52?",
+        "In what way does the rest of Luke 1-12 (shepherds, lepers, tax collectors, a sinful woman, a centurion's servant) act out the song Mary sings in chapter 1?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly: on most days, do you experience yourself as nearer the top or the bottom of the world's list? How does that shape the way you hear this song?",
+        "Name one 'reversal' in the Magnificat that comforts you and one that unsettles you. Talk about why.",
+        "Ask each other: who is the person you have skipped to the bottom of your attention, and what is one concrete way to read from the bottom this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 2:8",
+          "text": "He raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor. For the foundations of the earth are the LORD's, and upon them He has set the world."
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed."
+        },
+        {
+          "reference": "Luke 7:22",
+          "text": "Go back and report to John what you have seen and heard: The blind receive sight, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised, and the good news is preached to the poor."
+        },
+        {
+          "reference": "Philippians 2:8-9",
+          "text": "And being found in appearance as a man, He humbled Himself and became obedient to death - even death on a cross. Therefore God exalted Him to the highest place and gave Him the name above all names."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 1:46-55 (The Magnificat)",
+          "note": "Read the song slowly, then read it again beside the Song of Hannah in 1 Samuel 2:1-10. Mark every line in Mary's song that echoes Hannah's, and notice how the reversal she sings becomes the storyline of the whole Gospel."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Servant Who Sang the Kingdom First",
+      "era": "1st century AD, Roman-occupied Galilee",
+      "description": "A young woman from an unremarkable town, engaged to a carpenter, with no rank, wealth, or voice in the world that mattered. When the angel announced she would bear the Messiah, she answered, 'I am the Lord's servant' (Luke 1:38). Days later, visiting her cousin Elizabeth, she became the first person in Luke's Gospel to put the meaning of Jesus into words - and what came out was not a lullaby but a manifesto of reversal. She names herself the tapeinos, the lowly servant God chose to look at, and in doing so she becomes the model of every overlooked person the rest of the Gospel will lift.",
+      "keyQuote": "He has brought down rulers from their thrones, but has exalted the humble.",
+      "lessonForUs": "The first theologian of Luke's Gospel is not a scholar or a priest but a poor young woman who could see the whole shape of God's kingdom before anyone could touch it. Faith is partly this: singing the reversal as already done, because the One who promised it has begun.",
+      "heading": "The Servant Who Sang the Kingdom First"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2426,
+  "scriptureReference_full": "Luke 1:46-52 (within Luke 1-12)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tapeinōsis/tapeinos, G5014; the katheilen/hypsōsen verbal pair in Luke 1:52) reflects standard lexical sources. The connection to the Song of Hannah (1 Samuel 2:1-10) and the tapeinoō/hyperypsoō echo in Philippians 2:8-9 are drawn directly from the biblical texts."
+  ]
 }

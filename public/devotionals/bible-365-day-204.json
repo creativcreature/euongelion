@@ -1,38 +1,197 @@
 {
   "day": 204,
-  "title": "Ecclesiastes: Vanity + God — Day 1 — Hook",
-  "teaser": "Day 204 of Bible 365 — Ecclesiastes 1, 3, 12",
+  "title": "The ache that vapor can't explain",
+  "teaser": "Everything under the sun is breath, says the Teacher — and then he lets slip why it can't satisfy: God set eternity inside us.",
   "framework": "Ecclesiastes 1, 3, 12 — Ecclesiastes: Vanity + God",
   "scriptureReference": "Ecclesiastes 1, 3, 12",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 204"
+      "type": "scripture",
+      "reference": "Ecclesiastes 1:2-3; 3:11; 12:1, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "Futility of futilities",
+        "set eternity in the hearts of men",
+        "Remember your Creator",
+        "Fear God"
+      ],
+      "hebrewOriginal": "הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל",
+      "passage": "“Futility of futilities,” says the Teacher, “futility of futilities! Everything is futile!” What does a man gain from all his labor, at which he toils under the sun? ... He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end. ... Remember your Creator in the days of your youth, before the days of adversity come ... When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ecclesiastes 1, 3, 12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ecclesiastes 1, 3, 12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הֶבֶל",
+      "transliteration": "hevel",
+      "pronunciation": "HEH-vel",
+      "meaning": "vapor, breath, mist; the BSB renders it “futility”",
+      "rootMeaning": "Hevel is the little cloud you see on a cold morning when you exhale - there for a second, gone before you can hold it. It is not the word for evil or even emptiness. It is the word for breath. The Teacher does not say the world is wicked; he says it is a vapor.",
+      "usageNote": "Some form of hevel appears around thirty-eight times in this short book - the BSB carries the same idea as “futility.” It frames the whole work: chapter 1 verse 2 and chapter 12 verse 8 say the same thing word for word. The book is a sealed envelope, vapor stamped on both ends, with one line of light hidden inside.",
+      "wordByWord": [
+        {
+          "word": "הֲבֵל",
+          "transliteration": "havel",
+          "meaning": "vapor, breath, fleeting mist"
+        },
+        {
+          "word": "הֲבָלִים",
+          "transliteration": "havalim",
+          "meaning": "the plural - “vapors,” an intensifying superlative"
+        },
+        {
+          "word": "אָמַר",
+          "transliteration": "amar",
+          "meaning": "he said, he declared"
+        },
+        {
+          "word": "קֹהֶלֶת",
+          "transliteration": "qohelet",
+          "meaning": "the Teacher, the Gatherer - one who assembles a congregation to speak"
+        },
+        {
+          "word": "הַכֹּל",
+          "transliteration": "hakol",
+          "meaning": "the whole, everything, all of it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֶבֶל / Abel",
+          "reference": "Hevel is also the name Abel, the second son of Adam (Genesis 4) - a life that vanished like breath, gone before its time. The Teacher's keyword is also a brother's name."
+        },
+        {
+          "word": "עֹלָם / olam",
+          "reference": "The “eternity” God sets in human hearts in Ecclesiastes 3:11 - the one buried word for forever inside a book of vapor."
+        }
+      ],
+      "strongsNumber": "H1892",
+      "definition": "vapor, breath; figuratively, that which is transitory and unsatisfying",
+      "usage": "Hevel is not a verdict that life is worthless. It is an observation that life will not hold still long enough to be grasped - and a question the Teacher refuses to answer cheaply."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ecclesiastes: Vanity + God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the meaning beneath vanity (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Says It Twice, and Means It Both Times",
+      "body": "The Teacher opens by emptying his hands in front of you. “Futility of futilities,” he says, “futility of futilities! Everything is futile!” Then he asks the question every tired person has asked at the kitchen table at midnight: “What does a man gain from all his labor, at which he toils under the sun?”\n\nNotice that phrase - under the sun. He uses it again and again, and it draws a ceiling over the whole investigation. Under the sun is the world as you can see it, measure it, and work it. Within that ceiling, the Teacher is brutally fair. He looks at pleasure, wealth, wisdom, building projects, and the simple grind of getting up to do it again. His honest finding: “there is nothing new under the sun,” and “all things are wearisome, more than one can describe.” The eye never gets its fill of seeing. The ear is never done with hearing. You finish the to-do list and the list quietly grows back overnight.\n\nThis is not the complaint of a failure. Tradition reads these words as the reflection of a king who could afford to try everything and did. The point is sharper coming from him: if the man who got everything still came up holding vapor, then the problem is not that you have too little. The problem is that nothing under the sun was built to bear the weight you keep setting on it.",
+      "keyInsight": "The Teacher is not a pessimist; he is a fair witness. He spends his honesty under the sun first, so that when one ray of light slips in from above it, you will not be able to look away.",
+      "content": "The Teacher opens by emptying his hands in front of you. “Futility of futilities,” he says, “futility of futilities! Everything is futile!” Then he asks the question every tired person has asked at the kitchen table at midnight: “What does a man gain from all his labor, at which he toils under the sun?”\n\nNotice that phrase - under the sun. He uses it again and again, and it draws a ceiling over the whole investigation. Under the sun is the world as you can see it, measure it, and work it. Within that ceiling, the Teacher is brutally fair. He looks at pleasure, wealth, wisdom, building projects, and the simple grind of getting up to do it again. His honest finding: “there is nothing new under the sun,” and “all things are wearisome, more than one can describe.” The eye never gets its fill of seeing. The ear is never done with hearing. You finish the to-do list and the list quietly grows back overnight.\n\nThis is not the complaint of a failure. Tradition reads these words as the reflection of a king who could afford to try everything and did. The point is sharper coming from him: if the man who got everything still came up holding vapor, then the problem is not that you have too little. The problem is that nothing under the sun was built to bear the weight you keep setting on it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Drawer Full of Finished Things",
+      "body": "A friend of mine cleaned out her father's desk the week after the funeral. He had been a careful man, and the drawers proved it: warranties filed by year, a calendar with the church potluck still circled. In the bottom drawer she found a folder marked, in his neat block letters, DONE.\n\nInside were decades of finished things. The mortgage, paid off and stamped. A retirement letter. A list of goals from when he was thirty, every line crossed out. She sat on the floor of his study and held the folder a long time. He had finished the list. He had done the things. And here it all was in a drawer, and here he was not.\n\n“I kept thinking,” she told me, “there has to be more than the folder.” She did not know it, but she was reading Ecclesiastes with her hands. Under the sun, even the finished folder is vapor. The ache she felt on that floor was not grief alone. It was the something more the Teacher is about to name.",
+      "connectionToTheme": "Even a life of completed goals leaves an ache the finished list cannot fill - which is exactly the restlessness the Teacher diagnoses and then traces back to its source.",
+      "content": "A friend of mine cleaned out her father's desk the week after the funeral. He had been a careful man, and the drawers proved it: warranties filed by year, a calendar with the church potluck still circled. In the bottom drawer she found a folder marked, in his neat block letters, DONE.\n\nInside were decades of finished things. The mortgage, paid off and stamped. A retirement letter. A list of goals from when he was thirty, every line crossed out. She sat on the floor of his study and held the folder a long time. He had finished the list. He had done the things. And here it all was in a drawer, and here he was not.\n\n“I kept thinking,” she told me, “there has to be more than the folder.” She did not know it, but she was reading Ecclesiastes with her hands. Under the sun, even the finished folder is vapor. The ache she felt on that floor was not grief alone. It was the something more the Teacher is about to name."
+    },
+    {
+      "type": "insight",
+      "heading": "One Line of Light Inside the Vapor",
+      "body": "Here is the secret hidden in the middle of the book, and it is the center of everything we are reading today. In chapter 3, right after the famous list of seasons - a time to be born and a time to die, a time to weep and a time to laugh - the Teacher writes the sentence the whole book turns on: “He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.”\n\nRead it slowly. He has set eternity - olam, forever - inside us. That is why nothing under the sun ever fits. We are creatures with a forever-shaped room in the heart, trying to furnish it with things that are, by the Teacher's own honest word, vapor. The mismatch is not a design flaw. It is the design. The reason the finished folder leaves an ache is that we were made for more than folders, and we know it the way we know we are hungry: not by argument, but by the empty feeling itself.\n\nThis is why hevel is not despair. The Teacher is not saying life is meaningless and you should stop caring. He is saying the meaning is not under the sun, because the One who put eternity in you is not under the sun. The ache is a compass. It is broken in the sense that it cannot reach what it points to on its own - but it points true. It points up, and it points forward, to a work “from beginning to end” that God does and we cannot finish for ourselves.",
+      "historicalContext": "Ecclesiastes sits among the Wisdom books - Job, Psalms, Proverbs, Ecclesiastes, Song of Songs - which test the proverbs of ordinary faith against the hard edges of real life. It was read in the synagogue cycle at Sukkot, when Israel lived in temporary booths to remember that life is a tent, not a fortress. Vapor was read in a hut by people who knew it.",
+      "fascinatingFact": "“He has also set eternity in the hearts of men” (3:11) uses olam, the Hebrew word for endless time. It is the only place in the book where forever is said to live inside a person rather than stretch outside them - eternity buried within a book of vapor.",
+      "content": "Here is the secret hidden in the middle of the book, and it is the center of everything we are reading today. In chapter 3, right after the famous list of seasons - a time to be born and a time to die, a time to weep and a time to laugh - the Teacher writes the sentence the whole book turns on: “He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.”\n\nRead it slowly. He has set eternity - olam, forever - inside us. That is why nothing under the sun ever fits. We are creatures with a forever-shaped room in the heart, trying to furnish it with things that are, by the Teacher's own honest word, vapor. The mismatch is not a design flaw. It is the design. The reason the finished folder leaves an ache is that we were made for more than folders, and we know it the way we know we are hungry: not by argument, but by the empty feeling itself.\n\nThis is why hevel is not despair. The Teacher is not saying life is meaningless and you should stop caring. He is saying the meaning is not under the sun, because the One who put eternity in you is not under the sun. The ache is a compass. It is broken in the sense that it cannot reach what it points to on its own - but it points true. It points up, and it points forward, to a work “from beginning to end” that God does and we cannot finish for ourselves."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Everything under the sun is hevel - vapor that slips through the fingers - and yet God has set eternity inside the human heart, a forever no fleeting thing can fill.",
+      "modernApplication": "We try to fill the forever-shaped room with under-the-sun furniture: the next promotion, the next relationship, the cleared inbox, the well-curated feed. Each is real, even good, and each is vapor when asked to be everything. The restlessness you feel at the bottom of a good day is not a malfunction. It is eternity reminding you it is there.",
+      "connectionPoint": "Augustine, writing in North Africa as the empire crumbled around him, named this ache in a line the church has never forgotten: “You have made us for Yourself, O Lord, and our heart is restless until it rests in You” (Confessions, Book 1, Chapter 1, written around 397 AD). He was describing, in his own words, the eternity Ecclesiastes 3:11 says God set inside us - the restlessness that vapor explains and only God answers.",
+      "newTestamentEcho": "The Teacher could only point up at a meaning above the sun. The Gospel says that meaning came down beneath it. Paul writes of Christ: “He is before all things, and in Him all things hold together” (Colossians 1:17). The One who is before all things stepped under the sun, breathed our vapor-thin breath, and at the cross gave that breath up - so that the eternity God set in our hearts would finally have somewhere to rest. The Teacher's compass points to Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What “under the sun” thing have you been quietly asking to fill the forever-shaped room - and what does it cost you when it can't?",
+      "additionalQuestions": [
+        "Where do you most feel the ache the Teacher describes: at the end of a finished task, in a quiet house, after a goal you thought would satisfy?",
+        "If the restlessness is a compass and not a malfunction, what is it pointing you toward right now?",
+        "What would change today if you treated your unfinished longing as evidence of eternity rather than as a problem to solve?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God, I have been furnishing a forever-shaped room with vapor. I keep handing it the next thing, and the next, and it stays empty. Thank You that the emptiness is not a flaw but a homing signal - the eternity You set in me, calling for You. Where I have called vapor by the name of meaning, forgive me. Teach me to remember my Creator, not only in trouble but in the ordinary hours, and to rest the whole weight of my heart on the One who holds all things together. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one vapor - one good thing you have secretly asked to be everything - and out loud, hand it back to its proper size. Then let the leftover ache do its real job: turn it into a single sentence of prayer to the God who put it there.",
+      "leavingAtCross": [
+        "The exhausting project of furnishing eternity with under-the-sun things",
+        "The lie that the ache means something is wrong with me, rather than that I was made for more",
+        "The fear that if nothing here satisfies, then nothing satisfies at all"
+      ],
+      "receivingFromCross": [
+        "Permission to feel the restlessness without rushing to silence it",
+        "The truth that the longing is a compass God set inside me, and it points to Him",
+        "The rest of resting my whole weight on Christ, in whom all things hold together"
+      ],
+      "content": "Today, name one vapor - one good thing you have secretly asked to be everything - and out loud, hand it back to its proper size. Then let the leftover ache do its real job: turn it into a single sentence of prayer to the God who put it there."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word hevel literally picture, and why does “vapor” say something different than “meaningless”?",
+        "Why does the Teacher keep repeating the phrase “under the sun,” and what does it leave out?",
+        "How does Ecclesiastes 3:11 - “He has set eternity in the hearts of men” - explain the ache the rest of the book keeps describing?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one good thing in your life you have been quietly asking to be everything. What happens to it, and to you, under that weight?",
+        "Talk about the restlessness Augustine described. Is it threat, gift, or both - and how do you usually try to quiet it?",
+        "The book's final word is “Fear God and keep His commandments.” What would it look like, this week, to let reverence for God - not the next accomplishment - set the shape of one ordinary day?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ecclesiastes 1:14",
+          "text": "I have seen all the things that are done under the sun, and have found them all to be futile, a pursuit of the wind."
+        },
+        {
+          "reference": "Ecclesiastes 3:1",
+          "text": "To everything there is a season, and a time for every purpose under heaven:"
+        },
+        {
+          "reference": "Ecclesiastes 12:7",
+          "text": "before the dust returns to the ground from which it came and the spirit returns to God who gave it."
+        },
+        {
+          "reference": "Ecclesiastes 12:13",
+          "text": "When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
+        },
+        {
+          "reference": "Colossians 1:17",
+          "text": "He is before all things, and in Him all things hold together."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 1, 3, and 12",
+          "note": "Read these three chapters in one sitting, watching how the book is sealed by “futility of futilities” at both ends (1:2 and 12:8) - and find the one line of light buried in the middle at 3:11."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Qoheleth (The Teacher)",
+      "title": "The Gatherer Who Tried Everything",
+      "era": "Israel's monarchy; traditionally identified with Solomon, son of David, king in Jerusalem",
+      "description": "Qoheleth - the Teacher, the Gatherer - is the voice of Ecclesiastes, one who assembles a congregation to tell them the hard-won truth. Traditionally read as Solomon in his later years, he is the man who had the means to test every promise the world makes and the honesty to report back that none of them, taken alone, holds. He does not end in despair. He ends in reverence: remember your Creator, fear God, keep His commandments.",
+      "keyQuote": "He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.",
+      "lessonForUs": "The Teacher refuses both lies - that the world is enough, and that the world is worthless. It is vapor, and you were made for more than vapor. The ache that proves it is the surest evidence you have that God is real and is calling you home.",
+      "heading": "The Gatherer Who Tried Everything"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1614,
+  "scriptureReference_full": "Ecclesiastes 1:2-3, 8-9, 14; 3:1-11; 12:1, 7-8, 13-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain. The BSB renders Hebrew hevel as “futility.”",
+    "Hebrew word study (hevel H1892; olam, “eternity,” in Ecclesiastes 3:11) reflects standard lexical sources; the Abel/hevel name resonance is widely noted in commentary.",
+    "Augustine of Hippo, Confessions, Book 1, Chapter 1 (c. 397 AD)."
+  ]
 }

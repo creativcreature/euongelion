@@ -6,33 +6,182 @@
   "scriptureReference": "Daniel 7, 9",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 249"
+      "type": "scripture",
+      "reference": "Daniel 7:13-14; 9:24-26",
+      "translation": "BSB",
+      "emphasis": [
+        "One like the Son of Man",
+        "the Messiah will be cut off",
+        "will never be destroyed",
+        "to make atonement for iniquity"
+      ],
+      "hebrewOriginal": "וְאַחֲרֵי הַשָּׁבֻעִים שִׁשִּׁים וּשְׁנַיִם יִכָּרֵת מָשִׁיחַ וְאֵין לוֹ",
+      "passage": "In my vision in the night I continued to watch, and I saw One like the Son of Man coming with the clouds of heaven. He approached the Ancient of Days and was led into His presence. And He was given dominion, glory, and kingship, that the people of every nation and language should serve Him. His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed. ... Seventy weeks are decreed for your people and your holy city to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy Place. ... Then after the sixty-two weeks the Messiah will be cut off and will have nothing."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 7, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 7, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יִכָּרֵת",
+      "transliteration": "yikkaret",
+      "pronunciation": "yik-kah-RAYT",
+      "meaning": "he will be cut off, severed, killed",
+      "rootMeaning": "From the root karat, to cut. It is the same verb used for cutting down a tree, severing a limb, and removing a person from the covenant community by death. To be 'cut off' is not to fade away; it is to be severed by a blade.",
+      "usageNote": "Karat is the very word Israel used for 'cutting' a covenant - one walked between the divided pieces of a slain animal (Genesis 15:10, 17-18). Daniel 9:26 chooses this loaded word for the Messiah's death: the Anointed One is cut off, and in being cut, a covenant is made.",
+      "wordByWord": [
+        {
+          "word": "וְאַחֲרֵי",
+          "transliteration": "ve'acharei",
+          "meaning": "and after"
+        },
+        {
+          "word": "הַשָּׁבֻעִים",
+          "transliteration": "hashavu'im",
+          "meaning": "the weeks, the sevens"
+        },
+        {
+          "word": "יִכָּרֵת",
+          "transliteration": "yikkaret",
+          "meaning": "he will be cut off, killed"
+        },
+        {
+          "word": "מָשִׁיחַ",
+          "transliteration": "mashiach",
+          "meaning": "anointed one, Messiah"
+        },
+        {
+          "word": "וְאֵין לוֹ",
+          "transliteration": "ve'ein lo",
+          "meaning": "and there is nothing to Him; He has nothing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בַּר אֱנָשׁ",
+          "reference": "Aramaic bar enash, 'son of man,' in Daniel 7:13 - the figure given everlasting dominion. The same person Scripture cuts off in chapter 9, it crowns in chapter 7."
+        }
+      ],
+      "strongsNumber": "H3772",
+      "definition": "to cut off, cut down, sever; idiomatically, to make a covenant by cutting",
+      "usage": "The phrase ve'ein lo - 'and He has nothing' - is stark. The Anointed One is severed and left with empty hands, not because He failed, but because the seventy weeks were 'to make atonement for iniquity' (v. 24). He is cut off having nothing, so that those He covers might have everything."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel: Messiah Cut Off. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the cut-off Anointed (Dan 9:26).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Visions, One Person",
+      "body": "Yesterday the center came into view: in the same scroll, Daniel sees a Messiah who is cut off with nothing, and a Son of Man who is given a kingdom that will never end. Today we have to live inside that strange pairing, because it is the shape of our own faith.\n\nDaniel 7 and Daniel 9 are written in different languages - chapter 7 in Aramaic, chapter 9 in Hebrew - and they describe scenes that could not look more opposite. In chapter 7, the heavens open. The Ancient of Days takes His throne, His clothing white as snow, His throne flaming with fire. One 'like the Son of Man' comes on the clouds and is led into His presence, and there He is given 'dominion, glory, and kingship,' a rule that 'will never be destroyed.' It is the highest coronation Scripture can picture.\n\nIn chapter 9, the angel Gabriel comes to a praying old man and lays out seventy weeks of history. At the heart of that timeline stands one line that does not fit a coronation at all: 'the Messiah will be cut off and will have nothing.' The same prophet who watched the Son of Man crowned now hears that the Anointed One will be killed and left with empty hands. Daniel is not given two messiahs. He is given two true things about one.",
+      "keyInsight": "The Son of Man who receives an everlasting kingdom in Daniel 7 and the Messiah who is cut off with nothing in Daniel 9 are not two figures held in tension - they are one person, and the cutting off is the road to the crown.",
+      "content": "Yesterday the center came into view: in the same scroll, Daniel sees a Messiah who is cut off with nothing, and a Son of Man who is given a kingdom that will never end. Today we have to live inside that strange pairing, because it is the shape of our own faith.\n\nDaniel 7 and Daniel 9 are written in different languages - chapter 7 in Aramaic, chapter 9 in Hebrew - and they describe scenes that could not look more opposite. In chapter 7, the heavens open. The Ancient of Days takes His throne, His clothing white as snow, His throne flaming with fire. One 'like the Son of Man' comes on the clouds and is led into His presence, and there He is given 'dominion, glory, and kingship,' a rule that 'will never be destroyed.' It is the highest coronation Scripture can picture.\n\nIn chapter 9, the angel Gabriel comes to a praying old man and lays out seventy weeks of history. At the heart of that timeline stands one line that does not fit a coronation at all: 'the Messiah will be cut off and will have nothing.' The same prophet who watched the Son of Man crowned now hears that the Anointed One will be killed and left with empty hands. Daniel is not given two messiahs. He is given two true things about one."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Prayer Before the Promise",
+      "body": "Here is the detail that makes Daniel 9 a chapter about how to live, not just what to believe. The seventy-weeks prophecy does not arrive while Daniel is researching dates or charting kingdoms. It arrives while he is on his knees.\n\nDaniel had been reading Jeremiah and realized the seventy years of exile were nearly up. He did not respond by relaxing. He responded by praying - 'with fasting, sackcloth, and ashes.' And his prayer is not a list of requests. It is confession: 'we have sinned and done wrong. We have acted wickedly and rebelled.' An innocent-as-Scripture-paints-him man stands in the gap and says we, taking his place inside his people's failure rather than above it.\n\nOnly then, mid-prayer, does Gabriel come with the answer. And the answer is bigger than the question Daniel asked. He prayed about seventy years of exile; he was answered with seventy weeks of redemption, with an Anointed One at the center who would deal with sin itself. Daniel asked for a city to be restored. God told him a Savior was coming.",
+      "connectionToTheme": "Daniel receives the promise of the cut-off Messiah while praying a prayer of confession he counts himself into - the posture that lets a person carry a promise they will not live to see.",
+      "content": "Here is the detail that makes Daniel 9 a chapter about how to live, not just what to believe. The seventy-weeks prophecy does not arrive while Daniel is researching dates or charting kingdoms. It arrives while he is on his knees.\n\nDaniel had been reading Jeremiah and realized the seventy years of exile were nearly up. He did not respond by relaxing. He responded by praying - 'with fasting, sackcloth, and ashes.' And his prayer is not a list of requests. It is confession: 'we have sinned and done wrong. We have acted wickedly and rebelled.' An innocent-as-Scripture-paints-him man stands in the gap and says we, taking his place inside his people's failure rather than above it.\n\nOnly then, mid-prayer, does Gabriel come with the answer. And the answer is bigger than the question Daniel asked. He prayed about seventy years of exile; he was answered with seventy weeks of redemption, with an Anointed One at the center who would deal with sin itself. Daniel asked for a city to be restored. God told him a Savior was coming."
+    },
+    {
+      "type": "insight",
+      "heading": "He Has Nothing, So You Have Everything",
+      "body": "Hold the two halves of verse 24 and verse 26 together. Verse 24 lists what the seventy weeks accomplish: 'to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness.' Verse 26 names the means: 'the Messiah will be cut off and will have nothing.'\n\nThe sequence is the whole gospel in two verses. Atonement is made by the One who is cut off. The Anointed One does not end sin by overpowering it from a throne; He ends it by being severed, by standing where the guilty stood and absorbing the cutting that the covenant demanded. 'And He has nothing' - ve'ein lo - is not a tragedy that interrupts the plan. It is the plan. He is emptied so that others can be filled.\n\nThis is why the word in Daniel 9:26 is karat, the same verb Israel used for 'cutting' a covenant. When God made His covenant with Abram, an animal was cut in two and God passed between the pieces (Genesis 15). On the cross, the Messiah Himself is the One cut - and through that cutting a new covenant is made with many. His empty hands are the reason ours are not.",
+      "historicalContext": "Daniel wrote during the Babylonian exile (6th century BC), centuries before Rome existed. By the first century, the seventy-weeks prophecy had become one of the most discussed messianic texts in Judaism; the Jewish historian Josephus records that prophecies in Daniel were widely read as predicting the timing of great events. The early church saw the cutting off of the Anointed One fulfilled at the cross.",
+      "fascinatingFact": "Daniel 7:13 is the single passage Jesus quotes about Himself at His trial. Asked under oath whether He is the Messiah, He answers that they will see 'the Son of Man... coming on the clouds of heaven' (Mark 14:62) - lifting Daniel 7 word for word. The title He used for Himself more than any other, 'the Son of Man,' is this verse. He claimed both halves of Daniel: the cut-off Messiah and the enthroned Son of Man.",
+      "content": "Hold the two halves of verse 24 and verse 26 together. Verse 24 lists what the seventy weeks accomplish: 'to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness.' Verse 26 names the means: 'the Messiah will be cut off and will have nothing.'\n\nThe sequence is the whole gospel in two verses. Atonement is made by the One who is cut off. The Anointed One does not end sin by overpowering it from a throne; He ends it by being severed, by standing where the guilty stood and absorbing the cutting that the covenant demanded. 'And He has nothing' - ve'ein lo - is not a tragedy that interrupts the plan. It is the plan. He is emptied so that others can be filled.\n\nThis is why the word in Daniel 9:26 is karat, the same verb Israel used for 'cutting' a covenant. When God made His covenant with Abram, an animal was cut in two and God passed between the pieces (Genesis 15). On the cross, the Messiah Himself is the One cut - and through that cutting a new covenant is made with many. His empty hands are the reason ours are not."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Daniel sees a Messiah cut off with nothing and a Son of Man given a kingdom that will never be destroyed, and learns to wait on a promise of redemption he will not live long enough to see fulfilled.",
+      "modernApplication": "You also live in the gap between a cutting that has already happened and a kingdom not yet fully come. The Messiah was cut off; the Son of Man has not yet visibly received every nation. Faith means holding both at once - trusting the empty hands on the cross and the everlasting dominion - without collapsing the tension into despair or pretending the wait is over.",
+      "connectionPoint": "Daniel's response to standing in that gap was not anxious calculation but humble, confessing prayer. When the timeline of God's promises feels long and the world looks like the cutting won, the way to live is Daniel's way: on your knees, naming the truth, counting yourself among the people God is redeeming, and trusting that the One who was cut off is already enthroned.",
+      "newTestamentEcho": "At His trial, Jesus took Daniel's two visions and applied both to Himself: cut off as the Messiah, He told the court they would see Him 'coming on the clouds of heaven' as the Son of Man (Mark 14:62). What Daniel saw in two scenes, Christ united in one life - crucified and crowned, the Lamb who was slain seated on the throne (Revelation 5:6-13)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you living in the gap - trusting a promise of God that has been made but not yet fully kept - and how are you handling the wait?",
+      "additionalQuestions": [
+        "Daniel met the long timeline of God on his knees, in confession. When the promises of God feel slow, what is your default posture - calculation, despair, distraction, or prayer?",
+        "The Messiah was cut off and 'had nothing' so that you could be given everything. Where are you still trying to hold onto something with full hands that He is asking you to release?",
+        "Daniel prayed 'we have sinned,' counting himself in. Is there a place where you stand above your people's failure rather than inside it, and what would it look like to pray 'we' instead of 'they'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "humble-confession",
+      "prayerText": "Ancient of Days, on Your throne flaming with fire, I come the way Daniel came - on my knees, with empty hands. I confess that I have sinned and done wrong, and I do not stand above anyone. Thank You that the Messiah was cut off and had nothing, so that I, who deserve to be cut off, might be covered. Thank You that the One who was severed is the same One given a kingdom that will never be destroyed. Teach me to live in the gap with faith and not fear, to wait on Your promises in prayer, and to trust the empty hands of my Savior more than my own full ones. For He is both the Lamb who was slain and the Son of Man coming on the clouds. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, take Daniel's posture for ten minutes. Read Daniel 9:3-19 slowly, then pray your own prayer of confession in the first person plural - 'we,' not 'they' - naming one real failure you usually keep at arm's length. End by thanking the Messiah who was cut off with nothing so that your hands could be filled.",
+      "leavingAtCross": [
+        "The habit of standing above my people's failure instead of confessing my place inside it",
+        "The anxious calculation that tries to force God's timeline instead of trusting it",
+        "The full hands that grip what I should release, as if the Messiah did not empty His for me"
+      ],
+      "receivingFromCross": [
+        "Atonement made for me by the One who was cut off and had nothing",
+        "A place in a kingdom that will never be destroyed, given not earned",
+        "The freedom to wait in the gap on my knees, certain that the slain Lamb is already enthroned"
+      ],
+      "content": "Today, take Daniel's posture for ten minutes. Read Daniel 9:3-19 slowly, then pray your own prayer of confession in the first person plural - 'we,' not 'they' - naming one real failure you usually keep at arm's length. End by thanking the Messiah who was cut off with nothing so that your hands could be filled."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How can the Son of Man of Daniel 7, given an everlasting kingdom, and the Messiah of Daniel 9, cut off with nothing, be the same person? What holds the two scenes together?",
+        "Why does it matter that the word for the Messiah being 'cut off' (karat) is the same word Israel used for 'cutting' a covenant?",
+        "What does Daniel's response - confessing prayer rather than calculation - teach about how to live between a promise made and a promise fully kept?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a promise of God you are waiting on right now. Are you waiting like Daniel - in prayer and confession - or in some other way?",
+        "Name one area where you tend to pray 'they have sinned' rather than 'we have sinned.' What would change if you prayed yourself into it?",
+        "Ask each other: where are your hands too full to receive what the Messiah emptied His hands to give you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 9:24",
+          "text": "Seventy weeks are decreed for your people and your holy city to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy Place."
+        },
+        {
+          "reference": "Mark 14:62",
+          "text": "\"I am,\" said Jesus, \"and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.\""
+        },
+        {
+          "reference": "Isaiah 53:8",
+          "text": "By oppression and judgment He was taken away, and who can recount His descendants? For He was cut off from the land of the living; He was stricken for the transgression of My people."
+        },
+        {
+          "reference": "Revelation 5:12",
+          "text": "In a loud voice they said: \"Worthy is the Lamb who was slain to receive power and riches and wisdom and strength and honor and glory and blessing!\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 9:1-19",
+          "note": "Read Daniel's full prayer before the seventy-weeks answer comes. Notice how much of it is confession and how little is request - then watch the answer in verses 24-27 exceed everything he asked."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Praying Exile Who Saw the Son of Man",
+      "description": "A young Judean noble carried to Babylon in the exile, Daniel served in the courts of pagan kings for some seventy years while remaining faithful to the God of Israel. Late in life he received the visions of chapters 7-12, including the Son of Man receiving an everlasting kingdom and the seventy weeks that name a Messiah cut off to make atonement. He is portrayed not as a triumphant prophet but as a confessing intercessor who counted himself among a sinful people and waited in prayer on promises he would not live to see.",
+      "keyQuote": "we have sinned and done wrong. We have acted wickedly and rebelled.",
+      "lessonForUs": "Daniel shows us how to live in the gap between promise and fulfillment: not with anxious date-setting, but on our knees, confessing 'we,' trusting that the Messiah cut off with nothing is the same Son of Man whose kingdom will never be destroyed.",
+      "heading": "The Praying Exile Who Saw the Son of Man"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2258,
+  "scriptureReference_full": "Daniel 7:13-14; 9:24-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew/Aramaic word study (yikkaret / karat H3772; bar enash, Daniel 7:13) reflects standard lexical sources. The karat–covenant resonance draws on the 'cutting' idiom of Genesis 15. Josephus (Antiquities 10.11.7) records the wide ancient reading of Daniel's prophecies as predictive."
+  ]
 }

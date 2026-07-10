@@ -1,38 +1,190 @@
 {
   "day": 327,
-  "title": "John: Garden, Cross, Resurrection — Day 5 — Resolution",
-  "teaser": "Day 327 of Bible 365 — John 15-21",
+  "title": "She thought He was the gardener",
+  "teaser": "Day 327 of Bible 365 — John 15-21. Mary mistook the risen Christ for a gardener. She was more right than she knew: the new Adam had come back to the garden to plant a world.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 327"
+      "type": "scripture",
+      "reference": "John 20:15-16",
+      "translation": "BSB",
+      "emphasis": [
+        "Thinking He was the gardener",
+        "Jesus said to her, “Mary.”",
+        "Rabboni!"
+      ],
+      "greekOriginal": "ἐκεῖνος δοκοῦσα ὅτι ὁ κηπουρός ἐστιν",
+      "passage": "“Woman, why are you weeping?” Jesus asked. “Whom are you seeking?” Thinking He was the gardener, she said, “Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.” Jesus said to her, “Mary.” She turned and said to Him in Hebrew, “Rabboni!” (which means “Teacher”)."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "κηπουρός",
+      "transliteration": "kēpouros",
+      "pronunciation": "kay-poo-ROSS",
+      "meaning": "gardener, keeper of a garden",
+      "rootMeaning": "A compound of kēpos (κῆπος), 'garden,' and ouros (οὖρος), 'watcher, guardian.' Literally: the one who watches over the garden, who keeps and tends the ground.",
+      "usageNote": "Kēpouros appears only here in the entire New Testament. John has already told us three times that there was a garden (kēpos) here: the garden Jesus entered across the Kidron (18:1), the garden where He was crucified, and the garden tomb where He was laid (19:41). When Mary 'mistakes' the risen Lord for the kēpouros, John lets the irony stand without comment. She is wrong about the man and right about the office. He is the keeper of this garden.",
+      "wordByWord": [
+        {
+          "word": "δοκοῦσα",
+          "transliteration": "dokousa",
+          "meaning": "thinking, supposing - she formed an opinion that turned out wrong on the surface and true underneath"
+        },
+        {
+          "word": "ὁ κηπουρός",
+          "transliteration": "ho kēpouros",
+          "meaning": "the gardener, the keeper of the garden"
+        },
+        {
+          "word": "ἐστιν",
+          "transliteration": "estin",
+          "meaning": "he is - present tense; she assumes a living man stands before her, and a living man does"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "κῆπος (kēpos)",
+          "reference": "The word 'garden' frames the whole Passion in John: 18:1 (the garden across the Kidron where He is arrested), 19:41 (the garden where He is crucified and buried). The Resurrection happens in a garden on purpose."
+        },
+        {
+          "word": "γῆ / Ἀδάμ (gē / Adam)",
+          "reference": "In Genesis the first man is set in a garden 'to work it and keep it' (Genesis 2:15). Adam was the first kēpouros - and he lost the garden. The last Adam wins it back."
+        }
+      ],
+      "strongsNumber": "G2780",
+      "definition": "a gardener; one who tends and guards a garden or vineyard",
+      "usage": "John uses the word once, and uses it perfectly. Mary's tear-blurred guess becomes the Gospel's quietest sermon: the risen Christ really is the Gardener, come back to the ground to make it bear fruit again."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Five Chapters That End in a Garden",
+      "body": "John 15 opens with a vine. \"I am the true vine, and My Father is the keeper of the vineyard.\" Then comes the long, low murmur of the upper room - remain in Me, love one another, the Spirit is coming, the world will hate you, your grief will turn to joy. Jesus prays for His friends. Then He stops talking and starts walking. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden.\"\n\nFrom that garden the story runs downhill fast: the torches, the kiss of betrayal, the bound hands, the courtyard fire where Peter warms himself and denies he ever knew the man. Pilate brings Jesus out wearing a crown of thorns and says, \"Here is the man\" - and the crowd that should have crowned Him calls for His death instead. They nail Him up between two others. And then the sentence John has been moving toward since chapter one: \"When Jesus had received the sour wine, He said, 'It is finished.' And bowing His head, He yielded up His spirit.\"\n\nNotice where they bury Him. \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid.\" John will not let you miss it. The story began in a garden and it ends in a garden. The cross stands between two patches of green like a tree planted in the worst soil in the world.",
+      "keyInsight": "John frames the whole Passion with gardens on purpose. What was lost in a garden is being won back in one.",
+      "content": "John 15 opens with a vine. \"I am the true vine, and My Father is the keeper of the vineyard.\" Then comes the long, low murmur of the upper room - remain in Me, love one another, the Spirit is coming, the world will hate you, your grief will turn to joy. Jesus prays for His friends. Then He stops talking and starts walking. \"After Jesus had spoken these words, He went out with His disciples across the Kidron Valley, where they entered a garden.\"\n\nFrom that garden the story runs downhill fast: the torches, the kiss of betrayal, the bound hands, the courtyard fire where Peter warms himself and denies he ever knew the man. Pilate brings Jesus out wearing a crown of thorns and says, \"Here is the man\" - and the crowd that should have crowned Him calls for His death instead. They nail Him up between two others. And then the sentence John has been moving toward since chapter one: \"When Jesus had received the sour wine, He said, 'It is finished.' And bowing His head, He yielded up His spirit.\"\n\nNotice where they bury Him. \"Now there was a garden in the place where Jesus was crucified, and in the garden a new tomb in which no one had yet been laid.\" John will not let you miss it. The story began in a garden and it ends in a garden. The cross stands between two patches of green like a tree planted in the worst soil in the world."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Came to Tend a Grave",
+      "body": "Mary Magdalene came to the tomb in the dark. She was not expecting a miracle. She was expecting a body, and she came to do for it the small, hopeless work that grief always reaches for - the wrapping, the spices, the tending of what is already lost. She came to keep a grave.\n\nThe stone was rolled back. The tomb was empty. And whatever theology she may have heard from the man she followed, in that moment all she knew was that someone had taken Him and she did not even have a corpse to weep over. So she stood in the garden and cried.\n\nThen a man's voice. \"Woman, why are you weeping? Whom are you seeking?\" She did not look up. Through the tears she assumed the obvious: a gardener, out early, the only sort of person who would be in a garden at that hour. \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\" She was ready to carry a grown man's body by herself rather than leave Him lost. And the gardener said one word. Her name. \"Mary.\" That was all it took. The grief broke open. \"Rabboni\" - Teacher - and she would have held on to Him forever if He had let her.",
+      "connectionToTheme": "Mary came to keep a grave and met the Keeper of the garden. She thought she had to find Him; in truth He had already found her, and called her by name.",
+      "content": "Mary Magdalene came to the tomb in the dark. She was not expecting a miracle. She was expecting a body, and she came to do for it the small, hopeless work that grief always reaches for - the wrapping, the spices, the tending of what is already lost. She came to keep a grave.\n\nThe stone was rolled back. The tomb was empty. And whatever theology she may have heard from the man she followed, in that moment all she knew was that someone had taken Him and she did not even have a corpse to weep over. So she stood in the garden and cried.\n\nThen a man's voice. \"Woman, why are you weeping? Whom are you seeking?\" She did not look up. Through the tears she assumed the obvious: a gardener, out early, the only sort of person who would be in a garden at that hour. \"Sir, if you have carried Him off, tell me where you have put Him, and I will get Him.\" She was ready to carry a grown man's body by herself rather than leave Him lost. And the gardener said one word. Her name. \"Mary.\" That was all it took. The grief broke open. \"Rabboni\" - Teacher - and she would have held on to Him forever if He had let her."
+    },
+    {
+      "type": "insight",
+      "heading": "Right About the Office, Wrong About the Grave",
+      "body": "Mary's mistake is the truest thing said in the chapter. She supposed He was the gardener. She was looking at the Gardener.\n\nThe first man was made and set in a garden \"to work it and keep it,\" and he lost it - and with it lost the ground, which was cursed to grow thorns. Centuries later a man is crowned with those same thorns, dies, and is laid in a garden. When He stands up alive, the first human eyes to see Him read Him, correctly, as the one who belongs to this garden, the one who tends it. The thorns came up in Eden; they came down on His head; and now, in the cool of a new morning, the keeper of the garden is on His feet again.\n\nThis is why John spends a verse on what looks like a misunderstanding. It is not a misunderstanding. It is the Resurrection's first interpretation, spoken by accident through her tears: He is the Gardener. He has come back to the ground to make it live.",
+      "historicalContext": "John's Gospel was written for readers steeped in the opening pages of Genesis. The deliberate repetition of 'garden' (kēpos) across the Passion, the mention of 'the first day of the week,' and the breathing of the Spirit into the disciples (20:22, echoing God breathing life into Adam in Genesis 2:7) all signal that John is telling the story of a new creation - the second and final Adam undoing what the first one broke.",
+      "fascinatingFact": "John alone, of the four Gospels, tells us the tomb was in a garden, and John alone records Mary's guess that Jesus was the gardener. Many early Christian readers, including the fourth-century preacher and others in the centuries after, heard in this the deliberate echo of Eden: paradise lost in one garden, paradise reopened in another.",
+      "content": "Mary's mistake is the truest thing said in the chapter. She supposed He was the gardener. She was looking at the Gardener.\n\nThe first man was made and set in a garden \"to work it and keep it,\" and he lost it - and with it lost the ground, which was cursed to grow thorns. Centuries later a man is crowned with those same thorns, dies, and is laid in a garden. When He stands up alive, the first human eyes to see Him read Him, correctly, as the one who belongs to this garden, the one who tends it. The thorns came up in Eden; they came down on His head; and now, in the cool of a new morning, the keeper of the garden is on His feet again.\n\nThis is why John spends a verse on what looks like a misunderstanding. It is not a misunderstanding. It is the Resurrection's first interpretation, spoken by accident through her tears: He is the Gardener. He has come back to the ground to make it live."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On the first day of the week, in a garden, the crucified Jesus stood up alive and called a weeping woman by her name - and the Gardener of Eden was back at His work.",
+      "modernApplication": "You may have come to faith the way Mary came to the tomb: braced for absence, doing the small faithful things over what feels already lost - a marriage, a calling, a version of yourself you have written off. The Resurrection does not ask you to find Him by your own searching. It tells you He knows your name and is standing closer than the grief lets you see.",
+      "connectionPoint": "This passage closes John's Gospel and, with it, the long line of gardens that runs through the whole Bible. Eden is lost in Genesis 3. A garden tomb opens in John 20. And Scripture ends in a garden-city where 'the tree of life' grows again and 'no longer will there be any curse' (Revelation 22:2-3). The thread that began with thorns ends with leaves for the healing of the nations.",
+      "newTestamentEcho": "Paul names the pattern outright: 'For since death came through a man, the resurrection of the dead comes also through a man. For as in Adam all die, so in Christ all will be made alive' (1 Corinthians 15:21-22). The Gardener Mary met is the last Adam, and the garden He keeps now includes everyone joined to Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you come, like Mary, braced for absence - tending something you have already grieved as lost?",
+      "additionalQuestions": [
+        "Jesus did not argue Mary into belief; He said her name. When have you sensed yourself known and named rather than merely instructed?",
+        "Mary wanted to cling to the risen Christ and was told instead to 'go and tell.' What might it look like to stop holding on and start carrying the news?",
+        "If the risen Lord is the Gardener tending dead ground back to life, what part of your life are you tempted to declare permanently barren - and what would it mean to leave it in His hands instead of yours?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Risen Lord, I have stood in too many gardens expecting only a grave. Forgive me for tending what I have already given up on, as if You could not bring it back. Speak my name the way You spoke hers. Open my eyes to see that the Gardener is here, that the ground You touch grows green again, that the curse has met its end in You. And when I would cling to the moment, send me out to tell. You are my Lord and my God. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one place in your life you have quietly buried - and this week, instead of tending the grave, bring it to the risen Christ in prayer and ask Him to make it live. Tell one person what He has done.",
+      "leavingAtCross": [
+        "The grief that keeps me searching for a body when He is already standing alive in front of me",
+        "The verdict I have passed on some barren part of my life: nothing will ever grow here again",
+        "The instinct to cling to a single moment with God instead of being sent out from it"
+      ],
+      "receivingFromCross": [
+        "A risen Lord who knows my name and speaks it before I recognize Him",
+        "The promise that the One who keeps this garden can raise what I have buried",
+        "A commission - 'as the Father has sent Me, so also I am sending you' - and the Spirit He breathes to carry it"
+      ],
+      "content": "Name one place in your life you have quietly buried - and this week, instead of tending the grave, bring it to the risen Christ in prayer and ask Him to make it live. Tell one person what He has done."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How many times does John mention a 'garden' across chapters 18-20, and why does it matter that Jesus is buried and raised in one?",
+        "Mary calls the risen Jesus 'the gardener' by mistake. In what sense is she actually correct?",
+        "What does Jesus do that finally makes Mary recognize Him - and what does that reveal about how He is known?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area of your life you have privately written off as dead ground. What would it mean to hand it to the Gardener?",
+        "Talk about a time you sensed God call you by name rather than simply teach you a lesson. What changed?",
+        "Jesus told Mary to stop clinging and go tell. Who is the one person each of you could 'go and tell' this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:15",
+          "text": "The LORD God took the man and placed him in the Garden of Eden to cultivate and keep it."
+        },
+        {
+          "reference": "John 19:30",
+          "text": "When Jesus had received the sour wine, He said, “It is finished.” And bowing His head, He yielded up His spirit."
+        },
+        {
+          "reference": "John 20:28-29",
+          "text": "Thomas replied, “My Lord and my God!” Jesus said to him, “Because you have seen Me, you have believed; blessed are those who have not seen and yet have believed.”"
+        },
+        {
+          "reference": "John 20:31",
+          "text": "But these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in His name."
+        },
+        {
+          "reference": "John 21:17, 19",
+          "text": "Jesus asked a third time, “Simon son of John, do you love Me?” ... Jesus said to him, “Feed My sheep.” ... And after He had said this, He told him, “Follow Me.”"
+        },
+        {
+          "reference": "Revelation 22:2-3",
+          "text": "On either side of the river stood a tree of life... And there will no longer be any curse."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 18-21",
+          "note": "Read the four closing chapters in one sitting, watching for the word 'garden' (18:1; 19:41) and the way the story circles from the upper room to the empty tomb to breakfast on the shore."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary Magdalene",
+      "title": "First Witness of the Resurrection",
+      "description": "A follower of Jesus from Galilee, whom Luke records He freed from seven demons (Luke 8:2). She stood at the cross when most of the men had fled, and she came first to the tomb in the dark. In John's Gospel she is the very first person to see the risen Christ and the first sent to announce Him - which is why the early church called her 'apostle to the apostles.' A popular later tradition merged her with the 'sinful woman' of Luke 7, but the biblical text never does, and the connection was not made until Pope Gregory I in 591 AD. What Scripture actually tells us is enough: she was healed, she was faithful at the cross, and she was the first to carry the news that the grave was empty.",
+      "keyQuote": "I have seen the Lord!",
+      "lessonForUs": "Mary did not reason her way to the Resurrection; she was found by it, and named into it. Then she was sent. The order still holds for us - known first, sent second.",
+      "heading": "First Witness of the Resurrection"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1887,
+  "scriptureReference_full": "John 15-21 (anchor: John 20:15-16)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (kēpouros, G2780; kēpos) reflects standard lexical sources (BDAG; Liddell-Scott). The word kēpouros occurs only in John 20:15 in the New Testament.",
+    "The Eden / new-creation reading of John 20 (garden, gardener, the breathing of the Spirit echoing Genesis 2:7) is a long-standing pattern in patristic and modern Johannine interpretation; specific historical attribution is not claimed for any single quoted figure.",
+    "The note on the later identification of Mary Magdalene with the 'sinful woman' of Luke 7 (Pope Gregory I, 591 AD) reflects the documented history of that tradition, which the biblical text does not support."
+  ]
 }

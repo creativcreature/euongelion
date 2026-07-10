@@ -1,38 +1,190 @@
 {
   "day": 44,
-  "title": "The song of the redeemed",
-  "teaser": "Day 44 of Bible 365 — Exodus 15",
+  "title": "The first song was a rescue",
+  "teaser": "Israel walks out of the sea and the first thing they do is sing. The Bible's oldest song is not a hymn of theory but a survivor's cry — and one word in it is already a name.",
   "framework": "Exodus 15 — Worship after deliverance",
   "scriptureReference": "Exodus 15",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 44"
+      "type": "scripture",
+      "reference": "Exodus 15:1-2, 11, 13, 18",
+      "translation": "BSB",
+      "emphasis": [
+        "I will sing to the LORD",
+        "He has become my salvation",
+        "Who is like You",
+        "the people You have redeemed",
+        "The LORD will reign forever and ever"
+      ],
+      "hebrewOriginal": "עָזִּי וְזִמְרָת יָהּ וַיְהִי־לִי לִישׁוּעָה",
+      "passage": "Then Moses and the Israelites sang this song to the LORD: \"I will sing to the LORD, for He is highly exalted. The horse and rider He has thrown into the sea. The LORD is my strength and my song, and He has become my salvation. He is my God, and I will praise Him, my father's God, and I will exalt Him.\" ... \"Who among the gods is like You, O LORD? Who is like You—majestic in holiness, revered with praises, performing wonders?\" ... \"With loving devotion You will lead the people You have redeemed; with Your strength You will guide them to Your holy dwelling.\" ... \"The LORD will reign forever and ever!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יְשׁוּעָה",
+      "transliteration": "yeshuah",
+      "pronunciation": "yeh-shoo-AH",
+      "meaning": "salvation, deliverance, rescue, victory",
+      "rootMeaning": "From the root yasha, to be wide, to be free, to bring into open space. Salvation in Hebrew is not first a feeling; it is room. The opposite of being trapped against a sea with an army at your back.",
+      "usageNote": "Exodus 15:2 is one of the oldest lines of poetry in the Bible. The word the freed slaves sing here, yeshuah, is the noun that stands behind the name later given to a child in Nazareth: Yeshua, the Hebrew form of the name Jesus, which means \"the LORD is salvation.\" On the far side of the sea, Israel sang a word that would one day be Someone's name.",
+      "wordByWord": [
+        {
+          "word": "עָזִּי",
+          "transliteration": "ozzi",
+          "meaning": "my strength, my might"
+        },
+        {
+          "word": "וְזִמְרָת",
+          "transliteration": "ve-zimrat",
+          "meaning": "and my song, my music"
+        },
+        {
+          "word": "יָהּ",
+          "transliteration": "Yah",
+          "meaning": "the LORD — the short, sung form of the covenant name"
+        },
+        {
+          "word": "וַיְהִי־לִי",
+          "transliteration": "vayhi-li",
+          "meaning": "and He has become for me, He has turned out to be for me"
+        },
+        {
+          "word": "לִישׁוּעָה",
+          "transliteration": "li-yeshuah",
+          "meaning": "my salvation, my rescue"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יָשַׁע",
+          "reference": "yasha (H3467), the verb \"to save, deliver, give victory.\" From it come Joshua (Yehoshua, \"the LORD saves\") and Jesus (Yeshua) — the same root the redeemed are singing at the sea."
+        }
+      ],
+      "strongsNumber": "H3444",
+      "definition": "salvation, deliverance, welfare, victory; rescue from danger into wide, open safety",
+      "usage": "The line literally runs: \"Yah is my strength and my song, and He has become my salvation.\" Notice the order — God is the strength, God is the song, and only because of that, God is the rescue. The people do not save themselves and then thank Him. He becomes their salvation, and the song follows."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Worship after deliverance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The new song (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What You Do the Moment After You Are Saved",
+      "body": "The night before, they were slaves. They had stood at the edge of the water with the only home they had ever known closing in behind them — six hundred chariots, the dust of an army, the sea ahead, and no road. There was nothing they could do. They said as much to Moses, in fear: better to have stayed slaves than to die here.\n\nThen the water stood up like walls, and they walked through on dry ground, and the same sea that opened for them closed over the army that had hunted them. Exodus 14 ends with a sentence so plain it almost hides its own weight: \"That day the LORD saved Israel from the hand of the Egyptians, and Israel saw the Egyptians dead on the shore.\"\n\nAnd then chapter 15 opens, and the first thing a free people does in the Bible is sing. Not build, not plan, not organize the march. Sing. \"I will sing to the LORD, for He is highly exalted.\" This is the oldest song in Scripture, and it was not composed in a quiet study. It was sung wet, on the shore, by people who had been property the day before. Worship, the Bible is telling us, is what salvation sounds like when it finally lands in the body.",
+      "keyInsight": "The first song in the Bible is not a theory about God. It is the noise a rescued person makes when the danger is actually behind them and the truth of it reaches the lungs.",
+      "content": "The night before, they were slaves. They had stood at the edge of the water with the only home they had ever known closing in behind them — six hundred chariots, the dust of an army, the sea ahead, and no road. There was nothing they could do. They said as much to Moses, in fear: better to have stayed slaves than to die here.\n\nThen the water stood up like walls, and they walked through on dry ground, and the same sea that opened for them closed over the army that had hunted them. Exodus 14 ends with a sentence so plain it almost hides its own weight: \"That day the LORD saved Israel from the hand of the Egyptians, and Israel saw the Egyptians dead on the shore.\"\n\nAnd then chapter 15 opens, and the first thing a free people does in the Bible is sing. Not build, not plan, not organize the march. Sing. \"I will sing to the LORD, for He is highly exalted.\" This is the oldest song in Scripture, and it was not composed in a quiet study. It was sung wet, on the shore, by people who had been property the day before. Worship, the Bible is telling us, is what salvation sounds like when it finally lands in the body."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hymn in the Hospital Corridor",
+      "body": "A nurse I trust once told me about a man who had coded twice on the table during heart surgery and lived. When he came back to himself in the recovery ward, weak and slurring, he did not ask about insurance or the prognosis or who had been calling. He started, very quietly and very off-key, to hum. A hymn his mother used to sing. He could not have told you the theology in it. He just had to make the sound.\n\nShe said she had seen it more than once — that there is a kind of song that only comes out on the other side of something you did not think you would survive. It is not performance. It is closer to breathing. The body that has been spared seems to know, before the mind has caught up, that the right response to being alive is not analysis. It is praise.\n\nThat is the shore in Exodus 15. The people are not singing because someone told them this is what religious people do. They are singing because they were dead and now they are not, and a heart that has been handed back its life has to do something with it.",
+      "connectionToTheme": "The Song of the Sea is not religious duty; it is the involuntary sound of a body that has been rescued and cannot hold the gratitude in.",
+      "content": "A nurse I trust once told me about a man who had coded twice on the table during heart surgery and lived. When he came back to himself in the recovery ward, weak and slurring, he did not ask about insurance or the prognosis or who had been calling. He started, very quietly and very off-key, to hum. A hymn his mother used to sing. He could not have told you the theology in it. He just had to make the sound.\n\nShe said she had seen it more than once — that there is a kind of song that only comes out on the other side of something you did not think you would survive. It is not performance. It is closer to breathing. The body that has been spared seems to know, before the mind has caught up, that the right response to being alive is not analysis. It is praise.\n\nThat is the shore in Exodus 15. The people are not singing because someone told them this is what religious people do. They are singing because they were dead and now they are not, and a heart that has been handed back its life has to do something with it."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Give Them Salvation. He Became It.",
+      "body": "Slow down on the second line of the song, because everything turns on it: \"The LORD is my strength and my song, and He has become my salvation.\" Not \"the LORD gave me a way out.\" Not \"the LORD provided an escape route I then took.\" He has become my salvation. The rescue is not a thing God handed over from a distance. The rescue is God Himself, drawn so close that He is now the safety the people are standing in.\n\nThis matters because of what these people had just learned at the water. When the army came, Moses had told them: \"The LORD will fight for you; you need only to be still.\" They did nothing to earn the open sea. They could not have parted it, could not have outrun the chariots, could not have built a bridge. Salvation came toward them while they stood still and afraid. So when they sing, they do not sing about their own courage at the crossing. There was none to sing about. They sing about Him.\n\nAnd here is the quiet seam in the song that the rest of the Bible will pull on for two thousand years: the Hebrew word they sing for salvation — yeshuah — is the very word that becomes a name. Yeshua. Jesus. \"The LORD is salvation\" stops being only a sentence about God and becomes the name of God-with-us. At the Red Sea, the people sang the word. At Bethlehem, the Word took the name. The shore was rehearsing something it did not yet fully understand.",
+      "historicalContext": "Exodus 15:1-18 is widely regarded by scholars as among the most ancient poetry preserved in the Hebrew Bible, its archaic grammar suggesting it was sung long before it was written into the larger Exodus narrative. Israel would go on to sing it down the generations; the exodus from Egypt becomes the central rescue story the whole Old Testament measures God's character against. When the prophets want to say God is faithful, they point back to this sea.",
+      "fascinatingFact": "Verse 13 looks backward and forward in the same breath: \"With loving devotion You will lead the people You have redeemed; with Your strength You will guide them to Your holy dwelling.\" The rescue at the sea is already aimed somewhere — not just out of Egypt, but toward a dwelling place with God. Salvation in this song is not only escape from death behind them; it is being led home to Him.",
+      "content": "Slow down on the second line of the song, because everything turns on it: \"The LORD is my strength and my song, and He has become my salvation.\" Not \"the LORD gave me a way out.\" Not \"the LORD provided an escape route I then took.\" He has become my salvation. The rescue is not a thing God handed over from a distance. The rescue is God Himself, drawn so close that He is now the safety the people are standing in.\n\nThis matters because of what these people had just learned at the water. When the army came, Moses had told them: \"The LORD will fight for you; you need only to be still.\" They did nothing to earn the open sea. They could not have parted it, could not have outrun the chariots, could not have built a bridge. Salvation came toward them while they stood still and afraid. So when they sing, they do not sing about their own courage at the crossing. There was none to sing about. They sing about Him.\n\nAnd here is the quiet seam in the song that the rest of the Bible will pull on for two thousand years: the Hebrew word they sing for salvation — yeshuah — is the very word that becomes a name. Yeshua. Jesus. \"The LORD is salvation\" stops being only a sentence about God and becomes the name of God-with-us. At the Red Sea, the people sang the word. At Bethlehem, the Word took the name. The shore was rehearsing something it did not yet fully understand."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On the far shore of the Red Sea, a freshly freed people sing the first song in the Bible — not a song about their own escape, but a song that begins and ends with God: \"He has become my salvation... The LORD will reign forever and ever.\"",
+      "modernApplication": "We are trained to narrate our rescues as our own achievements — the discipline that pulled us out, the plan that worked, the strength we found. The Song of the Sea cuts against that grain. It teaches a rescued person to point away from themselves and sing the name of the One who did it. Real worship usually starts where self-congratulation runs out.",
+      "connectionPoint": "Paul reads the Red Sea crossing as a picture of something deeper: \"our forefathers were all under the cloud, and... all passed through the sea. They were all baptized into Moses in the cloud and in the sea\" (1 Corinthians 10:1-2). Passing through the water out of slavery becomes, for the early church, a foreshadowing of baptism — going down into the water a captive and coming up free. The same God who opened the sea opens the grave.",
+      "newTestamentEcho": "The Song of the Sea is not finished. In Revelation, the rescued stand beside a sea of glass and \"sang the song of God's servant Moses and of the Lamb: 'Great and wonderful are Your works, O Lord God Almighty!'\" (Revelation 15:3). The very song begun on the shore of the Red Sea is taken up again at the end of all things — only now it is the song of Moses and of the Lamb together, sung by everyone Christ has carried through the last sea. The word the slaves sang, yeshuah, has a face."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When God has rescued you, what is the first thing you reach for — the explanation, or the song?",
+      "additionalQuestions": [
+        "Name one deliverance in your life you have only ever analyzed and never actually thanked God for out loud. What would it cost you to sing it instead?",
+        "The song says \"He has become my salvation,\" not \"He helped me save myself.\" Where are you still narrating a rescue as your own achievement?",
+        "Miriam picked up a tambourine and led the women in answering the song (Exodus 15:20-21). Who in your life would you have to invite in if your gratitude became something sung rather than something private?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "grateful-praise",
+      "prayerText": "LORD, You are my strength and my song, and You have become my salvation. I did not part the sea behind me. I could not have. When the water stood up and let me walk through, that was You, and when it closed again, that was You. Forgive me for the times I have crossed onto safe ground and then told the story as if I rescued myself. Today I want to sing the name instead. You are salvation; You have a name now, and it is Jesus. Lead me with loving devotion toward Your holy dwelling, and keep the song in my mouth until I am singing it beside the sea of glass with everyone else You carried home. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "Exodus 15:2"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before the day is over, name one rescue out loud — out of slavery, out of an addiction, out of a marriage that should have ended worse, out of a night you did not think you would survive — and instead of explaining how it happened, simply thank the One who did it. If you have a song, sing it. Make the sound.",
+      "leavingAtCross": [
+        "The habit of telling my rescues as stories about my own strength",
+        "The silence I keep over deliverances I have never actually thanked God for",
+        "The fear that praise has to be polished before it counts — when the first song was sung wet, off the back of a slave's escape"
+      ],
+      "receivingFromCross": [
+        "A name to put to my salvation — yeshuah become Yeshua, the LORD who is salvation",
+        "The freedom to worship before I have it figured out, the way the people sang before they understood the half of it",
+        "A place in a song that started at one sea and ends at another, sung by everyone God has carried through"
+      ],
+      "content": "Before the day is over, name one rescue out loud — out of slavery, out of an addiction, out of a marriage that should have ended worse, out of a night you did not think you would survive — and instead of explaining how it happened, simply thank the One who did it. If you have a song, sing it. Make the sound."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that the very first thing Israel does as a free people is sing, rather than build, plan, or march?",
+        "What is the difference between \"the LORD gave me salvation\" and \"the LORD has become my salvation\" (Exodus 15:2), and why does the song use the second?",
+        "How does the Hebrew word yeshuah in this song connect the Red Sea to the name of Jesus and to the song the redeemed sing in Revelation 15:3?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one time God carried you through something you could not have survived on your own. Then notice: did you narrate it as a rescue, or as your own accomplishment?",
+        "Talk about why gratitude is so much easier to think than to say out loud. What makes the move from analysis to praise feel exposed?",
+        "Ask each other: is there a deliverance in your life you have never properly thanked God for — and what would it look like to do that this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 14:30-31",
+          "text": "That day the LORD saved Israel from the hand of the Egyptians, and Israel saw the Egyptians dead on the shore. When Israel saw the great power that the LORD had exercised over the Egyptians, the people feared the LORD and believed in Him and in His servant Moses."
+        },
+        {
+          "reference": "Exodus 15:20-21",
+          "text": "Then Miriam the prophetess, Aaron's sister, took a tambourine in her hand, and all the women followed her with tambourines and dancing. And Miriam sang back to them: \"Sing to the LORD, for He is highly exalted; the horse and rider He has thrown into the sea.\""
+        },
+        {
+          "reference": "1 Corinthians 10:1-2",
+          "text": "I do not want you to be unaware, brothers, that our forefathers were all under the cloud, and that they all passed through the sea. They were all baptized into Moses in the cloud and in the sea."
+        },
+        {
+          "reference": "Revelation 15:3",
+          "text": "And they sang the song of God's servant Moses and of the Lamb: \"Great and wonderful are Your works, O Lord God Almighty! Just and true are Your ways, O King of the nations!\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 14-15",
+          "note": "Read the rescue and the song together, in one sitting. Watch how the prose account of chapter 14 becomes the poetry of chapter 15 — the same event, first told, then sung."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Miriam",
+      "title": "The Prophetess Who Led the Answering Song",
+      "description": "Sister of Moses and Aaron, called \"the prophetess\" in Exodus 15:20 — the first woman in Scripture given that title. As a girl she had watched over the basket that carried the infant Moses on the Nile, the same river that was meant to drown Hebrew sons. Decades later she stands on the far side of a different body of water, tambourine in hand, leading the women in answering the Song of the Sea. The river that should have taken her brother and the sea that should have trapped her people both became the place God rescued them instead.",
+      "keyQuote": "Sing to the LORD, for He is highly exalted; the horse and rider He has thrown into the sea.",
+      "lessonForUs": "Worship after rescue is meant to be shared, not hoarded. Miriam does not wait for permission or a polished arrangement; she picks up an instrument and gives the whole community a way to answer God together. Gratitude that stays private is only half-sung.",
+      "heading": "The Prophetess Who Led the Answering Song"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1742,
+  "scriptureReference_full": "Exodus 15:1-2, 11, 13, 18 (with Exodus 14:30-31; 15:20-21)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (yeshuah, H3444; root yasha, H3467) reflects standard lexical sources. The link between yeshuah/Yeshua and the name Jesus ('the LORD is salvation') is the plain meaning of the Hebrew name and is not a contested claim.",
+    "The reading of the Red Sea crossing as a foreshadowing of baptism follows the apostle Paul's own typology in 1 Corinthians 10:1-2."
+  ]
 }

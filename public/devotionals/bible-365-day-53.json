@@ -1,38 +1,191 @@
 {
   "day": 53,
-  "title": "Day of Atonement",
-  "teaser": "Day 53 of Bible 365 — Leviticus 16",
+  "title": "Two goats, one cleansing",
+  "teaser": "Once a year, on the only day Israel could not work, two goats stood for one mercy: blood carried in, sin carried out. The whole gospel is rehearsed in a single morning.",
   "framework": "Leviticus 16 — Blood for the holy place",
   "scriptureReference": "Leviticus 16",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 53"
+      "type": "scripture",
+      "reference": "Leviticus 16:7-10, 15-16, 21-22, 30",
+      "translation": "BSB",
+      "emphasis": [
+        "one for the LORD and the other for the scapegoat",
+        "He is to sprinkle it against the mercy seat",
+        "carry on itself all their iniquities into a solitary place",
+        "you will be clean from all your sins before the LORD"
+      ],
+      "hebrewOriginal": "כִּי־בַיּוֹם הַזֶּה יְכַפֵּר עֲלֵיכֶם לְטַהֵר אֶתְכֶם מִכֹּל חַטֹּאתֵיכֶם לִפְנֵי יְהוָה תִּטְהָרוּ",
+      "passage": "Then he shall take the two goats and present them before the LORD at the entrance to the Tent of Meeting. After Aaron casts lots for the two goats, one for the LORD and the other for the scapegoat, he shall present the goat chosen by lot for the LORD and sacrifice it as a sin offering. But the goat chosen by lot as the scapegoat shall be presented alive before the LORD to make atonement by sending it into the wilderness as the scapegoat. ... Aaron shall then slaughter the goat for the sin offering for the people and bring its blood behind the veil, and with its blood he must do as he did with the bull's blood: He is to sprinkle it against the mercy seat and in front of it. So he shall make atonement for the Most Holy Place because of the impurities and rebellious acts of the Israelites in regard to all their sins. ... Then he is to lay both hands on the head of the live goat and confess over it all the iniquities and rebellious acts of the Israelites in regard to all their sins. He is to put them on the goat's head and send it away into the wilderness by the hand of a man appointed for the task. The goat will carry on itself all their iniquities into a solitary place, and the man will release it into the wilderness. ... because on this day atonement will be made for you to cleanse you, and you will be clean from all your sins before the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Leviticus 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Leviticus 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כָּפַר",
+      "transliteration": "kaphar",
+      "pronunciation": "kah-FAR",
+      "meaning": "to cover, to make atonement, to wipe clean",
+      "rootMeaning": "The verb behind 'atonement' carries two pictures held together: to cover over, and to wipe away. Its noun form, kapporet, is the very lid of the ark the blood is sprinkled on - the place the older English Bibles called the mercy seat. The day itself, Yom Kippur, is literally 'the day of coverings.'",
+      "usageNote": "Some form of kaphar appears more than a dozen times in Leviticus 16 alone. The chapter is saturated with it. Whatever else is happening with the bull, the goats, the blood, and the incense, the text keeps naming the point: a covering is being made so that an unclean people can stay near a holy God without being consumed.",
+      "wordByWord": [
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "because, for - the reason the whole ritual exists"
+        },
+        {
+          "word": "בַיּוֹם הַזֶּה",
+          "transliteration": "vayyom hazzeh",
+          "meaning": "on this day - one day, set apart from all others"
+        },
+        {
+          "word": "יְכַפֵּר",
+          "transliteration": "yekapper",
+          "meaning": "he will make atonement, he will cover over"
+        },
+        {
+          "word": "לְטַהֵר",
+          "transliteration": "letaher",
+          "meaning": "to cleanse, to make ritually clean"
+        },
+        {
+          "word": "תִּטְהָרוּ",
+          "transliteration": "titharu",
+          "meaning": "you will be clean - the promised result, spoken to the people"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֲזָאזֵל",
+          "reference": "Azazel - the rare word translated 'scapegoat.' Its meaning is debated: 'the goat that goes away' (ez-azal), or possibly a place name, or a name for a desert power. What the text is clear about is the goat's job: to leave, carrying everything, into a land where no one lives."
+        }
+      ],
+      "strongsNumber": "H3722",
+      "definition": "to cover, purge, make atonement, reconcile; to pacify by a covering price",
+      "usage": "Kaphar is not the people climbing toward God. In Leviticus 16 the verb runs almost entirely one direction: God provides the day, the place, the blood, and the cleansing. Atonement is something done for them, not something achieved by them."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Blood for the holy place. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ entered once for all (Heb 9:11-12).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day Built on a Death",
+      "body": "Leviticus 16 does not open with instructions. It opens with a funeral. \"Now the LORD spoke to Moses after the death of two of Aaron's sons when they approached the presence of the LORD.\" Nadab and Abihu had walked into holy space with fire God had not asked for, and they did not walk out. Before God tells Aaron how to come near, He reminds him why coming near is not casual: the same nearness that gives life can take it.\n\nSo a single day is carved out of the year for one man to enter one room. The high priest sets aside his ornate robes and bathes, then dresses in plain linen - the clothing of a servant, not a king. He cannot stroll into the Most Holy Place \"freely,\" the text says, \"or else he will die.\" He comes with a cloud of incense to veil the mercy seat, and he comes with blood. Always blood. The chapter says it so many times it stops feeling like ritual and starts feeling like a heartbeat: blood for the room, blood for the tent, blood for the altar, blood for the people.\n\nThe original readers were a people who lived their whole lives near the holiness of God and knew it could not be approached on their own terms. Leviticus 16 was God's answer to a question they could not avoid: how do unclean people stay near a clean God and live? The answer was not lower the standard. The answer was provide a covering."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Two Lots",
+      "body": "Picture the courtyard on that one morning. Two goats stand side by side at the entrance to the tent, as alike as the priests could find them. They are not given names. They are given lots - small marked stones drawn from a container. One stone says \"for the LORD.\" The other says \"for the going-away.\"\n\nThe goats do not choose. Nothing in either animal earns its lot. One will be led a few feet to the altar and killed, its blood carried into the room no one else may enter. The other will stand alive while the high priest leans both hands on its head and says aloud, over the whole nation, every iniquity and rebellion and sin he can name. Then it is walked out of the camp by a man appointed for that single task, out past the tents, past the last field, into a land where nothing grows and no one lives, and released - to wander away with everything Israel could not carry.\n\nTwo goats. One mercy. The blood goes in; the sin goes out. Watch them both, because you will need both pictures.",
+      "connectionToTheme": "The day required two goats because one animal could not hold both halves of atonement: the blood that purifies the holy place and the burden that is carried entirely away.",
+      "content": "Picture the courtyard on that one morning. Two goats stand side by side at the entrance to the tent, as alike as the priests could find them. They are not given names. They are given lots - small marked stones drawn from a container. One stone says \"for the LORD.\" The other says \"for the going-away.\"\n\nThe goats do not choose. Nothing in either animal earns its lot. One will be led a few feet to the altar and killed, its blood carried into the room no one else may enter. The other will stand alive while the high priest leans both hands on its head and says aloud, over the whole nation, every iniquity and rebellion and sin he can name. Then it is walked out of the camp by a man appointed for that single task, out past the tents, past the last field, into a land where nothing grows and no one lives, and released - to wander away with everything Israel could not carry.\n\nTwo goats. One mercy. The blood goes in; the sin goes out. Watch them both, because you will need both pictures."
+    },
+    {
+      "type": "insight",
+      "heading": "Cleansed and Carried, Both at Once",
+      "body": "Why two goats and not one? Because the text is showing two things atonement has to do, and one animal cannot do both. The first goat's blood handles the problem of the place: sin had defiled the very sanctuary where God met His people, and the blood sprinkled \"against the mercy seat and in front of it\" makes the holy place clean enough to keep standing among an unclean nation. The second goat handles the problem of the people: the high priest confesses their sins onto its head, and it carries them \"into a solitary place,\" far enough that they will not be found again.\n\nPurification and removal. Cleansed near, and the guilt sent away. You need to feel both, because guilt does two things to us. It makes us feel dirty - unfit to be in the room. And it makes us feel haunted - certain the past will follow us home. Leviticus 16 answers both. The blood says you may stay. The scapegoat says it will not chase you.\n\nAnd notice the verdict in verse 30. After all the blood and confession and walking out into the wilderness, God speaks the result Himself: \"you will be clean from all your sins before the LORD.\" Not cleaner. Not closer. Clean. That word is the whole point of the day, and it lands as a gift, not a wage.",
+      "historicalContext": "Yom Kippur - the Day of Atonement - became the most solemn day of Israel's year, the one day the high priest entered the Most Holy Place, the one day the divine name was spoken aloud in the temple. It is the only fast the Law commands. Leviticus 16 sets the pattern the prophets and the Gospels assume the moment they speak of blood, of a sin-bearer, of being made clean.",
+      "fascinatingFact": "Of all the days in Israel's calendar, this is the one on which they were commanded to do nothing. Verse 31 calls it \"a Sabbath of complete rest.\" On the day their sin was dealt with most thoroughly, their hands were most still. The cleansing was not their work to perform; it was their work to receive.",
+      "content": "Why two goats and not one? Because the text is showing two things atonement has to do, and one animal cannot do both. The first goat's blood handles the problem of the place: sin had defiled the very sanctuary where God met His people, and the blood sprinkled \"against the mercy seat and in front of it\" makes the holy place clean enough to keep standing among an unclean nation. The second goat handles the problem of the people: the high priest confesses their sins onto its head, and it carries them \"into a solitary place,\" far enough that they will not be found again.\n\nPurification and removal. Cleansed near, and the guilt sent away. You need to feel both, because guilt does two things to us. It makes us feel dirty - unfit to be in the room. And it makes us feel haunted - certain the past will follow us home. Leviticus 16 answers both. The blood says you may stay. The scapegoat says it will not chase you.\n\nAnd notice the verdict in verse 30. After all the blood and confession and walking out into the wilderness, God speaks the result Himself: \"you will be clean from all your sins before the LORD.\" Not cleaner. Not closer. Clean. That word is the whole point of the day, and it lands as a gift, not a wage."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Once a year, behind a veil, the blood of a goat purified the place where God dwelt, and a second goat carried Israel's confessed sin away into the wilderness - a covering provided so an unclean people could stay near a holy God and live.",
+      "modernApplication": "We are still managing guilt in two directions. We try to scrub ourselves clean enough to feel we belong in the room - and we try to outrun the things we have done, hoping distance and time will bury them. Leviticus 16 says neither effort is the cure. The covering that lets you stay, and the carrying that takes the guilt away, are both things you receive on a day God appoints, not things you achieve.",
+      "connectionPoint": "The thread that begins here runs straight to a hill outside a city wall. The Letter to the Hebrews reads Leviticus 16 as a rehearsal: the high priest who could only ever enter \"once a year, and never without blood\" (Hebrews 9:7) was pointing past himself to one who would enter once for all. Isaiah had already heard the scapegoat's job described as a person's: \"We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all\" (Isaiah 53:6).",
+      "newTestamentEcho": "Christ is both goats. He is the blood carried inside: \"He did not enter by the blood of goats and calves, but He entered the Most Holy Place once for all by His own blood, thus securing eternal redemption\" (Hebrews 9:12). And He is the one driven outside: \"Although the high priest brings the blood of animals into the Holy Place as a sacrifice for sin, the bodies are burned outside the camp. And so Jesus also suffered outside the city gate, to sanctify the people by His own blood\" (Hebrews 13:11-12). Blood carried in, sin carried out - in one Person, on one cross, once."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which goat do you most need today - the one whose blood says you are clean enough to come near, or the one who carries off a sin you cannot stop dragging behind you?",
+      "additionalQuestions": [
+        "Where have you been trying to scrub yourself clean enough to feel you belong in God's presence? What would change if you received cleanness instead of earning it?",
+        "Is there a particular failure that keeps following you home, no matter how far you think you've moved on from it? What would it mean to believe it has already been carried into a solitary place?",
+        "The Day of Atonement was a Sabbath of complete rest. Where is God inviting you to stop working at your own forgiveness and receive His?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so much energy trying to make myself clean and trying to outrun what I have done. Today I stop. I bring You the dirt I keep scrubbing and the guilt I keep dragging, and I lay both on the head of the One You provided. Thank You that Christ went in with His own blood so that I may come near, and out beyond the gate so that my sin would not follow me home. Let me hear Your own verdict over me: clean before You. Let me rest in that today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one specific sin out loud - the way the high priest confessed over the goat - and then deliberately stop carrying it. Picture it laid on Christ and sent away. When it tries to come home tonight, answer it with verse 30: clean from all your sins before the LORD.",
+      "leavingAtCross": [
+        "The exhausting project of scrubbing myself clean enough to deserve God's presence",
+        "The particular guilt I keep dragging behind me, certain it will always find me",
+        "The lie that the day my sin is fully dealt with must be a day of my hardest work"
+      ],
+      "receivingFromCross": [
+        "A cleansing I did not perform, provided at the cost of a life not my own",
+        "The relief of a sin carried into a solitary place, where it will not be found again",
+        "God's own verdict spoken over me: clean before the LORD, near and not consumed"
+      ],
+      "content": "Today, name one specific sin out loud - the way the high priest confessed over the goat - and then deliberately stop carrying it. Picture it laid on Christ and sent away. When it tries to come home tonight, answer it with verse 30: clean from all your sins before the LORD."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What are the two distinct things atonement accomplishes in Leviticus 16, and why does the day require two goats rather than one to show them?",
+        "Why does the chapter open by recalling the death of Aaron's sons before giving any instructions about how to enter the Most Holy Place?",
+        "How does the Letter to the Hebrews see Christ fulfilling both goats - the one whose blood is carried in, and the one driven outside the camp?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about which is harder for you to believe: that you are clean enough to come near God, or that your past has actually been carried away. Why that one?",
+        "Name one specific thing you have been trying to atone for by your own effort, and let the other person remind you whose blood and whose carrying it actually rests on.",
+        "The Day of Atonement was a day of complete rest. Ask each other where you are working hardest at your own forgiveness - and pray for the freedom to stop."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Leviticus 16:31",
+          "text": "It is a Sabbath of complete rest for you, that you may humble yourselves; it is a permanent statute."
+        },
+        {
+          "reference": "Isaiah 53:6",
+          "text": "We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
+        },
+        {
+          "reference": "Hebrews 9:11-12",
+          "text": "But when Christ came as high priest of the good things that have come, He went through the greater and more perfect tabernacle that is not made by hands and is not a part of this creation. He did not enter by the blood of goats and calves, but He entered the Most Holy Place once for all by His own blood, thus securing eternal redemption."
+        },
+        {
+          "reference": "Hebrews 13:11-12",
+          "text": "Although the high priest brings the blood of animals into the Holy Place as a sacrifice for sin, the bodies are burned outside the camp. And so Jesus also suffered outside the city gate, to sanctify the people by His own blood."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Leviticus 16",
+          "note": "Read the whole chapter in one sitting, counting how many times the word 'atonement' appears. Notice the movement: a death recalled (v. 1-2), the priest prepared (v. 3-4), two goats and their lots (v. 7-10), blood carried in (v. 14-16), sin carried out (v. 20-22), and the verdict spoken (v. 30)."
+        },
+        {
+          "type": "book",
+          "title": "Hebrews 9-10",
+          "note": "Read alongside Leviticus 16 to see how the New Testament treats the Day of Atonement as a shadow of which Christ is the substance - 'once for all' replacing 'once a year.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Aaron",
+      "title": "High Priest on the Day of Coverings",
+      "description": "The first high priest of Israel, brother of Moses. Having just buried two of his own sons who died approaching God wrongly, Aaron is given the one role no one else may fill: to enter the Most Holy Place on the Day of Atonement, in plain linen, bearing blood for the place and confession for the people. He goes in alone, year after year, for a cleansing that always had to be repeated - a sin-bearer who could never finish the task, pointing forward to a Priest who would.",
+      "keyQuote": "one for the LORD and the other for the scapegoat",
+      "lessonForUs": "Aaron could carry blood into the room and lay sin on the goat's head, but he had to do it again every single year, and he had to atone for his own sins first. The repetition was the sermon: this priest, this blood, this day were never the cure - only the promise of one. Hebrews names the Priest the promise was pointing to.",
+      "heading": "High Priest on the Day of Coverings"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2280,
+  "scriptureReference_full": "Leviticus 16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (kaphar H3722, kapporet, Yom Kippur; the disputed term azazel) reflects standard lexical sources; the range of views on azazel is noted as debated rather than resolved.",
+    "Typological reading of the two goats follows the Letter to the Hebrews (chs. 9-10, 13) and Isaiah 53, a connection held across the Christian tradition."
+  ]
 }

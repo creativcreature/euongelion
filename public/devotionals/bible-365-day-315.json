@@ -1,38 +1,171 @@
 {
   "day": 315,
-  "title": "John: The Word + I Ams — Day 7 — Sabbath",
-  "teaser": "Day 315 of Bible 365 — John 1-7",
+  "title": "The Word Learns to Say \"I Am\"",
+  "teaser": "The Voice that spoke the world into being steps inside the world and turns to the thirsty: I am the bread. I am the living water. Come.",
   "framework": "John 1-7 — John: The Word + I Ams",
   "scriptureReference": "John 1-7",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 315"
+      "type": "scripture",
+      "reference": "John 1:1-5, 14",
+      "translation": "BSB",
+      "emphasis": [
+        "the Word was God",
+        "the Light shines in the darkness",
+        "The Word became flesh"
+      ],
+      "greekOriginal": "Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν, καὶ Θεὸς ἦν ὁ Λόγος.",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made. In Him was life, and that life was the light of men. The Light shines in the darkness, and the darkness has not overcome it. ... The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am; I myself am",
+      "rootMeaning": "Two small words. Egō is the personal pronoun 'I', already carried inside the verb, so saying it out loud adds weight: I, myself. Eimi is the simple verb 'to be'. Put together they mean nothing more than 'I am' - and, on certain lips, everything more.",
+      "usageNote": "In John, Jesus says egō eimi again and again across these seven chapters: to the woman at the well, 'I who speak to you am He' (4:26); on the lake at night, 'It is I; do not be afraid' (6:20); to the hungry crowd, 'I am the bread of life' (6:35). The phrase keeps surfacing, plain on the surface, but it rhymes with the Name God gave Moses at the bush: I AM WHO I AM (Exodus 3:14).",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I - the pronoun spoken even though the verb already implies it; an emphatic 'I myself'"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "I am - the present tense of 'to be', simple and unbounded"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "Λόγος (logos)",
+          "reference": "The 'Word' of John 1:1 - speech, reason, the utterance through which all things were made. John opens the book naming Jesus as the eternal Logos, then lets that same Word, made flesh, speak the human-sized words 'I am' to ordinary people."
+        }
+      ],
+      "strongsNumber": "G1473 + G1510",
+      "definition": "egō eimi - 'I am'; the ordinary Greek for self-identification that John uses to echo the divine Name",
+      "usage": "What makes egō eimi remarkable in John is not the grammar but the speaker. Anyone can say 'I am thirsty'. Only One can say 'I am the living water' and mean it as offer, not metaphor."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Why John Wrote It This Way",
+      "body": "Most accounts of Jesus begin on the ground - a birth in Bethlehem, a manger, shepherds. John begins before the ground existed. 'In the beginning was the Word.' He reaches back past Genesis 1 and lands on the same first three words, then tells us who was already there: the Word, with God, who was God, through whom all things were made.\n\nThis is the lens John hands you for the whole book. Everything that follows in chapters 1 through 7 - the water turned to wine, the night talk with Nicodemus, the noon talk with a Samaritan woman, the five thousand fed on a hillside, the arguments in the temple courts during the feast - all of it is the eternal Word at work inside His own creation. The Maker has walked into the made.\n\nAnd John tells us plainly why he is writing. Late in the book he says the signs are recorded 'so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in His name' (John 20:31). The prologue is not a riddle to admire from a distance. It is a door. The Word who made the light is the Light, and He is shining toward you.",
+      "keyInsight": "John starts in eternity not to make Jesus distant, but to tell you Who it is that draws near. The same Word who said 'Let there be light' is the One now saying 'I am.'",
+      "content": "Most accounts of Jesus begin on the ground - a birth in Bethlehem, a manger, shepherds. John begins before the ground existed. 'In the beginning was the Word.' He reaches back past Genesis 1 and lands on the same first three words, then tells us who was already there: the Word, with God, who was God, through whom all things were made.\n\nThis is the lens John hands you for the whole book. Everything that follows in chapters 1 through 7 - the water turned to wine, the night talk with Nicodemus, the noon talk with a Samaritan woman, the five thousand fed on a hillside, the arguments in the temple courts during the feast - all of it is the eternal Word at work inside His own creation. The Maker has walked into the made.\n\nAnd John tells us plainly why he is writing. Late in the book he says the signs are recorded 'so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in His name' (John 20:31). The prologue is not a riddle to admire from a distance. It is a door. The Word who made the light is the Light, and He is shining toward you."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "Noon at the Well",
+      "body": "She came to the well at the hottest hour, when the other women would not be there. Noon is when you draw water if you would rather draw it alone - if your life has given the town too much to say. A stranger was sitting at the well, a Jewish man who should not have spoken to her at all, and He asked her for a drink.\n\nWhat unfolds in John 4 is one of the longest conversations Jesus has with anyone in the Gospels, and it is with a Samaritan woman whose name we never learn, who has had five husbands and is living with a man who is not. He does not look past her. He tells her about water she has never heard of: 'whoever drinks the water I give him will never thirst' (John 4:14). And when she reaches for the Messiah as a far-off hope - someday He will come and explain everything - Jesus answers with two of the smallest words in the language. 'I who speak to you am He' (John 4:26).\n\nThe eternal Word, the One through whom the water in that well was made, sat thirsty in the heat and offered Himself to a woman everyone else avoided. She left her water jar behind and ran to tell the town.",
+      "connectionToTheme": "The 'I am' of John is not announced from a throne but spoken at a well, in the heat, to one person at a time - first to the one the town had written off.",
+      "content": "She came to the well at the hottest hour, when the other women would not be there. Noon is when you draw water if you would rather draw it alone - if your life has given the town too much to say. A stranger was sitting at the well, a Jewish man who should not have spoken to her at all, and He asked her for a drink.\n\nWhat unfolds in John 4 is one of the longest conversations Jesus has with anyone in the Gospels, and it is with a Samaritan woman whose name we never learn, who has had five husbands and is living with a man who is not. He does not look past her. He tells her about water she has never heard of: 'whoever drinks the water I give him will never thirst' (John 4:14). And when she reaches for the Messiah as a far-off hope - someday He will come and explain everything - Jesus answers with two of the smallest words in the language. 'I who speak to you am He' (John 4:26).\n\nThe eternal Word, the One through whom the water in that well was made, sat thirsty in the heat and offered Himself to a woman everyone else avoided. She left her water jar behind and ran to tell the town."
+    },
+    {
+      "type": "insight",
+      "heading": "The Maker Names Himself by What You Lack",
+      "body": "Here is the turn the whole week has been building toward. The Word who made all things does not introduce Himself in John by listing His powers. He names Himself by your hungers. 'I am the bread of life. Whoever comes to Me will never hunger' (John 6:35). 'If anyone is thirsty, let him come to Me and drink' (John 7:37).\n\nNotice the shape of it. He could have said 'I am the eternal Logos' and left the crowd staring. Instead He picks up the most ordinary things a body cannot live without - bread on the table, water in the heat - and says, in effect: that ache you feel for these is an ache for Me. The infinite God identifies Himself not by His distance from you but by your need of Him.\n\nThis is why John reaches back to 'in the beginning' and then drops us beside a wheat field and a well. The same egō eimi that thundered from the burning bush, too holy for Moses to look at, now leans toward a hungry crowd and a shamed woman and a thirsty city and says: I am. I am the bread. I am the living water. Come. The Name that could not be approached has become the Name that can be eaten and drunk.",
+      "historicalContext": "Jesus speaks 'I am the living bread' and 'streams of living water' during Israel's great feasts. John sets the bread sayings against Passover (6:4) and the living-water call on 'the last and greatest day' of the Feast of Tabernacles (7:37) - when priests poured water drawn from the pool of Siloam at the altar, remembering water from the rock in the wilderness. Into that ceremony Jesus stands and cries that the water everyone is remembering is, in fact, Himself.",
+      "fascinatingFact": "John's first seven chapters circle the same two needs again and again - hunger and thirst. Wine that runs out at a wedding (ch. 2). Living water offered at a well (ch. 4). Bread multiplied on a hillside and then preached as a Person (ch. 6). A loud invitation to the thirsty in the temple (ch. 7). The Word who made our bodies keeps meeting us exactly where our bodies are weakest.",
+      "content": "Here is the turn the whole week has been building toward. The Word who made all things does not introduce Himself in John by listing His powers. He names Himself by your hungers. 'I am the bread of life. Whoever comes to Me will never hunger' (John 6:35). 'If anyone is thirsty, let him come to Me and drink' (John 7:37).\n\nNotice the shape of it. He could have said 'I am the eternal Logos' and left the crowd staring. Instead He picks up the most ordinary things a body cannot live without - bread on the table, water in the heat - and says, in effect: that ache you feel for these is an ache for Me. The infinite God identifies Himself not by His distance from you but by your need of Him.\n\nThis is why John reaches back to 'in the beginning' and then drops us beside a wheat field and a well. The same egō eimi that thundered from the burning bush, too holy for Moses to look at, now leans toward a hungry crowd and a shamed woman and a thirsty city and says: I am. I am the bread. I am the living water. Come. The Name that could not be approached has become the Name that can be eaten and drunk."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The eternal Word, with God and as God before creation, became flesh and pitched His tent among us - and from inside our hunger and thirst He spoke the divine Name as an invitation: I am the bread of life; let the thirsty come to Me and drink.",
+      "modernApplication": "You do not approach this God by climbing up to His holiness. You come the way the woman came to the well and the crowd came to the hillside - tired, exposed, carrying a need you cannot satisfy on your own. The 'I am' that made the universe is the 'I am' that says 'come' to people who feel least qualified to.",
+      "connectionPoint": "The thread running through John 1-7 is the oldest thread in Scripture. The Name revealed at the burning bush - 'I AM WHO I AM' (Exodus 3:14) - is the same Name spoken at the well, on the lake, and in the temple courts. What Moses heard from a fire he could not touch, the Samaritan woman heard from a man asking her for a drink. The unapproachable Name has come close enough to share a cup.",
+      "newTestamentEcho": "John opens by calling Jesus the Lamb of God who takes away the sin of the world (John 1:29) and sums the whole reach of it in one verse: 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life' (John 3:16). The bread He offers in chapter 6 He names plainly: 'this bread, which I will give for the life of the world, is My flesh' (John 6:51). The Word became flesh so that the flesh could be given - the Maker became the meal."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you hungry or thirsty in a way no ordinary bread or water has been able to fill - and what would it mean to bring that exact ache to the One who says 'Come to Me and drink'?",
+      "additionalQuestions": [
+        "The Samaritan woman came to the well at noon to avoid being seen. Where do you arrange your life to keep from being seen - and what would change if you knew Jesus was already sitting there, waiting to speak with you?",
+        "Jesus names Himself by your needs rather than His powers. What does it do to your picture of God to hear Him say 'I am the bread of life' instead of 'I am the Almighty'?",
+        "If 'in the beginning was the Word' is true, then the One offering you living water is the One who made the water. Does that make Him feel nearer or stranger to you right now? Sit with the honest answer."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "Eternal Word, You were with God in the beginning, and through You all things were made - and yet You came to a well at noon and asked for a drink. I bring You the hunger I keep trying to feed with everything else, and the thirst that no busy day has ever quieted. I am not coming to You holy; I am coming to You hungry. You said the thirsty may come and drink. So here I am. Be my bread. Be my living water. Let it be enough that You said 'I am', and that You said it to someone like me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - nothing to finish, nothing to prove. Sit quietly for five minutes and let one short sentence hold you: 'I am the bread of life.' Bring Jesus the one hunger you have been trying hardest to satisfy on your own, and instead of fixing it, simply hand it to Him and rest.",
+      "leavingAtCross": [
+        "The belief that I have to make myself presentable before I can come to God",
+        "The exhausting work of feeding a hunger that ordinary things were never going to fill",
+        "The fear that the holy 'I AM' of Scripture is too far off to want anything to do with me"
+      ],
+      "receivingFromCross": [
+        "The eternal Word made flesh, who names Himself by my need and not my worthiness",
+        "Bread that satisfies and water that never runs dry, offered as a gift, not a wage",
+        "The rest of knowing that the One who made me is the One inviting me to come and drink"
+      ],
+      "content": "Today is a sabbath day - nothing to finish, nothing to prove. Sit quietly for five minutes and let one short sentence hold you: 'I am the bread of life.' Bring Jesus the one hunger you have been trying hardest to satisfy on your own, and instead of fixing it, simply hand it to Him and rest."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does John 1:1-3 change the way you read everything Jesus says and does in chapters 1 through 7?",
+        "Why does it matter that Jesus names Himself 'the bread of life' and 'living water' rather than simply declaring His divine power?",
+        "In what way do the 'I am' sayings of John echo the Name God revealed to Moses at the burning bush (Exodus 3:14)?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one hunger or thirst in your life that you have been trying to satisfy with something that was never going to be enough.",
+        "Talk about the Samaritan woman at the well: do you find it easier to picture God demanding an account of you, or sitting down to ask you for a drink? Why?",
+        "Ask each other: what would it look like this week to come to Jesus 'thirsty' instead of coming to Him 'presentable'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        },
+        {
+          "reference": "John 6:35",
+          "text": "Jesus answered, \"I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.\""
+        },
+        {
+          "reference": "John 7:37-38",
+          "text": "On the last and greatest day of the feast, Jesus stood up and called out in a loud voice, \"If anyone is thirsty, let him come to Me and drink. Whoever believes in Me, as the Scripture has said: 'Streams of living water will flow from within him.'\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 1-7",
+          "note": "Read the whole stretch in one sitting if you can, watching for how often hunger and thirst appear - the wine at Cana (ch. 2), living water at the well (ch. 4), bread on the hillside (ch. 6), the cry to the thirsty in the temple (ch. 7) - and notice the Word who made all things meeting people in exactly those needs."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John the Evangelist",
+      "title": "The Disciple Who Began in Eternity",
+      "description": "Traditionally identified as John the son of Zebedee, the disciple 'whom Jesus loved.' Writing later than the other Gospel authors, he chose not to repeat the birth narratives but to begin before the beginning: 'In the beginning was the Word.' Across chapters 1 through 7 he gathers the signs and the 'I am' sayings into a single argument - that the eternal Word who made all things became flesh and offered Himself as bread and living water - so that, in his own words, 'by believing you may have life in His name' (John 20:31).",
+      "keyQuote": "And the Word became flesh and made His dwelling among us. We have seen His glory.",
+      "lessonForUs": "John does not write to win an argument but to hand you a door. He starts in eternity only to tell you Who has come near - and then he steps aside so you can hear Jesus say it for Himself: I am. Come.",
+      "heading": "The Disciple Who Began in Eternity"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2152,
+  "scriptureReference_full": "John 1:1-5, 14 (with John 1:29; 3:16; 4:14, 26; 6:35, 51; 7:37-38)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi, G1473 + G1510; logos) reflects standard lexical sources. The connection between Jesus' 'I am' sayings and the divine Name of Exodus 3:14 is a long-recognized reading within historic Christian interpretation."
+  ]
 }

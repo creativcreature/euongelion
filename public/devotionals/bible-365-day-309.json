@@ -1,38 +1,190 @@
 {
   "day": 309,
-  "title": "John: The Word + I Ams — Day 1 — Hook",
-  "teaser": "Day 309 of Bible 365 — John 1-7",
+  "title": "The Word learns to say I AM",
+  "teaser": "John opens his Gospel before time, then watches the eternal Word step into Galilee and begin to speak God's own Name out loud.",
   "framework": "John 1-7 — John: The Word + I Ams",
   "scriptureReference": "John 1-7",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 309"
+      "type": "scripture",
+      "reference": "John 1:1-5, 14",
+      "translation": "BSB",
+      "emphasis": [
+        "In the beginning was the Word",
+        "the Word was God",
+        "The Word became flesh"
+      ],
+      "greekOriginal": "Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν, καὶ Θεὸς ἦν ὁ Λόγος.",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made. In Him was life, and that life was the light of men. The Light shines in the darkness, and the darkness has not overcome it. ... The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "Λόγος",
+      "transliteration": "logos",
+      "pronunciation": "LOH-gos",
+      "meaning": "word, speech, reason, the thought made audible",
+      "rootMeaning": "Logos is what is said - a word, a saying, an account - but also the reason behind the saying, the rational order that holds a thing together. It is speech and the mind behind speech at once.",
+      "usageNote": "John could have begun his Gospel the way Matthew and Luke do, with a birth. Instead he reaches back behind the manger, behind Abraham, behind the first day of Genesis, and lands on a single word: Logos. To a Greek ear it meant the reason that orders the cosmos. To a Hebrew ear it meant the word by which God made the world - 'And God said, Let there be light.' John lets both ears hear, and then says something neither expected: this Word was God, and this Word became a man with a name.",
+      "wordByWord": [
+        {
+          "word": "Ἐν ἀρχῇ",
+          "transliteration": "en archē",
+          "meaning": "in the beginning - the exact opening words of Genesis in Greek"
+        },
+        {
+          "word": "ἦν",
+          "transliteration": "ēn",
+          "meaning": "was - a continuous past tense; the Word already was, with no point at which He began"
+        },
+        {
+          "word": "ὁ Λόγος",
+          "transliteration": "ho Logos",
+          "meaning": "the Word - the Speech, the Reason, the One through whom God utters Himself"
+        },
+        {
+          "word": "πρὸς τὸν Θεόν",
+          "transliteration": "pros ton Theon",
+          "meaning": "with God - literally 'toward God,' face to face, in relationship"
+        },
+        {
+          "word": "Θεὸς ἦν ὁ Λόγος",
+          "transliteration": "Theos ēn ho Logos",
+          "meaning": "the Word was God - fully sharing the being of God, while remaining distinct from the Father He is 'with'"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐγὼ εἰμί / ego eimi",
+          "reference": "Later in this Gospel the Word who 'was God' begins to say of Himself, 'I am.' The Greek ego eimi is exactly the phrase the Septuagint puts in God's mouth at the burning bush (Exodus 3:14). The prologue's Logos and the I AM sayings are the same claim, said two ways."
+        }
+      ],
+      "strongsNumber": "G3056",
+      "definition": "a word, saying, or account; the expression of thought; in John, the eternal Son through whom God speaks and creates",
+      "usage": "John uses Logos only here, at the doorway of the Gospel. Once the Word has a face and a voice in Galilee, John drops the title and simply calls Him Jesus - because the abstract Word has become a man you could walk beside."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Gospel That Starts Before the Story",
+      "body": "Three of the four Gospels begin where you would expect a life to begin. Matthew opens with a genealogy. Luke opens with an angel and a pregnancy. Mark opens with a grown man walking out of the wilderness. John opens before any of it. 'In the beginning was the Word.' Before the manger, before Mary, before Moses, before the first morning of the world, the Word already was.\n\nJohn is the last of the four, written by an old man who had decades to think about what he had seen. He had touched this person, eaten with Him, leaned against Him at supper, watched Him die and then watched Him alive again. And after all of that, the way he chose to introduce Him was not 'a teacher from Nazareth' but 'the Word who was with God and was God.' John wants you to know who you are reading about before you watch Him get tired, get thirsty, and weep at a friend's grave.\n\nThen comes the sentence the whole Gospel turns on: 'The Word became flesh and made His dwelling among us.' The Greek says He pitched His tent among us - the same image as the tabernacle in the wilderness, where the glory of God came down to live in a tent in the middle of the camp. The eternal Logos did not send a message. He moved in.",
+      "keyInsight": "John refuses to let you meet Jesus as merely a remarkable man first and wonder about His divinity later. He tells you at the door: the One you are about to follow through seven chapters of dust and questions is the Word who made the dust.",
+      "content": "Three of the four Gospels begin where you would expect a life to begin. Matthew opens with a genealogy. Luke opens with an angel and a pregnancy. Mark opens with a grown man walking out of the wilderness. John opens before any of it. 'In the beginning was the Word.' Before the manger, before Mary, before Moses, before the first morning of the world, the Word already was.\n\nJohn is the last of the four, written by an old man who had decades to think about what he had seen. He had touched this person, eaten with Him, leaned against Him at supper, watched Him die and then watched Him alive again. And after all of that, the way he chose to introduce Him was not 'a teacher from Nazareth' but 'the Word who was with God and was God.' John wants you to know who you are reading about before you watch Him get tired, get thirsty, and weep at a friend's grave.\n\nThen comes the sentence the whole Gospel turns on: 'The Word became flesh and made His dwelling among us.' The Greek says He pitched His tent among us - the same image as the tabernacle in the wilderness, where the glory of God came down to live in a tent in the middle of the camp. The eternal Logos did not send a message. He moved in."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter and the Visit",
+      "body": "A friend of mine spent a year working overseas, far from her aging father. She wrote him often - long, careful letters, the kind people keep in a drawer. He read every one. He told her later that he read some of them out loud to the empty kitchen, just to hear how she sounded.\n\nThen she came home. And she said the strangest thing happened the first night back: he kept the letters in the drawer and barely mentioned them again. Not because they had stopped mattering. Because she was now sitting at the table. The words had been precious when words were all he had. Once she walked through the door, the letters could rest. The point of every letter had always been her presence, and now the presence had arrived.\n\nThat is the move John makes in his first paragraph. For ages God had spoken - through the Law, through the prophets, through the words by which He made the world. All of it was true, all of it precious. And then the Word who had been doing the speaking walked through the door and sat down at the table. 'The Word became flesh.' The letters could rest. The Author had come to dinner.",
+      "connectionToTheme": "The eternal Word was never only information about God; it was God reaching toward us. In Jesus, the speaking finally became a presence you could sit across from.",
+      "content": "A friend of mine spent a year working overseas, far from her aging father. She wrote him often - long, careful letters, the kind people keep in a drawer. He read every one. He told her later that he read some of them out loud to the empty kitchen, just to hear how she sounded.\n\nThen she came home. And she said the strangest thing happened the first night back: he kept the letters in the drawer and barely mentioned them again. Not because they had stopped mattering. Because she was now sitting at the table. The words had been precious when words were all he had. Once she walked through the door, the letters could rest. The point of every letter had always been her presence, and now the presence had arrived.\n\nThat is the move John makes in his first paragraph. For ages God had spoken - through the Law, through the prophets, through the words by which He made the world. All of it was true, all of it precious. And then the Word who had been doing the speaking walked through the door and sat down at the table. 'The Word became flesh.' The letters could rest. The Author had come to dinner."
+    },
+    {
+      "type": "insight",
+      "heading": "When the Word Begins to Say I AM",
+      "body": "Watch what happens once the Word has a voice. By the time you reach the fourth chapter, Jesus is sitting at a well in Samaria, tired and thirsty, talking with a woman who has come for water. She says, 'I know that Messiah is coming. When He comes, He will explain everything to us.' And Jesus answers her - the BSB renders it 'I who speak to you am He' - but the Greek under those words is simply ego eimi. I am.\n\nThose two words are not casual. When Moses stood at the burning bush and asked God His name, God said, 'I AM WHO I AM.' In the Greek Old Testament that John's readers knew, the Name comes out as ego eimi - 'I am.' Now the carpenter at the well says ego eimi to a stranger holding a clay jar. By chapter six He says it again, fuller: 'I am the bread of life. Whoever comes to Me will never hunger.' This is the series ahead of us - the great I AM sayings, one after another, the Word who 'was God' in the prologue now speaking God's own Name in His own mouth.\n\nThis is the hinge of John's whole Gospel, and he plants it in the opening chapters so you cannot miss it. The Logos of verse one and the I AM at the well are not two claims. They are one claim, said first in the language of eternity and then in the language of a thirsty afternoon. The God who named Himself in fire has come to name Himself again, this time as a man you can interrupt for a drink of water.",
+      "historicalContext": "John wrote near the end of the first century, when the church was being pressed from two sides - by those who denied Jesus was truly God, and by those who denied He was truly human. The prologue answers both at once: the Word was God (fully divine) and the Word became flesh (fully human). Within John 1-7, the I AM sayings begin quietly (4:26; 6:35) and will swell through the rest of the Gospel until the religious leaders pick up stones, because they understood exactly what 'I am' meant on His lips (8:58-59).",
+      "fascinatingFact": "John never uses the word Logos for Jesus again after the prologue. The title appears, does its work of telling you who He is, and then disappears - because from chapter one verse fourteen onward, the Word has a face. The rest of the Gospel does not need the abstract noun. It has a man named Jesus saying 'I am.'",
+      "content": "Watch what happens once the Word has a voice. By the time you reach the fourth chapter, Jesus is sitting at a well in Samaria, tired and thirsty, talking with a woman who has come for water. She says, 'I know that Messiah is coming. When He comes, He will explain everything to us.' And Jesus answers her - the BSB renders it 'I who speak to you am He' - but the Greek under those words is simply ego eimi. I am.\n\nThose two words are not casual. When Moses stood at the burning bush and asked God His name, God said, 'I AM WHO I AM.' In the Greek Old Testament that John's readers knew, the Name comes out as ego eimi - 'I am.' Now the carpenter at the well says ego eimi to a stranger holding a clay jar. By chapter six He says it again, fuller: 'I am the bread of life. Whoever comes to Me will never hunger.' This is the series ahead of us - the great I AM sayings, one after another, the Word who 'was God' in the prologue now speaking God's own Name in His own mouth.\n\nThis is the hinge of John's whole Gospel, and he plants it in the opening chapters so you cannot miss it. The Logos of verse one and the I AM at the well are not two claims. They are one claim, said first in the language of eternity and then in the language of a thirsty afternoon. The God who named Himself in fire has come to name Himself again, this time as a man you can interrupt for a drink of water."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The eternal Word, through whom all things were made, became flesh and pitched His tent among us - and then, sitting tired at a Samaritan well, began to speak God's own Name, 'I am,' in a human voice.",
+      "modernApplication": "We tend to want God as information - a position to hold, a doctrine to defend, words kept safely in a drawer. John insists the Word will not stay on the page. He became flesh; He sat down; He spoke His Name to a woman everyone else avoided. The question of John 1-7 is not whether you can explain the Logos. It is whether you will let the Word who came near speak to you by name.",
+      "connectionPoint": "John's prologue deliberately echoes the first words of Genesis - 'In the beginning' - to say that the same God who once said 'Let there be light' is now standing in the world He spoke, calling Himself the light of life. Creation's Author has entered His own book as a character, without ceasing to be its Author.",
+      "newTestamentEcho": "What John opens, the rest of the New Testament confirms: 'He is the image of the invisible God... and in Him all things hold together' (Colossians 1:15, 17). The Word who made all things is the same Christ who holds all things - and who once asked a tired woman for a drink."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the Word truly became flesh and moved in, where in your ordinary day are you treating God as a letter in a drawer rather than a Person at the table?",
+      "additionalQuestions": [
+        "John spent decades with this Jesus before he chose how to introduce Him. What have your years with - or away from - Jesus taught you about who He actually is?",
+        "Jesus first said 'I am' not in the temple but at a well, to one tired person. What would it mean to let Him meet you in something that ordinary today?",
+        "Which is harder for you to hold: that Jesus was fully God, or that the fully-God One got thirsty? Sit with the one that resists you."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Eternal Word, You were in the beginning, You were with God, You were God - and You did not stay far off. You became flesh and pitched Your tent among us. Forgive me for keeping You as words in a drawer when You came to sit at the table. Speak Your Name over my ordinary day, the way You spoke it at the well. Let me hear 'I am' from the One who made me, and answer. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read John 1:1-18 slowly, out loud if you can. Then carry one line into the day - 'The Word became flesh and made His dwelling among us' - and ask, at some ordinary moment, for the One who pitched His tent here to make Himself known to you in it.",
+      "leavingAtCross": [
+        "The habit of keeping God as information I manage rather than a Person who speaks",
+        "The quiet assumption that Jesus was a great teacher and little more",
+        "The need to fully explain the Word before I am willing to follow Him"
+      ],
+      "receivingFromCross": [
+        "A God who did not send a letter but came in person and moved in",
+        "The grace and truth that came not through a system but through Jesus Christ",
+        "The freedom to be met by the great I AM in the most ordinary part of my day"
+      ],
+      "content": "Today, read John 1:1-18 slowly, out loud if you can. Then carry one line into the day - 'The Word became flesh and made His dwelling among us' - and ask, at some ordinary moment, for the One who pitched His tent here to make Himself known to you in it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does John begin his Gospel 'in the beginning' instead of with Jesus' birth - and what does that tell you about who he believes Jesus is?",
+        "What is the connection between 'the Word was God' in John 1:1 and Jesus saying 'I am' at the well in John 4:26?",
+        "What does it mean that the Word 'became flesh and made His dwelling among us' - and why does John reach for the image of a tent?"
+      ],
+      "forAccountabilityPartners": [
+        "Share whether you find it easier to relate to Jesus as God-with-us or as the eternal Word - and why.",
+        "Talk about one place this week where you treated faith as information rather than as a relationship with a living Person.",
+        "Ask each other: where would you most want to hear Jesus say 'I am' over your own ordinary, tired afternoon?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 1:1, 3",
+          "text": "In the beginning God created the heavens and the earth... And God said, \"Let there be light,\" and there was light."
+        },
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "John 4:26",
+          "text": "Jesus answered, \"I who speak to you am He.\""
+        },
+        {
+          "reference": "John 6:35",
+          "text": "Jesus answered, \"I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.\""
+        },
+        {
+          "reference": "Colossians 1:15-17",
+          "text": "The Son is the image of the invisible God, the firstborn over all creation... He is before all things, and in Him all things hold together."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 1:1-18",
+          "note": "Read the prologue as a single poem, then watch for the first quiet 'I am' at the well in John 4 and the first full one in John 6. The series will trace these I AM sayings through the whole Gospel."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John the Apostle",
+      "title": "The Disciple Whom Jesus Loved",
+      "description": "One of the Twelve, a Galilean fisherman called with his brother James, and traditionally the author of the fourth Gospel. He is the disciple who leaned against Jesus at the last supper and stood near the cross. Writing as an old man, after a lifetime of reflection, John alone opens his Gospel not with Jesus' birth but with His eternity - 'In the beginning was the Word' - because he had come to see that the friend he had eaten and walked with was the God who made the world.",
+      "keyQuote": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth.",
+      "lessonForUs": "John had every reason to write a simple memoir of a remarkable man. Instead, the more he remembered, the higher his words had to climb. Long familiarity with Jesus did not shrink Him in John's eyes; it revealed Him as the eternal Word. Nearness to Christ, honestly examined, does not make Him smaller.",
+      "heading": "The Disciple Whom Jesus Loved"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2340,
+  "scriptureReference_full": "John 1-7 (anchored in John 1:1-5, 14; 4:26; 6:35)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (Logos G3056; ego eimi) reflects standard lexical sources. The ego eimi link to Exodus 3:14 follows the Septuagint rendering and is widely noted in Johannine scholarship."
+  ]
 }

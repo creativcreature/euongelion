@@ -1,38 +1,183 @@
 {
   "day": 208,
-  "title": "Ecclesiastes: Vanity + God — Day 5 — Resolution",
-  "teaser": "Day 208 of Bible 365 — Ecclesiastes 1, 3, 12",
+  "title": "The breath returns to the Shepherd",
+  "teaser": "The Teacher spent a life proving everything under the sun is breath. He ends not in despair but at a Shepherd's feet — and the breath that leaves us returns to the God who gave it.",
   "framework": "Ecclesiastes 1, 3, 12 — Ecclesiastes: Vanity + God",
   "scriptureReference": "Ecclesiastes 1, 3, 12",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 208"
+      "type": "scripture",
+      "reference": "Ecclesiastes 1:2; 3:11; 12:7, 11, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "Everything is futile",
+        "set eternity in the hearts of men",
+        "the spirit returns to God who gave it",
+        "a single Shepherd",
+        "Fear God and keep His commandments"
+      ],
+      "hebrewOriginal": "הֲבֵל הֲבָלִים הַכֹּל הָבֶל",
+      "passage": "\"Futility of futilities,\" says the Teacher, \"futility of futilities! Everything is futile!\" ... He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end. ... before the dust returns to the ground from which it came and the spirit returns to God who gave it. ... The words of the wise are like goads, and the anthologies of the masters are like firmly embedded nails driven by a single Shepherd. ... When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ecclesiastes 1, 3, 12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ecclesiastes 1, 3, 12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הֶבֶל",
+      "transliteration": "hevel",
+      "pronunciation": "HEH-vel",
+      "meaning": "breath, vapor, mist; by extension, what cannot be held",
+      "rootMeaning": "Hevel is the puff of warm air you can see on a cold morning - there for a breath, then gone. It is not a word for what is worthless. It is a word for what will not stay still long enough to be grasped. BSB renders it \"futility\"; the picture underneath is a vapor.",
+      "usageNote": "Hevel opens the book (1:2) and closes it (12:8), framing everything between as breath. It is the same word that names Abel in Genesis 4 - the brother whose life was over almost before it began. Qoheleth uses it thirty-eight times, more than the rest of the Old Testament combined, until the reader can feel the morning mist burning off the field.",
+      "wordByWord": [
+        {
+          "word": "הֲבֵל",
+          "transliteration": "havel",
+          "meaning": "breath, vapor"
+        },
+        {
+          "word": "הֲבָלִים",
+          "transliteration": "havalim",
+          "meaning": "breaths - the plural piled up for emphasis, like 'song of songs'"
+        },
+        {
+          "word": "הַכֹּל",
+          "transliteration": "hakol",
+          "meaning": "the whole, everything"
+        },
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "spirit, breath, wind - the breath that returns to God in 12:7"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רְעוּת רוּחַ",
+          "reference": "Re'ut ruach, \"a pursuit of the wind\" (1:14). Qoheleth pairs hevel with chasing wind: not only is life vapor, but our grasping after it is like running to catch the breeze in our fists."
+        }
+      ],
+      "strongsNumber": "H1892",
+      "definition": "vapor, breath; that which is fleeting and cannot be held",
+      "usage": "By the end of the book Qoheleth has not abandoned the word - he repeats it (12:8) - but he has placed it inside a frame. The breath is real and brief; it is also given, and it returns to the One who gave it (12:7)."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ecclesiastes: Vanity + God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the meaning beneath vanity (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Man Who Tried Everything Comes to the End",
+      "body": "For four days we have walked with the Teacher through a hard honesty most sermons skip. He looked at work and called it wind. He looked at pleasure, wisdom, wealth, and the long indifferent turning of the sun and the rivers, and over all of it he wrote one word: hevel. Breath. Everything is breath.\n\nIt would be easy to read Ecclesiastes as the diary of a depressed king and close the cover gently. But Day 5 is where the book turns its hand over and shows what it was holding all along. Qoheleth was never trying to talk us out of living. He was burning off every cheap thing we lean on so that what cannot be shaken is left standing.\n\nNotice the line that sits in the middle of the book like a hinge: \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end\" (3:11). There is the whole ache in one sentence. God put eternity inside us - a hunger no season under the sun can fill - and then did not hand us the map to the whole picture. We are creatures built for forever, living inside a vapor, and that gap is exactly where the restlessness comes from.",
+      "keyInsight": "Ecclesiastes is not despair dressed up as wisdom. It is wisdom clearing the ground - naming everything that cannot hold our weight, so that the one thing that can is finally visible.",
+      "content": "For four days we have walked with the Teacher through a hard honesty most sermons skip. He looked at work and called it wind. He looked at pleasure, wisdom, wealth, and the long indifferent turning of the sun and the rivers, and over all of it he wrote one word: hevel. Breath. Everything is breath.\n\nIt would be easy to read Ecclesiastes as the diary of a depressed king and close the cover gently. But Day 5 is where the book turns its hand over and shows what it was holding all along. Qoheleth was never trying to talk us out of living. He was burning off every cheap thing we lean on so that what cannot be shaken is left standing.\n\nNotice the line that sits in the middle of the book like a hinge: \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end\" (3:11). There is the whole ache in one sentence. God put eternity inside us - a hunger no season under the sun can fill - and then did not hand us the map to the whole picture. We are creatures built for forever, living inside a vapor, and that gap is exactly where the restlessness comes from."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Night He Hit the Number",
+      "body": "A friend of mine spent thirty years building a company. He told me once, near the end of that stretch, about the night he finally hit the number he had chased since he was twenty-five. He poured a drink, stood at the window of an office he had paid for outright, and waited for the feeling. It did not come. \"I kept thinking,\" he said, \"there would be a moment. A door that opened. Instead it was just Tuesday, and the city was the same, and I was the same, and the number was just a number on a screen.\"\n\nHe was not ungrateful. He loved his work and he was good at it. That was what unsettled him. He had done everything right by the world's math and arrived at the exact place Qoheleth describes - a man who has gained much under the sun, holding the air.\n\nWhat saved him from despair was small and strange. He started, almost by accident, eating dinner slowly with his wife again. Reading something old at night. Showing up early to a quiet church on Sundays not to be seen but to sit. He was not chasing the number anymore. He was learning, late, to receive the day as a gift instead of conquering it as a project. \"I spent thirty years trying to hold my breath,\" he said. \"Turns out you're supposed to just breathe.\"",
+      "connectionToTheme": "Qoheleth's verdict lands not on failures but on a successful life examined honestly - and the way out is not more striving but receiving the ordinary day as a gift from God's hand (3:13).",
+      "content": "A friend of mine spent thirty years building a company. He told me once, near the end of that stretch, about the night he finally hit the number he had chased since he was twenty-five. He poured a drink, stood at the window of an office he had paid for outright, and waited for the feeling. It did not come. \"I kept thinking,\" he said, \"there would be a moment. A door that opened. Instead it was just Tuesday, and the city was the same, and I was the same, and the number was just a number on a screen.\"\n\nHe was not ungrateful. He loved his work and he was good at it. That was what unsettled him. He had done everything right by the world's math and arrived at the exact place Qoheleth describes - a man who has gained much under the sun, holding the air.\n\nWhat saved him from despair was small and strange. He started, almost by accident, eating dinner slowly with his wife again. Reading something old at night. Showing up early to a quiet church on Sundays not to be seen but to sit. He was not chasing the number anymore. He was learning, late, to receive the day as a gift instead of conquering it as a project. \"I spent thirty years trying to hold my breath,\" he said. \"Turns out you're supposed to just breathe.\""
+    },
+    {
+      "type": "insight",
+      "heading": "Driven by a Single Shepherd",
+      "body": "Here is the verse the whole book has been moving toward, and almost nobody quotes it. As Qoheleth closes, he describes the words of the wise: \"The words of the wise are like goads, and the anthologies of the masters are like firmly embedded nails driven by a single Shepherd\" (12:11).\n\nA goad is a sharpened stick that keeps an ox moving and turning where it should go; a nail driven home is a word that holds fast and does not pull loose. That is what true wisdom does to a life - it prods and it fastens. But notice who is behind it. Not the Teacher. The wise words are \"driven by a single Shepherd.\" After twelve chapters of \"I built, I gathered, I tried, I saw,\" Qoheleth lays down the first person and points away from himself to one Shepherd standing behind all true wisdom.\n\nThis is the resolution of the entire book. The man who proved that everything under the sun is breath ends by gesturing past the sun - to a Shepherd who is over it. And then he says the only thing left to say: \"Fear God and keep His commandments, because this is the whole duty of man\" (12:13). Not because nothing matters. Because in the end, only this does.",
+      "historicalContext": "Ecclesiastes belongs to Israel's Wisdom Literature alongside Job and Proverbs - books that test life by long observation rather than by Law or prophecy. The closing frame (12:9-14), where the Teacher is spoken of in the third person and his words are gathered, reads like the seal of an editor who collected Qoheleth's sayings and wanted readers to know how to hold them: as goads and nails, and as the words of God's people, not a lone skeptic's complaint.",
+      "fascinatingFact": "The image of the single Shepherd behind the wise words is a quiet thread waiting to be picked up. Israel knew God as the Shepherd of His people (Psalm 23; Psalm 80:1). Centuries after Qoheleth wrote, a carpenter from Nazareth would stand in the temple courts and say plainly, \"I am the good shepherd\" (John 10:14) - and claim to give the very thing the Teacher could never find under the sun: life \"in all its fullness\" (John 10:10).",
+      "content": "Here is the verse the whole book has been moving toward, and almost nobody quotes it. As Qoheleth closes, he describes the words of the wise: \"The words of the wise are like goads, and the anthologies of the masters are like firmly embedded nails driven by a single Shepherd\" (12:11).\n\nA goad is a sharpened stick that keeps an ox moving and turning where it should go; a nail driven home is a word that holds fast and does not pull loose. That is what true wisdom does to a life - it prods and it fastens. But notice who is behind it. Not the Teacher. The wise words are \"driven by a single Shepherd.\" After twelve chapters of \"I built, I gathered, I tried, I saw,\" Qoheleth lays down the first person and points away from himself to one Shepherd standing behind all true wisdom.\n\nThis is the resolution of the entire book. The man who proved that everything under the sun is breath ends by gesturing past the sun - to a Shepherd who is over it. And then he says the only thing left to say: \"Fear God and keep His commandments, because this is the whole duty of man\" (12:13). Not because nothing matters. Because in the end, only this does."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Qoheleth proves that life under the sun is hevel - breath that cannot be held - and ends not by clutching harder but by pointing past himself to a single Shepherd and to the God who gave the breath in the first place (12:7, 11, 13).",
+      "modernApplication": "We are still trying to hold our breath. We chase the number, the title, the followers, the experience that will finally make a Tuesday feel like enough, and it slips through our fingers as fast as the Teacher said it would. Ecclesiastes does not tell us to want less. It tells us to receive the day as a gift from God's hand and to fear the One who gives it - to stop grasping the vapor and turn toward the Shepherd behind it.",
+      "connectionPoint": "The thread Qoheleth leaves loose runs straight through Scripture. The breath that returns to God who gave it (12:7) is the same ruach God first breathed into the dust (Genesis 2:7). The eternity set in the human heart (3:11) is the hunger Augustine named when he wrote that our hearts are restless until they rest in God. And the \"single Shepherd\" behind all true wisdom is the One the New Testament names.",
+      "newTestamentEcho": "Jesus says, \"I am the good shepherd. I know My sheep and My sheep know Me\" (John 10:14), and, \"I have come that they may have life, and have it in all its fullness\" (John 10:10). The fullness Qoheleth searched for under the sun and never found there walks into the story as a person. Paul completes the picture: in Christ \"all things hold together\" (Colossians 1:17) - the very coherence the Teacher could not fathom \"from beginning to end\" (3:11) has a name."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you trying to hold your breath - gripping something that was only ever meant to be received and then let go?",
+      "additionalQuestions": [
+        "Qoheleth ends by pointing past himself to a single Shepherd. Whom or what are you currently treating as the thing that will finally make life feel like enough?",
+        "What ordinary gift today - a meal, work you can do, a person across the table - have you been conquering as a project instead of receiving as a gift from God's hand?",
+        "If you truly believed your breath will one day return to the God who gave it, what would you stop carrying tonight?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God, You set eternity in my heart and then asked me to live inside a vapor, and I confess I have spent my strength trying to hold the breath instead of trusting the One who gives it. Forgive me for chasing the wind. Teach me to receive this day - the food, the work, the faces - as a gift from Your hand. When all my striving is finally heard out, let the conclusion of my life be the simple thing: that I feared You, kept Your words like nails driven home, and followed the single Shepherd home. The breath You gave will return to You. Until it does, let me breathe it as worship. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, name one thing you have been gripping as if your life depended on holding it, and deliberately open your hands. Then do one ordinary thing slowly - eat a meal, take a walk, sit with someone - and receive it, out loud if you can, as a gift from God's hand rather than a task you owe.",
+      "leavingAtCross": [
+        "The exhausting work of holding my breath - clutching what was only ever meant to be received",
+        "The lie that a number, a title, or an achievement under the sun will one day make a Tuesday feel like enough",
+        "The despair that hears 'everything is breath' and concludes that nothing matters"
+      ],
+      "receivingFromCross": [
+        "The freedom to receive the ordinary day as a gift from God's hand instead of conquering it as a project",
+        "A single Shepherd standing behind all true wisdom, who knows His sheep by name",
+        "The promise that the breath which leaves me returns to the God who gave it - and that in Christ there is life in all its fullness"
+      ],
+      "content": "Tonight, name one thing you have been gripping as if your life depended on holding it, and deliberately open your hands. Then do one ordinary thing slowly - eat a meal, take a walk, sit with someone - and receive it, out loud if you can, as a gift from God's hand rather than a task you owe."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Qoheleth repeat 'futility of futilities' at the very end of the book (12:8) just as at the beginning (1:2) - and how does the frame change what the word means?",
+        "What is the significance of the wise words being 'driven by a single Shepherd' (12:11) rather than authored by the Teacher himself?",
+        "How does 'the spirit returns to God who gave it' (12:7) turn the brevity of life from a reason for despair into a reason for trust?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you have been chasing the wind - working hard at something that, examined honestly, will not hold your weight.",
+        "Talk about the difference between conquering a day as a project and receiving it as a gift. Which one is your default, and why?",
+        "Ask each other: if your breath returned to God this year, what is the one thing you would want to have feared, kept, and followed?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ecclesiastes 1:14",
+          "text": "I have seen all the things that are done under the sun, and have found them all to be futile, a pursuit of the wind."
+        },
+        {
+          "reference": "Ecclesiastes 3:13",
+          "text": "and also that every man should eat and drink and find satisfaction in all his labor—this is the gift of God."
+        },
+        {
+          "reference": "John 10:10",
+          "text": "The thief comes only to steal and kill and destroy. I have come that they may have life, and have it in all its fullness."
+        },
+        {
+          "reference": "Colossians 1:17",
+          "text": "He is before all things, and in Him all things hold together."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 12",
+          "note": "Read the whole chapter slowly, watching the movement from the failing body in old age (vv. 1-7) to the breath returning to God (v. 7) to the single Shepherd (v. 11) to the final conclusion (vv. 13-14)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Qoheleth (The Teacher)",
+      "title": "The Searcher Who Pointed Past Himself",
+      "description": "Qoheleth - the Teacher, Preacher, or Gatherer - is the voice of Ecclesiastes, traditionally associated with Solomon, the son of David who reigned in Jerusalem with unmatched wisdom, wealth, and freedom to test every pleasure life could offer. He conducted the most thorough experiment in human satisfaction ever recorded and reported the result without flinching: under the sun, everything is breath. Yet he does not end in cynicism. He gathers his words, drives them home like nails, and points to a single Shepherd and to the God to whom every breath returns.",
+      "keyQuote": "When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man.",
+      "lessonForUs": "The most accomplished searcher in Scripture spent everything proving that the things we chase cannot hold us - and then, instead of despairing, turned and pointed to the Shepherd. His honesty is permission to stop pretending the vapor is solid; his conclusion is the door out.",
+      "heading": "The Searcher Who Pointed Past Himself"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2178,
+  "scriptureReference_full": "Ecclesiastes 1, 3, 12",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (hevel H1892; ruach) reflects standard lexical sources; the connection of hevel to Abel (Genesis 4) is a widely noted feature of the Hebrew text."
+  ]
 }

@@ -1,38 +1,187 @@
 {
   "day": 194,
-  "title": "Psalms of Trust — Day 5 — Resolution",
-  "teaser": "Day 194 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "The Long Cord of Waiting",
+  "teaser": "Day 194 — Psalms of Trust. Eight psalms, one rope: the heavens declaring, the hills lifting, the watchman waiting for a morning that has a name.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 194"
+      "type": "scripture",
+      "reference": "Psalm 130:5-7; 27:14",
+      "translation": "BSB",
+      "emphasis": [
+        "I wait for the LORD",
+        "more than watchmen wait for the morning",
+        "Wait patiently for the LORD"
+      ],
+      "hebrewOriginal": "קַוֵּה אֶל־יְהוָה חֲזַק וְיַאֲמֵץ לִבֶּךָ וְקַוֵּה אֶל־יְהוָה",
+      "passage": "I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning. O Israel, put your hope in the LORD, for with the LORD is loving devotion, and with Him is redemption in abundance. ... Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD!"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָוָה",
+      "transliteration": "qavah",
+      "pronunciation": "kah-VAH",
+      "meaning": "to wait, to hope, to look eagerly for",
+      "rootMeaning": "Beneath the word for waiting lies the image of a cord. The root behind qavah is tied to qav, a measuring line, and to tiqvah, the word for hope - which is also the word Rahab's scarlet cord is called in Joshua 2:18. To hope, in Hebrew, is to be bound by a stretched-out line to the thing you are waiting for. Waiting is not empty time; it is tension on a rope that holds.",
+      "usageNote": "Psalm 27 ends with qavah twice over - 'Wait for the LORD... wait for the LORD' - framing the whole psalm like two hands gripping the same rope. The repetition is not a stutter; it is a man tightening his hold.",
+      "wordByWord": [
+        {
+          "word": "קַוֵּה",
+          "transliteration": "qavveh",
+          "meaning": "wait! hope! (a command) - lean your whole weight on the line"
+        },
+        {
+          "word": "אֶל־יְהוָה",
+          "transliteration": "el-YHWH",
+          "meaning": "toward the LORD - the direction the cord is pulled"
+        },
+        {
+          "word": "חֲזַק",
+          "transliteration": "chazaq",
+          "meaning": "be strong, take hold firmly"
+        },
+        {
+          "word": "וְיַאֲמֵץ לִבֶּךָ",
+          "transliteration": "veya'ametz libbecha",
+          "meaning": "and let your heart be courageous"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "Tiqvah, 'hope,' is the same word used for the scarlet cord Rahab hung from her window (Joshua 2:18, 21). The line she trusted to spare her house is, literally, her hope - a rope you can hold."
+        },
+        {
+          "word": "יָחַל",
+          "reference": "Yachal, the verb in Psalm 130:5 ('in His word I put my hope'), is qavah's near-twin - to wait with confident expectation, the way you wait for a promise you have already been given."
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, look for, hope; from a root meaning to bind together by twisting, as strands into a cord",
+      "usage": "The same root that gives us 'wait' gives us 'cord.' To wait on the LORD is not to drift in open water; it is to be roped to the dock while the storm passes."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Psalms, One Rope",
+      "body": "Today the reading gathers eight psalms that don't sit next to each other in the book. Psalm 1 stands at the very door of the Psalter; Psalm 139 is near the far end. Between them are the heavens declaring glory (19), the smallness of a person under the stars (8), the brevity of our days (90), and the help that comes down from the hills (121). At first they look like scattered beads. Read them as one day's reading, though, and a single cord runs through all of them - the cord of trust that does not let go.\n\nThe arc began days ago with a question every honest person eventually asks: where do I put my weight? Psalm 1 answers by planting a tree. The blessed person is 'like a tree planted by streams of water, yielding its fruit in season, whose leaf does not wither.' A tree does not strive to stay near the water; it is simply planted there, and so it holds through drought. That is the first picture of trust - not effort, but rootedness.\n\nFrom there the psalms widen the view. Psalm 8 takes the reader outside at night: 'When I behold Your heavens, the work of Your fingers, the moon and the stars, which You have set in place - what is man that You are mindful of him?' Psalm 19 lifts the same eyes by daylight: 'The heavens declare the glory of God; the skies proclaim the work of His hands.' The God you are asked to trust is the One who set the stars like fingerwork and signs His name across the sky every morning. The waiting these psalms ask for is not blind. It is leaning on Someone whose work you can see overhead any clear night.",
+      "keyInsight": "These eight psalms were not written together, but they were chosen to be read together - and read together, they trace one unbroken cord from the rooted tree of Psalm 1 to the searched heart of Psalm 139.",
+      "content": "Today the reading gathers eight psalms that don't sit next to each other in the book. Psalm 1 stands at the very door of the Psalter; Psalm 139 is near the far end. Between them are the heavens declaring glory (19), the smallness of a person under the stars (8), the brevity of our days (90), and the help that comes down from the hills (121). At first they look like scattered beads. Read them as one day's reading, though, and a single cord runs through all of them - the cord of trust that does not let go.\n\nThe arc began days ago with a question every honest person eventually asks: where do I put my weight? Psalm 1 answers by planting a tree. The blessed person is 'like a tree planted by streams of water, yielding its fruit in season, whose leaf does not wither.' A tree does not strive to stay near the water; it is simply planted there, and so it holds through drought. That is the first picture of trust - not effort, but rootedness.\n\nFrom there the psalms widen the view. Psalm 8 takes the reader outside at night: 'When I behold Your heavens, the work of Your fingers, the moon and the stars, which You have set in place - what is man that You are mindful of him?' Psalm 19 lifts the same eyes by daylight: 'The heavens declare the glory of God; the skies proclaim the work of His hands.' The God you are asked to trust is the One who set the stars like fingerwork and signs His name across the sky every morning. The waiting these psalms ask for is not blind. It is leaning on Someone whose work you can see overhead any clear night."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man on the Wall",
+      "body": "In the ancient world, a city's night watchman drew the loneliest shift. He stood on the wall through the dark hours, when threats came and nothing could be done but watch. He could not make the sun rise. He could not hurry it. He could only keep his post and wait for a light he was certain would come.\n\nWhat made the waiting bearable was not optimism. It was history. The watchman had seen the sun rise every morning of his life. His confidence was not that morning might come, but that it always had. So he kept his eyes east, into the dark, leaning on a promise the horizon had never once broken.\n\nThe psalmist reaches for exactly this man to describe his own soul: 'My soul waits for the Lord more than watchmen wait for the morning.' Twice he says it, the way you repeat a thing to steady yourself - more than watchmen wait for the morning. He is on the wall in the dark, and he is not pretending it is light. He is simply certain the light is coming, because of Who he is waiting for.",
+      "connectionToTheme": "Trust in these psalms is not a feeling that the night is short. It is the watchman's certainty, founded on a track record, that the morning is sure - so the dark can be endured without letting go of the post.",
+      "content": "In the ancient world, a city's night watchman drew the loneliest shift. He stood on the wall through the dark hours, when threats came and nothing could be done but watch. He could not make the sun rise. He could not hurry it. He could only keep his post and wait for a light he was certain would come.\n\nWhat made the waiting bearable was not optimism. It was history. The watchman had seen the sun rise every morning of his life. His confidence was not that morning might come, but that it always had. So he kept his eyes east, into the dark, leaning on a promise the horizon had never once broken.\n\nThe psalmist reaches for exactly this man to describe his own soul: 'My soul waits for the Lord more than watchmen wait for the morning.' Twice he says it, the way you repeat a thing to steady yourself - more than watchmen wait for the morning. He is on the wall in the dark, and he is not pretending it is light. He is simply certain the light is coming, because of Who he is waiting for."
+    },
+    {
+      "type": "insight",
+      "heading": "You Cannot Wait Your Way Out of His Reach",
+      "body": "Here is where the eight psalms turn, and the trust they have been building reveals its foundation. We tend to think of waiting on God as our effort to stay near Him - as though, if we loosen our grip, we will drift and be lost. Psalm 139 quietly demolishes that fear.\n\n'Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there. If I rise on the wings of the dawn, if I settle by the farthest sea, even there Your hand will guide me; Your right hand will hold me fast.' The psalmist runs through every extreme - up to heaven, down to the grave, east with the dawn, west to the last sea - and finds the same hand already there, holding fast.\n\nSo the cord of waiting is not finally held by you. While you are gripping the rope toward God, His right hand is already gripping you. This is the center the whole arc has been moving toward: the watchman waits for the morning, but the morning was never in doubt, because the One he waits for has had hold of him the entire night. Psalm 90 even reframes the waiting itself - 'Lord, You have been our dwelling place through all generations... from everlasting to everlasting You are God.' We are not waiting outside, hoping to be let in. We have been living inside Him the whole time. The waiting happens at home.",
+      "historicalContext": "Psalm 90 carries the superscription 'A prayer of Moses, the man of God' - the oldest voice in the Psalter, looking back over a wilderness generation that died in the wait. 'Teach us to number our days, that we may present a heart of wisdom.' Israel knew, from forty years of waiting, that the dwelling place was never the land. It was always the LORD who went before them in cloud and fire.",
+      "fascinatingFact": "Psalm 27 opens 'The LORD is my light' and closes 'Wait for the LORD.' Light and waiting bracket the psalm. The order matters: because He is already the light, the waiting in the dark is never waiting for nothing - it is waiting in the company of the One you are waiting for.",
+      "content": "Here is where the eight psalms turn, and the trust they have been building reveals its foundation. We tend to think of waiting on God as our effort to stay near Him - as though, if we loosen our grip, we will drift and be lost. Psalm 139 quietly demolishes that fear.\n\n'Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there. If I rise on the wings of the dawn, if I settle by the farthest sea, even there Your hand will guide me; Your right hand will hold me fast.' The psalmist runs through every extreme - up to heaven, down to the grave, east with the dawn, west to the last sea - and finds the same hand already there, holding fast.\n\nSo the cord of waiting is not finally held by you. While you are gripping the rope toward God, His right hand is already gripping you. This is the center the whole arc has been moving toward: the watchman waits for the morning, but the morning was never in doubt, because the One he waits for has had hold of him the entire night. Psalm 90 even reframes the waiting itself - 'Lord, You have been our dwelling place through all generations... from everlasting to everlasting You are God.' We are not waiting outside, hoping to be let in. We have been living inside Him the whole time. The waiting happens at home."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The psalmist waits for the LORD more than watchmen wait for the morning, certain that with the LORD is redemption in abundance - and certain, in Psalm 139, that God's right hand has held him the whole time he was waiting.",
+      "modernApplication": "Most of the spiritual life is spent on the wall in the dark. You are not usually deciding whether God exists; you are deciding whether to keep your post through a long stretch where nothing visibly changes - a diagnosis, a marriage gone quiet, a prayer that has gone years without an answer. These psalms do not tell you the night is short. They tell you the morning is sure, and that the hand holding you will not let go before it comes.",
+      "connectionPoint": "The 'one thing' of Psalm 27 - 'to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD' - is the longing the whole reading bends toward. And it points past itself. The watchman's morning, the dwelling place of every generation, the inescapable Presence, the redemption in abundance: these are not four hopes but one, and they have a name.",
+      "newTestamentEcho": "What the watchman waited for came up over the horizon in a garden on the third day. Christ went into the longest night - down to Sheol, the very place Psalm 139 says God's hand still reaches - and rose with the morning, the firstborn from the dead. Now the 'one thing' of Psalm 27 is no longer a temple a person hopes to enter someday; it is a Person who said, 'I am the light of the world' (John 8:12), and who is Himself the house we dwell in. The cord of hope ends in a nail-marked hand that holds fast and will not be pried open: 'no one can snatch them out of My hand' (John 10:28). Israel waited for redemption in abundance. We wait knowing His name."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What morning have you been waiting for in the dark - and would it change your waiting to know that the One you wait for already has hold of you?",
+      "additionalQuestions": [
+        "Psalm 27 names 'one thing' the psalmist most desires - to dwell with God and gaze on His beauty. If you were honest, what is the 'one thing' your life is actually organized around right now?",
+        "Where in your life are you gripping the rope as if everything depends on the strength of your grip? What would it feel like to remember Whose hand is holding the other end?",
+        "Psalm 90 asks God to 'teach us to number our days.' What would you do differently this week if you truly counted them?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-surrender",
+      "prayerText": "LORD, You have been our dwelling place through all generations. Tonight I am on the wall in the dark, and I am tired of waiting for things to change. Teach me to wait the way the watchman waits - not pretending it is light, but certain the morning is coming, because You are the One I am waiting for. Where I have been gripping the rope alone, remind me that Your right hand has held me the whole time. Be my light and my salvation; let me want one thing, and let that one thing be You. Search me, O God, and know my heart; lead me in the way everlasting. I put my hope in You, for with You is loving devotion, and with You is redemption in abundance. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "Psalm 130:7"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, before sleep, step outside for two minutes and look up - at stars if you can see them, at the dark if you can't. Say one line aloud from today's reading: 'My soul waits for the Lord more than watchmen wait for the morning.' Then name to God the one thing you are waiting for, and leave it on the wall with Him until the light comes.",
+      "leavingAtCross": [
+        "The exhausting belief that my grip on God is the only thing keeping me from being lost",
+        "The fear that this particular night will not end",
+        "The scattered wanting that has crowded out the 'one thing'"
+      ],
+      "receivingFromCross": [
+        "A morning that is sure because the One I wait for has already risen",
+        "A right hand that holds me fast even in the place I am most afraid to go",
+        "A dwelling place older than the mountains, where the waiting happens at home"
+      ],
+      "content": "Tonight, before sleep, step outside for two minutes and look up - at stars if you can see them, at the dark if you can't. Say one line aloud from today's reading: 'My soul waits for the Lord more than watchmen wait for the morning.' Then name to God the one thing you are waiting for, and leave it on the wall with Him until the light comes."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word qavah ('wait/hope') reveal when you learn it shares a root with the word for a cord or measuring line?",
+        "Psalm 139 says God's hand is already in every place the psalmist could flee. How does that change what 'waiting on God' actually means?",
+        "How do the eight psalms in today's reading move from the rooted tree of Psalm 1 to the searched heart of Psalm 139 - and what holds them together as one cord?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'morning' you have been waiting for, and how long the night has felt.",
+        "Talk about the difference between waiting that grips out of fear and waiting that rests because you are already held.",
+        "Ask each other: what is the 'one thing' (Psalm 27:4) your life is really built around, and is it Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 1:3",
+          "text": "He is like a tree planted by streams of water, yielding its fruit in season, whose leaf does not wither, and who prospers in all he does."
+        },
+        {
+          "reference": "Psalm 121:1-2",
+          "text": "I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth."
+        },
+        {
+          "reference": "Psalm 27:4",
+          "text": "One thing I have asked of the LORD; this is what I desire: to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and seek Him in His temple."
+        },
+        {
+          "reference": "John 10:28",
+          "text": "I give them eternal life, and they will never perish. No one can snatch them out of My hand."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 130 (the De Profundis)",
+          "note": "Read this short psalm slowly, twice. The first time, hear the watchman in the dark. The second time, hear the word 'redemption in abundance' (v. 7) and let it answer the waiting."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Sons of Korah and the Psalmists of Trust",
+      "title": "The Singers Who Waited",
+      "era": "10th-6th century BC",
+      "description": "The Psalter was Israel's hymnbook, sung by Levitical singers across centuries - some psalms ascribed to David, one (Psalm 90) to Moses, many anonymous. The psalms in today's reading were not composed at one sitting or by one hand; they were gathered by a worshiping people who knew that trust is something you have to relearn in every generation. They put words to waiting so that those who came after would have something to say on the wall in the dark.",
+      "keyQuote": "My soul waits for the Lord more than watchmen wait for the morning.",
+      "lessonForUs": "The people who gave us these songs were not spared the night. They were given words to wait through it. When you cannot summon your own faith, their words are a rope already tied to the dock - take hold and lean your weight on it.",
+      "heading": "The Singers Who Waited"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2593,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qavah H6960; tiqvah; yachal) reflects standard lexical sources; the qavah/qav/tiqvah 'cord-hope' resonance is widely noted in Hebrew lexica and is illustrated by the scarlet cord (tiqvah) of Joshua 2:18."
+  ]
 }

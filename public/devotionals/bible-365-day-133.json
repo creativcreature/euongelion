@@ -1,38 +1,192 @@
 {
   "day": 133,
-  "title": "Northern Prophets — Day 7 — Sabbath",
-  "teaser": "Day 133 of Bible 365 — Amos, Hosea, Micah",
+  "title": "The Mercy God Wanted All Along",
+  "teaser": "Three prophets, one verdict: God never wanted your sacrifices. He wanted you to be like Him. Jesus made that line His mission statement.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
   "scriptureReference": "Amos, Hosea, Micah",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 133"
+      "type": "scripture",
+      "reference": "Micah 6:6-8",
+      "translation": "BSB",
+      "emphasis": [
+        "what is good",
+        "act justly",
+        "love mercy",
+        "walk humbly with your God"
+      ],
+      "hebrewOriginal": "הִגִּיד לְךָ אָדָם מַה־טּוֹב וּמָה־יְהוָה דּוֹרֵשׁ מִמְּךָ כִּי אִם־עֲשׂוֹת מִשְׁפָּט וְאַהֲבַת חֶסֶד וְהַצְנֵעַ לֶכֶת עִם־אֱלֹהֶיךָ",
+      "passage": "With what shall I come before the LORD when I bow before the God on high? Should I come to Him with burnt offerings, with year-old calves? Would the LORD be pleased with thousands of rams, with ten thousand rivers of oil? Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul? He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loyal love, covenant kindness, steadfast mercy",
+      "rootMeaning": "Chesed is the love that keeps its word. It is not a warm feeling but a faithfulness that holds on - the loyalty of someone who has made a promise and will not let go of you, even after you have given them every reason to. Micah does not say God merely wants us to do chesed. He wants us to love it.",
+      "usageNote": "Chesed is the heartbeat word of all three Northern Prophets. Micah ends his book asking who is a God like the LORD - one who pardons iniquity 'because He delights in loving devotion' (Micah 7:18), and 'loving devotion' is this same word, chesed. Hosea names it the thing God desires more than sacrifice (Hosea 6:6). The same word later anchors Psalm 136, where 'His loving devotion endures forever' is repeated twenty-six times.",
+      "wordByWord": [
+        {
+          "word": "עֲשׂוֹת",
+          "transliteration": "asot",
+          "meaning": "to do, to act, to make happen"
+        },
+        {
+          "word": "מִשְׁפָּט",
+          "transliteration": "mishpat",
+          "meaning": "justice, the right ordering of things, judgment for the wronged"
+        },
+        {
+          "word": "אַהֲבַת",
+          "transliteration": "ahavat",
+          "meaning": "to love, to be devoted to"
+        },
+        {
+          "word": "חֶסֶד",
+          "transliteration": "chesed",
+          "meaning": "loyal love, covenant mercy"
+        },
+        {
+          "word": "הַצְנֵעַ לֶכֶת",
+          "transliteration": "hatznea lechet",
+          "meaning": "to walk humbly, to go modestly, carefully, close to another"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִשְׁפָּט / צְדָקָה",
+          "reference": "Amos pairs mishpat (justice) with tsedaqah (righteousness): 'But let justice roll on like a river, and righteousness like an ever-flowing stream' (Amos 5:24). The two words travel together throughout the prophets - right rulings and right living, the river and its current."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; covenant loyalty and steadfast love",
+      "usage": "When the New Testament reaches for chesed it most often reaches for the Greek eleos - mercy. So when Jesus quotes Hosea, 'I desire mercy, not sacrifice,' He is reaching back through Hosea and Micah to this one Hebrew word, and putting it at the center of His own ministry."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Voices, One Verdict",
+      "body": "Today the reading widens. Instead of one chapter, three small books: Amos, Hosea, and Micah - prophets who spoke in the eighth century before Christ, while the northern kingdom of Israel was rich, religious, and rotting from the inside.\n\nThis was Israel's gilded age. The temples were full, the festivals were loud, the offerings were generous. By every outward measure, the nation looked devout. And into that crowded, confident worship, three prophets carried almost the same sentence.\n\nAmos, a shepherd from the south, heard God say something startling: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies... Take away from Me the noise of your songs!' (Amos 5:21, 23). Hosea, whose own broken marriage became a living parable of God's faithfulness to an unfaithful people, put it plainly: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' (Hosea 6:6). And Micah, asking what could possibly satisfy God - calves, rams, rivers of oil, even a firstborn child - landed on the answer that has echoed for three thousand years: 'to act justly, to love mercy, and to walk humbly with your God' (Micah 6:8).\n\nThree different men, three different towns, one verdict. God was never after the smoke of the altar. He was after the shape of a life.",
+      "keyInsight": "The sin Amos, Hosea, and Micah confront is not too little religion. It is religion offered in place of mercy - worship used as a substitute for becoming like the God being worshiped.",
+      "content": "Today the reading widens. Instead of one chapter, three small books: Amos, Hosea, and Micah - prophets who spoke in the eighth century before Christ, while the northern kingdom of Israel was rich, religious, and rotting from the inside.\n\nThis was Israel's gilded age. The temples were full, the festivals were loud, the offerings were generous. By every outward measure, the nation looked devout. And into that crowded, confident worship, three prophets carried almost the same sentence.\n\nAmos, a shepherd from the south, heard God say something startling: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies... Take away from Me the noise of your songs!' (Amos 5:21, 23). Hosea, whose own broken marriage became a living parable of God's faithfulness to an unfaithful people, put it plainly: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' (Hosea 6:6). And Micah, asking what could possibly satisfy God - calves, rams, rivers of oil, even a firstborn child - landed on the answer that has echoed for three thousand years: 'to act justly, to love mercy, and to walk humbly with your God' (Micah 6:8).\n\nThree different men, three different towns, one verdict. God was never after the smoke of the altar. He was after the shape of a life."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House That Tithed Its Mint",
+      "body": "A man I knew gave faithfully to his church for thirty years. He was on every committee, at every service, first in line to write the check when the roof needed work. He told me once, with real pride, that he had never missed a Sunday.\n\nIn the same conversation, almost without noticing, he mentioned that he had not spoken to his brother in eleven years. A dispute over their father's estate. He could not even remember the exact sum anymore. But he could remember being right.\n\nI did not say anything. I just thought about Amos - the festivals God could not stand, the songs He asked them to stop singing - and about how easy it is to keep every appointment with God while quietly missing the one He actually asked for.\n\nThe man was not a hypocrite. He genuinely loved his church. That is what made it so quietly sad. He had given God everything except the one brother across town. He had tithed his mint and kept his grudge.",
+      "connectionToTheme": "Amos, Hosea, and Micah are not aimed at people who skip church. They are aimed at people who never skip - and who use their faithfulness to God as a way of avoiding the mercy God actually asked for.",
+      "content": "A man I knew gave faithfully to his church for thirty years. He was on every committee, at every service, first in line to write the check when the roof needed work. He told me once, with real pride, that he had never missed a Sunday.\n\nIn the same conversation, almost without noticing, he mentioned that he had not spoken to his brother in eleven years. A dispute over their father's estate. He could not even remember the exact sum anymore. But he could remember being right.\n\nI did not say anything. I just thought about Amos - the festivals God could not stand, the songs He asked them to stop singing - and about how easy it is to keep every appointment with God while quietly missing the one He actually asked for.\n\nThe man was not a hypocrite. He genuinely loved his church. That is what made it so quietly sad. He had given God everything except the one brother across town. He had tithed his mint and kept his grudge."
+    },
+    {
+      "type": "insight",
+      "heading": "The Tenderness Underneath the Thunder",
+      "body": "It would be easy to read Amos, Hosea, and Micah as nothing but thunder - hatred of feasts, threats of exile, justice rolling down like a flood. And the warnings are real. But underneath the thunder runs an ache that is almost unbearable to read.\n\nListen to Hosea, speaking for God about the nation He is about to discipline: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!' (Hosea 11:8). This is not a judge reading a sentence. This is a parent who taught a child to walk - 'It was I who taught Ephraim to walk, taking them in My arms' (Hosea 11:3) - and cannot bring Himself to let go.\n\nThis is the thing the gilded worshipers had missed. The justice the prophets demand is not the opposite of God's mercy; it flows from it. God wants justice in the gate because God Himself is merciful, and a people who worship a merciful God are meant to look like Him. The mercy comes first. It always comes first. The whole demand of Micah 6:8 - act justly, love mercy, walk humbly - is simply the request that we become like the God who has been so patient with us.",
+      "historicalContext": "Amos, Hosea, and Micah prophesied in the eighth century BC, roughly 760-700 BC. Amos and Hosea spoke mainly to the northern kingdom of Israel before its fall to Assyria in 722 BC; Micah, from the village of Moresheth in the south, spoke to Judah during the reigns of Jotham, Ahaz, and Hezekiah. They are part of what the Hebrew canon calls 'the Twelve' - the Minor Prophets, minor only in length.",
+      "fascinatingFact": "Hosea 6:6 - 'I desire mercy, not sacrifice' - is the single Old Testament line Jesus is recorded quoting twice. He throws it at His critics when they object to Him eating with sinners (Matthew 9:13), and again when they condemn His disciples for picking grain on the Sabbath (Matthew 12:7). Of all the verses in the prophets, this is the one He chose to make His own.",
+      "content": "It would be easy to read Amos, Hosea, and Micah as nothing but thunder - hatred of feasts, threats of exile, justice rolling down like a flood. And the warnings are real. But underneath the thunder runs an ache that is almost unbearable to read.\n\nListen to Hosea, speaking for God about the nation He is about to discipline: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!' (Hosea 11:8). This is not a judge reading a sentence. This is a parent who taught a child to walk - 'It was I who taught Ephraim to walk, taking them in My arms' (Hosea 11:3) - and cannot bring Himself to let go.\n\nThis is the thing the gilded worshipers had missed. The justice the prophets demand is not the opposite of God's mercy; it flows from it. God wants justice in the gate because God Himself is merciful, and a people who worship a merciful God are meant to look like Him. The mercy comes first. It always comes first. The whole demand of Micah 6:8 - act justly, love mercy, walk humbly - is simply the request that we become like the God who has been so patient with us."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Three eighth-century prophets - Amos, Hosea, and Micah - tell a religious nation that God despises worship offered in place of justice and mercy: 'I desire mercy, not sacrifice' (Hosea 6:6); 'let justice roll on like a river' (Amos 5:24); 'act justly, love mercy, walk humbly' (Micah 6:8).",
+      "modernApplication": "We can still run the old trade: regular attendance, generous giving, the right opinions about God - all of it offered as a quiet substitute for the harder mercy of forgiving a brother, paying a fair wage, telling the truth, going low. The prophets ask the question that cuts through every gilded age, including ours: would the people you have actually wronged recognize the God you say you worship?",
+      "connectionPoint": "These three prophets do more than scold; they point. Micah names the town the ruler will come from - 'But you, Bethlehem Ephrathah... out of you will come forth for Me One to be ruler over Israel' (Micah 5:2). Hosea hears God call a son out of Egypt - 'out of Egypt I called My son' (Hosea 11:1). The mercy they cried for was not finally a strategy God wanted from us; it was a Person He was sending to us.",
+      "newTestamentEcho": "When Jesus is criticized for eating with tax collectors and sinners, He answers with Hosea: 'But go and learn what this means: I desire mercy, not sacrifice. For I have not come to call the righteous, but sinners' (Matthew 9:13). The mercy Amos, Hosea, and Micah demanded, and the world could not produce, walked into a dinner full of outcasts and sat down. He is the justice that rolls down and the mercy God loved all along - born, as Micah promised, in Bethlehem."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you offering God your 'sacrifice' - your attendance, your giving, your effort - in a place where He is actually asking for mercy?",
+      "additionalQuestions": [
+        "Is there a person you have written off, the way the man wrote off his brother, while keeping every other appointment with God?",
+        "Of the three things Micah names - acting justly, loving mercy, walking humbly - which one comes hardest to you, and why?",
+        "When you read Hosea 11:8 - 'How could I give you up?' - does it sound like the God you actually expect to meet? What would change if it did?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have brought You so much smoke from the altar and so little mercy from my own heart. Forgive me for the worship I have used to hide the people I will not forgive, the justice I will not do, the lowness I will not stoop to. You have shown me what is good. Make me love it. Teach me again to walk humbly with You - the way You once taught Ephraim to walk, holding him by the arms. And thank You that the mercy You always wanted, You finally gave us Yourself, in Your Son. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath day - nothing to finish, nothing to prove. Sit for five quiet minutes with one line from these prophets: 'I desire mercy, not sacrifice.' Then name, honestly, the one place God is asking you for mercy instead of effort. Don't fix it yet. Just bring it to Him, and let Him show you what walking humbly looks like there.",
+      "leavingAtCross": [
+        "The religion I have offered as a substitute for the mercy God actually asked of me",
+        "The grudge I keep tending while telling myself I never miss a Sunday",
+        "The quiet belief that God is mostly a judge with a sentence ready, not a Father whose compassion is stirred"
+      ],
+      "receivingFromCross": [
+        "The mercy God wanted all along, given to me before He ever asked it of me",
+        "A justice that flows out of being loved, not a performance done to earn it",
+        "The freedom to walk humbly - low, close, unhurried - with the God who taught me to walk"
+      ],
+      "content": "Today is a Sabbath day - nothing to finish, nothing to prove. Sit for five quiet minutes with one line from these prophets: 'I desire mercy, not sacrifice.' Then name, honestly, the one place God is asking you for mercy instead of effort. Don't fix it yet. Just bring it to Him, and let Him show you what walking humbly looks like there."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was wrong with Israel's worship, according to Amos, Hosea, and Micah - and what was God actually asking for instead?",
+        "How does Hosea 11:8 ('How could I give you up?') reframe the threats of judgment in these books - is justice the opposite of God's mercy, or where does it come from?",
+        "Why might Jesus have chosen Hosea 6:6 - 'I desire mercy, not sacrifice' - as a line He quotes twice, and what does that tell us about His mission?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you suspect you have been substituting religious activity for actual mercy toward a real person.",
+        "Of acting justly, loving mercy, and walking humbly, talk about which one your group finds hardest as a community - not just as individuals.",
+        "Ask each other: who is the 'brother across town' in your life right now, and what would one humble step toward them look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Hosea 11:8",
+          "text": "How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!"
+        },
+        {
+          "reference": "Micah 7:18",
+          "text": "Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance - who does not retain His anger forever, because He delights in loving devotion?"
+        },
+        {
+          "reference": "Matthew 9:13",
+          "text": "But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Micah 6 and Hosea 11",
+          "note": "Read Micah 6:6-8 alongside Hosea 11:1-9 slowly. Watch how the same God who demands justice is the One who taught Ephraim to walk - the demand and the tenderness are the same heart."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hosea",
+      "title": "The Prophet Who Married His Message",
+      "description": "An eighth-century prophet to the northern kingdom of Israel, Hosea was commanded to marry Gomer, a woman who would be unfaithful to him, so that his own marriage became a living picture of God's faithfulness to an unfaithful people. His book holds together two things we struggle to hold together: searing honesty about sin and a love that refuses to let go. From Hosea comes the line - 'I desire mercy, not sacrifice' - that Jesus would later take as His own.",
+      "keyQuote": "How could I give you up, O Ephraim?... My heart is turned within Me; My compassion is stirred!",
+      "lessonForUs": "Hosea shows that God's justice and God's mercy are not rivals. The same heart that grieves over our betrayal is the heart that taught us to walk and will not surrender us - and that heart finally came to us in Christ, the mercy God wanted all along.",
+      "heading": "The Prophet Who Married His Message"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2280,
+  "scriptureReference_full": "Amos 5:21-24; Hosea 6:6; 11:8; Micah 6:6-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; mishpat) reflects standard lexical sources.",
+    "New Testament echoes (Matthew 9:13; 12:7 quoting Hosea 6:6; Hosea 11:1 'out of Egypt I called My son'; Micah 5:2 as the Bethlehem prophecy) are direct biblical citations."
+  ]
 }

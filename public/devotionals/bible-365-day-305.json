@@ -6,33 +6,175 @@
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 305"
+      "type": "scripture",
+      "reference": "Luke 15:24; 24:30-31",
+      "translation": "BSB",
+      "emphasis": [
+        "He was lost and is found",
+        "their eyes were opened and they recognized Jesus"
+      ],
+      "greekOriginal": "καὶ διηνοίχθησαν αὐτῶν οἱ ὀφθαλμοὶ καὶ ἐπέγνωσαν αὐτόν",
+      "passage": "\"For this son of mine was dead and is alive again! He was lost and is found!\" So they began to celebrate. ... While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus—and He disappeared from their sight."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐπιγινώσκω",
+      "transliteration": "epiginōskō",
+      "pronunciation": "eh-pee-gih-NOSE-koh",
+      "meaning": "to recognize, to know fully, to know again",
+      "rootMeaning": "The plain verb ginōskō means to know. The prefix epi- intensifies it: to know upon, to know thoroughly, to recognize someone you had failed to see for who they are. It is the difference between looking at a face and suddenly knowing it.",
+      "usageNote": "Luke 24:31 says the two disciples epegnōsan Him - they recognized Jesus - the moment He broke the bread. The same root runs underneath the whole chapter: their eyes had been kept from recognizing Him on the road (v. 16), and now they recognize Him at the table. It is not new information that opens their eyes. It is a gesture they had seen Him make before.",
+      "wordByWord": [
+        {
+          "word": "διηνοίχθησαν",
+          "transliteration": "diēnoichthēsan",
+          "meaning": "were opened wide, were thoroughly opened - a passive verb; something was done to their eyes"
+        },
+        {
+          "word": "αὐτῶν οἱ ὀφθαλμοὶ",
+          "transliteration": "autōn hoi ophthalmoi",
+          "meaning": "their eyes"
+        },
+        {
+          "word": "ἐπέγνωσαν",
+          "transliteration": "epegnōsan",
+          "meaning": "they recognized, they knew fully - the moment of recognition"
+        },
+        {
+          "word": "αὐτόν",
+          "transliteration": "auton",
+          "meaning": "Him - the One who had been walking beside them all along"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διανοίγω",
+          "reference": "Dianoigō - to open thoroughly - is used three times in Luke 24: He opened the Scriptures to them (v. 32), their eyes were opened (v. 31), and He opened their minds to understand the Scriptures (v. 45). The same hand that opens a scroll opens an eye."
+        }
+      ],
+      "strongsNumber": "G1921",
+      "definition": "to recognize, perceive fully, become thoroughly acquainted with; to know again one previously not perceived clearly",
+      "usage": "The passive voice of diēnoichthēsan matters: the disciples do not pry their own eyes open by effort. Their eyes are opened. Recognition, in Luke, is something received - the last move of the Shepherd who found the sheep."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What the Found Do Next",
+      "body": "Three days ago this series opened with a sheep wandered off a hillside, a coin rolled under the furniture, a younger son walking the road home with a rehearsed apology in his mouth. The pivot came in the middle of the week: the father who runs. Today the question turns from being found to living found. What does a found person actually do with the rest of the day?\n\nLuke gives the answer by setting two scenes side by side, and it is no accident that they share a verb. In chapter 15 the father says of the prodigal, \"He was lost and is found.\" In chapter 24, after seven dusty miles, \"their eyes were opened and they recognized Jesus.\" To be found and to recognize are the same motion seen from two angles. The Shepherd searches; the sheep, when it is finally held, lifts its head and knows the One holding it.\n\nThe two on the Emmaus road are not strangers to Jesus. They have followed Him, hoped in Him, grieved Him. And still, for seven miles, \"their eyes were kept from recognizing Him\" (Luke 24:16). This is the honest part. Being found does not mean you will always feel the presence of the One who found you. The disciples walked beside the risen Christ and felt only sadness. Application begins exactly there - in the gap between being accompanied and noticing it.",
+      "keyInsight": "Being found and recognizing the Finder are the same motion seen from two sides. The found life is not a feeling of His nearness; it is learning to recognize the One who has been walking beside you the whole time.",
+      "content": "Three days ago this series opened with a sheep wandered off a hillside, a coin rolled under the furniture, a younger son walking the road home with a rehearsed apology in his mouth. The pivot came in the middle of the week: the father who runs. Today the question turns from being found to living found. What does a found person actually do with the rest of the day?\n\nLuke gives the answer by setting two scenes side by side, and it is no accident that they share a verb. In chapter 15 the father says of the prodigal, \"He was lost and is found.\" In chapter 24, after seven dusty miles, \"their eyes were opened and they recognized Jesus.\" To be found and to recognize are the same motion seen from two angles. The Shepherd searches; the sheep, when it is finally held, lifts its head and knows the One holding it.\n\nThe two on the Emmaus road are not strangers to Jesus. They have followed Him, hoped in Him, grieved Him. And still, for seven miles, \"their eyes were kept from recognizing Him\" (Luke 24:16). This is the honest part. Being found does not mean you will always feel the presence of the One who found you. The disciples walked beside the risen Christ and felt only sadness. Application begins exactly there - in the gap between being accompanied and noticing it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Walk Home From the Hospital",
+      "body": "A friend told me about the week her father was dying. She drove the same forty minutes to the hospital every evening, and on the way home she would call her sister, and they would talk about everything - the doctors, the paperwork, what to say at the funeral they had not admitted yet they were planning. She said the calls felt like the only thing holding her up.\n\nMonths later she realized she could not remember a single thing they had decided on those drives. What she remembered was that she had not been alone in the car. The voice on the line had carried her home each night without her noticing it was carrying her.\n\nThat is the Emmaus road. Two people walk a familiar route deep in grief, talking through everything that has happened, and the whole time Someone is walking with them - explaining, steadying, drawing near - and they do not know it until much later. \"Were not our hearts burning within us,\" they say afterward, \"as He spoke with us on the road?\" (Luke 24:32). The burning was real while it was happening. The recognizing came after.",
+      "connectionToTheme": "Most of the time, being accompanied by Christ is recognized only in hindsight - which is why the found life leans on table, bread, and Scripture rather than on the feeling of His presence.",
+      "content": "A friend told me about the week her father was dying. She drove the same forty minutes to the hospital every evening, and on the way home she would call her sister, and they would talk about everything - the doctors, the paperwork, what to say at the funeral they had not admitted yet they were planning. She said the calls felt like the only thing holding her up.\n\nMonths later she realized she could not remember a single thing they had decided on those drives. What she remembered was that she had not been alone in the car. The voice on the line had carried her home each night without her noticing it was carrying her.\n\nThat is the Emmaus road. Two people walk a familiar route deep in grief, talking through everything that has happened, and the whole time Someone is walking with them - explaining, steadying, drawing near - and they do not know it until much later. \"Were not our hearts burning within us,\" they say afterward, \"as He spoke with us on the road?\" (Luke 24:32). The burning was real while it was happening. The recognizing came after."
+    },
+    {
+      "type": "insight",
+      "heading": "Recognition Comes at the Table",
+      "body": "Watch carefully where the disciples' eyes are finally opened. Not on the road, where Jesus explained the Scriptures and their hearts burned. Not at the moment of His best teaching. \"While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus.\" Four verbs - took, blessed, broke, gave - and suddenly they know Him.\n\nThey had seen those four verbs before. By the lakeside with five loaves; in an upper room a few nights earlier. The hands that broke the bread were marked hands. Recognition came not through an argument they won but through a gesture they had received before. This is why Luke pairs the Emmaus meal with the father's feast in chapter 15: in both, the found are recognized and welcomed at a table. The fattened calf is killed; the bread is broken. Joy in Luke is almost always something eaten together.\n\nSo the found life is not first a matter of having the right ideas about Jesus. The disciples had heard the finest Bible study ever given and still walked on, blind. It was the breaking of the bread - the remembered self-giving - that opened their eyes. We recognize Him most surely not when He explains the most but when He gives Himself away.",
+      "historicalContext": "Luke writes his Gospel and Acts for a church that already gathers to break bread (Acts 2:42, 46). His first readers would have heard the Emmaus meal and thought immediately of their own Sunday tables. The four verbs - took, gave thanks, broke, gave - are the same words Luke uses at the feeding of the five thousand (Luke 9:16) and at the Last Supper (Luke 22:19). He is teaching a young church where to look for the risen Christ: in the Scriptures opened and the bread broken.",
+      "fascinatingFact": "Jesus disappears the instant He is recognized (Luke 24:31). The visible presence is withdrawn at the very moment of recognition - and the disciples do not chase Him or despair. They get up that same hour and walk seven miles back to Jerusalem in the dark (Luke 24:33). Recognition does not produce clinging; it produces sending. The found become finders.",
+      "content": "Watch carefully where the disciples' eyes are finally opened. Not on the road, where Jesus explained the Scriptures and their hearts burned. Not at the moment of His best teaching. \"While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus.\" Four verbs - took, blessed, broke, gave - and suddenly they know Him.\n\nThey had seen those four verbs before. By the lakeside with five loaves; in an upper room a few nights earlier. The hands that broke the bread were marked hands. Recognition came not through an argument they won but through a gesture they had received before. This is why Luke pairs the Emmaus meal with the father's feast in chapter 15: in both, the found are recognized and welcomed at a table. The fattened calf is killed; the bread is broken. Joy in Luke is almost always something eaten together.\n\nSo the found life is not first a matter of having the right ideas about Jesus. The disciples had heard the finest Bible study ever given and still walked on, blind. It was the breaking of the bread - the remembered self-giving - that opened their eyes. We recognize Him most surely not when He explains the most but when He gives Himself away."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In Luke 15 the father runs to the lost son and throws a feast; in Luke 24 the risen Christ walks unrecognized beside two grieving disciples until their eyes are opened at the breaking of the bread. To be found and to recognize the Finder are one motion.",
+      "modernApplication": "You may be one of the found and still spend long stretches feeling utterly alone, talking through your griefs on the drive home, certain no one is in the car. The Emmaus road says the Companion is not always felt and is rarely recognized in the moment. The found life is built less on emotional certainty than on returning to the places where He has opened eyes before: the Scriptures read slowly, the table shared, the bread broken in His name.",
+      "connectionPoint": "Luke draws a single thread from the parables of chapter 15 to the road of chapter 24. The Shepherd who left the ninety-nine to find one sheep (Luke 15:4) is the Shepherd who lays down His life for the sheep (John 10:11), and the same Shepherd now walks beside two of His own and lets Himself be recognized in broken bread. Lost, found, recognized, sent - the whole movement of the Gospel runs through these two chapters.",
+      "newTestamentEcho": "What the prodigal's father pictures, the risen Christ performs. \"He was lost and is found\" (Luke 15:24) becomes \"their eyes were opened and they recognized Jesus\" (Luke 24:31). The feast the father threw for a dead-and-alive son becomes the table where the dead-and-alive Lord gives Himself to be known."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been walking with sadness on your face, talking through everything that has happened, certain you are alone on the road?",
+      "additionalQuestions": [
+        "Looking back over the last hard season, can you name a moment your heart was burning that you only recognized as His presence afterward?",
+        "When have you had the right ideas about Jesus and still walked on blind? What finally opened your eyes - and was it an argument, or a gift?",
+        "The disciples recognized Him in the breaking of the bread. What ordinary, repeated practice has been the place where He becomes real to you again?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have walked long stretches of road sure I was alone, and I did not know You were beside me. Forgive me for measuring Your nearness by what I could feel. Open my eyes the way You opened theirs - not because I climbed to the right idea of You, but because You broke the bread and gave Yourself away. Make my heart burn again. And when I recognize You, send me back down the road to tell someone else: He is alive; He was lost to me and is found. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one thing the found do: return to a table. Eat one meal slowly, without a screen, and before you take the bread say out loud, \"He is here.\" Then name one person walking a sad road right now and reach out to them this week - because the found become finders.",
+      "leavingAtCross": [
+        "The belief that if I cannot feel God near, He is not near",
+        "The pride that thinks the right ideas about Jesus are the same as recognizing Him",
+        "The grief I have been carrying down the road as though no one is walking with me"
+      ],
+      "receivingFromCross": [
+        "A Companion on the road whether or not I recognize Him in the moment",
+        "Eyes that are opened as a gift, at the table, in the breaking of the bread",
+        "A errand worth running - to go back and tell someone the Lord is risen"
+      ],
+      "content": "Today, do one thing the found do: return to a table. Eat one meal slowly, without a screen, and before you take the bread say out loud, \"He is here.\" Then name one person walking a sad road right now and reach out to them this week - because the found become finders."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does Luke connect the father's words 'he was lost and is found' (15:24) to the disciples' eyes being 'opened' to recognize Jesus (24:31)? What single experience links them?",
+        "Why did the disciples' hearts burn on the road but their eyes only open at the table? What does that say about the difference between teaching and recognition?",
+        "What is the significance of Jesus disappearing the moment He is recognized, and the disciples immediately returning to Jerusalem?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a 'seven-mile road' you have been walking lately - a stretch of grief or confusion where you have felt alone.",
+        "Share one practice (a meal, the Scriptures, a gathering) where Christ has reliably become real to you, and commit to returning to it this week.",
+        "Ask each other: who is on a sad road near me right now that I am being sent back to find?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:4-6",
+          "text": "What man among you, if he has a hundred sheep and loses one of them, does not leave the ninety-nine in the pasture and go after the one that is lost, until he finds it? And when he finds it, he joyfully puts it on his shoulders, comes home, and calls together his friends and neighbors to tell them, 'Rejoice with me, for I have found my lost sheep!'"
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, 'Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?'"
+        },
+        {
+          "reference": "Luke 24:35",
+          "text": "Then the two told what had happened on the road, and how they had recognized Jesus in the breaking of the bread."
+        },
+        {
+          "reference": "John 10:11",
+          "text": "I am the good shepherd. The good shepherd lays down His life for the sheep."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 24:13-35",
+          "note": "Read the whole Emmaus account in one sitting, watching the four verbs - took, blessed, broke, gave - and noting exactly where their eyes open. Then read Luke 15 alongside it and trace the word 'found.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Two on the Emmaus Road",
+      "title": "Found, Recognized, and Sent",
+      "description": "Two disciples - one named Cleopas (Luke 24:18), the other unnamed - leaving Jerusalem on resurrection afternoon, walking seven miles to Emmaus while talking through the crushing events of the weekend. The risen Jesus joins them unrecognized, opens the Scriptures to them, and is finally known to them in the breaking of bread. They then walk the seven miles back that same hour to tell the Eleven.",
+      "keyQuote": "Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?",
+      "lessonForUs": "They are every found person who has walked a stretch of road sure they were alone. Their story tells us the Companion is not always recognized in the moment, that He is known at the table more than in the argument, and that those whose eyes are opened do not cling - they get up and go find others.",
+      "heading": "Found, Recognized, and Sent"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2193,
+  "scriptureReference_full": "Luke 15:24; 24:30-31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (epiginōskō G1921; dianoigō) reflects standard lexical sources (e.g., BDAG, Thayer). The Lukan repetition of dianoigō across vv. 31, 32, 45 is a widely noted structural feature of Luke 24."
+  ]
 }

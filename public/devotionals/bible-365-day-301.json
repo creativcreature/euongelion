@@ -1,38 +1,188 @@
 {
   "day": 301,
-  "title": "Luke: The Inclusive Christ — Day 7 — Sabbath",
-  "teaser": "Day 301 of Bible 365 — Luke 1-12",
+  "title": "The song that turns the world over",
+  "teaser": "Before Jesus heals a single body, His mother sings the whole Gospel in one breath: God brings down the proud and lifts the lowly. Luke spends twelve chapters proving she was right.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 301"
+      "type": "scripture",
+      "reference": "Luke 1:46-55",
+      "translation": "BSB",
+      "emphasis": [
+        "He has looked with favor on the humble state of His servant",
+        "He has brought down rulers from their thrones, but has exalted the humble",
+        "He has filled the hungry with good things, but has sent the rich away empty"
+      ],
+      "greekOriginal": "καθεῖλεν δυνάστας ἀπὸ θρόνων καὶ ὕψωσεν ταπεινούς",
+      "passage": "Then Mary said: “My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. For the Mighty One has done great things for me. Holy is His name. His mercy extends to those who fear Him, from generation to generation. He has performed mighty deeds with His arm; He has scattered those who are proud in the thoughts of their hearts. He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty. He has helped His servant Israel, remembering to be merciful, as He promised to our fathers, to Abraham and his descendants forever.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ταπεινός",
+      "transliteration": "tapeinos",
+      "pronunciation": "tah-pei-NOSS",
+      "meaning": "low, lowly, of humble station; brought down, of no account",
+      "rootMeaning": "Tapeinos describes what sits low to the ground - a flattened hill, a person of no rank, someone the world steps over. In ordinary Greek it was rarely a compliment; it named the small, the overlooked, the beneath. Mary takes the word the world used as an insult and makes it the place God looks first.",
+      "usageNote": "Mary uses the noun form, tapeinosis, for her own \"humble state\" in verse 48, then the adjective tapeinous for the \"humble\" God exalts in verse 52. The same root frames the song. Luke keeps reaching for it: the lowly are lifted, the proud are scattered. By chapter 14 Jesus will say it plainly - \"everyone who humbles himself will be exalted\" (Luke 14:11), using the same verb, hypsoo, that the Magnificat already sang.",
+      "wordByWord": [
+        {
+          "word": "καθεῖλεν",
+          "transliteration": "katheilen",
+          "meaning": "He pulled down, He took down from a height"
+        },
+        {
+          "word": "δυνάστας",
+          "transliteration": "dynastas",
+          "meaning": "rulers, the powerful, those who hold sway"
+        },
+        {
+          "word": "ἀπὸ θρόνων",
+          "transliteration": "apo thronon",
+          "meaning": "from their thrones, from their seats of power"
+        },
+        {
+          "word": "ὕψωσεν",
+          "transliteration": "hypsosen",
+          "meaning": "He lifted high, He raised up"
+        },
+        {
+          "word": "ταπεινούς",
+          "transliteration": "tapeinous",
+          "meaning": "the lowly, the humble, those of no standing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ταπείνωσις",
+          "reference": "Tapeinosis (v. 48), Mary's own \"humble state\" - an unmarried girl in an unimportant town. The word she uses for herself is the word she uses for everyone God lifts. She is not describing a category she stands outside of; she is the first of the lowly the song is about."
+        }
+      ],
+      "strongsNumber": "G5011",
+      "definition": "not rising far from the ground; metaphorically, lowly in spirit, of low degree, cast down",
+      "usage": "The verbs around it move in opposite directions on purpose: katheilen pulls down, hypsosen lifts up. The Magnificat is not a song about God helping the lowly climb. It is a song about God reaching down to where they already are."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Teenager Sings the Thesis of the Whole Book",
+      "body": "Luke opens his Gospel like a careful historian. He tells Theophilus he has \"carefully investigated everything from the beginning\" so that the reader \"may know the certainty\" of what he was taught (Luke 1:3-4). Then, almost immediately, the orderly account hands the microphone to a pregnant teenager in a backwater town, and she sings.\n\nMary's song is not decoration. It is the argument. Long before Jesus heals anyone, before He eats with a single outcast, before He tells one parable, His mother announces what kind of God is arriving and what He intends to do. He has scattered the proud. He has pulled rulers off their thrones. He has filled the hungry and sent the rich away empty. He has exalted the lowly. Every verb is past tense, as though it is already finished - because in the womb she carries, it is.\n\nWatch how Luke then spends twelve chapters proving the song true. The Savior is announced first to shepherds, not to Herod (Luke 2:8-12). His opening sermon in Nazareth claims Isaiah's words for Himself: anointed \"to preach good news to the poor,\" to free captives, to give sight to the blind (Luke 4:18). He calls a tax collector, eats with sinners, and answers the offended with one line: \"It is not the healthy who need a doctor, but the sick\" (Luke 5:31). Each scene is the Magnificat happening in front of you. The teenager was right."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name at the Bottom of the List",
+      "body": "A friend who runs a free medical clinic told me about the intake list. Every morning a sheet goes up with the names of who will be seen that day, in order. For years the order was first-come, first-served, which sounds fair until you realize who comes first: the people with cars, with alarm clocks, with someone to watch their kids. The sickest and poorest landed at the bottom, every single day.\n\nSo the clinic changed the order. Now the list is built by need, not by who could fight their way to the front of it. The man who slept outside, who can barely stand, whose name would never have made the morning - his name is at the top. The change cost them nothing but their assumptions about what fair looks like.\n\nThat is the small, ordinary shape of what Mary sings on a cosmic scale. God does not run the world first-come, first-served. He builds the list by who has been pushed to the bottom of every other list. The lowly are not an afterthought He gets to eventually. They are where He starts.",
+      "connectionToTheme": "The Magnificat's reversal is not abstract justice; it is God reordering the list so that the people the world seats last are the ones He sees first.",
+      "content": "A friend who runs a free medical clinic told me about the intake list. Every morning a sheet goes up with the names of who will be seen that day, in order. For years the order was first-come, first-served, which sounds fair until you realize who comes first: the people with cars, with alarm clocks, with someone to watch their kids. The sickest and poorest landed at the bottom, every single day.\n\nSo the clinic changed the order. Now the list is built by need, not by who could fight their way to the front of it. The man who slept outside, who can barely stand, whose name would never have made the morning - his name is at the top. The change cost them nothing but their assumptions about what fair looks like.\n\nThat is the small, ordinary shape of what Mary sings on a cosmic scale. God does not run the world first-come, first-served. He builds the list by who has been pushed to the bottom of every other list. The lowly are not an afterthought He gets to eventually. They are where He starts."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Lift the Lowly From a Distance",
+      "body": "Read the Magnificat's two verbs together and the deepest thing in the song appears. Katheilen pulls down; hypsosen lifts up. God brings the proud down and raises the lowly. But how? Luke's whole Gospel answers in a way the song could only hint at: God lifts the lowly by becoming one.\n\nThe One who scatters the proud does not stay enthroned and reach down with a long arm. He is the baby \"wrapped in swaddling cloths and lying in a manger\" (Luke 2:12) - the sign given not to kings but to night-shift shepherds. The Mighty One who \"has done great things\" for Mary did the greatest thing by climbing down into her, into the tapeinosis, the lowly state, He came to lift. The God of the Magnificat does not exalt the humble from a throne. He exalts them by joining them at the bottom of the list and carrying it up Himself.\n\nThis is why Luke can hold mercy and reversal in the same breath without it becoming mere politics. The rulers are not toppled by another, stronger ruler. They are undone by a God who refused to play the game of thrones at all, and won by descending. That is not how power has ever worked. It is exactly how this God works, and Luke wants Theophilus - wants you - to know it for certain.",
+      "historicalContext": "Mary's song echoes Hannah's prayer in 1 Samuel 2, where another overlooked woman sings that the LORD \"raises the poor from the dust\" and \"brings low and exalts.\" Luke, writing for a largely Gentile readership through Theophilus, deliberately roots the new thing in Israel's old songs: the God arriving in Jesus is the same God who has always lifted the lowly, now doing it in person.",
+      "fascinatingFact": "Luke records more about women, the poor, Samaritans, and social outcasts than any other Gospel. The angels announce the birth to shepherds (2:8-12); women who had been healed travel with and fund Jesus' ministry (8:2-3); a despised Samaritan, not a priest, is the hero of the parable (10:33). The pattern is not scattered episodes. It is the Magnificat, kept as a promise, paid out scene by scene.",
+      "content": "Read the Magnificat's two verbs together and the deepest thing in the song appears. Katheilen pulls down; hypsosen lifts up. God brings the proud down and raises the lowly. But how? Luke's whole Gospel answers in a way the song could only hint at: God lifts the lowly by becoming one.\n\nThe One who scatters the proud does not stay enthroned and reach down with a long arm. He is the baby \"wrapped in swaddling cloths and lying in a manger\" (Luke 2:12) - the sign given not to kings but to night-shift shepherds. The Mighty One who \"has done great things\" for Mary did the greatest thing by climbing down into her, into the tapeinosis, the lowly state, He came to lift. The God of the Magnificat does not exalt the humble from a throne. He exalts them by joining them at the bottom of the list and carrying it up Himself.\n\nThis is why Luke can hold mercy and reversal in the same breath without it becoming mere politics. The rulers are not toppled by another, stronger ruler. They are undone by a God who refused to play the game of thrones at all, and won by descending. That is not how power has ever worked. It is exactly how this God works, and Luke wants Theophilus - wants you - to know it for certain."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Mary sings that God has brought down rulers from their thrones and exalted the humble, filled the hungry and sent the rich away empty - and Luke 1-12 shows Jesus living that song out, born to shepherds, anointed for the poor, eating with sinners, sought by no one and seeking the lost.",
+      "modernApplication": "We still rank people by the world's list: who has standing, who has a platform, who is worth our time. The Magnificat quietly indicts the list itself. The question is not only whether you feel lowly enough to be lifted, but whether you have been quietly trusting your place near the top to keep you safe - the very place the song says God unseats.",
+      "connectionPoint": "Mary's song does not stand alone. It answers Hannah's prayer (1 Samuel 2:7-8), it carries the heartbeat of the Beatitudes - \"Blessed are you who are poor... Blessed are you who hunger now\" (Luke 6:20-21) - and it sets up the whole Gospel's last word about its own purpose: \"the Son of Man came to seek and to save the lost\" (Luke 19:10). The first chapter sings what the nineteenth states.",
+      "newTestamentEcho": "What Mary sang, Christ became. Paul tells the Philippians that Jesus, \"being in very nature God,\" did not cling to His standing but \"emptied Himself,\" took the lowest place, and so God \"exalted Him to the highest place\" (Philippians 2:6-9). The Magnificat's two verbs - brought low, lifted high - turn out to be the shape of Christ Himself: He descended to the manger and the cross, and in lifting Him, God lifts everyone the world left at the bottom of the list."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you quietly assumed you belong near the top of the list - and what would change if you believed God reads it from the bottom up?",
+      "additionalQuestions": [
+        "Mary calls herself lowly before God lifts her. Is there a 'humble state' in you - a place of need or smallness - that you have been hiding rather than offering?",
+        "Who in your world has been pushed to the bottom of the list, and what would it look like to see them the way the Magnificat says God does?",
+        "If the Savior was announced first to shepherds and not to kings, what does that say about where God is most likely to be found in your week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Mighty One, You have done great things, and Your name is holy. Forgive me for the days I trust my standing more than Your mercy, for the lists I keep that put me near the top and others out of sight. Come down to the lowly place in me I would rather not show You, and lift it. Let me rejoice, like Mary, in God my Savior - the God who scatters the proud and fills the hungry, who came not as a ruler on a throne but as a child in a manger. Make me small enough to be found, and glad to be lifted by You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, this is a sabbath day - there is no task to complete. Sit for five quiet minutes with one line of Mary's song: \"He has exalted the humble.\" Let it be true of you before you make it a project for anyone else.",
+      "leavingAtCross": [
+        "The instinct to earn my standing and protect my place near the top of the list",
+        "The quiet pride that thinks God owes His attention to the impressive",
+        "The fear that being lowly means being overlooked"
+      ],
+      "receivingFromCross": [
+        "A Savior who reads the list from the bottom and starts with the overlooked",
+        "The freedom to be small before God without shame",
+        "The joy of Mary's song: that the God who scatters the proud is the God who came down to lift me"
+      ],
+      "content": "Today, this is a sabbath day - there is no task to complete. Sit for five quiet minutes with one line of Mary's song: \"He has exalted the humble.\" Let it be true of you before you make it a project for anyone else."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does Mary's song in Luke 1:46-55 act as a thesis statement for the events of Luke 1-12 - the shepherds, the Nazareth sermon, the call of sinners?",
+        "What is the difference between God exalting the lowly 'from a distance' and God exalting them by becoming lowly Himself in the manger?",
+        "Why does Luke, the careful historian writing for Theophilus, choose to open his orderly account with a song rather than a list of facts?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'list' you keep - spoken or unspoken - that ranks people by standing, and talk about how the Magnificat reorders it.",
+        "Where do you most resist being 'lowly' before God - in need, in failure, in dependence? Talk honestly about why.",
+        "Ask each other: who in our lives has been sent to the bottom of the list, and what would it look like this week to see them first, the way Luke says God does?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 2:7-8",
+          "text": "The LORD sends poverty and wealth; He humbles and He exalts. He raises the poor from the dust and lifts the needy from the ash heap."
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed."
+        },
+        {
+          "reference": "Luke 6:20-21",
+          "text": "Blessed are you who are poor, for yours is the kingdom of God. Blessed are you who hunger now, for you will be filled."
+        },
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save the lost."
+        },
+        {
+          "reference": "Philippians 2:8-9",
+          "text": "He humbled Himself and became obedient to death, even death on a cross. Therefore God exalted Him to the highest place and gave Him the name above all names."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 1-12",
+          "note": "Read the Magnificat (1:46-55) first, then read these twelve chapters watching for the song coming true: who Jesus is announced to (2:8-12), who He preaches to (4:18), who He calls (5:31-32), and who He blesses (6:20-21)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Lowly Servant Who Sang the Gospel First",
+      "description": "A young woman from an unimportant Galilean town, betrothed but not yet married, with no rank, wealth, or standing the world would notice. When the angel announced that she would bear the Son of the Most High, she answered, \"I am the Lord's servant\" - and then, visiting her cousin Elizabeth, she sang the Magnificat (Luke 1:46-55). In her own body the song begins: God looks with favor on the humble state of His servant and lifts her. She is both the singer of Luke's theme and its first proof.",
+      "keyQuote": "My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant.",
+      "lessonForUs": "Mary did not wait to feel important before she rejoiced. She named herself lowly and praised the God who lifts the lowly in the same breath. The way into the Magnificat's joy is not climbing higher; it is letting yourself be found at the bottom by the God who came down to start there.",
+      "heading": "The Lowly Servant Who Sang the Gospel First"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2114,
+  "scriptureReference_full": "Luke 1:46-55 (within Luke 1-12)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tapeinos G5011, tapeinosis, the verbs katheilen / hypsosen in Luke 1:52) reflects standard lexical sources. The connection of the Magnificat to Hannah's prayer (1 Samuel 2) is a long-standing observation in the commentary tradition."
+  ]
 }

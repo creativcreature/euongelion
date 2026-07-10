@@ -1,38 +1,190 @@
 {
   "day": 267,
-  "title": "Minor Prophets: Wait + Hope — Day 1 — Hook",
-  "teaser": "Day 267 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
+  "title": "How long, and not yet",
+  "teaser": "The Old Testament ends with a prophet asking \"How long?\" and an answer that will not be hurried: wait for it. The last five prophets teach the hardest faith — trusting a promise that lingers.",
   "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
   "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 267"
+      "type": "scripture",
+      "reference": "Habakkuk 1:2; 2:3-4",
+      "translation": "BSB",
+      "emphasis": [
+        "How long, O LORD",
+        "wait for it",
+        "the righteous will live by faith"
+      ],
+      "hebrewOriginal": "כִּי-עוֹד חָזוֹן לַמּוֹעֵד וְיָפֵחַ לַקֵּץ וְלֹא יְכַזֵּב אִם-יִתְמַהְמָהּ חַכֵּה-לוֹ כִּי-בֹא יָבֹא לֹא יְאַחֵר",
+      "passage": "How long, O LORD, must I call for help but You do not hear, or cry out to You, \"Violence!\" but You do not save? ... For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay. Look at the proud one; his soul is not upright— but the righteous will live by faith—"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חַכֵּה-לוֹ",
+      "transliteration": "chakkeh-lo",
+      "pronunciation": "khah-KEH loh",
+      "meaning": "wait for it; wait eagerly for him",
+      "rootMeaning": "From chakah, to wait — but not idle waiting. The same root describes a fisherman watching a line, a sentry holding a post, a person leaning toward the door for someone who promised to come. It is waiting that keeps its eyes on the road.",
+      "usageNote": "In Habakkuk 2:3 God answers the prophet's \"How long?\" not with a date but with a verb: chakkeh-lo, \"wait for it.\" The very next line tells him how to wait — the righteous will live by faith (emunah). To wait this way is not to kill time; it is to keep faith with a promise that has not yet arrived.",
+      "wordByWord": [
+        {
+          "word": "אִם-יִתְמַהְמָהּ",
+          "transliteration": "im-yitmahmah",
+          "meaning": "though it lingers, though it tarries"
+        },
+        {
+          "word": "חַכֵּה",
+          "transliteration": "chakkeh",
+          "meaning": "wait, wait eagerly (an imperative — a command, not a suggestion)"
+        },
+        {
+          "word": "לוֹ",
+          "transliteration": "lo",
+          "meaning": "for it, for him"
+        },
+        {
+          "word": "בֹא יָבֹא",
+          "transliteration": "bo yavo",
+          "meaning": "it will surely come — the verb doubled for certainty"
+        },
+        {
+          "word": "לֹא יְאַחֵר",
+          "transliteration": "lo ye'acher",
+          "meaning": "it will not delay, it will not be late"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱמוּנָה",
+          "reference": "emunah, faith or faithfulness — the word in 'the righteous will live by faith' (Habakkuk 2:4). Paul carries this exact verse into the heart of the gospel (Romans 1:17; Galatians 3:11), and Hebrews 10:38 quotes it to a waiting church."
+        }
+      ],
+      "strongsNumber": "H2442",
+      "definition": "to wait, to long for, to wait eagerly for a person or promise",
+      "usage": "The grammar matters: God gives a command (wait) and a guarantee (it will surely come) in the same breath. The waiting is hard precisely because the guarantee is real."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Last Voices Before the Long Silence",
+      "body": "These are the closing five — Habakkuk, Zephaniah, Haggai, Zechariah, Malachi. After Malachi lays down his pen, Scripture goes quiet for roughly four hundred years. No prophet speaks. The Old Testament does not end with a triumph or a coronation. It ends with people waiting.\n\nHabakkuk opens with the question every honest believer eventually asks. He looks at violence that goes unpunished and justice that never arrives, and he says it plainly to God: \"How long?\" He is not doubting that God exists. He is wondering why God seems slow. And God's answer, when it comes, is not a timetable. It is a posture: \"Write down this vision... Though it lingers, wait for it.\" The promise is fixed to an appointed time God has not disclosed. The prophet is told to trust the appointment without being shown the calendar.\n\nThe four prophets after him are all, in their own register, learning to wait. Zephaniah waits for the day the LORD sings over His people again. Haggai, standing in the rubble of a half-built temple, waits for a glory greater than the old one. Zechariah sees visions of a coming King. Malachi, last of all, holds out for a sun that has not yet risen. None of them lives to see it. Each one hands the waiting forward."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Light Under the Door",
+      "body": "A friend told me about the months her husband was deployed, when her young son could not fall asleep. Every night the boy left his bedroom door open a few inches so the hall light would fall across the floor. He said he wanted to be able to see when Dad came home. His father was not coming home for many weeks. The boy knew that. He left the door open anyway.\n\nThat is closer to the biblical idea of waiting than we usually think. Chakkeh-lo is not the dull patience of a man stuck in a waiting room, killing time until a number is called. It is the boy with the door cracked open, eyes toward the light, certain of the homecoming even on the nights it does not come.\n\nHabakkuk is told to wait like that. Not to stop watching because the answer is slow. To keep the door open. To live, in the meantime, by faith.",
+      "connectionToTheme": "Biblical waiting is not passive endurance but active trust — keeping watch toward a homecoming you have been promised but cannot yet see.",
+      "content": "A friend told me about the months her husband was deployed, when her young son could not fall asleep. Every night the boy left his bedroom door open a few inches so the hall light would fall across the floor. He said he wanted to be able to see when Dad came home. His father was not coming home for many weeks. The boy knew that. He left the door open anyway.\n\nThat is closer to the biblical idea of waiting than we usually think. Chakkeh-lo is not the dull patience of a man stuck in a waiting room, killing time until a number is called. It is the boy with the door cracked open, eyes toward the light, certain of the homecoming even on the nights it does not come.\n\nHabakkuk is told to wait like that. Not to stop watching because the answer is slow. To keep the door open. To live, in the meantime, by faith."
+    },
+    {
+      "type": "insight",
+      "heading": "How the Old Testament Ends",
+      "body": "Read the last words of the last prophet and notice where the Hebrew Bible chooses to stop. Malachi does not close with a verse about God's people finally getting it right. He closes with a promise pointed forward: \"the sun of righteousness will rise with healing in its wings\" (Malachi 4:2), and a messenger who will come first to prepare the way (Malachi 3:1; 4:5).\n\nThat is dawn language — a sun that has not yet risen but certainly will. The book ends before sunrise, in the gray hour, with the horizon promised but still dark. Then the page turns and four centuries pass in silence.\n\nThis is the hardest faith there is: to trust a promise that lingers. Anyone can believe when the answer arrives. Habakkuk is asked to believe while it tarries; Malachi to point at a sunrise he will not live to see. The whole back end of the Old Testament teaches one lesson by repetition — the appointed time is real even when the waiting is long, and the righteous live by faith in the dark before the dawn.",
+      "historicalContext": "Habakkuk likely prophesied in Judah as the Babylonian (Chaldean) threat rose, around 605 BC. Haggai and Zechariah preached to the discouraged exiles who had returned from Babylon and stalled in rebuilding the temple around 520 BC. Malachi came later still, perhaps the mid-400s BC, to a community grown cynical and tired. They span the collapse, the exile, and the weary return — and at every stage the message is some form of: it is not finished yet; keep faith.",
+      "fascinatingFact": "Habakkuk 2:4 — \"the righteous will live by faith\" — is quoted three separate times in the New Testament (Romans 1:17; Galatians 3:11; Hebrews 10:38). One line spoken to a waiting prophet became a load-bearing wall of the gospel. The verse that taught Habakkuk how to wait is the verse Paul uses to explain how anyone is made right with God.",
+      "content": "Read the last words of the last prophet and notice where the Hebrew Bible chooses to stop. Malachi does not close with a verse about God's people finally getting it right. He closes with a promise pointed forward: \"the sun of righteousness will rise with healing in its wings\" (Malachi 4:2), and a messenger who will come first to prepare the way (Malachi 3:1; 4:5).\n\nThat is dawn language — a sun that has not yet risen but certainly will. The book ends before sunrise, in the gray hour, with the horizon promised but still dark. Then the page turns and four centuries pass in silence.\n\nThis is the hardest faith there is: to trust a promise that lingers. Anyone can believe when the answer arrives. Habakkuk is asked to believe while it tarries; Malachi to point at a sunrise he will not live to see. The whole back end of the Old Testament teaches one lesson by repetition — the appointed time is real even when the waiting is long, and the righteous live by faith in the dark before the dawn."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God answers Habakkuk's \"How long?\" not with a date but with a command and a guarantee: wait for it, for it will surely come and will not delay. The vision is fixed to an appointed time the prophet cannot see.",
+      "modernApplication": "We are not naturally good at this. We pray once and check for the answer the way we check a delivery tracker, and when it lingers we assume it was lost. Habakkuk teaches a different posture: keep the door open, keep watching the road, and in the meantime live by faith rather than by the speed of the answer. The lateness of a promise is not evidence it failed.",
+      "connectionPoint": "The four prophets after Habakkuk pass the same waiting forward — Zephaniah toward the day God sings over His people (Zephaniah 3:17), Haggai toward a greater glory and a promised peace (Haggai 2:9), Zechariah toward a humble King who comes riding on a donkey (Zechariah 9:9), Malachi toward the sun of righteousness (Malachi 4:2). The Old Testament closes leaning toward a dawn it never gets to watch break.",
+      "newTestamentEcho": "Then the silence ends. Matthew opens with a messenger preparing the way (Matthew 3:1-3, the Elijah Malachi promised), and Zechariah's father, filled with the Spirit, names what has finally come: \"the Dawn will visit us from on high, to shine on those who live in darkness\" (Luke 1:78-79). The sun of righteousness Malachi pointed at has a name. The waiting was never wasted; it was watching for Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What promise are you waiting on right now that has begun to feel late — and what would it look like to keep the door open instead of assuming it was lost?",
+      "additionalQuestions": [
+        "Habakkuk says his complaint out loud to God before he hears any answer. What \"How long?\" have you not yet been honest enough to pray?",
+        "Is your waiting more like the man in the waiting room killing time, or the boy with the door open watching the road? What would move you toward the second?",
+        "Where have you mistaken God's slowness for God's absence?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have my own \"How long?\" and You already know it. I have prayed and watched the road and seen nothing, and some part of me has quietly decided the promise was lost. Teach me the harder faith of Habakkuk — to wait for what You have appointed without being shown the day. Keep my door open. Keep my eyes on the horizon. And until the sun of righteousness rises over my own dark hour, let me live, as You asked, by faith. In the name of Christ, the Dawn from on high. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one promise or prayer that has started to feel late. Today, instead of demanding a timetable, practice Habakkuk's posture: tell God the honest \"How long?\" out loud, then end the prayer with \"but I will wait for it.\" Leave the door open one more day.",
+      "leavingAtCross": [
+        "The assumption that a slow answer is a dead promise",
+        "The demand to be shown God's calendar before I will trust His character",
+        "The impatience that mistakes God's lingering for God's neglect"
+      ],
+      "receivingFromCross": [
+        "Permission to bring God my honest \"How long?\" without it being unbelief",
+        "The settled certainty that the vision is fixed to an appointed time and will not be late",
+        "The Dawn Himself — Christ, the sun of righteousness, the One every waiting prophet was watching for"
+      ],
+      "content": "Name the one promise or prayer that has started to feel late. Today, instead of demanding a timetable, practice Habakkuk's posture: tell God the honest \"How long?\" out loud, then end the prayer with \"but I will wait for it.\" Leave the door open one more day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does God actually answer Habakkuk's \"How long?\" — and why is a command to wait a kinder answer than a date would be?",
+        "What does the Hebrew chakkeh-lo add to our usual idea of \"waiting\"? How is it different from passing time?",
+        "Why does it matter that the Old Testament ends pointing forward to a dawn rather than on a note of arrival?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name one promise you are currently waiting on that feels overdue, and say it plainly to each other.",
+        "Talk about the difference between waiting passively and waiting with the door open — what would the second look like this week?",
+        "Habakkuk 2:4 became the gospel verse \"the righteous shall live by faith.\" Discuss: where are you trying to live by sight, by speed of answers, instead of by faith?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Haggai 2:9",
+          "text": "The latter glory of this house will be greater than the former, says the LORD of Hosts. And in this place I will provide peace, declares the LORD of Hosts."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "text": "Rejoice greatly, O Daughter of Zion! Shout in triumph, O Daughter of Jerusalem! See, your King comes to you, righteous and victorious, humble and riding on a donkey, on a colt, the foal of a donkey."
+        },
+        {
+          "reference": "Malachi 4:2",
+          "text": "But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Habakkuk 1-3",
+          "note": "Read the whole prophet in one sitting. Watch the movement from complaint (ch. 1) to the call to wait (ch. 2) to the closing song that chooses joy before the harvest comes (3:17-18): 'Though the fig tree does not bud... yet I will exult in the LORD.'"
+        },
+        {
+          "type": "book",
+          "title": "Malachi 3-4",
+          "note": "Read the last chapter of the Old Testament, then turn the page to Matthew 1 and feel the four-hundred-year silence between the promised messenger and his arrival."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Habakkuk",
+      "title": "The Prophet Who Asked God \"How Long?\"",
+      "description": "A prophet in Judah, likely speaking as Babylon rose to power near the end of the 600s BC. Unlike most prophets, Habakkuk does not begin by addressing the people — he begins by arguing with God, demanding to know why evil goes unanswered. His short book is a recorded conversation: complaint, divine answer, second complaint, second answer, and finally a song. He is the patron of every believer who has prayed an honest, frustrated prayer and then been asked to wait.",
+      "keyQuote": "Though it lingers, wait for it, since it will surely come and will not delay.",
+      "lessonForUs": "Faith is not the absence of the question \"How long?\" Habakkuk asked it loudly and was not rebuked for it. Faith is what he did after the question — he kept his post, kept watching, and chose to rejoice in the God of his salvation before a single fig had ripened on the tree.",
+      "heading": "The Prophet Who Asked God \"How Long?\""
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1799,
+  "scriptureReference_full": "Habakkuk 1:2; 2:3-4 (with Zephaniah 3:17; Haggai 2:9; Zechariah 9:9; Malachi 4:2)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chakah H2442, chakkeh-lo; emunah) reflects standard lexical sources.",
+    "Habakkuk 2:4 is quoted in Romans 1:17, Galatians 3:11, and Hebrews 10:38; the 'Dawn from on high' echo is Luke 1:78-79; Malachi's promised messenger is identified with John the Baptist in Matthew 3:1-3."
+  ]
 }

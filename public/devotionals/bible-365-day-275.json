@@ -1,38 +1,180 @@
 {
   "day": 275,
-  "title": "Matthew: Kingdom Begins — Day 2 — Building",
-  "teaser": "Day 275 of Bible 365 — Matthew 1-7",
+  "title": "The King Climbs the Mountain",
+  "teaser": "Matthew opens the New Testament with a genealogy, then sends a King up a hill to hand out a kingdom. The first people He calls blessed are the ones with empty hands.",
   "framework": "Matthew 1-7 — Matthew: Kingdom Begins",
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 275"
+      "type": "scripture",
+      "reference": "Matthew 4:17; 5:1-3",
+      "translation": "BSB",
+      "emphasis": [
+        "the kingdom of heaven is near",
+        "He went up on the mountain and sat down",
+        "Blessed are the poor in spirit"
+      ],
+      "greekOriginal": "Μακάριοι οἱ πτωχοὶ τῷ πνεύματι, ὅτι αὐτῶν ἐστιν ἡ βασιλεία τῶν οὐρανῶν.",
+      "passage": "From that time on Jesus began to preach, \"Repent, for the kingdom of heaven is near.\" ... When Jesus saw the crowds, He went up on the mountain and sat down. His disciples came to Him, and He began to teach them, saying: \"Blessed are the poor in spirit, for theirs is the kingdom of heaven.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "βασιλεία τῶν οὐρανῶν",
+      "transliteration": "basileia tōn ouranōn",
+      "pronunciation": "ba-si-LAY-ah tone oo-ra-NONE",
+      "meaning": "the kingdom of heaven; the reign and rule of God",
+      "rootMeaning": "Basileia is not first a place but a reign - the active kingship of a king. It names what happens when God rules, not merely where He rules. Matthew prefers 'of heaven' where Mark and Luke say 'of God,' a reverent way of saying the same thing without speaking the divine name.",
+      "usageNote": "The phrase 'kingdom of heaven' appears about thirty-two times in Matthew and almost nowhere else in Scripture. It is the drumbeat of this Gospel. John the Baptist announces it (Matthew 3:2), Jesus announces it in the very same words (4:17), and then the Sermon on the Mount spends three chapters describing the people who belong to it.",
+      "wordByWord": [
+        {
+          "word": "βασιλεία",
+          "transliteration": "basileia",
+          "meaning": "kingship, reign, royal rule - the act of a king ruling"
+        },
+        {
+          "word": "τῶν",
+          "transliteration": "tōn",
+          "meaning": "of the (genitive plural)"
+        },
+        {
+          "word": "οὐρανῶν",
+          "transliteration": "ouranōn",
+          "meaning": "of the heavens - a reverent circumlocution for God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μακάριος",
+          "reference": "Makarios (5:3) - 'blessed,' 'happy,' the word that opens each Beatitude. Not a wish ('may you be blessed') but a declaration ('you already are')."
+        },
+        {
+          "word": "πτωχός",
+          "reference": "Ptochos (5:3) - not the working poor but the destitute, the beggar who crouches and holds out an empty hand. Jesus pronounces the kingdom on people with nothing to bring."
+        }
+      ],
+      "strongsNumber": "G932",
+      "definition": "royal power, kingship, dominion; the rule and reign of God",
+      "usage": "Where we hear 'kingdom' and picture borders and a throne room, the Greek hears a verb hiding inside a noun. The kingdom of heaven is God beginning to be King again over a world that forgot Him - and in Matthew, that reign arrives in a person who climbs a hill and sits down to teach."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Genealogy, a Name, and a Mountain",
+      "body": "Matthew does not begin his Gospel with a miracle or a sermon. He begins with a list of names. \"This is the record of the genealogy of Jesus Christ, the son of David, the son of Abraham.\" The Greek behind \"genealogy\" is biblos geneseos - the book of the genesis - the same word that titles the first book of the Bible. Matthew is telling us, before he tells us anything else, that the story of Jesus is not a fresh start unconnected to what came before. It is the long story of Israel finally arriving somewhere.\n\nHe orders the names into three sets of fourteen: Abraham to David, David to the exile, the exile to the Christ. The pattern is deliberate, almost architectural. Matthew is building a foundation under your feet before he lets you meet the King, the way a builder lays footings before raising a wall. By the time Jesus is named, you already know He is the answer to a promise made to Abraham and a throne promised to David.\n\nThen comes the name itself. The angel tells Joseph to call the child Jesus, \"because He will save His people from their sins\" - and Matthew adds that all of this fulfills the prophet: \"they will call Him Immanuel (which means, God with us)\" (Matthew 1:21-23). Save and with us: those two words frame everything that follows. John the Baptist appears in the wilderness with the announcement \"Repent, for the kingdom of heaven is near\" (3:2), the heavens tear open at the Jordan, and a voice names Jesus \"My beloved Son\" (3:17). Tested in the desert and refusing every shortcut, Jesus walks out into Galilee and takes up John's exact words: \"Repent, for the kingdom of heaven is near\" (4:17). The herald has done his work. Now the King speaks for Himself, and He climbs a mountain to do it.",
+      "keyInsight": "Matthew spends seven chapters building a foundation - genealogy, fulfilled prophecy, a herald, a baptism - so that when the King finally teaches, we know exactly who is talking: the long-promised Son who is God with us.",
+      "content": "Matthew does not begin his Gospel with a miracle or a sermon. He begins with a list of names. \"This is the record of the genealogy of Jesus Christ, the son of David, the son of Abraham.\" The Greek behind \"genealogy\" is biblos geneseos - the book of the genesis - the same word that titles the first book of the Bible. Matthew is telling us, before he tells us anything else, that the story of Jesus is not a fresh start unconnected to what came before. It is the long story of Israel finally arriving somewhere.\n\nHe orders the names into three sets of fourteen: Abraham to David, David to the exile, the exile to the Christ. The pattern is deliberate, almost architectural. Matthew is building a foundation under your feet before he lets you meet the King, the way a builder lays footings before raising a wall. By the time Jesus is named, you already know He is the answer to a promise made to Abraham and a throne promised to David.\n\nThen comes the name itself. The angel tells Joseph to call the child Jesus, \"because He will save His people from their sins\" - and Matthew adds that all of this fulfills the prophet: \"they will call Him Immanuel (which means, God with us)\" (Matthew 1:21-23). Save and with us: those two words frame everything that follows. John the Baptist appears in the wilderness with the announcement \"Repent, for the kingdom of heaven is near\" (3:2), the heavens tear open at the Jordan, and a voice names Jesus \"My beloved Son\" (3:17). Tested in the desert and refusing every shortcut, Jesus walks out into Galilee and takes up John's exact words: \"Repent, for the kingdom of heaven is near\" (4:17). The herald has done his work. Now the King speaks for Himself, and He climbs a mountain to do it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Architect Who Toured His Own Houses",
+      "body": "A builder I know spent thirty years putting up houses on a stretch of coast that takes a hard storm most autumns. New owners always wanted to talk about the kitchen, the view, the wide back porch. He wanted to talk about the footings - the part nobody photographs, poured deep into rock or driven down to bedrock where the sand gives way.\n\nOne October a storm came in worse than the forecast, and afterward he drove the coast road slowly, looking. The houses with the showy porches and the shallow foundations had shifted, cracked, some of them slid. The plain ones he'd anchored down were sitting exactly where he left them. He told me he could have walked the road blindfolded and known which was which, because he remembered what was under each one.\n\nWhen Jesus ends His sermon, He does not end with a feeling. He ends with two builders and one storm (Matthew 7:24-27). The houses look the same in fair weather. The difference is buried, out of sight, in what each man built down into - and it only shows when the rain falls, the torrents rage, and the winds beat against the wall.",
+      "connectionToTheme": "Matthew has been laying foundations for seven chapters; Jesus ends His first sermon by asking what each of us is building our life down into.",
+      "content": "A builder I know spent thirty years putting up houses on a stretch of coast that takes a hard storm most autumns. New owners always wanted to talk about the kitchen, the view, the wide back porch. He wanted to talk about the footings - the part nobody photographs, poured deep into rock or driven down to bedrock where the sand gives way.\n\nOne October a storm came in worse than the forecast, and afterward he drove the coast road slowly, looking. The houses with the showy porches and the shallow foundations had shifted, cracked, some of them slid. The plain ones he'd anchored down were sitting exactly where he left them. He told me he could have walked the road blindfolded and known which was which, because he remembered what was under each one.\n\nWhen Jesus ends His sermon, He does not end with a feeling. He ends with two builders and one storm (Matthew 7:24-27). The houses look the same in fair weather. The difference is buried, out of sight, in what each man built down into - and it only shows when the rain falls, the torrents rage, and the winds beat against the wall."
+    },
+    {
+      "type": "insight",
+      "heading": "The Kingdom Goes First to the Empty-Handed",
+      "body": "Read the first Beatitude slowly, because it sets the price of admission to everything Jesus is about to describe. \"Blessed are the poor in spirit, for theirs is the kingdom of heaven\" (Matthew 5:3). The Greek word for poor here, ptochos, is not the word for the working poor who scrape by. It is the word for the beggar - the one who crouches at the gate with nothing in his hands and no way to earn his way in.\n\nThis is the door the King opens first. Before the meek inherit, before the merciful are shown mercy, before the pure in heart see God, Jesus hands the whole kingdom to the people who know they have nothing to bring. That is not a small detail tucked into a list of nine. It is the foundation under the other eight. The kingdom of heaven is not built by the strong, the certain, and the self-sufficient. It is received by people honest enough to hold out an empty hand.\n\nNotice the tense, too. Jesus does not say \"will be blessed if.\" He says \"theirs is the kingdom of heaven\" - present tense, already true. He is not setting a bar to clear. He is announcing who already belongs. The whole sermon that follows - the higher righteousness, \"but I say to you,\" the call to be perfect as the Father is perfect (5:48) - would crush us flat if it began with our striving. It does not. It begins with a King who first declares the spiritually bankrupt blessed, and only then describes the life that grows in people who know they were let in for free.",
+      "historicalContext": "Jesus climbing a mountain to give the constitution of God's people would not have been a neutral image to Matthew's first readers. Moses went up Sinai to receive the Law; here a greater than Moses goes up a hill and gives the Law's true meaning with His own authority. Yet the difference is as loud as the echo: Moses came down with stone tablets of command; Jesus sits down and opens with blessing, naming the destitute as the kingdom's first citizens.",
+      "fascinatingFact": "Each Beatitude has the same shape - a declaration of blessing, then a reason introduced by 'for.' But the first and the eighth share the identical reason: 'for theirs is the kingdom of heaven' (5:3, 5:10). Matthew brackets the whole list with the same promise, so that everything between the poor in spirit and the persecuted is held inside one repeated assurance: the kingdom is theirs.",
+      "content": "Read the first Beatitude slowly, because it sets the price of admission to everything Jesus is about to describe. \"Blessed are the poor in spirit, for theirs is the kingdom of heaven\" (Matthew 5:3). The Greek word for poor here, ptochos, is not the word for the working poor who scrape by. It is the word for the beggar - the one who crouches at the gate with nothing in his hands and no way to earn his way in.\n\nThis is the door the King opens first. Before the meek inherit, before the merciful are shown mercy, before the pure in heart see God, Jesus hands the whole kingdom to the people who know they have nothing to bring. That is not a small detail tucked into a list of nine. It is the foundation under the other eight. The kingdom of heaven is not built by the strong, the certain, and the self-sufficient. It is received by people honest enough to hold out an empty hand.\n\nNotice the tense, too. Jesus does not say \"will be blessed if.\" He says \"theirs is the kingdom of heaven\" - present tense, already true. He is not setting a bar to clear. He is announcing who already belongs. The whole sermon that follows - the higher righteousness, \"but I say to you,\" the call to be perfect as the Father is perfect (5:48) - would crush us flat if it began with our striving. It does not. It begins with a King who first declares the spiritually bankrupt blessed, and only then describes the life that grows in people who know they were let in for free."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus climbs the mountain, sits as a king and teacher would, and announces that the kingdom of heaven belongs first to the poor in spirit - the empty-handed who have nothing to offer but their need.",
+      "modernApplication": "We are trained to arrive with a resume. We bring God our competence, our track record, our usefulness, and quietly assume the kingdom is something we qualify for. The first word of the King's first sermon dismantles that. The door opens to the beggar, not the achiever - which is humbling and, once it lands, the most relieving sentence you will hear all day.",
+      "connectionPoint": "Matthew is the bridge book - the hinge where the Old Testament's long promise swings into the New. He opens with biblos geneseos, 'the book of the genesis,' tying Jesus back to Abraham and David, and he names Him Immanuel, 'God with us.' Everything Israel waited for - a son of David on the throne, God dwelling with His people - walks up a Galilean hill and starts to teach. The kingdom is not coming as an army. It is coming as a person.",
+      "newTestamentEcho": "The sermon ends with two houses and a storm (Matthew 7:24-27), and Scripture will not let us miss who the rock is. Paul writes that 'no one can lay any foundation other than the one already laid, which is Jesus Christ' (1 Corinthians 3:11). Peter, who once heard this sermon, calls Him the living Stone the builders rejected, now the cornerstone (1 Peter 2:4-7). The wise man does not merely admire the teaching; he builds his life down into the Teacher. The same Christ who declares the poor in spirit blessed is the foundation that holds when the rain falls."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you come to God, do you come as a beggar with an open hand, or do you arrive holding a resume of reasons He should accept you?",
+      "additionalQuestions": [
+        "Jesus says the kingdom already belongs to the poor in spirit - present tense. What would change today if you believed you were already in, rather than still auditioning?",
+        "The sermon ends with two houses that look identical until the storm. What are you building your life down into - and how would you know before the rain comes?",
+        "Matthew names Jesus 'God with us.' Where do you most need Him to be with you, rather than merely watching from a distance?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "King Jesus, I have spent a lot of energy trying to qualify - bringing You my usefulness, my good record, my careful version of myself. Today I hear that You hand the kingdom first to the empty-handed, and I want to come that way. I am poor in spirit; let that be enough to be blessed. Be Immanuel to me - God with me - not a distant ruler but a near one. Let me build my life down into You, the rock, so that when the rain falls and the winds beat, the house stands. Your kingdom come. Your will be done. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before anything else tomorrow morning, pray one line of the King's own prayer slowly: \"Your kingdom come, Your will be done, on earth as it is in heaven\" (Matthew 6:10). Then carry one Beatitude with you through the day - \"Blessed are the poor in spirit\" - and notice every moment you reach for a resume instead of an open hand.",
+      "leavingAtCross": [
+        "The resume I keep handing God - the reasons I think I qualify for His kingdom",
+        "The exhausting project of being strong enough, certain enough, useful enough to belong",
+        "The shallow foundation: a life built on what looks good in fair weather"
+      ],
+      "receivingFromCross": [
+        "A kingdom that is already mine, given to empty hands, present tense",
+        "Immanuel - God with me - not watching from a distance but near",
+        "A foundation that holds when the storm comes, because it is Christ Himself"
+      ],
+      "content": "Before anything else tomorrow morning, pray one line of the King's own prayer slowly: \"Your kingdom come, Your will be done, on earth as it is in heaven\" (Matthew 6:10). Then carry one Beatitude with you through the day - \"Blessed are the poor in spirit\" - and notice every moment you reach for a resume instead of an open hand."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Matthew open his Gospel with a genealogy and the phrase 'the book of the genesis,' and what is he telling us before Jesus says a word?",
+        "What does the Greek word ptochos ('poor in spirit') actually picture, and why does it matter that this is the first Beatitude rather than the last?",
+        "How do the two houses at the end of the sermon (Matthew 7:24-27) connect to the foundation-building Matthew has been doing since chapter 1?"
+      ],
+      "forAccountabilityPartners": [
+        "Where in your life are you still trying to earn your way into something God offers to the empty-handed for free?",
+        "Talk honestly: does it feel like relief or like a threat that the kingdom goes first to the poor in spirit? Why?",
+        "Ask each other: what storm is testing your foundation right now, and what are you actually built down into?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 1:23",
+          "text": "\"Behold, the virgin will be with child and will give birth to a son, and they will call Him Immanuel\" (which means, \"God with us\")."
+        },
+        {
+          "reference": "Matthew 5:17",
+          "text": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them."
+        },
+        {
+          "reference": "Matthew 6:33",
+          "text": "But seek first the kingdom of God and His righteousness, and all these things will be added unto you."
+        },
+        {
+          "reference": "Matthew 7:28-29",
+          "text": "When Jesus had finished saying these things, the crowds were astonished at His teaching, because He taught as one who had authority, and not as their scribes."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7",
+          "note": "Read the Sermon on the Mount in one sitting, watching how it opens with blessing (the Beatitudes) and closes with building (the two houses). The whole sermon is bracketed by grace at the start and a foundation at the end."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus the Christ",
+      "title": "Son of David, Son of Abraham, Immanuel",
+      "description": "Matthew presents Jesus as the long-promised King in whom Israel's whole story arrives. Descended from Abraham and David, named Jesus because 'He will save His people from their sins,' and called Immanuel, 'God with us,' He is announced by John, declared the beloved Son at His baptism, and tested in the wilderness. Then He ascends a mountain - as Moses once climbed Sinai - and gives the kingdom's charter, not with borrowed authority but with His own: 'But I say to you.' He does not abolish the Law and the Prophets; He fulfills them (Matthew 5:17).",
+      "keyQuote": "Repent, for the kingdom of heaven is near.",
+      "lessonForUs": "The King opens His reign by blessing the poor in spirit, and closes by calling us to build our house on the rock. Both are the same invitation: stop trying to qualify, and build your life down into the One who is God with us. He is the foundation that holds.",
+      "heading": "Son of David, Son of Abraham, Immanuel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2152,
+  "scriptureReference_full": "Matthew 1-7 (anchored in Matthew 4:17; 5:1-12; 7:24-29)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (basileia tōn ouranōn G932; ptochos; makarios) reflects standard lexical sources. The 'book of the genesis' (biblos geneseos) observation reflects the standard reading of Matthew 1:1 echoing the title of Genesis in the Septuagint."
+  ]
 }

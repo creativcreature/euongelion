@@ -1,38 +1,187 @@
 {
   "day": 91,
   "title": "After the worst, still loved",
-  "teaser": "Day 91 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: rest in mercy",
-  "scriptureReference": "Sabbath",
+  "teaser": "Day 91 of Bible 365 — Sabbath. The week ends where the cross does: with the worst said out loud, and the love that outlasts it.",
+  "framework": "Psalm 103:8-14 — Sabbath: rest in mercy",
+  "scriptureReference": "Psalm 103:8-14",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 91"
+      "type": "scripture",
+      "reference": "Psalm 103:8-14",
+      "translation": "BSB",
+      "emphasis": [
+        "abounding in loving devotion",
+        "not dealt with us according to our sins",
+        "as far as the east is from the west",
+        "He is mindful that we are dust"
+      ],
+      "hebrewOriginal": "רַחוּם וְחַנּוּן יְהוָה אֶרֶךְ אַפַּיִם וְרַב־חָסֶד",
+      "passage": "The LORD is compassionate and gracious, slow to anger, abounding in loving devotion. He will not always accuse us, nor harbor His anger forever. He has not dealt with us according to our sins or repaid us according to our iniquities. For as high as the heavens are above the earth, so great is His loving devotion for those who fear Him. As far as the east is from the west, so far has He removed our transgressions from us. As a father has compassion on his children, so the LORD has compassion on those who fear Him. For He knows our frame; He is mindful that we are dust."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, steadfast love, covenant kindness, mercy",
+      "rootMeaning": "Chesed is loyalty with skin on it - love that has bound itself by a promise and will not walk away when the other person fails. It is not warm feeling but kept word. The BSB renders it 'loving devotion' twice in this passage; older Bibles say 'mercy' or 'steadfast love.'",
+      "usageNote": "Chesed is the single most repeated description of God's character in the Hebrew Bible, and it floods Psalm 103: He crowns you with it (v. 4), it is as high as the heavens (v. 11), it reaches from everlasting to everlasting (v. 17). It is the word the whole psalm leans on - and the word this whole week of psalms has been spelling out.",
+      "wordByWord": [
+        {
+          "word": "רַחוּם",
+          "transliteration": "rachum",
+          "meaning": "compassionate - from rechem, the womb; the tenderness a mother feels for the child she carried"
+        },
+        {
+          "word": "וְחַנּוּן",
+          "transliteration": "vechannun",
+          "meaning": "and gracious - one who stoops to give a gift that was never earned"
+        },
+        {
+          "word": "אֶרֶךְ אַפַּיִם",
+          "transliteration": "erech appayim",
+          "meaning": "slow to anger - literally 'long of nostrils,' a face that takes a long time to flush with rage"
+        },
+        {
+          "word": "וְרַב־חָסֶד",
+          "transliteration": "verav-chesed",
+          "meaning": "and abounding in loving devotion - rav means great, much, overflowing; chesed in flood-tide"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רַחוּם / רֶחֶם",
+          "reference": "Rachum (compassionate) shares its root with rechem, the womb. God's compassion in verse 13 is not a judge softening; it is a parent's body remembering the child it bore."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "kindness, especially as covenant loyalty; steadfast love, mercy, faithfulness",
+      "usage": "Verse 8 is a quotation. Israel knew these exact words from Exodus 34:6, where God spoke them about Himself to Moses on the mountain, just after the people had betrayed Him with the golden calf. The psalmist reaches back for the one description God gave of His own heart - and reaches for it precisely on the far side of failure."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest in mercy. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ accepts you (Rom 5:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Worst Said Out Loud, and the Love That Outlasts It",
+      "body": "This week of psalms walked you through the lowest places a soul can go. On Day 90 you sat under Psalm 22, the cry of a man who feels God has left the room: \"My God, my God, why have You forsaken me?\" On Day 88 you prayed Psalm 51 with David after the worst thing he ever did: \"Create in me a clean heart.\" The week has not been gentle. It has let the worst be said out loud.\n\nNow it is the Sabbath, and there is nothing left to confess and nothing left to perform. Psalm 103 does not argue you out of your low week. It simply tells you what is true about the One you were crying to the whole time. \"The LORD is compassionate and gracious, slow to anger, abounding in loving devotion.\"\n\nThose words are not new. They are a quotation. God first spoke them about Himself in Exodus 34, standing in front of Moses on Sinai, while the broken pieces of the people's betrayal were still on the ground behind them. Israel had just made a golden calf. And it is right there, in the wreckage, that God recites His own name like this: compassionate, gracious, slow to anger, overflowing with chesed. The psalmist reaches back across the centuries for that line on purpose. He wants you to hear it after the worst, because that is exactly where it was first said.",
+      "keyInsight": "God's clearest self-portrait was given on the far side of failure, not before it. Psalm 103 hands you that same portrait on a Sabbath, after a hard week, so you will know the mercy was never a reward for getting it right.",
+      "content": "This week of psalms walked you through the lowest places a soul can go. On Day 90 you sat under Psalm 22, the cry of a man who feels God has left the room: \"My God, my God, why have You forsaken me?\" On Day 88 you prayed Psalm 51 with David after the worst thing he ever did: \"Create in me a clean heart.\" The week has not been gentle. It has let the worst be said out loud.\n\nNow it is the Sabbath, and there is nothing left to confess and nothing left to perform. Psalm 103 does not argue you out of your low week. It simply tells you what is true about the One you were crying to the whole time. \"The LORD is compassionate and gracious, slow to anger, abounding in loving devotion.\"\n\nThose words are not new. They are a quotation. God first spoke them about Himself in Exodus 34, standing in front of Moses on Sinai, while the broken pieces of the people's betrayal were still on the ground behind them. Israel had just made a golden calf. And it is right there, in the wreckage, that God recites His own name like this: compassionate, gracious, slow to anger, overflowing with chesed. The psalmist reaches back across the centuries for that line on purpose. He wants you to hear it after the worst, because that is exactly where it was first said."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Phone Call He Didn't Hang Up",
+      "content": "A man I know waited three days before he told his father he had lost the family business. He rehearsed the call a dozen times in the car. He had the numbers ready, the apology drafted, the worst version of himself laid out in order so his father couldn't find anything he hadn't already confessed.\n\nHe got through about two sentences before his father interrupted. Not to argue, not to soften it, not even to fix it. Just to say his name. And then: \"Are you eating? Are you sleeping? Come home this weekend.\"\n\nThe son kept trying to get back to the ledger - to the explaining, the accounting, the part where he made it right. His father kept refusing to go there. He had already done his math, and it came out to one number: this is my son. Years later the man told me that was the moment he stopped being afraid of his father, because he finally understood his father had never been keeping score the way he had.",
+      "connectionToTheme": "Psalm 103 says God \"has not dealt with us according to our sins.\" The son arrived with the ledger; the father answered with the relationship. That is the difference between fearing a judge and resting with a Father - the difference this Sabbath is offering you.",
+      "body": "A man I know waited three days before he told his father he had lost the family business. He rehearsed the call a dozen times in the car. He had the numbers ready, the apology drafted, the worst version of himself laid out in order so his father couldn't find anything he hadn't already confessed.\n\nHe got through about two sentences before his father interrupted. Not to argue, not to soften it, not even to fix it. Just to say his name. And then: \"Are you eating? Are you sleeping? Come home this weekend.\"\n\nThe son kept trying to get back to the ledger - to the explaining, the accounting, the part where he made it right. His father kept refusing to go there. He had already done his math, and it came out to one number: this is my son. Years later the man told me that was the moment he stopped being afraid of his father, because he finally understood his father had never been keeping score the way he had."
+    },
+    {
+      "type": "insight",
+      "heading": "East From West, Not North From South",
+      "content": "Look closely at the measurement in verse 12. God does not say He removes our transgressions as far as the north is from the south. He says east from west. The difference is not poetic decoration - it is the whole point.\n\nNorth and south have ends. Travel far enough north and you reach the pole; keep going and you are heading south again. North and south meet. But east and west never do. Walk east and you are always walking east; there is no point where east turns into west. The line never closes. An old rabbinic reading caught this: the distance God puts between you and your sin is the one distance in creation that has no far side, no return trip, no place where the two ends quietly meet behind your back.\n\nThis is the center of the psalm and the center of this Sabbath. The week made you name what you did. This verse tells you where it went. Not minimized, not excused, not filed away to be raised later - removed, down a road that never circles home. The God who searched out the worst of you in this week's psalms is the God who carries it past the horizon and does not bring it back.",
+      "historicalContext": "Psalm 103 is attributed to David, the same king whose collapse drives Psalm 51 (Day 88) and whose forsaken cry opens Psalm 22 (Day 90). The man who wrote 'as far as the east is from the west' knew personally how far a transgression could feel from forgiveness. He is not writing theory. He is writing from the far side of his own ruin, blessing the One who got him there.",
+      "fascinatingFact": "Verse 14 grounds all this mercy in something almost tender: 'He knows our frame; He is mindful that we are dust.' The Hebrew for 'frame' (yetser) is the same word used in Genesis for how God 'formed' man from the dust of the ground. God's compassion in verse 13 is not God forgetting what we are. It is God remembering exactly what we are - the dust He shaped with His own hands - and being gentle accordingly.",
+      "body": "Look closely at the measurement in verse 12. God does not say He removes our transgressions as far as the north is from the south. He says east from west. The difference is not poetic decoration - it is the whole point.\n\nNorth and south have ends. Travel far enough north and you reach the pole; keep going and you are heading south again. North and south meet. But east and west never do. Walk east and you are always walking east; there is no point where east turns into west. The line never closes. An old rabbinic reading caught this: the distance God puts between you and your sin is the one distance in creation that has no far side, no return trip, no place where the two ends quietly meet behind your back.\n\nThis is the center of the psalm and the center of this Sabbath. The week made you name what you did. This verse tells you where it went. Not minimized, not excused, not filed away to be raised later - removed, down a road that never circles home. The God who searched out the worst of you in this week's psalms is the God who carries it past the horizon and does not bring it back."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God 'has not dealt with us according to our sins' and has removed our transgressions as far as the east is from the west. But the psalm does not say how. It leaves the distance measured and the cost unstated.",
+      "modernApplication": "We still keep ledgers on ourselves more carefully than God does. We re-litigate old failures at two in the morning, certain that real forgiveness would feel less like a gift and more like a verdict we earned. Sabbath is the day to stop auditing a debt God has already carried out of the country.",
+      "connectionPoint": "Hold three of this week's psalms together. Psalm 22 (Day 90) cried, 'My God, my God, why have You forsaken Me?' Psalm 51 (Day 88) begged, 'Create in me a clean heart.' Psalm 103 (today) answers both at once: the heart is cleaned and the forsaking is borne. The Bible spends sixty-six books showing how the distance in verse 12 actually got crossed.",
+      "newTestamentEcho": "On the cross, Jesus prayed Psalm 22 word for word: 'Eli, Eli, lema sabachthani?' - 'My God, My God, why have You forsaken Me?' (Matthew 27:46). The very forsakenness Psalm 22 cried, Christ absorbed; the very distance Psalm 103 measures between you and your sin is the distance He stretched out His arms to span. 'God proves His love for us in this: While we were still sinners, Christ died for us' (Romans 5:8). East from west is the width of the cross."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What failure from this week - or this year - are you still dealing with according to your sins, long after God has stopped?",
+      "additionalQuestions": [
+        "Where in your life are you still arriving with the ledger, like the son on the phone, when God keeps trying to say your name instead?",
+        "If your transgressions have really been removed 'as far as the east is from the west,' what would change about the conversation you keep having with yourself at night?",
+        "Verse 14 says God 'is mindful that we are dust.' Where do you need to be gentler with your own frame this Sabbath, the way God is?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "LORD, compassionate and gracious, slow to anger, abounding in loving devotion - I have spent the week saying the worst out loud, and You have not flinched. Thank You that You have not dealt with me according to my sins. Thank You that You carried them east of west, down a road that never circles home, on the arms of Your Son who cried the cry of Psalm 22 so I would never be truly forsaken. You know my frame. You remember I am dust. Let that be enough today. Let me rest, not because the week was good, but because You are. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath; there is nothing to finish. Sit quietly for five minutes and let one phrase hold you: 'As far as the east is from the west,' or 'He is mindful that we are dust.' Bring God the one failure from this week you are still carrying, and picture handing it to the wind that blows east and does not turn around.",
+      "leavingAtCross": [
+        "The ledger I keep on myself long after God has closed the account",
+        "The fear that mercy this large must have fine print I haven't read yet",
+        "The exhaustion of trying to earn back a love I never lost"
+      ],
+      "receivingFromCross": [
+        "Transgressions removed down a road that never circles home",
+        "A Father who knows I am dust and is gentle with the dust He shaped",
+        "A Sabbath rest secured by the One who cried 'why have You forsaken Me' so that I never finally would"
+      ],
+      "content": "Today is a Sabbath; there is nothing to finish. Sit quietly for five minutes and let one phrase hold you: 'As far as the east is from the west,' or 'He is mindful that we are dust.' Bring God the one failure from this week you are still carrying, and picture handing it to the wind that blows east and does not turn around."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that verse 8 is a quotation of Exodus 34:6 - words God first spoke right after Israel's betrayal with the golden calf?",
+        "What is the difference between 'as far as the north is from the south' and 'as far as the east is from the west,' and why did the psalmist choose east and west?",
+        "How does verse 14 - 'He knows our frame; He is mindful that we are dust' - keep God's compassion from being God simply forgetting what we have done?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one failure you treat far more harshly than God does. What would it look like to let it go east of west this week?",
+        "Talk about the difference between fearing a judge and resting with a Father. Which one shapes how you pray when you have failed?",
+        "Ask each other: where are you still arriving with the ledger when God is trying to say your name?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 34:6",
+          "text": "Then the LORD passed in front of Moses and called out: \"The LORD, the LORD God, is compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness.\""
+        },
+        {
+          "reference": "Psalm 22:1",
+          "text": "My God, my God, why have You forsaken me? Why are You so far from saving me, so far from my words of groaning?"
+        },
+        {
+          "reference": "Psalm 51:10",
+          "text": "Create in me a clean heart, O God, and renew a right spirit within me."
+        },
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 103",
+          "note": "Read the whole psalm slowly, watching how it opens and closes with 'Bless the LORD, O my soul' (vv. 1-2, 22) - a chiasm wrapping the mercy of verses 8-14 in worship on both sides."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The King Who Blessed God From the Far Side of Ruin",
+      "description": "Israel's second king, traditionally credited with Psalm 103. The same David who wrote 'Create in me a clean heart' after his adultery and cover-up (Psalm 51), and whose forsaken cry opens Psalm 22, here blesses the LORD for a mercy he had tested to the breaking point. He does not write 'as far as the east is from the west' as a man who has never sinned far. He writes it as a man who has, and found the distance held.",
+      "keyQuote": "He has not dealt with us according to our sins or repaid us according to our iniquities.",
+      "lessonForUs": "The deepest worship in Scripture often comes not from people who never fell, but from people who fell hard and discovered the chesed of God waiting on the other side. After the worst, David is still loved - and so, this Sabbath, are you.",
+      "heading": "The King Who Blessed God From the Far Side of Ruin"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2431,
+  "scriptureReference_full": "Psalm 103:8-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; rachum/rechem resonance; yetser in v. 14 echoing Genesis 2:7) reflects standard lexical sources. The 'east from west' reading - that the distance has no meeting point, unlike north and south - is noted in classical Jewish commentary (e.g., Midrash on the Psalms).",
+    "Psalm 103:8 quotes the divine self-revelation of Exodus 34:6, spoken after the golden calf (Exodus 32-34)."
+  ]
 }

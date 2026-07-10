@@ -1,38 +1,184 @@
 {
   "day": 279,
-  "title": "Matthew: Kingdom Begins — Day 6 — Deeper Dive",
-  "teaser": "Day 279 of Bible 365 — Matthew 1-7",
+  "title": "The King Opens His Mouth",
+  "teaser": "On a mountain, the Lawgiver returns in flesh. Moses brought tablets down; Immanuel sits down and gives the kingdom Himself.",
   "framework": "Matthew 1-7 — Matthew: Kingdom Begins",
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 279"
+      "type": "scripture",
+      "reference": "Matthew 5:1-3, 17; 7:28-29",
+      "translation": "BSB",
+      "emphasis": [
+        "He went up on the mountain and sat down",
+        "Blessed are the poor in spirit",
+        "but to fulfill them",
+        "He taught as one who had authority"
+      ],
+      "greekOriginal": "οὐκ ἦλθον καταλῦσαι ἀλλὰ πληρῶσαι",
+      "passage": "When Jesus saw the crowds, He went up on the mountain and sat down. His disciples came to Him, and He began to teach them, saying: \"Blessed are the poor in spirit, for theirs is the kingdom of heaven.\" ... \"Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them.\" ... When Jesus had finished saying these things, the crowds were astonished at His teaching, because He taught as one who had authority, and not as their scribes."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "πληρῶσαι",
+      "transliteration": "plērōsai",
+      "pronunciation": "play-RO-sigh",
+      "meaning": "to fulfill, to fill full, to bring to completion",
+      "rootMeaning": "From plēroō, to fill a thing up to the top so nothing is lacking. It is the word for a net filled with fish, a valley filled in, a promise carried all the way to its end. Jesus does not set the Law aside; He fills it to the brim.",
+      "usageNote": "Matthew uses this verb more than any other Gospel writer - a dozen times he says an event happened 'to fulfill' what the prophets spoke (1:22, 2:15, 4:14, 8:17). When Jesus reaches for it in 5:17, He is placing Himself inside that same pattern: He is not the teacher of the Law's completion. He is its completion.",
+      "wordByWord": [
+        {
+          "word": "οὐκ ἦλθον",
+          "transliteration": "ouk ēlthon",
+          "meaning": "I did not come - speaking of a deliberate arrival, a sending"
+        },
+        {
+          "word": "καταλῦσαι",
+          "transliteration": "katalysai",
+          "meaning": "to tear down, to demolish, the word for pulling a building apart stone by stone"
+        },
+        {
+          "word": "ἀλλὰ",
+          "transliteration": "alla",
+          "meaning": "but rather - a sharp contrast, not a softening"
+        },
+        {
+          "word": "πληρῶσαι",
+          "transliteration": "plērōsai",
+          "meaning": "to fulfill, to fill completely, to carry to its intended end"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πλήρωμα / plērōma",
+          "reference": "The noun from the same root means 'fullness.' Paul writes that in Christ 'all the fullness of the Deity dwells in bodily form' (Colossians 2:9). The One who fills the Law full is Himself the fullness of God in a body."
+        }
+      ],
+      "strongsNumber": "G4137",
+      "definition": "to make full, to fill to the top, to bring to completion or to its intended goal",
+      "usage": "Set against katalysai (to demolish), plērōsai insists that the Law's whole purpose was always leaning toward this moment - and toward this Person on the mountain."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Days of Genealogy, Then a Voice on a Hill",
+      "body": "Matthew does not open his Gospel with a star or a stable. He opens with a list of names - Abraham fathered Isaac, Isaac fathered Jacob - fourteen generations, then fourteen more, then fourteen more, a slow drumbeat of fathers and sons marching down the centuries toward one birth. It reads like a deed of title. Matthew is establishing a claim: this Jesus belongs to David's line and Abraham's promise. He has the right to be called King.\n\nBut a king needs more than a bloodline. He needs a word to speak. And so the first seven chapters move with purpose: a name given by an angel, 'you are to give Him the name Jesus, because He will save His people from their sins'; a prophecy fulfilled, 'they will call Him Immanuel (which means, God with us)'; a wilderness tested; a kingdom announced - 'Repent, for the kingdom of heaven is near.' Then Matthew brings us up a hill. 'When Jesus saw the crowds, He went up on the mountain and sat down.'\n\nA Jewish reader feels the ground shift here. There was another time a man went up a mountain and God's word came down to a waiting people. There was thunder on Sinai, and Moses climbing into the cloud, and tablets carried down in his arms. Matthew has been building toward this on purpose. Now the mountain has a different occupant. The One who once spoke from the fire and smoke has come up the slope in a body, and He sits - the posture of a rabbi who has the authority to teach - and He opens His mouth.",
+      "keyInsight": "Matthew spends the first chapters proving Jesus has the right to be King. Then he shows the King doing the first thing a king does: He speaks. And He speaks from a mountain, the way God once spoke at Sinai.",
+      "content": "Matthew does not open his Gospel with a star or a stable. He opens with a list of names - Abraham fathered Isaac, Isaac fathered Jacob - fourteen generations, then fourteen more, then fourteen more, a slow drumbeat of fathers and sons marching down the centuries toward one birth. It reads like a deed of title. Matthew is establishing a claim: this Jesus belongs to David's line and Abraham's promise. He has the right to be called King.\n\nBut a king needs more than a bloodline. He needs a word to speak. And so the first seven chapters move with purpose: a name given by an angel, 'you are to give Him the name Jesus, because He will save His people from their sins'; a prophecy fulfilled, 'they will call Him Immanuel (which means, God with us)'; a wilderness tested; a kingdom announced - 'Repent, for the kingdom of heaven is near.' Then Matthew brings us up a hill. 'When Jesus saw the crowds, He went up on the mountain and sat down.'\n\nA Jewish reader feels the ground shift here. There was another time a man went up a mountain and God's word came down to a waiting people. There was thunder on Sinai, and Moses climbing into the cloud, and tablets carried down in his arms. Matthew has been building toward this on purpose. Now the mountain has a different occupant. The One who once spoke from the fire and smoke has come up the slope in a body, and He sits - the posture of a rabbi who has the authority to teach - and He opens His mouth."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Inheritance Read Aloud",
+      "body": "A friend told me about the morning her family gathered in a lawyer's office after her father died. There was a long table, coffee no one drank, and a thick document the attorney read in a flat, careful voice. The will. Every line had been chosen by a man who was no longer in the room, and now those lines decided who got the house, the land, the small things that carried his whole life.\n\nWhat struck her, she said, was the strangeness of hearing her father's wishes in a stranger's mouth. The words were his. The voice was not. She kept wishing he could walk in and say it himself - not so the terms would change, but so she could hear him mean them.\n\nThat is the difference Matthew is pressing on. For centuries Israel had the will of God written down and read aloud - the Law and the Prophets, scribes parsing every clause, teachers handing the words along in voices that were not the Author's. And then, on a hillside in Galilee, the Author walked in and began to read it Himself. 'You have heard that it was said... but I tell you.' Not changing the terms. Meaning them, out loud, in His own voice, for the first time in the hearing of men. The crowds could not name what they felt, but Matthew names it for them: they were astonished, 'because He taught as one who had authority, and not as their scribes.'",
+      "connectionToTheme": "The scribes passed along God's words the way a lawyer reads a will - faithfully, but in a borrowed voice. On the mountain, the One whose words they were stood up and spoke them as His own.",
+      "content": "A friend told me about the morning her family gathered in a lawyer's office after her father died. There was a long table, coffee no one drank, and a thick document the attorney read in a flat, careful voice. The will. Every line had been chosen by a man who was no longer in the room, and now those lines decided who got the house, the land, the small things that carried his whole life.\n\nWhat struck her, she said, was the strangeness of hearing her father's wishes in a stranger's mouth. The words were his. The voice was not. She kept wishing he could walk in and say it himself - not so the terms would change, but so she could hear him mean them.\n\nThat is the difference Matthew is pressing on. For centuries Israel had the will of God written down and read aloud - the Law and the Prophets, scribes parsing every clause, teachers handing the words along in voices that were not the Author's. And then, on a hillside in Galilee, the Author walked in and began to read it Himself. 'You have heard that it was said... but I tell you.' Not changing the terms. Meaning them, out loud, in His own voice, for the first time in the hearing of men. The crowds could not name what they felt, but Matthew names it for them: they were astonished, 'because He taught as one who had authority, and not as their scribes.'"
+    },
+    {
+      "type": "insight",
+      "heading": "The Door Is Lower Than You Think",
+      "body": "Look at the first word out of the King's mouth. A new ruler taking a throne announces armies, borders, the strength he commands. Jesus opens with the opposite: 'Blessed are the poor in spirit, for theirs is the kingdom of heaven.'\n\nThe poor in spirit are the ones who have nothing to bring. Not the spiritually impressive - the spiritually bankrupt, the empty-handed, the ones who have stopped pretending they can earn their way in. And to them, first of all, the kingdom is handed - 'theirs is the kingdom of heaven,' present tense, already, now. The eight blessings that follow do not describe a master class for the elite. They describe people who mourn, who are meek, who are hungry, who are pushed around. The King's first act is to bend down to exactly the people the world steps over and call them the citizens.\n\nThis is why 5:17 matters so fiercely. If Jesus had come to abolish the Law, the poor in spirit would be left where they were - measured by a standard they keep failing. And if He had come to merely repeat the Law louder, the door would only get heavier. But He came to fulfill it. He will carry the whole weight of that righteous standard Himself, all the way to a hill outside Jerusalem, so that the empty-handed can be given a righteousness they could never assemble. The Sermon does not raise the bar so we can clear it. It raises the bar so high that only the One teaching could ever clear it - and then He hands the kingdom to those who know they cannot.",
+      "historicalContext": "By the first century, the scribes had built a careful hedge of oral tradition around the written Law, ruling on how each command applied. They taught with constant appeal to earlier authorities - 'Rabbi So-and-so says.' Jesus' repeated 'but I tell you' broke that pattern entirely. He cited no one above Himself, which is precisely why Matthew records that the crowds were 'astonished' - the claim embedded in His grammar was unmistakable.",
+      "fascinatingFact": "Matthew structures his whole Gospel around five great blocks of Jesus' teaching, each ending with a phrase like 'when Jesus had finished saying these things' (7:28; 11:1; 13:53; 19:1; 26:1). Many readers across the centuries have heard in these five teaching-blocks a deliberate echo of the five books of Moses - the Torah. Matthew is presenting Jesus not as a second Moses with new tablets, but as the One the Torah was always pointing toward.",
+      "content": "Look at the first word out of the King's mouth. A new ruler taking a throne announces armies, borders, the strength he commands. Jesus opens with the opposite: 'Blessed are the poor in spirit, for theirs is the kingdom of heaven.'\n\nThe poor in spirit are the ones who have nothing to bring. Not the spiritually impressive - the spiritually bankrupt, the empty-handed, the ones who have stopped pretending they can earn their way in. And to them, first of all, the kingdom is handed - 'theirs is the kingdom of heaven,' present tense, already, now. The eight blessings that follow do not describe a master class for the elite. They describe people who mourn, who are meek, who are hungry, who are pushed around. The King's first act is to bend down to exactly the people the world steps over and call them the citizens.\n\nThis is why 5:17 matters so fiercely. If Jesus had come to abolish the Law, the poor in spirit would be left where they were - measured by a standard they keep failing. And if He had come to merely repeat the Law louder, the door would only get heavier. But He came to fulfill it. He will carry the whole weight of that righteous standard Himself, all the way to a hill outside Jerusalem, so that the empty-handed can be given a righteousness they could never assemble. The Sermon does not raise the bar so we can clear it. It raises the bar so high that only the One teaching could ever clear it - and then He hands the kingdom to those who know they cannot."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On a mountain in Galilee, Jesus sat down and taught the kingdom of heaven with His own authority - not abolishing the Law and the Prophets but fulfilling them, filling them full to their intended end.",
+      "modernApplication": "We are still tempted to treat Jesus as one more voice quoting the rules - a wise teacher to be filed beside the others, agreed with in principle and kept at arm's length. But Matthew will not let Him be a scribe among scribes. The same authority that astonished the crowds presses a question to us: is He a source we cite, or the King we obey? You cannot half-hear a voice like this.",
+      "connectionPoint": "The mountain runs as a thread through the whole of Scripture. God gave the Law to Moses on Sinai (Exodus 19-20). Elijah met God on Horeb in the sound of a low whisper (1 Kings 19:12). Now Immanuel - 'God with us' (Matthew 1:23) - sits on a Galilean hill and speaks the kingdom in His own voice. The mountain where God's word came down has become the mountain where God's Word sat down among us.",
+      "newTestamentEcho": "What this hillside announced, the rest of Matthew carries to its end. The King who opens His mouth here will, before the book closes, stand on another mountain and say, 'All authority in heaven and on earth has been given to Me' (Matthew 28:18). The voice that astonished the crowds is the voice that still calls disciples to obey 'everything I have commanded you' - and promises, 'I am with you always.' Immanuel, to the end."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you read the words of Jesus, do you hear a teacher whose ideas you weigh, or a King whose voice you answer? What changes if it is the second?",
+      "additionalQuestions": [
+        "The kingdom opens to the 'poor in spirit' - the empty-handed. Where in your life are you still trying to come to God with your hands full of things you've earned?",
+        "Jesus said He came not to abolish the Law but to fulfill it. What would it mean to let Him be the One who completes the righteousness you cannot, rather than the One who only demands it?",
+        "The crowds were astonished at His authority. When was the last time the words of Jesus genuinely stopped you - not informed you, but stopped you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Jesus, King on the mountain, I have too often heard You as one voice among many - good words to admire and quietly set aside. Forgive me. You did not come to be agreed with; You came to be followed. I am poor in spirit, with nothing in my hands worth bringing. So I take You at Your word: the kingdom is for the empty-handed, and that is me. Be the righteousness I could never assemble. Speak, and let me be among those astonished into obedience. You are Immanuel, God with us. Stay with me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read one paragraph of the Sermon on the Mount - any part of Matthew 5, 6, or 7 - slowly, as if hearing the King say it directly to you, not quoting it. Where one line stops you, stay there. Don't rush to apply it. Just let the authority of the voice land before you decide what to do.",
+      "leavingAtCross": [
+        "The habit of treating Jesus as a teacher to weigh instead of a King to obey",
+        "The impulse to come to God with my hands full, as if I could earn my place in the kingdom",
+        "The deafness that lets His words inform me without ever stopping me"
+      ],
+      "receivingFromCross": [
+        "A kingdom handed to the empty-handed, mine before I deserve it",
+        "A righteousness He fulfilled on my behalf when I could not",
+        "The nearness of Immanuel - God with us - who still speaks with authority and still stays"
+      ],
+      "content": "Today, read one paragraph of the Sermon on the Mount - any part of Matthew 5, 6, or 7 - slowly, as if hearing the King say it directly to you, not quoting it. Where one line stops you, stay there. Don't rush to apply it. Just let the authority of the voice land before you decide what to do."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Greek word plērōsai ('to fulfill') mean, and why does it matter that Jesus chose it instead of saying He came to abolish or to replace the Law?",
+        "Matthew opens with a genealogy and the name Immanuel before he brings Jesus up the mountain. How do those opening chapters prepare us to hear the Sermon as the words of a King and not just a rabbi?",
+        "Why were the crowds astonished at the end of the Sermon, and what does their reaction reveal about the difference between Jesus and the scribes?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a teaching of Jesus from Matthew 5-7 that you find genuinely hard - not in theory, but in your actual life. Where does His authority press on you?",
+        "Share one way you've been coming to God 'with your hands full' - relying on something you've earned rather than receiving the kingdom as the poor in spirit.",
+        "Ask each other: do I treat Jesus more like a source I cite or a King I follow - and what would change this week if it were the second?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 1:23",
+          "text": "\"Behold, the virgin will be with child and will give birth to a son, and they will call Him Immanuel\" (which means, \"God with us\")."
+        },
+        {
+          "reference": "Matthew 4:17",
+          "text": "From that time on Jesus began to preach, \"Repent, for the kingdom of heaven is near.\""
+        },
+        {
+          "reference": "Matthew 7:24-25",
+          "text": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock. The rain fell, the torrents raged, and the winds blew and beat against that house; yet it did not fall, because its foundation was on the rock."
+        },
+        {
+          "reference": "Matthew 28:18",
+          "text": "Then Jesus came to them and said, \"All authority in heaven and on earth has been given to Me.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7",
+          "note": "Read the entire Sermon on the Mount in one sitting, watching how it opens (the Beatitudes), turns on the claim of 5:17, and closes with two houses and two foundations (7:24-27)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus of Nazareth",
+      "title": "The King Who Came to Fulfill",
+      "era": "1st century AD, Galilee and Judea",
+      "key_trait": "The promised Son of David and Son of Abraham who teaches the kingdom with His own authority",
+      "description": "Matthew presents Jesus first by His lineage - son of David, son of Abraham - establishing His right to David's throne. Born to be named Jesus, 'because He will save His people from their sins,' and called Immanuel, 'God with us,' He announces the kingdom of heaven and then, on a mountain, gives its constitution in the Sermon on the Mount. He claims not to abolish the Law and the Prophets but to fulfill them - to be their completion in His own person.",
+      "keyQuote": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them.",
+      "lessonForUs": "The voice that gave the Law on Sinai is the voice that sits down on a Galilean hill to give the kingdom. We do not get to file Jesus among the wise teachers. He speaks as one with authority - and the only fitting response to a King is not agreement but allegiance.",
+      "heading": "The King Who Came to Fulfill"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1923,
+  "scriptureReference_full": "Matthew 1-7 (anchor: Matthew 5:1-3, 17; 7:28-29)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (plērōsai / plēroō, G4137) reflects standard lexical sources; the Sinai-and-mountain parallel and the five-discourse / five-books-of-Moses structure are widely noted in Matthean scholarship and presented here as interpretive observation, not settled doctrine."
+  ]
 }

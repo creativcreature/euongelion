@@ -1,38 +1,186 @@
 {
   "day": 104,
-  "title": "Solomon's Drift — Day 6 — Deeper Dive",
-  "teaser": "Day 104 of Bible 365 — 1 Kings 11",
+  "title": "The Heart That Drifted, the Lamp That Stayed",
+  "teaser": "The wisest king alive did not lose his throne to an army. He lost his heart one foreign altar at a time — and still God kept a lamp burning for David.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 104"
+      "type": "scripture",
+      "reference": "1 Kings 11:1-6, 9-13, 36",
+      "translation": "BSB",
+      "emphasis": [
+        "his wives turned his heart away",
+        "not wholeheartedly devoted to the LORD",
+        "a lamp before Me in Jerusalem"
+      ],
+      "hebrewOriginal": "וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו כִּלְבַב דָּוִיד אָבִיו",
+      "passage": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women. These women were from the nations about which the LORD had told the Israelites, \"You must not intermarry with them, for surely they will turn your hearts after their gods.\" Yet Solomon clung to these women in love. He had seven hundred wives of royal birth and three hundred concubines—and his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. Solomon followed Ashtoreth the goddess of the Sidonians and Milcom the abomination of the Ammonites. So Solomon did evil in the sight of the LORD; unlike his father David, he did not follow the LORD completely.\n\nNow the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice. Although He had warned Solomon explicitly not to follow other gods, Solomon did not keep the LORD's command. Then the LORD said to Solomon, \"Because you have done this and have not kept My covenant and My statutes, which I have commanded you, I will tear the kingdom away from you and give it to your servant. Nevertheless, for the sake of your father David, I will not do it during your lifetime; I will tear it out of the hand of your son. Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David and for the sake of Jerusalem, which I have chosen.\"\n\n\"I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֵבָב שָׁלֵם",
+      "transliteration": "levav shalem",
+      "pronunciation": "le-VAHV sha-LEME",
+      "meaning": "a whole heart, a heart at peace and undivided",
+      "rootMeaning": "Levav is the inner self - not feelings only, but the seat of will, thought, and loyalty. Shalem comes from the same root as shalom: whole, complete, sound, with nothing missing and nothing pulled in two directions. A levav shalem is a heart that is all in one place.",
+      "usageNote": "Verse 4 says Solomon's heart was not shalem with the LORD as his father David's had been. The word is not 'sinless' - David's heart was far from sinless. It is 'whole.' David sinned greatly and repented wholly; his loyalty, when it cracked, came back to one God. Solomon's heart simply split, room by room, until it had an altar for everyone.",
+      "wordByWord": [
+        {
+          "word": "וְלֹא־הָיָה",
+          "transliteration": "velo-hayah",
+          "meaning": "and it was not"
+        },
+        {
+          "word": "לְבָבוֹ",
+          "transliteration": "levavo",
+          "meaning": "his heart, his inner self"
+        },
+        {
+          "word": "שָׁלֵם",
+          "transliteration": "shalem",
+          "meaning": "whole, complete, undivided"
+        },
+        {
+          "word": "עִם־יְהוָה",
+          "transliteration": "im-YHWH",
+          "meaning": "with the LORD"
+        },
+        {
+          "word": "כִּלְבַב דָּוִיד אָבִיו",
+          "transliteration": "kilvav David aviv",
+          "meaning": "as the heart of David his father"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נִיר",
+          "reference": "Nir (verse 36) means a lamp - the small clay oil lamp kept burning through the night so a household's flame is never wholly out. God promises David a nir in Jerusalem: a light that will not be allowed to go dark, even when the king's heart does."
+        }
+      ],
+      "strongsNumber": "H8003",
+      "definition": "shalem: complete, whole, full, at peace; of a heart, wholly devoted",
+      "usage": "The same shalem stands behind the city name Jeru-shalem and behind shalom. To have a whole heart toward God is to be at peace with Him with the whole self, not to keep a side door open for other loves."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How the Wisest Man Alive Lost His Heart",
+      "body": "There is no single morning when Solomon decides to abandon God. That is the quiet horror of 1 Kings 11. The richest, wisest king Israel would ever have does not fall in a battle or a scandal that lights up the kingdom. He drifts. The chapter opens not with rebellion but with a small word: \"however.\" King Solomon, however, loved many foreign women. A man who had built the temple, who had prayed the great dedication prayer with his hands stretched to heaven, who had been given a heart wide as the sand on the shore - and the narrator slides in a \"however\" and the long decline begins.\n\nThe text is careful about the order of things. First he loves where God told Israel not to bind themselves, because those loves bend the heart elsewhere. Then he clings. Then come the numbers - seven hundred wives, three hundred concubines - and you are meant to feel the sheer accumulation, a man with everything still reaching for more. And then the line the whole chapter turns on: his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God.\n\nNotice it happens when Solomon grew old. This is not a young man's hot rebellion; it is the slow erosion of a long life. He does not throw the LORD out. He simply adds. He builds a high place for Chemosh on the hill east of Jerusalem - in plain sight of the temple he built for the LORD - and one for Molech, and burns incense to keep his many loves happy. He does not stop worshiping the true God. He just stops worshiping Him only. That is what the word shalem exposes. His heart was no longer whole. It had been quietly divided into rooms, and an idol moved into each one while the lights were still on in the temple.",
+      "keyInsight": "Solomon does not renounce God; he dilutes Him. The danger the chapter names is not the slammed door of apostasy but the unlocked side door of a divided heart - worship that adds other loves until the LORD becomes one altar among many.",
+      "content": "There is no single morning when Solomon decides to abandon God. That is the quiet horror of 1 Kings 11. The richest, wisest king Israel would ever have does not fall in a battle or a scandal that lights up the kingdom. He drifts. The chapter opens not with rebellion but with a small word: \"however.\" King Solomon, however, loved many foreign women. A man who had built the temple, who had prayed the great dedication prayer with his hands stretched to heaven, who had been given a heart wide as the sand on the shore - and the narrator slides in a \"however\" and the long decline begins.\n\nThe text is careful about the order of things. First he loves where God told Israel not to bind themselves, because those loves bend the heart elsewhere. Then he clings. Then come the numbers - seven hundred wives, three hundred concubines - and you are meant to feel the sheer accumulation, a man with everything still reaching for more. And then the line the whole chapter turns on: his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God.\n\nNotice it happens when Solomon grew old. This is not a young man's hot rebellion; it is the slow erosion of a long life. He does not throw the LORD out. He simply adds. He builds a high place for Chemosh on the hill east of Jerusalem - in plain sight of the temple he built for the LORD - and one for Molech, and burns incense to keep his many loves happy. He does not stop worshiping the true God. He just stops worshiping Him only. That is what the word shalem exposes. His heart was no longer whole. It had been quietly divided into rooms, and an idol moved into each one while the lights were still on in the temple."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House Nobody Decided to Let Go",
+      "body": "A man I know inherited his family's house and meant to keep it. He did not decide to lose it. He simply let one thing slide, then another. A loose gutter he would fix next month. A patch of damp he painted over instead of opening the wall. A back room he stopped going into, then stopped heating, then closed the door on entirely. Each choice was small and reasonable on the day he made it. None of them felt like a decision to lose the house.\n\nWhen he finally walked the place with a builder, the man went quiet in the closed-off room. The damp he had painted over had been working in the dark for years. The structure was soft. \"Nobody wrecked this,\" the builder told him. \"You just stopped tending it, one corner at a time, and the corners talk to each other.\"\n\nThat is Solomon. No single night undid him. He stopped tending the whole house of his heart, room by room, and let a new altar settle into each closed-off space. By the time he was old, the structure was soft, and a kingdom that no army could take was already being torn along the seams from the inside.",
+      "connectionToTheme": "Drift is not a decision; it is the absence of decisions. Solomon's heart, like a neglected house, was lost not in one collapse but in a hundred unmade choices to tend it.",
+      "content": "A man I know inherited his family's house and meant to keep it. He did not decide to lose it. He simply let one thing slide, then another. A loose gutter he would fix next month. A patch of damp he painted over instead of opening the wall. A back room he stopped going into, then stopped heating, then closed the door on entirely. Each choice was small and reasonable on the day he made it. None of them felt like a decision to lose the house.\n\nWhen he finally walked the place with a builder, the man went quiet in the closed-off room. The damp he had painted over had been working in the dark for years. The structure was soft. \"Nobody wrecked this,\" the builder told him. \"You just stopped tending it, one corner at a time, and the corners talk to each other.\"\n\nThat is Solomon. No single night undid him. He stopped tending the whole house of his heart, room by room, and let a new altar settle into each closed-off space. By the time he was old, the structure was soft, and a kingdom that no army could take was already being torn along the seams from the inside."
+    },
+    {
+      "type": "insight",
+      "heading": "Judgment Spoken in the Language of Mercy",
+      "body": "When the verdict finally comes, listen to how it is worded. The LORD says, \"I will tear the kingdom away from you and give it to your servant.\" That is real judgment; the tearing is not softened. But in the same breath: \"Nevertheless, for the sake of your father David, I will not do it during your lifetime... Yet I will not tear the whole kingdom away from him. I will give one tribe to your son.\"\n\nEvery sentence of the sentence is hedged with mercy. Not now, but in your son's day. Not all of it, but one tribe held back. And the reason given is not Solomon's worth - he has spent that - but \"for the sake of My servant David, and for the sake of Jerusalem, which I have chosen.\" God keeps a promise to a dead man rather than collect a debt from a living one.\n\nThen the deepest line of the chapter: God will leave one tribe \"so that My servant David will always have a lamp before Me in Jerusalem.\" A nir - a single oil lamp kept burning through the night. The kingdom is torn, but the flame is not allowed to go out. Even God's judgment is shaped around a lamp He has decided will never be extinguished. The covenant outlasts the king who broke it.",
+      "historicalContext": "First and Second Kings were almost certainly given their final form during or after the exile, when the throne of David had in fact fallen and Jerusalem lay in ruins. For readers who had watched the lamp seem to gutter out, the promise of verse 36 was not an abstraction. It was the thread their hope hung on: God had once sworn David a lamp that would not die, and exile had not yet been able to put it out.",
+      "fascinatingFact": "The \"lamp for David\" promise recurs like a refrain through the books of Kings - to Abijam (1 Kings 15:4) and to Jehoram (2 Kings 8:19) - always tying the survival of David's line to God's earlier oath rather than to the merits of the kings themselves. The dynasty survives on borrowed faithfulness: God's, not theirs.",
+      "content": "When the verdict finally comes, listen to how it is worded. The LORD says, \"I will tear the kingdom away from you and give it to your servant.\" That is real judgment; the tearing is not softened. But in the same breath: \"Nevertheless, for the sake of your father David, I will not do it during your lifetime... Yet I will not tear the whole kingdom away from him. I will give one tribe to your son.\"\n\nEvery sentence of the sentence is hedged with mercy. Not now, but in your son's day. Not all of it, but one tribe held back. And the reason given is not Solomon's worth - he has spent that - but \"for the sake of My servant David, and for the sake of Jerusalem, which I have chosen.\" God keeps a promise to a dead man rather than collect a debt from a living one.\n\nThen the deepest line of the chapter: God will leave one tribe \"so that My servant David will always have a lamp before Me in Jerusalem.\" A nir - a single oil lamp kept burning through the night. The kingdom is torn, but the flame is not allowed to go out. Even God's judgment is shaped around a lamp He has decided will never be extinguished. The covenant outlasts the king who broke it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart was divided room by room until he was no longer wholly the LORD's, and the kingdom was torn for it - yet God refused to extinguish the lamp He had promised David in Jerusalem.",
+      "modernApplication": "Few of us renounce God outright. We add. A little here for ambition, a corner for the relationship we won't release, a room for the resentment we keep warm. The temple lights stay on, so we tell ourselves we are still devoted. But a heart with side doors open to other gods is exactly what Scripture calls not-whole - and the drift, like Solomon's, usually arrives not in a crisis but in old habits we simply stopped tending.",
+      "connectionPoint": "The lamp God refuses to put out is the spine of the whole Old Testament hope. The throne of David is sworn to be established forever (2 Samuel 7:16); the line bends, breaks, goes into exile - and the lamp keeps burning underneath the wreckage. Every promise of a coming son of David is the same flame refusing to die.",
+      "newTestamentEcho": "The lamp kept for David in Jerusalem is finally named. To Mary the angel says of her son, \"The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end\" (Luke 1:32-33). Where Solomon's divided heart tore the kingdom, the Son whose heart was wholly the Father's restores it. \"I am the bright Morning Star,\" says the risen Christ, the root and offspring of David (Revelation 22:16) - the lamp God promised, now the light that will not go out."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which rooms of your heart have you quietly stopped tending - and what has moved into them while the lights stayed on elsewhere?",
+      "additionalQuestions": [
+        "Solomon's drift came 'when he grew old,' through accumulation, not a single fall. Where are you adding loves rather than renouncing God - and calling it devotion because you never closed the temple?",
+        "God preserved the lamp for David's sake, not Solomon's. Where are you depending on borrowed faithfulness - God's promise rather than your performance - and is that a comfort or a discomfort to you?",
+        "If a builder walked the house of your heart today, which closed-off room would they go quiet in?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I rarely slam the door on You. I just leave side doors open. Make my heart shalem - whole, undivided, all in one place, Yours. Walk the rooms I have stopped tending and open the ones I have painted over and closed. I cannot keep my own lamp lit; thank You that You have kept one burning anyway, all the way down to Jesus, the Son of David whose heart never split. Let His wholeness cover my dividedness tonight. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'room' of your heart you have stopped tending - one love quietly competing with God - and bring it to Him by name. Not all of them; just one. Open the closed door, let the light in, and ask Him to make that room His again.",
+      "leavingAtCross": [
+        "The divided heart that keeps the temple lit while a dozen side doors stand open",
+        "The lie that adding other loves is harmless as long as I never formally renounce God",
+        "The slow, unexamined drift of habits I stopped tending years ago"
+      ],
+      "receivingFromCross": [
+        "A heart God is willing to make whole again, room by room, shalem with Him",
+        "A lamp He has kept burning that my faithlessness could not put out",
+        "The Son of David whose undivided devotion is counted as mine"
+      ],
+      "content": "Today, name one 'room' of your heart you have stopped tending - one love quietly competing with God - and bring it to Him by name. Not all of them; just one. Open the closed door, let the light in, and ask Him to make that room His again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does it mean that Solomon's heart was not shalem - whole - with the LORD, given that even faithful David sinned? How is wholeness different from sinlessness?",
+        "Why does the chapter stress that Solomon drifted 'when he grew old' rather than in a single dramatic fall? What does that say about the way hearts are lost?",
+        "On what basis does God preserve one tribe and a lamp for David's line - Solomon's worthiness, or something else? Why does that matter for how the rest of the Bible reads?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'room' in your heart you have quietly stopped tending - one love you've added that competes with God. What moved in while you weren't looking?",
+        "Talk about the difference between renouncing God and diluting Him. Which is the temptation you actually face?",
+        "Ask each other: where are you running on borrowed faithfulness, and where do you need to be honest that a side door is open?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 17:17",
+          "text": "He must not take many wives for himself, lest his heart go astray. He must not accumulate for himself large amounts of silver and gold."
+        },
+        {
+          "reference": "2 Samuel 7:16",
+          "text": "Your house and kingdom will endure forever before Me, and your throne will be established forever."
+        },
+        {
+          "reference": "1 Kings 15:4",
+          "text": "Nevertheless, for the sake of David, the LORD his God gave him a lamp in Jerusalem by raising up a son to succeed him and to make Jerusalem strong."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter against 1 Kings 3-10, the account of Solomon's rise. Watch the same gifts - wisdom, wealth, foreign alliances - that built him up become, untended, the very things that pull his heart apart."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The King Whose Heart Divided",
+      "description": "Son of David and Bathsheba, third king of Israel, builder of the temple, and the wisest man of his age. God appeared to him twice and gave him a discerning heart and unmatched glory. Yet 1 Kings 11 records how the same heart, untended in old age, was turned by his many foreign wives until it was no longer whole toward the LORD. His drift fractured the kingdom in his son's day - and stands in Scripture as the warning that gifts cannot keep a heart God's gifts were given to serve.",
+      "keyQuote": "his wives turned his heart away... and he was not wholeheartedly devoted to the LORD his God, as his father David had been.",
+      "lessonForUs": "Solomon proves that wisdom, success, and even great worship cannot substitute for a whole heart. What undivided devotion he failed to give, the Son of David supplies; and the lamp God kept for David's sake, despite Solomon, burns now in Christ - the kingdom no drift can tear.",
+      "heading": "The King Whose Heart Divided"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2053,
+  "scriptureReference_full": "1 Kings 11:1-6, 9-13, 36",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (levav shalem H8003; nir, lamp) reflects standard lexical sources; the recurring 'lamp for David' motif is traced through 1 Kings 11:36; 15:4; 2 Kings 8:19."
+  ]
 }

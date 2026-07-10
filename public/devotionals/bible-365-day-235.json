@@ -1,38 +1,187 @@
 {
   "day": 235,
   "title": "Jeremiah: New Covenant — Day 4 — Application",
-  "teaser": "Day 235 of Bible 365 — Jeremiah 31",
+  "teaser": "God stops carving the law into stone and starts writing it on the heart. Day 235 of Bible 365 — Jeremiah 31.",
   "framework": "Jeremiah 31 — Jeremiah: New Covenant",
   "scriptureReference": "Jeremiah 31",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 235"
+      "type": "scripture",
+      "reference": "Jeremiah 31:31-34",
+      "translation": "BSB",
+      "emphasis": [
+        "a new covenant",
+        "inscribe it on their hearts",
+        "they will all know Me",
+        "remember their sins no more"
+      ],
+      "hebrewOriginal": "בְּרִית חֲדָשָׁה",
+      "passage": "Behold, the days are coming, declares the LORD, when I will make a new covenant with the house of Israel and with the house of Judah. It will not be like the covenant I made with their fathers when I took them by the hand to lead them out of the land of Egypt— a covenant they broke, though I was a husband to them,” declares the LORD. “But this is the covenant I will make with the house of Israel after those days, declares the LORD. I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people. No longer will each man teach his neighbor or his brother, saying, ‘Know the LORD,’ because they will all know Me, from the least of them to the greatest, declares the LORD. For I will forgive their iniquities and will remember their sins no more.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּרִית חֲדָשָׁה",
+      "transliteration": "berith chadashah",
+      "pronunciation": "beh-REET kha-da-SHAH",
+      "meaning": "a new covenant; a fresh, renewed binding agreement",
+      "rootMeaning": "Berith is a covenant - a binding pledge that the ancient world sealed with blood and with a shared meal. Chadashah comes from a root that means to make new, to renew, to restore. It is the same word used for what the rains do to dry ground and the morning does to mercy: not merely the next item in a series, but something repaired from the inside.",
+      "usageNote": "These two words together - berith chadashah, new covenant - appear in only one place in the Hebrew Scriptures: right here, in Jeremiah 31:31. Centuries later, on the night before His death, Jesus reached for the same idea and put it over a cup: 'This cup is the new covenant in My blood' (Luke 22:20). The entire second half of the Bible takes its name from this verse.",
+      "wordByWord": [
+        {
+          "word": "בְּרִית",
+          "transliteration": "berith",
+          "meaning": "covenant - a binding pledge, sealed in blood"
+        },
+        {
+          "word": "חֲדָשָׁה",
+          "transliteration": "chadashah",
+          "meaning": "new, fresh, renewed - made new again"
+        },
+        {
+          "word": "תּוֹרָתִי",
+          "transliteration": "torati",
+          "meaning": "My law, My instruction - from yarah, to throw or aim, as one aims an arrow"
+        },
+        {
+          "word": "לֵב",
+          "transliteration": "lev",
+          "meaning": "heart - in Hebrew the seat of will and thought, not merely feeling"
+        },
+        {
+          "word": "כָּתַב",
+          "transliteration": "katav",
+          "meaning": "to write, to inscribe, to engrave"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "לֵב בָּשָׂר",
+          "reference": "Ezekiel, in exile at the same hour, hears the same promise in different words: God will remove the heart of stone and give a lev basar, a heart of flesh (Ezekiel 36:26). Stone is where the old law was carved; flesh is where the new one is written."
+        }
+      ],
+      "strongsNumber": "H1285",
+      "definition": "berith: a covenant, treaty, or binding agreement; chadashah: new, fresh, renewed",
+      "usage": "The covenant is not described as bigger or stricter than the old one. It is described as differently located. The same law moves from a place you can lose - tablets, a scroll, a doorpost - to a place you cannot misplace: the inside of a person."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah: New Covenant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ ratifies the new covenant (Luke 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Same Law, New Address",
+      "body": "Yesterday the question was what the new covenant means. Today it turns: how do I actually live inside it? And the first thing to notice on the fourth day is something easy to miss. The law does not change. God does not announce a softer set of commands, a shorter list, an easier grade. He says, \"I will put My law in their minds and inscribe it on their hearts.\" Same law. New address.\n\nThe old covenant was external by design. Moses came down the mountain carrying two tablets of stone, and from then on the law lived on stone, on scrolls, on doorposts, on the hem of a garment - everywhere a person could be reminded from the outside. It was good and it was holy. And it could be broken, because anything kept outside a person can be set down. Jeremiah's own listeners had set it down. He spent forty years watching Judah carry the law the way you carry a heavy coat in summer - until the city fell and the people were marched off to Babylon.\n\nIt is from inside that catastrophe that this promise comes. To a people who had proven, conclusively, that they could not keep a law written on stone, God does not say, \"Try harder.\" He says something stranger and gentler: I will write it somewhere you cannot drop it. I will put it where your wanting lives. The cure for a broken covenant is not a stricter covenant. It is a covenant kept by a changed heart - and the changing is something God promises to do, not something He commands us to manufacture.",
+      "keyInsight": "The new covenant is not a higher standard. It is the same law moved from a surface you can abandon to a center you cannot lose - and God Himself does the writing.",
+      "content": "Yesterday the question was what the new covenant means. Today it turns: how do I actually live inside it? And the first thing to notice on the fourth day is something easy to miss. The law does not change. God does not announce a softer set of commands, a shorter list, an easier grade. He says, \"I will put My law in their minds and inscribe it on their hearts.\" Same law. New address.\n\nThe old covenant was external by design. Moses came down the mountain carrying two tablets of stone, and from then on the law lived on stone, on scrolls, on doorposts, on the hem of a garment - everywhere a person could be reminded from the outside. It was good and it was holy. And it could be broken, because anything kept outside a person can be set down. Jeremiah's own listeners had set it down. He spent forty years watching Judah carry the law the way you carry a heavy coat in summer - until the city fell and the people were marched off to Babylon.\n\nIt is from inside that catastrophe that this promise comes. To a people who had proven, conclusively, that they could not keep a law written on stone, God does not say, \"Try harder.\" He says something stranger and gentler: I will write it somewhere you cannot drop it. I will put it where your wanting lives. The cure for a broken covenant is not a stricter covenant. It is a covenant kept by a changed heart - and the changing is something God promises to do, not something He commands us to manufacture."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sticky Notes on the Mirror",
+      "body": "A friend of mine spent one January covering her bathroom mirror in sticky notes. Drink more water. Call your mother. Be patient with the kids. Pray before checking your phone. Every habit she wanted to grow lived on a yellow square at eye level, because she had read somewhere that you become what you see each morning.\n\nBy March the notes were curling at the corners, and she had stopped seeing them. They had become wallpaper. The wanting they were meant to produce never arrived. She was the same hurried, thirsty, short-tempered person, now standing behind a screen of reminders she no longer read. The notes had not failed because the advice was wrong. They failed because a sticky note can only ever sit on the outside of a person, and the trouble was on the inside.\n\nThis is the exact difference Jeremiah is naming. The whole apparatus of self-improvement - the notes, the habit trackers, the resolutions, the rules we tape to the mirror of our lives - is the old covenant in miniature: good instruction, externally applied, that we eventually stop seeing. What none of us can do for ourselves is move the instruction past the mirror and into the wanting. That single move is the thing God promises here to make.",
+      "connectionToTheme": "Every reminder we tape to the outside of our lives is a small old covenant - good and unkeepable. The new covenant moves the law past the mirror and into the heart, where wanting actually lives.",
+      "content": "A friend of mine spent one January covering her bathroom mirror in sticky notes. Drink more water. Call your mother. Be patient with the kids. Pray before checking your phone. Every habit she wanted to grow lived on a yellow square at eye level, because she had read somewhere that you become what you see each morning.\n\nBy March the notes were curling at the corners, and she had stopped seeing them. They had become wallpaper. The wanting they were meant to produce never arrived. She was the same hurried, thirsty, short-tempered person, now standing behind a screen of reminders she no longer read. The notes had not failed because the advice was wrong. They failed because a sticky note can only ever sit on the outside of a person, and the trouble was on the inside.\n\nThis is the exact difference Jeremiah is naming. The whole apparatus of self-improvement - the notes, the habit trackers, the resolutions, the rules we tape to the mirror of our lives - is the old covenant in miniature: good instruction, externally applied, that we eventually stop seeing. What none of us can do for ourselves is move the instruction past the mirror and into the wanting. That single move is the thing God promises here to make."
+    },
+    {
+      "type": "insight",
+      "heading": "The Covenant That Begins With Forgiveness",
+      "body": "Read the promises of the new covenant in the order God gives them, and watch where the list ends. I will put My law within them. I will be their God. They will all know Me, from the least to the greatest. And then, last: \"For I will forgive their iniquities and will remember their sins no more.\"\n\nThat little word \"for\" is the hinge of the whole passage. It is not an afterthought tacked on at the end; it is the ground the other promises stand on. Why will the law finally be written on the heart? Why will God be their God and they His people? Why will every last one of them know Him without anyone having to teach them? Because - \"for\" - their sins will be forgiven and held against them no more. Forgiveness is not the reward waiting at the finish line of a transformed life. It is the foundation the transformed life is built on.\n\nThis is the deepest thing in the chapter, and it quietly overturns the way most of us live. We treat forgiveness as the prize we are working toward: get the heart right, then God will forget the sins. God reverses the order. The sins are forgotten first, and the new heart grows out of that forgiveness. You are not loved because you changed. You will change because you are loved - fully and finally, before the work begins. That reversal is the whole secret of living inside this covenant rather than under the old one.",
+      "historicalContext": "Jeremiah prophesied to Judah in its final decades, roughly 627 to 586 BC, through the reigns of Josiah, Jehoiakim, and Zedekiah, until Jerusalem fell to Babylon. The new-covenant promise sits in chapters 30 to 33, often called the Book of Consolation - a cluster of hope spoken into the rubble. It is the brightest word in a book otherwise full of weeping.",
+      "fascinatingFact": "When the New Testament wants to explain what happened on the cross, it does not reach for a new idea - it quotes this exact passage. The writer of Hebrews cites Jeremiah 31:31-34 in full (Hebrews 8:8-12) and again in part (Hebrews 10:16-17), arguing that Christ mediates the very covenant Jeremiah saw coming, and that the line \"I will remember their sins no more\" is precisely why no further sacrifice for sin is needed (Hebrews 10:18).",
+      "content": "Read the promises of the new covenant in the order God gives them, and watch where the list ends. I will put My law within them. I will be their God. They will all know Me, from the least to the greatest. And then, last: \"For I will forgive their iniquities and will remember their sins no more.\"\n\nThat little word \"for\" is the hinge of the whole passage. It is not an afterthought tacked on at the end; it is the ground the other promises stand on. Why will the law finally be written on the heart? Why will God be their God and they His people? Why will every last one of them know Him without anyone having to teach them? Because - \"for\" - their sins will be forgiven and held against them no more. Forgiveness is not the reward waiting at the finish line of a transformed life. It is the foundation the transformed life is built on.\n\nThis is the deepest thing in the chapter, and it quietly overturns the way most of us live. We treat forgiveness as the prize we are working toward: get the heart right, then God will forget the sins. God reverses the order. The sins are forgotten first, and the new heart grows out of that forgiveness. You are not loved because you changed. You will change because you are loved - fully and finally, before the work begins. That reversal is the whole secret of living inside this covenant rather than under the old one."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Into the ruins of a broken nation, God promises a covenant He will keep from the inside: His law written on the heart, every person knowing Him directly, and sins remembered no more.",
+      "modernApplication": "Most of us are still trying to keep the law from the outside - white-knuckling our resolutions, performing for a God we half-suspect is keeping score, sure that one more failure will be the one He finally writes down. The new covenant says the ledger is already closed. You are invited to stop managing your standing and start living from a forgiveness that is already complete.",
+      "connectionPoint": "Jeremiah said \"the days are coming.\" For roughly six hundred years they were still coming - a promise spoken over rubble and carried by a waiting people. Then, on the night before He died, Jesus lifted a cup in a borrowed upper room and changed the tense of the promise: \"This cup is the new covenant in My blood, which is poured out for you\" (Luke 22:20). The days that were coming had come. The covenant Jeremiah glimpsed from a distance was being signed in the room.",
+      "newTestamentEcho": "What Jeremiah promised, Christ ratified. The old covenant was sealed with the blood of animals at Sinai; the new covenant is sealed with the blood of the Son at the cross. And the final clause - \"I will remember their sins no more\" - is not poetry. Hebrews argues that because Christ's one sacrifice secured exactly this, \"where these have been forgiven, an offering for sin is no longer needed\" (Hebrews 10:18). The work is finished; the remembering of sin is over."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to keep the law from the outside - taping rules to the mirror - when God is offering to write it on the inside?",
+      "additionalQuestions": [
+        "Read the four new-covenant promises again and sit with the last one: 'I will remember their sins no more.' Which sin do you keep remembering that God has promised to forget?",
+        "Be honest: do you live as though forgiveness is the prize at the end of a changed life, or the ground a changed life grows from? How would today look different if you believed the second?",
+        "What is one external 'sticky note' - a rule, a resolution, a performance - that God may be inviting you to let curl at the corners while He does the deeper work in the heart?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am tired of carrying Your law the way I carry a coat in summer - draped over the outside of a life that keeps breaking it. I have taped my good intentions to the mirror and stopped seeing them. Write Your law where I cannot lose it: on the heart, in the wanting, in the place I cannot reach by myself. Thank You that this covenant begins with forgiveness and not with my performance - that You remembered my sins no more before I had earned a thing, sealed in the blood of Christ, the cup poured out for me. Make me one who knows You, not merely one who knows about You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one rule you have been keeping from the outside - one performance, one resolution, one item on the moral to-do list you carry around to feel acceptable. Set it down on purpose. Then pray Jeremiah's promise back to God in the first person: 'You have put Your law within me. You will remember my sins no more.' Live one ordinary day as though the forgiveness is already complete - because in Christ it is.",
+      "leavingAtCross": [
+        "The exhausting work of keeping the law from the outside, by willpower and reminder",
+        "The sin I keep remembering and re-confessing that God has promised to forget",
+        "The belief that forgiveness is a prize I earn by changing first"
+      ],
+      "receivingFromCross": [
+        "A law written on the heart by God's own hand, where I cannot lose it",
+        "A covenant that begins with 'I will remember their sins no more,' signed in the blood of Christ",
+        "The freedom to live from forgiveness rather than toward it"
+      ],
+      "content": "Today, name one rule you have been keeping from the outside - one performance, one resolution, one item on the moral to-do list you carry around to feel acceptable. Set it down on purpose. Then pray Jeremiah's promise back to God in the first person: 'You have put Your law within me. You will remember my sins no more.' Live one ordinary day as though the forgiveness is already complete - because in Christ it is."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What actually changes in the new covenant - the content of the law, or its location? Why does that distinction matter for how you live?",
+        "Why does the word 'for' at the start of verse 34's last clause make forgiveness the foundation of the covenant rather than its reward?",
+        "How does Jesus' word over the cup, 'This cup is the new covenant in My blood' (Luke 22:20), change Jeremiah's 'the days are coming' from a promise into an announcement?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'sticky note on the mirror' - one rule you keep from the outside - that you have stopped really seeing. What would it mean to let God work past it, on the heart?",
+        "Talk honestly: do you live as though God still keeps a record of your sins? Where does that show up in how you pray, work, or rest?",
+        "Ask each other: which of the four new-covenant promises - law on the heart, God as your God, knowing Him directly, sins forgotten - is hardest for you to actually believe, and why?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ezekiel 36:26",
+          "text": "I will give you a new heart and put a new spirit within you; I will remove your heart of stone and give you a heart of flesh."
+        },
+        {
+          "reference": "Luke 22:20",
+          "text": "In the same way, after supper He took the cup, saying, “This cup is the new covenant in My blood, which is poured out for you."
+        },
+        {
+          "reference": "Hebrews 8:10",
+          "text": "For this is the covenant I will make with the house of Israel after those days, declares the Lord. I will put My laws in their minds and inscribe them on their hearts. And I will be their God, and they will be My people."
+        },
+        {
+          "reference": "2 Corinthians 3:3",
+          "text": "It is clear that you are a letter from Christ, the result of our ministry, written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 30-33",
+          "note": "Read the Book of Consolation as one unit. Watch how the new-covenant promise in chapter 31 sits surrounded by promises of return, rebuilding, and an everlasting covenant - hope spoken directly into the rubble of a fallen city."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet of the New Covenant",
+      "description": "Called as a youth in Anathoth around 627 BC, Jeremiah prophesied for some forty years through Judah's collapse, warning of Babylon and weeping over a people who would not turn. He was beaten, imprisoned, and lowered into a muddy cistern for his message. Yet it was this prophet of judgment who was handed the single most hopeful promise in the Hebrew Scriptures: a new covenant written on the heart - the only place those exact words appear in the Old Testament.",
+      "keyQuote": "I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people.",
+      "lessonForUs": "God hands His brightest promise to His most heartbroken prophet, and speaks the new covenant over the very rubble of the old. If Jeremiah's hope could survive the fall of Jerusalem, the forgiveness he saw coming is strong enough for whatever you have left in ruins.",
+      "heading": "The Weeping Prophet of the New Covenant"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2248,
+  "scriptureReference_full": "Jeremiah 31:31-34",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (berith chadashah, H1285; torati; lev; katav) reflects standard lexical sources. The new-covenant fulfillment in Christ follows the New Testament's own citation of Jeremiah 31 in Luke 22:20 and Hebrews 8:8-12; 10:16-18."
+  ]
 }

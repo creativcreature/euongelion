@@ -1,38 +1,185 @@
 {
   "day": 281,
-  "title": "Matthew: Parables + Miracles — Day 1 — Hook",
-  "teaser": "Day 281 of Bible 365 — Matthew 8-13",
+  "title": "What kind of man scatters seed like this?",
+  "teaser": "Day 281 — Matthew 8-13. The King who silences storms and cleanses lepers turns to a crowd and starts talking about dirt. The kingdom comes in power, then hides itself in a seed.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 281"
+      "type": "scripture",
+      "reference": "Matthew 13:3-9",
+      "translation": "BSB",
+      "emphasis": [
+        "A farmer went out to sow his seed",
+        "fell on good soil",
+        "He who has ears, let him hear"
+      ],
+      "greekOriginal": "ὁ σπείρων τοῦ σπείρειν",
+      "passage": "And He told them many things in parables, saying, \"A farmer went out to sow his seed. And as he was sowing, some seed fell along the path, and the birds came and devoured it. Some fell on rocky ground, where it did not have much soil. It sprang up quickly because the soil was shallow. But when the sun rose, the seedlings were scorched, and they withered because they had no root. Other seed fell among thorns, which grew up and choked the seedlings. Still other seed fell on good soil and produced a crop—a hundredfold, sixtyfold, or thirtyfold. He who has ears, let him hear.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "παραβολή",
+      "transliteration": "parabolē",
+      "pronunciation": "pah-rah-bo-LAY",
+      "meaning": "parable; a comparison set alongside, a story thrown next to a truth",
+      "rootMeaning": "From para (alongside) and ballo (to throw or cast). A parabole is, literally, something thrown down beside something else so the two can be compared. Jesus takes the unseen kingdom and lays an ordinary thing next to it - dirt, seed, leaven, a buried coin - so you can see the one by looking at the other.",
+      "usageNote": "Matthew clusters Jesus' parables in chapter 13, and the narrator says plainly that He \"did not tell them anything without using a parable\" (Matthew 13:34). A parable is not a children's illustration that makes a hard truth easy. It is a thing thrown alongside that both reveals and conceals - it opens the kingdom to those who lean in and stays a closed riddle to those who do not.",
+      "wordByWord": [
+        {
+          "word": "παρα-",
+          "transliteration": "para-",
+          "meaning": "alongside, beside, next to"
+        },
+        {
+          "word": "βάλλω",
+          "transliteration": "ballo",
+          "meaning": "to throw, to cast, to place"
+        },
+        {
+          "word": "ὁ σπείρων",
+          "transliteration": "ho speiron",
+          "meaning": "the one who sows, the sower"
+        },
+        {
+          "word": "βασιλεία τῶν οὐρανῶν",
+          "transliteration": "basileia ton ouranon",
+          "meaning": "the kingdom of heaven - Matthew's reverent phrase for the reign of God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "βασιλεία (basileia)",
+          "reference": "The word translated 'kingdom' means less a place than a reign - the active ruling of a king. The parables of Matthew 13 are nearly all answers to one question: what is God's reign actually like when it arrives?"
+        }
+      ],
+      "strongsNumber": "G3850",
+      "definition": "a parable; a placing of one thing beside another for comparison; an extended simile or short narrative carrying a hidden meaning",
+      "usage": "A story thrown alongside a truth. The kingdom of heaven is invisible, so Jesus throws a visible thing down next to it - and asks whether you have ears to see what the comparison means."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Halves of One Sweep",
+      "body": "Read Matthew 8 through 13 in one sitting and you feel the ground tilt halfway through. The first half is almost relentless in its power. A leper kneels and is made clean by a touch. A centurion's servant is healed from a distance, by a word. A storm on the Sea of Galilee is silenced mid-fury, and the soaked, terrified men in the boat ask the question the whole section is built to provoke: \"What kind of man is this? Even the winds and the sea obey Him!\" (Matthew 8:27). Demons flee. A paralytic walks. A dead girl sits up. Jesus moves through the towns \"teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness\" (Matthew 9:35). If you only had chapters 8 and 9, you would expect the kingdom to arrive the way an army arrives - visible, irresistible, the new order plain on every face.\n\nThen the section turns. The crowds thin into argument. The religious leaders decide His power comes from the wrong source. John the Baptist, in prison, sends to ask whether Jesus is even the One they were waiting for. By chapter 13 Jesus sits down by the lake, faces a crowd, and instead of another miracle He starts telling stories about farming. \"A farmer went out to sow his seed.\" After all that power, the King's chosen way of explaining His reign is a man walking a field, flinging seed, most of which seems to fail.",
+      "keyInsight": "Matthew 8-13 holds two pictures of the kingdom in tension: the King who commands storms, and the sower whose seed mostly falls where it cannot grow. Both are true at once.",
+      "content": "Read Matthew 8 through 13 in one sitting and you feel the ground tilt halfway through. The first half is almost relentless in its power. A leper kneels and is made clean by a touch. A centurion's servant is healed from a distance, by a word. A storm on the Sea of Galilee is silenced mid-fury, and the soaked, terrified men in the boat ask the question the whole section is built to provoke: \"What kind of man is this? Even the winds and the sea obey Him!\" (Matthew 8:27). Demons flee. A paralytic walks. A dead girl sits up. Jesus moves through the towns \"teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness\" (Matthew 9:35). If you only had chapters 8 and 9, you would expect the kingdom to arrive the way an army arrives - visible, irresistible, the new order plain on every face.\n\nThen the section turns. The crowds thin into argument. The religious leaders decide His power comes from the wrong source. John the Baptist, in prison, sends to ask whether Jesus is even the One they were waiting for. By chapter 13 Jesus sits down by the lake, faces a crowd, and instead of another miracle He starts telling stories about farming. \"A farmer went out to sow his seed.\" After all that power, the King's chosen way of explaining His reign is a man walking a field, flinging seed, most of which seems to fail."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Field Behind the Church",
+      "body": "A pastor I know spent thirty years in a small town in the Midwest. He told me once, without bitterness, that he could count on one hand the people he was certain he had reached. He had preached more than a thousand Sundays. He had sat with the dying, buried the old, married the young, prayed over more crises than he could remember. And when he tried to add it all up, the visible fruit looked thin against the labor.\n\nThen he said something I have not forgotten. He said the parable of the sower was the only thing that kept him sane. \"I used to think my job was to make the seed grow,\" he said. \"It isn't. My job is to keep sowing. Some falls on the path. Some on the rocks. I don't always get to see the soil. The farmer in the story doesn't stand over each seed willing it to take. He scatters, and he trusts the ground he can't control.\"\n\nHe was describing a kingdom that does not look like a kingdom. No throne in the town square. Just a man, year after year, throwing seed into ground he could not see into - and somewhere, unseen, a thirtyfold, a sixtyfold, a hundredfold.",
+      "connectionToTheme": "The sower's work looks like loss far more often than harvest - which is exactly the kingdom Jesus describes, where most of the seed seems to fail and the increase is hidden until it is suddenly, overwhelmingly there.",
+      "content": "A pastor I know spent thirty years in a small town in the Midwest. He told me once, without bitterness, that he could count on one hand the people he was certain he had reached. He had preached more than a thousand Sundays. He had sat with the dying, buried the old, married the young, prayed over more crises than he could remember. And when he tried to add it all up, the visible fruit looked thin against the labor.\n\nThen he said something I have not forgotten. He said the parable of the sower was the only thing that kept him sane. \"I used to think my job was to make the seed grow,\" he said. \"It isn't. My job is to keep sowing. Some falls on the path. Some on the rocks. I don't always get to see the soil. The farmer in the story doesn't stand over each seed willing it to take. He scatters, and he trusts the ground he can't control.\"\n\nHe was describing a kingdom that does not look like a kingdom. No throne in the town square. Just a man, year after year, throwing seed into ground he could not see into - and somewhere, unseen, a thirtyfold, a sixtyfold, a hundredfold."
+    },
+    {
+      "type": "insight",
+      "heading": "The Same King, the Same Kingdom",
+      "body": "It is tempting to read the miracles and the parables as two different Jesuses - the powerful one and the gentle teacher. But Matthew puts them in one unbroken sweep on purpose. The hand that touched the leper is the hand that scatters seed. The voice that stilled the storm is the voice that says, \"He who has ears, let him hear.\" Power and parable are not opposites here; they are two ways of saying the same thing about the kingdom.\n\nThe miracles answer what kind of King has come: one with authority over disease, demons, weather, and death itself. The parables answer how His kingdom comes: not as a conquering empire that flattens everything in its path, but as seed - small, hidden, scattered widely, resisted by hard ground and choking thorns, and yet quietly unstoppable where it takes root. A mustard seed becomes a tree. A pinch of leaven works through the whole batch of dough. Treasure lies buried in a field until someone stumbles on it and sells everything for joy.\n\nThe same Jesus who could have summoned legions chooses to plant. That is not weakness. It is the deliberate strategy of a King who would rather grow a harvest in willing hearts than compel a kingdom of stone.",
+      "historicalContext": "Matthew writes for a community steeped in Israel's hope for a Messiah who would come in obvious power - drive out Rome, restore the throne of David, vindicate the nation. The miracles of chapters 8-9 confirm that the King had come. But the parables of chapter 13 reframe the expectation: the kingdom arrives first as something small and contested, the way a sown field looks nothing like a harvest. Matthew 13:35 ties this to prophecy - \"I will utter things hidden since the foundation of the world\" - presenting the parables not as a downgrade from power but as the unveiling of a mystery long kept.",
+      "fascinatingFact": "When the disciples ask why He teaches in parables, Jesus answers, \"The knowledge of the mysteries of the kingdom of heaven has been given to you, but not to them\" (Matthew 13:11). The same story that opens the kingdom to a listening heart closes it to a hard one. A parable is a sieve. It does not force its meaning on anyone; it waits for ears.",
+      "content": "It is tempting to read the miracles and the parables as two different Jesuses - the powerful one and the gentle teacher. But Matthew puts them in one unbroken sweep on purpose. The hand that touched the leper is the hand that scatters seed. The voice that stilled the storm is the voice that says, \"He who has ears, let him hear.\" Power and parable are not opposites here; they are two ways of saying the same thing about the kingdom.\n\nThe miracles answer what kind of King has come: one with authority over disease, demons, weather, and death itself. The parables answer how His kingdom comes: not as a conquering empire that flattens everything in its path, but as seed - small, hidden, scattered widely, resisted by hard ground and choking thorns, and yet quietly unstoppable where it takes root. A mustard seed becomes a tree. A pinch of leaven works through the whole batch of dough. Treasure lies buried in a field until someone stumbles on it and sells everything for joy.\n\nThe same Jesus who could have summoned legions chooses to plant. That is not weakness. It is the deliberate strategy of a King who would rather grow a harvest in willing hearts than compel a kingdom of stone."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus reveals the kingdom of heaven first in undeniable power - cleansing lepers, stilling storms, raising the dead - and then in parables of seed, leaven, and hidden treasure, where the kingdom comes small, contested, and quietly unstoppable.",
+      "modernApplication": "You may have come looking for the storm-stilling Jesus - the one who fixes the diagnosis, ends the crisis, calms the sea overnight. He is real, and He still has that authority. But more often He comes the way the sower comes: a word planted in you on an ordinary day, growing in the dark long before you can see anything above the soil. Faith that waits for only the miracle can miss the seed already in the ground.",
+      "connectionPoint": "From Genesis forward, God's pattern is to begin small and hidden - a single family, a remnant, a manger - and to bring an unstoppable harvest out of what looked like nothing. The mustard seed of Matthew 13 is the same logic as the stone that becomes a mountain in Daniel 2 and the kingdom with no end the angel promises Mary in Luke 1. Small beginnings, world-filling end.",
+      "newTestamentEcho": "Paul takes up the very image: \"I planted the seed and Apollos watered it, but God made it grow\" (1 Corinthians 3:6). The sower's mystery becomes the church's job description - we scatter and water; the increase is God's."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which Jesus have you been waiting for - the One who stills the storm in a single night, or the One who plants a seed and grows it slowly in the dark?",
+      "additionalQuestions": [
+        "When you look at your own life, where does it feel like the seed has fallen on the path, the rocks, or among the thorns - and where, honestly, is it on good soil?",
+        "The sower keeps scattering even where the ground looks hopeless. Where are you tempted to stop sowing because you cannot see fruit yet?",
+        "Jesus says some hear the same word and understand, while others hear and do not. What would it look like for you to truly 'have ears' for what He is saying to you this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Jesus, I confess I have mostly wanted the storm-stiller. I have wanted the kind of power that ends the waiting and fixes the thing tonight. Teach me the patience of the sower. Where Your word has fallen on hard ground in me, break the ground up. Where it landed on shallow soil, give it roots. Where the thorns of worry and money have grown up to choke it, clear them away. And make me, this once, the good soil that hears and understands and bears fruit beyond anything I could measure. You are the King over the storm and the King who plants. I trust the seed You have already sown in me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one place in your life where you have been waiting for a storm-stilling miracle. Today, instead of only waiting for the dramatic answer, ask what small seed God may already be growing there in the dark - and water it: a prayer, an obedience, a word kept rather than abandoned.",
+      "leavingAtCross": [
+        "The demand that God prove Himself only through the visible, the immediate, the dramatic",
+        "The despair that says my sowing is wasted because I cannot see the harvest",
+        "The hard ground in me that hears the word and lets the evil one snatch it away"
+      ],
+      "receivingFromCross": [
+        "A King whose authority over storms and death is beyond question",
+        "A kingdom that grows in me quietly, unstoppably, even when I cannot see it",
+        "The patience to keep scattering seed and leave the increase to God"
+      ],
+      "content": "Name one place in your life where you have been waiting for a storm-stilling miracle. Today, instead of only waiting for the dramatic answer, ask what small seed God may already be growing there in the dark - and water it: a prayer, an obedience, a word kept rather than abandoned."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How do the miracles of Matthew 8-9 and the parables of Matthew 13 work together to show what the kingdom of heaven is and how it comes?",
+        "In Jesus' own explanation, what are the four kinds of ground, and what does each one represent in a person who hears the word?",
+        "Why does Jesus say the same parable both reveals the kingdom and conceals it - and what makes the difference between the two responses?"
+      ],
+      "forAccountabilityPartners": [
+        "Ask each other honestly: which of the four soils best describes the condition of your heart toward God right now, and why?",
+        "Talk about a time you wanted a 'storm-stilling' answer from God and got a slow-growing 'seed' answer instead. What did that teach you?",
+        "Name one 'thorn' - a worry or a use of money - that you can see choking the word in your life, and commit to clearing it this week."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 8:27",
+          "text": "The men were amazed and asked, \"What kind of man is this? Even the winds and the sea obey Him!\""
+        },
+        {
+          "reference": "Matthew 9:35",
+          "text": "Jesus went through all the towns and villages, teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness."
+        },
+        {
+          "reference": "Matthew 13:23",
+          "text": "But the seed sown on good soil is the one who hears the word and understands it. He indeed bears fruit and produces a crop—a hundredfold, sixtyfold, or thirtyfold."
+        },
+        {
+          "reference": "Matthew 13:31-32",
+          "text": "The kingdom of heaven is like a mustard seed that a man planted in his field. Although it is the smallest of all seeds, yet it grows into the largest of garden plants and becomes a tree, so that the birds of the air come and nest in its branches."
+        },
+        {
+          "reference": "1 Corinthians 3:6",
+          "text": "I planted the seed and Apollos watered it, but God made it grow."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 13",
+          "note": "Read the whole chapter in one sitting, watching how seven parables stack up - sower, weeds, mustard seed, leaven, hidden treasure, pearl, and net - each turning the same question over: what is the kingdom of heaven really like?"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus the Sower",
+      "title": "The King Who Plants His Kingdom",
+      "description": "In Matthew 8-13 Jesus shows Himself as the One with authority over sickness, demons, storm, and death - the King the prophets promised. Yet when He explains how His reign actually comes, He does not describe a throne or an army. He describes a farmer scattering seed. He is the King who plants rather than conquers, who would rather grow a willing harvest in human hearts than compel obedience by force.",
+      "keyQuote": "He who has ears, let him hear.",
+      "lessonForUs": "The Jesus who can still a storm in a single word is the same Jesus who works mostly in seed and soil and slow growth. When we look for Him only in the dramatic, we miss the kingdom already taking root, quietly, in the dark.",
+      "heading": "The King Who Plants His Kingdom"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1556,
+  "scriptureReference_full": "Matthew 8-13 (anchor: Matthew 13:3-9)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (parabole G3850, from para + ballo; basileia) reflects standard lexical sources (BDAG, Thayer)."
+  ]
 }

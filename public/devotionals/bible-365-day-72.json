@@ -1,38 +1,191 @@
 {
   "day": 72,
   "title": "Gideon’s fleece",
-  "teaser": "Day 72 of Bible 365 — Judges 6",
+  "teaser": "A frightened man hides in a winepress, and the Angel of the LORD calls him a mighty man of valor. Strength was never his to begin with.",
   "framework": "Judges 6 — God uses the fearful",
   "scriptureReference": "Judges 6",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 72"
+      "type": "scripture",
+      "reference": "Judges 6:11-16",
+      "translation": "BSB",
+      "emphasis": [
+        "mighty man of valor",
+        "Go in the strength you have",
+        "Am I not sending you?",
+        "Surely I will be with you"
+      ],
+      "hebrewOriginal": "לֵךְ בְּכֹחֲךָ זֶה וְהוֹשַׁעְתָּ אֶת־יִשְׂרָאֵל מִכַּף מִדְיָן הֲלֹא שְׁלַחְתִּיךָ",
+      "passage": "Then the angel of the LORD came and sat down under the oak in Ophrah that belonged to Joash the Abiezrite, where his son Gideon was threshing wheat in a winepress to hide it from the Midianites. And the angel of the LORD appeared to Gideon and said, \"The LORD is with you, O mighty man of valor.\" \"Please, my Lord,\" Gideon replied, \"if the LORD is with us, why has all this happened to us? And where are all His wonders of which our fathers told us...?\" The LORD turned to him and said, \"Go in the strength you have and save Israel from the hand of Midian. Am I not sending you?\" \"Please, my Lord,\" Gideon replied, \"how can I save Israel? Indeed, my clan is the weakest in Manasseh, and I am the youngest in my father's house.\" \"Surely I will be with you,\" the LORD replied, \"and you will strike down all the Midianites as one man.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Judges 6**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Judges 6 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "גִּבּוֹר חַיִל",
+      "transliteration": "gibbor chayil",
+      "pronunciation": "gib-BORE KHA-yil",
+      "meaning": "mighty man of valor, warrior of strength",
+      "rootMeaning": "Gibbor is a strong man, a champion, a hero in battle. Chayil means force, ability, an army, wealth - capacity that can be deployed. Together the phrase names a proven warrior. It is spoken over a man crouched in a winepress, hiding his grain from raiders he is too afraid to face.",
+      "usageNote": "Gibbor chayil is a soldier's title. It describes Boaz as a man of standing (Ruth 2:1) and the valiant men who rallied to David (1 Chronicles 12:28). When the angel lays it on Gideon, the words run ahead of the man. They name not what he is but what God's presence will make him.",
+      "wordByWord": [
+        {
+          "word": "לֵךְ",
+          "transliteration": "lekh",
+          "meaning": "go - a command, not a suggestion"
+        },
+        {
+          "word": "בְּכֹחֲךָ",
+          "transliteration": "be-kochacha",
+          "meaning": "in your strength, with the power you have"
+        },
+        {
+          "word": "זֶה",
+          "transliteration": "zeh",
+          "meaning": "this - 'this strength of yours,' the little there is"
+        },
+        {
+          "word": "הֲלֹא",
+          "transliteration": "halo",
+          "meaning": "have I not? - a question that carries the whole weight of the sending"
+        },
+        {
+          "word": "שְׁלַחְתִּיךָ",
+          "transliteration": "shelachticha",
+          "meaning": "I have sent you - the verb of commissioning, God as the One who sends"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כֹּחַ",
+          "reference": "Koach (strength) in 'Go in the strength you have' is the same word the prophets use when they say human power fails and the LORD gives strength to the weary (Isaiah 40:29-31). The 'strength you have' turns out to be borrowed."
+        }
+      ],
+      "strongsNumber": "H1368",
+      "definition": "gibbor: a powerful warrior, champion, mighty one; chayil: force, valor, capacity, army",
+      "usage": "The title arrives before the courage does. Heaven addresses Gideon by the end of his story while he is still living in the fear of its beginning."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God uses the fearful. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ strengthens the timid (2 Tim 1:7).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Angel Sits Down in the Winepress",
+      "body": "Israel is seven years into a slow ruin. Midian sweeps in at every harvest like locusts, stripping the fields, leaving nothing. So a young man named Gideon is doing his threshing in the wrong place. Wheat is meant to be beaten out on a high, open floor where the wind can carry off the chaff. Gideon is doing it down in a winepress - a sunken stone pit cut for crushing grapes - because the walls hide him from the raiders. Picture the labor of it: no breeze, no room, swinging a flail in a hole in the ground, glancing up between strokes. This is a portrait of a frightened man trying to keep a little for himself in a country that has lost its nerve.\n\nInto that pit the angel of the LORD comes and sits down under the oak, unhurried. And the first word out of heaven is not a rebuke for hiding. It is a title: \"The LORD is with you, O mighty man of valor.\" Gideon hears the irony before he hears the promise. He answers with the question everyone in Israel has been swallowing for seven years: if the LORD is with us, why has all this happened? Where are the wonders our fathers told us about? It is an honest complaint, the kind faith makes when the evidence has run thin.\n\nGod does not argue the history. He turns - the text says \"The LORD turned to him\" - and gives a command instead of an explanation: \"Go in the strength you have and save Israel from the hand of Midian. Am I not sending you?\" Notice the strange arithmetic. Gideon is told to go in the strength he has, and the strength he has is almost nothing. The whole weight of the sending rests not on the size of his arm but on the last four words: Am I not sending you?",
+      "keyInsight": "God does not wait for Gideon to become brave before He calls him brave. He names the man by the end of the story while the man is still hiding at the beginning of it.",
+      "content": "Israel is seven years into a slow ruin. Midian sweeps in at every harvest like locusts, stripping the fields, leaving nothing. So a young man named Gideon is doing his threshing in the wrong place. Wheat is meant to be beaten out on a high, open floor where the wind can carry off the chaff. Gideon is doing it down in a winepress - a sunken stone pit cut for crushing grapes - because the walls hide him from the raiders. Picture the labor of it: no breeze, no room, swinging a flail in a hole in the ground, glancing up between strokes. This is a portrait of a frightened man trying to keep a little for himself in a country that has lost its nerve.\n\nInto that pit the angel of the LORD comes and sits down under the oak, unhurried. And the first word out of heaven is not a rebuke for hiding. It is a title: \"The LORD is with you, O mighty man of valor.\" Gideon hears the irony before he hears the promise. He answers with the question everyone in Israel has been swallowing for seven years: if the LORD is with us, why has all this happened? Where are the wonders our fathers told us about? It is an honest complaint, the kind faith makes when the evidence has run thin.\n\nGod does not argue the history. He turns - the text says \"The LORD turned to him\" - and gives a command instead of an explanation: \"Go in the strength you have and save Israel from the hand of Midian. Am I not sending you?\" Notice the strange arithmetic. Gideon is told to go in the strength he has, and the strength he has is almost nothing. The whole weight of the sending rests not on the size of his arm but on the last four words: Am I not sending you?"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Foreman Who Kept Asking to See the Order",
+      "body": "A friend of mine ran the floor of a small print shop for years - good with the machines, useless, in his own estimate, with anything that smelled like leadership. When the owner died suddenly and the will named him manager, his first instinct was to find the paperwork that proved it was a mistake. He kept a copy of the letter in his shirt pocket and pulled it out a dozen times a day. Not to read the part that said he was in charge. To check that his name was really on it.\n\nHe told me, much later, that he didn't run that shop on confidence. He ran it on the letter. Every morning he was sure he wasn't enough, and every morning the letter said someone with more sense than him had sent him anyway. The strength wasn't in him. It was in the signature.\n\nGideon asks God for a sign in the very next breath - \"give me a sign that it is You speaking with me\" (v. 17) - and he will ask twice more before the chapter ends. This is not the story of a hero who needed no convincing. It is the story of a man who kept reaching into his pocket for the letter, and a God patient enough to keep showing him the signature.",
+      "connectionToTheme": "Gideon's courage never came from inside Gideon. It came from being sure of the One who sent him - the way a frightened man can act on an order he trusts more than he trusts himself.",
+      "content": "A friend of mine ran the floor of a small print shop for years - good with the machines, useless, in his own estimate, with anything that smelled like leadership. When the owner died suddenly and the will named him manager, his first instinct was to find the paperwork that proved it was a mistake. He kept a copy of the letter in his shirt pocket and pulled it out a dozen times a day. Not to read the part that said he was in charge. To check that his name was really on it.\n\nHe told me, much later, that he didn't run that shop on confidence. He ran it on the letter. Every morning he was sure he wasn't enough, and every morning the letter said someone with more sense than him had sent him anyway. The strength wasn't in him. It was in the signature.\n\nGideon asks God for a sign in the very next breath - \"give me a sign that it is You speaking with me\" (v. 17) - and he will ask twice more before the chapter ends. This is not the story of a hero who needed no convincing. It is the story of a man who kept reaching into his pocket for the letter, and a God patient enough to keep showing him the signature."
+    },
+    {
+      "type": "insight",
+      "heading": "The Fire Eats the Offering, and the Man Lives",
+      "body": "Watch what happens before Gideon ever lifts a weapon. He prepares an offering - meat and unleavened bread - and lays it on a rock. The angel touches it with the tip of his staff, and fire flares up from the rock and consumes it. Then the angel vanishes. And Gideon panics: \"Oh no, Lord GOD! I have seen the angel of the LORD face to face!\" He expects to die, because the ancient fear was sound - no one looks on God and lives.\n\nThen comes the word that turns the whole encounter: \"Peace be with you. Do not be afraid, for you will not die.\" The fire fell on the offering and not on the man. Something was consumed in Gideon's place, and the one who should not have survived the sight of God is sent away alive and at peace. So Gideon builds an altar and names it for what he has just received: \"The LORD Is Peace\" - in Hebrew, Yahweh Shalom.\n\nThis is the deep logic under the whole chapter. Gideon is not sent because he is strong. He is sent because he has been made to stand before God and live, on the far side of a sacrifice that burned in his place. The valor was always going to be borrowed. So was the peace.",
+      "historicalContext": "Judges sits in the long, grim cycle after Joshua: Israel forgets God, falls to an enemy, cries out, and God raises up a deliverer - a 'judge' - to rescue them, after which they forget again. Gideon is the fifth in that cycle. The Midianite oppression he faces is camel-borne raiding from the eastern desert, the first time Scripture describes domesticated camels used for war at scale - which is why Israel's farmers are reduced to hiding their grain in pits and caves.",
+      "fascinatingFact": "The altar's name, Yahweh Shalom, is one of a series of compound names for God scattered through the Old Testament - Yahweh Yireh ('the LORD will provide,' Genesis 22), Yahweh Nissi ('the LORD is my banner,' Exodus 17). Each one freezes a moment when a person discovered something true about God and refused to let it be forgotten. Gideon's discovery, made while expecting to die, was peace.",
+      "content": "Watch what happens before Gideon ever lifts a weapon. He prepares an offering - meat and unleavened bread - and lays it on a rock. The angel touches it with the tip of his staff, and fire flares up from the rock and consumes it. Then the angel vanishes. And Gideon panics: \"Oh no, Lord GOD! I have seen the angel of the LORD face to face!\" He expects to die, because the ancient fear was sound - no one looks on God and lives.\n\nThen comes the word that turns the whole encounter: \"Peace be with you. Do not be afraid, for you will not die.\" The fire fell on the offering and not on the man. Something was consumed in Gideon's place, and the one who should not have survived the sight of God is sent away alive and at peace. So Gideon builds an altar and names it for what he has just received: \"The LORD Is Peace\" - in Hebrew, Yahweh Shalom.\n\nThis is the deep logic under the whole chapter. Gideon is not sent because he is strong. He is sent because he has been made to stand before God and live, on the far side of a sacrifice that burned in his place. The valor was always going to be borrowed. So was the peace."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Angel of the LORD comes down into a hiding place, names a frightened man by what grace will make him, accepts a sacrifice that burns in his place, and sends him out with the only strength that matters: \"Am I not sending you?\"",
+      "modernApplication": "Most of us are still threshing in the winepress - keeping our heads down, guarding our little harvest, certain we are the weakest in the clan and the youngest in the house. We wait to feel adequate before we obey. Gideon never felt adequate. He obeyed the One who sent him, on a strength he was given rather than a strength he owned.",
+      "connectionPoint": "Gideon's fleece, which the rest of this chapter is named for, is a man asking God to confirm a word he has already been given - dew on the wool and dry ground, then dry wool and wet ground (vv. 36-40). It is faith with the shakes, faith that keeps reaching into its pocket for the letter. God does not despise it. He answers it twice. The thread that runs from this winepress through the whole of Scripture is that God's deliverers are chosen for their weakness, not their nerve. Centuries later, Hebrews lists Gideon among the heroes of faith as one of those 'who gained strength from weakness, became mighty in battle, and put foreign armies to flight' (Hebrews 11:32-34) - strength gained, not possessed.",
+      "newTestamentEcho": "What the Angel did at Ophrah, the Word made flesh does in full. Jesus descends to people hiding in fear, calls them by names they have not yet earned - 'You will be called Cephas,' He tells a fisherman who will deny Him (John 1:42) - and becomes Himself the offering that burns in our place so we can see God and live. Paul, pleading with God over his own weakness, hears the answer Gideon lived: 'My grace is sufficient for you, for My power is perfected in weakness' (2 Corinthians 12:9). And the altar Gideon built has a final name: Christ 'Himself is our peace' (Ephesians 2:14). Yahweh Shalom has a face."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you threshing in a winepress right now - doing the right work in a hiding place, keeping your head down because the evidence that God is with you has run thin?",
+      "additionalQuestions": [
+        "Gideon's honest question was 'if the LORD is with us, why has all this happened?' What is the version of that question you have been swallowing?",
+        "What has God already asked you to do that you are postponing until you feel strong enough? What would it mean to 'go in the strength you have' instead?",
+        "Where do you keep reaching for proof, like Gideon laying out the fleece - and is the issue really the sign, or is it trusting the One who already spoke?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You find me in the winepress, doing small work with one eye on the horizon, sure I am the weakest in my clan. I have asked Your question - if You are with me, why all this? Turn to me the way You turned to Gideon. Don't wait for me to be brave before You call me. Send me in the little strength I have, because the weight is on Your 'Am I not sending you?' and not on my arm. You are the offering that burned in my place; You are my peace. Let that be enough to make me go. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one thing God has already asked of you that you have been waiting to feel strong enough to do. Today, take the first concrete step toward it 'in the strength you have' - not when you feel ready, but because you have been sent.",
+      "leavingAtCross": [
+        "The belief that I must feel adequate before I obey",
+        "The habit of hiding in the winepress, guarding my small harvest, instead of being sent",
+        "The fear that my weakness disqualifies me - the weakest clan, the youngest in the house"
+      ],
+      "receivingFromCross": [
+        "A title spoken over me by grace, ahead of anything I have earned",
+        "Strength that is given for the task, not summoned from inside me",
+        "The peace of One who burned in my place so I could see God and live"
+      ],
+      "content": "Name the one thing God has already asked of you that you have been waiting to feel strong enough to do. Today, take the first concrete step toward it 'in the strength you have' - not when you feel ready, but because you have been sent."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that Gideon is threshing wheat in a winepress rather than on an open threshing floor? What does the location tell you about his state of mind?",
+        "The angel calls Gideon 'mighty man of valor' before he has done anything brave. What does that reveal about how God names people?",
+        "When Gideon expects to die for seeing the angel face to face, what actually happens instead - and how does the altar's name 'The LORD Is Peace' grow out of that moment?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other where you are 'in the winepress' right now - doing right but hiding, low on the evidence that God is near.",
+        "Name one thing each of you has been postponing until you feel strong enough. What would 'go in the strength you have' look like this week?",
+        "Talk about the fleece. When is asking God for confirmation honest faith with the shakes, and when is it a way of stalling on something He has already made clear?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Judges 6:24",
+          "text": "So Gideon built an altar to the LORD there and called it The LORD Is Peace. To this day it stands in Ophrah of the Abiezrites."
+        },
+        {
+          "reference": "Judges 6:36-37",
+          "text": "Then Gideon said to God, \"If You are going to save Israel by my hand, as You have said, then behold, I will place a fleece of wool on the threshing floor. If there is dew only on the fleece and all the ground is dry, then I will know that You are going to save Israel by my hand, as You have said.\""
+        },
+        {
+          "reference": "2 Corinthians 12:9",
+          "text": "But He said to me, \"My grace is sufficient for you, for My power is perfected in weakness.\" Therefore I will boast all the more gladly in my weaknesses, so that the power of Christ may rest on me."
+        },
+        {
+          "reference": "Hebrews 11:32, 34",
+          "text": "And what more shall I say? Time will not allow me to tell of Gideon... who gained strength from weakness, became mighty in battle, and put foreign armies to flight."
+        },
+        {
+          "reference": "Ephesians 2:14",
+          "text": "For He Himself is our peace, who has made the two one and has torn down the dividing wall of hostility."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Judges 6-8",
+          "note": "Read Gideon's whole story in one sitting, watching the man move from the winepress (6:11) to the army cut from 32,000 down to 300 (7:1-8) - God shrinks the strength on purpose, so the victory cannot be mistaken for Gideon's own."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Gideon",
+      "title": "The Reluctant Judge of Israel",
+      "description": "The fifth judge of Israel, from the clan of Abiezer in the tribe of Manasseh, called during seven years of Midianite raids. Gideon meets every commission with a question - he argues with the angel, asks for a sign, lays out a fleece twice - and is sent anyway. God deliberately reduces his army from thirty-two thousand to three hundred so that the deliverance can belong to no one but the LORD. Generations later he is remembered not for his hesitation but for his faith, named in Hebrews 11 among those who 'gained strength from weakness.'",
+      "keyQuote": "Please, my Lord, how can I save Israel? Indeed, my clan is the weakest in Manasseh, and I am the youngest in my father's house.",
+      "lessonForUs": "Gideon is proof that God's call does not wait for our confidence. He sends the fearful, supplies the strength, burns the offering in their place, and gives them His peace - then writes them into the roll of the faithful.",
+      "heading": "The Reluctant Judge of Israel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2353,
+  "scriptureReference_full": "Judges 6:11-16, 21-24, 36-40",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (gibbor chayil, koach) reflects standard lexical sources. Historical note on camel-borne Midianite raiding reflects mainstream Old Testament scholarship on Judges 6-7."
+  ]
 }

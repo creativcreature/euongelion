@@ -1,38 +1,188 @@
 {
   "day": 129,
-  "title": "Northern Prophets — Day 3 — Pivot",
-  "teaser": "Day 129 of Bible 365 — Amos, Hosea, Micah",
+  "title": "What the LORD Requires",
+  "teaser": "Three voices, one verdict: God never wanted your sacrifices. He wanted you — just, merciful, walking close. The prophets ask the impossible. Christ became the answer.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
   "scriptureReference": "Amos, Hosea, Micah",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 129"
+      "type": "scripture",
+      "reference": "Micah 6:6-8",
+      "translation": "BSB",
+      "emphasis": [
+        "what does the LORD require of you",
+        "act justly",
+        "love mercy",
+        "walk humbly with your God"
+      ],
+      "hebrewOriginal": "וְהִגִּיד לְךָ אָדָם מַה־טּוֹב וּמָה־יְהוָה דּוֹרֵשׁ מִמְּךָ כִּי אִם־עֲשׂוֹת מִשְׁפָּט וְאַהֲבַת חֶסֶד וְהַצְנֵעַ לֶכֶת עִם־אֱלֹהֶיךָ",
+      "passage": "With what shall I come before the LORD when I bow before the God on high? Should I come to Him with burnt offerings, with year-old calves? Would the LORD be pleased with thousands of rams, with ten thousand rivers of oil? Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul? He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loyal love, covenant kindness, steadfast mercy",
+      "rootMeaning": "Chesed is not a feeling that comes and goes. It is faithfulness with skin on - the love that keeps its promises even when the other party has broken theirs. It is what a covenant partner owes and what God gives past all reason.",
+      "usageNote": "Micah does not ask Israel to perform chesed as a duty; he tells them to love it - 'ahavat chesed,' to love loyal-love itself. The God who requires mercy is the same God Hosea shows still aching over a people who left Him: 'I desire mercy, not sacrifice' (Hosea 6:6). The word knits all three prophets together.",
+      "wordByWord": [
+        {
+          "word": "עֲשׂוֹת מִשְׁפָּט",
+          "transliteration": "asot mishpat",
+          "meaning": "to do justice, to act rightly toward others - mishpat is what is owed, the verdict that sets things right"
+        },
+        {
+          "word": "אַהֲבַת חֶסֶד",
+          "transliteration": "ahavat chesed",
+          "meaning": "to love mercy - not merely to show it but to delight in loyal, covenant kindness"
+        },
+        {
+          "word": "הַצְנֵעַ לֶכֶת",
+          "transliteration": "hatsnea lekhet",
+          "meaning": "to walk humbly, to go modestly, carefully, close beside - a quiet, unselfconscious nearness"
+        },
+        {
+          "word": "עִם־אֱלֹהֶיךָ",
+          "transliteration": "im-Eloheikha",
+          "meaning": "with your God - the whole life lived alongside, not in front of, the LORD"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִשְׁפָּט / צְדָקָה",
+          "reference": "Mishpat (justice) and tsedaqah (righteousness) are the pair Amos thunders for: 'let justice roll on like a river, and righteousness like an ever-flowing stream' (Amos 5:24). Micah's 'act justly' and Amos's roaring river are the same demand."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; the steadfast, loyal love that holds to a covenant",
+      "usage": "Chesed is the hinge of Micah's three-fold answer. Justice and humility frame it, but mercy is the heart - and it is the one virtue Israel found hardest, because it costs you something to forgive what you are owed."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Prophets, One Verdict",
+      "body": "Stand back from Amos, Hosea, and Micah and you hear three men preaching to the same dying kingdom. The northern tribes of Israel were rich, religious, and rotting. The altars were busy. The festivals were full. And underneath the worship, the poor were being sold for a pair of sandals (Amos 2:6), the courts were for sale, and the love that was supposed to bind people to God and to each other had gone cold.\n\nSo God sent voices. Amos, a shepherd from the south, came north and roared: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies' (Amos 5:21). Then the line everyone remembers: 'But let justice roll on like a river, and righteousness like an ever-flowing stream' (Amos 5:24). Hosea, told to marry a wife who would betray him, lived out God's broken heart over an unfaithful people - and heard God say, 'I desire mercy, not sacrifice' (Hosea 6:6). And Micah, in a courtroom scene where God puts His own people on trial, asks the question that gathers all three together: what could a person possibly bring that would satisfy God?\n\nThe people's instinct is to bring more. More calves. Thousands of rams. Rivers of oil. Finally, in desperation, the firstborn child. They keep raising the price, certain that somewhere there is an offering big enough to buy God's favor. And God answers by lowering the question entirely. He does not want more sacrifice. He never did. He has already shown them what is good.",
+      "keyInsight": "Israel kept asking how much it would cost to satisfy God. God kept answering that He never wanted a payment - He wanted a people who looked like Him.",
+      "content": "Stand back from Amos, Hosea, and Micah and you hear three men preaching to the same dying kingdom. The northern tribes of Israel were rich, religious, and rotting. The altars were busy. The festivals were full. And underneath the worship, the poor were being sold for a pair of sandals (Amos 2:6), the courts were for sale, and the love that was supposed to bind people to God and to each other had gone cold.\n\nSo God sent voices. Amos, a shepherd from the south, came north and roared: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies' (Amos 5:21). Then the line everyone remembers: 'But let justice roll on like a river, and righteousness like an ever-flowing stream' (Amos 5:24). Hosea, told to marry a wife who would betray him, lived out God's broken heart over an unfaithful people - and heard God say, 'I desire mercy, not sacrifice' (Hosea 6:6). And Micah, in a courtroom scene where God puts His own people on trial, asks the question that gathers all three together: what could a person possibly bring that would satisfy God?\n\nThe people's instinct is to bring more. More calves. Thousands of rams. Rivers of oil. Finally, in desperation, the firstborn child. They keep raising the price, certain that somewhere there is an offering big enough to buy God's favor. And God answers by lowering the question entirely. He does not want more sacrifice. He never did. He has already shown them what is good."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Apology That Came With a Check",
+      "body": "A man I know wronged his brother badly over an inheritance - the kind of wound that does not close on its own. When it finally caught up with him, his first move was to write a check. A generous one. He slid it across the table and waited, as if the number on it could do the work that an apology should.\n\nHis brother did not pick it up. 'I don't want your money,' he said. 'I want to know you're sorry. I want my brother back.' The check was easy. It cost only money. What the brother actually required cost something the man had been avoiding for years: he had to lower his eyes, admit he was wrong, and walk back into a relationship where he no longer held the upper hand.\n\nThat is the moment Micah 6 puts Israel in. They keep sliding bigger checks across the altar - calves, rams, rivers of oil, even a child. And God keeps saying, in effect, I don't want your money. I want you. Act justly. Love mercy. Walk close to Me again. The sacrifice was never the point. The sacrifice was the thing they were hiding behind so they would not have to change.",
+      "connectionToTheme": "Religion can become a large payment offered precisely so we never have to give God the small, costly thing He actually asks for: a just, merciful, humble life lived near Him.",
+      "content": "A man I know wronged his brother badly over an inheritance - the kind of wound that does not close on its own. When it finally caught up with him, his first move was to write a check. A generous one. He slid it across the table and waited, as if the number on it could do the work that an apology should.\n\nHis brother did not pick it up. 'I don't want your money,' he said. 'I want to know you're sorry. I want my brother back.' The check was easy. It cost only money. What the brother actually required cost something the man had been avoiding for years: he had to lower his eyes, admit he was wrong, and walk back into a relationship where he no longer held the upper hand.\n\nThat is the moment Micah 6 puts Israel in. They keep sliding bigger checks across the altar - calves, rams, rivers of oil, even a child. And God keeps saying, in effect, I don't want your money. I want you. Act justly. Love mercy. Walk close to Me again. The sacrifice was never the point. The sacrifice was the thing they were hiding behind so they would not have to change."
+    },
+    {
+      "type": "insight",
+      "heading": "The Firstborn They Could Not Give",
+      "body": "Look closely at the question Micah lets the people climb toward. They start with calves, move to thousands of rams, then ten thousand rivers of oil, and finally arrive at the unspeakable: 'Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul?' (Micah 6:7). It is the highest bid a desperate heart can imagine - the surrender of a child. And God refuses it. Justice, mercy, humility, He says. Not your firstborn.\n\nHere is where the three prophets stop being three warnings and become one promise. The requirement Micah names - act justly, love mercy, walk humbly with God - is a requirement no one in Israel ever fully met. Amos kept thundering because the river of justice never came. Hosea kept weeping because the mercy never held. The bar God set was not unfair; it was simply higher than fallen people could reach. So the demand of Micah 6:8 hangs over the whole northern kingdom like an unpaid debt.\n\nAnd then read Hosea again, the tenderest line in all three books: 'When Israel was a child, I loved him, and out of Egypt I called My son' (Hosea 11:1). Centuries later, Matthew watches a young family flee to Egypt and return, and writes: 'This fulfilled what the Lord had spoken through the prophet: Out of Egypt I called My Son' (Matthew 2:15). The Son God truly called out of Egypt was not the nation that failed Him. It was Christ - the only one who ever did act justly, love mercy, and walk humbly with God, every day of a human life.",
+      "historicalContext": "Amos, Hosea, and Micah all prophesied in the eighth century BC, as the northern kingdom of Israel drifted toward the Assyrian conquest of 722 BC. Amos and Hosea spoke primarily to the north; Micah, from the village of Moresheth, spoke to Judah in the south but watched the same disease spreading. They are read together because they diagnose one sickness - worship without justice - with one cure.",
+      "fascinatingFact": "Micah 6:7 raises the possibility of child sacrifice only to reject it utterly - the very practice the prophets condemned in the surrounding nations. The verse Israel reaches for in panic, God will not accept. Yet the New Testament dares to say that God Himself did what He forbade Israel to do: 'He who did not spare His own Son but gave Him up for us all' (Romans 8:32). The firstborn no human father could rightly give, the Father gave.",
+      "content": "Look closely at the question Micah lets the people climb toward. They start with calves, move to thousands of rams, then ten thousand rivers of oil, and finally arrive at the unspeakable: 'Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul?' (Micah 6:7). It is the highest bid a desperate heart can imagine - the surrender of a child. And God refuses it. Justice, mercy, humility, He says. Not your firstborn.\n\nHere is where the three prophets stop being three warnings and become one promise. The requirement Micah names - act justly, love mercy, walk humbly with God - is a requirement no one in Israel ever fully met. Amos kept thundering because the river of justice never came. Hosea kept weeping because the mercy never held. The bar God set was not unfair; it was simply higher than fallen people could reach. So the demand of Micah 6:8 hangs over the whole northern kingdom like an unpaid debt.\n\nAnd then read Hosea again, the tenderest line in all three books: 'When Israel was a child, I loved him, and out of Egypt I called My son' (Hosea 11:1). Centuries later, Matthew watches a young family flee to Egypt and return, and writes: 'This fulfilled what the Lord had spoken through the prophet: Out of Egypt I called My Son' (Matthew 2:15). The Son God truly called out of Egypt was not the nation that failed Him. It was Christ - the only one who ever did act justly, love mercy, and walk humbly with God, every day of a human life."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God does not want bigger sacrifices. He wants a people who act justly, love mercy, and walk humbly with Him (Micah 6:8) - and Israel could never sustain it.",
+      "modernApplication": "We still try to pay God off. We trade Him church attendance for honesty, giving for forgiveness, busyness for nearness - sliding a religious check across the altar so we never have to do the harder, smaller thing: treat people justly, forgive freely, and walk close to Him without pretending. The requirement has not changed. Neither has our inability to meet it on our own.",
+      "connectionPoint": "What Amos demanded, Hosea wept for, and Micah summarized is the same righteousness the gospel says we cannot manufacture and must receive. The prophets expose the gap; they do not close it. They leave Israel - and us - longing for someone who could finally satisfy the requirement from the inside of a human life.",
+      "newTestamentEcho": "Jesus quoted Hosea twice - 'I desire mercy, not sacrifice' (Matthew 9:13; 12:7) - turning Hosea's ache into His own verdict on a religion that had missed the point again. He is the justice and the mercy of Micah 6:8 in one body: the only man who ever walked humbly with God all the way to a cross, and the firstborn the Father gave so that the debt of every unjust, unmerciful heart could be covered."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been writing God a check - offering Him something easy - to avoid the harder, smaller thing He actually asks of you?",
+      "additionalQuestions": [
+        "Of Micah's three - acting justly, loving mercy, walking humbly - which one comes hardest for you, and why do you think that is?",
+        "Is there a person you owe justice or mercy right now? What would it cost you to give it, and what are you hiding behind to avoid the cost?",
+        "When you imagine God, do you picture the thundering Amos, the weeping Hosea, or the patient Father of Hosea 11 who taught Ephraim to walk? Which is truest - and which do you most need to hear today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have brought You so many offerings to keep from bringing You myself. I have been generous with what is easy and stingy with what costs me - quick to give, slow to forgive, busy for You and far from You. You have shown me what is good: to act justly, to love mercy, to walk humbly with You. I cannot do it on my own; the prophets prove it and so does my own life. So I come to the one Son who did it perfectly, the firstborn You gave for me. Clothe me in His justice. Teach me His mercy. Take my hand and teach me, like a child, to walk. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Choose the one part of Micah 6:8 you avoid most - justice, mercy, or humble nearness - and do one concrete thing about it today: a wrong made right, a debt of forgiveness released, or ten quiet minutes walking with God without asking Him for anything.",
+      "leavingAtCross": [
+        "The big religious payments I make so I never have to change the small unjust things",
+        "The mercy I withhold from someone because I am still counting what they owe me",
+        "The proud, self-managed life that keeps God in front of me as a judge instead of beside me as a Father"
+      ],
+      "receivingFromCross": [
+        "Christ's perfect record - the justice and mercy I could never sustain, credited to me",
+        "Permission to stop bidding higher and simply come home to the God who never wanted my sacrifices",
+        "A hand to hold, the way a father teaches a child to walk, one humble step at a time"
+      ],
+      "content": "Choose the one part of Micah 6:8 you avoid most - justice, mercy, or humble nearness - and do one concrete thing about it today: a wrong made right, a debt of forgiveness released, or ten quiet minutes walking with God without asking Him for anything."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God refuse the escalating offerings of Micah 6:6-7 - even the firstborn - when the people are so eager to give them?",
+        "How do Amos's demand for justice, Hosea's plea for mercy, and Micah's call to walk humbly fit together into a single message?",
+        "If no one in Israel could fully meet the requirement of Micah 6:8, how does Christ change what that verse means for us?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'check' you tend to write God - one easy offering you use to avoid a harder obedience.",
+        "Talk honestly about which is hardest for you: doing justice, loving mercy, or walking humbly - and ask the other to pray you toward it.",
+        "Ask each other: where is God inviting you, this week, to stop performing religion and start living near Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Hosea 11:1",
+          "text": "When Israel was a child, I loved him, and out of Egypt I called My son."
+        },
+        {
+          "reference": "Micah 7:18-19",
+          "text": "Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance - who does not retain His anger forever, because He delights in loving devotion? He will again have compassion on us; He will vanquish our iniquities. You will cast out all our sins into the depths of the sea."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Micah 6:1-8",
+          "note": "Read God's whole courtroom case against His people, ending in the famous verse 8. Notice that He recalls His past kindness (vv. 3-5) before He ever names a requirement."
+        },
+        {
+          "type": "book",
+          "title": "Hosea 11",
+          "note": "Read the chapter Matthew 2:15 reaches back to. Watch the Father who taught Ephraim to walk (v. 3) refuse, in the end, to give His child up (v. 8)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Micah of Moresheth",
+      "title": "The Prophet Who Asked the Question",
+      "description": "An eighth-century BC prophet from the rural town of Moresheth in Judah, a contemporary of Isaiah, Amos, and Hosea. While kings and priests grew comfortable, Micah spoke for the trampled poor and against a worship that had been hollowed out by injustice. His book swings between hard warning and stunning tenderness - from a courtroom indictment to the gentlest portrait of God's mercy in all the prophets: a God who casts our sins into the depths of the sea (Micah 7:19).",
+      "keyQuote": "He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?",
+      "lessonForUs": "Micah's summary of true religion is so simple a child can memorize it and so demanding that no one has ever fully lived it - which is exactly why it points past Israel, past us, to the one Son who did. The requirement humbles us so the gospel can carry us.",
+      "heading": "The Prophet Who Asked the Question"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2377,
+  "scriptureReference_full": "Amos 5:21-24; Hosea 6:6; 11:1; Micah 6:6-8; 7:18-19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; mishpat, ahavat chesed, hatsnea lekhet in Micah 6:8) reflects standard lexical sources.",
+    "Hosea 11:1 is applied to Christ in Matthew 2:15; Jesus cites Hosea 6:6 in Matthew 9:13 and 12:7."
+  ]
 }

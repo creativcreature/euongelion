@@ -6,33 +6,168 @@
   "scriptureReference": "Genesis 22 (sabbath)",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 21"
+      "type": "scripture",
+      "reference": "Genesis 22:1-2, 7-8, 11-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Here I am",
+        "where is the lamb",
+        "God Himself will provide the lamb",
+        "you have not withheld your only son",
+        "The LORD Will Provide"
+      ],
+      "hebrewOriginal": "וַיִּקְרָא אַבְרָהָם שֵׁם־הַמָּקוֹם הַהוּא יְהוָה יִרְאֶה",
+      "passage": "Some time later God tested Abraham and said to him, \"Abraham!\" \"Here I am,\" he answered. \"Take your son,\" God said, \"your only son Isaac, whom you love, and go to the land of Moriah. Offer him there as a burnt offering on one of the mountains, which I will show you.\" ... Then Isaac said to his father Abraham, \"My father!\" \"Here I am, my son,\" he replied. \"The fire and the wood are here,\" said Isaac, \"but where is the lamb for the burnt offering?\" Abraham answered, \"God Himself will provide the lamb for the burnt offering, my son.\" And the two walked on together. ... Just then the angel of the LORD called out to him from heaven, \"Abraham, Abraham!\" \"Here I am,\" he replied. \"Do not lay a hand on the boy or do anything to him,\" said the angel, \"for now I know that you fear God, since you have not withheld your only son from me.\" Then Abraham looked up and saw behind him a ram in a thicket, caught by its horns. So he went and took the ram and offered it as a burnt offering in place of his son. And Abraham called that place The LORD Will Provide. So to this day it is said, \"On the mountain of the LORD it will be provided.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 22 (sabbath)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 22 (sabbath) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יְהוָה יִרְאֶה",
+      "transliteration": "YHWH yireh",
+      "pronunciation": "yah-WEH yir-EH",
+      "meaning": "The LORD will see / The LORD will provide",
+      "rootMeaning": "The verb ra'ah means simply to see. But in Hebrew, to see a need and to meet it are the same motion: when God sees, God acts. The name Abraham gives the mountain is built on this single word - the God who looks is the God who supplies.",
+      "usageNote": "The same root threads through the whole chapter before the name is ever spoken. In verse 8 Abraham says God will provide (yireh) the lamb; in verse 13 he looks up and sees (yireh) the ram; in verse 14 he names the place The LORD Will Provide (yireh) and says on this mountain it will be provided (yera'eh). Seeing and providing are one breath.",
+      "wordByWord": [
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of God, the One who is"
+        },
+        {
+          "word": "יִרְאֶה",
+          "transliteration": "yireh",
+          "meaning": "He will see, He will provide - to perceive a need is to move toward meeting it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רָאָה / יָרֵא",
+          "reference": "Yireh (He will provide, from ra'ah, to see) sounds close to yare (to fear, to revere). Verse 12 praises Abraham's fear of God; verse 14 names God's provision. The man who reveres meets the God who sees."
+        }
+      ],
+      "strongsNumber": "H7200",
+      "definition": "to see, to look, to perceive, and so to provide for; God's seeing is never passive",
+      "usage": "Abraham does not name the mountain after his own faith or his near-loss. He names it after God's character: the One who sees what we need before we arrive, and goes ahead of us to provide it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest in the Provider. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as our provision (Phil 4:19).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Climb Up Moriah",
+      "body": "Abraham had waited twenty-five years for Isaac. The boy was the whole promise made flesh - the child of laughter, the one through whom every nation on earth was supposed to be blessed. And now the same voice that had promised him asks for him back: \"Take your son, your only son Isaac, whom you love.\" God names the cost three times in a single sentence, slowly, as if to make sure Abraham hears exactly what is being asked.\n\nWatch what Abraham does, and what he does not do. He does not argue, as he had argued for Sodom. He does not delay. He gets up early, splits the wood himself, and walks three days into the silence. Three days is a long time to carry a thing like this. There is no record of what passed between father and son on that road. Scripture gives us only the weight of it: the wood laid on Isaac's own back, the fire and the knife in the father's hands, and one terrible sentence repeated twice - \"the two of them walked on together.\"\n\nThen the boy speaks. \"The fire and the wood are here, but where is the lamb?\" It is the most human question in the chapter, asked by a son who trusts his father completely and cannot yet see what his father can barely bring himself to see. And Abraham gives the answer that turns out to be larger than he knew: \"God Himself will provide the lamb.\" He is speaking the truth without grasping its full reach. That is the difference between faith and certainty. Abraham does not know how God will provide. He knows only that God will.",
+      "keyInsight": "Abraham's faith is not the absence of grief or the absence of unknowing. It is the decision to keep walking toward God in the dark, trusting that the One who promised will provide - even when he cannot yet see how.",
+      "content": "Abraham had waited twenty-five years for Isaac. The boy was the whole promise made flesh - the child of laughter, the one through whom every nation on earth was supposed to be blessed. And now the same voice that had promised him asks for him back: \"Take your son, your only son Isaac, whom you love.\" God names the cost three times in a single sentence, slowly, as if to make sure Abraham hears exactly what is being asked.\n\nWatch what Abraham does, and what he does not do. He does not argue, as he had argued for Sodom. He does not delay. He gets up early, splits the wood himself, and walks three days into the silence. Three days is a long time to carry a thing like this. There is no record of what passed between father and son on that road. Scripture gives us only the weight of it: the wood laid on Isaac's own back, the fire and the knife in the father's hands, and one terrible sentence repeated twice - \"the two of them walked on together.\"\n\nThen the boy speaks. \"The fire and the wood are here, but where is the lamb?\" It is the most human question in the chapter, asked by a son who trusts his father completely and cannot yet see what his father can barely bring himself to see. And Abraham gives the answer that turns out to be larger than he knew: \"God Himself will provide the lamb.\" He is speaking the truth without grasping its full reach. That is the difference between faith and certainty. Abraham does not know how God will provide. He knows only that God will."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Three-Day Road",
+      "body": "There is a kind of obedience that is over in a moment - the quick yes, the hand raised before the feeling fades. Abraham's was not that kind. His obedience had to survive three full days of walking, two nights of trying to sleep beside a son he believed he was about to lose, the small ordinary mercies of the road that must have felt unbearable: handing Isaac bread, answering his questions, watching him sleep.\n\nMost of us are not asked for one dramatic surrender. We are asked for the three-day road. The diagnosis that does not resolve. The marriage you keep showing up for when the feeling has gone quiet. The prayer you pray again on the morning it still has not been answered. Faith that lasts is rarely a single leap. It is the next step taken in the dark, and then the one after that, with the summit still out of sight.\n\nAbraham could not see the ram caught in the thicket. It was there the whole time, on the far side of obedience, waiting in the brush of the mountain he had not yet reached. He found it only by climbing. The provision was real before he saw it - but he saw it only because he kept walking.",
+      "connectionToTheme": "Sabbath rest is not the rest of certainty; it is the rest of trust. Abraham could rest in the Provider only by walking three days toward a provision he could not yet see.",
+      "content": "There is a kind of obedience that is over in a moment - the quick yes, the hand raised before the feeling fades. Abraham's was not that kind. His obedience had to survive three full days of walking, two nights of trying to sleep beside a son he believed he was about to lose, the small ordinary mercies of the road that must have felt unbearable: handing Isaac bread, answering his questions, watching him sleep.\n\nMost of us are not asked for one dramatic surrender. We are asked for the three-day road. The diagnosis that does not resolve. The marriage you keep showing up for when the feeling has gone quiet. The prayer you pray again on the morning it still has not been answered. Faith that lasts is rarely a single leap. It is the next step taken in the dark, and then the one after that, with the summit still out of sight.\n\nAbraham could not see the ram caught in the thicket. It was there the whole time, on the far side of obedience, waiting in the brush of the mountain he had not yet reached. He found it only by climbing. The provision was real before he saw it - but he saw it only because he kept walking."
+    },
+    {
+      "type": "insight",
+      "heading": "A Ram in Place of the Son",
+      "body": "The hand is already raised. The knife is in it. And then a voice - \"Abraham, Abraham!\" - and the most merciful word in the chapter: stop. Do not lay a hand on the boy. Then Abraham looks up, and there in the thicket is a ram, caught by its horns, ready.\n\nNotice the exact wording of what happens next. He offered it \"in place of his son.\" This is the heart of the whole story: a life given so that another life is spared. The ram dies; Isaac walks down the mountain alive. Substitution stands at the center of Genesis 22, and Scripture will keep returning to that center for the rest of the Bible - in the Passover lamb whose blood turns away death, in the sacrifices of the Temple, in the whole logic of atonement. One dies so another may live.\n\nAnd then Abraham names the mountain - not for his faith, not for his relief, but for God: The LORD Will Provide. He has learned the one thing the test was meant to teach. The God who asked for everything is the God who provides everything. The hand that withholds the knife is the same hand that hung the ram in the thicket before Abraham ever began to climb.",
+      "historicalContext": "Genesis 22 names the place \"the land of Moriah\" (v. 2). 2 Chronicles 3:1 places the building of Solomon's Temple on Mount Moriah in Jerusalem - the same ridge where the altars of Israel's sacrifices would stand for centuries. Israel read this chapter knowing the mountain of Abraham's test had become the mountain of the LORD's provision, generation after generation.",
+      "fascinatingFact": "Verse 14 contains a deliberate fold in time. Abraham names the place in the past - \"The LORD Will Provide\" - but the narrator immediately adds a saying still alive in his own day: \"On the mountain of the LORD it will be provided.\" The verb shifts to the future. The text itself leans forward, as if the deepest provision on this mountain is still to come.",
+      "content": "The hand is already raised. The knife is in it. And then a voice - \"Abraham, Abraham!\" - and the most merciful word in the chapter: stop. Do not lay a hand on the boy. Then Abraham looks up, and there in the thicket is a ram, caught by its horns, ready.\n\nNotice the exact wording of what happens next. He offered it \"in place of his son.\" This is the heart of the whole story: a life given so that another life is spared. The ram dies; Isaac walks down the mountain alive. Substitution stands at the center of Genesis 22, and Scripture will keep returning to that center for the rest of the Bible - in the Passover lamb whose blood turns away death, in the sacrifices of the Temple, in the whole logic of atonement. One dies so another may live.\n\nAnd then Abraham names the mountain - not for his faith, not for his relief, but for God: The LORD Will Provide. He has learned the one thing the test was meant to teach. The God who asked for everything is the God who provides everything. The hand that withholds the knife is the same hand that hung the ram in the thicket before Abraham ever began to climb."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On a mountain in Moriah, God provides a ram in place of Isaac. Abraham's only son, whom he loves, is spared because another life is given - and the place is named for the God who sees and provides.",
+      "modernApplication": "We climb our own Moriahs - the things we are asked to release with no view of the summit, the goodbyes, the open hands held out over what we love most. The test is never whether we can see the provision. It is whether we will keep walking toward the God who does.",
+      "connectionPoint": "Genesis 22 leans forward, and the New Testament catches the weight it was carrying. Twice the angel says Abraham did not withhold his only son (vv. 12, 16). Paul takes those exact words and turns them toward God Himself: \"He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?\" (Romans 8:32). What Abraham was spared, the Father was not.",
+      "newTestamentEcho": "Isaac carried the wood up the mountain; Jesus carried His cross to a hill on the same Jerusalem ridge. Isaac asked, \"Where is the lamb?\" and Abraham answered, \"God Himself will provide the lamb.\" Centuries later, John the Baptist points and says, \"Look, the Lamb of God, who takes away the sin of the world!\" (John 1:29). On Moriah a ram was caught in the thicket so the son went free. On Calvary there was no substitute for the Son - because He was the substitute for us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the Isaac in your life right now - the thing you are being asked to hold with open hands, trusting a provision you cannot yet see?",
+      "additionalQuestions": [
+        "Abraham obeyed before he understood. Where are you waiting for understanding before you are willing to take the next step?",
+        "When God asks for something you love, do you hear a Father who provides, or a judge who takes? What shapes which voice you hear?",
+        "What would it mean today to name your own mountain 'The LORD Will Provide' - before you can see how?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You know the things I am gripping so tightly my hands have gone numb. You know the mountain I cannot see the top of. Teach me Abraham's quiet obedience - to get up early, to keep walking, to trust that You see what I need before I arrive. Where I am afraid You only take, show me again the ram in the thicket and the Son You did not spare. On this sabbath day, let me rest - not in certainty, but in You, the LORD who provides. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - no task to finish, no summit to reach. Sit for five quiet minutes and name, honestly, the one thing you are being asked to hold with open hands. Then let one phrase carry you through the day: \"The LORD will provide.\" You do not have to see how. You only have to keep walking with Him.",
+      "leavingAtCross": [
+        "The grip on my Isaac - the thing I love that I am afraid to release",
+        "The demand to understand before I am willing to obey",
+        "The suspicion that God asks for things only to take them"
+      ],
+      "receivingFromCross": [
+        "The rest of trusting a Provider I cannot yet see",
+        "The freedom of open hands held out over what I love most",
+        "The assurance that the Father who did not spare His own Son will, with Him, freely give me all things"
+      ],
+      "content": "Today is a sabbath day - no task to finish, no summit to reach. Sit for five quiet minutes and name, honestly, the one thing you are being asked to hold with open hands. Then let one phrase carry you through the day: \"The LORD will provide.\" You do not have to see how. You only have to keep walking with Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the name Abraham gives the mountain - 'The LORD Will Provide' - reveal about what the test was meant to teach him?",
+        "Why does it matter that the ram is offered 'in place of' Isaac rather than alongside him?",
+        "How does the angel's phrase 'you have not withheld your only son' point forward to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'three-day road' you are walking right now - an obedience that has to survive more than a single moment.",
+        "Talk about whether you tend to hear God as a Provider or as One who takes - and where that came from.",
+        "Ask each other: what is the Isaac you are being asked to hold with open hands, and what would trusting God with it look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        },
+        {
+          "reference": "Romans 8:32",
+          "text": "He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?"
+        },
+        {
+          "reference": "Hebrews 11:17-19",
+          "text": "By faith Abraham, when he was tested, offered up Isaac... Abraham reasoned that God could raise the dead, and in a sense, he did receive Isaac back from death."
+        },
+        {
+          "reference": "2 Chronicles 3:1",
+          "text": "Then Solomon began to build the house of the LORD in Jerusalem on Mount Moriah, where the LORD had appeared to his father David. This was the place that David had prepared on the threshing floor of Ornan the Jebusite."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 22",
+          "note": "Read the whole chapter slowly, watching the word 'provide/see' (yireh) move from Abraham's promise (v. 8) to the ram he sees (v. 13) to the name of the mountain (v. 14)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The Father of the Faithful, Tested on Moriah",
+      "description": "Called out of Ur, promised a nation though he was childless and old, Abraham waited a quarter-century for Isaac - and then was asked to give him back. His climb up Moriah is the Bible's defining picture of faith that obeys before it understands. The New Testament holds him up as the father of all who believe (Romans 4), the man who reasoned that God could even raise the dead (Hebrews 11:19).",
+      "keyQuote": "God Himself will provide the lamb for the burnt offering, my son.",
+      "lessonForUs": "Abraham's faith was not the absence of cost or confusion - it was the decision to keep walking toward God in the dark. He named the place not for his own obedience but for God's character: the LORD provides. We are invited to do the same, on whatever mountain we are climbing today.",
+      "heading": "The Father of the Faithful, Tested on Moriah"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2339,
+  "scriptureReference_full": "Genesis 22:1-2, 7-8, 11-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (YHWH yireh, ra'ah H7200) reflects standard lexical sources; the geographic identification of Moriah with the Temple mount follows 2 Chronicles 3:1."
+  ]
 }

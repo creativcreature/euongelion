@@ -1,38 +1,191 @@
 {
   "day": 49,
   "title": "What the law cannot do",
-  "teaser": "Day 49 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: grace over performance",
-  "scriptureReference": "Sabbath",
+  "teaser": "The commandment that could not save you was never powerless because it was bad. It was powerless because you are weak. So God did the one thing the law could not: He came.",
+  "framework": "Romans 8:1-4 — Sabbath: grace over performance",
+  "scriptureReference": "Romans 8:1-4",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 49"
+      "type": "scripture",
+      "reference": "Romans 8:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "no condemnation",
+        "what the law was powerless to do",
+        "God did",
+        "He thus condemned sin in the flesh"
+      ],
+      "greekOriginal": "Οὐδὲν ἄρα νῦν κατάκριμα τοῖς ἐν Χριστῷ Ἰησοῦ.",
+      "passage": "Therefore, there is now no condemnation for those who are in Christ Jesus. For in Christ Jesus the law of the Spirit of life set you free from the law of sin and death. For what the law was powerless to do in that it was weakened by the flesh, God did by sending His own Son in the likeness of sinful man, as an offering for sin. He thus condemned sin in the flesh, so that the righteous standard of the law might be fulfilled in us, who do not walk according to the flesh but according to the Spirit."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "κατάκριμα / κατέκρινεν",
+      "transliteration": "katakrima / katekrinen",
+      "pronunciation": "kah-TAH-kree-mah / kah-TEH-kree-nen",
+      "meaning": "a verdict of condemnation; and the verb, to pass that verdict, to condemn",
+      "rootMeaning": "Both words come from kata (down, against) joined to krino (to judge). Katakrima is the sentence handed down against the guilty. Katekrinen is the moment the judge speaks it. They are the same root - one is the gavel, the other is the blow.",
+      "usageNote": "Paul opens this passage with the noun and closes the same breath with the verb. In verse 1 there is no katakrima - no sentence - for those in Christ. In verse 3 God katekrinen - condemned, sentenced - sin in the flesh. The verdict did not vanish. It landed somewhere else. The sentence we were owed fell on sin in the body of the Son.",
+      "wordByWord": [
+        {
+          "word": "οὐδὲν κατάκριμα",
+          "transliteration": "ouden katakrima",
+          "meaning": "not one condemnation, no sentence at all"
+        },
+        {
+          "word": "νῦν",
+          "transliteration": "nyn",
+          "meaning": "now - not someday, but already, today"
+        },
+        {
+          "word": "ἠσθένει",
+          "transliteration": "ēsthenei (from astheneō)",
+          "meaning": "was weak, powerless - the flesh could not carry the weight"
+        },
+        {
+          "word": "ὁ Θεὸς ... κατέκρινεν",
+          "transliteration": "ho Theos ... katekrinen",
+          "meaning": "God ... condemned, passed sentence"
+        },
+        {
+          "word": "δικαίωμα",
+          "transliteration": "dikaioma",
+          "meaning": "the righteous requirement, the just standard of the law"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀδύνατον / δυνατός",
+          "reference": "Paul's phrase for what the law was 'powerless to do' is to adynaton tou nomou - literally 'the impossibility of the law.' The same root gives us dynamis, power. The law was a-dynaton: drained of power. Not because the law was a lie, but because it had nothing to work with but us."
+        }
+      ],
+      "strongsNumber": "G2631 (κατάκριμα), G2632 (κατακρίνω)",
+      "definition": "katakrima: an adverse sentence, the penalty pronounced on the guilty. katakrino: to give judgment against, to condemn.",
+      "usage": "The two words frame the whole passage like bookends. We begin with a courtroom where no sentence is read over us, and we end by learning why: the sentence was already read - over sin, in the flesh of Christ."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: grace over performance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ does what the law cannot (Rom 8:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Law Was Never the Problem",
+      "body": "Yesterday the people stood at the foot of a mountain and heard ten words come down through fire and smoke: Remember the Sabbath. Have no other gods. Do not steal, do not covet, do not lie. The commandments were good. They still are. They are the closest thing this world has to a photograph of how a human life is meant to look.\n\nSo why does Paul, writing centuries later, say the law was powerless? Read his sentence slowly, because every word is load-bearing: \"what the law was powerless to do in that it was weakened by the flesh.\" The law was not weak in itself. It was weakened - by us. A commandment can tell you to stop. It cannot make you able to stop. It can post the speed limit. It cannot give the car a working brake. The law could describe the life of God on the page; it could not write that life into a person's chest.\n\nThis is the quiet ache underneath all religious effort. We are handed a standard we agree is beautiful, and we discover we cannot meet it - not because we have not tried, but because trying was never going to be enough. Paul had felt it himself a chapter earlier: \"What a wretched man I am! Who will rescue me from this body of death?\" That is not the cry of a lazy man. It is the cry of a man who took the law seriously enough to be broken by it.",
+      "keyInsight": "The law was powerless not because it was bad, but because it had nothing to work with except us. A good command cannot supply the strength to obey it.",
+      "content": "Yesterday the people stood at the foot of a mountain and heard ten words come down through fire and smoke: Remember the Sabbath. Have no other gods. Do not steal, do not covet, do not lie. The commandments were good. They still are. They are the closest thing this world has to a photograph of how a human life is meant to look.\n\nSo why does Paul, writing centuries later, say the law was powerless? Read his sentence slowly, because every word is load-bearing: \"what the law was powerless to do in that it was weakened by the flesh.\" The law was not weak in itself. It was weakened - by us. A commandment can tell you to stop. It cannot make you able to stop. It can post the speed limit. It cannot give the car a working brake. The law could describe the life of God on the page; it could not write that life into a person's chest.\n\nThis is the quiet ache underneath all religious effort. We are handed a standard we agree is beautiful, and we discover we cannot meet it - not because we have not tried, but because trying was never going to be enough. Paul had felt it himself a chapter earlier: \"What a wretched man I am! Who will rescue me from this body of death?\" That is not the cry of a lazy man. It is the cry of a man who took the law seriously enough to be broken by it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Diet on the Refrigerator Door",
+      "body": "A friend of mine kept a printed list on his refrigerator for most of a year. It was a good list. A doctor had written it. It told him exactly what to eat and what to leave alone, and he agreed with every line of it. He read it every morning while he stood in front of the open fridge at six a.m., tired, deciding what to grab before work.\n\nThe list never once reached out and closed his hand around the right thing. It could not. A page taped to a door has no hands. It could tell him the truth about his body and stand there, accurate and powerless, while he did the very thing it warned against. By the end of the year he did not need a better list. He had memorized the list. What he needed was something the list could not give him: a changed appetite, a strength from somewhere other than his own willpower at six in the morning.\n\nThat is the difference between a law and a life. The law on the door was right about everything and could fix nothing. It took someone coming into his kitchen, eating with him, walking with him, week after week, before anything actually changed. Information became transformation only when it stopped being a page and became a person.",
+      "connectionToTheme": "A good rule posted in front of us can be entirely true and entirely powerless. What the law could only describe, Christ came to supply - not a clearer command, but a present life.",
+      "content": "A friend of mine kept a printed list on his refrigerator for most of a year. It was a good list. A doctor had written it. It told him exactly what to eat and what to leave alone, and he agreed with every line of it. He read it every morning while he stood in front of the open fridge at six a.m., tired, deciding what to grab before work.\n\nThe list never once reached out and closed his hand around the right thing. It could not. A page taped to a door has no hands. It could tell him the truth about his body and stand there, accurate and powerless, while he did the very thing it warned against. By the end of the year he did not need a better list. He had memorized the list. What he needed was something the list could not give him: a changed appetite, a strength from somewhere other than his own willpower at six in the morning.\n\nThat is the difference between a law and a life. The law on the door was right about everything and could fix nothing. It took someone coming into his kitchen, eating with him, walking with him, week after week, before anything actually changed. Information became transformation only when it stopped being a page and became a person."
+    },
+    {
+      "type": "insight",
+      "heading": "God Did the One Thing the Law Could Not",
+      "body": "Here is the hinge of the whole passage, and it turns on three of the smallest words in the sentence: \"God did.\" \"For what the law was powerless to do... God did by sending His own Son.\" The verb has no object yet; Paul makes us wait. What did God do? He sent. The answer to the impossibility of the law is not a stronger law. It is not a better effort or a sterner mountain. The answer is a person walking out of heaven into a human body.\n\nThen comes the courtroom word. God sent His Son \"as an offering for sin. He thus condemned sin in the flesh.\" Look at what just happened. In verse 1 there is no condemnation for us. In verse 3 there is condemnation - but it has changed addresses. The sentence we earned did not get waved away as though justice did not matter. It was carried out. It fell. It fell on sin itself, in the flesh of the Son, so that it would never again fall on those who are in Him. The gavel came down. It simply came down somewhere we were not standing.\n\nAnd notice the goal in verse 4: this happened \"so that the righteous standard of the law might be fulfilled in us.\" Grace does not cancel the beautiful life the law described. Grace finally produces it - not by us climbing up to the standard, but by the Spirit writing that life into people who could never write it themselves. The very thing the law demanded and could not create, the Son secures and the Spirit grows.",
+      "historicalContext": "Paul writes to a church in Rome he had not yet visited, a mixed community of Jewish and Gentile believers wrestling over exactly this question: what good is the law, and what does Christ change? Romans 8 is his crescendo. Everything in chapters 1 through 7 - the universal failure to keep the law, the futility of self-rescue - has been building pressure toward this release: \"there is now no condemnation.\"",
+      "fascinatingFact": "Paul never says God sent His Son in sinful flesh - that would deny Christ's sinlessness. He chooses his words with surgical care: \"in the likeness of sinful man.\" The Son took on real, full humanity, the same flesh that had been the law's weak point in us, yet without sin. He entered the exact place where every other human had failed - and there, in that flesh, sin was finally condemned.",
+      "content": "Here is the hinge of the whole passage, and it turns on three of the smallest words in the sentence: \"God did.\" \"For what the law was powerless to do... God did by sending His own Son.\" The verb has no object yet; Paul makes us wait. What did God do? He sent. The answer to the impossibility of the law is not a stronger law. It is not a better effort or a sterner mountain. The answer is a person walking out of heaven into a human body.\n\nThen comes the courtroom word. God sent His Son \"as an offering for sin. He thus condemned sin in the flesh.\" Look at what just happened. In verse 1 there is no condemnation for us. In verse 3 there is condemnation - but it has changed addresses. The sentence we earned did not get waved away as though justice did not matter. It was carried out. It fell. It fell on sin itself, in the flesh of the Son, so that it would never again fall on those who are in Him. The gavel came down. It simply came down somewhere we were not standing.\n\nAnd notice the goal in verse 4: this happened \"so that the righteous standard of the law might be fulfilled in us.\" Grace does not cancel the beautiful life the law described. Grace finally produces it - not by us climbing up to the standard, but by the Spirit writing that life into people who could never write it themselves. The very thing the law demanded and could not create, the Son secures and the Spirit grows."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The law given at Sinai was holy, righteous, and good - and it could not make a single person righteous, because it had only weak flesh to work with. So God did what the law could not: He sent His own Son as an offering for sin and condemned sin in the flesh.",
+      "modernApplication": "Most of us are still living in front of the refrigerator door. We know the standard. We have read the list. We have made the resolutions and broken them by Tuesday. The exhaustion of religious performance is the exhaustion of asking a command to do what only a Savior can do. The gospel is not a better list. It is the announcement that the sentence is already served and the strength is already given.",
+      "connectionPoint": "This is why the Sabbath sits in the Ten Words at all. The fourth commandment told Israel to rest one day in seven, to stop working and trust that the world would hold together without their labor - because in six days the LORD made everything and rested on the seventh. The weekly Sabbath was a rehearsal. It trained a whole people to believe that their security did not depend on their striving. Hebrews picks up the thread: \"There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His.\" Romans 8 is what that rest finally means - resting not just from labor for one day, but from the endless labor of trying to earn what cannot be earned.",
+      "newTestamentEcho": "Jesus made the invitation explicit: \"Come to Me, all you who are weary and burdened, and I will give you rest... For My yoke is easy and My burden is light\" (Matthew 11:28-30). And on the cross, when the offering for sin was complete, He spoke the word that ends all striving: \"It is finished\" (John 19:30). The law could only ever say 'do.' The Son, on the cross, said 'done.'"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still standing in front of a list that is true and powerless - reading the command, agreeing with it, and unable to keep it by your own strength?",
+      "additionalQuestions": [
+        "When you imagine standing before God, do you still hear a sentence being read over you? Romans 8:1 says there is none for those in Christ. What would change today if you actually believed there is now no condemnation?",
+        "What does it tell you about God that the answer to your failure was not a stricter rule but His own Son coming into the same flesh where you keep failing?",
+        "Is there a kind of striving in your faith that has quietly replaced rest - a performance you are running to feel safe with God? What would it look like to lay it down?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have spent so long reading the list and trying to keep it on my own. I have treated Your good commands as a ladder to climb instead of a portrait of the life Your Son already lived for me. Thank You that the law was never the problem - that the weakness was mine and You met it Yourself. Thank You that there is now no condemnation, because the sentence already fell on sin in the flesh of Christ. Quiet the part of me that is still working to earn what You have already given. Let me rest. By Your Spirit, write the life I could never write, and let me walk - not striving, but free. Through Jesus, who is finished where I am still trying. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath day - there is nothing to complete and nothing to prove. Sit for five quiet minutes and let one phrase hold you: \"there is now no condemnation,\" or simply \"God did.\" Name the one command you have been trying hardest to keep on your own strength, and hand the whole effort over to the One who already finished it. Then rest.",
+      "leavingAtCross": [
+        "The exhausting belief that my standing with God rises and falls on how well I performed today",
+        "The list I keep reading and breaking, as though a clearer command could give me the power I lack",
+        "The fear that a sentence is still hanging over me, waiting to be read"
+      ],
+      "receivingFromCross": [
+        "The verdict already spoken: there is now no condemnation for those in Christ Jesus",
+        "A strength that comes from the Spirit, not from my own willpower at six in the morning",
+        "The rest of a finished work - the freedom to stop earning what has already been given"
+      ],
+      "content": "Today is a Sabbath day - there is nothing to complete and nothing to prove. Sit for five quiet minutes and let one phrase hold you: \"there is now no condemnation,\" or simply \"God did.\" Name the one command you have been trying hardest to keep on your own strength, and hand the whole effort over to the One who already finished it. Then rest."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to Paul, why was the law 'powerless' - was the problem in the law, or in us? What difference does that distinction make?",
+        "In verse 1 there is no condemnation for us; in verse 3 God condemns sin. Where did the sentence we were owed actually fall, and why does that matter for how we live?",
+        "Verse 4 says the law's righteous standard is now 'fulfilled in us.' How is that different from us fulfilling it by our own effort?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have confused trying harder with trusting Christ - where you have been treating the gospel like a stricter list.",
+        "Talk honestly about whether you live as though there is 'now no condemnation,' or as though a verdict is still pending. What feeds the difference?",
+        "Ask each other: what would genuine rest from spiritual performance look like for you this week - and what is the first thing you would lay down?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 20:8-10",
+          "text": "Remember the Sabbath day by keeping it holy. Six days you shall labor and do all your work, but the seventh day is a Sabbath to the LORD your God, on which you must not do any work."
+        },
+        {
+          "reference": "Romans 7:24-25",
+          "text": "What a wretched man I am! Who will rescue me from this body of death? Thanks be to God, through Jesus Christ our Lord!"
+        },
+        {
+          "reference": "Galatians 2:16",
+          "text": "...a man is not justified by works of the law, but by faith in Jesus Christ... because by works of the law no one will be justified."
+        },
+        {
+          "reference": "Matthew 11:28-30",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest... For My yoke is easy and My burden is light."
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 7:7 - 8:4",
+          "note": "Read straight through from the wretchedness of trying to keep the law in chapter 7 into the 'no condemnation' of chapter 8. Watch the despair of self-rescue give way to the relief of what God did."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "The Pharisee Who Found the Law Could Not Save Him",
+      "description": "Trained as a Pharisee under Gamaliel and, by his own account, blameless under the law, Paul knew the commandments better than almost anyone alive. That made him the perfect witness to their limit. He had kept the rules and still persecuted the church; he had the standard and lacked the life. After meeting the risen Christ on the Damascus road, he spent the rest of his days writing about the very thing the law could not do - and the Son who did it.",
+      "keyQuote": "What a wretched man I am! Who will rescue me from this body of death? Thanks be to God, through Jesus Christ our Lord!",
+      "lessonForUs": "If the man who kept the law most rigorously concluded that the law could not save him, then our own striving was never going to be the answer either. The honest end of effort is the doorway to grace.",
+      "heading": "The Pharisee Who Found the Law Could Not Save Him"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1584,
+  "scriptureReference_full": "Romans 8:1-4",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (katakrima G2631, katakrino G2632, from kata + krino) reflects standard lexical sources; the katakrima/katekrinen frame is a feature of Paul's own wording in Romans 8:1-3."
+  ]
 }

@@ -1,38 +1,181 @@
 {
   "day": 109,
-  "title": "Divided Kingdom — Day 4 — Application",
-  "teaser": "Day 109 of Bible 365 — 1 Kings 12-16",
+  "title": "A nearer god, on your own terms",
+  "teaser": "Jeroboam decides the trip to Jerusalem costs too much, so he builds a calf you can reach without leaving home. The application is uncomfortably close: the gods we make to keep control.",
   "framework": "1 Kings 12-16 — Divided Kingdom",
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 109"
+      "type": "scripture",
+      "reference": "1 Kings 12:26-30",
+      "translation": "BSB",
+      "emphasis": [
+        "Going up to Jerusalem is too much for you",
+        "Here, O Israel, are your gods",
+        "this thing became a sin"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר יָרָבְעָם בְּלִבּוֹ",
+      "passage": "Jeroboam said in his heart, “Now the kingdom might revert to the house of David. If these people go up to offer sacrifices in the house of the LORD at Jerusalem, their hearts will return to their lord, Rehoboam king of Judah; then they will kill me and return to Rehoboam king of Judah.” After seeking advice, the king made two golden calves and said to the people, “Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.” One calf he set up in Bethel, and the other in Dan. And this thing became a sin; the people walked as far as Dan to worship before one of the calves."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּלִבּוֹ",
+      "transliteration": "belibbo",
+      "pronunciation": "be-lee-BOH",
+      "meaning": "in his heart, within himself, in his own mind",
+      "rootMeaning": "From lev, the Hebrew word for heart - which in Scripture means far more than feeling. The lev is the seat of thought, will, and decision: the inner control room where a person weighs things and chooses. Belibbo is that whole inner deliberation, sealed off from anyone else.",
+      "usageNote": "1 Kings is careful to tell us this golden-calf religion did not come down from heaven. It came up out of one man's private calculation: Jeroboam said in his heart. The same phrase describes the fool who says in his heart there is no God (Psalm 14:1), and the rich man whose barns fill while he reasons within himself (Luke 12:17). It marks a decision made alone, where God is not consulted.",
+      "wordByWord": [
+        {
+          "word": "וַיֹּאמֶר",
+          "transliteration": "vayyomer",
+          "meaning": "and he said, he declared"
+        },
+        {
+          "word": "יָרָבְעָם",
+          "transliteration": "Yarov'am (Jeroboam)",
+          "meaning": "the new king of the ten northern tribes; the name may carry the sense of the people will contend or be many"
+        },
+        {
+          "word": "בְּלִבּוֹ",
+          "transliteration": "belibbo",
+          "meaning": "in his heart - inside himself, in his own reasoning"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "לֵב / lev",
+          "reference": "The heart that Jeroboam reasons inside is the same heart Scripture says was not fully devoted to the LORD in his successors (1 Kings 15:3) - and the heart God promises to make new in Ezekiel 36:26. What a king decides in his lev shapes a whole nation's worship."
+        }
+      ],
+      "strongsNumber": "H3820",
+      "definition": "the heart; the inner self, the seat of the mind, will, and decision",
+      "usage": "The phrase quietly assigns the blame. The calves were not a revelation Israel received; they were a policy Jeroboam reasoned out in private to protect his own throne, then dressed up as worship."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Worship That Was Really a Border Wall",
+      "body": "By the time we reach 1 Kings 12, the great united kingdom of David and Solomon has come apart in a single afternoon. Solomon's son Rehoboam, asked to lighten the heavy taxes and forced labor his father imposed, listens to his friends instead of the elders and answers the people with a boast: my father scourged you with whips, I will scourge you with scorpions. Ten tribes walk away. \"What portion do we have in David?\" they cry, and go home. The kingdom splits north and south, and it will never be whole again.\n\nJeroboam is handed the north. And almost immediately he does the math. The temple - the one place God had chosen for His name - sits in Jerusalem, which is now the enemy's capital. If his people keep traveling south three times a year to worship, Jeroboam fears their loyalty will travel with them. So he reasons it out, alone, in his heart: he cannot afford for them to go up to Jerusalem.\n\nHis solution is brilliant politics and ruinous religion. He casts two golden calves and plants one at each end of his territory, Bethel in the south and Dan in the far north. Then he announces, with a phrase that should make every reader flinch, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods.\" He has not abolished worship. He has relocated it, made it convenient, and quietly rewritten who is being worshiped - all to keep his grip on the throne.",
+      "keyInsight": "Jeroboam never tells Israel to stop worshiping. He tells them the real God costs too much to reach, and offers a nearer one they can keep on their own terms. That is how false worship usually arrives - not as rebellion, but as convenience.",
+      "content": "By the time we reach 1 Kings 12, the great united kingdom of David and Solomon has come apart in a single afternoon. Solomon's son Rehoboam, asked to lighten the heavy taxes and forced labor his father imposed, listens to his friends instead of the elders and answers the people with a boast: my father scourged you with whips, I will scourge you with scorpions. Ten tribes walk away. \"What portion do we have in David?\" they cry, and go home. The kingdom splits north and south, and it will never be whole again.\n\nJeroboam is handed the north. And almost immediately he does the math. The temple - the one place God had chosen for His name - sits in Jerusalem, which is now the enemy's capital. If his people keep traveling south three times a year to worship, Jeroboam fears their loyalty will travel with them. So he reasons it out, alone, in his heart: he cannot afford for them to go up to Jerusalem.\n\nHis solution is brilliant politics and ruinous religion. He casts two golden calves and plants one at each end of his territory, Bethel in the south and Dan in the far north. Then he announces, with a phrase that should make every reader flinch, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods.\" He has not abolished worship. He has relocated it, made it convenient, and quietly rewritten who is being worshiped - all to keep his grip on the throne."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Shorter Drive to Church",
+      "body": "A man I knew left a congregation that had grown hard for him - the teaching kept landing on things he did not want examined, and the drive across town took forty minutes he had decided he could not spare. There was a newer place five minutes from his house that asked less of him, and he started going there instead. For a while he told himself it was about the commute.\n\nYears later he was honest about it. The mileage was never the real reason. The real reason was that the closer church let him keep parts of his life off the table that the first one kept reaching for. He had not stopped worshiping. He had found a god-shaped space that fit comfortably around the life he had already decided to keep.\n\nThat is exactly Jeroboam's move, scaled down to one person. The trip to the true God always seems to cost too much, right at the moment He is asking for the thing we most want to hold onto. And there is almost always a nearer altar, with our name carved into the design, that asks for less.",
+      "connectionToTheme": "Jeroboam's calves were not built by people who hated worship. They were built by people who wanted a worship that would not cost them what they were unwilling to give - which is a temptation that fits a single human heart as easily as it fit a kingdom.",
+      "content": "A man I knew left a congregation that had grown hard for him - the teaching kept landing on things he did not want examined, and the drive across town took forty minutes he had decided he could not spare. There was a newer place five minutes from his house that asked less of him, and he started going there instead. For a while he told himself it was about the commute.\n\nYears later he was honest about it. The mileage was never the real reason. The real reason was that the closer church let him keep parts of his life off the table that the first one kept reaching for. He had not stopped worshiping. He had found a god-shaped space that fit comfortably around the life he had already decided to keep.\n\nThat is exactly Jeroboam's move, scaled down to one person. The trip to the true God always seems to cost too much, right at the moment He is asking for the thing we most want to hold onto. And there is almost always a nearer altar, with our name carved into the design, that asks for less."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sentence That Buries Eight Kings",
+      "body": "Read across chapters 14 through 16 and one sentence keeps tolling like a bell over the grave of king after king: he walked in the way of Jeroboam and in his sin, which he had caused Israel to commit. Nadab, Baasha, Omri, and finally Ahab - each new dynasty seizes the throne by violence, and each one keeps the calves. The phrase becomes the standard epitaph of the northern kingdom.\n\nThis is the quiet horror of Jeroboam's private decision. A choice he made in his own heart to protect one reign hardened into the default religion of a whole nation for two hundred years. He did not just sin; he caused Israel to sin, and the river he diverted never found its old course again. By the time Ahab marries Jezebel and builds a temple to Baal in chapter 16, the calves almost look tame - but it was the calves that taught Israel that worship could be edited to fit a king's convenience. Baal was just the next, bolder edit.\n\nSin that we frame as a reasonable adjustment rarely stays our private adjustment. It becomes the road others walk because we walked it first. What Jeroboam decided alone, in his heart, a nation kept paying for long after his bones were dust.",
+      "historicalContext": "First and Second Kings were almost certainly compiled during or after the Babylonian exile, looking back to explain how the covenant people lost the land. The repeated verdict on the northern kings - they walked in the way of Jeroboam - is the writer's diagnosis of the whole catastrophe: the north was poisoned at its root by a worship designed for political control. The exile is the long consequence of a calf cast in 930 BC.",
+      "fascinatingFact": "Immediately after Jeroboam sets up the altar at Bethel (1 Kings 13:1-2), an unnamed man of God cries out a prophecy naming a king who has not yet been born: \"A son named Josiah will be born to the house of David, and upon you he will sacrifice the priests of the high places who burn incense upon you ...\" Roughly three centuries later, 2 Kings 23:15 records King Josiah of Judah pulling down that very altar at Bethel and grinding it to powder. The judgment on the convenient altar was spoken the day it was built.",
+      "content": "Read across chapters 14 through 16 and one sentence keeps tolling like a bell over the grave of king after king: he walked in the way of Jeroboam and in his sin, which he had caused Israel to commit. Nadab, Baasha, Omri, and finally Ahab - each new dynasty seizes the throne by violence, and each one keeps the calves. The phrase becomes the standard epitaph of the northern kingdom.\n\nThis is the quiet horror of Jeroboam's private decision. A choice he made in his own heart to protect one reign hardened into the default religion of a whole nation for two hundred years. He did not just sin; he caused Israel to sin, and the river he diverted never found its old course again. By the time Ahab marries Jezebel and builds a temple to Baal in chapter 16, the calves almost look tame - but it was the calves that taught Israel that worship could be edited to fit a king's convenience. Baal was just the next, bolder edit.\n\nSin that we frame as a reasonable adjustment rarely stays our private adjustment. It becomes the road others walk because we walked it first. What Jeroboam decided alone, in his heart, a nation kept paying for long after his bones were dust."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "To keep his throne, Jeroboam told Israel that going up to Jerusalem to meet the true God cost too much, and gave them golden calves they could reach without surrender - and that engineered, convenient worship became the sin that defined a kingdom.",
+      "modernApplication": "Most of us do not pour metal into a calf-shaped mold. We do something subtler: we keep the worship and quietly relocate the God. We build a faith that asks for our schedule but not our money, our Sunday but not our anger, our agreement but not our obedience - a nearer god, shaped to leave untouched the one thing we have decided in our hearts to keep. It feels like devotion. It is a border wall around our control.",
+      "connectionPoint": "Jeroboam's lie was that the true God was too far and too costly to reach, so a manageable substitute would have to do. The whole point of the Gospel is that God refused to leave that lie standing. He did not lower the cost of coming to Him - He paid it Himself and came near, on His own terms, not ours.",
+      "newTestamentEcho": "When a Samaritan woman raised the old north-versus-Jerusalem worship dispute, Jesus said, \"A time is coming and has now come when the true worshipers will worship the Father in spirit and in truth\" (John 4:23). And He named Himself the only road there: \"I am the way and the truth and the life. No one comes to the Father except through Me\" (John 14:6). The trip to God is no longer too much for us - because Christ became the way."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you quietly relocated God to a nearer, more convenient altar - kept the worship, but reshaped Him to leave one thing in your life untouched?",
+      "additionalQuestions": [
+        "What is the 'going up to Jerusalem' you keep telling yourself costs too much right now - the surrender, the conversation, the obedience you have decided you cannot afford?",
+        "Jeroboam reasoned it out alone, in his heart, with no one to challenge him. What decisions about God are you making in private that you have never said out loud to anyone who could push back?",
+        "Whose road might you be paving? Who is watching the way you handle God and learning that worship can be edited to fit?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have built nearer altars than I want to admit. I have kept the worship and quietly moved You to a place that would not reach the thing I was determined to hold. Forgive the convenient gods I have reasoned out in my own heart. You did not tell me the way to You was too much; You became the way and paid for the journey Yourself. So I will not settle for a calf at Bethel. Take me up to where You actually are, even if it costs me what I have been guarding. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one nearer altar - one place you have made faith convenient by editing God to fit your control. Say it out loud to God, and take one concrete step back toward the real cost you have been avoiding: the apology, the giving, the obedience, the honest conversation. Refuse the calf at Bethel. Go up.",
+      "leavingAtCross": [
+        "The reasoning I do alone, in my heart, to make a god who will not touch what I am keeping",
+        "The lie that the true God costs too much to reach, so a manageable version will do",
+        "The road of convenient worship I may be paving for the people watching me"
+      ],
+      "receivingFromCross": [
+        "A God who refused to stay far, and made the way to Himself at His own expense",
+        "Freedom from the exhausting work of editing Him to fit my fear",
+        "Worship in spirit and in truth, with the one Mediator who is Himself the way"
+      ],
+      "content": "Today, name one nearer altar - one place you have made faith convenient by editing God to fit your control. Say it out loud to God, and take one concrete step back toward the real cost you have been avoiding: the apology, the giving, the obedience, the honest conversation. Refuse the calf at Bethel. Go up."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was Jeroboam actually afraid of, and how did building the golden calves protect him? Why does the writer tell us he reasoned it out 'in his heart'?",
+        "Why does the verdict 'he walked in the way of Jeroboam, which he caused Israel to commit' matter so much that it is repeated over king after king?",
+        "How does Jesus' answer to the Samaritan woman in John 4 - and His claim in John 14:6 - undo the very lie Jeroboam told Israel?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'nearer altar' in your own life - a place you have made worship convenient by quietly editing what God is allowed to ask of you.",
+        "Talk about a decision you have made alone, 'in your heart,' about God that you have never let anyone challenge. What would it cost to say it out loud?",
+        "Ask each other: what is the 'trip to Jerusalem' you keep avoiding because you have decided it costs too much - and what would going up actually look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 12:14",
+          "text": "and spoke to them as the young men had advised, saying, “Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.”"
+        },
+        {
+          "reference": "1 Kings 13:2",
+          "text": "And he cried out against the altar by the word of the LORD, “O altar, O altar, this is what the LORD says: ‘A son named Josiah will be born to the house of David, and upon you he will sacrifice the priests of the high places who burn incense upon you, and human bones will be burned upon you.’”"
+        },
+        {
+          "reference": "1 Kings 16:31",
+          "text": "And as if it were not enough for him to walk in the sins of Jeroboam son of Nebat, he even married Jezebel the daughter of Ethbaal king of the Sidonians, and he then proceeded to serve and worship Baal."
+        },
+        {
+          "reference": "John 14:6",
+          "text": "Jesus answered, “I am the way and the truth and the life. No one comes to the Father except through Me."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12-16",
+          "note": "Read all five chapters in one sitting, marking every time the phrase 'the way of Jeroboam' or 'caused Israel to sin' appears. Watch one private decision become a nation's epitaph."
+        },
+        {
+          "type": "book",
+          "title": "2 Kings 23:15",
+          "note": "Read the fulfillment: Josiah pulling down the altar at Bethel, exactly as the man of God foretold in 1 Kings 13. The judgment on the convenient altar was spoken the day it was built."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeroboam son of Nebat",
+      "title": "The King Who Made Worship Convenient",
+      "description": "An able official under Solomon, raised up by God Himself to rule the ten northern tribes after the kingdom split around 930 BC. Promised a lasting house if he would walk faithfully, Jeroboam instead reasoned in his heart that the true worship in Jerusalem threatened his throne. He cast two golden calves, set them at Bethel and Dan, and told Israel that going up to Jerusalem was too much for them. His name became Scripture's shorthand for engineered, self-protecting religion: nineteen northern kings after him are measured by whether they walked in 'the sins of Jeroboam.'",
+      "keyQuote": "Going up to Jerusalem is too much for you. Here, O Israel, are your gods.",
+      "lessonForUs": "Jeroboam never preached atheism. He simply made God nearer, cheaper, and safer - a worship that would not cost him control. The most dangerous false gods are not the ones that replace worship, but the ones that keep it while quietly editing who we worship and what He is allowed to ask.",
+      "heading": "The King Who Made Worship Convenient"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2291,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (lev / belibbo, H3820) reflects standard lexical sources. The Josiah prophecy (1 Kings 13:1-2) and its fulfillment (2 Kings 23:15) are recorded directly in the biblical text."
+  ]
 }

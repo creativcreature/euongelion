@@ -6,33 +6,177 @@
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 217"
+      "type": "scripture",
+      "reference": "Song 2:10-13; 6:3; 8:6-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Arise, my darling. Come away with me",
+        "I belong to my beloved and he belongs to me",
+        "love is as strong as death",
+        "Mighty waters cannot quench love"
+      ],
+      "hebrewOriginal": "כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "My beloved calls to me, \"Arise, my darling. Come away with me, my beautiful one. For now the winter is past; the rain is over and gone. The flowers have appeared in the countryside; the season of singing has come, and the cooing of turtledoves is heard in our land. The fig tree ripens its figs; the blossoming vines spread their fragrance. Arise, come away, my darling; come away with me, my beautiful one.\" ... I belong to my beloved and he belongs to me; he pastures his flock among the lilies. ... Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עַזָּה כַמָּוֶת אַהֲבָה",
+      "transliteration": "azzah kammavet ahavah",
+      "pronunciation": "ah-ZAH kah-MA-vet ah-hah-VAH",
+      "meaning": "love is as strong as death",
+      "rootMeaning": "Azzah comes from azaz, to be fierce, mighty, unyielding - the strength of something that will not be moved. Mavet is death, the one power no one in the ancient world could resist. Ahavah is love. The line sets love beside death and refuses to flinch.",
+      "usageNote": "This is the only place in the Song where the poetry steps back from the lovers and names what has been singing underneath every verse. After seven chapters of gardens, doves, and longing, the book finally says the word it has been circling: love is as strong as death. Not stronger-than yet; as strong as - death's equal, meeting it on its own ground.",
+      "wordByWord": [
+        {
+          "word": "עַזָּה",
+          "transliteration": "azzah",
+          "meaning": "strong, fierce, unyielding"
+        },
+        {
+          "word": "כַ",
+          "transliteration": "ka",
+          "meaning": "as, like - a comparison drawn taut"
+        },
+        {
+          "word": "מָּוֶת",
+          "transliteration": "mavet",
+          "meaning": "death"
+        },
+        {
+          "word": "אַהֲבָה",
+          "transliteration": "ahavah",
+          "meaning": "love"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שַׁלְהֶבֶתְיָה / shalhevetyah",
+          "reference": "In Song 8:6 the flame of love is called shalhevetyah - 'the fiercest blaze of all.' The word ends in -yah, the shortened form of the divine name. It is the only hint of God's name in the entire Song, tucked inside the word for fire. Love's fiercest flame carries the syllable of the LORD."
+        }
+      ],
+      "strongsNumber": "H5794",
+      "definition": "az: strong, mighty, fierce; here, of love that holds its ground against death itself",
+      "usage": "The verse moves in pairs - love as strong as death, jealousy as unrelenting as Sheol, sparks like fiery flames. Each pair binds love to something vast and final. The poet is not exaggerating a feeling; he is measuring love against the largest things he knows and finding it their match."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The One Book That Only Sings",
+      "body": "There is a book in the middle of the Bible that contains no law, no battle, no miracle, and never once says the word God plainly. The Song of Songs is a wedding poem - two voices, a man and a woman, calling to each other across vineyards and city walls. For long stretches it reads like overheard love, tender and unashamed, and the church has sometimes blushed at finding it in Scripture at all.\n\nBut Israel did not blush. The rabbis called it the Holy of Holies among the writings - the most sacred song of all. They heard in it not only a husband and wife, but the love between God and His people: the LORD who courted Israel out of Egypt, who calls her His bride, who grieves when she wanders and rejoices when she returns. The book that seems to be only about human love turns out to be the Bible's boldest picture of divine love - love that is personal, particular, and unembarrassed to want the beloved back.\n\nToday three chapters sit side by side. In chapter 2 the beloved comes leaping over the hills and calls, \"Arise, come away.\" In chapter 6 the bride says the line the whole book turns on: \"I belong to my beloved and he belongs to me.\" And in chapter 8 the poetry finally names its own theme - love as strong as death. Read slowly, the Song is not a distraction from the rest of Scripture. It is the music the rest of Scripture is set to.",
+      "keyInsight": "The Song of Songs is not an interruption in the Bible's story but its love-melody - the same covenant the Law commands and the Prophets plead for, here finally allowed simply to sing.",
+      "content": "There is a book in the middle of the Bible that contains no law, no battle, no miracle, and never once says the word God plainly. The Song of Songs is a wedding poem - two voices, a man and a woman, calling to each other across vineyards and city walls. For long stretches it reads like overheard love, tender and unashamed, and the church has sometimes blushed at finding it in Scripture at all.\n\nBut Israel did not blush. The rabbis called it the Holy of Holies among the writings - the most sacred song of all. They heard in it not only a husband and wife, but the love between God and His people: the LORD who courted Israel out of Egypt, who calls her His bride, who grieves when she wanders and rejoices when she returns. The book that seems to be only about human love turns out to be the Bible's boldest picture of divine love - love that is personal, particular, and unembarrassed to want the beloved back.\n\nToday three chapters sit side by side. In chapter 2 the beloved comes leaping over the hills and calls, \"Arise, come away.\" In chapter 6 the bride says the line the whole book turns on: \"I belong to my beloved and he belongs to me.\" And in chapter 8 the poetry finally names its own theme - love as strong as death. Read slowly, the Song is not a distraction from the rest of Scripture. It is the music the rest of Scripture is set to."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Voicemail She Wouldn't Delete",
+      "body": "A woman I know lost her husband three years ago and still has not erased his voicemail. It is nothing - twelve seconds of him saying he picked up the milk and would be home soon, the way you say things to someone you assume you will see in an hour. She plays it sometimes, not to grieve, but because the sound of him saying her name is a thing the grave did not get to take.\n\nWhen she told me this she said something I have not been able to put down. \"People think the love stops when the person does. It doesn't. It just has nowhere to go for a while.\" She was describing, without knowing it, the exact thing the Song says out loud: that love is as strong as death. Not that love never feels death - she of all people knows it does - but that love does not lose to it. It stands on death's own ground and keeps its feet.\n\nThat is the strange courage of this book. It does not pretend the lovers are safe, or that the world is gentle, or that nothing can come between them. It looks straight at the one power that takes everyone, calls it by name, and says: this love is its match.",
+      "connectionToTheme": "The Song's claim that love is as strong as death is not poetry that ignores the grave; it is poetry that has measured the grave and refused to call it the stronger of the two.",
+      "content": "A woman I know lost her husband three years ago and still has not erased his voicemail. It is nothing - twelve seconds of him saying he picked up the milk and would be home soon, the way you say things to someone you assume you will see in an hour. She plays it sometimes, not to grieve, but because the sound of him saying her name is a thing the grave did not get to take.\n\nWhen she told me this she said something I have not been able to put down. \"People think the love stops when the person does. It doesn't. It just has nowhere to go for a while.\" She was describing, without knowing it, the exact thing the Song says out loud: that love is as strong as death. Not that love never feels death - she of all people knows it does - but that love does not lose to it. It stands on death's own ground and keeps its feet.\n\nThat is the strange courage of this book. It does not pretend the lovers are safe, or that the world is gentle, or that nothing can come between them. It looks straight at the one power that takes everyone, calls it by name, and says: this love is its match."
+    },
+    {
+      "type": "insight",
+      "heading": "As Strong As Death — Then Stronger",
+      "body": "Sit with the precise wording of Song 8:6. The poet does not write that love is stronger than death. He writes that love is as strong as death - its equal, its match, able to stand toe to toe with the grave and not be moved. That is already an astonishing claim. In the world the poet knew, nothing was as strong as death. Kings died, lovers died, the wise and the foolish went down to Sheol alike. To say love is its equal is to say love is the only thing that does not lose.\n\nThis is the center of the day, and it is where the Song quietly reaches past itself. Because the book can say love is as strong as death, but it cannot show it. The lovers in the poem still age; the bride will one day stand at a grave. The Song raises the claim and then holds it, unfinished, like a note left ringing. It waits for someone who can do what the poem can only sing - someone who will not merely match death but walk into it and come back out the other side, still in love, still calling the beloved by name.\n\nThe seal pressed over the heart, the flame that mighty waters cannot quench, the love that all the wealth of a house could never buy - these are not exaggerations of human romance. They are the size of the thing the whole Bible is reaching toward. The Song gives us the longing. The rest of Scripture gives us the One who answers it.",
+      "historicalContext": "The Song was sung at Jewish weddings and, by long tradition, read aloud each year at Passover - the feast of God redeeming His people, His bride, out of slavery. To read a love song at the festival of the Exodus was to say plainly what the rabbis already believed: that the rescue from Egypt was a love story, and that the LORD had bound Himself to Israel the way a husband binds himself to a wife.",
+      "fascinatingFact": "Song 8:6 contains the single hidden appearance of God's name in the entire book. The phrase translated 'the fiercest blaze of all' is shalhevetyah in Hebrew - a flame whose ending, -yah, is the shortened divine name, the same syllable that closes Hallelujah ('praise the LORD'). In a book that never names God openly, His name is finally found burning inside the word for the hottest fire of love.",
+      "content": "Sit with the precise wording of Song 8:6. The poet does not write that love is stronger than death. He writes that love is as strong as death - its equal, its match, able to stand toe to toe with the grave and not be moved. That is already an astonishing claim. In the world the poet knew, nothing was as strong as death. Kings died, lovers died, the wise and the foolish went down to Sheol alike. To say love is its equal is to say love is the only thing that does not lose.\n\nThis is the center of the day, and it is where the Song quietly reaches past itself. Because the book can say love is as strong as death, but it cannot show it. The lovers in the poem still age; the bride will one day stand at a grave. The Song raises the claim and then holds it, unfinished, like a note left ringing. It waits for someone who can do what the poem can only sing - someone who will not merely match death but walk into it and come back out the other side, still in love, still calling the beloved by name.\n\nThe seal pressed over the heart, the flame that mighty waters cannot quench, the love that all the wealth of a house could never buy - these are not exaggerations of human romance. They are the size of the thing the whole Bible is reaching toward. The Song gives us the longing. The rest of Scripture gives us the One who answers it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Song declares that love is as strong as death, that mighty waters cannot quench it, and that no amount of wealth could ever buy it - love that seals itself over the heart and refuses to be swept away.",
+      "modernApplication": "Most of us have settled for love we can manage - love kept small enough that it cannot really hurt us, controlled enough that it cannot really cost us. The Song refuses that. It insists love is meant to be the fiercest blaze in a life, not the safest ember. The question it presses on us is not whether we are loved enough, but whether we have ever let ourselves be loved that fully - by God, and by the people He has given us.",
+      "connectionPoint": "Across Scripture, God keeps reaching for the language of the Song. Through Hosea He woos a wayward Israel back into the wilderness to speak tenderly to her (Hosea 2:14). Through Isaiah He promises, \"as a bridegroom rejoices over his bride, so will your God rejoice over you\" (Isaiah 62:5). The marriage in the Song is the picture God chose, again and again, for what He is like toward His people.",
+      "newTestamentEcho": "Paul takes the Song's covenant marriage and says, plainly, what it was always pointing toward: \"Husbands, love your wives, just as Christ loved the church and gave Himself up for her\" - calling it \"a profound mystery... about Christ and the church\" (Ephesians 5:25, 32). And John ends the Bible not with a courtroom but with a wedding: \"the marriage of the Lamb has come, and His bride has made herself ready\" (Revelation 19:7). The love song that could only sing 'as strong as death' finds, at the cross and the empty tomb, the Bridegroom who proved it true."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you kept love small and safe - and what would it mean to let yourself be loved as fiercely as the Song describes?",
+      "additionalQuestions": [
+        "The bride says, 'I belong to my beloved and he belongs to me.' Could you say that to God today, and mean both halves of it - that you are His, and that He is yours?",
+        "What 'mighty waters' have tried to sweep away your sense of being loved by God - grief, failure, distance, time? Has love held?",
+        "If love is as strong as death, what would change about how you live this one quiet day?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, on this quiet day I am not asked to do anything but be loved by You. Set Yourself as a seal over my heart. Where I have kept You at a safe distance, come close. Where grief or failure has felt like water rising over my head, remind me that no flood can quench Your love. Thank You that the love the Song could only sing, You walked through death to prove. I belong to You, and You belong to me. Let that be enough for today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath - there is nothing to accomplish. Sit for five quiet minutes and let one line of the Song hold you: \"Arise, come away,\" or \"I belong to my beloved and he belongs to me,\" or \"love is as strong as death.\" Don't analyze it. Let yourself be the one being called, the one being loved.",
+      "leavingAtCross": [
+        "The habit of keeping love small enough that it can never really cost or change me",
+        "The lie that God's affection for me depends on what I produce",
+        "The fear that grief, distance, or time has finally swept God's love away"
+      ],
+      "receivingFromCross": [
+        "The truth that I am wanted - not tolerated, but delighted in, called to 'arise and come away'",
+        "A love that meets death on its own ground and does not lose",
+        "The freedom to rest as the beloved, with nothing to prove and nowhere to hide"
+      ],
+      "content": "Today is a sabbath - there is nothing to accomplish. Sit for five quiet minutes and let one line of the Song hold you: \"Arise, come away,\" or \"I belong to my beloved and he belongs to me,\" or \"love is as strong as death.\" Don't analyze it. Let yourself be the one being called, the one being loved."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between saying love is 'stronger than death' and saying, as the Song does, that love is 'as strong as death' - and why does that exact wording matter?",
+        "Why might Israel have called the Song of Songs the most sacred of the writings, and read it at Passover?",
+        "How does the Song's picture of covenant marriage point forward to Christ and the church?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place you have kept love at a safe, manageable distance - with God or with someone He has given you.",
+        "Talk about a 'mighty waters' season when love felt swept away - and whether, looking back, it actually held.",
+        "Ask each other: can you honestly say to God, 'I belong to You and You belong to me'? Where does that get hard?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 2:14",
+          "text": "Therefore, behold, I will allure her and lead her to the wilderness, and there I will speak to her tenderly."
+        },
+        {
+          "reference": "Isaiah 62:5",
+          "text": "...and as a bridegroom rejoices over his bride, so your God will rejoice over you."
+        },
+        {
+          "reference": "Ephesians 5:25, 32",
+          "text": "Husbands, love your wives, just as Christ loved the church and gave Himself up for her... This mystery is profound, but I am speaking about Christ and the church."
+        },
+        {
+          "reference": "Revelation 19:7",
+          "text": "Let us rejoice and exult and give Him the glory. For the marriage of the Lamb has come, and His bride has made herself ready."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs 2, 6, and 8",
+          "note": "Read all three chapters aloud, slowly, in one sitting. Notice the movement: chapter 2's invitation ('Arise, come away'), chapter 6's belonging ('I belong to my beloved'), chapter 8's claim ('love is as strong as death'). Let it be a poem before you make it a lesson."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Bride (the Shulammite)",
+      "title": "The Beloved of the Song",
+      "description": "The unnamed woman whose voice carries most of the Song - sunburned from working her family's vineyard, sure of her own beauty and surer of her beloved's love. She is the one who says the book's central line, 'I belong to my beloved and he belongs to me,' and who asks to be set as a seal over his heart. By long tradition she is read as a figure of God's people - Israel, and then the church - loved not for being flawless but for being His.",
+      "keyQuote": "I belong to my beloved and he belongs to me; he pastures his flock among the lilies.",
+      "lessonForUs": "The bride does not earn the love she sings about; she simply belongs to it and lets it claim her. That is the whole posture of the seeking soul - not performing for love, but resting in being wanted. The Bridegroom who calls 'Arise, come away' is the same Lord who, at the cross, proved His love stronger than the death the Song could only name.",
+      "heading": "The Beloved of the Song"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2427,
+  "scriptureReference_full": "Song of Songs 2, 6, 8 (Song 2:10-13; 6:3; 8:6-7 quoted)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (azzah kammavet ahavah; shalhevetyah, the hidden divine name -yah in Song 8:6) reflects standard lexical sources and the traditional Jewish reading of the Song as covenant love, read at Passover and called by Rabbi Akiva the Holy of Holies among the Writings (Mishnah, Yadayim 3:5)."
+  ]
 }

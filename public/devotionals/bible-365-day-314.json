@@ -1,38 +1,176 @@
 {
   "day": 314,
-  "title": "John: The Word + I Ams — Day 6 — Deeper Dive",
-  "teaser": "Day 314 of Bible 365 — John 1-7",
+  "title": "The Name That Became Bread",
+  "teaser": "John opens with the Word who made everything, then watches that Word say \"I am\" — the name spoken at the burning bush — and offer Himself as bread. Day 6 gathers the week's thread.",
   "framework": "John 1-7 — John: The Word + I Ams",
   "scriptureReference": "John 1-7",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 314"
+      "type": "scripture",
+      "reference": "John 1:1-5, 14",
+      "translation": "BSB",
+      "emphasis": [
+        "the Word was God",
+        "The Word became flesh",
+        "the darkness has not overcome it"
+      ],
+      "greekOriginal": "Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν, καὶ Θεὸς ἦν ὁ Λόγος.",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made. In Him was life, and that life was the light of men. The Light shines in the darkness, and the darkness has not overcome it. ... The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am; I myself am",
+      "rootMeaning": "Egō is the emphatic 'I' - Greek already carries the 'I' inside its verbs, so saying egō on top of eimi is like leaning on the word. Eimi is the plain verb 'to be.' Together it lands heavier than a man simply saying his name: it is closer to 'I, I am.'",
+      "usageNote": "When the Greek Old Testament has God answer Moses at the bush - 'I AM WHO I AM' (Exodus 3:14) - it reaches for this same egō eimi. John lets Jesus say it again and again: 'I am the bread of life' (6:35), 'I am the living bread' (6:51), and later, with nothing attached, simply 'I am' (8:58), after which the crowd picks up stones. The grammar is ordinary. The claim is not.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I - stated on purpose, with weight"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "I am, I exist - the verb of being itself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "Λόγος / λόγος",
+          "reference": "Logos, the 'Word' of John 1:1 - speech, reason, the utterance that does what it says. The Word who was God in the prologue is the same one who says egō eimi in the chapters that follow."
+        }
+      ],
+      "strongsNumber": "G1473 / G1510",
+      "definition": "the emphatic first-person 'I am'; in John, the self-designation Jesus repeatedly takes up",
+      "usage": "John records seven 'I am' sayings with a predicate (bread, light, door, shepherd, resurrection, way, vine) and several absolute ones with nothing after them. The first week of John, chapters 1 through 7, lays the foundation: the eternal Word steps into His own creation and begins to speak the divine name in the first person."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Author Walks Onstage",
+      "body": "Most of the Bible begins a story and tells you what happened. John begins before the beginning. He reaches back behind Genesis 1:1 and says that when God spoke creation into being, there was already a Word there - with God, and somehow also God - and through that Word everything that exists was made.\n\nThen John does something startling. He says the Word became flesh and pitched His tent among us. The one through whom the stars were hung grew tired, got thirsty, wept at a grave. The eternal author of the story wrote Himself into it as a character, and the characters did not recognize Him.\n\nWatch how the first seven chapters move. After the prologue, John the Baptist points at Jesus and calls Him 'the Lamb of God, who takes away the sin of the world' (1:29). Jesus turns water into wine, clears the temple, tells Nicodemus a person must be born again. He sits at a well and offers a Samaritan woman water that becomes 'a fount of water springing up to eternal life' (4:14). He heals on the Sabbath and tells the religious leaders that the Scriptures they have memorized are not the destination - they 'testify about Me' (5:39). Then He feeds five thousand and says the thing the crowd cannot stomach: 'I am the bread of life' (6:35).\n\nEvery scene is the Word doing in flesh what the prologue said He is by nature - giving life, giving light, making the unseen God known.",
+      "keyInsight": "John's first seven chapters are one long demonstration of the prologue. Everything the opening poem claims about the Word, the rest of the book shows the man from Nazareth doing.",
+      "content": "Most of the Bible begins a story and tells you what happened. John begins before the beginning. He reaches back behind Genesis 1:1 and says that when God spoke creation into being, there was already a Word there - with God, and somehow also God - and through that Word everything that exists was made.\n\nThen John does something startling. He says the Word became flesh and pitched His tent among us. The one through whom the stars were hung grew tired, got thirsty, wept at a grave. The eternal author of the story wrote Himself into it as a character, and the characters did not recognize Him.\n\nWatch how the first seven chapters move. After the prologue, John the Baptist points at Jesus and calls Him 'the Lamb of God, who takes away the sin of the world' (1:29). Jesus turns water into wine, clears the temple, tells Nicodemus a person must be born again. He sits at a well and offers a Samaritan woman water that becomes 'a fount of water springing up to eternal life' (4:14). He heals on the Sabbath and tells the religious leaders that the Scriptures they have memorized are not the destination - they 'testify about Me' (5:39). Then He feeds five thousand and says the thing the crowd cannot stomach: 'I am the bread of life' (6:35).\n\nEvery scene is the Word doing in flesh what the prologue said He is by nature - giving life, giving light, making the unseen God known."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Word You Already Know by Heart",
+      "body": "There is a verse so worn smooth by use that we have nearly stopped hearing it. It is painted on stadium signs and printed on coffee cups. John 3:16: 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life.'\n\nI watched a man read it slowly at a funeral once - not the pastor, a brother of the one who had died, holding a slip of paper that shook in his hands. He was not a churchgoer. Someone had handed him the verse to read and he had clearly never spoken it aloud before. He stumbled on 'one and only Son,' stopped, started again. And in his stumbling the sentence came back to life, because he was not reciting it. He was hearing it. The God who made everything did not stand at a safe distance and pity us. He gave. He came in person. The next verse says it plainly: God did not send His Son 'to condemn the world, but to save the world through Him' (3:17).\n\nThat is the whole engine of John 1 through 7. The Word did not stay a word. Love that only speaks is still at a distance. This love took on a body and walked into the room.",
+      "connectionToTheme": "The most familiar verse in John is the prologue made personal: the eternal Word, given out of love, in the flesh, to save rather than condemn.",
+      "content": "There is a verse so worn smooth by use that we have nearly stopped hearing it. It is painted on stadium signs and printed on coffee cups. John 3:16: 'For God so loved the world that He gave His one and only Son, that everyone who believes in Him shall not perish but have eternal life.'\n\nI watched a man read it slowly at a funeral once - not the pastor, a brother of the one who had died, holding a slip of paper that shook in his hands. He was not a churchgoer. Someone had handed him the verse to read and he had clearly never spoken it aloud before. He stumbled on 'one and only Son,' stopped, started again. And in his stumbling the sentence came back to life, because he was not reciting it. He was hearing it. The God who made everything did not stand at a safe distance and pity us. He gave. He came in person. The next verse says it plainly: God did not send His Son 'to condemn the world, but to save the world through Him' (3:17).\n\nThat is the whole engine of John 1 through 7. The Word did not stay a word. Love that only speaks is still at a distance. This love took on a body and walked into the room."
+    },
+    {
+      "type": "insight",
+      "heading": "The Name at the Bush, Spoken in a Body",
+      "body": "Here is the center the whole week has been circling. When Moses asked God His name at the burning bush, the answer was 'I AM WHO I AM' (Exodus 3:14) - the name that means God simply is, depending on nothing, the ground under everything else. No one presumed to take that name on their lips as their own.\n\nThen in John 6, a tired crowd that had eaten free bread the day before comes looking for more, and the carpenter's son tells them, 'I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst' (6:35). Egō eimi. The bush's own grammar. And He does not stop there: 'I am the living bread that came down from heaven... this bread, which I will give for the life of the world, is My flesh' (6:51).\n\nFollow what that does to the prologue. The Word who was God became flesh - and now that flesh says I AM and calls itself bread to be eaten and given for the world. The unseen God of the bush, whose name could not be grasped, has become small enough to be received like a meal. The distance that began at the bush, where Moses had to take off his sandals, closes here, where Jesus says: take, eat. The same I AM, no longer fenced by holy fire, but offered.",
+      "historicalContext": "First-century Jewish reverence for the divine name ran deep: the name revealed at the bush was treated as too holy to pronounce, and substitute words were read in its place. Against that backdrop, a Galilean repeatedly saying egō eimi - especially in the bare form of John 8:58, 'before Abraham was born, I am' - was not a vague spiritual claim. It was heard as taking up God's own name, which is why John reports that the crowd reached for stones.",
+      "fascinatingFact": "John 6 deliberately echoes the wilderness. Israel ate manna - 'bread from heaven' - that kept them alive one day at a time and then rotted. Jesus stands in that memory and says He is the true bread come down from heaven, the one the manna was only a picture of: not bread that staves off death for a morning, but bread that gives life that does not end.",
+      "content": "Here is the center the whole week has been circling. When Moses asked God His name at the burning bush, the answer was 'I AM WHO I AM' (Exodus 3:14) - the name that means God simply is, depending on nothing, the ground under everything else. No one presumed to take that name on their lips as their own.\n\nThen in John 6, a tired crowd that had eaten free bread the day before comes looking for more, and the carpenter's son tells them, 'I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst' (6:35). Egō eimi. The bush's own grammar. And He does not stop there: 'I am the living bread that came down from heaven... this bread, which I will give for the life of the world, is My flesh' (6:51).\n\nFollow what that does to the prologue. The Word who was God became flesh - and now that flesh says I AM and calls itself bread to be eaten and given for the world. The unseen God of the bush, whose name could not be grasped, has become small enough to be received like a meal. The distance that began at the bush, where Moses had to take off his sandals, closes here, where Jesus says: take, eat. The same I AM, no longer fenced by holy fire, but offered."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The eternal Word, who was with God and was God, became flesh and took up God's own name - I AM - calling Himself bread for the hungry, light for the dark, and living water for the thirsty.",
+      "modernApplication": "We still come to Jesus the way that crowd in John 6 did - looking for the next thing that will fill us, the bread that wears off by morning. The week's invitation is to stop chasing the loaves and receive the One who gives Himself. Not a teaching to admire from a distance, but a person to take in.",
+      "connectionPoint": "John keeps tying Jesus back to the things that point to Him. He says of the Scriptures, 'These are the very words that testify about Me' (5:39), and 'If you had believed Moses, you would believe Me, because he wrote about Me' (5:46). The manna, the well, the temple, the feast - all of them were arrows. The first seven chapters quietly gather every arrow and aim it at one face.",
+      "newTestamentEcho": "On the last day of the feast Jesus stands and shouts the offer plainly: 'If anyone is thirsty, let him come to Me and drink. Whoever believes in Me... Streams of living water will flow from within him' (7:37-38). The bread of chapter 6 and the water of chapter 7 are the same gift - the I AM, given to be received, becoming a spring inside the one who takes Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "You have spent a week with the Word made flesh. Where have you been treating Jesus as a teaching to study rather than bread to receive?",
+      "additionalQuestions": [
+        "The crowd in John 6 wanted more free bread; they did not want the One offering Himself. What 'loaves' are you chasing that the bread of life is meant to replace?",
+        "If 'I am the bread of life' is true, what does it change about the particular hunger you are carrying today?",
+        "Jesus said the Scriptures testify about Him. When you read the Bible, do you end at the text - or does it carry you to a person?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Word made flesh, You were there before the beginning, and You came near enough to be eaten and given. Forgive me for chasing the bread that wears off and ignoring the bread that lasts. I have studied You and stayed hungry. Today let me come to You and not just about You. You said whoever comes will never be turned away - so here I am. Be my bread. Be my light in the dark I cannot fix. Be the spring inside me when I run dry. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Read John 6:35 aloud, slowly, twice. The first time, hear it as a claim about who Jesus is. The second time, hear it as an invitation to you. Then name one hunger you have been trying to feed your own way, and bring it to Him instead of to the next loaf.",
+      "leavingAtCross": [
+        "The habit of admiring Jesus as an idea while staying spiritually starved",
+        "The endless chasing of loaves that satisfy by morning and leave me empty by night",
+        "The quiet assumption that God is too holy and far to be received personally"
+      ],
+      "receivingFromCross": [
+        "The Word who became flesh so that the unseen God could be known and held",
+        "Bread that ends the deepest hunger and water that becomes a spring inside",
+        "The promise that the one who comes to Him will never be driven away (6:37)"
+      ],
+      "content": "Read John 6:35 aloud, slowly, twice. The first time, hear it as a claim about who Jesus is. The second time, hear it as an invitation to you. Then name one hunger you have been trying to feed your own way, and bring it to Him instead of to the next loaf."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does John 1:1-14 set up everything that happens in chapters 2 through 7? What does the prologue claim that the stories then demonstrate?",
+        "Why would the phrase 'I am the bread of life' have sounded like more than a metaphor to a first-century Jewish crowd?",
+        "Jesus says both the Scriptures and Moses 'testify about Me.' What does that mean for how we read the Old Testament?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about the difference between knowing facts about Jesus and receiving Him as bread. Where do you each tend to stop?",
+        "Name one 'loaf' - a comfort, achievement, or relief - you have been chasing that was never meant to carry the weight you put on it.",
+        "Ask each other: if Jesus really is the I AM standing in front of you offering Himself, what would it look like this week to come and drink?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "John 1:18",
+          "text": "No one has ever seen God, but the one and only Son, who is Himself God and is at the Father's side, has made Him known."
+        },
+        {
+          "reference": "John 4:14",
+          "text": "But whoever drinks the water I give him will never thirst. Indeed, the water I give him will become in him a fount of water springing up to eternal life."
+        },
+        {
+          "reference": "John 6:51",
+          "text": "I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And this bread, which I will give for the life of the world, is My flesh."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 6:25-59",
+          "note": "Read the full bread of life discourse in one sitting, watching the crowd move from wanting free bread to walking away. Ask why the offer was harder to receive than the miracle."
+        },
+        {
+          "type": "book",
+          "title": "Exodus 3:1-15",
+          "note": "Read the burning bush, then John 6 and 8 beside it, and listen for the same name in two mouths."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus, the Word Made Flesh",
+      "title": "The I AM Who Became Bread",
+      "description": "In John's Gospel Jesus is presented as the eternal Word through whom all things were made (1:3), who took on flesh and lived among us (1:14). Through the first seven chapters He reveals Himself in signs and sayings - turning water to wine, offering living water, feeding thousands, and then naming Himself with the divine 'I am.' He is fully God, who has made the Father known, and fully human, hungry and weary on the road, the one of whom John the Baptist said, 'Look, the Lamb of God, who takes away the sin of the world' (1:29).",
+      "keyQuote": "I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.",
+      "lessonForUs": "The God whose name could not be spoken at the bush became near enough to be received like a meal. Knowing about Him was never the goal; coming to Him is. The Word still says, 'Come to Me' - and still will not turn away the one who does.",
+      "heading": "The I AM Who Became Bread"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2323,
+  "scriptureReference_full": "John 1-7 (focus: John 1:1-5, 14; 3:16-17; 6:35, 51)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi, G1473/G1510; Logos) reflects standard lexical sources; the link between Jesus' 'I am' sayings and the Septuagint of Exodus 3:14 is a widely recognized reading in Johannine scholarship."
+  ]
 }

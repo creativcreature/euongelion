@@ -1,38 +1,186 @@
 {
   "day": 354,
-  "title": "Hebrews: Faith Hall + Endurance — Day 4 — Application",
-  "teaser": "Day 354 of Bible 365 — Hebrews 11-12",
+  "title": "Run the Race They Couldn't Finish",
+  "teaser": "A whole chapter of heroes dies without the promise in hand. Then the writer points past every one of them to the only Runner who finished.",
   "framework": "Hebrews 11-12 — Hebrews: Faith Hall + Endurance",
   "scriptureReference": "Hebrews 11-12",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 354"
+      "type": "scripture",
+      "reference": "Hebrews 12:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "great cloud of witnesses",
+        "run with endurance",
+        "author and perfecter of our faith"
+      ],
+      "greekOriginal": "τρέχωμεν τὸν προκείμενον ἡμῖν ἀγῶνα, ἀφορῶντες εἰς τὸν τῆς πίστεως ἀρχηγὸν καὶ τελειωτὴν Ἰησοῦν",
+      "passage": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us. Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hebrews 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hebrews 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὑπομονή",
+      "transliteration": "hypomonē",
+      "pronunciation": "hoo-po-mo-NAY",
+      "meaning": "endurance, steadfast remaining-under, the patience of staying put when leaving would be easier",
+      "rootMeaning": "From hypo (under) and menō (to remain, to abide). Not gritted teeth and clenched fists, but the strength to stay under a weight without throwing it off - to keep your place when the load tells you to quit.",
+      "usageNote": "When Hebrews says 'let us run with endurance,' the word is hypomonē. It is the same root behind the verb the writer uses three times for Jesus in chapter 12 - He 'endured' the cross (12:2), He 'endured' hostility from sinners (12:3). Christ does not ask the church to remain under a weight He refused. He carried the heaviest one first.",
+      "wordByWord": [
+        {
+          "word": "τρέχωμεν",
+          "transliteration": "trechōmen",
+          "meaning": "let us run - a foot race, not a stroll"
+        },
+        {
+          "word": "ἀγῶνα",
+          "transliteration": "agōna",
+          "meaning": "the contest, the race set before us - the root of our word 'agony'"
+        },
+        {
+          "word": "ἀφορῶντες",
+          "transliteration": "aphorōntes",
+          "meaning": "looking away from everything else and fixing the eyes on one thing"
+        },
+        {
+          "word": "ἀρχηγὸν",
+          "transliteration": "archēgon",
+          "meaning": "author, founder, pioneer - the one who goes first and opens the way"
+        },
+        {
+          "word": "τελειωτὴν",
+          "transliteration": "teleiōtēn",
+          "meaning": "perfecter, finisher - the one who carries it all the way to completion"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀρχηγὸς / τελειωτής",
+          "reference": "Author and Perfecter. He starts faith and He finishes it. The runner who breaks the trail is also the one waiting at the line. No other name in the whole faith hall is given both titles - only Jesus."
+        }
+      ],
+      "strongsNumber": "G5281",
+      "definition": "patient endurance, steadfastness, the capacity to remain under pressure without giving way",
+      "usage": "Hypomonē is the runner's word, not the spectator's. It is what you spend on the long middle of a race, when the start is forgotten and the finish is not yet in sight."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hebrews: Faith Hall + Endurance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the founder + perfecter (Heb 12:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Chapter That Ends Without the Prize",
+      "body": "Hebrews 11 is the most famous roll call in the Bible. By faith Noah built. By faith Abraham went out, not knowing where he was going. By faith Moses chose to suffer with God's people rather than enjoy the fleeting pleasures of sin. The list gathers speed - patriarchs, judges, prophets - until it breaks into something harder: others were tortured, stoned, sawed in two, wandering in deserts and mountains, hiding in caves. The world, the writer says, was not worthy of them.\n\nThen comes the line that should stop us cold. After all that faith, all that obedience, all that blood: 'These were all commended for their faith, yet they did not receive what was promised' (Hebrews 11:39). Every name in the chapter died with the promise still out ahead of them, unfulfilled. They saw it 'from afar' and welcomed it, and then they died as 'strangers and exiles on the earth' (11:13).\n\nThis is the honest center of the chapter, and the writer of Hebrews refuses to soften it. Faith, in this letter, is not the thing that makes the waiting end. It is the thing that holds while the waiting continues. The heroes are not heroes because they got what they wanted. They are heroes because they kept believing a God who had not yet paid out.",
+      "keyInsight": "The faith hall of Hebrews 11 is a chapter full of people who died before the promise came. Their faith was not rewarded with arrival - it was proven by endurance.",
+      "content": "Hebrews 11 is the most famous roll call in the Bible. By faith Noah built. By faith Abraham went out, not knowing where he was going. By faith Moses chose to suffer with God's people rather than enjoy the fleeting pleasures of sin. The list gathers speed - patriarchs, judges, prophets - until it breaks into something harder: others were tortured, stoned, sawed in two, wandering in deserts and mountains, hiding in caves. The world, the writer says, was not worthy of them.\n\nThen comes the line that should stop us cold. After all that faith, all that obedience, all that blood: 'These were all commended for their faith, yet they did not receive what was promised' (Hebrews 11:39). Every name in the chapter died with the promise still out ahead of them, unfulfilled. They saw it 'from afar' and welcomed it, and then they died as 'strangers and exiles on the earth' (11:13).\n\nThis is the honest center of the chapter, and the writer of Hebrews refuses to soften it. Faith, in this letter, is not the thing that makes the waiting end. It is the thing that holds while the waiting continues. The heroes are not heroes because they got what they wanted. They are heroes because they kept believing a God who had not yet paid out."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Relay Nobody Finished Alone",
+      "body": "There is a kind of race where no single runner ever crosses the line. The relay. You take the baton on a curve that someone else set up for you, you run your stretch as hard as your legs will carry it, and then - still short of the tape - you hand it on and step off the track, gasping, finished with your part but not with the race.\n\nFrom the inside, every leg of a relay feels incomplete. You run flat out and you do not get to break the tape. You spend everything and someone else gets the line. If you only ever ran one leg, you might believe the whole thing was futile - all that effort, and you never finished.\n\nBut a relay is not measured by any one runner reaching the end. It is measured by the baton arriving. The runner who hands off in exhaustion has not failed to finish. She has carried her stretch so the baton could keep moving toward a line she will not personally cross - and trusted that someone faster was waiting downfield.\n\nThat is Hebrews 11. A line of runners, each handing the baton forward, none of them breaking the tape. They ran their leg in the dark and passed it on.",
+      "connectionToTheme": "The faith hall runs like a relay: each generation carries the promise as far as it can and hands it on, trusting a finisher they cannot see.",
+      "content": "There is a kind of race where no single runner ever crosses the line. The relay. You take the baton on a curve that someone else set up for you, you run your stretch as hard as your legs will carry it, and then - still short of the tape - you hand it on and step off the track, gasping, finished with your part but not with the race.\n\nFrom the inside, every leg of a relay feels incomplete. You run flat out and you do not get to break the tape. You spend everything and someone else gets the line. If you only ever ran one leg, you might believe the whole thing was futile - all that effort, and you never finished.\n\nBut a relay is not measured by any one runner reaching the end. It is measured by the baton arriving. The runner who hands off in exhaustion has not failed to finish. She has carried her stretch so the baton could keep moving toward a line she will not personally cross - and trusted that someone faster was waiting downfield.\n\nThat is Hebrews 11. A line of runners, each handing the baton forward, none of them breaking the tape. They ran their leg in the dark and passed it on."
+    },
+    {
+      "type": "insight",
+      "heading": "Why the List Stops",
+      "body": "Watch where chapter 11 leaves off and chapter 12 begins. After the long roll of names, the writer adds one sentence that changes the whole shape of the thing: 'God had planned something better for us, so that together with us they would be made perfect' (Hebrews 11:40). The heroes were not finished apart from us, and we are not finished apart from them. The race is one race, and it has only one finish line - and none of them reached it on their own.\n\nThen, instead of adding a final name to the list, the writer stops the list and points. 'Let us fix our eyes on Jesus, the author and perfecter of our faith' (12:2). After Noah, after Abraham, after Moses, after the tortured and the sawn-in-two, there is one name the list cannot hold as just another entry. Every other runner handed the baton forward. This one is the line itself.\n\nThe Greek piles the two titles together on purpose: archēgos and teleiōtēs - author and perfecter, the one who starts faith and the one who finishes it. Every hero in chapter 11 began their leg with a baton already in motion and ended it with the baton still moving. Jesus is the only Runner in the whole passage who both started the race and crossed the line. He 'endured the cross, scorning its shame, and sat down' (12:2). The others are still waiting. He is already seated.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure to drift back from Christ to an older, safer religion to escape persecution (see Hebrews 10:32-39). The faith hall is the writer's answer to people tempted to quit: this is what your own ancestors' faith always looked like - costly, unfinished in their lifetime, and aimed at a promise still ahead.",
+      "fascinatingFact": "The phrase 'great cloud of witnesses' (Hebrews 12:1) uses a word, martys, that can mean both 'spectator' and 'one who testifies' - the same root that gives us 'martyr.' The cloud is not merely watching us run; they are the evidence that the race can be run, having run it themselves.",
+      "content": "Watch where chapter 11 leaves off and chapter 12 begins. After the long roll of names, the writer adds one sentence that changes the whole shape of the thing: 'God had planned something better for us, so that together with us they would be made perfect' (Hebrews 11:40). The heroes were not finished apart from us, and we are not finished apart from them. The race is one race, and it has only one finish line - and none of them reached it on their own.\n\nThen, instead of adding a final name to the list, the writer stops the list and points. 'Let us fix our eyes on Jesus, the author and perfecter of our faith' (12:2). After Noah, after Abraham, after Moses, after the tortured and the sawn-in-two, there is one name the list cannot hold as just another entry. Every other runner handed the baton forward. This one is the line itself.\n\nThe Greek piles the two titles together on purpose: archēgos and teleiōtēs - author and perfecter, the one who starts faith and the one who finishes it. Every hero in chapter 11 began their leg with a baton already in motion and ended it with the baton still moving. Jesus is the only Runner in the whole passage who both started the race and crossed the line. He 'endured the cross, scorning its shame, and sat down' (12:2). The others are still waiting. He is already seated."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hebrews tells exiles to run with endurance because the heroes who went before them ran the same race, paid for it with their lives, and still died before the promise arrived - and yet Christ, the author and perfecter, has already finished it ahead of them all.",
+      "modernApplication": "You are not waiting on a finish line you have to reach by your own stamina. You are running a leg. The question of any given day is not 'Have I arrived?' but 'Am I still carrying the baton, with my eyes on the One who already crossed?' Endurance is not pretending the race is short. It is staying under the weight one more day because you trust who is waiting at the end.",
+      "connectionPoint": "The pull to quit that the first readers felt - to slip back to something safer than following a crucified Messiah - is the same pull that whispers when faith costs more than we expected and pays out slower than we hoped. Hebrews does not answer it with a shortcut. It answers it with a longer view: a cloud of witnesses behind, a finisher ahead, and a race worth not abandoning.",
+      "newTestamentEcho": "The whole of Hebrews 11-12 is itself the New Testament reading the Old: every faith-hall name is shown to have been running toward Christ before they had His name. 'Consider Him who endured such hostility from sinners, so that you will not grow weary and lose heart' (Hebrews 12:3). The cure for the quitting heart is not effort. It is a long look at Jesus."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of your faith feels like running a leg you won't get to finish - effort spent toward a promise still out ahead of you?",
+      "additionalQuestions": [
+        "What 'encumbrance' (Hebrews 12:1) are you carrying that isn't sin, exactly, but is slowing the race - a worry, a comparison, a weight you could set down?",
+        "When you grow weary, where do your eyes drift - to the runners around you, to the distance still to cover, or to Jesus already seated at the finish?",
+        "Who is in your personal 'cloud of witnesses' - people whose endurance proves to you that this race can be run?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I am tired of running toward things I cannot see. Some days I want to set the baton down and slip back to something easier. Thank You that You did not. You are the author who began this faith in me and the perfecter who will finish it - You endured the cross and sat down, and You are not waiting for me to be strong enough to reach You by myself. Let me throw off what entangles. Let me run my leg today. And when my eyes wander to the distance or the runners beside me, draw them back to You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one weight - not a sin, just a slowing encumbrance - and deliberately set it down for the day's run: one worry you keep rehearsing, one comparison you keep checking, one outcome you keep trying to control. Run the next stretch lighter, with your eyes on Jesus, not the distance.",
+      "leavingAtCross": [
+        "The lie that faith has failed because the promise hasn't arrived yet",
+        "The encumbrances I carry that aren't sin but are slowing the race - worry, comparison, the need to control the outcome",
+        "The temptation to drift back to something safer than following Christ when the road gets long"
+      ],
+      "receivingFromCross": [
+        "A race I do not have to finish by my own stamina, run alongside a great cloud who ran it before me",
+        "Eyes fixed on the author and perfecter who already crossed the line for me",
+        "Endurance for one more leg - the strength to remain under the weight, because the One who waits at the end endured the cross first"
+      ],
+      "content": "Today, name one weight - not a sin, just a slowing encumbrance - and deliberately set it down for the day's run: one worry you keep rehearsing, one comparison you keep checking, one outcome you keep trying to control. Run the next stretch lighter, with your eyes on Jesus, not the distance."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Hebrews 11:39 says the heroes 'did not receive what was promised.' How does that change what 'faith' means in this chapter - is it the thing that ends the waiting, or the thing that holds during it?",
+        "Jesus is given two titles in Hebrews 12:2 that no one else in the faith hall receives. What are they, and why does it matter that He has both?",
+        "What is the difference between a 'sin that so easily entangles' and an 'encumbrance' (Hebrews 12:1) - and why does the writer tell us to throw off both?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one promise you've been waiting on long enough that you've been tempted to stop believing it. Say it out loud to each other.",
+        "Talk about a weight you're carrying that isn't a sin but is slowing your race - and ask each other for help setting it down.",
+        "Who is in your cloud of witnesses? Tell each other about one person whose endurance makes you believe you can keep running."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11:1",
+          "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see."
+        },
+        {
+          "reference": "Hebrews 11:13",
+          "text": "All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar. And they acknowledged that they were strangers and exiles on the earth."
+        },
+        {
+          "reference": "Hebrews 12:3",
+          "text": "Consider Him who endured such hostility from sinners, so that you will not grow weary and lose heart."
+        },
+        {
+          "reference": "Hebrews 12:11",
+          "text": "No discipline seems enjoyable at the time, but painful. Later on, however, it yields a harvest of righteousness and peace to those who have been trained by it."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11-12",
+          "note": "Read the faith hall straight through into chapter 12 without stopping at the chapter break. Notice that 'Therefore' (12:1) makes the great cloud of witnesses the direct consequence of every name just listed - the race instruction grows out of the roll call."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus, the Author and Perfecter",
+      "title": "The Finisher of Faith",
+      "description": "In a chapter built to honor the faithful, the writer of Hebrews refuses to make Jesus merely the last and greatest name on the list. He is given a category of His own: archēgos and teleiōtēs - the one who authors faith and the one who completes it. Where every other runner carried the baton forward and died short of the promise, Christ 'for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God' (Hebrews 12:2). He is the only one in the passage already seated. The race the heroes ran in the dark, He ran all the way to the light.",
+      "keyQuote": "Let us fix our eyes on Jesus, the author and perfecter of our faith.",
+      "lessonForUs": "You do not run toward a finish line you must reach by your own strength. You run toward a Person who already crossed it - and who began the faith in you that He has promised to complete. Endurance is not gritting your teeth; it is keeping your eyes on the One who endured first.",
+      "heading": "The Finisher of Faith"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1803,
+  "scriptureReference_full": "Hebrews 11-12",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (hypomonē G5281; archēgos / teleiōtēs in Hebrews 12:2) reflects standard New Testament lexical sources."
+  ]
 }

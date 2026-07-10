@@ -1,38 +1,191 @@
 {
   "day": 26,
   "title": "Bury your idols",
-  "teaser": "Day 26 of Bible 365 — Genesis 35:1-15",
+  "teaser": "Day 26 of Bible 365 — Genesis 35:1-15. God calls Jacob back to the place of his first promise. But first the foreign gods go into the ground, and the man who left as a fugitive comes home with a new name.",
   "framework": "Genesis 35:1-15 — New name, new altar",
   "scriptureReference": "Genesis 35:1-15",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 26"
+      "type": "scripture",
+      "reference": "Genesis 35:1-15",
+      "translation": "BSB",
+      "emphasis": [
+        "Get rid of the foreign gods",
+        "Build an altar there",
+        "your name will be Israel",
+        "Jacob called the place Bethel"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר אֱלֹהִים אֶל־יַעֲקֹב קוּם עֲלֵה בֵית־אֵל וְשֶׁב־שָׁם וַעֲשֵׂה־שָׁם מִזְבֵּחַ",
+      "passage": "Then God said to Jacob, \"Arise, go up to Bethel, and settle there. Build an altar there to the God who appeared to you when you fled from your brother Esau.\" So Jacob told his household and all who were with him, \"Get rid of the foreign gods that are among you. Purify yourselves and change your garments. Then let us arise and go to Bethel. I will build an altar there to God, who answered me in my day of distress. He has been with me wherever I have gone.\" So they gave Jacob all their foreign gods and all their earrings, and Jacob buried them under the oak near Shechem. As they set out, a terror from God fell over the surrounding cities, so that they did not pursue Jacob's sons. So Jacob and everyone with him arrived in Luz (that is, Bethel) in the land of Canaan. There Jacob built an altar, and he called that place El-bethel, because it was there that God had revealed Himself to Jacob as he fled from his brother. Now Deborah, Rebekah's nurse, died and was buried under the oak below Bethel. So Jacob named it Allon-bachuth. After Jacob had returned from Paddan-aram, God appeared to him again and blessed him. And God said to him, \"Though your name is Jacob, you will no longer be called Jacob. Instead, your name will be Israel.\" So God named him Israel. And God told him, \"I am God Almighty. Be fruitful and multiply. A nation—even a company of nations—shall come from you, and kings shall descend from you. The land that I gave to Abraham and Isaac I will give to you, and I will give this land to your descendants after you.\" Then God went up from the place where He had spoken with him. So Jacob set up a pillar in the place where God had spoken with him—a stone marker—and he poured out a drink offering on it and anointed it with oil. Jacob called the place where God had spoken with him Bethel."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 35:1-15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 35:1-15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בֵּית־אֵל",
+      "transliteration": "Beit-El",
+      "pronunciation": "bayt-EL",
+      "meaning": "Bethel — \"house of God\"",
+      "rootMeaning": "Two words pressed together: bayit, a house or household, and El, God. Not a temple of carved stone but a dwelling place, a home where God is found. Jacob named the spot this twenty years earlier, after a dream of a stairway to heaven (Genesis 28:19).",
+      "usageNote": "When Jacob returns in chapter 35 he renames it once more: El-Bethel, \"the God of the house of God\" (35:7). The shift is small and enormous. The first time he named the place for the experience he had there. The second time he names it for the One he met. The house matters because of its Owner.",
+      "wordByWord": [
+        {
+          "word": "קוּם",
+          "transliteration": "qum",
+          "meaning": "arise, get up — the same verb that opens many of God's callings"
+        },
+        {
+          "word": "עֲלֵה",
+          "transliteration": "aleh",
+          "meaning": "go up — Bethel sits in the hill country; one always 'goes up' to it"
+        },
+        {
+          "word": "מִזְבֵּחַ",
+          "transliteration": "mizbeach",
+          "meaning": "altar — literally 'a place of slaughter,' where an offering is given to God"
+        },
+        {
+          "word": "אֱלֹהֵי הַנֵּכָר",
+          "transliteration": "elohei hannekar",
+          "meaning": "foreign gods — the gods of the stranger, the idols carried in from outside the covenant"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יִשְׂרָאֵל",
+          "reference": "Israel — given first at the Jabbok wrestling (Genesis 32:28) and confirmed here. Traditionally read as 'he struggles with God' or 'God strives'; either way, the name carries El, God, inside it, the way Beit-El does. The man and the place are both named for the God who claimed them."
+        }
+      ],
+      "strongsNumber": "H1008",
+      "definition": "Bethel; 'house of God' — a place and later a town in the hill country of Canaan, north of Jerusalem",
+      "usage": "Bethel appears more than sixty times in the Old Testament. It begins here, as one man's altar over a buried pile of idols, and becomes a fixed landmark of Israel's worship for a thousand years."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: New name, new altar. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ gives a new name (Rev 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Go Back to Where the Promise Was Made",
+      "body": "Twenty years stand between the two halves of Jacob's life. As a young man running for his life from a brother he had cheated, he fell asleep on a stone at a place called Luz and dreamed of a stairway crowded with angels, with God standing above it promising to keep him and bring him home. He woke, named the place Bethel, the house of God, and made a vow. Then he kept running.\n\nWhat followed was twenty years of striving in a far country: two wives he did not plan on, a father-in-law who outmaneuvered him at every turn, flocks won by cunning, a fortune built on bargains. He came back across the Jordan limping from a night of wrestling, was renamed Israel, survived the dreaded reunion with Esau, and then settled near Shechem, where his family was nearly destroyed by violence. By chapter 35, Jacob is a grieving, frightened, compromised man whose household is quietly carrying foreign gods.\n\nAnd God's word to him is not a rebuke. It is a direction. 'Arise, go up to Bethel, and settle there. Build an altar there to the God who appeared to you when you fled.' Go back to where the promise was made. The God who met you in your worst night has been waiting at that altar the whole time.",
+      "keyInsight": "God does not send Jacob forward to something new. He sends him back to Bethel — to the first place grace found him. Sometimes the way home is the way back.",
+      "content": "Twenty years stand between the two halves of Jacob's life. As a young man running for his life from a brother he had cheated, he fell asleep on a stone at a place called Luz and dreamed of a stairway crowded with angels, with God standing above it promising to keep him and bring him home. He woke, named the place Bethel, the house of God, and made a vow. Then he kept running.\n\nWhat followed was twenty years of striving in a far country: two wives he did not plan on, a father-in-law who outmaneuvered him at every turn, flocks won by cunning, a fortune built on bargains. He came back across the Jordan limping from a night of wrestling, was renamed Israel, survived the dreaded reunion with Esau, and then settled near Shechem, where his family was nearly destroyed by violence. By chapter 35, Jacob is a grieving, frightened, compromised man whose household is quietly carrying foreign gods.\n\nAnd God's word to him is not a rebuke. It is a direction. 'Arise, go up to Bethel, and settle there. Build an altar there to the God who appeared to you when you fled.' Go back to where the promise was made. The God who met you in your worst night has been waiting at that altar the whole time."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Drawer Nobody Opened",
+      "body": "A man I knew kept a drawer in his bedroom he never fully opened. It held the things from the years he was drinking — a flask, a few photographs from nights he could not remember, a watch he had been given by a person he had hurt. He told himself it was just a drawer. He had stopped drinking. He was a different man now. But the drawer stayed shut, and he kept the key.\n\nWhen he finally got serious about his marriage again, his counselor asked a question that sounds almost too simple. 'What are you still carrying that belongs to the old life?' He thought about the drawer. He went home, took everything out of it, and for the first time in years actually looked at it. Then he threw most of it away and gave the watch back with an apology.\n\nNothing in that drawer was running his life anymore — that was the thing. He had quit drinking long before. But as long as it stayed there, sealed and kept, it was a foreign god in the house: a small shrine to the man he used to be, a place his loyalty could quietly return to. The freedom did not come when he stopped drinking. It came when he buried what was left.",
+      "connectionToTheme": "Jacob's household had quietly kept idols even after years of following the God of Bethel. Real change is not only adding the altar — it is burying what you were still keeping.",
+      "content": "A man I knew kept a drawer in his bedroom he never fully opened. It held the things from the years he was drinking — a flask, a few photographs from nights he could not remember, a watch he had been given by a person he had hurt. He told himself it was just a drawer. He had stopped drinking. He was a different man now. But the drawer stayed shut, and he kept the key.\n\nWhen he finally got serious about his marriage again, his counselor asked a question that sounds almost too simple. 'What are you still carrying that belongs to the old life?' He thought about the drawer. He went home, took everything out of it, and for the first time in years actually looked at it. Then he threw most of it away and gave the watch back with an apology.\n\nNothing in that drawer was running his life anymore — that was the thing. He had quit drinking long before. But as long as it stayed there, sealed and kept, it was a foreign god in the house: a small shrine to the man he used to be, a place his loyalty could quietly return to. The freedom did not come when he stopped drinking. It came when he buried what was left."
+    },
+    {
+      "type": "insight",
+      "heading": "Buried Under the Oak, Before the Altar",
+      "body": "Watch the order of Jacob's obedience, because the sequence preaches. Before they go up to Bethel, before a single stone of the altar is laid, Jacob says to his household: 'Get rid of the foreign gods that are among you. Purify yourselves and change your garments.' Only after the idols are surrendered do they travel to the place of worship.\n\nSo they hand over their foreign gods and even their earrings — the ornaments tied to that worship — and Jacob buries them under the oak near Shechem. He does not melt them down for their gold. He does not keep one as a souvenir. He puts them in the ground and leaves them there, and then walks on to build the altar. The burial and the altar are one act with two halves: you cannot raise the new worship while you are still hoarding the old.\n\nNotice too what God does the moment they set out. 'A terror from God fell over the surrounding cities, so that they did not pursue Jacob's sons.' Jacob had every reason to fear reprisal after the violence at Shechem. The instant he obeys, the protection he could not arrange for himself simply arrives. The God who waited at Bethel guards the road there.",
+      "historicalContext": "Household gods were common in the ancient Near East — small figures of clay or metal kept for protection, fertility, and the legal claim they carried over an inheritance. Rachel had earlier taken her father Laban's household gods (Genesis 31:19), and they seem to have traveled with the family for years. The earrings buried with the idols were likely amulets associated with that worship, not mere jewelry.",
+      "fascinatingFact": "Centuries later, when Israel renews its covenant at Shechem, Joshua tells the people, 'Get rid of the foreign gods among you' (Joshua 24:23) — almost the exact words Jacob used here, in almost the same place. The oak Jacob buried his idols under and the oak Joshua set a stone under may well be the same tree. The ground itself remembered the lesson: at Shechem, Israel buries its idols.",
+      "content": "Watch the order of Jacob's obedience, because the sequence preaches. Before they go up to Bethel, before a single stone of the altar is laid, Jacob says to his household: 'Get rid of the foreign gods that are among you. Purify yourselves and change your garments.' Only after the idols are surrendered do they travel to the place of worship.\n\nSo they hand over their foreign gods and even their earrings — the ornaments tied to that worship — and Jacob buries them under the oak near Shechem. He does not melt them down for their gold. He does not keep one as a souvenir. He puts them in the ground and leaves them there, and then walks on to build the altar. The burial and the altar are one act with two halves: you cannot raise the new worship while you are still hoarding the old.\n\nNotice too what God does the moment they set out. 'A terror from God fell over the surrounding cities, so that they did not pursue Jacob's sons.' Jacob had every reason to fear reprisal after the violence at Shechem. The instant he obeys, the protection he could not arrange for himself simply arrives. The God who waited at Bethel guards the road there."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jacob buries the foreign gods under the oak, builds an altar at Bethel, and receives from God a new name — Israel — and the renewed promise of land, descendants, and blessing.",
+      "modernApplication": "Most of us are not carrying carved figurines. Our foreign gods are subtler: the savings account we trust more than God, the relationship we cannot let go of, the version of ourselves we perform online, the grudge we keep like an heirloom. We can follow God for years and still keep the drawer shut. The call of Bethel is to bury what we are still secretly keeping, and to build the altar in its place.",
+      "connectionPoint": "The new name is the heart of it. 'Though your name is Jacob' — heel-grabber, supplanter, the schemer who took what was not his — 'you will no longer be called Jacob. Instead, your name will be Israel.' The man does not earn the new name by getting his act together. God gives it, and the giving makes it true. The old name is not erased from the record; even after this, Scripture still calls him Jacob at times. But the new name now leads.",
+      "newTestamentEcho": "What Bethel pictures, Christ fulfills. To His followers the risen Lord promises 'a white stone inscribed with a new name' (Revelation 2:17), and Paul tells the Colossians they 'have taken off the old self with its practices, and have put on the new self, which is being renewed in knowledge in the image of its Creator' (Colossians 3:9-10). The burial of the idols and the gift of the new name are the same gospel motion: the old self goes into the ground, the new self is named by God."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What foreign god is still in your house — something you have quietly kept even while you follow God — and what would it mean to actually bury it rather than just stop using it?",
+      "additionalQuestions": [
+        "Is there a 'Bethel' in your own story — a place or moment where God clearly met you, that you have since walked away from? What would it look like to go back?",
+        "Jacob purified his household before going up to worship. What needs to be set down before you can worship freely again?",
+        "If God gave you a new name today — one that named who He is making you rather than what you have done — what do you sense it might be?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-surrender",
+      "prayerText": "God of Bethel, You met me once and I have not forgotten it, even when I wandered far from that altar. You see what I am still carrying — the small gods I keep in the drawer, the loyalties I have not buried. Give me the courage to put them in the ground and leave them there. Call me back up to the place where You first found me, and build the altar there again. And the name I have made for myself by striving and grasping — take it, and give me Yours instead. I am God Almighty's, and He has been with me wherever I have gone. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one 'foreign god' you have been keeping — a habit, a possession, a relationship, an image of yourself — and take one concrete step today to bury it rather than merely set it aside. Then mark the spot somehow: a written prayer, a verse, a stone on your desk — your own small pillar at Bethel.",
+      "leavingAtCross": [
+        "The foreign gods I have kept in the house even while following the true God",
+        "The old name I made for myself — schemer, striver, the one who has to grab what he wants",
+        "The fear that obeying God's call back will leave me unprotected"
+      ],
+      "receivingFromCross": [
+        "A new name, given by God and not earned, that leads my life now",
+        "The promise that the God who met me in my worst night has been with me wherever I have gone",
+        "An altar to return to whenever I drift — a fixed place of grace that does not move"
+      ],
+      "content": "Name one 'foreign god' you have been keeping — a habit, a possession, a relationship, an image of yourself — and take one concrete step today to bury it rather than merely set it aside. Then mark the spot somehow: a written prayer, a verse, a stone on your desk — your own small pillar at Bethel."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Jacob have the household bury the foreign gods before they go up to Bethel, rather than after? What does the order teach about repentance and worship?",
+        "Jacob first named the place Bethel ('house of God'); on his return he calls it El-Bethel ('the God of the house of God'). What has changed in him between the two namings?",
+        "God renames Jacob 'Israel' as a gift, not a reward. How does receiving a new name differ from earning a better reputation?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'foreign god' you suspect is still in your house — something you have stopped relying on out loud but never actually buried.",
+        "Talk about your own Bethel: a place or season where God clearly met you. Have you stayed near that altar, or wandered from it?",
+        "Ask each other: if God gave you a new name for the next stretch of your life, what is the old name He might be asking you to bury?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 28:19",
+          "text": "and he called that place Bethel, though previously the city had been named Luz."
+        },
+        {
+          "reference": "Genesis 32:28",
+          "text": "Then the man said, \"Your name will no longer be Jacob, but Israel, because you have struggled with God and with men, and you have prevailed.\""
+        },
+        {
+          "reference": "John 1:51",
+          "text": "Then He declared, \"Truly, truly, I tell you, you will all see heaven open and the angels of God ascending and descending on the Son of Man.\""
+        },
+        {
+          "reference": "Colossians 3:9-10",
+          "text": "Do not lie to one another, since you have taken off the old self with its practices, and have put on the new self, which is being renewed in knowledge in the image of its Creator."
+        },
+        {
+          "reference": "Revelation 2:17",
+          "text": "To the one who overcomes... I will also give him a white stone inscribed with a new name, known only to the one who receives it."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 28 and 35 side by side",
+          "note": "Read Jacob's first night at Bethel (28:10-22) next to his return (35:1-15). Notice what he vowed then and what God gives now — the promise kept across twenty years."
+        },
+        {
+          "type": "book",
+          "title": "Joshua 24:14-27",
+          "note": "Israel renews its covenant at Shechem with almost Jacob's exact words — 'get rid of the foreign gods among you.' The same ground, the same lesson, generations later."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jacob (Israel)",
+      "title": "The Supplanter Who Was Renamed",
+      "description": "Son of Isaac, grandson of Abraham, twin brother of Esau. His name meant 'heel-grabber' or 'supplanter,' and he lived up to it — buying a birthright, stealing a blessing, outbargaining his uncle Laban. But God pursued him: a stairway at Bethel, a wrestling match at the Jabbok, and finally this return, where the foreign gods are buried and the new name is sealed. Israel becomes the father of the twelve tribes, and the whole covenant nation carries his renamed identity.",
+      "keyQuote": "I will build an altar there to God, who answered me in my day of distress. He has been with me wherever I have gone.",
+      "lessonForUs": "Jacob is proof that the new name is given, not earned. He never fully stops being Jacob — Scripture keeps using both names — yet God's word over him leads. We are not renamed because we have finally become worthy; we are renamed so that we can become who God has called us.",
+      "heading": "The Supplanter Who Was Renamed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2418,
+  "scriptureReference_full": "Genesis 35:1-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word notes (Beit-El H1008; the El element in Israel; qum, aleh, mizbeach, elohei hannekar) reflect standard lexical sources. The Shechem covenant parallel draws on Joshua 24:23-26."
+  ]
 }

@@ -6,33 +6,181 @@
   "scriptureReference": "1 Samuel 15",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 81"
+      "type": "scripture",
+      "reference": "1 Samuel 15:22-23",
+      "translation": "BSB",
+      "emphasis": [
+        "obedience is better than sacrifice",
+        "you have rejected the word of the LORD"
+      ],
+      "hebrewOriginal": "הִנֵּה שְׁמֹעַ מִזֶּבַח טוֹב לְהַקְשִׁיב מֵחֵלֶב אֵילִים",
+      "passage": "But Samuel declared: \"Does the LORD delight in burnt offerings and sacrifices as much as in obedience to His voice? Behold, obedience is better than sacrifice, and attentiveness is better than the fat of rams. For rebellion is like the sin of divination, and arrogance is like the wickedness of idolatry. Because you have rejected the word of the LORD, He has rejected you as king.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׁמַע",
+      "transliteration": "shama",
+      "pronunciation": "shah-MAH",
+      "meaning": "to hear, to listen, to obey",
+      "rootMeaning": "In Hebrew there is no separate verb for 'obey.' To hear God and to obey God are the same word. You cannot have truly heard if you are still deciding whether to comply.",
+      "usageNote": "Samuel uses the noun form shemoa - 'to hear/heed' - when he says obedience is better than sacrifice. This is the same root that opens Israel's central confession: 'Shema, O Israel, the LORD our God, the LORD is one' (Deuteronomy 6:4). To Saul, who heard the command perfectly well and then edited it, Samuel says the listening itself was the offering God wanted.",
+      "wordByWord": [
+        {
+          "word": "הִנֵּה",
+          "transliteration": "hinneh",
+          "meaning": "behold, look here - a word that grabs the listener by the collar"
+        },
+        {
+          "word": "שְׁמֹעַ",
+          "transliteration": "shemoa",
+          "meaning": "to hear, to heed, to obey"
+        },
+        {
+          "word": "מִזֶּבַח",
+          "transliteration": "mizzevach",
+          "meaning": "than sacrifice, than a slaughtered offering"
+        },
+        {
+          "word": "טוֹב",
+          "transliteration": "tov",
+          "meaning": "good, better - the same word God speaks over creation"
+        },
+        {
+          "word": "מֵחֵלֶב אֵילִים",
+          "transliteration": "mechelev eilim",
+          "meaning": "than the fat of rams - the fat was the richest, choicest part burned to God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מֶרִי / meri",
+          "reference": "Samuel's word for 'rebellion' in verse 23 - literally bitterness, defiance. He sets it opposite shama: hearing is surrender, meri is the refusal to bend the ear."
+        }
+      ],
+      "strongsNumber": "H8085",
+      "definition": "to hear intelligently, often with the implication of attention and obedience",
+      "usage": "Because shama fuses hearing and obeying, partial obedience is not a lesser grade of listening - in Hebrew it is not listening at all. Saul heard the words and kept the best sheep. Scripture's verdict is that he did not hear."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Religion without surrender. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the obedient unto death (Phil 2:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Sound a Lie Makes",
+      "body": "By the time Samuel finds him, Saul has already built a monument to himself at Carmel and come down to Gilgal glowing with success. His first words are warm and pious: \"May the LORD bless you. I have carried out the LORD's instructions.\" It is the sentence of a man who believes his own press.\n\nAnd then Scripture lets us hear what Saul cannot. \"What is this bleating of sheep,\" Samuel asks, \"and lowing of cattle that I hear?\" The animals Saul was commanded to destroy are standing right there, complaining in the background of his testimony. His report says total obedience. The soundtrack says otherwise. There is a particular sound a half-truth makes, and in this chapter it has hooves.\n\nThe command had been absolute and severe: devote everything to destruction, spare nothing. Saul spared Agag the king and the best of the flocks. Notice the editing. He did not keep the worthless scraps - those he destroyed on schedule. He kept the prime livestock, the fat lambs, the impressive king. Whatever was despised, he obeyed about. Whatever was valuable, he made an exception for. That is the precise shape of the disobedience God names through Samuel, and it is far more familiar than the slaughter of Amalek: we comply where compliance costs us nothing and negotiate where it does.",
+      "keyInsight": "Saul did not refuse the command outright. He kept the parts that were easy to release and made exceptions for the parts worth keeping. Partial obedience is just disobedience with better manners.",
+      "content": "By the time Samuel finds him, Saul has already built a monument to himself at Carmel and come down to Gilgal glowing with success. His first words are warm and pious: \"May the LORD bless you. I have carried out the LORD's instructions.\" It is the sentence of a man who believes his own press.\n\nAnd then Scripture lets us hear what Saul cannot. \"What is this bleating of sheep,\" Samuel asks, \"and lowing of cattle that I hear?\" The animals Saul was commanded to destroy are standing right there, complaining in the background of his testimony. His report says total obedience. The soundtrack says otherwise. There is a particular sound a half-truth makes, and in this chapter it has hooves.\n\nThe command had been absolute and severe: devote everything to destruction, spare nothing. Saul spared Agag the king and the best of the flocks. Notice the editing. He did not keep the worthless scraps - those he destroyed on schedule. He kept the prime livestock, the fat lambs, the impressive king. Whatever was despised, he obeyed about. Whatever was valuable, he made an exception for. That is the precise shape of the disobedience God names through Samuel, and it is far more familiar than the slaughter of Amalek: we comply where compliance costs us nothing and negotiate where it does."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Best of the Sheep",
+      "body": "A man I know spent two years explaining to anyone who would listen that he had surrendered everything to God. He had given up a job that paid too much for one that paid right. He had ended a relationship he knew was pulling him under. He used the word \"everything\" a lot, and he was not lying about those things.\n\nThere was one account he kept off the table. A grudge, decades old, against a brother who had wronged the family. When his pastor named it gently - have you forgiven him? - the man's answer was instant and almost cheerful: \"That's different. You don't know what he did.\" He had surrendered the job, the relationship, the calendar. He spared the grudge. It was the best of his sheep, the thing too valuable to release, and he kept it bleating in the back field while reporting full obedience.\n\nThe tell was the brightness in his voice when he said it. Saul, too, was cheerful when Samuel arrived. People who have made a real exception for themselves are often the most relaxed of all, because they have already settled it. The argument is over before anyone else is allowed to speak.",
+      "connectionToTheme": "Saul's spared flocks are the one thing each of us keeps back while calling the rest of our life surrendered - and we are usually most at peace about exactly the thing we have refused to give up.",
+      "content": "A man I know spent two years explaining to anyone who would listen that he had surrendered everything to God. He had given up a job that paid too much for one that paid right. He had ended a relationship he knew was pulling him under. He used the word \"everything\" a lot, and he was not lying about those things.\n\nThere was one account he kept off the table. A grudge, decades old, against a brother who had wronged the family. When his pastor named it gently - have you forgiven him? - the man's answer was instant and almost cheerful: \"That's different. You don't know what he did.\" He had surrendered the job, the relationship, the calendar. He spared the grudge. It was the best of his sheep, the thing too valuable to release, and he kept it bleating in the back field while reporting full obedience.\n\nThe tell was the brightness in his voice when he said it. Saul, too, was cheerful when Samuel arrived. People who have made a real exception for themselves are often the most relaxed of all, because they have already settled it. The argument is over before anyone else is allowed to speak."
+    },
+    {
+      "type": "insight",
+      "heading": "He Kept the Sheep to Worship",
+      "body": "Here is the detail that should stop us. Twice Saul insists the animals were spared for a holy reason: the troops kept the best \"to sacrifice to the LORD your God.\" This is not a man fleeing religion. This is a man using religion to launder his disobedience. The plan was to take what God said to destroy and offer it back to God as worship - to disobey the command and then put the proceeds in the offering plate.\n\nSamuel's reply is one of the load-bearing sentences of the Old Testament: \"Does the LORD delight in burnt offerings and sacrifices as much as in obedience to His voice? Behold, obedience is better than sacrifice.\" God is not against sacrifice; He commanded the altar. But sacrifice was never meant to be a substitute for hearing Him. Saul had inverted the whole thing. He kept the costly offering and discarded the cheap, weightless obedience - and Samuel tells him he got the prices exactly backwards.\n\nThen comes the line that exposes the heart of it: \"Rebellion is like the sin of divination, and arrogance is like the wickedness of idolatry.\" Saul would never bow to an idol. But choosing your own will and dressing it in worship is idolatry by another route. You have simply made a god small enough to be managed - one who will, you assume, be satisfied with the fat of the rams you decided to keep.",
+      "historicalContext": "Saul is Israel's first king, raised up after the people demanded a monarch \"like all the nations\" (1 Samuel 8). The Amalekites were the people who had attacked Israel's stragglers in the wilderness (Deuteronomy 25:17-19), and the command in chapter 15 invokes that ancient judgment. By the time these books were compiled, Israel had centuries of altar and offering behind them - which makes Samuel's words a standing critique of their entire religious life: ritual without obedience is not worship God receives.",
+      "fascinatingFact": "Samuel's principle is quoted and echoed across Scripture. The Psalms ask the same thing - \"Sacrifice and offering You did not desire... I delight to do Your will\" (Psalm 40:6-8) - and the writer to the Hebrews puts those very words in the mouth of Christ as He enters the world (Hebrews 10:5-7). The thread running from Gilgal forward is that God has always wanted a listening heart more than a full altar.",
+      "content": "Here is the detail that should stop us. Twice Saul insists the animals were spared for a holy reason: the troops kept the best \"to sacrifice to the LORD your God.\" This is not a man fleeing religion. This is a man using religion to launder his disobedience. The plan was to take what God said to destroy and offer it back to God as worship - to disobey the command and then put the proceeds in the offering plate.\n\nSamuel's reply is one of the load-bearing sentences of the Old Testament: \"Does the LORD delight in burnt offerings and sacrifices as much as in obedience to His voice? Behold, obedience is better than sacrifice.\" God is not against sacrifice; He commanded the altar. But sacrifice was never meant to be a substitute for hearing Him. Saul had inverted the whole thing. He kept the costly offering and discarded the cheap, weightless obedience - and Samuel tells him he got the prices exactly backwards.\n\nThen comes the line that exposes the heart of it: \"Rebellion is like the sin of divination, and arrogance is like the wickedness of idolatry.\" Saul would never bow to an idol. But choosing your own will and dressing it in worship is idolatry by another route. You have simply made a god small enough to be managed - one who will, you assume, be satisfied with the fat of the rams you decided to keep."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel's first king kept back the best of what God told him to surrender, planned to offer it as worship, and was told to his face: obedience is better than sacrifice, and because you rejected the word of the LORD, He has rejected you as king.",
+      "modernApplication": "We rarely refuse God flatly. We negotiate. We surrender the parts that cost little and keep the prized exception - the relationship, the resentment, the income stream, the secret - and then we work hard at the religious activities that let us feel obedient without being obedient. Volume at church can be the spared sheep, bleating to cover the one thing we will not release.",
+      "connectionPoint": "What Saul could not do, the true King did. Where Saul kept his own will and offered God the leftovers of his disobedience, Jesus emptied His hands of everything - \"Not My will, but Yours, be done\" (Luke 22:42) - and became, in Paul's words, \"obedient to death, even death on a cross\" (Philippians 2:8). The Father did not need spared rams. He sent a Son who would hear all the way down.",
+      "newTestamentEcho": "Hebrews takes Samuel's principle to its end. The blood of bulls and goats could never take away sins, so Christ comes saying, \"Sacrifice and offering You did not desire, but a body You prepared for Me... Here I am, I have come to do Your will\" (Hebrews 10:5-9). Saul tried to obey by sacrificing. Christ obeyed by becoming the sacrifice - and His one act of perfect hearing is the obedience credited to everyone who could only ever spare the worthless and keep the best."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the one thing you have quietly marked 'that's different' - the best of your sheep that you are keeping back while calling the rest of your life surrendered?",
+      "additionalQuestions": [
+        "Where are you tempted to substitute religious activity - serving, giving, attending - for the specific obedience God has actually asked of you?",
+        "Saul was cheerful and certain when Samuel arrived. Is there an area where your quickness to say 'I've already settled that' might be hiding a spared exception?",
+        "What would it cost you, today, to obey in the place where you have been offering sacrifice instead?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You are not impressed by the offerings I bring to avoid the obedience You actually asked for. I confess the sheep I have spared - the one thing I keep calling an exception while I report full surrender. Quiet the bleating I have used to cover it. Give me the harder, cheaper, costlier thing: a hearing heart. And where I cannot obey, cover me in the one who obeyed all the way to a cross, whose surrender is counted as mine. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the spared sheep out loud today - the single thing you have refused to release while calling the rest of your life obedient. Don't offer God a sacrifice in its place. Take one concrete step of actual obedience in that exact area before the day ends.",
+      "leavingAtCross": [
+        "The exception I have been protecting while reporting full surrender",
+        "The religious busyness I use to feel obedient without obeying",
+        "The quiet idolatry of a god small enough to be satisfied with my leftovers"
+      ],
+      "receivingFromCross": [
+        "The freedom of a hearing heart that no longer has to manage God",
+        "Christ's perfect obedience counted in the place of my partial obedience",
+        "The relief of stopping the negotiation and simply listening"
+      ],
+      "content": "Name the spared sheep out loud today - the single thing you have refused to release while calling the rest of your life obedient. Don't offer God a sacrifice in its place. Take one concrete step of actual obedience in that exact area before the day ends."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What exactly did Saul keep back, and what did he destroy - and what does that pattern reveal about how disobedience actually works?",
+        "Why does Samuel say rebellion is 'like the sin of divination' and arrogance 'like the wickedness of idolatry,' when Saul never touched an idol?",
+        "How does Saul's failure to obey set up, by contrast, the obedience of Christ in Luke 22:42 and Philippians 2:8?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other the one area where you most often offer God 'sacrifice' - effort, service, giving - in place of the obedience He has actually asked for.",
+        "Name a spared sheep you are still keeping. Ask the other person to check in on it this week.",
+        "Talk about the difference between feeling religiously busy and actually hearing God - which one has more of your week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 15:9",
+          "text": "Saul and his troops spared Agag, along with the best of the sheep and cattle, the fat calves and lambs, and the best of everything else. They were unwilling to destroy them, but they devoted to destruction all that was despised and worthless."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Psalm 40:6-8",
+          "text": "Sacrifice and offering You did not desire, but my ears You have opened... I delight to do Your will, O my God; Your law is within my heart."
+        },
+        {
+          "reference": "Philippians 2:8",
+          "text": "And being found in appearance as a man, He humbled Himself and became obedient to death - even death on a cross."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 15",
+          "note": "Read the whole chapter watching the gap between what Saul reports (v. 13, 20) and what God sees (v. 9, 11) - then trace 'obedience is better than sacrifice' forward into Psalm 40 and Hebrews 10."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Saul",
+      "title": "Israel's First King, Rejected for Partial Obedience",
+      "era": "11th century BC",
+      "description": "Israel's first king, chosen when he was, in Samuel's words, 'small in your own eyes,' but who grew confident enough to edit God's commands. In the war on Amalek he obeyed about the worthless and made exceptions for the valuable, then built a monument to himself and reported full obedience. Confronted, he confessed only after he was caught, and admitted the real reason: 'I feared the people and obeyed their voice.' He is the cautionary opposite of the King who would come from David's line and obey all the way to a cross.",
+      "keyQuote": "I have sinned; I have transgressed the LORD's commandment... because I feared the people and obeyed their voice.",
+      "lessonForUs": "Saul's downfall was not open rebellion but managed compliance - obedience kept within the limits of what would not cost him too much. The God who sees the spared sheep is not fooled by the report, and what He wants from us is not a fuller altar but a hearing heart.",
+      "heading": "Israel's First King, Rejected for Partial Obedience"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2202,
+  "scriptureReference_full": "1 Samuel 15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shama, H8085; shemoa in 1 Samuel 15:22) reflects standard lexical sources. The fusion of hearing and obeying in shama, and its link to the Shema (Deuteronomy 6:4), are standard observations in Hebrew lexicography."
+  ]
 }

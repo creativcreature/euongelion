@@ -1,38 +1,188 @@
 {
   "day": 283,
-  "title": "Matthew: Parables + Miracles — Day 3 — Pivot",
-  "teaser": "Day 283 of Bible 365 — Matthew 8-13",
+  "title": "The King who hands you His yoke",
+  "teaser": "Between the healings and the parables, the King of the kingdom stops to say: come to Me, and rest. The kingdom is not a program to perform. It is a Person to lean on.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 283"
+      "type": "scripture",
+      "reference": "Matthew 11:28-30",
+      "translation": "BSB",
+      "emphasis": [
+        "Come to Me",
+        "I will give you rest",
+        "My yoke is easy"
+      ],
+      "greekOriginal": "Δεῦτε πρός με πάντες οἱ κοπιῶντες καὶ πεφορτισμένοι, κἀγὼ ἀναπαύσω ὑμᾶς.",
+      "passage": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "πραΰς",
+      "transliteration": "praus",
+      "pronunciation": "prah-OOCE",
+      "meaning": "gentle, meek, lowly; strength held under control",
+      "rootMeaning": "Praus does not mean weak. In classical Greek it described a horse that had been broken to the bridle - all its power intact, now answering to a hand. It is force that has learned restraint, not force that has been drained away.",
+      "usageNote": "Jesus uses praus of Himself only twice in Matthew: here in 11:29 ('I am gentle'), and again in 21:5, where He rides into Jerusalem as the King who comes 'gentle and riding on a donkey.' The same word names the third Beatitude: 'Blessed are the meek (praeis), for they will inherit the earth' (Matthew 5:5). The King who could break a bruised reed chooses not to.",
+      "wordByWord": [
+        {
+          "word": "Δεῦτε",
+          "transliteration": "deute",
+          "meaning": "come! - a plural summons, 'come here, all of you'"
+        },
+        {
+          "word": "κοπιῶντες",
+          "transliteration": "kopiontes",
+          "meaning": "the ones laboring to exhaustion, worn out from toil"
+        },
+        {
+          "word": "πεφορτισμένοι",
+          "transliteration": "pephortismenoi",
+          "meaning": "the ones loaded down, burdened like a pack animal under cargo"
+        },
+        {
+          "word": "ἀναπαύσω",
+          "transliteration": "anapauso",
+          "meaning": "I will give rest, I will refresh - the word for unyoking an animal at day's end"
+        },
+        {
+          "word": "πραΰς",
+          "transliteration": "praus",
+          "meaning": "gentle, meek - strength bridled and under control"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ζυγός / zygos",
+          "reference": "The 'yoke' (zygos) was the rabbis' image for the whole burden of the Law - 'the yoke of the commandments.' Jesus does not abolish the yoke; He offers His own, and calls it light. The scandal is not that He removes the load but that He says wearing His is rest."
+        }
+      ],
+      "strongsNumber": "G4239",
+      "definition": "mild, gentle, meek; the quality of strength that does not need to dominate",
+      "usage": "Praus is the King describing His own heart. He has just calmed a storm with a word (8:26) and driven out demons (8:32); His power is not in question. What He reveals here is its temperature: gentle, lowly, safe to come near."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The King Who Stops for the One in Front of Him",
+      "body": "Matthew has been moving fast. In two chapters Jesus has cleansed a leper with a touch, healed a centurion's servant from a distance, stilled a storm with a sentence, forgiven a paralyzed man and then told him to walk, raised a dead girl, opened blind eyes, and loosed a mute tongue. The miracles come almost too quickly to absorb - a King striding through Galilee, undoing the damage of a broken world one body at a time.\n\nThen Matthew tells us why. When Jesus saw the crowds, he writes, \"He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd\" (9:36). The power is real, but it is not the point. The point is the heart driving the power. Every healing is a window onto what the King is like: He touches what others would not touch, He stops for the one no one else stops for, He treats the sick as exactly the people He came for - \"It is not the healthy who need a doctor, but the sick\" (9:12).\n\nThis is the first thing to see in Matthew 8-13, and it is plain enough to read off the surface of the page. The King's strength bends down. It does not crush the people it meets; it heals them. Hold that in one hand. In the other hand, hold what comes in chapter 13 - the parables, where the same King starts speaking in riddles about seeds and leaven and hidden treasure, and the kingdom suddenly goes quiet and small and concealed. The healings are loud. The parables are hushed. Between them stands a single invitation, and it is the hinge the whole section turns on.",
+      "keyInsight": "Every miracle in Matthew 8-9 is a window onto the King's heart: His power exists to heal the helpless, not to overpower them.",
+      "content": "Matthew has been moving fast. In two chapters Jesus has cleansed a leper with a touch, healed a centurion's servant from a distance, stilled a storm with a sentence, forgiven a paralyzed man and then told him to walk, raised a dead girl, opened blind eyes, and loosed a mute tongue. The miracles come almost too quickly to absorb - a King striding through Galilee, undoing the damage of a broken world one body at a time.\n\nThen Matthew tells us why. When Jesus saw the crowds, he writes, \"He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd\" (9:36). The power is real, but it is not the point. The point is the heart driving the power. Every healing is a window onto what the King is like: He touches what others would not touch, He stops for the one no one else stops for, He treats the sick as exactly the people He came for - \"It is not the healthy who need a doctor, but the sick\" (9:12).\n\nThis is the first thing to see in Matthew 8-13, and it is plain enough to read off the surface of the page. The King's strength bends down. It does not crush the people it meets; it heals them. Hold that in one hand. In the other hand, hold what comes in chapter 13 - the parables, where the same King starts speaking in riddles about seeds and leaven and hidden treasure, and the kingdom suddenly goes quiet and small and concealed. The healings are loud. The parables are hushed. Between them stands a single invitation, and it is the hinge the whole section turns on."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Could Not Put It Down",
+      "body": "A friend of mine ran a small business for nineteen years, and somewhere along the way the business stopped being something he did and became something he wore. He checked the numbers before he was fully awake. He answered messages at his daughter's recital. He told himself it was responsibility, and a lot of it was. But the load never came off, not at night, not on vacation, not in church. He had built a life he could not set down.\n\nWhen it finally cracked - a hospital, a stress that had nowhere left to go - what undid him was not a sermon about working less. It was a sentence a chaplain read to him from a worn Bible: \"Come to Me, all you who are weary and burdened.\" He told me he lay there and thought, that's the first time anyone has offered to take it instead of telling me to carry it better.\n\nHe did not get a lighter schedule that week. The business was still the business. What he got was a different center. The weight he had been holding alone he learned to hold leaning on Someone, and somehow the leaning was the rest.",
+      "connectionToTheme": "Jesus does not offer the weary a smaller load. He offers Himself as the One who shares it - and that changes what carrying feels like.",
+      "content": "A friend of mine ran a small business for nineteen years, and somewhere along the way the business stopped being something he did and became something he wore. He checked the numbers before he was fully awake. He answered messages at his daughter's recital. He told himself it was responsibility, and a lot of it was. But the load never came off, not at night, not on vacation, not in church. He had built a life he could not set down.\n\nWhen it finally cracked - a hospital, a stress that had nowhere left to go - what undid him was not a sermon about working less. It was a sentence a chaplain read to him from a worn Bible: \"Come to Me, all you who are weary and burdened.\" He told me he lay there and thought, that's the first time anyone has offered to take it instead of telling me to carry it better.\n\nHe did not get a lighter schedule that week. The business was still the business. What he got was a different center. The weight he had been holding alone he learned to hold leaning on Someone, and somehow the leaning was the rest."
+    },
+    {
+      "type": "insight",
+      "heading": "The Yoke Is Not a Rule. It Is a Person.",
+      "body": "Here is the pivot of the whole section, and it is easy to miss because it sounds so gentle. Jesus does not say, \"Come to My teaching.\" He does not say, \"Take up My program for a balanced life.\" He says, \"Come to Me... Take My yoke upon you and learn from Me.\" The rest He offers is not first a practice; it is a Person. The relief is not in doing less but in being yoked to Someone who pulls alongside you.\n\nA yoke in the ancient world was a wooden frame that joined two animals so they could pull a load together. To take a teacher's yoke meant to take on the whole weight of his instruction - and the rabbis spoke openly of \"the yoke of the Law,\" a load that, for all its glory, the prophets admitted no one could fully bear. Jesus stands in that world and says something audacious: My yoke is easy, My burden is light. Not because the kingdom asks little, but because the King climbs into the yoke beside you. The thing that makes a yoke easy is not a smaller field. It is the strength of the one sharing it.\n\nAnd notice why He can say it. Just before, He prayed, \"I praise You, Father... because You have hidden these things from the wise and learned, and revealed them to little children\" (11:25). The same hiddenness runs straight into the parables of chapter 13, where the kingdom comes as a buried seed, a pinch of leaven, a treasure no one can see in the field. The kingdom does not arrive by overpowering the strong; it arrives by being received by the small. The miracles showed a King whose strength bends down to heal. The parables show a kingdom whose glory hides itself so the weary can come close without being crushed. And right between them He says: come to Me. The healing power and the hidden kingdom meet in one invitation - and what He offers the exhausted is not a heavier yoke worn better, but His own.",
+      "historicalContext": "The image of the Law as a 'yoke' was common in first-century Judaism; rabbinic sources speak of taking on 'the yoke of the kingdom of heaven' and 'the yoke of the commandments.' Against that background, a teacher calling his own yoke 'easy' and 'light' is startling - not a lowering of God's claim, but a claim that in Him the claim is finally bearable.",
+      "fascinatingFact": "Matthew frames this whole section with Isaiah. The healings 'fulfill what was spoken through the prophet Isaiah: He took on our infirmities and carried our diseases' (8:17), and the gentle King who 'will not break a bruised reed' or 'extinguish a smoldering wick' (12:20) is Isaiah's Servant. The One inviting the burdened to rest is the One who carries the burden Himself.",
+      "content": "Here is the pivot of the whole section, and it is easy to miss because it sounds so gentle. Jesus does not say, \"Come to My teaching.\" He does not say, \"Take up My program for a balanced life.\" He says, \"Come to Me... Take My yoke upon you and learn from Me.\" The rest He offers is not first a practice; it is a Person. The relief is not in doing less but in being yoked to Someone who pulls alongside you.\n\nA yoke in the ancient world was a wooden frame that joined two animals so they could pull a load together. To take a teacher's yoke meant to take on the whole weight of his instruction - and the rabbis spoke openly of \"the yoke of the Law,\" a load that, for all its glory, the prophets admitted no one could fully bear. Jesus stands in that world and says something audacious: My yoke is easy, My burden is light. Not because the kingdom asks little, but because the King climbs into the yoke beside you. The thing that makes a yoke easy is not a smaller field. It is the strength of the one sharing it.\n\nAnd notice why He can say it. Just before, He prayed, \"I praise You, Father... because You have hidden these things from the wise and learned, and revealed them to little children\" (11:25). The same hiddenness runs straight into the parables of chapter 13, where the kingdom comes as a buried seed, a pinch of leaven, a treasure no one can see in the field. The kingdom does not arrive by overpowering the strong; it arrives by being received by the small. The miracles showed a King whose strength bends down to heal. The parables show a kingdom whose glory hides itself so the weary can come close without being crushed. And right between them He says: come to Me. The healing power and the hidden kingdom meet in one invitation - and what He offers the exhausted is not a heavier yoke worn better, but His own."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The King whose power healed the helpless and whose kingdom hides itself in seeds and leaven turns to the exhausted and says: come to Me, and I will give you rest. The yoke He offers is His own, and He pulls in it beside you.",
+      "modernApplication": "We are fluent in carrying. We measure ourselves by load - the hours, the responsibilities, the appearance of holding it all. We even spiritualize it, treating tiredness as proof of faithfulness. Jesus does not bless the carrying. He offers to share it. The invitation is not 'do more for God'; it is 'stop trying to pull alone.'",
+      "connectionPoint": "The rest Jesus offers in 11:28 is the same rest threaded through the whole story of God. God rested on the seventh day and called it holy (Genesis 2:2-3). He promised His exhausted people, 'My Presence will go with you, and I will give you rest' (Exodus 33:14). The writer of Hebrews says that promise is still open: 'There remains, then, a Sabbath rest for the people of God' (Hebrews 4:9). The King who says 'come to Me' is the place that rest was always pointing toward.",
+      "newTestamentEcho": "What Jesus offers in Galilee He secures at the cross. The gentle King who 'will not break a bruised reed' (12:20, echoing Isaiah 42:3) is the Servant who would be broken instead - taking the load no one could carry so the weary could finally set it down. 'He took on our infirmities and carried our diseases' (8:17) reaches its end at Golgotha, where He carried the heaviest burden of all."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the load you have been carrying alone - the one you have learned to wear instead of set down?",
+      "additionalQuestions": [
+        "When you hear 'Come to Me, all you who are weary,' do you believe it is addressed to you, or do you assume you have to earn the rest first?",
+        "Where have you quietly turned faithfulness into exhaustion, treating busyness for God as the same thing as being with God?",
+        "What would it look like, today, to be yoked to Jesus in one specific burden - to pull alongside Him rather than ahead of Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Jesus, gentle and humble in heart, I am tired in ways I do not always admit. I have learned to carry, and I have called the carrying strength. Today I hear You say, come to Me. So I come. Take the load I have been holding alone. Yoke me to Yourself and teach me Your pace - the pace of the One who heals the helpless and hides the kingdom in small things. Let Your yoke be the rest You promised. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one burden you have been pulling alone. Before the day is over, bring it to Jesus in plain words - 'I am yoked to You in this' - and choose one concrete way to share it rather than shoulder it: a confession, a phone call, an honest 'no,' five quiet minutes handing it over.",
+      "leavingAtCross": [
+        "The lie that my worth is the size of the load I can carry",
+        "The habit of working for God instead of resting in God",
+        "The exhaustion I have worn like a badge"
+      ],
+      "receivingFromCross": [
+        "A yoke I share instead of a weight I bear alone",
+        "Rest for my soul, given by a King who is gentle and lowly in heart",
+        "The freedom to come small, like a child, into a kingdom I could never overpower my way into"
+      ],
+      "content": "Name one burden you have been pulling alone. Before the day is over, bring it to Jesus in plain words - 'I am yoked to You in this' - and choose one concrete way to share it rather than shoulder it: a confession, a phone call, an honest 'no,' five quiet minutes handing it over."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Matthew tell us Jesus was 'moved with compassion' (9:36) right in the middle of the miracle accounts? What does it say about the power on display?",
+        "Jesus says 'Take My yoke,' not 'Take off every yoke.' What is the difference between a lighter load and a shared one?",
+        "How do the loud public miracles of chapters 8-9 and the quiet hidden parables of chapter 13 fit together in the one invitation of 11:28-30?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one burden you have been carrying alone and have not said out loud to anyone.",
+        "Talk honestly: where have you confused being busy for God with being close to God?",
+        "Ask each other - what is one load we could begin pulling together this week instead of separately?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 9:36",
+          "text": "When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd."
+        },
+        {
+          "reference": "Matthew 12:20",
+          "text": "A bruised reed He will not break, and a smoldering wick He will not extinguish, till He leads justice to victory."
+        },
+        {
+          "reference": "Matthew 13:44",
+          "text": "The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and in his joy he went and sold all he had and bought that field."
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God's rest also rests from his own work, just as God did from His."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 8-13",
+          "note": "Read straight through in one sitting, watching the rhythm: miracles (8-9), the mission charge (10), the rest invitation (11:28-30), conflict (12), and the kingdom parables (13). Notice how 11:28-30 sits at the center, holding the loud and the hidden together."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus of Nazareth",
+      "title": "The King Who Is Gentle and Humble in Heart",
+      "era": "1st century AD, Galilee",
+      "key_trait": "Strength that bends down to heal rather than reaching out to dominate",
+      "description": "In Matthew 8-13 Jesus moves through Galilee as a King whose authority is undeniable - over disease, demons, storms, and death - yet whose self-description is 'gentle and humble in heart.' He heals the untouchable, eats with sinners, calls the burdened to Himself, and tells of a kingdom that comes hidden and small. Matthew presents Him as Isaiah's promised Servant, who carries our diseases and will not break the bruised reed, the one in whom God's power and God's tenderness are the same thing.",
+      "keyQuote": "Come to Me, all you who are weary and burdened, and I will give you rest.",
+      "lessonForUs": "The God we meet in Jesus is not a taskmaster handing out heavier loads to the faithful. He is the King who climbs into the yoke beside the weary. The deepest rest is not a lighter life; it is being joined to Him.",
+      "heading": "The King Who Is Gentle and Humble in Heart"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2113,
+  "scriptureReference_full": "Matthew 11:28-30 (within Matthew 8-13)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (praus G4239; zygos, 'yoke') reflects standard lexical sources; the 'yoke of the Law / yoke of the kingdom' background reflects common first-century rabbinic usage. The Servant framing draws on Matthew's own citations of Isaiah (8:17; 12:18-21)."
+  ]
 }

@@ -1,38 +1,193 @@
 {
   "day": 149,
-  "title": "Jeremiah Weeping Prophet — Day 2 — Building",
-  "teaser": "Day 149 of Bible 365 — Jeremiah 1-29",
+  "title": "Set Apart Before You Were Born",
+  "teaser": "Before Jeremiah could speak, God had already named him and sent him — to a city that would not listen, with words that could not be held in.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 149"
+      "type": "scripture",
+      "reference": "Jeremiah 1:5-10",
+      "translation": "BSB",
+      "emphasis": [
+        "Before I formed you in the womb I knew you",
+        "I am only a child",
+        "I have put My words in your mouth",
+        "to build and plant"
+      ],
+      "hebrewOriginal": "בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן יְדַעְתִּיךָ וּבְטֶרֶם תֵּצֵא מֵרֶחֶם הִקְדַּשְׁתִּיךָ נָבִיא לַגּוֹיִם נְתַתִּיךָ",
+      "passage": "\"Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.\" \"Ah, Lord GOD,\" I said, \"I surely do not know how to speak, for I am only a child!\" But the LORD told me: \"Do not say, 'I am only a child.' For to everyone I send you, you must go, and all that I command you, you must speak. Do not be afraid of them, for I am with you to deliver you,\" declares the LORD. Then the LORD reached out His hand, touched my mouth, and said to me: \"Behold, I have put My words in your mouth. See, I have appointed you today over nations and kingdoms to uproot and tear down, to destroy and overthrow, to build and plant.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לִבְנוֹת וְלִנְטוֹעַ",
+      "transliteration": "livnot velintoa",
+      "pronunciation": "leev-NOTE veh-leen-TOE-ah",
+      "meaning": "to build and to plant",
+      "rootMeaning": "Banah means to build, to construct, to raise something that will stand. Nata means to plant, to set a seedling into the ground and leave it to take root over years. Both are slow words. Neither happens in a day.",
+      "usageNote": "Verse 10 gives Jeremiah six verbs in two clusters of work. Four are demolition: to uproot (natosh), to tear down (natots), to destroy (ha'abid), to overthrow (haros). Two are construction: to build (banah), to plant (nata). The list is lopsided on purpose. Most of Jeremiah's forty years is tearing-down work over a city that would not turn. But God does not let the last word be a wrecking ball. The sentence ends with building and planting - the long, patient work that outlasts the ruin.",
+      "wordByWord": [
+        {
+          "word": "הִקְדַּשְׁתִּיךָ",
+          "transliteration": "hiqdashtikha",
+          "meaning": "I set you apart, I consecrated you - the same root (qadash) used for holy things devoted to God"
+        },
+        {
+          "word": "נָבִיא",
+          "transliteration": "navi",
+          "meaning": "prophet - one who is called and sent to speak for another, not on his own authority"
+        },
+        {
+          "word": "לִנְתוֹשׁ",
+          "transliteration": "lintosh",
+          "meaning": "to uproot, to pull up by the roots"
+        },
+        {
+          "word": "וְלִנְתוֹץ",
+          "transliteration": "velintots",
+          "meaning": "and to tear down, to break apart what was built"
+        },
+        {
+          "word": "לִבְנוֹת",
+          "transliteration": "livnot",
+          "meaning": "to build, to construct, to raise up"
+        },
+        {
+          "word": "וְלִנְטוֹעַ",
+          "transliteration": "velintoa",
+          "meaning": "and to plant, to set into the ground to take root"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶצָּרְךָ / יוֹצֵר",
+          "reference": "The verb 'I formed you' (etzorkha) in verse 5 shares a root with yotser, the potter. Seven chapters later God sends Jeremiah to a real potter's house (18:1-6) and says, 'Just like clay in the potter's hand, so are you in My hand.' The God who formed Jeremiah in the womb is the God still working at the wheel."
+        }
+      ],
+      "strongsNumber": "H1129",
+      "definition": "banah: to build, rebuild, establish; nata: to plant, fix, establish",
+      "usage": "The pairing 'build and plant' becomes Jeremiah's refrain. After all the tearing down, God promises a future: 'I will build them up and not tear them down; I will plant them and not uproot them' (Jeremiah 24:6). The demolition was never the goal. It was clearing ground."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Called Before He Could Object",
+      "body": "Jeremiah's whole life is decided before he says a word. Before the prophet is old enough to argue, God speaks over him a sentence with no gaps for negotiation: I knew you, I set you apart, I appointed you. The verbs all belong to God. Jeremiah is the object of every one of them.\n\nSo the young man does the only thing left to him. He objects anyway. \"I surely do not know how to speak, for I am only a child.\" It is not false modesty. The prophets he has heard of were towering figures - Moses, Samuel, Elijah. He is a boy from Anathoth, a priest's son from a village a few miles outside Jerusalem, and the job is to stand in front of kings and tell them their world is ending. Anyone honest would flinch.\n\nGod does not flatter him out of the fear. He does not tell Jeremiah he is more capable than he thinks. He reroutes the whole question. \"Do not say, 'I am only a child.' For to everyone I send you, you must go, and all that I command you, you must speak.\" The call was never about Jeremiah's qualifications. It was about who was sending him. Then God reaches out, touches his mouth, and says the line that settles it: \"I have put My words in your mouth.\" The prophet's competence is no longer the issue. The words are not his to produce. They are placed there, like something handed across a table.",
+      "keyInsight": "God's call does not wait for our readiness, and it does not depend on it. He sets apart, He sends, and He supplies the words - so that the only question left is not 'Am I able?' but 'Will I go?'",
+      "content": "Jeremiah's whole life is decided before he says a word. Before the prophet is old enough to argue, God speaks over him a sentence with no gaps for negotiation: I knew you, I set you apart, I appointed you. The verbs all belong to God. Jeremiah is the object of every one of them.\n\nSo the young man does the only thing left to him. He objects anyway. \"I surely do not know how to speak, for I am only a child.\" It is not false modesty. The prophets he has heard of were towering figures - Moses, Samuel, Elijah. He is a boy from Anathoth, a priest's son from a village a few miles outside Jerusalem, and the job is to stand in front of kings and tell them their world is ending. Anyone honest would flinch.\n\nGod does not flatter him out of the fear. He does not tell Jeremiah he is more capable than he thinks. He reroutes the whole question. \"Do not say, 'I am only a child.' For to everyone I send you, you must go, and all that I command you, you must speak.\" The call was never about Jeremiah's qualifications. It was about who was sending him. Then God reaches out, touches his mouth, and says the line that settles it: \"I have put My words in your mouth.\" The prophet's competence is no longer the issue. The words are not his to produce. They are placed there, like something handed across a table."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter He Could Not Stop Writing",
+      "body": "There is a kind of work a person does not choose so much as fail to escape. A nurse I knew kept a job on a ward that broke her heart weekly. She came home hollow. She talked, more than once, about quitting for something kinder. She never did. \"I keep walking back in,\" she told me, \"because I can't get the faces out of my head when I try to leave.\"\n\nJeremiah lived inside that ache for forty years, and he wrote it down without flattering himself. Deep into his ministry, after beatings and a night in the stocks, he turns on God in chapter 20 with words most people only think: \"You have deceived me, O LORD, and I was deceived... I am a laughingstock all day long.\" He decides he is done. He will never speak in that name again. And then comes the line that names the whole prophetic life: \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail.\"\n\nThe word God placed in his mouth in chapter 1 will not stay swallowed. He cannot quit, not because he is brave, but because the call is heavier than his despair. That is what it looks like when God puts His words in someone's mouth and means it.",
+      "connectionToTheme": "The same God who put words in Jeremiah's mouth at the call is the reason he cannot finally stop speaking them - the consecration of chapter 1 becomes the fire in the bones of chapter 20.",
+      "content": "There is a kind of work a person does not choose so much as fail to escape. A nurse I knew kept a job on a ward that broke her heart weekly. She came home hollow. She talked, more than once, about quitting for something kinder. She never did. \"I keep walking back in,\" she told me, \"because I can't get the faces out of my head when I try to leave.\"\n\nJeremiah lived inside that ache for forty years, and he wrote it down without flattering himself. Deep into his ministry, after beatings and a night in the stocks, he turns on God in chapter 20 with words most people only think: \"You have deceived me, O LORD, and I was deceived... I am a laughingstock all day long.\" He decides he is done. He will never speak in that name again. And then comes the line that names the whole prophetic life: \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail.\"\n\nThe word God placed in his mouth in chapter 1 will not stay swallowed. He cannot quit, not because he is brave, but because the call is heavier than his despair. That is what it looks like when God puts His words in someone's mouth and means it."
+    },
+    {
+      "type": "insight",
+      "heading": "Four Verbs of Ruin, Two of Hope",
+      "body": "Read the commission slowly and you notice God hands Jeremiah a strange job description. He is appointed \"over nations and kingdoms to uproot and tear down, to destroy and overthrow, to build and plant.\" Four verbs of demolition. Two of construction. The list is honest about what most of his life will be.\n\nThis is the heart of why his book sits where it does. Jeremiah preaches into the last years of Judah, while Babylon gathers on the horizon and the leadership in Jerusalem insists everything is fine. His task is mostly the painful one: to say out loud that the building is coming down, that the temple they trust will not save them, that exile is real and near. For decades he is the man tearing down what everyone else is propping up.\n\nBut God refuses to end the sentence with rubble. After 'uproot' comes 'plant.' After 'tear down' comes 'build.' The same God who sends Jeremiah to announce the fall already holds the blueprint for what comes after. The demolition was never the point. It was clearing ground for something God intended to build - which is exactly why this stretch of the year is the building season of the story, even when most of what we see is wreckage.",
+      "historicalContext": "Jeremiah was called around 627 BC, in the thirteenth year of King Josiah, and prophesied through the final collapse of Judah and the fall of Jerusalem to Babylon in 586 BC. Anathoth, his hometown, lay about three miles northeast of Jerusalem in the territory of Benjamin - close enough to watch the city he loved refuse the warning and fall.",
+      "fascinatingFact": "The 'build and plant' pairing from 1:10 becomes a structural thread running through the whole book. God repeats it as a promise in 24:6 ('I will build them up and not tear them down; I will plant them and not uproot them') and again in 31:28. The verbs of the call become the verbs of the comfort - the same words that announced judgment are turned to announce restoration.",
+      "content": "Read the commission slowly and you notice God hands Jeremiah a strange job description. He is appointed \"over nations and kingdoms to uproot and tear down, to destroy and overthrow, to build and plant.\" Four verbs of demolition. Two of construction. The list is honest about what most of his life will be.\n\nThis is the heart of why his book sits where it does. Jeremiah preaches into the last years of Judah, while Babylon gathers on the horizon and the leadership in Jerusalem insists everything is fine. His task is mostly the painful one: to say out loud that the building is coming down, that the temple they trust will not save them, that exile is real and near. For decades he is the man tearing down what everyone else is propping up.\n\nBut God refuses to end the sentence with rubble. After 'uproot' comes 'plant.' After 'tear down' comes 'build.' The same God who sends Jeremiah to announce the fall already holds the blueprint for what comes after. The demolition was never the point. It was clearing ground for something God intended to build - which is exactly why this stretch of the year is the building season of the story, even when most of what we see is wreckage."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God set Jeremiah apart before birth, put His own words in the prophet's mouth, and sent him to a beloved city that would not listen - a man of sorrows who wept over the coming ruin of Jerusalem.",
+      "modernApplication": "Most of us will never be a prophet to nations. But the pattern still holds: you are known and named by God before you are useful to Him, and the work He gives is often the unglamorous, long kind - tearing down what is false in us so something true can be planted. You do not have to feel adequate to be sent. You have to be willing to go.",
+      "connectionPoint": "Jeremiah's call points past himself. He is consecrated before he is born; the Word who became Jeremiah's flesh-and-blood successor was with God in the beginning, before the world was formed (John 1:1-2). Jeremiah weeps over Jerusalem; centuries later Jesus stands on the same hills and weeps over the same city: 'If only you had known on this day what would bring you peace' (Luke 19:41-42). Jeremiah is handed words to put in a doomed people's hearing; Jesus says, 'The word that you hear is not My own, but it is from the Father who sent Me' (John 14:24).",
+      "newTestamentEcho": "God told Jeremiah his commission was 'to uproot and tear down... to build and plant.' Standing in the temple, Jesus takes up the same two-sided work in a single sentence: 'Destroy this temple, and in three days I will raise it up again' - speaking, John tells us, of the temple of His body (John 2:19-21). The weeping prophet announced a ruin he could not prevent. The greater Prophet walked into the ruin Himself and rose to build what no exile could pull down."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is God asking you to do that you keep answering with 'I am only a child' - not enough, not ready, not the right person?",
+      "additionalQuestions": [
+        "Jeremiah's competence was never the point; the One sending him was. Where have you let your sense of inadequacy become an excuse to stay silent or still?",
+        "God's call to Jeremiah was mostly tearing-down work before any building. What in your own life might God be clearing ground in - and can you trust that He intends to plant something there?",
+        "Jeremiah found the word of God was 'a fire shut up in my bones' he could not hold in. Is there anything God has put in you that you have been trying to swallow?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You knew me before I was formed. You named me before I could earn it. I confess how often I answer Your call the way Jeremiah did - 'I am only a child, I do not know how to speak.' Quiet that excuse in me. Reach out and touch my mouth. Put Your words there, since I cannot produce them on my own. Where You are tearing down what is false in me, give me the courage not to rebuild it; where You are planting, give me the patience to wait for roots. I am with You only because You are first with me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where you have been telling God 'I am only a child' - one task, conversation, or obedience you have ducked because you feel unqualified. Take the first small step toward it, trusting that the One who sends also supplies the words.",
+      "leavingAtCross": [
+        "The excuse that I am too young, too unqualified, or too ordinary to be used by God",
+        "The fear of the people God might send me toward",
+        "The instinct to swallow the word God has put in me rather than speak it"
+      ],
+      "receivingFromCross": [
+        "The truth that I was known and set apart before I could earn anything",
+        "The promise 'I am with you to deliver you' - presence as my qualification",
+        "The hope that even the tearing-down in my life is God clearing ground to build and plant"
+      ],
+      "content": "Today, name one place where you have been telling God 'I am only a child' - one task, conversation, or obedience you have ducked because you feel unqualified. Take the first small step toward it, trusting that the One who sends also supplies the words."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Jeremiah's call, almost every verb in verse 5 belongs to God, not Jeremiah. What does that tell you about who initiates a calling, and why does it matter?",
+        "God answers Jeremiah's 'I am only a child' not by boosting his confidence but by changing the subject to 'I am with you.' What is the difference between those two kinds of reassurance?",
+        "Why does the commission in verse 10 list four words of demolition before the two words of building - and how does that order shape the way we read the rest of Jeremiah?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one calling or task you have resisted with some version of 'I'm not the right person.' What is underneath the excuse?",
+        "Talk about a season when God seemed to be tearing down before He built. Could you see the planting at the time, or only later?",
+        "Ask each other: is there a word - a hard truth, an apology, an encouragement - God has put in you that you have been holding in like a fire shut up in your bones?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 18:6",
+          "text": "\"O house of Israel, declares the LORD, can I not treat you as this potter treats his clay? Just like clay in the potter's hand, so are you in My hand, O house of Israel.\""
+        },
+        {
+          "reference": "Jeremiah 20:9",
+          "text": "If I say, \"I will not mention Him or speak any more in His name,\" His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail."
+        },
+        {
+          "reference": "Jeremiah 24:6",
+          "text": "I will keep My eyes on them for good and will return them to this land. I will build them up and not tear them down; I will plant them and not uproot them."
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, \"If only you had known on this day what would bring you peace! But now it is hidden from your eyes.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 1",
+          "note": "Read the call narrative slowly, watching the two visions that follow it - the almond branch (1:11-12) and the boiling pot (1:13-16). God shows Jeremiah both His watchful care and the disaster coming from the north."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet of Anathoth",
+      "description": "A priest's son from the village of Anathoth, just outside Jerusalem, called by God around 627 BC while still young. For roughly forty years Jeremiah preached repentance to a Judah that would not turn, through the reigns of its last kings and into the fall of Jerusalem to Babylon in 586 BC. He was beaten, imprisoned, lowered into a muddy cistern, and ridiculed - yet kept speaking because the word God had put in his mouth was a fire he could not hold in. His laments are so raw that Scripture's whole grammar of grief borrows his name.",
+      "keyQuote": "Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.",
+      "lessonForUs": "Jeremiah teaches that a calling is not a measure of our adequacy but of God's claim on us. We are known before we are useful, sent before we feel ready, and accompanied - 'I am with you' - every painful mile of the work.",
+      "heading": "The Weeping Prophet of Anathoth"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2653,
+  "scriptureReference_full": "Jeremiah 1:5-10 (with Jeremiah 18:6; 20:7-9; 24:6)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (livnot/banah H1129, nata, qadash, navi) reflects standard lexical sources; the etzorkha/yotser potter resonance follows the canonical link between Jeremiah 1:5 and 18:1-6.",
+    "Historical dating (call c. 627 BC under Josiah; fall of Jerusalem 586 BC; Anathoth in Benjamin) reflects standard scholarly consensus."
+  ]
 }

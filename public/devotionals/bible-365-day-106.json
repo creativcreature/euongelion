@@ -1,38 +1,186 @@
 {
   "day": 106,
-  "title": "Divided Kingdom — Day 1 — Hook",
-  "teaser": "Day 106 of Bible 365 — 1 Kings 12-16",
+  "title": "The kingdom torn at Shechem",
+  "teaser": "One harsh word splits a kingdom in a single afternoon. But the same God who tears it keeps a lamp burning in David's house — for the sake of the Son who would gather the torn flock back into one.",
   "framework": "1 Kings 12-16 — Divided Kingdom",
   "scriptureReference": "1 Kings 12-16",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 106"
+      "type": "scripture",
+      "reference": "1 Kings 12:14-16",
+      "translation": "BSB",
+      "emphasis": [
+        "I will add to your yoke",
+        "this turn of events was from the LORD",
+        "What portion do we have in David"
+      ],
+      "hebrewOriginal": "מַה־לָּנוּ חֵלֶק בְּדָוִד וְלֹא־נַחֲלָה בְּבֶן־יִשַׁי לְאֹהָלֶיךָ יִשְׂרָאֵל",
+      "passage": "And the king answered the people harshly... saying, \"Whereas my father made your yoke heavy, I will add to your yoke. Whereas my father scourged you with whips, I will scourge you with scorpions.\" So the king did not listen to the people, and indeed this turn of events was from the LORD... When all Israel saw that the king had refused to listen to them, they answered the king: \"What portion do we have in David, and what inheritance in the son of Jesse? To your tents, O Israel! Look now to your own house, O David!\" So the Israelites went home."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 12-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 12-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֵלֶק",
+      "transliteration": "cheleq",
+      "pronunciation": "KHEH-lek",
+      "meaning": "portion, share, allotted inheritance",
+      "rootMeaning": "From a root meaning to divide or apportion. A cheleq is your assigned piece of something larger - your share in a family estate, your allotment in the land, your stake in a common life.",
+      "usageNote": "When the northern tribes shout \"What portion do we have in David?\" they are not asking a question. They are renouncing their stake in the house of David - cutting themselves out of the inheritance God had bound to that one family. The same word is used elsewhere of the Levites' portion: the LORD Himself (Numbers 18:20). Israel here trades a portion in David's line for a portion in their own tents.",
+      "wordByWord": [
+        {
+          "word": "מַה־לָּנוּ",
+          "transliteration": "mah-lanu",
+          "meaning": "what is there to us, what do we have"
+        },
+        {
+          "word": "חֵלֶק",
+          "transliteration": "cheleq",
+          "meaning": "portion, share, stake"
+        },
+        {
+          "word": "בְּדָוִד",
+          "transliteration": "be-David",
+          "meaning": "in David - in the king, the dynasty, the covenant line"
+        },
+        {
+          "word": "נַחֲלָה",
+          "transliteration": "nachalah",
+          "meaning": "inheritance, an estate passed down"
+        },
+        {
+          "word": "בֶן־יִשַׁי",
+          "transliteration": "ben-Yishai",
+          "meaning": "son of Jesse - calling David by his father's name, refusing him the title king"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נַחֲלָה / חֵלֶק",
+          "reference": "The two words sit side by side as near-synonyms - portion and inheritance. Israel rejects both at once, the present share and the future estate, the whole bond with David's house in a single breath."
+        }
+      ],
+      "strongsNumber": "H2506",
+      "definition": "a portion, share, or allotted part of a larger whole",
+      "usage": "By calling David \"the son of Jesse,\" the crowd strips him of his crown and reduces the anointed dynasty to one more farmer's family from Bethlehem. The insult is the secession."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Divided Kingdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the divided heart (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Kingdom Lost Over One Bad Answer",
+      "body": "Solomon is dead. His son Rehoboam goes north to Shechem, where all Israel has gathered to make him king. Before they will crown him, they ask one thing: lighten the load. Solomon had built a temple and palaces and cities on the backs of forced labor, and the people are worn out. \"Your father put a heavy yoke on us,\" they say. \"Lighten the burden... and we will serve you.\"\n\nRehoboam takes three days to decide. The old men who had served his father give him a single piece of wisdom: be a servant to these people today, speak kindly to them, and they will be your servants forever. It is the whole secret of rule in one sentence. Then the young men he grew up with give him the opposite counsel, and it is the one he wants to hear. So he answers the people harshly: \"My father scourged you with whips; I will scourge you with scorpions.\"\n\nThe answer takes ten seconds. The kingdom takes nine generations to assemble and one afternoon to lose. Ten of the twelve tribes turn on their heel - \"To your tents, O Israel!\" - and walk out. The united kingdom of David and Solomon is finished. From here on there are two: Israel in the north, Judah in the south, and a border between them that will run with blood for the rest of the Old Testament.",
+      "keyInsight": "The split looks like a labor dispute and a young king's pride. The text says it was something more: this turn of events was from the LORD. Human folly and divine purpose are running on the same track.",
+      "content": "Solomon is dead. His son Rehoboam goes north to Shechem, where all Israel has gathered to make him king. Before they will crown him, they ask one thing: lighten the load. Solomon had built a temple and palaces and cities on the backs of forced labor, and the people are worn out. \"Your father put a heavy yoke on us,\" they say. \"Lighten the burden... and we will serve you.\"\n\nRehoboam takes three days to decide. The old men who had served his father give him a single piece of wisdom: be a servant to these people today, speak kindly to them, and they will be your servants forever. It is the whole secret of rule in one sentence. Then the young men he grew up with give him the opposite counsel, and it is the one he wants to hear. So he answers the people harshly: \"My father scourged you with whips; I will scourge you with scorpions.\"\n\nThe answer takes ten seconds. The kingdom takes nine generations to assemble and one afternoon to lose. Ten of the twelve tribes turn on their heel - \"To your tents, O Israel!\" - and walk out. The united kingdom of David and Solomon is finished. From here on there are two: Israel in the north, Judah in the south, and a border between them that will run with blood for the rest of the Old Testament."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Fence Between the Brothers",
+      "body": "I knew two brothers who farmed adjoining fields they had inherited from their father. For thirty years there was no fence between them - the cattle drifted across, the equipment was shared, the line on the deed was a fiction nobody enforced. Then their father died, and at the funeral one brother said one hard thing about the will. It was not even the worst thing that could have been said. But it was said in front of people, and it was not taken back.\n\nWithin a year there was a fence. Within two, there were two gates with two locks. The nephews grew up not knowing their cousins. Neither brother could have told you, by the end, exactly what the fight was about - only that the wound had set, and the bone had healed crooked, and now the crookedness was simply the shape of the family.\n\nThat is how Israel split. Not over an army or an invasion, but over a sentence a proud young man would not unsay. The tragedy of 1 Kings 12 is how small the hinge is, and how vast the door it swings.",
+      "connectionToTheme": "A kingdom, like a family, can be torn not by a great evil but by a small pride that will not bend - and once torn, the tear becomes the new normal, passed down to children who never chose it.",
+      "content": "I knew two brothers who farmed adjoining fields they had inherited from their father. For thirty years there was no fence between them - the cattle drifted across, the equipment was shared, the line on the deed was a fiction nobody enforced. Then their father died, and at the funeral one brother said one hard thing about the will. It was not even the worst thing that could have been said. But it was said in front of people, and it was not taken back.\n\nWithin a year there was a fence. Within two, there were two gates with two locks. The nephews grew up not knowing their cousins. Neither brother could have told you, by the end, exactly what the fight was about - only that the wound had set, and the bone had healed crooked, and now the crookedness was simply the shape of the family.\n\nThat is how Israel split. Not over an army or an invasion, but over a sentence a proud young man would not unsay. The tragedy of 1 Kings 12 is how small the hinge is, and how vast the door it swings."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Calves to Keep the People Home",
+      "body": "Jeroboam, the new king of the north, has a problem that has nothing to do with armies. It is a worship problem. The temple is in Jerusalem, in the south, in his rival's territory. Three times a year his people will travel down to Jerusalem to worship - and Jeroboam reasons, in his heart, that if their feet keep going south, their hearts will follow, and one day they will kill him and go back to the house of David.\n\nSo he does the most consequential thing in these five chapters. He makes two golden calves, sets one in Bethel and one in Dan, and tells the people: \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.\" Those are almost exactly the words spoken at Sinai over the first golden calf (Exodus 32:4). Jeroboam has reached back across five hundred years and picked up Israel's oldest sin, and he has done it for the most modern of reasons: to keep his political base from drifting to the competition.\n\nThe writer of Kings will measure every northern king who follows against this one act. Again and again the refrain comes back: he walked in the sins of Jeroboam son of Nebat, who made Israel to sin. The whole northern kingdom is built on a worship engineered to keep people away from the place God had chosen. That is the deeper fracture. The political split was a wound; this is the infection.",
+      "historicalContext": "Bethel and Dan were Jeroboam's strategic choices - Bethel guarding the southern border near Judah, Dan anchoring the far north. He also abandoned the festival calendar and the Levitical priesthood, appointing priests \"from every class of people\" (1 Kings 12:31). The golden calf may not have been meant as a rival god at all but as a pedestal or throne for the LORD, the way the ark was His footstool. Even so, Scripture names it idolatry: worship invented for convenience, shaped by fear of losing power, in a place God did not choose.",
+      "fascinatingFact": "1 Kings 12-16 races through roughly fifty years and at least eight kings in the north - Jeroboam, Nadab, Baasha, Elah, Zimri, Tibni, Omri, and Ahab arrives at the very end. Zimri reigns seven days. The northern throne becomes a slaughterhouse, each dynasty murdering the last, because a kingdom founded on a fear-driven lie about worship cannot find solid ground to stand on.",
+      "content": "Jeroboam, the new king of the north, has a problem that has nothing to do with armies. It is a worship problem. The temple is in Jerusalem, in the south, in his rival's territory. Three times a year his people will travel down to Jerusalem to worship - and Jeroboam reasons, in his heart, that if their feet keep going south, their hearts will follow, and one day they will kill him and go back to the house of David.\n\nSo he does the most consequential thing in these five chapters. He makes two golden calves, sets one in Bethel and one in Dan, and tells the people: \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.\" Those are almost exactly the words spoken at Sinai over the first golden calf (Exodus 32:4). Jeroboam has reached back across five hundred years and picked up Israel's oldest sin, and he has done it for the most modern of reasons: to keep his political base from drifting to the competition.\n\nThe writer of Kings will measure every northern king who follows against this one act. Again and again the refrain comes back: he walked in the sins of Jeroboam son of Nebat, who made Israel to sin. The whole northern kingdom is built on a worship engineered to keep people away from the place God had chosen. That is the deeper fracture. The political split was a wound; this is the infection."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The kingdom is torn at Shechem, and Jeroboam builds rival altars at Bethel and Dan so the northern tribes will stop going up to worship in Jerusalem. One people becomes two, with two places of worship and a border between them.",
+      "modernApplication": "We still split over the thing under the thing. The argument is about the will, the budget, the schedule, the harsh word in the meeting - but the deeper fracture is almost always about where the heart goes to worship, what we will not surrender, the small pride we refuse to unsay. And we still invent convenient worship: a god kept close enough to use, in a place of our own choosing, that asks nothing of us we did not already want to give.",
+      "connectionPoint": "Even as God tears the kingdom from Solomon's son, He says why He will not tear all of it: \"I will give one tribe to your son for the sake of My servant David and for the sake of Jerusalem, which I have chosen\" (1 Kings 11:13). The lamp of David's house is kept burning, not because Rehoboam deserves it, but for the sake of a promise pointing past him. That one preserved tribe is the thread the whole rest of Scripture follows - the line that does not get torn, because something is coming through it.",
+      "newTestamentEcho": "Centuries later, a Samaritan woman - a daughter of the northern tribes' broken worship - tells a thirsty traveler at a well, \"Our fathers worshiped on this mountain, but you Jews say that the place where one must worship is in Jerusalem.\" The very fracture of 1 Kings 12 is still standing between them. And Jesus answers: \"A time is coming when you will worship the Father neither on this mountain nor in Jerusalem... the true worshipers will worship the Father in spirit and in truth\" (John 4:20-23). He is healing, at a well, the split Jeroboam built at Bethel and Dan. He came for the torn flock: \"I have other sheep that are not of this fold. I must bring them in as well... Then there will be one flock and one shepherd\" (John 10:16)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is a relationship slowly fencing itself off over one hard thing that was said and never taken back?",
+      "additionalQuestions": [
+        "Rehoboam had wise counsel in the room and chose the voices that flattered him. Whose advice are you avoiding right now because you already know it will cost you something?",
+        "Jeroboam built convenient worship to keep his people - and his own power - from drifting. What in your spiritual life is shaped more by fear of losing control than by what God actually asked?",
+        "What would it look like to be the one who unsays the harsh word, who tears down the fence, who goes back up to the place you have been avoiding?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have torn things with words I would not take back, and I have built my own private altars to keep from going where You actually call me. Forgive the pride that scourges with scorpions when it could have served. Forgive the fear that invents a smaller, safer god. You kept a lamp burning in David's house when Your people deserved the dark - keep one burning in me. Gather what I have divided. Make me one of the one flock, under the one Shepherd You sent to find us. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one fracture you have a hand in - a relationship cooling toward a fence, a worship you have made convenient and small. Today, take one step back toward the place you have been avoiding: the unsaid apology, the harder counsel, the worship that costs you something.",
+      "leavingAtCross": [
+        "The harsh word I will not unsay, the pride that adds to the yoke when it could have lightened it",
+        "The convenient altar I have built so I never have to go where God actually chose",
+        "The fear that I will lose control if I let my heart travel toward Him"
+      ],
+      "receivingFromCross": [
+        "A Shepherd who came for the sheep of the torn northern fold, not only the ones who stayed",
+        "A worship no longer bound to one mountain - the Father sought in spirit and in truth",
+        "A place in David's line kept open by grace, for the sake of the Son who keeps the lamp burning"
+      ],
+      "content": "Name one fracture you have a hand in - a relationship cooling toward a fence, a worship you have made convenient and small. Today, take one step back toward the place you have been avoiding: the unsaid apology, the harder counsel, the worship that costs you something."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did the elders advise Rehoboam to do, and what did he do instead? What did each choice cost?",
+        "Why did Jeroboam build the golden calves at Bethel and Dan - what was he afraid of, and what did he reach back to copy?",
+        "The text says the split was 'from the LORD' (12:15), and also clearly the result of Rehoboam's pride. How can both be true at once?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a relationship where a fence has gone up over one unretracted word. What would the first plank coming down look like?",
+        "Talk honestly about a 'convenient altar' in your life - a way you have made faith smaller and safer so it asks less of you.",
+        "Ask each other: where is God keeping a lamp burning for you that you have not earned, and how should that change how you live this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 11:13",
+          "text": "Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David and for the sake of Jerusalem, which I have chosen."
+        },
+        {
+          "reference": "1 Kings 12:28",
+          "text": "After seeking advice, the king made two golden calves and said to the people, \"Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.\""
+        },
+        {
+          "reference": "Ezekiel 37:22",
+          "text": "I will make them one nation in the land, on the mountains of Israel, and one king will rule over all of them. Then they will no longer be two nations and will never again be divided into two kingdoms."
+        },
+        {
+          "reference": "John 10:16",
+          "text": "I have other sheep that are not of this fold. I must bring them in as well, and they will listen to My voice. Then there will be one flock and one shepherd."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 12",
+          "note": "Read the whole chapter slowly, watching three decisions stack: Rehoboam's harsh answer (vv. 1-15), Israel's secession (vv. 16-24), and Jeroboam's calves (vv. 25-33). Each one widens the tear."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeroboam son of Nebat",
+      "title": "First King of the Divided North",
+      "description": "A capable officer over Solomon's forced labor, told by the prophet Ahijah that God would tear ten tribes from Solomon's son and give them to him (1 Kings 11:29-31). The promise came with a condition: walk in God's ways and your house will endure like David's. Instead, gripped by fear that his people's worship would pull them back to Jerusalem and to the house of David, Jeroboam built golden calves at Bethel and Dan. He became the standard of failure for every king after him - the man 'who made Israel to sin.'",
+      "keyQuote": "Going up to Jerusalem is too much for you. Here, O Israel, are your gods, who brought you up out of the land of Egypt.",
+      "lessonForUs": "Jeroboam was handed a kingdom and a promise, and he traded both to manage his own fear. When we engineer worship to protect what we are afraid to lose, we lose the very thing the worship was meant to hold. Faith that exists to keep us in control has already become a calf at Bethel.",
+      "heading": "First King of the Divided North"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1734,
+  "scriptureReference_full": "1 Kings 12-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (cheleq, H2506; nachalah) reflects standard lexical sources. The parallel between Jeroboam's calf-words (1 Kings 12:28) and the Sinai calf (Exodus 32:4) is noted across standard commentary on Kings."
+  ]
 }

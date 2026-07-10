@@ -1,38 +1,182 @@
 {
   "day": 172,
-  "title": "Daniel’s Faithfulness — Day 4 — Application",
-  "teaser": "Day 172 of Bible 365 — Daniel 3, 6, 9",
+  "title": "But even if He does not",
+  "teaser": "Three crises, one posture. The furnace, the den, the prayer — Daniel and his friends decide before the test what they will do in it. And in the fire, a fourth figure walks with them.",
   "framework": "Daniel 3, 6, 9 — Daniel’s Faithfulness",
   "scriptureReference": "Daniel 3, 6, 9",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 172"
+      "type": "scripture",
+      "reference": "Daniel 3:17-18, 25; 6:10; 9:18",
+      "translation": "BSB",
+      "emphasis": [
+        "But even if He does not",
+        "the fourth looks like a son of the gods",
+        "just as he had done before",
+        "because of Your great compassion"
+      ],
+      "hebrewOriginal": "כְּדִי הֲוָה עָבֵד מִן־קַדְמַת דְּנָה",
+      "passage": "If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up.\n\n\"Look!\" he exclaimed. \"I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods!\"\n\nNow when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before.\n\nFor we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 3, 6, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 3, 6, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "aramaic",
+      "word": "כְּדִי הֲוָה עָבֵד מִן־קַדְמַת דְּנָה",
+      "transliteration": "kedi hava aved min-qadmat denah",
+      "pronunciation": "keh-DEE hah-VAH ah-VED min kahd-MAHT deh-NAH",
+      "meaning": "just as he had done before; as was his prior custom",
+      "rootMeaning": "Most of Daniel 2–7 is written in Aramaic, the working language of the Babylonian empire. The phrase in 6:10 is a small clause that carries enormous weight: Daniel prayed exactly as he had done before. Nothing new. The decree did not start his praying, and the decree did not stop it.",
+      "usageNote": "Daniel’s faithfulness in the crisis is not improvised on the spot. It is the overflow of a habit so old it has worn a groove. When the lethal law arrives, he simply keeps the appointment he has kept for decades — windows open toward a Jerusalem he cannot see, knees on the floor, three times a day.",
+      "wordByWord": [
+        {
+          "word": "כְּדִי",
+          "transliteration": "kedi",
+          "meaning": "just as, according as"
+        },
+        {
+          "word": "הֲוָה",
+          "transliteration": "hava",
+          "meaning": "he was (continuing action)"
+        },
+        {
+          "word": "עָבֵד",
+          "transliteration": "aved",
+          "meaning": "doing, practicing"
+        },
+        {
+          "word": "מִן־קַדְמַת דְּנָה",
+          "transliteration": "min-qadmat denah",
+          "meaning": "from before this; as previously"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֵימִן / אֲמֵן",
+          "reference": "When Daniel 6:23 says Daniel was unharmed because he had trusted (Aramaic himin) in his God, it uses the root that stands behind the word amen — to be firm, steady, reliable. The same firmness that holds a building up is the firmness of a faith that does not flinch."
+        }
+      ],
+      "strongsNumber": "H6928",
+      "definition": "qadmah — that which is before, former time, prior custom",
+      "usage": "The decisive faithfulness happens before the test. By the time the order is signed, Daniel has already decided — years ago — who he kneels to."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel’s Faithfulness. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One like a Son of Man (Mark 14:62).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Crises, One Posture",
+      "body": "The book of Daniel runs on roughly the same dare, told three different ways. In chapter 3 a king builds a golden statue and commands the empire to fall down when the music plays. Three young Hebrew men — Shadrach, Meshach, and Abednego — stay standing. In chapter 6 jealous officials trap a king into outlawing prayer to anyone but himself for thirty days, and Daniel, an old man now, keeps praying at his window in plain view. In chapter 9 there is no furnace and no den, only a man on his knees with sackcloth and ashes, confessing not his own faithfulness but his people’s long unfaithfulness.\n\nDay by day this week we have watched the cost of staying loyal to God in a place that is not. Today the question turns toward us: not whether Daniel and his friends were brave, but how they were able to be. Where does a faithfulness like that come from?\n\nThe answer is hidden in a small clause in 6:10. When the lethal decree is signed, Daniel goes home and prays \"just as he had done before.\" The crisis changes nothing about his practice because the practice was never built for the crisis. It was built for ordinary Tuesdays — three times a day, windows toward Jerusalem, year after exiled year. The faithfulness that held under a death sentence was the same faithfulness that held when no one was watching. By the time the test came, the decision had already been made so many times it no longer felt like a decision.",
+      "keyInsight": "Faithfulness under pressure is rarely summoned in the moment. It is withdrawn, like savings, from a habit built long before the pressure came.",
+      "content": "The book of Daniel runs on roughly the same dare, told three different ways. In chapter 3 a king builds a golden statue and commands the empire to fall down when the music plays. Three young Hebrew men — Shadrach, Meshach, and Abednego — stay standing. In chapter 6 jealous officials trap a king into outlawing prayer to anyone but himself for thirty days, and Daniel, an old man now, keeps praying at his window in plain view. In chapter 9 there is no furnace and no den, only a man on his knees with sackcloth and ashes, confessing not his own faithfulness but his people’s long unfaithfulness.\n\nDay by day this week we have watched the cost of staying loyal to God in a place that is not. Today the question turns toward us: not whether Daniel and his friends were brave, but how they were able to be. Where does a faithfulness like that come from?\n\nThe answer is hidden in a small clause in 6:10. When the lethal decree is signed, Daniel goes home and prays \"just as he had done before.\" The crisis changes nothing about his practice because the practice was never built for the crisis. It was built for ordinary Tuesdays — three times a day, windows toward Jerusalem, year after exiled year. The faithfulness that held under a death sentence was the same faithfulness that held when no one was watching. By the time the test came, the decision had already been made so many times it no longer felt like a decision."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sentence Before the Comma",
+      "body": "There is a line in the third chapter that is easy to read too fast. Standing in front of a furnace they can feel the heat of, the three men tell the king their God is able to rescue them. And then comes the comma, and after the comma the hardest words faith ever has to say: \"But even if He does not.\"\n\nThat clause is where most of us would like to stop reading. We can manage faith that comes with a guarantee. We will trust God if the scan comes back clean, if the marriage is saved, if the job comes through, if the rescue is on its way. The three men refuse that arrangement out loud. They believe God can deliver them. They will not promise to keep worshiping Him only if He does.\n\nNotice what their faith is anchored to. Not to the outcome — they openly admit they do not know the outcome. Their faith is anchored to who God is whether He delivers them or not. That is the difference between trusting God and using Him. The bargain says: rescue me and I will follow You. Faith says: I will follow You into the fire, and if there is rescue, it will be a gift and not a wage.\n\nDaniel prays the same way in chapter 9, when he asks God to act. He does not say, \"Hear me because I have earned it.\" He says the opposite: \"We are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.\" Same posture, different room. Whatever they receive will be mercy, never a transaction.",
+      "connectionToTheme": "Faithful obedience anchors itself to God’s character, not to a promised outcome — the same posture whether facing a furnace, a den, or a confession.",
+      "content": "There is a line in the third chapter that is easy to read too fast. Standing in front of a furnace they can feel the heat of, the three men tell the king their God is able to rescue them. And then comes the comma, and after the comma the hardest words faith ever has to say: \"But even if He does not.\"\n\nThat clause is where most of us would like to stop reading. We can manage faith that comes with a guarantee. We will trust God if the scan comes back clean, if the marriage is saved, if the job comes through, if the rescue is on its way. The three men refuse that arrangement out loud. They believe God can deliver them. They will not promise to keep worshiping Him only if He does.\n\nNotice what their faith is anchored to. Not to the outcome — they openly admit they do not know the outcome. Their faith is anchored to who God is whether He delivers them or not. That is the difference between trusting God and using Him. The bargain says: rescue me and I will follow You. Faith says: I will follow You into the fire, and if there is rescue, it will be a gift and not a wage.\n\nDaniel prays the same way in chapter 9, when he asks God to act. He does not say, \"Hear me because I have earned it.\" He says the opposite: \"We are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.\" Same posture, different room. Whatever they receive will be mercy, never a transaction."
+    },
+    {
+      "type": "insight",
+      "heading": "The Fourth Man in the Fire",
+      "body": "Watch the furnace carefully, because the deliverance is not what we usually assume. God does not keep the three men out of the fire. He does not cool the flames before they go in; the heat is so fierce it kills the soldiers who throw them. The men are bound and dropped into the blaze. And then Nebuchadnezzar, looking in, counts wrong: he threw in three, and now he sees four. The fourth walks freely among them, and the ropes are gone.\n\nThe rescue is not from the fire. The rescue is in it. God’s answer to their \"even if He does not\" is not to spare them the furnace but to be present inside it — a fourth figure the king can only describe as \"like a son of the gods.\" When they come out, not a hair is singed and they do not even smell of smoke. The same pattern repeats in the den: the lions’ mouths are not removed, they are shut, and Daniel testifies, \"My God sent His angel and shut the mouths of the lions.\"\n\nThis is the deepest layer of Daniel’s faithfulness, and the reason it could survive a furnace. They were not being asked to be brave alone. The God they refused to abandon refused to abandon them. They walked into the flames, and Someone was already there.",
+      "historicalContext": "Daniel and his friends are exiles — Judah has fallen, the temple is rubble, and they serve in the court of the empire that destroyed their home. Their faithfulness is not the security of people whose world is intact; it is the loyalty of people who have already lost almost everything and still will not bow.",
+      "fascinatingFact": "Daniel 9 dates this prayer to the first year of Darius, when Daniel reads in Jeremiah’s scroll that the exile would last seventy years and realizes the time is nearly up. His response to good news on the horizon is not celebration but confession — he prays as though the promise depends on God’s compassion, not Israel’s improvement.",
+      "content": "Watch the furnace carefully, because the deliverance is not what we usually assume. God does not keep the three men out of the fire. He does not cool the flames before they go in; the heat is so fierce it kills the soldiers who throw them. The men are bound and dropped into the blaze. And then Nebuchadnezzar, looking in, counts wrong: he threw in three, and now he sees four. The fourth walks freely among them, and the ropes are gone.\n\nThe rescue is not from the fire. The rescue is in it. God’s answer to their \"even if He does not\" is not to spare them the furnace but to be present inside it — a fourth figure the king can only describe as \"like a son of the gods.\" When they come out, not a hair is singed and they do not even smell of smoke. The same pattern repeats in the den: the lions’ mouths are not removed, they are shut, and Daniel testifies, \"My God sent His angel and shut the mouths of the lions.\"\n\nThis is the deepest layer of Daniel’s faithfulness, and the reason it could survive a furnace. They were not being asked to be brave alone. The God they refused to abandon refused to abandon them. They walked into the flames, and Someone was already there."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When three faithful men are thrown into the furnace, they are not alone — a fourth figure, unbound and unburned, walks with them in the fire, and they come out untouched.",
+      "modernApplication": "Most of us are not facing a furnace or a den. We are facing the slow tests: keeping our integrity when a lie would be easier, praying when nothing seems to change, staying loyal to God through a season that has not been delivered and may not be. Daniel’s example is not a promise that the fire will be canceled. It is a promise that we will not be in it alone, and that faithfulness is built in ordinary obedience long before the hard day comes.",
+      "connectionPoint": "Isaiah had already sung what the furnace would prove: \"When you walk through the fire, you will not be scorched; the flames will not set you ablaze\" (Isaiah 43:2) — and the reason given is the line just before it: \"I will be with you.\" The thread of Scripture is not that the faithful are spared every fire, but that God goes through it with them.",
+      "newTestamentEcho": "Nebuchadnezzar saw one \"like a son of the gods\"; standing before the high priest, Jesus claimed the title outright: \"you will see the Son of Man sitting at the right hand of Power\" (Mark 14:62). The One who walked in Daniel’s furnace is the One named Immanuel, \"God with us\" (Matthew 1:23), who tells His own people, \"I am with you always, even to the end of the age\" (Matthew 28:20). The presence in the flames was a foreshadowing of a presence that would one day be born, crucified, and risen — and never leave."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would it mean for you to say, today, \"But even if He does not\" — to keep trusting God whether or not the outcome you are praying for arrives?",
+      "additionalQuestions": [
+        "Daniel’s courage in the crisis came from a habit kept on ordinary days. What is one small practice of faithfulness you could build now, before any test comes?",
+        "Where in your life are you bargaining with God — offering to follow Him if He delivers what you want? What would it look like to follow Him without the condition?",
+        "Is there a fire you are walking through right now where you have assumed you are alone? Where might the fourth figure already be present?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You are able to deliver me; I believe that. And even if You do not deliver me the way I am asking, let me not stop kneeling at the window. Build in me the kind of faithfulness that is worn smooth by ordinary days, so that when the hard day comes I am not improvising courage but spending what You have already stored up in me. When I walk into the fire, let me find that You are already there — the One unbound and unburned, who will not leave me to burn alone. I do not ask because I have earned it. I ask because of Your great compassion. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, decide one matter of faithfulness before it is tested. Choose a single daily practice — a few minutes of prayer, an honest word you will not bend on, a kindness you will keep doing whether it is noticed — and begin it now, on an ordinary day, so it is already a groove when pressure comes.",
+      "leavingAtCross": [
+        "The bargain that says I will follow God only if He delivers the outcome I want",
+        "The fear of walking into a fire I cannot avoid",
+        "The belief that courage has to be summoned alone, in the moment, out of my own strength"
+      ],
+      "receivingFromCross": [
+        "A faithfulness anchored to who God is, not to whether the rescue comes",
+        "The presence of the One who walks into the furnace with His people",
+        "The freedom to obey on ordinary days, trusting that small habits become deep roots"
+      ],
+      "content": "Today, decide one matter of faithfulness before it is tested. Choose a single daily practice — a few minutes of prayer, an honest word you will not bend on, a kindness you will keep doing whether it is noticed — and begin it now, on an ordinary day, so it is already a groove when pressure comes."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the clause \"just as he had done before\" (Daniel 6:10) reveal about where Daniel’s courage actually came from?",
+        "The three men say God is able to deliver them, \"but even if He does not\" they will not bow. What is their faith anchored to, if not the outcome?",
+        "In the furnace and the den, God does not remove the danger — He enters the fire and shuts the lions’ mouths. How does that change what we should expect deliverance to look like?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are bargaining with God — \"I’ll trust You if You do X.\" Talk honestly about what it would cost to drop the condition.",
+        "Share one daily habit of faithfulness you could start now, before any crisis, and ask your partner to check in on it.",
+        "Talk about a fire you are walking through. Where might God already be present in it, and how could you remind each other of that this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 6:23",
+          "text": "The king was overjoyed and gave orders to lift Daniel out of the den, and when Daniel was lifted out of the den, no wounds whatsoever were found on him, because he had trusted in his God."
+        },
+        {
+          "reference": "Daniel 9:9",
+          "text": "To the Lord our God belong compassion and forgiveness, even though we have rebelled against Him."
+        },
+        {
+          "reference": "Isaiah 43:2",
+          "text": "When you pass through the waters, I will be with you; and when you go through the rivers, they will not overwhelm you. When you walk through the fire, you will not be scorched; the flames will not set you ablaze."
+        },
+        {
+          "reference": "Matthew 28:20",
+          "text": "And surely I am with you always, even to the end of the age."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 3, 6, and 9",
+          "note": "Read the three crises together in one sitting, watching for the same posture in each: faithfulness decided before the test, anchored to God’s character, and met by God’s presence rather than the removal of danger."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Exile Who Kept the Window Open",
+      "description": "A young noble of Judah carried into Babylonian exile, who rose to serve under successive empires while refusing to surrender his loyalty to the God of Israel. Across a long life he interpreted dreams, survived a den of lions as an old man, and prayed for his scattered people on his knees. His faithfulness was not occasional heroism but a daily discipline — windows toward a ruined Jerusalem, prayer three times a day, kept up for decades regardless of who was king or what was legal.",
+      "keyQuote": "Now when Daniel learned that the document had been signed, he went into his house... and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before.",
+      "lessonForUs": "Daniel’s courage in the crisis was simply his ordinary faithfulness, refusing to bend. We do not rise to the level of our intentions in a hard moment; we fall to the level of our habits. Build the habit on the easy days, and you will have it on the hard ones.",
+      "heading": "The Exile Who Kept the Window Open"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2379,
+  "scriptureReference_full": "Daniel 3:16-18, 24-25, 28; 6:10, 16, 22-23, 26-27; 9:3-5, 9, 18-19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Aramaic note on Daniel 6:10 (kedi hava aved min-qadmat denah) and the himin / amen root in 6:23 reflect standard lexical sources for Biblical Aramaic; most of Daniel 2:4b–7:28 is composed in Aramaic."
+  ]
 }

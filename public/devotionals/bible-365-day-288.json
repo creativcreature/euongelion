@@ -1,38 +1,191 @@
 {
   "day": 288,
-  "title": "Mark: The Suffering Servant — Day 1 — Hook",
-  "teaser": "Day 288 of Bible 365 — Mark 1-16",
+  "title": "The Servant Who Pays the Price",
+  "teaser": "Mark's whole gospel runs downhill toward a cross. The King arrives not to be served, but to give His life as a ransom for many.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
   "scriptureReference": "Mark 1-16",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 288"
+      "type": "scripture",
+      "reference": "Mark 10:42-45",
+      "translation": "BSB",
+      "emphasis": [
+        "lord it over them",
+        "did not come to be served, but to serve",
+        "a ransom for many"
+      ],
+      "greekOriginal": "καὶ γὰρ ὁ Υἱὸς τοῦ ἀνθρώπου οὐκ ἦλθεν διακονηθῆναι ἀλλὰ διακονῆσαι, καὶ δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν.",
+      "passage": "So Jesus called them together and said, \"You know that those regarded as rulers of the Gentiles lord it over them, and their superiors exercise authority over them. But it shall not be this way among you. Instead, whoever wants to become great among you must be your servant, and whoever wants to be first must be the slave of all. For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lytron",
+      "pronunciation": "LOO-tron",
+      "meaning": "ransom, redemption-price, the payment that buys a captive free",
+      "rootMeaning": "From the verb lyo, \"to loose, untie, set free.\" A lytron was the literal price paid to release a prisoner of war or to buy a slave out of bondage. The word carries the smell of the marketplace and the auction block, not the abstraction of theology.",
+      "usageNote": "In the wider Greek world a lytron freed a body. Mark puts the word on Jesus' own lips at the hinge of his gospel, and pairs it with anti - \"in place of, instead of.\" The ransom is not merely on behalf of many; it is given in their place. One life laid down where many lives were owed.",
+      "wordByWord": [
+        {
+          "word": "ὁ Υἱὸς τοῦ ἀνθρώπου",
+          "transliteration": "ho Huios tou anthropou",
+          "meaning": "the Son of Man - Jesus' chosen title for Himself, drawn from Daniel 7, where one like a son of man receives an everlasting kingdom"
+        },
+        {
+          "word": "διακονῆσαι",
+          "transliteration": "diakonesai",
+          "meaning": "to serve, to wait on tables - the root of the word deacon"
+        },
+        {
+          "word": "δοῦναι",
+          "transliteration": "dounai",
+          "meaning": "to give, to hand over freely"
+        },
+        {
+          "word": "λύτρον",
+          "transliteration": "lytron",
+          "meaning": "ransom, the price that purchases freedom"
+        },
+        {
+          "word": "ἀντὶ πολλῶν",
+          "transliteration": "anti pollon",
+          "meaning": "in place of many - substitution, one standing where the many stood"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπολύτρωσις",
+          "reference": "Apolytrosis, \"redemption,\" built from the same root, is what Paul says we have through Christ's blood (Ephesians 1:7). Mark gives the seed word; the rest of the New Testament grows the harvest."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "a ransom; the price paid to release someone from captivity or slavery",
+      "usage": "Mark uses lytron only here, but the whole second half of his gospel is its commentary. Everything Jesus does from chapter 8 onward is the story of how that price gets paid."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Gospel Built to Fall",
+      "body": "Mark wastes no time. There is no genealogy, no shepherds, no wise men - the shortest gospel opens like a door kicked in: \"This is the beginning of the gospel of Jesus Christ, the Son of God.\" Then the pace never slows. Mark's favorite word is \"immediately.\" Jesus heals, casts out, teaches, and moves on, and the reader is dragged breathless behind Him through Galilee.\n\nBut read the whole sixteen chapters in one sitting and you feel the ground tilt. The book is built like a hill that runs downhill toward Jerusalem. For eight chapters the crowds grow and the wonders pile up. Then, at the exact center, Peter finally says it out loud - \"You are the Christ\" - and from that moment Jesus turns His face toward the cross and starts saying a strange thing three times over: the Son of Man must suffer, be rejected, be killed, and rise.\n\nThe disciples cannot hear it. James and John ask for the best seats in the coming kingdom. The other ten are furious - not at the request, but that they didn't ask first. Into that scramble for greatness Jesus drops the sentence that holds the whole gospel together: \"The Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\" Every road in Mark leads to that one verse, and that verse leads to a cross.",
+      "keyInsight": "Mark is not a collection of miracle stories that happens to end in a crucifixion. It is a crucifixion that the miracle stories were leading toward all along.",
+      "content": "Mark wastes no time. There is no genealogy, no shepherds, no wise men - the shortest gospel opens like a door kicked in: \"This is the beginning of the gospel of Jesus Christ, the Son of God.\" Then the pace never slows. Mark's favorite word is \"immediately.\" Jesus heals, casts out, teaches, and moves on, and the reader is dragged breathless behind Him through Galilee.\n\nBut read the whole sixteen chapters in one sitting and you feel the ground tilt. The book is built like a hill that runs downhill toward Jerusalem. For eight chapters the crowds grow and the wonders pile up. Then, at the exact center, Peter finally says it out loud - \"You are the Christ\" - and from that moment Jesus turns His face toward the cross and starts saying a strange thing three times over: the Son of Man must suffer, be rejected, be killed, and rise.\n\nThe disciples cannot hear it. James and John ask for the best seats in the coming kingdom. The other ten are furious - not at the request, but that they didn't ask first. Into that scramble for greatness Jesus drops the sentence that holds the whole gospel together: \"The Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\" Every road in Mark leads to that one verse, and that verse leads to a cross."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Took the Cell",
+      "body": "In the summer of 1941 a prisoner escaped from Auschwitz, and the camp commandant ordered ten men from the same block chosen to starve to death as a reprisal. One of the ten, a Polish sergeant named Franciszek Gajowniczek, cried out that he had a wife and children. A thin, hollow-eyed prisoner stepped forward out of the line and asked to take his place. He was a Franciscan priest, Maximilian Kolbe. The guards allowed the trade. Kolbe went into the starvation bunker in another man's place and did not come out alive. Gajowniczek survived the war and lived into his nineties, and for the rest of his life he told anyone who would listen what it cost to keep him breathing.\n\nThat is what a ransom looks like when it stops being a word and becomes a man walking forward out of a line. One life given so another's debt is cancelled. The man who lived spent fifty more years standing where someone else's death had bought him a place.\n\nMark says the King of the universe walked forward out of the line for us. Not for a sergeant with a family, but for the many - the deniers, the deserters, the ones still arguing over the best seats. He stepped into the cell that had our name on it.",
+      "connectionToTheme": "A ransom is never an idea; it is always a substitution you can name - someone going where you were meant to go, so you can walk free.",
+      "content": "In the summer of 1941 a prisoner escaped from Auschwitz, and the camp commandant ordered ten men from the same block chosen to starve to death as a reprisal. One of the ten, a Polish sergeant named Franciszek Gajowniczek, cried out that he had a wife and children. A thin, hollow-eyed prisoner stepped forward out of the line and asked to take his place. He was a Franciscan priest, Maximilian Kolbe. The guards allowed the trade. Kolbe went into the starvation bunker in another man's place and did not come out alive. Gajowniczek survived the war and lived into his nineties, and for the rest of his life he told anyone who would listen what it cost to keep him breathing.\n\nThat is what a ransom looks like when it stops being a word and becomes a man walking forward out of a line. One life given so another's debt is cancelled. The man who lived spent fifty more years standing where someone else's death had bought him a place.\n\nMark says the King of the universe walked forward out of the line for us. Not for a sergeant with a family, but for the many - the deniers, the deserters, the ones still arguing over the best seats. He stepped into the cell that had our name on it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Title That Tears in Two",
+      "body": "Mark frames his whole gospel with a single claim, and he frames it on purpose. The very first line calls Jesus \"the Son of God.\" Then, for fifteen chapters, no human being on earth gets it fully right. Demons know it. The Father's voice says it from heaven. But people guess and miss.\n\nThe next human voice to say it plainly comes at the foot of the cross. A Roman centurion - a career executioner, a man who has watched many men die - stands in front of Jesus, sees how He breathes His last, and says, \"Truly this man was the Son of God!\" Mark has been waiting the entire book for a person to say that sentence, and he gives it to a pagan soldier who recognizes the King not by a throne or a crown but by the way He dies.\n\nAnd Mark places one detail beside the centurion's confession: at the moment Jesus dies, the veil of the temple is torn in two from top to bottom. The curtain that walled sinners off from the holy presence is ripped - and the tearing starts at the top, where no human hand could reach. The ransom is paid, the price is accepted, and the door that shame and law kept shut is opened from God's side down.",
+      "historicalContext": "Mark was likely the earliest gospel written, traditionally associated with John Mark recording the preaching of the apostle Peter, composed for a suffering church - many scholars suggest believers in Rome facing persecution under Nero in the 60s AD. To such readers, a Messiah who is glorified precisely by suffering was not a problem to explain away but the very ground under their feet.",
+      "fascinatingFact": "The temple veil was a woven curtain reportedly the height of a four-story building, separating the Most Holy Place from everything else. Mark notes it tears \"from top to bottom\" - the direction matters. This is not fabric wearing through from below; it is God reaching down and opening what we could never open from our side.",
+      "content": "Mark frames his whole gospel with a single claim, and he frames it on purpose. The very first line calls Jesus \"the Son of God.\" Then, for fifteen chapters, no human being on earth gets it fully right. Demons know it. The Father's voice says it from heaven. But people guess and miss.\n\nThe next human voice to say it plainly comes at the foot of the cross. A Roman centurion - a career executioner, a man who has watched many men die - stands in front of Jesus, sees how He breathes His last, and says, \"Truly this man was the Son of God!\" Mark has been waiting the entire book for a person to say that sentence, and he gives it to a pagan soldier who recognizes the King not by a throne or a crown but by the way He dies.\n\nAnd Mark places one detail beside the centurion's confession: at the moment Jesus dies, the veil of the temple is torn in two from top to bottom. The curtain that walled sinners off from the holy presence is ripped - and the tearing starts at the top, where no human hand could reach. The ransom is paid, the price is accepted, and the door that shame and law kept shut is opened from God's side down."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Son of Man came not to be served but to serve, and to give His life as a ransom in place of many - a King whose greatness is measured by what He lays down, not what He takes.",
+      "modernApplication": "We still believe, deep down, that greatness is being served - the corner office, the front of the line, the seat at the right hand. Mark's Jesus quietly inverts the whole ladder. The way up is down. The first place belongs to the one willing to be the slave of all. This is not a tip for better leadership; it is a different definition of what a life is for.",
+      "connectionPoint": "Mark gives us the seed-word ransom and lets it grow through the rest of the New Testament. Paul tells Timothy that Christ Jesus \"gave Himself as a ransom for all\" (1 Timothy 2:6). Peter says we were redeemed not with silver or gold but with the precious blood of Christ (1 Peter 1:18-19). Hebrews calls Him the mediator who secured an eternal redemption (Hebrews 9:12). The single verse at the center of Mark becomes the heartbeat of the whole gospel everywhere it is later preached.",
+      "newTestamentEcho": "Mark's ransom verse reaches back to Isaiah 53, where the Servant is \"pierced for our transgressions\" and pours out His soul unto death, \"and He bore the sin of many.\" The same word - many - bridges the prophet and the gospel. Isaiah saw the Suffering Servant from far off; Mark walks Him to Golgotha."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still climbing the ladder Jesus turned upside down - reaching for the seat, the recognition, the place of being served?",
+      "additionalQuestions": [
+        "Mark waits the whole gospel for a human to call Jesus the Son of God, and gives it to the soldier who watched Him die. What does it mean that the cross, not the miracles, is where He is finally recognized?",
+        "If a ransom is a price paid in your place, how does it change your day to walk through it as someone already bought free?",
+        "The disciples kept hearing 'serve' and reaching for 'great.' Where do you do the same?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, Son of Man and Son of God, You did not come to be served, but to serve, and to give Your life as a ransom for me. I confess how often I am James and John, asking for the best seat, and how slow I am to take the lowest place You walked to first. Thank You for stepping out of the line into the cell that had my name on it. Thank You for the veil torn from the top down, opened from Your side because I could never open it from mine. Teach me the greatness that looks like a towel and a basin and a cross. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one hidden act of service that no one will see or thank you for - and as you do it, remember that this, not the corner office, is the shape of the kingdom Jesus came to bring.",
+      "leavingAtCross": [
+        "The quiet conviction that greatness means being served",
+        "The scramble for the better seat, the louder credit, the front of the line",
+        "The debt I could never pay and was never asked to"
+      ],
+      "receivingFromCross": [
+        "A ransom paid in full, in my place, by the one who walked forward out of the line",
+        "A torn veil and an open door I did not pry open myself",
+        "A new measure of a life: not what I gather, but what I lay down"
+      ],
+      "content": "Today, do one hidden act of service that no one will see or thank you for - and as you do it, remember that this, not the corner office, is the shape of the kingdom Jesus came to bring."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Greek word lytron mean, and why does it matter that Jesus pairs it with anti - 'in place of'?",
+        "Why does Mark wait until the cross to let a human being call Jesus 'the Son of God,' and who finally says it?",
+        "How does the structure of Mark - all those 'immediately' miracles in the first half - actually point toward the cross in the second half?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you are still reaching for the 'best seat' rather than the towel and basin.",
+        "Talk honestly about what it feels like to be a person who has been ransomed - bought free at a cost you didn't pay. Is that easy or hard to believe?",
+        "Ask each other: what would one week of 'slave of all' greatness actually look like in your ordinary life?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 1:1",
+          "text": "This is the beginning of the gospel of Jesus Christ, the Son of God."
+        },
+        {
+          "reference": "Mark 8:34",
+          "text": "If anyone wants to come after Me, he must deny himself and take up his cross and follow Me."
+        },
+        {
+          "reference": "Mark 15:39",
+          "text": "When the centurion standing there in front of Jesus saw how He had breathed His last, he said, \"Truly this man was the Son of God!\""
+        },
+        {
+          "reference": "Isaiah 53:5",
+          "text": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed."
+        },
+        {
+          "reference": "1 Peter 1:18-19",
+          "text": "For you know that it was not with perishable things such as silver or gold that you were redeemed from the empty way of life handed down to you from your forefathers, but with the precious blood of Christ, a lamb without blemish or spot."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "The Gospel of Mark",
+          "note": "Read the whole gospel in one sitting - it takes under two hours - and watch the turn at Mark 8:27-31, where Peter confesses and Jesus first predicts the cross. Notice how the story runs downhill from there."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Son of Man",
+      "title": "The Suffering Servant and Coming King",
+      "description": "\"Son of Man\" is Jesus' favorite name for Himself in Mark, used more than a dozen times. It reaches back to Daniel 7, where \"one like a son of man\" is given everlasting dominion and a kingdom that will not pass away. Mark holds the two pictures together without letting go of either: this is the King who receives the eternal kingdom, and He is also the Servant who gives His life as a ransom. The crown and the cross are not in tension in Mark - the cross is how the crown is won.",
+      "keyQuote": "For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.",
+      "lessonForUs": "The one with the most right to be served chose to serve to the point of death. If that is what God's greatness looks like, then every ladder we are climbing may be pointed the wrong way.",
+      "heading": "The Suffering Servant and Coming King"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1534,
+  "scriptureReference_full": "Mark 10:42-45 (within Mark 1-16)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lytron, G3083; anti) reflects standard New Testament lexical sources (e.g., BDAG, Thayer).",
+    "The account of Maximilian Kolbe and Franciszek Gajowniczek at Auschwitz (July 1941) is a documented historical event."
+  ]
 }

@@ -6,33 +6,185 @@
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 342"
+      "type": "scripture",
+      "reference": "Romans 5:1-2, 8",
+      "translation": "BSB",
+      "emphasis": [
+        "justified through faith",
+        "peace with God",
+        "While we were still sinners, Christ died for us"
+      ],
+      "greekOriginal": "Δικαιωθέντες οὖν ἐκ πίστεως εἰρήνην ἔχομεν πρὸς τὸν Θεὸν διὰ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ",
+      "passage": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ, through whom we have gained access by faith into this grace in which we stand. And we rejoice in the hope of the glory of God. ... But God proves His love for us in this: While we were still sinners, Christ died for us."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δικαιόω",
+      "transliteration": "dikaioō",
+      "pronunciation": "dee-kai-OH-oh",
+      "meaning": "to declare righteous, to acquit, to set right",
+      "rootMeaning": "Dikaioō is a courtroom word, not a hospital word. It does not mean God slowly heals you into goodness; it means God the Judge announces a verdict over you - righteous, acquitted, in the right. The verb shares its root with dikaiosynē, the righteousness of God that Romans says is revealed in the gospel.",
+      "usageNote": "Paul piles this word-family through Romans like a drumbeat: 'justified' appears again and again from chapter 3 through chapter 8. In Romans 5:1 it stands in the aorist passive participle - dikaiothentes, 'having been justified.' The tense matters. It is a settled thing already done to us, not a process we are still completing.",
+      "wordByWord": [
+        {
+          "word": "Δικαιωθέντες",
+          "transliteration": "dikaiothentes",
+          "meaning": "having been justified - a completed verdict received, not earned"
+        },
+        {
+          "word": "ἐκ πίστεως",
+          "transliteration": "ek pisteos",
+          "meaning": "out of faith, by faith - the empty hand that receives, not the working hand that pays"
+        },
+        {
+          "word": "εἰρήνην",
+          "transliteration": "eirēnēn",
+          "meaning": "peace - the Hebrew shalom behind it: not merely calm, but the war being over"
+        },
+        {
+          "word": "ἔχομεν",
+          "transliteration": "echomen",
+          "meaning": "we have - present tense, a possession held now"
+        },
+        {
+          "word": "πρὸς τὸν Θεόν",
+          "transliteration": "pros ton Theon",
+          "meaning": "toward God, with God - the peace is relational, face turned to face"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δικαιοσύνη",
+          "reference": "Dikaiosynē, 'righteousness' (Romans 1:17). The verdict (dikaioō) and the status (dikaiosynē) come from the same root - the righteousness God gives is the righteousness His verdict creates."
+        }
+      ],
+      "strongsNumber": "G1344",
+      "definition": "to declare or pronounce righteous; to acquit; to treat as just",
+      "usage": "Because dikaioō is a declaration and not a gradual cure, the peace of Romans 5:1 cannot be undone by a bad week. The Judge has already spoken."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Therefore, Peace",
+      "body": "Romans opens in a courtroom, and the early chapters do not flatter anyone. Paul lines up the openly wicked, then the smugly moral, then his own people with their law, and brings the gavel down on all of it: 'all have sinned and fall short of the glory of God' (Romans 3:23). For two and a half chapters the prisoner's dock keeps filling until there is no one left standing outside it. The honest reader stops looking for the exception and admits to being in the dock.\n\nThen, in the same breath, the verdict turns. We 'are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Freely - the Greek means 'as a gift, without cause in us.' Not earned down, not worked off, not negotiated. Given.\n\nBy chapter 5 Paul draws the conclusion with one small, heavy word: 'Therefore.' 'Therefore, since we have been justified through faith, we have peace with God.' Notice he does not say we feel peaceful. He says we have peace - the way a treaty ends a war whether or not the soldiers in the field have heard the news yet. The fighting between us and God is over, declared over from God's side, at the cost of His Son.",
+      "keyInsight": "Justification is a verdict, not a feeling. Peace with God is a status the Judge announces over you - not a mood you have to manufacture and keep alive.",
+      "pardes_layer": "peshat",
+      "content": "Romans opens in a courtroom, and the early chapters do not flatter anyone. Paul lines up the openly wicked, then the smugly moral, then his own people with their law, and brings the gavel down on all of it: 'all have sinned and fall short of the glory of God' (Romans 3:23). For two and a half chapters the prisoner's dock keeps filling until there is no one left standing outside it. The honest reader stops looking for the exception and admits to being in the dock.\n\nThen, in the same breath, the verdict turns. We 'are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Freely - the Greek means 'as a gift, without cause in us.' Not earned down, not worked off, not negotiated. Given.\n\nBy chapter 5 Paul draws the conclusion with one small, heavy word: 'Therefore.' 'Therefore, since we have been justified through faith, we have peace with God.' Notice he does not say we feel peaceful. He says we have peace - the way a treaty ends a war whether or not the soldiers in the field have heard the news yet. The fighting between us and God is over, declared over from God's side, at the cost of His Son."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter That Already Cleared Her",
+      "body": "A woman I know spent two years convinced the tax authority was about to ruin her. An early letter had said she owed far more than she could pay, and the fear of it shaped everything - she rationed groceries, dodged the mail, lay awake doing arithmetic that never came out right.\n\nWhat she did not know was that a second letter had been issued months earlier. An error had been found and reversed. Her balance was zero. The letter sat unopened in a stack she was too afraid to touch, because she assumed every envelope from that office carried bad news.\n\nWhen a friend finally opened it for her and read it aloud, she did not believe it at first. The debt had been settled the whole time. Her fear had been real; the debt had not. She had been free for months and had lived as though she were ruined, because she never let the verdict reach her ears.\n\nThat gap - between what is true of us before God and what we are still bracing for - is the gap Romans 5 closes. The letter has been issued. The account is settled. Faith is simply opening it and believing what it says.",
+      "connectionToTheme": "Many believers live braced for a condemnation that, in Christ, has already been reversed. The peace is real and signed; faith is letting the verdict reach you.",
+      "content": "A woman I know spent two years convinced the tax authority was about to ruin her. An early letter had said she owed far more than she could pay, and the fear of it shaped everything - she rationed groceries, dodged the mail, lay awake doing arithmetic that never came out right.\n\nWhat she did not know was that a second letter had been issued months earlier. An error had been found and reversed. Her balance was zero. The letter sat unopened in a stack she was too afraid to touch, because she assumed every envelope from that office carried bad news.\n\nWhen a friend finally opened it for her and read it aloud, she did not believe it at first. The debt had been settled the whole time. Her fear had been real; the debt had not. She had been free for months and had lived as though she were ruined, because she never let the verdict reach her ears.\n\nThat gap - between what is true of us before God and what we are still bracing for - is the gap Romans 5 closes. The letter has been issued. The account is settled. Faith is simply opening it and believing what it says."
+    },
+    {
+      "type": "insight",
+      "heading": "While We Were Still",
+      "body": "The hinge of the whole argument is a phrase most readers slide past: 'While we were still sinners, Christ died for us' (Romans 5:8). Sit on the timing of it. God did not wait for us to clean up and then meet us halfway. The death happened while we were still in the wrong, still enemies, still hiding. The love came first; the change came after.\n\nThis is what makes the justification 'free' in any honest sense. If Christ had died for the improved version of us, grace would be a reward and faith would be a down payment. But Paul insists the love proved itself at the worst possible moment - 'while we were still sinners' - which means there is no version of you, past or future, that earned it or could disqualify itself from it.\n\nAnd because the verdict rests on what Christ did rather than on what we are doing, Paul can carry it all the way to its astonishing floor in chapter 8: 'There is now no condemnation for those who are in Christ Jesus' (Romans 8:1). Not less condemnation. None. The dock is empty.",
+      "historicalContext": "Paul wrote Romans around AD 57, probably from Corinth, to a church he had not founded and had never visited - a mixed congregation of Jewish and Gentile believers in the empire's capital. He was preparing them for a visit and laying out the gospel he preached, in part to settle tensions between the two groups over law and grace. Romans is the most sustained single argument for justification by faith in the New Testament, and chapters 1 through 8 form its spine: the problem (1-3), the provision (3-5), the new life (6-8).",
+      "fascinatingFact": "The structure of Romans 1-8 is itself a kind of arc. It opens in chapter 1 with the gospel as 'the power of God for salvation' that reveals 'the righteousness of God' (1:16-17), and it closes chapter 8 with that righteousness made unbreakable: nothing 'will be able to separate us from the love of God that is in Christ Jesus our Lord' (8:39). What is announced at the start as power is sealed at the end as permanence.",
+      "pardes_layer": "derash",
+      "content": "The hinge of the whole argument is a phrase most readers slide past: 'While we were still sinners, Christ died for us' (Romans 5:8). Sit on the timing of it. God did not wait for us to clean up and then meet us halfway. The death happened while we were still in the wrong, still enemies, still hiding. The love came first; the change came after.\n\nThis is what makes the justification 'free' in any honest sense. If Christ had died for the improved version of us, grace would be a reward and faith would be a down payment. But Paul insists the love proved itself at the worst possible moment - 'while we were still sinners' - which means there is no version of you, past or future, that earned it or could disqualify itself from it.\n\nAnd because the verdict rests on what Christ did rather than on what we are doing, Paul can carry it all the way to its astonishing floor in chapter 8: 'There is now no condemnation for those who are in Christ Jesus' (Romans 8:1). Not less condemnation. None. The dock is empty."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A first-century apostle, writing to strangers in Rome, dares to say that guilty people can be declared righteous and have settled peace with God - not by their record, but by the death of Christ received through faith.",
+      "modernApplication": "Most of us still run our relationship with God like a performance review. We tally the week, brace for the verdict, assume the next letter from heaven carries a bill. Romans 5 says the review already happened at the cross, and the verdict over those in Christ is final and good. The Christian life is not earning the verdict - it is living out of one already given.",
+      "connectionPoint": "Paul's word 'justified' is the engine of the Protestant Reformation and the comfort of every tradition that confesses the Nicene faith: that salvation comes through Christ. Christians have long debated the precise relationship between God's declaring us righteous and His making us righteous, and that conversation continues across the church. What Romans plainly says, and what all sides receive, is that the righteousness is God's gift in Christ and not our achievement (Romans 3:24, 4:5).",
+      "newTestamentEcho": "The same letter that opens the courtroom also empties it. 'He who did not spare His own Son but gave Him up for us all, how will He not also, along with Him, freely give us all things?' (Romans 8:32) The Judge who could have condemned us instead handed over His own Son to take the verdict in our place."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still living braced for a condemnation that, in Christ, has already been lifted?",
+      "additionalQuestions": [
+        "If 'peace with God' is a verdict and not a feeling, how would today look different if you trusted the verdict more than the feeling?",
+        "What part of yourself do you assume disqualifies you - and how does 'while we were still sinners' speak to exactly that part?",
+        "Is your relationship with God more like opening a settled account, or dodging the mail? Why?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have lived too long as though the verdict were still pending. Thank You that in Christ it is not. Thank You that You proved Your love while I was still a sinner, and not after I had earned it. Quiet the part of me that keeps re-opening a case You have already closed. Let me have peace with You - not because I feel peaceful, but because You have spoken. And let that settled peace become the ground I stand on today. Through Jesus my Lord, in whom there is now no condemnation. Amen.",
+      "scriptureEcho": "Romans 5:1",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one fear of God's disapproval you have been carrying, and answer it out loud with Romans 8:1 - 'There is now no condemnation for those who are in Christ Jesus.' Say it until you are speaking to the fear and not just reciting the verse.",
+      "leavingAtCross": [
+        "The performance-review faith that keeps tallying my worth before God",
+        "The assumption that every letter from heaven carries a bill",
+        "The fear that some part of me is still in the dock God has already emptied"
+      ],
+      "receivingFromCross": [
+        "Peace with God as a settled verdict, not a fragile mood",
+        "The freedom of a love proved 'while we were still sinners'",
+        "The confidence that nothing in all creation can separate me from the love of God in Christ"
+      ],
+      "content": "Today, name one fear of God's disapproval you have been carrying, and answer it out loud with Romans 8:1 - 'There is now no condemnation for those who are in Christ Jesus.' Say it until you are speaking to the fear and not just reciting the verse."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that 'justified' is a courtroom verdict rather than a gradual healing - what does that change about how secure your peace with God is?",
+        "What is the significance of the timing in 'While we were still sinners, Christ died for us'?",
+        "How does Romans move from 'all have sinned' (3:23) to 'no condemnation' (8:1) - and what holds those two together?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you still relate to God as a performance review rather than as someone already justified.",
+        "Talk honestly about the difference between feeling at peace with God and being at peace with God - which do you lean on more?",
+        "Ask each other: what verdict are you still bracing for that Christ has already answered at the cross?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 1:16-17",
+          "text": "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes, first to the Jew, then to the Greek. For the gospel reveals the righteousness of God that comes by faith from start to finish, just as it is written: “The righteous will live by faith.”"
+        },
+        {
+          "reference": "Romans 3:23-24",
+          "text": "for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus."
+        },
+        {
+          "reference": "Romans 5:9-10",
+          "text": "Therefore, since we have now been justified by His blood, how much more shall we be saved from wrath through Him! For if, when we were enemies of God, we were reconciled to Him through the death of His Son, how much more, having been reconciled, shall we be saved through His life!"
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 1-8",
+          "note": "Read the eight chapters in one sitting, watching the argument move: the problem (1-3), the verdict reversed (3-5), and the new life that follows from it (6-8)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Gentiles, Author of Romans",
+      "era": "1st century AD",
+      "description": "A Pharisee trained under Gamaliel and once a violent opponent of the church, Paul was confronted by the risen Christ on the road to Damascus and spent the rest of his life preaching the gospel he had tried to destroy. He wrote Romans around AD 57 to a church he had not founded, laying out the most sustained case in the New Testament that sinners are justified - declared righteous - through faith in Christ. He, of all people, knew the gap between deserving and receiving.",
+      "keyQuote": "While we were still sinners, Christ died for us.",
+      "lessonForUs": "The man who wrote 'no condemnation' had once held the coats while Stephen was stoned. If the verdict could reach Paul, it can reach the part of you that feels least reachable.",
+      "heading": "Apostle to the Gentiles, Author of Romans"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "Romans 1-8 (anchor: Romans 5:1-2, 8)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dikaioō G1344, dikaiosynē, eirēnē) reflects standard lexical sources; the aorist-passive force of dikaiothentes in Romans 5:1 follows standard Greek grammars."
+  ]
 }

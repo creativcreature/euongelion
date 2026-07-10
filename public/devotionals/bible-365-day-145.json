@@ -1,38 +1,181 @@
 {
   "day": 145,
-  "title": "Josiah Finds the Book — Day 5 — Resolution",
-  "teaser": "Day 145 of Bible 365 — 2 Kings 22-23",
+  "title": "The Book That Was Lost in the House of God",
+  "teaser": "Repairing the temple, a priest finds the forgotten Law buried in the LORD's own house. A king hears it read, tears his clothes, and turns. The Word we mislaid is the Word that finds us.",
   "framework": "2 Kings 22-23 — Josiah Finds the Book",
   "scriptureReference": "2 Kings 22-23",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 145"
+      "type": "scripture",
+      "reference": "2 Kings 22:8, 11; 23:25",
+      "translation": "BSB",
+      "emphasis": [
+        "I have found the Book of the Law",
+        "he tore his clothes",
+        "with all his heart and with all his soul and with all his strength"
+      ],
+      "hebrewOriginal": "סֵפֶר הַתּוֹרָה מָצָאתִי בְּבֵית יְהוָה",
+      "passage": "Then Hilkiah the high priest said to Shaphan the scribe, \"I have found the Book of the Law in the house of the LORD!\" And he gave it to Shaphan, who read it. ... When the king heard the words of the Book of the Law, he tore his clothes. ... Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 22-23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 22-23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מָצָאתִי",
+      "transliteration": "matsati",
+      "pronunciation": "mah-TSAH-tee",
+      "meaning": "I have found, I have come upon",
+      "rootMeaning": "From matsa, to find, to attain, to come upon something. The word can mean a deliberate discovery or an accidental encounter - to stumble onto what was there all along.",
+      "usageNote": "Hilkiah does not say \"I have written\" or \"I have made\" the Book of the Law. He says I have found it. You cannot find what was never lost. The verb quietly confesses that the Word of God had gone missing inside the very house built to hold it.",
+      "wordByWord": [
+        {
+          "word": "סֵפֶר",
+          "transliteration": "sefer",
+          "meaning": "book, scroll, written document"
+        },
+        {
+          "word": "הַתּוֹרָה",
+          "transliteration": "ha-Torah",
+          "meaning": "the Law, the instruction, the teaching"
+        },
+        {
+          "word": "מָצָאתִי",
+          "transliteration": "matsati",
+          "meaning": "I have found, I have come upon"
+        },
+        {
+          "word": "בְּבֵית יְהוָה",
+          "transliteration": "be-veit YHWH",
+          "meaning": "in the house of the LORD - the temple itself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תּוֹרָה",
+          "reference": "Torah comes from yarah, to throw or to point - as one points an arrow at a mark. The Law is not first a set of rules but a finger pointing the way home. To lose the Torah is to lose the direction."
+        }
+      ],
+      "strongsNumber": "H4672",
+      "definition": "to find, to attain to, to come upon, to discover",
+      "usage": "The whole reform of Josiah's reign turns on a single verb of discovery. Nothing new is invented; something old is recovered. The scroll had been in the building the entire time, behind the noise of a kingdom that had forgotten it was there."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Josiah Finds the Book. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Word (John 1:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book Found Where It Should Never Have Been Lost",
+      "body": "Josiah came to the throne at eight years old and reigned thirty-one years in Jerusalem, and the record says of him what it says of almost no other king: he did what was right in the eyes of the LORD and walked in all the ways of his father David, turning aside neither to the right nor to the left. In the eighteenth year of his reign he sent his scribe Shaphan to the temple to organize the repair work - to pay the carpenters and the masons fixing the house of God.\n\nIt was during that ordinary maintenance, the kind of administrative errand that does not make history, that Hilkiah the high priest said, \"I have found the Book of the Law in the house of the LORD.\" Read that slowly. The Word of God had to be found - in the temple. The scroll that was supposed to govern the whole life of the nation had gone missing inside the building constructed to honor it. Generations of priests had walked past it. The worship had continued, the festivals had run on memory and habit, the machinery of religion had kept turning - and somewhere in all of it the actual words had slid out of sight.\n\nSo Shaphan read it. Then he went to the king and said, almost in passing, \"Hilkiah the priest has given me a book,\" and he read it aloud in the king's presence. That is the whole hinge of the story: not a vision, not a miracle, not a voice from the sky. Just a found scroll, read out loud, in a quiet room.",
+      "keyInsight": "The most dangerous place to lose the Word of God is not the wilderness. It is the temple - the very house of worship, where the right things keep happening on the surface while the actual words go missing underneath.",
+      "content": "Josiah came to the throne at eight years old and reigned thirty-one years in Jerusalem, and the record says of him what it says of almost no other king: he did what was right in the eyes of the LORD and walked in all the ways of his father David, turning aside neither to the right nor to the left. In the eighteenth year of his reign he sent his scribe Shaphan to the temple to organize the repair work - to pay the carpenters and the masons fixing the house of God.\n\nIt was during that ordinary maintenance, the kind of administrative errand that does not make history, that Hilkiah the high priest said, \"I have found the Book of the Law in the house of the LORD.\" Read that slowly. The Word of God had to be found - in the temple. The scroll that was supposed to govern the whole life of the nation had gone missing inside the building constructed to honor it. Generations of priests had walked past it. The worship had continued, the festivals had run on memory and habit, the machinery of religion had kept turning - and somewhere in all of it the actual words had slid out of sight.\n\nSo Shaphan read it. Then he went to the king and said, almost in passing, \"Hilkiah the priest has given me a book,\" and he read it aloud in the king's presence. That is the whole hinge of the story: not a vision, not a miracle, not a voice from the sky. Just a found scroll, read out loud, in a quiet room."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letters in the Attic",
+      "body": "A woman I know spent the first years after her father's death feeling she had never really known him. He had been a quiet man, hard to read, gone before they finished the conversations she meant to have. She kept his house mostly as it was, too tired and too grieved to sort through it.\n\nTwo years later, clearing the attic to sell the place, she found a shoebox of letters he had written to her mother during a long stretch when work had kept them apart - dozens of them, careful and tender and unguarded in a way she had never once heard him speak out loud. She sat down on the dusty floor and read them straight through, and when she stood up she was a different daughter. The father she thought she had lost had been speaking the whole time. The words were in the house. She just had not known where to look.\n\nThat is closer to Josiah's morning than we usually admit. The scroll was not destroyed; it was misplaced. The covenant was not revoked; it was forgotten. And the moment it was read aloud, a whole life - a whole kingdom - had to reckon with words that had been waiting in the building all along.",
+      "connectionToTheme": "What Josiah recovered was not a new revelation but a buried one. The Word had not stopped speaking; the house had simply stopped listening - and the finding changed everything.",
+      "content": "A woman I know spent the first years after her father's death feeling she had never really known him. He had been a quiet man, hard to read, gone before they finished the conversations she meant to have. She kept his house mostly as it was, too tired and too grieved to sort through it.\n\nTwo years later, clearing the attic to sell the place, she found a shoebox of letters he had written to her mother during a long stretch when work had kept them apart - dozens of them, careful and tender and unguarded in a way she had never once heard him speak out loud. She sat down on the dusty floor and read them straight through, and when she stood up she was a different daughter. The father she thought she had lost had been speaking the whole time. The words were in the house. She just had not known where to look.\n\nThat is closer to Josiah's morning than we usually admit. The scroll was not destroyed; it was misplaced. The covenant was not revoked; it was forgotten. And the moment it was read aloud, a whole life - a whole kingdom - had to reckon with words that had been waiting in the building all along."
+    },
+    {
+      "type": "insight",
+      "heading": "He Tore His Clothes",
+      "body": "Watch what the Word does the instant it is read. \"When the king heard the words of the Book of the Law, he tore his clothes.\" He does not nod thoughtfully. He does not schedule a committee. He rips his royal robes down the front, the ancient gesture of a man whose whole world has just split open - because he has heard, for the first time, how far his people had drifted, and the wrath the words name against that drift.\n\nThe LORD's reply through the prophetess Huldah goes straight to that torn cloth: \"because your heart was tender and you humbled yourself before the LORD when you heard... and because you have torn your clothes and wept before Me, I have heard you.\" Notice the exchange. Josiah heard the Word; God heard Josiah. The reading was never one-directional. A living Word read aloud does something a dead text cannot - it reads the listener back. It pierces, the way Hebrews would later say, to the dividing of soul and spirit, judging the thoughts and intentions of the heart. Josiah's heart was tender, and the Word found the tenderness and broke it open into repentance.\n\nThis is the deep mystery sitting under the surface of an administrative report about temple repairs: the words on the scroll are not inert. When the Book of the Covenant is finally read in the house of the LORD, it does not wait to be interpreted. It moves first. It tears the king before the king can do anything with it. The Word is not the object of Josiah's reform; the Word is the agent of it.",
+      "historicalContext": "Most scholars identify the recovered scroll with some form of Deuteronomy - the book that repeatedly calls itself \"this Book of the Law\" and commands a king to keep his own copy and read it all his days (Deuteronomy 17:18-19). The reforms Josiah launches map closely onto Deuteronomy's demands: one place of worship, the purging of idols, the keeping of the Passover. The kingdom had been running for generations on a covenant it had not actually read.",
+      "fascinatingFact": "Josiah's reign sits in the last decades before Babylon. The reform was real and the Word found a tender heart - yet the exile still came within a generation. Scripture holds both truths without flinching: a genuine turning, and a judgment not finally averted. Some tensions in the story are held, not resolved. The Word that found Josiah did not promise to undo every consequence; it promised that God had heard him.",
+      "content": "Watch what the Word does the instant it is read. \"When the king heard the words of the Book of the Law, he tore his clothes.\" He does not nod thoughtfully. He does not schedule a committee. He rips his royal robes down the front, the ancient gesture of a man whose whole world has just split open - because he has heard, for the first time, how far his people had drifted, and the wrath the words name against that drift.\n\nThe LORD's reply through the prophetess Huldah goes straight to that torn cloth: \"because your heart was tender and you humbled yourself before the LORD when you heard... and because you have torn your clothes and wept before Me, I have heard you.\" Notice the exchange. Josiah heard the Word; God heard Josiah. The reading was never one-directional. A living Word read aloud does something a dead text cannot - it reads the listener back. It pierces, the way Hebrews would later say, to the dividing of soul and spirit, judging the thoughts and intentions of the heart. Josiah's heart was tender, and the Word found the tenderness and broke it open into repentance.\n\nThis is the deep mystery sitting under the surface of an administrative report about temple repairs: the words on the scroll are not inert. When the Book of the Covenant is finally read in the house of the LORD, it does not wait to be interpreted. It moves first. It tears the king before the king can do anything with it. The Word is not the object of Josiah's reform; the Word is the agent of it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A lost scroll is found in the house of God and read aloud; a king's heart tears open before the words, and from that hearing flows a covenant renewed before the LORD with all his heart, soul, and strength.",
+      "modernApplication": "We are rarely people who have rejected the Word outright. We are more often people in whose house the Word has quietly gone missing - present on the shelf, honored at a distance, no longer read aloud where it can tear anything open. The reform Josiah needed did not begin with new resolve. It began with hearing the old words again.",
+      "connectionPoint": "The whole of Scripture turns on words being read in the presence of those who had forgotten them. Deuteronomy commanded that the Law be read so that Israel would learn to love the LORD with all their heart and soul and strength (Deuteronomy 6:5). Josiah hears that very command and answers it with his life. And centuries later two travelers walk the Emmaus road while the risen Christ, beginning with Moses and all the Prophets, opens the Scriptures and makes their hearts burn (Luke 24:27, 32) - the same Word, the same fire, found again.",
+      "newTestamentEcho": "Josiah found a Book of the Law in the house of God. John opens his Gospel by telling us that the Word the scroll only pointed to had become a person: \"In the beginning was the Word, and the Word was with God, and the Word was God... The Word became flesh and made His dwelling among us\" (John 1:1, 14). The covenant Josiah could renew but not finally keep, Christ kept - and reads into us from the inside, a Word no longer lost in any house, but living and active and able to find the heart."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life has the Word of God quietly gone missing - present, honored, but no longer read aloud anywhere it could tear something open?",
+      "additionalQuestions": [
+        "Josiah's reform began with reading, not resolve. What would change if your next step toward God were simply to read His Word slowly, out loud, before deciding anything?",
+        "The LORD said He heard Josiah because his heart was tender. Where is your heart tender right now, and where has it gone hard?",
+        "Is there a 'temple-repair errand' in your life - some ordinary, dutiful religious routine - that is actually keeping you too busy to be found by the words underneath it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I confess that Your Word has gone missing in my house more often than I will admit - kept on the shelf, honored from a distance, no longer read where it could touch me. Find me the way You found Josiah. Read Your words to me again, and let them not stay outside me. Where my heart has gone hard, make it tender; where it is already tender, break it open into honest turning. Thank You that the Word I keep mislaying is the Word made flesh, who came looking for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, recover one lost word. Open the Bible to a passage you half-remember loving and read it slowly, out loud, in a quiet room. Do not study it or fix anything yet. Just let it be read in your house again, and notice what it does to you.",
+      "leavingAtCross": [
+        "The version of faith that keeps the building running while the words go unread",
+        "The hard heart that hears Scripture and feels nothing",
+        "The pride that wants to manage the Word instead of being found by it"
+      ],
+      "receivingFromCross": [
+        "A Word that moves first - that tears and tenders before I can do anything with it",
+        "The assurance that when I hear God, God hears me",
+        "Christ Himself, the Word made flesh, no longer lost in any house"
+      ],
+      "content": "Today, recover one lost word. Open the Bible to a passage you half-remember loving and read it slowly, out loud, in a quiet room. Do not study it or fix anything yet. Just let it be read in your house again, and notice what it does to you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that the Book of the Law had to be found inside the temple - the one place it should never have been lost?",
+        "What does Josiah's tearing of his clothes reveal about the difference between hearing the Word as information and hearing it as a living voice?",
+        "How does a lost scroll read aloud in 2 Kings point forward to Christ opening the Scriptures on the Emmaus road, and to the Word made flesh in John 1?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where the Bible has become familiar background in your life rather than a voice you actually listen to.",
+        "Josiah's reform started with reading, not willpower. Talk about whether you are trying to change by resolve when you most need to simply hear God again.",
+        "Ask each other: when did the Word last 'tear your clothes' - genuinely move you to repentance or change - and what made your heart tender enough that day?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 6:5",
+          "text": "And you shall love the LORD your God with all your heart and with all your soul and with all your strength."
+        },
+        {
+          "reference": "2 Kings 23:3",
+          "text": "So the king stood by the pillar and made a covenant before the LORD to follow the LORD and to keep His commandments, decrees, and statutes with all his heart and all his soul, and to carry out the words of this covenant that were written in this book. And all the people entered into the covenant."
+        },
+        {
+          "reference": "Hebrews 4:12",
+          "text": "For the word of God is living and active. Sharper than any double-edged sword, it pierces even to dividing soul and spirit, joints and marrow. It judges the thoughts and intentions of the heart."
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, \"Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 22-23",
+          "note": "Read both chapters in one sitting, watching the movement from the found scroll (22:8) to the torn robe (22:11) to the covenant renewed before all the people (23:1-3) to the Passover kept as it was written (23:21)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Josiah",
+      "title": "The King Who Was Found by the Word He Found",
+      "description": "King of Judah who came to the throne at eight years old and reigned thirty-one years in the last generation before the Babylonian exile. During temple repairs in his eighteenth year, the high priest Hilkiah discovered the long-neglected Book of the Law. When it was read to him, Josiah tore his clothes, sought the LORD through the prophetess Huldah, gathered all the people to hear the Book of the Covenant read aloud, renewed the covenant by the pillar, purged the idols, and kept a Passover unlike any since the days of the judges.",
+      "keyQuote": "Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses.",
+      "lessonForUs": "Josiah is the king remembered above all others for turning - and his turning began not with strength but with hearing. He did not generate his reform; he received a found Word and let it tear him open. The most faithful thing he ever did was listen to words that had been waiting in the house all along.",
+      "heading": "The King Who Was Found by the Word He Found"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2532,
+  "scriptureReference_full": "2 Kings 22:8, 11; 23:25",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The identification of the recovered scroll with Deuteronomy reflects a widely held scholarly view, noted as such rather than as certainty (2 Kings 22-23; cf. Deuteronomy 17:18-19; 30:10)."
+  ]
 }

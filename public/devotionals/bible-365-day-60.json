@@ -1,38 +1,186 @@
 {
   "day": 60,
-  "title": "Balaam’s blessing",
-  "teaser": "Day 60 of Bible 365 — Numbers 22-24",
+  "title": "The curse that would not fire",
+  "teaser": "A king hires a prophet to curse Israel. Four times the curse is loaded; four times it comes out a blessing. You cannot pronounce against what God has decided to bless.",
   "framework": "Numbers 22-24 — God redirects curses",
   "scriptureReference": "Numbers 22-24",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 60"
+      "type": "scripture",
+      "reference": "Numbers 23:19-20",
+      "translation": "BSB",
+      "emphasis": [
+        "God is not a man, that He should lie",
+        "I have indeed received a command to bless",
+        "I cannot change it"
+      ],
+      "hebrewOriginal": "לֹא אִישׁ אֵל וִיכַזֵּב וּבֶן־אָדָם וְיִתְנֶחָם",
+      "passage": "God is not a man, that He should lie, or a son of man, that He should change His mind. Does He speak and not act? Does He promise and not fulfill? I have indeed received a command to bless; He has blessed, and I cannot change it.",
+      "display": "block"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Numbers 22-24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 22-24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּרַךְ",
+      "transliteration": "barak",
+      "pronunciation": "bah-RAHKH",
+      "meaning": "to bless, to kneel, to declare favor over",
+      "rootMeaning": "The same root that means bless also means to kneel (berekh, the knee). To bless is bound up with bending - one kneels to receive it, and the God who gives it stoops to do so. A blessing is not a wish. In Hebrew it is an effective word, a thing spoken that then stands.",
+      "usageNote": "Balak hires Balaam because he believes words carry power: 'those you bless are blessed, and those you curse are cursed' (Numbers 22:6). The drama of these three chapters is a contest between two speeches - the curse Balak has paid for, and the blessing God has already pronounced. Only one of them is real.",
+      "wordByWord": [
+        {
+          "word": "בָּרַךְ",
+          "transliteration": "barak",
+          "meaning": "to bless, to confer favor"
+        },
+        {
+          "word": "אָרַר / קָבַב",
+          "transliteration": "arar / qabab",
+          "meaning": "to curse, to bind under a curse - what Balak paid Balaam to do"
+        },
+        {
+          "word": "לֹא אוּכַל",
+          "transliteration": "lo ukhal",
+          "meaning": "I am not able, I cannot - Balaam's confession that the blessing is beyond his power to reverse (Numbers 23:20)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בְּרָכָה",
+          "reference": "Berakhah, the noun 'blessing.' The blessing God spoke over Abraham - 'I will bless those who bless you, and curse those who curse you' (Genesis 12:3) - is the very thing Balaam ends up echoing in Numbers 24:9. The hired curser becomes the unwilling herald of the Abrahamic promise."
+        }
+      ],
+      "strongsNumber": "H1288",
+      "definition": "to kneel; by implication to bless God (as an act of adoration), or man (as a benefit)",
+      "usage": "Four times Balaam opens his mouth to curse and barak comes out instead. He is not the author of the words, only the channel. The blessing was decided long before he was hired."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God redirects curses. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ became a curse for us (Gal 3:13).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A King Buys a Curse and Gets a Blessing",
+      "body": "Israel is camped on the plains of Moab, fresh out of Egypt, too numerous to ignore. Balak king of Moab is afraid. He cannot fight this people with swords, so he reaches for an older weapon. He sends for a prophet.\n\nBalaam son of Beor lives far north at Pethor by the Euphrates - a famous freelancer in the spiritual trade, the kind of man kings paid to bend the unseen world. Balak's logic is plain: 'I know that those you bless are blessed, and those you curse are cursed' (Numbers 22:6). If he cannot defeat Israel in the field, perhaps he can have them cursed off the map.\n\nBut God speaks first. 'Do not go with them. You are not to curse this people, for they are blessed' (Numbers 22:12). There it is, before a single oracle - the verdict is already in. Israel is blessed, the matter is closed, and everything that follows is Balak trying to reopen a file God has already sealed.\n\nWhat happens next is one of Scripture's strangest scenes. Balaam, lured by the fee, sets out anyway. On the road his donkey sees what the prophet cannot - the angel of the LORD with a drawn sword - and turns aside three times. Balaam beats her each time, until 'the LORD opened the donkey's mouth' and she speaks (Numbers 22:28). The hired seer is out-seen by his own animal. Only then does God open Balaam's eyes, and he falls on his face. The man whose reputation rests on seeing the unseen has been blind to an armed angel in the middle of the road.",
+      "keyInsight": "Before Balaam speaks a word, God has already ruled: 'You are not to curse this people, for they are blessed.' The rest is a king spending a fortune to overturn a verdict that was never up for appeal.",
+      "content": "Israel is camped on the plains of Moab, fresh out of Egypt, too numerous to ignore. Balak king of Moab is afraid. He cannot fight this people with swords, so he reaches for an older weapon. He sends for a prophet.\n\nBalaam son of Beor lives far north at Pethor by the Euphrates - a famous freelancer in the spiritual trade, the kind of man kings paid to bend the unseen world. Balak's logic is plain: 'I know that those you bless are blessed, and those you curse are cursed' (Numbers 22:6). If he cannot defeat Israel in the field, perhaps he can have them cursed off the map.\n\nBut God speaks first. 'Do not go with them. You are not to curse this people, for they are blessed' (Numbers 22:12). There it is, before a single oracle - the verdict is already in. Israel is blessed, the matter is closed, and everything that follows is Balak trying to reopen a file God has already sealed.\n\nWhat happens next is one of Scripture's strangest scenes. Balaam, lured by the fee, sets out anyway. On the road his donkey sees what the prophet cannot - the angel of the LORD with a drawn sword - and turns aside three times. Balaam beats her each time, until 'the LORD opened the donkey's mouth' and she speaks (Numbers 22:28). The hired seer is out-seen by his own animal. Only then does God open Balaam's eyes, and he falls on his face. The man whose reputation rests on seeing the unseen has been blind to an armed angel in the middle of the road."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter That Could Not Be Unwritten",
+      "body": "A woman I know spent most of a year braced for a verdict. There had been an investigation at work, accusations she could not answer cleanly, and she was certain the report would end her. She rehearsed the worst version of the meeting a hundred times in the dark.\n\nWhen the day came, her director slid a single sheet across the table - a letter, already signed and filed, written before the meeting by someone higher up who had decided in her favor. The case against her had been real. People had spent real effort building it. But the decision that mattered was made over their heads, and there was nothing left for the accusers to do but watch it stand. The strangest part, she said, was how much fear she had carried for a thing that was, where it counted, already over.\n\nThat is the plain shape of Numbers 22-24. Balak keeps moving Balaam to a new ridge, a new altar, a new angle on the camp, sure that from the right vantage the curse will finally fire. Four times it misfires into blessing. The accuser has paid in full for a verdict that was decided over his head before he sent his first messenger.",
+      "connectionToTheme": "Balak's fortune buys him a front-row seat to a decision he cannot touch. The blessing over Israel was signed before the curse was ever commissioned.",
+      "content": "A woman I know spent most of a year braced for a verdict. There had been an investigation at work, accusations she could not answer cleanly, and she was certain the report would end her. She rehearsed the worst version of the meeting a hundred times in the dark.\n\nWhen the day came, her director slid a single sheet across the table - a letter, already signed and filed, written before the meeting by someone higher up who had decided in her favor. The case against her had been real. People had spent real effort building it. But the decision that mattered was made over their heads, and there was nothing left for the accusers to do but watch it stand. The strangest part, she said, was how much fear she had carried for a thing that was, where it counted, already over.\n\nThat is the plain shape of Numbers 22-24. Balak keeps moving Balaam to a new ridge, a new altar, a new angle on the camp, sure that from the right vantage the curse will finally fire. Four times it misfires into blessing. The accuser has paid in full for a verdict that was decided over his head before he sent his first messenger."
+    },
+    {
+      "type": "insight",
+      "heading": "A Star Comes Out of the Curser's Mouth",
+      "body": "Here is the center of these three chapters, and it is easy to miss because it comes from the wrong mouth.\n\nBy the fourth oracle Balaam has stopped resisting. 'When Balaam saw that it pleased the LORD to bless Israel, he did not resort to sorcery as on previous occasions' (Numbers 24:1). The Spirit of God comes on him, and the hired curser - the man who came for the fee - lifts his eyes over the camp and prophesies something he was never paid to say: 'I see him, but not now; I behold him, but not near. A star will come forth from Jacob, and a scepter will arise from Israel' (Numbers 24:17).\n\nA star and a scepter: a king not yet born, seen by a pagan seer over the tents of a wandering people. Balak wanted Israel erased; what he got, out of his own prophet's mouth, was the promise of Israel's King.\n\nThis is the hinge. The surface is a comedy - a talking donkey, a blind seer, a furious king getting the opposite of what he paid for. But underneath runs the deepest current in Scripture: God's blessing is not a mood that can be soured by enough effort from the right enemy. It is a word He has spoken, and 'God is not a man, that He should lie... He has blessed, and I cannot change it' (Numbers 23:19-20). No spell, no fee, no ridge with a better view of your failures can unspeak what God has spoken.\n\nAnd the blessing has a name. The star out of Jacob did not stay in the desert. Centuries later, wise men from the east - the spiritual heirs of seers like Balaam - follow a star to a child in Bethlehem and say, 'We saw His star in the east and have come to worship Him' (Matthew 2:2). The curse that would not fire was clearing the way for the King who could not be stopped.",
+      "historicalContext": "Numbers belongs to the Torah, Israel's founding account, set during the years between Egypt and the Promised Land. Balaam's name appears in an extra-biblical inscription from Deir Alla (c. 800 BC) describing 'Balaam son of Beor, a seer of the gods.' Yet 2 Peter and Jude treat him as a cautionary figure - a prophet who heard God truly and still loved the wages of wickedness. Scripture holds both: God can speak true blessing even through a compromised mouth, because the blessing was never the prophet's to give.",
+      "fascinatingFact": "The star-and-scepter oracle (Numbers 24:17) was read as a promise of the Messiah long before the New Testament. It runs forward into Israel's hope and surfaces again at the manger, where foreign star-watchers come looking for a newborn King. Christians have long heard in Balaam's reluctant words the first faint outline of the One the Magi finally found.",
+      "content": "Here is the center of these three chapters, and it is easy to miss because it comes from the wrong mouth.\n\nBy the fourth oracle Balaam has stopped resisting. 'When Balaam saw that it pleased the LORD to bless Israel, he did not resort to sorcery as on previous occasions' (Numbers 24:1). The Spirit of God comes on him, and the hired curser - the man who came for the fee - lifts his eyes over the camp and prophesies something he was never paid to say: 'I see him, but not now; I behold him, but not near. A star will come forth from Jacob, and a scepter will arise from Israel' (Numbers 24:17).\n\nA star and a scepter: a king not yet born, seen by a pagan seer over the tents of a wandering people. Balak wanted Israel erased; what he got, out of his own prophet's mouth, was the promise of Israel's King.\n\nThis is the hinge. The surface is a comedy - a talking donkey, a blind seer, a furious king getting the opposite of what he paid for. But underneath runs the deepest current in Scripture: God's blessing is not a mood that can be soured by enough effort from the right enemy. It is a word He has spoken, and 'God is not a man, that He should lie... He has blessed, and I cannot change it' (Numbers 23:19-20). No spell, no fee, no ridge with a better view of your failures can unspeak what God has spoken.\n\nAnd the blessing has a name. The star out of Jacob did not stay in the desert. Centuries later, wise men from the east - the spiritual heirs of seers like Balaam - follow a star to a child in Bethlehem and say, 'We saw His star in the east and have come to worship Him' (Matthew 2:2). The curse that would not fire was clearing the way for the King who could not be stopped."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A king paid a famous prophet a fortune to curse God's people, and four times the curse came out a blessing - because God had already declared, 'they are blessed,' and that word stood outside the reach of any spell or fee.",
+      "modernApplication": "Few of us hire prophets, but most of us live braced for a curse - the verdict we are sure is coming about our worth, our past, our failure - moving from ridge to ridge for the vantage from which it will finally land. Numbers 22-24 says the verdict that actually governs your life was decided over the heads of every accuser, including the loudest one inside your own head.",
+      "connectionPoint": "The blessing Balaam could not reverse runs as one thread from Abraham to the cross. God promised Abraham, 'I will bless those who bless you' (Genesis 12:3); Balaam, against his will, echoed it over the camp (Numbers 24:9); and Paul says the curse we actually earned was not redirected but absorbed - 'Christ redeemed us from the curse of the law by becoming a curse for us' (Galatians 3:13). On the cross the only curse that could stick to us landed on Him.",
+      "newTestamentEcho": "What Balaam glimpsed from a distance, Paul says is now settled: 'Who will bring any charge against God's elect? It is God who justifies. Who is there to condemn us?' (Romans 8:33-34). And: 'all the promises of God are Yes in Christ' (2 Corinthians 1:20). The verdict over those who belong to Christ is blessing, signed and sealed, and no accuser has the standing to overturn it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What curse have you been bracing for - the verdict about yourself you are sure is coming - and who is the voice pronouncing it?",
+      "additionalQuestions": [
+        "Balak kept moving Balaam to a new ridge for a better angle on the camp. Where do you keep going looking for evidence that the worst thing about you is the truest thing about you?",
+        "If 'God is not a man, that He should lie,' what blessing has He actually spoken over you that you have been treating as still up for debate?",
+        "What would change today if you believed the verdict over your life was already signed - in your favor - over the head of every accuser?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have been living braced for a curse. I have rehearsed the accusation so many times that I half believe it is Your voice. Quiet the hired prophets in my head. Let me hear what You actually said: that I am blessed, that the verdict is in, that no enemy and no failure can reopen what You have sealed. Thank You that the only curse I ever earned fell on Christ, who became a curse for me. In Him every promise is Yes. Let my Amen be spoken tonight, and let me rest. Amen.",
+      "scripture_echo": "Numbers 23:20; 2 Corinthians 1:20",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name out loud the one curse you have been carrying as though it were the final word - the verdict you fear about your worth or your past. Then set beside it the word God actually spoke: 'I have blessed, and I cannot change it.' When the accusation returns, do not argue with it. Answer it with the verdict that was signed over its head.",
+      "leavingAtCross": [
+        "The accusation I keep rehearsing as though it were God's final word over me",
+        "The exhausting habit of moving from ridge to ridge, hunting for proof that the worst about me is the truest",
+        "The fear that someone, somewhere, can still get me cursed if they try hard enough"
+      ],
+      "receivingFromCross": [
+        "A blessing that was decided before the curse was ever commissioned, and cannot be reopened",
+        "The freedom of knowing the only curse I earned was absorbed by Christ, who became a curse for me",
+        "The star out of Jacob - a King whose verdict over me is Yes, and Amen"
+      ],
+      "content": "Today, name out loud the one curse you have been carrying as though it were the final word - the verdict you fear about your worth or your past. Then set beside it the word God actually spoke: 'I have blessed, and I cannot change it.' When the accusation returns, do not argue with it. Answer it with the verdict that was signed over its head."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "God's verdict - 'they are blessed' - comes in Numbers 22:12, before Balaam speaks a single oracle. How does knowing the ending was fixed from the start change the way you read everything Balak attempts afterward?",
+        "Why does it matter that the prophecy of the star and scepter (Numbers 24:17) comes from a hired pagan seer rather than from Moses or Israel itself?",
+        "Balaam confesses, 'I have blessed, and I cannot change it' (Numbers 23:20). What is he admitting about where the real power in the story lies?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'curse' you have been living braced for - a verdict about yourself you assume is coming - and say it plainly to one another.",
+        "Talk about the difference between an accusation that is real and a verdict that is final. Which one actually governs a person who is in Christ?",
+        "Ask each other: where are you still going from ridge to ridge, looking for a better angle on your own failure, when God has already pronounced the blessing?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Numbers 22:12",
+          "text": "But God said to Balaam, “Do not go with them. You are not to curse this people, for they are blessed.”"
+        },
+        {
+          "reference": "Numbers 24:9",
+          "text": "He crouches, he lies down like a lion; like a lioness, who dares to rouse him? Blessed are those who bless you and cursed are those who curse you.”"
+        },
+        {
+          "reference": "Galatians 3:13",
+          "text": "Christ redeemed us from the curse of the law by becoming a curse for us. For it is written: “Cursed is everyone who is hung on a tree.”"
+        },
+        {
+          "reference": "Romans 8:33-34",
+          "text": "Who will bring any charge against God’s elect? It is God who justifies. Who is there to condemn us? For Christ Jesus, who died, and more than that was raised to life, is at the right hand of God—and He is interceding for us."
+        },
+        {
+          "reference": "2 Corinthians 1:20",
+          "text": "For all the promises of God are “Yes” in Christ. And so through Him, our “Amen” is spoken to the glory of God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 22-24",
+          "note": "Read all three chapters in one sitting, tracking the four oracles. Watch Balak move Balaam to a new place each time (23:13, 23:27) for a better angle on the curse, and notice that the blessing only grows. The arc runs from God's opening verdict (22:12) to the star of Jacob (24:17)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Balaam",
+      "title": "The Prophet Who Could Not Curse",
+      "era": "Wilderness period, c. 13th century BC",
+      "key_trait": "A famous seer-for-hire who heard God truly yet was drawn by the fee",
+      "description": "Balaam son of Beor came from Pethor by the Euphrates, a renowned diviner whom kings paid to bless and curse. Hired by Balak of Moab to curse Israel, he could only speak what God put in his mouth - and four times that word was blessing, climaxing in the prophecy of a star and scepter out of Jacob (Numbers 24:17). His story is double-edged: God spoke real truth through him, even the first outline of the Messiah, yet the New Testament remembers him as a man who 'loved the wages of wickedness' (2 Peter 2:15) and was rebuked by his own donkey.",
+      "keyQuote": "I have indeed received a command to bless; He has blessed, and I cannot change it.",
+      "lessonForUs": "The power was never in the prophet, the fee, or the ridge with the best view of Israel's flaws. It was in the word God had already spoken. No accuser can unspeak the blessing God has decreed - and in Christ, that blessing is final.",
+      "heading": "The Prophet Who Could Not Curse"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2580,
+  "scriptureReference_full": "Numbers 22-24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (barak / berakhah, H1288) reflects standard lexical sources; the bless/kneel root sense is well attested.",
+    "The Deir Alla inscription (c. 800 BC) referencing 'Balaam son of Beor, a seer of the gods' is a documented archaeological find; it is cited as historical-context background, not as Scripture.",
+    "The reading of Numbers 24:17 ('a star out of Jacob') as a messianic prophecy fulfilled in Christ is a long-standing interpretation across the Christian tradition; the link to the Magi's star is drawn from Matthew 2:2."
+  ]
 }

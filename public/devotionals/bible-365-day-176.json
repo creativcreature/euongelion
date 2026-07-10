@@ -1,38 +1,185 @@
 {
   "day": 176,
-  "title": "Esther: For Such a Time — Day 1 — Hook",
-  "teaser": "Day 176 of Bible 365 — Esther 4-7",
+  "title": "The night the king couldn't sleep",
+  "teaser": "Day 176 of Bible 365 — Esther 4-7. God's name never appears in this book. His hand is on every page.",
   "framework": "Esther 4-7 — Esther: For Such a Time",
   "scriptureReference": "Esther 4-7",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 176"
+      "type": "scripture",
+      "reference": "Esther 4:13-16",
+      "translation": "BSB",
+      "emphasis": [
+        "for such a time as this",
+        "And if I perish, I perish"
+      ],
+      "hebrewOriginal": "וּמִי יוֹדֵעַ אִם־לְעֵת כָּזֹאת הִגַּעַתְּ לַמַּלְכוּת",
+      "passage": "he sent back to her this reply: \"Do not imagine that because you are in the king's palace you alone will escape the fate of all the Jews. For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father's house will perish. And who knows if perhaps you have come to the kingdom for such a time as this?\" Then Esther sent this reply to Mordecai: \"Go and assemble all the Jews who can be found in Susa, and fast for me. Do not eat or drink for three days, night or day, and I and my maidens will fast as you do. After that, I will go to the king, even though it is against the law. And if I perish, I perish!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Esther 4-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Esther 4-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לְעֵת כָּזֹאת",
+      "transliteration": "le'et kazot",
+      "pronunciation": "leh-ET ka-ZOTE",
+      "meaning": "for a time like this, for such a time",
+      "rootMeaning": "Et is an appointed time, a fixed season - not clock-time but the right moment, the hour something is meant to happen. Kazot means 'like this one.' Together: this particular hour, the one you are standing in right now.",
+      "usageNote": "The same word et runs all through Ecclesiastes 3 - 'a time to be born and a time to die.' Mordecai is not telling Esther she got lucky. He is telling her there is such a thing as an appointed hour, and she is standing in one.",
+      "wordByWord": [
+        {
+          "word": "וּמִי יוֹדֵעַ",
+          "transliteration": "umi yodea",
+          "meaning": "and who knows - an open question, not a guarantee"
+        },
+        {
+          "word": "אִם",
+          "transliteration": "im",
+          "meaning": "if, whether - Mordecai leaves room for mystery"
+        },
+        {
+          "word": "לְעֵת",
+          "transliteration": "le'et",
+          "meaning": "for the time, for the appointed season"
+        },
+        {
+          "word": "כָּזֹאת",
+          "transliteration": "kazot",
+          "meaning": "such as this, like the present one"
+        },
+        {
+          "word": "הִגַּעַתְּ",
+          "transliteration": "higa'at",
+          "meaning": "you have arrived, you have come to - you did not climb here on your own"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מָקוֹם אַחֵר",
+          "reference": "Maqom acher, 'another place' (4:14). When Mordecai says deliverance 'will arise from another place,' many readers across the centuries have heard a quiet, deliberate gesture toward the God this book never names out loud."
+        }
+      ],
+      "strongsNumber": "H6256",
+      "definition": "et: a fixed or appointed time, a season, the proper occasion",
+      "usage": "Mordecai's logic is striking. He does not say the Jews will perish if Esther stays silent. He says deliverance will come either way - but Esther's chance to be part of it is now. The appointed hour is also her appointment."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Esther: For Such a Time. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s timing perfect (Gal 4:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Book Where God Is Never Named",
+      "body": "Esther is the one book in the Bible that never once says the word God. Not in a prayer, not in a sermon, not in a single verse. Some early readers were so unsettled by this that they wondered whether it belonged in Scripture at all.\n\nAnd yet read these four chapters and try to find a coincidence that holds up. A Jewish girl just happens to be queen of Persia when her people are marked for slaughter. The king just happens to lose sleep on the one night that matters. He just happens to call for the royal records, and the reader just happens to land on the page where Mordecai once saved his life and was never thanked. The villain just happens to walk in at the exact moment the king is looking for someone to honor that overlooked man.\n\nThe book refuses to spell it out, and that refusal is the point. Esther is written for people living in exile, far from the temple, where God seems silent and absent and the headlines are all bad. It is a book about how the hand of God moves through ordinary timing - a sleepless night, a remembered favor, a queen's nerve - in a world where He never seems to show up by name.",
+      "keyInsight": "Esther never mentions God so that you will look harder for Him - and find Him in the timing, the way you have to find Him in your own life.",
+      "content": "Esther is the one book in the Bible that never once says the word God. Not in a prayer, not in a sermon, not in a single verse. Some early readers were so unsettled by this that they wondered whether it belonged in Scripture at all.\n\nAnd yet read these four chapters and try to find a coincidence that holds up. A Jewish girl just happens to be queen of Persia when her people are marked for slaughter. The king just happens to lose sleep on the one night that matters. He just happens to call for the royal records, and the reader just happens to land on the page where Mordecai once saved his life and was never thanked. The villain just happens to walk in at the exact moment the king is looking for someone to honor that overlooked man.\n\nThe book refuses to spell it out, and that refusal is the point. Esther is written for people living in exile, far from the temple, where God seems silent and absent and the headlines are all bad. It is a book about how the hand of God moves through ordinary timing - a sleepless night, a remembered favor, a queen's nerve - in a world where He never seems to show up by name."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Decree You Cannot Outrun",
+      "body": "Picture the situation Esther wakes into. A decree has gone out across one hundred and twenty-seven provinces: on a fixed day, every Jew - old and young, women and children - is to be destroyed. It is sealed with the king's own ring. In Persian law, a sealed royal decree cannot be revoked. Not by appeal, not by apology. The death of an entire people has been scheduled and signed.\n\nEsther is safe, for now. She is queen. Nobody at court knows she is a Jew. She could keep her head down and her secret kept, and quite possibly survive the very order that kills her family. That is the door Mordecai closes in chapter four. Do not imagine, he tells her, that the palace will hide you. The decree will find you too. And then he asks the question that has outlived the empire that produced it: who knows whether you have come to the kingdom for such a time as this?\n\nIt is a brutal kind of comfort. He does not promise her she will be safe if she acts. He warns her she will not be safe if she doesn't - and then he hands her a reason to risk everything anyway.",
+      "connectionToTheme": "Esther's crisis is the reader's: a future that feels sealed and unchangeable, and one frightening invitation to step into it instead of hiding from it.",
+      "content": "Picture the situation Esther wakes into. A decree has gone out across one hundred and twenty-seven provinces: on a fixed day, every Jew - old and young, women and children - is to be destroyed. It is sealed with the king's own ring. In Persian law, a sealed royal decree cannot be revoked. Not by appeal, not by apology. The death of an entire people has been scheduled and signed.\n\nEsther is safe, for now. She is queen. Nobody at court knows she is a Jew. She could keep her head down and her secret kept, and quite possibly survive the very order that kills her family. That is the door Mordecai closes in chapter four. Do not imagine, he tells her, that the palace will hide you. The decree will find you too. And then he asks the question that has outlived the empire that produced it: who knows whether you have come to the kingdom for such a time as this?\n\nIt is a brutal kind of comfort. He does not promise her she will be safe if she acts. He warns her she will not be safe if she doesn't - and then he hands her a reason to risk everything anyway."
+    },
+    {
+      "type": "insight",
+      "heading": "The Night Sleep Escaped the King",
+      "body": "Chapter six opens with one of the quietest miracles in Scripture. \"That night sleep escaped the king.\" No angel, no voice, no dream. Just a man who cannot fall asleep.\n\nSo he calls for the most boring document in the empire - the royal chronicles - to be read aloud, presumably to bore himself back to rest. And of all the pages in years of records, the reader lands on the night Mordecai uncovered an assassination plot and saved the king's life, and was never rewarded. At that exact moment Haman arrives in the courtyard, having come to ask permission to hang Mordecai on a fifty-cubit gallows he built the night before. The king, wanting to honor the man in the chronicle, asks Haman what should be done for the man the king delights to honor - and Haman, assuming it is himself, designs a parade of honors he will be forced to lead for his own enemy.\n\nStack the timing up. The insomnia, the chronicle, the unread page, the unrepaid favor, the enemy walking in at that precise hour. No single piece is supernatural. Every piece is exactly on time. The gallows built for the righteous man becomes, by chapter seven, the gallows of the man who built it - \"So they hanged Haman on the gallows he had prepared for Mordecai.\" The trap recoils on the one who set it. That reversal is not luck. It is the signature of a God who refuses to sign His name.",
+      "historicalContext": "The Persian king here is Ahasuerus, called Xerxes - the same Xerxes (reigned 486-465 BC) who fought the famous wars against Greece. Esther's story unfolds in his winter capital, Susa, among Jews who chose to remain in the Persian Empire rather than return to Jerusalem after the exile. These are God's people living far from the temple, under a foreign crown, with no prophet on the scene.",
+      "fascinatingFact": "Esther's plan turns on three days of fasting (4:16), and it is \"on the third day\" (5:1) that she rises, puts on her royal robes, and walks into the throne room to live or die. A people facing a death sentence; three days of darkness and fasting; deliverance dawning on the third day. The pattern was already being rehearsed centuries before the empty tomb gave it a name.",
+      "content": "Chapter six opens with one of the quietest miracles in Scripture. \"That night sleep escaped the king.\" No angel, no voice, no dream. Just a man who cannot fall asleep.\n\nSo he calls for the most boring document in the empire - the royal chronicles - to be read aloud, presumably to bore himself back to rest. And of all the pages in years of records, the reader lands on the night Mordecai uncovered an assassination plot and saved the king's life, and was never rewarded. At that exact moment Haman arrives in the courtyard, having come to ask permission to hang Mordecai on a fifty-cubit gallows he built the night before. The king, wanting to honor the man in the chronicle, asks Haman what should be done for the man the king delights to honor - and Haman, assuming it is himself, designs a parade of honors he will be forced to lead for his own enemy.\n\nStack the timing up. The insomnia, the chronicle, the unread page, the unrepaid favor, the enemy walking in at that precise hour. No single piece is supernatural. Every piece is exactly on time. The gallows built for the righteous man becomes, by chapter seven, the gallows of the man who built it - \"So they hanged Haman on the gallows he had prepared for Mordecai.\" The trap recoils on the one who set it. That reversal is not luck. It is the signature of a God who refuses to sign His name."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In a book that never names God, a death sentence over His people is overturned through ordinary timing - a sleepless night, a remembered favor, a queen who risked her life on the third day - and the instrument of death built for the righteous man destroys the one who built it.",
+      "modernApplication": "You will spend most of your life in the world of Esther, not the world of the burning bush. God will not usually write His name across your circumstances. He works in the timing of things - the call that came late, the meeting you almost skipped, the delay that turned out to protect you. Faith in this kind of world is learning to read the timing of your life as the handwriting of a God who is present even when He is not announced.",
+      "connectionPoint": "Esther's deliverance is built on a pattern that runs to the heart of the gospel: a people under an unbreakable death sentence; an intercessor who steps between them and the throne at the risk of their own life; three days, and then deliverance; and an instrument of execution that becomes, in God's hands, the undoing of evil itself. Esther approaches an earthly throne uninvited and says, \"if I perish, I perish.\" Hebrews tells us we now approach the throne of grace with confidence, because One went ahead of us who did perish - and rose.",
+      "newTestamentEcho": "What Esther rehearses, Christ fulfills. The gallows meant to destroy the righteous became, at Calvary, the very place evil overreached and was defeated: the cross built to kill the Innocent One is where the enemy was disarmed and put to open shame (Colossians 2:15). And where Esther dared the throne saying \"if I perish, I perish,\" Jesus is the intercessor who actually perished - and lives to bring His people in."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life right now does the future feel like a sealed decree - fixed, signed, impossible to change - and what would it mean to act anyway, the way Esther did?",
+      "additionalQuestions": [
+        "Look back over the past year. Where can you see God's hand most clearly in the timing of things, rather than in any dramatic sign?",
+        "Mordecai told Esther that deliverance would come whether or not she acted - but that this was her hour to be part of it. What invitation are you currently tempted to leave to 'another place' or 'someone else'?",
+        "Is there a place you have been keeping your head down and your identity hidden, hoping the trouble will pass over you? What is that costing you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I live most of my days in the book of Esther - the one where You never seem to say Your name out loud. Teach me to read Your hand in the timing of my life: the sleepless nights, the things remembered at the last hour, the doors that closed to keep me. Where I have been hiding to stay safe, give me Esther's nerve to step out, even if I perish. And thank You for the One who actually did perish in my place and rose, so that I can come to Your throne unafraid. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'coincidence' from your own life - a piece of timing too precise to feel accidental - and thank God for it out loud, as evidence that He is at work even when He is unannounced. Then identify the one 'such a time as this' invitation you have been avoiding, and take the first small step toward it.",
+      "leavingAtCross": [
+        "The belief that God is absent simply because He is silent",
+        "The instinct to hide my faith and keep my head down so the trouble passes me by",
+        "The fear that the hard things in my future are sealed decrees I am powerless to face"
+      ],
+      "receivingFromCross": [
+        "Eyes to read God's hand in the ordinary timing of my days",
+        "The courage to step into my appointed hour instead of leaving it to someone else",
+        "The confidence of an intercessor who already went ahead of me through death and out the other side"
+      ],
+      "content": "Today, name one 'coincidence' from your own life - a piece of timing too precise to feel accidental - and thank God for it out loud, as evidence that He is at work even when He is unannounced. Then identify the one 'such a time as this' invitation you have been avoiding, and take the first small step toward it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why might it matter that the book of Esther never once mentions God by name? What is it teaching readers about how God works?",
+        "Trace the chain of 'coincidences' in chapter six. Which single link, if removed, would have changed the whole outcome?",
+        "How does the gallows Haman built for Mordecai - and what finally happens on it - point forward to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Each share one 'such a time as this' moment you can see in your own past - a place you were positioned for something you only understood later.",
+        "Talk honestly about where God feels absent or silent in your life right now, and where you might be missing His hand in the timing.",
+        "Ask each other: is there an Esther-sized risk God may be inviting you into, where the safe move is to stay hidden?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Esther 6:1",
+          "text": "That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him."
+        },
+        {
+          "reference": "Esther 7:10",
+          "text": "So they hanged Haman on the gallows he had prepared for Mordecai. Then the fury of the king subsided."
+        },
+        {
+          "reference": "Romans 8:28",
+          "text": "And we know that God works all things together for the good of those who love Him, who are called according to His purpose."
+        },
+        {
+          "reference": "Colossians 2:15",
+          "text": "And having disarmed the powers and authorities, He made a public spectacle of them, triumphing over them by the cross."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Esther 4-7",
+          "note": "Read the four chapters in one sitting, watching for the timing. Mark every place where something happens 'just then' or 'that night' - and ask who is arranging the clock."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esther (Hadassah)",
+      "title": "Queen of Persia, Intercessor for Her People",
+      "description": "A Jewish orphan raised by her older cousin Mordecai, taken into the harem of King Xerxes and made queen of Persia without the court knowing she was a Jew. When Haman's decree threatened her people with annihilation, she risked her life to approach the king uninvited - a capital offense - and exposed the plot at her own banquet table. Her Hebrew name, Hadassah, means 'myrtle'; her Persian name, Esther, echoes the word for 'star,' and possibly 'hidden.'",
+      "keyQuote": "After that, I will go to the king, even though it is against the law. And if I perish, I perish!",
+      "lessonForUs": "Esther was not born a hero; she was a hidden girl in a hostile empire who decided that the safety of staying hidden was not worth keeping. Her courage was not the absence of fear - she fasted three days first - but the willingness to step into her appointed hour and trust the outcome to a God she could not see.",
+      "heading": "Queen of Persia, Intercessor for Her People"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2317,
+  "scriptureReference_full": "Esther 4-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Historical detail on Ahasuerus/Xerxes (reign 486-465 BC) and the irrevocability of sealed Persian decrees reflects standard reference sources; the 'another place' (maqom acher) reading as a veiled reference to God is a long-standing interpretive tradition noted in Jewish and Christian commentary."
+  ]
 }

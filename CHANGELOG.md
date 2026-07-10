@@ -5,6 +5,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ELEVATION v3.0 — Bible-365 full-run rewrite committed to baseline (2026-07-10)
+
+The completed Bible-365 full run (in flight during the 2026-06-13 deploy) is now
+committed: **all 365 days** rewritten from placeholder "panels" stubs ("This
+devotional is being drafted") to the typed-MODULES standard — scripture with
+Hebrew/Greek originals + BSB passages, vocab, teaching narrative, prayer, per the
+days 7–14 pilot (SA-020, F-051). `src/data/devotional-teasers.ts` regenerated to
+match the rewritten teasers.
+
+Verified: 365/365 files JSON-parse, 365 modules-format, 0 panels-format, 0 stub
+placeholders remaining (structure-validation script).
+
+This commit establishes the clean-tree baseline for the 2026-07-10 launch-readiness
+run tracked in `docs/run/` (Mobbin polish audit execution — see
+`docs/audits/MOBBIN-POLISH-AUDIT-2026-07-10.md`).
+
+---
+
 ## ELEVATION v3.0 — Mobile polish: header overlap, Bible-365 grouped nav, homepage audit loading (2026-06-13)
 
 Three founder-reported mobile/UX fixes:

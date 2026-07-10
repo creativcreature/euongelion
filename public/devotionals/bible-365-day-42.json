@@ -1,38 +1,187 @@
 {
   "day": 42,
   "title": "Rest in the rescue",
-  "teaser": "Day 42 of Bible 365 — Sabbath",
+  "teaser": "Trapped between Pharaoh and the sea, Israel is told to do the one thing terror cannot: be still. Salvation is something you watch God accomplish.",
   "framework": "Sabbath — Sabbath: God still delivers",
-  "scriptureReference": "Sabbath",
+  "scriptureReference": "Exodus 14:13-14",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 42"
+      "type": "scripture",
+      "reference": "Exodus 14:13-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Do not be afraid",
+        "Stand firm",
+        "the LORD's salvation",
+        "you need only to be still"
+      ],
+      "hebrewOriginal": "יְהוָה יִלָּחֵם לָכֶם וְאַתֶּם תַּחֲרִשׁוּן",
+      "passage": "But Moses told the people, “Do not be afraid. Stand firm and you will see the LORD’s salvation, which He will accomplish for you today; for the Egyptians you see today, you will never see again. The LORD will fight for you; you need only to be still.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תַּחֲרִשׁוּן",
+      "transliteration": "tacharishun",
+      "pronunciation": "tah-khah-ree-SHOON",
+      "meaning": "you shall be still, you shall keep silent, you shall hold your peace",
+      "rootMeaning": "From the root charash, which means to be silent, to hold one's tongue, to keep still. It is not the stillness of a calm room; it is the silence a frightened person chooses on purpose while everything in them wants to shout.",
+      "usageNote": "Moses' last word to a panicking crowd is this single verb. The longer ending (-un) gives it weight, almost like Moses leaning on the word: 'and you - you will keep still.' It is the only command in the sentence aimed at the people. Everything else - fight, save, accomplish - is God's verb. Theirs is only to stop.",
+      "wordByWord": [
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of the God who heard the cry in Egypt"
+        },
+        {
+          "word": "יִלָּחֵם",
+          "transliteration": "yillachem",
+          "meaning": "He will fight - a warrior verb, here taken up by God on Israel's behalf"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lachem",
+          "meaning": "for you, on your behalf"
+        },
+        {
+          "word": "וְאַתֶּם",
+          "transliteration": "we'attem",
+          "meaning": "and you (emphatic) - 'as for you'"
+        },
+        {
+          "word": "תַּחֲרִשׁוּן",
+          "transliteration": "tacharishun",
+          "meaning": "you shall keep still, hold your peace"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חָרַשׁ / רָפָה",
+          "reference": "Charash (be still) sits close in spirit to raphah in Psalm 46:10 - 'Be still (harpu) and know that I am God.' Two different words, one posture: stop striving long enough to see who is actually fighting."
+        }
+      ],
+      "strongsNumber": "H2790",
+      "definition": "to be silent, to keep still, to hold one's peace; to refrain from speaking or acting",
+      "usage": "Standing on the shore with the sea ahead and Egypt's chariots behind, Israel is given a command that feels like the opposite of survival: be quiet, stop, watch. The hardest thing to do in a crisis is the one thing they are asked for."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: God still delivers. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our greater Exodus (Luke 9:31).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day the Only Command Was to Stop",
+      "body": "By the time Moses speaks these words, the trap has closed. The sea is in front of them. The wilderness boxes them in on either side. And behind them, growing larger by the minute, is the dust of Pharaoh's army - six hundred chariots and the full weight of the empire they thought they had escaped. The people do the human thing. They turn on Moses. 'Was it because there were no graves in Egypt that you brought us out here to die?' Slavery had been unbearable, but at least it was survivable. Now they are going to be slaughtered in the open.\n\nInto that panic Moses says four impossible things. Do not be afraid. Stand firm. Watch the LORD save you. And then the strangest of all: you need only to be still. Notice how the sentence divides the labor. Every active verb belongs to God - He will accomplish, He will fight. The single instruction left for Israel is a verb of stopping. They are not told to swim, to build, to negotiate, or to charge. They are told to plant their feet and stop talking long enough to see.\n\nThis is the peshat, the plain sense, and it is jarring on its own terms. The Hebrew word behind 'be still' is tacharishun - hold your peace, keep silent. It is the very last thing a cornered person can manage. Fear wants to do something, anything. Faith, here, looks like the courage to do nothing but trust the One who is already moving.",
+      "keyInsight": "Israel's only assignment at the sea is a verb of stopping. Salvation is something God accomplishes; their part is to stand still long enough to watch Him do it.",
+      "content": "By the time Moses speaks these words, the trap has closed. The sea is in front of them. The wilderness boxes them in on either side. And behind them, growing larger by the minute, is the dust of Pharaoh's army - six hundred chariots and the full weight of the empire they thought they had escaped. The people do the human thing. They turn on Moses. 'Was it because there were no graves in Egypt that you brought us out here to die?' Slavery had been unbearable, but at least it was survivable. Now they are going to be slaughtered in the open.\n\nInto that panic Moses says four impossible things. Do not be afraid. Stand firm. Watch the LORD save you. And then the strangest of all: you need only to be still. Notice how the sentence divides the labor. Every active verb belongs to God - He will accomplish, He will fight. The single instruction left for Israel is a verb of stopping. They are not told to swim, to build, to negotiate, or to charge. They are told to plant their feet and stop talking long enough to see.\n\nThis is the peshat, the plain sense, and it is jarring on its own terms. The Hebrew word behind 'be still' is tacharishun - hold your peace, keep silent. It is the very last thing a cornered person can manage. Fear wants to do something, anything. Faith, here, looks like the courage to do nothing but trust the One who is already moving."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hands Off the Wheel",
+      "body": "A friend of mine learned to drive in snow the way most of us do - by overcorrecting. The first time the back of his car slid out on an icy road, every instinct told him to wrench the wheel and stamp the brake. He did both, and the car spun in a slow, sickening circle into the ditch. He was unhurt, but shaken, and that winter he took a class.\n\nThe instructor put him on a frozen lot and made him skid on purpose, again and again, until he could feel it coming. The lesson was always the same: when you start to slide, ease off. Take your foot off the brake. Look where you want to go and let the car straighten out. The thing that saves you is the thing that feels most like giving up. Slamming the brake is doing something. It is also exactly what loses control.\n\nIsrael at the sea is learning the same counterintuitive thing on a far larger scale. Every nerve says fight or run. Moses says stand still. Not because stillness is passive resignation, but because their thrashing would only sink them, and the One who can actually steer them through has already taken the wheel.",
+      "connectionToTheme": "Stillness at the sea is not surrender to the danger; it is releasing the controls we were never able to work, so the One who can save actually can.",
+      "content": "A friend of mine learned to drive in snow the way most of us do - by overcorrecting. The first time the back of his car slid out on an icy road, every instinct told him to wrench the wheel and stamp the brake. He did both, and the car spun in a slow, sickening circle into the ditch. He was unhurt, but shaken, and that winter he took a class.\n\nThe instructor put him on a frozen lot and made him skid on purpose, again and again, until he could feel it coming. The lesson was always the same: when you start to slide, ease off. Take your foot off the brake. Look where you want to go and let the car straighten out. The thing that saves you is the thing that feels most like giving up. Slamming the brake is doing something. It is also exactly what loses control.\n\nIsrael at the sea is learning the same counterintuitive thing on a far larger scale. Every nerve says fight or run. Moses says stand still. Not because stillness is passive resignation, but because their thrashing would only sink them, and the One who can actually steer them through has already taken the wheel."
+    },
+    {
+      "type": "insight",
+      "heading": "The Battle You Were Never Asked to Win",
+      "body": "There is a strange freedom buried in this command, and it only shows up when you read who the verbs belong to. 'The LORD will fight for you.' Not with you, not after you, not on the condition that you fight hard enough first - for you. The salvation Israel sees that day is a salvation they contribute nothing to. They walk through on dry ground, but they did not split the sea, did not hold back the waters, did not strike a single Egyptian. They watched.\n\nThis is why the Red Sea becomes the story Israel tells forever. Centuries later, when King Jehoshaphat faces an army too large to fight, a prophet stands up and quotes this very moment almost word for word: 'You need not fight this battle. Take up your positions, stand firm, and see the salvation of the LORD on your behalf' (2 Chronicles 20:17). The pattern was set at the sea and it never changes. The deliverances that define God's people are the ones they could not engineer.\n\nIt cuts against everything we are trained to believe about ourselves. We are sure that the rescue depends on our effort, that if we just push hard enough we will save ourselves. The sea says otherwise. The hardest, holiest work that day was to stop working and trust that the fighting was being done by Someone stronger.",
+      "historicalContext": "The crossing of the sea became Israel's defining memory of who God is. It is sung in Exodus 15, recited in the Psalms (78, 106, 114, 136), and held up by the prophets as the proof that the LORD saves. When later generations were in trouble, they did not say 'remember how hard we fought.' They said 'remember the sea' - the day salvation was entirely God's doing.",
+      "fascinatingFact": "The same verb root for God's 'salvation' here (yeshu'ah) is the root behind the name Yeshua - Jesus, 'the LORD saves.' The word Israel hears shouted on the shore of the sea is the word that would one day be a person's name.",
+      "content": "There is a strange freedom buried in this command, and it only shows up when you read who the verbs belong to. 'The LORD will fight for you.' Not with you, not after you, not on the condition that you fight hard enough first - for you. The salvation Israel sees that day is a salvation they contribute nothing to. They walk through on dry ground, but they did not split the sea, did not hold back the waters, did not strike a single Egyptian. They watched.\n\nThis is why the Red Sea becomes the story Israel tells forever. Centuries later, when King Jehoshaphat faces an army too large to fight, a prophet stands up and quotes this very moment almost word for word: 'You need not fight this battle. Take up your positions, stand firm, and see the salvation of the LORD on your behalf' (2 Chronicles 20:17). The pattern was set at the sea and it never changes. The deliverances that define God's people are the ones they could not engineer.\n\nIt cuts against everything we are trained to believe about ourselves. We are sure that the rescue depends on our effort, that if we just push hard enough we will save ourselves. The sea says otherwise. The hardest, holiest work that day was to stop working and trust that the fighting was being done by Someone stronger."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At the sea, God divides the work: every saving verb is His, and Israel's single command is to be still and watch the salvation He accomplishes for them.",
+      "modernApplication": "We meet our own walls of water often enough - the diagnosis, the lost job, the marriage we cannot fix by trying harder, the sin we cannot will our way out of. The instinct is always to thrash. This passage hands us a quieter and harder discipline: to stand firm and trust that the rescue we cannot perform is being performed for us.",
+      "connectionPoint": "Sabbath itself is built on this same logic. Israel rests one day in seven not because the work is finished by them, but because they belong to a God who provides, who delivered them when they could not deliver themselves. To keep Sabbath is to rehearse the sea - to stop, and remember that you were rescued, not self-made. Every week, the people who were once told 'be still' practice being still again.",
+      "newTestamentEcho": "On the mountain of transfiguration, Moses and Elijah speak with Jesus about His 'departure, which He was about to accomplish at Jerusalem' (Luke 9:31). The Greek word for departure is exodos - exodus. The Red Sea was the shadow; the cross is the substance. There, again, salvation is something God accomplishes for a people who cannot save themselves. 'You need only to be still' becomes 'it is finished.'"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you slamming the brake - thrashing at a wall of water you were never able to part on your own?",
+      "additionalQuestions": [
+        "What would it look like, this week, to 'stand firm and see the LORD's salvation' instead of forcing an outcome?",
+        "Be honest: is your constant effort sometimes a way of refusing to trust that God will act if you stop?",
+        "Where might 'be still' be the most faithful thing you could do today, even though it feels like the most frightening?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I am better at thrashing than at trusting. When the sea is in front of me and the chariots are behind, my hands grab for the wheel I cannot work. Teach me the courage of stillness. Let me stand firm and watch You save, instead of drowning in my own effort. You are the God who fights for His people; I am only asked to stop and see. On this day of rest, quiet me. Remind me I was rescued, not self-made. Through Jesus, who accomplished the exodus I never could. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to accomplish. Sit still for five minutes and name the one wall of water you have been trying to part by sheer effort. Say it out loud to God, and then, as an act of trust, take your hands off it. Let one phrase hold you: \"The LORD will fight for you; you need only to be still.\"",
+      "leavingAtCross": [
+        "The belief that the rescue depends on how hard I push",
+        "The thrashing that feels like control but only sinks me deeper",
+        "The fear that if I stop striving, nothing good will happen"
+      ],
+      "receivingFromCross": [
+        "A salvation I did not earn and could not perform, accomplished for me",
+        "Permission to be still without calling it failure",
+        "The settled trust that the One who split the sea is still fighting on my behalf"
+      ],
+      "content": "Today is a sabbath day - there is nothing to accomplish. Sit still for five minutes and name the one wall of water you have been trying to part by sheer effort. Say it out loud to God, and then, as an act of trust, take your hands off it. Let one phrase hold you: \"The LORD will fight for you; you need only to be still.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Exodus 14:13-14, which actions belong to God and which belong to Israel? What does that division teach about salvation?",
+        "Why is 'be still' (tacharishun) such a difficult command for a people who are about to be overtaken by an army?",
+        "How does the Red Sea pattern - God fights, the people watch - reappear at the cross, where Jesus accomplishes the greater exodus?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one situation right now where you are fighting a battle God may be asking you to leave to Him.",
+        "Talk about the difference between faithful waiting and passive avoidance - how do you tell them apart?",
+        "Ask each other: where is God inviting you to 'stand firm and see' rather than force an outcome this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 14:15",
+          "text": "Then the LORD said to Moses, “Why are you crying out to Me? Tell the Israelites to go forward."
+        },
+        {
+          "reference": "Psalm 46:10",
+          "text": "“Be still and know that I am God; I will be exalted among the nations, I will be exalted over the earth.”"
+        },
+        {
+          "reference": "2 Chronicles 20:17",
+          "text": "You need not fight this battle. Take up your positions, stand firm, and see the salvation of the LORD on your behalf, O Judah and Jerusalem. Do not be afraid or discouraged. Go out and face them tomorrow, for the LORD is with you."
+        },
+        {
+          "reference": "Luke 9:31",
+          "text": "They appeared in glory and spoke about His departure, which He was about to accomplish at Jerusalem."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 14",
+          "note": "Read the whole chapter slowly, watching the movement from panic (vv. 10-12) to Moses' command to be still (vv. 13-14) to God's surprising answer, 'go forward' (v. 15), to the divided sea (vv. 21-22)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Servant Who Pointed Past Himself",
+      "description": "Raised in Pharaoh's house, exiled to the desert, and called back to lead a nation of slaves out of Egypt. At the sea, Moses is not a general rallying troops to battle; he is a servant pointing a terrified crowd away from himself and toward the LORD who would fight for them. His authority lay not in his own strength but in his nearness to the God who saves. Scripture later names him the faithful servant in God's house, set against Christ the Son over that house (Hebrews 3:5-6).",
+      "keyQuote": "The LORD will fight for you; you need only to be still.",
+      "lessonForUs": "The best leaders, like Moses, do not tell us to look at them. They turn us toward the only One who can actually do the saving - and then get out of the way so we can see Him work.",
+      "heading": "The Servant Who Pointed Past Himself"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2047,
+  "scriptureReference_full": "Exodus 14:13-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tacharishun, root charash H2790) reflects standard lexical sources; the resonance with raphah in Psalm 46:10 is a thematic, not etymological, connection. The exodos reading of Luke 9:31 follows the plain sense of the Greek text."
+  ]
 }

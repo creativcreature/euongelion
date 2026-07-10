@@ -1,38 +1,180 @@
 {
   "day": 272,
-  "title": "Minor Prophets: Wait + Hope — Day 6 — Deeper Dive",
-  "teaser": "Day 272 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
+  "title": "The last word is a sunrise",
+  "teaser": "The Hebrew Bible ends not with a period but with a dawn it cannot yet see. The prophets die facing east, waiting for a Sun that rises on the first page of the Gospels.",
   "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
   "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 272"
+      "type": "scripture",
+      "reference": "Malachi 4:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "the day is coming",
+        "the sun of righteousness will rise",
+        "with healing in its wings"
+      ],
+      "hebrewOriginal": "וְזָרְחָה לָכֶם יִרְאֵי שְׁמִי שֶׁמֶשׁ צְדָקָה וּמַרְפֵּא בִּכְנָפֶיהָ",
+      "passage": "\"For behold, the day is coming, burning like a furnace, when all the arrogant and every evildoer will be stubble; the day is coming when I will set them ablaze,\" says the LORD of Hosts. \"Not a root or branch will be left to them. But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חַכֵּה־לוֹ",
+      "transliteration": "chakkeh-lo",
+      "pronunciation": "khah-KEH loh",
+      "meaning": "wait for it; long for it; tarry expectantly until it comes",
+      "rootMeaning": "From chakah (H2442), to wait or tarry. It is not the bored waiting of a delayed appointment. It is the leaning-forward wait of someone who watches the road because they know who is on it.",
+      "usageNote": "In Habakkuk 2:3 the prophet is told the vision \"awaits an appointed time\" and then commanded: chakkeh-lo, wait for it. The same posture runs through all five of today's books - Habakkuk on his watchtower, Haggai's people rebuilding a temple they will not see filled, Zechariah's night visions, Malachi staring down four silent centuries. Each is told the same thing: it lingers, but wait.",
+      "wordByWord": [
+        {
+          "word": "חַכֵּה",
+          "transliteration": "chakkeh",
+          "meaning": "wait! tarry! (a command, spoken to one person)"
+        },
+        {
+          "word": "לוֹ",
+          "transliteration": "lo",
+          "meaning": "for it - for the vision, for the appointed time"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "וְזָרְחָה",
+          "reference": "vezarchah, 'will rise / will shine' (Malachi 4:2). The same verb names the dawn breaking over the hills. The wait of chakah is answered by the rising of zarach - the patient one finally sees the light come up."
+        }
+      ],
+      "strongsNumber": "H2442",
+      "definition": "to wait, to tarry, to long for; to wait expectantly for something certain to arrive",
+      "usage": "Habakkuk does not wait because he is unsure. He waits because the One who promised does not delay - even when, from the watchtower, it looks like delay."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Five Books That End Looking East",
+      "body": "These five short books are the last voices before the long quiet. Habakkuk argues with God from a ruined nation. Zephaniah warns of a coming Day and then, almost unbearably, sings that God Himself will sing over His people. Haggai stands in the rubble of a half-built temple and tells discouraged returnees that the latter glory of this house will outshine the former. Zechariah sees a King come humble, riding on a donkey. And Malachi, the last of them, closes the Hebrew Scriptures.\n\nWhat is striking is how they end. Not with arrival. With expectation. The fig tree has not budded, the olive crop has failed, the temple is smaller than the one their grandparents wept for. Nothing has resolved. And into that unresolved waiting, every one of these prophets is handed the same instruction Habakkuk received on his watchtower: \"Though it lingers, wait for it, since it will surely come and will not delay\" (Habakkuk 2:3).\n\nThen Malachi writes his final lines, and the Old Testament goes silent for roughly four hundred years. But read what the silence opens on. The last image these prophets are given is not a closed gate. It is a sunrise that has not happened yet: \"the sun of righteousness will rise with healing in its wings.\" The book of the Law and the Prophets ends mid-sentence, the way a sentence ends when you are watching the horizon and the light is just about to break.",
+      "keyInsight": "The Hebrew Bible does not end with a conclusion. It ends with a posture - people facing east in the dark, told that a Sun they cannot yet see will surely rise.",
+      "content": "These five short books are the last voices before the long quiet. Habakkuk argues with God from a ruined nation. Zephaniah warns of a coming Day and then, almost unbearably, sings that God Himself will sing over His people. Haggai stands in the rubble of a half-built temple and tells discouraged returnees that the latter glory of this house will outshine the former. Zechariah sees a King come humble, riding on a donkey. And Malachi, the last of them, closes the Hebrew Scriptures.\n\nWhat is striking is how they end. Not with arrival. With expectation. The fig tree has not budded, the olive crop has failed, the temple is smaller than the one their grandparents wept for. Nothing has resolved. And into that unresolved waiting, every one of these prophets is handed the same instruction Habakkuk received on his watchtower: \"Though it lingers, wait for it, since it will surely come and will not delay\" (Habakkuk 2:3).\n\nThen Malachi writes his final lines, and the Old Testament goes silent for roughly four hundred years. But read what the silence opens on. The last image these prophets are given is not a closed gate. It is a sunrise that has not happened yet: \"the sun of righteousness will rise with healing in its wings.\" The book of the Law and the Prophets ends mid-sentence, the way a sentence ends when you are watching the horizon and the light is just about to break."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Planted the Slow Trees",
+      "body": "There is an old practice among orchard keepers that the most important trees you plant are the ones you will not eat from. A grafted walnut can take fifteen or twenty years to bear well. A man who plants one at sixty is, by every honest measure, planting for someone whose face he may never see.\n\nI knew a farmer who did exactly this. In his last spring he was out setting saplings along a fence line, slow work, on knees that no longer wanted it. Someone asked him why he bothered. He said the man who planted the trees he was sitting under had asked himself the same question, and had decided to plant anyway.\n\nThat is the wait Habakkuk describes. It is not passive. It is not resignation. It is labor poured into a harvest you trust will come, on the word of someone who does not lie. Haggai's returnees laid temple foundations they knew would look poor in their own lifetime, because they had been promised the glory would arrive later. They worked the dirt of a promise. They waited the way you wait when you are sure.",
+      "connectionToTheme": "The prophets' waiting is not idle endurance - it is the active, hands-in-the-dirt confidence of people who labor toward a sunrise on the strength of a promise.",
+      "content": "There is an old practice among orchard keepers that the most important trees you plant are the ones you will not eat from. A grafted walnut can take fifteen or twenty years to bear well. A man who plants one at sixty is, by every honest measure, planting for someone whose face he may never see.\n\nI knew a farmer who did exactly this. In his last spring he was out setting saplings along a fence line, slow work, on knees that no longer wanted it. Someone asked him why he bothered. He said the man who planted the trees he was sitting under had asked himself the same question, and had decided to plant anyway.\n\nThat is the wait Habakkuk describes. It is not passive. It is not resignation. It is labor poured into a harvest you trust will come, on the word of someone who does not lie. Haggai's returnees laid temple foundations they knew would look poor in their own lifetime, because they had been promised the glory would arrive later. They worked the dirt of a promise. They waited the way you wait when you are sure."
+    },
+    {
+      "type": "insight",
+      "heading": "Hope That Sings Before Morning",
+      "body": "Set two verses side by side and the whole mood of these books turns. Habakkuk, surveying total agricultural collapse, says: \"Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls, yet I will exult in the LORD; I will rejoice in the God of my salvation\" (Habakkuk 3:17-18). Nothing has changed in his circumstances. Everything has changed in his footing.\n\nThen hear Zephaniah, who has spent two chapters describing a Day of judgment, suddenly turn and say of God: \"He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing\" (Zephaniah 3:17). The waiting people are told that the One they wait for is, even now, singing over them in the dark.\n\nThis is the particular shape of biblical hope. It is not optimism, which expects circumstances to improve. It is confidence in a Person who has spoken. Habakkuk rejoices while the stalls are empty. Zephaniah's God sings before the morning the people are still waiting for. The hope comes first; the sunrise comes after.",
+      "historicalContext": "These five books span Judah's deepest darkness and its fragile recovery. Habakkuk wrote as Babylon rose to swallow Jerusalem (late 7th century BC). Zephaniah preached under King Josiah's reforms. Haggai and Zechariah spoke to the discouraged remnant who returned from exile around 520 BC to rebuild the temple. Malachi came last, perhaps a century later, to a people grown cynical in the long wait. Together they are the Bible's school of hoping in the dark.",
+      "fascinatingFact": "In the Hebrew ordering of Scripture, Malachi is not the last book - that arrangement ends with Chronicles. But in the Greek and Christian ordering, Malachi sits at the very seam between the Testaments. Its final word, in Hebrew, is 'curse' (cherem); yet its final promise is a sunrise and a forerunner. The very next page, in a Christian Bible, opens on Matthew - and the forerunner Malachi named arrives.",
+      "content": "Set two verses side by side and the whole mood of these books turns. Habakkuk, surveying total agricultural collapse, says: \"Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls, yet I will exult in the LORD; I will rejoice in the God of my salvation\" (Habakkuk 3:17-18). Nothing has changed in his circumstances. Everything has changed in his footing.\n\nThen hear Zephaniah, who has spent two chapters describing a Day of judgment, suddenly turn and say of God: \"He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing\" (Zephaniah 3:17). The waiting people are told that the One they wait for is, even now, singing over them in the dark.\n\nThis is the particular shape of biblical hope. It is not optimism, which expects circumstances to improve. It is confidence in a Person who has spoken. Habakkuk rejoices while the stalls are empty. Zephaniah's God sings before the morning the people are still waiting for. The hope comes first; the sunrise comes after."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The last prophets hand Israel a promise instead of an arrival: a forerunner is coming, the Lord will come suddenly to His temple, and for those who fear His name the sun of righteousness will rise with healing in its wings (Malachi 3:1; 4:2).",
+      "modernApplication": "Most of the Christian life is lived in the part of the story Malachi was standing in - between the promise and its keeping, in the long stretch where the sun has not yet cleared the hills. Faith is mostly waiting well: working the dirt of a promise, rejoicing before the stalls are full, trusting a Person who has spoken even when the horizon stays dark.",
+      "connectionPoint": "The wait these books announce is not open-ended. Malachi names two arrivals - a messenger who prepares the way (3:1; 4:5), and the Lord who follows. When the Gospels open, both arrive: John the Baptist comes in the spirit of Elijah, and the Sun rises behind him. Zechariah the priest, naming his newborn, prophesies of the coming Christ: \"the Dawn from on high will visit us, to shine on those who live in darkness and in the shadow of death\" (Luke 1:78-79). The very word Malachi reached for - sunrise - is the word the New Testament uses for Jesus.",
+      "newTestamentEcho": "Habakkuk's line, \"the righteous will live by faith\" (Habakkuk 2:4), becomes the engine of Paul's gospel (Romans 1:17) and the heartbeat of Hebrews (Hebrews 10:38). The wait the prophets taught is the faith by which we now live - leaning toward the same dawn, which has risen once at Bethlehem and will rise fully when He comes again."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you standing in a Malachi moment - holding a promise that has not yet arrived, in a stretch that feels like silence?",
+      "additionalQuestions": [
+        "Habakkuk rejoiced while the fig tree was bare. Is there something you can give thanks for today not because circumstances improved, but because of who God is?",
+        "Zephaniah says God sings over His people before the morning comes. What would change if you believed God was already glad over you, in the middle of the waiting?",
+        "Haggai's people built a temple they trusted God would fill later. What is one faithful thing you can do today whose fruit you may not see for a long time?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "expectant-trust",
+      "prayerText": "Lord of Hosts, You who do not change, find me in the long wait. Where the fig tree has not budded and the stalls are empty, teach me Habakkuk's joy - not because everything has resolved, but because You are the God of my salvation. Quiet me with Your love. Let me hear that You are already singing over me in the dark. And turn my face east, toward the Sun of righteousness who has risen with healing in His wings, and who will rise again in full. Until then, give me grace to wait for it, sure that it will surely come and will not delay. Through Christ, the Dawn from on high. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one promise of God you are still waiting on, and choose one concrete act of faithfulness toward it - a sapling planted, a foundation laid - that you may not see bear fruit for a long time. Do it as Habakkuk rejoiced: before the harvest, on the strength of the promise.",
+      "leavingAtCross": [
+        "The bitterness that grows when a promise lingers and I begin to suspect God has forgotten",
+        "The cynicism Malachi's people fell into - going through the motions while the heart goes cold in the wait",
+        "The demand that the sunrise come on my timetable instead of His appointed time"
+      ],
+      "receivingFromCross": [
+        "The settled confidence that the One who promised does not delay, even when it looks like delay",
+        "Habakkuk's joy in the God of my salvation while the stalls are still empty",
+        "A face turned east, toward the Sun who has already risen once and will rise in full"
+      ],
+      "content": "Today, name one promise of God you are still waiting on, and choose one concrete act of faithfulness toward it - a sapling planted, a foundation laid - that you may not see bear fruit for a long time. Do it as Habakkuk rejoiced: before the harvest, on the strength of the promise."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How is the biblical 'wait' of Habakkuk 2:3 different from simply enduring or hoping for the best? What makes it active rather than passive?",
+        "Why does it matter that the Hebrew prophets end on expectation rather than resolution - that the last image is a sunrise that has not yet happened?",
+        "How does Malachi's promise of a messenger and a coming Lord (3:1; 4:5) get answered when the Gospels open?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one promise of God you have been waiting on for a long time. How has the waiting shaped you - toward Habakkuk's joy, or toward Malachi's cynicism?",
+        "Talk about the difference between optimism (expecting circumstances to improve) and hope (trusting a Person who has spoken). Which one has been carrying you lately?",
+        "Ask each other: what is one 'slow tree' - a faithful act whose fruit you won't see soon - that God might be asking you to plant?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Habakkuk 2:3-4",
+          "text": "For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay. Look at the proud one; his soul is not upright - but the righteous will live by faith."
+        },
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Haggai 2:9",
+          "text": "The latter glory of this house will be greater than the former, says the LORD of Hosts. And in this place I will provide peace, declares the LORD of Hosts."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "text": "Rejoice greatly, O Daughter of Zion! Shout in triumph, O Daughter of Jerusalem! See, your King comes to you, righteous and victorious, humble and riding on a donkey, on a colt, the foal of a donkey."
+        },
+        {
+          "reference": "Malachi 3:1",
+          "text": "Behold, I will send My messenger, who will prepare the way before Me. Then the Lord whom you seek will suddenly come to His temple - the Messenger of the covenant, in whom you delight - see, He is coming, says the LORD of Hosts."
+        },
+        {
+          "reference": "Luke 1:78-79",
+          "text": "...because of the tender mercy of our God, by which the Dawn from on high will visit us, to shine on those who live in darkness and in the shadow of death, to guide our feet into the path of peace."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Habakkuk 3 and Malachi 4",
+          "note": "Read both short chapters in one sitting. Notice how each ends: Habakkuk leaping on the heights in the middle of ruin, Malachi promising a sunrise. They are the bookends of waiting in hope."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Malachi",
+      "title": "The Last Prophet Before the Silence",
+      "description": "Malachi - the name means 'my messenger' - is the final prophetic voice in the Hebrew canon, likely writing to the discouraged post-exile community around the mid-5th century BC. The temple was rebuilt but the glory seemed small; the people had grown weary and skeptical, robbing God and questioning His love. To this tired, half-faithful generation Malachi gives both rebuke and the brightest promise in the Prophets: a forerunner is coming, the Lord will come suddenly to His temple, and the sun of righteousness will rise with healing in its wings.",
+      "keyQuote": "But for you who fear My name, the sun of righteousness will rise with healing in its wings.",
+      "lessonForUs": "Malachi spoke into the exact place most of us live - after the dramatic rescues, in the long ordinary stretch where God can feel distant and the promises feel slow. His answer was not to manufacture excitement but to point east. The wait is real. So is the dawn. And the dawn has a name: the New Testament opens with the messenger Malachi promised, and the Sun he longed for steps onto the page.",
+      "heading": "The Last Prophet Before the Silence"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1733,
+  "scriptureReference_full": "Habakkuk 2:3-4; 3:17-19; Zephaniah 3:17; Haggai 2:9; Zechariah 9:9; Malachi 3:1; 4:1-2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chakkeh-lo, chakah H2442 'to wait/tarry'; zarach 'to rise/shine') reflects standard lexical sources.",
+    "Dating of the post-exilic prophets (Haggai/Zechariah c. 520 BC; Malachi mid-5th century BC) and the Hebrew vs. Greek canonical ordering of Malachi reflect standard scholarly consensus."
+  ]
 }

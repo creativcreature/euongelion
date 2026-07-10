@@ -1,38 +1,172 @@
 {
   "day": 87,
   "title": "You are the man",
-  "teaser": "Day 87 of Bible 365 — 2 Samuel 11-12",
+  "teaser": "David pronounces a death sentence on a stranger in a story — and then the prophet turns the verdict around. The judgment we are so quick to hand out is the one we were always standing under.",
   "framework": "2 Samuel 11-12 — Sin exposed by parable",
   "scriptureReference": "2 Samuel 11-12",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 87"
+      "type": "scripture",
+      "reference": "2 Samuel 12:1-7, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "one small ewe lamb",
+        "the man who did this deserves to die",
+        "You are that man",
+        "The LORD has taken away your sin"
+      ],
+      "hebrewOriginal": "אַתָּה הָאִישׁ",
+      "passage": "Then the LORD sent Nathan to David, and when he arrived, he said, \"There were two men in a certain city, one rich and the other poor. The rich man had a great number of sheep and cattle, but the poor man had nothing except one small ewe lamb that he had bought. He raised it, and it grew up with him and his children. It shared his food and drank from his cup; it slept in his arms and was like a daughter to him. Now a traveler came to the rich man, who refrained from taking one of his own sheep or cattle to prepare for the traveler who had come to him. Instead, he took the poor man's lamb and prepared it for his guest.\" David burned with anger against the man and said to Nathan: \"As surely as the LORD lives, the man who did this deserves to die!\" ... Then Nathan said to David, \"You are that man!\" ... Then David said to Nathan, \"I have sinned against the LORD.\" \"The LORD has taken away your sin,\" Nathan replied. \"You will not die.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Samuel 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Samuel 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אַתָּה הָאִישׁ",
+      "transliteration": "attah ha'ish",
+      "pronunciation": "ah-TAH hah-EESH",
+      "meaning": "You are the man; you are that man",
+      "rootMeaning": "Attah is the bare pronoun 'you,' singular, pointed straight at one person. Ha'ish is 'the man' - the article making it specific, the very man already on trial. Two short words, no verb between them. In Hebrew you do not need a verb to say it; you only need to aim.",
+      "usageNote": "Nathan has just let David sentence a faceless villain to death. Then he closes the distance with the shortest sentence in the chapter. The whole machinery of the parable - the lamb, the traveler, the rich man's cruelty - exists to load this one phrase. It is two words in Hebrew. It does not argue. It identifies.",
+      "wordByWord": [
+        {
+          "word": "אַתָּה",
+          "transliteration": "attah",
+          "meaning": "you (singular) - the finger, not the crowd"
+        },
+        {
+          "word": "הָאִישׁ",
+          "transliteration": "ha'ish",
+          "meaning": "the man - with the definite article: not a man, the man you just condemned"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כִּבְשָׂה / kivsah",
+          "reference": "The poor man's ewe lamb (12:3) is a kivsah - a female lamb. Decades earlier David had been a shepherd boy who fought a lion and a bear to save such a lamb (1 Samuel 17:34-35). Nathan's story hands David the role he once protected, then names him the predator he once fought."
+        }
+      ],
+      "strongsNumber": "H859",
+      "definition": "attah: the second-person singular pronoun, 'you' - here used emphatically and accusingly",
+      "usage": "The phrase is famous precisely because it is so small. A prophet walks into a palace, tells a king a story about livestock, watches the king convict himself, and then says two words. The verdict was already out of David's own mouth; Nathan only changes the address on it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sin exposed by parable. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the great revealer (Heb 4:13).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The King Who Sentenced Himself",
+      "body": "By the time Nathan arrives, the worst is already over and buried. David had stayed home from the war he should have been leading, taken a married woman from his roof, and when she was pregnant arranged for her husband to be killed at the front. Uriah the Hittite - one of David's own loyal soldiers - died holding a letter that ordered his death, carried by his own hand. Then David married the widow, and Scripture closes the chapter with a single quiet sentence: \"the thing that David had done was evil in the sight of the LORD\" (11:27).\n\nMonths pass. The cover-up holds. And then God sends a prophet, and the prophet does not open with the crime. He opens with a story. A rich man with flocks beyond counting. A poor man with one ewe lamb that ate from his plate and slept in his arms like a daughter. A guest arrives, and rather than touch his own herds, the rich man slaughters the poor man's only lamb.\n\nDavid does what any of us do when the sin belongs to someone else. He erupts. \"As surely as the LORD lives, the man who did this deserves to die!\" He demands fourfold restitution; he wants blood. His sense of justice is intact, fierce, immediate - aimed everywhere except home. He is a man who can still see clearly, as long as he is looking at someone else.",
+      "keyInsight": "David's judgment was not broken. It was simply pointed away from himself. The same eyes that could not see the evil in his own bed saw it perfectly the moment it wore another man's face.",
+      "content": "By the time Nathan arrives, the worst is already over and buried. David had stayed home from the war he should have been leading, taken a married woman from his roof, and when she was pregnant arranged for her husband to be killed at the front. Uriah the Hittite - one of David's own loyal soldiers - died holding a letter that ordered his death, carried by his own hand. Then David married the widow, and Scripture closes the chapter with a single quiet sentence: \"the thing that David had done was evil in the sight of the LORD\" (11:27).\n\nMonths pass. The cover-up holds. And then God sends a prophet, and the prophet does not open with the crime. He opens with a story. A rich man with flocks beyond counting. A poor man with one ewe lamb that ate from his plate and slept in his arms like a daughter. A guest arrives, and rather than touch his own herds, the rich man slaughters the poor man's only lamb.\n\nDavid does what any of us do when the sin belongs to someone else. He erupts. \"As surely as the LORD lives, the man who did this deserves to die!\" He demands fourfold restitution; he wants blood. His sense of justice is intact, fierce, immediate - aimed everywhere except home. He is a man who can still see clearly, as long as he is looking at someone else."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter to the Editor",
+      "body": "A man I knew once wrote a furious letter to the local paper about a neighbor who let his dog run loose, who never returned a borrowed ladder, who parked across two spaces. The letter was sharp and well argued. Everyone who read it agreed the neighbor was insufferable.\n\nWhat the letter did not mention was that the writer had done every one of those things himself for years. He was not lying, exactly. He genuinely could not feel the weight of his own version. His sins had become furniture - so familiar he walked past them without seeing them. Other people's sins were the thing in the road that made him slam the brakes.\n\nThis is the strange mercy and the strange danger of conscience. We keep our judgment fully loaded; we just keep it aimed outward. We can describe the exact shape of the wrong when it belongs to someone else, and go blind to its twin living under our own roof. Nathan does not give David new information. He gives David a mirror, holds it up at arm's length so the king will look, and only then tilts it.",
+      "connectionToTheme": "We are rarely short on judgment; we are short on self-recognition. The parable works because David's outrage is real - it just has the wrong address until Nathan corrects it.",
+      "content": "A man I knew once wrote a furious letter to the local paper about a neighbor who let his dog run loose, who never returned a borrowed ladder, who parked across two spaces. The letter was sharp and well argued. Everyone who read it agreed the neighbor was insufferable.\n\nWhat the letter did not mention was that the writer had done every one of those things himself for years. He was not lying, exactly. He genuinely could not feel the weight of his own version. His sins had become furniture - so familiar he walked past them without seeing them. Other people's sins were the thing in the road that made him slam the brakes.\n\nThis is the strange mercy and the strange danger of conscience. We keep our judgment fully loaded; we just keep it aimed outward. We can describe the exact shape of the wrong when it belongs to someone else, and go blind to its twin living under our own roof. Nathan does not give David new information. He gives David a mirror, holds it up at arm's length so the king will look, and only then tilts it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Verdict Comes Back Around",
+      "body": "Watch the exact order of the two sentences at the center of the chapter. First David says of the man in the story: \"the man who did this deserves to die!\" Then Nathan says: \"You are that man.\" The death sentence is in the air before the name is attached to it. David has already passed judgment; Nathan only reveals whom he was judging.\n\nThis is what makes the moment unbearable and necessary. If Nathan had simply announced the charges, David could have braced, deflected, summoned the defenses every powerful man keeps ready. Instead David condemns himself in the third person and only afterward learns it was first person all along. The judge and the criminal turn out to be the same man.\n\nAnd then comes the response no defense lawyer would advise. David does not argue. He does not soften it. Four words in Hebrew: \"I have sinned against the LORD.\" No excuse, no comparison to other kings, no theology of extenuating circumstance. Just the naked admission. And it is precisely there - at the bottom of self-justification, where there is nowhere left to point the finger - that the strangest sentence of all is spoken over him: \"The LORD has taken away your sin. You will not die.\" The man who deserved to die, by his own ruling, will live.",
+      "historicalContext": "2 Samuel sits in the heart of Israel's monarchy narrative, and this chapter is its hinge. David is the LORD's anointed, the man after God's own heart, the king whose throne is promised forever (2 Samuel 7). That this same king is also the rich man of the parable is not an embarrassment the text hides. Israel's Scriptures put their greatest hero's worst hour at the center of his story on purpose, and let a prophet, not an army, be the one who topples him.",
+      "fascinatingFact": "David's own sentence - the lamb must be paid for \"four times over\" (12:6) - lands on his own house with terrible literalness. The child of Bathsheba dies, and over the chapters that follow David loses Amnon, Absalom, and Adonijah. Fourfold. The forgiveness in 12:13 is real and immediate; it lifts the death he had earned. But the wreckage of what he set in motion still has to be walked through. Pardon and consequence are not the same thing, and the chapter refuses to pretend they are.",
+      "content": "Watch the exact order of the two sentences at the center of the chapter. First David says of the man in the story: \"the man who did this deserves to die!\" Then Nathan says: \"You are that man.\" The death sentence is in the air before the name is attached to it. David has already passed judgment; Nathan only reveals whom he was judging.\n\nThis is what makes the moment unbearable and necessary. If Nathan had simply announced the charges, David could have braced, deflected, summoned the defenses every powerful man keeps ready. Instead David condemns himself in the third person and only afterward learns it was first person all along. The judge and the criminal turn out to be the same man.\n\nAnd then comes the response no defense lawyer would advise. David does not argue. He does not soften it. Four words in Hebrew: \"I have sinned against the LORD.\" No excuse, no comparison to other kings, no theology of extenuating circumstance. Just the naked admission. And it is precisely there - at the bottom of self-justification, where there is nowhere left to point the finger - that the strangest sentence of all is spoken over him: \"The LORD has taken away your sin. You will not die.\" The man who deserved to die, by his own ruling, will live."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A prophet tells a king a story until the king sentences himself to death, then says two words - \"You are the man\" - and the verdict the king pronounced lands on the king. And the man who deserved to die is told: \"You will not die.\"",
+      "modernApplication": "We are fluent in other people's guilt and slow to feel our own. We read the news, scroll the feed, sit at the dinner table, ready with the sentence the other person deserves. The Nathan question is not \"is that wrong?\" - it usually is. The question is whether the finger we keep pointed outward would survive being turned around. Real repentance begins the moment \"that man\" becomes \"I.\"",
+      "connectionPoint": "Centuries after David, another Son of David told parables that did the same work. The story of the unforgiving servant, the two debtors, the Pharisee and the tax collector - each one is a small Nathan, walking a listener into a judgment that quietly closes around the listener. Jesus inherited Nathan's method: do not announce the verdict; let the hearer pronounce it and discover whose it was. James says the same thing flatly - mercy triumphs over judgment (James 2:13), and the one who shows no mercy will be judged by his own standard.",
+      "newTestamentEcho": "David earned the sentence and was told, \"You will not die.\" The Bible does not leave that as a loose thread. The sentence David deserved did not simply evaporate; centuries later it fell on another Son of David, who deserved none of it. Where Nathan said to a guilty king \"you will not die,\" the cross is where that pardon was paid for - the innocent struck so the guilty go free. \"He committed no sin... He Himself bore our sins in His body on the tree\" (1 Peter 2:22, 24). David's \"you will not die\" cost God something, and the garden of Gethsemane is where the bill came due."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose sin have you been ready to sentence lately - and would the verdict you pronounced over them survive being turned around and pointed at you?",
+      "additionalQuestions": [
+        "Is there a sin in your own life that has become 'furniture' - so familiar you walk past it without feeling its weight, while you feel the weight of the same thing in others?",
+        "David's confession was four words with no excuse attached. What would it cost you to name your own wrong that plainly, without comparison or extenuating circumstance?",
+        "Forgiveness reached David instantly; consequences still unfolded for years. Where are you tempted to confuse God's pardon with the erasing of every consequence - and how does the difference change the way you repent?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am quicker to sentence than to be sentenced. I see the lamb stolen from someone else and miss the one taken from my own table. Send me a Nathan if You must. Turn the finger I keep pointed outward back toward my own heart, gently enough that I can bear to look. And when I finally say, with David, 'I have sinned,' meet me where he was met - not with the death I have earned, but with the word I have not earned: 'You will not die.' Thank You that the sentence I deserved fell on Christ, and that His blood is the reason mercy can say that over me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one judgment you have been carrying against another person - sharp, justified, ready to fire. Before you spend it on them, turn it around and ask honestly whether the same charge lives somewhere in you. Bring that one thing to God by name, the way David did, with no excuse attached. Then receive the word over it: in Christ, you will not die.",
+      "leavingAtCross": [
+        "The finger I keep loaded and pointed outward, fluent in everyone's guilt but my own",
+        "The self-made cover-up - the careful version of events where I am never the rich man in the story",
+        "The fear that naming my sin plainly will be the end of me"
+      ],
+      "receivingFromCross": [
+        "The freedom of being fully known and still told 'you will not die'",
+        "A repentance that does not need an excuse, because the sentence has already fallen on Christ",
+        "The grace to feel the weight of my own sin as readily as I feel the weight of others'"
+      ],
+      "content": "Today, name one judgment you have been carrying against another person - sharp, justified, ready to fire. Before you spend it on them, turn it around and ask honestly whether the same charge lives somewhere in you. Bring that one thing to God by name, the way David did, with no excuse attached. Then receive the word over it: in Christ, you will not die."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Nathan tell a story about a stolen lamb instead of simply accusing David directly - and what does the order of events (David's sentence first, then 'You are that man') accomplish that a direct accusation could not?",
+        "David is told 'The LORD has taken away your sin. You will not die,' and yet the consequences of his actions still unfold across the following chapters. How can both be fully true at once?",
+        "How does the moment when the guilty king is told 'you will not die' point forward to the cross, where the sentence the guilty deserved fell on the innocent?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you suspect you are quick to judge the same thing in others that you excuse in yourself.",
+        "Talk about the difference between an apology that comes with an excuse attached and David's bare 'I have sinned against the LORD' - which is harder for you, and why?",
+        "Ask each other: where in your life right now do you most need a friend willing to be a Nathan, and have you given anyone permission to be one?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 51:1-4",
+          "text": "Have mercy on me, O God, according to Your loving devotion; according to Your great compassion, blot out my transgressions... Against You, You only, have I sinned and done what is evil in Your sight."
+        },
+        {
+          "reference": "2 Samuel 12:13",
+          "text": "Then David said to Nathan, \"I have sinned against the LORD.\" \"The LORD has taken away your sin,\" Nathan replied. \"You will not die.\""
+        },
+        {
+          "reference": "Luke 18:13-14",
+          "text": "But the tax collector stood at a distance, unwilling even to lift up his eyes to heaven. Instead, he beat his breast and said, 'God, have mercy on me, a sinner!' I tell you, this man, rather than the Pharisee, went home justified."
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. 'By His stripes you are healed.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Samuel 11-12 and Psalm 51",
+          "note": "Read the two chapters of the story, then read Psalm 51 - traditionally David's prayer after Nathan came to him. Watch how the narrative's 'You are the man' becomes the psalm's 'Against You, You only, have I sinned.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Nathan",
+      "title": "The Prophet Who Confronted a King",
+      "description": "A prophet in David's court, trusted enough to carry God's word on the building of the temple (2 Samuel 7) and brave enough to carry God's word against the king himself. When David sinned with Bathsheba and arranged Uriah's death, it was Nathan whom God sent - not with an army, but with a story. Nathan walked into the most powerful room in Israel, told a parable about a stolen lamb, let the king sentence himself, and then said two words: 'You are that man.' He later helped secure Solomon's succession (1 Kings 1), but he is remembered most for the courage it took to turn a king's judgment back on the king.",
+      "keyQuote": "You are that man!",
+      "lessonForUs": "Nathan shows what love sometimes costs: not flattery, not silence, but the willingness to hold up a mirror to someone with the power to destroy you. And he shows God's way of confronting us - not by ambushing us with charges, but by drawing the verdict out of our own mouth until we recognize whose it was all along.",
+      "heading": "The Prophet Who Confronted a King"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2304,
+  "scriptureReference_full": "2 Samuel 11-12",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (attah ha'ish, H859) reflects standard lexical sources. The shepherd-lamb resonance with 1 Samuel 17 and the fourfold restitution of 12:6 are observations from the biblical text itself."
+  ]
 }

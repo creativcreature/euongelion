@@ -1,38 +1,194 @@
 {
   "day": 297,
-  "title": "Luke: The Inclusive Christ — Day 3 — Pivot",
-  "teaser": "Day 297 of Bible 365 — Luke 1-12",
+  "title": "The God Who Turns the Room Over",
+  "teaser": "Before Jesus speaks a word, His mother sings the whole gospel: the proud scattered, the rulers pulled down, the hungry filled. Luke opens with a revolution sung by a teenage girl.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
-  "scriptureReference": "Luke 1-12",
+  "scriptureReference": "Luke 1:46-55",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 297"
+      "type": "scripture",
+      "reference": "Luke 1:46-55",
+      "translation": "BSB",
+      "emphasis": [
+        "the humble state of His servant",
+        "He has brought down rulers from their thrones",
+        "but has exalted the humble",
+        "He has filled the hungry with good things"
+      ],
+      "greekOriginal": "Μεγαλύνει ἡ ψυχή μου τὸν Κύριον... καθεῖλεν δυνάστας ἀπὸ θρόνων καὶ ὕψωσεν ταπεινούς",
+      "passage": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. For the Mighty One has done great things for me. Holy is His name. His mercy extends to those who fear Him, from generation to generation. He has performed mighty deeds with His arm; He has scattered those who are proud in the thoughts of their hearts. He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty. He has helped His servant Israel, remembering to be merciful, as He promised to our fathers, to Abraham and his descendants forever.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ταπεινός",
+      "transliteration": "tapeinos",
+      "pronunciation": "tap-i-NOSS",
+      "meaning": "low, lowly, of low degree; humble in condition or in heart",
+      "rootMeaning": "Tapeinos describes what is physically low to the ground - a valley, a flattened field, a person bent under a weight. The Greek world used it almost as an insult: the tapeinos was the small, the unimportant, the one with no leverage. Luke takes the world's contempt-word and makes it the place God looks first.",
+      "usageNote": "The same root frames the whole song. In verse 48 Mary calls herself His servant in her tapeinosis - her low estate. In verse 52 God exalts the tapeinous - the lowly. The song begins and ends in the same word, so the singer is standing inside the very reversal she is announcing. She is not describing it from a safe distance; she is one of the lifted.",
+      "wordByWord": [
+        {
+          "word": "Μεγαλύνει",
+          "transliteration": "megalynei",
+          "meaning": "magnifies, makes great - the small one makes the great One greater"
+        },
+        {
+          "word": "ταπείνωσιν",
+          "transliteration": "tapeinosin",
+          "meaning": "low estate, humble condition (verse 48)"
+        },
+        {
+          "word": "καθεῖλεν",
+          "transliteration": "katheilen",
+          "meaning": "He pulled down, He demolished - the word for tearing down a building"
+        },
+        {
+          "word": "δυνάστας",
+          "transliteration": "dynastas",
+          "meaning": "rulers, the powerful - the root of our word 'dynasty'"
+        },
+        {
+          "word": "ὕψωσεν",
+          "transliteration": "hypsosen",
+          "meaning": "He lifted high, He exalted (verse 52)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ταπεινόω",
+          "reference": "The same verb returns on Jesus' own lips: 'whoever exalts himself will be humbled, and whoever humbles himself will be exalted' (Luke 14:11; 18:14). The mother sings the law of the kingdom; the Son spends His ministry teaching it."
+        }
+      ],
+      "strongsNumber": "G5011",
+      "definition": "low, lowly, humble; of low position or degree",
+      "usage": "What the surrounding culture used as a put-down, Luke's Gospel turns into an address. God does not merely tolerate the tapeinos - He looks there on purpose, and lifts."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Revolution Sung Before a Sword Is Drawn",
+      "body": "Luke opens his Gospel not with thunder but with two pregnant women in the hill country - one old and barren, one young and unwed. When Mary arrives at Elizabeth's door, the older woman's child leaps, and Mary answers with a song. We call it the Magnificat, from its first Latin word. It is the longest set of words on any human lips in Luke's first chapter, and it belongs to a teenage girl from a village so small it goes unmentioned in the Old Testament.\n\nListen to what she sings. She does not begin with herself; she begins with God - 'My soul magnifies the Lord.' Then, before Jesus has been born, before He has healed anyone or said anything, she describes what His coming means in the past tense, as though it were already finished: He has scattered the proud. He has brought down rulers. He has filled the hungry. He has sent the rich away empty. The grammar is bold. She is so sure of what God is about to do that she sings it as done.\n\nThis is the keynote Luke strikes on purpose. Of the four Gospels, Luke is the one that keeps turning the camera toward the people the world overlooks - shepherds, a despised tax collector, a Samaritan, a widow with two coins, a thief on a cross. The whole Gospel will be an unfolding of the song its second chapter has not yet reached. Mary is the overture. She tells you, in advance, what kind of King is coming and which way He faces.",
+      "keyInsight": "Before Jesus performs a single act, His mother announces the shape of His entire mission: God moves toward the low, and that movement is not charity at the edges - it is the center of who He is.",
+      "content": "Luke opens his Gospel not with thunder but with two pregnant women in the hill country - one old and barren, one young and unwed. When Mary arrives at Elizabeth's door, the older woman's child leaps, and Mary answers with a song. We call it the Magnificat, from its first Latin word. It is the longest set of words on any human lips in Luke's first chapter, and it belongs to a teenage girl from a village so small it goes unmentioned in the Old Testament.\n\nListen to what she sings. She does not begin with herself; she begins with God - 'My soul magnifies the Lord.' Then, before Jesus has been born, before He has healed anyone or said anything, she describes what His coming means in the past tense, as though it were already finished: He has scattered the proud. He has brought down rulers. He has filled the hungry. He has sent the rich away empty. The grammar is bold. She is so sure of what God is about to do that she sings it as done.\n\nThis is the keynote Luke strikes on purpose. Of the four Gospels, Luke is the one that keeps turning the camera toward the people the world overlooks - shepherds, a despised tax collector, a Samaritan, a widow with two coins, a thief on a cross. The whole Gospel will be an unfolding of the song its second chapter has not yet reached. Mary is the overture. She tells you, in advance, what kind of King is coming and which way He faces."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "Who Gets Seated First",
+      "body": "There is a kind of room where you learn your rank the moment you walk in. The good chairs are taken. The conversation is already arranged around the people who matter, and you can feel, without anyone saying it, where you fall in the order. Most of us have stood in a doorway like that, holding a paper cup, calculating whether anyone will turn around.\n\nImagine the host of that room walking past the people with titles, past the ones everyone came to be near, and crossing the floor to the person no one was looking at - the one who had already decided to stay by the wall. Imagine being led, not to a seat at the edge, but to the head of the table. Not because you earned it. Because the host wanted you there, and arranges every room that way on purpose.\n\nThat is the motion Mary is singing. She was, by every measure her world used, a nobody - young, poor, female, from the wrong town. And God crossed the room to her first. Her song is the sound of someone who has just been seated at the head of a table she never expected to be let into, and who realizes, mid-sentence, that this is not an exception. This is how the host always seats the room.",
+      "connectionToTheme": "The Magnificat is not abstract theology about the powerful and the poor; it is the voice of one specific overlooked person discovering that God came for her first - and that this is the pattern, not the accident.",
+      "content": "There is a kind of room where you learn your rank the moment you walk in. The good chairs are taken. The conversation is already arranged around the people who matter, and you can feel, without anyone saying it, where you fall in the order. Most of us have stood in a doorway like that, holding a paper cup, calculating whether anyone will turn around.\n\nImagine the host of that room walking past the people with titles, past the ones everyone came to be near, and crossing the floor to the person no one was looking at - the one who had already decided to stay by the wall. Imagine being led, not to a seat at the edge, but to the head of the table. Not because you earned it. Because the host wanted you there, and arranges every room that way on purpose.\n\nThat is the motion Mary is singing. She was, by every measure her world used, a nobody - young, poor, female, from the wrong town. And God crossed the room to her first. Her song is the sound of someone who has just been seated at the head of a table she never expected to be let into, and who realizes, mid-sentence, that this is not an exception. This is how the host always seats the room."
+    },
+    {
+      "type": "insight",
+      "heading": "The Reversal Is Not a Side Effect. It Is the Gospel.",
+      "body": "It is tempting to read the Magnificat as social commentary with a religious accent - a song about justice, about the poor getting a turn. It is that. But under the politics runs something deeper, and Luke wants the deeper thing seen.\n\nWatch the direction of every verb. God brings down. God lifts up. God fills. God empties. The whole song is built on a single divine motion: downward, toward the low, in order to raise it. And that motion does not stop at Mary's door. It is the shape of the entire story she is carrying. The God who is about to be born will not arrive in a palace but in a feeding trough. He will not be raised among scholars but in a carpenter's house. He will not die on a throne but on the lowest, most shameful piece of wood the empire owned. The reversal Mary sings - the Mighty One coming down to lift the lowly - is not merely something God does. In Jesus, it is something God becomes. He does not send the rescue from a safe height; He goes all the way to the bottom of the room Himself.\n\nThis is why Luke makes a teenage peasant the theologian of his first chapter. She is not commenting on the gospel from outside it. She is standing inside it. The same hand that 'lifted the lowly' had already, at that moment, lowered itself into her womb. The reversal she announces, she is carrying. And the cross, three decades away, is the place where the song finally lands: the Mighty One brought all the way down, the lowly lifted all the way up, by the one motion of God toward us.",
+      "historicalContext": "Mary's song is woven almost line by line out of Hannah's prayer in 1 Samuel 2, sung a thousand years earlier by another woman whom God had remembered: 'He raises the poor from the dust... He seats them with princes.' Luke's first readers, steeped in the Scriptures, would have heard the echo immediately - this is not a new God doing a new thing, but the God of Israel doing the thing He has always done, now in person.",
+      "fascinatingFact": "The Magnificat has been sung in the Church's evening prayer every day for over fifteen centuries. In several places and eras its verses about pulling down rulers were considered politically dangerous enough that authorities tried to restrict its public recitation. A song handed to a teenage girl has unsettled the powerful for two thousand years - exactly as she said it would.",
+      "content": "It is tempting to read the Magnificat as social commentary with a religious accent - a song about justice, about the poor getting a turn. It is that. But under the politics runs something deeper, and Luke wants the deeper thing seen.\n\nWatch the direction of every verb. God brings down. God lifts up. God fills. God empties. The whole song is built on a single divine motion: downward, toward the low, in order to raise it. And that motion does not stop at Mary's door. It is the shape of the entire story she is carrying. The God who is about to be born will not arrive in a palace but in a feeding trough. He will not be raised among scholars but in a carpenter's house. He will not die on a throne but on the lowest, most shameful piece of wood the empire owned. The reversal Mary sings - the Mighty One coming down to lift the lowly - is not merely something God does. In Jesus, it is something God becomes. He does not send the rescue from a safe height; He goes all the way to the bottom of the room Himself.\n\nThis is why Luke makes a teenage peasant the theologian of his first chapter. She is not commenting on the gospel from outside it. She is standing inside it. The same hand that 'lifted the lowly' had already, at that moment, lowered itself into her womb. The reversal she announces, she is carrying. And the cross, three decades away, is the place where the song finally lands: the Mighty One brought all the way down, the lowly lifted all the way up, by the one motion of God toward us."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Mary sings that the Mighty One has come down to scatter the proud and lift the lowly - and she sings it as one of the lifted, carrying in her own body the God who is making the descent.",
+      "modernApplication": "We spend most of our energy trying to be the kind of person God would obviously want - impressive, capable, sorted out, useful. The Magnificat dismantles the whole project. God did not look for the qualified girl with the right connections. He looked at the 'humble state of His servant' and chose it on purpose. The thing you are most ashamed of - your smallness, your lack of leverage, the corner of the room you assume God overlooks - is precisely the place this Gospel says He goes first.",
+      "connectionPoint": "Mary's overture sounds again and again through the rest of Luke. In Nazareth Jesus reads from Isaiah and announces His mission in the same key: 'The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor... to release the oppressed' (Luke 4:18). Old Simeon, holding the infant, calls Him 'a light for revelation to the Gentiles' - salvation prepared 'in the sight of all people' (Luke 2:31-32). The song in chapter 1 becomes the program for the whole Gospel: the low are sought, the outsider is welcomed, the Inclusive Christ faces the room the world ignores.",
+      "newTestamentEcho": "Paul puts the Magnificat's motion into a single sentence: Christ Jesus, 'though He existed in the form of God... emptied Himself, taking the form of a servant... He humbled Himself and became obedient to death - even death on a cross. Therefore God exalted Him' (Philippians 2:6-9). The verbs are Mary's: He came down; He was lifted. What she sang over an unborn child, the Church confesses over an empty tomb."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where do you assume you stand at the edge of the room - too small, too unqualified, too overlooked for God to come toward first? What would change if that were exactly where He is heading?",
+      "additionalQuestions": [
+        "Mary calls herself God's servant in her 'low estate' and sings anyway. What 'low estate' in your life have you been hiding instead of bringing into the song?",
+        "The song warns the proud and the full as much as it comforts the low. Where might you be the 'rich' one God is gently asking to come down so He can fill you with something better?",
+        "Mary sang what God would do before it happened, in faith. What is one thing you could thank God for as though it were already done, simply because of who He is?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "humble-trust",
+      "prayerText": "Mighty One, You have always faced the low places first. Thank You that You did not wait for me to become impressive before You came. Where I have hidden in the corner of the room, find me. Where I have worked to climb high enough to deserve You, bring me gently down to where You already are. Fill the hungry place in me with good things - with Yourself - and let my soul, like Mary's, magnify You instead of myself. You came all the way down to lift me up. Let me trust the reversal You are still working. Through Christ, who emptied Himself for us. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find the lowest seat on purpose. In one place where you would normally jockey for position, recognition, or the upper hand, deliberately step back - listen instead of leading, give the credit away, notice the person at the wall of the room and cross to them. Let the day rehearse the motion of the song: down, so that someone else is lifted.",
+      "leavingAtCross": [
+        "The exhausting project of being impressive enough for God to want me",
+        "The lie that my small place in the room means He has overlooked me",
+        "The grip on status, credit, and the upper hand that keeps me from coming down"
+      ],
+      "receivingFromCross": [
+        "A God who crosses the room to the low place first, and seats me at the table",
+        "The freedom to be small and still be sought",
+        "A song to sing in advance - certainty about what He will do, because of who He is"
+      ],
+      "content": "Today, find the lowest seat on purpose. In one place where you would normally jockey for position, recognition, or the upper hand, deliberately step back - listen instead of leading, give the credit away, notice the person at the wall of the room and cross to them. Let the day rehearse the motion of the song: down, so that someone else is lifted."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Mary sings God's coming reversal in the past tense, as already done, before Jesus is even born. What does that grammar tell you about the kind of faith Luke is holding up?",
+        "How does the single Greek root tapeinos - 'lowly' - tie together Mary's view of herself in verse 48 and God's action in verse 52?",
+        "Trace the song's downward-then-upward motion forward: the manger, the carpenter's house, the cross, the empty tomb. How is the Magnificat a map of the whole Gospel of Luke?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'low estate' in your life you tend to hide - and talk about what it would mean to bring it into the open before God, the way Mary names hers and sings.",
+        "Where are each of you more like the 'proud' or the 'rich' of the song than the lowly? Be honest about what God might be asking you to set down.",
+        "Ask each other: who is standing at the wall of your room right now - and what would it look like this week to cross to them first?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 2:7-8",
+          "text": "The LORD sends poverty and wealth; He humbles and He exalts. He raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor."
+        },
+        {
+          "reference": "Luke 2:30-32",
+          "text": "For my eyes have seen Your salvation, which You have prepared in the sight of all people, a light for revelation to the Gentiles, and for glory to Your people Israel."
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed."
+        },
+        {
+          "reference": "Philippians 2:8-9",
+          "text": "He humbled Himself and became obedient to death - even death on a cross. Therefore God exalted Him to the highest place and gave Him the name above all names."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "passage",
+          "title": "1 Samuel 2:1-10 (The Song of Hannah)",
+          "note": "Read Hannah's prayer beside the Magnificat and underline the shared lines. Mary is not improvising; she is singing Israel's oldest song in a new chapter."
+        },
+        {
+          "type": "book",
+          "title": "Luke 1-2",
+          "note": "Read Luke's first two chapters in one sitting, watching for who God's messengers go to: a childless priest, a young girl, shepherds at night, an old man and an old woman in the Temple. Note the pattern before chapter 3 begins."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Servant Who Sang the Gospel First",
+      "description": "A young woman of Nazareth, betrothed to a carpenter, with no wealth, rank, or public standing. When the angel announced she would bear the Son of God, she answered, 'I am the Lord's servant.' Visiting her relative Elizabeth, she sang the Magnificat - the fullest theology of Christ's mission spoken by anyone before His birth. Luke gives her the opening word of his Gospel, and she gives it back to God.",
+      "keyQuote": "My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant.",
+      "lessonForUs": "God did not choose the powerful to announce His coming; He chose the lowly, and she understood Him better than the powerful would have. The same God who looked with favor on her 'low estate' looks toward yours - not despite your smallness, but because that is the place He always goes first.",
+      "heading": "The Servant Who Sang the Gospel First"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "Luke 1:46-55",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tapeinos, G5011; tapeinosis; katheilen; hypsosen) reflects standard lexical sources for Luke 1:46-55.",
+    "The structural dependence of the Magnificat on the Song of Hannah (1 Samuel 2:1-10) and the daily liturgical use of the Magnificat are widely attested in standard reference works.",
+    "Reference to historical restriction of the Magnificat's public recitation reflects a commonly reported tradition associated with several eras and is presented as such, not as a single documented event."
+  ]
 }

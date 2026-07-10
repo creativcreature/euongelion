@@ -1,38 +1,190 @@
 {
   "day": 310,
-  "title": "John: The Word + I Ams — Day 2 — Building",
-  "teaser": "Day 310 of Bible 365 — John 1-7",
+  "title": "Before \"I AM,\" the Word already was",
+  "teaser": "Before John records a single \"I am,\" he tells you who is speaking. The voice that says I am the bread, the light, the door — that voice was God before the world had a morning.",
   "framework": "John 1-7 — John: The Word + I Ams",
   "scriptureReference": "John 1-7",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 310"
+      "type": "scripture",
+      "reference": "John 1:1-5, 14",
+      "translation": "BSB",
+      "emphasis": [
+        "In the beginning was the Word",
+        "the Word was God",
+        "The Word became flesh"
+      ],
+      "greekOriginal": "Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν, καὶ Θεὸς ἦν ὁ Λόγος.",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made. In Him was life, and that life was the light of men. The Light shines in the darkness, and the darkness has not overcome it. ... The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "Λόγος",
+      "transliteration": "logos",
+      "pronunciation": "LOH-gos",
+      "meaning": "word, reason, the expressed thought of a mind",
+      "rootMeaning": "From lego, to gather, to say. A logos is not just a sound but a meaning made audible - the inner thought of a person spoken out so it can be received. To call Jesus the Logos is to say He is God's mind made hearable, God's heart said out loud.",
+      "usageNote": "John reaches for a word both his audiences already loved. To the Greek philosophers, the logos was the rational order holding the cosmos together. To the Jew reading Genesis, it was the word God spoke - \"Let there be\" - that made a world. John takes the word everyone admired from a distance and says: this Logos has a face, and you can touch Him.",
+      "wordByWord": [
+        {
+          "word": "Ἐν ἀρχῇ",
+          "transliteration": "en arche",
+          "meaning": "in the beginning - the exact opening of Genesis in Greek"
+        },
+        {
+          "word": "ἦν",
+          "transliteration": "en",
+          "meaning": "was - continuous past tense; not 'came to be' but 'was already, always'"
+        },
+        {
+          "word": "ὁ Λόγος",
+          "transliteration": "ho Logos",
+          "meaning": "the Word - the one and only, definite, particular Word"
+        },
+        {
+          "word": "πρὸς τὸν Θεόν",
+          "transliteration": "pros ton Theon",
+          "meaning": "with God - literally 'toward God,' face to face, in living relationship"
+        },
+        {
+          "word": "Θεὸς ἦν ὁ Λόγος",
+          "transliteration": "Theos en ho Logos",
+          "meaning": "the Word was God - fully sharing the divine nature, not a lesser god"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐσκήνωσεν / skenoo",
+          "reference": "In verse 14 'made His dwelling' is skenoo - literally 'pitched His tent,' 'tabernacled.' The same root as the tabernacle in the wilderness, where God's glory came down to live in a tent among Israel. John says the glory that once filled the tent now wears skin."
+        }
+      ],
+      "strongsNumber": "G3056",
+      "definition": "logos: a word, the expressed thought; in John, the eternal Son through whom God speaks and creates",
+      "usage": "John uses the imperfect 'en' (was) three times in one verse, then switches to a different verb when the Word 'became' flesh. The Word never came into being. He simply, always, was - and then, at a point in time, He became one of us without ceasing to be God."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "John Tells You Who Is Speaking Before He Lets Him Speak",
+      "body": "We are early in John's Gospel, on the climb toward the great sayings everyone remembers - I am the bread of life, I am the light of the world, I am the good shepherd. But John does something patient before any of that. He refuses to let you hear a single \"I am\" until you know exactly who is saying it.\n\nSo he opens not with a manger or a baptism but before the world had a first morning: \"In the beginning was the Word.\" He borrows the opening line of Genesis on purpose. Where Genesis says \"In the beginning God created,\" John says, in the beginning the Word already was - present, personal, and God Himself. Then he narrows the lens. The Word that made the stars stepped into the world He made. \"The Word became flesh and made His dwelling among us.\"\n\nThis is the floor everything else in the Gospel stands on. The man who will get tired at a well in chapter 4, who will weep at a tomb, who will be arrested in a garden - John wants you to know, before you watch any of it, that this is the eternal Word who spoke light into the dark. The footsteps approaching the Samaritan woman belong to the One through whom all things were made.",
+      "keyInsight": "Before John records one \"I am,\" he establishes who is speaking. The voice behind every claim in this Gospel is the eternal Word who was with God, was God, and made everything that is.",
+      "content": "We are early in John's Gospel, on the climb toward the great sayings everyone remembers - I am the bread of life, I am the light of the world, I am the good shepherd. But John does something patient before any of that. He refuses to let you hear a single \"I am\" until you know exactly who is saying it.\n\nSo he opens not with a manger or a baptism but before the world had a first morning: \"In the beginning was the Word.\" He borrows the opening line of Genesis on purpose. Where Genesis says \"In the beginning God created,\" John says, in the beginning the Word already was - present, personal, and God Himself. Then he narrows the lens. The Word that made the stars stepped into the world He made. \"The Word became flesh and made His dwelling among us.\"\n\nThis is the floor everything else in the Gospel stands on. The man who will get tired at a well in chapter 4, who will weep at a tomb, who will be arrested in a garden - John wants you to know, before you watch any of it, that this is the eternal Word who spoke light into the dark. The footsteps approaching the Samaritan woman belong to the One through whom all things were made."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter Read in the Author's Voice",
+      "body": "A woman I know kept a stack of her late father's letters in a shoebox for years. She had read them many times. Then, sorting through old cassettes, she found a tape of him reading aloud - his actual voice, slow and a little gravelly. After that, she told me, she could never read the letters the same way again. The same words on the page now carried a particular weight, a warmth, a rasp. She wasn't reading text anymore. She was hearing him.\n\nJohn's opening does that for the whole Gospel. The words that follow - the long discourses, the arguments with the Pharisees, the quiet talk at midnight with Nicodemus - could be read flat, as the sayings of a wise teacher from Galilee. John refuses to let you read them flat. Before the first line of dialogue, he hands you the voice: this is the Word who was God, the One through whom everything was made.\n\nSo when chapter 6 arrives and the carpenter's son says, \"I am the bread of life,\" you do not hear a man overreaching. You hear the Author of life, reading His own letter aloud.",
+      "connectionToTheme": "Knowing the Word is God before you hear Him speak changes how every later word in the Gospel lands - the same way hearing an author's voice changes how you read his letters.",
+      "content": "A woman I know kept a stack of her late father's letters in a shoebox for years. She had read them many times. Then, sorting through old cassettes, she found a tape of him reading aloud - his actual voice, slow and a little gravelly. After that, she told me, she could never read the letters the same way again. The same words on the page now carried a particular weight, a warmth, a rasp. She wasn't reading text anymore. She was hearing him.\n\nJohn's opening does that for the whole Gospel. The words that follow - the long discourses, the arguments with the Pharisees, the quiet talk at midnight with Nicodemus - could be read flat, as the sayings of a wise teacher from Galilee. John refuses to let you read them flat. Before the first line of dialogue, he hands you the voice: this is the Word who was God, the One through whom everything was made.\n\nSo when chapter 6 arrives and the carpenter's son says, \"I am the bread of life,\" you do not hear a man overreaching. You hear the Author of life, reading His own letter aloud."
+    },
+    {
+      "type": "insight",
+      "heading": "\"Was\" and \"Became\" Are Different Words on Purpose",
+      "body": "Read verse 1 against verse 14 and the whole prologue turns on two small verbs. Three times in verse 1 John writes \"was\" - the Word was, the Word was with God, the Word was God. It is the verb of something that simply, always, is. There is no point you can stand at and say, before this, the Word was not. He has no beginning to point back to. He is the beginning.\n\nThen in verse 14 the verb changes. \"The Word became flesh.\" Not was flesh, eternally - became, at a moment, in a body, with a birth you could date. The eternal One stepped inside time. The word John uses for \"made His dwelling\" is the word for pitching a tent, the same root as the tabernacle where God's glory once filled a tent in the wilderness. The glory that no one could look at and live now had a human face people could watch eat and sleep and weep.\n\nThis is the hinge the rest of the Gospel hangs on. Everything Jesus claims with the words \"I am\" is the eternal \"was\" of verse 1 speaking out of the flesh of verse 14. The same voice that said \"Let there be light\" now says, in a body, \"I am the light of the world.\"",
+      "historicalContext": "John wrote toward the end of the first century, when the church was already wrestling with people who said Jesus only seemed human, or that He was a created being beneath God. John's opening cuts both errors off at once: the Word truly was God (against making Him a creature) and truly became flesh (against making Him a phantom). The councils that later confessed Christ as fully God and fully man were not inventing a new idea; they were guarding the one John wrote down first.",
+      "fascinatingFact": "John never uses the title \"the Word\" (Logos) for Jesus again after the prologue. He sets the lens in place in the first eighteen verses and then lets the story do the rest. Once you know the One walking through the chapters is the Logos, John trusts you to carry that knowledge into every scene without being reminded.",
+      "content": "Read verse 1 against verse 14 and the whole prologue turns on two small verbs. Three times in verse 1 John writes \"was\" - the Word was, the Word was with God, the Word was God. It is the verb of something that simply, always, is. There is no point you can stand at and say, before this, the Word was not. He has no beginning to point back to. He is the beginning.\n\nThen in verse 14 the verb changes. \"The Word became flesh.\" Not was flesh, eternally - became, at a moment, in a body, with a birth you could date. The eternal One stepped inside time. The word John uses for \"made His dwelling\" is the word for pitching a tent, the same root as the tabernacle where God's glory once filled a tent in the wilderness. The glory that no one could look at and live now had a human face people could watch eat and sleep and weep.\n\nThis is the hinge the rest of the Gospel hangs on. Everything Jesus claims with the words \"I am\" is the eternal \"was\" of verse 1 speaking out of the flesh of verse 14. The same voice that said \"Let there be light\" now says, in a body, \"I am the light of the world.\""
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Word who was with God in the beginning, and who was God, became flesh and tabernacled among us - the unseeable Author of creation taking a face we could see and a voice we could hear.",
+      "modernApplication": "We tend to keep God abstract - a force, a principle, the universe, a vague benevolence. Abstract gods make no claims and ask nothing; they are safe precisely because they never speak. John refuses us that comfort. The God he proclaims has a name, a face, and seven \"I am\" sayings. You cannot file Him under 'the divine' and move on. He came near enough to be touched and clear enough to be answered.",
+      "connectionPoint": "John's opening is the same note struck across the New Testament. Paul writes that in Christ \"all things were created... and in Him all things hold together\" (Colossians 1:16-17). Hebrews calls the Son \"the radiance of God's glory and the exact representation of His nature, upholding all things by His powerful word\" (Hebrews 1:3). John says it again in his own letter: \"That which was from the beginning, which we have heard, which we have seen with our own eyes... this is the Word of life\" (1 John 1:1). The whole church learned to read every page through the voice John handed them in his first eighteen verses.",
+      "newTestamentEcho": "The prologue does not only point ahead in John; it points back to Genesis. \"In the beginning God created\" (Genesis 1:1) becomes \"In the beginning was the Word.\" The God who said \"I AM WHO I AM\" to Moses at the bush (Exodus 3:14) is the One who will say, again and again in this Gospel, \"I am.\" John is building the foundation so that when the \"I am\" sayings come, you hear the voice from the burning bush speaking out of a Galilean throat."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you picture the God you pray to, do you picture someone with a face and a voice - or a vague force you keep comfortably abstract?",
+      "additionalQuestions": [
+        "John makes you learn who Jesus is before you hear what He says. How might it change a familiar saying of Jesus to first remember that the eternal Word is the one speaking it?",
+        "The Word 'became flesh' - He stepped into the ordinary, the tired, the hungry, the grieving. Where in your most ordinary day might you need to remember that God came near enough to share it?",
+        "What would it mean to stop keeping God at the safe distance of an idea and let Him be the Word who has come close enough to answer?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "adoration",
+      "prayerText": "Eternal Word, before there was a first morning, You were. You spoke the light, and the light came. And then, unthinkably, You became flesh and pitched Your tent among us, near enough to be touched and known. Forgive me for keeping You abstract, for praying to a vague force when You have given me a face and a voice. Before I hear another word You say, let me know who is speaking. Let the Word who made me read His own letter aloud to my heart today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you read anything Jesus says - in this Gospel or anywhere - pause and say to yourself: this is the Word who was God, the One through whom all things were made. Let that one sentence set the voice for everything you hear from Him.",
+      "leavingAtCross": [
+        "The habit of keeping God abstract and safely distant - a force, not a face",
+        "The instinct to hear Jesus' words as merely the wisdom of a good teacher",
+        "The quiet doubt that God is too far above me to have come this near"
+      ],
+      "receivingFromCross": [
+        "The God who has a name, a face, and a voice I can answer",
+        "The eternal Word who stepped into time to dwell among us",
+        "The light that shines in my darkness, which the darkness has not overcome"
+      ],
+      "content": "Today, before you read anything Jesus says - in this Gospel or anywhere - pause and say to yourself: this is the Word who was God, the One through whom all things were made. Let that one sentence set the voice for everything you hear from Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does John open his Gospel with the words of Genesis 1:1 instead of with Jesus' birth or ministry?",
+        "What is the difference between the verb 'was' in John 1:1 and the verb 'became' in John 1:14 - and why does the difference matter?",
+        "How does knowing the speaker is the eternal Word change the way you hear the 'I am' sayings that come later in the Gospel?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about how each of you tends to picture God - as a person with a face and voice, or as a force or idea. What shaped that picture?",
+        "Where do you find it hardest to believe that God came near enough to share your most ordinary, tired, or grieving moments?",
+        "Pick one saying of Jesus you know well and read it aloud to each other, first remembering that the eternal Word is the one speaking. What changes?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 1:1",
+          "text": "In the beginning God created the heavens and the earth."
+        },
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "Colossians 1:16-17",
+          "text": "For in Him all things were created, things in heaven and on earth, visible and invisible... All things were created through Him and for Him. He is before all things, and in Him all things hold together."
+        },
+        {
+          "reference": "Hebrews 1:3",
+          "text": "The Son is the radiance of God's glory and the exact representation of His nature, upholding all things by His powerful word."
+        },
+        {
+          "reference": "1 John 1:1",
+          "text": "That which was from the beginning, which we have heard, which we have seen with our own eyes, which we have gazed upon and touched with our own hands - this is the Word of life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 1:1-18",
+          "note": "Read the prologue slowly in one sitting, watching the movement from before the world (vv. 1-3) to the light in the darkness (vv. 4-5) to the Word made flesh among us (v. 14). Then read John 6-7 and listen for the same voice."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John",
+      "title": "The Beloved Disciple, Witness to the Word",
+      "description": "Traditionally identified as John the son of Zebedee, the disciple who leaned against Jesus at the last supper and stood at the cross. Writing late in life, after decades of carrying what he had seen, he opens his Gospel not with biography but with eternity - because he had come to understand that the man he followed around Galilee was the Word who made the world. His Gospel is built so that every reader meets the eternal Word first, then watches that Word walk, teach, weep, and rise.",
+      "keyQuote": "That which was from the beginning, which we have heard, which we have seen with our own eyes, which we have gazed upon and touched with our own hands - this is the Word of life.",
+      "lessonForUs": "John spent three years close enough to touch Jesus and a lifetime learning who he had touched. We are not asked to choose between the near Jesus and the eternal Word - John insists they are the same, and so the One we can speak to today is the One through whom all things were made.",
+      "heading": "The Beloved Disciple, Witness to the Word"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2165,
+  "scriptureReference_full": "John 1:1-5, 14 (within John 1-7)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (Logos G3056; skenoo, 'tabernacled') reflects standard lexical sources. The connection of John 1:1 to Genesis 1:1 and of Jesus' 'I am' sayings to Exodus 3:14 is the mainstream reading of the Gospel's prologue across the Christian tradition."
+  ]
 }

@@ -1,38 +1,188 @@
 {
   "day": 300,
-  "title": "Luke: The Inclusive Christ — Day 6 — Deeper Dive",
-  "teaser": "Day 300 of Bible 365 — Luke 1-12",
+  "title": "The Song That Turns the World Over",
+  "teaser": "Before Jesus speaks a word, His mother sings the gospel: God lifts the lowly and fills the hungry. Luke's whole story is Mary's song growing legs.",
   "framework": "Luke 1-12 — Luke: The Inclusive Christ",
   "scriptureReference": "Luke 1-12",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 300"
+      "type": "scripture",
+      "reference": "Luke 1:46-48, 52-53",
+      "translation": "BSB",
+      "emphasis": [
+        "the humble state of His servant",
+        "exalted the humble",
+        "filled the hungry with good things"
+      ],
+      "hebrewOriginal": "ταπείνωσιν",
+      "passage": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. ... He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 1-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 1-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ταπείνωσις",
+      "transliteration": "tapeinōsis",
+      "pronunciation": "ta-PAY-no-sis",
+      "meaning": "lowliness, low estate, humble condition",
+      "rootMeaning": "From tapeinos, meaning low to the ground, pressed down, of no account. In the Greek world it was almost an insult - the word for a slave's status, a beggar's standing, the posture of someone with nothing to bargain with. It did not mean a chosen humility. It meant a low place you did not pick.",
+      "usageNote": "Mary uses tapeinōsis of herself in Luke 1:48 - the low estate God looked at. Six verses later (1:52) the related word tapeinous returns: God has exalted the humble, the lowly ones. The song names her own nothing-status and then makes it the pattern for everything God is about to do.",
+      "wordByWord": [
+        {
+          "word": "ἐπέβλεψεν",
+          "transliteration": "epeblepsen",
+          "meaning": "He looked upon, He fixed His gaze on - not a glance but attention"
+        },
+        {
+          "word": "ταπείνωσιν",
+          "transliteration": "tapeinōsin",
+          "meaning": "low estate, humiliation, the bottom of the social pile"
+        },
+        {
+          "word": "δούλης",
+          "transliteration": "doulēs",
+          "meaning": "of His female servant, His slave-girl"
+        },
+        {
+          "word": "ὕψωσεν",
+          "transliteration": "hypsōsen",
+          "meaning": "He lifted up, He exalted, He raised high"
+        },
+        {
+          "word": "ταπεινούς",
+          "transliteration": "tapeinous",
+          "meaning": "the lowly ones, those pressed down"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ταπεινός / ὑψόω",
+          "reference": "The verb hypsoō, to lift up, is the exact word John uses for Jesus being lifted up on the cross (John 3:14). The lifting of the lowly and the lifting of the Son turn out to be the same motion."
+        }
+      ],
+      "strongsNumber": "G5014",
+      "definition": "lowness, low estate, the condition of being humbled or of no account",
+      "usage": "Mary does not call herself humble as a virtue she practices. She calls herself low as a fact she lives. God's favor lands not on her merit but on her smallness."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: The Inclusive Christ. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ for the lowly (Luke 1:52).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Mary Sings Before Jesus Speaks",
+      "body": "Six days of Luke have moved through angels and shepherds, a manger and a temple, a carpenter's son reading Isaiah aloud in a small-town synagogue. Today we slow down at the very first thing anyone says about who this child will be. It is not a sermon. It is a song, and a teenage girl sings it.\n\nMary has just been told she will carry the Messiah. She goes to her cousin Elizabeth, and instead of fear she pours out a poem we now call the Magnificat, after its first Latin word. Read it and you notice she is not mostly singing about herself. She sings about what kind of God this is. He looked with favor on the humble state of His servant. He has brought down rulers from their thrones, but has exalted the humble. He has filled the hungry with good things, but has sent the rich away empty.\n\nThat is the whole Gospel of Luke in advance. Everything the grown Jesus will do - eating with tax collectors, touching lepers, letting a sinful woman wash His feet with her tears, telling a story where the beggar ends up in Abraham's arms and the rich man outside - all of it is already here, in a young woman's voice, before Jesus has drawn a single breath. Luke wants you to hear the melody first, so that when the actions come you recognize the tune.\n\nNotice the tenses, too. Mary sings in the past: He has brought down, He has exalted, He has filled. The reversals have not happened yet in any way the world can see. Caesar still sits on his throne; the hungry are still hungry; Mary herself is an unmarried pregnant girl in an occupied backwater. Yet she sings as though it is already done, because she has staked everything on the character of the One who promised. Faith here is singing the ending in the middle of the dark."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Choir That Sang the Wrong Way Up",
+      "body": "A friend who leads worship at a county jail told me about the first time he handed out the words to the Magnificat and asked the women to read it together. He expected polite mumbling. Instead the room got loud.\n\nThese were women the world had filed under tapeinōsis without using the word - low estate, of no account, the ones society had brought down from whatever thrones they had ever stood on. And here was a song, two thousand years old, that did not promise them a way up the ladder. It told them the ladder had been flipped. The hungry get filled. The lowly get lifted. The proud, who had often been the ones standing over them, get scattered.\n\nOne woman read the line about the rich being sent away empty and laughed out loud - not bitterly, he said, but like someone who had just heard good news she was not allowed to believe yet. \"That's the first time,\" she told him afterward, \"that I felt like the Bible was on my side and not the side of the people who put me here.\"\n\nThat is the sound Mary's song is meant to make. It is not background music for the comfortable. It is the noise the bottom of the world makes when it finds out God has been counting from below.",
+      "connectionToTheme": "The Magnificat is not a gentle lullaby; it is the lowly discovering that God's reckoning starts with them, exactly the reversal Jesus will live out across Luke.",
+      "content": "A friend who leads worship at a county jail told me about the first time he handed out the words to the Magnificat and asked the women to read it together. He expected polite mumbling. Instead the room got loud.\n\nThese were women the world had filed under tapeinōsis without using the word - low estate, of no account, the ones society had brought down from whatever thrones they had ever stood on. And here was a song, two thousand years old, that did not promise them a way up the ladder. It told them the ladder had been flipped. The hungry get filled. The lowly get lifted. The proud, who had often been the ones standing over them, get scattered.\n\nOne woman read the line about the rich being sent away empty and laughed out loud - not bitterly, he said, but like someone who had just heard good news she was not allowed to believe yet. \"That's the first time,\" she told him afterward, \"that I felt like the Bible was on my side and not the side of the people who put me here.\"\n\nThat is the sound Mary's song is meant to make. It is not background music for the comfortable. It is the noise the bottom of the world makes when it finds out God has been counting from below."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Just Lift the Lowly. He Joined Them.",
+      "body": "Stay on one phrase: He has looked with favor on the humble state of His servant. The Greek for humble state is tapeinōsis - low estate, the place of no account. Then watch what God does about it. He does not reach down from a safe height and tug the low ones up to where He is. He comes down to where they are.\n\nThe child Mary is carrying will be born in a feeding trough because there was no room. He will grow up in a town people joked about. He will be called a friend of tax collectors and sinners as an insult, and He will wear the insult like a name. When Jesus says in Luke 4 that He was anointed to preach good news to the poor and freedom to the captives, He is not describing charity He performs from above. He is describing the company He keeps because He is one of them now.\n\nThis is the deeper turn the song is reaching toward. The God who lifts the lowly does it by lowering Himself into their low place. Mary sings He has exalted the humble; the word for exalted, hypsoō, is the very word John will use for Jesus lifted up on the cross. The lifting of the lowly and the lifting of the crucified are the same word because they are the same act. The bottom of the world gets raised because God Himself went all the way to the bottom first.",
+      "historicalContext": "In the Roman world Mary describes, honor flowed upward and downward in a fixed order: emperor, patron, free man, woman, slave, the destitute. Tapeinōsis named the floor of that order. For a song to announce that God lifts the tapeinoi and empties the rich was not poetic sentiment; it was a claim that the entire honor system had been overruled from heaven.",
+      "fascinatingFact": "Mary's song is stitched almost line by line from Hannah's song in 1 Samuel 2, where another overlooked woman sings that God raises the poor from the dust. Luke places a thousand-year-old melody in a new mouth - the same God, the same reversal, now arriving in person.",
+      "content": "Stay on one phrase: He has looked with favor on the humble state of His servant. The Greek for humble state is tapeinōsis - low estate, the place of no account. Then watch what God does about it. He does not reach down from a safe height and tug the low ones up to where He is. He comes down to where they are.\n\nThe child Mary is carrying will be born in a feeding trough because there was no room. He will grow up in a town people joked about. He will be called a friend of tax collectors and sinners as an insult, and He will wear the insult like a name. When Jesus says in Luke 4 that He was anointed to preach good news to the poor and freedom to the captives, He is not describing charity He performs from above. He is describing the company He keeps because He is one of them now.\n\nThis is the deeper turn the song is reaching toward. The God who lifts the lowly does it by lowering Himself into their low place. Mary sings He has exalted the humble; the word for exalted, hypsoō, is the very word John will use for Jesus lifted up on the cross. The lifting of the lowly and the lifting of the crucified are the same word because they are the same act. The bottom of the world gets raised because God Himself went all the way to the bottom first."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Mary sings that God looks with favor on the humble state, exalts the lowly, and fills the hungry - and Luke spends twelve chapters showing Jesus do exactly that, eating with the despised and announcing good news to the poor.",
+      "modernApplication": "We mostly arrange our lives to climb out of the humble state, not to be found in it. We curate the version of ourselves that looks filled, lifted, in control. Mary's song says the favor of God lands precisely on the low place we are trying to leave - which means the honest admission \"I am empty, I am small, I am not okay\" is not the thing that disqualifies us. It is the thing that gets His attention.",
+      "connectionPoint": "The reversal Mary announces runs straight through Luke: blessed are you who are poor and you who hunger now (Luke 6:20-21); the sinful woman who is forgiven much loves much (Luke 7:47); the Father reveals these things to little children and hides them from the wise (Luke 10:21); the Son of Man came to seek and to save the lost (Luke 19:10). The song is the seed; the whole Gospel is the tree.",
+      "newTestamentEcho": "What Mary sang, her Son became. Paul writes that Christ Jesus, though He was in the form of God, emptied Himself, taking the form of a servant - and that therefore God exalted Him to the highest place (Philippians 2:6-9). The pattern of the Magnificat - the low estate lifted high - is the shape of the gospel itself, sung by a girl before it was lived by her Son."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the \"humble state\" in your life right now - the low, unimpressive, not-okay place you keep trying to climb out of or hide? What would it mean to believe that is exactly where God is looking with favor?",
+      "additionalQuestions": [
+        "Mary sings the reversals in the past tense, as already done, while the world around her looks unchanged. Where do you need to sing the ending in the middle of the dark?",
+        "Be honest: do you tend to read the Bible as on the side of the comfortable and respectable, or on the side of the lowly and hungry? What in you resists Mary's song?",
+        "Who are the \"tapeinoi\" - the lowly, the of-no-account - that you walk past? What would it look like to keep the company Jesus keeps?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God my Savior, my soul is small and my hands are often empty, and I have spent so much energy hiding both. Thank You that You look with favor on the humble state - that the low place I keep fleeing is the place You came down to find. Lift me not by making me proud but by joining me where I am. Fill me, who am hungry. Scatter the proud thoughts in my own heart. And let me sing, as Mary did, the good ending of a story whose middle still looks dark. Through Christ, who emptied Himself so the empty could be filled. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read the Magnificat (Luke 1:46-55) out loud, slowly, once. Then name one \"humble state\" you have been hiding - a fear, a failure, an emptiness - and instead of fixing it, bring it openly to God as the very place He is looking. Let being low be the place you are found, not the place you flee.",
+      "leavingAtCross": [
+        "The exhausting work of looking filled, lifted, and in control",
+        "The quiet assumption that God favors the impressive and overlooks the lowly",
+        "The pride in my own thoughts that keeps me from joining the company Jesus keeps"
+      ],
+      "receivingFromCross": [
+        "The favor of God resting on the low place I tried to hide",
+        "A Savior who lifted the lowly by going all the way down to them",
+        "The freedom to be hungry and honest before the One who fills the empty"
+      ],
+      "content": "Today, read the Magnificat (Luke 1:46-55) out loud, slowly, once. Then name one \"humble state\" you have been hiding - a fear, a failure, an emptiness - and instead of fixing it, bring it openly to God as the very place He is looking. Let being low be the place you are found, not the place you flee."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Greek word tapeinōsis mean, and why does it matter that Mary uses it of herself rather than calling herself \"humble\" as a virtue?",
+        "Mary sings the reversals in the past tense though nothing visible has changed. What does that reveal about the nature of her faith?",
+        "How does the lifting of the lowly (Luke 1:52) connect to Jesus being lifted up on the cross? Why might Luke want us to hear the song before we watch the actions?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one \"humble state\" in your own life you are tempted to hide rather than bring to God.",
+        "Talk honestly about whether you instinctively read God as favoring the successful or the lowly - and where that instinct came from.",
+        "Ask each other: who are the lowly and overlooked in our actual week, and what would it cost us to keep Jesus' company with them?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 2:7-8",
+          "text": "The LORD sends poverty and wealth; He humbles and He exalts. He raises the poor from the dust and lifts the needy from the ash heap. (The song Mary's Magnificat echoes line by line.)"
+        },
+        {
+          "reference": "Luke 4:18",
+          "text": "The Spirit of the Lord is on Me, because He has anointed Me to preach good news to the poor. He has sent Me to proclaim liberty to the captives and recovery of sight to the blind, to release the oppressed."
+        },
+        {
+          "reference": "Luke 6:20-21",
+          "text": "Blessed are you who are poor, for yours is the kingdom of God. Blessed are you who hunger now, for you will be filled."
+        },
+        {
+          "reference": "Luke 18:14",
+          "text": "Everyone who exalts himself will be humbled, but the one who humbles himself will be exalted."
+        },
+        {
+          "reference": "Philippians 2:8-9",
+          "text": "He humbled Himself and became obedient to death - even death on a cross. Therefore God exalted Him to the highest place."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 1-12",
+          "note": "Read the Magnificat (1:46-55), then trace the same reversal forward: the shepherds (2:8-20), Nazareth (4:16-21), the Beatitudes (6:20-26), the sinful woman (7:36-50), and Jesus' prayer over the little children (10:21). Watch one song become a whole gospel."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary of Nazareth",
+      "title": "The Lowly Servant Who Sang the Gospel First",
+      "description": "A young woman from an obscure Galilean town, betrothed but not yet married, with no status the Roman world would count. Told she would bear the Messiah, she answered, \"I am the Lord's servant\" (Luke 1:38), and then sang the Magnificat - the first and fullest announcement in Luke of what kind of Savior her Son would be. She is the pattern of everyone the gospel reaches: not the powerful lifted higher, but the lowly God chose to look upon.",
+      "keyQuote": "For He has looked with favor on the humble state of His servant.",
+      "lessonForUs": "Mary's qualification was not greatness but lowliness, and her gift was not certainty but trust. If God began the rescue of the world by looking with favor on a girl of no account, then your low place is not your disqualification - it may be exactly where He is looking.",
+      "heading": "The Lowly Servant Who Sang the Gospel First"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2278,
+  "scriptureReference_full": "Luke 1:46-55 (within Luke 1-12)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tapeinōsis / tapeinos G5014; hypsoō) reflects standard lexical sources. The structural parallel between the Magnificat (Luke 1:46-55) and Hannah's song (1 Samuel 2:1-10) is widely recognized in commentary on Luke."
+  ]
 }

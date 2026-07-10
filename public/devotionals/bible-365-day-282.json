@@ -1,38 +1,184 @@
 {
   "day": 282,
-  "title": "Matthew: Parables + Miracles — Day 2 — Building",
-  "teaser": "Day 282 of Bible 365 — Matthew 8-13",
+  "title": "The King Who Was Moved",
+  "teaser": "Across the miracles, the sending, and the parables, one engine drives it all: Jesus looks at the harassed crowds and is moved in His gut. The kingdom does not arrive on horseback. It arrives as mercy, planted like seed.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 282"
+      "type": "scripture",
+      "reference": "Matthew 9:35-38",
+      "translation": "BSB",
+      "emphasis": [
+        "moved with compassion",
+        "like sheep without a shepherd",
+        "send out workers into His harvest"
+      ],
+      "greekOriginal": "ἰδὼν δὲ τοὺς ὄχλους ἐσπλαγχνίσθη περὶ αὐτῶν",
+      "passage": "Jesus went through all the towns and villages, teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness. When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd. Then He said to His disciples, “The harvest is plentiful, but the workers are few. Ask the Lord of the harvest, therefore, to send out workers into His harvest.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐσπλαγχνίσθη",
+      "transliteration": "esplanchnisthē",
+      "pronunciation": "eh-splankh-NIS-thay",
+      "meaning": "He was moved with compassion; He was gutted with mercy",
+      "rootMeaning": "From splanchna, the inward parts - the heart, liver, intestines. In the ancient world the splanchna were the seat of the deepest emotion, the place feeling is physically felt. To be 'moved in the splanchna' is not to pity from a distance. It is to feel something twist low in the body when you see another person suffer.",
+      "usageNote": "Matthew uses this verb sparingly and only of Jesus (and of figures who stand in for God in His parables). It is never bland sympathy. When the crowds press in - sick, leaderless, exhausted - the Gospel does not say Jesus 'felt sorry.' It says something turned over inside Him. The whole stretch of chapters 8 through 13 runs on this single reaction.",
+      "wordByWord": [
+        {
+          "word": "ἰδὼν",
+          "transliteration": "idōn",
+          "meaning": "having seen, when He saw - the mercy starts with a look that does not turn away"
+        },
+        {
+          "word": "τοὺς ὄχλους",
+          "transliteration": "tous ochlous",
+          "meaning": "the crowds - the unnamed mass, not the worthy few"
+        },
+        {
+          "word": "ἐσπλαγχνίσθη",
+          "transliteration": "esplanchnisthē",
+          "meaning": "He was moved in His inward parts; His gut turned with mercy"
+        },
+        {
+          "word": "ἐσκυλμένοι",
+          "transliteration": "eskylmenoi",
+          "meaning": "harassed, torn, worn ragged - a word used of skin flayed or a flock mauled"
+        },
+        {
+          "word": "ἐρριμμένοι",
+          "transliteration": "errimmenoi",
+          "meaning": "thrown down, cast aside, lying helpless where they fell"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "σπλάγχνα / rachamim",
+          "reference": "The Greek splanchna stands close to the Hebrew rachamim - 'compassion,' itself from rechem, the womb. In both languages God's mercy is named after the body's most tender inner places. Mercy, in Scripture, is felt before it is reasoned."
+        }
+      ],
+      "strongsNumber": "G4697",
+      "definition": "to be moved in the inward parts; to feel deep compassion, gut-level mercy",
+      "usage": "The verb is in the passive form - something is done to Jesus by the sight of the crowd. He does not work up compassion. It seizes Him. The King is moved before He acts."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Chapters, One Engine",
+      "body": "Matthew 8 through 13 can feel like a crowded room. A leper is healed. A storm is stilled. A paralyzed man walks, a dead girl is raised, two blind men see. Twelve ordinary men are named and sent out with nothing in their pockets. John the Baptist sends a question from prison. Pharisees argue about grain and Sabbaths. And then, abruptly, Jesus sits in a boat and starts telling stories about dirt and seeds and yeast and a man who finds treasure in a field.\n\nIt is easy to read this as a pile of episodes. It is not. There is one engine under all of it, and Matthew puts it in plain sight at the seam between the miracles and the parables: \"When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd\" (9:36). Everything in front of that verse is the compassion in action - hands reaching, diseases lifted, storms hushed. Everything after it is the compassion organizing itself for the long haul: workers sent, a kingdom planted.\n\nNotice the shape of the King's reign as it actually arrives. Not on a war horse. Not with a decree from a throne. It arrives as a man walking through towns and villages, looking at tired people, and feeling something turn over inside Him. The first thing the kingdom does, before it does anything else, is see the crowd and refuse to look away.",
+      "keyInsight": "Before the kingdom heals anything, sends anyone, or explains itself in a single parable, it is moved. Compassion is not a side effect of Christ's mission. It is the engine.",
+      "content": "Matthew 8 through 13 can feel like a crowded room. A leper is healed. A storm is stilled. A paralyzed man walks, a dead girl is raised, two blind men see. Twelve ordinary men are named and sent out with nothing in their pockets. John the Baptist sends a question from prison. Pharisees argue about grain and Sabbaths. And then, abruptly, Jesus sits in a boat and starts telling stories about dirt and seeds and yeast and a man who finds treasure in a field.\n\nIt is easy to read this as a pile of episodes. It is not. There is one engine under all of it, and Matthew puts it in plain sight at the seam between the miracles and the parables: \"When He saw the crowds, He was moved with compassion for them, because they were harassed and helpless, like sheep without a shepherd\" (9:36). Everything in front of that verse is the compassion in action - hands reaching, diseases lifted, storms hushed. Everything after it is the compassion organizing itself for the long haul: workers sent, a kingdom planted.\n\nNotice the shape of the King's reign as it actually arrives. Not on a war horse. Not with a decree from a throne. It arrives as a man walking through towns and villages, looking at tired people, and feeling something turn over inside Him. The first thing the kingdom does, before it does anything else, is see the crowd and refuse to look away."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Triage Tent",
+      "content": "A nurse who spent a season in a field hospital once described the worst part of the work, and it was not the blood. It was the look on people's faces when they realized no one was coming. The tent was understaffed, the line outside it long, and the hardest patients were not the loudest. They were the quiet ones who had already given up on being seen - the ones who had stopped raising their hand because raising it had stopped working.\n\nShe said the whole difference, on the days it went right, came down to whether a clinician walked the line. Not treating yet. Just walking it, looking each person in the face, saying some version of: I see you, you are next, you are not forgotten. People who had been collapsing inward would sit up. Something about being seen put a floor back under them before a single bandage was opened.\n\nThat is the word Matthew uses for the crowds around Jesus: harassed and helpless, thrown down where they fell, a flock with no one walking the line. And then a man walks it. He sees them. The seeing comes first, and the seeing is already mercy, before His hand has touched anyone at all.",
+      "connectionToTheme": "The crowds are the quiet ones who stopped raising their hands. The kingdom begins the moment the King walks the line and refuses to treat anyone as part of the scenery."
+    },
+    {
+      "type": "insight",
+      "heading": "Mercy, Not Sacrifice - Said Twice",
+      "content": "Watch for a sentence Jesus quotes twice in these chapters, both times like a man laying down a trump card. To the Pharisees scandalized that He eats with tax collectors: \"Go and learn what this means: 'I desire mercy, not sacrifice'\" (9:13). To the Pharisees scandalized that His disciples pick grain on the Sabbath: \"If only you had known the meaning of 'I desire mercy, not sacrifice,' you would not have condemned the innocent\" (12:7).\n\nHe is quoting the prophet Hosea, and He is doing something pointed with it. The complaint against Jesus, both times, is that He is not religious enough - too loose with sinners, too loose with the rules. His answer is that they have misread the whole point of religion. God never wanted the machinery of sacrifice for its own sake. He wanted mercy, and the sacrifices were only ever meant to teach the heart that gives them how to be merciful. Strip the mercy out and you are left with a religion that condemns the innocent and feels righteous doing it.\n\nThis is why the miracles and the parables belong together. The same compassion that touched a leper (8:3) is the compassion that the rule-keepers could not recognize as holy. Jesus is not lowering God's standard. He is showing them what the standard was always for.",
+      "historicalContext": "Hosea 6:6 - 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' - was spoken to a nation scrupulous about ritual and ruthless toward its poor. By quoting it against the Pharisees, Jesus places Himself squarely in the prophetic tradition that had always insisted worship without mercy is worship God did not ask for.",
+      "fascinatingFact": "Matthew is the only Gospel that records Jesus quoting Hosea 6:6, and he records it twice. For a former tax collector who knew exactly what it felt like to be the kind of 'sinner' the religious looked past, this may be the verse that explained his own rescue."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The King of the kingdom arrives not as a conqueror but as a shepherd moved in His gut at the sight of helpless crowds, declaring that God has always wanted mercy more than ritual.",
+      "modernApplication": "We still expect God's kingdom to look like power - the big platform, the decisive win, the movement that goes loud and goes fast. Jesus keeps describing it as the opposite: a seed in dirt, yeast in dough, treasure buried in an ordinary field. The kingdom is at work in you most often where nothing impressive is happening at all.",
+      "connectionPoint": "The bridge from chapters 8-9 to chapter 13 is the shepherd's compassion of 9:36. Because the crowds are harassed and helpless, Jesus does two things: He sends workers (chapter 10), and He plants the kingdom in story-sized seeds the proud will overlook and the hungry will dig for (chapter 13). The mercy that healed bodies is the same mercy that hides the kingdom in soil, so that it can grow in the only people humble enough to receive it - 'little children,' not 'the wise and learned' (11:25).",
+      "newTestamentEcho": "Jesus tells the crowd plainly who the farmer in His first parable is: 'The One who sows the good seed is the Son of Man' (13:37). The King does not send the kingdom from a safe distance. He is the Sower, and as the rest of Matthew will show, He becomes the seed - the grain that falls into the ground and dies so that a harvest can come up where He was buried."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you quietly stopped raising your hand - given up on being seen by God because reaching for Him stopped seeming to work?",
+      "additionalQuestions": [
+        "When you picture God looking at you, what do you assume He feels? Where did that picture come from - and does 'moved with compassion' fit anywhere in it?",
+        "Have you ever been religious in a way that condemned the innocent - including yourself? What would 'mercy, not sacrifice' change about it?",
+        "Which kingdom are you waiting for: the loud, fast, impressive one, or the seed-sized one already at work in the ordinary soil of your week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You walked the line and would not call anyone scenery. I have been one of the quiet ones - harassed, thrown down, half convinced no one was coming. Look at me the way You looked at the crowds, and let me believe that the turning-over in Your gut is real, and is for me. Forgive the religion I have practiced that kept rules and forgot mercy, that condemned the innocent and felt holy doing it. Teach me what 'I desire mercy, not sacrifice' actually means. And where You are growing something seed-small and hidden in my ordinary days, give me the patience not to dig it up before its time. You are the Sower and the seed. Plant me, and grow. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, walk one line you usually pass. Pick one person you have started treating as scenery - a colleague, a relative, the same tired face at the same counter - and do the thing the King did first: see them, on purpose, before you need anything from them. Then read Matthew 13 slowly and ask where, in the unimpressive dirt of your week, a hidden kingdom might already be growing.",
+      "leavingAtCross": [
+        "The belief that God looks at me with a drawn-up verdict rather than a gut moved with mercy",
+        "A religion that keeps the rules and condemns the innocent - including the one in the mirror",
+        "The impatience that wants the kingdom loud and fast and digs up the seed before it can root"
+      ],
+      "receivingFromCross": [
+        "A King who was moved in His inward parts at the sight of me before I did anything to earn it",
+        "Mercy as the meaning of the whole law, not its exception",
+        "The freedom to trust a kingdom that grows quietly - seed, yeast, treasure in a field"
+      ],
+      "content": "This week, walk one line you usually pass. Pick one person you have started treating as scenery - a colleague, a relative, the same tired face at the same counter - and do the thing the King did first: see them, on purpose, before you need anything from them. Then read Matthew 13 slowly and ask where, in the unimpressive dirt of your week, a hidden kingdom might already be growing."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Greek verb behind 'moved with compassion' (esplanchnisthē) tell us about how Jesus responded to the crowds - and why does it matter that the word is bodily, not merely emotional?",
+        "Jesus quotes 'I desire mercy, not sacrifice' twice in these chapters (9:13 and 12:7). In both cases, what was the religious objection to Him - and how does the quote answer it?",
+        "Why does the kingdom Jesus describes in chapter 13 - seed, yeast, hidden treasure - fit the shepherd's compassion of 9:36 rather than contradict it?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one person you have started treating as part of the scenery. What would it cost you to see them the way the King walked the line and saw the crowd?",
+        "Talk honestly about a time your faith felt more like 'sacrifice' than 'mercy' - more rule-keeping than gut-level compassion. What did it do to you, and to the people around you?",
+        "Where in your life are you tempted to dig up a seed - to abandon something God is growing slowly because it isn't impressive yet? Ask each other for the patience to leave it in the ground."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 11:28-30",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”"
+        },
+        {
+          "reference": "Matthew 12:20-21",
+          "text": "A bruised reed He will not break, and a smoldering wick He will not extinguish, till He leads justice to victory. In His name the nations will put their hope.”"
+        },
+        {
+          "reference": "Matthew 13:31-32",
+          "text": "He put before them another parable: “The kingdom of heaven is like a mustard seed that a man planted in his field. Although it is the smallest of all seeds, yet it grows into the largest of garden plants..."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 8-13",
+          "note": "Read the whole span in one sitting, watching for the hinge at 9:36. Mark where the miracles stop and the parables begin, and notice that the shepherd's compassion sits exactly between them."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Matthew (Levi)",
+      "title": "The Tax Collector Who Was Seen",
+      "description": "A tax collector for Rome - a Jew who collected from his own people for the occupier, the kind of man the devout crossed the street to avoid. In Matthew 9, immediately before the verse about the crowds being harassed and helpless, Jesus walks past Matthew's booth, sees him, and says, 'Follow Me.' Matthew gets up and goes, then throws a dinner full of 'tax collectors and sinners' - the very scene that provokes the first 'I desire mercy, not sacrifice.' The man writing this Gospel was himself one of the helpless crowd the shepherd refused to pass by.",
+      "keyQuote": "Go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners.",
+      "lessonForUs": "Matthew records the compassion that drives these chapters because he was rescued by it. If the King was moved at the sight of a despised tax collector and called him by name, no one reading this is too far past the line to be seen.",
+      "heading": "The Tax Collector Who Was Seen"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2244,
+  "scriptureReference_full": "Matthew 8-13 (anchored on Matthew 9:35-38)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (splanchnizomai / esplanchnisthē, G4697) reflects standard lexical sources; the splanchna/rachamim resonance is a standard observation in biblical-theology treatments of divine compassion."
+  ]
 }

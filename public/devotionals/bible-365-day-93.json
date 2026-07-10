@@ -1,38 +1,190 @@
 {
   "day": 93,
-  "title": "Solomon's Wisdom + Temple — Day 2 — Building",
-  "teaser": "Day 93 of Bible 365 — 1 Kings 3-8",
+  "title": "He asked for a listening heart",
+  "teaser": "Given anything, Solomon asks for a heart that hears. Then he builds a house too small for God — and points, without knowing it, to the One in whom all the fullness would finally dwell.",
   "framework": "1 Kings 3-8 — Solomon's Wisdom + Temple",
   "scriptureReference": "1 Kings 3-8",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 93"
+      "type": "scripture",
+      "reference": "1 Kings 3:9-12; 8:27",
+      "translation": "BSB",
+      "emphasis": [
+        "an understanding heart",
+        "a wise and discerning heart",
+        "cannot contain You"
+      ],
+      "hebrewOriginal": "וְנָתַתָּ֧ לְעַבְדְּךָ֛ לֵ֥ב שֹׁמֵ֖עַ לִשְׁפֹּ֣ט אֶת־עַמְּךָ֑",
+      "passage": "\"Therefore give Your servant an understanding heart to judge Your people and to discern between good and evil. For who is able to govern this great people of Yours?\" Now it pleased the Lord that Solomon had made this request. So God said to him, \"Since you have asked for this instead of requesting long life or wealth for yourself or death for your enemies—but you have asked for discernment to administer justice—behold, I will do what you have asked. I will give you a wise and discerning heart, so that there has never been nor will ever be another like you.\" ... \"But will God indeed dwell upon the earth? Even heaven, the highest heaven, cannot contain You, much less this temple I have built.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 3-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 3-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֵב שֹׁמֵעַ",
+      "transliteration": "lev shomea",
+      "pronunciation": "layv sho-MAY-ah",
+      "meaning": "a listening heart, a hearing heart",
+      "rootMeaning": "Lev is the heart - in Hebrew the seat of thought, will, and decision, not just feeling. Shomea is the participle of shama, to hear and to obey; it is the verb that opens Israel's great confession, 'Hear, O Israel' (Deuteronomy 6:4). So the request is literally for a heart that listens.",
+      "usageNote": "Most English translations render the phrase 'an understanding heart' (3:9), which is true to the sense but quiets the verb. Solomon does not ask first for cleverness or information. He asks for a heart that can hear - hear God, hear a case, hear the difference between good and evil. The wisdom God grants is not raw intellect; it is the capacity to listen well enough to judge rightly.",
+      "wordByWord": [
+        {
+          "word": "וְנָתַתָּ",
+          "transliteration": "venatatta",
+          "meaning": "and You shall give - he asks God to be the giver"
+        },
+        {
+          "word": "לְעַבְדְּךָ",
+          "transliteration": "le'avdecha",
+          "meaning": "to Your servant - Solomon names himself not as king but as servant"
+        },
+        {
+          "word": "לֵב",
+          "transliteration": "lev",
+          "meaning": "heart - the center of will and discernment"
+        },
+        {
+          "word": "שֹׁמֵעַ",
+          "transliteration": "shomea",
+          "meaning": "hearing, listening, attending - the same root as the Shema"
+        },
+        {
+          "word": "לִשְׁפֹּט",
+          "transliteration": "lishpot",
+          "meaning": "to judge, to govern, to set things right"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁמַע / שְׁמַע",
+          "reference": "Shama (to hear) gives Israel the Shema: 'Hear, O Israel: the LORD our God, the LORD is One' (Deuteronomy 6:4). Solomon's prayer asks for a heart shaped by that command - a heart that hears before it rules."
+        }
+      ],
+      "strongsNumber": "H8085",
+      "definition": "shama: to hear with attention, to listen, to heed and obey",
+      "usage": "A listening heart is the opposite of the proud heart Deuteronomy warned a king against (Deuteronomy 17:20). Solomon's first instinct as king is to ask to be a hearer. It is the same instinct his later years would lose."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Wisdom + Temple. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the wisdom of God (1 Cor 1:24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What He Asked For When He Could Have Asked Anything",
+      "body": "Picture the offer. A young king, newly on a throne he did not earn, is met by God in a dream at Gibeon and told, \"Ask, and I will give it to you.\" No limits named. Long life, riches, the heads of his enemies - all of it is on the table.\n\nSolomon's answer begins not with a request but with memory. He recalls his father David's faithfulness and God's loving devotion, then says something disarming: \"I am only a little child, not knowing how to go out or come in\" (3:7). He is standing over a people \"too numerous to count\" and he confesses that he does not know how to lead them. Out of that honesty comes the ask: \"Therefore give Your servant an understanding heart to judge Your people and to discern between good and evil. For who is able to govern this great people of Yours?\"\n\nThe text says the request pleased the Lord. God grants the listening heart - and then adds what Solomon did not request, riches and honor besides. This is the order that matters. The wisdom comes first because it was wanted for the people's sake; the wealth follows as a gift, not a goal. Israel's wisdom literature is built on this hinge: \"The fear of the LORD is the beginning of wisdom\" (Proverbs 9:10). Solomon's prayer is that fear taking the shape of a question - not \"What can I get?\" but \"How can I hear well enough to serve?\"",
+      "keyInsight": "Offered everything, Solomon asks to become a better listener. Wisdom in Scripture is not first knowing more; it is hearing rightly - and it is wanted not for the self but for the people God gave him to govern.",
+      "content": "Picture the offer. A young king, newly on a throne he did not earn, is met by God in a dream at Gibeon and told, \"Ask, and I will give it to you.\" No limits named. Long life, riches, the heads of his enemies - all of it is on the table.\n\nSolomon's answer begins not with a request but with memory. He recalls his father David's faithfulness and God's loving devotion, then says something disarming: \"I am only a little child, not knowing how to go out or come in\" (3:7). He is standing over a people \"too numerous to count\" and he confesses that he does not know how to lead them. Out of that honesty comes the ask: \"Therefore give Your servant an understanding heart to judge Your people and to discern between good and evil. For who is able to govern this great people of Yours?\"\n\nThe text says the request pleased the Lord. God grants the listening heart - and then adds what Solomon did not request, riches and honor besides. This is the order that matters. The wisdom comes first because it was wanted for the people's sake; the wealth follows as a gift, not a goal. Israel's wisdom literature is built on this hinge: \"The fear of the LORD is the beginning of wisdom\" (Proverbs 9:10). Solomon's prayer is that fear taking the shape of a question - not \"What can I get?\" but \"How can I hear well enough to serve?\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Quiet Quarry",
+      "body": "There is a strange, almost throwaway line in the middle of the building account. When the temple went up, \"the temple was constructed using finished stones cut at the quarry, so that no hammer or chisel or any other iron tool was heard in the temple while it was being built\" (6:7).\n\nThink about what that means. The loud work - the cutting, the shaping, the measuring and the breaking - all of it happened somewhere else, in the quarry, out of sight. Each stone arrived already fitted for its place. The temple rose in near silence, stone settling onto stone with no clang of tools, because all the violence of the making had been done before the stone ever reached the holy ground.\n\nI think about that when I am tempted to do my shaping in public - to let everyone hear the hammer of my self-improvement, the chisel of my striving. The stones that bore the weight of God's house were shaped in a place no one was watching. The reverent quiet of the temple was possible only because the hard, hidden work was finished first.",
+      "connectionToTheme": "Wisdom, like the temple stones, is mostly shaped where no one sees. The listening heart Solomon asked for is formed in the quiet quarry of obedience long before it is needed in the public seat of judgment.",
+      "content": "There is a strange, almost throwaway line in the middle of the building account. When the temple went up, \"the temple was constructed using finished stones cut at the quarry, so that no hammer or chisel or any other iron tool was heard in the temple while it was being built\" (6:7).\n\nThink about what that means. The loud work - the cutting, the shaping, the measuring and the breaking - all of it happened somewhere else, in the quarry, out of sight. Each stone arrived already fitted for its place. The temple rose in near silence, stone settling onto stone with no clang of tools, because all the violence of the making had been done before the stone ever reached the holy ground.\n\nI think about that when I am tempted to do my shaping in public - to let everyone hear the hammer of my self-improvement, the chisel of my striving. The stones that bore the weight of God's house were shaped in a place no one was watching. The reverent quiet of the temple was possible only because the hard, hidden work was finished first."
+    },
+    {
+      "type": "insight",
+      "heading": "A House Too Small for Its Guest",
+      "body": "Seven years of work. Cedar from Lebanon, gold over the inner sanctuary, two great cherubim with outstretched wings, finished stones cut so the holy place rose without the sound of a tool. And when it was done and the ark was brought in, a cloud filled the house so thickly that the priests could not stand to minister - \"for the glory of the LORD filled the house of the LORD\" (8:11).\n\nThen Solomon, the wisest man of his age, says the wisest thing in the whole account. Standing inside the most magnificent building in the ancient Near East, the one he just spent seven years raising, he prays: \"But will God indeed dwell upon the earth? Even heaven, the highest heaven, cannot contain You, much less this temple I have built\" (8:27).\n\nThat is the listening heart at full stretch. The temple is real, and it matters - God Himself had promised, \"I will dwell among the Israelites and will not abandon My people Israel\" (6:13). But Solomon knows the house cannot hold the One it was built for. The most he can ask is that God's eyes be open toward this place, that He hear the prayers offered here, that He \"hear and forgive\" (8:30). The temple was never a container for God. It was an address - a place where heaven agreed to be sought, and a confession, built in stone, that God is always larger than the room we make for Him.",
+      "historicalContext": "First Kings 6:1 dates the temple's founding to \"the four hundred and eightieth year after the Israelites had come out of the land of Egypt\" - the writer anchoring the building to the Exodus, as if to say: this house is the destination of the road out of Egypt. The God who came down at Sinai in cloud and fire now fills a house in Jerusalem with the same glory-cloud. The wilderness tabernacle has become a temple; the moving tent has found a resting place.",
+      "fascinatingFact": "The same Hebrew word the prophets use for God's glory, kavod, carries the sense of weight or heaviness. When \"the glory of the LORD filled the house\" so the priests could not stand, the text is describing a weight of presence that the building, for all its gold, could only hold for a moment - which is exactly Solomon's point in verse 27.",
+      "content": "Seven years of work. Cedar from Lebanon, gold over the inner sanctuary, two great cherubim with outstretched wings, finished stones cut so the holy place rose without the sound of a tool. And when it was done and the ark was brought in, a cloud filled the house so thickly that the priests could not stand to minister - \"for the glory of the LORD filled the house of the LORD\" (8:11).\n\nThen Solomon, the wisest man of his age, says the wisest thing in the whole account. Standing inside the most magnificent building in the ancient Near East, the one he just spent seven years raising, he prays: \"But will God indeed dwell upon the earth? Even heaven, the highest heaven, cannot contain You, much less this temple I have built\" (8:27).\n\nThat is the listening heart at full stretch. The temple is real, and it matters - God Himself had promised, \"I will dwell among the Israelites and will not abandon My people Israel\" (6:13). But Solomon knows the house cannot hold the One it was built for. The most he can ask is that God's eyes be open toward this place, that He hear the prayers offered here, that He \"hear and forgive\" (8:30). The temple was never a container for God. It was an address - a place where heaven agreed to be sought, and a confession, built in stone, that God is always larger than the room we make for Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon asks not for wealth or victory but for a listening heart to govern God's people, and then builds a temple so glorious that a cloud of glory fills it - while confessing that the highest heaven cannot contain the God who agreed to dwell there.",
+      "modernApplication": "We still build temples - for our wisdom, our reputations, the carefully appointed rooms of a self we want admired. And we still discover Solomon's truth: the thing we built can never hold what we built it for. The heart was made to listen, and the room was made to be filled by Someone larger than the room.",
+      "connectionPoint": "Solomon's two gifts - wisdom and a dwelling place for God - run forward through Scripture as a single thread. Israel's longing for a wiser king and a truer temple was never satisfied by the son of David who built in Jerusalem. It waited for another Son of David. The wisdom Solomon received as a gift, and the temple he built with his hands, both find their fulfillment in one person.",
+      "newTestamentEcho": "Jesus said of His own generation, \"The Queen of the South ... came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here\" (Matthew 12:42). Paul names what makes Him greater: He is \"Christ the power of God and the wisdom of God\" (1 Corinthians 1:24) - not a man given a listening heart, but Wisdom in person. And when He pointed to the true temple, He pointed at Himself: \"Destroy this temple, and in three days I will raise it up again,\" speaking, John tells us, \"about the temple of His body\" (John 2:19, 21). The house heaven could not fill, a body could: \"in Christ all the fullness of the Deity dwells in bodily form\" (Colossians 2:9). Solomon built an address for God; Christ is God dwelling among us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God said to you tonight, \"Ask, and I will give it to you,\" what would come out of your mouth first - and what would that reveal about the heart you actually carry?",
+      "additionalQuestions": [
+        "Solomon began by calling himself a servant and confessing he did not know how to lead. Where are you pretending to know how to go out and come in, when an honest 'I am only a little child' would serve you better?",
+        "A listening heart hears before it rules. Whom in your life have you stopped listening to because you were sure you already understood?",
+        "What have you built - a role, an image, an achievement - and quietly expected it to hold something only God can fill?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You who offered Solomon anything and were pleased when he asked to hear - give Your servant a listening heart. I have asked You for so many other things: for ease, for outcomes, for the room I am building to finally be enough. Today I ask for the one gift that was pleasing to You. Make me a hearer before I am a doer, a servant before I am a ruler of my own little kingdom. And fill what I cannot fill. I have built rooms in my life and called them holy; You know they cannot contain You. Come anyway. Be larger than the space I have made, and dwell with me - not because my house deserves You, but because in Christ You have already chosen to dwell among us. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you ask God for a single outcome, ask Him first for a listening heart - and then keep five minutes of literal silence to practice using it. Let the order of Solomon's prayer become the order of yours: hear first, then act.",
+      "leavingAtCross": [
+        "The instinct to ask God for outcomes - the win, the relief, the open door - before I ask Him to make me someone who can hear",
+        "The pride of the proud heart Deuteronomy warned the king against: sure I already understand, done listening",
+        "The exhausting work of trying to make some room in my life big enough to hold what only God can fill"
+      ],
+      "receivingFromCross": [
+        "A listening heart, the gift that was pleasing to God - given not for my advancement but for the people He has placed around me",
+        "Freedom from needing to be the wise one, because One greater than Solomon is here and His wisdom is mine in Him",
+        "The presence of the God whom heaven cannot contain, who chose to dwell in a body, and now by His Spirit dwells with me"
+      ],
+      "content": "Today, before you ask God for a single outcome, ask Him first for a listening heart - and then keep five minutes of literal silence to practice using it. Let the order of Solomon's prayer become the order of yours: hear first, then act."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Solomon could have asked for long life, riches, or the death of his enemies. Why did his actual request - a heart to discern and to listen - please God, and what does the order of God's reply (wisdom first, wealth added) teach about how God gives?",
+        "What does Solomon mean in 8:27 when he says the heaven of heavens cannot contain God, 'much less this temple I have built' - and how can the temple still matter if it cannot hold God?",
+        "How do the two gifts of this passage, a listening heart and a dwelling place for God, both point forward to Jesus - 'One greater than Solomon' and the true 'temple of His body'?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly what you would ask for if God said, 'Ask, and I will give it to you.' Where does your real heart show?",
+        "Name one room you have been building - a reputation, a role, a version of yourself - and expecting it to hold what only God can. Talk about what it would mean to let Him be larger than that room.",
+        "Solomon's listening heart faded in his later years. Ask each other: where am I drifting from listening into self-assurance, and what would call me back?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 6:12-13",
+          "text": "\"As for this temple you are building, if you walk in My statutes, carry out My ordinances, and keep all My commandments by walking in them, I will fulfill through you the promise I made to your father David. And I will dwell among the Israelites and will not abandon My people Israel.\""
+        },
+        {
+          "reference": "Matthew 12:42",
+          "text": "The Queen of the South will rise at the judgment with this generation and condemn it; for she came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here."
+        },
+        {
+          "reference": "John 2:19, 21",
+          "text": "Jesus answered, \"Destroy this temple, and in three days I will raise it up again.\" ... But Jesus was speaking about the temple of His body."
+        },
+        {
+          "reference": "1 Corinthians 1:24",
+          "text": "...but to those who are called, both Jews and Greeks, Christ the power of God and the wisdom of God."
+        },
+        {
+          "reference": "Colossians 2:9",
+          "text": "For in Christ all the fullness of the Deity dwells in bodily form."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 3 and 8",
+          "note": "Read the dream at Gibeon (chapter 3) and Solomon's dedication prayer (chapter 8) side by side, watching how the listening heart of chapter 3 becomes the praying heart of chapter 8 - and how both ask God to hear."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The King Who Asked to Hear",
+      "description": "Son of David and Bathsheba, third king of Israel, and the builder of the first temple in Jerusalem. Given a blank check by God at Gibeon, he asked for a listening heart to govern God's people, and was granted wisdom 'so that there has never been nor will ever be another like you' (3:12), with riches and honor besides. He raised the temple over seven years and dedicated it with a prayer that confessed the house could never contain its God. His reign began in humble dependence and ended in compromise - his later heart turned by many wives toward other gods (1 Kings 11) - which is why Scripture finally looks past him to a wiser King.",
+      "keyQuote": "I am only a little child, not knowing how to go out or come in.",
+      "lessonForUs": "Solomon at his best teaches us how to begin: as a servant, as a learner, asking first for a heart that can hear. Solomon at his end warns us that the gift can be kept only by the listening that first received it. The wisdom we are given lasts no longer than our willingness to keep hearing the One who gave it.",
+      "heading": "The King Who Asked to Hear"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2350,
+  "scriptureReference_full": "1 Kings 3-8 (key texts: 3:5-13; 6:1, 7, 11-13; 8:10-13, 27-30)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (lev shomea, from shama H8085) reflects standard lexical sources; the link between shomea and the Shema (Deuteronomy 6:4) is a widely recognized resonance in the Hebrew text."
+  ]
 }

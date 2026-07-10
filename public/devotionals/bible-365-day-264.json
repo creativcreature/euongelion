@@ -1,38 +1,182 @@
 {
   "day": 264,
-  "title": "Jonah: Mercy on Enemies — Day 5 — Resolution",
-  "teaser": "Day 264 of Bible 365 — Jonah 1-4",
+  "title": "The Question God Leaves Open",
+  "teaser": "The book of Jonah ends mid-sentence, with a question and no answer. God would rather pity a city of enemies than let His prophet have the last word.",
   "framework": "Jonah 1-4 — Jonah: Mercy on Enemies",
   "scriptureReference": "Jonah 1-4",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 264"
+      "type": "scripture",
+      "reference": "Jonah 4:9-11",
+      "translation": "BSB",
+      "emphasis": [
+        "Have you any right to be angry about the plant?",
+        "You cared about the plant",
+        "should I not care about the great city of Nineveh"
+      ],
+      "hebrewOriginal": "וַאֲנִי לֹא אָחוּס עַל־נִינְוֵה הָעִיר הַגְּדוֹלָה",
+      "passage": "Then God asked Jonah, “Have you any right to be angry about the plant?” “I do,” he replied. “I am angry enough to die!” But the LORD said, “You cared about the plant, which you neither tended nor made grow. It sprang up in a night and perished in a night. So should I not care about the great city of Nineveh, which has more than 120,000 people who cannot tell their right hand from their left, and many cattle as well?”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jonah 1-4**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jonah 1-4 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חוּס",
+      "transliteration": "chus",
+      "pronunciation": "khoos",
+      "meaning": "to pity, to spare, to look upon with tenderness",
+      "rootMeaning": "Chus describes the way the eye softens over something fragile - the way you flinch before crushing what is small and helpless. It is not abstract mercy; it is the protective ache that rises in you before you act.",
+      "usageNote": "The same verb is spoken twice in the closing exchange. Jonah 'pitied' (chus) the plant; God asks whether He should not 'pity' (chus) Nineveh. The whole argument of the book turns on this single word: the prophet feels the ache for a weed, and is asked whether God may not feel it for a city.",
+      "wordByWord": [
+        {
+          "word": "וַאֲנִי",
+          "transliteration": "va'ani",
+          "meaning": "and I, for My part - God set over against Jonah's 'I'"
+        },
+        {
+          "word": "לֹא אָחוּס",
+          "transliteration": "lo achus",
+          "meaning": "should I not pity, should I not spare"
+        },
+        {
+          "word": "נִינְוֵה",
+          "transliteration": "Nineveh",
+          "meaning": "Nineveh - capital of Assyria, Israel's most feared enemy"
+        },
+        {
+          "word": "הָעִיר הַגְּדוֹלָה",
+          "transliteration": "ha'ir hagedolah",
+          "meaning": "the great city - the same phrase God used when He first sent Jonah"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רַחוּם / חַנּוּן",
+          "reference": "Rachum (compassionate) and channun (gracious), the words Jonah throws at God in 4:2 as an accusation - the very mercy he resents is the mercy that spared his own life in the fish."
+        }
+      ],
+      "strongsNumber": "H2347",
+      "definition": "to have pity, to spare, to look upon with compassionate concern",
+      "usage": "God's closing word is not a command but a question built on chus. He does not order Jonah to feel differently; He asks him to follow his own pity to its honest end. If a withered plant could move you, why not 120,000 souls?"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jonah: Mercy on Enemies. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Jonah (Matt 12:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book That Refuses to End Tidily",
+      "body": "We have walked the whole arc this week: the running prophet, the storm, the fish, the second chance, the city that repented in sackcloth from the king to the cattle. By any ordinary telling, the story should close in chapter 3. Nineveh hears, Nineveh turns, God relents, the prophet is vindicated. Cue the music.\n\nInstead the book gives us a fourth chapter, and it is almost entirely an argument between a man and God in the dirt outside a city. Jonah is not relieved that his preaching worked. He is furious that it worked. \"O LORD, is this not what I said while I was still in my own country?\" he prays. \"I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion - One who relents from sending disaster.\" He did not flee because he feared God would fail. He fled because he feared God would forgive.\n\nThen the book does something almost no other book in Scripture dares. It ends on a question. \"Should I not care about the great city of Nineveh?\" And there is no verse 12. We never hear Jonah answer. The last word of the book of Jonah is, in Hebrew, the word for cattle - and then silence. The story is handed, unfinished, to whoever is reading. The question God asks Jonah is the question God is asking you.",
+      "keyInsight": "Jonah did not run from God because he doubted Him. He ran because he understood Him - and could not bear that the mercy he counted on for himself extended to people he hated.",
+      "content": "We have walked the whole arc this week: the running prophet, the storm, the fish, the second chance, the city that repented in sackcloth from the king to the cattle. By any ordinary telling, the story should close in chapter 3. Nineveh hears, Nineveh turns, God relents, the prophet is vindicated. Cue the music.\n\nInstead the book gives us a fourth chapter, and it is almost entirely an argument between a man and God in the dirt outside a city. Jonah is not relieved that his preaching worked. He is furious that it worked. \"O LORD, is this not what I said while I was still in my own country?\" he prays. \"I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion - One who relents from sending disaster.\" He did not flee because he feared God would fail. He fled because he feared God would forgive.\n\nThen the book does something almost no other book in Scripture dares. It ends on a question. \"Should I not care about the great city of Nineveh?\" And there is no verse 12. We never hear Jonah answer. The last word of the book of Jonah is, in Hebrew, the word for cattle - and then silence. The story is handed, unfinished, to whoever is reading. The question God asks Jonah is the question God is asking you."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name He Could Not Pray For",
+      "body": "A man I know kept a short list folded in his wallet for years. It was a prayer list, the kind his small group encouraged everyone to keep. Names of friends, his children, a sick neighbor. But there was one name he had written and then scratched out so hard the pen tore the paper - the name of the man who had wrecked his marriage. He told me he could pray for almost anyone. Just not for that. He said he could feel his whole body go cold when the name came to mind, the way Jonah must have gone cold when the word came: go to Nineveh.\n\nWhat undid him, finally, was not a sermon about forgiveness. It was a small kindness he could not explain. His own life had fallen apart, and a stranger had carried him through it without being asked - the way the worm and the wind and the fish were all, in their strange way, sent to carry Jonah toward an honesty he kept refusing. He sat with the torn list one night and realized he had been glad to receive a mercy he was unwilling to wish on anyone else.\n\nHe did not feel warm toward the man. He told me he still doesn't. But that night he wrote the name back onto the list, unscratched, and left it there. \"I'm not angry enough to die over it anymore,\" he said. \"That's the most honest thing I can say.\"",
+      "connectionToTheme": "Jonah's anger is not exotic. It is the ordinary human refusal to wish on an enemy the mercy we are happy to receive ourselves - and God meets it not with a rebuke but with a patient, searching question.",
+      "content": "A man I know kept a short list folded in his wallet for years. It was a prayer list, the kind his small group encouraged everyone to keep. Names of friends, his children, a sick neighbor. But there was one name he had written and then scratched out so hard the pen tore the paper - the name of the man who had wrecked his marriage. He told me he could pray for almost anyone. Just not for that. He said he could feel his whole body go cold when the name came to mind, the way Jonah must have gone cold when the word came: go to Nineveh.\n\nWhat undid him, finally, was not a sermon about forgiveness. It was a small kindness he could not explain. His own life had fallen apart, and a stranger had carried him through it without being asked - the way the worm and the wind and the fish were all, in their strange way, sent to carry Jonah toward an honesty he kept refusing. He sat with the torn list one night and realized he had been glad to receive a mercy he was unwilling to wish on anyone else.\n\nHe did not feel warm toward the man. He told me he still doesn't. But that night he wrote the name back onto the list, unscratched, and left it there. \"I'm not angry enough to die over it anymore,\" he said. \"That's the most honest thing I can say.\""
+    },
+    {
+      "type": "insight",
+      "heading": "Everything in the Book Is Sent",
+      "body": "Read the four chapters again and watch the verb. The LORD hurled a great wind upon the sea. The LORD appointed a great fish. God appointed a vine. God appointed a worm. God appointed a scorching east wind. Storm, fish, plant, worm, wind - every force in the book is sent, and every one of them is sent toward the same end: to soften a hard man enough that mercy can get through to him.\n\nThis is the quiet shock of Jonah. We expect the great fish to be the climax - the miracle, the thing children remember. But the fish only gets Jonah back to dry land. The real miracle the book is reaching for is the one we never see completed: a prophet learning to want for his enemies what God has already given to him. God spends the whole book at it. He does not give up on Nineveh, and He does not give up on the angry man sulking on the hill above it.\n\nThe plant is the tenderest move of all. God grows a vine just to give Jonah shade, lets him love it for a day, and then takes it - not to torment him, but to show him his own heart. You grieved a weed you did not plant, God says. Now feel that ache, and turn it toward people. The lesson is taught not by argument but by letting Jonah's own pity testify against his hatred.",
+      "historicalContext": "Nineveh was the capital of Assyria, the empire that would later destroy the northern kingdom of Israel and deport its people. For Jonah and his first hearers, these were not abstract foreigners but the looming threat on the horizon, remembered for staggering cruelty in war. To preach repentance to Nineveh was to hold open the door of God's mercy to the very nation Israel most feared and most hated.",
+      "fascinatingFact": "The phrase 'who cannot tell their right hand from their left' is often read as a tender reference to the city's children and the genuinely ignorant - those who had never been given the chance to know better. God's final argument is not that Nineveh deserves mercy, but that it is full of the small and unknowing, and that He, unlike Jonah, cannot look at them without pity.",
+      "content": "Read the four chapters again and watch the verb. The LORD hurled a great wind upon the sea. The LORD appointed a great fish. God appointed a vine. God appointed a worm. God appointed a scorching east wind. Storm, fish, plant, worm, wind - every force in the book is sent, and every one of them is sent toward the same end: to soften a hard man enough that mercy can get through to him.\n\nThis is the quiet shock of Jonah. We expect the great fish to be the climax - the miracle, the thing children remember. But the fish only gets Jonah back to dry land. The real miracle the book is reaching for is the one we never see completed: a prophet learning to want for his enemies what God has already given to him. God spends the whole book at it. He does not give up on Nineveh, and He does not give up on the angry man sulking on the hill above it.\n\nThe plant is the tenderest move of all. God grows a vine just to give Jonah shade, lets him love it for a day, and then takes it - not to torment him, but to show him his own heart. You grieved a weed you did not plant, God says. Now feel that ache, and turn it toward people. The lesson is taught not by argument but by letting Jonah's own pity testify against his hatred."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God refuses to destroy a city of enemies, and refuses to abandon the prophet who resents that refusal. His last recorded word in the book is not a verdict but a question about whether He may be allowed to show pity.",
+      "modernApplication": "Most of us are not running from a calling to a foreign city. We are sitting on Jonah's hill, quietly furious that grace is being offered to someone we have already written off - an estranged family member, a public enemy, a person who hurt us and was never punished. The book does not scold that anger. It asks it a question and waits.",
+      "connectionPoint": "Jonah is the prophet who spent three days in the deep and came out to preach to people who deserved judgment - and resented that they were spared. He is a sign that points, by sharp contrast, to a greater Prophet. Where Jonah was hurled into the sea against his will to save a boatload of pagans, Christ lay down in the grave willingly to save the world. Where Jonah preached to enemies and hoped they would burn, Christ prayed for His enemies as they killed Him.",
+      "newTestamentEcho": "Jesus made Jonah a sign of Himself: \"For as Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth\" (Matthew 12:40). And He added the line that finishes Jonah's open ending: \"now One greater than Jonah is here\" (Matthew 12:41). The mercy Jonah resented, Christ became - praying over the city that rejected Him, \"Father, forgive them, for they do not know what they are doing\" (Luke 23:34)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose name have you scratched off the list - the person you would rather see God judge than save?",
+      "additionalQuestions": [
+        "Jonah was happy to receive mercy in the belly of the fish and furious to see it given to Nineveh. Where do you accept grace for yourself that you are unwilling to wish on someone else?",
+        "God uses Jonah's love for a small plant to expose his lack of love for a whole city. What small, easy affection in your life could God use to enlarge a heart that has gone hard somewhere else?",
+        "The book ends with a question and no answer, because the answer is yours to give. How would you answer God's last question: should He not care about them, too?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have been glad to be spared and slow to want others spared. I have sat on the hill like Jonah, nursing an anger I would rather keep than surrender. You know the name I have scratched out. You know the city I would rather see fall than forgiven. Gracious and compassionate God, slow to anger, abounding in loving devotion - the very mercy I resent is the mercy that carried me out of my own deep. Soften the eye that has gone hard. Let me feel the ache of Your pity for the people I have written off. And where I cannot yet love them, give me at least the honesty to stop wishing their ruin. Through Christ, who prayed for His enemies from the cross. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, write back onto your list the one name you scratched off. You do not have to feel warm toward them. Simply pray, once, the prayer you would want prayed for you: that God would have mercy on them. Let that be the whole of it.",
+      "leavingAtCross": [
+        "The anger I would rather keep than surrender - the grudge that has become a strange kind of comfort",
+        "The double standard that begs mercy for myself and demands justice for my enemy",
+        "The secret hope that the people who hurt me will get what they deserve"
+      ],
+      "receivingFromCross": [
+        "The freedom of a heart no longer 'angry enough to die' over someone else's forgiveness",
+        "The same pity God feels - an eye that softens over the small and the lost",
+        "The mercy that carried me out of my own deep, now flowing through me toward others"
+      ],
+      "content": "Today, write back onto your list the one name you scratched off. You do not have to feel warm toward them. Simply pray, once, the prayer you would want prayed for you: that God would have mercy on them. Let that be the whole of it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the book of Jonah end on an unanswered question rather than a tidy resolution - and what does that open ending ask of the reader?",
+        "Jonah admits in 4:2 that he fled because he knew God was merciful. How does that confession change the way you read the running prophet of chapter 1?",
+        "How does God use the plant, the worm, and the wind to teach Jonah - and why does He choose to expose Jonah's heart this way rather than simply rebuking him?"
+      ],
+      "forAccountabilityPartners": [
+        "Name, if you can, one person you would honestly rather see judged than forgiven. Talk about where that came from.",
+        "Discuss the difference between forgiving someone and merely ceasing to wish them harm. Where are you on that road?",
+        "Ask each other: which mercy in your own life are you most grateful for - and is there anyone you are unwilling to wish that same mercy on?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jonah 4:2",
+          "text": "I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion—One who relents from sending disaster."
+        },
+        {
+          "reference": "Exodus 34:6",
+          "text": "The LORD, the LORD God, is compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness."
+        },
+        {
+          "reference": "Matthew 12:40-41",
+          "text": "For as Jonah was three days and three nights in the belly of the great fish, so the Son of Man will be three days and three nights in the heart of the earth... and now One greater than Jonah is here."
+        },
+        {
+          "reference": "Luke 23:34",
+          "text": "Then Jesus said, \"Father, forgive them, for they do not know what they are doing.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jonah 4",
+          "note": "Read the final chapter slowly, tracking the word 'appointed' (the vine, the worm, the wind) and the twice-spoken verb 'pity' that ties Jonah's love of the plant to God's love of the city."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jonah son of Amittai",
+      "title": "The Prophet Who Resented Mercy",
+      "description": "A prophet of the northern kingdom of Israel, named in 2 Kings 14:25, sent to preach against Nineveh, capital of the Assyrian empire. Jonah is the rare prophet whose problem is not that God's word fails, but that it succeeds: he flees a calling, is hurled into the sea, is swallowed and spared, preaches reluctantly, and then sits in fury when the city he hates is forgiven. His book ends with him still arguing, the final question hanging unanswered over his head and ours.",
+      "keyQuote": "I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion - One who relents from sending disaster.",
+      "lessonForUs": "Jonah is the mirror we would rather not look into: a man glad to be saved and unwilling to see his enemies saved. His story does not end with him fixed. It ends with God's question still open - because the same question is being asked of us, and the answer is the one thing the book leaves for the reader to write.",
+      "heading": "The Prophet Who Resented Mercy"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2151,
+  "scriptureReference_full": "Jonah 1-4",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chus, H2347) reflects standard lexical sources; the doubled use of the verb across Jonah 4:10-11 is widely noted in commentary on the book's structure.",
+    "Historical notes on Nineveh and Assyria reflect mainstream scholarly consensus; the reading of 'cannot tell their right hand from their left' as referring to children and the ignorant is a common interpretive tradition."
+  ]
 }

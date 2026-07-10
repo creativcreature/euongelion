@@ -1,38 +1,186 @@
 {
   "day": 304,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 3 — Pivot",
-  "teaser": "Day 304 of Bible 365 — Luke 15, 24",
+  "title": "Dead, and alive again",
+  "teaser": "Twice Luke says it — a son was dead and is alive, hope was buried and walked the road home. The word lost is never the last word.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 304"
+      "type": "scripture",
+      "reference": "Luke 15:20, 24; 24:30-31",
+      "translation": "BSB",
+      "emphasis": [
+        "while he was still in the distance",
+        "was dead and is alive again",
+        "their eyes were opened"
+      ],
+      "greekOriginal": "νεκρὸς ἦν καὶ ἀνέζησεν, ἀπολωλὼς καὶ εὑρέθη",
+      "passage": "So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him. ... For this son of mine was dead and is alive again! He was lost and is found!' So they began to celebrate. ... While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus—and He disappeared from their sight."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀνέζησεν",
+      "transliteration": "anezēsen",
+      "pronunciation": "ah-NEH-zay-sen",
+      "meaning": "he came back to life, he lived again, he revived",
+      "rootMeaning": "From ana (again, back up) joined to zaō (to live). Not merely 'he recovered' but 'he lived again' - the prefix carries the whole weight of a return from death back into life.",
+      "usageNote": "The father uses this word twice over the same son: 'was dead and is alive again' in Luke 15:24, then again in 15:32. The same verb describes the dead who hear the voice of the Son of God (John 5:25) and the dead in Christ who will live again. The father is not exaggerating a runaway's return - he is reaching for resurrection language to describe what mercy does.",
+      "wordByWord": [
+        {
+          "word": "νεκρὸς",
+          "transliteration": "nekros",
+          "meaning": "dead, a corpse - the same word for a body in the grave"
+        },
+        {
+          "word": "ἦν",
+          "transliteration": "ēn",
+          "meaning": "he was - the settled, finished past"
+        },
+        {
+          "word": "ἀνέζησεν",
+          "transliteration": "anezēsen",
+          "meaning": "he lived again, came back to life"
+        },
+        {
+          "word": "ἀπολωλὼς",
+          "transliteration": "apolōlōs",
+          "meaning": "having been lost, perished, destroyed"
+        },
+        {
+          "word": "εὑρέθη",
+          "transliteration": "heurethē",
+          "meaning": "he was found - passive: found by another, not finding himself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "εὑρέθη",
+          "reference": "The verb is passive throughout Luke 15. The sheep is found, the coin is found, the son is found. No lost thing in the chapter ever finds itself. Someone goes looking, and the lost is found by the seeker."
+        }
+      ],
+      "strongsNumber": "G326",
+      "definition": "to live again, recover life, revive; to spring into life",
+      "usage": "A resurrection word placed in a father's mouth - because what the father feels, watching a dead-to-him son walk up the road, is the joy of a grave undone."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Stories, One Word",
+      "body": "Luke sets two scenes far apart in his book, but he hands them the same word. In chapter 15 a father throws a feast and explains it twice with the same breath: 'this son of mine was dead and is alive again; he was lost and is found.' In chapter 24, on a road out of Jerusalem, two grieving disciples walk away from a tomb, certain that the man they had hoped in was dead and the hope with Him. The word that organizes both chapters is the same: dead, and then - against every expectation - alive.\n\nIn the parable, the younger son has not drifted; he has actively asked for his inheritance early, which in that culture was as good as wishing his father into the grave. He takes the money to a far country and spends it on nothing that lasts. When the famine comes, he is feeding pigs and envying their food. Then Luke says he 'came to his senses' - literally, he came to himself, as if he had been beside himself the whole time. He rehearses a speech. He will go home not as a son but as a hired servant, hoping for a roof and a wage.\n\nHe never gets to finish the speech. 'While he was still in the distance, his father saw him.' The father was watching the road. And then the most undignified verb in the chapter: he ran. A grown man, the head of a household, lifts his robe and runs down the road to a son who threw his love back in his face - and reaches him before the boy can get the apology out.",
+      "keyInsight": "The lost son rehearses a plan to come home as a servant. He never gets to deliver it. The father interrupts repentance with running - and the word he uses for what happened to his son is not 'returned' but 'came back to life.'",
+      "content": "Luke sets two scenes far apart in his book, but he hands them the same word. In chapter 15 a father throws a feast and explains it twice with the same breath: 'this son of mine was dead and is alive again; he was lost and is found.' In chapter 24, on a road out of Jerusalem, two grieving disciples walk away from a tomb, certain that the man they had hoped in was dead and the hope with Him. The word that organizes both chapters is the same: dead, and then - against every expectation - alive.\n\nIn the parable, the younger son has not drifted; he has actively asked for his inheritance early, which in that culture was as good as wishing his father into the grave. He takes the money to a far country and spends it on nothing that lasts. When the famine comes, he is feeding pigs and envying their food. Then Luke says he 'came to his senses' - literally, he came to himself, as if he had been beside himself the whole time. He rehearses a speech. He will go home not as a son but as a hired servant, hoping for a roof and a wage.\n\nHe never gets to finish the speech. 'While he was still in the distance, his father saw him.' The father was watching the road. And then the most undignified verb in the chapter: he ran. A grown man, the head of a household, lifts his robe and runs down the road to a son who threw his love back in his face - and reaches him before the boy can get the apology out."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Phone That Kept Its Charge",
+      "body": "A woman I know kept her son's old phone charged for two years after he stopped answering it. The number was disconnected. She knew that. She charged it anyway, on the nightstand, because turning it off felt like agreeing he was gone.\n\nWhen he finally called - a different number, a borrowed phone, a voice thick with shame - she did not ask where the money went. She did not ask why he had let it go this long. She drove four hours that night. She told me later that somewhere on the interstate she realized she had been driving the way you drive toward a hospital, not toward an argument.\n\nThat is the father in Luke 15. The watching, the charged phone, the running down the road. He is not standing in the doorway with his arms crossed, waiting to hear the speech. He has been scanning the horizon every evening for a shape he would know at any distance. And when it appears, he does not walk. He runs - the way you move toward someone you thought you had lost for good and discover, impossibly, is alive.",
+      "connectionToTheme": "The father's running is what love does when 'lost' turns out not to be the final word - it moves toward the one returning before a single condition is met.",
+      "content": "A woman I know kept her son's old phone charged for two years after he stopped answering it. The number was disconnected. She knew that. She charged it anyway, on the nightstand, because turning it off felt like agreeing he was gone.\n\nWhen he finally called - a different number, a borrowed phone, a voice thick with shame - she did not ask where the money went. She did not ask why he had let it go this long. She drove four hours that night. She told me later that somewhere on the interstate she realized she had been driving the way you drive toward a hospital, not toward an argument.\n\nThat is the father in Luke 15. The watching, the charged phone, the running down the road. He is not standing in the doorway with his arms crossed, waiting to hear the speech. He has been scanning the horizon every evening for a shape he would know at any distance. And when it appears, he does not walk. He runs - the way you move toward someone you thought you had lost for good and discover, impossibly, is alive."
+    },
+    {
+      "type": "insight",
+      "heading": "The Same Joy at the Same Table",
+      "body": "Now lay the two chapters side by side, because Luke means for them to be read together. In chapter 15 a father kills the fattened calf and the house fills with feasting because a dead son is alive. In chapter 24 two disciples who have given Jesus up for dead sit at a table in Emmaus, and 'while He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them.' At that exact motion - the broken bread - 'their eyes were opened and they recognized Jesus.'\n\nAll the way from Jerusalem, the risen Christ had walked beside them explaining the Scriptures, and they had not known Him. Grief had a way of keeping their eyes shut. It was not the long argument that opened their eyes. It was bread, broken and given. The dead one was alive, and they knew Him in the giving away of Himself.\n\nThe word the father used for his son in the parable - was dead and is alive again - is the word Easter makes literally true of Jesus. And here is what should stop us: the One telling the parable of a father running toward a dead-and-alive son is the same One who, three chapters of His own life later, is found alive at a table, breaking bread. He told the story. Then He became it. He is both the running father who will not let lost be the last word, and the once-dead Son the whole house is feasting over.",
+      "historicalContext": "Luke writes his Gospel as a carefully ordered account for a reader named Theophilus (Luke 1:3-4), and he arranges his material on purpose. The three lost-and-found parables of chapter 15 (sheep, coin, son) all end in the same way: something is found, and there is joy and a celebration. By the time Luke reaches the Emmaus meal in chapter 24, his reader has been trained to hear 'dead and alive' and 'found' as the deepest grain of the whole book.",
+      "fascinatingFact": "Luke describes the Emmaus recognition with the same four verbs he uses at the Last Supper and that the early church used for the Lord's Supper: He took bread, blessed it, broke it, and gave it (compare Luke 22:19). The two disciples recognize the risen Lord not in a proof but in a posture - the broken-and-given bread that is His own body. Lost-and-found becomes a table you can sit at.",
+      "content": "Now lay the two chapters side by side, because Luke means for them to be read together. In chapter 15 a father kills the fattened calf and the house fills with feasting because a dead son is alive. In chapter 24 two disciples who have given Jesus up for dead sit at a table in Emmaus, and 'while He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them.' At that exact motion - the broken bread - 'their eyes were opened and they recognized Jesus.'\n\nAll the way from Jerusalem, the risen Christ had walked beside them explaining the Scriptures, and they had not known Him. Grief had a way of keeping their eyes shut. It was not the long argument that opened their eyes. It was bread, broken and given. The dead one was alive, and they knew Him in the giving away of Himself.\n\nThe word the father used for his son in the parable - was dead and is alive again - is the word Easter makes literally true of Jesus. And here is what should stop us: the One telling the parable of a father running toward a dead-and-alive son is the same One who, three chapters of His own life later, is found alive at a table, breaking bread. He told the story. Then He became it. He is both the running father who will not let lost be the last word, and the once-dead Son the whole house is feasting over."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A father runs toward a son he had every right to disown, and calls him not 'returned' but 'alive again, found.' Chapters later, the One who told that story is found alive Himself, recognized in broken bread by people who had buried their hope.",
+      "modernApplication": "Most of us come home the way the son rehearsed it - with a speech ready, expecting to negotiate our way back as hired help, bracing for the arms to be crossed. We assume distance has hardened God. Luke says the opposite: God is the one watching the road, already running, already feasting before we finish apologizing.",
+      "connectionPoint": "The thread that runs through both chapters runs through the whole Gospel of Luke and out into the church. The shepherd who leaves the ninety-nine, the woman who sweeps for one coin, the father who runs - all of it points to the Son of Man who 'came to seek and to save the lost' (Luke 19:10). The seeking that the parables picture, Jesus performs. And the table where the lost are recognized as found is the table the church still keeps.",
+      "newTestamentEcho": "Paul gathers the whole movement into one sentence: 'God demonstrates His own love for us in this: While we were still sinners, Christ died for us' (Romans 5:8). Still sinners - still in the far country, still rehearsing the speech, still at a distance. That is exactly where the running starts."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which speech have you been rehearsing for God - the one where you come back as hired help instead of a child, expecting His arms to be crossed?",
+      "additionalQuestions": [
+        "Is there a part of your life you have quietly filed under 'dead' - a relationship, a calling, a faith - that Luke's two stories dare you to reopen?",
+        "The disciples recognized Jesus not in the argument on the road but in the broken bread. Where are you looking for proof when you might be missing presence?",
+        "If God is the One running down the road while you are 'still in the distance,' what would change about how you came home today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have rehearsed my speech. I have come back braced for crossed arms and a cold welcome, ready to settle for being hired help. Meet me the way You met the son - while I am still in the distance, before I finish, running. Open my eyes the way You opened theirs at the table: not in a proof I can hold, but in bread broken and given, in the Son who was dead and is alive. Let me hear You say it over me - dead, and alive again; lost, and found. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the speech you have been rehearsing for God - and then put it down before you finish it. Picture Him running. If you share a meal today, slow down at the breaking of the bread and let it be the moment you recognize He is alive and present, here, with you.",
+      "leavingAtCross": [
+        "The rehearsed speech that asks to come back as a servant instead of a child",
+        "The assumption that my distance has hardened God against me",
+        "The part of my life I have quietly buried under the word 'dead'"
+      ],
+      "receivingFromCross": [
+        "A Father who runs down the road while I am still far off",
+        "The risen Christ recognized in broken bread, not in proof I have to manufacture",
+        "The word spoken over me that mercy speaks over every returning soul: alive again, found"
+      ],
+      "content": "Today, name the speech you have been rehearsing for God - and then put it down before you finish it. Picture Him running. If you share a meal today, slow down at the breaking of the bread and let it be the moment you recognize He is alive and present, here, with you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the father in Luke 15 use the word 'alive again' rather than simply 'home' for a son who was never literally dead - and how does Luke 24 make that word come true of Jesus?",
+        "The son rehearses a full speech but the father interrupts it with running. What does that order - running before the apology is finished - tell you about how God receives those who turn back?",
+        "The Emmaus disciples had the Scriptures explained to them on the whole road and still did not recognize Jesus until the bread was broken. What is Luke saying about how the risen Christ is known?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a 'far country' season - a time you wandered - and what it was like to come back, or what is still keeping you from coming back.",
+        "Talk honestly: do you picture God standing in the doorway with arms crossed, or running down the road? Where did that picture come from?",
+        "Ask each other where, lately, you have recognized Christ as alive and present - and where you are still walking the road with your eyes kept shut."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:32",
+          "text": "But it was fitting to celebrate and be glad, because this brother of yours was dead and is alive again; he was lost and is found.'"
+        },
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save the lost."
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, 'Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?'"
+        },
+        {
+          "reference": "Romans 5:8",
+          "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15 and Luke 24",
+          "note": "Read both chapters in one sitting, watching for the words 'dead,' 'alive,' 'lost,' and 'found,' and for the meals that close each story - the fattened calf and the broken bread."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cleopas and His Companion",
+      "title": "The Emmaus Travelers",
+      "description": "Two followers of Jesus - one named Cleopas, the other unnamed - walking the seven miles from Jerusalem to Emmaus on the afternoon of the resurrection. They had hoped Jesus was the one to redeem Israel, and His death had emptied that hope. The risen Christ joined them on the road unrecognized, walked the whole way explaining how the Scriptures pointed to a suffering and glorified Messiah, and was finally known to them in the breaking of the bread - after which they ran back to Jerusalem that same night.",
+      "keyQuote": "Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?",
+      "lessonForUs": "They walked beside the living Christ while their eyes were 'kept from recognizing Him,' grieving a man who was not dead. Like the lost son's father, the One they thought dead was alive - and like the son, they were found before they understood they were being sought.",
+      "heading": "The Emmaus Travelers"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2200,
+  "scriptureReference_full": "Luke 15:11-32; 24:13-35",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (anezēsen G326, nekros, apolōlōs, heurethē) reflects standard lexical sources; the parallel of the four Eucharistic verbs (took, blessed, broke, gave) in Luke 24:30 and Luke 22:19 is a widely noted feature of Luke's composition."
+  ]
 }

@@ -1,38 +1,174 @@
 {
   "day": 259,
   "title": "Hosea, Joel, Amos — Day 7 — Sabbath",
-  "teaser": "Day 259 of Bible 365 — Selected",
+  "teaser": "Three prophets thunder ruin and ache with tenderness. Between them sits one quiet promise: I will pour out My Spirit on all flesh. On Pentecost, the risen Christ keeps it.",
   "framework": "Selected — Hosea, Joel, Amos",
   "scriptureReference": "Selected",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 259"
+      "type": "scripture",
+      "reference": "Joel 2:28-29, 32",
+      "translation": "BSB",
+      "emphasis": [
+        "I will pour out My Spirit on all people",
+        "everyone who calls on the name of the LORD will be saved"
+      ],
+      "hebrewOriginal": "אֶשְׁפּוֹךְ אֶת־רוּחִי עַל־כָּל־בָּשָׂר",
+      "passage": "And afterward, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions. Even on My menservants and maidservants, I will pour out My Spirit in those days. ... And everyone who calls on the name of the LORD will be saved; for on Mount Zion and in Jerusalem there will be deliverance, as the LORD has promised, among the remnant called by the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֶשְׁפּוֹךְ",
+      "transliteration": "eshpokh",
+      "pronunciation": "esh-POKH",
+      "meaning": "I will pour out, I will spill out",
+      "rootMeaning": "From the root shaphak - to pour out a liquid until the container is empty. It is the word for pouring out blood at the altar, for spilling water on the ground that cannot be gathered again, for emptying a vessel completely. God does not say He will sprinkle His Spirit, or dispense it by measure. He says He will pour it out.",
+      "usageNote": "Joel reaches for the most generous verb available. The same root describes blood poured at the base of the altar (Leviticus 4:7) and water poured before the LORD at Mizpah (1 Samuel 7:6) - costly things given without holding back. What had been the rare possession of prophets and kings is now promised to sons and daughters, old and young, servants and maidservants. The Spirit is poured, not portioned.",
+      "wordByWord": [
+        {
+          "word": "אֶשְׁפּוֹךְ",
+          "transliteration": "eshpokh",
+          "meaning": "I will pour out - the LORD Himself is the one pouring"
+        },
+        {
+          "word": "אֶת־רוּחִי",
+          "transliteration": "et-ruchi",
+          "meaning": "My Spirit - ruach, the breath, wind, and Spirit of God"
+        },
+        {
+          "word": "עַל־כָּל־בָּשָׂר",
+          "transliteration": "al-kol-basar",
+          "meaning": "on all flesh - every kind of person, not one class or nation only"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רוּחַ",
+          "reference": "Ruach is the same word that hovers over the waters in Genesis 1:2 and the breath God breathes into Adam in Genesis 2:7. The Spirit that made the world and woke the first man is the Spirit Joel says God will one day pour out on everyone."
+        }
+      ],
+      "strongsNumber": "H8210",
+      "definition": "to pour out, pour forth, spill; to empty a vessel completely",
+      "usage": "The verb is lavish, not careful. In Acts 2:33 Peter says the risen Christ 'has poured out what you now see and hear' - using the same image to declare that the day Joel promised has finally arrived."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Voices, One Promise",
+      "body": "Today the reading gathers three prophets at once, and at first they sound like thunder. Hosea marries a faithless wife so that Israel can hear how it feels to be loved by Someone you keep betraying. Amos, a shepherd from Tekoa, walks north into the wealthy cities and tears the roof off their comfortable religion: the festivals are full, the songs are loud, and the poor are being sold for a pair of sandals. Joel watches a plague of locusts strip the land bare and reads it as a warning of a greater day coming. Three men, three eras, one verdict - the people have wandered, and the Day of the LORD is near.\n\nIt would be easy to file these books under judgment and move on. But listen longer and a second sound comes through the thunder. Hosea, even while naming the betrayal, breaks open: 'How could I give you up, O Ephraim? My heart is turned within Me; My compassion is stirred' (Hosea 11:8). Amos, after pages of ruin, ends with God promising to rebuild the fallen tent of David until the mountains drip with sweet wine (Amos 9:11-13). And Joel, in the middle of the locust-stripped land, hears God say something no prophet had dared promise so widely before: 'I will pour out My Spirit on all people.'\n\nThat is the thread that runs under all three. The judgment is real - these books do not soften it. But underneath the judgment runs a stubborn intention to heal, to rebuild, to pour out. The prophets are not finally announcing the end. They are announcing what God means to do on the other side of it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Watering Can and the Storm",
+      "body": "A friend of mine kept a small garden on a city balcony, four pots in a row. Through a dry August she carried a watering can out every evening, tipping it carefully so each plant got its measured share - never quite enough to soak the soil, because the can held only so much. The plants survived. They did not thrive.\n\nThen one night a real storm came in off the coast. She stood at the window and watched water come down in sheets, far more than she could ever have carried, running off the edge of the balcony, filling every pot to overflowing, soaking ground she had been rationing for weeks. In the morning the four plants looked different - heavier, greener, the soil dark all the way down.\n\nFor most of the Old Testament, the Spirit of God comes like the watering can: poured by measure, on a few, for a task. The Spirit rushes on Samson, rests on the seventy elders, falls on a prophet, anoints a king. Real, but rationed. Joel stands in the dry land and promises the storm. Not a measured share for a chosen few - a downpour on all flesh, sons and daughters, old and young, servants alongside masters, until the ground is dark all the way down.",
+      "connectionToTheme": "The Old Testament Spirit comes by measure, on a few; Joel promises the Spirit poured out on everyone, like a storm after a long drought.",
+      "content": "A friend of mine kept a small garden on a city balcony, four pots in a row. Through a dry August she carried a watering can out every evening, tipping it carefully so each plant got its measured share - never quite enough to soak the soil, because the can held only so much. The plants survived. They did not thrive.\n\nThen one night a real storm came in off the coast. She stood at the window and watched water come down in sheets, far more than she could ever have carried, running off the edge of the balcony, filling every pot to overflowing, soaking ground she had been rationing for weeks. In the morning the four plants looked different - heavier, greener, the soil dark all the way down.\n\nFor most of the Old Testament, the Spirit of God comes like the watering can: poured by measure, on a few, for a task. The Spirit rushes on Samson, rests on the seventy elders, falls on a prophet, anoints a king. Real, but rationed. Joel stands in the dry land and promises the storm. Not a measured share for a chosen few - a downpour on all flesh, sons and daughters, old and young, servants alongside masters, until the ground is dark all the way down."
+    },
+    {
+      "type": "insight",
+      "heading": "And Afterward",
+      "body": "The whole promise turns on two small words: 'And afterward.' After what? After everything Joel has just described - the locusts, the ruined fields, the call to return to the LORD with all your heart, the day of darkness drawing near. Only on the far side of all that does God say, 'I will pour out My Spirit on all people.'\n\nThe order matters. The Spirit is not poured out to help people avoid the reckoning the prophets describe. The Spirit is poured out after a people have been brought low and have turned back. Hosea says it the same way: 'After two days He will revive us; on the third day He will raise us up' (Hosea 6:2). First the tearing, then the healing. First the third-day silence, then the rising.\n\nThis is why these are not finally books of doom. The judgment is the plow that breaks the hard ground; the outpouring is the rain that comes after. Joel's 'afterward' is the hinge the whole book swings on - and it is the hinge the whole of Scripture swings on too. The Spirit is the gift on the other side of the cross.",
+      "historicalContext": "Hosea, Amos, and Joel are among the books later collected as the Twelve Minor Prophets - 'minor' only in length, not weight. Hosea and Amos prophesied in the eighth century BC to the northern kingdom of Israel before its fall to Assyria in 722 BC. Joel's exact date is debated among scholars, but his book was treasured and read alongside the others as part of the same prophetic witness: the Day of the LORD is coming, and beyond it, restoration.",
+      "fascinatingFact": "Joel 2:28 is numbered Joel 3:1 in the Hebrew Bible. The chapter break itself marks how decisively the tone turns: everything before is locusts and lament, everything after is the Spirit poured out and the promise that 'everyone who calls on the name of the LORD will be saved.' The same line Joel speaks here, Paul will later quote to say that this salvation is now open to Jew and Greek alike (Romans 10:13).",
+      "content": "The whole promise turns on two small words: 'And afterward.' After what? After everything Joel has just described - the locusts, the ruined fields, the call to return to the LORD with all your heart, the day of darkness drawing near. Only on the far side of all that does God say, 'I will pour out My Spirit on all people.'\n\nThe order matters. The Spirit is not poured out to help people avoid the reckoning the prophets describe. The Spirit is poured out after a people have been brought low and have turned back. Hosea says it the same way: 'After two days He will revive us; on the third day He will raise us up' (Hosea 6:2). First the tearing, then the healing. First the third-day silence, then the rising.\n\nThis is why these are not finally books of doom. The judgment is the plow that breaks the hard ground; the outpouring is the rain that comes after. Joel's 'afterward' is the hinge the whole book swings on - and it is the hinge the whole of Scripture swings on too. The Spirit is the gift on the other side of the cross."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Joel, standing in a land stripped bare, promises that 'afterward' God will pour out His Spirit on all people - not by measure, not on a few, but on sons and daughters, old and young, servants and maidservants alike.",
+      "modernApplication": "We still live as if the Spirit were rationed - reserved for the gifted, the ordained, the people who seem to have their faith together. Joel's word undoes the watering-can theology of our hearts. The promise was never 'a little, for the few.' It was always 'poured out, on all flesh.' That includes the ordinary person reading this on an ordinary Sabbath.",
+      "connectionPoint": "These three prophets all reach toward a day they could name but not yet see. Hosea longs for the third-day rising; Amos for the rebuilt tent of David; Joel for the Spirit poured out and the open door of 'everyone who calls.' Each promise lands somewhere specific in the New Testament: Hosea 6:6 on the lips of Jesus (Matthew 9:13; 12:7), Amos 9:11 quoted by James to welcome the Gentiles (Acts 15:16-17), and Joel 2:28-32 quoted in full by Peter on the day it came true.",
+      "newTestamentEcho": "On the morning of Pentecost, when the Spirit fell on the gathered disciples and onlookers heard them speak, Peter stood and said: 'This is what was spoken by the prophet Joel: In the last days, God says, I will pour out My Spirit on all people' (Acts 2:16-17). He ends by naming who did it: the risen and exalted Jesus 'has received from the Father the promised Holy Spirit and has poured out what you now see and hear' (Acts 2:33). The verb is Joel's own. Christ is the one who pours."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been treating the Spirit of God like a watering can - rationed, measured, kept for the few - when God's promise was a storm poured out on all flesh, including you?",
+      "additionalQuestions": [
+        "Hosea, Amos, and Joel all speak hard words before tender ones. Is there a hard word God has been speaking to you that you've refused to sit under long enough to reach the tender word on the other side?",
+        "Joel's promise turns on 'and afterward.' What 'afterward' are you waiting for - and can you trust that God's intention beyond the hard season is to pour out, not to withhold?",
+        "Peter said Pentecost was Joel's promise come true. If the Spirit has already been poured out on all flesh, what would change in how you pray today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have heard the thunder of the prophets and the tenderness underneath it. Where I have wandered like Israel, turn my heart back. Where I have been hard like the cities Amos warned, soften me. And where I have lived as if Your Spirit were rationed and far off, remind me of Joel's promise kept: that the risen Christ has poured out Your Spirit on all flesh - even on me, on this quiet day, doing nothing to earn it. Pour out. Fill the dry ground all the way down. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to finish and no task to complete. Sit for five quiet minutes and let one line from Joel hold you: 'I will pour out My Spirit on all people.' Do not strive to feel it. Simply receive the promise that the Spirit you long for has already been poured out, and that you are included in the word 'all.'",
+      "leavingAtCross": [
+        "The watering-can theology that says the Spirit is rationed, for the few, never quite for me",
+        "The fear that the hard words of the prophets are God's last word rather than His first",
+        "The striving that tries to earn an outpouring God has already promised to give"
+      ],
+      "receivingFromCross": [
+        "The Spirit poured out on all flesh, given freely, not by measure",
+        "The promise that 'everyone who calls on the name of the LORD will be saved' - no exceptions, no fine print",
+        "Rest in the 'afterward' - that beyond every tearing, God's settled intention is to heal, rebuild, and revive"
+      ],
+      "content": "Today is a sabbath day - there is nothing to finish and no task to complete. Sit for five quiet minutes and let one line from Joel hold you: 'I will pour out My Spirit on all people.' Do not strive to feel it. Simply receive the promise that the Spirit you long for has already been poured out, and that you are included in the word 'all.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between the way the Spirit comes in most of the Old Testament (on a few, by measure, for a task) and the way Joel promises the Spirit will come?",
+        "Why does the small phrase 'and afterward' matter so much to Joel's promise - what has to come first?",
+        "How does Peter's sermon at Pentecost (Acts 2:16-17, 33) show that Joel's promise was finally kept, and who does Peter say poured the Spirit out?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name one place you have quietly believed the Spirit of God is 'not really for someone like me.' Read Joel 2:28-29 to each other and notice who is included.",
+        "Talk about a hard season you are in or recently came through. Where might God's 'afterward' be - the healing He intends on the far side of it?",
+        "Hosea says God desires mercy, not sacrifice. Ask each other: where am I offering God busy religion when what He wants is a turned-back heart?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:1-2",
+          "text": "Come, let us return to the LORD. For He has torn us to pieces, but He will heal us; He has wounded us, but He will bind up our wounds. After two days He will revive us; on the third day He will raise us up, that we may live in His presence."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Acts 2:33",
+          "text": "Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joel 2",
+          "note": "Read the whole chapter slowly, watching it turn on the word 'afterward' (v. 28) - from the locust-stripped land and the call to return, to the Spirit poured out on all flesh."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joel",
+      "title": "Prophet of the Outpoured Spirit",
+      "description": "Joel son of Pethuel prophesied to Judah, reading a devastating locust plague as a sign of the nearing Day of the LORD and calling the people to return to God with fasting and torn hearts rather than torn garments. His book is short, but it carries one of the largest promises in the Old Testament: that God would one day pour out His Spirit not on a chosen few but on all people. Centuries later, Peter would stand in Jerusalem on the day of Pentecost and declare that the promise had come true in the risen Christ (Acts 2:16-21).",
+      "keyQuote": "And afterward, I will pour out My Spirit on all people.",
+      "lessonForUs": "Joel teaches us to read even our hardest seasons forward - to trust that beyond the locusts and the loss, God's settled intention is to pour out, to revive, and to save everyone who calls on His name.",
+      "heading": "Prophet of the Outpoured Spirit"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2500,
+  "scriptureReference_full": "Joel 2:28-29, 32 (with Hosea 6:1-3, 6; 11:8; Amos 5:24; 9:11-13)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (eshpokh, root shaphak H8210; ruach) reflects standard lexical sources.",
+    "New Testament fulfillment citations: Peter quotes Joel 2:28-32 at Pentecost (Acts 2:16-21, 33); James quotes Amos 9:11-12 at the Jerusalem Council (Acts 15:16-17); Jesus twice quotes Hosea 6:6 (Matthew 9:13; 12:7)."
+  ]
 }

@@ -1,38 +1,186 @@
 {
   "day": 177,
-  "title": "Esther: For Such a Time — Day 2 — Building",
-  "teaser": "Day 177 of Bible 365 — Esther 4-7",
+  "title": "The Scepter and the Silence",
+  "teaser": "God is never named in Esther. He moves anyway — in a sleepless night, a raised scepter, a queen who walks toward death so her people might live.",
   "framework": "Esther 4-7 — Esther: For Such a Time",
   "scriptureReference": "Esther 4-7",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 177"
+      "type": "scripture",
+      "reference": "Esther 4:14, 16; 5:2",
+      "translation": "BSB",
+      "emphasis": [
+        "for such a time as this",
+        "if I perish, I perish",
+        "the king extended the gold scepter"
+      ],
+      "hebrewOriginal": "וּמִי יוֹדֵעַ אִם־לְעֵת כָּזֹאת הִגַּעַתְּ לַמַּלְכוּת",
+      "passage": "\"For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father's house will perish. And who knows if perhaps you have come to the kingdom for such a time as this?\" ... \"And if I perish, I perish!\" ... As soon as the king saw Queen Esther standing in the court, she found favor in his sight. The king extended the gold scepter in his hand toward Esther, and she approached and touched the tip of the scepter."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Esther 4-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Esther 4-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לְעֵת כָּזֹאת",
+      "transliteration": "le'et kazot",
+      "pronunciation": "le-ET ka-ZOTE",
+      "meaning": "for a time like this, for such a time as this",
+      "rootMeaning": "Et is a fixed, appointed time - not clock-time but the right moment, the hour a thing is meant to happen. Kazot means 'like this one,' pointing at the very crisis Esther is standing inside. Together: this exact hour, no other.",
+      "usageNote": "The book of Esther never once says the name of God. There is no miracle, no prophet, no voice from heaven. Mordecai's question - 'who knows if perhaps you have come to the kingdom for such a time as this?' - is the closest the book comes to naming the One who arranges times. He does not say God put you here. He says: look where you are standing, and at what hour, and ask who set the stage.",
+      "wordByWord": [
+        {
+          "word": "וּמִי יוֹדֵעַ",
+          "transliteration": "umi yodea",
+          "meaning": "and who knows - a question that leaves room for the unseen Hand"
+        },
+        {
+          "word": "אִם",
+          "transliteration": "im",
+          "meaning": "if, perhaps - the language of holy uncertainty, not doubt but humility"
+        },
+        {
+          "word": "לְעֵת",
+          "transliteration": "le'et",
+          "meaning": "for a time, for an appointed moment"
+        },
+        {
+          "word": "כָּזֹאת",
+          "transliteration": "kazot",
+          "meaning": "like this, such as this very one"
+        },
+        {
+          "word": "הִגַּעַתְּ לַמַּלְכוּת",
+          "transliteration": "higa'at lammalkut",
+          "meaning": "you have reached, arrived at, the kingdom - as if carried there"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֵת",
+          "reference": "The same word et fills Ecclesiastes 3 - 'a time to be born and a time to die... a time to keep silent and a time to speak.' Esther 4 is the hinge between two of those times: the time to keep silent has ended; the time to speak has come."
+        }
+      ],
+      "strongsNumber": "H6256",
+      "definition": "et: a definite, appointed time; the right or proper season for an event",
+      "usage": "Mordecai's grammar is careful. He does not command Esther; he asks her a question. He leaves the providence unnamed - 'who knows' - and lets her decide whether she believes an unseen hand has placed her where she is."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Esther: For Such a Time. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s timing perfect (Gal 4:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Decree Already Signed",
+      "body": "By chapter four the trap is already shut. Haman, raised to second in the empire of Xerxes, has bought the right to destroy every Jew from India to Cush, and the king has handed over his signet ring to seal it. The edict is written, sealed, and carried by couriers to a hundred and twenty-seven provinces. A people has been sold for slaughter, and there is no human appeal left - in this empire, not even the king can revoke his own sealed law.\n\nMordecai tears his clothes, puts on sackcloth, and wails in the middle of the city. Word reaches Esther inside the palace, sealed off in comfort, and Mordecai sends her the decree itself with a charge: go to the king, plead for your people. Her answer is the answer of anyone who knows the rules: no one approaches the king uninvited. The law is death. Only if he raises the gold scepter does the one who comes uninvited live - and she has not been summoned in thirty days.\n\nInto that closed room Mordecai sends back the sentence the whole book turns on. Do not imagine you will escape because you live in the palace. If you stay silent, deliverance will come from somewhere - the Jews will not be abandoned - but you will have missed the place you were put. 'And who knows if perhaps you have come to the kingdom for such a time as this?'",
+      "keyInsight": "God is never named in Esther, yet every reversal is His fingerprint. The book teaches us to read providence the way Mordecai does - not by miracles announced from the sky, but by asking who arranged the room we are standing in.",
+      "content": "By chapter four the trap is already shut. Haman, raised to second in the empire of Xerxes, has bought the right to destroy every Jew from India to Cush, and the king has handed over his signet ring to seal it. The edict is written, sealed, and carried by couriers to a hundred and twenty-seven provinces. A people has been sold for slaughter, and there is no human appeal left - in this empire, not even the king can revoke his own sealed law.\n\nMordecai tears his clothes, puts on sackcloth, and wails in the middle of the city. Word reaches Esther inside the palace, sealed off in comfort, and Mordecai sends her the decree itself with a charge: go to the king, plead for your people. Her answer is the answer of anyone who knows the rules: no one approaches the king uninvited. The law is death. Only if he raises the gold scepter does the one who comes uninvited live - and she has not been summoned in thirty days.\n\nInto that closed room Mordecai sends back the sentence the whole book turns on. Do not imagine you will escape because you live in the palace. If you stay silent, deliverance will come from somewhere - the Jews will not be abandoned - but you will have missed the place you were put. 'And who knows if perhaps you have come to the kingdom for such a time as this?'"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Night No One Could Sleep",
+      "body": "There is a sentence in chapter six that any honest reader has to slow down for. Esther has decided to go to the king, but not yet to speak; she has invited Xerxes and Haman to two banquets, buying time she does not seem to understand. Haman, swollen with honor and stung by Mordecai's refusal to bow, goes home and builds a seventy-five-foot gallows to hang him in the morning. The Jewish queen's plan hangs by a thread, and the enemy is one sunrise from winning.\n\nAnd then: 'That night sleep escaped the king.' No angel, no dream, no fire from heaven. Just an insomniac emperor who, of all things, calls for the dullest reading material in the palace - the official chronicles - and happens to be read the one entry where Mordecai, years before, had exposed an assassination plot against the king and was never rewarded for it. At dawn Haman arrives to ask permission to hang Mordecai, and walks instead into the king asking him how to honor the very man he came to kill. By nightfall Haman has paraded his enemy through the streets in royal robes, crying out the man's honor with his own mouth.\n\nThe book hands you a coincidence so precise it stops being one. A sleepless night, an unread page, a debt remembered at the last possible hour, a plot that recoils onto the head of the one who built it. No miracle is claimed. None has to be. The reader is meant to feel the floor tilt and ask the question Mordecai asked: who arranges a king's insomnia?",
+      "connectionToTheme": "The hidden God of Esther works through 'coincidence' so well-timed it indicts our idea of chance. Providence here wears ordinary clothes - a bad night's sleep, a forgotten record, a gallows that ends up holding the wrong man - and that is exactly the point.",
+      "content": "There is a sentence in chapter six that any honest reader has to slow down for. Esther has decided to go to the king, but not yet to speak; she has invited Xerxes and Haman to two banquets, buying time she does not seem to understand. Haman, swollen with honor and stung by Mordecai's refusal to bow, goes home and builds a seventy-five-foot gallows to hang him in the morning. The Jewish queen's plan hangs by a thread, and the enemy is one sunrise from winning.\n\nAnd then: 'That night sleep escaped the king.' No angel, no dream, no fire from heaven. Just an insomniac emperor who, of all things, calls for the dullest reading material in the palace - the official chronicles - and happens to be read the one entry where Mordecai, years before, had exposed an assassination plot against the king and was never rewarded for it. At dawn Haman arrives to ask permission to hang Mordecai, and walks instead into the king asking him how to honor the very man he came to kill. By nightfall Haman has paraded his enemy through the streets in royal robes, crying out the man's honor with his own mouth.\n\nThe book hands you a coincidence so precise it stops being one. A sleepless night, an unread page, a debt remembered at the last possible hour, a plot that recoils onto the head of the one who built it. No miracle is claimed. None has to be. The reader is meant to feel the floor tilt and ask the question Mordecai asked: who arranges a king's insomnia?"
+    },
+    {
+      "type": "insight",
+      "heading": "If I Perish, I Perish",
+      "body": "Esther's surrender is not resignation. When she finally answers Mordecai, she does not say 'fine, I'll try.' She calls the whole Jewish community in Susa to fast with her three days and nights, and then she speaks the line that sets her feet on the path: 'I will go to the king, even though it is against the law. And if I perish, I perish.'\n\nHear what she is choosing. She is leaving the safety of the palace - the one place the decree could not easily reach her - to stand uninvited in the inner court, where the law's penalty is death unless the king raises his scepter. She has no promise that he will. She walks toward the throne carrying her own possible execution, on behalf of a condemned people who cannot save themselves.\n\nAnd on the third day she puts on her royal robes, stands in the inner court, and waits. The text holds its breath with her. Then: the king sees her, she finds favor, and he extends the gold scepter. She approaches and touches its tip. The death sentence becomes an audience. The one who risked everything to enter the king's presence is received - and now she can plead for the lives of all the rest.",
+      "historicalContext": "Esther is set in Susa, the winter capital of the Persian Empire under Xerxes I (Ahasuerus), who reigned 486-465 BC, in the years between the first return of exiles under Cyrus and the later missions of Ezra and Nehemiah. These are Jews who did not go home to Judah - the diaspora, living under a foreign crown, where God's name could not be spoken in the court and His protection could not be assumed. The book is read aloud every year at the feast of Purim.",
+      "fascinatingFact": "The third day is no throwaway detail. Esther fasts three days, then on the third day rises in royal robes to walk toward death and instead receives life and favor for her people. The pattern - a representative who goes down into the shadow of death and on the third day rises to win deliverance for the condemned - is one the rest of Scripture will pick up and carry to its center.",
+      "content": "Esther's surrender is not resignation. When she finally answers Mordecai, she does not say 'fine, I'll try.' She calls the whole Jewish community in Susa to fast with her three days and nights, and then she speaks the line that sets her feet on the path: 'I will go to the king, even though it is against the law. And if I perish, I perish.'\n\nHear what she is choosing. She is leaving the safety of the palace - the one place the decree could not easily reach her - to stand uninvited in the inner court, where the law's penalty is death unless the king raises his scepter. She has no promise that he will. She walks toward the throne carrying her own possible execution, on behalf of a condemned people who cannot save themselves.\n\nAnd on the third day she puts on her royal robes, stands in the inner court, and waits. The text holds its breath with her. Then: the king sees her, she finds favor, and he extends the gold scepter. She approaches and touches its tip. The death sentence becomes an audience. The one who risked everything to enter the king's presence is received - and now she can plead for the lives of all the rest."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A queen leaves her safety, fasts three days, and walks uninvited toward a throne where the law is death - to stand between a condemned people and the king, and plead for their lives. The scepter is raised; she is received; her people are spared.",
+      "modernApplication": "We are not queens in a Persian court, but every one of us is placed somewhere we did not choose - this family, this office, this neighborhood, this hour - and tempted to believe our comfort exempts us from the trouble around us. Mordecai's question is still the sharpest one in the room: who knows if perhaps you have come to the kingdom for such a time as this? Providence does not usually announce itself. It places you, and waits to see whether you will read your position as accident or assignment.",
+      "connectionPoint": "Esther's risk runs as a thread straight to the gospel. She enters the king's presence at the cost of her life so a doomed people might live - and in doing so she becomes a faint sketch of a greater Mediator. Where Esther only might perish and was spared, Christ truly perished and was raised. Hebrews tells us we now 'approach the throne of grace with confidence' (Hebrews 4:16) - not because we have earned a hearing, but because One has gone before us and the scepter is already extended.",
+      "newTestamentEcho": "What Esther sketched, Christ completed. She walked uninvited toward a throne that meant death and was received by a raised scepter; Jesus walked toward a cross that meant real death, and on the third day rose to open the way into the King's presence for a condemned people. 'there is one God, and there is one mediator between God and men, the man Christ Jesus, who gave Himself as a ransom for all ...' (1 Timothy 2:5-6). Esther interceded and might have died. Christ interceded and did die - and lives to intercede still (Hebrews 7:25)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where has God placed you - a room, a role, a relationship - that you have been treating as ordinary, when it may be exactly the position from which you were meant to act?",
+      "additionalQuestions": [
+        "Esther was tempted to believe her place in the palace would keep her safe while her people suffered. Where are you tempted to let your own comfort excuse you from someone else's trouble?",
+        "When you look back over the 'coincidences' of your life - the timing, the people, the doors - do you read them as chance or as a hand you cannot see? What changes if it is the latter?",
+        "'If I perish, I perish.' Is there a hard, costly right thing you have been putting off because the outcome is not guaranteed? What would it look like to take the first step anyway?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God who is never named in this story and never absent from it, thank You that You arrange sleepless nights and forgotten pages and raised scepters, and that nothing in my life is too small for Your hand. Forgive me for treating the place You have put me as an accident, or as a hiding spot from the trouble of others. Show me the time I am standing in. Give me Esther's courage to walk toward what frightens me when love requires it - and thank You that I do not walk toward Your throne uninvited, because Christ went first and the scepter is already extended. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one place this week where you have been positioned - a person you keep meeting, a need you keep noticing, a room you keep walking into - and ask, 'What if I was put here for such a time as this?' Then take one concrete step you have been avoiding, however small, on behalf of someone other than yourself.",
+      "leavingAtCross": [
+        "The belief that my comfort exempts me from the trouble of the people around me",
+        "The habit of calling providence 'coincidence' so I never have to respond to it",
+        "The fear that keeps me silent when the time has come to speak"
+      ],
+      "receivingFromCross": [
+        "Confidence that the hand I cannot see has placed me on purpose, at this hour",
+        "The courage to do the costly right thing without a guaranteed outcome",
+        "A Mediator who already walked toward the throne and was not turned away, so I can approach with boldness"
+      ],
+      "content": "Name one place this week where you have been positioned - a person you keep meeting, a need you keep noticing, a room you keep walking into - and ask, 'What if I was put here for such a time as this?' Then take one concrete step you have been avoiding, however small, on behalf of someone other than yourself."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "The name of God appears nowhere in the book of Esther. How does the story teach you to recognize His work without it being labeled - in the timing of a sleepless night, a forgotten record, a raised scepter?",
+        "What is the difference between Esther's 'if I perish, I perish' and simple resignation? What does the three-day fast tell you about where her courage came from?",
+        "How does Esther entering the king's presence at the risk of her life, to plead for a condemned people, point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a place you have been 'positioned' - a job, a family, a season - that you have been treating as routine. What would change if you read it as an assignment?",
+        "Name one 'if I perish, I perish' moment you have been avoiding - a hard conversation, a costly stand - and what fear is keeping you from it.",
+        "Ask each other: where have you seen God's hidden hand in your life only in hindsight, and what would it mean to trust it in advance this time?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Esther 6:1",
+          "text": "That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him."
+        },
+        {
+          "reference": "Esther 7:10",
+          "text": "So they hanged Haman on the gallows he had prepared for Mordecai. Then the fury of the king subsided."
+        },
+        {
+          "reference": "Hebrews 4:16",
+          "text": "Let us then approach the throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need."
+        },
+        {
+          "reference": "1 Timothy 2:5-6",
+          "text": "For there is one God, and there is one mediator between God and men, the man Christ Jesus, who gave Himself as a ransom for all—the testimony that was given at just the right time."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Esther 4-7",
+          "note": "Read the four chapters in one sitting, watching for reversals - Haman's gallows, the king's sleepless night, the second banquet - and notice that the turning point comes with no miracle named, only timing too precise to be chance."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esther (Hadassah)",
+      "title": "The Queen Who Walked Toward the Throne",
+      "description": "A Jewish exile in Persia, orphaned and raised by her cousin Mordecai, who became queen to Xerxes without the court knowing her people. When a decree was sealed for the destruction of every Jew in the empire, she risked her life by approaching the king uninvited - fasting three days, then standing in the inner court where the law was death. Received by the raised scepter, she interceded for her people at two banquets and exposed Haman's plot, and the condemned were spared.",
+      "keyQuote": "I will go to the king, even though it is against the law. And if I perish, I perish.",
+      "lessonForUs": "Esther shows that providence and courage are not rivals. Because she trusted that an unseen hand had placed her 'for such a time as this,' she could risk everything - and her costly walk toward the throne, on behalf of a people who could not save themselves, casts a long shadow forward to the Mediator who would do in full what she did in part.",
+      "heading": "The Queen Who Walked Toward the Throne"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2509,
+  "scriptureReference_full": "Esther 4-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0).",
+    "Hebrew phrase le'et kazot ('for such a time as this,' Esther 4:14) and the term et (H6256, appointed time) reflect standard lexical sources. The observation that God is never named in Esther is a long-noted feature of the book in both Jewish and Christian commentary."
+  ]
 }

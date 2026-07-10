@@ -1,38 +1,190 @@
 {
   "day": 343,
   "title": "Romans: Justified by Faith — Day 7 — Sabbath",
-  "teaser": "Day 343 of Bible 365 — Romans 1-8",
+  "teaser": "Day 343 of Bible 365 — Romans 1-8. The verdict of the last day, handed down now: in Christ, the ungodly are declared righteous, and nothing can separate them from the love of God.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 343"
+      "type": "scripture",
+      "reference": "Romans 5:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "justified through faith",
+        "peace with God",
+        "this grace in which we stand"
+      ],
+      "greekOriginal": "Δικαιωθέντες οὖν ἐκ πίστεως εἰρήνην ἔχομεν πρὸς τὸν Θεὸν διὰ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ",
+      "passage": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ, through whom we have gained access by faith into this grace in which we stand. And we rejoice in the hope of the glory of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δικαιόω",
+      "transliteration": "dikaioō",
+      "pronunciation": "dih-kai-OH-oh",
+      "meaning": "to justify, to declare righteous, to acquit",
+      "rootMeaning": "From dikaios, righteous or just. The verb is courtroom language: not to make a person gradually better, but to pronounce a verdict over them - to declare them in the right. When God dikaioō a sinner, He hands down the acquittal a guilty defendant could never earn.",
+      "usageNote": "Paul drives the word and its family through Romans 1-8 like a hammer on one nail. The noun dikaiosynē (righteousness) opens the argument in 1:17 and frames the whole book; the verb dikaioō carries the verdict in 3:24, 3:28, 4:5, 5:1, and 8:30. It is not a word about feelings. It is a word about standing - where you stand when God's gavel falls.",
+      "wordByWord": [
+        {
+          "word": "Δικαιωθέντες",
+          "transliteration": "dikaiōthentes",
+          "meaning": "having been justified - a past, completed action done to us, not by us"
+        },
+        {
+          "word": "ἐκ πίστεως",
+          "transliteration": "ek pisteōs",
+          "meaning": "out of faith, by faith - the empty hand that simply receives"
+        },
+        {
+          "word": "εἰρήνην ἔχομεν",
+          "transliteration": "eirēnēn echomen",
+          "meaning": "we have peace - present tense, a peace we now possess"
+        },
+        {
+          "word": "πρὸς τὸν Θεόν",
+          "transliteration": "pros ton Theon",
+          "meaning": "toward God, with God - the relationship itself is mended"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "δικαιοσύνη (dikaiosynē, G1343)",
+          "reference": "Righteousness. In Romans 1:17 it is the righteousness of God that the gospel reveals - not a standard God demands from us, but a standing God gives to us."
+        },
+        {
+          "word": "λογίζομαι (logizomai)",
+          "reference": "To credit, to reckon, to count to one's account. In Romans 4:3 Abraham's faith is credited to him as righteousness - an accountant's word for a gift entered in the ledger."
+        }
+      ],
+      "strongsNumber": "G1344",
+      "definition": "to declare or pronounce righteous; to acquit; to justify",
+      "usage": "The passive participle dikaiōthentes is the quiet center of the verse: the work is finished, the verdict already spoken, and we did not lift the gavel. We are the defendants who walk out free."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "One Long Argument, Pressed Toward One Verdict",
+      "body": "Romans 1 through 8 is one of the most carefully built arguments in all of Scripture, and Paul builds it like a man laying a foundation he intends to bear enormous weight. He starts in the courtroom. By the end of chapter 3 there is no one left standing: \"for all have sinned and fall short of the glory of God\" (Romans 3:23). Jew and Greek, moral and immoral, religious and pagan - Paul closes every mouth and hands the whole human race the same defendant's seat.\n\nThen, in the same breath, the verdict turns: we are \"justified freely by His grace through the redemption that is in Christ Jesus\" (Romans 3:24). The word freely is not decoration. It means without cause in us. Nothing we brought to the bench earned it. God presents Christ as the atoning sacrifice (Romans 3:25), and on that ground - not on the ground of our record - He declares the guilty to be in the right.\n\nPaul knows this sounds too easy, so he reaches back a thousand years for a witness. Abraham was justified before he was circumcised, before the Law was given, before he had done a single work to point to. \"Abraham believed God, and it was credited to him as righteousness\" (Romans 4:3). Justification by faith is not a New Testament novelty Paul invented to make grace cheap. It is how God has always dealt with sinners. The gospel did not change the rules; it revealed the One the rules were always pointing toward.",
+      "keyInsight": "Romans 1-8 closes every human mouth in chapter 3, then opens the door of acquittal on the same page - and grounds it not in what we did, but in what Christ did and what God credits.",
+      "content": "Romans 1 through 8 is one of the most carefully built arguments in all of Scripture, and Paul builds it like a man laying a foundation he intends to bear enormous weight. He starts in the courtroom. By the end of chapter 3 there is no one left standing: \"for all have sinned and fall short of the glory of God\" (Romans 3:23). Jew and Greek, moral and immoral, religious and pagan - Paul closes every mouth and hands the whole human race the same defendant's seat.\n\nThen, in the same breath, the verdict turns: we are \"justified freely by His grace through the redemption that is in Christ Jesus\" (Romans 3:24). The word freely is not decoration. It means without cause in us. Nothing we brought to the bench earned it. God presents Christ as the atoning sacrifice (Romans 3:25), and on that ground - not on the ground of our record - He declares the guilty to be in the right.\n\nPaul knows this sounds too easy, so he reaches back a thousand years for a witness. Abraham was justified before he was circumcised, before the Law was given, before he had done a single work to point to. \"Abraham believed God, and it was credited to him as righteousness\" (Romans 4:3). Justification by faith is not a New Testament novelty Paul invented to make grace cheap. It is how God has always dealt with sinners. The gospel did not change the rules; it revealed the One the rules were always pointing toward."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Stone Wall in Wittenberg",
+      "body": "A young friar named Martin Luther read Romans 1:17 over and over and came to dread it. The righteousness of God, he assumed, was the standard he could never meet - the bar God set and then judged him by. He confessed for hours. He fasted until he was sick. He said later that if anyone could have reached heaven by being a monk, it would have been him. And he hated the verse, because every reading of it sentenced him again.\n\nThen, in his own account, the sentence broke open. He saw that \"the righteousness of God\" in Romans was not the standard God demands but the gift God gives - a righteousness that \"comes by faith from start to finish\" (Romans 1:17). The bar he could never clear was not the point; Christ had cleared it, and was handing the verdict to anyone with an empty hand. Luther wrote that he felt as though he had walked through open gates into paradise. The same verse that had been a wall became a door.\n\nWhatever you make of the man who came after, the moment is honest: it is what happens to anyone the first time they understand Romans 5:1. The striving stops not because the standard dropped, but because Someone else met it on your behalf.",
+      "connectionToTheme": "The terror of Romans 1-8 is real - all have sinned - but its relief is realer: the righteousness it reveals is not a demand to satisfy but a gift to receive.",
+      "content": "A young friar named Martin Luther read Romans 1:17 over and over and came to dread it. The righteousness of God, he assumed, was the standard he could never meet - the bar God set and then judged him by. He confessed for hours. He fasted until he was sick. He said later that if anyone could have reached heaven by being a monk, it would have been him. And he hated the verse, because every reading of it sentenced him again.\n\nThen, in his own account, the sentence broke open. He saw that \"the righteousness of God\" in Romans was not the standard God demands but the gift God gives - a righteousness that \"comes by faith from start to finish\" (Romans 1:17). The bar he could never clear was not the point; Christ had cleared it, and was handing the verdict to anyone with an empty hand. Luther wrote that he felt as though he had walked through open gates into paradise. The same verse that had been a wall became a door.\n\nWhatever you make of the man who came after, the moment is honest: it is what happens to anyone the first time they understand Romans 5:1. The striving stops not because the standard dropped, but because Someone else met it on your behalf."
+    },
+    {
+      "type": "insight",
+      "heading": "The Verdict of the Last Day, Spoken Now",
+      "body": "Here is what makes Romans 1-8 a Sabbath text and not just a doctrine. Justification is a verdict, and a verdict is the kind of thing you usually wait for. The defendant sits through the trial, the evidence, the long dread of the courtroom, and only at the very end does the judge speak the word that decides everything.\n\nPaul's astonishment is that for those in Christ, the judge has already spoken. \"Therefore, since we have been justified through faith, we have peace with God\" (Romans 5:1). Not will have. Have. The verdict that belongs to the last day - the day every person quietly fears - has been pronounced over the believer in the middle of this one. And the verdict is righteous. Acquitted. In the right.\n\nThat is why chapter 8 can end where it does. If the worst thing that can be said about you - guilty before a holy God - has already been answered by the death of His Son, then there is no accusation left with teeth. \"There is now no condemnation for those who are in Christ Jesus\" (Romans 8:1). The case is closed. You are not waiting to find out if you are loved. You are resting inside a verdict already given - and on this seventh day, that is what the soul is invited to do: stop arguing your own case, and rest in His.",
+      "historicalContext": "Paul wrote Romans around AD 57, likely from Corinth, to a church he had not yet visited - a mixed congregation of Jewish and Gentile believers in the empire's capital. He was not putting out a local fire. He was laying out the gospel in full, the most complete statement of justification by faith in the New Testament, so that a church at the heart of the world would stand on it.",
+      "fascinatingFact": "Paul's word for justified (dikaiōthentes, Romans 5:1) is a past participle - the action is finished. But peace (echomen, we have) is present tense, ongoing. The grammar itself preaches the gospel: a completed verdict in the past producing a peace you carry in the present. One settled the moment, the other fills today.",
+      "content": "Here is what makes Romans 1-8 a Sabbath text and not just a doctrine. Justification is a verdict, and a verdict is the kind of thing you usually wait for. The defendant sits through the trial, the evidence, the long dread of the courtroom, and only at the very end does the judge speak the word that decides everything.\n\nPaul's astonishment is that for those in Christ, the judge has already spoken. \"Therefore, since we have been justified through faith, we have peace with God\" (Romans 5:1). Not will have. Have. The verdict that belongs to the last day - the day every person quietly fears - has been pronounced over the believer in the middle of this one. And the verdict is righteous. Acquitted. In the right.\n\nThat is why chapter 8 can end where it does. If the worst thing that can be said about you - guilty before a holy God - has already been answered by the death of His Son, then there is no accusation left with teeth. \"There is now no condemnation for those who are in Christ Jesus\" (Romans 8:1). The case is closed. You are not waiting to find out if you are loved. You are resting inside a verdict already given - and on this seventh day, that is what the soul is invited to do: stop arguing your own case, and rest in His."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a church in Rome that the guilty are justified freely by grace through the redemption in Christ Jesus, and that those so justified have peace with God now - a verdict of righteousness handed to people who could never earn it.",
+      "modernApplication": "We still try to justify ourselves, only the courtroom moved indoors. We rehearse our reasons, replay our failures, build a case for why we are acceptable - to others, to ourselves, to a God we picture mostly as a judge with a clipboard. Romans says the case is already decided, and not in the direction we feared. The striving to prove we are enough can stop, because Someone has already declared us righteous.",
+      "connectionPoint": "The verdict Paul announces is not a feeling that comes and goes; it is a standing that holds. Romans 8 follows the doctrine to its end and finds it unbreakable: \"neither death nor life, neither angels nor principalities... nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord\" (Romans 8:38-39). Justification by faith is not fragile. It is anchored outside of you, in Christ, where your moods and failures cannot reach to undo it.",
+      "newTestamentEcho": "The whole argument turns on one sentence: \"While we were still sinners, Christ died for us\" (Romans 5:8). Justification is not God lowering the standard or pretending we are better than we are. It is God satisfying the standard Himself, in the death of His Son, and crediting that righteousness to the ungodly. Christ is not merely the example of faith we are asked to copy; He is the object of it and the substance of it. The righteousness we are declared to have is His own."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose verdict are you living under today - the case you keep arguing about yourself, or the one God has already spoken over you in Christ?",
+      "additionalQuestions": [
+        "Where are you still trying to justify yourself - to prove you are acceptable - in a courtroom God has already closed?",
+        "Romans 5:1 says you 'have' peace with God, present tense. What would change about today if you actually believed the verdict is already in?",
+        "What accusation against you feels strongest right now, and how does 'there is now no condemnation' (Romans 8:1) answer it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess how much of my life is spent arguing my own case - building reasons why I am enough, hiding the evidence I am not. Thank You that while I was still a sinner, Christ died for me. Thank You that the verdict I feared is already spoken, and it is acquittal. Let me stop striving to earn what You have given freely. On this day of rest, let me rest in the righteousness that is not mine but His - and in the peace that comes through our Lord Jesus Christ. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to prove and no case to win. Sit for five quiet minutes and let one sentence hold you: \"Since we have been justified through faith, we have peace with God.\" Name one way you have been arguing your own case this week, and hand it over. The verdict is already in.",
+      "leavingAtCross": [
+        "The endless inner courtroom where I keep prosecuting myself",
+        "The belief that God's acceptance of me rises and falls with my performance",
+        "The fear that one more failure could separate me from His love"
+      ],
+      "receivingFromCross": [
+        "A righteousness I did not earn and cannot lose, credited to me in Christ",
+        "Peace with God that is present tense - mine to stand in today",
+        "The settled assurance that nothing in all creation can separate me from His love"
+      ],
+      "content": "Today is a sabbath day - there is nothing to prove and no case to win. Sit for five quiet minutes and let one sentence hold you: \"Since we have been justified through faith, we have peace with God.\" Name one way you have been arguing your own case this week, and hand it over. The verdict is already in."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Romans, is 'the righteousness of God' (1:17) a standard God demands from us or a standing God gives to us - and how does Romans 5:1 settle the question?",
+        "Why does Paul reach back to Abraham (Romans 4:3) to make his case about being justified by faith?",
+        "What is the difference between trying to be justified by works and being justified 'freely by His grace' (Romans 3:24)?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you catch yourself still trying to earn God's acceptance rather than receive it.",
+        "Talk about what it feels like to live as if the verdict is still pending versus already given - which describes you most days?",
+        "Read Romans 8:38-39 aloud to each other and name the specific accusation each of you most needs that promise to answer."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 1:16-17",
+          "text": "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes, first to the Jew, then to the Greek. For the gospel reveals the righteousness of God that comes by faith from start to finish, just as it is written: \"The righteous will live by faith.\""
+        },
+        {
+          "reference": "Romans 3:23-24",
+          "text": "for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus."
+        },
+        {
+          "reference": "Romans 5:8",
+          "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+        },
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 1-8",
+          "note": "Read the whole block slowly in one sitting, watching the movement from the courtroom of chapter 3 (all have sinned) to the verdict of chapter 5 (justified, at peace) to the unbreakable security of chapter 8 (no condemnation, no separation)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul the Apostle",
+      "title": "The Once-Blameless Pharisee, Justified by Faith",
+      "description": "A Pharisee trained under Gamaliel, Paul once persecuted the church with a zeal he later called blameless according to the Law. On the road to Damascus he met the risen Christ and discovered that his flawless record was the very thing keeping him from grace. Writing to Rome around AD 57, he set down the fullest case in Scripture for the truth that undid him: the guilty are declared righteous, not by works, but by faith in Christ.",
+      "keyQuote": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ.",
+      "lessonForUs": "The man with the best religious resume in the New Testament threw it away as loss, because he learned that a righteousness of his own could never give him peace with God. If Paul's record could not justify him, ours cannot justify us either - which is the best news there is, because Christ's record can.",
+      "heading": "The Once-Blameless Pharisee, Justified by Faith"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1697,
+  "scriptureReference_full": "Romans 1-8 (anchor: Romans 5:1-2)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dikaioō G1344, dikaiosynē G1343) reflects standard New Testament lexical sources.",
+    "Luther's experience of Romans 1:17 follows his own account in the 1545 preface to his Latin works; his words are summarized, not quoted verbatim."
+  ]
 }

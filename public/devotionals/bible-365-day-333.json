@@ -1,38 +1,182 @@
 {
   "day": 333,
-  "title": "Acts: Pentecost + Spread — Day 4 — Application",
-  "teaser": "Day 333 of Bible 365 — Acts 1-10",
+  "title": "When the Fire Became a Table",
+  "teaser": "Day 333 of Bible 365 — Acts 1-10. The Spirit's first work in Jerusalem was not spectacle but a shared table: people who devoted themselves to teaching, bread, and prayer.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 333"
+      "type": "scripture",
+      "reference": "Acts 2:42-47",
+      "translation": "BSB",
+      "emphasis": [
+        "They devoted themselves",
+        "breaking of bread",
+        "the Lord added to their number daily"
+      ],
+      "greekOriginal": "ἦσαν δὲ προσκαρτεροῦντες τῇ διδαχῇ τῶν ἀποστόλων καὶ τῇ κοινωνίᾳ, τῇ κλάσει τοῦ ἄρτου καὶ ταῖς προσευχαῖς.",
+      "passage": "They devoted themselves to the apostles' teaching and to the fellowship, to the breaking of bread and to prayer. A sense of awe came over everyone, and the apostles performed many wonders and signs. All the believers were together and had everything in common. Selling their possessions and goods, they shared with anyone who was in need. With one accord they continued to meet daily in the temple courts and to break bread from house to house, sharing their meals with gladness and sincerity of heart, praising God and enjoying the favor of all the people. And the Lord added to their number daily those who were being saved."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "προσκαρτερέω",
+      "transliteration": "proskartereō",
+      "pronunciation": "pros-kar-teh-REH-oh",
+      "meaning": "to devote oneself, to persevere, to hold steadfastly to",
+      "rootMeaning": "Built from pros (toward) and kartereō (to be strong, to endure). It pictures someone holding firmly toward a thing and refusing to let go - the strength it takes to stay rather than the rush it takes to start.",
+      "usageNote": "Luke uses this same verb for the disciples waiting in the upper room before Pentecost (Acts 1:14), and again for what the church did after it (Acts 2:42). The word brackets the whole story: they persevered in prayer until the Spirit came, then persevered in teaching, bread, and prayer once He had. Pentecost did not replace steadiness with fireworks; it filled steadiness with power.",
+      "wordByWord": [
+        {
+          "word": "ἦσαν προσκαρτεροῦντες",
+          "transliteration": "ēsan proskarterountes",
+          "meaning": "they were devoting themselves - an ongoing, continual action, not a single moment"
+        },
+        {
+          "word": "τῇ διδαχῇ",
+          "transliteration": "tē didachē",
+          "meaning": "to the teaching - what the apostles had received from Jesus and now handed on"
+        },
+        {
+          "word": "τῇ κοινωνίᾳ",
+          "transliteration": "tē koinōnia",
+          "meaning": "to the fellowship - shared life, common participation, not mere socializing"
+        },
+        {
+          "word": "τῇ κλάσει τοῦ ἄρτου",
+          "transliteration": "tē klasei tou artou",
+          "meaning": "to the breaking of the bread - a meal that remembered His"
+        },
+        {
+          "word": "ταῖς προσευχαῖς",
+          "transliteration": "tais proseuchais",
+          "meaning": "to the prayers - the appointed prayers of God's people, prayed together"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "κοινωνία",
+          "reference": "Koinōnia (fellowship) sits at the center of the verse. It is the same word Paul uses for sharing in the body and blood of Christ (1 Corinthians 10:16) and for the partnership of the gospel (Philippians 1:5). It is never thin - it always means something held in common at cost."
+        }
+      ],
+      "strongsNumber": "G4342",
+      "definition": "to attend constantly, to continue steadfastly, to give unremitting care to a thing",
+      "usage": "The grammar Luke chooses - 'they were devoting themselves' - refuses to let this be a one-day event. It is the tense of a habit, of people who kept showing up to the same four things long after the sound of wind had faded."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What the Spirit Built First",
+      "body": "By the time you reach the end of Acts 2, the loud part is over. The wind that filled the house, the tongues like fire, the crowd from every nation hearing their own languages, Peter preaching until three thousand were baptized in a single day - all of that has happened. And then Luke does something quiet. He pulls the camera back from the miracle and points it at a kitchen table.\n\n'They devoted themselves to the apostles' teaching and to the fellowship, to the breaking of bread and to prayer.' Four ordinary things. None of them dramatic. You could practice all four this week without anyone noticing. And Luke names them as the first fruit of Pentecost - the thing the Spirit actually produced once the fire came to rest.\n\nThis is the application this whole stretch of Acts has been building toward. In Acts 1, the risen Jesus promises, 'You will receive power when the Holy Spirit comes upon you' (Acts 1:8). We tend to imagine that power as the spectacular: signs, wonders, bold preaching. Those are here too. But the verb Luke leans on is not 'they astonished' or 'they performed.' It is proskartereō - they devoted themselves, they kept at it, they held on. The power of God landed in a community, and the first thing it made them was steady."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Church That Met in a Living Room",
+      "body": "A friend of mine helped start a church that, for its first two years, owned nothing. No building, no sound system, no sign by the road. They met in a living room on the east side of a city most people drive through without stopping. Folding chairs against the couch. A pot of coffee that never quite stretched far enough.\n\nWhat I remember from visiting is not a sermon. It is the meal afterward, and the way a woman who had lost her job that week left with a bag of groceries someone had quietly set by the door, and nobody made a speech about it. There was teaching, and there was prayer, and there was bread, and there was a strange ease about the whole thing, as if these people genuinely expected to see each other again on Thursday.\n\nNothing about it would have made the news. It looked exactly like Acts 2:46 - breaking bread from house to house, sharing meals with gladness and sincerity of heart. I drove home thinking: this is what the fire is for.",
+      "connectionToTheme": "The Spirit's power is most visible not in spectacle but in a community devoted to teaching, table, and prayer - the same four habits Luke records, lived out in an ordinary room."
+    },
+    {
+      "type": "insight",
+      "heading": "The Proof Was Bread, Not Fire",
+      "body": "Read the passage again and notice what happens to the miracles. They are there - 'the apostles performed many wonders and signs' - but Luke surrounds them with bread, shared possessions, daily meals, and gladness of heart. He will not let the wonders stand alone. He frames the supernatural with the domestic.\n\nThat framing is the point. Anyone can chase a sign. The harder, rarer thing is a roomful of people who sell what they have so that no one among them is in need (Acts 2:45), who eat together with sincerity day after day, who keep devoting themselves when the emotional high of Pentecost has worn off. That kind of life cannot be faked or worked up. It is what the Spirit does when He moves into a people and stays.\n\nHere is the quiet center of it: the risen Christ had told them to break bread in remembrance of Him, and now, filled with His Spirit, they cannot stop doing it. The fire of Pentecost did not lift them out of ordinary life into permanent spectacle. It came down into ordinary life and turned a shared loaf into the most powerful sign in Jerusalem. The Lord added to their number daily - not because of the wind and flame, but because the city watched a community love like that and wanted in.",
+      "historicalContext": "Acts 2 likely describes Jerusalem in the weeks and months after Pentecost, around AD 30-33. The temple courts and house gatherings existed side by side - believers still kept the Jewish hours of prayer in the temple while also breaking bread in homes. The 'breaking of bread' Luke names probably included both shared common meals and the remembrance Jesus established at the Last Supper; the early church did not yet separate the two.",
+      "fascinatingFact": "Luke uses proskartereō (devoted themselves) ten times across his Gospel and Acts - more than any other New Testament writer. For Luke, perseverance in prayer and fellowship is not the boring background to the Spirit's work; it is the shape the Spirit's work takes in a body of people over time."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When the Holy Spirit was poured out at Pentecost, the first thing He produced was not endless spectacle but a community that devoted itself to teaching, fellowship, the breaking of bread, and prayer - and shared everything so that no one was in need.",
+      "modernApplication": "We are tempted to measure the Spirit's presence by intensity - the powerful service, the goosebumps, the breakthrough moment. Acts 2 measures it by steadiness: people who keep showing up to teaching, to one another, to the table, to prayer, long after the feeling fades. The most Spirit-filled thing many of us could do this month is simply not quit the ordinary rhythms of the church.",
+      "connectionPoint": "This day mirrors the building of the days before it. There, the promise was made and the power came down - the Spirit poured out on the gathered disciples (Acts 1:8; 2:1-4). Here, that same power lands on the ground of daily life. The wind that filled the house in Acts 2:2 becomes the bread broken from house to house in Acts 2:46. Pentecost was never the destination. The devoted, shared, praising life was.",
+      "newTestamentEcho": "Before He suffered, Jesus took bread, gave thanks, broke it, and said, 'Do this in remembrance of Me' (Luke 22:19). Now, raised and ascended, He sends the Spirit He promised (Acts 2:33) - and the Spirit's first instinct in His people is to break bread again. The table did not end at the cross; by the Spirit, the risen Christ keeps His table among His people, and 'the breaking of bread' becomes the heartbeat of the church He is building."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Of the four things the first church devoted itself to - teaching, fellowship, the breaking of bread, and prayer - which one have you let slip, and what would it look like to return to it this week?",
+      "additionalQuestions": [
+        "Where have you been waiting for a dramatic sign of God's presence while overlooking the steady, ordinary means He has already given you?",
+        "Acts 2:45 says they shared with anyone in need. Who in your life is in need right now, and what do you have that could meet it?",
+        "What would change if you measured your spiritual life not by how you feel in a moment, but by what you keep devoting yourself to over time?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You promised Your Spirit, and You kept the promise. Forgive me for chasing the spectacular while neglecting the table. Make me steady. Give me a love for Your people that shows up on Thursday, that breaks bread without keeping score, that shares what I have with whoever is in need. Pour out Your Spirit on the ordinary rhythms of my life, and let the watching world see how Your people love. I want to devote myself - not for a day, but as a habit. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week I will recommit to one of the four devotions of Acts 2:42 that I have neglected - teaching, fellowship, the breaking of bread, or prayer. I will choose one specific, ordinary act: a meal shared with someone in need, a return to a gathering I have drifted from, or a fixed time of prayer I will actually keep.",
+      "leavingAtCross": [
+        "The belief that God's presence is measured by intensity rather than by faithfulness over time",
+        "The drift that lets me skip the ordinary gatherings while waiting for something dramatic",
+        "The tight grip on my possessions that keeps me from sharing with anyone in need"
+      ],
+      "receivingFromCross": [
+        "The same Spirit who fell at Pentecost, poured out now on the ordinary rhythms of my days",
+        "A place at the table where the risen Christ keeps breaking bread among His people",
+        "The freedom to be steady - to devote myself to teaching, fellowship, bread, and prayer, and let God add the growth"
+      ],
+      "content": "This week I will recommit to one of the four devotions of Acts 2:42 that I have neglected - teaching, fellowship, the breaking of bread, or prayer - choosing one specific, ordinary act and actually keeping it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What are the four things the first church 'devoted themselves' to in Acts 2:42, and why does Luke place them right after the spectacle of Pentecost?",
+        "How does the Greek verb proskartereō (to persevere, to hold steadfastly) reshape what we expect 'Spirit-filled' to look like?",
+        "In what way does the breaking of bread connect Pentecost back to the table Jesus established before His death?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one of the four devotions of Acts 2:42 you have let slip, and tell each other one concrete step back toward it.",
+        "Acts 2 describes a community where no one was in need. Talk honestly about whether your sharing matches that picture - and what would have to change.",
+        "Ask each other: are you measuring God's nearness by feeling or by faithfulness? Where has that measure misled you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
+        },
+        {
+          "reference": "Acts 2:4",
+          "text": "And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
+        },
+        {
+          "reference": "Luke 22:19",
+          "text": "And He took bread, gave thanks and broke it, and gave it to them, saying, 'This is My body, given for you; do this in remembrance of Me.'"
+        },
+        {
+          "reference": "1 Corinthians 10:16",
+          "text": "Is not the cup of blessing that we bless a participation in the blood of Christ? And is not the bread that we break a participation in the body of Christ?"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 2",
+          "note": "Read the whole chapter in one sitting, watching the movement from the upper room (vv. 1-4) to Peter's sermon (vv. 14-41) to the devoted daily life that follows (vv. 42-47). Notice how Luke lands the chapter not on the miracle but on the meal."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Jerusalem Church",
+      "title": "The First Community of the Spirit",
+      "description": "The earliest body of believers, formed in Jerusalem in the weeks after Pentecost. Beginning with about 120 in the upper room and growing by three thousand in a single day, they devoted themselves to the apostles' teaching, to shared life, to the breaking of bread, and to prayer. They met daily in the temple courts and in homes, sold possessions to provide for any in need, and praised God with gladness - while the Lord added to their number daily.",
+      "keyQuote": "All the believers were together and had everything in common.",
+      "lessonForUs": "The first church proves that the mark of the Spirit's power is not constant spectacle but a community made steady, generous, and glad. What the watching city found irresistible was not a miracle they could not explain, but a love they had never seen.",
+      "heading": "The First Community of the Spirit"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2225,
+  "scriptureReference_full": "Acts 2:42-47 (within Acts 1-10)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (proskartereō G4342; koinōnia) reflects standard lexical sources; the bracketing use of proskartereō in Acts 1:14 and 2:42 is observed directly from the text of Acts."
+  ]
 }

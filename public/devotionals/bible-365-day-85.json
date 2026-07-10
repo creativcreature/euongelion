@@ -1,38 +1,186 @@
 {
   "day": 85,
   "title": "I will not lift my hand",
-  "teaser": "Day 85 of Bible 365 — 1 Samuel 24",
+  "teaser": "Day 85 of Bible 365 — in a dark cave, David holds the life of the man hunting him, and chooses a torn hem over a throne seized by blood.",
   "framework": "1 Samuel 24 — Restraint as worship",
   "scriptureReference": "1 Samuel 24",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 85"
+      "type": "scripture",
+      "reference": "1 Samuel 24:4-6, 10-12",
+      "translation": "BSB",
+      "emphasis": [
+        "cut off a corner of Saul’s robe",
+        "May I never lift my hand against him",
+        "the LORD’s anointed",
+        "my hand will never be against you"
+      ],
+      "hebrewOriginal": "חָלִילָה לִּי מֵיהוָה אִם־אֶעֱשֶׂה אֶת־הַדָּבָר הַזֶּה לַאדֹנִי לִמְשִׁיחַ יְהוָה לִשְׁלֹחַ יָדִי בּוֹ כִּי־מְשִׁיחַ יְהוָה הוּא",
+      "passage": "So David’s men said to him, “This is the day about which the LORD said to you, ‘Behold, I will deliver your enemy into your hand, that you may do with him as you wish.’” Then David crept up secretly and cut off a corner of Saul’s robe. Afterward, David’s conscience was stricken because he had cut off the corner of Saul’s robe. So he said to his men, “The LORD forbid that I should do such a thing to my master, the LORD’s anointed. May I never lift my hand against him, since he is the LORD’s anointed.” ... “Behold, this day you have seen with your own eyes that the LORD delivered you into my hand in the cave. I was told to kill you, but I spared you and said, ‘I will not lift my hand against my lord, since he is the LORD’s anointed.’ See, my father, look at the corner of your robe in my hand. For I cut it off, but I did not kill you. See and know that there is no evil or rebellion in my hands. I have not sinned against you, even though you are hunting me down to take my life. May the LORD judge between you and me, and may the LORD take vengeance on you, but my hand will never be against you.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כָּנָף",
+      "transliteration": "kanaph",
+      "pronunciation": "kah-NAHF",
+      "meaning": "corner, edge, hem, wing, skirt of a garment",
+      "rootMeaning": "Kanaph means a wing - and by extension the outer edge of a robe that hangs like a folded wing. The corner David cuts is not a random scrap of cloth. It is the part of a royal garment that carried a man's authority and identity.",
+      "usageNote": "The same word names the corner of a garment Ruth asks Boaz to spread over her as a sign of covenant protection (Ruth 3:9), and the hem the bleeding woman reaches for in the crowd around Jesus (the Gospels' kraspedon answers to this Hebrew idea). To hold a man's kanaph in your hand was to hold his honor. David severs the symbol of Saul's kingship - and stops his blade there.",
+      "wordByWord": [
+        {
+          "word": "חָלִילָה לִּי",
+          "transliteration": "chalilah li",
+          "meaning": "far be it from me - a cry of holy revulsion, 'the LORD forbid'"
+        },
+        {
+          "word": "מְשִׁיחַ",
+          "transliteration": "mashiach",
+          "meaning": "anointed one - the one set apart by oil; from this word comes 'Messiah'"
+        },
+        {
+          "word": "יָד",
+          "transliteration": "yad",
+          "meaning": "hand - the instrument of power, violence, and reach"
+        },
+        {
+          "word": "כָּנָף",
+          "transliteration": "kanaph",
+          "meaning": "corner, edge, wing of a garment"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מְשִׁיחַ / Χριστός",
+          "reference": "Mashiach, 'anointed,' is rendered Christos in Greek. Saul is the LORD's anointed whom David refuses to strike; centuries later the true Anointed One will refuse to be defended by the sword (Matthew 26:52-53)."
+        }
+      ],
+      "strongsNumber": "H3671",
+      "definition": "an edge or extremity; specifically a wing, by analogy a flap or skirt of a garment",
+      "usage": "David's hand could have taken Saul's life; instead it took only the kanaph - the corner of the robe - and even that left his conscience stricken. The thing he cut became the proof of the thing he refused to do."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Restraint as worship. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ refused to call legions (Matt 26:53).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day the Hunted Man Held the Knife",
+      "body": "For months David has been running. Saul, the first king of Israel, has turned the resources of a kingdom into a manhunt for a shepherd. And now, by a turn no strategist could plan, the hunter walks alone into the dark.\n\nSaul comes to the sheepfolds by the road near En-gedi, finds a cave, and steps inside to relieve himself - unarmed, unguarded, exposed. He does not know that David and his men are crouched in the black recesses of that same cave, close enough to hear him breathe. David's men whisper that this is the answer to every prayer: God has handed the enemy over. Do with him as you wish.\n\nThis is the day. Every wronged instinct says so. The throne is one quiet thrust away. And David moves - he creeps forward in the dark - and cuts off the corner of Saul's robe. Then he stops. The text says David's conscience was stricken over a piece of cloth. Not over what he did, but over how close he came.",
+      "keyInsight": "David had the king's life within reach and the perfect excuse to take it. What he chose to cut was not Saul's throat but the hem of his robe - and even that small theft of honor troubled him.",
+      "content": "For months David has been running. Saul, the first king of Israel, has turned the resources of a kingdom into a manhunt for a shepherd. And now, by a turn no strategist could plan, the hunter walks alone into the dark.\n\nSaul comes to the sheepfolds by the road near En-gedi, finds a cave, and steps inside to relieve himself - unarmed, unguarded, exposed. He does not know that David and his men are crouched in the black recesses of that same cave, close enough to hear him breathe. David's men whisper that this is the answer to every prayer: God has handed the enemy over. Do with him as you wish.\n\nThis is the day. Every wronged instinct says so. The throne is one quiet thrust away. And David moves - he creeps forward in the dark - and cuts off the corner of Saul's robe. Then he stops. The text says David's conscience was stricken over a piece of cloth. Not over what he did, but over how close he came."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Email He Did Not Send",
+      "body": "A friend told me about the night his career was nearly handed to him. He had been pushed out of a company he helped build, edged toward the door by a manager who took the credit and spread the blame. Then a misdirected thread landed in his inbox - the manager's own words, enough to end the man and clear his name in one forward.\n\nHis cursor sat over the send button for a long time. He had the corner of the robe in his hand. He could feel the kingdom of being right within reach.\n\nHe closed the laptop. Not because the man deserved mercy - he didn't, by any accounting my friend could make - but because the version of himself who hit send would win the argument and lose something he couldn't name. He gave it to God and to time. \"It cost me,\" he said. \"I'm not sure it was ever repaid. But I can live in the house I built by not sending it.\"",
+      "connectionToTheme": "Vindication offered to us cheaply is the hardest mercy to refuse - and the one that keeps our hands clean enough to still belong to God.",
+      "content": "A friend told me about the night his career was nearly handed to him. He had been pushed out of a company he helped build, edged toward the door by a manager who took the credit and spread the blame. Then a misdirected thread landed in his inbox - the manager's own words, enough to end the man and clear his name in one forward.\n\nHis cursor sat over the send button for a long time. He had the corner of the robe in his hand. He could feel the kingdom of being right within reach.\n\nHe closed the laptop. Not because the man deserved mercy - he didn't, by any accounting my friend could make - but because the version of himself who hit send would win the argument and lose something he couldn't name. He gave it to God and to time. \"It cost me,\" he said. \"I'm not sure it was ever repaid. But I can live in the house I built by not sending it.\""
+    },
+    {
+      "type": "insight",
+      "heading": "He Would Not Seize What God Had Promised",
+      "body": "Here is the deepest turn in the cave, and it is easy to miss. David already had the throne promised to him. Samuel had poured the oil over his head; he too was the LORD's anointed. So when David refuses to kill Saul, he is not only sparing an enemy - he is refusing to grab with his own hand the very thing God had already sworn to give him.\n\nDavid could have read the moment as providence: the enemy delivered, the path cleared, the promise fulfilled by my blade tonight. Instead he treats the open opportunity as a test, not a permission. \"May the LORD judge between you and me... but my hand will never be against you.\" He hands the whole matter - his innocence, Saul's guilt, the timing of the crown - back to the only Judge who can settle it without staining the one who waits.\n\nThis is why restraint here is worship. To not lift the hand is to confess that the kingdom is God's to give and not David's to steal, that vengeance belongs to the LORD and not to the wronged, and that a throne taken by murder would not be the throne God promised at all. The man who waits in the dark is the man who actually believes God.",
+      "historicalContext": "Anointing with oil set a person apart as the LORD's own possession - kings, priests, sometimes prophets. To strike the LORD's anointed was understood as raising a hand against the One who chose him. David repeats this conviction again in the next chapter, sparing Saul a second time: 'who can lift a hand against the LORD's anointed and be guiltless?' (1 Samuel 26:9). His reverence for the office outlasts the man's cruelty in it.",
+      "fascinatingFact": "The Law had already claimed vengeance as God's alone: 'Vengeance is Mine; I will repay' (Deuteronomy 32:35). David, hunted and exhausted, lives out a verse most of us only quote. Paul will lift that same line into the New Testament: 'Do not avenge yourselves, beloved, but leave room for God's wrath' (Romans 12:19). The cave at En-gedi is what 'leaving room' looks like with a knife in your hand.",
+      "content": "Here is the deepest turn in the cave, and it is easy to miss. David already had the throne promised to him. Samuel had poured the oil over his head; he too was the LORD's anointed. So when David refuses to kill Saul, he is not only sparing an enemy - he is refusing to grab with his own hand the very thing God had already sworn to give him.\n\nDavid could have read the moment as providence: the enemy delivered, the path cleared, the promise fulfilled by my blade tonight. Instead he treats the open opportunity as a test, not a permission. \"May the LORD judge between you and me... but my hand will never be against you.\" He hands the whole matter - his innocence, Saul's guilt, the timing of the crown - back to the only Judge who can settle it without staining the one who waits.\n\nThis is why restraint here is worship. To not lift the hand is to confess that the kingdom is God's to give and not David's to steal, that vengeance belongs to the LORD and not to the wronged, and that a throne taken by murder would not be the throne God promised at all. The man who waits in the dark is the man who actually believes God."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "David, the LORD's anointed, holds his enemy's life in the dark and lays the blade down - refusing to seize by his own hand the kingdom God had already promised him, and leaving vengeance to the LORD.",
+      "modernApplication": "We rarely hold a literal knife. We hold the reply that would humiliate, the secret that would end them, the leverage that would finally make us right. The cave is any moment when hurting someone back is suddenly easy and feels deserved. Restraint is not weakness there; it is the worship of a God we trust to keep His promises without our help.",
+      "connectionPoint": "David spares the anointed king and refuses the sword - and centuries later a greater Son of David stands in another garden as men come to seize Him. Peter draws a blade; Jesus stops him: 'Put your sword back in its place. For all who draw the sword will die by the sword' (Matthew 26:52). Then He says the line that echoes the cave: 'Are you not aware that I can call on My Father, and He will at once put at My disposal more than twelve legions of angels?' (Matthew 26:53). The power was real. The hand stayed down.",
+      "newTestamentEcho": "What David rehearsed, Christ fulfilled. The true Anointed One 'did not retaliate; when He suffered, He made no threats, but entrusted Himself to Him who judges justly' (1 Peter 2:23). David refused to take the kingdom by blood; Jesus received His kingdom by shedding His own, praying for His executioners, 'Father, forgive them' (Luke 23:34). The throne not seized in the cave is the throne given at the empty tomb."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose 'corner of the robe' is in your hand right now - what power to wound or expose are you holding, telling yourself the moment was handed to you on purpose?",
+      "additionalQuestions": [
+        "Where are you tempted to read an open opportunity to retaliate as God's permission rather than God's test?",
+        "What would it look like to say, with David, 'May the LORD judge between us' - and actually mean it, leaving the verdict with God?",
+        "Is there a good thing God has promised you that you are tempted to grab early, by means you would rather He didn't see?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You see the knife in my hand and the grievance behind it. You know the people I could expose, the words I could send, the wound I could repay with interest - and how deserved it all feels. Far be it from me. Keep my hand down. Teach me to wait for You the way David waited in the dark, trusting that the kingdom is Yours to give and vengeance is Yours to settle. Make my restraint a form of worship. And when I cannot manage it, hold my hand still by the mercy of the One who, with legions at His command, prayed forgiveness over the men who nailed Him. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one piece of leverage you are holding over someone who has wronged you - the text, the receipt, the story you could tell. Choose not to use it for the next twenty-four hours, and tell God plainly: this is Yours to judge, not mine to repay.",
+      "leavingAtCross": [
+        "The reading of every open chance to hurt back as proof that I'm meant to take it",
+        "The belief that I have to defend myself, clear my name, and even the score with my own hand",
+        "The grievance I keep sharpened, waiting for the day the cave goes dark and the enemy walks in alone"
+      ],
+      "receivingFromCross": [
+        "The freedom of a hand that doesn't have to strike to be safe",
+        "Trust that the God who promised can keep the promise without my shortcuts",
+        "The peace of the Anointed One who entrusted Himself to the Father who judges justly"
+      ],
+      "content": "Today, name one piece of leverage you are holding over someone who has wronged you - the text, the receipt, the story you could tell. Choose not to use it for the next twenty-four hours, and tell God plainly: this is Yours to judge, not mine to repay."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why was David's conscience stricken over cutting a corner of cloth, when his men were urging him to take Saul's whole life?",
+        "How is David's refusal to kill Saul also a refusal to seize the kingdom God had already promised him - and why does that make his restraint an act of trust?",
+        "How does David's line 'May the LORD judge between you and me... but my hand will never be against you' point forward to the way Jesus answered violence in the garden and on the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one situation where you currently hold the 'corner of someone's robe' - real power to hurt or expose them - and talk honestly about why letting it go is hard.",
+        "Where in your life are you tempted to grab early something God has promised, instead of waiting for Him to give it cleanly?",
+        "Ask each other: when have you let God be the judge of a wrong done to you, and what did the waiting cost - and give?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 26:9",
+          "text": "But David said to Abishai, “Do not destroy him, for who can lift a hand against the LORD’s anointed and be guiltless?”"
+        },
+        {
+          "reference": "Deuteronomy 32:35",
+          "text": "Vengeance is Mine; I will repay. In due time their foot will slip; for their day of disaster is near, and their doom is coming quickly."
+        },
+        {
+          "reference": "Romans 12:19",
+          "text": "Do not avenge yourselves, beloved, but leave room for God’s wrath. For it is written: “Vengeance is Mine; I will repay, says the Lord.”"
+        },
+        {
+          "reference": "Matthew 26:52-53",
+          "text": "“Put your sword back in its place,” Jesus said to him. “For all who draw the sword will die by the sword. Are you not aware that I can call on My Father, and He will at once put at My disposal more than twelve legions of angels?”"
+        },
+        {
+          "reference": "1 Peter 2:23",
+          "text": "When they heaped abuse on Him, He did not retaliate; when He suffered, He made no threats, but entrusted Himself to Him who judges justly."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 24 and 26",
+          "note": "Read both cave-and-camp episodes together. Twice God 'delivers' Saul to David, and twice David refuses. Watch how the second sparing (chapter 26) deepens the first: the same conviction, tested again, holds."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Anointed Who Would Not Seize the Throne",
+      "description": "Youngest son of Jesse, a shepherd anointed by Samuel as Israel's future king while Saul still reigned. Hunted across the wilderness by the very king he had once served with his harp, David twice held Saul's life in his hand and twice refused to take it. He is the king after God's own heart precisely because he would rather wait in a cave than grasp a crown by blood - a portrait, the New Testament will say, of the greater Son of David to come.",
+      "keyQuote": "May I never lift my hand against him, since he is the LORD’s anointed.",
+      "lessonForUs": "David teaches that the surest sign you trust God's promise is your willingness not to force it. The hand that stays down in the dark, when striking would be easy and even justified, is worshiping a God it believes will keep His word.",
+      "heading": "The Anointed Who Would Not Seize the Throne"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2087,
+  "scriptureReference_full": "1 Samuel 24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (kanaph H3671; mashiach) reflects standard lexical sources. The cross-references to Deuteronomy 32:35, Romans 12:19, Matthew 26:52-53, 1 Peter 2:23, and Luke 23:34 are quoted from the BSB."
+  ]
 }

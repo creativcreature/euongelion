@@ -1,38 +1,190 @@
 {
   "day": 58,
-  "title": "Korah’s rebellion",
-  "teaser": "Day 58 of Bible 365 — Numbers 16",
-  "framework": "Numbers 16 — Disputing God’s appointment",
+  "title": "The man who stood between the living and the dead",
+  "teaser": "Korah wanted the priesthood for himself. When the plague broke loose, it was the priest he envied who ran into the dying and stopped death with his own body.",
+  "framework": "Numbers 16 — Disputing God's appointment",
   "scriptureReference": "Numbers 16",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 58"
+      "type": "scripture",
+      "reference": "Numbers 16:3, 46-48",
+      "translation": "BSB",
+      "emphasis": [
+        "You have taken too much upon yourselves",
+        "make atonement for them",
+        "between the living and the dead"
+      ],
+      "hebrewOriginal": "וַיַּעֲמֹד בֵּין־הַמֵּתִים וּבֵין הַחַיִּים וַתֵּעָצַר הַמַּגֵּפָה",
+      "passage": "They came together against Moses and Aaron and told them, \"You have taken too much upon yourselves! For everyone in the entire congregation is holy, and the LORD is in their midst. Why then do you exalt yourselves above the assembly of the LORD?\" ... Moses said to Aaron, \"Take your censer, place fire from the altar in it, and add incense. Go quickly to the congregation and make atonement for them, because wrath has come out from the LORD; the plague has begun.\" So Aaron took the censer as Moses had ordered and ran into the midst of the assembly. And seeing that the plague had begun among the people, he offered the incense and made atonement for the people. He stood between the living and the dead, and the plague was halted."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Numbers 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיְכַפֵּר",
+      "transliteration": "vaykapper",
+      "pronunciation": "vai-kha-PEHR",
+      "meaning": "and he made atonement, he covered, he made a covering for",
+      "rootMeaning": "From kaphar — to cover over, to wipe away, to ransom. The same root names the kapporet, the cover of the ark where blood was sprinkled, and Yom Kippur, the Day of Atonement. To atone is to put a covering between guilt and the holiness that would otherwise consume it.",
+      "usageNote": "Numbers 16:46-47 is one of the rare places where atonement is made not with sacrificial blood but with incense carried by the priest into the middle of a dying crowd. The covering is the priest himself, present in the breach, offering what only he is permitted to offer.",
+      "wordByWord": [
+        {
+          "word": "קַח",
+          "transliteration": "qach",
+          "meaning": "take - the command Moses gives Aaron"
+        },
+        {
+          "word": "מַחְתָּה",
+          "transliteration": "machtah",
+          "meaning": "censer, fire-pan - the very vessel Korah's men had claimed for themselves"
+        },
+        {
+          "word": "וְכַפֵּר",
+          "transliteration": "vekapper",
+          "meaning": "and make atonement, make a covering"
+        },
+        {
+          "word": "הַמַּגֵּפָה",
+          "transliteration": "hammagephah",
+          "meaning": "the plague, the blow, the striking - wrath gone loose among the people"
+        },
+        {
+          "word": "וַתֵּעָצַר",
+          "transliteration": "vatte'atsar",
+          "meaning": "and it was held back, restrained, stopped"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כַּפֹּרֶת",
+          "reference": "Kapporet, the mercy seat over the ark, comes from the same root kaphar. The place of atonement is literally the covering - and here the covering is a living priest standing where death is breaking through."
+        }
+      ],
+      "strongsNumber": "H3722",
+      "definition": "kaphar: to cover, to make atonement, to pacify, to ransom",
+      "usage": "Aaron does not strike the plague down or argue with it. He covers the people - placing himself, censer in hand, between the wrath and those it is about to reach."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Disputing God’s appointment. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our true high priest (Heb 5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Too Much Upon Yourselves",
+      "body": "The charge sounds almost reasonable. Korah, a Levite, gathers Dathan, Abiram, and two hundred fifty respected leaders, and they stand before Moses and Aaron with a complaint dressed as theology: \"You have taken too much upon yourselves! For everyone in the entire congregation is holy, and the LORD is in their midst. Why then do you exalt yourselves above the assembly of the LORD?\"\n\nThey are not wrong that all Israel is holy; God had said exactly that at Sinai. The lie is hidden underneath the true sentence. Korah uses the holiness of everyone to erase the appointment of anyone. If all are priests, then no one is set apart, and the office Aaron holds is just a grab for power. What looks like a defense of the people is really a grasp at the priesthood - Moses names it plainly: \"you are seeking the priesthood as well.\"\n\nThis is the oldest temptation wearing fresh clothes. In the garden the serpent did not deny that God is good; he questioned whether God had the right to draw a line. Korah does the same with the line God drew around the altar. He cannot bear that nearness to God is something given rather than seized. And so he disputes the appointment - not God's existence, not God's holiness, but God's right to choose who stands where.",
+      "keyInsight": "Korah's rebellion is not crude atheism. It is the refusal to receive nearness to God as a gift. He wants the priesthood, but on his own terms, taken rather than given.",
+      "content": "The charge sounds almost reasonable. Korah, a Levite, gathers Dathan, Abiram, and two hundred fifty respected leaders, and they stand before Moses and Aaron with a complaint dressed as theology: \"You have taken too much upon yourselves! For everyone in the entire congregation is holy, and the LORD is in their midst. Why then do you exalt yourselves above the assembly of the LORD?\"\n\nThey are not wrong that all Israel is holy; God had said exactly that at Sinai. The lie is hidden underneath the true sentence. Korah uses the holiness of everyone to erase the appointment of anyone. If all are priests, then no one is set apart, and the office Aaron holds is just a grab for power. What looks like a defense of the people is really a grasp at the priesthood - Moses names it plainly: \"you are seeking the priesthood as well.\"\n\nThis is the oldest temptation wearing fresh clothes. In the garden the serpent did not deny that God is good; he questioned whether God had the right to draw a line. Korah does the same with the line God drew around the altar. He cannot bear that nearness to God is something given rather than seized. And so he disputes the appointment - not God's existence, not God's holiness, but God's right to choose who stands where."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Promotion That Was Never Offered",
+      "body": "There is a particular kind of bitterness that grows in a person who is close to something good but not in charge of it. Korah was a Levite. He carried holy things. He served at the tabernacle. He was not on the outside looking in - he was already near. Moses presses exactly there: \"Is it not enough for you that the God of Israel has separated you from the congregation of Israel and brought you near to Himself?\"\n\nIt was not enough. It rarely is, once we have decided that what we were given is too small.\n\nI have watched this happen in churches and companies and families. Someone is trusted, valued, drawn close - and the nearness curdles into resentment because it is not the role they wanted. They begin to frame their ambition as a principle. \"This isn't about me,\" they say, \"it's about fairness, it's about everyone having a voice.\" Sometimes that is exactly true and the structure really is unjust. And sometimes, like Korah, we have simply mistaken a gift for an insult, and we are willing to burn down the whole arrangement rather than say out loud the small, ugly truth: I wanted to be the one chosen, and I wasn't.",
+      "connectionToTheme": "Korah was already brought near. The rebellion grows not out of distance from God but out of refusing the particular nearness he was given.",
+      "content": "There is a particular kind of bitterness that grows in a person who is close to something good but not in charge of it. Korah was a Levite. He carried holy things. He served at the tabernacle. He was not on the outside looking in - he was already near. Moses presses exactly there: \"Is it not enough for you that the God of Israel has separated you from the congregation of Israel and brought you near to Himself?\"\n\nIt was not enough. It rarely is, once we have decided that what we were given is too small.\n\nI have watched this happen in churches and companies and families. Someone is trusted, valued, drawn close - and the nearness curdles into resentment because it is not the role they wanted. They begin to frame their ambition as a principle. \"This isn't about me,\" they say, \"it's about fairness, it's about everyone having a voice.\" Sometimes that is exactly true and the structure really is unjust. And sometimes, like Korah, we have simply mistaken a gift for an insult, and we are willing to burn down the whole arrangement rather than say out loud the small, ugly truth: I wanted to be the one chosen, and I wasn't."
+    },
+    {
+      "type": "insight",
+      "heading": "The Priest Ran Toward What Everyone Fled",
+      "body": "Watch the shape of the whole chapter and it turns on one image. Korah wanted the censer. He wanted to carry fire and incense before the LORD, to stand where Aaron stood. He gathered two hundred fifty men with censers in their hands to prove the office should be theirs. And the censers killed them - fire came out from the LORD and consumed the men who held them.\n\nThen, only one day later, the plague breaks loose among the grumbling people, and the same office Korah envied does the one thing his rebellion never could. Moses tells Aaron: \"Take your censer, place fire from the altar in it, and add incense. Go quickly... make atonement for them.\" And Aaron runs - not away from the dying, but into the middle of them. He stands with his censer in the gap. \"He stood between the living and the dead, and the plague was halted.\"\n\nThe censer Korah grasped at as a trophy turns out to be a burden. In the wrong hands it is a death sentence; in the appointed hands it is a covering. The priesthood is not a prize that lifts you above the people. It is a calling that sends you into the place of dying on their behalf. Korah wanted to stand above the assembly. Aaron was called to stand in the breach for it.",
+      "historicalContext": "Numbers belongs to the wilderness generation, the people who left Egypt but kept rehearsing their way back toward it in their hearts. Korah's revolt is one of a chain of wilderness rebellions; the very next chapter, Numbers 17, settles the question of priesthood for good when Aaron's staff alone buds, blossoms, and bears almonds overnight - life from a dead stick, God's quiet answer to a violent dispute.",
+      "fascinatingFact": "The bronze censers of the rebels were not thrown away. God commands that they be hammered into a sheet to overlay the altar (Numbers 16:38-39) - a permanent reminder, welded into the place of sacrifice, that nearness to God is appointed, not seized. The warning against the sin was fused into the very surface where atonement was made.",
+      "content": "Watch the shape of the whole chapter and it turns on one image. Korah wanted the censer. He wanted to carry fire and incense before the LORD, to stand where Aaron stood. He gathered two hundred fifty men with censers in their hands to prove the office should be theirs. And the censers killed them - fire came out from the LORD and consumed the men who held them.\n\nThen, only one day later, the plague breaks loose among the grumbling people, and the same office Korah envied does the one thing his rebellion never could. Moses tells Aaron: \"Take your censer, place fire from the altar in it, and add incense. Go quickly... make atonement for them.\" And Aaron runs - not away from the dying, but into the middle of them. He stands with his censer in the gap. \"He stood between the living and the dead, and the plague was halted.\"\n\nThe censer Korah grasped at as a trophy turns out to be a burden. In the wrong hands it is a death sentence; in the appointed hands it is a covering. The priesthood is not a prize that lifts you above the people. It is a calling that sends you into the place of dying on their behalf. Korah wanted to stand above the assembly. Aaron was called to stand in the breach for it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When wrath had broken loose and the people were dying, Aaron the high priest took his censer, ran into the midst of them, and stood between the living and the dead until the plague stopped.",
+      "modernApplication": "We still meet Korah's logic everywhere - the assumption that all spiritual authority is just a power grab, that the only honest posture toward any appointed mediator is suspicion. Sometimes that suspicion is earned. But the cure for a Korah is not to abolish the priesthood; it is to find the true Priest, the one who does not lift Himself above us but lowers Himself into the dying with us.",
+      "connectionPoint": "Numbers 16 sets up a question the rest of Scripture answers: who is fit to stand in the gap between a holy God and a dying people? Aaron does it once, with a censer, and the wrath is held back for a day. Hebrews picks up the thread and says the priesthood God appointed in Aaron was always pointing past Aaron - to a Priest \"called by God, just as Aaron was\" (Hebrews 5:4), who would offer not incense but Himself.",
+      "newTestamentEcho": "\"He always lives to intercede\" for those who draw near to God through Him (Hebrews 7:25). What Aaron did for one terrible afternoon, standing between the living and the dead, Jesus did at the cross and does forever: the one mediator between God and men (1 Timothy 2:5), who took His stand in the very place of death and held back the plague that was ours."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you treated a gift as an insult - mistaking the place God gave you for a place beneath you?",
+      "additionalQuestions": [
+        "Korah dressed his ambition as a principle ('everyone is holy'). Where might you be using a true statement to justify a grasping heart?",
+        "Aaron's holiness was proven not by being lifted above the people but by running toward their dying. What would it look like to measure spiritual maturity that way in your own life?",
+        "Is there an appointed authority you are tempted to dispute mainly because it isn't you? How would you tell the difference between righteous protest and Korah's envy?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I confess how easily I dress my wanting in the language of fairness. Like Korah, I have been brought near and called it not enough. Forgive me for the times I disputed Your appointments because I wanted the office for myself. Thank You for the true High Priest who did not exalt Himself above me but ran into my dying and made atonement with His own life. Let me stop grasping at the censer and learn to receive the covering. Stand between me and the death I have earned, as You always do. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where you have been brought near and called it 'not enough.' Instead of disputing the appointment, thank God for the specific nearness He gave you - and ask Him to make you someone who stands in the gap for others rather than above them.",
+      "leavingAtCross": [
+        "The ambition I have disguised as principle - wanting the role and calling it fairness",
+        "The resentment that turns a gift into an insult because it isn't the gift I wanted",
+        "The suspicion that every authority is only a power grab, with no room for a true mediator"
+      ],
+      "receivingFromCross": [
+        "The freedom to receive nearness to God as gift rather than seize it as a trophy",
+        "A High Priest who does not stand above me but stands between me and death",
+        "A calling that sends me toward others' suffering rather than over their heads"
+      ],
+      "content": "Today, name one place where you have been brought near and called it 'not enough.' Instead of disputing the appointment, thank God for the specific nearness He gave you - and ask Him to make you someone who stands in the gap for others rather than above them."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was true in Korah's accusation, and where exactly did the lie hide inside the true statement?",
+        "Why does it matter that Aaron used a censer - the very thing Korah's men had grasped at - to make atonement?",
+        "How does Aaron standing 'between the living and the dead' point forward to the work of Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a time you wanted a role or recognition and framed your wanting as a principle. What did it cost the people around you?",
+        "Talk about the difference between protesting genuine injustice and Korah's envy - how do you tell them apart in real life?",
+        "Where is God calling each of you to 'stand in the gap' for someone right now - to step toward their hardship rather than over their head?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Numbers 17:5",
+          "text": "The staff belonging to the man I choose will sprout, and I will rid Myself of the constant grumbling of the Israelites against you."
+        },
+        {
+          "reference": "Hebrews 5:4",
+          "text": "No one takes this honor upon himself; he must be called by God, just as Aaron was."
+        },
+        {
+          "reference": "Hebrews 7:25",
+          "text": "Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        },
+        {
+          "reference": "1 Timothy 2:5",
+          "text": "For there is one God, and there is one mediator between God and men, the man Christ Jesus."
+        },
+        {
+          "reference": "Jude 1:11",
+          "text": "Woe to them! They have traveled the path of Cain; they have rushed headlong into the error of Balaam; they have perished in Korah's rebellion."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 16-17",
+          "note": "Read the two chapters together. Numbers 16 is the violent dispute over priesthood; Numbers 17 is God's gentle, final answer - Aaron's budding staff. Watch how the question 'who is appointed?' is settled by life from dead wood rather than by force."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Aaron",
+      "title": "The High Priest Who Stood in the Breach",
+      "description": "Brother of Moses and first high priest of Israel, the man God appointed to carry incense and blood before the LORD on behalf of the people. Aaron was no flawless hero - he had earlier made the golden calf - yet here, in the chaos of Korah's aftermath, he becomes a living picture of his office. When the plague broke out, he took his censer and ran into the dying, standing between the living and the dead until the wrath was halted.",
+      "keyQuote": "He stood between the living and the dead, and the plague was halted.",
+      "lessonForUs": "The priesthood Korah envied was never a throne above the people; it was a place in the gap on their behalf. Aaron foreshadows the true and better High Priest, called by God just as Aaron was (Hebrews 5:4), who stepped into our death and stopped it - not with incense, but with Himself.",
+      "heading": "The High Priest Who Stood in the Breach"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1919,
+  "scriptureReference_full": "Numbers 16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (kaphar / vaykapper, H3722; kapporet; machtah) reflects standard lexical sources. The connection of Numbers 16:46-48 to Christ as the appointed High Priest who intercedes follows Hebrews 5:4 and 7:25."
+  ]
 }

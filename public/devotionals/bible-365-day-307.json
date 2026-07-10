@@ -1,38 +1,181 @@
 {
   "day": 307,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 6 — Deeper Dive",
-  "teaser": "Day 307 of Bible 365 — Luke 15, 24",
+  "title": "Known at the Table",
+  "teaser": "A father runs while his son is still far off; two travelers recognize the risen Lord in broken bread. In both, the long not-being-known ends at a table.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 307"
+      "type": "scripture",
+      "reference": "Luke 15:20, 24; 24:30-31",
+      "translation": "BSB",
+      "emphasis": [
+        "while he was still in the distance",
+        "was lost and is found",
+        "their eyes were opened and they recognized Jesus"
+      ],
+      "greekOriginal": "καὶ διηνοίχθησαν αὐτῶν οἱ ὀφθαλμοί, καὶ ἐπέγνωσαν αὐτόν",
+      "passage": "So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him. ... For this son of mine was dead and is alive again! He was lost and is found! So they began to celebrate. ... While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus—and He disappeared from their sight."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐπιγινώσκω",
+      "transliteration": "epiginōskō",
+      "pronunciation": "eh-pee-gih-NOSS-koh",
+      "meaning": "to recognize, to know fully, to perceive who someone truly is",
+      "rootMeaning": "Gnōskō is the ordinary word for knowing. The prefix epi- intensifies it: not knowing about, but knowing upon, knowing in full - the moment a face that was only half-registered suddenly resolves into someone you love.",
+      "usageNote": "Luke uses the recognition language at the hinge of the Emmaus story: their eyes were opened and they recognized (epegnōsan) Him (Luke 24:31). The same idea of full knowing runs through the prodigal: the father knew his son from a distance, before a word of confession was spoken. In Luke, salvation keeps arriving as a recognition - a knowing that breaks open.",
+      "wordByWord": [
+        {
+          "word": "διηνοίχθησαν",
+          "transliteration": "diēnoichthēsan",
+          "meaning": "were opened wide, were thrown open - the same verb Luke uses for opening the Scriptures (24:32) and opening minds (24:45)"
+        },
+        {
+          "word": "αὐτῶν οἱ ὀφθαλμοί",
+          "transliteration": "autōn hoi ophthalmoi",
+          "meaning": "their eyes"
+        },
+        {
+          "word": "ἐπέγνωσαν",
+          "transliteration": "epegnōsan",
+          "meaning": "they recognized, they knew fully"
+        },
+        {
+          "word": "αὐτόν",
+          "transliteration": "auton",
+          "meaning": "Him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διανοίγω",
+          "reference": "Dianoigō (to open thoroughly) appears three times in Luke 24 - the eyes are opened (v. 31), the Scriptures are opened (v. 32), the mind is opened (v. 45). The same hand that opens a book opens a pair of eyes."
+        }
+      ],
+      "strongsNumber": "G1921",
+      "definition": "to know upon some mark, to recognize; by implication to become fully acquainted with, to acknowledge",
+      "usage": "Recognition in Luke is never something we achieve by squinting harder. The eyes are opened - a passive verb, something done to the two travelers. They do not finally figure Jesus out; He lets Himself be known."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Stories That Turn on the Same Hinge",
+      "body": "Luke tells two homecomings, chapters apart, and they rhyme. In chapter 15 a son who took his inheritance and burned it through in a distant country comes trudging back, rehearsing a speech about how he is no longer worthy to be called a son. He never gets to finish it. \"While he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him.\" The recognition runs from the father outward, across the whole length of the road, before the boy can say a word.\n\nIn chapter 24, two disciples walk away from Jerusalem on the afternoon of the resurrection, talking over the wreckage of their hopes. A stranger falls in beside them and walks the seven miles to Emmaus, opening the Scriptures until their chests ache - and still \"their eyes were kept from recognizing Him.\" Only at the table, when He takes bread, blesses it, breaks it, and hands it to them, do their eyes come open. They know Him in the breaking, in the giving - and in that instant He is gone from their sight.\n\nSet the two scenes side by side and the shape is the same. A long stretch of not-being-known. A figure who closes the distance first. And then a recognition that lands not at the end of an argument but in an act of welcome - a father's arms, a host's broken bread.",
+      "keyInsight": "In both stories, the one who is lost does not find his way home by clearer thinking. He is found - the father recognizes the son from afar; the risen Lord lets Himself be recognized in the breaking of bread.",
+      "content": "Luke tells two homecomings, chapters apart, and they rhyme. In chapter 15 a son who took his inheritance and burned it through in a distant country comes trudging back, rehearsing a speech about how he is no longer worthy to be called a son. He never gets to finish it. \"While he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him.\" The recognition runs from the father outward, across the whole length of the road, before the boy can say a word.\n\nIn chapter 24, two disciples walk away from Jerusalem on the afternoon of the resurrection, talking over the wreckage of their hopes. A stranger falls in beside them and walks the seven miles to Emmaus, opening the Scriptures until their chests ache - and still \"their eyes were kept from recognizing Him.\" Only at the table, when He takes bread, blesses it, breaks it, and hands it to them, do their eyes come open. They know Him in the breaking, in the giving - and in that instant He is gone from their sight.\n\nSet the two scenes side by side and the shape is the same. A long stretch of not-being-known. A figure who closes the distance first. And then a recognition that lands not at the end of an argument but in an act of welcome - a father's arms, a host's broken bread."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Long Hallway",
+      "body": "A friend of mine spent four years not speaking to her father. The reasons were real on both sides, and the silence calcified the way silence does - into a thing easier to keep than to break. When he got sick, she flew home not knowing what she would say. She had a speech ready, the way the prodigal did, something measured and careful about boundaries and the past.\n\nShe walked into the care home and saw him at the far end of a long hallway, smaller than she remembered, in a wheelchair by the window. He saw her too. And before she had crossed even half the distance, before she could get a single rehearsed sentence out, he was already crying and reaching out both arms.\n\nShe told me later that the speech never happened. \"He knew me before I got there,\" she said. \"All I had to do was keep walking.\" That is the geometry of Luke 15. The son drafts his confession on the long road home and only manages the first two lines, because the father is already running, already weeping, already covering the distance the son could never have closed on his own.",
+      "connectionToTheme": "Recognition that runs toward us before we can explain ourselves - the father knows the son across the whole length of the road - is exactly how the risen Christ comes to the two on the Emmaus road, and how He still comes.",
+      "content": "A friend of mine spent four years not speaking to her father. The reasons were real on both sides, and the silence calcified the way silence does - into a thing easier to keep than to break. When he got sick, she flew home not knowing what she would say. She had a speech ready, the way the prodigal did, something measured and careful about boundaries and the past.\n\nShe walked into the care home and saw him at the far end of a long hallway, smaller than she remembered, in a wheelchair by the window. He saw her too. And before she had crossed even half the distance, before she could get a single rehearsed sentence out, he was already crying and reaching out both arms.\n\nShe told me later that the speech never happened. \"He knew me before I got there,\" she said. \"All I had to do was keep walking.\" That is the geometry of Luke 15. The son drafts his confession on the long road home and only manages the first two lines, because the father is already running, already weeping, already covering the distance the son could never have closed on his own."
+    },
+    {
+      "type": "insight",
+      "heading": "Dead and Alive, Lost and Found",
+      "body": "Listen to how the father says it: \"For this son of mine was dead and is alive again! He was lost and is found!\" He says it twice in the chapter, once to the servants and once to the older brother, as if the words themselves are the celebration. Notice he does not say the boy was disobedient and is now sorry, or was foolish and is now wiser. He reaches for the largest words there are. Dead. Alive. Lost. Found. The vocabulary of resurrection.\n\nThat is not an accident of phrasing. Luke writes chapter 15 knowing where the Gospel is going. The same author who has the father announce a son \"alive again\" will, nine chapters later, walk two grieving disciples to Emmaus and let them discover that the One they thought was dead is alive - and that they had not recognized Him on the road. The parable was always a rehearsal. The homecoming feast in chapter 15 and the supper at Emmaus in chapter 24 are the same table seen from two angles: the place where the dead are found alive and known.\n\nAnd in both, the recognition costs something. The father kills the fattened calf so the feast can happen. The risen Lord is known in bread that is broken - body given, the same shape as the cross. There is no homecoming table in Luke that is not also a table of sacrifice.",
+      "historicalContext": "Luke writes his Gospel as an \"orderly account\" (Luke 1:3), and his ordering is deliberate. The three lost-and-found parables of chapter 15 (sheep, coin, son) all end in shared joy, and the language of \"dead and alive\" planted there surfaces again at the empty tomb and on the Emmaus road. First-century readers, who heard the Gospel read aloud whole rather than in isolated chapters, would have caught the echo across the scroll.",
+      "fascinatingFact": "Luke 24 uses a fourfold motion - He took bread, blessed it, broke it, gave it - in exactly the order of the Last Supper (Luke 22:19). The two travelers do not recognize Jesus by His face but by His hands doing what those hands did the night before He died. The gesture, not the appearance, opens their eyes.",
+      "content": "Listen to how the father says it: \"For this son of mine was dead and is alive again! He was lost and is found!\" He says it twice in the chapter, once to the servants and once to the older brother, as if the words themselves are the celebration. Notice he does not say the boy was disobedient and is now sorry, or was foolish and is now wiser. He reaches for the largest words there are. Dead. Alive. Lost. Found. The vocabulary of resurrection.\n\nThat is not an accident of phrasing. Luke writes chapter 15 knowing where the Gospel is going. The same author who has the father announce a son \"alive again\" will, nine chapters later, walk two grieving disciples to Emmaus and let them discover that the One they thought was dead is alive - and that they had not recognized Him on the road. The parable was always a rehearsal. The homecoming feast in chapter 15 and the supper at Emmaus in chapter 24 are the same table seen from two angles: the place where the dead are found alive and known.\n\nAnd in both, the recognition costs something. The father kills the fattened calf so the feast can happen. The risen Lord is known in bread that is broken - body given, the same shape as the cross. There is no homecoming table in Luke that is not also a table of sacrifice."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Luke binds two scenes: a father who recognizes his ruined son from a distance and runs to him, and a risen Lord whom two grieving disciples finally recognize when He breaks the bread. In both, the one who was given up for lost is found and known.",
+      "modernApplication": "Most of us are better at the rehearsed speech than the open hand. We approach God the way the prodigal practiced his confession - measuring our worthiness, getting the wording right, bracing for the verdict. But Luke keeps relocating the moment of recognition away from our explanations and into a welcome we receive: arms that reach first, bread that is handed to us. You are known before you finish your sentence.",
+      "connectionPoint": "The thread runs the length of Scripture. God clothes the shame of Adam before sending him out (Genesis 3:21). The father clothes the prodigal in the best robe before the boy can finish confessing (Luke 15:22). The risen Christ is known in the breaking of bread (Luke 24:35), and the Church has gathered at that broken-bread table ever since (1 Corinthians 11:24). One story, told and retold: the lost are found at a table they did not set.",
+      "newTestamentEcho": "What the prodigal's father pictures, the risen Christ fulfills. On the Emmaus road Jesus explains that it was \"necessary for the Christ to suffer these things and then to enter His glory\" (Luke 24:26) - the fattened calf of every homecoming feast is, in the end, Himself: the One given so the dead can be called alive and the lost can be found and known."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What speech have you been rehearsing for God - the careful account of why you are unworthy - and what would it mean to let Him reach you before you finish it?",
+      "additionalQuestions": [
+        "The two disciples walked beside the risen Lord for miles and did not know Him. Where might Christ already be walking with you in a season you have read only as loss?",
+        "They recognized Him not by His face but in the breaking of bread. Where in ordinary, shared, given things might your own eyes be waiting to open?",
+        "The father runs while the son is still far off. Which is harder for you to believe - that you can come home, or that you are wanted before you arrive?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have rehearsed my unworthiness so long I have mistaken it for honesty. Run to me while I am still far off. Open my eyes the way You opened theirs on the Emmaus road - not at the end of an argument, but in the breaking of bread, in the small given things I keep overlooking. I have walked beside You for miles and called it absence. Let me recognize You. Call me from dead to alive, from lost to found, and seat me at the table You set. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you make your case to God, stop rehearsing and simply receive. At one meal, slow down long enough to recognize the bread in your hands as something given. Let it be the place your eyes come open.",
+      "leavingAtCross": [
+        "The rehearsed speech about why I am no longer worthy to be called a son",
+        "The habit of reading my hardest season as a road where God is absent rather than walking unrecognized beside me",
+        "The belief that I must close the distance to God before He will close it to me"
+      ],
+      "receivingFromCross": [
+        "A Father who runs while I am still far off and recognizes me before I speak",
+        "Eyes opened in the breaking of bread - Christ known in what is given, not what I achieve",
+        "The largest words there are, spoken over me: dead and alive again, lost and found"
+      ],
+      "content": "Today, before you make your case to God, stop rehearsing and simply receive. At one meal, slow down long enough to recognize the bread in your hands as something given. Let it be the place your eyes come open."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "At what exact moment does the father recognize and embrace the prodigal - before or after the son confesses? What does the timing tell you about how God receives us?",
+        "The disciples walk and talk with Jesus for miles without knowing Him. What finally opens their eyes, and why is it significant that it is the breaking of bread rather than His teaching?",
+        "Why does the father reach for the words 'dead and alive again, lost and found' rather than simply 'gone and back'? How do those words tie chapter 15 to the resurrection in chapter 24?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the speech you tend to rehearse for God - the version of yourself you present when you pray. What would change if you believed He had already run to meet you?",
+        "Talk about a season you have read only as God's absence. Looking back, is there any sign He was walking the road with you unrecognized?",
+        "Ask each other: where do you most need your eyes opened right now - to recognize Christ in something given that you have been overlooking?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:22",
+          "text": "But the father said to his servants, 'Quick! Bring the best robe and put it on him. Put a ring on his finger and sandals on his feet.'"
+        },
+        {
+          "reference": "Luke 24:27",
+          "text": "And beginning with Moses and all the Prophets, He explained to them what was written in all the Scriptures about Himself."
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, 'Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?'"
+        },
+        {
+          "reference": "Luke 24:35",
+          "text": "Then the two told what had happened on the road, and how Jesus was recognized by them in the breaking of the bread."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15 and Luke 24",
+          "note": "Read the two chapters back to back in one sitting, watching for the shared language of being lost and found, dead and alive, and the table where the unrecognized one is finally known."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cleopas",
+      "title": "One of the Two on the Emmaus Road",
+      "description": "Named in Luke 24:18, Cleopas is one of two disciples walking from Jerusalem to Emmaus on resurrection afternoon, talking over the death of Jesus with a grief that had not yet heard the news of the empty tomb believed. A stranger joins them, opens the Scriptures, and is recognized only when He breaks the bread - at which point He vanishes, and the two run the seven miles back to Jerusalem in the dark to tell the others.",
+      "keyQuote": "Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?",
+      "lessonForUs": "Cleopas spent an entire afternoon beside the risen Lord and called it the worst day of his life. His story is a mercy to anyone walking a road that feels like absence: the One you think is gone may be the very One walking beside you, waiting to be known in the breaking of bread.",
+      "heading": "One of the Two on the Emmaus Road"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2144,
+  "scriptureReference_full": "Luke 15:11-24, 32; 24:13-35",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (epiginōskō G1921; dianoigō, the opening of eyes, Scriptures, and minds in Luke 24:31-32, 45) reflects standard lexical sources."
+  ]
 }

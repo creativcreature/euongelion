@@ -1,38 +1,172 @@
 {
   "day": 120,
-  "title": "Elisha Ministry — Day 1 — Hook",
-  "teaser": "Day 120 of Bible 365 — 2 Kings 4-13",
+  "title": "The jar that did not run dry",
+  "teaser": "A widow has nothing left but one jar of oil and a creditor at the door. Elisha tells her to borrow empty jars from the whole street. The oil keeps flowing until the jars run out — never the oil.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 120"
+      "type": "scripture",
+      "reference": "2 Kings 4:1-7",
+      "translation": "BSB",
+      "emphasis": [
+        "nothing in the house but a jar of oil",
+        "borrow jars, even empty ones",
+        "the oil stopped flowing"
+      ],
+      "hebrewOriginal": "אֵין לְשִׁפְחָתְךָ כֹל בַּבַּיִת כִּי אִם־אָסוּךְ שָׁמֶן",
+      "passage": "Now the wife of one of the sons of the prophets cried out to Elisha, \"Your servant, my husband, is dead, and you know that your servant feared the LORD. And now his creditor is coming to take my two children as his slaves!\" \"How can I help you?\" asked Elisha. \"Tell me, what do you have in the house?\" She answered, \"Your servant has nothing in the house but a jar of oil.\" \"Go,\" said Elisha, \"borrow jars, even empty ones, from all your neighbors. Do not gather just a few. Then go inside, shut the door behind you and your sons, and pour oil into all these jars, setting the full ones aside.\" So she left him, and after she had shut the door behind her and her sons, they kept bringing jars to her, and she kept pouring. When all the jars were full, she said to her son, \"Bring me another.\" But he replied, \"There are no more jars.\" Then the oil stopped flowing. She went and told the man of God, and he said, \"Go, sell the oil, and pay your debt. Then you and your sons can live on the remainder.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אִישׁ הָאֱלֹהִים",
+      "transliteration": "ish ha-Elohim",
+      "pronunciation": "EESH ha-eh-loh-HEEM",
+      "meaning": "man of God",
+      "rootMeaning": "Ish is simply 'a man' - an ordinary human being, the same word used for any husband, neighbor, or stranger. Elohim is God. The phrase does not mean a man who is godlike; it means a man who belongs to God, who carries God's word and God's power as a borrowed thing. The accent falls on the second word, not the first.",
+      "usageNote": "Across 2 Kings 4-13, Elisha is called the man of God thirty times - far more often than he is called by his name. It is the defining title of these chapters. The Shunammite woman uses it first when she senses something holy passing her door (2 Kings 4:9). It is how the widow, the king, the foreign general, and the grieving mother all reach for him: not 'Elisha,' but 'the man of God.'",
+      "wordByWord": [
+        {
+          "word": "אִישׁ",
+          "transliteration": "ish",
+          "meaning": "a man, an ordinary human being"
+        },
+        {
+          "word": "הָאֱלֹהִים",
+          "transliteration": "ha-Elohim",
+          "meaning": "the God - with the definite article, the one true God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָסוּךְ",
+          "reference": "Asukh, the word for the widow's 'jar of oil,' is a rare term for a small flask used to anoint - not a storage vat but the last little vessel kept for the body. She is not hiding a reserve. This is the bottom of everything she has."
+        }
+      ],
+      "strongsNumber": "H376",
+      "definition": "ish - a man, male, husband; in construct with Elohim, a prophet who speaks and acts for God",
+      "usage": "The title is deliberately modest. Elisha never says the oil is his to give. The miracle happens behind a shut door, with no crowd and no spectacle - God's abundance running quietly through an ordinary man who knows he is only the channel."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What Do You Have in the House?",
+      "body": "A man has died. He feared the LORD, his widow says, as if to remind God of the account - this was one of Yours. And now the creditor is at the door, and in that economy a debt could be paid in children. Two boys are about to be taken as slaves. This is where the story of Elisha's long ministry truly opens for us: not on a battlefield or in a palace, but in a poor woman's kitchen, on the worst morning of her life.\n\nElisha does not lecture her about faith. He asks a strangely practical question: \"What do you have in the house?\" The answer is almost nothing - one small flask of oil, the kind kept for anointing a body. And from that almost-nothing, he builds the rescue. Go borrow jars, he says. Empty ones. From everybody. Do not gather just a few.\n\nThen comes the line that opens the whole sweep of chapters ahead. She shuts the door, and she pours. The oil keeps coming. Jar after borrowed jar fills up, and the only moment the flow stops is the moment there is nothing left to pour into. \"Bring me another.\" \"There are no more jars.\" Then the oil stopped flowing. The supply was never the problem. The only limit was the number of empty vessels she had been willing to go and collect.",
+      "keyInsight": "The oil did not run out. The jars ran out. God's provision was bounded only by what the widow brought Him to fill - by how much emptiness she was willing to carry into the room.",
+      "content": "A man has died. He feared the LORD, his widow says, as if to remind God of the account - this was one of Yours. And now the creditor is at the door, and in that economy a debt could be paid in children. Two boys are about to be taken as slaves. This is where the story of Elisha's long ministry truly opens for us: not on a battlefield or in a palace, but in a poor woman's kitchen, on the worst morning of her life.\n\nElisha does not lecture her about faith. He asks a strangely practical question: \"What do you have in the house?\" The answer is almost nothing - one small flask of oil, the kind kept for anointing a body. And from that almost-nothing, he builds the rescue. Go borrow jars, he says. Empty ones. From everybody. Do not gather just a few.\n\nThen comes the line that opens the whole sweep of chapters ahead. She shuts the door, and she pours. The oil keeps coming. Jar after borrowed jar fills up, and the only moment the flow stops is the moment there is nothing left to pour into. \"Bring me another.\" \"There are no more jars.\" Then the oil stopped flowing. The supply was never the problem. The only limit was the number of empty vessels she had been willing to go and collect."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Almost Didn't Knock",
+      "body": "A friend of mine spent two years certain she should never bother God with money. Faith was for the soul, she figured; the overdue bills on the counter were her own mess to manage, and bringing them up in prayer felt small, almost embarrassing, as if God had more important things to attend to.\n\nWhat finally cracked her was not a sermon. It was a stranger in her church kitchen who asked, plainly, \"What do you actually have?\" Not what she wished she had. Not what she was pretending to have. What was actually in the house. And the honest answer was: less than anyone knew, and a fear she had told no one.\n\nThe widow in this story does not pray a beautiful prayer. She cries out a complaint and a fact: my husband is dead, the creditor is coming, my sons are about to be taken. She brings her empty house into the open. And it is exactly that honesty - here is what I have, here is what I don't - that the man of God can work with. He cannot fill a jar that is still pretending to be full.",
+      "connectionToTheme": "The widow's rescue begins not with a great act of faith but with a plain confession of emptiness. God's abundance meets the vessel that is honest about being empty.",
+      "content": "A friend of mine spent two years certain she should never bother God with money. Faith was for the soul, she figured; the overdue bills on the counter were her own mess to manage, and bringing them up in prayer felt small, almost embarrassing, as if God had more important things to attend to.\n\nWhat finally cracked her was not a sermon. It was a stranger in her church kitchen who asked, plainly, \"What do you actually have?\" Not what she wished she had. Not what she was pretending to have. What was actually in the house. And the honest answer was: less than anyone knew, and a fear she had told no one.\n\nThe widow in this story does not pray a beautiful prayer. She cries out a complaint and a fact: my husband is dead, the creditor is coming, my sons are about to be taken. She brings her empty house into the open. And it is exactly that honesty - here is what I have, here is what I don't - that the man of God can work with. He cannot fill a jar that is still pretending to be full."
+    },
+    {
+      "type": "insight",
+      "heading": "A Ministry Made of Empty Vessels",
+      "body": "Step back from the kitchen and look at the whole stretch of chapters this morning opens. The oil that fills every borrowed jar is the first of a long series, and they all run the same direction: emptiness brought to the man of God, and abundance poured back.\n\nA foreign general named Naaman comes covered in leprosy and goes home with skin like a child's (2 Kings 5). A borrowed axe head sinks into the Jordan and a grieving young prophet watches iron float back up to his hand (2 Kings 6). A dead boy on a bed warms, sneezes seven times, and opens his eyes (2 Kings 4). The pattern almost becomes monotonous: something is lost, dead, or gone, and through this man the LORD gives it back fuller than before.\n\nIt does not even stop when Elisha dies. In the very last chapter of his story, a corpse is hastily thrown into Elisha's tomb, touches his bones, and the dead man stands up on his feet (2 Kings 13:20-21). Life keeps leaking out of this man's ministry even from the grave. That is the deliberate shape of these chapters: God determined to be known in Israel not as the one who takes, but as the one who fills the empty and raises the dead.",
+      "historicalContext": "Elisha ministered in the northern kingdom of Israel during the ninth century BC, through the reigns of Joram, Jehu, Jehoahaz, and Jehoash - an era of military pressure from Aram (Syria), political bloodshed, and widespread worship of Baal. Into that anxious, idol-crowded world, the Elisha narratives press a single counter-claim: the LORD, not Baal, is the God who actually provides. Many of the miracles are quiet and domestic - oil, bread, a healed child - aimed less at impressing kings than at proving, household by household, who truly sustains life.",
+      "fascinatingFact": "Elisha's name means 'God is salvation' - and it shares its root with the names Joshua and Yeshua, the Hebrew name we render as Jesus. The prophet whose ministry overflows with rescue, healing, and resurrection carries, in his own name, the meaning that finds its fullness in Christ.",
+      "content": "Step back from the kitchen and look at the whole stretch of chapters this morning opens. The oil that fills every borrowed jar is the first of a long series, and they all run the same direction: emptiness brought to the man of God, and abundance poured back.\n\nA foreign general named Naaman comes covered in leprosy and goes home with skin like a child's (2 Kings 5). A borrowed axe head sinks into the Jordan and a grieving young prophet watches iron float back up to his hand (2 Kings 6). A dead boy on a bed warms, sneezes seven times, and opens his eyes (2 Kings 4). The pattern almost becomes monotonous: something is lost, dead, or gone, and through this man the LORD gives it back fuller than before.\n\nIt does not even stop when Elisha dies. In the very last chapter of his story, a corpse is hastily thrown into Elisha's tomb, touches his bones, and the dead man stands up on his feet (2 Kings 13:20-21). Life keeps leaking out of this man's ministry even from the grave. That is the deliberate shape of these chapters: God determined to be known in Israel not as the one who takes, but as the one who fills the empty and raises the dead."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Through Elisha, the man of God, the LORD filled a poor widow's borrowed jars with oil until the jars ran out - the supply limited only by the emptiness she brought to be filled.",
+      "modernApplication": "Most of us manage our scarcity privately. We keep the overdue bill, the failing marriage, the quiet despair behind a shut door, and we present a full jar to everyone, including God. But provision begins where pretense ends. The first move is not to manufacture more faith; it is to stop hiding the empty house and answer honestly the question, \"What do you have?\"",
+      "connectionPoint": "Elisha was only ever the man of God - the channel, never the source. He says nothing about the oil being his to give. The whole point of his crowded, miracle-soaked ministry is to keep pointing past himself to the One whose abundance was actually flowing. Which is why the story still feels unfinished. A channel this full makes you wonder about the spring it came from.",
+      "newTestamentEcho": "Centuries later, another wedding runs dry and a mother says, do whatever He tells you; Jesus has servants fill six stone jars to the brim, and the water becomes wine (John 2). On a hillside He takes five loaves, gives thanks, and feeds thousands until twelve baskets of leftovers remain (John 6:11-13). Where Elisha was a man of God, Jesus is God become man - not the channel of the abundance but its source. Elisha could fill the jars in the room; Christ pours out the Spirit, John says, 'without limit' (John 3:34), and the only jar that goes unfilled is the one we insist is already full."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the man of God asked you this morning, \"What do you have in the house?\" - what is the honest, unglamorous answer you would rather not give?",
+      "additionalQuestions": [
+        "Where in your life are you presenting a full jar to God and to everyone else, while the house behind the door is nearly empty?",
+        "The widow had to go and borrow empty jars before any oil could flow. What 'empty jars' - what admitted needs - have you been unwilling to carry into the open?",
+        "The oil stopped only when the jars ran out. Is it possible you are receiving less than God intends to give simply because you have brought Him so little room?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You ask what I have in the house, and I have been so quick to say I am fine. Today let me answer honestly. Here is the empty jar I keep hidden; here is the debt I am afraid of; here is the room I have kept You out of. I bring You my emptiness instead of my pretending. Fill what I am willing to open. And teach me, as I begin these chapters, to see past every man of God to You - the source who fills the empty and raises the dead. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'empty jar' you have been keeping behind a shut door - a fear, a lack, a need you've told no one. Say it plainly to God, out loud if you can. Bring Him the honest emptiness, not the polished version, and ask Him to fill it.",
+      "leavingAtCross": [
+        "The full jar I keep showing the world while the house behind the door is nearly empty",
+        "The pride that says I should manage my scarcity privately and not bother God with it",
+        "The fear that there will not be enough - that the oil will run out before the need does"
+      ],
+      "receivingFromCross": [
+        "Permission to be honest about exactly what I have and don't have",
+        "The truth that God's supply is never the limit - only the room I bring Him to fill",
+        "A glimpse of the One whose abundance flows without measure, who is the source and not merely the channel"
+      ],
+      "content": "Today, name one 'empty jar' you have been keeping behind a shut door - a fear, a lack, a need you've told no one. Say it plainly to God, out loud if you can. Bring Him the honest emptiness, not the polished version, and ask Him to fill it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In the widow's story, what actually ran out - the oil, or the jars? Why does that distinction matter for how you think about God's provision?",
+        "Why might the recurring title 'man of God' (used 30 times across these chapters) be more important than Elisha's own name?",
+        "How do the miracles of oil, healing, and resurrection across 2 Kings 4-13 point forward to Christ - and where do they fall short of Him?"
+      ],
+      "forAccountabilityPartners": [
+        "Answer honestly to one another: if God asked, 'What do you have in the house?' what would you rather not say out loud?",
+        "Name one empty jar you have been hiding - one need you've kept behind a shut door - and let someone else know it exists.",
+        "Talk about the difference between a 'man of God' who channels God's power and Jesus, who is the source. What changes when you pray to the source?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 5:14",
+          "text": "So Naaman went down and dipped himself in the Jordan seven times, according to the word of the man of God, and his flesh was restored and became like that of a little child, and he was clean."
+        },
+        {
+          "reference": "2 Kings 13:20-21",
+          "text": "And Elisha died and was buried. ... as soon as his body touched the bones of Elisha, the man was revived and stood up on his feet."
+        },
+        {
+          "reference": "John 6:11-13",
+          "text": "Then Jesus took the loaves and the fish, gave thanks, and distributed to those who were seated as much as they wanted. ... So they collected them and filled twelve baskets with the pieces of the five barley loaves left over by those who had eaten."
+        },
+        {
+          "reference": "John 3:34",
+          "text": "For the One whom God has sent speaks the words of God, for God gives the Spirit without limit."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 4",
+          "note": "Read the whole chapter to see the pattern begin: the widow's oil (vv. 1-7), the Shunammite's son raised (vv. 8-37), and the poisoned stew and multiplied bread (vv. 38-44) - emptiness met with abundance, again and again."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elisha",
+      "title": "The Man of God",
+      "description": "Successor to the prophet Elijah, Elisha ministered in the northern kingdom of Israel through the ninth century BC. He had asked for a double portion of Elijah's spirit (2 Kings 2:9), and the chapters that follow read like a flood of provision: oil for a widow, a son for the childless, healing for a leper, sight for the blind, bread for the hungry, life for the dead. He worked mostly among ordinary, desperate people rather than in royal courts, and Scripture names him 'man of God' far more often than it uses his name - a title that keeps the credit pointed past him to the LORD he served.",
+      "keyQuote": "Tell me, what do you have in the house?",
+      "lessonForUs": "Elisha never claimed the abundance as his own; he was the channel, not the spring. His ministry teaches us to bring our honest emptiness to God and to keep looking past every gifted servant to the Source - the One whose name, like Elisha's own, means salvation, and who came in the flesh to fill what we cannot.",
+      "heading": "The Man of God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1822,
+  "scriptureReference_full": "2 Kings 4:1-7 (within 2 Kings 4-13)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ish ha-Elohim, H376; asukh) reflects standard lexical sources. The meaning of the name Elisha ('God is salvation') and its shared root with Yeshua/Jesus is standard onomastic data.",
+    "The count of 30 uses of 'man of God' reflects the Berean Standard Bible text of 2 Kings 4-13 (occurring in 27 verses, three of which carry the phrase twice)."
+  ]
 }

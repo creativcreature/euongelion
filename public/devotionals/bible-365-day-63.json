@@ -1,38 +1,182 @@
 {
   "day": 63,
   "title": "What we forget on the way",
-  "teaser": "Day 63 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: remember",
-  "scriptureReference": "Sabbath",
+  "teaser": "On the edge of the good land, Moses warns Israel: the danger isn't hunger. It's being full and forgetting who fed you.",
+  "framework": "Deuteronomy 8:2-3, 11-14, 17-18",
+  "scriptureReference": "Deuteronomy 8:2-3, 11-14, 17-18",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 63"
+      "type": "scripture",
+      "reference": "Deuteronomy 8:2-3, 11-14, 17-18",
+      "translation": "BSB",
+      "emphasis": [
+        "Remember",
+        "man does not live on bread alone",
+        "Be careful not to forget",
+        "But remember"
+      ],
+      "hebrewOriginal": "וְזָכַרְתָּ אֶת־כָּל־הַדֶּרֶךְ אֲשֶׁר הֹלִיכֲךָ יְהוָה אֱלֹהֶיךָ",
+      "passage": "Remember that these forty years the LORD your God led you all the way in the wilderness, so that He might humble you and test you in order to know what was in your heart, whether or not you would keep His commandments. He humbled you, and in your hunger He gave you manna to eat, which neither you nor your fathers had known, so that you might understand that man does not live on bread alone, but on every word that comes from the mouth of the LORD. ... Be careful not to forget the LORD your God by failing to keep His commandments and ordinances and statutes, which I am giving you this day. Otherwise, when you eat and are satisfied, when you build fine houses in which to dwell, and when your herds and flocks grow large and your silver and gold increase and all that you have is multiplied, then your heart will become proud, and you will forget the LORD your God who brought you out of the land of Egypt, out of the house of slavery. ... You might say in your heart, “The power and strength of my hands have made this wealth for me.” But remember that it is the LORD your God who gives you the power to gain wealth, in order to confirm His covenant that He swore to your fathers even to this day."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "זָכַר / שָׁכַח",
+      "transliteration": "zakar / shakach",
+      "pronunciation": "zah-KHAR / shah-KHAKH",
+      "meaning": "to remember, to call to mind / to forget, to let slip away",
+      "rootMeaning": "Zakar is not idle nostalgia. In Hebrew, to remember is to act on what you recall - to keep faith with it, to let it govern what you do next. Shakach, its opposite, is not mainly a failure of memory but a failure of attention: to stop reckoning with someone, to live as though they were not there.",
+      "usageNote": "Deuteronomy is built on this pair. Moses says zakar - remember - and shakach - forget - again and again across the book, almost as a refrain. In chapter 8 alone the warning runs three times: remember the road (v. 2), do not forget the LORD (v. 11), remember who gives the power (v. 18). The whole sermon is one long plea against a forgetting that has not happened yet.",
+      "wordByWord": [
+        {
+          "word": "וְזָכַרְתָּ",
+          "transliteration": "vezakharta",
+          "meaning": "and you shall remember - second person, a command laid on the listener"
+        },
+        {
+          "word": "אֶת־כָּל־הַדֶּרֶךְ",
+          "transliteration": "et kol hadderekh",
+          "meaning": "all the way, the whole road - the entire wilderness journey, not just its high points"
+        },
+        {
+          "word": "הֹלִיכֲךָ",
+          "transliteration": "holikhakha",
+          "meaning": "He led you, He caused you to walk - the leading was God's doing, not the people's wandering"
+        },
+        {
+          "word": "פֶּן־תִּשְׁכַּח",
+          "transliteration": "pen tishkach",
+          "meaning": "lest you forget - the hinge of verse 11, the danger the whole chapter circles"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "זִכָּרוֹן / zikkaron",
+          "reference": "From the same root as zakar: a memorial, a remembrance. It names the things Israel set up so they would not forget - stones from the Jordan, the festivals, the Sabbath itself. Memory in Scripture is never left to chance; it is built into stone and bread and rest."
+        }
+      ],
+      "strongsNumber": "H2142",
+      "definition": "zakar (H2142): to remember, recall, bring to mind, and so to act upon; shakach (H7911): to forget, ignore, cease to care for",
+      "usage": "The forgetting Moses fears is the kind that comes with plenty, not poverty. A hungry man remembers the One who feeds him. A full man forgets. Deuteronomy 8 is addressed to people about to be full."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: remember. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the rememberer of mercy (Luke 1:54).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Sermon on the Edge of the Land",
+      "body": "Deuteronomy is a long goodbye. Israel is camped on the plains of Moab, the Jordan River the only thing between them and the land promised to Abraham. Moses, who will not cross over, has gathered the people for one final sermon - and he keeps reaching back. Remember the forty years. Remember the wilderness. Remember the hunger and the manna and the water from the rock.\n\nIt is a strange thing to dwell on, with the good land in sight. Why rehearse the hard road when the easy life is one river crossing away? Because Moses can see what the people cannot. The wilderness was not the threat. The wilderness, for all its snakes and thirst, kept Israel close - daily bread, daily dependence, daily looking up for the next provision. The real threat is the land of brooks and fountains and fine houses, where the herds grow large and the silver increases and a full heart slowly stops reaching for anything.\n\n\"Be careful not to forget the LORD your God,\" he says (v. 11). Not because forgetting is likely in famine, but because it is almost certain in abundance. The danger is not that they will starve. The danger is that they will be satisfied, and that being satisfied, they will forget who satisfied them - and begin to say in their hearts, \"The power and strength of my hands have made this wealth for me\" (v. 17).",
+      "keyInsight": "The wilderness humbled Israel into remembering. The good land would tempt them to forget. Moses preaches against the sin of the satisfied before they have even crossed the river.",
+      "content": "Deuteronomy is a long goodbye. Israel is camped on the plains of Moab, the Jordan River the only thing between them and the land promised to Abraham. Moses, who will not cross over, has gathered the people for one final sermon - and he keeps reaching back. Remember the forty years. Remember the wilderness. Remember the hunger and the manna and the water from the rock.\n\nIt is a strange thing to dwell on, with the good land in sight. Why rehearse the hard road when the easy life is one river crossing away? Because Moses can see what the people cannot. The wilderness was not the threat. The wilderness, for all its snakes and thirst, kept Israel close - daily bread, daily dependence, daily looking up for the next provision. The real threat is the land of brooks and fountains and fine houses, where the herds grow large and the silver increases and a full heart slowly stops reaching for anything.\n\n\"Be careful not to forget the LORD your God,\" he says (v. 11). Not because forgetting is likely in famine, but because it is almost certain in abundance. The danger is not that they will starve. The danger is that they will be satisfied, and that being satisfied, they will forget who satisfied them - and begin to say in their hearts, \"The power and strength of my hands have made this wealth for me\" (v. 17)."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House That Forgot the Tent",
+      "body": "A friend of mine spent two years living lean. New city, a job that barely covered rent, a folding table for a desk. He prayed differently in those years - short, specific, honest prayers, because the gap between what he had and what he needed was small enough to see across. He told me once that he had never felt so close to God, and never wanted to repeat it.\n\nThe work turned. The salary doubled, then doubled again. He bought the house, filled the rooms, set a real desk by the window. And the prayers, he said, did not stop so much as thin out. There was no crisis, no rebellion, nothing he could point to and confess. Just a slow drift, like a tide going out so gradually you don't notice the water has left until you look up and the boat is sitting on sand.\n\n\"The strange part,\" he said, \"is that nothing went wrong. Everything went right. That's what almost finished me.\" He had survived the wilderness. He nearly lost himself in the good land. Which is exactly what Moses, standing on the plains of Moab with the whole arc of human nature laid bare in front of him, was afraid of.",
+      "connectionToTheme": "The drift Moses warns about rarely announces itself as rebellion. It comes quietly, on the back of answered prayers and full hands - the satisfied heart that slowly stops reaching.",
+      "content": "A friend of mine spent two years living lean. New city, a job that barely covered rent, a folding table for a desk. He prayed differently in those years - short, specific, honest prayers, because the gap between what he had and what he needed was small enough to see across. He told me once that he had never felt so close to God, and never wanted to repeat it.\n\nThe work turned. The salary doubled, then doubled again. He bought the house, filled the rooms, set a real desk by the window. And the prayers, he said, did not stop so much as thin out. There was no crisis, no rebellion, nothing he could point to and confess. Just a slow drift, like a tide going out so gradually you don't notice the water has left until you look up and the boat is sitting on sand.\n\n\"The strange part,\" he said, \"is that nothing went wrong. Everything went right. That's what almost finished me.\" He had survived the wilderness. He nearly lost himself in the good land. Which is exactly what Moses, standing on the plains of Moab with the whole arc of human nature laid bare in front of him, was afraid of."
+    },
+    {
+      "type": "insight",
+      "heading": "Hunger Was the Lesson, Not the Punishment",
+      "body": "Read verse 3 slowly, because it overturns how we usually file hunger. \"He humbled you, and in your hunger He gave you manna to eat... so that you might understand that man does not live on bread alone, but on every word that comes from the mouth of the LORD.\"\n\nThe hunger was not God's neglect. It was God's teaching. He let them grow hungry on purpose, then fed them on purpose, with bread they could not store - it spoiled overnight, so it had to be gathered fresh each morning. The whole arrangement was a daily lesson in one truth: you do not live by what you can stockpile and control. You live by the word of the One who keeps giving, who keeps showing up at dawn.\n\nThis is why the good land is so dangerous. In the wilderness, the lesson was unavoidable - no manna, no breakfast. In the land, the granaries fill, the bread is in the cupboard, and the daily lesson goes quiet. The provision meant to point beyond itself becomes a thing you simply possess. Moses is begging Israel to keep hearing the lesson after the hunger that taught it is gone.",
+      "historicalContext": "The manna tradition was woven into Israel's worship long before Deuteronomy was preached. A jar of manna was kept before the ark as a memorial (Exodus 16:32-34), precisely so that later generations who had never been hungry could remember the wilderness diet. Deuteronomy 8 assumes that memorial: it is calling a people to live by a lesson their grandparents learned the hard way.",
+      "fascinatingFact": "The verb in verse 3 translated 'understand' carries the sense of being made to know through experience, not instruction. Israel did not learn that man lives by God's word from a lecture. They learned it from forty years of empty hands filled each morning - a theology taught entirely through breakfast.",
+      "content": "Read verse 3 slowly, because it overturns how we usually file hunger. \"He humbled you, and in your hunger He gave you manna to eat... so that you might understand that man does not live on bread alone, but on every word that comes from the mouth of the LORD.\"\n\nThe hunger was not God's neglect. It was God's teaching. He let them grow hungry on purpose, then fed them on purpose, with bread they could not store - it spoiled overnight, so it had to be gathered fresh each morning. The whole arrangement was a daily lesson in one truth: you do not live by what you can stockpile and control. You live by the word of the One who keeps giving, who keeps showing up at dawn.\n\nThis is why the good land is so dangerous. In the wilderness, the lesson was unavoidable - no manna, no breakfast. In the land, the granaries fill, the bread is in the cupboard, and the daily lesson goes quiet. The provision meant to point beyond itself becomes a thing you simply possess. Moses is begging Israel to keep hearing the lesson after the hunger that taught it is gone."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel was led forty years through the wilderness, humbled and fed with manna, so they would learn that man does not live on bread alone but on every word from the mouth of the LORD - and warned that fullness would tempt them to forget it.",
+      "modernApplication": "We rarely fall away in a season of crisis; crisis drives us to our knees. We drift in the season of plenty - when the bills are paid, the calendar is full, and the daily ache that used to send us to God has quietly gone away. The wilderness keeps us reaching. The good land tempts us to stop.",
+      "connectionPoint": "The remember-and-forget refrain of Deuteronomy runs through the whole of Scripture. Israel in the land forgets and is called back by the prophets. The Psalms plead, 'I will remember the works of the LORD' (Psalm 77:11). The Lord's Supper is given precisely against forgetting: bread again, this time His body, broken so that we 'do this in remembrance' (Luke 22:19). Manna in the wilderness; bread at the table; the same God teaching the same lesson - you live by what He gives.",
+      "newTestamentEcho": "When Jesus is led into the wilderness and fasts forty days, hungry, the tempter says, 'Tell these stones to become bread.' Jesus answers with this very verse: 'Man shall not live on bread alone, but on every word that comes from the mouth of God' (Matthew 4:4, quoting Deuteronomy 8:3). Where Israel forgot in their wilderness, Christ remembered in His - and lived the trust that they could not, on our behalf."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where has your life gotten full enough that the daily ache which used to send you to God has gone quiet?",
+      "additionalQuestions": [
+        "Think back to a leaner season when you prayed more honestly. What did you know about God then that you are at risk of forgetting now?",
+        "What in your life are you quietly crediting to 'the power and strength of my hands' that was actually given to you?",
+        "What is one daily provision - bread, breath, work, people - that you have stopped receiving as a gift and started treating as a possession?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You led me through the lean places, and I reached for You there. Now that my hands are fuller, keep me from the slow forgetting. Where I have begun to say in my heart that my own strength made this, remind me who gives the power. Teach me again that I do not live on bread alone, but on every word from Your mouth. Let me gather Your mercy fresh each morning, like manna, and not pretend I can store enough to last without You. Keep me remembering on the way. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a day to remember rather than to achieve. Sit quietly for a few minutes and walk back over your own wilderness - the lean season God brought you through. Name one specific way He provided that you have since started taking for granted, and say thank you for it out loud, by name, as a gift and not a given.",
+      "leavingAtCross": [
+        "The quiet pride that says my own hands made what I have",
+        "The forgetting that comes not in crisis but in comfort",
+        "The habit of receiving daily mercies as things I am owed"
+      ],
+      "receivingFromCross": [
+        "The freedom of being fed by God rather than fueled by myself",
+        "A memory kept alive on purpose, like a jar of manna before the ark",
+        "The promise that the One who led me through the wilderness has not stopped leading me in the land"
+      ],
+      "content": "Today is a day to remember rather than to achieve. Sit quietly for a few minutes and walk back over your own wilderness - the lean season God brought you through. Name one specific way He provided that you have since started taking for granted, and say thank you for it out loud, by name, as a gift and not a given."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to verse 3, what was the purpose of the hunger and the manna - and how does that reframe the way we usually think about hard, lean seasons?",
+        "Why does Moses warn about forgetting God in a time of plenty rather than a time of want? What is it about being satisfied that makes forgetting so likely?",
+        "How does Jesus' use of Deuteronomy 8:3 in His own wilderness temptation (Matthew 4:4) show Him succeeding where Israel failed?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a lean season when you prayed more honestly, and what you knew about God then that is harder to feel now.",
+        "Name one thing you tend to credit to your own effort that was actually given to you. Say it out loud to each other.",
+        "Ask each other: what daily provision have I stopped receiving as a gift? What would it look like to start giving thanks for it again?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 16:4",
+          "text": "Then the LORD said to Moses, “Behold, I will rain down bread from heaven for you. Each day the people are to go out and gather enough for that day. In this way I will test whether or not they will follow My instructions."
+        },
+        {
+          "reference": "Matthew 4:4",
+          "text": "But Jesus answered, “It is written: ‘Man shall not live on bread alone, but on every word that comes from the mouth of God.’”"
+        },
+        {
+          "reference": "Luke 22:19",
+          "text": "And He took the bread, gave thanks and broke it, and gave it to them, saying, “This is My body, given for you; do this in remembrance of Me.”"
+        },
+        {
+          "reference": "Psalm 103:2",
+          "text": "Bless the LORD, O my soul, and do not forget all His kind deeds—"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Deuteronomy 8",
+          "note": "Read the whole chapter aloud in one sitting, marking every time 'remember' and 'forget' appear. Watch how the wilderness (vv. 2-5) and the good land (vv. 7-18) are set against each other as two different kinds of test."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Prophet Who Would Not Cross Over",
+      "description": "The one God used to lead Israel out of Egypt and through forty years of wilderness. On the plains of Moab, barred from entering the promised land himself, Moses preaches the sermons that make up Deuteronomy - a leader pouring everything he has learned into a generation that will go where he cannot. He had watched this people forget God at the foot of Sinai while the mountain still smoked. He knew exactly how quickly the human heart lets go of what it has seen, which is why his last great theme is memory.",
+      "keyQuote": "Be careful not to forget the LORD your God.",
+      "lessonForUs": "Moses spent his final breath not on strategy for conquering the land but on guarding the heart against forgetting in it. The hardest faith to keep is not the faith that survives the wilderness, but the faith that stays awake once the wilderness is over.",
+      "heading": "The Prophet Who Would Not Cross Over"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1790,
+  "scriptureReference_full": "Deuteronomy 8:2-3, 11-14, 17-18",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (zakar H2142, shakach H7911) reflects standard lexical sources; the remember/forget refrain across Deuteronomy is a widely noted structural feature of the book."
+  ]
 }

@@ -1,38 +1,182 @@
 {
   "day": 166,
-  "title": "Ezekiel Visions — Day 5 — Resolution",
-  "teaser": "Day 166 of Bible 365 — Ezekiel 36-37",
+  "title": "Breath in the Bone-Yard",
+  "teaser": "God walks Ezekiel through a valley of dry bones and asks the impossible question. Then He answers it Himself — not by repair, but by breath.",
   "framework": "Ezekiel 36-37 — Ezekiel Visions",
   "scriptureReference": "Ezekiel 36-37",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 166"
+      "type": "scripture",
+      "reference": "Ezekiel 37:3-6",
+      "translation": "BSB",
+      "emphasis": [
+        "can these bones come to life?",
+        "only You know",
+        "I will cause breath to enter you",
+        "and you will come to life"
+      ],
+      "hebrewOriginal": "וְנָתַתִּי בָכֶם רוּחַ וִחְיִיתֶם",
+      "passage": "Then He asked me, \"Son of man, can these bones come to life?\" \"O Lord GOD,\" I replied, \"only You know.\" And He said to me, \"Prophesy concerning these bones and tell them, 'Dry bones, hear the word of the LORD! This is what the Lord GOD says to these bones: I will cause breath to enter you, and you will come to life. I will attach tendons to you and make flesh grow upon you and cover you with skin. I will put breath within you so that you will come to life. Then you will know that I am the LORD.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ezekiel 36-37**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ezekiel 36-37 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רוּחַ",
+      "transliteration": "ruach",
+      "pronunciation": "ROO-akh",
+      "meaning": "breath, wind, spirit",
+      "rootMeaning": "Ruach is air in motion - the breath in your lungs, the wind across the valley, the Spirit of God hovering over the waters. One word carries all three, and Ezekiel 37 plays on every layer at once.",
+      "usageNote": "Ruach appears ten times in Ezekiel 37:1-14, translated as 'Spirit,' 'breath,' and 'winds' in the same passage. The breath that fills the corpses, the four winds it is summoned from, and the Spirit God promises to put within His people are all the same Hebrew word. The vision is one long meditation on the one thing the dead cannot supply for themselves.",
+      "wordByWord": [
+        {
+          "word": "וְנָתַתִּי",
+          "transliteration": "venatatti",
+          "meaning": "and I will give, I will put"
+        },
+        {
+          "word": "בָכֶם",
+          "transliteration": "vakhem",
+          "meaning": "in you, within you"
+        },
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "breath, spirit, wind"
+        },
+        {
+          "word": "וִחְיִיתֶם",
+          "transliteration": "vichyitem",
+          "meaning": "and you will live, you will come to life"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נְשָׁמָה",
+          "reference": "In Genesis 2:7 God breathes the neshamah, the breath of life, into the dust and the man becomes a living being. Ezekiel 37 deliberately reaches back to that first breath: this is creation language, not repair language."
+        }
+      ],
+      "strongsNumber": "H7307",
+      "definition": "wind, breath, spirit; air in motion, whether of the body, the weather, or God",
+      "usage": "The same ruach blows through the whole Bible: the wind over the deep in Genesis 1:2, the breath in Adam's nostrils, the Spirit poured out at Pentecost. In Ezekiel, God commands Ezekiel to prophesy to the ruach - the only sermon in Scripture preached to the wind."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ezekiel Visions. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ gives a heart of flesh (Eph 1:18-19).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Question No One Should Be Able to Answer",
+      "body": "The hand of the LORD sets Ezekiel down in the middle of a valley, and it is full of bones. He is led all around among them - made to walk the whole field - and the text lingers on two details. There are very many. And they are very dry. Not fresh casualties, not the recently fallen, but bones long bleached, scattered, past any hope of identification. This is not a battlefield. It is what a battlefield becomes after the years have done their work.\n\nThen the question: \"Son of man, can these bones come to life?\" It is the kind of question that has only one honest answer, and the honest answer is no. Dry bones do not live. Ezekiel knows this. He has buried people. He is a priest in exile, sitting among a nation that has already been carried off, its temple in rubble, its future apparently closed. He has every reason to say no.\n\nWhat he says instead is the most truthful thing a person can say while standing in a graveyard: \"O Lord GOD, only You know.\" He does not pretend it is possible. He does not insist it is hopeless. He hands the question back to the only One who could possibly answer it. And that handing-back is where the vision begins to turn.",
+      "keyInsight": "Ezekiel does not answer \"yes\" out of forced optimism or \"no\" out of despair. He answers \"only You know\" - and that is the posture from which resurrection becomes possible. Hope here is not a feeling Ezekiel manufactures. It is a Person he defers to.",
+      "content": "The hand of the LORD sets Ezekiel down in the middle of a valley, and it is full of bones. He is led all around among them - made to walk the whole field - and the text lingers on two details. There are very many. And they are very dry. Not fresh casualties, not the recently fallen, but bones long bleached, scattered, past any hope of identification. This is not a battlefield. It is what a battlefield becomes after the years have done their work.\n\nThen the question: \"Son of man, can these bones come to life?\" It is the kind of question that has only one honest answer, and the honest answer is no. Dry bones do not live. Ezekiel knows this. He has buried people. He is a priest in exile, sitting among a nation that has already been carried off, its temple in rubble, its future apparently closed. He has every reason to say no.\n\nWhat he says instead is the most truthful thing a person can say while standing in a graveyard: \"O Lord GOD, only You know.\" He does not pretend it is possible. He does not insist it is hopeless. He hands the question back to the only One who could possibly answer it. And that handing-back is where the vision begins to turn."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sentence They Kept Saying",
+      "body": "God does not leave the vision as a riddle. He tells Ezekiel exactly who the bones are: \"these bones are the whole house of Israel.\" And then He quotes them. He repeats, word for word, the sentence the exiles had been saying to each other in Babylon: \"Our bones are dried up, and our hope has perished; we are cut off.\"\n\nThat is the line that gives the vision its weight. The valley is not an abstraction. It is a transcript of what a defeated people actually believed about themselves. Dried up - we are past help. Hope has perished - there is nothing left to wait for. Cut off - severed, not just from the land, but from the future, from God's promises, from any thread back to who they used to be.\n\nMost of us have said some version of that sentence. Maybe not out loud. Maybe it lives in the gap between how we look on a given morning and how we feel underneath it. Dried up. Done. Past the point where change is realistic. The remarkable thing about Ezekiel 37 is that God does not scold the exiles for saying it, and He does not argue them out of it. He simply moves into the valley where the sentence is true and acts.",
+      "connectionToTheme": "The dry bones are not a metaphor for general gloom. They are the literal self-assessment of exiled Israel - 'our hope has perished; we are cut off' - the verdict a person delivers over their own life when they have run out of reasons to expect anything new.",
+      "content": "God does not leave the vision as a riddle. He tells Ezekiel exactly who the bones are: \"these bones are the whole house of Israel.\" And then He quotes them. He repeats, word for word, the sentence the exiles had been saying to each other in Babylon: \"Our bones are dried up, and our hope has perished; we are cut off.\"\n\nThat is the line that gives the vision its weight. The valley is not an abstraction. It is a transcript of what a defeated people actually believed about themselves. Dried up - we are past help. Hope has perished - there is nothing left to wait for. Cut off - severed, not just from the land, but from the future, from God's promises, from any thread back to who they used to be.\n\nMost of us have said some version of that sentence. Maybe not out loud. Maybe it lives in the gap between how we look on a given morning and how we feel underneath it. Dried up. Done. Past the point where change is realistic. The remarkable thing about Ezekiel 37 is that God does not scold the exiles for saying it, and He does not argue them out of it. He simply moves into the valley where the sentence is true and acts."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Stages, and the Gap Between Them",
+      "body": "Watch the order carefully, because it is the heart of the chapter. Ezekiel prophesies, and there is a noise, a rattling, and the bones come together, bone to bone. Tendons appear, flesh grows, skin covers them. The bodies are rebuilt, head to foot, anatomically whole. And then the text stops you cold: \"but there was no breath in them.\"\n\nAssembled corpses. Complete, restored, and utterly dead. This is the most important pause in the vision. God could have done it all in one motion. Instead He builds the bodies first and deliberately leaves them lifeless - a valley of perfect mannequins - so that no one could ever confuse what comes next with the natural result of good construction.\n\nThen comes the second command, and it is strange: \"Prophesy to the breath.\" Ezekiel preaches to the wind. \"Come from the four winds, O breath, and breathe into these slain, so that they may live.\" Only then does the ruach enter, and they stand on their feet, a vast army. The lesson is built into the sequence. Restoration is not resurrection. You can reassemble every bone of a life - fix the habits, repair the relationships, rebuild the structure - and still be standing in a field of well-organized death. What raises the dead is not better assembly. It is the breath of God, and that has to be given, never engineered.",
+      "historicalContext": "Ezekiel prophesied to the Jewish exiles in Babylon after 597 BC, when Jerusalem and its temple had fallen and the people had been deported. Chapters 36 and 37 belong to the second half of the book, after the judgment oracles - a sustained turn toward restoration. The dry-bones vision answers the exiles' despair directly: the nation that looked nationally dead would be brought back, not by political maneuvering, but by God's own Spirit.",
+      "fascinatingFact": "The phrase 'Then you will know that I am the LORD' recurs more than fifty times across Ezekiel. The point of the resurrection is not merely that Israel survives - it is that, standing alive in a valley where they had no business living, they finally know who God is. Life given is how God reveals His name.",
+      "content": "Watch the order carefully, because it is the heart of the chapter. Ezekiel prophesies, and there is a noise, a rattling, and the bones come together, bone to bone. Tendons appear, flesh grows, skin covers them. The bodies are rebuilt, head to foot, anatomically whole. And then the text stops you cold: \"but there was no breath in them.\"\n\nAssembled corpses. Complete, restored, and utterly dead. This is the most important pause in the vision. God could have done it all in one motion. Instead He builds the bodies first and deliberately leaves them lifeless - a valley of perfect mannequins - so that no one could ever confuse what comes next with the natural result of good construction.\n\nThen comes the second command, and it is strange: \"Prophesy to the breath.\" Ezekiel preaches to the wind. \"Come from the four winds, O breath, and breathe into these slain, so that they may live.\" Only then does the ruach enter, and they stand on their feet, a vast army. The lesson is built into the sequence. Restoration is not resurrection. You can reassemble every bone of a life - fix the habits, repair the relationships, rebuild the structure - and still be standing in a field of well-organized death. What raises the dead is not better assembly. It is the breath of God, and that has to be given, never engineered."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God promises in Ezekiel 36 to sprinkle clean water on His people, remove their heart of stone, give them a heart of flesh, and put His Spirit within them - and then in chapter 37 He acts it out on a valley of corpses, breathing His ruach into the dead until they stand and live.",
+      "modernApplication": "We are fluent in the language of self-improvement - reassembling the bones of a life through discipline, therapy, fresh starts, and better habits. All of that can be good work, and none of it is breath. The deepest change a person needs is not a stronger version of themselves but a new heart they cannot install, animated by a Spirit they cannot summon. That is received, not achieved.",
+      "connectionPoint": "Ezekiel 36-37 sets the pattern the whole Bible will carry to its conclusion: God removes the heart of stone and gives a heart of flesh; God breathes life into the slain. What the prophet saw in a valley, the New Testament announces as accomplished fact - the new birth Jesus describes to Nicodemus, born of the Spirit; the Spirit poured out at Pentecost; the resurrection of the body promised to all who are in Christ.",
+      "newTestamentEcho": "At a tomb in Bethany, Jesus stands before another sealed-up death and says, \"I am the resurrection and the life\" (John 11:25), then calls, \"Lazarus, come out!\" (John 11:43). After His own resurrection He gathers His disciples, breathes on them, and says, \"Receive the Holy Spirit\" (John 20:22) - the same ruach Ezekiel summoned to the valley, now given by the risen Christ Himself."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you quietly concluded 'our hope has perished; we are cut off' - what part of you do you treat as a dry bone past reviving?",
+      "additionalQuestions": [
+        "Are you trying to bring a dead place in your life back to life by reassembling the bones - more effort, more structure, more repair - when what it actually needs is breath you cannot give it?",
+        "Ezekiel answered the impossible question with 'only You know.' What would change if you stopped declaring something hopeless or forcing optimism, and simply handed it back to God?",
+        "If God built the bodies and then waited before giving breath, what might He be doing in a season where the pieces seem assembled but nothing feels alive yet?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord GOD, You know the valley I am standing in - the part of me I have written off as dried up, hope perished, cut off. I have been trying to reassemble it on my own, bone to bone, and the bones still do not breathe. So I bring You the only honest answer I have: only You know whether this can live. Come from the four winds. Breathe Your Spirit into what I cannot revive. Take out the heart of stone and give me a heart of flesh, the way You promised. And let me stand up alive, and know that You are the LORD. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one part of your life you have privately filed under 'dead' - and instead of either pretending it is fine or repairing it harder, bring it to God in plain words and ask Him to breathe on it. Then watch for the slow first signs of breath, not the finished army.",
+      "leavingAtCross": [
+        "The verdict 'our hope has perished; we are cut off' that I have spoken over a part of my life",
+        "The exhausting project of reassembling dead bones by my own effort and calling it living",
+        "The fear that if God has not raised it yet, He never will"
+      ],
+      "receivingFromCross": [
+        "A new heart and a new spirit I could never install in myself",
+        "The breath of the same God who raised Lazarus and rose Himself",
+        "The promise that being assembled is not the end - the breath is still coming"
+      ],
+      "content": "Name the one part of your life you have privately filed under 'dead' - and instead of either pretending it is fine or repairing it harder, bring it to God in plain words and ask Him to breathe on it. Then watch for the slow first signs of breath, not the finished army."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God rebuild the bodies completely - tendons, flesh, skin - and then point out that 'there was no breath in them' before giving the breath? What is the sequence meant to teach?",
+        "What is the difference between restoration (reassembling the bones) and resurrection (the breath entering), both in the vision and in a real human life?",
+        "God quotes the exiles' own words back to them: 'our hope has perished; we are cut off.' Why does He act in the valley rather than simply correcting their feelings?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been working hard to 'reassemble the bones' - and ask honestly whether what it needs is more effort or the breath of God.",
+        "Tell each other the sentence you most often say over yourself when you feel cut off, and pray Ezekiel 37 over that exact sentence.",
+        "Talk about a time you saw something you had given up on come back to life - and where you needed Ezekiel's posture of 'only You know.'"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ezekiel 36:26",
+          "text": "I will give you a new heart and put a new spirit within you; I will remove your heart of stone and give you a heart of flesh."
+        },
+        {
+          "reference": "Genesis 2:7",
+          "text": "Then the LORD God formed man from the dust of the ground and breathed the breath of life into his nostrils, and the man became a living being."
+        },
+        {
+          "reference": "John 11:25",
+          "text": "Jesus said to her, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies.\""
+        },
+        {
+          "reference": "John 20:22",
+          "text": "When He had said this, He breathed on them and said, \"Receive the Holy Spirit.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ezekiel 36-37",
+          "note": "Read both chapters together. Notice how the promise of a new heart and the gift of the Spirit in chapter 36 is acted out as a vision in chapter 37 - the word, then the picture - and how it ends with God's dwelling place among His people (37:27)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Ezekiel",
+      "title": "The Priest Who Preached to the Wind",
+      "description": "A priest carried into Babylonian exile around 597 BC, called to prophesy to a people who had lost their temple, their land, and their hope. God repeatedly addresses him as 'son of man,' the frail human standing among ruins. In the valley of dry bones, Ezekiel is not asked to fix anything - only to speak the word God gives, first to the bones and then to the breath, and to watch God do what only God can do.",
+      "keyQuote": "O Lord GOD, only You know.",
+      "lessonForUs": "Faith is not pretending the bones can live, and it is not insisting they cannot. It is Ezekiel's posture: honest about the death, deferring to the only One who raises the dead, and willing to keep speaking God's word over the valley until the breath comes.",
+      "heading": "The Priest Who Preached to the Wind"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2113,
+  "scriptureReference_full": "Ezekiel 36-37",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ruach H7307) reflects standard lexical sources; the count of ruach in Ezekiel 37:1-14 (ten occurrences) and the recurrence of 'know that I am the LORD' across Ezekiel (more than fifty times) are observable in the text."
+  ]
 }

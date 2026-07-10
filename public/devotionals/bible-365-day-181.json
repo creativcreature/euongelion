@@ -1,38 +1,186 @@
 {
   "day": 181,
-  "title": "Esther: For Such a Time — Day 6 — Deeper Dive",
-  "teaser": "Day 181 of Bible 365 — Esther 4-7",
+  "title": "The Night the King Couldn't Sleep",
+  "teaser": "Esther walks into a throne room where speaking unbidden means death — and pleads for the lives of a doomed people. God is never once named in her book. He is everywhere in it.",
   "framework": "Esther 4-7 — Esther: For Such a Time",
   "scriptureReference": "Esther 4-7",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 181"
+      "type": "scripture",
+      "reference": "Esther 4:14, 16; 7:3",
+      "translation": "BSB",
+      "emphasis": [
+        "for such a time as this",
+        "if I perish, I perish",
+        "grant me my life as my petition, and the lives of my people as my request"
+      ],
+      "hebrewOriginal": "וּמִי יוֹדֵעַ אִם־לְעֵת כָּזֹאת הִגַּעַתְּ לַמַּלְכוּת",
+      "passage": "For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father's house will perish. And who knows if perhaps you have come to the kingdom for such a time as this? ... Go and assemble all the Jews who can be found in Susa, and fast for me. Do not eat or drink for three days, night or day, and I and my maidens will fast as you do. After that, I will go to the king, even though it is against the law. And if I perish, I perish! ... Queen Esther replied, \"If I have found favor in your sight, O king, and if it pleases the king, grant me my life as my petition, and the lives of my people as my request.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Esther 4-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Esther 4-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לְעֵת כָּזֹאת",
+      "transliteration": "le'et kazot",
+      "pronunciation": "leh-ET ka-ZOTE",
+      "meaning": "for a time like this, for such a moment as this",
+      "rootMeaning": "Et is a fixed, appointed time - not the running clock of chronos but a particular hour weighted with purpose. Kazot means 'like this one,' pointing at the exact moment standing in front of you. Together: this specific hour you did not choose and cannot escape.",
+      "usageNote": "Mordecai does not say God placed Esther on the throne. He cannot quite bring himself to claim it as certainty - 'who knows if perhaps.' The book of Esther never once uses the name of God. Yet the whole sentence leans on a Someone who appoints times. The hiddenness is the point: a queen who hid her people (Esther 2:10) is asked to stop hiding for the sake of an appointed hour.",
+      "wordByWord": [
+        {
+          "word": "וּמִי יוֹדֵעַ",
+          "transliteration": "umi yodea",
+          "meaning": "and who knows - a phrase of holy uncertainty, leaving room for God without presuming on Him"
+        },
+        {
+          "word": "אִם",
+          "transliteration": "im",
+          "meaning": "if, perhaps"
+        },
+        {
+          "word": "לְעֵת",
+          "transliteration": "le'et",
+          "meaning": "for a time, for an appointed hour"
+        },
+        {
+          "word": "כָּזֹאת",
+          "transliteration": "kazot",
+          "meaning": "like this one, this very moment"
+        },
+        {
+          "word": "הִגַּעַתְּ",
+          "transliteration": "higa'at",
+          "meaning": "you have arrived, you have been brought - the verb is passive enough to hint at a hand that did the bringing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶסְתֵּר / סֵתֶר",
+          "reference": "Esther's name resembles the Hebrew seter, 'hiding place' or 'concealment.' A people whose God seems hidden are saved by a queen whose name means hidden - and the rabbis heard in it the verse, 'I will surely hide My face' (Deuteronomy 31:18). The face is hidden; the hand never stops working."
+        }
+      ],
+      "strongsNumber": "H6256",
+      "definition": "et: a fixed or appointed time, a season, the right occasion",
+      "usage": "The word frames the whole crisis. Esther was not merely lucky to be queen; she was placed at an hour. Whether she would meet the hour or hide from it was the one thing left to her."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Esther: For Such a Time. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s timing perfect (Gal 4:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book With No God In It",
+      "body": "Read the book of Esther straight through and you will notice something strange for the Bible: God is never mentioned. Not once. No miracle splits a sea, no prophet thunders, no voice speaks from heaven. There is a Persian king who throws parties, a beauty contest, a court official's wounded pride, and a law that cannot be unmade. It reads like palace intrigue, not Scripture.\n\nAnd yet by chapters four through seven, the absence has become the loudest thing in the room. A decree has gone out that on a single day every Jew in the empire is to be killed (Esther 3:13). Mordecai sends word to Esther, hidden in the palace as queen, that her royal address will not save her: 'Do not imagine that because you are in the king's palace you alone will escape the fate of all the Jews.' Then comes the sentence the whole book turns on - 'And who knows if perhaps you have come to the kingdom for such a time as this?'\n\nNotice how carefully Mordecai speaks. He does not say, 'God has appointed you.' He says, 'Who knows.' He believes deliverance will come whether or not Esther acts - 'relief and deliverance for the Jews will arise from another place' - but he will not presume to put words in heaven's mouth. This is faith with the lights off. It cannot see the hand, so it does not claim to. It simply trusts that there is a hand, and steps where it would step.",
+      "keyInsight": "Esther is the book where God's name never appears so that His providence can be seen everywhere - working not through thunder but through timing, not by miracle but by a thousand quiet coincidences that add up to a hand.",
+      "content": "Read the book of Esther straight through and you will notice something strange for the Bible: God is never mentioned. Not once. No miracle splits a sea, no prophet thunders, no voice speaks from heaven. There is a Persian king who throws parties, a beauty contest, a court official's wounded pride, and a law that cannot be unmade. It reads like palace intrigue, not Scripture.\n\nAnd yet by chapters four through seven, the absence has become the loudest thing in the room. A decree has gone out that on a single day every Jew in the empire is to be killed (Esther 3:13). Mordecai sends word to Esther, hidden in the palace as queen, that her royal address will not save her: 'Do not imagine that because you are in the king's palace you alone will escape the fate of all the Jews.' Then comes the sentence the whole book turns on - 'And who knows if perhaps you have come to the kingdom for such a time as this?'\n\nNotice how carefully Mordecai speaks. He does not say, 'God has appointed you.' He says, 'Who knows.' He believes deliverance will come whether or not Esther acts - 'relief and deliverance for the Jews will arise from another place' - but he will not presume to put words in heaven's mouth. This is faith with the lights off. It cannot see the hand, so it does not claim to. It simply trusts that there is a hand, and steps where it would step."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Door You Cannot Knock On",
+      "body": "A friend of mine spent a year doing accounts for a company she slowly realized was lying to its customers. She was junior, replaceable, and had a mortgage. To say something was to risk everything; to say nothing was to let it continue. For weeks she told herself it wasn't her job, she didn't have the full picture, someone above her would surely catch it.\n\nWhat undid that comfort was a quiet question from her father at the kitchen table: 'If not you, then who's standing where you're standing?' She had been treating her position as an accident to protect. He named it as a post to keep.\n\nThat is the weight of Esther's law. In Persia, you did not simply walk in to see the king. To approach the inner court uninvited meant death; 'only if the king extends the gold scepter may that person live' (Esther 4:11). Esther had not been summoned in thirty days. To go in was to gamble her life on whether one unpredictable man would, in the half-second of seeing her, reach out his hand or call the guards. There was no message she could send first, no door she could knock on. There was only the walking in - and the not knowing.",
+      "connectionToTheme": "Esther's hidden position becomes a place of decision: the same providence that placed her there will not act through her unless she is willing to risk it. Standing somewhere is not the same as standing for something.",
+      "content": "A friend of mine spent a year doing accounts for a company she slowly realized was lying to its customers. She was junior, replaceable, and had a mortgage. To say something was to risk everything; to say nothing was to let it continue. For weeks she told herself it wasn't her job, she didn't have the full picture, someone above her would surely catch it.\n\nWhat undid that comfort was a quiet question from her father at the kitchen table: 'If not you, then who's standing where you're standing?' She had been treating her position as an accident to protect. He named it as a post to keep.\n\nThat is the weight of Esther's law. In Persia, you did not simply walk in to see the king. To approach the inner court uninvited meant death; 'only if the king extends the gold scepter may that person live' (Esther 4:11). Esther had not been summoned in thirty days. To go in was to gamble her life on whether one unpredictable man would, in the half-second of seeing her, reach out his hand or call the guards. There was no message she could send first, no door she could knock on. There was only the walking in - and the not knowing."
+    },
+    {
+      "type": "insight",
+      "heading": "The Night Sleep Escaped the King",
+      "body": "The hinge of the whole story is the smallest possible event. After Esther's first banquet, Haman goes home so pleased with himself that he builds a gallows fifty cubits high to hang Mordecai on in the morning (Esther 5:14). The trap is set. And then comes Esther 6:1: 'That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him.'\n\nStop on that verse. A king cannot sleep. Of all the things he could call for to pass a restless night, he asks for the dullest book in the palace - the official chronicle. And of all the entries the reader could land on, it is the one recording that Mordecai once exposed an assassination plot and was never rewarded. So when Haman arrives at dawn to ask permission to hang Mordecai, the king's first words are about how to honor Mordecai. The gallows builder is made to parade the man he meant to kill through the streets, crying his praises.\n\nNo angel does this. No fire falls. A man simply cannot sleep. But stack the coincidences - the sleeplessness, the choice of book, the page it opened to, the timing of Haman's arrival - and the odds collapse. This is how the God whose name is never spoken governs the world: not usually by parting seas, but by withholding sleep from a king on exactly the right night.",
+      "historicalContext": "Esther is set in the reign of Xerxes I (Ahasuerus), who ruled the Persian Empire from 486 to 465 BC, with the citadel of Susa as one of his capitals. The events fall among the Jews who remained in exile rather than returning to Judah after Cyrus's decree - a people far from the Temple, far from the Promised Land, easy to forget. It is precisely there, in the diaspora where God seems absent, that the book insists He is most quietly present.",
+      "fascinatingFact": "Esther 6:1 is the structural center of the book. Everything before it builds the trap; everything after it springs the reversal. The Hebrew text of this turning point is doubly hidden: not only is God unnamed, but the verb 'sleep escaped' is impersonal - literally 'sleep fled.' Something happened to the king that he did not choose and could not explain. The book lets you supply the cause. That is the whole art of it.",
+      "content": "The hinge of the whole story is the smallest possible event. After Esther's first banquet, Haman goes home so pleased with himself that he builds a gallows fifty cubits high to hang Mordecai on in the morning (Esther 5:14). The trap is set. And then comes Esther 6:1: 'That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him.'\n\nStop on that verse. A king cannot sleep. Of all the things he could call for to pass a restless night, he asks for the dullest book in the palace - the official chronicle. And of all the entries the reader could land on, it is the one recording that Mordecai once exposed an assassination plot and was never rewarded. So when Haman arrives at dawn to ask permission to hang Mordecai, the king's first words are about how to honor Mordecai. The gallows builder is made to parade the man he meant to kill through the streets, crying his praises.\n\nNo angel does this. No fire falls. A man simply cannot sleep. But stack the coincidences - the sleeplessness, the choice of book, the page it opened to, the timing of Haman's arrival - and the odds collapse. This is how the God whose name is never spoken governs the world: not usually by parting seas, but by withholding sleep from a king on exactly the right night."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A queen risks death by entering the throne room uninvited and pleads, 'Grant me my life as my petition, and the lives of my people as my request' - laying her own life on the line so a condemned people might be spared, and being received by the king's extended scepter.",
+      "modernApplication": "Most of us are not queens, but every one of us has been set somewhere - a job, a family, a friendship, a city - that we did not fully choose. The temptation is to treat the place as a hiding spot, a thing to protect. Esther turns it into a post: a position is not for keeping yourself safe but for spending yourself where you have been placed.",
+      "connectionPoint": "Esther's intercession is woven into a long thread of those who stand in the gap for a doomed people - Abraham bargaining for Sodom, Moses offering to be blotted out for Israel (Exodus 32:32), the Servant who bears the sin of many (Isaiah 53). Each mediator stands between wrath and the guilty and pays, or offers to pay, with their own life.",
+      "newTestamentEcho": "What Esther risked, Christ accomplished. She entered an earthly king's throne room not knowing whether she would be received, and pleaded for the life of her people. Jesus entered the throne room of God knowing exactly what it would cost - His own death - to plead for ours: 'He is able to save completely those who draw near to God through Him, since He always lives to intercede for them' (Hebrews 7:25). Esther said, 'If I perish, I perish.' Christ said it without the 'if,' and perished, so that we might live. The scepter extended to her is the welcome extended to us in Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been placed - a role, a relationship, a room you can walk into - that you have been treating as a thing to protect rather than a post to keep?",
+      "additionalQuestions": [
+        "Mordecai said deliverance would come 'from another place' whether Esther acted or not. How does it change your sense of duty to believe God's purpose does not depend on you - and yet still invites you in?",
+        "When have you seen, only in hindsight, a string of 'coincidences' that looked like a hidden hand? What did that do to your trust?",
+        "What is the equivalent, for you, of walking into the inner court unbidden - the costly, unguaranteed thing you keep finding reasons not to do?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God whose name Esther's book never speaks, You were never absent from it - and You are not absent now, though I cannot always see Your hand. Forgive me for treating the places You have set me as hiding spots to protect instead of posts to keep. Where I have stayed silent to stay safe, give me Esther's nerve to walk in. Where I am afraid the door will not open, remind me of the scepter already extended to me in Christ, who entered Your throne room at the cost of His life so that mine would be spared. If there is a 'such a time as this' in front of me today, let me meet it and not hide from it. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one place you have been set - a role, a family, a workplace, a friendship - and ask honestly whether you are protecting it or spending it. Then take one small, costly step into the 'inner court' you have been avoiding: the honest word, the stand, the request you keep putting off.",
+      "leavingAtCross": [
+        "The habit of treating my position as an accident to protect rather than a post to keep",
+        "The silence I keep to stay safe while others stand undefended",
+        "The fear that if I step forward and it costs me, no one will catch me"
+      ],
+      "receivingFromCross": [
+        "The courage to walk into rooms where I have no guarantee of welcome",
+        "The peace of trusting a hand I cannot see, who works even through a sleepless night",
+        "A scepter already extended to me in Christ, who interceded at the cost of His own life"
+      ],
+      "content": "Name one place you have been set - a role, a family, a workplace, a friendship - and ask honestly whether you are protecting it or spending it. Then take one small, costly step into the 'inner court' you have been avoiding: the honest word, the stand, the request you keep putting off."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "The book of Esther never names God. How does that absence actually strengthen, rather than weaken, the book's witness to His providence?",
+        "Why does Mordecai phrase it 'who knows if perhaps' rather than simply declaring that God appointed Esther? What kind of faith is that?",
+        "Trace the chain of 'coincidences' from Haman building the gallows (5:14) to Mordecai being honored (6:11). At what single point does the whole reversal turn?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a position you currently hold that you have been protecting instead of spending. What would 'spending it' look like this month?",
+        "Esther fasted three days before walking in. What do you do to prepare before a hard, costly step - and what would it look like to invite others to fast or pray with you?",
+        "Where in your shared story have you watched God work through ordinary timing rather than dramatic intervention? Name it out loud as providence, not luck."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Esther 6:1",
+          "text": "That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him."
+        },
+        {
+          "reference": "Exodus 32:32",
+          "text": "Yet now, if You would only forgive their sin... But if not, please blot me out of the book that You have written."
+        },
+        {
+          "reference": "Isaiah 53:12",
+          "text": "He bore the sin of many and made intercession for the transgressors."
+        },
+        {
+          "reference": "Hebrews 7:25",
+          "text": "Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Esther 4-7",
+          "note": "Read the four chapters in one sitting, watching for every 'coincidence.' Mark Esther 6:1 as the center - everything before it builds the trap, everything after springs the reversal."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esther (Hadassah)",
+      "title": "The Hidden Queen Who Stopped Hiding",
+      "description": "A Jewish orphan raised by her cousin Mordecai among the exiles in Susa, taken into the harem of Xerxes and made queen of Persia while keeping her people a secret (Esther 2:10). When a decree threatened every Jew in the empire, she risked her life by entering the king's presence uninvited and interceding for her people at two banquets, exposing the schemer Haman. Her name resembles the Hebrew for 'hidden' - fitting for the heroine of the one book where God's name is never spoken.",
+      "keyQuote": "After that, I will go to the king, even though it is against the law. And if I perish, I perish!",
+      "lessonForUs": "Esther's greatness was not that she was placed in the palace but that she was willing to spend the place she was given. The God she never names placed her 'for such a time as this' - and the same hidden providence still sets us where we are, not to keep us safe, but to be spent.",
+      "heading": "The Hidden Queen Who Stopped Hiding"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2369,
+  "scriptureReference_full": "Esther 4:14, 16; 7:3",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (le'et kazot, et H6256; the Esther/seter resonance and the link to Deuteronomy 31:18) reflects standard lexical observation and classical rabbinic reading (e.g., Babylonian Talmud, Chullin 139b)."
+  ]
 }

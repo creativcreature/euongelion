@@ -6,33 +6,189 @@
   "scriptureReference": "Psalm 23",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 89"
+      "type": "scripture",
+      "reference": "Psalm 23",
+      "translation": "BSB",
+      "emphasis": [
+        "The LORD is my shepherd",
+        "the valley of the shadow of death",
+        "You are with me"
+      ],
+      "hebrewOriginal": "יְהוָה רֹעִי לֹא אֶחְסָר",
+      "passage": "The LORD is my shepherd; I shall not want. He makes me lie down in green pastures; He leads me beside quiet waters. He restores my soul; He guides me in the paths of righteousness for the sake of His name. Even though I walk through the valley of the shadow of death, I will fear no evil, for You are with me; Your rod and Your staff, they comfort me. You prepare a table before me in the presence of my enemies. You anoint my head with oil; my cup overflows. Surely goodness and mercy will follow me all the days of my life, and I will dwell in the house of the LORD forever."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רֹעִי",
+      "transliteration": "ro'i",
+      "pronunciation": "ro-EE",
+      "meaning": "my shepherd, the one who pastures me",
+      "rootMeaning": "From ra'ah, to tend, to graze, to lead a flock to feed. The shepherd does not drive the sheep from behind; he goes ahead and the sheep follow his voice to grass and water. The word carries the whole work of keeping something alive that cannot keep itself alive.",
+      "usageNote": "David, who wrote this Psalm, had been a literal shepherd before he was a king. He knew the smell of the fold and the weight of a lamb across his shoulders. When he reaches for a word to name what God is to him, he does not say King or Judge first. He says ro'i - the one who pastures me. The shepherd image runs from David through the prophets to Jesus, who takes the word into His own mouth: 'I am the good shepherd' (John 10:11).",
+      "wordByWord": [
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of God, the One who is"
+        },
+        {
+          "word": "רֹעִי",
+          "transliteration": "ro'i",
+          "meaning": "my shepherd - the participle of 'to tend a flock,' with the personal ending 'my'"
+        },
+        {
+          "word": "לֹא",
+          "transliteration": "lo",
+          "meaning": "not"
+        },
+        {
+          "word": "אֶחְסָר",
+          "transliteration": "echsar",
+          "meaning": "I shall lack, I shall be in want - 'I will go without nothing I truly need'"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צַלְמָוֶת",
+          "reference": "Tsalmavet (v. 4) - 'the shadow of death,' a compound of tsel (shadow) and mavet (death). It names the darkest ravine a shepherd ever leads sheep through: a deep, narrow gorge where predators wait and the path is too tight to turn around. The Psalm does not say God keeps us out of it. It says He goes through it with us."
+        }
+      ],
+      "strongsNumber": "H7462",
+      "definition": "to pasture, tend, graze; a shepherd, one who feeds and leads a flock",
+      "usage": "The first thing the shepherd's word tells us is direction. A flock does not survive by its own planning; it survives by following one who knows the way to grass, water, and home."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Rest in being shepherded. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Good Shepherd (John 10:11).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Six Verses, One Direction",
+      "body": "Psalm 23 is so familiar it can pass through us without touching the bottom. We hear it at funerals, embroider it on pillows, recite it half-asleep. But David did not write it as decoration. He wrote it as a confession of dependence from a man who had spent his youth keeping sheep alive in a hard country, and his adulthood being kept alive by God in a harder one.\n\nNotice that the Psalm has no commands in it. There is nothing for the sheep to do. Every active verb belongs to the shepherd. He makes me lie down. He leads me. He restores my soul. He guides me. He prepares a table. He anoints my head. The sheep's only contribution is to be led - to follow, to lie down when made to lie down, to walk through the valley without bolting. This is the whole grammar of the Psalm: the shepherd works, the sheep are kept.\n\nWatch the movement of the six verses, because they trace a single day's journey through a real landscape. Morning: green pastures and quiet waters, the easy grazing. Midday: the right paths, the steady walking. Then the descent into the dark ravine. Then, on the far side, a table spread in the open and a cup running over. And finally, home - the house of the LORD, not for a night but forever. It is the shape of a life. We begin in provision, we pass through danger, and we are brought home by Someone who never once lost His grip on us.",
+      "keyInsight": "Psalm 23 contains no commands for the sheep. Every verb of rescue, feeding, leading, and keeping belongs to the shepherd. To be a sheep is simply to be kept by One who is good at keeping.",
+      "content": "Psalm 23 is so familiar it can pass through us without touching the bottom. We hear it at funerals, embroider it on pillows, recite it half-asleep. But David did not write it as decoration. He wrote it as a confession of dependence from a man who had spent his youth keeping sheep alive in a hard country, and his adulthood being kept alive by God in a harder one.\n\nNotice that the Psalm has no commands in it. There is nothing for the sheep to do. Every active verb belongs to the shepherd. He makes me lie down. He leads me. He restores my soul. He guides me. He prepares a table. He anoints my head. The sheep's only contribution is to be led - to follow, to lie down when made to lie down, to walk through the valley without bolting. This is the whole grammar of the Psalm: the shepherd works, the sheep are kept.\n\nWatch the movement of the six verses, because they trace a single day's journey through a real landscape. Morning: green pastures and quiet waters, the easy grazing. Midday: the right paths, the steady walking. Then the descent into the dark ravine. Then, on the far side, a table spread in the open and a cup running over. And finally, home - the house of the LORD, not for a night but forever. It is the shape of a life. We begin in provision, we pass through danger, and we are brought home by Someone who never once lost His grip on us."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Sheep Cannot Do",
+      "body": "A shepherd I read about kept a small flock on the dry hills above a creek bed. He told a visitor that the hardest part of the job was not predators or weather. It was getting the sheep to lie down.\n\nSheep will not lie down, he explained, while they are afraid, while they are hungry, while there is friction in the flock, or while the flies are bad. All four have to be settled before a sheep will fold its legs and rest. So a good shepherd spends his day removing fear, finding feed, breaking up the squabbles, and tending the sores - not so the sheep will work harder, but so the sheep can finally lie down. The rest is the whole point. The labor is all his.\n\nThat is what 'He makes me lie down in green pastures' actually means. It is not a gentle suggestion that we relax. It is the work of a shepherd who has gone ahead and made a place where rest is finally possible - who has dealt with everything that kept us standing and twitching - so that the only thing left for us to do is the one thing we could never manufacture on our own. Stop. Lie down. Be kept.",
+      "connectionToTheme": "A sheep cannot rest by force of will; it rests only when the shepherd has removed what frightens and starves it. Our rest, too, is something received from a shepherd's labor, not produced by our own.",
+      "content": "A shepherd I read about kept a small flock on the dry hills above a creek bed. He told a visitor that the hardest part of the job was not predators or weather. It was getting the sheep to lie down.\n\nSheep will not lie down, he explained, while they are afraid, while they are hungry, while there is friction in the flock, or while the flies are bad. All four have to be settled before a sheep will fold its legs and rest. So a good shepherd spends his day removing fear, finding feed, breaking up the squabbles, and tending the sores - not so the sheep will work harder, but so the sheep can finally lie down. The rest is the whole point. The labor is all his.\n\nThat is what 'He makes me lie down in green pastures' actually means. It is not a gentle suggestion that we relax. It is the work of a shepherd who has gone ahead and made a place where rest is finally possible - who has dealt with everything that kept us standing and twitching - so that the only thing left for us to do is the one thing we could never manufacture on our own. Stop. Lie down. Be kept."
+    },
+    {
+      "type": "insight",
+      "heading": "Where the Psalm Stops Talking About God and Starts Talking To Him",
+      "body": "Read the Psalm slowly and you will catch a turn that most readings glide right over. For three verses, David speaks about God in the third person. The LORD is my shepherd. He makes me lie down. He leads me. He restores. He guides. God is the subject of the sentence, but He is being described, the way you describe someone across the room.\n\nThen comes the valley. 'Even though I walk through the valley of the shadow of death...' - and right there, in the darkest line of the Psalm, the grammar changes. David stops saying 'He' and starts saying 'You.' 'For You are with me; Your rod and Your staff, they comfort me.' He is no longer describing the shepherd. He is talking to Him.\n\nThis is not an accident of style. It is the whole point hidden inside the poem. The valley is exactly where God stops being a doctrine you hold at arm's length and becomes a Presence you speak to directly. Intimacy does not deepen in the green pastures, pleasant as they are. It deepens in the dark, when 'He is good' is no longer enough and the only thing that will hold you is 'You are with me.' The Psalm is built so that its closest words to God are spoken from its lowest ground.",
+      "historicalContext": "Psalm 23 sits in the Psalter immediately after Psalm 22, which opens, 'My God, my God, why have You forsaken me?' (Psalm 22:1) - the cry Jesus would pray aloud from the cross (Matthew 27:46). The ancient editors who arranged the Psalms set the forsaken cry of Psalm 22 right beside the kept confidence of Psalm 23 on purpose. Read together, they say: the same God who can feel utterly absent in the dark is the Shepherd who has never once let go. Psalm 22 is the valley from the inside; Psalm 23 is the voice on the far side of it.",
+      "fascinatingFact": "The grammatical shift from 'He' to 'You' falls in verse 4, the exact center of the Psalm. Hebrew poets often loaded the middle line with the heaviest meaning. The structural heart of Psalm 23 is not the green pastures and not the overflowing cup - it is four words spoken into the dark: 'You are with me.'",
+      "content": "Read the Psalm slowly and you will catch a turn that most readings glide right over. For three verses, David speaks about God in the third person. The LORD is my shepherd. He makes me lie down. He leads me. He restores. He guides. God is the subject of the sentence, but He is being described, the way you describe someone across the room.\n\nThen comes the valley. 'Even though I walk through the valley of the shadow of death...' - and right there, in the darkest line of the Psalm, the grammar changes. David stops saying 'He' and starts saying 'You.' 'For You are with me; Your rod and Your staff, they comfort me.' He is no longer describing the shepherd. He is talking to Him.\n\nThis is not an accident of style. It is the whole point hidden inside the poem. The valley is exactly where God stops being a doctrine you hold at arm's length and becomes a Presence you speak to directly. Intimacy does not deepen in the green pastures, pleasant as they are. It deepens in the dark, when 'He is good' is no longer enough and the only thing that will hold you is 'You are with me.' The Psalm is built so that its closest words to God are spoken from its lowest ground."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "David's shepherd leads the sheep through the valley of the shadow of death, going with them into the dark place rather than around it, so that they fear no evil.",
+      "modernApplication": "We spend enormous effort trying to arrange a life with no valley in it - the right insurance, the right plan, the right amount of control. Psalm 23 never promises a path that avoids the dark ravine. It promises a Shepherd in it. The comfort on offer is not the absence of the valley but the presence of the One walking you through.",
+      "connectionPoint": "The shepherd image is a thread running the length of Scripture. God is the Shepherd of Israel who leads His people like a flock (Psalm 80:1). Through Isaiah He says, 'We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all' (Isaiah 53:6). Peter draws the thread to its end: 'you were like sheep going astray, but now you have returned to the Shepherd and Overseer of your souls' (1 Peter 2:25). And John sees the very last frame: 'the Lamb in the center of the throne will be their shepherd' (Revelation 7:17).",
+      "newTestamentEcho": "Jesus takes David's word and makes it personal: 'I am the good shepherd. The good shepherd lays down His life for the sheep' (John 10:11). David's shepherd walks the sheep through the valley of the shadow of death. Jesus, the Good Shepherd, walks into it Himself - down into the forsaking of Psalm 22, down into death itself - and comes out the far side, so that He is 'that great Shepherd of the sheep' whom the God of peace 'brought back from the dead' (Hebrews 13:20). The Shepherd who keeps us from fearing the valley is the One who went through it first, and alone."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you exhausting yourself trying to do the shepherd's work - and what would it look like to lie down and be kept instead?",
+      "additionalQuestions": [
+        "Is there a valley you are walking through right now? Have you been waiting for God to take you out of it, when the promise is that He is in it with you?",
+        "Has God been mostly a 'He' to you - someone you describe and believe in from a distance - rather than a 'You' you actually speak to? What would it take to move from one to the other?",
+        "What is the one thing you most need to hear that you 'shall not want' - the lack you are most afraid of? Bring that exact fear to the Shepherd."
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "trusting-rest",
+      "prayerText": "Shepherd of my soul, I confess how hard I work to keep myself - how I stand and twitch when You are asking me to lie down. I cannot find my own pastures or my own way home. So lead me. Where the path drops into the valley, do not take me around it; come with me through it, and let Your presence be enough. You are the Good Shepherd who laid down Your life for the sheep. I am one of them. Keep me, restore me, and bring me home. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you plan or produce anything, say the first line out loud and stop there: 'The LORD is my shepherd; I shall not want.' Then name to Him the one thing you are most afraid of lacking - and leave it in His keeping for the day.",
+      "leavingAtCross": [
+        "The exhausting belief that I have to be my own shepherd - finding my own pastures, guarding my own way",
+        "The demand that God take me out of the valley before I will trust that He is good",
+        "The habit of describing God from a distance instead of speaking to Him in the dark"
+      ],
+      "receivingFromCross": [
+        "A Shepherd who laid down His life for the sheep and was brought back from the dead to keep them",
+        "Permission to lie down - to rest in being kept rather than in keeping myself",
+        "The promise that goodness and mercy follow me all my days, and that the house I am being led to is home, forever"
+      ],
+      "content": "Today, before you plan or produce anything, say the first line out loud and stop there: 'The LORD is my shepherd; I shall not want.' Then name to Him the one thing you are most afraid of lacking - and leave it in His keeping for the day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Who performs all the active verbs in Psalm 23 - the sheep or the shepherd? What does that tell you about what is being asked of you?",
+        "Where in the Psalm does David stop speaking about God and begin speaking to God, and why does it matter that the change happens in the valley?",
+        "Psalm 23 follows directly after the cry 'My God, my God, why have You forsaken me?' (Psalm 22:1). How do the two Psalms read differently when held side by side?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one valley you have walked through, or are walking through now. Was God more a 'He' or a 'You' to you in it - and what made the difference?",
+        "Talk honestly about where each of you is still trying to be your own shepherd, and pray that you would let yourselves be led.",
+        "Ask each other: what is the one thing you are most afraid of lacking, and can you say over it, 'I shall not want'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 22:1",
+          "text": "My God, my God, why have You forsaken me? Why are You so far from saving me, so far from my words of groaning?"
+        },
+        {
+          "reference": "Psalm 100:3",
+          "text": "Know that the LORD is God. It is He who made us, and we are His; we are His people, and the sheep of His pasture."
+        },
+        {
+          "reference": "Isaiah 53:6",
+          "text": "We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
+        },
+        {
+          "reference": "John 10:11",
+          "text": "I am the good shepherd. The good shepherd lays down His life for the sheep."
+        },
+        {
+          "reference": "1 Peter 2:25",
+          "text": "For \"you were like sheep going astray,\" but now you have returned to the Shepherd and Overseer of your souls."
+        },
+        {
+          "reference": "Revelation 7:17",
+          "text": "For the Lamb in the center of the throne will be their shepherd. 'He will lead them to springs of living water,' and 'God will wipe away every tear from their eyes.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 22 and Psalm 23",
+          "note": "Read the two Psalms back to back in one sitting. Notice how the forsaken cry of 22 gives way to the kept confidence of 23 - the valley from inside, then the voice from the far side."
+        },
+        {
+          "type": "book",
+          "title": "John 10:1-18",
+          "note": "Read Jesus' own shepherd discourse, where He takes up David's word and names Himself the Good Shepherd who lays down His life for the sheep."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Shepherd Who Became King",
+      "description": "The youngest son of Jesse, anointed king of Israel while still a boy who kept his father's sheep near Bethlehem. Before he faced Goliath or wore a crown, David spent years alone in open country defending a flock from lions and bears - learning firsthand what a shepherd owes the sheep. That schooling shaped his whole theology. When he wanted to say what God was to him, he reached past his royal titles for the language of the fold: 'The LORD is my shepherd.' The same Bethlehem hills where David kept sheep would later hear angels announce, to shepherds, the birth of the Good Shepherd from David's own line.",
+      "keyQuote": "The LORD is my shepherd; I shall not want.",
+      "lessonForUs": "David had been both the keeper and the kept. He knew how much labor a shepherd pours out for animals that cannot thank him - and he knew himself to be on the receiving end of exactly that kind of care. To pray Psalm 23 honestly is to admit we are the sheep, not the shepherd, and to be glad of it.",
+      "heading": "The Shepherd Who Became King"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2677,
+  "scriptureReference_full": "Psalm 23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ro'i, ra'ah H7462; tsalmavet) reflects standard lexical sources. The grammatical shift from third person ('He') to second person ('You') at Psalm 23:4, and the canonical pairing of Psalm 22 with Psalm 23, are widely noted features of the Hebrew text."
+  ]
 }

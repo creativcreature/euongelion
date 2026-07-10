@@ -1,38 +1,179 @@
 {
   "day": 348,
-  "title": "1 Corinthians: Love + Resurrection — Day 5 — Resolution",
-  "teaser": "Day 348 of Bible 365 — 1 Cor 13, 15",
+  "title": "The love that outlasts the grave",
+  "teaser": "Two summits in one letter: love that never fails, and a tomb that could not hold Christ. On the last day, they turn out to be the same hope.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 348"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8, 13; 15:20, 54-55",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "the greatest of these is love",
+        "the firstfruits",
+        "Death has been swallowed up in victory"
+      ],
+      "greekOriginal": "Ἡ ἀγάπη οὐδέποτε πίπτει",
+      "passage": "Love never fails. But where there are prophecies, they will cease; where there are tongues, they will be restrained; where there is knowledge, it will be dismissed. ... And now these three remain: faith, hope, and love; but the greatest of these is love. ... But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep. ... When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: “Death has been swallowed up in victory.” “Where, O Death, is your victory? Where, O Death, is your sting?”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀγάπη",
+      "transliteration": "agapē",
+      "pronunciation": "ah-GAH-pay",
+      "meaning": "self-giving love; love that seeks the good of the other regardless of return",
+      "rootMeaning": "Agapē is the love that chooses. It is not first a feeling that rises and falls but a settled commitment to another's good - the kind of love that can be commanded, because it lives in the will and not only in the mood. Paul does not say love feels much; he says love does much, and keeps doing it.",
+      "usageNote": "Greek had several words English flattens into one. Eros is desire; philia is the warm affection of friends; storgē is family fondness. The early Christians reached past all of them for agapē, a rarer word, to name the love God showed at the cross - and then dared to ask it of ordinary people. In 1 Corinthians 13 the word appears again and again as the subject of verb after verb: it is patient, it is kind, it bears, believes, hopes, endures.",
+      "wordByWord": [
+        {
+          "word": "Ἡ ἀγάπη",
+          "transliteration": "hē agapē",
+          "meaning": "the love - named as a subject that acts, almost a person"
+        },
+        {
+          "word": "οὐδέποτε",
+          "transliteration": "oudepote",
+          "meaning": "never, not at any time - the strongest negative for all time"
+        },
+        {
+          "word": "πίπτει",
+          "transliteration": "piptei",
+          "meaning": "falls, fails, collapses - the word used of a building falling or a flower dropping"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἀπαρχή / aparchē",
+          "reference": "In 1 Corinthians 15:20 Christ is the aparchē - the firstfruits, the first sheaf of harvest brought to God as the promise of the whole field to come. The same word ties the love that never falls to the resurrection that cannot fail: both are first installments of a world being made new."
+        }
+      ],
+      "strongsNumber": "G26",
+      "definition": "love; specifically the self-giving, covenant love God shows and commands",
+      "usage": "Paul ranks agapē above prophecy, tongues, and knowledge - all of which, he says, will one day stop. Love will not. It is the one gift that survives into the world the resurrection opens."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Summits, One Letter",
+      "body": "First Corinthians is a difficult, quarrelsome letter. A church split into factions, suing each other, getting drunk at the Lord's Table, boasting about gifts, confused about sex and marriage and food and worship. Into that mess Paul writes the most beautiful paragraph on love ever set down, and the most exhaustive paragraph on resurrection in the New Testament. Chapter 13 and chapter 15. Two summits rising out of the same troubled ground.\n\nWe usually take them apart. Chapter 13 gets read at weddings, embroidered on pillows, lifted out of its argument until it floats free as a poem about romance. Chapter 15 gets read at funerals, where its long sentences about imperishable bodies do their work and are then folded back up. But Paul did not write them as a wedding text and a funeral text. He wrote them in one breath, to one church, and on the last day of this five-day reading it is worth asking what holds them together.\n\nHere is the link he gives us. In chapter 13 Paul says love never fails - oudepote piptei, never at any time falls - while prophecy, tongues, and knowledge all cease. In chapter 15 he says Christ has been raised, the firstfruits, and that death itself has been swallowed up in victory. Set them side by side and a single claim emerges: love is the one thing that survives the grave, because the grave has already been beaten. A love that outlasts death is only good news if death has actually been overcome. Paul has both.",
+      "keyInsight": "Chapter 13 and chapter 15 are not a wedding reading and a funeral reading. They are one argument: love never fails because Christ was raised, and Christ was raised so that love would never have to fail.",
+      "content": "First Corinthians is a difficult, quarrelsome letter. A church split into factions, suing each other, getting drunk at the Lord's Table, boasting about gifts, confused about sex and marriage and food and worship. Into that mess Paul writes the most beautiful paragraph on love ever set down, and the most exhaustive paragraph on resurrection in the New Testament. Chapter 13 and chapter 15. Two summits rising out of the same troubled ground.\n\nWe usually take them apart. Chapter 13 gets read at weddings, embroidered on pillows, lifted out of its argument until it floats free as a poem about romance. Chapter 15 gets read at funerals, where its long sentences about imperishable bodies do their work and are then folded back up. But Paul did not write them as a wedding text and a funeral text. He wrote them in one breath, to one church, and on the last day of this five-day reading it is worth asking what holds them together.\n\nHere is the link he gives us. In chapter 13 Paul says love never fails - oudepote piptei, never at any time falls - while prophecy, tongues, and knowledge all cease. In chapter 15 he says Christ has been raised, the firstfruits, and that death itself has been swallowed up in victory. Set them side by side and a single claim emerges: love is the one thing that survives the grave, because the grave has already been beaten. A love that outlasts death is only good news if death has actually been overcome. Paul has both."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Vow and the Hospice Room",
+      "body": "Most of us first hear 1 Corinthians 13 standing at the front of a church, watching two people promise things they cannot yet understand. Love is patient, love is kind. The words are read over a couple at the start, when love is mostly hope and good weather.\n\nThen years pass, and the same words get tested in rooms no one decorates. A spouse learning to lift a body that can no longer lift itself. A daughter spooning broth she knows will be refused. The slow, unglamorous labor of bearing all things and enduring all things, long after the feelings that started it have thinned out. This is where Paul's verbs earn their keep. Bears, believes, hopes, endures - these are not the language of the wedding. They are the language of the hospice room, the long marriage, the friendship that survives the betrayal.\n\nAnd it is exactly here that chapter 15 stops being a separate reading. The person keeping vigil at a deathbed is doing two things Paul put in one letter: practicing the love that does not fail, and waiting on the resurrection that will not fail them either. The same hands that hold the dying are reaching, without knowing it, for the firstfruits.",
+      "connectionToTheme": "The love of chapter 13 is tested most in the very place chapter 15 speaks to - beside death - which is why Paul wrote them to one church in one breath.",
+      "content": "Most of us first hear 1 Corinthians 13 standing at the front of a church, watching two people promise things they cannot yet understand. Love is patient, love is kind. The words are read over a couple at the start, when love is mostly hope and good weather.\n\nThen years pass, and the same words get tested in rooms no one decorates. A spouse learning to lift a body that can no longer lift itself. A daughter spooning broth she knows will be refused. The slow, unglamorous labor of bearing all things and enduring all things, long after the feelings that started it have thinned out. This is where Paul's verbs earn their keep. Bears, believes, hopes, endures - these are not the language of the wedding. They are the language of the hospice room, the long marriage, the friendship that survives the betrayal.\n\nAnd it is exactly here that chapter 15 stops being a separate reading. The person keeping vigil at a deathbed is doing two things Paul put in one letter: practicing the love that does not fail, and waiting on the resurrection that will not fail them either. The same hands that hold the dying are reaching, without knowing it, for the firstfruits."
+    },
+    {
+      "type": "insight",
+      "heading": "If Christ Is Not Raised, Love Is a Sentiment",
+      "body": "Paul says something in chapter 15 that should unsettle anyone who loves chapter 13 but quietly doubts the empty tomb: 'If Christ has not been raised, your faith is futile; you are still in your sins.' And: 'If our hope in Christ is for this life alone, we are to be pitied more than all men.'\n\nNotice he will not let us keep the love and drop the resurrection. A great deal of modern Christianity tries exactly that - keep the ethics, keep 'love is patient, love is kind,' and treat the resurrection as a beautiful symbol of resilience rather than an event that happened to a body on a particular Sunday. Paul forbids the trade. If Christ is still in the tomb, then love is patient and kind for a few decades and then everyone dies and it is all swallowed up after all. Death wins, and the most loving life ever lived was a waste.\n\nBut Paul does not argue from sentiment. He argues from a fact he claims to have received and seen: Christ died for our sins according to the Scriptures, was buried, and was raised on the third day. Because that grave is empty, love is not a brave gesture against the dark. It is the grain of the universe. Death has lost, so love is the thing that lasts - and the only love strong enough to prove it was the love that walked into the grave on our behalf and walked back out.",
+      "historicalContext": "Paul wrote 1 Corinthians around AD 53-55 from Ephesus, roughly two decades after the crucifixion - while many eyewitnesses were still alive. The summary in 15:3-5 ('Christ died... was buried... was raised... appeared') is older still: most scholars regard it as an early creed Paul 'received' and 'passed on,' a fixed confession the church was already reciting within a few years of the events. He is not floating a theory; he is quoting the church's earliest memory.",
+      "fascinatingFact": "The word translated 'firstfruits' (aparchē) comes from the harvest. Israel brought the first sheaf to God before the rest of the field was cut, as a pledge that the whole harvest was coming. By calling the risen Christ the firstfruits, Paul makes the resurrection a promise about us: where the first sheaf goes, the field follows.",
+      "content": "Paul says something in chapter 15 that should unsettle anyone who loves chapter 13 but quietly doubts the empty tomb: 'If Christ has not been raised, your faith is futile; you are still in your sins.' And: 'If our hope in Christ is for this life alone, we are to be pitied more than all men.'\n\nNotice he will not let us keep the love and drop the resurrection. A great deal of modern Christianity tries exactly that - keep the ethics, keep 'love is patient, love is kind,' and treat the resurrection as a beautiful symbol of resilience rather than an event that happened to a body on a particular Sunday. Paul forbids the trade. If Christ is still in the tomb, then love is patient and kind for a few decades and then everyone dies and it is all swallowed up after all. Death wins, and the most loving life ever lived was a waste.\n\nBut Paul does not argue from sentiment. He argues from a fact he claims to have received and seen: Christ died for our sins according to the Scriptures, was buried, and was raised on the third day. Because that grave is empty, love is not a brave gesture against the dark. It is the grain of the universe. Death has lost, so love is the thing that lasts - and the only love strong enough to prove it was the love that walked into the grave on our behalf and walked back out."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul tells a quarreling church that of all the gifts they prize - tongues, prophecy, knowledge - only love survives, because Christ has been raised as the firstfruits and death has been swallowed up in victory.",
+      "modernApplication": "We still rank the showy gifts highest - platform, eloquence, expertise, the ability to dazzle. Paul's ledger is brutal and freeing: without love, the gifts are noise that dies with us. With love, the smallest faithful act is planted in ground that the resurrection guarantees will be raised. Your hidden, unrewarded love is not vapor. It is seed.",
+      "connectionPoint": "This is the last day of a five-day reading, and the whole arc has been moving here. The series opened with the noise of a divided church straining after gifts; it ends with the one gift that lasts, anchored to the one tomb that opened. Faith and hope, Paul says, remain - but the greatest is love, because faith will become sight and hope will become possession, while love simply goes on into the world the resurrection makes.",
+      "newTestamentEcho": "John says it plainly: 'God is love' (1 John 4:8), and 'We love because He first loved us' (1 John 4:19). The love Paul describes in chapter 13 is not finally a human achievement to strain after; it is the character of the God who raised Jesus, poured out into ordinary people by the Spirit (Romans 5:5)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Read 1 Corinthians 13:4-7 slowly, and put your own name in place of the word 'love.' Where does the sentence stop being true of you?",
+      "additionalQuestions": [
+        "Which of your gifts or efforts are you quietly counting on to outlast you - and would they survive Paul's test of 'but have not love'?",
+        "Be honest: do you treat the resurrection as a fact that changes everything, or as a comforting symbol you bring out at funerals? What would change if it were simply true?",
+        "Where in your life right now are you being asked to 'bear all things, endure all things' with no reward in sight - and how does it change that labor to know it is seed for a harvest, not vapor?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "grateful-resolution",
+      "prayerText": "Father, thank You that the love which never fails is not first something I must produce, but something You are. Where my love has fallen - grown impatient, kept account of wrongs, gone quiet when it should have endured - forgive me, and fill me again. Thank You that Christ is risen, the firstfruits, and that nothing done in love is wasted. When death frightens me, let me hear the question Paul threw at the grave: where, O Death, is your sting? Make me steadfast and immovable, always abounding in Your work, because You have promised my labor in You is not in vain. Through Jesus Christ, who was raised on the third day. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one act of love that no one will see and no one will repay - and let it be enough that God sees it and the resurrection secures it. Then write down the name of one person you are still 'keeping account of wrongs' against, and begin, today, to stop.",
+      "leavingAtCross": [
+        "The quiet fear that death has the last word and love is just a brave way of losing",
+        "The habit of ranking the showy gifts - platform, eloquence, being right - above the love that actually lasts",
+        "The account of wrongs I keep against someone, which love is supposed to release"
+      ],
+      "receivingFromCross": [
+        "The risen Christ as firstfruits - the promise that I, too, will be raised imperishable",
+        "Freedom to love without needing it returned, because the harvest is guaranteed",
+        "Steadiness for the long, unseen labor of love, knowing it is not in vain"
+      ],
+      "content": "Today, do one act of love that no one will see and no one will repay - and let it be enough that God sees it and the resurrection secures it. Then write down the name of one person you are still 'keeping account of wrongs' against, and begin, today, to stop."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Paul say love is greater than faith and hope, even though all three 'remain'? What happens to faith and hope when we finally see Christ face to face?",
+        "How does the empty tomb of chapter 15 keep the love of chapter 13 from being mere sentiment? What does Paul say is true 'if Christ has not been raised'?",
+        "What does the word 'firstfruits' promise about those who have died - and how should that reshape the way we grieve?"
+      ],
+      "forAccountabilityPartners": [
+        "Read 1 Corinthians 13:4-7 aloud to each other, substituting your own names. Talk honestly about where the sentence broke.",
+        "Ask each other: do you really believe the resurrection happened, or do you live as if this life is all there is? Where does the gap show?",
+        "Name one piece of love-labor in your life that feels wasted right now, and remind each other that Paul ends the chapter: 'your labor in the Lord is not in vain.'"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 13:1",
+          "text": "If I speak in the tongues of men and of angels, but have not love, I am only a ringing gong or a clanging cymbal."
+        },
+        {
+          "reference": "1 Corinthians 15:3-4",
+          "text": "For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that He was buried, that He was raised on the third day according to the Scriptures."
+        },
+        {
+          "reference": "1 Corinthians 15:57-58",
+          "text": "But thanks be to God, who gives us the victory through our Lord Jesus Christ! Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain."
+        },
+        {
+          "reference": "1 John 4:19",
+          "text": "We love because He first loved us."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters in one sitting, as Paul wrote them. Watch how the same hope - that love and life outlast the grave - rises in both. Then read the church's earliest creed embedded in 15:3-5 and notice how old it already was when Paul quoted it."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Corinthians",
+      "era": "c. AD 53-55, writing from Ephesus",
+      "key_trait": "A former persecutor who staked everything on having seen the risen Christ",
+      "description": "Paul wrote to Corinth as a founder writing to a fracturing church - one he loved and was exasperated by. He had every reason to lead with the gifts the Corinthians prized, since he possessed them in abundance. Instead he wrote chapter 13, demoting his own gifts beneath love, and chapter 15, grounding everything in a resurrection he claimed to have witnessed personally on the Damascus road. The man who once watched Stephen die now wrote the church's great chapter on why death had lost.",
+      "keyQuote": "If our hope in Christ is for this life alone, we are to be pitied more than all men. But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.",
+      "lessonForUs": "Paul refused to separate the love we admire from the resurrection we doubt. He bet his life that both were true - and told us our own labor of love is 'not in vain' for the same reason: the tomb is empty.",
+      "heading": "Apostle to the Corinthians"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "1 Corinthians 13:8, 13; 15:3-4, 17, 19, 20, 54-55, 57-58",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (agapē G26; aparchē, 'firstfruits') reflects standard lexical sources. The early-creed character of 1 Corinthians 15:3-5 ('received... passed on') reflects broad scholarly consensus that Paul is quoting a confession older than the letter itself."
+  ]
 }

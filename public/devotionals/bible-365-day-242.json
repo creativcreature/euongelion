@@ -1,38 +1,185 @@
 {
   "day": 242,
   "title": "Ezekiel: Dry Bones Live — Day 4 — Application",
-  "teaser": "Day 242 of Bible 365 — Ezekiel 36-37",
+  "teaser": "You cannot prophesy yourself a new heart. But you can stand in the valley and speak the word God hands you - and watch Him do what only breath can do.",
   "framework": "Ezekiel 36-37 — Ezekiel: Dry Bones Live",
   "scriptureReference": "Ezekiel 36-37",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 242"
+      "type": "scripture",
+      "reference": "Ezekiel 36:26-27; 37:3-6, 11-14",
+      "translation": "BSB",
+      "emphasis": [
+        "a new heart",
+        "a heart of flesh",
+        "can these bones come to life?",
+        "Prophesy concerning these bones",
+        "our hope has perished",
+        "I will put My Spirit in you and you will live"
+      ],
+      "hebrewOriginal": "וְנָתַתִּי לָכֶם לֵב חָדָשׁ וְרוּחַ חֲדָשָׁה אֶתֵּן בְּקִרְבְּכֶם",
+      "passage": "I will give you a new heart and put a new spirit within you; I will remove your heart of stone and give you a heart of flesh. And I will put My Spirit within you and cause you to walk in My statutes and to carefully observe My ordinances. ... Then He asked me, \"Son of man, can these bones come to life?\" \"O Lord GOD,\" I replied, \"only You know.\" And He said to me, \"Prophesy concerning these bones and tell them, 'Dry bones, hear the word of the LORD! This is what the Lord GOD says to these bones: I will cause breath to enter you, and you will come to life. I will attach tendons to you and make flesh grow upon you and cover you with skin. I will put breath within you so that you will come to life. Then you will know that I am the LORD.'\" ... Then He said to me, \"Son of man, these bones are the whole house of Israel. Look, they are saying, 'Our bones are dried up, and our hope has perished; we are cut off.' ... I will put My Spirit in you and you will live, and I will settle you in your own land. Then you will know that I, the LORD, have spoken, and I will do it, declares the LORD.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ezekiel 36-37**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ezekiel 36-37 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רוּחַ",
+      "transliteration": "ruach",
+      "pronunciation": "ROO-akh",
+      "meaning": "breath, wind, Spirit",
+      "rootMeaning": "One word that holds all three at once: the air in your lungs, the wind across a field, and the Spirit of God. Hebrew does not separate them. Where there is ruach, there is life that came from outside the body.",
+      "usageNote": "Ruach appears ten times in Ezekiel 37 alone, translated as 'Spirit,' 'breath,' and 'winds' depending on the line - but it is the same word every time. The vision is built on a single thread: the bones have no ruach, so God sends ruach, and the ruach makes them live. The reader who only has English misses that the breath, the four winds, and the Spirit poured out are one gift under one name.",
+      "wordByWord": [
+        {
+          "word": "רוּחַ",
+          "transliteration": "ruach",
+          "meaning": "breath, wind, Spirit - the same noun in all three senses"
+        },
+        {
+          "word": "מֵאַרְבַּע רוּחוֹת",
+          "transliteration": "me'arba ruchot",
+          "meaning": "'from the four winds' (37:9) - the breath summoned from every direction"
+        },
+        {
+          "word": "וַתָּבוֹא בָהֶם הָרוּחַ",
+          "transliteration": "vattavo vahem haruach",
+          "meaning": "'and the breath entered them' (37:10) - the moment of resurrection"
+        },
+        {
+          "word": "רוּחִי",
+          "transliteration": "ruchi",
+          "meaning": "'My Spirit' (37:14) - God names the breath as His own Spirit"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נְשָׁמָה / רוּחַ",
+          "reference": "In Genesis 2:7 God breathes the 'breath of life' (neshamah) into the man of dust and he becomes a living soul. Ezekiel 37 deliberately runs that scene in reverse and forward: dust and dead matter again, and again the breath of God making it live. Creation is being told a second time, over a graveyard."
+        }
+      ],
+      "strongsNumber": "H7307",
+      "definition": "wind, breath, spirit; the animating power that comes from God",
+      "usage": "By the end of the vision ruach is no longer ambiguous. God says plainly, 'I will put My Spirit in you and you will live.' The breath in the valley turns out to have a name: it is the Spirit of God Himself."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ezekiel: Dry Bones Live. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ resurrects the dead (John 11:25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Word You Are Given to Say",
+      "body": "By the time we reach Ezekiel 37, the prophet has already heard the promise. One chapter earlier God said it flatly: a new heart, a new spirit, the heart of stone removed, the heart of flesh given, His own Spirit placed within. It is one of the most personal sentences in the Old Testament. Then, instead of leaving it as a promise to admire from a distance, God takes Ezekiel by the hand and walks him into a valley to watch it happen on a battlefield of the dead.\n\nThe scene is grim and exact. Bones everywhere, scattered loose across the valley floor, and the text twice says they were very dry - long past mourning, long past hope of recovery. Then the question: 'Son of man, can these bones come to life?' Ezekiel does not pretend. He does not say yes, and he refuses to say no. He answers, 'O Lord GOD, only You know.' It is the honest reply of a man who has stopped measuring possibility by what he can see.\n\nThen God hands him something to do. Not a feeling to summon. Not a plan to draft. A word to speak: 'Prophesy concerning these bones.' Ezekiel is not asked to raise the dead - he could not. He is asked to say what God told him to say, and to keep saying it, while God does what only God can do. This is the shape of Day 4. The promise of a new heart, made in chapter 36, becomes in chapter 37 a thing carried out in obedience: God supplies the life, and the prophet supplies the voice.",
+      "keyInsight": "God did not ask Ezekiel to manufacture life. He asked him to speak the word he was given and trust the Spirit to do the raising. Obedience is not the power; it is the posture in which power arrives.",
+      "content": "By the time we reach Ezekiel 37, the prophet has already heard the promise. One chapter earlier God said it flatly: a new heart, a new spirit, the heart of stone removed, the heart of flesh given, His own Spirit placed within. It is one of the most personal sentences in the Old Testament. Then, instead of leaving it as a promise to admire from a distance, God takes Ezekiel by the hand and walks him into a valley to watch it happen on a battlefield of the dead.\n\nThe scene is grim and exact. Bones everywhere, scattered loose across the valley floor, and the text twice says they were very dry - long past mourning, long past hope of recovery. Then the question: 'Son of man, can these bones come to life?' Ezekiel does not pretend. He does not say yes, and he refuses to say no. He answers, 'O Lord GOD, only You know.' It is the honest reply of a man who has stopped measuring possibility by what he can see.\n\nThen God hands him something to do. Not a feeling to summon. Not a plan to draft. A word to speak: 'Prophesy concerning these bones.' Ezekiel is not asked to raise the dead - he could not. He is asked to say what God told him to say, and to keep saying it, while God does what only God can do. This is the shape of Day 4. The promise of a new heart, made in chapter 36, becomes in chapter 37 a thing carried out in obedience: God supplies the life, and the prophet supplies the voice."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hospice Nurse Who Kept Reading",
+      "body": "A friend of mine spent years as a hospice nurse. She told me about a man on her ward, late stage, unresponsive for days, whose wife sat by the bed reading the same psalms out loud every evening. The staff had gently explained that he likely could not hear her. She read anyway. 'I'm not reading so he'll wake up,' she said. 'I'm reading because these are the words we said when we were young, and I am not going to let the last room he is in be a silent one.'\n\nMy friend admitted she used to think that was a kind of denial. Over the years she changed her mind. The woman was not measuring the room by the monitor. She had been handed words that mattered, and she kept speaking them into a place that gave nothing back, because the speaking was hers to do and the rest was not.\n\nThat is closer to what God asks of Ezekiel than the triumphant version we sometimes preach. The prophet stands in a valley that gives nothing back - very dry, no movement, no sign - and he opens his mouth and speaks anyway. He is not faking optimism. He is doing the one thing that was actually assigned to him, and leaving the breath to God.",
+      "connectionToTheme": "Obedience often looks like speaking the word you were given into a situation that offers no evidence it will work - and trusting that the life is God's department, not yours.",
+      "content": "A friend of mine spent years as a hospice nurse. She told me about a man on her ward, late stage, unresponsive for days, whose wife sat by the bed reading the same psalms out loud every evening. The staff had gently explained that he likely could not hear her. She read anyway. 'I'm not reading so he'll wake up,' she said. 'I'm reading because these are the words we said when we were young, and I am not going to let the last room he is in be a silent one.'\n\nMy friend admitted she used to think that was a kind of denial. Over the years she changed her mind. The woman was not measuring the room by the monitor. She had been handed words that mattered, and she kept speaking them into a place that gave nothing back, because the speaking was hers to do and the rest was not.\n\nThat is closer to what God asks of Ezekiel than the triumphant version we sometimes preach. The prophet stands in a valley that gives nothing back - very dry, no movement, no sign - and he opens his mouth and speaks anyway. He is not faking optimism. He is doing the one thing that was actually assigned to him, and leaving the breath to God."
+    },
+    {
+      "type": "insight",
+      "heading": "Bones First, Then Breath",
+      "body": "Watch the order in the vision, because it is doing something deliberate. Ezekiel prophesies, and there is a noise, a rattling, and the bones come together, bone to bone. Tendons appear, flesh grows, skin covers them. The bodies are reassembled, whole, lying in rows. And the text stops you cold: 'but there was no breath in them.'\n\nThis is the warning hidden inside the comfort. You can have everything assembled and still not be alive. The valley fills with bodies that look human in every respect - bone, sinew, muscle, skin - and they are still corpses, because reassembly is not resurrection. A life that has put all its parts back in order is not the same as a life that has received the Spirit of God.\n\nSo God speaks again: 'Prophesy to the breath... Come from the four winds, O breath, and breathe into these slain, so that they may live.' Only then do they stand. This is why Day 4 cannot collapse into a self-improvement plan. The work of getting your bones in order - the disciplines, the repentance, the new habits, all genuinely commanded - is the first prophecy. But it is not the thing that makes you live. After everything is in place, you still need breath that comes from outside you, from the four winds, from God. We can arrange the body. Only God can fill it.",
+      "historicalContext": "Ezekiel prophesied among the exiles by the River Kebar in Babylon after 597 BC, to a people who had watched Jerusalem fall and the temple burn. By the time of this vision they had stopped saying 'we will go home' and started saying the line God quotes back to them in 37:11: 'Our bones are dried up, and our hope has perished; we are cut off.' This is not a sermon to the hopeful. It is a word to a community that has already pronounced itself dead.",
+      "fascinatingFact": "God interprets His own vision and tells Ezekiel exactly what it means: 'these bones are the whole house of Israel.' The valley is not a generic picture of death - it is a portrait of the exiles' own despair handed back to them, with God's answer attached. The very people calling themselves cut off are the bones being told to hear the word of the LORD.",
+      "content": "Watch the order in the vision, because it is doing something deliberate. Ezekiel prophesies, and there is a noise, a rattling, and the bones come together, bone to bone. Tendons appear, flesh grows, skin covers them. The bodies are reassembled, whole, lying in rows. And the text stops you cold: 'but there was no breath in them.'\n\nThis is the warning hidden inside the comfort. You can have everything assembled and still not be alive. The valley fills with bodies that look human in every respect - bone, sinew, muscle, skin - and they are still corpses, because reassembly is not resurrection. A life that has put all its parts back in order is not the same as a life that has received the Spirit of God.\n\nSo God speaks again: 'Prophesy to the breath... Come from the four winds, O breath, and breathe into these slain, so that they may live.' Only then do they stand. This is why Day 4 cannot collapse into a self-improvement plan. The work of getting your bones in order - the disciplines, the repentance, the new habits, all genuinely commanded - is the first prophecy. But it is not the thing that makes you live. After everything is in place, you still need breath that comes from outside you, from the four winds, from God. We can arrange the body. Only God can fill it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God promises a new heart and His own Spirit within (Ezekiel 36:26-27), then dramatizes it: in a valley of very dry bones, His breath enters the slain and they stand on their feet, a vast army (37:10).",
+      "modernApplication": "Most of us are not asking God to fix one bad habit. We are standing over some part of our life that has gone dry past arguing about - a deadened marriage, a faith that runs on memory, a self we have given up on - and quietly agreeing with the exiles: our hope has perished, we are cut off. Ezekiel does not tell you to feel more hopeful. He tells you to do the assigned thing, speak the word God gives, and let the breath be God's to send.",
+      "connectionPoint": "The new-heart promise of Ezekiel 36 is the same promise Jeremiah heard - a covenant written not on stone but within (Jeremiah 31:33) - and it runs straight to the upper room, where Jesus tells Nicodemus no one can see the kingdom unless he is born of the Spirit, born of the ruach that 'blows where it wishes' (John 3:5-8). Ezekiel's four winds and Jesus' wind of the Spirit are the same breath under two testaments.",
+      "newTestamentEcho": "On the evening of His resurrection, the risen Christ stood among His disciples, breathed on them, and said, 'Receive the Holy Spirit' (John 20:22) - the only place in the Gospels Jesus breathes on anyone, echoing the breath in Ezekiel's valley and the breath in Eden's dust. The One who said 'I am the resurrection and the life' (John 11:25) is the One who finally puts the promised Spirit within. The dry bones live because Christ breathes."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you quietly said with the exiles, 'our hope has perished; we are cut off' - and what would it look like to stop measuring that place by what you can see?",
+      "additionalQuestions": [
+        "What is the word God has actually given you to speak or to do into that dry place - not the outcome you want, but the obedience that is yours to carry out?",
+        "Where have you mistaken reassembly for resurrection - getting all the parts of your life back in order while still waiting for the breath that makes it alive?",
+        "If God has already promised you a heart of flesh in place of stone, what is one stone you are still gripping as though it were yours to keep?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord GOD, only You know whether these bones can live. I have looked at the dry place so long I had stopped expecting anything. Forgive me for measuring You by what I can see. Give me the word You want me to speak, and the obedience to keep speaking it when nothing answers back. I cannot make myself alive. So I ask plainly for what You promised: take out the heart of stone, give me a heart of flesh, and put Your own Spirit within me. Breathe, Lord. I will stand here and wait for the breath. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'very dry' place in your life out loud to God - the one you had quietly given up on. Then do the one assigned, obedient thing into it that is yours to do (a conversation, a prayer, a step of repentance, a word of truth), and consciously hand the outcome to the Spirit. You speak; God breathes.",
+      "leavingAtCross": [
+        "The verdict I had already passed on myself or someone I love: dried up, hopeless, cut off",
+        "The exhausting project of trying to breathe life into things I was only ever asked to obey in",
+        "The lie that a reassembled, well-managed life is the same thing as a life that is actually alive"
+      ],
+      "receivingFromCross": [
+        "The promised heart of flesh in place of the heart of stone, given and not earned",
+        "The Spirit of God placed within me - the breath that makes obedience into life",
+        "Permission to speak the word into the valley and leave the raising to the One who is the resurrection"
+      ],
+      "content": "Today, name one 'very dry' place in your life out loud to God - the one you had quietly given up on. Then do the one assigned, obedient thing into it that is yours to do (a conversation, a prayer, a step of repentance, a word of truth), and consciously hand the outcome to the Spirit. You speak; God breathes."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God reassemble the bones - tendon, flesh, skin - and then point out there was still 'no breath in them'? What is that ordering meant to teach about the difference between reassembly and resurrection?",
+        "Ezekiel answers 'only You know' to whether the bones can live. How is that different from both optimism and despair, and why might it be the most faithful answer?",
+        "God tells Ezekiel plainly that the bones 'are the whole house of Israel.' How does knowing the vision is the exiles' own despair handed back to them change how you read God's promise to open the graves?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been speaking 'our hope has perished' over yourself or your situation. Say it honestly, and then say back to each other what God says over it.",
+        "Talk about the difference between the work that is yours (prophesying, obeying, speaking the word) and the work that is only God's (sending the breath). Where have you been trying to do God's part?",
+        "Ask each other: what is the one obedient word or step God seems to be handing you to carry into a dry place this week - and how can we hold you to actually speaking it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:7",
+          "text": "Then the LORD God formed man from the dust of the ground and breathed the breath of life into his nostrils, and the man became a living being."
+        },
+        {
+          "reference": "Jeremiah 31:33",
+          "text": "I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people."
+        },
+        {
+          "reference": "John 3:8",
+          "text": "The wind blows where it wishes. You hear its sound, but you do not know where it comes from or where it is going. So it is with everyone born of the Spirit."
+        },
+        {
+          "reference": "John 20:22",
+          "text": "When He had said this, He breathed on them and said, \"Receive the Holy Spirit.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ezekiel 36-37",
+          "note": "Read the new-heart promise of 36:24-28 and the valley of dry bones in 37:1-14 in one sitting, watching how the word ruach (Spirit / breath / wind) threads the two chapters into a single act of God."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Ezekiel",
+      "title": "The Son of Man in the Valley",
+      "era": "6th century BC (exile in Babylon, after 597 BC)",
+      "description": "A priest carried into Babylonian exile, called to prophesy to a people who believed they were finished. God repeatedly addresses him as 'son of man' - a mortal among the dead - and sets him in the middle of a valley of dry bones to speak the word of the LORD over them. He does not raise the dead; he obeys, and watches the Spirit do what only the Spirit can do.",
+      "keyQuote": "O Lord GOD, only You know.",
+      "lessonForUs": "Ezekiel models the obedience of Day 4: he refuses both false optimism and despair, names the limit of what he can see, and then does the one thing he was actually given to do - speak the word - leaving the breath to God. That is what living out the new-heart promise looks like when the valley is still dry.",
+      "heading": "The Son of Man in the Valley"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2350,
+  "scriptureReference_full": "Ezekiel 36:26-27; 37:3-6, 11-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ruach, H7307) reflects standard lexical sources; the tenfold use of ruach across Ezekiel 37 and the Genesis 2:7 resonance are standard observations in Old Testament scholarship."
+  ]
 }

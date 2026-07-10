@@ -6,33 +6,177 @@
   "scriptureReference": "Deuteronomy 6:4-9",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 61"
+      "type": "scripture",
+      "reference": "Deuteronomy 6:4-9",
+      "translation": "BSB",
+      "emphasis": [
+        "Hear, O Israel",
+        "the LORD is One",
+        "love the LORD your God",
+        "upon your hearts"
+      ],
+      "hebrewOriginal": "שְׁמַע יִשְׂרָאֵל יְהוָה אֱלֹהֵינוּ יְהוָה אֶחָד",
+      "passage": "Hear, O Israel: The LORD our God, the LORD is One. And you shall love the LORD your God with all your heart and with all your soul and with all your strength. These words I am commanding you today are to be upon your hearts. And you shall teach them diligently to your children and speak of them when you sit at home and when you walk along the road, when you lie down and when you get up. Tie them as reminders on your hands and bind them on your foreheads. Write them on the doorposts of your houses and on your gates."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Deuteronomy 6:4-9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Deuteronomy 6:4-9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שְׁמַע",
+      "transliteration": "shema",
+      "pronunciation": "sh'-MAH",
+      "meaning": "hear, listen, obey",
+      "rootMeaning": "Shema is not a passive 'I heard a sound.' In Hebrew, to truly hear is to take in and to act. The same verb runs from listening to obeying with no seam between them. When God says shema, He is asking for the whole person to lean in and answer with a life.",
+      "usageNote": "These six verses are called the Shema, named after their first word, and they became the central confession of Israel - prayed morning and evening, taught to children, the first words a Jewish parent placed on a child's lips and the last words a dying believer tried to say. Jesus was raised saying these words.",
+      "wordByWord": [
+        {
+          "word": "שְׁמַע",
+          "transliteration": "shema",
+          "meaning": "hear, listen and obey"
+        },
+        {
+          "word": "יִשְׂרָאֵל",
+          "transliteration": "yisrael",
+          "meaning": "Israel - the whole covenant people, addressed as one"
+        },
+        {
+          "word": "יְהוָה אֱלֹהֵינוּ",
+          "transliteration": "YHWH eloheinu",
+          "meaning": "the LORD our God - the covenant name joined to the word 'our'"
+        },
+        {
+          "word": "יְהוָה אֶחָד",
+          "transliteration": "YHWH echad",
+          "meaning": "the LORD is one - undivided, unrivaled, the only"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶחָד",
+          "reference": "Echad means 'one.' It is the same word used in Genesis 2:24, where a man and his wife become 'one (echad) flesh' - a oneness rich enough to hold more than bare arithmetic. Israel heard in echad a God who is utterly single and supreme, with no second beside Him."
+        }
+      ],
+      "strongsNumber": "H8085",
+      "definition": "to hear with attention, to listen, and so to heed and obey",
+      "usage": "The command is not 'think about God' or 'feel something about God.' It is shema - hear in a way that bends the whole life toward the One who is speaking."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Love the Lord your God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ summarizes the Shema (Mark 12:29-30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Words a Whole People Was Meant to Carry",
+      "body": "Moses is an old man now, standing on the edge of a land he will not enter. A generation has died in the wilderness; their children are about to cross the Jordan into homes they did not build and vineyards they did not plant. Before they go, Moses gives them the one sentence everything else will hang on: \"Hear, O Israel: The LORD our God, the LORD is One.\"\n\nIn a world crowded with gods - a god for the storm, a god for the harvest, a god for every town and threshold - this was a staggering claim. Israel was not being told to add the LORD to a collection. They were being told there is no collection. The LORD is One, and the only fitting response to the One is everything: \"all your heart and with all your soul and with all your strength.\" Not a tithe of the affections. All of them.\n\nThen Moses does something tender and shrewd. He tells them where to put these words. On the heart, first - that is the source. But also into the ordinary grain of a day: spoken to children, talked over when you sit at home and when you walk the road, repeated as you lie down and when you get up. Tied to the hand, bound at the forehead, written on the doorpost and the gate. He is describing a life so soaked in this confession that you would have to leave your own house and your own body to escape it.",
+      "keyInsight": "The Shema does not ask for a religious compartment. It asks for a centered life - one God, loved with everything, remembered everywhere, from the doorpost you pass to the children you raise.",
+      "content": "Moses is an old man now, standing on the edge of a land he will not enter. A generation has died in the wilderness; their children are about to cross the Jordan into homes they did not build and vineyards they did not plant. Before they go, Moses gives them the one sentence everything else will hang on: \"Hear, O Israel: The LORD our God, the LORD is One.\"\n\nIn a world crowded with gods - a god for the storm, a god for the harvest, a god for every town and threshold - this was a staggering claim. Israel was not being told to add the LORD to a collection. They were being told there is no collection. The LORD is One, and the only fitting response to the One is everything: \"all your heart and with all your soul and with all your strength.\" Not a tithe of the affections. All of them.\n\nThen Moses does something tender and shrewd. He tells them where to put these words. On the heart, first - that is the source. But also into the ordinary grain of a day: spoken to children, talked over when you sit at home and when you walk the road, repeated as you lie down and when you get up. Tied to the hand, bound at the forehead, written on the doorpost and the gate. He is describing a life so soaked in this confession that you would have to leave your own house and your own body to escape it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Words by the Door",
+      "body": "A friend of mine grew up in a house with a small box fixed to the right side of the front door, set at a slight angle. As a boy he touched it with two fingers every time he passed and never thought about why. It was just the door. It was just what you did.\n\nYears later, away from home and not sure he believed any of it anymore, he caught himself reaching for a doorframe that wasn't there. His hand rose on its own. And it undid him a little - because his body still remembered a confession his mind had set down. Inside that small box was a tiny scroll, and on the scroll were these very words: \"Hear, O Israel: The LORD our God, the LORD is One.\"\n\nThat is exactly what Moses was after. He did not want a people who agreed with a doctrine. He wanted a people whose hands knew the way to the words, whose children grew up hearing them at the table and the bedside, who carried the confession in their muscles when their certainty wavered. He knew how forgetting works. A few verses later he warns them: when you eat and are satisfied in the good land, \"be careful not to forget the LORD\" (Deuteronomy 6:12). Comfort, not crisis, is what erodes the memory. So he stitched the words into the walls.",
+      "connectionToTheme": "The Shema was built to outlast the moods of belief - planted in habit, doorframe, and childhood so it could hold a person even when conviction grew thin.",
+      "content": "A friend of mine grew up in a house with a small box fixed to the right side of the front door, set at a slight angle. As a boy he touched it with two fingers every time he passed and never thought about why. It was just the door. It was just what you did.\n\nYears later, away from home and not sure he believed any of it anymore, he caught himself reaching for a doorframe that wasn't there. His hand rose on its own. And it undid him a little - because his body still remembered a confession his mind had set down. Inside that small box was a tiny scroll, and on the scroll were these very words: \"Hear, O Israel: The LORD our God, the LORD is One.\"\n\nThat is exactly what Moses was after. He did not want a people who agreed with a doctrine. He wanted a people whose hands knew the way to the words, whose children grew up hearing them at the table and the bedside, who carried the confession in their muscles when their certainty wavered. He knew how forgetting works. A few verses later he warns them: when you eat and are satisfied in the good land, \"be careful not to forget the LORD\" (Deuteronomy 6:12). Comfort, not crisis, is what erodes the memory. So he stitched the words into the walls."
+    },
+    {
+      "type": "insight",
+      "heading": "The One God, Loved in a Face",
+      "body": "Centuries after Moses, a scribe asked Jesus which commandment was the greatest of all. Jesus did not invent a new answer. He reached back and quoted this passage word for word: \"This is the most important: 'Hear O Israel, the Lord our God, the Lord is One. Love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength'\" (Mark 12:29-30). The greatest thing a human being can do had already been written down on Moses' lips. Jesus simply confirmed it and refused to let anyone shrink it.\n\nBut notice who is confirming it. The same Gospels that record Jesus reciting \"the LORD is One\" also record Him saying, \"Anyone who has seen Me has seen the Father\" (John 14:9), and John opens his account, \"In the beginning was the Word, and the Word was with God, and the Word was God\" (John 1:1). The Church has never read this as a second God added to the first - that would shatter the Shema. It has read it as the deepest meaning of echad: the one God is so fully one that to see the Son is to see the Father, and to love the LORD with all your heart is, in the end, to love Him in the face of His Christ. The Shema was never abolished. It was filled to the brim.\n\nSo the command to love God with everything is not finally a strain you must produce by force of will. It is a love made possible because the One you are commanded to love came near enough to be seen, heard, and followed.",
+      "historicalContext": "Deuteronomy sits at the close of the Torah, Moses' final addresses before Israel enters the land. The Shema (Deuteronomy 6:4-9) became the bedrock confession of Jewish faith, recited twice daily by the time of Jesus. When Jesus quotes it as the first commandment (Mark 12), He is speaking the prayer every faithful Israelite around Him already knew by heart - which is why no one disputes His answer.",
+      "fascinatingFact": "Jesus' summary in Mark 12:30 adds 'with all your mind' alongside heart, soul, and strength. He is not editing Moses but unfolding what 'all your heart' already meant in Hebrew, where the heart was the seat of thought as much as feeling. Love of God was always meant to include the whole inner life, mind included.",
+      "content": "Centuries after Moses, a scribe asked Jesus which commandment was the greatest of all. Jesus did not invent a new answer. He reached back and quoted this passage word for word: \"This is the most important: 'Hear O Israel, the Lord our God, the Lord is One. Love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength'\" (Mark 12:29-30). The greatest thing a human being can do had already been written down on Moses' lips. Jesus simply confirmed it and refused to let anyone shrink it.\n\nBut notice who is confirming it. The same Gospels that record Jesus reciting \"the LORD is One\" also record Him saying, \"Anyone who has seen Me has seen the Father\" (John 14:9), and John opens his account, \"In the beginning was the Word, and the Word was with God, and the Word was God\" (John 1:1). The Church has never read this as a second God added to the first - that would shatter the Shema. It has read it as the deepest meaning of echad: the one God is so fully one that to see the Son is to see the Father, and to love the LORD with all your heart is, in the end, to love Him in the face of His Christ. The Shema was never abolished. It was filled to the brim.\n\nSo the command to love God with everything is not finally a strain you must produce by force of will. It is a love made possible because the One you are commanded to love came near enough to be seen, heard, and followed."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Israel was given one confession to carry into a new land: the LORD is One, to be loved with all the heart, soul, and strength, and to be woven into the whole texture of daily life.",
+      "modernApplication": "We do not live among shrines to Baal and Asherah, but we serve a crowd of smaller lords all the same - the career, the screen, the image we manage, the approval we chase. The Shema does not ask us to be more religious in the spare corners of a divided life. It asks for the center. One God, loved with everything, given the place all the other claimants keep trying to take.",
+      "connectionPoint": "Moses knew that what we love we eventually become like, and that what we rehearse is what we love. So he prescribed rehearsal: talk of these words at the table, on the road, at bedtime, at waking. The modern equivalent is not a leather box on the arm - it is what your attention reaches for first in the morning and last at night. What you bind to your hands now is your phone. The question Moses presses is simply: whose words are written where your life can see them?",
+      "newTestamentEcho": "Jesus took this very passage and called it the greatest commandment of all (Mark 12:29-30; Matthew 22:37-38). And He is Himself the answer to it - the image of the invisible God, in whom 'all things hold together' (Colossians 1:15-17). To love the one God with everything is to love Him as He has made Himself known: in Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If someone could read your week the way you read a doorpost, what would they conclude you have written on your heart?",
+      "additionalQuestions": [
+        "Where in your life is the LORD one among many, rather than the One? Name the rival that most often takes the center.",
+        "Loving God 'with all your strength' includes your body, time, and money. Which of these is currently the hardest to hand over - and why?",
+        "Moses warned that comfort, not hardship, is what makes us forget God. Where are you most 'satisfied' right now, and is that the place you are most likely to drift?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD our God, You are One, and there is no other. I confess how easily I scatter my heart - a little love here, a little fear there, my real attention spent on things that cannot save me. Gather me back to the center. Teach me to love You with all my heart and soul and strength, not by straining, but by seeing You clearly in Christ, the One who came near. Write Your words again where my life can read them - at my waking, on my road, at my lying down. Let the first thing I hear each morning be this: the LORD is One, and He is mine. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Choose one doorway in your day - the first minute after you wake, or the moment you walk through your front door - and tie one phrase to it: \"The LORD our God, the LORD is One.\" Say it there, every time you cross that threshold, for the next week. Let your body learn the words before your feelings catch up.",
+      "leavingAtCross": [
+        "The scattered heart that gives God a slice and spends the rest on lesser lords",
+        "The lie that love for God is a feeling I have to manufacture rather than a response to the One who came near",
+        "The slow forgetting that comfort breeds - mistaking a satisfied life for a centered one"
+      ],
+      "receivingFromCross": [
+        "One God to love instead of many masters to appease",
+        "A love made possible because God made Himself seeable in Christ",
+        "Words to bind to my days that will hold me even when my certainty wavers"
+      ],
+      "content": "Choose one doorway in your day - the first minute after you wake, or the moment you walk through your front door - and tie one phrase to it: \"The LORD our God, the LORD is One.\" Say it there, every time you cross that threshold, for the next week. Let your body learn the words before your feelings catch up."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word 'shema' include that the English word 'hear' can miss?",
+        "Why does Moses command Israel to write these words on doorposts, hands, and gates rather than simply to believe them?",
+        "How does Jesus' use of the Shema in Mark 12 both honor it and reveal its fullest meaning?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one rival 'lord' that most often competes for the center of your heart, and tell your partner how you notice it taking over.",
+        "Talk about one ordinary moment in your day - a meal, a commute, bedtime - where you could 'write' the Shema into your routine this week.",
+        "Ask each other: if loving God with 'all your strength' includes time and money, what is one concrete place that love is being withheld?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 12:29-30",
+          "text": "Jesus replied, \"This is the most important: 'Hear O Israel, the Lord our God, the Lord is One. Love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength.'\""
+        },
+        {
+          "reference": "Deuteronomy 6:12",
+          "text": "be careful not to forget the LORD who brought you out of the land of Egypt, out of the house of slavery."
+        },
+        {
+          "reference": "Deuteronomy 11:18-19",
+          "text": "Fix these words of mine in your hearts and minds; tie them as reminders on your hands and bind them on your foreheads. Teach them to your children, speaking about them when you sit at home and when you walk along the road, when you lie down and when you get up."
+        },
+        {
+          "reference": "Colossians 1:16-17",
+          "text": "For in Him all things were created, things in heaven and on earth, visible and invisible... He is before all things, and in Him all things hold together."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Deuteronomy 6",
+          "note": "Read the whole chapter slowly. Watch how the confession (vv. 4-5) becomes a way of life (vv. 6-9), and how Moses immediately warns against forgetting in the comfort of the promised land (vv. 10-12)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Lawgiver on the Edge of the Land",
+      "description": "Israel's deliverer and lawgiver, who led the people out of Egypt and through forty years in the wilderness. Deuteronomy records his final addresses, delivered on the plains of Moab within sight of a promised land he was told he would not enter. Knowing his time was ending, Moses gave Israel the words he most wanted them to keep - the Shema - and pleaded with them to bind it into their homes and their children before the prosperity of the land could make them forget the God who gave it.",
+      "keyQuote": "Hear, O Israel: The LORD our God, the LORD is One.",
+      "lessonForUs": "Moses understood that faith is not preserved by intensity alone but by the patient stitching of truth into daily life. What we want to remember in the dry seasons, we must rehearse in the ordinary ones - at the table, on the road, at the door.",
+      "heading": "The Lawgiver on the Edge of the Land"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2328,
+  "scriptureReference_full": "Deuteronomy 6:4-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shema H8085; echad) reflects standard lexical sources. The recitation of the Shema morning and evening, and its use in childhood and at death, reflects long-attested Jewish practice."
+  ]
 }

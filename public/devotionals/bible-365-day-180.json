@@ -1,38 +1,186 @@
 {
   "day": 180,
-  "title": "Esther: For Such a Time — Day 5 — Resolution",
-  "teaser": "Day 180 of Bible 365 — Esther 4-7",
+  "title": "For such a time as this",
+  "teaser": "God's name is never spoken in Esther — yet a sleepless night, an extended scepter, and a reversed gallows say it on every page. A queen risks death to be received for her doomed people.",
   "framework": "Esther 4-7 — Esther: For Such a Time",
   "scriptureReference": "Esther 4-7",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 180"
+      "type": "scripture",
+      "reference": "Esther 4:13-16",
+      "translation": "BSB",
+      "emphasis": [
+        "for such a time as this",
+        "if I perish, I perish",
+        "relief and deliverance"
+      ],
+      "hebrewOriginal": "וּמִי יוֹדֵעַ אִם־לְעֵת כָּזֹאת הִגַּעַתְּ לַמַּלְכוּת",
+      "passage": "He sent back to her this reply: \"Do not imagine that because you are in the king's palace you alone will escape the fate of all the Jews. For if you remain silent at this time, relief and deliverance for the Jews will arise from another place, but you and your father's house will perish. And who knows if perhaps you have come to the kingdom for such a time as this?\" Then Esther sent this reply to Mordecai: \"Go and assemble all the Jews who can be found in Susa, and fast for me. Do not eat or drink for three days, night or day, and I and my maidens will fast as you do. After that, I will go to the king, even though it is against the law. And if I perish, I perish!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Esther 4-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Esther 4-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לְעֵת כָּזֹאת",
+      "transliteration": "le'et kazot",
+      "pronunciation": "leh-ET ka-ZOTE",
+      "meaning": "for a time like this, for such a time as this",
+      "rootMeaning": "Et is a fixed, appointed time - not just clock-time but the right moment, the season ripe for something. Kazot means 'like this one,' pointing at the very hour the speaker is standing in. Together: this exact moment, weighted with purpose.",
+      "usageNote": "Mordecai never says the word 'God' in this sentence - the whole book of Esther never names Him once. Yet le'et kazot leans the entire question on a hidden Hand. To ask 'who knows if you have come to the kingdom for a time like this' is to assume Someone arranged the coming.",
+      "wordByWord": [
+        {
+          "word": "וּמִי יוֹדֵעַ",
+          "transliteration": "umi yodea",
+          "meaning": "and who knows - a question that quietly admits a Knower behind the unknown"
+        },
+        {
+          "word": "אִם",
+          "transliteration": "im",
+          "meaning": "if, whether - holding the possibility open, not boasting certainty"
+        },
+        {
+          "word": "לְעֵת",
+          "transliteration": "le'et",
+          "meaning": "for the appointed time, the fitting moment"
+        },
+        {
+          "word": "כָּזֹאת",
+          "transliteration": "kazot",
+          "meaning": "like this one - this very hour you are in"
+        },
+        {
+          "word": "הִגַּעַתְּ",
+          "transliteration": "higa'at",
+          "meaning": "you have arrived, you have been brought - the verb hints at being carried there, not just walking in"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֵת",
+          "reference": "The same et fills Ecclesiastes 3:1 - 'there is a time (et) for everything.' Esther stands inside one of those appointed times and is asked whether she will recognize it."
+        }
+      ],
+      "strongsNumber": "H6256",
+      "definition": "et: a point or period of time; an appointed, fitting, opportune season",
+      "usage": "The phrase has outlived its chapter. People who have never read Esther still say someone was raised up 'for such a time as this' - a sense that a particular life met a particular hour on purpose."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Esther: For Such a Time. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s timing perfect (Gal 4:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A King Who Cannot Sleep, a God Who Is Never Named",
+      "body": "Esther is the one book in the Bible that never says the word God. No prayer is answered out loud, no prophet stands up, no miracle splits the sea. There is only a foreign court, a beauty pageant, a death decree, and a chain of coincidences so tightly linked that by the end you cannot believe they are coincidences at all.\n\nWatch the chain in chapters four through seven. A Jewish queen hides her people while a royal edict orders their slaughter. Her cousin Mordecai sends word that her silence will not save her, and asks the question that names the whole book: who knows if you have come to the kingdom for such a time as this. Esther fasts three days and then walks, uninvited and against the law, into a throne room where the penalty for an unsummoned approach is death. The king extends his gold scepter. She lives.\n\nThen the hinge. \"That night sleep escaped the king\" (Esther 6:1). Of all the nights, this one. He calls for the royal records to be read aloud - the ancient cure for insomnia - and the reader happens to land on the page where Mordecai once exposed an assassination plot and was never rewarded. At that exact hour Haman walks into the court to ask permission to hang Mordecai. The king asks Haman how to honor a man the king delights in; Haman, sure it must be himself, designs a lavish parade - and is ordered to lead Mordecai through it. No one in the story sees the Hand. The reader sees nothing but Hand.",
+      "keyInsight": "The book that never names God is the book most insistent that He is present. His fingerprints are all over the timing precisely because His name is nowhere on the page.",
+      "content": "Esther is the one book in the Bible that never says the word God. No prayer is answered out loud, no prophet stands up, no miracle splits the sea. There is only a foreign court, a beauty pageant, a death decree, and a chain of coincidences so tightly linked that by the end you cannot believe they are coincidences at all.\n\nWatch the chain in chapters four through seven. A Jewish queen hides her people while a royal edict orders their slaughter. Her cousin Mordecai sends word that her silence will not save her, and asks the question that names the whole book: who knows if you have come to the kingdom for such a time as this. Esther fasts three days and then walks, uninvited and against the law, into a throne room where the penalty for an unsummoned approach is death. The king extends his gold scepter. She lives.\n\nThen the hinge. \"That night sleep escaped the king\" (Esther 6:1). Of all the nights, this one. He calls for the royal records to be read aloud - the ancient cure for insomnia - and the reader happens to land on the page where Mordecai once exposed an assassination plot and was never rewarded. At that exact hour Haman walks into the court to ask permission to hang Mordecai. The king asks Haman how to honor a man the king delights in; Haman, sure it must be himself, designs a lavish parade - and is ordered to lead Mordecai through it. No one in the story sees the Hand. The reader sees nothing but Hand."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter She Almost Didn't Send",
+      "body": "A woman I know spent two years sitting on a wrong she had witnessed at work - a quiet pattern that was hurting people who had no power to defend themselves. She was not the boss. She was not the obvious person to say anything. And she had a mortgage, a family, and a reasonable fear that speaking would cost her the job.\n\nShe told me she kept doing the math Esther did. Maybe someone else will handle it. Maybe it isn't my place. Maybe if I stay quiet I'll be the one who survives the layoffs. The math always came out in favor of silence, and the silence always tasted like ash.\n\nWhat finally moved her was not courage in the heroic sense. It was a smaller, stranger thought: that she had landed in that office, in that seat, with that particular knowledge, for a reason she could not see. She wrote the letter. It cost her more than she hoped and less than she feared. \"I still don't know if I was right about everything,\" she told me. \"But I know I was put where I could see it. And seeing it was the assignment.\"",
+      "connectionToTheme": "Esther's crisis is not rare. Most of us are handed one room, one piece of knowledge, one moment of access - and the temptation is always to assume the calling belongs to someone else.",
+      "content": "A woman I know spent two years sitting on a wrong she had witnessed at work - a quiet pattern that was hurting people who had no power to defend themselves. She was not the boss. She was not the obvious person to say anything. And she had a mortgage, a family, and a reasonable fear that speaking would cost her the job.\n\nShe told me she kept doing the math Esther did. Maybe someone else will handle it. Maybe it isn't my place. Maybe if I stay quiet I'll be the one who survives the layoffs. The math always came out in favor of silence, and the silence always tasted like ash.\n\nWhat finally moved her was not courage in the heroic sense. It was a smaller, stranger thought: that she had landed in that office, in that seat, with that particular knowledge, for a reason she could not see. She wrote the letter. It cost her more than she hoped and less than she feared. \"I still don't know if I was right about everything,\" she told me. \"But I know I was put where I could see it. And seeing it was the assignment.\""
+    },
+    {
+      "type": "insight",
+      "heading": "The Gallows He Built",
+      "body": "The center of these four chapters is one image: a gallows fifty cubits high, built in Haman's own yard, for Mordecai. Roughly seventy-five feet - taller than any practical need, a monument to a single man's hatred. Haman raises it in the evening of chapter five, glad of heart, planning to ask the king's permission in the morning.\n\nHe never gets to ask. By morning the king has ordered him to honor the very man he meant to kill. By that night Esther has named him at the banquet, the king has stormed out in fury, and Haman has fallen across the queen's couch begging for the life he was so eager to take from others. Then a servant mentions, almost in passing, the gallows standing ready in Haman's yard. \"Hang him on it,\" the king says.\n\nThe Hebrew storyteller is doing something deliberate and old. The trap closes on the trapper. The Psalmist had already sung it: the wicked man \"has dug a hole and hollowed it out; he has fallen into a pit of his own making\" (Psalm 7:15). Pharaoh drowns in the sea he sent armies through. Haman dies on the wood he raised for Mordecai. Scripture keeps showing us that evil, given enough rope, tends to hang itself - and that the God who is never named in Esther is the same God who quietly turns weapons back on the hands that forged them.",
+      "historicalContext": "Esther is set in the Persian court of Xerxes I (Ahasuerus), who reigned 486-465 BC, in the citadel of Susa - one of the empire's royal capitals. The Jews in the story are descendants of those who did not return to Judah after the exile; they are a vulnerable minority living under an absolute monarchy whose edicts, once sealed, could not be revoked. The annual feast of Purim (Esther 9) commemorates this deliverance to this day.",
+      "fascinatingFact": "Haman is called an Agagite (Esther 3:1), tying him to Agag, king of the Amalekites - the people who first attacked Israel after the Exodus (Exodus 17). Mordecai is a Benjamite, of the house of Kish, the line of Saul. The ancient war that King Saul left unfinished surfaces again in a Persian court centuries later, and this time it ends on a gallows the enemy built himself.",
+      "content": "The center of these four chapters is one image: a gallows fifty cubits high, built in Haman's own yard, for Mordecai. Roughly seventy-five feet - taller than any practical need, a monument to a single man's hatred. Haman raises it in the evening of chapter five, glad of heart, planning to ask the king's permission in the morning.\n\nHe never gets to ask. By morning the king has ordered him to honor the very man he meant to kill. By that night Esther has named him at the banquet, the king has stormed out in fury, and Haman has fallen across the queen's couch begging for the life he was so eager to take from others. Then a servant mentions, almost in passing, the gallows standing ready in Haman's yard. \"Hang him on it,\" the king says.\n\nThe Hebrew storyteller is doing something deliberate and old. The trap closes on the trapper. The Psalmist had already sung it: the wicked man \"has dug a hole and hollowed it out; he has fallen into a pit of his own making\" (Psalm 7:15). Pharaoh drowns in the sea he sent armies through. Haman dies on the wood he raised for Mordecai. Scripture keeps showing us that evil, given enough rope, tends to hang itself - and that the God who is never named in Esther is the same God who quietly turns weapons back on the hands that forged them."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Esther risks death to enter the throne room uninvited and plead for a condemned people. The king extends his scepter; she is received; the decree against her people is reversed and the enemy falls.",
+      "modernApplication": "We are rarely asked to walk into a literal throne room, but most of us know the smaller version: the room we could speak in and don't, the access we have and excuse ourselves from using, the silence that feels safer than the cost of acting. The book asks whether we will recognize the hour we are standing in.",
+      "connectionPoint": "Esther's gamble works because Someone she never names has already arranged the king's sleeplessness, the timing of the records, the moment Haman walks in. Providence does not remove her risk - she still fasts, still trembles, still says 'if I perish, I perish.' It surrounds her risk. Courage and providence are not rivals in this story; they hold hands.",
+      "newTestamentEcho": "A queen approaches a throne where unsummoned entry means death, and is received, and lives - and her people are saved through her acceptance. Hebrews invites us to a greater throne with the courage Esther had to summon: \"Let us then approach the throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need\" (Hebrews 4:16). What Esther risked everything to win for her people, Christ has secured for us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What room have you been placed in - what access, what knowledge, what relationship - that someone is quietly counting on you to use?",
+      "additionalQuestions": [
+        "Where have you told yourself 'someone else will handle it' about something you are actually positioned to address?",
+        "Esther fasted three days before she acted. What would it look like to bring your hardest decision to God before you bring it to the room?",
+        "When you read 'who knows if you have come to the kingdom for such a time as this,' what hour of your own life rises to mind?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You are present in the rooms where Your name is never spoken. You were turning the king's sleep and Haman's gallows while no one saw Your hand, and You are turning things I cannot see in my own life tonight. Forgive me for the silences I have called wisdom and the access I have wasted on my own safety. Show me the hour I am standing in. Give me Esther's strange courage - to fast first, then act, and to say even in fear, 'if I perish, I perish.' And thank You that I do not approach an unpredictable throne, but a throne of grace, opened to me at the cost of the One who went in first on my behalf. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one 'room' you have been given - a job, a family, a friendship, a position - and ask honestly what it is for. Then take one concrete step this week into a place you have been avoiding because it felt safer to stay silent. Fast or pray over it first, the way Esther did, before you act.",
+      "leavingAtCross": [
+        "The math that always comes out in favor of staying silent and safe",
+        "The lie that the assignment belongs to someone better positioned than me",
+        "The fear that walking in uninvited will be the end of me"
+      ],
+      "receivingFromCross": [
+        "The confidence that I approach a throne of grace, not a throne of chance",
+        "The freedom to act in faith even when I cannot see the Hand at work",
+        "The peace of knowing my times - this very hour - are held by God"
+      ],
+      "content": "Name the one 'room' you have been given - a job, a family, a friendship, a position - and ask honestly what it is for. Then take one concrete step this week into a place you have been avoiding because it felt safer to stay silent. Fast or pray over it first, the way Esther did, before you act."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that God is never named in Esther, even though the whole deliverance turns on His unseen timing?",
+        "What does Mordecai mean by 'relief and deliverance will arise from another place' - and what does it teach about how God works whether or not we cooperate?",
+        "How does Haman dying on his own gallows connect to the biblical pattern that the wicked fall into the pit they dig?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'room' you have been placed in and what you sense it might be for.",
+        "Talk about a time you stayed silent when you could have acted - and what you would do differently now.",
+        "Esther said 'if I perish, I perish.' Ask each other: what is the costliest right thing you are currently afraid to do?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Esther 6:1",
+          "text": "That night sleep escaped the king; so he ordered the Book of Records, the Chronicles, to be brought in and read to him."
+        },
+        {
+          "reference": "Esther 7:10",
+          "text": "So they hanged Haman on the gallows he had prepared for Mordecai. Then the fury of the king subsided."
+        },
+        {
+          "reference": "Psalm 7:15-16",
+          "text": "He has dug a hole and hollowed it out; he has fallen into a pit of his own making. His trouble recoils on himself, and his violence falls on his own head."
+        },
+        {
+          "reference": "Hebrews 4:16",
+          "text": "Let us then approach the throne of grace with confidence, so that we may receive mercy and find grace to help us in our time of need."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Esther 4-7",
+          "note": "Read the four chapters in one sitting, tracking every 'coincidence' - the sleepless night, the records, Haman's timing, the gallows. Ask after each one: who arranged this?"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esther (Hadassah)",
+      "title": "The Queen Who Went In Uninvited",
+      "description": "A Jewish orphan raised by her cousin Mordecai, taken into the harem of Xerxes and made queen of Persia without the court knowing her people. When a royal edict ordered the destruction of the Jews, she risked the death penalty to enter the king's presence unsummoned, fasting three days first, and exposed the plot at a banquet - turning the decree back on its author. Her name is given to the feast of Purim, celebrated to this day.",
+      "keyQuote": "And if I perish, I perish!",
+      "lessonForUs": "Esther's courage was not the absence of fear; it was action taken in the teeth of it, grounded in fasting and the conviction that she had been placed where she was for a reason she could not fully see. The God who positioned a hidden queen for a hidden hour positions us too.",
+      "heading": "The Queen Who Went In Uninvited"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1940,
+  "scriptureReference_full": "Esther 4-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (le'et kazot, et H6256) reflects standard lexical sources; the connection of Haman the Agagite to Agag/Amalek (Exodus 17; 1 Samuel 15) and Mordecai to the Benjamite house of Kish/Saul reflects the genealogical notes given in the text of Esther itself."
+  ]
 }

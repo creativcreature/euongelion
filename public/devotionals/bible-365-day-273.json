@@ -1,38 +1,190 @@
 {
   "day": 273,
-  "title": "Minor Prophets: Wait + Hope — Day 7 — Sabbath",
-  "teaser": "Day 273 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
+  "title": "The last word is sunrise",
+  "teaser": "The Old Testament does not end in thunder but in a promise of dawn. Five prophets close the book leaning forward — and then four hundred years of silence, kept by the line: the sun of righteousness will rise.",
   "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
   "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 273"
+      "type": "scripture",
+      "reference": "Malachi 4:2; Habakkuk 2:3-4",
+      "translation": "BSB",
+      "emphasis": [
+        "the sun of righteousness will rise",
+        "wait for it",
+        "the righteous will live by faith"
+      ],
+      "hebrewOriginal": "שֶׁמֶשׁ צְדָקָה",
+      "passage": "\"But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall.\" (Malachi 4:2)\n\n\"For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay. Look at the proud one; his soul is not upright — but the righteous will live by faith.\" (Habakkuk 2:3-4)"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שֶׁמֶשׁ צְדָקָה",
+      "transliteration": "shemesh tzedaqah",
+      "pronunciation": "SHEH-mesh tseda-KAH",
+      "meaning": "the sun of righteousness",
+      "rootMeaning": "Shemesh is the sun — the great light, the thing that rises whether or not you have slept. Tzedaqah is righteousness, but in Hebrew it carries the warmth of right relationship made whole: not only being declared right, but being set right. Put together they make a single picture: a dawn that does not merely shine on you but heals you as it comes up.",
+      "usageNote": "Malachi places shemesh tzedaqah at the very last page of the Old Testament. The phrase appears nowhere else in this exact form. After it, the Hebrew canon goes quiet — and the next thing the world hears about a rising light is a star over Bethlehem and an old man named Simeon calling a baby \"a light for revelation\" (Luke 2:32).",
+      "wordByWord": [
+        {
+          "word": "שֶׁמֶשׁ",
+          "transliteration": "shemesh",
+          "meaning": "sun, the great light that rises"
+        },
+        {
+          "word": "צְדָקָה",
+          "transliteration": "tzedaqah",
+          "meaning": "righteousness, being set right, right relationship restored"
+        },
+        {
+          "word": "וְזָרְחָה",
+          "transliteration": "vezarchah",
+          "meaning": "and it will rise, shine forth, break"
+        },
+        {
+          "word": "מַרְפֵּא",
+          "transliteration": "marpe",
+          "meaning": "healing, a remedy, the mending of what was broken"
+        },
+        {
+          "word": "בִּכְנָפֶיהָ",
+          "transliteration": "biknafeha",
+          "meaning": "in its wings — the spreading edges of the dawn light"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כְּנָפַיִם",
+          "reference": "Kanaph means wing, and also the corner or hem of a garment. The same word names the fringe of a robe a sick woman once reached to touch (Matthew 9:20). Healing in His wings; healing in His hem."
+        }
+      ],
+      "strongsNumber": "H8121",
+      "definition": "shemesh, the sun; here joined to tzedaqah to name the coming healing light",
+      "usage": "Wings of a sunrise are the rays that fan out before the disc itself clears the horizon — light arriving before you can see its source. Malachi promises that the dawn is already on its way up while the night still looks total."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Five Prophets, One Posture",
+      "body": "Today closes a long road. For days you have walked through the last twelve books of the Old Testament — short books, easy to skip, full of names that are hard to pronounce. The final five gather into a single mood, and it is worth sitting still long enough to feel it.\n\nHabakkuk stands on a watchtower and argues with God about why the wicked prosper, and God's answer is not an explanation but an instruction: write the vision down, and wait. \"Though it lingers, wait for it.\" Then the line the whole New Testament will lean on its full weight upon: \"the righteous will live by faith.\" Zephaniah, after pages of warning, ends with God Himself singing — \"He will rejoice over you with singing.\" Haggai speaks to people rebuilding a temple that looks shabby next to the one they lost, and promises, \"The latter glory of this house will be greater than the former.\" Zechariah lifts his eyes and sees a King coming, \"righteous and victorious, humble and riding on a donkey.\" And Malachi, the last voice, promises a messenger to prepare the way, and a sunrise to follow.\n\nNotice that none of them ends with the problem solved. The fig tree still does not bud. The temple is still small. The King has not yet come over the hill. What every one of these prophets does instead is teach a body how to stand while it waits: facing forward, leaning toward a light that has not crested yet, refusing to call the night the last word.",
+      "keyInsight": "The Old Testament does not close with an answer. It closes with a posture — a people taught to wait with their faces turned toward a dawn they have been promised but have not yet seen.",
+      "content": "Today closes a long road. For days you have walked through the last twelve books of the Old Testament — short books, easy to skip, full of names that are hard to pronounce. The final five gather into a single mood, and it is worth sitting still long enough to feel it.\n\nHabakkuk stands on a watchtower and argues with God about why the wicked prosper, and God's answer is not an explanation but an instruction: write the vision down, and wait. \"Though it lingers, wait for it.\" Then the line the whole New Testament will lean on its full weight upon: \"the righteous will live by faith.\" Zephaniah, after pages of warning, ends with God Himself singing — \"He will rejoice over you with singing.\" Haggai speaks to people rebuilding a temple that looks shabby next to the one they lost, and promises, \"The latter glory of this house will be greater than the former.\" Zechariah lifts his eyes and sees a King coming, \"righteous and victorious, humble and riding on a donkey.\" And Malachi, the last voice, promises a messenger to prepare the way, and a sunrise to follow.\n\nNotice that none of them ends with the problem solved. The fig tree still does not bud. The temple is still small. The King has not yet come over the hill. What every one of these prophets does instead is teach a body how to stand while it waits: facing forward, leaning toward a light that has not crested yet, refusing to call the night the last word."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Watch Before Dawn",
+      "body": "There is an hour shift workers and new parents and the chronically sick all know — the one somewhere past three in the morning, when the night has gone on so long it stops feeling like it will ever turn. You are not asleep and you are not rested. You have done the math on how few hours are left and it does not help. In that hour it is almost impossible to believe in morning, even though morning has never once failed to come.\n\nMy wife and I sat through a stretch of those hours the year her father was dying. Nothing was being solved. We were not waiting for good news; we were waiting for the end of waiting. And yet I remember her standing at the kitchen window before light, watching the black sky over the trees, saying nothing, just watching the place where the sun comes up. She was not pretending the grief away. She was facing the right direction.\n\nThat is the posture Malachi hands a people who had been waiting on God for generations with no word. He does not promise them the night will be short. He tells them which way to face: toward the east, where the sun of righteousness will rise — and rise, he says, with healing in its wings.",
+      "connectionToTheme": "Waiting is not passive. The prophets teach a people to face the right direction in the dark — toward the place where the promised light will break.",
+      "content": "There is an hour shift workers and new parents and the chronically sick all know — the one somewhere past three in the morning, when the night has gone on so long it stops feeling like it will ever turn. You are not asleep and you are not rested. You have done the math on how few hours are left and it does not help. In that hour it is almost impossible to believe in morning, even though morning has never once failed to come.\n\nMy wife and I sat through a stretch of those hours the year her father was dying. Nothing was being solved. We were not waiting for good news; we were waiting for the end of waiting. And yet I remember her standing at the kitchen window before light, watching the black sky over the trees, saying nothing, just watching the place where the sun comes up. She was not pretending the grief away. She was facing the right direction.\n\nThat is the posture Malachi hands a people who had been waiting on God for generations with no word. He does not promise them the night will be short. He tells them which way to face: toward the east, where the sun of righteousness will rise — and rise, he says, with healing in its wings."
+    },
+    {
+      "type": "insight",
+      "heading": "Then the Page Goes Quiet for Four Hundred Years",
+      "body": "Here is the thing easy to miss because we read the Bible bound as one book: after Malachi's last sentence, nothing. No prophet for roughly four hundred years. Empires rise and fall over Judea — Persians, then Greeks, then the Maccabees, then Rome — and through all of it heaven keeps the silence. The promise of the sunrise just sits there on the last page, the way a vision sat on Habakkuk's tablet, waiting for its appointed time.\n\nThis is what makes Malachi's closing words so much more than a hopeful flourish. They are the load-bearing line of an entire era of silence. A people held on to one sentence — the sun of righteousness will rise — through four centuries when there was no new word to hold. And then, on an ordinary night near Bethlehem, the silence broke. An old priest named Zechariah, struck mute, got his voice back and used it to sing about exactly this: \"the Dawn from on high will visit us, to shine on those who live in darkness\" (Luke 1:78-79). The Greek word he reaches for, anatole, is sunrise. He is quoting the last prophet without saying his name.\n\nThe Old Testament ends with a promised dawn. The New Testament opens with men reporting that the sun came up.",
+      "historicalContext": "Malachi is generally dated to the fifth century BC, after the return from exile, when the rebuilt temple stood but the glory had not returned. The roughly four centuries between Malachi and the birth of Jesus are often called the intertestamental period — a stretch with no canonical prophet, during which Judea passed under Persian, Greek, and Roman rule.",
+      "fascinatingFact": "In the Hebrew ordering of the Scriptures, Malachi is not the last book — Chronicles is. But in the Greek and Christian ordering, the canon ends here, on the promise of a coming messenger and a rising sun. The Christian Bible is arranged so that the very next words after \"the sun of righteousness will rise\" lead toward Matthew, and the One who fulfills it.",
+      "content": "Here is the thing easy to miss because we read the Bible bound as one book: after Malachi's last sentence, nothing. No prophet for roughly four hundred years. Empires rise and fall over Judea — Persians, then Greeks, then the Maccabees, then Rome — and through all of it heaven keeps the silence. The promise of the sunrise just sits there on the last page, the way a vision sat on Habakkuk's tablet, waiting for its appointed time.\n\nThis is what makes Malachi's closing words so much more than a hopeful flourish. They are the load-bearing line of an entire era of silence. A people held on to one sentence — the sun of righteousness will rise — through four centuries when there was no new word to hold. And then, on an ordinary night near Bethlehem, the silence broke. An old priest named Zechariah, struck mute, got his voice back and used it to sing about exactly this: \"the Dawn from on high will visit us, to shine on those who live in darkness\" (Luke 1:78-79). The Greek word he reaches for, anatole, is sunrise. He is quoting the last prophet without saying his name.\n\nThe Old Testament ends with a promised dawn. The New Testament opens with men reporting that the sun came up."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The last five prophets close the Old Testament leaning forward — a King coming humble on a donkey (Zechariah 9:9), a glory greater than the former (Haggai 2:9), a God who sings over His people (Zephaniah 3:17), a sun of righteousness rising with healing in its wings (Malachi 4:2).",
+      "modernApplication": "You are likely waiting on something right now that has not turned yet — a healing, a reconciliation, a prayer that has gone unanswered so long you have nearly stopped praying it. The prophets do not tell you to manufacture optimism. They tell you to keep facing the dawn, because the One who promised it has never failed to make a morning come.",
+      "connectionPoint": "Every thread the prophets leave hanging is picked up in one person. The humble King on the donkey rides into Jerusalem (Matthew 21:5, quoting Zechariah). The greater glory fills the temple when the incarnate God walks into it (Haggai's promise; Luke 2:27). The God who sings over His people is the Shepherd who carries the lost sheep home rejoicing (Luke 15:5-6). And the sun of righteousness is named outright over the manger.",
+      "newTestamentEcho": "Habakkuk's \"the righteous will live by faith\" becomes the heartbeat of the gospel itself, quoted by Paul in Romans 1:17 and Galatians 3:11, and by Hebrews 10:38. The single line God told a frustrated prophet to write down and wait on becomes the line the whole New Testament lives by."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you waiting on that has gone quiet — and which direction are you facing while you wait?",
+      "additionalQuestions": [
+        "Habakkuk was told to write the vision down and wait. Is there a promise of God you have stopped writing on your heart because the waiting got long?",
+        "Zephaniah says God rejoices over His people with singing. Can you let yourself believe that the God you are waiting on is, even now, glad over you?",
+        "If the Old Testament closes by teaching a posture rather than handing an answer, what would it look like for you to simply face the dawn today instead of demanding the sunrise on your schedule?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "Lord, it has been a long road, and some of the night I have walked has felt like it would never turn. Thank You that You do not ask me to pretend the dark away — only to face the right direction. Teach me to wait the way the prophets waited: writing down what You promised, leaning toward the place the light comes from, trusting the appointed time I cannot see. You are the sun of righteousness who has already risen once over a manger and an empty tomb. Rise over me again this morning, with healing in Your wings. I will rest in that. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a sabbath day — nothing to finish, nothing to fix. Sit for a few quiet minutes and let one line from the prophets hold you: \"the sun of righteousness will rise with healing in its wings,\" or simply \"wait for it.\" Bring God the one thing you have nearly given up waiting on, and turn your face back toward the dawn.",
+      "leavingAtCross": [
+        "The exhaustion of waiting that has gone on so long it stopped feeling like hope",
+        "The temptation to call the night the last word because the morning is slow",
+        "The need to force the sunrise onto my own timeline"
+      ],
+      "receivingFromCross": [
+        "A promise that holds through silence — the sun of righteousness has already risen",
+        "Permission to rest while I wait, instead of striving",
+        "A direction to face when I cannot yet see the light: toward the One who has never failed to make morning come"
+      ],
+      "content": "This is a sabbath day — nothing to finish, nothing to fix. Sit for a few quiet minutes and let one line from the prophets hold you: \"the sun of righteousness will rise with healing in its wings,\" or simply \"wait for it.\" Bring God the one thing you have nearly given up waiting on, and turn your face back toward the dawn."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What single posture do all five closing prophets — Habakkuk, Zephaniah, Haggai, Zechariah, Malachi — share at the end of their books?",
+        "Why does the roughly four-hundred-year silence after Malachi make his closing promise of a sunrise weightier, not weaker?",
+        "How does Zechariah's song in Luke 1 (\"the Dawn from on high\") show the New Testament picking up exactly where the Old Testament left off?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing each of you is currently waiting on God for, and how long the waiting has gone.",
+        "Talk about the difference between passive waiting (just enduring) and the prophets' waiting (facing the dawn). Which one are you doing right now?",
+        "Ask each other: where do you most need to hear that the sun of righteousness has already risen — that the morning you are waiting for has, in Christ, already come?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Haggai 2:9",
+          "text": "The latter glory of this house will be greater than the former, says the LORD of Hosts. And in this place I will provide peace, declares the LORD of Hosts."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "text": "Rejoice greatly, O Daughter of Zion! Shout in triumph, O Daughter of Jerusalem! See, your King comes to you, righteous and victorious, humble and riding on a donkey, on a colt, the foal of a donkey."
+        },
+        {
+          "reference": "Malachi 3:1",
+          "text": "Behold, I will send My messenger, who will prepare the way before Me. Then the Lord whom you seek will suddenly come to His temple — the Messenger of the covenant, in whom you delight — see, He is coming, says the LORD of Hosts."
+        },
+        {
+          "reference": "Luke 1:78-79",
+          "text": "...because of the tender mercy of our God, by which the Dawn from on high will visit us, to shine on those who live in darkness and in the shadow of death, to guide our feet into the path of peace."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Habakkuk 3 and Malachi 4",
+          "note": "Read these two short chapters side by side — Habakkuk's vow to rejoice even when the fig tree fails, and Malachi's promise of the rising sun. Together they frame the whole posture of waiting in hope."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Malachi",
+      "title": "The Last Prophet Before the Dawn",
+      "description": "Malachi — whose name means \"my messenger\" — is the final prophetic voice of the Old Testament, speaking to a discouraged people in the rebuilt-but-unimpressive Jerusalem of the fifth century BC. The temple stood again, but the glory had not visibly returned, the promised kingdom had not come, and faith had grown weary. Into that weariness Malachi spoke the last canonical words of the Old Testament: a coming messenger, and a rising sun of righteousness.",
+      "keyQuote": "But for you who fear My name, the sun of righteousness will rise with healing in its wings.",
+      "lessonForUs": "Malachi did not get to see the sunrise he promised. He spoke it into a silence that would last four hundred years, and trusted God to keep the appointment. We live on the other side of that dawn — and the same God who kept that promise across centuries can be trusted with the morning we are still waiting for.",
+      "heading": "The Last Prophet Before the Dawn"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1609,
+  "scriptureReference_full": "Habakkuk 2:3-4; 3:17-19; Zephaniah 3:17; Haggai 2:6-9; Zechariah 9:9; Malachi 3:1; 4:1-6",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shemesh tzedaqah, H8121) reflects standard lexical sources. The roughly four-hundred-year intertestamental silence and the anatole (\"Dawn from on high\") echo of Malachi 4:2 in Luke 1:78 reflect standard biblical-theology observations."
+  ]
 }

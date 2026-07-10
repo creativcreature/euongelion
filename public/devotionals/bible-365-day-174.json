@@ -1,38 +1,185 @@
 {
   "day": 174,
-  "title": "Daniel’s Faithfulness — Day 6 — Deeper Dive",
-  "teaser": "Day 174 of Bible 365 — Daniel 3, 6, 9",
-  "framework": "Daniel 3, 6, 9 — Daniel’s Faithfulness",
+  "title": "But If Not — The Faith That Holds When Rescue Doesn't Come",
+  "teaser": "Three men face the furnace, one man faces the lions, and a praying man faces the ruins of his city. Their God is the One who delivers — but the deepest faith says 'and even if He does not.'",
+  "framework": "Daniel 3, 6, 9 — Daniel's Faithfulness",
   "scriptureReference": "Daniel 3, 6, 9",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 174"
+      "type": "scripture",
+      "reference": "Daniel 3:17-18, 25",
+      "translation": "BSB",
+      "emphasis": [
+        "He is able to deliver us",
+        "But even if He does not",
+        "the fourth looks like a son of the gods"
+      ],
+      "hebrewOriginal": "שֵׁיזִב",
+      "passage": "If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up. ... \"Look!\" he exclaimed. \"I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 3, 6, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 3, 6, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "aramaic",
+      "word": "שֵׁיזִב",
+      "transliteration": "shêzib",
+      "pronunciation": "shay-ZEEV",
+      "meaning": "to deliver, to rescue, to save out of danger",
+      "rootMeaning": "An Aramaic verb meaning to snatch someone out of a peril they cannot escape on their own. It is the word that runs like a heartbeat through the Aramaic chapters of Daniel - the act of pulling a person clear of fire, of lions, of death.",
+      "usageNote": "Shêzib is the verb on the lips of the three men ('He is able to deliver us'), the verb Nebuchadnezzar uses when he blesses the God who 'delivered His servants,' and the verb Darius cries into the lions' den ('has your God been able to deliver you?'). The whole book asks one question through this word: can your God get you out? And the book answers yes - but on His terms, in His timing, sometimes through the danger rather than around it.",
+      "wordByWord": [
+        {
+          "word": "שֵׁיזִב",
+          "transliteration": "shêzib",
+          "meaning": "to deliver, to rescue (the core verb)"
+        },
+        {
+          "word": "לְשֵׁיזָבוּתַנָא",
+          "transliteration": "leshêzavutana",
+          "meaning": "to deliver us - Daniel 3:17, the three men's confession"
+        },
+        {
+          "word": "וְשֵׁיזִב",
+          "transliteration": "veshêzib",
+          "meaning": "and He delivered - Daniel 3:28, Nebuchadnezzar's blessing"
+        },
+        {
+          "word": "לְשֵׁיזָבוּתָךְ",
+          "transliteration": "leshêzavutak",
+          "meaning": "to deliver you - Daniel 6:20, Darius at the den"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱלָהָא חַיָּא",
+          "reference": "elaha chayya, 'the living God' (Daniel 6:20, 26) - the title both Darius and Daniel reach for. The God who delivers is the God who is alive, who endures, whose kingdom will never end."
+        }
+      ],
+      "strongsNumber": "H7804",
+      "definition": "Aramaic: to deliver, rescue, set free from danger or destruction",
+      "usage": "The repetition of shêzib turns Daniel's exile stories into a single sustained confession: deliverance belongs to God. The faith of His servants is not that they will always be rescued, but that the power to rescue is His alone."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel’s Faithfulness. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One like a Son of Man (Mark 14:62).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Furnaces, One Posture",
+      "body": "Day six gathers three of the most famous scenes in the Old Testament and sets them side by side. The point is not to retell each story for its own sake - most of us have known these since childhood - but to notice what holds them together. In all three, a faithful servant of God is given an impossible choice: bend, or burn. And in all three, the choice is made before the rescue is known.\n\nIn Daniel 3, Nebuchadnezzar sets up a golden statue ninety feet high and commands that everyone fall down and worship it at the sound of the music. Three Hebrew exiles - Shadrach, Meshach, and Abednego - will not. Hauled before the furious king, they say something that should stop every reader cold: 'If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods.'\n\nNotice the order. First they confess that God is able. Then, before they know whether He will, they commit anyway. 'But even if He does not' is the most honest sentence in the chapter. It refuses the bargain that says faith is a transaction - I obey, You rescue. Their obedience is not a wager on the outcome. It is loyalty to a Person, whatever the outcome.\n\nIn Daniel 6, the trap is laid for an old man now. Daniel's rivals cannot find a flaw in him, so they make his faithfulness itself a crime: a thirty-day decree that no one may pray to anyone but the king. And when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before. He does not pray louder to make a point. He does not pray in secret to stay safe. He simply keeps praying the way he always had - toward a ruined city, to a God who had not yet brought His people home.",
+      "keyInsight": "The faith of Daniel and his friends is not certainty about the outcome. It is loyalty that has already decided, before the rescue is known, that God is worth more than the fire is terrible.",
+      "content": "Day six gathers three of the most famous scenes in the Old Testament and sets them side by side. The point is not to retell each story for its own sake - most of us have known these since childhood - but to notice what holds them together. In all three, a faithful servant of God is given an impossible choice: bend, or burn. And in all three, the choice is made before the rescue is known.\n\nIn Daniel 3, Nebuchadnezzar sets up a golden statue ninety feet high and commands that everyone fall down and worship it at the sound of the music. Three Hebrew exiles - Shadrach, Meshach, and Abednego - will not. Hauled before the furious king, they say something that should stop every reader cold: 'If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods.'\n\nNotice the order. First they confess that God is able. Then, before they know whether He will, they commit anyway. 'But even if He does not' is the most honest sentence in the chapter. It refuses the bargain that says faith is a transaction - I obey, You rescue. Their obedience is not a wager on the outcome. It is loyalty to a Person, whatever the outcome.\n\nIn Daniel 6, the trap is laid for an old man now. Daniel's rivals cannot find a flaw in him, so they make his faithfulness itself a crime: a thirty-day decree that no one may pray to anyone but the king. And when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before. He does not pray louder to make a point. He does not pray in secret to stay safe. He simply keeps praying the way he always had - toward a ruined city, to a God who had not yet brought His people home."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Kept His Window Open",
+      "body": "There is a detail in Daniel 6 that is easy to read past. When Daniel goes to pray, knowing the decree has been signed, the text says the windows of his upper room opened toward Jerusalem. He prays facing a city that, at that moment, was rubble. The temple was burned. The walls were broken. His people were captives a thousand miles away. Jerusalem was not a place of triumph he could point to - it was the address of everything that had been lost.\n\nAnd that is the direction he turns to pray. Not toward the palace where the power was. Not toward the safe, blank wall where no informer could see him. Toward the wreckage of the promise, three times a day, on his knees.\n\nI think of people I have known who kept some quiet practice alive through the worst stretch of their lives - a woman who lit a candle every evening through her husband's long dying, a man who read one psalm aloud each morning during the year he was unemployed and ashamed. Nobody made them. It changed nothing they could measure. The candle did not heal anyone; the psalm did not pay a bill. But the practice was a window kept open toward a God they refused to stop facing, even when facing Him meant looking straight at their loss.\n\nThat is what Daniel's open window is. It is faith that keeps its body pointed toward God when the evidence points the other way.",
+      "connectionToTheme": "Daniel prays toward a ruined Jerusalem - faithfulness is not turning toward your victories but refusing to turn away from God in the middle of your losses.",
+      "content": "There is a detail in Daniel 6 that is easy to read past. When Daniel goes to pray, knowing the decree has been signed, the text says the windows of his upper room opened toward Jerusalem. He prays facing a city that, at that moment, was rubble. The temple was burned. The walls were broken. His people were captives a thousand miles away. Jerusalem was not a place of triumph he could point to - it was the address of everything that had been lost.\n\nAnd that is the direction he turns to pray. Not toward the palace where the power was. Not toward the safe, blank wall where no informer could see him. Toward the wreckage of the promise, three times a day, on his knees.\n\nI think of people I have known who kept some quiet practice alive through the worst stretch of their lives - a woman who lit a candle every evening through her husband's long dying, a man who read one psalm aloud each morning during the year he was unemployed and ashamed. Nobody made them. It changed nothing they could measure. The candle did not heal anyone; the psalm did not pay a bill. But the practice was a window kept open toward a God they refused to stop facing, even when facing Him meant looking straight at their loss.\n\nThat is what Daniel's open window is. It is faith that keeps its body pointed toward God when the evidence points the other way."
+    },
+    {
+      "type": "insight",
+      "heading": "A Fourth Man in the Fire",
+      "body": "Here is the center of the whole day, and it is the strangest line in any of the three stories. The three men are thrown in bound. Then Nebuchadnezzar leaps up: 'I see four men, unbound and unharmed, walking around in the fire - and the fourth looks like a son of the gods!'\n\nGod's deliverance does not begin with pulling them out. It begins with someone joining them in. The first thing that happens in the furnace is not rescue from the fire but company inside it. The ropes that bound them burn away; the men do not. They are loosed, and they are not alone.\n\nSit with the order of that. We almost always want God to be the One who keeps us out of the furnace. Daniel 3 shows a God who is willing to be the One who walks around in it with us. The deliverance is real - they come out without a hair singed, without the smell of smoke on them - but it comes after, and only after, the presence. The fire could not touch them because Someone was in the fire who the fire could not touch.\n\nWho is the fourth man? Nebuchadnezzar, a pagan king, can only reach for 'a son of the gods.' He is describing more than he understands. The book of Daniel keeps showing a divine figure who shares God's people's danger and shares God's own glory - and the New Testament will give that figure a name. For now, hold the image: the deepest deliverance God offers His people in the furnace is not absence from the flame but His own presence in it.",
+      "historicalContext": "Daniel was written for exiles - people living under empires that demanded total allegiance and punished dissent with death. Chapters 2 through 7 are written in Aramaic, the common language of the Babylonian and Persian world, almost as if these stories were meant to be read aloud to the nations. The message to a scattered, defeated people was urgent: your God still reigns over the kings who think they own you, and He has not abandoned you to the fire.",
+      "fascinatingFact": "In all three chapters, the deliverance produces a confession from a pagan king. Nebuchadnezzar blesses 'the God of Shadrach, Meshach, and Abednego' (3:28). Darius decrees that the whole empire 'tremble in fear before the God of Daniel: For He is the living God, and He endures forever; His kingdom will never be destroyed' (6:26). The faithfulness of a few exiles becomes the way the most powerful men on earth come to speak the truth about God.",
+      "content": "Here is the center of the whole day, and it is the strangest line in any of the three stories. The three men are thrown in bound. Then Nebuchadnezzar leaps up: 'I see four men, unbound and unharmed, walking around in the fire - and the fourth looks like a son of the gods!'\n\nGod's deliverance does not begin with pulling them out. It begins with someone joining them in. The first thing that happens in the furnace is not rescue from the fire but company inside it. The ropes that bound them burn away; the men do not. They are loosed, and they are not alone.\n\nSit with the order of that. We almost always want God to be the One who keeps us out of the furnace. Daniel 3 shows a God who is willing to be the One who walks around in it with us. The deliverance is real - they come out without a hair singed, without the smell of smoke on them - but it comes after, and only after, the presence. The fire could not touch them because Someone was in the fire who the fire could not touch.\n\nWho is the fourth man? Nebuchadnezzar, a pagan king, can only reach for 'a son of the gods.' He is describing more than he understands. The book of Daniel keeps showing a divine figure who shares God's people's danger and shares God's own glory - and the New Testament will give that figure a name. For now, hold the image: the deepest deliverance God offers His people in the furnace is not absence from the flame but His own presence in it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God's servants confess that He is able to deliver them - and obey Him even before they know whether He will. When the furnace comes, a fourth figure walks in the fire with them, and they come out unharmed.",
+      "modernApplication": "Most of the furnaces you will face this year are not lions or flames. They are the diagnosis, the layoff, the marriage going cold, the prayer that has gone unanswered so long you have stopped expecting it. The Daniel question is whether your faith is a transaction ('I will trust You if You get me out') or a loyalty ('I will trust You even if You do not'). The second kind cannot be taken from you by any outcome.",
+      "connectionPoint": "Daniel 9 shows the same faith turned inward. Reading Jeremiah, Daniel realizes the seventy years of exile are nearly done - and instead of celebrating, he falls into prayer and fasting and confession: 'we have sinned and done wrong... we have rebelled.' He does not plead his own faithfulness, though he was the most faithful man in Babylon. He pleads God's mercy: 'we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.' The man in the lions' den and the man on his knees in sackcloth are the same man - and the same faith. It never trusts in itself.",
+      "newTestamentEcho": "Nebuchadnezzar saw 'a son of the gods' in the fire and did not know what he was looking at. Centuries later, the high priest asks Jesus if He is the Son of God, and Jesus answers, 'I am... and you will see the Son of Man sitting at the right hand of Power' (Mark 14:62) - quoting Daniel 7 about Himself. The fourth man in the furnace is the same Lord who would later enter the deepest furnace of all. He was not delivered from the fire of the cross; He went through it, and came out on the third day with the smell of death gone, so that we who trust Him could be brought out too. And Daniel's prayer in chapter 9 - confessing sins he did not commit on behalf of his people - is the work Christ would finish forever, the righteous One interceding for the guilty."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the furnace you are facing right now - and is your trust in God conditional on Him getting you out of it?",
+      "additionalQuestions": [
+        "The three men said 'but even if He does not.' Can you say that yet about the thing you most want God to fix? What makes it hard?",
+        "Daniel kept his window open toward a ruined city. What practice could you keep facing God through, even when the evidence points the other way?",
+        "Daniel 9 prays 'not because of our righteous acts, but because of Your great compassion.' Where are you still trying to earn from God what He has already offered as mercy?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Living God, You are able to deliver. I confess that some days I want a transaction more than I want You - rescue on my terms, by my deadline. Teach me the harder, freer faith of the three men: that You are worth trusting even if the furnace does not open. And when I am in it, let me not be alone. Walk in the fire with me, as You always have. I do not come to You because of anything I have earned, but because of Your great compassion. Through Christ, who went through the fire ahead of me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one furnace you are most afraid of, and pray the three men's whole sentence over it: 'My God is able to deliver me - but even if He does not, I will not turn away.' Then, like Daniel, keep one small practice this week pointed straight at God even on the days it changes nothing you can measure.",
+      "leavingAtCross": [
+        "The transactional faith that obeys God only as long as He delivers on my schedule",
+        "The fear that if I let go of the bargain, I have nothing left to hold",
+        "The instinct to face the safe, blank wall instead of turning toward my losses in prayer"
+      ],
+      "receivingFromCross": [
+        "A loyalty to God that no outcome can take from me",
+        "The promise of a Presence in the fire, not just rescue from it",
+        "A mercy I do not have to earn, offered because of God's great compassion"
+      ],
+      "content": "Name the one furnace you are most afraid of, and pray the three men's whole sentence over it: 'My God is able to deliver me - but even if He does not, I will not turn away.' Then, like Daniel, keep one small practice this week pointed straight at God even on the days it changes nothing you can measure."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the significance of the word 'but' in 'He is able to deliver us... but even if He does not'? How does it change the kind of faith being confessed?",
+        "Why does it matter that the fourth man appears in the fire before the three men are brought out of it?",
+        "In Daniel 9, the most righteous man in Babylon confesses 'we have sinned.' Why does he plead God's compassion rather than his own record - and how does that point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name one furnace you are currently in. Is your trust conditional on getting out of it? Be honest with each other.",
+        "Daniel kept praying toward a ruined Jerusalem. What is one practice you have let slide because it 'wasn't working' - and could you keep facing God through it anyway?",
+        "Talk about the difference between asking God to keep you out of the fire and trusting Him to be with you in it. Which do you actually pray for most?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 3:28",
+          "text": "Nebuchadnezzar declared, \"Blessed be the God of Shadrach, Meshach, and Abednego, who has sent His angel and delivered His servants who trusted in Him. They violated the king's command and risked their lives rather than serve or worship any god except their own God.\""
+        },
+        {
+          "reference": "Daniel 6:22-23",
+          "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight... and when Daniel was lifted out of the den, no wounds whatsoever were found on him, because he had trusted in his God."
+        },
+        {
+          "reference": "Daniel 6:26",
+          "text": "For He is the living God, and He endures forever; His kingdom will never be destroyed, and His dominion will never end."
+        },
+        {
+          "reference": "Daniel 9:18-19",
+          "text": "For we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion. O Lord, listen! O Lord, forgive! O Lord, hear and act!"
+        },
+        {
+          "reference": "Isaiah 43:2",
+          "text": "When you walk through the fire, you will not be scorched; the flames will not set you ablaze."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 3, 6, and 9",
+          "note": "Read all three chapters in one sitting and watch the Aramaic word 'deliver' (shêzib) move from the three men's mouths, to Nebuchadnezzar's, to Darius's. Notice that the deliverance always follows a refusal to bargain."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Faithful Exile",
+      "description": "Carried to Babylon as a young captive after Jerusalem's fall, Daniel served in the courts of pagan kings for some seventy years - through the Babylonian and Persian empires - without ever bending his loyalty to God. He interpreted dreams, survived the lions' den as an old man, and prayed three times a day toward a ruined city he would never see rebuilt. Chapter 9 shows the heart beneath the legend: a man who, when he saw the exile nearing its end, did not boast but knelt in sackcloth and confessed his people's sin as his own.",
+      "keyQuote": "We are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.",
+      "lessonForUs": "Daniel's faithfulness was never a performance to earn God's rescue. It was loyalty to the living God, held steady whether the lions' mouths closed or not - and rooted, finally, not in his own righteousness but in God's mercy. That is the faith that outlasts every furnace.",
+      "heading": "The Faithful Exile"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2402,
+  "scriptureReference_full": "Daniel 3:17-18, 25; 6:10, 22-23, 26; 9:18-19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Aramaic word study (shêzib, 'to deliver,' Strong's H7804) reflects standard lexical sources for the Aramaic chapters of Daniel; the verb's recurrence across Daniel 3 and 6 is observed in the text itself."
+  ]
 }

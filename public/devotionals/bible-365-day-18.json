@@ -1,38 +1,199 @@
 {
   "day": 18,
   "title": "Will not the Judge do right?",
-  "teaser": "Day 18 of Bible 365 — Genesis 18:16-33",
+  "teaser": "Day 18 of Bible 365 — Abraham steps toward the God who is leaving, and dares to argue for a city that deserves to burn. The first great intercession in Scripture rests on one conviction: the Judge of all the earth will do right.",
   "framework": "Genesis 18:16-33 — Bold intercession",
   "scriptureReference": "Genesis 18:16-33",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 18"
+      "type": "scripture",
+      "reference": "Genesis 18:16-33",
+      "translation": "BSB",
+      "emphasis": [
+        "Shall I hide from Abraham what I am about to do?",
+        "Abraham remained standing before the LORD",
+        "Will not the Judge of all the earth do what is right?",
+        "though I am but dust and ashes"
+      ],
+      "hebrewOriginal": "הֲשֹׁפֵט כָּל־הָאָרֶץ לֹא יַעֲשֶׂה מִשְׁפָּט",
+      "passage": "When the men got up to leave, they looked out over Sodom, and Abraham walked along with them to see them off. And the LORD said, \"Shall I hide from Abraham what I am about to do? Abraham will surely become a great and powerful nation, and through him all the nations of the earth will be blessed. For I have chosen him, so that he will command his children and his household after him to keep the way of the LORD by doing what is right and just, in order that the LORD may bring upon Abraham what He has promised.\" Then the LORD said, \"The outcry against Sodom and Gomorrah is great. Because their sin is so grievous, I will go down to see if their actions fully justify the outcry that has reached Me. If not, I will find out.\" And the two men turned away and went toward Sodom, but Abraham remained standing before the LORD. Abraham stepped forward and said, \"Will You really sweep away the righteous with the wicked? What if there are fifty righteous ones in the city? Will You really sweep it away and not spare the place for the sake of the fifty righteous ones who are there? Far be it from You to do such a thing—to kill the righteous with the wicked, so that the righteous and the wicked are treated alike. Far be it from You! Will not the Judge of all the earth do what is right?\" So the LORD replied, \"If I find fifty righteous ones within the city of Sodom, on their account I will spare the whole place.\" Then Abraham answered, \"Now that I have ventured to speak to the Lord—though I am but dust and ashes—suppose the fifty righteous ones lack five. Will You destroy the whole city for the lack of five?\" He replied, \"If I find forty-five there, I will not destroy it.\" Once again Abraham spoke to the LORD, \"Suppose forty are found there?\" He answered, \"On account of the forty, I will not do it.\" Then Abraham said, \"May the Lord not be angry, but let me speak further. Suppose thirty are found there?\" He replied, \"If I find thirty there, I will not do it.\" And Abraham said, \"Now that I have ventured to speak to the Lord, suppose twenty are found there?\" He answered, \"On account of the twenty, I will not destroy it.\" Finally, Abraham said, \"May the Lord not be angry, but let me speak once more. Suppose ten are found there?\" And He answered, \"On account of the ten, I will not destroy it.\" When the LORD had finished speaking with Abraham, He departed, and Abraham returned home."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 18:16-33**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 18:16-33 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מִשְׁפָּט",
+      "transliteration": "mishpat",
+      "pronunciation": "meesh-PAHT",
+      "meaning": "justice, judgment, the right verdict, what is rightly due",
+      "rootMeaning": "From shaphat, to judge, to govern, to set things right. A shophet is a judge - the same word that names the book of Judges. Mishpat is not cold legality; it is the act of a ruler putting a situation back into its proper order.",
+      "usageNote": "Abraham's question in verse 25 is built from this root twice over. He calls God ha-Shophet, 'the Judge of all the earth,' and asks whether the Shophet will fail to do mishpat. The same pairing - 'what is right and just' - appears in verse 19, where God says He chose Abraham so that his household would keep tsedaqah u-mishpat, righteousness and justice. The plea and the calling use the same vocabulary on purpose.",
+      "wordByWord": [
+        {
+          "word": "הֲשֹׁפֵט",
+          "transliteration": "ha-shophet",
+          "meaning": "the Judge, the One who governs and decides"
+        },
+        {
+          "word": "כָּל־הָאָרֶץ",
+          "transliteration": "kol-ha'aretz",
+          "meaning": "of all the earth - the whole world, not one tribunal among many"
+        },
+        {
+          "word": "לֹא",
+          "transliteration": "lo",
+          "meaning": "not"
+        },
+        {
+          "word": "יַעֲשֶׂה",
+          "transliteration": "ya'aseh",
+          "meaning": "will do, will perform"
+        },
+        {
+          "word": "מִשְׁפָּט",
+          "transliteration": "mishpat",
+          "meaning": "justice, the right judgment"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צְדָקָה / tsedaqah",
+          "reference": "Righteousness - the companion word to mishpat throughout the Hebrew Bible (Amos 5:24; Isaiah 9:7). Verse 19 names both as the way of the LORD that Abraham is to teach his children: 'doing what is right and just.' Abraham intercedes the very thing he was chosen to embody."
+        }
+      ],
+      "strongsNumber": "H4941",
+      "definition": "judgment, justice, the verdict or sentence handed down by one with authority to decide",
+      "usage": "By framing his appeal as a question rather than a demand - 'Will not the Judge do right?' - Abraham does not lecture God on justice. He stakes everything on the assumption that God is more committed to justice than Abraham could ever be."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Bold intercession. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our intercessor (Heb 7:25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "God Stops Walking to Let a Man Speak",
+      "body": "The visitors rise from Abraham's table and turn toward Sodom. Abraham walks with them part of the way, the courtesy of a host seeing guests off. And then something halts the procession. The LORD says, almost as if thinking aloud, \"Shall I hide from Abraham what I am about to do?\"\n\nThis is the hinge of the whole scene. God could have walked on toward the doomed cities and left Abraham at the edge of the road, never the wiser. Instead He chooses to disclose. He explains His reason for telling: He has chosen Abraham so that Abraham will teach his household \"to keep the way of the LORD by doing what is right and just.\" In other words, God lets Abraham in on the coming judgment precisely so that Abraham can learn, and practice, justice. The lesson is not a lecture. It is an invitation to plead.\n\nSo the two messengers continue toward Sodom, but the text lingers on one detail: \"Abraham remained standing before the LORD.\" The crowd thins. The road empties. And one man stays, planted in front of God, because there is something he has to say. What follows is not a tantrum and not a negotiation in the marketplace sense. It is the first sustained intercession in Scripture - a man pleading for the lives of people who are not his own, on the basis of a God he trusts to be just.",
+      "keyInsight": "God did not have to tell Abraham. He chose to. Revelation here is an invitation: the Judge opens the verdict to a friend, not so the friend can change God's mind about justice, but so the friend can learn to pray like God's own heart.",
+      "content": "The visitors rise from Abraham's table and turn toward Sodom. Abraham walks with them part of the way, the courtesy of a host seeing guests off. And then something halts the procession. The LORD says, almost as if thinking aloud, \"Shall I hide from Abraham what I am about to do?\"\n\nThis is the hinge of the whole scene. God could have walked on toward the doomed cities and left Abraham at the edge of the road, never the wiser. Instead He chooses to disclose. He explains His reason for telling: He has chosen Abraham so that Abraham will teach his household \"to keep the way of the LORD by doing what is right and just.\" In other words, God lets Abraham in on the coming judgment precisely so that Abraham can learn, and practice, justice. The lesson is not a lecture. It is an invitation to plead.\n\nSo the two messengers continue toward Sodom, but the text lingers on one detail: \"Abraham remained standing before the LORD.\" The crowd thins. The road empties. And one man stays, planted in front of God, because there is something he has to say. What follows is not a tantrum and not a negotiation in the marketplace sense. It is the first sustained intercession in Scripture - a man pleading for the lives of people who are not his own, on the basis of a God he trusts to be just."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Lawyer Who Stayed After Hours",
+      "body": "A public defender I knew used to talk about the cases nobody wanted. The file was thin, the client was guilty of something, and the easiest thing in the world was to let the system do what the system was going to do anyway. She told me the temptation was never cruelty. It was simply leaving. Closing the folder, walking out, letting the verdict fall on its own weight.\n\nWhat she learned to do instead was stay in the room. Stay at the table after everyone else had gathered their coats. Ask one more question. Find the one fact, the one mitigating thing, that might keep a person from being swept away with the worst of the charges. She wasn't trying to pretend her clients were innocent. She was insisting that justice meant looking carefully, person by person, before anyone was treated like everyone.\n\nAbraham stays in the room. The others leave for Sodom; he remains standing before the LORD. And his whole plea turns on the same conviction that kept that lawyer at the table after hours: that the righteous should not be swept away with the wicked, that the One deciding will not lump the innocent in with the guilty - that real justice always stops to look at the few.",
+      "connectionToTheme": "Intercession begins where most people exit: it is the decision to stay in the room and plead for others when leaving would be easier and no one would blame you for it.",
+      "content": "A public defender I knew used to talk about the cases nobody wanted. The file was thin, the client was guilty of something, and the easiest thing in the world was to let the system do what the system was going to do anyway. She told me the temptation was never cruelty. It was simply leaving. Closing the folder, walking out, letting the verdict fall on its own weight.\n\nWhat she learned to do instead was stay in the room. Stay at the table after everyone else had gathered their coats. Ask one more question. Find the one fact, the one mitigating thing, that might keep a person from being swept away with the worst of the charges. She wasn't trying to pretend her clients were innocent. She was insisting that justice meant looking carefully, person by person, before anyone was treated like everyone.\n\nAbraham stays in the room. The others leave for Sodom; he remains standing before the LORD. And his whole plea turns on the same conviction that kept that lawyer at the table after hours: that the righteous should not be swept away with the wicked, that the One deciding will not lump the innocent in with the guilty - that real justice always stops to look at the few."
+    },
+    {
+      "type": "insight",
+      "heading": "Dust and Ashes With a Question Mark",
+      "body": "Watch how Abraham actually argues. He does not claim Sodom is innocent; he knows the outcry against it. He does not appeal to his own standing, except to confess it: \"Now that I have ventured to speak to the Lord - though I am but dust and ashes.\" He grounds the entire plea on a single conviction about God's character: \"Will not the Judge of all the earth do what is right?\"\n\nThat sentence is the theological center of the whole passage. Abraham is not informing God of His duty. He is appealing to God against any picture of God that would be unjust. The question is rhetorical because the answer is already certain: of course the Judge will do right. Abraham simply takes that certainty and presses it - fifty, forty-five, forty, thirty, twenty, ten - watching God's mercy reach lower and lower with each step, never once balking.\n\nNotice what God never says. He never grows impatient. He never says \"enough.\" Each time Abraham descends, God meets him there. The text is teaching us something about prayer that we are slow to believe: bold intercession does not wear God down. It uncovers how merciful He already is. Abraham keeps lowering the number to find the floor of God's patience, and the passage ends before he finds it.",
+      "historicalContext": "Genesis sits at the head of the Torah, and Israel read this scene knowing what came next: fire fell on Sodom, but Lot and his daughters were drawn out first (Genesis 19). The ten righteous were not found - yet the righteous who were there were not swept away with the wicked. Abraham's premise held even when his number failed. God's justice did exactly what Abraham trusted it would: it distinguished.",
+      "fascinatingFact": "Abraham's descent stops at ten, not one. Many readers expect him to keep going. Ancient and modern commentators have noticed that ten may be the smallest number that could constitute a faithful remnant - a community, not a single saint. The passage hints that God's mercy is not earned by lone heroes but can be extended for the sake of a faithful few hidden inside a guilty whole.",
+      "content": "Watch how Abraham actually argues. He does not claim Sodom is innocent; he knows the outcry against it. He does not appeal to his own standing, except to confess it: \"Now that I have ventured to speak to the Lord - though I am but dust and ashes.\" He grounds the entire plea on a single conviction about God's character: \"Will not the Judge of all the earth do what is right?\"\n\nThat sentence is the theological center of the whole passage. Abraham is not informing God of His duty. He is appealing to God against any picture of God that would be unjust. The question is rhetorical because the answer is already certain: of course the Judge will do right. Abraham simply takes that certainty and presses it - fifty, forty-five, forty, thirty, twenty, ten - watching God's mercy reach lower and lower with each step, never once balking.\n\nNotice what God never says. He never grows impatient. He never says \"enough.\" Each time Abraham descends, God meets him there. The text is teaching us something about prayer that we are slow to believe: bold intercession does not wear God down. It uncovers how merciful He already is. Abraham keeps lowering the number to find the floor of God's patience, and the passage ends before he finds it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "One man remains standing before the LORD and pleads for a guilty city on the basis of God's own justice, asking that the place be spared for the sake of a righteous few hidden inside it.",
+      "modernApplication": "Most of us leave the room. We watch people drift toward ruin - a family member, a city, a culture - and we conclude there is nothing to say, so we say nothing. Abraham models the opposite instinct: stay before God and plead, not because you can prove the guilty are innocent, but because you trust the Judge to do right. Intercession is the refusal to let go of someone in prayer simply because letting go would be easier.",
+      "connectionPoint": "The pattern Abraham begins runs straight through Scripture. Moses stands in the breach for a people who built a golden calf (Exodus 32:11-14). Samuel says it would be sin against the LORD to stop praying for Israel (1 Samuel 12:23). The prophets plead; the psalmists plead. And the New Testament names a single ground beneath every righteous prayer that ever prevailed: there is one who always lives to make intercession.",
+      "newTestamentEcho": "Abraham stood before the Judge and asked that the guilty be spared for the sake of the righteous. At the cross that question is answered in full. Christ Jesus, the truly Righteous One, does not merely plead for the guilty - He stands in their place, and now \"is at the right hand of God - and He is interceding for us\" (Romans 8:34). He \"is able to save completely those who draw near to God through Him, since He always lives to intercede for them\" (Hebrews 7:25). Abraham asked whether ten righteous could save a city. The gospel answers that one Righteous One can save the world."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who is the person, or the place, you have quietly stopped praying for because it felt easier to let go - and what would it mean to stay in the room before God on their behalf today?",
+      "additionalQuestions": [
+        "Abraham confessed he was 'but dust and ashes' and prayed boldly anyway. Where does a sense of your own smallness keep you from praying boldly?",
+        "Abraham appealed to God's justice, not to anyone's innocence. When you pray for someone who is clearly in the wrong, what do you find yourself appealing to?",
+        "What would change if you believed, as Abraham did, that pressing God in prayer uncovers His mercy rather than exhausting His patience?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Judge of all the earth, You do right - I trust that even when I cannot see how. Teach me to stay in the room. Where I have given up on someone because praying felt useless, give me Abraham's nerve to keep standing before You on their behalf. I come as dust and ashes, with no standing of my own; I come only because Christ stands at Your right hand and intercedes for me. Spare the people I name to You now, not for their goodness, and not for mine, but for the sake of the Righteous One who pleads. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one person or place you have stopped praying for, and stay in the room: bring them before God by name, out loud, and ask the Judge of all the earth to do right by them - then keep doing it tomorrow.",
+      "leavingAtCross": [
+        "The quiet despair that says some people are too far gone to pray for",
+        "The picture of God as a Judge I must talk into mercy rather than One who is already merciful",
+        "The belief that my smallness - my dust and ashes - disqualifies my prayers"
+      ],
+      "receivingFromCross": [
+        "The freedom to intercede boldly, because Christ already lives to intercede for me",
+        "Confidence that the Judge of all the earth will do what is right, even where I cannot see it",
+        "A place to stand before God on behalf of others, grounded not in my righteousness but in His"
+      ],
+      "content": "Today, name one person or place you have stopped praying for, and stay in the room: bring them before God by name, out loud, and ask the Judge of all the earth to do right by them - then keep doing it tomorrow."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God say, 'Shall I hide from Abraham what I am about to do?' What reason does the text give for letting Abraham in on the coming judgment?",
+        "Abraham's whole plea rests on one question in verse 25. What is that question, and why does it function as an argument rather than a request for information?",
+        "Abraham stops at ten righteous, not one. What might that number suggest about how God's mercy is extended to a community?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a time you 'left the room' - stopped praying for a person or situation because it felt hopeless. What made you stop?",
+        "Abraham prayed on the basis of God's character, not anyone's worthiness. How does knowing Christ intercedes for us change the way you pray for others?",
+        "Pick one name together - a person, a family, a city - and commit to interceding for them this week the way Abraham did: persistently, boldly, and without giving up."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 18:25",
+          "text": "Far be it from You to do such a thing—to kill the righteous with the wicked, so that the righteous and the wicked are treated alike. Far be it from You! Will not the Judge of all the earth do what is right?"
+        },
+        {
+          "reference": "Romans 8:34",
+          "text": "Who is there to condemn us? For Christ Jesus, who died, and more than that was raised to life, is at the right hand of God—and He is interceding for us."
+        },
+        {
+          "reference": "Hebrews 7:25",
+          "text": "Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        },
+        {
+          "reference": "James 5:16",
+          "text": "Therefore confess your sins to each other and pray for each other so that you may be healed. The prayer of a righteous man has great power to prevail."
+        },
+        {
+          "reference": "1 Timothy 2:1",
+          "text": "First of all, then, I urge that petitions, prayers, intercessions, and thanksgiving be offered for everyone—"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 18:16-33 alongside Genesis 19:29",
+          "note": "Read the intercession, then read how it landed: 'when God destroyed the cities of the plain, He remembered Abraham, and He brought Lot out ...' Abraham's prayer is not recorded as wasted, even though ten righteous were not found."
+        },
+        {
+          "type": "book",
+          "title": "Exodus 32:11-14",
+          "note": "Compare Moses standing in the breach for Israel after the golden calf. Watch how the pattern Abraham begins becomes the shape of prophetic intercession throughout the Old Testament."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The First Intercessor",
+      "era": "Patriarchal period; traditionally placed in the early second millennium BC",
+      "key_trait": "A friend of God who learned to plead for others on the basis of God's own justice",
+      "description": "Called out of Ur and given promises that would bless all nations, Abraham is the man God chooses to let in on His plans - 'Shall I hide from Abraham what I am about to do?' Here, on the road above Sodom, he becomes the first person in Scripture to intercede at length for others, pressing God's mercy step by step for a city not his own. He does it as one who confesses he is 'but dust and ashes,' yet trusts the Judge of all the earth to do right.",
+      "keyQuote": "Far be it from You! Will not the Judge of all the earth do what is right?",
+      "lessonForUs": "Abraham teaches that bold prayer and deep humility belong together. You can come as dust and ashes and still plead like a friend - because the boldness rests not on your standing, but on God's character. The intercession he began points forward to the one who always lives to intercede for us.",
+      "heading": "The First Intercessor"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2527,
+  "scriptureReference_full": "Genesis 18:16-33",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mishpat H4941; shophet, tsedaqah) reflects standard lexical sources. The pairing of mishpat and tsedaqah ('what is right and just') in Genesis 18:19 and 18:25 is widely noted in Old Testament theology of justice (cf. Amos 5:24; Isaiah 9:7).",
+    "The observation that ten may represent a minimal faithful remnant rather than a lone individual reflects a longstanding line of Jewish and Christian commentary; it is offered as a reading, not a settled certainty."
+  ]
 }

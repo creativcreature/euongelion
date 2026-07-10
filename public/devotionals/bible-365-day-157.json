@@ -1,38 +1,188 @@
 {
   "day": 157,
-  "title": "Fall of Jerusalem + Lamentations — Day 3 — Pivot",
-  "teaser": "Day 157 of Bible 365 — Lamentations",
-  "framework": "Lamentations — Fall of Jerusalem + Lamentations",
-  "scriptureReference": "Lamentations",
+  "title": "New every morning, in the ruins",
+  "teaser": "Day 157 of Bible 365 — at the exact center of the book of tears, a man who has lost everything says the word that changes everything: yet.",
+  "framework": "Lamentations 3:19-26",
+  "scriptureReference": "Lamentations 3:19-26",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 157"
+      "type": "scripture",
+      "reference": "Lamentations 3:19-26",
+      "translation": "BSB",
+      "emphasis": [
+        "Yet I call this to mind",
+        "His mercies never fail",
+        "new every morning",
+        "great is Your faithfulness"
+      ],
+      "hebrewOriginal": "חֲדָשִׁים לַבְּקָרִים רַבָּה אֱמוּנָתֶךָ",
+      "passage": "Remember my affliction and wandering, the wormwood and the gall. Surely my soul remembers and is humbled within me. Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness! \"The LORD is my portion,\" says my soul, \"therefore I will hope in Him.\" The LORD is good to those who wait for Him, to the soul who seeks Him. It is good to wait quietly for the salvation of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Lamentations**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Lamentations and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, steadfast love, covenant loyalty, mercy",
+      "rootMeaning": "Chesed is love that has made a promise and refuses to break it. It is not a passing feeling but a bound commitment - the loyalty of one who stays. English needs a whole phrase to carry it: 'steadfast love,' 'loving devotion,' 'mercy that keeps faith.'",
+      "usageNote": "Verse 22 says, 'Because of the chesed of the LORD we are not consumed.' The plural of the verse is striking - some manuscripts and translations read 'His chesed never ceases,' others 'we are not consumed.' Either way the burning city is the proof: by every reckoning Jerusalem should be ash, and the people with it. That they are not is laid entirely at the door of God's covenant loyalty, not their merit.",
+      "wordByWord": [
+        {
+          "word": "חֲדָשִׁים",
+          "transliteration": "chadashim",
+          "meaning": "new, fresh, renewed"
+        },
+        {
+          "word": "לַבְּקָרִים",
+          "transliteration": "labbeqarim",
+          "meaning": "to the mornings - morning by morning, every dawn"
+        },
+        {
+          "word": "רַבָּה",
+          "transliteration": "rabbah",
+          "meaning": "great, abundant, much"
+        },
+        {
+          "word": "אֱמוּנָתֶךָ",
+          "transliteration": "emunatekha",
+          "meaning": "Your faithfulness, Your steadfastness, Your reliability"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱמוּנָה / אָמֵן",
+          "reference": "Emunah (faithfulness) shares its root with amen - the word we say to mean 'it is firm, it stands true.' When the prophet calls God's faithfulness 'great,' he is saying God Himself is the Amen behind every promise."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; especially the covenant loyalty of God toward His people",
+      "usage": "Chesed is the word the Old Testament reaches for when it wants to name the love that holds when nothing else does. It is sung over and over in Psalm 136 - 'His chesed endures forever' - and here, in the ruins, the prophet stakes his last hope on it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Fall of Jerusalem + Lamentations. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wept over Jerusalem (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Word That Sits at the Center: Yet",
+      "body": "The book of Lamentations is built like a funeral. Five poems mourn a city that has fallen. Babylon has broken the walls, burned the temple, and carried the people off in chains. The poet walks through the rubble of Jerusalem and refuses to look away: mothers with no bread, priests with no temple, a princess made a slave. He is so committed to telling the truth about the loss that the first four poems are acrostics - each verse beginning with the next letter of the Hebrew alphabet, as if grief had to be spelled out from A to Z, every letter accounted for, nothing skipped.\n\nAnd then, dead in the middle of the book - the third of five poems, the very center of the structure - the floor drops out from under the despair. The poet has just said the bleakest line in the whole lament: 'My strength has perished, along with my hope from the LORD' (3:18). He has buried his hope. He has written its eulogy. And then comes a single Hebrew word that turns the entire book: zoth - 'this.' 'Yet this I call to mind, and therefore I have hope.'\n\nWhat is the 'this' he calls to mind? Not a change in circumstances - the city is still smoking. Not a feeling - he just told us the feeling is gone. He calls to mind the character of God. 'Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness.' He cannot find hope in what he sees. So he goes and gets it from who God is.",
+      "keyInsight": "Hope in Lamentations is not the absence of ruin. It sits at the exact center of the ruin. The poet does not wait for the smoke to clear before he speaks of mercy - he speaks of mercy with the city still burning, because the ground of hope was never the city.",
+      "content": "The book of Lamentations is built like a funeral. Five poems mourn a city that has fallen. Babylon has broken the walls, burned the temple, and carried the people off in chains. The poet walks through the rubble of Jerusalem and refuses to look away: mothers with no bread, priests with no temple, a princess made a slave. He is so committed to telling the truth about the loss that the first four poems are acrostics - each verse beginning with the next letter of the Hebrew alphabet, as if grief had to be spelled out from A to Z, every letter accounted for, nothing skipped.\n\nAnd then, dead in the middle of the book - the third of five poems, the very center of the structure - the floor drops out from under the despair. The poet has just said the bleakest line in the whole lament: 'My strength has perished, along with my hope from the LORD' (3:18). He has buried his hope. He has written its eulogy. And then comes a single Hebrew word that turns the entire book: zoth - 'this.' 'Yet this I call to mind, and therefore I have hope.'\n\nWhat is the 'this' he calls to mind? Not a change in circumstances - the city is still smoking. Not a feeling - he just told us the feeling is gone. He calls to mind the character of God. 'Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness.' He cannot find hope in what he sees. So he goes and gets it from who God is."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Nurse Who Counted Mornings",
+      "body": "A friend who worked years in hospice told me she stopped measuring her days by what got fixed, because almost nothing did. The people in her care were not getting better. So she learned to measure by mornings instead. Each dawn she walked into a room and the person was still there, still breathing, and the two of them had been given one more morning that nobody had earned and nobody could keep.\n\nShe said the families who came apart were the ones waiting for the situation to turn around before they would let themselves feel anything good. The ones who held together were the ones who learned to receive a single morning as its own mercy - a hand held, a window opened, a hymn hummed badly - without demanding that the morning fix the future.\n\nThat is the posture of Lamentations 3. The prophet is not in a hospice; he is in a war's aftermath, which is worse. But he has learned the same arithmetic. He stops counting by outcomes and starts counting by mornings. 'They are new every morning.' Not the buildings. Not the safety. The mercies. One more dawn, and with it one more measure of a faithfulness that did not run out overnight.",
+      "connectionToTheme": "Hope survives catastrophe not by denying the ruin but by re-anchoring - from outcomes we cannot control to mercies that arrive fresh with every sunrise.",
+      "content": "A friend who worked years in hospice told me she stopped measuring her days by what got fixed, because almost nothing did. The people in her care were not getting better. So she learned to measure by mornings instead. Each dawn she walked into a room and the person was still there, still breathing, and the two of them had been given one more morning that nobody had earned and nobody could keep.\n\nShe said the families who came apart were the ones waiting for the situation to turn around before they would let themselves feel anything good. The ones who held together were the ones who learned to receive a single morning as its own mercy - a hand held, a window opened, a hymn hummed badly - without demanding that the morning fix the future.\n\nThat is the posture of Lamentations 3. The prophet is not in a hospice; he is in a war's aftermath, which is worse. But he has learned the same arithmetic. He stops counting by outcomes and starts counting by mornings. 'They are new every morning.' Not the buildings. Not the safety. The mercies. One more dawn, and with it one more measure of a faithfulness that did not run out overnight."
+    },
+    {
+      "type": "insight",
+      "heading": "Mercy Renewed at Dawn, on the Third Morning",
+      "body": "Hold the geography for a moment. The man writing these lines is sitting in the ruins of Jerusalem, the very city outside whose walls, six centuries later, another voice will weep over the same stones. Jesus stood within sight of that city and wept, saying, 'If only you had known on this day what would bring you peace' (Luke 19:42). The grief of Lamentations and the grief of Christ pour out over the same ground.\n\nBut the prophet says something he could not yet fully see. 'His mercies are new every morning.' In Lamentations the word for mercies is rachamim - tender mercies, the same root as a mother's womb, the gut-level compassion of God. The prophet bets everything on a mercy that renews itself at dawn. He does not know how literal that will become. Centuries later, in that same city, a sealed tomb will sit through a Sabbath of total silence - the bleakest Saturday in history, every disciple's hope perished like the prophet's strength in verse 18. And then, while it is still dark, women come at the first light of a new morning. The stone is rolled. The mercy is, quite literally, new every morning.\n\nThe resurrection is not a contradiction of Lamentations. It is its fulfillment. It is the morning the whole book was waiting for - the dawn that proved, beyond all argument, that God's faithfulness is great and His mercies do not fail.",
+      "historicalContext": "Lamentations mourns the destruction of Jerusalem by Babylon in 586 BC. Jewish tradition reads it every year on Tisha B'Av, the fast commemorating the fall of both the first and second temples. The first four chapters are alphabetic acrostics; chapter 3, the center, intensifies the form into a triple acrostic - 66 verses, three for every letter - placing the hope of verses 22-24 at the structural heart of the most ordered grief in Scripture.",
+      "fascinatingFact": "The line 'great is Your faithfulness' (3:23) is the seed of one of the church's most beloved hymns. In 1923 a pastor named Thomas Chisholm, who lived with chronic illness and little money and saw nothing dramatic in his own life, wrote 'Great Is Thy Faithfulness' directly out of this verse - hope drawn not from spectacular rescue but from the plain, daily mercy of a God who keeps showing up at dawn.",
+      "content": "Hold the geography for a moment. The man writing these lines is sitting in the ruins of Jerusalem, the very city outside whose walls, six centuries later, another voice will weep over the same stones. Jesus stood within sight of that city and wept, saying, 'If only you had known on this day what would bring you peace' (Luke 19:42). The grief of Lamentations and the grief of Christ pour out over the same ground.\n\nBut the prophet says something he could not yet fully see. 'His mercies are new every morning.' In Lamentations the word for mercies is rachamim - tender mercies, the same root as a mother's womb, the gut-level compassion of God. The prophet bets everything on a mercy that renews itself at dawn. He does not know how literal that will become. Centuries later, in that same city, a sealed tomb will sit through a Sabbath of total silence - the bleakest Saturday in history, every disciple's hope perished like the prophet's strength in verse 18. And then, while it is still dark, women come at the first light of a new morning. The stone is rolled. The mercy is, quite literally, new every morning.\n\nThe resurrection is not a contradiction of Lamentations. It is its fulfillment. It is the morning the whole book was waiting for - the dawn that proved, beyond all argument, that God's faithfulness is great and His mercies do not fail."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the ashes of a destroyed city, with his strength and even his hope from the LORD declared dead, the prophet turns on the single word 'yet' and stakes his survival on the character of God: 'Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning.'",
+      "modernApplication": "Most of us do not lose a city. We lose a marriage, a diagnosis comes back, a job ends, a child walks away, a faith goes quiet. The instinct is to wait until the ruin is repaired before we dare to hope again. Lamentations teaches the opposite move: name the loss in full - all the way down to 'my hope has perished' - and then, without waiting for the smoke to clear, call to mind who God is. Hope is not pretending the city stands. It is remembering the One who stands when the city does not.",
+      "connectionPoint": "This 'yet' echoes through the whole of Scripture. Job says, 'Though He slay me, I will hope in Him' (Job 13:15) - the older translations render that turn 'yet will I hope in Him.' Habakkuk says, 'Though the fig tree does not bud... yet I will exult in the LORD' (Habakkuk 3:17-18). Paul, beaten and imprisoned, writes that we are 'sorrowful, yet always rejoicing' (2 Corinthians 6:10). The biblical 'yet' is not denial. It is a person who has looked the worst full in the face and then turned, deliberately, toward the faithfulness of God.",
+      "newTestamentEcho": "What the prophet hoped, Christ secured. He took the cup of wrath the broken city deserved - 'offering his cheek to the one who would strike him,' as Lamentations 3:30 foreshadows - and on the third morning the tomb was empty. In Him, the mercy that is 'new every morning' becomes the mercy that is new forever: 'By His great mercy He has given us new birth into a living hope through the resurrection of Jesus Christ from the dead' (1 Peter 1:3)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What loss are you still walking through that has not yet been repaired - and what would it mean to call to mind who God is before the smoke clears?",
+      "additionalQuestions": [
+        "The prophet says, 'My strength has perished, along with my hope from the LORD,' and then says, 'yet.' Where do you most need to speak that 'yet' today - not as denial, but as a turn toward God?",
+        "What does it look like, practically, to measure your day by mercies received rather than by problems solved?",
+        "If God's mercies are genuinely new every morning, what is one fresh mercy you can name from this morning alone?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I am tired of waiting for the ruin to be rebuilt before I let myself hope. So I will do what the prophet did. I name what is broken; I do not pretend it stands. And then I turn: because of Your loving devotion I am not consumed. Your mercies never fail. They are new this very morning, and I receive this one. You are my portion; therefore I will hope in You. Where my strength has perished, be my strength. Where my own hope has run out, be my hope - the hope that did not stay in the tomb. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before you measure today by what is wrong with it, name three mercies that arrived this morning - three things you did not earn and cannot keep, given fresh at dawn. Then say the prophet's 'yet' out loud over the one loss you have been waiting to be fixed before you would hope again.",
+      "leavingAtCross": [
+        "The demand that the ruin be repaired before I am allowed to hope",
+        "The habit of measuring my days only by what is still broken",
+        "The quiet despair that says God's mercy toward me has run out"
+      ],
+      "receivingFromCross": [
+        "A loving devotion that keeps me from being consumed by my worst season",
+        "Mercies delivered new every morning, this one included",
+        "A living hope anchored not in my circumstances but in the empty tomb"
+      ],
+      "content": "Before you measure today by what is wrong with it, name three mercies that arrived this morning - three things you did not earn and cannot keep, given fresh at dawn. Then say the prophet's 'yet' out loud over the one loss you have been waiting to be fixed before you would hope again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the 'this' the prophet calls to mind in verse 21, and why does it matter that it is God's character and not a change in his circumstances?",
+        "Why is it significant that the hope of Lamentations sits at the structural center of the book rather than at the end?",
+        "How does the phrase 'new every morning' deepen when read in light of the resurrection morning?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one loss in your life that has not been repaired - and practice saying the 'yet' over it together.",
+        "Talk honestly about the difference between denying grief and re-anchoring hope in God's faithfulness in the middle of grief.",
+        "Ask each other: what is one mercy from this morning you can thank God for right now?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 3:18",
+          "text": "So I say, \"My strength has perished, along with my hope from the LORD.\""
+        },
+        {
+          "reference": "Lamentations 1:12",
+          "text": "Is this nothing to you, all you who pass by? Look around and see! Is there any sorrow like mine, which was inflicted on me, which the LORD made me suffer on the day of His fierce anger?"
+        },
+        {
+          "reference": "Lamentations 5:21",
+          "text": "Restore us to Yourself, O LORD, so we may return; renew our days as of old."
+        },
+        {
+          "reference": "1 Peter 1:3",
+          "text": "Blessed be the God and Father of our Lord Jesus Christ! By His great mercy He has given us new birth into a living hope through the resurrection of Jesus Christ from the dead."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Lamentations 3",
+          "note": "Read the whole chapter slowly, watching the descent into verse 18 ('my hope has perished') and the turn at verse 21 ('yet'). Notice that the lament does not stop after the hope - verses 31-33 hold grief and compassion together without resolving the tension."
+        },
+        {
+          "type": "song",
+          "title": "Great Is Thy Faithfulness",
+          "note": "Thomas Chisholm wrote this hymn (1923) directly out of Lamentations 3:22-23 - hope drawn not from rescue but from daily mercy."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet, by Tradition the Voice of Lamentations",
+      "description": "Lamentations is anonymous, but Jewish and Christian tradition has long attributed it to Jeremiah, the prophet who warned Jerusalem for forty years and then lived to watch it fall in 586 BC. He had no comfort of being wrong; the catastrophe he foretold landed on the city he loved. Whether or not his hand wrote these poems, they carry his vocation: to tell God's people the unbearable truth and then to grieve with them in the ruins rather than stand over them.",
+      "keyQuote": "Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed.",
+      "lessonForUs": "The same prophet who would not soften the bad news also would not let the bad news be the last word. Honest about the ruin, anchored in the mercy - he holds both, and refuses to let go of either. That is the work this passage hands to us.",
+      "heading": "The Weeping Prophet, by Tradition the Voice of Lamentations"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2295,
+  "scriptureReference_full": "Lamentations 3:19-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; chadashim labbeqarim rabbah emunatekha, Lamentations 3:23) reflects standard lexical sources. The rachamim / womb resonance and the triple-acrostic structure of Lamentations 3 are noted in standard Old Testament scholarship.",
+    "'Great Is Thy Faithfulness' written by Thomas O. Chisholm, 1923, set to music by William M. Runyan."
+  ]
 }

@@ -1,38 +1,182 @@
 {
   "day": 130,
-  "title": "Northern Prophets — Day 4 — Application",
-  "teaser": "Day 130 of Bible 365 — Amos, Hosea, Micah",
+  "title": "Three verbs the prophets would not let go",
+  "teaser": "Amos, Hosea, and Micah strip religion down to three things God actually requires — and then God comes in person to do all three.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
-  "scriptureReference": "Amos, Hosea, Micah",
+  "scriptureReference": "Micah 6:8",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 130"
+      "type": "scripture",
+      "reference": "Micah 6:6-8",
+      "translation": "BSB",
+      "emphasis": [
+        "what does the LORD require of you",
+        "to act justly",
+        "to love mercy",
+        "to walk humbly with your God"
+      ],
+      "hebrewOriginal": "הִגִּיד לְךָ אָדָם מַה־טּוֹב וּמָה־יְהוָה דּוֹרֵשׁ מִמְּךָ כִּי אִם־עֲשׂוֹת מִשְׁפָּט וְאַהֲבַת חֶסֶד וְהַצְנֵעַ לֶכֶת עִם־אֱלֹהֶיךָ",
+      "passage": "With what shall I come before the LORD when I bow before the God on high? Should I come to Him with burnt offerings, with year-old calves? Would the LORD be pleased with thousands of rams, with ten thousand rivers of oil? Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul? He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מִשְׁפָּט · חֶסֶד · הַצְנֵעַ לֶכֶת",
+      "transliteration": "mishpat · chesed · hatsnea lechet",
+      "pronunciation": "meesh-PAHT · KHEH-sed · hahts-NEH-ah LEH-khet",
+      "meaning": "justice · steadfast covenant-love · to walk humbly",
+      "rootMeaning": "Mishpat is not abstract fairness but rendering each person their due, especially the powerless. Chesed is the loyal, going-the-distance love God shows His covenant people - more than kindness, it is faithfulness that will not quit. Hatsnea lechet is to walk modestly, low to the ground, without strutting.",
+      "usageNote": "Micah does not say believe three things; he uses verbs. To act, to love, to walk. Mishpat is something you do, chesed is something you love (not merely perform), and the walk is a daily gait, not a single step. The whole life of faith is folded into how you treat people and how you carry yourself before God.",
+      "wordByWord": [
+        {
+          "word": "עֲשׂוֹת מִשְׁפָּט",
+          "transliteration": "asot mishpat",
+          "meaning": "to do justice - to put right what is bent, to give the vulnerable their due"
+        },
+        {
+          "word": "אַהֲבַת חֶסֶד",
+          "transliteration": "ahavat chesed",
+          "meaning": "to love mercy - to delight in loyal, covenant kindness, not just tolerate it"
+        },
+        {
+          "word": "הַצְנֵעַ לֶכֶת",
+          "transliteration": "hatsnea lechet",
+          "meaning": "to walk humbly - to go through your days low, attentive, unimpressed with yourself"
+        },
+        {
+          "word": "עִם־אֱלֹהֶיךָ",
+          "transliteration": "im-Eloheicha",
+          "meaning": "with your God - the walk is not solo; it is companionship"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֶסֶד / חֶסֶד",
+          "reference": "Hosea uses the same word chesed in Hosea 6:6 - 'I desire mercy (chesed), not sacrifice.' Amos, Hosea, and Micah are preaching the same sermon in three voices, and chesed is the word that ties it together."
+        }
+      ],
+      "strongsNumber": "H4941",
+      "definition": "mishpat (H4941): judgment, justice, the right ordering of relationships and rulings",
+      "usage": "When Amos cries 'let justice roll on like a river' (Amos 5:24), the river is mishpat. Micah takes that flood and hands it to you as a daily verb: act justly."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Voices, One Sermon",
+      "body": "Days into this stretch of the Northern Prophets, a pattern has emerged. Amos, Hosea, and Micah lived roughly within the same generation, watched the same kingdoms grow fat and crooked, and arrived at almost exactly the same verdict. Read them side by side and you start to hear one sermon in three accents.\n\nThe target is not irreligion. It is religion that works beautifully and changes nothing. Amos hears God say, 'I hate, I despise your feasts... Take away from Me the noise of your songs' (Amos 5:21, 23). The worship was loud, regular, well-funded. It was also covering for courts that sold the poor for a pair of sandals. Hosea, in the same breath, lets God say what He actually wants: 'I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' (Hosea 6:6). The sacrifices were piling up; the knowledge of God had thinned out to nothing.\n\nThen Micah does the thing prophets rarely do. He simplifies. A worshiper stands at the edge of the sanctuary and bids the price up - burnt offerings, then year-old calves, then thousands of rams, then ten thousand rivers of oil, then, in a horrifying final escalation, 'my firstborn for my transgression.' The man assumes the problem is that he has not yet given enough. Micah cuts him off. God already told you what is good. It was never about the size of the offering.",
+      "keyInsight": "The Northern Prophets are not against worship. They are against worship that lets you skip the people right in front of you.",
+      "content": "Days into this stretch of the Northern Prophets, a pattern has emerged. Amos, Hosea, and Micah lived roughly within the same generation, watched the same kingdoms grow fat and crooked, and arrived at almost exactly the same verdict. Read them side by side and you start to hear one sermon in three accents.\n\nThe target is not irreligion. It is religion that works beautifully and changes nothing. Amos hears God say, 'I hate, I despise your feasts... Take away from Me the noise of your songs' (Amos 5:21, 23). The worship was loud, regular, well-funded. It was also covering for courts that sold the poor for a pair of sandals. Hosea, in the same breath, lets God say what He actually wants: 'I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' (Hosea 6:6). The sacrifices were piling up; the knowledge of God had thinned out to nothing.\n\nThen Micah does the thing prophets rarely do. He simplifies. A worshiper stands at the edge of the sanctuary and bids the price up - burnt offerings, then year-old calves, then thousands of rams, then ten thousand rivers of oil, then, in a horrifying final escalation, 'my firstborn for my transgression.' The man assumes the problem is that he has not yet given enough. Micah cuts him off. God already told you what is good. It was never about the size of the offering."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Audit Nobody Asked For",
+      "body": "A friend who keeps the books for a mid-sized church told me about the year their giving hit a record. New sound system, expanded parking, a worship night people drove two hours to attend. By every metric they tracked, it was the best year in the church's history.\n\nThat same winter, a woman who had cleaned the building for nine years asked the office, quietly, whether there was any way to be paid for the holiday week she would lose. She was told the budget was tight. The budget that had just funded the parking lot.\n\nNobody decided to be unjust. That is the unsettling part. Each line item made sense on its own. But somewhere in the spreadsheet, the rams and the rivers of oil had quietly displaced the woman with the mop. The worship was real. The knowledge of God - the kind that notices who is being stepped over to fund it - had thinned out to almost nothing. Micah would have recognized the church instantly. He had seen this exact building before.",
+      "connectionToTheme": "Injustice rarely arrives as a decision to be cruel. It arrives as worship that grows louder while the person at the edge grows quieter.",
+      "content": "A friend who keeps the books for a mid-sized church told me about the year their giving hit a record. New sound system, expanded parking, a worship night people drove two hours to attend. By every metric they tracked, it was the best year in the church's history.\n\nThat same winter, a woman who had cleaned the building for nine years asked the office, quietly, whether there was any way to be paid for the holiday week she would lose. She was told the budget was tight. The budget that had just funded the parking lot.\n\nNobody decided to be unjust. That is the unsettling part. Each line item made sense on its own. But somewhere in the spreadsheet, the rams and the rivers of oil had quietly displaced the woman with the mop. The worship was real. The knowledge of God - the kind that notices who is being stepped over to fund it - had thinned out to almost nothing. Micah would have recognized the church instantly. He had seen this exact building before."
+    },
+    {
+      "type": "insight",
+      "heading": "A Portrait Before It Is a Checklist",
+      "body": "It is tempting to read Micah 6:8 as a to-do list: justice, mercy, humility, three boxes to check before God is satisfied. But the prophets would resist that reading, because the three verbs are not first a description of us. They are a description of God.\n\nWho establishes justice in the gate? The God of Amos, who watches the courts. Who is chesed, loyal covenant love, all the way down? The God of Hosea, who cries, 'How could I give you up, O Ephraim?... My heart is turned within Me; My compassion is stirred' (Hosea 11:8). Who walks - not above the world untouchably, but down in it, with His people? The God who called Israel His son out of Egypt and would not let go. Justice, mercy, humility are God's own gait before they are ever a requirement laid on us.\n\nThat is why this lands as good news and not just another burden. Micah is not handing you a heavier rucksack. He is telling you what God is like, and then inviting you to walk the same way - im Eloheicha, with your God. The three verbs are less a test you pass than a Person you keep step with.",
+      "historicalContext": "Amos prophesied around 760-750 BC, Hosea overlapping and slightly after, Micah around 740-700 BC. Amos and Hosea spoke mainly to the northern kingdom of Israel; Micah, from the Judean town of Moresheth, watched the north fall to Assyria in 722 BC and warned Judah it could follow. The fact that three prophets in three settings preach the same indictment is itself part of the message.",
+      "fascinatingFact": "Micah 6:8 became one of the most quoted single verses in later Jewish tradition. The Talmud records a teaching that the whole Torah was eventually reduced to this one line - act justly, love mercy, walk humbly - as if all of revelation could fold into Micah's three verbs without losing anything essential.",
+      "content": "It is tempting to read Micah 6:8 as a to-do list: justice, mercy, humility, three boxes to check before God is satisfied. But the prophets would resist that reading, because the three verbs are not first a description of us. They are a description of God.\n\nWho establishes justice in the gate? The God of Amos, who watches the courts. Who is chesed, loyal covenant love, all the way down? The God of Hosea, who cries, 'How could I give you up, O Ephraim?... My heart is turned within Me; My compassion is stirred' (Hosea 11:8). Who walks - not above the world untouchably, but down in it, with His people? The God who called Israel His son out of Egypt and would not let go. Justice, mercy, humility are God's own gait before they are ever a requirement laid on us.\n\nThat is why this lands as good news and not just another burden. Micah is not handing you a heavier rucksack. He is telling you what God is like, and then inviting you to walk the same way - im Eloheicha, with your God. The three verbs are less a test you pass than a Person you keep step with."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Through Amos, Hosea, and Micah, God told a religious people that He was unimpressed by their offerings and wanted three things instead: justice for the vulnerable, loyal mercy they actually loved, and a humble daily walk with Him.",
+      "modernApplication": "The application day asks the uncomfortable question the prophets asked: not 'is your worship sincere?' but 'what does your worship cost the people on the edges of your life?' You can have a rich devotional habit and a thin knowledge of God if the habit never reaches the cashier, the coworker, the neighbor, the person your decisions quietly step over.",
+      "connectionPoint": "Micah's three verbs are not three separate assignments. Justice without mercy hardens into cruelty; mercy without justice collapses into sentiment; and both go arrogant the moment you forget you are walking with God and not ahead of Him. They hold each other up. This is why Amos's flooding river of justice (Amos 5:24) and Hosea's tender chesed (Hosea 6:6) belong in the same sentence as Micah's humble walk.",
+      "newTestamentEcho": "Jesus reached back to these exact prophets. Twice He quotes Hosea 6:6 - 'I desire mercy, not sacrifice' - to people who had their religion in good order and their compassion in disrepair (Matthew 9:13; 12:7). And He named the same trio Micah did, rebuking leaders who tithed their garden herbs but 'have disregarded the weightier matters of the law: justice, mercy, and faithfulness' (Matthew 23:23). The Northern Prophets were not a detour from the gospel. Jesus preached straight out of them."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Of Micah's three verbs - act justly, love mercy, walk humbly - which one is your spiritual life quietly skipping?",
+      "additionalQuestions": [
+        "Whose 'pair of sandals' might your convenience be costing right now - whose interests get traded away so your life runs smoothly?",
+        "Hosea says God desires mercy you love, not mercy you merely perform. Where are you doing the right thing while resenting it?",
+        "Where has your worship gotten louder lately while your attention to actual people has gotten quieter?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You have shown me what is good, and I have spent so much energy offering You everything except it. Forgive the rams and the rivers of oil I pile up to avoid the one thing You ask. Teach me to act justly where I would rather look away, to love mercy and not just ration it, and to walk low - with You, not ahead of You. You did all three before You ever asked them of me. Let me keep step with You today. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, take Micah's three verbs into one concrete relationship. Name one person your life has been quietly stepping over, and do one just, merciful thing for them before the day ends - a fair wage, an honest apology, an overdue thank-you, a debt forgiven. Walk it out, do not just feel it.",
+      "leavingAtCross": [
+        "The religion that stays loud at the sanctuary and silent at the gate",
+        "The bidding-up instinct that offers God more rather than obeying Him in the one thing",
+        "The mercy I perform without loving, and the justice I admire without doing"
+      ],
+      "receivingFromCross": [
+        "A God whose own heart is justice, mercy, and humility before He ever asks them of me",
+        "The freedom of three clear verbs instead of an endless, anxious bidding war",
+        "A walking companion for the road - 'with your God,' not in front of Him"
+      ],
+      "content": "Today, take Micah's three verbs into one concrete relationship. Name one person your life has been quietly stepping over, and do one just, merciful thing for them before the day ends - a fair wage, an honest apology, an overdue thank-you, a debt forgiven. Walk it out, do not just feel it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Micah cut off the worshiper who keeps raising his offering, all the way up to his firstborn? What has the man misunderstood about what God wants?",
+        "How do Amos 5:24 (justice like a river) and Hosea 6:6 (mercy, not sacrifice) say the same thing Micah 6:8 says, in different words?",
+        "Why does it matter that justice, mercy, and humility describe God's own character first, before they describe what He requires of us?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where your group, church, or family has let good worship coexist with overlooked people - and what one fair thing could change that.",
+        "Talk honestly: which of the three verbs comes easiest to you, and which do you tend to skip? Why those?",
+        "Ask each other: where is mercy something you love, and where is it still something you only grudgingly perform?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Hosea 11:8",
+          "text": "How could I give you up, O Ephraim? How could I surrender you, O Israel?... My heart is turned within Me; My compassion is stirred!"
+        },
+        {
+          "reference": "Matthew 23:23",
+          "text": "Woe to you, scribes and Pharisees, you hypocrites!... But you have disregarded the weightier matters of the law: justice, mercy, and faithfulness."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Micah 6 and Amos 5",
+          "note": "Read both chapters back to back. Notice how each moves from God rejecting empty worship to God naming the justice He actually wants - the same arc, two prophets."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Amos of Tekoa",
+      "title": "The Shepherd Who Was Sent",
+      "description": "Amos was not a career prophet. 'I was not a prophet,' he told the priest who tried to silence him, 'nor was I the son of a prophet; rather, I was a herdsman and a tender of sycamore-fig trees' (Amos 7:14). A working man from the Judean village of Tekoa, he was taken from the flock and sent north into the prosperous, complacent kingdom of Israel to announce that God could not stand its worship while its poor were being crushed. He gave the prophets their most quoted line about justice - a river that will not stop running.",
+      "keyQuote": "But let justice roll on like a river, and righteousness like an ever-flowing stream.",
+      "lessonForUs": "God's most piercing words about justice came through a shepherd with no credentials and no platform - only obedience. You do not need a title to live Micah's three verbs. You need to go where God sends and do the just, merciful thing once you get there.",
+      "heading": "The Shepherd Who Was Sent"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2047,
+  "scriptureReference_full": "Micah 6:6-8 (with Amos 5:21-24; Hosea 6:6; 11:8)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mishpat H4941, chesed, hatsnea lechet) reflects standard lexical sources. The tradition reducing the Torah to Micah 6:8 is recorded in the Babylonian Talmud, Makkot 24a."
+  ]
 }

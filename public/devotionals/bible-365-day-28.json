@@ -1,38 +1,187 @@
 {
   "day": 28,
   "title": "What you wrestle for",
-  "teaser": "Day 28 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: rest after struggle",
-  "scriptureReference": "Sabbath",
+  "teaser": "Day 28 of Bible 365 — Sabbath. Jacob holds on until daybreak and walks away renamed and limping. Today you stop wrestling, because the blessing is already yours.",
+  "framework": "Genesis 32:22-31 — Sabbath: rest after the struggle",
+  "scriptureReference": "Genesis 32:22-31",
   "chiastic_position": "sabbath",
-  "pardesLevel": "peshat",
-  "panels": [
+  "pardesLevel": "remez",
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 28"
+      "type": "scripture",
+      "reference": "Genesis 32:24-30",
+      "translation": "BSB",
+      "emphasis": [
+        "Jacob was left all alone",
+        "I will not let you go unless you bless me",
+        "Your name will no longer be Jacob, but Israel",
+        "I have seen God face to face, and yet my life was spared"
+      ],
+      "hebrewOriginal": "וַיֵּאָבֵק אִישׁ עִמּוֹ עַד עֲלוֹת הַשָּׁחַר",
+      "passage": "So Jacob was left all alone, and there a man wrestled with him until daybreak. When the man saw that he could not overpower Jacob, he struck the socket of Jacob’s hip and dislocated it as they wrestled. Then the man said, “Let me go, for it is daybreak.” But Jacob replied, “I will not let you go unless you bless me.” “What is your name?” the man asked. “Jacob,” he replied. Then the man said, “Your name will no longer be Jacob, but Israel, because you have struggled with God and with men, and you have prevailed.” And Jacob requested, “Please tell me your name.” But he replied, “Why do you ask my name?” Then he blessed Jacob there. So Jacob named the place Peniel, saying, “Indeed, I have seen God face to face, and yet my life was spared.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיֵּאָבֵק",
+      "transliteration": "vayye'aveq",
+      "pronunciation": "vah-yay-ah-VAKE",
+      "meaning": "and he wrestled, he grappled in the dust",
+      "rootMeaning": "The verb comes from a root tied to avaq, dust. To wrestle, in Hebrew, is to get into the dust with someone - to be close enough to be covered in the same dirt. It is the most intimate of fights.",
+      "usageNote": "This verb appears only here in the entire Hebrew Bible, in verses 24 and 25. The one time Scripture uses this word for wrestling, it is a man holding onto God in the dark by the Jabbok. The play is hard to miss: Yabboq (the river), Ya'aqov (Jacob), vayye'aveq (he wrestled) - three words from nearly the same sounds, as if the place, the man, and the struggle were always meant to collide.",
+      "wordByWord": [
+        {
+          "word": "וַיֵּאָבֵק",
+          "transliteration": "vayye'aveq",
+          "meaning": "and he wrestled - grappled close, in the dust"
+        },
+        {
+          "word": "אִישׁ",
+          "transliteration": "ish",
+          "meaning": "a man - the text says only 'a man,' and lets the mystery stand"
+        },
+        {
+          "word": "עַד עֲלוֹת הַשָּׁחַר",
+          "transliteration": "ad alot hashachar",
+          "meaning": "until the dawn came up - literally, until the rising of the morning"
+        },
+        {
+          "word": "וַיְבָרֶךְ אֹתוֹ",
+          "transliteration": "vayvarekh oto",
+          "meaning": "and He blessed him there - the fight ends not in a fall but in a blessing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יִשְׂרָאֵל",
+          "reference": "Israel - the new name. It joins sarah (to strive, to contend as a prince) with El (God). Jacob the heel-grabber, the supplanter, becomes Israel: one who struggles with God and is left standing."
+        }
+      ],
+      "strongsNumber": "H79",
+      "definition": "to wrestle, to grapple closely - used only in Genesis 32:24-25",
+      "usage": "The word does not mean a brawl. It means the kind of grip you take on someone you will not release - a combat that has turned into clinging. By verse 26 that is plainly what it is: 'I will not let you go.'"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest after struggle. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ’s finished wrestling (John 19:30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Night Before the Day You Dread",
+      "body": "For six days this week we have walked beside Jacob, and he has been running the whole time. He ran from Esau with a stolen blessing. He ran to Laban and was tricked into fourteen years of labor. Now he is running home, and the only thing waiting for him there is the brother he cheated, marching toward him with four hundred men.\n\nSo on the last night before that meeting, Jacob does something strange. He sends everyone across the river - his wives, his children, his servants, every animal he owns - and he stays behind. Alone. The man who has spent twenty years surrounded by people he was managing has no one left to manage, and nothing left to hide behind. \"Jacob was left all alone.\"\n\nAnd that is exactly when God comes. Not in the daylight where Jacob could see what he was facing, but in the dark, by the water, in the hours when a frightened man cannot sleep. A stranger lays hands on him, and the fight begins. It lasts all night. It is the strangest prayer meeting in Scripture, and it is a wrestling match.",
+      "keyInsight": "God did not meet Jacob after he had his life together. God met him alone in the dark, the night before the thing he was most afraid of - and would not let go of him until morning.",
+      "content": "For six days this week we have walked beside Jacob, and he has been running the whole time. He ran from Esau with a stolen blessing. He ran to Laban and was tricked into fourteen years of labor. Now he is running home, and the only thing waiting for him there is the brother he cheated, marching toward him with four hundred men.\n\nSo on the last night before that meeting, Jacob does something strange. He sends everyone across the river - his wives, his children, his servants, every animal he owns - and he stays behind. Alone. The man who has spent twenty years surrounded by people he was managing has no one left to manage, and nothing left to hide behind. \"Jacob was left all alone.\"\n\nAnd that is exactly when God comes. Not in the daylight where Jacob could see what he was facing, but in the dark, by the water, in the hours when a frightened man cannot sleep. A stranger lays hands on him, and the fight begins. It lasts all night. It is the strangest prayer meeting in Scripture, and it is a wrestling match."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Phone He Would Not Put Down",
+      "body": "A friend told me about the night his daughter was in surgery far longer than the doctors had promised. He sat in a waiting room that smelled of burnt coffee and prayed the only way he knew how, which was badly. He did not pray nice words. He held onto God the way you hold a rope you are dangling from - not gracefully, just with everything he had, because letting go was unthinkable.\n\nHe kept saying one thing into the dark: I am not going anywhere. He did not mean the waiting room. He meant he was not letting go of God, and if the answer was no, he was going to make God say it to his face.\n\nDaybreak came, and his daughter came out of surgery. But what he remembers is not mostly the relief. It is that somewhere in that long night the praying stopped being a performance and became a grip. \"I will not let you go,\" Jacob says, with a dislocated hip, to the God who could vanish at any second. My friend understood that verse for the first time at four in the morning.",
+      "connectionToTheme": "Real wrestling with God is not eloquent. It is the refusal to let go in the dark - and that refusal, Scripture says, is not unbelief. It is the beginning of the blessing.",
+      "content": "A friend told me about the night his daughter was in surgery far longer than the doctors had promised. He sat in a waiting room that smelled of burnt coffee and prayed the only way he knew how, which was badly. He did not pray nice words. He held onto God the way you hold a rope you are dangling from - not gracefully, just with everything he had, because letting go was unthinkable.\n\nHe kept saying one thing into the dark: I am not going anywhere. He did not mean the waiting room. He meant he was not letting go of God, and if the answer was no, he was going to make God say it to his face.\n\nDaybreak came, and his daughter came out of surgery. But what he remembers is not mostly the relief. It is that somewhere in that long night the praying stopped being a performance and became a grip. \"I will not let you go,\" Jacob says, with a dislocated hip, to the God who could vanish at any second. My friend understood that verse for the first time at four in the morning."
+    },
+    {
+      "type": "insight",
+      "heading": "He Asked the Name Jacob Stole",
+      "body": "The whole fight turns on one question, and it is the gentlest blow of all: \"What is your name?\"\n\nGod already knows his name. So think back to the last time someone asked Jacob his name in the dark. It was his blind father Isaac, in the tent, when Jacob - dressed in his brother's clothes - lied: \"I am Esau, your firstborn.\" The last time Jacob said his name in a dark room, he stole a blessing by hiding who he was.\n\nNow, by the river, the question comes again, and this time he tells the truth. \"Jacob.\" The name means heel-grabber, supplanter, the one who trips you up to get ahead. He says it plainly, and it is a confession - he is naming the very thing he has been his whole life. And the instant he tells the truth, God gives him a new name: \"Your name will no longer be Jacob, but Israel.\" The blessing he once stole by lying about his name, he now receives by confessing it.\n\nThis is the secret hidden in the struggle. We think we have to win the wrestling match to earn the blessing. We do not. We have to stop pretending. The blessing comes the moment Jacob stops being Esau and admits he is Jacob.",
+      "historicalContext": "Centuries later the prophet Hosea read this night as the key to the whole nation's story: 'in his vigor he wrestled with God... he wept and sought His favor' (Hosea 12:3-4). Hosea adds a detail Genesis leaves quiet - Jacob wept. The wrestling was not only muscle; it was tears.",
+      "fascinatingFact": "Jacob asks the man's name and is refused: 'Why do you ask my name?' The Old Testament keeps this Face unnamed on purpose - the Name withheld at the Jabbok is the Name later spoken at Bethlehem.",
+      "content": "The whole fight turns on one question, and it is the gentlest blow of all: \"What is your name?\"\n\nGod already knows his name. So think back to the last time someone asked Jacob his name in the dark. It was his blind father Isaac, in the tent, when Jacob - dressed in his brother's clothes - lied: \"I am Esau, your firstborn.\" The last time Jacob said his name in a dark room, he stole a blessing by hiding who he was.\n\nNow, by the river, the question comes again, and this time he tells the truth. \"Jacob.\" The name means heel-grabber, supplanter, the one who trips you up to get ahead. He says it plainly, and it is a confession - he is naming the very thing he has been his whole life. And the instant he tells the truth, God gives him a new name: \"Your name will no longer be Jacob, but Israel.\" The blessing he once stole by lying about his name, he now receives by confessing it.\n\nThis is the secret hidden in the struggle. We think we have to win the wrestling match to earn the blessing. We do not. We have to stop pretending. The blessing comes the moment Jacob stops being Esau and admits he is Jacob."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jacob holds onto God until daybreak, refusing to let go without a blessing - and walks away with a new name, a wounded hip, and a place he calls Peniel, 'the face of God,' because he saw God face to face and lived.",
+      "modernApplication": "On a Sabbath day you are not asked to wrestle. You are asked to notice that the wrestling is over and the blessing has already been spoken. Most of us keep grappling with God for things He has already settled - our worth, our welcome, our forgiveness. Today the grip can loosen, not because you won, but because He blessed you there.",
+      "connectionPoint": "Jacob's longing - 'I have seen God face to face' - runs unfulfilled through the Old Testament; even Moses is told no man can see God's face and live (Exodus 33:20). The thread is only tied off in the Gospels: 'No one has ever seen God, but the one and only Son... has made Him known' (John 1:18). The Face that wrestled Jacob in the dark and would not give its name is the Face that took on flesh and was finally named: Jesus.",
+      "newTestamentEcho": "Jesus says to everyone still wrestling: 'Come to Me, all you who are weary and burdened, and I will give you rest' (Matthew 11:28). And Hebrews makes the Sabbath promise plain: 'There remains, then, a Sabbath rest for the people of God' (Hebrews 4:9). Jacob got his blessing after a night of fighting; we are invited to receive ours by coming to the One who already fought - and won - in our place."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you been wrestling God for - and is it possible He has already said yes, and you simply have not stopped fighting long enough to hear it?",
+      "additionalQuestions": [
+        "Jacob was 'left all alone' before God met him. What in your life are you afraid to set across the river, so that you can be alone with God tonight?",
+        "When God asks 'What is your name?' - what is the true name you keep hiding behind a borrowed one? What would it mean to say it plainly today?",
+        "Jacob walked away blessed and limping. Where has an old wound become the very place you know God is near?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been running a long time, and tonight I am sending the crowd across the river. I want to be alone with You. I am tired of wrestling for things You may have already given. So here is my real name, not the one I dress up for others: I am the heel-grabber, the one who grasps and hides and tries to win what only You can give. Bless me here. Not because I prevailed, but because You will not let me go. Let me rest in the One whose face the dark could not name and the cross made known. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath - there is nothing to finish and no match to win. Sit for ten unhurried minutes and let one line hold you: 'I will not let you go unless you bless me,' or 'He blessed Jacob there.' Then say your true name to God, plainly, the way Jacob did. And let the grip loosen. The blessing was spoken before you woke.",
+      "leavingAtCross": [
+        "The belief that I have to out-wrestle God to be worth blessing",
+        "The borrowed name - the self I put on so I won't be seen as I am",
+        "The running: from the people I have wronged, and from being left all alone"
+      ],
+      "receivingFromCross": [
+        "A new name I did not earn, given the moment I told the truth about the old one",
+        "Rest that is not the reward for the struggle but the gift on the far side of it",
+        "The face of God, made known in Christ - and my life is spared"
+      ],
+      "content": "Today is a Sabbath - there is nothing to finish and no match to win. Sit for ten unhurried minutes and let one line hold you: 'I will not let you go unless you bless me,' or 'He blessed Jacob there.' Then say your true name to God, plainly, the way Jacob did. And let the grip loosen. The blessing was spoken before you woke."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that Jacob was 'left all alone' before the wrestling began? What did being alone strip away?",
+        "When God asks 'What is your name?' He already knows it. What is really happening in that question, and how does it echo the earlier scene in Isaac's tent?",
+        "Jacob receives a blessing and a limp in the same night. How can a wound and a blessing arrive together - and why might Scripture refuse to separate them?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing you have been wrestling God for that you suspect He may have already settled. What keeps you fighting?",
+        "Tell each other your 'true name' this season - the honest word for what you are struggling with - the way Jacob finally said 'Jacob.'",
+        "Talk about a limp you carry: a permanent mark from something hard. How has it become a place you meet God rather than only a scar?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 32:31",
+          "text": "The sun rose above him as he passed by Penuel, and he was limping because of his hip."
+        },
+        {
+          "reference": "Hosea 12:3-4",
+          "text": "In the womb he grasped his brother’s heel, and in his vigor he wrestled with God. Yes, he struggled with the angel and prevailed; he wept and sought His favor; he found Him at Bethel and spoke with Him there—"
+        },
+        {
+          "reference": "John 1:18",
+          "text": "No one has ever seen God, but the one and only Son, who is Himself God and is at the Father’s side, has made Him known."
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        },
+        {
+          "reference": "Hebrews 4:9",
+          "text": "There remains, then, a Sabbath rest for the people of God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 32",
+          "note": "Read the whole chapter slowly, watching Jacob move from sending everything across the river (v. 22-23) to being left alone (v. 24), to the grip that will not release (v. 26), to the new name (v. 28), to the limp at sunrise (v. 31)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jacob / Israel",
+      "title": "The Heel-Grabber Who Held On",
+      "description": "The younger twin of Isaac and Rebekah, born grasping his brother's heel. For most of his life Jacob got what he wanted by cunning - the birthright, the blessing, the flocks. But at the river Jabbok, alone and afraid, he met God in the dark and would not let go. He left that night with a dislocated hip and a new name: Israel, the one who struggles with God and prevails. He is proof that God does not wait for us to stop being who we are before He blesses us.",
+      "keyQuote": "I will not let you go unless you bless me.",
+      "lessonForUs": "The blessing did not come because Jacob won. It came when he stopped pretending, told God his real name, and refused to let go. On the Sabbath we learn the rest of it: the grip can finally loosen, because the One we were wrestling has already blessed us - and in Christ, the face Jacob saw in the dark has a name.",
+      "heading": "The Heel-Grabber Who Held On"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2279,
+  "scriptureReference_full": "Genesis 32:22-31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (vayye'aveq, the hapax legomenon in Genesis 32:24-25; the Yabboq / Ya'aqov / vayye'aveq wordplay; Israel from sarah + El) reflects standard lexical sources.",
+    "Hosea 12:3-4 is the prophetic reflection on the Jabbok episode and the basis for the noted detail that Jacob wept."
+  ]
 }

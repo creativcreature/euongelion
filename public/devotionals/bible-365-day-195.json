@@ -1,38 +1,181 @@
 {
   "day": 195,
-  "title": "Psalms of Trust — Day 6 — Deeper Dive",
-  "teaser": "Day 195 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "The One Thing the Frightened Heart Asks",
+  "teaser": "Eight psalms of trust circle one settled posture: when fear closes in, the trusting soul stops scrambling and starts waiting — eyes up, soul still, certain of goodness it cannot yet see.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 195"
+      "type": "scripture",
+      "reference": "Psalm 27:1, 4-5, 13-14",
+      "translation": "BSB",
+      "emphasis": [
+        "whom shall I fear",
+        "One thing I have asked",
+        "Wait patiently for the LORD"
+      ],
+      "hebrewOriginal": "יְהוָה אוֹרִי וְיִשְׁעִי מִמִּי אִירָא",
+      "passage": "The LORD is my light and my salvation— whom shall I fear? The LORD is the stronghold of my life— whom shall I dread? ... One thing I have asked of the LORD; this is what I desire: to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and seek Him in His temple. For in the day of trouble He will hide me in His shelter; He will conceal me under the cover of His tent; He will set me high upon a rock. ... Still I am certain to see the goodness of the LORD in the land of the living. Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD!"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קַוֵּה",
+      "transliteration": "qavveh",
+      "pronunciation": "kah-VEH",
+      "meaning": "wait, hope, look expectantly",
+      "rootMeaning": "The root qavah means to wait, but it is woven from the picture of a tightly twisted cord or thread. To wait, in Hebrew, is not to go slack. It is to be drawn taut toward something, the way a rope strains in one direction under tension.",
+      "usageNote": "The same root binds two of today's psalms together. Psalm 27:14 commands it twice — 'qavveh el-YHWH,' wait for the LORD — and Psalm 130:5 confesses it: 'I wait (qivviti) for the LORD; my soul does wait.' It is also the word behind tiqvah, 'hope,' the cord that pulls the heart forward.",
+      "wordByWord": [
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD — the covenant name, the One who is faithfully present"
+        },
+        {
+          "word": "אוֹרִי",
+          "transliteration": "ori",
+          "meaning": "my light"
+        },
+        {
+          "word": "וְיִשְׁעִי",
+          "transliteration": "ve-yishi",
+          "meaning": "and my salvation, my rescue"
+        },
+        {
+          "word": "קַוֵּה",
+          "transliteration": "qavveh",
+          "meaning": "wait, look expectantly, be drawn taut in hope"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "Tiqvah, 'hope,' comes from the same root as qavah. In Joshua 2:18 the same word names the scarlet cord Rahab tied in her window. Hope, in Hebrew, is a cord you hold while you wait — a line that keeps you fastened to the One who promised."
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, look for, hope; from a root meaning to bind together by twisting, as a cord",
+      "usage": "Waiting on the LORD is not passivity. It is the strained, expectant posture of a soul that has tied its line to God and refuses to let the cord go slack, no matter how long the morning is in coming."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Psalms, One Posture",
+      "body": "You have spent the week inside eight of the Psalter's great psalms of trust, and at first they can feel like eight different rooms. Psalm 1 plants a tree by the water. Psalm 8 stands a small human under a vast sky. Psalm 19 lets the heavens preach without words. Psalm 27 hides a hunted man in a shelter. Psalm 90 measures a life against the everlasting. Psalm 121 lifts tired eyes to the hills. Psalm 130 cries up out of a pit. Psalm 139 finds God already waiting at the far edge of the sea.\n\nDifferent rooms, yes. But walk through them slowly and you notice they all face the same direction. In every one of them, the singer is looking away from himself and toward God. The tree does not water itself; it is planted by streams. The small human does not declare his own worth; he asks why God is mindful of him. The hunted man does not fortify his own walls; he asks for one thing — to dwell where God is. This is what the psalms mean by trust. Not a feeling that everything will be fine, but a direction the whole self turns when it has run out of other directions.\n\nRead this way, Day 6 is not a review of eight separate lessons. It is the moment you step back far enough to see that the eight psalms are one gesture, repeated until it becomes a way of standing in the world.",
+      "keyInsight": "Trust in the Psalms is not an emotion you summon. It is a direction you turn — away from your own resources and toward the God who is already there.",
+      "content": "You have spent the week inside eight of the Psalter's great psalms of trust, and at first they can feel like eight different rooms. Psalm 1 plants a tree by the water. Psalm 8 stands a small human under a vast sky. Psalm 19 lets the heavens preach without words. Psalm 27 hides a hunted man in a shelter. Psalm 90 measures a life against the everlasting. Psalm 121 lifts tired eyes to the hills. Psalm 130 cries up out of a pit. Psalm 139 finds God already waiting at the far edge of the sea.\n\nDifferent rooms, yes. But walk through them slowly and you notice they all face the same direction. In every one of them, the singer is looking away from himself and toward God. The tree does not water itself; it is planted by streams. The small human does not declare his own worth; he asks why God is mindful of him. The hunted man does not fortify his own walls; he asks for one thing — to dwell where God is. This is what the psalms mean by trust. Not a feeling that everything will be fine, but a direction the whole self turns when it has run out of other directions.\n\nRead this way, Day 6 is not a review of eight separate lessons. It is the moment you step back far enough to see that the eight psalms are one gesture, repeated until it becomes a way of standing in the world."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Counted Watches",
+      "body": "A friend who sat up through her son's long surgery told me later that the worst part was not the fear. It was the not-knowing what to do with her hands. She straightened magazines that did not need straightening. She walked the same hallway until she had memorized the floor tiles. Activity was the only thing standing between her and the panic, so she manufactured it.\n\nThen, somewhere past two in the morning, she stopped. She told me she did not decide to stop so much as run out of things to do. And in the stillness a line from a psalm she had not thought about in years surfaced: more than watchmen wait for the morning. She said it was the first honest thing she had felt all night — not relief, not certainty, just the recognition that she was a watchman now, and that watchmen do not make the sun rise. They only keep their eyes on the east.\n\nHer son came through. But what she remembers is not the good news. It is the strange peace of the hour before it, when she stopped trying to be in charge of an outcome she was never holding, and simply waited, eyes on the east.",
+      "connectionToTheme": "Psalm 130's watchman is the lived shape of qavah: trust is not the manufactured busyness of fear, but the stilled, expectant waiting of a soul that has fixed its eyes where help comes from.",
+      "content": "A friend who sat up through her son's long surgery told me later that the worst part was not the fear. It was the not-knowing what to do with her hands. She straightened magazines that did not need straightening. She walked the same hallway until she had memorized the floor tiles. Activity was the only thing standing between her and the panic, so she manufactured it.\n\nThen, somewhere past two in the morning, she stopped. She told me she did not decide to stop so much as run out of things to do. And in the stillness a line from a psalm she had not thought about in years surfaced: more than watchmen wait for the morning. She said it was the first honest thing she had felt all night — not relief, not certainty, just the recognition that she was a watchman now, and that watchmen do not make the sun rise. They only keep their eyes on the east.\n\nHer son came through. But what she remembers is not the good news. It is the strange peace of the hour before it, when she stopped trying to be in charge of an outcome she was never holding, and simply waited, eyes on the east."
+    },
+    {
+      "type": "insight",
+      "heading": "One Thing, Not Everything",
+      "body": "Here is the hinge the whole week turns on, and it sits in the middle of Psalm 27. A man surrounded by enemies, writing in 'the day of trouble,' does not pray for the trouble to end. He prays for one thing: 'to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and seek Him in His temple.'\n\nStop and feel how strange that is. Under threat, the natural prayer is for rescue, for safety, for the threat to disappear. David asks instead for nearness. He has discovered that the thing he actually needs is not a changed circumstance but an unbroken presence — and that if he has that one thing, the circumstance loses its power to undo him. This is why the psalm can end where it does: 'Still I am certain to see the goodness of the LORD in the land of the living. Wait patiently for the LORD.'\n\nNotice the word still. He has not seen the goodness yet. The enemies are still there. The deliverance is future, uncertain, out past the edge of what he can prove. And yet he is certain — not because the outcome is secured, but because the One he is waiting on is. Faith here is not the absence of fear; the psalm opens with the question 'whom shall I fear,' which means fear was knocking. Faith is what you do with the fear: you turn it into a single, narrowed desire for God, and then you wait, eyes up, soul taut, refusing to let go of the cord. Every other psalm this week is a variation on this one move. Psalm 121 lifts its eyes to the hills and finds the Maker. Psalm 139 runs to the ends of the earth and finds the hand already there. Psalm 130 cries from the depths and waits for the morning. They are all asking, in their own key, for the one thing.",
+      "historicalContext": "The Psalter was Israel's prayer book and hymnal across many centuries, gathering songs from the days of David through the return from exile. By the time these psalms were collected, the people praying them had survived the fall of Jerusalem and the long ache of exile in Babylon. The 'house of the LORD' David longed for had been burned and rebuilt. So when later generations sang 'wait patiently for the LORD,' they were not theorizing. They were a people who had watched the morning come after a very long night, and had learned to keep their eyes on the east.",
+      "fascinatingFact": "Psalm 130 is one of the fifteen 'Songs of Ascents' (Psalms 120-134), traditionally sung by pilgrims climbing the road up to Jerusalem for the festivals. Each step of the climb was set to a song of trust. The journey itself was the prayer — eyes lifting toward the hills of the city as the body labored upward, the destination still out of sight.",
+      "content": "Here is the hinge the whole week turns on, and it sits in the middle of Psalm 27. A man surrounded by enemies, writing in 'the day of trouble,' does not pray for the trouble to end. He prays for one thing: 'to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and seek Him in His temple.'\n\nStop and feel how strange that is. Under threat, the natural prayer is for rescue, for safety, for the threat to disappear. David asks instead for nearness. He has discovered that the thing he actually needs is not a changed circumstance but an unbroken presence — and that if he has that one thing, the circumstance loses its power to undo him. This is why the psalm can end where it does: 'Still I am certain to see the goodness of the LORD in the land of the living. Wait patiently for the LORD.'\n\nNotice the word still. He has not seen the goodness yet. The enemies are still there. The deliverance is future, uncertain, out past the edge of what he can prove. And yet he is certain — not because the outcome is secured, but because the One he is waiting on is. Faith here is not the absence of fear; the psalm opens with the question 'whom shall I fear,' which means fear was knocking. Faith is what you do with the fear: you turn it into a single, narrowed desire for God, and then you wait, eyes up, soul taut, refusing to let go of the cord. Every other psalm this week is a variation on this one move. Psalm 121 lifts its eyes to the hills and finds the Maker. Psalm 139 runs to the ends of the earth and finds the hand already there. Psalm 130 cries from the depths and waits for the morning. They are all asking, in their own key, for the one thing."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Across eight psalms, the trusting soul under threat does not pray first for the threat to lift. It asks for one thing — the presence of God — and then waits, certain of a goodness it cannot yet see, with its eyes fixed where help comes from.",
+      "modernApplication": "Fear still makes us straighten magazines that do not need straightening. We manufacture motion to keep panic at arm's length — refreshing the feed, rehearsing the worst case, drafting the email at 2 a.m. The psalms offer a different posture for the day of trouble: not the frantic busyness of a soul trying to control the outcome, but the taut, eyes-up waiting of a soul that has narrowed its want down to one thing and tied its line to God.",
+      "connectionPoint": "What David asked for and only glimpsed — to dwell in the house of the LORD and gaze on His beauty all his days — runs as a single thread through the whole of Scripture toward its fulfillment. The longing of Psalm 27 becomes the promise of John 14, where Jesus says, 'In My Father's house are many rooms... I am going there to prepare a place for you' (John 14:2). The temple David could only visit becomes the home Christ goes to make.",
+      "newTestamentEcho": "The watchman of Psalm 130, waiting for the morning more than watchmen wait, finds his morning with a name. The psalmist cried, 'with You there is forgiveness' (Psalm 130:4), and waited to see how. The Gospel answers: the forgiveness was always with God, and it stepped into the long night as a person. 'The Light shines in the darkness, and the darkness has not overcome it' (John 1:5). The LORD who was David's light and salvation came to be ours in the flesh."
+    },
+    {
+      "type": "reflection",
+      "prompt": "In your current day of trouble, what is the one thing you most want — and is it a changed circumstance, or the presence of God Himself?",
+      "additionalQuestions": [
+        "When fear rises, what is your version of straightening the magazines — the motion you manufacture to keep panic at bay?",
+        "Psalm 27 says 'still I am certain.' Where in your life are you being asked to be certain of God's goodness before you can see it?",
+        "Which of this week's eight psalms keeps surfacing in you, and what do you think it is reaching for?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, You are my light and my salvation — and still I am afraid of so many things I cannot name. I confess how often I meet the day of trouble by straightening magazines, by manufacturing motion so I do not have to be still in front of You. Quiet my hands. Narrow my wanting down to one thing: to dwell where You are, to gaze on Your beauty, to seek You. When the morning is long in coming, keep my eyes on the east. Make me a watchman who waits, taut on the cord of hope, certain of a goodness I cannot yet see, because I am certain of You. Through Jesus, who is the morning that came. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name your one thing. Write down the single desire underneath all your fears, and then, in your own words, ask God to make that one thing His presence rather than a changed outcome. Sit for five minutes afterward without fixing anything — eyes on the east, waiting.",
+      "leavingAtCross": [
+        "The manufactured busyness I use to keep panic at arm's length",
+        "The belief that I am the one who has to make the morning come",
+        "The demand that the circumstance change before I will trust"
+      ],
+      "receivingFromCross": [
+        "The one thing worth wanting — to dwell where God is, all my days",
+        "A certainty of goodness that does not depend on seeing it first",
+        "The taut, expectant peace of a watchman who knows the morning has a name"
+      ],
+      "content": "Today, name your one thing. Write down the single desire underneath all your fears, and then, in your own words, ask God to make that one thing His presence rather than a changed outcome. Sit for five minutes afterward without fixing anything — eyes on the east, waiting."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What single posture do all eight of this week's psalms share, and how is it different from simply feeling optimistic?",
+        "In Psalm 27, what 'one thing' does David ask for in the day of trouble, and why is that request so surprising?",
+        "What does the Hebrew word qavah ('wait') picture, and how does that image reshape what it means to wait on God?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other your current 'one thing' — the desire underneath your fears — and whether it is a circumstance or the presence of God.",
+        "Talk about the motion you each manufacture when afraid, and what it would look like to be still instead.",
+        "Pick one psalm from this week to carry into the next, and ask each other in a few days where its words surfaced."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 121:1-2",
+          "text": "I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth."
+        },
+        {
+          "reference": "Psalm 130:5-6",
+          "text": "I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning."
+        },
+        {
+          "reference": "Psalm 139:7-10",
+          "text": "Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there. If I rise on the wings of the dawn, if I settle by the farthest sea, even there Your hand will guide me; Your right hand will hold me fast."
+        },
+        {
+          "reference": "John 14:2-3",
+          "text": "In My Father's house are many rooms. If it were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and welcome you into My presence, so that you also may be where I am."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 27 and Psalm 130",
+          "note": "Read these two psalms back to back. Watch the same posture appear in opposite circumstances: Psalm 27 under threat from enemies, Psalm 130 from the bottom of a pit. Both end in the same word — wait."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Hunted King Who Asked for One Thing",
+      "description": "Shepherd, warrior, and king of Israel, traditionally named as the author of Psalm 27 and many of the psalms of trust. David wrote not from a quiet study but from caves, battlefields, and seasons of betrayal and grief. His psalms of trust are not the calm of a man with no enemies; they are the steadiness of a man who learned, in the day of trouble, to want one thing more than safety — the presence of the God who was his light, his salvation, and the stronghold of his life.",
+      "keyQuote": "One thing I have asked of the LORD; this is what I desire: to dwell in the house of the LORD all the days of my life.",
+      "lessonForUs": "David teaches that trust is forged under threat, not in its absence. When fear is real and the rescue is not yet visible, the trusting heart narrows its desire down to one thing — God Himself — and waits, certain of a goodness it has not seen because it is certain of the One it is waiting for.",
+      "heading": "The Hunted King Who Asked for One Thing"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2532,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qavah, H6960; tiqvah) reflects standard lexical sources; the 'twisted cord' sense of the root and the qavah/tiqvah link are widely noted in Hebrew lexicons (e.g., BDB, HALOT) and in the Joshua 2:18 'scarlet cord' connection."
+  ]
 }

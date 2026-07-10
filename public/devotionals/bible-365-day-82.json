@@ -1,38 +1,192 @@
 {
   "day": 82,
   "title": "Man looks at appearance",
-  "teaser": "Day 82 of Bible 365 — 1 Samuel 16",
+  "teaser": "Samuel parades seven impressive sons past the prophet. God waits for the boy nobody bothered to call in from the sheep.",
   "framework": "1 Samuel 16 — God sees the heart",
   "scriptureReference": "1 Samuel 16",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 82"
+      "type": "scripture",
+      "reference": "1 Samuel 16:6-7, 11-13",
+      "translation": "BSB",
+      "emphasis": [
+        "Surely here before the LORD is His anointed",
+        "man sees the outward appearance, but the LORD sees the heart",
+        "but he is tending the sheep",
+        "the Spirit of the LORD rushed upon David"
+      ],
+      "hebrewOriginal": "כִּי הָאָדָם יִרְאֶה לַעֵינַיִם וַיהוָה יִרְאֶה לַלֵּבָב",
+      "passage": "When they arrived, Samuel saw Eliab and said, \"Surely here before the LORD is His anointed.\" But the LORD said to Samuel, \"Do not consider his appearance or height, for I have rejected him; the LORD does not see as man does. For man sees the outward appearance, but the LORD sees the heart.\" ... And Samuel asked him, \"Are these all the sons you have?\" \"There is still the youngest,\" Jesse replied, \"but he is tending the sheep.\" \"Send for him,\" Samuel replied. \"For we will not sit down to eat until he arrives.\" So Jesse sent for his youngest son and brought him in. He was ruddy, with beautiful eyes and a handsome appearance. And the LORD said, \"Rise and anoint him, for he is the one.\" So Samuel took the horn of oil and anointed him in the presence of his brothers, and the Spirit of the LORD rushed upon David from that day forward."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֵבָב",
+      "transliteration": "levav",
+      "pronunciation": "leh-VAHV",
+      "meaning": "heart - the inner person, the seat of thought, will, and desire",
+      "rootMeaning": "In Hebrew the levav is not mainly the place of feeling, the way we use 'heart' today. It is the hidden center where a person decides, reasons, and loves - closer to what we might call the will and the mind together. To see the levav is to see who someone actually is underneath the face they present.",
+      "usageNote": "The verse turns on a single verb used twice: ra'ah, to see. Man ra'ah's the eyes; the LORD ra'ah's the levav. The same act of seeing reaches two different depths. We stop at the surface our eyes can reach. God's seeing goes all the way down to the center a person cannot hide.",
+      "wordByWord": [
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "for, because - giving the reason God rejected the obvious choice"
+        },
+        {
+          "word": "הָאָדָם",
+          "transliteration": "ha'adam",
+          "meaning": "the man, humankind - people in general, not one person"
+        },
+        {
+          "word": "יִרְאֶה",
+          "transliteration": "yir'eh",
+          "meaning": "sees, looks at - the verb ra'ah, repeated for both man and the LORD"
+        },
+        {
+          "word": "לַעֵינַיִם",
+          "transliteration": "la'einayim",
+          "meaning": "to the eyes, to what is visible - the outward appearance"
+        },
+        {
+          "word": "וַיהוָה",
+          "transliteration": "vaYHWH",
+          "meaning": "but the LORD - the covenant name set against ha'adam"
+        },
+        {
+          "word": "לַלֵּבָב",
+          "transliteration": "lalevav",
+          "meaning": "to the heart - the hidden inner person"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מַרְאֶה",
+          "reference": "Mareh (appearance) shares the root ra'ah, to see. David himself is described with a good mareh - beautiful eyes, handsome. The text is careful: God's choice was not blind to beauty, only unmoved by it. The boy who passed the heart-test happened also to be lovely. God simply refused to judge by the loveliness."
+        }
+      ],
+      "strongsNumber": "H3824",
+      "definition": "the inner man, mind, will, heart; the hidden seat of moral character and resolve",
+      "usage": "When the LORD says He sees the levav, He is not claiming to read moods. He is claiming to know the deciding center of a person - the part we keep behind our managed surface - and to make His choices from there."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God sees the heart. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ knows what is in man (John 2:25).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Seven Sons and an Empty Chair",
+      "body": "The story opens with a prophet who has been grieving a failure. Samuel had anointed Saul, and Saul had unraveled. So God interrupts the mourning with a strange errand: fill your horn with oil and go to Bethlehem, to a man named Jesse, because among his sons God has already chosen a king. Samuel is afraid - if Saul hears of it, he will be killed - so the journey is wrapped in a sacrifice, a quiet cover for a coronation.\n\nWhen Jesse's sons are brought out, Samuel does exactly what we would do. He looks at the eldest, Eliab - tall, striking, the kind of man a crowd would follow - and thinks: that is the one. Surely here before the LORD is His anointed. And God stops him cold. Do not consider his appearance or height. The prophet who once anointed Saul, a man chosen partly because he stood head and shoulders above everyone else, is being retrained on the spot. The thing that recommended the last king is precisely the thing God now refuses to weigh.\n\nSo the parade begins. Abinadab - no. Shammah - no. Seven sons pass before the prophet, each one presumably impressive, each one set aside. The number matters: seven is the number of completeness in Scripture. Jesse has emptied the house of everyone he counted. And the horn of oil is still full. The text lets the silence sit there, awkward, until Samuel asks the question Jesse should have offered first: are these all the sons you have?",
+      "keyInsight": "God's first instruction to the prophet is not who to choose but how to look. Before He names the king, He retrains the eyes.",
+      "content": "The story opens with a prophet who has been grieving a failure. Samuel had anointed Saul, and Saul had unraveled. So God interrupts the mourning with a strange errand: fill your horn with oil and go to Bethlehem, to a man named Jesse, because among his sons God has already chosen a king. Samuel is afraid - if Saul hears of it, he will be killed - so the journey is wrapped in a sacrifice, a quiet cover for a coronation.\n\nWhen Jesse's sons are brought out, Samuel does exactly what we would do. He looks at the eldest, Eliab - tall, striking, the kind of man a crowd would follow - and thinks: that is the one. Surely here before the LORD is His anointed. And God stops him cold. Do not consider his appearance or height. The prophet who once anointed Saul, a man chosen partly because he stood head and shoulders above everyone else, is being retrained on the spot. The thing that recommended the last king is precisely the thing God now refuses to weigh.\n\nSo the parade begins. Abinadab - no. Shammah - no. Seven sons pass before the prophet, each one presumably impressive, each one set aside. The number matters: seven is the number of completeness in Scripture. Jesse has emptied the house of everyone he counted. And the horn of oil is still full. The text lets the silence sit there, awkward, until Samuel asks the question Jesse should have offered first: are these all the sons you have?"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name That Wasn't on the List",
+      "body": "There was a school principal I knew who told me once about the day she stopped reading résumés first. She had been hiring a teacher. The strongest paper application - top school, glowing references, a confident interview - went to a man who, six weeks in, could not stand in front of children without the room dissolving into noise. The job went, in the end, to a quiet woman whose folder she had almost set aside. She turned out to be the kind of teacher students would name twenty years later as the reason they made it.\n\n\"I had learned to see the file,\" the principal said. \"I had not learned to see the person.\"\n\nThat is the gap the story of Bethlehem opens up. Jesse, asked to present his sons to a prophet of God, does not even bother to send for the youngest. The boy is out with the sheep, and in his father's arithmetic he simply does not count. He is the name that was not on the list. And he is the one God came for.",
+      "connectionToTheme": "Our seeing stops at the file, the surface, the obvious candidate. God's seeing goes to the person nobody thought to call in from the field.",
+      "content": "There was a school principal I knew who told me once about the day she stopped reading résumés first. She had been hiring a teacher. The strongest paper application - top school, glowing references, a confident interview - went to a man who, six weeks in, could not stand in front of children without the room dissolving into noise. The job went, in the end, to a quiet woman whose folder she had almost set aside. She turned out to be the kind of teacher students would name twenty years later as the reason they made it.\n\n\"I had learned to see the file,\" the principal said. \"I had not learned to see the person.\"\n\nThat is the gap the story of Bethlehem opens up. Jesse, asked to present his sons to a prophet of God, does not even bother to send for the youngest. The boy is out with the sheep, and in his father's arithmetic he simply does not count. He is the name that was not on the list. And he is the one God came for."
+    },
+    {
+      "type": "insight",
+      "heading": "Tending the Sheep",
+      "body": "Read verse 11 slowly, because everything hangs on a small phrase. When Samuel asks if all the sons are present, Jesse answers, \"There is still the youngest, but he is tending the sheep.\" That little word but is the whole of human seeing in a single syllable. There is one more, but - but he is only the youngest, but he is only a shepherd, but he is hardly worth interrupting dinner for.\n\nGod hears it differently. The detail Jesse offers as a reason to overlook David is the detail Scripture will return to again and again as the heart of who he is. He was keeping the sheep. The future king of Israel is, at this moment, doing the lowest, most invisible job in the household - the job you give to the one who matters least - and doing it faithfully when no prophet, no father, no audience is watching. That is the levav God has been seeing all along. Not the polish of the seven brothers in the house, but the faithfulness of the one boy in the field.\n\nHere is the quiet weight of it: God did not choose David in spite of the sheep. The years alone with the flock, fending off the lion and the bear, learning to carry creatures who cannot carry themselves - that field was the training ground God had been watching the entire time the family wrote the boy off. The shepherd was being shaped into a shepherd-king in the one place no one thought to look.",
+      "historicalContext": "Bethlehem in this period was a small, unremarkable town in the territory of Judah, a few miles south of where Jerusalem would later stand. Jesse was a clan elder there, descended from Ruth the Moabite and Boaz (Ruth 4:17-22). Israel's first king, Saul, had been chosen during a crisis partly for his imposing height (1 Samuel 9:2; 10:23-24); David's anointing in chapter 16 deliberately reverses that standard. Anointing with oil set a person apart for God's purposes - the word for 'anointed one' is mashiach, from which we get Messiah.",
+      "fascinatingFact": "1 Samuel 16 records two anointings in one chapter. In the first half, Samuel anoints David in secret and the Spirit of the LORD rushes upon him (v. 13). In the second half, that same Spirit departs from Saul (v. 14), and David is summoned to Saul's court to play the harp and soothe the tormented king. The boy God chose enters the palace not as a rival but as a servant - playing music for the man his anointing will one day replace. He is king and servant at once, long before anyone knows it.",
+      "content": "Read verse 11 slowly, because everything hangs on a small phrase. When Samuel asks if all the sons are present, Jesse answers, \"There is still the youngest, but he is tending the sheep.\" That little word but is the whole of human seeing in a single syllable. There is one more, but - but he is only the youngest, but he is only a shepherd, but he is hardly worth interrupting dinner for.\n\nGod hears it differently. The detail Jesse offers as a reason to overlook David is the detail Scripture will return to again and again as the heart of who he is. He was keeping the sheep. The future king of Israel is, at this moment, doing the lowest, most invisible job in the household - the job you give to the one who matters least - and doing it faithfully when no prophet, no father, no audience is watching. That is the levav God has been seeing all along. Not the polish of the seven brothers in the house, but the faithfulness of the one boy in the field.\n\nHere is the quiet weight of it: God did not choose David in spite of the sheep. The years alone with the flock, fending off the lion and the bear, learning to carry creatures who cannot carry themselves - that field was the training ground God had been watching the entire time the family wrote the boy off. The shepherd was being shaped into a shepherd-king in the one place no one thought to look."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God passes over seven impressive sons and sends to the field for the overlooked shepherd boy, anointing him in Bethlehem as the Spirit of the LORD rushes upon him - because the LORD sees the heart, not the height.",
+      "modernApplication": "You spend most of your effort on the part of yourself that other people can see - the appearance, the title, the highlight reel, the version of you that performs well at the parade. God is not impressed and not fooled. He has been watching the field where no one claps: how you treat the people who can do nothing for you, what you do with the hour no one tracks, the faithfulness that has no audience.",
+      "connectionPoint": "The thread that begins in this Bethlehem field runs straight through the whole Bible. The shepherd boy anointed here becomes King David, and God promises that David's throne will last forever (2 Samuel 7:16). Centuries later the prophet Micah points back to this same overlooked town: 'But you, Bethlehem Ephrathah, who are small among the clans of Judah, out of you will come forth for Me One to be ruler over Israel' (Micah 5:2). The town too small to matter becomes the town that produces the King.",
+      "newTestamentEcho": "What the field hinted, Christ fulfilled. In the same Bethlehem, the Son of David is born - no room, no crowd, announced first to shepherds keeping watch over their flocks by night (Luke 2:8-11). At His baptism the Spirit descends and rests on Him as it once rushed upon David (Matthew 3:16). And John writes that this One needed no testimony about anyone, 'for He knew what was in a man' (John 2:25) - the only King who sees the heart as the LORD does, because He is the LORD. The Good Shepherd was first a literal shepherd's heir, chosen in a field no one was watching."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God has been watching the field where no one claps - the hours, choices, and relationships that earn you no credit - what has He been seeing in you there?",
+      "additionalQuestions": [
+        "Whose 'résumé' have you been reading instead of seeing the person - dismissing someone the way Jesse dismissed David?",
+        "Where are you tempted to perform for the parade in the house rather than be faithful in the field?",
+        "What part of yourself do you most want God not to see - and what would change if you believed He already does, and chose you anyway?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You see the heart. You see the part of me I keep out in the field, away from the parade - the version of me with no audience, no polish, nothing to recommend it. I have spent so long tending the surface that others can see. Teach me to be faithful where no one is watching, because You are. Thank You that the King You chose was a shepherd nobody called in, and that the Shepherd You sent was born in the same small town for me. Anoint the part of me that has felt overlooked. Let Your Spirit rush in. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, pick one act of faithfulness no one will ever see - a quiet kindness, an unseen task done well, a prayer for someone who will never know. Do it as if God is watching the field, because He is.",
+      "leavingAtCross": [
+        "The exhausting work of managing the surface other people see",
+        "The habit of judging people - and myself - by the file instead of the heart",
+        "The fear that the overlooked, unimpressive parts of my life are wasted on God"
+      ],
+      "receivingFromCross": [
+        "The relief of being fully seen and still chosen",
+        "Freedom from the parade - I do not have to be the tall one to be the loved one",
+        "The promise that the faithfulness no one notices is the very thing God has been watching all along"
+      ],
+      "content": "Today, pick one act of faithfulness no one will ever see - a quiet kindness, an unseen task done well, a prayer for someone who will never know. Do it as if God is watching the field, because He is."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God tell Samuel not to consider Eliab's appearance or height - and what does it reveal that this was exactly what recommended Saul?",
+        "What is the difference between the way man 'sees' (the eyes) and the way the LORD 'sees' (the heart), according to verse 7?",
+        "How does the detail that David was 'tending the sheep' connect his anointing here to the King who would later be born in Bethlehem?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you tend to judge by the 'outward appearance' - in yourself or in others.",
+        "Talk about a 'field' in your life right now - an unseen place of faithfulness that feels like it doesn't count. What would it mean to believe God is watching it?",
+        "Ask each other: where might God be choosing or shaping you in a place you've been writing off as too small to matter?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 16:7",
+          "text": "But the LORD said to Samuel, \"Do not consider his appearance or height, for I have rejected him; the LORD does not see as man does. For man sees the outward appearance, but the LORD sees the heart.\""
+        },
+        {
+          "reference": "Micah 5:2",
+          "text": "But you, Bethlehem Ephrathah, who are small among the clans of Judah, out of you will come forth for Me One to be ruler over Israel - One whose origins are of old, from the days of eternity."
+        },
+        {
+          "reference": "Luke 2:8-11",
+          "text": "And there were shepherds residing in the fields nearby, keeping watch over their flocks by night. ... Today in the city of David a Savior has been born to you. He is Christ the Lord."
+        },
+        {
+          "reference": "John 2:25",
+          "text": "He did not need any testimony about man, for He knew what was in a man."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 16-17",
+          "note": "Read the anointing (ch. 16) straight through into David and Goliath (ch. 17), watching how the shepherd's hidden faithfulness with the lion and the bear becomes public courage on the battlefield."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Shepherd God Chose",
+      "description": "The youngest of Jesse's eight sons, born in Bethlehem of Judah and overlooked by his own family at his anointing. While his brothers were presented to the prophet, David was alone in the fields keeping the sheep. There Samuel anointed him in secret, and the Spirit of the LORD rushed upon him. He would become Israel's greatest king, the author of much of the Psalms, and the ancestor through whom God promised an everlasting throne - fulfilled in Jesus, the Son of David, born in David's own town.",
+      "keyQuote": "There is still the youngest, but he is tending the sheep.",
+      "lessonForUs": "David was chosen in the one place no one was watching, doing the one job no one valued. The faithfulness God saw in a forgotten field was the heart He was looking for all along - and it is still the kind of heart He seeks.",
+      "heading": "The Shepherd God Chose"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2488,
+  "scriptureReference_full": "1 Samuel 16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (levav H3824; ra'ah, mareh) reflects standard lexical sources. The Bethlehem / Son of David typology (Micah 5:2; Luke 2; Matthew 3:16; John 2:25) is the historic Christian reading of the Davidic line."
+  ]
 }

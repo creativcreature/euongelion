@@ -1,38 +1,193 @@
 {
   "day": 128,
-  "title": "Northern Prophets — Day 2 — Building",
-  "teaser": "Day 128 of Bible 365 — Amos, Hosea, Micah",
+  "title": "Worship God Will Not Smell",
+  "teaser": "Smoke climbs, choirs sing, and God says it makes Him sick. Amos, Hosea, and Micah indict a worship that floats on top of injustice - and point to the river that never runs dry.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
-  "scriptureReference": "Amos, Hosea, Micah",
+  "scriptureReference": "Amos 5:21-24",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 128"
+      "type": "scripture",
+      "reference": "Amos 5:21-24",
+      "translation": "BSB",
+      "emphasis": [
+        "I hate, I despise your feasts",
+        "let justice roll on like a river",
+        "righteousness like an ever-flowing stream"
+      ],
+      "hebrewOriginal": "וְיִגַּל כַּמַּיִם מִשְׁפָּט וּצְדָקָה כְּנַחַל אֵיתָן",
+      "passage": "“I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies. Even though you offer Me burnt offerings and grain offerings, I will not accept them; for your peace offerings of fattened cattle I will have no regard. Take away from Me the noise of your songs! I will not listen to the music of your harps. But let justice roll on like a river, and righteousness like an ever-flowing stream.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מִשְׁפָּט וּצְדָקָה",
+      "transliteration": "mishpat u-tzedaqah",
+      "pronunciation": "mish-PAHT oo-tseh-dah-KAH",
+      "meaning": "justice and righteousness",
+      "rootMeaning": "Mishpat is the verdict a judge hands down - the setting-right of a wrong, the protection of the weak from the strong. Tzedaqah is being in right relationship - doing by your neighbor what the covenant asks. Paired, they are not two ideas but one: a community where the vulnerable are defended and everyone is given their due.",
+      "usageNote": "Amos sets these two words against water imagery. Mishpat is to roll on like a river - the Hebrew nachal eitan names a wadi that does not run dry in summer, a stream that keeps flowing when the seasonal ones have failed. Israel's worship was loud and seasonal; God asks for the justice that never stops.",
+      "wordByWord": [
+        {
+          "word": "וְיִגַּל",
+          "transliteration": "ve-yiggal",
+          "meaning": "and let it roll down, let it flow"
+        },
+        {
+          "word": "כַּמַּיִם",
+          "transliteration": "kammayim",
+          "meaning": "like the waters"
+        },
+        {
+          "word": "מִשְׁפָּט",
+          "transliteration": "mishpat",
+          "meaning": "justice, the just verdict, the setting-right of wrong"
+        },
+        {
+          "word": "וּצְדָקָה",
+          "transliteration": "u-tzedaqah",
+          "meaning": "and righteousness, right-relationship lived out"
+        },
+        {
+          "word": "כְּנַחַל אֵיתָן",
+          "transliteration": "ke-nachal eitan",
+          "meaning": "like an ever-flowing stream, a wadi that never runs dry"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֶסֶד",
+          "reference": "Hosea's word for covenant love (chesed) stands beside Amos's mishpat - Hosea 6:6 says God desires chesed (mercy), not sacrifice. Justice and mercy are not rivals in these prophets; they are the same loyalty God shows and asks."
+        }
+      ],
+      "strongsNumber": "H4941",
+      "definition": "mishpat (H4941): judgment, justice, the rendering of a right verdict; tzedaqah (H6666): righteousness, rightness in conduct and relationship",
+      "usage": "When the prophets stack mishpat and tzedaqah together it is shorthand for a whole social order put right - the orphan defended, the poor not cheated at the gate, the honest scale. It is what God is, and so it is what God will not negotiate away for a louder song."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Worship God Will Not Smell",
+      "body": "Picture the temple at Bethel on a feast day. The smoke of burnt offerings climbing straight up. Choirs trained and tuned. Harps, tambourines, the press of a crowd that has come, dressed and ready, to worship the LORD. By every outward measure this is a faithful nation at prayer. And into that smoke God speaks the most frightening sentence in the book of Amos: \"I hate, I despise your feasts.\"\n\nHe is not rejecting worship as such. He commanded these feasts; He prescribed these offerings. What He cannot stand is worship offered by hands that crush the poor on the way to the altar. Amos has spent four chapters naming it: they sell the righteous for silver and the needy for a pair of sandals, they trample the heads of the poor into the dust, they take bribes at the gate and turn away the destitute. Then they come to the festival and sing. God says the smell of it makes Him sick.\n\nThis is the burden of the three eighth-century prophets, and they say it in one voice from three angles. Amos, the shepherd from Tekoa sent north, thunders that ritual without justice is stench. Hosea, married to an unfaithful wife as a living parable of Israel's betrayal, presses to the heart of it: \"For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.\" Micah, hearing the people ask what would be enough - thousands of rams, ten thousand rivers of oil, even a firstborn child - answers with the question's only true reply: \"He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?\"",
+      "keyInsight": "Amos, Hosea, and Micah are not three different complaints but one: God refuses worship offered by people who oppress their neighbors. The song and the sacrifice are real - and worthless - if justice has dried up.",
+      "content": "Picture the temple at Bethel on a feast day. The smoke of burnt offerings climbing straight up. Choirs trained and tuned. Harps, tambourines, the press of a crowd that has come, dressed and ready, to worship the LORD. By every outward measure this is a faithful nation at prayer. And into that smoke God speaks the most frightening sentence in the book of Amos: \"I hate, I despise your feasts.\"\n\nHe is not rejecting worship as such. He commanded these feasts; He prescribed these offerings. What He cannot stand is worship offered by hands that crush the poor on the way to the altar. Amos has spent four chapters naming it: they sell the righteous for silver and the needy for a pair of sandals, they trample the heads of the poor into the dust, they take bribes at the gate and turn away the destitute. Then they come to the festival and sing. God says the smell of it makes Him sick.\n\nThis is the burden of the three eighth-century prophets, and they say it in one voice from three angles. Amos, the shepherd from Tekoa sent north, thunders that ritual without justice is stench. Hosea, married to an unfaithful wife as a living parable of Israel's betrayal, presses to the heart of it: \"For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.\" Micah, hearing the people ask what would be enough - thousands of rams, ten thousand rivers of oil, even a firstborn child - answers with the question's only true reply: \"He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man in the Front Pew",
+      "body": "A pastor I trust tells of a man in his congregation who never missed a Sunday. Front pew, strong voice on the hymns, first to volunteer when the church needed something built. Everyone assumed he was a pillar.\n\nThen a woman who worked for his company came to the pastor, shaking, and described the wages he withheld, the hours he stole, the way he spoke to the people under him when no one from church was watching. She did not want him punished. She wanted to know whether the man who sang so loudly on Sunday and ground her down on Monday was the same man.\n\nHe was. That is the unbearable thing. The voice raised in worship and the hand that cheated her belonged to one person, and he did not feel the contradiction at all. The singing had become a way of not hearing her. This is exactly the worship Amos describes: loud, sincere, and unbearable to God, because it floated on top of an injustice the worshiper had stopped noticing.",
+      "connectionToTheme": "Worship can become the very thing that lets us not hear the people we are wronging. Amos names that: God will not accept a song that drowns out a cry.",
+      "content": "A pastor I trust tells of a man in his congregation who never missed a Sunday. Front pew, strong voice on the hymns, first to volunteer when the church needed something built. Everyone assumed he was a pillar.\n\nThen a woman who worked for his company came to the pastor, shaking, and described the wages he withheld, the hours he stole, the way he spoke to the people under him when no one from church was watching. She did not want him punished. She wanted to know whether the man who sang so loudly on Sunday and ground her down on Monday was the same man.\n\nHe was. That is the unbearable thing. The voice raised in worship and the hand that cheated her belonged to one person, and he did not feel the contradiction at all. The singing had become a way of not hearing her. This is exactly the worship Amos describes: loud, sincere, and unbearable to God, because it floated on top of an injustice the worshiper had stopped noticing."
+    },
+    {
+      "type": "insight",
+      "heading": "The River That Never Runs Dry",
+      "body": "Stand at the center of the chapter and watch what God does. He clears the room. \"Take away from Me the noise of your songs.\" The harps go quiet. And into that cleared silence He sets one image: \"But let justice roll on like a river, and righteousness like an ever-flowing stream.\"\n\nNotice the word He chooses for the stream. Most wadis in Israel are seasonal - torrents in the rains, dry beds by summer. Amos picks nachal eitan, the ever-flowing stream, the one channel that still runs when the others are dust. That is the contrast in a single Hebrew phrase: Israel's worship was seasonal, swelling at the festivals and gone in between, while the justice God wants is the river that never stops, watering the widow and the foreigner on an ordinary Tuesday.\n\nAnd here Hosea hands us the key that unlocks all three prophets: \"I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.\" The Hebrew is even sharper than it sounds - to know God, in Hosea, is not information but intimacy, the same verb used for the closeness of a marriage. You cannot truly know a God who defends the poor and go on trampling them. The knowledge of God and the doing of justice are the same fabric; pull one thread and the other comes apart. This is why ritual could never substitute. The offering says \"I will give You something instead of myself.\" God answers, through three prophets, that He will not be bought off with anything - not rams, not oil rivers, not even a firstborn. He wants the worshiper. He wants you actually known by Him and actually just toward your neighbor, which turn out to be one wanting, not two.",
+      "historicalContext": "Amos prophesied around 760-750 BC, Hosea slightly after, Micah a little later in the south - all in the eighth century, the prosperous, brutal heyday of Jeroboam II in the north. The wealth was real and the religion was busy; the gap between the altar and the gate was the wound all three prophets probed.",
+      "fascinatingFact": "The single phrase nachal eitan - \"ever-flowing stream\" - is what Martin Luther King Jr. reached for at the end of his most famous lines, quoting Amos 5:24. Three thousand years on, when a movement wanted one image for justice that would not stop, it borrowed the shepherd from Tekoa.",
+      "content": "Stand at the center of the chapter and watch what God does. He clears the room. \"Take away from Me the noise of your songs.\" The harps go quiet. And into that cleared silence He sets one image: \"But let justice roll on like a river, and righteousness like an ever-flowing stream.\"\n\nNotice the word He chooses for the stream. Most wadis in Israel are seasonal - torrents in the rains, dry beds by summer. Amos picks nachal eitan, the ever-flowing stream, the one channel that still runs when the others are dust. That is the contrast in a single Hebrew phrase: Israel's worship was seasonal, swelling at the festivals and gone in between, while the justice God wants is the river that never stops, watering the widow and the foreigner on an ordinary Tuesday.\n\nAnd here Hosea hands us the key that unlocks all three prophets: \"I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.\" The Hebrew is even sharper than it sounds - to know God, in Hosea, is not information but intimacy, the same verb used for the closeness of a marriage. You cannot truly know a God who defends the poor and go on trampling them. The knowledge of God and the doing of justice are the same fabric; pull one thread and the other comes apart. This is why ritual could never substitute. The offering says \"I will give You something instead of myself.\" God answers, through three prophets, that He will not be bought off with anything - not rams, not oil rivers, not even a firstborn. He wants the worshiper. He wants you actually known by Him and actually just toward your neighbor, which turn out to be one wanting, not two."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God turned His face from feasts, songs, and offerings He had Himself commanded, because the worshipers were grinding the poor into the dust on the way to the altar. He asked instead for justice that flows like a river and mercy that never dries up.",
+      "modernApplication": "We are tempted to think worship and justice are different departments - one for Sunday, one for the headlines. Amos collapses the wall. The question is not only whether you worship, but whether your worship has made you more honest in your work, gentler with the people under you, harder to cheat and quicker to defend the cheated. If the singing leaves all that untouched, the prophets say God is not listening to the singing.",
+      "connectionPoint": "The thread runs the length of Scripture. Isaiah hears God say He is full of burnt offerings and wants instead that they \"learn to do right; seek justice and correct the oppressor\" (Isaiah 1:17). The Psalmist knows that the LORD does not delight in sacrifice but in a broken and contrite heart (Psalm 51:16-17). What the eighth-century prophets cried in the north, the whole canon keeps confirming: God will not accept a worship that bypasses the neighbor.",
+      "newTestamentEcho": "Jesus quotes Hosea 6:6 twice, both times to the religiously busy who had stopped seeing people: \"Go and learn what this means: ‘I desire mercy, not sacrifice’\" (Matthew 9:13), and again, \"If only you had known the meaning of ‘I desire mercy, not sacrifice,’ you would not have condemned the innocent\" (Matthew 12:7). The eighth-century prophets' verdict came out of His own mouth, aimed at the same blindness in a new generation."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Is there any place where your worship has quietly become a way of not hearing someone - a person you cheat, dismiss, or grind down on the days between Sundays?",
+      "additionalQuestions": [
+        "Amos asks for justice that flows like an ever-flowing stream, not a seasonal one. Where is your justice seasonal - on display at the feast, dry on an ordinary Tuesday?",
+        "Micah says God has already shown you what is good. What would it look like, this week, to act justly and love mercy in one concrete relationship rather than asking God for a louder song?",
+        "Hosea links knowing God to doing mercy. Where might a gap between the two be quietly tearing your faith in half?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have brought You songs and kept my injustices. I have sung loudly enough to stop hearing the people I wrong. Forgive me for the worship that floats on top of a cry. Teach me the justice that flows like a river that never runs dry, and the mercy You desire more than any sacrifice I could carry to the altar. Make the knowing of You and the doing of right one thing in me. And thank You that where my justice fails, Christ became both the just One and the mercy I could not buy. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, pick one place where your justice has gone seasonal - dry on ordinary days - and let it flow. Pay what you owe. Speak to the person under you the way you sing on Sunday. Defend one person who cannot defend themselves. Let that, not a louder song, be your offering.",
+      "leavingAtCross": [
+        "The worship that has become a way of not hearing the people I wrong",
+        "The seasonal justice that shows up at the feast and dries up in between",
+        "The belief that I can give God something instead of giving Him myself"
+      ],
+      "receivingFromCross": [
+        "A justice that can flow like a river because Christ poured Himself out first",
+        "The mercy God desires more than sacrifice, received before it is required of me",
+        "The knowledge of God that makes the altar and the gate one faithfulness, not two"
+      ],
+      "content": "This week, pick one place where your justice has gone seasonal - dry on ordinary days - and let it flow. Pay what you owe. Speak to the person under you the way you sing on Sunday. Defend one person who cannot defend themselves. Let that, not a louder song, be your offering."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God say He hates feasts and offerings He Himself commanded? What exactly is He rejecting - and what is He not rejecting?",
+        "What is the difference between a seasonal wadi and the nachal eitan, the ever-flowing stream, and why does Amos choose the second image for justice?",
+        "How does Hosea's line ‘I desire mercy, not sacrifice’ explain what Amos and Micah are both after?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where your weekday conduct contradicts your Sunday worship. Say it out loud to each other.",
+        "Where in your life is justice 'seasonal'? Help each other find one ordinary, unglamorous place to let it flow this week.",
+        "Talk about the difference between giving God something (an offering, a service) and giving God yourself. Where are you substituting the first for the second?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Micah 6:8",
+          "text": "He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
+        },
+        {
+          "reference": "Amos 5:14-15",
+          "text": "Seek good, not evil, so that you may live. And the LORD, the God of Hosts, will be with you, as you have claimed. Hate evil and love good; establish justice in the gate."
+        },
+        {
+          "reference": "Matthew 9:13",
+          "text": "But go and learn what this means: ‘I desire mercy, not sacrifice.’ For I have not come to call the righteous, but sinners."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Amos 5",
+          "note": "Read the whole chapter slowly, watching the lament (vv. 1-3), the call to seek good (vv. 14-15), and the climax where God clears the worship to ask for justice (vv. 21-24)."
+        },
+        {
+          "type": "book",
+          "title": "Micah 6:1-8",
+          "note": "Read God's courtroom case against His people, then the famous answer in verse 8 - the whole law pressed into three verbs."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Amos of Tekoa",
+      "title": "The Shepherd Sent North",
+      "era": "Eighth century BC (c. 760 BC)",
+      "description": "A herdsman and tender of sycamore-fig trees from Tekoa in the southern kingdom of Judah, with no prophetic pedigree, whom God took from following the flock and sent north to confront prosperous, oppressive Israel. He stood at the royal sanctuary of Bethel and announced that God would not accept the nation's worship while it trampled the poor - and was told to go home for it. He prophesied alongside Hosea in the north and Micah in the south, three voices saying one thing: God wants justice and mercy, not the noise of unjust worship.",
+      "keyQuote": "I was not a prophet, nor was I the son of a prophet; rather, I was a herdsman and a tender of sycamore-fig trees. But the LORD took me from following the flock.",
+      "lessonForUs": "God did not send a court insider to indict a corrupt establishment; He sent a shepherd who owed it nothing. The truth about our worship often comes from the person with no stake in protecting it - and it usually costs them to say it.",
+      "heading": "The Shepherd Sent North"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2485,
+  "scriptureReference_full": "Amos 5:21-24; Hosea 6:6; Micah 6:6-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mishpat H4941, tzedaqah H6666, nachal eitan in Amos 5:24) reflects standard lexical sources.",
+    "Jesus' twofold citation of Hosea 6:6 is in Matthew 9:13 and Matthew 12:7 (BSB)."
+  ]
 }

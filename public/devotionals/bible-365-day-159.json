@@ -1,38 +1,187 @@
 {
   "day": 159,
-  "title": "Fall of Jerusalem + Lamentations — Day 5 — Resolution",
-  "teaser": "Day 159 of Bible 365 — Lamentations",
+  "title": "New Every Morning",
+  "teaser": "At the center of the saddest book in the Bible, a man sitting in the ashes of a burned city says the bravest sentence in Scripture: His mercies are new every morning.",
   "framework": "Lamentations — Fall of Jerusalem + Lamentations",
-  "scriptureReference": "Lamentations",
+  "scriptureReference": "Lamentations 3:19-26",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 159"
+      "type": "scripture",
+      "reference": "Lamentations 3:19-26",
+      "translation": "BSB",
+      "emphasis": [
+        "Yet I call this to mind",
+        "His mercies never fail",
+        "new every morning",
+        "great is Your faithfulness"
+      ],
+      "hebrewOriginal": "חֲדָשִׁים לַבְּקָרִים רַבָּה אֱמוּנָתֶךָ",
+      "passage": "Remember my affliction and wandering, the wormwood and the gall. Surely my soul remembers and is humbled within me. Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness! “The LORD is my portion,” says my soul, “therefore I will hope in Him.” The LORD is good to those who wait for Him, to the soul who seeks Him. It is good to wait quietly for the salvation of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Lamentations**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Lamentations and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, steadfast love, covenant kindness, mercy that keeps its word",
+      "rootMeaning": "Chesed is not a feeling that comes and goes. It is loyalty with skin on - the love a person owes because of a covenant they have entered, kept even when the other side has broken faith. English needs a whole phrase to carry it: loving devotion, lovingkindness, steadfast love.",
+      "usageNote": "In verse 22 the BSB renders the plural chasdei YHWH as 'the loving devotion of the LORD,' and pairs it with rachamim, His 'mercies' or 'compassions' - a word from the same root as the womb, the love of a parent for a child. The poet stacks the two together: covenant loyalty and womb-deep tenderness, both said to be inexhaustible in the very week the city was destroyed.",
+      "wordByWord": [
+        {
+          "word": "חַסְדֵי",
+          "transliteration": "chasdei",
+          "meaning": "the loving devotions, the acts of covenant loyalty (of)"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name, the God who binds Himself by promise"
+        },
+        {
+          "word": "לֹא תָמְנוּ",
+          "transliteration": "lo tamnu",
+          "meaning": "we are not consumed, we are not finished off"
+        },
+        {
+          "word": "רַחֲמָיו",
+          "transliteration": "rachamav",
+          "meaning": "His mercies, His compassions - from the word for womb"
+        },
+        {
+          "word": "חֲדָשִׁים לַבְּקָרִים",
+          "transliteration": "chadashim labbekarim",
+          "meaning": "new for the mornings - fresh again with every daybreak"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱמוּנָה",
+          "reference": "Emunah (verse 23, 'faithfulness') is the root behind our word 'amen.' To say 'great is Your faithfulness' is to say a long, defiant amen over a city that has burned."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; covenant love that endures",
+      "usage": "Chesed is the word the Old Testament reaches for when it wants to describe a love that outlasts the failure of the beloved. It is the hinge the whole book turns on: the city is gone, the temple is ash, the covenant has been broken from below - and chesed has not run out."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Fall of Jerusalem + Lamentations. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wept over Jerusalem (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Hope Born in the Ashes",
+      "body": "Lamentations is five poems written over the smoking ruin of Jerusalem. In 586 BC the Babylonian army broke the walls, burned the temple Solomon had built, and marched the survivors away in chains. The book does not flinch from any of it. Mothers who cannot feed their children. Priests cut down in the sanctuary. A whole city sitting in the street with nothing left to say. The first chapter opens with the word 'How' - in Hebrew, eikhah, the sound of a funeral wail - and for two and a half chapters the grief barely lifts.\n\nThen, almost exactly at the center of the book, the poet does something astonishing. He has just listed his own affliction - 'the wormwood and the gall,' bitterness he cannot stop tasting. And in the next breath he turns: 'Yet I call this to mind, and therefore I have hope.' Not because the situation improved. Nothing has improved. The city is still rubble. But he deliberately drags one truth back into the center of his attention - that the LORD's loving devotion has not been used up - and on that single truth he plants a flag.\n\nThe Hebrew of verse 23 is plain and unforgettable: chadashim labbekarim, new for the mornings. Whatever was spent yesterday, the mercy is restocked by dawn. This is not the chirpy optimism of someone who has never suffered. It is the hardest-won sentence in the Old Testament, written by a man who has seen the worst and decided, against the evidence in front of his eyes, that God's faithfulness is bigger than the ruin.",
+      "keyInsight": "The hope of Lamentations is not the absence of grief - the grief is still on the page, all around it. It is a deliberate act of memory in the dark: calling to mind that God's mercy has not run out, and building on that one fact when everything else has fallen down.",
+      "content": "Lamentations is five poems written over the smoking ruin of Jerusalem. In 586 BC the Babylonian army broke the walls, burned the temple Solomon had built, and marched the survivors away in chains. The book does not flinch from any of it. Mothers who cannot feed their children. Priests cut down in the sanctuary. A whole city sitting in the street with nothing left to say. The first chapter opens with the word 'How' - in Hebrew, eikhah, the sound of a funeral wail - and for two and a half chapters the grief barely lifts.\n\nThen, almost exactly at the center of the book, the poet does something astonishing. He has just listed his own affliction - 'the wormwood and the gall,' bitterness he cannot stop tasting. And in the next breath he turns: 'Yet I call this to mind, and therefore I have hope.' Not because the situation improved. Nothing has improved. The city is still rubble. But he deliberately drags one truth back into the center of his attention - that the LORD's loving devotion has not been used up - and on that single truth he plants a flag.\n\nThe Hebrew of verse 23 is plain and unforgettable: chadashim labbekarim, new for the mornings. Whatever was spent yesterday, the mercy is restocked by dawn. This is not the chirpy optimism of someone who has never suffered. It is the hardest-won sentence in the Old Testament, written by a man who has seen the worst and decided, against the evidence in front of his eyes, that God's faithfulness is bigger than the ruin."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Woman Who Made the Bed",
+      "body": "A hospice nurse once told me about a widow she visited in the months after her husband died. The house had gone still in the way houses do when the person who filled them is gone. The widow could not bring herself to cook a real meal, could not answer the phone, could barely move through the rooms. But every single morning she made the bed.\n\nThe nurse asked her about it once. The woman said she could not promise God anything about the rest of the day. She did not know if she would manage to eat, or weep, or get dressed. But she could pull the sheet straight and square the pillows, and that small act was her way of saying that the morning had come and she was still here to meet it. It was, she said, the only prayer she had left, and it was enough to begin with.\n\nThat is the posture of Lamentations 3. The poet is not pretending the loss is small. He is doing the one thing grief can still do at first light: turning toward the morning and trusting that the mercy waiting there will be new, even when he is not.",
+      "connectionToTheme": "Hope after devastation often begins not with a feeling but with one deliberate act of trust at daybreak - a way of saying the night is over and God's mercy is new, before the heart has caught up.",
+      "content": "A hospice nurse once told me about a widow she visited in the months after her husband died. The house had gone still in the way houses do when the person who filled them is gone. The widow could not bring herself to cook a real meal, could not answer the phone, could barely move through the rooms. But every single morning she made the bed.\n\nThe nurse asked her about it once. The woman said she could not promise God anything about the rest of the day. She did not know if she would manage to eat, or weep, or get dressed. But she could pull the sheet straight and square the pillows, and that small act was her way of saying that the morning had come and she was still here to meet it. It was, she said, the only prayer she had left, and it was enough to begin with.\n\nThat is the posture of Lamentations 3. The poet is not pretending the loss is small. He is doing the one thing grief can still do at first light: turning toward the morning and trusting that the mercy waiting there will be new, even when he is not."
+    },
+    {
+      "type": "insight",
+      "heading": "The Center Holds",
+      "body": "Lamentations is built with ferocious care. Chapters 1, 2, and 4 are acrostics - twenty-two verses each, one for every letter of the Hebrew alphabet, grief organized from aleph to tav so that the suffering is total, covering the whole alphabet of pain. Chapter 3 is the most intense of all: a triple acrostic, sixty-six verses, three lines for every letter. And the sentence we are reading - 'His mercies are new every morning' - sits almost exactly at the heart of that center chapter, which is the heart of the whole book.\n\nThis is not an accident. The poet has placed his deepest grief in chapter 3, and then placed his deepest hope at the very middle of that grief. Structurally, the hope is buried inside the lament, the way a seed is buried in the ground. You do not get to verses 22 and 23 by skipping the wormwood and the gall. You get there by going through them. The book will not let you reach the comfort without first sitting in the ruin.\n\nAnd then, having reached the center, the poem does not stay there. The hope does not erase the lament; chapters 4 and 5 return to weeping, and the whole book ends not with triumph but with a question: 'unless You have utterly rejected us.' The mercy is real and the wound is real, held together. That is what makes it trustworthy.",
+      "historicalContext": "Lamentations was almost certainly composed in the immediate aftermath of Jerusalem's fall in 586 BC, while the rubble was fresh and the exile beginning. Jewish tradition reads it every year on the ninth of Av, Tisha B'Av, the fast that mourns the destruction of both temples - which means these poems have been carried through nearly every catastrophe of Jewish history as the words to say when there are no words.",
+      "fascinatingFact": "The acrostic form means the poet imposed strict order on chaos: even as he describes a world that has come apart, he refuses to let the poem come apart. Going through the alphabet, letter by letter, is itself an act of faith - a way of saying that grief, however total, still has a shape, and a God who can hold it.",
+      "content": "Lamentations is built with ferocious care. Chapters 1, 2, and 4 are acrostics - twenty-two verses each, one for every letter of the Hebrew alphabet, grief organized from aleph to tav so that the suffering is total, covering the whole alphabet of pain. Chapter 3 is the most intense of all: a triple acrostic, sixty-six verses, three lines for every letter. And the sentence we are reading - 'His mercies are new every morning' - sits almost exactly at the heart of that center chapter, which is the heart of the whole book.\n\nThis is not an accident. The poet has placed his deepest grief in chapter 3, and then placed his deepest hope at the very middle of that grief. Structurally, the hope is buried inside the lament, the way a seed is buried in the ground. You do not get to verses 22 and 23 by skipping the wormwood and the gall. You get there by going through them. The book will not let you reach the comfort without first sitting in the ruin.\n\nAnd then, having reached the center, the poem does not stay there. The hope does not erase the lament; chapters 4 and 5 return to weeping, and the whole book ends not with triumph but with a question: 'unless You have utterly rejected us.' The mercy is real and the wound is real, held together. That is what makes it trustworthy."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Sitting in the ashes of a destroyed city, the poet of Lamentations refuses despair the only way faith can: he calls to mind that the LORD's loving devotion has not run out, that His mercies are new every morning, and he stakes his hope on that alone.",
+      "modernApplication": "Most of us will sit in our own version of the burned city - the diagnosis, the divorce, the grave, the year that took what we cannot get back. Lamentations does not tell us to feel better. It teaches us a practice for the dark: to grieve honestly and, in the same breath, to drag one true thing back into the center of our attention and build the morning on it.",
+      "connectionPoint": "Faith carried this sentence forward through every later collapse. Around 1923, a man named Thomas Chisholm, who had been too ill to keep working and had known long stretches of want, read Lamentations 3:23 and wrote the hymn 'Great Is Thy Faithfulness' - not out of an easy life, but out of an ordinary, often difficult one, testifying that the mercy really was new each morning. The line the exile wrote in the ruins became the song the church still sings into its own ruins.",
+      "newTestamentEcho": "Centuries after Lamentations, Jesus stood on the road into the same city and 'wept over it' (Luke 19:41), grieving that it did not know the things that make for peace. The voice that cried in Lamentations 1, 'Is there any sorrow like mine?', the early church heard taken up on the cross: the One on whom the LORD laid the iniquity of us all, drinking the wormwood and the gall to the dregs. And because He did, the mornings of verse 23 are not a hope against the evidence but a promise sealed in evidence - for on the first day of the week, very early in the morning, the women came to the tomb and found it open. His mercies are new every morning because of the morning He walked out of the grave."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the 'wormwood and gall' you keep tasting right now - the affliction your soul keeps remembering - and what is the one true thing about God you could call to mind alongside it?",
+      "additionalQuestions": [
+        "Where in your life are you waiting for the LORD - and does it feel more like waiting quietly, or waiting in despair?",
+        "The poet says 'The LORD is my portion.' When everything else has been stripped away, is God Himself enough to be your hope, or have you been hoping mostly in what He gives?",
+        "What would it look like, tomorrow morning, to begin the day by deliberately calling to mind that His mercies are new - before the grief or the anxiety speaks first?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have tasted the wormwood and the gall, and my soul remembers it and is bowed down. I am not going to pretend the ruin is not real. But here, in the middle of it, I call this to mind and stake my hope on it: Your loving devotion has not run out, and I am not consumed. Your mercies are new every morning. Great is Your faithfulness - even now, even here. You are my portion; therefore I will wait quietly for Your salvation, the salvation You secured the morning You rose from the dead. Meet me at first light tomorrow with mercy I have not earned and cannot manufacture. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tomorrow, before you reach for your phone or rehearse the day's worries, sit up and say one sentence out loud: 'His mercies are new this morning.' Let that be the first thing your mind calls to itself - the deliberate act of memory the poet modeled. Carry the verse with you all day as the answer when the wormwood comes back.",
+      "leavingAtCross": [
+        "The lie that because the loss is real, the mercy must have run out",
+        "The habit of letting yesterday's grief, or fear, speak first thing in the morning",
+        "The despair that says God has utterly rejected me, that this ruin is the final word"
+      ],
+      "receivingFromCross": [
+        "A loving devotion that does not run out, because it does not depend on me keeping the covenant - Christ kept it",
+        "Mercy that is genuinely new each daybreak, restocked while I slept",
+        "A hope sealed not against the evidence but in it: the empty tomb on the third morning"
+      ],
+      "content": "Tomorrow, before you reach for your phone or rehearse the day's worries, sit up and say one sentence out loud: 'His mercies are new this morning.' Let that be the first thing your mind calls to itself - the deliberate act of memory the poet modeled. Carry the verse with you all day as the answer when the wormwood comes back."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between the poet's hope in Lamentations 3 and simple optimism - and where do verses 19 and 20 show that the grief is still fully present?",
+        "What does the Hebrew word chesed ('loving devotion') mean, and why does it matter that this is the thing the poet says has not run out?",
+        "How does the structure of the book - the deepest hope placed at the center of the deepest grief - shape the way we should read verses 22 and 23?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the 'burned city' in your life right now - the loss you are sitting in - and say it plainly to one another without rushing to fix it.",
+        "Share one true thing about God you can 'call to mind' the way the poet does, and ask each other to hold you to remembering it this week.",
+        "Talk about what it would mean, practically, to 'wait quietly for the salvation of the LORD' rather than either pretending everything is fine or giving up entirely."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 3:31-33",
+          "text": "For the Lord will not cast us off forever. Even if He causes grief, He will show compassion according to His abundant loving devotion. For He does not willingly afflict or grieve the sons of men."
+        },
+        {
+          "reference": "Lamentations 1:12",
+          "text": "Is this nothing to you, all you who pass by? Look around and see! Is there any sorrow like mine, which was inflicted on me, which the LORD made me suffer on the day of His fierce anger?"
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, 'If only you had known on this day what would bring you peace! But now it is hidden from your eyes.'"
+        },
+        {
+          "reference": "Psalm 30:5",
+          "text": "For His anger is fleeting, but His favor lasts a lifetime. Weeping may stay the night, but joy comes in the morning."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Lamentations 3",
+          "note": "Read the whole chapter slowly, watching the turn at verse 21 ('Yet I call this to mind') and noticing how the lament resumes afterward - the hope and the grief held together, not one erasing the other."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Poet of Lamentations",
+      "title": "The Mourner of Jerusalem",
+      "description": "An eyewitness to the fall of Jerusalem in 586 BC, traditionally associated with the prophet Jeremiah, who watched the city he loved burn and its people led into exile. Rather than turning away from the horror or explaining it away, he wrote it down - five careful poems of grief - and, at the very center, refused to let go of the faithfulness of God. He is the model of how to lament without despairing: telling the whole truth about the loss while staking everything on the loving devotion that does not run out.",
+      "keyQuote": "Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed, for His mercies never fail.",
+      "lessonForUs": "We are not asked to deny our griefs to keep our faith. We are asked to do what the poet did - to look the ruin full in the face, and then deliberately turn the eyes of the heart toward the one mercy that has not failed, and wait there for the morning.",
+      "heading": "The Mourner of Jerusalem"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1776,
+  "scriptureReference_full": "Lamentations 3:19-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; rachamim; emunah) reflects standard lexical sources. The acrostic structure of Lamentations and its liturgical use on Tisha B'Av are widely documented. Thomas Chisholm's 1923 hymn 'Great Is Thy Faithfulness' is drawn from Lamentations 3:22-23; the hymn's origin in an ordinary, often difficult life (rather than a single dramatic event) is the account given by Chisholm himself."
+  ]
 }

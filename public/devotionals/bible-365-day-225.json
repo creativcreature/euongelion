@@ -1,38 +1,188 @@
 {
   "day": 225,
-  "title": "Isaiah: Suffering Servant — Day 1 — Hook",
-  "teaser": "Day 225 of Bible 365 — Isaiah 40-55",
+  "title": "The Servant we never asked for",
+  "teaser": "Isaiah opens his book of comfort with a word of consolation — then shows us the strange shape that comfort takes: a Servant disfigured beyond human likeness, pierced so we could be healed.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 225"
+      "type": "scripture",
+      "reference": "Isaiah 40:1-2; 53:5",
+      "translation": "BSB",
+      "emphasis": [
+        "Comfort, comfort My people",
+        "pierced for our transgressions",
+        "by His stripes we are healed"
+      ],
+      "hebrewOriginal": "נַחֲמוּ נַחֲמוּ עַמִּי יֹאמַר אֱלֹהֵיכֶם",
+      "passage": "\"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem, and proclaim to her that her forced labor has been completed; her iniquity has been pardoned. For she has received from the hand of the LORD double for all her sins.\" ... But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נַחֲמוּ",
+      "transliteration": "nachamu",
+      "pronunciation": "nah-khah-MOO",
+      "meaning": "comfort, console, bring relief - said twice",
+      "rootMeaning": "From nacham, which can mean to be moved to pity, to console, even to draw a long breath of relief. It carries the picture of someone bending close to grief and changing its weather.",
+      "usageNote": "Isaiah 40 opens the second half of the book with this doubled imperative - nachamu nachamu, 'comfort, comfort.' The repetition is not stutter but insistence: God is not asking for a little reassurance to be offered. He is commanding that the full weight of consolation be carried to a people who have stopped expecting it.",
+      "wordByWord": [
+        {
+          "word": "נַחֲמוּ",
+          "transliteration": "nachamu",
+          "meaning": "comfort, console (plural command - spoken to whoever will carry the message)"
+        },
+        {
+          "word": "נַחֲמוּ",
+          "transliteration": "nachamu",
+          "meaning": "comfort - repeated, the way you say a thing twice to someone who cannot believe it the first time"
+        },
+        {
+          "word": "עַמִּי",
+          "transliteration": "ammi",
+          "meaning": "My people - the covenant word; not 'a people' but the ones God still calls His own"
+        },
+        {
+          "word": "יֹאמַר אֱלֹהֵיכֶם",
+          "transliteration": "yomar Eloheikhem",
+          "meaning": "says your God - the relationship is still 'your God,' even after exile"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מְנַחֵם / Παράκλητος",
+          "reference": "The participle menachem, 'comforter,' stands behind Jesus' promise of 'another Helper' - the Paraklatos, the one called alongside (John 14:16). The comfort Isaiah commands becomes a Person who comes to stay."
+        }
+      ],
+      "strongsNumber": "H5162",
+      "definition": "nacham: to be sorry, to console oneself, to comfort, to bring relief to the grieving",
+      "usage": "The doubled nachamu sets the key for everything that follows in Isaiah 40-55. The chapters that begin 'comfort, comfort' end up showing us how God comforts - not by waving the trouble away, but by sending a Servant to carry it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Book Splits Open With a Word of Comfort",
+      "body": "For thirty-nine chapters, Isaiah has mostly thundered. Judgment on Judah, judgment on the nations, the long reckoning of a people who trusted everything except the God who made them. Then chapter 40 opens, and the voice changes entirely. \"Comfort, comfort My people,\" says your God. The trumpet becomes a hand laid gently on a shoulder.\n\nThese chapters, Isaiah 40 through 55, are sometimes called the Book of Comfort. They speak to people in exile - far from home, sure that their sin had finally outrun God's patience, wondering if the covenant was over. To them the prophet says: your forced labor has been completed; your iniquity has been pardoned. The sentence has been served. The hard part is behind you. A road is being built through the wilderness for God Himself to come walking back to His people.\n\nBut here is the strange thing, and it is the thing that hooks the whole reading. Isaiah does not comfort the exiles by telling them their troubles were imaginary. He comforts them by promising a Servant. And when he finally describes that Servant in chapter 53, the description is almost unbearable. This is not how anyone would have written a rescue.",
+      "keyInsight": "Isaiah's comfort is not the comfort of pretending. It is the comfort of a God who answers real guilt with a real Servant who will carry it.",
+      "content": "For thirty-nine chapters, Isaiah has mostly thundered. Judgment on Judah, judgment on the nations, the long reckoning of a people who trusted everything except the God who made them. Then chapter 40 opens, and the voice changes entirely. \"Comfort, comfort My people,\" says your God. The trumpet becomes a hand laid gently on a shoulder.\n\nThese chapters, Isaiah 40 through 55, are sometimes called the Book of Comfort. They speak to people in exile - far from home, sure that their sin had finally outrun God's patience, wondering if the covenant was over. To them the prophet says: your forced labor has been completed; your iniquity has been pardoned. The sentence has been served. The hard part is behind you. A road is being built through the wilderness for God Himself to come walking back to His people.\n\nBut here is the strange thing, and it is the thing that hooks the whole reading. Isaiah does not comfort the exiles by telling them their troubles were imaginary. He comforts them by promising a Servant. And when he finally describes that Servant in chapter 53, the description is almost unbearable. This is not how anyone would have written a rescue."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Chair Pulled Up to the Bed",
+      "body": "A friend of mine sat with her father through the last week of his life. She told me afterward that the worst nights were the ones when well-meaning visitors tried to fix it. They brought brochures, second opinions, bright assurances that he would beat this. Every cheerful word made the room feel lonelier, because everyone could see it was not true.\n\nThen an old neighbor came. He did not say much. He pulled a chair up to the bed, took the dying man's hand, and stayed. He came back the next night and the night after. He did not solve anything. He carried something - the long hours, the silence, the weight of being present to a grief he could not lift.\n\nWhen she described it to me, she used a word I have not forgotten. She said he comforted them. Not by denying the death. By refusing to leave them alone in it. That is closer to Isaiah's word than anything we usually mean by comfort. Nachamu is not a brochure. It is a chair pulled up to the bed, and a hand that will not let go.",
+      "connectionToTheme": "True comfort does not deny the weight of grief or guilt - it draws close and shares it. Isaiah promises a God who comforts by coming near, not by looking away.",
+      "content": "A friend of mine sat with her father through the last week of his life. She told me afterward that the worst nights were the ones when well-meaning visitors tried to fix it. They brought brochures, second opinions, bright assurances that he would beat this. Every cheerful word made the room feel lonelier, because everyone could see it was not true.\n\nThen an old neighbor came. He did not say much. He pulled a chair up to the bed, took the dying man's hand, and stayed. He came back the next night and the night after. He did not solve anything. He carried something - the long hours, the silence, the weight of being present to a grief he could not lift.\n\nWhen she described it to me, she used a word I have not forgotten. She said he comforted them. Not by denying the death. By refusing to leave them alone in it. That is closer to Isaiah's word than anything we usually mean by comfort. Nachamu is not a brochure. It is a chair pulled up to the bed, and a hand that will not let go."
+    },
+    {
+      "type": "insight",
+      "heading": "The Rescue Nobody Would Have Drawn Up",
+      "body": "Read Isaiah 53 slowly and notice how wrong it looks. The Servant who is supposed to carry God's comfort \"had no stately form or majesty to attract us, no beauty that we should desire Him\" (53:2). He is \"despised and rejected by men, a man of sorrows, acquainted with grief\" (53:3). His appearance is \"disfigured beyond that of any man\" (52:14). If you were inventing a savior, you would not invent this one.\n\nAnd then the center of the chapter explains why. \"Surely He took on our infirmities and carried our sorrows\" (53:4). \"But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed\" (53:5). The marring is not a defeat that happened to the Servant. It is the work He came to do. The wounds are the rescue.\n\nThis is the hook of the whole section, and it is the hook of the whole Bible. God's answer to real guilt is not to pretend it away but to lay it on Someone. \"We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all\" (53:6). The comfort of chapter 40 and the wounds of chapter 53 are the same gift, seen from two ends.",
+      "historicalContext": "Isaiah 52:13-53:12 is the fourth and most famous of the 'Servant Songs' woven through chapters 40-55. Written to exiles who feared God was finished with them, these chapters insist that God's plan to comfort and redeem His people runs straight through a Servant who suffers in their place. Jewish and Christian readers have wrestled with the identity of this Servant for over two thousand years; the New Testament writers, and Jesus Himself, read it as pointing to the Messiah.",
+      "fascinatingFact": "When Philip met the Ethiopian official reading aloud from a scroll, the man was reading Isaiah 53 - the 'led like a lamb to the slaughter' passage - and asking who the prophet was speaking about. Luke records that Philip 'began with this very Scripture and told him the good news about Jesus' (Acts 8:32-35). The earliest Christians did not have to invent the connection between the Suffering Servant and Christ. They found it already lying open on the page.",
+      "content": "Read Isaiah 53 slowly and notice how wrong it looks. The Servant who is supposed to carry God's comfort \"had no stately form or majesty to attract us, no beauty that we should desire Him\" (53:2). He is \"despised and rejected by men, a man of sorrows, acquainted with grief\" (53:3). His appearance is \"disfigured beyond that of any man\" (52:14). If you were inventing a savior, you would not invent this one.\n\nAnd then the center of the chapter explains why. \"Surely He took on our infirmities and carried our sorrows\" (53:4). \"But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed\" (53:5). The marring is not a defeat that happened to the Servant. It is the work He came to do. The wounds are the rescue.\n\nThis is the hook of the whole section, and it is the hook of the whole Bible. God's answer to real guilt is not to pretend it away but to lay it on Someone. \"We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all\" (53:6). The comfort of chapter 40 and the wounds of chapter 53 are the same gift, seen from two ends."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Isaiah comforts a guilty, exiled people not by denying their sin but by promising a Servant who would be pierced for their transgressions and crushed for their iniquities, so that the punishment bringing them peace would fall on Him.",
+      "modernApplication": "We are fluent in cheap comfort - the affirmation that we were never really at fault, the reassurance that everyone is fine, the brochure pressed into the hand of the dying. It soothes for a moment and leaves us lonelier, because underneath it we still know the weight is real. Isaiah offers a heavier and steadier thing: a God who takes the real weight seriously enough to carry it Himself.",
+      "connectionPoint": "The whole of Isaiah 40-55 stretches between two open hands. In 40:2 Jerusalem receives 'from the hand of the LORD' the measure of her sins; in 53:6 'the LORD has laid upon Him the iniquity of us all.' What the people received in one hand, the Servant takes into the other. The thread that begins with 'comfort, comfort' is tied off at the cross.",
+      "newTestamentEcho": "Matthew watches Jesus heal the sick at evening and writes that this fulfilled Isaiah: 'He took on our infirmities and carried our sorrows' (Matthew 8:17). Peter, writing to suffering Christians, reaches for the same chapter: Christ 'Himself bore our sins in His body on the tree... by His stripes you are healed' (1 Peter 2:24). The Servant Isaiah saw from a distance has a name, and the name is Jesus."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been settling for cheap comfort - reassurance that the weight isn't real - when what you actually need is Someone strong enough to carry the real thing?",
+      "additionalQuestions": [
+        "Isaiah says the Servant 'had no beauty that we should desire Him.' What does it tell you about God that His rescue came in a form no one would have chosen?",
+        "Read Isaiah 53:5 slowly and put your own name where it says 'our' and 'we.' What changes when the verse stops being general?",
+        "When you imagine God responding to your guilt, do you picture Him minimizing it, or carrying it? Which one does Isaiah describe?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God of all comfort, I have grown used to comfort that costs nothing and changes nothing. Teach me the comfort You actually offer. I confess that I have, like a sheep, gone astray and turned to my own way. Thank You that You did not answer my wandering with a brochure but with a Servant - pierced for my transgressions, crushed for my iniquities. Let me come to the end of this reading carrying less, because He carried it first. By His stripes, heal what I cannot reach. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, sit with Isaiah 53 once a day - read it slowly, out loud if you can, and each time put your own name into the 'our' and the 'we.' Let the chapter stop being about a stranger and start being about you and the Servant who carried what was yours.",
+      "leavingAtCross": [
+        "The cheap comforts I reach for that soothe the surface and leave the weight in place",
+        "The suspicion that my guilt is too real, or too old, for God to do anything but minimize it",
+        "The image of a savior I would have designed - impressive, untouched, far from my sorrow"
+      ],
+      "receivingFromCross": [
+        "The comfort that comes from a God who carried the weight instead of denying it",
+        "The healing of His stripes, offered to the part of me I have hidden the longest",
+        "A Servant who was not too dignified to be 'a man of sorrows, acquainted with grief'"
+      ],
+      "content": "This week, sit with Isaiah 53 once a day - read it slowly, out loud if you can, and each time put your own name into the 'our' and the 'we.' Let the chapter stop being about a stranger and start being about you and the Servant who carried what was yours."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Isaiah open chapter 40 with the word 'comfort' repeated twice, and to whom is that comfort spoken?",
+        "In what way are the gentle comfort of Isaiah 40:1-2 and the brutal suffering of Isaiah 53:5 actually the same gift?",
+        "What is the difference between comfort that denies the weight of guilt and the comfort Isaiah describes?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place you have accepted cheap comfort recently - a reassurance you knew wasn't quite true.",
+        "Talk about what it means that God's rescue came with 'no beauty that we should desire Him.' Why is that hard for us, and why might it be good news?",
+        "Read Isaiah 53:6 together and ask each other: in what specific way have you 'turned to your own way' lately - and what would it look like to lay that on the Servant?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 40:31",
+          "text": "But those who wait upon the LORD will renew their strength; they will mount up with wings like eagles; they will run and not grow weary, they will walk and not faint."
+        },
+        {
+          "reference": "Isaiah 53:6",
+          "text": "We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
+        },
+        {
+          "reference": "Isaiah 55:1-2",
+          "text": "\"Come, all you who are thirsty, come to the waters; and you without money, come, buy, and eat!... Why spend money on that which is not bread, and your labor on that which does not satisfy?\""
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. By His stripes you are healed."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 52:13-53:12",
+          "note": "Read the fourth Servant Song straight through in one sitting. Notice how it moves: exaltation (52:13), then disfigurement, then the reason for the disfigurement, then exaltation again. The suffering is framed by glory on both ends."
+        },
+        {
+          "type": "book",
+          "title": "Acts 8:26-40",
+          "note": "Read the account of Philip and the Ethiopian official, who was reading Isaiah 53 and asked who the Servant was. Watch how the earliest church read this chapter."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Servant of the LORD",
+      "title": "The One Pierced for Our Transgressions",
+      "era": "Foretold in Isaiah 40-55, written in the 8th-6th centuries BC",
+      "description": "Across four 'Servant Songs' in Isaiah 40-55, a mysterious figure emerges who is chosen by God, anointed with His Spirit, and sent to bring justice and salvation. In the fourth song the Servant is despised, disfigured, and killed - yet bears the sins of many and is finally exalted. Jewish and Christian readers have debated the Servant's identity for centuries; the New Testament, and Jesus' own words, identify Him with the Messiah who suffers and rises.",
+      "keyQuote": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "lessonForUs": "The comfort God promised His people was never a softening of the truth about their guilt. It was a Servant willing to carry that guilt in His own body. We do not have to make ourselves presentable to be comforted; the Servant made Himself unpresentable so that we could be.",
+      "heading": "The One Pierced for Our Transgressions"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2314,
+  "scriptureReference_full": "Isaiah 40-55 (key texts: Isaiah 40:1-2; 52:13-53:12; 55:1-3)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (nachamu, nacham H5162) reflects standard lexical sources. The link between the 'comforter' (menachem) and the Greek Paraklatos of John 14:16 is a recognized canonical resonance, not a claim of identical vocabulary.",
+    "The identification of Isaiah's Suffering Servant with Christ follows the New Testament reading (Matthew 8:17; Acts 8:32-35; 1 Peter 2:24) and historic Christian interpretation; the figure's identity has been debated across traditions and that debate is noted rather than flattened."
+  ]
 }

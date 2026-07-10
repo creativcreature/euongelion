@@ -1,38 +1,188 @@
 {
   "day": 50,
-  "title": "A sanctuary for me",
-  "teaser": "Day 50 of Bible 365 — Exodus 25:1-9",
+  "title": "A sanctuary for Me",
+  "teaser": "God's first home among His people is not a fortress He builds, but a tent they bring Him by hand. Before He gives the blueprint, He names the reason: that I may dwell among them.",
   "framework": "Exodus 25:1-9 — God dwells with His people",
   "scriptureReference": "Exodus 25:1-9",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 50"
+      "type": "scripture",
+      "reference": "Exodus 25:1-9",
+      "translation": "BSB",
+      "emphasis": [
+        "an offering",
+        "whose heart compels him",
+        "a sanctuary for Me",
+        "that I may dwell among them",
+        "the pattern I show you"
+      ],
+      "hebrewOriginal": "וְעָשׂוּ לִי מִקְדָּשׁ וְשָׁכַנְתִּי בְּתוֹכָם",
+      "passage": "Then the LORD said to Moses, \"Tell the Israelites to bring Me an offering. You are to receive My offering from every man whose heart compels him. This is the offering you are to accept from them: gold, silver, and bronze; blue, purple, and scarlet yarn; fine linen and goat hair; ram skins dyed red and fine leather; acacia wood; olive oil for the light; spices for the anointing oil and for the fragrant incense; and onyx stones and gemstones to be mounted on the ephod and breastpiece. And they are to make a sanctuary for Me, so that I may dwell among them. You must make the tabernacle and design all its furnishings according to the pattern I show you.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 25:1-9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 25:1-9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וְשָׁכַנְתִּי",
+      "transliteration": "v'shakhanti",
+      "pronunciation": "veh-sha-KHAN-tee",
+      "meaning": "and I will dwell, and I will settle, and I will pitch My tent",
+      "rootMeaning": "From the root shakhan, which does not mean simply to live somewhere but to settle in, to take up residence, to pitch a tent and stay. It is the verb you use for a shepherd who beds his flock for the night, not for a landlord who owns a house he never visits.",
+      "usageNote": "From this one root grows the whole vocabulary of God's nearness. The noun mishkan - tabernacle - is literally a dwelling-place, a place where God shakhans. Later Jewish writers coined shekhinah from the same root to name the visible glory that settled on the tent. And when John writes that the Word became flesh and dwelt among us (John 1:14), the Greek verb he reaches for - eskenosen, He tented, He tabernacled - is the Septuagint's own word for shakhan.",
+      "wordByWord": [
+        {
+          "word": "וְעָשׂוּ",
+          "transliteration": "v'asu",
+          "meaning": "and they shall make - the work is given to the people's own hands"
+        },
+        {
+          "word": "לִי",
+          "transliteration": "li",
+          "meaning": "for Me - the sanctuary is built toward God, not for the worshipers' comfort"
+        },
+        {
+          "word": "מִקְדָּשׁ",
+          "transliteration": "miqdash",
+          "meaning": "a sanctuary, a holy place, a set-apart space"
+        },
+        {
+          "word": "וְשָׁכַנְתִּי",
+          "transliteration": "v'shakhanti",
+          "meaning": "and I will dwell, I will settle, I will pitch My tent"
+        },
+        {
+          "word": "בְּתוֹכָם",
+          "transliteration": "b'tokham",
+          "meaning": "in their midst, among them, in the center of them"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִקְדָּשׁ / קָדוֹשׁ",
+          "reference": "Miqdash (sanctuary) is built on the root qadash, to be holy, set apart. The sanctuary is not holy because it is grand; it is holy because God claims it as His own and meets His people there."
+        }
+      ],
+      "strongsNumber": "H7931",
+      "definition": "shakhan: to settle down, abide, dwell, take up residence; to tabernacle",
+      "usage": "God does not say I will visit them, or I will watch over them from above. He says I will dwell - I will move in, set up, and stay in the middle of the camp. The Maker of heaven and earth asks for a tent so He can live on the same ground as a band of former slaves."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God dwells with His people. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: The Word tabernacled among us (John 1:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Asks for an Offering Before He Gives a Blueprint",
+      "body": "Israel is barely free. The Red Sea is behind them, the manna is on the ground each morning, and the dust of Egypt is still on their sandals. They have no temple, no priesthood, no land - nothing but a wilderness and a promise. And here, on the mountain, God tells Moses what He wants from these people: an offering.\n\nNotice the order of it. Before God describes a single curtain or clasp, before the gold and the acacia wood, He says, \"Tell the Israelites to bring Me an offering. You are to receive My offering from every man whose heart compels him.\" The first thing God asks for is not labor or skill. It is a willing heart. The materials matter - the blue and purple and scarlet, the ram skins dyed red, the onyx stones - but the text is careful to say where they come from: from everyone whose heart moves him to give. God will not build His house out of coerced contributions.\n\nThen comes the reason, and it changes everything that follows. \"They are to make a sanctuary for Me, so that I may dwell among them.\" The whole elaborate project - the tabernacle, the furnishings, the pattern shown on the mountain - exists for one purpose. Not to impress the nations. Not to give the priests something to manage. So that God may dwell among them. The God who could not be looked at directly, whose presence on Sinai made the mountain shake, wants to move into the middle of the camp and stay.",
+      "keyInsight": "The tabernacle is not a building project with a worship benefit attached. It is a dwelling, and the dwelling is the whole point. God asks for materials so He can have an address among His people.",
+      "content": "Israel is barely free. The Red Sea is behind them, the manna is on the ground each morning, and the dust of Egypt is still on their sandals. They have no temple, no priesthood, no land - nothing but a wilderness and a promise. And here, on the mountain, God tells Moses what He wants from these people: an offering.\n\nNotice the order of it. Before God describes a single curtain or clasp, before the gold and the acacia wood, He says, \"Tell the Israelites to bring Me an offering. You are to receive My offering from every man whose heart compels him.\" The first thing God asks for is not labor or skill. It is a willing heart. The materials matter - the blue and purple and scarlet, the ram skins dyed red, the onyx stones - but the text is careful to say where they come from: from everyone whose heart moves him to give. God will not build His house out of coerced contributions.\n\nThen comes the reason, and it changes everything that follows. \"They are to make a sanctuary for Me, so that I may dwell among them.\" The whole elaborate project - the tabernacle, the furnishings, the pattern shown on the mountain - exists for one purpose. Not to impress the nations. Not to give the priests something to manage. So that God may dwell among them. The God who could not be looked at directly, whose presence on Sinai made the mountain shake, wants to move into the middle of the camp and stay."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House That Was Waiting",
+      "body": "A friend of mine spent two years renovating a house before her family moved in. She talked about it constantly - the floors, the kitchen tile, the color of the front door. For a while I thought she had simply fallen in love with a project.\n\nThen one afternoon she said something that reframed all of it. \"I'm not building a house,\" she told me. \"I'm building the place my kids will remember. When they're forty and they close their eyes and think of home, this is the room they'll see.\" The tile and the door were never the point. She was making a space so that the people she loved could live in the middle of her life, where she could reach them.\n\nThat is closer to what God is doing on the mountain than any temple tour suggests. The gold and acacia wood are real, and they matter, but they were never the point. He is making a place so that He can live in the middle of His people - close enough to be found, close enough to be reached, present on the same ground they walk every day.",
+      "connectionToTheme": "The materials of the tabernacle are not the goal. They are how a presence gets an address. God wanted nearness, and nearness needed a place.",
+      "content": "A friend of mine spent two years renovating a house before her family moved in. She talked about it constantly - the floors, the kitchen tile, the color of the front door. For a while I thought she had simply fallen in love with a project.\n\nThen one afternoon she said something that reframed all of it. \"I'm not building a house,\" she told me. \"I'm building the place my kids will remember. When they're forty and they close their eyes and think of home, this is the room they'll see.\" The tile and the door were never the point. She was making a space so that the people she loved could live in the middle of her life, where she could reach them.\n\nThat is closer to what God is doing on the mountain than any temple tour suggests. The gold and acacia wood are real, and they matter, but they were never the point. He is making a place so that He can live in the middle of His people - close enough to be found, close enough to be reached, present on the same ground they walk every day."
+    },
+    {
+      "type": "insight",
+      "heading": "A Tent in the Middle, Not a Throne Above",
+      "body": "There is a detail here easy to miss because it is so quiet. God does not ask for a fortress on a hilltop or a tower that scrapes the sky. He asks for a tent - a structure that can be packed up and carried, that moves when the people move, that sits not above the camp but in the middle of it.\n\nWhen Israel later pitched their camp, the tribes arranged themselves on four sides around the tabernacle, with the tent of God's presence at the center. Wherever the cloud went, they went. Wherever they stopped, God stopped with them. This was a God on the move with a people on the move. He did not summon them up a mountain to find Him; He came down and set up in the middle of the dust and the noise and the daily life.\n\nThis is the surprising shape of holiness in Exodus. We might expect the Holy One to require distance - the higher and farther, the safer. Instead the holiness comes near. The same God whose glory made Sinai unapproachable chooses to camp at arm's reach. Set-apart, yes. But set apart in order to come close.",
+      "historicalContext": "Exodus 25 opens the tabernacle instructions, which run for chapters and then repeat almost word for word in the building account (Exodus 35-40). Ancient readers did not skim this repetition as tedious; the doubling signals weight. In the surrounding ancient world, gods were thought to dwell in fixed temples in great cities. Israel's God breaks the pattern: His dwelling is portable, traveling with a homeless people through a wilderness.",
+      "fascinatingFact": "The instructions begin from the inside out. The very first piece of furniture God describes (right after this passage, in Exodus 25:10) is the ark - the innermost object, the place of the mercy seat. God designs from the center of His presence outward, the way you would describe your home starting with the room where you actually live.",
+      "content": "There is a detail here easy to miss because it is so quiet. God does not ask for a fortress on a hilltop or a tower that scrapes the sky. He asks for a tent - a structure that can be packed up and carried, that moves when the people move, that sits not above the camp but in the middle of it.\n\nWhen Israel later pitched their camp, the tribes arranged themselves on four sides around the tabernacle, with the tent of God's presence at the center. Wherever the cloud went, they went. Wherever they stopped, God stopped with them. This was a God on the move with a people on the move. He did not summon them up a mountain to find Him; He came down and set up in the middle of the dust and the noise and the daily life.\n\nThis is the surprising shape of holiness in Exodus. We might expect the Holy One to require distance - the higher and farther, the safer. Instead the holiness comes near. The same God whose glory made Sinai unapproachable chooses to camp at arm's reach. Set-apart, yes. But set apart in order to come close."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God asks a wilderness people to build Him a tent from their freewill offerings - not so He can be admired from a distance, but so He can dwell among them, in the center of the camp, on the same ground they walk.",
+      "modernApplication": "We still tend to picture God as far off - above the clouds, behind the veil, available on a mountain if we climb high enough. Exodus 25 cuts against that instinct. The God of the Bible is not waiting to be reached; He is the One who moves in. Your life does not need to become a cathedral before He will come near. He asks for a willing heart and makes His home in the middle of an ordinary, unfinished life.",
+      "connectionPoint": "The thread that begins with this tent runs through the whole of Scripture. The portable tabernacle gives way to Solomon's temple, where God's glory fills the house (1 Kings 8:10-11). The prophets promise a day when God will dwell with His people more fully still (Ezekiel 37:27, \"My dwelling place will be with them\"). And John picks up the very word: the Word became flesh and made His dwelling among us. The story ends in Revelation 21:3 with a great voice declaring, \"Behold, the dwelling place of God is with man, and He will dwell with them.\" The tent in the wilderness was the first sentence of that promise.",
+      "newTestamentEcho": "What the tabernacle began, Christ fulfilled. \"The Word became flesh and made His dwelling among us\" (John 1:14) - and the Greek says He tabernacled, He pitched His tent, the same word the Greek Old Testament used for shakhan in Exodus 25:8. The tent of skins becomes a body of flesh. God no longer dwells in the middle of the camp; He walks its roads, eats its bread, and bears its sin. The sanctuary they built by hand pointed forward to the One God would build by becoming one of us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been picturing God as distant - on a mountain you have to climb - when He is asking instead to dwell in the middle of your actual, unfinished life?",
+      "additionalQuestions": [
+        "God asked only for what hearts freely moved them to give. What would it look like to offer God something today not out of duty, but because your heart compels it?",
+        "The tabernacle was built from the center out, beginning with the place of His presence. If you built your day from the center out, what would sit at the center?",
+        "John says Christ tabernacled among us. Where do you most need to know that God is near - not above your life, but in the middle of it - this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have so often pictured You far off - above the clouds, behind the curtain, waiting on a mountain I am too tired to climb. But You said You would dwell among Your people, and in Christ You did. You pitched Your tent in the middle of our dust and noise. Move in here too. Not into the finished, polished version of my life I keep meaning to build - into this one, unfinished as it is. Take what my heart freely gives, and make Your home at the center of my ordinary days. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one ordinary place where you live most of your life - a kitchen, a commute, a desk, a waiting room. Before you enter it, say quietly: \"God, dwell here with me.\" Let that be the sanctuary you offer Him today - not a grand space, but a willing heart in the middle of an ordinary place.",
+      "leavingAtCross": [
+        "The picture of a distant God who must be reached, climbed toward, earned",
+        "The belief that my life has to be finished and impressive before God will come near",
+        "The fear that holiness means God keeping His distance from my mess"
+      ],
+      "receivingFromCross": [
+        "A God who moves in rather than watching from above",
+        "The freedom to give Him what my heart freely offers, not what I am pressured to perform",
+        "The promise that His dwelling place is with people - and that includes me"
+      ],
+      "content": "Today, name one ordinary place where you live most of your life - a kitchen, a commute, a desk, a waiting room. Before you enter it, say quietly: \"God, dwell here with me.\" Let that be the sanctuary you offer Him today - not a grand space, but a willing heart in the middle of an ordinary place."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does God ask Israel to bring first - and what does the phrase \"every man whose heart compels him\" tell you about the kind of offering He wants?",
+        "Why does the reason God gives in verse 8 - \"so that I may dwell among them\" - change how you read the long list of materials in verses 3 through 7?",
+        "The Hebrew verb shakhan (to dwell, to tabernacle) reappears in John 1:14. How does the tent in the wilderness prepare the way for the Word becoming flesh?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about where each of you tends to locate God - distant and above, or near and among. Where does that picture come from?",
+        "Name one thing your heart genuinely moves you to offer God right now, and one thing you have only been giving out of obligation.",
+        "Ask each other: what would it mean this week to treat one ordinary place in your life as a sanctuary where God dwells with you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 29:45-46",
+          "text": "Then I will dwell among the Israelites and be their God. And they will know that I am the LORD their God, who brought them out of the land of Egypt so that I might dwell among them. I am the LORD their God."
+        },
+        {
+          "reference": "Ezekiel 37:27",
+          "text": "My dwelling place will be with them; I will be their God, and they will be My people."
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "Revelation 21:3",
+          "text": "And I heard a loud voice from the throne saying: \"Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 25-31; 35-40",
+          "note": "Read the tabernacle instructions and then the building account side by side. Notice how the same details are given twice - first as command, then as obedience - and how the whole structure exists for the single sentence in 25:8."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The God Who Tabernacles",
+      "title": "The LORD Who Dwells Among His People",
+      "description": "The God revealed in Exodus 25 is the Maker of heaven and earth who chooses, astonishingly, to take up residence in the middle of a freed-slave nation. He does not require a fixed temple in a great city; He asks for a portable tent and travels with His people through the wilderness. His holiness does not drive Him away from them but draws Him near. This is the same God who, in the fullness of time, would tabernacle among us in the person of Jesus Christ - true God, dwelling in true human flesh, present on the roads of the very world He made.",
+      "keyQuote": "And they are to make a sanctuary for Me, so that I may dwell among them.",
+      "lessonForUs": "The deepest desire of God in Scripture is not distance but nearness. From a tent in the wilderness to a manger in Bethlehem to the new creation where He dwells with His people forever, the whole story moves in one direction: God coming to live among us. He still asks for the same thing He asked of Israel - not a perfect house, but a willing heart - and He still moves in.",
+      "heading": "The LORD Who Dwells Among His People"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1754,
+  "scriptureReference_full": "Exodus 25:1-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shakhan H7931; miqdash H4720; mishkan; shekhinah) reflects standard lexical sources. The link between shakhan and the Septuagint/John 1:14 verb skenoo (eskenosen, 'He tabernacled') is widely noted in standard New Testament commentary on John's prologue."
+  ]
 }

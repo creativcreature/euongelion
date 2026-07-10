@@ -1,38 +1,188 @@
 {
   "day": 270,
-  "title": "Minor Prophets: Wait + Hope — Day 4 — Application",
-  "teaser": "Day 270 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
+  "title": "Praise the harvest that has not come",
+  "teaser": "When the fig tree is bare and the stalls are empty, Habakkuk still sings. The Minor Prophets teach a hope that worships before the harvest arrives.",
   "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
   "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 270"
+      "type": "scripture",
+      "reference": "Habakkuk 3:17-18",
+      "translation": "BSB",
+      "emphasis": [
+        "Though the fig tree does not bud",
+        "yet I will exult in the LORD",
+        "the God of my salvation"
+      ],
+      "hebrewOriginal": "כִּי־תְאֵנָה לֹא־תִפְרָח וְאֵין יְבוּל בַּגְּפָנִים",
+      "passage": "Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls, yet I will exult in the LORD; I will rejoice in the God of my salvation!"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חָכָה",
+      "transliteration": "chakah",
+      "pronunciation": "khah-KAH",
+      "meaning": "to wait, to await, to long for, to tarry expectantly",
+      "rootMeaning": "Not the waiting of a person stuck in a line, but the waiting of someone who leans toward what is coming - the way you lean toward the door when you know who is about to walk through it. It carries certainty inside the delay.",
+      "usageNote": "When the vision feels late, God's answer to Habakkuk is the imperative chakkeh-lo - 'wait for it' (Habakkuk 2:3). In the same breath He promises 'it will surely come and will not delay.' The command to wait and the promise of arrival are spoken together, so the waiting is never empty time.",
+      "wordByWord": [
+        {
+          "word": "חַכֵּה־לוֹ",
+          "transliteration": "chakkeh-lo",
+          "meaning": "wait for it - an active leaning toward what is promised"
+        },
+        {
+          "word": "כִּי־בֹא יָבֹא",
+          "transliteration": "ki-vo yavo",
+          "meaning": "it will surely come - the verb doubled for emphasis, 'coming it will come'"
+        },
+        {
+          "word": "לֹא יְאַחֵר",
+          "transliteration": "lo ye'acher",
+          "meaning": "it will not delay, it will not be late"
+        },
+        {
+          "word": "אֶעֱלוֹזָה",
+          "transliteration": "e'eloza",
+          "meaning": "I will exult, I will leap for joy (Habakkuk 3:18)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "קָוָה / qavah",
+          "reference": "The other great waiting word in the prophets - to wait by tension, like a cord pulled taut. Both chakah and qavah refuse to picture hope as passive. The waiting strains forward."
+        }
+      ],
+      "strongsNumber": "H2442",
+      "definition": "to wait, to await; to long for with expectation",
+      "usage": "The waiting God commands is not resignation. It is a posture of the whole self turned toward an appointed time that has not yet struck."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Twelve Voices, One Long Note of Hope",
+      "body": "The last twelve books of the Old Testament are small enough to read in an afternoon and heavy enough to carry a lifetime. We call them the Minor Prophets only because they are short. The voices in them spoke into Israel's hardest seasons - the rise of cruel empires, the long ache of exile, the slow, unglamorous work of rebuilding a ruined temple, the cold faith of people going through the motions.\n\nToday the reading gathers the closing five. Habakkuk argues with God about why the wicked prosper. Zephaniah warns of a coming day and then, astonishingly, sings. Haggai pushes discouraged builders to lift their trowels again. Zechariah floods the night with visions of a King who is coming. Malachi, the last prophet before four centuries of silence, leaves Israel staring down a road, watching for a messenger.\n\nRead together, they do something a single book cannot. They show you what hope looks like after it has been tested. Not the bright optimism of people whose lives are going well, but the stubborn, scarred hope of people whose fig trees have not budded - and who decide to worship anyway.",
+      "keyInsight": "The Minor Prophets are not minor in weight. They are the long training ground where Israel learned that hope is not a feeling about the future but a decision about who God is, made in the dark before the harvest comes in.",
+      "content": "The last twelve books of the Old Testament are small enough to read in an afternoon and heavy enough to carry a lifetime. We call them the Minor Prophets only because they are short. The voices in them spoke into Israel's hardest seasons - the rise of cruel empires, the long ache of exile, the slow, unglamorous work of rebuilding a ruined temple, the cold faith of people going through the motions.\n\nToday the reading gathers the closing five. Habakkuk argues with God about why the wicked prosper. Zephaniah warns of a coming day and then, astonishingly, sings. Haggai pushes discouraged builders to lift their trowels again. Zechariah floods the night with visions of a King who is coming. Malachi, the last prophet before four centuries of silence, leaves Israel staring down a road, watching for a messenger.\n\nRead together, they do something a single book cannot. They show you what hope looks like after it has been tested. Not the bright optimism of people whose lives are going well, but the stubborn, scarred hope of people whose fig trees have not budded - and who decide to worship anyway."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Farmer Who Sang at the Wrong Time",
+      "body": "A farmer learns to read his fields the way other people read faces. The bud on the fig, the set of fruit on the vine, the green coming up where it should - these are the signs that tell him whether his family eats this year. Habakkuk knew that language. So his last words are almost shocking on purpose.\n\nHe lists the disasters one at a time, slowly, like a man walking through his own ruined farm. No buds on the fig. No fruit on the vine. The olives failed. The fields gave nothing. The sheep pens stand empty; the stalls have no cattle. By the end of the list there is nothing left to lose. Every visible reason for joy has been crossed off.\n\nAnd then comes the word that turns the whole book: 'yet.' 'Yet I will exult in the LORD; I will rejoice in the God of my salvation.' He sings standing in the empty field. Not because he is pretending the field is full, but because he has found something the field could never give him and a bad year could never take.",
+      "connectionToTheme": "Habakkuk's 'yet' is the whole shape of waiting in hope - praise offered before the harvest, anchored not in the changing field but in the unchanging God of salvation.",
+      "content": "A farmer learns to read his fields the way other people read faces. The bud on the fig, the set of fruit on the vine, the green coming up where it should - these are the signs that tell him whether his family eats this year. Habakkuk knew that language. So his last words are almost shocking on purpose.\n\nHe lists the disasters one at a time, slowly, like a man walking through his own ruined farm. No buds on the fig. No fruit on the vine. The olives failed. The fields gave nothing. The sheep pens stand empty; the stalls have no cattle. By the end of the list there is nothing left to lose. Every visible reason for joy has been crossed off.\n\nAnd then comes the word that turns the whole book: 'yet.' 'Yet I will exult in the LORD; I will rejoice in the God of my salvation.' He sings standing in the empty field. Not because he is pretending the field is full, but because he has found something the field could never give him and a bad year could never take."
+    },
+    {
+      "type": "insight",
+      "heading": "Hope Has a God Who Sings First",
+      "body": "There is a moment in these five books that is easy to miss, and once you see it you cannot unsee it. We assume the waiting believer is the one who sings to God in the dark. Habakkuk certainly does. But turn a few pages to Zephaniah, and the singing turns the other direction.\n\n'The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing.' That is God singing over His people. The same God who tells Habakkuk to wait is, in Zephaniah, already rejoicing over the very people who are still waiting.\n\nThis is the secret strength underneath the whole 'Wait + Hope' season. Your hope does not generate itself out of sheer willpower. It rests on a God who is gladder about you than you are about Him - who is quieting you with His love before the harvest comes, singing over the empty field while you are still learning to say 'yet.'",
+      "historicalContext": "Zephaniah prophesied in the days of King Josiah (Zephaniah 1:1), before the Babylonian exile. His book begins with some of the most severe warnings in all the prophets and ends with one of the most tender promises - God singing over His people. Habakkuk and Zephaniah were near contemporaries, both watching the same storm gather over Judah.",
+      "fascinatingFact": "Habakkuk 3 is written as a psalm. It opens with a musical heading and ends with 'For the choirmaster. With stringed instruments' (Habakkuk 3:19). The prophet did not just record his hope - he set it to music so the worn-out community could sing it together, out loud, before the harvest ever came in.",
+      "content": "There is a moment in these five books that is easy to miss, and once you see it you cannot unsee it. We assume the waiting believer is the one who sings to God in the dark. Habakkuk certainly does. But turn a few pages to Zephaniah, and the singing turns the other direction.\n\n'The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing.' That is God singing over His people. The same God who tells Habakkuk to wait is, in Zephaniah, already rejoicing over the very people who are still waiting.\n\nThis is the secret strength underneath the whole 'Wait + Hope' season. Your hope does not generate itself out of sheer willpower. It rests on a God who is gladder about you than you are about Him - who is quieting you with His love before the harvest comes, singing over the empty field while you are still learning to say 'yet.'"
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The closing prophets command God's people to wait for a promise that 'will surely come and will not delay' (Habakkuk 2:3), and they fill that waiting with hope - a coming King, a temple filled with greater glory, the sun of righteousness rising with healing.",
+      "modernApplication": "Most of life is lived in the gap between the promise and the harvest. The diagnosis without the healing yet. The prayer prayed for years. The rebuilt thing that still looks like rubble. The prophets do not tell you to fake that the field is full. They teach you to say 'yet,' and to keep building, and to keep watching the road.",
+      "connectionPoint": "Haggai spoke to people who had given up on the temple, and God promised, 'The latter glory of this house will be greater than the former... And in this place I will provide peace' (Haggai 2:9). The unglamorous work of showing up - to the half-built thing, to the cold marriage, to the daily reading - is the very place God promises to fill with a glory you cannot yet see.",
+      "newTestamentEcho": "Hebrews picks up Habakkuk's exact words and aims them at every waiting believer: 'For in just a little while, He who is coming will come and will not delay. But My righteous one will live by faith' (Hebrews 10:37-38, quoting Habakkuk 2:3-4). The waiting of the prophets becomes the faith of the church."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is the fig tree bare right now - and what would it mean to say Habakkuk's 'yet' out loud over that empty field today?",
+      "additionalQuestions": [
+        "Habakkuk made his hope into a song so the community could sing it together. Is there someone you are waiting alongside, who needs to hear you say 'yet' before the harvest comes?",
+        "Zephaniah says God is already 'rejoicing over you with singing.' Is it easier for you to imagine God disappointed in you, or singing over you? What does that reveal?",
+        "Haggai told discouraged builders to keep working on something that still looked like rubble. What half-built, unglamorous thing is God asking you to keep showing up to?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, my fig tree is bare in places, and You know exactly where. I will not pretend the field is full. But teach me Habakkuk's 'yet.' Yet I will exult in You; yet I will rejoice in the God of my salvation. Where I am tired of waiting, remind me that You have already promised: it will surely come and will not delay. Where I have given up on the half-built thing, give me strength to lift the trowel again. And when I cannot sing, let me rest in the truth that You are singing over me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find the one bare field in your life - the prayer that hasn't been answered, the thing that won't bud - and over it, out loud, say Habakkuk's 'yet': 'Yet I will rejoice in the God of my salvation.' Then do one small, faithful thing in the direction of the promise, the way Haggai's builders picked up their tools again.",
+      "leavingAtCross": [
+        "The lie that I can only worship God once the harvest comes in",
+        "The exhaustion of waiting as if the outcome depended on the strength of my own grip",
+        "The quiet despair that has stopped showing up to the half-built thing"
+      ],
+      "receivingFromCross": [
+        "A 'yet' I can say honestly in an empty field, anchored in the God of my salvation",
+        "The promise that the One who is coming will come and will not delay",
+        "A God who is already rejoicing over me with singing while I am still learning to wait"
+      ],
+      "content": "Today, find the one bare field in your life - the prayer that hasn't been answered, the thing that won't bud - and over it, out loud, say Habakkuk's 'yet': 'Yet I will rejoice in the God of my salvation.' Then do one small, faithful thing in the direction of the promise, the way Haggai's builders picked up their tools again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between Habakkuk's 'yet' and simple optimism? Where does his joy come from, if not from the condition of the field?",
+        "How does Zephaniah's picture of God singing over His people change the way you understand your own waiting?",
+        "Malachi ends the Old Testament watching for a messenger who will prepare the way before the Lord. How does that posture - watching the road - sum up the whole 'Wait + Hope' season?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one bare field in your life right now, and let the other person say Habakkuk's 'yet' over it with you.",
+        "Talk about the difference between waiting that has given up and waiting that leans forward. Which one are you doing in this season?",
+        "Ask each other: what is the half-built, unglamorous thing God is asking you to keep showing up to, even though it still looks like rubble?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Habakkuk 2:3-4",
+          "text": "For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay. Look at the proud one; his soul is not upright - but the righteous will live by faith."
+        },
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Haggai 2:9",
+          "text": "The latter glory of this house will be greater than the former, says the LORD of Hosts. And in this place I will provide peace, declares the LORD of Hosts."
+        },
+        {
+          "reference": "Zechariah 9:9",
+          "text": "Rejoice greatly, O Daughter of Zion! Shout in triumph, O Daughter of Jerusalem! See, your King comes to you, righteous and victorious, humble and riding on a donkey, on a colt, the foal of a donkey."
+        },
+        {
+          "reference": "Malachi 4:2",
+          "text": "But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Habakkuk 3",
+          "note": "Read the whole psalm aloud, from the prayer of verse 2 to the empty fields of verses 17-18 to the 'feet like a deer' of verse 19. Notice it is built to be sung."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Habakkuk",
+      "title": "The Prophet Who Argued, Then Sang",
+      "era": "Late 7th century BC, as Babylon rose to power over Judah",
+      "key_trait": "Honest enough to question God out loud, faithful enough to worship Him before the answer arrived",
+      "description": "Habakkuk begins his book not with a sermon but with a complaint: 'How long, O LORD, must I call for help but You do not hear?' (Habakkuk 1:2). He cannot understand why God tolerates violence and lets the wicked prosper. God's answer is not a tidy explanation but a call to wait for an appointed time and to live by faith. By the end, Habakkuk is no longer demanding answers; he is singing in an empty field. His book maps the whole journey of waiting in hope - from raw protest to settled praise.",
+      "keyQuote": "Though the fig tree does not bud... yet I will exult in the LORD; I will rejoice in the God of my salvation.",
+      "lessonForUs": "You are allowed to bring God your hardest questions. Habakkuk did. But the prophet shows that the goal of the wrestling is not to win the argument - it is to arrive at a 'yet' you can sing standing in the ruins.",
+      "heading": "The Prophet Who Argued, Then Sang"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1669,
+  "scriptureReference_full": "Habakkuk 2:3-4; 3:17-19; Zephaniah 3:17; Haggai 2:6-9; Zechariah 9:9; Malachi 3:1; 4:2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chakah, H2442; the doubled verb ki-vo yavo and the imperative chakkeh-lo in Habakkuk 2:3) reflects standard lexical sources.",
+    "Hebrews 10:37-38 quotes Habakkuk 2:3-4, applying the prophet's call to wait to the New Testament church."
+  ]
 }

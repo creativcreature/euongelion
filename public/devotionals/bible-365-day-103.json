@@ -1,38 +1,194 @@
 {
   "day": 103,
   "title": "Solomon's Drift — Day 5 — Resolution",
-  "teaser": "Day 103 of Bible 365 — 1 Kings 11",
+  "teaser": "The wisest king in the world was not undone by a single great sin but by a thousand small affections, until his heart was no longer whole. The kingdom tore where the heart divided.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 103"
+      "type": "scripture",
+      "reference": "1 Kings 11:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "turned his heart away",
+        "not wholeheartedly devoted",
+        "as his father David had been"
+      ],
+      "hebrewOriginal": "וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו כִּלְבַב דָּוִיד אָבִיו",
+      "passage": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women. These women were from the nations about which the LORD had told the Israelites, \"You must not intermarry with them, for surely they will turn your hearts after their gods.\" Yet Solomon clung to these women in love. He had seven hundred wives of royal birth and three hundred concubines—and his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. Solomon followed Ashtoreth the goddess of the Sidonians and Milcom the abomination of the Ammonites. So Solomon did evil in the sight of the LORD; unlike his father David, he did not follow the LORD completely."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׁלֵם",
+      "transliteration": "shalem",
+      "pronunciation": "shah-LAME",
+      "meaning": "whole, complete, undivided, at peace",
+      "rootMeaning": "Shalem comes from the same root as shalom - peace. It does not mean sinless or perfect; it means whole, all of a piece, with nothing held back and nothing split off. A shalem heart is a heart that has not been divided between loyalties.",
+      "usageNote": "Verse 4 says Solomon's heart was not shalem with the LORD as David's had been. This is the verdict the whole chapter turns on. David sinned greatly - the text never hides it - yet his heart stayed whole toward God, broken open in repentance. Solomon's sins were quieter, more reasonable, more political. But his heart cracked down the middle, and the crack is what undid him.",
+      "wordByWord": [
+        {
+          "word": "וְלֹא־הָיָה",
+          "transliteration": "velo-hayah",
+          "meaning": "and it was not"
+        },
+        {
+          "word": "לְבָבוֹ",
+          "transliteration": "levavo",
+          "meaning": "his heart - the inner self, the seat of will and love"
+        },
+        {
+          "word": "שָׁלֵם",
+          "transliteration": "shalem",
+          "meaning": "whole, complete, undivided"
+        },
+        {
+          "word": "עִם־יְהוָה אֱלֹהָיו",
+          "transliteration": "im-YHWH Elohav",
+          "meaning": "with the LORD his God"
+        },
+        {
+          "word": "כִּלְבַב דָּוִיד אָבִיו",
+          "transliteration": "kilvav David aviv",
+          "meaning": "as the heart of David his father"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלוֹם / שָׁלֵם",
+          "reference": "Shalem and shalom share a root. The same word that means a whole heart also means peace. To lose wholeness toward God is to lose peace at the center; the divided heart is never at rest, because it is always at war with itself over which love rules."
+        }
+      ],
+      "strongsNumber": "H8003",
+      "definition": "complete, whole, full, at peace; of a heart, wholly devoted",
+      "usage": "Solomon had earlier been told this was the goal: \"So let your heart be fully devoted to the LORD our God\" (1 Kings 8:61), where the same idea stands. The word he prayed at the Temple dedication is the word he failed to live."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Did Not Fall — He Drifted",
+      "body": "We reach the end of Solomon's story expecting a crash, and there is no crash. There is a slow leaning. The man who built the Temple, who prayed for a discerning heart, who drew a queen from the ends of the earth to hear his wisdom, simply tilts a few degrees off true and keeps walking. By the time the text names it, he is old, and his heart has already gone.\n\nNotice how the chapter measures him. It does not say Solomon stopped believing in the LORD, or tore down the Temple, or denied the God who had appeared to him twice. It says his heart was \"not wholeheartedly devoted to the LORD his God, as his father David had been.\" The standard is not perfection. David was no clean comparison; David's failures were public and bloody. The standard is wholeness. David kept a heart that was all one piece toward God even when he broke it. Solomon kept a heart that was split.\n\nThe split came in through love. Verse 2 is blunt: \"Solomon clung to these women in love.\" Each marriage was, by the logic of the age, wise - a treaty sealed, a border secured, a kingdom stitched to the neighbors by affection. But every alliance brought a god, and every god brought an altar, and on a hill east of Jerusalem, in sight of the Temple, Solomon built high places for Chemosh and Molech. He did not choose against the LORD in a single hour. He chose for a hundred smaller goods, each one reasonable, until the sum of them had quietly become a god.",
+      "keyInsight": "Solomon was not destroyed by a single great rebellion but by a thousand small affections, each defensible on its own, that together divided a heart that was meant to be whole.",
+      "content": "We reach the end of Solomon's story expecting a crash, and there is no crash. There is a slow leaning. The man who built the Temple, who prayed for a discerning heart, who drew a queen from the ends of the earth to hear his wisdom, simply tilts a few degrees off true and keeps walking. By the time the text names it, he is old, and his heart has already gone.\n\nNotice how the chapter measures him. It does not say Solomon stopped believing in the LORD, or tore down the Temple, or denied the God who had appeared to him twice. It says his heart was \"not wholeheartedly devoted to the LORD his God, as his father David had been.\" The standard is not perfection. David was no clean comparison; David's failures were public and bloody. The standard is wholeness. David kept a heart that was all one piece toward God even when he broke it. Solomon kept a heart that was split.\n\nThe split came in through love. Verse 2 is blunt: \"Solomon clung to these women in love.\" Each marriage was, by the logic of the age, wise - a treaty sealed, a border secured, a kingdom stitched to the neighbors by affection. But every alliance brought a god, and every god brought an altar, and on a hill east of Jerusalem, in sight of the Temple, Solomon built high places for Chemosh and Molech. He did not choose against the LORD in a single hour. He chose for a hundred smaller goods, each one reasonable, until the sum of them had quietly become a god."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Engineer Who Lost the Tolerance",
+      "content": "A friend of mine spent years in aircraft maintenance, and he told me the thing that ends a machine is almost never the dramatic failure. It is tolerance drift. A part is specified to sit within a thousandth of an inch. Each inspection, it is a hair outside, and a hair is nothing, so it passes. The next cycle it is a hair more. No single reading ever crosses the line that would force you to stop the aircraft. The plane that fails is the one where every individual measurement looked acceptable and the sum of them did not.\n\nHe said the hardest discipline in the trade was not catching the obvious break. Anyone can ground a plane with a cracked spar. The discipline was respecting the tolerance when the part still looked fine, refusing to let \"close enough\" become the new standard one acceptable hair at a time.\n\nSolomon never read a measurement that screamed at him to stop. Marrying Pharaoh's daughter was statecraft. Honoring a foreign wife's god was courtesy. Building her a high place was generosity. Each reading passed inspection. And the heart that was meant to be whole drifted, a thousandth of an inch at a time, until it was no longer devoted to the LORD at all - and there had been no single moment to point to where the line was crossed.",
+      "connectionToTheme": "Solomon's ruin was not a break but a drift - the accumulation of small allowances that never set off an alarm, until the whole was no longer whole.",
+      "body": "A friend of mine spent years in aircraft maintenance, and he told me the thing that ends a machine is almost never the dramatic failure. It is tolerance drift. A part is specified to sit within a thousandth of an inch. Each inspection, it is a hair outside, and a hair is nothing, so it passes. The next cycle it is a hair more. No single reading ever crosses the line that would force you to stop the aircraft. The plane that fails is the one where every individual measurement looked acceptable and the sum of them did not.\n\nHe said the hardest discipline in the trade was not catching the obvious break. Anyone can ground a plane with a cracked spar. The discipline was respecting the tolerance when the part still looked fine, refusing to let \"close enough\" become the new standard one acceptable hair at a time.\n\nSolomon never read a measurement that screamed at him to stop. Marrying Pharaoh's daughter was statecraft. Honoring a foreign wife's god was courtesy. Building her a high place was generosity. Each reading passed inspection. And the heart that was meant to be whole drifted, a thousandth of an inch at a time, until it was no longer devoted to the LORD at all - and there had been no single moment to point to where the line was crossed."
+    },
+    {
+      "type": "insight",
+      "heading": "The Torn Cloak and the Lamp Left Burning",
+      "body": "When the LORD pronounces the consequence, He does it twice, and the second time He hands the reader a picture that will not leave. Out in an open field, the prophet Ahijah meets Jeroboam wearing a new cloak. He takes it off, tears it into twelve pieces, and gives ten of them away: \"Behold, I will tear the kingdom out of the hand of Solomon.\" The undivided robe is ripped because the undivided heart was ripped first. The tearing in the field is only the outward shape of a tearing that already happened inside the king.\n\nBut watch what God will not tear. \"I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem.\" The judgment is real and severe - ten tribes gone, the kingdom split, adversaries raised on every side. And underneath the judgment runs a stubborn promise God refuses to break. The lamp stays lit. For David's sake, not Solomon's. For the sake of a covenant God made and will keep though the king could not.\n\nThis is the deep grammar of the chapter, and of the whole canon after it. The torn kingdom and the unquenched lamp are not contradictions. They are the two true things God holds at once: He will not pretend a divided heart is whole, and He will not let the divided heart have the last word over His promise. The lamp burning in Jerusalem is the thread that runs forward through David's line all the way to a child born in David's city - the King whose heart would not divide.",
+      "historicalContext": "First Kings was compiled during or after the exile, written for a people who had watched the kingdom Ahijah's torn cloak predicted come fully apart - the ten northern tribes lost to Assyria, Jerusalem itself eventually fallen to Babylon. The original readers were not reading a cautionary tale about a foreign king; they were reading the headwaters of their own catastrophe. And they were reading it alongside the lamp-promise, which is why hope survived the ruin: the covenant outlived the kingdom.",
+      "fascinatingFact": "Solomon's drift fulfilled a warning written centuries before he was born. Deuteronomy 17:17, the law for Israel's future king, said plainly: \"He must not take many wives for himself, lest his heart go astray.\" The very thing the king was told would divide his heart is the very thing 1 Kings 11 names as the cause. Solomon did not break a rule he never knew; he leaned slowly against a guardrail set down generations earlier precisely to catch this fall.",
+      "content": "When the LORD pronounces the consequence, He does it twice, and the second time He hands the reader a picture that will not leave. Out in an open field, the prophet Ahijah meets Jeroboam wearing a new cloak. He takes it off, tears it into twelve pieces, and gives ten of them away: \"Behold, I will tear the kingdom out of the hand of Solomon.\" The undivided robe is ripped because the undivided heart was ripped first. The tearing in the field is only the outward shape of a tearing that already happened inside the king.\n\nBut watch what God will not tear. \"I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem.\" The judgment is real and severe - ten tribes gone, the kingdom split, adversaries raised on every side. And underneath the judgment runs a stubborn promise God refuses to break. The lamp stays lit. For David's sake, not Solomon's. For the sake of a covenant God made and will keep though the king could not.\n\nThis is the deep grammar of the chapter, and of the whole canon after it. The torn kingdom and the unquenched lamp are not contradictions. They are the two true things God holds at once: He will not pretend a divided heart is whole, and He will not let the divided heart have the last word over His promise. The lamp burning in Jerusalem is the thread that runs forward through David's line all the way to a child born in David's city - the King whose heart would not divide."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon, the wisest and richest king Israel ever had, lost the kingdom not through one great crime but through a heart that slowly stopped being whole toward God - divided a little at a time by loves that each seemed harmless.",
+      "modernApplication": "Few of us will renounce God in a single decision. We are far more likely to do what Solomon did: keep the faith on the books while a hundred small affections quietly reorganize the heart. The career that asks for one more compromise. The relationship that asks us to dim one conviction. The comfort we will not finally surrender. None of them announces itself as a rival god. They simply accumulate, until the thing that actually runs us is no longer the One we still say we believe.",
+      "connectionPoint": "Wholeness, not flawlessness, is the measure. David fell hard and stayed whole because he came back broken every time. Solomon stayed respectable and went hollow because he never had a single sin large enough to drive him to his knees. The danger to a serious faith is rarely a dramatic fall; it is the slow, reasonable, un-repented drift that never feels like a fall at all.",
+      "newTestamentEcho": "Jesus said, \"The Queen of the South will rise at the judgment... for she came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here\" (Luke 11:31). The greater-than-Solomon is the King whose heart never divided - who could say, going to the cross, \"I always do what pleases Him.\" Where Solomon's whole heart failed, His held; and the writer of Hebrews says He is therefore \"able to save completely those who draw near to God through Him\" (Hebrews 7:25). The wholeness Solomon could not keep, Christ keeps for us, and gives back."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is your heart drifting so slowly that no single step has ever felt like a decision against God?",
+      "additionalQuestions": [
+        "What loves in your life are good in themselves but have quietly begun to set the agenda your faith used to set?",
+        "David fell harder than Solomon yet stayed whole; Solomon stayed respectable yet went hollow. Which failure is the real danger for you right now?",
+        "Where has 'close enough' slowly become your standard, the way each acceptable hair of drift eventually grounds the plane?",
+        "If God measured your heart today by wholeness rather than performance, what would He find divided?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am more like Solomon than I want to admit. I have not denied You in a single hour; I have just let a hundred smaller loves crowd in until my heart is no longer all one piece toward You. Show me the drift I cannot see, the tolerance I have let slip a hair at a time. I do not ask You to find me flawless - You will not. I ask You to make me whole. Unite my divided heart to fear Your name. And thank You that the wholeness I keep losing, the greater Son of David has kept, and lives to give. Make my heart shalem again, for His sake. Amen.",
+      "scripture_echo": "1 Kings 11:4; Psalm 86:11",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one drift before it becomes a verdict. Identify a single 'reasonable' affection that has been quietly reordering your heart, and bring it back under the LORD on purpose - one small act of devotion against the drift, today, before it grows old.",
+      "leavingAtCross": [
+        "The thousand small allowances I have let pass inspection because no single one felt like a sin",
+        "The respectable, undramatic drift that never drove me to my knees",
+        "The illusion that believing in God on the books is the same as a heart that is whole toward Him"
+      ],
+      "receivingFromCross": [
+        "A heart measured by wholeness, not flawlessness - and a way back whenever it splits",
+        "The greater-than-Solomon King whose devotion never divided, given to cover mine",
+        "The unquenched lamp: God's promise outlasts my drifting and refuses to have the last word taken from it"
+      ],
+      "content": "Today, name one drift before it becomes a verdict. Identify a single 'reasonable' affection that has been quietly reordering your heart, and bring it back under the LORD on purpose - one small act of devotion against the drift, today, before it grows old."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word shalem mean, and why does the chapter measure Solomon by it rather than by sinlessness?",
+        "How can David - whose sins were public and severe - be the standard of a 'whole' heart that Solomon fails to meet?",
+        "What two things does God hold together when He tears the kingdom yet leaves David a 'lamp' in Jerusalem?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one affection in your life that is good in itself but has begun to compete for the place God should hold.",
+        "Talk about the difference between a dramatic fall and a slow drift - which one have you actually had to fight, and how would you even notice the drift?",
+        "Ask each other: where is 'close enough' quietly becoming your new standard with God, and what would one act of re-devotion look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 17:17",
+          "text": "He must not take many wives for himself, lest his heart go astray. He must not accumulate for himself large amounts of silver and gold."
+        },
+        {
+          "reference": "1 Kings 8:61",
+          "text": "So let your heart be fully devoted to the LORD our God, as it is this day, to walk in His statutes and to keep His commandments."
+        },
+        {
+          "reference": "Nehemiah 13:26",
+          "text": "Did not King Solomon of Israel sin in matters like this? There was not a king like him among many nations, and he was loved by his God, who made him king over all Israel—yet foreign women drew him into sin."
+        },
+        {
+          "reference": "Luke 11:31",
+          "text": "The Queen of the South will rise at the judgment with the men of this generation and condemn them; for she came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here."
+        },
+        {
+          "reference": "Hebrews 7:25",
+          "text": "Therefore He is able to save completely those who draw near to God through Him, since He always lives to intercede for them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter in one sitting, watching the movement from the divided heart (vv. 1-8) to the LORD's verdict (vv. 9-13) to the adversaries raised up (vv. 14-25) to the torn cloak and the lamp left burning (vv. 26-39)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wise King Whose Heart Divided",
+      "era": "10th century BC",
+      "key_trait": "Unmatched wisdom undone by an undivided wisdom's opposite - a divided heart",
+      "description": "Son of David, third king of Israel, builder of the Temple, the man to whom God gave a wisdom no one before or after could match. He began with a heart that loved the LORD (1 Kings 3:3) and a prayer that Israel's heart be 'fully devoted' to God (1 Kings 8:61). He ended with a heart 'not wholeheartedly devoted to the LORD,' having built altars to the gods of his many wives. His reign closes the high noon of the united kingdom; the tearing prophesied here comes apart in the very next chapter.",
+      "keyQuote": "For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been.",
+      "lessonForUs": "The wisest man who ever lived was not brought down by ignorance or by one great crime, but by a slow division of the heart he was wise enough to see coming and never stopped. If wisdom alone could not keep Solomon whole, our hearts need more than good sense - they need the greater King who keeps the wholeness we keep losing.",
+      "heading": "The Wise King Whose Heart Divided"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2218,
+  "scriptureReference_full": "1 Kings 11",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shalem, H8003) reflects standard lexical sources; the shalem/shalom resonance is a widely noted feature of the root."
+  ]
 }

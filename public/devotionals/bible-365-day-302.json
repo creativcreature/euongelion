@@ -1,38 +1,187 @@
 {
   "day": 302,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 1 — Hook",
-  "teaser": "Day 302 of Bible 365 — Luke 15, 24",
+  "title": "Found While Still Far Off",
+  "teaser": "A father runs to a son still on the horizon; a risen stranger walks two grieving travelers home. Luke's gospel keeps insisting: God finds you before you recognize Him.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 302"
+      "type": "scripture",
+      "reference": "Luke 15:20, 24",
+      "translation": "BSB",
+      "emphasis": [
+        "while he was still in the distance",
+        "his father saw him",
+        "was lost and is found"
+      ],
+      "greekOriginal": "ἔτι δὲ αὐτοῦ μακρὰν ἀπέχοντος εἶδεν αὐτὸν ὁ πατὴρ αὐτοῦ καὶ ἐσπλαγχνίσθη",
+      "passage": "So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him. ... \"For this son of mine was dead and is alive again! He was lost and is found!\" So they began to celebrate."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐσπλαγχνίσθη",
+      "transliteration": "esplanchnisthē",
+      "pronunciation": "es-plangkh-NIS-thay",
+      "meaning": "he was moved with compassion; his inward parts were stirred",
+      "rootMeaning": "From splanchna, the inward organs - the bowels, the gut. To the ancient mind these were the seat of deepest feeling. The verb does not describe a polite sympathy but a physical lurch of love, a turning-over in the chest before the legs even move.",
+      "usageNote": "This is the same verb Luke uses when Jesus sees the widow of Nain burying her only son (Luke 7:13), and the verb the Samaritan feels when he sees the beaten man in the ditch (Luke 10:33). In Luke 15:20 it is what the father feels the instant he spots a speck on the road. The compassion fires before the confession is heard - the running starts before the apology starts.",
+      "wordByWord": [
+        {
+          "word": "ἔτι μακρὰν ἀπέχοντος",
+          "transliteration": "eti makran apechontos",
+          "meaning": "while he was still a long way off, still at a distance"
+        },
+        {
+          "word": "εἶδεν",
+          "transliteration": "eiden",
+          "meaning": "he saw - which means the father had been watching the road"
+        },
+        {
+          "word": "ὁ πατὴρ",
+          "transliteration": "ho patēr",
+          "meaning": "the father"
+        },
+        {
+          "word": "ἐσπλαγχνίσθη",
+          "transliteration": "esplanchnisthē",
+          "meaning": "he was moved in his gut with compassion"
+        },
+        {
+          "word": "ἔδραμεν",
+          "transliteration": "edramen",
+          "meaning": "he ran - an old man, hiking up his robe, running"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διηνοίχθησαν",
+          "reference": "In Luke 24:31 the travelers' eyes 'were opened' (diēnoichthēsan) at the breaking of the bread - the same gospel that shows the father seeing the son at a distance shows the disciples finally seeing the Son up close."
+        }
+      ],
+      "strongsNumber": "G4697",
+      "definition": "to be moved as to one's inward parts; to feel deep compassion or pity",
+      "usage": "In the Gospels splanchnizomai is used almost exclusively of Jesus - and here, of the father who stands for God. The word makes the theology unmistakable: the running father feels what Christ feels."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Luke Tells the Same Story Twice",
+      "body": "Open Luke to chapter 15 and you find Jesus surrounded by the wrong crowd. Tax collectors and notorious sinners are pressing in to hear Him, and the respectable people are muttering: \"This man welcomes sinners and eats with them.\" Instead of defending Himself, Jesus tells three stories in a row - a lost sheep, a lost coin, a lost son - and every one of them ends the same way: something is missing, someone goes looking, and when it is found there is a party.\n\nThe shepherd does not wait for the sheep to find its own way home. He leaves the ninety-nine and goes after the one \"until he finds it,\" and when he does he hoists it onto his shoulders and throws a celebration. The woman lights a lamp and sweeps the whole house for one coin and then calls her neighbors to rejoice. And the father - the father does the most undignified thing of all. He has been watching the road. He sees his son \"while he was still in the distance,\" and a grown man in a culture where elders did not run picks up his robe and sprints down the lane to a boy who has not yet finished his rehearsed apology.\n\nThen turn to chapter 24, the last chapter Luke writes, and notice that the gospel ends the way it has been teaching all along. Two disciples are trudging away from Jerusalem toward a village called Emmaus, about seven miles off, talking over the catastrophe of the last three days. \"Jesus Himself came up and walked along with them. But their eyes were kept from recognizing Him.\" The risen Lord does not announce Himself. He falls into step, asks what they are discussing, and lets them pour out their grief to the very person they are grieving. The seeking that filled chapter 15 has not stopped. It has walked out of the parable and onto the road.",
+      "keyInsight": "Luke frames his whole gospel between a God who runs to a son still far off and a God who walks beside disciples who cannot yet see Him. The first move is always His.",
+      "content": "Open Luke to chapter 15 and you find Jesus surrounded by the wrong crowd. Tax collectors and notorious sinners are pressing in to hear Him, and the respectable people are muttering: \"This man welcomes sinners and eats with them.\" Instead of defending Himself, Jesus tells three stories in a row - a lost sheep, a lost coin, a lost son - and every one of them ends the same way: something is missing, someone goes looking, and when it is found there is a party.\n\nThe shepherd does not wait for the sheep to find its own way home. He leaves the ninety-nine and goes after the one \"until he finds it,\" and when he does he hoists it onto his shoulders and throws a celebration. The woman lights a lamp and sweeps the whole house for one coin and then calls her neighbors to rejoice. And the father - the father does the most undignified thing of all. He has been watching the road. He sees his son \"while he was still in the distance,\" and a grown man in a culture where elders did not run picks up his robe and sprints down the lane to a boy who has not yet finished his rehearsed apology.\n\nThen turn to chapter 24, the last chapter Luke writes, and notice that the gospel ends the way it has been teaching all along. Two disciples are trudging away from Jerusalem toward a village called Emmaus, about seven miles off, talking over the catastrophe of the last three days. \"Jesus Himself came up and walked along with them. But their eyes were kept from recognizing Him.\" The risen Lord does not announce Himself. He falls into step, asks what they are discussing, and lets them pour out their grief to the very person they are grieving. The seeking that filled chapter 15 has not stopped. It has walked out of the parable and onto the road."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Porch Light",
+      "body": "There is a kind of waiting that does not look like much from the outside. A mother I know left the porch light on for eleven years. Her son had walked out after a fight neither of them could later quite reconstruct, and for a long time there was no address to write to and no number that still worked. Friends gently suggested she let it go. She kept the light on anyway, and she kept the road in the corner of her eye every time she pulled into the driveway.\n\nShe used to say the strange thing was not the leaving. The strange thing was how much of the homecoming was already finished before he ever turned onto the street. The room was made. The plate was in the cupboard. The forgiveness had been worked through, alone, over years, so that when the car finally did pull up there was nothing left to negotiate - only a woman already halfway down the steps before he had the door open.\n\nThat is the posture of Luke 15. The father is not surprised by the son on the horizon. He is found because he was being watched for. The compassion was loaded and waiting; the boy walked into a welcome that had been ready for him the whole time he thought he was alone in a far country.",
+      "connectionToTheme": "The son is found while still far off because the father never stopped watching the road - homecoming is something God prepares long before we turn around.",
+      "content": "There is a kind of waiting that does not look like much from the outside. A mother I know left the porch light on for eleven years. Her son had walked out after a fight neither of them could later quite reconstruct, and for a long time there was no address to write to and no number that still worked. Friends gently suggested she let it go. She kept the light on anyway, and she kept the road in the corner of her eye every time she pulled into the driveway.\n\nShe used to say the strange thing was not the leaving. The strange thing was how much of the homecoming was already finished before he ever turned onto the street. The room was made. The plate was in the cupboard. The forgiveness had been worked through, alone, over years, so that when the car finally did pull up there was nothing left to negotiate - only a woman already halfway down the steps before he had the door open.\n\nThat is the posture of Luke 15. The father is not surprised by the son on the horizon. He is found because he was being watched for. The compassion was loaded and waiting; the boy walked into a welcome that had been ready for him the whole time he thought he was alone in a far country."
+    },
+    {
+      "type": "insight",
+      "heading": "Found Before You Recognize",
+      "body": "Set the two scenes side by side and one phrase decides everything. In Luke 15 the father sees the son \"while he was still in the distance.\" In Luke 24 the disciples walk for miles with the risen Christ while \"their eyes were kept from recognizing Him.\" In both, the finding runs ahead of the seeing. The father sees the boy before the boy can make out his father's face. Jesus sees the two travelers - knows them, joins them, teaches them - long before they have any idea who is beside them.\n\nThis is the quiet hinge of the whole gospel. We tend to imagine the spiritual life as our search for God, a long road we walk hoping to recognize Him at the end of it. Luke keeps reversing the camera. The lost sheep does not find the shepherd; the coin does not roll back to the woman; the son's careful speech is interrupted by a kiss; the Emmaus disciples do not deduce the resurrection - they are overtaken by it on a road they were walking in the wrong direction. Recognition, when it finally comes, is not the achievement that earns the welcome. It is the gift that arrives inside a welcome already underway.\n\nLuke even tells us where recognition lands. It is not on the road, in the brilliant exposition of Scripture - though their hearts were burning the whole time. It is at the table: \"When He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus.\" The same gospel that began with grumbling about a man who \"welcomes sinners and eats with them\" ends with sinners' eyes opening over broken bread. The meal that the Pharisees despised is the meal where God is seen.",
+      "historicalContext": "Luke writes for a largely Gentile readership some decades after the resurrection, a community that did not walk the roads of Galilee and never saw the empty tomb. The Emmaus account answers their unspoken question - how do we, who arrived late, meet the risen Christ? Luke's answer is deliberate: in the opening of the Scriptures and the breaking of the bread, the two practices that already shaped his readers' worship. The story is told so that the latecomers know the same Lord still falls into step with them.",
+      "fascinatingFact": "The Greek phrase for the disciples' eyes being 'opened' at the table (diēnoichthēsan) is the same word Luke uses moments later when Jesus 'opened their minds to understand the Scriptures' (Luke 24:45) - and the same root behind the father in Acts who has his understanding opened. For Luke, seeing Christ and understanding the Scriptures are the single act of one God prying open eyes that had been kept shut.",
+      "content": "Set the two scenes side by side and one phrase decides everything. In Luke 15 the father sees the son \"while he was still in the distance.\" In Luke 24 the disciples walk for miles with the risen Christ while \"their eyes were kept from recognizing Him.\" In both, the finding runs ahead of the seeing. The father sees the boy before the boy can make out his father's face. Jesus sees the two travelers - knows them, joins them, teaches them - long before they have any idea who is beside them.\n\nThis is the quiet hinge of the whole gospel. We tend to imagine the spiritual life as our search for God, a long road we walk hoping to recognize Him at the end of it. Luke keeps reversing the camera. The lost sheep does not find the shepherd; the coin does not roll back to the woman; the son's careful speech is interrupted by a kiss; the Emmaus disciples do not deduce the resurrection - they are overtaken by it on a road they were walking in the wrong direction. Recognition, when it finally comes, is not the achievement that earns the welcome. It is the gift that arrives inside a welcome already underway.\n\nLuke even tells us where recognition lands. It is not on the road, in the brilliant exposition of Scripture - though their hearts were burning the whole time. It is at the table: \"When He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus.\" The same gospel that began with grumbling about a man who \"welcomes sinners and eats with them\" ends with sinners' eyes opening over broken bread. The meal that the Pharisees despised is the meal where God is seen."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In Luke 15 the father runs to a son still far off and throws a feast because the boy who was dead is alive again; in Luke 24 the risen Christ walks beside two travelers who cannot recognize Him, and is finally known in the breaking of the bread.",
+      "modernApplication": "You may feel like the one doing the searching - reading, praying, hoping to catch sight of God at the far end of effort. Luke gently turns it around. If you are anywhere near the road home, it is because Someone has been watching the road. The burning in the chest, the ache that pulled you back, the moment a passage suddenly opened - those are not your achievements. They are the father already running.",
+      "connectionPoint": "Luke binds these two scenes with a single thread that the rest of Scripture had been spinning. Ezekiel heard God promise, \"I Myself will search for My sheep and seek them out\" (Ezekiel 34:11); Luke shows that Shepherd arrived in person, leaving the ninety-nine. The covenant meals of the Old Testament - Passover lamb, fellowship offerings eaten before the LORD - find their center at a table in Emmaus where the host is the sacrifice and the guests' eyes come open.",
+      "newTestamentEcho": "The father moved with compassion at a distance is the same heart Paul names: \"While we were still sinners, Christ died for us\" (Romans 5:8). Still sinners, still far off - and already loved into the running. The God who sought the one lost sheep is the Good Shepherd who lays down His life for the sheep (John 10:11)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you assumed you were the one searching for God - when He may have been the one watching the road for you?",
+      "additionalQuestions": [
+        "The father saw the son 'while he was still in the distance.' What would change if you believed God's compassion toward you fired before your apology was finished?",
+        "The Emmaus disciples' hearts burned before they recognized who was speaking. Where have you felt that burning - a moment of unexpected ache or hope - and brushed past it?",
+        "Recognition came at the table, in broken bread. Where are the ordinary places - a meal, a conversation, a quiet Scripture - where you might be more open to seeing Christ already beside you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have spent so long thinking I had to find my way back to You. Thank You for watching the road. Thank You for running while I was still far off and still rehearsing my excuses. Where my eyes are kept from seeing You, open them. Walk with me on the road I am on, even the wrong road, even today. And when You break the bread, let me finally recognize the One who has been beside me the whole time. Through Christ, the Shepherd who came looking. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place you have been treating faith as your search for a distant God. Then say it back the other way: 'You have been watching the road for me.' Carry that single reversal through the day - and at one ordinary meal, pause before you eat and ask the risen Christ, who was known in the breaking of the bread, to be recognized at your table.",
+      "leavingAtCross": [
+        "The exhausting belief that I have to find God before He will receive me",
+        "The shame that keeps rehearsing its speech instead of letting itself be embraced",
+        "The dullness that walks beside Christ for miles and never looks up"
+      ],
+      "receivingFromCross": [
+        "A Father who sees me while I am still in the distance and runs",
+        "A welcome that was prepared and waiting before I ever turned around",
+        "Eyes that can be opened over something as ordinary as broken bread"
+      ],
+      "content": "Today, name one place you have been treating faith as your search for a distant God. Then say it back the other way: 'You have been watching the road for me.' Carry that single reversal through the day - and at one ordinary meal, pause before you eat and ask the risen Christ, who was known in the breaking of the bread, to be recognized at your table."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Luke 15:20, at what point does the father see the son and start running - and what does that timing reveal about how God receives those who return?",
+        "Why does Luke tell us that the Emmaus disciples' 'eyes were kept from recognizing' Jesus, rather than simply saying they did not notice Him?",
+        "Both scenes climax at a meal - the fattened calf in Luke 15 and the broken bread in Luke 24. What is Luke teaching by ending the search at a table?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a 'far country' season - a stretch when you felt distant from God - and where, looking back, you can now see Him already moving toward you.",
+        "The Pharisees grumbled that Jesus 'welcomes sinners and eats with them.' Talk honestly about whether you find that welcome easy to receive for yourself, or easier to resent in others.",
+        "Ask each other: where might Christ be walking beside you right now in a form you have not yet recognized?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:7",
+          "text": "In the same way, I tell you that there will be more joy in heaven over one sinner who repents than over ninety-nine righteous ones who do not need to repent."
+        },
+        {
+          "reference": "Luke 24:30-31",
+          "text": "While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus—and He disappeared from their sight."
+        },
+        {
+          "reference": "Ezekiel 34:11",
+          "text": "For this is what the Lord GOD says: Behold, I Myself will search for My flock and seek them out."
+        },
+        {
+          "reference": "Romans 5:8",
+          "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15 and Luke 24",
+          "note": "Read the three parables of chapter 15 in one sitting, then the Emmaus account in chapter 24, watching how seeking, finding, and a celebratory meal recur in each. Notice the verb 'rejoice/celebrate' threading through both chapters."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cleopas",
+      "title": "One of the Travelers on the Emmaus Road",
+      "description": "One of two disciples walking the seven miles from Jerusalem to Emmaus on the first Easter afternoon, named in Luke 24:18. He is not one of the Twelve - an ordinary follower, gutted by the crucifixion, walking away from the city in grief. The risen Jesus joins him unrecognized, listens to his despair, reopens the Scriptures to him, and is finally known in the breaking of the bread. Cleopas then runs the seven miles back to tell the others.",
+      "keyQuote": "Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?",
+      "lessonForUs": "Cleopas is every latecomer to the gospel - heartbroken, slow to see, walking the wrong way. He did not find Christ by the strength of his belief; Christ found him on a road of defeat and opened his eyes at a table. The same Lord still falls into step with those who cannot yet see Him.",
+      "heading": "One of the Travelers on the Emmaus Road"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2558,
+  "scriptureReference_full": "Luke 15:1-7, 17-24, 32; 24:13-35",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (splanchnizomai G4697; dianoigō) reflects standard lexical sources (BDAG, Thayer). The compassion-before-confession reading of Luke 15:20 follows the plain sequence of the Greek text.",
+    "The shepherd-seeking-the-flock connection draws on Ezekiel 34:11; the meal-recognition theme follows the structure of Luke 24:30-35."
+  ]
 }

@@ -1,38 +1,186 @@
 {
   "day": 187,
-  "title": "Job: Suffering + Mystery — Day 5 — Resolution",
-  "teaser": "Day 187 of Bible 365 — Job 1-2, 38-42",
+  "title": "When the answer is a Face, not a reason",
+  "teaser": "Job demanded a reason for his suffering. God gave him something better: Himself. \"Now my eyes have seen You.\"",
   "framework": "Job 1-2, 38-42 — Job: Suffering + Mystery",
   "scriptureReference": "Job 1-2, 38-42",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 187"
+      "type": "scripture",
+      "reference": "Job 42:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "things too wonderful for me to know",
+        "My ears had heard of You",
+        "now my eyes have seen You"
+      ],
+      "hebrewOriginal": "לְשֵׁמַע אֹזֶן שְׁמַעְתִּיךָ וְעַתָּה עֵינִי רָאָתְךָ",
+      "passage": "Then Job replied to the LORD: \"I know that You can do all things and that no plan of Yours can be thwarted. You asked, 'Who is this who conceals My counsel without knowledge?' Surely I spoke of things I did not understand, things too wonderful for me to know. You said, 'Listen now, and I will speak. I will question you, and you shall inform Me.' My ears had heard of You, but now my eyes have seen You. Therefore I retract my words, and I repent in dust and ashes.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Job 1-2, 38-42**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Job 1-2, 38-42 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רָאָה",
+      "transliteration": "ra'ah",
+      "pronunciation": "raw-AH",
+      "meaning": "to see, to perceive, to look upon, to behold",
+      "rootMeaning": "The ordinary Hebrew verb for seeing with the eyes - but used across the Old Testament for the deeper sight of encounter: to look on a face, to witness, to be shown something true.",
+      "usageNote": "Job ends the whole book by setting two verbs side by side: shama (to hear) and ra'ah (to see). \"My ears had heard of You, but now my eyes have seen You.\" Job had spent forty chapters with a God he had only heard about. The resolution is not new information - it is sight.",
+      "wordByWord": [
+        {
+          "word": "לְשֵׁמַע אֹזֶן",
+          "transliteration": "lesheima ozen",
+          "meaning": "by the hearing of the ear - secondhand report, what reaches you through others"
+        },
+        {
+          "word": "שְׁמַעְתִּיךָ",
+          "transliteration": "shema'tikha",
+          "meaning": "I had heard of You"
+        },
+        {
+          "word": "וְעַתָּה",
+          "transliteration": "ve'attah",
+          "meaning": "but now - the hinge of the whole book"
+        },
+        {
+          "word": "עֵינִי",
+          "transliteration": "eini",
+          "meaning": "my eye"
+        },
+        {
+          "word": "רָאָתְךָ",
+          "transliteration": "ra'atkha",
+          "meaning": "has seen You"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רָאָה / יְהוָה יִרְאֶה",
+          "reference": "From the same root comes Abraham's name for Moriah: YHWH yireh, 'the LORD will see / will provide' (Genesis 22:14). The God who sees is the God who provides - the thread runs from the mountain of provision to Job seeing God in the storm."
+        }
+      ],
+      "strongsNumber": "H7200",
+      "definition": "to see, look at, inspect, perceive, consider; to be shown, to appear",
+      "usage": "Ra'ah is not a word for understanding an argument. It is a word for laying eyes on a person. Job's relief at the end of the book is not that the puzzle was solved, but that the One he had only heard about finally stood in front of him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Job: Suffering + Mystery. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the answer to \"Why?\" (John 11:35).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Forty Chapters of Why, Answered with a Whirlwind",
+      "body": "For most of the book, Job wants one thing: a hearing. He has lost his children, his wealth, his health, and the comfort of his own skin. His friends have spent chapter after chapter insisting that suffering this severe must mean sin this severe. Job will not lie to keep the peace. He keeps asking the question every grieving person eventually asks - not \"how\" but \"why.\" Why this. Why me. Why now.\n\nThen, in chapter 38, the LORD answers him out of the whirlwind. And the answer is strange. God does not explain the wager in the throne room of chapters 1 and 2. He never tells Job about the conversation that started it all. Instead He asks Job questions - dozens of them. \"Where were you when I laid the foundations of the earth?\" Who shut the sea behind doors? Have you commanded the morning? Do you know when the mountain goats give birth?\n\nIt reads, at first, like God is changing the subject. Job asked for a reason and got a tour of creation. But notice what the questions do. They do not shame Job for asking. They widen the room. They take a man who had shrunk down to the size of his own pain and stretch his sight back out to the edges of a world he did not make and cannot hold. By the time God is done, Job is not crushed. He is quiet - the quiet of someone who has stopped needing the last word.",
+      "keyInsight": "God never answers Job's question. He answers Job. The reply to suffering, in this book, is not a reason that satisfies the mind - it is a Presence that satisfies the person.",
+      "content": "For most of the book, Job wants one thing: a hearing. He has lost his children, his wealth, his health, and the comfort of his own skin. His friends have spent chapter after chapter insisting that suffering this severe must mean sin this severe. Job will not lie to keep the peace. He keeps asking the question every grieving person eventually asks - not \"how\" but \"why.\" Why this. Why me. Why now.\n\nThen, in chapter 38, the LORD answers him out of the whirlwind. And the answer is strange. God does not explain the wager in the throne room of chapters 1 and 2. He never tells Job about the conversation that started it all. Instead He asks Job questions - dozens of them. \"Where were you when I laid the foundations of the earth?\" Who shut the sea behind doors? Have you commanded the morning? Do you know when the mountain goats give birth?\n\nIt reads, at first, like God is changing the subject. Job asked for a reason and got a tour of creation. But notice what the questions do. They do not shame Job for asking. They widen the room. They take a man who had shrunk down to the size of his own pain and stretch his sight back out to the edges of a world he did not make and cannot hold. By the time God is done, Job is not crushed. He is quiet - the quiet of someone who has stopped needing the last word."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Father Who Stayed in the Room",
+      "body": "A friend told me about the night her son was in the pediatric ICU, the worst of it, machines doing the breathing. She said she kept asking the doctors the same question in different shapes: Why him. Why this. What did we miss. And no answer they gave landed, because no answer could.\n\nWhat she remembered most, years later, was not a sentence anyone said. It was that her husband never left the chair by the bed. He could not fix anything. He could not explain anything. He just stayed - through the night, through the next, his hand on the boy's foot under the blanket the whole time.\n\n\"I stopped needing to know why somewhere in there,\" she told me. \"I didn't get an answer. I got him in the chair. And it turned out that was the thing I actually couldn't live without.\" Job, at the end, is that mother. He came in demanding a reason. He walked out having seen a Face, and somehow that was enough to stand on.",
+      "connectionToTheme": "What stills the grieving heart is rarely an explanation. It is presence that refuses to leave - which is exactly what God gives Job, and exactly what God gives us in Christ.",
+      "content": "A friend told me about the night her son was in the pediatric ICU, the worst of it, machines doing the breathing. She said she kept asking the doctors the same question in different shapes: Why him. Why this. What did we miss. And no answer they gave landed, because no answer could.\n\nWhat she remembered most, years later, was not a sentence anyone said. It was that her husband never left the chair by the bed. He could not fix anything. He could not explain anything. He just stayed - through the night, through the next, his hand on the boy's foot under the blanket the whole time.\n\n\"I stopped needing to know why somewhere in there,\" she told me. \"I didn't get an answer. I got him in the chair. And it turned out that was the thing I actually couldn't live without.\" Job, at the end, is that mother. He came in demanding a reason. He walked out having seen a Face, and somehow that was enough to stand on."
+    },
+    {
+      "type": "insight",
+      "heading": "Heard Of, and Then Seen",
+      "body": "The whole book turns on six small words in Job's reply: \"My ears had heard of You, but now my eyes have seen You.\" Job had been a believer the entire time. Chapter 1 calls him blameless and upright, a man who feared God and shunned evil. He was not a skeptic who got converted by the storm. He was a faithful man who had, until now, known God the way most of us do - by report. By what he had been taught. By the secondhand testimony of an ear that had heard.\n\nSuffering did not give Job a better theology. His theology was already good. What suffering did, in God's hands, was move God from something Job had heard about to Someone Job had seen. The loss did not earn him the sight. But it emptied him out until there was room for it.\n\nThis is why the book refuses to end with an explanation. An explanation would have left Job exactly where he started - knowing God by hearing, only now with more facts. Instead God gives him the one thing facts cannot give: Himself, seen. And once you have seen the Person, the missing reason stops being the wound it was.",
+      "historicalContext": "Job is one of the oldest books in the Bible, set in the patriarchal age - Job sacrifices as the head of his own household, with no priesthood, no temple, no law of Moses in view. It belongs to Israel's Wisdom Literature alongside Proverbs and Ecclesiastes, and it deliberately refuses the tidy formula Job's friends preach: that the righteous always prosper and the suffering must have sinned. The book exists, in part, to dismantle that formula.",
+      "fascinatingFact": "Job 42:5 sets the verb shama (to hear) directly against ra'ah (to see). Throughout the Old Testament, hearing is the ordinary way Israel receives God - \"Hear, O Israel\" (Deuteronomy 6:4). Seeing God is rare and reserved: Moses on the mountain, Isaiah in the temple. Job, the suffering man on the ash heap, is granted the thing the great prophets longed for - and he is granted it in the middle of his grief, not after it was over.",
+      "content": "The whole book turns on six small words in Job's reply: \"My ears had heard of You, but now my eyes have seen You.\" Job had been a believer the entire time. Chapter 1 calls him blameless and upright, a man who feared God and shunned evil. He was not a skeptic who got converted by the storm. He was a faithful man who had, until now, known God the way most of us do - by report. By what he had been taught. By the secondhand testimony of an ear that had heard.\n\nSuffering did not give Job a better theology. His theology was already good. What suffering did, in God's hands, was move God from something Job had heard about to Someone Job had seen. The loss did not earn him the sight. But it emptied him out until there was room for it.\n\nThis is why the book refuses to end with an explanation. An explanation would have left Job exactly where he started - knowing God by hearing, only now with more facts. Instead God gives him the one thing facts cannot give: Himself, seen. And once you have seen the Person, the missing reason stops being the wound it was."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God answers Job's suffering not with a reason but with His own presence, speaking out of the whirlwind until Job can say, \"now my eyes have seen You.\"",
+      "modernApplication": "When the worst arrives - the diagnosis, the empty chair, the marriage that ends - we want what Job wanted: a reason that makes the math come out right. God rarely hands us that. What He offers instead is harder to argue with and easier to lean on: Himself, present in the storm, refusing to leave the chair by the bed.",
+      "connectionPoint": "Job stands at the front of the long story of suffering in Scripture, and it leaves a question hanging that it cannot close: God spoke to Job out of the whirlwind, from above the storm, from the safe side of the sky. Could God ever speak from inside the suffering itself? The rest of the Bible is the answer working its way to the surface.",
+      "newTestamentEcho": "In Christ the God who once spoke out of the whirlwind steps into it. In Gethsemane the Son sweats and pleads and asks His own \"why\" - \"My God, my God, why have You forsaken Me?\" (Matthew 27:46). Job longed to see God; in Jesus, \"whoever has seen Me has seen the Father\" (John 14:9). The face Job glimpsed in the storm is the face that hangs on the cross, so that every sufferer who looks for God in their pain finds He has already arrived ahead of them - bleeding."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been asking God for a reason, when what you actually need is to see that He is there?",
+      "additionalQuestions": [
+        "Is there a part of your faith that is still 'hearing' - known by report, by what you were taught - that you long to have become 'seeing'?",
+        "When God answered Job, He widened his view of the world rather than narrowing in on his pain. What would it look like for God to widen your view this week?",
+        "Job worshiped in chapter 1 before he understood anything ('the LORD gave, and the LORD has taken away'). What would it mean to worship now, before the reasons come?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have asked You why more times than I can count, and the answer has not come the way I wanted it to. Today I am asking for something else. I have heard of You all my life - in sermons, in songs, in the words of people who love me. Now let my eyes see You. Meet me in the storm I am still standing in. Be the Presence I did not know was the thing I could not live without. And where I cannot yet say it honestly, teach me to say what Job said: blessed be Your name. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the 'why' you have been carrying - say it out loud or write it down without softening it. Then set it down for five minutes and ask God only for His presence, not His reasons. Practice wanting the Person more than the answer.",
+      "leavingAtCross": [
+        "The demand that God explain Himself before I will trust Him",
+        "The belief that an unanswered 'why' means an absent God",
+        "The exhausting work of holding the whole world together as though it depended on my understanding it"
+      ],
+      "receivingFromCross": [
+        "A God who answers suffering by entering it, not by explaining it away",
+        "Sight where I had only had report - the Person, not just the doctrine about Him",
+        "The freedom Job found: to fall silent, stop needing the last word, and worship"
+      ],
+      "content": "Name the 'why' you have been carrying - say it out loud or write it down without softening it. Then set it down for five minutes and ask God only for His presence, not His reasons. Practice wanting the Person more than the answer."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "When God finally answers Job out of the whirlwind, what does He give him - and what does He never give him?",
+        "What is the difference Job names in 42:5 between hearing of God and seeing God, and why does that difference settle him?",
+        "How does the God who speaks to Job from above the storm point forward to a God who, in Christ, speaks from inside the storm?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'why' you have been asking God that has gone unanswered. Resist the urge to answer it for each other.",
+        "Talk honestly: is your knowledge of God right now more like Job's 'hearing' or his 'seeing'? What might move you toward sight?",
+        "Job worshiped in his loss before he understood it. Ask each other where you are being invited to worship before the reasons arrive."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Job 1:21",
+          "text": "Naked I came from my mother's womb, and naked I will return. The LORD gave, and the LORD has taken away. Blessed be the name of the LORD."
+        },
+        {
+          "reference": "Job 38:1-4",
+          "text": "Then the LORD answered Job out of the whirlwind and said: \"Who is this who obscures My counsel by words without knowledge? Now brace yourself like a man; I will question you, and you shall inform Me. Where were you when I laid the foundations of the earth? Tell Me, if you have understanding.\""
+        },
+        {
+          "reference": "John 14:9",
+          "text": "Jesus replied, \"...Anyone who has seen Me has seen the Father. How can you say, 'Show us the Father'?\""
+        },
+        {
+          "reference": "Matthew 27:46",
+          "text": "About the ninth hour Jesus cried out in a loud voice, \"Eli, Eli, lema sabachthani?\" which means, \"My God, My God, why have You forsaken Me?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Job 38-42",
+          "note": "Read God's speeches and Job's reply slowly in one sitting. Notice that God asks roughly seventy questions and answers none of Job's - and that Job ends not defeated but satisfied."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Job",
+      "title": "The Man Who Saw God in the Storm",
+      "description": "A blameless and upright man from the land of Uz who lost his children, his wealth, and his health in a single stretch of catastrophe, and who refused both to curse God and to lie about his own innocence. Across forty chapters he demands a hearing from the God he trusts. He receives no explanation - only an encounter. In the end the LORD restores his fortunes, doubling what he had lost, but the book's true turn is earlier: the moment Job stops speaking and simply sees.",
+      "keyQuote": "My ears had heard of You, but now my eyes have seen You.",
+      "lessonForUs": "Faithful people suffer, and sometimes there is no reason given that will make it add up. Job teaches that the deepest resolution to suffering is not an answer to 'why' but the presence of the One who can be trusted in the dark - the God we will finally see most clearly in the face of the crucified and risen Christ.",
+      "heading": "The Man Who Saw God in the Storm"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1965,
+  "scriptureReference_full": "Job 1-2, 38-42",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ra'ah, H7200; the shama/ra'ah pairing in Job 42:5) reflects standard lexical sources. The YHWH yireh resonance with Genesis 22:14 is a standard observation in commentary on the book of Job."
+  ]
 }

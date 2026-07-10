@@ -1,38 +1,185 @@
 {
   "day": 364,
-  "title": "Revelation: New Heaven + New Earth — Day 7 — Sabbath",
-  "teaser": "Day 364 of Bible 365 — Revelation 21-22",
+  "title": "The garden, finished",
+  "teaser": "Scripture opens with God walking in a garden and closes with God dwelling in a city. The same voice that asked \"Where are you?\" now says, \"Behold, I make all things new.\"",
   "framework": "Revelation 21-22 — Revelation: New Heaven + New Earth",
   "scriptureReference": "Revelation 21-22",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 364"
+      "type": "scripture",
+      "reference": "Revelation 21:3-5; 22:1-5",
+      "translation": "BSB",
+      "emphasis": [
+        "the dwelling place of God is with man",
+        "He will wipe away every tear from their eyes",
+        "Behold, I make all things new",
+        "No longer will there be any curse",
+        "They will see His face"
+      ],
+      "greekOriginal": "Ἰδοὺ ἡ σκηνὴ τοῦ Θεοῦ μετὰ τῶν ἀνθρώπων, καὶ σκηνώσει μετ’ αὐτῶν",
+      "passage": "And I heard a loud voice from the throne saying: \"Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God. 'He will wipe away every tear from their eyes,' and there will be no more death or mourning or crying or pain, for the former things have passed away.\" And the One seated on the throne said, \"Behold, I make all things new.\" Then He said, \"Write this down, for these words are faithful and true.\" ... Then the angel showed me a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb down the middle of the main street of the city. On either side of the river stood a tree of life, bearing twelve kinds of fruit and yielding a fresh crop for each month. And the leaves of the tree are for the healing of the nations. No longer will there be any curse. The throne of God and of the Lamb will be within the city, and His servants will worship Him. They will see His face, and His name will be on their foreheads."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Revelation 21-22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Revelation 21-22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "σκηνὴ / σκηνόω",
+      "transliteration": "skēnē / skēnoō",
+      "pronunciation": "skay-NAY / skay-NO-oh",
+      "meaning": "tent, tabernacle; to pitch a tent, to dwell, to make one's home",
+      "rootMeaning": "Skēnē is the word for a tent - a movable dwelling - and behind it stands the Tabernacle, the tent where God's glory came to live among Israel in the wilderness. The verb skēnoō means to pitch that tent and stay. When John writes that the dwelling place of God is with man and He will dwell (skēnōsei) with them, he is not reaching for a poetic flourish. He is closing a circle Scripture has been drawing since Exodus.",
+      "usageNote": "John uses this exact verb only twice with great weight. In John 1:14 he writes that the Word became flesh and dwelt - skēnoō, tabernacled - among us. There the tent was a body, pitched for a while. Here in Revelation 21:3 the tent is pitched forever: God Himself with His people, the temporary made permanent. The first time, God moved in for thirty-odd years. The last time, He never leaves.",
+      "wordByWord": [
+        {
+          "word": "Ἰδοὺ",
+          "transliteration": "idou",
+          "meaning": "behold, look - a word that grabs the eyes and says, do not miss this"
+        },
+        {
+          "word": "ἡ σκηνὴ",
+          "transliteration": "hē skēnē",
+          "meaning": "the tent, the tabernacle - God's dwelling among His people"
+        },
+        {
+          "word": "τοῦ Θεοῦ",
+          "transliteration": "tou Theou",
+          "meaning": "of God - whose tent this is"
+        },
+        {
+          "word": "μετὰ τῶν ἀνθρώπων",
+          "transliteration": "meta tōn anthrōpōn",
+          "meaning": "with mankind, among humanity - the whole point: with us"
+        },
+        {
+          "word": "σκηνώσει μετ’ αὐτῶν",
+          "transliteration": "skēnōsei met' autōn",
+          "meaning": "He will dwell with them - He will pitch His tent and stay"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁכַן / שְׁכִינָה",
+          "reference": "The Hebrew shakan, to settle or dwell, gives us mishkan (the Tabernacle) and the later term Shekinah for God's dwelling presence. The Greek skēnē carries the same idea into the New Testament: the God who once filled a tent with glory now fills a city, and then a renewed creation, with Himself."
+        }
+      ],
+      "strongsNumber": "G4633",
+      "definition": "a tent or tabernacle; by extension, the dwelling presence of God",
+      "usage": "That John would end the Bible with the same word he used to open his Gospel is no accident. From the Incarnation to the new creation, God's whole movement toward us is one act of tent-pitching - drawing nearer, and then never pulling up the stakes again."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Revelation: New Heaven + New Earth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ returns; come, Lord Jesus (Rev 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Last Chapter Remembers the First",
+      "body": "Read the last two chapters of the Bible slowly and you will keep feeling that you have been here before. A river runs through it. A tree of life stands on its banks. God walks with His people in the cool of His own presence. Every image is borrowed from a garden that closed two minutes into the story - Eden, with its river and its tree and its evening walks, sealed off by cherubim and a flaming sword.\n\nJohn is not inventing pictures. He is collecting them. The river that flowed out of Eden to water the world (Genesis 2:10) flows again here, now \"clear as crystal,\" pouring from the throne. The tree of life that Adam was barred from touching (Genesis 3:24) is no longer guarded; its leaves are handed out freely \"for the healing of the nations.\" The curse that fell in the garden - thorns, sweat, separation, death - is lifted by name: \"No longer will there be any curse.\"\n\nThe whole Bible turns out to be one long sentence with a garden at the start and a garden-city at the end. In between lies everything: the flood, the call of Abraham, the long captivity, the kings, the prophets, the manger, the cross, the empty tomb, the slow centuries of the Church. And here, at the close, the thing that was broken in chapter three of Genesis is not patched. It is made new. \"Behold, I make all things new,\" says the One on the throne - and then, as if knowing how unbelievable it sounds, He adds: \"Write this down, for these words are faithful and true.\"",
+      "keyInsight": "Revelation does not end the Bible with an escape from earth. It ends with heaven coming down to a renewed earth - the garden reopened, the curse reversed, God dwelling with His people in the home He always meant them to have.",
+      "content": "Read the last two chapters of the Bible slowly and you will keep feeling that you have been here before. A river runs through it. A tree of life stands on its banks. God walks with His people in the cool of His own presence. Every image is borrowed from a garden that closed two minutes into the story - Eden, with its river and its tree and its evening walks, sealed off by cherubim and a flaming sword.\n\nJohn is not inventing pictures. He is collecting them. The river that flowed out of Eden to water the world (Genesis 2:10) flows again here, now \"clear as crystal,\" pouring from the throne. The tree of life that Adam was barred from touching (Genesis 3:24) is no longer guarded; its leaves are handed out freely \"for the healing of the nations.\" The curse that fell in the garden - thorns, sweat, separation, death - is lifted by name: \"No longer will there be any curse.\"\n\nThe whole Bible turns out to be one long sentence with a garden at the start and a garden-city at the end. In between lies everything: the flood, the call of Abraham, the long captivity, the kings, the prophets, the manger, the cross, the empty tomb, the slow centuries of the Church. And here, at the close, the thing that was broken in chapter three of Genesis is not patched. It is made new. \"Behold, I make all things new,\" says the One on the throne - and then, as if knowing how unbelievable it sounds, He adds: \"Write this down, for these words are faithful and true.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Hospice Nurse Kept Saying",
+      "body": "A friend who spent fifteen years as a hospice nurse once told me that almost no one, at the very end, asks for more time to finish their projects. What they ask for is people. They want the door open. They want the familiar face in the chair. They want, more than anything, not to be alone in the room.\n\nShe said the cruelest part of dying was rarely the pain - pain could usually be managed. It was the leaving. The sense of being slowly pulled away from everyone you love, one goodbye at a time, until the goodbyes are all that is left.\n\nThat is exactly the ache Revelation 21 reaches into. \"He will wipe away every tear from their eyes, and there will be no more death or mourning or crying or pain.\" Notice the order. Death comes first, because death is the root of the rest - the great separator, the maker of all the other griefs. And notice the tenderness of the gesture. God does not abolish tears with a decree from a distance. He comes close enough to wipe them, the way you would dry the face of a child. The promise is not mainly that the sad things will stop. It is that the One who stops them will be near enough to touch.",
+      "connectionToTheme": "The deepest human longing at the end of life is not for more accomplishment but for unbroken presence - and that is precisely what the last chapter of the Bible promises.",
+      "content": "A friend who spent fifteen years as a hospice nurse once told me that almost no one, at the very end, asks for more time to finish their projects. What they ask for is people. They want the door open. They want the familiar face in the chair. They want, more than anything, not to be alone in the room.\n\nShe said the cruelest part of dying was rarely the pain - pain could usually be managed. It was the leaving. The sense of being slowly pulled away from everyone you love, one goodbye at a time, until the goodbyes are all that is left.\n\nThat is exactly the ache Revelation 21 reaches into. \"He will wipe away every tear from their eyes, and there will be no more death or mourning or crying or pain.\" Notice the order. Death comes first, because death is the root of the rest - the great separator, the maker of all the other griefs. And notice the tenderness of the gesture. God does not abolish tears with a decree from a distance. He comes close enough to wipe them, the way you would dry the face of a child. The promise is not mainly that the sad things will stop. It is that the One who stops them will be near enough to touch."
+    },
+    {
+      "type": "insight",
+      "heading": "No Temple, Because the Lamb Is the Temple",
+      "body": "Of everything John sees in the new Jerusalem, the strangest thing is what is missing. \"I saw no temple in the city,\" he writes, \"because the Lord God Almighty and the Lamb are its temple.\" For a Jewish reader this is almost too much to take in. The temple was the center of the world - the one place on earth where the presence of God was concentrated, fenced with curtains and courts and a holy of holies that almost no one could enter, and only once a year.\n\nThe whole point of the temple was distance carefully managed: God is here, and you may come this far and no further. Now the curtains are gone, because the distance is gone. There is no special room where God is more present, because God fills everything. \"They will see His face,\" John says - the very thing that no one in the Old Testament could survive (Exodus 33:20). What killed Moses to ask for is now the ordinary daily life of the redeemed.\n\nAnd see how this happens. It is not by humanity finally climbing high enough to reach God. It is by the Lamb - the slain, risen Christ - standing at the center as the temple itself. The reason the face of God can be seen is that the Lamb's blood has made unclean people clean enough to look. The end of the Bible is not a reward for the worthy. It is a city full of people who washed their robes (Revelation 22:14), brought in by the One who was slain.",
+      "historicalContext": "John writes Revelation near the end of the first century, likely from exile on the island of Patmos, to seven real churches in Asia Minor under pressure from a hostile empire. To people tempted to despair that Rome would always win, he shows the final chapter: not Rome's throne but God's, not the emperor's city but the new Jerusalem, not the temple they had lost in AD 70 but a presence no army could destroy.",
+      "fascinatingFact": "Twice in these chapters Christ calls Himself \"the Alpha and the Omega, the Beginning and the End\" (Revelation 21:6; 22:13) - the first and last letters of the Greek alphabet. It is the same claim God makes of Himself in Isaiah 44:6. The One who speaks the last words of the Bible is claiming to be the One who spoke its first words: the Author standing inside His own story, holding both covers in His hands.",
+      "content": "Of everything John sees in the new Jerusalem, the strangest thing is what is missing. \"I saw no temple in the city,\" he writes, \"because the Lord God Almighty and the Lamb are its temple.\" For a Jewish reader this is almost too much to take in. The temple was the center of the world - the one place on earth where the presence of God was concentrated, fenced with curtains and courts and a holy of holies that almost no one could enter, and only once a year.\n\nThe whole point of the temple was distance carefully managed: God is here, and you may come this far and no further. Now the curtains are gone, because the distance is gone. There is no special room where God is more present, because God fills everything. \"They will see His face,\" John says - the very thing that no one in the Old Testament could survive (Exodus 33:20). What killed Moses to ask for is now the ordinary daily life of the redeemed.\n\nAnd see how this happens. It is not by humanity finally climbing high enough to reach God. It is by the Lamb - the slain, risen Christ - standing at the center as the temple itself. The reason the face of God can be seen is that the Lamb's blood has made unclean people clean enough to look. The end of the Bible is not a reward for the worthy. It is a city full of people who washed their robes (Revelation 22:14), brought in by the One who was slain."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "John sees a new heaven and a new earth, a holy city coming down from God, where He dwells with His people, wipes away every tear, lifts the curse, and is Himself the temple and the light - the Lamb at the center of it all.",
+      "modernApplication": "It is easy to treat heaven as a vague consolation, a soft word we say at funerals because we have to say something. Revelation refuses the vagueness. It hands you something concrete to hold on the hardest days: not a disembodied wisp of a soul drifting in the clouds, but a renewed creation, a real city, real faces, real reunion, and a God who lives down the street rather than across the sky.",
+      "connectionPoint": "Everything you have read in this year of Scripture has been leading here. The promise to Abraham that all nations would be blessed (Genesis 12:3) lands in a tree whose leaves are \"for the healing of the nations.\" The exodus out of slavery becomes the great exodus out of death. The Tabernacle in the wilderness, the temple on Mount Zion, the manger in Bethlehem, the body of Jesus - each was God pitching His tent a little nearer, until at last He pitches it for good.",
+      "newTestamentEcho": "The same John who closes the Bible opened his Gospel with the same word: \"The Word became flesh and made His dwelling among us\" (John 1:14) - and he saw His glory. What began when God tented in a body at Bethlehem is completed when God tents with His people forever. The Incarnation was the down payment; the new creation is the inheritance paid in full."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If you truly believed that the last word of your story is not a goodbye but a face you will finally see, what would you stop being afraid of today?",
+      "additionalQuestions": [
+        "Which of the griefs named in Revelation 21:4 - death, mourning, crying, pain - is heaviest in your life right now? What would it mean to bring that one to a God who promises to wipe it away with His own hand?",
+        "The new Jerusalem has no temple because God's presence fills everything. Where in your life have you been keeping God in a 'special room' - reserved for Sundays or crises - rather than letting Him fill the ordinary?",
+        "Revelation ends with an invitation, not a warning: 'Let the one who is thirsty come' (22:17). Where are you thirsty, and what keeps you from coming?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord God, You who are the Beginning and the End, thank You that the story does not trail off but is gathered up in You. On the days I can barely believe it, let Revelation 21 be true for me: that You are making all things new, that the curse is being undone, that You will one day be near enough to wipe my own tears with Your hand. Until then, make me thirsty for You and not afraid to come. Tabernacle with me now, in the ordinary of this day, the way You promise to tabernacle with Your people forever. Come, Lord Jesus. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - nothing to finish, nothing to prove. Sit quietly for five minutes and let one promise rest on you: \"Behold, the dwelling place of God is with man.\" Picture the one grief you most want God to wipe away, and hold it open before Him without rushing to fix it. Then close with two words: \"Come, Lord Jesus.\"",
+      "leavingAtCross": [
+        "The quiet dread that death gets the last word over the people I love",
+        "The habit of treating heaven as too vague to matter, so I live as if this broken world is all there is",
+        "The fear that I am not clean enough to ever stand in the presence of God"
+      ],
+      "receivingFromCross": [
+        "A renewed creation, a real home, a God who comes down to dwell rather than a distance I must climb",
+        "The promise that every tear has an expiration date held in the hand of God",
+        "A robe washed clean by the Lamb, and with it the right to the tree of life and an open gate into the city"
+      ],
+      "content": "Today is a sabbath day - nothing to finish, nothing to prove. Sit quietly for five minutes and let one promise rest on you: \"Behold, the dwelling place of God is with man.\" Picture the one grief you most want God to wipe away, and hold it open before Him without rushing to fix it. Then close with two words: \"Come, Lord Jesus.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Revelation 21-22 reuses three images from Eden - the river, the tree of life, and the unbroken presence of God. What does it mean that the Bible ends not with an escape to a new place but with the garden of Genesis restored and made permanent?",
+        "Why is there 'no temple' in the new Jerusalem, and what does that absence say about how close God means to be to His people?",
+        "John uses the same verb for 'dwell' (skēnoō) in John 1:14 about the Incarnation and in Revelation 21:3 about the new creation. How does seeing those two verses together change the way you understand both Christmas and heaven?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one specific tear you are longing for God to wipe away - and let the other person simply hold it with you, without trying to solve it.",
+        "Talk honestly: does heaven feel real to you, or like a polite fiction? Where does the doubt come from, and where does the longing come from?",
+        "Revelation closes the whole Bible with 'Come, Lord Jesus.' What would it look like, this week, to live as people who actually want Him to come?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:9-10",
+          "text": "And out of the ground the LORD God gave growth to every tree that is pleasing to the eye and good for food. In the middle of the garden were the tree of life and the tree of the knowledge of good and evil. Now a river flowed out of Eden to water the garden..."
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "Revelation 22:20",
+          "text": "He who testifies to these things says, \"Yes, I am coming soon.\" Amen. Come, Lord Jesus!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Revelation 21-22",
+          "note": "Read both chapters in one sitting, with Genesis 2-3 open beside them. Mark every image that appears in both: the river, the tree of life, the presence of God, the absence (or return) of the curse. Let the Bible's first pages and its last pages speak to each other."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John of Patmos",
+      "title": "The Seer Who Saw the End",
+      "description": "Traditionally identified with the apostle John, he received the visions of Revelation while exiled on the rocky Aegean island of Patmos, likely under Roman pressure near the end of the first century. The same author who opened his Gospel with 'In the beginning was the Word' was given the privilege of writing the Bible's closing scene - the marriage of heaven and earth. He wrote to suffering churches who needed to know how the story ends, and the answer he gave was a Person, not merely a place: the Lamb at the center of everything.",
+      "keyQuote": "Behold, the dwelling place of God is with man, and He will dwell with them.",
+      "lessonForUs": "John does not end the Bible by telling us to escape the world but by showing us God coming down to renew it. The hope of the whole of Scripture is not less than streets of gold - it is far more: God Himself, near at last, wiping the tears from our faces with His own hand.",
+      "heading": "The Seer Who Saw the End"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1788,
+  "scriptureReference_full": "Revelation 21:3-5; 22:1-5 (with Revelation 21:6, 21:22-23, 21:27; 22:12-14, 22:16-17, 22:20-21)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (skēnē / skēnoō, G4633) reflects standard lexical sources; the link between John 1:14 and Revelation 21:3 via the verb skēnoō is widely noted in New Testament scholarship.",
+    "Hebrew background note (shakan / Shekinah) reflects standard reference works on the biblical theology of God's dwelling presence."
+  ]
 }

@@ -6,33 +6,178 @@
   "scriptureReference": "1 Samuel 1",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 78"
+      "type": "scripture",
+      "reference": "1 Samuel 1:10-11, 19-20",
+      "translation": "BSB",
+      "emphasis": [
+        "poured out my soul before the LORD",
+        "the LORD remembered her",
+        "I have asked for him from the LORD"
+      ],
+      "hebrewOriginal": "שְׁמוּאֵל כִּי מֵיְהוָה שְׁאִלְתִּיו",
+      "passage": "In her bitter distress, Hannah prayed to the LORD and wept with many tears. And she made a vow, pleading, \"O LORD of Hosts, if only You will look upon the affliction of Your maidservant and remember me, not forgetting Your maidservant but giving her a son, then I will dedicate him to the LORD all the days of his life, and no razor shall ever come over his head.\" ... The next morning Elkanah and Hannah got up early to bow in worship before the LORD, and then returned home to Ramah. And Elkanah had relations with his wife Hannah, and the LORD remembered her. So in the course of time, Hannah conceived and gave birth to a son. She named him Samuel, saying, \"Because I have asked for him from the LORD.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 1**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 1 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׁאַל",
+      "transliteration": "sha'al",
+      "pronunciation": "shah-AHL",
+      "meaning": "to ask, to request, to inquire, to petition",
+      "rootMeaning": "Sha'al is the ordinary verb for asking - the word you would use to ask directions or request a favor. It carries the sense of asking for something you do not have and cannot make yourself, something only the one you ask can give.",
+      "usageNote": "When Hannah names her son Shemu'el (Samuel), she explains it from this root: \"Because I have asked (sha'al) for him from the LORD.\" The name does not break down to mean \"asked of God\" by strict etymology - most scholars read Shemu'el as \"heard of God\" or \"name of God.\" Hannah is doing something deeper than spelling: she is hanging the whole meaning of the child on the prayer that he answered. Every time the boy's name is spoken, it remembers a woman's request and God's reply.",
+      "wordByWord": [
+        {
+          "word": "שְׁמוּאֵל",
+          "transliteration": "Shemu'el",
+          "meaning": "Samuel - \"heard of God\" or \"name of God\""
+        },
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "because, for"
+        },
+        {
+          "word": "מֵיְהוָה",
+          "transliteration": "me-YHWH",
+          "meaning": "from the LORD"
+        },
+        {
+          "word": "שְׁאִלְתִּיו",
+          "transliteration": "she'iltiv",
+          "meaning": "I asked for him, I requested him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁאוּל / שָׁאַל",
+          "reference": "Sha'ul (Saul), the first king Samuel will anoint, is built from the same root sha'al - literally \"asked for\" or \"requested.\" The nation asks (sha'al) for a king and gets Saul; one woman asks (sha'al) for a son and gets a prophet. The book keeps playing on what we ask for and what God grants."
+        }
+      ],
+      "strongsNumber": "H7592",
+      "definition": "to ask, inquire, request, demand; to beg or petition",
+      "usage": "In verse 28 the wordplay turns final: Hannah says she will \"dedicate\" the boy to the LORD - the Hebrew there reuses sha'al, so it reads almost \"he is the one asked-for, now given-back.\" The child she begged for becomes the child she lends back. Asking and giving are bound up in the same word."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Prayer that produces a prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the answered prayer (Heb 5:7).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Woman Praying With No Voice",
+      "body": "The books of Samuel open the way a great river opens - not with a king or a battle, but with a woman who cannot have a child. Hannah is loved. Her husband Elkanah gives her a double portion at the yearly sacrifice and asks, almost helplessly, \"Am I not better to you than ten sons?\" But love does not close the wound. Year after year they go up to Shiloh, and year after year her rival Peninnah, who has children, taunts her until she weeps and cannot eat.\n\nSo one evening, after the eating and drinking are done, Hannah stands up alone and goes to the house of the LORD. Old Eli the priest is sitting by the doorpost. And there she does the thing the rest of the chapter turns on: \"In her bitter distress, Hannah prayed to the LORD and wept with many tears.\" She does not perform. Her lips move but no sound comes. Eli, watching, assumes she is drunk and tells her to put away her wine.\n\nHer answer is one of the most honest sentences in Scripture. \"No, my lord. I am a woman oppressed in spirit. I have not had any wine or strong drink, but I have poured out my soul before the LORD.\" That is what prayer is here - not eloquence, not even audible words, but a soul poured out empty in front of the only One who can fill it.",
+      "keyInsight": "The whole story of Israel's kings, prophets, and finally its Messiah is set in motion not by a strategy but by a barren woman weeping at a doorpost. God begins the rescue at the point of someone's deepest helplessness.",
+      "content": "The books of Samuel open the way a great river opens - not with a king or a battle, but with a woman who cannot have a child. Hannah is loved. Her husband Elkanah gives her a double portion at the yearly sacrifice and asks, almost helplessly, \"Am I not better to you than ten sons?\" But love does not close the wound. Year after year they go up to Shiloh, and year after year her rival Peninnah, who has children, taunts her until she weeps and cannot eat.\n\nSo one evening, after the eating and drinking are done, Hannah stands up alone and goes to the house of the LORD. Old Eli the priest is sitting by the doorpost. And there she does the thing the rest of the chapter turns on: \"In her bitter distress, Hannah prayed to the LORD and wept with many tears.\" She does not perform. Her lips move but no sound comes. Eli, watching, assumes she is drunk and tells her to put away her wine.\n\nHer answer is one of the most honest sentences in Scripture. \"No, my lord. I am a woman oppressed in spirit. I have not had any wine or strong drink, but I have poured out my soul before the LORD.\" That is what prayer is here - not eloquence, not even audible words, but a soul poured out empty in front of the only One who can fill it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Prayer You Can't Say Out Loud",
+      "body": "There is a kind of asking that arrives only after you have run out of better words. A friend of mine sat in a hospital chapel after a third miscarriage and told me later that she had no prayer left - just her hands open on her knees and her mouth moving with nothing coming out. She said she felt embarrassed, as if she should be able to do this properly. A chaplain walked past, saw her, and instead of correcting her simply sat down a few seats away and stayed.\n\nThat is closer to Hannah than any polished prayer. We tend to think the prayers God honors are the composed ones, the ones that would read well aloud. Hannah's would not. Her grief was so raw that a priest mistook it for drunkenness. And yet this is the prayer the Bible chose to record at the head of a national epic - the silent, soundless, tear-soaked petition of a woman the world had written off.\n\nWhatever you cannot say out loud right now, whatever you are too tired or too ashamed to phrase, is not disqualified from prayer. It may be the truest prayer you have. Hannah teaches us that God reads the soul poured out, not the script performed.",
+      "connectionToTheme": "Hannah's wordless, tear-filled prayer shows that God receives the petition we cannot even articulate - the soul poured out matters more than the words found.",
+      "content": "There is a kind of asking that arrives only after you have run out of better words. A friend of mine sat in a hospital chapel after a third miscarriage and told me later that she had no prayer left - just her hands open on her knees and her mouth moving with nothing coming out. She said she felt embarrassed, as if she should be able to do this properly. A chaplain walked past, saw her, and instead of correcting her simply sat down a few seats away and stayed.\n\nThat is closer to Hannah than any polished prayer. We tend to think the prayers God honors are the composed ones, the ones that would read well aloud. Hannah's would not. Her grief was so raw that a priest mistook it for drunkenness. And yet this is the prayer the Bible chose to record at the head of a national epic - the silent, soundless, tear-soaked petition of a woman the world had written off.\n\nWhatever you cannot say out loud right now, whatever you are too tired or too ashamed to phrase, is not disqualified from prayer. It may be the truest prayer you have. Hannah teaches us that God reads the soul poured out, not the script performed."
+    },
+    {
+      "type": "insight",
+      "heading": "Remembered, Then Given Back",
+      "body": "Two verbs carry the weight of the chapter. The first is Hannah's word in her vow: \"remember me.\" The second is the narrator's quiet answer after she returns home: \"and the LORD remembered her.\" In the Hebrew Scriptures, when God \"remembers\" someone, it is never that He had forgotten and then recalled. To remember is to act - to move on behalf of the one in mind. God remembered Noah and the waters receded. God remembered His covenant and brought Israel out of Egypt. God remembered Hannah, and a barren womb opened.\n\nThen comes the turn that makes Hannah extraordinary. The son she begged for, she gives away. In her vow she had already promised it: \"then I will dedicate him to the LORD all the days of his life.\" The thing she wanted most in the world, she asked for in order to hand back. After Samuel is weaned she carries him to Shiloh and tells Eli, \"I prayed for this boy, and since the LORD has granted me what I asked of Him, I now dedicate the boy to the LORD.\"\n\nThis is the heart of the passage, and it is harder than barrenness. Many of us can ask God for what we lack. Fewer of us can hold the gift loosely once it comes. Hannah asks with her whole grief and then opens her hands with her whole will. The asking and the giving-back are the same act of trust, stretched across years.",
+      "historicalContext": "Shiloh, in the hill country of Ephraim, was Israel's central sanctuary before Jerusalem - the place the tabernacle rested and where the people went up for the yearly festivals during the period of the judges. Eli and his sons were the priestly line there. The opening of Samuel is set in this fading, troubled era; the very next chapters expose Eli's corrupt sons and the failure of that priesthood. Hannah's faithful son is being raised up precisely as the old order is collapsing.",
+      "fascinatingFact": "Hannah's vow that \"no razor shall ever come over his head\" marks Samuel as a Nazirite, set apart to God from birth - the same lifelong consecration given to Samson before him and described centuries later for John the Baptist. Three times in Scripture a barren or aged woman is given a son consecrated from the womb who turns the history of God's people: a pattern that runs straight toward another miraculous birth in Bethlehem.",
+      "content": "Two verbs carry the weight of the chapter. The first is Hannah's word in her vow: \"remember me.\" The second is the narrator's quiet answer after she returns home: \"and the LORD remembered her.\" In the Hebrew Scriptures, when God \"remembers\" someone, it is never that He had forgotten and then recalled. To remember is to act - to move on behalf of the one in mind. God remembered Noah and the waters receded. God remembered His covenant and brought Israel out of Egypt. God remembered Hannah, and a barren womb opened.\n\nThen comes the turn that makes Hannah extraordinary. The son she begged for, she gives away. In her vow she had already promised it: \"then I will dedicate him to the LORD all the days of his life.\" The thing she wanted most in the world, she asked for in order to hand back. After Samuel is weaned she carries him to Shiloh and tells Eli, \"I prayed for this boy, and since the LORD has granted me what I asked of Him, I now dedicate the boy to the LORD.\"\n\nThis is the heart of the passage, and it is harder than barrenness. Many of us can ask God for what we lack. Fewer of us can hold the gift loosely once it comes. Hannah asks with her whole grief and then opens her hands with her whole will. The asking and the giving-back are the same act of trust, stretched across years."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hannah pours out her soul in tears, asks God for a son, and when God remembers her and grants the request, she gives the son back - dedicating Samuel to the LORD for all his days.",
+      "modernApplication": "We pray hardest for the things we want to keep: the relationship, the child, the recovery, the open door. Hannah's prayer reorders the whole transaction. She asks not to possess but to consecrate. The question her story presses on us is not only \"What do you want from God?\" but \"What would you be willing to give back to God if He gave it?\"",
+      "connectionPoint": "Hannah's prayer does not stay private. When God answers, she breaks into a song (1 Samuel 2) that exalts the God who lifts the poor from the dust and brings down the mighty - a song the Gospel writers clearly had in their ears. Centuries later, when the angel comes to a young woman in Nazareth, Mary's Magnificat echoes Hannah almost line for line: God scatters the proud, fills the hungry, and remembers His mercy. The barren woman's worship at Shiloh becomes the template for the virgin's worship at the dawn of the incarnation.",
+      "newTestamentEcho": "Hannah asked for a son and gave him back to God's service. The Father, remembering His people, gave His only Son - asked for by every groaning generation, and not withheld. \"During the days of Jesus' earthly life, He offered up prayers and petitions with loud cries and tears to the One who could save Him from death\" (Hebrews 5:7). The soul poured out at a doorpost in Shiloh foreshadows the soul poured out in Gethsemane and on the cross - a Son given, so that the children God remembers might be born again."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the unspoken prayer you have been too tired, ashamed, or afraid to say out loud - the one you would pour out wordlessly if you trusted God was reading your soul and not your script?",
+      "additionalQuestions": [
+        "Hannah asked for a son in order to give him back. Is there something you are praying to receive that you would struggle to hold loosely if God granted it?",
+        "Eli misread Hannah's deepest prayer as drunkenness. Have you ever felt your grief or longing was misjudged by people who should have understood? What does it mean that God did not misread her?",
+        "\"The LORD remembered her.\" Where in your life are you waiting to be remembered - and what would it look like to keep praying as if God's silence is not the same as God's absence?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD of Hosts, look upon the affliction of Your servant. I have prayers I cannot say out loud and longings I am tired of carrying. Like Hannah, I pour out my soul before You - not a polished prayer, just what is real. Remember me. And where You answer, teach me to open my hands, to hold Your gifts the way she held her son: asked for with my whole grief, given back with my whole will. I trust the God who remembers, and who gave His own Son for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have stopped praying about because the silence has worn you down. Bring it to God once more, plainly, the way Hannah did - and then add Hannah's harder line: \"and if You give it, it is Yours.\" Pray it as both petition and surrender.",
+      "leavingAtCross": [
+        "The shame that says my grief is too messy to be a real prayer",
+        "The need to perform my faith with the right words instead of just pouring out my soul",
+        "The grip that wants to receive God's gifts and keep them as mine alone"
+      ],
+      "receivingFromCross": [
+        "A God who reads the soul poured out, not the script performed",
+        "The freedom of a faith that asks boldly and holds loosely",
+        "The promise of a Father who remembers His children and did not withhold His own Son"
+      ],
+      "content": "Today, name one thing you have stopped praying about because the silence has worn you down. Bring it to God once more, plainly, the way Hannah did - and then add Hannah's harder line: \"and if You give it, it is Yours.\" Pray it as both petition and surrender."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did Hannah mean when she said she had \"poured out my soul before the LORD\" - and why did Eli misunderstand it?",
+        "In Scripture, what does it mean that \"the LORD remembered her\"? Is it about God recalling something forgotten, or about God acting?",
+        "Hannah asked for a son and then gave him back. How does the same Hebrew root (sha'al, \"to ask\") tie together her request, the boy's name, and her dedication of him?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one prayer you have stopped praying because you grew tired of waiting. What would it take to bring it back to God?",
+        "Talk about the difference between asking God for something and being willing to give it back. Where is that hard for you right now?",
+        "Hannah's worship turned into a song that Mary would later echo. Read 1 Samuel 2:1-10 and Luke 1:46-55 together - what do you notice?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 2:1-2",
+          "text": "At that time Hannah prayed: \"My heart rejoices in the LORD in whom my horn is exalted. My mouth speaks boldly against my enemies, for I rejoice in Your salvation. There is no one holy like the LORD. Indeed, there is no one besides You! And there is no Rock like our God.\""
+        },
+        {
+          "reference": "Genesis 8:1",
+          "text": "But God remembered Noah and all the animals and livestock that were with him in the ark. And God sent a wind over the earth, and the waters began to subside."
+        },
+        {
+          "reference": "Luke 1:46-49",
+          "text": "Then Mary said: \"My soul magnifies the Lord, and my spirit rejoices in God my Savior! For He has looked with favor on the humble state of His servant. From now on all generations will call me blessed. For the Mighty One has done great things for me. Holy is His name.\""
+        },
+        {
+          "reference": "Hebrews 5:7",
+          "text": "During the days of Jesus' earthly life, He offered up prayers and petitions with loud cries and tears to the One who could save Him from death, and He was heard because of His reverence."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 1-2",
+          "note": "Read straight through from Hannah's tears to Hannah's song. Notice how the chapter moves from bitter silence (1:10) to recorded praise (2:1), and how her worship sets the theology for the whole book: God lifts the lowly and brings down the proud."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hannah",
+      "title": "The Woman Whose Prayer Opened the Books of Samuel",
+      "description": "Wife of Elkanah and rival of the fruitful Peninnah, Hannah was a barren woman in the closing days of the judges. Provoked and grieving, she poured out her soul in wordless prayer at the sanctuary in Shiloh, vowing to give any son back to God. The LORD remembered her, and she bore Samuel - the prophet who would anoint Israel's first kings and bridge the age of judges to the age of the monarchy. Having received him, she kept her vow and gave him up to the LORD's service, then answered with a song of praise that Scripture would echo into the Gospel of Luke.",
+      "keyQuote": "I have poured out my soul before the LORD.",
+      "lessonForUs": "Hannah shows that God begins His largest works at the place of someone's deepest helplessness, that He receives the prayers we cannot even speak, and that the truest faith both asks boldly and holds loosely - receiving God's gifts with open, not clenched, hands.",
+      "heading": "The Woman Whose Prayer Opened the Books of Samuel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1792,
+  "scriptureReference_full": "1 Samuel 1:10-11, 19-20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (sha'al H7592; the Shemu'el/sha'al wordplay and the Saul/sha'al resonance) reflects standard lexical sources and the narrative wordplay of 1 Samuel 1.",
+    "The pattern of God 'remembering' as decisive action (Hannah, Noah, the Exodus covenant) reflects the standard biblical usage of zakar.",
+    "The literary correspondence between Hannah's song (1 Samuel 2:1-10) and Mary's Magnificat (Luke 1:46-55) is widely recognized in mainstream biblical scholarship."
+  ]
 }

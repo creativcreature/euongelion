@@ -1,38 +1,183 @@
 {
   "day": 134,
-  "title": "Hezekiah's Reform — Day 1 — Hook",
-  "teaser": "Day 134 of Bible 365 — 2 Kings 18-20",
+  "title": "The king who tore his clothes and prayed",
+  "teaser": "Assyria has swallowed every nation it touched. Then one king of Judah does the only thing the empire cannot answer: he carries the threat into the house of God and spreads it open before the LORD.",
   "framework": "2 Kings 18-20 — Hezekiah's Reform",
   "scriptureReference": "2 Kings 18-20",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 134"
+      "type": "scripture",
+      "reference": "2 Kings 18:5; 19:14-15, 19; 20:1, 5",
+      "translation": "BSB",
+      "emphasis": [
+        "Hezekiah trusted in the LORD",
+        "spread it out before the LORD",
+        "You alone are God",
+        "I have heard your prayer; I have seen your tears"
+      ],
+      "hebrewOriginal": "בַּיהוָה אֱלֹהֵי־יִשְׂרָאֵל בָּטָח",
+      "passage": "Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him. ... So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD. And Hezekiah prayed before the LORD: \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth. ... And now, O LORD our God, please save us from his hand, so that all the kingdoms of the earth may know that You alone, O LORD, are God.\" ... In those days Hezekiah became mortally ill. ... \"Go back and tell Hezekiah the leader of My people that this is what the LORD, the God of your father David, says: 'I have heard your prayer; I have seen your tears. I will surely heal you. On the third day from now you will go up to the house of the LORD.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 18-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 18-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּטַח",
+      "transliteration": "batach",
+      "pronunciation": "bah-TAKH",
+      "meaning": "to trust, to lean on, to find refuge, to feel safe",
+      "rootMeaning": "The root pictures throwing your whole weight onto something - leaning until you have no other support. To batach is not to admire a thing from a distance but to rest your body on it and let it hold you.",
+      "usageNote": "This verb is the hinge of the siege. The narrator says Hezekiah 'trusted' (batach) in the LORD (18:5); then the Assyrian field commander throws the same word back to mock him - on what are you trusting? Two kinds of leaning sit side by side: leaning on the LORD, and leaning on Egypt, on chariots, on walls.",
+      "wordByWord": [
+        {
+          "word": "בַּיהוָה",
+          "transliteration": "ba-YHWH",
+          "meaning": "in the LORD - the covenant name of God"
+        },
+        {
+          "word": "אֱלֹהֵי",
+          "transliteration": "elohei",
+          "meaning": "the God of"
+        },
+        {
+          "word": "יִשְׂרָאֵל",
+          "transliteration": "Yisra'el",
+          "meaning": "Israel"
+        },
+        {
+          "word": "בָּטָח",
+          "transliteration": "batach",
+          "meaning": "he trusted, he leaned his whole weight, he took refuge"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִבְטָח",
+          "reference": "Mivtach, the noun from the same root, means 'a place of refuge, a confidence.' Jeremiah 17:7 blesses the one whose mivtach is the LORD - whose safe place is God Himself, not a wall or an ally."
+        }
+      ],
+      "strongsNumber": "H982",
+      "definition": "to trust, to be confident, to lean upon, to be secure",
+      "usage": "Batach is the language of a body that has stopped bracing - the relief of finally putting your weight down on something that will not give way."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hezekiah's Reform. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who weeps for his city (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A King Who Tore Down the Snake",
+      "body": "Hezekiah inherits a small kingdom in the shadow of a giant. Assyria has already swallowed the northern kingdom of Israel whole - ten tribes deported, gone - and Judah is next on the map. Into that fear the narrator gives us a king he can barely stop praising: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5).\n\nThe reform comes before the crisis. He removes the high places and cuts down the Asherah poles - and does one thing no reformer before him had dared: he demolishes the bronze snake Moses had made in the wilderness, \"for up to that time the Israelites had burned incense to it\" (18:4). That snake had once been a true gift; the people looked at it and lived (Numbers 21:9). But a good gift, worshiped too long, had curdled into an idol with a nickname: Nehushtan, the bronze thing. Hezekiah's loyalty is clear enough to break even a holy relic the moment it takes God's place.\n\nThen the giant comes. Sennacherib captures Judah's fortified cities and sends a field commander to shout up at Jerusalem's wall a sermon against faith: \"Do not let Hezekiah persuade you to trust in the LORD\" (18:30). \"Has the god of any nation ever delivered his land from the hand of the king of Assyria?\" (18:33). It is the oldest argument there is - look at the wreckage of every other nation; your God is just one more local deity about to lose.",
+      "keyInsight": "Real trust shows itself in what it is willing to tear down. Hezekiah destroyed even a relic of true worship the moment it became a rival to God - and that same loyalty is what let him stand unshaken when the empire mocked his God to his face.",
+      "content": "Hezekiah inherits a small kingdom in the shadow of a giant. Assyria has already swallowed the northern kingdom of Israel whole - ten tribes deported, gone - and Judah is next on the map. Into that fear the narrator gives us a king he can barely stop praising: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5).\n\nThe reform comes before the crisis. He removes the high places and cuts down the Asherah poles - and does one thing no reformer before him had dared: he demolishes the bronze snake Moses had made in the wilderness, \"for up to that time the Israelites had burned incense to it\" (18:4). That snake had once been a true gift; the people looked at it and lived (Numbers 21:9). But a good gift, worshiped too long, had curdled into an idol with a nickname: Nehushtan, the bronze thing. Hezekiah's loyalty is clear enough to break even a holy relic the moment it takes God's place.\n\nThen the giant comes. Sennacherib captures Judah's fortified cities and sends a field commander to shout up at Jerusalem's wall a sermon against faith: \"Do not let Hezekiah persuade you to trust in the LORD\" (18:30). \"Has the god of any nation ever delivered his land from the hand of the king of Assyria?\" (18:33). It is the oldest argument there is - look at the wreckage of every other nation; your God is just one more local deity about to lose."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter on the Kitchen Table",
+      "body": "A friend of mine kept a letter from the bank face-down on her kitchen table for three days. She knew what it said. The numbers had stopped adding up months before, and the envelope had the heavy, official look of a thing that ends something. She could not open it, because once she read it, it would be real, and she had no answer to it.\n\nWhen she finally did, she still had no answer. What she had was a decision about where to take it. She is a praying woman, and she did something that felt almost too literal to admit: she laid the letter open on the table, put her hands flat on either side of it, and prayed over the actual paper. \"I didn't have words for the bank,\" she said. \"So I just showed it to God. Here. This is the thing. You see it now too.\"\n\nNothing about her balance changed that afternoon. But something about her did. The threat had been moved. It was no longer a private terror she carried alone in the dark; it was an open page before Someone who could read it without flinching.",
+      "connectionToTheme": "Hezekiah does not argue with Assyria and does not pretend the threat is small. He carries the actual letter into the house of God and spreads it open - the ancient form of laying the dreaded page on the table and saying, You see it now too.",
+      "content": "A friend of mine kept a letter from the bank face-down on her kitchen table for three days. She knew what it said. The numbers had stopped adding up months before, and the envelope had the heavy, official look of a thing that ends something. She could not open it, because once she read it, it would be real, and she had no answer to it.\n\nWhen she finally did, she still had no answer. What she had was a decision about where to take it. She is a praying woman, and she did something that felt almost too literal to admit: she laid the letter open on the table, put her hands flat on either side of it, and prayed over the actual paper. \"I didn't have words for the bank,\" she said. \"So I just showed it to God. Here. This is the thing. You see it now too.\"\n\nNothing about her balance changed that afternoon. But something about her did. The threat had been moved. It was no longer a private terror she carried alone in the dark; it was an open page before Someone who could read it without flinching."
+    },
+    {
+      "type": "insight",
+      "heading": "He Spread It Out Before the LORD",
+      "body": "Watch what Hezekiah does with the threat. The Assyrians send a second message in writing - a letter built to break his nerve in the night. \"So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD\" (19:14).\n\nHe does not negotiate. Earlier he had tried that, stripping the temple gold to buy Sennacherib off (18:15-16), and it bought him nothing but a worse demand. Now he stops bargaining and starts praying - and notice the shape of the prayer. He begins not with the size of the army but with the size of God: \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth\" (19:15). Only then does he name the threat, handing it over rather than carrying it: \"Listen to the words that Sennacherib has sent to defy the living God\" (19:16). The Assyrian had framed it as Judah versus Assyria - a fight Judah loses every time. Hezekiah re-frames it: this is defiance of the living God. And the prayer ends not by asking to keep his throne, but \"so that all the kingdoms of the earth may know that You alone, O LORD, are God\" (19:19). That is the difference between a frightened prayer and a faithful one.",
+      "historicalContext": "Sennacherib's 701 BC campaign is among the most independently attested events in the Hebrew Bible. His own annals, on a clay prism now in the British Museum, boast that he shut up Hezekiah \"like a bird in a cage\" in Jerusalem - then describe him taking tribute and going home, never claiming to have captured the city. The empire's own record stops where the Bible says God intervened.",
+      "fascinatingFact": "\"Enthroned between the cherubim\" points to the ark of the covenant in the temple - the throne where heaven was said to meet earth. Hezekiah spreads the letter out at the place where God reigns, as if to say: read it from Your throne.",
+      "content": "Watch what Hezekiah does with the threat. The Assyrians send a second message in writing - a letter built to break his nerve in the night. \"So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD\" (19:14).\n\nHe does not negotiate. Earlier he had tried that, stripping the temple gold to buy Sennacherib off (18:15-16), and it bought him nothing but a worse demand. Now he stops bargaining and starts praying - and notice the shape of the prayer. He begins not with the size of the army but with the size of God: \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth\" (19:15). Only then does he name the threat, handing it over rather than carrying it: \"Listen to the words that Sennacherib has sent to defy the living God\" (19:16). The Assyrian had framed it as Judah versus Assyria - a fight Judah loses every time. Hezekiah re-frames it: this is defiance of the living God. And the prayer ends not by asking to keep his throne, but \"so that all the kingdoms of the earth may know that You alone, O LORD, are God\" (19:19). That is the difference between a frightened prayer and a faithful one."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hezekiah was handed a death sentence twice - first from Assyria's army, then from his own failing body, when Isaiah told him, \"you are about to die; you will not recover\" (20:1). He turned his face to the wall, prayed, and wept, and God answered: \"I have heard your prayer; I have seen your tears... On the third day from now you will go up to the house of the LORD\" (20:5).",
+      "modernApplication": "We meet our own death sentences in smaller envelopes - the diagnosis, the layoff, the message that ends something. The instinct is to negotiate, to manage, to keep the letter face-down. Hezekiah shows another way: carry the actual thing into God's presence, name God's greatness before you name your fear, and ask not merely to be spared but for God to be made known in how it goes.",
+      "connectionPoint": "Both rescues here - the city saved overnight, the dying king given fifteen more years - turn on the same hinge: a man who will not lean his weight on chariots, walls, or gold, and leans it instead on the living God. The contest is never really Judah versus Assyria. It is trust against terror, and the question the empire shouts at the wall is shouted at every believer: on what are you trusting?",
+      "newTestamentEcho": "Hezekiah is given life on \"the third day\" - a man who should be in the grave going up instead to the house of God. It is a faint, true shadow of a greater King. Jesus took the death sentence we could not bargain away, was three days \"in the heart of the earth\" (Matthew 12:40), and on the third day went up - not to a temple, but as the temple, alive. Hezekiah got fifteen more years; Christ rose to give life that does not run out: \"I am the resurrection and the life... Whoever believes in Me will live, even though he dies\" (John 11:25)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the letter you have been keeping face-down on the table - the threat you have not yet spread open before God?",
+      "additionalQuestions": [
+        "If someone asked you the field commander's question today - on what are you trusting? - what would your honest answer be, not the answer you wish were true, but the thing you actually lean your weight on when you are afraid?",
+        "Is there a good gift in your life - a person, a savings account, a reputation - that has slowly become a Nehushtan you lean on instead of God?",
+        "How would your prayers change if you wanted God known in your situation more than you wanted it simply resolved?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, God of Israel, enthroned between the cherubim - You alone are God over all the kingdoms of the earth, and You made the heavens and the earth. I have been carrying a letter face-down, bargaining with a fear I cannot pay off. So here it is. I spread it open before You. Incline Your ear and hear; open Your eyes and see. I do not ask only to be spared - I ask that in whatever comes, You would be known as the living God. You who heard a dying king's tears and gave him the third day, You who raised Your Son on the third day, hear me now. I lean my whole weight on You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one specific 'letter' - one real threat you have been keeping face-down - and do what Hezekiah did. Write it down plainly, set it open in front of you, and pray over the actual words: first naming who God is, then handing Him the threat, then asking that He be made known in it. Do not negotiate it down or pretend it is small. Spread it out before the LORD.",
+      "leavingAtCross": [
+        "The threat I keep face-down because reading it would make it real",
+        "The instinct to bargain my way out - giving up what is holy to buy a little safety",
+        "The lie the empire shouts: that my God is just one more local power who will lose"
+      ],
+      "receivingFromCross": [
+        "A God enthroned over every kingdom, who reads the letter without flinching",
+        "The freedom to stop bracing and lean my whole weight down",
+        "A King who took the death sentence I could not pay off and rose on the third day"
+      ],
+      "content": "Today, name one specific 'letter' - one real threat you have been keeping face-down - and do what Hezekiah did. Write it down plainly, set it open in front of you, and pray over the actual words: first naming who God is, then handing Him the threat, then asking that He be made known in it. Do not negotiate it down or pretend it is small. Spread it out before the LORD."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did Hezekiah destroy that no reformer before him had dared to touch, and why had that object become a problem (18:4)?",
+        "What does Hezekiah literally do with Sennacherib's letter, and what does that action reveal about where he takes his fear (19:14)?",
+        "How does the 'third day' in 2 Kings 20:5 point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly what you actually lean on when you are afraid.",
+        "Name a 'Nehushtan' for one another - a good thing that has quietly slid into God's place and may need to come down.",
+        "Pick one real threat each of you is facing and pray over it together this week the way Hezekiah did - naming God first, then spreading the threat open before Him."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Numbers 21:8-9",
+          "text": "Then the LORD said to Moses, \"Make a fiery serpent and mount it on a pole. When anyone who is bitten looks at it, he will live.\" So Moses made a bronze snake and mounted it on a pole. If anyone who was bitten looked at the bronze snake, he would live."
+        },
+        {
+          "reference": "Psalm 46:1-2",
+          "text": "God is our refuge and strength, an ever-present help in times of trouble. Therefore we will not fear, though the earth is transformed and the mountains are toppled into the depths of the seas,"
+        },
+        {
+          "reference": "Isaiah 37:14-20",
+          "text": "Isaiah's parallel account of Hezekiah receiving the letter, going up to the house of the LORD, spreading it out, and praying for deliverance - the same event told by the prophet beside the king."
+        },
+        {
+          "reference": "John 3:14-15",
+          "text": "Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes in Him may have eternal life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 18-20",
+          "note": "Read all three chapters in one sitting, watching for 'trust' (batach) repeated through chapter 18, the prayer in chapter 19, then the dying king's tears and the third day in chapter 20. Compare with the parallel in Isaiah 36-39."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hezekiah",
+      "title": "King of Judah, the One Who Trusted",
+      "description": "Son of the faithless king Ahaz, Hezekiah became king of Judah at twenty-five and reigned twenty-nine years in Jerusalem (18:1-2), roughly 715 to 686 BC. He led the most thorough reform of any Judean king, tearing down idols and even the venerated bronze snake of Moses. When Assyria came for Judah in 701 BC, he refused to lean on Egypt or his own walls and carried the threat into the temple instead. Faced later with a fatal illness, he turned his face to the wall, wept, and was given fifteen more years.",
+      "keyQuote": "O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth.",
+      "lessonForUs": "Hezekiah is not praised for being fearless - he tore his clothes and wept like any of us. He is praised because he knew where to take his terror. When the threat came in writing, he did not keep it face-down. He spread it out before the LORD.",
+      "heading": "King of Judah, the One Who Trusted"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2443,
+  "scriptureReference_full": "2 Kings 18-20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The Assyrian campaign of 701 BC is attested in Sennacherib's annals (the Taylor Prism / Sennacherib Prism, British Museum), which records tribute from Hezekiah and his confinement 'like a bird in a cage' but makes no claim to have taken Jerusalem.",
+    "Hebrew word study (batach, H982; mivtach) reflects standard lexical sources."
+  ]
 }

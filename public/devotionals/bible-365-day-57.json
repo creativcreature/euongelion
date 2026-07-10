@@ -1,38 +1,186 @@
 {
   "day": 57,
   "title": "Twelve scouts, two believers",
-  "teaser": "Day 57 of Bible 365 — Numbers 13-14",
+  "teaser": "Day 57 of Bible 365 — Numbers 13-14. Ten men saw giants. Two saw bread. The land was the same; the difference was who they thought was walking with them.",
   "framework": "Numbers 13-14 — Faith vs. fear",
   "scriptureReference": "Numbers 13-14",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 57"
+      "type": "scripture",
+      "reference": "Numbers 13:30-31; 14:8-9",
+      "translation": "BSB",
+      "emphasis": [
+        "We must go up and take possession",
+        "they will be like bread for us",
+        "the LORD is with us",
+        "We cannot go up",
+        "they are stronger than we are"
+      ],
+      "hebrewOriginal": "וַיהוָ֖ה אִתָּ֑נוּ אַל־תִּירָאֻֽם",
+      "passage": "Then Caleb quieted the people before Moses and said, \"We must go up and take possession of the land, for we can certainly conquer it!\" But the men who had gone up with him replied, \"We cannot go up against the people, for they are stronger than we are!\" ... \"If the LORD delights in us, He will bring us into this land, a land flowing with milk and honey, and He will give it to us. Only do not rebel against the LORD, and do not be afraid of the people of the land, for they will be like bread for us. Their protection has been removed, and the LORD is with us. Do not be afraid of them!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Numbers 13-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 13-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "דִּבָּה",
+      "transliteration": "dibbah",
+      "pronunciation": "dib-BAH",
+      "meaning": "an evil report, a slander, a whispering campaign",
+      "rootMeaning": "Dibbah is not a neutral word for 'information.' It means a defaming report - the kind of thing said in a lowered voice that poisons a whole room. The verb behind it pictures a slow, creeping slander.",
+      "usageNote": "Numbers 13:32 says the ten scouts gave the Israelites a dibbah - 'a bad report' - about the land. The facts they listed were largely true: the cities were fortified, the people were tall. But Scripture does not call it a report. It calls it slander. They told the truth about the giants and lied about God, and the lie was in what they left out: that the God who had split the sea was standing right there.",
+      "wordByWord": [
+        {
+          "word": "וַיֹּצִיאוּ",
+          "transliteration": "vayyotzi'u",
+          "meaning": "and they brought out, they put forward"
+        },
+        {
+          "word": "דִּבַּת",
+          "transliteration": "dibbat",
+          "meaning": "an evil report of, a slander concerning"
+        },
+        {
+          "word": "הָאָרֶץ",
+          "transliteration": "ha'aretz",
+          "meaning": "the land"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "לֶחֶם / lechem",
+          "reference": "In Numbers 14:9 Caleb and Joshua call the giants 'bread' (lechem) for Israel - the very thing the others feared, they call food. The same enemy is a wall to fear or a meal to be given, depending on who you believe is at the table."
+        }
+      ],
+      "strongsNumber": "H1681",
+      "definition": "evil report, slander, defamation; a whispering that injures another's name",
+      "usage": "The same scouts could have brought back a report (a plain account) and brought back a dibbah (a slander) instead. Fear rarely invents new facts. It edits the true ones until God is no longer in the picture."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Faith vs. fear. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ enters the rest we forfeited (Heb 4:8-11).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Ten Saw Giants, Two Saw Bread",
+      "body": "Twelve men walk into Canaan on the same forty-day errand. They climb the same hills, taste the same grapes - a single cluster so heavy it takes two men and a pole to carry it - and stand under the same walled cities. Twelve men see exactly the same land. Then they come home and tell two completely different stories.\n\nTen of them say: the land is good, but. \"Nevertheless, the people living in the land are strong, and the cities are large and fortified. We even saw the descendants of Anak there.\" The facts are accurate. The cities really are fortified; the people really are tall. By the time the report reaches its end it has curdled into something Scripture refuses to call a report at all. \"We seemed like grasshoppers in our own sight, and we must have seemed the same to them.\" Notice the move: they have started measuring themselves against giants instead of measuring giants against God. The God who drowned Pharaoh's army has quietly dropped out of the math.\n\nTwo of them - Caleb and Joshua - look at the identical giants and say something that sounds almost reckless: \"do not be afraid of the people of the land, for they will be like bread for us. Their protection has been removed, and the LORD is with us.\" Bread. The thing the others called a wall, these two call a meal. The difference between the ten and the two is not eyesight. Both groups see the giants clearly. The difference is who they believe is standing behind them.",
+      "keyInsight": "Fear and faith were looking at the exact same facts. The scouts did not disagree about the size of the giants. They disagreed about the size of God - and that one disagreement decided whether a whole generation lived or died in the wilderness.",
+      "content": "Twelve men walk into Canaan on the same forty-day errand. They climb the same hills, taste the same grapes - a single cluster so heavy it takes two men and a pole to carry it - and stand under the same walled cities. Twelve men see exactly the same land. Then they come home and tell two completely different stories.\n\nTen of them say: the land is good, but. \"Nevertheless, the people living in the land are strong, and the cities are large and fortified. We even saw the descendants of Anak there.\" The facts are accurate. The cities really are fortified; the people really are tall. By the time the report reaches its end it has curdled into something Scripture refuses to call a report at all. \"We seemed like grasshoppers in our own sight, and we must have seemed the same to them.\" Notice the move: they have started measuring themselves against giants instead of measuring giants against God. The God who drowned Pharaoh's army has quietly dropped out of the math.\n\nTwo of them - Caleb and Joshua - look at the identical giants and say something that sounds almost reckless: \"do not be afraid of the people of the land, for they will be like bread for us. Their protection has been removed, and the LORD is with us.\" Bread. The thing the others called a wall, these two call a meal. The difference between the ten and the two is not eyesight. Both groups see the giants clearly. The difference is who they believe is standing behind them."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Same Diagnosis, Two Different Rooms",
+      "body": "Two people sit in the same waiting room and get nearly the same news from the same doctor on the same afternoon. The scan shows the same shadow. The numbers are the same numbers.\n\nOne of them walks out and the news becomes the whole sky - it fills every hour, swallows the future, edits God out of the picture the way the ten scouts edited Him out of theirs. The facts are not wrong. The shadow is really there. But somewhere between the parking lot and the front door the shadow has become the only true thing in the world.\n\nThe other walks out carrying the very same scan, and somehow the news is real without being final. Not because they are braver, or feel less, or pretend the shadow isn't there. They are simply not doing the math alone. There is a third figure in their accounting that the first person has stopped counting - the One who has been faithful before and has not left the room.\n\nThis is the gap between the ten and the two. It almost never runs along the line of who has the harder facts. It runs along the line of who is still counting on God when the facts come in.",
+      "connectionToTheme": "Faith is not the absence of giants or the denial of bad news. It is refusing to do the math with God left out of it.",
+      "content": "Two people sit in the same waiting room and get nearly the same news from the same doctor on the same afternoon. The scan shows the same shadow. The numbers are the same numbers.\n\nOne of them walks out and the news becomes the whole sky - it fills every hour, swallows the future, edits God out of the picture the way the ten scouts edited Him out of theirs. The facts are not wrong. The shadow is really there. But somewhere between the parking lot and the front door the shadow has become the only true thing in the world.\n\nThe other walks out carrying the very same scan, and somehow the news is real without being final. Not because they are braver, or feel less, or pretend the shadow isn't there. They are simply not doing the math alone. There is a third figure in their accounting that the first person has stopped counting - the One who has been faithful before and has not left the room.\n\nThis is the gap between the ten and the two. It almost never runs along the line of who has the harder facts. It runs along the line of who is still counting on God when the facts come in."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sentence They Spoke Became the Sentence They Got",
+      "body": "Read Israel's panic in chapter 14 against God's verdict and a chill runs up the page. In the dark of that night the people wail, \"If only we had died in this wilderness!\" They say it as the worst thing they can imagine - a curse flung at the sky.\n\nThen God answers, and His answer is almost unbearable in its precision: \"As surely as I live, declares the LORD, I will do to you exactly as I heard you say. Your bodies will fall in this wilderness.\" They asked to die in the wilderness. They got it. The judgment is not God inventing a new punishment; it is God handing them the future they themselves chose with their own mouths. Forty days the scouts walked the land; forty years Israel will walk the desert - a year for each day, until the generation that would not trust has died off and a new one can go in.\n\nThis is what unbelief does when it is allowed to run its course. It does not merely feel bad; it forfeits. The land was never the problem. The giants were never the problem. The problem was a people standing on the very border of the promise who would not believe the One who brought them there - and so they wandered in sight of a home they refused to enter.",
+      "historicalContext": "Kadesh-barnea sat at the southern edge of Canaan. Israel was not a thousand miles from the promise when they refused it - they were at the doorstep. Deuteronomy 1 has Moses retelling this same day decades later as the wound the whole nation circled around: the moment the door was open and they would not walk through it.",
+      "fascinatingFact": "God numbers the years to match the days: \"In keeping with the forty days you spied out the land, you shall bear your guilt forty years - a year for each day\" (Numbers 14:34). The wilderness wandering is not aimless. It is a measured, merciful delay - long enough for unbelief to die and faith to grow up, so that the children of the grasshoppers could enter as giants of their own.",
+      "content": "Read Israel's panic in chapter 14 against God's verdict and a chill runs up the page. In the dark of that night the people wail, \"If only we had died in this wilderness!\" They say it as the worst thing they can imagine - a curse flung at the sky.\n\nThen God answers, and His answer is almost unbearable in its precision: \"As surely as I live, declares the LORD, I will do to you exactly as I heard you say. Your bodies will fall in this wilderness.\" They asked to die in the wilderness. They got it. The judgment is not God inventing a new punishment; it is God handing them the future they themselves chose with their own mouths. Forty days the scouts walked the land; forty years Israel will walk the desert - a year for each day, until the generation that would not trust has died off and a new one can go in.\n\nThis is what unbelief does when it is allowed to run its course. It does not merely feel bad; it forfeits. The land was never the problem. The giants were never the problem. The problem was a people standing on the very border of the promise who would not believe the One who brought them there - and so they wandered in sight of a home they refused to enter."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Standing at the border of everything God had promised, Israel weighed the giants against their own strength, found themselves grasshoppers, and turned back - and a whole generation died in the wilderness for unbelief, while Caleb and Joshua, who counted on God, lived to enter.",
+      "modernApplication": "You are almost never short on facts about your giants. The diagnosis, the debt, the marriage, the door God seems to be opening - you can list every fortified city. The question fear never lets you ask is the one Caleb asked: what happens to these walls if the LORD is actually with us? Faith does not delete the giants from the report. It refuses to write the report as if God were not in the land.",
+      "connectionPoint": "The same border-standing choice recurs all through Scripture. Israel at the Red Sea, hemmed in, chose to trust and walked through (Exodus 14). Israel at Kadesh, hemmed in by giants, chose to fear and walked back. Centuries later the writer to the Hebrews holds this very wilderness up as a warning to the church: \"with whom was God angry for forty years? Was it not with those who sinned, whose bodies fell in the wilderness?... So we see that it was because of their unbelief that they were unable to enter\" (Hebrews 3:17, 19).",
+      "newTestamentEcho": "The name of the faithful scout is the hinge. \"Joshua\" is Yehoshua - \"the LORD saves\" - the very name that comes into Greek as Iesous, Jesus. Joshua led the next generation into the land, yet Hebrews insists even that was not the final rest: \"For if Joshua had given them rest, God would not have spoken later about another day. There remains, then, a Sabbath rest for the people of God\" (Hebrews 4:8-9). The first Joshua brought a people into a country. The true Joshua, Jesus, brings His people into the rest the unbelieving forfeited - entered, then as now, not by conquering the giants but by believing the One who is with us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you standing at a border right now - a giant clearly in view - and quietly doing the math with God left out of it?",
+      "additionalQuestions": [
+        "What is the true 'report' of your situation - and where has it curdled into a 'dibbah,' a story told as if God were not in the land?",
+        "Caleb and Joshua called the giants 'bread.' What would it mean to name your particular giant as something God intends to feed you with rather than destroy you with?",
+        "Israel got the wilderness they spoke over themselves. What have you been speaking over your own future, and would you want God to answer you 'exactly as I heard you say'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have seen the giants clearly and counted You out of the arithmetic. Forgive me for the reports I tell myself at night, true in every fact and faithless in the whole - the ones where the walls are real and You have somehow disappeared. Put me back in the picture I keep editing You out of. Give me Caleb's different spirit, that I would follow You wholeheartedly to the border and through it. And where I cannot conquer, bring me into Your rest - not by my strength against the giants, but by trusting the One whose name is 'the LORD saves.' Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one giant out loud - the real, fortified, accurate fact you are afraid of. Then say the rest of the sentence the ten scouts refused to say: \"...and the LORD is with us.\" Write both halves down where you'll see them. Refuse to let the report end before God is in it.",
+      "leavingAtCross": [
+        "The grasshopper math - measuring myself against the giant instead of the giant against God",
+        "The whispered 'dibbah' I tell myself, true in its facts and faithless in its whole",
+        "The wilderness I keep speaking over my own future"
+      ],
+      "receivingFromCross": [
+        "Caleb's 'different spirit' - the freedom to call a giant 'bread' because the LORD is with me",
+        "A God who is slow to anger and abounding in loving devotion, who pardons when we ask",
+        "Entrance, through the true Joshua, into the rest an unbelieving generation forfeited"
+      ],
+      "content": "Today, name one giant out loud - the real, fortified, accurate fact you are afraid of. Then say the rest of the sentence the ten scouts refused to say: \"...and the LORD is with us.\" Write both halves down where you'll see them. Refuse to let the report end before God is in it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "All twelve scouts saw the same land and the same giants. What, exactly, was the difference between the report of the ten and the report of the two?",
+        "Why does Scripture call the ten scouts' account a 'dibbah' (slander) when most of its individual facts were true?",
+        "God told Israel, 'I will do to you exactly as I heard you say.' How is the forty-year sentence less an arbitrary punishment and more the future they chose for themselves?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a 'fortified city' in your life right now - a real, factual obstacle - and confess honestly whether you've been counting God into the picture or out of it.",
+        "Talk about a time fear told you a true-but-faithless story. What did it leave out, and how did it end?",
+        "Ask each other: where is God inviting you to follow Him 'wholeheartedly,' like Caleb, into something that looks too big?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Numbers 13:32-33",
+          "text": "So they gave the Israelites a bad report about the land that they had spied out: \"The land we explored devours its inhabitants, and all the people we saw there are great in stature.... We seemed like grasshoppers in our own sight, and we must have seemed the same to them!\""
+        },
+        {
+          "reference": "Numbers 14:24",
+          "text": "But because My servant Caleb has a different spirit and has followed Me wholeheartedly, I will bring him into the land he has entered, and his descendants will inherit it."
+        },
+        {
+          "reference": "Hebrews 3:17, 19",
+          "text": "And with whom was God angry for forty years? Was it not with those who sinned, whose bodies fell in the wilderness?... So we see that it was because of their unbelief that they were unable to enter."
+        },
+        {
+          "reference": "Hebrews 4:8-9",
+          "text": "For if Joshua had given them rest, God would not have spoken later about another day. There remains, then, a Sabbath rest for the people of God."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 13-14",
+          "note": "Read both chapters in one sitting, watching the report curdle from facts (13:27-28) into slander (13:32-33), and the people's own words (14:2) become God's verdict (14:28-29)."
+        },
+        {
+          "type": "book",
+          "title": "Deuteronomy 1:19-46",
+          "note": "Moses retells this same day forty years later from the far side of the wandering. Notice what the failure looked like in hindsight."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Caleb son of Jephunneh",
+      "title": "The Scout with a Different Spirit",
+      "era": "13th-15th century BC (the wilderness generation)",
+      "key_trait": "Saw the giants as clearly as anyone and counted on God anyway",
+      "description": "One of the twelve scouts sent into Canaan, and one of only two who came back believing. While ten men measured themselves against the giants and shrank, Caleb 'quieted the people' and insisted, 'We must go up and take possession of the land, for we can certainly conquer it.' God singled him out for a rare commendation - that he had 'a different spirit' and 'followed Me wholeheartedly' - and promised him the very land his feet had walked. Of an entire adult generation, only Caleb and Joshua lived to enter it. Forty-five years later, at eighty-five, Caleb asked for the hill country of the giants as his inheritance and took it (Joshua 14:6-14).",
+      "keyQuote": "We must go up and take possession of the land, for we can certainly conquer it!",
+      "lessonForUs": "Caleb was not braver because he saw smaller giants. He saw the same Anakim everyone else saw. He simply never finished a sentence about his enemies without finishing it about his God - and that 'different spirit' was the difference between a grave in the wilderness and a home in the land.",
+      "heading": "The Scout with a Different Spirit"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2399,
+  "scriptureReference_full": "Numbers 13-14 (Numbers 13:30-31; 14:8-9)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (dibbah H1681; the lechem 'bread' wordplay in Numbers 14:9) reflects standard lexical sources.",
+    "Christ-connection (Joshua / Yehoshua / Iesous and the forfeited rest) follows the canonical reading of Hebrews 3:7-4:11, which expounds Numbers 13-14 directly."
+  ]
 }

@@ -1,38 +1,182 @@
 {
   "day": 357,
-  "title": "Hebrews: Faith Hall + Endurance — Day 7 — Sabbath",
-  "teaser": "Day 357 of Bible 365 — Hebrews 11-12",
+  "title": "The Witnesses Who Never Got There",
+  "teaser": "A roll call of people who died still waiting. Hebrews 11 honors faith that never collected its reward in life — because the reward was a Person who hadn't arrived yet, and the same Jesus who finished their race is running yours.",
   "framework": "Hebrews 11-12 — Hebrews: Faith Hall + Endurance",
   "scriptureReference": "Hebrews 11-12",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 357"
+      "type": "scripture",
+      "reference": "Hebrews 11:1, 13; 12:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "the assurance of what we hope for",
+        "All these people died in faith",
+        "a great cloud of witnesses",
+        "the author and perfecter of our faith"
+      ],
+      "greekOriginal": "ἀφορῶντες εἰς τὸν τῆς πίστεως ἀρχηγὸν καὶ τελειωτὴν Ἰησοῦν",
+      "passage": "Now faith is the assurance of what we hope for and the certainty of what we do not see... All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar. And they acknowledged that they were strangers and exiles on the earth... Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us. Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hebrews 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hebrews 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀρχηγὸς καὶ τελειωτής",
+      "transliteration": "archēgos kai teleiōtēs",
+      "pronunciation": "ar-khay-GOSS kai teh-lay-oh-TACE",
+      "meaning": "the one who begins it and the one who finishes it; founder and completer",
+      "rootMeaning": "Archēgos joins archē (beginning, origin, first) with agō (to lead) - the one who goes first and opens the way, a trailblazer or founder. Teleiōtēs comes from teleioō, to bring to its goal, to complete. Together they bracket the whole of faith: Jesus is its source and its finish line.",
+      "usageNote": "Hebrews uses archēgos of Jesus twice - here at 12:2 and earlier at 2:10, where He is called 'the author of their salvation,' made perfect through suffering. He does not stand at the finish waving the runners in. He ran the course first, all the way through death, and crossed it ahead of them.",
+      "wordByWord": [
+        {
+          "word": "ἀφορῶντες",
+          "transliteration": "aphorōntes",
+          "meaning": "looking away from everything else and fixing the eyes on one thing"
+        },
+        {
+          "word": "ἀρχηγὸν",
+          "transliteration": "archēgon",
+          "meaning": "founder, originator, pioneer - the one who leads off"
+        },
+        {
+          "word": "τελειωτὴν",
+          "transliteration": "teleiōtēn",
+          "meaning": "perfecter, finisher - the one who brings it to its goal"
+        },
+        {
+          "word": "Ἰησοῦν",
+          "transliteration": "Iēsoun",
+          "meaning": "Jesus - the name set at the very end of the Greek clause, the point everything was reaching toward"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "πίστις",
+          "reference": "Pistis (faith) opens chapter 11 and runs through it forty times over - not as a feeling but as the assurance of things hoped for. The same word names what Jesus authors and perfects in 12:2."
+        }
+      ],
+      "strongsNumber": "G747",
+      "definition": "archēgos: a chief leader, prince, author, founder; one who takes the lead and so provides the first occasion of something",
+      "usage": "The Greek word order of 12:2 places Iēsoun last, after both titles. The sentence makes the reader wait for the name - founder and perfecter of faith... Jesus. The whole roll call of chapter 11 has been waiting for that name too."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hebrews: Faith Hall + Endurance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the founder + perfecter (Heb 12:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Hall of Faith Full of Unfinished Stories",
+      "body": "Read Hebrews 11 slowly and something strange surfaces. It is called the Hall of Faith, and it reads like a parade of triumph: Noah builds, Abraham goes, Moses chooses, the walls of Jericho fall, the dead are raised. But sitting in the middle of the parade is a verse that should stop you. \"All these people died in faith, without having received the things they were promised\" (11:13).\n\nThey died still waiting. Abraham was promised a land and lived in tents in it as a stranger. He was promised descendants like the stars and held one son of the promise in his arms. The prophets were promised a kingdom and were sawn in two, stoned, left wandering in sheepskins. The writer is honest about this in a way we are often afraid to be: faith, in this chapter, is not the thing that gets you what you want in time. Faith is the thing that lets you die reaching for something you never held, certain it was real.\n\nThe word the writer keeps using is pistis - the assurance of what we hope for, the certainty of what we do not see (11:1). Not certainty about what is in your hands. Certainty about what is not yet, and is coming. Then the verse most readers skip: \"God had planned something better for us, so that together with us they would be made perfect\" (11:40). The witnesses could not finish without us. Their faith and ours were always meant to be completed by the same arrival.",
+      "keyInsight": "The Hall of Faith is not a record of people who got what they prayed for. It is a record of people who died trusting a promise that had not yet come - because the promise was a Person, and the Person had not yet arrived.",
+      "content": "Read Hebrews 11 slowly and something strange surfaces. It is called the Hall of Faith, and it reads like a parade of triumph: Noah builds, Abraham goes, Moses chooses, the walls of Jericho fall, the dead are raised. But sitting in the middle of the parade is a verse that should stop you. \"All these people died in faith, without having received the things they were promised\" (11:13).\n\nThey died still waiting. Abraham was promised a land and lived in tents in it as a stranger. He was promised descendants like the stars and held one son of the promise in his arms. The prophets were promised a kingdom and were sawn in two, stoned, left wandering in sheepskins. The writer is honest about this in a way we are often afraid to be: faith, in this chapter, is not the thing that gets you what you want in time. Faith is the thing that lets you die reaching for something you never held, certain it was real.\n\nThe word the writer keeps using is pistis - the assurance of what we hope for, the certainty of what we do not see (11:1). Not certainty about what is in your hands. Certainty about what is not yet, and is coming. Then the verse most readers skip: \"God had planned something better for us, so that together with us they would be made perfect\" (11:40). The witnesses could not finish without us. Their faith and ours were always meant to be completed by the same arrival."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cathedral Builders",
+      "body": "There is an old trade among stonemasons that no one practices anymore, because the buildings it served took longer to raise than a human life. A man would be apprenticed at twelve to carve the base of a column. He would spend forty years on the lower courses of a cathedral he had been told, plainly, he would never see finished. His son might set the windows. His grandson might see the spire go up. He carved anyway, by lamplight, the parts that would be hidden behind later work - because he believed the thing he was building was real, even though the only proof he would ever have was the trust of the man who drew the plans.\n\nWe tend to imagine faith as a sprint to a reward we collect. Hebrews 11 imagines it as masonry. You set your stone. You die. The wall is not yet a cathedral. And the strange dignity of the chapter is that God writes the names of the men who only ever saw scaffolding.\n\nThe builders were not foolish. They had seen the master's drawings. They knew what the finished thing would be. They simply trusted it enough to spend a life on a part of it they would not live to admire. That is closer to biblical faith than most of what we call it.",
+      "connectionToTheme": "The witnesses of Hebrews 11 are cathedral builders - they set their stone in faith and died before the spire, trusting the One who drew the plans to finish what they could not.",
+      "content": "There is an old trade among stonemasons that no one practices anymore, because the buildings it served took longer to raise than a human life. A man would be apprenticed at twelve to carve the base of a column. He would spend forty years on the lower courses of a cathedral he had been told, plainly, he would never see finished. His son might set the windows. His grandson might see the spire go up. He carved anyway, by lamplight, the parts that would be hidden behind later work - because he believed the thing he was building was real, even though the only proof he would ever have was the trust of the man who drew the plans.\n\nWe tend to imagine faith as a sprint to a reward we collect. Hebrews 11 imagines it as masonry. You set your stone. You die. The wall is not yet a cathedral. And the strange dignity of the chapter is that God writes the names of the men who only ever saw scaffolding.\n\nThe builders were not foolish. They had seen the master's drawings. They knew what the finished thing would be. They simply trusted it enough to spend a life on a part of it they would not live to admire. That is closer to biblical faith than most of what we call it."
+    },
+    {
+      "type": "insight",
+      "heading": "From Cloud to Cross to Chair",
+      "body": "Watch what happens at the seam between the chapters. Chapter 11 ends with a crowd of the faithful dead, still incomplete. Chapter 12 opens by turning that crowd into a stadium: \"since we are surrounded by such a great cloud of witnesses, let us run with endurance the race set out for us\" (12:1). The witnesses are not spectators in box seats judging your pace. The Greek martyres means those who testified - they are evidence. Their finished lives are testimony that the course can be run.\n\nThen the chapter does the thing it has been building toward across two chapters. \"Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God\" (12:2). The whole roll call of people who endured without receiving funnels to one figure who endured the worst of all - and received. He sat down. The verb is rest. The work is finished.\n\nNotice the motion: from cloud to cross to chair. The witnesses ran toward a promise; Jesus ran through death to a throne; and because the one who began our faith also finished it Himself, the cathedral the witnesses were building gets its spire. That is why 11:40 said they could not be made perfect without us - because the thing being completed was never their individual lives. It was the single people of God, the whole assembly, gathered around the one who endured the cross and sat down.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure to drift back from Christ to the older forms of worship, likely before the destruction of the Temple in AD 70. The recipients were tempted to quit - not by argument but by exhaustion and cost. Chapters 11 and 12 are the writer's answer to people who were tired: here is a stadium full of those who ran before you, and here is the One who ran first and finished.",
+      "fascinatingFact": "Hebrews 12:24 says we have come \"to the sprinkled blood that speaks a better word than the blood of Abel.\" Abel's blood, the first death of a human in Scripture, cried out from the ground for justice (Genesis 4:10). Christ's blood speaks too - but it speaks mercy. The same writer who opened the Hall of Faith with Abel (11:4) closes the section by naming the blood that finally answers Abel's cry.",
+      "content": "Watch what happens at the seam between the chapters. Chapter 11 ends with a crowd of the faithful dead, still incomplete. Chapter 12 opens by turning that crowd into a stadium: \"since we are surrounded by such a great cloud of witnesses, let us run with endurance the race set out for us\" (12:1). The witnesses are not spectators in box seats judging your pace. The Greek martyres means those who testified - they are evidence. Their finished lives are testimony that the course can be run.\n\nThen the chapter does the thing it has been building toward across two chapters. \"Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God\" (12:2). The whole roll call of people who endured without receiving funnels to one figure who endured the worst of all - and received. He sat down. The verb is rest. The work is finished.\n\nNotice the motion: from cloud to cross to chair. The witnesses ran toward a promise; Jesus ran through death to a throne; and because the one who began our faith also finished it Himself, the cathedral the witnesses were building gets its spire. That is why 11:40 said they could not be made perfect without us - because the thing being completed was never their individual lives. It was the single people of God, the whole assembly, gathered around the one who endured the cross and sat down."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The faithful of Hebrews 11 died without receiving the promise, longing for a better country and a city God had prepared (11:13-16). Their faith was real and their reward was deferred, because the promise was a Person who had not yet come.",
+      "modernApplication": "You may be carrying a faith that has not paid out. A prayer prayed for years. A child you are still waiting on. A healing that did not come, a calling that has not opened. Hebrews does not tell you that real faith always gets the thing in time. It tells you that the witnesses didn't either - and they are honored, not pitied. The question is not whether the promise has arrived in your hands. It is whether you can keep setting your stone, eyes fixed on the One who finishes what we cannot.",
+      "connectionPoint": "This passage is the gathering point of the whole canon. Every name in chapter 11 is pulled forward from Genesis, Exodus, Judges, the prophets - the entire Old Testament re-read as one long reaching toward a promise not yet given. Hebrews 12 then sets Sinai (the mountain that burned and could not be touched, 12:18) against Zion (the heavenly Jerusalem, the assembly of the firstborn, 12:22-24). The Bible's long story of a people kept at a distance from God resolves in a people who have finally come near - through Jesus, the mediator of a new covenant.",
+      "newTestamentEcho": "What the witnesses reached for without grasping, we have been brought to. \"You have come to Mount Zion... to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel\" (12:22-24). The same Jesus who is the author and perfecter of faith is the city the strangers and exiles were longing for - and in Him, the dead of chapter 11 and the living of chapter 12 are made perfect together, at last."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What promise are you still waiting on - the thing you have asked God for and not yet received - and could you keep trusting Him for it even if it never arrives in your lifetime?",
+      "additionalQuestions": [
+        "When you read that the heroes of faith 'died without having received the things they were promised,' does it disturb you or steady you? Why?",
+        "What is the encumbrance, the weight you have been carrying, that Hebrews 12:1 invites you to throw off so you can run lighter?",
+        "What would change today if you fixed your eyes on Jesus as the One who finishes your faith, rather than on how far you still have to run?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, author and perfecter of my faith, I am tired in the part of the race I am running. I have asked You for things I do not yet hold, and some days I wonder if I am building toward a cathedral I will never see. Steady me with the cloud of witnesses who ran before me and died still reaching, and were not ashamed. Let me throw off the weight I have been carrying and fix my eyes on You, who endured the cross and sat down. You began this faith in me. Finish it. On the days I cannot see the promise, let it be enough that You can. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is nothing to finish, because Christ already sat down. Sit for a few quiet minutes and name one promise you are still waiting on. Then say slowly, as many times as it takes to mean it: \"author and perfecter of my faith.\" Let the unfinished thing rest in the hands of the One who finishes.",
+      "leavingAtCross": [
+        "The belief that faith always means getting the thing I prayed for in my lifetime",
+        "The weight and the entangling sin Hebrews 12:1 says to throw off before the race",
+        "The fear that a prayer not yet answered means a faith that has failed"
+      ],
+      "receivingFromCross": [
+        "A place in the great cloud of witnesses who ran before me and were not ashamed",
+        "Eyes fixed on Jesus, who endured the cross and sat down - the work finished",
+        "The unshakable kingdom we are receiving, and reverence and gratitude to worship the One who gives it (12:28)"
+      ],
+      "content": "Today is a sabbath day - there is nothing to finish, because Christ already sat down. Sit for a few quiet minutes and name one promise you are still waiting on. Then say slowly, as many times as it takes to mean it: \"author and perfecter of my faith.\" Let the unfinished thing rest in the hands of the One who finishes."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Hebrews 11:13 say the heroes of faith 'died without having received the things they were promised' - and how does 11:40 explain it?",
+        "What does it mean that Jesus is both the 'author' (archēgos) and the 'perfecter' (teleiōtēs) of faith, rather than only its reward at the end?",
+        "How does Hebrews 12 move from the burning mountain that cannot be touched (Sinai) to the city we have come to (Zion), and what changes the distance?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one promise or prayer you have been waiting on for a long time, and how the waiting has affected your faith.",
+        "Talk about the 'encumbrance' in Hebrews 12:1 - what specific weight is each of you carrying that makes the race harder than it needs to be?",
+        "Ask each other: where are you fixing your eyes right now - on Jesus, or on how far you still have to go?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11:6",
+          "text": "And without faith it is impossible to please God, because anyone who approaches Him must believe that He exists and that He rewards those who earnestly seek Him."
+        },
+        {
+          "reference": "Hebrews 11:16",
+          "text": "Instead, they were longing for a better country, a heavenly one. Therefore God is not ashamed to be called their God, for He has prepared a city for them."
+        },
+        {
+          "reference": "Hebrews 12:11",
+          "text": "No discipline seems enjoyable at the time, but painful. Later on, however, it yields a harvest of righteousness and peace to those who have been trained by it."
+        },
+        {
+          "reference": "Hebrews 12:28-29",
+          "text": "Therefore, since we are receiving an unshakable kingdom, let us be filled with gratitude, and so worship God acceptably with reverence and awe, for our God is a consuming fire."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11-12",
+          "note": "Read both chapters in one sitting. Watch for the seam between them: the crowd of the dead at the end of 11 becomes the stadium of witnesses at the start of 12, and everything funnels to the name in 12:2 - Jesus."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Abraham",
+      "title": "The Stranger Who Lived in the Promise as a Tent-Dweller",
+      "description": "The first man named at length in the Hall of Faith. \"By faith Abraham, when called to go to a place he would later receive as his inheritance, obeyed and went, without knowing where he was going\" (11:8). He lived his whole life in the land of promise as a foreigner, in tents, and died holding one son and a deed to a burial cave. Hebrews calls him not a failure but a model: he was looking forward to the city with foundations, whose architect and builder is God (11:10).",
+      "keyQuote": "All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar.",
+      "lessonForUs": "Abraham did not get the country in his lifetime; he got the calling and a tent and a promise, and he trusted the One who gave it. The same faith is asked of us - not certainty about what is in our hands, but assurance about what is coming, fixed on the One who finishes the journey we begin.",
+      "heading": "The Stranger Who Lived in the Promise as a Tent-Dweller"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1614,
+  "scriptureReference_full": "Hebrews 11-12",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (archēgos G747, teleiōtēs G5051; pistis G4102; martys G3144) reflects standard lexical sources. The Abel allusion in Hebrews 12:24 draws on Genesis 4:10."
+  ]
 }

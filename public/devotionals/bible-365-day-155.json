@@ -1,38 +1,187 @@
 {
   "day": 155,
-  "title": "Fall of Jerusalem + Lamentations — Day 1 — Hook",
-  "teaser": "Day 155 of Bible 365 — Lamentations",
+  "title": "How lonely lies the city",
+  "teaser": "When Jerusalem falls, God gives His people a book of tears. The first word is a sob — and it is allowed.",
   "framework": "Lamentations — Fall of Jerusalem + Lamentations",
   "scriptureReference": "Lamentations",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 155"
+      "type": "scripture",
+      "reference": "Lamentations 1:1-2, 12",
+      "translation": "BSB",
+      "emphasis": [
+        "How lonely lies the city",
+        "no one to comfort her",
+        "Is there any sorrow like mine"
+      ],
+      "hebrewOriginal": "אֵיכָה יָשְׁבָה בָדָד הָעִיר רַבָּתִי עָם",
+      "passage": "How lonely lies the city, once so full of people! She who was great among the nations has become a widow. The princess of the provinces has become a slave. She weeps aloud in the night, with tears upon her cheeks. Among all her lovers there is no one to comfort her. All her friends have betrayed her; they have become her enemies. ... Is this nothing to you, all you who pass by? Look around and see! Is there any sorrow like mine, which was inflicted on me, which the LORD made me suffer on the day of His fierce anger?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Lamentations**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Lamentations and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֵיכָה",
+      "transliteration": "eichah",
+      "pronunciation": "ay-KHAH",
+      "meaning": "How...! — a cry of grief and disbelief",
+      "rootMeaning": "Eichah is not really a question looking for an answer. It is the sound a person makes standing in front of a ruin they cannot believe is real. 'How? How did it come to this?' The same word can mean a flat 'where?' but here it is the gasp before the weeping.",
+      "usageNote": "In the Hebrew Bible this book has no title of its own; the Jewish tradition simply names it by its first word, Eichah. The whole scroll is read aloud once a year, on the ninth of Av, the day that remembers the burning of the Temple. A book of tears is named after the catch in the throat that opens it.",
+      "wordByWord": [
+        {
+          "word": "אֵיכָה",
+          "transliteration": "eichah",
+          "meaning": "How...! the cry of grief that opens the book"
+        },
+        {
+          "word": "יָשְׁבָה",
+          "transliteration": "yashvah",
+          "meaning": "she sits, she dwells - the city pictured as a woman sitting alone"
+        },
+        {
+          "word": "בָדָד",
+          "transliteration": "badad",
+          "meaning": "alone, in isolation, set apart from all comfort"
+        },
+        {
+          "word": "הָעִיר",
+          "transliteration": "ha'ir",
+          "meaning": "the city - Jerusalem, named not by name but by her emptiness"
+        },
+        {
+          "word": "רַבָּתִי עָם",
+          "transliteration": "rabbati am",
+          "meaning": "great with people, once crowded - the past she has lost"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֵיכָה / אַיֶּכָּה",
+          "reference": "Eichah ('how?') sits close to the ayyekah ('where are you?') God speaks to Adam in Genesis 3:9. Both are the language of a relationship after something has broken - one voice asking where the other has gone, one voice asking how it all fell apart."
+        }
+      ],
+      "strongsNumber": "H349",
+      "definition": "how, in what way; here an exclamation of lament",
+      "usage": "Eichah opens three of this book's five poems (chapters 1, 2, and 4). It is the keynote struck again and again - not a riddle to be solved but a grief to be voiced."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Fall of Jerusalem + Lamentations. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wept over Jerusalem (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A People Given Permission to Weep",
+      "body": "In 586 BC the Babylonian army broke through the walls of Jerusalem, burned the Temple of Solomon, and led the survivors away in chains. The city David had made his capital, the place where God had promised His name would dwell, was left a smoking ruin. The book of Lamentations is what God's people wrote in the ashes.\n\nIt would have been easy to expect a different kind of book here - a tidy theology of why it happened, a quick turn to the lesson learned. Lamentations refuses to hurry. It sits down in the rubble and weeps. The city is pictured as a widow sitting alone in the night, tears on her cheeks, betrayed by the nations she once trusted, with no one left to comfort her. The poem does not soften any of it.\n\nNotice that this grief is in the Bible. God did not edit it out. He gave His people a book whose first word is a sob, and He kept it in the Scriptures so that no one in any later century would think their own tears had no place before Him. Lamentations is permission - holy, inspired permission - to say out loud how bad it actually is.",
+      "keyInsight": "God gave His grieving people an entire book of tears and kept it in Scripture. Lament is not the failure of faith; it is one of faith's native languages.",
+      "content": "In 586 BC the Babylonian army broke through the walls of Jerusalem, burned the Temple of Solomon, and led the survivors away in chains. The city David had made his capital, the place where God had promised His name would dwell, was left a smoking ruin. The book of Lamentations is what God's people wrote in the ashes.\n\nIt would have been easy to expect a different kind of book here - a tidy theology of why it happened, a quick turn to the lesson learned. Lamentations refuses to hurry. It sits down in the rubble and weeps. The city is pictured as a widow sitting alone in the night, tears on her cheeks, betrayed by the nations she once trusted, with no one left to comfort her. The poem does not soften any of it.\n\nNotice that this grief is in the Bible. God did not edit it out. He gave His people a book whose first word is a sob, and He kept it in the Scriptures so that no one in any later century would think their own tears had no place before Him. Lamentations is permission - holy, inspired permission - to say out loud how bad it actually is."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House After the Fire",
+      "body": "A woman I know stood on the sidewalk and watched her house burn. By the time the trucks left there was a wet black square where the living room had been. For weeks afterward people kept telling her the good news: no one was hurt, the insurance would pay, she could rebuild better than before. All of it was true. None of it was what she needed first.\n\nWhat she needed first was for someone to stand next to her and say, out loud, that it was terrible. That the photographs were gone. That the kitchen where her children had grown up was ash. She did not need the lesson yet. She needed the loss to be named.\n\nThat is what Lamentations does for a whole nation. Before it says one word about hope, it lets the widow weep in the night. It looks at the ruin and refuses to pretend the ruin is anything less than a ruin. There is a deep mercy in being allowed to grieve a real thing before anyone hands you the reasons.",
+      "connectionToTheme": "Lamentations meets the grieving the way real comfort always does - by naming the loss honestly before rushing to fix it.",
+      "content": "A woman I know stood on the sidewalk and watched her house burn. By the time the trucks left there was a wet black square where the living room had been. For weeks afterward people kept telling her the good news: no one was hurt, the insurance would pay, she could rebuild better than before. All of it was true. None of it was what she needed first.\n\nWhat she needed first was for someone to stand next to her and say, out loud, that it was terrible. That the photographs were gone. That the kitchen where her children had grown up was ash. She did not need the lesson yet. She needed the loss to be named.\n\nThat is what Lamentations does for a whole nation. Before it says one word about hope, it lets the widow weep in the night. It looks at the ruin and refuses to pretend the ruin is anything less than a ruin. There is a deep mercy in being allowed to grieve a real thing before anyone hands you the reasons."
+    },
+    {
+      "type": "insight",
+      "heading": "The Tears Are Addressed to Someone",
+      "body": "Read the lament closely and you find it is not just crying into the dark. The widow turns and speaks: 'Is there any sorrow like mine, which the LORD made me suffer?' The grief has a direction. It is aimed at God.\n\nThis is the strange faithfulness hidden inside Lamentations. The poet does not walk away from God in the disaster; he walks toward Him with the disaster in his hands. He blames, he questions, he accuses the sky - and every accusation is a prayer, because it is spoken to the One who is still there to hear it. The opposite of faith here is not doubt or even anger. The opposite of faith would be silence: turning your back and deciding God is not worth the argument.\n\nSo the deepest thing this poem teaches is also the simplest. You are allowed to bring God your ruined city. You do not have to clean yourself up first, or find the bright side, or pretend the loss is smaller than it is. The book that begins 'How lonely lies the city' is, from its first syllable, a way of staying in the room with God when everything has fallen down.",
+      "historicalContext": "Lamentations is built as a series of acrostic poems - in chapters 1, 2, and 4 each verse begins with the next letter of the Hebrew alphabet, aleph to tav. Even the form is a discipline laid over chaos: grief poured out, but ordered A to Z, as though the poet is determined to bring the whole of it, beginning to end, and leave nothing unsaid before God.",
+      "fascinatingFact": "Jewish tradition reads the entire book aloud on Tisha B'Av, sitting low on the floor by candlelight, mourning the destruction of both Temples. For more than two thousand years a community has set aside one day a year simply to weep over what was lost - and has called that weeping an act of worship.",
+      "content": "Read the lament closely and you find it is not just crying into the dark. The widow turns and speaks: 'Is there any sorrow like mine, which the LORD made me suffer?' The grief has a direction. It is aimed at God.\n\nThis is the strange faithfulness hidden inside Lamentations. The poet does not walk away from God in the disaster; he walks toward Him with the disaster in his hands. He blames, he questions, he accuses the sky - and every accusation is a prayer, because it is spoken to the One who is still there to hear it. The opposite of faith here is not doubt or even anger. The opposite of faith would be silence: turning your back and deciding God is not worth the argument.\n\nSo the deepest thing this poem teaches is also the simplest. You are allowed to bring God your ruined city. You do not have to clean yourself up first, or find the bright side, or pretend the loss is smaller than it is. The book that begins 'How lonely lies the city' is, from its first syllable, a way of staying in the room with God when everything has fallen down."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Faced with a burned city and a scattered people, God's word does not rush past the grief. It gives the mourners a book of tears, names the loss without flinching, and lets them aim every sob at the LORD Himself.",
+      "modernApplication": "We are not always sure our grief is welcome before God. We suspect that real faith would have moved on by now, found the silver lining, stopped crying. Lamentations says otherwise. The sorrow you are carrying - the diagnosis, the empty chair, the marriage that fell down, the years you cannot get back - is not too dark to bring. You can say 'How?' to God out loud, and it will be a prayer.",
+      "connectionPoint": "The lament of Jerusalem - the city sitting alone, weeping in the night, despised and abandoned, asking 'Is there any sorrow like mine?' - reads in the Christian tradition as a foreshadowing of a greater sufferer. Isaiah would describe Him as 'a man of sorrows, acquainted with grief... despised, and we esteemed Him not' (Isaiah 53:3). Lamentations teaches God's people the language of sorrow that Christ Himself would one day speak in full.",
+      "newTestamentEcho": "Centuries later Jesus stood on the road above this same city and 'wept over it' (Luke 19:41), grieving the destruction He saw coming. And on the cross He took the lament onto His own lips - 'My God, My God, why have You forsaken Me?' (Matthew 27:46). The widow's cry, 'no one to comfort her,' becomes His own forsakenness, taken up so that ours might never be the last word."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What loss in your life have you never let yourself fully grieve before God - because you assumed faith meant moving past it?",
+      "additionalQuestions": [
+        "Where are you being told, gently or not, to 'look on the bright side' before you have been allowed to name how bad it actually is?",
+        "If you let yourself say 'How? How did it come to this?' out loud to God today, what would the rest of the sentence be?",
+        "What does it change to know that Christ wept over the very city this book mourns - that your tears are joined to His?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been carrying a loss I keep telling myself I should be over by now. Tonight I will stop pretending. How did it come to this? You see the ruin; You see the widow sitting alone in me. I do not have the bright side yet, and I am not going to manufacture one. I only bring You the grief itself, the way Your people brought You a burned city - and I trust that You are the kind of God who keeps a book of tears in His Scriptures and weeps over the cities He loves. Stay in the room with me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one loss honestly before God - out loud, without rushing to fix it or explain it away. Begin the sentence with the book's first word: 'How...' and let yourself finish it.",
+      "leavingAtCross": [
+        "The pressure to have already moved on, to be fine, to find the lesson before the grief is even named",
+        "The fear that bringing God my honest sorrow is a failure of faith",
+        "The silence I have used to keep my real losses at a distance from Him"
+      ],
+      "receivingFromCross": [
+        "Permission - holy, inspired permission - to weep, and to weep toward God",
+        "A Savior who wept over this same city and took the cry of forsakenness onto Himself",
+        "The promise that lament aimed at God is already a kind of faith, because it stays in the room with Him"
+      ],
+      "content": "Today, name one loss honestly before God - out loud, without rushing to fix it or explain it away. Begin the sentence with the book's first word: 'How...' and let yourself finish it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that Lamentations was kept in Scripture instead of being edited into a tidier, more hopeful book?",
+        "What is the difference between grief that turns away from God in silence and grief that turns toward God with its complaint?",
+        "How does the picture of Jerusalem as a weeping, abandoned widow connect to the suffering of Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one loss you have been treating as 'over' that you suspect you never actually grieved.",
+        "Talk about the difference, in your own experience, between someone naming your loss honestly and someone rushing you toward the bright side.",
+        "Ask each other: what would it look like this week to bring God a real sorrow without first cleaning it up?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 3:22-23",
+          "text": "Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness!"
+        },
+        {
+          "reference": "Isaiah 53:3",
+          "text": "He was despised and rejected by men, a man of sorrows, acquainted with grief. Like one from whom men hide their faces, He was despised, and we esteemed Him not."
+        },
+        {
+          "reference": "Luke 19:41",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it."
+        },
+        {
+          "reference": "Matthew 27:46",
+          "text": "About the ninth hour Jesus cried out in a loud voice, \"Eli, Eli, lema sabachthani?\" which means, \"My God, My God, why have You forsaken Me?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Lamentations 1",
+          "note": "Read the opening poem slowly, watching how the city becomes a weeping widow. Note where the grief is spoken about Jerusalem and where it suddenly turns and speaks to God."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daughter Zion",
+      "title": "The Weeping City",
+      "description": "Throughout Lamentations, Jerusalem is given a voice and a face: 'Daughter Zion,' pictured as a widow sitting alone in the ruins, weeping in the night, betrayed by her allies, with no one to comfort her. The poet (traditionally associated with the prophet Jeremiah, who lived through the city's fall) lets the city itself speak her grief - and lets her speak it directly to God.",
+      "keyQuote": "Is there any sorrow like mine, which the LORD made me suffer on the day of His fierce anger?",
+      "lessonForUs": "Daughter Zion does not hide her tears or her questions from God. She teaches us that the honest, aching 'How?' of grief, spoken toward heaven, is not the abandonment of faith but one of its truest forms - the same cry Christ would one day take up over this very city, and on the cross.",
+      "heading": "The Weeping City"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1864,
+  "scriptureReference_full": "Lamentations 1:1-2, 12",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (eichah, H349) reflects standard lexical sources; the acrostic structure of Lamentations 1-4 and the Tisha B'Av reading tradition are standard observations in Old Testament scholarship and Jewish liturgical practice.",
+    "Historical date of Jerusalem's fall (586 BC) per standard biblical chronology (2 Kings 25)."
+  ]
 }

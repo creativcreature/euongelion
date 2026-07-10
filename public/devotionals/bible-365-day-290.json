@@ -1,38 +1,194 @@
 {
   "day": 290,
-  "title": "Mark: The Suffering Servant — Day 3 — Pivot",
-  "teaser": "Day 290 of Bible 365 — Mark 1-16",
+  "title": "The Whole Gospel Bends Toward One Sentence",
+  "teaser": "Mark races to the cross and stops at a single line: the Son of Man came to give His life as a ransom for many. Everything before it is the road there.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
   "scriptureReference": "Mark 1-16",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 290"
+      "type": "scripture",
+      "reference": "Mark 10:42-45",
+      "translation": "BSB",
+      "emphasis": [
+        "not to be served, but to serve",
+        "give His life as a ransom for many"
+      ],
+      "greekOriginal": "δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν",
+      "passage": "So Jesus called them together and said, \"You know that those regarded as rulers of the Gentiles lord it over them, and their superiors exercise authority over them. But it shall not be this way among you. Instead, whoever wants to become great among you must be your servant, and whoever wants to be first must be the slave of all. For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lutron",
+      "pronunciation": "LOO-tron",
+      "meaning": "ransom; the price paid to set a captive or a slave free",
+      "rootMeaning": "Lutron comes from the verb luo, to loose or untie. A lutron is what you hand over to loose someone from bondage - the coin that buys a prisoner of war back, the sum that purchases a slave out of the market and into freedom. It is not an abstract idea. It is a price, and it changes hands.",
+      "usageNote": "Mark uses the word only once, here, in the verse the whole Gospel has been climbing toward. The phrase 'a ransom for many' (lutron anti pollon) carries the small word anti - 'in place of,' 'instead of.' The ransom is not paid alongside the many; it is paid in their place. One life given so the many go free.",
+      "wordByWord": [
+        {
+          "word": "δοῦναι",
+          "transliteration": "dounai",
+          "meaning": "to give - the deliberate handing over of something costly"
+        },
+        {
+          "word": "τὴν ψυχὴν αὐτοῦ",
+          "transliteration": "ten psuchen autou",
+          "meaning": "His life, His very self - the whole of who He is, poured out"
+        },
+        {
+          "word": "λύτρον",
+          "transliteration": "lutron",
+          "meaning": "ransom, the loosing-price paid to free a captive"
+        },
+        {
+          "word": "ἀντὶ",
+          "transliteration": "anti",
+          "meaning": "in place of, instead of - a substitution, one standing where the many stood"
+        },
+        {
+          "word": "πολλῶν",
+          "transliteration": "pollon",
+          "meaning": "of many - the great crowd of the bound who are set free"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διακονῆσαι",
+          "reference": "Diakonesai, 'to serve,' is the root of our word deacon. The Son of Man does not come to be waited on at a table but to wait on others - and the lowest, most costly service He renders is to die in their place."
+        },
+        {
+          "word": "Υἱὸς τοῦ ἀνθρώπου",
+          "reference": "'Son of Man' (Mark 8:31; 10:33; 10:45) is Jesus' favorite title for Himself in Mark. It echoes Daniel 7:13-14, where one like a son of man is given everlasting dominion. Mark's startling claim is that this royal figure reigns by being killed."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "a ransom, the price of release paid to liberate a captive or redeem a slave",
+      "usage": "Lutron belongs to the slave market and the prison, not the temple alone. When Jesus picks it up, He says His death is not a tragedy that happened to Him but a price He came to pay - the loosing-price for people who could never buy themselves free."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Passion Story With a Long Introduction",
+      "body": "Mark is the shortest Gospel and the one most in a hurry. Forty-one times he reaches for a single Greek word, euthys - \"immediately,\" \"at once.\" Jesus is baptized and immediately the heavens tear open. He calls fishermen and immediately they leave their nets. He heals, He casts out, He moves on before the dust settles. Read Mark straight through and you feel the pull of something Jesus is rushing toward.\n\nIt is the cross. One scholar of the last century famously described Mark as a passion narrative with an extended introduction, and the description has stuck because it is true. From the very first line - \"This is the beginning of the gospel of Jesus Christ, the Son of God\" (Mark 1:1) - the road runs downhill toward Jerusalem and a Roman execution stake. Nearly the whole second half of the Gospel hangs on three moments where Jesus stops the action and tells His friends plainly what is coming. \"The Son of Man must suffer many things and be rejected... and be killed and after three days rise again\" (Mark 8:31). He says it again on the road (Mark 9:31). He says it a third time as they climb toward the city (Mark 10:33-34), naming each detail in advance: condemned, mocked, spat on, flogged, killed.\n\nThree times He tells them. Three times they miss it. After the first prediction Peter takes Him aside to argue. After the second they fall to quarreling about which of them is greatest. After the third - the most detailed of all - James and John walk up and ask for the best seats in the kingdom. The men closest to Jesus keep hearing \"glory\" when He says \"cross.\" It is into that gap, that stubborn deafness, that the pivot verse falls.",
+      "content": "Mark is the shortest Gospel and the one most in a hurry. Forty-one times he reaches for a single Greek word, euthys - \"immediately,\" \"at once.\" Jesus is baptized and immediately the heavens tear open. He calls fishermen and immediately they leave their nets. He heals, He casts out, He moves on before the dust settles. Read Mark straight through and you feel the pull of something Jesus is rushing toward.\n\nIt is the cross. One scholar of the last century famously described Mark as a passion narrative with an extended introduction, and the description has stuck because it is true. From the very first line - \"This is the beginning of the gospel of Jesus Christ, the Son of God\" (Mark 1:1) - the road runs downhill toward Jerusalem and a Roman execution stake. Nearly the whole second half of the Gospel hangs on three moments where Jesus stops the action and tells His friends plainly what is coming. \"The Son of Man must suffer many things and be rejected... and be killed and after three days rise again\" (Mark 8:31). He says it again on the road (Mark 9:31). He says it a third time as they climb toward the city (Mark 10:33-34), naming each detail in advance: condemned, mocked, spat on, flogged, killed.\n\nThree times He tells them. Three times they miss it. After the first prediction Peter takes Him aside to argue. After the second they fall to quarreling about which of them is greatest. After the third - the most detailed of all - James and John walk up and ask for the best seats in the kingdom. The men closest to Jesus keep hearing \"glory\" when He says \"cross.\" It is into that gap, that stubborn deafness, that the pivot verse falls."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Argument About Seats",
+      "body": "Picture the scene Mark hands us. The road to Jerusalem is dusty and steep. Jesus has just told the Twelve, in the plainest words yet, that He is walking toward a death by torture. The next thing that happens is that two of His friends ask Him to promise them the thrones on His right and left when He comes into His glory.\n\nThe other ten are furious - not because the request is shameful, but because James and John asked first. Everyone in the group wanted those seats. Jesus does not lose His temper. He calls them together, the way you gather children who are squabbling, and He draws the one distinction that will define the rest of their lives. Out there, He says, the rulers of the nations lord it over people; the big men throw their weight around. \"But it shall not be this way among you.\"\n\nThen He inverts everything. Greatness, in His kingdom, runs the other direction. The one who wants to be first goes to the back and becomes the slave of all. And lest they think this is merely a hard teaching He is laying on them from above, He grounds it in Himself: this is exactly what He is doing. The King is taking the lowest place. He is not asking them to go anywhere He has not already gone.",
+      "connectionToTheme": "Mark places the ransom saying not in a sermon on theology but in the middle of a petty argument about status - which is precisely where most of us need it.",
+      "content": "Picture the scene Mark hands us. The road to Jerusalem is dusty and steep. Jesus has just told the Twelve, in the plainest words yet, that He is walking toward a death by torture. The next thing that happens is that two of His friends ask Him to promise them the thrones on His right and left when He comes into His glory.\n\nThe other ten are furious - not because the request is shameful, but because James and John asked first. Everyone in the group wanted those seats. Jesus does not lose His temper. He calls them together, the way you gather children who are squabbling, and He draws the one distinction that will define the rest of their lives. Out there, He says, the rulers of the nations lord it over people; the big men throw their weight around. \"But it shall not be this way among you.\"\n\nThen He inverts everything. Greatness, in His kingdom, runs the other direction. The one who wants to be first goes to the back and becomes the slave of all. And lest they think this is merely a hard teaching He is laying on them from above, He grounds it in Himself: this is exactly what He is doing. The King is taking the lowest place. He is not asking them to go anywhere He has not already gone."
+    },
+    {
+      "type": "insight",
+      "heading": "The Servant Hidden in the Ransom",
+      "body": "Hold Mark 10:45 next to the song Israel had been singing for centuries about a Servant who suffers. Isaiah wrote of one who \"was pierced for our transgressions,\" who \"poured out His life unto death,\" who \"bore the sin of many\" (Isaiah 53:5, 12). When Jesus says He came \"to serve, and to give His life as a ransom for many,\" He is not coining a new idea. He is reaching back and laying His hand on that ancient portrait and saying: this is Me. The many of Isaiah and the many of Mark are the same many.\n\nThis is why \"The Suffering Servant\" names the whole Gospel of Mark. Mark does not give us a Jesus who is first triumphant and then, sadly, dies. He gives us a Jesus whose triumph is the dying. The royal title Son of Man, drawn from Daniel's vision of one given an everlasting kingdom, is fused in Mark to the lowliest possible act - laying down a life as the loosing-price for slaves. King and Servant are not two phases. They are one Person, doing one thing.\n\nAnd notice the small word that does the heavy lifting: anti, \"in place of.\" The ransom is not paid near the captives or on behalf of the captives in some vague, sympathetic way. It is paid instead of them. One stands where the many stood. The Son of Man steps into the place of the bound and hands over His own life so they can walk out free. The whole Gospel has been bending toward this sentence, and the sentence bends toward a cross.",
+      "historicalContext": "Most scholars regard Mark as the earliest of the four Gospels, likely written in the 60s AD, possibly from Rome during or just after Nero's persecution of Christians. A church suffering for the name of Jesus would have read a Gospel about a suffering Messiah very differently than we do - as the story of the One who went ahead of them into death, and through it.",
+      "fascinatingFact": "Mark 10:45 sits at the structural hinge of the Gospel. It closes the long central section (8:31-10:45) in which Jesus three times predicts His death, and it opens the door to the final march into Jerusalem. Everything before it explains who is paying the ransom; everything after it shows the ransom being paid.",
+      "content": "Hold Mark 10:45 next to the song Israel had been singing for centuries about a Servant who suffers. Isaiah wrote of one who \"was pierced for our transgressions,\" who \"poured out His life unto death,\" who \"bore the sin of many\" (Isaiah 53:5, 12). When Jesus says He came \"to serve, and to give His life as a ransom for many,\" He is not coining a new idea. He is reaching back and laying His hand on that ancient portrait and saying: this is Me. The many of Isaiah and the many of Mark are the same many.\n\nThis is why \"The Suffering Servant\" names the whole Gospel of Mark. Mark does not give us a Jesus who is first triumphant and then, sadly, dies. He gives us a Jesus whose triumph is the dying. The royal title Son of Man, drawn from Daniel's vision of one given an everlasting kingdom, is fused in Mark to the lowliest possible act - laying down a life as the loosing-price for slaves. King and Servant are not two phases. They are one Person, doing one thing.\n\nAnd notice the small word that does the heavy lifting: anti, \"in place of.\" The ransom is not paid near the captives or on behalf of the captives in some vague, sympathetic way. It is paid instead of them. One stands where the many stood. The Son of Man steps into the place of the bound and hands over His own life so they can walk out free. The whole Gospel has been bending toward this sentence, and the sentence bends toward a cross."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Son of Man did not come to be served but to serve, and to give His life as a ransom in the place of many - the King reigning by being killed.",
+      "modernApplication": "We still measure greatness the way the disciples did: by who is served, who gets the seat, who is first in the room. Jesus does not soften that instinct, He reverses it. In His kingdom the way up is down, and the proof of it is a Lord who washes feet and dies for enemies.",
+      "connectionPoint": "The argument James and John had on the road is the argument running quietly through most offices, churches, and families - who is great, who is first, who is owed. Mark answers it not with a rule but with a Person who took the slave's place so the slaves could be free.",
+      "newTestamentEcho": "Paul would later put the same shape into a hymn: Christ Jesus, \"existing in the form of God,\" did not grasp at status but \"emptied Himself, taking the form of a servant,\" and \"humbled Himself and became obedient to death - even death on a cross\" (Philippians 2:6-8). What Mark shows on the road to Jerusalem, Paul sings to the Philippians: the ransom-giving descent of God."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still asking for the seat on the right - quietly keeping score of who serves whom, who is owed, who comes first?",
+      "additionalQuestions": [
+        "Jesus told His friends three times that He was walking toward death, and three times they heard something easier. Where might you be hearing an easier version of what Jesus is actually saying to you?",
+        "What would it change about today if you truly believed your freedom was bought - that you were ransomed at the cost of a life, not earned by your own striving?",
+        "Who in your world is hard to serve, and what would it look like to take the lower place with them this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You did not come to be served, but to serve - and You served me to the point of death. Forgive me for the days I spend angling for the better seat while You are reaching for the towel and the cross. I was bound, and I could not buy myself free; You handed over Your life as the price. Make me a servant the way You were a Servant. Let me hear what You are really saying, and follow You down the road You actually walked. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one act of hidden service - something no one will see and no one will thank you for. Let it be your small, deliberate echo of the One who came not to be served but to serve.",
+      "leavingAtCross": [
+        "The scorekeeping - the quiet ledger of who has served me and who still owes me",
+        "The hunger for the seat on the right, the credit, the place at the front",
+        "The belief that I have to buy my own freedom by earning, achieving, and proving"
+      ],
+      "receivingFromCross": [
+        "A freedom I did not purchase, bought instead by the life of the Son of Man",
+        "A new measure of greatness that runs downward, into service and the lower place",
+        "A King who went ahead of me into death so that I could follow Him through it"
+      ],
+      "content": "Today, do one act of hidden service - something no one will see and no one will thank you for. Let it be your small, deliberate echo of the One who came not to be served but to serve."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it fair to call the whole Gospel of Mark 'a passion narrative with an extended introduction,' and how do the three passion predictions (8:31; 9:31; 10:33-34) support that reading?",
+        "What does the Greek word lutron (ransom) add to our understanding of why Jesus died - and what does the little word anti, 'in place of,' add to it?",
+        "How does Mark 10:45 hold together the royal title 'Son of Man' and the role of a suffering servant, rather than treating them as two separate things?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about a recent moment when you wanted the seat on the right - the credit, the recognition, the first place. What was underneath that want?",
+        "Where is each of you being invited right now to take the lower place, to serve someone it would be easier to be served by?",
+        "Ask each other: if my freedom was already bought at the cost of Christ's life, what am I still trying to earn that I no longer need to?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 1:1",
+          "text": "This is the beginning of the gospel of Jesus Christ, the Son of God."
+        },
+        {
+          "reference": "Mark 8:31",
+          "text": "Then He began to teach them that the Son of Man must suffer many things and be rejected by the elders, chief priests, and scribes, and that He must be killed and after three days rise again."
+        },
+        {
+          "reference": "Mark 8:34-36",
+          "text": "If anyone wants to come after Me, he must deny himself and take up his cross and follow Me. For whoever wants to save his life will lose it, but whoever loses his life for My sake and for the gospel will save it. What does it profit a man to gain the whole world, yet forfeit his soul?"
+        },
+        {
+          "reference": "Mark 15:37-39",
+          "text": "But Jesus let out a loud cry and breathed His last. And the veil of the temple was torn in two from top to bottom. When the centurion standing there in front of Jesus saw how He had breathed His last, he said, \"Truly this man was the Son of God!\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Mark 8:22 - 10:52",
+          "note": "Read the central section in one sitting. Watch the pattern repeat three times: Jesus predicts His death, the disciples misunderstand, and Jesus teaches the cross-shaped life. It begins and ends with a blind man receiving sight (8:22-26; 10:46-52) - a quiet frame around the disciples' deeper blindness."
+        },
+        {
+          "type": "book",
+          "title": "Isaiah 52:13 - 53:12",
+          "note": "The Song of the Suffering Servant. Read it beside Mark 10:45 and the crucifixion, and notice how much of Jesus' self-understanding rises out of these verses: the Servant who pours out His life and bears the sin of many."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Son of Man",
+      "title": "The Servant-King of Mark's Gospel",
+      "description": "'Son of Man' is the title Jesus uses for Himself more than any other in Mark - over a dozen times. It draws on Daniel 7:13-14, where 'one like a son of man' is brought before the Ancient of Days and given everlasting dominion over every nation. Mark's astonishing move is to fuse that exalted, world-ruling figure with the Suffering Servant of Isaiah 53. The same Son of Man who will come on the clouds in glory (Mark 14:62) is the one who 'must suffer many things' and give His life as a ransom. He does not reign in spite of the cross; He reigns by way of it.",
+      "keyQuote": "For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.",
+      "lessonForUs": "When the truest King who ever lived defined His greatness, He pointed not to a throne but to a cross. If that is how He measured greatness, every smaller scale we cling to - status, credit, the seat on the right - is asking the wrong question. The way up runs down, through service, into the lower place He already filled.",
+      "heading": "The Servant-King of Mark's Gospel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2293,
+  "scriptureReference_full": "Mark 1-16 (anchor: Mark 10:42-45)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lutron G3083, anti, diakoneo) reflects standard lexical sources. The description of Mark as 'a passion narrative with an extended introduction' is a widely cited characterization in Markan scholarship, associated with Martin Kahler (1892); it is referenced here as a scholarly commonplace, not as a verbatim quotation.",
+    "Isaiah 52:13-53:12 (Suffering Servant) and Daniel 7:13-14 (Son of Man) are the Old Testament backgrounds Mark draws upon for the figure of Jesus."
+  ]
 }

@@ -1,38 +1,183 @@
 {
   "day": 312,
-  "title": "John: The Word + I Ams — Day 4 — Application",
-  "teaser": "Day 312 of Bible 365 — John 1-7",
+  "title": "Working for bread that won't last",
+  "teaser": "The crowd chased Jesus for one more meal. He offered them Himself instead — the bread that ends the hunger underneath the hunger.",
   "framework": "John 1-7 — John: The Word + I Ams",
   "scriptureReference": "John 1-7",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 312"
+      "type": "scripture",
+      "reference": "John 6:32-35",
+      "translation": "BSB",
+      "emphasis": [
+        "the true bread from heaven",
+        "I am the bread of life",
+        "will never hunger"
+      ],
+      "greekOriginal": "ἐγώ εἰμι ὁ ἄρτος τῆς ζωῆς",
+      "passage": "Jesus said to them, \"Truly, truly, I tell you, it was not Moses who gave you the bread from heaven, but it is My Father who gives you the true bread from heaven. For the bread of God is He who comes down from heaven and gives life to the world.\" \"Sir,\" they said, \"give us this bread at all times.\" Jesus answered, \"I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am",
+      "rootMeaning": "Egō is the emphatic pronoun \"I\"; eimi is the verb \"to be.\" Greek normally folds the \"I\" into the verb, so saying both together is like leaning on the word - I, myself, am. In John it becomes a signature: I am the bread, the light, the door, the shepherd, the resurrection, the way, the vine.",
+      "usageNote": "When God answers Moses at the burning bush, the Greek Old Testament renders the divine name with these same two words: egō eimi, \"I AM\" (Exodus 3:14). John has Jesus reach for that exact phrase seven times over seven images. Here, in the first of them, the name God spoke from a bush is spoken over a basket of barley loaves.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I - stated for emphasis, not grammatically required"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "am - the simple verb of being"
+        },
+        {
+          "word": "ὁ ἄρτος",
+          "transliteration": "ho artos",
+          "meaning": "the bread, the loaf - ordinary daily food"
+        },
+        {
+          "word": "τῆς ζωῆς",
+          "transliteration": "tēs zōēs",
+          "meaning": "of life - and John's word for life is zōē, the life of the age to come, not mere existence"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἄρτος / Βηθλεέμ",
+          "reference": "Bethlehem, where Jesus was born, is Beth-lechem in Hebrew - \"house of bread.\" The bread of life was first laid in a feeding trough in the house of bread."
+        }
+      ],
+      "strongsNumber": "G1473 / G1510",
+      "definition": "egō eimi: \"I am\" - the emphatic self-declaration John places on Jesus' lips, echoing the divine name",
+      "usage": "The crowd asks for bread \"at all times,\" thinking of a refill that never empties. Jesus answers with a sentence that does not name a thing at all. He names a person: I am."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: The Word + I Ams. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the I AM.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "They Came Back for Lunch",
+      "body": "The day before this conversation, Jesus had fed five thousand people from five barley loaves and two fish. They ate until they were full and there were twelve baskets left over. It was the kind of day you tell your grandchildren about.\n\nSo the next morning they come looking for Him, and they find Him across the lake. You can feel the warmth in it - they want more of the man who fed them. But Jesus, who sees the heart the way we see a face, says something that must have stung: \"It is not because you saw these signs that you are looking for Me, but because you ate the loaves and had your fill.\" You are not chasing the sign. You are chasing the sandwich.\n\nThen He draws the line that this whole day turns on: \"Do not work for food that perishes, but for food that endures to eternal life.\" Two kinds of hunger. Two kinds of bread. The crowd has spent their energy on the first and never noticed the second.",
+      "keyInsight": "It is possible to seek Jesus genuinely and still be seeking Him for the wrong thing - to want what He can hand us more than we want Him.",
+      "content": "The day before this conversation, Jesus had fed five thousand people from five barley loaves and two fish. They ate until they were full and there were twelve baskets left over. It was the kind of day you tell your grandchildren about.\n\nSo the next morning they come looking for Him, and they find Him across the lake. You can feel the warmth in it - they want more of the man who fed them. But Jesus, who sees the heart the way we see a face, says something that must have stung: \"It is not because you saw these signs that you are looking for Me, but because you ate the loaves and had your fill.\" You are not chasing the sign. You are chasing the sandwich.\n\nThen He draws the line that this whole day turns on: \"Do not work for food that perishes, but for food that endures to eternal life.\" Two kinds of hunger. Two kinds of bread. The crowd has spent their energy on the first and never noticed the second."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Promotion That Tasted Like Air",
+      "body": "A friend of mine spent four years aiming at one promotion. He worked the late nights, took the brutal accounts, missed the dinners. When it finally came - the title, the office with the window, the raise that should have fixed everything - he called me from the new office on the first afternoon.\n\nI expected a celebration. What I got was a long pause. \"It's nice,\" he said. \"It's exactly what I wanted.\" Another pause. \"So why do I already want the next one?\"\n\nHe had eaten the loaf and had his fill, and by morning the hunger was back, pointing at something further up the ladder. That is the thing about food that perishes. It works. It really does fill you. It just doesn't last, and it never tells you that going in. You only learn it standing in the office you fought for, surprised to still be hungry.",
+      "connectionToTheme": "The crowd's appetite for one more meal is our appetite for one more win - real, satisfying, and gone by morning, sending us back out to work for bread that perishes.",
+      "content": "A friend of mine spent four years aiming at one promotion. He worked the late nights, took the brutal accounts, missed the dinners. When it finally came - the title, the office with the window, the raise that should have fixed everything - he called me from the new office on the first afternoon.\n\nI expected a celebration. What I got was a long pause. \"It's nice,\" he said. \"It's exactly what I wanted.\" Another pause. \"So why do I already want the next one?\"\n\nHe had eaten the loaf and had his fill, and by morning the hunger was back, pointing at something further up the ladder. That is the thing about food that perishes. It works. It really does fill you. It just doesn't last, and it never tells you that going in. You only learn it standing in the office you fought for, surprised to still be hungry."
+    },
+    {
+      "type": "insight",
+      "heading": "He Did Not Give the Bread. He Was It.",
+      "body": "Watch the move the crowd makes, because we make it too. They quote Scripture at Him: \"Our fathers ate the manna in the wilderness... He gave them bread from heaven to eat.\" Give us that, they say. Give us this bread at all times. They are asking for a supply - a heavenly vending machine that never runs dry.\n\nJesus corrects them twice in one breath. First, it was not Moses who gave the manna; it was the Father. Second - and this is where the ground shifts - the true bread from heaven is not a substance at all. \"The bread of God is He who comes down from heaven and gives life to the world.\" Not it. He.\n\nAnd then the sentence the whole Gospel has been building toward since chapter one: \"I am the bread of life.\" The Word that was in the beginning, the Word that was God, the Word that became flesh and pitched His tent among us - that Word is now standing on a lakeshore calling Himself food. The manna fell; this bread walks. The manna fed a generation that still died in the desert; this bread, He says, ends the dying. The crowd wanted Him to fill the basket. He offered to fill the emptiness the basket was only ever a symptom of.",
+      "historicalContext": "The conversation almost certainly happens in or near the synagogue at Capernaum (John 6:59), and it lands during Passover season (6:4), when every Jewish family was retelling the exodus - the night God brought them out, the manna that fed them in the wilderness. Into that memory Jesus says the manna was never the point; it was a pointer, and now the thing it pointed to is in the room.",
+      "fascinatingFact": "John never numbers the miraculous feeding as a \"miracle.\" He calls it a sign (sēmeion) - something that points beyond itself. The crowd stopped at the sign and tried to live there. The whole tragedy of John 6 is people standing in front of the signpost, refusing to look where it points.",
+      "content": "Watch the move the crowd makes, because we make it too. They quote Scripture at Him: \"Our fathers ate the manna in the wilderness... He gave them bread from heaven to eat.\" Give us that, they say. Give us this bread at all times. They are asking for a supply - a heavenly vending machine that never runs dry.\n\nJesus corrects them twice in one breath. First, it was not Moses who gave the manna; it was the Father. Second - and this is where the ground shifts - the true bread from heaven is not a substance at all. \"The bread of God is He who comes down from heaven and gives life to the world.\" Not it. He.\n\nAnd then the sentence the whole Gospel has been building toward since chapter one: \"I am the bread of life.\" The Word that was in the beginning, the Word that was God, the Word that became flesh and pitched His tent among us - that Word is now standing on a lakeshore calling Himself food. The manna fell; this bread walks. The manna fed a generation that still died in the desert; this bread, He says, ends the dying. The crowd wanted Him to fill the basket. He offered to fill the emptiness the basket was only ever a symptom of."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus tells a hungry crowd to stop spending themselves on food that perishes and to receive instead the true bread from heaven - which turns out to be not a gift He hands over, but Himself: \"I am the bread of life.\"",
+      "modernApplication": "We are practiced at working for food that perishes. The next purchase, the next milestone, the next bit of approval - we labor for it, and it feeds us, and the hunger returns on schedule. Jesus does not shame the appetite. He redirects it. The work He asks for is almost embarrassingly small: not to earn the bread, but to come and to believe. \"The work of God is this: to believe in the One He has sent.\"",
+      "connectionPoint": "This is the first of John's seven \"I am\" sayings, and it sets the pattern for the rest. Each one takes something a person cannot live without - bread, light, a door, a shepherd, life, a road, a vine - and says: that thing you need to survive, I am it. The series is called The Word and the I Ams because both halves are the same claim. The Word who made the world (John 1:3) is the bread who sustains it; the One through whom all things came is the One we cannot finally live without.",
+      "newTestamentEcho": "The pattern reaches back to the Word made flesh (John 1:14) and forward to the table. On the last night, Jesus takes bread, breaks it, and says, \"This is My body, given for you\" (Luke 22:19). The lakeshore sermon and the upper room are the same sentence: the bread of life gives His flesh \"for the life of the world\" (John 6:51)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you been working hardest for lately - and if you got it tomorrow, how long before the hunger came back?",
+      "additionalQuestions": [
+        "Be honest like the crowd was honest: are you seeking Jesus, or seeking what Jesus can hand you? Is there a difference in how you'd pray if the answer were 'just You'?",
+        "Jesus reduces 'the works of God' to one thing - to believe in the One He sent. Where are you still trying to earn bread that He says is given?",
+        "Name one 'food that perishes' you keep going back to. What would it look like to bring the hunger itself to Christ instead of the next refill?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have spent so much of my strength on bread that does not last. I have chased the meal and missed the One who made it. You stood on the shore and called Yourself the bread of life, and I confess I have often wanted Your gifts more than I have wanted You. Feed me with Yourself today. Where I am working for food that perishes, slow my hands. Where I am hungry underneath all my having, fill me. I come, and I believe - help my unbelief. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been treating as the bread of life - a goal, a person's approval, a number, a comfort. Before you chase it again, sit for three minutes and say slowly, \"Jesus, You are the bread of life; whoever comes to You will never hunger.\" Let the line do its work before you do yours.",
+      "leavingAtCross": [
+        "The endless work for food that perishes - the chase that fills me by lunch and empties me by morning",
+        "The habit of wanting what Christ can give more than I want Christ",
+        "The lie that the next thing will finally be enough"
+      ],
+      "receivingFromCross": [
+        "The true bread from heaven, who is a Person and not a supply",
+        "A hunger that is met rather than merely managed",
+        "The lightest work in the world: to come, and to believe"
+      ],
+      "content": "Today, name one thing you have been treating as the bread of life - a goal, a person's approval, a number, a comfort. Before you chase it again, sit for three minutes and say slowly, \"Jesus, You are the bread of life; whoever comes to You will never hunger.\" Let the line do its work before you do yours."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What are the two kinds of bread Jesus distinguishes in John 6:27, and how can you tell which one you are working for in your own week?",
+        "When the crowd asks how to 'perform the works of God,' Jesus gives a surprising answer (6:29). What is it, and why is it surprising to people who came ready to work?",
+        "Why does it matter that Jesus says 'I am the bread' rather than 'I will give you bread'? What changes if the gift turns out to be a Person?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a time you got exactly what you were working for and found you were still hungry. What did that teach you?",
+        "The crowd sought Jesus sincerely but for the wrong reason. Where might that be true of your own faith right now?",
+        "Pray for each other by name to want Christ Himself more than the things He can provide this week."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 6:26-27",
+          "text": "Jesus replied, \"Truly, truly, I tell you, it is not because you saw these signs that you are looking for Me, but because you ate the loaves and had your fill. Do not work for food that perishes, but for food that endures to eternal life, which the Son of Man will give you.\""
+        },
+        {
+          "reference": "John 6:29",
+          "text": "Jesus replied, \"The work of God is this: to believe in the One He has sent.\""
+        },
+        {
+          "reference": "John 6:51",
+          "text": "I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And this bread, which I will give for the life of the world, is My flesh."
+        },
+        {
+          "reference": "John 6:68",
+          "text": "Simon Peter replied, \"Lord, to whom would we go? You have the words of eternal life.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 6:22-71",
+          "note": "Read the whole Bread of Life discourse in one sitting, watching the crowd thin out - from five thousand fed (6:10) to many turning back (6:66) to the Twelve who stay (6:67-69). Notice that the hardest teaching is also where the truest disciples are revealed."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Capernaum Crowd",
+      "title": "The Ones Who Came Back for More",
+      "era": "c. AD 28-30, Galilee",
+      "key_trait": "Hungry, sincere, and looking in the right direction for the wrong reason",
+      "description": "The five thousand whom Jesus fed, who crossed the lake the next day to find Him again. They are not villains; they are us on an honest day - drawn to Jesus, genuinely glad of Him, and mostly hoping He'll keep the baskets full. When His teaching turned from bread to flesh, from supply to surrender, many of them 'turned back and no longer walked with Him' (John 6:66). They are Scripture's portrait of a faith that wants the gifts more than the Giver.",
+      "keyQuote": "Sir, give us this bread at all times.",
+      "lessonForUs": "It is no sin to be hungry, and no shame to come to Jesus needy. The danger is stopping at the loaf. The crowd had the bread of life standing in front of them and asked Him to refill the basket. When He offered Himself instead of His gifts, the test came - and the same test comes to us every time He gives less than we wanted and more than we knew to ask for.",
+      "heading": "The Ones Who Came Back for More"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1788,
+  "scriptureReference_full": "John 6:32-35 (within John 1-7)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi; artos; zōē) reflects standard lexical sources; the egō eimi / Exodus 3:14 LXX resonance and the Bethlehem 'house of bread' note reflect widely held observations in Johannine scholarship."
+  ]
 }

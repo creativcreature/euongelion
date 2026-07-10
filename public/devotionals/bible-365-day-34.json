@@ -1,38 +1,186 @@
 {
   "day": 34,
   "title": "When trauma becomes testimony",
-  "teaser": "Day 34 of Bible 365 — Genesis (deeper)",
-  "framework": "Genesis (deeper) — Healing by retelling",
-  "scriptureReference": "Genesis (deeper)",
+  "teaser": "Joseph stands before the brothers who sold him and tells the story again — this time naming where God was. The retelling is the healing.",
+  "framework": "Genesis 45:4-8; 50:20 — Healing by retelling",
+  "scriptureReference": "Genesis 45:4-8; 50:20",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 34"
+      "type": "scripture",
+      "reference": "Genesis 45:4-8; 50:20",
+      "translation": "BSB",
+      "emphasis": [
+        "I am Joseph, your brother",
+        "God sent me before you",
+        "you intended against me for evil, God intended for good"
+      ],
+      "hebrewOriginal": "וְאַתֶּם חֲשַׁבְתֶּם עָלַי רָעָה אֱלֹהִים חֲשָׁבָהּ לְטֹבָה",
+      "passage": "Then Joseph said to his brothers, \"Please come near me.\" And they did so. \"I am Joseph, your brother,\" he said, \"the one you sold into Egypt! And now, do not be distressed or angry with yourselves that you sold me into this place, because it was to save lives that God sent me before you. For the famine has covered the land these two years, and there will be five more years without plowing or harvesting. God sent me before you to preserve you as a remnant on the earth and to save your lives by a great deliverance. Therefore it was not you who sent me here, but God, who has made me a father to Pharaoh—lord of all his household and ruler over all the land of Egypt.\" ... \"As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this—to preserve the lives of many people.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis (deeper)**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis (deeper) and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חָשַׁב",
+      "transliteration": "chashav",
+      "pronunciation": "khah-SHAHV",
+      "meaning": "to think, plan, devise, reckon, weave together",
+      "rootMeaning": "Chashav is the verb of the planning mind. It can mean to calculate a sum, to weave a design into cloth, to plot a scheme. It is deliberate thought that produces a shape.",
+      "usageNote": "In Genesis 50:20 Joseph uses the same verb twice in one breath - once for his brothers, once for God: \"you devised (chashavtem) evil against me; God devised (chashavah) it for good.\" The single word holds both the human plot and the divine design over the very same events. Joseph does not deny that they meant harm. He says God was weaving a different garment out of the same thread.",
+      "wordByWord": [
+        {
+          "word": "וְאַתֶּם",
+          "transliteration": "ve'attem",
+          "meaning": "but you - the brothers, named, not excused"
+        },
+        {
+          "word": "חֲשַׁבְתֶּם",
+          "transliteration": "chashavtem",
+          "meaning": "you devised, you planned, you reckoned up"
+        },
+        {
+          "word": "עָלַי רָעָה",
+          "transliteration": "alai ra'ah",
+          "meaning": "against me, for evil - harm aimed at a person"
+        },
+        {
+          "word": "אֱלֹהִים",
+          "transliteration": "Elohim",
+          "meaning": "God - the subject of the second, larger plan"
+        },
+        {
+          "word": "חֲשָׁבָהּ לְטֹבָה",
+          "transliteration": "chashavah letovah",
+          "meaning": "devised it for good - the same act, redesigned"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מַחֲשָׁבָה",
+          "reference": "The noun machashavah, from the same root, is the word Jeremiah uses when God says, \"I know the plans (machashavot) I have for you... plans to prosper you and not to harm you\" (Jeremiah 29:11). Joseph's testimony is that sentence lived out a thousand years early."
+        }
+      ],
+      "strongsNumber": "H2803",
+      "definition": "to think, account, reckon, devise, plan, impute; figuratively, to weave or fabricate",
+      "usage": "Joseph chooses a verb of intention on purpose. He is not saying the evil was secretly good, or that what was done to him did not matter. He is saying that two minds were at work over one set of events, and that God's design was the larger and the lasting one."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Healing by retelling. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ retells our story (Luke 24:27).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Says the Worst Sentence Out Loud",
+      "body": "For twenty-two years Joseph carried a story he could have told a hundred bitter ways. His brothers had stripped him of his robe, thrown him into a dry pit, eaten lunch while he begged, and sold him to passing traders for twenty pieces of silver. Then slavery. Then prison on a lie. Then years of being forgotten by a man he had helped. If anyone had earned the right to a clenched, careful version of his own past, it was the second-most-powerful man in Egypt standing in front of the men who had ruined his youth.\n\nWatch what he does with the memory. He does not soften it. \"I am Joseph, your brother,\" he says, \"the one you sold into Egypt.\" He names the crime and the criminals in the same sentence he uses to forgive them. The trauma is not erased from the telling; it is kept, every detail intact - the selling, the place, the loss.\n\nWhat changes is not the facts. What changes is where God is in them. \"It was to save lives that God sent me before you.\" Same pit. Same silver. Same caravan to Egypt. But now there is a second figure standing inside the story who was always there and whom Joseph could not see while he was in the pit: God, going on ahead, preparing a place for famine years that had not yet come.",
+      "keyInsight": "Joseph heals not by forgetting what was done to him but by retelling it until God is visible inside it. The facts of the trauma stay; the narrator changes; and a story that ended in a pit becomes a story that runs through a pit toward deliverance.",
+      "content": "For twenty-two years Joseph carried a story he could have told a hundred bitter ways. His brothers had stripped him of his robe, thrown him into a dry pit, eaten lunch while he begged, and sold him to passing traders for twenty pieces of silver. Then slavery. Then prison on a lie. Then years of being forgotten by a man he had helped. If anyone had earned the right to a clenched, careful version of his own past, it was the second-most-powerful man in Egypt standing in front of the men who had ruined his youth.\n\nWatch what he does with the memory. He does not soften it. \"I am Joseph, your brother,\" he says, \"the one you sold into Egypt.\" He names the crime and the criminals in the same sentence he uses to forgive them. The trauma is not erased from the telling; it is kept, every detail intact - the selling, the place, the loss.\n\nWhat changes is not the facts. What changes is where God is in them. \"It was to save lives that God sent me before you.\" Same pit. Same silver. Same caravan to Egypt. But now there is a second figure standing inside the story who was always there and whom Joseph could not see while he was in the pit: God, going on ahead, preparing a place for famine years that had not yet come."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Third Time She Told It",
+      "body": "A woman I know lost her father young, and lost him badly - not to illness but to a choice he made to leave. For years she told the story in two sentences, fast, the way you pull a hand back from a stove. He left. We managed. That was all anyone got, because that was all she could hold without it holding her.\n\nIn a room with three other people who had agreed to listen and not fix, she told it a second time, slower, and the two sentences cracked open into an afternoon, a screen door, a car that did not come back. She cried in a way she had not let herself cry at twelve. Nothing about the facts changed. He still left. They still managed, barely.\n\nBut the third time she told it, months later, something else was in the story that had not been in it before. She could see the aunt who showed up with groceries. The teacher who kept her after class on the worst days. The strange, stubborn way she had become someone who stays. \"I used to think the story was about being abandoned,\" she said. \"It's also about who carried me. I just couldn't see them while I was still falling.\"",
+      "connectionToTheme": "Like Joseph, she did not heal by editing the facts of what was done to her. She healed by telling the story enough times, in safe company, that she could finally see who else had been in the room - and the trauma slowly became a testimony to how she was carried.",
+      "content": "A woman I know lost her father young, and lost him badly - not to illness but to a choice he made to leave. For years she told the story in two sentences, fast, the way you pull a hand back from a stove. He left. We managed. That was all anyone got, because that was all she could hold without it holding her.\n\nIn a room with three other people who had agreed to listen and not fix, she told it a second time, slower, and the two sentences cracked open into an afternoon, a screen door, a car that did not come back. She cried in a way she had not let herself cry at twelve. Nothing about the facts changed. He still left. They still managed, barely.\n\nBut the third time she told it, months later, something else was in the story that had not been in it before. She could see the aunt who showed up with groceries. The teacher who kept her after class on the worst days. The strange, stubborn way she had become someone who stays. \"I used to think the story was about being abandoned,\" she said. \"It's also about who carried me. I just couldn't see them while I was still falling.\""
+    },
+    {
+      "type": "insight",
+      "heading": "Two Hands on the Same Thread",
+      "body": "Read Genesis 45 against Genesis 50 and you find Joseph saying the same thing in two registers - first warm, then weighed. In chapter 45, fresh with tears, he keeps insisting it was God who sent him, almost talking his brothers down off their guilt: \"do not be distressed... God sent me... it was not you who sent me here, but God.\" In chapter 50, after their father has died and the brothers are sure the kindness was only for Jacob's sake, he says it the careful, lasting way: \"what you intended against me for evil, God intended for good.\"\n\nThat second sentence is the most honest thing in the chapter, and it refuses two easy escapes. It will not say the brothers did nothing wrong - they intended evil, and Joseph says so. And it will not say God merely cleaned up a mess He had no part in shaping. The same Hebrew verb, chashav, sits under both clauses. Two intentions, two hands, working the same thread: the brothers weaving betrayal, God weaving deliverance, out of one set of events.\n\nThis is not a tidy lesson that suffering is secretly good. It is the much harder, much better claim that God is sovereign even over what people mean for your harm, and that He can be running a rescue through the very corridor where you were sold. Joseph never says the pit was good. He says God was already past it, in Egypt, storing grain.",
+      "historicalContext": "The Joseph narrative (Genesis 37-50) is the longest sustained story about a single person in Genesis, and it closes the book - the bridge between the patriarchs and the nation that will go down into Egypt and one day be brought out. Israel first read these chapters as the explanation of how they ended up enslaved in a foreign land, and the answer Genesis gives is not chance but providence: a brother sold for silver became the one who kept the family alive. The whole exodus to come is already cradled in a forgiven man's testimony.",
+      "fascinatingFact": "Joseph weeps at least seven times across the narrative, more than any other figure in Genesis. The man who learns to retell his trauma without bitterness is also the man who never learns to stop crying over it. Healing did not make him hard; it made him able to feel the whole weight of the story and still name God inside it.",
+      "content": "Read Genesis 45 against Genesis 50 and you find Joseph saying the same thing in two registers - first warm, then weighed. In chapter 45, fresh with tears, he keeps insisting it was God who sent him, almost talking his brothers down off their guilt: \"do not be distressed... God sent me... it was not you who sent me here, but God.\" In chapter 50, after their father has died and the brothers are sure the kindness was only for Jacob's sake, he says it the careful, lasting way: \"what you intended against me for evil, God intended for good.\"\n\nThat second sentence is the most honest thing in the chapter, and it refuses two easy escapes. It will not say the brothers did nothing wrong - they intended evil, and Joseph says so. And it will not say God merely cleaned up a mess He had no part in shaping. The same Hebrew verb, chashav, sits under both clauses. Two intentions, two hands, working the same thread: the brothers weaving betrayal, God weaving deliverance, out of one set of events.\n\nThis is not a tidy lesson that suffering is secretly good. It is the much harder, much better claim that God is sovereign even over what people mean for your harm, and that He can be running a rescue through the very corridor where you were sold. Joseph never says the pit was good. He says God was already past it, in Egypt, storing grain."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Joseph, betrayed by his own brothers and sold for silver, is raised up in a foreign land and becomes the deliverer of the very people who handed him over - and he tells them so to their faces, turning their crime into the place where God's salvation came.",
+      "modernApplication": "Many of us are still telling the clenched, two-sentence version of our worst chapter, because the long version feels too dangerous to hold. The invitation of this passage is not to pretend the harm was not harm. It is to tell the story again, slowly, in safe company and before God, until you can begin to name where He was in it - and to discover that what was done to you is not the last word over your life.",
+      "connectionPoint": "Israel kept Joseph's story at the head of its memory because it is the pattern the whole Bible keeps repeating: the rejected one becomes the rescuer. The stone the builders rejected becomes the cornerstone (Psalm 118:22). The suffering servant is wounded for the very people who despised him (Isaiah 53). The thread Joseph saw in the dark - human evil and divine good woven over the same event - runs straight to a hill outside Jerusalem.",
+      "newTestamentEcho": "What Joseph glimpsed, Christ completed. He too was sold for silver by one of his own (Matthew 26:15), handed over by men who intended evil, and raised up to become the deliverer of the people who put Him there. Peter says it plainly at Pentecost: \"He was delivered up by God's set plan and foreknowledge, and you, by the hands of the lawless, put Him to death\" (Acts 2:23) - the same two hands on the same thread, evil and good over one cross. And when the risen Christ meets two heartbroken travelers on the Emmaus road, He does not erase their grief; He retells the whole story until they can see where God was in it, \"beginning with Moses and all the Prophets\" (Luke 24:27). Joseph's healing-by-retelling is the gospel's own method."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the story from your own life that you only ever tell in two fast sentences - and what would it mean to tell it slowly enough, before God, to ask where He was in it?",
+      "additionalQuestions": [
+        "Joseph names the harm without excusing it and still forgives. Is there a version of your hardest story that is honest about the evil done to you and open to where God may have been working?",
+        "Who are the people who showed up in your hardest chapter that you couldn't see while you were still falling?",
+        "Where might God be 'going on ahead' of a difficulty you are in right now - storing up something you cannot yet see?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God of Joseph, I have a story I keep telling in two sentences because the long one still hurts. You know every detail of it - the pit, the silver, the years no one came. I am not ready to call any of it good, and I hear that I do not have to. But I am asking for the courage Joseph had: to tell it again with You in the room, to name the harm honestly and still look for where You were going on ahead of me. Where someone meant evil, weave it for good. Make my wound, in time, a place where others find that they are not alone. Through Christ, who was handed over and became the deliverer. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Take the one hard story you usually skip past and tell it once, all the way through - out loud to a trusted person, or written honestly to God. Do not edit out the harm. Just add one question to the end of it: \"Where were You?\" And then keep listening for the answer past today.",
+      "leavingAtCross": [
+        "The clenched, two-sentence version of my worst chapter that I use to keep from feeling it",
+        "The lie that the people who hurt me get to write the last line of my story",
+        "The bitterness that has to choose between naming the harm and offering forgiveness, as if I cannot do both"
+      ],
+      "receivingFromCross": [
+        "Permission to tell the whole truth about what was done to me - and still be held",
+        "Eyes to begin seeing where God was going on ahead of me in the dark",
+        "The slow gift of watching a wound become a place where someone else finds they are not alone"
+      ],
+      "content": "Take the one hard story you usually skip past and tell it once, all the way through - out loud to a trusted person, or written honestly to God. Do not edit out the harm. Just add one question to the end of it: \"Where were You?\" And then keep listening for the answer past today."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Joseph uses the same Hebrew verb (chashav, 'to devise') for both his brothers and God in Genesis 50:20. What is he claiming by putting the human plot and the divine plan over the very same events?",
+        "Joseph names the crime - 'the one you sold into Egypt' - in the same breath he uses to forgive. Why does he keep the harm in the telling instead of smoothing it over?",
+        "What is the difference between saying 'the pit was secretly good' and saying 'God intended for good what you intended for evil'? Why does that distinction matter?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one chapter of your life you tend to tell in two fast sentences - and, if you're willing, tell it slower.",
+        "Talk about the difference between forgiving someone and pretending they did nothing wrong. Where do you confuse the two?",
+        "Ask each other: where might God be 'going on ahead' of a hard thing you're in right now, in a way you can't yet see?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 50:20",
+          "text": "As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this—to preserve the lives of many people."
+        },
+        {
+          "reference": "Genesis 42:21",
+          "text": "Then they said to one another, \"Surely we are being punished because of our brother. We saw his anguish when he pleaded with us, but we would not listen. That is why this distress has come upon us.\""
+        },
+        {
+          "reference": "Acts 7:9-10",
+          "text": "Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him and rescued him from all his troubles. He granted Joseph favor and wisdom in the sight of Pharaoh king of Egypt, who appointed him ruler over Egypt and all his household."
+        },
+        {
+          "reference": "Romans 8:28",
+          "text": "And we know that God works all things together for the good of those who love Him, who are called according to His purpose."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 45 and 50",
+          "note": "Read Joseph's two reconciliation speeches side by side, watching how the same events are retold - first to comfort his brothers (ch. 45), then to settle their fear after Jacob dies (ch. 50). Notice what stays the same and what he never takes back."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Betrayed Brother Who Became the Deliverer",
+      "description": "The eleventh son of Jacob, sold into Egypt by his jealous brothers for twenty pieces of silver, falsely imprisoned, and finally raised to rule over Egypt as Pharaoh's second-in-command. Through his administration of grain during a seven-year famine, he preserved both Egypt and his own family - the family from which Israel would come. When his brothers stood terrified before him, he wept, forgave, and gave them the testimony that has steadied sufferers ever since: God meant for good what they meant for evil.",
+      "keyQuote": "I am Joseph, your brother, the one you sold into Egypt! ... it was to save lives that God sent me before you.",
+      "lessonForUs": "Joseph never pretends the pit was not a pit. He heals by telling the true story until God is visible inside it - and a life that began in betrayal becomes a testimony that the rejected one can become the rescuer. It is a pattern that runs straight to Christ.",
+      "heading": "The Betrayed Brother Who Became the Deliverer"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2605,
+  "scriptureReference_full": "Genesis 45:4-8; 50:20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chashav, H2803; machashavah) reflects standard lexical sources; the double use of the verb in Genesis 50:20 is a recognized feature of the text."
+  ]
 }

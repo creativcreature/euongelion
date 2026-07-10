@@ -1,38 +1,182 @@
 {
   "day": 274,
-  "title": "Matthew: Kingdom Begins — Day 1 — Hook",
-  "teaser": "Day 274 of Bible 365 — Matthew 1-7",
+  "title": "The King Arrives in Person",
+  "teaser": "Matthew opens the New Testament not with a doctrine but with a genealogy and a name: Immanuel, God with us. The kingdom does not show up as a program. It walks up the road as a Person.",
   "framework": "Matthew 1-7 — Matthew: Kingdom Begins",
   "scriptureReference": "Matthew 1-7",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 274"
+      "type": "scripture",
+      "reference": "Matthew 1:1, 23; 4:17; 5:3",
+      "translation": "BSB",
+      "emphasis": [
+        "the son of David, the son of Abraham",
+        "they will call Him Immanuel",
+        "the kingdom of heaven is near",
+        "theirs is the kingdom of heaven"
+      ],
+      "greekOriginal": "Μετανοεῖτε· ἤγγικεν γὰρ ἡ βασιλεία τῶν οὐρανῶν.",
+      "passage": "This is the record of the genealogy of Jesus Christ, the son of David, the son of Abraham... \"Behold, the virgin will be with child and will give birth to a son, and they will call Him Immanuel\" (which means, \"God with us\")... From that time on Jesus began to preach, \"Repent, for the kingdom of heaven is near.\"... \"Blessed are the poor in spirit, for theirs is the kingdom of heaven.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "βασιλεία τῶν οὐρανῶν",
+      "transliteration": "basileia tōn ouranōn",
+      "pronunciation": "ba-si-LAY-ah tone oo-ra-NONE",
+      "meaning": "the kingdom of heaven; the reign, the rule, the kingship of heaven",
+      "rootMeaning": "Basileia comes from basileus, a king. It does not name a place on a map so much as the active fact of someone reigning. The kingdom of heaven is less a country you enter than a King whose rule has arrived.",
+      "usageNote": "Matthew uses 'kingdom of heaven' about thirty-two times - far more than any other Gospel. Writing for readers steeped in Jewish reverence, he often says 'heaven' where Mark and Luke say 'of God,' a respectful way of naming God without naming Him. John the Baptist, Jesus, and the disciples all announce it with the same word: it is near.",
+      "wordByWord": [
+        {
+          "word": "Μετανοεῖτε",
+          "transliteration": "metanoeite",
+          "meaning": "repent - literally, change your mind, turn the whole direction of your thinking"
+        },
+        {
+          "word": "ἤγγικεν",
+          "transliteration": "ēngiken",
+          "meaning": "has come near, has drawn close - a verb tense for something that has approached and is now here"
+        },
+        {
+          "word": "βασιλεία",
+          "transliteration": "basileia",
+          "meaning": "kingdom, reign, kingship - the rule of a king, not merely his territory"
+        },
+        {
+          "word": "τῶν οὐρανῶν",
+          "transliteration": "tōn ouranōn",
+          "meaning": "of the heavens - Matthew's reverent way of saying 'of God'"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μακάριος",
+          "reference": "Makarios, 'blessed,' opens each Beatitude (Matthew 5:3-10). It does not mean 'lucky' or even 'happy' in the shallow sense - it names the settled well-being of a person who stands inside the favor of God."
+        }
+      ],
+      "strongsNumber": "G932",
+      "definition": "kingship, royal power, dominion; the reign of God breaking into the world",
+      "usage": "The word lands as a verb hidden inside a noun. 'The kingdom of heaven is near' is not weather report or prediction - it is the announcement that the King Himself has stepped onto the road."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Kingdom Begins. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who fulfills.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Family Tree Is Not How You Start a Manifesto",
+      "body": "If you were launching the most important book in the world, you would not open it with a list of names. Matthew does. Forty-two generations, fathers and sons, a few mothers who do not belong in a respectable Jewish genealogy - Tamar, Rahab, Ruth, the wife of Uriah - marching down the page until they arrive at one name: Jesus Christ, the son of David, the son of Abraham.\n\nThe plain sense is almost dull until you see what it claims. Son of Abraham means the promise made to one wandering family two thousand years earlier has a face now. Son of David means the throne God swore would never lack a king is filled. Matthew is not easing into his subject. He is producing the legal papers. Before Jesus says a word, His pedigree says it for Him: the long wait is over.\n\nThen the angel names the child twice. Jesus, because He will save His people from their sins. Immanuel, which means God with us. The whole of Matthew 1 through 7 is the unfolding of those two names. The One who will save is the One who is with us - not a deputy God sent, not a message God mailed, but God Himself arriving in a body, in a town, in a family with a paper trail.",
+      "keyInsight": "Matthew opens the New Testament with a genealogy because the gospel is not first an idea to be grasped. It is a Person who has a lineage, a birthplace, and a name - and that Person is God with us.",
+      "content": "If you were launching the most important book in the world, you would not open it with a list of names. Matthew does. Forty-two generations, fathers and sons, a few mothers who do not belong in a respectable Jewish genealogy - Tamar, Rahab, Ruth, the wife of Uriah - marching down the page until they arrive at one name: Jesus Christ, the son of David, the son of Abraham.\n\nThe plain sense is almost dull until you see what it claims. Son of Abraham means the promise made to one wandering family two thousand years earlier has a face now. Son of David means the throne God swore would never lack a king is filled. Matthew is not easing into his subject. He is producing the legal papers. Before Jesus says a word, His pedigree says it for Him: the long wait is over.\n\nThen the angel names the child twice. Jesus, because He will save His people from their sins. Immanuel, which means God with us. The whole of Matthew 1 through 7 is the unfolding of those two names. The One who will save is the One who is with us - not a deputy God sent, not a message God mailed, but God Himself arriving in a body, in a town, in a family with a paper trail."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter and the Knock",
+      "body": "A friend of mine spent a hard year writing letters to a son who had stopped speaking to him. He wrote every week. Careful letters, no accusations, just news and longing and the same closing line: I am here when you are ready.\n\nThe son kept the letters. He told me later he reread them in stacks, late at night, and they did almost nothing. Words on paper from a father across the country are a strange comfort - real, and not enough. What finally broke him was not a letter. It was a knock. His father drove eleven hours and stood on the porch in the cold and said his name. The same words he had been reading for a year, now with a face and a voice and the breath of a body that had crossed real miles to be there.\n\nFor centuries Israel had the letters. Prophets, promises, a law engraved in stone, a temple where God's presence dwelt behind a curtain. All of it true, all of it real, none of it the same as a knock. Matthew opens with the knock. God with us is not a better letter. It is the Author on the porch.",
+      "connectionToTheme": "Israel had God's word for centuries; Matthew announces God's presence in person. The kingdom of heaven is near because the King is no longer writing - He has come to the door.",
+      "content": "A friend of mine spent a hard year writing letters to a son who had stopped speaking to him. He wrote every week. Careful letters, no accusations, just news and longing and the same closing line: I am here when you are ready.\n\nThe son kept the letters. He told me later he reread them in stacks, late at night, and they did almost nothing. Words on paper from a father across the country are a strange comfort - real, and not enough. What finally broke him was not a letter. It was a knock. His father drove eleven hours and stood on the porch in the cold and said his name. The same words he had been reading for a year, now with a face and a voice and the breath of a body that had crossed real miles to be there.\n\nFor centuries Israel had the letters. Prophets, promises, a law engraved in stone, a temple where God's presence dwelt behind a curtain. All of it true, all of it real, none of it the same as a knock. Matthew opens with the knock. God with us is not a better letter. It is the Author on the porch."
+    },
+    {
+      "type": "insight",
+      "heading": "The Kingdom Has a Pulse",
+      "body": "Watch the verb. When Jesus begins to preach, He does not say the kingdom of heaven is coming, someday, if you are good enough. He says it is near. The Greek word means a thing that has approached and is now within reach - close enough to touch.\n\nThis is the hinge the whole opening turns on. John the Baptist had said the same sentence in the wilderness. Now Jesus says it, and the difference is everything: when John said it, he was pointing down the road; when Jesus says it, He is the One who has arrived. The kingdom is near in the most literal way imaginable. It is standing in front of the crowd, on a hillside in Galilee, about to sit down and teach.\n\nThen He opens His mouth, and the first word of His first sermon is not a command. It is a blessing. Blessed are the poor in spirit, for theirs is the kingdom of heaven. The King's opening move is to hand His kingdom to the people least likely to think they qualify for it - the spiritually bankrupt, the mourning, the meek. This is the constitution of the kingdom, and it reads backward from every empire we know. The door in is not achievement. It is need.",
+      "historicalContext": "Matthew writes for a largely Jewish-Christian readership, probably in the decades after the temple's destruction in AD 70, when the question 'where is God's kingdom now?' was raw and urgent. His answer structures the whole Gospel: the kingdom did not arrive as a political revolt against Rome but in the person of a teacher from Nazareth who blessed the poor and was crowned on a cross.",
+      "fascinatingFact": "The Sermon on the Mount opens with Jesus going up on a mountain to teach (Matthew 5:1) - a deliberate echo of Moses ascending Sinai to receive the Law. But where Moses came down with tablets, Jesus sits down and speaks with His own authority. Matthew is quietly saying: here is a new Moses, only greater, because He does not deliver the law, He embodies it.",
+      "content": "Watch the verb. When Jesus begins to preach, He does not say the kingdom of heaven is coming, someday, if you are good enough. He says it is near. The Greek word means a thing that has approached and is now within reach - close enough to touch.\n\nThis is the hinge the whole opening turns on. John the Baptist had said the same sentence in the wilderness. Now Jesus says it, and the difference is everything: when John said it, he was pointing down the road; when Jesus says it, He is the One who has arrived. The kingdom is near in the most literal way imaginable. It is standing in front of the crowd, on a hillside in Galilee, about to sit down and teach.\n\nThen He opens His mouth, and the first word of His first sermon is not a command. It is a blessing. Blessed are the poor in spirit, for theirs is the kingdom of heaven. The King's opening move is to hand His kingdom to the people least likely to think they qualify for it - the spiritually bankrupt, the mourning, the meek. This is the constitution of the kingdom, and it reads backward from every empire we know. The door in is not achievement. It is need."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Matthew announces that the kingdom of heaven has come near in person - God with us, born into David's line, teaching on a Galilean hillside that the poor in spirit are the ones who inherit it.",
+      "modernApplication": "We tend to treat God the way Israel had to treat Him for centuries: a presence behind a curtain, a word in a book, a felt distance we manage with effort and ritual. Matthew insists the distance is over. The King is near enough to repent toward - to turn around and find already standing there. You do not climb to the kingdom. You turn around and discover it has come to you.",
+      "connectionPoint": "The thread Matthew opens runs to the very last line of his Gospel. He begins with the name Immanuel, God with us (Matthew 1:23), and ends with the risen Jesus' promise, 'And surely I am with you always, to the very end of the age' (Matthew 28:20). The whole book is bracketed by presence. Everything between is the King making good on His own name.",
+      "newTestamentEcho": "What the genealogy claims, the cross and resurrection confirm. The 'son of David' enters Jerusalem as its king and is enthroned, absurdly and truly, on a cross over the charge 'King of the Jews' (Matthew 27:37). The kingdom that began in a blessing for the poor is opened, finally, to all by the King who became poor for them - the One who saves His people from their sins, exactly as His name foretold."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the kingdom of heaven is near - not a place you reach but a King who has come near to you - what would change in how you pray today?",
+      "additionalQuestions": [
+        "Matthew puts unlikely names in Jesus' family tree on purpose. What in your own history makes you feel disqualified - and what does it mean that the King chose a lineage full of scandal and need?",
+        "Jesus' first sermon blesses the poor in spirit before it asks anything of them. Where have you been trying to earn your way into a kingdom that is being handed to you?",
+        "'Repent' means to turn around. What direction is your life currently facing, and what would it look like to turn?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Jesus, Immanuel, God with us - I have lived as though You were far off, a word in a book I half believe, a presence behind a curtain I cannot reach. Today You tell me the kingdom is near, that You are near. So I turn around. I am poor in spirit; I bring You nothing but need, and You call that the door in. Save me, as Your name promises. Be with me, as Your name means. Let me live this day knowing the King has already come to where I am. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, when you next feel the old distance - God as far off, faith as effort - say one sentence out loud: 'The kingdom of heaven is near.' Then turn your attention, even for a breath, toward the King who is already here. Let nearness, not striving, be the posture you carry through the day.",
+      "leavingAtCross": [
+        "The belief that God is mostly absent - a letter, never a knock",
+        "The instinct that I must climb to the kingdom by being good enough first",
+        "The lie that my history disqualifies me from a place at the King's table"
+      ],
+      "receivingFromCross": [
+        "Immanuel - God with us, not at a distance but in person",
+        "A kingdom handed to the poor in spirit, entered by turning around, not climbing up",
+        "A place in the family tree of grace, scandal and need and all"
+      ],
+      "content": "Today, when you next feel the old distance - God as far off, faith as effort - say one sentence out loud: 'The kingdom of heaven is near.' Then turn your attention, even for a breath, toward the King who is already here. Let nearness, not striving, be the posture you carry through the day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Matthew open his Gospel with a genealogy, and what do the titles 'son of David' and 'son of Abraham' each claim about Jesus?",
+        "The Greek behind 'the kingdom of heaven is near' describes something that has approached and is now within reach. How does that change the meaning of Jesus' first sermon compared to hearing it as a far-off promise?",
+        "Jesus' first recorded words in His ministry are 'Repent,' and the first words of His first sermon are 'Blessed are the poor in spirit.' How do those two openings fit together rather than contradict?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about a time God felt like a letter rather than a knock - present but distant. What changed it, if anything?",
+        "Each name the area of life where you most quietly believe you have to earn your way in. How does 'theirs is the kingdom' speak to that?",
+        "Ask each other: if you really believed the King was near today, what is one thing you would stop carrying and one thing you would start?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 1:21",
+          "text": "She will give birth to a Son, and you are to give Him the name Jesus, because He will save His people from their sins."
+        },
+        {
+          "reference": "Matthew 4:23",
+          "text": "Jesus went throughout Galilee, teaching in their synagogues, preaching the gospel of the kingdom, and healing every disease and sickness among the people."
+        },
+        {
+          "reference": "Matthew 6:33",
+          "text": "But seek first the kingdom of God and His righteousness, and all these things will be added unto you."
+        },
+        {
+          "reference": "Matthew 7:24",
+          "text": "Therefore everyone who hears these words of Mine and acts on them is like a wise man who built his house on the rock."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 5-7 (The Sermon on the Mount)",
+          "note": "Read the whole sermon in one sitting as the kingdom's opening charter - notice that it begins with blessing (5:3) and ends with two builders and two foundations (7:24-27)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus Christ",
+      "title": "Immanuel, the King Who Comes Near",
+      "description": "Matthew presents Jesus as the long-awaited son of David and son of Abraham - the rightful king in whom God's ancient promises arrive in person. His first public word is a call to turn around, and His first sermon hands the kingdom of heaven to the poor in spirit. Born into a family tree marked by scandal and need, He is named both Jesus, the One who saves His people from their sins, and Immanuel, God with us. The whole of Matthew unfolds those two names, ending where it began - with the promise of His presence to the end of the age.",
+      "keyQuote": "Repent, for the kingdom of heaven is near.",
+      "lessonForUs": "The kingdom is not a distant country we travel toward by good behavior. It is a King who has come near. The only way in is the way of the poor in spirit: empty hands, an honest turn, and a place at a table set by grace.",
+      "heading": "Immanuel, the King Who Comes Near"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2063,
+  "scriptureReference_full": "Matthew 1:1, 21-23; 3:2; 4:17, 23; 5:1-10; 6:33; 7:24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (basileia G932, makarios, metanoeite) reflects standard lexical sources; the Sermon-on-the-Mount / new-Moses parallel is a widely held reading in New Testament scholarship."
+  ]
 }

@@ -1,38 +1,183 @@
 {
   "day": 212,
-  "title": "Song of Songs: Covenant Love — Day 2 — Building",
-  "teaser": "Day 212 of Bible 365 — Song 2, 6, 8",
+  "title": "Strong as death: when love stops being a feeling",
+  "teaser": "The Song's lovers move from \"my beloved is mine\" to \"set me as a seal\" — from delight to a love that costs everything. So does the gospel.",
   "framework": "Song 2, 6, 8 — Song of Songs: Covenant Love",
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 212"
+      "type": "scripture",
+      "reference": "Song of Songs 2:4, 16; 6:3; 8:6-7",
+      "translation": "BSB",
+      "emphasis": [
+        "his banner over me is love",
+        "My beloved is mine and I am his",
+        "Set me as a seal over your heart",
+        "love is as strong as death"
+      ],
+      "hebrewOriginal": "שִׂימֵנִי כַחוֹתָם עַל־לִבֶּךָ כַּחוֹתָם עַל־זְרוֹעֶךָ כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "He has brought me to the house of wine, and his banner over me is love. ... My beloved is mine and I am his; he pastures his flock among the lilies. ... I belong to my beloved and he belongs to me; he pastures his flock among the lilies. ... Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חוֹתָם",
+      "transliteration": "chotam",
+      "pronunciation": "kho-TAHM",
+      "meaning": "a seal, a signet, the mark of personal ownership and identity",
+      "rootMeaning": "A chotam was a carved stone, often worn on a cord at the chest or as a ring on the arm or hand, pressed into wax or clay to leave its owner's unforgeable mark. It was the ancient world's signature - the thing that said this is mine, this is from me, this binds me to it.",
+      "usageNote": "When the woman says 'Set me as a seal over your heart, as a seal upon your arm,' she is not asking for a feeling. She is asking to be the mark her beloved cannot take off - pressed against the heart where love is held and bound to the arm where strength is spent. The same word names the signet ring that carried a king's authority (Genesis 41:42) and the signet God promises to make of Zerubbabel, 'for I have chosen you' (Haggai 2:23).",
+      "wordByWord": [
+        {
+          "word": "שִׂימֵנִי",
+          "transliteration": "simeni",
+          "meaning": "set me, place me, fix me there"
+        },
+        {
+          "word": "כַחוֹתָם",
+          "transliteration": "kachotam",
+          "meaning": "like a seal, as a signet"
+        },
+        {
+          "word": "עַל־לִבֶּךָ",
+          "transliteration": "al-libecha",
+          "meaning": "over your heart - the seat of will and devotion"
+        },
+        {
+          "word": "כִּי־עַזָּה כַמָּוֶת",
+          "transliteration": "ki-azzah kammavet",
+          "meaning": "for strong as death (is love) - fierce, unyielding, final"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עַזָּה / מָוֶת",
+          "reference": "Azzah (strong, fierce) set beside mavet (death) is a stunning pairing. Death is the one force in the ancient imagination that never loosens its grip. The Song says love grips like that - not gently, but with death's own refusal to let go."
+        }
+      ],
+      "strongsNumber": "H2368",
+      "definition": "a seal, signet; the engraved mark of ownership and binding identity",
+      "usage": "To be sealed is to be claimed permanently and publicly. The plea 'set me as a seal' is a plea to be made un-removable - belonging that cannot be revised when the feeling cools."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "From \"He Is Mine\" to \"Set Me As a Seal\"",
+      "body": "Yesterday the Song opened the door; today it builds the house. Watch how the language of belonging deepens as the poem moves.\n\nIn chapter 2 the lovers are in springtime. Winter is past, the figs are ripening, and she sums it all up in one bright line: 'My beloved is mine and I am his.' Notice the order. She names her claim first - he is mine - and her self-gift second. It is the language of young love, real and warm, with the self still slightly in front.\n\nBy chapter 6 the same refrain returns, but the order has quietly flipped: 'I belong to my beloved and he belongs to me.' Now self-giving comes first. The accent has moved from what she possesses to whom she belongs. That small reversal is the whole maturing of love compressed into a single line - from grasping to giving, from mine to yours.\n\nThen chapter 8 says the thing the springtime could not yet say. She no longer asks to enjoy him; she asks to be bound to him: 'Set me as a seal over your heart, as a seal upon your arm.' And she tells us why such binding is worth wanting: 'For love is as strong as death.' The poem has walked us from the house of wine to the weight of a vow.",
+      "keyInsight": "The Song does not stay in springtime. It builds - from \"he is mine\" to \"I am his\" to \"bind me to you with the strength of death.\" Real love grows from delight into covenant, or it does not grow at all.",
+      "content": "Yesterday the Song opened the door; today it builds the house. Watch how the language of belonging deepens as the poem moves.\n\nIn chapter 2 the lovers are in springtime. Winter is past, the figs are ripening, and she sums it all up in one bright line: 'My beloved is mine and I am his.' Notice the order. She names her claim first - he is mine - and her self-gift second. It is the language of young love, real and warm, with the self still slightly in front.\n\nBy chapter 6 the same refrain returns, but the order has quietly flipped: 'I belong to my beloved and he belongs to me.' Now self-giving comes first. The accent has moved from what she possesses to whom she belongs. That small reversal is the whole maturing of love compressed into a single line - from grasping to giving, from mine to yours.\n\nThen chapter 8 says the thing the springtime could not yet say. She no longer asks to enjoy him; she asks to be bound to him: 'Set me as a seal over your heart, as a seal upon your arm.' And she tells us why such binding is worth wanting: 'For love is as strong as death.' The poem has walked us from the house of wine to the weight of a vow."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Vow She Could Not Feel",
+      "body": "A woman I'll call Ruth told me about the morning she nearly left her marriage. Twenty-six years in, the affection she had felt on her wedding day was simply gone - not replaced by anger, just absent, like a radio tuned to static. She sat at the kitchen table and thought, honestly, that the feeling leaving meant the love had ended.\n\nWhat stopped her was a sentence her own grandmother had said decades earlier, at a different kitchen table: 'Feelings come to the wedding. They don't get to run the marriage.' Ruth stayed - not because the spark returned that week, but because she had bound herself to something stronger than the spark. The warmth came back, slowly, the way a fire rebuilds from coals you thought were dead. But it came back to a vow that had held the room while the fire was out.\n\nThat is the difference the Song is teaching. 'My beloved is mine' is the spark. 'Set me as a seal' is the vow that outlasts the seasons when the spark is only coals.",
+      "connectionToTheme": "The Song's move from delight to seal is the same move that turns a feeling into a covenant - a binding that holds love steady when the warmth comes and goes.",
+      "content": "A woman I'll call Ruth told me about the morning she nearly left her marriage. Twenty-six years in, the affection she had felt on her wedding day was simply gone - not replaced by anger, just absent, like a radio tuned to static. She sat at the kitchen table and thought, honestly, that the feeling leaving meant the love had ended.\n\nWhat stopped her was a sentence her own grandmother had said decades earlier, at a different kitchen table: 'Feelings come to the wedding. They don't get to run the marriage.' Ruth stayed - not because the spark returned that week, but because she had bound herself to something stronger than the spark. The warmth came back, slowly, the way a fire rebuilds from coals you thought were dead. But it came back to a vow that had held the room while the fire was out.\n\nThat is the difference the Song is teaching. 'My beloved is mine' is the spark. 'Set me as a seal' is the vow that outlasts the seasons when the spark is only coals."
+    },
+    {
+      "type": "insight",
+      "heading": "Mighty Waters Cannot Quench It",
+      "body": "Read 8:6 and 8:7 together and the Song makes a claim that no greeting card would dare. Love is not described as warm, or sweet, or tender here. It is described with the three things the ancient world feared most: death, Sheol, and the flood.\n\n'Love is as strong as death' - death is the force that never lets go, and the Song says love grips like that. 'Its jealousy as unrelenting as Sheol' - the grave does not negotiate, and neither does true love for its own. 'Mighty waters cannot quench love; rivers cannot sweep it away' - in Hebrew imagination the mighty waters are the waters of chaos and judgment, the flood that drowned the world. The Song says even those cannot put this fire out.\n\nThis is the building-day revelation. The love the poem has been celebrating is not a fragile spring bloom that the first hard rain ruins. It is a flame that the floodwaters themselves cannot extinguish. And it cannot be bought: 'If a man were to give all the wealth of his house for love, his offer would be utterly scorned.' You cannot purchase it, drown it, or kill it. It can only be given - and once given, it holds with the strength of death.",
+      "historicalContext": "The Song of Songs sits among Israel's Wisdom and poetic literature, and the synagogue read it at Passover - the feast of redemption, when God brought His people up out of slavery as a bridegroom claims a bride. Across the centuries Jewish and Christian readers alike heard in these lovers more than human romance: a picture of the covenant love between God and His people. The plain sense is a wedding song; even at the plain level, it insists that real love is covenantal, not casual.",
+      "fascinatingFact": "Song of Songs 8:6 contains one of only a few places in the entire book where many manuscripts read a form of the divine name - the 'fiercest blaze of all' is rendered in Hebrew as shalhevetyah, literally 'a flame of Yah.' At the very point where the Song defines love as strong as death, its language reaches, almost involuntarily, for the name of God.",
+      "content": "Read 8:6 and 8:7 together and the Song makes a claim that no greeting card would dare. Love is not described as warm, or sweet, or tender here. It is described with the three things the ancient world feared most: death, Sheol, and the flood.\n\n'Love is as strong as death' - death is the force that never lets go, and the Song says love grips like that. 'Its jealousy as unrelenting as Sheol' - the grave does not negotiate, and neither does true love for its own. 'Mighty waters cannot quench love; rivers cannot sweep it away' - in Hebrew imagination the mighty waters are the waters of chaos and judgment, the flood that drowned the world. The Song says even those cannot put this fire out.\n\nThis is the building-day revelation. The love the poem has been celebrating is not a fragile spring bloom that the first hard rain ruins. It is a flame that the floodwaters themselves cannot extinguish. And it cannot be bought: 'If a man were to give all the wealth of his house for love, his offer would be utterly scorned.' You cannot purchase it, drown it, or kill it. It can only be given - and once given, it holds with the strength of death."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Song's love ripens from \"my beloved is mine\" into \"set me as a seal\" - a love defined not by its sweetness but by its strength: as strong as death, unquenchable by mighty waters, beyond all purchase.",
+      "modernApplication": "We are fluent in the spring version of love and clumsy with the seal. We say we will love as long as it feels alive, and call the day the feeling fades the day the love ended. The Song corrects us: love that can be quenched by the first cold season was never the strong thing it claimed to be. The mature ask is not \"do I still feel it\" but \"will I let this be a seal on me.\"",
+      "connectionPoint": "What the Song longs for, the prophets name outright: God binds Himself to His people in covenant love, 'I will betroth you to Me forever' (Hosea 2:19). The plea 'set me as a seal' is answered when God says, in effect, you already are.",
+      "newTestamentEcho": "Here the building-day turns to Christ. The Song says love is 'as strong as death' and that 'mighty waters cannot quench' it - and at the cross the Bridegroom proves both at once. Paul tells the church, 'Husbands, love your wives, just as Christ loved the church and gave Himself up for her' (Ephesians 5:25). The seal the bride begged for, Christ wears in His own scarred hands and side - the mark of ownership pressed into Him by love that went down under the mighty waters of judgment and was not swept away. 'Greater love has no one than this, that he lay down his life for his friends' (John 15:13)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you treated love as a feeling that ends when the warmth fades - and what would it look like to let it become a seal instead?",
+      "additionalQuestions": [
+        "The Song moves from 'he is mine' to 'I am his.' In your closest relationships - and in your relationship with God - which order are you living in right now?",
+        "What 'mighty waters' have tested a love you carry: grief, distance, disappointment, time? Did the love prove strong as death, or did it get swept away?",
+        "If love can only be given and never bought, what have you been trying to purchase that you were actually meant to receive?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess how often I have loved only while it felt good, and called the cooling of a feeling the end of love. Thank You for a love that is stronger than that - stronger than death, unquenched by every flood. Thank You that Christ wore the seal I could never earn, and gave Himself up so I could belong. Set me as a seal over Your heart, and seal Your love over mine, so that what I give and what I receive both hold when the seasons turn. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one love in your life - to God, to a spouse, to a friend, to a calling - that you have been holding at the level of feeling, and choose one concrete act of faithfulness toward it that does not depend on how you feel about it this week.",
+      "leavingAtCross": [
+        "The belief that love ends the day the warm feeling leaves",
+        "The bargaining instinct that tries to purchase belonging instead of receiving it",
+        "The fear that if I bind myself to something, I will lose myself"
+      ],
+      "receivingFromCross": [
+        "A love defined by Christ's strength, not by my fluctuating warmth",
+        "The freedom of being sealed - claimed permanently and not on probation",
+        "The courage to give myself away, because I have first been given everything"
+      ],
+      "content": "Today, name one love in your life - to God, to a spouse, to a friend, to a calling - that you have been holding at the level of feeling, and choose one concrete act of faithfulness toward it that does not depend on how you feel about it this week."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does the refrain change between Song 2:16 ('My beloved is mine and I am his') and Song 6:3 ('I belong to my beloved and he belongs to me'), and what does the reordering reveal about love maturing?",
+        "Why does the Song describe love using death, Sheol, and mighty waters instead of softer images - and what is it claiming about love's strength?",
+        "What does it mean that love 'cannot be bought,' and how does that connect to the gospel claim that we are saved by grace and not by purchase?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one relationship where you sense love is being asked to grow from a feeling into a commitment - and what makes that frightening.",
+        "Talk honestly about a 'mighty waters' season that tested a love you hold. What held it, or what swept it away?",
+        "Ask each other: where is Christ inviting you to let His love be a seal on you, rather than something you keep trying to earn?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 2:19",
+          "text": "So I will betroth you to Me forever; I will betroth you in righteousness and justice, in loving devotion and compassion."
+        },
+        {
+          "reference": "Ephesians 5:25",
+          "text": "Husbands, love your wives, just as Christ loved the church and gave Himself up for her."
+        },
+        {
+          "reference": "John 15:13",
+          "text": "Greater love has no one than this, that he lay down his life for his friends."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs 8",
+          "note": "Read the chapter slowly, watching how the poem's love language climbs from the springtime delight of chapter 2 to the seal and the unquenchable flame of 8:6-7."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Shulammite Bride",
+      "title": "The Woman Who Asked to Be Sealed",
+      "description": "The unnamed woman whose voice carries much of the Song - a vineyard-keeper, sunburned from labor, who loves and is loved across the poem's seasons. She is the one who speaks the refrain of mutual belonging and, in chapter 8, asks to be set as a seal upon her beloved's heart and arm. Synagogue and church alike heard in her the people of God learning to love the One who first loved them.",
+      "keyQuote": "Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death.",
+      "lessonForUs": "Her longing is ours: not merely to feel love but to be bound by it, claimed permanently, sealed where it cannot be removed. The gospel answer is that the Bridegroom wore the seal first - and the love He gives is the one strong enough to hold.",
+      "heading": "The Woman Who Asked to Be Sealed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2262,
+  "scriptureReference_full": "Song of Songs 2:4, 16; 6:3; 8:6-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chotam H2368; the shalhevetyah / 'flame of Yah' reading in Song 8:6) reflects standard lexical sources and the Masoretic text.",
+    "Synagogue reading of Song of Songs at Passover and the historic covenant-love reading reflect long-standing Jewish and Christian interpretive tradition."
+  ]
 }

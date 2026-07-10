@@ -1,38 +1,187 @@
 {
   "day": 359,
-  "title": "Revelation: New Heaven + New Earth — Day 2 — Building",
-  "teaser": "Day 359 of Bible 365 — Revelation 21-22",
+  "title": "The City With No Temple",
+  "teaser": "John sees the new Jerusalem descend, and there is no temple in it — because the Lamb who was slain is the temple. God moves in to stay.",
   "framework": "Revelation 21-22 — Revelation: New Heaven + New Earth",
   "scriptureReference": "Revelation 21-22",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 359"
+      "type": "scripture",
+      "reference": "Revelation 21:2-4, 22-23; 22:3-5",
+      "translation": "BSB",
+      "emphasis": [
+        "the dwelling place of God is with man",
+        "no more death or mourning or crying or pain",
+        "I saw no temple in the city",
+        "They will see His face"
+      ],
+      "greekOriginal": "ἰδοὺ ἡ σκηνὴ τοῦ Θεοῦ μετὰ τῶν ἀνθρώπων, καὶ σκηνώσει μετ’ αὐτῶν",
+      "passage": "I saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a loud voice from the throne saying: “Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God. ‘He will wipe away every tear from their eyes,’ and there will be no more death or mourning or crying or pain, for the former things have passed away.” ... But I saw no temple in the city, because the Lord God Almighty and the Lamb are its temple. And the city has no need of sun or moon to shine on it, because the glory of God illuminates the city, and the Lamb is its lamp. ... No longer will there be any curse. The throne of God and of the Lamb will be within the city, and His servants will worship Him. They will see His face, and His name will be on their foreheads. There will be no more night in the city, and they will have no need for the light of a lamp or of the sun. For the Lord God will shine on them, and they will reign forever and ever."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Revelation 21-22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Revelation 21-22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "σκηνή / σκηνώσει",
+      "transliteration": "skēnē / skēnōsei",
+      "pronunciation": "skay-NAY / skay-NOH-say",
+      "meaning": "tent, tabernacle; He will pitch His tent, He will dwell",
+      "rootMeaning": "Skēnē is the ordinary word for a tent - a movable dwelling, the kind you live in on a journey. It is also the word the Greek Old Testament uses for the tabernacle, the tent where God's presence rested in the middle of the camp. The verb skēnōsei means to pitch a tent, to take up residence, to move in.",
+      "usageNote": "John reaches back to his own Gospel. He had already written that the Word became flesh and 'made His dwelling among us' (John 1:14) - the same verb, skēnoō, He pitched His tent in our flesh. Here in Revelation 21:3 the tent of God is pitched among His people for good. What began at the manger is finished at the city: God does not visit, He moves in.",
+      "wordByWord": [
+        {
+          "word": "ἰδοὺ",
+          "transliteration": "idou",
+          "meaning": "behold, look - a word that points and says: see this"
+        },
+        {
+          "word": "ἡ σκηνὴ",
+          "transliteration": "hē skēnē",
+          "meaning": "the tent, the tabernacle, the dwelling"
+        },
+        {
+          "word": "τοῦ Θεοῦ",
+          "transliteration": "tou Theou",
+          "meaning": "of God"
+        },
+        {
+          "word": "μετὰ τῶν ἀνθρώπων",
+          "transliteration": "meta tōn anthrōpōn",
+          "meaning": "with humanity, among people"
+        },
+        {
+          "word": "σκηνώσει",
+          "transliteration": "skēnōsei",
+          "meaning": "He will pitch His tent, He will dwell, He will reside"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁכַן / שְׁכִינָה",
+          "reference": "The Hebrew shakan, to settle or dwell, gives us the rabbinic word Shekhinah - the dwelling presence of God that filled the tabernacle and the temple. Skēnē carries the same sound and the same idea: the place where God settles down to stay."
+        }
+      ],
+      "strongsNumber": "G4633",
+      "definition": "a tent, hut, or tabernacle; a temporary dwelling that here becomes permanent",
+      "usage": "The whole story of Scripture is told in this one tent word: a garden walk lost, a tabernacle in the wilderness, a temple in Jerusalem, a manger in Bethlehem, and at last a city where the tent of God stands among His people and is never struck again."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Revelation: New Heaven + New Earth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ returns; come, Lord Jesus (Rev 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "John Keeps Looking for the Temple, and It Is Not There",
+      "body": "John has spent his whole life around temples. As a boy in Galilee he would have walked up to Jerusalem for the feasts and seen Herod's temple gleaming on its hill - the largest building most people of his day would ever stand near, the one place on earth where heaven and earth were said to touch. To a faithful Jew, the temple was the center of the world. It was where God lived.\n\nSo when the angel carries John up a great and high mountain and shows him the new Jerusalem coming down out of heaven, his eyes go looking for the temple. They have always gone looking for the temple. And he writes down the strangest thing in the whole vision: \"I saw no temple in the city.\" The center is missing. The one building that mattered most is simply not there.\n\nThen comes the reason, and it changes everything: \"because the Lord God Almighty and the Lamb are its temple.\" There is no building where God meets His people because there is no longer any distance to bridge. The temple existed to manage a problem - a holy God and an unclean people, kept apart by curtains and courts and a priesthood, allowed near only at arm's length and by blood. In the city, the problem is gone. God does not live in a room at the heart of the city. God is the heart of the city.",
+      "keyInsight": "The temple was never the goal. It was the scaffolding around the goal. The goal was God dwelling with His people without a veil between them - and when that arrives, the scaffolding comes down.",
+      "content": "John has spent his whole life around temples. As a boy in Galilee he would have walked up to Jerusalem for the feasts and seen Herod's temple gleaming on its hill - the largest building most people of his day would ever stand near, the one place on earth where heaven and earth were said to touch. To a faithful Jew, the temple was the center of the world. It was where God lived.\n\nSo when the angel carries John up a great and high mountain and shows him the new Jerusalem coming down out of heaven, his eyes go looking for the temple. They have always gone looking for the temple. And he writes down the strangest thing in the whole vision: \"I saw no temple in the city.\" The center is missing. The one building that mattered most is simply not there.\n\nThen comes the reason, and it changes everything: \"because the Lord God Almighty and the Lamb are its temple.\" There is no building where God meets His people because there is no longer any distance to bridge. The temple existed to manage a problem - a holy God and an unclean people, kept apart by curtains and courts and a priesthood, allowed near only at arm's length and by blood. In the city, the problem is gone. God does not live in a room at the heart of the city. God is the heart of the city."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House She Finally Stopped Bracing Against",
+      "body": "A friend of mine grew up in a house where you learned to read the front door. You could tell from the sound of the key turning what kind of evening it would be. So she spent her childhood listening - bracing, calculating, keeping a clear path to her room. She got very good at being present and somewhere else at the same time.\n\nYears later she married a gentle man, and for a long time she still flinched at the door. The body remembers what the mind has forgiven. She told me the turning point was small: an ordinary Tuesday, dishes in the sink, her husband humming in the next room, and she noticed she was not listening for anything. She was just home. \"I think,\" she said, \"that was the first time a house ever felt safe enough to relax inside.\"\n\nThat is the difference between a temple and the city. A temple is a place you approach carefully, on the right day, in the right state, watching the curtain. The city John sees is a home you can finally stop bracing inside - because the One you were always trying to get close to, and a little afraid of, has moved in and pulled up a chair, and there is nothing left between you to manage.",
+      "connectionToTheme": "The end of the Bible is not a grander temple to approach but a home to relax inside - God's presence so near and so safe that the long habit of bracing finally lets go.",
+      "content": "A friend of mine grew up in a house where you learned to read the front door. You could tell from the sound of the key turning what kind of evening it would be. So she spent her childhood listening - bracing, calculating, keeping a clear path to her room. She got very good at being present and somewhere else at the same time.\n\nYears later she married a gentle man, and for a long time she still flinched at the door. The body remembers what the mind has forgiven. She told me the turning point was small: an ordinary Tuesday, dishes in the sink, her husband humming in the next room, and she noticed she was not listening for anything. She was just home. \"I think,\" she said, \"that was the first time a house ever felt safe enough to relax inside.\"\n\nThat is the difference between a temple and the city. A temple is a place you approach carefully, on the right day, in the right state, watching the curtain. The city John sees is a home you can finally stop bracing inside - because the One you were always trying to get close to, and a little afraid of, has moved in and pulled up a chair, and there is nothing left between you to manage."
+    },
+    {
+      "type": "insight",
+      "heading": "The Garden Comes Back, and More Than the Garden",
+      "body": "Read the last two chapters of the Bible beside the first two and you can feel the whole story closing its circle. In Genesis there is a garden, a river, a tree of life, and God walking with people in the cool of the day. Then there is a fall, a curse, and a flaming sword barring the way back to the tree. The Bible begins with people sent out, and the door locked behind them.\n\nRevelation reopens every one of those images and heals them. There is a river again - \"the water of life, as clear as crystal, flowing from the throne of God and of the Lamb.\" There is the tree of life again, this time on both sides of the river, \"and the leaves of the tree are for the healing of the nations.\" And the line that undoes Eden: \"No longer will there be any curse.\" The sword is gone. The gate that was guarded is now a city whose gates are never shut.\n\nBut the end is more than a return to the beginning. In Eden God walked with humanity in a garden; in the city He dwells with them forever, and they \"will see His face\" - the very thing Moses was told no one could see and live (Exodus 33:20). What the garden offered and lost, the city secures and surpasses. We do not end where Adam began. We end somewhere better, because of what happened in between: a Lamb.",
+      "historicalContext": "Revelation was written to seven real churches in Roman Asia (modern western Turkey) near the end of the first century, under an empire that called Caesar 'lord and god' and increasingly pressed Christians to say it too. To believers facing pressure, poverty, and at times death for refusing that confession, John's last vision is not escapism but endurance fuel: the city is coming, the Lamb wins, hold on.",
+      "fascinatingFact": "The vision is saturated with the temple even while announcing there is no temple. The city is a perfect cube - equal in length, width, and height - and the only other cube in the Bible is the Most Holy Place, the inner room where God's presence dwelled (1 Kings 6:20). John is telling us the entire city is now the Holy of Holies. The place once entered by one priest, one day a year, with blood, is now the address where everyone lives.",
+      "content": "Read the last two chapters of the Bible beside the first two and you can feel the whole story closing its circle. In Genesis there is a garden, a river, a tree of life, and God walking with people in the cool of the day. Then there is a fall, a curse, and a flaming sword barring the way back to the tree. The Bible begins with people sent out, and the door locked behind them.\n\nRevelation reopens every one of those images and heals them. There is a river again - \"the water of life, as clear as crystal, flowing from the throne of God and of the Lamb.\" There is the tree of life again, this time on both sides of the river, \"and the leaves of the tree are for the healing of the nations.\" And the line that undoes Eden: \"No longer will there be any curse.\" The sword is gone. The gate that was guarded is now a city whose gates are never shut.\n\nBut the end is more than a return to the beginning. In Eden God walked with humanity in a garden; in the city He dwells with them forever, and they \"will see His face\" - the very thing Moses was told no one could see and live (Exodus 33:20). What the garden offered and lost, the city secures and surpasses. We do not end where Adam began. We end somewhere better, because of what happened in between: a Lamb."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The new Jerusalem has no temple, because the Lord God Almighty and the Lamb are its temple - the long distance between a holy God and an unclean people is finally and forever closed.",
+      "modernApplication": "We still live in temple-time: drawing near in careful moments, then losing the thread; close to God on a good Sunday, far again by Wednesday. The city is the promise that the on-and-off ends - that one day the nearness we taste in our best hours becomes the air we breathe. You are not straining toward a building. You are being drawn toward a face.",
+      "connectionPoint": "Every dwelling-place of God in Scripture is a step toward this city. God walks in the garden (Genesis 3:8). His presence fills the tabernacle (Exodus 40:34) and the temple (1 Kings 8:11). Then the Word becomes flesh and pitches His tent among us (John 1:14). At the cross the temple veil tears top to bottom (Matthew 27:51), the way thrown open. The Spirit makes believers themselves a temple (1 Corinthians 3:16). The city is where the line arrives: no veil, no building, no distance - God with us, face to face.",
+      "newTestamentEcho": "There is no temple because the Lamb is the temple - and a lamb is a sacrifice. The reason God can dwell unveiled among an unclean people is that the Lamb was already slain. Jesus said of His own body, \"Destroy this temple, and in three days I will raise it up\" (John 2:19). The torn body raised becomes the meeting place of God and humanity, and that meeting place fills the whole city. The city has no temple because the Lamb who is its temple was first a cross."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still living in temple-time - approaching God carefully, on the right day, then drifting away again - when He is offering to simply move in and stay?",
+      "additionalQuestions": [
+        "Revelation promises \"no more death or mourning or crying or pain.\" Name the specific tear you are most longing to feel God's hand wipe away. What would it mean to bring it to Him tonight, unfinished?",
+        "John's eyes went looking for a temple and found a Lamb. What are you still trying to approach God through - performance, a building, a ritual, a feeling - that the Lamb has already made unnecessary?",
+        "If you truly believed the curse is ending and the gates are never shut, what habit of bracing or self-protection could you begin to set down this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord God Almighty, and Lamb who was slain - thank You that the story ends not in a temple I must approach but in a city where You have moved in to stay. I confess how long I have lived bracing, keeping my distance, treating You as someone to visit carefully rather than someone who has come to dwell. Wipe away the tears I have stopped naming. Heal what the curse broke in me. And until the city comes, let me live as one who has read the last page: unafraid, unhidden, drawn toward Your face. Come, Lord Jesus. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one tear you have been carrying that you have never actually brought to God - one grief, fear, or pain you have managed instead of mourned. Say it to Him out loud, plainly, and let the promise stand over it: 'He will wipe away every tear.' You do not have to feel it finished. You only have to bring it.",
+      "leavingAtCross": [
+        "The habit of approaching God carefully, at arm's length, as if the veil were still hanging",
+        "The grief I have been managing on my own instead of bringing to the One who promises to wipe it away",
+        "The fear that the curse gets the last word in my story"
+      ],
+      "receivingFromCross": [
+        "A God who does not visit but moves in - the dwelling place of God with man",
+        "The promise of a day with no more death, mourning, crying, or pain",
+        "The right, washed in the blood of the Lamb, to enter the city and see His face"
+      ],
+      "content": "Today, name one tear you have been carrying that you have never actually brought to God - one grief, fear, or pain you have managed instead of mourned. Say it to Him out loud, plainly, and let the promise stand over it: 'He will wipe away every tear.' You do not have to feel it finished. You only have to bring it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is there no temple in the new Jerusalem - and what does its absence tell us about what the temple was always for?",
+        "How do the river, the tree of life, and the end of the curse in Revelation 22 deliberately echo and heal the garden of Genesis 2-3?",
+        "What does it mean that 'the Lamb is its temple,' and how does that connect the end of the Bible back to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Where do each of you most feel the 'on-and-off' of temple-time - close to God, then far again - and what tends to pull you back into distance?",
+        "Talk honestly about a tear you are still waiting to have wiped away. What does it look like to hold that grief and the promise of the city at the same time?",
+        "The city's gates are never shut. Where is fear or shame still making you live as though the gate were guarded - and what would walking through it look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "Genesis 3:24",
+          "text": "So He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life."
+        },
+        {
+          "reference": "Exodus 33:20",
+          "text": "But He added, \"You cannot see My face, for no one can see Me and live.\""
+        },
+        {
+          "reference": "Matthew 27:51",
+          "text": "At that moment the veil of the temple was torn in two from top to bottom. The earth quaked and the rocks were split."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Revelation 21-22 beside Genesis 2-3",
+          "note": "Read the Bible's last two chapters and first two chapters side by side. Mark every image that returns - garden, river, tree of life, the presence of God, the curse - and watch the story close its circle and then go beyond it."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Lamb",
+      "title": "The Temple of the City",
+      "description": "Throughout Revelation, Jesus is named the Lamb - the title that ties Him to every Passover lamb and every sacrifice that came before, and to John the Baptist's cry, \"Behold, the Lamb of God, who takes away the sin of the world\" (John 1:29). In the final vision the Lamb shares the single throne of God, is the city's temple, and is its lamp. The slain Lamb is why an unclean people can dwell with a holy God without a veil between them.",
+      "keyQuote": "I saw no temple in the city, because the Lord God Almighty and the Lamb are its temple.",
+      "lessonForUs": "The deepest longing of the human heart is not for a better religion or a grander sanctuary but for unbroken nearness to God. The Lamb is how we get it. Because He was slain, the distance is closed - and the end of the story is not a building we approach but a face we finally see.",
+      "heading": "The Temple of the City"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2048,
+  "scriptureReference_full": "Revelation 21:2-4, 22-23; 22:3-5",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (skēnē / skēnōsei, G4633/G4637) reflects standard lexical sources; the link to John 1:14 (skēnoō, 'tabernacled among us') and to the Hebrew shakan / Shekhinah is widely noted in biblical-theology treatments of the temple theme."
+  ]
 }

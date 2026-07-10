@@ -1,38 +1,174 @@
 {
   "day": 355,
-  "title": "Hebrews: Faith Hall + Endurance — Day 5 — Resolution",
-  "teaser": "Day 355 of Bible 365 — Hebrews 11-12",
+  "title": "The Runner Who Finished First",
+  "teaser": "A whole hall of the faithful died still waiting. Then One ran the race ahead of them, finished it, and sat down — so the cloud of witnesses could be made perfect with us.",
   "framework": "Hebrews 11-12 — Hebrews: Faith Hall + Endurance",
   "scriptureReference": "Hebrews 11-12",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 355"
+      "type": "scripture",
+      "reference": "Hebrews 12:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "great cloud of witnesses",
+        "run with endurance",
+        "fix our eyes on Jesus",
+        "the author and perfecter of our faith"
+      ],
+      "greekOriginal": "ἀφορῶντες εἰς τὸν τῆς πίστεως ἀρχηγὸν καὶ τελειωτὴν Ἰησοῦν",
+      "passage": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us. Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hebrews 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hebrews 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀρχηγός",
+      "transliteration": "archēgos",
+      "pronunciation": "ar-khay-GOSS",
+      "meaning": "author, founder, originator, pioneer, file-leader",
+      "rootMeaning": "A compound of archē (beginning, first place) and the root of agō (to lead, to go). An archēgos is the one who goes first so others can follow - the founder of a city, the captain at the head of a column, the first runner to break the trail.",
+      "usageNote": "The same title is given to Jesus in Acts 3:15 ('the Author of life') and Acts 5:31 ('Prince and Savior'). Here it is paired with teleiōtēs, 'perfecter' - a word found nowhere else in the Greek Bible. Together they frame Jesus as the one who both begins the race of faith and is the first to complete it.",
+      "wordByWord": [
+        {
+          "word": "ἀφορῶντες",
+          "transliteration": "aphorōntes",
+          "meaning": "fixing the eyes on, looking away from everything else toward one thing"
+        },
+        {
+          "word": "ἀρχηγόν",
+          "transliteration": "archēgon",
+          "meaning": "author, founder, the one who leads the way first"
+        },
+        {
+          "word": "τελειωτήν",
+          "transliteration": "teleiōtēn",
+          "meaning": "perfecter, finisher, the one who brings to completion"
+        },
+        {
+          "word": "Ἰησοῦν",
+          "transliteration": "Iēsoun",
+          "meaning": "Jesus - placed last in the Greek sentence, the final word the eye lands on"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "τελέω / τετέλεσται",
+          "reference": "The same tel- root behind teleiōtēs sounds in Jesus' last word from the cross: tetelestai, 'It is finished' (John 19:30). The Perfecter finished the race by finishing it for us."
+        }
+      ],
+      "strongsNumber": "G747",
+      "definition": "the chief leader, prince, author, founder; one who takes the lead and thus affords an example",
+      "usage": "In Hebrews, archēgos is no distant figurehead but a forerunner who runs the course Himself. Jesus does not stand at the finish line waving the weary on - He has run the whole distance ahead of them and is the reason they can finish at all."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hebrews: Faith Hall + Endurance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the founder + perfecter (Heb 12:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Hall Full of People Still Waiting",
+      "body": "Hebrews 11 reads like a roll call read out over a battlefield. Abel, Enoch, Noah, Abraham, Sarah, Moses, Rahab, and then a rush of names the writer no longer has time to slow down for - Gideon, Samson, David, Samuel, and the prophets. By faith they built arks and crossed seas and stopped the mouths of lions. By faith others were tortured, sawn in two, and wandered in caves wearing sheepskins. The chapter does not flinch from either column: faith looks like winning, and it also looks like losing.\n\nThen comes the line that turns the whole roll call on its head. 'All these people died in faith, without having received the things they were promised' (11:13). And again at the very end: 'These were all commended for their faith, yet they did not receive what was promised. God had planned something better for us, so that together with us they would be made perfect' (11:39-40). Read it slowly. The heroes of faith did not cross their own finish line. They ran their leg and died with the promise still out ahead of them - not because God failed them, but because the promise was never meant to be completed by any one of them alone.\n\nThis is where Day 355 of a year in the Word lands the reader: near the end of the canon, near the end of a long stretch of reading, with a stadium full of the faithful who all died still leaning forward."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Anchor Leg",
+      "body": "In a relay, the most watched runner is the one who runs last - the anchor leg. But no coach thinks the relay is won by the anchor alone. It is won by every runner who refused to drop the baton, who ran their stretch hard knowing they would never personally touch the tape. They hand off and step aside, and the race they ran becomes someone else's to finish.\n\nWe tend to picture the great cloud of witnesses as spectators - the saints in the bleachers, cheering us on. But the Greek word for witness is martys, the word that gave us 'martyr.' They are not in the stands because they came to watch. They are there because they have already run, already finished their leg, already given their testimony with their lives. They are not an audience grading our form. They are runners who have come off the track and are pulling for the ones still on it.\n\nAnd the writer of Hebrews says: do not look at them. Look past the whole cloud of them, to the one runner at the front."
+    },
+    {
+      "type": "insight",
+      "heading": "He Ran It First, and Then Sat Down",
+      "body": "Here is the hinge of the entire book, and it sits at the center of today's reading. The faith heroes of chapter 11 all ran without reaching the goal. Chapter 12 names the one who did. 'Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God' (12:2).\n\nNotice the verbs. He endured. He scorned the shame. And then He sat down. Every priest under the old covenant stood, because their work was never finished. Jesus sat - the posture of a runner whose race is over. The Greek calls Him archēgos, the one who breaks the trail first, and teleiōtēs, the one who finishes. The cloud of witnesses could not perfect themselves; chapter 11 said as much - they would be 'made perfect' only 'together with us,' and only because of Him. He is not merely the best entry in the hall of faith; He is the one who completes the faith of everyone in it. He ran the course they could not finish, finished it, and only then sat down - so that their faith and ours could be brought to its end in Him.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure to drift back to the older, safer worship of synagogue and Temple. The whole letter argues that Jesus is greater - a greater high priest, a greater covenant, a greater sacrifice. Chapters 11 and 12 are its emotional climax: do not quit the race now, the writer pleads, when the One you are running toward has already run it ahead of you and sat down.",
+      "fascinatingFact": "The word teleiōtēs ('perfecter' or 'finisher') appears nowhere else in the entire Greek Bible. The writer of Hebrews seems to have minted it for this one sentence - as if no existing word was adequate to say what Jesus is to the faith of His people.",
+      "content": "Here is the hinge of the entire book, and it sits at the center of today's reading. The faith heroes of chapter 11 all ran without reaching the goal. Chapter 12 names the one who did."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The faithful of Hebrews 11 ran without finishing; Jesus, the author and perfecter, ran the race first, endured the cross, and sat down - so that all of them, together with us, would be made perfect (Hebrews 11:40, 12:2).",
+      "modernApplication": "Most of us will not see the thing we are praying for completed in our lifetime - the prodigal not yet home, the marriage not yet healed, the body not yet well, the kingdom not yet come. Hebrews does not promise you the finish line by Friday. It promises that your leg of the race matters even if you hand the baton off in the dark, because the race itself has already been won by the One out front.",
+      "connectionPoint": "On Day 355, the Bible-365 reader stands almost where Hebrews stands: at the weary end of a course, surrounded by a year of names and stories, tempted to coast or quit. The whole of Scripture has been pointing to one runner. The Law had its priests who stood; the prophets had promises unkept; the faith hall had heroes who died waiting. All of it leans forward toward the Son who sat down.",
+      "newTestamentEcho": "The same tel- root in teleiōtēs ('perfecter') sounds in Jesus' final word from the cross: 'It is finished' - tetelestai (John 19:30). The Author and Perfecter of faith finished faith's race by finishing the work of salvation in His own body. What the cloud of witnesses could not complete, He completed; what we cannot complete, He completes."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What promise are you carrying that you may have to hand off unfinished - and can you keep running your leg anyway, trusting the One out front to bring it home?",
+      "additionalQuestions": [
+        "Which 'encumbrance' or entangling sin (12:1) is the heaviest thing slowing your race right now - and what would it look like to throw it off today?",
+        "When you grow weary, where do your eyes go? Hebrews says to fix them on Jesus, not on the runners around you. What pulls your gaze away from Him?",
+        "If the faith heroes 'died in faith, without having received the things they were promised' (11:13) and were still commended, how does that change what faithfulness has to feel like to be real?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Jesus, Author and Perfecter, I am tired of running. I have prayed for things I may not live to see, and the promise still hangs out ahead of me. Forgive me when I have measured my faith by what I could finish, instead of trusting the race You already ran. Lift my eyes off the runners beside me and off my own slowing feet, and fix them on You - the One who endured the cross, scorned its shame, and sat down. Take the weight I have been carrying that was never mine to finish. Let me run my leg with endurance, and hand the baton off in peace when the time comes, knowing You have already crossed the line. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one long thing you are running toward that you may never see completed - and instead of quitting it, run it as a faithful leg. Do the next small obedient thing, then deliberately fix your eyes on Jesus, the One who finished, and let Him carry the part you cannot.",
+      "leavingAtCross": [
+        "The weight of needing to see every promise completed in my own lifetime",
+        "The exhaustion of measuring faith by results I can finish myself",
+        "The temptation to quit the race because the finish line is out of sight"
+      ],
+      "receivingFromCross": [
+        "A race already run and won by the One out front",
+        "The freedom to be faithful in my leg without finishing the whole course alone",
+        "The promise that I will be made perfect together with the whole cloud of witnesses, in Him"
+      ],
+      "content": "Today, name one long thing you are running toward that you may never see completed - and instead of quitting it, run it as a faithful leg. Do the next small obedient thing, then deliberately fix your eyes on Jesus, the One who finished, and let Him carry the part you cannot."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What do archēgos ('author/founder') and teleiōtēs ('perfecter/finisher') together tell us about what Jesus is to our faith - not just at the start and end, but the whole way through?",
+        "Why does it matter that the heroes of chapter 11 'did not receive what was promised' (11:39) and could only be 'made perfect' together with us (11:40)?",
+        "What is the significance of Jesus sitting down (12:2), in a letter written to people tempted to return to a priesthood that always stood?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one promise or calling each of you is carrying that may not be finished in your lifetime - and what 'running it faithfully anyway' would look like this month.",
+        "Ask each other: what encumbrance or entangling sin (12:1) is slowing your race, and one concrete way to lay it down?",
+        "Where are each of you most tempted to 'grow weary and lose heart' (12:3), and how can you point one another back to Jesus?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11:1",
+          "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see."
+        },
+        {
+          "reference": "Hebrews 11:39-40",
+          "text": "These were all commended for their faith, yet they did not receive what was promised. God had planned something better for us, so that together with us they would be made perfect."
+        },
+        {
+          "reference": "John 19:30",
+          "text": "When Jesus had received the sour wine, He said, “It is finished.” And bowing His head, He yielded up His spirit."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11-12",
+          "note": "Read the roll call of chapter 11 in one sitting, watching the refrain 'by faith' build - then let 12:1-2 land as its answer. Notice how every name leans forward toward the one Name at the front of the race."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jesus, the Author and Perfecter",
+      "title": "The Forerunner Who Finished the Race",
+      "description": "Hebrews names Jesus the archēgos and teleiōtēs of faith - its author and its finisher. He is not merely the greatest entry in the hall of faith; He is the one who completes the faith of everyone in it. The Son through whom God made the universe (Hebrews 1:2) took on flesh, endured the cross while scorning its shame, and sat down at the right hand of God - His work finished. The whole cloud of witnesses, who died in faith without receiving the promise, waits to be made perfect together with us, and only in Him.",
+      "keyQuote": "Let us fix our eyes on Jesus, the author and perfecter of our faith.",
+      "lessonForUs": "Faithfulness is not finishing everything yourself. It is running your leg with your eyes on the One who already ran the whole course, scorned the shame, crossed the line, and sat down - and who will bring to completion the faith He began in you.",
+      "heading": "The Forerunner Who Finished the Race"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2187,
+  "scriptureReference_full": "Hebrews 11-12 (anchor: Hebrews 12:1-2)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (archēgos G747; teleiōtēs, a hapax legomenon in the Greek New Testament) reflects standard lexical sources (BDAG, Thayer). The archēgos title is also applied to Christ in Acts 3:15 and 5:31."
+  ]
 }

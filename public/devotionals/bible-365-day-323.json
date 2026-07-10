@@ -1,38 +1,171 @@
 {
   "day": 323,
-  "title": "John: Garden, Cross, Resurrection — Day 1 — Hook",
-  "teaser": "Day 323 of Bible 365 — John 15-21",
+  "title": "The Vine, the Cup, and the Empty Tomb",
+  "teaser": "John 15-21 is one long night that breaks into morning. It begins with a vine and ends in a garden — and between them, three words finish everything.",
   "framework": "John 15-21 — John: Garden, Cross, Resurrection",
   "scriptureReference": "John 15-21",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 323"
+      "type": "scripture",
+      "reference": "John 15:5; 19:30",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the vine",
+        "apart from Me you can do nothing",
+        "It is finished"
+      ],
+      "greekOriginal": "τετέλεσται",
+      "passage": "I am the vine and you are the branches. The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing.\n\n...\n\nWhen Jesus had received the sour wine, He said, \"It is finished.\" And bowing His head, He yielded up His spirit."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 15-21**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 15-21 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "τετέλεσται",
+      "transliteration": "tetelestai",
+      "pronunciation": "teh-TEH-leh-stai",
+      "meaning": "It is finished; it has been completed, accomplished, paid in full",
+      "rootMeaning": "From teleo, to bring to an end, to complete, to fulfill. The root telos means goal, end, purpose - not merely the stopping point but the point everything was aimed at.",
+      "usageNote": "The form is perfect tense: a finished action whose result stands. Not 'I am finishing' and not even 'it ended,' but 'it has been completed, and it remains complete.' This single word is Jesus' last full sentence in John before He yields up His spirit.",
+      "wordByWord": [
+        {
+          "word": "τετέλεσται",
+          "transliteration": "tetelestai",
+          "meaning": "it has been finished, completed, accomplished - perfect passive of teleo"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "τέλος / telos",
+          "reference": "The noun behind the verb means goal or purpose. The cross is not where the story breaks off; it is the telos, the place the whole story was always heading."
+        },
+        {
+          "word": "τετέλεσται (commercial use)",
+          "reference": "Receipts and tax records from the era have been found stamped with this same word, used to mark a debt paid in full. The word a tradesman wrote across a settled account is the word the dying Christ speaks over the world's debt."
+        }
+      ],
+      "strongsNumber": "G5055",
+      "definition": "to bring to a close, to complete, to fulfill, to pay in full",
+      "usage": "Tetelestai is not the gasp of a man whose strength gives out. It is the verdict of a workman setting down a finished work. The same Lord who said in the upper room 'apart from Me you can do nothing' now does the one thing no one else could do, and announces it done."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: Garden, Cross, Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ risen indeed (1 Cor 15:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "One Long Night That Opens Into Morning",
+      "body": "John 15 through 21 is, in a sense, a single night that finally breaks into day. It opens at a table with the meal nearly over and the cross less than a day away. Judas has already gone out into the dark. And Jesus, knowing all of it, does not give His friends a strategy. He gives them an image: a vine.\n\n\"I am the vine and you are the branches,\" He says. \"The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing.\" It is a strange thing to say on the worst night of your life - to spend it teaching the people who will scatter how to stay attached to you. But that is the shape of these chapters. Jesus keeps reaching toward the people who are about to fail Him.\n\nFrom the table they walk out into a garden, and the soldiers come with torches. Peter draws a sword. Jesus tells him to put it away: \"Shall I not drink the cup the Father has given Me?\" The arrest, the trials, the mockery, the purple robe and the crown of thorns - John walks us through all of it without flinching, until a man carries His own cross out to a hill called the Place of the Skull. There they crucify Him between two others, with Jesus in the middle.\n\nThis is the sweep the next several days will move through slowly. Today we only need to see the whole arc at once: a vine, a cup, a cross, and - against every expectation - a garden again, in the cool of a Sunday morning, with the tomb standing open.",
+      "keyInsight": "These chapters are not a string of disasters that happen to Jesus. They are a single, deliberate motion He chooses - from the vine to the cup to the cross to the empty tomb - and He narrates it before it happens.",
+      "content": "John 15 through 21 is, in a sense, a single night that finally breaks into day. It opens at a table with the meal nearly over and the cross less than a day away. Judas has already gone out into the dark. And Jesus, knowing all of it, does not give His friends a strategy. He gives them an image: a vine.\n\n\"I am the vine and you are the branches,\" He says. \"The one who remains in Me, and I in him, will bear much fruit. For apart from Me you can do nothing.\" It is a strange thing to say on the worst night of your life - to spend it teaching the people who will scatter how to stay attached to you. But that is the shape of these chapters. Jesus keeps reaching toward the people who are about to fail Him.\n\nFrom the table they walk out into a garden, and the soldiers come with torches. Peter draws a sword. Jesus tells him to put it away: \"Shall I not drink the cup the Father has given Me?\" The arrest, the trials, the mockery, the purple robe and the crown of thorns - John walks us through all of it without flinching, until a man carries His own cross out to a hill called the Place of the Skull. There they crucify Him between two others, with Jesus in the middle.\n\nThis is the sweep the next several days will move through slowly. Today we only need to see the whole arc at once: a vine, a cup, a cross, and - against every expectation - a garden again, in the cool of a Sunday morning, with the tomb standing open."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Word Stamped Across the Bill",
+      "body": "A man I know spent fifteen years carrying a debt that was not entirely his own. He had cosigned for someone he loved, the someone vanished, and the bank came to him. Every month he paid down a balance he had not run up, and every month the statement arrived to remind him the number was still there.\n\nThe day the last payment cleared, he told me, he expected to feel triumphant. Instead he felt something quieter and stranger. He printed the final statement and looked at the box at the bottom of the page: Paid in full. Balance: 0.00. He kept the page. He said he wanted, on the bad days, to be able to hold something that said the thing was actually done - not being done, not mostly done, but finished, and staying finished.\n\nIn the first century, a tradesman who settled an account wrote one word across the bill: tetelestai. Done. Paid. That is the word the dying Christ speaks from the cross. Not a cry of collapse. A receipt.",
+      "connectionToTheme": "Tetelestai is the word written over a settled debt. On the cross it is spoken over ours - the announcement that the account has been paid in full and will stay paid.",
+      "content": "A man I know spent fifteen years carrying a debt that was not entirely his own. He had cosigned for someone he loved, the someone vanished, and the bank came to him. Every month he paid down a balance he had not run up, and every month the statement arrived to remind him the number was still there.\n\nThe day the last payment cleared, he told me, he expected to feel triumphant. Instead he felt something quieter and stranger. He printed the final statement and looked at the box at the bottom of the page: Paid in full. Balance: 0.00. He kept the page. He said he wanted, on the bad days, to be able to hold something that said the thing was actually done - not being done, not mostly done, but finished, and staying finished.\n\nIn the first century, a tradesman who settled an account wrote one word across the bill: tetelestai. Done. Paid. That is the word the dying Christ speaks from the cross. Not a cry of collapse. A receipt."
+    },
+    {
+      "type": "insight",
+      "heading": "Finished Is Not the Same as Over",
+      "body": "Hear the difference between two words that look alike from a distance. \"It is over\" is what defeat says. \"It is finished\" is what completion says. Jesus does not gasp the first. He declares the second: tetelestai. And then, John tells us, He bows His head and yields up His spirit - in that order. He is not overpowered into death; He hands His life over once the work is done.\n\nThis is the hinge the whole of John 15-21 turns on, and it reaches backward and forward at once. Backward: \"For apart from Me you can do nothing,\" He had said at the table. The branches cannot save themselves; the vine does the saving. Forward: a debt marked paid does not need to be paid again. Which is why, two days later, the answer to the cross is not a corrected ledger but an empty grave.\n\nMary comes to the tomb in the dark and finds the stone gone. Weeping, she mistakes the risen Lord for the gardener - and there is more truth in her mistake than in her grief, because the second Adam has indeed walked out into a garden, and this time the garden is not lost but won. Then He speaks her name, \"Mary,\" and she knows Him. The finished work has a face, and it is turned toward her.",
+      "historicalContext": "John writes his Gospel last among the four, near the end of the first century, for churches that already believed but were being pressed by doubt and by teachers who denied that Christ had truly come in the flesh. So John insists on the physical: a real cross, real blood and water from a real spear-wound, a real body missing from a real tomb, real wounds Thomas is invited to touch. The finished work is not an idea. It is an event with scars.",
+      "fascinatingFact": "John frames the whole Gospel as a deliberate movement from one garden to another. It opens echoing Genesis - 'In the beginning' - and it closes with the crucifixion and burial set 'in a garden' (John 19:41) and the risen Christ mistaken for a gardener. Where the first garden ended in hiding and a guarded gate, this garden ends with the gate of the tomb thrown open.",
+      "content": "Hear the difference between two words that look alike from a distance. \"It is over\" is what defeat says. \"It is finished\" is what completion says. Jesus does not gasp the first. He declares the second: tetelestai. And then, John tells us, He bows His head and yields up His spirit - in that order. He is not overpowered into death; He hands His life over once the work is done.\n\nThis is the hinge the whole of John 15-21 turns on, and it reaches backward and forward at once. Backward: \"For apart from Me you can do nothing,\" He had said at the table. The branches cannot save themselves; the vine does the saving. Forward: a debt marked paid does not need to be paid again. Which is why, two days later, the answer to the cross is not a corrected ledger but an empty grave.\n\nMary comes to the tomb in the dark and finds the stone gone. Weeping, she mistakes the risen Lord for the gardener - and there is more truth in her mistake than in her grief, because the second Adam has indeed walked out into a garden, and this time the garden is not lost but won. Then He speaks her name, \"Mary,\" and she knows Him. The finished work has a face, and it is turned toward her."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On the cross Jesus says tetelestai - 'It is finished' - and yields up His spirit; three days later He stands alive in a locked room and says, 'Peace be with you.' The work of salvation is completed by Him, not by us.",
+      "modernApplication": "Most of us are still trying to add a payment to a settled account - one more proof we are good enough, one more effort to earn what was already given. To live inside 'It is finished' is to stop topping up a debt Christ marked paid, and to start, instead, simply remaining in Him: 'Apart from Me you can do nothing.'",
+      "connectionPoint": "These seven chapters hold the two commands that order a whole Christian life. Before the cross: 'Remain in Me' (John 15:4). After the resurrection, on a beach, to a man who had denied Him three times: 'Follow Me' (John 21:19). Remain, then follow. The finished work of the vine becomes the daily walk of the branch.",
+      "newTestamentEcho": "Thomas, who refused to believe without touching the wounds, is given exactly that - and answers with the highest confession in the Gospel: 'My Lord and my God!' (John 20:28). To which Jesus adds a word aimed straight at us: 'Blessed are those who have not seen and yet have believed' (John 20:29). John then tells us plainly why he wrote it all down: 'so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in His name' (John 20:31)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still paying on a debt Jesus already marked 'paid in full'?",
+      "additionalQuestions": [
+        "What is the difference, for you, between hearing 'it is over' and hearing 'it is finished'? Which one has the gospel been to you lately?",
+        "Jesus spends His last night teaching people who are about to fail Him how to remain in Him. Where do you need to hear that He is reaching toward you, not away?",
+        "Mary did not recognize the risen Lord until He spoke her name. When have you sensed Him naming you in your grief?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You said 'It is finished,' and I keep trying to finish it again. Forgive the payments I keep making on a debt You have already cleared. Tonight let that one word be enough: tetelestai, paid in full. Teach me to remain in You as a branch remains in the vine, since apart from You I can do nothing. And when I am weeping in the dark and mistaking You for someone else, speak my name, the way You spoke hers, until I turn and know You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, carry one word into the noise: finished. When the old urge rises to prove yourself, earn your keep, or pay again on what is already paid, answer it with that single word. Then do the small next thing not to earn His love but because you already have it.",
+      "leavingAtCross": [
+        "The debt I keep re-paying though Christ already wrote 'paid in full' across it",
+        "The exhausting project of saving myself by my own effort",
+        "The fear that the worst night of my life means God has lost control of the story"
+      ],
+      "receivingFromCross": [
+        "A finished work I did not do and cannot undo - tetelestai, and it stays finished",
+        "A risen Lord who speaks my name and calls me, like Peter, simply to follow",
+        "The freedom of the branch: to remain in the vine and let Him bear the fruit through me"
+      ],
+      "content": "Today, carry one word into the noise: finished. When the old urge rises to prove yourself, earn your keep, or pay again on what is already paid, answer it with that single word. Then do the small next thing not to earn His love but because you already have it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that Jesus says 'It is finished' (tetelestai) before He yields up His spirit, rather than dying first and the work simply ending?",
+        "How do the two commands - 'Remain in Me' (15:4) and 'Follow Me' (21:19) - fit together as the frame around these chapters?",
+        "John says he wrote his Gospel so that readers 'may believe' and 'have life in His name.' How does the whole sweep from vine to empty tomb serve that one purpose?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'debt' you have been paying down on your own - one way you keep trying to earn what Christ says is already finished.",
+        "Talk about the difference between striving for God and remaining in Him. Where is each of you on that line right now?",
+        "Peter denied Jesus three times and was restored three times on a beach. Where do you need to hear 'Follow Me' spoken after a failure?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 15:13",
+          "text": "Greater love has no one than this, that he lay down his life for his friends."
+        },
+        {
+          "reference": "John 17:3",
+          "text": "Now this is eternal life, that they may know You, the only true God, and Jesus Christ, whom You have sent."
+        },
+        {
+          "reference": "John 20:28",
+          "text": "Thomas replied, \"My Lord and my God!\""
+        },
+        {
+          "reference": "John 21:17",
+          "text": "\"Lord, You know all things,\" he replied. \"You know I love You.\" Jesus said to him, \"Feed My sheep.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 15-21",
+          "note": "Read the whole section in one sitting if you can. Watch the movement from the table (ch. 15-17) to the garden of arrest (ch. 18) to the cross (ch. 19) to the garden of the tomb (ch. 20) to the beach (ch. 21). Notice how often Jesus is reaching toward the ones who fail Him."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Mary Magdalene",
+      "title": "First Witness of the Risen Christ",
+      "description": "A woman from Magdala whom Jesus had freed from seven demons (Luke 8:2), and who stayed near the cross when most of the disciples had fled. In John's account she comes alone to the tomb in the dark, finds the stone rolled away, and weeps - until the risen Christ speaks her name. She becomes the first person to see Him alive and the first sent to tell the others. A popular tradition later identified her with the unnamed 'sinful woman' of Luke 7, but that link was made centuries afterward by Pope Gregory I (591 AD) and is not in the text; what Scripture actually says is that she was healed, she was faithful at the cross, and she was the first to meet the risen Lord.",
+      "keyQuote": "I have seen the Lord!",
+      "lessonForUs": "Mary stands at the empty tomb for all of us who come to God in the dark, grieving and unsure, mistaking Him for someone else. The turning point is not her insight but His voice: He speaks her name, and everything changes. The finished work of the cross becomes personal the moment the risen Christ calls us by name.",
+      "heading": "First Witness of the Risen Christ"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1639,
+  "scriptureReference_full": "John 15-21 (anchored in John 15:5; 19:30; 20:15-16, 28-31; 21:15-19)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (tetelestai, teleo, G5055) reflects standard lexical sources; the commercial 'paid in full' usage of tetelestai on receipts is widely attested in papyrological and lexical literature.",
+    "The note on Pope Gregory I's 591 AD identification of Mary Magdalene with Luke 7's 'sinful woman' reflects standard historical scholarship and is flagged as tradition, not biblical text."
+  ]
 }

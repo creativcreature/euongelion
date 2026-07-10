@@ -6,33 +6,185 @@
   "scriptureReference": "John 8-14",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 316"
+      "type": "scripture",
+      "reference": "John 14:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the way and the truth and the life",
+        "Do not let your hearts be troubled",
+        "No one comes to the Father except through Me"
+      ],
+      "greekOriginal": "ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή",
+      "passage": "\"Do not let your hearts be troubled. You believe in God; believe in Me as well. In My Father's house are many rooms. If it were not so, would I have told you that I am going there to prepare a place for you? And if I go and prepare a place for you, I will come back and welcome you into My presence, so that you also may be where I am. You know the way to the place where I am going.\" \"Lord,\" said Thomas, \"we do not know where You are going, so how can we know the way?\" Jesus answered, \"I am the way and the truth and the life. No one comes to the Father except through Me.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 8-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 8-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am; I myself am",
+      "rootMeaning": "Two small words. Egō is the emphatic pronoun, I myself; eimi is the verb to be, I am. Greek rarely needs both - the verb already carries the I. Put them together and the speaker is pressing on the word with his whole weight: I, myself, am.",
+      "usageNote": "John 8 through 14 is held together by this phrase. Jesus says it as the light of the world (8:12), the gate and the good shepherd (10:9, 11), the resurrection and the life (11:25), and finally the way, the truth, and the life (14:6). Twice He says it with nothing attached at all - \"before Abraham was born, I am\" (8:58) - and the crowd picks up stones, because they hear in it the Name God spoke from the burning bush.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I myself - the emphatic pronoun, added for stress"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "I am - the simple verb of being"
+        },
+        {
+          "word": "ἡ ὁδὸς",
+          "transliteration": "hē hodos",
+          "meaning": "the way, the road, the path one travels"
+        },
+        {
+          "word": "ἡ ἀλήθεια",
+          "transliteration": "hē alētheia",
+          "meaning": "the truth - what is real, unhidden, reliable"
+        },
+        {
+          "word": "ἡ ζωή",
+          "transliteration": "hē zōē",
+          "meaning": "the life - not mere existence, but living that lasts"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+          "reference": "Ehyeh asher ehyeh - \"I AM WHO I AM,\" the Name God gives Moses at the bush (Exodus 3:14). When the Greek Old Testament renders that Name, it reaches for the same two words John keeps putting in Jesus' mouth: egō eimi."
+        }
+      ],
+      "strongsNumber": "G1473, G1510",
+      "definition": "I am - the first-person present of the verb to be, made emphatic by the pronoun",
+      "usage": "In ordinary speech egō eimi means nothing more than I'm here, that's me. In John's Gospel it is loaded on purpose. The same two words can answer a doorbell or claim the divine Name, and John lets both meanings hum under every sentence."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: True Vine + Way + Truth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our way to the Father (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Name That Learned to Walk",
+      "body": "For most of the Bible, God is a voice you do not see. He speaks from a bush that burns without burning up, and when Moses asks for a name to carry back to the slaves in Egypt, the answer is almost a refusal to be pinned down: \"I AM WHO I AM.\" Tell them I AM sent you. It is the Name no one dares to say out loud, the Name that means God simply is, underived, depending on nothing, the ground under every other thing that exists.\n\nNow come fifteen hundred years forward and stand in a crowded courtyard in Jerusalem, or on a hillside, or in a borrowed upstairs room. A Galilean carpenter keeps using a strange turn of phrase. \"I am the light of the world.\" \"I am the gate.\" \"I am the good shepherd.\" \"I am the resurrection and the life.\" And once, with nothing added, He says it bare: \"Before Abraham was born, I am.\" The people standing there do not hear poetry. They hear blasphemy, or they hear the truth, and either way they reach for stones (John 8:58-59). They understand exactly what He is doing. He is taking the Name from the bush and wearing it like His own clothing.\n\nJohn 8 through 14 is built around these sayings. Read them in order and you watch the unseen Name take on shape - light to see by, a gate to enter, a shepherd's voice to follow, a life stronger than the grave. The God who once could only be heard is now standing in front of His people, eating their bread, washing their feet, calling them friends. The Name has learned to walk.",
+      "keyInsight": "The \"I am\" sayings of John 8-14 are not Jesus borrowing a grand title. They are God's own Name from the burning bush, now spoken by a man you can touch - the unseen God made findable.",
+      "content": "For most of the Bible, God is a voice you do not see. He speaks from a bush that burns without burning up, and when Moses asks for a name to carry back to the slaves in Egypt, the answer is almost a refusal to be pinned down: \"I AM WHO I AM.\" Tell them I AM sent you. It is the Name no one dares to say out loud, the Name that means God simply is, underived, depending on nothing, the ground under every other thing that exists.\n\nNow come fifteen hundred years forward and stand in a crowded courtyard in Jerusalem, or on a hillside, or in a borrowed upstairs room. A Galilean carpenter keeps using a strange turn of phrase. \"I am the light of the world.\" \"I am the gate.\" \"I am the good shepherd.\" \"I am the resurrection and the life.\" And once, with nothing added, He says it bare: \"Before Abraham was born, I am.\" The people standing there do not hear poetry. They hear blasphemy, or they hear the truth, and either way they reach for stones (John 8:58-59). They understand exactly what He is doing. He is taking the Name from the bush and wearing it like His own clothing.\n\nJohn 8 through 14 is built around these sayings. Read them in order and you watch the unseen Name take on shape - light to see by, a gate to enter, a shepherd's voice to follow, a life stronger than the grave. The God who once could only be heard is now standing in front of His people, eating their bread, washing their feet, calling them friends. The Name has learned to walk."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Address Nobody Could Give Me",
+      "body": "Years ago I got badly lost driving to a funeral in a part of the country I had never seen. The phone had no signal. I pulled into a gas station and asked the man behind the counter how to get to the chapel. He started well - left at the light, past the old mill - and then he stopped, frowned, and said, \"You know what, it's easier if I just take you.\" He locked the register, hung a sign on the door, got in his own car, and told me to follow his tail lights. He drove me the whole way there. I never would have found it from directions alone.\n\nThere is a difference between someone telling you the way and someone being the way. Directions assume you can manage the rest yourself. A person who says follow me has decided your getting there is now their problem too.\n\nIn the upper room, Thomas asks the honest, frightened question of every person who has ever felt lost: \"Lord, we do not know where You are going, so how can we know the way?\" He wants a map. He wants an address he can hold. Jesus does not give him one. He says, in effect, you are looking for directions and I am standing in front of you. \"I am the way.\" Not I will draw you a route to the Father. I am the route. Follow My tail lights. I am taking you there Myself.",
+      "connectionToTheme": "Thomas asks for directions to God; Jesus answers by offering Himself as the road. The \"I am\" is not information about the way home - it is the way home, in person.",
+      "content": "Years ago I got badly lost driving to a funeral in a part of the country I had never seen. The phone had no signal. I pulled into a gas station and asked the man behind the counter how to get to the chapel. He started well - left at the light, past the old mill - and then he stopped, frowned, and said, \"You know what, it's easier if I just take you.\" He locked the register, hung a sign on the door, got in his own car, and told me to follow his tail lights. He drove me the whole way there. I never would have found it from directions alone.\n\nThere is a difference between someone telling you the way and someone being the way. Directions assume you can manage the rest yourself. A person who says follow me has decided your getting there is now their problem too.\n\nIn the upper room, Thomas asks the honest, frightened question of every person who has ever felt lost: \"Lord, we do not know where You are going, so how can we know the way?\" He wants a map. He wants an address he can hold. Jesus does not give him one. He says, in effect, you are looking for directions and I am standing in front of you. \"I am the way.\" Not I will draw you a route to the Father. I am the route. Follow My tail lights. I am taking you there Myself."
+    },
+    {
+      "type": "insight",
+      "heading": "Three Words, One Door",
+      "body": "Listen to how John 14:6 is built. Jesus does not say I know the way, the truth, and the life, the way a wise teacher might. He says \"I am\" the way and the truth and the life. He puts Himself in the place where you would expect a thing - a road, a teaching, a gift - and lets the Name carry all three.\n\nWatch how they hold together. The way without the truth is just wandering with confidence; you can walk a road for years and arrive nowhere true. Truth without life is only information; you can be right about God and dead inside. And life that has lost the way is restless - alive, but with no home to go to. Jesus gathers all three into one person and one Name so that none of them comes apart in your hands. To have Him is to be on the road, to stand in what is real, and to be carrying a life that the grave cannot end.\n\nThen the last line lands like a closing door and an opening one at the same time: \"No one comes to the Father except through Me.\" Hard, in one direction - there is no back way around Him. But hear the other direction. There is a way. The Father is not hidden behind a wall with no gate. A door has been set in the wall, and the door has a face, and the face is looking right at you saying come.",
+      "historicalContext": "Jesus speaks these words in the upper room on the last night before the cross (John 13-14), to men who are about to watch Him arrested and killed. \"Do not let your hearts be troubled\" is not a calm man's platitude; it is steadiness offered into the exact moment the disciples' world is about to collapse. The way to the Father is being named on the night the Way will be nailed to a beam.",
+      "fascinatingFact": "John records seven of these \"I am\" sayings with a predicate - bread, light, gate, shepherd, resurrection, way, vine - and several where Jesus says \"I am\" with nothing attached at all (8:24, 8:58, 13:19). The bare ones are the ones that reach for stones. John has arranged his Gospel so the named claims and the unnamed Name shine through each other.",
+      "content": "Listen to how John 14:6 is built. Jesus does not say I know the way, the truth, and the life, the way a wise teacher might. He says \"I am\" the way and the truth and the life. He puts Himself in the place where you would expect a thing - a road, a teaching, a gift - and lets the Name carry all three.\n\nWatch how they hold together. The way without the truth is just wandering with confidence; you can walk a road for years and arrive nowhere true. Truth without life is only information; you can be right about God and dead inside. And life that has lost the way is restless - alive, but with no home to go to. Jesus gathers all three into one person and one Name so that none of them comes apart in your hands. To have Him is to be on the road, to stand in what is real, and to be carrying a life that the grave cannot end.\n\nThen the last line lands like a closing door and an opening one at the same time: \"No one comes to the Father except through Me.\" Hard, in one direction - there is no back way around Him. But hear the other direction. There is a way. The Father is not hidden behind a wall with no gate. A door has been set in the wall, and the door has a face, and the face is looking right at you saying come."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Standing among His own people, Jesus repeatedly takes the unsayable Name of God - \"I AM,\" spoken from the burning bush - onto His own lips, and turns it into a light, a gate, a shepherd, a resurrection, and finally a road home to the Father.",
+      "modernApplication": "Most of us do not doubt that God exists somewhere; we doubt that He can be found. We want directions to Him - a technique, a list of steps, a map we can study at our own pace and follow when we are ready. Jesus quietly takes the map out of our hands. The way to God is not a method to master. It is a Person to follow. You do not have to find the road. You have to follow the One who says, \"I am\" it.",
+      "connectionPoint": "The thread runs the length of Scripture. The Name that could only be heard at Sinai walks the roads of Galilee in John. The God who told Moses \"no one may see Me and live\" (Exodus 33:20) is the God Jesus says you have now seen: \"Anyone who has seen Me has seen the Father\" (John 14:9). What the Old Testament guarded behind cloud and curtain, the Gospel sets in a face you can look at.",
+      "newTestamentEcho": "Paul tells the Colossians that in Christ \"all the fullness of the Deity dwells in bodily form\" (Colossians 2:9), and that He is \"the image of the invisible God\" (Colossians 1:15). What John shows by letting Jesus speak the Name, Paul says outright: the way to the Father is not a path we climb but a Person who came down."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you picture finding your way to God, do you reach for a map - the right steps, the right knowledge, the right effort - or for a Person to follow? Where have you been trying to draw your own route?",
+      "additionalQuestions": [
+        "Jesus says \"Do not let your hearts be troubled\" on the worst night of His friends' lives. What trouble are you carrying right now that He is speaking those words into?",
+        "If the way to the Father has a face, what would it change in your day to treat following God as following a Person rather than running a program?",
+        "Thomas admitted out loud, \"We do not know the way.\" What would it cost you to say that honestly today - and what might Jesus answer?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have spent so long looking for directions to God that I almost missed You standing in front of me. You do not hand me a map; You say, \"I am the way.\" So here I am, lost enough to follow. Be the road under my feet and the truth I can stand on and the life that outlasts my fear. When my heart is troubled tonight, let me hear You say so it does not have to be. Take me to the Father. I cannot find Him without You, and now I see I do not have to. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where you have been trying to map your own way to God instead of following Him. Then read John 14:1-6 out loud, slowly, and let one line stay with you through the day: \"I am the way.\" Each time you feel lost or rushed, repeat it as a fact, not a wish.",
+      "leavingAtCross": [
+        "The exhausting search for a route to God I can manage on my own",
+        "The troubled heart that forgets there is a place already being prepared",
+        "The quiet fear that the Father is hidden and cannot be reached"
+      ],
+      "receivingFromCross": [
+        "A way to the Father that is a Person, not a performance",
+        "The truth I can stand on when everything else feels uncertain",
+        "A life He calls me to share - \"so that you also may be where I am\""
+      ],
+      "content": "Today, name one place where you have been trying to map your own way to God instead of following Him. Then read John 14:1-6 out loud, slowly, and let one line stay with you through the day: \"I am the way.\" Each time you feel lost or rushed, repeat it as a fact, not a wish."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between Jesus saying \"I know the way\" and \"I am the way\"? Why does the second claim demand so much more?",
+        "Why do the listeners in John 8:58-59 pick up stones when Jesus says \"Before Abraham was born, I am\"? What did they understand Him to be claiming?",
+        "How does \"No one comes to the Father except through Me\" function as both a hard word and an open door in the same sentence?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you have been treating faith as a map to follow rather than a Person to follow. What changes if it is a Person?",
+        "Talk about a time your heart was genuinely troubled. What would it have meant to hear Jesus say, in that moment, \"Do not let your hearts be troubled\"?",
+        "Ask each other: is there any place where you secretly hope there is a back way to God that does not go through Jesus - and why?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        },
+        {
+          "reference": "John 8:58",
+          "text": "\"Truly, truly, I tell you,\" Jesus declared, \"before Abraham was born, I am!\""
+        },
+        {
+          "reference": "John 10:9",
+          "text": "I am the gate. If anyone enters through Me, he will be saved. He will come in and go out and find pasture."
+        },
+        {
+          "reference": "John 11:25",
+          "text": "Jesus said to her, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies.\""
+        },
+        {
+          "reference": "John 14:9",
+          "text": "Jesus replied, \"Philip, I have been with you all this time, and still you do not know Me? Anyone who has seen Me has seen the Father. How can you say, 'Show us the Father'?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 14",
+          "note": "Read the whole chapter in one sitting, watching how 'Do not let your hearts be troubled' at the start (v. 1) returns at the end (v. 27) - the chapter is bracketed by the same comfort."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Thomas",
+      "title": "The Disciple Who Asked the Honest Question",
+      "description": "One of the Twelve, often remembered only for his later doubt about the resurrection (John 20:24-29). But in the upper room he is the one brave enough to admit out loud what the others were thinking: \"Lord, we do not know where You are going, so how can we know the way?\" His confusion is the doorway through which Jesus speaks one of the most important sentences in the Gospel. Honest not-knowing, brought into the open, is what Jesus answers.",
+      "keyQuote": "Lord, we do not know where You are going, so how can we know the way?",
+      "lessonForUs": "Thomas did not pretend to understand. He named his lostness, and the answer he got was not a rebuke but a revelation: \"I am the way.\" The questions we are too embarrassed to ask out loud are often the ones Jesus is waiting to answer.",
+      "heading": "The Disciple Who Asked the Honest Question"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2426,
+  "scriptureReference_full": "John 8-14 (anchored in John 14:1-6)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi, G1473/G1510; hodos, alētheia, zōē) reflects standard lexical sources; the link between the Johannine 'I am' sayings and the Septuagint rendering of Exodus 3:14 is widely noted in New Testament scholarship."
+  ]
 }

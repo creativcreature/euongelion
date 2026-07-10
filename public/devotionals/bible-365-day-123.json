@@ -1,38 +1,182 @@
 {
   "day": 123,
-  "title": "Elisha Ministry — Day 4 — Application",
-  "teaser": "Day 123 of Bible 365 — 2 Kings 4-13",
+  "title": "Bring the empty jars",
+  "teaser": "The widow has nothing but a little oil and a houseful of borrowed vessels. Elisha tells her to keep pouring. The miracle stops only when the empty jars run out.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 123"
+      "type": "scripture",
+      "reference": "2 Kings 4:1-7",
+      "translation": "BSB",
+      "emphasis": [
+        "what do you have in the house?",
+        "Do not gather just a few",
+        "the oil stopped flowing"
+      ],
+      "hebrewOriginal": "וְאַתְּ וּבָנַיִךְ תִּחְיִי בַּנּוֹתָר",
+      "passage": "Now the wife of one of the sons of the prophets cried out to Elisha, \"Your servant, my husband, is dead, and you know that your servant feared the LORD. And now his creditor is coming to take my two children as his slaves!\" \"How can I help you?\" asked Elisha. \"Tell me, what do you have in the house?\" She answered, \"Your servant has nothing in the house but a jar of oil.\" \"Go,\" said Elisha, \"borrow jars, even empty ones, from all your neighbors. Do not gather just a few. Then go inside, shut the door behind you and your sons, and pour oil into all these jars, setting the full ones aside.\" So she left him, and after she had shut the door behind her and her sons, they kept bringing jars to her, and she kept pouring. When all the jars were full, she said to her son, \"Bring me another.\" But he replied, \"There are no more jars.\" Then the oil stopped flowing. She went and told the man of God, and he said, \"Go, sell the oil, and pay your debt. Then you and your sons can live on the remainder.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כְּלִי",
+      "transliteration": "keli",
+      "pronunciation": "keh-LEE",
+      "meaning": "vessel, jar, container, implement",
+      "rootMeaning": "From a root meaning to complete or contain. A keli is anything made to hold something else - a pot, a tool, a weapon, a flask. Its whole worth is in what it can be filled with.",
+      "usageNote": "When Elisha says \"borrow jars, even empty ones,\" the Hebrew stresses emptiness on purpose: reqim, empty, hollow, with nothing in them. The qualification matters. A full jar is no use here. Only the empty ones can receive the oil.",
+      "wordByWord": [
+        {
+          "word": "כֵּלִים",
+          "transliteration": "kelim",
+          "meaning": "jars, vessels (plural)"
+        },
+        {
+          "word": "רֵקִים",
+          "transliteration": "reqim",
+          "meaning": "empty ones, hollow ones"
+        },
+        {
+          "word": "אַל־תַּמְעִיטִי",
+          "transliteration": "al-tam'iti",
+          "meaning": "do not make few, do not skimp"
+        },
+        {
+          "word": "שֶׁמֶן",
+          "transliteration": "shemen",
+          "meaning": "oil - the same word used for the oil of anointing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שֶׁמֶן",
+          "reference": "Shemen, oil, is the substance poured over kings and priests to set them apart (1 Samuel 16:13). The widow's debt is paid in the same stuff that anoints the anointed - a quiet hint of who is really providing here."
+        }
+      ],
+      "strongsNumber": "H3627",
+      "definition": "a vessel, receptacle, or implement; anything made to contain or carry",
+      "usage": "The supply does not run out because God runs dry. It stops the moment there is nothing left empty to fill. The limit was never the oil. The limit was the number of jars she dared to borrow."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What Do You Have in the House?",
+      "body": "By the fourth day with Elisha you have learned to expect the impossible. The Jordan still parts at his cloak. A spring of bad water has been healed with a bowl of salt. The chapters ahead will pile up wonders: a dead boy warmed back to life, a poisoned stew made safe, twenty barley loaves stretched across a hundred hungry men, a Syrian general scrubbed clean in a river he despised. Elisha asked for a double portion of Elijah's spirit, and the books of Kings spend ten chapters showing he got it.\n\nBut the first miracle of his settled ministry does not begin with the prophet. It begins with a widow at the end of her rope. Her husband, one of the sons of the prophets, has died, and she has inherited his debt. Under the law a creditor could take children as payment, and hers are at the door. She cries out to the man of God not for theology but for help, and Elisha answers with a strange, almost businesslike question: \"What do you have in the house?\"\n\nShe almost says nothing. \"Your servant has nothing in the house\" - and then she remembers - \"but a jar of oil.\" That \"but\" is where the whole story turns. Not nothing. A little. And the little, placed under the word of God, becomes the seed of her rescue.",
+      "keyInsight": "God's first question to the desperate is not \"What do you lack?\" but \"What do you have?\" He starts the miracle with the little already in your hands.",
+      "content": "By the fourth day with Elisha you have learned to expect the impossible. The Jordan still parts at his cloak. A spring of bad water has been healed with a bowl of salt. The chapters ahead will pile up wonders: a dead boy warmed back to life, a poisoned stew made safe, twenty barley loaves stretched across a hundred hungry men, a Syrian general scrubbed clean in a river he despised. Elisha asked for a double portion of Elijah's spirit, and the books of Kings spend ten chapters showing he got it.\n\nBut the first miracle of his settled ministry does not begin with the prophet. It begins with a widow at the end of her rope. Her husband, one of the sons of the prophets, has died, and she has inherited his debt. Under the law a creditor could take children as payment, and hers are at the door. She cries out to the man of God not for theology but for help, and Elisha answers with a strange, almost businesslike question: \"What do you have in the house?\"\n\nShe almost says nothing. \"Your servant has nothing in the house\" - and then she remembers - \"but a jar of oil.\" That \"but\" is where the whole story turns. Not nothing. A little. And the little, placed under the word of God, becomes the seed of her rescue."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Borrowed Casserole Dishes",
+      "body": "A woman I know lost her job and her husband in the same season. She told me the hardest part was not the grief but the arithmetic - sitting at the kitchen table after the children were asleep, adding the same numbers a fourth time, hoping they would come out different.\n\nA few women from her church showed up one Saturday without being asked. They did not bring a speech. They brought casserole dishes - their own, from their own kitchens, more than her freezer could hold. She protested that it was too much. One of them said, \"Just take the empty ones home and fill them when you can.\" For weeks afterward she cooked for her family out of other people's dishes, and slowly, the cooking itself became a kind of prayer. She was not yet able to fill her own house. So she filled what her neighbors lent her, and it was enough to live on.\n\nThat is the widow's miracle in a suburban kitchen. The provision did not fall from the sky. It was poured, by her own two hands, into vessels she had to go out and borrow first.",
+      "connectionToTheme": "The miracle of the oil is not passive. The widow has to ask her neighbors, carry the jars home, shut the door, and keep pouring. Grace meets obedience halfway, in the ordinary work of the hands.",
+      "content": "A woman I know lost her job and her husband in the same season. She told me the hardest part was not the grief but the arithmetic - sitting at the kitchen table after the children were asleep, adding the same numbers a fourth time, hoping they would come out different.\n\nA few women from her church showed up one Saturday without being asked. They did not bring a speech. They brought casserole dishes - their own, from their own kitchens, more than her freezer could hold. She protested that it was too much. One of them said, \"Just take the empty ones home and fill them when you can.\" For weeks afterward she cooked for her family out of other people's dishes, and slowly, the cooking itself became a kind of prayer. She was not yet able to fill her own house. So she filled what her neighbors lent her, and it was enough to live on.\n\nThat is the widow's miracle in a suburban kitchen. The provision did not fall from the sky. It was poured, by her own two hands, into vessels she had to go out and borrow first."
+    },
+    {
+      "type": "insight",
+      "heading": "The Oil Stopped When the Jars Ran Out",
+      "body": "Read the end of the story slowly, because it is easy to miss. \"When all the jars were full, she said to her son, 'Bring me another.' But he replied, 'There are no more jars.' Then the oil stopped flowing.\"\n\nThe oil did not stop because the supply gave out. It stopped because she ran out of room to receive. The flow was governed entirely by her capacity, and her capacity was set the moment she decided how many jars to borrow. \"Do not gather just a few,\" Elisha had warned. The size of the rescue was, in a real sense, left in her hands - measured out in advance by her willingness to look foolish carrying armloads of empty pots from her neighbors' houses.\n\nThis is the quiet logic that runs under all ten chapters of Elisha's ministry. Naaman has to dip seven times in a river he finds insulting. A hungry crowd has to be served twenty loaves that obviously will not stretch. Each time the wonder waits on a small, undignified obedience. God is never the bottleneck. The bottleneck is how much empty space we are willing to bring Him.",
+      "historicalContext": "Elisha ministered in the northern kingdom of Israel through the mid-ninth century BC, across the reigns of several kings from Joram to Jehoash. The sons of the prophets were guild communities of prophetic disciples, often poor, gathered around Elijah and then Elisha. A widow in such a community had no inheritance rights and no wage earner; the law's provision for creditors to take children as bond-servants (Exodus 21:7, Leviticus 25:39) was a real and legal threat, not a figure of speech.",
+      "fascinatingFact": "Of all the canonical prophets, Elisha is the only one whose miracles continue after his death. The closing scene of his story - a corpse thrown hastily into his tomb springs to life the moment it touches his bones (2 Kings 13:21) - tells the reader that the life at work in this man was never his own to spend, and not even death could shut off the supply.",
+      "content": "Read the end of the story slowly, because it is easy to miss. \"When all the jars were full, she said to her son, 'Bring me another.' But he replied, 'There are no more jars.' Then the oil stopped flowing.\"\n\nThe oil did not stop because the supply gave out. It stopped because she ran out of room to receive. The flow was governed entirely by her capacity, and her capacity was set the moment she decided how many jars to borrow. \"Do not gather just a few,\" Elisha had warned. The size of the rescue was, in a real sense, left in her hands - measured out in advance by her willingness to look foolish carrying armloads of empty pots from her neighbors' houses.\n\nThis is the quiet logic that runs under all ten chapters of Elisha's ministry. Naaman has to dip seven times in a river he finds insulting. A hungry crowd has to be served twenty loaves that obviously will not stretch. Each time the wonder waits on a small, undignified obedience. God is never the bottleneck. The bottleneck is how much empty space we are willing to bring Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A poor widow brings Elisha her one jar of oil and a houseful of borrowed empty vessels. As long as there is an empty jar to fill, the oil keeps flowing; the debt is paid and her children are kept.",
+      "modernApplication": "Most of us come to God the way the widow came to Elisha - not with a question about doctrine but with the arithmetic that will not balance, the children at the door, the little we have left. The instinct is to hide how empty the house is. The story says the emptiness is the very thing He fills. Bring the bare jar. Bring the borrowed ones too. Do not gather just a few.",
+      "connectionPoint": "Watch the same pattern travel down through Elisha's chapters and out the far side of the Old Testament. A man brings twenty barley loaves; Elisha sets them before a hundred men and they eat with some left over (2 Kings 4:42-44). Centuries later, a boy brings five barley loaves; Jesus sets them before five thousand, and twelve baskets are gathered up after (John 6:9-13). The smaller miracle was a rehearsal for the greater. Elisha multiplied bread for a hundred and pointed forward; Christ multiplied bread for thousands and pointed to Himself as the bread of life.",
+      "newTestamentEcho": "When Jesus preached His first sermon in Nazareth, He reached past Israel's heroes and named Elisha's foreigner: \"There were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed - only Naaman the Syrian\" (Luke 4:27). The grace at work in these chapters was never meant to stay inside one nation's borders. It was always overflowing oil, looking for the next empty jar - a Syrian general, a starving crowd, a widow in debt, you."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Elisha asks the widow, \"What do you have in the house?\" If God asked you that today - not what you lack, but what little you still have - what would you finally admit is there?",
+      "additionalQuestions": [
+        "Where in your life are you bringing God a jar you have already filled with your own solutions, leaving no room for Him to pour anything in?",
+        "What small, slightly undignified act of obedience are you avoiding because it seems too foolish to matter?",
+        "The widow's miracle was limited only by how many jars she dared to borrow. What would it look like for you to 'not gather just a few'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You know exactly what is in my house. You know the jar that is nearly empty, and the debts I keep recounting after the lights are out. I have been ashamed of how little I have to bring You. Teach me that the emptiness is not the problem - it is the room You ask for. Give me the courage to go out and borrow more jars than I think I will need, to shut the door, and to keep pouring out the little You have given me, trusting You to keep the oil flowing until every space is full. You are never the One who runs dry. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'jar' - one small, concrete thing you actually have (an hour, a skill, a meal, a phone call, a few dollars) - and pour it out in obedience instead of waiting until you feel you have enough. Do the small thing under God's word, and leave the multiplying to Him.",
+      "leavingAtCross": [
+        "The shame that says what little I have is not worth bringing",
+        "The pride that hands God jars already full of my own fixes",
+        "The fear that makes me borrow only a few, just in case He cannot fill them"
+      ],
+      "receivingFromCross": [
+        "The freedom to offer my little without apologizing for its size",
+        "The confidence that God's supply is limited by my capacity to receive, not by His willingness to give",
+        "A place at the table where there is always some left over"
+      ],
+      "content": "Today, name one 'jar' - one small, concrete thing you actually have (an hour, a skill, a meal, a phone call, a few dollars) - and pour it out in obedience instead of waiting until you feel you have enough. Do the small thing under God's word, and leave the multiplying to Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the oil stop flowing? What does that reveal about who set the limit on the miracle?",
+        "What is the significance of Elisha beginning with the question \"What do you have in the house?\" rather than simply producing oil from nothing?",
+        "How do the twenty barley loaves feeding a hundred (2 Kings 4:42-44) prepare the reader for Jesus feeding five thousand with five loaves (John 6)?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other one 'jar' you have been too ashamed to bring God because it felt too small to matter.",
+        "Where are you handing God a jar already full of your own solutions? Name it out loud.",
+        "Pick one small obedience this week that feels almost too minor to count, and check in with each other after you have done it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 4:42-44",
+          "text": "Now a man from Baal-shalishah came to the man of God with a sack of twenty loaves of barley bread from the first ripe grain. \"Give it to the people to eat,\" said Elisha. But his servant asked, \"How am I to set twenty loaves before a hundred men?\" \"Give it to the people to eat,\" said Elisha, \"for this is what the LORD says: 'They will eat and have some left over.'\" So he set it before them, and they ate and had some left over, according to the word of the LORD."
+        },
+        {
+          "reference": "2 Kings 5:13-14",
+          "text": "Naaman's servants, however, approached him and said, \"My father, if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, 'Wash and be cleansed'?\" So Naaman went down and dipped himself in the Jordan seven times, according to the word of the man of God, and his flesh was restored and became like that of a little child, and he was clean."
+        },
+        {
+          "reference": "John 6:9",
+          "text": "\"Here is a boy with five barley loaves and two small fish. But what difference will these make among so many?\""
+        },
+        {
+          "reference": "Luke 4:27",
+          "text": "And there were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed - only Naaman the Syrian."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 4-5",
+          "note": "Read the run of Elisha's miracles in one sitting - the widow's oil, the Shunammite's son, the deadly stew, the loaves, and Naaman - and watch how each one waits on a small, ordinary obedience before the wonder comes."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elisha",
+      "title": "The Man of God, Successor to Elijah",
+      "description": "A farmer plowing with twelve yoke of oxen when Elijah's cloak fell on his shoulders (1 Kings 19:19), Elisha left everything to follow the prophet and later asked for a double portion of his spirit. His ministry in the northern kingdom of Israel runs through 2 Kings 2-13, marked less by confrontations with kings than by mercies done for ordinary, often nameless people - a widow in debt, a childless woman, a starving crowd, a foreign soldier. More than any other prophet, his miracles prefigure the works of Christ: raising the dead, multiplying bread, cleansing a leper.",
+      "keyQuote": "Tell me, what do you have in the house?",
+      "lessonForUs": "Elisha never manufactured a miracle out of thin air. He started with what was already in someone's hands - a jar, a loaf, a river - and put it under the word of the LORD. The God he served is the same; He still asks what we have before He shows what He can do with it.",
+      "heading": "The Man of God, Successor to Elijah"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2005,
+  "scriptureReference_full": "2 Kings 4:1-7 (within 2 Kings 4-13, the ministry of Elisha)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (keli H3627; reqim, empty; shemen, oil) reflects standard lexical sources.",
+    "Historical note on the sons of the prophets and creditor bond-service reflects standard background to 2 Kings (cf. Exodus 21:7; Leviticus 25:39)."
+  ]
 }

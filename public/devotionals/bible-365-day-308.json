@@ -1,38 +1,181 @@
 {
   "day": 308,
-  "title": "Luke: Lost-and-Found + Emmaus — Day 7 — Sabbath",
-  "teaser": "Day 308 of Bible 365 — Luke 15, 24",
+  "title": "Found at the Table",
+  "teaser": "The One who told the lost-and-found stories is Himself the Son who was dead and is alive again — recognized at last in the breaking of the bread.",
   "framework": "Luke 15, 24 — Luke: Lost-and-Found + Emmaus",
   "scriptureReference": "Luke 15, 24",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 308"
+      "type": "scripture",
+      "reference": "Luke 15:20, 24; 24:30-31",
+      "translation": "BSB",
+      "emphasis": [
+        "his father saw him",
+        "was dead and is alive again",
+        "their eyes were opened"
+      ],
+      "greekOriginal": "οὗτος ὁ υἱός μου νεκρὸς ἦν καὶ ἀνέζησεν, ἀπολωλὼς καὶ εὑρέθη",
+      "passage": "So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him. ... 'For this son of mine was dead and is alive again! He was lost and is found!' So they began to celebrate. ... While He was reclining at the table with them, He took bread, spoke a blessing and broke it, and gave it to them. Then their eyes were opened and they recognized Jesus."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Luke 15, 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Luke 15, 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀνέζησεν / εὑρέθη",
+      "transliteration": "anezēsen / heurethē",
+      "pronunciation": "a-NEH-zay-sen / hyoo-REH-thay",
+      "meaning": "he came back to life / he was found",
+      "rootMeaning": "Anezēsen joins ana (again, back) to zaō (to live): to live again, to come back from the dead. Heurethē is the passive of heuriskō, to find - 'he was found,' the action done to him, not by him. The father stacks the two words like one breath: dead, then living; lost, then found.",
+      "usageNote": "Luke lets the father say the exact same sentence twice - over the younger son in verse 24 and again to the older son in verse 32. The same word anezēsen ('alive again') is the word Luke will reach for when the angels ask the women at the tomb why they seek the living among the dead (Luke 24:5). The vocabulary of the parable and the vocabulary of Easter are the same vocabulary.",
+      "wordByWord": [
+        {
+          "word": "νεκρὸς ἦν",
+          "transliteration": "nekros ēn",
+          "meaning": "he was dead - the word for a corpse, used of one as good as gone"
+        },
+        {
+          "word": "ἀνέζησεν",
+          "transliteration": "anezēsen",
+          "meaning": "he lived again, he came back to life"
+        },
+        {
+          "word": "ἀπολωλὼς",
+          "transliteration": "apolōlōs",
+          "meaning": "having been lost, ruined, perished"
+        },
+        {
+          "word": "εὑρέθη",
+          "transliteration": "heurethē",
+          "meaning": "he was found - passive: the finding was done to him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διηνοίχθησαν",
+          "reference": "Dienoichthēsan (Luke 24:31), 'their eyes were opened,' is also passive - like heurethē. At Emmaus the disciples do not figure Jesus out; their eyes are opened to Him. Recognition, like being found, is something received."
+        }
+      ],
+      "strongsNumber": "G326",
+      "definition": "anazaō (G326): to live again, recover life, revive; from ana (again) + zaō (to live)",
+      "usage": "The verb is intransitive and quietly miraculous: the son does not revive himself any more than a corpse raises itself. Something happens to him on the road home, and the father names it resurrection language before anyone else dares to."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Luke: Lost-and-Found + Emmaus. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One who finds us.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "One Storyteller, Three Lost Things, One Long Welcome",
+      "body": "Luke 15 opens with a complaint. The tax collectors and sinners are crowding in to hear Jesus, and the religious experts mutter the line that turns out to be the whole gospel in a sneer: \"This man welcomes sinners and eats with them.\" Jesus answers not with an argument but with three stories, each one a variation on a single ache. A shepherd loses one sheep out of a hundred and leaves the ninety-nine to go after it. A woman loses one coin out of ten and sweeps the house by lamplight until she finds it. A father loses a son who is very much alive and walks himself to ruin in a far country.\n\nWatch the rhythm. In the first two stories the searcher goes out and the lost thing is carried home; the sheep is hoisted onto shoulders, the coin held up to the light. By the third story Jesus changes the shape. The father cannot drag a grown son home against his will, so he does the only thing left to a parent of a runaway: he watches the road. And the climax of all three stories is identical - someone throws a party. \"Rejoice with me, for I have found my lost sheep.\" \"Rejoice with me, for I have found my lost coin.\" \"Let us feast and celebrate, for this son of mine was dead and is alive again.\"\n\nThe complaint was about a meal. Jesus answers with three stories that all end at a table. Heaven, He says, is not a courtroom reluctantly acquitting the guilty. Heaven is a household that cannot stop throwing welcome-home dinners.",
+      "keyInsight": "The grumble that Jesus 'eats with sinners' is not a charge to deny. It is the gospel stated by an enemy. The meal is the point: God's joy over the found takes the shape of a shared table.",
+      "content": "Luke 15 opens with a complaint. The tax collectors and sinners are crowding in to hear Jesus, and the religious experts mutter the line that turns out to be the whole gospel in a sneer: \"This man welcomes sinners and eats with them.\" Jesus answers not with an argument but with three stories, each one a variation on a single ache. A shepherd loses one sheep out of a hundred and leaves the ninety-nine to go after it. A woman loses one coin out of ten and sweeps the house by lamplight until she finds it. A father loses a son who is very much alive and walks himself to ruin in a far country.\n\nWatch the rhythm. In the first two stories the searcher goes out and the lost thing is carried home; the sheep is hoisted onto shoulders, the coin held up to the light. By the third story Jesus changes the shape. The father cannot drag a grown son home against his will, so he does the only thing left to a parent of a runaway: he watches the road. And the climax of all three stories is identical - someone throws a party. \"Rejoice with me, for I have found my lost sheep.\" \"Rejoice with me, for I have found my lost coin.\" \"Let us feast and celebrate, for this son of mine was dead and is alive again.\"\n\nThe complaint was about a meal. Jesus answers with three stories that all end at a table. Heaven, He says, is not a courtroom reluctantly acquitting the guilty. Heaven is a household that cannot stop throwing welcome-home dinners."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Porch Light Left On",
+      "body": "A friend of mine kept the porch light burning for eleven years. Her son had left after a fight that neither of them could quite remember the cause of, and for a long time the leaving hardened into silence - no calls, no card at Christmas, an address she was never sure was current. People told her, gently, to stop waiting. She didn't. She told me once that she still set out two coffee mugs in the morning out of habit, then put one back.\n\nWhen he finally came up the drive, thinner and grayer than she had braced for, she did not stand in the doorway with the speech she had rehearsed for a decade. She was off the step and across the gravel before she knew she had moved. She told me later that she could not remember running. She only remembered holding him.\n\nThat is the detail Jesus refuses to leave out. \"While he was still in the distance, his father saw him.\" Saw him - which means the father had been looking, the way you only look when you have been looking for a long time. The son has a confession memorized. The father does not let him finish it. The robe and the ring and the calf are already being shouted for before the boy gets to the part where he asks to be a servant.",
+      "connectionToTheme": "The father runs. In a culture where a dignified elder did not hike up his robe and sprint, the running is the scandal and the gospel both - God's welcome arrives before the apology is even finished.",
+      "content": "A friend of mine kept the porch light burning for eleven years. Her son had left after a fight that neither of them could quite remember the cause of, and for a long time the leaving hardened into silence - no calls, no card at Christmas, an address she was never sure was current. People told her, gently, to stop waiting. She didn't. She told me once that she still set out two coffee mugs in the morning out of habit, then put one back.\n\nWhen he finally came up the drive, thinner and grayer than she had braced for, she did not stand in the doorway with the speech she had rehearsed for a decade. She was off the step and across the gravel before she knew she had moved. She told me later that she could not remember running. She only remembered holding him.\n\nThat is the detail Jesus refuses to leave out. \"While he was still in the distance, his father saw him.\" Saw him - which means the father had been looking, the way you only look when you have been looking for a long time. The son has a confession memorized. The father does not let him finish it. The robe and the ring and the calf are already being shouted for before the boy gets to the part where he asks to be a servant."
+    },
+    {
+      "type": "insight",
+      "heading": "The Storyteller Becomes the Story",
+      "body": "Here is what a Sabbath reading is for - to set two passages side by side and let them rhyme. Hold Luke 15 next to Luke 24 and something quiet and enormous happens.\n\nIn chapter 15 Jesus tells of a son who was dead and is alive again, lost and found, welcomed home at a feast. In chapter 24 Jesus is the Son who was dead and is alive again - and two of His own walk seven dusty miles to Emmaus convinced the story is over. \"We were hoping He was the One who would redeem Israel,\" they say, in the saddest past tense in the Gospels. They do not recognize the Stranger walking beside them, the way the elder brother did not recognize that his father's heart had been outside in the road the whole time.\n\nAnd then the meal. The same answer Jesus gave the grumblers in chapter 15 - the table - is the answer He gives the heartbroken in chapter 24. He takes bread, blesses it, breaks it, gives it. \"Then their eyes were opened and they recognized Jesus.\" The Greek for 'opened' is passive, just like 'he was found' in the parable. The disciples do not deduce Him. They are given Him. The One who told the lost-and-found stories has become the Found Son, and He is recognized exactly where He always said the joy would be: at a table, in broken bread, among people who had given themselves up for lost.",
+      "historicalContext": "Luke 15 and Luke 24 sit at opposite ends of Luke's long road to Jerusalem and out the empty tomb. The same author who recorded the parables records the resurrection, using the same vocabulary - nekros (dead), anazaō (alive again), heuriskō (find) - so that the careful reader hears chapter 15 echoing inside chapter 24.",
+      "fascinatingFact": "Luke alone, of the four Gospels, gives us both the prodigal son and the Emmaus road. The same hand that wrote 'this son of mine was dead and is alive again' wrote 'why do you seek the living among the dead?' (Luke 24:5). The parable was rehearsing Easter the whole time.",
+      "content": "Here is what a Sabbath reading is for - to set two passages side by side and let them rhyme. Hold Luke 15 next to Luke 24 and something quiet and enormous happens.\n\nIn chapter 15 Jesus tells of a son who was dead and is alive again, lost and found, welcomed home at a feast. In chapter 24 Jesus is the Son who was dead and is alive again - and two of His own walk seven dusty miles to Emmaus convinced the story is over. \"We were hoping He was the One who would redeem Israel,\" they say, in the saddest past tense in the Gospels. They do not recognize the Stranger walking beside them, the way the elder brother did not recognize that his father's heart had been outside in the road the whole time.\n\nAnd then the meal. The same answer Jesus gave the grumblers in chapter 15 - the table - is the answer He gives the heartbroken in chapter 24. He takes bread, blesses it, breaks it, gives it. \"Then their eyes were opened and they recognized Jesus.\" The Greek for 'opened' is passive, just like 'he was found' in the parable. The disciples do not deduce Him. They are given Him. The One who told the lost-and-found stories has become the Found Son, and He is recognized exactly where He always said the joy would be: at a table, in broken bread, among people who had given themselves up for lost."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus told three stories of lost things found and ended each at a feast; then He Himself was the Son who was dead and rose, recognized by His own only when He broke bread at a table in Emmaus.",
+      "modernApplication": "You may know the doctrine of the resurrection and still walk your own Emmaus road - the facts in your head, the hope drained out of your chest, talking about Jesus in the past tense. The two disciples were not unbelievers. They were grieving believers who could not see the One beside them. Recognition came not in a new argument but in a shared meal, an ordinary loaf broken in ordinary hands.",
+      "connectionPoint": "From the first pages of Scripture, God comes looking - calling Adam in the garden, watching the prodigal's road, walking incognito to Emmaus. The thread is one searching God who refuses to wait passively for the lost to find their own way back.",
+      "newTestamentEcho": "What the parable promised, the resurrection performed. The father's words over the prodigal - 'was dead and is alive again' - became literally true of the Storyteller on the third day. And the table where sinners were welcomed in Luke 15 becomes the table where the risen Christ is known in Luke 24, the meal His church still keeps: 'they recognized Jesus in the breaking of the bread' (Luke 24:35)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you talking about Jesus in the past tense - 'we were hoping' - in a part of your life where the hope has quietly drained out?",
+      "additionalQuestions": [
+        "Which of the three lost things do you feel most like today: the sheep that wandered, the coin that was simply mislaid through no fault of its own, or the son who walked away on purpose?",
+        "The disciples' eyes were opened at a table, not on the road. Where in the ordinary rhythms of your week - a meal, a quiet, a shared loaf - might Christ be waiting to be recognized?",
+        "If God is the Father already running toward you while you are still 'in the distance,' what confession have you been rehearsing that He may not even let you finish?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I have walked my own road to Emmaus, talking about You in the past tense, slow of heart to believe. Open my eyes. I have rehearsed my unworthiness like the younger son; meet me on the road before I finish the speech. You who told the stories of the found, You who were dead and are alive again - be known to me today in the breaking of the bread, at the table where You still welcome sinners. Stay with me, for it is nearly evening. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a Sabbath day - nothing to finish, no task to complete. Sit with one sentence and let it hold you: 'This son of mine was dead and is alive again.' Then share a meal today, however small, slowly enough to remember that the risen Christ is known at the table. Let the bread be a place you look for Him.",
+      "leavingAtCross": [
+        "The past tense - 'we were hoping' - where I have quietly buried a hope I am afraid to dig back up",
+        "The rehearsed speech of my unworthiness that I keep reciting as if God needs to hear it before He will run",
+        "The slow heart that walks beside the risen Christ and calls Him a stranger"
+      ],
+      "receivingFromCross": [
+        "A Father who saw me while I was still in the distance and was already running",
+        "Resurrection language spoken over my own dead places: alive again, found",
+        "Eyes opened, not by my effort, but by His self-giving at the table"
+      ],
+      "content": "This is a Sabbath day - nothing to finish, no task to complete. Sit with one sentence and let it hold you: 'This son of mine was dead and is alive again.' Then share a meal today, however small, slowly enough to remember that the risen Christ is known at the table. Let the bread be a place you look for Him."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What do all three parables in Luke 15 - the sheep, the coin, the son - have in common in how they end, and what does that shared ending say about heaven?",
+        "Why does it matter that the Greek words for 'alive again' and 'found' in the prodigal parable are the same words Luke uses around the resurrection?",
+        "The disciples' eyes were 'opened' (a passive verb) at the meal. What does the grammar suggest about how recognition of the risen Christ comes to us?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you are currently living in the 'we were hoping' past tense - a hope you have spoken of as dead.",
+        "Talk about which lost thing - sheep, coin, or son - your own story most resembles, and why.",
+        "Ask each other: where has Christ been walking beside you unrecognized, and what 'breaking of bread' might open your eyes to Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 15:7",
+          "text": "In the same way, I tell you that there will be more joy in heaven over one sinner who repents than over ninety-nine righteous ones who do not need to repent."
+        },
+        {
+          "reference": "Luke 24:5",
+          "text": "...the women were terrified and bowed their faces to the ground. But the two men said to them, 'Why do you seek the living among the dead?'"
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, 'Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?'"
+        },
+        {
+          "reference": "Luke 19:10",
+          "text": "For the Son of Man came to seek and to save the lost."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Luke 15 and Luke 24",
+          "note": "Read the two chapters back to back in one sitting, watching for the shared words: lost, found, dead, alive again, table, bread. Notice how the parables of joy in chapter 15 are answered by the resurrection joy of chapter 24."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cleopas",
+      "title": "The Disciple on the Emmaus Road",
+      "description": "One of two disciples walking from Jerusalem to Emmaus on the afternoon of the resurrection, named by Luke while his companion is left unnamed. He had followed Jesus, grieved His death, heard the women's report of the empty tomb, and still walked away from the city in sorrow, hope spoken of in the past tense. He is the believer who has the facts and has lost the hope - until the risen Christ opens the Scriptures to him and then opens his eyes at the table.",
+      "keyQuote": "But we were hoping He was the One who would redeem Israel.",
+      "lessonForUs": "Cleopas reminds us that you can be a genuine disciple, possess all the right information, and still walk beside the living Christ calling Him a stranger. Recognition came to him not by harder thinking but by the breaking of bread - a gift received, not a conclusion reached.",
+      "heading": "The Disciple on the Emmaus Road"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "Luke 15:1-7, 11-24, 31-32; 24:13-21, 25-35",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (anazaō G326, heuriskō G2147) reflects standard lexical sources (BDAG, Thayer); the passive-voice observations on heurethē and dienoichthēsan follow the Greek text of Luke 15:24, 32 and 24:31."
+  ]
 }

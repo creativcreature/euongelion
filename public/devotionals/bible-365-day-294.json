@@ -1,38 +1,184 @@
 {
   "day": 294,
-  "title": "Mark: The Suffering Servant — Day 7 — Sabbath",
-  "teaser": "Day 294 of Bible 365 — Mark 1-16",
+  "title": "The Ransom in the Middle of Everything",
+  "teaser": "Mark calls Jesus the Son of God in his first line. A Roman soldier is the first man to say it out loud — and only after watching Him die.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
   "scriptureReference": "Mark 1-16",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 294"
+      "type": "scripture",
+      "reference": "Mark 10:45",
+      "translation": "BSB",
+      "emphasis": [
+        "did not come to be served, but to serve",
+        "to give His life as a ransom for many"
+      ],
+      "greekOriginal": "καὶ γὰρ ὁ Υἱὸς τοῦ ἀνθρώπου οὐκ ἦλθεν διακονηθῆναι ἀλλὰ διακονῆσαι καὶ δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν",
+      "passage": "For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lytron",
+      "pronunciation": "LOO-tron",
+      "meaning": "ransom, the price paid to set a captive free",
+      "rootMeaning": "Lytron comes from the verb lyo, to loose or untie. A lytron is what you hand over to loosen someone's chains - the coin that buys a slave out of slavery, the price that gets a prisoner of war sent home. It is not a fee for a service. It is the cost of a person's freedom, paid by someone else.",
+      "usageNote": "Mark uses lytron only once, here in 10:45 - and it lands at the exact midpoint of the Gospel, the moment the road turns toward the cross. The little word anti that follows it means 'in the place of': not a ransom on behalf of many in some general way, but a life given in exchange for theirs, His instead of ours.",
+      "wordByWord": [
+        {
+          "word": "ὁ Υἱὸς τοῦ ἀνθρώπου",
+          "transliteration": "ho Huios tou anthropou",
+          "meaning": "the Son of Man - Jesus' favorite name for Himself, drawn from Daniel 7, where one like a son of man is given an everlasting kingdom"
+        },
+        {
+          "word": "οὐκ ἦλθεν διακονηθῆναι",
+          "transliteration": "ouk elthen diakonethenai",
+          "meaning": "did not come to be served, to be waited on"
+        },
+        {
+          "word": "ἀλλὰ διακονῆσαι",
+          "transliteration": "alla diakonesai",
+          "meaning": "but to serve, to wait on others - the root of our word deacon"
+        },
+        {
+          "word": "δοῦναι τὴν ψυχὴν αὐτοῦ",
+          "transliteration": "dounai ten psychen autou",
+          "meaning": "to give His life, His very soul"
+        },
+        {
+          "word": "λύτρον ἀντὶ πολλῶν",
+          "transliteration": "lytron anti pollon",
+          "meaning": "as a ransom in the place of many"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διάκονος / διακονέω",
+          "reference": "Diakonos (servant) and diakoneo (to serve) run all through this passage. The word becomes the title 'deacon' in the early church - one whose office is simply to wait on others, named after the King who washed feet."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "a ransom; the price paid to redeem or release a captive or slave",
+      "usage": "In the ancient world a lytron was a concrete, countable thing - so many coins to free this particular slave. Jesus takes that hard, transactional word and says the price is not silver but His own life, and the captives go free."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Title at the Start, a Confession at the End",
+      "body": "Read Mark from beginning to end - sixteen fast chapters, the shortest of the four Gospels - and you notice it almost runs. \"Immediately\" is Mark's favorite word; Jesus is always moving, healing, leaving before dawn, crossing the lake again. But the speed is not aimless. The whole book is bent toward one event, and Mark tells you what it is in his very first line.\n\n\"This is the beginning of the gospel of Jesus Christ, the Son of God.\" Mark puts his cards on the table in verse one. He is going to tell us this man is the Son of God. The strange thing is what happens next: nobody in the story seems able to say it. Demons blurt it out and are silenced. Disciples catch glimpses and miss the point. Peter confesses Jesus is the Christ and then, three verses later, is rebuked for refusing the cross. Mark keeps the title hanging over the whole Gospel like a question waiting for the right voice to answer it.\n\nThat voice, when it finally comes, belongs to the last person you would expect. Not a disciple, not a priest - a Roman centurion, the officer on execution duty, standing at the foot of a cross. He watches Jesus die, and he says it: \"Truly this man was the Son of God.\" The title Mark announced in chapter one is confessed by a human being for the first time in chapter fifteen, and only after watching the Son of God breathe His last.",
+      "keyInsight": "Mark tells you who Jesus is in his first sentence, then makes you wait until the cross to hear a human being say it. The Son of God is recognized not in His power but in His dying.",
+      "content": "Read Mark from beginning to end - sixteen fast chapters, the shortest of the four Gospels - and you notice it almost runs. \"Immediately\" is Mark's favorite word; Jesus is always moving, healing, leaving before dawn, crossing the lake again. But the speed is not aimless. The whole book is bent toward one event, and Mark tells you what it is in his very first line.\n\n\"This is the beginning of the gospel of Jesus Christ, the Son of God.\" Mark puts his cards on the table in verse one. He is going to tell us this man is the Son of God. The strange thing is what happens next: nobody in the story seems able to say it. Demons blurt it out and are silenced. Disciples catch glimpses and miss the point. Peter confesses Jesus is the Christ and then, three verses later, is rebuked for refusing the cross. Mark keeps the title hanging over the whole Gospel like a question waiting for the right voice to answer it.\n\nThat voice, when it finally comes, belongs to the last person you would expect. Not a disciple, not a priest - a Roman centurion, the officer on execution duty, standing at the foot of a cross. He watches Jesus die, and he says it: \"Truly this man was the Son of God.\" The title Mark announced in chapter one is confessed by a human being for the first time in chapter fifteen, and only after watching the Son of God breathe His last."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Stood Guard",
+      "content": "A centurion in the Roman army commanded eighty men. He had seen death the way a carpenter has seen wood - daily, professionally, without flinching. Crucifixion was his trade on that particular morning. He had nailed up zealots and bandits and runaway slaves before, and he had watched all of them die the same way: cursing, begging, screaming at the soldiers who held the hammer.\n\nThis one was different, and the difference was not in the dying - the dying was as brutal as any. It was in how He held it. There was no curse for the soldier holding the hammer. There was a strange word about forgiveness, a cry to a God who seemed to have left, and then a loud cry and silence. The sky had gone dark in the middle of the day. The ground felt wrong.\n\nWe are not told the centurion's name. We are not told what he did the next morning, whether he requested a transfer or drank himself numb or knelt down somewhere out of sight. Mark gives us one line from him and then lets him walk off the page. But that one line is the line the whole Gospel was waiting for. The first human being to look at the dying Jesus and name Him rightly was a pagan executioner with blood on his hands - which is exactly the kind of person the ransom was paid for.",
+      "connectionToTheme": "The Son of God is first confessed not by an insider but by the man on duty at His execution. The Gospel that opens by naming Jesus closes that loop at the cross, in the mouth of an outsider."
+    },
+    {
+      "type": "insight",
+      "heading": "The Hinge of the Whole Book",
+      "content": "Mark 10:45 is not a verse you stumble onto. It sits at the seam of the Gospel, the place where Jesus turns His face from Galilee toward Jerusalem and stops hiding what is coming. Three times on that road He tells the disciples plainly that He will be handed over, killed, and rise. Three times they fail to hear it - they argue about who is greatest, they ask for the best seats, they rebuke Him. And each time, instead of giving up on them, Jesus answers their hunger to be served with a sentence about being served.\n\nThen comes the line that holds the whole book together: \"For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\" Every miracle in the first half of Mark, every crowd and casting-out and calming of the storm, has been building a question - who is this? And the answer, when it comes, is not a display of more power. It is a price. The one who could command demons and walk on water defines His own mission as a ransom paid with His life. The strength was never the point. The strength was always pointed at the cross.\n\nThis is why Mark can be so honest about the disciples' thickness, Peter's denial, the women's fear at the empty tomb. The Gospel does not hold together because its people are impressive. It holds together because at the center of it a ransom is paid for unimpressive people - for slaves who cannot buy their own freedom, by the only Son who could.",
+      "historicalContext": "Mark was likely the earliest of the four Gospels, written for a church under pressure - early Christian tradition links it to Rome and to Peter's preaching. That setting fits a Gospel obsessed with the cost of following Jesus and unembarrassed by His suffering. For readers who might soon face their own executioners, Mark offers a Lord who went first, and a Roman soldier who confessed Him.",
+      "fascinatingFact": "At the moment Jesus dies, Mark records the temple veil tearing in two from top to bottom - torn from the top, as if by a hand reaching down rather than up. The curtain that walled off the Most Holy Place, the barrier between God and the people, comes apart in the same breath that the centurion confesses the Son of God. The way in opens at the very moment the ransom is paid."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Son of God came not to be served but to serve, and to give His life as a ransom in the place of many - the price of freedom paid for those who could never pay it themselves.",
+      "modernApplication": "We still measure greatness the way the disciples did - by who gets served, who sits where, whose name is on the door. Mark sets a different scale at the center of everything: the greatest is the one who serves, and the King proves it by dying. To follow this Lord is to take up a cross, not climb a ladder.",
+      "connectionPoint": "The word ransom carries straight through Scripture. Israel was 'redeemed' out of slavery in Egypt at the cost of the Passover lamb. Isaiah foretold a servant who would be 'pierced for our transgressions' and 'bear the sin of many' (Isaiah 53:5, 12) - the very language Mark 10:45 echoes when it says 'a ransom for many.' Paul tells Timothy that Christ Jesus 'gave Himself as a ransom for all' (1 Timothy 2:6). The single word Jesus uses on the road to Jerusalem gathers up the exodus, the suffering servant, and the cross into one act.",
+      "newTestamentEcho": "What Mark announces in his first line, the cross confirms in its last hour. The Son of God did not stay distant and served; He came down, took the form of a servant, and gave His life. The ransom Jesus names in 10:45 is the ransom He pays in chapter 15 - and the torn veil and the soldier's confession are the receipt."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to be great by being served - and what would it look like to spend yourself instead, the way Jesus did?",
+      "additionalQuestions": [
+        "Mark holds the title 'Son of God' until a Roman executioner says it at the cross. What does it tell you that the first human confession comes from an outsider with blood on his hands?",
+        "A ransom is a price you cannot pay for yourself, paid by someone else. Where in your life have you been trying to buy a freedom that has already been bought for you?",
+        "Read Mark in one sitting this week if you can. Notice how often the disciples miss the point - and how patiently Jesus keeps walking toward the cross anyway. Where do you most need that patience right now?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, You did not come to be served, but to serve - and You served me by dying in my place. I confess I have wanted the seats of honor, the credit, the ease. I have measured greatness the way Your disciples did, and missed the cross at the center of everything. Thank You that the ransom was paid before I knew I was captive. Let me stand at the foot of Your cross like the centurion and say it honestly: truly, this is the Son of God. Free me, then, to spend my life serving instead of being served. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - a day to look back over the whole Gospel of Mark rather than push forward. Sit for a few quiet minutes with one sentence: \"a ransom for many.\" Let it mean you. Then name one place this week where you can choose to serve rather than be served, in the pattern of the King who washed feet.",
+      "leavingAtCross": [
+        "The instinct to measure my worth by who serves me and who notices",
+        "The quiet belief that my freedom is something I have to earn or buy",
+        "The disciples' deafness in me - the part that wants the crown without the cross"
+      ],
+      "receivingFromCross": [
+        "A ransom I did not pay and could not pay, given in my place",
+        "The freedom of a captive who has already been bought out of slavery",
+        "A new measure of greatness: the towel, the basin, the life poured out"
+      ],
+      "content": "Today is a sabbath day - a day to look back over the whole Gospel of Mark rather than push forward. Sit for a few quiet minutes with one sentence: \"a ransom for many.\" Let it mean you. Then name one place this week where you can choose to serve rather than be served, in the pattern of the King who washed feet."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Mark announces 'the Son of God' in verse one. Who is the first human being in the Gospel to confess it, and where does it happen? Why does Mark wait so long?",
+        "What does the Greek word lytron (ransom) literally describe in the ancient world, and what does Jesus say is the price?",
+        "How does the tearing of the temple veil, at the very moment Jesus dies, connect to the ransom He spoke of in Mark 10:45?"
+      ],
+      "forAccountabilityPartners": [
+        "Mark is honest about how badly the disciples follow Jesus. Where do you see your own following falling short - and how does Jesus' patience with them encourage you?",
+        "Talk about the difference between being served and serving. Name one specific area where you have been chasing the first.",
+        "Ask each other: if a ransom has already been paid for your freedom, what are you still acting like a slave to?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 1:1",
+          "text": "This is the beginning of the gospel of Jesus Christ, the Son of God."
+        },
+        {
+          "reference": "Mark 8:34-35",
+          "text": "If anyone wants to come after Me, he must deny himself and take up his cross and follow Me. For whoever wants to save his life will lose it, but whoever loses his life for My sake and for the gospel will save it."
+        },
+        {
+          "reference": "Mark 15:38-39",
+          "text": "And the veil of the temple was torn in two from top to bottom. When the centurion standing there in front of Jesus saw how He had breathed His last, he said, \"Truly this man was the Son of God!\""
+        },
+        {
+          "reference": "Mark 16:6",
+          "text": "Do not be alarmed. You are looking for Jesus the Nazarene, who was crucified. He has risen! He is not here! See the place where they put Him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "The Gospel of Mark",
+          "note": "On a sabbath day, read Mark straight through in one sitting - it takes about an hour. Watch for the word 'immediately,' and for how the whole story leans toward the cross from the very first line."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Centurion at the Cross",
+      "title": "The First Man to Confess the Son of God",
+      "description": "An unnamed Roman officer commanding the soldiers who crucified Jesus. He stood watch through the darkness, the cry of dereliction, and the final breath. Mark gives him a single line, but it is the line the whole Gospel was built toward: 'Truly this man was the Son of God.' A pagan executioner becomes the first human voice to confess what Mark announced in chapter one - and he confesses it not at a miracle, but at a death.",
+      "keyQuote": "Truly this man was the Son of God!",
+      "lessonForUs": "The recognition of who Jesus is does not require religious pedigree or a clean record. It came first to a soldier with blood on his hands, watching the ransom be paid. If the Son of God can be confessed from there, He can be confessed from wherever you are standing today.",
+      "heading": "The First Man to Confess the Son of God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2058,
+  "scriptureReference_full": "Mark 1-16 (anchored in Mark 10:45)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lytron, G3083; diakoneo / diakonos) reflects standard lexical sources. The reading of Mark 10:45 against Isaiah 53 ('bear the sin of many') is a long-standing connection in Christian interpretation.",
+    "The structural observation that Mark withholds a human confession of 'Son of God' until the centurion at the cross (1:1 / 15:39) is widely noted in commentary on Mark's Gospel."
+  ]
 }

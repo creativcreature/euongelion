@@ -1,38 +1,182 @@
 {
   "day": 154,
-  "title": "Jeremiah Weeping Prophet — Day 7 — Sabbath",
-  "teaser": "Day 154 of Bible 365 — Jeremiah 1-29",
+  "title": "A spring of tears for a thirsty people",
+  "teaser": "Jeremiah wishes his head were a fountain so he could weep enough. Centuries later, the One who is the fountain weeps over the same city.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 154"
+      "type": "scripture",
+      "reference": "Jeremiah 9:1; 2:13",
+      "translation": "BSB",
+      "emphasis": [
+        "a spring of water",
+        "a fountain of tears",
+        "the fountain of living water",
+        "broken cisterns"
+      ],
+      "hebrewOriginal": "כִּי שְׁתַּיִם רָעוֹת עָשָׂה עַמִּי אֹתִי עָזְבוּ מְקוֹר מַיִם חַיִּים לַחְצֹב לָהֶם בֹּארוֹת בֹּארֹת נִשְׁבָּרִים אֲשֶׁר לֹא־יָכִלוּ הַמָּיִם",
+      "passage": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people. ... \"For My people have committed two evils: They have forsaken Me, the fountain of living water, and they have dug their own cisterns— broken cisterns that cannot hold water.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מְקוֹר מַיִם חַיִּים",
+      "transliteration": "meqor mayim chayyim",
+      "pronunciation": "meh-KOR MA-yim kha-YEEM",
+      "meaning": "spring of living water; a source that flows on its own",
+      "rootMeaning": "Meqor means a wellspring or source - water that rises up from the ground by itself, never empty, never stored. Mayim chayyim, 'living water,' is the Hebrew term for fresh, moving, fountain-fed water, as opposed to the still, collected water of a cistern.",
+      "usageNote": "In Jeremiah 2:13 the same word stands behind both the weeping and the wound. The prophet wishes his eyes were a meqor of tears (9:1, the related noun maqor); the people have walked away from the true Meqor, the fountain of living water, which is God Himself. The tears are a spring trying to make up for a Spring that was abandoned.",
+      "wordByWord": [
+        {
+          "word": "מְקוֹר",
+          "transliteration": "meqor",
+          "meaning": "source, spring, wellspring - water that rises on its own"
+        },
+        {
+          "word": "מַיִם",
+          "transliteration": "mayim",
+          "meaning": "waters"
+        },
+        {
+          "word": "חַיִּים",
+          "transliteration": "chayyim",
+          "meaning": "living, alive - fresh, flowing, not stagnant"
+        },
+        {
+          "word": "בֹּארֹת נִשְׁבָּרִים",
+          "transliteration": "bo'rot nishbarim",
+          "meaning": "broken cisterns - pits cut to hold water that crack and leak it all out"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בּוֹר / מַעְיָן",
+          "reference": "A bor is a cistern: a hole carved in rock to trap rainwater you have to carry to it. A maʿyan is a natural spring that gives water freely. Jeremiah's grief is that his people traded the spring for the pit, and even the pit is cracked."
+        }
+      ],
+      "strongsNumber": "H4726",
+      "definition": "a spring, fountain, or source of running water",
+      "usage": "Living water in Scripture is always water that moves and renews itself. A cistern can only hold what you pour in, and only as long as it does not leak. The whole tragedy of Jeremiah's preaching is summed up in one image: a people standing beside an endless spring, scraping at the dry walls of a hole they dug themselves."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Prophet Who Could Not Stop Crying",
+      "body": "Jeremiah is the prophet history remembers weeping. He preached for roughly forty years in Jerusalem, from the reign of Josiah through the slow collapse of Judah, and almost no one listened. His own neighbors in Anathoth turned on him. He was put in stocks, thrown into a muddy cistern, mocked, and ignored. And through all of it he kept saying the one thing the city did not want to hear: that judgment was coming from the north, and that it was coming because they had walked away from God.\n\nWhat sets Jeremiah apart is not the warning. Other prophets warned. It is that he could not deliver the warning without breaking. \"Oh, that my head were a spring of water,\" he cries, \"and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people.\" He does not stand above his people and pronounce doom. He stands inside their coming grief and wishes he had more water in him to mourn it.\n\nUnderneath the tears is a diagnosis, and it is the clearest sentence in the book. \"My people have committed two evils,\" God says through him. \"They have forsaken Me, the fountain of living water, and they have dug their own cisterns - broken cisterns that cannot hold water.\" The whole tragedy fits in one picture. There was a spring. They left it. And the substitutes they cut for themselves leak.",
+      "keyInsight": "Jeremiah does not weep because God is harsh. He weeps because the people walked away from an endless spring to drink from cracked pits they dug themselves - and the God they left is the One whose heart is breaking through the prophet's eyes.",
+      "content": "Jeremiah is the prophet history remembers weeping. He preached for roughly forty years in Jerusalem, from the reign of Josiah through the slow collapse of Judah, and almost no one listened. His own neighbors in Anathoth turned on him. He was put in stocks, thrown into a muddy cistern, mocked, and ignored. And through all of it he kept saying the one thing the city did not want to hear: that judgment was coming from the north, and that it was coming because they had walked away from God.\n\nWhat sets Jeremiah apart is not the warning. Other prophets warned. It is that he could not deliver the warning without breaking. \"Oh, that my head were a spring of water,\" he cries, \"and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people.\" He does not stand above his people and pronounce doom. He stands inside their coming grief and wishes he had more water in him to mourn it.\n\nUnderneath the tears is a diagnosis, and it is the clearest sentence in the book. \"My people have committed two evils,\" God says through him. \"They have forsaken Me, the fountain of living water, and they have dug their own cisterns - broken cisterns that cannot hold water.\" The whole tragedy fits in one picture. There was a spring. They left it. And the substitutes they cut for themselves leak."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The House with the Dry Well",
+      "body": "A friend of mine grew up on land in the dry hill country, where every drop of water had to be thought about. Behind the old farmhouse there was a spring his great-grandfather had built the whole place around. It ran clear and cold through every drought anyone could remember. Free water, rising out of the rock on its own.\n\nSomewhere along the way a later owner decided the spring was inconvenient - too far from the house, down a slope, hard to pipe. So he dug a cistern up near the kitchen and let the spring path grow over. The cistern was closer. It was also, eventually, cracked. My friend remembers his father standing over that empty pit in August, in the heat, while a hundred yards down the hill the spring kept running to no one.\n\nThat is the picture Jeremiah cannot say without weeping. Not a people with no water. A people standing beside living water, dying of thirst at a hole they dug because it felt more like theirs.",
+      "connectionToTheme": "The tragedy that breaks Jeremiah is not scarcity but exchange: leaving an endless spring for a convenient, leaking pit of one's own making.",
+      "content": "A friend of mine grew up on land in the dry hill country, where every drop of water had to be thought about. Behind the old farmhouse there was a spring his great-grandfather had built the whole place around. It ran clear and cold through every drought anyone could remember. Free water, rising out of the rock on its own.\n\nSomewhere along the way a later owner decided the spring was inconvenient - too far from the house, down a slope, hard to pipe. So he dug a cistern up near the kitchen and let the spring path grow over. The cistern was closer. It was also, eventually, cracked. My friend remembers his father standing over that empty pit in August, in the heat, while a hundred yards down the hill the spring kept running to no one.\n\nThat is the picture Jeremiah cannot say without weeping. Not a people with no water. A people standing beside living water, dying of thirst at a hole they dug because it felt more like theirs."
+    },
+    {
+      "type": "insight",
+      "heading": "Tears That Foreshadow",
+      "body": "Step back from a single chapter and watch the weeping run through the whole book. \"For the brokenness of the daughter of my people I am crushed,\" he says. \"I mourn; horror has gripped me. Is there no balm in Gilead? Is no physician there?\" His grief is not weakness in a prophet who should be sterner. It is the very thing that makes him true. He carries the wound he announces.\n\nAnd here is what these tears point to. They are not only Jeremiah's. The prophets often speak God's own heart, and the sorrow flowing through Jeremiah is the sorrow of God over a people He will not stop loving even as He lets the consequences come. The weeping prophet is a window onto a weeping God.\n\nWhich means the tears are not the end of the picture but the beginning of a longer one. Jeremiah wished his head were a spring so he could mourn the slain daughter of his people. He could mourn the wound. He could not heal it. He could ask, \"Is there no balm in Gilead?\" but he could not be the balm. The tears point past themselves, down the centuries, to Someone who would both weep over the same city and do something about the thirst.",
+      "historicalContext": "Jeremiah prophesied in Jerusalem's final decades, from roughly 627 BC into the years after Babylon destroyed the city and temple in 586 BC. Chapters 1-29 carry his oracles before and during that collapse, including the letter to the exiles in Babylon (chapter 29). Tradition has long called him the weeping prophet, and the book of Lamentations - five poems of grief over the fallen city - has historically been linked to him.",
+      "fascinatingFact": "At his call, God showed Jeremiah a branch of an almond tree (shaqed) and said, \"I am watching (shoqed) over My word to accomplish it.\" The almond is the first tree to bloom in the land each year - the watchful tree. From the start, Jeremiah's ministry was framed as God keeping watch: over judgment, yes, but the same watchfulness later guards the promise of return and restoration.",
+      "content": "Step back from a single chapter and watch the weeping run through the whole book. \"For the brokenness of the daughter of my people I am crushed,\" he says. \"I mourn; horror has gripped me. Is there no balm in Gilead? Is no physician there?\" His grief is not weakness in a prophet who should be sterner. It is the very thing that makes him true. He carries the wound he announces.\n\nAnd here is what these tears point to. They are not only Jeremiah's. The prophets often speak God's own heart, and the sorrow flowing through Jeremiah is the sorrow of God over a people He will not stop loving even as He lets the consequences come. The weeping prophet is a window onto a weeping God.\n\nWhich means the tears are not the end of the picture but the beginning of a longer one. Jeremiah wished his head were a spring so he could mourn the slain daughter of his people. He could mourn the wound. He could not heal it. He could ask, \"Is there no balm in Gilead?\" but he could not be the balm. The tears point past themselves, down the centuries, to Someone who would both weep over the same city and do something about the thirst."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jeremiah wept day and night over a people who had forsaken the fountain of living water and cut themselves broken cisterns - and he longed for his head to be a spring of tears, because he could mourn the thirst but could not end it.",
+      "modernApplication": "We are still cistern-diggers. We leave the spring for things closer to hand - the screen, the next purchase, the approval we can manage ourselves - and then stand over the cracks wondering why we are still thirsty. The two evils Jeremiah named are simply this: forsaking the source, and trusting the substitute. Both are still ours.",
+      "connectionPoint": "Six centuries after Jeremiah, another man stood on a hill outside Jerusalem and wept over the same city. \"As Jesus approached Jerusalem and saw the city, He wept over it and said, 'If only you had known on this day what would bring you peace! But now it is hidden from your eyes'\" (Luke 19:41-42). The weeping prophet pointed forward to the weeping Lord - the same tears, over the same streets, for the same thirst.",
+      "newTestamentEcho": "But Jesus did more than weep. To a thirsty woman at a well He said, \"Whoever drinks the water I give him will never thirst. Indeed, the water I give him will become in him a fount of water springing up to eternal life\" (John 4:14). Jeremiah longed to be a spring of tears for the wound. Christ is the fountain of living water that heals it - the very Meqor His people had forsaken, come in person to be drunk from again."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you left the spring for a cistern of your own making - and is it holding water, or have you found another crack?",
+      "additionalQuestions": [
+        "Jeremiah's tears were God's tears. When you imagine God looking at your wandering, do you picture anger or grief? What changes if it is grief?",
+        "Name one 'broken cistern' you keep returning to even though it never quite satisfies. Why is it easier to trust than the spring?",
+        "Christ said the water He gives 'becomes in him a fount springing up.' Where do you most need that today - not water you carry, but water that rises?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have done both evils. I have walked away from the spring, and I have dug my own cisterns and called them mine. Forgive the digging. Forgive how long I have stood over the cracks pretending they hold. Thank You that You did not only weep over the city - You came to it, and offered the living water You always were. On this quiet day I am not bringing You a cistern to fix. I am coming back to the spring. Let me drink, and let what You give rise up in me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - nothing to dig, nothing to fix. Sit for five quiet minutes with one image: the spring you left, and the One who wept and then offered Himself as the water. Bring Him the one cracked cistern you have been guarding, and simply stop carrying it. Let Him be the source today.",
+      "leavingAtCross": [
+        "The broken cistern I keep returning to, hoping this time it holds water",
+        "The labor of digging my own sources because they feel more like mine",
+        "The image of a God who only frowns at my wandering, never weeps over it"
+      ],
+      "receivingFromCross": [
+        "A fountain of living water that rises on its own and never runs dry",
+        "The truth that my drifting grieves God before it angers Him",
+        "The freedom to stop carrying water and simply drink from the One who is the spring"
+      ],
+      "content": "Today is a sabbath day - nothing to dig, nothing to fix. Sit for five quiet minutes with one image: the spring you left, and the One who wept and then offered Himself as the water. Bring Him the one cracked cistern you have been guarding, and simply stop carrying it. Let Him be the source today."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What are the 'two evils' God names through Jeremiah in 2:13, and how does the spring-and-cistern image hold both of them together?",
+        "Why does it matter that Jeremiah weeps over his message rather than simply announcing it - what does his grief reveal about God?",
+        "How does Jesus weeping over Jerusalem (Luke 19:41) and offering living water (John 4:14) complete the picture Jeremiah could only point toward?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one broken cistern you have been drinking from - a substitute you keep returning to even though it leaves you thirsty.",
+        "Talk about the difference between picturing God as angry at your wandering versus grieved by it. Which is harder for you to believe?",
+        "Ask each other: what would it look like this week to come back to the spring instead of digging another pit?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 8:21-22",
+          "text": "For the brokenness of the daughter of my people I am crushed. I mourn; horror has gripped me. Is there no balm in Gilead? Is no physician there? Why then has the health of the daughter of my people not been restored?"
+        },
+        {
+          "reference": "Jeremiah 1:5",
+          "text": "Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations."
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, \"If only you had known on this day what would bring you peace! But now it is hidden from your eyes.\""
+        },
+        {
+          "reference": "John 4:14",
+          "text": "But whoever drinks the water I give him will never thirst. Indeed, the water I give him will become in him a fount of water springing up to eternal life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 1-2 and 8-9",
+          "note": "Read the call narrative (chapter 1), the indictment of the broken cisterns (chapter 2), and the weeping oracles (chapters 8-9) together. Watch how the tears and the diagnosis belong to one another."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet of Anathoth",
+      "description": "A priest's son from Anathoth, called as a young man to prophesy in Jerusalem's final decades, roughly 627 to after 586 BC. He warned of Babylon's coming judgment for some forty years and was rejected, imprisoned, and lowered into a cistern for it. He is remembered above all for his grief: he could not announce his people's coming ruin without weeping over it, carrying in himself the sorrow of the God he spoke for.",
+      "keyQuote": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people.",
+      "lessonForUs": "Jeremiah's tears were not weakness but truth - the heart of God leaking through a human face. He longed to be a spring for the wound but could only mourn it. The One he pointed toward wept over the same city, then became the living water the people had forsaken. The weeping prophet's grief finds its answer in the weeping Savior's gift.",
+      "heading": "The Weeping Prophet of Anathoth"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2218,
+  "scriptureReference_full": "Jeremiah 9:1; 2:13 (within Jeremiah 1-29)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0).",
+    "Hebrew word study (meqor mayim chayyim H4726; bo'rot nishbarim) reflects standard lexical sources; the shaqed/shoqed wordplay in Jeremiah 1:11-12 is a widely noted feature of the call narrative."
+  ]
 }

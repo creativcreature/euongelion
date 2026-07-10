@@ -1,38 +1,183 @@
 {
   "day": 257,
-  "title": "Hosea, Joel, Amos — Day 5 — Resolution",
-  "teaser": "Day 257 of Bible 365 — Selected",
+  "title": "Come home; He will not scold you at the door",
+  "teaser": "After three prophets full of judgment, the last word God speaks to a wrecked people is not 'pay up' but 'come back' — and He gives them the very words to say.",
   "framework": "Selected — Hosea, Joel, Amos",
   "scriptureReference": "Selected",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 257"
+      "type": "scripture",
+      "reference": "Hosea 14:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "Return, O Israel",
+        "the fruit of our lips",
+        "I will heal their apostasy",
+        "I will freely love them"
+      ],
+      "hebrewOriginal": "שׁוּבָה יִשְׂרָאֵל עַד יְהוָה אֱלֹהֶיךָ",
+      "passage": "Return, O Israel, to the LORD your God, for you have stumbled by your iniquity. Bring your confessions and return to the LORD. Say to Him: \"Take away all our iniquity and receive us graciously, that we may present the fruit of our lips. Assyria will not save us, nor will we ride on horses. We will never again say, 'Our gods!' to the work of our own hands. For in You the fatherless find compassion.\" I will heal their apostasy; I will freely love them, for My anger has turned away from them."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שׁוּב",
+      "transliteration": "shuv",
+      "pronunciation": "SHOOV",
+      "meaning": "to turn back, to return, to come home",
+      "rootMeaning": "Shuv is the ordinary Hebrew word for turning around and walking back the way you came. It is the word for a traveler returning home, a borrowed object given back, a road that doubles on itself. When the prophets aim it at the heart, it becomes the great word for repentance - not a feeling of regret, but a body turning around and walking in the opposite direction.",
+      "usageNote": "Hosea 14 is built on this one word. Verse 1 opens with the command form, shuvah - 'Return!' Verse 2 repeats it: 'return to the LORD.' Verse 4 answers it with a wordplay the English cannot quite carry: God says He will heal their meshuvah - their 'turning-away,' their backsliding - which is shuv's own shadow. The people are told to turn back to the God whose anger has already turned away from them. The whole drama of three angry prophets resolves in two directions of one verb.",
+      "wordByWord": [
+        {
+          "word": "שׁוּבָה",
+          "transliteration": "shuvah",
+          "meaning": "Return! - an urgent, personal imperative, almost 'come back home'"
+        },
+        {
+          "word": "יִשְׂרָאֵל",
+          "transliteration": "Yisrael",
+          "meaning": "Israel - here the northern kingdom, wrecked and about to fall"
+        },
+        {
+          "word": "עַד",
+          "transliteration": "ad",
+          "meaning": "all the way to - not merely toward God, but the whole distance back to Him"
+        },
+        {
+          "word": "יְהוָה אֱלֹהֶיךָ",
+          "transliteration": "YHWH Eloheykha",
+          "meaning": "the LORD your God - the covenant name, and still 'your' God despite everything"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מְשׁוּבָה",
+          "reference": "Meshuvah (Hosea 14:4), 'apostasy' or 'backsliding,' is built from the same root as shuv. The sickness and the cure share a spelling: the turning-away is healed by a turning-back."
+        }
+      ],
+      "strongsNumber": "H7725",
+      "definition": "to turn back, return, restore, repent",
+      "usage": "The preposition matters: God says return ad - all the way up to - the LORD, not just ad toward the temple or the right opinions. Hosea even hands the people the exact sentence to pray (v. 2), as if to say: if you don't know how to come home, here are the words. Say these."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Prophets End the Same Way",
+      "body": "Hosea, Joel, and Amos are not gentle books. Hosea marries a woman who keeps leaving him, and the marriage becomes a living picture of how Israel treats God. Joel watches a locust swarm strip the land bare and calls it a rehearsal for the Day of the LORD. Amos, a shepherd from the south, walks north into a prosperous, religious, comfortable kingdom and tells them their worship makes God sick because their poor are being crushed. Read straight through, the three of them are mostly thunder.\n\nThen each one, near its end, does the same surprising thing. Amos closes with God promising to raise up David's fallen tent and replant a people who will never again be uprooted (Amos 9:11-15). Joel, after the locusts and the darkened sun, promises a day when God pours out His Spirit on sons and daughters, old and young, servant and free, and 'everyone who calls on the name of the LORD will be saved' (Joel 2:28-32). And Hosea, the most personally wounded of the three, gives us today's reading: 'Return, O Israel.'\n\nNotice the order. The judgment is real and it comes first. But it is not the last word in any of these books. The last word is an open door. After everything Israel has done - the idols, the injustice, the unfaithfulness Hosea felt in his own home - God's closing line is not a bill to be paid. It is an invitation to come home.",
+      "keyInsight": "Judgment is real and it speaks first, but in Hosea, Joel, and Amos it never gets the last word. The last word, every time, is 'return.'",
+      "content": "Hosea, Joel, and Amos are not gentle books. Hosea marries a woman who keeps leaving him, and the marriage becomes a living picture of how Israel treats God. Joel watches a locust swarm strip the land bare and calls it a rehearsal for the Day of the LORD. Amos, a shepherd from the south, walks north into a prosperous, religious, comfortable kingdom and tells them their worship makes God sick because their poor are being crushed. Read straight through, the three of them are mostly thunder.\n\nThen each one, near its end, does the same surprising thing. Amos closes with God promising to raise up David's fallen tent and replant a people who will never again be uprooted (Amos 9:11-15). Joel, after the locusts and the darkened sun, promises a day when God pours out His Spirit on sons and daughters, old and young, servant and free, and 'everyone who calls on the name of the LORD will be saved' (Joel 2:28-32). And Hosea, the most personally wounded of the three, gives us today's reading: 'Return, O Israel.'\n\nNotice the order. The judgment is real and it comes first. But it is not the last word in any of these books. The last word is an open door. After everything Israel has done - the idols, the injustice, the unfaithfulness Hosea felt in his own home - God's closing line is not a bill to be paid. It is an invitation to come home."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "He Wrote the Apology for Them",
+      "body": "There is a strange tenderness in verse 2 that is easy to read past. God does not only say 'return.' He says, in effect, 'Here are the words to use,' and then gives them the prayer to bring: 'Take away all our iniquity and receive us graciously, that we may present the fruit of our lips.'\n\nA woman I know once told me about the worst thing she ever did to her father - a betrayal of trust that left them not speaking for two years. When she finally drove to his house, she sat in the driveway for forty minutes because she had no idea what to say. She walked in with nothing prepared. Her father stood up, and before she could stammer out anything, he said, 'You don't have to have the speech ready. Just say you want to come home. I'll take it from there.'\n\nThat is what Hosea 14:2 is. The people are so far gone they don't even know how to apologize, so God hands them the script. He is not standing at the door with His arms crossed, waiting to see if they can grovel correctly. He is the father in the driveway story, doing the hard part for them - turning their fumbling toward a sentence He can receive, calling it 'the fruit of our lips,' an offering worth bringing.",
+      "connectionToTheme": "Returning to God is not a performance we have to get right. He supplies the very words, and meets the turn the moment it starts.",
+      "content": "There is a strange tenderness in verse 2 that is easy to read past. God does not only say 'return.' He says, in effect, 'Here are the words to use,' and then gives them the prayer to bring: 'Take away all our iniquity and receive us graciously, that we may present the fruit of our lips.'\n\nA woman I know once told me about the worst thing she ever did to her father - a betrayal of trust that left them not speaking for two years. When she finally drove to his house, she sat in the driveway for forty minutes because she had no idea what to say. She walked in with nothing prepared. Her father stood up, and before she could stammer out anything, he said, 'You don't have to have the speech ready. Just say you want to come home. I'll take it from there.'\n\nThat is what Hosea 14:2 is. The people are so far gone they don't even know how to apologize, so God hands them the script. He is not standing at the door with His arms crossed, waiting to see if they can grovel correctly. He is the father in the driveway story, doing the hard part for them - turning their fumbling toward a sentence He can receive, calling it 'the fruit of our lips,' an offering worth bringing."
+    },
+    {
+      "type": "insight",
+      "heading": "Healed of the Very Thing That Caused It",
+      "body": "Verse 4 is the line everything has been building toward: 'I will heal their apostasy; I will freely love them, for My anger has turned away from them.' Read it slowly, because it does something almost shocking.\n\nApostasy is not usually something you get healed of. It is something you get judged for. We expect God to say, 'I will punish their apostasy' or 'I will forgive their apostasy if they shape up.' Instead He treats their unfaithfulness as a sickness He intends to cure, not merely a crime He intends to pardon. The Hebrew makes it sharper: the word for their 'apostasy' (meshuvah) is built from the same root as the command 'return' (shuv). They turned away; He will heal the turning-away itself. He does not just forgive the wandering - He fixes the wanderer.\n\nAnd then the word 'freely.' In Hebrew it is the language of a freewill offering - love given with no obligation behind it, no debt being settled, nothing extracted. God does not love them because their repentance earned it. He loves them, the text says, freely, the way a gift is free. The judgment was deserved. The healing is not. That gap, between what they earned and what they receive, is the whole gospel in one verse, eight centuries before the cross.",
+      "historicalContext": "Hosea prophesied to the northern kingdom of Israel in its final decades, roughly the 750s-720s BC, before Assyria destroyed Samaria in 722 BC. Verse 3 names the two things Israel had trusted instead of God - Assyria's protection and Egypt's war-horses - and the idols their own hands had made. The promise of healing is spoken to a people who, historically, were about to lose everything. The exile came. So did the promise.",
+      "fascinatingFact": "Hosea 14:2 says 'that we may present the fruit of our lips.' The Septuagint, the ancient Greek Old Testament, rendered the line as 'the fruit of our lips,' and Hebrews 13:15 picks up exactly that phrase to describe Christian praise: 'a sacrifice of praise, the fruit of lips that confess His name.' The words a wrecked people were handed to find their way home became the New Testament's name for worship.",
+      "content": "Verse 4 is the line everything has been building toward: 'I will heal their apostasy; I will freely love them, for My anger has turned away from them.' Read it slowly, because it does something almost shocking.\n\nApostasy is not usually something you get healed of. It is something you get judged for. We expect God to say, 'I will punish their apostasy' or 'I will forgive their apostasy if they shape up.' Instead He treats their unfaithfulness as a sickness He intends to cure, not merely a crime He intends to pardon. The Hebrew makes it sharper: the word for their 'apostasy' (meshuvah) is built from the same root as the command 'return' (shuv). They turned away; He will heal the turning-away itself. He does not just forgive the wandering - He fixes the wanderer.\n\nAnd then the word 'freely.' In Hebrew it is the language of a freewill offering - love given with no obligation behind it, no debt being settled, nothing extracted. God does not love them because their repentance earned it. He loves them, the text says, freely, the way a gift is free. The judgment was deserved. The healing is not. That gap, between what they earned and what they receive, is the whole gospel in one verse, eight centuries before the cross."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "After Hosea, Joel, and Amos thunder out everything Israel has done wrong, God's closing word is not a sentence but a summons home: 'Return... I will heal their apostasy; I will freely love them.'",
+      "modernApplication": "Most of us assume that coming back to God after a long drift requires a fixed life first - habits cleaned up, motives sorted out, the right speech rehearsed. Hosea 14 reverses it. The healing is not the prize at the end of the return; it is what God does the moment the turning begins. You do not have to be well to come home. Coming home is how you get well.",
+      "connectionPoint": "The healing-of-the-turning that Hosea promised needed a place to happen. Hosea 6:2 had already hinted at the shape of it: 'After two days He will revive us; on the third day He will raise us up.' The freewill love of Hosea 14:4 - love that pays a debt no one else can - finds its body in Jesus, who on the third day is raised so that the wanderers can be raised with Him.",
+      "newTestamentEcho": "When the Spirit fell at Pentecost, Peter stood up and quoted Joel word for word: 'I will pour out My Spirit on all people... everyone who calls on the name of the LORD will be saved' (Acts 2:17-21). The closing hope of these three prophets was not a vague wish. It was a dated promise that arrived in Jerusalem the morning the Church was born."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been sitting in the driveway - close enough to come home, but stalled because you don't know what to say or whether you'll be welcome?",
+      "additionalQuestions": [
+        "Hosea 14 says God will heal the apostasy itself, not just forgive it. What pattern of turning-away in your life do you need healed, not merely pardoned?",
+        "Verse 3 names what Israel trusted instead of God: foreign alliances, war-horses, and idols their own hands made. What 'work of your own hands' have you been calling 'my god'?",
+        "If God has handed you the words (v. 2), what is the one honest sentence you could actually pray today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD my God, I have stumbled by my own iniquity, and I am tired of pretending otherwise. I bring You the only words I have: take away all my iniquity and receive me graciously. I have trusted things my own hands made and called them safety. I am done saying 'my gods' to the work of my hands. Heal the turning-away in me - not just the deeds, but the drift underneath them. Thank You that You love freely, that I do not have to earn my way back to the door. In the name of Jesus, who is the third-day healing of every wanderer. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, pray verse 2 out loud, slowly, as your own: 'Take away all my iniquity and receive me graciously.' Then name one 'work of your own hands' you have been trusting instead of God, and tell Him, plainly, that you are turning from it.",
+      "leavingAtCross": [
+        "The belief that I have to fix myself before I am allowed to come home",
+        "The 'work of my own hands' I have quietly trusted to keep me safe",
+        "The dread that God meets a returning wanderer with crossed arms and a list"
+      ],
+      "receivingFromCross": [
+        "A God who heals the turning-away itself, not only its symptoms",
+        "Love given freely - the way a gift is free, not the way a wage is earned",
+        "The words to pray, handed to me by the One I am praying to"
+      ],
+      "content": "Today, pray verse 2 out loud, slowly, as your own: 'Take away all my iniquity and receive me graciously.' Then name one 'work of your own hands' you have been trusting instead of God, and tell Him, plainly, that you are turning from it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Hosea, Joel, and Amos are mostly books of judgment, yet each ends with hope. What does the order - judgment first, invitation last - tell you about how God deals with His people?",
+        "In Hosea 14:4, God says He will 'heal' their apostasy rather than only punish or forgive it. Why does treating sin as a sickness to be cured change the way you hear the promise?",
+        "How does the phrase 'I will freely love them' relate to what the people actually deserved at the end of these three prophets?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a 'driveway' moment - a time you knew you needed to return to God or to a person, but stalled. What finally got you out of the car?",
+        "Hosea 14:2 has God supplying the words to pray. Pray verse 2 aloud for one another this week.",
+        "Name one 'work of your own hands' each of you has trusted instead of God, and ask the other to check in on it next time you meet."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:1-2",
+          "text": "Come, let us return to the LORD. For He has torn us to pieces, but He will heal us; He has wounded us, but He will bind up our wounds. After two days He will revive us; on the third day He will raise us up, that we may live in His presence."
+        },
+        {
+          "reference": "Joel 2:32",
+          "text": "And everyone who calls on the name of the LORD will be saved; for on Mount Zion and in Jerusalem there will be deliverance, as the LORD has promised, among the remnant called by the LORD."
+        },
+        {
+          "reference": "Amos 9:11",
+          "text": "In that day I will restore the fallen tent of David. I will repair its gaps, restore its ruins, and rebuild it as in the days of old."
+        },
+        {
+          "reference": "Hebrews 13:15",
+          "text": "Through Jesus, therefore, let us continually offer to God a sacrifice of praise, the fruit of lips that confess His name."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hosea 14",
+          "note": "Read the whole closing chapter slowly. Watch the movement from the command to return (vv. 1-2), to the renouncing of false trusts (v. 3), to God's promise to heal and freely love (v. 4), to the imagery of dew, lily, cedar, and vine (vv. 5-7) - a wrecked people described as a flourishing garden."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hosea",
+      "title": "The Prophet Who Lived His Message",
+      "description": "Hosea son of Beeri prophesied to the northern kingdom of Israel in its last decades, around 750-720 BC. At God's command he married Gomer, a woman who repeatedly proved unfaithful, so that his own grieving, forgiving, pursuing love became a living parable of how God loves an unfaithful people. No prophet's message cost him more privately. And no prophet ends more tenderly: the book that opens with a broken marriage closes with 'I will heal their apostasy; I will freely love them.'",
+      "keyQuote": "Return, O Israel, to the LORD your God, for you have stumbled by your iniquity.",
+      "lessonForUs": "Hosea knew from his own home that real love keeps the door open after it has every right to close it. The God who told him to keep loving Gomer is the God still calling wanderers home - and He supplies the very words we are too ashamed to find on our own.",
+      "heading": "The Prophet Who Lived His Message"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2085,
+  "scriptureReference_full": "Hosea 14:1-4 (with Joel 2:28-32; Amos 9:11-15)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shuv H7725; meshuvah from the same root) reflects standard lexical sources. The wordplay between meshuvah ('apostasy/backsliding') and shuv ('return') in Hosea 14 is widely noted in commentary on the chapter.",
+    "The 'fruit of our lips' (Hosea 14:2) / 'fruit of lips' connection to Hebrews 13:15 follows the Septuagint reading of the Hebrew text."
+  ]
 }

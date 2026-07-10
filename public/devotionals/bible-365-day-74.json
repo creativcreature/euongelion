@@ -6,33 +6,187 @@
   "scriptureReference": "Judges 13-16",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 74"
+      "type": "scripture",
+      "reference": "Judges 13:24-25; 16:20",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD blessed him",
+        "the Spirit of the LORD began to stir him",
+        "he did not know that the LORD had departed from him"
+      ],
+      "hebrewOriginal": "וְהוּא לֹא יָדַע כִּי יְהוָה סָר מֵעָלָיו",
+      "passage": "So the woman gave birth to a son and named him Samson. The boy grew, and the LORD blessed him. And the Spirit of the LORD began to stir him at Mahaneh-dan, between Zorah and Eshtaol. ... Then she called out, \"Samson, the Philistines are here!\" When Samson awoke from his sleep, he thought, \"I will escape as I did before and shake myself free.\" But he did not know that the LORD had departed from him."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Judges 13-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Judges 13-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נָזִיר",
+      "transliteration": "nazir",
+      "pronunciation": "nah-ZEER",
+      "meaning": "one set apart, consecrated, dedicated to God",
+      "rootMeaning": "From the root nazar, to separate or dedicate. A nazir is not merely abstaining; he is fenced off for a holy purpose, marked out as belonging to God before he can do anything to earn it.",
+      "usageNote": "The angel calls the unborn boy a Nazirite to God from the womb until the day of his death (Judges 13:7). Samson never chose the vow; it was laid on him before he drew breath. Of the three Nazirite signs in Numbers 6 - no wine, no contact with the dead, no razor on the head - Samson breaks all three across his life, yet the gift keeps coming anyway. The uncut hair is the last sign left, and even it is finally surrendered on Delilah's lap.",
+      "wordByWord": [
+        {
+          "word": "וְהוּא",
+          "transliteration": "vehu",
+          "meaning": "and he, and as for him"
+        },
+        {
+          "word": "לֹא יָדַע",
+          "transliteration": "lo yada",
+          "meaning": "did not know, was unaware"
+        },
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "that, because"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD, the covenant name of God"
+        },
+        {
+          "word": "סָר מֵעָלָיו",
+          "transliteration": "sar me'alav",
+          "meaning": "had turned aside from him, had departed from upon him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רוּחַ יְהוָה",
+          "reference": "Ruach YHWH, the Spirit of the LORD - the phrase that rushes onto Samson again and again (Judges 14:6, 14:19, 15:14). His strength was never in the hair itself; the hair was only the sign that the Spirit-given vow still held. When the sign was cut, the Giver withdrew."
+        }
+      ],
+      "strongsNumber": "H5139",
+      "definition": "a Nazirite; one consecrated or separated by vow to the service of God",
+      "usage": "The tragedy of Samson is a tragedy of a nazir who treats his consecration as a private muscle rather than a sacred trust. Set apart from the womb, he lived as though the setting-apart were his to spend."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Gift abused. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the obedient Son (Heb 5:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Gift He Never Earned and Never Guarded",
+      "body": "The book of Judges keeps repeating one weary sentence, and Samson's story opens with it again: \"Again the Israelites did evil in the sight of the LORD, so He delivered them into the hand of the Philistines for forty years\" (Judges 13:1). Into that long defeat, God sends a deliverer the way He always does in Judges - unasked, undeserved, by sheer grace.\n\nBut Samson is unlike any judge before him. Othniel, Deborah, Gideon - they were called as adults. Samson is set apart before he is even conceived. An angel comes to a barren woman and tells her she will bear a son who is to be a Nazirite to God from the womb (Judges 13:5). Strength, calling, consecration - all of it is poured into him before he has done a single thing. He is, from the first, a walking gift.\n\nAnd he treats the gift like a toy. He uses his strength to win bets, settle insults, and chase women among the very people he was raised up to fight. The Spirit of the LORD rushes on him to tear a lion apart with his bare hands (Judges 14:6) - and the next thing he does is keep it a secret and scoop honey out of the carcass, touching the dead, breaking his vow without a flicker of concern. The pattern of the whole life is set: enormous power, no reverence; a holy gift, handled carelessly.",
+      "keyInsight": "Samson's strength was never his achievement. It was a consecration laid on him before birth - and a gift held without reverence is a gift already half-lost.",
+      "content": "The book of Judges keeps repeating one weary sentence, and Samson's story opens with it again: \"Again the Israelites did evil in the sight of the LORD, so He delivered them into the hand of the Philistines for forty years\" (Judges 13:1). Into that long defeat, God sends a deliverer the way He always does in Judges - unasked, undeserved, by sheer grace.\n\nBut Samson is unlike any judge before him. Othniel, Deborah, Gideon - they were called as adults. Samson is set apart before he is even conceived. An angel comes to a barren woman and tells her she will bear a son who is to be a Nazirite to God from the womb (Judges 13:5). Strength, calling, consecration - all of it is poured into him before he has done a single thing. He is, from the first, a walking gift.\n\nAnd he treats the gift like a toy. He uses his strength to win bets, settle insults, and chase women among the very people he was raised up to fight. The Spirit of the LORD rushes on him to tear a lion apart with his bare hands (Judges 14:6) - and the next thing he does is keep it a secret and scoop honey out of the carcass, touching the dead, breaking his vow without a flicker of concern. The pattern of the whole life is set: enormous power, no reverence; a holy gift, handled carelessly."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Slow Theft on Delilah's Lap",
+      "body": "Notice how the strength actually leaves him. It is not torn away in a fight. It is talked out of him, slowly, by a woman paid to keep asking. Three times Delilah begs for the secret, three times Samson lies, and three times he wakes to find she has already tried to hand him over. He knows. He sees the trap spring, again and again. And he stays.\n\n\"How can you say, 'I love you,'\" she presses, \"when your heart is not with me? This is the third time you have mocked me\" (Judges 16:15). The text says she pressed him daily with her words until he was \"sick to death\" of it (Judges 16:16). So at last, worn down, he tells her everything: the vow, the hair, the whole secret of a life that was never his to give away (Judges 16:17).\n\nThen comes the most quietly devastating verse in the chapter. The razor does its work while he sleeps, and \"when Samson awoke from his sleep, he thought, 'I will escape as I did before and shake myself free.' But he did not know that the LORD had departed from him\" (Judges 16:20). He reaches for the old strength out of habit - and grasps nothing. The terrible thing is not that the power was taken. It is that he had stopped noticing whose power it was, until the moment it was gone.",
+      "connectionToTheme": "Strength rarely vanishes in a single dramatic blow. It leaks out through small compromises kept long enough that we no longer feel them - until we reach for God's gift and find we are alone.",
+      "content": "Notice how the strength actually leaves him. It is not torn away in a fight. It is talked out of him, slowly, by a woman paid to keep asking. Three times Delilah begs for the secret, three times Samson lies, and three times he wakes to find she has already tried to hand him over. He knows. He sees the trap spring, again and again. And he stays.\n\n\"How can you say, 'I love you,'\" she presses, \"when your heart is not with me? This is the third time you have mocked me\" (Judges 16:15). The text says she pressed him daily with her words until he was \"sick to death\" of it (Judges 16:16). So at last, worn down, he tells her everything: the vow, the hair, the whole secret of a life that was never his to give away (Judges 16:17).\n\nThen comes the most quietly devastating verse in the chapter. The razor does its work while he sleeps, and \"when Samson awoke from his sleep, he thought, 'I will escape as I did before and shake myself free.' But he did not know that the LORD had departed from him\" (Judges 16:20). He reaches for the old strength out of habit - and grasps nothing. The terrible thing is not that the power was taken. It is that he had stopped noticing whose power it was, until the moment it was gone."
+    },
+    {
+      "type": "insight",
+      "heading": "Blind, Bound, and Grinding - Then Grace Again",
+      "body": "What the Philistines do to the captured Samson reads like a parable of what sin does to the gifted. They \"seized him, gouged out his eyes, and brought him down to Gaza, where he was bound with bronze shackles and forced to grind grain in the prison\" (Judges 16:21). The man who would not control his eyes loses them. The man who would not be bound to his vow is bound in bronze. The man who used his strength for sport now turns a grinding wheel like an animal.\n\nAnd then, almost in passing, the narrator drops a single line that holds the whole gospel of the chapter: \"However, the hair of his head began to grow back after it had been shaved\" (Judges 16:22). It is not a note about hair. It is a note about God. The covenant was broken from Samson's side, not God's. The same grace that set him apart in the womb does not abandon him at the millstone. While Samson grinds in the dark, unable to see, the sign of his consecration is quietly returning - because God has not finished with him.\n\nThe deepest reading of Samson is not \"don't waste your gifts,\" true as that is. It is that the God who gives is more faithful than the man who squanders. Grace gets the first word, in an angel's announcement to a barren woman, and grace gets the last word, in hair that grows back in a prison cell.",
+      "historicalContext": "The Philistines were a sea-faring people who settled the southern coastal plain of Canaan around the twelfth century BC, organized in a league of five cities including Gaza, where Samson was imprisoned. Their iron weaponry and military discipline made them Israel's most dangerous oppressor through the period of the judges and into the reigns of Saul and David. Samson's lifelong, lone-wolf war against them is the opening skirmish in a struggle Scripture will not resolve until David faces their champion, Goliath.",
+      "fascinatingFact": "Hebrews 11:32 names Samson in the great roll call of faith, alongside Gideon, Barak, Jephthah, David, and Samuel. The man whose life looks like a catalogue of failures is remembered not for his wreckage but for the one thing he finally got right - at the very end, when he had nothing left, he turned and called on the LORD.",
+      "content": "What the Philistines do to the captured Samson reads like a parable of what sin does to the gifted. They \"seized him, gouged out his eyes, and brought him down to Gaza, where he was bound with bronze shackles and forced to grind grain in the prison\" (Judges 16:21). The man who would not control his eyes loses them. The man who would not be bound to his vow is bound in bronze. The man who used his strength for sport now turns a grinding wheel like an animal.\n\nAnd then, almost in passing, the narrator drops a single line that holds the whole gospel of the chapter: \"However, the hair of his head began to grow back after it had been shaved\" (Judges 16:22). It is not a note about hair. It is a note about God. The covenant was broken from Samson's side, not God's. The same grace that set him apart in the womb does not abandon him at the millstone. While Samson grinds in the dark, unable to see, the sign of his consecration is quietly returning - because God has not finished with him.\n\nThe deepest reading of Samson is not \"don't waste your gifts,\" true as that is. It is that the God who gives is more faithful than the man who squanders. Grace gets the first word, in an angel's announcement to a barren woman, and grace gets the last word, in hair that grows back in a prison cell."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Samson was a deliverer announced by an angel to a barren woman, set apart from the womb, filled with the Spirit's power - who squandered it all, was bound and blinded by his enemies, and yet in his death \"killed more than he had killed in his life\" (Judges 16:30).",
+      "modernApplication": "Most of us are not given Samson's strength, but every one of us is given something - a gift, a calling, a stretch of years - that we did not earn and cannot keep by gripping it tightly. The question Samson presses on us is not \"how strong are you?\" but \"do you remember Whose strength it is, before the day you reach for it and find it gone?\"",
+      "connectionPoint": "Samson's story is told in shadows that only make full sense in a brighter light. An angel announces an unlikely birth: \"you will conceive and give birth to a son\" (Judges 13:3) - the very words Gabriel will later speak to Mary, \"you will conceive and give birth to a son\" (Luke 1:31). A man laid down in apparent defeat becomes, in his death, the deliverer of his people. Samson is the broken sketch; Christ is the finished portrait.",
+      "newTestamentEcho": "Where Samson's greatest victory came through a death he prayed for in revenge - \"Let me die with the Philistines\" (Judges 16:30) - Christ's greatest victory comes through a death He chose in love: \"No one takes it from Me, but I lay it down of My own accord. I have authority to lay it down and authority to take it up again\" (John 10:18). Samson pulled a temple down on his enemies; Jesus let Himself be lifted up to draw His enemies into mercy."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What gift, strength, or calling have you been handling as though it were yours to spend rather than God's to steward?",
+      "additionalQuestions": [
+        "Where in your life is strength leaking out slowly - through a compromise kept so long you no longer feel it - the way Samson's secret was talked out of him by daily pressure?",
+        "Samson 'did not know that the LORD had departed from him.' Is there an area where you are still reaching for an old strength out of habit, without checking whether you are walking with God in it?",
+        "The hair began to grow back in the prison. Where do you most need to believe that God is not finished with you, even now, even here?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, everything I am was given before I could earn it - my breath, my gifts, the years I'm spending. Forgive me for the times I have handled holy things carelessly, treating Your strength as my toy and Your calling as my property. Where strength has leaked out of me through small compromises, stop the bleeding. Where I have reached for power on my own and found nothing, draw me back. And where I sit blind and bound by what I've squandered, let me feel the hair growing back - the quiet sign that You have not departed and are not finished. Remember me, O God, just as You did Samson, and let my life's last word be Yours. Through Christ, who laid His life down of His own accord. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one gift or strength you have been treating as your own. Today, hand it back in prayer before you use it - even out loud - and ask God to be its source again. Then watch for one small place where, like hair in a prison cell, His grace is quietly growing back what you thought was lost.",
+      "leavingAtCross": [
+        "The pride that treats my gifts as my achievement instead of a trust I was given before I could earn it",
+        "The slow compromises I keep long enough that I no longer feel them costing me",
+        "The habit of reaching for strength on my own, without first asking whose strength it is"
+      ],
+      "receivingFromCross": [
+        "The freedom of knowing my calling was grace from the womb, not a wage I have to keep paying",
+        "The promise that a broken covenant from my side does not break God's faithfulness from His",
+        "The hope that the God who gave the first word is not finished giving the last"
+      ],
+      "content": "Name one gift or strength you have been treating as your own. Today, hand it back in prayer before you use it - even out loud - and ask God to be its source again. Then watch for one small place where, like hair in a prison cell, His grace is quietly growing back what you thought was lost."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Samson never chose to be a Nazirite - the vow was laid on him from the womb (Judges 13:7). How does that change the way you read his failures, and your own?",
+        "Why is Judges 16:20 - 'he did not know that the LORD had departed from him' - more frightening than the moment his hair is cut?",
+        "What is the narrator telling us about God, not just about Samson, in the single line, 'the hair of his head began to grow back' (Judges 16:22)?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one strength or gift you suspect you've been spending as if it were yours rather than stewarding as God's.",
+        "Talk about a place where compromise has crept in slowly - the daily pressure that wears a person down, the way Delilah wore down Samson.",
+        "Ask each other: where do you most need to hear that God has not departed and is not finished with you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Judges 13:3",
+          "text": "The angel of the LORD appeared to the woman and said to her, \"It is true that you are barren and have no children; but you will conceive and give birth to a son."
+        },
+        {
+          "reference": "Judges 16:28",
+          "text": "Then Samson called out to the LORD: \"O Lord GOD, please remember me. Strengthen me, O God, just once more, so that with one vengeful blow I may pay back the Philistines for my two eyes.\""
+        },
+        {
+          "reference": "Hebrews 11:32",
+          "text": "And what more shall I say? Time will not allow me to tell of Gideon, Barak, Samson, Jephthah, David, Samuel, and the prophets ..."
+        },
+        {
+          "reference": "John 10:18",
+          "text": "No one takes it from Me, but I lay it down of My own accord. I have authority to lay it down and authority to take it up again. This charge I have received from My Father."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Judges 13-16",
+          "note": "Read the whole Samson cycle in one sitting, watching the rhythm: grace given freely (ch. 13), gift handled carelessly (ch. 14-15), strength slowly stolen (ch. 16:1-21), and grace returning in the dark (16:22-31)."
+        },
+        {
+          "type": "book",
+          "title": "Numbers 6:1-21",
+          "note": "The law of the Nazirite vow - the three signs of wine, the dead, and the razor - so you can see exactly which boundaries Samson crossed, and how completely."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Samson",
+      "title": "The Spirit-Filled Judge Who Squandered His Strength",
+      "description": "The last of the great judges of Israel, born to a barren woman in the tribe of Dan after an angelic announcement, and set apart as a Nazirite from the womb. The Spirit of the LORD came powerfully upon him to begin Israel's deliverance from the Philistines, but he spent his strength on appetite and vengeance, broke his consecration sign by sign, and was finally betrayed, blinded, and enslaved. Yet God's grace returned: his hair grew back, and at the end he turned to the LORD one last time.",
+      "keyQuote": "Then Samson called out to the LORD: \"O Lord GOD, please remember me. Strengthen me, O God, just once more.\"",
+      "lessonForUs": "Samson is the warning and the hope in one life. The warning: a gift held without reverence is a gift already half-lost. The hope: the God who set him apart before he was born did not depart for good when he failed - which means He is not finished with us either.",
+      "heading": "The Spirit-Filled Judge Who Squandered His Strength"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2437,
+  "scriptureReference_full": "Judges 13-16",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (nazir H5139, nazar; ruach YHWH) reflects standard lexical sources; the three signs of the Nazirite vow follow Numbers 6:1-21.",
+    "Annunciation parallel between Judges 13:3 and Luke 1:31 is observed in classical and modern typological readings of the Samson narrative."
+  ]
 }

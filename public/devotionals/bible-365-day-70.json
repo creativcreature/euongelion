@@ -1,38 +1,181 @@
 {
   "day": 70,
   "title": "Rest in the inheritance",
-  "teaser": "Day 70 of Bible 365 — Sabbath",
+  "teaser": "Israel finally lays its head down in the land. Not one promise had failed. But the rest of a settled people still waited for a greater Joshua.",
   "framework": "Sabbath — Sabbath: enter the promise",
-  "scriptureReference": "Sabbath",
+  "scriptureReference": "Joshua 21:43-45",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 70"
+      "type": "scripture",
+      "reference": "Joshua 21:43-45",
+      "translation": "BSB",
+      "emphasis": [
+        "gave Israel all the land",
+        "gave them rest on every side",
+        "Not one of all the LORD’s good promises… had failed"
+      ],
+      "hebrewOriginal": "וַיָּנַח יְהוָה לָהֶם מִסָּבִיב",
+      "passage": "Thus the LORD gave Israel all the land He had sworn to give their fathers, and they took possession of it and settled in it. And the LORD gave them rest on every side, just as He had sworn to their fathers. None of their enemies could stand against them, for the LORD delivered all their enemies into their hand. Not one of all the LORD’s good promises to the house of Israel had failed; everything was fulfilled."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיָּנַח",
+      "transliteration": "vayyanach",
+      "pronunciation": "vai-yah-NAKH",
+      "meaning": "and He gave rest, He set them down, He let them settle",
+      "rootMeaning": "From the root nuach — to rest, to settle, to come to a place and stay. It is the same verb behind Noah's name and behind the ark that finally comes to rest on the mountains of Ararat. Rest here is not a nap; it is the end of wandering, the moment the foot stops moving and the tent becomes a home.",
+      "usageNote": "Joshua 21:44 says vayyanach lahem — \"and He gave them rest.\" The rest Israel receives is not earned by the conquest; it is given, the gift of the One who swore the land to their fathers. The whole long march out of Egypt, through forty years of desert, across the Jordan, into battle after battle, ends with God Himself setting the people down.",
+      "wordByWord": [
+        {
+          "word": "וַיָּנַח",
+          "transliteration": "vayyanach",
+          "meaning": "and He gave rest, He caused to settle"
+        },
+        {
+          "word": "לָהֶם",
+          "transliteration": "lahem",
+          "meaning": "to them — the rest is something done for the people, not by them"
+        },
+        {
+          "word": "מִסָּבִיב",
+          "transliteration": "missaviv",
+          "meaning": "on every side, all around — no border left exposed"
+        },
+        {
+          "word": "נַחֲלָה",
+          "transliteration": "nachalah",
+          "meaning": "inheritance, allotted portion — land received as a gift, not seized as plunder"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מְנוּחָה / nuach",
+          "reference": "Menuchah, the noun for settled rest, grows from the same root nuach. Psalm 95 uses this rest-language for the place Israel was barred from in the wilderness — \"They shall never enter My rest\" — the very verse Hebrews picks up to say a greater rest still waits."
+        }
+      ],
+      "strongsNumber": "H5117",
+      "definition": "to rest, settle down, remain; to give rest, cause to settle",
+      "usage": "The verb is causative and tender: God does not merely permit Israel to rest, He gives the rest, the way one lays a tired child down and the child does not have to hold itself up anymore."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: enter the promise. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our inheritance (Eph 1:11).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Day the Wandering Stopped",
+      "body": "For most of the Bible up to this point, Israel is a people in motion. They leave Egypt walking. They cross the sea walking. They wander the wilderness for forty years, and the entire generation that left Egypt dies still walking, never settling. Then a new generation crosses the Jordan, takes Jericho, fights its way through the land. And here, at the end of Joshua 21, the motion finally stops.\n\nThree short verses carry the weight of the whole exodus. \"Thus the LORD gave Israel all the land He had sworn to give their fathers, and they took possession of it and settled in it.\" Settled. The tents that had been folded and carried for a generation are pitched and left standing. \"And the LORD gave them rest on every side\" — not rest from one enemy, but rest all around, every border quiet at once.\n\nNotice who does the giving. The verse does not say Israel won the land or seized its rest. It says the LORD gave the land, the LORD gave the rest, just as He had sworn. The conquest was real and costly, but Scripture refuses to let Israel read its own strength as the cause. What they hold, they hold because God promised it, and God keeps what He promises.\n\nThen comes the line the whole week has been walking toward: \"Not one of all the LORD's good promises to the house of Israel had failed; everything was fulfilled.\" Every word God spoke to Abraham about this land, every assurance He gave Moses, every charge He laid on Joshua — all of it landed. Nothing was left hanging. For a people who had every reason to wonder whether God would actually come through, the bookkeeping is closed and the ledger reads: kept, kept, kept.",
+      "keyInsight": "The rest Israel finally enjoys is not a thing they achieved but a thing they received. God gave the land, gave the rest, and let not one of His promises fall to the ground.",
+      "content": "For most of the Bible up to this point, Israel is a people in motion. They leave Egypt walking. They cross the sea walking. They wander the wilderness for forty years, and the entire generation that left Egypt dies still walking, never settling. Then a new generation crosses the Jordan, takes Jericho, fights its way through the land. And here, at the end of Joshua 21, the motion finally stops.\n\nThree short verses carry the weight of the whole exodus. \"Thus the LORD gave Israel all the land He had sworn to give their fathers, and they took possession of it and settled in it.\" Settled. The tents that had been folded and carried for a generation are pitched and left standing. \"And the LORD gave them rest on every side\" — not rest from one enemy, but rest all around, every border quiet at once.\n\nNotice who does the giving. The verse does not say Israel won the land or seized its rest. It says the LORD gave the land, the LORD gave the rest, just as He had sworn. The conquest was real and costly, but Scripture refuses to let Israel read its own strength as the cause. What they hold, they hold because God promised it, and God keeps what He promises.\n\nThen comes the line the whole week has been walking toward: \"Not one of all the LORD's good promises to the house of Israel had failed; everything was fulfilled.\" Every word God spoke to Abraham about this land, every assurance He gave Moses, every charge He laid on Joshua — all of it landed. Nothing was left hanging. For a people who had every reason to wonder whether God would actually come through, the bookkeeping is closed and the ledger reads: kept, kept, kept."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Box of Receipts",
+      "body": "A friend of mine kept a shoebox in his closet for years. Inside were the receipts and pay-off letters from the debts he had cleared one by one — the car he had finally owned outright, the loan that had hung over his twenties, the hospital bill that took three years to settle. He did not need the papers for anything. He kept them, he told me, for the nights when the old fear came back, the fear that he would never get out from under, that the numbers would always be bigger than he was.\n\nOn those nights he would open the box. Not to gloat. To remember. Paid. Paid. Paid. Each receipt was proof that the thing he had once lain awake dreading had actually been settled, and the worry he was feeling now was a ghost, not a fact.\n\nJoshua 21:45 is Israel's shoebox. \"Not one of all the LORD's good promises had failed.\" It is written down so the people can come back to it when the fear returns — when a new enemy appears, when a hard season comes, when it feels again like God might not come through. The verse is a receipt. It says: look at what He already did. He kept every word. The next promise rests on the back of a hundred kept ones.",
+      "connectionToTheme": "Israel's settled rest is grounded in a remembered record of kept promises — rest is what becomes possible once you can finally trust that the One who swore has paid in full.",
+      "content": "A friend of mine kept a shoebox in his closet for years. Inside were the receipts and pay-off letters from the debts he had cleared one by one — the car he had finally owned outright, the loan that had hung over his twenties, the hospital bill that took three years to settle. He did not need the papers for anything. He kept them, he told me, for the nights when the old fear came back, the fear that he would never get out from under, that the numbers would always be bigger than he was.\n\nOn those nights he would open the box. Not to gloat. To remember. Paid. Paid. Paid. Each receipt was proof that the thing he had once lain awake dreading had actually been settled, and the worry he was feeling now was a ghost, not a fact.\n\nJoshua 21:45 is Israel's shoebox. \"Not one of all the LORD's good promises had failed.\" It is written down so the people can come back to it when the fear returns — when a new enemy appears, when a hard season comes, when it feels again like God might not come through. The verse is a receipt. It says: look at what He already did. He kept every word. The next promise rests on the back of a hundred kept ones."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Joshuas, One Rest",
+      "body": "Read this passage with the book of Hebrews open beside it and the floor of the chapter drops away. The writer to the Hebrews looks straight at the rest of Joshua 21 and says something startling: \"For if Joshua had given them rest, God would not have spoken later about another day. There remains, then, a Sabbath rest for the people of God\" (Hebrews 4:8-9).\n\nThink about what that means. Israel really did settle. God really did give them rest on every side. Not one promise failed — the text could not be clearer. And yet Hebrews insists the rest of Joshua was not the last word, because long after Joshua, in Psalm 95, God was still warning a settled people about entering \"My rest.\" If the land had been the final rest, why was God still inviting people into it generations later?\n\nThe land-rest was real, and it was a picture of something larger it could not contain. Israel rested from enemies, but not from death, not from sin, not from the restless human heart. The borders were quiet; the soul was not. The first Joshua led the people into the land. He could not lead them into the deeper rest the land only sketched.\n\nHere is the detail that opens everything: in Greek, the name Joshua and the name Jesus are the same word — Ieesous. Hebrews is not making a pun for its own sake. It is saying the first Joshua's gift was a true gift and a smaller one, and the people of God were always meant to wait for another bearing the same name, who would give the rest the land only foreshadowed.",
+      "historicalContext": "Joshua closes the era of conquest and opens the era of settlement. By the time Hebrews was written, in the first century, the land had been lost and regained more than once — exile, return, and now Roman occupation. A Jewish-Christian readership knew from hard history that the rest of Joshua 21 had not held. Hebrews reads that very instability as evidence: the land was never meant to be the resting place, only the down payment on it.",
+      "fascinatingFact": "Joshua 23:14, spoken by Joshua near the end of his life, repeats the bookkeeping of 21:45 almost word for word: \"not one of the good promises the LORD your God made to you has failed.\" Scripture states it twice on purpose. The kept-promise refrain is the spine the whole rest of the Old Testament hangs on — and the ground on which the New Testament dares to announce a final, unbreakable rest.",
+      "content": "Read this passage with the book of Hebrews open beside it and the floor of the chapter drops away. The writer to the Hebrews looks straight at the rest of Joshua 21 and says something startling: \"For if Joshua had given them rest, God would not have spoken later about another day. There remains, then, a Sabbath rest for the people of God\" (Hebrews 4:8-9).\n\nThink about what that means. Israel really did settle. God really did give them rest on every side. Not one promise failed — the text could not be clearer. And yet Hebrews insists the rest of Joshua was not the last word, because long after Joshua, in Psalm 95, God was still warning a settled people about entering \"My rest.\" If the land had been the final rest, why was God still inviting people into it generations later?\n\nThe land-rest was real, and it was a picture of something larger it could not contain. Israel rested from enemies, but not from death, not from sin, not from the restless human heart. The borders were quiet; the soul was not. The first Joshua led the people into the land. He could not lead them into the deeper rest the land only sketched.\n\nHere is the detail that opens everything: in Greek, the name Joshua and the name Jesus are the same word — Ieesous. Hebrews is not making a pun for its own sake. It is saying the first Joshua's gift was a true gift and a smaller one, and the people of God were always meant to wait for another bearing the same name, who would give the rest the land only foreshadowed."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The LORD gave Israel the land as an inheritance and gave them rest on every side, and not one of His good promises failed.",
+      "modernApplication": "Most of us are still wandering — not across a desert, but across a calendar. We chase the next milestone as if arrival there will finally let us put the tent down: the title, the house, the cleared inbox, the fixed relationship. We are looking for rest in a piece of ground. Joshua 21 says the rest is real, and that even the best ground cannot hold it. The settling we ache for is finally a Person, not a place.",
+      "connectionPoint": "The thread runs straight through Scripture. God promised Abraham a land and an inheritance (Genesis 15). He gave Israel rest in that land under Joshua (Joshua 21:44). He warned a settled people that a deeper rest still stood open (Psalm 95:11). Hebrews announced that the rest Joshua could not finish remains open in Christ (Hebrews 4:9). And Paul names what the inheritance finally is: not acreage but God's own people sealed by the Spirit, \"the pledge of our inheritance until the redemption of those who are God's possession\" (Ephesians 1:14). The land was the first installment; Christ is the inheritance itself.",
+      "newTestamentEcho": "Jesus says plainly what the land could only picture: \"Come to Me, all you who are weary and burdened, and I will give you rest\" (Matthew 11:28). The greater Joshua does not hand His people a border to defend. He gives them Himself — \"In Him we were also chosen as God's own\" (Ephesians 1:11) — and in Him the wandering finally ends."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still wandering — chasing a piece of ground you believe will finally let you rest?",
+      "additionalQuestions": [
+        "Make your own version of Joshua 21:45. Name three good promises God has actually kept for you. What does it do to your present fear to write them down?",
+        "Israel's rest was given, not earned. Where are you trying to fight your way into a rest God is offering to hand you?",
+        "If the inheritance is finally Christ Himself and not a circumstance, what would change about what you are reaching for this week?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You gave Israel the land and gave them rest, and not one of Your good promises failed. I have been wandering, treating the next thing I want as the ground that will finally let me settle. Thank You that the rest I am aching for is not a place I have to conquer but a gift You hold out in Christ. Today, let the wandering stop. Set me down. Be my inheritance. Through Jesus, the greater Joshua, who leads His weary people into rest. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath — there is no task to finish. Sit for five quiet minutes and let one line hold you: \"And the LORD gave them rest on every side.\" Then write down three promises God has already kept for you, and let that be your shoebox of receipts for the next hard night.",
+      "leavingAtCross": [
+        "The belief that rest is something I have to fight my way into and hold by my own strength",
+        "The next piece of ground I am sure will finally make me feel settled",
+        "The quiet fear that this time God might not come through"
+      ],
+      "receivingFromCross": [
+        "A rest that is given, not earned — the gift of the One who keeps every word",
+        "An inheritance that is Christ Himself, sealed by the Spirit, that no enemy can take",
+        "The freedom to put the tent down and stop wandering"
+      ],
+      "content": "Today is a sabbath — there is no task to finish. Sit for five quiet minutes and let one line hold you: \"And the LORD gave them rest on every side.\" Then write down three promises God has already kept for you, and let that be your shoebox of receipts for the next hard night."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Who does Joshua 21:43-44 say gave Israel both the land and the rest — and why does the text insist on that, after a whole book of battles?",
+        "Hebrews 4:8 says, \"if Joshua had given them rest, God would not have spoken later about another day.\" What does that tell us the land-rest was, and was not?",
+        "Joshua and Jesus are the same name in Greek. How does that one fact reframe the whole conquest as a picture of something Christ would finish?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a piece of ground — a goal, a milestone, a fix — you have treated as the place you would finally rest. Did arriving there give the rest you expected?",
+        "Share one promise God has clearly kept in your life. Practice keeping your own 'shoebox of receipts' out loud.",
+        "Ask each other: if Christ Himself is the inheritance, not the circumstances, where do I need to stop conquering and start receiving?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Joshua 1:13",
+          "text": "Remember what Moses the servant of the LORD commanded you when he said, ‘The LORD your God will give you rest, and He will give you this land.’"
+        },
+        {
+          "reference": "Psalm 95:11",
+          "text": "So I swore on oath in My anger, “They shall never enter My rest.”"
+        },
+        {
+          "reference": "Hebrews 4:9-10",
+          "text": "There remains, then, a Sabbath rest for the people of God. For whoever enters God’s rest also rests from his own work, just as God did from His."
+        },
+        {
+          "reference": "Ephesians 1:11, 14",
+          "text": "In Him we were also chosen as God’s own… who is the pledge of our inheritance until the redemption of those who are God’s possession, to the praise of His glory."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 21:43-45 and Hebrews 4:1-11",
+          "note": "Read the two side by side. Watch how Hebrews takes a closed, finished rest in Joshua and reopens it as a rest that still stands waiting in Christ."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joshua",
+      "title": "The Servant Who Gave Israel Rest",
+      "description": "Successor to Moses, Joshua led the new generation across the Jordan and into the land sworn to Abraham. Under him the wandering ended: God gave Israel the land as an inheritance and gave them rest on every side. Yet Scripture later reveals that Joshua's rest, though real, was not the final rest — it pointed beyond itself. His very name, Yehoshua, \"the LORD saves,\" is the Hebrew form of the Greek name Jesus.",
+      "keyQuote": "Not one of the good promises the LORD your God made to you has failed.",
+      "lessonForUs": "Joshua gave a true rest and a partial one. He could lead the people into the land but not into the deeper rest the land only pictured. That is why the people of God were always meant to wait for another who bore his name — Jesus, the greater Joshua, who leads the weary into the rest that remains.",
+      "heading": "The Servant Who Gave Israel Rest"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2115,
+  "scriptureReference_full": "Joshua 21:43-45",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (vayyanach, root nuach H5117) reflects standard lexical sources. The identity of the names Joshua and Jesus (Hebrew Yehoshua / Greek Ieesous) and the typological reading of Joshua's rest follow Hebrews 4:8-9."
+  ]
 }

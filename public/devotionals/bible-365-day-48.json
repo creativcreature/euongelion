@@ -1,38 +1,192 @@
 {
   "day": 48,
-  "title": "Ten Words",
-  "teaser": "Day 48 of Bible 365 — Exodus 20",
+  "title": "Rescued First, Then Commanded",
+  "teaser": "Before God gives a single command, He says who He is and what He has already done. The Ten Words open not with a demand but with a deliverance.",
   "framework": "Exodus 20 — Law as gracious boundary",
   "scriptureReference": "Exodus 20",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 48"
+      "type": "scripture",
+      "reference": "Exodus 20:2-3, 18-19",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the LORD your God, who brought you out",
+        "Speak to us yourself",
+        "do not let God speak to us, or we will die"
+      ],
+      "hebrewOriginal": "אָנֹכִי יְהוָה אֱלֹהֶיךָ אֲשֶׁר הוֹצֵאתִיךָ מֵאֶרֶץ מִצְרַיִם מִבֵּית עֲבָדִים",
+      "passage": "\"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery. You shall have no other gods before Me.\" ... When all the people witnessed the thunder and lightning, the sounding of the ram's horn, and the mountain enveloped in smoke, they trembled and stood at a distance. \"Speak to us yourself and we will listen,\" they said to Moses. \"But do not let God speak to us, or we will die.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אָנֹכִי",
+      "transliteration": "anokhi",
+      "pronunciation": "ah-no-KHEE",
+      "meaning": "I, I myself - an emphatic, personal first-person pronoun",
+      "rootMeaning": "Anokhi is the long, weighty form of the Hebrew word for 'I.' Hebrew can say 'I' with the shorter ani; anokhi is the fuller, more solemn form a person uses to step forward and name themselves. It is the word God chooses to open the Ten Words.",
+      "usageNote": "The Decalogue does not begin 'Do this' or 'Do not do that.' Its first word is a name: Anokhi - 'I myself.' Before a single command arrives, God identifies the One who is speaking and what He has already done. In Jewish tradition the opening 'I am the LORD your God' is counted as the first of the Ten Words, not a preface to them - the relationship is the first commandment, and everything else flows from it.",
+      "wordByWord": [
+        {
+          "word": "אָנֹכִי",
+          "transliteration": "anokhi",
+          "meaning": "I myself - the emphatic 'I' that opens the law"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name revealed to Moses at the bush"
+        },
+        {
+          "word": "אֱלֹהֶיךָ",
+          "transliteration": "eloheikha",
+          "meaning": "your God - singular 'your,' addressed to each person in the crowd"
+        },
+        {
+          "word": "אֲשֶׁר הוֹצֵאתִיךָ",
+          "transliteration": "asher hotzetikha",
+          "meaning": "who brought you out - the rescue that has already happened"
+        },
+        {
+          "word": "מִבֵּית עֲבָדִים",
+          "transliteration": "mibeit avadim",
+          "meaning": "out of the house of slavery - the place they have already been carried from"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הוֹצֵאתִיךָ",
+          "reference": "Hotzetikha - 'I brought you out' - is the same verb that names the whole Exodus event (yatsa, to go out). The law is addressed to a people God already led out by His own hand; the verb is past tense before the commands are present tense."
+        }
+      ],
+      "strongsNumber": "H595",
+      "definition": "I, I myself; the emphatic first-person singular pronoun",
+      "usage": "God's self-introduction is grammatically personal and emphatic: not a list handed down from a distance, but 'I myself' speaking to 'your God,' singular, to each one standing at the foot of the mountain."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Law as gracious boundary. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ fulfills the law (Matt 5:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The First Word of the Law Is Grace",
+      "body": "We picture Sinai as the place where God hands down rules - the stone tablets, the finger of God, the long list of shall-nots. So it is worth slowing down to hear how the list actually begins. The first thing God says is not a command. It is a name and a memory: \"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery.\"\n\nBefore there is a single 'You shall,' there is a 'who brought you out.' The deliverance comes first. Israel is not at Sinai earning their way out of Egypt; they are already out. The sea is behind them. The chains are off. Only then does God say what life with Him looks like. The order matters more than almost anything else in the chapter: rescue, then requirement. Grace, then the shape grace takes.\n\nThis reframes the whole law. The commandments are not the terms of a deal - obey and I will save you. They are the household rules of a family already saved. God does not say, 'Keep these and I will become your God.' He says, 'I already am your God, who carried you out of slavery. Here, then, is how a freed people lives.'",
+      "keyInsight": "The Ten Commandments do not open with a demand but with a deliverance. Law in Scripture is never the road into relationship with God; it is the shape of a relationship He has already begun.",
+      "content": "We picture Sinai as the place where God hands down rules - the stone tablets, the finger of God, the long list of shall-nots. So it is worth slowing down to hear how the list actually begins. The first thing God says is not a command. It is a name and a memory: \"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery.\"\n\nBefore there is a single 'You shall,' there is a 'who brought you out.' The deliverance comes first. Israel is not at Sinai earning their way out of Egypt; they are already out. The sea is behind them. The chains are off. Only then does God say what life with Him looks like. The order matters more than almost anything else in the chapter: rescue, then requirement. Grace, then the shape grace takes.\n\nThis reframes the whole law. The commandments are not the terms of a deal - obey and I will save you. They are the household rules of a family already saved. God does not say, 'Keep these and I will become your God.' He says, 'I already am your God, who carried you out of slavery. Here, then, is how a freed people lives.'"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Fence at the Edge of the Cliff",
+      "body": "A friend who grew up on a farm told me about the day his father put a fence along the back pasture, where the land dropped off into a ravine. As a boy he resented it. The fence cut off the part of the field with the best view, the place where the wind came up clean from the valley. It felt like a rule invented to spoil things.\n\nYears later he stood at that fence as a grown man and looked down at the drop on the other side - farther and steeper than a child could have judged. The fence was not built to keep him from the view. It was built so he could run that whole field at full speed, in the dark, without ever needing to be afraid of where the edge was. The boundary was not the opposite of freedom. It was what made the freedom safe to use.\n\nThat is the strange grace of Exodus 20. The commands draw a line - no other gods, no killing, no stealing, no coveting the life next to yours. They feel, to a certain mood, like fences spoiling the view. But they are drawn by the One who already carried this people out of slavery, marking where the edges are so a freed people can actually live free.",
+      "connectionToTheme": "A boundary set by someone who loves you is not the enemy of freedom but its protection. The law is God fencing the edge of the cliff for a people He has just set loose in an open field.",
+      "content": "A friend who grew up on a farm told me about the day his father put a fence along the back pasture, where the land dropped off into a ravine. As a boy he resented it. The fence cut off the part of the field with the best view, the place where the wind came up clean from the valley. It felt like a rule invented to spoil things.\n\nYears later he stood at that fence as a grown man and looked down at the drop on the other side - farther and steeper than a child could have judged. The fence was not built to keep him from the view. It was built so he could run that whole field at full speed, in the dark, without ever needing to be afraid of where the edge was. The boundary was not the opposite of freedom. It was what made the freedom safe to use.\n\nThat is the strange grace of Exodus 20. The commands draw a line - no other gods, no killing, no stealing, no coveting the life next to yours. They feel, to a certain mood, like fences spoiling the view. But they are drawn by the One who already carried this people out of slavery, marking where the edges are so a freed people can actually live free."
+    },
+    {
+      "type": "insight",
+      "heading": "They Begged for a Go-Between",
+      "body": "Read past the commands to what the people do once the voice stops. The end of the chapter is easy to skip, but it carries the whole weight of what just happened. The crowd witnesses the thunder and lightning, the ram's horn, the mountain wrapped in smoke - and they tremble and back away. They cannot bear it. So they turn to Moses with a desperate request: \"Speak to us yourself and we will listen. But do not let God speak to us, or we will die.\"\n\nThis is one of the most honest moments in the Old Testament. Standing in the unfiltered presence of the holy God, the people do not feel privileged. They feel they will not survive it. And their instinct is exactly right. Sinful people cannot stand in the raw presence of a holy God and live. So they ask for a mediator - someone to stand between them and God, to receive the word on their behalf and bring it down.\n\nGod does not rebuke the request. Moses walks alone into the thick darkness where God is, and the people stay at a distance, alive. The structure of grace is already showing: the holy God will speak to His people, but He will do it through one who stands in the gap. The fence around the mountain and the man in the darkness say the same thing - holiness is real, and so is God's intent to be known by people who could not otherwise survive it.",
+      "historicalContext": "Exodus 20 sits at the founding of Israel as a covenant people. They have been out of Egypt only weeks. The book of Hebrews later looks back on this exact scene - the blazing fire, the darkness, the trumpet, the people who begged that no further word be spoken to them - and uses it to measure the distance the gospel has closed (Hebrews 12:18-21).",
+      "fascinatingFact": "The people's plea at Sinai becomes a pattern God honors permanently. In Deuteronomy 18:15-18, Moses recalls this very moment - the day the people said, 'Let us not hear the voice of the LORD our God... anymore, so that we will not die' - and God answers by promising a future Prophet 'like Moses,' one who would stand between God and the people and speak God's words to them. The terror at the foot of the mountain plants the longing the gospel comes to answer.",
+      "content": "Read past the commands to what the people do once the voice stops. The end of the chapter is easy to skip, but it carries the whole weight of what just happened. The crowd witnesses the thunder and lightning, the ram's horn, the mountain wrapped in smoke - and they tremble and back away. They cannot bear it. So they turn to Moses with a desperate request: \"Speak to us yourself and we will listen. But do not let God speak to us, or we will die.\"\n\nThis is one of the most honest moments in the Old Testament. Standing in the unfiltered presence of the holy God, the people do not feel privileged. They feel they will not survive it. And their instinct is exactly right. Sinful people cannot stand in the raw presence of a holy God and live. So they ask for a mediator - someone to stand between them and God, to receive the word on their behalf and bring it down.\n\nGod does not rebuke the request. Moses walks alone into the thick darkness where God is, and the people stay at a distance, alive. The structure of grace is already showing: the holy God will speak to His people, but He will do it through one who stands in the gap. The fence around the mountain and the man in the darkness say the same thing - holiness is real, and so is God's intent to be known by people who could not otherwise survive it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Sinai a holy God speaks His law out of fire and thick darkness, and a trembling people beg for a mediator - someone to stand between them and God so they will not die. God honors the request: Moses goes into the darkness, the people live.",
+      "modernApplication": "We still meet God's commands the way Israel met the mountain - sensing both their goodness and our distance from them. We keep them imperfectly; we feel the gap between the standard and our lives. The good news of Sinai is that the gap was never meant to be crossed by our performance. It was always meant to be crossed by a mediator.",
+      "connectionPoint": "The longing born at Sinai runs through the whole of Scripture. Moses recalls the people's plea and God's promise of a coming Prophet like him (Deuteronomy 18:15-18). The law-giving and the mediator are bound together from the start: the same God who marks the boundary also provides the One who lets a guilty people approach.",
+      "newTestamentEcho": "Hebrews sets the two mountains side by side. \"You have not come to a mountain that can be touched and that is burning with fire... The sight was so terrifying that even Moses said, 'I am trembling with fear.' Instead, you have come to Mount Zion... to Jesus the mediator of a new covenant\" (Hebrews 12:18-24). The Mediator the people begged for at Sinai has come. Christ keeps the law we could not keep, and stands in the gap we could not cross, so that the voice which once meant 'we will die' now says 'you may draw near.'"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been treating God's commands as the price of being loved, rather than the shape of a love already given?",
+      "additionalQuestions": [
+        "If 'I brought you out' comes before 'You shall,' what does it change to remember that obedience is the response to rescue, not the cause of it?",
+        "Which of God's boundaries have felt to you like a fence spoiling the view - and what might it be protecting?",
+        "The people at Sinai begged for someone to stand between them and God. Do you live as though that Mediator has already been given, or as though you still have to face the mountain alone?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You did not begin with a demand. You began by telling me who You are and what You have done - that You brought us out, that the chains are already off. Forgive me for treating Your commands as a bill I must pay to keep Your love, when they were always the shape of a love already given. I cannot stand on the mountain in my own strength; I would not survive it. Thank You for the Mediator the trembling people begged for - for Christ, who kept the law I break and stands in the gap I could not cross. Let me live today as a freed person inside Your good boundaries, not a slave trying to earn his way out. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read the Ten Commandments slowly with the first line held in front of all the rest: 'I am the LORD your God, who brought you out.' Pick one command you tend to hear as a burden, and ask how it would feel different received as the household rule of a family already rescued. Carry that one line into the day: rescued first, then commanded.",
+      "leavingAtCross": [
+        "The lie that I must keep the rules well enough to earn God's love",
+        "The resentment that hears every boundary as a fence built to spoil the view",
+        "The exhausting effort to stand on the mountain in my own strength, as if no Mediator had been given"
+      ],
+      "receivingFromCross": [
+        "The order of grace - rescued first, then commanded - that puts obedience in its right and restful place",
+        "Boundaries received as protection from the hand of One who already carried me out of slavery",
+        "Christ the Mediator, who kept the law for me and brings me near the God I could not approach alone"
+      ],
+      "content": "Today, read the Ten Commandments slowly with the first line held in front of all the rest: 'I am the LORD your God, who brought you out.' Pick one command you tend to hear as a burden, and ask how it would feel different received as the household rule of a family already rescued. Carry that one line into the day: rescued first, then commanded."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that God's first words at Sinai are 'who brought you out,' before any 'You shall'? What does the order tell us about how law and grace relate?",
+        "Why do the people beg Moses, 'Do not let God speak to us, or we will die'? What were they rightly sensing about standing before a holy God?",
+        "How does the people's plea for a mediator at the foot of the mountain point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one of God's commands you have been hearing as a burden rather than a boundary set in love. Talk about what changes when you put 'I brought you out' in front of it.",
+        "Where in your life are you still trying to earn a love you have already been given? Be specific.",
+        "Ask each other: do we live like people who have a Mediator, or like people still standing at a distance, hoping to survive the mountain on our own?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 18:15",
+          "text": "The LORD your God will raise up for you a prophet like me from among your brothers. You must listen to him."
+        },
+        {
+          "reference": "Matthew 5:17",
+          "text": "Do not think that I have come to abolish the Law or the Prophets. I have not come to abolish them, but to fulfill them."
+        },
+        {
+          "reference": "Romans 8:3-4",
+          "text": "For what the law was powerless to do in that it was weakened by the flesh, God did by sending His own Son... so that the righteous standard of the law might be fulfilled in us."
+        },
+        {
+          "reference": "Hebrews 12:24",
+          "text": "...to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 19-20",
+          "note": "Read the two chapters together. Notice how God's tender words in chapter 19 - 'I carried you on eagles' wings and brought you to Myself' - frame the giving of the law in chapter 20."
+        },
+        {
+          "type": "book",
+          "title": "Hebrews 12:18-24",
+          "note": "Read the two-mountains passage slowly, watching how the writer measures the gospel against the terror of Sinai - and lands on 'Jesus the mediator of a new covenant.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Mediator Who Walked Into the Darkness",
+      "era": "13th century BC (traditional dating of the Exodus)",
+      "description": "The man God raised up to lead Israel out of Egypt and to receive the law at Sinai. When the people trembled and begged not to hear God's voice directly, Moses walked alone into the thick darkness where God was, standing between a holy God and a fearful people. He became Israel's mediator - and, by his own word in Deuteronomy 18, the foreshadowing of a greater Prophet to come.",
+      "keyQuote": "Do not be afraid. For God has come to test you, so that the fear of Him may be before you, to keep you from sinning.",
+      "lessonForUs": "Moses stood in the gap the people could not cross, and pointed beyond himself to One who would do it perfectly. Where Moses approached the darkness on a mountain that could be touched, Christ brings us to the living God Himself - the Mediator the trembling crowd longed for, finally given.",
+      "heading": "The Mediator Who Walked Into the Darkness"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2387,
+  "scriptureReference_full": "Exodus 20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (anokhi, H595; the verb yatsa / hotzetikha 'to bring out') reflects standard lexical sources. The counting of 'I am the LORD your God' as the first of the Ten Words reflects classical Jewish tradition (e.g., Talmud, Makkot 24a)."
+  ]
 }

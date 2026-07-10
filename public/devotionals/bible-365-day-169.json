@@ -1,38 +1,187 @@
 {
   "day": 169,
-  "title": "Daniel’s Faithfulness — Day 1 — Hook",
-  "teaser": "Day 169 of Bible 365 — Daniel 3, 6, 9",
-  "framework": "Daniel 3, 6, 9 — Daniel’s Faithfulness",
+  "title": "The Fourth Man in the Fire",
+  "teaser": "Three men refuse to bow, and a fourth figure walks the flames with them. Daniel's faithfulness was never about iron nerve. It was about Who stood in the furnace.",
+  "framework": "Daniel 3, 6, 9 — Daniel's Faithfulness",
   "scriptureReference": "Daniel 3, 6, 9",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 169"
+      "type": "scripture",
+      "reference": "Daniel 3:16-18, 25",
+      "translation": "BSB",
+      "emphasis": [
+        "But even if He does not",
+        "we will not serve your gods",
+        "the fourth looks like a son of the gods"
+      ],
+      "hebrewOriginal": "וְהֵן לָא יְדִיעַ לֶהֱוֵא־לָךְ מַלְכָּא דִּי לֵאלָהָיִךְ לָא־אִיתַנָא פָלְחִין",
+      "passage": "Shadrach, Meshach, and Abednego replied to the king, \"O Nebuchadnezzar, we have no need to answer you in this matter. If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up.\" ... \"Look!\" he exclaimed. \"I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 3, 6, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 3, 6, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "aramaic",
+      "word": "וְהֵן לָא",
+      "transliteration": "v'hen la",
+      "pronunciation": "veh-HEN lah",
+      "meaning": "but if not / but even if He does not",
+      "rootMeaning": "Daniel 3 is written in Aramaic, the working language of the Babylonian empire. Hen is the word for \"if\"; la is the flat negative, \"not.\" Joined, they form the hinge of the whole story: \"but if not.\"",
+      "usageNote": "These two small words sit at the exact center of the three friends' answer to the king. They had just said God is able to rescue them. Then they refuse to make their obedience depend on the rescue. The faith is not in the outcome. The faith is in the One they will not stop serving, rescue or no rescue.",
+      "wordByWord": [
+        {
+          "word": "וְהֵן",
+          "transliteration": "v'hen",
+          "meaning": "but if, and if"
+        },
+        {
+          "word": "לָא",
+          "transliteration": "la",
+          "meaning": "not"
+        },
+        {
+          "word": "לֶהֱוֵא־לָךְ",
+          "transliteration": "lehewe-lak",
+          "meaning": "let it be to you, let it be known to you"
+        },
+        {
+          "word": "לֵאלָהָיִךְ",
+          "transliteration": "le'elahayik",
+          "meaning": "to your gods"
+        },
+        {
+          "word": "לָא־אִיתַנָא פָלְחִין",
+          "transliteration": "la-itana palchin",
+          "meaning": "we are not serving / we will not serve, worship"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פְּלַח (pelach)",
+          "reference": "The verb for \"serve\" here is the same root used all through Daniel for worship and religious service. To bow to the statue would not be a political gesture; it would be pelach — worship. That is the line they will not cross."
+        }
+      ],
+      "strongsNumber": "H2006",
+      "definition": "hen — the Aramaic conditional particle \"if\"; with the negative la, \"but if not\"",
+      "usage": "The phrase \"but even if He does not\" is the quiet summit of Daniel 3. It is faith that has already let go of the result and is holding only the LORD."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel’s Faithfulness. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One like a Son of Man (Mark 14:62).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Faithfulness Was Never Nerve",
+      "body": "We tend to file the book of Daniel under courage stories. Three young men stare down a furnace. An old man kneels by an open window when prayer has just been outlawed. We picture spines of steel. But read the lines they actually speak, and the steel is somewhere else entirely.\n\nWhen Nebuchadnezzar gives Shadrach, Meshach, and Abednego one last chance to bow, they answer with a strange calm: \"If the God whom we serve exists, then He is able to deliver us... But even if He does not... we will not serve your gods.\" Notice what they do not claim. They do not promise God will rescue them. They will not bargain with the furnace. They hand the outcome back to God and keep only the one thing that is theirs to keep: they will not bow. Their faithfulness does not rest on a guarantee of safety. It rests on Who God is, whether the fire takes them or not.\n\nThe same shape appears in Daniel 6. A decree is signed forbidding prayer to anyone but the king. Daniel hears about it, goes home, and does exactly what he had always done — opens the windows toward Jerusalem and kneels three times a day to give thanks, \"just as he had done before.\" He does not pray louder to make a point. He does not pray in secret to stay safe. He simply keeps the rhythm of a life already given to God. The lions' den is the cost of a habit, not a heroic stunt.\n\nThis is the peshat, the plain reading: Daniel and his friends are faithful not because they are fearless but because they have already settled the question of who they belong to. Everything else — the furnace, the den, the empire's rage — is just weather passing over a decision long since made.",
+      "keyInsight": "Their faith was not in the rescue. It was in the LORD. \"But even if He does not\" is the sentence that separates trust from a transaction.",
+      "content": "We tend to file the book of Daniel under courage stories. Three young men stare down a furnace. An old man kneels by an open window when prayer has just been outlawed. We picture spines of steel. But read the lines they actually speak, and the steel is somewhere else entirely.\n\nWhen Nebuchadnezzar gives Shadrach, Meshach, and Abednego one last chance to bow, they answer with a strange calm: \"If the God whom we serve exists, then He is able to deliver us... But even if He does not... we will not serve your gods.\" Notice what they do not claim. They do not promise God will rescue them. They will not bargain with the furnace. They hand the outcome back to God and keep only the one thing that is theirs to keep: they will not bow. Their faithfulness does not rest on a guarantee of safety. It rests on Who God is, whether the fire takes them or not.\n\nThe same shape appears in Daniel 6. A decree is signed forbidding prayer to anyone but the king. Daniel hears about it, goes home, and does exactly what he had always done — opens the windows toward Jerusalem and kneels three times a day to give thanks, \"just as he had done before.\" He does not pray louder to make a point. He does not pray in secret to stay safe. He simply keeps the rhythm of a life already given to God. The lions' den is the cost of a habit, not a heroic stunt.\n\nThis is the peshat, the plain reading: Daniel and his friends are faithful not because they are fearless but because they have already settled the question of who they belong to. Everything else — the furnace, the den, the empire's rage — is just weather passing over a decision long since made."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Window That Stayed Open",
+      "body": "There is a moment in Daniel 6 that is easy to read past. The decree has been signed. The trap is sprung; everyone knows it. And the text says Daniel went into his house, \"where the windows of his upper room opened toward Jerusalem,\" and prayed as he always had.\n\nHe did not close the window. He could have. A shutter would have been the reasonable thing, the survivable thing. Pray in your heart, pray under your breath, pray after dark — no one would have blamed him. Instead the window stays open, facing a city that lay in ruins hundreds of miles away, a city he had not seen since he was a boy carried off in chains.\n\nI think of people I have known who kept some small open window through pressure that would have justified closing it. A nurse who kept praying over patients when she was told to keep her faith to herself. A man who kept showing up to care for an aging parent who no longer knew his name, long after anyone would have understood him stepping back. Their faithfulness did not look dramatic from the outside. It looked like a window left open, a knee bent at the usual hour, a thing done \"just as he had done before.\" That is almost always what faithfulness looks like in real life — not a furnace speech, but a habit you refuse to break when breaking it would be easier.",
+      "connectionToTheme": "Daniel's faithfulness in chapter 6 is not a single brave act but an unbroken habit — the window he would not close, the prayer he would not hide.",
+      "content": "There is a moment in Daniel 6 that is easy to read past. The decree has been signed. The trap is sprung; everyone knows it. And the text says Daniel went into his house, \"where the windows of his upper room opened toward Jerusalem,\" and prayed as he always had.\n\nHe did not close the window. He could have. A shutter would have been the reasonable thing, the survivable thing. Pray in your heart, pray under your breath, pray after dark — no one would have blamed him. Instead the window stays open, facing a city that lay in ruins hundreds of miles away, a city he had not seen since he was a boy carried off in chains.\n\nI think of people I have known who kept some small open window through pressure that would have justified closing it. A nurse who kept praying over patients when she was told to keep her faith to herself. A man who kept showing up to care for an aging parent who no longer knew his name, long after anyone would have understood him stepping back. Their faithfulness did not look dramatic from the outside. It looked like a window left open, a knee bent at the usual hour, a thing done \"just as he had done before.\" That is almost always what faithfulness looks like in real life — not a furnace speech, but a habit you refuse to break when breaking it would be easier."
+    },
+    {
+      "type": "insight",
+      "heading": "Four in the Fire",
+      "body": "Nebuchadnezzar throws three men into the furnace and then leaps up in alarm, because he can count. \"Did we not throw three men, firmly bound, into the fire?\" Certainly, his advisers tell him. \"Look!\" he cries. \"I see four men, unbound and unharmed, walking around in the fire — and the fourth looks like a son of the gods!\"\n\nThis is the center of the whole day, and it changes everything that came before it. The three men were ready to burn. \"But even if He does not,\" they had said — they had made peace with the fire. And God's answer is not to spare them the fire. His answer is to enter it. He does not pull them out before the flames. He walks in with them. The chains that bound them are the only thing the fire consumes. When they finally come out, the satraps gather and find \"not a hair of their heads was singed... and there was no smell of fire on them.\"\n\nHold this against Daniel 6 and the pattern is the same. Daniel says of the lions, \"My God sent His angel and shut the mouths of the lions.\" The deliverance is never the hero's nerve. It is always a Presence sent into the danger. The faithfulness of the people is real, but it is not what saves them. What saves them is the One who shows up in the furnace and the den — the fourth man in the fire.",
+      "historicalContext": "Daniel and his friends are exiles, carried from Jerusalem to Babylon after Nebuchadnezzar's conquest (around 605–586 BC). They serve at the highest levels of a pagan empire while refusing its worship. The book repeatedly stages a contest between the kingdoms of earth and \"the living God\" — and the God of the exiles keeps proving He is no local deity left behind in a ruined city, but the One who reigns even in Babylon.",
+      "fascinatingFact": "Nebuchadnezzar, the man who built the furnace, is the one who names the fourth figure. The pagan king who demanded worship ends the chapter blessing \"the God of Shadrach, Meshach, and Abednego, who has sent His angel and delivered His servants who trusted in Him.\" The fire he meant for execution becomes the place his own confession is born.",
+      "content": "Nebuchadnezzar throws three men into the furnace and then leaps up in alarm, because he can count. \"Did we not throw three men, firmly bound, into the fire?\" Certainly, his advisers tell him. \"Look!\" he cries. \"I see four men, unbound and unharmed, walking around in the fire — and the fourth looks like a son of the gods!\"\n\nThis is the center of the whole day, and it changes everything that came before it. The three men were ready to burn. \"But even if He does not,\" they had said — they had made peace with the fire. And God's answer is not to spare them the fire. His answer is to enter it. He does not pull them out before the flames. He walks in with them. The chains that bound them are the only thing the fire consumes. When they finally come out, the satraps gather and find \"not a hair of their heads was singed... and there was no smell of fire on them.\"\n\nHold this against Daniel 6 and the pattern is the same. Daniel says of the lions, \"My God sent His angel and shut the mouths of the lions.\" The deliverance is never the hero's nerve. It is always a Presence sent into the danger. The faithfulness of the people is real, but it is not what saves them. What saves them is the One who shows up in the furnace and the den — the fourth man in the fire."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "When three faithful men are thrown into the furnace, God does not keep them out of the fire. He sends a fourth figure to walk in it with them, and they come out without even the smell of smoke.",
+      "modernApplication": "Most of us are not asked to face a literal furnace. We are asked to keep the window open — to hold a hard line, keep a quiet habit, refuse a small compromise — when bowing would be so much easier. And the promise of Daniel is not that the fire will be cancelled. It is that we will not be in it alone.",
+      "connectionPoint": "Centuries before Daniel, God had already spoken this exact promise through Isaiah: \"When you walk through the fire, you will not be scorched; the flames will not set you ablaze\" (Isaiah 43:2). The God who said it is the God Nebuchadnezzar saw walking the flames. The furnace is where the promise put on a body.",
+      "newTestamentEcho": "The fourth man in the fire is a glimpse of the One Matthew names Immanuel — \"God with us\" (Matthew 1:23). And He does not finally keep His distance from the fire any more than He did in Babylon: \"Christ also suffered for sins once for all, the righteous for the unrighteous, to bring you to God\" (1 Peter 3:18). At the cross the One who walked into the furnace walks into death itself — not to spare Himself the flames, but to come through them with us, and bring us out the other side."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you facing a furnace right now — and have you, like the three friends, made peace with \"but even if He does not\"?",
+      "additionalQuestions": [
+        "What is the open window in your life — the small, faithful habit that would be easier to close under pressure? What pressure is on it right now?",
+        "Be honest: is your trust in God resting on what you believe He will do for you, or on Who He is whether He does it or not?",
+        "Daniel's deliverance came as a Presence in the danger, not a removal of it. Where might God be walking with you inside a fire you have been begging to escape?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, the great and awesome God who keeps covenant — I have wanted You to spare me the fire more than I have wanted You. Teach me the faith of the three: that You are able to deliver me, but even if You do not, I will not bow. Where I have closed the window to stay safe, open it again. And in the furnace I cannot avoid, let me find the fourth man already there — Christ, who came through the fire for me, and will not leave me to walk through mine alone. Amen.",
+      "scriptureEcho": "Daniel 3:17-18; Isaiah 43:2",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one \"open window\" — a small act of faithfulness you will keep \"just as you have done before,\" even though it would be easier to close it. Keep it once today, on purpose, as a way of saying you have already settled who you belong to.",
+      "leavingAtCross": [
+        "The bargain I keep trying to strike — that I will trust God if He guarantees the outcome I want",
+        "The instinct to quietly close the window when faithfulness gets costly",
+        "The belief that my faith is only as strong as my own nerve"
+      ],
+      "receivingFromCross": [
+        "A faith that can say \"but even if He does not\" and still not bow",
+        "The promise that I will not face the fire alone — Immanuel goes in with me",
+        "The freedom of belonging to the living God whose dominion never ends"
+      ],
+      "content": "Today, name one \"open window\" — a small act of faithfulness you will keep \"just as you have done before,\" even though it would be easier to close it. Keep it once today, on purpose, as a way of saying you have already settled who you belong to."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between trusting God to rescue you and trusting God whether or not He rescues you? Where do you see that line in the words \"but even if He does not\"?",
+        "In both the furnace and the lions' den, what actually delivers the faithful — their courage, or something else? What does the text say?",
+        "How does the fourth man in the fire point forward to Christ as Immanuel, \"God with us\"?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one furnace you are walking through right now. Have you made peace with \"but even if He does not\"?",
+        "Tell each other about one \"open window\" — a faithful habit you are tempted to close under pressure — and pray for the courage to keep it open.",
+        "Ask each other: when has God met you inside a hard place rather than removing you from it? What did His presence change?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 6:10",
+          "text": "Now when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before."
+        },
+        {
+          "reference": "Daniel 9:18-19",
+          "text": "...we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion. O Lord, listen! O Lord, forgive! O Lord, hear and act!"
+        },
+        {
+          "reference": "Isaiah 43:2",
+          "text": "When you walk through the fire, you will not be scorched; the flames will not set you ablaze."
+        },
+        {
+          "reference": "Hebrews 11:33-34",
+          "text": "...who through faith conquered kingdoms... who shut the mouths of lions, quenched the raging fire, and escaped the edge of the sword."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 3, 6, and 9",
+          "note": "Read the three chapters together in one sitting. Watch how chapters 3 and 6 show God delivering through the fire and the den, and how chapter 9 shows Daniel's prayer — confession that rests not on Israel's righteousness but on God's great compassion."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Exile Who Would Not Close the Window",
+      "description": "Carried from Jerusalem to Babylon as a young man, Daniel rose to serve at the top of a pagan empire across the reigns of multiple kings — without ever bowing to its gods. His faithfulness shows two faces in these chapters: in chapter 6 he keeps praying toward a ruined Jerusalem even when prayer is outlawed, and in chapter 9 he prays one of Scripture's great prayers of confession, pleading not Israel's goodness but God's compassion: \"To the Lord our God belong compassion and forgiveness, even though we have rebelled against Him.\"",
+      "keyQuote": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight.",
+      "lessonForUs": "Daniel's strength was not a hard heart but a settled one. He could face the den because he had already decided, every ordinary day, whose he was. Faithfulness in crisis is built quietly, long before the crisis, by windows we keep open and prayers we keep praying.",
+      "heading": "The Exile Who Would Not Close the Window"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2148,
+  "scriptureReference_full": "Daniel 3:16-18, 25; 6:10, 22; 9:18-19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Aramaic word study (v'hen la, \"but if not,\" Daniel 3:18; the verb pelach, \"to serve/worship\") reflects standard lexical sources for Biblical Aramaic. Strong's H2006 (hen) noted for the conditional particle."
+  ]
 }

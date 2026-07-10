@@ -26,48 +26,82 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'A year-long walk through Scripture begins with four words that change everything: in the beginning, God.',
   'bible-365-day-10':
     'Day 10 of Bible 365 - Genesis 8:20-9:17. A pleasing aroma rises, and God hangs His war-bow in the clouds, aimed away.',
-  'bible-365-day-100': 'Day 100 of Bible 365 — 1 Kings 11',
-  'bible-365-day-101': 'Day 101 of Bible 365 — 1 Kings 11',
-  'bible-365-day-102': 'Day 102 of Bible 365 — 1 Kings 11',
-  'bible-365-day-103': 'Day 103 of Bible 365 — 1 Kings 11',
-  'bible-365-day-104': 'Day 104 of Bible 365 — 1 Kings 11',
-  'bible-365-day-105': 'Day 105 of Bible 365 — 1 Kings 11',
-  'bible-365-day-106': 'Day 106 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-107': 'Day 107 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-108': 'Day 108 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-109': 'Day 109 of Bible 365 — 1 Kings 12-16',
+  'bible-365-day-100':
+    'Solomon never renounced the LORD. He simply stopped being all-in. The drift that loses a kingdom begins with a heart divided, not denied.',
+  'bible-365-day-101':
+    "Solomon's heart did not turn in a day. It leaned, then loved, then followed. And still God keeps a lamp burning for David's house.",
+  'bible-365-day-102':
+    "Solomon didn't fall in a day. His heart was carried off one small loyalty at a time — and the wisest man alive never felt the floor tilt.",
+  'bible-365-day-103':
+    'The wisest king in the world was not undone by a single great sin but by a thousand small affections, until his heart was no longer whole. The kingdom tore where the heart divided.',
+  'bible-365-day-104':
+    'The wisest king alive did not lose his throne to an army. He lost his heart one foreign altar at a time — and still God kept a lamp burning for David.',
+  'bible-365-day-105':
+    "Solomon doesn't fall in a day. His heart is inclined, degree by degree, by what he loved most — and the kingdom is kept only for the sake of a greater Son.",
+  'bible-365-day-106':
+    "One harsh word splits a kingdom in a single afternoon. But the same God who tears it keeps a lamp burning in David's house — for the sake of the Son who would gather the torn flock back into one.",
+  'bible-365-day-107':
+    'Ten tribes walk away over one harsh word, golden calves go up at Bethel and Dan — and into the wreckage God speaks a name three hundred years early.',
+  'bible-365-day-108':
+    'The kingdom splits in two not over taxes but over worship. Jeroboam builds altars close to home so no one has to go up to Jerusalem — and a nation learns to worship what costs it nothing.',
+  'bible-365-day-109':
+    'Jeroboam decides the trip to Jerusalem costs too much, so he builds a calf you can reach without leaving home. The application is uncomfortably close: the gods we make to keep control.',
   'bible-365-day-11':
     'On a plain in Shinar, humanity stacks bricks toward heaven to make a name for itself. God comes down, confuses the tongues, and scatters the builders. The name they grasped for is the one God later gives away for free.',
   'bible-365-day-110': 'Day 110 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-111': 'Day 111 of Bible 365 — 1 Kings 12-16',
+  'bible-365-day-111':
+    'Day 111 of Bible 365 — 1 Kings 12-16. A king splits a nation over a rough answer, and a frightened rival builds gods to keep his throne. Yet a lamp keeps burning for David.',
   'bible-365-day-112': 'Day 112 of Bible 365 — 1 Kings 12-16',
-  'bible-365-day-113': 'Day 113 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-114': 'Day 114 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-115': 'Day 115 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-116': 'Day 116 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-117': 'Day 117 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-118': 'Day 118 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
-  'bible-365-day-119': 'Day 119 of Bible 365 — 1 Kings 17-19, 2 Kings 2',
+  'bible-365-day-113':
+    'Elijah called fire down on Carmel — then fell apart under a broom tree. God came to him next not in wind, quake, or fire, but in a whisper. The prophet of fire had to learn the voice of the still, small word.',
+  'bible-365-day-114':
+    'Elijah called down fire and won—then ran for his life and begged to die. At Horeb God was not in the wind, the quake, or the fire. He came in a whisper, and renamed the loneliness Elijah was certain of.',
+  'bible-365-day-115':
+    'Elijah called down fire on a mountain and then begged to die under a bush. At Horeb God is not in the wind or the quake or the fire — He is in the low, quiet voice.',
+  'bible-365-day-116':
+    'Elijah won on Carmel and then begged to die under a bush. God did not rebuke the burned-out prophet — He fed him, let him sleep, and came in a whisper.',
+  'bible-365-day-117':
+    "Elijah does not die. A whirlwind takes him, and the cloak drops at Elisha's feet. The cycle ends not with a grave but with a gift passed on.",
+  'bible-365-day-118':
+    'The prophet who called down fire from heaven begs to die in the desert. Then God passes by — not in wind, earthquake, or flame, but in a whisper.',
+  'bible-365-day-119':
+    'The day after fire fell from heaven, the prophet begged to die. God answered with bread, sleep, and a whisper.',
   'bible-365-day-12':
     'Eleven chapters in, the human story keeps reaching for heaven and coming apart. Babel is where the reaching finally breaks into noise - and where the canon starts leaning toward the One who will come down to gather what was scattered.',
-  'bible-365-day-120': 'Day 120 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-121': 'Day 121 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-122': 'Day 122 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-123': 'Day 123 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-124': 'Day 124 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-125': 'Day 125 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-126': 'Day 126 of Bible 365 — 2 Kings 4-13',
-  'bible-365-day-127': 'Day 127 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-128': 'Day 128 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-129': 'Day 129 of Bible 365 — Amos, Hosea, Micah',
+  'bible-365-day-120':
+    'A widow has nothing left but one jar of oil and a creditor at the door. Elisha tells her to borrow empty jars from the whole street. The oil keeps flowing until the jars run out — never the oil.',
+  'bible-365-day-121':
+    'A great man wanted a great cure. God offered him a river and seven small dips. The healing was free; only his pride had a price.',
+  'bible-365-day-122':
+    'A general carries silver and gold to buy a cure, and is told to dip in a muddy river seven times like a child. The gift he cannot purchase, he can only receive.',
+  'bible-365-day-123':
+    'The widow has nothing but a little oil and a houseful of borrowed vessels. Elisha tells her to keep pouring. The miracle stops only when the empty jars run out.',
+  'bible-365-day-124':
+    'Elisha spends his whole ministry handing life back to the dying — and then dies. But the last word is not the funeral. It is a corpse thrown into his tomb that touches his bones and stands up.',
+  'bible-365-day-125':
+    "Elisha's miracles are small and unglamorous - a borrowed jar, a river, twenty loaves. The grace runs through ordinary water, and it reaches the foreigner first.",
+  'bible-365-day-126':
+    "Across ten chapters of Elisha's life, the smallest acts carry God. A widow's jars. A river. A dead man's bones. On the Sabbath, sit with how God heals.",
+  'bible-365-day-127':
+    'Three farmers and shepherds shout the same thing at a nation drowning in worship: God never wanted the rams. He wanted you.',
+  'bible-365-day-128':
+    'Smoke climbs, choirs sing, and God says it makes Him sick. Amos, Hosea, and Micah indict a worship that floats on top of injustice - and point to the river that never runs dry.',
+  'bible-365-day-129':
+    'Three voices, one verdict: God never wanted your sacrifices. He wanted you — just, merciful, walking close. The prophets ask the impossible. Christ became the answer.',
   'bible-365-day-13':
     "God's first word to Abram is a command to leave everything for a land He won't name. The whole gospel is hidden in that one word: Go.",
-  'bible-365-day-130': 'Day 130 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-131': 'Day 131 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-132': 'Day 132 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-133': 'Day 133 of Bible 365 — Amos, Hosea, Micah',
-  'bible-365-day-134': 'Day 134 of Bible 365 — 2 Kings 18-20',
-  'bible-365-day-135': 'Day 135 of Bible 365 — 2 Kings 18-20',
+  'bible-365-day-130':
+    'Amos, Hosea, and Micah strip religion down to three things God actually requires — and then God comes in person to do all three.',
+  'bible-365-day-131':
+    'Three angry prophets reach the same verdict — and then each one breaks. The God who hates their worship cannot give them up.',
+  'bible-365-day-132':
+    'Amos thunders for justice; Hosea pleads for mercy. Both speak for the same God — and Hosea 11 shows us the war between them happening inside His own heart.',
+  'bible-365-day-133':
+    'Three prophets, one verdict: God never wanted your sacrifices. He wanted you to be like Him. Jesus made that line His mission statement.',
+  'bible-365-day-134':
+    'Assyria has swallowed every nation it touched. Then one king of Judah does the only thing the empire cannot answer: he carries the threat into the house of God and spreads it open before the LORD.',
+  'bible-365-day-135':
+    'A young king tears down the holy places — and smashes the bronze serpent that once healed Israel. The cure had curdled into an idol. So he breaks it, and trusts the LORD instead.',
   'bible-365-day-136': 'Day 136 of Bible 365 — 2 Kings 18-20',
   'bible-365-day-137': 'Day 137 of Bible 365 — 2 Kings 18-20',
   'bible-365-day-138': 'Day 138 of Bible 365 — 2 Kings 18-20',
@@ -95,7 +129,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-157': 'Day 157 of Bible 365 — Lamentations',
   'bible-365-day-158': 'Day 158 of Bible 365 — Lamentations',
   'bible-365-day-159': 'Day 159 of Bible 365 — Lamentations',
-  'bible-365-day-16': 'Day 16 of Bible 365 — Genesis 17:1-8',
+  'bible-365-day-16':
+    'Day 16 of Bible 365 — Genesis 17:1-8. At ninety-nine, with no son and no land, Abram hears a name for God big enough to carry an impossible promise.',
   'bible-365-day-160': 'Day 160 of Bible 365 — Lamentations',
   'bible-365-day-161': 'Day 161 of Bible 365 — Lamentations',
   'bible-365-day-162': 'Day 162 of Bible 365 — Ezekiel 36-37',
@@ -106,7 +141,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-167': 'Day 167 of Bible 365 — Ezekiel 36-37',
   'bible-365-day-168': 'Day 168 of Bible 365 — Ezekiel 36-37',
   'bible-365-day-169': 'Day 169 of Bible 365 — Daniel 3, 6, 9',
-  'bible-365-day-17': 'Day 17 of Bible 365 — Genesis 18:1-15',
+  'bible-365-day-17':
+    'Three strangers stand at the door in the heat of the day. Abraham runs to feed them, and the meal turns out to be God Himself, come to keep an impossible promise.',
   'bible-365-day-170': 'Day 170 of Bible 365 — Daniel 3, 6, 9',
   'bible-365-day-171': 'Day 171 of Bible 365 — Daniel 3, 6, 9',
   'bible-365-day-172': 'Day 172 of Bible 365 — Daniel 3, 6, 9',
@@ -117,7 +153,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-177': 'Day 177 of Bible 365 — Esther 4-7',
   'bible-365-day-178': 'Day 178 of Bible 365 — Esther 4-7',
   'bible-365-day-179': 'Day 179 of Bible 365 — Esther 4-7',
-  'bible-365-day-18': 'Day 18 of Bible 365 — Genesis 18:16-33',
+  'bible-365-day-18':
+    'Day 18 of Bible 365 — Abraham steps toward the God who is leaving, and dares to argue for a city that deserves to burn. The first great intercession in Scripture rests on one conviction: the Judge of all the earth will do right.',
   'bible-365-day-180': 'Day 180 of Bible 365 — Esther 4-7',
   'bible-365-day-181': 'Day 181 of Bible 365 — Esther 4-7',
   'bible-365-day-182': 'Day 182 of Bible 365 — Esther 4-7',
@@ -128,7 +165,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-187': 'Day 187 of Bible 365 — Job 1-2, 38-42',
   'bible-365-day-188': 'Day 188 of Bible 365 — Job 1-2, 38-42',
   'bible-365-day-189': 'Day 189 of Bible 365 — Job 1-2, 38-42',
-  'bible-365-day-19': 'Day 19 of Bible 365 — Genesis 22:1-14',
+  'bible-365-day-19':
+    'Day 19 of Bible 365 — Genesis 22:1-14. A father climbs Moriah to give up his only son, and learns that the lamb was never his to find. God provides it.',
   'bible-365-day-190':
     'Day 190 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139',
   'bible-365-day-191':
@@ -148,7 +186,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-199': 'Day 199 of Bible 365 — Proverbs 3, 8, 16, 22, 31',
   'bible-365-day-2':
     'You did not earn your dignity. You were given it on the sixth day, before you ever did a thing.',
-  'bible-365-day-20': 'Day 20 of Bible 365 — Genesis 22 (deeper)',
+  'bible-365-day-20':
+    'Day 20 of Bible 365 — Genesis 22 (deeper). Abraham says "Here I am" three times and walks his son up the mountain. What faith costs, and what God provides.',
   'bible-365-day-200': 'Day 200 of Bible 365 — Proverbs 3, 8, 16, 22, 31',
   'bible-365-day-201': 'Day 201 of Bible 365 — Proverbs 3, 8, 16, 22, 31',
   'bible-365-day-202': 'Day 202 of Bible 365 — Proverbs 3, 8, 16, 22, 31',
@@ -170,7 +209,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-217': 'Day 217 of Bible 365 — Song 2, 6, 8',
   'bible-365-day-218': 'Day 218 of Bible 365 — Isaiah 6, 9, 11, 25',
   'bible-365-day-219': 'Day 219 of Bible 365 — Isaiah 6, 9, 11, 25',
-  'bible-365-day-22': 'Day 22 of Bible 365 — Genesis 25:19-34',
+  'bible-365-day-22':
+    'Esau came in from the field famished and sold his whole inheritance for one bowl of red stew. The hunger of the moment ate the promise of his life.',
   'bible-365-day-220': 'Day 220 of Bible 365 — Isaiah 6, 9, 11, 25',
   'bible-365-day-221': 'Day 221 of Bible 365 — Isaiah 6, 9, 11, 25',
   'bible-365-day-222': 'Day 222 of Bible 365 — Isaiah 6, 9, 11, 25',
@@ -181,7 +221,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-227': 'Day 227 of Bible 365 — Isaiah 40-55',
   'bible-365-day-228': 'Day 228 of Bible 365 — Isaiah 40-55',
   'bible-365-day-229': 'Day 229 of Bible 365 — Isaiah 40-55',
-  'bible-365-day-23': 'Day 23 of Bible 365 — Genesis 28:10-22',
+  'bible-365-day-23':
+    'A liar runs into the dark with a stone for a pillow, and heaven opens over his head. God meets Jacob before Jacob ever asks.',
   'bible-365-day-230': 'Day 230 of Bible 365 — Isaiah 40-55',
   'bible-365-day-231': 'Day 231 of Bible 365 — Isaiah 40-55',
   'bible-365-day-232': 'Day 232 of Bible 365 — Jeremiah 31',
@@ -192,7 +233,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-237': 'Day 237 of Bible 365 — Jeremiah 31',
   'bible-365-day-238': 'Day 238 of Bible 365 — Jeremiah 31',
   'bible-365-day-239': 'Day 239 of Bible 365 — Ezekiel 36-37',
-  'bible-365-day-24': 'Day 24 of Bible 365 — Genesis 32:22-32',
+  'bible-365-day-24':
+    'Day 24 of Bible 365 — Jacob the heel-grabber wrestles a stranger till dawn at the Jabbok, refuses to let go without a blessing, and walks away with a new name and a wound he will carry the rest of his life.',
   'bible-365-day-240': 'Day 240 of Bible 365 — Ezekiel 36-37',
   'bible-365-day-241': 'Day 241 of Bible 365 — Ezekiel 36-37',
   'bible-365-day-242': 'Day 242 of Bible 365 — Ezekiel 36-37',
@@ -203,7 +245,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-247': 'Day 247 of Bible 365 — Daniel 7, 9',
   'bible-365-day-248': 'Day 248 of Bible 365 — Daniel 7, 9',
   'bible-365-day-249': 'Day 249 of Bible 365 — Daniel 7, 9',
-  'bible-365-day-25': 'Day 25 of Bible 365 — Genesis 33:1-11',
+  'bible-365-day-25':
+    'Day 25 of Bible 365 — Genesis 33:1-11. The brother who swore to kill him runs, embraces him, and weeps. In a reconciled face, Jacob sees the face of God.',
   'bible-365-day-250': 'Day 250 of Bible 365 — Daniel 7, 9',
   'bible-365-day-251': 'Day 251 of Bible 365 — Daniel 7, 9',
   'bible-365-day-252': 'Day 252 of Bible 365 — Daniel 7, 9',
@@ -214,7 +257,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-257': 'Day 257 of Bible 365 — Selected',
   'bible-365-day-258': 'Day 258 of Bible 365 — Selected',
   'bible-365-day-259': 'Day 259 of Bible 365 — Selected',
-  'bible-365-day-26': 'Day 26 of Bible 365 — Genesis 35:1-15',
+  'bible-365-day-26':
+    'Day 26 of Bible 365 — Genesis 35:1-15. God calls Jacob back to the place of his first promise. But first the foreign gods go into the ground, and the man who left as a fugitive comes home with a new name.',
   'bible-365-day-260': 'Day 260 of Bible 365 — Jonah 1-4',
   'bible-365-day-261': 'Day 261 of Bible 365 — Jonah 1-4',
   'bible-365-day-262': 'Day 262 of Bible 365 — Jonah 1-4',
@@ -225,7 +269,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-267': 'Day 267 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
   'bible-365-day-268': 'Day 268 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
   'bible-365-day-269': 'Day 269 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
-  'bible-365-day-27': 'Day 27 of Bible 365 — Genesis (deeper)',
+  'bible-365-day-27':
+    'Jacob wrestles God in the dark and walks away wounded, renamed, and blessed. The hand that struck his hip is the hand that held him all night.',
   'bible-365-day-270': 'Day 270 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
   'bible-365-day-271': 'Day 271 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
   'bible-365-day-272': 'Day 272 of Bible 365 — Hab, Zeph, Hag, Zech, Mal',
@@ -236,7 +281,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-277': 'Day 277 of Bible 365 — Matthew 1-7',
   'bible-365-day-278': 'Day 278 of Bible 365 — Matthew 1-7',
   'bible-365-day-279': 'Day 279 of Bible 365 — Matthew 1-7',
-  'bible-365-day-28': 'Day 28 of Bible 365 — Sabbath',
+  'bible-365-day-28':
+    'Day 28 of Bible 365 — Sabbath. Jacob holds on until daybreak and walks away renamed and limping. Today you stop wrestling, because the blessing is already yours.',
   'bible-365-day-280': 'Day 280 of Bible 365 — Matthew 1-7',
   'bible-365-day-281': 'Day 281 of Bible 365 — Matthew 8-13',
   'bible-365-day-282': 'Day 282 of Bible 365 — Matthew 8-13',
@@ -260,7 +306,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-299': 'Day 299 of Bible 365 — Luke 1-12',
   'bible-365-day-3':
     'God finishes a universe and the next thing He does is stop. Before any human ever earned a paycheck, rest was already built into the shape of the week.',
-  'bible-365-day-30': 'Day 30 of Bible 365 — Genesis 39',
+  'bible-365-day-30':
+    "Four times in one chapter, the same sentence: the LORD was with him. It is written over Joseph's success and over his prison cell without changing a single word.",
   'bible-365-day-300': 'Day 300 of Bible 365 — Luke 1-12',
   'bible-365-day-301': 'Day 301 of Bible 365 — Luke 1-12',
   'bible-365-day-302': 'Day 302 of Bible 365 — Luke 15, 24',
@@ -282,7 +329,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-317': 'Day 317 of Bible 365 — John 8-14',
   'bible-365-day-318': 'Day 318 of Bible 365 — John 8-14',
   'bible-365-day-319': 'Day 319 of Bible 365 — John 8-14',
-  'bible-365-day-32': 'Day 32 of Bible 365 — Genesis 45:1-15',
+  'bible-365-day-32':
+    "The brother they sold for silver now rules Egypt - and from the throne he says not 'guilty,' but 'come near to me.' Forgiveness moves downward, from power to the powerless who wronged him.",
   'bible-365-day-320': 'Day 320 of Bible 365 — John 8-14',
   'bible-365-day-321': 'Day 321 of Bible 365 — John 8-14',
   'bible-365-day-322': 'Day 322 of Bible 365 — John 8-14',
@@ -304,7 +352,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-337': 'Day 337 of Bible 365 — Romans 1-8',
   'bible-365-day-338': 'Day 338 of Bible 365 — Romans 1-8',
   'bible-365-day-339': 'Day 339 of Bible 365 — Romans 1-8',
-  'bible-365-day-34': 'Day 34 of Bible 365 — Genesis (deeper)',
+  'bible-365-day-34':
+    'Joseph stands before the brothers who sold him and tells the story again — this time naming where God was. The retelling is the healing.',
   'bible-365-day-340': 'Day 340 of Bible 365 — Romans 1-8',
   'bible-365-day-341': 'Day 341 of Bible 365 — Romans 1-8',
   'bible-365-day-342': 'Day 342 of Bible 365 — Romans 1-8',
@@ -315,7 +364,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-347': 'Day 347 of Bible 365 — 1 Cor 13, 15',
   'bible-365-day-348': 'Day 348 of Bible 365 — 1 Cor 13, 15',
   'bible-365-day-349': 'Day 349 of Bible 365 — 1 Cor 13, 15',
-  'bible-365-day-35': 'Day 35 of Bible 365 — Sabbath',
+  'bible-365-day-35':
+    'Day 35 of Bible 365 — Sabbath. Joseph looks at the brothers who sold him and says it three times: God sent me. Today you stop trying to read your story while it is still being written, and rest.',
   'bible-365-day-350': 'Day 350 of Bible 365 — 1 Cor 13, 15',
   'bible-365-day-351': 'Day 351 of Bible 365 — Hebrews 11-12',
   'bible-365-day-352': 'Day 352 of Bible 365 — Hebrews 11-12',
@@ -326,7 +376,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-357': 'Day 357 of Bible 365 — Hebrews 11-12',
   'bible-365-day-358': 'Day 358 of Bible 365 — Revelation 21-22',
   'bible-365-day-359': 'Day 359 of Bible 365 — Revelation 21-22',
-  'bible-365-day-36': 'Day 36 of Bible 365 — Exodus 1-2',
+  'bible-365-day-36':
+    'Day 36 of Bible 365 — Exodus 1-2. A new king forgets Joseph, an empire builds itself on Hebrew backs, and for chapters God seems silent. Then a wordless groan goes up, and heaven moves.',
   'bible-365-day-360': 'Day 360 of Bible 365 — Revelation 21-22',
   'bible-365-day-361': 'Day 361 of Bible 365 — Revelation 21-22',
   'bible-365-day-362': 'Day 362 of Bible 365 — Revelation 21-22',
@@ -334,80 +385,123 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'bible-365-day-364': 'Day 364 of Bible 365 — Revelation 21-22',
   'bible-365-day-365': 'Day 365 of Bible 365 — Revelation 22:20-21',
   'bible-365-day-37': 'Day 37 of Bible 365 — Exodus 3:1-15',
-  'bible-365-day-38': 'Day 38 of Bible 365 — Exodus 4:10-17',
-  'bible-365-day-39': 'Day 39 of Bible 365 — Exodus 7-11',
+  'bible-365-day-38':
+    'Moses begs God to send someone else. God does — but not the way Moses meant. The mouth he could not be, God would one day become.',
+  'bible-365-day-39':
+    "Day 39 of Bible 365 — Exodus 7-11. The plagues are not tantrums. They are God walking down the list of Egypt's gods, one by one, and proving each one empty.",
   'bible-365-day-4':
-    'Day 4 of Bible 365 — Genesis 2:18-25. Communion is not a consolation. It was always the design.',
+    "Day 4 of Bible 365 — Genesis 2:18-25. The first thing God ever called 'not good' was a person by themselves. Communion was the design, not the consolation.",
   'bible-365-day-40': 'Day 40 of Bible 365 — Exodus 12:1-13',
-  'bible-365-day-41': 'Day 41 of Bible 365 — Exodus (deeper)',
-  'bible-365-day-42': 'Day 42 of Bible 365 — Sabbath',
-  'bible-365-day-43': 'Day 43 of Bible 365 — Exodus 14',
-  'bible-365-day-44': 'Day 44 of Bible 365 — Exodus 15',
-  'bible-365-day-45': 'Day 45 of Bible 365 — Exodus 16',
+  'bible-365-day-41':
+    "Day 41 of Bible 365 — Pharaoh's hardened heart and the mystery of judgment. The same God who hardened a heart to display His name would one day display that name by giving His own Son up to death.",
+  'bible-365-day-42':
+    'Trapped between Pharaoh and the sea, Israel is told to do the one thing terror cannot: be still. Salvation is something you watch God accomplish.',
+  'bible-365-day-43':
+    'Trapped between Pharaoh and the sea, Israel is told to do the one thing that feels like nothing: stand still. Salvation is something you watch God accomplish, not something you achieve.',
+  'bible-365-day-44':
+    "Israel walks out of the sea and the first thing they do is sing. The Bible's oldest song is not a hymn of theory but a survivor's cry — and one word in it is already a name.",
+  'bible-365-day-45':
+    'In the desert between rescue and rest, God rains bread from the sky — but only enough for today. The miracle is also a test: can a freed people learn to trust a God who feeds them one morning at a time?',
   'bible-365-day-46': 'Day 46 of Bible 365 — Exodus 17:1-7',
   'bible-365-day-47': 'Day 47 of Bible 365 — Exodus 19',
-  'bible-365-day-48': 'Day 48 of Bible 365 — Exodus 20',
-  'bible-365-day-49': 'Day 49 of Bible 365 — Sabbath',
+  'bible-365-day-48':
+    'Before God gives a single command, He says who He is and what He has already done. The Ten Words open not with a demand but with a deliverance.',
+  'bible-365-day-49':
+    'The commandment that could not save you was never powerless because it was bad. It was powerless because you are weak. So God did the one thing the law could not: He came.',
   'bible-365-day-5':
     'The first lie did not deny God. It rephrased Him. Four words still rearrange faith into doubt: Did God really say?',
-  'bible-365-day-50': 'Day 50 of Bible 365 — Exodus 25:1-9',
+  'bible-365-day-50':
+    "God's first home among His people is not a fortress He builds, but a tent they bring Him by hand. Before He gives the blueprint, He names the reason: that I may dwell among them.",
   'bible-365-day-51': 'Day 51 of Bible 365 — Exodus 32',
   'bible-365-day-52': 'Day 52 of Bible 365 — Exodus 33:12-23',
-  'bible-365-day-53': 'Day 53 of Bible 365 — Leviticus 16',
+  'bible-365-day-53':
+    'Once a year, on the only day Israel could not work, two goats stood for one mercy: blood carried in, sin carried out. The whole gospel is rehearsed in a single morning.',
   'bible-365-day-54': 'Day 54 of Bible 365 — Leviticus 19:1-18',
-  'bible-365-day-55': 'Day 55 of Bible 365 — Numbers 6:22-27',
-  'bible-365-day-56': 'Day 56 of Bible 365 — Sabbath',
-  'bible-365-day-57': 'Day 57 of Bible 365 — Numbers 13-14',
-  'bible-365-day-58': 'Day 58 of Bible 365 — Numbers 16',
+  'bible-365-day-55':
+    "The oldest words ever prayed over God's people are not advice but a gift — the LORD's own face, turned toward you. And the last thing Jesus did before heaven was lift His hands and say them.",
+  'bible-365-day-56':
+    'Day 56 of Bible 365 — Sabbath. God hands Aaron the words to bless His people, then signs them Himself: His Name laid on them, His face turned toward them.',
+  'bible-365-day-57':
+    'Day 57 of Bible 365 — Numbers 13-14. Ten men saw giants. Two saw bread. The land was the same; the difference was who they thought was walking with them.',
+  'bible-365-day-58':
+    'Korah wanted the priesthood for himself. When the plague broke loose, it was the priest he envied who ran into the dying and stopped death with his own body.',
   'bible-365-day-59': 'Day 59 of Bible 365 — Numbers 21:4-9',
   'bible-365-day-6':
     'The first promise of the Gospel, hidden inside a curse, and the long road from Eden to the empty tomb.',
-  'bible-365-day-60': 'Day 60 of Bible 365 — Numbers 22-24',
+  'bible-365-day-60':
+    'A king hires a prophet to curse Israel. Four times the curse is loaded; four times it comes out a blessing. You cannot pronounce against what God has decided to bless.',
   'bible-365-day-61': 'Day 61 of Bible 365 — Deuteronomy 6:4-9',
   'bible-365-day-62': 'Day 62 of Bible 365 — Deuteronomy 30:11-20',
-  'bible-365-day-63': 'Day 63 of Bible 365 — Sabbath',
+  'bible-365-day-63':
+    "On the edge of the good land, Moses warns Israel: the danger isn't hunger. It's being full and forgetting who fed you.",
   'bible-365-day-64': 'Day 64 of Bible 365 — Joshua 1:1-9',
-  'bible-365-day-65': 'Day 65 of Bible 365 — Joshua 2',
+  'bible-365-day-65':
+    'A foreign woman ties a scarlet cord in her window and her whole house is spared when the wall falls. The thread that saves the outsider runs all the way to Bethlehem.',
   'bible-365-day-66': 'Day 66 of Bible 365 — Joshua 3-4',
   'bible-365-day-67': 'Day 67 of Bible 365 — Joshua 6',
-  'bible-365-day-68': 'Day 68 of Bible 365 — Joshua 7',
-  'bible-365-day-69': 'Day 69 of Bible 365 — Joshua 24',
+  'bible-365-day-68':
+    "Day 68 of Bible 365 — Joshua 7. Israel loses a battle it should have won, and the reason is a cloak and some silver buried in the dirt of one man's tent. What we hide does not stay private.",
+  'bible-365-day-69':
+    'Day 69 of Bible 365 — Joshua 24. At Shechem, Joshua hands Israel a choice. But the choice rests on a covenant God already kept first.',
   'bible-365-day-7':
     "Before the gate closes behind Adam, God kills to clothe him. The first death in Scripture is God's, for our shame.",
-  'bible-365-day-70': 'Day 70 of Bible 365 — Sabbath',
-  'bible-365-day-71': 'Day 71 of Bible 365 — Judges 2:6-23',
-  'bible-365-day-72': 'Day 72 of Bible 365 — Judges 6',
-  'bible-365-day-73': 'Day 73 of Bible 365 — Judges 7',
+  'bible-365-day-70':
+    'Israel finally lays its head down in the land. Not one promise had failed. But the rest of a settled people still waited for a greater Joshua.',
+  'bible-365-day-71':
+    'One generation saw God split rivers and topple walls. The next had never met Him. The book of Judges begins with a funeral and a forgetting.',
+  'bible-365-day-72':
+    'A frightened man hides in a winepress, and the Angel of the LORD calls him a mighty man of valor. Strength was never his to begin with.',
+  'bible-365-day-73':
+    'Day 73 of Bible 365 — Judges 7. God thins an army to three hundred and hides the fire in breakable clay, so the victory can only be read one way.',
   'bible-365-day-74': 'Day 74 of Bible 365 — Judges 13-16',
-  'bible-365-day-75': 'Day 75 of Bible 365 — Ruth 1',
-  'bible-365-day-76': 'Day 76 of Bible 365 — Ruth 4',
-  'bible-365-day-77': 'Day 77 of Bible 365 — Sabbath',
+  'bible-365-day-75':
+    'Day 75 of Bible 365 — Ruth 1. A widow comes home empty, and a foreigner who owes her nothing refuses to let go. Loyal love walks into Bethlehem at the start of the harvest.',
+  'bible-365-day-76':
+    'At the gate, one kinsman says "I cannot." Another says "I am buying." The whole line to David — and to Christ — turns on a redeemer willing to pay.',
+  'bible-365-day-77':
+    'A Moabite widow no record should have kept gets the last word of the book — and the first word of a king. This is the Sabbath of the included.',
   'bible-365-day-78': 'Day 78 of Bible 365 — 1 Samuel 1',
   'bible-365-day-79': 'Day 79 of Bible 365 — 1 Samuel 3',
   'bible-365-day-8':
     'Day 8 of Bible 365 - Genesis 4:1-16. The first death in the Bible is not from the curse outside Eden but from the anger inside a brother. God warns Cain before he strikes: sin is crouching, and it can be mastered.',
-  'bible-365-day-80': 'Day 80 of Bible 365 — 1 Samuel 8',
+  'bible-365-day-80':
+    'Israel asks for a king like the nations have — and God tells Samuel the ache underneath the request: it is not Samuel they have rejected, but Me.',
   'bible-365-day-81': 'Day 81 of Bible 365 — 1 Samuel 15',
-  'bible-365-day-82': 'Day 82 of Bible 365 — 1 Samuel 16',
-  'bible-365-day-83': 'Day 83 of Bible 365 — 1 Samuel 17',
-  'bible-365-day-84': 'Day 84 of Bible 365 — Sabbath',
-  'bible-365-day-85': 'Day 85 of Bible 365 — 1 Samuel 24',
-  'bible-365-day-86': 'Day 86 of Bible 365 — 2 Samuel 7',
-  'bible-365-day-87': 'Day 87 of Bible 365 — 2 Samuel 11-12',
+  'bible-365-day-82':
+    'Samuel parades seven impressive sons past the prophet. God waits for the boy nobody bothered to call in from the sheep.',
+  'bible-365-day-83':
+    'Forty days an army stands frozen behind one line nobody will cross. Then a shepherd walks into the gap — and the whole battle hangs on a single life.',
+  'bible-365-day-84':
+    'Seven impressive sons stand in a row. God passes them all and sends for the boy nobody bothered to call in from the sheep.',
+  'bible-365-day-85':
+    'Day 85 of Bible 365 — in a dark cave, David holds the life of the man hunting him, and chooses a torn hem over a throne seized by blood.',
+  'bible-365-day-86':
+    'David offers God a cedar house. God answers by promising David a house no axe could ever fell — a throne that outlives every king who sits on it.',
+  'bible-365-day-87':
+    'David pronounces a death sentence on a stranger in a story — and then the prophet turns the verdict around. The judgment we are so quick to hand out is the one we were always standing under.',
   'bible-365-day-88': 'Day 88 of Bible 365 — Psalm 51',
   'bible-365-day-89': 'Day 89 of Bible 365 — Psalm 23',
   'bible-365-day-9':
     'When God looked at a world bent only toward evil, one man caught His eye. Genesis 6 holds the first time grace is named in all of Scripture.',
   'bible-365-day-90': 'Day 90 of Bible 365 — Psalm 22',
-  'bible-365-day-91': 'Day 91 of Bible 365 — Sabbath',
-  'bible-365-day-92': 'Day 92 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-93': 'Day 93 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-94': 'Day 94 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-95': 'Day 95 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-96': 'Day 96 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-97': 'Day 97 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-98': 'Day 98 of Bible 365 — 1 Kings 3-8',
-  'bible-365-day-99': 'Day 99 of Bible 365 — 1 Kings 11',
+  'bible-365-day-91':
+    'Day 91 of Bible 365 — Sabbath. The week ends where the cross does: with the worst said out loud, and the love that outlasts it.',
+  'bible-365-day-92':
+    'Offered anything, Solomon asks for a listening heart. Then he builds a house for a God no house can hold - and the whole reading leans toward the day God moves in for good.',
+  'bible-365-day-93':
+    'Given anything, Solomon asks for a heart that hears. Then he builds a house too small for God — and points, without knowing it, to the One in whom all the fullness would finally dwell.',
+  'bible-365-day-94':
+    'The wisest man who ever lived builds God the most glorious house on earth — then stands in the doorway and admits it cannot hold Him. Day 94 of Bible 365.',
+  'bible-365-day-95':
+    'Given one wish, Solomon asks not for long life or wealth but for a heart that listens. Then he builds God a house and admits it could never hold Him. Day 95 of Bible 365 — 1 Kings 3-8.',
+  'bible-365-day-96':
+    "Solomon asks for a listening heart, builds God a house, then admits the house can't hold Him. What he builds in stone, God will one day build in flesh.",
+  'bible-365-day-97':
+    'Solomon asks for one thing and is given everything; then he builds God a house and admits it cannot hold Him. Wisdom and a dwelling place both point past themselves to Christ.',
+  'bible-365-day-98':
+    'Solomon asks for a listening heart, then builds God a house — and stands inside it knowing heaven itself cannot hold the One who came to dwell there.',
+  'bible-365-day-99':
+    "Solomon, the wisest king, drifts a thousand small steps from God. The kingdom tears. But a single tribe is held back — a lamp God refuses to extinguish for David's sake.",
   'coming-to-the-end-of-ourselves-day-1':
     'When our plans crumble, true faith finds its foundation',
   'coming-to-the-end-of-ourselves-day-2':
@@ -730,45 +824,45 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'anointed-day-5': 'Anointed to Go',
   'bible-365-day-1': 'In the beginning, God',
   'bible-365-day-10': 'The covenant rainbow',
-  'bible-365-day-100': "Solomon's Drift — Day 2 — Building",
-  'bible-365-day-101': "Solomon's Drift — Day 3 — Pivot",
-  'bible-365-day-102': "Solomon's Drift — Day 4 — Application",
+  'bible-365-day-100': 'The Heart That Was Never Whole',
+  'bible-365-day-101': 'The slow theft of a divided heart',
+  'bible-365-day-102': 'The slow theft of a divided heart',
   'bible-365-day-103': "Solomon's Drift — Day 5 — Resolution",
-  'bible-365-day-104': "Solomon's Drift — Day 6 — Deeper Dive",
-  'bible-365-day-105': "Solomon's Drift — Day 7 — Sabbath",
-  'bible-365-day-106': 'Divided Kingdom — Day 1 — Hook',
-  'bible-365-day-107': 'Divided Kingdom — Day 2 — Building',
-  'bible-365-day-108': 'Divided Kingdom — Day 3 — Pivot',
-  'bible-365-day-109': 'Divided Kingdom — Day 4 — Application',
+  'bible-365-day-104': 'The Heart That Drifted, the Lamp That Stayed',
+  'bible-365-day-105': "The slow turning of a wise man's heart",
+  'bible-365-day-106': 'The kingdom torn at Shechem',
+  'bible-365-day-107': 'The kingdom tears, and a name is spoken',
+  'bible-365-day-108': 'Too Far to Go Up',
+  'bible-365-day-109': 'A nearer god, on your own terms',
   'bible-365-day-11': 'The name they could not build',
   'bible-365-day-110': 'Divided Kingdom — Day 5 — Resolution',
   'bible-365-day-111': 'Divided Kingdom — Day 6 — Deeper Dive',
   'bible-365-day-112': 'Divided Kingdom — Day 7 — Sabbath',
-  'bible-365-day-113': 'Elijah Cycles — Day 1 — Hook',
-  'bible-365-day-114': 'Elijah Cycles — Day 2 — Building',
-  'bible-365-day-115': 'Elijah Cycles — Day 3 — Pivot',
-  'bible-365-day-116': 'Elijah Cycles — Day 4 — Application',
-  'bible-365-day-117': 'Elijah Cycles — Day 5 — Resolution',
-  'bible-365-day-118': 'Elijah Cycles — Day 6 — Deeper Dive',
-  'bible-365-day-119': 'Elijah Cycles — Day 7 — Sabbath',
+  'bible-365-day-113': 'The voice that was not in the fire',
+  'bible-365-day-114': 'After the Fire, a Whisper',
+  'bible-365-day-115': 'After the fire, a whisper',
+  'bible-365-day-116': 'After the fire, the whisper',
+  'bible-365-day-117': 'The mantle that fell',
+  'bible-365-day-118': 'The God who was not in the fire',
+  'bible-365-day-119': 'The God Who Was Not in the Fire',
   'bible-365-day-12': 'When language breaks',
-  'bible-365-day-120': 'Elisha Ministry — Day 1 — Hook',
-  'bible-365-day-121': 'Elisha Ministry — Day 2 — Building',
-  'bible-365-day-122': 'Elisha Ministry — Day 3 — Pivot',
-  'bible-365-day-123': 'Elisha Ministry — Day 4 — Application',
-  'bible-365-day-124': 'Elisha Ministry — Day 5 — Resolution',
-  'bible-365-day-125': 'Elisha Ministry — Day 6 — Deeper Dive',
-  'bible-365-day-126': 'Elisha Ministry — Day 7 — Sabbath',
-  'bible-365-day-127': 'Northern Prophets — Day 1 — Hook',
-  'bible-365-day-128': 'Northern Prophets — Day 2 — Building',
-  'bible-365-day-129': 'Northern Prophets — Day 3 — Pivot',
+  'bible-365-day-120': 'The jar that did not run dry',
+  'bible-365-day-121': 'Wash and be clean',
+  'bible-365-day-122': 'Wash and be clean',
+  'bible-365-day-123': 'Bring the empty jars',
+  'bible-365-day-124': 'Life that outlasts the grave',
+  'bible-365-day-125': 'Wash, and be clean',
+  'bible-365-day-126': 'Wash, and be clean',
+  'bible-365-day-127': 'What the LORD Requires',
+  'bible-365-day-128': 'Worship God Will Not Smell',
+  'bible-365-day-129': 'What the LORD Requires',
   'bible-365-day-13': 'Go from your country',
-  'bible-365-day-130': 'Northern Prophets — Day 4 — Application',
+  'bible-365-day-130': 'Three verbs the prophets would not let go',
   'bible-365-day-131': 'Northern Prophets — Day 5 — Resolution',
-  'bible-365-day-132': 'Northern Prophets — Day 6 — Deeper Dive',
-  'bible-365-day-133': 'Northern Prophets — Day 7 — Sabbath',
-  'bible-365-day-134': "Hezekiah's Reform — Day 1 — Hook",
-  'bible-365-day-135': "Hezekiah's Reform — Day 2 — Building",
+  'bible-365-day-132': 'When Mercy and Justice War Inside God',
+  'bible-365-day-133': 'The Mercy God Wanted All Along',
+  'bible-365-day-134': 'The king who tore his clothes and prayed',
+  'bible-365-day-135': 'The Snake Hezekiah Broke',
   'bible-365-day-136': "Hezekiah's Reform — Day 3 — Pivot",
   'bible-365-day-137': "Hezekiah's Reform — Day 4 — Application",
   'bible-365-day-138': "Hezekiah's Reform — Day 5 — Resolution",
@@ -840,7 +934,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-198': 'Proverbs: Daily Wisdom — Day 2 — Building',
   'bible-365-day-199': 'Proverbs: Daily Wisdom — Day 3 — Pivot',
   'bible-365-day-2': 'Made in His image',
-  'bible-365-day-20': 'What faith costs',
+  'bible-365-day-20': 'Here I am, all the way up',
   'bible-365-day-200': 'Proverbs: Daily Wisdom — Day 4 — Application',
   'bible-365-day-201': 'Proverbs: Daily Wisdom — Day 5 — Resolution',
   'bible-365-day-202': 'Proverbs: Daily Wisdom — Day 6 — Deeper Dive',
@@ -873,7 +967,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-227': 'Isaiah: Suffering Servant — Day 3 — Pivot',
   'bible-365-day-228': 'Isaiah: Suffering Servant — Day 4 — Application',
   'bible-365-day-229': 'Isaiah: Suffering Servant — Day 5 — Resolution',
-  'bible-365-day-23': 'Jacob’s ladder',
+  'bible-365-day-23': "The ladder he didn't build",
   'bible-365-day-230': 'Isaiah: Suffering Servant — Day 6 — Deeper Dive',
   'bible-365-day-231': 'Isaiah: Suffering Servant — Day 7 — Sabbath',
   'bible-365-day-232': 'Jeremiah: New Covenant — Day 1 — Hook',
@@ -884,7 +978,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-237': 'Jeremiah: New Covenant — Day 6 — Deeper Dive',
   'bible-365-day-238': 'Jeremiah: New Covenant — Day 7 — Sabbath',
   'bible-365-day-239': 'Ezekiel: Dry Bones Live — Day 1 — Hook',
-  'bible-365-day-24': 'Wrestling till dawn',
+  'bible-365-day-24': 'The limp he kept',
   'bible-365-day-240': 'Ezekiel: Dry Bones Live — Day 2 — Building',
   'bible-365-day-241': 'Ezekiel: Dry Bones Live — Day 3 — Pivot',
   'bible-365-day-242': 'Ezekiel: Dry Bones Live — Day 4 — Application',
@@ -973,7 +1067,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-317': 'John: True Vine + Way + Truth — Day 2 — Building',
   'bible-365-day-318': 'John: True Vine + Way + Truth — Day 3 — Pivot',
   'bible-365-day-319': 'John: True Vine + Way + Truth — Day 4 — Application',
-  'bible-365-day-32': 'I am Joseph your brother',
+  'bible-365-day-32': 'Come near, the one you sold',
   'bible-365-day-320': 'John: True Vine + Way + Truth — Day 5 — Resolution',
   'bible-365-day-321': 'John: True Vine + Way + Truth — Day 6 — Deeper Dive',
   'bible-365-day-322': 'John: True Vine + Way + Truth — Day 7 — Sabbath',
@@ -1033,32 +1127,32 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-364': 'Revelation: New Heaven + New Earth — Day 7 — Sabbath',
   'bible-365-day-365': 'Come, Lord Jesus',
   'bible-365-day-37': 'I AM that I AM',
-  'bible-365-day-38': 'Who am I?',
+  'bible-365-day-38': 'Slow of speech, sent anyway',
   'bible-365-day-39': 'Let my people go',
   'bible-365-day-4': 'Not good to be alone',
   'bible-365-day-40': 'The Passover lamb',
-  'bible-365-day-41': 'When God hardens hearts',
+  'bible-365-day-41': 'The heart God hardened, the heart God broke',
   'bible-365-day-42': 'Rest in the rescue',
-  'bible-365-day-43': 'The sea opens',
-  'bible-365-day-44': 'The song of the redeemed',
+  'bible-365-day-43': 'Hemmed in, then opened',
+  'bible-365-day-44': 'The first song was a rescue',
   'bible-365-day-45': 'Manna in the morning',
   'bible-365-day-46': 'Water from the rock',
   'bible-365-day-47': 'Sinai trembles',
-  'bible-365-day-48': 'Ten Words',
+  'bible-365-day-48': 'Rescued First, Then Commanded',
   'bible-365-day-49': 'What the law cannot do',
   'bible-365-day-5': "The serpent's question",
-  'bible-365-day-50': 'A sanctuary for me',
+  'bible-365-day-50': 'A sanctuary for Me',
   'bible-365-day-51': 'The golden calf',
   'bible-365-day-52': 'Show me your glory',
-  'bible-365-day-53': 'Day of Atonement',
+  'bible-365-day-53': 'Two goats, one cleansing',
   'bible-365-day-54': 'Be holy as I am holy',
   'bible-365-day-55': 'The Lord bless you',
   'bible-365-day-56': 'When God’s face shines',
   'bible-365-day-57': 'Twelve scouts, two believers',
-  'bible-365-day-58': 'Korah’s rebellion',
+  'bible-365-day-58': 'The man who stood between the living and the dead',
   'bible-365-day-59': 'Bronze serpent lifted up',
   'bible-365-day-6': 'He will crush your head',
-  'bible-365-day-60': 'Balaam’s blessing',
+  'bible-365-day-60': 'The curse that would not fire',
   'bible-365-day-61': 'Hear, O Israel',
   'bible-365-day-62': 'Choose life',
   'bible-365-day-63': 'What we forget on the way',
@@ -1066,7 +1160,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-65': 'Rahab’s red cord',
   'bible-365-day-66': 'Crossing into promise',
   'bible-365-day-67': 'Walls of Jericho',
-  'bible-365-day-68': 'Achan’s hidden sin',
+  'bible-365-day-68': 'The thing buried under the tent',
   'bible-365-day-69': 'Choose this day',
   'bible-365-day-7': 'Cast out, but covered',
   'bible-365-day-70': 'Rest in the inheritance',
@@ -1075,7 +1169,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-73': 'Three hundred',
   'bible-365-day-74': 'Samson’s strength + folly',
   'bible-365-day-75': 'Where you go, I will go',
-  'bible-365-day-76': 'Boaz the redeemer',
+  'bible-365-day-76': 'The redeemer who would not refuse',
   'bible-365-day-77': 'When God writes you in',
   'bible-365-day-78': 'Hannah’s tears',
   'bible-365-day-79': 'Speak, your servant hears',
@@ -1083,24 +1177,24 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-80': 'We want a king',
   'bible-365-day-81': 'To obey is better than sacrifice',
   'bible-365-day-82': 'Man looks at appearance',
-  'bible-365-day-83': 'David vs Goliath',
+  'bible-365-day-83': 'The Champion Who Goes Down Alone',
   'bible-365-day-84': 'When God chooses the overlooked',
   'bible-365-day-85': 'I will not lift my hand',
-  'bible-365-day-86': 'I will establish a throne forever',
+  'bible-365-day-86': 'You wanted to build Him a house',
   'bible-365-day-87': 'You are the man',
   'bible-365-day-88': 'Create in me a clean heart',
   'bible-365-day-89': 'The Lord is my shepherd',
   'bible-365-day-9': 'Noah found favor',
   'bible-365-day-90': 'My God, why?',
   'bible-365-day-91': 'After the worst, still loved',
-  'bible-365-day-92': "Solomon's Wisdom + Temple — Day 1 — Hook",
-  'bible-365-day-93': "Solomon's Wisdom + Temple — Day 2 — Building",
-  'bible-365-day-94': "Solomon's Wisdom + Temple — Day 3 — Pivot",
-  'bible-365-day-95': "Solomon's Wisdom + Temple — Day 4 — Application",
-  'bible-365-day-96': "Solomon's Wisdom + Temple — Day 5 — Resolution",
-  'bible-365-day-97': "Solomon's Wisdom + Temple — Day 6 — Deeper Dive",
-  'bible-365-day-98': "Solomon's Wisdom + Temple — Day 7 — Sabbath",
-  'bible-365-day-99': "Solomon's Drift — Day 1 — Hook",
+  'bible-365-day-92': 'The king who asked to listen',
+  'bible-365-day-93': 'He asked for a listening heart',
+  'bible-365-day-94': 'A House That Cannot Hold Him',
+  'bible-365-day-95': 'Ask for the listening heart',
+  'bible-365-day-96': 'A House for a Name',
+  'bible-365-day-97': 'A listening heart, a house too small for God',
+  'bible-365-day-98': 'A house too small for God',
+  'bible-365-day-99': 'The Lamp He Would Not Let Go Out',
   'coming-to-the-end-of-ourselves-day-1': 'The Breaking Point',
   'coming-to-the-end-of-ourselves-day-2': 'The Turning Point',
   'coming-to-the-end-of-ourselves-day-3': 'The Surrender',

@@ -1,38 +1,187 @@
 {
   "day": 347,
-  "title": "1 Corinthians: Love + Resurrection — Day 4 — Application",
-  "teaser": "Day 347 of Bible 365 — 1 Cor 13, 15",
+  "title": "Love that won't be buried",
+  "teaser": "Day 347 of Bible 365 — Paul says faith without resurrection is empty, and ends by saying your labor is not. Between the two stands love that never fails.",
   "framework": "1 Cor 13, 15 — 1 Corinthians: Love + Resurrection",
   "scriptureReference": "1 Cor 13, 15",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 347"
+      "type": "scripture",
+      "reference": "1 Corinthians 13:8, 13; 15:14, 58",
+      "translation": "BSB",
+      "emphasis": [
+        "Love never fails",
+        "the greatest of these is love",
+        "your faith is futile",
+        "your labor in the Lord is not in vain"
+      ],
+      "greekOriginal": "ὁ κόπος ὑμῶν οὐκ ἔστιν κενὸς ἐν Κυρίῳ",
+      "passage": "Love never fails... And now these three remain: faith, hope, and love; but the greatest of these is love. ... And if Christ has not been raised, our preaching is worthless, and so is your faith. ... Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Cor 13, 15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Cor 13, 15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "κενός",
+      "transliteration": "kenos",
+      "pronunciation": "ke-NOSS",
+      "meaning": "empty, hollow, void, to no purpose, in vain",
+      "rootMeaning": "Kenos names a thing that looks full and proves empty - a jar you lift expecting weight, and it floats up light in your hand. Not false, exactly. Just nothing where you reached for something.",
+      "usageNote": "Paul stacks kenos through 1 Corinthians 15 like a hammer. If Christ has not been raised, the preaching is kenos and the faith is kenos (v. 14); his own apostleship would be kenos (v. 10, the same word group), the Corinthians' belief kenos (v. 17, 'futile'). Then the whole letter's argument turns on its final word: your labor in the Lord is ou kenos - 'not empty.' The same word that measures the disaster of a dead Christ measures the security of a risen one.",
+      "wordByWord": [
+        {
+          "word": "ὁ κόπος",
+          "transliteration": "ho kopos",
+          "meaning": "the labor, the toil - work that costs you, work to the point of weariness"
+        },
+        {
+          "word": "ὑμῶν",
+          "transliteration": "hymon",
+          "meaning": "of you, your - this is your toil, the ordinary cost of your days"
+        },
+        {
+          "word": "οὐκ ἔστιν",
+          "transliteration": "ouk estin",
+          "meaning": "is not - flat, present tense, a fact stated rather than a hope wished"
+        },
+        {
+          "word": "κενὸς",
+          "transliteration": "kenos",
+          "meaning": "empty, void, in vain - the hollow jar"
+        },
+        {
+          "word": "ἐν Κυρίῳ",
+          "transliteration": "en Kyrio",
+          "meaning": "in the Lord - the one place toil cannot come up empty"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μένει (menei)",
+          "reference": "In 13:13, faith, hope, and love 'remain' - menei, they abide, they stay standing when everything else is cleared away. Kenos and menei are the two poles of these chapters: what stays full and what comes up empty. Love is named among the things that remain; the resurrection is the reason your labor is not kenos. The two words lean on each other."
+        }
+      ],
+      "strongsNumber": "G2756",
+      "definition": "empty, vain, hollow, without content or result",
+      "usage": "Kenos is the gap between what a thing promises and what it holds. Paul's whole point is that the resurrection is the one event that closes that gap for good - so that love, and the toil love costs, is the one investment that cannot turn out hollow."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: 1 Corinthians: Love + Resurrection. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the firstfruits.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Chapters, One Argument",
+      "body": "We tend to file these two chapters in different drawers. First Corinthians 13 is the wedding chapter - love is patient, love is kind - read aloud over couples who will spend the rest of their lives discovering how hard those eight words are. First Corinthians 15 is the funeral chapter - if the dead are not raised, eat and drink, for tomorrow we die; but Christ has indeed been raised, the firstfruits of those who have fallen asleep. One gets read at the start of a marriage. The other at the end of a life.\n\nBut Paul wrote them eleven verses apart, to the same fractured church, in one breath of argument. Chapter 14 sits between them, sorting out worship. Pull that practical chapter out and 13 and 15 stand shoulder to shoulder, and you see what Paul was actually building. Chapter 13 tells the Corinthians how to live with each other - love that does not envy, does not boast, keeps no account of wrongs. Chapter 15 tells them why it will hold up: because the body that loves like that is going to be raised.\n\nDay four of a series is where the theory has to get its hands dirty. We have heard that love is the greatest, and that Christ is risen. Today the question is the plain one Paul's whole letter drives toward: so what do I do on Tuesday? And his answer ties the two chapters into a single knot - love now, with everything it costs, because the resurrection means none of it is wasted.",
+      "keyInsight": "Love and resurrection are not two topics Paul happens to discuss in the same letter. They are one argument: love is how you live, resurrection is why it lasts.",
+      "content": "We tend to file these two chapters in different drawers. First Corinthians 13 is the wedding chapter - love is patient, love is kind - read aloud over couples who will spend the rest of their lives discovering how hard those eight words are. First Corinthians 15 is the funeral chapter - if the dead are not raised, eat and drink, for tomorrow we die; but Christ has indeed been raised, the firstfruits of those who have fallen asleep. One gets read at the start of a marriage. The other at the end of a life.\n\nBut Paul wrote them eleven verses apart, to the same fractured church, in one breath of argument. Chapter 14 sits between them, sorting out worship. Pull that practical chapter out and 13 and 15 stand shoulder to shoulder, and you see what Paul was actually building. Chapter 13 tells the Corinthians how to live with each other - love that does not envy, does not boast, keeps no account of wrongs. Chapter 15 tells them why it will hold up: because the body that loves like that is going to be raised.\n\nDay four of a series is where the theory has to get its hands dirty. We have heard that love is the greatest, and that Christ is risen. Today the question is the plain one Paul's whole letter drives toward: so what do I do on Tuesday? And his answer ties the two chapters into a single knot - love now, with everything it costs, because the resurrection means none of it is wasted."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Aide Who Kept Showing Up",
+      "body": "There was a woman I knew of who spent eleven years caring for her mother through dementia. By the last two years her mother no longer knew her name. She fed her, turned her, sang to her the hymns the older woman had once sung in church, washed her, and was met most mornings by a blank and frightened face that took her for a stranger.\n\nPeople said the things people say. At least she's comfortable. You're a saint. And once, from someone who meant no harm: Does she even know you're there? The daughter said she'd stopped asking that question, because the answer didn't change what love asked of her that day. But she admitted, quietly, that there were nights the whole thing felt like pouring water into sand. Eleven years of patience that the one person it was for could not remember by morning. If this is all there is, she said, then I have been very kind to no purpose.\n\nThat sentence is exactly the one Paul is answering. If this is all there is - if the perishable stays perishable, if what is sown in weakness simply rots - then love poured into someone who cannot hold it really is water into sand. Kenos. Empty. Paul does not pretend the labor is light. He plants it in the only ground where it cannot drain away.",
+      "connectionToTheme": "Love's hardest form is the love that gets no return in this life. Paul's answer is not that it feels worthwhile, but that the resurrection makes it actually, permanently, not in vain.",
+      "content": "There was a woman I knew of who spent eleven years caring for her mother through dementia. By the last two years her mother no longer knew her name. She fed her, turned her, sang to her the hymns the older woman had once sung in church, washed her, and was met most mornings by a blank and frightened face that took her for a stranger.\n\nPeople said the things people say. At least she's comfortable. You're a saint. And once, from someone who meant no harm: Does she even know you're there? The daughter said she'd stopped asking that question, because the answer didn't change what love asked of her that day. But she admitted, quietly, that there were nights the whole thing felt like pouring water into sand. Eleven years of patience that the one person it was for could not remember by morning. If this is all there is, she said, then I have been very kind to no purpose.\n\nThat sentence is exactly the one Paul is answering. If this is all there is - if the perishable stays perishable, if what is sown in weakness simply rots - then love poured into someone who cannot hold it really is water into sand. Kenos. Empty. Paul does not pretend the labor is light. He plants it in the only ground where it cannot drain away."
+    },
+    {
+      "type": "insight",
+      "heading": "Empty, or Not Empty - The Same Word Twice",
+      "body": "Lay verse 15:14 beside verse 15:58 and the chapter shows its skeleton. In verse 14 Paul says that if Christ has not been raised, our preaching is worthless and so is your faith - kenos, empty. In verse 58, the chapter's final line, he says your labor in the Lord is not in vain - ou kenos, not empty. The same Greek word opens the disaster and closes the comfort. Everything between is the argument that moves you from the first to the second.\n\nThis is why Paul refuses to leave the resurrection in the realm of theology. He is not interested in whether you can win the debate about an empty tomb. He is interested in whether your Tuesday is empty. The two are the same question. If the body stays in the ground for good, then love is a beautiful gesture that the universe will eventually erase, and the kindest people are simply the most elaborately fooled. But if the body is raised, then the patience, the not-boasting, the keeping-no-account-of-wrongs, the showing up for the mother who has forgotten your name - all of it is sown, not spent. What is sown perishable is raised imperishable. Your labor is not water into sand. It is seed into ground.\n\nLove that never fails (13:8) and a body that is raised in power (15:43) are the same promise told twice. The first tells you what to do. The second tells you it will keep.",
+      "historicalContext": "First Corinthians was written around AD 53-55, likely from Ephesus, to a congregation in a wealthy Roman port city. The Corinthians prized the showy spiritual gifts Paul lists in chapter 12 - tongues, prophecy, knowledge - as marks of status, and the church was splitting along lines of who had which. Chapter 13 is Paul's deliberate interruption of that competition: every gift they were ranking themselves by, he says, is a clanging cymbal without love. Some in Corinth were also denying a bodily resurrection (15:12), influenced by a Greek instinct that the soul's escape from the body was the goal. Paul answers both errors with one logic: the body matters because it will be raised, and love matters because the body that loves is what God intends to raise.",
+      "fascinatingFact": "The word translated 'firstfruits' in 15:20 - aparche - was a harvest term. The firstfruits were the first sheaf brought to the Temple, the proof that the rest of the field was coming. By calling the risen Christ the firstfruits 'of those who have fallen asleep,' Paul is not calling the resurrection a single miracle. He is calling it the first sheaf of a whole harvest - which means every grave of every person who died loving in Christ is, in Paul's image, a field already planted and waiting.",
+      "content": "Lay verse 15:14 beside verse 15:58 and the chapter shows its skeleton. In verse 14 Paul says that if Christ has not been raised, our preaching is worthless and so is your faith - kenos, empty. In verse 58, the chapter's final line, he says your labor in the Lord is not in vain - ou kenos, not empty. The same Greek word opens the disaster and closes the comfort. Everything between is the argument that moves you from the first to the second.\n\nThis is why Paul refuses to leave the resurrection in the realm of theology. He is not interested in whether you can win the debate about an empty tomb. He is interested in whether your Tuesday is empty. The two are the same question. If the body stays in the ground for good, then love is a beautiful gesture that the universe will eventually erase, and the kindest people are simply the most elaborately fooled. But if the body is raised, then the patience, the not-boasting, the keeping-no-account-of-wrongs, the showing up for the mother who has forgotten your name - all of it is sown, not spent. What is sown perishable is raised imperishable. Your labor is not water into sand. It is seed into ground.\n\nLove that never fails (13:8) and a body that is raised in power (15:43) are the same promise told twice. The first tells you what to do. The second tells you it will keep."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul ends his long argument for the resurrection not with 'therefore, believe correctly,' but with 'therefore, be steadfast and immovable, always excelling in the work of the Lord - because your labor in the Lord is not in vain.' The resurrection's first practical command is to keep working in love.",
+      "modernApplication": "We are tempted to measure love by whether it pays off in our lifetime - whether the child turns out well, whether the marriage is repaired, whether the person we forgave ever thanks us. Paul cuts the measurement loose from the timeline. The question is not whether your love succeeds before you die. The question is whether it is done 'in the Lord' - because what is done there is not erased by death; it is raised by it.",
+      "connectionPoint": "Day two of any study builds the tension; day four, where we are now, is where the building gets lived in. The tension was real: love is costly, and a lot of it seems to come to nothing. The application is not a technique for loving harder. It is a foundation under the love we already give - the assurance that it is sown, not spilled.",
+      "newTestamentEcho": "The same Paul who wrote this had written to the Galatians, 'Let us not grow weary in well-doing, for in due time we will reap a harvest if we do not give up' (Galatians 6:9). And Jesus Himself had said it first, in the plainest terms: 'unless a grain of wheat falls to the ground and dies, it remains alone; but if it dies, it bears much fruit' (John 12:24). The seed that looks lost is the seed that lives."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you loving someone with no visible return - and what would change if you truly believed that labor was sown, not spent?",
+      "additionalQuestions": [
+        "Reread 1 Corinthians 13:4-7 slowly, replacing the word 'love' with your own name. Where does the sentence become a lie? That is not a verdict on you - it is a place the risen Christ is offering to grow something that lasts.",
+        "Is there a kindness you stopped giving because it 'wasn't getting anywhere'? What does 'your labor in the Lord is not in vain' say to that decision?",
+        "Paul says faith, hope, and love remain. When you imagine your own death honestly, which of the three do you find hardest to believe will outlast it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have measured my love by whether it works. I have given up on people because the giving felt like pouring into sand. Forgive me for trusting the timeline more than I trust You. Today, steady me. Make me steadfast and immovable in one place I have wanted to quit. Let me love someone the way You love me - patient, not keeping account - and let me leave the harvest to You, because You are risen, and so my labor is not in vain. Through Christ, the firstfruits. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one person you love whose love has felt unreturned or unfinished. Today, do one concrete, ordinary act of love toward them - a call, a meal, a forgiveness held instead of an account kept - and do it consciously 'in the Lord,' as seed planted into ground that will be raised, not water poured into sand.",
+      "leavingAtCross": [
+        "The instinct to ration my love to the people who pay it back",
+        "The quiet despair that says the love no one sees or remembers is wasted",
+        "The pride that needs my kindness to produce a result I can measure"
+      ],
+      "receivingFromCross": [
+        "The promise that what is sown perishable is raised imperishable - including every act of love I have given away",
+        "Freedom to love without keeping account of whether it 'works'",
+        "The steadiness of knowing my labor in the Lord is not in vain, because Christ is risen"
+      ],
+      "content": "Name one person you love whose love has felt unreturned or unfinished. Today, do one concrete, ordinary act of love toward them - a call, a meal, a forgiveness held instead of an account kept - and do it consciously 'in the Lord,' as seed planted into ground that will be raised, not water poured into sand."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Paul uses the same Greek word, kenos (empty/in vain), in 15:14 and 15:58. What does he say is empty in the first verse, and what does he say is not empty in the last - and how does the resurrection move you from one to the other?",
+        "Why does Paul end the longest resurrection chapter in the Bible with a command about ordinary work and love, rather than with a final proof?",
+        "How does 'love never fails' (13:8) connect to 'it is raised imperishable' (15:42)? What do the two verses promise about the same thing?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one relationship where your love feels like it is coming up empty. Let the other person remind you what 1 Corinthians 15:58 says over it.",
+        "Read 13:4-7 aloud to each other and name, honestly, the one line each of you finds hardest to live - then pray for each other in that exact place.",
+        "Ask each other: where have you quit on love because it 'wasn't working,' and what would it look like to be steadfast and immovable there this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 15:20",
+          "text": "But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep."
+        },
+        {
+          "reference": "1 Corinthians 15:54-55",
+          "text": "...then the saying that is written will come to pass: 'Death has been swallowed up in victory.' 'Where, O Death, is your victory? Where, O Death, is your sting?'"
+        },
+        {
+          "reference": "John 12:24",
+          "text": "Truly, truly, I tell you, unless a grain of wheat falls to the ground and dies, it remains alone. But if it dies, it bears much fruit."
+        },
+        {
+          "reference": "Galatians 6:9",
+          "text": "Let us not grow weary in well-doing, for in due time we will reap a harvest if we do not give up."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Corinthians 13 and 15",
+          "note": "Read both chapters in one sitting, skipping 14, and watch how the description of love (13) and the promise of resurrection (15) are two halves of one instruction: how to live, and why it lasts."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle to the Corinthians",
+      "description": "A former persecutor of the church who met the risen Christ on the road to Damascus, Paul founded the Corinthian congregation around AD 50 and wrote 1 Corinthians a few years later to address its divisions, its pride in spiritual gifts, and a creeping denial of bodily resurrection. He had himself buried a great deal of labor that seemed to come to nothing - beatings, imprisonments, churches that broke his heart - which is part of why his insistence that 'your labor in the Lord is not in vain' carries the weight it does. He was not theorizing about wasted effort. He was staking his exhausted life on the resurrection making it count.",
+      "keyQuote": "Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain.",
+      "lessonForUs": "Paul does not tell the weary to love harder. He tells them the ground their love is planted in has already been broken open by a risen Christ - so they can be immovable, not because they are strong, but because the harvest is sure.",
+      "heading": "Apostle to the Corinthians"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2252,
+  "scriptureReference_full": "1 Corinthians 13:8, 13; 15:14, 58",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (kenos, G2756; kopos; aparche; menei) reflects standard lexical sources. The kenos bookend between 15:14 and 15:58 is an observation of the text's own repeated vocabulary, not a contested interpretive claim."
+  ]
 }

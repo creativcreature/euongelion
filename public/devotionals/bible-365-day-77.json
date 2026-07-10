@@ -1,38 +1,187 @@
 {
   "day": 77,
   "title": "When God writes you in",
-  "teaser": "Day 77 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: rest in inclusion",
-  "scriptureReference": "Sabbath",
+  "teaser": "A Moabite widow no record should have kept gets the last word of the book — and the first word of a king. This is the Sabbath of the included.",
+  "framework": "Ruth 4:13-22",
+  "scriptureReference": "Ruth 4:13-22",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 77"
+      "type": "scripture",
+      "reference": "Ruth 4:13-17, 21-22",
+      "translation": "BSB",
+      "emphasis": [
+        "kinsman-redeemer",
+        "A son has been born to Naomi",
+        "the father of David"
+      ],
+      "hebrewOriginal": "וַתֵּלֶד בֵּן וַתִּקְרֶאנָה לוֹ הַשְּׁכֵנוֹת שֵׁם לֵאמֹר יֻלַּד־בֵּן לְנָעֳמִי",
+      "passage": "So Boaz took Ruth, and she became his wife. And when he had relations with her, the LORD enabled her to conceive, and she gave birth to a son. Then the women said to Naomi, \"Blessed be the LORD, who has not left you this day without a kinsman-redeemer. May his name become famous in Israel. He will renew your life and sustain you in your old age. For your daughter-in-law, who loves you and is better to you than seven sons, has given him birth.\" ... The neighbor women said, \"A son has been born to Naomi,\" and they named him Obed. He became the father of Jesse, the father of David. ... Salmon was the father of Boaz, Boaz was the father of Obed, Obed was the father of Jesse, and Jesse was the father of David."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "גֹּאֵל",
+      "transliteration": "go'el",
+      "pronunciation": "go-ALE",
+      "meaning": "kinsman-redeemer, the relative who buys back what was lost",
+      "rootMeaning": "From the root ga'al, to redeem, to act as kin. The go'el was the nearest relative whose job it was to buy back a family's mortgaged land, free a relative sold into debt-slavery, and raise up a name for the dead so a family line would not vanish from Israel. Redemption here is not an abstraction; it is family showing up to pay.",
+      "usageNote": "The women of Bethlehem do not call the baby a blessing or a comfort. They call him a go'el - a redeemer. The same word God claims for Himself again and again: \"Thus says the LORD your Redeemer, the Holy One of Israel\" (Isaiah 48:17). The book of Ruth lets you watch the word work at human scale - a field bought, a widow taken in, a name kept alive - before the prophets lift it up to the size of God.",
+      "wordByWord": [
+        {
+          "word": "גֹּאֵל",
+          "transliteration": "go'el",
+          "meaning": "redeemer, the kinsman who buys back"
+        },
+        {
+          "word": "יֻלַּד־בֵּן",
+          "transliteration": "yullad-ben",
+          "meaning": "a son has been born"
+        },
+        {
+          "word": "לְנָעֳמִי",
+          "transliteration": "le-Na'omi",
+          "meaning": "to Naomi - the empty woman, now filled"
+        },
+        {
+          "word": "עוֹבֵד",
+          "transliteration": "Oved",
+          "meaning": "Obed - 'one who serves,' the named child"
+        },
+        {
+          "word": "דָּוִד",
+          "transliteration": "David",
+          "meaning": "David - the last word of the book, the king to come"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נָעֳמִי / מָרָא",
+          "reference": "In Ruth 1:20 Naomi tells the women, \"Do not call me Naomi [Pleasant]. Call me Mara [Bitter], for the Almighty has dealt quite bitterly with me.\" By chapter 4 the same women are speaking again - but now over a child in her lap. The name she rejected has come true after all."
+        }
+      ],
+      "strongsNumber": "H1350",
+      "definition": "go'el; a kinsman, a redeemer; the relative obligated to recover and restore what a family has lost",
+      "usage": "The go'el did not redeem strangers. He redeemed his own. That is the scandal and the comfort of the word: redemption begins by claiming someone as family."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest in inclusion. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ writes our names (Rev 21:27).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Women Get the Last Word",
+      "body": "The book of Ruth opened with a funeral and a famine. A man named Elimelech took his family out of Bethlehem - whose name means \"house of bread\" - because there was no bread, and went to live in Moab, the country of Israel's old enemies. There he died. His two sons married Moabite women, Orpah and Ruth, and then the sons died too. Three graves in a foreign land, and a woman named Naomi left holding nothing. When she finally came home, she told the women of Bethlehem to stop calling her Pleasant and start calling her Bitter. \"I went away full,\" she said, \"and the LORD has brought me back empty.\"\n\nNow read where the book lands. The same women of Bethlehem are gathered around the same Naomi - but this time there is a baby on her lap. \"Blessed be the LORD,\" they say, \"who has not left you this day without a kinsman-redeemer.\" They are talking about the child. They are saying that the redemption Naomi could not see in chapter 1 had a name, a weight, and a future all along.\n\nNotice who carries the theology. In a book full of men negotiating at the city gate, it is the neighbor women who interpret what God has done. They name the empty woman full again. And the child they name Obed - which means \"one who serves\" - is, the narrator quietly tells us, the father of Jesse, the father of David. The whole book has been walking toward a king nobody in the story can yet see.",
+      "keyInsight": "Ruth begins with a woman who calls herself Empty and ends with the same woman holding a redeemer in her lap. The bitterness was real. So was the writing-in that was happening underneath it the whole time.",
+      "content": "The book of Ruth opened with a funeral and a famine. A man named Elimelech took his family out of Bethlehem - whose name means \"house of bread\" - because there was no bread, and went to live in Moab, the country of Israel's old enemies. There he died. His two sons married Moabite women, Orpah and Ruth, and then the sons died too. Three graves in a foreign land, and a woman named Naomi left holding nothing. When she finally came home, she told the women of Bethlehem to stop calling her Pleasant and start calling her Bitter. \"I went away full,\" she said, \"and the LORD has brought me back empty.\"\n\nNow read where the book lands. The same women of Bethlehem are gathered around the same Naomi - but this time there is a baby on her lap. \"Blessed be the LORD,\" they say, \"who has not left you this day without a kinsman-redeemer.\" They are talking about the child. They are saying that the redemption Naomi could not see in chapter 1 had a name, a weight, and a future all along.\n\nNotice who carries the theology. In a book full of men negotiating at the city gate, it is the neighbor women who interpret what God has done. They name the empty woman full again. And the child they name Obed - which means \"one who serves\" - is, the narrator quietly tells us, the father of Jesse, the father of David. The whole book has been walking toward a king nobody in the story can yet see."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name in the Margin",
+      "body": "A friend of mine spent two years tracing her family back through ship manifests and county courthouses. She kept hitting the same wall: the women. The men were entered in full - names, ages, trades. The women, often, were a line in the margin: \"wife,\" \"and family,\" sometimes only a first name, sometimes nothing at all. She told me once that the hardest part was not the missing dates. It was the feeling that whole people had lived and been loved and had simply not been written down.\n\nThat is exactly the kind of person Ruth was. A Moabite. A widow. A foreign woman gleaning at the edges of someone else's field for the grain the harvesters left behind. By every ordinary rule of how records get kept, she should have been a line in the margin - \"and a foreign daughter-in-law\" - and then gone.\n\nInstead, the last sentences of her book are a genealogy, and her great-grandson is the king of Israel. The woman who should not have made the list closes the book. And generations later, when Matthew sits down to write the family tree of Jesus the Messiah, he does something almost no genealogy of his day would do: he names the women. \"Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth.\" The name that the world would have left in the margin, God set down in ink in the lineage of His own Son.",
+      "connectionToTheme": "Ruth is the person history forgets - foreign, female, widowed, poor. The Bible writes her name into the line of the king and, through the king, into the line of Christ. Inclusion is not God overlooking who she was. It is God refusing to.",
+      "content": "A friend of mine spent two years tracing her family back through ship manifests and county courthouses. She kept hitting the same wall: the women. The men were entered in full - names, ages, trades. The women, often, were a line in the margin: \"wife,\" \"and family,\" sometimes only a first name, sometimes nothing at all. She told me once that the hardest part was not the missing dates. It was the feeling that whole people had lived and been loved and had simply not been written down.\n\nThat is exactly the kind of person Ruth was. A Moabite. A widow. A foreign woman gleaning at the edges of someone else's field for the grain the harvesters left behind. By every ordinary rule of how records get kept, she should have been a line in the margin - \"and a foreign daughter-in-law\" - and then gone.\n\nInstead, the last sentences of her book are a genealogy, and her great-grandson is the king of Israel. The woman who should not have made the list closes the book. And generations later, when Matthew sits down to write the family tree of Jesus the Messiah, he does something almost no genealogy of his day would do: he names the women. \"Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth.\" The name that the world would have left in the margin, God set down in ink in the lineage of His own Son."
+    },
+    {
+      "type": "insight",
+      "heading": "The Genealogy Is the Gospel",
+      "body": "A modern reader is tempted to skip the last five verses of Ruth. A list of fathers and sons - Perez, Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz, Obed, Jesse, David - reads like a phone book bolted onto a love story. But to the people who first received this book, the genealogy is not the appendix. It is the point.\n\nHere is what the list quietly does. It takes the small, provincial, easily-forgotten events of one grieving family in one small town and connects them, name by name, to the throne of Israel. It says: this was never only about Naomi's grief or Ruth's loyalty or Boaz's kindness. God was assembling a king out of a famine and a funeral and a foreigner's faithfulness, and not one of them could see it while it was happening. The redemption felt local. It was dynastic. The bitterness was real on the ground. The writing-in was happening in heaven.\n\nAnd the list does not stop at David. The same names appear again in Matthew chapter 1, where the line runs on past David - through the kings, through the exile, through more obscure couplings and unlikely mothers - until it arrives at a different birth in the same little town. \"A son has been born to Naomi\" in Bethlehem becomes, in time, a Son born to all of us in Bethlehem. The book that began \"in the days when the judges ruled\" turns out to be a road. Follow the names far enough and you arrive at Christ. That is the secret hidden in the genealogy: God redeems by including, and every name He writes in is bending the story toward the Redeemer.",
+      "historicalContext": "Ruth was likely composed during or after the monarchy, read by a people who already knew David's name and were being shown its roots. In Israel, genealogy was not trivia - it established belonging, inheritance, priesthood, and claim to the land. To be written into a genealogy was to be granted a place in the covenant people. So when the narrator ends Ruth with David's lineage, he is making a covenantal argument: a Moabite woman's loyalty was woven by God into the very identity of Israel's greatest king.",
+      "fascinatingFact": "There are only two books in the Bible named for women, and Ruth is the only one named for a Gentile. The law in Deuteronomy 23 had specifically barred Moabites from the assembly of the LORD. Yet here a Moabite is not merely admitted but enthroned in the genealogy of the messianic line - a living preview of the day strangers far off would be brought near.",
+      "content": "A modern reader is tempted to skip the last five verses of Ruth. A list of fathers and sons - Perez, Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz, Obed, Jesse, David - reads like a phone book bolted onto a love story. But to the people who first received this book, the genealogy is not the appendix. It is the point.\n\nHere is what the list quietly does. It takes the small, provincial, easily-forgotten events of one grieving family in one small town and connects them, name by name, to the throne of Israel. It says: this was never only about Naomi's grief or Ruth's loyalty or Boaz's kindness. God was assembling a king out of a famine and a funeral and a foreigner's faithfulness, and not one of them could see it while it was happening. The redemption felt local. It was dynastic. The bitterness was real on the ground. The writing-in was happening in heaven.\n\nAnd the list does not stop at David. The same names appear again in Matthew chapter 1, where the line runs on past David - through the kings, through the exile, through more obscure couplings and unlikely mothers - until it arrives at a different birth in the same little town. \"A son has been born to Naomi\" in Bethlehem becomes, in time, a Son born to all of us in Bethlehem. The book that began \"in the days when the judges ruled\" turns out to be a road. Follow the names far enough and you arrive at Christ. That is the secret hidden in the genealogy: God redeems by including, and every name He writes in is bending the story toward the Redeemer."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Ruth the Moabite - foreign, widowed, barred by the letter of the law from the assembly - is written by God into the lineage of David and named in the genealogy of the Messiah. The outsider is not tolerated at the edge of the covenant. She is set down at its center.",
+      "modernApplication": "Most of us carry a quiet conviction that we are, at best, a line in the margin of God's story - admitted on sufferance, present but not really counted. We work to earn a place we suspect we were never actually given. Ruth's last chapter answers that fear at the root. You are not gleaning at the edge of someone else's field. In Christ, the field is given, the name is written, the place is yours.",
+      "connectionPoint": "Paul tells the Ephesians exactly what Ruth's story shows: \"remember that at that time you were separate from Christ, alienated from the commonwealth of Israel, and strangers to the covenants of the promise, without hope and without God in the world. But now in Christ Jesus you who once were far away have been brought near through the blood of Christ\" (Ephesians 2:12-13). Ruth was the Moabite far off, brought near by a redeemer who claimed her as kin. That is the whole gospel rehearsed in one provincial family before the prophets ever named it.",
+      "newTestamentEcho": "The kinsman-redeemer who buys back what the family lost points straight to the Redeemer who came in the flesh to do the same for us. And what Boaz did at the city gate, Christ does at the Book of Life: \"only those whose names are written in the Lamb's Book of Life\" enter the city (Revelation 21:27). Ruth went from a name in the margin to a name in the genealogy. In Christ, your name goes from far off to written in the Lamb's own book."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been living like a line in the margin - present but unsure you are really counted, really wanted, really written in?",
+      "additionalQuestions": [
+        "Naomi could not see the redemption while she was inside the grief. Look back at a bitter season you have lived through - can you see now any name God was quietly writing in that you could not read at the time?",
+        "Ruth's inclusion cost a redeemer something - a field bought, a name taken on. What does it change to know your place was not overlooked into existence, but redeemed into it?",
+        "If your name is written in the Lamb's Book of Life, what fear or striving could you set down this Sabbath?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "Lord, You did not leave Naomi empty, and You have not left me forgotten. Thank You that You are a Redeemer who claims people as family - that You wrote a Moabite widow into the line of a king, and the King into the line that came for me. Where I have lived like a name in the margin, working to earn a place You already gave, quiet me. Let me rest today in being written in. Not because I earned the ink, but because the Redeemer paid for it. Blessed be the LORD, who has not left me this day without a kinsman-redeemer. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a Sabbath day - nothing to finish, nothing to earn. Sit for a few quiet minutes with the women's words over Naomi: \"Blessed be the LORD, who has not left you this day without a kinsman-redeemer.\" Then say your own name in that sentence. Let it be enough that, in Christ, your name is written in - and rest there.",
+      "leavingAtCross": [
+        "The conviction that I am a line in the margin - present, but not really counted",
+        "The striving to earn a place that has already been given to me",
+        "The fear that my bitter seasons mean God stopped writing my story"
+      ],
+      "receivingFromCross": [
+        "A Redeemer who claims me as family at His own cost, not at my deserving",
+        "A name written in the Lamb's Book of Life - far off brought near",
+        "Rest in being included, not the exhaustion of trying to belong"
+      ],
+      "content": "This is a Sabbath day - nothing to finish, nothing to earn. Sit for a few quiet minutes with the women's words over Naomi: \"Blessed be the LORD, who has not left you this day without a kinsman-redeemer.\" Then say your own name in that sentence. Let it be enough that, in Christ, your name is written in - and rest there."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How do the women of Bethlehem at the end of Ruth answer the bitterness Naomi spoke at the beginning? What changed, and what did not?",
+        "Why does the narrator end a story about loyalty and loss with a genealogy? What is the list actually claiming?",
+        "How does a Moabite widow being written into the line of David point forward to the gospel coming to those who were once 'far off'?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one area where you have been living as if you have to earn a place with God rather than receive one.",
+        "Talk about a 'famine and funeral' season you are in now - and ask each other where God might be writing in a name you cannot yet read.",
+        "Pray together the women's blessing over each other by name: 'Blessed be the LORD, who has not left you without a Redeemer.'"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ruth 1:20-21",
+          "text": "\"Do not call me Naomi,\" she replied. \"Call me Mara, because the Almighty has dealt quite bitterly with me. I went away full, but the LORD has brought me back empty.\""
+        },
+        {
+          "reference": "Matthew 1:5-6",
+          "text": "Salmon was the father of Boaz by Rahab, Boaz the father of Obed by Ruth, Obed the father of Jesse, and Jesse the father of David the king."
+        },
+        {
+          "reference": "Ephesians 2:12-13",
+          "text": "Remember that at that time you were separate from Christ... But now in Christ Jesus you who once were far away have been brought near through the blood of Christ."
+        },
+        {
+          "reference": "Revelation 21:27",
+          "text": "But nothing unclean will ever enter it... but only those whose names are written in the Lamb's Book of Life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ruth 1 and Ruth 4",
+          "note": "Read the opening and closing chapters back to back. Watch the same women of Bethlehem speak in both - first over Naomi's emptiness, then over the child in her lap - and notice how the book answers its own grief."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Ruth",
+      "title": "The Moabite Written into the Line of the King",
+      "era": "Period of the Judges (roughly 12th-11th century BC)",
+      "description": "A Moabite widow who refused to leave her grieving Israelite mother-in-law, telling Naomi, \"Wherever you go, I will go... your people will be my people, and your God will be my God\" (Ruth 1:16). Foreign, female, widowed, and poor, she gleaned at the edges of Boaz's field and was redeemed by him as kinsman-redeemer. Their son Obed became the grandfather of King David - and so Ruth, the outsider barred by the letter of the law, was written by God into the lineage of the Messiah (Matthew 1:5).",
+      "keyQuote": "Wherever you go, I will go, and wherever you live, I will live; your people will be my people, and your God will be my God.",
+      "lessonForUs": "Ruth never campaigned for a place in the story. She loved faithfully where she was, and God did the writing-in. The one history would have left in the margin closes her own book and stands four generations from a king and many more from the King. Inclusion in God's family was never something Ruth earned. It was something her Redeemer gave.",
+      "heading": "The Moabite Written into the Line of the King"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2527,
+  "scriptureReference_full": "Ruth 4:13-22",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (go'el, ga'al H1350; the Naomi/Mara wordplay of Ruth 1:20) reflects standard lexical sources. The exclusion of Moabites from the assembly reflects Deuteronomy 23:3-6."
+  ]
 }

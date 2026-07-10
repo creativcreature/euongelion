@@ -1,38 +1,181 @@
 {
   "day": 127,
-  "title": "Northern Prophets — Day 1 — Hook",
-  "teaser": "Day 127 of Bible 365 — Amos, Hosea, Micah",
+  "title": "What the LORD Requires",
+  "teaser": "Three farmers and shepherds shout the same thing at a nation drowning in worship: God never wanted the rams. He wanted you.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
   "scriptureReference": "Amos, Hosea, Micah",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 127"
+      "type": "scripture",
+      "reference": "Micah 6:6-8",
+      "translation": "BSB",
+      "emphasis": [
+        "With what shall I come before the LORD",
+        "to act justly, to love mercy, and to walk humbly with your God"
+      ],
+      "hebrewOriginal": "הִגִּיד לְךָ אָדָם מַה־טּוֹב וּמָה־יְהוָה דּוֹרֵשׁ מִמְּךָ כִּי אִם־עֲשׂוֹת מִשְׁפָּט וְאַהֲבַת חֶסֶד וְהַצְנֵעַ לֶכֶת עִם־אֱלֹהֶיךָ",
+      "passage": "With what shall I come before the LORD when I bow before the God on high? Should I come to Him with burnt offerings, with year-old calves? Would the LORD be pleased with thousands of rams, with ten thousand rivers of oil? Shall I present my firstborn for my transgression, the fruit of my body for the sin of my soul? He has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God?"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loyal love, covenant kindness, steadfast mercy",
+      "rootMeaning": "Chesed is the love that keeps its word. It is not a warm feeling that comes and goes; it is faithfulness with skin on - the kindness a person owes because of a bond they have entered, and gives anyway when the other side has broken theirs.",
+      "usageNote": "When Micah says God requires us to 'love mercy,' the Hebrew is literally 'love chesed.' The same word is the heartbeat of all three of these prophets. It is what God says He wants instead of sacrifice in Hosea, and what He keeps showing a people who keep leaving Him.",
+      "wordByWord": [
+        {
+          "word": "עֲשׂוֹת מִשְׁפָּט",
+          "transliteration": "asot mishpat",
+          "meaning": "to do justice - to set things right, especially for the weak"
+        },
+        {
+          "word": "אַהֲבַת חֶסֶד",
+          "transliteration": "ahavat chesed",
+          "meaning": "to love loyal-love - to cherish covenant kindness, not just perform it"
+        },
+        {
+          "word": "הַצְנֵעַ לֶכֶת",
+          "transliteration": "hatsnea lechet",
+          "meaning": "to walk humbly, to go modestly, to keep close and low beside"
+        },
+        {
+          "word": "עִם־אֱלֹהֶיךָ",
+          "transliteration": "im-Eloheicha",
+          "meaning": "with your God - the whole requirement ends in a Person, not a list"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֶסֶד",
+          "reference": "The same chesed runs through Hosea 6:6, 'For I desire mercy (chesed), not sacrifice.' Micah tells us to love it; Hosea tells us God wants it more than anything we can burn on an altar."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; covenant loyalty and steadfast love",
+      "usage": "Chesed is famously hard to translate - mercy, lovingkindness, steadfast love, loyalty - because English splits into many words what Hebrew holds in one: love that stays."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Voices, One Complaint",
+      "body": "Around the middle of the eighth century before Christ, while the northern kingdom of Israel was richer and more religious than it had been in generations, three men start saying the same uncomfortable thing. Amos is a shepherd and fig-farmer from Tekoa in the south, sent north to Bethel where the king worships. Hosea is a prophet whose own marriage becomes a living sermon about a God whose wife keeps leaving. Micah is from Moresheth, a country town, and he speaks against both Samaria in the north and Jerusalem in the south. Different men, different towns, different images. One complaint.\n\nThe complaint is not that Israel has stopped going to church. It is the opposite. The temples are full. The festivals are loud. The offerings are stacked high. Amos hears God say something almost shocking: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies' (Amos 5:21). The smoke that was supposed to please God now turns His stomach - because under the worship, the courts are crooked, the poor are crushed, and the loud singing is a cover for a cold heart.\n\nSo Micah stages a little drama. A worshiper comes up the temple steps asking the great question of every religious heart: with what shall I come before the LORD? He keeps raising the bid. Year-old calves? Thousands of rams? Ten thousand rivers of oil? My own firstborn child? And the answer comes back quiet and total: He has already shown you what is good. Do justice. Love mercy. Walk humbly with your God. Not more offerings. A different kind of life.",
+      "keyInsight": "Israel's sin was not too little religion but religion without righteousness - full altars and empty hearts. God's reply through three prophets is the same: I never wanted the rams. I wanted you to become just, merciful, and close.",
+      "content": "Around the middle of the eighth century before Christ, while the northern kingdom of Israel was richer and more religious than it had been in generations, three men start saying the same uncomfortable thing. Amos is a shepherd and fig-farmer from Tekoa in the south, sent north to Bethel where the king worships. Hosea is a prophet whose own marriage becomes a living sermon about a God whose wife keeps leaving. Micah is from Moresheth, a country town, and he speaks against both Samaria in the north and Jerusalem in the south. Different men, different towns, different images. One complaint.\n\nThe complaint is not that Israel has stopped going to church. It is the opposite. The temples are full. The festivals are loud. The offerings are stacked high. Amos hears God say something almost shocking: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies' (Amos 5:21). The smoke that was supposed to please God now turns His stomach - because under the worship, the courts are crooked, the poor are crushed, and the loud singing is a cover for a cold heart.\n\nSo Micah stages a little drama. A worshiper comes up the temple steps asking the great question of every religious heart: with what shall I come before the LORD? He keeps raising the bid. Year-old calves? Thousands of rams? Ten thousand rivers of oil? My own firstborn child? And the answer comes back quiet and total: He has already shown you what is good. Do justice. Love mercy. Walk humbly with your God. Not more offerings. A different kind of life."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Donations Were Real",
+      "body": "A man I knew gave to everything. His name was on the plaque in the church lobby, on the banner at the shelter, on the wall of the wing he helped build. He never missed a service. He could quote you the verse for any occasion.\n\nHe also could not look his own daughter in the eye. He had spent years too busy being generous in public to be honest in private, and somewhere in the building campaigns and the standing ovations a quiet cruelty had hardened in him toward the few people who actually had to live with him. The checks were real. The applause was real. And none of it reached the one room where he most needed to be made gentle.\n\nThat is the exact gap Amos, Hosea, and Micah are standing in. Not 'these people are irreligious,' but 'these people are deeply religious and it has not touched their justice or their mercy.' The offerings climbed while the widow went unheard. God is not impressed by the stack. He is asking about the rooms no one sees.",
+      "connectionToTheme": "The prophets are not against worship; they are against worship that lets us feel right with God while we stay hard with people. The donation and the cruelty in the same man is the very thing God calls 'the stench of your solemn assemblies.'",
+      "content": "A man I knew gave to everything. His name was on the plaque in the church lobby, on the banner at the shelter, on the wall of the wing he helped build. He never missed a service. He could quote you the verse for any occasion.\n\nHe also could not look his own daughter in the eye. He had spent years too busy being generous in public to be honest in private, and somewhere in the building campaigns and the standing ovations a quiet cruelty had hardened in him toward the few people who actually had to live with him. The checks were real. The applause was real. And none of it reached the one room where he most needed to be made gentle.\n\nThat is the exact gap Amos, Hosea, and Micah are standing in. Not 'these people are irreligious,' but 'these people are deeply religious and it has not touched their justice or their mercy.' The offerings climbed while the widow went unheard. God is not impressed by the stack. He is asking about the rooms no one sees."
+    },
+    {
+      "type": "insight",
+      "heading": "He Wanted the Heart the Whole Time",
+      "body": "Set Hosea 6:6 beside Micah 6:8 and the whole message of the northern prophets snaps into focus. Hosea: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.' Micah: what God requires is to do justice, love mercy, and walk humbly with Him.\n\nThis is not God changing His mind about the altar. The sacrifices were His own idea, given to teach Israel that sin costs and that approaching a holy God requires a covering. The danger was always that the sign would replace the thing it pointed to - that people would bring the lamb and withhold the life. By Amos's day that is exactly what happened: the ritual ran on while the relationship died.\n\nSo God reaches past the smoke to name what He was after the entire time. Justice toward neighbor. Chesed - loyal love that keeps its word. And a humble, ongoing walk at His side. The sacrifices were never the point. They were arrows. And every arrow in the Old Testament is pointing at the same place.",
+      "historicalContext": "Amos, Hosea, and Micah all prophesy in the eighth century BC, the era of kings like Jeroboam II, Uzziah, Jotham, Ahaz, and Hezekiah named at the start of their books. The northern kingdom was prosperous and confident; within a few decades Assyria would carry it into exile (722 BC). The prophets warn that no amount of festival smoke can substitute for the justice and faithfulness the nation has abandoned.",
+      "fascinatingFact": "Micah 6:8 is one of the most quoted verses in the entire Bible, often carved on courthouses and cited far outside the church. But notice its shape: the first two requirements are about how we treat others (justice, mercy), and the third roots them in a relationship - walking with God. The ethics are not freestanding. They grow out of keeping close to Him.",
+      "content": "Set Hosea 6:6 beside Micah 6:8 and the whole message of the northern prophets snaps into focus. Hosea: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.' Micah: what God requires is to do justice, love mercy, and walk humbly with Him.\n\nThis is not God changing His mind about the altar. The sacrifices were His own idea, given to teach Israel that sin costs and that approaching a holy God requires a covering. The danger was always that the sign would replace the thing it pointed to - that people would bring the lamb and withhold the life. By Amos's day that is exactly what happened: the ritual ran on while the relationship died.\n\nSo God reaches past the smoke to name what He was after the entire time. Justice toward neighbor. Chesed - loyal love that keeps its word. And a humble, ongoing walk at His side. The sacrifices were never the point. They were arrows. And every arrow in the Old Testament is pointing at the same place."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Through Amos, Hosea, and Micah, God tells a religious nation He wants mercy more than sacrifice, justice more than festivals, and a humble walk more than ten thousand rivers of oil.",
+      "modernApplication": "It is still possible to be busy for God and far from people. The modern fig leaf is not always less religion; sometimes it is more - more activity, more giving, more posting, more attending - layered over a heart that has gone hard toward the people we actually live with. The prophets ask the question we would rather skip: has any of this reached your justice and your mercy?",
+      "connectionPoint": "When Israel asks 'with what shall I come before the LORD?' and runs out of offerings - calves, rams, oil, even a firstborn child - the question hangs unanswered for centuries. What could a person possibly bring that would be enough? The whole canon waits for an answer the prophets could not yet give.",
+      "newTestamentEcho": "Twice Jesus picks up Hosea's exact words and aims them at the religious experts of His day: 'Go and learn what this means: I desire mercy, not sacrifice' (Matthew 9:13; 12:7). And He names Micah's triad as 'the weightier matters of the law: justice, mercy, and faithfulness' (Matthew 23:23). The same complaint, eight hundred years later, from the lips of God in the flesh."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God reached past everything you do for Him and asked about your justice and your mercy toward the people closest to you - what would He find?",
+      "additionalQuestions": [
+        "Where in your life is the religious activity loud while the relationship - with God or with someone you've hardened against - has quietly died?",
+        "Micah says to 'love mercy,' not just practice it. Is there a place where you do the kind thing but resent it? What would it mean to love it instead?",
+        "Of the three - doing justice, loving mercy, walking humbly with God - which one is hardest for you right now, and why?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have brought You so much smoke. The attendance, the giving, the words - and somewhere underneath, a heart that stayed hard toward the people You gave me. Forgive me for the offerings I used to avoid the obedience. You have shown me what is good. Make me just where I have been unfair, merciful where I have been cold, and humble enough to keep walking close to You instead of running ahead of You. I cannot manufacture this. Do it in me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the one relationship where your religion has not yet reached. Do one concrete act of justice or mercy there - a real apology, a debt paid, a phone call made, a kindness owed - and let it be your true offering before the LORD.",
+      "leavingAtCross": [
+        "The smoke I have used to feel right with God while staying hard with people",
+        "The belief that more activity for God can substitute for a changed heart toward my neighbor",
+        "The resentment hiding underneath my good deeds"
+      ],
+      "receivingFromCross": [
+        "A God who wanted my heart, not my rams, the whole time",
+        "Mercy I did not earn, so that I can finally love mercy and not just perform it",
+        "A humble daily walk beside Him instead of an anxious race ahead of Him"
+      ],
+      "content": "Today, name the one relationship where your religion has not yet reached. Do one concrete act of justice or mercy there - a real apology, a debt paid, a phone call made, a kindness owed - and let it be your true offering before the LORD."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was Israel's actual problem in the days of Amos, Hosea, and Micah - too little worship, or worship disconnected from justice and mercy?",
+        "What does chesed mean, and why is it hard to capture in a single English word?",
+        "How does the worshiper's unanswered question in Micah 6:6-7 ('with what shall I come before the LORD?') point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where your religious life is loud but your justice or mercy is quiet. Be specific.",
+        "Talk about the difference between doing mercy and loving mercy. Where do you do it without loving it?",
+        "Ask each other: what is the one concrete act of justice or mercy God is asking of you this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Matthew 9:13",
+          "text": "But go and learn what this means: ‘I desire mercy, not sacrifice.’ For I have not come to call the righteous, but sinners."
+        },
+        {
+          "reference": "John 7:37-38",
+          "text": "… If anyone is thirsty, let him come to Me and drink. Whoever believes in Me, as the Scripture has said: ‘Streams of living water will flow from within him.’"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Amos 5 and Micah 6",
+          "note": "Read both chapters together this week, watching how the rejection of empty ritual (Amos 5:21-24) and the call to do justice, love mercy, and walk humbly (Micah 6:8) say the same thing in two voices."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Amos",
+      "title": "The Shepherd Who Spoke for Justice",
+      "description": "A herdsman and tender of sycamore-figs from Tekoa in Judah, Amos was no professional prophet - he insisted he was simply taken by the LORD from following the flock and sent north to Israel (Amos 7:14-15). There, in the prosperous and complacent court at Bethel, he thundered against a people who trampled the poor while keeping their festivals. His most famous cry - 'let justice roll on like a river, and righteousness like an ever-flowing stream' - became one of Scripture's defining demands.",
+      "keyQuote": "But let justice roll on like a river, and righteousness like an ever-flowing stream.",
+      "lessonForUs": "God can send a fig-farmer to confront a king. You do not need a title to do justice and love mercy - you need a willingness to say, and to live, what God has already shown is good.",
+      "heading": "The Shepherd Who Spoke for Justice"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1761,
+  "scriptureReference_full": "Micah 6:6-8 (with Amos 5:21-24; Hosea 6:6)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed H2617; Micah 6:8 phrasing asot mishpat / ahavat chesed / hatsnea lechet) reflects standard lexical sources.",
+    "Eighth-century BC dating and the regnal names (Jotham, Ahaz, Hezekiah; Jeroboam II; the 722 BC fall of Samaria) follow the superscriptions of Amos 1:1, Hosea 1:1, Micah 1:1 and the standard historical record."
+  ]
 }

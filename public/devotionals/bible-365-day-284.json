@@ -1,38 +1,182 @@
 {
   "day": 284,
-  "title": "Matthew: Parables + Miracles — Day 4 — Application",
-  "teaser": "Day 284 of Bible 365 — Matthew 8-13",
+  "title": "What kind of ground are you?",
+  "teaser": "The same seed lands on four soils and only one bears a crop. The miracles of Matthew 8-13 raised the question; the parable of the sower asks you to answer it.",
   "framework": "Matthew 8-13 — Matthew: Parables + Miracles",
   "scriptureReference": "Matthew 8-13",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 284"
+      "type": "scripture",
+      "reference": "Matthew 13:3-9, 18-23",
+      "translation": "BSB",
+      "emphasis": [
+        "A farmer went out to sow his seed",
+        "good soil",
+        "He who has ears, let him hear",
+        "hears the word and understands it"
+      ],
+      "greekOriginal": "ἰδοὺ ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν",
+      "passage": "And He told them many things in parables, saying, \"A farmer went out to sow his seed. And as he was sowing, some seed fell along the path, and the birds came and devoured it. Some fell on rocky ground, where it did not have much soil. It sprang up quickly because the soil was shallow. But when the sun rose, the seedlings were scorched, and they withered because they had no root. Other seed fell among thorns, which grew up and choked the seedlings. Still other seed fell on good soil and produced a crop—a hundredfold, sixtyfold, or thirtyfold. He who has ears, let him hear.\" ... \"Consider, then, the parable of the sower: When anyone hears the message of the kingdom but does not understand it, the evil one comes and snatches away what was sown in his heart. This is the seed sown along the path. The seed sown on rocky ground is the one who hears the word and at once receives it with joy. But since he has no root, he remains for only a season. When trouble or persecution comes because of the word, he quickly falls away. The seed sown among the thorns is the one who hears the word, but the worries of this life and the deceitfulness of wealth choke the word, and it becomes unfruitful. But the seed sown on good soil is the one who hears the word and understands it. He indeed bears fruit and produces a crop—a hundredfold, sixtyfold, or thirtyfold.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Matthew 8-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Matthew 8-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὁ σπείρων",
+      "transliteration": "ho speirōn",
+      "pronunciation": "ho SPY-rohn",
+      "meaning": "the one who sows, the sower",
+      "rootMeaning": "A present participle of speirō, \"to scatter seed.\" It does not name the farmer by a title; it names him by what he is doing right now - sowing. The kingdom arrives not as a finished field but as an ongoing act of scattering.",
+      "usageNote": "Jesus opens the parable with the same word every farmer around the lake would have used for himself in spring. Matthew 13:37 lets Jesus name who the Sower is: \"The One who sows the good seed is the Son of Man.\" The scattering hand in the story is His.",
+      "wordByWord": [
+        {
+          "word": "ἰδοὺ",
+          "transliteration": "idou",
+          "meaning": "behold, look - a word that points: watch this"
+        },
+        {
+          "word": "ἐξῆλθεν",
+          "transliteration": "exēlthen",
+          "meaning": "he went out - he left the house and walked into the open ground"
+        },
+        {
+          "word": "ὁ σπείρων",
+          "transliteration": "ho speirōn",
+          "meaning": "the one sowing, the sower - named by his action, not his rank"
+        },
+        {
+          "word": "τοῦ σπείρειν",
+          "transliteration": "tou speirein",
+          "meaning": "in order to sow - the purpose he went out for"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ὁ λόγος (ho logos)",
+          "reference": "The seed in the parable is \"the word\" - ho logos tēs basileias, the word of the kingdom (Matthew 13:19). John opens his Gospel by calling Christ Himself the Logos, the Word made flesh (John 1:14). The seed scattered over the soils is finally a Person."
+        }
+      ],
+      "strongsNumber": "G4687",
+      "definition": "speirō: to sow, to scatter seed",
+      "usage": "The Sower is described by an action still in motion. He is not a king on a distant throne issuing a decree; He is a worker out in the field, walking the rough edges of the path, the rock, and the thorns, scattering the same good seed over every kind of ground."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Matthew: Parables + Miracles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the kingdom-bringer.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Same Seed, Four Different Grounds",
+      "body": "For three chapters the crowds had watched Jesus do impossible things. A leper made clean with a touch. A centurion's servant healed from a distance. A storm rebuked into glassy stillness. A dead girl told to get up, and she got up. By Matthew 13 the question hanging over the lake is no longer whether He has power. It is what to do with it - what it asks of the people watching.\n\nSo Jesus gets into a boat, sits down, and tells a story about dirt. A farmer goes out and scatters seed by hand, the way every farmer there had done a hundred times. The seed is good. The hand is generous. But the ground is not all the same. Some falls on the packed footpath and the birds clean it up. Some lands on a thin skin of soil over bedrock; it shoots up fast and dies faster when the sun comes. Some falls where thorns are already rooted, and the thorns win. And some falls on good ground and gives back thirty, sixty, a hundred times what was sown.\n\nThe disciples ask why He teaches this way, and Jesus gives them the rare thing - the parable's own key. The seed is the word of the kingdom. The four soils are four ways a human heart receives it. Notice what does not change in the story: the seed is the same everywhere, and so is the Sower. The only variable is the ground.",
+      "keyInsight": "The miracles proved the Sower is generous and the seed is good. The parable moves the question off Him and onto us. The harvest does not depend on better seed. It depends on what kind of ground receives it.",
+      "content": "For three chapters the crowds had watched Jesus do impossible things. A leper made clean with a touch. A centurion's servant healed from a distance. A storm rebuked into glassy stillness. A dead girl told to get up, and she got up. By Matthew 13 the question hanging over the lake is no longer whether He has power. It is what to do with it - what it asks of the people watching.\n\nSo Jesus gets into a boat, sits down, and tells a story about dirt. A farmer goes out and scatters seed by hand, the way every farmer there had done a hundred times. The seed is good. The hand is generous. But the ground is not all the same. Some falls on the packed footpath and the birds clean it up. Some lands on a thin skin of soil over bedrock; it shoots up fast and dies faster when the sun comes. Some falls where thorns are already rooted, and the thorns win. And some falls on good ground and gives back thirty, sixty, a hundred times what was sown.\n\nThe disciples ask why He teaches this way, and Jesus gives them the rare thing - the parable's own key. The seed is the word of the kingdom. The four soils are four ways a human heart receives it. Notice what does not change in the story: the seed is the same everywhere, and so is the Sower. The only variable is the ground."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Reading That Didn't Take",
+      "body": "A man I know kept a Bible on his nightstand for eleven years and read it almost every night. He could quote it. He led a small group. From the outside he looked like good soil giving a good crop.\n\nThen his business failed, his marriage strained, and a diagnosis came in the same winter. Within a year he had stopped reading, stopped praying, stopped showing up. When a friend finally asked what happened, he said something that has stayed with me: \"It was never really mine. It was a habit I had, not a root I had.\"\n\nThat is the second soil exactly. The seed sown on rocky ground is the one who hears the word and at once receives it with joy - but has no root, so when trouble comes he quickly falls away. The frightening thing about the rocky ground is how good it looks in spring. Fast green growth can hide bedrock for years. The roots are tested not by sunshine but by drought. His faith had never failed an easy day; it had simply never met a hard one until all of them came at once.",
+      "connectionToTheme": "The four soils are not four kinds of people standing across the room from us. Most of us have been all four at different seasons. The parable is a mirror, not a sorting hat.",
+      "content": "A man I know kept a Bible on his nightstand for eleven years and read it almost every night. He could quote it. He led a small group. From the outside he looked like good soil giving a good crop.\n\nThen his business failed, his marriage strained, and a diagnosis came in the same winter. Within a year he had stopped reading, stopped praying, stopped showing up. When a friend finally asked what happened, he said something that has stayed with me: \"It was never really mine. It was a habit I had, not a root I had.\"\n\nThat is the second soil exactly. The seed sown on rocky ground is the one who hears the word and at once receives it with joy - but has no root, so when trouble comes he quickly falls away. The frightening thing about the rocky ground is how good it looks in spring. Fast green growth can hide bedrock for years. The roots are tested not by sunshine but by drought. His faith had never failed an easy day; it had simply never met a hard one until all of them came at once."
+    },
+    {
+      "type": "insight",
+      "heading": "Three Soils Fail in Three Different Ways",
+      "body": "Look closely and the three failing soils are not failing for the same reason. The path is too hard - the word never gets in at all, and the evil one carries it off before it can be understood. The rock is too shallow - the word gets in but cannot get down, so it has no root for the dry day. The thorns are too crowded - the word gets in and even grows, but the worries of this life and the deceitfulness of wealth grow faster and choke it out.\n\nHardness, shallowness, crowding. A diagnosis for each. If the word seems to make no dent, the issue is a packed and trampled surface. If faith blazes up and dies in every difficult season, the issue is depth. If you believe truly but nothing ever ripens, the issue is competition - good things and anxious things crowding out the one thing.\n\nAnd here is the quiet mercy: not one of these conditions is permanent dirt. Paths can be broken open. Rock can be cleared. Thorns can be pulled. The parable diagnoses without condemning, because the same Sower who tells it is the One who works the field.",
+      "historicalContext": "Jesus tells this beside the Sea of Galilee, in farming country every listener knew by hand. In Galilean fields the footpaths ran right through the planting ground, the limestone bedrock lay close beneath a thin layer of soil, and thornbushes grew back fast after burning. He is not inventing symbols; He is pointing at the literal ground His listeners walked to get there.",
+      "fascinatingFact": "Of the four soils, three fail and only one succeeds - yet the harvest from that one soil is enormous: thirty, sixty, even a hundredfold. In a world where farmers hoped for sevenfold to tenfold returns, a hundredfold was a staggering, almost reckless abundance. The parable is sober about the odds and extravagant about the yield. Good ground does not break even. It overflows.",
+      "content": "Look closely and the three failing soils are not failing for the same reason. The path is too hard - the word never gets in at all, and the evil one carries it off before it can be understood. The rock is too shallow - the word gets in but cannot get down, so it has no root for the dry day. The thorns are too crowded - the word gets in and even grows, but the worries of this life and the deceitfulness of wealth grow faster and choke it out.\n\nHardness, shallowness, crowding. A diagnosis for each. If the word seems to make no dent, the issue is a packed and trampled surface. If faith blazes up and dies in every difficult season, the issue is depth. If you believe truly but nothing ever ripens, the issue is competition - good things and anxious things crowding out the one thing.\n\nAnd here is the quiet mercy: not one of these conditions is permanent dirt. Paths can be broken open. Rock can be cleared. Thorns can be pulled. The parable diagnoses without condemning, because the same Sower who tells it is the One who works the field."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The harvest in the parable does not depend on rarer seed or a more skillful Sower. The seed is good and the Sower is generous everywhere. The whole difference is the condition of the ground that receives the word of the kingdom.",
+      "modernApplication": "We tend to blame the seed. We say we need a better sermon, a fresher translation, a more compelling teacher, a stronger feeling. The parable turns that around. The word reaching you this morning is good seed, scattered by a generous hand. The honest question is not whether the seed is good enough. It is what your ground is doing with it - and the thorns Jesus names, the worries of this life and the deceitfulness of wealth, are exactly the crowd most of us are fighting at 7 a.m.",
+      "connectionPoint": "The Sower parable opens a long thread that runs to the end of the Gospel. In John 12:24 Jesus says, \"unless a kernel of wheat falls to the ground and dies, it remains only a seed; but if it dies, it bears much fruit\" - and He says it about His own death. The One who scatters the seed becomes the Seed. He falls into the ground of a borrowed tomb so that a harvest can come up that no soil could ever produce on its own.",
+      "newTestamentEcho": "What the parable hints, the cross makes plain. Jesus is both the Sower walking the field and the grain that falls and dies. The word of the kingdom that lands on our hard, shallow, crowded ground is finally the Word made flesh, who gave Himself to make barren ground bear a hundredfold."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If you are honest about this season, which soil are you right now - the hard path, the shallow rock, the crowded thorns, or good ground? And what specifically made it that way?",
+      "additionalQuestions": [
+        "The thorns are named: the worries of this life and the deceitfulness of wealth. Which one is the bigger weed in your field this year, and what is it choking out?",
+        "Think of a time the word blazed up in you and then withered. Looking back, was the problem the seed, the season, or the depth of your roots?",
+        "Good ground is the soil that 'hears the word and understands it.' What would it look like this week to not just hear, but stay with one verse long enough to understand it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You are the Sower, and Your seed is good. I confess the state of my ground. Where I am hard and trampled, break the surface so the word can get in. Where I am shallow over rock, dig down in me and give me roots that hold in the dry season. Where the thorns of worry and wanting have crowded You out, pull them up by the root, even the ones I have been protecting. Make me good ground - not by my striving, but by the work of the One who fell into the earth and died to bring a harvest. Let something You have planted in me finally bear fruit. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name your soil today - hard path, shallow rock, or crowded thorns - and take one concrete action to work that specific ground. If hard: confess the one place you have stopped letting God speak. If shallow: pick one verse and sit with it long enough to put down a root. If crowded: name one worry or want that is choking the word, and hand it over by name.",
+      "leavingAtCross": [
+        "The hard, trampled places where I have quietly stopped letting God's word in",
+        "The shallowness that lets faith blaze up on easy days and die on hard ones",
+        "The thorns I keep watering - the anxious worries and the deceitful pull of having more"
+      ],
+      "receivingFromCross": [
+        "A Sower who keeps scattering good seed over my worst ground",
+        "Roots that go deeper than the dry season can reach",
+        "The promise that ground He works does not break even - it bears thirty, sixty, a hundredfold"
+      ],
+      "content": "Name your soil today - hard path, shallow rock, or crowded thorns - and take one concrete action to work that specific ground. If hard: confess the one place you have stopped letting God speak. If shallow: pick one verse and sit with it long enough to put down a root. If crowded: name one worry or want that is choking the word, and hand it over by name."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In the parable, what is the one thing that changes from soil to soil, and what are the two things that stay exactly the same?",
+        "The three failing soils fail for three different reasons. Can you name each failure - hardness, shallowness, crowding - and the specific thing the text says causes it?",
+        "How does Jesus naming Himself as the Sower (Matthew 13:37) and the falling grain (John 12:24) connect this parable to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly which soil best describes you this season, and what made the ground that way.",
+        "The thorns are 'the worries of this life and the deceitfulness of wealth.' Name one thorn each of you is fighting right now.",
+        "Ask each other: what is one concrete way I could work my ground this week so the word can take root?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Matthew 13:37",
+          "text": "He replied, \"The One who sows the good seed is the Son of Man.\" (BSB)"
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        },
+        {
+          "reference": "John 12:24",
+          "text": "Truly, truly, I tell you, unless a kernel of wheat falls to the ground and dies, it remains only a seed; but if it dies, it bears much fruit."
+        },
+        {
+          "reference": "Matthew 13:16",
+          "text": "But blessed are your eyes because they see, and your ears because they hear."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Matthew 13",
+          "note": "Read the whole chapter in one sitting, watching how the sower opens a string of kingdom parables - the weeds, the mustard seed, the leaven, the hidden treasure - all turning on small beginnings and hidden, certain growth."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Sower",
+      "title": "The Son of Man Who Scatters the Word",
+      "description": "In Matthew 13 Jesus tells a parable about a farmer scattering seed, then quietly identifies the farmer in verse 37: \"The One who sows the good seed is the Son of Man.\" He is not a distant landowner sending workers; He walks the field Himself, scattering the word of the kingdom over hard paths, thin rock, and thorny corners with the same open hand. The Gospel will reveal that this Sower becomes the Seed - the grain that falls into the ground and dies so that the harvest no soil could produce on its own may finally come up.",
+      "keyQuote": "A farmer went out to sow his seed.",
+      "lessonForUs": "The Sower's generosity is not in question; His seed lands on every kind of ground, including ours. The question the parable leaves in our hands is the only one we can answer: what will our ground do with the word He has already scattered?",
+      "heading": "The Son of Man Who Scatters the Word"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2330,
+  "scriptureReference_full": "Matthew 13:3-9, 18-23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (ho speirōn, speirō G4687; ho logos) reflects standard lexical sources. Jesus' self-identification as the Sower is stated in Matthew 13:37; the Sower-becomes-Seed connection draws on John 12:24."
+  ]
 }

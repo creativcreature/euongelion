@@ -6,33 +6,182 @@
   "scriptureReference": "Exodus 19",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 47"
+      "type": "scripture",
+      "reference": "Exodus 19:4-6, 16-18",
+      "translation": "BSB",
+      "emphasis": [
+        "I carried you on eagles' wings",
+        "a kingdom of priests and a holy nation",
+        "all the people in the camp trembled"
+      ],
+      "hebrewOriginal": "מַמְלֶכֶת כֹּהֲנִים וְגוֹי קָדוֹשׁ",
+      "passage": "'You have seen for yourselves what I did to Egypt, and how I carried you on eagles' wings and brought you to Myself. Now if you will indeed obey My voice and keep My covenant, you will be My treasured possession out of all the nations—for the whole earth is Mine. And unto Me you shall be a kingdom of priests and a holy nation.' ... On the third day, when morning came, there was thunder and lightning. A thick cloud was upon the mountain, and a very loud blast of the ram's horn went out, so that all the people in the camp trembled. ... Mount Sinai was completely enveloped in smoke, because the LORD had descended on it in fire. And the smoke rose like the smoke of a furnace, and the whole mountain quaked violently."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 19**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 19 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מַמְלֶכֶת כֹּהֲנִים",
+      "transliteration": "mamleket kohanim",
+      "pronunciation": "mam-LEH-khet ko-ha-NEEM",
+      "meaning": "a kingdom of priests",
+      "rootMeaning": "Mamlakah is a royal domain, a realm under a king. Kohanim are priests - those who stand at the boundary between God and people, allowed to draw near on behalf of others. Joined here for the first time in Scripture: a whole nation meant to be the priesthood of the earth.",
+      "usageNote": "This phrase is spoken at the foot of Sinai before a single law is given. The covenant's first word about Israel's purpose is vocation, not regulation: a people set apart to bring the nations near to God. Peter lifts these exact words and hands them to the church (1 Peter 2:9).",
+      "wordByWord": [
+        {
+          "word": "מַמְלֶכֶת",
+          "transliteration": "mamleket",
+          "meaning": "kingdom, royal realm (construct form)"
+        },
+        {
+          "word": "כֹּהֲנִים",
+          "transliteration": "kohanim",
+          "meaning": "priests - those permitted to approach the holy"
+        },
+        {
+          "word": "וְגוֹי",
+          "transliteration": "vegoy",
+          "meaning": "and a nation, a people"
+        },
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy, set apart, belonging wholly to God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "סְגֻלָּה / segullah",
+          "reference": "Translated 'treasured possession' in verse 5 - a king's private treasure, the personal property he keeps apart from the royal accounts. Israel is not God's by conquest but His by affection."
+        }
+      ],
+      "strongsNumber": "H4467",
+      "definition": "a royal dominion; a kingdom belonging to a king",
+      "usage": "The God who could rule by fear instead calls a nation to be priests - a people whose whole existence is to stand near Him and pull others toward Him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Holy God meets His people. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Mount Zion not Sinai (Heb 12:18-24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Carried Up to a Mountain That Cannot Be Touched",
+      "body": "Three months out of Egypt, the people who walked through the sea on dry ground arrive at a mountain. Before a single command is spoken, God tells them what He has already done: \"You have seen for yourselves what I did to Egypt, and how I carried you on eagles' wings and brought you to Myself.\" The covenant does not open with a demand. It opens with a rescue already accomplished. Grace comes first; the law comes to a people God has already carried.\n\nThen the tone changes. The same God who carried them tenderly tells Moses to fence the mountain off. \"Be careful not to go up on the mountain or touch its base. Whoever touches the mountain shall surely be put to death.\" Wash your clothes. Consecrate yourselves. Wait three days. On the third day the LORD descends in fire, and the whole mountain is wrapped in smoke like a furnace and quakes violently. A ram's horn sounds louder and louder, thunder rolls, and the people who were carried so gently now stand at the foot of the mountain and tremble.\n\nBoth things are true at once, and Exodus 19 refuses to let go of either. The God who saves is the God who is holy. He is near enough to carry a nation on His wings and so other that drawing close uninvited would kill. The fence around Sinai is not cruelty. It is mercy with a boundary - a way to keep a sinful people alive in the presence of a consuming fire.",
+      "keyInsight": "Exodus 19 holds two truths in one frame: the God who carried Israel out of Egypt on eagles' wings is the same God whose holiness would consume them if they touched the mountain unprepared. Grace and holiness are not rivals here. They meet at Sinai.",
+      "content": "Three months out of Egypt, the people who walked through the sea on dry ground arrive at a mountain. Before a single command is spoken, God tells them what He has already done: \"You have seen for yourselves what I did to Egypt, and how I carried you on eagles' wings and brought you to Myself.\" The covenant does not open with a demand. It opens with a rescue already accomplished. Grace comes first; the law comes to a people God has already carried.\n\nThen the tone changes. The same God who carried them tenderly tells Moses to fence the mountain off. \"Be careful not to go up on the mountain or touch its base. Whoever touches the mountain shall surely be put to death.\" Wash your clothes. Consecrate yourselves. Wait three days. On the third day the LORD descends in fire, and the whole mountain is wrapped in smoke like a furnace and quakes violently. A ram's horn sounds louder and louder, thunder rolls, and the people who were carried so gently now stand at the foot of the mountain and tremble.\n\nBoth things are true at once, and Exodus 19 refuses to let go of either. The God who saves is the God who is holy. He is near enough to carry a nation on His wings and so other that drawing close uninvited would kill. The fence around Sinai is not cruelty. It is mercy with a boundary - a way to keep a sinful people alive in the presence of a consuming fire."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Line at the Reactor",
+      "body": "A friend who worked in a power plant once described the room that held the core. There was a painted line on the floor, and beyond the line, lead and glass and warnings in three languages. Nobody resented the line. The men who worked there longest respected it most. The barrier was not there because the plant hated its workers. It was there because what lay beyond it was real, and powerful, and would not bend itself to anyone's casual approach. The line was how you stayed alive close to something that could kill you.\n\nSinai has a line drawn around it, and the people are told plainly what crossing it costs. We tend to hear those warnings as God being severe. But stand where Israel stood - at the foot of a mountain on fire, the ground shaking, a trumpet blast no human lungs could make growing louder by the minute - and the boundary feels less like a threat and more like the only reason anyone is still breathing.\n\nWe have largely lost the trembling. We speak of God easily, casually, the way you mention a coworker. Exodus 19 is the camp that could not. They had seen the sea split and Egypt drowned, and now the One who did it was on the mountain in front of them, and the right response of flesh before that holiness was to shake.",
+      "connectionToTheme": "The fence around Sinai is what keeps a rescued people alive in the presence of holiness - a boundary that is mercy, not menace.",
+      "content": "A friend who worked in a power plant once described the room that held the core. There was a painted line on the floor, and beyond the line, lead and glass and warnings in three languages. Nobody resented the line. The men who worked there longest respected it most. The barrier was not there because the plant hated its workers. It was there because what lay beyond it was real, and powerful, and would not bend itself to anyone's casual approach. The line was how you stayed alive close to something that could kill you.\n\nSinai has a line drawn around it, and the people are told plainly what crossing it costs. We tend to hear those warnings as God being severe. But stand where Israel stood - at the foot of a mountain on fire, the ground shaking, a trumpet blast no human lungs could make growing louder by the minute - and the boundary feels less like a threat and more like the only reason anyone is still breathing.\n\nWe have largely lost the trembling. We speak of God easily, casually, the way you mention a coworker. Exodus 19 is the camp that could not. They had seen the sea split and Egypt drowned, and now the One who did it was on the mountain in front of them, and the right response of flesh before that holiness was to shake."
+    },
+    {
+      "type": "insight",
+      "heading": "One Man Goes Up Where No One Else May",
+      "body": "Watch the traffic on the mountain. The people are fenced out on pain of death. Even the priests, God warns, must consecrate themselves or He will break out against them. And in the middle of all this lethal distance, one man climbs. Moses goes up to God. Moses comes down to the people. Up and down he goes - carrying God's words to the camp, carrying the camp's answer back to God. He stands in the one place the boundary forbids to everyone else, and he stands there as a go-between.\n\nThat is the office Sinai cannot do without: a mediator. The holiness is real and the distance is deadly, so someone must bridge it - someone allowed up the mountain who can also stand down in the camp. At Sinai that someone is Moses, and he is enough to relay the words but not enough to close the gap. The fence stays up. The people still tremble. The blood Moses will soon sprinkle on them (Exodus 24:8) holds the covenant together for now, but the mountain is never opened.\n\nHere is the center of the whole scene, and the thread that runs straight to the cross. Sinai's problem is not that God is too holy. It is that we are not holy enough to come near and live. What the chapter cries out for is a mediator who is more than Moses - one who can go all the way up into the fire and bring the whole camp through the line with Him.",
+      "historicalContext": "Exodus 19 is the formal beginning of the Sinai covenant, the constitutional moment of Israel as a nation. The third-day theophany, the fenced mountain, and the consecration rites established the pattern the tabernacle and priesthood would later make permanent: a holy God dwelling among His people behind layers of boundary, approached only through appointed mediators and blood.",
+      "fascinatingFact": "The detail is easy to miss: 'on the third day the LORD will come down.' Israel washes and waits two days; on the third, God descends. Scripture's great meetings with God keep falling on a third day. Centuries later, on a third day, the distance Sinai could not close was finally crossed - not by a people climbing up, but by God's own Son coming up out of the grave.",
+      "content": "Watch the traffic on the mountain. The people are fenced out on pain of death. Even the priests, God warns, must consecrate themselves or He will break out against them. And in the middle of all this lethal distance, one man climbs. Moses goes up to God. Moses comes down to the people. Up and down he goes - carrying God's words to the camp, carrying the camp's answer back to God. He stands in the one place the boundary forbids to everyone else, and he stands there as a go-between.\n\nThat is the office Sinai cannot do without: a mediator. The holiness is real and the distance is deadly, so someone must bridge it - someone allowed up the mountain who can also stand down in the camp. At Sinai that someone is Moses, and he is enough to relay the words but not enough to close the gap. The fence stays up. The people still tremble. The blood Moses will soon sprinkle on them (Exodus 24:8) holds the covenant together for now, but the mountain is never opened.\n\nHere is the center of the whole scene, and the thread that runs straight to the cross. Sinai's problem is not that God is too holy. It is that we are not holy enough to come near and live. What the chapter cries out for is a mediator who is more than Moses - one who can go all the way up into the fire and bring the whole camp through the line with Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Sinai the holy God descends in fire, fences the mountain, and warns that whoever touches it will die. The people are carried to Him on eagles' wings and then held back at the foot of the mountain, trembling, because no sinner can touch that holiness and live.",
+      "modernApplication": "We have flattened God into something safe and small - a comfort, a life coach, a vague presence that agrees with us. Exodus 19 will not allow it. The God who carries you is the God who burns. And the same chapter that fences you out is quietly aching for a way to bring you in - which means the right posture before Him is neither casual familiarity nor cringing distance, but the trembling nearness of the rescued.",
+      "connectionPoint": "Hebrews sets the two mountains side by side. 'You have not come to a mountain that can be touched and that is burning with fire; to darkness, gloom, and storm; to a trumpet blast or to a voice that made its hearers beg that no further word be spoken' (Hebrews 12:18-19). That is Sinai. 'Instead, you have come to Mount Zion, to the city of the living God... to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel' (Hebrews 12:22, 24). The fence at Sinai still stands. But in Christ the believer is brought up the mountain that could not be touched.",
+      "newTestamentEcho": "Moses went up the mountain and came down; Jesus is the mediator who went all the way up into the fire of God's holiness and came down to bring us through. 'The law was given through Moses; grace and truth came through Jesus Christ' (John 1:17). What Sinai fenced off, the cross opens. And the very words spoken at the foot of the mountain - 'a kingdom of priests and a holy nation' - Peter hands to the church: 'you are a chosen people, a royal priesthood, a holy nation' (1 Peter 2:9). The vocation God spoke over a trembling camp is fulfilled in those Christ carries up Zion."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where has your sense of God grown casual - safe, small, easy to talk over - and what would it mean to stand again at the foot of a mountain on fire?",
+      "additionalQuestions": [
+        "Exodus 19 shows grace first (carried on eagles' wings) and holiness second (the fenced mountain). Which of the two do you most need to recover right now - the nearness or the awe?",
+        "The people trembled. When was the last time the holiness of God moved you to anything like reverence? What dulled it?",
+        "If in Christ you have been brought to Mount Zion rather than Sinai, how should that change the way you draw near to God today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "reverent-approach",
+      "prayerText": "Holy God, You carried Israel out of Egypt on eagles' wings, and then You came down on the mountain in fire, and they trembled - rightly. Forgive me for how casual I have become with You. Restore the awe I have lost. Yet thank You that I do not stand at Sinai. Through Jesus, the mediator who went up into Your holiness and came down to carry me through, I have been brought to Mount Zion. By His blood that speaks a better word, draw me near today - close enough to tremble, close enough to be held. Amen.",
+      "scripture_echo": "Hebrews 12:22-24",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you speak to God casually, stop and remember the mountain on fire. Read Exodus 19:16-19 slowly, out loud if you can. Then thank Jesus - by name - that He is the reason you may draw near to that same holiness and live.",
+      "leavingAtCross": [
+        "The shrunken, safe, manageable god I have made who never makes me tremble",
+        "The assumption that I can approach holiness on my own terms, unwashed and unprepared",
+        "The fear that God's holiness means He wants me at a distance"
+      ],
+      "receivingFromCross": [
+        "The awe that Sinai was meant to teach - that the God who carries me is the God who burns",
+        "A mediator greater than Moses who went up the mountain and brought me through the line with Him",
+        "My place named at the foot of the mountain and now at Mount Zion: part of a kingdom of priests, a holy nation"
+      ],
+      "content": "Today, before you speak to God casually, stop and remember the mountain on fire. Read Exodus 19:16-19 slowly, out loud if you can. Then thank Jesus - by name - that He is the reason you may draw near to that same holiness and live."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God remind Israel of the rescue from Egypt (carried on eagles' wings) before He gives them any command? What does the order tell you about grace and law?",
+        "What is the purpose of the boundary fenced around Sinai - is it mainly about God's anger or about keeping the people alive in His presence?",
+        "How does the role of Moses going up and down the mountain point forward to Jesus, and what can Jesus do that Moses could not?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk honestly about where each of you has let reverence for God's holiness fade into casualness, and why.",
+        "Hebrews 12 contrasts Sinai (cannot be touched, burning) with Zion (where we have come through Christ). Discuss what it means to live as people brought to Zion rather than fenced out at Sinai.",
+        "Ask each other: where do you most need to recover the trembling, and where do you most need to receive the nearness?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 24:8",
+          "text": "So Moses took the blood, sprinkled it on the people, and said, \"This is the blood of the covenant that the LORD has made with you in accordance with all these words.\""
+        },
+        {
+          "reference": "Hebrews 12:18-19",
+          "text": "For you have not come to a mountain that can be touched and that is burning with fire; to darkness, gloom, and storm; to a trumpet blast or to a voice that made its hearers beg that no further word be spoken."
+        },
+        {
+          "reference": "Hebrews 12:22, 24",
+          "text": "Instead, you have come to Mount Zion, to the city of the living God, the heavenly Jerusalem... to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel."
+        },
+        {
+          "reference": "1 Peter 2:9",
+          "text": "But you are a chosen people, a royal priesthood, a holy nation, a people for God's own possession, to proclaim the virtues of Him who called you out of darkness into His marvelous light."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 19-20",
+          "note": "Read the giving of the covenant straight through, watching the movement from rescue (19:4) to boundary (19:12) to theophany (19:16-19) to the words of the law (chapter 20)."
+        },
+        {
+          "type": "book",
+          "title": "Hebrews 12:18-24",
+          "note": "The clearest New Testament reading of Sinai - two mountains laid side by side, and what changes for those brought to Zion through Christ."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Mediator at the Mountain",
+      "description": "Raised in Pharaoh's house, called from a burning bush, and sent to lead Israel out of Egypt, Moses stands at Sinai as the covenant's go-between. He alone climbs the fenced mountain, carrying God's words down to the trembling camp and the people's answer back up to God. He is the prophet greater prophets would point beyond - the shadow of a mediator who could relay the covenant but not finally open the mountain.",
+      "keyQuote": "The people cannot come up Mount Sinai, for You solemnly warned us, 'Put a boundary around the mountain and set it apart as holy.'",
+      "lessonForUs": "Moses shows us both the necessity and the limit of a mediator. We cannot reach God's holiness on our own; we need someone who can stand in the gap. And the gap Moses could only guard, Christ - the mediator of a better covenant - finally crossed, bringing His people through the line with Him.",
+      "heading": "The Mediator at the Mountain"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2533,
+  "scriptureReference_full": "Exodus 19",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mamleket kohanim, segullah) reflects standard lexical sources; the Sinai/Zion contrast follows Hebrews 12:18-24."
+  ]
 }

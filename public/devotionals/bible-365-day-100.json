@@ -1,38 +1,188 @@
 {
   "day": 100,
-  "title": "Solomon's Drift — Day 2 — Building",
-  "teaser": "Day 100 of Bible 365 — 1 Kings 11",
+  "title": "The Heart That Was Never Whole",
+  "teaser": "Solomon never renounced the LORD. He simply stopped being all-in. The drift that loses a kingdom begins with a heart divided, not denied.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 100"
+      "type": "scripture",
+      "reference": "1 Kings 11:4-6, 9-11",
+      "translation": "BSB",
+      "emphasis": [
+        "his wives turned his heart away",
+        "not wholeheartedly devoted",
+        "did not follow the LORD completely",
+        "his heart had turned away"
+      ],
+      "hebrewOriginal": "וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו כִּלְבַב דָּוִיד אָבִיו",
+      "passage": "For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. Solomon followed Ashtoreth the goddess of the Sidonians and Milcom the abomination of the Ammonites. So Solomon did evil in the sight of the LORD; unlike his father David, he did not follow the LORD completely. ... Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice. Although He had warned Solomon explicitly not to follow other gods, Solomon did not keep the LORD's command. Then the LORD said to Solomon, \"Because you have done this and have not kept My covenant and My statutes, which I have commanded you, I will tear the kingdom away from you and give it to your servant.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׁלֵם",
+      "transliteration": "shalem",
+      "pronunciation": "shah-LEM",
+      "meaning": "whole, complete, undivided, at peace",
+      "rootMeaning": "Shalem comes from the same root as shalom - peace. But its older, plainer sense is wholeness: a thing that is entire, with nothing missing and nothing competing. A wall is shalem when there is no gap in it. A heart is shalem when it belongs, all of it, to one.",
+      "usageNote": "1 Kings 11:4 says Solomon's heart was not shalem with the LORD his God, as David's had been. The contrast is exact: David sinned grievously, but his loyalty had no rival; Solomon never renounced the LORD, yet his heart was split among the gods of his wives. The verse does not accuse Solomon of unbelief. It accuses him of partial belief.",
+      "wordByWord": [
+        {
+          "word": "וְלֹא־הָיָה",
+          "transliteration": "velo-hayah",
+          "meaning": "and it was not"
+        },
+        {
+          "word": "לְבָבוֹ",
+          "transliteration": "levavo",
+          "meaning": "his heart - the inner seat of will, loyalty, and devotion"
+        },
+        {
+          "word": "שָׁלֵם",
+          "transliteration": "shalem",
+          "meaning": "whole, complete, undivided"
+        },
+        {
+          "word": "עִם־יְהוָה אֱלֹהָיו",
+          "transliteration": "im-YHWH Elohav",
+          "meaning": "with the LORD his God"
+        },
+        {
+          "word": "כִּלְבַב דָּוִיד אָבִיו",
+          "transliteration": "kilvav David aviv",
+          "meaning": "like the heart of David his father"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלוֹם / שָׁלֵם",
+          "reference": "Shalom (peace) and shalem (whole) share a root. The Bible's peace is not the absence of conflict but the presence of wholeness - which is exactly what a divided heart cannot have. Solomon, whose own name carries the sound of shalom, ends his reign without it."
+        }
+      ],
+      "strongsNumber": "H8003",
+      "definition": "complete, whole, sound, undivided; at peace, made whole",
+      "usage": "The same word that closes the verse - shalem - is what God will later ask of every covenant heart: 'Love the LORD your God with all your heart' (Deuteronomy 6:5). Solomon had part of his heart. The covenant asks for all of it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Drift Begins Where the Wisdom Ends",
+      "body": "Yesterday the kingdom was at its height: a temple finished, a queen astonished, gold so common that silver counted for nothing. Today the chapter opens with one small word that turns the whole story - however. \"King Solomon, however, loved many foreign women.\"\n\nNotice what the text does not say. It does not say Solomon stopped believing in the LORD. It does not record a moment where he renounced the God who appeared to him twice and gave him a wisdom no king has matched. The fall here is quieter than that, and far more familiar. \"His wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been.\"\n\nThe charge is not apostasy. It is dividedness. Solomon kept worshiping the LORD - he simply made room for Ashtoreth and Milcom and Chemosh beside Him, a high place on the hill east of Jerusalem for each foreign god his wives had brought from home. He did not slam a door on heaven. He just stopped locking the others. And Scripture, which is rarely so blunt, calls the result evil in the sight of the LORD.\n\nWhat makes this terrifying is how reasonable each step would have felt. A marriage to seal a treaty. A shrine to keep a wife content. A compromise to keep the peace. None of it announced itself as ruin. The man who wrote, \"Guard your heart with all diligence, for from it flow springs of life\" (Proverbs 4:23) is the man whose heart was guarded by no one, slowly, in old age, one accommodation at a time.",
+      "keyInsight": "Solomon's heart was not stolen in a single night. It was leased out in pieces, until the temple builder kept worship on the same hill as the idols - and a divided heart, Scripture says, is not a smaller sin than a denying one. It is the sin.",
+      "content": "Yesterday the kingdom was at its height: a temple finished, a queen astonished, gold so common that silver counted for nothing. Today the chapter opens with one small word that turns the whole story - however. \"King Solomon, however, loved many foreign women.\"\n\nNotice what the text does not say. It does not say Solomon stopped believing in the LORD. It does not record a moment where he renounced the God who appeared to him twice and gave him a wisdom no king has matched. The fall here is quieter than that, and far more familiar. \"His wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been.\"\n\nThe charge is not apostasy. It is dividedness. Solomon kept worshiping the LORD - he simply made room for Ashtoreth and Milcom and Chemosh beside Him, a high place on the hill east of Jerusalem for each foreign god his wives had brought from home. He did not slam a door on heaven. He just stopped locking the others. And Scripture, which is rarely so blunt, calls the result evil in the sight of the LORD.\n\nWhat makes this terrifying is how reasonable each step would have felt. A marriage to seal a treaty. A shrine to keep a wife content. A compromise to keep the peace. None of it announced itself as ruin. The man who wrote, \"Guard your heart with all diligence, for from it flow springs of life\" (Proverbs 4:23) is the man whose heart was guarded by no one, slowly, in old age, one accommodation at a time."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Tenant Who Kept a Spare Key",
+      "body": "A friend of mine rented out the basement apartment of his house for a few years. The arrangement was simple and the tenant was kind, and at some point - he can't remember when - he stopped asking for the spare key back at the end of each lease. It seemed petty to insist. The locks were the same anyway. One key, then another, drifted out into the world.\n\nYears later he could not have told you how many people had a way into his home. Not enemies. Not anyone he'd let in on purpose. Just a slow accumulation of access he'd never meant to grant, each handed over for a reason that made sense at the time. The house was still his. He just no longer held all the keys to it.\n\nThat is the quiet horror of 1 Kings 11. Solomon never handed his heart to another god in one decisive act. He handed out keys. A shrine here to honor a wife's homeland, a high place there to keep a household at peace. Each compromise was small, defensible, courteous. And one morning the wisest man alive woke up in a house he still believed was the LORD's, with strangers in every room.",
+      "connectionToTheme": "Idolatry rarely arrives as rebellion. It arrives as accommodation - a key handed over here, a shrine permitted there - until a heart that never denied God is no longer wholly His.",
+      "content": "A friend of mine rented out the basement apartment of his house for a few years. The arrangement was simple and the tenant was kind, and at some point - he can't remember when - he stopped asking for the spare key back at the end of each lease. It seemed petty to insist. The locks were the same anyway. One key, then another, drifted out into the world.\n\nYears later he could not have told you how many people had a way into his home. Not enemies. Not anyone he'd let in on purpose. Just a slow accumulation of access he'd never meant to grant, each handed over for a reason that made sense at the time. The house was still his. He just no longer held all the keys to it.\n\nThat is the quiet horror of 1 Kings 11. Solomon never handed his heart to another god in one decisive act. He handed out keys. A shrine here to honor a wife's homeland, a high place there to keep a household at peace. Each compromise was small, defensible, courteous. And one morning the wisest man alive woke up in a house he still believed was the LORD's, with strangers in every room."
+    },
+    {
+      "type": "insight",
+      "heading": "Twice He Had Seen Him",
+      "body": "Tucked into the verdict is a detail that should stop us: the LORD grew angry \"because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice.\"\n\nTwice. At Gibeon, when Solomon asked for wisdom instead of riches and God was so pleased He gave him both (1 Kings 3). And again after the temple was finished, when God appeared to warn him plainly: if you turn away and serve other gods, I will cut Israel off from the land (1 Kings 9). Solomon did not drift in ignorance. He drifted having seen God's face and having been told, in advance, exactly where this road ended.\n\nThis is why the text underlines the appearances. The tragedy of Solomon is not a man who never knew better. It is a man who knew best - who had been given more light than anyone before him - and let it dim by neglect rather than by argument. Knowledge did not keep his heart whole. Encounter did not keep his heart whole. Only love kept whole, day by day, keeps a heart whole, and that was the one thing Solomon let slide.\n\nThe most warned man in the Old Testament still fell. Insight is not immunity. The heart must be guarded by someone, every day, or it leaks.",
+      "historicalContext": "1 Kings was likely compiled during or after the Babylonian exile, written for a people who had lost the very land and temple Solomon built. For exiles asking how it all came apart, chapter 11 is the answer in miniature: the crack ran back to a divided royal heart. The kingdom that tore in two under Solomon's son (1 Kings 12) is shown here tearing first, invisibly, inside one man.",
+      "fascinatingFact": "The Hebrew of verse 4 measures Solomon against David - \"as his father David had been\" - and the comparison is startling, because David was an adulterer and had a man killed. Yet David's heart is called shalem, whole. The difference Scripture cares about is not the size of the sin but the direction of the loyalty. David fell and turned back, all of him. Solomon never fell so dramatically - and never fully turned back at all.",
+      "content": "Tucked into the verdict is a detail that should stop us: the LORD grew angry \"because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice.\"\n\nTwice. At Gibeon, when Solomon asked for wisdom instead of riches and God was so pleased He gave him both (1 Kings 3). And again after the temple was finished, when God appeared to warn him plainly: if you turn away and serve other gods, I will cut Israel off from the land (1 Kings 9). Solomon did not drift in ignorance. He drifted having seen God's face and having been told, in advance, exactly where this road ended.\n\nThis is why the text underlines the appearances. The tragedy of Solomon is not a man who never knew better. It is a man who knew best - who had been given more light than anyone before him - and let it dim by neglect rather than by argument. Knowledge did not keep his heart whole. Encounter did not keep his heart whole. Only love kept whole, day by day, keeps a heart whole, and that was the one thing Solomon let slide.\n\nThe most warned man in the Old Testament still fell. Insight is not immunity. The heart must be guarded by someone, every day, or it leaks."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart was not wholly the LORD's, and so God said, \"I will tear the kingdom away from you\" - yet for David's sake He left one tribe, and for Jerusalem's sake a lamp that would not go out.",
+      "modernApplication": "Few of us renounce God outright. We do what Solomon did: keep Him in the house and quietly grant access to other things - the approval we can't stop chasing, the resentment we won't release, the version of comfort we will not lay down. The danger to a believing heart is rarely denial. It is dividedness we have learned to live with.",
+      "connectionPoint": "What Solomon lacked - a heart wholly given to God - is exactly what every covenant heart was always asked for and never sustained. The mercy hiding in the verdict is the word for David's sake: God keeps the promise even when the king breaks it. That undeserved one tribe, that unextinguished lamp in Jerusalem, is the seam through which the whole gospel will eventually come.",
+      "newTestamentEcho": "Jesus puts His finger on Solomon's exact failure: \"No one can serve two masters... You cannot serve both God and money\" (Matthew 6:24). And He names Himself the answer the divided heart could never be: \"Now One greater than Solomon is here\" (Matthew 12:42). Where Solomon's heart split, Christ's was shalem - whole - obedient unto death, the one King whose loyalty never leaked."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you kept God in the house but quietly handed out spare keys - giving other things room beside Him rather than instead of Him?",
+      "additionalQuestions": [
+        "Solomon's heart was divided, not denied. What is the one rival God has been asking you, gently and for a while now, to stop making room for?",
+        "David sinned worse than Solomon yet kept a whole heart. What might it look like for your loyalty to be undivided even while your obedience is still imperfect?",
+        "Solomon had been warned and had seen God twice. What warning or grace have you received that you are in danger of letting dim simply by neglect?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am more like Solomon than I want to admit. I have not denied You. I have just made room for other things beside You, one small key at a time, until I am no longer sure my heart is wholly Yours. Forgive my dividedness. Take back the keys I have handed out. Make my heart shalem - whole, undivided, at peace - the way David's was even after he fell. I cannot keep it whole on my own; only One greater than Solomon can. Be that King in me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one specific rival - one 'high place' you have quietly allowed to stand beside God. Don't try to dismantle your whole heart at once. Take back one key. Tell God plainly: this room is Yours too.",
+      "leavingAtCross": [
+        "The dividedness I have learned to live with - the rivals I keep beside God rather than instead of Him",
+        "The lie that as long as I haven't denied God, my drifting doesn't count",
+        "The slow neglect that lets grace I've already received dim and go cold"
+      ],
+      "receivingFromCross": [
+        "A heart that can be made shalem - whole again - not by my effort but by Christ's wholeness given to me",
+        "The mercy of the 'for David's sake' promise: God keeps faith even when I break it",
+        "One King, greater than Solomon, whose loyalty never leaked and who holds my heart together"
+      ],
+      "content": "Today, name one specific rival - one 'high place' you have quietly allowed to stand beside God. Don't try to dismantle your whole heart at once. Take back one key. Tell God plainly: this room is Yours too."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between denying God and being divided toward Him - and why does Scripture treat Solomon's dividedness as evil in the LORD's sight?",
+        "Why does the text emphasize that God had appeared to Solomon twice? What does that detail do to the excuse of ignorance?",
+        "How can David, an adulterer and murderer, be the one whose heart is called 'whole,' while Solomon, who built the temple, is the one whose heart is not?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'high place' you've allowed to stand beside God - something you'd never call a replacement for Him, but have quietly given room.",
+        "Talk about how your drifts have usually happened: by a dramatic decision, or by a slow handing-out of keys? What does that tell you about how to guard your heart?",
+        "Ask each other: what grace or warning have you received that you're in danger of letting dim simply by neglect - and what would tending it again look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 6:5",
+          "text": "And you shall love the LORD your God with all your heart and with all your soul and with all your strength."
+        },
+        {
+          "reference": "Proverbs 4:23",
+          "text": "Guard your heart with all diligence, for from it flow springs of life."
+        },
+        {
+          "reference": "Matthew 6:24",
+          "text": "No one can serve two masters. Either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve both God and money."
+        },
+        {
+          "reference": "Matthew 12:42",
+          "text": "...for she came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11 in context",
+          "note": "Read 1 Kings 3 (Solomon at Gibeon) and 1 Kings 9 (God's second appearance and warning) before chapter 11. The two appearances God references are not abstract - they are recorded earlier in the same book, which makes the drift in chapter 11 a fall from light, not in the dark."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wise King Whose Heart Divided",
+      "description": "Son of David and Bathsheba, third king of Israel, builder of the temple in Jerusalem. God gave him unmatched wisdom and wealth and appeared to him twice. Yet in old age his many foreign wives turned his heart toward their gods, and he built high places for them beside the worship of the LORD. He never renounced God - but he was no longer wholly God's, and for that the kingdom was sentenced to be torn in two after his death.",
+      "keyQuote": "his heart was not wholeheartedly devoted to the LORD his God, as his father David had been.",
+      "lessonForUs": "The wisest man who ever lived was not undone by an enemy or a single great sin, but by a slow, comfortable dividing of his heart. If knowledge and even seeing God twice could not keep Solomon whole, our hearts will only be kept by daily, undivided love - finally secured for us by the one King greater than Solomon, whose heart never split.",
+      "heading": "The Wise King Whose Heart Divided"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1655,
+  "scriptureReference_full": "1 Kings 11",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shalem, H8003) and the shalem/shalom root connection reflect standard lexical sources (BDB, HALOT).",
+    "The two prior appearances of God to Solomon are recorded in 1 Kings 3:5-14 (Gibeon) and 1 Kings 9:1-9 (the warning), referenced explicitly in 1 Kings 11:9."
+  ]
 }

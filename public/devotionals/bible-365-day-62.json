@@ -6,33 +6,196 @@
   "scriptureReference": "Deuteronomy 30:11-20",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 62"
+      "type": "scripture",
+      "reference": "Deuteronomy 30:11-20",
+      "translation": "BSB",
+      "emphasis": [
+        "not too difficult for you or beyond your reach",
+        "the word is very near you",
+        "in your mouth and in your heart",
+        "Therefore choose life",
+        "For He is your life"
+      ],
+      "hebrewOriginal": "וּבָחַרְתָּ֙ בַּֽחַיִּ֔ים לְמַ֥עַן תִּחְיֶ֖ה אַתָּ֥ה וְזַרְעֶֽךָ",
+      "passage": "For this commandment I give you today is not too difficult for you or beyond your reach. It is not in heaven, that you should need to ask, 'Who will ascend into heaven to get it for us and proclaim it, that we may obey it?' And it is not beyond the sea, that you should need to ask, 'Who will cross the sea to get it for us and proclaim it, that we may obey it?' But the word is very near you; it is in your mouth and in your heart, so that you may obey it.\n\nSee, I have set before you today life and goodness, as well as death and disaster. For I am commanding you today to love the LORD your God, to walk in His ways, and to keep His commandments, statutes, and ordinances, so that you may live and increase, and the LORD your God may bless you in the land that you are entering to possess. But if your heart turns away and you do not listen, but are drawn away to bow down to other gods and worship them, I declare to you today that you will surely perish; you shall not prolong your days in the land that you are crossing the Jordan to possess.\n\nI call heaven and earth as witnesses against you today that I have set before you life and death, blessing and cursing. Therefore choose life, so that you and your descendants may live, and that you may love the LORD your God, obey Him, and hold fast to Him. For He is your life, and He will prolong your life in the land that the LORD swore to give to your fathers, to Abraham, Isaac, and Jacob."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Deuteronomy 30:11-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Deuteronomy 30:11-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וּבָחַרְתָּ",
+      "transliteration": "uvacharta",
+      "pronunciation": "oo-va-khar-TA",
+      "meaning": "and you shall choose; choose, then",
+      "rootMeaning": "From the root bachar, to choose, to select, to set one thing apart from another and take hold of it. It is the verb of preference - not a feeling, but a decision that lands on one side of a line.",
+      "usageNote": "The same root names Israel as God's chosen people (Deuteronomy 7:6) and David as God's chosen king (1 Samuel 16:8-13). Before Israel is ever told to choose, they are told that God has chosen them. The command to choose life is the response of the chosen to the One who chose first.",
+      "wordByWord": [
+        {
+          "word": "וּבָחַרְתָּ",
+          "transliteration": "uvacharta",
+          "meaning": "and you shall choose - second person, a command laid directly on the hearer"
+        },
+        {
+          "word": "בַּחַיִּים",
+          "transliteration": "bachayyim",
+          "meaning": "in the life - the plural form chayyim, the fullness of life, used for both physical and covenant life"
+        },
+        {
+          "word": "לְמַעַן",
+          "transliteration": "lema'an",
+          "meaning": "so that, in order that - the purpose of the choice"
+        },
+        {
+          "word": "תִּחְיֶה",
+          "transliteration": "tichyeh",
+          "meaning": "you may live - from chayah, to live, the same root as chayyim"
+        },
+        {
+          "word": "וְזַרְעֶךָ",
+          "transliteration": "vezar'echa",
+          "meaning": "and your seed, your descendants - the choice reaches past you to those who come after"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חַיִּים / חָי",
+          "reference": "Chayyim (life) shares its root with chai, living. In verse 20 Moses says of the LORD, ki hu chayyecha - 'for He is your life.' The thing chosen and the One who is chosen for are finally the same: to choose life is to choose Him."
+        }
+      ],
+      "strongsNumber": "H977",
+      "definition": "to choose, select, prefer; to take hold of one thing over another",
+      "usage": "Bachar is decisive and personal. It is not the language of drifting but of standing at a fork and putting your weight on one path. Moses does not ask Israel how they feel about God. He asks them to choose."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Covenant decision. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ is life itself (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Sermon at the Edge of the Promised Land",
+      "body": "Picture the scene. A whole generation stands on the plains of Moab, just east of the Jordan River. Behind them are forty years of wilderness; in front of them, across the water, is the land they have been promised but have never entered. Moses, who will not cross with them, is preaching his last sermons. Deuteronomy is that long farewell - an old man pouring everything he knows into a people about to walk into their future without him.\n\nAnd here, near the end, he gathers it all into a single appeal. He does not give them a new burden. He insists the opposite: 'This commandment I give you today is not too difficult for you or beyond your reach.' It is not stored in heaven where someone would have to climb to fetch it. It is not stranded across the sea where someone would have to sail for it. 'The word is very near you; it is in your mouth and in your heart.'\n\nThen Moses sets two paths in front of them in the plainest terms Scripture ever uses. Life and goodness on one side. Death and disaster on the other. To love the LORD, walk in His ways, keep His commandments - that is the road to life. To let the heart turn away toward other gods - that is the road that ends in perishing. He calls heaven and earth to stand as witnesses, the way you would name witnesses to sign a binding contract. The whole created order is watching what these people will do.",
+      "keyInsight": "Moses' last word to Israel is not a heavier law but a nearer one. The covenant is not a mountain to climb or an ocean to cross. It is a word already placed in the mouth and the heart - close enough to obey today.",
+      "content": "Picture the scene. A whole generation stands on the plains of Moab, just east of the Jordan River. Behind them are forty years of wilderness; in front of them, across the water, is the land they have been promised but have never entered. Moses, who will not cross with them, is preaching his last sermons. Deuteronomy is that long farewell - an old man pouring everything he knows into a people about to walk into their future without him.\n\nAnd here, near the end, he gathers it all into a single appeal. He does not give them a new burden. He insists the opposite: 'This commandment I give you today is not too difficult for you or beyond your reach.' It is not stored in heaven where someone would have to climb to fetch it. It is not stranded across the sea where someone would have to sail for it. 'The word is very near you; it is in your mouth and in your heart.'\n\nThen Moses sets two paths in front of them in the plainest terms Scripture ever uses. Life and goodness on one side. Death and disaster on the other. To love the LORD, walk in His ways, keep His commandments - that is the road to life. To let the heart turn away toward other gods - that is the road that ends in perishing. He calls heaven and earth to stand as witnesses, the way you would name witnesses to sign a binding contract. The whole created order is watching what these people will do."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter on the Kitchen Table",
+      "body": "A man I know spent years estranged from his father. Not a dramatic falling-out - just a slow drift of unreturned calls and holidays that quietly stopped including each other. He told himself reconciliation was a huge, distant thing, something that would require the right moment, the right words, maybe a counselor in the room. It loomed across an ocean in his mind. So he never started.\n\nThen his father wrote him a letter. Three sentences. It said, in effect: the door is open, come home, I am still your dad. He kept the letter on his kitchen table for two weeks and walked past it every morning. The hardest part, he said later, was realizing the thing he had treated as impossibly far away had been sitting an arm's length from him the whole time. It was not in heaven. It was not across the sea. It was on the table. He only had to pick up the phone.\n\nThat is the shape of what Moses is saying. We tend to file the most important decisions of our lives under 'someday, when conditions are right.' We imagine that turning toward God requires a pilgrimage, a perfect understanding, a level of holiness we have not reached. Moses cuts straight through it. The word is near you. It is already in your mouth and your heart. The only thing left is to choose.",
+      "connectionToTheme": "What feels impossibly far - reconciliation, return, a turned-around life - is often already near, waiting only for a decision. The near word asks not for a journey but for a yes.",
+      "content": "A man I know spent years estranged from his father. Not a dramatic falling-out - just a slow drift of unreturned calls and holidays that quietly stopped including each other. He told himself reconciliation was a huge, distant thing, something that would require the right moment, the right words, maybe a counselor in the room. It loomed across an ocean in his mind. So he never started.\n\nThen his father wrote him a letter. Three sentences. It said, in effect: the door is open, come home, I am still your dad. He kept the letter on his kitchen table for two weeks and walked past it every morning. The hardest part, he said later, was realizing the thing he had treated as impossibly far away had been sitting an arm's length from him the whole time. It was not in heaven. It was not across the sea. It was on the table. He only had to pick up the phone.\n\nThat is the shape of what Moses is saying. We tend to file the most important decisions of our lives under 'someday, when conditions are right.' We imagine that turning toward God requires a pilgrimage, a perfect understanding, a level of holiness we have not reached. Moses cuts straight through it. The word is near you. It is already in your mouth and your heart. The only thing left is to choose."
+    },
+    {
+      "type": "insight",
+      "heading": "Paul Hears Christ in the Near Word",
+      "body": "Centuries later, the apostle Paul picks up these exact words of Moses and does something startling with them. Writing to the Romans about how anyone is made right with God, he quotes Deuteronomy 30 almost line for line - and then tells us what the near word turned out to be.\n\n'Do not say in your heart, \"Who will ascend into heaven?\"' Paul writes, '(that is, to bring Christ down) or, \"Who will descend into the Abyss?\" (that is, to bring Christ up from the dead).' And then: 'The word is near you; it is in your mouth and in your heart' - 'that is,' Paul says, 'the word of faith we are proclaiming: that if you confess with your mouth, \"Jesus is Lord,\" and believe in your heart that God raised Him from the dead, you will be saved' (Romans 10:6-9).\n\nRead Moses and Paul together and the floor drops away beneath the text. Moses said no one needs to climb to heaven to fetch the commandment - because God has already brought His word down. Paul says: yes, and that Word came down all the way, took on flesh, and was raised from the Abyss of death. The commandment that was never too difficult, never beyond reach, near enough to be in your mouth and your heart - that nearness has a name. The near word is the Word made flesh.",
+      "historicalContext": "Deuteronomy 30 was read by Israel as the climax of Moses' covenant appeal, and later Jewish tradition heard in 'it is not in heaven' an insistence that the Torah was now given, present, and humanity's to keep. Paul, a trained Pharisee, knew exactly how weighty these verses were. When he applies them to Christ and to faith in Romans 10, he is not borrowing a stray phrase; he is claiming that the deepest meaning of Moses' nearest word was always pointing here.",
+      "fascinatingFact": "Moses ends his appeal in verse 20 by saying of the LORD, 'For He is your life.' He does not say God gives life, though He does. He says God is life. When Jesus stands before His disciples and says, 'I am the way and the truth and the life' (John 14:6), He is not inventing a new claim. He is stepping into Moses' sentence and filling it with His own person.",
+      "content": "Centuries later, the apostle Paul picks up these exact words of Moses and does something startling with them. Writing to the Romans about how anyone is made right with God, he quotes Deuteronomy 30 almost line for line - and then tells us what the near word turned out to be.\n\n'Do not say in your heart, \"Who will ascend into heaven?\"' Paul writes, '(that is, to bring Christ down) or, \"Who will descend into the Abyss?\" (that is, to bring Christ up from the dead).' And then: 'The word is near you; it is in your mouth and in your heart' - 'that is,' Paul says, 'the word of faith we are proclaiming: that if you confess with your mouth, \"Jesus is Lord,\" and believe in your heart that God raised Him from the dead, you will be saved' (Romans 10:6-9).\n\nRead Moses and Paul together and the floor drops away beneath the text. Moses said no one needs to climb to heaven to fetch the commandment - because God has already brought His word down. Paul says: yes, and that Word came down all the way, took on flesh, and was raised from the Abyss of death. The commandment that was never too difficult, never beyond reach, near enough to be in your mouth and your heart - that nearness has a name. The near word is the Word made flesh."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Moses sets two roads before Israel - life and goodness, or death and disaster - and tells them the choice is not far off but near, already in their mouth and their heart, close enough to make today.",
+      "modernApplication": "We rarely choose death in one decision. We choose it the way Moses describes the heart turning away - by drift, by a slow leaning toward smaller gods that promise life and cannot give it. The good news is that the turn back is just as near. You do not have to scale heaven or cross an ocean to come home. The word is near you today.",
+      "connectionPoint": "The two ways Moses laid out run straight through the whole of Scripture. Jesus stands at the same fork and says, 'Enter through the narrow gate... small is the gate and narrow the way that leads to life' (Matthew 7:13-14). Jeremiah promises a day when God will write His law not on stone but on the heart (Jeremiah 31:33) - the near word, finally interior. The choice Moses set before Moab is the choice still set before us.",
+      "newTestamentEcho": "What Moses offered as a command, Christ became as a person. 'For He is your life,' Moses says of the LORD (Deuteronomy 30:20); 'I am the way and the truth and the life,' says Jesus (John 14:6). To choose life is no longer to choose between two abstract roads. It is to choose, or refuse, the One who came near enough to die and rise, and who now asks for a yes from your mouth and your heart."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you filed turning toward God under 'someday, when I'm ready' - treating as far away something God says is already near?",
+      "additionalQuestions": [
+        "Moses says the heart 'turns away' not all at once but by being slowly 'drawn away.' What has been quietly drawing your heart lately?",
+        "If the word is already in your mouth and your heart, what is the actual obstacle to choosing today - is it difficulty, or is it something you are unwilling to release?",
+        "Moses says the choice reaches your descendants too. Who is watching how you choose, and what road are you showing them?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have treated You as far off - up in a heaven I cannot reach, across a sea I cannot cross - when all along Your word was near, in my mouth and in my heart. Forgive the slow drift, the heart quietly drawn away. Today I want to choose life, and I know now that choosing life means choosing You. Jesus, You are the Word who came near, brought down for me and raised for me. With my mouth I confess that You are Lord; in my heart I believe God raised You from the dead. You are my life. Hold me fast, and let me hold fast to You. Amen.",
+      "prayerType": "personal",
+      "scripture_echo": "Deuteronomy 30:20; Romans 10:9"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one road you have been drifting down - one small god your heart has been leaning toward - and turn from it out loud, in one honest sentence to God. Then choose life by speaking the near word back: 'Jesus is Lord, and He is my life.' Let the choosing be specific, spoken, and today.",
+      "leavingAtCross": [
+        "The lie that turning to God is far off, reserved for a better version of me on a better day",
+        "The small gods my heart keeps drifting toward because they feel nearer than He does",
+        "The exhaustion of trying to climb to a God who has already come all the way down"
+      ],
+      "receivingFromCross": [
+        "A word so near it is already in my mouth and my heart - Christ Himself, come down and raised",
+        "The freedom to choose life today, not someday, with a yes I can actually speak",
+        "A God who is not only the giver of life but is my life, holding me fast as I hold fast to Him"
+      ],
+      "content": "Today, name one road you have been drifting down - one small god your heart has been leaning toward - and turn from it out loud, in one honest sentence to God. Then choose life by speaking the near word back: 'Jesus is Lord, and He is my life.' Let the choosing be specific, spoken, and today."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Moses insist the commandment is 'not in heaven' and 'not beyond the sea'? What is he trying to take away from Israel's excuses?",
+        "Moses sets 'life and goodness' against 'death and disaster.' According to verses 16-18, what does each road actually consist of in daily terms?",
+        "How does Paul's use of these verses in Romans 10:6-9 change what 'the word is near you' finally means?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been waiting for the 'right conditions' to turn toward God, treating as distant what He calls near.",
+        "Talk honestly about the slow 'drawing away' of the heart - where do each of you feel it happening right now?",
+        "Ask each other: if to choose life is to choose Christ, what would a concrete 'yes' look like for you this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 10:8-9",
+          "text": "But what does it say? 'The word is near you; it is in your mouth and in your heart,' that is, the word of faith we are proclaiming: that if you confess with your mouth, 'Jesus is Lord,' and believe in your heart that God raised Him from the dead, you will be saved."
+        },
+        {
+          "reference": "Deuteronomy 6:6",
+          "text": "These words I am commanding you today are to be upon your hearts."
+        },
+        {
+          "reference": "Jeremiah 31:33",
+          "text": "… I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people."
+        },
+        {
+          "reference": "Matthew 7:13-14",
+          "text": "Enter through the narrow gate. For wide is the gate and broad is the way that leads to destruction, and many enter through it. But small is the gate and narrow the way that leads to life, and only a few find it."
+        },
+        {
+          "reference": "John 14:6",
+          "text": "Jesus answered, 'I am the way and the truth and the life. No one comes to the Father except through Me.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Deuteronomy 30",
+          "note": "Read the whole chapter, watching how it moves from restoration after exile (vv. 1-10) to the near word (vv. 11-14) to the final choice (vv. 15-20)."
+        },
+        {
+          "type": "book",
+          "title": "Romans 10:5-13",
+          "note": "Read Paul's reuse of Deuteronomy 30 to see how the near word becomes the word of faith in Christ."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Lawgiver, Preaching His Last",
+      "era": "traditionally 15th-13th century BC",
+      "key_trait": "A leader who would not enter the promised land himself, yet spent his final breath pleading with the people to choose the life he could see but not share.",
+      "description": "Raised in Pharaoh's house, called at a burning bush, the man who led Israel out of Egypt and through forty years of wilderness. Deuteronomy records his farewell sermons on the plains of Moab. Barred from crossing the Jordan, Moses pours his whole heart into one appeal: that the generation he is handing the future to would choose the LORD and live. He dies on Mount Nebo within sight of the land, having set the choice before them as clearly as words can make it.",
+      "keyQuote": "I have set before you life and death, blessing and cursing. Therefore choose life.",
+      "lessonForUs": "Moses shows us that the most loving thing is not to make the choice for someone, but to set it before them honestly and plead with them to choose well. He also shows us our limit: he could name the life but could not be it. For that, Israel - and we - needed One who could say, 'I am the life.'",
+      "heading": "The Lawgiver, Preaching His Last"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2686,
+  "scriptureReference_full": "Deuteronomy 30:11-20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (uvacharta / bachar, H977; chayyim) reflects standard lexical sources.",
+    "The reading of Deuteronomy 30:12-14 as fulfilled in Christ follows Paul's own citation in Romans 10:6-9."
+  ]
 }

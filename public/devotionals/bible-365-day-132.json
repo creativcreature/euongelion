@@ -1,38 +1,188 @@
 {
   "day": 132,
-  "title": "Northern Prophets — Day 6 — Deeper Dive",
-  "teaser": "Day 132 of Bible 365 — Amos, Hosea, Micah",
+  "title": "When Mercy and Justice War Inside God",
+  "teaser": "Amos thunders for justice; Hosea pleads for mercy. Both speak for the same God — and Hosea 11 shows us the war between them happening inside His own heart.",
   "framework": "Amos, Hosea, Micah — Northern Prophets",
   "scriptureReference": "Amos, Hosea, Micah",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 132"
+      "type": "scripture",
+      "reference": "Hosea 11:8-9; Amos 5:24; Hosea 6:6; Micah 6:8",
+      "translation": "BSB",
+      "emphasis": [
+        "My heart is turned within Me",
+        "I am God and not man",
+        "let justice roll on like a river",
+        "I desire mercy, not sacrifice",
+        "to act justly, to love mercy, and to walk humbly"
+      ],
+      "hebrewOriginal": "כִּי חֶסֶד חָפַצְתִּי וְלֹא־זָבַח",
+      "passage": "How could I give you up, O Ephraim? How could I surrender you, O Israel? How could I make you like Admah? How could I treat you like Zeboiim? My heart is turned within Me; My compassion is stirred! I will not execute the full fury of My anger; I will not turn back to destroy Ephraim. For I am God and not man— the Holy One among you— and I will not come in wrath. (Hosea 11:8-9)\n\nBut let justice roll on like a river, and righteousness like an ever-flowing stream. (Amos 5:24)\n\nFor I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings. (Hosea 6:6)\n\nHe has shown you, O man, what is good. And what does the LORD require of you but to act justly, to love mercy, and to walk humbly with your God? (Micah 6:8)"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Amos, Hosea, Micah**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Amos, Hosea, Micah and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "steadfast love, loyal kindness, covenant mercy",
+      "rootMeaning": "Not a feeling that comes and goes, but love that has bound itself by promise. Chesed is the kindness owed inside a covenant - the loyalty a faithful party keeps even when the other party has not kept theirs.",
+      "usageNote": "The same word ties these three prophets into one voice. Hosea hears God say, 'I desire chesed, not sacrifice' (6:6). Micah names it as the second of three things God requires: 'love chesed' (6:8). And Micah ends his whole book marveling that God 'delights in chesed' enough to hurl our sins into the sea (7:18-19). One Hebrew word runs like a current under all three books.",
+      "wordByWord": [
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "for, because - giving the reason behind everything"
+        },
+        {
+          "word": "חֶסֶד",
+          "transliteration": "chesed",
+          "meaning": "covenant love, loyal mercy, steadfast kindness"
+        },
+        {
+          "word": "חָפַצְתִּי",
+          "transliteration": "chafatzti",
+          "meaning": "I have delighted in, I have desired - a verb of pleasure, not mere preference"
+        },
+        {
+          "word": "וְלֹא־זָבַח",
+          "transliteration": "velo-zavach",
+          "meaning": "and not sacrifice - not the slaughtered offering on the altar"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִשְׁפָּט / רַחֲמִים",
+          "reference": "Mishpat (justice, the right ordering of things) is what Amos cries for; rachamim (compassion, from the word for a mother's womb) is what stirs in God in Hosea 11:8. Chesed is the love that holds both together: justice that will not let evil stand, and compassion that will not let the sinner go."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; especially the loyal love kept within a covenant relationship",
+      "usage": "Older translations render chesed 'lovingkindness' or 'mercy.' It is the word for love that has made a vow and will not break it - the love of a husband who stays, a friend who keeps faith, a God who calls a wandering people 'My son' and cannot bring Himself to let them go."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Northern Prophets. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Justice + Mercy (Mic 6:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Prophets, One God, an Apparent Contradiction",
+      "body": "Set Amos and Hosea side by side and they can sound like they serve different gods. Amos is thunder. He came down from the sheep pastures of Tekoa with a word so sharp it offended everyone who heard it. To a nation crowding its festivals and singing its worship songs, God says through him: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies.' Then: 'Take away from Me the noise of your songs! I will not listen to the music of your harps.' And finally the demand that the whole book has been building toward: 'But let justice roll on like a river, and righteousness like an ever-flowing stream.' Amos will not let religion stand in for righteousness. If the poor are crushed at the gate while the offerings smoke on the altar, the offerings are a stench.\n\nHosea, prophesying to the same northern kingdom, sounds nothing like that. Where Amos is a courtroom, Hosea is a marriage. God speaks like a wounded husband and a heartbroken father: 'When Israel was a child, I loved him, and out of Egypt I called My son.' The same nation Amos indicts for injustice, Hosea remembers as a child God loved and led out of slavery. Two prophets, two tones, one God. Which is the real one - the river of justice, or the love that called a child out of Egypt?\n\nMicah, prophesying in the same eighth-century window, refuses to choose. His most famous line gathers both into a single sentence: God requires you 'to act justly, to love mercy, and to walk humbly with your God.' Justice and mercy are not rivals to be balanced. They are both required, by the same God, of the same people, in the same breath.",
+      "keyInsight": "Amos and Hosea are not two contradictory pictures of God to be averaged out. They are two true things about one God that the human heart cannot easily hold together - and that God Himself will have to hold together at great cost.",
+      "content": "Set Amos and Hosea side by side and they can sound like they serve different gods. Amos is thunder. He came down from the sheep pastures of Tekoa with a word so sharp it offended everyone who heard it. To a nation crowding its festivals and singing its worship songs, God says through him: 'I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies.' Then: 'Take away from Me the noise of your songs! I will not listen to the music of your harps.' And finally the demand that the whole book has been building toward: 'But let justice roll on like a river, and righteousness like an ever-flowing stream.' Amos will not let religion stand in for righteousness. If the poor are crushed at the gate while the offerings smoke on the altar, the offerings are a stench.\n\nHosea, prophesying to the same northern kingdom, sounds nothing like that. Where Amos is a courtroom, Hosea is a marriage. God speaks like a wounded husband and a heartbroken father: 'When Israel was a child, I loved him, and out of Egypt I called My son.' The same nation Amos indicts for injustice, Hosea remembers as a child God loved and led out of slavery. Two prophets, two tones, one God. Which is the real one - the river of justice, or the love that called a child out of Egypt?\n\nMicah, prophesying in the same eighth-century window, refuses to choose. His most famous line gathers both into a single sentence: God requires you 'to act justly, to love mercy, and to walk humbly with your God.' Justice and mercy are not rivals to be balanced. They are both required, by the same God, of the same people, in the same breath."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Judge Who Knew the Defendant",
+      "body": "A judge I once spoke with described the hardest sentencing of his career. The young man in front of him was guilty - the evidence was not in question, and the harm done to the victim was real and would not be undone by leniency. The law was clear. So was the judge's duty.\n\nWhat he did not say in the courtroom was that he had coached this boy's baseball team a decade earlier. He had watched him learn to throw. He remembered him small, laughing, before any of this. And so the man who had to pronounce the sentence was also the man who, in some private corner of himself, still saw a child he had cared about.\n\n'I did not feel less just,' he told me. 'I felt torn in two. I owed the victim justice and I could not pretend I did not love the boy. There was no clean way to be both at once.' He passed the sentence the law required. Then he went home and could not eat. That tearing - the duty that must be done and the love that aches against it - is a small human echo of a verse most people never read carefully. In Hosea 11, God says it out loud about Himself.",
+      "connectionToTheme": "The conflict between Amos's justice and Hosea's mercy is not resolved by softening either one. It is felt, fully, inside the heart of the one who must answer for both.",
+      "content": "A judge I once spoke with described the hardest sentencing of his career. The young man in front of him was guilty - the evidence was not in question, and the harm done to the victim was real and would not be undone by leniency. The law was clear. So was the judge's duty.\n\nWhat he did not say in the courtroom was that he had coached this boy's baseball team a decade earlier. He had watched him learn to throw. He remembered him small, laughing, before any of this. And so the man who had to pronounce the sentence was also the man who, in some private corner of himself, still saw a child he had cared about.\n\n'I did not feel less just,' he told me. 'I felt torn in two. I owed the victim justice and I could not pretend I did not love the boy. There was no clean way to be both at once.' He passed the sentence the law required. Then he went home and could not eat. That tearing - the duty that must be done and the love that aches against it - is a small human echo of a verse most people never read carefully. In Hosea 11, God says it out loud about Himself."
+    },
+    {
+      "type": "insight",
+      "heading": "The War Is Inside God's Own Heart",
+      "body": "Read Hosea 11:8-9 slowly, because there is nothing else quite like it in the prophets. Israel has earned judgment; Amos has already named the verdict. And then God says: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?' He names two cities, Admah and Zeboiim, that were swept away with Sodom - the standard of total destruction. Could He treat Ephraim that way? Justice says He could. Then the most astonishing line: 'My heart is turned within Me; My compassion is stirred!'\n\nThe Hebrew is the language of a heart overturned, churned, recoiling on itself. The judgment Israel deserves and the love God cannot release are colliding, and Scripture lets us watch the collision happen inside God Himself. Then comes the resolution - and notice the reason He gives: 'I will not execute the full fury of My anger... For I am God and not man.' We might have expected the opposite. We assume that if anyone is going to relent, it would be a soft-hearted human, while a holy God would press the case to the bitter end. God says the reverse. It is precisely because He is God, the Holy One among them, and not a man, that His mercy outlasts His wrath. Human anger, once kindled, tends to consume. God's holiness is large enough to hold both the justice Amos demands and the mercy Hosea pleads - without surrendering either.",
+      "historicalContext": "Amos, Hosea, and Micah all prophesied in the eighth century BC, the same broad era. Amos and Hosea spoke mainly to the northern kingdom of Israel (Ephraim); Micah, from Judah in the south, addressed both kingdoms. Amos's opening verse sets him 'in the days when Uzziah was king of Judah and Jeroboam son of Jehoash was king of Israel,' a time of military strength and prosperity for the elites alongside crushing injustice for the poor. The northern kingdom's prosperity was real and so was its rot, which is why both the thunder of Amos and the heartbreak of Hosea were spoken to the very same people.",
+      "fascinatingFact": "Hosea 11:9 contains one of the clearest places in the Old Testament where God grounds His mercy in His difference from us: 'I am God and not man.' Where we tend to imagine that being merciful makes God 'less holy,' Hosea says the opposite - it is God's holiness, His being utterly unlike fallen humanity, that keeps His compassion from burning out into the destruction His justice could rightly demand.",
+      "content": "Read Hosea 11:8-9 slowly, because there is nothing else quite like it in the prophets. Israel has earned judgment; Amos has already named the verdict. And then God says: 'How could I give you up, O Ephraim? How could I surrender you, O Israel?' He names two cities, Admah and Zeboiim, that were swept away with Sodom - the standard of total destruction. Could He treat Ephraim that way? Justice says He could. Then the most astonishing line: 'My heart is turned within Me; My compassion is stirred!'\n\nThe Hebrew is the language of a heart overturned, churned, recoiling on itself. The judgment Israel deserves and the love God cannot release are colliding, and Scripture lets us watch the collision happen inside God Himself. Then comes the resolution - and notice the reason He gives: 'I will not execute the full fury of My anger... For I am God and not man.' We might have expected the opposite. We assume that if anyone is going to relent, it would be a soft-hearted human, while a holy God would press the case to the bitter end. God says the reverse. It is precisely because He is God, the Holy One among them, and not a man, that His mercy outlasts His wrath. Human anger, once kindled, tends to consume. God's holiness is large enough to hold both the justice Amos demands and the mercy Hosea pleads - without surrendering either."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Amos demands justice that rolls like a river; Hosea reveals a God whose compassion is stirred even toward those His justice has condemned. In Hosea 11 the two meet inside God's own heart, and mercy is held without justice being cancelled.",
+      "modernApplication": "We tend to split God in half and keep the half we prefer. Some of us hold a God of justice alone and live afraid, sure the sentence is coming. Some of us hold a God of mercy alone and quietly assume nothing we do really matters to Him. The prophets refuse both shortcuts. The real God is the one whose heart is genuinely torn - who will not wink at the injustice we commit or excuse, and who also will not give us up.",
+      "connectionPoint": "How can God be fully just - letting justice roll like a river, refusing to call evil good - and at the same time refuse to destroy the guilty He loves? Amos and Hosea raise the question with everything they have. Neither of them answers it. The tension is left open at the end of their books, a wound in the heart of God that the rest of Scripture will keep pressing toward.",
+      "newTestamentEcho": "The question the prophets could not close, the cross answers. Matthew quotes Hosea 11:1 - 'Out of Egypt I called My son' - and reads it as fulfilled in Jesus (Matthew 2:15): where wayward Israel was the son who wandered, Jesus is the Son who comes faithfully out of Egypt to do what Israel could not. And at the cross, justice rolls like a river and mercy is given in the same act, so that God can be, in Paul's words, 'just and the justifier of the one who has faith in Jesus' (Romans 3:26). The war inside God's heart in Hosea 11 is settled at Calvary, where He bears the full fury in the Son rather than give us up."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which half of God do you find easier to believe in right now - the river of justice, or the love that called a wandering child out of Egypt? Why that half?",
+      "additionalQuestions": [
+        "Where in your life are you most tempted to use worship or 'being religious' as a substitute for actually doing justice and loving mercy?",
+        "If God's compassion really is 'stirred' toward you even now, what fear would that quiet?",
+        "Micah 6:8 names three things - act justly, love mercy, walk humbly. Which one is hardest for you this season, and what would obedience in it cost you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy One among us, I have kept the half of You I could manage and quietly let the rest go. Forgive me for the songs I have offered while justice waited at my gate. Forgive me for fearing only Your anger, as if Your heart were not also turned toward me in compassion. Thank You that You are God and not man - that Your mercy does not burn out, and that You would not give us up. Teach me to act justly, to love mercy, and to walk humbly with You. And thank You that in Christ the river and the love met, and the war in Your heart was won for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, hold both halves of God in one hand. Pick one place where you have let worship stand in for justice - an unpaid kindness owed, a wrong you have softened, a person you have not made right with - and take one concrete step to 'act justly' there. Then sit one minute with Hosea 11:8 and let the same God who requires that justice say over you, 'My compassion is stirred.'",
+      "leavingAtCross": [
+        "The half-sized God I keep - either all sentence or all softness - so I never have to hold the whole",
+        "Worship offered as a cover for injustice I have not bothered to repair",
+        "The fear that God's anger is the last word over me"
+      ],
+      "receivingFromCross": [
+        "A God whose justice I do not have to fear, because in Christ it has already rolled over Him for me",
+        "Mercy that is stirred toward me precisely where I deserve it least",
+        "The freedom to do justice not to earn God, but because the God who has me cannot stop loving the world He made"
+      ],
+      "content": "Today, hold both halves of God in one hand. Pick one place where you have let worship stand in for justice - an unpaid kindness owed, a wrong you have softened, a person you have not made right with - and take one concrete step to 'act justly' there. Then sit one minute with Hosea 11:8 and let the same God who requires that justice say over you, 'My compassion is stirred.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How do Amos 5:24 and Hosea 11:8-9 each describe God, and why can both be true of the same God at the same time?",
+        "In Hosea 11:9, what reason does God give for not executing the full fury of His anger - and why is that reason surprising?",
+        "How does the cross hold together the justice Amos demands and the mercy Hosea reveals, rather than choosing one?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other honestly: do you more naturally fear God's justice or presume on His mercy? What does that reveal about the God you are actually picturing?",
+        "Name one area where, like Israel, your 'worship' has been louder than your justice - and ask your partner to check in on the concrete step you committed to.",
+        "Read Micah 7:18-19 aloud together and talk about what it would change to believe God 'delights' in mercy enough to hurl your sins into the depths of the sea."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 11:1",
+          "text": "When Israel was a child, I loved him, and out of Egypt I called My son."
+        },
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Micah 7:18-19",
+          "text": "Who is a God like You, who pardons iniquity and passes over the transgression of the remnant of His inheritance— who does not retain His anger forever, because He delights in loving devotion? He will again have compassion on us; He will vanquish our iniquities. You will cast out all our sins into the depths of the sea."
+        },
+        {
+          "reference": "Matthew 9:13",
+          "text": "But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."
+        },
+        {
+          "reference": "Romans 3:26",
+          "text": "He did this to demonstrate His righteousness at the present time, so as to be just and to justify the one who has faith in Jesus."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hosea 11 and Amos 5",
+          "note": "Read both chapters in one sitting. Watch how Amos 5:21-24 strips away religion that has no justice, and how Hosea 11:1-9 moves from a Father's memory to a heart turned within itself. Hold them together rather than choosing."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Amos and Hosea",
+      "title": "The Herdsman and the Heartbroken Husband",
+      "description": "Two prophets of the same eighth-century era, sent largely to the same northern kingdom of Israel, with strikingly different voices. Amos was a shepherd and tender of sycamore-figs from Tekoa in Judah, sent north to a prosperous Israel to announce that God despised its festivals while the poor were trampled - his signature cry is for justice to roll like a river (Amos 5:24). Hosea, called to live out his message by marrying an unfaithful wife, spoke God's grief as a betrayed husband and a heartbroken father who still could not give His people up (Hosea 11:8). Together they hand us a God who is neither only severe nor only tender, but holy enough to be both.",
+      "keyQuote": "How could I give you up, O Ephraim?... My heart is turned within Me; My compassion is stirred! (Hosea 11:8)",
+      "lessonForUs": "When two parts of Scripture seem to pull against each other, the answer is rarely to pick one and quietly drop the other. Amos and Hosea were both right, because the God they served is large enough to hold justice and mercy together - a holding that would one day cost Him His Son.",
+      "heading": "The Herdsman and the Heartbroken Husband"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2413,
+  "scriptureReference_full": "Hosea 11:8-9; Amos 5:24; Hosea 6:6; Micah 6:8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed, H2617) reflects standard lexical sources (BDB, HALOT). The dating of Amos, Hosea, and Micah to the eighth century BC, and Amos's superscription naming Uzziah and Jeroboam (Amos 1:1), follow the biblical text and standard introductions.",
+    "Matthew 2:15 applies Hosea 11:1 to Christ; Jesus twice cites Hosea 6:6 (Matthew 9:13; 12:7). Romans 3:26 frames the cross as God being both just and the justifier."
+  ]
 }

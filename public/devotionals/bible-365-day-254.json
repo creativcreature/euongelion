@@ -6,33 +6,181 @@
   "scriptureReference": "Selected",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 254"
+      "type": "scripture",
+      "reference": "Hosea 6:1-6",
+      "translation": "BSB",
+      "emphasis": [
+        "let us return to the LORD",
+        "on the third day He will raise us up",
+        "I desire mercy, not sacrifice"
+      ],
+      "hebrewOriginal": "כִּי חֶסֶד חָפַצְתִּי וְלֹא־זָבַח וְדַעַת אֱלֹהִים מֵעֹלוֹת",
+      "passage": "Come, let us return to the LORD. For He has torn us to pieces, but He will heal us; He has wounded us, but He will bind up our wounds. After two days He will revive us; on the third day He will raise us up, that we may live in His presence. So let us know— let us press on to know the LORD. As surely as the sun rises, He will appear; He will come to us like the rain, like the spring showers that water the earth. What shall I do with you, O Ephraim? What shall I do with you, O Judah? For your loyalty is like a morning mist, like the early dew that vanishes. Therefore I have hewn them by the prophets; I have slain them by the words of My mouth, and My judgments go forth like lightning. For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "hesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "steadfast love, covenant loyalty, mercy that keeps its promises",
+      "rootMeaning": "Love that is bound by commitment rather than mood. Not a warm feeling that comes and goes, but a faithfulness that holds on when the other person has given every reason to let go.",
+      "usageNote": "Hesed appears twice in this passage, on both sides of the argument. In verse 4 Israel's hesed toward God is 'like a morning mist' that burns off by mid-morning. In verse 6 God says it is hesed - this same covenant loyalty - that He actually wants from them, 'not sacrifice.' The word indicts them and invites them in the same breath.",
+      "wordByWord": [
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "for, because - giving the reason behind everything just said"
+        },
+        {
+          "word": "חֶסֶד",
+          "transliteration": "hesed",
+          "meaning": "steadfast covenant love, mercy, loyal kindness"
+        },
+        {
+          "word": "חָפַצְתִּי",
+          "transliteration": "chafatsti",
+          "meaning": "I have desired, I take delight in - a verb of longing, not duty"
+        },
+        {
+          "word": "וְלֹא־זָבַח",
+          "transliteration": "velo-zavach",
+          "meaning": "and not sacrifice - the slaughtered offering of the altar"
+        },
+        {
+          "word": "וְדַעַת אֱלֹהִים",
+          "transliteration": "veda'at Elohim",
+          "meaning": "and the knowledge of God - intimate knowing, not mere information"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דַעַת / יָדַע",
+          "reference": "Da'at (knowledge) comes from yada, 'to know,' the same verb used for the deepest personal intimacy in Scripture. To 'know God' in Hosea is not to pass a theology exam but to be faithful to a Person."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; the steadfast, loyal love that holds a covenant together",
+      "usage": "Translators reach for many words to carry hesed: 'mercy,' 'loving devotion,' 'steadfast love,' 'loyalty.' No single English word holds it, because it means all of them at once - love that has signed its name to a promise."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Lawsuit That Sounds Like a Love Song",
+      "body": "By the time Hosea is speaking, the northern kingdom of Israel has been unfaithful for so long that the prophet has been told to act it out with his own marriage. He weds a woman who will not stay, and loves her back even after she leaves. That is the backdrop to chapter 6. God is not bringing a list of broken rules to court. He is bringing a broken heart.\n\nThe chapter opens with a sentence that sounds like everything God wants to hear: 'Come, let us return to the LORD.' On the surface it is exactly right. They name what He has done - He has torn, He has wounded - and they trust that the same hand will heal and bind up. They even reach for resurrection language: 'on the third day He will raise us up.' It is good theology. It rhymes. It moves quickly to the happy ending.\n\nAnd that is the problem. Listen to how God answers in verse 4. He does not say 'well spoken.' He says, almost grieving, 'What shall I do with you?' Their devotion, He says, is 'like a morning mist, like the early dew that vanishes.' The words of repentance are real for an hour. By the time the sun is up they have burned off. God is not impressed by a return that is mostly poetry. He has heard this song before.",
+      "keyInsight": "God refuses a repentance that is fluent but evaporates. He is not after the right words about returning; He is after a love that is still there at noon.",
+      "content": "By the time Hosea is speaking, the northern kingdom of Israel has been unfaithful for so long that the prophet has been told to act it out with his own marriage. He weds a woman who will not stay, and loves her back even after she leaves. That is the backdrop to chapter 6. God is not bringing a list of broken rules to court. He is bringing a broken heart.\n\nThe chapter opens with a sentence that sounds like everything God wants to hear: 'Come, let us return to the LORD.' On the surface it is exactly right. They name what He has done - He has torn, He has wounded - and they trust that the same hand will heal and bind up. They even reach for resurrection language: 'on the third day He will raise us up.' It is good theology. It rhymes. It moves quickly to the happy ending.\n\nAnd that is the problem. Listen to how God answers in verse 4. He does not say 'well spoken.' He says, almost grieving, 'What shall I do with you?' Their devotion, He says, is 'like a morning mist, like the early dew that vanishes.' The words of repentance are real for an hour. By the time the sun is up they have burned off. God is not impressed by a return that is mostly poetry. He has heard this song before."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Apology That Came Every Spring",
+      "body": "A pastor I trust once described a man in his congregation who came forward at the altar every year, usually around Easter, weeping and sincere. He would name his drinking, name the nights he had lost, ask the church to pray, and mean every syllable of it. For about three weeks he was a changed man.\n\nThen the dew burned off. By early summer he was where he had been. The pastor said the hardest thing was that the man was not faking. The tears were genuine. The trouble was that the feeling of returning had become a substitute for actually returning. He had learned to enjoy the relief of the altar without staying for the long, unglamorous work of being healed.\n\nThat is the dew of Hosea 6:4. It is not the cynic God grieves over here. It is the sincere one whose sincerity will not survive the week. God says, in effect, 'I have your apology. I have had it many times. What I want is you - past Tuesday.'",
+      "connectionToTheme": "Israel's 'morning mist' loyalty is not the hardness of an atheist but the short shelf-life of a feeling. God wants a return that outlasts the emotion that started it.",
+      "content": "A pastor I trust once described a man in his congregation who came forward at the altar every year, usually around Easter, weeping and sincere. He would name his drinking, name the nights he had lost, ask the church to pray, and mean every syllable of it. For about three weeks he was a changed man.\n\nThen the dew burned off. By early summer he was where he had been. The pastor said the hardest thing was that the man was not faking. The tears were genuine. The trouble was that the feeling of returning had become a substitute for actually returning. He had learned to enjoy the relief of the altar without staying for the long, unglamorous work of being healed.\n\nThat is the dew of Hosea 6:4. It is not the cynic God grieves over here. It is the sincere one whose sincerity will not survive the week. God says, in effect, 'I have your apology. I have had it many times. What I want is you - past Tuesday.'"
+    },
+    {
+      "type": "insight",
+      "heading": "Mercy, Not Sacrifice",
+      "body": "Verse 6 is the sentence the whole chapter has been building toward: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.'\n\nIt is easy to misread this as God dismissing worship. He is not. He commanded the sacrifices Himself. What He refuses is sacrifice as a way to avoid Him - the religious transaction that pays the bill and leaves before dinner. Israel had figured out how to keep the altar busy while keeping their hearts at a distance. They were generous with offerings and stingy with hesed, the steadfast love that actually keeps a relationship.\n\nGod is naming a swap people have made in every century: ritual instead of relationship, performance instead of presence. He would rather have the loyalty than the lamb. He would rather be known than be appeased. The offerings were never the point; they were always meant to be the language of a love that meant them. Stripped of that love, the smoke is just smoke.",
+      "historicalContext": "Hosea prophesied to the northern kingdom of Israel in the eighth century BC, in the decades before Assyria destroyed it (722 BC). The shrines were full and the economy was strong, which made the spiritual emptiness easy to miss. Outward religion was thriving precisely as covenant faithfulness collapsed.",
+      "fascinatingFact": "Centuries later, a rabbi from Nazareth quotes this exact half-verse twice. Confronted for eating with tax collectors, He says, 'Go and learn what this means: I desire mercy, not sacrifice' (Matthew 9:13). Challenged about His disciples on the Sabbath, He says it again (Matthew 12:7). Jesus treats Hosea 6:6 as a key that unlocks who God has always been.",
+      "content": "Verse 6 is the sentence the whole chapter has been building toward: 'For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.'\n\nIt is easy to misread this as God dismissing worship. He is not. He commanded the sacrifices Himself. What He refuses is sacrifice as a way to avoid Him - the religious transaction that pays the bill and leaves before dinner. Israel had figured out how to keep the altar busy while keeping their hearts at a distance. They were generous with offerings and stingy with hesed, the steadfast love that actually keeps a relationship.\n\nGod is naming a swap people have made in every century: ritual instead of relationship, performance instead of presence. He would rather have the loyalty than the lamb. He would rather be known than be appeased. The offerings were never the point; they were always meant to be the language of a love that meant them. Stripped of that love, the smoke is just smoke."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Through Hosea, God tells a religiously busy people that He wants their steadfast love and their knowing of Him, not the religious transactions they keep offering in place of their hearts.",
+      "modernApplication": "We have our own burnt offerings: the service we volunteer for so we don't have to pray, the giving that quiets a conscience, the streak of devotionals read while the heart stays a careful distance away. It is possible to be busy for God as a way of not being with God - and to call the busyness faithfulness.",
+      "connectionPoint": "Hosea's 'morning mist' loyalty (6:4) is the same evaporating sincerity James warns about when he says faith without works is dead, and the same heart Isaiah names when God says 'these people honor Me with their lips, but their hearts are far from Me' (Isaiah 29:13). The diagnosis runs straight through the prophets: the danger is not too little religion but religion emptied of love.",
+      "newTestamentEcho": "Hosea 6 hides two threads that the New Testament pulls all the way through. The 'third day' resurrection of verse 2 becomes the pattern Jesus says was written in advance: 'The Christ will suffer and rise from the dead on the third day' (Luke 24:46), and Paul records it as gospel: 'He was raised on the third day according to the Scriptures' (1 Corinthians 15:4). And 'I desire mercy, not sacrifice' becomes Jesus' own defense of grace (Matthew 9:13; 12:7). The God who longed for hesed instead of burnt offerings finally gives the offering Himself, and rises on the third day to prove the love was real."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is your devotion 'like a morning mist' - sincere first thing, gone by noon? What burns it off?",
+      "additionalQuestions": [
+        "Is there a religious activity you keep doing that has quietly become a way to avoid actually being with God?",
+        "If God said to you what He said to Israel - 'I would rather have your steadfast love than your offerings' - what would He be asking you to bring instead?",
+        "What would it look like to 'press on to know the LORD' (v. 3) past the first burst of feeling, into something durable?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You see how thin my loyalty can be - real in the morning, gone by the time the day gets loud. Forgive me for the offerings I bring to keep my distance from You. I do not want to pay You and leave; I want to know You and stay. Take the smoke and give me the love beneath it. Heal what You have had to wound. And let me press on to know You until the dew of my devotion becomes something that lasts past noon. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one religious thing you do that has gone cold - the offering you bring instead of your heart. Before you do it again this week, stop and tell God plainly what is underneath it. Trade one act of performance for five honest minutes of presence.",
+      "leavingAtCross": [
+        "The morning-mist devotion that means it for an hour and forgets by noon",
+        "The offerings I bring to settle the account so I can keep my distance",
+        "The quiet belief that being busy for God is the same as being with God"
+      ],
+      "receivingFromCross": [
+        "A God who desires mercy, not sacrifice - who wants me, not my transactions",
+        "The healing of the One who wounds only to bind up",
+        "The third-day promise that the love I cannot keep, He kept all the way to the grave and out the other side"
+      ],
+      "content": "Name the one religious thing you do that has gone cold - the offering you bring instead of your heart. Before you do it again this week, stop and tell God plainly what is underneath it. Trade one act of performance for five honest minutes of presence."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In verse 4, what does God compare Israel's loyalty to, and what point is He making about repentance that sounds right but does not last?",
+        "When God says 'I desire mercy, not sacrifice' (v. 6), is He abolishing worship or exposing something hollow inside it? Explain the difference.",
+        "How do the 'third day' of verse 2 and 'mercy, not sacrifice' of verse 6 each point forward to Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one season when your devotion was 'morning mist' - sincere but short-lived. What made it evaporate?",
+        "Name a religious activity you suspect has become a substitute for actually knowing God, and ask each other why it is hard to give up.",
+        "Pray together for hesed - a steadfast love toward God that survives past the feeling that started it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 5:15",
+          "text": "Then I will return to My place until they admit their guilt and seek My face; in their affliction they will earnestly seek Me."
+        },
+        {
+          "reference": "Matthew 9:13",
+          "text": "But go and learn what this means: 'I desire mercy, not sacrifice.' For I have not come to call the righteous, but sinners."
+        },
+        {
+          "reference": "Isaiah 29:13",
+          "text": "These people draw near to Me with their mouths and honor Me with their lips, but their hearts are far from Me."
+        },
+        {
+          "reference": "1 Corinthians 15:4",
+          "text": "that He was buried, that He was raised on the third day according to the Scriptures."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hosea 4-6",
+          "note": "Read the covenant lawsuit as one unit. Notice how God moves between courtroom accusation and a wounded plea, and watch where the language of healing and resurrection breaks into the indictment."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hosea",
+      "title": "The Prophet Who Married His Message",
+      "description": "An eighth-century BC prophet to the northern kingdom of Israel, in its final prosperous decades before Assyria. God commanded Hosea to marry Gomer, a woman who would be repeatedly unfaithful, so that the prophet's own marriage would preach the sermon: this is what Israel has done to Me, and this is how I love them anyway. Hosea's life turned the covenant lawsuit into something personal and unbearably tender.",
+      "keyQuote": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings.",
+      "lessonForUs": "Hosea learned in his own home what God feels toward us: a love that keeps reaching for the one who keeps leaving. The God of Hosea 6 is not waiting to be paid off. He is waiting to be known - and He will wound only to heal, and raise up what He has had to break.",
+      "heading": "The Prophet Who Married His Message"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2060,
+  "scriptureReference_full": "Hosea 6:1-6",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (hesed H2617; da'at / yada) reflects standard lexical sources. Jesus' twofold citation of Hosea 6:6 (Matthew 9:13; 12:7) and the New Testament 'third day' resurrection witness (Luke 24:46; 1 Corinthians 15:4) are quoted verbatim from the BSB."
+  ]
 }

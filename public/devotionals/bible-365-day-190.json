@@ -1,38 +1,192 @@
 {
   "day": 190,
-  "title": "Psalms of Trust — Day 1 — Hook",
-  "teaser": "Day 190 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "The hand you cannot fall out of",
+  "teaser": "Eight psalms, one settled heart: trust is not a feeling you summon but a Person you lean on. From the planted tree to the searched soul, the Psalter teaches us where to put our weight.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 190"
+      "type": "scripture",
+      "reference": "Psalm 121:1-2; 27:1; 130:5",
+      "translation": "BSB",
+      "emphasis": [
+        "From where does my help come?",
+        "My help comes from the LORD",
+        "The LORD is my light and my salvation",
+        "I wait for the LORD"
+      ],
+      "hebrewOriginal": "עֶזְרִי מֵעִם יְהוָה עֹשֵׂה שָׁמַיִם וָאָרֶץ",
+      "passage": "I lift up my eyes to the hills. From where does my help come? My help comes from the LORD, the Maker of heaven and earth. ... The LORD is my light and my salvation— whom shall I fear? The LORD is the stronghold of my life— whom shall I dread? ... I wait for the LORD; my soul does wait, and in His word I put my hope."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בָּטַח",
+      "transliteration": "batach",
+      "pronunciation": "bah-TAKH",
+      "meaning": "to trust, to lean on, to feel safe, to be confident",
+      "rootMeaning": "The root pictures leaning your full weight onto something — throwing yourself down on it the way a tired body drops onto a bed it trusts will hold. It is bodily before it is emotional: trust is what you do with your weight, not only what you feel in your chest.",
+      "usageNote": "Batach runs all through the Psalter as the opposite of fear. To trust is not to feel calm; it is to transfer your weight off yourself and onto God. You can trust while still trembling — the question the psalms keep asking is not 'how do you feel?' but 'what are you leaning on?'",
+      "wordByWord": [
+        {
+          "word": "עֶזְרִי",
+          "transliteration": "ezri",
+          "meaning": "my help — the aid that comes from outside myself"
+        },
+        {
+          "word": "מֵעִם",
+          "transliteration": "me'im",
+          "meaning": "from with, from beside — help that comes from God's own presence"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD — the covenant name, the God who keeps His word"
+        },
+        {
+          "word": "עֹשֵׂה שָׁמַיִם וָאָרֶץ",
+          "transliteration": "oseh shamayim va'aretz",
+          "meaning": "Maker of heaven and earth — the One strong enough to be leaned on"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִבְטָח",
+          "reference": "Mivtach, 'a refuge, an object of trust,' shares the root. The thing you lean on becomes your mivtach. The psalms keep moving readers from false refuges — chariots, horses, princes — to the only One who holds."
+        }
+      ],
+      "strongsNumber": "H982",
+      "definition": "to trust, to lean upon, to feel secure, to be bold and confident",
+      "usage": "Batach is trust as a transfer of weight. The psalmist lifts his eyes to the hills — perhaps to bandit-haunted high places, perhaps to false shrines — and then deliberately moves his confidence past them to the LORD who made both the hills and him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Songs, One Place to Stand",
+      "body": "Today we open a week in the Psalms not by reading one psalm slowly but by listening to eight of them at once, the way you might walk through a gallery and notice that very different paintings keep returning to the same color. Psalm 1, 8, 19, 27, 90, 121, 130, 139 — different voices, different moods, some soaring and some half-drowned — and underneath all of them, one steady note: the LORD can be leaned on.\n\nNotice how differently these songs begin. Psalm 1 opens with a man so settled he is like \"a tree planted by streams of water.\" Psalm 130 opens with a man so undone he cries \"out of the depths.\" Psalm 8 stands under a night sky and feels small: \"what is man that You are mindful of him?\" Psalm 27 stares down an army and refuses to flinch: \"whom shall I fear?\" These are not the same emotional weather. They are not even close. And that is the first thing the Psalter wants you to know about trust — it is not a single mood you are failing to feel.\n\nThe Hebrew word underneath all of it is batach: to lean your weight on something. The planted tree of Psalm 1 leans its roots into hidden water and so it does not wither when the heat comes. The drowning voice of Psalm 130 leans, too — \"I wait for the LORD; my soul does wait, and in His word I put my hope.\" Same posture, opposite circumstances. Trust is not the absence of the depths. It is where you put your weight while you are in them.",
+      "keyInsight": "Trust in the Psalms is not a feeling you manufacture but a weight you transfer. The tree and the drowning man do the same thing — they lean on the LORD — and that, not their mood, is what holds them.",
+      "content": "Today we open a week in the Psalms not by reading one psalm slowly but by listening to eight of them at once, the way you might walk through a gallery and notice that very different paintings keep returning to the same color. Psalm 1, 8, 19, 27, 90, 121, 130, 139 — different voices, different moods, some soaring and some half-drowned — and underneath all of them, one steady note: the LORD can be leaned on.\n\nNotice how differently these songs begin. Psalm 1 opens with a man so settled he is like \"a tree planted by streams of water.\" Psalm 130 opens with a man so undone he cries \"out of the depths.\" Psalm 8 stands under a night sky and feels small: \"what is man that You are mindful of him?\" Psalm 27 stares down an army and refuses to flinch: \"whom shall I fear?\" These are not the same emotional weather. They are not even close. And that is the first thing the Psalter wants you to know about trust — it is not a single mood you are failing to feel.\n\nThe Hebrew word underneath all of it is batach: to lean your weight on something. The planted tree of Psalm 1 leans its roots into hidden water and so it does not wither when the heat comes. The drowning voice of Psalm 130 leans, too — \"I wait for the LORD; my soul does wait, and in His word I put my hope.\" Same posture, opposite circumstances. Trust is not the absence of the depths. It is where you put your weight while you are in them."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Climber and the Rope",
+      "body": "A friend who climbs once told me about the moment trust stops being an idea. You reach a ledge where you can go no further on your own footing. The next move means leaning back over open air and letting the rope take you. Your body screams that this is insane. Every instinct says cling to the rock you can feel under your fingers.\n\nThe rope, he said, has not changed. It was rated for ten times your weight before you ever left the ground. The anchor was set by someone who does this for a living. Nothing about your safety actually depends on how confident you feel. It depends entirely on whether you shift your weight off the rock and onto the rope. You can do it shaking. People usually do.\n\nThat is batach. The psalmists are not people who never trembled at the ledge. Psalm 27 was written by someone with an army camped against him; Psalm 130 by someone in the depths; Psalm 90 by someone watching generations die like grass cut down by evening. They felt the open air. They leaned back anyway, because the rope was the LORD, and the LORD had been rated, generation after generation, as the One who holds.",
+      "connectionToTheme": "Trust is not the disappearance of fear but the decision to transfer your weight onto God while the fear is still talking — exactly what the psalmists model across very different crises.",
+      "content": "A friend who climbs once told me about the moment trust stops being an idea. You reach a ledge where you can go no further on your own footing. The next move means leaning back over open air and letting the rope take you. Your body screams that this is insane. Every instinct says cling to the rock you can feel under your fingers.\n\nThe rope, he said, has not changed. It was rated for ten times your weight before you ever left the ground. The anchor was set by someone who does this for a living. Nothing about your safety actually depends on how confident you feel. It depends entirely on whether you shift your weight off the rock and onto the rope. You can do it shaking. People usually do.\n\nThat is batach. The psalmists are not people who never trembled at the ledge. Psalm 27 was written by someone with an army camped against him; Psalm 130 by someone in the depths; Psalm 90 by someone watching generations die like grass cut down by evening. They felt the open air. They leaned back anyway, because the rope was the LORD, and the LORD had been rated, generation after generation, as the One who holds."
+    },
+    {
+      "type": "insight",
+      "heading": "He Searched You First",
+      "body": "Read these psalms in order and watch the camera slowly turn. Psalm 1 looks at the righteous man from the outside, like a portrait. Psalm 8 looks up and out at the moon and stars, the work of God's fingers. Psalm 19 widens further: \"The heavens declare the glory of God; the skies proclaim the work of His hands.\" The eye keeps lifting — hills, heavens, the everlasting God of Psalm 90 who was God \"before the mountains were born.\"\n\nThen Psalm 139 turns the camera all the way around, and the One who made the heavens is suddenly looking at you: \"O LORD, You have searched me and known me.\" The God of the galaxies knows the words on your tongue before you speak them. \"Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there.\"\n\nThis is why the trust of the Psalms is not wishful thinking. It does not rest on God being far away and vaguely good. It rests on God being unbearably close and fully informed — having searched you to the bottom — and choosing, still, to keep you. The hand that made the stars is the hand under you in the dark. You cannot fall out of it, because there is no place outside of it to fall.",
+      "historicalContext": "The Psalter became Israel's prayer book, and these eight psalms held different liturgical homes: Psalm 121 is a Song of Ascents, sung by pilgrims climbing the road up to Jerusalem; Psalm 90 carries the oldest superscription in the collection, ascribed to Moses, making it a meditation on human frailty before the eternal God. Generations of worshippers leaned their weight on these lines long before they were ours.",
+      "fascinatingFact": "Psalm 8 and Psalm 139 frame the same wonder from opposite directions. Psalm 8 asks, \"what is man that You are mindful of him?\" — astonished that the infinite God would notice the small. Psalm 139 answers it: \"I praise You, for I am fearfully and wonderfully made.\" The God who is mindful is the God who knit you together. The wonder of being noticed and the wonder of being made are the same wonder.",
+      "content": "Read these psalms in order and watch the camera slowly turn. Psalm 1 looks at the righteous man from the outside, like a portrait. Psalm 8 looks up and out at the moon and stars, the work of God's fingers. Psalm 19 widens further: \"The heavens declare the glory of God; the skies proclaim the work of His hands.\" The eye keeps lifting — hills, heavens, the everlasting God of Psalm 90 who was God \"before the mountains were born.\"\n\nThen Psalm 139 turns the camera all the way around, and the One who made the heavens is suddenly looking at you: \"O LORD, You have searched me and known me.\" The God of the galaxies knows the words on your tongue before you speak them. \"Where can I go to escape Your Spirit? Where can I flee from Your presence? If I ascend to the heavens, You are there; if I make my bed in Sheol, You are there.\"\n\nThis is why the trust of the Psalms is not wishful thinking. It does not rest on God being far away and vaguely good. It rests on God being unbearably close and fully informed — having searched you to the bottom — and choosing, still, to keep you. The hand that made the stars is the hand under you in the dark. You cannot fall out of it, because there is no place outside of it to fall."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Across eight psalms, the trust that holds is never trust in trust itself. It is trust leaned on a particular God — the Maker of heaven and earth who keeps the soul, forgives the depths, and searches and knows the one who prays.",
+      "modernApplication": "We are surrounded by counterfeit ropes: the plan, the savings, the relationship, the diagnosis we keep refreshing. They are not nothing, but none of them was rated for the full weight of a soul. The psalms do not shame the fear at the ledge. They redirect the weight. The question is never whether you will lean — you always lean on something — but whether the thing you lean on can hold.",
+      "connectionPoint": "Psalm 130 names the deepest reason the LORD can be trusted: \"But with You there is forgiveness, so that You may be feared. ... with the LORD is loving devotion, and with Him is redemption in abundance.\" Trust runs all the way down to forgiveness. The God who searched us and found everything is the God who provides the redemption He found us needing.",
+      "newTestamentEcho": "What the Psalter waits for, the Gospel names. Psalm 130 cries up out of the depths for a redemption \"in abundance\" that no psalmist could yet see arrive. The New Testament announces that the redemption came in person: \"In Him we have redemption through His blood, the forgiveness of our trespasses, according to the riches of His grace\" (Ephesians 1:7). And the keeping hand of Psalm 121 takes a face in Jesus, who says of His own, \"No one can snatch them out of My hand\" (John 10:28). The hill the pilgrim climbed in Psalm 121 leads, in the end, to a hill called Golgotha, where the help finally came down."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you actually leaning your weight on this week — and could it hold the full weight of your life if everything else gave way?",
+      "additionalQuestions": [
+        "Which of today's eight psalms describes your weather right now: the planted tree, the small one under the stars, the soul in the depths, or the watched pilgrim on the road?",
+        "Psalm 139 says God has already searched you and knows you completely. Does that land as a threat or a comfort — and what does your answer reveal about how you picture Him?",
+        "Where have you been waiting for help to come from the hills — a fix, a person, a plan — when the psalmist says help comes from the LORD who made the hills?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, my help comes from You, the Maker of heaven and earth. I confess how much of my weight I have been keeping on myself — on the plan, the worry, the version of me I can manage. I am at the ledge and my hands are tired. Teach me to lean. You have searched me and known me; there is nothing left to hide and nowhere left to fall. With You there is forgiveness, so I am not afraid to be fully seen. Be my light and my stronghold. I wait for You, and in Your word I put my hope. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been gripping with white knuckles — and pray Psalm 121:2 over it out loud: \"My help comes from the LORD, the Maker of heaven and earth.\" Let the words move your weight off the rock and onto the rope, one situation at a time.",
+      "leavingAtCross": [
+        "The exhausting work of being my own anchor",
+        "The lie that trust means I will stop feeling afraid",
+        "The counterfeit ropes I keep leaning on that were never rated for the weight of my soul"
+      ],
+      "receivingFromCross": [
+        "A Keeper who watches my coming and going, now and forevermore",
+        "The freedom of being fully searched, fully known, and still fully held",
+        "Redemption in abundance — the forgiveness that lets me be seen without fear"
+      ],
+      "content": "Today, name one thing you have been gripping with white knuckles — and pray Psalm 121:2 over it out loud: \"My help comes from the LORD, the Maker of heaven and earth.\" Let the words move your weight off the rock and onto the rope, one situation at a time."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does the Hebrew word batach reframe trust — from a feeling you summon to something you do with your weight?",
+        "Psalm 1 (the planted tree) and Psalm 130 (out of the depths) describe opposite circumstances. What do they share, and what does that tell you about trust?",
+        "Why does it matter that Psalm 139's God has 'searched and known' you before you ask Him to keep you? How does forgiveness in Psalm 130 make that searching good news instead of terrifying?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other which psalm matches your week right now — and why.",
+        "Name one false 'rope' you have been leaning on, and one concrete way you can shift weight onto God this week.",
+        "Ask each other: where is it hardest for you to believe God is good when He is also close enough to see everything?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 1:3",
+          "text": "He is like a tree planted by streams of water, yielding its fruit in season, whose leaf does not wither, and who prospers in all he does."
+        },
+        {
+          "reference": "Psalm 90:1-2",
+          "text": "Lord, You have been our dwelling place through all generations. Before the mountains were born or You brought forth the earth and the world, from everlasting to everlasting You are God."
+        },
+        {
+          "reference": "Psalm 130:3-4",
+          "text": "If You, O LORD, kept track of iniquities, then who, O Lord, could stand? But with You there is forgiveness, so that You may be feared."
+        },
+        {
+          "reference": "Psalm 139:23-24",
+          "text": "Search me, O God, and know my heart; test me and know my concerns. See if there is any offensive way in me; lead me in the way everlasting."
+        },
+        {
+          "reference": "John 10:28",
+          "text": "I give them eternal life, and they will never perish. No one can snatch them out of My hand."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 121",
+          "note": "Read this Song of Ascents slowly, imagining yourself on the pilgrim road up to Jerusalem. Count how many times the word 'keep' or 'guard' appears — it is the heartbeat of the psalm."
+        },
+        {
+          "type": "book",
+          "title": "Psalm 139",
+          "note": "Pray the whole psalm in the first person, ending with verses 23-24. Notice that the one who has been fully searched is the one who can ask, without fear, to be searched again."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David",
+      "title": "The Shepherd-King Who Learned to Lean",
+      "description": "Shepherd, warrior, fugitive, and king, David is named in the superscriptions of several psalms in this collection, including Psalm 8, 19, 27, and 139. His life gave him every reason to trust himself — he killed a giant, led armies, ruled a nation — and every reason to despair, hunted for years and undone by his own sin. Out of both he wrote songs that do not pretend the depths away but keep leaning, again and again, on the LORD as light, stronghold, and the One who searches and keeps.",
+      "keyQuote": "The LORD is my light and my salvation— whom shall I fear?",
+      "lessonForUs": "David's confidence was never confidence in David. The man who had every credential to rely on himself instead lifted his eyes past his own strength to the Maker of heaven and earth. If the most capable man in Israel learned to lean rather than grip, so can we.",
+      "heading": "The Shepherd-King Who Learned to Lean"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2485,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (batach H982; mivtach) reflects standard lexical sources; the 'leaning your weight' sense is the well-attested root meaning.",
+    "Psalm 90 superscription ('A prayer of Moses, the man of God') and the Songs of Ascents grouping (Psalm 120-134, including Psalm 121) follow the received Hebrew text."
+  ]
 }

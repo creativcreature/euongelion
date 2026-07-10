@@ -6,33 +6,183 @@
   "scriptureReference": "Exodus 17:1-7",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 46"
+      "type": "scripture",
+      "reference": "Exodus 17:1-7",
+      "translation": "BSB",
+      "emphasis": [
+        "there was no water",
+        "Why do you test the LORD?",
+        "strike the rock",
+        "Is the LORD among us or not?"
+      ],
+      "hebrewOriginal": "וַיִּקְרָא שֵׁם הַמָּקוֹם מַסָּה וּמְרִיבָה עַל־רִיב בְּנֵי יִשְׂרָאֵל וְעַל נַסֹּתָם אֶת־יְהוָה לֵאמֹר הֲיֵשׁ יְהוָה בְּקִרְבֵּנוּ אִם־אָיִן",
+      "passage": "Then the whole congregation of Israel left the Desert of Sin, moving from place to place as the LORD commanded. They camped at Rephidim, but there was no water for the people to drink. So the people contended with Moses, “Give us water to drink.” “Why do you contend with me?” Moses replied. “Why do you test the LORD?” But the people thirsted for water there, and they grumbled against Moses: “Why have you brought us out of Egypt—to make us and our children and livestock die of thirst?” Then Moses cried out to the LORD, “What should I do with these people? A little more and they will stone me!” And the LORD said to Moses, “Walk on ahead of the people and take some of the elders of Israel with you. Take along in your hand the staff with which you struck the Nile, and go. Behold, I will stand there before you by the rock at Horeb. And when you strike the rock, water will come out of it for the people to drink.” So Moses did this in the sight of the elders of Israel. He named the place Massah and Meribah because the Israelites quarreled, and because they tested the LORD, saying, “Is the LORD among us or not?”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 17:1-7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 17:1-7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מַסָּה וּמְרִיבָה",
+      "transliteration": "Massah u-Meribah",
+      "pronunciation": "mah-SAH oo-meh-ree-VAH",
+      "meaning": "Testing and Quarreling — the two names Moses gives the place",
+      "rootMeaning": "Massah comes from nasah, to test or put to the proof. Meribah comes from rib, to contend, to bring a lawsuit, to quarrel. Moses does not name the place after the water. He names it after what the people did at the water.",
+      "usageNote": "Israel had a habit of naming places for the water they found there - Beer (well), Elim (springs). At Rephidim there was no water to name, so the place is named for the thirst and what the thirst exposed. Massah and Meribah become shorthand for a whole posture of heart. When the Psalmist warns 'do not harden your hearts as you did at Meribah' (Psalm 95:8), no further explanation is needed. Everyone knew what happened at the rock.",
+      "wordByWord": [
+        {
+          "word": "מַסָּה",
+          "transliteration": "massah",
+          "meaning": "testing, proving - from nasah, to put to the test"
+        },
+        {
+          "word": "מְרִיבָה",
+          "transliteration": "meribah",
+          "meaning": "quarreling, strife, legal contention - from rib, to bring a dispute"
+        },
+        {
+          "word": "רִיב",
+          "transliteration": "rib",
+          "meaning": "to contend, to file a complaint, to take someone to court"
+        },
+        {
+          "word": "נַסֹּתָם",
+          "transliteration": "nassotam",
+          "meaning": "their testing - they put the LORD on trial"
+        },
+        {
+          "word": "הֲיֵשׁ יְהוָה בְּקִרְבֵּנוּ",
+          "transliteration": "hayesh YHWH beqirbenu",
+          "meaning": "Is the LORD among us, in our midst? - the question under all the grumbling"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "צוּר",
+          "reference": "Tsur, the rock. Throughout Scripture the rock becomes a name for God Himself - 'He is the Rock, His work is perfect' (Deuteronomy 32:4). The thing struck at Rephidim is the very image Israel will use to sing of God's faithfulness."
+        }
+      ],
+      "strongsNumber": "H4532",
+      "definition": "Massah (H4532), 'testing'; Meribah (H4809), 'quarreling, strife'",
+      "usage": "The verb rib is courtroom language. Israel is not merely complaining; they are putting God on trial in the wilderness, demanding He prove Himself before they will trust Him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God strikes the source. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the smitten Rock (1 Cor 10:4).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "They Put God on Trial at the Place with No Water",
+      "body": "Read the route in verse 1 slowly: the whole congregation of Israel left the Desert of Sin, moving from place to place as the LORD commanded. Every step was at His command. The cloud led them. They did not wander into Rephidim by accident or by a wrong turn; they were led there - to a place with no water for the people to drink.\n\nThat detail changes the whole scene. The thirst was not a sign that God had lost track of them. They were exactly where He had led them, and there was nothing to drink. And so the murmuring starts, and it is uglier than thirst alone would explain. They do not ask; they contend. The Hebrew is rib - the word for filing a lawsuit, hauling someone before a judge. They put Moses on trial, and behind Moses, God. 'Why have you brought us out of Egypt - to make us and our children and livestock die of thirst?' The God who split the sea a few chapters earlier is now suspected of leading them into the desert to kill them.\n\nMoses sees it for what it is. 'Why do you test the LORD?' he says. The thirst was real. The accusation was not the same as the thirst. Underneath the demand for water sat a colder question, the one Moses finally names: 'Is the LORD among us or not?' That is what they were really asking. Not just where is the water, but is He even here.",
+      "keyInsight": "Their thirst was real, but their verdict came before the evidence. They had decided that an empty canteen meant an absent God - and they reached that verdict standing exactly where He had led them.",
+      "content": "Read the route in verse 1 slowly: the whole congregation of Israel left the Desert of Sin, moving from place to place as the LORD commanded. Every step was at His command. The cloud led them. They did not wander into Rephidim by accident or by a wrong turn; they were led there - to a place with no water for the people to drink.\n\nThat detail changes the whole scene. The thirst was not a sign that God had lost track of them. They were exactly where He had led them, and there was nothing to drink. And so the murmuring starts, and it is uglier than thirst alone would explain. They do not ask; they contend. The Hebrew is rib - the word for filing a lawsuit, hauling someone before a judge. They put Moses on trial, and behind Moses, God. 'Why have you brought us out of Egypt - to make us and our children and livestock die of thirst?' The God who split the sea a few chapters earlier is now suspected of leading them into the desert to kill them.\n\nMoses sees it for what it is. 'Why do you test the LORD?' he says. The thirst was real. The accusation was not the same as the thirst. Underneath the demand for water sat a colder question, the one Moses finally names: 'Is the LORD among us or not?' That is what they were really asking. Not just where is the water, but is He even here."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Question I Asked in the Hospital Hallway",
+      "body": "A friend of mine sat in a hospital hallway at two in the morning while his wife was in surgery, and he told me later that he was surprised by what came out of him. Not a prayer for help. An accusation. He had served faithfully for years, given, shown up, trusted - and here he was, and the thing he heard himself thinking was: after all this, this is what You let happen?\n\nHe said the shock was not that he was angry. The shock was how fast he had filed the verdict. One bad night, and he had concluded that God's care had run out, that the whole arrangement had been a mistake. He had been carried for forty years and he was ready to throw it all out over one hallway.\n\nThat is Rephidim. Not the thirst - the speed of the verdict. The willingness, the moment the canteen runs dry, to put God in the dock and demand He prove Himself before we will trust Him again. We rarely notice we have done it. It comes out sounding like a reasonable question. But underneath the reasonable question sits the courtroom: Is the LORD among us, or not.",
+      "connectionToTheme": "The real danger at Rephidim is not the dry season itself but how quickly hardship convinces us that God has left - so that we put Him on trial instead of bringing Him our thirst.",
+      "content": "A friend of mine sat in a hospital hallway at two in the morning while his wife was in surgery, and he told me later that he was surprised by what came out of him. Not a prayer for help. An accusation. He had served faithfully for years, given, shown up, trusted - and here he was, and the thing he heard himself thinking was: after all this, this is what You let happen?\n\nHe said the shock was not that he was angry. The shock was how fast he had filed the verdict. One bad night, and he had concluded that God's care had run out, that the whole arrangement had been a mistake. He had been carried for forty years and he was ready to throw it all out over one hallway.\n\nThat is Rephidim. Not the thirst - the speed of the verdict. The willingness, the moment the canteen runs dry, to put God in the dock and demand He prove Himself before we will trust Him again. We rarely notice we have done it. It comes out sounding like a reasonable question. But underneath the reasonable question sits the courtroom: Is the LORD among us, or not."
+    },
+    {
+      "type": "insight",
+      "heading": "The Judge Takes the Blow",
+      "body": "Watch what God does with the lawsuit. Israel has dragged Him into court, and the verdict they deserve is judgment - this is a people demanding He prove He has not abandoned them, days after the sea closed over their enemies. So God tells Moses to set up a courtroom scene. Take the elders, the witnesses. Take the staff - the very staff that struck the Nile and turned a river to blood, the staff of judgment. Then God says something staggering: 'Behold, I will stand there before you by the rock.'\n\nGod takes the stand. He places Himself at the rock, in front of the accusers, and tells Moses to bring down the staff of judgment - not on the guilty people, but on the rock where God Himself is standing. The blow that the murmurers had earned falls on the rock instead. And out of the struck rock comes not punishment but water, gushing, enough for a whole congregation and their livestock to drink.\n\nThe ones who put God on trial should have been struck. Instead the rock is struck, and the people who deserved the blow receive the water. The judge steps into the place of the accused and takes the staff meant for them.",
+      "historicalContext": "Exodus 17 sits early in Israel's wilderness journey, soon after the crossing of the sea and the giving of manna. Forty years later, near the journey's end, the scene repeats at a different Meribah (Numbers 20) - but there God commands Moses only to speak to the rock. When Moses strikes it instead, twice, in anger, he is barred from the Promised Land. The contrast is deliberate: the rock is meant to be struck once. After that, the people are only to speak to it.",
+      "fascinatingFact": "Centuries later, Paul looks back at this rock and tells the Corinthians something the original audience could not have seen: 'they drank from the spiritual rock that accompanied them, and that rock was Christ' (1 Corinthians 10:4). Paul reads the struck rock at Rephidim as a shadow of the One who would be struck so that thirsty, undeserving people could drink and live.",
+      "content": "Watch what God does with the lawsuit. Israel has dragged Him into court, and the verdict they deserve is judgment - this is a people demanding He prove He has not abandoned them, days after the sea closed over their enemies. So God tells Moses to set up a courtroom scene. Take the elders, the witnesses. Take the staff - the very staff that struck the Nile and turned a river to blood, the staff of judgment. Then God says something staggering: 'Behold, I will stand there before you by the rock.'\n\nGod takes the stand. He places Himself at the rock, in front of the accusers, and tells Moses to bring down the staff of judgment - not on the guilty people, but on the rock where God Himself is standing. The blow that the murmurers had earned falls on the rock instead. And out of the struck rock comes not punishment but water, gushing, enough for a whole congregation and their livestock to drink.\n\nThe ones who put God on trial should have been struck. Instead the rock is struck, and the people who deserved the blow receive the water. The judge steps into the place of the accused and takes the staff meant for them."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A grumbling people put God on trial in the desert. God answers not by striking the guilty but by standing at the rock, taking the staff of judgment on the rock instead, and giving water to the ones who deserved the blow.",
+      "modernApplication": "When the dry season comes, our instinct is to file the lawsuit - to demand God prove Himself before we will trust Him. Rephidim shows another way: bring the thirst to the rock that was already struck. The water you need does not come from winning the case against God. It comes from drinking what flows from the place where the blow already fell.",
+      "connectionPoint": "Massah and Meribah become a permanent warning in Israel's worship - 'Today, if you hear His voice, do not harden your hearts as you did at Meribah, in the day at Massah in the wilderness' (Psalm 95:7-8). The rock at Rephidim teaches Israel to expect water from a struck rock, a lesson that runs forward through the whole story until it finds its end at a hill outside Jerusalem.",
+      "newTestamentEcho": "On the last day of the Feast, Jesus stood up and called out, 'If anyone is thirsty, let him come to Me and drink' (John 7:37). Paul names the rock outright: it was Christ (1 Corinthians 10:4). The staff of judgment that should have fallen on us fell on Him; from the One who was struck, living water flows to everyone who comes thirsty and stops trying to win the case."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life right now is there 'no water' - and have you been bringing that thirst to God, or quietly building a case against Him?",
+      "additionalQuestions": [
+        "Think of the last hard stretch. How fast did you move from thirst to verdict - from 'this is dry' to 'God has left'?",
+        "The real question under Israel's grumbling was 'Is the LORD among us or not?' What would it look like to ask that honestly, out loud, instead of letting it sit unspoken under your complaints?",
+        "What would change if you believed that the place you were led to - the dry place - was still on the route the LORD commanded?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have stood at dry places and decided too quickly that You were gone. Forgive me for putting You on trial when what I needed was to bring You my thirst. Thank You that You did not strike me as I deserved. Thank You that You stood at the rock and took the blow meant for me, and that out of that struck place the water still flows. When my canteen runs dry again, lead me back to drink, and keep my heart from hardening at the next Meribah. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the dry place in your life out loud to God today - the lack you have been grumbling about - and instead of demanding He prove Himself, ask Him for the thing you need. Then drink: read John 7:37-38 slowly and let the One who was struck be your source.",
+      "leavingAtCross": [
+        "The reflex to file a lawsuit against God the moment things go dry",
+        "The hidden verdict that an empty canteen means an absent God",
+        "The hardness that says 'prove Yourself first, and then I'll trust You'"
+      ],
+      "receivingFromCross": [
+        "Water from a rock that was already struck on my behalf",
+        "The freedom to bring my thirst honestly instead of building a case",
+        "The settled assurance that the LORD is among us - He stood at the rock and proved it"
+      ],
+      "content": "Name the dry place in your life out loud to God today - the lack you have been grumbling about - and instead of demanding He prove Himself, ask Him for the thing you need. Then drink: read John 7:37-38 slowly and let the One who was struck be your source."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that verse 1 says Israel was moving 'as the LORD commanded' when they arrived at the place with no water?",
+        "What is the difference between asking God for water and contending with Him - and which word does the Hebrew use for what Israel did?",
+        "How does God answer the lawsuit? Who takes the blow that the people had earned, and what comes out of the rock instead of judgment?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a recent 'Rephidim' - a dry stretch where you found yourself accusing God rather than asking Him.",
+        "Talk about the question 'Is the LORD among us or not?' Where is that question sitting unspoken under your current complaints?",
+        "Read 1 Corinthians 10:4 together and ask: if the rock was Christ, how does that reshape what we do with our thirst this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Corinthians 10:4",
+          "text": "and drank the same spiritual drink; for they drank from the spiritual rock that accompanied them, and that rock was Christ."
+        },
+        {
+          "reference": "John 7:37-38",
+          "text": "On the last and greatest day of the feast, Jesus stood up and called out in a loud voice, “If anyone is thirsty, let him come to Me and drink. Whoever believes in Me, as the Scripture has said: ‘Streams of living water will flow from within him.’”"
+        },
+        {
+          "reference": "Psalm 95:7-8",
+          "text": "For He is our God, and we are the people of His pasture, the sheep under His care. Today, if you hear His voice, do not harden your hearts as you did at Meribah, in the day at Massah in the wilderness,"
+        },
+        {
+          "reference": "Numbers 20:11-12",
+          "text": "Then Moses raised his hand and struck the rock twice with his staff, so that a great amount of water gushed out, and the congregation and their livestock were able to drink. But the LORD said to Moses and Aaron, “Because you did not trust Me to show My holiness in the sight of the Israelites, you will not bring this assembly into the land that I have given them.”"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 17 and Numbers 20",
+          "note": "Read the two rock scenes side by side. At Rephidim, God says strike. At the second Meribah, God says speak. Notice why Moses' striking the rock the second time is treated so severely - and what that teaches about a rock meant to be struck only once."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Mediator Caught Between God and a Thirsty People",
+      "description": "Israel's deliverer, who led the people out of Egypt and now stands between a thirsting crowd and the God they are accusing. At Rephidim, Moses does the one thing the grumblers will not: he cries out to the LORD. He carries the people's complaint up to God instead of letting it curdle into rebellion, and God answers him with a rock and a staff. Decades later, at a second Meribah, the same Moses loses patience and strikes a rock he was told only to speak to - and is barred from the Promised Land. He is, at his best, a picture of the greater Mediator to come, and at his worst, a reminder that even the deliverer needed deliverance.",
+      "keyQuote": "What should I do with these people? A little more and they will stone me!",
+      "lessonForUs": "When the people put God on trial, Moses took the case to God in prayer instead of trying the case himself. The dry place is not where we argue our way to water; it is where we cry out and are led to the rock.",
+      "heading": "The Mediator Caught Between God and a Thirsty People"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1977,
+  "scriptureReference_full": "Exodus 17:1-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (Massah, H4532, from nasah; Meribah, H4809, from rib) reflects standard lexical sources.",
+    "The reading of the struck rock as a type of Christ follows the apostle Paul in 1 Corinthians 10:4."
+  ]
 }

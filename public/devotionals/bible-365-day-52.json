@@ -6,33 +6,172 @@
   "scriptureReference": "Exodus 33:12-23",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 52"
+      "type": "scripture",
+      "reference": "Exodus 33:18-23",
+      "translation": "BSB",
+      "emphasis": [
+        "Please show me Your glory",
+        "You cannot see My face",
+        "you will see My back"
+      ],
+      "hebrewOriginal": "הַרְאֵנִי נָא אֶת־כְּבֹדֶךָ",
+      "passage": "Then Moses said, \"Please show me Your glory.\" \"I will cause all My goodness to pass before you,\" the LORD replied, \"and I will proclaim My name—the LORD—in your presence. I will have mercy on whom I have mercy, and I will have compassion on whom I have compassion.\" But He added, \"You cannot see My face, for no one can see Me and live.\" The LORD continued, \"There is a place near Me where you are to stand upon a rock, and when My glory passes by, I will put you in a cleft of the rock and cover you with My hand until I have passed by. Then I will take My hand away, and you will see My back; but My face must not be seen.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 33:12-23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 33:12-23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כָּבוֹד",
+      "transliteration": "kavod",
+      "pronunciation": "kah-VODE",
+      "meaning": "glory, weight, honor, the felt heaviness of who someone is",
+      "rootMeaning": "The root k-b-d means heavy. Kavod is not light shining out so much as weight pressing in - the sheer substance and worth of a person made visible. To ask for God's kavod is to ask to feel the full weight of who He is.",
+      "usageNote": "The same root gives us the word for liver (kaved), the heaviest organ, and the command to honor (kabbed) your father and mother - to give them weight. When Moses asks to see God's kavod, he is asking for the unbearable: to take the full weight of God on his own two eyes.",
+      "wordByWord": [
+        {
+          "word": "הַרְאֵנִי",
+          "transliteration": "harʾeni",
+          "meaning": "cause me to see, let me see - a plea, not a demand"
+        },
+        {
+          "word": "נָא",
+          "transliteration": "na",
+          "meaning": "please, I beg you - the particle of entreaty"
+        },
+        {
+          "word": "אֶת־כְּבֹדֶךָ",
+          "transliteration": "et-kevodecha",
+          "meaning": "Your glory, Your weight, the substance of who You are"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פָּנִים / פָּנֶה",
+          "reference": "Panim means face, but also presence and surface - the word is plural, as if a face is too full to be singular. God answers Moses' request for glory by speaking of His panim: 'You cannot see My face.' Glory and face are bound together. To see the face is to bear the full weight."
+        }
+      ],
+      "strongsNumber": "H3519",
+      "definition": "weight, honor, glory; the visible, felt manifestation of a person's worth and substance",
+      "usage": "Throughout Exodus, the kavod of the LORD appears as cloud and consuming fire on the mountain (Exodus 24:16-17). Moses has already stood inside that cloud. Now he wants more - not the cloud that hides, but the face that the cloud was hiding."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: The hunger to see God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the radiance of God’s glory (Heb 1:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Has More of God Than Anyone, and Asks for More",
+      "body": "Moses is, by this point in the story, the most God-saturated man alive. He has seen a bush that burned without burning. He has watched a sea stand up like walls. He has climbed a mountain wrapped in fire and come back with two tablets written by the finger of God. The text says, just verses earlier, that the LORD would speak to Moses face to face, as a man speaks with his friend (Exodus 33:11).\n\nAnd it is this man - the one who has more than anyone - who says, \"Please show me Your glory.\" The request does not come from emptiness. It comes from love that has tasted and wants the whole. Hunger for God is not a sign that you have too little of Him. Sometimes it is the surest sign that you have begun to know Him at all.\n\nNotice where the plea sits in the conversation. Moses has just won an argument with God about the people. He has secured the promise, \"My Presence will go with you, and I will give you rest.\" He could have stopped there. Most of us would. The Presence is granted; the crisis is over. But Moses is not bargaining for protection anymore. He has stopped asking for what God can give and started asking for God Himself. \"Show me Your glory\" is the prayer underneath all our other prayers, the one we are usually too distracted, or too satisfied, to pray.",
+      "keyInsight": "The hunger to see God is not a symptom of having too little of Him. It is what knowing Him at all eventually awakens: a longing for the Giver beneath every gift.",
+      "content": "Moses is, by this point in the story, the most God-saturated man alive. He has seen a bush that burned without burning. He has watched a sea stand up like walls. He has climbed a mountain wrapped in fire and come back with two tablets written by the finger of God. The text says, just verses earlier, that the LORD would speak to Moses face to face, as a man speaks with his friend (Exodus 33:11).\n\nAnd it is this man - the one who has more than anyone - who says, \"Please show me Your glory.\" The request does not come from emptiness. It comes from love that has tasted and wants the whole. Hunger for God is not a sign that you have too little of Him. Sometimes it is the surest sign that you have begun to know Him at all.\n\nNotice where the plea sits in the conversation. Moses has just won an argument with God about the people. He has secured the promise, \"My Presence will go with you, and I will give you rest.\" He could have stopped there. Most of us would. The Presence is granted; the crisis is over. But Moses is not bargaining for protection anymore. He has stopped asking for what God can give and started asking for God Himself. \"Show me Your glory\" is the prayer underneath all our other prayers, the one we are usually too distracted, or too satisfied, to pray."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letters She Knew by Heart",
+      "body": "A woman I know kept a box of her late husband's letters. She had read them so many times she could recite whole paragraphs. People assumed the letters were enough - that a grieving person holds words because words are all that is left, and learns to be content with them.\n\nShe told me it was the opposite. The more she read the letters, the less they satisfied. Every sentence in his handwriting made her ache for the hand that wrote it. The letters were real, and good, and from him - and they made her want him, not them. Knowing him through the letters was exactly what made the letters insufficient.\n\nThat is the strange logic of Moses on the mountain. He has the cloud, the voice, the tablets, the friendship. He has the letters, you might say, and more of them than anyone. And it is precisely his nearness that makes him reach past everything God has sent toward God Himself. \"Please show me Your glory\" is not the prayer of a man who has too little. It is the prayer of a man who has tasted enough to know that even the best gift is not the Giver.",
+      "connectionToTheme": "The closer you draw to God, the more His gifts make you ache for His face. Nearness does not satisfy the hunger to see Him - it sharpens it.",
+      "content": "A woman I know kept a box of her late husband's letters. She had read them so many times she could recite whole paragraphs. People assumed the letters were enough - that a grieving person holds words because words are all that is left, and learns to be content with them.\n\nShe told me it was the opposite. The more she read the letters, the less they satisfied. Every sentence in his handwriting made her ache for the hand that wrote it. The letters were real, and good, and from him - and they made her want him, not them. Knowing him through the letters was exactly what made the letters insufficient.\n\nThat is the strange logic of Moses on the mountain. He has the cloud, the voice, the tablets, the friendship. He has the letters, you might say, and more of them than anyone. And it is precisely his nearness that makes him reach past everything God has sent toward God Himself. \"Please show me Your glory\" is not the prayer of a man who has too little. It is the prayer of a man who has tasted enough to know that even the best gift is not the Giver."
+    },
+    {
+      "type": "insight",
+      "heading": "What God Says Yes To, and What He Says No To",
+      "body": "Watch carefully how God answers, because He does not simply say no. He says yes to almost everything Moses asked - and then draws one line.\n\nMoses asks to see God's glory. God answers: \"I will cause all My goodness to pass before you, and I will proclaim My name - the LORD - in your presence.\" That is a staggering yes. God will let Moses witness His goodness and hear His own name spoken aloud by His own voice. Then comes the line: \"You cannot see My face, for no one can see Me and live.\" The problem is not that God is stingy with His glory. The problem is that the full weight of the uncovered face of God would not enlighten a mortal man - it would end him. The no is mercy, not refusal.\n\nSo God invents a way to give Moses as much as a living man can hold. \"There is a place near Me\" - near Me, the tenderest two words in the passage. Moses is to stand on a rock. When the glory passes, God will cover Moses with His own hand, hide him in a cleft of the stone, and only lift the hand once He has gone by. Moses will see the afterglow, the back, the trailing edge of God who has just been there. The hand that withholds the face is the same hand that shelters the man. God hides Moses from the glory in order to give Moses the glory - as much of it as flesh can survive.",
+      "historicalContext": "This scene falls immediately after the golden calf (Exodus 32). Israel has just broken the covenant at the foot of the very mountain where it was given. That context changes everything: Moses is not asking for a private spiritual experience. He is asking, on behalf of a people who have just proven faithless, whether the glory that should consume them will instead go with them. God's answer - goodness, name, mercy, and a sheltering hand - is the answer of a God deciding to dwell with sinners rather than destroy them.",
+      "fascinatingFact": "The proclamation God promises here in 33:19 - \"I will proclaim My name, the LORD\" - is fulfilled in the very next chapter, when the LORD passes by and declares Himself: \"The LORD, the LORD God, is compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness\" (Exodus 34:6). When God finally shows Moses His glory, what He shows him is His character. The glory of God, it turns out, is His mercy spoken aloud.",
+      "content": "Watch carefully how God answers, because He does not simply say no. He says yes to almost everything Moses asked - and then draws one line.\n\nMoses asks to see God's glory. God answers: \"I will cause all My goodness to pass before you, and I will proclaim My name - the LORD - in your presence.\" That is a staggering yes. God will let Moses witness His goodness and hear His own name spoken aloud by His own voice. Then comes the line: \"You cannot see My face, for no one can see Me and live.\" The problem is not that God is stingy with His glory. The problem is that the full weight of the uncovered face of God would not enlighten a mortal man - it would end him. The no is mercy, not refusal.\n\nSo God invents a way to give Moses as much as a living man can hold. \"There is a place near Me\" - near Me, the tenderest two words in the passage. Moses is to stand on a rock. When the glory passes, God will cover Moses with His own hand, hide him in a cleft of the stone, and only lift the hand once He has gone by. Moses will see the afterglow, the back, the trailing edge of God who has just been there. The hand that withholds the face is the same hand that shelters the man. God hides Moses from the glory in order to give Moses the glory - as much of it as flesh can survive."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Moses begs to see God's glory and is told no one can see God's face and live. He is hidden in the cleft of a rock, covered by God's own hand, and permitted to see only God's back - the trailing edge of a glory too heavy for mortal eyes.",
+      "modernApplication": "You may have prayed Moses' prayer in your own words: show me You are real, let me feel that You are there, give me more than the letters. And you may have felt, like Moses, that you were given the back and not the face - a sense of having just missed Him, of catching the warmth where He had been rather than seeing Him plainly. That is not God withholding Himself out of reluctance. It is God measuring out His weight to what you can bear, and keeping the fullness for a day you can.",
+      "connectionPoint": "What Moses could not see at Sinai runs as an unfinished thread through the whole of Scripture. The longing to behold God's face surfaces again and again - \"My heart said, 'Seek His face.' Your face, O LORD, I will seek\" (Psalm 27:8). The Old Testament leaves the prayer hanging open. It is the New Testament that answers it, in a way no one in the cleft of the rock could have guessed: the face Moses could not see would one day be given a human face.",
+      "newTestamentEcho": "John writes of Jesus: \"The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth\" (John 1:14). The very thing denied to Moses - to see the glory and live - is granted to those who behold Christ. Paul makes the link explicit: God \"made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ\" (2 Corinthians 4:6). The face Moses could not see is the face of Jesus."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When did you last pray Moses' prayer - not for what God can give you, but for God Himself? What would it mean to ask, today, \"Please show me Your glory\"?",
+      "additionalQuestions": [
+        "Where in your life have you settled for the gifts of God and stopped reaching for the Giver?",
+        "Have you experienced a season where it felt like you saw only God's back - the sense of just having missed Him? Could that have been mercy measuring His weight to what you could bear?",
+        "If the glory of God is most fully His mercy spoken aloud (Exodus 34:6), how does that change what you are actually asking for when you ask to see Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-longing",
+      "prayerText": "LORD, I have asked You for many things - for help, for relief, for the next thing I need. Today let me ask for You. Please show me Your glory. I cannot bear the full weight of Your face, and You know it; so do for me what You did for Moses - hide me in the cleft, cover me with Your hand, and let me see even the trailing edge of Your goodness as it passes. And where I would have seen only Your back, show me the face You gave the world in Jesus, full of grace and truth. Let the knowledge of Your glory shine in my heart, in His face. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, pray one prayer that asks for nothing but God Himself. Find a quiet five minutes, and instead of bringing your list, bring Moses' words: \"Please show me Your glory.\" Then sit still long enough to let Him answer in His own way - in His goodness, in His name, in the face of Christ.",
+      "leavingAtCross": [
+        "The habit of asking God only for His gifts and never for Himself",
+        "The quiet belief that nearness to God should have removed my hunger by now",
+        "The fear that when God seems to show me only His back, He is withholding rather than sheltering"
+      ],
+      "receivingFromCross": [
+        "Permission to want God Himself, the way Moses did, without apology",
+        "The assurance that God measures His weight to what I can bear - that His no can be mercy",
+        "The knowledge of the glory of God in the face of Jesus Christ, the face Moses was not given"
+      ],
+      "content": "Today, pray one prayer that asks for nothing but God Himself. Find a quiet five minutes, and instead of bringing your list, bring Moses' words: \"Please show me Your glory.\" Then sit still long enough to let Him answer in His own way - in His goodness, in His name, in the face of Christ."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Moses already spoke with God 'face to face, as a man speaks with his friend' (33:11). Why, then, does he still ask to see God's glory - and what does that tell you about the nature of spiritual hunger?",
+        "God grants almost all of Moses' request but withholds the sight of His face. In what sense is that withholding an act of mercy rather than refusal?",
+        "When God finally proclaims His glory in Exodus 34:6, He describes His own character - compassionate, gracious, slow to anger. How does that reframe what 'the glory of God' actually is?"
+      ],
+      "forAccountabilityPartners": [
+        "Share a time you wanted more of God even though you already had much of Him. What did that hunger feel like?",
+        "Talk about a season when God seemed to show you only His 'back' - the trailing edge, the sense of having just missed Him. Looking back, was He withholding or sheltering?",
+        "Ask each other: what would it look like this week to pray for God Himself, and not only for the things you need from Him?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 34:6",
+          "text": "Then the LORD passed in front of Moses and called out: \"The LORD, the LORD God, is compassionate and gracious, slow to anger, abounding in loving devotion and faithfulness.\""
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "John 1:18",
+          "text": "No one has ever seen God, but the one and only Son, who is Himself God and is at the Father's side, has made Him known."
+        },
+        {
+          "reference": "2 Corinthians 4:6",
+          "text": "For God, who said, \"Let light shine out of darkness,\" made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 33-34",
+          "note": "Read both chapters together. Watch how the request of 33:18 ('show me Your glory') is answered by the proclamation of 34:6-7 - and notice that the glory God reveals is His character, His mercy spoken aloud."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Friend Who Asked to See God",
+      "description": "Raised in Pharaoh's house, called from a burning bush, sent to lead Israel out of Egypt. Moses spoke with God as a man speaks with a friend, yet on the mountain he reached past every gift and asked for the Giver: 'Please show me Your glory.' He was hidden in the cleft of the rock and shown only God's back - granted as much glory as a mortal could survive. Centuries later, at the Transfiguration, Moses stands again on a mountain, this time beside the radiant face of Christ (Matthew 17:1-3) - the face he was once not permitted to see.",
+      "keyQuote": "Please show me Your glory.",
+      "lessonForUs": "Moses had more of God than anyone, and still hungered for more. His prayer teaches us that intimacy with God does not end our longing for Him - it deepens it. And it teaches us that the face withheld from Moses is the very face God has now shown the world in Jesus.",
+      "heading": "The Friend Who Asked to See God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2517,
+  "scriptureReference_full": "Exodus 33:12-23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (kavod H3519, panim, the k-b-d 'weight' root) reflects standard lexical sources.",
+    "Exodus 34:6 cited as the fulfillment of the promise made in Exodus 33:19; the kavod-as-character reading is the plain sense of the canonical sequence."
+  ]
 }

@@ -6,33 +6,182 @@
   "scriptureReference": "2 Kings 18-20",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 139"
+      "type": "scripture",
+      "reference": "2 Kings 19:14-16, 34",
+      "translation": "BSB",
+      "emphasis": [
+        "spread it out before the LORD",
+        "You alone are God",
+        "for My own sake and for the sake of My servant David"
+      ],
+      "hebrewOriginal": "וַיִּפְרְשֵׂהוּ חִזְקִיָּהוּ לִפְנֵי יְהוָה",
+      "passage": "So Hezekiah received the letter from the messengers, read it, and went up to the house of the LORD and spread it out before the LORD. And Hezekiah prayed before the LORD: \"O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth. You made the heavens and the earth. Incline Your ear, O LORD, and hear; open Your eyes, O LORD, and see. Listen to the words that Sennacherib has sent to defy the living God.\" ... \"I will defend this city and save it for My own sake and for the sake of My servant David.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 18-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 18-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיִּפְרֹשׂ",
+      "transliteration": "vayyifros",
+      "pronunciation": "vai-yif-ROHSS",
+      "meaning": "and he spread it out, unfolded it, laid it open",
+      "rootMeaning": "From the root paras, to spread or stretch out flat - the word used for spreading a cloth, opening the hands in prayer, unrolling something so the whole of it is exposed and nothing is hidden in a fold.",
+      "usageNote": "The same verb describes hands stretched out to God in prayer (1 Kings 8:22, Isaiah 1:15) and a garment spread over someone for protection (Ruth 3:9, Ezekiel 16:8). Hezekiah does not summarize the threatening letter or argue with it. He unfolds the entire thing on the floor of the temple so that every taunt lies open in the presence of God.",
+      "wordByWord": [
+        {
+          "word": "וַיִּקַּח",
+          "transliteration": "vayyiqqach",
+          "meaning": "and he took, received (the letter)"
+        },
+        {
+          "word": "וַיַּעַל",
+          "transliteration": "vayya'al",
+          "meaning": "and he went up - the same verb used for going up to worship"
+        },
+        {
+          "word": "בֵּית יְהוָה",
+          "transliteration": "beit YHWH",
+          "meaning": "the house of the LORD, the temple"
+        },
+        {
+          "word": "וַיִּפְרְשֵׂהוּ",
+          "transliteration": "vayyifresehu",
+          "meaning": "and he spread it out - he laid the whole letter open"
+        },
+        {
+          "word": "לִפְנֵי יְהוָה",
+          "transliteration": "lifnei YHWH",
+          "meaning": "before the LORD, in the face of the LORD"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פָּרַשׂ / כָּנָף",
+          "reference": "The spreading verb paras is cousin to the picture of a bird spreading its wings (kanaph) over its young. Hezekiah spreads the letter; the LORD enthroned between the cherubim is the One whose wings are already spread over the city."
+        }
+      ],
+      "strongsNumber": "H6566",
+      "definition": "to spread out, stretch forth, lay open flat",
+      "usage": "The gesture is deliberate and bodily. Hezekiah does not pray about the letter from a distance; he carries the actual document up the temple steps and unrolls it on the ground, as if to say: read it Yourself."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hezekiah's Reform. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who weeps for his city (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The King Who Carried the Letter Upstairs",
+      "body": "Hezekiah is the rare good king. The writer of 2 Kings does not hedge: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5). He tore down the high places, shattered the sacred pillars, and broke into pieces the bronze serpent Moses had made in the wilderness, because the people had turned a relic of God's mercy into an idol and were burning incense to it. He called it Nehushtan - a mere bronze thing - and destroyed it. This is a man whose reform reached even the souvenirs of faith.\n\nThen Assyria came. Sennacherib, the most powerful man on earth, took the fortified cities of Judah one by one and finally sent his officers to stand outside Jerusalem's wall and shout. The field commander, the Rabshakeh, deliberately spoke in Hebrew so every soldier on the wall could understand him. His speech is a masterpiece of intimidation. He mocks Hezekiah's reforms, mocks Egypt, mocks the very idea of trust: \"Do not let Hezekiah persuade you to trust in the LORD\" (18:30). And then the line that gives the whole chapter its theological weight: \"Who among all the gods of these lands has delivered his land from my hand? How then can the LORD deliver Jerusalem from my hand?\" (18:35). The LORD has been filed away with the wooden gods of Hamath and Arpad - one more local deity about to be added to Assyria's collection.\n\nWhat Hezekiah does next is the center of the story. He receives a follow-up letter repeating the threat in writing. He does not call a war council. He goes up to the house of the LORD, and he spreads the letter out before the LORD (19:14). The most powerful king in the world has put his contempt for God in writing, and the king of a tiny besieged city unrolls that contempt on the temple floor and asks God to read it for Himself.",
+      "keyInsight": "Hezekiah does not answer the blasphemy. He hands it to the only One the blasphemy actually slanders, and asks God to read His own mail.",
+      "content": "Hezekiah is the rare good king. The writer of 2 Kings does not hedge: \"Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him\" (18:5). He tore down the high places, shattered the sacred pillars, and broke into pieces the bronze serpent Moses had made in the wilderness, because the people had turned a relic of God's mercy into an idol and were burning incense to it. He called it Nehushtan - a mere bronze thing - and destroyed it. This is a man whose reform reached even the souvenirs of faith.\n\nThen Assyria came. Sennacherib, the most powerful man on earth, took the fortified cities of Judah one by one and finally sent his officers to stand outside Jerusalem's wall and shout. The field commander, the Rabshakeh, deliberately spoke in Hebrew so every soldier on the wall could understand him. His speech is a masterpiece of intimidation. He mocks Hezekiah's reforms, mocks Egypt, mocks the very idea of trust: \"Do not let Hezekiah persuade you to trust in the LORD\" (18:30). And then the line that gives the whole chapter its theological weight: \"Who among all the gods of these lands has delivered his land from my hand? How then can the LORD deliver Jerusalem from my hand?\" (18:35). The LORD has been filed away with the wooden gods of Hamath and Arpad - one more local deity about to be added to Assyria's collection.\n\nWhat Hezekiah does next is the center of the story. He receives a follow-up letter repeating the threat in writing. He does not call a war council. He goes up to the house of the LORD, and he spreads the letter out before the LORD (19:14). The most powerful king in the world has put his contempt for God in writing, and the king of a tiny besieged city unrolls that contempt on the temple floor and asks God to read it for Himself."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Diagnosis on the Kitchen Table",
+      "body": "A friend told me about the night she got the biopsy results. She had read them in the car before she got home - the dense paragraph, the word she did not recognize, then the word she did. She said she carried the paper inside, and instead of hiding it or rereading it forty more times, she laid it flat on the kitchen table and called her husband over, and they just looked at it together. \"I didn't want to face it alone in my head,\" she said. \"I wanted it out where someone bigger than my fear could see it too.\"\n\nThere is a difference between worrying about a threat and naming it in front of someone you trust. Worry keeps the letter folded in your pocket, where you can take it out a hundred times a day and reread the worst line. Faith takes the same letter and lays it open on the table.\n\nHezekiah could have memorized the Rabshakeh's taunts and let them loop in the dark. Instead he physically carried the threat into the presence of God and put it down flat, every line showing. The threat did not get smaller on the temple floor. But it was no longer his alone to answer.",
+      "connectionToTheme": "Faith is not pretending the threatening letter does not exist. Faith is carrying the actual letter into the presence of God and laying it open before Him.",
+      "content": "A friend told me about the night she got the biopsy results. She had read them in the car before she got home - the dense paragraph, the word she did not recognize, then the word she did. She said she carried the paper inside, and instead of hiding it or rereading it forty more times, she laid it flat on the kitchen table and called her husband over, and they just looked at it together. \"I didn't want to face it alone in my head,\" she said. \"I wanted it out where someone bigger than my fear could see it too.\"\n\nThere is a difference between worrying about a threat and naming it in front of someone you trust. Worry keeps the letter folded in your pocket, where you can take it out a hundred times a day and reread the worst line. Faith takes the same letter and lays it open on the table.\n\nHezekiah could have memorized the Rabshakeh's taunts and let them loop in the dark. Instead he physically carried the threat into the presence of God and put it down flat, every line showing. The threat did not get smaller on the temple floor. But it was no longer his alone to answer."
+    },
+    {
+      "type": "insight",
+      "heading": "Saved for a Reason That Was Not Hezekiah",
+      "body": "Listen to how God answers the prayer. Through Isaiah He says of the city, \"I will defend this city and save it for My own sake and for the sake of My servant David\" (19:34). Read that twice. The deliverance of Jerusalem is not granted because Hezekiah was the best king Judah ever had, true as that was. It is granted for God's own sake, and for the sake of a covenant promise made to David generations before Hezekiah was born.\n\nThis is easy to miss and impossible to overstate. Hezekiah's reforms were real and his trust was real, but his rescue did not finally rest on them. It rested on a promise. Years earlier God had sworn to David that his house and his throne would endure (2 Samuel 7:16). Jerusalem survives the night because God keeps that word - because the line to David must not be cut off. The city is spared not on the strength of the man inside praying, but on the strength of the One who made a promise about a coming King.\n\nThat is why this passage refuses to be merely a hero story about a brave king. The hinge of the rescue is \"for the sake of My servant David,\" and the David promise was never finally about David. It pointed past him to a Son who would sit on that throne forever.",
+      "historicalContext": "Sennacherib's own royal annals, preserved on the clay Taylor Prism in the British Museum, boast that he shut Hezekiah up in Jerusalem \"like a bird in a cage\" and took forty-six of his cities. Strikingly, the Assyrian record never claims to have taken Jerusalem itself - the one boast a conqueror would never omit. The silence of Sennacherib's own propaganda at exactly the point where 2 Kings 19 says the siege broke is one of the more remarkable convergences of Scripture and ancient inscription.",
+      "fascinatingFact": "The phrase \"for My own sake and for the sake of My servant David\" returns almost verbatim in the very next chapter (20:6), when God adds fifteen years to Hezekiah's life. Twice in two chapters the rescue is anchored not in the man being rescued but in God's name and God's promise to David - the writer is underlining the point with a highlighter.",
+      "content": "Listen to how God answers the prayer. Through Isaiah He says of the city, \"I will defend this city and save it for My own sake and for the sake of My servant David\" (19:34). Read that twice. The deliverance of Jerusalem is not granted because Hezekiah was the best king Judah ever had, true as that was. It is granted for God's own sake, and for the sake of a covenant promise made to David generations before Hezekiah was born.\n\nThis is easy to miss and impossible to overstate. Hezekiah's reforms were real and his trust was real, but his rescue did not finally rest on them. It rested on a promise. Years earlier God had sworn to David that his house and his throne would endure (2 Samuel 7:16). Jerusalem survives the night because God keeps that word - because the line to David must not be cut off. The city is spared not on the strength of the man inside praying, but on the strength of the One who made a promise about a coming King.\n\nThat is why this passage refuses to be merely a hero story about a brave king. The hinge of the rescue is \"for the sake of My servant David,\" and the David promise was never finally about David. It pointed past him to a Son who would sit on that throne forever."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A king carries the enemy's blasphemous letter up to the temple, spreads it open before God, and God answers by defending the city - not for the king's worthiness, but for His own sake and for the sake of His servant David.",
+      "modernApplication": "You are also being told, in language you can understand, that your trust is foolish and that nothing you believe in can deliver you. The voice on the wall changes - a diagnosis, a debt, a verdict, a name someone called you that you cannot unhear. The temptation is to answer it in your own head all night. The pattern of this passage is different: take the actual accusation, name it specifically, and lay it open before the God who reads His own mail.",
+      "connectionPoint": "The Assyrian taunt was, at bottom, \"there is no deliverance.\" That is the same accusation the cross silences. Where Hezekiah's enemy mocked from outside the wall, our accuser writes a longer letter - our own record of sin. Paul says God \"canceled the debt ascribed to us in the decrees that stood against us; He took it away, nailing it to the cross\" (Colossians 2:14). The handwriting against us is not folded back in our pocket; it is spread open and nailed up, paid in full.",
+      "newTestamentEcho": "Jerusalem was saved \"for the sake of My servant David.\" Centuries later David's greater Son rode into that same city, and \"as Jesus approached Jerusalem and saw the city, He wept over it\" (Luke 19:41) - the King who defends the city now weeping for it, and soon laying down His own life to deliver it. The promise that spared Jerusalem in Hezekiah's night was always running toward Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the letter you keep folded in your pocket - the threat or accusation you reread alone in the dark instead of laying open before God?",
+      "additionalQuestions": [
+        "Hezekiah named the threat specifically before God rather than praying in vague generalities. What would it look like to bring God the actual words that scare you, not a softened summary?",
+        "God saved the city 'for My own sake' - not for Hezekiah's worthiness. Where are you trying to earn a rescue that God offers on the basis of His own promise?",
+        "Is there a 'Nehushtan' in your life - something once meaningful in your faith that has quietly become an idol you keep returning to instead of God Himself?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, God enthroned above all the kingdoms of the earth, You alone are God. I have been carrying this folded up - reading it again and again where no one can see, letting it tell me there is no rescue. Tonight I spread it open before You. Incline Your ear and hear; open Your eyes and see. I cannot answer the voice on the wall, and I will stop trying. Defend me, not because I have earned it, but for Your own sake and for the sake of Your Son, my King, who carried the whole accusation against me to the cross. The threat is real. So are You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, write down the one threat or accusation you have been rereading in your head - the actual words, as specifically as you can. Then physically open your hands over it, or set it open on a table, and pray it to God the way Hezekiah did: not a summary, the whole thing. Then leave it spread open and walk away.",
+      "leavingAtCross": [
+        "The letter I keep folded in my pocket, rereading the worst line alone in the dark",
+        "The exhausting work of answering every taunt in my own strength",
+        "The lie that my rescue depends on whether I have been good enough to deserve it"
+      ],
+      "receivingFromCross": [
+        "A God who reads His own mail - who hears the words spoken against Him and against me",
+        "Deliverance granted for His own sake and for the sake of His promised King, not for my performance",
+        "The record of debt against me, nailed open to the cross and paid in full"
+      ],
+      "content": "Today, write down the one threat or accusation you have been rereading in your head - the actual words, as specifically as you can. Then physically open your hands over it, or set it open on a table, and pray it to God the way Hezekiah did: not a summary, the whole thing. Then leave it spread open and walk away."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Hezekiah spread the letter open before God rather than simply praying about its contents? What does the physical gesture reveal about how he understood the threat?",
+        "God twice says He will defend the city 'for My own sake and for the sake of My servant David.' What does it change to know that the rescue rested on God's promise rather than on Hezekiah's worthiness?",
+        "How does a deliverance granted 'for the sake of David' point forward to Christ, David's greater Son who would weep over and die for that same city?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'letter' you have been carrying folded - a fear or accusation you reread alone. Practice laying it open by saying it out loud to each other.",
+        "Talk about the difference between worrying about a threat and naming it before God. Which one have you been doing this week?",
+        "Ask each other: where am I trying to deserve a rescue that God offers for His own sake, on the basis of His promise rather than my performance?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Samuel 7:16",
+          "text": "Your house and kingdom will endure forever before Me, and your throne will be established forever."
+        },
+        {
+          "reference": "Psalm 46:1-2",
+          "text": "God is our refuge and strength, an ever-present help in times of trouble. Therefore we will not fear, though the earth is transformed and the mountains are toppled into the depths of the seas."
+        },
+        {
+          "reference": "Colossians 2:14",
+          "text": "having canceled the debt ascribed to us in the decrees that stood against us. He took it away, nailing it to the cross!"
+        },
+        {
+          "reference": "Luke 19:41",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 18-20",
+          "note": "Read all three chapters in one sitting, watching the movement from reform (18:1-8) to threat (18:13-37) to the spread-out letter and prayer (19:14-19) to deliverance (19:35-37) to Hezekiah's own near-death rescue (20:1-6)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hezekiah",
+      "title": "The King Who Spread the Letter Before the LORD",
+      "description": "Thirteenth king of Judah, son of Ahaz, who reigned roughly 715-686 BC. Of him alone among Judah's kings it is said that he trusted the LORD so wholly that 'no king of Judah was like him, either before him or after him.' He purged idolatry down to the souvenirs, smashing even Moses' bronze serpent when it became an idol. When Assyria's empire closed around Jerusalem and mocked his God by name, Hezekiah's instinct was not strategy but worship: he carried the threat into the temple and laid it open before God.",
+      "keyQuote": "O LORD, God of Israel, enthroned between the cherubim, You alone are God over all the kingdoms of the earth.",
+      "lessonForUs": "Hezekiah teaches the difference between fretting over a threat and laying it open before God. He could not match Assyria's army, and he did not try. He named the enemy's exact words in God's presence and left them there - and the city he could not save was saved for the sake of a promise that ran all the way to Christ.",
+      "heading": "The King Who Spread the Letter Before the LORD"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1787,
+  "scriptureReference_full": "2 Kings 18-20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (paras / vayyifros, H6566) reflects standard lexical sources.",
+    "Sennacherib's siege of Jerusalem is recorded on the Taylor Prism (British Museum), which boasts of caging Hezekiah but never claims the capture of Jerusalem."
+  ]
 }

@@ -1,38 +1,187 @@
 {
   "day": 205,
-  "title": "Ecclesiastes: Vanity + God — Day 2 — Building",
-  "teaser": "Day 205 of Bible 365 — Ecclesiastes 1, 3, 12",
+  "title": "The Vapor and the Eternity Inside It",
+  "teaser": "Day 205 of Bible 365 — Ecclesiastes 1, 3, 12: everything under the sun is vapor, yet God has set eternity in the human heart.",
   "framework": "Ecclesiastes 1, 3, 12 — Ecclesiastes: Vanity + God",
   "scriptureReference": "Ecclesiastes 1, 3, 12",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 205"
+      "type": "scripture",
+      "reference": "Ecclesiastes 1:2-3; 3:1, 11; 12:7-8, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "Everything is futile",
+        "a time for every purpose under heaven",
+        "set eternity in the hearts of men",
+        "Fear God and keep His commandments"
+      ],
+      "hebrewOriginal": "הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל",
+      "passage": "\"Futility of futilities,\" says the Teacher, \"futility of futilities! Everything is futile!\" What does a man gain from all his labor, at which he toils under the sun? ... To everything there is a season, and a time for every purpose under heaven ... He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end ... before the dust returns to the ground from which it came and the spirit returns to God who gave it. \"Futility of futilities,\" says the Teacher. \"Everything is futile!\" ... When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ecclesiastes 1, 3, 12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ecclesiastes 1, 3, 12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הֶבֶל",
+      "transliteration": "hevel",
+      "pronunciation": "HEH-vel",
+      "meaning": "vapor, breath, mist; futility, fleetingness",
+      "rootMeaning": "The basic sense is a puff of breath on a cold morning, or the haze that rises off a field at dawn. It is real - you can see it - but you cannot hold it, and within a moment it is gone. Hevel is not the same as worthless; it is what cannot be grasped or kept.",
+      "usageNote": "Hevel rings through Ecclesiastes thirty-eight times, opening the book (1:2) and closing it (12:8) like two walls of the same room. The BSB renders it 'futility'; older translations say 'vanity.' Both are reaching for the same image: something that looks substantial in the hand and turns out to be air.",
+      "wordByWord": [
+        {
+          "word": "הֲבֵל הֲבָלִים",
+          "transliteration": "havel havalim",
+          "meaning": "vapor of vapors - a Hebrew superlative, like 'song of songs,' meaning the utmost emptiness"
+        },
+        {
+          "word": "קֹהֶלֶת",
+          "transliteration": "qohelet",
+          "meaning": "the Teacher, the Gatherer - one who calls an assembly together to speak"
+        },
+        {
+          "word": "תַּחַת הַשָּׁמֶשׁ",
+          "transliteration": "tachat hashemesh",
+          "meaning": "under the sun - the horizon of a life lived without looking up; the book's name for the whole arena of earthly effort"
+        },
+        {
+          "word": "עֹלָם",
+          "transliteration": "olam",
+          "meaning": "eternity, the long unseen age - what God set inside the human heart (3:11)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֶבֶל / הֶבֶל",
+          "reference": "Hevel is also the Hebrew name of Abel, Adam's second son (Genesis 4). The first man to die in Scripture is named 'breath' - here one moment, gone the next. Ecclesiastes borrows that name for everything we try to keep."
+        }
+      ],
+      "strongsNumber": "H1892",
+      "definition": "breath, vapor; figuratively, that which is fleeting, unsubstantial, or futile",
+      "usage": "When the Teacher calls life hevel, he is not sneering at it. He is naming, with painful honesty, that nothing under the sun stays in the hand - and then asking where, if anywhere, something might."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ecclesiastes: Vanity + God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the meaning beneath vanity (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Wisest Man Counts the Mist",
+      "body": "Ecclesiastes opens with a verdict that sounds like surrender. \"Futility of futilities,\" says the Teacher; \"everything is futile.\" Then comes the question the whole book turns on: \"What does a man gain from all his labor, at which he toils under the sun?\"\n\nThe Teacher is traditionally read as Solomon, the king who had the rare freedom to test every answer the world offers. He chased pleasure, built houses, planted vineyards, gathered silver and gold and singers, grew wiser than anyone before him - and watched it all run through his fingers. \"Generations come and generations go,\" he writes, \"but the earth remains forever.\" The sun rises and sets and hurries back to rise again. The rivers run to the sea and the sea is never full. \"What has been will be again... there is nothing new under the sun.\"\n\nThis is not the complaint of a man who has too little. It is the confession of a man who has had everything and found that everything, gripped tightly, evaporates. He calls it a chasing after wind: you can feel it move past you, but you close your hand and there is nothing there.",
+      "keyInsight": "Ecclesiastes is not the cynic's book. It is the honest account of a man who tried to make life satisfy on its own terms - and reported back that it cannot. That report is a gift, not a wound.",
+      "content": "Ecclesiastes opens with a verdict that sounds like surrender. \"Futility of futilities,\" says the Teacher; \"everything is futile.\" Then comes the question the whole book turns on: \"What does a man gain from all his labor, at which he toils under the sun?\"\n\nThe Teacher is traditionally read as Solomon, the king who had the rare freedom to test every answer the world offers. He chased pleasure, built houses, planted vineyards, gathered silver and gold and singers, grew wiser than anyone before him - and watched it all run through his fingers. \"Generations come and generations go,\" he writes, \"but the earth remains forever.\" The sun rises and sets and hurries back to rise again. The rivers run to the sea and the sea is never full. \"What has been will be again... there is nothing new under the sun.\"\n\nThis is not the complaint of a man who has too little. It is the confession of a man who has had everything and found that everything, gripped tightly, evaporates. He calls it a chasing after wind: you can feel it move past you, but you close your hand and there is nothing there."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Hit Every Number",
+      "body": "A retired executive I knew kept a single sheet of paper in his desk drawer. On it he had written, years before, the things he was sure would make a life whole: a certain title, a certain house, a certain number in the account, the respect of people he admired. He hit every one of them. He showed me the list the way you show someone a scar.\n\nWhat unsettled him was not failure. It was that he had succeeded completely and still woke at four in the morning with the same hollow under his ribs he had felt at twenty-five. The list had promised an arrival. He had arrived. And the place was empty.\n\nHe was not a bitter man, and he did not regret the work. He simply could not understand why getting everything had changed so little on the inside. He had spent his life filling a hand that would not stay full. He had been, without the word for it, chasing the wind.",
+      "connectionToTheme": "Solomon's experiment is not ancient history. Anyone who has reached a long-wanted goal and found the ache still there has read the first chapter of Ecclesiastes from the inside.",
+      "content": "A retired executive I knew kept a single sheet of paper in his desk drawer. On it he had written, years before, the things he was sure would make a life whole: a certain title, a certain house, a certain number in the account, the respect of people he admired. He hit every one of them. He showed me the list the way you show someone a scar.\n\nWhat unsettled him was not failure. It was that he had succeeded completely and still woke at four in the morning with the same hollow under his ribs he had felt at twenty-five. The list had promised an arrival. He had arrived. And the place was empty.\n\nHe was not a bitter man, and he did not regret the work. He simply could not understand why getting everything had changed so little on the inside. He had spent his life filling a hand that would not stay full. He had been, without the word for it, chasing the wind."
+    },
+    {
+      "type": "insight",
+      "heading": "Eternity in the Heart",
+      "body": "Then, in chapter 3, the book opens a window. \"To everything there is a season, and a time for every purpose under heaven\" - and the Teacher walks through the whole human round: a time to be born and a time to die, to plant and to uproot, to weep and to laugh, to mourn and to dance, to keep silent and to speak. The same seasons turn over us still.\n\nAnd into that turning comes the verse that explains the ache. \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.\" The Hebrew is olam - the long unseen age, eternity itself - placed inside the human chest by God.\n\nThis is why nothing under the sun satisfies. We are not the right size for it. God has set eternity in us, and then handed us a world of vapor; of course the vapor cannot fill an eternity-shaped room. The emptiness Solomon kept reporting is not a malfunction. It is a homing signal. The reason the world cannot satisfy you is that you were built with a capacity only God can fill.",
+      "historicalContext": "Ecclesiastes sits among the Wisdom books - Job, Psalms, Proverbs, Ecclesiastes, Song of Songs - which test the practical questions of how to live. Where Proverbs trusts that wisdom generally pays, Ecclesiastes presses the harder case: what happens when the usual answers run out? Israel preserved both, refusing to let its faith be only the easy half. The phrase 'under the sun,' used some thirty times, deliberately fences off the view from the ground; the window in 3:11 is the first real look upward.",
+      "fascinatingFact": "The word olam in 3:11 is striking precisely because it does not belong in a world bounded by 'under the sun.' Everything else in the book has an end - it is born, it labors, it dies, it is forgotten. Eternity is the one thing the Teacher names that does not evaporate, and he locates it not in the heavens but inside the human heart, as though God left a clue to Himself in the very creature who keeps coming up empty.",
+      "content": "Then, in chapter 3, the book opens a window. \"To everything there is a season, and a time for every purpose under heaven\" - and the Teacher walks through the whole human round: a time to be born and a time to die, to plant and to uproot, to weep and to laugh, to mourn and to dance, to keep silent and to speak. The same seasons turn over us still.\n\nAnd into that turning comes the verse that explains the ache. \"He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.\" The Hebrew is olam - the long unseen age, eternity itself - placed inside the human chest by God.\n\nThis is why nothing under the sun satisfies. We are not the right size for it. God has set eternity in us, and then handed us a world of vapor; of course the vapor cannot fill an eternity-shaped room. The emptiness Solomon kept reporting is not a malfunction. It is a homing signal. The reason the world cannot satisfy you is that you were built with a capacity only God can fill."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Everything under the sun is hevel - vapor, futility, a chasing after wind - and yet God has set eternity (olam) in the human heart, a capacity nothing under the sun can fill.",
+      "modernApplication": "We feel the same gap with newer tools. The promotion lands and the hollow stays. The feed scrolls and the eye is still 'not satisfied with seeing' (1:8). Ecclesiastes does not tell us to want less; it tells us we have been pouring an ocean of longing into cups that were never built to hold it.",
+      "connectionPoint": "The thread of futility runs straight from the Teacher to the apostle. Paul writes that 'the creation was subjected to futility, not by its own will, but because of the One who subjected it, in hope - that the creation itself will be set free from its bondage to decay' (Romans 8:20-21). The same word the Greek Old Testament used for hevel, Paul uses for the whole groaning world - and then, where Ecclesiastes could only name the emptiness, Paul names the hope that fills it.",
+      "newTestamentEcho": "The eternity God set in the heart finds its name in Christ, 'in Him all things hold together' (Colossians 1:17). To the weary who have chased the wind, Jesus says, 'Come to Me, all you who are weary and burdened, and I will give you rest' (Matthew 11:28). The vapor does not become solid; the One who stands beneath the vapor finally does."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Name one thing you have chased, certain it would finally fill the hollow - and tell the truth about whether it did.",
+      "additionalQuestions": [
+        "Where in your life are you trying to fill an eternity-shaped space with something that was only ever meant to be a season?",
+        "When the Teacher says the eye is 'not satisfied with seeing,' what does your own restlessness keep reaching for?",
+        "If the emptiness you feel is a homing signal rather than a failure, what is it pointing you toward?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "God, You set eternity in me, and I have spent so much of my labor trying to fill it with vapor. Forgive me for grasping at wind and calling it gain. Where I am weary from chasing what cannot be kept, give me rest. Where I have lived only under the sun, lift my eyes. Be Yourself the thing I was built to hold - the One in whom everything finally holds together. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before the day fills up, I will name one 'vapor' I have been chasing as if it could satisfy an eternity-shaped heart, and I will bring that exact longing to God instead, asking Him to be what it was always reaching for.",
+      "leavingAtCross": [
+        "The belief that the next achievement will finally fill the hollow",
+        "The exhaustion of chasing what cannot be kept in the hand",
+        "The lie that the emptiness I feel means something is wrong with me, rather than that I was made for more"
+      ],
+      "receivingFromCross": [
+        "Rest for a soul worn out by chasing the wind",
+        "The truth that my restlessness is a homing signal toward God, not a defect",
+        "Christ Himself, the eternity-sized answer to an eternity-sized heart"
+      ],
+      "content": "Before the day fills up, I will name one 'vapor' I have been chasing as if it could satisfy an eternity-shaped heart, and I will bring that exact longing to God instead, asking Him to be what it was always reaching for."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word hevel literally picture, and how does that image change the way you hear 'everything is futile'?",
+        "How does 'He has set eternity in the hearts of men' (3:11) explain why nothing 'under the sun' can satisfy?",
+        "The book opens and closes with 'futility of futilities' (1:2; 12:8), yet ends with 'Fear God and keep His commandments' (12:13). How does the conclusion answer the opening rather than contradict it?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about one thing you reached, achieved, or acquired that you were sure would satisfy - and what actually happened in your heart afterward.",
+        "Where are you most tempted to live 'under the sun,' as though this horizon were the whole story?",
+        "Ask each other: what would it look like this week to bring an eternity-shaped longing to God instead of trying to fill it with vapor?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ecclesiastes 1:14",
+          "text": "I have seen all the things that are done under the sun, and have found them all to be futile, a pursuit of the wind."
+        },
+        {
+          "reference": "Ecclesiastes 12:1",
+          "text": "Remember your Creator in the days of your youth, before the days of adversity come and the years approach of which you will say, \"I find no pleasure in them.\""
+        },
+        {
+          "reference": "Romans 8:20-21",
+          "text": "For the creation was subjected to futility, not by its own will, but because of the One who subjected it, in hope that the creation itself will be set free from its bondage to decay and brought into the glorious freedom of the children of God."
+        },
+        {
+          "reference": "Colossians 1:17",
+          "text": "He is before all things, and in Him all things hold together."
+        },
+        {
+          "reference": "Matthew 11:28",
+          "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 1-3",
+          "note": "Read straight through, watching the Teacher build his case for futility, then notice the single window he opens in 3:11 - 'He has also set eternity in the hearts of men.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Qoheleth (The Teacher)",
+      "title": "The Gatherer Who Tested Everything",
+      "description": "Traditionally identified with Solomon, the Teacher (qohelet, 'the one who assembles') had the wealth, wisdom, and freedom to run the experiment most people only dream of: to try every answer the world offers and report back on what satisfies. His verdict, repeated thirty-eight times, was hevel - vapor, futility, a chasing after wind. But he did not end in despair. Having proven that nothing under the sun fills the heart, he points his readers above the sun: 'Remember your Creator' (12:1); 'Fear God and keep His commandments' (12:13).",
+      "keyQuote": "He has made everything beautiful in its time. He has also set eternity in the hearts of men.",
+      "lessonForUs": "If the man with the means to try everything found it all to be vapor, our own chasing will end the same way - unless, like him, we let the emptiness drive us upward to the God who set eternity in us and answered it in Christ.",
+      "heading": "The Gatherer Who Tested Everything"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2021,
+  "scriptureReference_full": "Ecclesiastes 1:2-3, 8-9, 14; 3:1-8, 11; 12:1, 7-8, 13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (hevel H1892; olam, 'eternity') reflects standard lexical sources. The link between hevel and the name Abel (Hebrew Hevel, Genesis 4) is a long-noted observation in the interpretive tradition.",
+    "The futility/hevel thread to Romans 8:20 follows the Septuagint's use of mataiotes to render hevel; the Christ-connection (Colossians 1:17; Matthew 11:28) is the author's own derivation from the passage."
+  ]
 }

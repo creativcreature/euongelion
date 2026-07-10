@@ -1,38 +1,194 @@
 {
   "day": 56,
   "title": "When God’s face shines",
-  "teaser": "Day 56 of Bible 365 — Sabbath",
-  "framework": "Sabbath — Sabbath: rest under blessing",
-  "scriptureReference": "Sabbath",
+  "teaser": "Day 56 of Bible 365 — Sabbath. God hands Aaron the words to bless His people, then signs them Himself: His Name laid on them, His face turned toward them.",
+  "framework": "Numbers 6:22-27 — Sabbath: rest under blessing",
+  "scriptureReference": "Numbers 6:22-27",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 56"
+      "type": "scripture",
+      "reference": "Numbers 6:22-27",
+      "translation": "BSB",
+      "emphasis": [
+        "cause His face to shine upon you",
+        "lift up His countenance toward you",
+        "put My name on the Israelites"
+      ],
+      "hebrewOriginal": "יָאֵר יְהוָה פָּנָיו אֵלֶיךָ וִיחֻנֶּךָּ",
+      "passage": "Then the LORD said to Moses, “Tell Aaron and his sons: This is how you are to bless the Israelites. Say to them: ‘May the LORD bless you and keep you; may the LORD cause His face to shine upon you and be gracious to you; may the LORD lift up His countenance toward you and give you peace.’ So they shall put My name on the Israelites, and I will bless them.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יָאֵר יְהוָה פָּנָיו",
+      "transliteration": "ya’er YHWH panav",
+      "pronunciation": "yah-AIR ah-doh-NIGH pah-NAHV",
+      "meaning": "may the LORD make His face shine",
+      "rootMeaning": "Ya’er comes from or, the word for light - the same word God speaks over the first morning of creation, \"Let there be light.\" Panav means \"His face,\" His presence turned toward you. To ask God to make His face shine is to ask the Light of the first day to fall on one small human life.",
+      "usageNote": "In the ancient world, to have a king's face turned toward you was to be in favor; to have it turned away was ruin. Israel prays this same blessing back to God all through the Psalms - \"cause Your face to shine upon us, that we may be saved\" (Psalm 80:3); \"shine the light of Your face upon us, O LORD\" (Psalm 4:6). The blessing is short enough for a child to learn and old enough that we still say it over each other today.",
+      "wordByWord": [
+        {
+          "word": "יְבָרֶכְךָ",
+          "transliteration": "yevarekheka",
+          "meaning": "may He bless you - the bracket the whole blessing opens with"
+        },
+        {
+          "word": "וְיִשְׁמְרֶךָ",
+          "transliteration": "veyishmereka",
+          "meaning": "and keep you, guard you, hedge you about"
+        },
+        {
+          "word": "יָאֵר",
+          "transliteration": "ya’er",
+          "meaning": "may He cause to shine - from or, light"
+        },
+        {
+          "word": "פָּנָיו",
+          "transliteration": "panav",
+          "meaning": "His face, His presence, the front of Him turned toward you"
+        },
+        {
+          "word": "וִיחֻנֶּךָּ",
+          "transliteration": "vichunneka",
+          "meaning": "and be gracious to you - from chen, unearned favor"
+        },
+        {
+          "word": "שָׁלוֹם",
+          "transliteration": "shalom",
+          "meaning": "peace - not just quiet, but wholeness, everything set right"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פָּנִים / אוֹר",
+          "reference": "Panim (face) and or (light) come together again at the very edge of Scripture: \"They will see His face\" (Revelation 22:4), in a city that needs no sun because the glory of God is its light. The blessing Aaron spoke is finally a place we get to live."
+        }
+      ],
+      "strongsNumber": "H215",
+      "definition": "ʾor: to be or become light, to shine, to give light",
+      "usage": "The blessing is built in three rising lines - keep, shine, lift - and each line is longer than the one before it in Hebrew, so the words themselves seem to open wider as they go, like a hand turning palm-up."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest under blessing. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the face of God (2 Cor 4:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Blessing God Wrote Out by Hand",
+      "body": "It is strange, when you stop on it, that God dictates the exact words. He does not simply tell Aaron, \"Bless the people.\" He gives the priest the sentences to say, three lines, almost a poem, and tells him to lay them on Israel like a hand on a head.\n\nThe lines climb. First, the plainest gift: \"May the LORD bless you and keep you\" - provide for you and guard you, the way a shepherd both feeds and fences the flock. Then it lifts: \"May the LORD cause His face to shine upon you and be gracious to you\" - not just gifts from God, but God's own face turned warm toward you, and grace, favor you did nothing to earn. Then it lifts again, as high as it can go: \"May the LORD lift up His countenance toward you and give you peace\" - the great face raised, looking right at you, and the result is shalom, wholeness, everything finally set right.\n\nNotice who does the work in every line. The LORD blesses. The LORD keeps. The LORD shines. The LORD lifts. The LORD gives. The priest's mouth moves, but the priest is not the source. He is only the channel through which a blessing flows that he could never manufacture. On a Sabbath, that is worth sitting with: the best thing that can happen to you today is not something you produce. It is something turned toward you.",
+      "keyInsight": "Every active verb in the blessing belongs to God. The priest only speaks it; the LORD is the one who blesses, keeps, shines, lifts, and gives. Blessing is not earned upward. It is received from a face already turned toward you.",
+      "content": "It is strange, when you stop on it, that God dictates the exact words. He does not simply tell Aaron, \"Bless the people.\" He gives the priest the sentences to say, three lines, almost a poem, and tells him to lay them on Israel like a hand on a head.\n\nThe lines climb. First, the plainest gift: \"May the LORD bless you and keep you\" - provide for you and guard you, the way a shepherd both feeds and fences the flock. Then it lifts: \"May the LORD cause His face to shine upon you and be gracious to you\" - not just gifts from God, but God's own face turned warm toward you, and grace, favor you did nothing to earn. Then it lifts again, as high as it can go: \"May the LORD lift up His countenance toward you and give you peace\" - the great face raised, looking right at you, and the result is shalom, wholeness, everything finally set right.\n\nNotice who does the work in every line. The LORD blesses. The LORD keeps. The LORD shines. The LORD lifts. The LORD gives. The priest's mouth moves, but the priest is not the source. He is only the channel through which a blessing flows that he could never manufacture. On a Sabbath, that is worth sitting with: the best thing that can happen to you today is not something you produce. It is something turned toward you."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Silver That Outlived the City",
+      "body": "In 1979, in a burial cave on a slope called Ketef Hinnom, just outside the old wall of Jerusalem, an archaeologist found two tiny rolls of silver, thin as foil and tightly coiled. They were so fragile it took three years to unroll them without crumbling them to dust.\n\nWhen the silver finally opened, there were words scratched into it - small, careful Hebrew letters. They were these words. \"May the LORD bless you and keep you; may the LORD make His face shine upon you.\" The little scrolls had been worn as amulets, carried against the body, around 600 BC. They are the oldest piece of biblical text ever found, older than the Dead Sea Scrolls by centuries.\n\nThink about what that means. Someone in the last days of the old kingdom, with Babylon on the horizon, wanted these particular sentences close to their skin. Not a battle plan. Not a curse on their enemies. A blessing about God's face shining. They were buried with it. The city fell; the silver kept. The words people most wanted to hold onto, at the end of everything, were the words God had handed Aaron to say.",
+      "connectionToTheme": "Long before there was a Bible to carry, people carried this blessing against their bodies. The oldest scrap of Scripture we possess is the very blessing about God's shining face - what people clung to when the world was ending.",
+      "content": "In 1979, in a burial cave on a slope called Ketef Hinnom, just outside the old wall of Jerusalem, an archaeologist found two tiny rolls of silver, thin as foil and tightly coiled. They were so fragile it took three years to unroll them without crumbling them to dust.\n\nWhen the silver finally opened, there were words scratched into it - small, careful Hebrew letters. They were these words. \"May the LORD bless you and keep you; may the LORD make His face shine upon you.\" The little scrolls had been worn as amulets, carried against the body, around 600 BC. They are the oldest piece of biblical text ever found, older than the Dead Sea Scrolls by centuries.\n\nThink about what that means. Someone in the last days of the old kingdom, with Babylon on the horizon, wanted these particular sentences close to their skin. Not a battle plan. Not a curse on their enemies. A blessing about God's face shining. They were buried with it. The city fell; the silver kept. The words people most wanted to hold onto, at the end of everything, were the words God had handed Aaron to say."
+    },
+    {
+      "type": "insight",
+      "heading": "His Name on You, His Face Toward You",
+      "body": "Read past the three poetic lines to the sentence underneath them, the one that explains what the blessing actually does: \"So they shall put My name on the Israelites, and I will bless them.\" That is the engine of the whole thing. To bless is to lay God's Name on a person. And once His Name is on you, He says, the blessing follows - \"I will bless them.\" Not Aaron. I.\n\nSo there are two halves to this: a Name placed on the people, and a face turned toward them. Hold those two together, because that is exactly where the whole Bible is heading. The shining face Israel asked for, generation after generation - \"make Your face shine upon us\" - was never given a face you could actually look at. You could not see God and live. The blessing was a real gift, but it was also a held breath, a longing for the day the face would arrive.\n\nIt arrives. \"The light of the knowledge of the glory of God,\" Paul writes, is found \"in the face of Jesus Christ\" (2 Corinthians 4:6). The same God who said \"let there be light\" over the first morning - the same word, or, hidden inside Aaron's blessing - made that light shine in human hearts by giving the glory a human face. \"The Word became flesh and made His dwelling among us. We have seen His glory\" (John 1:14). The face Aaron could only point toward, you can now look full into and live. And the Name that the priest laid on Israel like a hand on a head is laid on us in baptism - into the Name of the Father, and of the Son, and of the Holy Spirit. The blessing's two halves, His Name and His face, both come true in Christ. That is the Sabbath buried inside this Sabbath: you are not chasing a far-off shining. The face has turned toward you and has a name you can say.",
+      "historicalContext": "The priestly blessing was spoken daily in the temple and remains in synagogue and church liturgy to this day. By the time the Gospels were written, every Jewish reader knew this blessing in their bones; John's claim that \"we have seen His glory\" and that the unseen God has been \"made known\" (John 1:18) lands as the answer to centuries of praying \"make Your face shine.\"",
+      "fascinatingFact": "The Bible opens with God making light shine in darkness on day one, and ends with a city where \"they will see His face, and His name will be on their foreheads\" (Revelation 22:4) - His face and His Name, the exact two gifts of Aaron's blessing, now permanent and unhidden. Scripture begins with light commanded and ends with the face seen. The blessing in Numbers 6 is the middle of that long sentence.",
+      "content": "Read past the three poetic lines to the sentence underneath them, the one that explains what the blessing actually does: \"So they shall put My name on the Israelites, and I will bless them.\" That is the engine of the whole thing. To bless is to lay God's Name on a person. And once His Name is on you, He says, the blessing follows - \"I will bless them.\" Not Aaron. I.\n\nSo there are two halves to this: a Name placed on the people, and a face turned toward them. Hold those two together, because that is exactly where the whole Bible is heading. The shining face Israel asked for, generation after generation - \"make Your face shine upon us\" - was never given a face you could actually look at. You could not see God and live. The blessing was a real gift, but it was also a held breath, a longing for the day the face would arrive.\n\nIt arrives. \"The light of the knowledge of the glory of God,\" Paul writes, is found \"in the face of Jesus Christ\" (2 Corinthians 4:6). The same God who said \"let there be light\" over the first morning - the same word, or, hidden inside Aaron's blessing - made that light shine in human hearts by giving the glory a human face. \"The Word became flesh and made His dwelling among us. We have seen His glory\" (John 1:14). The face Aaron could only point toward, you can now look full into and live. And the Name that the priest laid on Israel like a hand on a head is laid on us in baptism - into the Name of the Father, and of the Son, and of the Holy Spirit. The blessing's two halves, His Name and His face, both come true in Christ. That is the Sabbath buried inside this Sabbath: you are not chasing a far-off shining. The face has turned toward you and has a name you can say."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God handed Aaron a blessing to lay on Israel - His face shining, His countenance lifted, His Name placed on the people - and reserved the actual blessing for Himself: \"I will bless them.\"",
+      "modernApplication": "We spend our weeks trying to be the face that everyone needs turned toward them - the boss's, the customer's, the algorithm's, the people whose approval we are always reaching for. A Sabbath quietly reverses the direction. The face that decides your worth is not one you have to win. It is already turned toward you, shining, and it has done nothing but choose you.",
+      "connectionPoint": "The longing in this blessing runs the length of Scripture. Israel prays it back as song - \"may God be gracious to us and bless us, and cause His face to shine upon us\" (Psalm 67:1). Jesus promises its end - \"blessed are the pure in heart, for they will see God\" (Matthew 5:8). And John sees it fulfilled forever - \"they will see His face, and His name will be on their foreheads\" (Revelation 22:4). One blessing, stretched from the wilderness tent to the city of light.",
+      "newTestamentEcho": "What Aaron could only speak, Christ became. \"No one has ever seen God, but the one and only Son... has made Him known\" (John 1:18). The shining face the priest blessed Israel toward is the face of Jesus, and \"from His fullness we have all received grace upon grace\" (John 1:16) - the very grace the second line of the blessing asked for."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose face are you most trying to get to shine on you right now - and what would change if you believed God's already does?",
+      "additionalQuestions": [
+        "Read the blessing slowly, out loud, hearing it spoken over you by name. Which of the three lines - kept, shone upon, given peace - do you most need to hear today?",
+        "Where in your life are you living as though God's face is turned away or merely tolerant, rather than shining toward you?",
+        "What would it look like to receive a blessing today instead of producing something - to let the day be given to you rather than earned?"
+      ],
+      "invitationType": "restful-receiving"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-receiving",
+      "prayerText": "LORD, today I am not asking to be useful. I am asking to be blessed. Bless me and keep me. Make Your face shine on me and be gracious to me - me, by name, with all the week still clinging to me. Lift Your countenance toward me and give me peace, real shalom, the kind I cannot manufacture. Thank You that Your Name is already on me and Your face has already turned, in Jesus, who is Your glory with a human face. Let me rest under that today, and ask for nothing more. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "Numbers 6:24-26"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a Sabbath day - there is nothing to achieve. Once today, speak the blessing over yourself or someone you love, slowly, by name: \"The LORD bless you and keep you; the LORD make His face shine upon you...\" Let the words be received, not performed. Then rest in the fact that God says, of you, \"I will bless them.\"",
+      "leavingAtCross": [
+        "The exhausting work of trying to make the right faces shine on me",
+        "The suspicion that God merely tolerates me rather than delights in me",
+        "The reflex to earn a Sabbath I am only meant to receive"
+      ],
+      "receivingFromCross": [
+        "The blessing God reserved for Himself to give: \"I will bless them\"",
+        "His Name laid on me and His face turned toward me in Christ",
+        "Shalom - not just quiet, but everything in me slowly being set right"
+      ],
+      "content": "This is a Sabbath day - there is nothing to achieve. Once today, speak the blessing over yourself or someone you love, slowly, by name: \"The LORD bless you and keep you; the LORD make His face shine upon you...\" Let the words be received, not performed. Then rest in the fact that God says, of you, \"I will bless them.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Who actually does the blessing in Numbers 6 - the priest, or the LORD? What in verse 27 settles the question?",
+        "The blessing asks for God's face to shine. Where does the New Testament say that face finally appears, and what does that change about how we read this passage?",
+        "What are the two gifts named at the end of the blessing - a Name and a face - and where do both of them turn up again at the very end of the Bible?"
+      ],
+      "forAccountabilityPartners": [
+        "Speak the priestly blessing over one another out loud, by name, before you talk about anything else.",
+        "Tell each other whose approval you have been most desperate for this week, and pray the line \"make Your face shine on them\" over each other.",
+        "Talk honestly: do you tend to experience God's face as shining, turned away, or merely tolerant - and why?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 67:1",
+          "text": "May God be gracious to us and bless us, and cause His face to shine upon us, Selah"
+        },
+        {
+          "reference": "2 Corinthians 4:6",
+          "text": "For God, who said, \"Let light shine out of darkness,\" made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ."
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        },
+        {
+          "reference": "Revelation 22:4",
+          "text": "They will see His face, and His name will be on their foreheads."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 6:22-27",
+          "note": "Read the blessing aloud three times, slowly, sitting on one line each time: kept, shone upon, given peace."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Aaron",
+      "title": "The Priest Who Spoke the Blessing",
+      "era": "13th century BC (the wilderness generation)",
+      "description": "Moses' older brother and Israel's first high priest. Aaron's whole calling was to stand between God and the people - to carry their names into God's presence and to carry God's blessing back out to them. He did not invent the words of the blessing; God dictated them. Aaron's hands and mouth were simply the place where heaven's blessing touched down on ordinary people.",
+      "keyQuote": "May the LORD cause His face to shine upon you and be gracious to you.",
+      "lessonForUs": "Aaron points past himself to a greater priest. Where Aaron could only speak the blessing of a face no one could see, Jesus - our great high priest - is the face, the very glory of God turned toward us. The blessing Aaron carried out of the tent, Christ carries in His own person to the world.",
+      "heading": "The Priest Who Spoke the Blessing"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2389,
+  "scriptureReference_full": "Numbers 6:22-27",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ya’er, panav; or, H215) reflects standard lexical sources.",
+    "The Ketef Hinnom silver amulets (KH1 and KH2), inscribed with the priestly blessing, were excavated by Gabriel Barkay in 1979 and are dated to the late 7th–early 6th century BC; they are the oldest known biblical text yet recovered."
+  ]
 }

@@ -1,38 +1,188 @@
 {
   "day": 43,
-  "title": "The sea opens",
-  "teaser": "Day 43 of Bible 365 — Exodus 14",
+  "title": "Hemmed in, then opened",
+  "teaser": "Trapped between Pharaoh and the sea, Israel is told to do the one thing that feels like nothing: stand still. Salvation is something you watch God accomplish, not something you achieve.",
   "framework": "Exodus 14 — Salvation by faith, not work",
   "scriptureReference": "Exodus 14",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 43"
+      "type": "scripture",
+      "reference": "Exodus 14:13-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Stand firm",
+        "the LORD's salvation",
+        "The LORD will fight for you",
+        "you need only to be still"
+      ],
+      "hebrewOriginal": "יְהוָה יִלָּחֵם לָכֶם וְאַתֶּם תַּחֲרִשׁוּן",
+      "passage": "But Moses told the people, \"Do not be afraid. Stand firm and you will see the LORD's salvation, which He will accomplish for you today; for the Egyptians you see today, you will never see again. The LORD will fight for you; you need only to be still.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תַּחֲרִשׁוּן",
+      "transliteration": "tacharishun",
+      "pronunciation": "ta-kha-ree-SHOON",
+      "meaning": "you shall be still, you shall keep silent, hold your peace",
+      "rootMeaning": "From the root charash, which means to be silent, to keep quiet, even to be deaf to. It is not the stillness of a calm afternoon. It is the deliberate quieting of a mouth that wants to argue, the dropping of hands that want to fix it.",
+      "usageNote": "Israel has just finished shouting - at God in fear, at Moses in blame. The command is not 'try harder' or 'fight better.' It is the opposite: stop the noise, stop the scrambling. The whole sentence sets two verbs against each other - the LORD will fight (yillachem, a word for going to war), and you will be still. The fighting is entirely His. The stillness is entirely yours.",
+      "wordByWord": [
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name of the God who brought them out"
+        },
+        {
+          "word": "יִלָּחֵם",
+          "transliteration": "yillachem",
+          "meaning": "He will fight, wage war - the verb used for armies in battle"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lachem",
+          "meaning": "for you, on your behalf"
+        },
+        {
+          "word": "וְאַתֶּם",
+          "transliteration": "ve'attem",
+          "meaning": "and you - emphatic, 'as for you'"
+        },
+        {
+          "word": "תַּחֲרִשׁוּן",
+          "transliteration": "tacharishun",
+          "meaning": "you shall be silent, hold still, keep your peace"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חָרַשׁ",
+          "reference": "The same root charash colors the silence of Job's three friends, who sat with him seven days and said nothing, and the LORD in Psalm 50 who 'will not keep silent.' Silence in Hebrew is rarely emptiness - it is a posture toward someone."
+        }
+      ],
+      "strongsNumber": "H2790",
+      "definition": "to be silent, to be still, to hold one's peace; (figuratively) to leave a matter alone in the hands of another",
+      "usage": "The command lands hardest on people who have always survived by doing. To a slave nation that knew only forced labor, the first instruction at the edge of freedom was to stop working and watch."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Salvation by faith, not work. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Baptism into Christ (1 Cor 10:1-2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "God Led Them Into the Trap",
+      "body": "Read the opening of the chapter slowly and something uncomfortable surfaces: Israel is cornered because God put them there. The LORD told Moses to have the people turn back and camp by the sea, in a place He knew Pharaoh would read as a blunder - \"They are wandering the land in confusion; the wilderness has boxed them in.\" The pillar that led them led them here, to a stretch of shore with water ahead and the most powerful army on earth behind.\n\nThen the dust appears on the horizon. Six hundred chariots. The Israelites look up, see the Egyptians marching after them, and the terror is immediate and total. They cry out to the LORD - and then they turn on Moses: \"Was it because there were no graves in Egypt that you brought us into the wilderness to die?\" It is a brutal line. They would rather have died as slaves with a guaranteed burial than risk this open, exposed, undefended freedom.\n\nThis is the first thing the passage teaches, and it is bracing. Sometimes the dead-end you are standing in is not a sign that you took a wrong turn. The cloud led them to the water on purpose. God was not improvising a rescue from a mistake; He had walked them into a place where only He could be the way out - so that when the way opened, no one could mistake whose hand had done it.",
+      "keyInsight": "The cloud led Israel to the trap on purpose. God sometimes brings His people to the edge of the impossible, not because the plan failed, but so the deliverance can only be credited to Him.",
+      "content": "Read the opening of the chapter slowly and something uncomfortable surfaces: Israel is cornered because God put them there. The LORD told Moses to have the people turn back and camp by the sea, in a place He knew Pharaoh would read as a blunder - \"They are wandering the land in confusion; the wilderness has boxed them in.\" The pillar that led them led them here, to a stretch of shore with water ahead and the most powerful army on earth behind.\n\nThen the dust appears on the horizon. Six hundred chariots. The Israelites look up, see the Egyptians marching after them, and the terror is immediate and total. They cry out to the LORD - and then they turn on Moses: \"Was it because there were no graves in Egypt that you brought us into the wilderness to die?\" It is a brutal line. They would rather have died as slaves with a guaranteed burial than risk this open, exposed, undefended freedom.\n\nThis is the first thing the passage teaches, and it is bracing. Sometimes the dead-end you are standing in is not a sign that you took a wrong turn. The cloud led them to the water on purpose. God was not improvising a rescue from a mistake; He had walked them into a place where only He could be the way out - so that when the way opened, no one could mistake whose hand had done it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hands That Wouldn't Stop Moving",
+      "body": "A friend of mine spent the worst year of his life trying to save his own marriage. He read the books, scheduled the counseling, rehearsed the conversations in the car, lay awake building the perfect apology. He was, by any measure, working harder at it than he had ever worked at anything. And it kept slipping further from his hands.\n\nA counselor finally said something he hated at the time: \"You are doing everything except the one thing that might matter. You are managing her. You have never once just stood still in front of her with nothing to offer and let her see you.\"\n\nHe told me later that letting his hands drop was the hardest thing he ever did - harder than all the striving. Striving at least felt like control. Standing there empty felt like dying. But it was only when he stopped trying to engineer the rescue that anything real had room to happen.\n\nThat is the posture Moses is commanding on the shore. Not \"do nothing\" in the lazy sense. Something far more costly: stop reaching for the controls. Let your hands drop. Stand firm and watch.",
+      "connectionToTheme": "The instinct to save ourselves by working harder feels like faith, but at the sea it is exactly what God tells Israel to lay down.",
+      "content": "A friend of mine spent the worst year of his life trying to save his own marriage. He read the books, scheduled the counseling, rehearsed the conversations in the car, lay awake building the perfect apology. He was, by any measure, working harder at it than he had ever worked at anything. And it kept slipping further from his hands.\n\nA counselor finally said something he hated at the time: \"You are doing everything except the one thing that might matter. You are managing her. You have never once just stood still in front of her with nothing to offer and let her see you.\"\n\nHe told me later that letting his hands drop was the hardest thing he ever did - harder than all the striving. Striving at least felt like control. Standing there empty felt like dying. But it was only when he stopped trying to engineer the rescue that anything real had room to happen.\n\nThat is the posture Moses is commanding on the shore. Not \"do nothing\" in the lazy sense. Something far more costly: stop reaching for the controls. Let your hands drop. Stand firm and watch."
+    },
+    {
+      "type": "insight",
+      "heading": "Salvation You Watch, Not Salvation You Win",
+      "body": "Here is the center of the whole chapter, and it is a single sentence: \"The LORD will fight for you; you need only to be still.\" Sit on the weight of that. At the most decisive moment in Israel's history - the moment that makes them a nation - the people contribute nothing to their own rescue except their presence and their trust. They do not fight. They do not negotiate. They do not even pray their way through it; God actually tells Moses to stop crying out and move the people forward. The sea opens, the people walk, the waters return. Israel's entire role is to be carried across on dry ground between two walls of water.\n\nThis is why Exodus 14 sits where it sits in the Bible. It is the foundational picture of how God saves: not as a reward for effort, but as a deliverance given to people who could not deliver themselves. Centuries later the prophets and apostles will keep reaching back to this shore. The pattern set here - God fights, the people are still, salvation is received - becomes the grammar of the entire gospel. We are not saved by the quality of our striving at the edge of the sea. We are saved because Another parts the water and bids us walk through. \"Stand firm and you will see the LORD's salvation, which He will accomplish for you.\" The verb is His. The watching is ours.",
+      "historicalContext": "Exodus 14 is the hinge of the Old Testament's memory. More than any other event, the crossing of the sea is what later Israel pointed to when it asked, \"Who is our God, and what is He like?\" The Song of the Sea in chapter 15 - some of the oldest poetry in the Bible - sings it back: \"The LORD is my strength and my song, and He has become my salvation.\" Salvation is named as something God became for them, not something they accomplished.",
+      "fascinatingFact": "Notice the timing in the text. The LORD drives the sea back \"all that night\" with a strong east wind, and the rescue is completed \"at daybreak.\" The deliverance happens largely in the dark, while Israel waits. By the time there is enough light to see clearly, the fighting is already over and the enemy is already on the shore. Faith is asked to stand firm before the morning, not after it.",
+      "content": "Here is the center of the whole chapter, and it is a single sentence: \"The LORD will fight for you; you need only to be still.\" Sit on the weight of that. At the most decisive moment in Israel's history - the moment that makes them a nation - the people contribute nothing to their own rescue except their presence and their trust. They do not fight. They do not negotiate. They do not even pray their way through it; God actually tells Moses to stop crying out and move the people forward. The sea opens, the people walk, the waters return. Israel's entire role is to be carried across on dry ground between two walls of water.\n\nThis is why Exodus 14 sits where it sits in the Bible. It is the foundational picture of how God saves: not as a reward for effort, but as a deliverance given to people who could not deliver themselves. Centuries later the prophets and apostles will keep reaching back to this shore. The pattern set here - God fights, the people are still, salvation is received - becomes the grammar of the entire gospel. We are not saved by the quality of our striving at the edge of the sea. We are saved because Another parts the water and bids us walk through. \"Stand firm and you will see the LORD's salvation, which He will accomplish for you.\" The verb is His. The watching is ours."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Trapped between Pharaoh and the sea, Israel is rescued not by fighting but by being still while God opens a way through the water no one could open for themselves.",
+      "modernApplication": "We instinctively treat our standing with God like the marriage my friend tried to manage - more effort, more performance, more careful management of how we appear. The sea exposes that instinct for what it is. The most decisive deliverance in Scripture asked the people for empty hands and a watching heart, not better work.",
+      "connectionPoint": "Paul reaches all the way back to this shore to explain Christian baptism: \"our forefathers were all under the cloud, and they all passed through the sea. They were all baptized into Moses in the cloud and in the sea\" (1 Corinthians 10:1-2). The sea-crossing was the rough draft of the deeper rescue. The waters that should have meant death became the place Israel passed through into life - the same shape baptism traces, where we go down into the water and come up alive on the far shore.",
+      "newTestamentEcho": "The pattern set at the sea finds its fullest meaning at the cross. The waters of judgment that drowned the enemy are the waters Israel walked through dry - because the LORD Himself stood between them and the flood, the pillar of cloud in the darkness. At Calvary the One who is our salvation goes down into the deep waters in our place (the death He calls a baptism in Luke 12:50), so that we who could never fight our way across are carried through to the far shore. We are still bidden to do the same impossible thing: \"Stand firm and you will see the LORD's salvation.\""
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you standing right now with water ahead and an army behind - a situation you cannot fight your way out of by working harder?",
+      "additionalQuestions": [
+        "What would it actually cost you to 'be still' in that situation - to let your hands drop and stop managing the outcome?",
+        "Is there a dead-end in your life you have read as a wrong turn, that God may have led you into so that only He could be the way out?",
+        "Israel preferred slavery with a guaranteed grave to risky freedom. Where are you tempted to go back to a safer captivity rather than trust an open road?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I am so used to saving myself. I read the books, rehearse the speeches, lie awake building the rescue with my own hands - and call it faith. At the edge of the sea You ask me for something harder: to stand firm, to be still, to let You fight. Quiet the noise in me that wants to argue and scramble. Where I am hemmed in with no way through, be my way through. Open the water no one else can open, and give me the courage to walk between the walls trusting that the One who goes before me has already gone down into the deep in my place. I will be still, and I will watch You save. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one situation where you have been frantically trying to save yourself. Today, lay your hands open in front of God for five minutes and pray only one line back to Him: \"The LORD will fight for me; I need only to be still.\" Then take the next ordinary step forward without trying to control the outcome.",
+      "leavingAtCross": [
+        "The exhausting belief that my rescue depends on the quality of my own striving",
+        "The instinct to manage and perform my way into safety with God and with people",
+        "The fear that an open, undefended road is more dangerous than a familiar captivity"
+      ],
+      "receivingFromCross": [
+        "A salvation I watch God accomplish rather than one I have to win",
+        "The freedom to let my hands drop and stand firm before the morning comes",
+        "The promise that the One who is my salvation has already gone down into the deep ahead of me"
+      ],
+      "content": "Name the one situation where you have been frantically trying to save yourself. Today, lay your hands open in front of God for five minutes and pray only one line back to Him: \"The LORD will fight for me; I need only to be still.\" Then take the next ordinary step forward without trying to control the outcome."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that God led Israel to the sea on purpose, rather than them stumbling into the trap by mistake?",
+        "What is the difference between the stillness God commands at the sea and simple passivity or laziness?",
+        "How does the crossing of the sea shape the way the rest of the Bible talks about salvation as something received rather than earned?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you are currently 'fighting the sea' - working harder at something only God can do.",
+        "Talk honestly about why being still feels more like dying than striving does - what control are you afraid to lose?",
+        "Ask each other: where is God asking you to stand firm and watch, before there is enough light to see how it ends?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 14:30",
+          "text": "That day the LORD saved Israel from the hand of the Egyptians, and Israel saw the Egyptians dead on the shore."
+        },
+        {
+          "reference": "Exodus 15:2",
+          "text": "The LORD is my strength and my song, and He has become my salvation. He is my God, and I will praise Him, my father's God, and I will exalt Him."
+        },
+        {
+          "reference": "1 Corinthians 10:1-2",
+          "text": "I do not want you to be unaware, brothers, that our forefathers were all under the cloud, and that they all passed through the sea. They were all baptized into Moses in the cloud and in the sea."
+        },
+        {
+          "reference": "Ephesians 2:8-9",
+          "text": "For it is by grace you have been saved through faith, and this not from yourselves; it is the gift of God, not by works, so that no one can boast."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 14-15",
+          "note": "Read the prose account of the crossing in chapter 14 alongside the Song of the Sea in chapter 15, and notice how the poem turns the rescue into worship - 'He has become my salvation.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Servant Who Stretched Out His Hand",
+      "description": "Raised in Pharaoh's household, exiled to the desert, and called back to lead a slave nation out of Egypt, Moses stands at the sea as the mediator between a terrified people and the God who is about to save them. At the decisive moment he gives no battle plan - he tells the people to stand firm and be still, then lifts his staff and lets God do the parting. He embodies the lesson the chapter teaches: the deliverer's job is to point the people to the LORD's salvation, not to be it.",
+      "keyQuote": "Do not be afraid. Stand firm and you will see the LORD's salvation, which He will accomplish for you today.",
+      "lessonForUs": "Even the great leader does not win the day at the sea by strength or strategy. He trusts, he obeys the small command to lift his hand, and he watches God fight. Our calling at the impossible places is the same: stand firm, and point ourselves and others toward the One who saves.",
+      "heading": "The Servant Who Stretched Out His Hand"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2071,
+  "scriptureReference_full": "Exodus 14 (Exodus 14:13-14 anchor)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (tacharishun, root charash H2790) reflects standard lexical sources.",
+    "Reading of the sea-crossing as a type of baptism follows the Apostle Paul's own connection in 1 Corinthians 10:1-2."
+  ]
 }

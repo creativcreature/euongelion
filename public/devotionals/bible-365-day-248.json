@@ -1,38 +1,196 @@
 {
   "day": 248,
-  "title": "Daniel: Messiah Cut Off — Day 3 — Pivot",
-  "teaser": "Day 248 of Bible 365 — Daniel 7, 9",
+  "title": "Cut off, and crowned",
+  "teaser": "Daniel sees a Son of Man given a kingdom that never ends — and an Anointed One who is cut off and has nothing. The two are one. The cross and the throne meet in a single face.",
   "framework": "Daniel 7, 9 — Daniel: Messiah Cut Off",
   "scriptureReference": "Daniel 7, 9",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 248"
+      "type": "scripture",
+      "reference": "Daniel 7:13-14; 9:25-26",
+      "translation": "BSB",
+      "emphasis": [
+        "One like the Son of Man",
+        "everlasting dominion",
+        "the Messiah will be cut off and will have nothing",
+        "to make atonement for iniquity"
+      ],
+      "hebrewOriginal": "וְאַחֲרֵי הַשָּׁבֻעִים שִׁשִּׁים וּשְׁנַיִם יִכָּרֵת מָשִׁיחַ וְאֵין לוֹ",
+      "passage": "In my vision in the night I continued to watch, and I saw One like the Son of Man coming with the clouds of heaven. He approached the Ancient of Days and was led into His presence. And He was given dominion, glory, and kingship, that the people of every nation and language should serve Him. His dominion is an everlasting dominion that will not pass away, and His kingdom is one that will never be destroyed. ... Know and understand this: From the issuance of the decree to restore and rebuild Jerusalem, until the Messiah, the Prince, there will be seven weeks and sixty-two weeks. It will be rebuilt with streets and a trench, but in times of distress. Then after the sixty-two weeks the Messiah will be cut off and will have nothing."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 7, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 7, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יִכָּרֵת",
+      "transliteration": "yikkareth",
+      "pronunciation": "yik-kah-RAYT",
+      "meaning": "he will be cut off, severed, killed",
+      "rootMeaning": "From the root karath, to cut. It is the same verb used for felling a tree, severing a limb, and - heavily throughout the Law - for the covenant penalty of being 'cut off from the people.' To be cut off is to be severed from the living, from the covenant, from the land.",
+      "usageNote": "Daniel 9:26 says the Mashiach - the Anointed One - will be cut off, yikkareth, and have 'nothing,' ein lo: no children, no possession, no continuance, stripped bare. Yet in the same prophecy (9:24) this cutting-off is what makes atonement for iniquity and brings in everlasting righteousness. The verb of judgment becomes the verb of rescue.",
+      "wordByWord": [
+        {
+          "word": "וְאַחֲרֵי",
+          "transliteration": "ve'acharei",
+          "meaning": "and after"
+        },
+        {
+          "word": "הַשָּׁבֻעִים",
+          "transliteration": "hashavu'im",
+          "meaning": "the weeks (literally 'sevens')"
+        },
+        {
+          "word": "יִכָּרֵת",
+          "transliteration": "yikkareth",
+          "meaning": "he will be cut off, severed, killed"
+        },
+        {
+          "word": "מָשִׁיחַ",
+          "transliteration": "mashiach",
+          "meaning": "Anointed One, Messiah, Christ"
+        },
+        {
+          "word": "וְאֵין לוֹ",
+          "transliteration": "ve'ein lo",
+          "meaning": "and there is nothing to Him - He will have nothing"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בַּר אֱנָשׁ / bar enash",
+          "reference": "In Daniel 7:13 (written in Aramaic), the figure on the clouds is bar enash, 'a son of man' - a human one, not an angel and not a beast. Jesus' favorite name for Himself in the Gospels is 'the Son of Man' (Mark 14:62), and He draws it straight from this verse, the night He is condemned."
+        }
+      ],
+      "strongsNumber": "H3772",
+      "definition": "to cut off, cut down, sever; to be killed or destroyed; to make a covenant (by cutting)",
+      "usage": "The same root karath that names a death also names a covenant: in Hebrew you do not 'make' a covenant, you 'cut' one (karath berith), passing between severed pieces. The Anointed One who is cut off is the covenant being cut."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel: Messiah Cut Off. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the cut-off Anointed (Dan 9:26).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "An Old Man Reading an Old Book, and an Answer From Heaven",
+      "body": "It is the first year of the Persians. Babylon has fallen overnight, the empire that burned the Temple and dragged Daniel's whole world into exile. Daniel is now an old man, near ninety, and he is doing something quiet and almost ordinary: he is reading. He has come to the scroll of Jeremiah and counted the years - seventy of them - that the prophet said the exile would last. The number is nearly up.\n\nSo Daniel prays. Not a tidy prayer. He puts on sackcloth, sits in ashes, and confesses - and the striking thing is the pronoun he uses. He does not pray, 'They sinned.' He prays, 'We have sinned and done wrong. We have acted wickedly and rebelled' (9:5). The most righteous man in the book stands inside the guilt of his people and pleads not on the basis of anyone's goodness: 'For we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion' (9:18). Then comes the cry that empties of every bargain: 'O Lord, listen! O Lord, forgive! O Lord, hear and act!' (9:19).\n\nWhile he is still speaking, the answer arrives. The angel Gabriel tells him the seventy years of exile are real - but behind them stands a longer reckoning, 'seventy weeks,' seventy sevens, decreed 'to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness' (9:24). Daniel asked for a city to be rebuilt. He is handed the end of sin itself.",
+      "keyInsight": "Daniel prays for a temporary release from exile; God answers with a permanent release from sin. The man counting seventy years is told about seventy weeks - and at the center of them, an Anointed One who will make atonement for iniquity by being cut off.",
+      "content": "It is the first year of the Persians. Babylon has fallen overnight, the empire that burned the Temple and dragged Daniel's whole world into exile. Daniel is now an old man, near ninety, and he is doing something quiet and almost ordinary: he is reading. He has come to the scroll of Jeremiah and counted the years - seventy of them - that the prophet said the exile would last. The number is nearly up.\n\nSo Daniel prays. Not a tidy prayer. He puts on sackcloth, sits in ashes, and confesses - and the striking thing is the pronoun he uses. He does not pray, 'They sinned.' He prays, 'We have sinned and done wrong. We have acted wickedly and rebelled' (9:5). The most righteous man in the book stands inside the guilt of his people and pleads not on the basis of anyone's goodness: 'For we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion' (9:18). Then comes the cry that empties of every bargain: 'O Lord, listen! O Lord, forgive! O Lord, hear and act!' (9:19).\n\nWhile he is still speaking, the answer arrives. The angel Gabriel tells him the seventy years of exile are real - but behind them stands a longer reckoning, 'seventy weeks,' seventy sevens, decreed 'to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness' (9:24). Daniel asked for a city to be rebuilt. He is handed the end of sin itself."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hospice Volunteer Who Stopped Defending Herself",
+      "body": "A woman I'll call Ruth spent decades volunteering in a hospice. She told me once that the hardest patients were not the angry ones or the frightened ones. The hardest were the ones still building a case. Near the end of their lives they would catalog, out loud, the reasons they had been good: the church committees, the debts forgiven, the children raised. They were preparing to be assessed, marshaling evidence for a tribunal they could feel coming.\n\nThe ones who died at peace, she said, had stopped doing that. They had quit the defense. One man, days from the end, said to her simply, 'I have nothing to show. I'm just going to throw myself on the mercy of the court.'\n\nThat is the posture Daniel takes in chapter 9, and it is the posture the whole vision is built to reward. He stops presenting his righteous acts. He has nothing to show but God's compassion - and that turns out to be the one plea heaven was waiting for. The man with nothing in his hands is told about an Anointed One who would have nothing in His.",
+      "connectionToTheme": "Daniel does not pray from his record; he prays from God's mercy. The vision he receives answers that exact posture - an Anointed One who saves not by His standing but by His being cut off and having nothing.",
+      "content": "A woman I'll call Ruth spent decades volunteering in a hospice. She told me once that the hardest patients were not the angry ones or the frightened ones. The hardest were the ones still building a case. Near the end of their lives they would catalog, out loud, the reasons they had been good: the church committees, the debts forgiven, the children raised. They were preparing to be assessed, marshaling evidence for a tribunal they could feel coming.\n\nThe ones who died at peace, she said, had stopped doing that. They had quit the defense. One man, days from the end, said to her simply, 'I have nothing to show. I'm just going to throw myself on the mercy of the court.'\n\nThat is the posture Daniel takes in chapter 9, and it is the posture the whole vision is built to reward. He stops presenting his righteous acts. He has nothing to show but God's compassion - and that turns out to be the one plea heaven was waiting for. The man with nothing in his hands is told about an Anointed One who would have nothing in His."
+    },
+    {
+      "type": "insight",
+      "heading": "The Cut-Off One and the Crowned One Have the Same Face",
+      "body": "Hold Daniel 7 and Daniel 9 open beside each other, because this is the day's pivot, and the whole canon hangs on it.\n\nIn chapter 7, Daniel sees a courtroom - thrones set in place, the Ancient of Days seated, His clothing white as snow, a river of fire, the books opened (7:9-10). And into that court comes 'One like the Son of Man coming with the clouds of heaven.' He is given dominion, glory, and kingship; every nation serves Him; His kingdom 'will never be destroyed' (7:13-14). A human figure is crowned with the everlasting reign that belongs to God alone.\n\nIn chapter 9, the Anointed One - the Mashiach, the Prince - 'will be cut off and will have nothing' (9:26). No throne. No dominion. Severed. Empty-handed. Dead.\n\nFor centuries readers could not see how both could be true at once. A Messiah who reigns forever, and a Messiah who is killed and has nothing - which is it? The answer Scripture gives is that they are not two figures but one, in two moments. The Son of Man is given the kingdom because the Anointed One is cut off. The crown in chapter 7 is the wages of the cross in chapter 9. He does not reign instead of dying; He reigns by way of dying. The atonement promised in 9:24 - 'to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness' - is accomplished in the cutting-off of 9:26 and vindicated in the coronation of 7:14. The deepest mystery of these chapters is not which Messiah is real. It is that the Lamb who was slain is the King who reigns, and the order is never reversed: first cut off, then crowned.",
+      "historicalContext": "The book of Daniel sits at the hinge of exile and return, written for a people who had watched their Temple burn and their king blinded. Its visions are addressed to that ache: who really rules, now that pagan empires hold the saints in their hand? Daniel 7 and 9 answer with one figure - human, suffering, killed - to whom the everlasting kingdom is given. Jewish and Christian readers across two thousand years have wrestled with the arithmetic of the seventy weeks; the church has read 9:24-26 as fulfilled in Jesus, whose death 'after the sixty-two weeks' makes the atonement the vision promised.",
+      "fascinatingFact": "When Jesus stands before the high priest on the night He is condemned, He is asked directly whether He is the Messiah. He answers by quoting this very chapter: 'You will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven' (Mark 14:62, citing Daniel 7:13). He claims the crown of chapter 7 in the same hour He walks toward the cutting-off of chapter 9. The high priest tears his robes. Within hours the Anointed One is cut off, and has nothing.",
+      "content": "Hold Daniel 7 and Daniel 9 open beside each other, because this is the day's pivot, and the whole canon hangs on it.\n\nIn chapter 7, Daniel sees a courtroom - thrones set in place, the Ancient of Days seated, His clothing white as snow, a river of fire, the books opened (7:9-10). And into that court comes 'One like the Son of Man coming with the clouds of heaven.' He is given dominion, glory, and kingship; every nation serves Him; His kingdom 'will never be destroyed' (7:13-14). A human figure is crowned with the everlasting reign that belongs to God alone.\n\nIn chapter 9, the Anointed One - the Mashiach, the Prince - 'will be cut off and will have nothing' (9:26). No throne. No dominion. Severed. Empty-handed. Dead.\n\nFor centuries readers could not see how both could be true at once. A Messiah who reigns forever, and a Messiah who is killed and has nothing - which is it? The answer Scripture gives is that they are not two figures but one, in two moments. The Son of Man is given the kingdom because the Anointed One is cut off. The crown in chapter 7 is the wages of the cross in chapter 9. He does not reign instead of dying; He reigns by way of dying. The atonement promised in 9:24 - 'to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness' - is accomplished in the cutting-off of 9:26 and vindicated in the coronation of 7:14. The deepest mystery of these chapters is not which Messiah is real. It is that the Lamb who was slain is the King who reigns, and the order is never reversed: first cut off, then crowned."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Daniel is shown one figure in two moments: an Anointed One cut off with nothing (9:26), and a Son of Man given a kingdom that never ends (7:14). The cutting-off makes the atonement; the crowning is its vindication.",
+      "modernApplication": "Most of us are still building Daniel's first prayer instead of his last one - presenting our righteous acts, hoping the record holds, bracing for a tribunal we can feel coming. The gospel of these chapters undoes that. Your standing before God does not rest on what you have to show. It rests on the One who was cut off and had nothing, so that you, who have nothing, could be given everything. You can stop building the case. The court has already been satisfied by the Anointed One in your place.",
+      "connectionPoint": "The thread runs straight through Scripture. Isaiah saw the same suffering-then-exalted figure: 'He was cut off from the land of the living, stricken for the transgression of My people' (Isaiah 53:8), the Servant who, after His anguish, is 'allotted a portion with the great' (Isaiah 53:12). Daniel's seventy weeks press toward atonement (Daniel 9:24); Isaiah's Servant accomplishes it; and at the end the same Son of Man Daniel saw on the clouds returns - 'Look, He is coming with the clouds, and every eye will see Him' (Revelation 1:7). Daniel 9 is the cross; Daniel 7 is the throne; and Revelation is the homecoming.",
+      "newTestamentEcho": "What Daniel saw in shadow, Christ fulfilled in the flesh. Cut off after the sixty-two weeks, He died outside the city with nothing - no possessions, His garments gambled away (John 19:24), forsaken (Mark 15:34). And then the vindication: 'Therefore God exalted Him to the highest place' (Philippians 2:9), seated at the right hand of the Ancient of Days, given 'all authority in heaven and on earth' (Matthew 28:18) - the everlasting dominion of Daniel 7:14, won by the cutting-off of Daniel 9:26."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of Daniel's two prayers are you praying right now - the careful defense of your record, or the empty-handed cry, 'O Lord, hear and act, because of Your great compassion'?",
+      "additionalQuestions": [
+        "Where are you still presenting your righteous acts to God - or to yourself - as the reason you should be accepted?",
+        "What would change today if you really believed the court has already been satisfied, and you have nothing left to prove?",
+        "The Son of Man was crowned by way of the cross. Where might God be asking you to trust that the lowest place, not the climb, is the road to life?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am tired of building my case. Like Daniel, I come not because of my righteous acts but because of Your great compassion. Thank You for the One who was cut off and had nothing, so that I, who have nothing, would be given everything. Thank You that the Son of Man who hung with empty hands now reigns with a kingdom that will never be destroyed. Let me stop defending myself and simply rest in His finished work. O Lord, hear and act, for Your mercy's sake. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, put down one piece of the case you keep building - one righteous act you quietly hold up to prove you are acceptable. Name it before God, then lay it down and receive instead the standing the cut-off Messiah already won for you.",
+      "leavingAtCross": [
+        "The case I keep building - the record of my good acts held up as the reason I should be accepted",
+        "The dread of a tribunal I can feel coming, where I will have to account for myself",
+        "The belief that I must climb to a crown rather than be given one"
+      ],
+      "receivingFromCross": [
+        "Atonement for iniquity, made once and for all by the Anointed One cut off in my place",
+        "A standing before God that rests on His compassion, not my record",
+        "A King whose kingdom will never be destroyed, who reigns by way of the cross He bore for me"
+      ],
+      "content": "Today, put down one piece of the case you keep building - one righteous act you quietly hold up to prove you are acceptable. Name it before God, then lay it down and receive instead the standing the cut-off Messiah already won for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How do the two figures of Daniel 7 (the Son of Man crowned forever) and Daniel 9 (the Anointed One cut off with nothing) turn out to be one person in two moments?",
+        "On what basis does Daniel pray in chapter 9 - his own righteousness, or God's compassion? Why does that matter for how we come to God?",
+        "What does the seventy-weeks decree say the Anointed One will accomplish (9:24), and how is that 'atonement for iniquity' connected to His being 'cut off' (9:26)?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you have been 'presenting your righteous acts' - to God, to others, or to yourself - instead of resting in mercy.",
+        "Talk about what it would mean, practically, to stop building your case this week and live as someone the court has already acquitted.",
+        "Ask each other: where in your life are you reaching for a crown by climbing, when Christ shows that the road runs through the lowest place first?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 9:24",
+          "text": "Seventy weeks are decreed for your people and your holy city to stop their transgression, to put an end to sin, to make atonement for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy Place."
+        },
+        {
+          "reference": "Daniel 7:9-10",
+          "text": "As I continued to watch, thrones were set in place, and the Ancient of Days took His seat. His clothing was white as snow, and the hair of His head was like pure wool. His throne was flaming with fire, and its wheels were all ablaze. A river of fire was flowing, coming out from His presence. Thousands upon thousands attended Him, and myriads upon myriads stood before Him. The court was convened, and the books were opened."
+        },
+        {
+          "reference": "Isaiah 53:8",
+          "text": "By oppression and judgment He was taken away, and who can recount His descendants? For He was cut off from the land of the living; He was stricken for the transgression of My people."
+        },
+        {
+          "reference": "Mark 14:62",
+          "text": "\"I am,\" said Jesus, \"and you will see the Son of Man sitting at the right hand of Power and coming with the clouds of heaven.\""
+        },
+        {
+          "reference": "Revelation 1:7",
+          "text": "Look, He is coming with the clouds, and every eye will see Him, even those who pierced Him. And all the tribes of the earth will mourn because of Him. So shall it be! Amen."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 9:1-27",
+          "note": "Read Daniel's full prayer (vv. 1-19) before the seventy-weeks answer (vv. 20-27). Notice how he prays from God's compassion, not his record, and how the answer presses past exile toward atonement."
+        },
+        {
+          "type": "book",
+          "title": "Daniel 7:9-14",
+          "note": "Read the throne-room vision slowly, then set it beside 9:26. Ask how the crowned Son of Man and the cut-off Anointed One can be one figure."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Daniel",
+      "title": "The Exile Who Prayed From Mercy",
+      "description": "A Judean noble carried to Babylon as a youth and made to serve four pagan kings across the rise and fall of two empires. Faithful in a foreign court, he refused the king's food, survived the lions' den, and read the times by reading the Scriptures. In his old age, counting Jeremiah's seventy years near their end, he confessed his people's sin as his own and pleaded on God's compassion rather than any righteousness of his own - and was answered with the vision of the Messiah cut off and the Son of Man crowned.",
+      "keyQuote": "We are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.",
+      "lessonForUs": "Daniel models how to come to God: not with a case to win but with empty hands and a plea for mercy. And the vision he received shows why that posture is safe - because the Anointed One was cut off and had nothing, so that we, who have nothing to show, could be given a kingdom that will never be destroyed.",
+      "heading": "The Exile Who Prayed From Mercy"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1771,
+  "scriptureReference_full": "Daniel 7:9-14; 9:3-5, 18-19, 24-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew/Aramaic word study (yikkareth / karath H3772; bar enash, Daniel 7:13) reflects standard lexical sources. The reading of Daniel 9:24-26 as fulfilled in the death of Jesus is the historic Christian interpretation; the arithmetic of the seventy weeks has been understood in several ways across Jewish and Christian tradition."
+  ]
 }

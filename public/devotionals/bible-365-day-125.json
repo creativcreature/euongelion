@@ -1,38 +1,174 @@
 {
   "day": 125,
-  "title": "Elisha Ministry — Day 6 — Deeper Dive",
-  "teaser": "Day 125 of Bible 365 — 2 Kings 4-13",
+  "title": "Wash, and be clean",
+  "teaser": "Elisha's miracles are small and unglamorous - a borrowed jar, a river, twenty loaves. The grace runs through ordinary water, and it reaches the foreigner first.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 125"
+      "type": "scripture",
+      "reference": "2 Kings 5:10-14",
+      "translation": "BSB",
+      "emphasis": [
+        "Wash and be cleansed",
+        "the rivers of Damascus",
+        "like that of a little child"
+      ],
+      "hebrewOriginal": "רְחַץ וּטְהָר",
+      "passage": "Then Elisha sent him a messenger, who said, “Go and wash yourself seven times in the Jordan, and your flesh will be restored, and you will be clean.” But Naaman went away angry, saying, “I thought that he would surely come out, stand and call on the name of the LORD his God, and wave his hand over the spot to cure my leprosy. Are not the Abanah and Pharpar, the rivers of Damascus, better than all the waters of Israel? Could I not have washed in them and been cleansed?” So he turned and went away in a rage. Naaman’s servants, however, approached him and said, “My father, if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, ‘Wash and be cleansed’?” So Naaman went down and dipped himself in the Jordan seven times, according to the word of the man of God, and his flesh was restored and became like that of a little child, and he was clean."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רְחַץ וּטְהָר",
+      "transliteration": "rechats u-tehar",
+      "pronunciation": "reh-KHATS oo-teh-HAR",
+      "meaning": "wash, and be clean",
+      "rootMeaning": "Rachats is the everyday verb for washing - the dust off feet, the body in a basin, laundry at the river. Taher is the word for ceremonial cleanness, the state a leper had to reach before he could rejoin the camp. The first word is mundane; the second is holy. Elisha joins them in one short command.",
+      "usageNote": "Naaman expected a great word and a sweeping gesture. What he got was two small verbs an Israelite child would know. The offense of the command was its smallness - that the cure for a great man's great disease came through water any servant could carry.",
+      "wordByWord": [
+        {
+          "word": "רְחַץ",
+          "transliteration": "rechats",
+          "meaning": "wash - the ordinary, physical act of washing"
+        },
+        {
+          "word": "וּ",
+          "transliteration": "u",
+          "meaning": "and - the small word that binds the mundane to the holy"
+        },
+        {
+          "word": "טְהָר",
+          "transliteration": "tehar",
+          "meaning": "be clean - become ritually, truly clean before God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "טָהוֹר",
+          "reference": "Tahor, the adjective clean, runs through Leviticus 13-14, the long law of the leper. Naaman, a Gentile commander, never read those chapters - yet the Jordan does for him what the law described, and he walks out clean."
+        }
+      ],
+      "strongsNumber": "H7364",
+      "definition": "rachats: to wash, to bathe; tahar: to be pure, to be clean",
+      "usage": "The whole of Naaman's pride lives in the gap between what he wanted - a grand healing worthy of his rank - and what he was told: wash, like anyone, in a river smaller than the ones back home."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Ministry Made of Small Things",
+      "body": "Elijah went out in fire - a chariot of fire, horses of fire, a whirlwind into heaven. His successor Elisha asked for a double portion of that spirit, and got it. You might expect his ministry to be twice as loud. Instead Elisha's miracles are almost embarrassingly domestic.\n\nA widow is drowning in debt and about to lose her sons to a creditor. Elisha's answer is not thunder. It is a question - \"what do you have in the house?\" - and the answer is one small jar of oil. Borrow empty jars, he says, and pour. The oil flows until the last borrowed jar is full, and then it stops. She sells it, pays the debt, and lives on the rest. A prophet who could have called fire instead multiplies cooking oil so a mother can keep her children.\n\nIt goes on like this. A man brings twenty loaves of barley bread, and a hundred hungry men are fed with leftovers to spare. A borrowed ax head slides into the Jordan, and Elisha makes the iron float so a poor worker need not answer for a tool he could not replace. A Shunammite woman shows him ordinary hospitality - a meal, a small upper room - and her dead son is laid on Elisha's own bed and breathes again. The God of Elisha keeps reaching into kitchens and debts and borrowed tools. The grace is enormous; the containers are small."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cure He Almost Drove Past",
+      "body": "Naaman was the kind of man rooms rearranged themselves for. Commander of Aram's army, victorious, decorated, standing near the throne - and under the armor, a leper, watching his own skin die.\n\nThe tip that saved him came from the bottom of his own household: a captured Israelite girl, a servant to his wife, who said there was a prophet in Samaria who could cure him. So the great man went, with horses and chariots and silver and gold, expecting to buy a miracle worthy of his name. And the prophet did not even come to the door. He sent a messenger with a sentence: go wash in the Jordan seven times.\n\nNaaman nearly threw the whole thing away over the size of it. He wanted a ceremony - the prophet's hand waving over the spot, the name of God called out, something grand. A muddy river he could see better versions of back home felt like an insult. It was his own servants, again the lowest voices, who talked him down: if he had asked you to do some great thing, would you not have done it? How much more when he simply says, wash. So he went down into the Jordan, dipped seven times, and came up with skin like a child's.",
+      "connectionToTheme": "The grace was always there; pride almost walked away from it because it came too small and too plain to feel deserved. The cure ran through ordinary water, and reached him only when he stooped.",
+      "content": "Naaman was the kind of man rooms rearranged themselves for. Commander of Aram's army, victorious, decorated, standing near the throne - and under the armor, a leper, watching his own skin die.\n\nThe tip that saved him came from the bottom of his own household: a captured Israelite girl, a servant to his wife, who said there was a prophet in Samaria who could cure him. So the great man went, with horses and chariots and silver and gold, expecting to buy a miracle worthy of his name. And the prophet did not even come to the door. He sent a messenger with a sentence: go wash in the Jordan seven times.\n\nNaaman nearly threw the whole thing away over the size of it. He wanted a ceremony - the prophet's hand waving over the spot, the name of God called out, something grand. A muddy river he could see better versions of back home felt like an insult. It was his own servants, again the lowest voices, who talked him down: if he had asked you to do some great thing, would you not have done it? How much more when he simply says, wash. So he went down into the Jordan, dipped seven times, and came up with skin like a child's."
+    },
+    {
+      "type": "insight",
+      "heading": "Grace Crosses the Border First",
+      "body": "Stand back and watch who gets healed in these chapters. A widow with nothing. A Shunammite woman and her child. A starving crowd. A poor man's borrowed tool. And the one full, finished leprosy cure in the whole stretch goes not to an Israelite but to Naaman the Syrian - a commander of the army that raided Israel.\n\nThere were lepers in Israel. The covenant people had the law of cleansing, the prophets, the promises. Yet the man who walks away clean is the foreigner who almost didn't bother. This is the point the text is making, not an accident it stumbles into. The grace of Israel's God will not stay inside Israel's borders. It runs downhill - to the servant girl, the widow, the enemy general - and humbles the proud on the way.\n\nCenturies later, in his hometown synagogue, Jesus reaches back and grabs exactly this story. He reminds the people of Nazareth that there were many lepers in Israel in Elisha's day, and not one was cleansed - only Naaman the Syrian. The God they assumed belonged to them has a long habit of healing the outsider first. They try to throw Him off a cliff for it.",
+      "historicalContext": "The Elisha narratives unfold in the northern kingdom of Israel during the ninth century BC, under kings descended from Jehu. Israel was politically weak and spiritually compromised, leaning on Baal and on alliances rather than on the LORD. Aram (Syria), to the northeast, was the regional power and Israel's frequent enemy - which makes the healing of its top general a deliberate scandal.",
+      "fascinatingFact": "Naaman is told to wash seven times - the number of completeness in Hebrew thought. He does not improve a little with each dip; the cleansing is granted whole, at the seventh, by the word of God, not by the river's chemistry. The Jordan had no power the rivers of Damascus lacked. The power was in obeying the small word.",
+      "content": "Stand back and watch who gets healed in these chapters. A widow with nothing. A Shunammite woman and her child. A starving crowd. A poor man's borrowed tool. And the one full, finished leprosy cure in the whole stretch goes not to an Israelite but to Naaman the Syrian - a commander of the army that raided Israel.\n\nThere were lepers in Israel. The covenant people had the law of cleansing, the prophets, the promises. Yet the man who walks away clean is the foreigner who almost didn't bother. This is the point the text is making, not an accident it stumbles into. The grace of Israel's God will not stay inside Israel's borders. It runs downhill - to the servant girl, the widow, the enemy general - and humbles the proud on the way.\n\nCenturies later, in his hometown synagogue, Jesus reaches back and grabs exactly this story. He reminds the people of Nazareth that there were many lepers in Israel in Elisha's day, and not one was cleansed - only Naaman the Syrian. The God they assumed belonged to them has a long habit of healing the outsider first. They try to throw Him off a cliff for it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Through Elisha, God multiplies bread for a hungry crowd, raises a dead boy, makes iron float for a poor man, and cleanses a foreign leper through plain water and a plain command - grace carried in small, ordinary containers to people who could not earn it.",
+      "modernApplication": "We still want our healing grand. We would rather a dramatic turnaround than a small daily obedience; we would rather buy the cure than receive it; we would rather God meet us in the rivers of Damascus, the impressive places, than in the muddy Jordan of an ordinary, repeated act of trust. Often the thing God asks is small enough to feel beneath us - confess that, forgive her, sit still for five minutes, go and wash. The smallness is not God withholding; it is grace coming close enough to take.",
+      "connectionPoint": "Elisha's ministry rehearses a single note the Gospels will sound in full. He multiplies twenty loaves for a hundred men with food left over; Jesus multiplies loaves for five thousand with twelve baskets left over (John 6:11). Elisha sends a leper away to wash and be clean; Jesus reaches out His hand, touches a leper, and says, \"I am willing. Be clean\" (Matthew 8:3). Elisha raises the Shunammite's son; Jesus raises a widow's son at Nain and calls Lazarus from the tomb. The prophet pointed; the Christ arrived.",
+      "newTestamentEcho": "Even Elisha's grave preaches Christ. After the prophet died, a dead man was hastily thrown into Elisha's tomb, and the moment the body touched Elisha's bones, the man revived and stood on his feet (2 Kings 13:21). Life flowed out of a dead prophet's bones. At the empty tomb, life flows from the One who did not stay dead at all - the resurrection and the life, in whom the dead hear His voice and live (John 11:25)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you waiting for a grand rescue while God keeps offering you a small obedience - a Jordan you've decided is beneath you?",
+      "additionalQuestions": [
+        "Naaman almost lost his healing over its smallness. Is there something simple God has asked of you that your pride keeps refusing because it feels too ordinary to matter?",
+        "The lowest voices in the story - a servant girl, Naaman's own servants, a widow - are the ones who point toward life. Who are the unimpressive people God may be using to reach you right now?",
+        "Jesus' neighbors raged when He said grace heals the outsider first. Is there anyone you quietly assume is outside the reach of God's mercy? What if they are exactly who He means to cleanse?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I keep waiting for You in the rivers of Damascus - the impressive answer, the dramatic turn - and walking past the muddy Jordan where You actually are. Forgive the pride that wants a cure worthy of me. Make me small enough to obey the small word: go and wash. Cleanse what I have hidden under the armor. And widen my heart, Lord, the way Yours has always been wide - reaching the servant, the widow, the foreigner, the enemy, before it reaches the deserving. Through Christ, who touched the leper and said, I am willing. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one small, plain obedience you have been treating as beneath you - the apology, the confession, the five quiet minutes, the call you keep not making. Today, go down into that Jordan once. Do the small thing, seven times if you must, and let God do the cleansing you cannot do for yourself.",
+      "leavingAtCross": [
+        "The pride that wants a grand rescue and refuses a small obedience",
+        "The instinct to buy or earn the grace that can only be received",
+        "The narrow heart that decides in advance who is outside God's mercy"
+      ],
+      "receivingFromCross": [
+        "A cleansing I could not manufacture, given through ordinary means to undeserving hands",
+        "Skin like a child's - a fresh start that pride almost walked away from",
+        "A God whose mercy crosses every border, including the ones I drew"
+      ],
+      "content": "Name the one small, plain obedience you have been treating as beneath you - the apology, the confession, the five quiet minutes, the call you keep not making. Today, go down into that Jordan once. Do the small thing, seven times if you must, and let God do the cleansing you cannot do for yourself."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that the one complete leprosy cure in these chapters goes to a foreign enemy commander rather than to an Israelite? What is the text saying about how God's grace moves?",
+        "Naaman wanted a 'great thing' and was offended by a small command. How does the smallness of 'wash and be cleansed' expose what was really wrong with his heart?",
+        "Trace the echoes between Elisha's miracles (bread multiplied, a leper cleansed, the dead raised) and the ministry of Jesus. What does Elisha point toward that Christ fulfills?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'small obedience' you have been avoiding because it feels beneath you or too simple to matter.",
+        "Talk honestly about whether there is a person or group you have quietly written off as outside God's mercy - and what Naaman's story does to that assumption.",
+        "Ask each other: where are you waiting for a dramatic rescue when God is offering you a plain, daily Jordan to walk into?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 4:27",
+          "text": "And there were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed—only Naaman the Syrian."
+        },
+        {
+          "reference": "Matthew 8:3",
+          "text": "Jesus reached out His hand and touched the man. \"I am willing,\" He said. \"Be clean!\" And immediately his leprosy was cleansed."
+        },
+        {
+          "reference": "John 6:11",
+          "text": "Then Jesus took the loaves and the fish, gave thanks, and distributed to those who were seated as much as they wanted."
+        },
+        {
+          "reference": "2 Kings 13:21",
+          "text": "Once, as the Israelites were burying a man, suddenly they saw a band of raiders, so they threw the man's body into Elisha's tomb. And as soon as his body touched the bones of Elisha, the man was revived and stood up on his feet."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 4-5",
+          "note": "Read the widow's oil, the Shunammite's son, and the cleansing of Naaman together, watching how each miracle reaches the poor, the grieving, or the outsider through small and ordinary means."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elisha",
+      "title": "Successor to Elijah, Prophet of the Double Portion",
+      "description": "Called from plowing a field, Elisha left his oxen to follow Elijah and asked for a double portion of his master's spirit. For roughly half a century he served as God's prophet in the northern kingdom of Israel under a line of kings, advising in war, confronting kings, and pouring grace into ordinary lives - widows, foreigners, the poor, the grieving. His miracles are notably domestic and merciful, a sustained portrait of a God who reaches the small and the outsider.",
+      "keyQuote": "Do not be afraid, for those who are with us are more than those who are with them.",
+      "lessonForUs": "Elisha shows that the power of God does not need a grand stage. It runs through a borrowed jar, twenty loaves, a muddy river, even a dead prophet's bones - and it reaches first the people the world overlooks. The grace is enormous; learn to receive it in the small container God hands you.",
+      "heading": "Successor to Elijah, Prophet of the Double Portion"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2319,
+  "scriptureReference_full": "2 Kings 4-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (rachats H7364, taher) reflects standard lexical sources; the structure of the leprosy-cleansing law underlying Naaman's healing is found in Leviticus 13-14."
+  ]
 }

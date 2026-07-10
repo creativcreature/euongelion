@@ -1,38 +1,190 @@
 {
   "day": 227,
-  "title": "Isaiah: Suffering Servant — Day 3 — Pivot",
-  "teaser": "Day 227 of Bible 365 — Isaiah 40-55",
+  "title": "The wound that was meant for me",
+  "teaser": "Day 227 of Bible 365 — Isaiah 40-55. Seven hundred years before the cross, Isaiah describes a Servant who is wounded for someone else's wrong, and the LORD lays the guilt of us all on Him.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 227"
+      "type": "scripture",
+      "reference": "Isaiah 53:4-6",
+      "translation": "BSB",
+      "emphasis": [
+        "pierced for our transgressions",
+        "by His stripes we are healed",
+        "the iniquity of us all"
+      ],
+      "hebrewOriginal": "וַיהוָה הִפְגִּיעַ בּוֹ אֵת עֲוֺן כֻּלָּנוּ",
+      "passage": "Surely He took on our infirmities and carried our sorrows; yet we considered Him stricken by God, struck down and afflicted. But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אָשָׁם",
+      "transliteration": "asham",
+      "pronunciation": "ah-SHAHM",
+      "meaning": "guilt offering, reparation sacrifice",
+      "rootMeaning": "Asham is not the bare feeling of being guilty. In Israel's worship it names a specific sacrifice - the offering brought when a debt of wrong had to be paid back and made right, blood given so the guilty party could be cleared and restored.",
+      "usageNote": "In Isaiah 53:10 the word lands on the Servant Himself: 'when His soul is made a guilt offering.' The prophet does not say the Servant brings an asham or carries one to the altar. The Servant's own life is the asham. The reparation Israel could only gesture toward with a lamb is made, here, out of a person.",
+      "wordByWord": [
+        {
+          "word": "וַיהוָה",
+          "transliteration": "va-YHWH",
+          "meaning": "and the LORD - the covenant God Himself is the one acting"
+        },
+        {
+          "word": "הִפְגִּיעַ",
+          "transliteration": "hiphgia",
+          "meaning": "caused to strike, made to fall upon - a deliberate placing, not an accident of fate"
+        },
+        {
+          "word": "בּוֹ",
+          "transliteration": "bo",
+          "meaning": "on Him - on the one Servant"
+        },
+        {
+          "word": "עֲוֺן",
+          "transliteration": "avon",
+          "meaning": "iniquity - the guilt and the crookedness of sin held together in one word"
+        },
+        {
+          "word": "כֻּלָּנוּ",
+          "transliteration": "kullanu",
+          "meaning": "of us all - the word that gathers every reader into the verse"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָשָׁם / Leviticus 5",
+          "reference": "The guilt offering is laid out in Leviticus 5-7 as the sacrifice for trespass, for debts that had to be repaid with something added. Isaiah takes that altar language and sets it, astonishingly, on a single Servant."
+        }
+      ],
+      "strongsNumber": "H817",
+      "definition": "a guilt offering; the reparation sacrifice for trespass",
+      "usage": "The verb hiphgia in 53:6 comes from the same root used for intercession - to fall upon, to meet, to press in (the same verb returns in 53:12, where the Servant 'made intercession for the transgressors'). The LORD presses the iniquity of us all onto one who did nothing wrong, and the Servant becomes the place where the meeting happens."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Comfort Spoken to a People in the Dark",
+      "body": "Isaiah 40 opens like a hand laid on the shoulder of an exhausted people: \"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem.\" The first thirty-nine chapters of Isaiah are largely warning. Here, at chapter 40, the tone changes. These chapters speak to a nation that will be carried off to Babylon, far from the temple, far from home, wondering whether God has finally written them off.\n\nInto that fear God answers with a question no exile expected. Not \"How will I punish you further?\" but \"How will I carry you back?\" He insists He has not forgotten them. \"Can a woman forget her nursing child,\" He asks, \"or lack compassion for the son of her womb? Even if she could forget, I will not forget you! Behold, I have inscribed you on the palms of My hands\" (Isaiah 49:15-16). The God who could have abandoned them instead says they are written onto His own hands.\n\nWoven through these chapters are four passages scholars have long called the Servant Songs. A figure steps forward - sometimes He seems to be Israel itself, sometimes a single person who does for Israel what Israel could not do for itself. \"Here is My Servant, whom I uphold,\" God says, \"My Chosen One, in whom My soul delights\" (Isaiah 42:1). This Servant is gentle: \"A bruised reed He will not break and a smoldering wick He will not extinguish\" (Isaiah 42:3). For chapters the songs build, and then they arrive at the fourth and longest, where the gentleness opens into wounds.",
+      "keyInsight": "Isaiah 40-55 is not first a prophecy of suffering. It is a word of comfort to people who feared God had abandoned them - and the comfort takes the shape of a Servant who absorbs what they had earned.",
+      "content": "Isaiah 40 opens like a hand laid on the shoulder of an exhausted people: \"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem.\" The first thirty-nine chapters of Isaiah are largely warning. Here, at chapter 40, the tone changes. These chapters speak to a nation that will be carried off to Babylon, far from the temple, far from home, wondering whether God has finally written them off.\n\nInto that fear God answers with a question no exile expected. Not \"How will I punish you further?\" but \"How will I carry you back?\" He insists He has not forgotten them. \"Can a woman forget her nursing child,\" He asks, \"or lack compassion for the son of her womb? Even if she could forget, I will not forget you! Behold, I have inscribed you on the palms of My hands\" (Isaiah 49:15-16). The God who could have abandoned them instead says they are written onto His own hands.\n\nWoven through these chapters are four passages scholars have long called the Servant Songs. A figure steps forward - sometimes He seems to be Israel itself, sometimes a single person who does for Israel what Israel could not do for itself. \"Here is My Servant, whom I uphold,\" God says, \"My Chosen One, in whom My soul delights\" (Isaiah 42:1). This Servant is gentle: \"A bruised reed He will not break and a smoldering wick He will not extinguish\" (Isaiah 42:3). For chapters the songs build, and then they arrive at the fourth and longest, where the gentleness opens into wounds."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name at the Top of the Charge Sheet",
+      "body": "A friend who works as a public defender once told me about a young man, barely twenty, who sat across from her certain he was going to prison. The charge was real. The evidence was real. He had done it, and he knew it. What undid him was not the verdict. It was the moment an older man in the same courtroom - a relative he barely knew - stepped forward and asked to make restitution in his place. To pay the debt down to the last dollar, quietly, without being asked, without being thanked.\n\nThe young man kept saying the same thing afterward. \"But it wasn't his. It was mine. Why would he take what was mine?\"\n\nThat is the right question to carry into Isaiah 53. The prophet has spent the whole chapter making sure we cannot miss whose wrong is being carried. \"We all like sheep have gone astray.\" Not some of us. Not only the obvious offenders. All of us, each one turning to his own way. And onto the one who never wandered, the LORD lays the iniquity of the entire wandering flock. The wound on the charge sheet has someone else's name written at the top.",
+      "connectionToTheme": "The Servant does not suffer in general or as a tragic example. He suffers in someone's place - and Isaiah is careful to write the reader's own name into the place He takes.",
+      "content": "A friend who works as a public defender once told me about a young man, barely twenty, who sat across from her certain he was going to prison. The charge was real. The evidence was real. He had done it, and he knew it. What undid him was not the verdict. It was the moment an older man in the same courtroom - a relative he barely knew - stepped forward and asked to make restitution in his place. To pay the debt down to the last dollar, quietly, without being asked, without being thanked.\n\nThe young man kept saying the same thing afterward. \"But it wasn't his. It was mine. Why would he take what was mine?\"\n\nThat is the right question to carry into Isaiah 53. The prophet has spent the whole chapter making sure we cannot miss whose wrong is being carried. \"We all like sheep have gone astray.\" Not some of us. Not only the obvious offenders. All of us, each one turning to his own way. And onto the one who never wandered, the LORD lays the iniquity of the entire wandering flock. The wound on the charge sheet has someone else's name written at the top."
+    },
+    {
+      "type": "insight",
+      "heading": "The Great Exchange, Written Seven Centuries Early",
+      "body": "Read the prepositions in Isaiah 53 slowly, because the whole gospel is hiding inside them. He was pierced *for* our transgressions. He was crushed *for* our iniquities. The punishment that brought *us* peace was upon *Him*. By *His* stripes *we* are healed. The LORD laid on Him the iniquity of *us all*.\n\nEvery line is an exchange. What was ours moves to Him; what was His - peace, healing, righteousness - comes to us. This is not God overlooking sin or pretending it does not matter. The punishment is real and it falls. The astonishing thing is where it falls. \"Yet it was the LORD's will to crush Him,\" verse 10 says, \"and to cause Him to suffer; and when His soul is made a guilt offering... By His knowledge My righteous Servant will justify many, and He will bear their iniquities\" (Isaiah 53:10-11).\n\nThat is the hinge of the entire chapter, and arguably of the whole Old Testament: a righteous one bears the guilt of the unrighteous, and by bearing it, makes them righteous. The Servant does not merely sympathize with sufferers. He becomes the asham - the guilt offering - so that the verdict written against us can be answered rather than waived. Justice is satisfied and mercy is poured out in the same act, on the same person. Isaiah writes this roughly seven hundred years before a Roman cross, and yet read beside the Gospels it reads less like a prediction and more like the testimony of a witness who was already standing at Golgotha.",
+      "historicalContext": "Isaiah 52:13-53:12 is among the most frequently quoted Old Testament passages in the New Testament's account of Jesus' death. The early church did not invent the idea that the Messiah would suffer for sins and then read it back into the Scriptures; they found it already written here, in the prophet, and recognized whose face it described.",
+      "fascinatingFact": "In Acts 8, an Ethiopian court official is riding home reading this exact passage - \"He was led like a sheep to the slaughter\" - and asks Philip, \"who is the prophet talking about, himself or someone else?\" Luke records that \"Philip began with this very Scripture and told him the good news about Jesus\" (Acts 8:34-35). From the very start, Isaiah 53 was where people were pointed to understand the cross.",
+      "content": "Read the prepositions in Isaiah 53 slowly, because the whole gospel is hiding inside them. He was pierced *for* our transgressions. He was crushed *for* our iniquities. The punishment that brought *us* peace was upon *Him*. By *His* stripes *we* are healed. The LORD laid on Him the iniquity of *us all*.\n\nEvery line is an exchange. What was ours moves to Him; what was His - peace, healing, righteousness - comes to us. This is not God overlooking sin or pretending it does not matter. The punishment is real and it falls. The astonishing thing is where it falls. \"Yet it was the LORD's will to crush Him,\" verse 10 says, \"and to cause Him to suffer; and when His soul is made a guilt offering... By His knowledge My righteous Servant will justify many, and He will bear their iniquities\" (Isaiah 53:10-11).\n\nThat is the hinge of the entire chapter, and arguably of the whole Old Testament: a righteous one bears the guilt of the unrighteous, and by bearing it, makes them righteous. The Servant does not merely sympathize with sufferers. He becomes the asham - the guilt offering - so that the verdict written against us can be answered rather than waived. Justice is satisfied and mercy is poured out in the same act, on the same person. Isaiah writes this roughly seven hundred years before a Roman cross, and yet read beside the Gospels it reads less like a prediction and more like the testimony of a witness who was already standing at Golgotha."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Isaiah's fourth Servant Song describes one who is despised, pierced, crushed, and silent before His accusers - and onto whom the LORD deliberately lays the iniquity of us all, making His life a guilt offering that justifies many.",
+      "modernApplication": "We are fluent in distributing blame and slow to imagine anyone absorbing ours willingly. Isaiah confronts that instinct. The deepest problem is not finally what others have done to us, but the way each of us has 'turned to his own way' - and the answer is not that we square the debt ourselves, but that we receive a covering already paid for.",
+      "connectionPoint": "John the Baptist looks at Jesus and says, \"Look, the Lamb of God, who takes away the sin of the world!\" (John 1:29) - language drawn straight from Isaiah 53:7, the lamb led silent to the slaughter. Matthew watches Jesus heal and says it fulfilled Isaiah: \"He took on our infirmities and carried our diseases\" (Matthew 8:17, citing Isaiah 53:4). Peter, writing to suffering Christians, lifts the line whole: \"He Himself bore our sins in His body on the tree... 'By His stripes you are healed'\" (1 Peter 2:24).",
+      "newTestamentEcho": "What Isaiah saw from seven centuries away, the cross made flesh. The Servant pierced for our transgressions is Jesus, pierced under Pilate; the silent lamb is Jesus before His accusers; the guilt offering is Jesus, of whom John says He takes away the sin of the world. The prophet drew the shape; Christ stepped into it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Isaiah says 'each one has turned to his own way.' Where, honestly, has your own way taken you - and what would it mean to stop carrying that weight yourself and let it be the weight He already bore?",
+      "additionalQuestions": [
+        "When you read 'the iniquity of us all,' is it easy or hard to put your own name inside the word 'all'? Why?",
+        "The Servant 'did not open His mouth' before His accusers. Where in your life do you fight hardest to defend yourself, and what would silence and trust look like there?",
+        "Isaiah's chapters begin with 'Comfort My people.' Where do you most need to hear that God has not forgotten you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am one of the sheep who wandered. I have turned to my own way more often than I can count, and I have grown skilled at carrying the weight of it myself. Thank You that the punishment that brought me peace was laid on Your Servant, and that by His stripes I am healed. Let me put my name where Isaiah wrote 'us all.' Take the wound that was meant for me; give me the peace that was always Yours. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, read Isaiah 53 out loud, slowly, replacing the words 'we' and 'us' and 'our' with 'I' and 'me' and 'my' - 'He was pierced for my transgressions.' Sit with how it changes the chapter from a doctrine into a debt that has already been paid, for you.",
+      "leavingAtCross": [
+        "The weight of my own wandering - the going-my-own-way that I keep trying to carry by myself",
+        "The belief that I must finish my own restitution before God will receive me",
+        "The instinct to defend and justify myself rather than be covered by Another"
+      ],
+      "receivingFromCross": [
+        "The peace the Servant's punishment purchased - mine, freely given",
+        "Healing by His stripes, not by my striving to be good enough",
+        "The standing of one who is justified because the Righteous One bore my iniquity"
+      ],
+      "content": "Today, read Isaiah 53 out loud, slowly, replacing the words 'we' and 'us' and 'our' with 'I' and 'me' and 'my' - 'He was pierced for my transgressions.' Sit with how it changes the chapter from a doctrine into a debt that has already been paid, for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word asham mean, and why does it matter that Isaiah uses it for the Servant Himself rather than for an offering the Servant brings?",
+        "Trace the exchange in Isaiah 53:5 - what moves from us to the Servant, and what moves from the Servant to us?",
+        "Why does it matter that Isaiah insists 'all' of us, not just some, have gone astray like sheep?"
+      ],
+      "forAccountabilityPartners": [
+        "Read Isaiah 53 together and name the line that lands hardest on you personally.",
+        "Talk about the difference between a God who overlooks sin and a God who bears it Himself - why does the cross need to be the second kind?",
+        "Ask each other: where are you still trying to make your own restitution before God, and what would it look like to rest in the offering already made?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 52:13-15",
+          "text": "Behold, My Servant will prosper; He will be raised and lifted up and highly exalted. Just as many were appalled at Him - His appearance was disfigured beyond that of any man, and His form was marred beyond human likeness - so He will sprinkle many nations. Kings will shut their mouths because of Him. For they will see what they have not been told, and they will understand what they have not heard."
+        },
+        {
+          "reference": "Isaiah 53:7",
+          "text": "He was oppressed and afflicted, yet He did not open His mouth. He was led like a lamb to the slaughter, and as a sheep before her shearers is silent, so He did not open His mouth."
+        },
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        },
+        {
+          "reference": "Acts 8:35",
+          "text": "Then Philip began with this very Scripture and told him the good news about Jesus."
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. \"By His stripes you are healed.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 52:13 - 53:12",
+          "note": "Read the fourth Servant Song as a single unit, starting at 52:13. Notice how it opens and closes with the Servant exalted, with the suffering held inside that frame."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Suffering Servant",
+      "title": "The Righteous One Who Bears the Iniquity of Many",
+      "description": "The central figure of Isaiah's four Servant Songs (42:1-4; 49:1-6; 50:4-9; 52:13-53:12). Gentle enough not to break a bruised reed, He is despised and rejected, silent before His accusers, pierced and crushed for sins not His own. Made a guilt offering, He justifies many and is then raised, lifted up, and highly exalted. Jewish and Christian readers have long discussed the Servant's identity - at points He plainly represents Israel - yet the New Testament writers, and Jesus Himself, read the fourth song as fulfilled in Christ's death and resurrection.",
+      "keyQuote": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "lessonForUs": "The Servant shows us a God who does not stand at a distance from our guilt but steps into it and carries it. The wound we earned, He wears; the peace He earned, He gives. Our part is not to repay, but to receive.",
+      "heading": "The Righteous One Who Bears the Iniquity of Many"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2226,
+  "scriptureReference_full": "Isaiah 40-55 (Isaiah 53:4-6 focal)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (asham, H817; avon; hiphgia) reflects standard lexical and morphological sources (STEPBible TAHOT, CC BY)."
+  ]
 }

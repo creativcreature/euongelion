@@ -1,38 +1,178 @@
 {
   "day": 144,
-  "title": "Josiah Finds the Book — Day 4 — Application",
-  "teaser": "Day 144 of Bible 365 — 2 Kings 22-23",
+  "title": "The Book That Broke a King",
+  "teaser": "Josiah's workers find a forgotten scroll in the Temple, and a king tears his robe over words his fathers had ignored. Reform sweeps the land — yet the verdict still stands. Only a greater King can keep the covenant for us.",
   "framework": "2 Kings 22-23 — Josiah Finds the Book",
   "scriptureReference": "2 Kings 22-23",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 144"
+      "type": "scripture",
+      "reference": "2 Kings 22:8, 11, 13; 23:3, 25",
+      "translation": "BSB",
+      "emphasis": [
+        "I have found the Book of the Law",
+        "he tore his clothes",
+        "made a covenant before the LORD",
+        "with all his heart and all his soul"
+      ],
+      "hebrewOriginal": "וַיִּכְרֹת אֶת־הַבְּרִית לִפְנֵי יְהוָה",
+      "passage": "Then Hilkiah the high priest said to Shaphan the scribe, \"I have found the Book of the Law in the house of the LORD!\" And he gave it to Shaphan, who read it. ... When the king heard the words of the Book of the Law, he tore his clothes ... \"Go and inquire of the LORD for me, for the people, and for all Judah concerning the words in this book that has been found. For great is the wrath of the LORD that burns against us because our fathers have not obeyed the words of this book by doing all that is written about us.\" ... So the king stood by the pillar and made a covenant before the LORD to follow the LORD and to keep His commandments, decrees, and statutes with all his heart and all his soul, and to carry out the words of this covenant that were written in this book. And all the people entered into the covenant. ... Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 22-23**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 22-23 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רַךְ לֵבָב",
+      "transliteration": "rak levav",
+      "pronunciation": "rahk leh-VAHV",
+      "meaning": "tender of heart, soft-hearted, easily moved",
+      "rootMeaning": "Rak means soft, tender, delicate - the opposite of hard or callous. The same word describes a young, tender plant and the gentle words of a frightened man. Levav is the inner self: mind, will, and feeling together. A 'tender heart' is one that has not been hardened to what God says.",
+      "usageNote": "In 2 Kings 22:19 the LORD tells Josiah, 'because your heart was tender and you humbled yourself.' Through all the kings of Judah, hearts grow hard against the prophets. Josiah's does the opposite: the words land, and something in him gives way rather than bracing against them.",
+      "wordByWord": [
+        {
+          "word": "רַךְ",
+          "transliteration": "rak",
+          "meaning": "tender, soft, delicate - unhardened"
+        },
+        {
+          "word": "לֵבָב",
+          "transliteration": "levav",
+          "meaning": "heart - the whole inner person: mind, will, feeling"
+        },
+        {
+          "word": "וַתִּכָּנַע",
+          "transliteration": "vattikkana",
+          "meaning": "and you humbled yourself, you bowed low"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּרַת בְּרִית",
+          "reference": "Karat berit, '2 Kings 23:3' - literally 'to cut a covenant.' A covenant in the Old Testament is never merely signed; it is cut, the way an animal was cut in two when the parties bound themselves to life and death. Josiah cuts a covenant before the LORD."
+        }
+      ],
+      "strongsNumber": "H7390",
+      "definition": "tender, soft, delicate; figuratively, a heart easily moved and not hardened",
+      "usage": "Of every king the chronicler could have praised, the LORD singles out not Josiah's strength but his softness: a heart that could still be broken by a word from God."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Josiah Finds the Book. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Word (John 1:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Scroll in the Rubble of the House of God",
+      "body": "Josiah came to the throne at eight years old, the grandson of one of the worst kings Judah ever had. He grew up in a Temple that had been hollowed out from the inside - altars to foreign gods crowded into the courts, the worship of the LORD reduced to a memory kept by a few. So when, in his eighteenth year, he sent workers to repair the neglected building, no one expected what they pulled out of the dust.\n\nHilkiah the high priest said to Shaphan the scribe, \"I have found the Book of the Law in the house of the LORD.\" Read that slowly. The book of God's words had gone missing inside the house built for God's words. It was not destroyed; it was forgotten. A whole generation had been worshiping in a building whose foundation document was buried somewhere in the back, unread.\n\nWhen Shaphan brought the scroll to the king and read it aloud, Josiah did not nod and file it away. He tore his clothes. He had been doing right by every standard he knew, and now he heard, for the first time, the full weight of what God had actually said - and how far his fathers had fallen from it. His first instinct was not to defend his ancestors or explain the gap. He grieved it. \"Great is the wrath of the LORD that burns against us,\" he said, \"because our fathers have not obeyed the words of this book.\"",
+      "keyInsight": "A book can be honored as sacred and still go unread inside the very house built to keep it. Josiah's reform did not begin with a strategy. It began with a man who let the words land hard enough to tear something.",
+      "content": "Josiah came to the throne at eight years old, the grandson of one of the worst kings Judah ever had. He grew up in a Temple that had been hollowed out from the inside - altars to foreign gods crowded into the courts, the worship of the LORD reduced to a memory kept by a few. So when, in his eighteenth year, he sent workers to repair the neglected building, no one expected what they pulled out of the dust.\n\nHilkiah the high priest said to Shaphan the scribe, \"I have found the Book of the Law in the house of the LORD.\" Read that slowly. The book of God's words had gone missing inside the house built for God's words. It was not destroyed; it was forgotten. A whole generation had been worshiping in a building whose foundation document was buried somewhere in the back, unread.\n\nWhen Shaphan brought the scroll to the king and read it aloud, Josiah did not nod and file it away. He tore his clothes. He had been doing right by every standard he knew, and now he heard, for the first time, the full weight of what God had actually said - and how far his fathers had fallen from it. His first instinct was not to defend his ancestors or explain the gap. He grieved it. \"Great is the wrath of the LORD that burns against us,\" he said, \"because our fathers have not obeyed the words of this book.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Bible on the Shelf",
+      "body": "A man I know inherited his grandmother's house and, with it, her Bible - a heavy, leather thing that had sat on the same shelf his whole life. He could have told you it was holy. He dusted around it. He would never have thrown it out. But he had never once opened it.\n\nOne grieving week, with nothing left to do, he took it down. Tucked in the back were her notes, her underlinings, dates pencilled beside verses she had prayed through. He realized he had been living for forty years a few feet from words his grandmother had staked her life on, and he had treated the book as furniture. He told me later that the thing that undid him was not guilt over the wasted years. It was the tenderness of finding her there, still speaking, in handwriting that had been waiting for him the whole time.\n\nThat is closer to Josiah than we usually imagine. The danger in Judah was never that the Book was attacked. It was that the Book was kept - shelved, honored, unopened - until a generation forgot what was inside the house they still called holy.",
+      "connectionToTheme": "Scripture neglected is rarely scripture rejected outright; it is scripture honored and unread. Josiah's reform shows what happens when someone finally opens the book and lets it speak.",
+      "content": "A man I know inherited his grandmother's house and, with it, her Bible - a heavy, leather thing that had sat on the same shelf his whole life. He could have told you it was holy. He dusted around it. He would never have thrown it out. But he had never once opened it.\n\nOne grieving week, with nothing left to do, he took it down. Tucked in the back were her notes, her underlinings, dates pencilled beside verses she had prayed through. He realized he had been living for forty years a few feet from words his grandmother had staked her life on, and he had treated the book as furniture. He told me later that the thing that undid him was not guilt over the wasted years. It was the tenderness of finding her there, still speaking, in handwriting that had been waiting for him the whole time.\n\nThat is closer to Josiah than we usually imagine. The danger in Judah was never that the Book was attacked. It was that the Book was kept - shelved, honored, unopened - until a generation forgot what was inside the house they still called holy."
+    },
+    {
+      "type": "insight",
+      "heading": "The Best King, and It Still Was Not Enough",
+      "body": "Here is the verse that should keep us honest. After Josiah cuts the covenant, after he tears down the high places and burns the foreign altars and reinstates a Passover unlike any since the days of the judges, the chronicler hands him the highest praise given any king of Judah: \"Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses.\"\n\nAnd then the very next sentences: \"Nevertheless, the LORD did not turn away from the fury of His burning anger, which was kindled against Judah because of all that Manasseh had done... 'I will remove Judah from My sight.'\"\n\nSit in the weight of that nevertheless. The best king they ever had, repenting with everything in him, doing all the right things - and the verdict on Judah still stands. Exile is still coming. Josiah's obedience is real, and it matters, and it delays nothing. This is the honest limit of even the most wholehearted reform: a good king can turn his own heart back to God, but he cannot reach back and undo what generations have stored up, and he cannot bear the wrath himself. The Book he found could break his heart and bind his people in covenant. It could not save them. Something - Someone - more than Josiah was needed.",
+      "historicalContext": "Most scholars connect the scroll found in 622 BC with some form of Deuteronomy, whose covenant curses match Josiah's terror so closely. Judah's fall to Babylon came roughly two decades later, in 586 BC. Josiah himself died in battle before it, gathered to his grave in peace as the prophetess Huldah had promised - his eyes spared the calamity.",
+      "fascinatingFact": "Twice the writer marks Josiah as unmatched: in 23:25 no king turned to the LORD so completely, and in 18:5 the same superlative is given to his great-grandfather Hezekiah. Two 'greatest' kings, a generation apart, and neither could finally hold back the consequences gathering over Judah. The bar kept rising; the rescue had to come from somewhere the throne of David could not supply on its own.",
+      "content": "Here is the verse that should keep us honest. After Josiah cuts the covenant, after he tears down the high places and burns the foreign altars and reinstates a Passover unlike any since the days of the judges, the chronicler hands him the highest praise given any king of Judah: \"Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses.\"\n\nAnd then the very next sentences: \"Nevertheless, the LORD did not turn away from the fury of His burning anger, which was kindled against Judah because of all that Manasseh had done... 'I will remove Judah from My sight.'\"\n\nSit in the weight of that nevertheless. The best king they ever had, repenting with everything in him, doing all the right things - and the verdict on Judah still stands. Exile is still coming. Josiah's obedience is real, and it matters, and it delays nothing. This is the honest limit of even the most wholehearted reform: a good king can turn his own heart back to God, but he cannot reach back and undo what generations have stored up, and he cannot bear the wrath himself. The Book he found could break his heart and bind his people in covenant. It could not save them. Something - Someone - more than Josiah was needed."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Josiah hears the long-buried Book read aloud, tears his clothes, and binds himself and his people in covenant to obey it with all his heart - the most wholehearted king in Judah's history. And still the wrath stored up by his fathers is not turned away.",
+      "modernApplication": "We treat Scripture the way Judah treated that scroll more often than we admit: kept on the shelf, honored in principle, rarely read until grief or repair work forces us back into it. And we make Josiah's quieter mistake too - believing that if we just reform hard enough, turn over the right new leaf with enough sincerity, we can settle the account ourselves. Josiah proves both moves: the Book must be opened and obeyed, and our obedience, however real, cannot pay what we owe.",
+      "connectionPoint": "Josiah is the high-water mark of human reform under the old covenant - and the high-water mark is not high enough. His story does not end in despair; it ends pointing forward. The covenant kept with all the heart, the wrath finally turned away, the King who reads the whole Book and obeys it perfectly and then absorbs the judgment His people stored up - all of this waits for One greater than Josiah.",
+      "newTestamentEcho": "Jesus is the King David's line was straining toward: He keeps the covenant with all His heart, soul, and strength where every king before Him fell short, and He does what Josiah could not - He turns away the wrath, not by reform but by bearing it. He is also the living Word the Book was always about (John 1:1, 14); on the Emmaus road, 'beginning with Moses and all the Prophets, He explained to them what was written in all the Scriptures about Himself' (Luke 24:27). The scroll in the rubble was a shadow of Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you honored the Bible as holy without actually reading it - a book on the shelf rather than a word you let speak?",
+      "additionalQuestions": [
+        "What would it take for words from Scripture to land on you the way they landed on Josiah - tender enough to tear something, not just to be filed away?",
+        "Where are you trying, like Josiah, to fix by reform what only Christ can fix by bearing it? What account are you still trying to settle yourself?",
+        "Is there a part of your own house - your habits, your worship, your inner life - that has been honored as Christian while the foundation document sits unread in the back?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have kept Your Word like furniture - dusted, honored, unopened. Forgive the years it sat on the shelf while I worshiped in a house with the book buried in the back. Give me a tender heart like Josiah's, one that lets Your words land and tear what needs tearing. And keep me from his quieter error: let me stop trying to settle by my own reform what only Christ has settled by His cross. He kept the covenant I cannot keep. He bore the wrath I cannot bear. Let me hear Him in every page, and turn to Him with all my heart, and all my soul, and all my strength. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, take the Book down off the shelf. Open Scripture to one passage and read it slowly enough to actually hear it - not to manage it, but to let it speak. Then name one thing you have been trying to fix by your own reform, and hand it instead to the King who already kept the covenant for you.",
+      "leavingAtCross": [
+        "The Bible honored as holy and left unread - the foundation document buried in the back of my own house",
+        "The belief that sincere enough reform can settle an account only Christ can pay",
+        "The instinct to defend or explain the gap between what God said and how I have lived, rather than let it break my heart"
+      ],
+      "receivingFromCross": [
+        "A tender heart that can still be moved by a word from God",
+        "The King who kept the covenant with all His heart where every king before Him fell short",
+        "The wrath turned away - not by my reform, but because He bore it in my place"
+      ],
+      "content": "Today, take the Book down off the shelf. Open Scripture to one passage and read it slowly enough to actually hear it - not to manage it, but to let it speak. Then name one thing you have been trying to fix by your own reform, and hand it instead to the King who already kept the covenant for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does it tell us that the Book of the Law had to be 'found' inside the house of the LORD - and why is honoring Scripture without reading it the more dangerous failure?",
+        "Josiah is called the most wholehearted king Judah ever had, yet the wrath against Judah was not turned away. What is the honest limit of human reform that this 'nevertheless' exposes?",
+        "How does Josiah - the best king, who still could not save his people - point forward to a greater King who could?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you have treated the Bible as furniture lately - honored, dusted, unopened. What would it take to take it down?",
+        "Talk about a time real repentance still did not fix the consequences. How do you hold the truth that turning back to God matters and that it cannot, by itself, pay the debt?",
+        "Ask each other: where are you exhausting yourself reforming what Christ is offering to carry for you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 22:19",
+          "text": "because your heart was tender and you humbled yourself before the LORD when you heard what I spoke against this place and against its people... and because you have torn your clothes and wept before Me, I have heard you, declares the LORD."
+        },
+        {
+          "reference": "Deuteronomy 6:5",
+          "text": "And you shall love the LORD your God with all your heart and with all your soul and with all your strength."
+        },
+        {
+          "reference": "Luke 24:27",
+          "text": "And beginning with Moses and all the Prophets, He explained to them what was written in all the Scriptures about Himself."
+        },
+        {
+          "reference": "John 1:14",
+          "text": "The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 22-23",
+          "note": "Read both chapters in one sitting, watching the movement from the found scroll (22:8) to the torn robe (22:11) to the cut covenant (23:3) to the unflinching 'nevertheless' (23:26-27)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Josiah",
+      "title": "The King Who Tore His Robe Over a Book",
+      "description": "Crowned at eight, Josiah became king of Judah in a generation that had buried God's Word inside God's house. When repair workers found the lost Book of the Law in his eighteenth year, he tore his clothes, inquired of the LORD through the prophetess Huldah, gathered the whole nation, and cut a covenant to obey it with all his heart. He purged Judah of idolatry and restored the Passover. Scripture calls him the most wholehearted king Judah ever had - and records, in the same breath, that even his repentance could not turn away the judgment his fathers had stored up.",
+      "keyQuote": "Great is the wrath of the LORD that burns against us, because our fathers have not obeyed the words of this book.",
+      "lessonForUs": "Josiah shows us both the dignity and the limit of human reform: a tender heart can turn back to God with everything it has, and still not be able to pay what generations have owed. He points past himself to the one King who keeps the covenant for us and bears the wrath in our place.",
+      "heading": "The King Who Tore His Robe Over a Book"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2520,
+  "scriptureReference_full": "2 Kings 22-23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (rak levav, rak H7390; vattikkana, kana H3665; karat berit) reflects standard lexical sources.",
+    "Dating of the scroll's discovery (c. 622 BC) and Judah's fall (586 BC) reflect standard scholarly chronology; the connection of the found 'Book of the Law' with Deuteronomy is the majority scholarly view, noted as such."
+  ]
 }

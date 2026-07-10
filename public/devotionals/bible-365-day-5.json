@@ -6,57 +6,185 @@
   "scriptureReference": "Genesis 3:1-7",
   "chiastic_position": "resolution",
   "pardesLevel": "remez",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 5"
+      "type": "scripture",
+      "reference": "Genesis 3:1-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Did God really say",
+        "You will not surely die",
+        "you will be like God"
+      ],
+      "hebrewOriginal": "וְהַנָּחָשׁ הָיָה עָרוּם מִכֹּל חַיַּת הַשָּׂדֶה אֲשֶׁר עָשָׂה יְהוָה אֱלֹהִים",
+      "passage": "Now the serpent was more crafty than any beast of the field that the LORD God had made. And he said to the woman, \"Did God really say, 'You must not eat from any tree in the garden?'\" The woman answered the serpent, \"We may eat the fruit of the trees of the garden, but about the fruit of the tree in the middle of the garden, God has said, 'You must not eat of it or touch it, or you will die.'\" \"You will not surely die,\" the serpent told her. \"For God knows that in the day you eat of it, your eyes will be opened and you will be like God, knowing good and evil.\" When the woman saw that the tree was good for food and pleasing to the eyes, and that it was desirable for obtaining wisdom, she took the fruit and ate it. She also gave some to her husband who was with her, and he ate it. And the eyes of both of them were opened, and they knew that they were naked; so they sewed together fig leaves and made coverings for themselves."
     },
     {
-      "number": 2,
-      "heading": "A QUESTION IN THE GARDEN",
-      "type": "text",
-      "content": "Day one began with a voice over the deep. Light, sky, sea, soil, every kind of life, each called good. A blessing was spoken over the people made in God's image, and rest settled on the seventh day.\n\nNow another voice speaks. It is quieter. It does not announce itself. It asks a question.\n\n**\"Did God really say?\"**\n\nFour words. Not a denial. Not yet. Just a small tug on the thread of memory. The serpent does not begin with a lie about God. He begins with a question about what God said.\n\nNotice where this lands. Not in the city. Not in the marketplace. In the garden. Inside the place that was supposed to be safe.",
-      "wordCount": 117
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עָרוּם",
+      "transliteration": "arum",
+      "pronunciation": "ah-ROOM",
+      "meaning": "crafty, shrewd, prudent",
+      "rootMeaning": "Arum is not a wicked word by itself. It describes a quality the book of Proverbs prizes: the shrewdness of the careful person who sees a danger and takes cover (Proverbs 22:3). The serpent has the wisdom of the wise. He simply bends it.",
+      "usageNote": "There is a pun the Hebrew reader hears that we lose in English. The verse just before this one ends with the man and woman arummim - naked, unashamed (Genesis 2:25). The serpent is arum - crafty. The two words share a sound and a root, and they sit one verse apart. The story is built on the hinge between them: an exposed innocence and a covered cunning, almost the same word, set side by side.",
+      "wordByWord": [
+        {
+          "word": "וְהַנָּחָשׁ",
+          "transliteration": "vehannachash",
+          "meaning": "and the serpent - introduced as a creature, one of the beasts God made, not a rival power"
+        },
+        {
+          "word": "הָיָה",
+          "transliteration": "hayah",
+          "meaning": "was, became - a plain creaturely verb, not the language of a god"
+        },
+        {
+          "word": "עָרוּם",
+          "transliteration": "arum",
+          "meaning": "crafty, shrewd - the same sound as arummim, naked, in the verse before"
+        },
+        {
+          "word": "מִכֹּל חַיַּת הַשָּׂדֶה",
+          "transliteration": "mikkol chayyat hassadeh",
+          "meaning": "than any beast of the field - keeping the serpent firmly inside the created order"
+        },
+        {
+          "word": "אֲשֶׁר עָשָׂה יְהוָה אֱלֹהִים",
+          "transliteration": "asher asah YHWH Elohim",
+          "meaning": "that the LORD God had made - even the tempter is something God made"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָף כִּי",
+          "reference": "The serpent's opening words in Hebrew, af ki, are not a clean question at all but a sly, broken-off mutter - something closer to 'so God actually said...?' The translators have to finish the sentence the serpent leaves dangling. The insinuation is in the unfinished shape of it."
+        }
+      ],
+      "strongsNumber": "H6175",
+      "definition": "crafty, shrewd, subtle; possessing prudence that can be bent toward cunning",
+      "usage": "Scripture does not say the serpent was strong, or beautiful, or loud. It says he was crafty. The danger in the garden was never force. It was a voice that knew how to ask."
     },
     {
-      "number": 3,
-      "heading": "READ THE TEXT",
-      "type": "text",
-      "content": "Genesis 3:1-7 (BSB):\n\n> \"Now the serpent was more crafty than any beast of the field that the LORD God had made. He said to the woman, 'Did God really say, \"You must not eat from any tree in the garden\"?'\n>\n> The woman answered the serpent, 'We may eat the fruit of the trees of the garden, but about the fruit of the tree in the middle of the garden, God has said, \"You must not eat of it or touch it, or you will die.\"'\n>\n> 'You will not surely die,' the serpent said to the woman. 'For God knows that in the day you eat of it, your eyes will be opened, and you will be like God, knowing good and evil.'\n>\n> When the woman saw that the tree was good for food and pleasing to the eyes, and that it was desirable for obtaining wisdom, she took the fruit and ate it. She also gave some to her husband, who was with her, and he ate it. And the eyes of both of them were opened, and they knew that they were naked; so they sewed together fig leaves and made coverings for themselves.\"\n\nWatch what the serpent does in three small moves.\n\nFirst, omission. God had said they could eat from any tree except one. The serpent flips it: \"You must not eat from any tree in the garden?\" He shrinks God's generosity until it sounds like a fence.\n\nSecond, addition. Eve adds a phrase God never spoke: \"or touch it.\" The command grows heavier in her mouth than it ever was in His. A small inflation, but it makes the rule feel cruel.\n\nThird, suspicion. \"God knows...\" The serpent does not have to argue God's existence. He only has to whisper that God is holding out, that the heart behind the word is not love but jealousy.\n\nThe fruit comes last. The wound is already done before the bite.",
-      "wordCount": 322
+      "type": "teaching",
+      "heading": "The First Question Was Never Really a Question",
+      "body": "Five days ago this plan began with the largest words in the Bible: \"In the beginning God created.\" The world came into being by speech. God said, and there was. He named the light day and the darkness night. He looked at what He had made and called it good, and over the people made in His image He spoke a blessing. Creation is the sound of a voice that is true, making things that are real.\n\nNow a second voice speaks, and everything depends on hearing how different it is. It does not boom. It does not announce a rival kingdom. It sidles up to the woman and asks: \"Did God really say, 'You must not eat from any tree in the garden?'\"\n\nFour words in English, and the wound is already in them. Notice the question does not deny God. It does not even deny the command. It just repeats God's word back with the generosity quietly drained out. God had said: eat freely from every tree except one (Genesis 2:16-17). The serpent's version makes it sound as if God had fenced off the whole garden - as if the single \"no\" were the headline and the thousand \"yeses\" had never been spoken. The first temptation is not a new idea. It is the true word of God, re-quoted just slightly wrong, until the God who gave everything sounds like the God who withholds.",
+      "keyInsight": "The first lie in Scripture is not an alternative to God's word. It is God's word, edited. The serpent does not write a new sentence; he re-quotes the real one with the love taken out.",
+      "content": "Five days ago this plan began with the largest words in the Bible: \"In the beginning God created.\" The world came into being by speech. God said, and there was. He named the light day and the darkness night. He looked at what He had made and called it good, and over the people made in His image He spoke a blessing. Creation is the sound of a voice that is true, making things that are real.\n\nNow a second voice speaks, and everything depends on hearing how different it is. It does not boom. It does not announce a rival kingdom. It sidles up to the woman and asks: \"Did God really say, 'You must not eat from any tree in the garden?'\"\n\nFour words in English, and the wound is already in them. Notice the question does not deny God. It does not even deny the command. It just repeats God's word back with the generosity quietly drained out. God had said: eat freely from every tree except one (Genesis 2:16-17). The serpent's version makes it sound as if God had fenced off the whole garden - as if the single \"no\" were the headline and the thousand \"yeses\" had never been spoken. The first temptation is not a new idea. It is the true word of God, re-quoted just slightly wrong, until the God who gave everything sounds like the God who withholds."
     },
     {
-      "number": 4,
-      "heading": "WHERE DAY 1 ECHOES",
-      "type": "text",
-      "content": "Five days ago we read, \"In the beginning, God.\" The opening note of Scripture is divine speech that brings order out of chaos. Word. Light. Naming. Blessing. Today the same created order is unmade by speech that distorts. The serpent does not invent a counter-creation; he editorializes the first one.\n\nThis is the *remez*, the hint the rest of the Bible will keep tracing. Every later seduction in Scripture follows this grammar. The golden calf is offered as the god \"who brought you out of Egypt,\" God's own line mouthed by an idol. False prophets in Jeremiah preach peace where God has not promised peace. The accuser in Job suggests Job only loves God for the perks. The pattern is older than any of these. It begins in chapter three.\n\nNow track it forward. In Matthew 4:1-11 another wilderness, another fast, another voice in the silence. \"If you are the Son of God...\" The tempter even quotes Psalm 91, distorting Scripture by lifting it free of its context. Where Eve answered with a phrase God never said, Christ answers three times with what God did say. **\"It is written.\"** Not louder. Not cleverer. Just truer.",
-      "wordCount": 195
+      "type": "story",
+      "heading": "The Sentence That Was Never Said",
+      "body": "A friend told me once that the worst argument of her marriage began with a sentence her husband never said. She had been replaying a comment of his on the drive home, and by the time she walked in the door she had sanded off the kindness and sharpened the edge until what she remembered him saying was crueler than what he had actually said. She fought the version in her head. He stood in the kitchen, baffled, defending words that were never his.\n\nMost of us have done some version of this. Someone says a thing, and by the third time we have turned it over in the dark it has changed. The omission of a softening word. The addition of a tone they never used. The quiet certainty that we know the real motive underneath. We are not lying, exactly. We are editing. And we end up wounded by, or furious at, a person who exists only in the rephrasing.\n\nThe woman in the garden does this with God. By the time she answers the serpent, the command has grown. God had said do not eat. She says, \"You must not eat of it or touch it.\" God never said touch. A small phrase, added in good faith, but it makes the command heavier and God a little more severe than He ever was. The leash gets shorter in the retelling. And a God who feels needlessly strict is a God it gets easier to disobey.",
+      "connectionToTheme": "Temptation rarely arrives as a bold new lie. It arrives as God's own words, lightly edited - a generosity omitted, a severity added - until the God we are dealing with is a distortion of the God who actually spoke.",
+      "content": "A friend told me once that the worst argument of her marriage began with a sentence her husband never said. She had been replaying a comment of his on the drive home, and by the time she walked in the door she had sanded off the kindness and sharpened the edge until what she remembered him saying was crueler than what he had actually said. She fought the version in her head. He stood in the kitchen, baffled, defending words that were never his.\n\nMost of us have done some version of this. Someone says a thing, and by the third time we have turned it over in the dark it has changed. The omission of a softening word. The addition of a tone they never used. The quiet certainty that we know the real motive underneath. We are not lying, exactly. We are editing. And we end up wounded by, or furious at, a person who exists only in the rephrasing.\n\nThe woman in the garden does this with God. By the time she answers the serpent, the command has grown. God had said do not eat. She says, \"You must not eat of it or touch it.\" God never said touch. A small phrase, added in good faith, but it makes the command heavier and God a little more severe than He ever was. The leash gets shorter in the retelling. And a God who feels needlessly strict is a God it gets easier to disobey."
     },
     {
-      "number": 5,
-      "heading": "WHEN THE QUESTION SURFACES",
-      "type": "text",
-      "content": "The serpent's question still surfaces. It rarely arrives as open rebellion. More often it sounds reasonable, and it sounds like our own thought.\n\n*Did God really say sex was meant for one covenant?*\n*Did God really say to forgive again?*\n*Did God really say He loved you, after the year you've had?*\n\nThe distortion is the same shape every time. A small omission. A small addition. A whisper of suspicion. Notice when the question arrives in your own head. The shape itself is a tell. You are not losing your mind. You are hearing something old.\n\nThe answer is not to argue louder. The answer is to return to what God actually said: read it, not paraphrased; remembered, not edited. Christ in the wilderness gives us the form: open the text, speak it back, refuse the rephrasing.",
-      "wordCount": 137
+      "type": "insight",
+      "heading": "Three Small Moves, and the Fruit Comes Last",
+      "body": "Watch the serpent work, because the method is the whole point. He never makes a frontal argument. He makes three small moves, and they are still his three moves today.\n\nFirst, omission. \"Did God really say you must not eat from any tree?\" He shrinks God's lavish yes - every tree but one - until only the no is left in view. Generosity, edited out.\n\nSecond, addition - and this one the woman makes herself. \"or touch it,\" she says, adding a clause God never spoke. The command swells into something harsher than it was. A burden God never laid is now blamed on God.\n\nThird, suspicion. Now the open lie: \"You will not surely die. For God knows that in the day you eat of it... you will be like God.\" The serpent does not have to disprove God's existence. He only has to whisper that God's heart is not good - that the command is not protection but jealousy, that God is holding out on you, keeping the best for Himself. Make a person believe God is stingy and the rest takes care of itself.\n\nOnly then does she look at the tree, and now it looks different: good for food, pleasing to the eyes, desirable for wisdom. The bite is the last event in the sequence, not the first. The fruit was always within reach; what changed was the God she thought she was reaching past. The wound was finished before she ever ate.",
+      "historicalContext": "Genesis stands at the head of the Torah, the lens Israel read everything else through. Israel knew this voice from the inside. The golden calf would be introduced with God's own line - \"These, O Israel, are your gods, who brought you up out of the land of Egypt\" - the true story of the Exodus put in the mouth of an idol (Exodus 32:4). False prophets would preach \"Peace, peace ... when there is no peace\" (Jeremiah 6:14), God's promises quoted where God had not promised. The grammar of Genesis 3 runs through the whole library: the enemy of God's people prefers a distorted true word to an obvious false one.",
+      "fascinatingFact": "The serpent's claim was not entirely false, which is what made it deadly. \"Your eyes will be opened... knowing good and evil\" - and verse 7 says their eyes were opened. They did gain a knowledge. But the half-truth omitted the cost: the first thing those opened eyes saw was their own shame. The best lies are not the opposite of the truth. They are the truth with one essential clause removed.",
+      "content": "Watch the serpent work, because the method is the whole point. He never makes a frontal argument. He makes three small moves, and they are still his three moves today.\n\nFirst, omission. \"Did God really say you must not eat from any tree?\" He shrinks God's lavish yes - every tree but one - until only the no is left in view. Generosity, edited out.\n\nSecond, addition - and this one the woman makes herself. \"or touch it,\" she says, adding a clause God never spoke. The command swells into something harsher than it was. A burden God never laid is now blamed on God.\n\nThird, suspicion. Now the open lie: \"You will not surely die. For God knows that in the day you eat of it... you will be like God.\" The serpent does not have to disprove God's existence. He only has to whisper that God's heart is not good - that the command is not protection but jealousy, that God is holding out on you, keeping the best for Himself. Make a person believe God is stingy and the rest takes care of itself.\n\nOnly then does she look at the tree, and now it looks different: good for food, pleasing to the eyes, desirable for wisdom. The bite is the last event in the sequence, not the first. The fruit was always within reach; what changed was the God she thought she was reaching past. The wound was finished before she ever ate."
     },
     {
-      "number": 6,
-      "heading": "A PRAYER FOR DISCERNMENT",
+      "type": "bridge",
+      "ancientTruth": "In the garden, a created voice re-quotes the Creator's word with the generosity removed and the suspicion added, until the God who gave everything sounds like a God who withholds - and that distortion, not the fruit, is the first wound.",
+      "modernApplication": "The serpent's question rarely arrives now as open rebellion. It comes dressed as a reasonable thought, often in our own voice, late at night. Did God really say to forgive that, again? Did God really say this part of me was off-limits? Did God really still love you, after the year you've had? The shape never changes: a kindness of God omitted, a severity added, a quiet suggestion that He is holding out. The shape itself is the tell. When the thought arrives, you are not losing your faith. You are hearing something very old.",
+      "connectionPoint": "Scripture keeps tracing this one grammar forward. Paul warns the Corinthians that \"just as Eve was deceived by the serpent's cunning,\" their minds might be \"led astray from your simple and pure devotion to Christ\" (2 Corinthians 11:3) - he names Eden as the template for every later seduction. James shows the same machinery running inside us, with no serpent needed: \"each one is tempted when by his own evil desires he is lured away and enticed\" (James 1:14). And Jesus names the voice for what it is - the devil \"was a murderer from the beginning... a liar and the father of lies\" (John 8:44). The thread that begins as a whispered question in a garden runs straight through the whole of the human story.",
+      "newTestamentEcho": "Then, in Matthew 4, the pattern meets its match. Another wilderness, another fast, another voice in the silence: \"If You are the Son of God...\" The tempter even quotes Scripture, lifting Psalm 91 out of its meaning to do it. Where the woman answered with a phrase God never said, the second Adam answers three times with what God did say - \"It is written... It is also written... For it is written\" (Matthew 4:4, 7, 10). Not louder, not cleverer. Just truer. Where Eden was undone by an edited word, the garden's long defeat is reversed by the Word who would not be edited, the one of whom God had already promised, \"He will crush your head\" (Genesis 3:15)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the \"Did God really say?\" question that has been surfacing in your own thoughts lately - and whose voice does it sound like?",
+      "additionalQuestions": [
+        "Where have you quietly shrunk God's generosity down to a fence - hearing the one \"no\" and forgetting the thousand \"yeses\"?",
+        "Is there a command of God you have made heavier than He ever made it, adding a \"touch it\" He never said, until His goodness started to feel like severity?",
+        "When you suspect God is holding out on you, where did that suspicion first get planted - and what would it take to bring it back to what He actually said?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
       "type": "prayer",
-      "content": "Father,\n\nWhen \"Did God really say?\" surfaces in my own thinking today, give me ears to hear the shape of it. Show me where I have shrunk Your generosity into a fence, or added weight You never put on me, or believed You were holding out.\n\nTeach me Christ's answer in the wilderness. Bring me back to what is written.\n\nIn Jesus' name. Amen.",
-      "wordCount": 64
+      "posture": "honest-confession",
+      "prayerText": "Father, when \"Did God really say?\" surfaces in my own thinking today, give me ears to hear the shape of it. Show me where I have shrunk Your generosity into a fence, where I have added weight You never laid on me, where I have believed the whisper that You are holding out. Teach me Christ's answer in the wilderness: not to argue louder, but to come back to what is written, and to trust the heart of the One who wrote it. You who spoke the world into being and called it good - speak again over the places where I have begun to doubt You are good. In Jesus' name. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, when a \"Did God really say?\" thought arrives - about forgiveness, about a boundary, about whether you are loved - do not argue with it and do not obey it. Stop and ask one question back: Is that actually what God said? Then find the real sentence and read it, unedited. Refuse the rephrasing.",
+      "leavingAtCross": [
+        "The edited God - the version of Him I have built from omissions, additions, and suspicions, who is stingier than the God who actually spoke",
+        "The habit of fighting a sentence God never said instead of reading the one He did",
+        "The whisper that God's commands are Him holding out on me, rather than Him protecting me"
+      ],
+      "receivingFromCross": [
+        "The true word of God, unshrunk - the lavish yes that surrounds every one of His no's",
+        "Christ's own answer for the wilderness: \"It is written,\" spoken back to every distortion",
+        "Confidence that the God who made everything and called it good has not changed His heart toward me"
+      ],
+      "content": "Today, when a \"Did God really say?\" thought arrives - about forgiveness, about a boundary, about whether you are loved - do not argue with it and do not obey it. Stop and ask one question back: Is that actually what God said? Then find the real sentence and read it, unedited. Refuse the rephrasing."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Trace the serpent's three moves - omission, addition, suspicion. Which one do you think does the most damage, and why?",
+        "Why does it matter that the serpent quotes God rather than denying Him? What does that tell you about how temptation usually comes?",
+        "Compare the woman's answer in the garden with Jesus' answer in the wilderness (Matthew 4). What did He do differently with the word of God?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one \"Did God really say?\" question you have been carrying lately. Say it out loud - naming the distortion is half of disarming it.",
+        "Talk about the difference between fighting a thought louder and answering it with what is actually written. Which is your instinct, and which is Christ's?",
+        "Ask each other: where have you been believing God is holding out on you - and what does His real word say about that exact thing?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:16-17",
+          "text": "And the LORD God commanded him, \"You may eat freely from every tree of the garden, but you must not eat from the tree of the knowledge of good and evil; for in the day that you eat of it, you will surely die.\""
+        },
+        {
+          "reference": "Genesis 3:15",
+          "text": "And I will put enmity between you and the woman, and between your seed and her seed. He will crush your head, and you will strike his heel."
+        },
+        {
+          "reference": "Matthew 4:4",
+          "text": "But Jesus answered, \"It is written: 'Man shall not live on bread alone, but on every word that comes from the mouth of God.'\""
+        },
+        {
+          "reference": "2 Corinthians 11:3",
+          "text": "I am afraid, however, that just as Eve was deceived by the serpent's cunning, your minds may be led astray from your simple and pure devotion to Christ."
+        },
+        {
+          "reference": "John 8:44",
+          "text": "You belong to your father, the devil, and you want to carry out his desires. He was a murderer from the beginning, refusing to uphold the truth, because there is no truth in him. When he lies, he speaks his native language, because he is a liar and the father of lies."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 2:25-3:7",
+          "note": "Read across the chapter break, in one sitting, watching the wordplay between arummim (naked, 2:25) and arum (crafty, 3:1). The chapter division hides a pun the original reader heard immediately."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Serpent",
+      "title": "The Crafty One in the Garden",
+      "description": "Genesis introduces the serpent carefully as a creature - \"more crafty than any beast of the field that the LORD God had made.\" He is never granted the status of a rival god; he is something God made, bending a God-given shrewdness toward ruin. His weapon is not strength but speech: a question that re-quotes God's word with the generosity removed. Scripture later identifies the voice behind the voice - \"that ancient serpent called the devil and Satan\" (Revelation 12:9), the one Jesus names \"a liar and the father of lies\" (John 8:44). The method he uses in chapter three is the method he never abandons.",
+      "keyQuote": "Did God really say...?",
+      "lessonForUs": "The enemy of the soul rarely begins by denying God outright. He begins by editing Him - re-quoting the true word until a generous God sounds stingy and a protective command sounds cruel. Learn the shape of the question, and you have learned the first half of resisting it; return to what God actually said, the way Christ did in the wilderness, and you have learned the second.",
+      "heading": "The Crafty One in the Garden"
     }
   ],
-  "totalWords": 835,
-  "endnotes": [
-    {
-      "n": 1,
-      "ref": "Augustine of Hippo, *City of God*, Book XIV, Ch. 11–13 (426 AD), on the inward pride that preceded the outward act in Eden."
-    },
-    {
-      "n": 2,
-      "ref": "C. S. Lewis, *The Screwtape Letters* (Geoffrey Bles, 1942), Letter 4 — the tempter's preferred method is not denial but distortion."
-    }
+  "panels": [],
+  "totalWords": 2933,
+  "scriptureReference_full": "Genesis 3:1-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (arum H6175) reflects standard lexical sources; the arum / arummim wordplay between Genesis 2:25 and 3:1 is widely noted in Genesis commentary."
   ]
 }

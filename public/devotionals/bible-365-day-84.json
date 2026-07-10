@@ -1,38 +1,187 @@
 {
   "day": 84,
   "title": "When God chooses the overlooked",
-  "teaser": "Day 84 of Bible 365 — Sabbath",
+  "teaser": "Seven impressive sons stand in a row. God passes them all and sends for the boy nobody bothered to call in from the sheep.",
   "framework": "Sabbath — Sabbath: rest in being seen",
   "scriptureReference": "Sabbath",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 84"
+      "type": "scripture",
+      "reference": "1 Samuel 16:7, 11-13",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD sees the heart",
+        "There is still the youngest",
+        "he is the one",
+        "the Spirit of the LORD rushed upon David"
+      ],
+      "hebrewOriginal": "כִּי הָאָדָם יִרְאֶה לַעֵינַיִם וַיהוָה יִרְאֶה לַלֵּבָב",
+      "passage": "But the LORD said to Samuel, \"Do not consider his appearance or height, for I have rejected him; the LORD does not see as man does. For man sees the outward appearance, but the LORD sees the heart.\" ... And Samuel asked him, \"Are these all the sons you have?\" \"There is still the youngest,\" Jesse replied, \"but he is tending the sheep.\" \"Send for him,\" Samuel replied. \"For we will not sit down to eat until he arrives.\" So Jesse sent for his youngest son and brought him in. He was ruddy, with beautiful eyes and a handsome appearance. And the LORD said, \"Rise and anoint him, for he is the one.\" So Samuel took the horn of oil and anointed him in the presence of his brothers, and the Spirit of the LORD rushed upon David from that day forward. Then Samuel set out and went to Ramah."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Sabbath**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Sabbath and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֵבָב",
+      "transliteration": "levav",
+      "pronunciation": "leh-VAHV",
+      "meaning": "heart — the inner person: mind, will, and affection together",
+      "rootMeaning": "In Hebrew the levav is not mainly the seat of feeling, as 'heart' is for us. It is the hidden center where a person thinks, decides, and loves - the real self underneath the face everyone else sees.",
+      "usageNote": "Verse 7 turns on a single pair of words held against each other: man looks la'einayim, 'to the eyes' - to what the eyes can take in - while the LORD looks la-levav, 'to the heart.' Same verb, two destinations. The whole story of David's anointing lives in that gap between the eyes and the heart.",
+      "wordByWord": [
+        {
+          "word": "הָאָדָם",
+          "transliteration": "ha'adam",
+          "meaning": "the man, the human being - humankind in general"
+        },
+        {
+          "word": "יִרְאֶה",
+          "transliteration": "yir'eh",
+          "meaning": "sees, looks at, perceives"
+        },
+        {
+          "word": "לַעֵינַיִם",
+          "transliteration": "la'einayim",
+          "meaning": "to the eyes - to what is visible, the outward appearance"
+        },
+        {
+          "word": "וַיהוָה",
+          "transliteration": "va-YHWH",
+          "meaning": "but the LORD - the covenant name, set against ha'adam"
+        },
+        {
+          "word": "לַלֵּבָב",
+          "transliteration": "la-levav",
+          "meaning": "to the heart - to the hidden inner person"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מָשַׁח",
+          "reference": "Mashach, 'to anoint,' is the verb in verse 13. From it comes mashiach, 'anointed one' - Messiah. The oil poured over the overlooked boy is the first drop of a word that ends at Christ."
+        }
+      ],
+      "strongsNumber": "H3824",
+      "definition": "the inner person; the seat of thought, will, and desire",
+      "usage": "When God says He sees the levav, He is not flattering David. He is telling Samuel that the only set of eyes that matters has already looked all the way through the boy and is not disappointed by what is there."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Sabbath: rest in being seen. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the chosen Cornerstone (1 Pet 2:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Seven Sons, and the One Who Wasn't Asked In",
+      "body": "Samuel comes to Bethlehem with a horn of oil and a secret: somewhere in Jesse's house is Israel's next king. Jesse lines up his sons, and the prophet starts down the row. Eliab is first - tall, the eldest, exactly what a king is supposed to look like. Samuel is impressed. \"Surely here before the LORD is His anointed,\" he thinks. And God stops him cold.\n\n\"Do not consider his appearance or height,\" the LORD says. \"Man sees the outward appearance, but the LORD sees the heart.\" Samuel had been doing what we all do at a glance: reading the cover and guessing the book. So the prophet keeps walking. Abinadab. Shammah. Four more. Seven sons pass, and seven times the answer is the same quiet no.\n\nThen the room runs out of candidates. Samuel asks the question that exposes everything: \"Are these all the sons you have?\" And Jesse, almost as an afterthought, says, \"There is still the youngest, but he is tending the sheep.\" There is one more. He just wasn't worth calling in. When you assembled the household to meet the prophet of God, you left him in the field with the animals, because no one - not even his own father - imagined the oil was meant for him.",
+      "keyInsight": "The boy God had already chosen was the one no one thought to invite. God's choice was settled before David was even in the room.",
+      "content": "Samuel comes to Bethlehem with a horn of oil and a secret: somewhere in Jesse's house is Israel's next king. Jesse lines up his sons, and the prophet starts down the row. Eliab is first - tall, the eldest, exactly what a king is supposed to look like. Samuel is impressed. \"Surely here before the LORD is His anointed,\" he thinks. And God stops him cold.\n\n\"Do not consider his appearance or height,\" the LORD says. \"Man sees the outward appearance, but the LORD sees the heart.\" Samuel had been doing what we all do at a glance: reading the cover and guessing the book. So the prophet keeps walking. Abinadab. Shammah. Four more. Seven sons pass, and seven times the answer is the same quiet no.\n\nThen the room runs out of candidates. Samuel asks the question that exposes everything: \"Are these all the sons you have?\" And Jesse, almost as an afterthought, says, \"There is still the youngest, but he is tending the sheep.\" There is one more. He just wasn't worth calling in. When you assembled the household to meet the prophet of God, you left him in the field with the animals, because no one - not even his own father - imagined the oil was meant for him."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name They Forgot to Read",
+      "body": "A friend told me about the day her son's name was left off the program at a school awards night. He had won the prize - the certificate was sitting on the table with everyone else's - but when they printed the list, somehow his line got dropped. So he sat in the audience while every other winner walked up, watching, doing the math, deciding he must have heard wrong.\n\nThen near the end a teacher noticed the gap, leaned to the microphone, and said his name out loud. He told his mother later that the strange thing was not winning. The strange thing was that the prize had been his the whole time he sat there thinking he'd been passed over. The award didn't start when his name was read. It started when it was decided. The reading just let him in on what was already true.\n\nThat is exactly the order of things at Bethlehem. David was chosen out in the field, before the feast, before the line-up, before anyone said his name. When Samuel finally sends for him, nothing changes about who David is to God. The sending only catches the rest of the room up to a decision Heaven had already made.",
+      "connectionToTheme": "Being chosen by God is not a verdict you earn by being noticed; it is a fact that is true of you before anyone in the room thinks to call you in.",
+      "content": "A friend told me about the day her son's name was left off the program at a school awards night. He had won the prize - the certificate was sitting on the table with everyone else's - but when they printed the list, somehow his line got dropped. So he sat in the audience while every other winner walked up, watching, doing the math, deciding he must have heard wrong.\n\nThen near the end a teacher noticed the gap, leaned to the microphone, and said his name out loud. He told his mother later that the strange thing was not winning. The strange thing was that the prize had been his the whole time he sat there thinking he'd been passed over. The award didn't start when his name was read. It started when it was decided. The reading just let him in on what was already true.\n\nThat is exactly the order of things at Bethlehem. David was chosen out in the field, before the feast, before the line-up, before anyone said his name. When Samuel finally sends for him, nothing changes about who David is to God. The sending only catches the rest of the room up to a decision Heaven had already made."
+    },
+    {
+      "type": "insight",
+      "heading": "Seen All the Way Through, and Still Wanted",
+      "body": "We usually hear \"the LORD sees the heart\" as a warning. The eyes can be fooled, but God reads the inside - so watch yourself, because nothing is hidden from Him. That is true. But stand it in this room, on this day, and the same sentence turns into the deepest comfort in the chapter.\n\nGod sees the heart, and He chooses David. He looks past the unimpressive frame of the youngest son, past whatever Jesse and the brothers had already concluded about him, all the way down to the levav - and what He finds there does not make Him turn away. The boy is not picked because he managed to look better than the others. He is picked by the one set of eyes that already knows everything there is to know about him.\n\nThat is the rest on offer this Sabbath. Most of our exhausting effort goes into managing the outside - the appearance, the height, the version of ourselves that earns a place in the line-up. But the only Looker who counts has already seen straight through the performance to the actual person underneath. And He is the one sending for you. You can stop auditioning for a God who has already chosen you.",
+      "historicalContext": "1 Samuel sits at the seam between the era of the judges and the monarchy. Israel had just demanded a king \"like all the nations\" (1 Samuel 8), and got Saul - a man chosen partly because he stood head and shoulders above everyone else (1 Samuel 9:2). David's anointing is God's deliberate answer to that craving for impressive height: He passes over exactly the kind of man Israel would have crowned, and chooses by a standard the nation could not see.",
+      "fascinatingFact": "The text says the Spirit of the LORD \"rushed upon David from that day forward\" (v. 13). The same verb describes the Spirit coming on Samson (Judges 14:6) - sudden, forceful, unmistakable. But where it left Samson in fits, on David it stays. The anointing was not a moment; it was the beginning of a presence that did not lift.",
+      "content": "We usually hear \"the LORD sees the heart\" as a warning. The eyes can be fooled, but God reads the inside - so watch yourself, because nothing is hidden from Him. That is true. But stand it in this room, on this day, and the same sentence turns into the deepest comfort in the chapter.\n\nGod sees the heart, and He chooses David. He looks past the unimpressive frame of the youngest son, past whatever Jesse and the brothers had already concluded about him, all the way down to the levav - and what He finds there does not make Him turn away. The boy is not picked because he managed to look better than the others. He is picked by the one set of eyes that already knows everything there is to know about him.\n\nThat is the rest on offer this Sabbath. Most of our exhausting effort goes into managing the outside - the appearance, the height, the version of ourselves that earns a place in the line-up. But the only Looker who counts has already seen straight through the performance to the actual person underneath. And He is the one sending for you. You can stop auditioning for a God who has already chosen you."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Bethlehem God passes over seven impressive sons and chooses the overlooked shepherd boy, the one left in the field, and the Spirit of the LORD rushes upon him.",
+      "modernApplication": "Most of us live in the line-up, measuring ourselves against the Eliabs - the taller, older, more obviously gifted versions of a life. We assume that being unnoticed by the room means being unchosen by God. This passage takes that assumption apart. The field is not where God forgets you. It is often where He finds you.",
+      "connectionPoint": "David is not the end of this thread; he is the first draft of it. Generations later another overlooked son is born in the same town of Bethlehem - so overlooked there was no room for Him but a feed trough, raised in a village people sneered at, the carpenter's boy. Isaiah had promised \"a shoot will spring up from the stump of Jesse\" (Isaiah 11:1), and on that shoot the Spirit of the LORD would rest. What the oil and the rushing Spirit began on David, they pointed toward all along.",
+      "newTestamentEcho": "At David's anointing the Spirit rushed upon him; at Jesus' baptism the Spirit of God descended and rested on Him, and the Father said, \"This is My beloved Son, in whom I am well pleased\" (Matthew 3:16-17). The shepherd boy of Bethlehem prefigures the Shepherd-King of Bethlehem - the stone the builders rejected, whom God made \"a chosen and precious cornerstone\" (1 Peter 2:6). God's habit of choosing the overlooked reaches its furthest point in choosing a Savior the world would refuse."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been living as the son left in the field - assuming that because the room overlooked you, God has too?",
+      "additionalQuestions": [
+        "Whose eyes are you actually dressing for? Whose opinion of you sets the standard you exhaust yourself trying to meet?",
+        "If God has already seen all the way to your levav - the real you, not the curated one - and is still sending for you, what fear could that quiet today?",
+        "Is there someone in your own line-up you have already passed over - written off as unimpressive - whom God may be choosing?"
+      ],
+      "invitationType": "restful-reflection"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "Lord, You who see the heart - thank You that being seen by You is not the thing I should fear, but the thing I most need. I have spent so long managing the outside, standing in the line-up, hoping to be noticed. Today let me rest in this: You looked all the way through me before anyone in the room thought to call my name, and You sent for me anyway. Quiet the part of me that still believes I am the son left in the field. Let the same Spirit that rushed upon David, that rested on Your beloved Son, rest on me this Sabbath. I am not auditioning anymore. I am Yours. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a Sabbath day - nothing to finish, nothing to prove. Sit for five quiet minutes and let one line hold you: \"the LORD sees the heart,\" or \"he is the one.\" Picture yourself as the boy sent for from the field, and let it be true that you were chosen before the room ever called your name.",
+      "leavingAtCross": [
+        "The belief that being overlooked by people means being unchosen by God",
+        "The exhausting work of dressing the outside for eyes that were never the ones that mattered",
+        "The fear that if God truly saw all the way through me, He would turn away"
+      ],
+      "receivingFromCross": [
+        "The rest of being fully seen and still fully wanted",
+        "A worth that was settled in the field, before I did anything to earn it",
+        "The same abiding Spirit that rushed upon David and rested on Christ"
+      ],
+      "content": "This is a Sabbath day - nothing to finish, nothing to prove. Sit for five quiet minutes and let one line hold you: \"the LORD sees the heart,\" or \"he is the one.\" Picture yourself as the boy sent for from the field, and let it be true that you were chosen before the room ever called your name."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In verse 7, the same Hebrew verb 'to see' points in two directions - to the eyes and to the heart. What is the difference between those two ways of seeing, and which one decides David's future?",
+        "Why does it matter that David was chosen out in the field, before Samuel ever sent for him? What does the order tell you about how God's choosing works?",
+        "How does an overlooked shepherd boy, anointed at Bethlehem with the Spirit rushing upon him, point forward to Jesus?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'fig leaf' of appearance you keep working on - one way you manage how the room sees you - and talk about whose approval is really driving it.",
+        "Tell each other about a season you felt like the son left in the field. Looking back, was God absent there, or finding you there?",
+        "Ask each other: who have you quietly passed over as unimpressive, and what would it mean to see them the way God sees a heart?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 16:6",
+          "text": "When they arrived, Samuel saw Eliab and said, \"Surely here before the LORD is His anointed.\""
+        },
+        {
+          "reference": "Isaiah 11:1-2",
+          "text": "Then a shoot will spring up from the stump of Jesse, and a Branch from his roots will bear fruit. The Spirit of the LORD will rest on Him - the Spirit of wisdom and understanding, the Spirit of counsel and strength, the Spirit of knowledge and fear of the LORD."
+        },
+        {
+          "reference": "1 Corinthians 1:27-28",
+          "text": "But God chose the foolish things of the world to shame the wise; God chose the weak things of the world to shame the strong. He chose the lowly and despised things of the world, and the things that are not, to nullify the things that are."
+        },
+        {
+          "reference": "1 Peter 2:4",
+          "text": "As you come to Him, the living stone, rejected by men but chosen and precious in God's sight."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 16",
+          "note": "Read the whole chapter slowly, watching the movement from the row of impressive sons (vv. 6-10) to the boy in the field (v. 11) to the anointing and the rushing Spirit (vv. 12-13)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "David, son of Jesse",
+      "title": "The Overlooked Boy Chosen as King",
+      "description": "The youngest of Jesse's eight sons, a shepherd from Bethlehem so easily forgotten that he wasn't even called in when the prophet came to anoint a king. God chose him not for his height or his place in the family, but for his heart - and from his anointing the Spirit of the LORD rushed upon him and remained. He becomes Israel's greatest king and the line through which the Messiah is promised: the Christ would come \"from the line of David and from Bethlehem, the village where David lived\" (John 7:42).",
+      "keyQuote": "There is still the youngest, but he is tending the sheep.",
+      "lessonForUs": "If God's eyes went past seven impressive men to a boy his own father left in the field, then being overlooked by the room is not the same as being overlooked by God. The Looker who matters has already seen your heart - and is sending for you.",
+      "heading": "The Overlooked Boy Chosen as King"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1751,
+  "scriptureReference_full": "1 Samuel 16:7, 11-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (levav H3824; the einayim/levav contrast in 1 Samuel 16:7; mashach, 'to anoint') reflects standard lexical sources."
+  ]
 }

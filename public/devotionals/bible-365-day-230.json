@@ -1,38 +1,192 @@
 {
   "day": 230,
-  "title": "Isaiah: Suffering Servant — Day 6 — Deeper Dive",
-  "teaser": "Day 230 of Bible 365 — Isaiah 40-55",
+  "title": "The Servant who was pierced for us",
+  "teaser": "Seven centuries before the cross, Isaiah describes a Servant wounded for sins that were never His. When the Ethiopian asks \"who is this?\", Philip answers with one name.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 230"
+      "type": "scripture",
+      "reference": "Isaiah 53:4-6",
+      "translation": "BSB",
+      "emphasis": [
+        "He was pierced for our transgressions",
+        "by His stripes we are healed",
+        "the LORD has laid upon Him the iniquity of us all"
+      ],
+      "hebrewOriginal": "וְהוּא מְחֹלָל מִפְּשָׁעֵנוּ מְדֻכָּא מֵעֲוֺנֹתֵינוּ מוּסַר שְׁלוֹמֵנוּ עָלָיו וּבַחֲבֻרָתוֹ נִרְפָּא־לָנוּ",
+      "passage": "Surely He took on our infirmities and carried our sorrows; yet we considered Him stricken by God, struck down and afflicted. But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מְחֹלָל",
+      "transliteration": "mecholal",
+      "pronunciation": "meh-kho-LAHL",
+      "meaning": "pierced through, bored through, fatally wounded",
+      "rootMeaning": "From the root chalal, to pierce or run through. It is not the language of a scratch or a bruise; it is the word for being run through with a blade, wounded clean to death. The same root names the slain on a battlefield.",
+      "usageNote": "Isaiah does not soften it. The Servant is mecholal mi-pshaeinu - pierced because of our transgressions. The preposition carries the whole gospel in one syllable: the wounds are His, the transgressions are ours, and the one is for the other.",
+      "wordByWord": [
+        {
+          "word": "וְהוּא",
+          "transliteration": "vehu",
+          "meaning": "but He - the word lands with emphasis, turning the verse against everything we assumed in the line before"
+        },
+        {
+          "word": "מְחֹלָל",
+          "transliteration": "mecholal",
+          "meaning": "pierced through, run through, mortally wounded"
+        },
+        {
+          "word": "מִפְּשָׁעֵנוּ",
+          "transliteration": "mi-pshaeinu",
+          "meaning": "because of our transgressions, our rebellions"
+        },
+        {
+          "word": "מְדֻכָּא",
+          "transliteration": "meduka",
+          "meaning": "crushed, broken to pieces"
+        },
+        {
+          "word": "וּבַחֲבֻרָתוֹ",
+          "transliteration": "u-vachavurato",
+          "meaning": "and by His wound, His welt, the bruise raised by a blow - and by it we are healed"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֶבֶד / ebed",
+          "reference": "The figure of Isaiah 40-55 is the ebed YHWH, the Servant of the LORD - a title Israel itself sometimes wears, but which narrows, song by song, to a single sufferer who does for the nation what the nation could not do for itself."
+        }
+      ],
+      "strongsNumber": "H2490",
+      "definition": "to pierce, bore through, wound fatally; in the passive participle, one who has been run through",
+      "usage": "The healing word at the end of verse 5, chavurah, means the raised welt left by a lash. Scripture says we are healed not in spite of His wounds but by them - the bruise on His back becomes the medicine for ours."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Comfort That Comes Wearing Wounds",
+      "body": "Isaiah 40 opens with a sound Israel had almost forgotten how to hear: \"Comfort, comfort My people, says your God. Speak tenderly to Jerusalem.\" The exile is ending; the long sentence has been served. And across the next sixteen chapters, God keeps describing the comfort He intends to send - not a strategy, not a program, but a person. Four times the prophet stops and lets a figure step forward: the Servant. He is chosen, Spirit-filled, gentle enough not to break a bruised reed, stubborn enough to set His face like flint when the work turns to suffering.\n\nThe songs build toward the fourth, and there the comfort takes a shape no one expected. The Servant who is to console a wounded people is Himself \"a man of sorrows, acquainted with grief.\" He has \"no stately form or majesty to attract us, no beauty that we should desire Him.\" The God who promised to speak tenderly to Jerusalem does it through someone the crowd hides its face from.\n\nThis is the plain sense of the passage, the surface the words actually carry. Verse 4 records what the onlookers assumed: \"we considered Him stricken by God, struck down and afflicted.\" They read His suffering as His own guilt - surely a man this broken is being paid out for something. Verse 5 turns the whole reading inside out with a single word: but. \"But He was pierced for our transgressions.\" The wounds were real; the verdict was wrong. He was not suffering for His sin. He was suffering for theirs. For ours.",
+      "keyInsight": "The comfort Isaiah promised does not arrive as a strong man who keeps suffering at a distance. It arrives as a Servant who walks straight into it, and carries it out on the far side wearing it.",
+      "content": "Isaiah 40 opens with a sound Israel had almost forgotten how to hear: \"Comfort, comfort My people, says your God. Speak tenderly to Jerusalem.\" The exile is ending; the long sentence has been served. And across the next sixteen chapters, God keeps describing the comfort He intends to send - not a strategy, not a program, but a person. Four times the prophet stops and lets a figure step forward: the Servant. He is chosen, Spirit-filled, gentle enough not to break a bruised reed, stubborn enough to set His face like flint when the work turns to suffering.\n\nThe songs build toward the fourth, and there the comfort takes a shape no one expected. The Servant who is to console a wounded people is Himself \"a man of sorrows, acquainted with grief.\" He has \"no stately form or majesty to attract us, no beauty that we should desire Him.\" The God who promised to speak tenderly to Jerusalem does it through someone the crowd hides its face from.\n\nThis is the plain sense of the passage, the surface the words actually carry. Verse 4 records what the onlookers assumed: \"we considered Him stricken by God, struck down and afflicted.\" They read His suffering as His own guilt - surely a man this broken is being paid out for something. Verse 5 turns the whole reading inside out with a single word: but. \"But He was pierced for our transgressions.\" The wounds were real; the verdict was wrong. He was not suffering for His sin. He was suffering for theirs. For ours."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man in the Chariot",
+      "body": "Centuries after Isaiah wrote, a court official from Ethiopia sat in a chariot on a desert road, holding a scroll. He had traveled to Jerusalem to worship, and he was carrying home the words of the prophet. When Philip caught up to him, the man was reading aloud the exact passage we are sitting with: \"He was led like a sheep to the slaughter, and as a lamb before the shearer is silent, so He did not open His mouth.\"\n\nPhilip asked the obvious question. \"Do you understand what you are reading?\" The official answered with the question the whole song forces on anyone honest enough to ask it: \"How can I, unless someone guides me?\" Then he put it plainly - the question Isaiah 53 has been raising for seven hundred years: \"Tell me, who is the prophet talking about, himself or someone else?\"\n\nLuke records the answer in a single sentence, and it is the most important sentence anyone can say about this chapter: \"Then Philip began with this very Scripture and told him the good news about Jesus.\" He did not change the subject. He did not import an idea from outside the text. He started exactly where the man's finger was resting and showed him a name.",
+      "connectionToTheme": "Isaiah 53 has always demanded an answer to one question - who is this pierced Servant? The New Testament does not invent the connection to Jesus; it reads it straight off the page the eunuch was already holding.",
+      "content": "Centuries after Isaiah wrote, a court official from Ethiopia sat in a chariot on a desert road, holding a scroll. He had traveled to Jerusalem to worship, and he was carrying home the words of the prophet. When Philip caught up to him, the man was reading aloud the exact passage we are sitting with: \"He was led like a sheep to the slaughter, and as a lamb before the shearer is silent, so He did not open His mouth.\"\n\nPhilip asked the obvious question. \"Do you understand what you are reading?\" The official answered with the question the whole song forces on anyone honest enough to ask it: \"How can I, unless someone guides me?\" Then he put it plainly - the question Isaiah 53 has been raising for seven hundred years: \"Tell me, who is the prophet talking about, himself or someone else?\"\n\nLuke records the answer in a single sentence, and it is the most important sentence anyone can say about this chapter: \"Then Philip began with this very Scripture and told him the good news about Jesus.\" He did not change the subject. He did not import an idea from outside the text. He started exactly where the man's finger was resting and showed him a name."
+    },
+    {
+      "type": "insight",
+      "heading": "The Verse That Speaks in the Plural and the Singular",
+      "body": "Read Isaiah 53:6 slowly and notice how the grammar carries the meaning. \"We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all.\"\n\nThe verse begins wide and ends narrow. It opens with everyone - we all, like a whole flock scattering, every sheep choosing its own direction, the very picture of a people without a shepherd. There is no exemption clause; the line refuses to let anyone stand outside the all. But then the verse funnels. All that wandering, all those separate rebellions running off in every direction, gets gathered up and set down in one place: upon Him. The Hebrew verb is the language of laying a hand on a sacrifice, pressing the weight of the many onto the one.\n\nThis is the center of the whole song, and the center of why it is good news rather than merely sad. The Servant does not suffer alongside us, as a fellow victim. He suffers instead of us, as a substitute. The straying is plural and ours; the bearing is singular and His. Isaiah holds both in a single sentence so that we cannot take the comfort without admitting the sin, and cannot admit the sin without being handed the comfort.",
+      "historicalContext": "Isaiah 40-55 was written for a people facing or living through the Babylonian exile, a community asking whether God had forgotten them and whether their sin had finally exhausted His patience. Into that despair the prophet sets the Servant Songs - and the people who first heard them already knew the temple system, where the worshiper laid a hand on the head of an animal and the animal died in his place. Isaiah 53 takes that familiar picture and stretches it to a person.",
+      "fascinatingFact": "Isaiah 52:13-53:12 is one continuous poem - the chapter break that splits it was added by medieval editors, not by Isaiah. Read across the seam and the structure is striking: it opens (52:13) and closes (53:12) with the Servant exalted and vindicated, and sinks in the middle to the deepest description of suffering in the Hebrew Bible. The poem itself is shaped like a valley with high ground on both sides - humiliation pressed between two declarations of triumph.",
+      "content": "Read Isaiah 53:6 slowly and notice how the grammar carries the meaning. \"We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all.\"\n\nThe verse begins wide and ends narrow. It opens with everyone - we all, like a whole flock scattering, every sheep choosing its own direction, the very picture of a people without a shepherd. There is no exemption clause; the line refuses to let anyone stand outside the all. But then the verse funnels. All that wandering, all those separate rebellions running off in every direction, gets gathered up and set down in one place: upon Him. The Hebrew verb is the language of laying a hand on a sacrifice, pressing the weight of the many onto the one.\n\nThis is the center of the whole song, and the center of why it is good news rather than merely sad. The Servant does not suffer alongside us, as a fellow victim. He suffers instead of us, as a substitute. The straying is plural and ours; the bearing is singular and His. Isaiah holds both in a single sentence so that we cannot take the comfort without admitting the sin, and cannot admit the sin without being handed the comfort."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Isaiah describes a Servant pierced and crushed for sins that were not His own - a single sufferer onto whom the LORD lays the iniquity of a whole straying flock, who bears it silently and is then raised and exalted.",
+      "modernApplication": "Most of us carry a quiet ledger of the things we have done and the directions we have wandered, and we manage it by hiding it, minimizing it, or trying to pay it down with good behavior. Isaiah 53 confronts that whole system with a stranger possibility: the debt has already been carried, by someone willing to be wounded for it, and the only thing left for us to do is stop pretending the ledger isn't ours and let it be lifted.",
+      "connectionPoint": "The early church did not have to argue Isaiah 53 onto Jesus from the outside; the connection was made by Jesus and His followers reading the text as it stands. The Servant who is silent before His shearers, numbered with transgressors, assigned a grave with the wicked yet buried with a rich man, who bears the sin of many and makes intercession for them - this is the shape of the cross laid down seven centuries early.",
+      "newTestamentEcho": "When the Ethiopian official, reading this very passage, asked who the prophet meant, \"Philip began with this very Scripture and told him the good news about Jesus\" (Acts 8:35). Peter would later write that Christ \"Himself bore our sins in His body on the tree... by His stripes you are healed\" (1 Peter 2:24), quoting Isaiah 53 word for word. The pierced Servant has a name, and it is the same name the whole chapter was reaching toward."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been quietly assuming that what you carry is yours alone to bear - and what would change if you believed it had already been laid on Him?",
+      "additionalQuestions": [
+        "Verse 4 records people misreading the Servant's suffering as proof of His guilt. Where have you misread your own suffering, or someone else's, as a verdict from God?",
+        "The eunuch asked, \"Who is the prophet talking about?\" If you read Isaiah 53 slowly today, what keeps you, like him, from being sure of the answer?",
+        "What would it look like to let the word 'all' in verse 6 include you - both in the straying and in the iniquity that was laid on Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have read Isaiah 53 before and kept it at a distance, a beautiful poem about someone else. Today let me hear it in the first person. I am the one who, like a sheep, has gone astray and turned to my own way. And You are the One on whom the LORD laid all of it - pierced for my transgressions, crushed for my iniquities, wounded so that I could be healed. I do not understand a love that walks silently into that. I only want to stop pretending the burden is mine to carry. Thank You that the punishment that brought me peace was upon You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Read Isaiah 53 aloud once today, slowly, the way the Ethiopian read it - not analyzing it but listening for who it is about. When you reach verse 5, stop and put your own name where the words say 'our' and 'we.'",
+      "leavingAtCross": [
+        "The instinct to carry my own ledger of guilt as though no one had ever offered to take it",
+        "The lie that my suffering is the proof of a verdict against me",
+        "The habit of reading Isaiah 53 as a poem about someone far away from me"
+      ],
+      "receivingFromCross": [
+        "A Servant who was pierced for my transgressions and crushed for my iniquities",
+        "Peace that came at the cost of His punishment, and healing that came by His wounds",
+        "The freedom of a sheep that has been found by the Shepherd it ran from"
+      ],
+      "content": "Read Isaiah 53 aloud once today, slowly, the way the Ethiopian read it - not analyzing it but listening for who it is about. When you reach verse 5, stop and put your own name where the words say 'our' and 'we.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In verse 4, what did the onlookers assume about the Servant's suffering - and how does verse 5 overturn that assumption with a single word?",
+        "How does the movement of verse 6, from 'we all' to 'upon Him,' show the difference between a Servant who suffers alongside us and one who suffers instead of us?",
+        "Why does it matter that Philip 'began with this very Scripture' rather than introducing Jesus from somewhere outside the text?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing you have been carrying as though it were yours alone to bear, and talk about what it would mean to leave it on the Servant who was pierced for it.",
+        "Read Isaiah 53:4-6 to each other and ask: where do you find it hardest to believe the word 'all' includes you?",
+        "Talk honestly about whether you tend to read your own hardships as God striking you down, like the onlookers in verse 4 - and what the gospel says back to that."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 40:11",
+          "text": "He tends His flock like a shepherd; He gathers the lambs in His arms and carries them close to His heart. He gently leads the nursing ewes."
+        },
+        {
+          "reference": "Isaiah 55:1-2",
+          "text": "Come, all you who are thirsty, come to the waters; and you without money, come, buy, and eat! Come, buy wine and milk without money and without cost! Why spend money on that which is not bread, and your labor on that which does not satisfy?"
+        },
+        {
+          "reference": "Acts 8:32, 35",
+          "text": "The eunuch was reading this passage of Scripture: \"He was led like a sheep to the slaughter, and as a lamb before the shearer is silent, so He did not open His mouth.\" ... Then Philip began with this very Scripture and told him the good news about Jesus."
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. \"By His stripes you are healed.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 52:13-53:12",
+          "note": "Read the fourth Servant Song as one continuous poem, ignoring the chapter break. Watch it open and close with the Servant exalted, and sink in the middle to His suffering."
+        },
+        {
+          "type": "book",
+          "title": "Isaiah 42:1-4; 49:1-6; 50:4-9",
+          "note": "The first three Servant Songs. Read them before the fourth and notice how the Servant's mission narrows from a calling to enlighten the nations to the work of bearing their sin."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Servant of the LORD",
+      "title": "The Suffering Servant of Isaiah 40-55",
+      "description": "The central figure of Isaiah's book of comfort, introduced in four songs (42, 49, 50, and 52-53). He is chosen and Spirit-filled, called to bring justice to the nations without breaking a bruised reed - and in the final song he accomplishes that mission not by conquest but by being pierced, crushed, and silenced for the sins of the people he came to save. Israel sometimes wears the title 'servant' in these chapters, but the fourth song narrows it to one who suffers for the nation rather than as part of it.",
+      "keyQuote": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "lessonForUs": "The deepest comfort God offers a guilty, wandering people is not an exemption from the weight of their sin but Someone willing to carry it in their place. The wounds we deserved became, on Him, the wounds that heal us.",
+      "heading": "The Suffering Servant of Isaiah 40-55"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1543,
+  "scriptureReference_full": "Isaiah 40-55 (Isaiah 53:4-6 in focus)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mecholal, root chalal H2490; ebed; chavurah) reflects standard lexical sources.",
+    "The reading of Isaiah 53 as fulfilled in Jesus follows the New Testament's own use of the passage (Acts 8:30-35; 1 Peter 2:24)."
+  ]
 }

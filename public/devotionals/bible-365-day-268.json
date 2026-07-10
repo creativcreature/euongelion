@@ -1,38 +1,177 @@
 {
   "day": 268,
-  "title": "Minor Prophets: Wait + Hope — Day 2 — Building",
-  "teaser": "Day 268 of Bible 365 — Hab, Zeph, Hag, Zech, Mal",
+  "title": "How long, and how then to wait",
+  "teaser": "Habakkuk shouts \"How long?\" into a silent sky, then climbs his watchtower to listen. The answer he gets is not a rescue but a vision — and a word that will carry him, and the whole canon, all the way to Christ.",
   "framework": "Hab, Zeph, Hag, Zech, Mal — Minor Prophets: Wait + Hope",
   "scriptureReference": "Hab, Zeph, Hag, Zech, Mal",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 268"
+      "type": "scripture",
+      "reference": "Habakkuk 1:2; 2:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "How long, O LORD",
+        "I will stand at my guard post",
+        "wait for it",
+        "the righteous will live by faith"
+      ],
+      "hebrewOriginal": "וְצַדִּיק בֶּאֱמוּנָתוֹ יִחְיֶה",
+      "passage": "How long, O LORD, must I call for help but You do not hear, or cry out to You, \"Violence!\" but You do not save? ... I will stand at my guard post and station myself on the ramparts. I will watch to see what He will say to me, and how I should answer when corrected. Then the LORD answered me: \"Write down this vision and clearly inscribe it on tablets, so that a herald may run with it. For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay. Look at the proud one; his soul is not upright — but the righteous will live by faith.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hab, Zeph, Hag, Zech, Mal**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hab, Zeph, Hag, Zech, Mal and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֱמוּנָה",
+      "transliteration": "emunah",
+      "pronunciation": "eh-moo-NAH",
+      "meaning": "faithfulness, steadiness, trust that keeps holding on",
+      "rootMeaning": "From the root aman, the same root behind our word amen. It does not first mean belief in the head; it means firmness, reliability, the quality of a thing you can lean your weight on. The same root describes a nursing father carrying a child (Numbers 11:12) and pillars that hold a roof.",
+      "usageNote": "In Habakkuk 2:4 the phrase is be'emunato yichyeh — \"by his emunah he will live.\" The pronoun matters: the righteous one lives by his steady, leaning trust, and that trust rests on the faithfulness of the God who gave the vision. Paul quotes this verse three times (Romans 1:17; Galatians 3:11; Hebrews 10:38) and builds the doctrine of justification by faith on it.",
+      "wordByWord": [
+        {
+          "word": "וְצַדִּיק",
+          "transliteration": "ve'tzaddiq",
+          "meaning": "but the righteous one, the person in the right"
+        },
+        {
+          "word": "בֶּאֱמוּנָתוֹ",
+          "transliteration": "be'emunato",
+          "meaning": "by his faithfulness / steady trust"
+        },
+        {
+          "word": "יִחְיֶה",
+          "transliteration": "yichyeh",
+          "meaning": "he will live, he will keep on living"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אָמֵן / aman",
+          "reference": "Amen comes from this same root. When we say \"amen\" we are not saying \"the end\" — we are saying \"it is firm, it is reliable, lean on it.\" To live by emunah is to live a long, drawn-out amen to a promise not yet kept."
+        }
+      ],
+      "strongsNumber": "H530",
+      "definition": "firmness, steadfastness, fidelity; the trust that holds steady because what it rests on is trustworthy",
+      "usage": "Habakkuk does not say the righteous live by feeling certain. He says they live by emunah — a settled, weight-bearing trust in a God who keeps His word even when the word lingers."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Minor Prophets: Wait + Hope. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the long-promised dawn (Mal 4:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Prophet Who Argued Back",
+      "body": "Most of the prophets thunder at the people on God's behalf. Habakkuk does something rarer: he turns around and argues with God on the people's behalf. The book opens not with \"Thus says the LORD\" but with a complaint flung upward. \"How long, O LORD, must I call for help but You do not hear, or cry out to You, 'Violence!' but You do not save?\" Around him the law is paralyzed, justice never goes forth, the wicked hem in the righteous. He has prayed about it. Nothing has changed. And he says so, out loud, to God.\n\nWe have reached the far end of the Old Testament. Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi are the last five voices before four centuries of silence. They speak to a people staggering through collapse and its aftermath — Babylon on the horizon, then exile, then a return to a Jerusalem in ruins and a temple that looks like a shadow of the old one. The question pressing on all of them is the question Habakkuk says first: how long does faith have to wait before God acts?\n\nNotice what Habakkuk does with his unanswered question. He does not walk away from the God who has gone quiet. \"I will stand at my guard post,\" he says, \"and station myself on the ramparts. I will watch to see what He will say to me.\" He climbs the tower. He takes up the posture of a watchman on a city wall, scanning the dark for the first sign of dawn. His complaint does not end in cynicism; it ends in a vigil.",
+      "keyInsight": "Habakkuk shows that faith and complaint are not opposites. The man who shouts \"How long?\" and then climbs the watchtower to listen is doing the most faithful thing in the book.",
+      "content": "Most of the prophets thunder at the people on God's behalf. Habakkuk does something rarer: he turns around and argues with God on the people's behalf. The book opens not with \"Thus says the LORD\" but with a complaint flung upward. \"How long, O LORD, must I call for help but You do not hear, or cry out to You, 'Violence!' but You do not save?\" Around him the law is paralyzed, justice never goes forth, the wicked hem in the righteous. He has prayed about it. Nothing has changed. And he says so, out loud, to God.\n\nWe have reached the far end of the Old Testament. Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi are the last five voices before four centuries of silence. They speak to a people staggering through collapse and its aftermath — Babylon on the horizon, then exile, then a return to a Jerusalem in ruins and a temple that looks like a shadow of the old one. The question pressing on all of them is the question Habakkuk says first: how long does faith have to wait before God acts?\n\nNotice what Habakkuk does with his unanswered question. He does not walk away from the God who has gone quiet. \"I will stand at my guard post,\" he says, \"and station myself on the ramparts. I will watch to see what He will say to me.\" He climbs the tower. He takes up the posture of a watchman on a city wall, scanning the dark for the first sign of dawn. His complaint does not end in cynicism; it ends in a vigil."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Light That Was Already on Its Way",
+      "body": "A friend of mine spent a season working overnights in a hospital, the long hours after midnight when the building goes quiet and time seems to stop moving. She told me the hardest shifts were not the busy ones. They were the still ones, the ones where she sat by a bed and there was nothing left to do but wait — wait for a fever to break, wait for a number on a monitor to climb, wait for morning.\n\nShe said she learned to watch the window. Not because watching made the sun rise faster. The sun was coming on its own schedule, indifferent to her exhaustion. But facing the window changed something in her. It turned waiting from a thing that happened to her into a thing she was doing on purpose. She was no longer just enduring the dark. She was keeping watch for the light she was sure would come.\n\nThat is the move Habakkuk makes on his rampart. He cannot make God answer faster. But he can decide how he will wait. He can wait as a watchman and not as a victim — eyes up, listening, certain enough of the dawn to stand at his post and look for it.",
+      "connectionToTheme": "Waiting becomes faith the moment we stop merely enduring the dark and start actively watching for the light we trust is coming.",
+      "content": "A friend of mine spent a season working overnights in a hospital, the long hours after midnight when the building goes quiet and time seems to stop moving. She told me the hardest shifts were not the busy ones. They were the still ones, the ones where she sat by a bed and there was nothing left to do but wait — wait for a fever to break, wait for a number on a monitor to climb, wait for morning.\n\nShe said she learned to watch the window. Not because watching made the sun rise faster. The sun was coming on its own schedule, indifferent to her exhaustion. But facing the window changed something in her. It turned waiting from a thing that happened to her into a thing she was doing on purpose. She was no longer just enduring the dark. She was keeping watch for the light she was sure would come.\n\nThat is the move Habakkuk makes on his rampart. He cannot make God answer faster. But he can decide how he will wait. He can wait as a watchman and not as a victim — eyes up, listening, certain enough of the dawn to stand at his post and look for it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Vision Lingers, So Live by Faith",
+      "body": "When God finally answers from the tower, the answer is not what Habakkuk asked for. He asked God to act now. God hands him a vision and tells him to wait for it. \"Write down this vision and clearly inscribe it on tablets, so that a herald may run with it. For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay.\"\n\nRead the two halves of that promise together, because they sound like a contradiction and are not. The vision \"lingers\" — it will take longer than you want. And it \"will not delay\" — it will not be one second late by God's clock. Both are true. The appointment is fixed; you simply have not been shown the date. And into that gap between the promise and its keeping, God lays down the verse the whole rest of the Bible will lean on: \"the righteous will live by faith.\" Not the righteous will live to see it tomorrow. The righteous will live — keep breathing, keep trusting, keep standing on the wall — by emunah, by a steady leaning trust, all through the lingering.\n\nThis is the center of these final prophets, and it points past them. Habakkuk waits for a vision that \"testifies of the end.\" Haggai promises a temple whose \"latter glory will be greater than the former,\" and \"in this place I will provide peace.\" Zechariah cries, \"See, your King comes to you, righteous and victorious, humble and riding on a donkey.\" Malachi, the last word before the silence, promises a messenger preparing the way, and then \"the sun of righteousness will rise with healing in its wings.\" Five prophets, one direction: all of them are watchmen on the same wall, scanning the same dark for the same coming dawn. The letter to the Hebrews reads Habakkuk's promise and names the dawn outright: \"For yet in a very little while, the Coming One will come and will not delay\" (Hebrews 10:37). The vision Habakkuk waited for has a face. He was watching for Christ.",
+      "historicalContext": "These five books close the Hebrew prophetic canon and sit on the hinge of the exile. Habakkuk and Zephaniah prophesy as Babylon rises (late 7th century BC); Haggai and Zechariah speak to the discouraged returnees rebuilding the temple around 520 BC; Malachi addresses the spiritually cold community a century later, roughly 430 BC. After Malachi come about four hundred years with no canonical prophet — the long silence that ends only when a messenger named John prepares a way in the wilderness.",
+      "fascinatingFact": "Habakkuk 2:4 — \"the righteous will live by faith\" — may be the single most load-bearing sentence in Christian theology. Paul quotes it to anchor the gospel in Romans 1:17 and Galatians 3:11; Hebrews 10:38 quotes it to call believers to endurance. Martin Luther's reading of this verse, by way of Romans, helped ignite the Reformation. A line spoken from a watchtower in a collapsing kingdom became the hinge of how the church understands grace.",
+      "content": "When God finally answers from the tower, the answer is not what Habakkuk asked for. He asked God to act now. God hands him a vision and tells him to wait for it. \"Write down this vision and clearly inscribe it on tablets, so that a herald may run with it. For the vision awaits an appointed time; it testifies of the end and does not lie. Though it lingers, wait for it, since it will surely come and will not delay.\"\n\nRead the two halves of that promise together, because they sound like a contradiction and are not. The vision \"lingers\" — it will take longer than you want. And it \"will not delay\" — it will not be one second late by God's clock. Both are true. The appointment is fixed; you simply have not been shown the date. And into that gap between the promise and its keeping, God lays down the verse the whole rest of the Bible will lean on: \"the righteous will live by faith.\" Not the righteous will live to see it tomorrow. The righteous will live — keep breathing, keep trusting, keep standing on the wall — by emunah, by a steady leaning trust, all through the lingering.\n\nThis is the center of these final prophets, and it points past them. Habakkuk waits for a vision that \"testifies of the end.\" Haggai promises a temple whose \"latter glory will be greater than the former,\" and \"in this place I will provide peace.\" Zechariah cries, \"See, your King comes to you, righteous and victorious, humble and riding on a donkey.\" Malachi, the last word before the silence, promises a messenger preparing the way, and then \"the sun of righteousness will rise with healing in its wings.\" Five prophets, one direction: all of them are watchmen on the same wall, scanning the same dark for the same coming dawn. The letter to the Hebrews reads Habakkuk's promise and names the dawn outright: \"For yet in a very little while, the Coming One will come and will not delay\" (Hebrews 10:37). The vision Habakkuk waited for has a face. He was watching for Christ."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God answers Habakkuk's \"How long?\" not with immediate rescue but with a vision for an appointed time, and a command for the interval: \"the righteous will live by faith.\"",
+      "modernApplication": "Most of our waiting is not for a Babylon to fall but for ordinary, grinding things — a diagnosis to change, a marriage to thaw, a prayer prayed for years to finally move. The temptation in the gap is to decide God has gone silent because God has gone absent. Habakkuk's word for that gap is not \"give up\" and not \"pretend you are fine.\" It is \"live by faith\" — keep standing on the wall, keep watching the window, lean your weight on the One who set the appointment.",
+      "connectionPoint": "The interval between promise and fulfillment is not dead time. It is exactly where faith lives, because faith is only needed when sight has not yet arrived. Abraham believed for decades before Isaac. Israel waited four hundred silent years after Malachi before the dawn rose. The waiting room is the home address of emunah.",
+      "newTestamentEcho": "Hebrews takes Habakkuk's promise and aims it straight at Jesus: \"For yet in a very little while, the Coming One will come and will not delay. But My righteous one will live by faith\" (Hebrews 10:37-38). The vision Habakkuk inscribed on tablets walked out of Nazareth. And the church still waits the same way — by faith, watching for the same Lord to come again."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the \"How long, O LORD?\" you have been carrying — the prayer you are tired of praying because nothing has changed?",
+      "additionalQuestions": [
+        "Habakkuk took his complaint up the watchtower instead of away from God. Where have you let unanswered prayer push you toward silence instead of toward Him?",
+        "What would it look like, this week, to wait for your unanswered thing as a watchman — eyes up, expecting dawn — rather than as a victim of the dark?",
+        "God told Habakkuk the vision was fixed but the timing hidden. Can you trust an appointment whose date you have not been shown? What makes that hard?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have a \"how long\" of my own, and I am tired of saying it. Like Habakkuk, I have prayed and watched nothing change. Keep me from walking away from the wall. Teach me to wait as a watchman and not as a victim — eyes up, leaning my full weight on Your faithfulness when I cannot see Your hand. Let me live by faith in the lingering, certain that the vision will not be late, and that the dawn I am waiting for already has a name. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one \"how long\" prayer you have grown weary of, and decide today how you will wait for it: not by pretending you are fine, and not by giving up, but as a watchman. Write Habakkuk 2:3-4 somewhere you will see it, and each time you read it, lean your weight on the line \"the righteous will live by faith.\"",
+      "leavingAtCross": [
+        "The lie that God's silence means God's absence",
+        "The cynicism that hardens around a prayer prayed too long",
+        "The need to know the date before I will trust the promise"
+      ],
+      "receivingFromCross": [
+        "A vision that is fixed even when the timing is hidden from me",
+        "The steady, weight-bearing trust the Bible calls emunah",
+        "The dawn the prophets watched for, who has a face and a name — Christ, the sun of righteousness"
+      ],
+      "content": "Name one \"how long\" prayer you have grown weary of, and decide today how you will wait for it: not by pretending you are fine, and not by giving up, but as a watchman. Write Habakkuk 2:3-4 somewhere you will see it, and each time you read it, lean your weight on the line \"the righteous will live by faith.\""
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between Habakkuk's complaint and ordinary cynicism — and what does he do with his unanswered question that keeps it from curdling into despair?",
+        "God says the vision \"lingers\" and yet \"will not delay.\" How can both be true at once, and what does that say about the difference between God's timing and ours?",
+        "How do all five closing prophets — Habakkuk, Zephaniah, Haggai, Zechariah, Malachi — point in the same direction, and toward whom?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one 'how long' prayer you have been carrying. How long have you prayed it, and how has the waiting affected your trust in God?",
+        "Talk honestly about whether God's silence has ever felt like God's absence to you, and what helped — or would help — you keep standing on the wall.",
+        "Ask each other: what would it look like this week to wait for your unanswered thing the way Habakkuk did — actively, eyes up, by faith rather than by sight?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Habakkuk 3:17-18",
+          "text": "Though the fig tree does not bud and no fruit is on the vines, though the olive crop fails and the fields produce no food, though the sheep are cut off from the fold and no cattle are in the stalls, yet I will exult in the LORD; I will rejoice in the God of my salvation!"
+        },
+        {
+          "reference": "Zephaniah 3:17",
+          "text": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing."
+        },
+        {
+          "reference": "Malachi 4:2",
+          "text": "But for you who fear My name, the sun of righteousness will rise with healing in its wings, and you will go out and leap like calves from the stall."
+        },
+        {
+          "reference": "Hebrews 10:37-38",
+          "text": "For yet in a very little while, the Coming One will come and will not delay. But My righteous one will live by faith; and if he shrinks back, I will take no pleasure in him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Habakkuk 1-3",
+          "note": "Read the whole short book in one sitting, watching the movement from complaint (ch. 1) to the watchtower and the vision (ch. 2) to worship that rejoices even when the harvest fails (ch. 3)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Habakkuk",
+      "title": "The Prophet on the Watchtower",
+      "description": "A prophet in Judah, likely active in the years just before Babylon's invasion (late 7th century BC). Unlike most prophets, his book is largely a dialogue with God rather than a sermon to the people. He voices the honest \"How long?\" of every believer worn down by unanswered prayer, then takes up the posture of a watchman to wait for God's reply. His final chapter is a prayer set to music — worship offered in advance of any rescue, when the fields are empty and the stalls are bare.",
+      "keyQuote": "I will stand at my guard post and station myself on the ramparts. I will watch to see what He will say to me.",
+      "lessonForUs": "Habakkuk teaches that bringing your hardest questions to God is not the opposite of faith but one of its truest forms — and that the righteous live, in the long gap between promise and fulfillment, by a steady trust in the One who never comes late.",
+      "heading": "The Prophet on the Watchtower"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2150,
+  "scriptureReference_full": "Habakkuk 1:2; 2:1-4 (with Habakkuk 3:17-19; Zephaniah 3:17; Haggai 2:9; Zechariah 9:9; Malachi 3:1; 4:2)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0).",
+    "Hebrew word study (emunah, H530; root aman) reflects standard lexical sources. The threefold New Testament citation of Habakkuk 2:4 (Romans 1:17; Galatians 3:11; Hebrews 10:38) and the Hebrews 10:37 reading of Habakkuk 2:3 as pointing to 'the Coming One' are direct biblical cross-references."
+  ]
 }

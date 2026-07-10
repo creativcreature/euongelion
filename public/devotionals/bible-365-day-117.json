@@ -1,38 +1,190 @@
 {
   "day": 117,
-  "title": "Elijah Cycles — Day 5 — Resolution",
-  "teaser": "Day 117 of Bible 365 — 1 Kings 17-19, 2 Kings 2",
+  "title": "The mantle that fell",
+  "teaser": "Elijah does not die. A whirlwind takes him, and the cloak drops at Elisha's feet. The cycle ends not with a grave but with a gift passed on.",
   "framework": "1 Kings 17-19, 2 Kings 2 — Elijah Cycles",
   "scriptureReference": "1 Kings 17-19, 2 Kings 2",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 117"
+      "type": "scripture",
+      "reference": "2 Kings 2:9-13",
+      "translation": "BSB",
+      "emphasis": [
+        "a double portion of your spirit",
+        "if you see me as I am taken from you",
+        "the cloak that had fallen from Elijah"
+      ],
+      "hebrewOriginal": "וַיִּשָּׂא אֶת־אַדֶּרֶת אֵלִיָּהוּ אֲשֶׁר נָפְלָה מֵעָלָיו",
+      "passage": "After they had crossed over, Elijah said to Elisha, \"Tell me, what can I do for you before I am taken away from you?\" \"Please, let me inherit a double portion of your spirit,\" Elisha replied. \"You have requested a difficult thing,\" said Elijah. \"Nevertheless, if you see me as I am taken from you, it will be yours. But if not, then it will not be so.\" As they were walking along and talking together, suddenly a chariot of fire with horses of fire appeared and separated the two of them, and Elijah went up into heaven in a whirlwind. As Elisha watched, he cried out, \"My father, my father, the chariots and horsemen of Israel!\" And he saw Elijah no more. So taking hold of his own clothes, he tore them in two. Elisha also picked up the cloak that had fallen from Elijah, and he went back and stood on the bank of the Jordan."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 17-19, 2 Kings 2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 17-19, 2 Kings 2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אַדֶּרֶת",
+      "transliteration": "adderet",
+      "pronunciation": "ad-DEH-ret",
+      "meaning": "mantle, cloak, the wide outer garment of a prophet",
+      "rootMeaning": "From a root tied to greatness, glory, breadth. An adderet was a heavy, splendid covering - the visible mark that the man under it carried weight, that the word of the LORD rested on him.",
+      "usageNote": "It is the same cloak Elijah threw over Elisha's shoulders at his calling (1 Kings 19:19), the same cloak he wrapped his face in when the still small voice spoke (1 Kings 19:13), the same cloak he rolled up to strike the Jordan (2 Kings 2:8). When it falls in chapter 2, it is not a stray piece of cloth. It is the whole prophetic office, dropped from the sky.",
+      "wordByWord": [
+        {
+          "word": "וַיִּשָּׂא",
+          "transliteration": "vayyissa",
+          "meaning": "and he picked up, he lifted, he took up onto himself"
+        },
+        {
+          "word": "אַדֶּרֶת",
+          "transliteration": "adderet",
+          "meaning": "the mantle, the prophet's heavy outer cloak"
+        },
+        {
+          "word": "אֵלִיָּהוּ",
+          "transliteration": "Eliyyahu",
+          "meaning": "Elijah - the name means 'My God is the LORD (Yah)'"
+        },
+        {
+          "word": "אֲשֶׁר נָפְלָה",
+          "transliteration": "asher naflah",
+          "meaning": "which had fallen - it came down, it was not handed over but let go"
+        },
+        {
+          "word": "מֵעָלָיו",
+          "transliteration": "me'alav",
+          "meaning": "from upon him - off of Elijah, away from the one who wore it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רוּחַ / ruach",
+          "reference": "Elisha asks for a 'double portion of your spirit' - ruach, the same word for breath, wind, and the Spirit of God. The cloak is the visible thing that falls; the ruach is the invisible thing that transfers. The whole scene is about what cannot be seen passing from one life to the next."
+        }
+      ],
+      "strongsNumber": "H155",
+      "definition": "a wide garment, a mantle of distinction; the cloak that marked a prophet",
+      "usage": "The verb naflah - 'it had fallen' - matters. Elijah does not hand the mantle down like an heirloom. It falls as he rises, the way a leaf falls when the tree lets go. Elisha has to bend and pick up what heaven dropped."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elijah Cycles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Elijah (Matt 17:1-8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Prophet Who Does Not Die",
+      "body": "For five days the Elijah cycle has run downhill toward an ending we already know how to read. Prophets die. Moses died on Nebo with the promised land in view. Samuel died and all Israel mourned him. We have learned the shape of these stories: a great man, a long obedience, a grave, a successor who is never quite the same.\n\nSo we brace for the grave. And it never comes.\n\nElijah and Elisha walk out from Gilgal, and three times Elijah says, \"Please stay here,\" and three times Elisha answers with the same vow: \"As surely as the LORD lives and as you yourself live, I will not leave you.\" They go to Bethel, to Jericho, to the Jordan. At each town the sons of the prophets pull Elisha aside and ask the question hanging over the whole day: \"Do you know that the LORD will take your master away from you today?\" He knows. He has known since they set out. \"Yes, I know,\" he says. \"Do not speak of it.\" There are days when naming the thing out loud is more than you can bear, even when everyone can see it coming.\n\nThen Elijah rolls up the mantle, strikes the Jordan, and the water parts to the right and the left. Two men cross over on dry ground - the same dry-ground crossing Israel made coming into the land, run in reverse, out toward the wilderness where God keeps meeting Elijah. And on the far bank, with no grave dug and no last illness, the old prophet asks his strange final question: \"Tell me, what can I do for you before I am taken away from you?\"",
+      "keyInsight": "Scripture knows how prophet-stories end, and then it refuses the ending. Elijah is not buried. He is taken. The cycle that began with a man hiding by a brook closes with a man carried into heaven - and the point of the whole arc turns out to be not how Elijah leaves, but what he leaves behind.",
+      "content": "For five days the Elijah cycle has run downhill toward an ending we already know how to read. Prophets die. Moses died on Nebo with the promised land in view. Samuel died and all Israel mourned him. We have learned the shape of these stories: a great man, a long obedience, a grave, a successor who is never quite the same.\n\nSo we brace for the grave. And it never comes.\n\nElijah and Elisha walk out from Gilgal, and three times Elijah says, \"Please stay here,\" and three times Elisha answers with the same vow: \"As surely as the LORD lives and as you yourself live, I will not leave you.\" They go to Bethel, to Jericho, to the Jordan. At each town the sons of the prophets pull Elisha aside and ask the question hanging over the whole day: \"Do you know that the LORD will take your master away from you today?\" He knows. He has known since they set out. \"Yes, I know,\" he says. \"Do not speak of it.\" There are days when naming the thing out loud is more than you can bear, even when everyone can see it coming.\n\nThen Elijah rolls up the mantle, strikes the Jordan, and the water parts to the right and the left. Two men cross over on dry ground - the same dry-ground crossing Israel made coming into the land, run in reverse, out toward the wilderness where God keeps meeting Elijah. And on the far bank, with no grave dug and no last illness, the old prophet asks his strange final question: \"Tell me, what can I do for you before I am taken away from you?\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Watch on the Wrist",
+      "body": "A man I know spent the last week of his father's life in a hospital chair, the kind that folds out into a bed and never quite becomes one. He told me the hardest part was not the machines. It was that everyone in the family kept dancing around the word. The nurses said \"comfortable.\" His aunts said \"resting.\" His father, lucid to the end, finally looked at him and said, \"You can say it. I'm dying. It's all right to say it.\"\n\nWhat he remembered most, though, was small. Near the end his father took off his watch - an old steel thing, worn smooth - and pressed it into his son's hand without a word. There was nothing said about inheritance. It was just: here, this was mine, now it is yours, keep walking.\n\nThat is the weight of the scene by the Jordan. Elisha has spent the whole day refusing to leave, refusing to let the sons of the prophets even speak the loss aloud. And then his master is gone in a way no funeral prepares you for - and at his feet, on the riverbank, lies the cloak. Still warm, maybe. The thing the old man wore. Now yours. Keep walking.",
+      "connectionToTheme": "The resolution of a life is rarely the death itself. It is the moment something is handed on - and the one left behind has to decide whether to pick it up and keep walking, or stand frozen by the river.",
+      "content": "A man I know spent the last week of his father's life in a hospital chair, the kind that folds out into a bed and never quite becomes one. He told me the hardest part was not the machines. It was that everyone in the family kept dancing around the word. The nurses said \"comfortable.\" His aunts said \"resting.\" His father, lucid to the end, finally looked at him and said, \"You can say it. I'm dying. It's all right to say it.\"\n\nWhat he remembered most, though, was small. Near the end his father took off his watch - an old steel thing, worn smooth - and pressed it into his son's hand without a word. There was nothing said about inheritance. It was just: here, this was mine, now it is yours, keep walking.\n\nThat is the weight of the scene by the Jordan. Elisha has spent the whole day refusing to leave, refusing to let the sons of the prophets even speak the loss aloud. And then his master is gone in a way no funeral prepares you for - and at his feet, on the riverbank, lies the cloak. Still warm, maybe. The thing the old man wore. Now yours. Keep walking."
+    },
+    {
+      "type": "insight",
+      "heading": "You Have to See It to Receive It",
+      "body": "Elisha asks for a double portion of Elijah's spirit, and Elijah does not simply grant it. He sets a condition that sounds almost cruel at first: \"If you see me as I am taken from you, it will be yours. But if not, then it will not be so.\"\n\nWhy make it depend on watching?\n\nBecause the double portion is not a possession Elijah can deed over. It is the inheritance of the firstborn - in Deuteronomy 21:17 the firstborn son receives a double share of the estate - and Elisha is asking to be treated as Elijah's true heir, the son who carries on the house. That kind of inheritance cannot be mailed. It has to be witnessed. Elisha must keep his eyes open through the very thing he has spent all day dreading. He must watch his father go.\n\nAnd he does. \"As Elisha watched, he cried out, 'My father, my father, the chariots and horsemen of Israel!'\" He sees the fire, sees the whirlwind, sees the empty sky - and only because he refused to look away does the cloak at his feet become his to wear. The gift is real, but it comes through the open-eyed grief, not around it.",
+      "historicalContext": "In Israel's law the bekorah, the right of the firstborn, meant a double share of the inheritance and the responsibility to carry the family forward (Deuteronomy 21:15-17). Elisha's request is covenant language: he is not asking to be twice as powerful as Elijah, but to be received as the rightful heir of the prophetic line, the one who keeps the office alive in Israel after the master is gone.",
+      "fascinatingFact": "Elisha's cry, \"the chariots and horsemen of Israel,\" is striking. Israel's true defense was never its cavalry - it was the prophet who stood before God and called down fire and rain. With Elijah gone, the nation has lost its real armor. Years later, the dying Elisha will hear the very same words spoken over him by King Joash (2 Kings 13:14). The title passes with the mantle.",
+      "content": "Elisha asks for a double portion of Elijah's spirit, and Elijah does not simply grant it. He sets a condition that sounds almost cruel at first: \"If you see me as I am taken from you, it will be yours. But if not, then it will not be so.\"\n\nWhy make it depend on watching?\n\nBecause the double portion is not a possession Elijah can deed over. It is the inheritance of the firstborn - in Deuteronomy 21:17 the firstborn son receives a double share of the estate - and Elisha is asking to be treated as Elijah's true heir, the son who carries on the house. That kind of inheritance cannot be mailed. It has to be witnessed. Elisha must keep his eyes open through the very thing he has spent all day dreading. He must watch his father go.\n\nAnd he does. \"As Elisha watched, he cried out, 'My father, my father, the chariots and horsemen of Israel!'\" He sees the fire, sees the whirlwind, sees the empty sky - and only because he refused to look away does the cloak at his feet become his to wear. The gift is real, but it comes through the open-eyed grief, not around it."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Elijah is taken up in a whirlwind, and the disciple who watches him go picks up the fallen mantle, strikes the same Jordan, and crosses over carrying the spirit that rested on his master. The prophet's departure is not the end of his work; it is the moment his work is poured into another.",
+      "modernApplication": "We tend to think the people who shaped us take their gifts with them when they go - that when a mentor or parent or pastor dies, the influence ends at the grave. But the truest things are handed down, not buried. The faith you carry was laid on your shoulders by someone, the way the mantle landed on Elisha. And it is meant to fall from your shoulders onto someone else.",
+      "connectionPoint": "The taking-up of Elijah becomes a thread Scripture deliberately picks back up. Malachi closes the Old Testament by promising, \"Behold, I will send you Elijah the prophet before the coming of the great and awesome Day of the LORD\" (Malachi 4:5) - the man who did not die becomes the sign of the One who is coming. Jesus names John the Baptist as that Elijah (Matthew 11:14), the forerunner in the mantle of the prophet, preparing the way.",
+      "newTestamentEcho": "On the mountain of Transfiguration, Moses and Elijah appear and speak with Jesus about \"His departure, which He was about to accomplish at Jerusalem\" (Luke 9:31). The Greek word Luke uses for departure is exodos - the same word as Elijah's being taken away. Elijah's whirlwind was a shadow; the real exodus, the one the prophets longed to discuss, is the death and rising and ascension of Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who handed you the mantle you are wearing - whose faith, whose example, whose words still cover you? And who is watching you carry it now?",
+      "additionalQuestions": [
+        "Elisha had to keep his eyes open through the loss to receive the gift. Is there a grief you have been looking away from - and might the thing you most need be on the other side of facing it?",
+        "Elijah's work did not end when he was taken up; it fell onto Elisha. What good thing in your life is meant to be passed on rather than kept?",
+        "Elisha picked the cloak back up and went and struck the water himself. Where is God asking you to stop standing on the bank and take the first step in something that was handed to you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have been handed more than I know - a faith I did not invent, carried to me by hands I sometimes forget to thank. Thank You for the people whose mantle still covers me. Where I am standing frozen on the bank, give me the courage Elisha had: to pick up what You have dropped at my feet and strike the water myself. And let nothing I have received stop with me. Make me a person who hands things on. Through Christ, who was taken up so that His Spirit could fall on us all. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one person who handed you a piece of the faith you carry. Today, tell them - or, if they are gone, write down what they gave you and one way you will pass it on. The mantle is not meant to be buried with the one who wore it.",
+      "leavingAtCross": [
+        "The fear that when the people who shaped me are gone, their gift is gone too",
+        "The instinct to look away from grief instead of through it",
+        "Standing on the bank, holding a mantle I am too afraid to use"
+      ],
+      "receivingFromCross": [
+        "The Spirit Christ poured out when He was taken up - not a borrowed cloak, but God's own breath in us",
+        "The freedom to grieve with my eyes open, because what is taken up is not lost",
+        "A calling that is mine to carry now, and mine to hand on"
+      ],
+      "content": "Name one person who handed you a piece of the faith you carry. Today, tell them - or, if they are gone, write down what they gave you and one way you will pass it on. The mantle is not meant to be buried with the one who wore it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the Elijah cycle end with him being taken up rather than dying - and what does that ending say about whether his work was finished?",
+        "Elijah made the double portion depend on Elisha watching him go. Why would the gift require keeping his eyes open through the loss?",
+        "How does Elijah being 'taken up' point forward to Christ's ascension and the giving of the Holy Spirit?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about the person who first handed you the faith - who 'dropped the mantle' on you, and how.",
+        "Talk about a grief you have been looking away from. What might be waiting on the other side of facing it with your eyes open?",
+        "Ask each other: what good thing in your life is meant to be passed on, and who is the Elisha standing where you can see them?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 19:19",
+          "text": "So Elijah departed and found Elisha son of Shaphat. He was plowing... Elijah passed by him and threw his cloak around him."
+        },
+        {
+          "reference": "Malachi 4:5",
+          "text": "Behold, I will send you Elijah the prophet before the coming of the great and awesome Day of the LORD."
+        },
+        {
+          "reference": "Luke 9:30-31",
+          "text": "Suddenly two men, Moses and Elijah, began talking with Jesus. They appeared in glory and spoke about His departure, which He was about to accomplish at Jerusalem."
+        },
+        {
+          "reference": "Acts 1:9",
+          "text": "After He had said this, they watched as He was taken up, and a cloud hid Him from their sight."
+        },
+        {
+          "reference": "Acts 2:3-4",
+          "text": "They saw tongues like flames of fire that separated and came to rest on each of them. And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 17 through 2 Kings 2",
+          "note": "Read the whole cycle in one sitting, watching for the bookends: a brook that dries up at the start (1 Kings 17), a river that parts at the end (2 Kings 2). The man fed by ravens in hiding is the same man carried home in fire."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elisha",
+      "title": "The Heir Who Picked Up the Cloak",
+      "description": "Son of Shaphat, called from the plow when Elijah threw his mantle over him (1 Kings 19:19). For years he served as Elijah's attendant - the disciple who poured water on his master's hands (2 Kings 3:11). On the day Elijah was taken, Elisha refused three times to be left behind, asked for a double portion of his master's spirit, and kept his eyes open as the whirlwind carried Elijah away. He picked up the fallen cloak, struck the Jordan, and the waters that had just parted for Elijah parted again for him.",
+      "keyQuote": "Where now is the LORD, the God of Elijah?",
+      "lessonForUs": "Elisha's first act as a prophet was not a new miracle but a repeated one - the same God, the same Jordan, the same parting. Faithfulness rarely asks us to invent something. More often it asks us to pick up what was handed down and trust that the God of those who went before us is still the same God now.",
+      "heading": "The Heir Who Picked Up the Cloak"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1646,
+  "scriptureReference_full": "1 Kings 17-19, 2 Kings 2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (adderet H155; ruach) reflects standard lexical sources. The double-portion / firstborn-inheritance connection draws on Deuteronomy 21:15-17. The exodos reading of Luke 9:31 reflects the standard Greek text."
+  ]
 }

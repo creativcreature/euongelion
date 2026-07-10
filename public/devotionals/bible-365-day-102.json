@@ -1,38 +1,180 @@
 {
   "day": 102,
-  "title": "Solomon's Drift — Day 4 — Application",
-  "teaser": "Day 102 of Bible 365 — 1 Kings 11",
+  "title": "The slow theft of a divided heart",
+  "teaser": "Solomon didn't fall in a day. His heart was carried off one small loyalty at a time — and the wisest man alive never felt the floor tilt.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 102"
+      "type": "scripture",
+      "reference": "1 Kings 11:1-6, 9-11",
+      "translation": "BSB",
+      "emphasis": [
+        "his wives turned his heart away",
+        "he was not wholeheartedly devoted to the LORD his God",
+        "his heart had turned away from the LORD"
+      ],
+      "hebrewOriginal": "וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו",
+      "passage": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women. These women were from the nations about which the LORD had told the Israelites, \"You must not intermarry with them, for surely they will turn your hearts after their gods.\" Yet Solomon clung to these women in love. He had seven hundred wives of royal birth and three hundred concubines—and his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. Solomon followed Ashtoreth the goddess of the Sidonians and Milcom the abomination of the Ammonites. So Solomon did evil in the sight of the LORD; unlike his father David, he did not follow the LORD completely. ... Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice. Although He had warned Solomon explicitly not to follow other gods, Solomon did not keep the LORD's command. Then the LORD said to Solomon, \"Because you have done this and have not kept My covenant and My statutes, which I have commanded you, I will tear the kingdom away from you and give it to your servant.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֵבָב שָׁלֵם",
+      "transliteration": "lebab shalem",
+      "pronunciation": "leh-VAHV shah-LEM",
+      "meaning": "a whole heart, an undivided heart, a heart at peace and entire",
+      "rootMeaning": "Lebab is the inner self - not just feeling, but will, loyalty, and decision. Shalem comes from the same root as shalom: whole, complete, sound, with nothing missing. A lebab shalem is a heart that is all of one piece, given over without a reserved corner.",
+      "usageNote": "Verse 4 says Solomon's heart was not shalem with the LORD his God, \"as his father David had been.\" The contrast is exact: David sinned greatly, but his heart never split its allegiance. Solomon's sin was quieter and deeper - not one scandal but a heart slowly divided until no single piece of it belonged wholly to God.",
+      "wordByWord": [
+        {
+          "word": "וְלֹא־הָיָה",
+          "transliteration": "velo-hayah",
+          "meaning": "and it was not, it did not come to be"
+        },
+        {
+          "word": "לְבָבוֹ",
+          "transliteration": "levavo",
+          "meaning": "his heart - his inner will and loyalty"
+        },
+        {
+          "word": "שָׁלֵם",
+          "transliteration": "shalem",
+          "meaning": "whole, complete, undivided, at peace"
+        },
+        {
+          "word": "עִם־יְהוָה",
+          "transliteration": "im-YHWH",
+          "meaning": "with the LORD - alongside, in covenant company"
+        },
+        {
+          "word": "אֱלֹהָיו",
+          "transliteration": "elohav",
+          "meaning": "his God - the God who was personally his"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלֵם / שָׁלוֹם",
+          "reference": "Shalem (whole) and shalom (peace) are the same root. Solomon's own name, Shelomoh, is built from it - he was the man of peace. The tragedy of 1 Kings 11 is hidden in his name: the king named for wholeness ends with a heart that is no longer whole."
+        }
+      ],
+      "strongsNumber": "H8003",
+      "definition": "complete, whole, sound, full, at peace; of the heart, wholly devoted",
+      "usage": "Solomon asked God for a listening heart and received wisdom beyond any king. What he was not given, and did not keep, was a heart that stayed whole. Wisdom in the head could not hold the heart together once it began to divide."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Nobody Decides to Fall",
+      "body": "Yesterday's pivot put the cross at the center: that what the heart cannot keep, only Christ can keep for us. Today the question turns toward your own life - because Solomon is not a monster in this chapter. He is a warning precisely because he is so recognizable.\n\nRead chapter 11 slowly and you will notice there is no single moment of collapse. No night Solomon stands at a fork in the road and chooses Ashtoreth over the LORD. The text moves in small, almost reasonable steps. He loved many foreign women. He clung to them. He grew old. His wives turned his heart. He built them places to worship. And only then, after the heart had already gone, does the text say plainly: he did evil in the sight of the LORD.\n\nThe Hebrew is exact about the mechanism. Three times the chapter says his heart was turned, turned, turned away. Solomon never picks up his heart and hands it over. It is carried off, a degree at a time, by a thousand small accommodations he told himself were love, or politics, or simply the way a great king lives. The drift was so gradual that the wisest man who ever lived never felt the floor tilt beneath him."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Tide You Cannot See Going Out",
+      "body": "There is an old warning given to swimmers about a calm sea: the most dangerous current is the one you cannot feel. A rip tide does not announce itself with waves. The water looks flat. You are talking to someone, floating, content - and the whole time the shore is getting smaller. People drown not because they fight a storm but because they never noticed they were moving.\n\nI have a friend who pastored faithfully for twenty years and then, quietly, stopped. Not in scandal. There was no affair, no money, no single sin you could point to. He told me later it was \"a hundred small permissions.\" One prayer skipped because the morning was full. Then most mornings. One Sunday off that became a habit of watching from the back. A slow trade of the living God for the management of God's things. \"The frightening part,\" he said, \"is that I never decided to leave. I just looked up one day and I was already gone, and I couldn't tell you when.\"\n\nThat is Solomon. That is the danger of a divided heart: it does not feel like betrayal while it happens. It feels like reasonable accommodation, right up until the day the LORD says, your heart has turned away from Me, and you realize you cannot remember turning."
+    },
+    {
+      "type": "insight",
+      "heading": "Wisdom Was Never the Same as Faithfulness",
+      "body": "Here is the detail that should stop us cold. Verse 9 says the LORD grew angry because Solomon's heart had turned away from \"the LORD, the God of Israel, who had appeared to him twice.\" Solomon had not merely heard about God. He had met Him - face to face, twice (1 Kings 3 and 1 Kings 9). He had the most knowledge of God of any man on earth, and the most personal experience of God of any man of his generation, and still his heart divided.\n\nWe assume the drift happens to people who don't know much. The people most exposed are often the ones who know the most. Solomon's wisdom became a kind of cover. A man that wise could surely manage a few political marriages, a few tolerant shrines on the hill east of Jerusalem, without losing his soul. Knowledge let him explain each step. What knowledge could not do was keep his heart whole.\n\nThis is the warning hidden under all the others: information about God is not the same as loyalty to God. You can master the doctrine and lose the devotion. The head can stay orthodox while the heart is carried off. Solomon proves a person can know everything true about God and still, by inches, stop belonging to Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart did not fall in a day. It was turned away one small loyalty at a time - a marriage of convenience, a shrine to keep the peace, an accommodation a wise man could justify - until the man named for wholeness no longer had a whole heart toward God.",
+      "modernApplication": "Few of us will renounce God in a single dramatic act. We are far more likely to drift the way Solomon did: a habit quietly dropped, a compromise we frame as maturity, an affection that gets a little too large to question. The danger is not that you will choose an idol over God on purpose. It is that your heart will be carried off so gently you mistake the current for stillness.",
+      "connectionPoint": "Moses had already named this exact danger centuries before Solomon was born. The law of the king warned: \"He must not take many wives for himself, lest his heart go astray\" (Deuteronomy 17:17). Solomon knew that command - and broke it on a scale no king had imagined: seven hundred wives, three hundred concubines. The drift is never finally about the women, the wealth, or the horses Moses also forbade. It is about the heart those things were always going to pull. Solomon's reign is the slow-motion demonstration of a warning Israel had carried for four hundred years.",
+      "newTestamentEcho": "Jesus drew the line plainly: \"No one can serve two masters... You cannot serve both God and money\" (Matthew 6:24). Solomon is the kingdom-sized proof. He tried, brilliantly, to keep his heart with the LORD while also keeping it with everything else - and discovered there is no such thing as a heart divided in peace. Centuries later, standing before crowds, Jesus would say of His own presence, \"One greater than Solomon is here\" (Luke 11:31). The greater Solomon is the King whose heart never divided, whose throne endures forever, and who keeps for us the wholeness we keep losing."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life is the tide quietly going out - a loyalty, habit, or affection that has been turning your heart by inches without ever announcing itself?",
+      "additionalQuestions": [
+        "Solomon knew more about God than anyone alive and still drifted. What knowledge of God do you hold that has not lately become love for God?",
+        "Name one \"reasonable accommodation\" you have made recently that you would not have made five years ago. What has it cost your heart?",
+        "If God said to you tonight what He said to Solomon - \"your heart has turned away\" - what is the first thing you would know He meant?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I do not usually leave You all at once. I leave You the way Solomon did - by inches, in small permissions I tell myself are harmless. Show me the current I cannot feel. Where my heart has divided, make it whole again; where it has drifted, turn it back before I am too far out to swim. I do not trust my own wisdom to keep me; I have seen where the wisest man's wisdom led. Keep my heart whole with You, the way only You can. Through Christ, who is greater than Solomon, and whose heart never divided from the Father. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the drift out loud. Sit for five minutes and ask one honest question: \"Where is my heart turning that I keep calling reasonable?\" Write down the one thing that surfaces - the habit, the affection, the quiet compromise. Then bring that one thing to God before the day fills up, and ask Him to turn your heart back while the turning is still small.",
+      "leavingAtCross": [
+        "The lie that a divided heart is manageable as long as the doctrine stays correct",
+        "The hundred small permissions I have been granting myself, each one too minor to confront",
+        "The confidence that I am too wise, too established, or too experienced to drift"
+      ],
+      "receivingFromCross": [
+        "A heart made whole again - shalem - not by my vigilance but by the King who keeps it for me",
+        "The mercy of being warned while the tide is still close to shore",
+        "Christ, the greater Solomon, whose undivided heart toward the Father becomes the wholeness I could not hold"
+      ],
+      "content": "Today, name the drift out loud. Sit for five minutes and ask one honest question: \"Where is my heart turning that I keep calling reasonable?\" Write down the one thing that surfaces. Then bring that one thing to God before the day fills up, and ask Him to turn your heart back while the turning is still small."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Trace the steps of Solomon's drift in 1 Kings 11:1-9. At which point does the text first call it \"evil\" - and how much had already happened by then?",
+        "Verse 9 stresses that God had \"appeared to him twice.\" Why does the chapter make a point of how much Solomon knew of God before describing his fall?",
+        "What is the difference between David's heart, which was shalem (whole) despite his great sins, and Solomon's heart, which divided despite his great wisdom?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you've recently noticed yourself drifting - a 'reasonable accommodation' that would have bothered you a few years ago.",
+        "Talk honestly: where are you trusting your knowledge about God to keep you, in a place where only your love for God can?",
+        "Ask each other to watch for one specific tide that's quietly going out in your life, and to check in on it next week."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 17:17",
+          "text": "He must not take many wives for himself, lest his heart go astray. He must not accumulate for himself large amounts of silver and gold."
+        },
+        {
+          "reference": "Proverbs 4:23",
+          "text": "Guard your heart with all diligence, for from it flow springs of life."
+        },
+        {
+          "reference": "Nehemiah 13:26",
+          "text": "Did not King Solomon of Israel sin in matters like this? There was not a king like him among many nations, and he was loved by his God, who made him king over all Israel—yet foreign women drew him into sin."
+        },
+        {
+          "reference": "Luke 11:31",
+          "text": "The Queen of the South will rise at the judgment with the men of this generation and condemn them; for she came from the ends of the earth to hear the wisdom of Solomon, and now One greater than Solomon is here."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter in one sitting, watching for the slow accumulation: love (v.1), clinging (v.2), turning (vv.3-4), building shrines (vv.7-8), and only then the verdict (v.9). Notice that the consequence - the kingdom torn in two - is delayed for David's sake (vv.12-13), mercy threaded through judgment."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wise King Whose Heart Divided",
+      "description": "Son of David, third king of Israel, builder of the Temple, and the wisest man of his age (1 Kings 3-10). God appeared to him twice and gave him wisdom, wealth, and peace beyond any king before him. Yet 1 Kings 11 records the unraveling: through hundreds of political marriages and the tolerant shrines they brought, his heart was drawn, by degrees, away from the LORD. He is not remembered as a villain but as a warning - the man who had every advantage and still drifted.",
+      "keyQuote": "For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been.",
+      "lessonForUs": "If the wisest man who ever lived could lose his heart one small loyalty at a time - while knowing more of God than anyone alive - then no amount of knowledge, success, or past experience makes us safe from the slow drift. Only the King greater than Solomon keeps a heart whole.",
+      "heading": "The Wise King Whose Heart Divided"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1805,
+  "scriptureReference_full": "1 Kings 11:1-6, 9-11",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (lebab shalem, H8003; the shalem/shalom/Shelomoh resonance) reflects standard lexical sources.",
+    "The king's law of Deuteronomy 17:16-17 is the deliberate background to Solomon's accumulation of wives, wealth, and horses, as widely noted in commentary on 1 Kings 11."
+  ]
 }

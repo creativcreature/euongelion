@@ -6,33 +6,182 @@
   "scriptureReference": "Numbers 21:4-9",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 59"
+      "type": "scripture",
+      "reference": "Numbers 21:4-9",
+      "translation": "BSB",
+      "emphasis": [
+        "the people grew impatient",
+        "Make a fiery serpent and mount it on a pole",
+        "When anyone who is bitten looks at it, he will live"
+      ],
+      "hebrewOriginal": "וַיֹּאמֶר יְהוָה אֶל־מֹשֶׁה עֲשֵׂה לְךָ שָׂרָף וְשִׂים אֹתוֹ עַל־נֵס וְהָיָה כָּל־הַנָּשׁוּךְ וְרָאָה אֹתוֹ וָחָי",
+      "passage": "Then they set out from Mount Hor along the route to the Red Sea, in order to bypass the land of Edom. But the people grew impatient on the journey and spoke against God and against Moses: \"Why have you led us up out of Egypt to die in the wilderness? There is no bread or water, and we detest this wretched food!\" So the LORD sent venomous snakes among the people, and many of the Israelites were bitten and died. Then the people came to Moses and said, \"We have sinned by speaking against the LORD and against you. Intercede with the LORD so He will take the snakes away from us.\" So Moses interceded for the people. Then the LORD said to Moses, \"Make a fiery serpent and mount it on a pole. When anyone who is bitten looks at it, he will live.\" So Moses made a bronze snake and mounted it on a pole. If anyone who was bitten looked at the bronze snake, he would live."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Numbers 21:4-9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Numbers 21:4-9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׂרָף",
+      "transliteration": "saraph",
+      "pronunciation": "sah-RAHF",
+      "meaning": "a burning one; a fiery serpent",
+      "rootMeaning": "Saraph comes from the verb saraph, to burn. A saraph is a 'burning one' - the word names the venom's fire before it names the animal. It is the same word that gives us the seraphim, the burning ones who cry 'Holy' around the throne in Isaiah 6.",
+      "usageNote": "In verse 8 God says, 'Make a fiery serpent' (saraph). In verse 9 Moses makes a 'bronze snake' - nechash nechosheth. The two Hebrew words sound almost alike: nechash (snake) and nechosheth (bronze) share the same consonants. So the object Moses lifts is, in sound, a snake made of snake-colored metal: the very shape of the thing that is killing them, hammered out and raised up where everyone can see it.",
+      "wordByWord": [
+        {
+          "word": "עֲשֵׂה לְךָ",
+          "transliteration": "aseh lecha",
+          "meaning": "make for yourself - a deliberate, commanded act"
+        },
+        {
+          "word": "שָׂרָף",
+          "transliteration": "saraph",
+          "meaning": "a fiery / burning serpent"
+        },
+        {
+          "word": "עַל־נֵס",
+          "transliteration": "al-nes",
+          "meaning": "on a pole, on a standard - the word nes also means a banner or signal raised high to be seen from far off"
+        },
+        {
+          "word": "וְרָאָה אֹתוֹ",
+          "transliteration": "vera'ah oto",
+          "meaning": "and looks at it - the whole cure is in the looking"
+        },
+        {
+          "word": "וָחָי",
+          "transliteration": "vachai",
+          "meaning": "and he shall live"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נֵס",
+          "reference": "Nes, the pole, is the word the prophets use for a banner the nations will look to. Isaiah says the root of Jesse will stand 'as a banner (nes) for the peoples' and the nations will seek Him (Isaiah 11:10). What Moses raised on a pole, Isaiah saw raised over the world."
+        }
+      ],
+      "strongsNumber": "H8314",
+      "definition": "saraph: a burning one; a venomous (fiery) serpent; also the seraphim",
+      "usage": "That the cure is shaped like the curse is the point. God does not hand them an antidote to drink or a wound to bind. He tells them to look at the very thing that is killing them - lifted up, defanged, made into a sign."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Look and live. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ lifted up that we might live (John 3:14-15).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "They Asked for the Snakes Gone; God Gave Them a Snake to Look At",
+      "body": "By Numbers 21 the wilderness has worn thin. The people have just won a battle at Hormah, but the road God gives them next goes the wrong way - back down toward the Red Sea to skirt Edom, who refused them passage. After forty years of walking, the map points backward. And something in them breaks. The Hebrew says their soul grew short on the road. They speak against God and against Moses in one breath, and the complaint is almost comic in its self-contradiction: there is no bread, there is no water, and we detest this worthless bread God keeps sending. The manna is both absent and despised. The grievance is not really about food. It is about a journey that feels like dying by inches.\n\nThen the snakes come. The text is blunt: the LORD sent venomous snakes, and many died. This is hard, and Scripture does not soften it. The point is not that God is short-tempered, but that the grumbling was never harmless - contempt for God is a venom of its own, and now it has a body. The people see it for what it is and confess plainly: 'We have sinned.' That is the first true thing they have said in chapters. They beg Moses to pray the snakes away.\n\nNotice what God does not do. He does not take the snakes away. The serpents keep moving through the camp. Instead He gives Moses a stranger instruction: forge a fiery serpent, mount it on a pole, and tell the dying to look. The cure is not the removal of the threat. The cure is a place to look while the threat is still real.",
+      "keyInsight": "They prayed for the snakes to be removed. God left the snakes and gave them something to look at instead - because He was teaching them to be saved by looking, not by the absence of danger.",
+      "content": "By Numbers 21 the wilderness has worn thin. The people have just won a battle at Hormah, but the road God gives them next goes the wrong way - back down toward the Red Sea to skirt Edom, who refused them passage. After forty years of walking, the map points backward. And something in them breaks. The Hebrew says their soul grew short on the road. They speak against God and against Moses in one breath, and the complaint is almost comic in its self-contradiction: there is no bread, there is no water, and we detest this worthless bread God keeps sending. The manna is both absent and despised. The grievance is not really about food. It is about a journey that feels like dying by inches.\n\nThen the snakes come. The text is blunt: the LORD sent venomous snakes, and many died. This is hard, and Scripture does not soften it. The point is not that God is short-tempered, but that the grumbling was never harmless - contempt for God is a venom of its own, and now it has a body. The people see it for what it is and confess plainly: 'We have sinned.' That is the first true thing they have said in chapters. They beg Moses to pray the snakes away.\n\nNotice what God does not do. He does not take the snakes away. The serpents keep moving through the camp. Instead He gives Moses a stranger instruction: forge a fiery serpent, mount it on a pole, and tell the dying to look. The cure is not the removal of the threat. The cure is a place to look while the threat is still real."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What the Doctor Would Not Let Him Do",
+      "body": "A man I know was bitten by a rattlesnake clearing brush on his property. He told me later that the worst part was not the strike. It was the waiting room. Everything in him wanted to do something - tie off the leg, cut the wound, suck out the poison, the things he had heard you were supposed to do. The nurse stopped him. All of that, she said, only spreads it faster or does damage of its own. There is one treatment. We give you the antivenom, and you hold still, and you let it work.\n\nHe said holding still while poison moved through him was the hardest thing he had ever done. Every instinct screamed to act. The cure asked him only to receive.\n\nThat is the shape of Numbers 21. A camp full of dying people, every one of them with a lifetime of instincts about how to fix a crisis - and the only instruction is, look at the pole. Not climb it. Not earn your way to it. Not drag the wounded to touch it. Just turn your head toward what God lifted up, and live. Salvation here is almost insultingly simple, and that simplicity is the offense. We would rather be told to do something heroic than be told to look.",
+      "connectionToTheme": "The bronze serpent saved by being looked at, not worked toward - the same scandal of grace that asks us only to turn and trust what God has lifted up.",
+      "content": "A man I know was bitten by a rattlesnake clearing brush on his property. He told me later that the worst part was not the strike. It was the waiting room. Everything in him wanted to do something - tie off the leg, cut the wound, suck out the poison, the things he had heard you were supposed to do. The nurse stopped him. All of that, she said, only spreads it faster or does damage of its own. There is one treatment. We give you the antivenom, and you hold still, and you let it work.\n\nHe said holding still while poison moved through him was the hardest thing he had ever done. Every instinct screamed to act. The cure asked him only to receive.\n\nThat is the shape of Numbers 21. A camp full of dying people, every one of them with a lifetime of instincts about how to fix a crisis - and the only instruction is, look at the pole. Not climb it. Not earn your way to it. Not drag the wounded to touch it. Just turn your head toward what God lifted up, and live. Salvation here is almost insultingly simple, and that simplicity is the offense. We would rather be told to do something heroic than be told to look."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sign Made of the Same Thing That Was Killing Them",
+      "body": "Stand at the center of this story and feel how strange it is. God's cure for snakebite is a snake. The image of the very thing that is poisoning the camp is hammered out in bronze, fixed to a pole, and lifted where the dying can see it. To be healed, you do not look away from the horror; you look straight at it, made harmless, raised up by God's command.\n\nThis is why Numbers 21 sits at the hinge of so much that comes after. The serpent first appears in Scripture in Eden, as the voice that brought death into the world. Here, in the wilderness, the serpent reappears - but now it is overcome, drained of its venom, turned into the means of life. The thing that killed is the thing that, by God's design, now heals. The curse is lifted up and becomes the cure.\n\nYet the bronze serpent could not save anyone on its own. It had no power in its metal. The dying lived not because they looked at a good-luck object but because they obeyed God's word and trusted His promise: look, and live. Centuries later Israel forgot this. They kept the bronze snake, named it Nehushtan, and burned incense to it, until King Hezekiah smashed it (2 Kings 18:4). The same sign that once mediated grace had become an idol. A pointer worshiped instead of followed always rots into the very poison it was meant to cure.",
+      "historicalContext": "Numbers records the second generation of Israel near the end of forty years in the wilderness, on the long approach to the plains of Moab. Edom's refusal of passage (Numbers 20:21) forced the detour south that triggers this scene. The bronze serpent persisted as a relic for roughly seven centuries until Hezekiah's reform around 715 BC, when it had become an object of worship and was destroyed (2 Kings 18:4).",
+      "fascinatingFact": "Israel did not need a different cure for each person's wound. There were many snakes and many bites, but one pole, one serpent, one act of looking. The remedy was singular and public - lifted high enough that the whole camp could see the same thing and live by the same look.",
+      "content": "Stand at the center of this story and feel how strange it is. God's cure for snakebite is a snake. The image of the very thing that is poisoning the camp is hammered out in bronze, fixed to a pole, and lifted where the dying can see it. To be healed, you do not look away from the horror; you look straight at it, made harmless, raised up by God's command.\n\nThis is why Numbers 21 sits at the hinge of so much that comes after. The serpent first appears in Scripture in Eden, as the voice that brought death into the world. Here, in the wilderness, the serpent reappears - but now it is overcome, drained of its venom, turned into the means of life. The thing that killed is the thing that, by God's design, now heals. The curse is lifted up and becomes the cure.\n\nYet the bronze serpent could not save anyone on its own. It had no power in its metal. The dying lived not because they looked at a good-luck object but because they obeyed God's word and trusted His promise: look, and live. Centuries later Israel forgot this. They kept the bronze snake, named it Nehushtan, and burned incense to it, until King Hezekiah smashed it (2 Kings 18:4). The same sign that once mediated grace had become an idol. A pointer worshiped instead of followed always rots into the very poison it was meant to cure."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God told the dying to look at a serpent lifted up on a pole, and whoever looked, lived. The remedy hung in the open, the venom still loose in the camp, and the only thing asked of the dying was to turn their eyes toward what God had raised up.",
+      "modernApplication": "We are still bitten, and we still prefer cures we can administer ourselves - the discipline plan, the better behavior, the clean record we hope to present. But the gospel is not a self-treatment. It is a direction to look. Christ asks the dying not to climb but to lift their eyes: to trust what He accomplished, openly, on a cross, while we were still poisoned.",
+      "connectionPoint": "Jesus reached back to this exact scene to explain His own death, in conversation with a teacher of Israel by night: 'Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes in Him may have eternal life' (John 3:14-15). Paul later read the whole wilderness this way - these things happened as examples, written down as warnings for us (1 Corinthians 10:11).",
+      "newTestamentEcho": "The pole in the wilderness becomes the cross outside the city. As the bronze serpent was the image of the curse made harmless and raised for the dying to see, so Christ, who knew no sin, was 'made to be sin on our behalf' (2 Corinthians 5:21) and lifted up - the curse itself absorbed and overcome - so that everyone who looks to Him in faith may live (John 3:14-15)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you trying to cure by your own effort right now - some poison you are working hard to suck out yourself instead of looking up and trusting what God has already lifted up for you?",
+      "additionalQuestions": [
+        "The Israelites asked God to take the snakes away; He left them and gave a place to look instead. Where are you praying for a threat to be removed when God may be teaching you to trust Him in the middle of it?",
+        "Is there a 'Nehushtan' in your life - a thing that once pointed you to God that you have started clinging to instead of Him?",
+        "What would it look like today to stop treating your own wound and simply turn your eyes to Christ lifted up?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I confess I am quick to grumble on the long road, and quick to reach for cures of my own making. I have been bitten, and I know it. Thank You that You did not leave me to treat the wound myself. You lifted up Your own Son where the dying could see Him, and You ask only that I look. So I look. I trust not in my striving but in Christ raised up for me. Heal what the venom has reached, and keep my eyes from drifting to lesser things I would rather worship. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one poison you have been trying to fix by your own effort, and instead of working harder at it, take five quiet minutes to look - to turn your attention to Christ lifted up for you - and ask Him to do what your effort cannot.",
+      "leavingAtCross": [
+        "The grumbling that the road God gave me is the wrong road",
+        "The instinct to treat my own wound by working harder instead of looking up",
+        "Every Nehushtan - the good things I have started clinging to in place of the God they were meant to point me toward"
+      ],
+      "receivingFromCross": [
+        "A Savior lifted up in the open, where the dying can see Him and live",
+        "The freedom of a cure I receive rather than achieve",
+        "Eternal life promised to everyone who simply looks to Christ in faith"
+      ],
+      "content": "Today, name one poison you have been trying to fix by your own effort, and instead of working harder at it, take five quiet minutes to look - to turn your attention to Christ lifted up for you - and ask Him to do what your effort cannot."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why is it significant that God did not remove the snakes but gave the people a serpent to look at instead?",
+        "What is strange and meaningful about the cure being shaped like the very thing that was killing them?",
+        "How does Jesus use this story to explain His own death in John 3:14-15, and what does 'lifted up' come to mean?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one wound you have been trying to treat by your own effort rather than bringing it openly to Christ.",
+        "Talk about a 'Nehushtan' in your life - something that once helped you toward God that you may now be leaning on in His place.",
+        "Ask each other: where is God asking you to look and live rather than work and earn?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 3:14-15",
+          "text": "Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes in Him may have eternal life."
+        },
+        {
+          "reference": "2 Kings 18:4",
+          "text": "He removed the high places, shattered the sacred pillars, and cut down the Asherah poles. He also demolished the bronze snake called Nehushtan that Moses had made, for up to that time the Israelites had burned incense to it."
+        },
+        {
+          "reference": "1 Corinthians 10:11",
+          "text": "Now these things happened to them as examples and were written down as warnings for us, on whom the fulfillment of the ages has come."
+        },
+        {
+          "reference": "Isaiah 45:22",
+          "text": "Turn to Me and be saved, all the ends of the earth; for I am God, and there is no other."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Numbers 20-21",
+          "note": "Read the chapters around this scene: Edom's refusal of passage and Aaron's death (ch. 20) set up the detour and the despair that erupts in 21:4-9."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "Mediator at the Pole",
+      "description": "The prophet who led Israel out of Egypt and through forty years of wilderness. In Numbers 21 he stands in his characteristic place - between a sinning people and a holy God. The people had spoken against him as much as against the LORD, yet when they confessed, he interceded for them, and then obeyed the strange command to forge the serpent and lift it on a pole. He neither devised the cure nor took credit for it; he raised up what God provided so the dying could look and live.",
+      "keyQuote": "Make a fiery serpent and mount it on a pole. When anyone who is bitten looks at it, he will live.",
+      "lessonForUs": "Moses lifts up a sign that he cannot make effective on his own; its power is entirely God's promise attached to it. He is a shadow of the true Mediator - the one Jesus said must be 'lifted up' in his place, who is both the sign raised and the salvation it gives.",
+      "heading": "Mediator at the Pole"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2370,
+  "scriptureReference_full": "Numbers 21:4-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (saraph H8314; the nechash / nechosheth assonance; nes as banner) reflects standard lexical sources.",
+    "The bronze serpent's later history as Nehushtan and its destruction under Hezekiah follows 2 Kings 18:4."
+  ]
 }

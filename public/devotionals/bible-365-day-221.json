@@ -6,33 +6,179 @@
   "scriptureReference": "Isaiah 6, 9, 11, 25",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 221"
+      "type": "scripture",
+      "reference": "Isaiah 6:5-8",
+      "translation": "BSB",
+      "emphasis": [
+        "Woe is me",
+        "a man of unclean lips",
+        "your sin is atoned for",
+        "Here am I. Send me!"
+      ],
+      "hebrewOriginal": "קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ יְהוָה צְבָאוֹת",
+      "passage": "Then I said: “Woe is me, for I am ruined, because I am a man of unclean lips dwelling among a people of unclean lips; for my eyes have seen the King, the LORD of Hosts.” Then one of the seraphim flew to me, and in his hand was a glowing coal that he had taken with tongs from the altar. And with it he touched my mouth and said: “Now that this has touched your lips, your iniquity is removed and your sin is atoned for.” Then I heard the voice of the Lord saying: “Whom shall I send? Who will go for Us?” And I said: “Here am I. Send me!”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 6, 9, 11, 25**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 6, 9, 11, 25 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָדוֹשׁ",
+      "transliteration": "qadosh",
+      "pronunciation": "kah-DOSH",
+      "meaning": "holy, set apart, wholly other",
+      "rootMeaning": "The root q-d-sh carries the idea of being cut off, separated, set apart from the common. Holiness is not first about morality but about otherness - God is not a bigger version of us; He is of another order entirely.",
+      "usageNote": "In Isaiah 6:3 the seraphim do not say qadosh once but three times: qadosh, qadosh, qadosh. Hebrew has no superlative ending the way English does; it repeats a word to raise it. Twice would be emphatic. Three times is found nowhere else said of God in the Hebrew Bible - it lifts His holiness past anything else creation can name.",
+      "wordByWord": [
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy, set apart"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD, the covenant name of God"
+        },
+        {
+          "word": "צְבָאוֹת",
+          "transliteration": "tseva'ot",
+          "meaning": "of Hosts, of armies - the LORD who commands the unseen heavenly armies"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "קְדוֹשׁ יִשְׂרָאֵל",
+          "reference": "Qedosh Yisrael, 'the Holy One of Israel' - Isaiah's signature name for God, used some twenty-five times across the book and almost nowhere else. The shocking word in it is not 'Holy.' It is 'of Israel.' The wholly-other God has bound the set-apart One to a particular, failing people."
+        }
+      ],
+      "strongsNumber": "H6918",
+      "definition": "sacred, holy, set apart; of God, the unique and transcendent One",
+      "usage": "Isaiah meets this word not as a definition but as a weight. To stand in the room where it is sung three times is to know at once that you do not belong there - and Isaiah's first honest sentence is not praise but 'Woe is me.'"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Holy One of Israel. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Holy One (Mark 1:24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Coal That Knew Where to Land",
+      "body": "By the fourth day in Isaiah you have already stood in the throne room. You have seen the train of God's robe fill the temple, heard the seraphim shake the doorposts with a holiness sung three times over, and watched the prophet come undone: \"Woe is me, for I am ruined.\" That was Day 3's pivot - the moment a man sees the Holy One of Israel and discovers he cannot survive being seen. Today the question is quieter and harder. Once you have been undone by holiness, how do you live?\n\nIsaiah does not answer with a resolution to do better. He could not lift his own coal. The cleansing comes from outside him: a seraph flies down, takes a glowing coal with tongs from the altar, and presses it to the mouth that had just confessed it was unclean. The detail that matters is where the coal comes from. It is taken from the altar - the place where sacrifice was already burning. The fire that touches Isaiah's lips is not raw judgment; it is fire that has already passed through an offering. Atonement reaches him before any errand is given.\n\nNotice the order, because the whole shape of the Christian life is in it. First the holiness that exposes. Then the altar-fire that cleanses. Only then the voice that calls: \"Whom shall I send?\" Isaiah does not volunteer to earn his place in the room. He answers \"Here am I\" as a forgiven man, sent on the far side of being made clean. The sending is the fruit of the cleansing, never the price of it.",
+      "keyInsight": "The coal that cleanses Isaiah is taken from the altar, where a sacrifice already burns. We are not sent so that we might be made clean; we are made clean, and the sending follows.",
+      "content": "By the fourth day in Isaiah you have already stood in the throne room. You have seen the train of God's robe fill the temple, heard the seraphim shake the doorposts with a holiness sung three times over, and watched the prophet come undone: \"Woe is me, for I am ruined.\" That was Day 3's pivot - the moment a man sees the Holy One of Israel and discovers he cannot survive being seen. Today the question is quieter and harder. Once you have been undone by holiness, how do you live?\n\nIsaiah does not answer with a resolution to do better. He could not lift his own coal. The cleansing comes from outside him: a seraph flies down, takes a glowing coal with tongs from the altar, and presses it to the mouth that had just confessed it was unclean. The detail that matters is where the coal comes from. It is taken from the altar - the place where sacrifice was already burning. The fire that touches Isaiah's lips is not raw judgment; it is fire that has already passed through an offering. Atonement reaches him before any errand is given.\n\nNotice the order, because the whole shape of the Christian life is in it. First the holiness that exposes. Then the altar-fire that cleanses. Only then the voice that calls: \"Whom shall I send?\" Isaiah does not volunteer to earn his place in the room. He answers \"Here am I\" as a forgiven man, sent on the far side of being made clean. The sending is the fruit of the cleansing, never the price of it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Could Not Lift His Own Hands",
+      "body": "A friend who worked years in a hospital chaplaincy told me about a patient he visited after a stroke - a man who had spent his whole life being useful, and who now could not lift a cup to his own mouth. The hardest part, the man said, was not the weakness. It was being fed. Letting someone else's hand bring the spoon to his lips felt like an admission he had spent decades avoiding: that he could not, by effort, fix this.\n\nThen one afternoon something turned. He stopped bracing against the help and simply received it. And the chaplain said the man's face changed - not into resignation, but into something closer to peace. Being fed had become a kind of dignity instead of a defeat.\n\nThat is the posture of Isaiah's lips. The prophet of the eloquent tongue, the man whose calling was words, confesses that his mouth is unclean - and then holds still while another hand brings the fire. He does not cleanse himself. He lets himself be cleansed. The whole rest of his life as God's spokesman runs out from a moment when he stopped working and let the coal come to him.",
+      "connectionToTheme": "Living out an encounter with the Holy One begins not with effort but with the harder grace of being cleansed by a hand that is not your own.",
+      "content": "A friend who worked years in a hospital chaplaincy told me about a patient he visited after a stroke - a man who had spent his whole life being useful, and who now could not lift a cup to his own mouth. The hardest part, the man said, was not the weakness. It was being fed. Letting someone else's hand bring the spoon to his lips felt like an admission he had spent decades avoiding: that he could not, by effort, fix this.\n\nThen one afternoon something turned. He stopped bracing against the help and simply received it. And the chaplain said the man's face changed - not into resignation, but into something closer to peace. Being fed had become a kind of dignity instead of a defeat.\n\nThat is the posture of Isaiah's lips. The prophet of the eloquent tongue, the man whose calling was words, confesses that his mouth is unclean - and then holds still while another hand brings the fire. He does not cleanse himself. He lets himself be cleansed. The whole rest of his life as God's spokesman runs out from a moment when he stopped working and let the coal come to him."
+    },
+    {
+      "type": "insight",
+      "heading": "The Throne, the Child, the Branch, the Feast",
+      "body": "Stand back and watch how Isaiah's holiness opens out across these four chapters, because the design is deliberate. In chapter 6 the Holy One is on a throne, too high to approach, and a man cries woe. In chapter 9 that same holiness comes near as a child: \"For unto us a child is born, unto us a son is given.\" The One who shook the doorposts is small enough to be carried. In chapter 11 He is a green Branch growing out of a cut-down stump - the line of David reduced to a dead stub, and life springing from it anyway, with the Spirit of the LORD resting on Him. And in chapter 25 the holiness that once made Isaiah feel ruined becomes a host: \"On this mountain the LORD of Hosts will prepare a banquet for all the peoples,\" and on that same mountain \"He will swallow up death forever.\"\n\nFollow the movement. The unapproachable throne becomes a child you can hold, becomes a branch you can touch, becomes a table you are invited to sit at. The holiness never lessens - the seraphim still sing. But it bends down. The God who is wholly other has not stayed at a distance; He has come close enough to be born, to grow, to feed His enemies, and to wipe the tears off their faces.\n\nThis is why Day 4 of this week is application and not simply admiration. The Holy One of Israel did not show Isaiah a throne so that Isaiah would stay on his face forever. He cleansed a mouth so it could be sent, and He let His holiness travel all the way down to a banquet table so that the ruined could eat.",
+      "historicalContext": "Isaiah prophesied in Jerusalem through the reigns of Uzziah, Jotham, Ahaz, and Hezekiah - roughly 740 to 700 BC - while Assyria's armies pressed in from the north and the house of David looked anything but eternal. When Isaiah calls the Messiah a 'shoot from the stump of Jesse' (11:1), the image bites: a stump is what is left when a tree has been cut down. The royal line would be felled. Isaiah promises a living Branch out of the dead stub.",
+      "fascinatingFact": "Isaiah 9:6 stacks four throne-names on a newborn - Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace - and the second of them, 'Mighty God' (El Gibbor), is used elsewhere of the LORD Himself (Isaiah 10:21). The child is not merely God's representative. Isaiah hands a divine name to a baby.",
+      "content": "Stand back and watch how Isaiah's holiness opens out across these four chapters, because the design is deliberate. In chapter 6 the Holy One is on a throne, too high to approach, and a man cries woe. In chapter 9 that same holiness comes near as a child: \"For unto us a child is born, unto us a son is given.\" The One who shook the doorposts is small enough to be carried. In chapter 11 He is a green Branch growing out of a cut-down stump - the line of David reduced to a dead stub, and life springing from it anyway, with the Spirit of the LORD resting on Him. And in chapter 25 the holiness that once made Isaiah feel ruined becomes a host: \"On this mountain the LORD of Hosts will prepare a banquet for all the peoples,\" and on that same mountain \"He will swallow up death forever.\"\n\nFollow the movement. The unapproachable throne becomes a child you can hold, becomes a branch you can touch, becomes a table you are invited to sit at. The holiness never lessens - the seraphim still sing. But it bends down. The God who is wholly other has not stayed at a distance; He has come close enough to be born, to grow, to feed His enemies, and to wipe the tears off their faces.\n\nThis is why Day 4 of this week is application and not simply admiration. The Holy One of Israel did not show Isaiah a throne so that Isaiah would stay on his face forever. He cleansed a mouth so it could be sent, and He let His holiness travel all the way down to a banquet table so that the ruined could eat."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A coal taken from the altar - the place of sacrifice - touches Isaiah's unclean lips and atones for his sin, and only then is he sent.",
+      "modernApplication": "Most of us try to clean ourselves up before we will come close to God: fix the temper, quiet the shame, get the mouth under control, and then maybe approach. Isaiah reverses it. He confesses his uncleanness out loud while standing in the holy place, and lets the fire come to him. Honest exposure first, received cleansing second, useful life third - in that order, never our preferred one.",
+      "connectionPoint": "Isaiah's altar-coal runs as a thread straight to the cross. The apostle John, writing about Jesus, says of Isaiah, \"Isaiah said this because he saw Jesus' glory and spoke about Him\" (John 12:41) - meaning the One Isaiah saw enthroned in chapter 6 was Christ. The same Holy One who could only be approached by way of an altar in Isaiah 6 became, in the Gospels, both the priest and the offering: the child of Isaiah 9 born, the Branch of Isaiah 11 grown, the host of Isaiah 25 swallowing up death at His own table.",
+      "newTestamentEcho": "What the seraph's coal pictured, the cross accomplished. Isaiah's lips were touched by fire from an altar where a sacrifice burned; our guilt is touched by the once-for-all sacrifice of the Holy One Himself, \"who offered Himself unblemished to God\" (Hebrews 9:14). And the feast where God \"will swallow up death forever\" (Isaiah 25:8) is the very promise Paul takes up over the empty tomb: \"Death has been swallowed up in victory\" (1 Corinthians 15:54)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of yourself are you still trying to clean up before you will let God near it - and what would it look like to bring that exact thing into the holy place unhidden, and let the coal come to you instead?",
+      "additionalQuestions": [
+        "Isaiah's first honest word in the throne room was not praise but 'Woe is me.' When did you last say something that honest to God about yourself?",
+        "Where in your life are you confusing being sent with being made worthy - working to earn a place you have already been given?",
+        "The Holy One bent all the way down to a banquet table. Do you picture God mostly as a throne you cannot approach, or as a host setting a place for you? Why?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy, holy, holy LORD of Hosts - I have seen enough of who You are to know I am a person of unclean lips. I stop pretending otherwise. I will not clean myself up first; I bring the very thing I am ashamed of into Your presence and hold still. Touch it with the fire that has already passed through Your altar, through the cross of Christ, where my iniquity was carried and atoned for. And when You ask whom You will send, let me answer as a forgiven person and not a frightened one: here am I. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you try to be useful to God, let Him make you clean. Name one specific thing - a habit of speech, a hidden shame, a sin you keep managing on your own - and instead of fixing it first, bring it openly into prayer and ask the Holy One to atone for it through Christ. Then, and only then, ask Him where He would send you.",
+      "leavingAtCross": [
+        "The exhausting project of cleaning myself up before I will come near God",
+        "The lie that I must earn a place in the room rather than be given one",
+        "The instinct to hide my unclean lips instead of confessing them out loud"
+      ],
+      "receivingFromCross": [
+        "A cleansing I cannot perform on myself, carried by the altar-fire of Christ's sacrifice",
+        "The freedom to be sent as a forgiven person, not a frightened one",
+        "The promise of a holiness that bends all the way down to set a table for me"
+      ],
+      "content": "Today, before you try to be useful to God, let Him make you clean. Name one specific thing - a habit of speech, a hidden shame, a sin you keep managing on your own - and instead of fixing it first, bring it openly into prayer and ask the Holy One to atone for it through Christ. Then, and only then, ask Him where He would send you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Where does the seraph's coal come from, and why does that detail change what the fire means - judgment, or atonement?",
+        "Trace the movement of holiness across the four chapters: throne (6), child (9), Branch (11), banquet (25). What is God doing as He moves from one image to the next?",
+        "Why does Isaiah's 'Here am I, send me' come after the cleansing rather than before it - and what would change if the order were reversed?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'unclean lips' area you usually try to fix on your own before bringing it to God. What makes it hard to confess out loud?",
+        "Talk about a time you tried to earn a place with God by being useful. How did receiving grace feel different from earning it?",
+        "Ask each other: if the Holy One has set a table and is calling, where might He be sending you this week - and what is keeping you from answering 'Here am I'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 6:3",
+          "text": "And they were calling out to one another: “Holy, holy, holy is the LORD of Hosts; all the earth is full of His glory.”"
+        },
+        {
+          "reference": "Isaiah 9:6",
+          "text": "For unto us a child is born, unto us a son is given, and the government will be upon His shoulders. And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
+        },
+        {
+          "reference": "Isaiah 11:1-2",
+          "text": "Then a shoot will spring up from the stump of Jesse, and a Branch from his roots will bear fruit. The Spirit of the LORD will rest on Him— the Spirit of wisdom and understanding, the Spirit of counsel and strength, the Spirit of knowledge and fear of the LORD."
+        },
+        {
+          "reference": "Isaiah 25:8",
+          "text": "He will swallow up death forever. The Lord GOD will wipe away the tears from every face and remove the disgrace of His people from the whole earth. For the LORD has spoken."
+        },
+        {
+          "reference": "John 12:41",
+          "text": "Isaiah said these things because he saw Jesus’ glory and spoke about Him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 6, 9, 11, 25",
+          "note": "Read the four chapters in one sitting, watching one thing: how the holiness of the throne room (ch. 6) keeps coming closer - child (ch. 9), Branch (ch. 11), banquet (ch. 25) - without ever becoming less holy."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Isaiah",
+      "title": "Prophet of the Holy One of Israel",
+      "era": "8th century BC (c. 740-700 BC)",
+      "description": "A prophet in Jerusalem during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah, while Assyria threatened Judah's survival. His commissioning vision in chapter 6 gave the Hebrew Bible its most concentrated picture of God's holiness - 'holy, holy, holy' - and the title he would return to again and again, 'the Holy One of Israel.' His book moves from a throne too high to approach to a banquet open to all peoples.",
+      "key_trait": "A man undone by holiness, cleansed by grace he could not give himself, and sent",
+      "keyQuote": "Woe is me, for I am ruined, because I am a man of unclean lips... Here am I. Send me!",
+      "lessonForUs": "Isaiah shows the whole shape of a life lived before the Holy One: exposed by holiness, cleansed by the altar's fire, then sent. The order is grace first and usefulness second - and the same God whose holiness ruined him is the one who came near as a child, a Branch, and a host setting a table for the ruined.",
+      "summary": "Traditionally the son of Amoz, Isaiah prophesied in Judah for roughly four decades, and the New Testament reads his words about the throne, the child, and the suffering servant as testimony to Christ (John 12:41)."
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2481,
+  "scriptureReference_full": "Isaiah 6, 9, 11, 25",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qadosh H6918; qedosh Yisrael, 'Holy One of Israel') reflects standard lexical sources. The threefold 'holy' as a Hebrew intensive, and 'El Gibbor' (Mighty God) in Isaiah 9:6 echoing Isaiah 10:21, reflect mainstream Old Testament scholarship.",
+    "John 12:41 is cited in the historic Christian reading that the One Isaiah saw enthroned (Isaiah 6) is the pre-incarnate Christ."
+  ]
 }

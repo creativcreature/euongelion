@@ -1,38 +1,186 @@
 {
   "day": 196,
-  "title": "Psalms of Trust — Day 7 — Sabbath",
-  "teaser": "Day 196 of Bible 365 — Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "title": "What the Watchmen Wait For",
+  "teaser": "Eight psalms of trust, read in one quiet sitting: the planted tree, the night sky, the cry from the depths, and the God who never once falls asleep over you.",
   "framework": "Psalm 1, 8, 19, 27, 90, 121, 130, 139 — Psalms of Trust",
   "scriptureReference": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 196"
+      "type": "scripture",
+      "reference": "Psalm 130:5-6; 121:3-4",
+      "translation": "BSB",
+      "emphasis": [
+        "Out of the depths I cry to You",
+        "more than watchmen wait for the morning",
+        "your Protector will not slumber"
+      ],
+      "hebrewOriginal": "קִוִּיתִי יְהוָה קִוְּתָה נַפְשִׁי וְלִדְבָרוֹ הוֹחָלְתִּי",
+      "passage": "Out of the depths I cry to You, O LORD! O Lord, hear my voice; let Your ears be attentive to my plea for mercy... I wait for the LORD; my soul does wait, and in His word I put my hope. My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning... He will not allow your foot to slip; your Protector will not slumber. Behold, the Protector of Israel will neither slumber nor sleep."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Psalm 1, 8, 19, 27, 90, 121, 130, 139**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Psalm 1, 8, 19, 27, 90, 121, 130, 139 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָוָה",
+      "transliteration": "qavah",
+      "pronunciation": "kah-VAH",
+      "meaning": "to wait, to hope, to look for with tension",
+      "rootMeaning": "The root pictures a cord pulled taut. To qavah is not to drift or to kill time; it is to lean forward, stretched toward something you are sure is coming, the way a rope holds its strain until the boat arrives.",
+      "usageNote": "Qavah and its near-neighbor yachal (to hope, to wait) thread through the whole sabbath reading. Psalm 27 ends with it twice: 'Wait patiently for the LORD... Wait patiently for the LORD.' Psalm 130 uses it of a soul waiting more than watchmen wait for the morning. It is the verb of trust under strain - not passivity, but a taut, expectant holding-on.",
+      "wordByWord": [
+        {
+          "word": "קִוִּיתִי",
+          "transliteration": "qivviti",
+          "meaning": "I have waited, I have hoped (Psalm 130:5)"
+        },
+        {
+          "word": "נַפְשִׁי",
+          "transliteration": "nafshi",
+          "meaning": "my soul, my whole inner self, my throat - the part of me that longs"
+        },
+        {
+          "word": "וְלִדְבָרוֹ",
+          "transliteration": "v'lidvaro",
+          "meaning": "and for His word - the waiting is aimed at what God has said"
+        },
+        {
+          "word": "הוֹחָלְתִּי",
+          "transliteration": "hochalti",
+          "meaning": "I have put my hope, I have waited expectantly (from yachal)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תִּקְוָה",
+          "reference": "Tiqvah, the noun built from this root, simply means 'hope' - but in Joshua 2:18 the very same word names the scarlet cord Rahab hangs from her window. Hope, in Hebrew, looks like a rope you tie to the only thing that will hold."
+        }
+      ],
+      "strongsNumber": "H6960",
+      "definition": "to wait for, look for, hope; to bind together (as by twisting), to be tense like a stretched cord",
+      "usage": "When the psalmist says 'I wait for the LORD,' the picture underneath the word is a taut line. Waiting on God is not slack. It is the strain of holding on to the one rope you trust to hold you."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Psalms of Trust. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the song of the redeemed (Rev 5:9).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Eight Psalms, One Direction",
+      "body": "Today there is nothing to finish. The reading gathers eight psalms - 1, 8, 19, 27, 90, 121, 130, and 139 - and lays them side by side like stones a person carries in a pocket and turns over without thinking. They were not written on the same day, by the same hand, in the same trouble. But read together on a sabbath, they all lean the same direction.\n\nThey begin with a planted life. Psalm 1 opens the whole book of Psalms with a man like a tree planted by streams of water, whose leaf does not wither. From there the readings widen into the sky. Psalm 8 stands a small human under the moon and the stars and asks the honest question: 'what is man that You are mindful of him?' Psalm 19 hears the heavens themselves declaring the glory of God, the skies proclaiming the work of His hands.\n\nThen the psalms come down to ground level, where most of life is actually lived. Psalm 27 says the LORD is light and salvation and asks 'whom shall I fear?' - then admits, by the end, that it is still waiting. Psalm 90 stands honestly inside time and prays, 'teach us to number our days.' Psalm 121 lifts its eyes to the hills and finds help in the God who does not sleep. Psalm 130 cries out of the depths. Psalm 139 admits there is nowhere to flee from a God who has already searched and known us. Eight different weathers, one settled trust: the LORD is worth waiting for.",
+      "keyInsight": "These psalms do not pretend life is simple. They move through wonder, fear, the press of time, and the bottom of the depths. What holds them together is not a mood but a direction: every one of them is leaning, taut as a cord, toward the LORD.",
+      "content": "Today there is nothing to finish. The reading gathers eight psalms - 1, 8, 19, 27, 90, 121, 130, and 139 - and lays them side by side like stones a person carries in a pocket and turns over without thinking. They were not written on the same day, by the same hand, in the same trouble. But read together on a sabbath, they all lean the same direction.\n\nThey begin with a planted life. Psalm 1 opens the whole book of Psalms with a man like a tree planted by streams of water, whose leaf does not wither. From there the readings widen into the sky. Psalm 8 stands a small human under the moon and the stars and asks the honest question: 'what is man that You are mindful of him?' Psalm 19 hears the heavens themselves declaring the glory of God, the skies proclaiming the work of His hands.\n\nThen the psalms come down to ground level, where most of life is actually lived. Psalm 27 says the LORD is light and salvation and asks 'whom shall I fear?' - then admits, by the end, that it is still waiting. Psalm 90 stands honestly inside time and prays, 'teach us to number our days.' Psalm 121 lifts its eyes to the hills and finds help in the God who does not sleep. Psalm 130 cries out of the depths. Psalm 139 admits there is nowhere to flee from a God who has already searched and known us. Eight different weathers, one settled trust: the LORD is worth waiting for."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Watch Before Dawn",
+      "body": "A night watchman keeps the worst hours on purpose. The middle of the night is not when something usually happens; it is when everyone else is asleep and someone still has to be awake in case it does. The hardest stretch is the last one, the watch before dawn, when the body is heaviest and the dark seems to have settled in for good. The temptation is not fear. It is the slow conviction that morning is never actually coming.\n\nPsalm 130 reaches for exactly that man. 'My soul waits for the Lord more than watchmen wait for the morning - more than watchmen wait for the morning.' The line is repeated, the way you repeat a thing to yourself at two in the morning to keep believing it. The watchman does not make the sun rise. He cannot hurry it by a single minute. His whole job is to stay at his post and trust that the light is on its way, because it always has been.\n\nThat is what waiting on God looks like on an ordinary hard night. Not pretending it is bright when it is dark. Not abandoning the post. Just holding on, taut as a rope, toward a morning you have not yet seen but have decided to count on.",
+      "connectionToTheme": "The psalmist does not claim the night is short or easy. He claims the morning is certain - and ties his soul to that certainty the way a watchman stakes his whole shift on a sunrise he cannot yet see.",
+      "content": "A night watchman keeps the worst hours on purpose. The middle of the night is not when something usually happens; it is when everyone else is asleep and someone still has to be awake in case it does. The hardest stretch is the last one, the watch before dawn, when the body is heaviest and the dark seems to have settled in for good. The temptation is not fear. It is the slow conviction that morning is never actually coming.\n\nPsalm 130 reaches for exactly that man. 'My soul waits for the Lord more than watchmen wait for the morning - more than watchmen wait for the morning.' The line is repeated, the way you repeat a thing to yourself at two in the morning to keep believing it. The watchman does not make the sun rise. He cannot hurry it by a single minute. His whole job is to stay at his post and trust that the light is on its way, because it always has been.\n\nThat is what waiting on God looks like on an ordinary hard night. Not pretending it is bright when it is dark. Not abandoning the post. Just holding on, taut as a rope, toward a morning you have not yet seen but have decided to count on."
+    },
+    {
+      "type": "insight",
+      "heading": "The God Who Does Not Sleep",
+      "body": "Set Psalm 121 and Psalm 130 next to each other and a quiet wonder shows up. In Psalm 130 a sleepless soul waits through the night for the morning, like a watchman who cannot close his eyes. In Psalm 121 the psalmist says of God: 'He will not allow your foot to slip; your Protector will not slumber. Behold, the Protector of Israel will neither slumber nor sleep.'\n\nThere are two watchmen in these psalms, and only one of them is tired. The human one strains and aches toward the dawn. The divine one never needs the dawn at all, because He never sleeps in the first place. While you lie awake at the bottom of Psalm 130, the God of Psalm 121 is already awake, already watching, already keeping your coming and your going.\n\nThis is the center the whole sabbath reading turns on. The waiting of Psalm 130 is only bearable because of the watching of Psalm 121. You are not staring into an empty dark, hoping someone notices. You are waited for. The One you wait for has been awake over you the entire night, and your trust is not aimed at nothing - it is aimed at a Keeper who has not blinked.",
+      "historicalContext": "Psalm 121 is one of the Songs of Ascents (Psalms 120-134), sung by pilgrims climbing the road up to Jerusalem for the festivals. 'I lift up my eyes to the hills' was likely the literal view of travelers on dangerous roads where bandits hid and a foot could slip on the rocks. Into that real fear the song answers: your help comes from the LORD, the Maker of heaven and earth, who does not doze on the job of keeping you.",
+      "fascinatingFact": "Hebrew poetry rarely repeats a whole line, so when it does, it underlines. Psalm 121 says God 'will not slumber' and then 'will neither slumber nor sleep.' Psalm 130 says the soul waits 'more than watchmen wait for the morning' and then repeats it. The doubled lines sit across from each other in the sabbath reading like an answer to a prayer: the watchman's repeated longing, met by God's repeated promise never to fall asleep.",
+      "content": "Set Psalm 121 and Psalm 130 next to each other and a quiet wonder shows up. In Psalm 130 a sleepless soul waits through the night for the morning, like a watchman who cannot close his eyes. In Psalm 121 the psalmist says of God: 'He will not allow your foot to slip; your Protector will not slumber. Behold, the Protector of Israel will neither slumber nor sleep.'\n\nThere are two watchmen in these psalms, and only one of them is tired. The human one strains and aches toward the dawn. The divine one never needs the dawn at all, because He never sleeps in the first place. While you lie awake at the bottom of Psalm 130, the God of Psalm 121 is already awake, already watching, already keeping your coming and your going.\n\nThis is the center the whole sabbath reading turns on. The waiting of Psalm 130 is only bearable because of the watching of Psalm 121. You are not staring into an empty dark, hoping someone notices. You are waited for. The One you wait for has been awake over you the entire night, and your trust is not aimed at nothing - it is aimed at a Keeper who has not blinked."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Psalm 130 cries from the depths and waits for a LORD who is not a record-keeper of sins - 'If You, O LORD, kept track of iniquities, then who, O Lord, could stand? But with You there is forgiveness' - and promises that 'He will redeem Israel from all iniquity.'",
+      "modernApplication": "Most of us are not afraid God is unreal. We are afraid He is keeping a tally, and that if He ever read it back to us, we could not stand. Psalm 130 says the opposite: the depths are exactly where forgiveness is found, and the One we wait for in the dark comes not with a ledger but with redemption in abundance.",
+      "connectionPoint": "The psalms keep promising a redemption they cannot yet name. Psalm 130 looks for the LORD to 'redeem Israel from all iniquity' - more than the watchmen ever waited for morning. Psalm 90 prays 'teach us to number our days' because the days are running out. The whole hope of these songs leans forward, taut, toward a rescue from outside that no psalmist could supply.",
+      "newTestamentEcho": "The psalms were the prayer book Jesus Himself prayed; on the cross He breathed their words. The morning the watchmen waited for has a name. The same Gospel writers who tell us 'God did not send His Son into the world to condemn the world, but to save the world through Him' (John 3:17) tell us He rose 'early on the first day of the week' (Mark 16:2) - the morning, come at last, that no watchman could make rise. Psalm 130 hoped for redemption 'from all iniquity'; an angel told Joseph to name the child Jesus, 'because He will save His people from their sins' (Matthew 1:21). The depths cried out; the answer climbed out of a grave at dawn."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Of these eight psalms - the planted tree, the night sky, the law that revives the soul, the light you do not fear, the days you are learning to number, the hills you lift your eyes to, the depths you cry from, the God who has searched and known you - which one is your weather today? Sit with that one.",
+      "additionalQuestions": [
+        "Psalm 130 cries 'out of the depths.' What is the depth you are speaking to God from right now - and have you actually said it to Him, or only carried it?",
+        "Psalm 121 says God neither slumbers nor sleeps. What would change about tonight if you truly believed you were being watched over while you slept?",
+        "Psalm 139 says 'Search me, O God, and know my heart.' Is that a prayer you can pray today without flinching - and if not, which psalm here might help you get there?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, You have searched me and known me, and I am still learning that this is mercy and not threat. Out of whatever depths I am in today, hear my voice. I am tired of keeping my own watch, as if the morning depended on me staying awake. So tonight I hand the watch back to You, the One who neither slumbers nor sleeps. Teach me to number my days. Satisfy me in the morning with Your loving devotion. And while I wait - taut, leaning, hoping more than watchmen wait for the dawn - keep my coming and my going, both now and forevermore. Through Christ, the morning that came. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This is a sabbath; there is no task to finish. Read the eight psalms slowly, then choose one verse to carry as your own this week. A good one to start with: 'My soul waits for the Lord more than watchmen wait for the morning' (Psalm 130:6). Say it once before you sleep tonight, and once when you wake.",
+      "leavingAtCross": [
+        "The exhausting belief that I have to keep my own watch, as if morning depends on me",
+        "The fear that God is keeping track of my iniquities and waiting to read them back",
+        "The restless waiting that has no direction - dread dressed up as patience"
+      ],
+      "receivingFromCross": [
+        "A Keeper who neither slumbers nor sleeps, awake over my coming and going",
+        "Forgiveness found in the depths, and redemption 'in abundance' rather than a ledger",
+        "Waiting that leans toward a morning already proven to come - the empty tomb at dawn"
+      ],
+      "content": "This is a sabbath; there is no task to finish. Read the eight psalms slowly, then choose one verse to carry as your own this week. A good one to start with: 'My soul waits for the Lord more than watchmen wait for the morning' (Psalm 130:6). Say it once before you sleep tonight, and once when you wake."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Trace the movement across the eight psalms: from the planted tree (Ps 1) to the night sky (Ps 8, 19) to the depths (Ps 130). What single thing holds these very different psalms together?",
+        "What is the difference between the tired human watchman of Psalm 130 and the sleepless divine Watchman of Psalm 121 - and why does that difference make waiting bearable?",
+        "Psalm 130 asks, 'If You, O LORD, kept track of iniquities... who could stand?' How does the rest of the psalm answer its own question?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name the 'depths' you are praying from in this season - the place Psalm 130 cries out of. Say it plainly to one another.",
+        "Talk about what it is actually like to wait on God: where does your waiting feel like taut hope, and where does it slide into just dread?",
+        "Ask each other Psalm 139's question out loud: is 'Search me, O God, and know my heart' a prayer you can pray right now - and what would have to be true for it to feel like good news?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 1:3",
+          "text": "He is like a tree planted by streams of water, yielding its fruit in season, whose leaf does not wither, and who prospers in all he does."
+        },
+        {
+          "reference": "Psalm 27:14",
+          "text": "Wait patiently for the LORD; be strong and courageous. Wait patiently for the LORD!"
+        },
+        {
+          "reference": "Psalm 90:12",
+          "text": "So teach us to number our days, that we may present a heart of wisdom."
+        },
+        {
+          "reference": "Psalm 121:8",
+          "text": "The LORD will watch over your coming and going, both now and forevermore."
+        },
+        {
+          "reference": "Psalm 139:23-24",
+          "text": "Search me, O God, and know my heart; test me and know my concerns. See if there is any offensive way in me; lead me in the way everlasting."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Psalm 130 and Psalm 121",
+          "note": "Read these two short psalms back to back, out loud. Listen for the answer Psalm 121 gives to the longing of Psalm 130: the watchman who waits, and the Watchman who never sleeps."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Psalmists of Trust",
+      "title": "Israel's Singers in the Dark",
+      "description": "The book of Psalms gathers 150 prayers and songs from across centuries - many tied to David, others to Asaph, the sons of Korah, and Moses (Psalm 90, the oldest, prayed by 'Moses the man of God'). These eight were chosen for a sabbath because they share one posture: trust held under real pressure. The psalmists do not write from easy chairs. They write from battlefields, sickbeds, fugitive caves, and the long night watches - and from there they teach Israel, and the Church after it, how to wait.",
+      "keyQuote": "My soul waits for the Lord more than watchmen wait for the morning— more than watchmen wait for the morning.",
+      "lessonForUs": "Faith is not the absence of the depths. The psalmists cried from the very bottom and still leaned toward God like a cord pulled taut. They show us that trust is not a feeling you wait to have, but a direction you choose to face - toward the One who never sleeps over you.",
+      "heading": "Israel's Singers in the Dark"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2409,
+  "scriptureReference_full": "Psalm 1, 8, 19, 27, 90, 121, 130, 139",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0).",
+    "Hebrew word study (qavah, H6960; yachal; the noun tiqvah and its use for Rahab's cord in Joshua 2:18) reflects standard lexical sources.",
+    "Historical note on the Songs of Ascents (Psalms 120-134) and Mosaic authorship of Psalm 90 reflects standard reference material."
+  ]
 }

@@ -6,33 +6,177 @@
   "scriptureReference": "1 Samuel 3",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 79"
+      "type": "scripture",
+      "reference": "1 Samuel 3:8-10",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD who was calling the boy",
+        "Speak, LORD, for Your servant is listening",
+        "Speak, for Your servant is listening"
+      ],
+      "hebrewOriginal": "דַּבֵּר כִּי שֹׁמֵעַ עַבְדֶּךָ",
+      "passage": "Once again, for the third time, the LORD called to Samuel. He got up, went to Eli, and said, \"Here I am, for you have called me.\" Then Eli realized that it was the LORD who was calling the boy. \"Go and lie down,\" he said to Samuel, \"and if He calls you, say, 'Speak, LORD, for Your servant is listening.'\" So Samuel went and lay down in his place. Then the LORD came and stood there, calling as before, \"Samuel! Samuel!\" And Samuel answered, \"Speak, for Your servant is listening.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Samuel 3**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Samuel 3 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שֹׁמֵעַ",
+      "transliteration": "shomea",
+      "pronunciation": "sho-MEH-ah",
+      "meaning": "hearing, listening, heeding, obeying",
+      "rootMeaning": "From the root shama, which does not split hearing from obeying the way English does. To shama is to hear in a way that bends the body toward what was heard. The same root opens Israel's great confession: Shema Yisrael - \"Hear, O Israel.\"",
+      "usageNote": "When Samuel finally answers, he does not say \"I understand\" or \"I am ready.\" He says shomea - I am listening. The word leaves room for whatever comes next, even a word he would rather not carry. To hear, in Hebrew, is already to begin to obey.",
+      "wordByWord": [
+        {
+          "word": "דַּבֵּר",
+          "transliteration": "dabber",
+          "meaning": "speak - a command, the servant inviting the Master to begin"
+        },
+        {
+          "word": "כִּי",
+          "transliteration": "ki",
+          "meaning": "for, because"
+        },
+        {
+          "word": "שֹׁמֵעַ",
+          "transliteration": "shomea",
+          "meaning": "is listening, is hearing-and-heeding"
+        },
+        {
+          "word": "עַבְדֶּךָ",
+          "transliteration": "avdekha",
+          "meaning": "Your servant - literally 'your slave,' one wholly belonging to another"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שְׁמַע",
+          "reference": "Shema (Deuteronomy 6:4), the same root. Israel's first calling was not to act for God but to hear Him: \"Hear, O Israel: the LORD our God, the LORD is One.\" Samuel's small bedtime sentence is that whole confession learning to speak in one boy."
+        }
+      ],
+      "strongsNumber": "H8085",
+      "definition": "to hear, listen, obey, heed; to hear with attention and respond",
+      "usage": "Notice what Samuel leaves off. Eli told him to say, \"Speak, LORD, for Your servant is listening.\" When the moment comes, Samuel says only, \"Speak, for Your servant is listening.\" Whether from fear or reverence, the boy drops the divine name - and the LORD answers anyway. Even a half-remembered prayer, offered honestly, is heard."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Listening before serving. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the listening Son (John 5:19).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Word Worth Waiting For",
+      "body": "The chapter opens with a sentence that sounds like a closed door: \"the word of the LORD was rare and visions were scarce.\" Israel is not in a season of fireworks. The old priest Eli is going blind, his sons are corrupt, and heaven seems to have gone quiet. Into that silence a boy is sleeping in the temple at Shiloh, near the ark, before the lamp of God has gone out.\n\nThen a voice. Samuel runs to Eli - \"Here I am, for you have called me\" - because the only voice he has ever known calling him in the night is the old man's. Eli sends him back. It happens again. And again. Three times the boy answers the wrong master, not because he is dull, but because, as the text says plainly, \"Samuel did not yet know the LORD, because the word of the LORD had not yet been revealed to him.\"\n\nThis is the honest center of the story. Samuel is already living in the holiest place in Israel. He sleeps beside the ark. He ministers before the LORD. And he still cannot tell God's voice from a familiar one - because nearness to holy things is not the same as knowing the One who speaks. The boy has proximity. What he lacks is recognition. And recognition, the chapter insists, is something he has to be taught.",
+      "keyInsight": "Samuel is in the right place, doing the right work, asleep beside the very presence of God - and still cannot recognize the voice calling his name. Nearness to holy things is not the same as knowing the One who speaks.",
+      "content": "The chapter opens with a sentence that sounds like a closed door: \"the word of the LORD was rare and visions were scarce.\" Israel is not in a season of fireworks. The old priest Eli is going blind, his sons are corrupt, and heaven seems to have gone quiet. Into that silence a boy is sleeping in the temple at Shiloh, near the ark, before the lamp of God has gone out.\n\nThen a voice. Samuel runs to Eli - \"Here I am, for you have called me\" - because the only voice he has ever known calling him in the night is the old man's. Eli sends him back. It happens again. And again. Three times the boy answers the wrong master, not because he is dull, but because, as the text says plainly, \"Samuel did not yet know the LORD, because the word of the LORD had not yet been revealed to him.\"\n\nThis is the honest center of the story. Samuel is already living in the holiest place in Israel. He sleeps beside the ark. He ministers before the LORD. And he still cannot tell God's voice from a familiar one - because nearness to holy things is not the same as knowing the One who speaks. The boy has proximity. What he lacks is recognition. And recognition, the chapter insists, is something he has to be taught."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Voice You Were Trained to Ignore",
+      "body": "A friend of mine spent two years as a hospital chaplain on the overnight shift. She told me that the hardest skill to learn was not what to say at a deathbed. It was learning which sounds to wake up for.\n\nThe ward at night is full of noise: monitors, carts, footsteps, the hiss of an air vent. New chaplains, she said, jolt awake at every alarm and sleep through the one sound that matters - a person quietly weeping behind a curtain, too tired to call out. You can be inside the building all night, badge on, ready to serve, and miss the only voice that was actually for you.\n\nBy the end of her first year, she said, something had changed in her hearing. She would surface out of sleep at the smallest human sound and stay asleep through the machines. No one taught her with a lecture. The place taught her, the way Eli taught Samuel: by sending her back to lie down, again and again, until the night itself trained her ears toward the voice she was there for.",
+      "connectionToTheme": "Like Samuel in the temple, you can be fully present and fully equipped and still need to be trained which voice to answer - the work is learning to hear before learning to serve.",
+      "content": "A friend of mine spent two years as a hospital chaplain on the overnight shift. She told me that the hardest skill to learn was not what to say at a deathbed. It was learning which sounds to wake up for.\n\nThe ward at night is full of noise: monitors, carts, footsteps, the hiss of an air vent. New chaplains, she said, jolt awake at every alarm and sleep through the one sound that matters - a person quietly weeping behind a curtain, too tired to call out. You can be inside the building all night, badge on, ready to serve, and miss the only voice that was actually for you.\n\nBy the end of her first year, she said, something had changed in her hearing. She would surface out of sleep at the smallest human sound and stay asleep through the machines. No one taught her with a lecture. The place taught her, the way Eli taught Samuel: by sending her back to lie down, again and again, until the night itself trained her ears toward the voice she was there for."
+    },
+    {
+      "type": "insight",
+      "heading": "The Failing Priest Gives the Right Words",
+      "body": "Here is the detail that should stop us. The wisdom that finally opens Samuel's ears does not come from Samuel. It comes from Eli - the very man God is about to judge.\n\nEli's eyesight has dimmed; his house is under sentence; his sons have made worship a scandal. He is, by every measure, the failing leader being replaced. And yet it is Eli who realizes, on the third call, that it is the LORD summoning the boy. It is Eli who hands Samuel the one sentence that turns the night: \"If He calls you, say, 'Speak, LORD, for Your servant is listening.'\" The dying lamp passes the light to the rising one.\n\nThis is how God so often works. The word that teaches you to hear God may come through a flawed, fading, even disqualified messenger. Samuel did not wait for a worthy mentor. He took true words from an imperfect mouth and used them to meet a holy God. We tend to wait until the source is clean before we will receive the help. Samuel shows the better way: receive the true thing, even when the hand that gives it is failing - then go and lie down, and listen.",
+      "historicalContext": "Shiloh was Israel's central sanctuary before Jerusalem, home of the tabernacle and the ark of the covenant for generations after the conquest. The remark that \"the word of the LORD was rare\" places this scene at the end of the era of the judges, a stretch the book of Judges sums up as a time when \"everyone did what was right in his own eyes.\" Samuel's call marks the turning toward kingship and prophetic order.",
+      "fascinatingFact": "The narrative says Samuel was lying down \"before the lamp of God had gone out.\" In the tabernacle the golden lampstand was tended so its light would not be extinguished overnight. The small note does double duty: it sets the hour just before dawn, and it quietly insists that even in an age when revelation was scarce, the lamp had not gone dark. God speaks while the light still burns.",
+      "content": "Here is the detail that should stop us. The wisdom that finally opens Samuel's ears does not come from Samuel. It comes from Eli - the very man God is about to judge.\n\nEli's eyesight has dimmed; his house is under sentence; his sons have made worship a scandal. He is, by every measure, the failing leader being replaced. And yet it is Eli who realizes, on the third call, that it is the LORD summoning the boy. It is Eli who hands Samuel the one sentence that turns the night: \"If He calls you, say, 'Speak, LORD, for Your servant is listening.'\" The dying lamp passes the light to the rising one.\n\nThis is how God so often works. The word that teaches you to hear God may come through a flawed, fading, even disqualified messenger. Samuel did not wait for a worthy mentor. He took true words from an imperfect mouth and used them to meet a holy God. We tend to wait until the source is clean before we will receive the help. Samuel shows the better way: receive the true thing, even when the hand that gives it is failing - then go and lie down, and listen."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Before Samuel could serve as a prophet, he had to be taught to listen - to answer not \"Here I am, send me\" but \"Speak, for Your servant is listening.\" Hearing came before doing.",
+      "modernApplication": "Most of us run to God the way Samuel ran to Eli: ready to act, already moving, asking what we should do. The harder discipline is to lie back down in the dark and say the servant's prayer - to let God speak first, before we have decided what we want Him to say.",
+      "connectionPoint": "The order matters. Samuel's whole life of speaking for God begins with a night of learning to be quiet before God. The word he would later carry to kings was first a word he received lying down. We cannot give what we have not first heard.",
+      "newTestamentEcho": "Centuries later, when prophets like Samuel had said all they could, \"in these last days He has spoken to us by His Son\" (Hebrews 1:2). Samuel heard a word from outside himself and learned to repeat it faithfully. Jesus does not merely hear the word - He is the Word, and He says of Himself, \"the Son can do nothing by Himself, unless He sees the Father doing it\" (John 5:19). The perfect listener is the eternal Son."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When God calls in the night, which voice do you run to first - and what familiar voice have you mistaken for His?",
+      "additionalQuestions": [
+        "Samuel was in the holiest place in Israel and still could not recognize God's voice. Where in your life do you have nearness to holy things without real recognition of the One who speaks?",
+        "The words that opened Samuel's ears came from a failing man. Whose true words have you refused because you judged the messenger first?",
+        "What would change if your first prayer tomorrow were not 'Here is what I need' but 'Speak, for Your servant is listening'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have spent so long telling You what I want that I have forgotten how to listen. I run to the voices I know - my fears, my plans, my own urgency - and I miss You calling my name. Tonight, teach me what You taught Samuel. Quiet the noise I have mistaken for You. Give me the courage to lie back down and say, and mean, \"Speak, for Your servant is listening\" - even if the word You give is hard to carry. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before you ask God for anything tomorrow morning, sit in silence for two minutes and pray only this: \"Speak, for Your servant is listening.\" Do not fill the quiet. Let Him have the first word.",
+      "leavingAtCross": [
+        "The habit of running to every familiar voice before I stop to ask if it is God's",
+        "The pride that waits for a worthy messenger before receiving a true word",
+        "The assumption that being near holy things means I already know how to hear"
+      ],
+      "receivingFromCross": [
+        "Ears trained to recognize the voice that is actually calling my name",
+        "The freedom to receive true words even from broken or fading vessels",
+        "The settled posture of a servant who listens first and serves second"
+      ],
+      "content": "Before you ask God for anything tomorrow morning, sit in silence for two minutes and pray only this: \"Speak, for Your servant is listening.\" Do not fill the quiet. Let Him have the first word."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why did Samuel run to Eli three times instead of answering God - and what does the text give as the reason (verse 7)?",
+        "What does it mean that the wisdom to recognize God's voice came through Eli, the very man God was about to judge?",
+        "How does Samuel's prayer, 'Speak, for Your servant is listening,' reorder the relationship between hearing and serving?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'familiar voice' - a fear, a habit, a person - that you tend to answer as if it were God's.",
+        "Talk about a time a true word reached you through an imperfect or unlikely messenger. Did you receive it or resist it?",
+        "Commit together to begin tomorrow with two minutes of silence and the servant's prayer before any request."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Samuel 3:1",
+          "text": "And the boy Samuel ministered to the LORD before Eli. Now in those days the word of the LORD was rare and visions were scarce."
+        },
+        {
+          "reference": "Deuteronomy 6:4",
+          "text": "Hear, O Israel: The LORD our God, the LORD is One."
+        },
+        {
+          "reference": "John 5:19",
+          "text": "So Jesus replied, \"Truly, truly, I tell you, the Son can do nothing by Himself, unless He sees the Father doing it. For whatever the Father does, the Son also does.\""
+        },
+        {
+          "reference": "Hebrews 1:1-2",
+          "text": "On many past occasions and in many different ways, God spoke to our fathers through the prophets. But in these last days He has spoken to us by His Son, whom He appointed heir of all things, and through whom He made the universe."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Samuel 3",
+          "note": "Read the whole chapter slowly, tracing the movement from silence (v. 1) to confusion (vv. 4-9) to recognition (v. 10) to the costly word Samuel must carry (vv. 11-18) to a life confirmed by listening (vv. 19-21)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Samuel",
+      "title": "The Boy Who Learned to Listen",
+      "era": "11th century BC, the end of the era of the judges",
+      "description": "Dedicated to the LORD by his mother Hannah and raised in the sanctuary at Shiloh under the priest Eli, Samuel became the last of Israel's judges and the prophet who anointed both Saul and David. His public ministry began not with a vision he sought but with a voice he learned to recognize in the night. From that first hearing, \"the LORD was with him, and He let none of Samuel's words fall to the ground.\"",
+      "keyQuote": "Speak, for Your servant is listening.",
+      "lessonForUs": "Before Samuel ever spoke a word for God, he learned to receive one. A lifetime of faithful speaking grew out of one night of honest listening - which is the order God still seems to prefer.",
+      "heading": "The Boy Who Learned to Listen"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1980,
+  "scriptureReference_full": "1 Samuel 3",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (shomea, shama H8085) reflects standard lexical sources; the link to the Shema (Deuteronomy 6:4) follows the shared root sh-m-'."
+  ]
 }

@@ -1,38 +1,185 @@
 {
   "day": 210,
-  "title": "Ecclesiastes: Vanity + God — Day 7 — Sabbath",
-  "teaser": "Day 210 of Bible 365 — Ecclesiastes 1, 3, 12",
+  "title": "Eternity in a Vapor's Heart",
+  "teaser": "The Teacher calls everything under the sun a vapor — then admits God set eternity in our chests. The ache he can't name has a face.",
   "framework": "Ecclesiastes 1, 3, 12 — Ecclesiastes: Vanity + God",
   "scriptureReference": "Ecclesiastes 1, 3, 12",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 210"
+      "type": "scripture",
+      "reference": "Ecclesiastes 1:2-3; 3:11; 12:1, 13",
+      "translation": "BSB",
+      "emphasis": [
+        "Everything is futile",
+        "under the sun",
+        "set eternity in the hearts of men",
+        "Remember your Creator",
+        "Fear God"
+      ],
+      "hebrewOriginal": "הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל",
+      "passage": "“Futility of futilities,” says the Teacher, “futility of futilities! Everything is futile!” What does a man gain from all his labor, at which he toils under the sun? ... He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end. ... Remember your Creator in the days of your youth, before the days of adversity come ... When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Ecclesiastes 1, 3, 12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Ecclesiastes 1, 3, 12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "הֶבֶל",
+      "transliteration": "hevel",
+      "pronunciation": "HEH-vel",
+      "meaning": "vapor, breath, mist; the futile, the fleeting",
+      "rootMeaning": "A puff of breath on a cold morning. Something you can see but not hold - real for a moment, gone before you can close your hand on it. The BSB renders it 'futility'; older English Bibles say 'vanity.' Both reach for the same picture: not nothing, but nothing you can keep.",
+      "usageNote": "Hevel is the drumbeat of Ecclesiastes - it opens the book (1:2) and closes it (12:8), framing everything between as breath. The Teacher uses it some thirty-eight times. It is also the Hebrew name of Abel, Adam's second son, whose life was over almost before it began (Genesis 4). The man named 'Breath' was the first to die.",
+      "wordByWord": [
+        {
+          "word": "הֲבֵל",
+          "transliteration": "havel",
+          "meaning": "vapor, breath, fleeting thing"
+        },
+        {
+          "word": "הֲבָלִים",
+          "transliteration": "havalim",
+          "meaning": "the plural - 'of vapors,' an intensifying construction"
+        },
+        {
+          "word": "הַכֹּל",
+          "transliteration": "hakol",
+          "meaning": "the whole of it, everything, the lot"
+        },
+        {
+          "word": "תַּחַת הַשָּׁמֶשׁ",
+          "transliteration": "tachat hashemesh",
+          "meaning": "under the sun - the Teacher's phrase for life lived on this side of the sky, by daylight, without lifting his eyes higher"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "הֶבֶל / Abel",
+          "reference": "Abel's name (Genesis 4:2) is the same word: hevel, breath. The brother whose life was a vapor is woven into the very word the Teacher chose for everything under the sun."
+        }
+      ],
+      "strongsNumber": "H1892",
+      "definition": "vapor, breath; figuratively that which is fleeting, empty, or futile",
+      "usage": "'Hevel havalim' (futility of futilities) is built like 'Song of Songs' or 'King of kings' - a Hebrew superlative. Not merely 'this is fleeting,' but 'the most fleeting of fleeting things.' The breathiest breath."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Ecclesiastes: Vanity + God. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the meaning beneath vanity (Col 1:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Wisest Man Counts His Breath",
+      "body": "The book opens like a sigh let out at the end of a long day. “Futility of futilities,” says the Teacher, “futility of futilities! Everything is futile!” (Ecclesiastes 1:2). This is not a bitter young cynic talking. It is, by tradition, the son of David, king in Jerusalem - a man who had every door open to him and walked through all of them. He tried wisdom, wine, work, women, gardens, silver, song. Then he looked at the heap of it and called it breath.\n\nWatch how he argues. He does not start with God or sin or judgment. He starts with the sun, the wind, the rivers. The sun rises and sets and hurries back to rise again. The wind swirls round and round, ever returning on its course. All the rivers run to the sea, yet the sea is never full (1:5-7). Nature is busy, and nature gets nowhere. It is all motion and no arrival. “What has been will be again,” he says, “and what has been done will be done again; there is nothing new under the sun” (1:9). Then the line that exposes the ache underneath it all: “the eye is not satisfied with seeing, nor the ear content with hearing” (1:8). You can keep looking. You can keep listening. The hunger does not close.\n\nThat phrase - under the sun - is the key to the whole book. Some thirty times the Teacher uses it. It is his way of saying: I am going to reason from down here, by daylight, taking only what my five senses can hand me. And from down here, with the lid on, everything really does come out as vapor. He is not wrong. He is honest. He has run the experiment all the way to the end, and the conclusion of a life measured only by what is under the sun is a column of numbers that will not add up.",
+      "keyInsight": "The Teacher is not depressed; he is honest. Measured by what the eye and ear can hold, a human life really is breath - and the wisest man in the world is the one willing to say so out loud.",
+      "content": "The book opens like a sigh let out at the end of a long day. “Futility of futilities,” says the Teacher, “futility of futilities! Everything is futile!” (Ecclesiastes 1:2). This is not a bitter young cynic talking. It is, by tradition, the son of David, king in Jerusalem - a man who had every door open to him and walked through all of them. He tried wisdom, wine, work, women, gardens, silver, song. Then he looked at the heap of it and called it breath.\n\nWatch how he argues. He does not start with God or sin or judgment. He starts with the sun, the wind, the rivers. The sun rises and sets and hurries back to rise again. The wind swirls round and round, ever returning on its course. All the rivers run to the sea, yet the sea is never full (1:5-7). Nature is busy, and nature gets nowhere. It is all motion and no arrival. “What has been will be again,” he says, “and what has been done will be done again; there is nothing new under the sun” (1:9). Then the line that exposes the ache underneath it all: “the eye is not satisfied with seeing, nor the ear content with hearing” (1:8). You can keep looking. You can keep listening. The hunger does not close.\n\nThat phrase - under the sun - is the key to the whole book. Some thirty times the Teacher uses it. It is his way of saying: I am going to reason from down here, by daylight, taking only what my five senses can hand me. And from down here, with the lid on, everything really does come out as vapor. He is not wrong. He is honest. He has run the experiment all the way to the end, and the conclusion of a life measured only by what is under the sun is a column of numbers that will not add up."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Reached the Summit",
+      "body": "A climber I read about spent eleven years training for one mountain. Sponsors, surgeries, a marriage that thinned out under the weight of it. He summited at dawn, planted his boots on the highest snow in that range, and took the photograph the whole project had been for.\n\nWhat he remembered most, he said afterward, was not the triumph. It was the strange flatness that arrived about ninety seconds later. He had imagined this moment for a decade. Now he was standing in it, and his first clear thought was: is that all? The view was magnificent. The feeling would not stay. Already his mind was drifting to the descent, to the next peak, to the empty space where the goal used to live.\n\nHe is not unusual. He just got high enough that the view was clear. The Teacher would have recognized him instantly - a man whose eye was not satisfied with seeing, who reached the top and found the top was also under the sun. The summit could not hold what he carried up it. Nothing under the sun can. The longing he brought to the mountain was bigger than any mountain, and he did not know where it had come from.",
+      "connectionToTheme": "The dissatisfaction at the summit is exactly what Ecclesiastes 1:8 names - the eye that is never satisfied. The Teacher diagnoses in chapter 3 the reason the climber could not name: eternity has been set in a heart that lives under the sun.",
+      "content": "A climber I read about spent eleven years training for one mountain. Sponsors, surgeries, a marriage that thinned out under the weight of it. He summited at dawn, planted his boots on the highest snow in that range, and took the photograph the whole project had been for.\n\nWhat he remembered most, he said afterward, was not the triumph. It was the strange flatness that arrived about ninety seconds later. He had imagined this moment for a decade. Now he was standing in it, and his first clear thought was: is that all? The view was magnificent. The feeling would not stay. Already his mind was drifting to the descent, to the next peak, to the empty space where the goal used to live.\n\nHe is not unusual. He just got high enough that the view was clear. The Teacher would have recognized him instantly - a man whose eye was not satisfied with seeing, who reached the top and found the top was also under the sun. The summit could not hold what he carried up it. Nothing under the sun can. The longing he brought to the mountain was bigger than any mountain, and he did not know where it had come from."
+    },
+    {
+      "type": "insight",
+      "heading": "Eternity Set in the Chest",
+      "body": "The whole book turns on one verse in the middle, and it is easy to read past. “He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end” (Ecclesiastes 3:11).\n\nGo back and feel the two halves of that. First, beauty in its time - the seasons of chapter 3, a time to be born and a time to die, a time to weep and a time to laugh, a time to mourn and a time to dance (3:2-4). Each thing fits its moment. The world is not random. But then the second half, and here is the wound the Teacher has been circling for two chapters: God set eternity in the human chest. He put a sense of forever inside a creature who lives and dies under the sun. We are vapor with a homing instinct for what does not pass. That is why the eye is never satisfied, why the summit goes flat, why nothing under the sun is ever quite enough. We were not built to be filled by anything that can be used up.\n\nThis is the most important thing the Teacher learns, and notice he cannot resolve it. “They cannot fathom the work that God has done.” He knows the ache is real and he knows its source - God put it there - but from under the sun he cannot see what it is for. He has named the hole in the human heart and admitted he does not have what fills it. The honest wise man stops exactly here, at the edge of an answer he cannot reach from where he is standing.",
+      "historicalContext": "Ecclesiastes belongs to Israel's Wisdom Literature, alongside Job, Proverbs, and the Song of Songs - books that reason from lived experience rather than from law or prophecy. Its long tradition of authorship credits Qoheleth, the Teacher, as Solomon late in life, looking back over a reign in which he had been given more than any Israelite before or since and tested all of it against the question, 'What does it add up to?'",
+      "fascinatingFact": "The Hebrew word translated 'eternity' in 3:11 - olam - usually means 'the distant past' or 'the far future,' the whole sweep of time beyond a person's reach. To say God set olam in the heart is to say He planted a horizon there: a sense of before-and-after far larger than the few decades any of us actually gets to live.",
+      "content": "The whole book turns on one verse in the middle, and it is easy to read past. “He has made everything beautiful in its time. He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end” (Ecclesiastes 3:11).\n\nGo back and feel the two halves of that. First, beauty in its time - the seasons of chapter 3, a time to be born and a time to die, a time to weep and a time to laugh, a time to mourn and a time to dance (3:2-4). Each thing fits its moment. The world is not random. But then the second half, and here is the wound the Teacher has been circling for two chapters: God set eternity in the human chest. He put a sense of forever inside a creature who lives and dies under the sun. We are vapor with a homing instinct for what does not pass. That is why the eye is never satisfied, why the summit goes flat, why nothing under the sun is ever quite enough. We were not built to be filled by anything that can be used up.\n\nThis is the most important thing the Teacher learns, and notice he cannot resolve it. “They cannot fathom the work that God has done.” He knows the ache is real and he knows its source - God put it there - but from under the sun he cannot see what it is for. He has named the hole in the human heart and admitted he does not have what fills it. The honest wise man stops exactly here, at the edge of an answer he cannot reach from where he is standing."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Everything under the sun is hevel - breath, vapor, fleeting - and yet God has set eternity in the human heart, an ache for what does not pass that nothing under the sun can satisfy.",
+      "modernApplication": "We feel this every time the thing we chased arrives and goes thin in our hands - the promotion, the house, the relationship, the milestone. The flatness on the far side of getting what we wanted is not a defect in us. It is the eternity in our chest, refusing to be fed on vapor. The Teacher's honesty gives us permission to stop pretending the next thing will finally close the hunger.",
+      "connectionPoint": "Ecclesiastes leaves us at the edge of an answer it cannot reach. The New Testament names what the Teacher could only feel. Paul writes that 'the creation was subjected to futility' - the very word the BSB uses for hevel - 'not by its own will... in hope that the creation itself will be set free from its bondage to decay' (Romans 8:20-21). The vapor is not the last word. Someone entered it on purpose to break it from the inside.",
+      "newTestamentEcho": "The Teacher reasoned from under the sun and hit a wall. Then the One who made the sun came under it. 'The Word became flesh and made His dwelling among us' (John 1:14) - eternity itself stepped into the breath and the dust. Paul can therefore tell ordinary, dying people the one thing Qoheleth could never say: 'your labor in the Lord is not in vain' (1 Corinthians 15:58). The hevel is broken not by climbing higher under the sun, but because heaven came down beneath it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you reached - or are reaching for - expecting it to finally satisfy the eye that is never satisfied? What happened, or what do you fear will happen, when you get there?",
+      "additionalQuestions": [
+        "Where do you feel the 'eternity set in your heart' most sharply - in beauty, in grief, in longing, in the ache that no good thing quite closes?",
+        "The Teacher reasoned only from 'under the sun' and reached a wall. What changes when you lift your eyes higher than the daylight - to the One who came down into it?",
+        "What in your life right now is genuinely hevel - good but fleeting - that you have been treating as if it could carry eternal weight?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Maker of the sun I live under, You set eternity in my chest and I have spent years trying to feed it on vapor. Forgive me for asking from the fleeting what only You can give. Thank You that the futility was not the last word - that the Word became flesh and came down under the sun to break the breathlessness from the inside. Where I am restless, be my rest. Where I am reaching, be the One who reaches back. Let me remember my Creator, not in the days of my strength only, but now, tonight, with the eye that is never satisfied turned at last toward You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath - nothing to achieve, nothing to add to the heap. Sit quietly for five minutes and let one line hold you: 'He has set eternity in the hearts of men.' Do not try to fill the ache you feel. Just name it, and bring it to the One the Teacher could not yet see clearly - the eternity that came down under the sun for you.",
+      "leavingAtCross": [
+        "The exhausting belief that the next achievement will finally be enough",
+        "The shame of feeling restless even after getting what I wanted",
+        "The lie that my labor is vapor, that nothing I do will last"
+      ],
+      "receivingFromCross": [
+        "Rest for the eye that is never satisfied - a hunger met, not scolded",
+        "The truth that eternity in my heart was always a homing instinct for Him",
+        "The promise that in Christ my labor is not in vain, even when life is brief"
+      ],
+      "content": "Today is a sabbath - nothing to achieve, nothing to add to the heap. Sit quietly for five minutes and let one line hold you: 'He has set eternity in the hearts of men.' Do not try to fill the ache you feel. Just name it, and bring it to the One the Teacher could not yet see clearly - the eternity that came down under the sun for you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Hebrew word hevel literally picture, and why does that image fit the Teacher's view of life 'under the sun' better than the flat word 'meaningless'?",
+        "In Ecclesiastes 3:11, what two things has God done - and why does the second one explain the restlessness of the first?",
+        "How does the New Testament's use of 'futility' in Romans 8:20-21 turn the Teacher's dead end into a door?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing you chased that went thin once you got it. What did that flatness teach you?",
+        "Talk honestly about the 'eternity in your heart' - where do you most feel a longing that nothing in this life closes?",
+        "Ask each other: what would it look like this week to remember your Creator instead of reaching for the next vapor?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Ecclesiastes 12:13-14",
+          "text": "When all has been heard, the conclusion of the matter is this: Fear God and keep His commandments, because this is the whole duty of man. For God will bring every deed into judgment, along with every hidden thing, whether good or evil."
+        },
+        {
+          "reference": "Romans 8:20-21",
+          "text": "For the creation was subjected to futility, not by its own will, but because of the One who subjected it, in hope that the creation itself will be set free from its bondage to decay and brought into the glorious freedom of the children of God."
+        },
+        {
+          "reference": "Colossians 1:17",
+          "text": "He is before all things, and in Him all things hold together."
+        },
+        {
+          "reference": "1 Corinthians 15:58",
+          "text": "Therefore, my beloved brothers, be steadfast and immovable. Always excel in the work of the Lord, because you know that your labor in the Lord is not in vain."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Ecclesiastes 1, 3, and 12",
+          "note": "Read these three chapters as a single arc: the diagnosis (1), the turning verse hidden in the middle (3:11), and the conclusion (12:1, 13-14). Notice how the book opens and closes with the same word - hevel - but ends pointing past the sun to the Creator."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Qoheleth (The Teacher)",
+      "title": "The Searcher Who Named the Ache",
+      "era": "By tradition, Solomon in the 10th century BC, late in his reign",
+      "description": "The voice of Ecclesiastes - 'the Teacher, the son of David, king in Jerusalem' (1:1). Tradition identifies him as Solomon, looking back over a life given everything and testing all of it against one ruthless question: what does it finally add up to? His answer, repeated like a refrain, is hevel - breath. But he is no nihilist. He is the rare wise man honest enough to admit that God set a longing for eternity in him that nothing under the sun could feed, and humble enough to end not with despair but with reverence: 'Fear God and keep His commandments.'",
+      "keyQuote": "He has also set eternity in the hearts of men, yet they cannot fathom the work that God has done from beginning to end.",
+      "lessonForUs": "The Teacher takes us as far as honesty alone can go - to the edge of an answer he cannot reach. He names the ache precisely and admits he does not hold the cure. That edge is exactly where the gospel begins: the eternity he felt in his chest has, in Christ, come down under the sun to find him.",
+      "heading": "The Searcher Who Named the Ache"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1612,
+  "scriptureReference_full": "Ecclesiastes 1:2-9; 3:1-11; 12:1, 6-8, 13-14",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (hevel, H1892; olam, 'eternity' in Ecclesiastes 3:11) reflects standard lexical sources. The link between hevel and the name Abel (Genesis 4) is a long-noted feature of the Hebrew text.",
+    "The connection of Ecclesiastes' 'futility' to Romans 8:20-21 follows the shared Greek/Hebrew vocabulary of mataiotes / hevel as rendered 'futility' in the BSB."
+  ]
 }

@@ -1,38 +1,191 @@
 {
   "day": 255,
-  "title": "Hosea, Joel, Amos — Day 3 — Pivot",
-  "teaser": "Day 255 of Bible 365 — Selected",
+  "title": "Rend Your Hearts, Not Your Garments",
+  "teaser": "Three prophets thunder one word at a wrecked people: return. And the God they return to has already turned His own heart toward them first.",
   "framework": "Selected — Hosea, Joel, Amos",
-  "scriptureReference": "Selected",
+  "scriptureReference": "Joel 2:12-13",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 255"
+      "type": "scripture",
+      "reference": "Joel 2:12-13",
+      "translation": "BSB",
+      "emphasis": [
+        "return to Me with all your heart",
+        "rend your hearts and not your garments",
+        "gracious and compassionate",
+        "He relents from sending disaster"
+      ],
+      "hebrewOriginal": "וְקִרְעוּ לְבַבְכֶם וְאַל־בִּגְדֵיכֶם וְשׁוּבוּ אֶל־יְהוָה אֱלֹהֵיכֶם",
+      "passage": "\"Yet even now,\" declares the LORD, \"return to Me with all your heart, with fasting, weeping, and mourning.\" So rend your hearts and not your garments, and return to the LORD your God. For He is gracious and compassionate, slow to anger, abounding in loving devotion. And He relents from sending disaster."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שׁוּב",
+      "transliteration": "shuv",
+      "pronunciation": "shoov",
+      "meaning": "to turn back, to return, to repent",
+      "rootMeaning": "The plain, physical picture of turning around on a road and walking back the way you came. When a person who has wandered off finally faces home and starts moving toward it, that motion is shuv. The prophets borrow the word for the heart: stop, turn, come back.",
+      "usageNote": "Shuv is the master verb of the Minor Prophets. Hosea ends on it - \"Return, O Israel, to the LORD your God\" (Hosea 14:1). Joel builds his whole appeal on it - \"return to Me with all your heart\" (Joel 2:12). It is the most repeated command in the Twelve, and it is never abstract. It always names a direction: away from the wreckage, back toward God.",
+      "wordByWord": [
+        {
+          "word": "שׁוּבוּ",
+          "transliteration": "shuvu",
+          "meaning": "return! - a plural command, spoken to a whole people at once"
+        },
+        {
+          "word": "אֶל־יְהוָה",
+          "transliteration": "el-YHWH",
+          "meaning": "to the LORD - not to a program or a feeling, but to a Person, by His covenant name"
+        },
+        {
+          "word": "וְקִרְעוּ",
+          "transliteration": "veqir'u",
+          "meaning": "and tear, rend - the violent verb used for ripping cloth in grief"
+        },
+        {
+          "word": "לְבַבְכֶם",
+          "transliteration": "levavkhem",
+          "meaning": "your heart - the inner self, the will, not merely the emotions"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תְּשׁוּבָה",
+          "reference": "From the same root shuv comes teshuvah, the standard Hebrew word for repentance - literally a 'returning.' In Jewish thought repentance is never first about feeling sorry; it is about turning the body around and walking back."
+        }
+      ],
+      "strongsNumber": "H7725",
+      "definition": "to turn back, return, repent; to reverse direction and come home",
+      "usage": "Joel pairs shuv with qara (to rend). The tearing is not the goal; it clears the way. You rend the heart so the turning can be real."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Three Prophets, One Word",
+      "body": "Three voices stand close together near the front of the Minor Prophets, and they do not sound alike. Hosea is a betrayed husband; his book aches like a marriage that will not let go. Joel is a watchman; he reads a locust plague that strips the land bare as a trumpet warning of the Day of the LORD. Amos is a shepherd from Tekoa who names the sin of the comfortable - they sell the poor for a pair of sandals while keeping the festivals on schedule.\n\nThree temperaments, three different wounds. And yet, set their books side by side and one word rises out of all of them like a single note held under three melodies: return. Hosea: \"Return, O Israel, to the LORD your God\" (Hosea 14:1). Joel: \"return to Me with all your heart\" (Joel 2:12). Amos, in his own blunt key: \"Seek good, not evil, so that you may live\" (Amos 5:14).\n\nThe prophets are not moralists scolding a people to behave better. They are watchmen who have seen where the road ends, shouting the only thing you can shout to someone walking toward a cliff: turn around. Come back. There is still time - \"yet even now.\"",
+      "keyInsight": "The Minor Prophets are not asking for better behavior. They are asking for a change of direction - shuv, turn around, come home - while the door is still open.",
+      "content": "Three voices stand close together near the front of the Minor Prophets, and they do not sound alike. Hosea is a betrayed husband; his book aches like a marriage that will not let go. Joel is a watchman; he reads a locust plague that strips the land bare as a trumpet warning of the Day of the LORD. Amos is a shepherd from Tekoa who names the sin of the comfortable - they sell the poor for a pair of sandals while keeping the festivals on schedule.\n\nThree temperaments, three different wounds. And yet, set their books side by side and one word rises out of all of them like a single note held under three melodies: return. Hosea: \"Return, O Israel, to the LORD your God\" (Hosea 14:1). Joel: \"return to Me with all your heart\" (Joel 2:12). Amos, in his own blunt key: \"Seek good, not evil, so that you may live\" (Amos 5:14).\n\nThe prophets are not moralists scolding a people to behave better. They are watchmen who have seen where the road ends, shouting the only thing you can shout to someone walking toward a cliff: turn around. Come back. There is still time - \"yet even now.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Torn Shirt",
+      "body": "I once sat with a man the week after his marriage ended. He had done all the visible things. He had wept at the kitchen table where everyone could see. He had told the story at small group and let his voice break in the right places.\n\nWhat he had not done was tell his wife the truth about where the money had gone. He had torn the shirt and left the heart untouched.\n\nThere is a kind of grief that is really a performance of grief - loud, costly-looking, and strangely safe, because it never reaches the room where the actual decision was made. In the ancient world, tearing your robe at the collar was the recognized sign of mourning; you could do it in the town square and everyone would know you were sorry. Joel watches a whole nation doing exactly that - the right gestures, the scheduled fasts - and says the thing nobody wants to hear: not the shirt. The heart. Tear the part no one can see.",
+      "connectionToTheme": "Real return goes to the hidden room where decisions are actually made - not the public square where sorrow is easy to display.",
+      "content": "I once sat with a man the week after his marriage ended. He had done all the visible things. He had wept at the kitchen table where everyone could see. He had told the story at small group and let his voice break in the right places.\n\nWhat he had not done was tell his wife the truth about where the money had gone. He had torn the shirt and left the heart untouched.\n\nThere is a kind of grief that is really a performance of grief - loud, costly-looking, and strangely safe, because it never reaches the room where the actual decision was made. In the ancient world, tearing your robe at the collar was the recognized sign of mourning; you could do it in the town square and everyone would know you were sorry. Joel watches a whole nation doing exactly that - the right gestures, the scheduled fasts - and says the thing nobody wants to hear: not the shirt. The heart. Tear the part no one can see."
+    },
+    {
+      "type": "insight",
+      "heading": "The God Who Turns First",
+      "body": "Here is the hinge the whole book turns on. Joel commands the people to return because - and only because - of who waits for them at the end of the road. \"Return to the LORD your God. For He is gracious and compassionate, slow to anger, abounding in loving devotion. And He relents from sending disaster.\" The reason to turn around is not that God might forgive. It is that God is already, by nature, the kind of God who does.\n\nThat phrase - gracious and compassionate, slow to anger, abounding in loving devotion - is not Joel's invention. It is the oldest description God ever gave of Himself, the words spoken to Moses on Sinai after the golden calf (Exodus 34:6). Joel reaches back and lays Israel's only hope on the bedrock of God's own self-portrait.\n\nAnd Hosea lets us hear what it costs God to be that way. \"How could I give you up, O Ephraim? ... My heart is turned within Me; My compassion is stirred. I will not execute the full fury of My anger ... For I am God and not man\" (Hosea 11:8-9). The same verb the people are commanded to do - turn, shuv - God does inside Himself first. He turns His own heart. The God who tells a wrecked people to come back is the God who has already turned toward them, the way a parent in a doorway turns at the first sound of footsteps on the path.",
+      "historicalContext": "Hosea and Amos prophesied to the northern kingdom of Israel in the eighth century BC, in the decades before Assyria destroyed it in 722 BC. Joel's date is debated among scholars - some place him early, some after the exile - but his message sits at the same hinge: a specific catastrophe (locusts) read as a summons to return before the greater Day of the LORD arrives. All three speak into real ruin, not theory.",
+      "fascinatingFact": "The self-description Joel quotes - 'gracious and compassionate, slow to anger, abounding in loving devotion' (Exodus 34:6) - is echoed across the Old Testament more than any other line about God's character, appearing in the Psalms, Jonah, Nehemiah, and Joel. It functions almost like a creed: when Israel needed to remember who God was at His core, this is the sentence they reached for.",
+      "content": "Here is the hinge the whole book turns on. Joel commands the people to return because - and only because - of who waits for them at the end of the road. \"Return to the LORD your God. For He is gracious and compassionate, slow to anger, abounding in loving devotion. And He relents from sending disaster.\" The reason to turn around is not that God might forgive. It is that God is already, by nature, the kind of God who does.\n\nThat phrase - gracious and compassionate, slow to anger, abounding in loving devotion - is not Joel's invention. It is the oldest description God ever gave of Himself, the words spoken to Moses on Sinai after the golden calf (Exodus 34:6). Joel reaches back and lays Israel's only hope on the bedrock of God's own self-portrait.\n\nAnd Hosea lets us hear what it costs God to be that way. \"How could I give you up, O Ephraim? ... My heart is turned within Me; My compassion is stirred. I will not execute the full fury of My anger ... For I am God and not man\" (Hosea 11:8-9). The same verb the people are commanded to do - turn, shuv - God does inside Himself first. He turns His own heart. The God who tells a wrecked people to come back is the God who has already turned toward them, the way a parent in a doorway turns at the first sound of footsteps on the path."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Three prophets call a ruined people to return - and ground that call entirely in the character of a God who is gracious, slow to anger, and willing to relent. The turning the people are commanded to do, God has already done in His own heart first.",
+      "modernApplication": "We are skilled at torn shirts. We perform contrition in front of the people whose opinion we manage and leave the real decision untouched - the resentment we feed, the habit we protect, the truth we will not say out loud. Joel's word cuts straight through the performance: rend the heart, the part no one can see. And he hands us the only thing that makes that bearable - you are not turning toward a God who might receive you. You are turning toward One who has already turned toward you.",
+      "connectionPoint": "Watch what these three prophets are pointing at. Hosea says, \"After two days He will revive us; on the third day He will raise us up, that we may live in His presence\" (Hosea 6:2). Joel promises that after the call to return, God will pour out His Spirit on all people (Joel 2:28). Amos sees the fallen tent of David rebuilt (Amos 9:11). Three different prophets, three threads - resurrection on the third day, the Spirit poured out, David's house restored - and all three are pulled tight and tied in one event.",
+      "newTestamentEcho": "On the day of Pentecost, Peter stands up and quotes Joel word for word: \"this is what was spoken by the prophet Joel: 'In the last days ... I will pour out My Spirit on all people'\" (Acts 2:16-17). The Spirit Joel promised is poured out by the risen Christ - the One raised on the third day, exactly as Hosea sang. The God who turned His own heart toward us in Hosea 11 turned it all the way to a cross. On the Day of the LORD, He did not pour out disaster on the people; He absorbed it Himself, and poured out His Spirit instead. The 'return' the prophets command is finally possible because God returned to us first, in the flesh."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been tearing the shirt - performing sorrow or change in a way others can see - while the heart, the actual decision, stays untouched?",
+      "additionalQuestions": [
+        "Joel says 'yet even now.' What part of you believes it is too late to turn around? What would it mean to take God at His word that the door is still open?",
+        "The reason to return is who God already is - 'gracious and compassionate.' Do you turn toward God expecting a sentence, or expecting the One who has already turned toward you?",
+        "Amos refuses to separate the heart from the street: 'let justice roll on like a river' (Amos 5:24). Is there a place where your private return to God needs to show up as something you actually do for someone with less power than you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am good at the visible grief and slow at the real one. I have torn shirts when You asked for hearts. Tear it now - the room I keep You out of, the decision I keep making, the thing I would never post or say aloud. I return to You, not because I have cleaned myself up, but because You are gracious and compassionate, slow to anger, abounding in loving devotion - and because You turned toward me first, all the way to a cross. Pour out Your Spirit on me, the way Joel promised and Christ delivered. Heal what I have ruined. Raise me up. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one torn-shirt place - one spot where you have been performing change instead of making it - and do the hidden, heart-level thing instead: the honest sentence, the quiet confession, the actual turn. Then receive, out loud, that the God you are returning to has already turned toward you.",
+      "leavingAtCross": [
+        "The torn shirt - the public, costly-looking grief that never reaches the real decision",
+        "The lie that it is too late to turn around, that the door has already closed",
+        "The fear that God meets a returning sinner with a sentence rather than open arms"
+      ],
+      "receivingFromCross": [
+        "A God who is gracious and compassionate by His own oldest self-description, not by my deserving",
+        "The Spirit Joel promised, poured out by the risen Christ on everyone who calls on His name",
+        "The freedom to come home today, because He turned His heart toward me long before I turned mine toward Him"
+      ],
+      "content": "Today, name one torn-shirt place - one spot where you have been performing change instead of making it - and do the hidden, heart-level thing instead: the honest sentence, the quiet confession, the actual turn. Then receive, out loud, that the God you are returning to has already turned toward you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between rending your garments and rending your heart - and why does Joel insist on the second?",
+        "Joel grounds the command to return in God's character (Joel 2:13), echoing Exodus 34:6. Why does it matter that the reason to repent is who God is, rather than how sorry we feel?",
+        "How do the three threads - Hosea's 'third day,' Joel's outpoured Spirit, and Amos's restored tent of David - come together at Pentecost in Acts 2?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'torn shirt' in your life - a place where you have shown sorrow or change publicly without doing the hidden, heart-level work. What would the real turn look like?",
+        "Talk honestly: when you imagine returning to God after failure, do you expect welcome or verdict? Where did that expectation come from?",
+        "Amos ties returning to God with doing justice for the powerless. Identify one concrete way your repentance could become action toward someone with less than you."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:1-2",
+          "text": "Come, let us return to the LORD. For He has torn us to pieces, but He will heal us; He has wounded us, but He will bind up our wounds. After two days He will revive us; on the third day He will raise us up, that we may live in His presence."
+        },
+        {
+          "reference": "Hosea 11:8-9",
+          "text": "How could I give you up, O Ephraim? How could I surrender you, O Israel? ... My heart is turned within Me; My compassion is stirred! I will not execute the full fury of My anger ... For I am God and not man - the Holy One among you."
+        },
+        {
+          "reference": "Amos 5:24",
+          "text": "But let justice roll on like a river, and righteousness like an ever-flowing stream."
+        },
+        {
+          "reference": "Joel 2:28-29",
+          "text": "And afterward, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions. Even on My menservants and maidservants, I will pour out My Spirit in those days."
+        },
+        {
+          "reference": "Acts 2:16-17",
+          "text": "On the contrary, this is what was spoken by the prophet Joel: 'In the last days, God says, I will pour out My Spirit on all people. Your sons and daughters will prophesy, your young men will see visions, your old men will dream dreams.'"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joel 2",
+          "note": "Read the whole chapter in one sitting, watching the movement: the locust army and the Day of the LORD (vv. 1-11), the call to return (vv. 12-17), God's relenting and restoration (vv. 18-27), and the outpoured Spirit (vv. 28-32). The pivot is verse 12: 'yet even now.'"
+        },
+        {
+          "type": "book",
+          "title": "Hosea 11 and 14",
+          "note": "Read these two chapters together to feel the cost of God's mercy (ch. 11) and the shape of true return (ch. 14): 'Bring your confessions and return to the LORD.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joel",
+      "title": "Son of Pethuel, Prophet of the Day of the LORD",
+      "description": "Little is known of Joel apart from his father's name and his book. He prophesied in Judah, reading a devastating locust plague - which stripped the land down to bare stalks - as a sign and warning of the coming Day of the LORD. Rather than despair, he turned the disaster into an altar call: 'yet even now, return.' His promise that God would 'pour out My Spirit on all people' became the text Peter preached at Pentecost, making this obscure prophet one of the most quoted voices on the Church's first day.",
+      "keyQuote": "So rend your hearts and not your garments, and return to the LORD your God.",
+      "lessonForUs": "Joel teaches us to read our own ruined seasons the way he read the locusts - not as the end of the story, but as a trumpet calling us home while the door is still open. The God on the far side of our turning is not waiting to be appeased. He is, in His own words, gracious and compassionate, and He turned His heart toward us before we ever turned ours.",
+      "heading": "Son of Pethuel, Prophet of the Day of the LORD"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1342,
+  "scriptureReference_full": "Joel 2:12-13 (with Hosea 6:1-3; 11:8-9; 14:1-4 and Amos 5:14-15, 24; 9:11 woven through)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "The self-description Joel 2:13 echoes ('gracious and compassionate, slow to anger, abounding in loving devotion') is drawn from Exodus 34:6; the Pentecost citation of Joel 2:28-32 is from Acts 2:16-21. Hebrew shuv (H7725) and the noun teshuvah reflect standard lexical sources."
+  ]
 }

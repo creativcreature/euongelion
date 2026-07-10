@@ -1,38 +1,187 @@
 {
   "day": 211,
-  "title": "Song of Songs: Covenant Love — Day 1 — Hook",
-  "teaser": "Day 211 of Bible 365 — Song 2, 6, 8",
+  "title": "Set Me as a Seal",
+  "teaser": "The strangest book in the Bible is a love song with no mention of God. Read it closely and you hear a voice calling you out of winter — and a love that death cannot quench.",
   "framework": "Song 2, 6, 8 — Song of Songs: Covenant Love",
   "scriptureReference": "Song 2, 6, 8",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 211"
+      "type": "scripture",
+      "reference": "Song of Songs 2:10-13; 2:16; 8:6-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Arise, come away, my darling",
+        "My beloved is mine and I am his",
+        "love is as strong as death",
+        "Set me as a seal over your heart"
+      ],
+      "hebrewOriginal": "שִׂימֵנִי כַחוֹתָם עַל־לִבֶּךָ כַּחוֹתָם עַל־זְרוֹעֶךָ כִּי־עַזָּה כַמָּוֶת אַהֲבָה",
+      "passage": "My beloved calls to me, \"Arise, my darling. Come away with me, my beautiful one. For now the winter is past; the rain is over and gone. The flowers have appeared in the countryside; the season of singing has come, and the cooing of turtledoves is heard in our land. The fig tree ripens its figs; the blossoming vines spread their fragrance. Arise, come away, my darling; come away with me, my beautiful one.\" ... My beloved is mine and I am his; he pastures his flock among the lilies. ... Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away. If a man were to give all the wealth of his house for love, his offer would be utterly scorned."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Song 2, 6, 8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Song 2, 6, 8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חוֹתָם",
+      "transliteration": "chotam",
+      "pronunciation": "kho-TAHM",
+      "meaning": "seal, signet, the mark a person presses into wax or clay to say: this is mine, this is me",
+      "rootMeaning": "From a root meaning to close up or stamp shut. A chotam was not jewelry first; it was identity. A man wore his signet on a cord around his neck or as a ring, and pressed it into soft clay to sign a contract, secure a door, or claim a possession. To hand someone your seal was to hand them your name and your authority.",
+      "usageNote": "When the bride says \"set me as a chotam over your heart, as a chotam upon your arm,\" she is not asking for a keepsake. She is asking to be the one mark her beloved carries everywhere — over the heart where love is felt, on the arm where strength acts. She wants to be his binding signature on the whole of his life.",
+      "wordByWord": [
+        {
+          "word": "שִׂימֵנִי",
+          "transliteration": "simeni",
+          "meaning": "set me, place me, make me"
+        },
+        {
+          "word": "כַחוֹתָם",
+          "transliteration": "kachotam",
+          "meaning": "like a seal, as a signet"
+        },
+        {
+          "word": "עַל־לִבֶּךָ",
+          "transliteration": "al-libbecha",
+          "meaning": "over your heart"
+        },
+        {
+          "word": "עַזָּה כַמָּוֶת",
+          "transliteration": "azzah kammavet",
+          "meaning": "strong as death, fierce as death"
+        },
+        {
+          "word": "אַהֲבָה",
+          "transliteration": "ahavah",
+          "meaning": "love — the steady, choosing love, not mere feeling"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חוֹתָם",
+          "reference": "The same word names the signet ring God promises to make of Zerubbabel: \"I will make you like My signet ring, for I have chosen you\" (Haggai 2:23). To be God's chotam is to be the mark He has chosen to wear."
+        }
+      ],
+      "strongsNumber": "H2368",
+      "definition": "a seal, signet; the stamp of ownership and authority",
+      "usage": "The bride asks to be pressed permanently into her beloved's life. Paul tells the Ephesians they were \"sealed\" with the promised Holy Spirit (Ephesians 1:13) — the same picture, now turned toward us: God presses His mark on those He claims."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Song of Songs: Covenant Love. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Bridegroom (Eph 5:25-32).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Book That Almost Didn't Make It",
+      "body": "Of all sixty-six books in the Bible, the Song of Songs is the one that makes readers nervous. It never once names God. It has no commandments, no covenant ceremony, no miracle. On its plain surface it is a collection of love poems — two voices, a man and a woman, describing each other and aching to be together. Ancient rabbis debated whether it belonged in Scripture at all.\n\nRabbi Akiva is remembered for settling the matter: all the writings are holy, he said, but the Song of Songs is the holy of holies. Not despite being a love song — because of it. The book sits in Scripture as a deliberate gift: an unembarrassed celebration of covenant love between a man and a woman, given by the God who designed that love. Take the plain sense first. Before this Song means anything about God, it means exactly what it says — that desire and delight and belonging are good, and that God is not nervous about them.\n\nNotice the shape of the lover’s first great speech. “Arise, my darling. Come away with me.” Then the reason: “For now the winter is past; the rain is over and gone.” The whole call is built on a change of season. The flowers are out, the vines are in bloom, the turtledoves are back. Into that thawing world a voice calls a name and says: get up, the waiting is finished, come.",
+      "keyInsight": "The Song belongs in Scripture not as an embarrassment to explain away but as a celebration to receive: covenant love is God's good design, and the Song lets us hear it sung at full voice.",
+      "content": "Of all sixty-six books in the Bible, the Song of Songs is the one that makes readers nervous. It never once names God. It has no commandments, no covenant ceremony, no miracle. On its plain surface it is a collection of love poems — two voices, a man and a woman, describing each other and aching to be together. Ancient rabbis debated whether it belonged in Scripture at all.\n\nRabbi Akiva is remembered for settling the matter: all the writings are holy, he said, but the Song of Songs is the holy of holies. Not despite being a love song — because of it. The book sits in Scripture as a deliberate gift: an unembarrassed celebration of covenant love between a man and a woman, given by the God who designed that love. Take the plain sense first. Before this Song means anything about God, it means exactly what it says — that desire and delight and belonging are good, and that God is not nervous about them.\n\nNotice the shape of the lover’s first great speech. “Arise, my darling. Come away with me.” Then the reason: “For now the winter is past; the rain is over and gone.” The whole call is built on a change of season. The flowers are out, the vines are in bloom, the turtledoves are back. Into that thawing world a voice calls a name and says: get up, the waiting is finished, come."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Voice Memo She Couldn't Delete",
+      "body": "A woman I’ll call Dana lost her husband young, after thirty-one years. In the months after the funeral she did the practical things — closed accounts, gave away coats, learned the lawn mower. But there was one voicemail she could not bring herself to erase. It was nothing important: he had called to ask if they needed milk. Twelve seconds. His ordinary voice saying her name at the start, the way he always did.\n\nShe told me she played it on the hard nights. Not for the words — there were barely any — but for the proof. Someone had called her by name as if she were the most expected person in the world. That sound did not stop being true when he died. If anything, she said, it got truer. The love it carried turned out to be stronger than the thing that took him.\n\nThat is the strange power of being called by name by someone who loves you: it outlasts a great deal. The Song knows it. Its whole drama is two people who keep calling and seeking and finding each other across gardens and city streets and locked doors — until the bride reaches for words big enough to say what their love is made of.",
+      "connectionToTheme": "Being called by name by someone whose love is real outlasts loss — which is exactly the claim the Song makes about love itself, and exactly the claim the gospel makes about Christ.",
+      "content": "A woman I’ll call Dana lost her husband young, after thirty-one years. In the months after the funeral she did the practical things — closed accounts, gave away coats, learned the lawn mower. But there was one voicemail she could not bring herself to erase. It was nothing important: he had called to ask if they needed milk. Twelve seconds. His ordinary voice saying her name at the start, the way he always did.\n\nShe told me she played it on the hard nights. Not for the words — there were barely any — but for the proof. Someone had called her by name as if she were the most expected person in the world. That sound did not stop being true when he died. If anything, she said, it got truer. The love it carried turned out to be stronger than the thing that took him.\n\nThat is the strange power of being called by name by someone who loves you: it outlasts a great deal. The Song knows it. Its whole drama is two people who keep calling and seeking and finding each other across gardens and city streets and locked doors — until the bride reaches for words big enough to say what their love is made of."
+    },
+    {
+      "type": "insight",
+      "heading": "Love as Strong as Death",
+      "body": "Everything in the Song gathers toward one verse, and the whole eight chapters are worth reading just to arrive there: “Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away.”\n\nWeigh the comparison. The bride does not say love is sweet, or warm, or kind. She reaches for the two strongest forces she can name — death and the grave — and says her love is their equal. Death was the one power no one in the ancient world could resist; it took kings and beggars alike and never gave anything back. To say love is as strong as death is to put it in the ring with the undefeated and refuse to call the match. And then she presses further: mighty waters cannot quench it. In the Hebrew imagination the great waters are chaos itself, the deep that drowns the world — yet poured over this love, the flame does not even gutter.\n\nHere the plain love song begins to point beyond itself, and the New Testament reader cannot help but follow the pointing. A love as strong as death, that the deepest waters cannot drown — there is only one place in the whole story where that love steps into the ring with death and the comparison stops being poetry. Paul tells the Ephesians that Christ “loved the church and gave Himself up for her” (Ephesians 5:25), and names the marriage of husband and wife a profound mystery about Christ and His bride. The bride of the Song asks to be set as a seal over her lover’s heart. On the cross the Bridegroom set His bride over His heart in a way she could only ask for — and proved, against death’s own face, that His love for her was the stronger of the two.",
+      "historicalContext": "The Song belongs to Israel's Wisdom Literature alongside Job, Proverbs, and Ecclesiastes. Jewish tradition read it every Passover, hearing in its love poetry the covenant love between the LORD and His people — the same God who said through the prophets, \"I will betroth you to Me forever\" (Hosea 2:19). Long before the church read the Bridegroom as Christ, Israel was already reading this Song as the love story of God and those He had claimed.",
+      "fascinatingFact": "The phrase the BSB renders \"the fiercest blaze of all\" translates a Hebrew word, shalhevetyah, whose ending (-yah) is widely understood as a shortened form of the divine name — making this the one place the Song may breathe the name of God. The book that never says God's name may hide it in a single word, and that word is fire: the flame of a love that nothing can put out.",
+      "content": "Everything in the Song gathers toward one verse, and the whole eight chapters are worth reading just to arrive there: “Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death, its jealousy as unrelenting as Sheol. Its sparks are fiery flames, the fiercest blaze of all. Mighty waters cannot quench love; rivers cannot sweep it away.”\n\nWeigh the comparison. The bride does not say love is sweet, or warm, or kind. She reaches for the two strongest forces she can name — death and the grave — and says her love is their equal. Death was the one power no one in the ancient world could resist; it took kings and beggars alike and never gave anything back. To say love is as strong as death is to put it in the ring with the undefeated and refuse to call the match. And then she presses further: mighty waters cannot quench it. In the Hebrew imagination the great waters are chaos itself, the deep that drowns the world — yet poured over this love, the flame does not even gutter.\n\nHere the plain love song begins to point beyond itself, and the New Testament reader cannot help but follow the pointing. A love as strong as death, that the deepest waters cannot drown — there is only one place in the whole story where that love steps into the ring with death and the comparison stops being poetry. Paul tells the Ephesians that Christ “loved the church and gave Himself up for her” (Ephesians 5:25), and names the marriage of husband and wife a profound mystery about Christ and His bride. The bride of the Song asks to be set as a seal over her lover’s heart. On the cross the Bridegroom set His bride over His heart in a way she could only ask for — and proved, against death’s own face, that His love for her was the stronger of the two."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The bride asks to be sealed over her beloved's heart, and names their love as strong as death — a love no flood of mighty waters can quench, no wealth can buy.",
+      "modernApplication": "We try to buy and quench love constantly. We measure our worth by whether we are wanted, and we are sure that if people knew the worst of us the love would run out — that some flood of failure would finally drown it. The Song says no. The love it sings cannot be bought and cannot be quenched. The question it puts to you is not whether you can earn such a love but whether you will believe one exists and let yourself be called by it.",
+      "connectionPoint": "Listen to the refrain that runs through the Song like a heartbeat. In chapter 2 the bride says, “My beloved is mine and I am his.” By chapter 6 the order has reversed: “I belong to my beloved and he belongs to me.” The first time, she names her possession first — he is mine. The second time, she names her belonging first — I am his. That small reversal is the whole work of love maturing: it stops counting what I have gained and rests in whose I am — the same covenant grammar God speaks over His people: “I will be their God, and they shall be My people” (Jeremiah 31:33).",
+      "newTestamentEcho": "The covenant formula of the Song — I am his and he is mine — becomes the church's confession of Christ. \"I have been crucified with Christ,\" Paul writes, \"and I no longer live, but Christ lives in me\" (Galatians 2:20). The Bridegroom who calls \"Come away with me\" is the same Lord who will say at the end, \"Come,\" and the Spirit and the Bride will answer (Revelation 22:17). The love song closes the canon as well as opening this day."
+    },
+    {
+      "type": "reflection",
+      "prompt": "A voice in this Song calls, \"Arise, come away with me\" — into a world where winter is past. Where in your life have you stayed crouched in winter, certain the season cannot change, when you are being called out of it?",
+      "additionalQuestions": [
+        "The bride asks to be set as a seal over her beloved's heart — to be the one mark he carries everywhere. Do you believe you are wanted like that by God, or do you assume you are tolerated? Where does that belief come from?",
+        "Which refrain are you living in right now: \"my beloved is mine\" (focused on what you have gained) or \"I belong to my beloved\" (resting in whose you are)? What would change if you moved from the first to the second?",
+        "What flood of failure or shame have you assumed could finally quench God's love for you? What does it do to sit with the line, \"mighty waters cannot quench love\"?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You call me by name out of a long winter, and I keep insisting the season cannot change. Forgive me for the loves I have tried to buy, and for assuming Your love for me runs thin. Set me as a seal over Your heart, and seal Yourself over mine. Teach me to say it slowly and mean it: I belong to my Beloved, and my Beloved belongs to me. When the waters rise and I am sure they will drown everything, remind me they cannot quench a love as strong as death — a love that already met death for me and walked back out. Arise within me, and let me come away. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, say one sentence out loud, slowly, more than once: \"I belong to my Beloved, and my Beloved belongs to me.\" Let it answer the lie that you are merely tolerated. Then notice one place you have stayed in winter — a fear, a habit of hiding, a love you are trying to earn — and take one small step out of it, as someone who has been called by name.",
+      "leavingAtCross": [
+        "The conviction that God merely tolerates me rather than wants me",
+        "Every love I have tried to buy or earn or anxiously secure",
+        "The fear that some flood of my failure could finally quench God's love"
+      ],
+      "receivingFromCross": [
+        "A love as strong as death, proven against death's own face and unquenchable",
+        "The identity of one who belongs — sealed by the Spirit over the heart",
+        "The freedom to answer the call: arise, the winter is past, come away"
+      ],
+      "content": "Today, say one sentence out loud, slowly, more than once: \"I belong to my Beloved, and my Beloved belongs to me.\" Let it answer the lie that you are merely tolerated. Then notice one place you have stayed in winter — a fear, a habit of hiding, a love you are trying to earn — and take one small step out of it, as someone who has been called by name."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why might the bride compare her love to death and the grave, rather than to something gentle? What is she claiming about love by measuring it against the strongest forces she knows?",
+        "Trace the refrain from \"my beloved is mine and I am his\" (2:16) to \"I belong to my beloved and he belongs to me\" (6:3). What does the reversed order reveal about how love matures?",
+        "How does a love song that never names God still point the Christian reader toward Christ the Bridegroom? What in the text does the pointing, rather than us imposing it?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one love in your life you have been trying to buy or earn. What would it look like to receive it as a gift instead?",
+        "Talk honestly about whether you believe God wants you or merely tolerates you — and where that belief was formed.",
+        "Ask each other: where is the Bridegroom saying \"arise, come away\" to you right now, and what winter are you reluctant to leave?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Song of Songs 6:3",
+          "text": "I belong to my beloved and he belongs to me; he pastures his flock among the lilies."
+        },
+        {
+          "reference": "Hosea 2:19",
+          "text": "So I will betroth you to Me forever; I will betroth you in righteousness and justice, in loving devotion and compassion."
+        },
+        {
+          "reference": "Ephesians 5:25",
+          "text": "Husbands, love your wives, just as Christ loved the church and gave Himself up for her."
+        },
+        {
+          "reference": "Revelation 22:17",
+          "text": "The Spirit and the bride say, \"Come!\" Let the one who hears say, \"Come!\" And let the one who is thirsty come, and the one who desires the water of life drink freely."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Song of Songs",
+          "note": "Read all eight chapters in one sitting, slowly. Watch the lovers seek, lose, call, and find each other, and notice how the book builds toward the seal and the flame of 8:6-7."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Bride (the Shulammite)",
+      "title": "The Beloved Who Asks to Be Sealed",
+      "description": "The unnamed woman whose voice carries more of the Song than any other speaker — the only book of the Bible in which a woman's perspective dominates the page. She is dark from the sun and unashamed, sought and seeking, sure of her own worth in her beloved's eyes. She is the one who reaches for the book's great line, asking to be set as a seal over his heart and declaring their love stronger than death. Jewish tradition heard in her the voice of Israel loved by the LORD; Christian readers have heard the church loved by Christ. In either reading she models the soul that knows it is wanted.",
+      "keyQuote": "Set me as a seal over your heart, as a seal upon your arm. For love is as strong as death.",
+      "lessonForUs": "She does not earn her beloved's love or prove herself worthy of it; she rests in it and asks to be marked by it permanently. That is the posture Scripture invites toward Christ — not to win a love we could never buy, but to let ourselves be sealed by the One whose love is stronger than the grave.",
+      "heading": "The Beloved Who Asks to Be Sealed"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1874,
+  "scriptureReference_full": "Song of Songs 2:10-13, 16; 6:3; 8:6-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chotam H2368; shalhevetyah) reflects standard lexical sources. Rabbi Akiva's \"holy of holies\" assessment of the Song is recorded in the Mishnah (Yadayim 3:5); it is paraphrased here, not quoted verbatim. The -yah ending of shalhevetyah as a possible shortened form of the divine name reflects a common scholarly reading, noted as such."
+  ]
 }

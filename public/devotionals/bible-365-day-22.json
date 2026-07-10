@@ -1,38 +1,185 @@
 {
   "day": 22,
   "title": "Despising the birthright",
-  "teaser": "Day 22 of Bible 365 — Genesis 25:19-34",
+  "teaser": "Esau came in from the field famished and sold his whole inheritance for one bowl of red stew. The hunger of the moment ate the promise of his life.",
   "framework": "Genesis 25:19-34 — Cheap satisfaction over inheritance",
   "scriptureReference": "Genesis 25:19-34",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 22"
+      "type": "scripture",
+      "reference": "Genesis 25:19-34",
+      "translation": "BSB",
+      "display": "block",
+      "emphasis": [
+        "the older will serve the younger",
+        "I am about to die, so what good is a birthright to me?",
+        "Thus Esau despised his birthright"
+      ],
+      "hebrewOriginal": "וַיִּבֶז עֵשָׂו אֶת־הַבְּכֹרָה",
+      "passage": "This is the account of Abraham’s son Isaac. Abraham became the father of Isaac, and Isaac was forty years old when he married Rebekah, the daughter of Bethuel the Aramean from Paddan-aram and the sister of Laban the Aramean. Later, Isaac prayed to the LORD on behalf of his wife, because she was barren. And the LORD heard his prayer, and his wife Rebekah conceived. But the children inside her struggled with each other, and she said, “Why is this happening to me?” So Rebekah went to inquire of the LORD, and He declared to her: “Two nations are in your womb, and two peoples from within you will be separated; one people will be stronger than the other, and the older will serve the younger.” When her time came to give birth, there were indeed twins in her womb. The first one came out red, covered with hair like a fur coat; so they named him Esau. After this, his brother came out grasping Esau’s heel; so he was named Jacob. And Isaac was sixty years old when the twins were born. When the boys grew up, Esau became a skillful hunter, a man of the field, while Jacob was a quiet man who stayed at home. Because Isaac had a taste for wild game, he loved Esau; but Rebekah loved Jacob. One day, while Jacob was cooking some stew, Esau came in from the field and was famished. He said to Jacob, “Let me eat some of that red stew, for I am famished.” (That is why he was also called Edom.) “First sell me your birthright,” Jacob replied. “Look,” said Esau, “I am about to die, so what good is a birthright to me?” “Swear to me first,” Jacob said. So Esau swore to Jacob and sold him the birthright. Then Jacob gave some bread and lentil stew to Esau, who ate and drank and then got up and went away. Thus Esau despised his birthright."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 25:19-34**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 25:19-34 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּכֹרָה",
+      "transliteration": "bekorah",
+      "pronunciation": "be-kho-RAH",
+      "meaning": "birthright; the rights and standing of the firstborn son",
+      "rootMeaning": "From the same root as bekor, firstborn. The bekorah was not mainly about money. It carried the double portion of the inheritance, the headship of the family, and - in this family - the line of the covenant promise given to Abraham. To hold the birthright was to stand in the place where the promise would be carried forward.",
+      "usageNote": "The story ends with a verb built on a different root entirely: vayyivez, “he despised.” The narrator does not say Esau was tricked or robbed. He says Esau held the bekorah in low regard - he reckoned it worth less than a bowl of soup. The tragedy is not in the trade. It is in the heart that could make it.",
+      "wordByWord": [
+        {
+          "word": "בְּכֹרָה",
+          "transliteration": "bekorah",
+          "meaning": "birthright, the firstborn’s portion and standing"
+        },
+        {
+          "word": "בְּכוֹר",
+          "transliteration": "bekor",
+          "meaning": "firstborn - the root the birthright is named from"
+        },
+        {
+          "word": "וַיִּבֶז",
+          "transliteration": "vayyivez",
+          "meaning": "and he despised, he held in contempt, he counted as worthless"
+        },
+        {
+          "word": "אָדוֹם",
+          "transliteration": "edom",
+          "meaning": "red - the nickname Esau earns from the red stew, and the nation that comes from him"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נָזִיד אֲדֹם / אָדוֹם",
+          "reference": "The stew is literally “the red, this red” (Genesis 25:30). Esau is so consumed by appetite he cannot even name the dish - he just points at the color. From that grasping moment he is renamed Edom, “Red,” and a whole people carries the memory of the day a man sold forever for a single color in a bowl."
+        }
+      ],
+      "strongsNumber": "H1062",
+      "definition": "the right, standing, and double inheritance belonging to the firstborn son",
+      "usage": "In Israel the birthright was sacred precisely because it was tied to the promise. Reuben later loses it (1 Chronicles 5:1); the Levites are taken in place of the firstborn (Numbers 3:12). To trade the bekorah for bread was to treat a holy thing as a commodity."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Cheap satisfaction over inheritance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Esteeming Christ above all (Phil 3:7-8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Two Nations Wrestling Before They Are Born",
+      "body": "The story opens with twenty years of waiting. Isaac is forty when he marries Rebekah and sixty when she finally gives birth, and in between is a barren marriage and a husband on his knees: “Isaac prayed to the LORD on behalf of his wife, because she was barren.” The covenant line, again, does not arrive by the ordinary machinery of nature. It arrives by prayer and answer.\n\nThen the pregnancy itself becomes a struggle. The children “struggled with each other” inside her so violently that Rebekah cries, “Why is this happening to me?” and goes to inquire of the LORD. The answer she receives is one of the strangest oracles in Genesis: “Two nations are in your womb... and the older will serve the younger.” Before either boy has drawn a breath or done a single deed, God has spoken about which one will carry the promise. The line will not run by birth order. It will run by grace.\n\nThe twins grow into opposites. Esau is a man of the field, ruddy and hairy, a hunter his father loves for the wild game he brings home. Jacob is a quiet man who stays among the tents, his mother’s favorite. A divided household, two parents each with a chosen son, the older serving venison to a father who never seems to ask what God said. All the ingredients for the scene that follows are quietly laid in place.",
+      "keyInsight": "Before the twins act, God announces that the promise will pass to the younger - not because Jacob deserved it, but because the covenant has never run on the world’s rules of rank and right.",
+      "content": "The story opens with twenty years of waiting. Isaac is forty when he marries Rebekah and sixty when she finally gives birth, and in between is a barren marriage and a husband on his knees: “Isaac prayed to the LORD on behalf of his wife, because she was barren.” The covenant line, again, does not arrive by the ordinary machinery of nature. It arrives by prayer and answer.\n\nThen the pregnancy itself becomes a struggle. The children “struggled with each other” inside her so violently that Rebekah cries, “Why is this happening to me?” and goes to inquire of the LORD. The answer she receives is one of the strangest oracles in Genesis: “Two nations are in your womb... and the older will serve the younger.” Before either boy has drawn a breath or done a single deed, God has spoken about which one will carry the promise. The line will not run by birth order. It will run by grace.\n\nThe twins grow into opposites. Esau is a man of the field, ruddy and hairy, a hunter his father loves for the wild game he brings home. Jacob is a quiet man who stays among the tents, his mother’s favorite. A divided household, two parents each with a chosen son, the older serving venison to a father who never seems to ask what God said. All the ingredients for the scene that follows are quietly laid in place."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Sold the Farm for Lunch",
+      "body": "There is an old kind of regret that does not feel like much in the moment. A man inherits the family land. It is not glamorous - fences to mend, a mortgage his grandfather started, taxes due in autumn. One hard winter a buyer offers him cash, today, in hand. He is tired. He is behind. The land has been nothing but work and worry. So he signs, takes the money, and feels, for one warm afternoon, relieved.\n\nIt is years later that it lands on him. He drives past the old gate and sees someone else’s children running in the field his great-grandfather cleared by hand. The check is long spent. What he sold was not an asset. It was a place in a story, a name his family carried, a roof his own children would never inherit. He did not lose it in a single dramatic loss. He let it go for the relief of one afternoon.\n\nEsau comes in from the field that day exactly like that man. He is not facing death; he is hungry, and he talks like a man who thinks he is dying. “What good is a birthright to me?” The covenant of Abraham, the double portion, the line that would bless all nations - against the loud, immediate ache in his stomach, it simply does not register as real. The thing you can smell beats the thing you can only believe in. He eats, he drinks, he gets up, he walks away. The narrator lets the verbs fall like footsteps: ate, drank, rose, went. He never looks back. That is the most frightening line in the chapter.",
+      "connectionToTheme": "Esau’s sin was not a single bad trade but a settled valuation - he genuinely believed a present appetite outweighed an eternal inheritance, and acted on it without a flicker of grief.",
+      "content": "There is an old kind of regret that does not feel like much in the moment. A man inherits the family land. It is not glamorous - fences to mend, a mortgage his grandfather started, taxes due in autumn. One hard winter a buyer offers him cash, today, in hand. He is tired. He is behind. The land has been nothing but work and worry. So he signs, takes the money, and feels, for one warm afternoon, relieved.\n\nIt is years later that it lands on him. He drives past the old gate and sees someone else’s children running in the field his great-grandfather cleared by hand. The check is long spent. What he sold was not an asset. It was a place in a story, a name his family carried, a roof his own children would never inherit. He did not lose it in a single dramatic loss. He let it go for the relief of one afternoon.\n\nEsau comes in from the field that day exactly like that man. He is not facing death; he is hungry, and he talks like a man who thinks he is dying. “What good is a birthright to me?” The covenant of Abraham, the double portion, the line that would bless all nations - against the loud, immediate ache in his stomach, it simply does not register as real. The thing you can smell beats the thing you can only believe in. He eats, he drinks, he gets up, he walks away. The narrator lets the verbs fall like footsteps: ate, drank, rose, went. He never looks back. That is the most frightening line in the chapter."
+    },
+    {
+      "type": "insight",
+      "heading": "The Hunger That Lies About How Long It Lasts",
+      "body": "Look closely at Esau’s reasoning, because it is ours. “I am about to die, so what good is a birthright to me?” He is not about to die. He has missed a meal. But appetite, when it is loud enough, always overstates its own stakes. It tells you that this craving is a survival emergency and that whatever stands between you and relief is therefore expendable - even a covenant, even a calling, even your place in God’s promise.\n\nThe deepest danger of Esau is not that he was a glutton. It is that he was sincere. In the moment, the stew really did seem more valuable than the birthright, because the stew was here and the birthright was a thing you had to keep believing in. He traded the eternal for the immediate not in defiance of God but in a kind of blank-faced practicality. “What good is it to me?” - the question of a man who can only assign worth to what he can hold this hour.\n\nThe writer of Hebrews, centuries later, reaches back to this exact scene to warn the church: “see to it that no one is... godless like Esau, who for a single meal sold his birthright. For you know that afterward, when he wanted to inherit the blessing, he was rejected. He could find no ground for repentance, though he sought the blessing with tears” (Hebrews 12:16-17). The tears came eventually. They always do. By then the only thing left to weep over was a choice he had been certain about while his mouth was full.",
+      "historicalContext": "Esau becomes Edom, and Edom becomes Israel’s perennial neighbor and rival - a nation born of a man who sold the promise. Genesis places this sale early, at the head of the patriarchal story, so that Israel reading its own scriptures would understand that the line they belonged to was never the line of the strong, the firstborn, or the deserving. It was the line of those who, for all their flaws, valued the promise enough to grasp for it.",
+      "fascinatingFact": "The Hebrew of verse 34 strings four quick verbs together with almost no commentary: “wa-yokal, wa-yesht, wa-yaqom, wa-yelak” - he ate, and drank, and rose, and went. The clipped pace is deliberate. The most momentous transaction of his life is narrated with the casual speed of a man grabbing fast food on the way out the door. Then the verdict: “Thus Esau despised his birthright.”",
+      "content": "Look closely at Esau’s reasoning, because it is ours. “I am about to die, so what good is a birthright to me?” He is not about to die. He has missed a meal. But appetite, when it is loud enough, always overstates its own stakes. It tells you that this craving is a survival emergency and that whatever stands between you and relief is therefore expendable - even a covenant, even a calling, even your place in God’s promise.\n\nThe deepest danger of Esau is not that he was a glutton. It is that he was sincere. In the moment, the stew really did seem more valuable than the birthright, because the stew was here and the birthright was a thing you had to keep believing in. He traded the eternal for the immediate not in defiance of God but in a kind of blank-faced practicality. “What good is it to me?” - the question of a man who can only assign worth to what he can hold this hour.\n\nThe writer of Hebrews, centuries later, reaches back to this exact scene to warn the church: “see to it that no one is... godless like Esau, who for a single meal sold his birthright. For you know that afterward, when he wanted to inherit the blessing, he was rejected. He could find no ground for repentance, though he sought the blessing with tears” (Hebrews 12:16-17). The tears came eventually. They always do. By then the only thing left to weep over was a choice he had been certain about while his mouth was full."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Esau, famished from the field, sold the birthright of the covenant for a single bowl of red stew - and the narrator’s verdict is not that he was cheated but that he despised what he sold.",
+      "modernApplication": "Few of us will ever face Esau’s exact trade, and that is precisely why his story is so dangerous to read. We do not sell our inheritance in one decision. We sell it the way he did - hungry, certain it doesn’t matter much, in exchange for something we can have right now. The late-night scroll instead of sleep. The relationship that costs us our integrity but warms a lonely evening. The compromise at work that buys this quarter’s number. Each one feels like Esau’s soup: small, urgent, obviously worth it. None of them feels like selling a birthright until you are standing at the gate years later watching someone else’s children in the field.",
+      "connectionPoint": "Hold this scene beside the wilderness, where another Son of the promise is famished after forty days. The tempter comes with the same logic Esau used on himself: You are starving; turn these stones to bread; satisfy the appetite now. And Jesus answers, “Man shall not live on bread alone, but on every word that comes from the mouth of God” (Matthew 4:4). Where Esau let his stomach reprice his inheritance, Christ keeps the inheritance even at the cost of the bread. He is the second-born line of the promise who does not sell it.",
+      "newTestamentEcho": "And then Jesus turns and offers Himself as the very thing Esau lacked: “I am the bread of life. Whoever comes to Me will never hunger” (John 6:35). The famine that drove Esau to despise the promise is the famine Christ comes to end - not by handing us a bowl that lasts an afternoon, but by becoming the bread that secures the inheritance forever. He kept His birthright so that He could share His."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What in your life are you tempted to sell cheap right now - certain it doesn’t matter much - that you would grieve to lose for good?",
+      "additionalQuestions": [
+        "Where do you hear Esau’s exact reasoning in your own head: “I need this now; what good is the long thing to me?”",
+        "What is one “stew” - one immediate, satisfying thing - that you reach for when you are tired, hungry, or empty, and what does it quietly cost you?",
+        "Esau’s tears came later. Where do you sense God inviting you to value the promise now, before the regret, while the choice is still in front of you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I know Esau’s hunger from the inside. I know how loud the thing in front of me can get, and how small and far away the promise can seem. Forgive me for the days I have sold something holy for something warm. Teach me to value what You value, to feel the weight of my inheritance in You before I feel the ache of the moment. And when I am famished and ready to trade everything for relief, feed me Yourself - You are the bread of life, and in You I will never hunger. Keep me from despising what You have given. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one “stew” - one immediate craving you tend to obey without thinking - and when it speaks up, pause long enough to ask out loud: “Am I about to trade something that lasts for something that doesn’t?” Let the question interrupt the trade.",
+      "leavingAtCross": [
+        "The lie that whatever I am craving right now is a survival emergency",
+        "The habit of pricing my life by what I can feel this hour instead of what I will inherit",
+        "The blank certainty, like Esau’s, that the holy thing simply “isn’t good to me” when I am empty"
+      ],
+      "receivingFromCross": [
+        "A Savior who refused to turn stones to bread so He could keep the inheritance for me",
+        "The bread of life that ends the famine no bowl of stew could ever fill",
+        "The freedom to wait, to hunger, and to keep the promise instead of selling it"
+      ],
+      "content": "Today, name one “stew” - one immediate craving you tend to obey without thinking - and when it speaks up, pause long enough to ask out loud: “Am I about to trade something that lasts for something that doesn’t?” Let the question interrupt the trade."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What did the birthright (bekorah) actually include in this family, and why was selling it so much more than losing a meal’s worth of property?",
+        "The narrator says Esau “despised” his birthright rather than that he was tricked out of it. Why does that single word change how we read the whole scene?",
+        "How does Esau’s wilderness of hunger point forward to Christ’s wilderness of hunger - and what is the difference in what each did with the appetite?"
+      ],
+      "forAccountabilityPartners": [
+        "Tell each other about a time you sold something that mattered for something immediate. What did it feel like in the moment, and what did it feel like later?",
+        "Name one current “stew” in your life - the thing you reach for when you are depleted. Ask the other person to check in on it this week.",
+        "Talk honestly about Hebrews 12:17 - Esau’s later tears. What is the difference between grieving a consequence and repenting of the choice?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 12:16-17",
+          "text": "See to it that no one is sexually immoral, or is godless like Esau, who for a single meal sold his birthright. For you know that afterward, when he wanted to inherit the blessing, he was rejected. He could find no ground for repentance, though he sought the blessing with tears."
+        },
+        {
+          "reference": "Matthew 4:4",
+          "text": "But Jesus answered, “It is written: ‘Man shall not live on bread alone, but on every word that comes from the mouth of God.’”"
+        },
+        {
+          "reference": "John 6:35",
+          "text": "Jesus answered, “I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.”"
+        },
+        {
+          "reference": "Philippians 3:7-8",
+          "text": "But whatever was gain to me I count as loss for the sake of Christ. More than that, I count all things as loss compared to the surpassing excellence of knowing Christ Jesus my Lord... I consider them rubbish, that I may gain Christ."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 25:19-34 with Hebrews 12:14-17",
+          "note": "Read the Genesis scene, then the Hebrews warning that interprets it. Notice that the New Testament does not soften the verdict - it sharpens it, and turns it into a plea to the church not to repeat Esau’s valuation."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esau",
+      "title": "The Firstborn Who Despised His Birthright",
+      "era": "Patriarchal period (roughly 2nd millennium BC)",
+      "key_trait": "A capable, physical, present-tense man who could never quite believe that an unseen promise outweighed a felt appetite",
+      "description": "The elder twin of Isaac and Rebekah, a skillful hunter and his father’s favorite. Esau is not portrayed as cruel or stupid - he is portrayed as a man wholly governed by the immediate. Coming in famished from the field, he sold his birthright to Jacob for a bowl of red stew, and Scripture’s verdict is blunt: “Thus Esau despised his birthright.” He becomes the father of Edom, and the New Testament holds him up as a warning to anyone who would trade an eternal inheritance for a present craving.",
+      "keyQuote": "Look, I am about to die, so what good is a birthright to me?",
+      "lessonForUs": "Esau’s downfall was not a single dramatic sin but a settled way of pricing his life - eternal things discounted because they could not be tasted yet. His tears came later, and could not undo the trade. The mercy in his story is that we read it before our own meal is on the table, while the choice is still ours to make differently.",
+      "heading": "The Firstborn Who Despised His Birthright"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1984,
+  "scriptureReference_full": "Genesis 25:19-34",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (bekorah H1062, bekor, vayyivez) reflects standard lexical sources.",
+    "New Testament interpretation of Esau follows Hebrews 12:16-17; the wilderness contrast draws on Matthew 4:4 and John 6:35."
+  ]
 }

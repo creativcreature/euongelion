@@ -1,38 +1,191 @@
 {
   "day": 153,
   "title": "Jeremiah Weeping Prophet — Day 6 — Deeper Dive",
-  "teaser": "Day 153 of Bible 365 — Jeremiah 1-29",
+  "teaser": "God knew Jeremiah before the womb and appointed him to weep over a people who would not listen. Centuries later, when Jesus wept over the same city, the crowds said: that one is Jeremiah.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 153"
+      "type": "scripture",
+      "reference": "Jeremiah 1:4-10",
+      "translation": "BSB",
+      "emphasis": [
+        "Before I formed you in the womb I knew you",
+        "I am only a child",
+        "I have put My words in your mouth"
+      ],
+      "hebrewOriginal": "בְּטֶרֶם אֶצָּרְךָ בַבֶּטֶן יְדַעְתִּיךָ וּבְטֶרֶם תֵּצֵא מֵרֶחֶם הִקְדַּשְׁתִּיךָ נָבִיא לַגּוֹיִם נְתַתִּיךָ",
+      "passage": "The word of the LORD came to me, saying: \"Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.\" \"Ah, Lord GOD,\" I said, \"I surely do not know how to speak, for I am only a child!\" But the LORD told me: \"Do not say, 'I am only a child.' For to everyone I send you, you must go, and all that I command you, you must speak. Do not be afraid of them, for I am with you to deliver you,\" declares the LORD. Then the LORD reached out His hand, touched my mouth, and said to me: \"Behold, I have put My words in your mouth. See, I have appointed you today over nations and kingdoms to uproot and tear down, to destroy and overthrow, to build and plant.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יְדַעְתִּיךָ",
+      "transliteration": "yeda'ticha",
+      "pronunciation": "yeh-dah-TEE-cha",
+      "meaning": "I knew you",
+      "rootMeaning": "From yada, to know. In Hebrew this is not knowing about someone from a distance; it is the word for the deepest, most personal knowing - the knowing of a covenant, the knowing between a husband and wife, the knowing of a name. God does not say He foresaw Jeremiah. He says He knew him - before there was a him to know.",
+      "usageNote": "The same verb yada describes how God 'knew' Abraham (Genesis 18:19) and how He says of Israel, 'Only you have I known from all the families of the earth' (Amos 3:2). To be known by God in this sense is to be chosen, claimed, and held responsible - all at once. Jeremiah's whole hard life is folded into this one verb spoken over the womb.",
+      "wordByWord": [
+        {
+          "word": "בְּטֶרֶם",
+          "transliteration": "beterem",
+          "meaning": "before, prior to"
+        },
+        {
+          "word": "אֶצָּרְךָ",
+          "transliteration": "etzorcha",
+          "meaning": "I formed you - the verb yatsar, used of a potter shaping clay"
+        },
+        {
+          "word": "בַבֶּטֶן",
+          "transliteration": "babbeten",
+          "meaning": "in the womb"
+        },
+        {
+          "word": "יְדַעְתִּיךָ",
+          "transliteration": "yeda'ticha",
+          "meaning": "I knew you - intimately, covenantally"
+        },
+        {
+          "word": "הִקְדַּשְׁתִּיךָ",
+          "transliteration": "hikdashticha",
+          "meaning": "I set you apart, I made you holy, I consecrated you"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶצָּרְךָ / יוֹצֵר",
+          "reference": "The verb 'I formed you' (yatsar) is the potter's word. Jeremiah will later be sent to a potter's house to watch clay reworked on the wheel (Jeremiah 18). The God who calls him is the Potter who shaped him in the dark of the womb."
+        }
+      ],
+      "strongsNumber": "H3045",
+      "definition": "to know; to perceive, recognize, be acquainted with, by experience and relationship rather than mere information",
+      "usage": "When God tells a frightened young man 'I knew you' before he existed, the comfort and the weight arrive together. He cannot earn the call - it preceded him. He cannot escape it either."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Appointed Before He Could Object",
+      "body": "Jeremiah's ministry opens not with a vision of glory but with an argument he loses. God speaks first, and what He says reaches back before Jeremiah's first breath: \"Before I formed you in the womb I knew you... I set you apart and appointed you as a prophet to the nations.\" Three verbs, all in the past tense, all decided long before Jeremiah had a say. Formed. Knew. Set apart.\n\nThe young man's answer is the most human line in the book: \"I surely do not know how to speak, for I am only a child.\" It is the same protest Moses made at the burning bush, the same shrinking-back any of us would offer if handed a task that size. And God does not pretend the task is small. He does not soften it. He simply removes the excuse: \"Do not say, 'I am only a child.' For to everyone I send you, you must go.\"\n\nThen comes the gesture that defines Jeremiah's whole life. The LORD reaches out, touches his mouth, and says, \"Behold, I have put My words in your mouth.\" From that moment Jeremiah is not the author of his message. He is the carrier of someone else's. The words placed in his mouth are not gentle ones - he is appointed \"to uproot and tear down, to destroy and overthrow,\" and only then \"to build and plant.\" For roughly forty years, across the reigns of Judah's last kings, he will speak words he did not choose to a people who do not want them.",
+      "keyInsight": "Jeremiah did not volunteer and could not resign. His call ran back before the womb, which is why no rejection could cancel it and no exhaustion could end it.",
+      "content": "Jeremiah's ministry opens not with a vision of glory but with an argument he loses. God speaks first, and what He says reaches back before Jeremiah's first breath: \"Before I formed you in the womb I knew you... I set you apart and appointed you as a prophet to the nations.\" Three verbs, all in the past tense, all decided long before Jeremiah had a say. Formed. Knew. Set apart.\n\nThe young man's answer is the most human line in the book: \"I surely do not know how to speak, for I am only a child.\" It is the same protest Moses made at the burning bush, the same shrinking-back any of us would offer if handed a task that size. And God does not pretend the task is small. He does not soften it. He simply removes the excuse: \"Do not say, 'I am only a child.' For to everyone I send you, you must go.\"\n\nThen comes the gesture that defines Jeremiah's whole life. The LORD reaches out, touches his mouth, and says, \"Behold, I have put My words in your mouth.\" From that moment Jeremiah is not the author of his message. He is the carrier of someone else's. The words placed in his mouth are not gentle ones - he is appointed \"to uproot and tear down, to destroy and overthrow,\" and only then \"to build and plant.\" For roughly forty years, across the reigns of Judah's last kings, he will speak words he did not choose to a people who do not want them."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Doctor Who Had to Say It",
+      "body": "There is a kind of person whose hardest work is telling people what they do not want to hear, because they love them too much to lie.\n\nThink of the oncologist who has to walk into a waiting room and tell a family the scan came back worse than they hoped. She did not cause the cancer. She did not choose the news. She would give anything to carry in different words. But she trained for years precisely so that she could be the one to say the true thing clearly, and then stay in the room while it lands. The easy thing would be to soften it into vagueness, to let the family keep their comfortable hope a little longer. The loving thing is to say it plainly and not leave.\n\nJeremiah is that doctor for a whole nation. The kingdom of Judah is dying of its own choices - injustice, idolatry, a religion of words with no weight behind it. Everyone else is selling reassurance. The popular prophets keep promising peace. Jeremiah has to walk into the national waiting room, again and again, and say the scan is bad, the city will fall, exile is coming. He is hated for it. He weeps for it. And he cannot stop, because the words were put in his mouth by the One who actually loves the patient.",
+      "connectionToTheme": "The weeping prophet is not a pessimist enjoying bad news. He is a man who loves his people enough to tell them the truth and then stay to grieve with them.",
+      "content": "There is a kind of person whose hardest work is telling people what they do not want to hear, because they love them too much to lie.\n\nThink of the oncologist who has to walk into a waiting room and tell a family the scan came back worse than they hoped. She did not cause the cancer. She did not choose the news. She would give anything to carry in different words. But she trained for years precisely so that she could be the one to say the true thing clearly, and then stay in the room while it lands. The easy thing would be to soften it into vagueness, to let the family keep their comfortable hope a little longer. The loving thing is to say it plainly and not leave.\n\nJeremiah is that doctor for a whole nation. The kingdom of Judah is dying of its own choices - injustice, idolatry, a religion of words with no weight behind it. Everyone else is selling reassurance. The popular prophets keep promising peace. Jeremiah has to walk into the national waiting room, again and again, and say the scan is bad, the city will fall, exile is coming. He is hated for it. He weeps for it. And he cannot stop, because the words were put in his mouth by the One who actually loves the patient."
+    },
+    {
+      "type": "insight",
+      "heading": "The Fire He Could Not Put Out",
+      "body": "Somewhere in the middle of these chapters, Jeremiah tries to quit. He has been mocked, beaten, put in stocks. So he makes the only reasonable decision: he will simply stop speaking. \"If I say, 'I will not mention Him or speak any more in His name,'\" he admits, \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail\" (Jeremiah 20:9).\n\nThis is the secret center of the weeping prophet. His tears are not weakness; they are pressure. The same call that gave him the words will not let him swallow them. The word touched into his mouth in chapter 1 has burned its way down into his bones by chapter 20. He cannot speak it without being crushed, and he cannot keep silent without being burned. So he weeps. \"Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people\" (Jeremiah 9:1).\n\nThis is why Jeremiah, of all the prophets, is the one who shows us what it costs to be God's mouth in a deaf generation. The message is not data he delivers and forgets. It lives in him. He feels God's grief from the inside, and it leaks out of his eyes.",
+      "historicalContext": "Jeremiah prophesied roughly from 627 BC into the years after Jerusalem's fall in 586 BC, through the reigns of Josiah, Jehoiakim, and Zedekiah - the final collapse of the kingdom of Judah and the deportation to Babylon. Chapters 1-29 carry the bulk of his warnings before and around the catastrophe, including the famous letter (chapter 29) to those already carried into exile.",
+      "fascinatingFact": "Jeremiah is the longest book in the Bible by Hebrew word count - longer than Isaiah, longer than Psalms. The sheer length is part of the point: God did not give up after one warning. The weeping prophet kept speaking for four decades to people who, for the most part, never listened.",
+      "content": "Somewhere in the middle of these chapters, Jeremiah tries to quit. He has been mocked, beaten, put in stocks. So he makes the only reasonable decision: he will simply stop speaking. \"If I say, 'I will not mention Him or speak any more in His name,'\" he admits, \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail\" (Jeremiah 20:9).\n\nThis is the secret center of the weeping prophet. His tears are not weakness; they are pressure. The same call that gave him the words will not let him swallow them. The word touched into his mouth in chapter 1 has burned its way down into his bones by chapter 20. He cannot speak it without being crushed, and he cannot keep silent without being burned. So he weeps. \"Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people\" (Jeremiah 9:1).\n\nThis is why Jeremiah, of all the prophets, is the one who shows us what it costs to be God's mouth in a deaf generation. The message is not data he delivers and forgets. It lives in him. He feels God's grief from the inside, and it leaks out of his eyes."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God appointed a man before his birth to carry true and unwanted words to a beloved, dying city - and the man wept over the people who refused to hear him.",
+      "modernApplication": "We are surrounded by voices that sell reassurance and very few that love us enough to say the hard, true thing and then stay. Jeremiah asks whether we want comfortable words or faithful ones - and whether, when God puts something true in our mouths, we are willing to be wept-over messengers rather than popular ones.",
+      "connectionPoint": "Centuries after Jeremiah, another prophet came near Jerusalem, looked at the city, and wept: \"As Jesus approached Jerusalem and saw the city, He wept over it and said, 'If only you had known on this day what would bring you peace! But now it is hidden from your eyes'\" (Luke 19:41-42). The weeping over Jerusalem that began with Jeremiah finds its deepest echo in the tears of Christ.",
+      "newTestamentEcho": "When Jesus asked His disciples who people said He was, one of the answers was striking: \"Some say John the Baptist; others say Elijah; and still others, Jeremiah or one of the prophets\" (Matthew 16:14). The crowds had seen this man weep over Jerusalem and speak unwelcome truth to the powerful, and the face it called to mind was Jeremiah's. They were not wrong to see the resemblance - only too small in it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose voice in your life loves you enough to tell you the hard, true thing - and have you been treating them like Judah treated Jeremiah?",
+      "additionalQuestions": [
+        "Jeremiah felt the word as a fire shut up in his bones. Is there something true God has placed in you that you have been trying to swallow because speaking it would cost you?",
+        "The popular prophets of Judah kept promising peace where there was no peace. Where are you choosing comfortable reassurance over a harder truth right now?",
+        "If God says 'Before I formed you in the womb I knew you,' what changes about how you carry the call on your own life - the parts that feel too heavy?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You who knew me before the womb and set me apart before I could earn or refuse it - thank You for not waiting for me to volunteer before You loved me. Forgive me for preferring comfortable words to true ones, for surrounding myself with voices that tell me what I want to hear. Give me Jeremiah's courage to say the faithful thing and his tears to grieve over the people I am tempted to despise. And thank You that the weeping did not end with him - that Christ wept over the same city, and over me, with love stronger than my refusal. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one hard truth you have been avoiding - about yourself, a relationship, or your walk with God - and instead of softening it, sit with it honestly before God for five minutes. Let Him be the One who both wounds and heals.",
+      "leavingAtCross": [
+        "The preference for comfortable lies over faithful truth",
+        "The instinct to silence the people who love me enough to be honest",
+        "The shame of feeling too small or too unqualified for what God has clearly placed on me"
+      ],
+      "receivingFromCross": [
+        "The security of being known by God before I existed and could earn nothing",
+        "The courage to carry true words even when they are unwelcome",
+        "The comfort that Christ wept over the very ones who rejected Him - so my failures do not exhaust His love"
+      ],
+      "content": "Today, name one hard truth you have been avoiding - about yourself, a relationship, or your walk with God - and instead of softening it, sit with it honestly before God for five minutes. Let Him be the One who both wounds and heals."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What three things does God say He did for Jeremiah before he was born, and why does the order matter that God knew him before He commissioned him?",
+        "Jeremiah said his message was 'a fire shut up in my bones.' What does that image reveal about why the weeping prophet could not simply quit?",
+        "How does the crowd's guess in Matthew 16:14 - that Jesus might be Jeremiah - help us understand both who Jeremiah was and who Jesus is?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a hard truth someone once told you that you resented at the time but later thanked them for. What made you able to finally hear it?",
+        "Talk about the difference between a prophet of comfort and a prophet of truth. Which are you more tempted to be for the people you love?",
+        "Ask each other: is there a fire shut up in your bones right now - something true you know you should speak but have been holding in out of fear?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 9:1",
+          "text": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people."
+        },
+        {
+          "reference": "Jeremiah 20:9",
+          "text": "If I say, \"I will not mention Him or speak any more in His name,\" His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail."
+        },
+        {
+          "reference": "Jeremiah 29:11",
+          "text": "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, to give you a future and a hope."
+        },
+        {
+          "reference": "Luke 19:41-42",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it and said, \"If only you had known on this day what would bring you peace! But now it is hidden from your eyes.\""
+        },
+        {
+          "reference": "Hebrews 1:1-2",
+          "text": "On many past occasions and in many different ways, God spoke to our fathers through the prophets. But in these last days He has spoken to us by His Son, whom He appointed heir of all things, and through whom He made the universe."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 1 and 29",
+          "note": "Read the call (chapter 1) and the letter to the exiles (chapter 29) together. Notice how the God who appointed Jeremiah to 'uproot and tear down' is the same God who promises 'a future and a hope' - judgment and mercy held in one hand."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet",
+      "description": "A priest's son from Anathoth, just north of Jerusalem, called as a young man around 627 BC to prophesy through the final, catastrophic decades of the kingdom of Judah. For roughly forty years he warned of coming judgment, was mocked, beaten, imprisoned, and thrown into a cistern - and watched Jerusalem fall to Babylon in 586 BC exactly as he had said. His grief gave the language its word for a long lament: a 'jeremiad.' Yet the same book that records his tears also records the tenderest promises of restoration in the Old Testament.",
+      "keyQuote": "Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.",
+      "lessonForUs": "Jeremiah shows that faithfulness is not measured by how many people listen. He spoke true words to a deaf generation for a lifetime, wept over them, and was vindicated only in ruins. When Jesus later wept over the same Jerusalem, He stood in Jeremiah's place - and went further, becoming Himself the Word God spoke, the prophet who not only carried God's grief but bore it to a cross.",
+      "heading": "The Weeping Prophet"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2560,
+  "scriptureReference_full": "Jeremiah 1:4-10 (with Jeremiah 9:1; 20:9; 29:11)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (yada, H3045; yatsar; qadash) reflects standard lexical sources.",
+    "Dating of Jeremiah's ministry (c. 627-586 BC, reigns of Josiah, Jehoiakim, Zedekiah) follows standard scholarly consensus."
+  ]
 }

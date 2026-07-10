@@ -1,38 +1,179 @@
 {
   "day": 170,
-  "title": "Daniel’s Faithfulness — Day 2 — Building",
-  "teaser": "Day 170 of Bible 365 — Daniel 3, 6, 9",
+  "title": "But If Not",
+  "teaser": "Three young men face the furnace with three of the bravest words in Scripture: \"But even if He does not.\" Faithfulness is built before the fire is lit.",
   "framework": "Daniel 3, 6, 9 — Daniel’s Faithfulness",
   "scriptureReference": "Daniel 3, 6, 9",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 170"
+      "type": "scripture",
+      "reference": "Daniel 3:17-18, 25; 6:10; 9:18",
+      "translation": "BSB",
+      "emphasis": [
+        "But even if He does not",
+        "a son of the gods",
+        "just as he had done before",
+        "because of Your great compassion"
+      ],
+      "hebrewOriginal": "כְּבַר אֱלָהִין",
+      "passage": "\"If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace and from your hand, O king. But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up.\" ... \"Look!\" he exclaimed. \"I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods!\" ... Now when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before. ... \"For we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Daniel 3, 6, 9**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Daniel 3, 6, 9 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "aramaic",
+      "word": "כְּבַר אֱלָהִין",
+      "transliteration": "ke-bar elahin",
+      "pronunciation": "keh-VAR el-ah-HEEN",
+      "meaning": "like a son of the gods, like a divine being",
+      "rootMeaning": "Bar is the Aramaic word for son (the Hebrew equivalent is ben). Elahin is the plural for god or divine beings. On a pagan king's lips, ke-bar elahin simply means a figure that looks heavenly, more than human - someone who does not belong in a furnace and is not burning in one.",
+      "usageNote": "Daniel chapters 2 through 7 are written in Aramaic, the working language of the Babylonian empire, not Hebrew. The narrator lets the pagan king describe the fourth figure in the king's own categories: a divine-looking being. The same Aramaic word bar returns in Daniel 7:13, where Daniel sees \"One like the Son of Man\" coming with the clouds - bar enash. The fire and the throne room are linked by a single small word: a son in the flames, a Son in the clouds.",
+      "wordByWord": [
+        {
+          "word": "כְּ",
+          "transliteration": "ke-",
+          "meaning": "like, as - a comparison, not yet a name"
+        },
+        {
+          "word": "בַר",
+          "transliteration": "bar",
+          "meaning": "son (Aramaic; Hebrew ben)"
+        },
+        {
+          "word": "אֱלָהִין",
+          "transliteration": "elahin",
+          "meaning": "gods, divine beings (plural of elah)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "בַּר אֱנָשׁ",
+          "reference": "Daniel 7:13 - bar enash, \"One like the Son of Man,\" the heavenly figure given everlasting dominion. The same bar that walks the furnace is the title Jesus claimed for Himself before the high priest (Mark 14:62)."
+        }
+      ],
+      "strongsNumber": "H1247",
+      "definition": "bar - son, descendant; in construct, one belonging to a class or kind",
+      "usage": "Nebuchadnezzar names what he cannot explain: a fourth man, unbound, walking in fire that should have killed him. He has no theology for it yet. He only knows the figure looks like heaven came down into the flames."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daniel’s Faithfulness. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the One like a Son of Man (Mark 14:62).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Faithfulness Is Built Before the Fire",
+      "body": "Yesterday we met Daniel and his friends as young exiles, set apart and tested. Today the testing turns deadly, and the book shows us how its heroes hold.\n\nNebuchadnezzar raises a golden statue on the plain of Dura and commands everyone to fall down when the music plays. Three Hebrew men will not. Hauled before a furious king, given one last chance to bow, they answer with some of the steadiest words in all of Scripture: \"If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace... But even if He does not, let it be known to you, O king, that we will not serve your gods.\"\n\nRead that twice. They believe God can rescue them. They refuse to presume that He will. And they decide, out loud, that their obedience does not depend on the outcome. This is faith with no bargain attached - not \"save us and we will serve You,\" but \"we will serve You whether or not You save us.\"\n\nWatch how the book is built. Daniel 1 is the small, private faithfulness of what these men ate and read. Daniel 3 is the public faithfulness of what they would not bow to. The big refusals at the furnace were rehearsed in the small fidelities no one was watching. You do not suddenly become the kind of person who says \"but if not\" while the flames are roaring. You become that person quietly, years earlier, in the choices that cost almost nothing.",
+      "keyInsight": "Courage in the furnace is not summoned in the moment; it is the public ripening of private faithfulness practiced long before the fire was lit.",
+      "content": "Yesterday we met Daniel and his friends as young exiles, set apart and tested. Today the testing turns deadly, and the book shows us how its heroes hold.\n\nNebuchadnezzar raises a golden statue on the plain of Dura and commands everyone to fall down when the music plays. Three Hebrew men will not. Hauled before a furious king, given one last chance to bow, they answer with some of the steadiest words in all of Scripture: \"If the God whom we serve exists, then He is able to deliver us from the blazing fiery furnace... But even if He does not, let it be known to you, O king, that we will not serve your gods.\"\n\nRead that twice. They believe God can rescue them. They refuse to presume that He will. And they decide, out loud, that their obedience does not depend on the outcome. This is faith with no bargain attached - not \"save us and we will serve You,\" but \"we will serve You whether or not You save us.\"\n\nWatch how the book is built. Daniel 1 is the small, private faithfulness of what these men ate and read. Daniel 3 is the public faithfulness of what they would not bow to. The big refusals at the furnace were rehearsed in the small fidelities no one was watching. You do not suddenly become the kind of person who says \"but if not\" while the flames are roaring. You become that person quietly, years earlier, in the choices that cost almost nothing."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Habit He Did Not Hide",
+      "body": "Years later, in another reign, the trap is sprung on Daniel himself. His rivals cannot find a single corrupt thing in him, so they admit it plainly: \"We will never find any charge against this Daniel, unless we find something against him concerning the law of his God.\" Imagine an enemy combing your life for a weakness and concluding the only place to attack is your prayers.\n\nSo they get the king to outlaw prayer to anyone but the king for thirty days. The penalty is the lions' den. And here is the detail the narrator will not let us miss: \"Now when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before.\"\n\nJust as he had done before. He does not pray harder to make a point, or quieter to stay safe. He does not throw open the windows to provoke them or shut them to hide. He simply keeps the rhythm he already had. The law changed; Daniel did not. His whole defiance is that he refuses to let the king's decree edit a habit that belongs to God.",
+      "connectionToTheme": "Daniel survives the den because the man who knelt openly under a death sentence is the same man who had knelt every day when no one was watching. The crisis only revealed the routine.",
+      "content": "Years later, in another reign, the trap is sprung on Daniel himself. His rivals cannot find a single corrupt thing in him, so they admit it plainly: \"We will never find any charge against this Daniel, unless we find something against him concerning the law of his God.\" Imagine an enemy combing your life for a weakness and concluding the only place to attack is your prayers.\n\nSo they get the king to outlaw prayer to anyone but the king for thirty days. The penalty is the lions' den. And here is the detail the narrator will not let us miss: \"Now when Daniel learned that the document had been signed, he went into his house, where the windows of his upper room opened toward Jerusalem, and three times a day he got down on his knees, prayed, and gave thanks to his God, just as he had done before.\"\n\nJust as he had done before. He does not pray harder to make a point, or quieter to stay safe. He does not throw open the windows to provoke them or shut them to hide. He simply keeps the rhythm he already had. The law changed; Daniel did not. His whole defiance is that he refuses to let the king's decree edit a habit that belongs to God."
+    },
+    {
+      "type": "insight",
+      "heading": "He Was in the Fire With Them",
+      "body": "Notice where the deliverance happens. God does not keep the three men out of the furnace. He lets them be bound, lifted, and thrown into flames so hot the soldiers who carry them are killed by the heat. The rescue comes inside the fire, not instead of it.\n\nThen Nebuchadnezzar leaps up, terrified: \"Did we not throw three men, firmly bound, into the fire?\" Certainly, they answer. \"Look!\" he says. \"I see four men, unbound and unharmed, walking around in the fire - and the fourth looks like a son of the gods!\" Four. The ropes that bound them are gone; the men are not. Someone is walking with them.\n\nThe deliverance was never a promise that the faithful would be spared the heat. The promise being kept is older and deeper: \"When you walk through the fire, you will not be scorched; the flames will not set you ablaze\" (Isaiah 43:2). Not no fire. A presence in it. When they come out, the text lingers on the impossibility - not a hair singed, robes unaffected, no smell of smoke on them. The only thing the fire burned was the rope.",
+      "historicalContext": "Daniel was written for a people in exile, under empires that demanded their worship - first Babylon, later Persia, and in the book's final form the readers faced the pressure of Greek rule under rulers who, like Nebuchadnezzar, set up images and outlawed the worship of the living God. These furnace and lion stories were survival theology for a covenant people surrounded by power that could kill them. The point was never that the faithful always escape; it was that the living God is present and sovereign even when the empire's fire is lit.",
+      "fascinatingFact": "The phrase \"but if not\" from Daniel 3:18 became a signal in modern history: at Dunkirk in 1940, a British officer reportedly sent a three-word message back to England as the army waited on the beaches - \"But if not.\" Those who knew their Bibles understood instantly: we will hold our ground whether or not we are delivered. The verse had become shorthand for unbargained faithfulness.",
+      "content": "Notice where the deliverance happens. God does not keep the three men out of the furnace. He lets them be bound, lifted, and thrown into flames so hot the soldiers who carry them are killed by the heat. The rescue comes inside the fire, not instead of it.\n\nThen Nebuchadnezzar leaps up, terrified: \"Did we not throw three men, firmly bound, into the fire?\" Certainly, they answer. \"Look!\" he says. \"I see four men, unbound and unharmed, walking around in the fire - and the fourth looks like a son of the gods!\" Four. The ropes that bound them are gone; the men are not. Someone is walking with them.\n\nThe deliverance was never a promise that the faithful would be spared the heat. The promise being kept is older and deeper: \"When you walk through the fire, you will not be scorched; the flames will not set you ablaze\" (Isaiah 43:2). Not no fire. A presence in it. When they come out, the text lingers on the impossibility - not a hair singed, robes unaffected, no smell of smoke on them. The only thing the fire burned was the rope."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God did not keep three faithful men out of the furnace. He met them inside it - a fourth figure, \"like a son of the gods,\" walking the flames with them until the only thing burned was what bound them.",
+      "modernApplication": "Most of us are not asked to bow to a literal statue. We are asked, in a thousand quiet pressures, to edit our convictions so they cost us nothing - to bow a little when the music plays, to close the window so no one sees us pray. The faith Daniel models is not the absence of fear; it is the refusal to let fear rewrite the rhythm of obedience we keep with God.",
+      "connectionPoint": "Run the thread forward and the small Aramaic word bar carries it. In Daniel 3 a fourth figure walks the fire, \"like a son of the gods.\" In Daniel 7 Daniel sees \"One like the Son of Man\" - bar enash - coming with the clouds, given everlasting dominion. In the Gospels, Jesus takes \"Son of Man\" as His own name and tells the high priest he will see Him coming on the clouds (Mark 14:62). The presence in the furnace and the King on the throne are spoken of with the same word.",
+      "newTestamentEcho": "And Daniel 9 carries the deepest thread of all. Daniel prays not on the basis of Israel's record but pleads, \"we are not presenting our petitions before You because of our righteous acts, but because of Your great compassion.\" That is the whole gospel in a sentence - mercy that comes not by deserving but by the compassion of God. The One who met the three in the fire is the One who would later be \"made like His brothers in every way\" (Hebrews 2:17), entering our furnace of death itself and coming out with the ropes burned off, so that we are heard, as Daniel was, on the ground of His compassion and not our merit."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is the music playing in your life right now - the pressure to bow a little so it costs you nothing - and what would \"but if not\" sound like in your own mouth?",
+      "additionalQuestions": [
+        "Daniel kept praying \"just as he had done before.\" What rhythm with God is steady enough in your life that a crisis would reveal it rather than create it?",
+        "The three men believed God could rescue them but refused to assume He would. Can you trust a God who is able but has not yet delivered you from your particular fire?",
+        "When have you experienced God not removing the fire, but being present inside it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, You are able. I believe that. Teach me also to trust You when You do not do what I asked - to say with steady breath, \"but if not,\" and mean it. Build faithfulness in me now, in the small choices no one sees, so that it holds when the fire is lit. When I am thrown into what I cannot survive on my own, let me find that I am not alone in it - that the One who walked the furnace walks with me. I do not bring You my righteous acts; I have none worth naming. I come because of Your great compassion, in the name of Jesus, the Son of Man. Amen.",
+      "prayerType": "personal",
+      "scripture_echo": "Daniel 9:18"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the one place you are tempted to bow because resisting would cost you something. Decide in advance, before the music plays, what your \"but if not\" will be - and keep one small rhythm of prayer today \"just as you have done before,\" especially if today made it harder.",
+      "leavingAtCross": [
+        "The bargaining faith that only obeys if God guarantees the outcome I want",
+        "The instinct to quietly edit my convictions so they stop costing me anything",
+        "The fear that walking into the fire means walking into it alone"
+      ],
+      "receivingFromCross": [
+        "A faith that can say \"but if not\" and keep standing",
+        "The presence of the One who meets His people inside the furnace, not only outside it",
+        "Confidence to be heard on the ground of His compassion, not the record of my own righteous acts"
+      ],
+      "content": "Today, name the one place you are tempted to bow because resisting would cost you something. Decide in advance, before the music plays, what your \"but if not\" will be - and keep one small rhythm of prayer today \"just as you have done before,\" especially if today made it harder."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between believing God is able to deliver you and assuming He will? Why does Daniel 3:18 hold both?",
+        "Why does the narrator stress that Daniel prayed \"just as he had done before\" - what does that detail tell us about how faithfulness is built?",
+        "The men were not kept out of the furnace but met inside it. How does that reshape what we should expect 'deliverance' to look like?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been bowing a little - shaving down a conviction so it costs you nothing. What would standing look like?",
+        "Talk about a 'just as he had done before' rhythm you want to build now, before any fire, so that pressure reveals it rather than breaks it.",
+        "Ask each other: when God did not deliver you the way you asked, were you able to sense Him with you in it? What helped, or what got in the way?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 43:2",
+          "text": "When you pass through the waters, I will be with you; and when you go through the rivers, they will not overwhelm you. When you walk through the fire, you will not be scorched; the flames will not set you ablaze."
+        },
+        {
+          "reference": "Daniel 7:13-14",
+          "text": "I saw One like the Son of Man coming with the clouds of heaven... He was given dominion, glory, and kingship, that the people of every nation and language should serve Him. His dominion is an everlasting dominion that will not pass away."
+        },
+        {
+          "reference": "Daniel 6:26-27",
+          "text": "For He is the living God, and He endures forever... He delivers and rescues; He performs signs and wonders in the heavens and on the earth, for He has rescued Daniel from the power of the lions."
+        },
+        {
+          "reference": "Hebrews 2:17",
+          "text": "For this reason He had to be made like His brothers in every way, so that He might become a merciful and faithful high priest in service to God, in order to make atonement for the sins of the people."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Daniel 3, 6, and 9",
+          "note": "Read the three chapters in one sitting and watch the pattern: pressure to compromise (ch. 3 and 6), then Daniel turning to God in confession and petition (ch. 9). Notice what stays constant across all three - the character formed before the crisis."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Shadrach, Meshach, and Abednego",
+      "title": "The Three Who Would Not Bow",
+      "description": "Three young men of Judah - given the Hebrew names Hananiah, Mishael, and Azariah - carried into exile in Babylon and renamed by their captors. Set over the affairs of the province, they refused the king's command to worship a golden statue and were thrown into a furnace heated sevenfold. They came out untouched, having said the bravest words available to faith: God can save us, but even if He does not, we will not bow. They stand beside Daniel, whose unbroken habit of prayer under a death sentence took him into the lions' den and out again, as the book's portrait of faithfulness under empire.",
+      "keyQuote": "But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up.",
+      "lessonForUs": "Their courage was not a feeling they worked up at the furnace door. It was the harvest of countless small, hidden choices to belong to God first. Build that faithfulness now, in the quiet, and it will be there when the music plays and the fire is lit.",
+      "heading": "The Three Who Would Not Bow"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1784,
+  "scriptureReference_full": "Daniel 3, 6, 9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Aramaic word study (bar elahin, Daniel 3:25; bar enash, Daniel 7:13) reflects standard lexical sources; Daniel 2-7 is composed in Aramaic.",
+    "The Dunkirk 'but if not' signal (1940) is a widely reported anecdote tied to Daniel 3:18; it is recounted here as tradition, not as a precisely documented quotation."
+  ]
 }

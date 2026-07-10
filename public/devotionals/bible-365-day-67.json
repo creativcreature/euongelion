@@ -6,33 +6,177 @@
   "scriptureReference": "Joshua 6",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 67"
+      "type": "scripture",
+      "reference": "Joshua 6:1-5, 16, 20",
+      "translation": "BSB",
+      "emphasis": [
+        "tightly shut up",
+        "I have delivered Jericho into your hand",
+        "the wall of the city will collapse",
+        "the wall collapsed"
+      ],
+      "hebrewOriginal": "רְאֵה נָתַתִּי בְיָדְךָ אֶת־יְרִיחוֹ",
+      "passage": "Now Jericho was tightly shut up because of the Israelites. No one went out and no one came in. And the LORD said to Joshua, \"Behold, I have delivered Jericho into your hand, along with its king and its mighty men of valor. March around the city with all the men of war, circling the city one time. Do this for six days. Have seven priests carry seven rams' horns in front of the ark. Then on the seventh day, march around the city seven times, while the priests blow the horns. And when there is a long blast of the ram's horn and you hear its sound, have all the people give a mighty shout. Then the wall of the city will collapse and all your people will charge straight into the city.\" ... After the seventh time around, the priests blew the horns, and Joshua commanded the people, \"Shout! For the LORD has given you the city!\" ... So when the rams' horns sounded, the people shouted. When they heard the blast of the horn, the people gave a great shout, and the wall collapsed. Then all the people charged straight into the city and captured it."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 6**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 6 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נָתַתִּי",
+      "transliteration": "natatti",
+      "pronunciation": "nah-TAH-tee",
+      "meaning": "I have given, I have delivered",
+      "rootMeaning": "From natan, to give. The form is a completed action - not 'I will give' but 'I have given.' Before a single Israelite has lifted a sword, God speaks of the victory as already done.",
+      "usageNote": "The verb sits in the perfect tense, the grammar of accomplished fact. God hands Joshua a city that is still standing, still locked, still bristling with armed men - and calls it already delivered. The marching that follows is not how Israel wins Jericho. It is how Israel receives what God has already won.",
+      "wordByWord": [
+        {
+          "word": "רְאֵה",
+          "transliteration": "re'eh",
+          "meaning": "behold, look - an imperative to open the eyes and see what is true"
+        },
+        {
+          "word": "נָתַתִּי",
+          "transliteration": "natatti",
+          "meaning": "I have given, I have delivered - completed action"
+        },
+        {
+          "word": "בְיָדְךָ",
+          "transliteration": "be-yadekha",
+          "meaning": "into your hand - the idiom for full possession and authority"
+        },
+        {
+          "word": "אֶת־יְרִיחוֹ",
+          "transliteration": "et-Yericho",
+          "meaning": "Jericho - the marked-out object of the gift"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יְרִיחוֹ / יָרֵחַ",
+          "reference": "Jericho (Yericho) is widely linked to yareach, 'moon,' and to reach, 'fragrance' - the moon-city of the fragrant plain. The first walled city of the land falls not to a battering ram but to a horn and a shout."
+        }
+      ],
+      "strongsNumber": "H5414",
+      "definition": "to give, put, set, deliver, grant",
+      "usage": "The whole chapter hangs on this one perfect-tense verb. The command to march is downstream of the gift, not the cause of it. Faith here means acting on a victory God says He has already secured."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Obedience precedes breakthrough. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ tears down dividing walls (Eph 2:14).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Battle Plan With No Battle In It",
+      "body": "Yesterday the river opened and Israel crossed into the land on dry ground. Today they stand in front of the first thing the land throws at them: Jericho, a fortress city, its gate barred. \"Now Jericho was tightly shut up because of the Israelites. No one went out and no one came in.\" The verse is built like the wall it describes - sealed at both ends. This is not a city you talk your way into.\n\nThen God gives a plan, and the strange thing about the plan is that it contains almost no fighting. March around the city once a day for six days. Carry seven horns of ram in front of the ark. On the seventh day, circle it seven times. Blow the horns. Shout. That is the whole strategy. No siege towers, no ladders, no tunneling under the foundations. The men of war are told to march and, for six days, to keep their mouths shut: \"Do not give a battle cry or let your voice be heard; do not let one word come out of your mouth until the day I tell you to shout.\"\n\nNotice who leads the procession. Not the soldiers - the ark of the covenant, the seat of God's presence, carried at the center of seven priests and seven trumpets. The army is not marching to conquer Jericho. The army is escorting God around Jericho. The wall does not fall because Israel is strong. It falls because the LORD has already said, in the grammar of finished things, \"I have delivered Jericho into your hand.\"",
+      "keyInsight": "God hands Joshua a victory already won, then asks for obedience that looks nothing like a strategy. The marching does not earn the city. It receives it.",
+      "content": "Yesterday the river opened and Israel crossed into the land on dry ground. Today they stand in front of the first thing the land throws at them: Jericho, a fortress city, its gate barred. \"Now Jericho was tightly shut up because of the Israelites. No one went out and no one came in.\" The verse is built like the wall it describes - sealed at both ends. This is not a city you talk your way into.\n\nThen God gives a plan, and the strange thing about the plan is that it contains almost no fighting. March around the city once a day for six days. Carry seven horns of ram in front of the ark. On the seventh day, circle it seven times. Blow the horns. Shout. That is the whole strategy. No siege towers, no ladders, no tunneling under the foundations. The men of war are told to march and, for six days, to keep their mouths shut: \"Do not give a battle cry or let your voice be heard; do not let one word come out of your mouth until the day I tell you to shout.\"\n\nNotice who leads the procession. Not the soldiers - the ark of the covenant, the seat of God's presence, carried at the center of seven priests and seven trumpets. The army is not marching to conquer Jericho. The army is escorting God around Jericho. The wall does not fall because Israel is strong. It falls because the LORD has already said, in the grammar of finished things, \"I have delivered Jericho into your hand.\""
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Sixth Lap",
+      "body": "Imagine being one of those soldiers on day three. You have crossed a river you watched stop flowing. You believe God is with you. And the order for the morning is: walk around the city. Again. In silence. Then go back to camp and sleep, and do it again tomorrow.\n\nThere is nothing dramatic about lap four, or lap five, or the sixth quiet morning of dust and bare feet and a city full of men watching you from the wall and, no doubt, laughing. The wall has not so much as cracked. Every measurable sign says the plan is failing. And still the only command is to keep marching and keep your mouth shut.\n\nMost obedience lives there - not at the shout, but in the silent laps before it, when nothing is visibly changing and the only evidence you have is the word you were given. The people of Jericho saw a pointless parade. Israel was being taught the hardest lesson in the land: that the wall was already down in the mind of God six days before it was down in the dirt, and their job was simply to keep walking until the seen caught up with the said.",
+      "connectionToTheme": "Breakthrough rarely arrives on the first lap. The obedience that precedes it is mostly unglamorous repetition in the silence before the shout.",
+      "content": "Imagine being one of those soldiers on day three. You have crossed a river you watched stop flowing. You believe God is with you. And the order for the morning is: walk around the city. Again. In silence. Then go back to camp and sleep, and do it again tomorrow.\n\nThere is nothing dramatic about lap four, or lap five, or the sixth quiet morning of dust and bare feet and a city full of men watching you from the wall and, no doubt, laughing. The wall has not so much as cracked. Every measurable sign says the plan is failing. And still the only command is to keep marching and keep your mouth shut.\n\nMost obedience lives there - not at the shout, but in the silent laps before it, when nothing is visibly changing and the only evidence you have is the word you were given. The people of Jericho saw a pointless parade. Israel was being taught the hardest lesson in the land: that the wall was already down in the mind of God six days before it was down in the dirt, and their job was simply to keep walking until the seen caught up with the said."
+    },
+    {
+      "type": "insight",
+      "heading": "One House the Sword Passed Over",
+      "body": "The chapter has a second story folded inside the first, and it is easy to march right past it. When the wall comes down and the city is given over to destruction, one structure is spared by name: \"Only Rahab the prostitute and all those with her in her house will live, because she hid the spies we sent.\"\n\nThink about where Rahab's house stood. The earlier chapter tells us her window opened in the city wall itself (Joshua 2:15). When that wall \"collapsed,\" her household was the one place inside the doomed city that judgment did not touch. She had tied a scarlet cord in her window and gathered her family under her roof, exactly as the spies told her, and that marked-out house became an island of life in a city under the sword. A Canaanite. A prostitute. An outsider with nothing to recommend her but that she believed the report that Israel's God was the God of heaven above and earth beneath, and acted on it before the wall ever moved.\n\nJericho falls in a single chapter; Rahab keeps living \"to this day.\" The wall that no army could breach comes down at a shout, and the woman the wall should have buried walks out alive - because she was found inside the one house mercy had marked.",
+      "historicalContext": "Jericho sits in the Jordan Valley near one of the oldest continuously settled sites known to archaeology, guarding the eastern approach into the central hill country. As the first fortified city Israel met west of the Jordan, its fall set the pattern for the whole conquest: the land is received as a gift, not seized as a prize.",
+      "fascinatingFact": "Rahab is named twice more in the New Testament - among the heroes of faith (Hebrews 11:31) and in the line of the Messiah Himself (Matthew 1:5), great-great-grandmother of King David. The prostitute spared at Jericho stands in the family tree of Jesus.",
+      "content": "The chapter has a second story folded inside the first, and it is easy to march right past it. When the wall comes down and the city is given over to destruction, one structure is spared by name: \"Only Rahab the prostitute and all those with her in her house will live, because she hid the spies we sent.\"\n\nThink about where Rahab's house stood. The earlier chapter tells us her window opened in the city wall itself (Joshua 2:15). When that wall \"collapsed,\" her household was the one place inside the doomed city that judgment did not touch. She had tied a scarlet cord in her window and gathered her family under her roof, exactly as the spies told her, and that marked-out house became an island of life in a city under the sword. A Canaanite. A prostitute. An outsider with nothing to recommend her but that she believed the report that Israel's God was the God of heaven above and earth beneath, and acted on it before the wall ever moved.\n\nJericho falls in a single chapter; Rahab keeps living \"to this day.\" The wall that no army could breach comes down at a shout, and the woman the wall should have buried walks out alive - because she was found inside the one house mercy had marked."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The first stronghold of the Promised Land falls not to Israel's siege-craft but to the presence of God carried around it and a people who obeyed an impossible-sounding word before anything visibly changed. And the one life spared inside the condemned city is the outsider who took refuge in a house marked for mercy.",
+      "modernApplication": "We still meet walls that won't move by force - a habit, a fear, a fracture in a marriage, a city of resistance in our own chests. The temptation is to bring more siege engines: more effort, more willpower, more noise. Jericho says the walls that matter most come down another way - by carrying God's presence to them and obeying through the silent, unglamorous laps when nothing is changing yet.",
+      "connectionPoint": "The pattern threads through the whole canon: God fights, His people walk in obedience, the impossible barrier gives way. Paul tells the Corinthians that 'the weapons of our warfare are not the weapons of the world. Instead, they have divine power to demolish strongholds' (2 Corinthians 10:4). Hebrews names Jericho itself: 'By faith the walls of Jericho fell, after the people had marched around them for seven days' (Hebrews 11:30) - the fall is credited not to engineering but to faith.",
+      "newTestamentEcho": "What the horn and the shout hinted at, Christ accomplished. Paul writes that He has 'torn down the dividing wall of hostility' (Ephesians 2:14), the deepest Jericho of all. And the scarlet cord in Rahab's window becomes more than a signal: the one safe house in a city under judgment foreshadows the blood-marked refuge of the Lamb, where outsiders with no claim of their own are spared - so completely that Rahab herself is woven into the genealogy of Jesus (Matthew 1:5)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What wall in your life have you been trying to bring down by force - and what would it look like to march it instead, carrying God's presence to it in patient, ordinary obedience?",
+      "additionalQuestions": [
+        "Where are you on day three - past the river, but stuck in silent laps where nothing seems to be changing? What word were you given that you are tempted to abandon?",
+        "God called Jericho 'delivered' while it was still standing. What has God already promised you that you are still treating as undecided?",
+        "Rahab was spared because she was found inside a marked house. Where have you been trusting your own record instead of taking refuge in mercy you did not earn?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have walls I cannot push down, and I am tired of throwing myself against them. Teach me the obedience of the silent laps - to keep walking when nothing has cracked, because You have spoken. Help me bring Your presence to the thing I fear instead of bringing more of my own striving. And where I have trusted my own record to keep me safe, move me inside the house You have marked with mercy. The victory is already Yours; let me walk in it. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'wall' you have been attacking by force. Instead of one more push, take it on a lap: bring it honestly to God in prayer, and choose one small act of obedience He has already made clear - then do it again tomorrow, before you see any change.",
+      "leavingAtCross": [
+        "The belief that the wall comes down by the size of my effort",
+        "My impatience in the silent laps, when nothing visible is changing",
+        "The instinct to trust my own record to keep me safe instead of sheltering in mercy I did not earn"
+      ],
+      "receivingFromCross": [
+        "A victory God calls finished before I can see it",
+        "The steadiness to keep walking in obedience through the unspectacular days",
+        "A marked house of refuge that judgment passes over - the blood of the Lamb, open even to the outsider"
+      ],
+      "content": "Today, name one 'wall' you have been attacking by force. Instead of one more push, take it on a lap: bring it honestly to God in prayer, and choose one small act of obedience He has already made clear - then do it again tomorrow, before you see any change."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "God says 'I have delivered Jericho into your hand' (a completed action) while the city is still locked and standing. How does that change what the marching is for - earning the victory, or receiving it?",
+        "For six days Israel marches in total silence. Why might God command the hardest obedience to happen before there is any visible result?",
+        "Rahab's house was built into the very wall that 'collapsed,' yet she lived. What does her survival teach about who gets spared inside a city under judgment?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one wall you have been hitting with force lately. What would it look like to 'march' it instead - patient obedience while carrying it to God?",
+        "Talk about your 'day three': a place where you were given a word from God but the silent laps have worn you down. What keeps you walking?",
+        "Ask each other: where am I trusting my own record to keep me safe, and where is God offering me a marked house of mercy instead?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Joshua 2:15",
+          "text": "Then Rahab let them down by a rope through the window, since the house where she lived was built into the wall of the city."
+        },
+        {
+          "reference": "Hebrews 11:30-31",
+          "text": "By faith the walls of Jericho fell, after the people had marched around them for seven days. By faith the prostitute Rahab, because she welcomed the spies in peace, did not perish with those who were disobedient."
+        },
+        {
+          "reference": "2 Corinthians 10:4",
+          "text": "The weapons of our warfare are not the weapons of the world. Instead, they have divine power to demolish strongholds."
+        },
+        {
+          "reference": "Ephesians 2:14",
+          "text": "For He Himself is our peace, who has made the two one and has torn down the dividing wall of hostility."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 2 and Joshua 6",
+          "note": "Read the Rahab account in chapter 2 first, then chapter 6. Watch the scarlet cord and the marked house carry across both chapters, from promise to fulfillment."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Rahab",
+      "title": "The Outsider Spared at Jericho",
+      "description": "A Canaanite woman of Jericho, named in Scripture as a prostitute, who hid Israel's two spies and asked for mercy when the city fell. She had heard what the LORD had done at the Red Sea and believed He was 'God in the heavens above and on the earth below' (Joshua 2:11) - and acted on it, hanging a scarlet cord in her window. When the wall collapsed, her household was the one place inside the doomed city that judgment spared. She lived among Israel 'to this day' and entered the line of King David - and of Jesus.",
+      "keyQuote": "For the LORD your God is God in the heavens above and on the earth below.",
+      "lessonForUs": "Rahab had no pedigree, no record, no claim - only faith that took refuge in mercy before the wall ever moved. The God who tears down impossible walls also marks out a house where the unlikeliest outsider is spared and brought home.",
+      "heading": "The Outsider Spared at Jericho"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1690,
+  "scriptureReference_full": "Joshua 6:1-5, 16, 20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (natatti, natan H5414) reflects standard lexical sources; the Jericho/yareach association is a common philological note. Rahab's place in the Messianic genealogy follows Matthew 1:5."
+  ]
 }

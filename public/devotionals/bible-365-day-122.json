@@ -1,38 +1,177 @@
 {
   "day": 122,
-  "title": "Elisha Ministry — Day 3 — Pivot",
-  "teaser": "Day 122 of Bible 365 — 2 Kings 4-13",
+  "title": "Wash and be clean",
+  "teaser": "A general carries silver and gold to buy a cure, and is told to dip in a muddy river seven times like a child. The gift he cannot purchase, he can only receive.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 122"
+      "type": "scripture",
+      "reference": "2 Kings 5:10-14",
+      "translation": "BSB",
+      "emphasis": [
+        "wash yourself seven times in the Jordan",
+        "you will be clean",
+        "like that of a little child",
+        "Wash and be cleansed"
+      ],
+      "hebrewOriginal": "רְחַץ וּטְהָר",
+      "passage": "Then Elisha sent him a messenger, who said, \"Go and wash yourself seven times in the Jordan, and your flesh will be restored, and you will be clean.\" But Naaman went away angry, saying, \"I thought that he would surely come out, stand and call on the name of the LORD his God, and wave his hand over the spot to cure my leprosy. Are not the Abanah and Pharpar, the rivers of Damascus, better than all the waters of Israel? Could I not have washed in them and been cleansed?\" So he turned and went away in a rage. Naaman's servants, however, approached him and said, \"My father, if the prophet had told you to do some great thing, would you not have done it? How much more, then, when he tells you, 'Wash and be cleansed'?\" So Naaman went down and dipped himself in the Jordan seven times, according to the word of the man of God, and his flesh was restored and became like that of a little child, and he was clean."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "טָהֵר",
+      "transliteration": "taher",
+      "pronunciation": "tah-HARE",
+      "meaning": "to be clean, to be pure, to be pronounced clean",
+      "rootMeaning": "Taher is not the word for washing dirt off skin. It is the word for being made ceremonially, ritually, wholly clean - the kind of clean a priest declares over a person, not the kind a person scrubs into himself. It describes a verdict as much as a condition.",
+      "usageNote": "This is the same word the Torah uses for the cleansing of a leper in Leviticus 13-14, where only the priest may pronounce the verdict \"clean.\" When Elisha says rechats u-tehar - \"wash and be clean\" - he is not prescribing a bath. He is promising a priestly verdict Naaman cannot pronounce over himself. The same root stands behind David's plea, \"wash me, and I will be whiter than snow\" (Psalm 51:7).",
+      "wordByWord": [
+        {
+          "word": "רְחַץ",
+          "transliteration": "rechats",
+          "meaning": "wash, bathe - the plain act of going under the water"
+        },
+        {
+          "word": "וּ",
+          "transliteration": "u",
+          "meaning": "and, so that - joining the act to its result"
+        },
+        {
+          "word": "טְהָר",
+          "transliteration": "tehar",
+          "meaning": "be clean, be pronounced pure - the verdict the washing receives"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שֶׁבַע / sheva",
+          "reference": "Seven (sheva) carries the sense of fullness and completion, the number of the Sabbath and of covenant oaths. Naaman is told to dip not three times or six but seven - not a partial cleansing he can pace himself, but a complete one he must submit to all the way down."
+        }
+      ],
+      "strongsNumber": "H2891",
+      "definition": "to be clean, to be pure; to purify, to pronounce or make clean (ceremonially or morally)",
+      "usage": "Taher belongs to the priest and to God. A man can wash; only God can declare clean. That distinction is the whole drama of the chapter: Naaman arrives able to do, and leaves having only received."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Great Man With the One Word at the End",
+      "body": "The book of Kings has a way of building a man up in a single sentence and then knocking the floor out from under him with the last word. \"Now Naaman, the commander of the army of the king of Aram, was a great man in his master's sight and highly regarded, for through him the LORD had given victory to Aram. And he was a mighty man of valor\" - and then, like a stone dropped: \"but he was a leper.\"\n\nEverything in front of that final clause is real. The rank, the regard, the victories - even, the text says, victories the LORD Himself had given through this foreign general. But leprosy does not read a resume. It spreads under the armor. The greatest man in Aram carried a thing inside his own skin that all his greatness could not touch.\n\nThe cure, when word of it finally reaches him, comes from the least likely mouth in the story: a captive Israelite girl, taken in one of Naaman's own raids, now serving in his wife's household. She has every reason for silence. Instead she speaks: \"If only my master would go to the prophet who is in Samaria, he would cure him.\" The whole rescue begins with the kindness of a slave toward her captor. Naaman, used to commanding, sets out to purchase his cure the way a great man buys anything - with a letter from his king, ten talents of silver, six thousand shekels of gold, ten sets of clothing. He is bringing a fortune to a transaction. He does not yet know there is nothing here to buy.",
+      "keyInsight": "Naaman comes to Israel believing his disease is a problem to be solved by the right amount of power and money. He will learn it is a verdict only God can reverse - and a gift only the empty-handed can receive.",
+      "content": "The book of Kings has a way of building a man up in a single sentence and then knocking the floor out from under him with the last word. \"Now Naaman, the commander of the army of the king of Aram, was a great man in his master's sight and highly regarded, for through him the LORD had given victory to Aram. And he was a mighty man of valor\" - and then, like a stone dropped: \"but he was a leper.\"\n\nEverything in front of that final clause is real. The rank, the regard, the victories - even, the text says, victories the LORD Himself had given through this foreign general. But leprosy does not read a resume. It spreads under the armor. The greatest man in Aram carried a thing inside his own skin that all his greatness could not touch.\n\nThe cure, when word of it finally reaches him, comes from the least likely mouth in the story: a captive Israelite girl, taken in one of Naaman's own raids, now serving in his wife's household. She has every reason for silence. Instead she speaks: \"If only my master would go to the prophet who is in Samaria, he would cure him.\" The whole rescue begins with the kindness of a slave toward her captor. Naaman, used to commanding, sets out to purchase his cure the way a great man buys anything - with a letter from his king, ten talents of silver, six thousand shekels of gold, ten sets of clothing. He is bringing a fortune to a transaction. He does not yet know there is nothing here to buy."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Donor Who Couldn't Get a Seat",
+      "body": "A man I'll call David spent thirty years becoming the kind of person other people thank publicly. His name is on a wing of a hospital and a library reading room. When his marriage fell apart, he did what had always worked: he wrote checks. He paid for the best counselor, the best retreat, the best books. He treated the wreckage in his own house like a project he could fund his way out of.\n\nWhat undid him was a small thing. A friend from his church, not a professional, sat with him on a back porch one evening and said almost nothing - just stayed, and at the end prayed three plain sentences over him. David told me later it was the first time in years anyone had given him something he had not arranged and could not repay. He wept like he hadn't since he was a boy. \"I came ready to handle it,\" he said. \"I wasn't ready to be handled.\"\n\nNaaman came to Israel ready to handle it. The hardest thing the great are ever asked to do is not a great thing. It is to stand still, empty-handed, and let themselves be given to.",
+      "connectionToTheme": "The cure that healed David's pride was the same shape as the cure that healed Naaman's flesh: not something achieved, but something received from a hand he could not pay.",
+      "content": "A man I'll call David spent thirty years becoming the kind of person other people thank publicly. His name is on a wing of a hospital and a library reading room. When his marriage fell apart, he did what had always worked: he wrote checks. He paid for the best counselor, the best retreat, the best books. He treated the wreckage in his own house like a project he could fund his way out of.\n\nWhat undid him was a small thing. A friend from his church, not a professional, sat with him on a back porch one evening and said almost nothing - just stayed, and at the end prayed three plain sentences over him. David told me later it was the first time in years anyone had given him something he had not arranged and could not repay. He wept like he hadn't since he was a boy. \"I came ready to handle it,\" he said. \"I wasn't ready to be handled.\"\n\nNaaman came to Israel ready to handle it. The hardest thing the great are ever asked to do is not a great thing. It is to stand still, empty-handed, and let themselves be given to."
+    },
+    {
+      "type": "insight",
+      "heading": "He Wouldn't Even Come to the Door",
+      "body": "Notice the insult Naaman cannot get over. He arrives with his horses and chariots and stands at the door of Elisha's house - and the prophet does not come out. Elisha sends a messenger. The general who carries a king's letter is handed instructions by a servant: \"Go and wash yourself seven times in the Jordan.\"\n\nNaaman's rage is precise. \"I thought that he would surely come out, stand and call on the name of the LORD his God, and wave his hand over the spot.\" He had scripted the healing. There would be ceremony, a gesture worthy of his rank, a great man treated by a great man. Instead: no audience, no theater, a muddy river, and a number - seven. \"Are not the Abanah and Pharpar, the rivers of Damascus, better than all the waters of Israel?\"\n\nHere is the thing the chapter turns on. Elisha's refusal to come to the door is not rudeness. It is mercy. If Elisha had performed the cure, Naaman would have left owing a great prophet. By sending word through a servant and pointing him to a free and humble river, Elisha makes sure that when Naaman is healed, he will know past all doubting that no man did this. The cleansing has to come with no human face on it, so that only one face is left to thank.",
+      "historicalContext": "Leprosy in the ancient world was not only a disease but a sentence of exclusion. Under the Law of Israel a leper was put outside the camp and had to cry \"Unclean, unclean\" so others could keep their distance (Leviticus 13:45-46). To be made taher - clean - was to be allowed back among the living. Naaman, a pagan general, would have known the same dread of the wasting skin even outside Israel's covenant. The disease made every culture's great man, eventually, an outcast.",
+      "fascinatingFact": "The Jordan was not impressive. Naaman's home rivers, the Abanah and Pharpar, ran clear and cold off the mountains above Damascus; the Jordan was a brown, sluggish stream by comparison. God did not choose the Jordan because the water was special. He chose it because it was not - so the power could never be confused with the river. The same Jordan is where, centuries later, crowds would go down into the water at the preaching of John, and where Jesus Himself would be baptized.",
+      "content": "Notice the insult Naaman cannot get over. He arrives with his horses and chariots and stands at the door of Elisha's house - and the prophet does not come out. Elisha sends a messenger. The general who carries a king's letter is handed instructions by a servant: \"Go and wash yourself seven times in the Jordan.\"\n\nNaaman's rage is precise. \"I thought that he would surely come out, stand and call on the name of the LORD his God, and wave his hand over the spot.\" He had scripted the healing. There would be ceremony, a gesture worthy of his rank, a great man treated by a great man. Instead: no audience, no theater, a muddy river, and a number - seven. \"Are not the Abanah and Pharpar, the rivers of Damascus, better than all the waters of Israel?\"\n\nHere is the thing the chapter turns on. Elisha's refusal to come to the door is not rudeness. It is mercy. If Elisha had performed the cure, Naaman would have left owing a great prophet. By sending word through a servant and pointing him to a free and humble river, Elisha makes sure that when Naaman is healed, he will know past all doubting that no man did this. The cleansing has to come with no human face on it, so that only one face is left to thank."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Naaman could not buy, command, or stage his own cleansing. He had to go down into a river he despised, do a humble thing seven times, and let God make him clean - and he came up with skin \"like that of a little child.\"",
+      "modernApplication": "We still arrive at God with our Abanah and Pharpar - the better rivers we'd prefer to be cleansed in. We'd rather earn it than receive it, rather pay than be pitied, rather perform a great thing than do the small humbling thing we're actually asked to do. The grace that heals is never the one we script. It is the one we stoop to take.",
+      "connectionPoint": "Naaman is the one outsider Jesus singled out by name. In His first sermon in Nazareth, Jesus said, \"There were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed - only Naaman the Syrian\" (Luke 4:27). He held up a foreign general to His hometown to say that God's healing has always reached past the people who assumed they had first claim on it, to whoever will come down to the water with empty hands.",
+      "newTestamentEcho": "Elisha would not come to the door; Christ does. When a leper knelt before Jesus and said, \"If You are willing, You can make me clean,\" Jesus did the thing no one did to a leper - He reached out His hand and touched him, and said, \"I am willing. Be clean\" (Mark 1:40-42). The same word, clean, taher made flesh. Naaman dipped seven times in a river to be made like a child; at the cross the One who was clean was made unclean for us, going down into a death He did not owe, so that we could come up clean and never pay for it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you bringing silver and gold to God - trying to pay for, earn, or stage something He is simply offering to give you?",
+      "additionalQuestions": [
+        "What is the small, humbling thing you suspect God is actually asking of you, while you keep waiting for a great thing more befitting who you think you are?",
+        "Who is the 'captive girl' in your life - the unlikely, overlooked person whose word might be pointing you toward healing if you'd listen?",
+        "Naaman came up 'like a little child.' What would it cost your pride to be made small enough to simply receive?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have stood at Your door with my horses and chariots, expecting to be met as a great one and healed on my terms. Forgive my Abanah and Pharpar - the better rivers I keep preferring to the humble one You point me to. Strip the silver out of my hands. Teach me to do the small obedient thing seven times over, all the way down. And make me clean - not because I came out to call on Your name in a way worthy of me, but because You came out, touched what no one would touch, and said, 'I am willing.' Make me like a little child again. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find the one small, humbling instruction you have been resisting because it feels beneath you - the apology you won't make, the help you won't ask for, the unglamorous obedience you keep waiting to upgrade - and do it. Go down into the muddy river once. Then again. Trust that the cleansing is in the obeying, not in the impressiveness.",
+      "leavingAtCross": [
+        "The silver and gold - the belief that I can purchase, earn, or repay what God means to give me free",
+        "The script I wrote for how my healing should look, and my anger when God refuses to follow it",
+        "The pride that would rather do a great thing than the small clean thing actually asked of me"
+      ],
+      "receivingFromCross": [
+        "A cleansing I cannot manufacture and never have to repay, declared over me by God Himself",
+        "The freedom of being made 'like a little child' - small enough, at last, to simply receive",
+        "The touch of the One who was made unclean in my place so that I could be pronounced clean"
+      ],
+      "content": "Today, find the one small, humbling instruction you have been resisting because it feels beneath you - the apology you won't make, the help you won't ask for, the unglamorous obedience you keep waiting to upgrade - and do it. Go down into the muddy river once. Then again. Trust that the cleansing is in the obeying, not in the impressiveness."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Elisha send a messenger instead of coming out to Naaman himself - and how is that refusal actually an act of mercy rather than disrespect?",
+        "What is the difference between rechats (wash) and taher (be clean) - between what Naaman could do and what only God could do?",
+        "Why did God choose the unimpressive Jordan over the clearer rivers Naaman preferred, and how does that guard the meaning of the miracle?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place where you have been trying to pay for or earn something from God that He is offering to give you freely.",
+        "Talk about the 'small humbling thing' each of you is avoiding because a part of you feels it is beneath you.",
+        "Ask each other: where do you most need to be made 'like a little child' - and what is your pride afraid would happen if you were?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 5:3",
+          "text": "She said to her mistress, \"If only my master would go to the prophet who is in Samaria, he would cure him of his leprosy.\""
+        },
+        {
+          "reference": "2 Kings 5:15",
+          "text": "Then Naaman and all his attendants went back to the man of God, stood before him, and declared, \"Now I know for sure that there is no God in all the earth except in Israel.\""
+        },
+        {
+          "reference": "Luke 4:27",
+          "text": "And there were many lepers in Israel in the time of Elisha the prophet. Yet not one of them was cleansed - only Naaman the Syrian."
+        },
+        {
+          "reference": "Mark 1:40-42",
+          "text": "Then a leper came to Jesus, begging on his knees: \"If You are willing, You can make me clean.\" Moved with compassion, Jesus reached out His hand and touched the man. \"I am willing,\" He said. \"Be clean!\" And immediately the leprosy left him, and the man was cleansed."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 5",
+          "note": "Read the whole chapter, watching the reversal: a great man is sent to a servant's word, a free river, and a child's skin - and a greedy servant (Gehazi, vv. 20-27) tries to put a price on grace and takes the leprosy home with him."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Naaman",
+      "title": "The Syrian General Cleansed in the Jordan",
+      "description": "Commander of the army of Aram (Syria), Israel's enemy, and a leper. A great man undone by a disease no greatness could touch, he was led to healing by a captive Israelite girl's word and an Israelite prophet's command. When he finally stooped to wash seven times in the despised Jordan, his flesh was restored \"like that of a little child,\" and he confessed the LORD as the only God in all the earth - the first foreigner in the story to do so. Centuries later, Jesus would name him as the one leper cleansed in Elisha's day (Luke 4:27).",
+      "keyQuote": "Now I know for sure that there is no God in all the earth except in Israel.",
+      "lessonForUs": "Naaman's greatness was never the problem; his refusal to be small was. Healing came the moment he stopped scripting it and went down into the water God appointed. The cure we cannot buy or earn is the only one that can make us clean - and it is given, every time, to the empty-handed.",
+      "heading": "The Syrian General Cleansed in the Jordan"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2672,
+  "scriptureReference_full": "2 Kings 4-13 (center: 2 Kings 5:10-14)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain (CC0 1.0).",
+    "Hebrew word study (taher H2891; rechats; sheva) reflects standard lexical sources. The Levitical cleansing-of-the-leper background (Leviticus 13-14) and the Jordan/baptism resonance are widely attested in Christian commentary; no claim is made beyond the biblical text."
+  ]
 }

@@ -1,38 +1,186 @@
 {
   "day": 124,
-  "title": "Elisha Ministry — Day 5 — Resolution",
-  "teaser": "Day 124 of Bible 365 — 2 Kings 4-13",
+  "title": "Life that outlasts the grave",
+  "teaser": "Elisha spends his whole ministry handing life back to the dying — and then dies. But the last word is not the funeral. It is a corpse thrown into his tomb that touches his bones and stands up.",
   "framework": "2 Kings 4-13 — Elisha Ministry",
   "scriptureReference": "2 Kings 4-13",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 124"
+      "type": "scripture",
+      "reference": "2 Kings 13:14, 20-21",
+      "translation": "BSB",
+      "emphasis": [
+        "My father, my father",
+        "Elisha died and was buried",
+        "the man was revived and stood up on his feet"
+      ],
+      "hebrewOriginal": "וַיִּגַּע הָאִישׁ בְּעַצְמוֹת אֱלִישָׁע וַיְחִי וַיָּקָם עַל־רַגְלָיו",
+      "passage": "When Elisha had fallen sick with the illness from which he would die, Jehoash king of Israel came down to him and wept over him, saying, \"My father, my father, the chariots and horsemen of Israel!\" ... And Elisha died and was buried. Now the Moabite raiders used to come into the land every spring. Once, as the Israelites were burying a man, suddenly they saw a band of raiders, so they threw the man's body into Elisha's tomb. And as soon as his body touched the bones of Elisha, the man was revived and stood up on his feet."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 4-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 4-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיְחִי וַיָּקָם",
+      "transliteration": "vaychi vayyaqom",
+      "pronunciation": "vai-KHEE vai-YA-kom",
+      "meaning": "and he lived, and he stood up",
+      "rootMeaning": "Chayah means to live, to be revived, to come back to life. Qum means to rise, to stand, to get up. Laid side by side they tell the whole story in two beats: the dead man lives, the living man stands.",
+      "usageNote": "Qum is the verb that runs under the whole resurrection hope of Scripture. Elisha himself used it earlier - when he raised the Shunammite's son he sent word, \"Arise\" (qum), and later spoke of the boy he had \"restored to life\" (2 Kings 8:1). The same root will one day be spoken over a little girl: Talitha koum - \"Little girl, arise.\"",
+      "wordByWord": [
+        {
+          "word": "וַיִּגַּע",
+          "transliteration": "vayyiga",
+          "meaning": "and he touched - mere contact, nothing more"
+        },
+        {
+          "word": "בְּעַצְמוֹת",
+          "transliteration": "be'atzmot",
+          "meaning": "with the bones - not a living hand, only what death left behind"
+        },
+        {
+          "word": "אֱלִישָׁע",
+          "transliteration": "Elisha",
+          "meaning": "Elisha - whose name means 'God is salvation'"
+        },
+        {
+          "word": "וַיְחִי",
+          "transliteration": "vaychi",
+          "meaning": "and he lived, he was revived"
+        },
+        {
+          "word": "וַיָּקָם עַל־רַגְלָיו",
+          "transliteration": "vayyaqom al-raglav",
+          "meaning": "and he stood up on his feet"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱלִישָׁע",
+          "reference": "The prophet's name, Elisha, means 'God is salvation' - close kin to the name Yeshua, Jesus, 'the LORD saves.' The man whose dead bones gave life was named, his whole life, for the salvation of God."
+        }
+      ],
+      "strongsNumber": "H2421",
+      "definition": "chayah: to live, to revive, to be made alive again",
+      "usage": "The narrator spends no words on wonder. Four quick verbs - touched, lived, stood, feet - and the scene is over. The restraint is the point: life from the grave is reported as plainly as a sunrise."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elisha Ministry. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ heals the leper (Mark 1:40-45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Ministry That Ends at a Graveside, and Doesn't",
+      "body": "For ten chapters Elisha has been the hands of God in a dying kingdom. He receives a double portion of Elijah's spirit and parts the Jordan with a dead man's cloak (2 Kings 2). He fills a widow's empty jars with oil so her sons are not sold into slavery (4:1-7). He prays a dead boy back to breath, and the child sneezes seven times and opens his eyes (4:32-35). He sends a leprous foreign general into the Jordan and brings him up with the skin of a little child (5:14). He opens a terrified servant's eyes to see the hills full of horses and chariots of fire (6:17). Wherever the prophet goes, death loses ground.\n\nThen, in chapter 13, the prophet himself falls sick. The king who once might have feared him comes and weeps the very words Elisha had wept over Elijah a lifetime before: \"My father, my father, the chariots and horsemen of Israel!\" The man who handed life to so many cannot keep it for himself. \"And Elisha died and was buried.\" Five English words close a ministry that had held back the grave for half a century.\n\nIf the chapter stopped there, it would read like every other prophet's epitaph. But it does not stop there. Some time later, men are burying a body in a hurry, raiders on the horizon, and they fling the corpse into the nearest open tomb - Elisha's. The dead man touches the dead prophet's bones, and stands up on his feet.",
+      "keyInsight": "Elisha gave life while he lived; then his very grave gave life. The power he carried did not drain out at his death - it ran one verse past it, as if to say the story of God's salvation will not be buried with the man who bore it.",
+      "content": "For ten chapters Elisha has been the hands of God in a dying kingdom. He receives a double portion of Elijah's spirit and parts the Jordan with a dead man's cloak (2 Kings 2). He fills a widow's empty jars with oil so her sons are not sold into slavery (4:1-7). He prays a dead boy back to breath, and the child sneezes seven times and opens his eyes (4:32-35). He sends a leprous foreign general into the Jordan and brings him up with the skin of a little child (5:14). He opens a terrified servant's eyes to see the hills full of horses and chariots of fire (6:17). Wherever the prophet goes, death loses ground.\n\nThen, in chapter 13, the prophet himself falls sick. The king who once might have feared him comes and weeps the very words Elisha had wept over Elijah a lifetime before: \"My father, my father, the chariots and horsemen of Israel!\" The man who handed life to so many cannot keep it for himself. \"And Elisha died and was buried.\" Five English words close a ministry that had held back the grave for half a century.\n\nIf the chapter stopped there, it would read like every other prophet's epitaph. But it does not stop there. Some time later, men are burying a body in a hurry, raiders on the horizon, and they fling the corpse into the nearest open tomb - Elisha's. The dead man touches the dead prophet's bones, and stands up on his feet."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hands That Kept Working",
+      "body": "There is a kind of person whose influence does not stop when they leave the room. A teacher dies and twenty years later a student catches herself using his exact phrase with her own children. A grandmother is buried and her recipe, her habit of praying out loud while she cooked, her way of forgiving fast - all of it keeps standing people up long after the funeral.\n\nWe call it legacy, and usually we mean memory: the dead live on in what we remember of them. But the man thrown into Elisha's tomb did not remember anything. He was a corpse. He did not draw strength from Elisha's example or take comfort in his teaching. He touched bones and breathed.\n\nThat is more than legacy. Legacy is what the living do with the dead. This is what the dead did with the living. The text is careful: it was not Elisha's words, not his reputation, not the lessons he left behind. It was contact - the nearness of a man so saturated with the life of God that even his bones had not let go of it.",
+      "connectionToTheme": "The miracle is not memory outliving a man. It is life itself lodged in a man so deeply that death could not empty him of it - which is exactly the hope the gospel will make personal.",
+      "content": "There is a kind of person whose influence does not stop when they leave the room. A teacher dies and twenty years later a student catches herself using his exact phrase with her own children. A grandmother is buried and her recipe, her habit of praying out loud while she cooked, her way of forgiving fast - all of it keeps standing people up long after the funeral.\n\nWe call it legacy, and usually we mean memory: the dead live on in what we remember of them. But the man thrown into Elisha's tomb did not remember anything. He was a corpse. He did not draw strength from Elisha's example or take comfort in his teaching. He touched bones and breathed.\n\nThat is more than legacy. Legacy is what the living do with the dead. This is what the dead did with the living. The text is careful: it was not Elisha's words, not his reputation, not the lessons he left behind. It was contact - the nearness of a man so saturated with the life of God that even his bones had not let go of it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Miracle With No Audience and No Sermon",
+      "body": "Every other Elisha miracle has a setting and a meaning attached. The oil teaches that God fills empty vessels. The Shunammite's son teaches that God hears the desperate. Naaman teaches that pride must stoop to be washed. The chariots of fire teach that the unseen armies of God outnumber the seen armies of men. Each one comes with a lesson the reader is meant to carry away.\n\nThe last one comes with nothing. No prophet present to pray. No grieving mother to comfort. No watching crowd to be amazed. No word spoken over the body. The men who throw the corpse in are not even trying to do something holy - they are running from raiders and need the hole. The miracle happens by accident, to a stranger we never meet again, and the narrator moves on to the next king as though nothing remarkable occurred.\n\nThat strangeness is the gift. A miracle stripped of every human cause - no faith, no prayer, no merit, no ceremony - leaves only one thing standing in the frame: the sheer, unkillable life of the God whose name Elisha carried. When everything human is subtracted, what remains is the bare fact that contact with the life of God raises the dead. The reader is left holding a promise the prophet never explained, because it was never finally about the prophet.",
+      "historicalContext": "Second Kings was likely compiled during or after the Babylonian exile, when Israel and Judah had both been carried off and the nation looked, for all the world, dead and buried. To a people in exile, the Elisha cycle was bracing news: their God had a long history of bringing life out of graves. The closing image of a corpse rising from a tomb was not just an oddity in an old prophet's biography - it was a rumor of national resurrection, the same hope Ezekiel would see as a valley of dry bones knitting back together (Ezekiel 37).",
+      "fascinatingFact": "Elisha is the only person in Scripture recorded to perform a miracle after his own death. Elijah was taken up without dying; Moses' grave was hidden; but Elisha lies in a known tomb, and that tomb gives life. The prophet whose name means 'God is salvation' becomes, in death, a living parable of the salvation his name announced.",
+      "content": "Every other Elisha miracle has a setting and a meaning attached. The oil teaches that God fills empty vessels. The Shunammite's son teaches that God hears the desperate. Naaman teaches that pride must stoop to be washed. The chariots of fire teach that the unseen armies of God outnumber the seen armies of men. Each one comes with a lesson the reader is meant to carry away.\n\nThe last one comes with nothing. No prophet present to pray. No grieving mother to comfort. No watching crowd to be amazed. No word spoken over the body. The men who throw the corpse in are not even trying to do something holy - they are running from raiders and need the hole. The miracle happens by accident, to a stranger we never meet again, and the narrator moves on to the next king as though nothing remarkable occurred.\n\nThat strangeness is the gift. A miracle stripped of every human cause - no faith, no prayer, no merit, no ceremony - leaves only one thing standing in the frame: the sheer, unkillable life of the God whose name Elisha carried. When everything human is subtracted, what remains is the bare fact that contact with the life of God raises the dead. The reader is left holding a promise the prophet never explained, because it was never finally about the prophet."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A dead man, flung into Elisha's tomb, touches the prophet's bones and stands up alive. Even in his grave, the bearer of God's salvation gives life.",
+      "modernApplication": "Most of us measure a life by what we will leave behind - the savings, the children raised right, the name remembered well. Elisha's tomb quietly relocates the question. The thing worth carrying is not a legacy we manufacture but a life we receive, the kind that holds when our own hands finally let go of everything.",
+      "connectionPoint": "Elisha's grave gives life from the outside in: a body touches bones and revives. It is a shadow, and shadows ask to be followed to their substance. The shadow runs forward to another tomb, in another garden, where life will pour out not because a holy man's remains were nearby, but because the Holy One Himself lay down in death and would not stay.",
+      "newTestamentEcho": "What Elisha's bones hinted, Christ fulfilled. The woman with the issue of blood reaches through a crowd to touch only the hem of His robe, and power goes out of Him and heals her (Mark 5:25-34). But the deeper echo is the empty tomb: where Elisha's grave revived one stranger by contact with dead bones, Christ's grave broke open from the inside, because the One laid there was 'the resurrection and the life' (John 11:25). Elisha's tomb gave life and stayed full. Christ's tomb gave life and went empty."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If your influence outlived you the way Elisha's did, what would actually pass through the contact - your accomplishments, or the life of God in you?",
+      "additionalQuestions": [
+        "Elisha spent decades handing life to others and then could not keep it for himself. Where are you afraid of what will happen when your own strength finally runs out?",
+        "The man in the tomb was raised by nearness, not by anything he did. Where in your life have you been trying to earn what can only be received by contact with God?",
+        "Jehoash wept 'My father, my father' at a deathbed. Who has carried the life of God to you - and have you told them?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You are the God whose life does not stay buried. Elisha gave life until he died, and then his grave gave life still - because the life was always Yours, only carried in him. I have spent so much effort trying to build something that outlasts me. Teach me instead to be near You, to be filled with the life that holds when my own hands let go. Where I am dying - tired, fearful, running out - lay me close to You and let me stand up on my feet. And thank You for the tomb that went empty, where the One named for Your salvation rose so that I never need fear the grave again. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "This week, stop measuring your life by what you can leave behind, and start measuring it by Who you are near. Spend ten unhurried minutes a day simply close to God in His Word and in prayer - not to produce anything, but to be filled with the life that outlasts you.",
+      "leavingAtCross": [
+        "The pressure to build a legacy that proves my life mattered",
+        "The fear of the day my own strength finally gives out",
+        "The lie that what I leave behind depends entirely on what I can produce"
+      ],
+      "receivingFromCross": [
+        "A life that is received, not manufactured - the very life of God carried in me",
+        "Freedom from the dread of the grave, because Christ's tomb stands empty",
+        "The promise that what God plants in me runs one verse past my own death"
+      ],
+      "content": "This week, stop measuring your life by what you can leave behind, and start measuring it by Who you are near. Spend ten unhurried minutes a day simply close to God in His Word and in prayer - not to produce anything, but to be filled with the life that outlasts you."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that the last Elisha miracle has no prayer, no prophet present, and no watching crowd - that everything human is stripped out of it?",
+        "How is the man raised by Elisha's bones different from what we usually mean by 'legacy'?",
+        "Elisha's tomb gave life and stayed full; Christ's tomb gave life and went empty. What is the difference between a shadow and its substance?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the person who first carried the life of God to you. What did you receive from being near them?",
+        "Talk honestly about what you are trying to build that you secretly hope will outlast you - and where God might be inviting you to receive instead of produce.",
+        "Ask each other: when your own strength runs out, what do you actually believe stands up on its feet?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 4:34-35",
+          "text": "Then Elisha got on the bed and lay on the boy, mouth to mouth, eye to eye, and hand to hand. As he stretched himself out over him, the boy's body became warm... and the boy sneezed seven times and opened his eyes."
+        },
+        {
+          "reference": "Ezekiel 37:5",
+          "text": "This is what the Lord GOD says to these bones: I will cause breath to enter you, and you will come to life."
+        },
+        {
+          "reference": "John 11:25",
+          "text": "Jesus said to her, 'I am the resurrection and the life. Whoever believes in Me will live, even though he dies.'"
+        },
+        {
+          "reference": "1 Corinthians 15:20",
+          "text": "But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 2-13",
+          "note": "Read the Elisha cycle in one sitting, tracking every place death loses ground - the parted Jordan (2), the oil (4), the Shunammite's son (4), Naaman (5), the chariots of fire (6) - then end on the bones (13:21) and ask what the whole arc is pointing toward."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elisha",
+      "title": "The Prophet Whose Grave Gave Life",
+      "description": "Successor to Elijah, anointed prophet in the northern kingdom of Israel for roughly fifty years across the reigns of several kings. He asked for and received a double portion of Elijah's spirit, and his ministry became a long catalog of life pressing back against death: oil for a widow, a son raised, a leper cleansed, blind eyes opened, an army turned away. His name means 'God is salvation.' He died of an ordinary illness and was buried in an ordinary tomb - which then raised a dead man who was thrown against his bones.",
+      "keyQuote": "Do not be afraid, for those who are with us are more than those who are with them.",
+      "lessonForUs": "Elisha shows us a life so filled with the life of God that it could not be fully buried - a shadow of the One who would rise from His own grave and never need anyone to carry His salvation for Him again. The point of Elisha was never Elisha. It was the salvation his name announced.",
+      "heading": "The Prophet Whose Grave Gave Life"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2384,
+  "scriptureReference_full": "2 Kings 4-13 (anchored in 2 Kings 13:14, 20-21)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chayah H2421, qum) reflects standard lexical sources. The connection between the name Elisha ('God is salvation') and the resurrection hope is a long-standing pattern in Christian reading of the prophets; the dry-bones parallel draws on Ezekiel 37."
+  ]
 }

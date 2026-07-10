@@ -1,38 +1,176 @@
 {
   "day": 68,
-  "title": "Achan’s hidden sin",
-  "teaser": "Day 68 of Bible 365 — Joshua 7",
-  "framework": "Joshua 7 — Hidden things bring exposed grief",
+  "title": "The thing buried under the tent",
+  "teaser": "Day 68 of Bible 365 — Joshua 7. Israel loses a battle it should have won, and the reason is a cloak and some silver buried in the dirt of one man's tent. What we hide does not stay private.",
+  "framework": "Joshua 7 — Hidden sin disables the whole camp; God exposes in order to restore",
   "scriptureReference": "Joshua 7",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 68"
+      "type": "scripture",
+      "reference": "Joshua 7:1, 19-21, 26",
+      "translation": "BSB",
+      "emphasis": [
+        "acted unfaithfully",
+        "give glory to the LORD",
+        "I coveted them and took them",
+        "the Valley of Achor"
+      ],
+      "hebrewOriginal": "עֵמֶק עָכוֹר",
+      "passage": "The Israelites, however, acted unfaithfully regarding the things devoted to destruction. Achan son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Judah, took some of what was set apart. So the anger of the LORD burned against the Israelites. ... So Joshua said to Achan, \"My son, give glory to the LORD, the God of Israel, and make a confession to Him. I urge you to tell me what you have done; do not hide it from me.\" \"It is true,\" Achan replied, \"I have sinned against the LORD, the God of Israel. This is what I did: When I saw among the spoils a beautiful cloak from Shinar, two hundred shekels of silver, and a bar of gold weighing fifty shekels, I coveted them and took them. They are hidden in the ground inside my tent, with the silver underneath.\" ... And they heaped over Achan a large pile of rocks that remains to this day. So the LORD turned from His burning anger. Therefore that place is called the Valley of Achor to this day."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 7**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 7 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עָכַר",
+      "transliteration": "akhar",
+      "pronunciation": "ah-KHAR",
+      "meaning": "to trouble, to bring disaster on, to make muddy",
+      "rootMeaning": "The verb akhar pictures clear water suddenly stirred to mud - a thing that was usable made useless, a community thrown into confusion. It is what one person's hidden act does to everyone downstream of it.",
+      "usageNote": "The whole chapter turns on a play on this root. The man is Achan (Akan); the valley where the trouble ends is Achor (Akhor); and the verb that Joshua throws at him in verse 25 - \"Why have you brought this trouble (akhar) upon us?\" - is the same sound. The narrator is making the name and the deed rhyme: the troubler troubles the camp, and the place keeps the memory in its name.",
+      "wordByWord": [
+        {
+          "word": "עָכָן",
+          "transliteration": "Akan",
+          "meaning": "Achan - the man's name, built on the sound of 'trouble'"
+        },
+        {
+          "word": "עֵמֶק",
+          "transliteration": "emeq",
+          "meaning": "valley, low plain"
+        },
+        {
+          "word": "עָכוֹר",
+          "transliteration": "Akhor",
+          "meaning": "Achor - 'Trouble'; the valley named for the disaster that ended there"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֵמֶק עָכוֹר",
+          "reference": "The Valley of Achor - 'the Valley of Trouble' - reappears centuries later in Hosea 2:15, where God promises to make this same valley 'a gateway of hope.' The place of the buried sin becomes the door God opens. The name does not change; what God does with it does."
+        }
+      ],
+      "strongsNumber": "H5916",
+      "definition": "to stir up, disturb, trouble; to bring calamity upon",
+      "usage": "To akhar a thing is to ruin it for everyone, the way one drop of dye clouds a whole cup of water. Achan's private theft did not stay private; it muddied the entire nation's standing before God."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hidden things bring exposed grief. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ exposes to heal (1 Cor 4:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Battle They Lost Before They Fought It",
+      "body": "Israel had just watched the walls of Jericho fall flat without a battering ram. Ai was the next town - smaller, weaker, barely worth the effort. The scouts came back almost laughing: send two or three thousand men, no need to wear out the whole army. So they went up confident, and they came running back. Thirty-six men dead, the rest in flight, and the heart of the people, the text says, melted like water.\n\nJoshua does what a faithful leader does. He tears his clothes, falls on his face before the ark, and pours out the question that has tormented God's people in every defeat: why? Why bring us across the Jordan only to hand us to the Amorites? And God's answer cuts straight through the lament. \"Stand up! Why have you fallen on your face? Israel has sinned.\"\n\nNotice the grammar. Not Achan has sinned - Israel has sinned. One man took a cloak and some silver from Jericho's spoil and buried it under his tent, and God speaks of it as the sin of the entire nation. This is the hard, true thing the chapter is built to teach: there is no such thing as a sin that stays private. Achan thought he had hidden it in the ground. He had buried it in the body of the whole people, and the whole people went up to Ai already weakened by what one of them was carrying."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Hairline Crack",
+      "body": "An engineer who inspects old bridges once described the thing he dreads most. It is not the obvious damage - the rusted-through beam, the section everyone can see is failing. Those get fixed. What he fears is the hairline fracture deep inside a load-bearing member, invisible from the road, carrying weight every single day as though nothing were wrong. The bridge looks fine. Cars cross it by the thousand. And then one ordinary morning, under no unusual load, it gives way, and everyone is baffled, because nothing visible had changed.\n\nThe crack had been there for years. It simply had not been asked to bear quite that much until the day it failed.\n\nAchan's tent looked like every other tent in the camp. He stood in the assembly like every other soldier. From the road, nothing showed. But Israel went up to Ai carrying a fracture it could not see, and on an easy morning, against an easy enemy, it gave way.",
+      "connectionToTheme": "Hidden sin is structural, not cosmetic. It bears weight silently until the load it cannot carry arrives - and then the failure looks sudden to everyone who could not see the crack.",
+      "content": "An engineer who inspects old bridges once described the thing he dreads most. It is not the obvious damage - the rusted-through beam, the section everyone can see is failing. Those get fixed. What he fears is the hairline fracture deep inside a load-bearing member, invisible from the road, carrying weight every single day as though nothing were wrong. The bridge looks fine. Cars cross it by the thousand. And then one ordinary morning, under no unusual load, it gives way, and everyone is baffled, because nothing visible had changed.\n\nThe crack had been there for years. It simply had not been asked to bear quite that much until the day it failed.\n\nAchan's tent looked like every other tent in the camp. He stood in the assembly like every other soldier. From the road, nothing showed. But Israel went up to Ai carrying a fracture it could not see, and on an easy morning, against an easy enemy, it gave way."
+    },
+    {
+      "type": "insight",
+      "heading": "\"Give Glory to the LORD\" Is the Strangest Thing to Say to a Thief",
+      "body": "The exposure does not happen with thunder. God could have named Achan directly; instead He has Israel come near tribe by tribe, clan by clan, family by family, man by man - a slow narrowing through a long morning until only one man is left standing. By the time the lot falls on Achan, he has had every hour to step forward and has not. And then comes the line that turns the whole grim scene tender.\n\nJoshua does not say, \"You are caught.\" He says, \"My son, give glory to the LORD, the God of Israel, and make a confession to Him.\" My son. To the man whose hidden cloak just cost thirty-six lives, Joshua speaks the word a father uses. And he frames the confession not as defeat but as worship: to tell the truth now is to give God the glory. Hiding the sin had been a lie about God - that He could not see, that He did not matter enough to obey. Confessing it, even here, even now, hands God back the truth He is owed.\n\nThis is the deepest current under the surface of a brutal story. Confession is not God dragging information out of us. It is the one move left by which a guilty person can still glorify God - by agreeing with Him about what is true.",
+      "historicalContext": "Joshua 7 follows directly on the conquest of Jericho, where everything was placed under cherem - 'devoted to destruction,' set apart wholly to the LORD, not for private taking. Israel knew the terms; the spoil of Jericho belonged to God alone. Achan's theft was not common pilfering but the seizing of what had been sworn to God, which is why the narrative treats it as covenant treason rather than petty crime.",
+      "fascinatingFact": "The text is precise about what Achan took: a beautiful cloak from Shinar (Babylon), two hundred shekels of silver, and a bar of gold weighing fifty shekels. He names the order he wanted them, too - \"I saw... I coveted... I took.\" It is the exact sequence of Eden (Genesis 3:6: she saw, she desired, she took) and of David and Bathsheba. Scripture keeps showing the same three steps because sin keeps walking the same road.",
+      "content": "The exposure does not happen with thunder. God could have named Achan directly; instead He has Israel come near tribe by tribe, clan by clan, family by family, man by man - a slow narrowing through a long morning until only one man is left standing. By the time the lot falls on Achan, he has had every hour to step forward and has not. And then comes the line that turns the whole grim scene tender.\n\nJoshua does not say, \"You are caught.\" He says, \"My son, give glory to the LORD, the God of Israel, and make a confession to Him.\" My son. To the man whose hidden cloak just cost thirty-six lives, Joshua speaks the word a father uses. And he frames the confession not as defeat but as worship: to tell the truth now is to give God the glory. Hiding the sin had been a lie about God - that He could not see, that He did not matter enough to obey. Confessing it, even here, even now, hands God back the truth He is owed.\n\nThis is the deepest current under the surface of a brutal story. Confession is not God dragging information out of us. It is the one move left by which a guilty person can still glorify God - by agreeing with Him about what is true."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "One man's hidden theft made the whole camp unable to stand against its enemies, and God said He would no longer go with Israel until the buried thing was brought out into the open.",
+      "modernApplication": "We still bury cloaks under the tent floor - the kept secret, the quiet compromise, the thing no one knows, that we tell ourselves is private. But sin that is hidden is not contained; it is load-bearing. It weakens marriages, churches, and friendships that cannot name why they keep losing battles they should be winning.",
+      "connectionPoint": "The name of the place where Achan's sin ended is Achor, 'Trouble.' Centuries later the prophet Hosea hears God promise to take that very Valley of Trouble and make it 'a gateway of hope' (Hosea 2:15). The God who exposes the buried thing does not expose in order to destroy us, but to turn the valley of our trouble into a door we could not have found while the sin was still hidden.",
+      "newTestamentEcho": "Paul tells the Corinthians that the Lord 'will bring to light what is hidden in darkness and will expose the motives of men's hearts' (1 Corinthians 4:5) - and the first to walk willingly into that light was Christ Himself, who carried our hidden things out of the dark and into the open of the cross. What Achan hid in the ground and lost, Christ brought into the light and forgave: 'If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness' (1 John 1:9)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you buried under the tent floor - the thing you tell yourself is private, that no one knows, that you would not name out loud?",
+      "additionalQuestions": [
+        "Where in your life have you been quietly losing a battle you should be winning, without letting yourself ask why?",
+        "Joshua called confession 'giving glory to God.' What would it change if you stopped hearing confession as humiliation and started hearing it as worship?",
+        "Is there a relationship that is carrying a hidden crack right now - a thing unsaid that is silently bearing weight it cannot hold?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I have buried things under the tent floor and told myself they were mine to keep. Search the camp of my heart and bring out what I have hidden - not so I will be destroyed, but so I can stand again. Teach me that telling You the truth is not defeat but glory given back to You. You see what is in the ground already. Let me be the one to dig it up and lay it before You, and trust You to make even this valley of trouble a gateway of hope. Through Christ, who carried my hidden things into the light. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one thing you have been keeping buried - to God, and then, if it touches someone else, to that person. Confession out loud is the spade that gets it out of the ground. Do not let it stay private one more day under the belief that hidden means harmless.",
+      "leavingAtCross": [
+        "The cloak buried under the tent floor - the thing I have kept hidden, telling myself it stays private",
+        "The lie that what is concealed is contained, that my secret sin costs no one but me",
+        "The fear that confession is only humiliation, and never worship"
+      ],
+      "receivingFromCross": [
+        "The relief of being known all the way down and still called 'my son'",
+        "The strength of a camp that can stand again, because nothing weakening is left buried in it",
+        "The promise that God exposes in order to restore - turning the valley of trouble into a gateway of hope"
+      ],
+      "content": "Name one thing you have been keeping buried - to God, and then, if it touches someone else, to that person. Confession out loud is the spade that gets it out of the ground. Do not let it stay private one more day under the belief that hidden means harmless."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God say 'Israel has sinned' when only one man, Achan, took the devoted things? What does that teach about how private sin works in a community?",
+        "What is strange and merciful about Joshua calling Achan 'my son' and framing his confession as 'giving glory to the LORD'?",
+        "The valley is named Achor, 'Trouble.' How does Hosea 2:15 - and ultimately the cross - change what that name finally means?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one thing you have been keeping hidden that you suspect is bearing more weight than you admit.",
+        "Talk honestly about whether you experience confession as humiliation or as worship - and why.",
+        "Ask each other: where might a hidden thing be quietly weakening something we love - and what would it take to bring it into the open?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Joshua 8:1",
+          "text": "Then the LORD said to Joshua, \"Do not be afraid or discouraged. Take the whole army with you, and go up and attack Ai. See, I have delivered into your hand the king of Ai, his people, his city, and his land.\""
+        },
+        {
+          "reference": "Hosea 2:15",
+          "text": "There I will give back her vineyards and make the Valley of Achor into a gateway of hope. There she will respond as she did in the days of her youth, as in the day she came up out of Egypt."
+        },
+        {
+          "reference": "Luke 12:2",
+          "text": "There is nothing concealed that will not be disclosed, and nothing hidden that will not be made known."
+        },
+        {
+          "reference": "1 John 1:9",
+          "text": "If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 7-8",
+          "note": "Read both chapters together. Chapter 7 is the defeat at Ai and the exposure of Achan; chapter 8 is the victory at Ai once the buried thing is gone. The two are one story - what hidden sin disabled, confession restored."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Achan",
+      "title": "The Man Who Buried It",
+      "description": "A soldier of the tribe of Judah in the generation that crossed the Jordan. At Jericho, where all the spoil was devoted to the LORD, Achan saw a Babylonian cloak, silver, and gold among the plunder, coveted them, took them, and buried them beneath his tent. His hidden theft cost Israel a battle and thirty-six lives at Ai and broke God's stated willingness to march with the camp - until it was brought to light. Confronted, he confessed in the exact words of every fall since Eden: 'I saw... I coveted... I took.'",
+      "keyQuote": "When I saw among the spoils a beautiful cloak from Shinar... I coveted them and took them. They are hidden in the ground inside my tent.",
+      "lessonForUs": "Achan believed that buried meant safe and private meant harmless. Both were lies. What we hide we do not contain; we make load-bearing. The mercy in his story is the word Joshua used before the end - 'my son' - and the door God later opened in the very valley named for his trouble.",
+      "heading": "The Man Who Buried It"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1934,
+  "scriptureReference_full": "Joshua 7:1, 19-21, 26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (akhar H5916; the Achan / Achor / 'trouble' wordplay) reflects standard lexical sources and the narrative pun internal to Joshua 7:25-26; the Achor-to-hope movement follows Hosea 2:15.",
+    "The bridge inspector illustration is an original composite, not a quotation of any named individual."
+  ]
 }

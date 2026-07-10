@@ -1,38 +1,181 @@
 {
   "day": 338,
-  "title": "Romans: Justified by Faith — Day 2 — Building",
-  "teaser": "Day 338 of Bible 365 — Romans 1-8",
+  "title": "The Whole World in the Dock",
+  "teaser": "Before Romans says one word about being saved, it puts the entire courtroom under the same verdict. Paul builds the case slowly: every mouth silenced — so that grace, when it comes, comes to no one who earned it.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 338"
+      "type": "scripture",
+      "reference": "Romans 3:19-26",
+      "translation": "BSB",
+      "emphasis": [
+        "every mouth may be silenced",
+        "But now",
+        "all have sinned",
+        "justified freely by His grace",
+        "just and to justify"
+      ],
+      "passage": "Now we know that whatever the law says, it says to those who are under the law, so that every mouth may be silenced and the whole world held accountable to God. Therefore no one will be justified in His sight by works of the law. For the law merely brings awareness of sin. But now, apart from the law, the righteousness of God has been revealed, as attested by the Law and the Prophets. And this righteousness from God comes through faith in Jesus Christ to all who believe. There is no distinction, for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus. God presented Him as the atoning sacrifice through faith in His blood, in order to demonstrate His righteousness, because in His forbearance He had passed over the sins committed beforehand. He did this to demonstrate His righteousness at the present time, so as to be just and to justify the one who has faith in Jesus."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δικαιόω",
+      "transliteration": "dikaioō",
+      "pronunciation": "dee-kai-OH-oh",
+      "meaning": "to declare righteous, to acquit, to justify",
+      "rootMeaning": "A courtroom verb. It does not mean to make someone good; it means a judge declaring a defendant in the right. The word shares its root with dikaiosynē (righteousness) and dikaios (just) - the same family of terms Paul stacks one after another through these chapters.",
+      "usageNote": "Paul uses this word-family more densely in Romans than anywhere else in the New Testament. The crucial thing is that it is a verdict, not a process: the gavel falls, and the accused is pronounced acquitted. The drama of Romans 1-3 is that the verdict everyone deserves is 'guilty' (3:19), and the verdict God hands down in Christ is 'righteous' (3:24).",
+      "wordByWord": [
+        {
+          "word": "δικαιόω",
+          "transliteration": "dikaioō",
+          "meaning": "to declare in the right, to acquit (the verb)"
+        },
+        {
+          "word": "δικαιοσύνη",
+          "transliteration": "dikaiosynē",
+          "meaning": "righteousness - the standing the verdict confers"
+        },
+        {
+          "word": "δίκαιος",
+          "transliteration": "dikaios",
+          "meaning": "just, righteous - what God Himself is shown to be (3:26)"
+        },
+        {
+          "word": "δωρεάν",
+          "transliteration": "dōrean",
+          "meaning": "freely, as a gift, without cost to the receiver (3:24)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἱλαστήριον",
+          "reference": "hilastērion (3:25), the 'atoning sacrifice' - the same word the Greek Old Testament uses for the mercy seat, the lid of the ark where blood was sprinkled on the Day of Atonement (Leviticus 16). Paul says Christ is now that place."
+        }
+      ],
+      "strongsNumber": "G1344",
+      "definition": "to render or declare righteous; to acquit; to pronounce just",
+      "usage": "Because dikaioō is a courtroom word and not a workshop word, the righteousness it gives is a status received, not a quality earned. That single grammatical fact carries the whole argument of Romans."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Paul Builds the Case Before He Offers the Cure",
+      "body": "It is tempting to skip ahead in Romans. We want chapter 8, with its 'no condemnation' and its 'nothing can separate us.' But Paul will not let us arrive there until we have sat in the courtroom of chapters 1 through 3. He builds slowly, like a prosecutor laying out evidence, and the building is the point.\n\nHe opens by announcing his theme: 'I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes' (Romans 1:16). Then, before a word about how salvation comes, he turns to what we are saved from. The next verse after his theme is not comfort; it is wrath: 'The wrath of God is being revealed from heaven against all the godlessness and wickedness of men' (1:18).\n\nFrom there Paul methodically closes every exit. First the godless pagan world, which suppressed what creation made plain (chapter 1). Then the moralist who judges others - 'you who pass judgment do the same things' (2:1) - mistaking God's patience for approval (2:4). Then the religious insider, who has the law and still breaks it. By chapter 3 the prosecution rests: 'Jews and Greeks alike are all under sin' (3:9), and he piles up Scripture - 'There is no one righteous, not even one' (3:10). The purpose of all this is stated outright: 'so that every mouth may be silenced and the whole world held accountable to God' (3:19). Paul is not being harsh. He is clearing the room of anyone who still thinks they can plead their own case."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Defendant Who Kept a Ledger",
+      "body": "A man I knew spent the last year of a long illness reviewing his life out loud. Not the failures - the credits. He recited the good he had done the way some people count sheep: the people he had helped, the church he had served, the debts he had paid. It was not arrogance. It was fear. He was building a defense for a trial he could feel coming, and he wanted the ledger to come out in the black.\n\nNear the end he stopped doing it. When his daughter asked why, he said something I have not forgotten: 'I added it all up. It isn't enough. It was never going to be enough.' She braced for despair. Instead his face had gone strangely loose, almost relieved.\n\nThat is the exact moment Romans 3 is built to produce. Paul spends two and a half chapters getting every reader to put down the ledger and admit the column does not balance. He is not trying to crush you. He is trying to get you to stop defending yourself long enough to hear what God has done. The silence of a closed mouth (3:19) is the only posture in which grace can be received rather than negotiated.",
+      "connectionToTheme": "The verdict 'guilty, and the ledger will never balance' is not the end of Paul's argument - it is the doorway. Only the silenced mouth can receive a righteousness it did not earn.",
+      "content": "A man I knew spent the last year of a long illness reviewing his life out loud. Not the failures - the credits. He recited the good he had done the way some people count sheep: the people he had helped, the church he had served, the debts he had paid. It was not arrogance. It was fear. He was building a defense for a trial he could feel coming, and he wanted the ledger to come out in the black.\n\nNear the end he stopped doing it. When his daughter asked why, he said something I have not forgotten: 'I added it all up. It isn't enough. It was never going to be enough.' She braced for despair. Instead his face had gone strangely loose, almost relieved.\n\nThat is the exact moment Romans 3 is built to produce. Paul spends two and a half chapters getting every reader to put down the ledger and admit the column does not balance. He is not trying to crush you. He is trying to get you to stop defending yourself long enough to hear what God has done."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Words That Turn the Whole Letter",
+      "body": "Read to the bottom of the indictment and you reach the hinge of the entire letter, and it is only two words: 'But now.' 'But now, apart from the law, the righteousness of God has been revealed' (3:21). After the long, airless list of who is under sin, the sentence breaks open. The same righteousness of God that was being revealed as wrath in 1:18 is now revealed as gift.\n\nNotice the problem Paul is actually solving. It is not first our problem - how can guilty people be acquitted? It is God's problem - how can a just judge acquit the guilty without ceasing to be just? A human judge who lets the guilty walk free is a corrupt judge. So Paul says God 'presented Him as the atoning sacrifice through faith in His blood' (3:25). The verdict is not waved away; it is absorbed. The penalty lands - on Christ. And so the most carefully built phrase in the chapter can stand: God is shown to be 'just and to justify the one who has faith in Jesus' (3:26).\n\nThat is the secret the whole building was for. Justification is free to us (3:24, 'freely by His grace') precisely because it was not free to Him. The mercy seat where blood was sprinkled once a year is now a Person. God does not lower the bar of His justice to forgive; He satisfies it Himself, in His own Son, and then hands the acquittal to anyone who will simply trust Him rather than their ledger.",
+      "historicalContext": "Paul wrote Romans around AD 57, likely from Corinth, to a church he had not yet visited - a mixed congregation of Jewish and Gentile believers in the capital of the empire. The tension between those two groups runs under the whole letter, which is why Paul keeps insisting 'there is no distinction' (3:22): the same verdict of guilt, and the same gift of righteousness, falls on both.",
+      "fascinatingFact": "The phrase 'atoning sacrifice' in 3:25 translates hilastērion, the very word the Greek Old Testament uses for the gold lid of the ark - the mercy seat - where the high priest sprinkled blood on the Day of Atonement (Leviticus 16:14-15). Paul is saying the place of meeting between a holy God and a guilty people is no longer a piece of furniture in a tent. It is Christ Himself.",
+      "content": "Read to the bottom of the indictment and you reach the hinge of the entire letter, and it is only two words: 'But now.' 'But now, apart from the law, the righteousness of God has been revealed' (3:21). After the long, airless list of who is under sin, the sentence breaks open.\n\nNotice the problem Paul is actually solving. It is not first our problem - how can guilty people be acquitted? It is God's problem - how can a just judge acquit the guilty without ceasing to be just? So Paul says God 'presented Him as the atoning sacrifice through faith in His blood' (3:25). The verdict is not waved away; it is absorbed. The penalty lands - on Christ. And so the most carefully built phrase in the chapter can stand: God is shown to be 'just and to justify the one who has faith in Jesus' (3:26).\n\nJustification is free to us precisely because it was not free to Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Paul builds an airtight case that the whole world - pagan, moralist, and religious alike - stands guilty before God, so that 'every mouth may be silenced' (3:19); then he announces that God Himself provides the righteousness no one could earn, 'just and to justify' the one who trusts Christ (3:26).",
+      "modernApplication": "We are skilled ledger-keepers. We defend ourselves with our good intentions, our comparisons ('at least I'm not like them'), our religious effort. Paul's argument lands on us the same way it landed on Rome: the case for the defense collapses, and that collapse is the best news we will ever hear, because it frees us to stop performing and start receiving.",
+      "connectionPoint": "Paul reaches back to Abraham to prove this is not a new idea: 'Abraham believed God, and it was credited to him as righteousness' (4:3, quoting Genesis 15:6). Centuries before the law, righteousness came by trust, not works (4:5). The thread of justification by faith runs from Genesis through the Prophets - 'The righteous will live by faith' (1:17, quoting Habakkuk 2:4) - and arrives, fully unveiled, at the cross.",
+      "newTestamentEcho": "What chapter 3 builds, chapter 8 completes: 'Therefore, there is now no condemnation for those who are in Christ Jesus' (8:1). The courtroom reopens, but the chair of the accused is empty - 'It is God who justifies. Who is there to condemn us?' (8:33-34). The verdict Paul spent three chapters earning against us has, in Christ, been spoken for us."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is on your ledger - the defense you keep ready in case God asks why He should accept you?",
+      "additionalQuestions": [
+        "Where do you catch yourself comparing ('at least I'm not like them'), and what does Romans 2:1 say that comparison actually does?",
+        "Justification is a verdict, not a process. What would change today if you believed God has already declared you righteous in Christ rather than that you are still earning the verdict?",
+        "Paul says God is 'just and the justifier' (3:26). Which half is harder for you to believe - that God is just, or that He justifies the ungodly (4:5)? Why?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Just and merciful God, I have kept a ledger. I have built quiet defenses, compared myself to others, and trusted my own record more than I admit. Today I lay the case down. I am under sin; my mouth is silenced; I have nothing to plead. But now - by Your two best words - I look away from myself to Christ, the place where Your justice and Your mercy meet. Thank You that You did not lower the bar but bore it Yourself, and that You justify the one who simply trusts You. Let me live tomorrow as one already acquitted. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing on your ledger - one accomplishment or failure you have been using to argue your worth before God - and consciously set it down. Say out loud: 'I am justified freely by His grace, not by this.' Carry the two words 'but now' through the day.",
+      "leavingAtCross": [
+        "The ledger I keep ready as my defense before God",
+        "The comparison that lets me feel righteous by standing next to someone worse",
+        "The exhausting belief that the verdict is still being earned and could still go against me"
+      ],
+      "receivingFromCross": [
+        "A righteousness I did not earn, credited freely through faith (3:24)",
+        "A God who is both just and the justifier - mercy that did not cost His justice anything but cost Him everything (3:26)",
+        "The settled standing of 'no condemnation' for those who are in Christ (8:1)"
+      ],
+      "content": "Today, name one thing on your ledger - one accomplishment or failure you have been using to argue your worth before God - and consciously set it down. Say out loud: 'I am justified freely by His grace, not by this.' Carry the two words 'but now' through the day."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Paul spend nearly three chapters proving everyone guilty before he announces the gift of righteousness? What does the order teach us?",
+        "What does it mean that justify (dikaioō) is a courtroom verb - a verdict declared - rather than a workshop verb describing a slow improvement?",
+        "How does Romans 3:26 keep God from being either a corrupt judge (who ignores guilt) or a merciless one (who cannot forgive)?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one item on your personal 'ledger' - a thing you secretly trust to make you acceptable - and tell each other what it would mean to set it down.",
+        "Talk about the difference between feeling forgiven and believing you have been legally declared righteous. Which do you live out of most days?",
+        "Ask each other: where am I still trying to be 'just and the justifier' of my own life, instead of resting in the One who already is?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Habakkuk 2:4",
+          "text": "But the righteous will live by his faith."
+        },
+        {
+          "reference": "Genesis 15:6",
+          "text": "Abram believed the LORD, and it was credited to him as righteousness."
+        },
+        {
+          "reference": "Romans 5:1",
+          "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ."
+        },
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 1-3",
+          "note": "Read the indictment in one sitting, watching how Paul closes each exit in turn - the pagan (ch. 1), the moralist (2:1-16), the religious insider (2:17-3:8) - until he reaches 'every mouth may be silenced' (3:19). Then read 3:21-26 slowly. The whole letter turns on those two words: 'But now.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul of Tarsus",
+      "title": "Apostle, and the Pharisee Who Lost His Case",
+      "description": "Before he wrote Romans, Paul had the strongest ledger of anyone - 'circumcised on the eighth day, a Hebrew of Hebrews, as to the law a Pharisee, as to righteousness under the law, blameless' (Philippians 3:5-6). On the road to Damascus that ledger collapsed in a moment. The man who had built his whole identity on his record met the risen Christ and discovered his righteousness was 'rubbish' compared to a righteousness received by faith. Writing to Rome around AD 57, he builds the case against self-justification with the precision of a man who once trusted his own.",
+      "keyQuote": "For we maintain that a man is justified by faith apart from works of the law.",
+      "lessonForUs": "The person most qualified to dismantle the ledger is the one who kept the best one. Paul is not lecturing from above the problem; he is testifying from inside it. If his record could not justify him, ours cannot justify us - and that is the relief, not the threat.",
+      "heading": "Apostle, and the Pharisee Who Lost His Case"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2186,
+  "scriptureReference_full": "Romans 1-8 (anchored in Romans 3:19-26)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dikaioō G1344, dikaiosynē, hilastērion) reflects standard lexical sources (BDAG, Thayer). The hilastērion / mercy-seat connection (Leviticus 16; Septuagint usage) is widely noted in commentary on Romans 3:25.",
+    "Paul's biographical detail drawn from Philippians 3:5-6 and Acts 9 (Damascus road)."
+  ]
 }

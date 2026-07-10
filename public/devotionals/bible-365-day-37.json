@@ -6,33 +6,178 @@
   "scriptureReference": "Exodus 3:1-15",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 37"
+      "type": "scripture",
+      "reference": "Exodus 3:1-6, 13-15",
+      "translation": "BSB",
+      "emphasis": [
+        "the bush ablaze with fire, but it was not consumed",
+        "holy ground",
+        "I AM WHO I AM",
+        "This is My name forever"
+      ],
+      "hebrewOriginal": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+      "passage": "Meanwhile, Moses was shepherding the flock of his father-in-law Jethro, the priest of Midian. He led the flock to the far side of the wilderness and came to Horeb, the mountain of God. There the angel of the LORD appeared to him in a blazing fire from within a bush. Moses saw the bush ablaze with fire, but it was not consumed. So Moses thought, \"I must go over and see this marvelous sight. Why is the bush not burning up?\" When the LORD saw that he had gone over to look, God called out to him from within the bush, \"Moses, Moses!\" \"Here I am,\" he answered. \"Do not come any closer,\" God said. \"Take off your sandals, for the place where you are standing is holy ground.\" Then He said, \"I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob.\" At this, Moses hid his face, for he was afraid to look at God. ... Then Moses asked God, \"Suppose I go to the Israelites and say to them, 'The God of your fathers has sent me to you,' and they ask me, 'What is His name?' What should I tell them?\" God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\" God also told Moses, \"Say to the Israelites, 'The LORD, the God of your fathers—the God of Abraham, the God of Isaac, and the God of Jacob—has sent me to you.' This is My name forever, and this is how I am to be remembered in every generation.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 3:1-15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 3:1-15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+      "transliteration": "ehyeh asher ehyeh",
+      "pronunciation": "eh-YEH ah-SHER eh-YEH",
+      "meaning": "I AM WHO I AM; I will be what I will be",
+      "rootMeaning": "Built on the Hebrew verb hayah, 'to be.' Ehyeh is the simple first-person form: 'I am' or 'I will be.' God names Himself not with a noun but with a verb of pure being - existence that depends on nothing outside itself.",
+      "usageNote": "From this 'I AM' (ehyeh) comes the third-person divine name YHWH (the LORD) in verse 15 - 'He is,' 'He who causes to be.' Out of reverence, Israel stopped pronouncing YHWH aloud and read 'Adonai' (Lord) instead; most English Bibles still print LORD in small capitals to mark the name. The name and the verb are the same root said from two sides: God says of Himself 'I AM,' and we say of Him 'He IS.'",
+      "wordByWord": [
+        {
+          "word": "אֶהְיֶה",
+          "transliteration": "ehyeh",
+          "meaning": "I am, I will be - the verb 'to be' in the first person"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "transliteration": "asher",
+          "meaning": "who, that, which - a relative pronoun binding the two halves"
+        },
+        {
+          "word": "אֶהְיֶה",
+          "transliteration": "ehyeh",
+          "meaning": "I am, I will be - repeated, so the sentence circles back on itself"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "יְהוָה",
+          "reference": "YHWH (verse 15), the four-letter name translated 'the LORD.' It is the third-person echo of ehyeh: where God says 'I AM,' His people say 'He IS.' The name God gives is not a label He wears but the fact of His own being."
+        }
+      ],
+      "strongsNumber": "H1961",
+      "definition": "hayah: to be, to become, to exist, to come to pass",
+      "usage": "Ehyeh asher ehyeh resists being pinned down because that is the point: God will not be defined by anything outside Himself. He is not 'the storm god' or 'the mountain god' or even 'the God of Egypt's gods.' He simply, eternally, is."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: The name beyond names. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ: \"Before Abraham was, I AM\" (John 8:58).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Fire That Does Not Eat What It Burns",
+      "body": "Moses is eighty years old and very far from where his life was supposed to go. Once a prince in Pharaoh's house, he is now a hired shepherd in the desert, keeping someone else's sheep on the back side of the wilderness. He has had forty years to make peace with the idea that nothing important will ever happen to him again.\n\nThen a bush catches fire and refuses to burn down. Anyone who has watched a brush fire knows how fast dry desert scrub goes up - a flare, a crackle, ash in minutes. This one keeps burning. The flame is real, but the thornbush stays whole. Moses does the very human thing: he turns aside to look. \"I must go over and see this marvelous sight.\"\n\nNotice the order of events. God does not speak from the bush until Moses turns to look. The fire is the invitation; the turning is the response; only then comes the voice: \"Moses, Moses.\" And the first command is not a mission but a posture. \"Take off your sandals, for the place where you are standing is holy ground.\" Ordinary desert dirt, no different yesterday than today, has become holy - not because of the ground, but because of who is present on it. Holiness here is not a property of the place. It is the nearness of God.",
+      "keyInsight": "The bush burns but is not consumed: a sign of a God who can draw near to what is fragile and finite without destroying it. The fire that should reduce the thornbush to ash instead fills it and lets it live.",
+      "content": "Moses is eighty years old and very far from where his life was supposed to go. Once a prince in Pharaoh's house, he is now a hired shepherd in the desert, keeping someone else's sheep on the back side of the wilderness. He has had forty years to make peace with the idea that nothing important will ever happen to him again.\n\nThen a bush catches fire and refuses to burn down. Anyone who has watched a brush fire knows how fast dry desert scrub goes up - a flare, a crackle, ash in minutes. This one keeps burning. The flame is real, but the thornbush stays whole. Moses does the very human thing: he turns aside to look. \"I must go over and see this marvelous sight.\"\n\nNotice the order of events. God does not speak from the bush until Moses turns to look. The fire is the invitation; the turning is the response; only then comes the voice: \"Moses, Moses.\" And the first command is not a mission but a posture. \"Take off your sandals, for the place where you are standing is holy ground.\" Ordinary desert dirt, no different yesterday than today, has become holy - not because of the ground, but because of who is present on it. Holiness here is not a property of the place. It is the nearness of God."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "What Do I Tell Them Your Name Is?",
+      "body": "A friend of mine spent two years as a chaplain in a hospital, and she said the hardest question she ever got was rarely a theological one. It was a frightened person, late at night, asking some version of: who are you, really - and can I trust you with this?\n\nNames carry that weight. When you give someone your name you hand them a way to call you, to hold you to your word, to find you again. In the ancient world a god's name was thought to give worshipers leverage - a handle to grip, a lever to pull. So when Moses asks for a name, part of him is asking the practical question every leader asks: what authority do I say sent me?\n\nBut the answer he gets cannot be gripped that way. \"I AM WHO I AM.\" It is a name that refuses to become a handle. God will not be managed, summoned, or controlled by knowing the right syllables. And yet - and this is the tenderness hidden inside the mystery - He does give a name. He does not stay anonymous. The God who cannot be used still chooses to be known, and tells His people exactly how to call on Him for every generation after.",
+      "connectionToTheme": "Moses wants a name he can use; God gives a name that cannot be used but can be trusted. The name 'I AM' is both an unbreachable mystery and a real, personal self-disclosure.",
+      "content": "A friend of mine spent two years as a chaplain in a hospital, and she said the hardest question she ever got was rarely a theological one. It was a frightened person, late at night, asking some version of: who are you, really - and can I trust you with this?\n\nNames carry that weight. When you give someone your name you hand them a way to call you, to hold you to your word, to find you again. In the ancient world a god's name was thought to give worshipers leverage - a handle to grip, a lever to pull. So when Moses asks for a name, part of him is asking the practical question every leader asks: what authority do I say sent me?\n\nBut the answer he gets cannot be gripped that way. \"I AM WHO I AM.\" It is a name that refuses to become a handle. God will not be managed, summoned, or controlled by knowing the right syllables. And yet - and this is the tenderness hidden inside the mystery - He does give a name. He does not stay anonymous. The God who cannot be used still chooses to be known, and tells His people exactly how to call on Him for every generation after."
+    },
+    {
+      "type": "insight",
+      "heading": "The Self-Existent One Comes Down",
+      "body": "Hold two of God's own sentences side by side and the whole passage opens up. First: \"I AM WHO I AM\" (verse 14). Second, four verses earlier: \"I have come down to rescue them\" (verse 8).\n\nThe first sentence is about who God is in Himself - the One who simply is, who depends on nothing, who was not made and cannot be unmade. He is being itself, while everything else, including that thornbush and including us, is held in existence moment by moment like a flame held in a branch. We are the bush. He is the fire.\n\nThe second sentence is about what this self-existent One does. He does not stay aloof in His perfection. He says, \"I have indeed seen the affliction of My people... I have heard them crying out... I am aware of their sufferings.\" Seen, heard, aware - three verbs of attention, not distance. The God whose name means He needs nothing has bent His full attention toward slaves making bricks in the mud. The One who could ignore everything chooses to come down. That is the scandal and the comfort of this name: pure, infinite being, moving toward the smallest and most enslaved.",
+      "historicalContext": "Exodus 3 stands at the founding of Israel as a people. Everything that follows - the plagues, the Passover, the sea, Sinai, the covenant - flows from this moment when the unnamed God of the patriarchs gives Israel His personal name. By the time Israel sang and prayed this name for centuries, the burning bush had become shorthand for the whole rescue: the God who is, who came down, who got His people out.",
+      "fascinatingFact": "God does not introduce Himself first as 'I AM.' He introduces Himself first as \"the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob\" (verse 6). The infinite, self-existent One is also the God who keeps appointments across generations. The name that means timeless being is attached, by God's own choice, to particular people with particular histories - and He repeats those three names again in verse 15 so Israel will never separate the eternal name from the personal promise.",
+      "content": "Hold two of God's own sentences side by side and the whole passage opens up. First: \"I AM WHO I AM\" (verse 14). Second, four verses earlier: \"I have come down to rescue them\" (verse 8).\n\nThe first sentence is about who God is in Himself - the One who simply is, who depends on nothing, who was not made and cannot be unmade. He is being itself, while everything else, including that thornbush and including us, is held in existence moment by moment like a flame held in a branch. We are the bush. He is the fire.\n\nThe second sentence is about what this self-existent One does. He does not stay aloof in His perfection. He says, \"I have indeed seen the affliction of My people... I have heard them crying out... I am aware of their sufferings.\" Seen, heard, aware - three verbs of attention, not distance. The God whose name means He needs nothing has bent His full attention toward slaves making bricks in the mud. The One who could ignore everything chooses to come down. That is the scandal and the comfort of this name: pure, infinite being, moving toward the smallest and most enslaved."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "From a fire that does not consume the bush, the God who simply IS reveals His name - I AM - and announces that He has come down to rescue an enslaved people and bring them out.",
+      "modernApplication": "When you ask the late-night question - who are You, really, and can I trust You with this? - the answer is not a slogan but a name and a track record. The God who needs nothing from you has already proven He moves toward the afflicted. You are not pulling a distant deity down by saying the right words; you are calling on One who has made coming down His habit.",
+      "connectionPoint": "The name given at the bush runs straight through Scripture. \"I, yes I, am the LORD, and there is no Savior but Me\" (Isaiah 43:11). When the soldiers come for Jesus in the garden and He says 'I am he,' they fall back to the ground (John 18:6). \"I am the Alpha and the Omega,\" says the Lord God, \"who is and was and is to come\" (Revelation 1:8). The fire that filled the thornbush without destroying it is the same God who would one day fill human flesh without destroying it.",
+      "newTestamentEcho": "In John 8:58 Jesus tells His critics, \"Truly, truly, I tell you, before Abraham was born, I am!\" - taking the burning-bush name onto His own lips. The I AM who came down to Horeb to rescue Israel from Egypt is the I AM who came down in the flesh to rescue the world from sin. Hebrews seals it: \"Jesus Christ is the same yesterday and today and forever\" (Hebrews 13:8)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would change today if you truly believed the God you pray to is not a force you must persuade, but the One who simply IS - and who has already chosen to come down toward your affliction?",
+      "additionalQuestions": [
+        "Where in your life have you stopped expecting anything important to happen, the way Moses had after forty years of sheep? What bush might you be walking past without turning to look?",
+        "Moses' first words to God were not a request but a presence: 'Here I am.' What would it mean to answer God that simply today, before you ask Him for anything?",
+        "Have you been treating God's name as a handle - the right words to get the right outcome - rather than as a Person to trust? What does it free you from to know He cannot be managed?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "reverent-trust",
+      "prayerText": "I AM. You who simply are, who made the fire and the thornbush and me, and need none of us - thank You that You came down anyway. You saw the affliction of Your people; You heard them crying out; You were aware of their sufferings. Be aware of mine. I will not pretend to grip Your name like a lever. I only ask to stand, with my sandals off, on the ground You have made holy by being near. You are the same yesterday and today and forever. Be near today. In the name of Jesus, who carries Your name in His own. Amen.",
+      "prayerType": "personal",
+      "scripture_echo": "Exodus 3:7-8"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before you ask God for anything, simply name who He is. Say slowly, once: \"You are the One who IS. You came down. You see me.\" Let that be the whole prayer for one minute before you add a single request.",
+      "leavingAtCross": [
+        "The tired belief that nothing important will happen to me anymore",
+        "The habit of treating God like a force to be persuaded with the right words",
+        "The fear that the holy God draws near only to consume me"
+      ],
+      "receivingFromCross": [
+        "A God whose name is His own unbreakable being - I AM - who cannot run out or let go",
+        "The assurance that He has seen, heard, and is aware of my suffering",
+        "The presence of the One who came down: to Horeb for Israel, and in the flesh for me"
+      ],
+      "content": "Today, before you ask God for anything, simply name who He is. Say slowly, once: \"You are the One who IS. You came down. You see me.\" Let that be the whole prayer for one minute before you add a single request."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the bush burning without being consumed matter - what does it reveal about how God can be present to fragile, finite things without destroying them?",
+        "What is the difference between a name you can use to control someone and a name you can only trust? Which kind is 'I AM WHO I AM'?",
+        "God reveals Himself both as 'I AM' (timeless being) and as 'the God of Abraham, Isaac, and Jacob' (a God with a history). Why does Scripture insist on holding both together?"
+      ],
+      "forAccountabilityPartners": [
+        "Where in your life have you, like Moses, quietly concluded that your most useful years are behind you? Say it out loud to each other.",
+        "Talk honestly about whether you tend to treat prayer as persuading a reluctant God or calling on One who has already moved toward you.",
+        "Ask each other: what affliction are you carrying right now that you need to hear God say He has 'seen, heard, and is aware of'?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 3:7-8",
+          "text": "The LORD said, \"I have indeed seen the affliction of My people in Egypt... I have come down to rescue them from the hand of the Egyptians and to bring them up out of that land to a good and spacious land, a land flowing with milk and honey.\""
+        },
+        {
+          "reference": "Isaiah 43:11",
+          "text": "I, yes I, am the LORD, and there is no Savior but Me."
+        },
+        {
+          "reference": "John 8:58",
+          "text": "\"Truly, truly, I tell you,\" Jesus declared, \"before Abraham was born, I am!\""
+        },
+        {
+          "reference": "Revelation 1:8",
+          "text": "\"I am the Alpha and the Omega,\" says the Lord God, who is and was and is to come—the Almighty."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 3-4",
+          "note": "Read the full call of Moses, watching how the God who reveals His name also patiently answers each of Moses' objections."
+        },
+        {
+          "type": "book",
+          "title": "John 8:48-59",
+          "note": "Read the dialogue where Jesus takes the burning-bush name onto His own lips, and notice how His hearers respond."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Moses",
+      "title": "The Shepherd Called from the Fire",
+      "description": "Raised in Pharaoh's household, Moses fled Egypt after killing an Egyptian and spent forty years as a shepherd in Midian, married to Zipporah and tending the flocks of his father-in-law Jethro. It is there, an exile with no prospects, that God meets him at the burning bush and sends him to lead Israel out of slavery. His first words to God - 'Here I am' - and his first objection - 'Who am I?' - frame the rest of his life: a reluctant man held up entirely by the great I AM.",
+      "keyQuote": "Who am I, that I should go to Pharaoh and bring the Israelites out of Egypt?",
+      "lessonForUs": "Moses asks 'Who am I?' and God never really answers that question - He answers a better one: 'I will surely be with you.' Our adequacy was never the point. The great I AM stands behind the small 'who am I,' and that is enough.",
+      "heading": "The Shepherd Called from the Fire"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2289,
+  "scriptureReference_full": "Exodus 3:1-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (ehyeh asher ehyeh, the verb hayah H1961, and the divine name YHWH) reflects standard lexical sources; the practice of reading 'Adonai' for the unspoken name is the historic Jewish reading tradition preserved in the Masoretic vocalization."
+  ]
 }

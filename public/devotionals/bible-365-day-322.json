@@ -1,38 +1,188 @@
 {
   "day": 322,
-  "title": "John: True Vine + Way + Truth — Day 7 — Sabbath",
-  "teaser": "Day 322 of Bible 365 — John 8-14",
+  "title": "I AM, all the way to the Father",
+  "teaser": "Across these chapters Jesus says \"I am\" again and again — light, gate, shepherd, resurrection, the way — until the sentence is no longer a description of what He does, but a claim about who He is.",
   "framework": "John 8-14 — John: True Vine + Way + Truth",
   "scriptureReference": "John 8-14",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 322"
+      "type": "scripture",
+      "reference": "John 14:6",
+      "translation": "BSB",
+      "emphasis": [
+        "I am the way and the truth and the life",
+        "No one comes to the Father except through Me"
+      ],
+      "greekOriginal": "ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή",
+      "passage": "Jesus answered, \"I am the way and the truth and the life. No one comes to the Father except through Me. If you had known Me, you would know My Father as well. From now on you do know Him and have seen Him.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**John 8-14**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to John 8-14 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγώ εἰμι",
+      "transliteration": "egō eimi",
+      "pronunciation": "eh-GOH ay-MEE",
+      "meaning": "I am",
+      "rootMeaning": "Two small words. Egō is the personal pronoun 'I' - already built into the verb, so saying it out loud adds weight, like leaning on the word. Eimi is the plain present 'I am.' Spoken together they land harder than ordinary Greek needs them to.",
+      "usageNote": "John strings these two words through chapters 8 to 14 like beads on a cord. I am the light of the world (8:12). I am the gate (10:9). I am the good shepherd (10:11). I am the resurrection and the life (11:25). I am the way and the truth and the life (14:6). Seven times Jesus finishes the sentence with an image; once, at 8:58, He lets it stand alone with no image at all.",
+      "wordByWord": [
+        {
+          "word": "ἐγώ",
+          "transliteration": "egō",
+          "meaning": "I - the pronoun spoken on purpose, for emphasis"
+        },
+        {
+          "word": "εἰμι",
+          "transliteration": "eimi",
+          "meaning": "I am, I exist - simple present tense"
+        },
+        {
+          "word": "ἡ ὁδὸς",
+          "transliteration": "hē hodos",
+          "meaning": "the way, the road, the path you actually walk"
+        },
+        {
+          "word": "ἡ ἀλήθεια",
+          "transliteration": "hē alētheia",
+          "meaning": "the truth - literally 'unhiddenness,' what is no longer concealed"
+        },
+        {
+          "word": "ἡ ζωή",
+          "transliteration": "hē zōē",
+          "meaning": "the life - not mere existence but the life that is genuinely alive"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+          "reference": "When Moses asks God's name at the bush, the answer is \"I AM WHO I AM\" (Exodus 3:14). The Greek Old Testament Jesus' hearers knew rendered that name with the same two words He keeps using: egō eimi. At John 8:58 He drops the image and says only that - and they pick up stones, because they heard exactly what He meant."
+        }
+      ],
+      "strongsNumber": "G1473, G1510",
+      "definition": "the emphatic Greek phrase 'I am' (egō eimi), used by Jesus in John both with predicates (the light, the gate, the way) and absolutely (8:58), echoing the divine name of Exodus 3:14",
+      "usage": "Read the chapters in one sitting and the phrase starts to feel less like seven separate claims and more like one Person saying His own name in seven keys."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: John: True Vine + Way + Truth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our way to the Father (John 14:6).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Seven Sentences and the One Behind Them",
+      "body": "These seven chapters are crowded. There is a woman caught in adultery and a circle of men holding stones. A man born blind, washed and seeing, put out of the synagogue for it. A tomb in Bethany, and a dead man called out by name into the daylight. A basin of water and a towel, and a teacher on His knees washing the feet of friends who will scatter by morning. It is a lot to carry in one reading, and on a Sabbath day there is no need to sort it all.\n\nSo let one thread carry the rest. Through all of it Jesus keeps saying the same two words. I am the light of the world. I am the gate; whoever enters through Me will be saved. I am the good shepherd, and the good shepherd lays down His life for the sheep. I am the resurrection and the life. I am the way and the truth and the life. Each time the sentence finishes with a picture - light, gate, shepherd, road - and each picture is something you need but cannot make for yourself.\n\nThen, almost lost in the argument of chapter 8, the sentence finishes with nothing. \"Before Abraham was born, I am.\" No image this time. Just the bare claim, in the present tense, about an event a thousand years gone. The grammar should have been \"before Abraham, I was.\" Jesus says I am, and the men around Him reach for stones - not because they misunderstood, but because they understood. They had heard those words before, spoken from a burning bush to Moses, as the name of the God who has no maker."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Word on the Door",
+      "body": "A friend told me about the first night in a house she had just bought - the first thing she had ever owned alone, after a long stretch of borrowed rooms and other people's rules. She walked through it in the dark, not turning on lights, just touching the walls. When she got to the front door she stopped and stood there with her hand flat against it for a while.\n\nShe said it was the door that undid her. Not the kitchen, not the bedroom. The door. Because a door is the one thing in a house that decides who comes in. For years that decision had belonged to other people. Now it was hers, and the weight of that came up through her palm in the dark.\n\nWhen Jesus says \"I am the gate,\" He is not handing out a pretty metaphor. He is saying that the question of who gets in - who belongs, who is safe, who is home - has been settled, and that He is the one who settles it. Not a doctrine about Him. Him. You do not stand at the gate trying to prove you deserve the house. You go in through the One who is the way in.",
+      "connectionToTheme": "The 'I am' sayings are not abstractions. Each one is a place a tired person can actually stand: a light to walk by, a door to go in through, a road that goes all the way to the Father.",
+      "content": "A friend told me about the first night in a house she had just bought - the first thing she had ever owned alone, after a long stretch of borrowed rooms and other people's rules. She walked through it in the dark, not turning on lights, just touching the walls. When she got to the front door she stopped and stood there with her hand flat against it for a while.\n\nShe said it was the door that undid her. Not the kitchen, not the bedroom. The door. Because a door is the one thing in a house that decides who comes in. For years that decision had belonged to other people. Now it was hers, and the weight of that came up through her palm in the dark.\n\nWhen Jesus says \"I am the gate,\" He is not handing out a pretty metaphor. He is saying that the question of who gets in - who belongs, who is safe, who is home - has been settled, and that He is the one who settles it. Not a doctrine about Him. Him. You do not stand at the gate trying to prove you deserve the house. You go in through the One who is the way in."
+    },
+    {
+      "type": "insight",
+      "heading": "The Question Behind the Question",
+      "body": "At the center of these chapters is a question Philip asks at the last supper, and it is the most honest thing anyone says all week. \"Lord, show us the Father, and that will be enough for us.\" Just show us God. Then we can stop being afraid.\n\nJesus' answer is almost startled. \"Philip, I have been with you all this time, and still you do not know Me? Anyone who has seen Me has seen the Father.\" The whole pile of 'I am' sayings turns on this one reply. The light, the gate, the shepherd, the road - they were never seven facts to collect about Jesus. They were seven angles on a single, staggering claim: that to look at this man eating bread and washing feet is to be looking at God. Not a window onto God. Not a messenger from God. The Father, made visible.\n\nThis is the plain sense of the text, and it is also its deepest mystery, and on a Sabbath the two are allowed to be the same thing. \"I am the way\" is not a map to somewhere else. The way and the destination have the same face. To come to Jesus is already to have come to the Father, because there was never any distance between them to begin with.",
+      "historicalContext": "John writes near the end of the first century, by tradition late in his life at Ephesus, to churches that have been pushed out of the synagogue and pressed to explain who they think Jesus is. The Gospel is built around these 'I am' sayings precisely to answer that pressure: not a great teacher, not a prophet only, but the eternal Word who was with God and was God (John 1:1), now made flesh and walking among them.",
+      "fascinatingFact": "John records no parables of the kind found in Matthew, Mark, and Luke - no farmer scattering seed, no lost coin. Where the other Gospels have Jesus pointing away from Himself to the kingdom, John has Jesus pointing to Himself: I am the bread, the light, the gate, the shepherd, the resurrection, the way, the vine. The shift is the point. In John the message and the Messenger are the same.",
+      "content": "At the center of these chapters is a question Philip asks at the last supper, and it is the most honest thing anyone says all week. \"Lord, show us the Father, and that will be enough for us.\" Just show us God. Then we can stop being afraid.\n\nJesus' answer is almost startled. \"Philip, I have been with you all this time, and still you do not know Me? Anyone who has seen Me has seen the Father.\" The whole pile of 'I am' sayings turns on this one reply. The light, the gate, the shepherd, the road - they were never seven facts to collect about Jesus. They were seven angles on a single, staggering claim: that to look at this man eating bread and washing feet is to be looking at God. Not a window onto God. Not a messenger from God. The Father, made visible.\n\nThis is the plain sense of the text, and it is also its deepest mystery, and on a Sabbath the two are allowed to be the same thing. \"I am the way\" is not a map to somewhere else. The way and the destination have the same face. To come to Jesus is already to have come to the Father, because there was never any distance between them to begin with."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus answers the request 'show us the Father' not with a vision or a doctrine but with Himself: \"Anyone who has seen Me has seen the Father\" (John 14:9). The way to God and the God we are trying to reach turn out to wear one face.",
+      "modernApplication": "Most of us look for God somewhere past the ordinary - in a peak experience, a clearer feeling, a stronger faith we don't yet have. John keeps pointing back to a specific man at a specific table. You don't have to climb to the Father. The road came down and has a name, and the road is also where it leads.",
+      "connectionPoint": "The 'I am' thread reaches back to a bush burning in the desert (Exodus 3:14) and forward to a tomb that could not hold a dead man (John 11:25). The same God who told Moses His name simply by being - I AM WHO I AM - now stands in a garden of graves and says it again: I am the resurrection and the life. The name and the rescue are the same word.",
+      "newTestamentEcho": "Paul will tell the Colossians that in Christ \"all the fullness of the Deity dwells in bodily form\" (Colossians 2:9), and the writer to the Hebrews calls Him \"the radiance of God's glory and the exact representation of His nature\" (Hebrews 1:3). What Philip asked to see, the whole New Testament insists has already been seen - in the One who washed feet and went to a cross."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you ask, like Philip, 'just show me God,' where are you looking - and have you looked at Jesus lately, plainly, as the answer rather than the runner-up?",
+      "additionalQuestions": [
+        "Of the 'I am' sayings - light, gate, shepherd, resurrection, the way - which one names the thing you most need this week, and why that one?",
+        "Where in your life are you treating Jesus as the way to something else you actually want, rather than as the destination?",
+        "What would change if you really believed there is no distance to close between you and the Father - that the road has already reached you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "restful-trust",
+      "prayerText": "Lord Jesus, I have spent so much energy trying to find a way to God, and here You are, telling me You are the way. Quiet me long enough to hear it. Where I am still looking past You for the Father, turn my face back. You are the light I keep walking out of; be light again. You are the gate; let me stop trying to climb the wall and simply come in. You said, 'Do not let your hearts be troubled.' On this day of rest, hold mine. Amen.",
+      "prayerType": "personal",
+      "scriptureEcho": "John 14:27"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a Sabbath - nothing to finish, nothing to prove. Read John 14:6 slowly three times, and each time put a small stress on a different word: I am the way; I am the way; I am the way. Then sit quietly for five minutes with the saying that found you most, and let it be enough.",
+      "leavingAtCross": [
+        "The exhausting project of finding my own way to God",
+        "The suspicion that the Father is distant or hard to please, somewhere behind Jesus rather than fully present in Him",
+        "The hunger for some other proof when Christ Himself is the proof I keep walking past"
+      ],
+      "receivingFromCross": [
+        "A way I do not have to build, already walked all the way to the Father",
+        "The astonishing news that the One who washed feet is what God is like",
+        "Peace not as the world gives it, but as Christ gives it - settled, unhurried, mine to keep"
+      ],
+      "content": "Today is a Sabbath - nothing to finish, nothing to prove. Read John 14:6 slowly three times, and each time put a small stress on a different word: I am the way; I am the way; I am the way. Then sit quietly for five minutes with the saying that found you most, and let it be enough."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Trace the 'I am' sayings across John 8-14 (light, gate, shepherd, resurrection, the way). What does each one offer that a person cannot provide for themselves?",
+        "Why do the people pick up stones at John 8:58, when Jesus says only 'before Abraham was born, I am' - what did they hear in those two words?",
+        "How does Jesus' answer to Philip ('Anyone who has seen Me has seen the Father') change what 'I am the way' means - is it a route to God, or something more?"
+      ],
+      "forAccountabilityPartners": [
+        "Each name one 'I am' saying that meets where you are right now, and say out loud why that one.",
+        "Talk honestly about whether you tend to treat Jesus as a means to something else you want from God, or as the One you actually want.",
+        "Ask each other: where do you most need to hear 'Do not let your hearts be troubled' this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "John 8:12",
+          "text": "Once again, Jesus spoke to the people and said, \"I am the light of the world. Whoever follows Me will never walk in the darkness, but will have the light of life.\""
+        },
+        {
+          "reference": "John 8:58",
+          "text": "\"Truly, truly, I tell you,\" Jesus declared, \"before Abraham was born, I am!\""
+        },
+        {
+          "reference": "John 10:11",
+          "text": "I am the good shepherd. The good shepherd lays down His life for the sheep."
+        },
+        {
+          "reference": "John 11:25-26",
+          "text": "Jesus said to her, \"I am the resurrection and the life. Whoever believes in Me will live, even though he dies. And everyone who lives and believes in Me will never die. Do you believe this?\""
+        },
+        {
+          "reference": "Exodus 3:14",
+          "text": "God said to Moses, \"I AM WHO I AM. This is what you are to say to the Israelites: 'I AM has sent me to you.'\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "John 8-14",
+          "note": "Read the whole stretch in one sitting and underline every 'I am.' Notice where the saying carries an image and the one place (8:58) where it stands alone."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Philip",
+      "title": "The Disciple Who Asked to See God",
+      "description": "One of the Twelve, from Bethsaida in Galilee, the same town as Peter and Andrew. In John's Gospel Philip is the practical one - he is the disciple Jesus tests about feeding the crowd, and the one who first brings Nathanael to Jesus with the words 'come and see.' At the last supper it is Philip who voices the longing under everyone's faith: \"Lord, show us the Father, and that will be enough for us.\"",
+      "keyQuote": "Lord, show us the Father, and that will be enough for us.",
+      "lessonForUs": "Philip wanted one clear sight of God and thought it would settle everything - and he was standing in front of it. His honest request, and Jesus' gentle answer, are the hinge of these chapters: the Father we strain to see is fully present in the Son we already know.",
+      "heading": "The Disciple Who Asked to See God"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2023,
+  "scriptureReference_full": "John 8-14 (anchor: John 14:6)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (egō eimi; the Exodus 3:14 / Septuagint resonance) reflects standard lexical and exegetical sources; the count and grouping of the Johannine 'I am' sayings is a widely held reading of the Fourth Gospel."
+  ]
 }

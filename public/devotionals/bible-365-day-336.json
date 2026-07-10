@@ -1,38 +1,184 @@
 {
   "day": 336,
-  "title": "Acts: Pentecost + Spread — Day 7 — Sabbath",
-  "teaser": "Day 336 of Bible 365 — Acts 1-10",
+  "title": "The wind He sent ahead of us",
+  "teaser": "On the seventh day of Acts, the risen Christ does not leave. He pours out His own breath — and the Church begins to move on it.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 336"
+      "type": "scripture",
+      "reference": "Acts 1:8; 2:33",
+      "translation": "BSB",
+      "emphasis": [
+        "you will receive power",
+        "you will be My witnesses",
+        "He has poured out what you now see and hear"
+      ],
+      "greekOriginal": "ἐξέχεεν τοῦτο ὃ ὑμεῖς βλέπετε καὶ ἀκούετε",
+      "passage": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth. ... Exalted, then, to the right hand of God, He has received from the Father the promised Holy Spirit and has poured out what you now see and hear."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐξέχεεν",
+      "transliteration": "execheen",
+      "pronunciation": "ex-EH-khe-en",
+      "meaning": "He poured out, He emptied out",
+      "rootMeaning": "From ek (out) and cheo (to pour). Not a careful measuring, but the tipping of a full vessel until it empties. The same verb the Greek Old Testament uses when God says through Joel, 'I will pour out My Spirit on all people' (Joel 2:28).",
+      "usageNote": "In Acts 2:33 the subject of the verb is Jesus. The crucified and risen One, now exalted, is the one who pours. Peter does not say the Spirit simply arrived; he says Christ received the Spirit from the Father and emptied Him out over the waiting room. The wind and fire of Pentecost are something Jesus does, not something that happens to Him.",
+      "wordByWord": [
+        {
+          "word": "ἐξέχεεν",
+          "transliteration": "execheen",
+          "meaning": "He poured out (third person singular — one person does the pouring)"
+        },
+        {
+          "word": "τοῦτο",
+          "transliteration": "touto",
+          "meaning": "this — the very thing in the room"
+        },
+        {
+          "word": "ὃ ὑμεῖς βλέπετε",
+          "transliteration": "ho hymeis blepete",
+          "meaning": "which you yourselves are seeing"
+        },
+        {
+          "word": "καὶ ἀκούετε",
+          "transliteration": "kai akouete",
+          "meaning": "and hearing — present tense, still happening as he speaks"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐκκλησία",
+          "reference": "ekklesia, the word for 'church,' means 'the called-out ones.' The Church does not gather itself; it is poured into being by the One who calls. Acts 2:39 — 'all whom the Lord our God will call to Himself.'"
+        }
+      ],
+      "strongsNumber": "G1632",
+      "definition": "to pour out, shed forth, spill; used of liquids and, figuratively, of the Spirit lavishly given",
+      "usage": "The tense is decisive. 'He has poured out' is finished action with present result — the pouring is done, the wet is everywhere, and what the crowd sees and hears is the splash of it. You are reading the runoff of that same flood."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Book That Has No Ending",
+      "body": "Luke opens his second book by looking back at his first. 'In my first book, O Theophilus, I wrote about all that Jesus began to do and to teach' (Acts 1:1). Began. The word does quiet work. If the Gospel was what Jesus began, then this book — the one we have read for seven days now — is what He keeps doing. Acts is not the story of the Church getting on without Him. It is the story of Christ continuing His own work by another means.\n\nThat is why the first ten chapters feel less like the apostles' biography and more like a single sentence opening up. In chapter one the risen Lord gives the map: 'you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth' (1:8). Then He tells them not to go anywhere. 'Do not leave Jerusalem, but wait for the gift the Father promised' (1:4). The mission is given, and the first command is to sit still and wait for the wind.\n\nIt comes at Pentecost. A sound like a mighty rushing wind, tongues like flames resting on each of them, and a room full of ordinary people suddenly able to be understood by everyone (2:2-4). Peter stands up to explain it, and his explanation is not about the disciples at all. It is about Jesus — crucified, raised, exalted — who 'has received from the Father the promised Holy Spirit and has poured out what you now see and hear' (2:33). The whole spectacle has a single author, and He is not in the room. He is at the right hand of God, pouring."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter Left on the Counter",
+      "body": "Before my mother went into a surgery she was afraid she might not wake from, she wrote letters and left them where we would find them. One was instructions — the practical things, who to call, where the documents were. But the last line of each was not an instruction. It was a sending: do this, and know I am with you in it.\n\nFor a long while afterward those letters did more than the instructions ever could. The to-do list got finished in a week. The sending lasted years. When I did the hard ordinary things she had asked, it did not feel like obeying an absent person. It felt like she was somehow still moving in the room, her will alive in our hands.\n\nThat is the strange shape of these chapters. Jesus gives the apostles a map and then withdraws from sight. But what fills the room after He goes is not His absence. It is His Spirit, His breath, poured out so completely that everything they do next is really Him doing it through them. The marching orders were never the point. The presence behind the orders was.",
+      "connectionToTheme": "The commission of Acts 1:8 is not a task list left by someone leaving. It is the sending of One who stays — by His Spirit — inside the very people He sends.",
+      "content": "Before my mother went into a surgery she was afraid she might not wake from, she wrote letters and left them where we would find them. One was instructions — the practical things, who to call, where the documents were. But the last line of each was not an instruction. It was a sending: do this, and know I am with you in it.\n\nFor a long while afterward those letters did more than the instructions ever could. The to-do list got finished in a week. The sending lasted years. When I did the hard ordinary things she had asked, it did not feel like obeying an absent person. It felt like she was somehow still moving in the room, her will alive in our hands.\n\nThat is the strange shape of these chapters. Jesus gives the apostles a map and then withdraws from sight. But what fills the room after He goes is not His absence. It is His Spirit, His breath, poured out so completely that everything they do next is really Him doing it through them. The marching orders were never the point. The presence behind the orders was."
+    },
+    {
+      "type": "insight",
+      "heading": "Watch the Map Fill In",
+      "body": "Read Acts 1:8 as a map, then watch the next nine chapters color it in. 'In Jerusalem' — chapters 2 through 7, where three thousand are added in a day (2:41) and the lame man at the temple gate walks in Jesus' name (3:6). 'In all Judea and Samaria' — chapter 8, where persecution scatters the believers and, far from silencing them, plants them: 'Those who had been scattered preached the word wherever they went' (8:4). 'To the ends of the earth' — by chapter 10, the Spirit has fallen on a Roman centurion's household, and Peter stands in a Gentile home saying, 'I now truly understand that God does not show favoritism' (10:34).\n\nThe sentence Jesus spoke in chapter one is being written out in flesh and travel and arrest and surprise. Nothing in it is hurried by human strategy; the persecution that should have ended the movement is the very thing that carries it outward. The wind blows where it wills, and the map fills in along its breath.\n\nThis is the quiet astonishment of Acts: the words of the risen Christ are not predictions He hopes will come true. They are the shape of what He Himself is already doing through the people He filled.",
+      "historicalContext": "Acts was written by Luke, the same author as the third Gospel, addressed to the same Theophilus, as a deliberate two-volume work. The geography of 1:8 — Jerusalem, Judea and Samaria, the ends of the earth — functions as Luke's table of contents, and the book unfolds precisely along it, ending in chapter 28 with the gospel preached openly in Rome, the political center of the known world.",
+      "fascinatingFact": "At Pentecost Peter quotes the prophet Joel: 'I will pour out My Spirit on all people' (Acts 2:17, citing Joel 2:28). The promise was centuries old. What chapter 10 reveals is just how wide 'all people' was meant to be — wide enough to drench a Gentile soldier's house before he had been baptized, before anyone thought to stop it (10:44-45).",
+      "content": "Read Acts 1:8 as a map, then watch the next nine chapters color it in. 'In Jerusalem' — chapters 2 through 7, where three thousand are added in a day (2:41) and the lame man at the temple gate walks in Jesus' name (3:6). 'In all Judea and Samaria' — chapter 8, where persecution scatters the believers and, far from silencing them, plants them: 'Those who had been scattered preached the word wherever they went' (8:4). 'To the ends of the earth' — by chapter 10, the Spirit has fallen on a Roman centurion's household, and Peter stands in a Gentile home saying, 'I now truly understand that God does not show favoritism' (10:34).\n\nThe sentence Jesus spoke in chapter one is being written out in flesh and travel and arrest and surprise. Nothing in it is hurried by human strategy; the persecution that should have ended the movement is the very thing that carries it outward. The wind blows where it wills, and the map fills in along its breath.\n\nThis is the quiet astonishment of Acts: the words of the risen Christ are not predictions He hopes will come true. They are the shape of what He Himself is already doing through the people He filled."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The exalted Christ pours out the promised Spirit, and a frightened, waiting room becomes a witnessing Church that no scattering can stop — running from Jerusalem outward until even a Gentile's house is filled.",
+      "modernApplication": "We tend to read the Great Commission as a weight on our shoulders: go, do, build, before the door closes. Acts reframes it. The mission is not a load we carry toward an absent Lord. It is a current we are caught in, set in motion by a present One. Our part is less to generate the wind than to unfurl in it.",
+      "connectionPoint": "What begins as breath in Genesis runs as a thread through the whole of Scripture and arrives, undiminished, at Pentecost. God breathes life into the first man's nostrils (Genesis 2:7). The risen Jesus breathes on His disciples and says, 'Receive the Holy Spirit' (John 20:22). Then at Pentecost the breath becomes a wind that fills a house and never leaves the Church (Acts 2:2). The same Spirit who hovered over the waters now hovers over a people, making them new.",
+      "newTestamentEcho": "Peter tells the cut-to-the-heart crowd, 'This promise belongs to you and your children and to all who are far off — to all whom the Lord our God will call to Himself' (Acts 2:39). Far off was not only distance in miles. It was you, and the centuries between, and a Roman soldier no devout Jew expected to see saved. The pouring did not stop with them. You are inside the 'all who are far off.'"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been treating the call of God as a burden to carry, when He is offering it as a wind to be carried by?",
+      "additionalQuestions": [
+        "The disciples were told to wait before they were told to go. What are you trying to do for God in your own strength that He may be asking you to first sit still and receive?",
+        "Acts 8 shows the gospel spreading through the very scattering that was meant to crush it. Where has something that felt like the end of your usefulness become the place God planted you?",
+        "Peter had to unlearn that God shows favoritism (10:34). Who is on your 'far off' list — the person or kind of person you quietly assume the pouring would not reach?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, exalted at the Father's right hand, You did not leave us orphaned. You poured out Your own Spirit, and the room You filled has never emptied. On this day of rest, let me stop straining to carry what You are carrying. Breathe on the parts of me that have gone still with fear. Make me a witness not by my effort but by Your presence in me, and number me among the far off whom You called and would not pass by. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day — there is no task to finish. Sit in five minutes of quiet and let one line rest on you like the flame that rested on each of them: 'He has poured out what you now see and hear.' Before you ask God to use you, simply receive that He has already filled the room you are sitting in.",
+      "leavingAtCross": [
+        "The belief that the mission of God depends on the strength I can muster",
+        "The fear that when I cannot see Christ, He is not at work",
+        "The quiet list of people I assume are too far off for the Spirit to reach"
+      ],
+      "receivingFromCross": [
+        "The Spirit poured out by the risen Christ, not earned but given",
+        "The freedom to be sent by One who comes with me",
+        "A place inside the promise made 'to all who are far off'"
+      ],
+      "content": "Today is a sabbath day — there is no task to finish. Sit in five minutes of quiet and let one line rest on you like the flame that rested on each of them: 'He has poured out what you now see and hear.' Before you ask God to use you, simply receive that He has already filled the room you are sitting in."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to Acts 2:33, who is the one who pours out the Spirit at Pentecost — and why does it matter that it is Him and not simply the Spirit arriving on His own?",
+        "How does the map of Acts 1:8 (Jerusalem, Judea and Samaria, the ends of the earth) get filled in across chapters 2 through 10?",
+        "What does Peter come to understand about God in the house of Cornelius (10:34-35), and how does the pouring out of the Spirit on Gentiles confirm it?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about the difference between doing things for God and being carried by God. Where does each of you feel the strain of the first?",
+        "Name a 'scattering' in your life — a loss or disruption — and ask together whether God may be planting rather than uprooting.",
+        "Confess one 'far off' assumption: a person or group you have quietly written off. Pray for them by name."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:1",
+          "text": "In my first book, O Theophilus, I wrote about all that Jesus began to do and to teach,"
+        },
+        {
+          "reference": "Acts 2:38-39",
+          "text": "Peter replied, \"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit. This promise belongs to you and your children and to all who are far off—to all whom the Lord our God will call to Himself.\""
+        },
+        {
+          "reference": "Acts 4:12",
+          "text": "Salvation exists in no one else, for there is no other name under heaven given to men by which we must be saved."
+        },
+        {
+          "reference": "John 20:22",
+          "text": "When He had said this, He breathed on them and said, \"Receive the Holy Spirit.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 1-2",
+          "note": "Read the ascension and Pentecost together in one sitting, watching how the command to wait (1:4) gives way to the wind that fills (2:2). Notice that Peter's sermon is almost entirely about Jesus, not about the disciples' experience."
+        },
+        {
+          "type": "book",
+          "title": "Acts 10",
+          "note": "Read the whole Cornelius account slowly, watching how God prepares both the Gentile soldier and the reluctant apostle before they ever meet, and how the Spirit falls before Peter has finished speaking (10:44)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Peter",
+      "title": "The Fisherman Who Found His Voice",
+      "description": "Simon Peter, a Galilean fisherman called by Jesus, who at the trial denied even knowing Him three times. In these chapters he is a transformed man: standing before the same crowds that condemned his Lord, preaching the resurrection without flinching (2:32), declaring that there is salvation in no other name (4:12), and saying with the rulers, 'we cannot stop speaking about what we have seen and heard' (4:20). By chapter 10 he is being stretched again — sent into a Gentile home he never would have entered on his own.",
+      "keyQuote": "I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right.",
+      "lessonForUs": "The difference between the Peter of the courtyard and the Peter of Pentecost is not more courage of his own. It is the Spirit poured out on him. What he could not summon by willpower, Christ supplied by His breath — and the same source is open to us.",
+      "heading": "The Fisherman Who Found His Voice"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2087,
+  "scriptureReference_full": "Acts 1-10 (anchored on Acts 1:8 and 2:33)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (execheen, G1632) reflects standard lexical sources; the verb echoes the Septuagint of Joel 2:28, which Peter cites at Acts 2:17."
+  ]
 }

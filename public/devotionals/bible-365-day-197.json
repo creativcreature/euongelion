@@ -1,38 +1,195 @@
 {
   "day": 197,
-  "title": "Proverbs: Daily Wisdom — Day 1 — Hook",
-  "teaser": "Day 197 of Bible 365 — Proverbs 3, 8, 16, 22, 31",
+  "title": "The wisdom that was a Person first",
+  "teaser": "Proverbs hands you rules for living, then turns a corner in chapter 8 and shows you Wisdom was beside God at creation — a delight, a craftsman, a Someone you can find.",
   "framework": "Proverbs 3, 8, 16, 22, 31 — Proverbs: Daily Wisdom",
   "scriptureReference": "Proverbs 3, 8, 16, 22, 31",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 197"
+      "type": "scripture",
+      "reference": "Proverbs 3:5-7; 8:22, 30-31, 35; 16:9; 22:4; 31:30",
+      "translation": "BSB",
+      "emphasis": [
+        "lean not on your own understanding",
+        "I was a skilled craftsman at His side",
+        "whoever finds me finds life",
+        "the LORD determines his steps",
+        "a woman who fears the LORD is to be praised"
+      ],
+      "hebrewOriginal": "וָאֶהְיֶה אֶצְלוֹ אָמוֹן וָאֶהְיֶה שַׁעֲשׁוּעִים יוֹם יוֹם",
+      "passage": "Trust in the LORD with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight. Be not wise in your own eyes; fear the LORD and turn away from evil. ... The LORD created me as His first course, before His works of old. ... Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence. I was rejoicing in His whole world, delighting together in the sons of men. ... For whoever finds me finds life and obtains the favor of the LORD. ... A man's heart plans his course, but the LORD determines his steps. ... The rewards of humility and the fear of the LORD are wealth and honor and life. ... Charm is deceptive and beauty is fleeting, but a woman who fears the LORD is to be praised."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Proverbs 3, 8, 16, 22, 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Proverbs 3, 8, 16, 22, 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אָמוֹן",
+      "transliteration": "amon",
+      "pronunciation": "ah-MOHN",
+      "meaning": "master craftsman, skilled artisan; or, in another reading, a little child nursed at the side",
+      "rootMeaning": "Amon comes from a family of words built on the root aman - to be firm, faithful, trustworthy (the same root behind amen). One branch of the family means a trained artisan, a master of a craft. Another branch means a foster-child, a little one cradled and raised.",
+      "usageNote": "Translators have split over this single word in Proverbs 8:30 for two thousand years. The BSB and many others render it 'skilled craftsman' - Wisdom as the master artisan working at God's side. Other ancient readers heard 'little child' - Wisdom as a delighted infant playing before the Father. Both readings keep the same astonishing point: before the world was made, Wisdom was already there, already with God, already loved.",
+      "wordByWord": [
+        {
+          "word": "וָאֶהְיֶה",
+          "transliteration": "va'ehyeh",
+          "meaning": "and I was, I came to be"
+        },
+        {
+          "word": "אֶצְלוֹ",
+          "transliteration": "etzlo",
+          "meaning": "beside Him, at His side, close by"
+        },
+        {
+          "word": "אָמוֹן",
+          "transliteration": "amon",
+          "meaning": "skilled craftsman, master workman (or: nursed child)"
+        },
+        {
+          "word": "שַׁעֲשׁוּעִים",
+          "transliteration": "sha'ashu'im",
+          "meaning": "delight, sheer joy, the thing one takes pleasure in"
+        },
+        {
+          "word": "יוֹם יוֹם",
+          "transliteration": "yom yom",
+          "meaning": "day by day, day after day"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חָכְמָה",
+          "reference": "Chokmah - 'wisdom' - is the word personified as a woman throughout Proverbs 8. In Hebrew she speaks in the first person: 'I was there, I was rejoicing.' Not a maxim. A voice."
+        }
+      ],
+      "strongsNumber": "H525",
+      "definition": "an artificer, master workman, skilled craftsman; by another reading, a foster-child or nursling",
+      "usage": "The word sits at the exact center of Wisdom's self-portrait. Whether she is the architect or the cradled child, she is etzlo - beside Him - and she is His sha'ashu'im, His delight, before a single star was lit."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Proverbs: Daily Wisdom. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wisdom personified (1 Cor 1:30).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Book of Rules That Turns Into a Person",
+      "body": "Open Proverbs anywhere and you will find what you expected: short, sharp sentences about how to live. Guard your tongue. Watch your money. Choose your friends. Train your children. The book reads like a wise grandparent emptying a lifetime of hard lessons into your lap, and most of us treat it that way - a manual of good sense, dipped into when we need a verse for the day.\n\nThat is the plain surface, and it is genuinely good. \"Trust in the LORD with all your heart, and lean not on your own understanding\" (3:5). \"A man's heart plans his course, but the LORD determines his steps\" (16:9). \"Train up a child in the way he should go\" (22:6). These are not throwaway lines. They are the accumulated wisdom of a people who learned that fearing the LORD is where knowledge actually begins (1:7).\n\nBut the whole book is built on a frame, and you only see it when you stand back. Proverbs opens by telling you that the fear of the LORD is the beginning of knowledge (1:7), and it closes by praising the one thing that lasts when charm and beauty have drained away: \"a woman who fears the LORD\" (31:30). The fear of the LORD is the doorpost on both ends of the house. Everything between - every rule about speech and money and work - hangs on that frame. Proverbs is not handing you tips. It is teaching you who to revere, and then letting reverence reorder the rest.",
+      "keyInsight": "Proverbs is framed front and back by the fear of the LORD (1:7; 31:30). The practical advice in between is not a freestanding code of conduct - it is what a God-revering life looks like once it stops leaning on its own understanding.",
+      "content": "Open Proverbs anywhere and you will find what you expected: short, sharp sentences about how to live. Guard your tongue. Watch your money. Choose your friends. Train your children. The book reads like a wise grandparent emptying a lifetime of hard lessons into your lap, and most of us treat it that way - a manual of good sense, dipped into when we need a verse for the day.\n\nThat is the plain surface, and it is genuinely good. \"Trust in the LORD with all your heart, and lean not on your own understanding\" (3:5). \"A man's heart plans his course, but the LORD determines his steps\" (16:9). \"Train up a child in the way he should go\" (22:6). These are not throwaway lines. They are the accumulated wisdom of a people who learned that fearing the LORD is where knowledge actually begins (1:7).\n\nBut the whole book is built on a frame, and you only see it when you stand back. Proverbs opens by telling you that the fear of the LORD is the beginning of knowledge (1:7), and it closes by praising the one thing that lasts when charm and beauty have drained away: \"a woman who fears the LORD\" (31:30). The fear of the LORD is the doorpost on both ends of the house. Everything between - every rule about speech and money and work - hangs on that frame. Proverbs is not handing you tips. It is teaching you who to revere, and then letting reverence reorder the rest."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Manual and the Mentor",
+      "body": "A friend of mine spent a year teaching himself woodworking off online videos. He had the manuals - joinery charts, sharpening angles, glue-up sequences, all of it printed and tabbed. His first table came out square enough to use and ugly enough to hide in the garage. He could follow every rule and still not make anything beautiful.\n\nThe next year he found an old furniture-maker two towns over who let him sweep the shop in exchange for watching. Nothing in the manuals changed. But everything changed. He learned how the old man held a chisel slack in his hand, how he listened to the wood, how he knew when to stop. \"The book told me what to do,\" my friend said. \"Being next to him taught me how to see.\"\n\nThat is the difference Proverbs is quietly drawing. The proverbs are the manual: true, useful, worth memorizing. But chapter 8 introduces you to someone who was in the shop before the shop existed - Wisdom herself, standing beside the Maker as He worked, watching how He held the world. You can keep the rules and miss her entirely. Proverbs would rather you came to know the One who was there when the joints were cut.",
+      "connectionToTheme": "Rules can be followed without relationship; Proverbs 8 moves the reader from the manual to the Master Craftsman's side, where wisdom is learned by nearness, not just instruction.",
+      "content": "A friend of mine spent a year teaching himself woodworking off online videos. He had the manuals - joinery charts, sharpening angles, glue-up sequences, all of it printed and tabbed. His first table came out square enough to use and ugly enough to hide in the garage. He could follow every rule and still not make anything beautiful.\n\nThe next year he found an old furniture-maker two towns over who let him sweep the shop in exchange for watching. Nothing in the manuals changed. But everything changed. He learned how the old man held a chisel slack in his hand, how he listened to the wood, how he knew when to stop. \"The book told me what to do,\" my friend said. \"Being next to him taught me how to see.\"\n\nThat is the difference Proverbs is quietly drawing. The proverbs are the manual: true, useful, worth memorizing. But chapter 8 introduces you to someone who was in the shop before the shop existed - Wisdom herself, standing beside the Maker as He worked, watching how He held the world. You can keep the rules and miss her entirely. Proverbs would rather you came to know the One who was there when the joints were cut."
+    },
+    {
+      "type": "insight",
+      "heading": "Wisdom Was a Someone Before She Was a Something",
+      "body": "Chapter 8 is the place the book turns a corner, and it is easy to read right past it. Wisdom has been speaking like a teacher for seven chapters. Then, in verse 22, her voice drops into something older than the world: \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began\" (8:22-23).\n\nShe keeps going, and the scene becomes almost unbearable in its intimacy: \"I was there when He established the heavens, when He inscribed a circle on the face of the deep ... Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence\" (8:27, 30). Earlier the same book had said the LORD \"founded the earth by wisdom and established the heavens by understanding\" (3:19). Now wisdom is no longer the tool He used. She is a presence at His side, His sha'ashu'im - His delight - rejoicing while the world is being made.\n\nThis is the pivot the whole book has been climbing toward. The reason fearing the LORD is the beginning of knowledge is not that God demands you grovel. It is that wisdom was never an impersonal force or a clever technique. Wisdom was a Someone, beside God, loved by God, before there was anything else to love. Which means the deepest thing the book wants you to do is not master a skill. It is to find a Person: \"For whoever finds me finds life and obtains the favor of the LORD\" (8:35).",
+      "historicalContext": "Proverbs belongs to Israel's Wisdom Literature alongside Job and Ecclesiastes - writings that pursue God through observation of ordinary life rather than law or prophecy. Ancient readers placed great weight on chapter 8's personified Wisdom; long before the New Testament was written, Jewish teachers were debating how Wisdom could be 'beside' God at creation and yet not a second god. The passage was already understood to be saying something extraordinary about how God relates to His own wisdom.",
+      "fascinatingFact": "The single Hebrew word at the hinge - amon (8:30) - has divided translators for millennia. One reading makes Wisdom the master craftsman building the cosmos; another makes her a little child playing with delight before the Father. Scripture leaves the ambiguity standing, and both pictures land in the same place: before creation, Wisdom was etzlo, beside Him, and she was His joy.",
+      "content": "Chapter 8 is the place the book turns a corner, and it is easy to read right past it. Wisdom has been speaking like a teacher for seven chapters. Then, in verse 22, her voice drops into something older than the world: \"The LORD created me as His first course, before His works of old. From everlasting I was established, from the beginning, before the earth began\" (8:22-23).\n\nShe keeps going, and the scene becomes almost unbearable in its intimacy: \"I was there when He established the heavens, when He inscribed a circle on the face of the deep ... Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence\" (8:27, 30). Earlier the same book had said the LORD \"founded the earth by wisdom and established the heavens by understanding\" (3:19). Now wisdom is no longer the tool He used. She is a presence at His side, His sha'ashu'im - His delight - rejoicing while the world is being made.\n\nThis is the pivot the whole book has been climbing toward. The reason fearing the LORD is the beginning of knowledge is not that God demands you grovel. It is that wisdom was never an impersonal force or a clever technique. Wisdom was a Someone, beside God, loved by God, before there was anything else to love. Which means the deepest thing the book wants you to do is not master a skill. It is to find a Person: \"For whoever finds me finds life and obtains the favor of the LORD\" (8:35)."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In Proverbs 8, Wisdom speaks as a presence beside God before creation - His skilled craftsman, His daily delight, the one through whom the heavens were established, and the one who promises that whoever finds her finds life.",
+      "modernApplication": "We collect wisdom the way we collect everything else - in bookmarks and quotes and saved threads, hunting for the technique that will finally make life work. Proverbs gently refuses to be reduced to technique. It keeps insisting that wisdom has a face, and that the point of getting wise is getting near a Person.",
+      "connectionPoint": "When the New Testament writers reached for words to describe Jesus, they reached straight into Proverbs 8. Paul calls Christ 'the power of God and the wisdom of God' (1 Corinthians 1:24) and says God made Him 'our wisdom' (1 Corinthians 1:30). He echoes the craftsman of Proverbs 8 when he writes that in Christ 'all things were created' and 'in Him all things hold together' (Colossians 1:16-17). John opens his Gospel with the same scene from the other side: 'In the beginning was the Word ... all things were made through Him' (John 1:1-3).",
+      "newTestamentEcho": "The Wisdom who said 'I was a skilled craftsman at His side' and 'whoever finds me finds life' is not a poetic abstraction Christians stretched onto Jesus after the fact. The Church confessed that the eternal Son - 'begotten, not made,' the one through whom 'all things were made' (Nicene Creed) - is the very Wisdom Proverbs 8 was singing about. To find wisdom is, in the end, to find Christ, in whom 'are hidden all the treasures of wisdom and knowledge' (Colossians 2:3)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been treating wisdom as a technique to master rather than a Person to know - and what would change if you went looking for the One who was there at creation instead of just better advice?",
+      "additionalQuestions": [
+        "Proverbs frames everything with 'the fear of the LORD.' What does it mean for you, practically, to begin a decision with reverence rather than with your own understanding (3:5)?",
+        "Where in your life right now are you planning your course while forgetting that 'the LORD determines his steps' (16:9)? What would loosen your grip?",
+        "If wisdom is finally a Person to be found (8:35), what does 'finding' look like for you this week - in prayer, in Scripture, in slowing down?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-seeking",
+      "prayerText": "Lord, I have wanted wisdom the way I want most things - as a fix, a shortcut, a better plan. Forgive me for leaning so hard on my own understanding. You tell me Wisdom was beside You before the world began, Your delight, the craftsman at Your side, and that whoever finds her finds life. So I stop hunting for technique and I come looking for You. Christ, in whom all the treasures of wisdom are hidden, be my wisdom today. Order my steps when I have only managed to make plans. Teach me the fear of the LORD that is the beginning of everything else. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Before one decision today - a conversation, a purchase, a plan you are already certain about - stop and pray Proverbs 3:5-6 over it: 'I will not lean on my own understanding; in this, I acknowledge You.' Then make the choice as someone who has gone looking for the Person of Wisdom, not just better information.",
+      "leavingAtCross": [
+        "The habit of leaning on my own understanding and calling it being smart",
+        "The hunt for wisdom as a technique that will finally make life manageable on my terms",
+        "The quiet certainty that my plans are my steps"
+      ],
+      "receivingFromCross": [
+        "Christ Himself as my wisdom - the One who was beside the Father at creation and is now near to me",
+        "The freedom of fearing the LORD: a beginning point that reorders everything downstream of it",
+        "The promise that the One who determines my steps delights to be found by those who seek Him"
+      ],
+      "content": "Before one decision today - a conversation, a purchase, a plan you are already certain about - stop and pray Proverbs 3:5-6 over it: 'I will not lean on my own understanding; in this, I acknowledge You.' Then make the choice as someone who has gone looking for the Person of Wisdom, not just better information."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does the frame of Proverbs - 'the fear of the LORD' at the opening (1:7) and the close (31:30) - change the way you read the practical advice in between?",
+        "In Proverbs 8, what is the difference between treating wisdom as a tool God used (3:19) and a presence beside Him (8:30)? Why does that distinction matter?",
+        "Which New Testament passages take the picture of Wisdom in Proverbs 8 and apply it to Jesus, and what do they claim about Him?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been collecting wisdom as technique - tips, hacks, advice - while avoiding the slower work of knowing God. Talk about it honestly.",
+        "Share a recent decision where you 'planned your course' (16:9) without acknowledging the Lord. What would you do differently now?",
+        "Ask each other: if wisdom is ultimately a Person to be found (8:35), where is each of you actually looking for Him this season?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Proverbs 1:7",
+          "text": "The fear of the LORD is the beginning of knowledge, but fools despise wisdom and discipline."
+        },
+        {
+          "reference": "Proverbs 9:10",
+          "text": "The fear of the LORD is the beginning of wisdom, and knowledge of the Holy One is understanding."
+        },
+        {
+          "reference": "1 Corinthians 1:30",
+          "text": "It is because of Him that you are in Christ Jesus, who has become for us wisdom from God: our righteousness, holiness, and redemption."
+        },
+        {
+          "reference": "Colossians 2:3",
+          "text": "in whom are hidden all the treasures of wisdom and knowledge."
+        },
+        {
+          "reference": "John 1:1-3",
+          "text": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Proverbs 8",
+          "note": "Read the whole chapter slowly, watching Wisdom's voice shift from teacher (vv. 1-21) to the eternal presence beside God at creation (vv. 22-31). Notice how vv. 32-36 turn that majesty into an invitation: 'blessed is the man who listens to me.'"
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Personified Wisdom (Chokmah)",
+      "title": "The Craftsman at God's Side",
+      "era": "Proverbs 8 - traditionally connected to Solomon's collection, 10th century BC",
+      "key_trait": "A presence, not a principle: beside God before creation, His daily delight, calling out to be found",
+      "description": "Throughout Proverbs, Wisdom speaks in the first person as a woman calling in the streets, but in chapter 8 her voice reaches back before the world. She describes herself as created before God's works of old, present when the heavens were established, a skilled craftsman at His side and His delight 'day by day.' She promises that whoever finds her finds life and the favor of the LORD. The New Testament writers heard in this portrait the eternal Son, and confessed Christ as 'the wisdom of God' through whom all things were made.",
+      "keyQuote": "Then I was a skilled craftsman at His side, and His delight day by day, rejoicing always in His presence.",
+      "lessonForUs": "If wisdom was a Someone beside God before it was ever a saying in a book, then the wisest thing you can do is not memorize more rules - it is to come near the Person all the rules were pointing to.",
+      "heading": "The Craftsman at God's Side"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1754,
+  "scriptureReference_full": "Proverbs 3, 8, 16, 22, 31",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (amon, H525; chokmah; sha'ashu'im) reflects standard lexical sources; the dual 'master craftsman'/'nursling' rendering of amon in Proverbs 8:30 is a long-standing translational debate noted across major commentaries and the ancient versions.",
+    "The identification of personified Wisdom with the eternal Son draws on 1 Corinthians 1:24, 30; Colossians 1:16-17; 2:3; John 1:1-3 and the Nicene Creed ('begotten, not made ... through Him all things were made')."
+  ]
 }

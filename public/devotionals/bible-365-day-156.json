@@ -1,38 +1,186 @@
 {
   "day": 156,
-  "title": "Fall of Jerusalem + Lamentations — Day 2 — Building",
-  "teaser": "Day 156 of Bible 365 — Lamentations",
+  "title": "New every morning, over a ruined city",
+  "teaser": "Jerusalem is rubble and the poet keeps a brutal record of it. Then, in the lowest line of the lament, he chooses to remember one thing — and hope catches.",
   "framework": "Lamentations — Fall of Jerusalem + Lamentations",
-  "scriptureReference": "Lamentations",
+  "scriptureReference": "Lamentations 3:19-26",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 156"
+      "type": "scripture",
+      "reference": "Lamentations 3:19-26",
+      "translation": "BSB",
+      "emphasis": [
+        "Yet I call this to mind",
+        "new every morning",
+        "great is Your faithfulness"
+      ],
+      "hebrewOriginal": "חֲדָשִׁים לַבְּקָרִים רַבָּה אֱמוּנָתֶךָ",
+      "passage": "Remember my affliction and wandering, the wormwood and the gall. Surely my soul remembers and is humbled within me. Yet I call this to mind, and therefore I have hope: Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness! “The LORD is my portion,” says my soul, “therefore I will hope in Him.” The LORD is good to those who wait for Him, to the soul who seeks Him. It is good to wait quietly for the salvation of the LORD."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Lamentations**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Lamentations and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רַחֲמִים",
+      "transliteration": "rachamim",
+      "pronunciation": "ra-kha-MEEM",
+      "meaning": "tender mercies, deep compassion, womb-love",
+      "rootMeaning": "Built on rechem, the word for womb. Rachamim is the kind of mercy a mother feels for the child she carried - visceral, bodily, automatic. It is plural in form, as though one compassion is never enough; they come in waves.",
+      "usageNote": "In Lamentations 3:22 the poet says the LORD's rachamim 'never fail' - literally, they do not come to an end. The same root names God's character when He passes before Moses: 'compassionate and gracious' (Exodus 34:6). Over the ashes of Jerusalem, the poet reaches for the most maternal word Hebrew has for love.",
+      "wordByWord": [
+        {
+          "word": "חַסְדֵי",
+          "transliteration": "chasdei",
+          "meaning": "the loving devotions, covenant kindnesses (of the LORD)"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the covenant name, the God who bound Himself to this people"
+        },
+        {
+          "word": "לֹא־תָמְנוּ",
+          "transliteration": "lo-tamnu",
+          "meaning": "we are not consumed, we are not finished off"
+        },
+        {
+          "word": "רַחֲמָיו",
+          "transliteration": "rachamav",
+          "meaning": "His tender mercies, His compassions"
+        },
+        {
+          "word": "חֲדָשִׁים לַבְּקָרִים",
+          "transliteration": "chadashim labbeqarim",
+          "meaning": "new for the mornings - fresh with each daybreak"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "אֱמוּנָה",
+          "reference": "Emunah (3:23), translated 'faithfulness,' shares its root with amen - the steady, propped-up reliability of something you can lean your whole weight on. From it comes the hymn line 'Great Is Thy Faithfulness.'"
+        }
+      ],
+      "strongsNumber": "H7356",
+      "definition": "compassion, tender mercy; deep, womb-like love",
+      "usage": "Rachamim is love felt in the body before it is reasoned out. The poet does not say God owes Jerusalem another chance; he says God's compassions are the kind that, by their nature, keep coming - one fresh batch every dawn, like manna."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Fall of Jerusalem + Lamentations. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ wept over Jerusalem (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Grief Written Down Carefully",
+      "body": "The book of Lamentations does not begin with hope. It begins with a city. “How lonely lies the city, once so full of people!” (Lamentations 1:1). Jerusalem has fallen. In 586 BC the armies of Babylon broke the walls, burned the temple Solomon built, and marched the survivors away in chains. The poet stands in the wreckage and refuses to look away. He records the empty roads to Zion, the groaning priests, the children fainting in the streets (1:4; 2:11). He even turns to the passersby and asks the most desperate question grief can ask: “Is this nothing to you, all you who pass by?” (1:12).\n\nWhat is easy to miss is how carefully this anguish is built. In Hebrew, chapters 1, 2, and 4 are acrostics: each verse begins with the next letter of the alphabet, aleph to tav, A to Z. Chapter 3, the center, triples it - three verses for each letter, sixty-six lines of ordered sorrow. This is not the rambling of someone too broken to think. It is grief given a shape, A to Z, so that nothing is left out and nothing spills over. The poet is doing something the bereaved have always done: he is keeping the record straight. He is telling the truth about how bad it is, line by deliberate line.\n\nAnd the truth is very bad. By the middle of chapter 3 the poet is not describing the city anymore; he is describing himself. “I am the man who has seen affliction under the rod of God’s wrath” (3:1). “Even when I cry out and plead for help, He shuts out my prayer” (3:8). “My soul has been deprived of peace; I have forgotten what prosperity is” (3:17). Then the floor drops out entirely: “My strength has perished, along with my hope from the LORD” (3:18). That is the lowest line in the book. The hope is gone. He says so plainly.",
+      "keyInsight": "Lamentations does not rush past the ruins to reach the comfort. It writes the disaster down, letter by letter, and lets a believer say out loud that his hope from the LORD has perished - before anything turns.",
+      "content": "The book of Lamentations does not begin with hope. It begins with a city. “How lonely lies the city, once so full of people!” (Lamentations 1:1). Jerusalem has fallen. In 586 BC the armies of Babylon broke the walls, burned the temple Solomon built, and marched the survivors away in chains. The poet stands in the wreckage and refuses to look away. He records the empty roads to Zion, the groaning priests, the children fainting in the streets (1:4; 2:11). He even turns to the passersby and asks the most desperate question grief can ask: “Is this nothing to you, all you who pass by?” (1:12).\n\nWhat is easy to miss is how carefully this anguish is built. In Hebrew, chapters 1, 2, and 4 are acrostics: each verse begins with the next letter of the alphabet, aleph to tav, A to Z. Chapter 3, the center, triples it - three verses for each letter, sixty-six lines of ordered sorrow. This is not the rambling of someone too broken to think. It is grief given a shape, A to Z, so that nothing is left out and nothing spills over. The poet is doing something the bereaved have always done: he is keeping the record straight. He is telling the truth about how bad it is, line by deliberate line.\n\nAnd the truth is very bad. By the middle of chapter 3 the poet is not describing the city anymore; he is describing himself. “I am the man who has seen affliction under the rod of God’s wrath” (3:1). “Even when I cry out and plead for help, He shuts out my prayer” (3:8). “My soul has been deprived of peace; I have forgotten what prosperity is” (3:17). Then the floor drops out entirely: “My strength has perished, along with my hope from the LORD” (3:18). That is the lowest line in the book. The hope is gone. He says so plainly."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Notebook by the Hospital Bed",
+      "body": "A friend of mine sat by her husband’s bed through the long months of his illness, and she kept a notebook. Not a journal of feelings - a ledger. Medications and times. What the doctors actually said versus what they implied. The night he could not breathe. She wrote it all down in small, even handwriting, because, she told me later, “if I didn’t write it down, the fear would just be a fog. On paper it had edges. I could look at it.”\n\nShe was doing what the poet of Lamentations does. She was refusing to let the worst thing become a smear of dread, and instead giving it letters and dates and a straight margin. It did not make the suffering smaller. It made it sayable.\n\nAnd then, near the back of the notebook, she had started a second list. Just a few lines, dated each morning: the nurse who stayed past her shift. The coffee someone left without a word. A whole night he slept without pain. She had begun, without planning to, to keep a record of mercy alongside the record of loss - and she said it was that second list, scrawled in the same shaking hand, that got her out of bed each day.",
+      "connectionToTheme": "Honest grief and remembered mercy can live in the same notebook. The poet keeps both ledgers at once - and it is the deliberate turn to the second one that changes everything.",
+      "content": "A friend of mine sat by her husband’s bed through the long months of his illness, and she kept a notebook. Not a journal of feelings - a ledger. Medications and times. What the doctors actually said versus what they implied. The night he could not breathe. She wrote it all down in small, even handwriting, because, she told me later, “if I didn’t write it down, the fear would just be a fog. On paper it had edges. I could look at it.”\n\nShe was doing what the poet of Lamentations does. She was refusing to let the worst thing become a smear of dread, and instead giving it letters and dates and a straight margin. It did not make the suffering smaller. It made it sayable.\n\nAnd then, near the back of the notebook, she had started a second list. Just a few lines, dated each morning: the nurse who stayed past her shift. The coffee someone left without a word. A whole night he slept without pain. She had begun, without planning to, to keep a record of mercy alongside the record of loss - and she said it was that second list, scrawled in the same shaking hand, that got her out of bed each day."
+    },
+    {
+      "type": "insight",
+      "heading": "The Hinge Is One Deliberate Sentence",
+      "body": "Watch the exact moment the book turns. It is not a change in circumstances. Jerusalem is still rubble. Nothing outside the poet has improved. What changes is one verb. “Yet I call this to mind, and therefore I have hope” (Lamentations 3:21).\n\nHe calls it to mind. He chooses to. The Hebrew has the force of a deliberate act - he reaches back into memory and sets one thing in front of himself on purpose, the way you might set a single candle on a table in a dark room. And what is the one thing? “Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness” (3:22-23).\n\nNotice what he does not say. He does not say the affliction was not real - two verses earlier he named the wormwood and the gall. He does not say his hope had not perished - he admitted in verse 18 that it had. He does not wait to feel better before he speaks. He stands in the same wreckage, with the same wet eyes, and recites a fact older than the disaster: the LORD’s chesed - His covenant loyalty - has not let them be wiped out, and His rachamim, His womb-deep compassions, arrive fresh with every sunrise. Hope here is not a mood that descends. It is a truth that is remembered, on purpose, out loud, before the feeling catches up.",
+      "historicalContext": "Lamentations was almost certainly composed in the immediate aftermath of Jerusalem’s fall in 586 BC, while the wound was open. Jewish tradition has long read it aloud on Tisha B’Av, the annual day of mourning for both temples’ destruction. For centuries God’s people have gathered to say these words together - not to wallow, but to learn how to grieve toward hope.",
+      "fascinatingFact": "Chapter 3 is the structural center of the five-poem book, and verses 22-23 sit almost exactly at its heart. The lowest point of despair (v. 18) and the highest note of hope (vv. 22-23) are separated by only three lines - and the bridge between them is the single phrase “Yet I call this to mind.” The whole book pivots on an act of remembering.",
+      "content": "Watch the exact moment the book turns. It is not a change in circumstances. Jerusalem is still rubble. Nothing outside the poet has improved. What changes is one verb. “Yet I call this to mind, and therefore I have hope” (Lamentations 3:21).\n\nHe calls it to mind. He chooses to. The Hebrew has the force of a deliberate act - he reaches back into memory and sets one thing in front of himself on purpose, the way you might set a single candle on a table in a dark room. And what is the one thing? “Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness” (3:22-23).\n\nNotice what he does not say. He does not say the affliction was not real - two verses earlier he named the wormwood and the gall. He does not say his hope had not perished - he admitted in verse 18 that it had. He does not wait to feel better before he speaks. He stands in the same wreckage, with the same wet eyes, and recites a fact older than the disaster: the LORD’s chesed - His covenant loyalty - has not let them be wiped out, and His rachamim, His womb-deep compassions, arrive fresh with every sunrise. Hope here is not a mood that descends. It is a truth that is remembered, on purpose, out loud, before the feeling catches up."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the ruins of Jerusalem, with his own hope freshly declared dead, the poet deliberately calls to mind that the LORD’s loving devotion has not let His people be consumed, and that His compassions are new every morning.",
+      "modernApplication": "When the floor falls out - a diagnosis, a death, a marriage ending, a faith going cold - the instinct is to wait until you feel hopeful before you say anything hopeful. Lamentations teaches the reverse. You can keep the honest ledger of how bad it is and still, in the same breath, call to mind one true thing about God and say it out loud before the feeling arrives. Hope is something you remember on purpose, often through tears, often before dawn.",
+      "connectionPoint": "This pattern - grieve honestly, then deliberately remember God’s steadfast love - runs straight through Scripture. The psalmist does it: “Why are you downcast, O my soul? ... Put your hope in God” (Psalm 42:5). Paul does it from a prison cell, naming his troubles and then choosing thanksgiving (Philippians 4:6-7). The morning-by-morning mercy of Lamentations becomes, in the New Testament, a mercy that meets us at a particular morning.",
+      "newTestamentEcho": "The poet of chapter 3 calls himself “the man who has seen affliction under the rod of God’s wrath” (3:1), who cries out and finds his prayer shut out (3:8). Centuries later, Another would stand fully under that wrath and cry into a closed heaven, “My God, my God, why have You forsaken Me?” (Matthew 27:46) - Jesus, who had already wept over this very city (Luke 19:41). He bore the affliction Lamentations describes so that the mercies which are “new every morning” could land, decisively, on a resurrection morning. Because His prayer was shut out, ours is not. Because He was consumed, we are not."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the honest, A-to-Z record of the hard thing you are carrying right now - and what is the one true thing about God you could call to mind alongside it today, even before you feel it?",
+      "additionalQuestions": [
+        "The poet admitted his hope had perished (3:18) before he remembered God’s mercy (3:21). Where have you felt pressure to skip the honest part and jump straight to hope?",
+        "If God’s mercies are “new every morning,” what would it look like to expect a fresh one tomorrow - not a leftover from yesterday?",
+        "What does it mean for you, in your particular situation, to “wait quietly for the salvation of the LORD” (3:26) rather than to force a resolution?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, I will not pretend the ruins are not ruins. You see the wreckage, and You see that some mornings my hope feels perished. So I do the one thing the poet did: I call this to mind on purpose - that Your loving devotion has not let me be consumed, that Your compassions are new every morning, that great is Your faithfulness. I say it before I feel it. Be my portion when I have lost the rest. Teach me to wait quietly for Your salvation, and let me wake tomorrow to a mercy I have not used before. Through Christ, who was forsaken so that I would not be. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Tonight, write two short lists. One is the honest record of the hard thing - name it plainly, with edges. The other is one true thing about God you will call to mind tomorrow morning before you check your phone or your fears. Read the second list out loud at first light, whether or not you feel it.",
+      "leavingAtCross": [
+        "The pressure to feel hopeful before I am allowed to speak hope",
+        "The fog of dread I keep refusing to give edges and name honestly",
+        "The fear that this morning’s mercy was the last batch and there will be none for tomorrow"
+      ],
+      "receivingFromCross": [
+        "Permission to grieve honestly and hope deliberately in the same breath",
+        "A compassion that is womb-deep and arrives fresh with every sunrise",
+        "Christ as my portion when the rest of life has been carried off"
+      ],
+      "content": "Tonight, write two short lists. One is the honest record of the hard thing - name it plainly, with edges. The other is one true thing about God you will call to mind tomorrow morning before you check your phone or your fears. Read the second list out loud at first light, whether or not you feel it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the lowest line in Lamentations 3, and which single phrase turns the poem from despair toward hope?",
+        "Why does it matter that the poet's circumstances do not change between verse 18 and verse 22 - that only his act of remembering changes?",
+        "How does the Hebrew word rachamim - mercy rooted in the word for womb - deepen what “His mercies never fail” actually means?"
+      ],
+      "forAccountabilityPartners": [
+        "Share the honest “ledger” of something hard you are carrying - say it with edges, the way the poet does, without rushing to fix it.",
+        "Name one true thing about God you each want to “call to mind” this week, and agree to text it to each other one morning.",
+        "Talk about the difference between waiting quietly for God’s salvation (3:26) and simply giving up - how do you tell them apart?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 1:1",
+          "text": "How lonely lies the city, once so full of people! She who was great among the nations has become a widow. The princess of the provinces has become a slave."
+        },
+        {
+          "reference": "Lamentations 3:18",
+          "text": "So I say, “My strength has perished, along with my hope from the LORD.”"
+        },
+        {
+          "reference": "Psalm 42:5",
+          "text": "Why are you downcast, O my soul? Why the unease within me? Put your hope in God, for I will yet praise Him for the salvation of His presence."
+        },
+        {
+          "reference": "Luke 19:41",
+          "text": "As Jesus approached Jerusalem and saw the city, He wept over it."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Lamentations 3",
+          "note": "Read the whole chapter in one sitting, watching the movement from “I am the man who has seen affliction” (v. 1) down to “my hope has perished” (v. 18) and up through “Yet I call this to mind” (v. 21) to “it is good to wait quietly” (v. 26)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Poet of Lamentations",
+      "title": "The One Who Grieved Toward Hope",
+      "description": "An eyewitness to the fall of Jerusalem in 586 BC, traditionally associated with the prophet Jeremiah, who watched Babylon raze the city and the temple. Rather than look away, he wrote five carefully ordered poems of grief - most of them acrostics, A to Z - that name the disaster fully and honestly. At the structural center of the book, with his own hope freshly declared dead, he deliberately turns his memory to the steadfast love of the LORD and finds, in that act of remembering, enough hope to keep waiting.",
+      "keyQuote": "Yet I call this to mind, and therefore I have hope.",
+      "lessonForUs": "You do not have to choose between honest grief and real hope. The poet keeps both. He tells the whole bitter truth about the ruins, and then he reaches back, on purpose, for one truth about God - and he says it before he feels it. That deliberate remembering is itself an act of faith, and it is available on the hardest morning you will ever wake to.",
+      "heading": "The One Who Grieved Toward Hope"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1773,
+  "scriptureReference_full": "Lamentations 3:19-26",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (rachamim H7356; chesed; emunah) reflects standard lexical sources; the acrostic structure of Lamentations 1-4 and the central placement of chapter 3 are standard observations in Old Testament scholarship. The traditional association of the book with Jeremiah and its reading on Tisha B'Av are noted as tradition, not as settled authorship."
+  ]
 }

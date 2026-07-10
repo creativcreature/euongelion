@@ -1,38 +1,182 @@
 {
   "day": 358,
-  "title": "Revelation: New Heaven + New Earth — Day 1 — Hook",
-  "teaser": "Day 358 of Bible 365 — Revelation 21-22",
+  "title": "The garden at the end of the world",
+  "teaser": "The Bible opens in a garden with a tree of life and a guarded gate. It ends with the gate gone, the tree replanted in the middle of a city, and God living with His people. Day 1 of the last vision.",
   "framework": "Revelation 21-22 — Revelation: New Heaven + New Earth",
   "scriptureReference": "Revelation 21-22",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 358"
+      "type": "scripture",
+      "reference": "Revelation 21:1-4",
+      "translation": "BSB",
+      "emphasis": [
+        "a new heaven and a new earth",
+        "the dwelling place of God is with man",
+        "He will wipe away every tear",
+        "the former things have passed away"
+      ],
+      "passage": "Then I saw a new heaven and a new earth, for the first heaven and earth had passed away, and the sea was no more. I saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a loud voice from the throne saying: “Behold, the dwelling place of God is with man, and He will dwell with them. They will be His people, and God Himself will be with them as their God. ‘He will wipe away every tear from their eyes,’ and there will be no more death or mourning or crying or pain, for the former things have passed away.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Revelation 21-22**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Revelation 21-22 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "σκηνή",
+      "transliteration": "skēnē",
+      "pronunciation": "skay-NAY",
+      "meaning": "tent, dwelling, tabernacle",
+      "rootMeaning": "A skene is a tent - the kind of portable shelter you pitch and live inside. From it comes the verb skenoo, to pitch a tent, to take up residence. When the loud voice says the dwelling place of God is with man, the noun underneath is skene: God pitching His tent among His people, not visiting but moving in.",
+      "usageNote": "This is the same word-family John reaches for in his Gospel: “The Word became flesh and made His dwelling among us” (John 1:14) - literally, He tented among us. The tabernacle in the wilderness, the temple in Jerusalem, and the incarnation itself were all rehearsals. In Revelation 21 the rehearsal becomes permanent.",
+      "wordByWord": [
+        {
+          "word": "η σκηνή",
+          "transliteration": "hē skēnē",
+          "meaning": "the tent, the dwelling - God's own tabernacle"
+        },
+        {
+          "word": "του θεού",
+          "transliteration": "tou theou",
+          "meaning": "of God"
+        },
+        {
+          "word": "μετὰ τῶν ἀνθρώπων",
+          "transliteration": "meta tōn anthrōpōn",
+          "meaning": "with men, among humankind"
+        },
+        {
+          "word": "σκηνώσει",
+          "transliteration": "skēnōsei",
+          "meaning": "He will pitch His tent, He will dwell"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "σκηνόω / Shekinah",
+          "reference": "The Greek skenoo echoes the Hebrew shakan, to dwell, the root behind Shekinah - the visible glory of God that filled the tabernacle (Exodus 40:34) and the temple (1 Kings 8:11). Revelation 21 is the Shekinah no longer behind a veil but out in the open."
+        }
+      ],
+      "strongsNumber": "G4633",
+      "definition": "a tent or tabernacle; a dwelling place",
+      "usage": "The whole Bible's story of God seeking to live with people - garden, tabernacle, temple, incarnation - lands on this one word: His tent, finally pitched among us for good."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Revelation: New Heaven + New Earth. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ returns; come, Lord Jesus (Rev 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Last Vision Is the First Garden, Finished",
+      "body": "John has spent twenty chapters watching the world come apart. Seals broken, trumpets sounded, bowls poured out, a dragon thrown down. Then, at the very end, the camera lifts. “Then I saw a new heaven and a new earth.” Not the old earth scrapped and replaced with something unrecognizable, but the first heaven and earth carried through judgment and made new - the way a body is sown perishable and raised imperishable.\n\nThe first thing John notices is what is gone. The sea, in Revelation's symbolic vocabulary, is where the beast comes from and where chaos churns; “the sea was no more” means the threat has no more sea to rise out of. Then comes a city, coming down - not built up by human hands climbing toward heaven like Babel, but descending, a gift. And it comes dressed: “prepared as a bride adorned for her husband.” The last image of the Bible's people is not a crowd of survivors but a bride at her wedding.\n\nAnd then a voice from the throne says the thing the whole canon has been straining toward since Genesis 3: God will live with His people. “The dwelling place of God is with man.” This is not heaven as a faraway destination we evacuate to. It is heaven and earth rejoined, with God Himself moving in.",
+      "keyInsight": "Revelation does not end with us going up to God. It ends with God coming down to us. The whole Bible has been the story of God working His way back to the garden where He once walked with people in the cool of the day.",
+      "content": "John has spent twenty chapters watching the world come apart. Seals broken, trumpets sounded, bowls poured out, a dragon thrown down. Then, at the very end, the camera lifts. “Then I saw a new heaven and a new earth.” Not the old earth scrapped and replaced with something unrecognizable, but the first heaven and earth carried through judgment and made new - the way a body is sown perishable and raised imperishable.\n\nThe first thing John notices is what is gone. The sea, in Revelation's symbolic vocabulary, is where the beast comes from and where chaos churns; “the sea was no more” means the threat has no more sea to rise out of. Then comes a city, coming down - not built up by human hands climbing toward heaven like Babel, but descending, a gift. And it comes dressed: “prepared as a bride adorned for her husband.” The last image of the Bible's people is not a crowd of survivors but a bride at her wedding.\n\nAnd then a voice from the throne says the thing the whole canon has been straining toward since Genesis 3: God will live with His people. “The dwelling place of God is with man.” This is not heaven as a faraway destination we evacuate to. It is heaven and earth rejoined, with God Himself moving in."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Room She Kept Ready",
+      "body": "A woman I know spent eleven years with a son she did not know how to find. He had left in anger at nineteen, and the leaving turned into silence, and the silence turned into years. She moved twice in that time. Both times she set up a room she did not need - a bed made, a lamp, his old books on a shelf - because she could not bring herself to live as though he were never coming back.\n\nPeople told her, kindly, to let it go. She didn't. The kept room was not denial. It was hope with a doorframe. It was the shape her love took while she waited.\n\nWhen he finally called, what undid her was not that he was sorry. It was that the room was ready. He did not have to earn his way back in over months. The bed was made the night he came home.\n\nRevelation 21 is the kept room at the scale of the universe. Through every chapter of judgment, the city is being prepared - “coming down out of heaven from God, prepared as a bride.” The end of the story is not God reluctantly making space. It is God revealing a home that has been ready the whole time.",
+      "connectionToTheme": "The new Jerusalem comes down already prepared, already adorned - the way a parent keeps a room ready for the child they refuse to stop expecting. The end of the Bible is a home that was being made ready all along.",
+      "content": "A woman I know spent eleven years with a son she did not know how to find. He had left in anger at nineteen, and the leaving turned into silence, and the silence turned into years. She moved twice in that time. Both times she set up a room she did not need - a bed made, a lamp, his old books on a shelf - because she could not bring herself to live as though he were never coming back.\n\nPeople told her, kindly, to let it go. She didn't. The kept room was not denial. It was hope with a doorframe. It was the shape her love took while she waited.\n\nWhen he finally called, what undid her was not that he was sorry. It was that the room was ready. He did not have to earn his way back in over months. The bed was made the night he came home.\n\nRevelation 21 is the kept room at the scale of the universe. Through every chapter of judgment, the city is being prepared - “coming down out of heaven from God, prepared as a bride.” The end of the story is not God reluctantly making space. It is God revealing a home that has been ready the whole time."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sword Came Down on the Lamb",
+      "body": "Read the last two chapters of the Bible with the first three open beside them, and the whole canon snaps into a single shape.\n\nGenesis began in a garden. In the middle stood a tree of life and a river that flowed out to water the ground (Genesis 2:9-10). God walked with the man in the cool of the day. Then came the fall, and the gate closed: “He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life” (Genesis 3:24). For the rest of the story, that sword stands between humanity and the tree.\n\nNow watch Revelation 22. The tree of life is back, planted on either side of a river - but the river now flows “from the throne of God and of the Lamb,” straight down the main street of a city full of people, and its leaves are “for the healing of the nations” (Revelation 22:1-2). The fruit is no longer forbidden; the gate is no longer guarded. “No longer will there be any curse” (Revelation 22:3).\n\nWhat happened to the flaming sword? It did not vanish. It fell. The reason the way back to the tree of life now stands wide open is that the judgment guarding it landed on the Lamb who is on the throne. The sword that drove Adam out came down on Christ instead, and the gate He bled past, He left standing open behind Him.",
+      "historicalContext": "Revelation closes the Christian canon, and John writes it steeped in the Hebrew Scriptures - by some counts, more than half its lines echo the Old Testament without quoting it directly. The garden imagery of chapters 21-22 (tree of life, river, the dwelling of God) is not new invention; it is Genesis 1-3 deliberately answered, the Bible bending its end back to touch its beginning.",
+      "fascinatingFact": "Eden was a garden; the new creation is a garden inside a city - a garden-city. The biblical story does not end where it began. It ends one step further: God does not simply restore the garden Adam lost, He brings the wilderness in between - the whole long human project of building cities - through judgment and into glory, so that culture, nations, and community are gathered up rather than erased.",
+      "content": "Read the last two chapters of the Bible with the first three open beside them, and the whole canon snaps into a single shape.\n\nGenesis began in a garden. In the middle stood a tree of life and a river that flowed out to water the ground (Genesis 2:9-10). God walked with the man in the cool of the day. Then came the fall, and the gate closed: “He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life” (Genesis 3:24). For the rest of the story, that sword stands between humanity and the tree.\n\nNow watch Revelation 22. The tree of life is back, planted on either side of a river - but the river now flows “from the throne of God and of the Lamb,” straight down the main street of a city full of people, and its leaves are “for the healing of the nations” (Revelation 22:1-2). The fruit is no longer forbidden; the gate is no longer guarded. “No longer will there be any curse” (Revelation 22:3).\n\nWhat happened to the flaming sword? It did not vanish. It fell. The reason the way back to the tree of life now stands wide open is that the judgment guarding it landed on the Lamb who is on the throne. The sword that drove Adam out came down on Christ instead, and the gate He bled past, He left standing open behind Him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "John sees the new Jerusalem come down from heaven and hears the throne announce that God will dwell with His people, wipe away every tear, and end death, mourning, crying, and pain - for “the former things have passed away” (Revelation 21:3-4).",
+      "modernApplication": "You are reading this somewhere on the near side of that promise, still inside “the former things.” Grief, illness, the slow erosions of age, the funerals you have stood through - these are not the way it stays. They are the things named in verse 4 with an expiration date on them. The hope of Revelation is not that pain is unreal, but that it is temporary, and that the One who promises to end it has a personal hand in the ending: He Himself wipes the tears.",
+      "connectionPoint": "Notice that God does not abolish tears by abolishing the people who weep. The same hand that made the heavens reaches down to a particular face and dries it. The cosmic and the intimate are the same gesture.",
+      "newTestamentEcho": "This promise is not floated as wishful thinking. The One on the throne says, “Behold, I make all things new” and immediately adds, “Write this down, for these words are faithful and true” (Revelation 21:5). It is the same voice that, on a hillside, said “Blessed are those who mourn, for they will be comforted” (Matthew 5:4) - the comfort He promised then is the city He shows John now."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What “former thing” in your own life - a grief, a fear, a wound you assume is permanent - would you live differently if you truly believed it had an expiration date?",
+      "additionalQuestions": [
+        "Revelation ends with God coming down to dwell with us, not with us escaping upward. Does that change how you picture the Christian hope - and how you treat this present, physical world?",
+        "If the way to the tree of life now stands open because the sword fell on Christ, what are you still treating as guarded - what good are you trying to earn that has already been opened to you?",
+        "John sees the people of God as a bride “adorned for her husband.” When you imagine being seen by God at the end, do you picture inspection or wedding? Why?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "expectant-hope",
+      "prayerText": "Lord God Almighty, You who are the Beginning and the End, thank You that the story does not stop at the closed gate. Thank You that You did not abandon the garden but worked Your way back to it, and that the sword that should have fallen on me fell on the Lamb instead. Where I am still living among the former things - the grief, the pain, the tears that feel like they will never end - let me hear Your voice from the throne: “Behold, I make all things new.” Make me ready, like a city prepared, like a bride adorned. And until You come, keep this prayer alive in me: Come, Lord Jesus. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, carry one phrase from this passage into the ordinary hours: “Behold, the dwelling place of God is with man.” When you hit the grief or the dullness or the weariness of “the former things,” let that line remind you which way the story bends - not toward escape, but toward God moving in for good.",
+      "leavingAtCross": [
+        "The quiet belief that my present pain is the permanent shape of things",
+        "The picture of heaven as escape from the world rather than the healing of it",
+        "The instinct to earn my way back to a gate Christ already left open"
+      ],
+      "receivingFromCross": [
+        "A future where God Himself wipes away every tear and death is no more",
+        "A home being prepared and brought down to me, not built up by me",
+        "An open way to the tree of life, because the sword that guarded it fell on the Lamb"
+      ],
+      "content": "Today, carry one phrase from this passage into the ordinary hours: “Behold, the dwelling place of God is with man.” When you hit the grief or the dullness or the weariness of “the former things,” let that line remind you which way the story bends - not toward escape, but toward God moving in for good."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Revelation 21:2, the new Jerusalem is “coming down out of heaven from God.” What does the direction of that movement - down, not up - say about the Christian hope?",
+        "What four things does the voice from the throne promise will be no more (Revelation 21:4), and what does it mean that they are called “the former things”?",
+        "How does the tree of life in Revelation 22:2 answer the flaming sword of Genesis 3:24 - and what does Christ have to do with the difference?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one “former thing” you are tempted to treat as permanent. How would believing Revelation 21:4 change the way you carry it this week?",
+        "Talk honestly about how each of you pictures the end - escape from the world, or God coming to dwell in a renewed one. Where did that picture come from?",
+        "Ask each other: where are you still living as though the gate to the tree of life is guarded, when Scripture says the curse is gone and the way is open?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 2:9-10",
+          "text": "Out of the ground the LORD God gave growth to every tree that is pleasing to the eye and good for food. And in the middle of the garden were the tree of life and the tree of the knowledge of good and evil. Now a river flowed out of Eden to water the garden..."
+        },
+        {
+          "reference": "Genesis 3:24",
+          "text": "So He drove out the man and stationed cherubim on the east side of the Garden of Eden, along with a whirling sword of flame to guard the way to the tree of life."
+        },
+        {
+          "reference": "Revelation 22:1-3",
+          "text": "Then the angel showed me a river of the water of life, as clear as crystal, flowing from the throne of God and of the Lamb down the middle of the main street of the city. On either side of the river stood a tree of life... No longer will there be any curse."
+        },
+        {
+          "reference": "Revelation 22:20",
+          "text": "He who testifies to these things says, “Yes, I am coming soon.” Amen. Come, Lord Jesus!"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Revelation 21-22",
+          "note": "Read both chapters in one sitting, then read Genesis 1-3 immediately after. Watch for every echo: garden, tree of life, river, the presence of God, the closed gate now open. The Bible's last word answers its first."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "John of Patmos",
+      "title": "The Seer Who Was Shown the End",
+      "description": "Traditionally identified with John the apostle, the writer of Revelation describes himself as a fellow servant exiled on the island of Patmos “because of the word of God and the testimony of Jesus” (Revelation 1:9). From that small, hard place he is given the largest vision in Scripture - the whole of history brought to its conclusion. Christians have read Revelation in widely different ways across the centuries, but its final two chapters have always been held in common: God dwelling with His people, every tear wiped away, all things made new.",
+      "keyQuote": "Then I saw a new heaven and a new earth... and I heard a loud voice from the throne saying: “Behold, the dwelling place of God is with man.”",
+      "lessonForUs": "John received his clearest sight of the end while he was at his lowest - in exile, cut off, on a prison island. The vision of the new Jerusalem was given not to the comfortable but to the suffering, as the thing worth holding onto when everything else is stripped away.",
+      "heading": "The Seer Who Was Shown the End"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2082,
+  "scriptureReference_full": "Revelation 21:1-7, 22-23; 22:1-5, 13, 17, 20",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (skenē / skenōō, G4633) reflects standard lexical sources; the link to Hebrew shakan and the Shekinah is a widely recognized canonical and theological connection, not a contested doctrinal claim.",
+    "The Genesis-to-Revelation garden frame (tree of life, river, the open gate) is a long-standing reading across Christian traditions and takes no position on contested questions of Revelation's interpretation (millennial views, timing, etc.)."
+  ]
 }

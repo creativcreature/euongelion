@@ -1,38 +1,191 @@
 {
   "day": 25,
   "title": "I have seen God’s face",
-  "teaser": "Day 25 of Bible 365 — Genesis 33:1-11",
+  "teaser": "Day 25 of Bible 365 — Genesis 33:1-11. The brother who swore to kill him runs, embraces him, and weeps. In a reconciled face, Jacob sees the face of God.",
   "framework": "Genesis 33:1-11 — Reconciliation as encounter",
   "scriptureReference": "Genesis 33:1-11",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 25"
+      "type": "scripture",
+      "reference": "Genesis 33:1-11",
+      "translation": "BSB",
+      "emphasis": [
+        "Esau, however, ran to him",
+        "And they both wept",
+        "it is like seeing the face of God",
+        "God has been gracious to me and I have all I need"
+      ],
+      "hebrewOriginal": "כִּי עַל־כֵּן רָאִיתִי פָנֶיךָ כִּרְאֹת פְּנֵי אֱלֹהִים וַתִּרְצֵנִי",
+      "passage": "Now Jacob looked up and saw Esau coming toward him with four hundred men. So he divided the children among Leah, Rachel, and the two maidservants. He put the maidservants and their children in front, Leah and her children next, and Rachel and Joseph at the rear. But Jacob himself went on ahead and bowed to the ground seven times as he approached his brother.\n\nEsau, however, ran to him and embraced him, threw his arms around his neck, and kissed him. And they both wept.\n\nWhen Esau looked up and saw the women and children, he asked, \"Who are these with you?\" Jacob answered, \"These are the children God has graciously given your servant.\" Then the maidservants and their children approached and bowed down. Leah and her children also approached and bowed down, and then Joseph and Rachel approached and bowed down.\n\n\"What do you mean by sending this whole company to meet me?\" asked Esau. \"To find favor in your sight, my lord,\" Jacob answered. \"I already have plenty, my brother,\" Esau replied. \"Keep what belongs to you.\"\n\nBut Jacob insisted, \"No, please! If I have found favor in your sight, then receive this gift from my hand. For indeed, I have seen your face, and it is like seeing the face of God, since you have received me favorably. Please accept my gift that was brought to you, because God has been gracious to me and I have all I need.\" So Jacob pressed him until he accepted."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 33:1-11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 33:1-11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "פָּנִים",
+      "transliteration": "panim",
+      "pronunciation": "pa-NEEM",
+      "meaning": "face, presence, countenance",
+      "rootMeaning": "Panim is the Hebrew word for the face, and by extension the whole presence of a person - to be in front of someone, turned toward them. The word is grammatically plural, as though a face is too alive to be counted as one thing.",
+      "usageNote": "Panim runs like a buried thread through Jacob's whole crisis. The night before this meeting he wrestled at the river and named the place Peniel - 'the face of God' - saying, \"I have seen God face to face, and yet my life was spared\" (Genesis 32:30). The next morning he says of his brother, \"I have seen your face... like seeing the face of God.\" The same word binds the two encounters together: the face he feared all night was God's, and the face he feared all his life was Esau's, and both, when he finally faced them, did not destroy him.",
+      "wordByWord": [
+        {
+          "word": "רָאִיתִי",
+          "transliteration": "ra'iti",
+          "meaning": "I have seen, I have looked upon"
+        },
+        {
+          "word": "פָנֶיךָ",
+          "transliteration": "panekha",
+          "meaning": "your face, your presence"
+        },
+        {
+          "word": "כִּרְאֹת",
+          "transliteration": "kir'ot",
+          "meaning": "as the seeing of, like looking upon"
+        },
+        {
+          "word": "פְּנֵי אֱלֹהִים",
+          "transliteration": "penei Elohim",
+          "meaning": "the face of God"
+        },
+        {
+          "word": "וַתִּרְצֵנִי",
+          "transliteration": "vattirtseni",
+          "meaning": "and you have received me favorably, you have accepted me"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "פְּנִיאֵל / פְּנוּאֵל",
+          "reference": "Peniel/Penuel, the name Jacob gives the river crossing in Genesis 32:30, built from panim (face) and El (God): 'the face of God.' Jacob names a place after seeing God's face the night before he sees his brother's."
+        },
+        {
+          "word": "רָצָה",
+          "reference": "Ratsah, the root behind vattirtseni - to accept with favor, to be pleased with. The same root names the 'acceptance' of a sacrifice that pleases God (Leviticus 1:4). Esau receives his brother the way God receives an offering."
+        }
+      ],
+      "strongsNumber": "H6440",
+      "definition": "the face; the front or presence of a person; figuratively, favor and acceptance",
+      "usage": "When Jacob says Esau's face is 'like seeing the face of God,' he is not flattering his brother. He is confessing that the welcome he had no right to expect felt like standing, alive, before God Himself."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Reconciliation as encounter. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ reconciles enemies (2 Cor 5:18).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Brother He Cheated Is Running Toward Him",
+      "body": "For twenty years Jacob has been running from this morning. He stole his brother's blessing, fled with Esau's last words ringing in his ears - the threat to kill him - and built a whole life at a distance. Now the distance is gone. He looks up and sees Esau coming, and behind Esau four hundred men. There is no reading of that number that does not look like an army.\n\nSo Jacob does what fear does. He arranges his family by how much he is willing to lose: the maidservants and their children in front, Leah and hers behind, and Rachel and Joseph - the ones he loves most - safe at the rear. It is a brutal little piece of math, and the text records it without comment. This is a man who still believes he is meeting a sword.\n\nThen he goes ahead of all of them and bows to the ground seven times. Seven times is how a subject approaches a king he has wronged. Jacob comes the only way he knows how to come - low, and braced for the blow.\n\nAnd the blow never lands. \"Esau, however, ran to him and embraced him, threw his arms around his neck, and kissed him. And they both wept.\" Every defense Jacob built collapses in a single sentence. The army turns out to be a brother. The reckoning turns out to be an embrace.",
+      "keyInsight": "Jacob spent the whole night wrestling God and the whole morning bracing for Esau. He prepared for both encounters as threats. Both turned out to be mercy he could not have arranged.",
+      "content": "For twenty years Jacob has been running from this morning. He stole his brother's blessing, fled with Esau's last words ringing in his ears - the threat to kill him - and built a whole life at a distance. Now the distance is gone. He looks up and sees Esau coming, and behind Esau four hundred men. There is no reading of that number that does not look like an army.\n\nSo Jacob does what fear does. He arranges his family by how much he is willing to lose: the maidservants and their children in front, Leah and hers behind, and Rachel and Joseph - the ones he loves most - safe at the rear. It is a brutal little piece of math, and the text records it without comment. This is a man who still believes he is meeting a sword.\n\nThen he goes ahead of all of them and bows to the ground seven times. Seven times is how a subject approaches a king he has wronged. Jacob comes the only way he knows how to come - low, and braced for the blow.\n\nAnd the blow never lands. \"Esau, however, ran to him and embraced him, threw his arms around his neck, and kissed him. And they both wept.\" Every defense Jacob built collapses in a single sentence. The army turns out to be a brother. The reckoning turns out to be an embrace."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Voicemail Saved for Three Years",
+      "body": "A man I know kept a voicemail from his estranged father saved on his phone for three years. He never listened past the first few seconds. He knew, or thought he knew, what was in it - the same disappointment, the same list of where he had failed. So he let it sit, a small unopened weight he carried everywhere.\n\nWhat he had rehearsed, for three years, was the fight. He knew exactly what he would say back. He had built four hundred men of his own: the arguments, the proof he had been wronged too, the careful order of who was at fault. He was ready for a sword.\n\nWhen his father got sick, he finally pressed play. The message was thirty seconds long. \"I miss you. I was wrong. Please call me back.\" He sat in his car and wept the way you weep when a thing you braced against for years turns out, the whole time, to have been an open arm.\n\nThat is the shape of Genesis 33. We spend our strength preparing for the confrontation we are sure is coming, and we never imagine that the person on the other side might be running toward us, not at us.",
+      "connectionToTheme": "Like Jacob dividing his family in fear, we rehearse the confrontation and arm ourselves for the blow - and miss that reconciliation may already be running toward us with open arms.",
+      "content": "A man I know kept a voicemail from his estranged father saved on his phone for three years. He never listened past the first few seconds. He knew, or thought he knew, what was in it - the same disappointment, the same list of where he had failed. So he let it sit, a small unopened weight he carried everywhere.\n\nWhat he had rehearsed, for three years, was the fight. He knew exactly what he would say back. He had built four hundred men of his own: the arguments, the proof he had been wronged too, the careful order of who was at fault. He was ready for a sword.\n\nWhen his father got sick, he finally pressed play. The message was thirty seconds long. \"I miss you. I was wrong. Please call me back.\" He sat in his car and wept the way you weep when a thing you braced against for years turns out, the whole time, to have been an open arm.\n\nThat is the shape of Genesis 33. We spend our strength preparing for the confrontation we are sure is coming, and we never imagine that the person on the other side might be running toward us, not at us."
+    },
+    {
+      "type": "insight",
+      "heading": "Two Faces, One Word",
+      "body": "Read Genesis 32 and 33 as a single night and morning, and the whole crisis turns on one Hebrew word: panim, face.\n\nThe night before, Jacob wrestles a stranger at the river until dawn and will not let go without a blessing. When it is over he names the place Peniel - 'the face of God' - and says, \"I have seen God face to face, and yet my life was spared\" (Genesis 32:30). He went into the dark expecting to die and came out limping, blessed, and alive. He had seen the face he feared most, and it had not destroyed him.\n\nThe next morning he meets the other face he has feared for twenty years. And he reaches for the very same word: \"I have seen your face... like seeing the face of God, since you have received me favorably.\" Jacob is not paying Esau a compliment. He is saying something staggering - that being received by the brother he wronged felt exactly like surviving the presence of God. Forgiveness that you did not earn and could not force has the weight of the holy on it. To be welcomed when you deserved a sword is to stand before the face of God and live.",
+      "historicalContext": "The names in Jacob's account carry their meanings on the surface. Peniel (Genesis 32:30) is built from panim (face) and El (God). Jacob himself - Ya'aqov - means 'he grasps the heel' or 'he supplants,' the name he earned by deceit (Genesis 27:36). The night before this meeting, the wrestler renames him Israel, 'he struggles with God' (Genesis 32:28). The man who comes to meet Esau is no longer the heel-grabber; he is the one who has wrestled God and been changed by the grip.",
+      "fascinatingFact": "The verb describing Esau in verse 4 - he 'ran to him and embraced him... and kissed him' - reappears almost word for word in one of Jesus' most famous parables. In Luke 15:20, when the prodigal son is 'still in the distance,' his father 'ran to his son, embraced him, and kissed him.' The Gospel reaches back to Genesis for the picture of what reconciliation looks like: the wronged party running, the guilty one wept over, the welcome arriving before the apology can even be finished.",
+      "content": "Read Genesis 32 and 33 as a single night and morning, and the whole crisis turns on one Hebrew word: panim, face.\n\nThe night before, Jacob wrestles a stranger at the river until dawn and will not let go without a blessing. When it is over he names the place Peniel - 'the face of God' - and says, \"I have seen God face to face, and yet my life was spared\" (Genesis 32:30). He went into the dark expecting to die and came out limping, blessed, and alive. He had seen the face he feared most, and it had not destroyed him.\n\nThe next morning he meets the other face he has feared for twenty years. And he reaches for the very same word: \"I have seen your face... like seeing the face of God, since you have received me favorably.\" Jacob is not paying Esau a compliment. He is saying something staggering - that being received by the brother he wronged felt exactly like surviving the presence of God. Forgiveness that you did not earn and could not force has the weight of the holy on it. To be welcomed when you deserved a sword is to stand before the face of God and live."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jacob bows seven times, braced for the sword he earned, and his wronged brother runs to him, embraces him, and weeps - and in that undeserved welcome Jacob says he has seen the face of God.",
+      "modernApplication": "We carry our own old breaks - the sibling we stopped calling, the parent we never forgave, the friend we wronged and never made right. And we keep arranging our defenses, dividing our families into who we can afford to lose, rehearsing the fight, sure that to step toward reconciliation is to step toward a blow.",
+      "connectionPoint": "Jesus puts the same picture at the center of His teaching. \"First go and be reconciled to your brother; then come and offer your gift\" (Matthew 5:24) - reconciliation comes before worship, just as Jacob is reconciled to Esau before he can settle in the land. And when Jesus wants to show what God's heart looks like toward a child who wronged Him and ran, He gives us a father who runs, embraces, and kisses (Luke 15:20) - Esau's exact gesture, now revealed as the gesture of God.",
+      "newTestamentEcho": "What Jacob glimpsed in his brother's face, Christ secured at the cross. \"All this is from God, who reconciled us to Himself through Christ... God was reconciling the world to Himself in Christ, not counting men's trespasses against them\" (2 Corinthians 5:18-19). We were the ones who deserved the sword and met the embrace. In the face of the risen Christ we see, at last and forever, the face of God turned toward us in welcome and not in wrath."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose face have you been bracing against - sure that to step toward them is to step toward a sword?",
+      "additionalQuestions": [
+        "What 'four hundred men' have you built around an old break - the arguments, the proof you were wronged too, the careful order of who is at fault?",
+        "Jacob was reconciled to his brother before he could settle in the land. Is there a relationship God is asking you to face before you can rest?",
+        "When have you been the one welcomed back when you expected to be turned away - and did it carry the weight Jacob describes, like seeing the face of God?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have spent so long bracing for the blow. I have divided my heart into what I can afford to lose and rehearsed the fight I was sure was coming. Where I have wronged someone, give me the courage Jacob had to go on ahead and bow low. Where I am the one wronged, give me the heart of Esau, who ran. And teach me to see, in every face that receives me when I deserved a sword, the face of the God who ran to me first in Christ and did not count my trespasses against me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name the one relationship you have been bracing against. Today, take a single step toward the face you have been avoiding - send the message, make the call, or simply pray for them by name and ask God to soften the ground. Reconciliation begins with going on ahead, before you can see how it ends.",
+      "leavingAtCross": [
+        "The four hundred men - every defense and argument I have built around an old wound",
+        "The certainty that to step toward reconciliation is to step toward a blow",
+        "The instinct to divide my heart into who I can afford to lose"
+      ],
+      "receivingFromCross": [
+        "The freedom of a brother who runs instead of a sword that falls",
+        "The courage to face the one I have been avoiding for years",
+        "The face of God turned toward me in welcome, secured by Christ who reconciled me when I deserved wrath"
+      ],
+      "content": "Name the one relationship you have been bracing against. Today, take a single step toward the face you have been avoiding - send the message, make the call, or simply pray for them by name and ask God to soften the ground. Reconciliation begins with going on ahead, before you can see how it ends."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Jacob divide his family the way he does, and what does the arrangement reveal about what he expects from Esau?",
+        "Jacob uses the same word - 'face' - for his encounter with God at Peniel (Genesis 32:30) and his encounter with Esau (Genesis 33:10). What is he confessing by linking the two?",
+        "How does Esau's response in verse 4 - running, embracing, weeping - overturn everything Jacob prepared for, and where does the New Testament reuse that picture?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where you have been 'arranging your family by who you can afford to lose' - protecting yourself instead of moving toward repair.",
+        "Talk about a time you were welcomed back when you expected to be turned away. What did that mercy feel like?",
+        "Ask each other: is there a face you have been avoiding that God may be asking you to go on ahead and meet - this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 32:30",
+          "text": "So Jacob named the place Peniel, saying, \"Indeed, I have seen God face to face, and yet my life was spared.\""
+        },
+        {
+          "reference": "Luke 15:20",
+          "text": "So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him."
+        },
+        {
+          "reference": "Matthew 5:24",
+          "text": "leave your gift there before the altar. First go and be reconciled to your brother; then come and offer your gift."
+        },
+        {
+          "reference": "2 Corinthians 5:18-19",
+          "text": "All this is from God, who reconciled us to Himself through Christ and gave us the ministry of reconciliation: that God was reconciling the world to Himself in Christ, not counting men's trespasses against them."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 32-33",
+          "note": "Read the wrestling at the Jabbok (32:22-32) and the meeting with Esau (33:1-11) together as one night and morning. Watch how the word 'face' (panim) carries Jacob from Peniel to his brother."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Esau",
+      "title": "The Brother Who Ran Instead of the Sword That Fell",
+      "description": "Isaac's firstborn, the elder twin who sold his birthright for a bowl of stew and later lost his blessing to Jacob's deceit (Genesis 25-27). He had sworn to kill his brother. Twenty years later he comes out with four hundred men - and instead of vengeance, he runs, embraces Jacob, and weeps. Scripture lets Esau, the wronged brother, become the living picture of a grace neither man could engineer: the welcome that arrives before the apology, the gesture the Gospel will give back to the father in Luke 15.",
+      "keyQuote": "I already have plenty, my brother. Keep what belongs to you.",
+      "lessonForUs": "The one with every right to the sword chose the embrace - and in his face Jacob saw the face of God. Reconciliation we did not earn and could not force still carries the weight of the holy, because it is the very shape of how God in Christ has met us.",
+      "heading": "The Brother Who Ran Instead of the Sword That Fell"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2597,
+  "scriptureReference_full": "Genesis 33:1-11",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (panim H6440; Peniel from panim + El; ratsah behind vattirtseni) reflects standard lexical sources. The link between Peniel (Genesis 32:30) and 'the face of God' (Genesis 33:10) is the plain reading of the Hebrew text itself."
+  ]
 }

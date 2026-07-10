@@ -1,38 +1,180 @@
 {
   "day": 69,
   "title": "Choose this day",
-  "teaser": "Day 69 of Bible 365 — Joshua 24",
+  "teaser": "Day 69 of Bible 365 — Joshua 24. At Shechem, Joshua hands Israel a choice. But the choice rests on a covenant God already kept first.",
   "framework": "Joshua 24 — Decisive allegiance",
   "scriptureReference": "Joshua 24",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 69"
+      "type": "scripture",
+      "reference": "Joshua 24:14-15",
+      "translation": "BSB",
+      "emphasis": [
+        "choose for yourselves this day",
+        "As for me and my house, we will serve the LORD"
+      ],
+      "hebrewOriginal": "בַּחֲרוּ לָכֶם הַיּוֹם אֶת־מִי תַעֲבֹדוּן",
+      "passage": "Now, therefore, fear the LORD and serve Him in sincerity and truth; cast aside the gods your fathers served beyond the Euphrates and in Egypt, and serve the LORD. But if it is unpleasing in your sight to serve the LORD, then choose for yourselves this day whom you will serve, whether the gods your fathers served beyond the Euphrates, or the gods of the Amorites in whose land you are living. As for me and my house, we will serve the LORD!\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Joshua 24**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Joshua 24 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בַּחֲרוּ",
+      "transliteration": "bacharu",
+      "pronunciation": "bah-khah-ROO",
+      "meaning": "choose, select, decide for - a deliberate setting of the will on one thing over another",
+      "rootMeaning": "From the root bachar (H977), to choose by careful examination. It is not a coin-flip word but a word for sifting, testing, then committing - the way one chooses an heir, or a stone for a wall, or a king.",
+      "usageNote": "The same verb describes God choosing Israel (Deuteronomy 7:6) long before Israel is asked to choose Him here. The grammar matters: Israel's choosing in verse 15 is always the second move. They choose because they were chosen first.",
+      "wordByWord": [
+        {
+          "word": "בַּחֲרוּ",
+          "transliteration": "bacharu",
+          "meaning": "choose! - a plural command, addressed to the whole assembly"
+        },
+        {
+          "word": "לָכֶם",
+          "transliteration": "lakhem",
+          "meaning": "for yourselves - the choice cannot be made by proxy; each must own it"
+        },
+        {
+          "word": "הַיּוֹם",
+          "transliteration": "hayyom",
+          "meaning": "this day, today - not someday; the decision has a date"
+        },
+        {
+          "word": "אֶת־מִי תַעֲבֹדוּן",
+          "transliteration": "et-mi ta'avodun",
+          "meaning": "whom you will serve - the question is never whether you serve, only whom"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עָבַד",
+          "reference": "Avad, to serve or worship, appears throughout the chapter (verses 14, 15, 18, 21, 24). The Hebrew makes no clean line between serving and worshiping - whatever you give your labor to, you worship."
+        }
+      ],
+      "strongsNumber": "H977",
+      "definition": "to choose, select, prefer; to examine and then commit",
+      "usage": "Bacharu is an imperative, but Joshua frames it as a real fork: serve the LORD, or name the other gods plainly and serve them. He will not let the people drift; he forces the choice into daylight where it can be made on purpose."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Decisive allegiance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ asks for all (Luke 14:33).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Reads Them Their History Before He Asks for Their Hearts",
+      "body": "Joshua is old. The conquest is behind him, the land is parceled out, and he gathers all Israel to Shechem - the valley between Mount Gerizim and Mount Ebal where, a generation earlier, the blessings and curses of the covenant had been read aloud. It is a place that remembers promises.\n\nBefore Joshua asks the people for anything, he speaks for God in the first person, and he tells them a story they already know. Your fathers lived beyond the Euphrates and worshiped other gods. I took Abraham. I gave Isaac. I brought you out of Egypt. I drove out the nations. Then comes the line that should make every reader stop: \"So I gave you a land on which you did not toil and cities that you did not build, and now you live in them and eat from vineyards and olive groves that you did not plant\" (Joshua 24:13).\n\nOnly after that long recital of grace does Joshua say, \"Now, therefore.\" The choice he sets before them in verse 15 is not the opening move. It is the response. The whole speech is built so that when the people finally choose, they are not choosing a stranger. They are answering a God who has already done the building, the giving, the driving out - everything they are now standing in the middle of.",
+      "keyInsight": "The command to choose comes after thirteen verses of what God has already done. In Scripture, the call to commit is never first. Grace is first; the choice is the echo.",
+      "content": "Joshua is old. The conquest is behind him, the land is parceled out, and he gathers all Israel to Shechem - the valley between Mount Gerizim and Mount Ebal where, a generation earlier, the blessings and curses of the covenant had been read aloud. It is a place that remembers promises.\n\nBefore Joshua asks the people for anything, he speaks for God in the first person, and he tells them a story they already know. Your fathers lived beyond the Euphrates and worshiped other gods. I took Abraham. I gave Isaac. I brought you out of Egypt. I drove out the nations. Then comes the line that should make every reader stop: \"So I gave you a land on which you did not toil and cities that you did not build, and now you live in them and eat from vineyards and olive groves that you did not plant\" (Joshua 24:13).\n\nOnly after that long recital of grace does Joshua say, \"Now, therefore.\" The choice he sets before them in verse 15 is not the opening move. It is the response. The whole speech is built so that when the people finally choose, they are not choosing a stranger. They are answering a God who has already done the building, the giving, the driving out - everything they are now standing in the middle of."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Vineyard You Did Not Plant",
+      "body": "A friend of mine inherited a house from an aunt he barely knew. He moved in expecting an empty shell and found a kitchen stocked with her preserves, a garden she had planted in straight tended rows, a workshop with the tools still oiled and hung in their places. He told me it took him months to stop feeling like a guest in his own home, because everywhere he looked was the labor of someone he had not earned anything from.\n\nThat is the strange position Israel is in at Shechem. They are eating from olive groves they did not plant. They are living in cities whose walls were standing before they arrived. The comfort under their feet is borrowed comfort - given, not built.\n\nJoshua knows the danger of that kind of inheritance. It is easy to forget the giver when the gift becomes ordinary, to mistake what you were handed for what you achieved. So he says the quiet part out loud: you did not toil for this. He is not shaming them. He is helping them see clearly enough to choose well. You cannot rightly choose a God you have started to take for granted.",
+      "connectionToTheme": "Israel must choose the LORD from inside a life He has already furnished - the same place every reader stands, surrounded by grace we did not plant.",
+      "content": "A friend of mine inherited a house from an aunt he barely knew. He moved in expecting an empty shell and found a kitchen stocked with her preserves, a garden she had planted in straight tended rows, a workshop with the tools still oiled and hung in their places. He told me it took him months to stop feeling like a guest in his own home, because everywhere he looked was the labor of someone he had not earned anything from.\n\nThat is the strange position Israel is in at Shechem. They are eating from olive groves they did not plant. They are living in cities whose walls were standing before they arrived. The comfort under their feet is borrowed comfort - given, not built.\n\nJoshua knows the danger of that kind of inheritance. It is easy to forget the giver when the gift becomes ordinary, to mistake what you were handed for what you achieved. So he says the quiet part out loud: you did not toil for this. He is not shaming them. He is helping them see clearly enough to choose well. You cannot rightly choose a God you have started to take for granted."
+    },
+    {
+      "type": "insight",
+      "heading": "\"You Are Not Able to Serve the LORD\"",
+      "body": "The people answer well. Twice they say, in effect, of course we will serve the LORD - look at all He has done. And then Joshua does something that breaks the pattern of every motivational speech ever given. He tells them they cannot do it.\n\n\"You are not able to serve the LORD, for He is a holy God; He is a jealous God; He will not forgive your rebellion or your sins\" (Joshua 24:19). It is the most honest sentence in the chapter. Joshua is not trying to lower the bar so they can clear it. He is telling them the truth about the gap between a holy God and a people who will, in fact, drift - as the very next book, Judges, records in painful detail. The choice is real and they should make it. But their choosing will not be enough to keep them.\n\nThis is where the passage points past itself. Joshua's name in Hebrew is Yehoshua, \"the LORD saves\" - the same name that comes into Greek as Jesus. The first Joshua leads the people to a covenant, sets up a witness-stone, and then dies, and the people fall away within a generation. The greater Joshua does what the first could not: He makes the demand and then supplies the obedience. \"You are not able\" is not the last word over us, because the One who says \"choose this day\" also chose us first, and went to the cross to keep the covenant we keep breaking.",
+      "historicalContext": "Joshua 24 is the formal close of the conquest era; verse 31 notes that \"Israel had served the LORD throughout the days of Joshua and of the elders who outlived him ...\" The book of Judges opens immediately after with the people doing evil in the sight of the LORD - which makes Joshua's warning in verse 19 not pessimism but prophecy. He saw the drift coming and pressed the choice anyway.",
+      "fascinatingFact": "Joshua sets up a large stone under the oak at Shechem and calls it a witness, \"for it has heard all the words the LORD has spoken to us\" (Joshua 24:27). The stone testifies against the people if they break covenant. At the cross, the witness changes sides: the Stone the builders rejected (Psalm 118:22) testifies for us, having kept the covenant in our place.",
+      "content": "The people answer well. Twice they say, in effect, of course we will serve the LORD - look at all He has done. And then Joshua does something that breaks the pattern of every motivational speech ever given. He tells them they cannot do it.\n\n\"You are not able to serve the LORD, for He is a holy God; He is a jealous God; He will not forgive your rebellion or your sins\" (Joshua 24:19). It is the most honest sentence in the chapter. Joshua is not trying to lower the bar so they can clear it. He is telling them the truth about the gap between a holy God and a people who will, in fact, drift - as the very next book, Judges, records in painful detail. The choice is real and they should make it. But their choosing will not be enough to keep them.\n\nThis is where the passage points past itself. Joshua's name in Hebrew is Yehoshua, \"the LORD saves\" - the same name that comes into Greek as Jesus. The first Joshua leads the people to a covenant, sets up a witness-stone, and then dies, and the people fall away within a generation. The greater Joshua does what the first could not: He makes the demand and then supplies the obedience. \"You are not able\" is not the last word over us, because the One who says \"choose this day\" also chose us first, and went to the cross to keep the covenant we keep breaking."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "At Shechem, Joshua sets a clear fork before Israel - serve the LORD, or name your other gods plainly and serve them - and grounds the choice in everything God has already done for them.",
+      "modernApplication": "We rarely renounce God outright. We just keep an altar in the back room: the career, the approval, the security blanket we reach for first when life shakes. Joshua's word still cuts through the fog - the question is never whether you serve, only whom. Naming the rival gods is the first honest step toward leaving them.",
+      "connectionPoint": "The \"choose this day\" of Joshua runs as a thread through Scripture. Elijah asks the same on Carmel: \"How long will you waver between two opinions?\" (1 Kings 18:21). Jesus presses it sharper: \"No one can serve two masters\" (Matthew 6:24). The choice Joshua set before one generation is set before every generation, and it is always today.",
+      "newTestamentEcho": "Joshua told the people, \"You are not able to serve the LORD\" (Joshua 24:19), and he was right. What the law could not do, God did by sending His own Son (Romans 8:3). In Christ the covenant Israel could not keep is kept for us, and the Spirit writes the obedience into hearts that could only ever choose and then fail. We still choose Him this day - but now from inside a grace that holds us when our choosing falters."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If you named your rival gods as plainly as Joshua told Israel to - out loud, by their real names - what would be on the list?",
+      "additionalQuestions": [
+        "Where in your life are you eating from a vineyard you did not plant - enjoying a grace you have started to take for granted? What would it look like to thank the Giver today?",
+        "Joshua says \"this day,\" not someday. Is there a choice for God you have been keeping perpetually in the future tense?",
+        "How does it change your decision to know that you are choosing a God who chose you first - and who keeps the covenant even when you don't?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "LORD, You gave me a life I did not build and grace I did not plant, and I have lived in it as though I earned it. Today I choose You - not because my choosing is strong, but because You chose me first and held the covenant I keep breaking. Name the rival gods in me and pull down their altars. As for me and my house, we will serve You. Where my willing falters, let the greater Joshua keep me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, choose one rival - one thing you reach for before God when life shakes - and name it out loud, by its real name. Then set one small stone in its place: a phone reminder, a verse on the mirror, a fixed minute of prayer - a witness that today you chose the LORD.",
+      "leavingAtCross": [
+        "The quiet altar in the back room - the security I serve before I serve God",
+        "The pretense that I built the life I was actually given",
+        "The someday-faith that keeps the decision forever in the future tense"
+      ],
+      "receivingFromCross": [
+        "The freedom of choosing a God who chose me first",
+        "A covenant kept for me by the One whose name means 'the LORD saves'",
+        "A stone that now testifies for me, not against me"
+      ],
+      "content": "Today, choose one rival - one thing you reach for before God when life shakes - and name it out loud, by its real name. Then set one small stone in its place: a phone reminder, a verse on the mirror, a fixed minute of prayer - a witness that today you chose the LORD."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Joshua spend thirteen verses recounting what God has done before he ever asks the people to choose? What does that ordering teach about how commitment works?",
+        "Joshua tells the people \"You are not able to serve the LORD\" right after they promise they will. Why would he say that, and how does it point beyond the chapter?",
+        "What is the significance of the witness-stone under the oak, and how does its role change at the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one rival 'god' you reach for before God - and ask the other person to help you name it honestly, not gently.",
+        "Talk about a grace you have been enjoying as though you earned it. How would gratitude change the way you hold it?",
+        "Ask each other: where have you kept a choice for God in the future tense, and what would 'this day' actually require?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Joshua 24:13",
+          "text": "So I gave you a land on which you did not toil and cities that you did not build, and now you live in them and eat from vineyards and olive groves that you did not plant.'"
+        },
+        {
+          "reference": "Deuteronomy 7:6",
+          "text": "For you are a people holy to the LORD your God. The LORD your God has chosen you to be a people for His prized possession out of all peoples on the face of the earth."
+        },
+        {
+          "reference": "1 Kings 18:21",
+          "text": "Then Elijah approached all the people and said, \"How long will you waver between two opinions? If the LORD is God, follow Him. But if Baal is God, follow him.\" But the people did not answer a word."
+        },
+        {
+          "reference": "Matthew 6:24",
+          "text": "No one can serve two masters: Either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve both God and money."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Joshua 24",
+          "note": "Read the whole chapter slowly, watching the movement from God's recital of grace (vv. 2-13) to the call to choose (vv. 14-15) to the covenant and the witness-stone (vv. 25-27)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joshua son of Nun",
+      "title": "The Servant of the LORD Whose Name Means 'The LORD Saves'",
+      "description": "Successor to Moses, leader of Israel through the conquest of Canaan, and the one who gathered the tribes at Shechem to renew the covenant. His Hebrew name, Yehoshua, means 'the LORD saves' - the same name that comes into Greek as Iesous, Jesus. The first Joshua led a people into the land but could not keep them faithful; he set up a witness-stone, then died at 110, and within a generation Israel drifted. He is a shadow of the greater Joshua who would not only call for the covenant but keep it.",
+      "keyQuote": "As for me and my house, we will serve the LORD!",
+      "lessonForUs": "Joshua refused to leave the choice vague. He named the rival gods, set a date - 'this day' - and went first with his own household. Decisive allegiance is never a feeling we wait for; it is a choice we make out loud, today, anchored in what God has already done.",
+      "heading": "The Servant of the LORD Whose Name Means 'The LORD Saves'"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1517,
+  "scriptureReference_full": "Joshua 24:14-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (bacharu, root bachar H977; avad H5647) reflects standard lexical sources. The name Yehoshua / Iesous ('the LORD saves') and its relation to the name Jesus is standard onomastics (cf. Matthew 1:21)."
+  ]
 }

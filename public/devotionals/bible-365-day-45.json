@@ -1,38 +1,183 @@
 {
   "day": 45,
   "title": "Manna in the morning",
-  "teaser": "Day 45 of Bible 365 — Exodus 16",
+  "teaser": "In the desert between rescue and rest, God rains bread from the sky — but only enough for today. The miracle is also a test: can a freed people learn to trust a God who feeds them one morning at a time?",
   "framework": "Exodus 16 — Daily dependence",
   "scriptureReference": "Exodus 16",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 45"
+      "type": "scripture",
+      "reference": "Exodus 16:4, 14-15",
+      "translation": "BSB",
+      "emphasis": [
+        "I will rain down bread from heaven",
+        "enough for that day",
+        "What is it?",
+        "It is the bread that the LORD has given you"
+      ],
+      "hebrewOriginal": "מָן הוּא כִּי לֹא יָדְעוּ מַה־הוּא",
+      "passage": "Then the LORD said to Moses, \"Behold, I will rain down bread from heaven for you. Each day the people are to go out and gather enough for that day. In this way I will test whether or not they will follow My instructions.\" ... When the layer of dew had evaporated, there were thin flakes on the desert floor, as fine as frost on the ground. When the Israelites saw it, they asked one another, \"What is it?\" For they did not know what it was. So Moses told them, \"It is the bread that the LORD has given you to eat.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מָן",
+      "transliteration": "man",
+      "pronunciation": "mahn",
+      "meaning": "manna; literally the question \"What is it?\"",
+      "rootMeaning": "When the flakes appeared on the desert floor, Israel asked one another man hu - 'What is it?' (Exodus 16:15). The name they gave the bread, man, is that very question left standing. They called it What-is-it, and never stopped asking.",
+      "usageNote": "The bread is described as white like coriander seed, tasting like wafers made with honey (16:31). For forty years a people walked across a wilderness eating a food whose name was an open question - fed by something they could not explain and could not store.",
+      "wordByWord": [
+        {
+          "word": "מָן",
+          "transliteration": "man",
+          "meaning": "what? - the puzzled question that became the name of the bread"
+        },
+        {
+          "word": "הוּא",
+          "transliteration": "hu",
+          "meaning": "is it / it is - 'What is it?'"
+        },
+        {
+          "word": "לֶחֶם",
+          "transliteration": "lechem",
+          "meaning": "bread, food - the ordinary word for daily sustenance"
+        },
+        {
+          "word": "מִן־הַשָּׁמָיִם",
+          "transliteration": "min hashamayim",
+          "meaning": "from the heavens - bread that fell, not bread that was earned"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "תְּלֻנּוֹת",
+          "reference": "Telunnot, 'grumblings' (Exodus 16:7-8). The same chapter that names the bread also names the murmuring it answered. God heard the grumbling and replied with bread - mercy meeting complaint."
+        }
+      ],
+      "strongsNumber": "H4478",
+      "definition": "manna; a fine, flake-like food God provided Israel in the wilderness, named from the question 'what is it?'",
+      "usage": "To eat manna was to eat a question every morning - to be fed by a generosity you could name only by asking about it. Israel never solved the riddle of the bread; they only learned to gather it before the sun grew hot."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Daily dependence. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the bread of life (John 6:51).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Bread Enough for the Day You Are In",
+      "body": "Six weeks earlier the sea had stood up in two walls and let a slave nation walk through on dry ground. Now those same people are standing in the Desert of Sin, somewhere between Elim and Sinai, and the wonder has worn off. The food they carried out of Egypt is gone. The horizon is sand. And the memory of slavery has quietly turned golden: 'There we sat by pots of meat and ate our fill of bread, but you have brought us into this desert to starve this whole assembly to death.'\n\nIt is a brutal thing to say to the men who led you out of chains. But notice God's answer. He does not lecture them on ingratitude. He says, 'Behold, I will rain down bread from heaven for you.' The complaint is met with provision. And then comes the strange condition: 'Each day the people are to go out and gather enough for that day. In this way I will test whether or not they will follow My instructions.'\n\nThis is the heart of the chapter. The bread is real, but it is rationed to the day. There is no stockpiling. Gather more than you need and by morning it breeds maggots and stinks (16:20). The exception is the sixth day, when a double portion keeps overnight so that the seventh can be a Sabbath, a day to rest in the God who feeds. Israel is being trained, one sunrise at a time, in a kind of trust that slavery never required and self-sufficiency cannot fake: to receive enough, and to need Him again tomorrow.",
+      "keyInsight": "The manna was a miracle, but it was also a curriculum. God fed Israel daily and forbade hoarding so that a people who had only known how to survive could learn how to trust - one morning at a time.",
+      "content": "Six weeks earlier the sea had stood up in two walls and let a slave nation walk through on dry ground. Now those same people are standing in the Desert of Sin, somewhere between Elim and Sinai, and the wonder has worn off. The food they carried out of Egypt is gone. The horizon is sand. And the memory of slavery has quietly turned golden: 'There we sat by pots of meat and ate our fill of bread, but you have brought us into this desert to starve this whole assembly to death.'\n\nIt is a brutal thing to say to the men who led you out of chains. But notice God's answer. He does not lecture them on ingratitude. He says, 'Behold, I will rain down bread from heaven for you.' The complaint is met with provision. And then comes the strange condition: 'Each day the people are to go out and gather enough for that day. In this way I will test whether or not they will follow My instructions.'\n\nThis is the heart of the chapter. The bread is real, but it is rationed to the day. There is no stockpiling. Gather more than you need and by morning it breeds maggots and stinks (16:20). The exception is the sixth day, when a double portion keeps overnight so that the seventh can be a Sabbath, a day to rest in the God who feeds. Israel is being trained, one sunrise at a time, in a kind of trust that slavery never required and self-sufficiency cannot fake: to receive enough, and to need Him again tomorrow."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Pantry That Could Not Hold It",
+      "body": "A friend who lived through a long unemployment told me the hardest part was not the empty bank account. It was the mornings. Money, when you have it, can be counted forward - a buffer measured in months, a reason not to think about God until the cushion runs thin. When the cushion was gone, she said, she had nothing left to count except the day in front of her. Rent came due monthly, but provision came daily: a contract that landed the afternoon a bill was due, groceries from a neighbor who 'happened' to over-shop, a check she had forgotten was owed her. None of it arrived early. None of it stockpiled.\n\nShe hated it at first. She wanted six months in the bank, the spiritual equivalent of a full pantry, so she would not have to ask again. But the season took the pantry away and left her with manna instead - enough for the day, never enough to stop needing the One who gave it.\n\nLooking back, she did not call it her poorest year. She called it the year she finally prayed 'give us this day our daily bread' and meant it - because for the first time it was the only kind of bread she had.",
+      "connectionToTheme": "Daily provision feels like insecurity to a heart trained on stockpiles, but it is the exact condition in which trust is learned - the manna that cannot be hoarded keeps us turning toward the Giver each morning.",
+      "content": "A friend who lived through a long unemployment told me the hardest part was not the empty bank account. It was the mornings. Money, when you have it, can be counted forward - a buffer measured in months, a reason not to think about God until the cushion runs thin. When the cushion was gone, she said, she had nothing left to count except the day in front of her. Rent came due monthly, but provision came daily: a contract that landed the afternoon a bill was due, groceries from a neighbor who 'happened' to over-shop, a check she had forgotten was owed her. None of it arrived early. None of it stockpiled.\n\nShe hated it at first. She wanted six months in the bank, the spiritual equivalent of a full pantry, so she would not have to ask again. But the season took the pantry away and left her with manna instead - enough for the day, never enough to stop needing the One who gave it.\n\nLooking back, she did not call it her poorest year. She called it the year she finally prayed 'give us this day our daily bread' and meant it - because for the first time it was the only kind of bread she had."
+    },
+    {
+      "type": "insight",
+      "heading": "When the Sun Grew Hot, It Melted Away",
+      "body": "Two details in the chapter do quiet, heavy work. The first: when the people measured the bread by the omer, 'he who gathered much had no excess, and he who gathered little had no shortfall. Each one gathered as much as he needed to eat' (16:18). However hard you grasped, you ended the day with exactly enough. The strong could not corner the supply; the weak were not left behind. The bread leveled them all to the same dependence.\n\nThe second: 'when the sun grew hot, it melted away' (16:21). The bread had a deadline. Gather it in the cool of the morning or lose it to the heat of the day. There was no putting it off, no living on yesterday's gathering. Each morning the wilderness floor was bare again, and each morning, before the heat, it was covered.\n\nPut the two together and you have the whole shape of the lesson. God's provision is impossible to hoard and impossible to outpace. You cannot store enough of Him to coast; you cannot fall so far behind that there is nothing left for you. There is only this: go out in the morning, gather what is given, and trust that tomorrow the ground will not be bare. It is the most exposed way to live - and, it turns out, the safest.",
+      "historicalContext": "Exodus 16 sits before Sinai. Israel has been rescued from Egypt but has not yet received the Law or the covenant. The manna is their first sustained lesson in life with God in the open - learning the character of the Rescuer before they ever stand at the mountain. A jar of manna was later kept 'before the LORD' for the generations to come (16:33-34), a permanent reminder placed beside the covenant itself.",
+      "fascinatingFact": "Exodus 16 contains the first appearance of the word 'Sabbath' in the Bible (16:23) - and it arrives attached to bread, not to law. Before Sinai ever commands rest, the manna teaches it: on the sixth day a double portion is given precisely so that the seventh can be kept holy. Israel learns to rest by first learning that God provides enough to make rest possible.",
+      "content": "Two details in the chapter do quiet, heavy work. The first: when the people measured the bread by the omer, 'he who gathered much had no excess, and he who gathered little had no shortfall. Each one gathered as much as he needed to eat' (16:18). However hard you grasped, you ended the day with exactly enough. The strong could not corner the supply; the weak were not left behind. The bread leveled them all to the same dependence.\n\nThe second: 'when the sun grew hot, it melted away' (16:21). The bread had a deadline. Gather it in the cool of the morning or lose it to the heat of the day. There was no putting it off, no living on yesterday's gathering. Each morning the wilderness floor was bare again, and each morning, before the heat, it was covered.\n\nPut the two together and you have the whole shape of the lesson. God's provision is impossible to hoard and impossible to outpace. You cannot store enough of Him to coast; you cannot fall so far behind that there is nothing left for you. There is only this: go out in the morning, gather what is given, and trust that tomorrow the ground will not be bare. It is the most exposed way to live - and, it turns out, the safest."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God rained bread from heaven on a hungry, grumbling people and rationed it to the day, so that a freed nation would learn to trust Him one morning at a time.",
+      "modernApplication": "We are still hoarders by instinct. We want the buffer, the savings, the certainty that lets us stop asking. But the life of faith is lived on daily bread, not stockpiled bread - present grace for the present day, with tomorrow's mercy still over the horizon and not yet in hand.",
+      "connectionPoint": "The manna became one of Scripture's deepest threads. Moses tells Israel that God gave manna 'so that you might understand that man does not live on bread alone, but on every word that comes from the mouth of the LORD' (Deuteronomy 8:3). Centuries later Jesus quotes that very verse to resist the tempter in the wilderness (Matthew 4:4), and teaches His people to pray for 'our daily bread' (Matthew 6:11) - one day's portion, asked for fresh each morning, exactly like the manna.",
+      "newTestamentEcho": "Standing before a crowd who remembered the wilderness bread, Jesus said: 'It was not Moses who gave you the bread from heaven, but it is My Father who gives you the true bread from heaven... I am the bread of life. Whoever comes to Me will never hunger' (John 6:32-35). The manna fed Israel and they died; Jesus offers Himself as the bread that comes down from heaven so that anyone may eat of it and not die (John 6:50)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you trying to store up enough security that you will not have to depend on God tomorrow - and what would it look like to gather only today's portion and trust Him for the morning?",
+      "additionalQuestions": [
+        "Israel's hunger turned their memory of slavery golden ('we sat by pots of meat'). What hard place are you tempted to romanticize because the wilderness in front of you feels worse?",
+        "The manna could not be hoarded and could not be outrun. Which is harder for you to believe - that you cannot store enough of God to coast, or that you cannot fall so far behind that there is nothing left for you?",
+        "When you pray 'give us this day our daily bread,' do you mean it the way Israel had to - or do you secretly want six months in the bank so you never have to ask again?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I confess how much I want a pantry full enough that I never have to ask You again. I grumble like Israel when the horizon goes empty and the old chains start to look like comfort. Teach me the morning trust of the manna - to gather what You give for the day I am in, to rest when You say rest, and to believe the ground will be covered again tomorrow. Feed me the bread that does not spoil. Be the true bread from heaven for me today, Lord Jesus, that I would come to You and never hunger. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one place where you have been demanding tomorrow's security before you will trust God. Gather only today's portion - take the next right step for this day alone - and deliberately leave the rest of the week in His hands. Before the sun grows hot, pray 'give us this day our daily bread,' and mean it.",
+      "leavingAtCross": [
+        "The grumbling that turns my present wilderness into a complaint and my old chains into a comfort",
+        "The instinct to hoard security so I never have to depend on God again",
+        "The fear that if I do not stockpile, there will be nothing on the ground tomorrow"
+      ],
+      "receivingFromCross": [
+        "Enough for today - real provision, rationed to the day I am actually in",
+        "Permission to rest, because the God who feeds me has provided ahead for the Sabbath",
+        "Christ Himself, the true bread from heaven, who satisfies the hunger manna never could"
+      ],
+      "content": "Today, name one place where you have been demanding tomorrow's security before you will trust God. Gather only today's portion - take the next right step for this day alone - and deliberately leave the rest of the week in His hands. Before the sun grows hot, pray 'give us this day our daily bread,' and mean it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What was the 'test' built into the manna (Exodus 16:4), and why would daily provision teach trust better than a one-time supply?",
+        "Exodus 16 is where the word 'Sabbath' first appears in the Bible - and it arrives attached to bread, not law. What does it mean that Israel learned to rest by first learning that God provides enough?",
+        "How does the manna point forward to Jesus' claim, 'I am the bread of life' (John 6:35) - what does His bread give that the wilderness bread could not?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you are hoarding security - financial, relational, reputational - to avoid having to depend on God.",
+        "Talk about what 'daily bread' has actually looked like in a hard season: where provision came late enough to require trust but never failed entirely.",
+        "Ask each other: where is God asking you to gather only today's portion and leave tomorrow in His hands?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Deuteronomy 8:3",
+          "text": "He humbled you, and in your hunger He gave you manna to eat, which neither you nor your fathers had known, so that you might understand that man does not live on bread alone, but on every word that comes from the mouth of the LORD."
+        },
+        {
+          "reference": "Matthew 6:11",
+          "text": "Give us this day our daily bread."
+        },
+        {
+          "reference": "John 6:35",
+          "text": "Jesus answered, 'I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.'"
+        },
+        {
+          "reference": "1 Corinthians 10:3-4",
+          "text": "They all ate the same spiritual food and drank the same spiritual drink; for they drank from the spiritual rock that accompanied them, and that rock was Christ."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 16",
+          "note": "Read the whole chapter slowly, watching the movement from grumbling (vv. 2-3) to provision (vv. 4, 13-15) to the test of gathering (vv. 16-21) to the first Sabbath (vv. 22-30) to the jar of manna kept for the generations to come (vv. 32-34)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Israel in the Wilderness",
+      "title": "A Rescued People Learning to Trust",
+      "era": "Exodus, c. 15th-13th century BC (between the sea and Sinai)",
+      "description": "The generation God brought out of Egypt, standing in the Desert of Sin between rescue and the mountain. They had seen the plagues and walked through the sea, yet hunger exposed how little they trusted the God who saved them. Through the daily manna they were schooled, one morning at a time, in dependence - the very lesson a later generation in this same wilderness would still be failing, and the lesson Jesus would pass when He answered the tempter from their story.",
+      "keyQuote": "What is it? For they did not know what it was.",
+      "lessonForUs": "Rescue does not automatically produce trust. The same people who saw the sea split grumbled in the desert six weeks later. Trust is learned the slow way - by being fed enough for today and being asked to need God again tomorrow.",
+      "heading": "A Rescued People Learning to Trust"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2268,
+  "scriptureReference_full": "Exodus 16:4, 14-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (man, H4478; the man hu wordplay of Exodus 16:15; telunnot, 'grumblings') reflects standard lexical sources and the plain reading of the Masoretic text."
+  ]
 }

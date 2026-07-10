@@ -1,38 +1,185 @@
 {
   "day": 32,
-  "title": "I am Joseph your brother",
-  "teaser": "Day 32 of Bible 365 — Genesis 45:1-15",
-  "framework": "Genesis 45:1-15 — Forgiveness from the throne",
+  "title": "Come near, the one you sold",
+  "teaser": "The brother they sold for silver now rules Egypt - and from the throne he says not 'guilty,' but 'come near to me.' Forgiveness moves downward, from power to the powerless who wronged him.",
+  "framework": "Genesis 45:1-15 - Forgiveness from the throne",
   "scriptureReference": "Genesis 45:1-15",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 32"
+      "type": "scripture",
+      "reference": "Genesis 45:1-15",
+      "translation": "BSB",
+      "emphasis": [
+        "I am Joseph, your brother",
+        "Please come near me",
+        "it was to save lives that God sent me"
+      ],
+      "hebrewOriginal": "אֲנִי יוֹסֵף אֲחִיכֶם אֲשֶׁר־מְכַרְתֶּם אֹתִי מִצְרָיְמָה",
+      "passage": "Then Joseph could no longer control himself before all his attendants, and he cried out, \"Send everyone away from me!\" So none of them were with Joseph when he made himself known to his brothers. But he wept so loudly that the Egyptians heard him, and Pharaoh's household soon heard of it. Joseph said to his brothers, \"I am Joseph! Is my father still alive?\" But they were unable to answer him, because they were terrified in his presence. Then Joseph said to his brothers, \"Please come near me.\" And they did so. \"I am Joseph, your brother,\" he said, \"the one you sold into Egypt! And now, do not be distressed or angry with yourselves that you sold me into this place, because it was to save lives that God sent me before you. For the famine has covered the land these two years, and there will be five more years without plowing or harvesting. God sent me before you to preserve you as a remnant on the earth and to save your lives by a great deliverance. Therefore it was not you who sent me here, but God, who has made me a father to Pharaoh - lord of all his household and ruler over all the land of Egypt. Now return quickly to my father and tell him, 'This is what your son Joseph says: God has made me lord of all Egypt. Come down to me without delay. You shall settle in the land of Goshen and be near me - you and your children and grandchildren, your flocks and herds, and everything you own. And there I will provide for you, because there will be five more years of famine. Otherwise, you and your household and everything you own will come to destitution.' Behold! You and my brother Benjamin can see that I, Joseph, am the one speaking with you. Tell my father about all my splendor in Egypt and everything you have seen. And bring my father down here quickly.\" Then Joseph threw his arms around his brother Benjamin and wept, and Benjamin wept as they embraced. Joseph kissed each of his brothers as he wept over them. And afterward his brothers talked with him."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 45:1-15**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 45:1-15 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "גְּשׁוּ־נָא אֵלַי",
+      "transliteration": "geshu-na elai",
+      "pronunciation": "geh-SHOO nah ay-LIE",
+      "meaning": "please come near to me, draw close to me",
+      "rootMeaning": "The verb nagash means to draw near, to approach - the same word used for coming close to an altar, to a king, to holy ground. It is the language of approach to someone you have reason to fear. The particle na softens the command into a plea: not 'approach' but 'please, come close.'",
+      "usageNote": "Nagash is the word for a priest drawing near to serve, for a worshiper approaching God, for one party stepping toward another to be reconciled. Joseph uses the language of sacred approach with brothers who expect a sentence. The man with all the power asks the guilty to come closer.",
+      "wordByWord": [
+        {
+          "word": "גְּשׁוּ",
+          "transliteration": "geshu",
+          "meaning": "draw near, approach (plural command)"
+        },
+        {
+          "word": "נָא",
+          "transliteration": "na",
+          "meaning": "please, I pray - turns the command into an entreaty"
+        },
+        {
+          "word": "אֵלַי",
+          "transliteration": "elai",
+          "meaning": "to me, toward me"
+        },
+        {
+          "word": "אֲנִי יוֹסֵף אֲחִיכֶם",
+          "transliteration": "ani Yosef achikhem",
+          "meaning": "I am Joseph, your brother - he names the relationship before he names the wound"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נָגַשׁ",
+          "reference": "The same root nagash describes Abraham 'drawing near' to plead for Sodom (Genesis 18:23) and Judah 'drawing near' moments earlier to plead for Benjamin (Genesis 44:18). The book of Joseph's story is full of approach - and here the one approached invites the approach."
+        }
+      ],
+      "strongsNumber": "H5066",
+      "definition": "nagash: to draw near, approach, come close - often for a sacred or weighty purpose",
+      "usage": "The brothers had already drawn near once that day - Judah stepping forward to offer himself for Benjamin (Genesis 44:18, same verb). Now the ruler answers that approach with one of his own: closer, please, closer. Reconciliation in this story is measured in steps taken toward a face."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Forgiveness from the throne. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our forgiving Brother (Heb 2:11).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Empties the Room Before He Empties His Heart",
+      "body": "Picture the throne room. Joseph is the second most powerful man in the world, and the men standing before him are starving shepherds from Canaan who do not yet know who he is. They have come begging for grain. He has every legal right, every imaginable power, and a twenty-year-old grievance: these are the brothers who threw him in a pit and sold him to traders headed for Egypt.\n\nAnd he cannot hold it together. \"Send everyone away from me!\" The Egyptian officials, the scribes, the guards - out. Whatever is about to happen, he will not do it in front of an audience. There will be no public shaming, no court record of the brothers' crime read aloud. He clears the room of every witness so that what he says next cannot be used against them later.\n\nThen the words break out of him: \"I am Joseph! Is my father still alive?\" And the text says the brothers could not answer, because they were terrified in his presence. Of course they were. The brother they erased had become the lord who held their lives. Everything they had buried was suddenly standing in front of them wearing Egyptian linen and holding the power of life and death.",
+      "keyInsight": "The first thing Joseph does with his power is protect the people who hurt him from the consequences of being exposed. He empties the room so the truth can be told without becoming a weapon.",
+      "content": "Picture the throne room. Joseph is the second most powerful man in the world, and the men standing before him are starving shepherds from Canaan who do not yet know who he is. They have come begging for grain. He has every legal right, every imaginable power, and a twenty-year-old grievance: these are the brothers who threw him in a pit and sold him to traders headed for Egypt.\n\nAnd he cannot hold it together. \"Send everyone away from me!\" The Egyptian officials, the scribes, the guards - out. Whatever is about to happen, he will not do it in front of an audience. There will be no public shaming, no court record of the brothers' crime read aloud. He clears the room of every witness so that what he says next cannot be used against them later.\n\nThen the words break out of him: \"I am Joseph! Is my father still alive?\" And the text says the brothers could not answer, because they were terrified in his presence. Of course they were. The brother they erased had become the lord who held their lives. Everything they had buried was suddenly standing in front of them wearing Egyptian linen and holding the power of life and death."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Voicemail She Never Sent",
+      "body": "A woman I'll call Diane carried a folder for almost thirty years. In it was every wrong her sister had done her - the inheritance that disappeared, the lie told at their mother's funeral, the silence that followed. She kept the folder the way some people keep receipts: not to use, exactly, but to prove she was right if the day ever came.\n\nThe day came at a hospital. Her sister was dying, and Diane drove four hours with the whole folder rehearsed in her chest. She had earned this conversation. She would finally say it all.\n\nShe walked into the room and her sister, barely able to speak, lifted one hand a few inches off the blanket - the smallest possible gesture toward her. Come here. And Diane found she did not open the folder. She crossed the room. She held the hand. Later she told me the strangest part was that she had expected forgiving to feel like losing. Instead it felt like setting down something she had been too tired to carry for years.",
+      "connectionToTheme": "Joseph holds a folder thicker than anyone's - sold, enslaved, imprisoned - and instead of opening it he says, 'Come near.' Forgiveness is not pretending the folder is empty. It is choosing not to use what is rightfully in it.",
+      "content": "A woman I'll call Diane carried a folder for almost thirty years. In it was every wrong her sister had done her - the inheritance that disappeared, the lie told at their mother's funeral, the silence that followed. She kept the folder the way some people keep receipts: not to use, exactly, but to prove she was right if the day ever came.\n\nThe day came at a hospital. Her sister was dying, and Diane drove four hours with the whole folder rehearsed in her chest. She had earned this conversation. She would finally say it all.\n\nShe walked into the room and her sister, barely able to speak, lifted one hand a few inches off the blanket - the smallest possible gesture toward her. Come here. And Diane found she did not open the folder. She crossed the room. She held the hand. Later she told me the strangest part was that she had expected forgiving to feel like losing. Instead it felt like setting down something she had been too tired to carry for years."
+    },
+    {
+      "type": "insight",
+      "heading": "You Sold Me - God Sent Me",
+      "body": "Here is the sentence the whole chapter turns on. Joseph says it three times, circling back to it like a man who needs his brothers to hear it more than once: \"It was not you who sent me here, but God.\" \"It was to save lives that God sent me before you.\" \"God sent me before you to preserve you as a remnant on the earth.\"\n\nRead it carefully, because it is doing something delicate and exact. Joseph does not say the brothers were innocent. In the same breath he calls them \"the one you sold into Egypt.\" The crime is named, not erased. What he refuses to do is let the crime have the last word about what happened. They sold him; that is true. God sent him; that is also true, and it is the deeper truth, and it is the truth large enough to forgive inside.\n\nThis is not the same as saying 'everything happens for a reason' or 'it all worked out.' Joseph is not flattening the evil into a blessing. He is saying that human evil and divine purpose ran on the same track, and that God's purpose was the stronger of the two - strong enough to take a pit, a slave market, and a prison cell and bend them toward the saving of nations. Later he will say it to their faces without flinching: 'You intended evil; God intended good' (Genesis 50:20). Both clauses are true. The forgiveness lives in holding them together.",
+      "historicalContext": "Joseph speaks in the second year of a seven-year famine that, according to the narrative, gripped Egypt and the surrounding lands. His rise to power - interpreting Pharaoh's dreams, storing grain through the years of plenty - now means that the survival of his own family, the seventy who will become Israel, hangs on the brother they tried to destroy. The 'remnant' he speaks of preserving is the embryo of the chosen people.",
+      "fascinatingFact": "Joseph names God as the actor four times in these few verses (sent... sent... sent... made me a father to Pharaoh). In a court that worshiped many gods, the Hebrew slave-turned-vizier credits none of his rise to his own brilliance or to Egypt's deities. He reads the whole brutal arc of his life as the hidden work of one God who was steering it toward mercy.",
+      "content": "Here is the sentence the whole chapter turns on. Joseph says it three times, circling back to it like a man who needs his brothers to hear it more than once: \"It was not you who sent me here, but God.\" \"It was to save lives that God sent me before you.\" \"God sent me before you to preserve you as a remnant on the earth.\"\n\nRead it carefully, because it is doing something delicate and exact. Joseph does not say the brothers were innocent. In the same breath he calls them \"the one you sold into Egypt.\" The crime is named, not erased. What he refuses to do is let the crime have the last word about what happened. They sold him; that is true. God sent him; that is also true, and it is the deeper truth, and it is the truth large enough to forgive inside.\n\nThis is not the same as saying 'everything happens for a reason' or 'it all worked out.' Joseph is not flattening the evil into a blessing. He is saying that human evil and divine purpose ran on the same track, and that God's purpose was the stronger of the two - strong enough to take a pit, a slave market, and a prison cell and bend them toward the saving of nations. Later he will say it to their faces without flinching: 'You intended evil; God intended good' (Genesis 50:20). Both clauses are true. The forgiveness lives in holding them together."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The brother sold for silver and given up for dead is raised to the right hand of the throne, and from that height he does not condemn the guilty who stand terrified before him. He weeps, names them his brothers, draws them near, and reframes their betrayal as the road God used to save them.",
+      "modernApplication": "Most of us forgive, when we manage it at all, from a position of weakness - because we have no choice, because we cannot win, because holding on costs too much. Joseph forgives from a position of total power. He could crush them and no one would question it. The hardest forgiveness, and the most like God's, is the kind offered by the one who could justly refuse.",
+      "connectionPoint": "Stephen, the first martyr, saw the pattern and named it as he died: 'Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him' (Acts 7:9). The selling and the sending are remembered in one breath. The story of Joseph became Israel's earliest picture of how God works good through the betrayals of brothers.",
+      "newTestamentEcho": "What Joseph foreshadows, Christ completes. He too was the favored Son, sold for silver by one of his own (Matthew 26:15), handed over to death by the betrayal of brothers. He too was raised - not to Egypt's throne but to the Father's right hand. And from that throne the risen Brother says not 'guilty' but 'come near.' 'Jesus is not ashamed to call them brothers' (Hebrews 2:11). The pit becomes a grave, the grave becomes a throne, and the ones who sold Him are the ones He sends for."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose face would you have to look at and say 'come near' - and what folder are you still keeping, just in case?",
+      "additionalQuestions": [
+        "Joseph names the wrong ('the one you sold') without using it as a weapon. Is there a hurt you have either buried (pretending it didn't happen) or wielded (keeping it ready to use)? What would naming it without weaponizing it look like?",
+        "Joseph cleared the room before he forgave. Where might you need privacy, not an audience, to do the costly work of reconciliation?",
+        "Can you say of a real wound in your life, without flattening it, 'They meant it for harm; I believe God can mean it for good'? What makes that sentence hard to pray?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You know the folder I keep. You know the name I have never been able to say without flinching, and the wrong I have rehearsed for years in case I ever needed it. I have wanted to forgive from a safe distance, with the door open and the evidence in hand. Teach me the harder thing. Give me Joseph's tears and Joseph's clear sight - to name the wrong honestly and refuse to wield it, to say 'come near' to the one I could justly send away. And where I am the brother who did the selling, let me hear from Your throne the word I do not deserve: not guilty, but brother. Draw me near. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one wrong you are still carrying - in a journal, to a trusted friend, or to God alone. Name it honestly, without softening what happened. Then ask one question over it: not 'How do I make them pay?' but 'Where might God be sending good through this that I cannot yet see?' Take one small step of approach - a text, a prayer, a refusal to retell the story as the worst version of itself.",
+      "leavingAtCross": [
+        "The folder of wrongs I keep ready in case I ever need to prove I was right",
+        "The cold satisfaction of forgiving only when I have nothing left to lose",
+        "The lie that naming a hurt and laying it down are the same as saying it never mattered"
+      ],
+      "receivingFromCross": [
+        "Permission to tell the truth about what was done to me and still let it go",
+        "The freedom of forgiveness offered from strength, the way God forgives me",
+        "The deeper story over my worst chapters: 'they meant evil, God meant good'"
+      ],
+      "content": "Today, name one wrong you are still carrying - in a journal, to a trusted friend, or to God alone. Name it honestly, without softening what happened. Then ask one question over it: not 'How do I make them pay?' but 'Where might God be sending good through this that I cannot yet see?' Take one small step of approach - a text, a prayer, a refusal to retell the story as the worst version of itself."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Joseph send all the Egyptians out of the room before revealing himself? What does that choice protect, and what does it tell you about the shape of his forgiveness?",
+        "Joseph says both 'the one you sold into Egypt' and 'God sent me here.' How do those two statements work together rather than cancel each other out?",
+        "How is forgiving from a position of power (Joseph) different from forgiving because you have no other choice - and why might Joseph's kind be harder?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one relationship where you are still keeping a 'folder' - evidence held in reserve. What would it cost to set it down?",
+        "Talk about the difference between excusing a wrong and forgiving it. Where have you confused the two?",
+        "Ask each other: is there someone you could justly refuse, whom God may be asking you to tell 'come near'? What would the first step look like?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 37:28",
+          "text": "So when the Midianite traders passed by, his brothers pulled Joseph out of the pit and sold him for twenty shekels of silver to the Ishmaelites, who took him to Egypt."
+        },
+        {
+          "reference": "Genesis 50:20",
+          "text": "As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this - to preserve the lives of many people."
+        },
+        {
+          "reference": "Acts 7:9",
+          "text": "Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him"
+        },
+        {
+          "reference": "Hebrews 2:11",
+          "text": "For both the One who sanctifies and those who are sanctified are of the same family. So Jesus is not ashamed to call them brothers."
+        },
+        {
+          "reference": "Romans 8:28",
+          "text": "And we know that God works all things together for the good of those who love Him, who are called according to His purpose."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 42-45",
+          "note": "Read the whole reconciliation arc - the brothers' three journeys to Egypt, Judah's offer of himself for Benjamin (44:18-34), and the reveal in chapter 45. Watch how Joseph tests, then weeps, then welcomes."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Brother Sold, the Lord Who Forgave",
+      "description": "The eleventh son of Jacob and the firstborn of Rachel, favored by his father and resented by his brothers, who sold him into Egyptian slavery at seventeen. Falsely accused and imprisoned, he rose through his God-given gift of dream interpretation to become Pharaoh's second-in-command. When famine drove his brothers to Egypt for grain, the man who held their lives chose to weep, forgive, and feed them - reading the whole brutal story as God's hidden work to preserve a people. His life sits at the close of Genesis as the Bible's first long meditation on betrayal turned to deliverance.",
+      "keyQuote": "I am Joseph, your brother, the one you sold into Egypt... it was to save lives that God sent me before you.",
+      "lessonForUs": "Joseph names his wound and refuses to wield it. He shows that forgiveness is not amnesia about the wrong but a decision, made from the throne rather than from the pit, to draw the guilty near - a foretaste of the Brother on heaven's throne who calls those who sold Him His own.",
+      "heading": "The Brother Sold, the Lord Who Forgave"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2026,
+  "scriptureReference_full": "Genesis 45:1-15",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (geshu-na elai; nagash, H5066) reflects standard lexical sources; the cross-references to Genesis 18:23 and 44:18 trace the same root's use within the patriarchal narratives."
+  ]
 }

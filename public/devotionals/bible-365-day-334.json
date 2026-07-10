@@ -1,38 +1,177 @@
 {
   "day": 334,
-  "title": "Acts: Pentecost + Spread — Day 5 — Resolution",
-  "teaser": "Day 334 of Bible 365 — Acts 1-10",
+  "title": "The room with the door taken off",
+  "teaser": "Day 334 of Bible 365 — Peter walks into a Gentile's house he was never supposed to enter, and the Spirit falls before he finishes the sentence. Acts ends its first arc where Jesus said it would: at the ends of the earth.",
   "framework": "Acts 1-10 — Acts: Pentecost + Spread",
   "scriptureReference": "Acts 1-10",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 334"
+      "type": "scripture",
+      "reference": "Acts 10:34-36, 44-45",
+      "translation": "BSB",
+      "emphasis": [
+        "God does not show favoritism",
+        "Lord of all",
+        "even on the Gentiles"
+      ],
+      "greekOriginal": "ἐπ’ ἀληθείας καταλαμβάνομαι ὅτι οὐκ ἔστιν προσωπολήμπτης ὁ Θεός",
+      "passage": "Then Peter began to speak: \"I now truly understand that God does not show favoritism, but welcomes those from every nation who fear Him and do what is right. He has sent this message to the people of Israel, proclaiming the gospel of peace through Jesus Christ, who is Lord of all.\" ... While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message. All the circumcised believers who had accompanied Peter were astounded that the gift of the Holy Spirit had been poured out even on the Gentiles."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Acts 1-10**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Acts 1-10 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "μάρτυς",
+      "transliteration": "martys",
+      "pronunciation": "MAR-tus",
+      "meaning": "witness; one who testifies to what they have seen",
+      "rootMeaning": "A legal word first - the person who stands up in court and says, under oath, what they personally saw. Not a debater, not a salesman. A witness only reports what was real to them.",
+      "usageNote": "In Acts 1:8 Jesus tells the eleven, \"you will be My witnesses\" - martyres, the plural of martys. The whole book unfolds that one word, moving outward through the exact rings He named: Jerusalem, Judea and Samaria, the ends of the earth. By chapter 10 the witness has reached a Roman officer's living room. Within a few generations martys would harden into our English martyr, because so many who testified to the risen Christ paid for it with their lives.",
+      "wordByWord": [
+        {
+          "word": "ἔσεσθέ μου",
+          "transliteration": "esesthe mou",
+          "meaning": "you will be Mine - the witnesses belong to Him before they belong to a mission"
+        },
+        {
+          "word": "μάρτυρες",
+          "transliteration": "martyres",
+          "meaning": "witnesses - those who report what they saw, not what they argued"
+        },
+        {
+          "word": "ἕως ἐσχάτου τῆς γῆς",
+          "transliteration": "heos eschatou tes ges",
+          "meaning": "to the end of the earth - the farthest edge, the last house, the outsider"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "προσωπολήμπτης",
+          "reference": "prosopolemptes (Acts 10:34) - literally a 'face-receiver,' one who judges by the outward face. Peter says God is not one. The witness reaches the ends of the earth precisely because the One being witnessed to plays no favorites."
+        }
+      ],
+      "strongsNumber": "G3144",
+      "definition": "a witness; one who testifies, especially to facts they have personally seen or experienced",
+      "usage": "Acts uses martys and its verb again and again - of the apostles, of Stephen, of Paul. The Spirit given at Pentecost is the power to do one thing: tell the truth about Jesus to people who have not seen Him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Acts: Pentecost + Spread. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit.",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Where the Story Was Always Going to End Up",
+      "body": "Acts opens with a man on a hillside watching Jesus disappear into a cloud. Before He goes, Jesus leaves them a map drawn in one sentence: \"you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" (Acts 1:8). It reads like a table of contents. Everything that follows is the unspooling of that line.\n\nFor nine chapters the witness moves the way He said it would. Pentecost lands the Spirit on the disciples in Jerusalem (Acts 2). Persecution scatters believers into Judea and Samaria, and the gospel goes with them. An Ethiopian official reads Isaiah in his chariot and goes home baptized. Saul, the great persecutor, is knocked flat on the Damascus road and stood back up as the man who will carry the name to the nations.\n\nThen, in chapter 10, the story arrives where the sentence always pointed: a Gentile's house. Cornelius is a Roman centurion in Caesarea - a soldier of the occupying empire, a devout God-fearer, and, by every rule Peter had ever been taught, off-limits. To cross his threshold was to make yourself unclean. The whole weight of Acts has been pressing toward this door, and Peter does not want to walk through it.",
+      "keyInsight": "Acts 1:8 is not a slogan; it is the blueprint of the book. Chapters 2 through 10 are the Spirit carrying out the geography Jesus named, ring by ring, until the witness reaches a man it was never supposed to reach.",
+      "content": "Acts opens with a man on a hillside watching Jesus disappear into a cloud. Before He goes, Jesus leaves them a map drawn in one sentence: \"you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" (Acts 1:8). It reads like a table of contents. Everything that follows is the unspooling of that line.\n\nFor nine chapters the witness moves the way He said it would. Pentecost lands the Spirit on the disciples in Jerusalem (Acts 2). Persecution scatters believers into Judea and Samaria, and the gospel goes with them. An Ethiopian official reads Isaiah in his chariot and goes home baptized. Saul, the great persecutor, is knocked flat on the Damascus road and stood back up as the man who will carry the name to the nations.\n\nThen, in chapter 10, the story arrives where the sentence always pointed: a Gentile's house. Cornelius is a Roman centurion in Caesarea - a soldier of the occupying empire, a devout God-fearer, and, by every rule Peter had ever been taught, off-limits. To cross his threshold was to make yourself unclean. The whole weight of Acts has been pressing toward this door, and Peter does not want to walk through it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Threshold Peter Couldn't Cross Alone",
+      "body": "Peter needed a vision to get to Caesarea. On a rooftop in Joppa, hungry, he sees a sheet lowered from heaven full of animals he had spent his whole life refusing to eat. A voice tells him to kill and eat. He refuses - \"I have never eaten anything impure or unclean.\" The voice answers, \"Do not call anything impure that God has made clean.\" Three times. Then the men from Cornelius knock at the gate.\n\nWatch how careful Luke is. The barrier is not in the Gentiles. It is in Peter. God does not change the rules for Cornelius; He changes the heart of the man who has to walk through the door. When Peter finally stands inside that house - a thing he says plainly is \"unlawful\" for a Jew (Acts 10:28) - he admits what it took to get him there: \"God has shown me that I should not call any man impure or unclean.\"\n\nMost of us have a Caesarea. A house, a kind of person, a category we have quietly decided the good news is not quite for. The miracle of Acts 10 is not only that the gospel reaches Cornelius. It is that God is patient enough to dismantle the wall in Peter first - one rooftop vision at a time - so the witness can finally go where Jesus sent it.",
+      "connectionToTheme": "The resolution of Acts 1 through 10 is not just that the gospel spreads outward; it is that God must first take the door off the inside of His own people before it can.",
+      "content": "Peter needed a vision to get to Caesarea. On a rooftop in Joppa, hungry, he sees a sheet lowered from heaven full of animals he had spent his whole life refusing to eat. A voice tells him to kill and eat. He refuses - \"I have never eaten anything impure or unclean.\" The voice answers, \"Do not call anything impure that God has made clean.\" Three times. Then the men from Cornelius knock at the gate.\n\nWatch how careful Luke is. The barrier is not in the Gentiles. It is in Peter. God does not change the rules for Cornelius; He changes the heart of the man who has to walk through the door. When Peter finally stands inside that house - a thing he says plainly is \"unlawful\" for a Jew (Acts 10:28) - he admits what it took to get him there: \"God has shown me that I should not call any man impure or unclean.\"\n\nMost of us have a Caesarea. A house, a kind of person, a category we have quietly decided the good news is not quite for. The miracle of Acts 10 is not only that the gospel reaches Cornelius. It is that God is patient enough to dismantle the wall in Peter first - one rooftop vision at a time - so the witness can finally go where Jesus sent it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sermon God Interrupted",
+      "body": "Notice the timing of the moment the Spirit comes. \"While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message\" (Acts 10:44). Peter does not get to finish. No altar call, no laying on of hands, no checklist completed. God interrupts the sermon.\n\nThis is the same Spirit that fell at Pentecost in chapter 2 - and the parallel is the whole point. At Pentecost the Spirit came on Jews in Jerusalem. Here it falls, on God's own initiative, on uncircumcised Gentiles in a Roman officer's house. The circumcised believers with Peter are not delighted; they are \"astounded\" (Acts 10:45). The barrier they assumed was God's has just been overruled in front of them. All Peter can say is, \"Can anyone withhold the water to baptize these people? They have received the Holy Spirit just as we have\" (Acts 10:47).\n\nGod does not wait for Peter to declare these people clean. He declares it first, by pouring out the gift Himself, mid-sentence, before the gatekeepers can take a vote. The resolution of the whole arc is in that interruption: the ends of the earth do not get a lesser Spirit. They get the same one.",
+      "historicalContext": "Luke writes Acts as the second volume of a single work begun in his Gospel, addressed to Theophilus, in a world where Jew and Gentile did not share tables and where entering a Gentile home incurred ritual impurity. For his first readers, the scandal of Acts 10 was not that a pagan converted - God-fearers like Cornelius already worshipped Israel's God on the edges. The scandal was that he was brought all the way in, baptized, and given the Spirit without first becoming a Jew.",
+      "fascinatingFact": "Cornelius is named as a centurion of \"the Italian Regiment\" (Acts 10:1) - a soldier of the very empire that occupied Israel and would, within a generation, burn Jerusalem. The first Gentile household formally welcomed into the church belonged to the occupying army. The gospel of peace through Jesus Christ (Acts 10:36) walks first into a soldier's house.",
+      "content": "Notice the timing of the moment the Spirit comes. \"While Peter was still speaking these words, the Holy Spirit fell upon all who heard his message\" (Acts 10:44). Peter does not get to finish. No altar call, no laying on of hands, no checklist completed. God interrupts the sermon.\n\nThis is the same Spirit that fell at Pentecost in chapter 2 - and the parallel is the whole point. At Pentecost the Spirit came on Jews in Jerusalem. Here it falls, on God's own initiative, on uncircumcised Gentiles in a Roman officer's house. The circumcised believers with Peter are not delighted; they are \"astounded\" (Acts 10:45). The barrier they assumed was God's has just been overruled in front of them. All Peter can say is, \"Can anyone withhold the water to baptize these people? They have received the Holy Spirit just as we have\" (Acts 10:47).\n\nGod does not wait for Peter to declare these people clean. He declares it first, by pouring out the gift Himself, mid-sentence, before the gatekeepers can take a vote. The resolution of the whole arc is in that interruption: the ends of the earth do not get a lesser Spirit. They get the same one."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jesus said the witness would go to the ends of the earth (Acts 1:8). By Acts 10 it has crossed the hardest border in the ancient world - the wall between Jew and Gentile - and the Spirit falls on a Roman household exactly as it fell at Pentecost.",
+      "modernApplication": "The wall in Acts 10 was not about geography; the gospel had already reached Samaria and Ethiopia. It was about a category of person Peter had filed under 'not for them.' We keep our own files - the relative who mocks our faith, the political opposite, the addict, the person whose past we have decided puts them out of reach. Acts 10 says the door we think is locked is one God is willing to take off its hinges.",
+      "connectionPoint": "This is the resolution everything pointed toward. The promise that the gospel was for 'all who are far off' (Acts 2:39) is no longer a phrase in a Pentecost sermon; it now has a face and an address in Caesarea. What was declared in chapter 2 is enacted in chapter 10. The arc closes by proving the promise meant exactly what it said.",
+      "newTestamentEcho": "Peter's confession that God 'does not show favoritism' (Acts 10:34) becomes a load-bearing wall of the New Testament. Paul writes to Rome that 'God does not show favoritism' (Romans 2:11) and tells the Galatians there is now 'neither Jew nor Greek... for you are all one in Christ Jesus' (Galatians 3:28). John sees the end of the road in a worshipping crowd 'from every nation and tribe and people and tongue' (Revelation 7:9) - the ends of the earth, gathered home."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who is your Cornelius - the person, or kind of person, you have quietly decided the good news is not quite for?",
+      "additionalQuestions": [
+        "Acts 10 shows God dismantling the wall in Peter before reaching Cornelius. What wall might God be patiently working to take down in you?",
+        "The Spirit fell before Peter finished his sermon. Where are you waiting for everything to be in order before you believe God could already be at work?",
+        "Peter said, 'I now truly understand that God does not show favoritism.' Where have you assumed God's favor runs along the same lines yours does?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord of all, You play no favorites, and I confess that I do. I have kept a quiet list of people I treat as out of reach, and a quieter wall around my own heart. Do in me what You did on the rooftop - take down what I have called unclean that You have called clean. Make me a witness, not a gatekeeper. And surprise me, as You surprised Peter, by pouring out Your Spirit before I have it all figured out. In the name of Jesus Christ, the Lord of every nation. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the one person or group you have written off as beyond the reach of grace - and pray for them by name. Then ask God to show you the wall in you, not in them.",
+      "leavingAtCross": [
+        "The private list of people I have decided the good news is not really for",
+        "The assumption that God's favor follows the same borders mine does",
+        "The need to be the gatekeeper who decides who is clean enough to belong"
+      ],
+      "receivingFromCross": [
+        "A God who does not show favoritism and welcomes those from every nation",
+        "The same Spirit given to the ends of the earth that was given at Pentecost",
+        "A place in a family being gathered from every tribe, tongue, and nation"
+      ],
+      "content": "Today, name the one person or group you have written off as beyond the reach of grace - and pray for them by name. Then ask God to show you the wall in you, not in them."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How does Acts 1:8 function as the outline for everything that happens through chapter 10 - and where exactly does the witness arrive by the end?",
+        "Whose heart had to change in Acts 10 - Cornelius's or Peter's - and why does that distinction matter?",
+        "Why does it matter that the Spirit fell 'while Peter was still speaking,' before any human ceremony was completed?"
+      ],
+      "forAccountabilityPartners": [
+        "Name your own 'Caesarea' - a person or category you have treated as off-limits for the gospel - and talk honestly about why.",
+        "Peter needed a vision repeated three times before he moved. Where has God been patiently working on a prejudice in you, and how far along is it?",
+        "Discuss: if God 'does not show favoritism,' where does our church life still quietly act as if He does?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Acts 1:8",
+          "text": "But you will receive power when the Holy Spirit comes upon you, and you will be My witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."
+        },
+        {
+          "reference": "Acts 2:39",
+          "text": "This promise belongs to you and your children and to all who are far off - to all whom the Lord our God will call to Himself."
+        },
+        {
+          "reference": "Isaiah 49:6",
+          "text": "I will also make You a light for the nations, to bring My salvation to the ends of the earth."
+        },
+        {
+          "reference": "Galatians 3:28",
+          "text": "There is neither Jew nor Greek, slave nor free, male nor female, for you are all one in Christ Jesus."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Acts 10:1 - 11:18",
+          "note": "Read the whole Cornelius account in one sitting, including chapter 11, where Peter has to defend in Jerusalem what God did in Caesarea. Watch the church itself catch up to what the Spirit has already done."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Cornelius",
+      "title": "The Centurion at the Ends of the Earth",
+      "description": "A Roman centurion stationed in Caesarea, commanding officer in the Italian Regiment of the occupying army. Luke describes him as devout and God-fearing, generous to the poor, and a man of regular prayer (Acts 10:2) - a Gentile drawn to Israel's God but standing outside her covenant. Through a vision he sends for Peter; through Peter's interrupted sermon, he and his whole household receive the Spirit and are baptized, becoming the first Gentile household formally welcomed into the church.",
+      "keyQuote": "He and all his household were devout and God-fearing. He gave generously to the people and prayed to God regularly.",
+      "lessonForUs": "Cornelius could not earn his way across the wall by piety, prayer, or generosity, real as they were. The door opened because God took it off its hinges. The ends of the earth are not reached by good people climbing in; they are reached by a good God pouring Himself out.",
+      "heading": "The Centurion at the Ends of the Earth"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2114,
+  "scriptureReference_full": "Acts 10:34-36, 44-45 (within Acts 1-10)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (martys, G3144; prosopolemptes) reflects standard lexical sources (BDAG, Strong's). The development of martys toward the later sense 'martyr' is well attested in early church usage.",
+    "Historical framing of Acts as the second volume of Luke's work, and of Jew/Gentile table fellowship and ritual purity, reflects mainstream New Testament scholarship."
+  ]
 }

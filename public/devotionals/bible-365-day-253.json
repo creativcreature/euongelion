@@ -1,38 +1,181 @@
 {
   "day": 253,
-  "title": "Hosea, Joel, Amos — Day 1 — Hook",
-  "teaser": "Day 253 of Bible 365 — Selected",
-  "framework": "Selected — Hosea, Joel, Amos",
-  "scriptureReference": "Selected",
+  "title": "The Name You Were Not Given",
+  "teaser": "God tells a prophet to marry a woman who will betray him, and to name their children Not-Pitied and Not-My-People. Then, in the same breath, He promises to change the names.",
+  "framework": "Hosea 1:2-3, 9-10",
+  "scriptureReference": "Hosea 1:2-3, 9-10",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 253"
+      "type": "scripture",
+      "reference": "Hosea 1:2-3, 9-10",
+      "translation": "BSB",
+      "emphasis": [
+        "take a prostitute as your wife",
+        "you are not My people",
+        "sons of the living God"
+      ],
+      "hebrewOriginal": "לֹא עַמִּי",
+      "passage": "When the LORD first spoke through Hosea, He told him, \"Go, take a prostitute as your wife and have children of adultery, because this land is flagrantly prostituting itself by departing from the LORD.\" So Hosea went and married Gomer daughter of Diblaim, and she conceived and bore him a son. ... And the LORD said, \"Name him Lo-ammi, for you are not My people, and I am not your God. Yet the number of the Israelites will be like the sand of the sea, which cannot be measured or counted. And it will happen that in the very place where it was said to them, 'You are not My people,' they will be called 'sons of the living God.'\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "לֹא עַמִּי",
+      "transliteration": "lo-ammi",
+      "pronunciation": "loh ah-MEE",
+      "meaning": "not my people",
+      "rootMeaning": "Am means a people, a kindred, the family-group you belong to. Ammi is that word with the small ending that means \"my\" - my people, the ones who are mine. Lo is the flat Hebrew no. God has Hosea take the word for belonging and bolt the word for refusal onto the front of it, then hang it on a newborn boy.",
+      "usageNote": "The three children are walking sentences. Jezreel names a coming judgment; Lo-ruhamah means \"Not Pitied,\" or \"No Compassion\"; Lo-ammi means \"Not My People.\" These were not nicknames muttered in anger. They were given at birth, in front of neighbors, so that every time Gomer called her son to supper the whole village heard God say what Israel had made of the covenant.",
+      "wordByWord": [
+        {
+          "word": "לֹא",
+          "transliteration": "lo",
+          "meaning": "no, not - the bare word of refusal"
+        },
+        {
+          "word": "עַם",
+          "transliteration": "am",
+          "meaning": "a people, a nation, kindred - those bound together as one"
+        },
+        {
+          "word": "עַמִּי",
+          "transliteration": "ammi",
+          "meaning": "my people - the same word with \"mine\" added"
+        },
+        {
+          "word": "רֻחָמָה",
+          "transliteration": "ruhamah",
+          "meaning": "pitied, shown compassion - from racham, the womb-deep tenderness of God"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רַחַם / רֶחֶם",
+          "reference": "Racham, the word behind \"compassion\" in Lo-ruhamah, comes from rechem, the word for a mother's womb. Hosea 2:23 and Romans 9:25 promise that the \"No Compassion\" of chapter 1 will be undone - that God will have compassion on \"No Compassion.\" The mercy named missing in the daughter's name is the mercy God swears to restore."
+        }
+      ],
+      "strongsNumber": "H3808",
+      "definition": "lo: the negative particle, \"not\"; joined to ammi (am, H5971, \"people\") to form the name Lo-ammi, \"Not My People\"",
+      "usage": "The name reverses the oldest covenant promise. \"I will take you as My own people, and I will be your God\" (Exodus 6:7) becomes, on a child's birth certificate, \"you are not My people, and I am not your God.\" The whole book is the story of God refusing to let that be the last word."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "God Asks a Prophet to Live the Sermon",
+      "body": "Most prophets were given words to say. Hosea was given a marriage to live. The very first thing the LORD does through him is not a speech but a wedding: \"Go, take a prostitute as your wife and have children of adultery.\" The reason is laid bare in the same sentence - the land is \"flagrantly prostituting itself by departing from the LORD.\" Israel has been unfaithful, and rather than describe it from a safe distance, God asks one man to feel it in his own house.\n\nThis is the northern kingdom in its last comfortable years, under Jeroboam II - trade routes humming, borders quiet, idols tended on the high places. From the outside, things looked fine. Hosea's job is to make the inside visible. So he marries Gomer, and the children come, and each one is handed a name that is really an indictment. Jezreel, for a valley soaked in blood. Lo-ruhamah, Not Pitied. And then the third, the one that lands hardest: Lo-ammi, Not My People.\n\nHear what that name unsays. From the burning bush onward, the covenant had one heartbeat: I will be your God, and you will be My people. That promise is the floor everything else stands on. And here God pulls the floor out. He names a child the opposite of the promise and makes Hosea carry that name through the streets. The marriage was the sermon, and the sermon was about how it feels to be betrayed by the one you bound yourself to.",
+      "keyInsight": "God does not explain Israel's unfaithfulness from a distance. He asks a prophet to marry it, name it, and live in the same house with it - because covenant love is not an idea, and breaking it is not abstract.",
+      "content": "Most prophets were given words to say. Hosea was given a marriage to live. The very first thing the LORD does through him is not a speech but a wedding: \"Go, take a prostitute as your wife and have children of adultery.\" The reason is laid bare in the same sentence - the land is \"flagrantly prostituting itself by departing from the LORD.\" Israel has been unfaithful, and rather than describe it from a safe distance, God asks one man to feel it in his own house.\n\nThis is the northern kingdom in its last comfortable years, under Jeroboam II - trade routes humming, borders quiet, idols tended on the high places. From the outside, things looked fine. Hosea's job is to make the inside visible. So he marries Gomer, and the children come, and each one is handed a name that is really an indictment. Jezreel, for a valley soaked in blood. Lo-ruhamah, Not Pitied. And then the third, the one that lands hardest: Lo-ammi, Not My People.\n\nHear what that name unsays. From the burning bush onward, the covenant had one heartbeat: I will be your God, and you will be My people. That promise is the floor everything else stands on. And here God pulls the floor out. He names a child the opposite of the promise and makes Hosea carry that name through the streets. The marriage was the sermon, and the sermon was about how it feels to be betrayed by the one you bound yourself to."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Name on the Form",
+      "body": "A friend who fosters children told me about the day a boy arrived at her door with a single trash bag of clothes and a folder of paperwork. On the intake form, under the line for the child's status, someone had typed a phrase - the bureaucratic words for a child no one has claimed. She said she couldn't stop looking at it. A real boy, seven years old, holding a juice box, summed up in a word that meant nobody's.\n\nShe told me she made a quiet decision standing in that doorway. She would not let the word on the form be the truest thing about him. It would describe where he had been. It would not name where he was going.\n\nThat is something like what God does in Hosea, except the order is reversed and the stakes are eternal. He lets the hardest name be spoken first - Not My People - out loud, on the record, with witnesses. He does not soften it. And then, before the ink is even dry, He says the name will not hold. Where it was said \"you are not My people,\" there they will be called sons of the living God.",
+      "connectionToTheme": "The name written over us by our failure is real and is spoken honestly - but in God's hands it describes where we have been, not where He is taking us.",
+      "content": "A friend who fosters children told me about the day a boy arrived at her door with a single trash bag of clothes and a folder of paperwork. On the intake form, under the line for the child's status, someone had typed a phrase - the bureaucratic words for a child no one has claimed. She said she couldn't stop looking at it. A real boy, seven years old, holding a juice box, summed up in a word that meant nobody's.\n\nShe told me she made a quiet decision standing in that doorway. She would not let the word on the form be the truest thing about him. It would describe where he had been. It would not name where he was going.\n\nThat is something like what God does in Hosea, except the order is reversed and the stakes are eternal. He lets the hardest name be spoken first - Not My People - out loud, on the record, with witnesses. He does not soften it. And then, before the ink is even dry, He says the name will not hold. Where it was said \"you are not My people,\" there they will be called sons of the living God."
+    },
+    {
+      "type": "insight",
+      "heading": "The Same Place, A Different Word",
+      "body": "Read verse 9 against verse 10 and notice the hinge the whole book turns on. It is not a different people who get the new name. It is not a different place. The promise is exact: \"in the very place where it was said to them, 'You are not My people,' they will be called 'sons of the living God.'\"\n\nGod does not relocate the rescue to somewhere cleaner. He does not find a better people to love. He goes back to the same ground where the worst word was spoken and speaks a better one over the very same heads. The Not-My-People become sons of the living God on the spot where they were disowned.\n\nThis is the shape of how God works that the three short prophets in this stretch - Hosea, Joel, Amos - will keep pressing. Each one will go to the place of failure and judgment and refuse to leave it there. Joel will promise the locust-stripped fields will be repaid (Joel 2:25). Amos will end his book of thunder with a fallen booth raised up again (Amos 9:11). The verdict is honest; it is never the end. Mercy always insists on the last word, and it speaks that word in the exact spot where judgment fell.",
+      "historicalContext": "Hosea prophesied to the northern kingdom of Israel in the eighth century BC, in the decades before Assyria swept it away in 722 BC. His ministry overlaps with Amos, who preached to the same kingdom, and stands near Joel in the collection later called the Book of the Twelve. These three open the stretch of \"minor\" prophets - minor only in length, not in weight.",
+      "fascinatingFact": "The reversal is built into the names themselves. In Hosea 2:1 the command comes to call the brother \"Ammi\" - My People - and the sister \"Ruhamah\" - Pitied. The lo, the \"not,\" is simply struck off the front. God does not give the children entirely new names. He removes the negation from the old ones. The mercy was never far away; it was the word \"not\" that had to go.",
+      "content": "Read verse 9 against verse 10 and notice the hinge the whole book turns on. It is not a different people who get the new name. It is not a different place. The promise is exact: \"in the very place where it was said to them, 'You are not My people,' they will be called 'sons of the living God.'\"\n\nGod does not relocate the rescue to somewhere cleaner. He does not find a better people to love. He goes back to the same ground where the worst word was spoken and speaks a better one over the very same heads. The Not-My-People become sons of the living God on the spot where they were disowned.\n\nThis is the shape of how God works that the three short prophets in this stretch - Hosea, Joel, Amos - will keep pressing. Each one will go to the place of failure and judgment and refuse to leave it there. Joel will promise the locust-stripped fields will be repaid (Joel 2:25). Amos will end his book of thunder with a fallen booth raised up again (Amos 9:11). The verdict is honest; it is never the end. Mercy always insists on the last word, and it speaks that word in the exact spot where judgment fell."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God names a child Lo-ammi, \"Not My People,\" over an unfaithful Israel - and then promises that in the very same place the disowned will be called \"sons of the living God.\"",
+      "modernApplication": "Most of us carry a name we were not given at a font but earned by our failures, or had handed to us by people who gave up: too far gone, not the religious type, not the kind God keeps. Hosea says God hears that name, does not pretend it untrue, and then refuses to let it stand. The question is not whether the hard name is accurate. It is whether it gets the last word.",
+      "connectionPoint": "Paul reaches all the way back to these exact verses to explain the gospel. In Romans 9 he writes, \"As He says in Hosea: 'I will call them My People who are not My people,'\" and then, \"in the very place where it was said to them, You are not My people, they will be called sons of the living God\" (Romans 9:25-26). Peter says the same to scattered believers: \"Once you were not a people, but now you are the people of God; once you had not received mercy, but now you have received mercy\" (1 Peter 2:10). The promise Hosea carried through the streets is the one the apostles say came true in Christ.",
+      "newTestamentEcho": "What Hosea announced, Christ accomplished. The Son who truly could say \"You are My God\" took the name of the disowned so the disowned could take His. Hosea's own words - \"out of Egypt I called My son\" (Hosea 11:1) - are placed by Matthew over the child Jesus (Matthew 2:15), as if to say: the true Son walks the road Israel walked, and at the end of it the Lo-ammi are made sons in Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the name you secretly believe is the truest thing about you - the verdict you assume God would speak if He were being honest?",
+      "additionalQuestions": [
+        "If God let the hard name about Israel be spoken first, out loud and on the record, what does that tell you about how He deals with your real failures - by denial, or by something else?",
+        "Hosea had to live the sermon, not just preach it. Where in your life are you being asked to feel a hard truth rather than explain it from a safe distance?",
+        "The reversal happens \"in the very place\" of the disowning. What is the specific place - the room, the relationship, the memory - where you most need a better word spoken over you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, You know the names I have answered to - the ones my failures gave me, the ones I am afraid are true. I will not pretend they have nothing behind them. But I have heard what You did in Hosea: that You speak the hard name honestly and then refuse to let it stand. So speak the better word over me in the very place I went wrong. Strike off the \"not.\" Call me Yours, not because I have been faithful, but because You have. In the name of the true Son, who took my name so I could take His. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, write down the one name you carry that you most fear is true - the verdict you assume God would speak over you. Then, beside it, write Hosea 1:10: \"sons of the living God.\" Leave both on the page. Let the second word be the one you read last before you sleep.",
+      "leavingAtCross": [
+        "The name my failures gave me, that I have been treating as the truest thing about me",
+        "The lie that God deals with my sin by pretending it isn't there - or by walking away",
+        "The fear that I am too far gone for the \"not\" to ever be struck off"
+      ],
+      "receivingFromCross": [
+        "A God honest enough to name the wound and merciful enough to heal it in the same breath",
+        "The promise that the better word is spoken in the very place the worst one fell",
+        "A new name - sons of the living God - given in Christ, the true Son who took mine"
+      ],
+      "content": "Today, write down the one name you carry that you most fear is true - the verdict you assume God would speak over you. Then, beside it, write Hosea 1:10: \"sons of the living God.\" Leave both on the page. Let the second word be the one you read last before you sleep."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God ask Hosea to live out the message in a marriage and children's names rather than simply preach it? What does the form of the sermon teach that words alone could not?",
+        "What exactly does the name Lo-ammi reverse - and why is that the most devastating name God could give?",
+        "The new name is promised \"in the very place\" of the old one. Why does it matter that God restores on the same ground where judgment was spoken, rather than starting over somewhere new?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one \"hard name\" you have carried - something you were called, or call yourself, that you fear is the final word.",
+        "Talk about the difference between God denying a sin and God naming it honestly before forgiving it. Which one do you tend to expect from Him, and why?",
+        "Ask each other: where do you most need the word \"not\" struck off a name you've been answering to?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 2:23",
+          "text": "And I will sow her as My own in the land, and I will have compassion on 'No Compassion.' I will say to those called 'Not My People,' 'You are My people,' and they will say, 'You are my God.'"
+        },
+        {
+          "reference": "Romans 9:25-26",
+          "text": "As He says in Hosea: \"I will call them 'My People' who are not My people, and I will call her 'My Beloved' who is not My beloved,\" and, \"It will happen that in the very place where it was said to them, 'You are not My people,' they will be called 'sons of the living God.'\""
+        },
+        {
+          "reference": "1 Peter 2:10",
+          "text": "Once you were not a people, but now you are the people of God; once you had not received mercy, but now you have received mercy."
+        },
+        {
+          "reference": "Hosea 11:1",
+          "text": "When Israel was a child, I loved him, and out of Egypt I called My son."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hosea 1-2",
+          "note": "Read the two chapters as one movement: the three named children of judgment in chapter 1, then the long courtroom-to-courtship turn of chapter 2 where God woos His unfaithful people back and undoes every name."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hosea son of Beeri",
+      "title": "The Prophet Who Married the Sermon",
+      "description": "A prophet to the northern kingdom of Israel in the eighth century BC, in its last prosperous years before the Assyrian conquest of 722 BC. The LORD's first word to him was not a speech but a command to marry Gomer, an unfaithful woman, and to name their children for judgment - Jezreel, Lo-ruhamah (Not Pitied), and Lo-ammi (Not My People). His own home became the living picture of a God betrayed by the people He had bound Himself to, and of a love that would not let the betrayal be the end.",
+      "keyQuote": "Name him Lo-ammi, for you are not My people, and I am not your God.",
+      "lessonForUs": "Hosea was asked to feel God's heartbreak from the inside, not describe it from a distance. His life says that God neither denies our unfaithfulness nor abandons us to it - He speaks the hard name honestly, then promises to strike off the \"not\" and call us His own.",
+      "heading": "The Prophet Who Married the Sermon"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1414,
+  "scriptureReference_full": "Hosea 1:2-3, 9-10",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (lo-ammi, am H5971, ruhamah from racham/rechem) reflects standard lexical sources. The covenant formula echoed and reversed is Exodus 6:7. The New Testament use of Hosea 1:10 / 2:23 is Paul's in Romans 9:25-26 and Peter's in 1 Peter 2:10; Matthew 2:15 applies Hosea 11:1 to Christ."
+  ]
 }

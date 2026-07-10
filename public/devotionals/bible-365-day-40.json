@@ -6,33 +6,185 @@
   "scriptureReference": "Exodus 12:1-13",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 40"
+      "type": "scripture",
+      "reference": "Exodus 12:1-13",
+      "translation": "BSB",
+      "emphasis": [
+        "select a lamb",
+        "an unblemished year-old male",
+        "put it on the sides and tops of the doorframes",
+        "when I see the blood, I will pass over you"
+      ],
+      "hebrewOriginal": "וְרָאִיתִי אֶת־הַדָּם וּפָסַחְתִּי עֲלֵכֶם",
+      "passage": "Now the LORD said to Moses and Aaron in the land of Egypt, \"This month is the beginning of months for you; it shall be the first month of your year. Tell the whole congregation of Israel that on the tenth day of this month each man must select a lamb for his family, one per household. If the household is too small for a whole lamb, they are to share with the nearest neighbor based on the number of people, and apportion the lamb accordingly. Your lamb must be an unblemished year-old male, and you may take it from the sheep or the goats. You must keep it until the fourteenth day of the month, when the whole assembly of the congregation of Israel will slaughter the animals at twilight. They are to take some of the blood and put it on the sides and tops of the doorframes of the houses where they eat the lambs. They are to eat the meat that night, roasted over the fire, along with unleavened bread and bitter herbs. Do not eat any of the meat raw or cooked in boiling water, but only roasted over the fire—its head and legs and inner parts. Do not leave any of it until morning; before the morning you must burn up any part that is left over. This is how you are to eat it: You must be fully dressed for travel, with your sandals on your feet and your staff in your hand. You are to eat in haste; it is the LORD's Passover. On that night I will pass through the land of Egypt and strike down every firstborn male, both man and beast, and I will execute judgment against all the gods of Egypt. I am the LORD. The blood on the houses where you are staying will distinguish them; when I see the blood, I will pass over you. No plague will fall on you to destroy you when I strike the land of Egypt.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Exodus 12:1-13**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Exodus 12:1-13 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "פֶּסַח",
+      "transliteration": "pesach",
+      "pronunciation": "PEH-sakh",
+      "meaning": "Passover; a passing-over, a sparing",
+      "rootMeaning": "The noun pesach comes from the verb pasach - to pass over, to spare, to leave untouched. It is the night named not for what God did to Egypt, but for what He did not do to Israel.",
+      "usageNote": "The same root carries an older, stranger sense: in 1 Kings 18:21 the people 'limp' or 'hobble' between two opinions, and in Isaiah 31:5 the LORD passing over Jerusalem is pictured as a bird hovering to protect. So pesach is not God stepping around a house by accident; it is God deliberately standing over the marked door, sheltering it while judgment falls everywhere else.",
+      "wordByWord": [
+        {
+          "word": "וְרָאִיתִי",
+          "transliteration": "ve-ra'iti",
+          "meaning": "and I will see"
+        },
+        {
+          "word": "אֶת־הַדָּם",
+          "transliteration": "et ha-dam",
+          "meaning": "the blood"
+        },
+        {
+          "word": "וּפָסַחְתִּי",
+          "transliteration": "u-fasachti",
+          "meaning": "and I will pass over, I will spare"
+        },
+        {
+          "word": "עֲלֵכֶם",
+          "transliteration": "alekhem",
+          "meaning": "over you, upon you"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שֶׂה (seh)",
+          "reference": "The word for the lamb itself - one animal of the flock, a single creature kept in the house for four days, then killed. It is the word Isaac will not need (Genesis 22:8) and the word Isaiah uses of the suffering servant, 'like a lamb led to the slaughter' (Isaiah 53:7)."
+        },
+        {
+          "word": "תָּמִים (tamim)",
+          "reference": "Unblemished, whole, without defect. The lamb cannot be sick or scarred. The same word describes the life God asks of Abraham - 'walk before Me and be blameless' (Genesis 17:1) - and what only one Man has ever fully been."
+        }
+      ],
+      "strongsNumber": "H6453",
+      "definition": "Passover; the sacrifice and the festival named from the verb pasach, to pass over or spare",
+      "usage": "The whole night is named after a mercy. Of all the things God does in Egypt that night - the striking, the judgment on false gods, the breaking of a slave-empire - the festival is named for the houses He passed over."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Substitution by blood. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our Passover (1 Cor 5:7).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Calendar Begins at a Killing",
+      "body": "Before God tells Israel what to do, He resets time. \"This month is the beginning of months for you; it shall be the first month of your year.\" Four hundred years of slavery had its own dull calendar - one brick-quota indistinguishable from the next. God tears that page out. From now on the year itself will start here, at this night, so that every spring forever Israel will count its life from a rescue it did not earn.\n\nThen the instructions, and they are oddly domestic for so vast an event. Each household takes a lamb on the tenth day and keeps it until the fourteenth. For four days the animal lives in the house. The children would have learned its face. It had to be unblemished, a year-old male, the best of the flock, not the runt nobody would miss. And on the fourteenth, at twilight, the whole assembly kills its lambs at once - a nation's worth of small deaths in a single evening.\n\nThe blood does not go on an altar. It goes on the doorframe - the sides and the top, the threshold of the home where the family is hiding. God is not asking for a ritual performed at a distance. He is asking each family to mark the very door they will stand behind while He passes through. The lamb dies so the household can stay inside and live.",
+      "keyInsight": "The Passover is not magic and it is not earned. A spotless life is given in the place of the household, its blood is applied to the door, and the family is told to stay behind it. Rescue comes by substitution and shelter, not by performance.",
+      "content": "Before God tells Israel what to do, He resets time. \"This month is the beginning of months for you; it shall be the first month of your year.\" Four hundred years of slavery had its own dull calendar - one brick-quota indistinguishable from the next. God tears that page out. From now on the year itself will start here, at this night, so that every spring forever Israel will count its life from a rescue it did not earn.\n\nThen the instructions, and they are oddly domestic for so vast an event. Each household takes a lamb on the tenth day and keeps it until the fourteenth. For four days the animal lives in the house. The children would have learned its face. It had to be unblemished, a year-old male, the best of the flock, not the runt nobody would miss. And on the fourteenth, at twilight, the whole assembly kills its lambs at once - a nation's worth of small deaths in a single evening.\n\nThe blood does not go on an altar. It goes on the doorframe - the sides and the top, the threshold of the home where the family is hiding. God is not asking for a ritual performed at a distance. He is asking each family to mark the very door they will stand behind while He passes through. The lamb dies so the household can stay inside and live."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Door I Could Not Open",
+      "body": "A friend who grew up in a violent house told me that the worst nights were the ones when the danger was outside and the lock was thin. You hear it coming down the hall. You are a child. There is nothing in your hands that can stop what is on the other side of that door. All your safety depends on something you did not build and cannot reinforce.\n\nHe said the strange comfort of the Passover, when he finally read it as an adult, was that God did not tell the Israelites to fight, or to be brave, or to be good enough that the angel of death would judge them worthy. God told them to get behind a marked door and stay there. Their job was not to be strong. Their job was to be covered, and to trust the covering.\n\nThat is harder than it sounds. Everything in us wants to add something - a bolt, a weapon, a merit. The Passover offers a family one assurance only: the blood is on the door, and the One passing through has promised to honor it. Stay inside. Eat. Wait for morning.",
+      "connectionToTheme": "Salvation on the first Passover came not from the strength of the people behind the door but from the blood on it - a covering they received and trusted rather than earned.",
+      "content": "A friend who grew up in a violent house told me that the worst nights were the ones when the danger was outside and the lock was thin. You hear it coming down the hall. You are a child. There is nothing in your hands that can stop what is on the other side of that door. All your safety depends on something you did not build and cannot reinforce.\n\nHe said the strange comfort of the Passover, when he finally read it as an adult, was that God did not tell the Israelites to fight, or to be brave, or to be good enough that the angel of death would judge them worthy. God told them to get behind a marked door and stay there. Their job was not to be strong. Their job was to be covered, and to trust the covering.\n\nThat is harder than it sounds. Everything in us wants to add something - a bolt, a weapon, a merit. The Passover offers a family one assurance only: the blood is on the door, and the One passing through has promised to honor it. Stay inside. Eat. Wait for morning."
+    },
+    {
+      "type": "insight",
+      "heading": "When I See the Blood",
+      "body": "Read verse 13 slowly, because it carries the weight of the whole night: \"when I see the blood, I will pass over you.\" Not when I see your obedience. Not when I weigh your record against Egypt's. When I see the blood.\n\nThis is the hinge the whole chapter turns on. Israel was not spared because they were better than the Egyptians - they were slaves, not saints, and the same judgment hung over both peoples. What stood between an Israelite firstborn and death was exactly what stood between an Egyptian firstborn and death: a doorframe, and on one of them, blood. The difference was not the worthiness of the people inside. The difference was the lamb.\n\nAnd notice who does the seeing. \"When I see the blood.\" The mark is not there to remind the family - they already know what night it is. The mark is there for God to see and to honor. The Passover is God binding Himself to a promise: where there is blood, I will not strike. That is why this is the resolution the whole book of Exodus has been driving toward. Israel does not march out of Egypt because they overpowered Pharaoh. They march out because a lamb died in their place and God kept His word.",
+      "historicalContext": "Exodus 12 sits at the climax of the ten plagues. Nine have already fallen on Egypt; this tenth - the death of the firstborn - is the one that finally breaks Pharaoh's grip. But the chapter spends far more words on protecting Israel than on judging Egypt, and it pauses the rushing narrative to install a festival Israel will keep for the rest of its history. The rescue and the remembrance are written down together, so that the deliverance would never be told without the lamb at its center.",
+      "fascinatingFact": "Verse 12 names the real target: \"I will execute judgment against all the gods of Egypt.\" Egypt's firstborn, including Pharaoh's heir, were thought to carry divine status. The plague is not random cruelty; it is the true God dismantling every counterfeit god a slave-empire trusted in - and, in the same night, sheltering everyone, Egyptian or Israelite, who hides behind the blood of the lamb.",
+      "content": "Read verse 13 slowly, because it carries the weight of the whole night: \"when I see the blood, I will pass over you.\" Not when I see your obedience. Not when I weigh your record against Egypt's. When I see the blood.\n\nThis is the hinge the whole chapter turns on. Israel was not spared because they were better than the Egyptians - they were slaves, not saints, and the same judgment hung over both peoples. What stood between an Israelite firstborn and death was exactly what stood between an Egyptian firstborn and death: a doorframe, and on one of them, blood. The difference was not the worthiness of the people inside. The difference was the lamb.\n\nAnd notice who does the seeing. \"When I see the blood.\" The mark is not there to remind the family - they already know what night it is. The mark is there for God to see and to honor. The Passover is God binding Himself to a promise: where there is blood, I will not strike. That is why this is the resolution the whole book of Exodus has been driving toward. Israel does not march out of Egypt because they overpowered Pharaoh. They march out because a lamb died in their place and God kept His word."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "An unblemished lamb is killed for each household, its blood is put on the doorframe, and God's promise is fixed to the blood alone: \"when I see the blood, I will pass over you.\" The household lives because something innocent died in its place.",
+      "modernApplication": "We still try to keep death from the door by our own effort - by being useful, being good, building a record we hope will hold up. But judgment is not turned aside by our performance any more than it was for a Hebrew slave. What covers us is a death we did not die, a lamb we did not raise, applied to us as a gift and trusted.",
+      "connectionPoint": "Passover became the lens Israel read salvation through for a thousand years, and the New Testament reaches straight back for it. John the Baptist points to Jesus and says, \"Look, the Lamb of God, who takes away the sin of the world!\" (John 1:29). Hebrews states the principle the doorframe assumed: \"without the shedding of blood there is no forgiveness\" (Hebrews 9:22). Peter says we were redeemed \"with the precious blood of Christ, a lamb without blemish or spot\" (1 Peter 1:18-19) - tamim, the unblemished lamb of Exodus 12:5, named again of Jesus.",
+      "newTestamentEcho": "Paul says it plainly: \"For Christ, our Passover lamb, has been sacrificed\" (1 Corinthians 5:7). What the doorframe in Egypt pointed toward, the cross fulfilled. The blood that now turns judgment aside is not an animal's smeared on wood at twilight, but Christ's, poured out on a Roman cross at Passover - and when God sees that blood over a life, He passes over."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you still trying to keep judgment from your door by your own strength - and what would it mean to trust the blood of the Lamb instead?",
+      "additionalQuestions": [
+        "The Israelites had to stay behind the marked door all night. What does it look like, practically, to rest in a covering you did not provide rather than reinforcing your own?",
+        "God said the rescue would reset their whole calendar. Is there a moment of grace in your life so central that everything else counts from it - and if not, why not?",
+        "The lamb lived in the house for four days before it died. What might change if you let the cost of your rescue stay close enough to see, rather than abstract?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so long trying to be safe by being strong. Tonight let me stop reinforcing the door and trust the blood on it. Thank You that You did not ask me to be worthy, only to be covered - and that You provided the covering Yourself, in the Lamb who was slain. When You pass through, see the blood of Christ over my life and pass over me. Make this the night I count my life from. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been trusting to keep judgment from your door - a record, an effort, an image - and deliberately set it down. Put one phrase where you will see it: \"When I see the blood, I will pass over you.\" Let the covering you did not earn be enough for today.",
+      "leavingAtCross": [
+        "The exhausting project of being good enough that judgment would have to spare me",
+        "The instinct to add a bolt of my own merit to a door God has already covered",
+        "The lie that my safety depends on my strength rather than on the Lamb"
+      ],
+      "receivingFromCross": [
+        "A covering provided at the cost of a life I did not have to live or lose",
+        "The promise that where God sees the blood of Christ, judgment passes over",
+        "A new beginning so central it can reset how I count everything else"
+      ],
+      "content": "Today, name one thing you have been trusting to keep judgment from your door - a record, an effort, an image - and deliberately set it down. Put one phrase where you will see it: \"When I see the blood, I will pass over you.\" Let the covering you did not earn be enough for today."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to verse 13, what is it that God responds to when He passes over a house - the worthiness of the family, or the blood on the door? Why does that distinction matter?",
+        "Why might God reset Israel's entire calendar to begin at the Passover (verse 2), and what does that say about how He wants the rescue remembered?",
+        "How does the requirement of an 'unblemished' lamb (verse 5) point forward to Christ, whom Peter calls 'a lamb without blemish or spot'?"
+      ],
+      "forAccountabilityPartners": [
+        "Talk about the difference between being saved by what you do and being saved by what was done for you. Which one do you actually live as if were true?",
+        "Name one 'door' in your life you keep trying to defend on your own. What would resting behind the blood look like there?",
+        "Ask each other: if Christ is our Passover lamb, what does it change about how you face the things you are most afraid will catch up with you?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Exodus 12:14",
+          "text": "And this day will be a memorial for you, and you are to celebrate it as a feast to the LORD, as a permanent statute for the generations to come."
+        },
+        {
+          "reference": "Isaiah 53:7",
+          "text": "He was oppressed and afflicted, yet He did not open His mouth. He was led like a lamb to the slaughter, and as a sheep before her shearers is silent, so He did not open His mouth."
+        },
+        {
+          "reference": "John 1:29",
+          "text": "The next day John saw Jesus coming toward him and said, \"Look, the Lamb of God, who takes away the sin of the world!\""
+        },
+        {
+          "reference": "1 Corinthians 5:7",
+          "text": "Get rid of the old leaven, that you may be a new unleavened batch, as you really are. For Christ, our Passover lamb, has been sacrificed."
+        },
+        {
+          "reference": "1 Peter 1:18-19",
+          "text": "For you know that it was not with perishable things such as silver or gold that you were redeemed from the empty way of life you inherited from your forefathers, but with the precious blood of Christ, a lamb without blemish or spot."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Exodus 12-13",
+          "note": "Read the full Passover account through to the consecration of the firstborn. Watch how often the text stops the action to make sure the rescue will be told and re-told with the lamb at its center."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Passover Lamb",
+      "title": "The Unblemished Substitute",
+      "description": "Not a person but a creature - one per household, the best of the flock, kept four days and known by the family before it died. Its blood on the doorframe was the one thing that distinguished a house God passed over from a house He struck. It had no record of its own and earned nothing; it simply stood in the household's place. Scripture later names Jesus with this exact image: the Lamb of God, our Passover, the lamb without blemish whose blood redeems (John 1:29; 1 Corinthians 5:7; 1 Peter 1:19).",
+      "keyQuote": "When I see the blood, I will pass over you.",
+      "lessonForUs": "What saves a household is never the strength of those behind the door but the innocent life given in their place. The first Passover taught Israel to look for a lamb; the cross is where the looking finds its end.",
+      "heading": "The Unblemished Substitute"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1585,
+  "scriptureReference_full": "Exodus 12:1-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (pesach H6453, from the verb pasach H6452; seh H7716; tamim H8549) reflects standard lexical sources; the protective sense of pasach is noted in connection with Isaiah 31:5."
+  ]
 }

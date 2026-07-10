@@ -1,38 +1,191 @@
 {
   "day": 30,
   "title": "The Lord was with him",
-  "teaser": "Day 30 of Bible 365 — Genesis 39",
+  "teaser": "Four times in one chapter, the same sentence: the LORD was with him. It is written over Joseph's success and over his prison cell without changing a single word.",
   "framework": "Genesis 39 — God present in the prison",
   "scriptureReference": "Genesis 39",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 30"
+      "type": "scripture",
+      "reference": "Genesis 39:2-3, 20-21, 23",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD was with Joseph",
+        "the LORD was with him",
+        "the LORD was with Joseph"
+      ],
+      "hebrewOriginal": "וַיְהִי יְהוָה אֶת־יוֹסֵף",
+      "passage": "And the LORD was with Joseph, and he became a successful man, serving in the household of his Egyptian master. When his master saw that the LORD was with him and made him prosper in all he did... So Joseph's master took him and had him thrown into the prison where the king's prisoners were confined. While Joseph was there in the prison, the LORD was with him and extended kindness to him, granting him favor in the eyes of the prison warden... The warden did not concern himself with anything under Joseph's care, because the LORD was with Joseph and gave him success in whatever he did."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Genesis 39**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Genesis 39 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיְהִי יְהוָה אֶת",
+      "transliteration": "vayehi YHWH et",
+      "pronunciation": "vai-HEE a-do-NAI et",
+      "meaning": "and the LORD was with",
+      "rootMeaning": "Vayehi is the simple narrative past of the verb 'to be' - 'and it came to pass, and there was.' YHWH is the covenant name of God. Et is the small preposition 'with,' marking nearness, accompaniment, being alongside. Strung together it makes the plainest sentence imaginable: God was there.",
+      "usageNote": "The phrase frames the whole chapter. It opens over Joseph the rising steward (39:2-3) and it closes over Joseph the forgotten prisoner (39:21, 23). Genesis does not change the wording when the circumstances collapse. The same four words sit over the penthouse and over the dungeon.",
+      "wordByWord": [
+        {
+          "word": "וַיְהִי",
+          "transliteration": "vayehi",
+          "meaning": "and it was, and there was - the ordinary verb of narration"
+        },
+        {
+          "word": "יְהוָה",
+          "transliteration": "YHWH",
+          "meaning": "the LORD - the personal covenant name of God, the One who is"
+        },
+        {
+          "word": "אֶת",
+          "transliteration": "et",
+          "meaning": "with, alongside, in the company of"
+        },
+        {
+          "word": "יוֹסֵף",
+          "transliteration": "Yosef",
+          "meaning": "Joseph - 'may He add,' the son sold into Egypt"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֵן",
+          "reference": "Chen (H2580), 'favor, grace,' is what the LORD's presence produces in verse 21 - Joseph is granted chen in the eyes of the warden. The same word describes Noah finding favor with God (Genesis 6:8). Presence comes first; favor follows it."
+        },
+        {
+          "word": "עִמָּנוּ אֵל",
+          "reference": "Immanu El, 'God with us' (Isaiah 7:14), is the same idea pressed into a name. Et ('with') and im ('with') carry the one promise that runs the length of Scripture: I am with you."
+        }
+      ],
+      "strongsNumber": "H854",
+      "definition": "et: a preposition denoting nearness, accompaniment, presence - 'with, beside, in the company of'",
+      "usage": "The smallest words carry the most weight here. Not 'the LORD blessed Joseph,' not 'the LORD rescued Joseph' - though both are true elsewhere. Here, simply: the LORD was with him. The blessing is the nearness itself."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: God present in the prison. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ in our suffering (Heb 4:15).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Sentence That Does Not Move",
+      "body": "Read Genesis 39 with a pen and underline one phrase each time it appears, and you will mark the page four times. Verse 2: the LORD was with Joseph. Verse 3: his master saw that the LORD was with him. Verse 21, after everything has fallen apart: the LORD was with him. Verse 23: the LORD was with Joseph and gave him success in whatever he did.\n\nNotice where those four sentences sit. The first two stand over a young man on his way up. Sold by his brothers, carried into Egypt, bought by Potiphar - and yet thriving. He is made personal attendant, then put in charge of everything. \"Potiphar left all that he owned in Joseph's care; he did not concern himself with anything except the food he ate\" (39:6). The text tells you why it all goes right, and it is not Joseph's competence. It is the presence.\n\nThen the chapter breaks in half. Potiphar's wife, refused day after day, grabs his cloak and twists his integrity into a lie. Joseph does the right thing - he refuses, he runs - and it costs him everything. He is thrown into the king's prison, the bottom of Egypt. And there, in the place that looks like God's absence, Genesis writes the same sentence again, without softening it: the LORD was with him.",
+      "keyInsight": "The same four words frame both halves of the chapter - the steward's rise and the prisoner's fall. Genesis refuses to let presence depend on circumstance. God was no more with Joseph in the penthouse than He was in the prison.",
+      "content": "Read Genesis 39 with a pen and underline one phrase each time it appears, and you will mark the page four times. Verse 2: the LORD was with Joseph. Verse 3: his master saw that the LORD was with him. Verse 21, after everything has fallen apart: the LORD was with him. Verse 23: the LORD was with Joseph and gave him success in whatever he did.\n\nNotice where those four sentences sit. The first two stand over a young man on his way up. Sold by his brothers, carried into Egypt, bought by Potiphar - and yet thriving. He is made personal attendant, then put in charge of everything. \"Potiphar left all that he owned in Joseph's care; he did not concern himself with anything except the food he ate\" (39:6). The text tells you why it all goes right, and it is not Joseph's competence. It is the presence.\n\nThen the chapter breaks in half. Potiphar's wife, refused day after day, grabs his cloak and twists his integrity into a lie. Joseph does the right thing - he refuses, he runs - and it costs him everything. He is thrown into the king's prison, the bottom of Egypt. And there, in the place that looks like God's absence, Genesis writes the same sentence again, without softening it: the LORD was with him."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter From the Cell",
+      "body": "A friend of mine spent fourteen months in a county jail awaiting a trial that eventually cleared him. He told me the hardest part was not the noise or the bad food. It was the suspicion, never quite spoken, that if God were really with him he would not be here - that presence and a cell could not share the same address.\n\nWhat broke that suspicion was small. A chaplain handed him a card with one line on it, and he kept it taped inside his bunk: the LORD was with him - in the prison. Not after the prison. Not on the day of release. In it. He stopped praying mainly to be let out and started praying to be met where he was. \"The cell didn't get smaller,\" he said. \"But it stopped being empty.\" When the door finally opened, he walked out certain of one thing - that the God who had been with him in the worst room of his life had never once needed the room to change first.",
+      "connectionToTheme": "Joseph's prison and my friend's cell raise the same lie - that God's presence must mean God's rescue, and that a locked door is proof of abandonment. Genesis answers it before the lie can settle: the LORD was with him, in the prison.",
+      "content": "A friend of mine spent fourteen months in a county jail awaiting a trial that eventually cleared him. He told me the hardest part was not the noise or the bad food. It was the suspicion, never quite spoken, that if God were really with him he would not be here - that presence and a cell could not share the same address.\n\nWhat broke that suspicion was small. A chaplain handed him a card with one line on it, and he kept it taped inside his bunk: the LORD was with him - in the prison. Not after the prison. Not on the day of release. In it. He stopped praying mainly to be let out and started praying to be met where he was. \"The cell didn't get smaller,\" he said. \"But it stopped being empty.\" When the door finally opened, he walked out certain of one thing - that the God who had been with him in the worst room of his life had never once needed the room to change first."
+    },
+    {
+      "type": "insight",
+      "heading": "Presence Is Not the Same as Escape",
+      "body": "Here is the center of the chapter, and it is easy to miss because it is so quiet. The LORD's presence does not keep Joseph out of prison. It meets him in it.\n\nThis matters more than it first appears. We tend to read God's nearness as a kind of insurance - if He is with me, the bad thing will be diverted. But Joseph is not spared the false accusation, not spared the betrayed cloak, not spared the iron door. He does the godly thing and goes to prison for it. And the very next words are: the LORD was with him. The presence and the prison are written in the same breath.\n\nThe favor that follows in verse 21 - the warden trusting him, the prison practically run by him - does not erase the cell. Joseph is still a prisoner at the end of the chapter; he will not walk free for years. So the gift was never the escape. The gift was the company. \"The LORD was with him and extended kindness to him, granting him favor.\" Kindness inside the confinement, not instead of it. This is the line the whole story is teaching you to believe before you need it: that the worst room you will ever be in is not a room God refuses to enter.",
+      "historicalContext": "Genesis 39 is the hinge of the Joseph narrative. Chapter 37 sends him down - sold, stripped of his cloak by his brothers; chapter 39 sends him down again - falsely accused, stripped of his cloak by Potiphar's wife, thrown lower still. The descent before exaltation is built into the architecture, and when Stephen retells Israel's story before the council he lands on this exact chapter: \"the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him\" (Acts 7:9).",
+      "fascinatingFact": "Twice Joseph loses a garment to someone who means him harm - first the ornate robe his brothers strip away (Genesis 37:23), then the cloak Potiphar's wife seizes as false evidence (39:12). Both times the cloak is used to tell a lie about him; both times he is sent lower. Scripture is teaching the reader to recognize a shape: the one wrongly stripped and brought low is the one God is with.",
+      "content": "Here is the center of the chapter, and it is easy to miss because it is so quiet. The LORD's presence does not keep Joseph out of prison. It meets him in it.\n\nThis matters more than it first appears. We tend to read God's nearness as a kind of insurance - if He is with me, the bad thing will be diverted. But Joseph is not spared the false accusation, not spared the betrayed cloak, not spared the iron door. He does the godly thing and goes to prison for it. And the very next words are: the LORD was with him. The presence and the prison are written in the same breath.\n\nThe favor that follows in verse 21 - the warden trusting him, the prison practically run by him - does not erase the cell. Joseph is still a prisoner at the end of the chapter; he will not walk free for years. So the gift was never the escape. The gift was the company. \"The LORD was with him and extended kindness to him, granting him favor.\" Kindness inside the confinement, not instead of it. This is the line the whole story is teaching you to believe before you need it: that the worst room you will ever be in is not a room God refuses to enter."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Four times in one chapter, over Joseph's rise and over his ruin alike, Genesis writes the same unmoving sentence: the LORD was with him - including in the prison, where he landed for doing right.",
+      "modernApplication": "When the floor drops - the diagnosis, the layoff, the accusation you did nothing to deserve, the marriage going quiet - the first lie to arrive is that you have been left. Genesis 39 was written for that exact moment. Presence is not the absence of the pit. It is God's refusal to let you be in it alone.",
+      "connectionPoint": "The refrain of Genesis 39 becomes a name in the Gospels. Isaiah promised a child called Immanuel, and Matthew translates it for us: \"God with us\" (Matthew 1:23). The 'with' that hovered over Joseph's cell is no longer a phrase about a man in Egypt; it is a person. And Jesus does not merely visit our prisons from a safe distance - He is stripped of His garment (John 19:23-24), falsely accused, and descends to the lowest room of all. The God who was with Joseph in the dungeon is the God who entered death itself.",
+      "newTestamentEcho": "Stephen, retelling Israel's story under the shadow of his own coming death, points straight at this chapter: \"the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him and rescued him from all his troubles\" (Acts 7:9-10). And the risen Christ leaves His people with the same four words Joseph lived on: \"surely I am with you always, even to the end of the age\" (Matthew 28:20)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is the prison you are in right now - the room you did not choose, maybe the one you landed in for doing the right thing - and what would change if you believed God was already in it with you?",
+      "additionalQuestions": [
+        "When circumstances collapse, do you instinctively read it as evidence that God has stepped back? Where did that instinct come from?",
+        "Joseph kept doing his work faithfully inside the prison - he ran it well even as a prisoner. What faithful thing is in front of you to do today, right where you are, before anything changes?",
+        "Is there a part of you praying mostly to be let out? What would it look like to also pray to be met where you are?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have believed that if You were with me, this room would have a different door. Forgive me for measuring Your presence by my circumstances. Teach me the sentence that does not move - that You were with Joseph in the house and in the prison, the same four words over both. Be with me in the room I did not choose. Not only on the day it opens; in it, now. Make Your nearness enough before the door ever changes. And where I am stripped and accused for doing right, hold me close to the One who was stripped and accused for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name the prison out loud - the situation you would escape if you could - and then say over it the one sentence Genesis says four times: the LORD is with me here. Do one faithful, ordinary task inside that hard place today, the way Joseph kept running the prison well, trusting that presence comes before rescue.",
+      "leavingAtCross": [
+        "The lie that a locked door is proof God has left me",
+        "The bargain that says I will trust Him once the circumstance changes",
+        "The exhaustion of measuring God's love by whether things are going well"
+      ],
+      "receivingFromCross": [
+        "The promise that the same God is with me in the prison and the palace, unchanged",
+        "A presence that meets me inside the hard place, not only after it ends",
+        "Christ, the true Immanuel, who entered the lowest room so I would never be there alone"
+      ],
+      "content": "Today, name the prison out loud - the situation you would escape if you could - and then say over it the one sentence Genesis says four times: the LORD is with me here. Do one faithful, ordinary task inside that hard place today, the way Joseph kept running the prison well, trusting that presence comes before rescue."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "How many times does the phrase 'the LORD was with him' appear in Genesis 39, and what is significant about which scenes it appears over?",
+        "Why is it important that God's presence did not keep Joseph out of prison - what would the chapter teach if it had?",
+        "How does the name Immanuel ('God with us') in Matthew 1:23 fulfill the refrain of Genesis 39?"
+      ],
+      "forAccountabilityPartners": [
+        "Name the 'prison' you are in right now - the circumstance you would change if you could - and let the other person speak the refrain over it: the LORD is with you here.",
+        "Talk about a time you read hardship as God's absence. Looking back, can you see where He was actually present?",
+        "Ask each other: what is one faithful thing to keep doing inside the hard place, before the circumstance changes?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 39:9",
+          "text": "No one in this house is greater than I am. He has withheld nothing from me except you, because you are his wife. So how could I do such a great evil and sin against God?"
+        },
+        {
+          "reference": "Genesis 50:20",
+          "text": "As for you, what you intended against me for evil, God intended for good, in order to accomplish a day like this - to preserve the lives of many people."
+        },
+        {
+          "reference": "Acts 7:9-10",
+          "text": "Because the patriarchs were jealous of Joseph, they sold him as a slave into Egypt. But God was with him and rescued him from all his troubles."
+        },
+        {
+          "reference": "Matthew 1:23",
+          "text": "Behold, the virgin will be with child and will give birth to a son, and they will call Him Immanuel (which means, God with us)."
+        },
+        {
+          "reference": "Hebrews 13:5",
+          "text": "Keep your lives free from the love of money and be content with what you have, for God has said: Never will I leave you, never will I forsake you."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Genesis 37-50",
+          "note": "Read the whole Joseph narrative in one sitting, tracking the descents (sold into Egypt, thrown in prison, forgotten) against the refrain 'the LORD was with him,' and watch it resolve in 50:20."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Joseph",
+      "title": "The Steward in the Prison",
+      "era": "Patriarchal period, traditionally c. 19th-18th century BC",
+      "key_trait": "Faithful in both prosperity and prison - the same man, the same integrity, the same God with him in each",
+      "description": "The favored son of Jacob, sold into Egyptian slavery by his jealous brothers. In Potiphar's house he rose to steward; refusing his master's wife, he was falsely accused and thrown into prison. Genesis frames both his rise and his fall with the same sentence - 'the LORD was with him' - insisting that God's presence held steady while Joseph's circumstances did not. Years later, raised to second in Egypt, he would tell those same brothers: 'what you intended against me for evil, God intended for good' (Genesis 50:20).",
+      "keyQuote": "How could I do such a great evil and sin against God?",
+      "lessonForUs": "Joseph teaches us to keep our integrity when integrity costs us, and to trust that the God who is with us does not need our circumstances to improve before His presence becomes real. The prison was not God's absence. It was the next room God walked into beside him.",
+      "heading": "The Steward in the Prison"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2376,
+  "scriptureReference_full": "Genesis 39:2-3, 20-21, 23",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (vayehi YHWH et, et H854; chen H2580) reflects standard lexical sources. The refrain count and the descent-before-exaltation reading follow the plain structure of the Genesis text; the Immanuel connection (Isaiah 7:14; Matthew 1:23) and Stephen's retelling (Acts 7:9-10) are direct biblical citations."
+  ]
 }

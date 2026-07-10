@@ -1,38 +1,188 @@
 {
   "day": 256,
-  "title": "Hosea, Joel, Amos — Day 4 — Application",
-  "teaser": "Day 256 of Bible 365 — Selected",
+  "title": "Let It Roll: When Worship Has to Walk Out the Door",
+  "teaser": "Amos watched a worshiping nation crush the poor on its way to church. God's answer was not a better service — it was a river of justice. Day 256 of Bible 365.",
   "framework": "Selected — Hosea, Joel, Amos",
-  "scriptureReference": "Selected",
+  "scriptureReference": "Amos 5:14-15, 21-24",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 256"
+      "type": "scripture",
+      "reference": "Amos 5:14-15, 21-24",
+      "translation": "BSB",
+      "emphasis": [
+        "Seek good, not evil",
+        "establish justice in the gate",
+        "let justice roll on like a river"
+      ],
+      "hebrewOriginal": "וְיִגַּל כַּמַּיִם מִשְׁפָּט וּצְדָקָה כְּנַחַל אֵיתָן",
+      "passage": "Seek good, not evil, so that you may live. And the LORD, the God of Hosts, will be with you, as you have claimed. Hate evil and love good; establish justice in the gate. Perhaps the LORD, the God of Hosts, will be gracious to the remnant of Joseph. ... \"I hate, I despise your feasts! I cannot stand the stench of your solemn assemblies. Even though you offer Me burnt offerings and grain offerings, I will not accept them; for your peace offerings of fattened cattle I will have no regard. Take away from Me the noise of your songs! I will not listen to the music of your harps. But let justice roll on like a river, and righteousness like an ever-flowing stream.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Selected**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Selected and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מִשְׁפָּט וּצְדָקָה",
+      "transliteration": "mishpat u-tsedaqah",
+      "pronunciation": "mish-PAHT oo-tse-da-KAH",
+      "meaning": "justice and righteousness",
+      "rootMeaning": "Mishpat is the just verdict — setting things right, especially for the one who has no power to set them right himself. Tsedaqah is rightness lived out in relationship: not abstract virtue, but doing right by the people God has put in front of you. The two words travel together all through the Prophets because, to Israel, they were one thing seen from two sides.",
+      "usageNote": "Amos sets these two words inside a flood. Mishpat is to 'roll on like a river' (nachal) and tsedaqah is to flow 'like an ever-flowing stream' - literally a wadi that does not dry up in the dry season. In a land where most streambeds were bone-dry half the year, an ever-flowing stream was the rarest and most life-giving thing imaginable.",
+      "wordByWord": [
+        {
+          "word": "וְיִגַּל",
+          "transliteration": "ve-yiggal",
+          "meaning": "and let it roll, let it surge down"
+        },
+        {
+          "word": "כַּמַּיִם",
+          "transliteration": "ka-mayim",
+          "meaning": "like the waters"
+        },
+        {
+          "word": "מִשְׁפָּט",
+          "transliteration": "mishpat",
+          "meaning": "justice, the just verdict, setting things right"
+        },
+        {
+          "word": "וּצְדָקָה",
+          "transliteration": "u-tsedaqah",
+          "meaning": "and righteousness, right-dealing in relationship"
+        },
+        {
+          "word": "כְּנַחַל אֵיתָן",
+          "transliteration": "ke-nachal eitan",
+          "meaning": "like an ever-flowing stream - a wadi that never runs dry"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "מִשְׁפָּט",
+          "reference": "The same word stands at the center of Micah 6:8 - 'to act justly (mishpat), and to love mercy, and to walk humbly with your God' - the prophets' shared shorthand for the life God actually wants."
+        }
+      ],
+      "strongsNumber": "H4941",
+      "definition": "mishpat (H4941): a judgment, a verdict, justice; tsedaqah (H6666): righteousness, rightness, just dealing",
+      "usage": "Amos pairs the two as a single river: justice is the verdict that sets things right, righteousness is the daily walk that keeps them right."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hosea, Joel, Amos. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pours out the Spirit (Acts 2:17).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "God Walks Out of His Own Worship Service",
+      "body": "By the time Amos stood up to speak, the northern kingdom of Israel was doing very well. Jeroboam II had pushed the borders out wide, trade was strong, and the sanctuaries were full. People came to the festivals, sang the songs, brought the fattened cattle, kept the calendar. On paper it was a revival.\n\nThen God says something that should have emptied every pew: \"I hate, I despise your feasts. I cannot stand the stench of your solemn assemblies.\" The word for stench is the word for a smell that turns your stomach. The same offerings the Law had once asked for, God now refuses to even smell. \"Take away from Me the noise of your songs.\" Their worship music had become, to God, noise.\n\nThis is not God rejecting worship. It is God rejecting worship that has been hollowed out. Read the verses just before this and you find out why. The same people filling the sanctuaries were trampling the poor (5:11), taking bribes, and depriving the needy of justice in the gate (5:12) - the gate being the town square where legal cases were decided. They sang on Sabbath and cheated on Monday. They had built a religion you could attend without it ever reaching your hands.",
+      "keyInsight": "God does not refuse Israel's worship because they worship too little. He refuses it because their worship and their lives had come unhooked - they offered Him songs while crushing the very people He loved.",
+      "content": "By the time Amos stood up to speak, the northern kingdom of Israel was doing very well. Jeroboam II had pushed the borders out wide, trade was strong, and the sanctuaries were full. People came to the festivals, sang the songs, brought the fattened cattle, kept the calendar. On paper it was a revival.\n\nThen God says something that should have emptied every pew: \"I hate, I despise your feasts. I cannot stand the stench of your solemn assemblies.\" The word for stench is the word for a smell that turns your stomach. The same offerings the Law had once asked for, God now refuses to even smell. \"Take away from Me the noise of your songs.\" Their worship music had become, to God, noise.\n\nThis is not God rejecting worship. It is God rejecting worship that has been hollowed out. Read the verses just before this and you find out why. The same people filling the sanctuaries were trampling the poor (5:11), taking bribes, and depriving the needy of justice in the gate (5:12) - the gate being the town square where legal cases were decided. They sang on Sabbath and cheated on Monday. They had built a religion you could attend without it ever reaching your hands."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Pledge and the Receipt",
+      "body": "A friend who manages a food pantry told me about a man who came in every week with a trunk full of donations - canned goods, blankets, name-brand everything. He was generous, visibly, reliably. He liked to be thanked, and he was.\n\nMonths in, a volunteer recognized him. He was the landlord who had just evicted her cousin's family in the dead of winter over a few weeks of late rent, then kept the deposit on a technicality. The same hands carrying boxes of food into the pantry had signed the papers that put a family out on the curb a mile away.\n\nNobody doubted the donations were real. The cans were real. The blankets were warm. But there was a family sleeping in a car because of the man dropping them off. Amos is describing exactly this, scaled up to a whole nation: an offering that is technically generous, carried by hands that are doing harm somewhere the worship never has to look.",
+      "connectionToTheme": "Real worship and real injustice cannot live in the same set of hands. God will not be impressed by the offering of a hand that is, at the same moment, doing harm.",
+      "content": "A friend who manages a food pantry told me about a man who came in every week with a trunk full of donations - canned goods, blankets, name-brand everything. He was generous, visibly, reliably. He liked to be thanked, and he was.\n\nMonths in, a volunteer recognized him. He was the landlord who had just evicted her cousin's family in the dead of winter over a few weeks of late rent, then kept the deposit on a technicality. The same hands carrying boxes of food into the pantry had signed the papers that put a family out on the curb a mile away.\n\nNobody doubted the donations were real. The cans were real. The blankets were warm. But there was a family sleeping in a car because of the man dropping them off. Amos is describing exactly this, scaled up to a whole nation: an offering that is technically generous, carried by hands that are doing harm somewhere the worship never has to look."
+    },
+    {
+      "type": "insight",
+      "heading": "A River, Not a Faucet",
+      "body": "Watch the image Amos reaches for. He does not say, \"Sprinkle in a little justice.\" He says, \"Let justice roll on like a river, and righteousness like an ever-flowing stream.\"\n\nIn Israel most streambeds were wadis - dry gulches for most of the year, raging with water only after the rains, then bone-dry again. A nachal eitan, an ever-flowing stream, was the rare wadi fed by a spring that ran in every season, drought or no drought. That is the picture God wants: not justice that shows up only when the conditions are easy and a crowd is watching, but justice that keeps flowing in the dry months, when no one is looking and it costs you something.\n\nAnd a river is not careful. It does not measure out a portion. It goes where the land slopes and it carries away whatever is loose. Amos is asking for a justice that is allowed to move things - not a tasteful donation, but a current strong enough to reroute a life around the people who have been left in the dry.",
+      "historicalContext": "Amos was no court prophet. Chapter 1 calls him a shepherd from Tekoa, in Judah, sent north to confront Israel's capital. He prophesied around 760-750 BC, during a long economic boom under Jeroboam II - which is exactly the point. The injustice he attacks was not the desperation of a poor nation but the cruelty of a comfortable one. Prosperity had made the gap between the worshipers and the poor wider, not smaller, and the religion of the day had quietly learned to live with it.",
+      "fascinatingFact": "Amos 5:24 became the heartbeat verse of the American civil-rights movement. Martin Luther King Jr. quoted it in his 'I Have a Dream' speech in 1963 - 'until justice rolls down like waters, and righteousness like a mighty stream' - reaching back nearly twenty-seven centuries to a shepherd from Tekoa to name what a comfortable, churchgoing nation still owed the people it had pushed to the margins.",
+      "content": "Watch the image Amos reaches for. He does not say, \"Sprinkle in a little justice.\" He says, \"Let justice roll on like a river, and righteousness like an ever-flowing stream.\"\n\nIn Israel most streambeds were wadis - dry gulches for most of the year, raging with water only after the rains, then bone-dry again. A nachal eitan, an ever-flowing stream, was the rare wadi fed by a spring that ran in every season, drought or no drought. That is the picture God wants: not justice that shows up only when the conditions are easy and a crowd is watching, but justice that keeps flowing in the dry months, when no one is looking and it costs you something.\n\nAnd a river is not careful. It does not measure out a portion. It goes where the land slopes and it carries away whatever is loose. Amos is asking for a justice that is allowed to move things - not a tasteful donation, but a current strong enough to reroute a life around the people who have been left in the dry."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God refused the worship of a nation that sang to Him while crushing the poor, and told them what He actually wanted: \"Seek good, not evil... establish justice in the gate... let justice roll on like a river.\"",
+      "modernApplication": "It is still possible to have a full worship life and a hollow obedience - to love the songs, the sermons, the feeling in the room, and to keep our hands clean of the costly, ordinary justice God is actually asking for. Amos hands us a plain test: not how moved we were in the service, but whether justice is flowing through our week toward someone who cannot pay us back.",
+      "connectionPoint": "This is not a side theme in the Prophets - it is the spine. Hosea, writing in the same generation, hears God say the same thing in fewer words: 'I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings' (Hosea 6:6). Isaiah, to the south, says it as a command: 'Learn to do right; seek justice and correct the oppressor. Defend the fatherless and plead the case of the widow' (Isaiah 1:17). Three prophets, one message - God will not accept the offering of a hand that is doing harm.",
+      "newTestamentEcho": "Jesus picked the thread up directly. He told the Pharisees they tithed their garden herbs down to the dill seed but had 'disregarded the weightier matters of the law: justice, mercy, and faithfulness' - and then, lest anyone hear it as a downgrade of worship, He added, 'You should have practiced the latter, without neglecting the former' (Matthew 23:23). And twice He quoted Hosea's line - 'I desire mercy, not sacrifice' - over the heads of religious men who were sure their devotion was in order (Matthew 9:13; 12:7)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where is your worship full and your justice dry - a place where you love being with God on Sunday but your hands have quietly learned to look away the rest of the week?",
+      "additionalQuestions": [
+        "Amos contrasts a seasonal stream with an ever-flowing one. Is there a kind of good you only do when it is easy, public, or convenient - and what would it look like to let it run in the dry months too?",
+        "Who is the person near you with no power to set things right for themselves? What would 'establishing justice in the gate' look like, specifically, for them this week?",
+        "Is there any place where you are, like the man at the food pantry, generous on one side and doing harm on the other? What is the harm, and what would it cost to stop it?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have sung to You with hands that were not always clean. I have loved the worship and avoided the cost. Forgive me for the justice I have rationed out only when it was easy and someone was watching. Where my devotion and my life have come unhooked, hook them back together. Make my obedience a river and not a faucet - flowing toward the people I would rather not see, in the dry months, when no one will thank me. And where I cannot produce this on my own, let the righteousness of Christ run through me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, do one concrete act of justice that costs you something and that no one needs to know about: pay back what you owe, return what you kept, defend someone who was not in the room, give where there can be no thank-you. Let one stream run that was dry.",
+      "leavingAtCross": [
+        "The worship I offer with one hand while the other does harm",
+        "The justice I ration out only when it is easy, public, or convenient",
+        "The quiet skill I have built for not seeing the person I have stepped over"
+      ],
+      "receivingFromCross": [
+        "A clean conscience that comes from God's mercy, not from how moved I felt in the service",
+        "The freedom to do right when no one is watching and no one will pay me back",
+        "Christ's own righteousness, flowing through me when my own runs dry"
+      ],
+      "content": "Today, do one concrete act of justice that costs you something and that no one needs to know about: pay back what you owe, return what you kept, defend someone who was not in the room, give where there can be no thank-you. Let one stream run that was dry."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does God say He 'hates' Israel's feasts and 'cannot stand' their assemblies - is it the worship itself He rejects, or something about it? What is the difference?",
+        "What is a nachal eitan, an 'ever-flowing stream,' and why is it a sharper picture of the justice God wants than a river that floods once a year?",
+        "How does Jesus' word to the Pharisees in Matthew 23:23 keep this command alive without canceling worship?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where your worship life is fuller than your obedience - and ask the other person to check in on it next week.",
+        "Talk honestly: is there any place where you are generous on one side and doing harm on the other, like the man at the food pantry?",
+        "Ask each other: who is the powerless person near you, and what is one specific thing you could do this week to 'establish justice in the gate' for them?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hosea 6:6",
+          "text": "For I desire mercy, not sacrifice, and the knowledge of God rather than burnt offerings."
+        },
+        {
+          "reference": "Isaiah 1:17",
+          "text": "Learn to do right; seek justice and correct the oppressor. Defend the fatherless and plead the case of the widow."
+        },
+        {
+          "reference": "Matthew 23:23",
+          "text": "Woe to you, scribes and Pharisees, you hypocrites! You pay tithes of mint, dill, and cumin. But you have disregarded the weightier matters of the law: justice, mercy, and faithfulness. You should have practiced the latter, without neglecting the former."
+        },
+        {
+          "reference": "Matthew 5:6",
+          "text": "Blessed are those who hunger and thirst for righteousness, for they will be filled."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Amos 5",
+          "note": "Read the whole chapter, watching how the funeral dirge for Israel (vv. 1-3) turns into the urgent invitation 'Seek Me and live' (v. 4) and lands on the river of v. 24. The judgment and the invitation are the same speech."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Amos of Tekoa",
+      "title": "The Shepherd Sent North",
+      "description": "Amos was a herdsman and a tender of sycamore-fig trees from Tekoa, a rough village in Judah, with no prophetic pedigree (Amos 7:14-15). Around 760 BC God sent him north into prosperous Israel to confront a comfortable, religious, and deeply unjust society at the height of its boom under Jeroboam II. He is the prophet who refused to let worship be separated from justice, and the verse he is remembered for - 'let justice roll on like a river' - has been carried into the mouth of every generation since that has had to tell a churchgoing people what they still owe their neighbor.",
+      "keyQuote": "But let justice roll on like a river, and righteousness like an ever-flowing stream.",
+      "lessonForUs": "God can send the truth through anyone - a shepherd with no credentials will do. And the truth Amos carried still stands: the worship God receives is the worship that has walked out the door and into the lives of the people we would rather not see.",
+      "heading": "The Shepherd Sent North"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1871,
+  "scriptureReference_full": "Amos 5:14-15, 21-24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (mishpat H4941, tsedaqah H6666, nachal eitan) reflects standard lexical sources.",
+    "Historical setting of Amos under Jeroboam II (c. 760 BC) reflects the book's own superscription (Amos 1:1) and standard chronology.",
+    "Martin Luther King Jr. quoted Amos 5:24 in his 'I Have a Dream' address, Washington, D.C., August 28, 1963."
+  ]
 }

@@ -1,38 +1,187 @@
 {
   "day": 151,
-  "title": "Jeremiah Weeping Prophet — Day 4 — Application",
-  "teaser": "Day 151 of Bible 365 — Jeremiah 1-29",
+  "title": "The Fire You Cannot Hold In",
+  "teaser": "Jeremiah tried to quit. He swore off the word that was ruining his life — and found it burning in his bones. What you cannot stop carrying may be the very thing God put in you to give away.",
   "framework": "Jeremiah 1-29 — Jeremiah Weeping Prophet",
   "scriptureReference": "Jeremiah 1-29",
   "chiastic_position": "application",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 151"
+      "type": "scripture",
+      "reference": "Jeremiah 20:7-9",
+      "translation": "BSB",
+      "emphasis": [
+        "You have deceived me",
+        "shut up in my bones",
+        "I cannot prevail"
+      ],
+      "hebrewOriginal": "וְהָיָה בְלִבִּי כְּאֵשׁ בֹּעֶרֶת עָצֻר בְּעַצְמֹתָי",
+      "passage": "You have deceived me, O LORD, and I was deceived. You have overcome me and prevailed. I am a laughingstock all day long; everyone mocks me. For whenever I speak, I cry out; I proclaim violence and destruction. For the word of the LORD has become to me a reproach and derision all day long. If I say, \"I will not mention Him or speak any more in His name,\" His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 1-29**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 1-29 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עָצֻר",
+      "transliteration": "atsur",
+      "pronunciation": "ah-TSOOR",
+      "meaning": "shut up, restrained, held back, contained under pressure",
+      "rootMeaning": "From the root atsar, to restrain, to dam up, to hold closed. It is the word for a womb that is shut, for rain held back from the ground, for a gate barred against escape. Here it names a fire pressed down inside the body with nowhere to go.",
+      "usageNote": "The same root describes Hannah's closed womb (1 Samuel 1:5-6) and the heavens shut up against rain (Deuteronomy 11:17). Jeremiah uses it for something stranger: not an absence dammed up, but a presence. The word of God, refused an exit, does not go quiet. It builds.",
+      "wordByWord": [
+        {
+          "word": "כְּאֵשׁ",
+          "transliteration": "ke'esh",
+          "meaning": "like a fire"
+        },
+        {
+          "word": "בֹּעֶרֶת",
+          "transliteration": "bo'eret",
+          "meaning": "burning, blazing - a present-tense, active flame"
+        },
+        {
+          "word": "עָצֻר",
+          "transliteration": "atsur",
+          "meaning": "shut up, restrained, held closed"
+        },
+        {
+          "word": "בְּעַצְמֹתָי",
+          "transliteration": "be'atsmotai",
+          "meaning": "in my bones - the deepest, most structural part of the self"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עָצֻר / עֶצֶם",
+          "reference": "Atsur (shut up) sits beside atsmotai (my bones) in the same line - a near-pun. The fire is restrained (atsur) precisely in the place that holds him up (etsem, bone). What he tried to lock away has lodged in his frame."
+        }
+      ],
+      "strongsNumber": "H6113",
+      "definition": "to restrain, retain, shut up, hold back, detain",
+      "usage": "Atsur is passive: Jeremiah is not holding the fire so much as the fire is held in him. He is the container, not the keeper. The verse turns on the discovery that some things, once given by God, cannot be handed back."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah Weeping Prophet. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Man of Sorrows (Isa 53:3).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Prophet Who Tried to Resign",
+      "body": "By the time we reach chapter 20, Jeremiah has been preaching for years, and it has cost him everything but his life. He has been beaten. He has been put in the stocks overnight by a priest named Pashhur, locked in a public frame by the upper gate of the temple so the whole city could file past and jeer at the man who keeps saying their city will fall. He comes out of that night and prays the rawest words a prophet ever prayed.\n\nHe accuses God. \"You have deceived me, O LORD, and I was deceived.\" The verb is strong; it is the word used for seducing or enticing. Jeremiah feels lured into a calling that has ruined him - as if God had courted him with promises and then handed him a life no one would choose. At his commissioning years earlier he had been told, \"I am with you to deliver you\" (1:8). What he actually received was mockery \"all day long.\" Twice in two verses that phrase repeats - all day long, all day long - the sound of a man who can no longer remember a morning that did not begin with derision. The promise and the experience will not line up, and he says so to God's face. He does not pretend the math works.\n\nSo he decides to quit. Not to disbelieve - to stop speaking. \"I will not mention Him or speak any more in His name.\" It is a reasonable resignation. If the message brings only reproach, stop delivering it. Go silent. Save what is left of your life. Anyone who has been wounded for telling the truth understands the logic exactly - the quiet calculation that the only way to stop the bleeding is to stop opening the wound. Jeremiah makes that calculation. And then verse 9 tells us what happened when he tried to live by it.",
+      "keyInsight": "Jeremiah's crisis is not doubt about whether God is real. It is exhaustion at what being faithful costs. His prayer is the prayer of someone who still believes and cannot take it anymore.",
+      "content": "By the time we reach chapter 20, Jeremiah has been preaching for years, and it has cost him everything but his life. He has been beaten. He has been put in the stocks overnight by a priest named Pashhur, locked in a public frame by the upper gate of the temple so the whole city could file past and jeer at the man who keeps saying their city will fall. He comes out of that night and prays the rawest words a prophet ever prayed.\n\nHe accuses God. \"You have deceived me, O LORD, and I was deceived.\" The verb is strong; it is the word used for seducing or enticing. Jeremiah feels lured into a calling that has ruined him - as if God had courted him with promises and then handed him a life no one would choose. At his commissioning years earlier he had been told, \"I am with you to deliver you\" (1:8). What he actually received was mockery \"all day long.\" Twice in two verses that phrase repeats - all day long, all day long - the sound of a man who can no longer remember a morning that did not begin with derision. The promise and the experience will not line up, and he says so to God's face. He does not pretend the math works.\n\nSo he decides to quit. Not to disbelieve - to stop speaking. \"I will not mention Him or speak any more in His name.\" It is a reasonable resignation. If the message brings only reproach, stop delivering it. Go silent. Save what is left of your life. Anyone who has been wounded for telling the truth understands the logic exactly - the quiet calculation that the only way to stop the bleeding is to stop opening the wound. Jeremiah makes that calculation. And then verse 9 tells us what happened when he tried to live by it."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter She Never Sent",
+      "body": "A friend of mine spent a decade as a nurse on a palliative ward. She was good at it in a way that cost her - she stayed in rooms most people hurried out of, sat with the dying when their families could not bear to, learned the names of people who had three days left. After her own mother died on a ward like hers, she wrote a resignation letter. She told me she meant it. She was done absorbing other people's last hours. She had nothing left to give and good reasons to stop.\n\nThe letter sat in her bag for two weeks. She kept not handing it in. One afternoon a man on her ward, frightened and alone, gripped her wrist and asked her not to leave, and she stayed past the end of her shift, and somewhere in those quiet hours she understood she was not going to send the letter. \"I tried to put it down,\" she said. \"I couldn't. It was already in me.\"\n\nShe was not romanticizing it. She knew exactly what it took out of her. She simply found that the thing she most wanted to quit was the thing she could not stop being.",
+      "connectionToTheme": "Jeremiah discovers the same thing in chapter 20: a calling truly given by God is not a job you can resign. It has gone into the bones.",
+      "content": "A friend of mine spent a decade as a nurse on a palliative ward. She was good at it in a way that cost her - she stayed in rooms most people hurried out of, sat with the dying when their families could not bear to, learned the names of people who had three days left. After her own mother died on a ward like hers, she wrote a resignation letter. She told me she meant it. She was done absorbing other people's last hours. She had nothing left to give and good reasons to stop.\n\nThe letter sat in her bag for two weeks. She kept not handing it in. One afternoon a man on her ward, frightened and alone, gripped her wrist and asked her not to leave, and she stayed past the end of her shift, and somewhere in those quiet hours she understood she was not going to send the letter. \"I tried to put it down,\" she said. \"I couldn't. It was already in me.\"\n\nShe was not romanticizing it. She knew exactly what it took out of her. She simply found that the thing she most wanted to quit was the thing she could not stop being."
+    },
+    {
+      "type": "insight",
+      "heading": "The Fire Was Not Punishment",
+      "body": "Read verse 9 slowly and notice what the fire is not. It is not God's anger burning against Jeremiah for wanting to quit. It is not a threat. When Jeremiah resolves to go silent, the consequence is not that God strikes him - it is that the word he is sitting on starts to burn. \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail.\"\n\nThis is the heart of the whole book hidden in one line. Earlier Jeremiah had said something gentler about the same word: \"Your words were found, and I ate them. Your words became my joy and my heart's delight\" (15:16). Joy and fire are the same word, felt from two sides. When he speaks it, it is bread. When he swallows it and refuses to let it out, it is flame. The word of God was never meant to be a private possession. Held in, it scorches; given away, it feeds.\n\nThis is why he is called the weeping prophet and not the bitter one. A bitter man would have walked away and gone numb. Jeremiah cannot go numb, because the thing inside him is alive. His tears in 9:1 - \"Oh, that my head were a spring of water\" - and his fire in 20:9 are the same love under pressure. He weeps because he still cares about a people who mock him, and he cannot stop speaking because the word he carries will not let him.",
+      "historicalContext": "Jeremiah prophesied in Jerusalem's final decades, from around 627 BC until after the city fell to Babylon in 587 BC. For roughly forty years he warned a nation that would not listen, watched his warnings come true, and outlived the kingdom he tried to save. Chapter 20 sits in the years before the fall, when his message - surrender, the city will be destroyed - sounded like treason to everyone who heard it.",
+      "fascinatingFact": "Jeremiah's confessions, of which 20:7-18 is the most violent, are unique in the prophetic books. No other prophet records his arguments with God this nakedly. The Bible preserves not just the polished oracles Jeremiah delivered but the breakdown behind them - proof that Scripture does not airbrush its saints into people who never wanted to quit.",
+      "content": "Read verse 9 slowly and notice what the fire is not. It is not God's anger burning against Jeremiah for wanting to quit. It is not a threat. When Jeremiah resolves to go silent, the consequence is not that God strikes him - it is that the word he is sitting on starts to burn. \"His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail.\"\n\nThis is the heart of the whole book hidden in one line. Earlier Jeremiah had said something gentler about the same word: \"Your words were found, and I ate them. Your words became my joy and my heart's delight\" (15:16). Joy and fire are the same word, felt from two sides. When he speaks it, it is bread. When he swallows it and refuses to let it out, it is flame. The word of God was never meant to be a private possession. Held in, it scorches; given away, it feeds.\n\nThis is why he is called the weeping prophet and not the bitter one. A bitter man would have walked away and gone numb. Jeremiah cannot go numb, because the thing inside him is alive. His tears in 9:1 - \"Oh, that my head were a spring of water\" - and his fire in 20:9 are the same love under pressure. He weeps because he still cares about a people who mock him, and he cannot stop speaking because the word he carries will not let him."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Jeremiah tried to lay down his calling and found the word of God burning in his bones, impossible to hold in and impossible to hand back. The very thing wounding him was alive inside him.",
+      "modernApplication": "You may be carrying something God put in you that you have tried to set down - a truth you stopped speaking because it cost too much, a vocation you walked away from, a love for people who never thanked you. The relief you expected from quitting may not have come. What burns when you suppress it is often exactly what God meant you to give away.",
+      "connectionPoint": "The weeping prophet's complaint did not have the last word. Jeremiah's own book carries the answer forward: God promises a day when His law will no longer have to be carried like a burning coal, because \"I will put My law in their minds and inscribe it on their hearts\" (31:33). What scorched Jeremiah from the outside, God promised to write inside His people as their own desire.",
+      "newTestamentEcho": "Centuries later Paul writes, \"Woe to me if I do not preach the gospel!\" (1 Corinthians 9:16) - the same compulsion, the same word that cannot be held in. And Luke records two disciples on the Emmaus road who said, after the risen Christ opened the Scriptures to them, \"Were not our hearts burning within us?\" (Luke 24:32). The fire Jeremiah felt as torment, they felt as joy, because the Word Himself was walking beside them."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Is there something God once put in you that you have tried to lay down because it cost too much - and which has refused to go quiet?",
+      "additionalQuestions": [
+        "Jeremiah accused God to His face and kept serving Him anyway. Where have you confused honest complaint with unfaithfulness, as if telling God the truth were the same as walking away?",
+        "When the word of God 'feeds' you, it is bread; when you hold it in, it 'burns.' Which are you doing right now with what you know to be true?",
+        "What would it look like to stop trying to extinguish the fire and instead let it out - to give away the thing you have been carrying alone?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have wanted to quit things You gave me, because faithfulness costs more than I thought I had. Like Jeremiah, I have argued with You and kept holding on at the same time. Where I have swallowed what You meant me to speak, and felt it turn to fire, give me the courage to let it out. Where the burden is truly mine to carry, carry it with me, the way You walked with the prophet who could not stop weeping. And write Your word so deep in me that obeying You becomes my own desire and not only my duty. Through Christ, the Word made flesh, who carried His calling all the way to the cross. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one thing God has put in you that you have been trying to hold in - a truth, a calling, a love for someone hard to love. Today, take one concrete step to let it out instead of suppressing it: speak the word, send the message, show up where you have been avoiding. Stop fighting the fire and let it feed someone.",
+      "leavingAtCross": [
+        "The belief that being wounded for faithfulness means I chose wrong",
+        "The exhaustion of holding in what God meant me to give away",
+        "The fear that telling God the raw truth is the same as abandoning Him"
+      ],
+      "receivingFromCross": [
+        "Permission to lament honestly and keep serving anyway",
+        "The understanding that the fire I cannot extinguish may be my calling, not my punishment",
+        "The promise of a word written so deep on my heart that obedience becomes desire"
+      ],
+      "content": "Name one thing God has put in you that you have been trying to hold in - a truth, a calling, a love for someone hard to love. Today, take one concrete step to let it out instead of suppressing it: speak the word, send the message, show up where you have been avoiding. Stop fighting the fire and let it feed someone."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What pushes Jeremiah to the point of wanting to quit in chapter 20 - and what specifically does he resolve to stop doing?",
+        "Why does the word of God 'burn' when Jeremiah holds it in, when the same word elsewhere is his 'joy and heart's delight'? What does that tell us about what Scripture is for?",
+        "How does the fire shut up in Jeremiah's bones point forward to God's promise to write His law on the heart in chapter 31?"
+      ],
+      "forAccountabilityPartners": [
+        "Share one calling or conviction you have privately tried to set down, and why it cost too much to keep carrying.",
+        "Talk about the difference between honest lament and quiet drift - between Jeremiah arguing with God and a person slowly going numb. Which is closer to where you are?",
+        "Ask each other: what is one fire you are holding in right now that you need to let out, and what would letting it out actually look like this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 1:5",
+          "text": "\"Before I formed you in the womb I knew you, and before you were born I set you apart and appointed you as a prophet to the nations.\""
+        },
+        {
+          "reference": "Jeremiah 9:1",
+          "text": "Oh, that my head were a spring of water, and my eyes a fountain of tears! I would weep day and night over the slain daughter of my people."
+        },
+        {
+          "reference": "Jeremiah 15:16",
+          "text": "Your words were found, and I ate them. Your words became my joy and my heart's delight. For I bear Your name, O LORD God of Hosts."
+        },
+        {
+          "reference": "Jeremiah 31:33",
+          "text": "\"But this is the covenant I will make with the house of Israel after those days, declares the LORD. I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people.\""
+        },
+        {
+          "reference": "Luke 24:32",
+          "text": "They asked each other, \"Were not our hearts burning within us as He spoke with us on the road and opened the Scriptures to us?\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 20",
+          "note": "Read the whole chapter, watching the swing from accusation (vv. 7-10) to a sudden burst of praise (vv. 11-13) and back down into despair (vv. 14-18). The 'weeping prophet' holds joy and anguish in the same breath."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet",
+      "era": "Late 7th-early 6th century BC (ministry c. 627-580 BC)",
+      "key_trait": "Faithful under sustained rejection; honest enough to argue with God and obedient enough to keep speaking",
+      "description": "A priest from Anathoth, called by God before birth (1:5) and sent to warn Jerusalem in the last forty years before Babylon destroyed it. He was beaten, imprisoned, put in the stocks, thrown into a cistern, and accused of treason for telling the truth - yet he never stopped delivering the word, even as he wept over the people who refused it. His most violent prayers and deepest doubts are preserved alongside his oracles, which is why he is remembered not as the angry prophet but as the weeping one.",
+      "keyQuote": "His message becomes a fire burning in my heart, shut up in my bones, and I become weary of holding it in, and I cannot prevail.",
+      "lessonForUs": "Faithfulness and exhaustion can live in the same person. Jeremiah shows that you can tell God exactly how much it hurts, mean every word, and still discover that the calling you tried to quit is too alive in you to set down.",
+      "heading": "The Weeping Prophet"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2428,
+  "scriptureReference_full": "Jeremiah 20:7-9 (within Jeremiah 1-29)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (atsur, root atsar, H6113; the atsur / atsmotai near-pun in 20:9) reflects standard lexical sources."
+  ]
 }

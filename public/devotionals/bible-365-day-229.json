@@ -1,38 +1,182 @@
 {
   "day": 229,
-  "title": "Isaiah: Suffering Servant — Day 5 — Resolution",
-  "teaser": "Day 229 of Bible 365 — Isaiah 40-55",
+  "title": "Come and Drink, Without Cost",
+  "teaser": "The Servant poured out His life so the invitation could go out for nothing: come, all you who are thirsty, and buy wine and milk without money.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 229"
+      "type": "scripture",
+      "reference": "Isaiah 55:1-3, 6-7",
+      "translation": "BSB",
+      "emphasis": [
+        "Come, all you who are thirsty",
+        "without money and without cost",
+        "so that your soul may live",
+        "He will freely pardon"
+      ],
+      "hebrewOriginal": "הוֹי כָּל־צָמֵא לְכוּ לַמַּיִם וַאֲשֶׁר אֵין־לוֹ כָּסֶף לְכוּ שִׁבְרוּ וֶאֱכֹלוּ",
+      "passage": "\"Come, all you who are thirsty, come to the waters; and you without money, come, buy, and eat! Come, buy wine and milk without money and without cost! Why spend money on that which is not bread, and your labor on that which does not satisfy? Listen carefully to Me, and eat what is good, and your soul will delight in the richest of foods. Incline your ear and come to Me; listen, so that your soul may live. I will make with you an everlasting covenant— My loving devotion promised to David.\" ... Seek the LORD while He may be found; call on Him while He is near. Let the wicked man forsake his own way and the unrighteous man his own thoughts; let him return to the LORD, that He may have compassion, and to our God, for He will freely pardon."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "meaning": "loving devotion, steadfast love, covenant kindness",
+      "rootMeaning": "Chesed is loyal love that has bound itself by promise. It is not a feeling that comes and goes but a commitment that holds when the one who is loved gives no reason to keep loving. English has no single word for it; translators reach for mercy, kindness, steadfast love, loving devotion, and each catches only an edge.",
+      "usageNote": "The same word runs like a thread through the end of this section. In Isaiah 54:8 God promises 'with everlasting kindness I will have compassion on you' (chesed). In 54:10 the mountains may move, but 'My loving devotion will not depart from you.' Then in 55:3 the everlasting covenant is summed up as 'My loving devotion promised to David.' Chapter 55 hands the whole of God's chesed to anyone who is thirsty and will come.",
+      "wordByWord": [
+        {
+          "word": "הוֹי",
+          "transliteration": "hoy",
+          "meaning": "Hey! Come! - an open street-cry, the shout of a vendor calling out to every passerby"
+        },
+        {
+          "word": "כָּל־צָמֵא",
+          "transliteration": "kol-tsame",
+          "meaning": "all who are thirsty - no name on the list, only thirst as the entry requirement"
+        },
+        {
+          "word": "אֵין־לוֹ כָּסֶף",
+          "transliteration": "ein-lo kasef",
+          "meaning": "who has no money - the very people a market shuts out are the ones called in"
+        },
+        {
+          "word": "חַסְדֵי דָוִד",
+          "transliteration": "chasdei David",
+          "meaning": "the loving devotions promised to David - the sure mercies sworn to David, now opened to all"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "חֶסֶד / חָסִיד",
+          "reference": "From chesed comes chasid, the 'devoted one' - a person shaped by the loyal love they have received. The love God shows is meant to become the kind of person you are."
+        }
+      ],
+      "strongsNumber": "H2617",
+      "definition": "goodness, kindness, faithfulness; loyal covenant love",
+      "usage": "Chesed appears more than two hundred times in the Old Testament and is the single word most often used for the character of God toward His people. It is the word the psalmist repeats in every verse of Psalm 136: 'His loving devotion endures forever.'"
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Last Word Is an Open Door",
+      "body": "For two chapters the air has been heavy. Isaiah 53 set before us a Servant despised and rejected, pierced for our transgressions, led like a lamb to the slaughter and silent before His shearers. We watched the LORD lay on Him the iniquity of us all. We read the hardest sentence in the book - 'it was the LORD's will to crush Him' - and then the turn that follows it: after the anguish of His soul He would 'see the light of life and be satisfied,' and 'by His knowledge My righteous Servant will justify many.'\n\nThen chapter 54 spoke comfort to a city that felt abandoned: a barren woman told to enlarge her tent, a wife told the husband who left has come back for good. And now chapter 55 opens, and the tone changes again. It is no longer a description of what the Servant did. It is a voice in the street, calling.\n\n'Come, all you who are thirsty, come to the waters.' The Hebrew opens with hoy - the cry a merchant uses to flag down strangers in a marketplace. But this merchant has turned the market upside down. The price tag reads: no money required. 'Buy wine and milk without money and without cost.' Wine for gladness, milk for nourishment, water for life itself - the richest goods in the ancient world - handed to people whose pockets are empty.\n\nThe whole arc has been moving toward this open door. The Servant paid. So the invitation is free.",
+      "keyInsight": "Isaiah 55 is the resolution of the Servant arc: because the Servant poured out His life as the price, the call goes out to everyone with empty pockets and a thirsty soul - come, and take the best for nothing.",
+      "content": "For two chapters the air has been heavy. Isaiah 53 set before us a Servant despised and rejected, pierced for our transgressions, led like a lamb to the slaughter and silent before His shearers. We watched the LORD lay on Him the iniquity of us all. We read the hardest sentence in the book - 'it was the LORD's will to crush Him' - and then the turn that follows it: after the anguish of His soul He would 'see the light of life and be satisfied,' and 'by His knowledge My righteous Servant will justify many.'\n\nThen chapter 54 spoke comfort to a city that felt abandoned: a barren woman told to enlarge her tent, a wife told the husband who left has come back for good. And now chapter 55 opens, and the tone changes again. It is no longer a description of what the Servant did. It is a voice in the street, calling.\n\n'Come, all you who are thirsty, come to the waters.' The Hebrew opens with hoy - the cry a merchant uses to flag down strangers in a marketplace. But this merchant has turned the market upside down. The price tag reads: no money required. 'Buy wine and milk without money and without cost.' Wine for gladness, milk for nourishment, water for life itself - the richest goods in the ancient world - handed to people whose pockets are empty.\n\nThe whole arc has been moving toward this open door. The Servant paid. So the invitation is free."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Receipt She Couldn't Pay",
+      "body": "A friend told me about a winter when her family had nothing. The kind of nothing where you count change on the counter and put the milk back. She went into a small grocery near closing, gathered the cheapest things she could, and got to the register knowing it would still be more than she had. She started taking items out of the cart, one at a time, doing the math out loud.\n\nThe man behind her in line - a stranger, no one she ever saw again - reached past her and put his card down. He didn't make a speech. He said, 'Put it back in the cart. All of it. Get the good bread too.' She tried to refuse, the way people do when a gift is too big to hold. He just said it again. 'It's done.'\n\nShe told me the strangest part was not the money. It was walking out into the cold carrying bags she had not been able to afford, with a receipt in her hand that said paid - and her name nowhere on the payment. Someone else's name was on that receipt. Her thirst was the only thing she had brought to the counter, and it had been enough.",
+      "connectionToTheme": "The invitation of Isaiah 55 is free for us only because the bill was already paid by Another. We bring our empty hands and our thirst; the Servant's name is on the receipt.",
+      "content": "A friend told me about a winter when her family had nothing. The kind of nothing where you count change on the counter and put the milk back. She went into a small grocery near closing, gathered the cheapest things she could, and got to the register knowing it would still be more than she had. She started taking items out of the cart, one at a time, doing the math out loud.\n\nThe man behind her in line - a stranger, no one she ever saw again - reached past her and put his card down. He didn't make a speech. He said, 'Put it back in the cart. All of it. Get the good bread too.' She tried to refuse, the way people do when a gift is too big to hold. He just said it again. 'It's done.'\n\nShe told me the strangest part was not the money. It was walking out into the cold carrying bags she had not been able to afford, with a receipt in her hand that said paid - and her name nowhere on the payment. Someone else's name was on that receipt. Her thirst was the only thing she had brought to the counter, and it had been enough."
+    },
+    {
+      "type": "insight",
+      "heading": "Why Spend Money on What Is Not Bread",
+      "body": "Isaiah lets the question cut: 'Why spend money on that which is not bread, and your labor on that which does not satisfy?' This is the diagnosis underneath the invitation. The thirsty are not only poor; they are spending. They have money and labor, and they are pouring both into things that leave them hungry. The problem is not that they have nothing. The problem is that everything they buy turns out to be empty in the hand.\n\nThat is the ache the whole section has named. Israel in exile had traded the living God for idols a craftsman could overlay with gold, gods that have to be carried because they cannot carry you. And the people had concluded, back in chapter 40, 'My way is hidden from the LORD, and my claim is ignored by my God.' Thirst can make you certain that no one is coming.\n\nThe invitation answers that despair without scolding it. It does not say, 'Try harder, spend smarter.' It says, 'Stop buying what cannot feed you, and come to the One who feeds for free.' The deepest hunger of the human soul was never going to be met by anything we could purchase. It is met only by a Person, and He is the one thing we cannot afford and do not have to.",
+      "historicalContext": "Isaiah 40-55 addresses God's people in or near the Babylonian exile - a community that had lost the Temple, the land, and the king, and with them the visible signs that God was for them. Chapters 40 through 55 are sometimes called the 'Book of Comfort' because they open with 'Comfort, comfort My people' and labor at length to convince a defeated people that the Creator who measures the oceans in His palm has not forgotten them. Chapter 55 is the closing appeal of that long argument.",
+      "fascinatingFact": "The 'everlasting covenant' of Isaiah 55:3 is described as 'My loving devotion promised to David' - the chasdei David, the sure mercies of David. Centuries later, when Paul preached in the synagogue at Antioch, he tied this exact promise to the resurrection of Jesus: God 'raised Him from the dead, never to see decay,' fulfilling the word, 'I will give you the holy and sure blessings promised to David' (Acts 13:34). The free invitation of Isaiah 55 and the resurrection of Christ are, in Paul's reading, the same promise.",
+      "content": "Isaiah lets the question cut: 'Why spend money on that which is not bread, and your labor on that which does not satisfy?' This is the diagnosis underneath the invitation. The thirsty are not only poor; they are spending. They have money and labor, and they are pouring both into things that leave them hungry. The problem is not that they have nothing. The problem is that everything they buy turns out to be empty in the hand.\n\nThat is the ache the whole section has named. Israel in exile had traded the living God for idols a craftsman could overlay with gold, gods that have to be carried because they cannot carry you. And the people had concluded, back in chapter 40, 'My way is hidden from the LORD, and my claim is ignored by my God.' Thirst can make you certain that no one is coming.\n\nThe invitation answers that despair without scolding it. It does not say, 'Try harder, spend smarter.' It says, 'Stop buying what cannot feed you, and come to the One who feeds for free.' The deepest hunger of the human soul was never going to be met by anything we could purchase. It is met only by a Person, and He is the one thing we cannot afford and do not have to."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Because the Servant of Isaiah 53 poured out His life as a guilt offering and bore the iniquity of many, the LORD can stand in the street in Isaiah 55 and offer water, wine, milk, and an everlasting covenant 'without money and without cost.'",
+      "modernApplication": "We are fluent in the labor that does not satisfy. We pay with our attention, our hours, our anxious effort to be enough, and we walk away still thirsty. Isaiah's question is for us too: why keep spending on what is not bread? The covering, the welcome, the life you are working to earn is already bought - and was never for sale.",
+      "connectionPoint": "Isaiah 55 closes the section that opened in Isaiah 40 with 'Comfort, comfort My people.' The arc runs from comfort spoken over a wounded city, through the Servant who is crushed for that city's sin, to a marketplace cry inviting the whole world to come and drink for free. What began as comfort ends as an open invitation - and the price of the free gift was the Servant's poured-out life.",
+      "newTestamentEcho": "On the last and greatest day of the feast, Jesus stood up and called out, 'If anyone is thirsty, let him come to Me and drink' (John 7:37) - the same hoy, the same thirst, the same free water. To a Samaritan woman at a well He promised water that becomes 'a fount of water springing up to eternal life' (John 4:14). And at the very end of Scripture the invitation is still open in Isaiah's own words: 'Let the one who is thirsty come, and the one who desires the water of life drink freely' (Revelation 22:17). The Servant who was pierced is the One now calling in the street."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What are you currently spending your money, labor, or attention on that is 'not bread' - that promises to satisfy and never quite does?",
+      "additionalQuestions": [
+        "Where in your life do you still feel you have to pay - to earn welcome, to deserve rest, to be worth loving? What would it change to hear 'without cost' spoken over that?",
+        "Isaiah says 'Seek the LORD while He may be found.' Is there an invitation you have been postponing because you assumed there was time, or because you assumed you weren't ready?",
+        "Verse 7 promises God 'will freely pardon.' Is there a way of your own, or a thought of your own, He is asking you to forsake today and bring to Him?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so much on what is not bread. I have labored to be enough and gone to bed still thirsty. Thank You that the invitation does not depend on what is in my hands. Thank You that the Servant poured out His life so that I could come with nothing and be filled. Today I forsake my own way of earning what only You give. I incline my ear; I come to You; let my soul live. Make with me the everlasting covenant sealed in Your loving devotion, the sure mercies that will not depart. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one thing you have been trying to buy with your effort - approval, rest, a clean conscience, a sense of being enough - and consciously stop paying for it. Receive it instead as a gift you cannot earn. Then do one small act of coming: five quiet minutes, a single honest sentence to God, a step toward the water.",
+      "leavingAtCross": [
+        "The labor that never satisfies - the spending of myself on what is not bread",
+        "The belief that welcome and rest have to be earned before I am allowed to have them",
+        "The despair, like Israel's in exile, that says my way is hidden from the LORD and no one is coming"
+      ],
+      "receivingFromCross": [
+        "Water, wine, and milk without money and without cost - the best of God given to empty hands",
+        "An everlasting covenant of loving devotion that will not depart when the mountains do",
+        "A God near enough to be found, who will freely pardon the one who turns toward Him"
+      ],
+      "content": "Today, name one thing you have been trying to buy with your effort - approval, rest, a clean conscience, a sense of being enough - and consciously stop paying for it. Receive it instead as a gift you cannot earn. Then do one small act of coming: five quiet minutes, a single honest sentence to God, a step toward the water."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the cry 'without money and without cost' tell us about who the invitation of Isaiah 55 is for - and what it cost the Servant to make it free?",
+        "How does the question 'Why spend money on that which is not bread?' name a hunger that is deeper than poverty?",
+        "Isaiah 55 closes the section that opened with 'Comfort, comfort My people' (40:1). How does the free invitation resolve the long argument of chapters 40-55?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'not bread' you keep buying - one way you spend yourself on something that leaves you empty.",
+        "Talk about where you find it hardest to believe a gift can really be free, with no bill arriving later. Where does grace feel too good to trust?",
+        "Ask each other: what would it look like this week to 'seek the LORD while He may be found' - to actually come and drink rather than postpone?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 53:10-11",
+          "text": "Yet it was the LORD's will to crush Him and to cause Him to suffer; and when His soul is made a guilt offering, He will see His offspring, He will prolong His days, and the good pleasure of the LORD will prosper in His hand. After the anguish of His soul, He will see the light of life and be satisfied. By His knowledge My righteous Servant will justify many, and He will bear their iniquities."
+        },
+        {
+          "reference": "Isaiah 40:1-2",
+          "text": "\"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem, and proclaim to her that her forced labor has been completed; her iniquity has been pardoned. For she has received from the hand of the LORD double for all her sins.\""
+        },
+        {
+          "reference": "John 7:37-38",
+          "text": "On the last and greatest day of the feast, Jesus stood up and called out in a loud voice, \"If anyone is thirsty, let him come to Me and drink. Whoever believes in Me, as the Scripture has said: 'Streams of living water will flow from within him.'\""
+        },
+        {
+          "reference": "Revelation 22:17",
+          "text": "The Spirit and the bride say, \"Come!\" Let the one who hears say, \"Come!\" And let the one who is thirsty come, and the one who desires the water of life drink freely."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 55",
+          "note": "Read the chapter aloud as the closing scene of chapters 40-55. Listen for the way it answers the despair of 40:27 ('My way is hidden from the LORD') and gathers up the chesed promised in 54:8-10."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Servant of the LORD",
+      "title": "The One Crushed So the Water Could Be Free",
+      "description": "Across Isaiah 40-55, four songs unveil a figure called the Servant of the LORD - chosen, Spirit-anointed, gentle enough not to break a bruised reed, yet despised, pierced for transgressions not His own, and led like a lamb to the slaughter. In Isaiah 53 He bears the iniquity of many and is made a guilt offering; then He sees the light of life and is satisfied. The New Testament reads these songs as the clearest Old Testament portrait of Jesus, who applied them to Himself and was 'numbered with the transgressors' (Luke 22:37, quoting Isaiah 53:12).",
+      "keyQuote": "By His knowledge My righteous Servant will justify many, and He will bear their iniquities.",
+      "lessonForUs": "The free invitation of Isaiah 55 is not cheap; it is paid for. The Servant absorbed the cost so that the water, the wine, and the welcome could be handed to anyone with empty hands. We come without money because He came without sparing Himself.",
+      "heading": "The One Crushed So the Water Could Be Free"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2072,
+  "scriptureReference_full": "Isaiah 55:1-3, 6-7",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (chesed, H2617; chasdei David, Isaiah 55:3) reflects standard lexical sources. The link between 'the sure mercies of David' (Isaiah 55:3) and the resurrection of Christ follows Paul's citation in Acts 13:34."
+  ]
 }

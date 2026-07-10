@@ -1,38 +1,177 @@
 {
   "day": 105,
-  "title": "Solomon's Drift — Day 7 — Sabbath",
-  "teaser": "Day 105 of Bible 365 — 1 Kings 11",
+  "title": "The slow turning of a wise man's heart",
+  "teaser": "Solomon doesn't fall in a day. His heart is inclined, degree by degree, by what he loved most — and the kingdom is kept only for the sake of a greater Son.",
   "framework": "1 Kings 11 — Solomon's Drift",
   "scriptureReference": "1 Kings 11",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 105"
+      "type": "scripture",
+      "reference": "1 Kings 11:1-4, 9, 11-13",
+      "translation": "BSB",
+      "emphasis": [
+        "his wives turned his heart away",
+        "he was not wholeheartedly devoted",
+        "for the sake of your father David"
+      ],
+      "hebrewOriginal": "וְלֹא־הָיָה לְבָבוֹ שָׁלֵם עִם־יְהוָה אֱלֹהָיו",
+      "passage": "King Solomon, however, loved many foreign women along with the daughter of Pharaoh—women of Moab, Ammon, Edom, and Sidon, as well as Hittite women. These women were from the nations about which the LORD had told the Israelites, \"You must not intermarry with them, for surely they will turn your hearts after their gods.\" Yet Solomon clung to these women in love. He had seven hundred wives of royal birth and three hundred concubines—and his wives turned his heart away. For when Solomon grew old, his wives turned his heart after other gods, and he was not wholeheartedly devoted to the LORD his God, as his father David had been. ... Now the LORD grew angry with Solomon, because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice. ... Then the LORD said to Solomon, \"Because you have done this and have not kept My covenant and My statutes, which I have commanded you, I will tear the kingdom away from you and give it to your servant. Nevertheless, for the sake of your father David, I will not do it during your lifetime; I will tear it out of the hand of your son. Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David and for the sake of Jerusalem, which I have chosen.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 11**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 11 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "וַיַּטּוּ אֶת־לְבָבוֹ",
+      "transliteration": "vayyattu et-levavo",
+      "pronunciation": "va-ya-TOO et le-va-VOH",
+      "meaning": "and they inclined his heart, they turned his heart aside",
+      "rootMeaning": "The verb is natah - to stretch out, bend, incline, turn aside. It is the same word used for pitching a tent, extending a hand, or tilting a scale. It does not mean to break or to seize. It means to lean something a little off true.",
+      "usageNote": "The text does not say Solomon's wives seized his heart or stole it. It says they inclined it - bent it gradually away from straight. Twice in this passage the verb describes a slow tilting (v. 3, v. 4), and the result in verse 4 is that his heart was no longer shalem - whole, complete, at peace - with the LORD.",
+      "wordByWord": [
+        {
+          "word": "וַיַּטּוּ",
+          "transliteration": "vayyattu",
+          "meaning": "and they inclined, bent, turned aside (causative of natah)"
+        },
+        {
+          "word": "אֶת־לְבָבוֹ",
+          "transliteration": "et-levavo",
+          "meaning": "his heart - the seat of will, loyalty, and decision, not merely emotion"
+        },
+        {
+          "word": "שָׁלֵם",
+          "transliteration": "shalem",
+          "meaning": "whole, complete, undivided, at peace (from the same root as shalom)"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלֵם / שָׁלוֹם",
+          "reference": "Shalem and shalom share a root. A heart that is shalem with God is a heart at peace with God - whole, undivided, with nothing held back. Solomon's name (Shlomo) and the city he ruled (Jerusalem) both carry that root. The man of peace ends with a heart no longer whole."
+        }
+      ],
+      "strongsNumber": "H5186",
+      "definition": "natah: to stretch out, extend, incline, bend, turn aside",
+      "usage": "The grammar is gentle and devastating. No single verb of rebellion appears - only a quiet, repeated inclining. Sin here is not a thunderclap. It is a lean that no one corrects until the wall is already off plumb."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Solomon's Drift. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the faithful King forever (Heb 1:8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "How the Wisest Man Lost the Plot",
+      "body": "Open the chapter and the first word about Solomon is a turn against everything we have just read. For ten chapters he has been the golden king: wisdom that drew a queen from Sheba, a temple that took seven years, gold so common that silver counted for nothing. Then chapter 11 begins, \"King Solomon, however, loved many foreign women.\" That however carries the weight of a whole reign.\n\nThe text is careful about how the fall happens. It does not say Solomon renounced the LORD. It does not record a moment where he stood up and chose Ashtoreth over the God of Israel. Instead it says his wives turned his heart away, and then, in the next breath, that when he grew old his heart was turned after other gods. The Hebrew verb is natah - to incline, to lean, to bend a little off straight. This is the language of a slow tilt, not a sudden break.\n\nNotice too what God had already said, and what Solomon already knew. The LORD had told Israel not to bind themselves to these nations, \"for surely they will turn your hearts after their gods.\" Solomon was the man who wrote proverbs about guarding the heart above all else. He knew the warning by name. He simply assumed it did not apply to him - that his wisdom would hold where others' had failed. So he kept building high places, one for each homeland of each wife, on a hill in plain sight of the temple he himself had raised. The man who built the house of God also built the shrines that competed with it, and he did it not in defiance but in accommodation, a kindness to the people he loved.",
+      "keyInsight": "Solomon did not lose his faith in a single act of rebellion. He lost it the way a wall loses plumb - by a long, unexamined lean. The danger was never that he would deny God. It was that he would simply stop being wholeheartedly His.",
+      "content": "Open the chapter and the first word about Solomon is a turn against everything we have just read. For ten chapters he has been the golden king: wisdom that drew a queen from Sheba, a temple that took seven years, gold so common that silver counted for nothing. Then chapter 11 begins, \"King Solomon, however, loved many foreign women.\" That however carries the weight of a whole reign.\n\nThe text is careful about how the fall happens. It does not say Solomon renounced the LORD. It does not record a moment where he stood up and chose Ashtoreth over the God of Israel. Instead it says his wives turned his heart away, and then, in the next breath, that when he grew old his heart was turned after other gods. The Hebrew verb is natah - to incline, to lean, to bend a little off straight. This is the language of a slow tilt, not a sudden break.\n\nNotice too what God had already said, and what Solomon already knew. The LORD had told Israel not to bind themselves to these nations, \"for surely they will turn your hearts after their gods.\" Solomon was the man who wrote proverbs about guarding the heart above all else. He knew the warning by name. He simply assumed it did not apply to him - that his wisdom would hold where others' had failed. So he kept building high places, one for each homeland of each wife, on a hill in plain sight of the temple he himself had raised. The man who built the house of God also built the shrines that competed with it, and he did it not in defiance but in accommodation, a kindness to the people he loved."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Crack You Stop Seeing",
+      "body": "A friend of mine bought an old house with a hairline crack running up one corner of the living room wall. The inspector told him to keep an eye on it. For a while he did. He marked the end of the crack with a pencil and a date, the way you would track a child's height on a door frame.\n\nThen he stopped marking it. Not because it stopped moving - because he stopped seeing it. The crack became part of the room, a feature of the wallpaper, something his eye traveled over without registering. It took a guest, standing in the doorway with fresh eyes, to say: \"Do you know your wall is bowing?\"\n\nIt had been bowing the whole time. A fraction of a degree a season. By the time he could feel the floor slope under his own feet, the foundation had already moved years before. Nothing dramatic had ever happened. That was exactly the problem. There was no single night he could point to and say, here is where it went wrong - only a long lean he had quietly agreed to stop noticing.",
+      "connectionToTheme": "Solomon's heart, like the wall, did not fail at a moment. It failed at a slope - inclined a degree at a time by what he loved, until the one who could no longer feel the tilt was the only one who could not see it.",
+      "content": "A friend of mine bought an old house with a hairline crack running up one corner of the living room wall. The inspector told him to keep an eye on it. For a while he did. He marked the end of the crack with a pencil and a date, the way you would track a child's height on a door frame.\n\nThen he stopped marking it. Not because it stopped moving - because he stopped seeing it. The crack became part of the room, a feature of the wallpaper, something his eye traveled over without registering. It took a guest, standing in the doorway with fresh eyes, to say: \"Do you know your wall is bowing?\"\n\nIt had been bowing the whole time. A fraction of a degree a season. By the time he could feel the floor slope under his own feet, the foundation had already moved years before. Nothing dramatic had ever happened. That was exactly the problem. There was no single night he could point to and say, here is where it went wrong - only a long lean he had quietly agreed to stop noticing."
+    },
+    {
+      "type": "insight",
+      "heading": "Torn Away, Yet Held by a Thread",
+      "body": "Read the sentence God speaks slowly, because everything about Israel's future bends on it. \"I will tear the kingdom away from you and give it to your servant. Nevertheless, for the sake of your father David, I will not do it during your lifetime... Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David.\"\n\nThree times in a single breath God reaches for a reason to hold back the full weight of the judgment, and three times the reason is not Solomon. It is David. It is Jerusalem, the city God chose. The kingdom is torn, but not torn out by the roots - because a promise older than Solomon's failure is still standing. Long before, God had sworn to David that his house and his throne would be established forever. Solomon's drift cannot revoke it. The covenant does not depend on the faithfulness of the man wearing the crown; it depends on the faithfulness of the God who made the oath.\n\nSo here is the strange mercy buried in a judgment scene: the wisest king in the world breaks, and the kingdom survives anyway - not because Solomon held on, but because God will not let go of a promise He made to someone else, for the sake of a city He has chosen, pointing toward a King who has not yet come.",
+      "historicalContext": "First and Second Kings were composed, in their final form, for a people in exile - Israelites who had already watched the throne of David collapse and the temple burn. When they read of Solomon's drift, they were reading the seed of their own catastrophe: the divided kingdom that begins here ends, centuries later, in Babylon. Yet the same book keeps insisting that the lamp of David was never wholly snuffed out (1 Kings 11:36), because a promise was still in force.",
+      "fascinatingFact": "The judgment is dated and located with cruel precision. Solomon built his high places \"on a hill east of Jerusalem\" - the Mount of Olives, in direct sightline of the temple. Centuries later, that same ridge is where another Son of David would weep over the city, pray in a garden the night He was betrayed, and ascend. The hill where the kingdom began to tilt and the hill where it was finally kept are the same hill.",
+      "content": "Read the sentence God speaks slowly, because everything about Israel's future bends on it. \"I will tear the kingdom away from you and give it to your servant. Nevertheless, for the sake of your father David, I will not do it during your lifetime... Yet I will not tear the whole kingdom away from him. I will give one tribe to your son for the sake of My servant David.\"\n\nThree times in a single breath God reaches for a reason to hold back the full weight of the judgment, and three times the reason is not Solomon. It is David. It is Jerusalem, the city God chose. The kingdom is torn, but not torn out by the roots - because a promise older than Solomon's failure is still standing. Long before, God had sworn to David that his house and his throne would be established forever. Solomon's drift cannot revoke it. The covenant does not depend on the faithfulness of the man wearing the crown; it depends on the faithfulness of the God who made the oath.\n\nSo here is the strange mercy buried in a judgment scene: the wisest king in the world breaks, and the kingdom survives anyway - not because Solomon held on, but because God will not let go of a promise He made to someone else, for the sake of a city He has chosen, pointing toward a King who has not yet come."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Solomon's heart was inclined away from the LORD a degree at a time, until the wisest man alive was no longer wholeheartedly God's - and the kingdom was torn from his line, preserved only \"for the sake of My servant David.\"",
+      "modernApplication": "Few of us renounce God on a Tuesday afternoon. We accommodate. We build a small high place for the thing we love, on a hill in sight of the temple, and call it balance. The threat to most of us was never apostasy. It is the quiet, unexamined lean - the loyalty that was once whole and is now merely divided, a little off plumb, and no longer noticed.",
+      "connectionPoint": "The phrase \"for the sake of My servant David\" is a thread the rest of Scripture follows all the way out of the Old Testament. Every time a king of Judah deserves to be cut off and is spared, the reason given is David (2 Kings 8:19, 19:34). The promise outlives the failures of every man who inherits it - which means it was never really about them.",
+      "newTestamentEcho": "The Gospel of Matthew opens by calling Jesus \"the son of David\" (Matthew 1:1), and Gabriel tells Mary that God will give her child \"the throne of His father David\" and that \"He will reign over the house of Jacob forever\" (Luke 1:32-33). Where Solomon's heart was inclined away, this King could say, \"I always do what pleases\" the Father (John 8:29). The throne Solomon could not keep is kept by the Son of David whose heart was never divided - the faithful King of a kingdom that will never end."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where has your heart leaned a degree off true - not in open rebellion, but in a quiet accommodation you have stopped noticing?",
+      "additionalQuestions": [
+        "Solomon knew the warning by name and assumed it did not apply to him. What warning do you know well and quietly believe you are the exception to?",
+        "What is the small 'high place' you have built on a hill near the temple - a loyalty you keep alongside God that has begun to compete with Him?",
+        "Who in your life has the fresh eyes to stand in the doorway and tell you the wall is bowing - and have you stopped listening to them?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am not afraid of denying You outright. I am afraid of the slow lean I cannot feel - the heart that was once whole and is now quietly divided. Show me the high places I have built and learned to stop seeing. Make my heart shalem again, undivided and at peace with You. And thank You that when my loyalty fails, You hold the promise anyway - for the sake of the true Son of David, the King whose heart never turned. Keep me near Him. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath day - there is no task to finish. Sit for five quiet minutes and let one phrase hold you: \"not wholeheartedly devoted,\" or \"for the sake of My servant David.\" Ask God to name one place your heart has leaned, and to make it whole again.",
+      "leavingAtCross": [
+        "The quiet accommodation I have stopped noticing - the high place I built and learned to live beside",
+        "The pride that says the warning does not apply to me because I am wise enough to handle it",
+        "The fear that my drift is too far gone for the promise to still reach me"
+      ],
+      "receivingFromCross": [
+        "A heart being made shalem again - whole, undivided, at peace with God",
+        "The assurance that the kingdom is held not by my faithfulness but by His",
+        "A King, the true Son of David, whose heart never turned, holding the throne I could never keep"
+      ],
+      "content": "Today is a sabbath day - there is no task to finish. Sit for five quiet minutes and let one phrase hold you: \"not wholeheartedly devoted,\" or \"for the sake of My servant David.\" Ask God to name one place your heart has leaned, and to make it whole again."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "The text uses the verb natah - to incline or lean - rather than a verb of open rebellion. Why does that single word change how we read Solomon's fall, and how we watch our own?",
+        "When God announces the judgment, He gives three reasons to soften it - and none of them is Solomon. What does it tell you that the kingdom is spared 'for the sake of David' and not for the sake of the man on the throne?",
+        "Solomon built the temple and the high places both. How can the same person construct the place of worship and the place of compromise, and not feel the contradiction?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'high place' you have quietly built - a loyalty you keep alongside God that has started to compete with Him.",
+        "Talk about a warning you know well and assume does not apply to you. Why do you believe you are the exception?",
+        "Ask each other for permission to be the fresh eyes in the doorway: where do you see the other person's wall beginning to bow?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "2 Samuel 7:12-13",
+          "text": "When your days are fulfilled and you rest with your fathers, I will raise up your descendant after you... and I will establish the throne of his kingdom forever."
+        },
+        {
+          "reference": "1 Kings 11:36",
+          "text": "I will give one tribe to his son, so that My servant David will always have a lamp before Me in Jerusalem, the city where I chose to put My Name."
+        },
+        {
+          "reference": "Luke 1:32-33",
+          "text": "He will be great and will be called the Son of the Most High. The Lord God will give Him the throne of His father David, and He will reign over the house of Jacob forever. His kingdom will never end!"
+        },
+        {
+          "reference": "John 8:29",
+          "text": "He who sent Me is with Me. He has not left Me alone, because I always do what pleases Him."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 11",
+          "note": "Read the whole chapter, tracing the movement from love (v. 1-3) to inclination (v. 4) to high places (v. 7-8) to the torn kingdom (v. 11-13) to the adversaries God raises (v. 14, 23, 26)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Solomon",
+      "title": "The Wise King Whose Heart Was Divided",
+      "description": "Son of David and Bathsheba, third king of Israel, builder of the temple, and the man to whom God twice appeared and gave wisdom unmatched in his age. He ruled at the height of Israel's glory - and ended it. His many political marriages, made to secure peace with surrounding nations, became the slow undoing of his loyalty: his wives inclined his heart toward their gods until he was no longer wholeheartedly the LORD's. He is Scripture's clearest warning that wisdom and success do not protect a heart that stops watching itself.",
+      "keyQuote": "His wives turned his heart away... and he was not wholeheartedly devoted to the LORD his God, as his father David had been.",
+      "lessonForUs": "If the wisest king in history could be bent off true a degree at a time by what he loved, then no amount of knowing the right answer protects a heart that has quietly stopped guarding itself. The only safe king to follow is the Son of David whose heart never leaned.",
+      "heading": "The Wise King Whose Heart Was Divided"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1691,
+  "scriptureReference_full": "1 Kings 11:1-4, 9, 11-13",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (natah, H5186; shalem) reflects standard lexical sources. The shalem/shalom resonance and the Shlomo/Jerusalem root connection are standard observations in the lexical and exegetical tradition.",
+    "The Mount of Olives location for Solomon's high places (1 Kings 11:7, 'a hill east of Jerusalem') reflects the traditional identification; the later Gospel associations are the writer's reflection, not a claim of the text."
+  ]
 }

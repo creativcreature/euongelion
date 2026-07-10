@@ -1,38 +1,183 @@
 {
   "day": 339,
-  "title": "Romans: Justified by Faith — Day 3 — Pivot",
-  "teaser": "Day 339 of Bible 365 — Romans 1-8",
+  "title": "The Verdict Before the Verdict",
+  "teaser": "At the heart of Romans, the courtroom word \"justified\" turns into an embrace. The proof was already nailed down before you cleaned yourself up.",
   "framework": "Romans 1-8 — Romans: Justified by Faith",
   "scriptureReference": "Romans 1-8",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 339"
+      "type": "scripture",
+      "reference": "Romans 5:1-2, 8",
+      "translation": "BSB",
+      "emphasis": [
+        "justified through faith",
+        "peace with God",
+        "While we were still sinners, Christ died for us"
+      ],
+      "greekOriginal": "Δικαιωθέντες οὖν ἐκ πίστεως εἰρήνην ἔχομεν πρὸς τὸν Θεὸν διὰ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ",
+      "passage": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ, through whom we have gained access by faith into this grace in which we stand. And we rejoice in the hope of the glory of God. ... But God proves His love for us in this: While we were still sinners, Christ died for us."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Romans 1-8**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Romans 1-8 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "δικαιόω",
+      "transliteration": "dikaioō",
+      "pronunciation": "dee-kai-OH-oh",
+      "meaning": "to declare righteous, to acquit, to set right",
+      "rootMeaning": "A courtroom word. It does not mean to make someone gradually better; it means a judge announcing a verdict - this person stands right before the law. The related noun dikaiosynē is the righteousness Paul says the gospel reveals (Romans 1:17).",
+      "usageNote": "Paul uses dikaioō and its family more than thirty times in Romans, clustered thickest in chapters 3 through 5. In 5:1 it appears as a participle in the past tense - dikaiōthentes, 'having been justified' - a thing already done, settled, behind us, not a goal we are still climbing toward.",
+      "wordByWord": [
+        {
+          "word": "Δικαιωθέντες",
+          "transliteration": "dikaiōthentes",
+          "meaning": "having been justified - past, passive, completed; something done to us, not by us"
+        },
+        {
+          "word": "ἐκ πίστεως",
+          "transliteration": "ek pisteōs",
+          "meaning": "out of faith, by faith - the empty hand that receives, not the full hand that pays"
+        },
+        {
+          "word": "εἰρήνην ἔχομεν",
+          "transliteration": "eirēnēn echomen",
+          "meaning": "we have peace - present tense, a standing condition, not a fragile truce"
+        },
+        {
+          "word": "πρὸς τὸν Θεὸν",
+          "transliteration": "pros ton Theon",
+          "meaning": "toward God, with God - the war is over from God's side"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "λογίζομαι",
+          "reference": "Logizomai, 'to credit' or 'to reckon to an account' - the bookkeeping word Paul uses of Abraham in Romans 4:3: faith was credited to him as righteousness. Justification is righteousness credited, not earned."
+        }
+      ],
+      "strongsNumber": "G1344",
+      "definition": "to pronounce righteous, to acquit, to declare just",
+      "usage": "Because dikaiōthentes is in the past tense, the peace of verse 1 is not something the Christian is working toward. It is the standing result of a verdict already handed down. The whole of Romans 5-8 unfolds from a courtroom door that has already closed in the believer's favor."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Romans: Justified by Faith. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ our righteousness (Rom 5:1).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Where the Whole Letter Turns",
+      "body": "Romans does not begin with comfort. It begins with a charge sheet. For the first two and a half chapters Paul builds a case that leaves no one standing: the religious and the irreligious, the moral and the obviously broken, all of them on the same side of the dock. He lands the indictment in chapter 3: 'for all have sinned and fall short of the glory of God' (Romans 3:23). If the letter stopped there it would be a verdict of guilty with no appeal.\n\nThen comes the word that turns everything. The very next sentence: 'and are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Freely. By His grace. The same court that found everyone guilty hands down acquittal as a gift. Paul spends chapter 4 proving from Abraham that this is not a new idea smuggled in - God has always credited righteousness to faith, not to work.\n\nChapter 5 is where the argument breathes out. 'Therefore, since we have been justified through faith, we have peace with God.' Notice the order. Peace does not come first, after which God decides we are acceptable. The verdict comes first, and peace is what follows a verdict already settled. Then Paul does something a courtroom rarely does: he tells us why. 'God proves His love for us in this: While we were still sinners, Christ died for us.' The acquittal was not God overlooking the charge. The charge was real. It was paid.",
+      "keyInsight": "Justification is a verdict, not a process. God declares the guilty righteous on the basis of Christ's death - and the proof of His love was nailed down before we improved at all.",
+      "content": "Romans does not begin with comfort. It begins with a charge sheet. For the first two and a half chapters Paul builds a case that leaves no one standing: the religious and the irreligious, the moral and the obviously broken, all of them on the same side of the dock. He lands the indictment in chapter 3: 'for all have sinned and fall short of the glory of God' (Romans 3:23). If the letter stopped there it would be a verdict of guilty with no appeal.\n\nThen comes the word that turns everything. The very next sentence: 'and are justified freely by His grace through the redemption that is in Christ Jesus' (Romans 3:24). Freely. By His grace. The same court that found everyone guilty hands down acquittal as a gift. Paul spends chapter 4 proving from Abraham that this is not a new idea smuggled in - God has always credited righteousness to faith, not to work.\n\nChapter 5 is where the argument breathes out. 'Therefore, since we have been justified through faith, we have peace with God.' Notice the order. Peace does not come first, after which God decides we are acceptable. The verdict comes first, and peace is what follows a verdict already settled. Then Paul does something a courtroom rarely does: he tells us why. 'God proves His love for us in this: While we were still sinners, Christ died for us.' The acquittal was not God overlooking the charge. The charge was real. It was paid."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Letter Read in a Garden",
+      "body": "In the late summer of his thirty-second year, a man in Milan sat weeping under a fig tree in a friend's garden, undone by his own divided heart. He had wanted to be good and found he could not make himself good. He heard a child's voice from over the wall, chanting in a singsong game: take up and read, take up and read. He went back to where he had left a scroll of Paul's letters, opened it, and read the first lines his eyes fell on - a passage near the end of Romans about putting on Christ. He later wrote that he had no need to read further. 'It was as though a light of relief flooded into my heart, and all the darkness of doubt was dispelled.'\n\nThe man was Augustine, and the year was 386. What broke the years of struggle was not a new resolution to try harder. It was a sentence that told him the trying was not the foundation. The righteousness he could not manufacture had been credited to him as a gift.\n\nWhat freed Augustine is the exact logic Romans 5 lays bare. He had been trying to earn a peace that Paul says is already declared. The door of the courtroom had closed in his favor long before he stopped striving at it.",
+      "connectionToTheme": "The hinge of Romans is not 'become righteous so God will accept you' but 'you are declared righteous, so peace is already yours' - the discovery that turned Augustine from striving to rest.",
+      "content": "In the late summer of his thirty-second year, a man in Milan sat weeping under a fig tree in a friend's garden, undone by his own divided heart. He had wanted to be good and found he could not make himself good. He heard a child's voice from over the wall, chanting in a singsong game: take up and read, take up and read. He went back to where he had left a scroll of Paul's letters, opened it, and read the first lines his eyes fell on - a passage near the end of Romans about putting on Christ. He later wrote that he had no need to read further. 'It was as though a light of relief flooded into my heart, and all the darkness of doubt was dispelled.'\n\nThe man was Augustine, and the year was 386. What broke the years of struggle was not a new resolution to try harder. It was a sentence that told him the trying was not the foundation. The righteousness he could not manufacture had been credited to him as a gift.\n\nWhat freed Augustine is the exact logic Romans 5 lays bare. He had been trying to earn a peace that Paul says is already declared. The door of the courtroom had closed in his favor long before he stopped striving at it."
+    },
+    {
+      "type": "insight",
+      "heading": "While, Not After",
+      "body": "Read Romans 5:8 slowly and the whole gospel hangs on one small word. 'While we were still sinners, Christ died for us.' Not after we reformed. Not once we showed promise. While. At the worst point, with the charge unanswered, with nothing in us to commend us, the death happened.\n\nThis is why Paul can write three chapters later, 'there is now no condemnation for those who are in Christ Jesus' (Romans 8:1). The two verses are bookends of the same argument. If the love was proved while we were sinners, then the verdict does not wobble when we sin again. Condemnation is gone not because we got better but because the One who could condemn us is the One who died and rose for us. Paul presses it into a series of questions no prosecutor can answer: 'If God is for us, who can be against us?' (Romans 8:31). 'Who will bring any charge against God's elect? It is God who justifies' (Romans 8:33).\n\nThe accuser's whole case depends on the timing being 'after.' Romans insists the timing was 'while.' That single word is the floor under a believer's whole life.",
+      "historicalContext": "Paul wrote Romans around AD 57, likely from Corinth, to a church he had not yet visited - a mixed congregation of Jewish and Gentile believers in the imperial capital. He was laying out the gospel in full before traveling to them, partly to settle tensions between the two groups over law and grace. Chapters 1-8 are his unhurried case that one righteousness, received by faith, levels every distinction between them.",
+      "fascinatingFact": "The logic of Romans 8 runs as a chain that cannot be broken at any link: Christ died, was raised, is at God's right hand, and is interceding for us (Romans 8:34). Past death, present intercession, unbroken love. Paul ends the chapter naming everything that might tear us loose - death, life, angels, powers, height, depth - and rules each one out, 'neither height nor depth, nor anything else in all creation' (Romans 8:39).",
+      "content": "Read Romans 5:8 slowly and the whole gospel hangs on one small word. 'While we were still sinners, Christ died for us.' Not after we reformed. Not once we showed promise. While. At the worst point, with the charge unanswered, with nothing in us to commend us, the death happened.\n\nThis is why Paul can write three chapters later, 'there is now no condemnation for those who are in Christ Jesus' (Romans 8:1). The two verses are bookends of the same argument. If the love was proved while we were sinners, then the verdict does not wobble when we sin again. Condemnation is gone not because we got better but because the One who could condemn us is the One who died and rose for us. Paul presses it into a series of questions no prosecutor can answer: 'If God is for us, who can be against us?' (Romans 8:31). 'Who will bring any charge against God's elect? It is God who justifies' (Romans 8:33).\n\nThe accuser's whole case depends on the timing being 'after.' Romans insists the timing was 'while.' That single word is the floor under a believer's whole life."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "In the heart of Romans, God the Judge declares the guilty righteous as a free gift, on the ground that 'while we were still sinners, Christ died for us' (Romans 5:8) - and so there is now no condemnation for those who are in Him.",
+      "modernApplication": "Most of us live as though acceptance is the prize at the end of self-improvement: get the habits right, the record clean, the shame managed, and then maybe we will be at peace with God. Romans reverses the order. The peace is declared first, by a verdict already handed down. You do not climb toward acceptance; you live out of one already given.",
+      "connectionPoint": "This courtroom acquittal is the spine of the whole New Testament gospel. What Paul argues in Romans, Jesus told in a story: a tax collector who could only say 'God, have mercy on me, a sinner' went home justified rather than the religious man beside him (Luke 18:14). The same word, the same surprise - the unworthy one declared right.",
+      "newTestamentEcho": "The proof of love that Romans names abstractly, the Gospels show in flesh: 'God so loved the world that He gave His one and only Son' (John 3:16). The Son given 'while we were still sinners' is the Son who 'did not spare His own Son but gave Him up for us all' (Romans 8:32) - the cost behind the verdict."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you still living as if God's acceptance comes after you clean yourself up, rather than as a verdict already declared over you in Christ?",
+      "additionalQuestions": [
+        "Read Romans 5:8 again and put your name in it. What changes when the love was proved 'while' rather than 'after'?",
+        "Which accusation - from others, or from yourself - have you been carrying that Romans 8:1 says is overruled?",
+        "If 'there is now no condemnation' is already true, what fear or striving could you set down today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I keep trying to earn what You have already given. I read the charge against me and I know it is true - I have sinned and fallen short of Your glory. Thank You that the verdict was settled before I improved at all; that while I was still a sinner, Christ died for me. Let me stop striving at a door You have already opened. Quiet the voice that says 'after.' Teach me to live out of Your 'while.' Give me peace with You that does not depend on my record but on Christ's. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, write Romans 8:1 on something you will see - a card, your phone, your mirror - and read it aloud each time the inner prosecutor starts up: 'There is now no condemnation for those who are in Christ Jesus.' Receive it as a verdict already handed down, not a goal still ahead.",
+      "leavingAtCross": [
+        "The belief that God's acceptance waits on the far side of my self-improvement",
+        "The inner prosecutor that keeps re-opening a case God has already closed",
+        "The exhausting attempt to earn a peace that Romans says is already declared"
+      ],
+      "receivingFromCross": [
+        "A verdict of 'justified' that I did not earn and cannot un-earn",
+        "Peace with God that rests on Christ's record, not mine",
+        "The settled assurance that nothing in all creation can separate me from His love"
+      ],
+      "content": "Today, write Romans 8:1 on something you will see - a card, your phone, your mirror - and read it aloud each time the inner prosecutor starts up: 'There is now no condemnation for those who are in Christ Jesus.' Receive it as a verdict already handed down, not a goal still ahead."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the courtroom word 'justified' (dikaioō) mean, and why does it matter that Paul uses it in the past tense in Romans 5:1?",
+        "How do Romans 3:23 ('all have sinned') and Romans 3:24 ('justified freely by His grace') belong together rather than contradict each other?",
+        "Why is the word 'while' in Romans 5:8 the ground under 'no condemnation' in Romans 8:1?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one place you catch yourself living as if acceptance comes 'after' you measure up. What would 'while' change there?",
+        "Talk about the difference between feeling forgiven and being declared righteous. Which is harder to believe, and why?",
+        "Ask each other: which line from Romans 8:31-39 do you most need to hear over your life right now?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Romans 1:16-17",
+          "text": "I am not ashamed of the gospel, because it is the power of God for salvation to everyone who believes, first to the Jew, then to the Greek. For the gospel reveals the righteousness of God that comes by faith from start to finish, just as it is written: “The righteous will live by faith.”"
+        },
+        {
+          "reference": "Romans 3:23-24",
+          "text": "for all have sinned and fall short of the glory of God, and are justified freely by His grace through the redemption that is in Christ Jesus."
+        },
+        {
+          "reference": "Romans 8:1",
+          "text": "Therefore, there is now no condemnation for those who are in Christ Jesus."
+        },
+        {
+          "reference": "Romans 8:38-39",
+          "text": "For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Romans 5",
+          "note": "Read the whole chapter in one sitting, watching the turn from verdict (vv. 1-2) to the proof of love (vv. 6-8) to the contrast of Adam and Christ (vv. 12-21)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Paul the Apostle",
+      "title": "Prisoner of the Verdict He Once Resisted",
+      "era": "c. AD 5 - c. AD 67",
+      "description": "A Pharisee trained under Gamaliel, Paul once tried to destroy the church and built his standing before God on flawless law-keeping (Philippians 3:6). On the Damascus road the risen Christ stopped him cold. The man who had trusted his own record spent the rest of his life proclaiming a righteousness that comes not from law but as a gift received by faith. Romans is his fullest account of that reversal, written around AD 57 to believers in the imperial capital he longed to visit.",
+      "keyQuote": "But God proves His love for us in this: While we were still sinners, Christ died for us.",
+      "lessonForUs": "The man most confident in his own righteousness became the clearest witness that no one is justified by it. If Paul had to receive his standing as a gift, so do we - and so we may.",
+      "heading": "Prisoner of the Verdict He Once Resisted"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1981,
+  "scriptureReference_full": "Romans 5:1-2, 8 (within Romans 1-8)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (dikaioō, G1344; logizomai) reflects standard lexical sources (BDAG, Strong's).",
+    "Augustine's garden conversion and the 'tolle lege' account are recorded in his Confessions, Book 8, Chapters 11-12 (c. 397-400 AD); the quoted line is his description of the moment of release."
+  ]
 }

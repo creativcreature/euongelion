@@ -1,38 +1,188 @@
 {
   "day": 233,
-  "title": "Jeremiah: New Covenant — Day 2 — Building",
-  "teaser": "Day 233 of Bible 365 — Jeremiah 31",
+  "title": "The covenant He writes inside you",
+  "teaser": "Israel broke the covenant carved in stone. So God promises a new one — not on tablets, but inside the chest, where it cannot be broken from the outside.",
   "framework": "Jeremiah 31 — Jeremiah: New Covenant",
   "scriptureReference": "Jeremiah 31",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 233"
+      "type": "scripture",
+      "reference": "Jeremiah 31:31-34",
+      "translation": "BSB",
+      "emphasis": [
+        "a new covenant",
+        "inscribe it on their hearts",
+        "they will all know Me",
+        "remember their sins no more"
+      ],
+      "hebrewOriginal": "וְכָרַתִּי אֶת־בֵּית יִשְׂרָאֵל וְאֶת־בֵּית יְהוּדָה בְּרִית חֲדָשָׁה",
+      "passage": "\"Behold, the days are coming, declares the LORD, when I will make a new covenant with the house of Israel and with the house of Judah. It will not be like the covenant I made with their fathers when I took them by the hand to lead them out of the land of Egypt— a covenant they broke, though I was a husband to them,\" declares the LORD. \"But this is the covenant I will make with the house of Israel after those days, declares the LORD. I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people. No longer will each man teach his neighbor or his brother, saying, 'Know the LORD,' because they will all know Me, from the least of them to the greatest, declares the LORD. For I will forgive their iniquities and will remember their sins no more.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּרִית חֲדָשָׁה",
+      "transliteration": "berit chadashah",
+      "pronunciation": "beh-REET kha-da-SHAH",
+      "meaning": "a new covenant, a fresh binding agreement",
+      "rootMeaning": "Berit is the word for a covenant - a binding bond, often cut with a sacrifice (the verb karat, 'to cut,' is used: God says 'I will cut a covenant'). Chadashah means new, fresh, never before existing. This is the only place in the Hebrew Bible where the two words stand together: berit chadashah, a new covenant.",
+      "usageNote": "These two words gave the second half of the Christian Bible its name. When the Greek of the New Testament needed a phrase for what Jesus inaugurated, it reached for kaine diatheke - the exact translation of berit chadashah. 'New Testament' simply means 'New Covenant.' The whole back of the book is named after one verse Jeremiah spoke in a besieged city.",
+      "wordByWord": [
+        {
+          "word": "וְכָרַתִּי",
+          "transliteration": "vecharati",
+          "meaning": "and I will cut - the verb for making a covenant, drawn from the cutting of a sacrifice"
+        },
+        {
+          "word": "בְּרִית",
+          "transliteration": "berit",
+          "meaning": "covenant, a binding bond between two parties"
+        },
+        {
+          "word": "חֲדָשָׁה",
+          "transliteration": "chadashah",
+          "meaning": "new, fresh, of a kind not seen before"
+        },
+        {
+          "word": "עַל־לִבָּם",
+          "transliteration": "al-libbam",
+          "meaning": "on their heart - the seat of will, mind, and desire in Hebrew thought"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּרַת",
+          "reference": "Karat, 'to cut,' is the same verb used in Genesis 15 when God passes between the cut animals to make covenant with Abram. To 'cut a covenant' assumes a death stands behind every binding promise."
+        }
+      ],
+      "strongsNumber": "H1285",
+      "definition": "berit: a covenant, compact, or binding agreement, frequently sealed by sacrifice",
+      "usage": "The phrase berit chadashah occurs only here in the Old Testament, yet the New Testament quotes this whole passage twice in Hebrews (8:8-12; 10:16-17), more fully than any other Old Testament text. One sentence from Jeremiah becomes the architecture of the gospel."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah: New Covenant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ ratifies the new covenant (Luke 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Promise Spoken Over Ruins",
+      "body": "It helps to know where Jeremiah was standing when he said this. Babylon's army was outside the walls. Jerusalem was weeks or months from falling. Jeremiah himself was under arrest, and the covenant Israel had lived under for centuries - the one given at Sinai, written on stone, the one that said 'do this and live' - lay in pieces. The nation had broken it so thoroughly that exile was now certain.\n\nThat is the moment God chooses to make His biggest promise. Not when things are going well. Over the rubble.\n\nGod names the problem with the old covenant plainly, and it is not the covenant. 'It will not be like the covenant I made with their fathers,' He says, 'a covenant they broke, though I was a husband to them.' The law given at Sinai was good. The trouble was never the writing on the stone. The trouble was that the stone stayed outside the people. A command carved in rock can tell you what is right; it cannot make you want it. It sits on the table and waits, and a heart that does not want to obey will not be changed by being told.\n\nSo God promises a different kind of covenant - same law, different location. 'I will put My law in their minds and inscribe it on their hearts.' He will move the writing from the tablet to the chest. He will not lower the standard; He will change the surface He writes on. What the people could not keep on the outside, He will work into them on the inside.",
+      "keyInsight": "The old covenant failed not because God's law was wrong but because it stayed external - a command on stone over a heart that did not want it. The new covenant moves the writing inside.",
+      "content": "It helps to know where Jeremiah was standing when he said this. Babylon's army was outside the walls. Jerusalem was weeks or months from falling. Jeremiah himself was under arrest, and the covenant Israel had lived under for centuries - the one given at Sinai, written on stone, the one that said 'do this and live' - lay in pieces. The nation had broken it so thoroughly that exile was now certain.\n\nThat is the moment God chooses to make His biggest promise. Not when things are going well. Over the rubble.\n\nGod names the problem with the old covenant plainly, and it is not the covenant. 'It will not be like the covenant I made with their fathers,' He says, 'a covenant they broke, though I was a husband to them.' The law given at Sinai was good. The trouble was never the writing on the stone. The trouble was that the stone stayed outside the people. A command carved in rock can tell you what is right; it cannot make you want it. It sits on the table and waits, and a heart that does not want to obey will not be changed by being told.\n\nSo God promises a different kind of covenant - same law, different location. 'I will put My law in their minds and inscribe it on their hearts.' He will move the writing from the tablet to the chest. He will not lower the standard; He will change the surface He writes on. What the people could not keep on the outside, He will work into them on the inside."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The List on the Refrigerator",
+      "body": "A friend told me once about the year he tried to fix his marriage with a list. Things had gone cold, and he was determined. He wrote out, on a card stuck to the refrigerator, all the things a good husband does. Call during the day. Ask about her work and actually listen. Plan something on Fridays. Don't check the phone at dinner.\n\nThe list was correct. Every item on it was a real, good thing. And for about three weeks he did them, glancing at the card each morning like a man studying for a test. Then it became a chore, and then a quiet resentment, and then he stopped looking at the card and it just hung there yellowing.\n\nHe said the marriage didn't turn around until something in him changed - until he wanted her again rather than wanting to pass the inspection. 'The list was never the problem,' he told me. 'I needed the list to be true of me, not just true on the fridge.'\n\nThat is the difference Jeremiah is describing. Stone tablets and refrigerator cards make the same correct demand and have the same limit. They can hang in front of you. They cannot get inside you. God's promise is to do the one thing the card never could: write the wanting itself onto the heart.",
+      "connectionToTheme": "A correct list posted outside us cannot change a heart that does not want it - which is exactly the limit of the old covenant and the gap the new covenant fills.",
+      "content": "A friend told me once about the year he tried to fix his marriage with a list. Things had gone cold, and he was determined. He wrote out, on a card stuck to the refrigerator, all the things a good husband does. Call during the day. Ask about her work and actually listen. Plan something on Fridays. Don't check the phone at dinner.\n\nThe list was correct. Every item on it was a real, good thing. And for about three weeks he did them, glancing at the card each morning like a man studying for a test. Then it became a chore, and then a quiet resentment, and then he stopped looking at the card and it just hung there yellowing.\n\nHe said the marriage didn't turn around until something in him changed - until he wanted her again rather than wanting to pass the inspection. 'The list was never the problem,' he told me. 'I needed the list to be true of me, not just true on the fridge.'\n\nThat is the difference Jeremiah is describing. Stone tablets and refrigerator cards make the same correct demand and have the same limit. They can hang in front of you. They cannot get inside you. God's promise is to do the one thing the card never could: write the wanting itself onto the heart."
+    },
+    {
+      "type": "insight",
+      "heading": "Four Verbs That Carry the Whole Promise",
+      "body": "Look at who does the work in these verses. Almost every verb belongs to God. 'I will make.' 'I will put My law in their minds.' 'I will inscribe it on their hearts.' 'I will be their God.' 'I will forgive.' 'I will remember their sins no more.' The new covenant is not a better deal where God meets us halfway and we try harder. It is a covenant where God carries both ends.\n\nNotice the order of the last two promises especially, because the order is the gospel. First: 'they will all know Me, from the least of them to the greatest.' Then the reason it is possible: 'For I will forgive their iniquities and will remember their sins no more.' Knowing God comes after forgiveness, not before it. We do not clean ourselves up enough to be allowed near Him. He deals with the sin first, and the knowing flows from the clean slate.\n\nAnd that phrase - 'remember their sins no more' - is not God developing amnesia. God forgets nothing. To 'remember' in Hebrew is to act on something, to bring it to bear. When God says He will remember sin no more, He means He will never again act against you on the basis of it. The record is not misplaced. The record is settled.",
+      "historicalContext": "Jeremiah prophesied during the final collapse of the southern kingdom of Judah, roughly 627 to 586 BC, through the reigns of Josiah down to the destruction of Jerusalem by Babylon. The 'new covenant' oracle of chapter 31 sits inside a section scholars call the Book of Consolation (chapters 30-33) - a cluster of hope spoken precisely as the nation lost everything.",
+      "fascinatingFact": "Jeremiah 31:31-34 is the longest single Old Testament passage quoted in the New Testament. The writer of Hebrews cites it nearly in full at 8:8-12 to argue that the first covenant was always meant to be temporary, then returns to its closing line at 10:16-17 - 'their sins and lawless acts I will remember no more' - to declare that no further sacrifice for sin is needed.",
+      "content": "Look at who does the work in these verses. Almost every verb belongs to God. 'I will make.' 'I will put My law in their minds.' 'I will inscribe it on their hearts.' 'I will be their God.' 'I will forgive.' 'I will remember their sins no more.' The new covenant is not a better deal where God meets us halfway and we try harder. It is a covenant where God carries both ends.\n\nNotice the order of the last two promises especially, because the order is the gospel. First: 'they will all know Me, from the least of them to the greatest.' Then the reason it is possible: 'For I will forgive their iniquities and will remember their sins no more.' Knowing God comes after forgiveness, not before it. We do not clean ourselves up enough to be allowed near Him. He deals with the sin first, and the knowing flows from the clean slate.\n\nAnd that phrase - 'remember their sins no more' - is not God developing amnesia. God forgets nothing. To 'remember' in Hebrew is to act on something, to bring it to bear. When God says He will remember sin no more, He means He will never again act against you on the basis of it. The record is not misplaced. The record is settled."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Standing over a falling Jerusalem, God promised a covenant He alone would keep - writing His law inside the people, knowing them, and forgiving their sins so completely He would act against them on its basis no more.",
+      "modernApplication": "Most of us still relate to God the way Israel related to the stone tablets: as a list of expectations posted somewhere outside us that we keep failing and re-resolving to meet. The promise here is the end of that exhausting arrangement. God does not want a better list on your fridge. He wants to change what you love from the inside, and He has taken responsibility for doing it.",
+      "connectionPoint": "Jeremiah gives the promise. He does not say how a holy God can simply 'remember sins no more' without injustice - how the broken covenant gets paid for. That question hangs open at the front of the Book for six hundred years, waiting for the One who would answer it not with words but with His own blood.",
+      "newTestamentEcho": "On the night before He died, Jesus took the cup, gave it to His disciples, and said: 'This cup is the new covenant in My blood, which is poured out for you' (Luke 22:20). He was naming this exact promise and claiming to be the One who would seal it. The covenant Jeremiah said God would 'cut' is cut at the cross - and because a covenant is cut with a death, the death is His own."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life with God are you still living by the refrigerator list - keeping rules posted outside you that your heart doesn't actually want to keep?",
+      "additionalQuestions": [
+        "Which of the verbs in this passage - I will put, I will inscribe, I will forgive, I will remember no more - is hardest for you to believe God means about you?",
+        "God says 'remember their sins no more' means He will never again act against you on the basis of your sin. Is there a sin you are still letting Him act against you for, in your own mind, that He has already settled?",
+        "What would change about today if you believed the law you keep failing is something God has promised to write into you, not just hand to you?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have spent so long trying to keep the list on the outside, and I keep coming up short. I am tired of resolving to do better. Do what only You can do: put Your law inside me, where I cannot lose it and cannot break it from the outside. Make me want what is good. And let the promise that frightens me most be the one I believe - that You forgive my sins and will not hold them against me anymore, because Jesus sealed this covenant in His own blood. Be my God. Let me be Your child. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one rule you keep trying to obey from the outside and failing - one 'should' that hangs over you. Instead of resolving to try harder, ask God to do the inside work of the new covenant on it: to change what you want, not just what you do. Then leave it with Him for the day rather than carrying it.",
+      "leavingAtCross": [
+        "The exhausting project of obeying God from the outside in, by willpower and resolutions",
+        "The fear that my repeated failure means God is keeping a record to use against me",
+        "The lie that I have to know God well enough or behave well enough before He will forgive me"
+      ],
+      "receivingFromCross": [
+        "A covenant God Himself keeps on both ends - He writes, He forgives, He remembers no more",
+        "His law moved from a stone outside me to my own heart, changing what I love",
+        "The settled record: in Christ my sins are not misplaced but paid for, never to be charged again"
+      ],
+      "content": "Today, name one rule you keep trying to obey from the outside and failing - one 'should' that hangs over you. Instead of resolving to try harder, ask God to do the inside work of the new covenant on it: to change what you want, not just what you do. Then leave it with Him for the day rather than carrying it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "According to verse 32, what was wrong with the old covenant - the law itself, or where it was written and what the people did with it?",
+        "In what order do forgiveness and knowing God come in verse 34, and why does that order matter for how we approach God?",
+        "What does it actually mean that God will 'remember their sins no more,' given that God forgets nothing?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been relating to God by external rule-keeping rather than inward desire. What would it look like to ask Him to change the wanting?",
+        "Talk about the difference between God misplacing your sins and God settling them. Which do you tend to live as if were true?",
+        "Read Luke 22:20 together. Discuss what it means that Jesus called the cup 'the new covenant in My blood' - and that this is the promise Jeremiah spoke six centuries earlier."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 31:3",
+          "text": "The LORD appeared to us in the past, saying: \"I have loved you with an everlasting love; therefore I have drawn you with loving devotion.\""
+        },
+        {
+          "reference": "Ezekiel 36:26-27",
+          "text": "I will give you a new heart and put a new spirit within you; I will remove your heart of stone and give you a heart of flesh. And I will put My Spirit within you and cause you to walk in My statutes and to carefully observe My ordinances."
+        },
+        {
+          "reference": "Luke 22:20",
+          "text": "In the same way, after supper He took the cup, saying, \"This cup is the new covenant in My blood, which is poured out for you.\""
+        },
+        {
+          "reference": "Hebrews 8:10-12",
+          "text": "For this is the covenant I will make with the house of Israel after those days, declares the Lord. I will put My laws in their minds and inscribe them on their hearts... For I will forgive their iniquities and will remember their sins no more."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 30-33",
+          "note": "Read the whole Book of Consolation, the cluster of hope-oracles that surrounds chapter 31, to see the new covenant promise in its setting of national collapse and restoration."
+        },
+        {
+          "type": "book",
+          "title": "Hebrews 8-10",
+          "note": "Read how the New Testament uses this exact passage twice to argue that Christ's single sacrifice makes the first covenant obsolete and the believer's forgiveness final."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Prophet of the New Covenant",
+      "description": "A priest from Anathoth called to prophesy during Judah's last forty years, from around 627 BC to the fall of Jerusalem in 586 BC. Often called 'the weeping prophet,' he spent his ministry warning of a judgment no one wanted to hear and was beaten, imprisoned, and lowered into a cistern for it. Yet from inside that collapse he spoke the brightest promise in the Hebrew Bible - a new covenant written on the heart - which the New Testament would name as fulfilled in Jesus.",
+      "keyQuote": "I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people.",
+      "lessonForUs": "God's largest promises are often spoken over our smallest moments. Jeremiah preached hope from inside a besieged city under arrest. The covenant that names the whole New Testament was given to a man who, by every outward measure, had failed - which is exactly the kind of place God loves to write something new.",
+      "heading": "The Prophet of the New Covenant"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2497,
+  "scriptureReference_full": "Jeremiah 31:31-34",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (berit chadashah, berit H1285; karat) reflects standard lexical sources. The new-covenant citation in Hebrews 8:8-12 and 10:16-17 is the most extensive Old Testament quotation in the New Testament.",
+    "Historical setting (Jeremiah's ministry c. 627-586 BC; the Book of Consolation, Jeremiah 30-33) reflects standard scholarly consensus."
+  ]
 }

@@ -1,38 +1,183 @@
 {
   "day": 219,
-  "title": "Isaiah: Holy One of Israel — Day 2 — Building",
-  "teaser": "Day 219 of Bible 365 — Isaiah 6, 9, 11, 25",
+  "title": "The Holy One Comes Down",
+  "teaser": "Isaiah sees the thrice-holy King too high to approach, then watches that same holiness come down to a coal, a cradle, a stump, and a feast where death is swallowed whole.",
   "framework": "Isaiah 6, 9, 11, 25 — Isaiah: Holy One of Israel",
   "scriptureReference": "Isaiah 6, 9, 11, 25",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 219"
+      "type": "scripture",
+      "reference": "Isaiah 6:1-3, 5-7; 9:2, 6",
+      "translation": "BSB",
+      "emphasis": [
+        "Holy, holy, holy",
+        "Woe is me, for I am ruined",
+        "your sin is atoned for",
+        "unto us a child is born"
+      ],
+      "hebrewOriginal": "קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ יְהוָה צְבָאוֹת",
+      "passage": "In the year that King Uzziah died, I saw the Lord seated on a throne, high and exalted; and the train of His robe filled the temple. Above Him stood seraphim, each having six wings: With two wings they covered their faces, with two they covered their feet, and with two they were flying. And they were calling out to one another: \"Holy, holy, holy is the LORD of Hosts; all the earth is full of His glory.\" ... Then I said: \"Woe is me, for I am ruined, because I am a man of unclean lips dwelling among a people of unclean lips; for my eyes have seen the King, the LORD of Hosts.\" Then one of the seraphim flew to me, and in his hand was a glowing coal that he had taken with tongs from the altar. And with it he touched my mouth and said: \"Now that this has touched your lips, your iniquity is removed and your sin is atoned for.\" ... The people walking in darkness have seen a great light; on those living in the land of the shadow of death, a light has dawned. ... For unto us a child is born, unto us a son is given, and the government will be upon His shoulders. And He will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 6, 9, 11, 25**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 6, 9, 11, 25 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָדוֹשׁ",
+      "transliteration": "qadosh",
+      "pronunciation": "kah-DOSHE",
+      "meaning": "holy, set apart, wholly other",
+      "rootMeaning": "The root q-d-sh carries the sense of being cut off, separated, set apart from the common. To be holy is not first to be morally nice; it is to be of another order entirely - to belong to a category God alone occupies.",
+      "usageNote": "The seraphim do not say qadosh once. They say it three times: qadosh, qadosh, qadosh. Hebrew has no superlative the way English does - it does not say 'holiest.' It repeats. To say a thing twice is emphasis; to say it three times is to push the word as far as it can go. This is the only attribute of God Scripture ever triples.",
+      "wordByWord": [
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy, set apart - said once"
+        },
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy - said again, lifting the word higher"
+        },
+        {
+          "word": "קָדוֹשׁ",
+          "transliteration": "qadosh",
+          "meaning": "holy - said a third time, as high as Hebrew can reach"
+        },
+        {
+          "word": "יְהוָה צְבָאוֹת",
+          "transliteration": "YHWH tseva'ot",
+          "meaning": "the LORD of Hosts - the covenant name joined to the title of the commander of heaven's armies"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "קְדוֹשׁ יִשְׂרָאֵל",
+          "reference": "Qedosh Yisrael, 'the Holy One of Israel' - Isaiah's signature name for God, used some twenty-five times in his book and almost nowhere else. The wonder of it is the joining: the wholly-other One has bound Himself to a particular, faltering people."
+        }
+      ],
+      "strongsNumber": "H6918",
+      "definition": "sacred, holy, set apart; of God, the One who is wholly other and cannot be approached on common terms",
+      "usage": "When Isaiah hears qadosh tripled, his first word back is not praise but ruin: 'Woe is me.' Holiness, seen up close, undoes a person before it heals him."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Holy One of Israel. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the Holy One (Mark 1:24).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Saw the Holiness Before He Heard the Comfort",
+      "body": "Isaiah's book is full of comfort. It is where we get 'they will mount up with wings like eagles,' and 'a child is born,' and 'by His stripes we are healed.' But before any of that, in chapter 6, Isaiah is given a single overwhelming vision, and it is not gentle. He sees the Lord seated on a throne, high and exalted, the train of His robe filling the temple, and around Him burning creatures who cannot look at Him - they cover their own faces with their wings. And the only words spoken in the throne room are three: Holy, holy, holy.\n\nThe word translated holy, qadosh, does not mean kind or loving first. It means set apart, of another order, unapproachable on common terms. The seraphim are not describing how good God is at being God. They are crying out that He is unlike everything - that there is a gulf between Him and the room. And the doorposts shake at the sound, and the temple fills with smoke, as if the building itself cannot hold what is being said.\n\nIsaiah's response is the only honest one. He does not feel inspired. He feels ruined. 'Woe is me, for I am ruined, because I am a man of unclean lips.' This is the first thing the holiness of God does to a person who actually sees it: it does not flatter him. It shows him, in one second, the distance between what God is and what he is. Before Isaiah can be useful, he has to be undone.",
+      "keyInsight": "Holiness is not God being very, very good. It is God being utterly other. And the first thing it does to anyone who truly sees it is not comfort - it is ruin, the honest collapse of a person who finally knows the distance.",
+      "content": "Isaiah's book is full of comfort. It is where we get 'they will mount up with wings like eagles,' and 'a child is born,' and 'by His stripes we are healed.' But before any of that, in chapter 6, Isaiah is given a single overwhelming vision, and it is not gentle. He sees the Lord seated on a throne, high and exalted, the train of His robe filling the temple, and around Him burning creatures who cannot look at Him - they cover their own faces with their wings. And the only words spoken in the throne room are three: Holy, holy, holy.\n\nThe word translated holy, qadosh, does not mean kind or loving first. It means set apart, of another order, unapproachable on common terms. The seraphim are not describing how good God is at being God. They are crying out that He is unlike everything - that there is a gulf between Him and the room. And the doorposts shake at the sound, and the temple fills with smoke, as if the building itself cannot hold what is being said.\n\nIsaiah's response is the only honest one. He does not feel inspired. He feels ruined. 'Woe is me, for I am ruined, because I am a man of unclean lips.' This is the first thing the holiness of God does to a person who actually sees it: it does not flatter him. It shows him, in one second, the distance between what God is and what he is. Before Isaiah can be useful, he has to be undone."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cleanroom and the Coal",
+      "body": "In the buildings where spacecraft are assembled, there are rooms called cleanrooms - sealed chambers where the air is filtered hundreds of times an hour, where a single dust particle can ruin an instrument bound for another planet. You do not walk into one. You are gowned, gloved, masked, and passed through an air shower first, because nothing common is allowed near the thing being made pure. The barrier is not cruelty. It is the only way the holy work survives contact with ordinary hands.\n\nIsaiah is standing in something like that, except the room is the throne of God and the unclean thing is him. He knows it instantly. He does not need a list of his sins read aloud; the holiness in the room is the list. 'I am a man of unclean lips.'\n\nThen something happens that no cleanroom protocol allows. One of the seraphim flies down with a glowing coal lifted off the altar and presses it to Isaiah's mouth - the burning thing touches the unclean thing. And instead of destroying him, it cleanses him: 'your iniquity is removed and your sin is atoned for.' The barrier did not come down because Isaiah scrubbed himself clean enough to cross it. The fire came to him.",
+      "connectionToTheme": "Isaiah cannot lift himself up to the holiness on the throne. The holiness comes down to him - a burning coal carried from the altar to a sinner's mouth. This is the whole shape of the day: the Holy One descending to the unclean.",
+      "content": "In the buildings where spacecraft are assembled, there are rooms called cleanrooms - sealed chambers where the air is filtered hundreds of times an hour, where a single dust particle can ruin an instrument bound for another planet. You do not walk into one. You are gowned, gloved, masked, and passed through an air shower first, because nothing common is allowed near the thing being made pure. The barrier is not cruelty. It is the only way the holy work survives contact with ordinary hands.\n\nIsaiah is standing in something like that, except the room is the throne of God and the unclean thing is him. He knows it instantly. He does not need a list of his sins read aloud; the holiness in the room is the list. 'I am a man of unclean lips.'\n\nThen something happens that no cleanroom protocol allows. One of the seraphim flies down with a glowing coal lifted off the altar and presses it to Isaiah's mouth - the burning thing touches the unclean thing. And instead of destroying him, it cleanses him: 'your iniquity is removed and your sin is atoned for.' The barrier did not come down because Isaiah scrubbed himself clean enough to cross it. The fire came to him."
+    },
+    {
+      "type": "insight",
+      "heading": "From the Throne to the Stump",
+      "body": "Watch where Isaiah's God keeps appearing across these four chapters, and a single motion shows itself. In chapter 6 the Holy One is on a throne, high and exalted, untouchable, surrounded by creatures who cannot look at Him. By chapter 9 He is a child - 'unto us a child is born' - small enough to be carried, named Mighty God and Prince of Peace in the same breath as 'son is given.' By chapter 11 He is lower still: not even a tree, but 'a shoot from the stump of Jesse,' a green sprig pushing up out of a royal line that has been cut down to a dead stump. The throne, the cradle, the stump - each one nearer the ground than the last.\n\nThis is the surprise hidden inside the word qadosh. We assume the Holy One, being wholly other, must stay distant; distance is what holiness seems to demand. Isaiah saw the opposite. The Holy One of Israel is so holy that His holiness will not be kept on a throne. It comes down to a man's unclean mouth with a coal. It comes down to a manger as a child. It comes down to a cut-off stump as a tender shoot. The descent is not God ceasing to be holy. The descent is what His holiness looks like when it turns toward us.\n\nAnd it does not stop coming down. By chapter 25 the Holy One has come all the way down to the place we cannot escape - the grave - and there 'He will swallow up death forever, and wipe away the tears from every face.'",
+      "historicalContext": "Isaiah prophesied in Jerusalem in the eighth century BC, as the northern kingdom fell to Assyria and Judah trembled under the same shadow. The image of Jesse's line as a felled stump (11:1) would land hard on people watching David's dynasty shrink toward collapse. To a nation staring at a cut-down family tree, Isaiah promised a living shoot - not a restoration of the old stump, but something new springing from what looked dead.",
+      "fascinatingFact": "Isaiah 6, 9, 11, and 25 each end Isaiah's God in a different posture, and they descend in order: enthroned (6), born (9), sprouting from a dead stump (11), and finally hosting a feast where He personally swallows death and wipes faces (25). Read together, they trace the whole arc of the gospel before the gospel - the Holy One coming all the way down to where we die.",
+      "content": "Watch where Isaiah's God keeps appearing across these four chapters, and a single motion shows itself. In chapter 6 the Holy One is on a throne, high and exalted, untouchable, surrounded by creatures who cannot look at Him. By chapter 9 He is a child - 'unto us a child is born' - small enough to be carried, named Mighty God and Prince of Peace in the same breath as 'son is given.' By chapter 11 He is lower still: not even a tree, but 'a shoot from the stump of Jesse,' a green sprig pushing up out of a royal line that has been cut down to a dead stump. The throne, the cradle, the stump - each one nearer the ground than the last.\n\nThis is the surprise hidden inside the word qadosh. We assume the Holy One, being wholly other, must stay distant; distance is what holiness seems to demand. Isaiah saw the opposite. The Holy One of Israel is so holy that His holiness will not be kept on a throne. It comes down to a man's unclean mouth with a coal. It comes down to a manger as a child. It comes down to a cut-off stump as a tender shoot. The descent is not God ceasing to be holy. The descent is what His holiness looks like when it turns toward us.\n\nAnd it does not stop coming down. By chapter 25 the Holy One has come all the way down to the place we cannot escape - the grave - and there 'He will swallow up death forever, and wipe away the tears from every face.'"
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "The Holy One Isaiah saw enthroned in chapter 6 is the same One named Mighty God and Prince of Peace as a newborn in chapter 9, the Spirit-anointed Branch of chapter 11, and the Lord who swallows death at His mountain feast in chapter 25. The wholly-other God keeps coming down.",
+      "modernApplication": "We tend to want a God who is either high or near - either holy enough to be worth worshiping or close enough to be worth trusting, as if you cannot have both. Isaiah refuses the trade. The God who terrifies the seraphim is the God who sends a coal to a sinner's lips. His nearness does not lower His holiness; His holiness is what makes His nearness astonishing.",
+      "connectionPoint": "The thread running through all four chapters is descent: throne, coal, cradle, stump, grave. Each step the Holy One takes is lower than the last, and each one is toward us, not away. Isaiah is watching the gospel take shape three-quarters of a millennium early - holiness that does not protect itself by staying distant, but proves itself by coming close.",
+      "newTestamentEcho": "John writes that when Isaiah saw the Lord high and exalted, 'he saw Jesus' glory and spoke about Him' (John 12:41). The thrice-holy King on the throne was Christ. And the same Christ came down past the cradle and the stump to a cross, where the coal that cleanses lips became a body broken to atone for the world - and then, as Isaiah promised, swallowed death forever in His own rising (1 Corinthians 15:54)."
+    },
+    {
+      "type": "reflection",
+      "prompt": "When you picture God, do you see Him mostly as high and far, or near and gentle - and what would it change to hold both at once, the way Isaiah had to?",
+      "additionalQuestions": [
+        "Isaiah's first honest word in God's presence was 'Woe is me.' When was the last time nearness to God showed you the truth about yourself before it comforted you?",
+        "The coal came to Isaiah; he did not climb to it. Where are you still trying to clean yourself up before you'll let God near?",
+        "Isaiah 25 promises the day God wipes the tears from every face. What grief are you carrying that you'd want His own hand to wipe away?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Holy, holy, holy Lord, You are higher than I can imagine and nearer than I deserve. I have wanted You small enough to manage or far enough to ignore. Forgive me. Let me see You as Isaiah saw You - high and exalted, the whole earth full of Your glory - and then send the coal anyway. Touch the unclean thing in me. You who came down to a cradle and a stump and a grave, come down to where I am, and do not leave me as You found me. Through Christ, whose glory Isaiah saw. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, before asking God for anything, sit for two minutes with the seraphim's words: Holy, holy, holy. Let the height land first. Then name aloud one 'unclean lips' thing you've kept God at arm's length from - and ask the One who comes down to come down to that.",
+      "leavingAtCross": [
+        "The instinct to clean myself up before I'll let God come close",
+        "The half-God I prefer - either too high to bother me or too gentle to change me",
+        "The fear that if God really saw me, He would stay on His throne"
+      ],
+      "receivingFromCross": [
+        "A holiness that does not flinch from my unclean lips but comes to them with fire",
+        "The cleansing word Isaiah heard: your iniquity is removed and your sin is atoned for",
+        "The promise of the mountain feast where the Holy One swallows death and wipes every face"
+      ],
+      "content": "Today, before asking God for anything, sit for two minutes with the seraphim's words: Holy, holy, holy. Let the height land first. Then name aloud one 'unclean lips' thing you've kept God at arm's length from - and ask the One who comes down to come down to that."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does the word qadosh ('holy') mean 'set apart' or 'wholly other' first, rather than 'morally good' - and why does Isaiah's vision answer it with 'Woe is me' instead of praise?",
+        "Trace the descent across the four chapters: where is the Holy One in chapter 6, in chapter 9, in chapter 11, and in chapter 25? What does each lower posture reveal?",
+        "Isaiah did not cleanse himself; the coal was carried to him. How does that order - cleansing comes to us, not from us - point forward to the cross?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one way you've been keeping God either too high or too near to actually deal with you, and talk about why.",
+        "Isaiah's ruin came before his usefulness ('Woe is me' before 'Here am I, send me'). Where might God be undoing you now in order to send you later?",
+        "Ask each other: what 'unclean lips' thing would you want the coal to touch this week - and will you let it?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 11:1-2",
+          "text": "Then a shoot will spring up from the stump of Jesse, and a Branch from his roots will bear fruit. The Spirit of the LORD will rest on Him— the Spirit of wisdom and understanding, the Spirit of counsel and strength, the Spirit of knowledge and fear of the LORD."
+        },
+        {
+          "reference": "Isaiah 25:8-9",
+          "text": "He will swallow up death forever. The Lord GOD will wipe away the tears from every face and remove the disgrace of His people from the whole earth. For the LORD has spoken. And in that day it will be said, \"Surely this is our God; we have waited for Him, and He has saved us.\""
+        },
+        {
+          "reference": "John 12:41",
+          "text": "Isaiah said these things because he saw Jesus' glory and spoke about Him."
+        },
+        {
+          "reference": "1 Corinthians 15:54",
+          "text": "When the perishable has been clothed with the imperishable and the mortal with immortality, then the saying that is written will come to pass: \"Death has been swallowed up in victory.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 6, 9, 11, 25",
+          "note": "Read the four chapters in one sitting, watching only for where God 'is' in each - enthroned, born, sprouting from a stump, hosting a feast. Notice the descent."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Isaiah",
+      "title": "Prophet of the Holy One of Israel",
+      "description": "An eighth-century BC prophet in Jerusalem, called in the year King Uzziah died through the throne-room vision of chapters 6. He prophesied across the reigns of several kings of Judah while Assyria swallowed the north. More than any other prophet, he names God 'the Holy One of Israel' - and more than any other, he sees that Holy One coming down: as a child born, a Branch from Jesse's stump, and the Lord who hosts a feast where death itself is swallowed.",
+      "keyQuote": "Woe is me, for I am ruined ... for my eyes have seen the King, the LORD of Hosts.",
+      "lessonForUs": "Isaiah's life turned on a vision that first ruined him and then sent him. He never traded the height of God for the nearness of God; he held both, and it made him the prophet who saw, centuries early, the glory of Christ.",
+      "heading": "Prophet of the Holy One of Israel"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1656,
+  "scriptureReference_full": "Isaiah 6:1-10, 13; 9:2, 6-7; 11:1-10; 25:1, 6-9",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qadosh, H6918; qedosh Yisrael) reflects standard lexical sources. The threefold qadosh as the only tripled divine attribute, and Isaiah's distinctive 'Holy One of Israel' title, are widely noted in Isaiah scholarship.",
+    "The identification of the enthroned Holy One with Christ follows John 12:41; the 'death swallowed up' link follows 1 Corinthians 15:54."
+  ]
 }

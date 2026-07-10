@@ -1,38 +1,185 @@
 {
   "day": 135,
-  "title": "Hezekiah's Reform — Day 2 — Building",
-  "teaser": "Day 135 of Bible 365 — 2 Kings 18-20",
+  "title": "The Snake Hezekiah Broke",
+  "teaser": "A young king tears down the holy places — and smashes the bronze serpent that once healed Israel. The cure had curdled into an idol. So he breaks it, and trusts the LORD instead.",
   "framework": "2 Kings 18-20 — Hezekiah's Reform",
-  "scriptureReference": "2 Kings 18-20",
+  "scriptureReference": "2 Kings 18:1-8",
   "chiastic_position": "building",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 135"
+      "type": "scripture",
+      "reference": "2 Kings 18:1-8",
+      "translation": "BSB",
+      "emphasis": [
+        "he did what was right in the eyes of the LORD",
+        "He also demolished the bronze snake called Nehushtan",
+        "Hezekiah trusted in the LORD"
+      ],
+      "hebrewOriginal": "וְכִתַּת נְחַשׁ הַנְּחֹשֶׁת אֲשֶׁר־עָשָׂה מֹשֶׁה כִּי עַד־הַיָּמִים הָהֵמָּה הָיוּ בְנֵי־יִשְׂרָאֵל מְקַטְּרִים לוֹ וַיִּקְרָא־לוֹ נְחֻשְׁתָּן",
+      "passage": "In the third year of the reign of Hoshea son of Elah over Israel, Hezekiah son of Ahaz became king of Judah. He was twenty-five years old when he became king, and he reigned in Jerusalem twenty-nine years. His mother's name was Abi, the daughter of Zechariah. And he did what was right in the eyes of the LORD, just as his father David had done. He removed the high places, shattered the sacred pillars, and cut down the Asherah poles. He also demolished the bronze snake called Nehushtan that Moses had made, for up to that time the Israelites had burned incense to it. Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him. He remained faithful to the LORD and did not turn from following Him; he kept the commandments that the LORD had given Moses. And the LORD was with Hezekiah, and he prospered wherever he went. He rebelled against the king of Assyria and refused to serve him. He defeated the Philistines as far as Gaza and its borders, from watchtower to fortified city."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**2 Kings 18-20**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 2 Kings 18-20 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נְחֻשְׁתָּן",
+      "transliteration": "Nehushtan",
+      "pronunciation": "neh-khoosh-TAHN",
+      "meaning": "a thing of bronze; the bronze thing",
+      "rootMeaning": "The name is a pun the king made on purpose. Nachash means snake. Nechoshet means bronze. Nechushtan fuses the two sounds and drains the holiness out of the object: not 'the LORD's healing sign,' just 'the bit of bronze.' To name a thing is to size it. Hezekiah renames the relic in order to shrink it back down to what it always was.",
+      "usageNote": "The bronze serpent was God's own idea. In Numbers 21 the LORD told Moses to make it, and everyone bitten who looked at it lived. Seven centuries later the people were still burning incense to it. The cure had outlived its moment and hardened into a god. Hezekiah does not retire the relic to a place of honor. He grinds it to powder and hangs a deflating nickname on what is left.",
+      "wordByWord": [
+        {
+          "word": "וְכִתַּת",
+          "transliteration": "vekhittat",
+          "meaning": "and he crushed, broke to pieces, pulverized"
+        },
+        {
+          "word": "נְחַשׁ הַנְּחֹשֶׁת",
+          "transliteration": "nechash hannechoshet",
+          "meaning": "the serpent of bronze"
+        },
+        {
+          "word": "אֲשֶׁר־עָשָׂה מֹשֶׁה",
+          "transliteration": "asher asah Mosheh",
+          "meaning": "which Moses had made"
+        },
+        {
+          "word": "מְקַטְּרִים לוֹ",
+          "transliteration": "meqatterim lo",
+          "meaning": "burning incense to it - the verb of worship offered to a god"
+        },
+        {
+          "word": "נְחֻשְׁתָּן",
+          "transliteration": "Nehushtan",
+          "meaning": "merely-a-thing-of-bronze; the name that strips the aura away"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "נָחָשׁ / נְחֹשֶׁת",
+          "reference": "Nachash (snake) and nechoshet (bronze) sound almost the same in Hebrew, and the text leans on the echo. The object that once pointed away from itself toward God had become a name that points only back at itself."
+        }
+      ],
+      "strongsNumber": "H5180",
+      "definition": "Nehushtan; a diminishing, deflating name for the bronze serpent, 'merely a piece of bronze'",
+      "usage": "The verb vekhittat is violent and final - the same root used elsewhere for beating swords into plowshares. Hezekiah does not file the serpent away in a treasury. He breaks it so completely that no one can ever kneel to it again."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hezekiah's Reform. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the King who weeps for his city (Luke 19:41).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What a Young King Tore Down",
+      "body": "After a run of kings who let Judah drift, a twenty-five-year-old takes the throne and does what almost no one before him had the nerve to do. He cleans house. The writer of 2 Kings, who is sparing with praise, says of Hezekiah what he says of no other king of Judah: \"No king of Judah was like him, either before him or after him.\"\n\nLook at what the cleaning meant. He removed the high places - the local hilltop shrines where people worshiped, often sincerely, often with the LORD's name on their lips, but on their own terms and in spots God had never appointed. He shattered the sacred pillars and cut down the Asherah poles, the standing stones and carved trees borrowed from the religion of the surrounding nations. None of this was painless. The high places were old, familiar, beloved. People had prayed there for generations. To tear them down would have struck many as an attack on faith itself.\n\nThen comes the line that stops you. Among the obvious idols, Hezekiah destroys the bronze snake that Moses had made. This was no Canaanite totem smuggled across the border. This was a genuine relic of Israel's own rescue, a thing God Himself had once commanded into being. And the king grinds it to powder, because the people had begun burning incense to it. The gift had been turned into a god.",
+      "keyInsight": "Hezekiah's reform did not stop at the foreign idols. It reached all the way into Israel's own holy past and broke a relic of God's grace that had quietly become a rival to God.",
+      "content": "After a run of kings who let Judah drift, a twenty-five-year-old takes the throne and does what almost no one before him had the nerve to do. He cleans house. The writer of 2 Kings, who is sparing with praise, says of Hezekiah what he says of no other king of Judah: \"No king of Judah was like him, either before him or after him.\"\n\nLook at what the cleaning meant. He removed the high places - the local hilltop shrines where people worshiped, often sincerely, often with the LORD's name on their lips, but on their own terms and in spots God had never appointed. He shattered the sacred pillars and cut down the Asherah poles, the standing stones and carved trees borrowed from the religion of the surrounding nations. None of this was painless. The high places were old, familiar, beloved. People had prayed there for generations. To tear them down would have struck many as an attack on faith itself.\n\nThen comes the line that stops you. Among the obvious idols, Hezekiah destroys the bronze snake that Moses had made. This was no Canaanite totem smuggled across the border. This was a genuine relic of Israel's own rescue, a thing God Himself had once commanded into being. And the king grinds it to powder, because the people had begun burning incense to it. The gift had been turned into a god."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Cross on the Kitchen Wall",
+      "body": "A woman I know inherited a small wooden cross from her grandmother. It had hung over the kitchen table her whole childhood. Every meal, every hard conversation, every quiet morning happened beneath it. When her grandmother died, the cross came to her, and she hung it over her own table without a second thought.\n\nYears later, in a season when her faith had thinned almost to nothing, she caught herself touching the cross on her way out the door. Not praying. Touching it, the way you knock on wood, the way you keep a lucky coin in your pocket. She realized one afternoon that she could not remember the last time she had actually spoken to God, but she had not missed a single day of touching the wood.\n\nThe cross had become a charm. The thing that was supposed to point her toward Christ had quietly become a small god of its own, something to handle for safety while the One it pictured went unaddressed for months. She did not throw it away. But she took it down for a while, until she could look at it again and see through it to the Lord instead of stopping at the grain of the wood.",
+      "connectionToTheme": "Even the holiest objects in our lives can curdle from windows into walls - things that once pointed us to God become substitutes we trust instead of Him.",
+      "content": "A woman I know inherited a small wooden cross from her grandmother. It had hung over the kitchen table her whole childhood. Every meal, every hard conversation, every quiet morning happened beneath it. When her grandmother died, the cross came to her, and she hung it over her own table without a second thought.\n\nYears later, in a season when her faith had thinned almost to nothing, she caught herself touching the cross on her way out the door. Not praying. Touching it, the way you knock on wood, the way you keep a lucky coin in your pocket. She realized one afternoon that she could not remember the last time she had actually spoken to God, but she had not missed a single day of touching the wood.\n\nThe cross had become a charm. The thing that was supposed to point her toward Christ had quietly become a small god of its own, something to handle for safety while the One it pictured went unaddressed for months. She did not throw it away. But she took it down for a while, until she could look at it again and see through it to the Lord instead of stopping at the grain of the wood."
+    },
+    {
+      "type": "insight",
+      "heading": "When the Cure Becomes the Disease",
+      "body": "Go back to where the bronze serpent began. In the wilderness the people were dying of snakebite, and God told Moses to mount a bronze snake on a pole. \"When anyone who is bitten looks at it, he will live\" (Numbers 21:8). The bronze had no power in itself. The power was in the looking, and the looking was an act of trust in the God who had promised to heal. The serpent was a window. You looked through it to the LORD, and you lived.\n\nSomething happened across the centuries. The window became a wall. People stopped looking through the bronze to God and started looking at the bronze as God. They burned incense to it. The very object God had given to rescue them became the thing that pulled their worship away from Him. The cure had become the disease.\n\nThis is the quiet tragedy Hezekiah saw and most kings missed. It is easy to spot a foreign idol - a Canaanite pole, a borrowed god with a borrowed name. It is far harder to break a piece of your own sacred history. The Asherah poles were someone else's religion. Nehushtan was Israel's own. And of everything Hezekiah destroyed, the bronze serpent is the one Scripture lingers on, because it exposes the most dangerous idolatry of all: the kind that grows out of a real gift from God, that keeps God's name on its lips, that feels like faithfulness while it slowly trades the Giver for the gift.",
+      "historicalContext": "Hezekiah reigned in Judah in the late eighth century BC, in the shadow of the Assyrian empire that had just swallowed the northern kingdom of Israel. His reform was not safe political theater; it was a wholesale reordering of the nation's worship at the very moment Judah's survival looked most fragile. The bronze serpent he broke had, by then, been venerated for roughly seven hundred years.",
+      "fascinatingFact": "Hezekiah is the only king of Judah of whom 2 Kings says there was none like him before or after - a superlative the same book elsewhere gives, in different words, to Josiah. Two reforming kings, one unmatched verdict each. The trait they share is not military success or wealth but the willingness to tear down what everyone else had learned to live with.",
+      "content": "Go back to where the bronze serpent began. In the wilderness the people were dying of snakebite, and God told Moses to mount a bronze snake on a pole. \"When anyone who is bitten looks at it, he will live\" (Numbers 21:8). The bronze had no power in itself. The power was in the looking, and the looking was an act of trust in the God who had promised to heal. The serpent was a window. You looked through it to the LORD, and you lived.\n\nSomething happened across the centuries. The window became a wall. People stopped looking through the bronze to God and started looking at the bronze as God. They burned incense to it. The very object God had given to rescue them became the thing that pulled their worship away from Him. The cure had become the disease.\n\nThis is the quiet tragedy Hezekiah saw and most kings missed. It is easy to spot a foreign idol - a Canaanite pole, a borrowed god with a borrowed name. It is far harder to break a piece of your own sacred history. The Asherah poles were someone else's religion. Nehushtan was Israel's own. And of everything Hezekiah destroyed, the bronze serpent is the one Scripture lingers on, because it exposes the most dangerous idolatry of all: the kind that grows out of a real gift from God, that keeps God's name on its lips, that feels like faithfulness while it slowly trades the Giver for the gift."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Hezekiah broke the bronze serpent because the people had turned a God-given means of healing into an object of worship - and then he simply trusted the LORD instead.",
+      "modernApplication": "We collect our own bronze serpents: the worship style that once moved us and now we defend like an idol, the ministry we built that quietly became our identity, the spiritual high we keep trying to recreate, the verse we treat like a lucky charm. None of these started as sins. Most started as genuine gifts. The danger is not in having them but in burning incense to them - in trusting the gift to do what only the Giver can do.",
+      "connectionPoint": "Hezekiah's question was not 'Is this thing pagan?' It was 'Is this thing standing where God alone should stand?' That question reaches into the most religious corners of our lives, the places we are proudest of, and asks whether we are looking through them to God or stopping at them instead.",
+      "newTestamentEcho": "The deepest turn comes from Jesus' own lips. Of all the images He could have chosen for His death, He reached for this one: \"Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes in Him may have eternal life\" (John 3:14-15). The very serpent Hezekiah smashed because it had become an idol is the thing Jesus names as a picture of Himself. The relic was never meant to be worshiped; it was meant to point forward to the One who would be lifted up so that all who look in faith would live."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What good gift in your spiritual life has quietly slid from a window into a wall - something that once pointed you to God and now you trust in place of Him?",
+      "additionalQuestions": [
+        "Is there a 'Nehushtan' you would find almost impossible to break, not because it is sinful, but because it is precious and familiar?",
+        "Where are you 'burning incense' to a method, a memory, or an experience - returning to it for the comfort that only God can actually give?",
+        "Hezekiah renamed the bronze serpent to strip its aura. What would it mean to name one of your idols plainly today: not 'my calling' or 'my tradition,' but simply 'a thing I have trusted instead of God'?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I am quick to spot the obvious idols and slow to see the ones I have built out of good things. Show me my Nehushtan - the gift I have started to grip as a god, the relic of an old grace I keep returning to instead of returning to You. Give me Hezekiah's nerve to break what needs breaking, even when it is precious, even when it is mine. Teach me to look through every gift to the One who gave it, and through every sign to the Son who was lifted up so that I would look and live. You alone are God. Let me trust You, and not the bronze. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Name one good thing in your life that has drifted toward becoming an idol - a method, a relic, an experience, a role. This week, deliberately go to God directly, without that thing in your hands, and trust Him for what you have been trusting it to give.",
+      "leavingAtCross": [
+        "The bronze serpents I have kept too long - gifts that quietly became gods",
+        "The instinct to defend my familiar holy things more fiercely than I follow the holy God",
+        "The fear that breaking an idol will leave me with nothing, when it leaves me with Him"
+      ],
+      "receivingFromCross": [
+        "The freedom of trusting the Giver instead of clutching the gift",
+        "Eyes that look through every sign to the Christ who was lifted up",
+        "The settled ground Hezekiah stood on: the LORD was with him because he trusted, not because he kept the right relics"
+      ],
+      "content": "Name one good thing in your life that has drifted toward becoming an idol - a method, a relic, an experience, a role. This week, deliberately go to God directly, without that thing in your hands, and trust Him for what you have been trusting it to give."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does Scripture single out the bronze serpent, when Hezekiah also destroyed the high places and Asherah poles? What makes Nehushtan a harder and more revealing thing to break?",
+        "What is the difference between using an object to look toward God and worshiping the object itself - and where is that line in your own life?",
+        "How does Jesus' choice of the lifted-up serpent (John 3:14-15) reframe the very thing Hezekiah destroyed?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one 'good gift' in your faith life that you suspect you have started to lean on more than you lean on God.",
+        "Talk honestly about how hard it would be to 'break' it - and why the difficulty itself might be the warning sign.",
+        "Ask each other: am I looking through my spiritual things to God, or have some of them become walls I have stopped looking past?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Numbers 21:8-9",
+          "text": "Then the LORD said to Moses, \"Make a fiery serpent and mount it on a pole. When anyone who is bitten looks at it, he will live.\" So Moses made a bronze snake and mounted it on a pole. If anyone who was bitten looked at the bronze snake, he would live."
+        },
+        {
+          "reference": "2 Kings 18:5",
+          "text": "Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him."
+        },
+        {
+          "reference": "John 3:14-15",
+          "text": "Just as Moses lifted up the snake in the wilderness, so the Son of Man must be lifted up, that everyone who believes in Him may have eternal life."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "2 Kings 18-20",
+          "note": "Read all three chapters as one movement: the reform (ch. 18), the Assyrian siege and the LORD's deliverance (ch. 19), and Hezekiah's illness and the Babylonian envoys (ch. 20). Watch how the king who could break an idol still had to learn to trust God under pressure."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Hezekiah",
+      "title": "The King Who Broke the Relic",
+      "era": "late 8th century BC",
+      "description": "Son of the faithless king Ahaz, Hezekiah came to Judah's throne at twenty-five and reigned twenty-nine years in Jerusalem. Of him alone the writer of 2 Kings says no king of Judah was his equal. His reform reached past the obvious foreign idols to a relic of Israel's own rescue - the bronze serpent Moses had made - because the people had turned it into a god. The same chapters that praise his trust also show him tested to the limit by the Assyrian siege and by his own near-fatal illness.",
+      "key_trait": "The rare courage to tear down a beloved, God-given thing once it had taken God's place",
+      "keyQuote": "Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him.",
+      "lessonForUs": "Faithfulness is not only adding good things; sometimes it is having the nerve to break a good thing that has quietly become a god. Hezekiah teaches us to keep looking through every gift to the Giver, and through every sign to the Son who was lifted up.",
+      "heading": "The King Who Broke the Relic"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2595,
+  "scriptureReference_full": "2 Kings 18:1-8",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (Nehushtan, nachash/nechoshet wordplay, H5180) reflects standard lexical sources and the plain sense of 2 Kings 18:4.",
+    "The bronze serpent's origin is recorded in Numbers 21:8-9; its fulfillment as a sign of Christ lifted up is named by Jesus in John 3:14-15."
+  ]
 }

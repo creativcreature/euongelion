@@ -1,38 +1,188 @@
 {
   "day": 293,
-  "title": "Mark: The Suffering Servant — Day 6 — Deeper Dive",
-  "teaser": "Day 293 of Bible 365 — Mark 1-16",
+  "title": "The Price He Names",
+  "teaser": "On the road up to Jerusalem, two friends ask for the best seats. Jesus answers with a word from the slave market: ransom. The whole Gospel of Mark has been walking toward this sentence.",
   "framework": "Mark 1-16 — Mark: The Suffering Servant",
-  "scriptureReference": "Mark 1-16",
+  "scriptureReference": "Mark 10:32-45",
   "chiastic_position": "deeper",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 293"
+      "type": "scripture",
+      "reference": "Mark 10:42-45",
+      "translation": "BSB",
+      "emphasis": [
+        "not this way among you",
+        "must be your servant",
+        "a ransom for many"
+      ],
+      "greekOriginal": "δοῦναι τὴν ψυχὴν αὐτοῦ λύτρον ἀντὶ πολλῶν",
+      "passage": "So Jesus called them together and said, \"You know that those regarded as rulers of the Gentiles lord it over them, and their superiors exercise authority over them. But it shall not be this way among you. Instead, whoever wants to become great among you must be your servant, and whoever wants to be first must be the slave of all. For even the Son of Man did not come to be served, but to serve, and to give His life as a ransom for many.\""
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Mark 1-16**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Mark 1-16 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύτρον",
+      "transliteration": "lytron",
+      "pronunciation": "LOO-tron",
+      "meaning": "ransom, the price paid to release a captive or buy a slave out of bondage",
+      "rootMeaning": "From lyo, 'to loose, to set free.' A lytron is not a vague gift; it is the specific sum laid down to unbind someone who is held. In the ancient world it was the money that bought a prisoner of war back from his captors or freed a slave at the temple. The word names a transaction, not a sentiment.",
+      "usageNote": "Mark 10:45 is one of only two places lytron appears in the Gospels, and both times it is paired with the same phrase. Jesus does not say He came to make a ransom available. He says He came to give His life as the ransom, the actual price counted out for actual people.",
+      "wordByWord": [
+        {
+          "word": "δοῦναι",
+          "transliteration": "dounai",
+          "meaning": "to give, to hand over - the infinitive of purpose; this is what He came to do"
+        },
+        {
+          "word": "τὴν ψυχὴν αὐτοῦ",
+          "transliteration": "ten psychen autou",
+          "meaning": "His life, His soul - not merely His effort, but His very self"
+        },
+        {
+          "word": "λύτρον",
+          "transliteration": "lytron",
+          "meaning": "ransom, release-price"
+        },
+        {
+          "word": "ἀντὶ",
+          "transliteration": "anti",
+          "meaning": "in place of, instead of - the preposition of substitution, one standing where another should have stood"
+        },
+        {
+          "word": "πολλῶν",
+          "transliteration": "pollon",
+          "meaning": "of many - the many who are bought back"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "διακονέω / diakoneo",
+          "reference": "The verb behind 'to serve' (Mark 10:45) is diakoneo, to wait at a table. It is the same word used of the angels who attended Jesus in the wilderness (Mark 1:13) and of Peter's mother-in-law who rose and served them (Mark 1:31). The One the angels waited on chooses to become the one who waits."
+        }
+      ],
+      "strongsNumber": "G3083",
+      "definition": "a ransom; the redemption price paid to release a captive from bondage",
+      "usage": "The little word anti carries the weight of the sentence: not a ransom alongside the many, but a ransom in the place of the many. One life set down where many lives were owed."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Mark: The Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ as ransom (Mark 10:45).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "He Tells Them He Will Die. They Ask for Thrones.",
+      "body": "They are walking uphill. Mark says Jesus is out in front, striding toward Jerusalem, and the men behind Him are uneasy - some amazed, some afraid. For the third time He stops and tells them plainly what waits at the top of the road: He will be handed over, mocked, spat on, flogged, killed, and after three days raised. It is the most detailed thing He has said about His own death.\n\nAnd into that silence James and John lean in with a request. \"Teacher, we want You to do for us whatever we ask.\" They want the two best seats - one at His right, one at His left, in His glory. They have heard the word glory and skipped over the words flogged and killed. They are already arranging the seating chart for a kingdom they have completely misread.\n\nIt would be easy to scold them, but their request is honest in a way ours usually isn't. They want to be near Him, and they want to matter. So do we. The problem is not that they want greatness; it is that they think greatness is a chair you are given rather than a posture you take. When the other ten hear about it, they are furious - not because the request was wrong, but because James and John got there first. The whole Twelve are playing the same game.\n\nJesus does not shame them. He redefines the prize. The Gentile rulers, He says, lord it over people and throw their weight around; that is what power looks like out there. \"But it shall not be this way among you.\" The greatest among you will be the servant. The first will be the slave of all. He inverts the ladder entirely - and then He puts Himself on the bottom rung, where the proof is.",
+      "keyInsight": "The disciples wanted to be enthroned beside His glory. Jesus showed them that His glory is His self-giving - and that the seat they should want is the towel, not the throne.",
+      "content": "They are walking uphill. Mark says Jesus is out in front, striding toward Jerusalem, and the men behind Him are uneasy - some amazed, some afraid. For the third time He stops and tells them plainly what waits at the top of the road: He will be handed over, mocked, spat on, flogged, killed, and after three days raised. It is the most detailed thing He has said about His own death.\n\nAnd into that silence James and John lean in with a request. \"Teacher, we want You to do for us whatever we ask.\" They want the two best seats - one at His right, one at His left, in His glory. They have heard the word glory and skipped over the words flogged and killed. They are already arranging the seating chart for a kingdom they have completely misread.\n\nIt would be easy to scold them, but their request is honest in a way ours usually isn't. They want to be near Him, and they want to matter. So do we. The problem is not that they want greatness; it is that they think greatness is a chair you are given rather than a posture you take. When the other ten hear about it, they are furious - not because the request was wrong, but because James and John got there first. The whole Twelve are playing the same game.\n\nJesus does not shame them. He redefines the prize. The Gentile rulers, He says, lord it over people and throw their weight around; that is what power looks like out there. \"But it shall not be this way among you.\" The greatest among you will be the servant. The first will be the slave of all. He inverts the ladder entirely - and then He puts Himself on the bottom rung, where the proof is."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Man Who Stayed Behind Bars",
+      "body": "In a prison camp in 1941, a man went missing at roll call. The rule was brutal and simple: when one escaped, ten others were chosen to die in his place. The guards walked the line and pointed. One of the chosen men began to weep - he had a wife and children, he said, and who would care for them now.\n\nA quiet prisoner, a priest, stepped out of the rows and asked to take the weeping man's place. The request was so strange the commander allowed it. The priest went into the starvation bunker instead of the father. The father walked free and lived another fifty-three years.\n\nWhat moves us about that story is not only the courage. It is the arithmetic. One life was substituted for another, deliberately, by name. The priest did not die in some general gesture toward the camp's suffering. He stood in one specific place that one specific man was meant to stand, and the man went home because of it.\n\nThat is the shape of the word Jesus reaches for on the road to Jerusalem. Not a noble feeling. A substitution. A life given in the place of a life.",
+      "connectionToTheme": "A ransom is never abstract - it is one definite life set down so a definite captive goes free. Jesus names His death in exactly those terms: in the place of many.",
+      "content": "In a prison camp in 1941, a man went missing at roll call. The rule was brutal and simple: when one escaped, ten others were chosen to die in his place. The guards walked the line and pointed. One of the chosen men began to weep - he had a wife and children, he said, and who would care for them now.\n\nA quiet prisoner, a priest, stepped out of the rows and asked to take the weeping man's place. The request was so strange the commander allowed it. The priest went into the starvation bunker instead of the father. The father walked free and lived another fifty-three years.\n\nWhat moves us about that story is not only the courage. It is the arithmetic. One life was substituted for another, deliberately, by name. The priest did not die in some general gesture toward the camp's suffering. He stood in one specific place that one specific man was meant to stand, and the man went home because of it.\n\nThat is the shape of the word Jesus reaches for on the road to Jerusalem. Not a noble feeling. A substitution. A life given in the place of a life."
+    },
+    {
+      "type": "insight",
+      "heading": "The Sentence the Whole Gospel Was Walking Toward",
+      "body": "Mark wrote the shortest Gospel, and he wrote it at a sprint. Verse after verse runs on the word immediately - Jesus moves, heals, teaches, crosses the sea, and moves again. Most of the book is a question nobody can quite answer: who is this? Demons know. The crowds guess. Even Peter, when he finally says \"You are the Christ,\" gets the title right and the meaning wrong, and is rebuked moments later for refusing the cross.\n\nThen, at the exact center of the book, the running stops. Mark 10:45 is the first time Jesus says, in plain words, why He came. Not to teach, though He taught. Not to heal, though He healed. He came to give His life as a ransom for many. Everything before this verse has been building the question; everything after it is the answer being paid out - the arrest, the trial, the nails, the cry of dereliction, the torn temple curtain, the centurion's confession at the foot of the cross: \"Truly this man was the Son of God\" (Mark 15:39).\n\nNotice that the centurion - a Gentile soldier, a man who lorded authority over others for a living - understands who Jesus is not when he sees a throne, but when he sees Him die. The whole Gospel has been arguing this: the kingship of Jesus is revealed in the giving away of His life. The crown and the cross are the same thing seen from two sides.",
+      "historicalContext": "Mark is widely held to be the earliest of the four Gospels, written in the 60s AD, and early tradition (Papias, around 130 AD, preserved by Eusebius) connects it to Peter's preaching in Rome. If so, this is a community living under the shadow of persecution - Christians for whom following a crucified Lord could mean their own arrest. To them Mark hands a King whose throne is a cross and whose greatness is service. The word lytron would have landed hard on people who knew the slave markets of the empire first-hand.",
+      "fascinatingFact": "Mark 10:45 sits almost exactly at the structural turn of the book. Scholars often divide Mark in half at Peter's confession (8:29) and the first passion prediction; from there Jesus is set toward Jerusalem and the road only goes one direction. The ransom saying is the keystone of that second half - the verse that names the destination the whole journey has been climbing toward.",
+      "content": "Mark wrote the shortest Gospel, and he wrote it at a sprint. Verse after verse runs on the word immediately - Jesus moves, heals, teaches, crosses the sea, and moves again. Most of the book is a question nobody can quite answer: who is this? Demons know. The crowds guess. Even Peter, when he finally says \"You are the Christ,\" gets the title right and the meaning wrong, and is rebuked moments later for refusing the cross.\n\nThen, at the exact center of the book, the running stops. Mark 10:45 is the first time Jesus says, in plain words, why He came. Not to teach, though He taught. Not to heal, though He healed. He came to give His life as a ransom for many. Everything before this verse has been building the question; everything after it is the answer being paid out - the arrest, the trial, the nails, the cry of dereliction, the torn temple curtain, the centurion's confession at the foot of the cross: \"Truly this man was the Son of God\" (Mark 15:39).\n\nNotice that the centurion - a Gentile soldier, a man who lorded authority over others for a living - understands who Jesus is not when he sees a throne, but when he sees Him die. The whole Gospel has been arguing this: the kingship of Jesus is revealed in the giving away of His life. The crown and the cross are the same thing seen from two sides."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "On the road to Jerusalem, with His death three sentences behind Him, Jesus named the purpose of His life in a single image: the Son of Man came to give His life as a ransom in the place of many.",
+      "modernApplication": "We are still arranging seating charts. We measure our days by how high we have climbed, how much we are needed, how many people answer to us. Jesus does not tell us to stop wanting to matter. He tells us where mattering is actually found - not above people, but underneath them, holding them up. The towel, not the throne. Whoever wants to be first must be the slave of all.",
+      "connectionPoint": "The word ransom does not appear from nowhere. Seven centuries earlier Isaiah had sung of a Servant who would be pierced for our transgressions, who would bear the iniquities of many and by His knowledge justify them (Isaiah 53:5, 11). Jesus picks up that Servant Song and folds it into one sentence: He is the Servant of Isaiah, the one who suffers in the place of the people. Paul later hands the same truth to Timothy almost word for word - Christ Jesus \"gave Himself as a ransom for all\" (1 Timothy 2:6).",
+      "newTestamentEcho": "Paul tells the Philippians the full arc of it: Christ \"emptied Himself, taking the form of a servant\" and \"humbled Himself and became obedient to death - even death on a cross\" (Philippians 2:7-8). The God who deserved every throne chose the lowest seat - and the giving of His life was not the defeat of His glory but the showing of it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you asking for the seat at the right hand - and what would it look like, today, to ask for the towel instead?",
+      "additionalQuestions": [
+        "James and John heard 'glory' and skipped over 'flogged and killed.' Where are you holding on to a version of the good life that quietly edits out the cost of love?",
+        "Jesus calls greatness a posture, not a position. Name one person you have authority over - at work, at home, in church. What would serving them, rather than ruling them, actually require this week?",
+        "The word is anti - in your place. Sit for a moment with the fact that the ransom was not paid to many but for you, by name. What rises in you when you let it be that personal?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "humble-surrender",
+      "prayerText": "Lord Jesus, I have spent more of my life asking for the good seat than for the towel. I have wanted to matter the way the world counts mattering - to be served, to be first, to be above. Forgive me. You who deserved every throne came to wait at the table, and You gave Your life as a ransom in my place. Let that undo my scrambling. Put the towel in my hands today. Make me great the only way You call great: low enough to lift someone else. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find one concrete way to serve someone you would normally expect to serve you - quietly, without announcing it. Let it be small and real: a task you would usually delegate, a need you would usually overlook. Practice the towel before you preach about it.",
+      "leavingAtCross": [
+        "The seating-chart instinct that measures my worth by how high I have climbed",
+        "The version of greatness that wants to be served instead of to serve",
+        "The quiet editing of love that keeps the glory and skips the cost"
+      ],
+      "receivingFromCross": [
+        "A ransom I could never pay, set down in my place, for me by name",
+        "A new definition of greatness - low enough to lift someone else",
+        "Freedom from the climb, because the only seat that mattered has already been bought for me"
+      ],
+      "content": "Today, find one concrete way to serve someone you would normally expect to serve you - quietly, without announcing it. Let it be small and real: a task you would usually delegate, a need you would usually overlook. Practice the towel before you preach about it."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What does the Greek word lytron literally mean, and why does the little preposition anti ('in the place of') matter so much for what Jesus is claiming about His death?",
+        "Why is it significant that Mark places this sentence right after the third time Jesus predicts His suffering - and right after James and John ask for the best seats?",
+        "How does the Roman centurion's confession at the cross (Mark 15:39) confirm what Jesus said about where His true glory would be seen?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area of your life where you are still asking for the seat at the right hand - a place you want to be served, recognized, or put first.",
+        "Talk honestly about the difference between wanting to do great things for God and being willing to be the slave of all. Which one is harder for you, and why?",
+        "Tell each other one specific person you will serve this week in a way that costs you something, and check back on it."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 8:31",
+          "text": "Then He began to teach them that the Son of Man must suffer many things and be rejected by the elders, chief priests, and scribes, and that He must be killed and after three days rise again."
+        },
+        {
+          "reference": "Isaiah 53:5",
+          "text": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed."
+        },
+        {
+          "reference": "Philippians 2:7-8",
+          "text": "but emptied Himself, taking the form of a servant, being made in human likeness. And being found in appearance as a man, He humbled Himself and became obedient to death - even death on a cross."
+        },
+        {
+          "reference": "1 Timothy 2:6",
+          "text": "who gave Himself as a ransom for all - the testimony that was given at just the right time."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Mark 10:32-45",
+          "note": "Read the passage as a single scene. Watch the contrast between Jesus's third passion prediction (vv. 32-34) and the disciples' request for glory (vv. 35-37), and notice how the ransom saying (v. 45) answers both at once."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "James and John, the Sons of Zebedee",
+      "title": "The Brothers Who Asked for Thrones",
+      "description": "Two fishermen Jesus called early (Mark 1:19-20) and named the 'Sons of Thunder' (Mark 3:17). Part of the inner three who saw the Transfiguration and would later sleep in Gethsemane, they here ask for the two best seats in the kingdom - moments after Jesus has described how He will die. Jesus answers not by refusing them company in His suffering but by promising it: 'You will drink the cup that I drink' (Mark 10:39). Church tradition records that James was the first apostle martyred (Acts 12:2) and that John lived longest of the Twelve. The cup they so casually claimed, they were in fact given.",
+      "keyQuote": "Grant that one of us may sit at Your right hand and the other at Your left in Your glory.",
+      "lessonForUs": "James and John are not villains; they are us on a good day - close to Jesus, sincere, and completely confused about what greatness is. The Lord did not crush their ambition. He converted it, pointing it down the ladder toward service, where He had already gone ahead of them.",
+      "heading": "The Brothers Who Asked for Thrones"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2569,
+  "scriptureReference_full": "Mark 10:32-45",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (lytron G3083, diakoneo G1247, the substitutionary force of anti) reflects standard lexical sources.",
+    "The 1941 account is the witness of Maximilian Kolbe at Auschwitz, who offered his life in place of fellow prisoner Franciszek Gajowniczek; the substitution and Gajowniczek's survival are matters of documented record.",
+    "The dating of Mark and its connection to Peter's preaching in Rome rests on early testimony from Papias (c. 130 AD), preserved by Eusebius, Ecclesiastical History 3.39; precise dating is debated among scholars."
+  ]
 }

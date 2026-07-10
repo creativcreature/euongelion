@@ -1,38 +1,175 @@
 {
   "day": 236,
-  "title": "Jeremiah: New Covenant — Day 5 — Resolution",
-  "teaser": "Day 236 of Bible 365 — Jeremiah 31",
+  "title": "The law moves inside",
+  "teaser": "Israel broke the covenant carved in stone. So God promises a new one, written where no one can erase it — on the heart. At the table, Jesus names the cup that makes it true.",
   "framework": "Jeremiah 31 — Jeremiah: New Covenant",
   "scriptureReference": "Jeremiah 31",
   "chiastic_position": "resolution",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 236"
+      "type": "scripture",
+      "reference": "Jeremiah 31:31-34",
+      "translation": "BSB",
+      "emphasis": [
+        "a new covenant",
+        "inscribe it on their hearts",
+        "they will all know Me",
+        "remember their sins no more"
+      ],
+      "hebrewOriginal": "וְכָרַתִּי אֶת־בֵּית יִשְׂרָאֵל וְאֶת־בֵּית יְהוּדָה בְּרִית חֲדָשָׁה",
+      "passage": "Behold, the days are coming, declares the LORD, when I will make a new covenant with the house of Israel and with the house of Judah. It will not be like the covenant I made with their fathers when I took them by the hand to lead them out of the land of Egypt— a covenant they broke, though I was a husband to them,” declares the LORD. “But this is the covenant I will make with the house of Israel after those days, declares the LORD. I will put My law in their minds and inscribe it on their hearts. And I will be their God, and they will be My people. No longer will each man teach his neighbor or his brother, saying, ‘Know the LORD,’ because they will all know Me, from the least of them to the greatest, declares the LORD. For I will forgive their iniquities and will remember their sins no more.”"
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Jeremiah 31**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Jeremiah 31 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּרִית חֲדָשָׁה",
+      "transliteration": "berit chadashah",
+      "pronunciation": "buh-REET kha-da-SHAH",
+      "meaning": "a new covenant; a fresh, renewed binding promise",
+      "rootMeaning": "Berit is a covenant - a binding bond between two parties, in the oldest practice sealed in the blood of a cut sacrifice. Chadashah comes from the root chadash, to make new or to renew - the same root behind the new moon that returns fresh each month. The full phrase appears here, and only here, in the Hebrew Bible.",
+      "usageNote": "Jeremiah 31:31 is the single Old Testament occurrence of the exact phrase berit chadashah. Centuries later the Greek of the New Testament, he kaine diatheke, simply carries this phrase over into Greek. The very name 'New Testament' - new covenant - is borrowed from this verse.",
+      "wordByWord": [
+        {
+          "word": "וְכָרַתִּי",
+          "transliteration": "vekharati",
+          "meaning": "and I will cut - the verb for making a covenant, as one cuts a sacrifice in two"
+        },
+        {
+          "word": "בְּרִית",
+          "transliteration": "berit",
+          "meaning": "covenant, binding bond, sworn promise"
+        },
+        {
+          "word": "חֲדָשָׁה",
+          "transliteration": "chadashah",
+          "meaning": "new, renewed, freshly made"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "כָּתַב / katav",
+          "reference": "In verse 33 God says He will 'inscribe' the law on hearts - the verb katav, to write. The same word describes the tablets at Sinai written by the finger of God (Exodus 31:18). The first covenant was written on stone; the new one is written on flesh."
+        }
+      ],
+      "strongsNumber": "H1285",
+      "definition": "berit: a covenant, treaty, or binding agreement, frequently sealed by sacrifice",
+      "usage": "Hebrew does not say a covenant is 'made' but 'cut' (karat), because the oldest covenants were ratified by cutting an animal in two and passing between the pieces (Genesis 15). To promise a new covenant is to promise a new cutting - new blood, freshly spilled."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Jeremiah: New Covenant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ ratifies the new covenant (Luke 22:20).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "What Stone Could Not Hold",
+      "body": "All week we have walked with a prophet who watched his city fall. Jeremiah preached to a people who would not listen, in a kingdom days from collapse, and most of what he was given to say was hard. Then, near the center of the book, the tone breaks open. Chapter 31 is the song inside the lament - the place where the man Scripture remembers weeping is handed something to hope for.\n\nThe problem he names is the oldest one there is. God once took a freed slave-people 'by the hand' and led them out of Egypt, and at Sinai He gave them a covenant carved into stone. The stone was perfect. The people were not. 'A covenant they broke,' God says plainly, 'though I was a husband to them.' That last word matters. The broken covenant is not described as a failed contract but as a betrayed marriage. The law on the tablets was never the flaw. The flaw was that it sat outside the people, where it could be read and admired and disobeyed, but never loved.\n\nSo God promises to do what the law had never been able to do for itself. He will write it again - but this time not on stone. 'I will put My law in their minds and inscribe it on their hearts.' The commands will not change; the location will. What once stood over the people as a demand will be set down inside them as a desire. And the result is a kind of knowing that needs no middleman: 'they will all know Me, from the least of them to the greatest.'"
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Note on the Mirror",
+      "body": "A friend who got sober years ago told me he spent his first month covered in reminders. Index cards on the bathroom mirror. A note taped to the inside of the front door. A phone alarm at seven each evening that just said, in his own typing, don't. He needed the rules outside himself because inside himself there was nothing yet he could trust.\n\nHe kept those cards a long time. And then one day he noticed he had stopped reading them. Not because the danger was gone, but because somewhere along the way the thing the cards were trying to say had moved. It had gone from the mirror into him. He no longer needed to be told don't; not wanting to had become part of who he was. He left one card up out of gratitude. The rest he threw away.\n\nThat is the difference Jeremiah 31 is reaching for. A rule on the wall can govern what your hands do. It cannot change what your heart wants. The promise here is not a stricter card on the mirror. It is the slow miracle of the command becoming the desire - the law on the wall finally moving into the room of the heart.",
+      "connectionToTheme": "The new covenant is not better rules but a relocated law - moved from outside the person, where it only accuses, to inside, where it begins to transform.",
+      "content": "A friend who got sober years ago told me he spent his first month covered in reminders. Index cards on the bathroom mirror. A note taped to the inside of the front door. A phone alarm at seven each evening that just said, in his own typing, don't. He needed the rules outside himself because inside himself there was nothing yet he could trust.\n\nHe kept those cards a long time. And then one day he noticed he had stopped reading them. Not because the danger was gone, but because somewhere along the way the thing the cards were trying to say had moved. It had gone from the mirror into him. He no longer needed to be told don't; not wanting to had become part of who he was. He left one card up out of gratitude. The rest he threw away.\n\nThat is the difference Jeremiah 31 is reaching for. A rule on the wall can govern what your hands do. It cannot change what your heart wants. The promise here is not a stricter card on the mirror. It is the slow miracle of the command becoming the desire - the law on the wall finally moving into the room of the heart."
+    },
+    {
+      "type": "insight",
+      "heading": "The Last Promise Is the Floor Under All the Others",
+      "body": "Read the promises of verses 33 and 34 in order and notice they are not a flat list. They build, and they rest on the last one. God will write the law within. God will be their God and they His people. They will all know Him directly. And then the foundation under all three: 'For I will forgive their iniquities and will remember their sins no more.'\n\nThat small word 'for' is doing the heaviest lifting in the chapter. The inner law, the restored relationship, the shared knowing - none of it can stand on a record of sin that is still open. Israel did not break the first covenant by accident; they broke it by sin, and the sin was still there, demanding its account. So before God describes the new heart, He settles the old debt. The mind God reaches into to write His law is a mind whose sins He has already chosen not to remember.\n\nThis is the order grace always moves in. Forgiveness is not the reward at the end of transformation; it is the ground transformation stands on. God does not wait for the heart to be clean before He writes on it. He clears it first - He forgives, He chooses to forget - and on that quieted ground He begins, gently, to write.",
+      "historicalContext": "Jeremiah likely received these words during the final agony of Judah, between the first Babylonian deportation of 597 BC and Jerusalem's destruction in 586 BC. The promise of a covenant that could not be broken was spoken to people watching the visible signs of the old one - the city, the temple, the land - being torn down around them. The hope was placed, deliberately, in the rubble.",
+      "fascinatingFact": "The phrase 'remember their sins no more' does not describe God developing amnesia. In Hebrew, to 'remember' (zakar) means to act on something, to bring it forward and deal with it. To not remember sin is therefore a decision: God resolves never again to bring it forward against them. It is the most deliberate forgetting in the Bible.",
+      "content": "Read the promises of verses 33 and 34 in order and notice they are not a flat list. They build, and they rest on the last one. God will write the law within. God will be their God and they His people. They will all know Him directly. And then the foundation under all three: 'For I will forgive their iniquities and will remember their sins no more.'\n\nThat small word 'for' is doing the heaviest lifting in the chapter. The inner law, the restored relationship, the shared knowing - none of it can stand on a record of sin that is still open. Israel did not break the first covenant by accident; they broke it by sin, and the sin was still there, demanding its account. So before God describes the new heart, He settles the old debt. The mind God reaches into to write His law is a mind whose sins He has already chosen not to remember.\n\nThis is the order grace always moves in. Forgiveness is not the reward at the end of transformation; it is the ground transformation stands on. God does not wait for the heart to be clean before He writes on it. He clears it first - He forgives, He chooses to forget - and on that quieted ground He begins, gently, to write."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God promised a covenant He would cut anew - written not on stone but on the heart, founded on a forgiveness so complete that the sins behind the old broken covenant would never again be brought forward.",
+      "modernApplication": "Many of us are still living under stone. We keep the rules on the outside - the resolutions, the self-improvement, the religion we perform - and we keep failing them, because no command written on a wall has ever changed what a person actually loves. The good news here is not a better wall. It is God offering to do the inside work we cannot do for ourselves.",
+      "connectionPoint": "The thread Jeremiah began is picked up centuries later in an upper room. The letter to the Hebrews quotes this very passage at length and then says of Jesus that 'the covenant He mediates is better and is founded on better promises' (Hebrews 8:6) - and the better promises it goes on to name are these exact words of Jeremiah.",
+      "newTestamentEcho": "On the night He was betrayed, over a Passover cup, Jesus said: 'This cup is the new covenant in My blood, which is poured out for you' (Luke 22:20). He did not invent the phrase. He reached back across the centuries to Jeremiah's one-time-only words, berit chadashah, and said: this. Tonight. The covenant cut in My blood is the one the weeping prophet was promised."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life are you still trying to obey God from the outside in - keeping rules on the wall that have never reached your heart?",
+      "additionalQuestions": [
+        "Jeremiah's hope was placed in the rubble of a falling city. What hard place in your life might be exactly where God means to write something new?",
+        "God settles the debt of sin before He describes the new heart. What would change if you truly believed your sins were not only forgiven but 'remembered no more'?",
+        "What command of God do you wish you wanted to keep, but find you only know how to be told? Could that wish itself be the beginning of the law moving inward?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Father, I have lived too long under stone. I have read the rules on the wall and broken them anyway, and I am tired of pretending the problem is only that I have not tried hard enough. You said You would write Your law inside, on the heart, where I cannot reach. Do that in me. Settle the old debt I keep dragging back into the light - forgive what I have done, and remember it no more. And on that quiet, cleared ground, begin to write. Make me want what You command. Through Christ, who poured out the cup of the new covenant for me. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Take one rule you have been white-knuckling from the outside - one 'I should' that lives only on the wall - and bring it to God as a desire instead of a duty. Pray not 'help me do this,' but 'make me want this.' Then leave it with Him, trusting the writing to His hand and not to your effort.",
+      "leavingAtCross": [
+        "The exhausting religion of obeying God from the outside in",
+        "The lie that I must clean my own heart before God will work on it",
+        "The fear that my old sins are still on the record, still being counted against me"
+      ],
+      "receivingFromCross": [
+        "A covenant cut in the blood of Christ that I did not earn and cannot break",
+        "A God who forgives my iniquity and remembers my sin no more",
+        "The promise that He Himself will do the inner work - writing His law where my own willpower never could"
+      ],
+      "content": "Take one rule you have been white-knuckling from the outside - one 'I should' that lives only on the wall - and bring it to God as a desire instead of a duty. Pray not 'help me do this,' but 'make me want this.' Then leave it with Him, trusting the writing to His hand and not to your effort."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "What is the difference between the covenant God made at Sinai and the new covenant promised in Jeremiah 31 - in where it is written and what holds it together?",
+        "Why does the promise to 'forgive their iniquities and remember their sins no more' come at the end, and why does the word 'for' make it the foundation rather than the conclusion?",
+        "How did Jesus, at the Last Supper, claim to be the fulfillment of this exact promise - and what did He say made the new covenant possible?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one area where you have been obeying God 'on the wall' - by rule and reminder - rather than from a changed heart. What would inner change actually look like there?",
+        "Talk honestly about whether you live as though your sins are 'remembered no more,' or as though God is still keeping a list. Where does the difference show up?",
+        "Ask each other: what is one command of God you would love to genuinely want, and how might you pray for the desire and not just the discipline?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Jeremiah 31:3",
+          "text": "The LORD appeared to us in the past, saying: “I have loved you with an everlasting love; therefore I have drawn you with loving devotion."
+        },
+        {
+          "reference": "Ezekiel 36:26",
+          "text": "I will give you a new heart and put a new spirit within you; I will remove your heart of stone and give you a heart of flesh."
+        },
+        {
+          "reference": "Luke 22:20",
+          "text": "In the same way, after supper He took the cup, saying, “This cup is the new covenant in My blood, which is poured out for you."
+        },
+        {
+          "reference": "Hebrews 8:10, 12",
+          "text": "I will put My laws in their minds and inscribe them on their hearts. And I will be their God, and they will be My people... For I will forgive their iniquities and will remember their sins no more.”"
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Jeremiah 31",
+          "note": "Read the whole chapter, watching how the comfort builds: Rachel's weeping turned to hope (vv. 15-17), the wandering son brought home (vv. 18-20), and the broken marriage covenant remade from the inside (vv. 31-34)."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Jeremiah",
+      "title": "The Weeping Prophet of the New Covenant",
+      "description": "A priest from Anathoth, set apart before he was born (Jeremiah 1:5) to prophesy to Judah through its final decades. He warned a doomed Jerusalem for some forty years, was beaten, imprisoned, and lowered into a muddy cistern for his message, and lived to see the city fall. Yet into that collapse God gave him the brightest promise in the prophets: a new covenant, written on the heart, founded on forgiveness - the words Jesus would claim at His own table.",
+      "keyQuote": "I will put My law in their minds and inscribe it on their hearts.",
+      "lessonForUs": "God gave His clearest word of hope to a man surrounded by ruin. The new covenant was not promised from a place of strength but from the rubble of the old one - proof that the inner work of God does not wait for our circumstances to improve before it begins.",
+      "heading": "The Weeping Prophet of the New Covenant"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1632,
+  "scriptureReference_full": "Jeremiah 31:31-34",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (berit chadashah, H1285; chadash; karat; zakar) reflects standard lexical sources. The observation that the Greek 'kaine diatheke' / 'New Testament' renders Jeremiah's 'berit chadashah' is widely noted in covenant theology across traditions."
+  ]
 }

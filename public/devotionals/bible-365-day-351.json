@@ -1,38 +1,182 @@
 {
   "day": 351,
-  "title": "Hebrews: Faith Hall + Endurance — Day 1 — Hook",
-  "teaser": "Day 351 of Bible 365 — Hebrews 11-12",
+  "title": "Run looking up",
+  "teaser": "A whole crowd of the dead are watching you run — and they are not the point. The One they were all leaning toward is.",
   "framework": "Hebrews 11-12 — Hebrews: Faith Hall + Endurance",
   "scriptureReference": "Hebrews 11-12",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 351"
+      "type": "scripture",
+      "reference": "Hebrews 11:1; 12:1-2",
+      "translation": "BSB",
+      "emphasis": [
+        "the assurance of what we hope for",
+        "such a great cloud of witnesses",
+        "let us run with endurance",
+        "the author and perfecter of our faith"
+      ],
+      "greekOriginal": "ἀφορῶντες εἰς τὸν τῆς πίστεως ἀρχηγὸν καὶ τελειωτὴν Ἰησοῦν",
+      "passage": "Now faith is the assurance of what we hope for and the certainty of what we do not see. ... Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off every encumbrance and the sin that so easily entangles, and let us run with endurance the race set out for us. Let us fix our eyes on Jesus, the author and perfecter of our faith, who for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Hebrews 11-12**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Hebrews 11-12 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὑπομονή",
+      "transliteration": "hypomonē",
+      "pronunciation": "hoo-poh-moh-NAY",
+      "meaning": "endurance, steadfastness, patient staying-under",
+      "rootMeaning": "Built from hypo, under, and menō, to remain or abide. It is not gritted-teeth willpower; it is the strength to stay under a weight without bolting - to remain in place while the load does its slow work.",
+      "usageNote": "Hebrews 12:1 tells us to run the race di' hypomonēs - through endurance. The same word names what the witnesses of chapter 11 had: they kept their feet on a promise they never saw arrive in their lifetime (11:13). Endurance here is faith over time, faith that has learned to wait.",
+      "wordByWord": [
+        {
+          "word": "ἀφορῶντες",
+          "transliteration": "aphorōntes",
+          "meaning": "fixing the eyes, looking away from everything else toward one thing"
+        },
+        {
+          "word": "ἀρχηγὸν",
+          "transliteration": "archēgon",
+          "meaning": "author, founder, trailblazer - the one who goes first and opens the way"
+        },
+        {
+          "word": "τελειωτὴν",
+          "transliteration": "teleiōtēn",
+          "meaning": "perfecter, finisher - the one who brings to completion what He began"
+        },
+        {
+          "word": "ὑπομονή",
+          "transliteration": "hypomonē",
+          "meaning": "endurance, steadfast remaining-under a weight"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "τελειόω / teleioō",
+          "reference": "The verb 'to make perfect, to complete' runs through Hebrews like a heartbeat (2:10; 5:9; 11:40; 12:23). The faithful of old were not 'made perfect' apart from us (11:40); Jesus is the perfecter (12:2). The same root that names what they lacked names what He supplies."
+        }
+      ],
+      "strongsNumber": "G5281",
+      "definition": "a remaining under; steadfast endurance; the capacity to bear up under difficulty without losing heart",
+      "usage": "Hypomonē is the difference between sprinting and finishing. Hebrews does not ask the tired church to feel more; it asks them to stay - to remain under the promise long enough for Jesus to bring it home."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Hebrews: Faith Hall + Endurance. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ the founder + perfecter (Heb 12:2).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "A Roll Call of People Who Died Before the Payoff",
+      "body": "Hebrews 11 is the most famous list in the Bible, and people usually read it like a trophy case. Abel, Enoch, Noah, Abraham, Sarah, Moses, Rahab, and on through judges and prophets - the heroes of faith, each introduced with the same drumbeat: \"By faith... by faith... by faith.\" We tend to file it under inspiration. Look how much they accomplished.\n\nBut read the chapter to its quiet hinge and the picture turns. \"All these people died in faith, without having received the things they were promised\" (11:13). And again at the end: \"These were all commended for their faith, yet they did not receive what was promised\" (11:39). The chapter is not a highlight reel of arrivals. It is a long line of people who kept walking toward a horizon they never reached in their lifetime. Abraham obeyed and went \"without knowing where he was going\" (11:8). They saw the promise \"from afar\" and welcomed it anyway, calling themselves \"strangers and exiles on the earth\" (11:13).\n\nThat is the real definition the chapter opens with: \"Now faith is the assurance of what we hope for and the certainty of what we do not see\" (11:1). Faith, in Hebrews, is not certainty about the present. It is conviction about a future you cannot yet touch - holding ground on a word, not a sight.",
+      "keyInsight": "Hebrews 11 is not a list of people who got what they wanted. It is a list of people who held onto a promise that outlived them - and were commended not for arriving but for not letting go.",
+      "content": "Hebrews 11 is the most famous list in the Bible, and people usually read it like a trophy case. Abel, Enoch, Noah, Abraham, Sarah, Moses, Rahab, and on through judges and prophets - the heroes of faith, each introduced with the same drumbeat: \"By faith... by faith... by faith.\" We tend to file it under inspiration. Look how much they accomplished.\n\nBut read the chapter to its quiet hinge and the picture turns. \"All these people died in faith, without having received the things they were promised\" (11:13). And again at the end: \"These were all commended for their faith, yet they did not receive what was promised\" (11:39). The chapter is not a highlight reel of arrivals. It is a long line of people who kept walking toward a horizon they never reached in their lifetime. Abraham obeyed and went \"without knowing where he was going\" (11:8). They saw the promise \"from afar\" and welcomed it anyway, calling themselves \"strangers and exiles on the earth\" (11:13).\n\nThat is the real definition the chapter opens with: \"Now faith is the assurance of what we hope for and the certainty of what we do not see\" (11:1). Faith, in Hebrews, is not certainty about the present. It is conviction about a future you cannot yet touch - holding ground on a word, not a sight."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Stadium Full of People Who Already Finished",
+      "body": "Picture the last lap of a long race. The runner is past pretending it doesn’t hurt - legs heavy, lungs burning, the part where the body starts negotiating with the will. And the stands are full. Not strangers. The stands are full of everyone who ran this same course before, who knows exactly how this lap feels, who finished it.\n\nThat is the image Hebrews reaches for the instant chapter 11 ends. \"Therefore, since we are surrounded by such a great cloud of witnesses...\" (12:1). The whole roll call of the faithful is suddenly relocated into the grandstand. The word for witnesses can mean spectators - but it is also the word for those who testified, who gave evidence with their lives. They are not watching to grade your form. They are proof that the course can be run, because they ran it on the same trembling legs.\n\nBut here is the thing about a crowd in the stands: you are not supposed to run staring up at them. A runner who watches the spectators trips. Hebrews names the cloud of witnesses and then, in the very next breath, tells you where to actually put your eyes - and it is not on them.",
+      "connectionToTheme": "The faithful dead are the encouragement, not the focus. They prove the race is runnable; they are not the One we run toward.",
+      "content": "Picture the last lap of a long race. The runner is past pretending it doesn’t hurt - legs heavy, lungs burning, the part where the body starts negotiating with the will. And the stands are full. Not strangers. The stands are full of everyone who ran this same course before, who knows exactly how this lap feels, who finished it.\n\nThat is the image Hebrews reaches for the instant chapter 11 ends. \"Therefore, since we are surrounded by such a great cloud of witnesses...\" (12:1). The whole roll call of the faithful is suddenly relocated into the grandstand. The word for witnesses can mean spectators - but it is also the word for those who testified, who gave evidence with their lives. They are not watching to grade your form. They are proof that the course can be run, because they ran it on the same trembling legs.\n\nBut here is the thing about a crowd in the stands: you are not supposed to run staring up at them. A runner who watches the spectators trips. Hebrews names the cloud of witnesses and then, in the very next breath, tells you where to actually put your eyes - and it is not on them."
+    },
+    {
+      "type": "insight",
+      "heading": "They Were Waiting for Us - and for Him",
+      "body": "One verse breaks the trophy-case reading entirely. After the whole chapter of faith, Hebrews says of those commended heroes: \"God had planned something better for us, so that together with us they would be made perfect\" (11:40). Read that slowly. Abraham, Moses, the prophets - they were not completed in their own era. They were waiting. Their faith leaned forward into something that had not yet come, something that would only arrive on the far side of the cross. The whole line of the faithful was holding a place in a story that finds its center in Jesus.\n\nSo when 12:2 says to fix our eyes on Jesus, \"the author and perfecter of our faith,\" it names Him the one thing every name in chapter 11 was reaching toward. Archēgos - the founder, who goes first and cuts the trail. Teleiōtēs - the perfecter, who finishes what the trail was for. Jesus \"for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God\" (12:2). He did not just start the race of faith and cheer us on; He ran it to the bitter end, through the cross, and crossed the line first - so that the staying-power chapter 11 only hoped for could finally be supplied by Him.\n\nThe heroes are not the point. They are the arrow, and the arrow points at the One who endured the worst lap of all and is now seated, finished, waiting at the line for everyone still running.",
+      "historicalContext": "Hebrews was written to Jewish believers under pressure - some had \"endured a great conflict in the face of suffering,\" had their property seized, and were now tempted to drift back toward the older, safer familiarity of the synagogue (Hebrews 10:32-39). The faith chapter reminds exhausted people that everyone who ever trusted God had to keep trusting before the payoff arrived.",
+      "fascinatingFact": "Hebrews 11 lists Abel first - the Abel whose blood \"still speaks\" (11:4). Hebrews 12 then closes the unit saying we have come \"to the sprinkled blood that speaks a better word than the blood of Abel\" (12:24). Abel’s blood cried for justice; Christ’s speaks mercy.",
+      "content": "One verse breaks the trophy-case reading entirely. After the whole chapter of faith, Hebrews says of those commended heroes: \"God had planned something better for us, so that together with us they would be made perfect\" (11:40). Read that slowly. Abraham, Moses, the prophets - they were not completed in their own era. They were waiting. Their faith leaned forward into something that had not yet come, something that would only arrive on the far side of the cross. The whole line of the faithful was holding a place in a story that finds its center in Jesus.\n\nSo when 12:2 says to fix our eyes on Jesus, \"the author and perfecter of our faith,\" it names Him the one thing every name in chapter 11 was reaching toward. Archēgos - the founder, who goes first and cuts the trail. Teleiōtēs - the perfecter, who finishes what the trail was for. Jesus \"for the joy set before Him endured the cross, scorning its shame, and sat down at the right hand of the throne of God\" (12:2). He did not just start the race of faith and cheer us on; He ran it to the bitter end, through the cross, and crossed the line first - so that the staying-power chapter 11 only hoped for could finally be supplied by Him.\n\nThe heroes are not the point. They are the arrow, and the arrow points at the One who endured the worst lap of all and is now seated, finished, waiting at the line for everyone still running."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "A community of worn-out believers, tempted to quit, is told to throw off every weight and \"run with endurance the race set out for us,\" looking not at the crowd of faithful dead but at Jesus, who endured the cross and is now seated and finished (Hebrews 12:1-2).",
+      "modernApplication": "You probably did not stop believing on purpose. Most people don't. They just get tired - tired of waiting, tired of unanswered prayers, tired of holding a promise that has not arrived. Hebrews does not scold the tired. It tells them to set down what they're carrying that isn't theirs to carry, and to stop running with their eyes fixed on other people - their progress, their collapse, their opinion - and put their eyes back on the only One who finished the course.",
+      "connectionPoint": "Notice that the command is to run with endurance, not to run fast. Hebrews assumes the faithful life is long and the lap is hard. \"Consider Him who endured such hostility from sinners, so that you will not grow weary and lose heart\" (12:3). The remedy for losing heart is not more effort; it is a better gaze.",
+      "newTestamentEcho": "The whole letter has been building to this: Jesus \"after He had provided purification for sins, He sat down at the right hand of the Majesty on high\" (Hebrews 1:3). The seated Christ is the finished Christ. He is not still running. He has crossed the line - which means the One we fix our eyes on is not a fellow contestant but the victor already at rest, drawing us home."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What weight have you been running with that was never yours to carry - and whose face have you been watching instead of His?",
+      "additionalQuestions": [
+        "Where in your life have you been waiting on a promise that has not arrived, and what would it look like to keep your feet on it the way the faithful in Hebrews 11 did?",
+        "When you imagine the 'cloud of witnesses,' do they feel like judges grading you or like people testifying that the race can be run? Why?",
+        "What does it change to know that Jesus is not still running beside you anxiously, but is seated and finished, waiting at the line?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord Jesus, I am more tired than I let on. I have been running this race watching the wrong things - other people's pace, my own failures, the promise that still hasn't come. Help me set down the weight I was never meant to carry. Lift my eyes off the crowd and off myself and fix them on You - the One who started this faith in me and will finish it, who endured the cross and sat down. Give me endurance, not to perform, but to stay. You ran ahead of me through the worst of it. Bring me home. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, name one 'weight' - one worry, grievance, or burden you've been carrying that is slowing your run and was never yours to hold. Set it down in prayer this morning, by name. Then, once during the day when you feel yourself watching everyone but Jesus, stop and silently pray three words: 'Eyes on You.'",
+      "leavingAtCross": [
+        "The weight I was never meant to carry but keep dragging through every day",
+        "The habit of running with my eyes on other people - their pace, their judgment, their collapse",
+        "The quiet exhaustion of waiting for a promise that hasn't come yet"
+      ],
+      "receivingFromCross": [
+        "Endurance that is staying-power, not gritted-teeth performance",
+        "A cloud of witnesses cheering that the race can be finished, because they finished it",
+        "A finished Savior, seated at the line, who began my faith and will complete it"
+      ],
+      "content": "Today, name one 'weight' - one worry, grievance, or burden you've been carrying that is slowing your run and was never yours to hold. Set it down in prayer this morning, by name. Then, once during the day when you feel yourself watching everyone but Jesus, stop and silently pray three words: 'Eyes on You.'"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Twice Hebrews 11 says the faithful 'did not receive what was promised' (11:13, 39). How does that reframe what 'faith' means in this chapter - and what it might mean in your own waiting?",
+        "Why does Hebrews call Jesus both the 'author' (archēgos) and the 'perfecter' (teleiōtēs) of faith - what does each word add?",
+        "Hebrews 11:40 says the heroes of old would not be 'made perfect' apart from us. What does that tell you about how the whole Old Testament is leaning toward Christ?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one weight you are currently running with that you suspect was never yours to carry. Say it out loud to each other.",
+        "Talk about a season you were tempted to drift or quit. What pulled your eyes off Jesus, and what (if anything) pulled them back?",
+        "Ask each other: who in your life has been a 'witness' - someone whose finished faith proved to you that the race can be run?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11:6",
+          "text": "And without faith it is impossible to please God, because anyone who approaches Him must believe that He exists and that He rewards those who earnestly seek Him."
+        },
+        {
+          "reference": "Hebrews 11:13",
+          "text": "All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar. And they acknowledged that they were strangers and exiles on the earth."
+        },
+        {
+          "reference": "Hebrews 12:3",
+          "text": "Consider Him who endured such hostility from sinners, so that you will not grow weary and lose heart."
+        },
+        {
+          "reference": "Hebrews 12:24",
+          "text": "to Jesus the mediator of a new covenant, and to the sprinkled blood that speaks a better word than the blood of Abel."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Hebrews 11-12",
+          "note": "Read the two chapters in one sitting, out loud if you can. Watch how the long 'by faith' list of chapter 11 spills directly into the 'therefore, let us run' of chapter 12 - they are one unbroken movement from the witnesses to the One they witnessed to."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Cloud of Witnesses",
+      "title": "Those Who Ran Before Us",
+      "description": "Hebrews 11 gathers them by name and by deed: Abel, who offered a better sacrifice; Enoch, who walked with God; Noah, who built against the unseen; Abraham, who left without a map; Sarah, Isaac, Jacob, Joseph, Moses, Rahab, and a host of judges, kings, and prophets - some who conquered kingdoms, others who were sawn in two and 'of whom the world was not worthy' (11:38). They are bound together by one thing: each trusted a promise that did not arrive in their lifetime. Hebrews relocates them into the grandstand of 12:1 not as celebrities but as testimony - living evidence that the long, hard race of faith can in fact be finished.",
+      "keyQuote": "These were all commended for their faith, yet they did not receive what was promised. God had planned something better for us, so that together with us they would be made perfect.",
+      "lessonForUs": "The faithful of old are not our destination; they are our encouragement. They prove the course is runnable and then, with one voice, point past themselves to Jesus - the One they were all waiting for, the author and perfecter who finished the race they could only begin.",
+      "heading": "Those Who Ran Before Us"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2052,
+  "scriptureReference_full": "Hebrews 11:1, 6, 8, 13, 39-40; 12:1-3, 24",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Greek word study (hypomonē G5281; archēgos; teleiōtēs; the teleioō word-group across Hebrews 2:10; 5:9; 11:40; 12:23) reflects standard New Testament lexical sources."
+  ]
 }

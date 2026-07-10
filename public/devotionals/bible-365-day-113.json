@@ -1,38 +1,176 @@
 {
   "day": 113,
-  "title": "Elijah Cycles — Day 1 — Hook",
-  "teaser": "Day 113 of Bible 365 — 1 Kings 17-19, 2 Kings 2",
+  "title": "The voice that was not in the fire",
+  "teaser": "Elijah called fire down on Carmel — then fell apart under a broom tree. God came to him next not in wind, quake, or fire, but in a whisper. The prophet of fire had to learn the voice of the still, small word.",
   "framework": "1 Kings 17-19, 2 Kings 2 — Elijah Cycles",
   "scriptureReference": "1 Kings 17-19, 2 Kings 2",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 113"
+      "type": "scripture",
+      "reference": "1 Kings 19:11-12",
+      "translation": "BSB",
+      "emphasis": [
+        "the LORD was not in the wind",
+        "a still, small voice"
+      ],
+      "hebrewOriginal": "וְקוֹל דְּמָמָה דַקָּה",
+      "passage": "Then the LORD said, “Go out and stand on the mountain before the LORD. Behold, the LORD is about to pass by.” And a great and mighty wind tore into the mountains and shattered the rocks before the LORD, but the LORD was not in the wind. After the wind there was an earthquake, but the LORD was not in the earthquake. After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**1 Kings 17-19, 2 Kings 2**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to 1 Kings 17-19, 2 Kings 2 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קוֹל דְּמָמָה דַקָּה",
+      "transliteration": "qol demamah daqqah",
+      "pronunciation": "kohl deh-mah-MAH dak-KAH",
+      "meaning": "a sound of thin silence; a still, small voice; a low, fine whisper",
+      "rootMeaning": "Qol means voice or sound. Demamah means stillness, hush, the silence that falls when noise stops. Daqqah means thin, fine, ground-small - the word used for dust crushed to powder. Joined together the phrase strains language itself: a voice made of silence, a sound so fine it is almost no sound at all.",
+      "usageNote": "Translators have wrestled with this phrase for centuries. The King James rendered it 'a still small voice'; others read 'a sound of sheer silence' or 'a gentle whisper.' The strangeness is the point. After three displays of overwhelming power - wind, quake, fire - the text reaches for words and lands on a near-contradiction: a voice that is also a silence.",
+      "wordByWord": [
+        {
+          "word": "קוֹל",
+          "transliteration": "qol",
+          "meaning": "voice, sound"
+        },
+        {
+          "word": "דְּמָמָה",
+          "transliteration": "demamah",
+          "meaning": "stillness, hush, calm silence"
+        },
+        {
+          "word": "דַקָּה",
+          "transliteration": "daqqah",
+          "meaning": "thin, fine, finely ground, gentle"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דְּמָמָה",
+          "reference": "The same demamah appears in Psalm 107:29, where God 'calmed the storm to a whisper'; the raging sea is hushed to the same fine silence Elijah heard on the mountain."
+        }
+      ],
+      "strongsNumber": "H1827",
+      "definition": "demamah: a calm, a still silence; with qol, the low whisper in which the LORD came to Elijah at Horeb",
+      "usage": "The phrase is deliberately quiet. God does not shout to the man who is done shouting. He comes in the register a person uses at a bedside, close enough that you have to stop everything else to hear it."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Elijah Cycles. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ greater than Elijah (Matt 17:1-8).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "Fire on the Mountain, and Then the Whisper",
+      "body": "Elijah arrives in Scripture with no genealogy and no warning - just a man from the backwater of Gilead standing in front of the most powerful man in the land, announcing a drought by the word of the LORD (1 Kings 17:1). For three years he is the prophet of the dramatic: ravens that feed him, a widow's jar of flour that does not run out, a dead boy who breathes again. Then comes the showdown the whole cycle is famous for. On Mount Carmel he faces four hundred and fifty prophets of Baal and throws down a challenge: 'How long will you waver between two opinions? If the LORD is God, follow Him' (1 Kings 18:21). He drenches the altar in water, prays one plain sentence, and the fire of the LORD falls and consumes everything - sacrifice, wood, stones, dust, and the water in the trench (1 Kings 18:38). The people fall on their faces. It is the high point of every flannelgraph and every children's Bible.\n\nAnd then, one chapter later, the same man is curled under a broom tree in the desert begging God to let him die. 'I have had enough, LORD,' he says. 'Take my life, for I am no better than my fathers' (1 Kings 19:4). One queen's threat has undone the prophet who just called down fire from heaven. This is not a footnote. The narrator slows the whole cycle down to walk us through Elijah's collapse, his flight, his exhaustion, and finally his arrival at Horeb - the same mountain where God once met Moses. There, God asks him a question that is almost gentle in its bluntness: 'What are you doing here, Elijah?' (1 Kings 19:9).\n\nWhat happens next is the heart of the whole reading. God tells Elijah to stand on the mountain, and a windstorm tears the rocks apart - but the LORD is not in the wind. An earthquake shakes the ground - but the LORD is not in the earthquake. A fire roars past - the same fire that had answered him on Carmel - but the LORD is not in the fire. And after all of it, when the spectacle is spent, there comes a still, small voice. The prophet who knew how to call down fire has to learn to hear a whisper.",
+      "keyInsight": "The prophet of fire is met not by fire but by a whisper. God reorders what Elijah trusts: not the spectacle that vindicates him, but the quiet voice that holds him.",
+      "content": "Elijah arrives in Scripture with no genealogy and no warning - just a man from the backwater of Gilead standing in front of the most powerful man in the land, announcing a drought by the word of the LORD (1 Kings 17:1). For three years he is the prophet of the dramatic: ravens that feed him, a widow's jar of flour that does not run out, a dead boy who breathes again. Then comes the showdown the whole cycle is famous for. On Mount Carmel he faces four hundred and fifty prophets of Baal and throws down a challenge: 'How long will you waver between two opinions? If the LORD is God, follow Him' (1 Kings 18:21). He drenches the altar in water, prays one plain sentence, and the fire of the LORD falls and consumes everything - sacrifice, wood, stones, dust, and the water in the trench (1 Kings 18:38). The people fall on their faces. It is the high point of every flannelgraph and every children's Bible.\n\nAnd then, one chapter later, the same man is curled under a broom tree in the desert begging God to let him die. 'I have had enough, LORD,' he says. 'Take my life, for I am no better than my fathers' (1 Kings 19:4). One queen's threat has undone the prophet who just called down fire from heaven. This is not a footnote. The narrator slows the whole cycle down to walk us through Elijah's collapse, his flight, his exhaustion, and finally his arrival at Horeb - the same mountain where God once met Moses. There, God asks him a question that is almost gentle in its bluntness: 'What are you doing here, Elijah?' (1 Kings 19:9).\n\nWhat happens next is the heart of the whole reading. God tells Elijah to stand on the mountain, and a windstorm tears the rocks apart - but the LORD is not in the wind. An earthquake shakes the ground - but the LORD is not in the earthquake. A fire roars past - the same fire that had answered him on Carmel - but the LORD is not in the fire. And after all of it, when the spectacle is spent, there comes a still, small voice. The prophet who knew how to call down fire has to learn to hear a whisper."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Day After the Big Day",
+      "body": "Anyone who has done something visible knows the strange flatness that comes the morning after. The launch ships. The sermon lands. The case is won, the recital ends, the crowd files out. You expected to feel like a mountain. Instead you feel like a husk. The adrenaline that carried you drains out all at once, and in its place comes a hollow you did not see coming - sometimes with a thought as bleak as Elijah's: I have had enough.\n\nIt is one of the more honest things in Scripture that the crash comes right after the triumph. Elijah does not fall apart in defeat. He falls apart in the exhausted let-down after the greatest victory of his life. The fire fell; the people believed; and forty days later he is alone in a cave, certain he is the last faithful man alive and that it has all been for nothing.\n\nGod's response is worth sitting with. He does not rebuke Elijah for the collapse, and He does not stage another Carmel to snap him out of it. First He lets the man sleep. Then He feeds him - twice - and only then, rested and fed, does He bring him to the mountain and speak. Before the still, small voice, there is bread and a nap. God tends the body of His worn-out prophet before He addresses his soul.",
+      "connectionToTheme": "Elijah's crash after Carmel shows that the danger to faith is often not the battle but the silence after it - and that God meets the let-down with a whisper, not another fire.",
+      "content": "Anyone who has done something visible knows the strange flatness that comes the morning after. The launch ships. The sermon lands. The case is won, the recital ends, the crowd files out. You expected to feel like a mountain. Instead you feel like a husk. The adrenaline that carried you drains out all at once, and in its place comes a hollow you did not see coming - sometimes with a thought as bleak as Elijah's: I have had enough.\n\nIt is one of the more honest things in Scripture that the crash comes right after the triumph. Elijah does not fall apart in defeat. He falls apart in the exhausted let-down after the greatest victory of his life. The fire fell; the people believed; and forty days later he is alone in a cave, certain he is the last faithful man alive and that it has all been for nothing.\n\nGod's response is worth sitting with. He does not rebuke Elijah for the collapse, and He does not stage another Carmel to snap him out of it. First He lets the man sleep. Then He feeds him - twice - and only then, rested and fed, does He bring him to the mountain and speak. Before the still, small voice, there is bread and a nap. God tends the body of His worn-out prophet before He addresses his soul."
+    },
+    {
+      "type": "insight",
+      "heading": "\"I Am the Only One Left\" Was Never True",
+      "body": "Twice on the mountain Elijah says the same desolate line: 'I am the only one left, and they are seeking my life as well' (1 Kings 19:10, 14). It is the cry of a man who has confused being tired with being alone. He has decided the whole thing rests on his shoulders, and his shoulders are giving out.\n\nGod's answer does two surprising things. First, He corrects the math: 'I have reserved seven thousand in Israel - all whose knees have not bowed to Baal' (1 Kings 19:18). Elijah was never the only one. He could not see the seven thousand from inside the cave, but they were there the whole time, quietly faithful, not making fire fall, not on anyone's radar - including his. The kingdom of God was larger and quieter than the prophet's despair could imagine.\n\nSecond, God gives him work and successors. He is to anoint kings and to call Elisha, the man who will carry the mantle after him. The cure for 'I am the only one left' is not a pep talk. It is the truth that God has more people than you can see, and that the work does not begin or end with you. Elijah's whisper-corrected vision is the start of his recovery: he is one faithful man among thousands, and the story is God's, not his.",
+      "historicalContext": "The Elijah cycle unfolds in the northern kingdom of Israel under King Ahab and Queen Jezebel (roughly the 9th century BC), who had imported the worship of Baal, a Canaanite storm-and-fertility god believed to control rain and lightning. The drought Elijah announces and the fire he calls down are a direct contest on Baal's own claimed turf: the God of Israel, not Baal, sends rain and fire. Horeb, where Elijah flees, is another name for Sinai - the mountain where God had given the covenant to Moses centuries before. Elijah returns to the source.",
+      "fascinatingFact": "Elijah is one of only two figures in the Hebrew Scriptures who never die: he is taken up to heaven in a whirlwind and a chariot of fire (2 Kings 2:11), as Enoch was taken before him (Genesis 5:24). This is part of why later expectation looked for Elijah to return (Malachi 4:5), and why his appearance at the Transfiguration carries such weight.",
+      "content": "Twice on the mountain Elijah says the same desolate line: 'I am the only one left, and they are seeking my life as well' (1 Kings 19:10, 14). It is the cry of a man who has confused being tired with being alone. He has decided the whole thing rests on his shoulders, and his shoulders are giving out.\n\nGod's answer does two surprising things. First, He corrects the math: 'I have reserved seven thousand in Israel - all whose knees have not bowed to Baal' (1 Kings 19:18). Elijah was never the only one. He could not see the seven thousand from inside the cave, but they were there the whole time, quietly faithful, not making fire fall, not on anyone's radar - including his. The kingdom of God was larger and quieter than the prophet's despair could imagine.\n\nSecond, God gives him work and successors. He is to anoint kings and to call Elisha, the man who will carry the mantle after him. The cure for 'I am the only one left' is not a pep talk. It is the truth that God has more people than you can see, and that the work does not begin or end with you. Elijah's whisper-corrected vision is the start of his recovery: he is one faithful man among thousands, and the story is God's, not his."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "God comes to His exhausted prophet not in the wind, the earthquake, or the fire, but in a still, small voice - and corrects the lie that everything depends on Elijah alone.",
+      "modernApplication": "We are drawn to the loud and the visible the way Elijah was drawn to the fire on Carmel - the moment that proves we matter, the result that vindicates us. But the voice that actually holds us is rarely the spectacular one. It is quieter, and it usually comes after we have run out of strength, in the bread and the rest and the small word we almost miss because we are still listening for thunder.",
+      "connectionPoint": "Elijah's mountain is not the end of his story. Centuries later he stands on another mountain - the Mount of Transfiguration - beside Moses and a transfigured Jesus (Matthew 17:1-8). The man who once learned to fall silent before a whisper now appears in glory, talking with the Lord. And there the Father's own voice comes from the cloud and says of Jesus, 'This is My beloved Son... Listen to Him.' Every prophet, even Elijah, finally gives way to the one Voice we are told to heed.",
+      "newTestamentEcho": "At the Transfiguration, when the disciples lift their eyes, 'they saw no one except Jesus' (Matthew 17:8). Elijah and Moses fade; the Son remains. The still, small voice Elijah strained to hear at Horeb has become flesh, standing in front of him - and the Father says, Listen to Him."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you been waiting for fire - a dramatic sign, a decisive result - while God has been speaking in a whisper you keep talking over?",
+      "additionalQuestions": [
+        "What is the 'broom tree' moment you tend to hit - the let-down that comes right after you have given everything to something visible?",
+        "When you feel like 'the only one left,' who are the quiet, faithful seven thousand God has actually placed around you that despair keeps you from seeing?",
+        "If God tended Elijah's body - sleep, then bread - before addressing his soul, what does your own body need before you can hear the whisper?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have been listening for thunder. I have wanted the fire that proves I matter and silences my fears, and I have nearly missed the whisper. Quiet me. When I am spent and certain I am the only one left, feed me before You teach me, and let me hear the still, small voice that has been speaking all along. And when every other voice falls silent, let me see no one but Jesus, and listen to Him. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today, find five minutes of real quiet - no screen, no noise, no task. Sit long enough for the wind and the fire of your own hurry to pass. Then ask one question and wait for the whisper: Lord, what are You actually saying that I have been too loud to hear?",
+      "leavingAtCross": [
+        "The need for fire - the dramatic proof that I matter and that my work was worth it",
+        "The lie that I am the only one left and it all depends on me",
+        "The exhaustion I keep pushing through instead of bringing honestly to God"
+      ],
+      "receivingFromCross": [
+        "A God who comes in a whisper, close enough to hear at a bedside",
+        "The seven thousand I cannot see - the quiet company of the faithful I am not carrying alone",
+        "The one Voice the Father tells me to heed: Listen to Him"
+      ],
+      "content": "Today, find five minutes of real quiet - no screen, no noise, no task. Sit long enough for the wind and the fire of your own hurry to pass. Then ask one question and wait for the whisper: Lord, what are You actually saying that I have been too loud to hear?"
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "Why does it matter that the LORD was 'not in' the wind, the earthquake, and the fire - especially given what had just happened on Carmel?",
+        "Elijah collapses after his greatest victory, not after a defeat. What does that reveal about when faith is most fragile?",
+        "How does God's reply - 'I have reserved seven thousand' - answer Elijah's deepest fear rather than just his complaint?"
+      ],
+      "forAccountabilityPartners": [
+        "Name a 'day after the big day' when you crashed harder than you expected. What did you need in that moment that you did not ask for?",
+        "Talk about the difference between waiting for God in the spectacular and learning to hear Him in the quiet. Which do you default to?",
+        "Where is each of you tempted to believe 'I am the only one left'? Name the unseen faithful ones around you who prove it is not true."
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 18:21",
+          "text": "Then Elijah approached all the people and said, “How long will you waver between two opinions? If the LORD is God, follow Him. But if Baal is God, follow him.” But the people did not answer a word."
+        },
+        {
+          "reference": "1 Kings 19:18",
+          "text": "Nevertheless, I have reserved seven thousand in Israel—all whose knees have not bowed to Baal and whose mouths have not kissed him."
+        },
+        {
+          "reference": "2 Kings 2:11",
+          "text": "As they were walking along and talking together, suddenly a chariot of fire with horses of fire appeared and separated the two of them, and Elijah went up into heaven in a whirlwind."
+        },
+        {
+          "reference": "Matthew 17:8",
+          "text": "And when they looked up, they saw no one except Jesus."
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "1 Kings 17-19; 2 Kings 2",
+          "note": "Read the cycle in one sitting, watching the rhythm: word of the LORD, drama, collapse, whisper, recovery, succession. Notice how often Elijah is fed before he is told anything."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "Elijah the Tishbite",
+      "title": "The Prophet of Fire Who Learned the Whisper",
+      "description": "A prophet from Gilead in the 9th century BC who confronted King Ahab and the worship of Baal in the northern kingdom of Israel. He announced a drought, was fed by ravens, raised a widow's son, and called down fire on Mount Carmel - then collapsed in despair and met God in a still, small voice at Horeb. He did not die but was taken up in a whirlwind, passing his mantle to Elisha (2 Kings 2). Centuries later he appeared with Moses beside the transfigured Christ.",
+      "keyQuote": "I have had enough, LORD. Take my life, for I am no better than my fathers.",
+      "lessonForUs": "Even the prophet who calls down fire crashes, despairs, and has to be fed and rested before he can hear God. The same God who answered with fire on the mountain answered with a whisper in the cave - and both were Him.",
+      "heading": "The Prophet of Fire Who Learned the Whisper"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 2169,
+  "scriptureReference_full": "1 Kings 17-19, 2 Kings 2",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (qol demamah daqqah, demamah H1827) reflects standard lexical sources; the range of English renderings ('still small voice,' 'sound of sheer silence,' 'gentle whisper') reflects the well-known translation difficulty of the phrase.",
+    "Christ-connection drawn from the Transfiguration accounts (Matthew 17:1-8; cf. Mark 9:2-8; Luke 9:28-36), where Elijah appears with Moses and the Father commands, 'Listen to Him.'"
+  ]
 }

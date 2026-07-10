@@ -1,38 +1,186 @@
 {
   "day": 231,
-  "title": "Isaiah: Suffering Servant — Day 7 — Sabbath",
-  "teaser": "Day 231 of Bible 365 — Isaiah 40-55",
+  "title": "The wound that was meant for you",
+  "teaser": "Isaiah names a Servant who is pierced, crushed, and silent — and says the iniquity that was ours was laid on Him. Seven centuries before Calvary, the cross is already in the text.",
   "framework": "Isaiah 40-55 — Isaiah: Suffering Servant",
   "scriptureReference": "Isaiah 40-55",
   "chiastic_position": "sabbath",
   "pardesLevel": "peshat",
-  "panels": [
+  "modules": [
     {
-      "number": 1,
-      "type": "cover",
-      "content": "BIBLE 365 · DAY 231"
+      "type": "scripture",
+      "reference": "Isaiah 53:5-6",
+      "translation": "BSB",
+      "emphasis": [
+        "pierced for our transgressions",
+        "by His stripes we are healed",
+        "the LORD has laid upon Him the iniquity of us all"
+      ],
+      "hebrewOriginal": "וְהוּא מְחֹלָל מִפְּשָׁעֵנוּ מְדֻכָּא מֵעֲוֺנֹתֵינוּ",
+      "passage": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed. We all like sheep have gone astray, each one has turned to his own way; and the LORD has laid upon Him the iniquity of us all."
     },
     {
-      "number": 2,
-      "heading": "TODAY’S PASSAGE",
-      "type": "text",
-      "content": "**Isaiah 40-55**\n\nThis devotional is being drafted. The full reading + reflection ships in a future writing pass.\n\nIn the meantime, open your Bible to Isaiah 40-55 and read it slowly. Sit with one phrase that catches you. Bring it back to mind tomorrow.",
-      "wordCount": 50
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "עֶבֶד",
+      "transliteration": "eved",
+      "pronunciation": "EH-ved",
+      "meaning": "servant, slave, one who labors for another",
+      "rootMeaning": "From the verb avad, to work or to serve. An eved is defined not by who he is but by whom he serves - his whole life bent toward another's purpose.",
+      "usageNote": "Across Isaiah 40-55 the word eved usually carries Israel itself: \"But you, O Israel, My servant, Jacob, whom I have chosen\" (Isaiah 41:8). But four passages - the Servant Songs (42:1-4; 49:1-6; 50:4-9; 52:13-53:12) - narrow the title onto a single figure who does what the nation could not: He brings justice without breaking the bruised reed, and He bears the sin of the many in His own body.",
+      "wordByWord": [
+        {
+          "word": "וְהוּא",
+          "transliteration": "vehu",
+          "meaning": "but He - the pronoun set sharply against the \"we\" and \"us\" of the verse"
+        },
+        {
+          "word": "מְחֹלָל",
+          "transliteration": "mecholal",
+          "meaning": "pierced, bored through, fatally wounded"
+        },
+        {
+          "word": "מִפְּשָׁעֵנוּ",
+          "transliteration": "mipsha'einu",
+          "meaning": "because of our transgressions - our rebellions, not His"
+        },
+        {
+          "word": "מְדֻכָּא",
+          "transliteration": "meduka",
+          "meaning": "crushed, broken to pieces"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁלוֹם",
+          "reference": "Shalom (peace) is the word behind what the Servant's punishment buys: not merely the absence of conflict, but wholeness restored. \"The punishment that brought us peace was upon Him.\""
+        }
+      ],
+      "strongsNumber": "H5650",
+      "definition": "a servant; one bound to the will and work of another",
+      "usage": "The Servant of Isaiah 53 is no reluctant slave. He sets His face like flint (50:7), He pours out His life unto death (53:12), and He does it as one who chooses to serve - the willing eved who carries what the unwilling could not."
     },
     {
-      "number": 3,
-      "heading": "WHY THIS PASSAGE",
-      "type": "text",
-      "content": "Today’s pivot: Isaiah: Suffering Servant. The whole canon points forward — and this reading carries its own thread of that long pointing.\n\nChrist-link: Christ pierced for our transgressions (Isa 53:5).",
-      "wordCount": 45
+      "type": "teaching",
+      "heading": "The Book That Begins With Comfort and Ends in a Wound",
+      "body": "Isaiah 40 opens with a sound the first half of the book never let us hear. After thirty-nine chapters thick with warning and judgment, a new voice breaks in: \"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem,\" it goes on, \"and proclaim to her that her forced labor has been completed; her iniquity has been pardoned.\" Exile is not the last word. A highway is being cleared through the wilderness, and the glory of the LORD is coming home.\n\nBut comfort raises a hard question, and Isaiah does not dodge it. If the people's iniquity is real - and chapters 1 through 39 insist that it is - how is it pardoned? Forgiveness is not forgetfulness. A debt does not vanish because a creditor is kind. Somewhere the cost has to land. Across these sixteen chapters Isaiah builds toward an answer no one was expecting, introducing a figure he names simply the Servant.\n\nWatch how strange this Servant is. He is the LORD's Chosen One, the one in whom God's soul delights, and He will bring justice to the nations - yet \"He will not cry out or raise His voice, nor make His voice heard in the streets\" (42:2). \"A bruised reed He will not break and a smoldering wick He will not extinguish\" (42:3). He offers His back to those who strike Him and does not hide His face from scorn and spittle (50:6). And then, at the book's deepest point, He is led like a lamb to the slaughter and does not open His mouth (53:7). Comfort, it turns out, will arrive carried on the shoulders of someone willing to be wounded.",
+      "keyInsight": "Isaiah 40-55 answers its own opening promise. The comfort announced in chapter 40 is purchased in chapter 53. The pardon is free to us only because it was costly to Him.",
+      "content": "Isaiah 40 opens with a sound the first half of the book never let us hear. After thirty-nine chapters thick with warning and judgment, a new voice breaks in: \"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem,\" it goes on, \"and proclaim to her that her forced labor has been completed; her iniquity has been pardoned.\" Exile is not the last word. A highway is being cleared through the wilderness, and the glory of the LORD is coming home.\n\nBut comfort raises a hard question, and Isaiah does not dodge it. If the people's iniquity is real - and chapters 1 through 39 insist that it is - how is it pardoned? Forgiveness is not forgetfulness. A debt does not vanish because a creditor is kind. Somewhere the cost has to land. Across these sixteen chapters Isaiah builds toward an answer no one was expecting, introducing a figure he names simply the Servant.\n\nWatch how strange this Servant is. He is the LORD's Chosen One, the one in whom God's soul delights, and He will bring justice to the nations - yet \"He will not cry out or raise His voice, nor make His voice heard in the streets\" (42:2). \"A bruised reed He will not break and a smoldering wick He will not extinguish\" (42:3). He offers His back to those who strike Him and does not hide His face from scorn and spittle (50:6). And then, at the book's deepest point, He is led like a lamb to the slaughter and does not open His mouth (53:7). Comfort, it turns out, will arrive carried on the shoulders of someone willing to be wounded."
     },
     {
-      "number": 4,
-      "heading": "A PRAYER",
-      "type": "text",
-      "content": "Father, when I read this passage, let me see You truly. Slow my hurry. Soften my certainty. Show me what I have missed. Through Christ, who is the substance of every shadow. Amen.",
-      "wordCount": 40
+      "type": "story",
+      "heading": "The Debt Someone Else Paid",
+      "body": "A friend told me about the winter his father's small repair shop nearly went under. A supplier had shipped faulty parts, the customers blamed the shop, and the lawsuits started arriving in envelopes his father eventually stopped opening. He was a proud man who believed a person should carry his own weight, and the weight was crushing him at the kitchen table at two in the morning.\n\nWhat broke the winter open was not a clever defense. It was an old acquaintance - a man his father had quietly helped years before - who paid the settlement and the lawyers' fees and told no one. The father only found out months later, by accident, from a third party. My friend said the strangest part was watching his father weep, and not from the relief. It was from the shame of being carried. He had spent his whole life making sure he owed nothing to anyone, and now the books were balanced by a hand that was not his.\n\nThat is the offense buried inside grace. We can admire a Servant who teaches and heals and brings justice. It is harder to receive a Servant who is wounded in our place - who pays what we ran up, and then lets us walk free still wearing it.",
+      "connectionToTheme": "The hardest thing about Isaiah's Servant is not believing that He suffered, but admitting the wound was meant for us, and then accepting that someone else absorbed it.",
+      "content": "A friend told me about the winter his father's small repair shop nearly went under. A supplier had shipped faulty parts, the customers blamed the shop, and the lawsuits started arriving in envelopes his father eventually stopped opening. He was a proud man who believed a person should carry his own weight, and the weight was crushing him at the kitchen table at two in the morning.\n\nWhat broke the winter open was not a clever defense. It was an old acquaintance - a man his father had quietly helped years before - who paid the settlement and the lawyers' fees and told no one. The father only found out months later, by accident, from a third party. My friend said the strangest part was watching his father weep, and not from the relief. It was from the shame of being carried. He had spent his whole life making sure he owed nothing to anyone, and now the books were balanced by a hand that was not his.\n\nThat is the offense buried inside grace. We can admire a Servant who teaches and heals and brings justice. It is harder to receive a Servant who is wounded in our place - who pays what we ran up, and then lets us walk free still wearing it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Great Exchange, Spelled Out in Pronouns",
+      "body": "Read Isaiah 53:5-6 slowly and watch the pronouns. \"But He was pierced for our transgressions, He was crushed for our iniquities.\" Two parties stand in the verse, and everything turns on which one carries the wound. The transgressions are ours. The piercing is His. \"We all like sheep have gone astray, each one has turned to his own way\" - that is the indictment, and it does not soften. Every one of us, our own chosen direction, away from the Shepherd. Then the verse does the thing the whole book has been moving toward: \"and the LORD has laid upon Him the iniquity of us all.\"\n\nThis is not the Servant volunteering to share our pain from alongside us. It is the LORD Himself placing the full weight of our guilt onto one person who did not earn it. Isaiah is careful to say the suffering is not the Servant's own desert: \"He had done no violence, nor was any deceit in His mouth\" (53:9). The innocent is treated as guilty so that the guilty can be treated as innocent. Theologians later gave it a plain name - substitution - but Isaiah said it first, in the simplest words: our straying, His wounds; our peace, His stripes.\n\nAnd notice the verb at the center of the line. By His stripes we are healed. The Servant's suffering is not merely a moving example of patience under injustice; it accomplishes something. Out of His crushing comes our wholeness. Isaiah will say it again at the song's end: \"After the anguish of His soul, He will see the light of life and be satisfied. By His knowledge My righteous Servant will justify many, and He will bear their iniquities\" (53:11). This is the hinge on which Isaiah 40-55 turns - and, the New Testament will claim, the hinge on which the whole of history turns.",
+      "historicalContext": "Isaiah ministered in Jerusalem in the eighth century BC, roughly seven hundred years before Jesus. The Servant Songs were copied, sung, and debated by Jews for centuries before any of the events Christians read into them. The Great Isaiah Scroll found at Qumran, dated by most scholars to about 125 BC, contains Isaiah 53 essentially as we have received it - hard evidence that the words \"pierced for our transgressions\" stood in the text well over a century before Calvary, not written back into it afterward.",
+      "fascinatingFact": "Isaiah 52:13 introduces the Servant as one who \"will be raised and lifted up and highly exalted\" - and only then does the song describe His disfigurement and death. The exaltation is announced before the suffering is recounted. The order is not a slip. In Isaiah's telling, the lifting up and the being crushed are one movement, the same Servant, the same glory.",
+      "content": "Read Isaiah 53:5-6 slowly and watch the pronouns. \"But He was pierced for our transgressions, He was crushed for our iniquities.\" Two parties stand in the verse, and everything turns on which one carries the wound. The transgressions are ours. The piercing is His. \"We all like sheep have gone astray, each one has turned to his own way\" - that is the indictment, and it does not soften. Every one of us, our own chosen direction, away from the Shepherd. Then the verse does the thing the whole book has been moving toward: \"and the LORD has laid upon Him the iniquity of us all.\"\n\nThis is not the Servant volunteering to share our pain from alongside us. It is the LORD Himself placing the full weight of our guilt onto one person who did not earn it. Isaiah is careful to say the suffering is not the Servant's own desert: \"He had done no violence, nor was any deceit in His mouth\" (53:9). The innocent is treated as guilty so that the guilty can be treated as innocent. Theologians later gave it a plain name - substitution - but Isaiah said it first, in the simplest words: our straying, His wounds; our peace, His stripes.\n\nAnd notice the verb at the center of the line. By His stripes we are healed. The Servant's suffering is not merely a moving example of patience under injustice; it accomplishes something. Out of His crushing comes our wholeness. Isaiah will say it again at the song's end: \"After the anguish of His soul, He will see the light of life and be satisfied. By His knowledge My righteous Servant will justify many, and He will bear their iniquities\" (53:11). This is the hinge on which Isaiah 40-55 turns - and, the New Testament will claim, the hinge on which the whole of history turns."
+    },
+    {
+      "type": "bridge",
+      "ancientTruth": "Seven centuries before the cross, Isaiah described a Servant pierced for transgressions not His own, silent before His accusers, led like a lamb to the slaughter, and crushed by the LORD's own hand so that \"the iniquity of us all\" could be carried away.",
+      "modernApplication": "Most of us still believe, somewhere underneath, that we must carry our own weight - that the failures are ours to fix and the shame is ours to manage and hide. We sew our own fig leaves and pay our own debts and call it dignity. Isaiah names another way. Not the denial of the debt, but the receiving of a payment we did not make. The wound was real, and it was not yours to bear.",
+      "connectionPoint": "When an Ethiopian official sat in his chariot reading this very passage - \"He was led like a sheep to the slaughter\" - he turned to Philip and asked, \"who is the prophet talking about, himself or someone else?\" Then Philip \"began with this very Scripture and told him the good news about Jesus\" (Acts 8:32-35). The earliest church did not invent the link between Isaiah 53 and Christ. They found it lying open on the page and could not unsee it.",
+      "newTestamentEcho": "Peter, writing to suffering Christians, reaches straight for Isaiah's words: Christ \"Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. By His stripes you are healed. For you were like sheep going astray, but now you have returned to the Shepherd and Overseer of your souls\" (1 Peter 2:24-25). The strayed sheep of Isaiah 53:6 have found the Shepherd of Isaiah 40:11, who \"tends His flock like a shepherd\" and \"gathers the lambs in His arms.\" The book's promise of comfort is kept in a Person."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What weight are you still carrying that Isaiah says was laid on the Servant instead of you?",
+      "additionalQuestions": [
+        "Which is harder for you to admit - that you have \"gone astray... to your own way,\" or that someone else has already paid for it? Why?",
+        "Where in your life are you sewing fig leaves of self-justification rather than receiving a covering you did not earn?",
+        "When you read \"by His stripes we are healed,\" what part of you most needs that to be true today?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "posture": "honest-confession",
+      "prayerText": "Lord, I have gone astray and turned to my own way - I know it, even when I work hard to hide it. Thank You that the punishment that brought me peace was not laid on me but on Your Servant. Thank You that He did not open His mouth, that He set His face like flint, that He bore what was mine and called it His own. On this quiet day, let me stop carrying what You have already carried. By His stripes, heal the thing I have been too proud, or too afraid, to bring You. Amen.",
+      "prayerType": "personal"
+    },
+    {
+      "type": "takeaway",
+      "commitment": "Today is a sabbath - there is nothing to finish and nothing to prove. Sit for five unhurried minutes with one line: \"the LORD has laid upon Him the iniquity of us all.\" Name silently the one burden you keep trying to carry yourself, and picture it being lifted off your shoulders and laid on His. Then rest in the fact that it is no longer yours to carry.",
+      "leavingAtCross": [
+        "The pride that insists I must carry my own weight and owe no one anything",
+        "The shame I keep covering instead of confessing",
+        "The quiet belief that my failures are mine alone to fix"
+      ],
+      "receivingFromCross": [
+        "The peace that the Servant's punishment purchased for me",
+        "Healing by the wounds I did not deserve to be spared",
+        "The relief of being a found sheep, returned to the Shepherd of my soul"
+      ],
+      "content": "Today is a sabbath - there is nothing to finish and nothing to prove. Sit for five unhurried minutes with one line: \"the LORD has laid upon Him the iniquity of us all.\" Name silently the one burden you keep trying to carry yourself, and picture it being lifted off your shoulders and laid on His. Then rest in the fact that it is no longer yours to carry."
+    },
+    {
+      "type": "comprehension",
+      "forReflection": [
+        "In Isaiah 53:5-6, whose are the transgressions and whose are the wounds - and why does the difference matter?",
+        "Why does Isaiah 40 open Isaiah's second half with \"Comfort,\" and how does Isaiah 53 explain how that comfort is even possible?",
+        "What does it mean that \"the LORD has laid\" the iniquity on the Servant, rather than the Servant simply choosing to stand beside us in our suffering?"
+      ],
+      "forAccountabilityPartners": [
+        "Name one weight you have been carrying that Isaiah says was meant for the Servant, not for you.",
+        "Talk about why it can feel harder to be carried than to carry - what does pride have to do with it?",
+        "Ask each other: where do you most need to hear \"by His stripes we are healed\" this week?"
+      ]
+    },
+    {
+      "type": "resource",
+      "relatedScriptures": [
+        {
+          "reference": "Isaiah 40:1-2",
+          "text": "\"Comfort, comfort My people,\" says your God. \"Speak tenderly to Jerusalem, and proclaim to her that her forced labor has been completed; her iniquity has been pardoned. For she has received from the hand of the LORD double for all her sins.\""
+        },
+        {
+          "reference": "Isaiah 52:13",
+          "text": "Behold, My Servant will prosper; He will be raised and lifted up and highly exalted."
+        },
+        {
+          "reference": "Isaiah 53:7",
+          "text": "He was oppressed and afflicted, yet He did not open His mouth. He was led like a lamb to the slaughter, and as a sheep before her shearers is silent, so He did not open His mouth."
+        },
+        {
+          "reference": "Acts 8:34-35",
+          "text": "\"Tell me,\" said the eunuch, \"who is the prophet talking about, himself or someone else?\" Then Philip began with this very Scripture and told him the good news about Jesus."
+        },
+        {
+          "reference": "1 Peter 2:24",
+          "text": "He Himself bore our sins in His body on the tree, so that we might die to sin and live to righteousness. \"By His stripes you are healed.\""
+        }
+      ],
+      "forDeeperStudy": [
+        {
+          "type": "book",
+          "title": "Isaiah 52:13-53:12",
+          "note": "Read the fourth and final Servant Song straight through in one sitting. Mark every pronoun: notice how often \"He\" and \"His\" stand against \"we,\" \"our,\" and \"us,\" and let the exchange land."
+        }
+      ]
+    },
+    {
+      "type": "profile",
+      "name": "The Servant of the LORD",
+      "title": "The Suffering Servant of Isaiah 40-55",
+      "description": "The central figure of Isaiah's four Servant Songs (42:1-4; 49:1-6; 50:4-9; 52:13-53:12). At points the title gathers up Israel as a whole; at the climax it narrows onto one person who accomplishes what the nation could not - bringing justice gently, suffering willingly, and bearing \"the iniquity of us all.\" The New Testament writers, and Jesus Himself (Luke 22:37, citing Isaiah 53:12), read this Servant as fulfilled in Christ. Jewish and Christian readers have long debated the Servant's identity; what the text plainly says is that one wounded figure carries the guilt of many and, after the anguish of His soul, sees the light of life and is satisfied.",
+      "keyQuote": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "lessonForUs": "Whatever you are tempted to carry alone, Isaiah insists it has already been carried. The Servant's whole work was to take what was not His so that you could be given what you could never earn.",
+      "heading": "The Suffering Servant of Isaiah 40-55"
     }
   ],
-  "isPlaceholder": true
+  "panels": [],
+  "totalWords": 1974,
+  "scriptureReference_full": "Isaiah 53:5-6 (within Isaiah 40-55)",
+  "sources": [
+    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
+    "Hebrew word study (eved H5650; mecholal, meduka, shalom) reflects standard lexical sources. The Servant Songs are conventionally identified as Isaiah 42:1-4; 49:1-6; 50:4-9; 52:13-53:12.",
+    "The Great Isaiah Scroll (1QIsaa) from Qumran is dated by most scholars to c. 125 BC and preserves Isaiah 53 substantially as transmitted."
+  ]
 }
