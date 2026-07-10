@@ -5,6 +5,22 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Sprint A tranche 3: reader SSR re-enabled (2026-07-10)
+
+Mobbin-audit P0 #8. The "serialization bug" that had SSR deliberately disabled
+was a prerender render-crash (structured `weeklyChallenge` object piped into
+`typographer().replace`) — already root-caused and fixed in June (0b873c86 +
+990e6cf6); the canonical `/devotional/[slug]` route was simply left with the
+stale disable. `initialDevotional` is now server-passed there too: first paint
+is real reading content, no client loader fetch. No slug special-cases.
+
+Proof: 540/540 devotionals × 5,967 modules rendered through the real
+ModuleRenderer with zero failures; `next build` prerenders 1257/1257 pages;
+Workers-preview curls return full server-rendered bodies for modules, panels,
+and the once-crashing day-6. SSG + hourly ISR — free-tier CPU unaffected.
+
+---
+
 ## LAUNCH-READINESS — Sprint B tranche 1: platform-adaptive navigation (SA-024) (2026-07-10)
 
 The audit's single biggest Mobbin-worthiness blocker: no mobile tab bar.

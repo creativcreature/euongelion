@@ -97,11 +97,14 @@ export default function DevotionalPageClient({
 }: {
   slug: string
   silo?: 'wake' | 'euangelion'
-  // Audit C1 (HOMEPAGE-AUDIT-2026-05-11): plumbing for SSR is in place
-  // but the server wrappers do NOT currently pass initialDevotional —
-  // doing so broke prerender on too-busy-for-god-day-6 with a runtime
-  // serialization error. Left as a typed entry point so the supervised
-  // pairing work can finish wiring it without re-touching the prop API.
+  // Audit C1 (HOMEPAGE-AUDIT-2026-05-11) → resolved. Both server
+  // wrappers (/wake-up/devotional/[slug] and /devotional/[slug]) now
+  // pass initialDevotional, so the reading body is server-rendered and
+  // the LOADING state only appears on a true client-side navigation
+  // miss. The prerender crash that originally blocked this
+  // (too-busy-for-god-day-6, "b.replace is not a function") was fixed
+  // at the root in 0b873c86: typographer() no-ops on non-strings and
+  // ResourceModule renders both structured and flat field shapes.
   initialDevotional?: Devotional | null
 }) {
   const [devotional, setDevotional] = useState<Devotional | null>(
