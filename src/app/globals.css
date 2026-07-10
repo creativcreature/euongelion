@@ -1522,34 +1522,6 @@ html.reduce-motion *::after {
   color: var(--color-gold) !important;
 }
 
-.network-status-banner {
-  position: fixed;
-  left: 50%;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
-  transform: translateX(-50%);
-  z-index: 180;
-  width: min(42rem, calc(100vw - 1.5rem));
-  border: 1px solid var(--color-border-strong);
-  background: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-ui);
-  font-size: clamp(0.72rem, 1vw, 0.86rem);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  line-height: 1.35;
-  padding: 0.46rem 0.72rem;
-  text-align: center;
-  box-shadow: none;
-}
-
-.network-status-banner.is-offline {
-  border-color: var(--color-border-strong);
-}
-
-.network-status-banner.is-online {
-  border-color: var(--color-gold);
-}
-
 .cookie-consent-banner {
   position: fixed;
   left: 50%;
@@ -7053,7 +7025,7 @@ html.reduce-motion *::after {
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: var(--z-modal, 400);
   background: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
@@ -7257,6 +7229,7 @@ html.reduce-motion *::after {
 .library-modal-backdrop {
   position: fixed;
   inset: 0;
+  z-index: var(--z-modal, 400);
   background: rgba(0, 0, 0, 0.6);
   display: grid;
   place-items: center;
@@ -9168,7 +9141,7 @@ html.reduce-motion
     position: fixed;
     inset-inline: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: var(--z-fixed, 200);
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     background: var(--color-bg);
@@ -9238,5 +9211,12 @@ html.reduce-motion
       var(--mock-line, var(--color-border-strong));
     background: transparent;
     color: inherit;
+  }
+}
+
+/* SA-024: on mobile the cookie banner rises above the fixed tab bar. */
+@media (max-width: 767px) {
+  .cookie-consent-banner {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4.3rem);
   }
 }
