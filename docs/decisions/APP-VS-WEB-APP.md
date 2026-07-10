@@ -593,3 +593,15 @@ When you're back online, pick up where you left off.
 ---
 
 _This document will be updated when the founder makes a decision._
+
+---
+
+## Addendum (2026-07-10, SA-024)
+
+The phased web-first/PWA direction this document evaluated is the shipped
+reality (Cloudflare Workers, installable PWA). SA-024 extends it: the PWA now
+carries **platform-adaptive chrome** — a persistent bottom tab bar on mobile
+(native-feeling, app-like, per Open/Calm/Headspace patterns) and the bespoke
+editorial masthead on desktop. Same data layer, two intentional presentations.
+This closes the "reads as a website on mobile" gap without changing the
+web-first distribution strategy this document locked.

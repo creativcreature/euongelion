@@ -5,20 +5,24 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ActivePlanBadge from './ActivePlanBadge'
 
-// Phase 1.4 — Global nav tightened to 5 top-level destinations. The
-// prior 6-item bar mixed discovery (Wake-Up, Series, Library) with
-// returning-user surfaces (Daily Bread) and read as a flat, undirected
-// list. The 5 highest-value destinations now lead with the one-tap
-// entry (TODAY); returning-user surfaces (Daily Bread, Library) live in
-// the ActivePlanBadge + account menu, and auth stays in the account
-// menu. Wake-Up is reachable from SERIES and the footer.
-const NAV_ITEMS = [
+// SA-024 — platform-adaptive IA. Desktop masthead carries the full
+// destination set (horizontal space allows it): Daily Bread + Library
+// return to primary nav, undoing the Phase-1.4 demotion into the avatar
+// menu. On mobile, destinations live in the persistent bottom tab bar
+// (MobileTabBar: Today · Series · Soul Audit · Library · You); the mobile
+// top bar carries identity + utilities ONLY, and the hamburger holds just
+// the overflow that has no tab (How We Write, help, auth) — the two
+// surfaces never duplicate a destination.
+const DESKTOP_NAV_ITEMS = [
   { href: '/', label: 'HOME' },
   { href: '/today', label: 'TODAY' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
+  { href: '/daily-bread', label: 'DAILY BREAD' },
+  { href: '/library', label: 'LIBRARY' },
   { href: '/how-we-write', label: 'HOW WE WRITE' },
 ]
+const MOBILE_OVERFLOW_ITEMS = [{ href: '/how-we-write', label: 'HOW WE WRITE' }]
 const MOBILE_TICKER_INTERVAL_MS = 6200
 const SCROLL_LOCK_CLASSES = [
   'lenis',
@@ -357,7 +361,7 @@ export default function EuangelionShellHeader({
     return pathname === href || (href !== '/' && pathname?.startsWith(href))
   }
 
-  const renderNavLinks = (items: typeof NAV_ITEMS) =>
+  const renderNavLinks = (items: typeof DESKTOP_NAV_ITEMS) =>
     items.map((item, index) => {
       const active = isNavItemActive(item.href)
       return (
@@ -373,26 +377,6 @@ export default function EuangelionShellHeader({
         </span>
       )
     })
-
-  const renderMobileNav = () => (
-    <div className="mock-mobile-nav-inline">
-      {NAV_ITEMS.map((item, index) => {
-        const active = isNavItemActive(item.href)
-        return (
-          <span key={item.href} className="mock-nav-item-wrap">
-            <Link
-              href={item.href}
-              className={`mock-nav-item ${active ? 'is-active' : ''}`}
-              aria-current={active ? 'page' : undefined}
-            >
-              {item.label}
-            </Link>
-            {index < NAV_ITEMS.length - 1 && <span aria-hidden="true">|</span>}
-          </span>
-        )
-      })}
-    </div>
-  )
 
   return (
     <div className={`mock-shell-frame ${tone === 'wake' ? 'wake-shell' : ''}`}>
@@ -416,7 +400,7 @@ export default function EuangelionShellHeader({
                   className="mock-topbar-center-nav"
                   aria-label="Main navigation"
                 >
-                  {renderNavLinks(NAV_ITEMS)}
+                  {renderNavLinks(DESKTOP_NAV_ITEMS)}
                 </nav>
               ) : (
                 <p className="mock-topbar-center-copy">
@@ -601,10 +585,48 @@ export default function EuangelionShellHeader({
           </div>
 
           <div className="mock-topbar-mobile-row">
-            {/* Left spacer mirrors the menu button's track so the centered
-                ambient ticker stays optically centered between two equal
-                gutters instead of drifting under the action on the right. */}
-            <span className="mock-topbar-mobile-spacer" aria-hidden="true" />
+            {/* SA-024: the mobile top bar carries utilities. The theme toggle
+                takes the left track (it also serves as the optical
+                counterweight to the menu button on the right — the ticker
+                stays centered between two equal-weight controls). Before
+                this, mobile had NO theme toggle outside Settings. */}
+            <button
+              type="button"
+              className="mock-icon-control mock-mode-toggle mock-topbar-mobile-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? (
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="4.2" />
+                  <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" />
+                </svg>
+              ) : (
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.6 6.6 0 0 0 10.8 10.8Z" />
+                </svg>
+              )}
+            </button>
             {/* Ambient masthead furniture: the rolling date + tagline. The
                 cross-fade stage is its own positioning context (min-width:0,
                 bounded grid cell) so the absolutely-stacked ticker items can
@@ -650,16 +672,9 @@ export default function EuangelionShellHeader({
             aria-label="Navigation menu"
           >
             <ActivePlanBadge variant="header" className="mock-nav-item" />
-            {renderNavLinks(NAV_ITEMS)}
-            {!authLoading && authenticated && (
-              <Link
-                href="/settings"
-                className="mock-nav-item"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                ACCOUNT
-              </Link>
-            )}
+            {renderNavLinks(MOBILE_OVERFLOW_ITEMS)}
+            {/* SA-024: no ACCOUNT link here — Settings is the YOU tab in the
+                bottom tab bar; the hamburger never duplicates a destination. */}
             {/* Mobile/desktop parity: Help lives in the desktop account menu but
                 was unreachable from the mobile menu (a mobile-first audience). */}
             <Link
@@ -719,8 +734,9 @@ export default function EuangelionShellHeader({
           aria-label={navDocked ? undefined : 'Main navigation'}
           aria-hidden={navDocked ? true : undefined}
         >
-          <div className="mock-nav-desktop">{renderNavLinks(NAV_ITEMS)}</div>
-          <div className="mock-nav-mobile">{renderMobileNav()}</div>
+          <div className="mock-nav-desktop">
+            {renderNavLinks(DESKTOP_NAV_ITEMS)}
+          </div>
         </nav>
       </header>
     </div>

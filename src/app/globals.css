@@ -4845,11 +4845,6 @@ html.reduce-motion *::after {
   gap: 0.45rem;
 }
 
-.mock-nav-mobile {
-  display: none;
-  width: 100%;
-}
-
 .mock-nav.is-docked {
   visibility: hidden;
   opacity: 0;
@@ -6547,20 +6542,6 @@ html.reduce-motion *::after {
     padding: 0.28rem var(--mock-pad-x);
   }
 
-  /* Invisible counterweight: same nominal width as the menu button so the
-     centered ticker reads as centered, not shoved left. It carries no hit
-     area and collapses to nothing if space is tight (min-width:0). */
-  .mock-topbar-mobile-spacer {
-    justify-self: start;
-    min-width: 0;
-    /* Narrower than the button so the centered ticker gains room for the
-       full tagline; the short date stays comfortably centered and the
-       masthead wordmark below carries the true optical center. */
-    width: 22px;
-    height: 1px;
-    pointer-events: none;
-  }
-
   .mock-topbar-mobile-ticker {
     justify-self: stretch;
     min-height: var(--mock-h-topbar);
@@ -6612,33 +6593,6 @@ html.reduce-motion *::after {
   }
 
   .mock-nav-desktop {
-    display: none;
-  }
-
-  .mock-nav-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .mock-mobile-nav-inline {
-    display: flex;
-    align-items: center;
-    /* Left-align so HOME is always fully visible on load; the row scrolls right
-       for the rest of the menu. (Was `center`, which on narrow screens centered
-       the over-wide row and pushed HOME off the left edge — cropped on refresh.) */
-    justify-content: flex-start;
-    gap: 0.35rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    /* Keep a little breathing room so HOME isn't flush against the viewport edge. */
-    scroll-padding-left: 0.55rem;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .mock-mobile-nav-inline::-webkit-scrollbar {
     display: none;
   }
 
@@ -9011,7 +8965,6 @@ samp {
    scroll internally instead of leaking. These are all self-contained scroll
    rails (overflow-x: auto on themselves), so the guard only prevents them
    pushing an ancestor wide. */
-.mock-mobile-nav-inline,
 .mock-mobile-nav-main-links,
 .print-rail-viewport,
 .browse-rail-viewport,
@@ -9198,4 +9151,92 @@ html.reduce-motion
 }
 .affordance-underline:is(:hover, :focus-visible)::after {
   transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Mobile bottom tab bar (SA-024 — platform-adaptive IA)
+   Destinations live here on mobile; the top bar carries identity + utilities
+   only. Never rendered ≥768px (desktop keeps the editorial masthead).
+   ========================================================================== */
+
+.mobile-tab-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-tab-bar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    background: var(--color-bg);
+    border-top: 1px solid
+      var(--mock-line, var(--color-border-strong, var(--color-border)));
+    padding: 0.34rem 0.25rem calc(env(safe-area-inset-bottom, 0px) + 0.34rem);
+  }
+
+  .mobile-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.24rem;
+    min-height: 44px;
+    padding: 0.1rem 0;
+    color: var(--color-text-secondary, var(--color-text));
+    text-decoration: none;
+    border: 0;
+  }
+
+  .mobile-tab-item svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+  }
+
+  .mobile-tab-label {
+    font-size: 0.53rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .mobile-tab-item.is-active {
+    color: var(--color-gold);
+  }
+
+  .mobile-tab-item:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: -2px;
+  }
+
+  /* Clear the fixed bar: everything scrollable must be able to rise above it. */
+  body {
+    padding-bottom: calc(3.7rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 767px) and (display-mode: standalone) {
+  /* Installed-PWA: slightly more breathing room over the home indicator. */
+  .mobile-tab-bar {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.42rem);
+  }
+}
+
+/* SA-024: mobile top-bar theme toggle — sits in the left track of the
+   3-column mobile topbar grid, mirroring the menu button's visual weight
+   so the ambient ticker stays optically centered. */
+@media (max-width: 767px) {
+  .mock-topbar-mobile-toggle {
+    justify-self: start;
+    min-height: 1.9rem;
+    min-width: 2.2rem;
+    padding: 0.12rem 0.4rem;
+    border: var(--mock-stroke, 1px) solid
+      var(--mock-line, var(--color-border-strong));
+    background: transparent;
+    color: inherit;
+  }
 }

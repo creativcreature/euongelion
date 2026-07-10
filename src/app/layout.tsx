@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
+import MobileTabBar from '@/components/MobileTabBar'
 import Providers from './providers'
 import './globals.css'
 
@@ -80,7 +81,10 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to reading
         </a>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <MobileTabBar />
+        </Providers>
         <ServiceWorkerRegistration />
         <ConsentAwareAnalytics />
       </body>

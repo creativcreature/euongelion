@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Sprint B tranche 1: platform-adaptive navigation (SA-024) (2026-07-10)
+
+The audit's single biggest Mobbin-worthiness blocker: no mobile tab bar.
+
+1. **Mobile bottom tab bar** (`MobileTabBar`, mounted in the root layout) —
+   Today · Series · Soul Audit · Library · You. Fixed, safe-area-aware
+   (`env(safe-area-inset-bottom)` + standalone-PWA variant), 44px targets,
+   editorial stroke icons + micro caps labels, gold active state,
+   `aria-current`. Companion routes map onto tabs (`/daily-bread` → TODAY,
+   `/saved`+`/clippings` → LIBRARY, `/wake-up` → SERIES). Anchors: Open's
+   dark minimal tab bar; Calm/Headspace structure.
+2. **Mobile top bar = identity + utilities only** — theme toggle added to the
+   mobile topbar (mobile previously had NO theme toggle anywhere outside
+   Settings); hamburger reduced to non-tab overflow (How We Write, Help,
+   sign-in/up) — zero destination duplication with the tab bar; the inline
+   mobile destinations row is gone (dead CSS removed).
+3. **Desktop masthead restored to full destination set** — DAILY BREAD and
+   LIBRARY return to primary nav (the Phase-1.4 demotion undone per SA-024);
+   desktop layout otherwise untouched.
+4. **Docs reconciled** — M04 addendum (platform-split canonical nav) +
+   APP-VS-WEB-APP addendum (tab bar strengthens the locked web-first/PWA
+   strategy).
+
+New regression suite: mobile-tab-bar.test.tsx (10 tests, route→tab mapping).
+
+---
+
 ## LAUNCH-READINESS — Sprint A tranche 2: Soul Audit reveal + canonical reader + routing truth (2026-07-10)
 
 Mobbin-audit P0 items #1, #2, #3, #5, #6 (+ #4 completion):
