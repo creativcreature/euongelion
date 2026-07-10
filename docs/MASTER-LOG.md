@@ -40,3 +40,14 @@ All founder decisions persisted across sessions. Referenced by CLAUDE.md.
 | P4  | Git email      | wokegod3@gmail.com                                                        |
 | P5  | Domain         | euangelion.app (custom domain live)                                       |
 | P6  | Port           | 3333 (3000-3005 occupied)                                                 |
+
+## Session 2026-07-10 — Launch-Readiness Run (Mobbin Polish Audit execution)
+
+Founder-locked decisions from the 2026-07-10 review session, formalized with real ids
+(source: docs/audits/MOBBIN-POLISH-AUDIT-2026-07-10.md; run tracking: docs/run/):
+
+| #      | Decision             | Answer                                                                                                                                                                                                                                                                                           |
+| ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SA-024 | Platform-adaptive IA | Mobile gets a persistent bottom tab bar (Today · Series · Soul Audit · Library · You); mobile top bar carries identity + utilities only (zero duplication); desktop keeps the bespoke editorial masthead with Daily Bread + Library restored to primary nav. Same data, two intentional designs. |
+| SA-025 | Momentum hybrid      | Guilt-free hybrid: quiet end-of-session completion beat (Headspace restraint, never confetti) + gentle presence indicator (lit days, no counts, no shame). Revive or delete the orphaned DevotionalMilestoneReveal.                                                                              |
+| —      | Run mode             | Autonomous launch-readiness run through Sprints A–D + imagery samples + LCP loop, deploys incremental, single human gate at the end (founder instruction 2026-07-10).                                                                                                                            |

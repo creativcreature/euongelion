@@ -9,27 +9,27 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 - [x] T0-2: Commit prior-session Bible-365 full-run rewrite as clean baseline (27c88829; 365/365 validated)
 - [x] T0-3: Identify deploy pipeline → HANDOFF.md (Cloudflare Workers, `npm run deploy`, wrangler token verified)
 - [x] T0-4: GitHub push credentials — MISSING → HUMAN_REQUIRED.md item 1 (deploys unaffected)
-- [~] T0-5: Create docs/run/ with all 7 tracking files, commit
+- [x] T0-5: Create docs/run/ with all 7 tracking files, commit
 
 ## Task 1 — OAuth subscription sign-in research
 
-- [ ] T1-1: Research Claude/ChatGPT/Manus subscription-OAuth feasibility (flows, official support, ToS)
-- [ ] T1-2: Write docs/run/RESEARCH_OAUTH.md with findings + recommendation
-- [ ] T1-3: If (and only if) a fully supported ToS-compliant zero-founder-input path exists → implement; else log and move on
+- [x] T1-1: Research Claude/ChatGPT/Manus subscription-OAuth feasibility (flows, official support, ToS)
+- [x] T1-2: Write docs/run/RESEARCH_OAUTH.md with findings + recommendation
+- [x] T1-3: (gate verdict NO — logged, no build) If (and only if) a fully supported ToS-compliant zero-founder-input path exists → implement; else log and move on
 
 ## Task 2 — Sprint A: correctness (P0 1–9)
 
-- [ ] A-0: Verify every audit claim against current code before fixing (anchors may have drifted)
-- [ ] A-1: Soul-Audit guided-reveal dead code (`soul-audit/results/page.tsx:70-73`) — revive Calm/Yazio-style progressive reveal (recommended first, alternatives on tap) or delete cleanly
-- [ ] A-2: Result cards render bare (`OptionCard.tsx:33-38`; AI slug ≠ series slug) — resolve real hero from scripture theme or design text-first card (Yazio)
-- [ ] A-2b: `seriesSlug` written to plan is AI slug (`select/route.ts:724`) → resume badge title empty (`current/route.ts:98`) — store resolvable title/theme
-- [ ] A-3: Results loading skeleton (3-up grid) → match real stacked RECOMMENDED/ALTERNATIVE layout
-- [ ] A-4: Wire-or-delete 0-import orphans: GuestSignupGate · WalkthroughModal · SeriesSearchPanel · SeriesHero · MixedHeadline · NetworkStatusBanner · DevotionalMilestoneReveal (verify each is truly 0-import first)
-- [ ] A-5: Two-reader ambiguity (`/soul-audit/plan/[planToken]` vs `/daily-bread`) — pick canonical, finish or retire the other; fix devotional-silo self-canonical URLs (`devotional/[slug]/page.tsx:56`)
-- [ ] A-6: `/saved` mis-routes Euangelion-silo bookmarks to `/wake-up/devotional/*` (`SavedList.tsx:153`)
-- [ ] A-7: Copy unification — GET MATCHED vs Continue; kill "from our library" false claim; reconcile "32 plans" vs "65 series"
-- [ ] A-8: Re-enable reader SSR (fix `too-busy-for-god-day-6` serialization bug; `DevotionalPageClient.tsx:100`) — no loader flash
-- [ ] A-9: Session cookie misspelling `euongelion_session` — rename with live-key migration care
+- [x] A-0: Verify every audit claim against current code before fixing (anchors may have drifted)
+- [~] A-1 (agent): Soul-Audit guided-reveal dead code (`soul-audit/results/page.tsx:70-73`) — revive Calm/Yazio-style progressive reveal (recommended first, alternatives on tap) or delete cleanly
+- [~] A-2 (agent): Result cards render bare (`OptionCard.tsx:33-38`; AI slug ≠ series slug) — resolve real hero from scripture theme or design text-first card (Yazio)
+- [~] A-2b (agent): `seriesSlug` written to plan is AI slug (`select/route.ts:724`) → resume badge title empty (`current/route.ts:98`) — store resolvable title/theme
+- [~] A-3 (agent): Results loading skeleton (3-up grid) → match real stacked RECOMMENDED/ALTERNATIVE layout
+- [x] A-4: (5 deleted: WalkthroughModal, SeriesSearchPanel, MixedHeadline, NetworkStatusBanner, SeriesHero; GuestSignupGate→Sprint C, DevotionalMilestoneReveal→Sprint D) Wire-or-delete 0-import orphans: GuestSignupGate · WalkthroughModal · SeriesSearchPanel · SeriesHero · MixedHeadline · NetworkStatusBanner · DevotionalMilestoneReveal (verify each is truly 0-import first)
+- [~] A-5 (agent): Two-reader ambiguity (`/soul-audit/plan/[planToken]` vs `/daily-bread`) — pick canonical, finish or retire the other; fix devotional-silo self-canonical URLs (`devotional/[slug]/page.tsx:56`)
+- [~] A-6 (agent): `/saved` mis-routes Euangelion-silo bookmarks to `/wake-up/devotional/*` (`SavedList.tsx:153`)
+- [x] A-7: Copy unification (computed counts 33/540; false claims fixed; GET MATCHED unified) — GET MATCHED vs Continue; kill "from our library" false claim; reconcile "32 plans" vs "65 series"
+- [~] A-8 (agent): Re-enable reader SSR (fix `too-busy-for-god-day-6` serialization bug; `DevotionalPageClient.tsx:100`) — no loader flash
+- [x] A-9: Session cookie misspelling (legacy-read fallback migration, zero loss) `euongelion_session` — rename with live-key migration care
 - [ ] A-V: Sprint A verification — type-check, lint, tests, `npm run preview` + curl affected routes, real Soul-Audit generation end-to-end
 - [ ] A-D: DEPLOY Sprint A live + verify production
 
@@ -101,8 +101,8 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 
 ## Spine follow-ups (execute within sprints, per audit Part 10)
 
-- [ ] S-1: Assign real SA ids for SA-NEW-1 + SA-NEW-2 in production-decisions.yaml + MASTER-DECISIONS.md
-- [ ] S-2: Create + register F-NEW-a…d PRDs (FEATURE-PRD-INDEX.md + FEATURE-PRD-REGISTRY.yaml)
+- [x] S-1: Assign real SA ids (SA-024 platform IA, SA-025 momentum hybrid) for SA-NEW-1 + SA-NEW-2 in production-decisions.yaml + MASTER-DECISIONS.md
+- [x] S-2: (F-063..F-074 created + indexed; registry count-locked at 54 — followed F-056..062 precedent, see DECISIONS D-004) Create + register F-NEW-a…d PRDs (FEATURE-PRD-INDEX.md + FEATURE-PRD-REGISTRY.yaml)
 - [ ] S-3: Update PRODUCTION-FEATURE-SCORECARD.md + PRODUCTION-10-10-PLAN.md from audit Part 6
 - [ ] S-4: Reconcile Part 1 with APP-VS-WEB-APP.md + M04
 - [ ] S-5: CHANGELOG.md entries per shipped tranche (enforced by hooks anyway)

@@ -581,3 +581,183 @@ features:
     prd: docs/feature-prds/F-055.md
     methodology_refs:
       - M00
+  - id: F-051
+    category: Content / Browse
+    feature: Apple TV browse page + content pipeline completion
+    slug: apple-tv-browse-content-pipeline
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-051.md
+    methodology_refs:
+      - M00
+  - id: F-056
+    category: Soul Audit
+    feature: Fix Soul Audit generation pipeline
+    slug: fix-soul-audit-generation-pipeline
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-056.md
+    methodology_refs:
+      - M00
+  - id: F-057
+    category: Soul Audit
+    feature: Fix RAG pipeline — deploy real reference library index
+    slug: fix-rag-pipeline-real-reference-index
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-057.md
+    methodology_refs:
+      - M00
+  - id: F-058
+    category: Soul Audit
+    feature: Fix select timeout — async day generation
+    slug: fix-select-timeout-async-day-generation
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-058.md
+    methodology_refs:
+      - M00
+  - id: F-059
+    category: Soul Audit
+    feature: Create missing Soul Audit Supabase tables
+    slug: create-missing-soul-audit-tables
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-059.md
+    methodology_refs:
+      - M00
+  - id: F-060
+    category: Soul Audit
+    feature: Soul Audit pipeline overhaul
+    slug: soul-audit-pipeline-overhaul
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-060.md
+    methodology_refs:
+      - M00
+  - id: F-061
+    category: Sitewide
+    feature: Audit fixes (2026-05-11 consolidated sitewide audit)
+    slug: audit-fixes-2026-05-11
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-061.md
+    methodology_refs:
+      - M00
+  - id: F-062
+    category: Devotional UX
+    feature: Save + Start devotional (active slot + library)
+    slug: save-start-devotional-active-slot-library
+    baseline_score: 0
+    status: done
+    prd: docs/feature-prds/F-062.md
+    methodology_refs:
+      - M00
+  - id: F-063
+    category: Navigation / IA
+    feature: Platform-adaptive IA (tab bar + masthead)
+    slug: platform-adaptive-ia-tab-bar-masthead
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-063.md
+    methodology_refs:
+      - M00
+  - id: F-064
+    category: Soul Audit UX
+    feature: Soul Audit reveal + results completeness
+    slug: soul-audit-reveal-results-completeness
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-064.md
+    methodology_refs:
+      - M00
+  - id: F-065
+    category: Onboarding
+    feature: Anonymous first-run + guest capture + code entry
+    slug: anonymous-first-run-guest-capture-code-entry
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-065.md
+    methodology_refs:
+      - M00
+  - id: F-066
+    category: Momentum
+    feature: Guilt-free momentum hybrid (SA-025)
+    slug: guilt-free-momentum-hybrid
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-066.md
+    methodology_refs:
+      - M00
+  - id: F-067
+    category: Reader UX
+    feature: Reader polish: SSR restore + Aa named themes
+    slug: reader-ssr-restore-aa-named-themes
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-067.md
+    methodology_refs:
+      - M00
+  - id: F-068
+    category: Library
+    feature: Library consolidation to the 7-tab rail
+    slug: library-consolidation-seven-tab-rail
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-068.md
+    methodology_refs:
+      - M00
+  - id: F-069
+    category: Home
+    feature: Signed-in Today home
+    slug: signed-in-today-home
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-069.md
+    methodology_refs:
+      - M00
+  - id: F-070
+    category: Reminders
+    feature: Reminder scheduler (one quiet word)
+    slug: reminder-scheduler-one-quiet-word
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-070.md
+    methodology_refs:
+      - M00
+  - id: F-071
+    category: Search
+    feature: Global search
+    slug: global-search
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-071.md
+    methodology_refs:
+      - M00
+  - id: F-072
+    category: PWA
+    feature: Install prompt post-value moment
+    slug: pwa-install-prompt-post-value
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-072.md
+    methodology_refs:
+      - M00
+  - id: F-073
+    category: Settings
+    feature: Settings restructure (grouped + profile)
+    slug: settings-restructure-grouped-profile
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-073.md
+    methodology_refs:
+      - M00
+  - id: F-074
+    category: Polish
+    feature: State completeness + signature polish
+    slug: state-completeness-signature-polish
+    baseline_score: 0
+    status: open
+    prd: docs/feature-prds/F-074.md
+    methodology_refs:
+      - M00

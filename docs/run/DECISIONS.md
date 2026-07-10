@@ -19,3 +19,20 @@ Format: id · date · decision · options considered · reasoning · real-world 
 - **Options:** (a) block the run on push credentials; (b) proceed local-only + deploy via verified wrangler token; log push as HUMAN_REQUIRED.
 - **Choice:** (b). The DEPLOY-BEFORE-GATE rule is about the live site; wrangler deploys from the working tree and its token is verified. No gh binary or GitHub credential exists on this machine — exhausted: gh in PATH/homebrew/mdfind, ~/.config/gh/hosts.yml, git credential store, osxkeychain.
 - **Anchor:** n/a (process decision).
+
+## D-004 (2026-07-10) — PRDs F-063..F-074 indexed but not added to FEATURE-PRD-REGISTRY.yaml
+
+- **Options:** (a) add to registry + bump the hardcoded `54` count in check-feature-prd-integrity.mjs; (b) PRD file + INDEX row only, matching the existing F-056..F-062 precedent.
+- **Choice:** (b). The integrity script hardcodes the registry count; editing a verify script to admit new entries is riskier than following the established pattern for the last seven PRDs. Flag for founder at Task 9 if registry should be reconciled.
+- **Anchor:** repo precedent (F-056..F-062).
+
+## D-005 (2026-07-10) — CTA verb unified to GET MATCHED (not Continue)
+
+- **Options:** (a) "Continue" both; (b) "GET MATCHED" both; (c) a new verb.
+- **Choice:** (b). "Matched" is the product's honest vocabulary sitewide ("three matched recommendations" on /about, "three matched paths" in Soul Audit subcopy); what was false was "from our library," which is now corrected. Homepage widget already used GET MATCHED; the standalone page's bare "Continue" was the outlier.
+- **Anchor:** Calm Sleep quiz CTA consistency (one verb per action across entry points).
+
+## D-006 (2026-07-10) — Orphan disposition split
+
+- **Choice:** Delete 5 with zero product intent attached (WalkthroughModal, SeriesSearchPanel, MixedHeadline, NetworkStatusBanner, SeriesHero — all 0-import, grep-verified). Retain GuestSignupGate (audit Part 3 schedules it for onboarding wiring, Sprint C) and DevotionalMilestoneReveal (SA-025 explicitly says revive-or-delete at the completion beat, Sprint D). Deleting-then-rebuilding would be waste; git history preserves the deleted five if ever needed.
+- **Anchor:** audit Part 3 #2 and Part 5A.

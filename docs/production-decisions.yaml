@@ -49,6 +49,10 @@ decisions:
     title: cascading-progressive-day-generation
   - id: SA-023
     title: user-controlled-active-devotional-and-library
+  - id: SA-024
+    title: platform-adaptive-ia-mobile-tab-bar-bespoke-desktop-masthead
+  - id: SA-025
+    title: guilt-free-momentum-hybrid-completion-beat-plus-presence
 
 contracts:
   required_files:

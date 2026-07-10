@@ -54,7 +54,27 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-048 | Billing           | Payment lifecycle states                         | 4/10     | done   | [F-048.md](./F-048.md) |
 | F-049 | iOS               | Shell readiness                                  | 4/10     | done   | [F-049.md](./F-049.md) |
 | F-050 | iOS               | App Store submission readiness                   | 4/10     | done   | [F-050.md](./F-050.md) |
+| F-051 | Content / Browse  | Apple TV browse + content pipeline completion    | 0/10     | done   | [F-051.md](./F-051.md) |
 | F-052 | Visual / Content  | Artwork image layer (heroes + inline + lightbox) | 0/10     | done   | [F-052.md](./F-052.md) |
 | F-053 | Devotional Engine | Generative 80/20 RAG composition engine          | 0/10     | done   | [F-053.md](./F-053.md) |
 | F-054 | Cost Governance   | Token-saving strategy for generative devotionals | 0/10     | done   | [F-054.md](./F-054.md) |
 | F-055 | Bugfix            | Fix devotional page hydration mismatch           | 0/10     | done   | [F-055.md](./F-055.md) |
+| F-056 | Soul Audit        | Fix Soul Audit generation pipeline               | 0/10     | done   | [F-056.md](./F-056.md) |
+| F-057 | Soul Audit        | Fix RAG pipeline — deploy real reference index   | 0/10     | done   | [F-057.md](./F-057.md) |
+| F-058 | Soul Audit        | Fix select timeout — async day generation        | 0/10     | done   | [F-058.md](./F-058.md) |
+| F-059 | Soul Audit        | Create missing Soul Audit Supabase tables        | 0/10     | done   | [F-059.md](./F-059.md) |
+| F-060 | Soul Audit        | Soul Audit pipeline overhaul                     | 0/10     | done   | [F-060.md](./F-060.md) |
+| F-061 | Sitewide          | Audit fixes (2026-05-11 consolidated audit)      | 0/10     | done   | [F-061.md](./F-061.md) |
+| F-062 | Devotional UX     | Save + Start devotional (active slot + library)  | 0/10     | done   | [F-062.md](./F-062.md) |
+| F-063 | Navigation / IA   | Platform-adaptive IA (tab bar + masthead)        | 0/10     | wip    | [F-063.md](./F-063.md) |
+| F-064 | Soul Audit UX     | Soul Audit reveal + results completeness         | 0/10     | wip    | [F-064.md](./F-064.md) |
+| F-065 | Onboarding        | Anonymous first-run + guest capture + code entry | 0/10     | open   | [F-065.md](./F-065.md) |
+| F-066 | Momentum          | Guilt-free momentum hybrid (SA-025)              | 0/10     | open   | [F-066.md](./F-066.md) |
+| F-067 | Reader UX         | Reader polish: SSR restore + Aa named themes     | 0/10     | wip    | [F-067.md](./F-067.md) |
+| F-068 | Library           | Library consolidation to the 7-tab rail          | 0/10     | open   | [F-068.md](./F-068.md) |
+| F-069 | Home              | Signed-in Today home                             | 0/10     | open   | [F-069.md](./F-069.md) |
+| F-070 | Reminders         | Reminder scheduler ("one quiet word")            | 0/10     | open   | [F-070.md](./F-070.md) |
+| F-071 | Search            | Global search                                    | 0/10     | open   | [F-071.md](./F-071.md) |
+| F-072 | PWA               | Install prompt post-value moment                 | 0/10     | open   | [F-072.md](./F-072.md) |
+| F-073 | Settings          | Settings restructure (grouped + profile)         | 0/10     | open   | [F-073.md](./F-073.md) |
+| F-074 | Polish            | State completeness + signature polish            | 0/10     | open   | [F-074.md](./F-074.md) |
