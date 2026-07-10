@@ -5,6 +5,16 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Sprint A follow-up: plan-token redirect hardened to a true 307 (2026-07-10)
+
+The A-V preview battery caught the retired-reader redirect returning 200 with
+a streamed meta-refresh (the root loading shell flushes before a page-level
+`redirect()` can set a status). Moved to `next.config.ts redirects()` — a
+clean 307 at the routing layer; the unreachable page segment and its unit
+test are deleted (the preview curl is the guard).
+
+---
+
 ## LAUNCH-READINESS — Sprint A tranche 3: reader SSR re-enabled (2026-07-10)
 
 Mobbin-audit P0 #8. The "serialization bug" that had SSR deliberately disabled

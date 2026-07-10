@@ -13,6 +13,19 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/soul-audit/*': ['./content/series-json/**/*.json'],
   },
+  async redirects() {
+    return [
+      // RETIRED READER (Mobbin audit P0 #5): /daily-bread is the canonical
+      // plan reader; old bookmarked /soul-audit/plan/<token>[?day=N] deep
+      // links 307 there at the routing layer (a page-level redirect() can't
+      // return a clean 307 once the root loading shell has flushed).
+      {
+        source: '/soul-audit/plan/:planToken',
+        destination: '/daily-bread',
+        permanent: false,
+      },
+    ]
+  },
   async headers() {
     const isDev = process.env.NODE_ENV === 'development'
     const csp = [
