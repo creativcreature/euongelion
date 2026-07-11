@@ -5,6 +5,22 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — LCP loop final keeps (rounds 3-4, loop terminated by founder) (2026-07-10)
+
+1. **Reader loading boundaries removed** — the segment `loading.tsx` baked a
+   shell-first skeleton into the PRERENDERED reader HTML, so the real
+   content's swap-in WAS the LCP (2s element-render delay on an SSR-present
+   image). Reader HTML is now content-first on hard loads; client-side
+   navigations fall back to standard Next behavior. Lab LCP: reader
+   4472 → 4404ms (loop trajectory overall: 8412 → 4404, −48% in 4 rounds).
+2. **Substack-cache images capped** at 1400px/q78 — 62.7MB → 32.2MB across
+   144 files, same filenames, no visible degradation (not a lab-metric win;
+   ships as real-world transfer weight reduction).
+
+Loop terminated at founder direction; full round log in docs/run/RESULTS_LOG.md.
+
+---
+
 ## LAUNCH-READINESS — Wave 4: anonymous onboarding + in-app sign-in code (2026-07-10)
 
 Founder-reported gap ("I'm not seeing onboarding") — the real onboarding was

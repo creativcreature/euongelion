@@ -60,10 +60,10 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 - [x] D-20b: (SA-025 + F-066 created earlier) Assign real SA id for momentum hybrid; PRD `F-NEW-d`
 - [x] D-21: Series/plan detail tabs (adaptive 4/3/2-tab model backed by real profile modules + artwork assignments; bible-365 grouped nav preserved; 9/9 tests; commit pending wave-2) (Sessions · About · Voices · Artwork) — Waking Up
 - [x] D-22: Why-this rows on Today band + Daily Bread + curated view (real stored reasoning only, vanish rather than fabricate; commit pending wave-3)
-- [ ] D-23: Haptics + native sheets + safe-area audit + unified motion language (one easing, one duration scale) — Calm
-- [ ] D-24: Replace all mismatched skeletons with layout-accurate ones
-- [ ] D-V: Sprint D verification
-- [ ] D-D: DEPLOY Sprint D live + verify production
+- [x] D-23: Haptics + safe-area audit + unified motion language (68 declarations tokenized; 3 haptic sites; 9 safe-area fixes) — deployed in deploy 3
+- [x] D-24: All 5 loading.tsx rebuilt layout-accurate + 2 client loaders reuse them — deployed in deploy 3
+- [x] D-V: Sprint D verification (suite 120/1608 at wave 3; preview + live batteries 51/51)
+- [x] D-D: DEPLOYED (deploy 3, version f8c2ef6d) + live battery 51/51
 
 ## Task 6 — Imagery: plan + samples only (full run gated at Task 9)
 
