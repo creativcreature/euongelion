@@ -11,6 +11,15 @@ import FadeIn from '@/components/motion/FadeIn'
 import CrisisGate from '@/components/soul-audit/CrisisGate'
 import GenerationProgress from '@/components/soul-audit/GenerationProgress'
 import OptionCard from '@/components/soul-audit/OptionCard'
+import GenerationPaywall from '@/components/billing/GenerationPaywall'
+import {
+  resolveGenerationGate,
+  type GenerationPaywallState,
+} from '@/lib/billing/paywall-state'
+import {
+  usePendingGenerationStore,
+  type HeldGenerationSelection,
+} from '@/stores/pendingGenerationStore'
 import { useSoulAuditStore } from '@/stores/soulAuditStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import {
@@ -59,6 +68,18 @@ export default function SoulAuditResultsPage() {
     pollUrl: string
     optionId: string
   } | null>(null)
+  // --- SA-026 generation gate (Phase 1c) ---
+  // When select answers 401/402, the request is HELD in the pending-
+  // generation store and the paywall presents. The held request resumes
+  // automatically (?resume=1) after sign-in / entitlement — zero re-typing.
+  const [paywall, setPaywall] = useState<{
+    state: GenerationPaywallState
+    freeGenerationUsed: boolean
+  } | null>(null)
+  const [resuming, setResuming] = useState(false)
+  const [resumeError, setResumeError] = useState<string | null>(null)
+  const resumeHeldRef = useRef<HeldGenerationSelection | null>(null)
+  const heldSelection = usePendingGenerationStore((store) => store.held)
   const [error, setError] = useState<string | null>(null)
   const [selectionInlineError, setSelectionInlineError] = useState<
     string | null
@@ -146,10 +167,39 @@ export default function SoulAuditResultsPage() {
     }
   }, [])
 
-  // Redirect to /soul-audit if there's no submit result
+  // Resume a held generation (?resume=1) — arriving back from sign-in
+  // or the checkout success room. Runs once on mount; the param stays
+  // in the URL until the resume resolves so a mid-flight refresh simply
+  // re-attempts (select is idempotent per run+option).
   useEffect(() => {
-    if (!submitResult) router.push('/soul-audit')
-  }, [submitResult, router])
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('resume') !== '1') return
+    const held = usePendingGenerationStore.getState().readFreshSelection()
+    if (!held) {
+      stripResumeParam()
+      if (!loadSubmitResult()) router.push('/soul-audit')
+      return
+    }
+    void resumeHeldSelection(held)
+    // Mount-only: the resume snapshot must not re-fire on later renders.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Redirect to /soul-audit if there's no submit result — unless a held
+  // generation is resuming (it can arrive in a fresh tab with no session
+  // submit payload) or the paywall/generation surfaces are up.
+  useEffect(() => {
+    if (submitResult) return
+    if (resuming || paywall || generationJob || resumeError) return
+    if (
+      typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('resume') === '1'
+    ) {
+      return
+    }
+    router.push('/soul-audit')
+  }, [submitResult, resuming, paywall, generationJob, resumeError, router])
 
   // --- Derived values ---
   const crisisRequirementsMet = Boolean(
@@ -253,6 +303,30 @@ export default function SoulAuditResultsPage() {
         code?: string
       }
       if (!selectRes.ok || !payload.ok) {
+        // SA-026 gate: hold the request, present the paywall. The held
+        // selection resumes automatically after sign-in / entitlement.
+        const gate = resolveGenerationGate(selectRes.status, payload)
+        if (gate.gated) {
+          const chosen = displayOptions.find((entry) => entry.id === optionId)
+          usePendingGenerationStore.getState().holdSelection({
+            auditRunId: submitResult.auditRunId,
+            optionId,
+            runToken: submitResult.runToken,
+            optionTitle: chosen?.title ?? null,
+            optionVerse: chosen?.preview?.verse ?? null,
+            optionVerseText: chosen?.preview?.verseText ?? null,
+            crisisAcknowledged,
+            analyticsOptIn: Boolean(siteConsent?.analyticsOptIn),
+            devotionalDepthPreference,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            timezoneOffsetMinutes: new Date().getTimezoneOffset(),
+          })
+          setPaywall({
+            state: gate.state,
+            freeGenerationUsed: gate.freeGenerationUsed,
+          })
+          return
+        }
         if (
           selectRes.status === 404 ||
           payload.error?.toLowerCase().includes('run not found')
@@ -300,6 +374,136 @@ export default function SoulAuditResultsPage() {
     } finally {
       setSubmitting(false)
       setSelectingOptionId(null)
+    }
+  }
+
+  /** Remove ?resume=1 once the resume attempt has resolved. */
+  function stripResumeParam() {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    if (!params.has('resume')) return
+    params.delete('resume')
+    const query = params.toString()
+    window.history.replaceState(
+      {},
+      '',
+      `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+    )
+  }
+
+  /**
+   * Re-fire a held selection (SA-026 resume). Works without the session
+   * submit payload — the emailed sign-in link and the checkout round trip
+   * can both land in a fresh tab, and the hold carries everything the
+   * select endpoint needs. Zero re-typing.
+   */
+  async function resumeHeldSelection(held: HeldGenerationSelection) {
+    resumeHeldRef.current = held
+    setResuming(true)
+    setResumeError(null)
+    setError(null)
+    setSelectionInlineError(null)
+
+    try {
+      const selectRes = await fetch('/api/soul-audit/select', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-timezone': held.timezone,
+          'x-timezone-offset': String(held.timezoneOffsetMinutes),
+        },
+        body: JSON.stringify({
+          auditRunId: held.auditRunId,
+          optionId: held.optionId,
+          runToken: held.runToken,
+          essentialAccepted: true,
+          analyticsOptIn: held.analyticsOptIn,
+          crisisAcknowledged: held.crisisAcknowledged,
+          devotionalDepthPreference: held.devotionalDepthPreference,
+          timezone: held.timezone,
+          timezoneOffsetMinutes: held.timezoneOffsetMinutes,
+        }),
+      })
+
+      const payload = (await selectRes.json()) as SoulAuditSelectResponse & {
+        error?: string
+        code?: string
+      }
+
+      if (!selectRes.ok || !payload.ok) {
+        // Still gated (e.g. checkout was cancelled and "Try again" led
+        // back here): re-present the paywall — the hold stays intact.
+        const gate = resolveGenerationGate(selectRes.status, payload)
+        if (gate.gated) {
+          setPaywall({
+            state: gate.state,
+            freeGenerationUsed: gate.freeGenerationUsed,
+          })
+          return
+        }
+        if (
+          selectRes.status === 404 ||
+          payload.error?.toLowerCase().includes('run not found')
+        ) {
+          usePendingGenerationStore.getState().clearSelection()
+          resumeHeldRef.current = null
+          setResumeError(
+            'Your held edition request expired while you were away. Start a fresh Soul Audit and we’ll match you again.',
+          )
+          return
+        }
+        throw new Error(payload.error || 'Unable to resume your edition.')
+      }
+
+      sessionStorage.setItem('soul-audit-selection-v2', JSON.stringify(payload))
+      if (payload.planToken && Array.isArray(payload.planDays)) {
+        persistPlanDays(payload.planToken, payload.planDays)
+      }
+
+      if (payload.route) {
+        usePendingGenerationStore.getState().clearSelection()
+        router.push(payload.route)
+      } else if (payload.jobId && payload.pollUrl) {
+        // Entitlement is settled and the job exists — the hold has done
+        // its work. resumeHeldRef keeps a copy for GenerationProgress
+        // restarts in tabs without the session submit payload.
+        usePendingGenerationStore.getState().clearSelection()
+        setGenerationJob({
+          jobId: payload.jobId,
+          pollUrl: payload.pollUrl,
+          optionId: held.optionId,
+        })
+      } else {
+        throw new Error(
+          'We started building your plan but lost track of it. Please try selecting again.',
+        )
+      }
+    } catch (err) {
+      setResumeError(
+        err instanceof Error ? err.message : 'Unable to resume your edition.',
+      )
+    } finally {
+      setResuming(false)
+      stripResumeParam()
+    }
+  }
+
+  /** Decline the paywall — the reader returns exactly where they were. */
+  function dismissPaywall() {
+    setPaywall(null)
+    if (!submitResult) router.push('/')
+  }
+
+  /** "Already subscribed?" verified an entitlement — resume right away. */
+  function handlePaywallEntitled() {
+    setPaywall(null)
+    const held = usePendingGenerationStore.getState().readFreshSelection()
+    if (held) {
+      void resumeHeldSelection(held)
+    } else {
+      setSelectionInlineError(
+        'Your held request was no longer available — choose your path again.',
+      )
     }
   }
 
@@ -485,6 +689,92 @@ export default function SoulAuditResultsPage() {
     router.push('/soul-audit')
   }
 
+  // The paywall overlays whichever surface is behind it — results,
+  // skeleton, or the resume beat (SA-026, Phase 1c).
+  const paywallOverlay = paywall ? (
+    <GenerationPaywall
+      state={paywall.state}
+      freeGenerationUsed={paywall.freeGenerationUsed}
+      pendingTheme={heldSelection?.optionTitle ?? null}
+      specimenVerse={heldSelection?.optionVerse ?? null}
+      specimenVerseText={heldSelection?.optionVerseText ?? null}
+      resumePath="/soul-audit/results?resume=1"
+      onDismiss={dismissPaywall}
+      onEntitled={handlePaywallEntitled}
+    />
+  ) : null
+
+  // --- Resume beat (SA-026) ---
+  // A held generation is being re-fired after sign-in / entitlement.
+  if (resuming) {
+    return (
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <EuangelionShellHeader />
+          <section className="mock-panel">
+            <div className="mx-auto w-full max-w-xl shell-content-pad text-center">
+              <p className="text-label vw-small mb-4 text-gold">YOUR EDITION</p>
+              <h1 className="text-serif-italic vw-heading-md mb-4">
+                Picking up where you left off…
+              </h1>
+              <p
+                className="vw-small text-muted"
+                role="status"
+                aria-live="polite"
+              >
+                Your request was held. Composition begins in a moment — no
+                re-typing needed.
+              </p>
+            </div>
+          </section>
+          <SiteFooter />
+        </main>
+      </div>
+    )
+  }
+
+  // --- Resume failure (honest, with a next action) ---
+  if (resumeError && !submitResult) {
+    const heldForRetry = resumeHeldRef.current
+    return (
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <EuangelionShellHeader />
+          <section className="mock-panel">
+            <div className="mx-auto w-full max-w-xl shell-content-pad text-center">
+              <p className="text-label vw-small mb-4 text-gold">YOUR EDITION</p>
+              <h1 className="text-serif-italic vw-heading-md mb-4">
+                We couldn’t resume your edition.
+              </h1>
+              <p className="vw-body mb-6 text-secondary" role="alert">
+                {resumeError}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {heldForRetry && (
+                  <button
+                    type="button"
+                    className="cta-major text-label vw-small px-6 py-3"
+                    onClick={() => void resumeHeldSelection(heldForRetry)}
+                  >
+                    TRY AGAIN
+                  </button>
+                )}
+                <Link
+                  href="/soul-audit"
+                  className="text-label vw-small link-highlight"
+                >
+                  Start a fresh Soul Audit
+                </Link>
+              </div>
+            </div>
+          </section>
+          <SiteFooter />
+        </main>
+        {paywallOverlay}
+      </div>
+    )
+  }
+
   // --- Loading / empty state ---
   // D-24 (F-074): while the submit result hydrates from the store, show the
   // same layout-accurate skeleton the route's loading.tsx paints — no
@@ -496,6 +786,7 @@ export default function SoulAuditResultsPage() {
           Loading your matches.
         </p>
         <SoulAuditResultsLoading />
+        {paywallOverlay}
       </>
     )
   }
@@ -514,7 +805,13 @@ export default function SoulAuditResultsPage() {
               onRestart={() => {
                 const optionId = generationJob.optionId
                 setGenerationJob(null)
-                void handleSelect(optionId)
+                if (submitResult) {
+                  void handleSelect(optionId)
+                } else if (resumeHeldRef.current) {
+                  // Resume-in-a-fresh-tab path: no session submit payload,
+                  // but the held snapshot can re-kick the same selection.
+                  void resumeHeldSelection(resumeHeldRef.current)
+                }
               }}
             />
           </section>
@@ -627,6 +924,30 @@ export default function SoulAuditResultsPage() {
                   <p className="vw-small text-secondary">
                     {typographer(selectionInlineError)}
                   </p>
+                </div>
+              </FadeIn>
+            )}
+
+            {/* Resume failure with results still on screen — inline,
+                with the one-tap retry (SA-026). */}
+            {resumeError && (
+              <FadeIn>
+                <div className="soul-audit-selection-error mb-6" role="alert">
+                  <p className="vw-small mb-3 text-secondary">
+                    {typographer(resumeError)}
+                  </p>
+                  {resumeHeldRef.current && (
+                    <button
+                      type="button"
+                      className="cta-major text-label vw-small px-4 py-2"
+                      onClick={() => {
+                        const held = resumeHeldRef.current
+                        if (held) void resumeHeldSelection(held)
+                      }}
+                    >
+                      Try again
+                    </button>
+                  )}
                 </div>
               </FadeIn>
             )}
@@ -891,6 +1212,7 @@ export default function SoulAuditResultsPage() {
         </section>
         <SiteFooter />
       </main>
+      {paywallOverlay}
     </div>
   )
 }

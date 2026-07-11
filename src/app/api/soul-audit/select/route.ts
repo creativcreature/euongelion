@@ -41,7 +41,10 @@ import {
 import { verifyRunToken } from '@/lib/soul-audit/run-token'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { takeSoulAuditDailyLimit } from '@/lib/soul-audit/rate-limit'
-import { checkDailyBudget } from '@/lib/soul-audit/budget-cap'
+import {
+  budgetPausedMessage,
+  checkDailyBudget,
+} from '@/lib/soul-audit/budget-cap'
 import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { createClient as createServerSupabase } from '@/lib/supabase/server'
@@ -738,7 +741,7 @@ export async function POST(request: NextRequest) {
     const budget = await checkDailyBudget()
     if (!budget.ok) {
       return jsonError({
-        error: PASTORAL_MESSAGES.GENERATION_PAUSED,
+        error: budgetPausedMessage(budget.reason),
         code: 'GENERATION_BUDGET_PAUSED',
         status: 429,
         requestId,

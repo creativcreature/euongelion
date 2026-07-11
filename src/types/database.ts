@@ -74,6 +74,11 @@ export type User = Timestamps & {
   premium_expires_at: string | null
   /** SA-026: one-time free generation grant. NULL = unused. */
   free_generation_used_at: string | null
+  /**
+   * Server-side authorization role (brief §9, migration 20260711000001).
+   * Granted manually in the DB only — no UI/API path may write it.
+   */
+  role: 'user' | 'admin'
 }
 
 /**

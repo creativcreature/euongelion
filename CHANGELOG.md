@@ -5,6 +5,78 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Phase 1c: paywall, checkout return, success room, management (2026-07-11)
+
+The founder-approved pattern package (SA-026/SA-027, F-078) built:
+
+1. **Paywall as continuation of the reveal**: 401/402 from select is
+   intercepted on the results page; the selection is HELD (24h TTL,
+   fresh-tab safe via localStorage store) and the paywall opens over the
+   results echoing the user's own chosen direction. State A free-edition
+   banner; State B offer stack (Annual RECOMMENDED preselected, Monthly,
+   `More durations` for 2yr/3yr, lifecycle timeline, redeem/restore text
+   row, covenant verbatim); allowance-exhausted factual state; skeleton;
+   price-failure and payments-off honest states. Mobile full-height
+   sheet + sticky true-amount footer; desktop editorial spread +
+   specimen (SA-024). No countdowns/strikethroughs/cancel-shame.
+2. **Resume machinery**: `?resume=1` re-fires the held select after
+   sign-in or checkout with zero re-typing, re-gating if still
+   unentitled.
+3. **Return leg + success room**: pending "Confirming with Stripe…"
+   (entitlements poll — paywall never re-shown), stalled honesty,
+   Guardian success room (mission line, Founding Member N of 500 —
+   real count or no number, single CTA resumes the held generation),
+   cancelled ("No charge was made. Your edition request is saved.").
+4. **Subscription management**: Settings Account row (live status) +
+   `/settings/subscription` — plan card, honest two-dot timeline,
+   Change/Update payment/**visible one-tap Cancel** via portal,
+   post-cancel "editions remain yours forever", one-time-term variant.
+5. Verification: 26 new tests (suite 130 files / 1705 green); Playwright
+   against the dev server gate-off (9/9) and gate-on including a REAL
+   end-to-end: live LLM options → signed-out select → live 401 → paywall
+   → hold → decline-in-place → resume → re-gate. NOT yet verified (needs
+   staging Stripe + deliverable email): live checkout round-trip,
+   webhook success flip, portal actions — tracked in F-078.
+
+---
+
+## CUSTOM GENERATION — Phase 1e security baseline (partial) + §9 admin reset (2026-07-11)
+
+SA-028/SA-026 security deliverables (F-077):
+
+1. **Nightly Stripe↔DB reconciliation** (brief §12.1): new
+   `src/lib/billing/reconciliation.ts` + internal-secret-gated
+   `/api/admin/billing-reconcile` + scheduled GH workflow
+   (`billing-reconcile.yml`, 04:00 UTC, fails loudly on alerts).
+   Corrections require positive Stripe evidence; premium rows with no
+   Stripe evidence alert but are never silently downgraded; API errors
+   touch nothing. 8/8 tests.
+2. **Hard monthly spend cap + 50/80/100% alerts** (§12.6): monthly wall
+   layered into `checkDailyBudget` (env `SOUL_AUDIT_MONTHLY_COST_BUDGET`,
+   default $100; 5-min cached month read), threshold alerts once per
+   month per isolate, and honest monthly pause copy at all three call
+   sites (a blown month no longer says "come back tomorrow"). 6/6 tests.
+3. **CI hardening** (§12.5/§12.6): `verify:bundle-secrets` scans
+   `.next/static` for server-secret names + value patterns after build;
+   `npm audit --audit-level=critical` gate added — and the one existing
+   critical (vitest UI file-read, dev-only) fixed via semver bump, suite
+   re-verified green.
+4. **§9 admin "reset my account to first-run"**: migration
+   `20260711000001` adds `users.role` (manual DB grant only);
+   `/api/admin/reset-my-account` gates env-flag → auth → DB role → typed
+   confirmation, resets ONLY the caller (cascade reuses
+   `deleteUserAccount` with new `preserveAuthUser` mode — account,
+   subscription state, and role survive; onboarding + free grant reset).
+   Fixed a pre-existing deletion-cascade gap: `push_subscriptions` and
+   active/scheduled/archived series were never deleted. 5/5 route tests
+   - existing deletion tests green.
+5. **Phase 1 legal copy diffs** drafted for founder sign-off:
+   `docs/legal/PHASE1-LEGAL-COPY-DIFFS.md` (Stripe processor disclosure,
+   billing data retention, honest subscription terms). NOT applied to
+   `content/legal/` until approved.
+
+---
+
 ## CUSTOM GENERATION — Phase 1a/1b: billing source of truth + entitlement gate (2026-07-10)
 
 SA-028 + SA-026 backend foundation (F-075, F-076):

@@ -80,3 +80,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-074 | Polish            | State completeness + signature polish            | 0/10     | open   | [F-074.md](./F-074.md) |
 | F-075 | Billing           | Subscription state single source of truth        | 0/10     | wip    | [F-075.md](./F-075.md) |
 | F-076 | Billing           | Custom generation entitlement gate (SA-026)      | 0/10     | wip    | [F-076.md](./F-076.md) |
+| F-077 | Security          | Security baseline + admin first-run reset        | 0/10     | wip    | [F-077.md](./F-077.md) |
+| F-078 | Billing UX        | Paywall + checkout return + success + manage     | 0/10     | wip    | [F-078.md](./F-078.md) |

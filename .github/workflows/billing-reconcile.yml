@@ -1,0 +1,57 @@
+name: Billing Reconciliation (Stripe vs DB)
+
+# Nightly cron at 04:00 UTC (after retention cleanup at 03:00). Hits
+# POST /api/admin/billing-reconcile with the X-Internal-Secret header.
+# The route re-derives every subscription relationship from Stripe
+# (brief §12.1, SA-028, F-075): corrections require positive Stripe
+# evidence; ambiguous premium rows produce alerts, never silent
+# downgrades. Report is echoed into the workflow log; a non-empty
+# `alerts`/`errors` array fails the run so it surfaces in Actions.
+#
+# Required secrets (GitHub repo Settings → Secrets and variables → Actions):
+#   - INTERNAL_ROUTE_SECRET — must match the Worker's env
+#     (wrangler secret put INTERNAL_ROUTE_SECRET).
+#
+# Manual trigger: Actions tab → Billing Reconciliation → Run workflow.
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # nightly 04:00 UTC
+  workflow_dispatch: {} # allow manual trigger
+
+permissions:
+  contents: read
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Trigger reconciliation endpoint
+        env:
+          INTERNAL_SECRET: ${{ secrets.INTERNAL_ROUTE_SECRET }}
+          BASE_URL: https://euangelion.app
+        run: |
+          set -euo pipefail
+          if [ -z "$INTERNAL_SECRET" ]; then
+            echo "::error::INTERNAL_ROUTE_SECRET is not configured"
+            exit 1
+          fi
+          response_file=$(mktemp)
+          status=$(curl --silent --output "$response_file" --write-out '%{http_code}' \
+            -X POST "$BASE_URL/api/admin/billing-reconcile" \
+            -H "X-Internal-Secret: $INTERNAL_SECRET" \
+            -H "Content-Type: application/json")
+          echo "Status: $status"
+          echo "Report:"
+          cat "$response_file"
+          echo
+          if [ "$status" != "200" ]; then
+            echo "::error::Reconcile endpoint returned $status"
+            exit 1
+          fi
+          alerts=$(python3 -c "import json,sys;r=json.load(open('$response_file'));print(len(r.get('report',{}).get('alerts',[]))+len(r.get('report',{}).get('errors',[])))")
+          if [ "$alerts" != "0" ]; then
+            echo "::error::Reconciliation reported $alerts alert(s)/error(s) — review the report above"
+            exit 1
+          fi

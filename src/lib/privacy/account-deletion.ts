@@ -59,6 +59,22 @@ const SESSION_TOKEN_TABLES = [
   'annotations',
   'session_bookmarks',
   'mock_account_sessions',
+  // Previously missed by the cascade (session-keyed per migration 015):
+  // an account deletion left the user's push subscriptions orphaned.
+  'push_subscriptions',
+] as const
+
+// user_id-keyed tables that are normally dropped by the auth.users FK
+// cascade in step E. When the auth user is PRESERVED (first-run reset,
+// SA brief §9), these must be deleted explicitly.
+const USER_ID_TABLES = [
+  'bookmarks',
+  'user_progress',
+  'soul_audit_responses',
+  'soul_audit_sessions',
+  'active_series',
+  'scheduled_series_swap',
+  'archived_series',
 ] as const
 
 async function safeDeleteByColumn(
@@ -105,6 +121,16 @@ async function safeDeleteByColumn(
  */
 export async function deleteUserAccount(
   userId: string,
+  options: {
+    /**
+     * First-run reset mode (brief §9 / F-077): cascade every data row
+     * exactly like a deletion, but KEEP the auth user and the
+     * public.users row (so role, email, and subscription state
+     * survive). user_id-keyed tables are deleted explicitly since the
+     * auth FK cascade never fires in this mode.
+     */
+    preserveAuthUser?: boolean
+  } = {},
 ): Promise<AccountDeletionResult> {
   const startedAt = new Date().toISOString()
   const result: AccountDeletionResult = {
@@ -205,6 +231,16 @@ export async function deleteUserAccount(
 
   // Step D: delete from user_sessions
   await safeDeleteByColumn(supabase, 'user_sessions', 'user_id', userId, result)
+
+  // First-run reset mode: delete user_id-keyed rows explicitly (the
+  // auth FK cascade below never fires), keep auth.users + public.users.
+  if (options.preserveAuthUser) {
+    for (const table of USER_ID_TABLES) {
+      await safeDeleteByColumn(supabase, table, 'user_id', userId, result)
+    }
+    result.completedAt = new Date().toISOString()
+    return result
+  }
 
   // Step E: delete from auth.users (cascades to public.users via FK,
   // which cascades to bookmarks/user_progress/soul_audit_responses).

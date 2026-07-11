@@ -14,7 +14,7 @@
 import { generateGroundedDay } from './grounded-weave'
 import { composeRecap, SABBATH_DAY } from './plan-composition'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { checkDailyBudget, BUDGET_PAUSED_MESSAGE } from './budget-cap'
+import { checkDailyBudget, budgetPausedMessage } from './budget-cap'
 import { recordGenerationUsage } from './cost-ledger'
 import { emitSoulAuditTelemetry } from './telemetry'
 import type { DayContent, Tier3Extended } from '@/types/soul-audit-plan'
@@ -104,12 +104,13 @@ export async function runGenerationDay(
         observed: budget.spendUsd,
         ceiling: budget.costCeilingUsd,
       })
+      const pausedMessage = budgetPausedMessage(budget.reason)
       await updateJob(jobId, {
         status: 'error',
-        error: BUDGET_PAUSED_MESSAGE,
+        error: pausedMessage,
         generating_since: null,
       }).catch(() => {})
-      return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE }
+      return { ok: false, status: 429, error: pausedMessage }
     }
 
     await updateJob(jobId, {
@@ -450,7 +451,7 @@ export async function runDeepDive(job: DeepDiveJob): Promise<DeepDiveResult> {
       observed: budget.spendUsd,
       ceiling: budget.costCeilingUsd,
     })
-    return { ok: false, status: 429, error: BUDGET_PAUSED_MESSAGE }
+    return { ok: false, status: 429, error: budgetPausedMessage(budget.reason) }
   }
 
   const existing = dayRow.content as unknown as DayContent

@@ -779,3 +779,21 @@ features:
     prd: docs/feature-prds/F-076.md
     methodology_refs:
       - M00
+  - id: F-077
+    category: Security
+    feature: Security baseline + admin first-run reset
+    slug: security-baseline-admin-first-run-reset
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-077.md
+    methodology_refs:
+      - M00
+  - id: F-078
+    category: Billing UX
+    feature: Paywall + checkout return + success + manage
+    slug: paywall-checkout-return-success-manage
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-078.md
+    methodology_refs:
+      - M00

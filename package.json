@@ -30,6 +30,7 @@
     "verify:folder-structure": "node scripts/check-folder-structure-integrity.mjs",
     "verify:appstore-gate": "node scripts/check-appstore-gate.mjs",
     "verify:ios-readiness": "node scripts/check-ios-readiness.mjs",
+    "verify:bundle-secrets": "node scripts/check-bundle-secrets.mjs",
     "verify:one-pass": "npm run type-check && npm run lint && npm test",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -50,5 +50,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Bundle secret audit
+        run: npm run verify:bundle-secrets
+
       - name: Test
         run: npm test
+
+      - name: Dependency vulnerability audit
+        run: npm audit --audit-level=critical

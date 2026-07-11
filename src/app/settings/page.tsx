@@ -27,7 +27,14 @@ import {
   resolveBillingFlash,
   sanitizeCheckoutSessionId,
 } from '@/lib/billing/flash'
-import type { BillingConfigResponse, BillingPlan } from '@/types/billing'
+import { formatLongDate } from '@/lib/billing/paywall-state'
+import { usePendingGenerationStore } from '@/stores/pendingGenerationStore'
+import BillingReturnRoom from '@/components/billing/BillingReturnRoom'
+import type {
+  BillingConfigResponse,
+  BillingEntitlementsResponse,
+  BillingPlan,
+} from '@/types/billing'
 import {
   BIBLE_TRANSLATION_CODES,
   BIBLE_TRANSLATIONS,
@@ -186,6 +193,19 @@ export default function SettingsPage() {
   const [checkoutSessionId, setCheckoutSessionId] = useState<string | null>(
     null,
   )
+  // Phase 1c — checkout return room (pattern doc §2): success/cancelled
+  // returns from Stripe land here and get the designed experience.
+  const [billingReturnRoom, setBillingReturnRoom] = useState<{
+    status: 'success' | 'cancelled'
+    sessionId: string | null
+  } | null>(null)
+  // Phase 1c — Account subscription row, read from entitlements.
+  const [subscriptionPhase, setSubscriptionPhase] = useState<
+    'loading' | 'ready' | 'error'
+  >('loading')
+  const [subscriptionEntitlements, setSubscriptionEntitlements] = useState<
+    BillingEntitlementsResponse['entitlements'] | null
+  >(null)
   const [privacyMode, setPrivacyMode] = useState<MockMode>('anonymous')
   const [privacyAnalyticsOptIn, setPrivacyAnalyticsOptIn] = useState(false)
   const [privacyCapabilities, setPrivacyCapabilities] = useState<string[]>([])
@@ -310,6 +330,29 @@ export default function SettingsPage() {
           ? error.message
           : 'Unable to load privacy settings.',
       )
+    }
+  }
+
+  // Phase 1c — Account subscription row. Honest states only: loading,
+  // the real entitlement snapshot, or an error with a retry action.
+  async function loadSubscriptionEntitlements() {
+    setSubscriptionPhase('loading')
+    try {
+      const response = await fetch('/api/billing/entitlements', {
+        cache: 'no-store',
+        credentials: 'include',
+      })
+      if (!response.ok) {
+        throw new Error(`Entitlements returned ${response.status}`)
+      }
+      const payload = (await response.json()) as BillingEntitlementsResponse
+      if (!payload.ok) {
+        throw new Error('Entitlements response incomplete.')
+      }
+      setSubscriptionEntitlements(payload.entitlements)
+      setSubscriptionPhase('ready')
+    } catch {
+      setSubscriptionPhase('error')
     }
   }
 
@@ -522,6 +565,39 @@ export default function SettingsPage() {
         const parsedSessionId = sanitizeCheckoutSessionId(
           params.get('session_id'),
         )
+
+        const stripBillingParams = () => {
+          params.delete('billing')
+          params.delete('session_id')
+          const nextSearch = params.toString()
+          const nextUrl = `${window.location.pathname}${
+            nextSearch ? `?${nextSearch}` : ''
+          }${window.location.hash}`
+          window.history.replaceState({}, '', nextUrl)
+        }
+
+        // Phase 1c (pattern doc §2): success + cancelled checkout returns
+        // get the designed return room — pending → success → resume, or
+        // the honest "No charge was made" state — never a flash banner.
+        if (checkoutStatus === 'success' && parsedSessionId) {
+          setCheckoutSessionId(parsedSessionId)
+          // Remember the session for the management page's portal access.
+          usePendingGenerationStore
+            .getState()
+            .setLastCheckoutSessionId(parsedSessionId)
+          setBillingReturnRoom({
+            status: 'success',
+            sessionId: parsedSessionId,
+          })
+          stripBillingParams()
+          return
+        }
+        if (checkoutStatus === 'cancelled' || checkoutStatus === 'canceled') {
+          setBillingReturnRoom({ status: 'cancelled', sessionId: null })
+          stripBillingParams()
+          return
+        }
+
         if (parsedSessionId) {
           setCheckoutSessionId(parsedSessionId)
           try {
@@ -559,13 +635,7 @@ export default function SettingsPage() {
         if (flash.error) setBillingError(flash.error)
 
         if (checkoutStatus || parsedSessionId) {
-          params.delete('billing')
-          params.delete('session_id')
-          const nextSearch = params.toString()
-          const nextUrl = `${window.location.pathname}${
-            nextSearch ? `?${nextSearch}` : ''
-          }${window.location.hash}`
-          window.history.replaceState({}, '', nextUrl)
+          stripBillingParams()
         }
       } catch {
         if (!mounted) return
@@ -575,6 +645,7 @@ export default function SettingsPage() {
     }
     void loadBilling()
     void loadPrivacySession()
+    void loadSubscriptionEntitlements()
     return () => {
       mounted = false
     }
@@ -781,9 +852,48 @@ export default function SettingsPage() {
     )
   }
 
+  // Phase 1c — the checkout return leg takes over the page for its beat:
+  // pending → success room (resume CTA) or the honest cancelled state.
+  // The paywall is never re-shown in this window.
+  if (billingReturnRoom) {
+    return (
+      <div className="mock-home min-h-screen">
+        <main id="main-content" className="mock-paper min-h-screen">
+          <EuangelionShellHeader />
+          <div className="shell-content-pad mx-auto w-full max-w-6xl">
+            <BillingReturnRoom
+              status={billingReturnRoom.status}
+              sessionId={billingReturnRoom.sessionId}
+              onClose={() => {
+                setBillingReturnRoom(null)
+                void loadSubscriptionEntitlements()
+              }}
+            />
+          </div>
+          <SiteFooter />
+        </main>
+      </div>
+    )
+  }
+
   const avatarInitial = accountAuthed
     ? (accountEmail?.trim().charAt(0).toUpperCase() ?? '—')
     : '—'
+
+  // Phase 1c — subscription row label, from the real entitlement snapshot.
+  const subscriptionRenewDate = formatLongDate(
+    subscriptionEntitlements?.subscriptionRenewsAt ?? null,
+  )
+  const subscriptionExpireDate = formatLongDate(
+    subscriptionEntitlements?.premiumExpiresAt ?? null,
+  )
+  const subscriptionRowLabel = subscriptionEntitlements?.premiumActive
+    ? subscriptionRenewDate
+      ? `Euangelion+ · renews ${subscriptionRenewDate}`
+      : subscriptionExpireDate
+        ? `Euangelion+ · access through ${subscriptionExpireDate}`
+        : 'Euangelion+ · active'
+    : 'Free — the full library, always.'
 
   const selectedButtonStyle = (active: boolean) => ({
     backgroundColor: active ? 'var(--color-fg)' : 'var(--color-surface)',
@@ -1151,6 +1261,58 @@ export default function SettingsPage() {
                       SIGN IN
                     </Link>
                   </>
+                )}
+              </CardSection>
+
+              {/* Phase 1c — subscription row (pattern doc §2): status
+                  inline from entitlements, detail on its own page. */}
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  SUBSCRIPTION
+                </h3>
+                {subscriptionPhase === 'loading' ? (
+                  <p className="vw-small text-muted">Checking subscription…</p>
+                ) : subscriptionPhase === 'error' ? (
+                  <div>
+                    <p className="vw-small mb-3 text-secondary" role="alert">
+                      Couldn&rsquo;t load your subscription status.
+                    </p>
+                    <button
+                      type="button"
+                      className="min-h-[44px] px-4 py-2 text-label vw-small"
+                      style={{
+                        border: '1px solid var(--color-border)',
+                        backgroundColor: 'var(--color-surface)',
+                        color: 'var(--color-text-secondary)',
+                      }}
+                      onClick={() => void loadSubscriptionEntitlements()}
+                    >
+                      Try again
+                    </button>
+                  </div>
+                ) : (
+                  <Link
+                    href="/settings/subscription"
+                    className="flex min-h-[44px] items-center justify-between gap-4 px-4 py-3 transition-theme"
+                    style={{
+                      border: '1px solid var(--color-border)',
+                      backgroundColor: 'var(--color-surface)',
+                    }}
+                  >
+                    <span className="min-w-0">
+                      <span className="vw-body block truncate text-[var(--color-text-primary)]">
+                        {subscriptionRowLabel}
+                      </span>
+                      <span className="vw-small text-muted">
+                        {subscriptionEntitlements?.premiumActive
+                          ? 'Manage plan, payment, cancellation'
+                          : 'Plans, and what stays free forever'}
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="text-secondary">
+                      →
+                    </span>
+                  </Link>
                 )}
               </CardSection>
 
