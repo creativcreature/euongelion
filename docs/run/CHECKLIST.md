@@ -77,20 +77,20 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 
 - [x] L-1: Write instructions.md (docs/run/loop/, LOCKED) (goal, rules, cadence, termination ladder) — LOCKED after write
 - [x] L-2: Write score.py (docs/run/loop/score.py; Lighthouse 13 + headless Chrome verified present; FIT CHECK passes) (LCP ms, homepage + reader) — LOCKED after write; FIT CHECK: objectively scored / fast feedback / direct asset access
-- [ ] L-3: Record baseline score
-- [ ] L-4: Run loop (one hypothesis per round, score, keep/revert, log to RESULTS_LOG.md) until: Tier 4 (<1.2s) · Tier 2 + 10 stale rounds · 100 rounds
-- [ ] L-5: DEPLOY winning baseline; record final tier + summary
+- [x] L-3: Baseline recorded (8412ms, Tier 0)
+- [x] L-4: TERMINATED by founder after round 4 ("no more loops"). 8412 → 4404ms (−48%): SW first-visit double-load fix, suppressHydrationWarning, image caps, reader loading boundaries removed. Next lever documented: root loading.tsx shell-first prerender ordering.
+- [x] L-5: Final baseline DEPLOYED (version 1c3697f9, live battery 51/51). Final tier 0 (score 4404ms; home 3504 — 496ms above Tier 1).
 
 ## Task 8 — Final deploy + production verification
 
-- [ ] V-1: Confirm nothing undeployed (diff working tree vs live)
-- [ ] V-2: Live smoke — every route loads, no 404s, no reader loader flash
-- [ ] V-3: Live smoke — Soul Audit end-to-end (input → generation → reveal → reader)
-- [ ] V-4: Live smoke — auth (magic link + Google), sign-out, return
+- [x] V-1: HEAD == production (version 1c3697f9); main fast-forwarded; tree clean
+- [x] V-2: All 41 static routes clean live (39×200 + 2 intended 307s); reader HTML content-first
+- [x] V-3: REAL generation e2e on production (plan built, /daily-bread 112KB, resume title real) + live Jabez input-fidelity verification
+- [!] V-4: Auth browser round-trip → founder visual check (Chrome extension unavailable this session); code-entry path live-proven server-side
 - [ ] V-5: Live smoke — state persistence (hard reload mid-devotional, resume)
-- [ ] V-6: Live smoke — mobile (tab bar, safe areas, install prompt, Aa sheet)
-- [ ] V-7: Score final live LCP; record tier
-- [ ] V-8: Fix + redeploy anything failing; log to CHANGELOG.md
+- [!] V-6: → founder visual check on a phone (all suites + SSR checks green)
+- [x] V-7: Final lab score 4404ms Tier 0 (loop terminated by founder; simulated-mobile stick)
+- [x] V-8: All founder-reported failures fixed + redeployed same-session (theme, home link, Soul Audit fidelity)
 
 ## Task 9 — FINAL HUMAN GATE (the only stop)
 
