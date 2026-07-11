@@ -10406,3 +10406,203 @@ html.reduce-motion
   outline: 2px solid var(--color-gold);
   outline-offset: 4px;
 }
+
+/* ============================================================
+   F-065 — ONBOARDING FOR THE ANONYMOUS MAJORITY (appended block)
+   Everything F-065 owns lives here:
+   1. .first-run-*  — the anonymous first-run introduction on `/`
+      (FirstRunIntro.tsx): bottom sheet on mobile, centered card
+      on desktop. z: --z-overlay 300 (above the mobile tab bar at
+      --z-fixed 200). Safe-area aware; reduced-motion kills the
+      entrance.
+   2. .auth-code-input — the 6-digit magic-code field on
+      /auth/sign-in (Linear model): monospace-spaced numerals,
+      centered, one-time-code sized.
+   Theme: rides --color-* tokens, so light + dark both resolve.
+   ============================================================ */
+
+.first-run-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay, 300);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.first-run-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.first-run-card {
+  position: relative;
+  width: 100%;
+  max-height: min(86vh, 40rem);
+  overflow-y: auto;
+  padding: 1.15rem 1.25rem calc(env(safe-area-inset-bottom, 0px) + 1.25rem);
+  border-top: 1.5px solid var(--color-border-strong, currentColor);
+  background: var(--color-surface-raised, var(--color-bg));
+  color: var(--color-text-primary, inherit);
+  animation: first-run-card-in 200ms ease-out;
+}
+
+.first-run-card:focus-visible {
+  outline: none;
+}
+
+@keyframes first-run-card-in {
+  from {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .first-run-card {
+    animation: none;
+  }
+}
+
+html.reduce-motion .first-run-card {
+  animation: none;
+}
+
+@media (min-width: 768px) {
+  .first-run-layer {
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .first-run-card {
+    width: min(34rem, 100%);
+    padding: 1.5rem 1.75rem;
+    border: 1.5px solid var(--color-border-strong, currentColor);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.first-run-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.first-run-body {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.first-run-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.first-run-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.first-run-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.15rem;
+  border: 1.5px solid var(--color-border, currentColor);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.first-run-option:is(:hover, :focus-visible) {
+  border-color: var(--color-border-strong, currentColor);
+}
+
+.first-run-option:focus-visible {
+  outline: 2px solid var(--color-gold, currentColor);
+  outline-offset: 1px;
+}
+
+.first-run-option[aria-pressed='true'] {
+  border-color: var(--color-fg, currentColor);
+  background: var(--color-fg, currentColor);
+  color: var(--color-bg, inherit);
+}
+
+.first-run-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1.5rem;
+  border: 1.5px solid var(--color-fg, currentColor);
+  background: var(--color-fg, currentColor);
+  color: var(--color-bg, inherit);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.first-run-primary:focus-visible {
+  outline: 2px solid var(--color-gold, currentColor);
+  outline-offset: 2px;
+}
+
+.first-run-quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted, inherit);
+  cursor: pointer;
+}
+
+.first-run-quiet:is(:hover, :focus-visible) {
+  color: var(--color-text-primary, inherit);
+}
+
+.first-run-quiet:focus-visible {
+  outline: 2px solid var(--color-gold, currentColor);
+  outline-offset: 1px;
+}
+
+.first-run-fork {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+}
+
+.first-run-fork-secondary {
+  width: auto;
+}
+
+.first-run-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* --- 2. Sign-in 6-digit code field ------------------------------------- */
+
+.auth-code-input {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.35rem;
+  letter-spacing: 0.45em;
+  /* Recenter: letter-spacing adds a trailing gap after the last digit. */
+  text-indent: 0.45em;
+}
+/* ===================== end F-065 onboarding block ====================== */

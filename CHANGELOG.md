@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Wave 4: anonymous onboarding + in-app sign-in code (2026-07-10)
+
+Founder-reported gap ("I'm not seeing onboarding") — the real onboarding was
+double-gated behind auth + first-session; anonymous first-timers got nothing.
+
+1. **Anonymous first-run** (`FirstRunIntro`, homepage only, never blocks a
+   deep link): three quiet beats — what this is (approved homepage voice) →
+   one personalization tap (theme + text size, wired to the real stores, so
+   the "settings users never see" get seen) → Soul Audit / browse / maybe-
+   later fork with one quiet sign-in line. Bottom sheet on mobile, card on
+   desktop; shows once, dismissal respected forever; never for returning or
+   authed visitors.
+2. **In-app sign-in code** (Linear model): the "check your email" screen now
+   accepts the 6-digit Supabase OTP via a new `/api/auth/verify-code` route
+   that runs the identical post-auth session-linking as the callback;
+   rate-limited, honest error states, open-redirect hardened. Proven against
+   the real Supabase project. NOTE: readers only SEE a code once
+   `{{ .Token }}` is added to the Supabase email templates —
+   HUMAN_REQUIRED #3; until then the UI degrades to exactly today's flow.
+3. **GuestSignupGate deleted** — 0 imports; its jobs are covered by the
+   first-run intro + Settings, and its "gate before the devotional" pattern
+   was deliberately removed by SA-033. Closes audit P0 #4 completely.
+
+---
+
 ## LAUNCH-READINESS — Soul Audit input fidelity (founder-reported) (2026-07-10)
 
 **"Deep dive on the prayer of Jabez" returned Philippians — the engine was

@@ -24,3 +24,11 @@ _Every item here is a failure to find an autonomous path; alternatives were exha
 5. **Safe first send**: subscribe one test browser → invoke with `{"dryRun":true,"onlyEndpoint":"<test endpoint>"}` → inspect counts → repeat without dryRun. Never invoke by hand without `onlyEndpoint`.
 
 **Impact while open:** the Settings picker shows its honest "unconfigured" state; nothing pretends to work.
+
+## 3. Sign-in code visibility (1 edit, ~2 minutes)
+
+**Why blocked:** the hosted Supabase email templates can't be edited from the repo. The in-app 6-digit code entry is fully built and live-proven; readers just need the code IN the email.
+
+**Exact steps:** Supabase Dashboard → project → Authentication → Emails (Email Templates) → edit **Magic Link** AND **Confirm signup** → add a line like `<p>Your sign-in code: {{ .Token }}</p>` → Save.
+
+**Impact while open:** sign-in works exactly as before (link only); the code form's copy is honest about it.

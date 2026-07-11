@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import FirstRunIntro from '@/components/FirstRunIntro'
 import SiteFooter from '@/components/SiteFooter'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
@@ -287,6 +288,10 @@ export default function Home() {
           onContinue={() => void dismissCrisisAndContinue()}
         />
       )}
+      {/* F-065 — anonymous first-run introduction. Homepage only, so a
+          deep-linked devotional is never blocked; the component itself
+          gates on anonymous + genuinely-first visit. */}
+      <FirstRunIntro />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}

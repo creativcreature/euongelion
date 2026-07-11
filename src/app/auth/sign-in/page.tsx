@@ -39,6 +39,13 @@ function SignInForm() {
   )
   const [oauthProvider, setOauthProvider] = useState<OAuthProvider | null>(null)
   const [error, setError] = useState('')
+  // F-065 — in-app magic-code entry (Linear model): after the email is
+  // sent, the reader can type the 6-digit code instead of leaving for
+  // their inbox. Verified server-side by /api/auth/verify-code, which
+  // runs the same post-auth sequence as /auth/callback.
+  const [code, setCode] = useState('')
+  const [codeStatus, setCodeStatus] = useState<'idle' | 'verifying'>('idle')
+  const [codeError, setCodeError] = useState('')
   const isBusy = status === 'sending' || oauthProvider !== null
 
   async function handleOAuth(provider: OAuthProvider) {
@@ -101,11 +108,62 @@ function SignInForm() {
       }
 
       setStatus('sent')
+      setCode('')
+      setCodeError('')
+      setCodeStatus('idle')
     } catch (err) {
       setError(
         err instanceof Error ? err.message : 'Something went wrong. Try again.',
       )
       setStatus('error')
+    }
+  }
+
+  async function handleVerifyCode(e: React.FormEvent) {
+    e.preventDefault()
+
+    const compact = code.replace(/\s+/g, '')
+    if (!/^\d{6}$/.test(compact)) {
+      setCodeError('Enter the 6-digit code from the email.')
+      return
+    }
+
+    setCodeStatus('verifying')
+    setCodeError('')
+
+    try {
+      const res = await fetch('/api/auth/verify-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          code: compact,
+          redirect,
+        }),
+      })
+
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean
+        next?: string
+        error?: string
+      }
+
+      if (!res.ok || !data.ok) {
+        throw new Error(
+          data.error ||
+            'That code didn’t work. Request a fresh email and try again.',
+        )
+      }
+
+      // Full navigation (not router.push) so server components render
+      // with the freshly set auth cookies — same end state as the
+      // emailed-link path through /auth/callback.
+      window.location.assign(data.next || redirect)
+    } catch (err) {
+      setCodeError(
+        err instanceof Error ? err.message : 'Something went wrong. Try again.',
+      )
+      setCodeStatus('idle')
     }
   }
 
@@ -119,6 +177,51 @@ function SignInForm() {
         <p className="vw-body mb-8 text-secondary">
           Click the link in your email to continue. It expires in 1 hour.
         </p>
+
+        <form onSubmit={handleVerifyCode} className="mb-8 space-y-3">
+          <p className="text-label vw-small text-muted">
+            OR TYPE THE CODE FROM THE EMAIL
+          </p>
+          <p className="vw-small text-muted">
+            If your email includes a 6-digit code, enter it here to sign in
+            without leaving this page.
+          </p>
+          <input
+            type="text"
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            maxLength={7}
+            value={code}
+            onChange={(e) => {
+              setCode(e.target.value)
+              setCodeError('')
+            }}
+            placeholder="123456"
+            disabled={codeStatus === 'verifying'}
+            aria-label="6-digit sign-in code"
+            className="auth-code-input w-full bg-surface-raised px-5 py-4 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-colors duration-200 focus:outline-none"
+            style={{ border: '1px solid var(--color-border)' }}
+            onFocus={(e) => {
+              e.target.style.borderColor = 'var(--color-gold)'
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = 'var(--color-border)'
+            }}
+          />
+          {codeError && (
+            <p className="vw-small text-center text-secondary" role="alert">
+              {codeError}
+            </p>
+          )}
+          <button
+            type="submit"
+            disabled={codeStatus === 'verifying'}
+            className="w-full min-h-[44px] bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+          >
+            {codeStatus === 'verifying' ? 'Verifying...' : 'Verify Code'}
+          </button>
+        </form>
+
         <p className="vw-small text-muted">
           Didn&apos;t get it?{' '}
           <button
