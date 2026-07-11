@@ -21,6 +21,7 @@ import {
   generateWithBrain,
   providerAvailabilityForUser,
 } from '@/lib/brain/router'
+import { getVerse } from '@/lib/bible/getVerse'
 import { retrieveForDay, type ReferenceChunk } from './reference-retriever'
 import { extractScriptureRefs } from './reference-utils'
 
@@ -376,7 +377,25 @@ NON-NEGOTIABLE RULES:
 - Return exactly 3 pathways, each meaningfully distinct.
 - Each title must be a full sentence (9-18 words) and must end with a period.
 - Each pathway must include a real scripture focus with the scripture text written out.
-- Scripture references must come from the provided ALLOWED SCRIPTURE REFERENCES list.
+- INPUT FIDELITY IS THE HIGHEST RULE: when the user names or asks about a
+  specific passage, story, prayer, person, book, or verse of the Bible —
+  by reference ("1 Chronicles 4") or by name ("the prayer of Jabez", "the
+  beatitudes", "the prodigal son") — the PRIMARY pathway MUST anchor on
+  that exact passage (resolve the name to its real reference yourself),
+  and the other pathways must stay in its orbit (same passage from
+  another angle, or a directly connected text). Never substitute a merely
+  adjacent theme verse for a passage the user actually asked for.
+- The three pathways must use three DISTINCT scriptureReference values.
+  For a deep dive on one passage, subdivide it into distinct verse
+  references (e.g. "1 Chronicles 4:9", "1 Chronicles 4:10") and/or use
+  one directly connected cross-text — each scriptureText must be the
+  actual text OF ITS OWN scriptureReference, never a different verse.
+- Otherwise prefer scripture from the PREFERRED SCRIPTURE REFERENCES list
+  (it reflects the reference library that grounds the teaching); you may
+  anchor outside the list ONLY when the user's explicit ask requires it.
+  Every scriptureReference must be a real, precise Bible reference — it
+  will be verified verbatim against the Bible text and rejected if it
+  does not exist.
 - Pathways must directly answer the user's ask (teaching ask, emotional ask, discipleship ask, etc.).
 - Do not echo raw user input as the title.
 
@@ -430,7 +449,7 @@ function buildUserPrompt(params: {
   return [
     `USER INPUT:\n${params.responseText.slice(0, 1000)}`,
     `USER KEYWORDS:\n${params.userKeywords.join(', ') || '(none extracted)'}`,
-    `ALLOWED SCRIPTURE REFERENCES (must choose from this list):\n${allowedRefs || '(none provided)'}`,
+    `PREFERRED SCRIPTURE REFERENCES (from the reference library — anchor here unless the user explicitly asked for a specific passage):\n${allowedRefs || '(none provided)'}`,
     `DO NOT REUSE THESE DIRECTION SLUGS:\n${excludedSlugs || '(none)'}`,
     `DO NOT REUSE THESE TITLES:\n${excludedTitles || '(none)'}`,
     `DO NOT REUSE THESE SCRIPTURE REFERENCES:\n${excludedScriptures || '(none)'}`,
@@ -709,7 +728,7 @@ export async function selectIngredients(
     const question = collapseWhitespace(raw.question)
     const reasoning = collapseWhitespace(raw.reasoning)
     let scriptureAnchor = normalizeScriptureRef(raw.scriptureReference)
-    const scriptureText = collapseWhitespace(raw.scriptureText)
+    let scriptureText = collapseWhitespace(raw.scriptureText)
     const teachingExcerpt = takeWords(
       collapseWhitespace(raw.teachingExcerpt),
       MAX_PREVIEW_WORDS,
@@ -752,7 +771,20 @@ export async function selectIngredients(
         (reference) => !usedScriptures.has(reference),
       )
       const replacement = preferredReplacement || fallbackReplacement
-      if (replacement) scriptureAnchor = replacement
+      if (replacement) {
+        scriptureAnchor = replacement
+        // Reference/text coherence: a swapped anchor must never keep the
+        // previous anchor's verse text (founder report 2026-07-10 —
+        // options were labeled Psalm 34:18 while quoting Jabez).
+        try {
+          const resolved = await getVerse(scriptureAnchor, 'BSB')
+          if (resolved.text?.trim()) {
+            scriptureText = collapseWhitespace(resolved.text)
+          }
+        } catch {
+          // keep the model text if the pool ref can't resolve (rare)
+        }
+      }
     }
 
     if (
@@ -760,14 +792,43 @@ export async function selectIngredients(
       normalizedScripturePool.length > 0 &&
       !normalizedScripturePool.includes(scriptureAnchor)
     ) {
-      const replacement = normalizedScripturePool.find(
-        (reference) =>
-          !usedScriptures.has(reference) && !priorScriptures.has(reference),
-      )
-      if (replacement) {
-        scriptureAnchor = replacement
-      } else {
-        throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
+      // INPUT FIDELITY (founder report 2026-07-10): the model may anchor
+      // OUTSIDE the retrieval pool when the user's ask requires it (e.g.
+      // "the prayer of Jabez" → 1 Chronicles 4:9-10, which niche retrieval
+      // rarely surfaces). The old behavior silently swapped such anchors
+      // for adjacent pool verses — the engine visibly ignored the user.
+      // An out-of-pool anchor is kept ONLY if it verifies verbatim against
+      // the Bible corpus; its preview text is replaced with the real BSB
+      // text so nothing model-recalled ships. Unresolvable references
+      // still fall back to the pool (never fabricate).
+      let verifiedOutOfPool = false
+      try {
+        const resolved = await getVerse(scriptureAnchor, 'BSB')
+        if (resolved.text?.trim()) {
+          verifiedOutOfPool = true
+          scriptureText = collapseWhitespace(resolved.text)
+        }
+      } catch {
+        // unparseable or nonexistent reference — use the pool fallback
+      }
+      if (!verifiedOutOfPool) {
+        const replacement = normalizedScripturePool.find(
+          (reference) =>
+            !usedScriptures.has(reference) && !priorScriptures.has(reference),
+        )
+        if (replacement) {
+          scriptureAnchor = replacement
+          try {
+            const resolved = await getVerse(scriptureAnchor, 'BSB')
+            if (resolved.text?.trim()) {
+              scriptureText = collapseWhitespace(resolved.text)
+            }
+          } catch {
+            // keep the model text if the pool ref can't resolve (rare)
+          }
+        } else {
+          throw new Error('OPTION_COMPOSER_INVALID_SCRIPTURE')
+        }
       }
     }
 

@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Soul Audit input fidelity (founder-reported) (2026-07-10)
+
+**"Deep dive on the prayer of Jabez" returned Philippians — the engine was
+ignoring user input.** Three mechanisms, all fixed in the option composer:
+
+1. The prompt forbade the model from anchoring outside the retrieval pool
+   ("must choose from this list") — for niche passages the pool never
+   contains the requested text, so the model was forced onto adjacent theme
+   verses. The pool is now PREFERRED grounding; input fidelity is the
+   highest rule (a named passage/story/prayer anchors the primary path).
+2. Out-of-pool anchors were silently swapped for pool verses. They are now
+   verified verbatim against the Bible corpus (BSB via getVerse) — a real
+   passage is kept and its preview text replaced with the actual Bible
+   text (stricter grounding than before); only unresolvable references
+   fall back to the pool.
+3. Anchor swaps (dedupe + fallback) kept the OLD anchor's verse text —
+   options labeled "Psalm 34:18" quoting Jabez. Every swap now re-resolves
+   its own verse text; the prompt requires three distinct references with
+   each text belonging to its own reference (passage deep-dives subdivide
+   into verse-level angles).
+
+Verified in the Workers runtime: the Jabez ask now returns 1 Chr 4:9-10 /
+4:10 / 4:9 with verbatim BSB text per reference; a generic anxiety ask stays
+library-grounded with coherent anchors. Engine suites 22 files / 130 green.
+
+---
+
 ## LAUNCH-READINESS — Wave 3: founder-reported fixes + Sprint D final + LCP loop wins (2026-07-10)
 
 **Founder-reported (live review):**
