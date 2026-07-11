@@ -2,7 +2,7 @@
 
 _Every item here is a failure to find an autonomous path; alternatives were exhausted first. Exact steps included._
 
-## 1. GitHub push credentials (backup/source-of-truth only — deploys are NOT blocked)
+## 1. GitHub push credentials — ✅ RESOLVED 2026-07-10 (gh CLI installed from official release; founder authorized via browser device flow; both branches pushed; credential in macOS keyring — no future prompts)
 
 **Why blocked:** No `gh` CLI installed (searched PATH, /opt/homebrew, /usr/local, Spotlight), no `~/.config/gh/hosts.yml`, no `~/.git-credentials`, no keychain entry for github.com. The remote is `https://github.com/creativcreature/euongelion.git` with `credential.helper=store`.
 
