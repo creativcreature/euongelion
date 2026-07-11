@@ -120,3 +120,6 @@ social-plan/
 /*.jpeg
 /*.jpg
 .playwright-mcp/
+
+# Fresh-start user-data archives (PII — never commit)
+backups/

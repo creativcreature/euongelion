@@ -1,6 +1,6 @@
 # Production Source of Truth
 
-Last Updated: 2026-06-20
+Last Updated: 2026-07-10
 Owner: Product + Engineering
 Status: Authoritative
 
@@ -39,6 +39,32 @@ Euangelion Soul Audit and Devotional Engine are curated-first and selection-firs
 21. Tuesday start: Monday is readable archived content.
 22. Wednesday-Sunday start: onboarding devotional first, full cycle begins Monday.
 23. Daily unlock remains 7:00 AM local-time cadence.
+
+## Amendment (2026-07-10) — Paid Custom Generation (founder-ratified)
+
+The founder ratified the custom-generation monetization model via the
+custom-generation brief Q&A (see SA-026, SA-027, SA-028 in
+`docs/production-decisions.yaml`; MASTER-DECISIONS §4 amended the same day):
+
+1. **What stays free and anonymous forever:** landing, Soul Audit submit,
+   3-option review, and all curated reading. Locked Decision #1 above is
+   unchanged for those surfaces. The gospel and curated content are never
+   paywalled.
+2. **What is now gated (amends the anonymous-generation scope of SA-002/SA-018):**
+   bespoke custom-generated plans require a verified account. Every new verified
+   account receives exactly 1 free generation; beyond that, entitlement is
+   required (subscription, credits, gift code, BYOK, or MCP round-trip —
+   subscription is the primary, most-emphasized path). The paywall exists at
+   exactly one moment: requesting a custom generation. SA-033's removal of the
+   gate-before-reading pattern remains intact.
+3. **Pricing (locked 2026-05-03, reconfirmed):** $7/mo · $77/yr · $140/2yr ·
+   $200/3yr · Founding Member badge. Config-driven via `STRIPE_PRICE_*`.
+4. **Billing state:** single source of truth in `public.users` with stored
+   Stripe customer/subscription IDs; entitlement changes driven by verified
+   Stripe webhooks only, never client redirects (SA-028).
+5. **Audit limit #10 above (3 per cycle) governs audit submissions, not
+   generations;** generation allowances are governed by SA-026/SA-027
+   entitlements.
 
 ## Reconciliation Notes (2026-06-20)
 

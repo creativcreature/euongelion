@@ -136,7 +136,17 @@ Native App Triggers:
 | -------- | -------------------------- |
 | COMPLETE | 4 (+1 Under Consideration) |
 
-### Revenue Strategy
+> **AMENDED 2026-07-10 (founder-ratified — custom-generation brief Q&A; see SA-026/SA-027/SA-028 in `docs/production-decisions.yaml`).**
+> The January table below is retained for the record but is superseded as follows:
+>
+> - **Core principle unchanged:** the gospel and all curated content are never paywalled. Curated reading, Soul Audit submit, and 3-option review stay anonymous and free forever.
+> - **What is gated:** bespoke custom generation only. It requires a verified account; every new verified account gets exactly 1 free generation, then the paywall (SA-026).
+> - **Paid tiers (locked 2026-05-03, reconfirmed 2026-07-10):** $7/mo · $77/yr · $140/2yr · $200/3yr, Founding Member badge (first 500 annual, status only). The $1/month micro-subscription evaluation is closed — superseded by these tiers.
+> - **Six access paths, subscription primary (SA-027):** subscription · 1 free generation per verified account · one-time credit packs · gift/sponsor codes · BYOK (Settings-only, de-emphasized — amends the 2026-05-03 BYOK-tier rejection to a non-tier path) · MCP round-trip (per `docs/run/RESEARCH_OAUTH.md` Option D).
+> - **Donation prompts:** unchanged (Settings only, no guilt-driven asks).
+> - **Billing state:** single source of truth in `public.users` with stored Stripe IDs; webhook-driven entitlements only (SA-028).
+
+### Revenue Strategy (January 2026 — superseded by the 2026-07-10 amendment above)
 
 | #   | Decision             | Resolution               | Notes                                             |
 | --- | -------------------- | ------------------------ | ------------------------------------------------- |
@@ -147,16 +157,16 @@ Native App Triggers:
 
 ### Under Consideration
 
-| Item               | Details         | Status     |
-| ------------------ | --------------- | ---------- |
-| Micro-subscription | $1/month option | EVALUATING |
+| Item               | Details         | Status                                         |
+| ------------------ | --------------- | ---------------------------------------------- |
+| Micro-subscription | $1/month option | CLOSED 2026-07-10 — superseded by locked tiers |
 
 **Micro-subscription Notes:**
 
 - Purpose: Cover operational costs
 - Positioning: Support option, not access gate
 - Implementation: Would NOT paywall any content
-- Decision: Pending founder evaluation
+- Decision: CLOSED — superseded by the 2026-07-10 amendment (locked $7/$77 tiers; only custom generation is gated)
 
 ---
 

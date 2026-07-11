@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-06-09
+updated_at: 2026-07-10
 
 decisions:
   - id: SA-001
@@ -53,6 +53,15 @@ decisions:
     title: platform-adaptive-ia-mobile-tab-bar-bespoke-desktop-masthead
   - id: SA-025
     title: guilt-free-momentum-hybrid-completion-beat-plus-presence
+  - id: SA-026
+    title: custom-generation-account-gate-one-free-per-verified-account
+    note: 'Founder-ratified 2026-07-10 (custom-generation brief Q&A). Soul Audit submit, 3-option review, and all curated reading remain anonymous and free forever. Bespoke (custom-generated) plans require a verified account; each new verified account receives exactly 1 free generation, then the paywall. Amends the anonymous-generation scope of SA-002/SA-018; SA-033 (no gate before reading a devotional) remains intact — the gate exists at exactly one moment: requesting a custom generation.'
+  - id: SA-027
+    title: paid-custom-generation-six-access-paths-subscription-primary
+    note: 'Founder-ratified 2026-07-10. Locked pricing stands: $7/mo, $77/yr, $140/2yr, $200/3yr (Master Plan 0.2); the brief~s $4.99/$39/$99 figures are dead. Six entitlement doors into one generation pipeline, subscription emphasized as default: (1) subscription, (2) 1 free generation per verified account, (3) one-time credit packs, (4) BYOK in Settings only — amends the 2026-05-03 BYOK-tier rejection to a de-emphasized non-tier path, (5) MCP round-trip per docs/run/RESEARCH_OAUTH.md Option D, (6) gift/sponsor codes. The gospel and all curated content are never paywalled; only bespoke generation is gated. Build order: brief section 11 phases.'
+  - id: SA-028
+    title: billing-subscription-state-single-source-public-users
+    note: 'Founder-ratified 2026-07-10 ("implement right fully — not half fixes"). Subscription/entitlement state has one source of truth: public.users (webhook-written subscription_tier plus new stripe_customer_id/stripe_subscription_id columns). All entitlement reads (billing/entitlements, chat quota, brain providers) move off Supabase Auth user_metadata onto the DB row. Customer mapping by stored Stripe IDs, not email match. Entitlement changes are driven by verified Stripe webhooks only, never client redirects; nightly reconciliation against Stripe.'
 
 contracts:
   required_files:
