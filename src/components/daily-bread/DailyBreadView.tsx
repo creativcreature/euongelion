@@ -12,8 +12,10 @@ import CompletionBeat from '@/components/CompletionBeat'
 import { signalCompletionBeat } from '@/lib/completion-beat'
 import { recordPresenceToday } from '@/lib/presence'
 import { buildDayContentSegments } from '@/lib/audio/segments'
+import { hapticTick } from '@/lib/haptics'
 import { onboardingDayContentToModules } from '@/lib/soul-audit/onboarding-day-to-reader'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
+import { loadSelectedAuditReason } from '@/components/soul-audit/helpers'
 import type {
   PlanWithDays,
   DayScheduleEntry,
@@ -914,6 +916,20 @@ export default function DailyBreadView({
   // content so the new long-form lands without a reload.
   const [deepDives, setDeepDives] = useState<Record<number, DayContent>>({})
 
+  // D-22 (F-074): the audit's real stored reason this plan was matched.
+  // Read in an effect (sessionStorage is client-only) so SSR/hydration
+  // render identically; stays null — and the why-row absent — whenever the
+  // session's audit payloads don't provably point at this plan.
+  const [whyThis, setWhyThis] = useState<string | null>(null)
+  useEffect(() => {
+    setWhyThis(
+      loadSelectedAuditReason({
+        planToken: plan.plan_token,
+        seriesSlug: plan.series_slug,
+      }),
+    )
+  }, [plan.plan_token, plan.series_slug])
+
   const selectedEntry = useMemo(
     () => schedule.find((e) => e.day === selectedDay),
     [schedule, selectedDay],
@@ -1018,6 +1034,9 @@ export default function DailyBreadView({
       // completion is server-side and leaves no wakeup_progress entry) and
       // offer the quiet completion beat with this day's scripture reference.
       recordPresenceToday()
+      // D-23 (F-074): one subtle haptic tick on completing a day — no-op on
+      // iOS web / unsupported browsers / reduced motion.
+      hapticTick()
       signalCompletionBeat({
         scriptureReference: dayRecord.content?.scriptureReference,
       })
@@ -1047,6 +1066,19 @@ export default function DailyBreadView({
         )}
         {plan.scripture_anchor && (
           <p className="vw-small text-muted">{plan.scripture_anchor}</p>
+        )}
+        {/* D-22 (F-074, Headspace why-row): the audit's real stored reason
+            this plan was matched — one quiet line, rendered only when this
+            session's audit payloads provably point at this plan. */}
+        {whyThis && (
+          <p
+            className="vw-small mt-2 text-secondary"
+            data-testid="daily-bread-why-this"
+          >
+            <span className="text-label text-gold">WHY THIS</span>
+            <span aria-hidden="true"> · </span>
+            {whyThis}
+          </p>
         )}
       </header>
 

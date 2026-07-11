@@ -333,7 +333,9 @@ export default function AudioPlayer({
           className="audio-player-fill"
           style={{
             width: `${progressPct}%`,
-            transition: reducedMotion ? 'none' : 'width 320ms ease-out',
+            transition: reducedMotion
+              ? 'none'
+              : 'width var(--motion-slow) var(--motion-ease)',
           }}
         />
       </div>

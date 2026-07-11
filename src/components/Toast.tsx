@@ -45,14 +45,15 @@ export default function Toast({
     <div
       role="status"
       aria-live="polite"
-      className="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 text-label vw-small"
+      className="fixed left-1/2 -translate-x-1/2 px-6 py-3 text-label vw-small bottom-[calc(env(safe-area-inset-bottom,0px)+4.3rem)] md:bottom-[calc(env(safe-area-inset-bottom,0px)+2rem)]"
       style={{
         zIndex: 'var(--z-toast)',
         backgroundColor: 'var(--color-fg)',
         color: 'var(--color-bg)',
         opacity: show ? 1 : 0,
         transform: `translateX(-50%) translateY(${show ? '0' : '8px'})`,
-        transition: 'opacity 300ms ease-out, transform 300ms ease-out',
+        transition:
+          'opacity var(--motion-base) var(--motion-ease), transform var(--motion-base) var(--motion-ease)',
         pointerEvents: 'none',
       }}
     >

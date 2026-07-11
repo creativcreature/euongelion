@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { hapticTick } from '@/lib/haptics'
 
 /**
  * SA-024 — Platform-adaptive IA: the mobile bottom tab bar.
@@ -141,6 +142,9 @@ export default function MobileTabBar() {
             href={tab.href}
             className={`mobile-tab-item text-label${active ? ' is-active' : ''}`}
             aria-current={active ? 'page' : undefined}
+            // D-23 (F-074): subtle haptic tick on tab switch (Android;
+            // silent no-op on iOS web / reduced motion).
+            onClick={() => hapticTick()}
           >
             {tab.icon}
             <span className="mobile-tab-label">{tab.label}</span>

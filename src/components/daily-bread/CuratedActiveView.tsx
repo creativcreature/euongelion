@@ -17,6 +17,7 @@ import DevotionalRhythm, {
 } from '@/components/devotional/DevotionalRhythm'
 import AuthorColophon from '@/components/devotional/AuthorColophon'
 import ChurchYearCard from '@/components/devotional/ChurchYearCard'
+import { loadSelectedAuditReason } from '@/components/soul-audit/helpers'
 import type { Devotional, Module, Panel } from '@/types'
 
 interface CuratedActiveViewProps {
@@ -55,6 +56,19 @@ export default function CuratedActiveView({
   const [activeDay, setActiveDay] = useState(currentDay)
   const [toast, setToast] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
+
+  // D-22 (F-074): why-row for a soul_audit-sourced active series ONLY — a
+  // manual start or archive restart was the reader's own choice, so there is
+  // no recommendation to explain. Read in an effect (sessionStorage is
+  // client-only); null renders nothing rather than a fabricated reason.
+  const [whyThis, setWhyThis] = useState<string | null>(null)
+  useEffect(() => {
+    if (source !== 'soul_audit') {
+      setWhyThis(null)
+      return
+    }
+    setWhyThis(loadSelectedAuditReason({ seriesSlug }))
+  }, [source, seriesSlug])
 
   useEffect(() => {
     void hydrate()
@@ -229,6 +243,18 @@ export default function CuratedActiveView({
           Day {safeDay} of {totalDays} ·{' '}
           {source === 'manual_start' ? 'started' : 'restarted'} {startedDate}
         </p>
+        {/* D-22 (Headspace why-row): the audit's real stored reason this
+            series was matched — rendered only with real reason data. */}
+        {whyThis && (
+          <p
+            className="vw-small mt-2 text-secondary"
+            data-testid="curated-why-this"
+          >
+            <span className="text-label text-gold">WHY THIS</span>
+            <span aria-hidden="true"> · </span>
+            {whyThis}
+          </p>
+        )}
 
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <button

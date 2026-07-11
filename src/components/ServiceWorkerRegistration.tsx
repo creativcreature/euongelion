@@ -15,8 +15,15 @@ export default function ServiceWorkerRegistration() {
     if (!('serviceWorker' in navigator)) return
 
     if (process.env.NODE_ENV === 'production') {
+      // Reload ONLY when an existing controller is replaced (a real update
+      // took over). On a FIRST visit the fresh worker's clients.claim()
+      // also fires controllerchange — reloading there made every new
+      // visitor load the page twice (double image fetches, LCP anchored to
+      // the second parse; found by the 2026-07-10 LCP loop, round 2).
+      const hadController = Boolean(navigator.serviceWorker.controller)
       let refreshed = false
       const onControllerChange = () => {
+        if (!hadController) return
         if (refreshed) return
         refreshed = true
         window.location.reload()

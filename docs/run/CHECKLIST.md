@@ -40,8 +40,8 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 - [x] B-11: In-reader "Aa" sheet (Ink/Parchment/Vellum/Night + size stepper; WCAG ratios computed; 11/11 tests; commit pending wave-2) — curated named themes (Ink, Parchment, Vellum, Night) per Apple Books named presets
 - [x] B-12: Consolidate Library (9-tab /library; /saved + /clippings 307d; SavedList deleted; full suite 1480 green; commit pending wave-2) to the 7-tab rail; retire `/saved` + `/clippings` as standalone (ElevenReader model)
 - [x] B-13: Signed-in "Today" home (TodayReturningBand island, 7/7 tests; commit pending B-12 landing) distinct from marketing landing (Calm/Headspace greeting + continue + one recommendation)
-- [ ] B-V: Sprint B verification (as A-V; include 375/390/768/1280/1440 light+dark checks)
-- [ ] B-D: DEPLOY Sprint B live + verify production
+- [x] B-V: Sprint B verification (preview battery 51/51) (as A-V; include 375/390/768/1280/1440 light+dark checks)
+- [x] B-D: DEPLOYED (version a6a87f48) + live battery 51/51
 
 ## Task 4 — Sprint C: completeness (P1 13–16)
 
@@ -49,17 +49,17 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 - [x] C-15: Global search (series+devotionals+notes, Cmd/Ctrl+K, SearchAction made real; 19/19 tests; commit pending wave-2) over series + notes + clippings (or remove advertised SearchAction) — Calm/Ten Percent pattern
 - [x] C-16: PWA install prompt (InstallPrompt.tsx, real completion signals, 11/11 tests + Playwright real-browser checks; commit pending B-12 landing) after good session (`beforeinstallprompt`), Finch-gentle timing
 - [x] C-17: Settings restructure (profile header + 6 grouped cards; dead "coming soon" UI deleted; all prior controls asserted present; commit pending wave-2) — grouped cards + light profile header; stop exposing "when this ships" UI (Claude/Cosmos refs)
-- [ ] C-V: Sprint C verification
-- [ ] C-D: DEPLOY Sprint C live + verify production
+- [x] C-V: Sprint C verification (preview battery 51/51; note C-14 delivery awaits HUMAN_REQUIRED #2)
+- [x] C-D: DEPLOYED (version a6a87f48) + live battery 51/51
 
 ## Task 5 — Sprint D: signature polish (P2 17–21)
 
-- [ ] D-18: Every empty state → illustration (riso library) + one sentence + one CTA (Pinterest/Skyscanner/OpenTable)
-- [~] D-19 (agent): Quiet completion beat after day/plan (Headspace post-session quote; NOT confetti) — revive DevotionalMilestoneReveal or build fresh (SA-NEW-2)
-- [~] D-20 (agent): Gentle presence indicator — lit/unlit dots, zero counts, no shame (Open dotted week / Bears Gratitude) (SA-NEW-2)
+- [x] D-18: Every empty state designed (3 new library-sourced illustrations w/ justifications + catalog assignedTo; 6 typographic tightened; rest verified already-good; commit pending wave-3)
+- [x] D-19: Quiet completion beat — LIVE (CompletionBeat, 7 benedictions, both readers; DevotionalMilestoneReveal deleted) after day/plan (Headspace post-session quote; NOT confetti) — revive DevotionalMilestoneReveal or build fresh (SA-NEW-2)
+- [x] D-20: Gentle presence indicator (PresenceWeekRow on /today + Settings profile; local real data; zero visible counts) — lit/unlit dots, zero counts, no shame (Open dotted week / Bears Gratitude) (SA-NEW-2)
 - [x] D-20b: (SA-025 + F-066 created earlier) Assign real SA id for momentum hybrid; PRD `F-NEW-d`
 - [x] D-21: Series/plan detail tabs (adaptive 4/3/2-tab model backed by real profile modules + artwork assignments; bible-365 grouped nav preserved; 9/9 tests; commit pending wave-2) (Sessions · About · Voices · Artwork) — Waking Up
-- [ ] D-22: "Why this recommendation" row on matched series — Headspace (note: OptionCard already ships expanded reasoning + "Why this path?" on results; remaining scope is browse/today matched-series surfaces)
+- [x] D-22: Why-this rows on Today band + Daily Bread + curated view (real stored reasoning only, vanish rather than fabricate; commit pending wave-3)
 - [ ] D-23: Haptics + native sheets + safe-area audit + unified motion language (one easing, one duration scale) — Calm
 - [ ] D-24: Replace all mismatched skeletons with layout-accurate ones
 - [ ] D-V: Sprint D verification
@@ -71,7 +71,7 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 - [x] I-2: Full context-sensitive plan (Phase 2 forecast 112-130 credits of 500 cap; manifest spot-checks pass) per slot (exact content served, specific subject + why, format/ratio, credit estimate); typographic fallback for subject-less slots
 - [x] I-3: Samples generated (6 gens, Nano Banana FREE — 0/500 paid credits; 1 discarded for style violation, regenerated compliant) (wide header, card, thumbnail, empty state, one animated test) — ~5–8 generations, ledger updated after EVERY generation; 500-credit HARD CAP
 - [x] I-4: (sharp→webp q68-80; inkwell wired to homepage step-1, ribbon+scissors wired to library empty states; /design/imagery-samples review page; CSS grain-shimmer animated test) Integration pipeline (formats, compression, lazy-loading) + wire samples in
-- [~] I-5: DEPLOY samples live (rides wave-2 deploy); STOP generation until Task 9 approval
+- [x] I-5: Samples LIVE (/design/imagery-samples + wired slots; generation stopped until Task 9 approval); STOP generation until Task 9 approval
 
 ## Task 7 — Auto-research optimization loop (LCP)
 

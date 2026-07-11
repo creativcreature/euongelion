@@ -895,9 +895,19 @@ export default function DevotionalLibraryRail({
                   )}
                 </div>
                 {activeDays.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    No active devotional plan yet. Start a Soul Audit to begin.
-                  </p>
+                  <div className="py-8 text-center">
+                    {/* D-18 (F-074): typographic empty state — one quiet
+                        sentence + one contextual CTA. No illustration: this
+                        tab's empty meaning ("no plan yet") is an invitation,
+                        and the words carry it. */}
+                    <p className="vw-body mb-6 text-secondary">
+                      No plan is walking with you yet &mdash; the Soul Audit
+                      composes one around what you name.
+                    </p>
+                    <Link href="/soul-audit" className="cta-major">
+                      BEGIN THE SOUL AUDIT
+                    </Link>
+                  </div>
                 ) : (
                   <>
                     <div className="space-y-2">
@@ -1081,9 +1091,27 @@ export default function DevotionalLibraryRail({
               <div>
                 <p className="text-label vw-small mb-3 text-gold">Highlights</p>
                 {highlights.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    No highlights saved yet.
-                  </p>
+                  <div className="py-8 text-center">
+                    {/* Riso empty-state illustration (D-18, imagery library):
+                        a single lit clay oil lamp — a highlight keeps one
+                        line burning after the book is closed (Ps 119:105).
+                        Source: library/decorative/sym-oil-lamp-clay-linocut. */}
+                    <Image
+                      src="/images/site/empty-states/empty-highlights.webp"
+                      alt=""
+                      width={320}
+                      height={240}
+                      className="mx-auto mb-5"
+                      loading="lazy"
+                    />
+                    <p className="vw-body mb-6 text-secondary">
+                      No lines marked yet. Highlight a passage as you read and
+                      it will keep its light here.
+                    </p>
+                    <Link href="/today" className="cta-major">
+                      READ TODAY&rsquo;S EDITION
+                    </Link>
+                  </div>
                 ) : (
                   <div className="space-y-2">
                     {highlights.map((row) => {
@@ -1152,7 +1180,27 @@ export default function DevotionalLibraryRail({
               <div>
                 <p className="text-label vw-small mb-3 text-gold">Notes</p>
                 {notes.length === 0 && stickyNotes.length === 0 ? (
-                  <p className="vw-small text-muted">No notes saved yet.</p>
+                  <div className="py-8 text-center">
+                    {/* Riso empty-state illustration (D-18, imagery library):
+                        a hand with reed pen poised over a mostly blank scroll
+                        — the note not yet written. Source:
+                        library/poster/nt-paul-prison-writing-v2. */}
+                    <Image
+                      src="/images/site/empty-states/empty-notes.webp"
+                      alt=""
+                      width={280}
+                      height={280}
+                      className="mx-auto mb-5"
+                      loading="lazy"
+                    />
+                    <p className="vw-body mb-6 text-secondary">
+                      No notes yet. Write as you read and your words will gather
+                      here.
+                    </p>
+                    <Link href="/today" className="cta-major">
+                      READ TODAY&rsquo;S EDITION
+                    </Link>
+                  </div>
                 ) : (
                   <div className="space-y-2">
                     {notes.map((note) => (
@@ -1238,9 +1286,27 @@ export default function DevotionalLibraryRail({
                   Chat History
                 </p>
                 {chatHistory.length === 0 ? (
-                  <p className="vw-small text-muted">
-                    No chat notes saved yet.
-                  </p>
+                  <div className="py-8 text-center">
+                    {/* Riso empty-state illustration (D-18, imagery library):
+                        the conversation at the well (John 4) — questions
+                        asked and answered is exactly what this tab keeps.
+                        Source: library/decorative/story-woman-at-well-conversation. */}
+                    <Image
+                      src="/images/site/empty-states/empty-chat-history.webp"
+                      alt=""
+                      width={320}
+                      height={215}
+                      className="mx-auto mb-5"
+                      loading="lazy"
+                    />
+                    <p className="vw-body mb-6 text-secondary">
+                      Nothing kept from the study chat yet. When an exchange is
+                      worth returning to, save it and it will wait here.
+                    </p>
+                    <Link href="/today" className="cta-major">
+                      READ TODAY&rsquo;S EDITION
+                    </Link>
+                  </div>
                 ) : (
                   <div className="space-y-2">
                     {chatHistory.map((note) => (
@@ -1281,9 +1347,12 @@ export default function DevotionalLibraryRail({
                   <p className="text-label vw-small mb-3 text-gold">
                     Curated Plan Archive
                   </p>
+                  {/* D-18: archive is a utility surface — text-first empties,
+                      one quiet sentence each, tightened to the pattern. */}
                   {archivePlans.length === 0 ? (
                     <p className="vw-small text-muted">
-                      No curated plans archived yet.
+                      No past plans yet &mdash; a plan rests here when it ends
+                      or is replaced.
                     </p>
                   ) : (
                     <div className="space-y-3">
@@ -1328,7 +1397,8 @@ export default function DevotionalLibraryRail({
                   </p>
                   {completionRows.length === 0 ? (
                     <p className="vw-small text-muted">
-                      No completed pages yet.
+                      No pages finished yet &mdash; each completed reading is
+                      recorded here.
                     </p>
                   ) : (
                     <div className="space-y-2">
@@ -1359,7 +1429,8 @@ export default function DevotionalLibraryRail({
                   </p>
                   {archivedArtifacts.length === 0 ? (
                     <p className="vw-small text-muted">
-                      Nothing manually archived yet.
+                      Nothing set aside yet &mdash; archived bookmarks and notes
+                      wait here.
                     </p>
                   ) : (
                     <div className="space-y-2">
@@ -1412,8 +1483,13 @@ export default function DevotionalLibraryRail({
             {active === 'trash' && (
               <div>
                 <p className="text-label vw-small mb-3 text-gold">Trash</p>
+                {/* D-18: trash is a utility surface — text-first, one quiet
+                    sentence describing the real restore/delete behavior. */}
                 {trashedArtifacts.length === 0 ? (
-                  <p className="vw-small text-muted">Trash is empty.</p>
+                  <p className="vw-small text-muted">
+                    The trash is empty &mdash; discarded items can be restored
+                    from here until you delete them for good.
+                  </p>
                 ) : (
                   <div className="space-y-2">
                     {trashedArtifacts.map((item) => (

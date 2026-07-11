@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Skeleton from '@/components/ui/Skeleton'
 import DevotionalActions from '@/components/devotional/DevotionalActions'
 import DevotionalFolio from '@/components/devotional/DevotionalFolio'
 import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
@@ -361,13 +362,43 @@ export default function DevotionalPageClient({
                 { label: 'DEVOTIONAL' },
               ]}
             />
-            <section
-              className="devotional-shell-panel border px-6 py-10 text-center"
+            {/* D-24 (F-074): layout-accurate skeleton matching the loaded
+                reader (header panel + actions + day-nav pill + copy) — no
+                centered text card that reflows on arrival. */}
+            <p className="sr-only" role="status" aria-live="polite">
+              Preparing your devotional.
+            </p>
+            <header
+              className="mb-8 border px-6 py-6"
               style={{ borderColor: 'var(--color-border)' }}
             >
-              <p className="text-label vw-small mb-3 text-gold">LOADING</p>
-              <h1 className="vw-heading-md">Preparing your devotional.</h1>
-            </section>
+              <div className="mb-3 flex flex-wrap items-center gap-3">
+                <Skeleton className="h-4 w-28" />
+                <Skeleton className="h-4 w-24" />
+              </div>
+              <Skeleton className="mb-3 h-9 w-4/5" />
+              <Skeleton className="mb-2 h-4 w-full" />
+              <Skeleton className="h-4 w-2/3" />
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                <Skeleton className="h-4 w-28" />
+                <Skeleton className="h-4 w-16" />
+              </div>
+            </header>
+            <div className="mb-6 flex flex-wrap gap-4">
+              <Skeleton className="h-4 w-24" />
+              <Skeleton className="h-4 w-24" />
+            </div>
+            <Skeleton className="mb-8 h-11 w-full" />
+            <div className="mx-auto max-w-2xl">
+              <Skeleton className="mb-3 h-4 w-full" />
+              <Skeleton className="mb-3 h-4 w-full" />
+              <Skeleton className="mb-3 h-4 w-11/12" />
+              <Skeleton className="mb-8 h-4 w-3/4" />
+              <Skeleton className="mb-8 h-28 w-full" />
+              <Skeleton className="mb-3 h-4 w-full" />
+              <Skeleton className="mb-3 h-4 w-10/12" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
           </section>
           <SiteFooter />
           <section className="mock-bottom-brand">

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import FadeIn from '@/components/motion/FadeIn'
 import PresenceWeekRow from '@/components/PresenceWeekRow'
+import { loadSelectedAuditReason } from '@/components/soul-audit/helpers'
 
 /**
  * TodayReturningBand — F-069 (returning-user "Today" home).
@@ -33,7 +34,18 @@ type BandState =
   | { kind: 'loading' }
   | { kind: 'hidden' }
   | { kind: 'none' }
-  | { kind: 'plan'; route: string; seriesTitle: string; dayNumber?: number }
+  | {
+      kind: 'plan'
+      route: string
+      seriesTitle: string
+      dayNumber?: number
+      /**
+       * D-22 (F-074): the Soul Audit's real stored reason this plan was
+       * matched — resolved from this session's audit payloads, or undefined.
+       * Never fabricated: absent data simply renders no why-row.
+       */
+      whyThis?: string
+    }
 
 export default function TodayReturningBand() {
   const [state, setState] = useState<BandState>({ kind: 'loading' })
@@ -54,6 +66,8 @@ export default function TodayReturningBand() {
           route?: string
           seriesTitle?: string
           dayNumber?: number
+          planToken?: string
+          seriesSlug?: string
         }
         if (cancelled) return
 
@@ -83,6 +97,17 @@ export default function TodayReturningBand() {
             Number.isFinite(payload.dayNumber)
               ? payload.dayNumber
               : undefined,
+          whyThis:
+            loadSelectedAuditReason({
+              planToken:
+                typeof payload.planToken === 'string'
+                  ? payload.planToken
+                  : null,
+              seriesSlug:
+                typeof payload.seriesSlug === 'string'
+                  ? payload.seriesSlug
+                  : null,
+            }) ?? undefined,
         })
       } catch {
         if (cancelled) return
@@ -140,6 +165,18 @@ export default function TodayReturningBand() {
               <span>{state.seriesTitle}</span>
             </p>
             <p className="today-continue-line">Continue where you left off.</p>
+            {/* D-22 (Headspace why-row): one quiet line of the audit's real
+                stored reasoning — rendered only when it exists. */}
+            {state.whyThis && (
+              <p
+                className="vw-small mt-2 text-secondary"
+                data-testid="today-why-this"
+              >
+                <span className="text-label text-gold">WHY THIS</span>
+                <span aria-hidden="true"> · </span>
+                {state.whyThis}
+              </p>
+            )}
             <span className="text-label today-continue-cta">
               CONTINUE READING &rarr;
             </span>

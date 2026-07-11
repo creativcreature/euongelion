@@ -165,7 +165,7 @@ export default function SoulAuditPage() {
                         'color-mix(in srgb, var(--color-surface-raised) 86%, white 14%)',
                       lineHeight: 1.8,
                       transition:
-                        'border-color 300ms cubic-bezier(0, 0, 0.2, 1)',
+                        'border-color var(--motion-base) var(--motion-ease)',
                     }}
                     onFocus={(e) => {
                       e.target.style.borderColor = 'var(--color-gold)'
@@ -204,7 +204,7 @@ export default function SoulAuditPage() {
                     disabled={isSubmitting}
                     className="cta-major text-label vw-small w-full px-10 py-5 disabled:opacity-50"
                     style={{
-                      transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+                      transitionTimingFunction: 'var(--motion-ease)',
                     }}
                   >
                     GET MATCHED

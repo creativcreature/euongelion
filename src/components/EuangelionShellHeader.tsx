@@ -24,7 +24,13 @@ const DESKTOP_NAV_ITEMS = [
   { href: '/library', label: 'LIBRARY' },
   { href: '/how-we-write', label: 'HOW WE WRITE' },
 ]
-const MOBILE_OVERFLOW_ITEMS = [{ href: '/how-we-write', label: 'HOW WE WRITE' }]
+const MOBILE_OVERFLOW_ITEMS = [
+  // HOME lives here too (founder report 2026-07-10): the wordmark links
+  // home, but an explicit entry keeps it discoverable. Not a tab-bar
+  // duplicate — "/" is deliberately not a tab destination under SA-024.
+  { href: '/', label: 'HOME' },
+  { href: '/how-we-write', label: 'HOW WE WRITE' },
+]
 const MOBILE_TICKER_INTERVAL_MS = 6200
 const SCROLL_LOCK_CLASSES = [
   'lenis',
@@ -821,13 +827,20 @@ export default function EuangelionShellHeader({
           ref={mastheadRef}
           aria-label="Euangelion"
         >
-          {/* Brand wordmark. Was an h1; demoted to a div so each page
-              has a single content h1 (a11y, R34 overnight audit).
-              Visual + content unchanged. */}
-          <div className="text-masthead mock-masthead-word" role="presentation">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              {brandWord}
-            </span>
+          {/* Brand wordmark. Was an h1; demoted (a11y, R34) — and now a
+              LINK home (founder report 2026-07-10: after SA-024 moved
+              destinations to the tab bar, mobile had NO route to "/" —
+              the wordmark is the newspaper-standard home affordance). */}
+          <div className="text-masthead mock-masthead-word">
+            <Link
+              href="/"
+              aria-label="Euangelion — home"
+              className="mock-masthead-home-link"
+            >
+              <span className="js-shell-masthead-fit mock-masthead-text">
+                {brandWord}
+              </span>
+            </Link>
           </div>
           {tone !== 'wake' && (
             <p className="mock-masthead-pronunciation text-label">

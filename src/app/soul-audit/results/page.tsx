@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import SoulAuditResultsLoading from './loading'
 import SiteFooter from '@/components/SiteFooter'
 import FadeIn from '@/components/motion/FadeIn'
 import CrisisGate from '@/components/soul-audit/CrisisGate'
@@ -485,21 +486,17 @@ export default function SoulAuditResultsPage() {
   }
 
   // --- Loading / empty state ---
+  // D-24 (F-074): while the submit result hydrates from the store, show the
+  // same layout-accurate skeleton the route's loading.tsx paints — no
+  // "Loading..." text card that reflows on arrival.
   if (!submitResult) {
     return (
-      <div className="mock-home">
-        <main id="main-content" className="mock-paper">
-          <EuangelionShellHeader />
-          <section className="mock-panel">
-            <div className="flex min-h-[40vh] items-center justify-center">
-              <p className="text-muted" role="status" aria-live="polite">
-                Loading...
-              </p>
-            </div>
-          </section>
-          <SiteFooter />
-        </main>
-      </div>
+      <>
+        <p className="sr-only" role="status" aria-live="polite">
+          Loading your matches.
+        </p>
+        <SoulAuditResultsLoading />
+      </>
     )
   }
 

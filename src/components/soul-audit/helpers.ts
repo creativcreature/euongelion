@@ -262,6 +262,46 @@ export function loadPlanDays(token: string): CustomPlanDay[] {
   }
 }
 
+/**
+ * D-22 (F-074, Headspace "why this recommendation" model): resolve the REAL
+ * stored reason a plan/series was matched, or null.
+ *
+ * The reasoning lives only in this browser session's Soul Audit payloads
+ * (`soul-audit-submit-v2` options + `soul-audit-selection-v2`); the server
+ * persists the plan's theme but not the match reasoning. So the why-row is
+ * honest by construction: it renders only when the stored selection provably
+ * points at the given plan (planToken match) or series (seriesSlug match —
+ * the select route writes `option.slug` as the plan's series_slug), and it
+ * quietly disappears in a later session rather than fabricating a reason.
+ */
+export function loadSelectedAuditReason(params: {
+  planToken?: string | null
+  seriesSlug?: string | null
+}): string | null {
+  const submit = loadSubmitResult()
+  const selection = loadSelectionResult()
+  if (!submit || !selection) return null
+
+  const planToken = params.planToken?.trim() || null
+  const seriesSlug = params.seriesSlug?.trim() || null
+  if (!planToken && !seriesSlug) return null
+
+  const selectionMatchesPlan =
+    planToken !== null && selection.planToken === planToken
+  const selectionMatchesSeries =
+    seriesSlug !== null && selection.seriesSlug === seriesSlug
+  if (!selectionMatchesPlan && !selectionMatchesSeries) return null
+
+  // The selection payload confirms WHICH option was chosen; the submit
+  // payload carries that option's reasoning. option.slug is the same value
+  // the select route stored as the plan's series_slug.
+  const selectedSlug = selection.seriesSlug ?? seriesSlug
+  if (!selectedSlug) return null
+  const option = submit.options.find((entry) => entry.slug === selectedSlug)
+  const reasoning = option?.reasoning?.trim()
+  return reasoning && reasoning.length > 0 ? reasoning : null
+}
+
 export function loadSavedAuditOptions(): SavedAuditOption[] {
   if (typeof window === 'undefined') return []
   const raw = window.localStorage.getItem(SAVED_OPTIONS_KEY)

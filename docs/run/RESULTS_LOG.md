@@ -13,10 +13,11 @@ Stop conditions (whichever first): Tier 4 · Tier 2 + 10 consecutive stale round
 
 ## Status
 
-NOT STARTED — begins Task 7. Baseline: not yet recorded.
+RUNNING (started 2026-07-10). **Baseline (round 0): home 8412ms · reader 7040ms → SCORE 8412ms · Tier 0** — measured against the deployed wave-2 build in the local Workers preview (Lighthouse 13, headless Chrome, simulated mobile throttling, 3-run medians). Loop iterates in the isolated deploy-worktree; winning changes port back as commits.
 
 ## Rounds
 
-| Round | Change (one hypothesis) | Before → After (ms) | Kept? | Tier |
-| ----- | ----------------------- | ------------------- | ----- | ---- |
-| —     | —                       | —                   | —     | —    |
+| Round | Change (one hypothesis)                                                                                                                                                                                               | Before → After (ms)                   | Kept?                                                              | Tier                                |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------ | ----------------------------------- |
+| 1     | suppressHydrationWarning on <html> (theme script mismatch suspected of re-noding the hero → LCP chained to JS)                                                                                                        | 8412 → 8023 (home 8023 / reader 6676) | KEPT (beats baseline; margin may be variance — mechanism persists) | 0                                   |
+| 2     | SW controllerchange reload gated on pre-existing controller — first-install clients.claim() was RELOADING THE PAGE MID-FIRST-LOAD for every new visitor (found via trace: doc parsed twice, all images fetched twice) | 8023 → 4472 (home 3507 / reader 4472) | KEPT — also fixes a real first-visit double-load in production     | 0 (reader-bound, 472ms from Tier 1) |

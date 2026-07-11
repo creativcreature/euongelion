@@ -5,6 +5,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Wave 3: founder-reported fixes + Sprint D final + LCP loop wins (2026-07-10)
+
+**Founder-reported (live review):**
+
+1. **Theme jumped between light and dark on random pages** — root cause: a
+   second persisted theme store (`euangelion-ui`, default dark) re-applied
+   its own stale value whenever `/settings` or onboarding mounted, fighting
+   the header/localStorage system. `uiStore` no longer persists or re-applies
+   a theme; it reads/writes the single canonical `theme` key (the same one
+   the pre-paint script, header toggle, and Aa sheet use) and broadcasts the
+   existing change event. One source of truth, site-wide consistency.
+   (Pre-existing bug — the dual store shipped well before this run.)
+2. **No way back to the homepage on mobile** — after SA-024 moved
+   destinations to the tab bar, `/` had no mobile entry point. The masthead
+   wordmark is now a home link (newspaper convention, visually unchanged)
+   and HOME appears in the mobile overflow menu.
+
+**LCP loop (rounds 1–2, locked stick in docs/run/loop/):** the service
+worker's `controllerchange` reload fired on first-install `clients.claim()`
+— **every new visitor loaded the site twice** (document parsed twice, every
+image fetched twice, LCP anchored to the second parse). Reload now happens
+only when a pre-existing controller is replaced (real updates still
+refresh). Lab LCP (simulated mobile): 8412ms → 4472ms; homepage 8412 → 3507.
+Plus `suppressHydrationWarning` on `<html>` for the theme script.
+
+**Sprint D final (agents, suite 120 files / 1608 green):**
+
+3. Every empty state designed — 3 new library-manifest illustrations
+   (justifications written, catalog `assignedTo` stamped), 6 typographic
+   states tightened to one-sentence + one-CTA, the rest verified good.
+4. "Why this" rows on the Today band, Daily Bread, and curated view — real
+   stored audit reasoning only; the row vanishes rather than fabricates.
+5. One motion language — 68 outlier transition declarations migrated to one
+   easing + three duration tokens; signature editorial animations exempted
+   by design. Haptic ticks (3 call sites, reduced-motion aware).
+6. Safe-area audit — 9 fixes including a real bug (reader stickies toolbar
+   stuck behind the opaque topbar).
+7. All five `loading.tsx` skeletons rebuilt layout-accurate; the two
+   client-side loaders now reuse them.
+
+---
+
 ## LAUNCH-READINESS — Wave 2: coherence + completeness (Sprints B/C + imagery samples) (2026-07-10)
 
 Seven workstreams, integration gate green (113 files / 1558 tests):

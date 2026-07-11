@@ -53,10 +53,65 @@ describe('greetingForHour', () => {
   })
 })
 
+// D-22 (F-074): sessionStorage audit payloads that provably point at the
+// mocked current plan — the ONLY condition under which the why-row renders.
+const WHY_REASONING =
+  'A restlessness that will not settle — this path sits with stillness before God.'
+
+function seedAuditReason(params: { planToken: string; seriesSlug: string }) {
+  window.sessionStorage.setItem(
+    'soul-audit-submit-v2',
+    JSON.stringify({
+      version: 'v2',
+      auditRunId: 'run-1',
+      runToken: 'tok-1',
+      remainingAudits: 2,
+      requiresEssentialConsent: true,
+      analyticsOptInDefault: false,
+      consentAccepted: true,
+      crisis: {
+        required: false,
+        acknowledged: false,
+        resources: [],
+        prompt: '',
+      },
+      options: [
+        {
+          id: 'opt-1',
+          kind: 'ai_primary',
+          rank: 1,
+          slug: params.seriesSlug,
+          title: 'Quieting the Noise',
+          question: 'Where did the quiet go?',
+          confidence: 0.9,
+          reasoning: WHY_REASONING,
+        },
+      ],
+      policy: {
+        noAccountRequired: true,
+        maxAuditsPerCycle: 3,
+        directionCount: 3,
+      },
+    }),
+  )
+  window.sessionStorage.setItem(
+    'soul-audit-selection-v2',
+    JSON.stringify({
+      ok: true,
+      auditRunId: 'run-1',
+      selectionType: 'ai_primary',
+      route: '/daily-bread',
+      planToken: params.planToken,
+      seriesSlug: params.seriesSlug,
+    }),
+  )
+}
+
 describe('TodayReturningBand', () => {
   afterEach(() => {
     cleanup()
     vi.unstubAllGlobals()
+    window.sessionStorage.clear()
   })
 
   it('renders greeting + DAY N · title continue card when a plan is active', async () => {
@@ -88,6 +143,56 @@ describe('TodayReturningBand', () => {
 
     // Plan state must not stack a recommendation on top of the edition.
     expect(screen.queryByTestId('today-soul-audit-card')).toBeNull()
+
+    // D-22: no stored audit reason in this session → no why-row. The row
+    // must never render from fabricated data.
+    expect(screen.queryByTestId('today-why-this')).toBeNull()
+  })
+
+  it('renders the WHY THIS row only when the session holds the real audit reason (D-22)', async () => {
+    seedAuditReason({ planToken: 'abc-123', seriesSlug: 'quieting-the-noise' })
+    mockFetchOnce({
+      ok: true,
+      hasCurrent: true,
+      route: '/daily-bread',
+      selectionType: 'ai_primary',
+      planToken: 'abc-123',
+      seriesSlug: 'quieting-the-noise',
+      seriesTitle: 'Quieting the Noise',
+      dayNumber: 2,
+    })
+
+    render(<TodayReturningBand />)
+
+    const why = await screen.findByTestId('today-why-this')
+    expect(why.textContent).toContain('WHY THIS')
+    expect(why.textContent).toContain(WHY_REASONING)
+    // Brand voice: quiet, no exclamation.
+    expect(why.textContent).not.toMatch(/!/)
+  })
+
+  it('omits the WHY THIS row when the stored audit points at a different plan (D-22)', async () => {
+    seedAuditReason({
+      planToken: 'some-other-plan',
+      seriesSlug: 'another-path',
+    })
+    mockFetchOnce({
+      ok: true,
+      hasCurrent: true,
+      route: '/daily-bread',
+      selectionType: 'ai_primary',
+      planToken: 'abc-123',
+      seriesSlug: 'quieting-the-noise',
+      seriesTitle: 'Quieting the Noise',
+      dayNumber: 2,
+    })
+
+    render(<TodayReturningBand />)
+
+    await waitFor(() => {
+      expect(screen.getByTestId('today-continue-card')).toBeTruthy()
+    })
+    expect(screen.queryByTestId('today-why-this')).toBeNull()
   })
 
   it('omits the DAY label (but keeps the title) when dayNumber is missing', async () => {

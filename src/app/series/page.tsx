@@ -372,9 +372,24 @@ export default function SeriesBrowsePage() {
               ))}
             </div>
             {filteredSlugs.length === 0 && (
-              <p className="series-empty-state">
-                No series match your filters. Try adjusting your search.
-              </p>
+              <div className="series-empty-state">
+                {/* D-18: filter dead-end → one sentence + one CTA that
+                    actually resolves it (clear the active filters). */}
+                <p className="mb-6">
+                  No series match what you&rsquo;re looking for.
+                </p>
+                <button
+                  type="button"
+                  className="cta-major"
+                  onClick={() => {
+                    setSearchQuery('')
+                    setTopicFilter(null)
+                    setReadingTimeFilter(null)
+                  }}
+                >
+                  CLEAR FILTERS
+                </button>
+              </div>
             )}
           </section>
         )}
@@ -393,9 +408,23 @@ export default function SeriesBrowsePage() {
               ))}
             </div>
             {filteredSlugs.length === 0 && (
-              <p className="series-empty-state">
-                No series match your filters. Try adjusting your search.
-              </p>
+              <div className="series-empty-state">
+                {/* D-18: same designed dead-end as the grid view. */}
+                <p className="mb-6">
+                  No series match what you&rsquo;re looking for.
+                </p>
+                <button
+                  type="button"
+                  className="cta-major"
+                  onClick={() => {
+                    setSearchQuery('')
+                    setTopicFilter(null)
+                    setReadingTimeFilter(null)
+                  }}
+                >
+                  CLEAR FILTERS
+                </button>
+              </div>
             )}
           </section>
         )}

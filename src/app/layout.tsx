@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         {/* Anti-FOUC: resolve the theme from localStorage / prefers-color-scheme
             and toggle html.dark BEFORE first paint, so a light-preference visitor

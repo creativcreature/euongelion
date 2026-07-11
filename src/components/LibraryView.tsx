@@ -172,10 +172,21 @@ export default function LibraryView() {
             </div>
           </div>
         ) : (
-          <p className="library-empty vw-small">
-            Nothing is active yet. Open any devotional and tap{' '}
-            <em>Start this Devotional</em> to begin.
-          </p>
+          <div className="library-empty vw-small">
+            {/* D-18: the ACTIVE section carries this tab's one CTA — the
+                other three sections stay one quiet sentence each so an
+                all-empty tab never stacks four buttons. */}
+            <p className="mb-3">
+              Nothing is active yet &mdash; a series becomes your daily reading
+              when you start it.
+            </p>
+            <Link
+              href="/series"
+              className="cta-major text-label vw-small inline-block px-5 py-2"
+            >
+              BROWSE SERIES
+            </Link>
+          </div>
         )}
       </section>
 
@@ -185,8 +196,8 @@ export default function LibraryView() {
         </h2>
         {saved.length === 0 ? (
           <p className="library-empty vw-small">
-            No saved devotionals yet. Tap <em>Save this Devotional</em> from any
-            reading.
+            Nothing saved yet &mdash; keep any devotional here with{' '}
+            <em>Save this Devotional</em> as you read.
           </p>
         ) : (
           <div className="library-grid">
@@ -243,8 +254,7 @@ export default function LibraryView() {
         </h2>
         {paused.length === 0 ? (
           <p className="library-empty vw-small">
-            No paused series. When you switch to a different devotional, the
-            previous one appears here so you can come back to it.
+            When you switch devotionals, the one you leave waits for you here.
           </p>
         ) : (
           <div className="library-grid">
@@ -290,7 +300,7 @@ export default function LibraryView() {
         </h2>
         {completed.length === 0 ? (
           <p className="library-empty vw-small">
-            Finished series will live here.
+            Finished series will rest here.
           </p>
         ) : (
           <div className="library-grid">

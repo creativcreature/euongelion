@@ -6,6 +6,7 @@ import {
   useSettingsStore,
   type ReadingTheme,
 } from '@/stores/settingsStore'
+import { hapticTick } from '@/lib/haptics'
 
 /**
  * F-067 — In-reader "Aa" sheet with curated NAMED reading themes.
@@ -195,6 +196,8 @@ export default function ReaderThemeControl() {
     readingTheme ?? (baseIsDark ? 'ink' : 'parchment')
 
   function selectTheme(theme: ReadingTheme) {
+    // D-23 (F-074): subtle confirmation tick on picking a reading theme.
+    hapticTick()
     setReadingTheme(theme)
     const base = READING_THEME_BASE[theme]
     const isDark = base === 'dark'
