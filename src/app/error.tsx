@@ -54,7 +54,7 @@ function recoveryFor(pathname: string | null): Recovery {
       kicker: "TODAY'S READING UNAVAILABLE",
       heading: "We couldn't load today's reading.",
       body: 'Your plan is safe. Try again, or open your saved readings.',
-      secondaryHref: '/saved',
+      secondaryHref: '/library?tab=bookmarks',
       secondaryLabel: 'Open Saved',
     }
   }

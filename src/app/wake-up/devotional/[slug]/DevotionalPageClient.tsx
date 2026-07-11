@@ -14,12 +14,14 @@ import DevotionalRhythm, {
 } from '@/components/devotional/DevotionalRhythm'
 import AuthorColophon from '@/components/devotional/AuthorColophon'
 import ScrollProgress from '@/components/ScrollProgress'
+import ReaderThemeControl from '@/components/ReaderThemeControl'
 import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
 import AudioPlayer from '@/components/AudioPlayer'
 import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
+import CompletionBeat from '@/components/CompletionBeat'
 import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
@@ -430,6 +432,10 @@ export default function DevotionalPageClient({
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
         <ScrollProgress />
+        {/* F-067: in-reader "Aa" sheet — named reading themes + text size.
+            Reader chrome only (this is the reading surface); the fixed
+            trigger sits bottom-left, mirroring the chat FAB bottom-right. */}
+        <ReaderThemeControl />
         <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
 
         <section className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
@@ -912,12 +918,20 @@ export default function DevotionalPageClient({
                         sourceHref={`${devotionalRoutePrefix}/${slug}`}
                       />
                       <Link
-                        href="/clippings"
+                        href="/library?tab=clippings"
                         className="text-label vw-small link-highlight leading-none"
                       >
                         CLIPPINGS
                       </Link>
                     </div>
+                    {/* F-066 (SA-025): the quiet completion beat. Renders
+                        nothing until the progressUpdated event fired by
+                        markComplete() above arrives — one benediction line
+                        paired with this day's scripture reference, right at
+                        the completion point. Not a modal; auto-dismisses. */}
+                    <CompletionBeat
+                      scriptureReference={devotional.scriptureReference}
+                    />
                     {/* Phase 2.2: one calm daily-reading opt-in, post-read only.
                         Renders nothing until VAPID is configured + the reader
                         has finished a day. */}

@@ -36,3 +36,14 @@ Format: id · date · decision · options considered · reasoning · real-world 
 
 - **Choice:** Delete 5 with zero product intent attached (WalkthroughModal, SeriesSearchPanel, MixedHeadline, NetworkStatusBanner, SeriesHero — all 0-import, grep-verified). Retain GuestSignupGate (audit Part 3 schedules it for onboarding wiring, Sprint C) and DevotionalMilestoneReveal (SA-025 explicitly says revive-or-delete at the completion beat, Sprint D). Deleting-then-rebuilding would be waste; git history preserves the deleted five if ever needed.
 - **Anchor:** audit Part 3 #2 and Part 5A.
+
+## D-007 (2026-07-10) — Animated imagery test = CSS grain shimmer, not generated video
+
+- **Options:** (a) generate an animated asset (video/GIF — requires Higgsfield, paid); (b) CSS grain-drift overlay on a static riso print.
+- **Choice:** (b). Quieter and more reverent (brand: "quiet and reverent" was the run's own spec), zero credits, reduced-motion safe, trivially reversible. Shown on /design/imagery-samples.
+- **Anchor:** print-era texture treatments (risograph paper grain), Calm's restraint in motion.
+
+## D-008 (2026-07-10) — Sample wiring respects the no-arbitrary-use rule
+
+- Only samples with a justified live slot were wired (inkwell→step-1 subject-mismatch fix; ribbon→bookmarks empty; scissors→clippings empty). The Genesis header and oil lamp have no justified slot today (bible-365 hero already assigned) — they render on the noindex review page only, never as decoration. First Genesis attempt DISCARDED for violating the sparing-crimson rule; regenerated compliant.
+- **Anchor:** project CLAUDE.md image rules 1–3.

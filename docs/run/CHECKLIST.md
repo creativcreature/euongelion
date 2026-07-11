@@ -20,46 +20,46 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 ## Task 2 — Sprint A: correctness (P0 1–9)
 
 - [x] A-0: Verify every audit claim against current code before fixing (anchors may have drifted)
-- [~] A-1 (agent): Soul-Audit guided-reveal dead code (`soul-audit/results/page.tsx:70-73`) — revive Calm/Yazio-style progressive reveal (recommended first, alternatives on tap) or delete cleanly
-- [~] A-2 (agent): Result cards render bare (`OptionCard.tsx:33-38`; AI slug ≠ series slug) — resolve real hero from scripture theme or design text-first card (Yazio)
-- [~] A-2b (agent): `seriesSlug` written to plan is AI slug (`select/route.ts:724`) → resume badge title empty (`current/route.ts:98`) — store resolvable title/theme
-- [~] A-3 (agent): Results loading skeleton (3-up grid) → match real stacked RECOMMENDED/ALTERNATIVE layout
+- [x] A-1: Soul-Audit guided-reveal dead code (`soul-audit/results/page.tsx:70-73`) — revive Calm/Yazio-style progressive reveal (recommended first, alternatives on tap) or delete cleanly
+- [x] A-2: Result cards render bare (`OptionCard.tsx:33-38`; AI slug ≠ series slug) — resolve real hero from scripture theme or design text-first card (Yazio)
+- [x] A-2b: `seriesSlug` written to plan is AI slug (`select/route.ts:724`) → resume badge title empty (`current/route.ts:98`) — store resolvable title/theme
+- [x] A-3: Results loading skeleton (3-up grid) → match real stacked RECOMMENDED/ALTERNATIVE layout
 - [x] A-4: (5 deleted: WalkthroughModal, SeriesSearchPanel, MixedHeadline, NetworkStatusBanner, SeriesHero; GuestSignupGate→Sprint C, DevotionalMilestoneReveal→Sprint D) Wire-or-delete 0-import orphans: GuestSignupGate · WalkthroughModal · SeriesSearchPanel · SeriesHero · MixedHeadline · NetworkStatusBanner · DevotionalMilestoneReveal (verify each is truly 0-import first)
-- [~] A-5 (agent): Two-reader ambiguity (`/soul-audit/plan/[planToken]` vs `/daily-bread`) — pick canonical, finish or retire the other; fix devotional-silo self-canonical URLs (`devotional/[slug]/page.tsx:56`)
-- [~] A-6 (agent): `/saved` mis-routes Euangelion-silo bookmarks to `/wake-up/devotional/*` (`SavedList.tsx:153`)
+- [x] A-5: Two-reader ambiguity (`/soul-audit/plan/[planToken]` vs `/daily-bread`) — pick canonical, finish or retire the other; fix devotional-silo self-canonical URLs (`devotional/[slug]/page.tsx:56`)
+- [x] A-6: `/saved` mis-routes Euangelion-silo bookmarks to `/wake-up/devotional/*` (`SavedList.tsx:153`)
 - [x] A-7: Copy unification (computed counts 33/540; false claims fixed; GET MATCHED unified) — GET MATCHED vs Continue; kill "from our library" false claim; reconcile "32 plans" vs "65 series"
-- [~] A-8 (agent): Re-enable reader SSR (fix `too-busy-for-god-day-6` serialization bug; `DevotionalPageClient.tsx:100`) — no loader flash
+- [x] A-8: (540/540 corpus proof, 1257 pages prerender) Re-enable reader SSR (fix `too-busy-for-god-day-6` serialization bug; `DevotionalPageClient.tsx:100`) — no loader flash
 - [x] A-9: Session cookie misspelling (legacy-read fallback migration, zero loss) `euongelion_session` — rename with live-key migration care
-- [ ] A-V: Sprint A verification — type-check, lint, tests, `npm run preview` + curl affected routes, real Soul-Audit generation end-to-end
-- [ ] A-D: DEPLOY Sprint A live + verify production
+- [x] A-V: Sprint A verification — preview battery 36/36 + REAL generation e2e (submit→3 options→select→54 polls→complete→/daily-bread 107KB→resume title resolves) — type-check, lint, tests, `npm run preview` + curl affected routes, real Soul-Audit generation end-to-end
+- [x] A-D: DEPLOYED (version f16f2b80, 2026-07-10) + live battery 36/36 on euangelion.app — includes Sprint B nav tranche
 
 ## Task 3 — Sprint B: coherence (P1 9–12)
 
-- [ ] B-10: Mobile bottom tab bar (Today · Series · Soul Audit · Library · You), safe-area-aware, persistent; mobile top bar = identity + utilities only (zero duplication); desktop masthead keeps destinations incl. Daily Bread + Library (SA-NEW-1; refs: Open, Calm, Headspace)
-- [ ] B-10b: Reconcile with `APP-VS-WEB-APP.md` + `M04` + `M00`; assign real SA id in production-decisions.yaml + MASTER-DECISIONS.md; PRD `F-NEW-a`
-- [ ] B-11: In-reader "Aa" sheet — curated named themes (Ink, Parchment, Vellum, Night) per Apple Books named presets
-- [ ] B-12: Consolidate Library to the 7-tab rail; retire `/saved` + `/clippings` as standalone (ElevenReader model)
-- [ ] B-13: Signed-in "Today" home distinct from marketing landing (Calm/Headspace greeting + continue + one recommendation)
+- [x] B-10: Mobile bottom tab bar (MobileTabBar shipped, z-scale conformance, mobile theme toggle added, hamburger=overflow-only, desktop masthead restored; commit f83288d1) (Today · Series · Soul Audit · Library · You), safe-area-aware, persistent; mobile top bar = identity + utilities only (zero duplication); desktop masthead keeps destinations incl. Daily Bread + Library (SA-NEW-1; refs: Open, Calm, Headspace)
+- [x] B-10b: (M04 + APP-VS-WEB-APP addenda; SA-024 assigned) Reconcile with `APP-VS-WEB-APP.md` + `M04` + `M00`; assign real SA id in production-decisions.yaml + MASTER-DECISIONS.md; PRD `F-NEW-a`
+- [x] B-11: In-reader "Aa" sheet (Ink/Parchment/Vellum/Night + size stepper; WCAG ratios computed; 11/11 tests; commit pending wave-2) — curated named themes (Ink, Parchment, Vellum, Night) per Apple Books named presets
+- [x] B-12: Consolidate Library (9-tab /library; /saved + /clippings 307d; SavedList deleted; full suite 1480 green; commit pending wave-2) to the 7-tab rail; retire `/saved` + `/clippings` as standalone (ElevenReader model)
+- [x] B-13: Signed-in "Today" home (TodayReturningBand island, 7/7 tests; commit pending B-12 landing) distinct from marketing landing (Calm/Headspace greeting + continue + one recommendation)
 - [ ] B-V: Sprint B verification (as A-V; include 375/390/768/1280/1440 light+dark checks)
 - [ ] B-D: DEPLOY Sprint B live + verify production
 
 ## Task 4 — Sprint C: completeness (P1 13–16)
 
-- [ ] C-14: Reminder scheduler — single time-window picker, brand voice ("one quiet word each morning"), Waking Up "Moment" model
-- [ ] C-15: Global search over series + notes + clippings (or remove advertised SearchAction) — Calm/Ten Percent pattern
-- [ ] C-16: PWA install prompt after good session (`beforeinstallprompt`), Finch-gentle timing
-- [ ] C-17: Settings restructure — grouped cards + light profile header; stop exposing "when this ships" UI (Claude/Cosmos refs)
+- [x] C-14: Reminder scheduler (honest 6-state picker + window/timezone/idempotent sender; 50 new tests; go-live = HUMAN_REQUIRED #2) — single time-window picker, brand voice ("one quiet word each morning"), Waking Up "Moment" model
+- [x] C-15: Global search (series+devotionals+notes, Cmd/Ctrl+K, SearchAction made real; 19/19 tests; commit pending wave-2) over series + notes + clippings (or remove advertised SearchAction) — Calm/Ten Percent pattern
+- [x] C-16: PWA install prompt (InstallPrompt.tsx, real completion signals, 11/11 tests + Playwright real-browser checks; commit pending B-12 landing) after good session (`beforeinstallprompt`), Finch-gentle timing
+- [x] C-17: Settings restructure (profile header + 6 grouped cards; dead "coming soon" UI deleted; all prior controls asserted present; commit pending wave-2) — grouped cards + light profile header; stop exposing "when this ships" UI (Claude/Cosmos refs)
 - [ ] C-V: Sprint C verification
 - [ ] C-D: DEPLOY Sprint C live + verify production
 
 ## Task 5 — Sprint D: signature polish (P2 17–21)
 
 - [ ] D-18: Every empty state → illustration (riso library) + one sentence + one CTA (Pinterest/Skyscanner/OpenTable)
-- [ ] D-19: Quiet completion beat after day/plan (Headspace post-session quote; NOT confetti) — revive DevotionalMilestoneReveal or build fresh (SA-NEW-2)
-- [ ] D-20: Gentle presence indicator — lit/unlit dots, zero counts, no shame (Open dotted week / Bears Gratitude) (SA-NEW-2)
-- [ ] D-20b: Assign real SA id for momentum hybrid; PRD `F-NEW-d`
-- [ ] D-21: Series/plan detail tabs (Sessions · About · Voices · Artwork) — Waking Up
-- [ ] D-22: "Why this recommendation" row on matched series — Headspace
+- [~] D-19 (agent): Quiet completion beat after day/plan (Headspace post-session quote; NOT confetti) — revive DevotionalMilestoneReveal or build fresh (SA-NEW-2)
+- [~] D-20 (agent): Gentle presence indicator — lit/unlit dots, zero counts, no shame (Open dotted week / Bears Gratitude) (SA-NEW-2)
+- [x] D-20b: (SA-025 + F-066 created earlier) Assign real SA id for momentum hybrid; PRD `F-NEW-d`
+- [x] D-21: Series/plan detail tabs (adaptive 4/3/2-tab model backed by real profile modules + artwork assignments; bible-365 grouped nav preserved; 9/9 tests; commit pending wave-2) (Sessions · About · Voices · Artwork) — Waking Up
+- [ ] D-22: "Why this recommendation" row on matched series — Headspace (note: OptionCard already ships expanded reasoning + "Why this path?" on results; remaining scope is browse/today matched-series surfaces)
 - [ ] D-23: Haptics + native sheets + safe-area audit + unified motion language (one easing, one duration scale) — Calm
 - [ ] D-24: Replace all mismatched skeletons with layout-accurate ones
 - [ ] D-V: Sprint D verification
@@ -67,16 +67,16 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 
 ## Task 6 — Imagery: plan + samples only (full run gated at Task 9)
 
-- [ ] I-1: Inventory every image slot (headers, series cards, Soul Audit results, empty states, Today home, detail pages, OG/social) → this checklist + IMAGERY_PLAN.md
-- [ ] I-2: Full context-sensitive plan per slot (exact content served, specific subject + why, format/ratio, credit estimate); typographic fallback for subject-less slots
-- [ ] I-3: Generate ONE sample per format category (wide header, card, thumbnail, empty state, one animated test) — ~5–8 generations, ledger updated after EVERY generation; 500-credit HARD CAP
-- [ ] I-4: Integration pipeline (formats, compression, lazy-loading) + wire samples in
-- [ ] I-5: DEPLOY samples live; STOP generation until Task 9 approval
+- [x] I-1: Inventory every image slot (IMAGERY_PLAN.md; KEEP ~60, REPLACE 18 [founder gate], FILL ~380, GENERATE small list, TYPO ~25) (headers, series cards, Soul Audit results, empty states, Today home, detail pages, OG/social) → this checklist + IMAGERY_PLAN.md
+- [x] I-2: Full context-sensitive plan (Phase 2 forecast 112-130 credits of 500 cap; manifest spot-checks pass) per slot (exact content served, specific subject + why, format/ratio, credit estimate); typographic fallback for subject-less slots
+- [x] I-3: Samples generated (6 gens, Nano Banana FREE — 0/500 paid credits; 1 discarded for style violation, regenerated compliant) (wide header, card, thumbnail, empty state, one animated test) — ~5–8 generations, ledger updated after EVERY generation; 500-credit HARD CAP
+- [x] I-4: (sharp→webp q68-80; inkwell wired to homepage step-1, ribbon+scissors wired to library empty states; /design/imagery-samples review page; CSS grain-shimmer animated test) Integration pipeline (formats, compression, lazy-loading) + wire samples in
+- [~] I-5: DEPLOY samples live (rides wave-2 deploy); STOP generation until Task 9 approval
 
 ## Task 7 — Auto-research optimization loop (LCP)
 
-- [ ] L-1: Write instructions.md (goal, rules, cadence, termination ladder) — LOCKED after write
-- [ ] L-2: Write score.py (LCP ms, homepage + reader) — LOCKED after write; FIT CHECK: objectively scored / fast feedback / direct asset access
+- [x] L-1: Write instructions.md (docs/run/loop/, LOCKED) (goal, rules, cadence, termination ladder) — LOCKED after write
+- [x] L-2: Write score.py (docs/run/loop/score.py; Lighthouse 13 + headless Chrome verified present; FIT CHECK passes) (LCP ms, homepage + reader) — LOCKED after write; FIT CHECK: objectively scored / fast feedback / direct asset access
 - [ ] L-3: Record baseline score
 - [ ] L-4: Run loop (one hypothesis per round, score, keep/revert, log to RESULTS_LOG.md) until: Tier 4 (<1.2s) · Tier 2 + 10 stale rounds · 100 rounds
 - [ ] L-5: DEPLOY winning baseline; record final tier + summary
@@ -103,6 +103,6 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done+verified · `[!]` b
 
 - [x] S-1: Assign real SA ids (SA-024 platform IA, SA-025 momentum hybrid) for SA-NEW-1 + SA-NEW-2 in production-decisions.yaml + MASTER-DECISIONS.md
 - [x] S-2: (F-063..F-074 created + indexed; registry count-locked at 54 — followed F-056..062 precedent, see DECISIONS D-004) Create + register F-NEW-a…d PRDs (FEATURE-PRD-INDEX.md + FEATURE-PRD-REGISTRY.yaml)
-- [ ] S-3: Update PRODUCTION-FEATURE-SCORECARD.md + PRODUCTION-10-10-PLAN.md from audit Part 6
-- [ ] S-4: Reconcile Part 1 with APP-VS-WEB-APP.md + M04
+- [~] S-3: (deploy-1 addendum written; full re-score scheduled at Task 8 when everything is live) Update PRODUCTION-FEATURE-SCORECARD.md + PRODUCTION-10-10-PLAN.md from audit Part 6
+- [x] S-4: Reconcile Part 1 with APP-VS-WEB-APP.md + M04 (addenda committed with Sprint B tranche 1)
 - [ ] S-5: CHANGELOG.md entries per shipped tranche (enforced by hooks anyway)

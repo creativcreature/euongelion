@@ -240,8 +240,12 @@ export default function Home() {
       url: 'https://euangelion.app',
     },
     potentialAction: {
+      // F-071: the advertised search target is now real. The shell
+      // header (rendered on every route) reads ?search= and opens the
+      // global search overlay pre-filled — previously this pointed at
+      // /series?q=, which no page ever handled.
       '@type': 'SearchAction',
-      target: 'https://euangelion.app/series?q={search_term_string}',
+      target: 'https://euangelion.app/?search={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }

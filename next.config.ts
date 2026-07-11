@@ -24,6 +24,20 @@ const nextConfig: NextConfig = {
         destination: '/daily-bread',
         permanent: false,
       },
+      // RETIRED LIBRARY PAGES (F-068, Mobbin audit P1 #12): /library is the
+      // single library home. /saved and /clippings 307 into their tabs at
+      // the routing layer for the same reason as above; the page-level
+      // redirect()s remain as belt-and-braces.
+      {
+        source: '/saved',
+        destination: '/library?tab=bookmarks',
+        permanent: false,
+      },
+      {
+        source: '/clippings',
+        destination: '/library?tab=clippings',
+        permanent: false,
+      },
     ]
   },
   async headers() {

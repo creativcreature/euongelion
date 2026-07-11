@@ -9,6 +9,32 @@ vi.mock('@/stores/progressStore', () => ({
   ) => selector({ completions: [] }),
 }))
 
+// The SERIES tab embeds LibraryView (own store actions, router, modals) and
+// the CLIPPINGS tab embeds ClippingsList (device IndexedDB). Both own their
+// data and have dedicated coverage; these tests focus on the rail semantics.
+vi.mock('@/components/LibraryView', () => ({
+  default: () => <div data-testid="series-panel" />,
+}))
+vi.mock('@/components/ClippingsList', () => ({
+  default: () => <div data-testid="clippings-panel" />,
+}))
+vi.mock('@/stores/devotionalLibraryStore', () => ({
+  useDevotionalLibraryStore: (
+    selector: (state: {
+      active: null
+      saved: unknown[]
+      archived: unknown[]
+      hydrate: () => Promise<void>
+    }) => unknown,
+  ) =>
+    selector({
+      active: null,
+      saved: [],
+      archived: [],
+      hydrate: async () => {},
+    }),
+}))
+
 function mockJsonResponse(payload: unknown) {
   return {
     ok: true,
@@ -89,15 +115,18 @@ describe('DevotionalLibraryRail accessibility', () => {
     render(<DevotionalLibraryRail />)
 
     const tablist = await screen.findByRole('tablist', {
-      name: 'Daily Bread library sections',
+      name: 'Library sections',
     })
     expect(tablist).toBeInTheDocument()
 
+    // F-068 consolidated model: series · today · bookmarks · highlights ·
+    // notes · chat history · clippings · archive · trash.
     const tabs = screen.getAllByRole('tab')
-    expect(tabs).toHaveLength(7)
-    expect(
-      screen.getByRole('tab', { name: /Today \+ 7 Days/i }),
-    ).toHaveAttribute('aria-selected', 'true')
+    expect(tabs).toHaveLength(9)
+    expect(screen.getByRole('tab', { name: /^Series/i })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
 
     await user.click(screen.getByRole('tab', { name: /Bookmarks/i }))
 
@@ -114,7 +143,7 @@ describe('DevotionalLibraryRail accessibility', () => {
 
   it('announces locked-day controls with explicit labels', async () => {
     const user = userEvent.setup()
-    render(<DevotionalLibraryRail />)
+    render(<DevotionalLibraryRail initialTab="today" />)
 
     await waitFor(() => {
       expect(

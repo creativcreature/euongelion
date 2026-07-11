@@ -8,6 +8,9 @@ import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
 import MarkdownWithWordNotes from '@/components/daily-bread/MarkdownWithWordNotes'
 import ModuleRenderer from '@/components/ModuleRenderer'
+import CompletionBeat from '@/components/CompletionBeat'
+import { signalCompletionBeat } from '@/lib/completion-beat'
+import { recordPresenceToday } from '@/lib/presence'
 import { buildDayContentSegments } from '@/lib/audio/segments'
 import { onboardingDayContentToModules } from '@/lib/soul-audit/onboarding-day-to-reader'
 import { isUnlocked } from '@/lib/soul-audit/plan-utils'
@@ -1011,6 +1014,13 @@ export default function DailyBreadView({
       // continue via the "Continue to Day N" affordance; we don't push more
       // reading on them. Server state reconciles on the next natural load.
       setLocalCompleted((prev) => new Set(prev).add(selectedDay))
+      // F-066 (SA-025): mark today as a present day (local, ambient — plan
+      // completion is server-side and leaves no wakeup_progress entry) and
+      // offer the quiet completion beat with this day's scripture reference.
+      recordPresenceToday()
+      signalCompletionBeat({
+        scriptureReference: dayRecord.content?.scriptureReference,
+      })
       // Signal the post-read push opt-in (inert until VAPID is configured).
       try {
         window.localStorage.setItem('euangelion:just-finished-reading', '1')
@@ -1120,7 +1130,7 @@ export default function DailyBreadView({
               sourceHref="/daily-bread"
             />
             <Link
-              href="/clippings"
+              href="/library?tab=clippings"
               className="text-label vw-small link-highlight leading-none"
             >
               CLIPPINGS
@@ -1129,6 +1139,11 @@ export default function DailyBreadView({
 
           {/* Phase 2.2: calm post-read push opt-in (inert until VAPID is set). */}
           <PushOptIn />
+
+          {/* F-066 (SA-025): quiet completion beat — renders nothing until
+              handleComplete signals it, then one benediction line inline at
+              the completion point. Dismiss by tapping anywhere; auto-fades. */}
+          <CompletionBeat />
 
           {/* Mark complete button */}
           {!isCompleted && !isSabbath && (

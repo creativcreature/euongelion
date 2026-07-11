@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   clearClippings,
@@ -138,8 +139,20 @@ export default function ClippingsList() {
   if (!supported) {
     return (
       <div className="mx-auto max-w-lg px-5 py-16 text-center">
+        {/* Riso empty-state illustration (imagery run 2026-07-10): editor's
+            scissors + a blank clipping — the tool of this exact surface. */}
+        <Image
+          src="/images/site/samples/empty-clippings.webp"
+          alt=""
+          width={320}
+          height={240}
+          className="mx-auto mb-6"
+          loading="lazy"
+        />
         <p className="text-label vw-small mb-3 text-gold">CLIPPINGS</p>
-        <h1 className="vw-heading-md mb-4">Local saving isn’t available.</h1>
+        {/* h2, not h1 — this renders inside the /library page (F-068),
+            which owns the page h1. */}
+        <h2 className="vw-heading-md mb-4">Local saving isn’t available.</h2>
         <p className="vw-body text-secondary">
           Your browser blocks the on-device storage clippings use. Clippings
           stay entirely on your device, so they need that storage to work.
@@ -152,7 +165,7 @@ export default function ClippingsList() {
     return (
       <div className="mx-auto max-w-lg px-5 py-16 text-center">
         <p className="text-label vw-small mb-3 text-gold">CLIPPINGS</p>
-        <h1 className="vw-heading-md mb-4">We couldn’t open your clippings.</h1>
+        <h2 className="vw-heading-md mb-4">We couldn’t open your clippings.</h2>
         <p className="vw-body mb-8 text-secondary">{error}</p>
         <button
           type="button"
@@ -180,7 +193,7 @@ export default function ClippingsList() {
     return (
       <div className="mx-auto max-w-lg px-5 py-16 text-center">
         <p className="text-label vw-small mb-3 text-gold">CLIPPINGS</p>
-        <h1 className="vw-heading-md mb-4">No clippings yet.</h1>
+        <h2 className="vw-heading-md mb-4">No clippings yet.</h2>
         <p className="vw-body mb-8 text-secondary">
           Highlight a line while you read and tap “Clip.” Saved passages gather
           here — entirely on this device.
@@ -196,7 +209,7 @@ export default function ClippingsList() {
     <div className="clippings-list mx-auto max-w-2xl px-5 py-8">
       <header className="clippings-header mb-6">
         <p className="text-label vw-small mb-1 text-gold">CLIPPINGS</p>
-        <h1 className="vw-heading-md mb-2">Your commonplace book</h1>
+        <h2 className="vw-heading-md mb-2">Your commonplace book</h2>
         <p className="vw-small text-muted">
           {items.length} {items.length === 1 ? 'passage' : 'passages'} · kept on
           this device only

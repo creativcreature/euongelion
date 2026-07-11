@@ -1,10 +1,26 @@
 # Production Feature Scorecard
 
-Last Updated: 2026-06-13
+Last Updated: 2026-07-10
 Owner: Product + Engineering
 Scoring Rule: Founder lifted the scoring cap on 2026-06-13; scores reflect honest, evidence-backed current quality. Scores must never be inflated; 10/10 still requires the full evidence matrix. Every row includes a path to verified 10/10.
 
-## Production Deploy Status (2026-06-13)
+## Production Deploy Status (2026-07-10 — launch-readiness run, deploy 1)
+
+**Live on euangelion.app** (worker version `f16f2b80`, commit `26abb695`): the
+Mobbin-audit Sprint A correctness tranche + platform-adaptive navigation.
+Verified via 36/36 preview battery, a REAL Soul-Audit generation end-to-end in
+the Workers runtime, and a 36/36 live battery post-deploy. Shipped: guided
+reveal revived; text-first result cards; layout-accurate results skeleton;
+resume-badge titles; canonical reader (/daily-bread) with 307 deep links;
+/saved silo routing; computed catalog counts (33/540) replacing three
+conflicting hardcodes; reader SSR re-enabled (540/540 corpus proof); session
+cookie renamed with zero-loss migration; 6 orphan components deleted; mobile
+bottom tab bar + mobile theme toggle + desktop masthead restored (SA-024).
+Full re-score happens at the run's Task 8 production verification (see
+docs/run/CHECKLIST.md); audit surface grades are in
+docs/audits/MOBBIN-POLISH-AUDIT-2026-07-10.md Part 6.
+
+## Prior Deploy Status (2026-06-13)
 
 The "Elevation v3.0 — Core + web push" work is **live and verified on
 euangelion.app** (`origin/main` @ `249a25b7`, Cloudflare worker `5dda47e1`). The

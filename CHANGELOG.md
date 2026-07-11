@@ -5,6 +5,52 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LAUNCH-READINESS — Wave 2: coherence + completeness (Sprints B/C + imagery samples) (2026-07-10)
+
+Seven workstreams, integration gate green (113 files / 1558 tests):
+
+1. **Library consolidated** (F-068) — one tabbed `/library` (SERIES · TODAY ·
+   BOOKMARKS · HIGHLIGHTS · NOTES · CHAT HISTORY · CLIPPINGS · ARCHIVE ·
+   TRASH); `/saved` + `/clippings` retired via routing-layer 307s; SavedList
+   deleted; ElevenReader single-library model.
+2. **In-reader "Aa" sheet** (F-067) — four named reading themes (Ink ·
+   Parchment · Vellum · Night, Apple Books model) + text-size stepper;
+   reader-scoped variable overrides, pre-hydration bootstrap (no flash),
+   WCAG-verified contrast in all four.
+3. **Signed-in Today band** (F-069) — greeting + "DAY N · <plan title>"
+   continue card on `/today` for returning users; single Soul Audit
+   recommendation otherwise; pure progressive enhancement (SSR untouched).
+4. **Settings restructured** (F-073) — profile header + six grouped cards;
+   every prior control preserved (test-asserted); "coming soon" UI deleted.
+5. **Reminders made honest** (F-070) — reality: nothing worked before (no UI,
+   VAPID unset, window-less sender, no scheduler). Now: "One quiet word"
+   window picker with six honest states, window/timezone persistence,
+   idempotent timezone-aware sender with dry-run guards, migration 017.
+   Go-live needs 5 founder steps (docs/run/HUMAN_REQUIRED.md #2).
+6. **Global search** (F-071) — series + 1,074 devotionals + your
+   notes/bookmarks/clippings; masthead + mobile-top-bar glyphs + Cmd/Ctrl+K;
+   the advertised SearchAction now points at a real surface.
+7. **PWA install prompt** (F-072) — appears only after a real completion
+   moment, 60-day dismissal respect, iOS instruction fallback.
+8. **Imagery Phase-1 samples** (F-074 start) — riso samples generated free
+   (0/500 paid credits): homepage step-1 inkwell (subject-mismatch fix), two
+   illustrated library empty states, `/design/imagery-samples` review page
+   with the CSS grain-shimmer animated test.
+9. **Series detail tabs** (F-074) — adaptive DAYS · ABOUT · VOICES · ARTWORK
+   (Waking Up model): VOICES backed by real profile modules (omitted where
+   none exist — never fabricated), ARTWORK lazy-mounted; bible-365's grouped
+   quarter/month nav untouched; `?tab=` deep links, SSR stays static.
+10. **Momentum hybrid** (SA-025, F-066) — quiet completion beat after marking
+    a day complete (7 rotating benedictions, no confetti, dismissible,
+    reduced-motion safe; DevotionalMilestoneReveal deleted — it was an empty
+    wrapper) + gentle presence week row (lit dots, zero visible counts, no
+    shame framing) on /today and the Settings profile header. Install prompt
+    now waits 10s after a completion so the beat always lands first.
+
+Final integration gate: 116 files / 1581 tests, type-check + lint clean.
+
+---
+
 ## LAUNCH-READINESS — Sprint A follow-up: plan-token redirect hardened to a true 307 (2026-07-10)
 
 The A-V preview battery caught the retired-reader redirect returning 200 with

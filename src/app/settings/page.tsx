@@ -11,6 +11,8 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import PresenceWeekRow from '@/components/PresenceWeekRow'
+import ReminderScheduler from '@/components/settings/ReminderScheduler'
 import { useUIStore } from '@/stores/uiStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useChatStore } from '@/stores/chatStore'
@@ -82,6 +84,57 @@ function useHydrated() {
   )
 }
 
+/**
+ * F-073 — grouped settings card. Cards flow single-column on mobile and into
+ * a two-column masonry (CSS columns) on desktop; `break-inside-avoid` keeps
+ * each card whole.
+ */
+function SettingsCard({
+  id,
+  title,
+  children,
+}: {
+  id: string
+  title: string
+  children: React.ReactNode
+}) {
+  return (
+    <section
+      id={id}
+      aria-label={title}
+      className="mb-6 break-inside-avoid p-6 sm:p-7"
+      style={{
+        border: '1px solid var(--color-border)',
+        backgroundColor: 'var(--color-surface)',
+      }}
+    >
+      <h2 className="text-label vw-small mb-6 text-gold">{title}</h2>
+      {children}
+    </section>
+  )
+}
+
+/** A sub-block inside a card, ruled off from the block above it. */
+function CardSection({
+  first = false,
+  id,
+  children,
+}: {
+  first?: boolean
+  id?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div
+      id={id}
+      className={first ? undefined : 'mt-7 pt-7'}
+      style={first ? undefined : { borderTop: '1px solid var(--color-border)' }}
+    >
+      {children}
+    </div>
+  )
+}
+
 export default function SettingsPage() {
   const { theme, setTheme } = useUIStore()
   const {
@@ -149,6 +202,7 @@ export default function SettingsPage() {
   // privacy hardening). Distinct from the mock-account export above.
   const [accountEmail, setAccountEmail] = useState<string | null>(null)
   const [accountAuthed, setAccountAuthed] = useState(false)
+  const [accountChecked, setAccountChecked] = useState(false)
   const [accountExportBusy, setAccountExportBusy] = useState(false)
   const [accountDeleteOpen, setAccountDeleteOpen] = useState(false)
   const [accountDeleteConfirm, setAccountDeleteConfirm] = useState('')
@@ -160,6 +214,8 @@ export default function SettingsPage() {
   const [accountDeleteMessage, setAccountDeleteMessage] = useState<
     string | null
   >(null)
+  const [signOutBusy, setSignOutBusy] = useState(false)
+  const [signOutError, setSignOutError] = useState<string | null>(null)
   const brainSyncTimerRef = useRef<number | null>(null)
 
   const hydrated = useHydrated()
@@ -170,17 +226,6 @@ export default function SettingsPage() {
       ? billingConfig.paymentsEnabled.iosIap
       : billingConfig.paymentsEnabled.webStripe
   }, [billingConfig, billingPlatform])
-
-  const billingDisabledReason = useMemo(() => {
-    if (billingConfig) {
-      if (billingEnabled) return null
-      // Checkout is intentionally closed until billing is launch-ready (see the
-      // BILLING_CHECKOUT_LIVE master switch). Present it as "coming soon", not a
-      // misconfiguration — and the Subscribe buttons stay disabled below.
-      return 'Premium plans are coming soon — checkout isn’t open yet.'
-    }
-    return 'Billing configuration is loading.'
-  }, [billingConfig, billingEnabled, billingPlatform])
 
   const billingLifecycleCopy = useMemo(() => {
     switch (billingLifecycleState) {
@@ -221,6 +266,17 @@ export default function SettingsPage() {
     }
     return 'error'
   }, [billingLifecycleState])
+
+  // The billing block only appears when there is something real to act on:
+  // live checkout (billingEnabled), a returning checkout session to manage,
+  // or lifecycle feedback from a checkout the reader just completed. No
+  // "coming soon" placeholder is rendered — F-073.
+  const billingBlockVisible =
+    billingEnabled ||
+    Boolean(checkoutSessionId) ||
+    Boolean(billingMessage) ||
+    Boolean(billingError) ||
+    Boolean(billingLifecycleCopy)
 
   // Show saved confirmation
   const [saved, setSaved] = useState(false)
@@ -424,6 +480,29 @@ export default function SettingsPage() {
     }
   }
 
+  async function signOut() {
+    setSignOutBusy(true)
+    setSignOutError(null)
+    try {
+      const response = await fetch('/api/auth/sign-out', {
+        method: 'POST',
+        credentials: 'include',
+      })
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}))
+        throw new Error(
+          (payload as { error?: string }).error || 'Unable to sign out.',
+        )
+      }
+      window.location.assign('/')
+    } catch (error) {
+      setSignOutError(
+        error instanceof Error ? error.message : 'Unable to sign out.',
+      )
+      setSignOutBusy(false)
+    }
+  }
+
   useEffect(() => {
     let mounted = true
     async function loadBilling() {
@@ -506,9 +585,9 @@ export default function SettingsPage() {
     document.cookie = serializeDayLockingCookie(dayLockingEnabled)
   }, [dayLockingEnabled, hydrated])
 
-  // Account-data section: hydrate auth state from /api/auth/session so
-  // we know whether to surface the data-export and delete-account
-  // controls. Cancellation-safe.
+  // Profile header + account card: hydrate auth state from /api/auth/session
+  // so we know whether to surface the signed-in identity, sign-out, and the
+  // data-export / delete-account controls. Cancellation-safe.
   useEffect(() => {
     if (!hydrated) return
     let cancelled = false
@@ -526,7 +605,9 @@ export default function SettingsPage() {
         setAccountAuthed(Boolean(data.authenticated))
         setAccountEmail(data.user?.email ?? null)
       } catch {
-        // Silent — UI degrades to "Sign in to use these controls."
+        // Silent — UI degrades to the anonymous invitation.
+      } finally {
+        if (!cancelled) setAccountChecked(true)
       }
     })()
     return () => {
@@ -691,7 +772,7 @@ export default function SettingsPage() {
       <div className="mock-home min-h-screen">
         <main id="main-content" className="mock-paper min-h-screen">
           <EuangelionShellHeader />
-          <div className="shell-content-pad mx-auto max-w-2xl">
+          <div className="shell-content-pad mx-auto w-full max-w-6xl">
             <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
           </div>
           <SiteFooter />
@@ -700,311 +781,291 @@ export default function SettingsPage() {
     )
   }
 
+  const avatarInitial = accountAuthed
+    ? (accountEmail?.trim().charAt(0).toUpperCase() ?? '—')
+    : '—'
+
+  const selectedButtonStyle = (active: boolean) => ({
+    backgroundColor: active ? 'var(--color-fg)' : 'var(--color-surface)',
+    color: active ? 'var(--color-bg)' : 'var(--color-text-secondary)',
+    border: `1px solid ${active ? 'var(--color-fg)' : 'var(--color-border)'}`,
+  })
+
+  const quietPillStyle = (active: boolean) => ({
+    border: `1px solid ${
+      active ? 'var(--color-border-strong)' : 'var(--color-border)'
+    }`,
+    background: active ? 'var(--color-active)' : 'var(--color-surface)',
+  })
+
   return (
     <div className="mock-home min-h-screen">
       <main id="main-content" className="mock-paper min-h-screen">
         <EuangelionShellHeader />
-        <div className="shell-content-pad mx-auto max-w-2xl">
+        <div className="shell-content-pad mx-auto w-full max-w-6xl">
           <Breadcrumbs
             className="mb-7"
             items={[{ label: 'HOME', href: '/' }, { label: 'SETTINGS' }]}
           />
-          <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
+          <h1 className="text-display vw-heading-lg mb-10">Settings</h1>
 
-          <div
-            id="tutorial"
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
+          {/* ------------------------------------------------------------ */}
+          {/* Profile header — quiet identity, no gamification (F-073)      */}
+          {/* ------------------------------------------------------------ */}
+          <section
+            aria-label="Profile"
+            className="mb-8 flex flex-wrap items-center gap-5 p-6 sm:p-7"
+            style={{
+              border: '1px solid var(--color-border)',
+              backgroundColor: 'var(--color-surface)',
+            }}
           >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              WALKTHROUGH &amp; HELP
-            </h2>
-            <p className="vw-small mb-4 text-secondary">
-              Replay onboarding or the guided Daily Bread walkthrough at any
-              time.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/onboarding?force=1&redirect=%2Fsettings"
-                className="mock-btn text-label"
-              >
-                REPLAY ONBOARDING
-              </Link>
-              <Link
-                href="/daily-bread?tutorial=1"
-                className="mock-btn text-label"
-              >
-                REPLAY TUTORIAL
-              </Link>
-              <Link
-                href="/help#faq"
-                className="text-label vw-small link-highlight"
-              >
-                Open Help FAQ
-              </Link>
-            </div>
-          </div>
-
-          {/* Theme */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-6 text-gold">APPEARANCE</h2>
-            <div className="flex gap-4">
-              {(['dark', 'light', 'system'] as Theme[]).map((t) => (
-                <button
-                  type="button"
-                  key={t}
-                  onClick={() => {
-                    setTheme(t)
-                    showSaved()
-                  }}
-                  aria-pressed={theme === t}
-                  className="px-6 py-3 text-label vw-small transition-theme"
-                  style={{
-                    backgroundColor:
-                      theme === t ? 'var(--color-fg)' : 'var(--color-surface)',
-                    color:
-                      theme === t
-                        ? 'var(--color-bg)'
-                        : 'var(--color-text-secondary)',
-                    border: `1px solid ${theme === t ? 'var(--color-fg)' : 'var(--color-border)'}`,
-                  }}
-                >
-                  {t.charAt(0).toUpperCase() + t.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              ACCESSIBILITY
-            </h2>
-            <p className="vw-small mb-6 text-secondary">
-              Accessibility preferences apply globally across the site.
-            </p>
-
-            <p className="text-label vw-small mb-3 text-gold">TEXT SIZE</p>
-            <div className="mb-6 flex flex-wrap gap-3">
-              {(['default', 'large', 'xlarge'] as TextScale[]).map((scale) => (
-                <button
-                  type="button"
-                  key={scale}
-                  onClick={() => {
-                    setTextScale(scale)
-                    showSaved()
-                  }}
-                  aria-pressed={textScale === scale}
-                  className="px-6 py-3 text-label vw-small transition-theme"
-                  style={{
-                    backgroundColor:
-                      textScale === scale
-                        ? 'var(--color-fg)'
-                        : 'var(--color-surface)',
-                    color:
-                      textScale === scale
-                        ? 'var(--color-bg)'
-                        : 'var(--color-text-secondary)',
-                    border: `1px solid ${
-                      textScale === scale
-                        ? 'var(--color-fg)'
-                        : 'var(--color-border)'
-                    }`,
-                  }}
-                >
-                  {scale === 'default'
-                    ? 'Default'
-                    : scale === 'large'
-                      ? 'Large'
-                      : 'Extra Large'}
-                </button>
-              ))}
-            </div>
-
-            <div className="grid gap-3">
-              <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={reduceMotion}
-                  onChange={(event) => {
-                    setReduceMotion(event.target.checked)
-                    showSaved()
-                  }}
-                />
-                <span className="vw-small text-secondary">Reduce motion</span>
-              </label>
-              <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={highContrast}
-                  onChange={(event) => {
-                    setHighContrast(event.target.checked)
-                    showSaved()
-                  }}
-                />
-                <span className="vw-small text-secondary">
-                  High contrast mode
-                </span>
-              </label>
-              <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={readingComfort}
-                  onChange={(event) => {
-                    setReadingComfort(event.target.checked)
-                    showSaved()
-                  }}
-                />
-                <span className="vw-small text-secondary">
-                  Reading comfort mode (more line-height and spacing)
-                </span>
-              </label>
-            </div>
-          </div>
-
-          {/* Bible Translation */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              BIBLE TRANSLATION
-            </h2>
-            <p className="vw-small mb-2 text-secondary">
-              Preferred translation for AI-generated devotionals when that
-              feature ships. All seven options are public domain or
-              CC0-dedicated.
-            </p>
-            <p className="vw-small mb-6 text-muted">
-              See{' '}
-              <Link
-                href="/credits"
-                className="underline decoration-dotted underline-offset-2"
-              >
-                Credits & Translations
-              </Link>{' '}
-              for full attribution.
-            </p>
-            <select
-              value={bibleTranslation}
-              onChange={(e) => {
-                setBibleTranslation(e.target.value as BibleTranslation)
-                showSaved()
-              }}
-              className="w-full max-w-xs bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)]"
+            <div
+              aria-hidden="true"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full"
               style={{
-                border: '1px solid var(--color-border)',
-                appearance: 'none',
+                border: '1px solid var(--color-border-strong)',
+                backgroundColor: 'var(--color-active)',
               }}
-              aria-label="Default Bible translation"
             >
-              {BIBLE_TRANSLATION_CODES.map((code) => {
-                const meta = BIBLE_TRANSLATIONS[code]
-                return (
-                  <option key={code} value={code}>
-                    {meta.short} ({meta.name}) · {meta.licenseShort}
-                  </option>
-                )
-              })}
-            </select>
-          </div>
-
-          {/* Sabbath Day */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">SABBATH DAY</h2>
-            <p className="vw-small mb-6 text-secondary">
-              No new content unlocks on your Sabbath. Rest is sacred.
-            </p>
-            <div className="flex gap-4">
-              {(['saturday', 'sunday'] as SabbathDay[]).map((day) => (
-                <button
-                  type="button"
-                  key={day}
-                  onClick={() => {
-                    setSabbathDay(day)
-                    showSaved()
-                  }}
-                  aria-pressed={sabbathDay === day}
-                  className="px-6 py-3 text-label vw-small transition-theme"
-                  style={{
-                    backgroundColor:
-                      sabbathDay === day
-                        ? 'var(--color-fg)'
-                        : 'var(--color-surface)',
-                    color:
-                      sabbathDay === day
-                        ? 'var(--color-bg)'
-                        : 'var(--color-text-secondary)',
-                    border: `1px solid ${sabbathDay === day ? 'var(--color-fg)' : 'var(--color-border)'}`,
-                  }}
-                >
-                  {day.charAt(0).toUpperCase() + day.slice(1)}
-                </button>
-              ))}
+              <span
+                className="text-display"
+                style={{ fontSize: '1.4rem', lineHeight: 1 }}
+              >
+                {avatarInitial}
+              </span>
             </div>
-          </div>
+            {!accountChecked ? (
+              <p className="vw-small text-muted">Checking your session…</p>
+            ) : accountAuthed ? (
+              <div className="min-w-0">
+                <p className="vw-body truncate text-[var(--color-text-primary)]">
+                  {accountEmail}
+                </p>
+                <p className="vw-small text-muted">Signed in</p>
+              </div>
+            ) : (
+              <div className="min-w-0">
+                <p className="vw-body text-[var(--color-text-primary)]">
+                  Reading anonymously
+                </p>
+                <p className="vw-small text-secondary">
+                  <Link href="/auth/sign-in" className="link-highlight">
+                    Sign in
+                  </Link>{' '}
+                  to keep your library across devices.
+                </p>
+              </div>
+            )}
+            {/* F-066 (SA-025): gentle presence — days you showed up this
+                week, quietly lit. No counts, no streaks, no red. */}
+            <PresenceWeekRow className="w-full sm:ml-auto sm:w-auto" />
+          </section>
 
-          {/* Brain + AI */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              BRAIN ROUTING + AI
-            </h2>
-            <p className="vw-small mb-6 text-secondary">
-              Choose your default brain, devotional depth profile, and optional
-              BYO provider keys.
-            </p>
-            <div className="grid gap-6">
-              <div className="grid gap-3">
-                <p className="text-label vw-small text-gold">DEFAULT BRAIN</p>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    { label: 'Auto (Claude-first)', value: 'auto' },
-                    { label: 'Claude/OpenAI', value: 'openai' },
-                    { label: 'Google', value: 'google' },
-                    { label: 'MiniMax', value: 'minimax' },
-                    { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
-                  ].map((option) => (
+          {/* ------------------------------------------------------------ */}
+          {/* Grouped cards — single column on mobile, two on desktop        */}
+          {/* ------------------------------------------------------------ */}
+          <div className="lg:columns-2 lg:gap-6">
+            {/* READING ------------------------------------------------- */}
+            <SettingsCard id="reading" title="READING">
+              <CardSection first>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  APPEARANCE
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  {(['dark', 'light', 'system'] as Theme[]).map((t) => (
                     <button
-                      key={option.value}
                       type="button"
+                      key={t}
                       onClick={() => {
-                        setDefaultBrainMode(option.value as BrainMode)
+                        setTheme(t)
                         showSaved()
                       }}
-                      aria-pressed={defaultBrainMode === option.value}
-                      className="px-4 py-2 text-label vw-small"
-                      style={{
-                        border: `1px solid ${
-                          defaultBrainMode === option.value
-                            ? 'var(--color-border-strong)'
-                            : 'var(--color-border)'
-                        }`,
-                        background:
-                          defaultBrainMode === option.value
-                            ? 'var(--color-active)'
-                            : 'var(--color-surface)',
-                      }}
+                      aria-pressed={theme === t}
+                      className="px-6 py-3 text-label vw-small transition-theme"
+                      style={selectedButtonStyle(theme === t)}
                     >
-                      {option.label}
+                      {t.charAt(0).toUpperCase() + t.slice(1)}
                     </button>
                   ))}
                 </div>
-              </div>
+                <p className="vw-small mt-4 text-muted">
+                  Named reading themes — Ink, Parchment, Vellum, Night — live in
+                  the reader itself: open any reading and tap Aa.
+                </p>
+              </CardSection>
 
-              <div className="grid gap-3">
-                <p className="text-label vw-small text-gold">
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  TEXT SIZE &amp; COMFORT
+                </h3>
+                <p className="vw-small mb-5 text-secondary">
+                  These preferences apply globally across the site.
+                </p>
+                <div className="mb-6 flex flex-wrap gap-3">
+                  {(['default', 'large', 'xlarge'] as TextScale[]).map(
+                    (scale) => (
+                      <button
+                        type="button"
+                        key={scale}
+                        onClick={() => {
+                          setTextScale(scale)
+                          showSaved()
+                        }}
+                        aria-pressed={textScale === scale}
+                        className="px-6 py-3 text-label vw-small transition-theme"
+                        style={selectedButtonStyle(textScale === scale)}
+                      >
+                        {scale === 'default'
+                          ? 'Default'
+                          : scale === 'large'
+                            ? 'Large'
+                            : 'Extra Large'}
+                      </button>
+                    ),
+                  )}
+                </div>
+                <div className="grid gap-3">
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={reduceMotion}
+                      onChange={(event) => {
+                        setReduceMotion(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      Reduce motion
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={highContrast}
+                      onChange={(event) => {
+                        setHighContrast(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      High contrast mode
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={readingComfort}
+                      onChange={(event) => {
+                        setReadingComfort(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      Reading comfort mode (more line-height and spacing)
+                    </span>
+                  </label>
+                </div>
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  BIBLE TRANSLATION
+                </h3>
+                <p className="vw-small mb-2 text-secondary">
+                  Your preferred translation for Scripture in generated
+                  readings. All seven options are public domain or
+                  CC0-dedicated.
+                </p>
+                <p className="vw-small mb-6 text-muted">
+                  See{' '}
+                  <Link
+                    href="/credits"
+                    className="underline decoration-dotted underline-offset-2"
+                  >
+                    Credits &amp; Translations
+                  </Link>{' '}
+                  for full attribution.
+                </p>
+                <select
+                  value={bibleTranslation}
+                  onChange={(e) => {
+                    setBibleTranslation(e.target.value as BibleTranslation)
+                    showSaved()
+                  }}
+                  className="w-full max-w-xs bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)]"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    appearance: 'none',
+                  }}
+                  aria-label="Default Bible translation"
+                >
+                  {BIBLE_TRANSLATION_CODES.map((code) => {
+                    const meta = BIBLE_TRANSLATIONS[code]
+                    return (
+                      <option key={code} value={code}>
+                        {meta.short} ({meta.name}) · {meta.licenseShort}
+                      </option>
+                    )
+                  })}
+                </select>
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  SABBATH DAY
+                </h3>
+                <p className="vw-small mb-6 text-secondary">
+                  No new content unlocks on your Sabbath. Rest is sacred.
+                </p>
+                <div className="flex gap-4">
+                  {(['saturday', 'sunday'] as SabbathDay[]).map((day) => (
+                    <button
+                      type="button"
+                      key={day}
+                      onClick={() => {
+                        setSabbathDay(day)
+                        showSaved()
+                      }}
+                      aria-pressed={sabbathDay === day}
+                      className="px-6 py-3 text-label vw-small transition-theme"
+                      style={selectedButtonStyle(sabbathDay === day)}
+                    >
+                      {day.charAt(0).toUpperCase() + day.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  READING PACE
+                </h3>
+                <p className="vw-small mb-6 text-secondary">
+                  By default, a new day of your reading plan unlocks each
+                  morning — a steady daily rhythm. Prefer to move at your own
+                  pace? Turn this off to open every available day at once.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDayLockingEnabled(!dayLockingEnabled)
+                    showSaved()
+                  }}
+                  aria-pressed={dayLockingEnabled}
+                  className="text-label vw-small px-6 py-3 transition-theme"
+                  style={selectedButtonStyle(dayLockingEnabled)}
+                >
+                  Daily rhythm: {dayLockingEnabled ? 'On' : 'Off'}
+                </button>
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
                   DEVOTIONAL DEPTH
+                </h3>
+                <p className="vw-small mb-5 text-secondary">
+                  How long a generated day of reading should run.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {[
@@ -1028,359 +1089,465 @@ export default function SettingsPage() {
                       }}
                       aria-pressed={devotionalDepthPreference === option.value}
                       className="px-4 py-2 text-label vw-small"
-                      style={{
-                        border: `1px solid ${
-                          devotionalDepthPreference === option.value
-                            ? 'var(--color-border-strong)'
-                            : 'var(--color-border)'
-                        }`,
-                        background:
-                          devotionalDepthPreference === option.value
-                            ? 'var(--color-active)'
-                            : 'var(--color-surface)',
-                      }}
+                      style={quietPillStyle(
+                        devotionalDepthPreference === option.value,
+                      )}
                     >
                       {option.label}
                     </button>
                   ))}
                 </div>
-              </div>
+              </CardSection>
+            </SettingsCard>
 
-              <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={openWebDefaultEnabled}
-                  onChange={(event) => {
-                    setOpenWebDefaultEnabled(event.target.checked)
-                    showSaved()
-                  }}
-                />
-                <span className="vw-small text-secondary">
-                  Open Web mode default (still requires explicit per-query
-                  acknowledgement in chat).
-                </span>
-              </label>
+            {/* REMINDERS ------------------------------------------------ */}
+            <SettingsCard id="reminders" title="REMINDERS">
+              <ReminderScheduler />
+            </SettingsCard>
 
-              <div className="grid gap-4">
-                <p className="text-label vw-small text-gold">BYO KEYS</p>
-                <div className="flex flex-wrap gap-3">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setKeyStorageMode('session_only')
-                      showSaved()
-                    }}
-                    aria-pressed={keyStorageMode === 'session_only'}
-                    className="px-4 py-2 text-label vw-small"
-                    style={{
-                      border: `1px solid ${
-                        keyStorageMode === 'session_only'
-                          ? 'var(--color-border-strong)'
-                          : 'var(--color-border)'
-                      }`,
-                      background:
-                        keyStorageMode === 'session_only'
-                          ? 'var(--color-active)'
-                          : 'var(--color-surface)',
-                    }}
-                  >
-                    Session only
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setKeyStorageMode('remember_encrypted')
-                      showSaved()
-                    }}
-                    aria-pressed={keyStorageMode === 'remember_encrypted'}
-                    className="px-4 py-2 text-label vw-small"
-                    style={{
-                      border: `1px solid ${
-                        keyStorageMode === 'remember_encrypted'
-                          ? 'var(--color-border-strong)'
-                          : 'var(--color-border)'
-                      }`,
-                      background:
-                        keyStorageMode === 'remember_encrypted'
-                          ? 'var(--color-active)'
-                          : 'var(--color-surface)',
-                    }}
-                  >
-                    Remember encrypted
-                  </button>
-                </div>
-                <input
-                  type="password"
-                  value={openaiApiKey || anthropicApiKey}
-                  onChange={(event) => {
-                    setOpenaiApiKey(event.target.value)
-                    setAnthropicApiKey(event.target.value)
-                    showSaved()
-                  }}
-                  placeholder="OpenAI key"
-                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                  style={{ border: '1px solid var(--color-border)' }}
-                  autoComplete="off"
-                />
-                <input
-                  type="password"
-                  value={googleApiKey}
-                  onChange={(event) => {
-                    setGoogleApiKey(event.target.value)
-                    showSaved()
-                  }}
-                  placeholder="Google key"
-                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                  style={{ border: '1px solid var(--color-border)' }}
-                  autoComplete="off"
-                />
-                <input
-                  type="password"
-                  value={minimaxApiKey}
-                  onChange={(event) => {
-                    setMinimaxApiKey(event.target.value)
-                    showSaved()
-                  }}
-                  placeholder="MiniMax key"
-                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                  style={{ border: '1px solid var(--color-border)' }}
-                  autoComplete="off"
-                />
-                <input
-                  type="password"
-                  value={nvidiaKimiApiKey}
-                  onChange={(event) => {
-                    setNvidiaKimiApiKey(event.target.value)
-                    showSaved()
-                  }}
-                  placeholder="NVIDIA Kimi key"
-                  className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                  style={{ border: '1px solid var(--color-border)' }}
-                  autoComplete="off"
-                />
-                <p className="vw-small text-muted">
-                  {keyStorageMode === 'session_only'
-                    ? 'Keys stay in-memory for this browser session and are not persisted.'
-                    : 'Keys are encrypted before local persistence on this device.'}
-                </p>
-                <p className="vw-small text-muted">
-                  Client-side encryption protects storage at rest, but does not
-                  mitigate active XSS inside the browser runtime.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    clearProviderKeys()
-                    showSaved()
-                  }}
-                  className="w-fit border px-4 py-2 text-label vw-small"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  Clear all provider keys
-                </button>
-              </div>
-
-              <Link
-                href="/usage"
-                className="text-label vw-small link-highlight"
-              >
-                View usage + quota details
-              </Link>
-            </div>
-          </div>
-
-          {/* Privacy + Mock Account */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              PRIVACY + DATA
-            </h2>
-            <p className="vw-small mb-6 text-secondary">
-              Anonymous mode is default. Switch to mock account mode to enable
-              full save features and export.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              {(['anonymous', 'mock_account'] as MockMode[]).map((mode) => (
-                <button
-                  type="button"
-                  key={mode}
-                  onClick={() =>
-                    void savePrivacySession({
-                      mode,
-                      analyticsOptIn: privacyAnalyticsOptIn,
-                    })
-                  }
-                  disabled={privacyBusy || privacyExportBusy}
-                  aria-pressed={privacyMode === mode}
-                  className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-40"
-                  style={{
-                    backgroundColor:
-                      privacyMode === mode
-                        ? 'var(--color-fg)'
-                        : 'var(--color-surface)',
-                    color:
-                      privacyMode === mode
-                        ? 'var(--color-bg)'
-                        : 'var(--color-text-secondary)',
-                    border: `1px solid ${
-                      privacyMode === mode
-                        ? 'var(--color-fg)'
-                        : 'var(--color-border)'
-                    }`,
-                  }}
-                >
-                  {mode === 'anonymous'
-                    ? 'Anonymous (Default)'
-                    : 'Mock Account'}
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-4">
-              <label className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={privacyAnalyticsOptIn}
-                  onChange={(event) => {
-                    const next = event.target.checked
-                    setPrivacyAnalyticsOptIn(next)
-                    void savePrivacySession({
-                      mode: privacyMode,
-                      analyticsOptIn: next,
-                    })
-                  }}
-                  disabled={privacyBusy || privacyExportBusy}
-                />
-                <span className="vw-small text-secondary">
-                  Optional analytics opt-in (default OFF). Required for
-                  mock-account export.
-                </span>
-              </label>
-            </div>
-
-            <div className="mt-5">
-              <p className="text-label vw-small mb-2 text-gold">CAPABILITIES</p>
-              <p className="vw-small text-secondary">
-                {privacyCapabilities.length > 0
-                  ? privacyCapabilities.join(', ')
-                  : 'bookmarks, resume'}
-              </p>
-            </div>
-
-            <div className="mt-5 grid gap-3">
-              <p className="text-label vw-small text-gold">
-                RETENTION — WHAT WE STORE, AND FOR HOW LONG
-              </p>
-              <div className="grid gap-3">
-                {retentionClarityRows().map((row) => (
-                  <div
-                    key={row.id}
-                    className="p-3"
-                    style={{ border: '1px solid var(--color-border)' }}
-                  >
-                    <p className="vw-small mb-1 text-[var(--color-text-primary)]">
-                      {row.artifact}
+            {/* ACCOUNT -------------------------------------------------- */}
+            <SettingsCard id="account" title="ACCOUNT">
+              <CardSection first>
+                {!accountChecked ? (
+                  <p className="vw-small text-muted">Checking your session…</p>
+                ) : accountAuthed ? (
+                  <>
+                    <p className="vw-small mb-1 text-secondary">Signed in as</p>
+                    <p className="vw-body mb-5 break-all text-[var(--color-text-primary)]">
+                      {accountEmail}
                     </p>
-                    <p className="vw-small text-muted">{row.what}</p>
-                    <p className="vw-small text-muted">Stored: {row.where}</p>
-                    <p className="vw-small text-muted">{row.retention}</p>
+                    <button
+                      type="button"
+                      onClick={() => void signOut()}
+                      disabled={signOutBusy}
+                      aria-busy={signOutBusy}
+                      className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-40"
+                      style={{
+                        backgroundColor: 'var(--color-surface)',
+                        border: '1px solid var(--color-border)',
+                        color: 'var(--color-text-secondary)',
+                      }}
+                    >
+                      {signOutBusy ? 'Signing out…' : 'Sign out'}
+                    </button>
+                    {signOutError && (
+                      <p
+                        className="vw-small mt-4"
+                        style={{ color: 'var(--color-error)' }}
+                        aria-live="assertive"
+                      >
+                        {signOutError}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <p className="vw-small mb-5 text-secondary">
+                      You&rsquo;re reading anonymously. Your bookmarks and
+                      progress live in this browser — sign in to keep them
+                      across devices.
+                    </p>
+                    <Link href="/auth/sign-in" className="mock-btn text-label">
+                      SIGN IN
+                    </Link>
+                  </>
+                )}
+              </CardSection>
+
+              {billingBlockVisible && (
+                <CardSection>
+                  <h3 className="text-label vw-small mb-4 text-gold">
+                    BILLING
+                  </h3>
+                  {billingEnabled && (
+                    <>
+                      <p className="vw-small mb-6 text-secondary">
+                        {billingPlatform === 'ios'
+                          ? 'iOS uses App Store In-App Purchase for digital subscriptions.'
+                          : 'Web uses secure Stripe checkout for subscriptions.'}
+                      </p>
+                      <div className="grid gap-4">
+                        {(billingConfig?.plans || []).map((plan) => (
+                          <div
+                            key={plan.id}
+                            className="bg-surface-raised p-5"
+                            style={{ border: '1px solid var(--color-border)' }}
+                          >
+                            <p className="text-label vw-small mb-2 text-gold">
+                              {plan.name}
+                            </p>
+                            <p className="vw-body mb-2 text-[var(--color-text-primary)]">
+                              {plan.priceLabel}
+                            </p>
+                            <p className="vw-small mb-4 text-secondary">
+                              {plan.description}
+                            </p>
+                            <button
+                              type="button"
+                              disabled={billingBusy || billingPortalBusy}
+                              aria-busy={billingBusy || billingPortalBusy}
+                              onClick={() =>
+                                billingPlatform === 'ios'
+                                  ? void startIosPurchase(plan)
+                                  : void startWebCheckout(plan)
+                              }
+                              className="cta-major text-label vw-small px-5 py-2 disabled:opacity-40"
+                            >
+                              {billingPlatform === 'ios'
+                                ? 'Subscribe in App Store'
+                                : 'Subscribe on Web'}
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {billingPlatform === 'web' &&
+                    billingConfig?.supportsBillingPortal &&
+                    checkoutSessionId && (
+                      <button
+                        type="button"
+                        className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
+                        disabled={billingBusy || billingPortalBusy}
+                        onClick={() => void openBillingPortal()}
+                        aria-busy={billingPortalBusy}
+                      >
+                        {billingPortalBusy
+                          ? 'Opening Billing Management...'
+                          : 'Manage Subscription'}
+                      </button>
+                    )}
+
+                  {billingPlatform === 'ios' && billingEnabled && (
+                    <button
+                      type="button"
+                      disabled={billingBusy || billingPortalBusy}
+                      onClick={() => void restorePurchasesAction()}
+                      className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
+                    >
+                      Restore Purchases
+                    </button>
+                  )}
+
+                  {!billingMessage && !billingError && billingLifecycleCopy && (
+                    <p
+                      className="vw-small mt-4"
+                      style={
+                        billingLifecycleTone === 'success'
+                          ? { color: 'var(--color-gold)' }
+                          : billingLifecycleTone === 'pending'
+                            ? { color: 'var(--color-text-muted)' }
+                            : { color: 'var(--color-error)' }
+                      }
+                      role="status"
+                      aria-live="polite"
+                    >
+                      {billingLifecycleCopy}
+                    </p>
+                  )}
+
+                  {billingError && (
+                    <p
+                      className="vw-small mt-4"
+                      style={{ color: 'var(--color-error)' }}
+                      aria-live="assertive"
+                    >
+                      {billingError}
+                    </p>
+                  )}
+                  {billingMessage && (
+                    <p className="vw-small mt-4 text-gold" aria-live="polite">
+                      {billingMessage}
+                    </p>
+                  )}
+                </CardSection>
+              )}
+            </SettingsCard>
+
+            {/* AI & KEYS ------------------------------------------------ */}
+            <SettingsCard id="ai-keys" title="AI & KEYS">
+              <CardSection first>
+                <p className="vw-small mb-6 text-secondary">
+                  Choose your default brain and optional BYO provider keys.
+                </p>
+                <div className="grid gap-6">
+                  <div className="grid gap-3">
+                    <p className="text-label vw-small text-gold">
+                      DEFAULT BRAIN
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        { label: 'Auto (Claude-first)', value: 'auto' },
+                        { label: 'Claude/OpenAI', value: 'openai' },
+                        { label: 'Google', value: 'google' },
+                        { label: 'MiniMax', value: 'minimax' },
+                        { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
+                      ].map((option) => (
+                        <button
+                          key={option.value}
+                          type="button"
+                          onClick={() => {
+                            setDefaultBrainMode(option.value as BrainMode)
+                            showSaved()
+                          }}
+                          aria-pressed={defaultBrainMode === option.value}
+                          className="px-4 py-2 text-label vw-small"
+                          style={quietPillStyle(
+                            defaultBrainMode === option.value,
+                          )}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
-              {/* Live policy echoed from the API response so this UI proves
-                  the numbers it shows match the values the server returned. */}
-              {privacyRetention && (
-                <p className="vw-small text-muted">
-                  Current policy in effect — anonymous session:{' '}
-                  {privacyRetention.anonymousSessionDays} days; trash restore
-                  window: {privacyRetention.trashRestoreWindowDays} days.
+
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={openWebDefaultEnabled}
+                      onChange={(event) => {
+                        setOpenWebDefaultEnabled(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      Open Web mode default (still requires explicit per-query
+                      acknowledgement in chat).
+                    </span>
+                  </label>
+
+                  <div className="grid gap-4">
+                    <p className="text-label vw-small text-gold">BYO KEYS</p>
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setKeyStorageMode('session_only')
+                          showSaved()
+                        }}
+                        aria-pressed={keyStorageMode === 'session_only'}
+                        className="px-4 py-2 text-label vw-small"
+                        style={quietPillStyle(
+                          keyStorageMode === 'session_only',
+                        )}
+                      >
+                        Session only
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setKeyStorageMode('remember_encrypted')
+                          showSaved()
+                        }}
+                        aria-pressed={keyStorageMode === 'remember_encrypted'}
+                        className="px-4 py-2 text-label vw-small"
+                        style={quietPillStyle(
+                          keyStorageMode === 'remember_encrypted',
+                        )}
+                      >
+                        Remember encrypted
+                      </button>
+                    </div>
+                    <input
+                      type="password"
+                      value={openaiApiKey || anthropicApiKey}
+                      onChange={(event) => {
+                        setOpenaiApiKey(event.target.value)
+                        setAnthropicApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="OpenAI key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="password"
+                      value={googleApiKey}
+                      onChange={(event) => {
+                        setGoogleApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="Google key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="password"
+                      value={minimaxApiKey}
+                      onChange={(event) => {
+                        setMinimaxApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="MiniMax key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="password"
+                      value={nvidiaKimiApiKey}
+                      onChange={(event) => {
+                        setNvidiaKimiApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="NVIDIA Kimi key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <p className="vw-small text-muted">
+                      {keyStorageMode === 'session_only'
+                        ? 'Keys stay in-memory for this browser session and are not persisted.'
+                        : 'Keys are encrypted before local persistence on this device.'}
+                    </p>
+                    <p className="vw-small text-muted">
+                      Client-side encryption protects storage at rest, but does
+                      not mitigate active XSS inside the browser runtime.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        clearProviderKeys()
+                        showSaved()
+                      }}
+                      className="w-fit border px-4 py-2 text-label vw-small"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Clear all provider keys
+                    </button>
+                  </div>
+
+                  <Link
+                    href="/usage"
+                    className="text-label vw-small link-highlight"
+                  >
+                    View usage + quota details
+                  </Link>
+                </div>
+              </CardSection>
+            </SettingsCard>
+
+            {/* DATA & PRIVACY ------------------------------------------- */}
+            <SettingsCard id="data-privacy" title="DATA & PRIVACY">
+              <CardSection first>
+                <p className="vw-small mb-6 text-secondary">
+                  Anonymous mode is default. Switch to mock account mode to
+                  enable full save features and export.
                 </p>
-              )}
-              {Object.keys(privacyRetentionSummary).length === 0 && (
-                <p className="vw-small text-muted">
-                  Loading current retention policy from the server...
-                </p>
-              )}
-              <Link
-                href="/privacy#retention-clarity-heading"
-                className="text-label vw-small link-highlight"
-              >
-                Full retention &amp; privacy policy
-              </Link>
-            </div>
+                <div className="flex flex-wrap gap-4">
+                  {(['anonymous', 'mock_account'] as MockMode[]).map((mode) => (
+                    <button
+                      type="button"
+                      key={mode}
+                      onClick={() =>
+                        void savePrivacySession({
+                          mode,
+                          analyticsOptIn: privacyAnalyticsOptIn,
+                        })
+                      }
+                      disabled={privacyBusy || privacyExportBusy}
+                      aria-pressed={privacyMode === mode}
+                      className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-40"
+                      style={selectedButtonStyle(privacyMode === mode)}
+                    >
+                      {mode === 'anonymous'
+                        ? 'Anonymous (Default)'
+                        : 'Mock Account'}
+                    </button>
+                  ))}
+                </div>
 
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                onClick={() => void exportMockAccountData()}
-                disabled={
-                  privacyExportBusy ||
-                  privacyBusy ||
-                  privacyMode !== 'mock_account'
-                }
-                className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
-                style={{
-                  backgroundColor: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-text-secondary)',
-                }}
-              >
-                {privacyExportBusy
-                  ? 'Exporting...'
-                  : 'Export Mock Account Data'}
-              </button>
-              {privacyMode !== 'mock_account' && (
-                <p className="vw-small text-muted">
-                  Switch to mock account mode to enable export.
-                </p>
-              )}
-            </div>
+                <div className="mt-4">
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={privacyAnalyticsOptIn}
+                      onChange={(event) => {
+                        const next = event.target.checked
+                        setPrivacyAnalyticsOptIn(next)
+                        void savePrivacySession({
+                          mode: privacyMode,
+                          analyticsOptIn: next,
+                        })
+                      }}
+                      disabled={privacyBusy || privacyExportBusy}
+                    />
+                    <span className="vw-small text-secondary">
+                      Optional analytics opt-in (default OFF). Required for
+                      mock-account export.
+                    </span>
+                  </label>
+                </div>
 
-            {privacyError && (
-              <p
-                className="vw-small mt-4"
-                style={{ color: 'var(--color-error)' }}
-                aria-live="assertive"
-              >
-                {privacyError}
-              </p>
-            )}
-            {privacyMessage && (
-              <p className="vw-small mt-4 text-gold" aria-live="polite">
-                {privacyMessage}
-              </p>
-            )}
-          </div>
+                <div className="mt-5">
+                  <p className="text-label vw-small mb-2 text-gold">
+                    CAPABILITIES
+                  </p>
+                  <p className="vw-small text-secondary">
+                    {privacyCapabilities.length > 0
+                      ? privacyCapabilities.join(', ')
+                      : 'bookmarks, resume'}
+                  </p>
+                </div>
 
-          {/* Account data — Phase 7 privacy hardening (real signed-in user) */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">
-              YOUR ACCOUNT DATA
-            </h2>
-            <p className="vw-small mb-6 text-secondary">
-              Export everything we have about you, or delete your account
-              entirely. These controls operate on your <em>signed-in</em>{' '}
-              account — distinct from the mock-account export above.
-            </p>
+                <div className="mt-5 grid gap-3">
+                  <p className="text-label vw-small text-gold">
+                    RETENTION — WHAT WE STORE, AND FOR HOW LONG
+                  </p>
+                  <div className="grid gap-3">
+                    {retentionClarityRows().map((row) => (
+                      <div
+                        key={row.id}
+                        className="p-3"
+                        style={{ border: '1px solid var(--color-border)' }}
+                      >
+                        <p className="vw-small mb-1 text-[var(--color-text-primary)]">
+                          {row.artifact}
+                        </p>
+                        <p className="vw-small text-muted">{row.what}</p>
+                        <p className="vw-small text-muted">
+                          Stored: {row.where}
+                        </p>
+                        <p className="vw-small text-muted">{row.retention}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Live policy echoed from the API response so this UI proves
+                      the numbers it shows match the values the server returned. */}
+                  {privacyRetention && (
+                    <p className="vw-small text-muted">
+                      Current policy in effect — anonymous session:{' '}
+                      {privacyRetention.anonymousSessionDays} days; trash
+                      restore window: {privacyRetention.trashRestoreWindowDays}{' '}
+                      days.
+                    </p>
+                  )}
+                  {Object.keys(privacyRetentionSummary).length === 0 && (
+                    <p className="vw-small text-muted">
+                      Loading current retention policy from the server...
+                    </p>
+                  )}
+                  <Link
+                    href="/privacy#retention-clarity-heading"
+                    className="text-label vw-small link-highlight"
+                  >
+                    Full retention &amp; privacy policy
+                  </Link>
+                </div>
 
-            {!accountAuthed && hydrated && (
-              <p className="vw-small mb-6 text-muted">
-                Sign in to use these controls.
-              </p>
-            )}
-
-            {accountAuthed && (
-              <>
-                <div className="mb-6 flex flex-wrap items-center gap-4">
+                <div className="mt-5 flex flex-wrap items-center gap-4">
                   <button
                     type="button"
-                    onClick={() => void exportSignedInAccountData()}
-                    disabled={accountExportBusy || accountDeleteBusy}
+                    onClick={() => void exportMockAccountData()}
+                    disabled={
+                      privacyExportBusy ||
+                      privacyBusy ||
+                      privacyMode !== 'mock_account'
+                    }
                     className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
                     style={{
                       backgroundColor: 'var(--color-surface)',
@@ -1388,370 +1555,342 @@ export default function SettingsPage() {
                       color: 'var(--color-text-secondary)',
                     }}
                   >
-                    {accountExportBusy
-                      ? 'Building your export...'
-                      : 'Export My Data'}
+                    {privacyExportBusy
+                      ? 'Exporting...'
+                      : 'Export Mock Account Data'}
                   </button>
-                  <p className="vw-small text-muted">
-                    Downloads a JSON file with your profile, plans, journal,
-                    bookmarks, and audit reflections.
-                  </p>
+                  {privacyMode !== 'mock_account' && (
+                    <p className="vw-small text-muted">
+                      Switch to mock account mode to enable export.
+                    </p>
+                  )}
                 </div>
 
-                <div className="mt-4">
-                  <p className="text-label vw-small mb-3 text-gold">
-                    DANGER ZONE
+                {privacyError && (
+                  <p
+                    className="vw-small mt-4"
+                    style={{ color: 'var(--color-error)' }}
+                    aria-live="assertive"
+                  >
+                    {privacyError}
                   </p>
-                  {!accountDeleteOpen && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setAccountDeleteOpen(true)
-                        setAccountDeleteError(null)
-                        setAccountDeleteMessage(null)
-                      }}
-                      className="px-6 py-3 text-label vw-small transition-theme"
-                      style={{
-                        backgroundColor: 'transparent',
-                        border: '1px solid var(--color-error, #b94f4f)',
-                        color: 'var(--color-error, #b94f4f)',
-                      }}
-                    >
-                      Delete My Account
-                    </button>
-                  )}
-                  {accountDeleteOpen && (
-                    <div
-                      className="mt-3 rounded border p-4"
-                      style={{
-                        borderColor: 'var(--color-error, #b94f4f)',
-                      }}
-                    >
-                      <p className="vw-small mb-3 text-secondary">
-                        This <strong>cannot be undone</strong>. Your profile,
-                        all devotional plans, journal entries, bookmarks, and
-                        audit reflections will be permanently removed.
+                )}
+                {privacyMessage && (
+                  <p className="vw-small mt-4 text-gold" aria-live="polite">
+                    {privacyMessage}
+                  </p>
+                )}
+              </CardSection>
+
+              {/* Account data — Phase 7 privacy hardening (real signed-in user) */}
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  YOUR ACCOUNT DATA
+                </h3>
+                <p className="vw-small mb-6 text-secondary">
+                  Export everything we have about you, or delete your account
+                  entirely. These controls operate on your <em>signed-in</em>{' '}
+                  account — distinct from the mock-account export above.
+                </p>
+
+                {!accountAuthed && (
+                  <p className="vw-small mb-6 text-muted">
+                    Sign in to use these controls.
+                  </p>
+                )}
+
+                {accountAuthed && (
+                  <>
+                    <div className="mb-6 flex flex-wrap items-center gap-4">
+                      <button
+                        type="button"
+                        onClick={() => void exportSignedInAccountData()}
+                        disabled={accountExportBusy || accountDeleteBusy}
+                        className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+                        style={{
+                          backgroundColor: 'var(--color-surface)',
+                          border: '1px solid var(--color-border)',
+                          color: 'var(--color-text-secondary)',
+                        }}
+                      >
+                        {accountExportBusy
+                          ? 'Building your export...'
+                          : 'Export My Data'}
+                      </button>
+                      <p className="vw-small text-muted">
+                        Downloads a JSON file with your profile, plans, journal,
+                        bookmarks, and audit reflections.
                       </p>
-                      <p className="vw-small mb-4 text-secondary">
-                        To confirm, type{' '}
-                        <code className="text-gold">DELETE MY ACCOUNT</code> and
-                        your email address (
-                        {accountEmail || 'your account email'}) below.
+                    </div>
+
+                    <div className="mt-4">
+                      <p className="text-label vw-small mb-3 text-gold">
+                        DANGER ZONE
                       </p>
-                      <label className="block mb-3">
-                        <span className="text-label vw-small mb-1 block text-gold">
-                          CONFIRMATION PHRASE
-                        </span>
-                        <input
-                          type="text"
-                          value={accountDeleteConfirm}
-                          onChange={(e) =>
-                            setAccountDeleteConfirm(e.target.value)
-                          }
-                          placeholder="DELETE MY ACCOUNT"
-                          autoComplete="off"
-                          className="w-full px-3 py-2 vw-small"
-                          style={{
-                            backgroundColor: 'var(--color-surface)',
-                            border: '1px solid var(--color-border)',
-                            color: 'var(--color-text-primary)',
-                          }}
-                        />
-                      </label>
-                      <label className="block mb-4">
-                        <span className="text-label vw-small mb-1 block text-gold">
-                          YOUR EMAIL
-                        </span>
-                        <input
-                          type="email"
-                          value={accountDeleteEmail}
-                          onChange={(e) =>
-                            setAccountDeleteEmail(e.target.value)
-                          }
-                          placeholder={accountEmail || 'you@example.com'}
-                          autoComplete="off"
-                          className="w-full px-3 py-2 vw-small"
-                          style={{
-                            backgroundColor: 'var(--color-surface)',
-                            border: '1px solid var(--color-border)',
-                            color: 'var(--color-text-primary)',
-                          }}
-                        />
-                      </label>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={() => void confirmDeleteAccount()}
-                          disabled={
-                            accountDeleteBusy ||
-                            accountDeleteConfirm.trim() !==
-                              'DELETE MY ACCOUNT' ||
-                            accountDeleteEmail.trim().toLowerCase() !==
-                              (accountEmail || '').trim().toLowerCase()
-                          }
-                          className="px-6 py-3 text-label vw-small disabled:opacity-30"
-                          style={{
-                            backgroundColor: 'var(--color-error, #b94f4f)',
-                            border: '1px solid var(--color-error, #b94f4f)',
-                            color: 'var(--color-bg, #fff)',
-                          }}
-                        >
-                          {accountDeleteBusy
-                            ? 'Deleting...'
-                            : 'Permanently Delete My Account'}
-                        </button>
+                      {!accountDeleteOpen && (
                         <button
                           type="button"
                           onClick={() => {
-                            setAccountDeleteOpen(false)
-                            setAccountDeleteConfirm('')
-                            setAccountDeleteEmail('')
+                            setAccountDeleteOpen(true)
+                            setAccountDeleteError(null)
+                            setAccountDeleteMessage(null)
                           }}
-                          disabled={accountDeleteBusy}
-                          className="px-6 py-3 text-label vw-small disabled:opacity-30"
+                          className="px-6 py-3 text-label vw-small transition-theme"
                           style={{
                             backgroundColor: 'transparent',
-                            border: '1px solid var(--color-border)',
-                            color: 'var(--color-text-secondary)',
+                            border: '1px solid var(--color-error, #b94f4f)',
+                            color: 'var(--color-error, #b94f4f)',
                           }}
                         >
-                          Cancel
+                          Delete My Account
                         </button>
-                      </div>
+                      )}
+                      {accountDeleteOpen && (
+                        <div
+                          className="mt-3 rounded border p-4"
+                          style={{
+                            borderColor: 'var(--color-error, #b94f4f)',
+                          }}
+                        >
+                          <p className="vw-small mb-3 text-secondary">
+                            This <strong>cannot be undone</strong>. Your
+                            profile, all devotional plans, journal entries,
+                            bookmarks, and audit reflections will be permanently
+                            removed.
+                          </p>
+                          <p className="vw-small mb-4 text-secondary">
+                            To confirm, type{' '}
+                            <code className="text-gold">DELETE MY ACCOUNT</code>{' '}
+                            and your email address (
+                            {accountEmail || 'your account email'}) below.
+                          </p>
+                          <label className="block mb-3">
+                            <span className="text-label vw-small mb-1 block text-gold">
+                              CONFIRMATION PHRASE
+                            </span>
+                            <input
+                              type="text"
+                              value={accountDeleteConfirm}
+                              onChange={(e) =>
+                                setAccountDeleteConfirm(e.target.value)
+                              }
+                              placeholder="DELETE MY ACCOUNT"
+                              autoComplete="off"
+                              className="w-full px-3 py-2 vw-small"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            />
+                          </label>
+                          <label className="block mb-4">
+                            <span className="text-label vw-small mb-1 block text-gold">
+                              YOUR EMAIL
+                            </span>
+                            <input
+                              type="email"
+                              value={accountDeleteEmail}
+                              onChange={(e) =>
+                                setAccountDeleteEmail(e.target.value)
+                              }
+                              placeholder={accountEmail || 'you@example.com'}
+                              autoComplete="off"
+                              className="w-full px-3 py-2 vw-small"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            />
+                          </label>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => void confirmDeleteAccount()}
+                              disabled={
+                                accountDeleteBusy ||
+                                accountDeleteConfirm.trim() !==
+                                  'DELETE MY ACCOUNT' ||
+                                accountDeleteEmail.trim().toLowerCase() !==
+                                  (accountEmail || '').trim().toLowerCase()
+                              }
+                              className="px-6 py-3 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'var(--color-error, #b94f4f)',
+                                border: '1px solid var(--color-error, #b94f4f)',
+                                color: 'var(--color-bg, #fff)',
+                              }}
+                            >
+                              {accountDeleteBusy
+                                ? 'Deleting...'
+                                : 'Permanently Delete My Account'}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setAccountDeleteOpen(false)
+                                setAccountDeleteConfirm('')
+                                setAccountDeleteEmail('')
+                              }}
+                              disabled={accountDeleteBusy}
+                              className="px-6 py-3 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'transparent',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-secondary)',
+                              }}
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </>
-            )}
+                  </>
+                )}
 
-            {accountDeleteError && (
-              <p
-                className="vw-small mt-4"
-                style={{ color: 'var(--color-error)' }}
-                aria-live="assertive"
-              >
-                {accountDeleteError}
-              </p>
-            )}
-            {accountDeleteMessage && (
-              <p className="vw-small mt-4 text-gold" aria-live="polite">
-                {accountDeleteMessage}
-              </p>
-            )}
-          </div>
-
-          {/* Reading pace — daily-unlock cadence preference */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">READING PACE</h2>
-            <p className="vw-small mb-6 text-secondary">
-              By default, a new day of your reading plan unlocks each morning —
-              a steady daily rhythm. Prefer to move at your own pace? Turn this
-              off to open every available day at once.
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setDayLockingEnabled(!dayLockingEnabled)
-                showSaved()
-              }}
-              aria-pressed={dayLockingEnabled}
-              className="text-label vw-small px-6 py-3 transition-theme"
-              style={{
-                backgroundColor: dayLockingEnabled
-                  ? 'var(--color-fg)'
-                  : 'var(--color-surface)',
-                color: dayLockingEnabled
-                  ? 'var(--color-bg)'
-                  : 'var(--color-text-secondary)',
-                border: `1px solid ${
-                  dayLockingEnabled ? 'var(--color-fg)' : 'var(--color-border)'
-                }`,
-              }}
-            >
-              Daily rhythm: {dayLockingEnabled ? 'On' : 'Off'}
-            </button>
-          </div>
-
-          {/* Billing */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">BILLING</h2>
-            <p className="vw-small mb-6 text-secondary">
-              {billingPlatform === 'ios'
-                ? 'iOS uses App Store In-App Purchase for digital subscriptions.'
-                : 'Web uses secure Stripe checkout for subscriptions.'}
-            </p>
-
-            {billingDisabledReason && (
-              <p className="vw-small mb-4 text-muted">
-                {billingDisabledReason}
-              </p>
-            )}
-
-            <div className="grid gap-4">
-              {(billingConfig?.plans || []).map((plan) => (
-                <div
-                  key={plan.id}
-                  className="bg-surface-raised p-5"
-                  style={{ border: '1px solid var(--color-border)' }}
-                >
-                  <p className="text-label vw-small mb-2 text-gold">
-                    {plan.name}
+                {accountDeleteError && (
+                  <p
+                    className="vw-small mt-4"
+                    style={{ color: 'var(--color-error)' }}
+                    aria-live="assertive"
+                  >
+                    {accountDeleteError}
                   </p>
-                  <p className="vw-body mb-2 text-[var(--color-text-primary)]">
-                    {plan.priceLabel}
+                )}
+                {accountDeleteMessage && (
+                  <p className="vw-small mt-4 text-gold" aria-live="polite">
+                    {accountDeleteMessage}
                   </p>
-                  <p className="vw-small mb-4 text-secondary">
-                    {plan.description}
-                  </p>
+                )}
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  CHAT HISTORY
+                </h3>
+                <p className="vw-small mb-6 text-secondary">
+                  {messages.length} message{messages.length !== 1 ? 's' : ''}{' '}
+                  saved locally.
+                </p>
+                <div className="flex gap-4">
                   <button
                     type="button"
-                    disabled={
-                      billingBusy ||
-                      billingPortalBusy ||
-                      !billingConfig ||
-                      !billingEnabled
-                    }
-                    aria-busy={billingBusy || billingPortalBusy}
-                    onClick={() =>
-                      billingPlatform === 'ios'
-                        ? void startIosPurchase(plan)
-                        : void startWebCheckout(plan)
-                    }
-                    className="cta-major text-label vw-small px-5 py-2 disabled:opacity-40"
+                    onClick={() => {
+                      if (messages.length === 0) return
+                      const blob = new Blob(
+                        [JSON.stringify(messages, null, 2)],
+                        {
+                          type: 'application/json',
+                        },
+                      )
+                      const url = URL.createObjectURL(blob)
+                      const a = document.createElement('a')
+                      a.href = url
+                      a.download = 'euangelion-chat-history.json'
+                      a.click()
+                      URL.revokeObjectURL(url)
+                    }}
+                    disabled={messages.length === 0}
+                    className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+                    style={{
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-border)',
+                      color: 'var(--color-text-secondary)',
+                    }}
                   >
-                    {billingPlatform === 'ios'
-                      ? 'Subscribe in App Store'
-                      : 'Subscribe on Web'}
+                    Export
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (
+                        messages.length > 0 &&
+                        window.confirm(
+                          'Clear all chat history? This cannot be undone.',
+                        )
+                      ) {
+                        clearHistory()
+                        showSaved()
+                      }
+                    }}
+                    disabled={messages.length === 0}
+                    className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
+                    style={{
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-border)',
+                      color: 'var(--color-error)',
+                    }}
+                  >
+                    Clear History
                   </button>
                 </div>
-              ))}
-            </div>
+              </CardSection>
+            </SettingsCard>
 
-            {billingPlatform === 'web' &&
-              billingConfig?.supportsBillingPortal &&
-              checkoutSessionId && (
-                <button
-                  type="button"
-                  className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
-                  disabled={billingBusy || billingPortalBusy}
-                  onClick={() => void openBillingPortal()}
-                  aria-busy={billingPortalBusy}
-                >
-                  {billingPortalBusy
-                    ? 'Opening Billing Management...'
-                    : 'Manage Subscription'}
-                </button>
-              )}
+            {/* ABOUT ---------------------------------------------------- */}
+            <SettingsCard id="about" title="ABOUT">
+              {/* Deep link target: /settings#tutorial (Help hub links here). */}
+              <CardSection first id="tutorial">
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  WALKTHROUGH &amp; HELP
+                </h3>
+                <p className="vw-small mb-4 text-secondary">
+                  Replay onboarding or the guided Daily Bread walkthrough at any
+                  time.
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link
+                    href="/onboarding?force=1&redirect=%2Fsettings"
+                    className="mock-btn text-label"
+                  >
+                    REPLAY ONBOARDING
+                  </Link>
+                  <Link
+                    href="/daily-bread?tutorial=1"
+                    className="mock-btn text-label"
+                  >
+                    REPLAY TUTORIAL
+                  </Link>
+                  <Link
+                    href="/help#faq"
+                    className="text-label vw-small link-highlight"
+                  >
+                    Open Help FAQ
+                  </Link>
+                </div>
+              </CardSection>
 
-            {billingPlatform === 'ios' && (
-              <button
-                type="button"
-                disabled={billingBusy || billingPortalBusy}
-                onClick={() => void restorePurchasesAction()}
-                className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
-              >
-                Restore Purchases
-              </button>
-            )}
-
-            {!billingMessage && !billingError && billingLifecycleCopy && (
-              <p
-                className="vw-small mt-4"
-                style={
-                  billingLifecycleTone === 'success'
-                    ? { color: 'var(--color-gold)' }
-                    : billingLifecycleTone === 'pending'
-                      ? { color: 'var(--color-text-muted)' }
-                      : { color: 'var(--color-error)' }
-                }
-                role="status"
-                aria-live="polite"
-              >
-                {billingLifecycleCopy}
-              </p>
-            )}
-
-            {billingError && (
-              <p
-                className="vw-small mt-4"
-                style={{ color: 'var(--color-error)' }}
-                aria-live="assertive"
-              >
-                {billingError}
-              </p>
-            )}
-            {billingMessage && (
-              <p className="vw-small mt-4 text-gold" aria-live="polite">
-                {billingMessage}
-              </p>
-            )}
-          </div>
-
-          {/* Chat History */}
-          <div
-            className="mb-8 pb-8"
-            style={{ borderBottom: '1px solid var(--color-border)' }}
-          >
-            <h2 className="text-label vw-small mb-4 text-gold">CHAT HISTORY</h2>
-            <p className="vw-small mb-6 text-secondary">
-              {messages.length} message{messages.length !== 1 ? 's' : ''} saved
-              locally.
-            </p>
-            <div className="flex gap-4">
-              <button
-                type="button"
-                onClick={() => {
-                  if (messages.length === 0) return
-                  const blob = new Blob([JSON.stringify(messages, null, 2)], {
-                    type: 'application/json',
-                  })
-                  const url = URL.createObjectURL(blob)
-                  const a = document.createElement('a')
-                  a.href = url
-                  a.download = 'euangelion-chat-history.json'
-                  a.click()
-                  URL.revokeObjectURL(url)
-                }}
-                disabled={messages.length === 0}
-                className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
-                style={{
-                  backgroundColor: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-text-secondary)',
-                }}
-              >
-                Export
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  if (
-                    messages.length > 0 &&
-                    window.confirm(
-                      'Clear all chat history? This cannot be undone.',
-                    )
-                  ) {
-                    clearHistory()
-                    showSaved()
-                  }
-                }}
-                disabled={messages.length === 0}
-                className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
-                style={{
-                  backgroundColor: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  color: 'var(--color-error)',
-                }}
-              >
-                Clear History
-              </button>
-            </div>
+              <CardSection>
+                <div className="space-y-3">
+                  <Link
+                    href="/how-we-write"
+                    className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                  >
+                    How We Write
+                  </Link>
+                  <Link
+                    href="/credits"
+                    className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                  >
+                    Credits &amp; Translations
+                  </Link>
+                  <a
+                    href="/privacy"
+                    className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/terms"
+                    className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
+                  >
+                    Terms of Service
+                  </a>
+                </div>
+              </CardSection>
+            </SettingsCard>
           </div>
 
           {/* Saved indicator */}
@@ -1762,25 +1901,6 @@ export default function SettingsPage() {
             <p className="vw-small text-gold">
               Preferences saved automatically.
             </p>
-          </div>
-
-          {/* Legal Links */}
-          <div className="mt-12">
-            <p className="text-label vw-small mb-4 text-muted">LEGAL</p>
-            <div className="space-y-3">
-              <a
-                href="/privacy"
-                className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="block vw-small text-secondary transition-colors duration-300 hover:text-[var(--color-text-primary)]"
-              >
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
         <SiteFooter />

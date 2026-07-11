@@ -48,6 +48,7 @@ import {
   takeRateLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
+import { isReminderWindow, isValidTimezone } from '@/lib/push/reminder-window'
 
 interface SubscribeBody {
   subscription?: {
@@ -58,6 +59,11 @@ interface SubscribeBody {
     }
     expirationTime?: number | null
   }
+  // F-070 — optional delivery-window fields. When present they are validated
+  // and stored on the row (migration 017 columns); when absent the column
+  // defaults apply (window 'morning', timezone NULL → evaluated as UTC).
+  window?: string
+  timezone?: string
 }
 
 const MAX_BODY_BYTES = 8_192
@@ -119,6 +125,27 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // Optional F-070 window fields — validated strictly when present.
+    const rawWindow = parsed.data.window
+    if (rawWindow !== undefined && !isReminderWindow(rawWindow)) {
+      return jsonError({
+        error: 'window must be one of early_morning, morning, midday, evening.',
+        status: 400,
+        requestId,
+      })
+    }
+    const rawTimezone =
+      typeof parsed.data.timezone === 'string'
+        ? parsed.data.timezone.trim()
+        : ''
+    if (rawTimezone && !isValidTimezone(rawTimezone)) {
+      return jsonError({
+        error: 'timezone must be a valid IANA timezone name.',
+        status: 400,
+        requestId,
+      })
+    }
+
     // Session-keyed, matching the rest of the anonymous-friendly reading flow.
     // A signed-in user's id takes precedence when present so a subscription
     // follows the user; otherwise it's keyed to the audit session token.
@@ -149,6 +176,12 @@ export async function POST(request: NextRequest) {
           expiration_time: subscription?.expirationTime ?? null,
           user_agent: request.headers.get('user-agent') ?? null,
           updated_at: new Date().toISOString(),
+          // Window fields are only written when the caller sent them, so a
+          // legacy payload (no window) still upserts cleanly on a database
+          // where migration 017 has not landed yet — and a payload WITH a
+          // window fails loudly there rather than silently dropping it.
+          ...(rawWindow !== undefined ? { reminder_window: rawWindow } : {}),
+          ...(rawTimezone ? { timezone: rawTimezone } : {}),
         },
         { onConflict: 'endpoint' },
       )

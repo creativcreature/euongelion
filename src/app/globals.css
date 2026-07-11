@@ -7669,6 +7669,89 @@ body:not(.rhythm-enabled) .rhythm-block-image {
   opacity: 0.72;
 }
 
+/* Returning-user band (F-069) — client island between the edition band
+   and the reading header. Greeting + one continue/recommendation card.
+   Without JS (or on fetch failure) the island renders nothing and the
+   page flows straight from edition band to reading header. */
+.today-returning-band {
+  max-width: 72ch;
+  margin-inline: auto;
+  padding: 1.5rem var(--mock-pad-x, 0.95rem) 0;
+}
+
+.today-returning-band-inner {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.today-greeting {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text-primary, var(--mock-ink));
+}
+
+.today-continue-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1.1rem;
+  /* Touch target ≥ 44px — the whole card is the link. */
+  min-height: 44px;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-left: 3px solid var(--color-amber, #c8a56a);
+  text-decoration: none;
+  color: inherit;
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 3%,
+    var(--mock-paper, white) 97%
+  );
+}
+
+.today-continue-card:hover {
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #1f2a8d) 6%,
+    var(--mock-paper, white) 94%
+  );
+}
+
+.today-continue-kicker {
+  margin: 0;
+  font-size: var(--mock-type-0);
+}
+
+.today-continue-line {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-text-primary, var(--mock-ink));
+}
+
+.today-continue-cta {
+  margin: 0.1rem 0 0;
+  font-size: var(--mock-type-0);
+  color: var(--color-text-secondary, var(--mock-muted));
+}
+
+.dark .today-continue-card {
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #171b69) 12%,
+    transparent 88%
+  );
+}
+
+.dark .today-continue-card:hover {
+  background: color-mix(
+    in srgb,
+    var(--mock-blue, #171b69) 18%,
+    transparent 82%
+  );
+}
+
 .today-reading-header {
   padding: 1.6rem var(--mock-pad-x, 0.95rem) 1.2rem;
   display: grid;
@@ -9220,3 +9303,1030 @@ html.reduce-motion
     bottom: calc(env(safe-area-inset-bottom, 0px) + 4.3rem);
   }
 }
+
+/* ==========================================================================
+   F-067 — READER "Aa" SHEET: CURATED NAMED READING THEMES (APPENDED BLOCK)
+   --------------------------------------------------------------------------
+   NOTE: this block is intentionally appended at the end of the file (another
+   agent owns concurrent edits to earlier regions — never merge upward).
+
+   Four named themes, Apple-Books style (curated presets, not sliders):
+     Ink        = the existing dark reading experience (html.dark, no attr)
+     Parchment  = the existing light reading experience (no attr)
+     Vellum     = warm sepia — reader-scoped override, sits on the light base
+     Night      = true-black OLED dark — reader-scoped override, dark base
+
+   Vellum/Night are applied via data-reading-theme on the reader root
+   (.mock-home in DevotionalPageClient). The selectors pair the bare
+   attribute selector with .dark/.is-dark variants at higher specificity so
+   the override wins over `.dark .mock-home` regardless of source order.
+
+   Contrast (WCAG 2.1, computed):
+     Vellum  ink #3b2d1c on paper #ecdfc6 ....... 10.10:1 (AAA)
+             secondary rgba(59,45,28,.84) ........ 6.60:1 (AA)
+             tertiary  rgba(59,45,28,.74) ........ 4.99:1 (AA)
+             muted     rgba(59,45,28,.72) ........ 4.70:1 (AA)
+             accent    #6a4a1c ................... 6.11:1 (AA)
+             border-strong #7a5c33 ............... 4.68:1 (≥3:1 UI)
+     Night   ink #d8d0c0 on #000000 ............. 13.70:1 (AAA)
+             secondary rgba(216,208,192,.84) ..... 9.61:1 (AAA)
+             tertiary  rgba(216,208,192,.70) ..... 6.77:1 (AA)
+             muted     rgba(216,208,192,.68) ..... 6.38:1 (AA)
+             accent    #ab8d5c ................... 6.70:1 (AA)
+             border-strong rgba(216,208,192,.46) . 3.34:1 (≥3:1 UI)
+   ========================================================================== */
+
+/* ---- Vellum: warm sepia, light base ------------------------------------ */
+.mock-home[data-reading-theme='vellum'],
+.mock-home.is-dark[data-reading-theme='vellum'],
+.dark .mock-home[data-reading-theme='vellum'] {
+  --mock-bg: #e7d8ba;
+  --mock-paper: #ecdfc6;
+  --mock-ink: #3b2d1c;
+  --mock-blue: #6a4a1c;
+  --mock-blue-text: var(--mock-blue);
+  --mock-line: #7a5c33;
+  --mock-muted: rgba(59, 45, 28, 0.84);
+  --color-bg: var(--mock-bg);
+  --color-fg: var(--mock-ink);
+  --color-gold: #6a4a1c;
+  --color-text-primary: var(--mock-ink);
+  --color-text-secondary: var(--mock-muted);
+  --color-text-tertiary: rgba(59, 45, 28, 0.74);
+  --color-text-muted: rgba(59, 45, 28, 0.72);
+  --color-border: color-mix(in srgb, var(--mock-line) 55%, transparent);
+  --color-border-strong: var(--mock-line);
+  --color-surface: color-mix(in srgb, var(--mock-paper) 86%, transparent);
+  --color-surface-raised: color-mix(in srgb, var(--mock-paper) 95%, white 5%);
+  --color-active: rgba(106, 74, 28, 0.13);
+}
+
+/* ---- Night: true-black OLED dark, dimmed accents ------------------------ */
+.mock-home[data-reading-theme='night'],
+.mock-home.is-dark[data-reading-theme='night'],
+.dark .mock-home[data-reading-theme='night'] {
+  --mock-bg: #000000;
+  --mock-paper: #000000;
+  --mock-ink: #d8d0c0;
+  --mock-blue: #000000;
+  --mock-blue-text: var(--mock-ink);
+  --mock-line: rgba(216, 208, 192, 0.46);
+  --mock-muted: rgba(216, 208, 192, 0.84);
+  --color-bg: var(--mock-bg);
+  --color-fg: var(--mock-ink);
+  --color-gold: #ab8d5c;
+  --color-text-primary: var(--mock-ink);
+  --color-text-secondary: var(--mock-muted);
+  --color-text-tertiary: rgba(216, 208, 192, 0.7);
+  --color-text-muted: rgba(216, 208, 192, 0.68);
+  --color-border: color-mix(in srgb, var(--mock-line) 72%, transparent);
+  --color-border-strong: var(--mock-line);
+  --color-surface: rgba(216, 208, 192, 0.05);
+  --color-surface-raised: #0b0a09;
+  --color-active: rgba(216, 208, 192, 0.14);
+}
+
+/* ---- "Aa" trigger -------------------------------------------------------
+   Fixed bottom-left (the chat FAB owns bottom-right; stickies own the
+   sticky top-right). Quiet editorial square, serif "Aa", ≥44px target. */
+.reader-theme-trigger {
+  position: fixed;
+  left: 0.9rem;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1.25rem);
+  z-index: var(--z-fixed, 200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.3rem 0.55rem;
+  border: 1.5px solid var(--color-border-strong, currentColor);
+  background: var(--color-surface-raised, var(--color-bg, transparent));
+  color: var(--color-text-primary, inherit);
+  cursor: pointer;
+}
+
+.reader-theme-trigger-glyph {
+  font-family: var(--font-family-serif, serif);
+  font-size: 1.15rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.reader-theme-trigger:is(:hover, :focus-visible) {
+  background: var(--color-active, transparent);
+}
+
+.reader-theme-trigger:focus-visible {
+  outline: 2px solid var(--color-border-strong, currentColor);
+  outline-offset: 2px;
+}
+
+/* Clear the fixed mobile tab bar (same offset as the cookie banner). */
+@media (max-width: 767px) {
+  .reader-theme-trigger {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4.3rem);
+  }
+}
+
+/* ---- Sheet (mobile) / popover (desktop) --------------------------------- */
+.reader-theme-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay, 300);
+}
+
+.reader-theme-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.reader-theme-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: min(80vh, 34rem);
+  overflow-y: auto;
+  padding: 1.1rem 1.1rem calc(env(safe-area-inset-bottom, 0px) + 1.15rem);
+  border-top: 1.5px solid var(--color-border-strong, currentColor);
+  background: var(--color-surface-raised, var(--color-bg));
+  color: var(--color-text-primary, inherit);
+  animation: reader-theme-sheet-in 200ms ease-out;
+}
+
+.reader-theme-sheet:focus-visible {
+  outline: none;
+}
+
+@keyframes reader-theme-sheet-in {
+  from {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reader-theme-sheet {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .reader-theme-backdrop {
+    background: transparent;
+  }
+  .reader-theme-sheet {
+    left: 0.9rem;
+    right: auto;
+    bottom: 4.6rem;
+    width: 356px;
+    max-width: calc(100vw - 1.8rem);
+    padding: 1.1rem;
+    border: 1.5px solid var(--color-border-strong, currentColor);
+  }
+}
+
+.reader-theme-sheet-title {
+  margin-bottom: 0.75rem;
+}
+
+/* ---- Theme option tiles -------------------------------------------------- */
+.reader-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.reader-theme-option {
+  display: grid;
+  gap: 0.3rem;
+  min-height: 44px;
+  padding: 0.55rem;
+  border: 1.5px solid var(--color-border, currentColor);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.reader-theme-option:is(:hover, :focus-visible) {
+  border-color: var(--color-border-strong, currentColor);
+}
+
+.reader-theme-option:focus-visible {
+  outline: 2px solid var(--color-border-strong, currentColor);
+  outline-offset: 1px;
+}
+
+.reader-theme-option[aria-pressed='true'] {
+  border-color: var(--color-border-strong, currentColor);
+  background: var(--color-active, transparent);
+}
+
+.reader-theme-swatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.6rem;
+  border: 1px solid;
+  font-family: var(--font-family-serif, serif);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.reader-theme-swatch-accent {
+  position: absolute;
+  right: 0.35rem;
+  bottom: 0.35rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.reader-theme-option-name {
+  font-family: var(--font-family-serif, serif);
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+.reader-theme-option-hint {
+  color: var(--color-text-tertiary, inherit);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+/* ---- Text size stepper --------------------------------------------------- */
+.reader-theme-size-row {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-border, currentColor);
+}
+
+.reader-theme-size-label {
+  margin-bottom: 0.5rem;
+}
+
+.reader-theme-size-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reader-theme-size-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1.5px solid var(--color-border-strong, currentColor);
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-family-serif, serif);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.reader-theme-size-step:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.reader-theme-size-step:not(:disabled):is(:hover, :focus-visible) {
+  background: var(--color-active, transparent);
+}
+
+.reader-theme-size-step:focus-visible {
+  outline: 2px solid var(--color-border-strong, currentColor);
+  outline-offset: 1px;
+}
+
+.reader-theme-size-value {
+  flex: 1 1 auto;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Imagery-run animated test (Task 6 I-3): quiet grain shimmer — a slow
+   paper-grain drift over a riso print, reverent not flashy. Used only on
+   /design/imagery-samples for founder review; reduced-motion kills it.
+   ========================================================================== */
+
+.grain-shimmer-test {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-shimmer-test::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background-image: repeating-radial-gradient(
+    circle at 30% 40%,
+    rgba(242, 235, 216, 0.05) 0 1px,
+    transparent 1px 3px
+  );
+  animation: grain-drift 9s steps(6) infinite;
+}
+
+@keyframes grain-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2.5%, -1.5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-shimmer-test::after {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   F-071 — GLOBAL SEARCH (SA-024 top-bar utility)
+   Appended block. Everything global-search owns lives here:
+   the overlay surface (.global-search-*), the masthead glyph
+   (.mock-search-toggle inherits .mock-icon-control), and the
+   mobile top-bar utility group (.mock-topbar-mobile-utils).
+   Theme: rides the .mock-home --mock-* tokens with root
+   --color-* fallbacks for surfaces outside the mock shell,
+   so light + dark both resolve everywhere.
+   ============================================================ */
+
+/* Mobile top bar: theme toggle + search glyph share the left track as
+   one utility group; the ticker keeps its bounded center track. */
+.mock-topbar-mobile-utils {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-self: start;
+  min-width: 0;
+}
+
+.global-search-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay, 300);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 9vh 1.25rem 1.25rem;
+  background: color-mix(
+    in srgb,
+    var(--mock-ink, var(--color-fg, #11182a)) 44%,
+    transparent
+  );
+  animation: global-search-fade 0.16s ease both;
+}
+
+.global-search-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(680px, 100%);
+  max-height: min(72vh, 640px);
+  background: var(--mock-paper, var(--color-bg, #f5eee3));
+  color: var(--mock-ink, var(--color-fg, #11182a));
+  border: var(--mock-stroke, 1.5px) solid
+    var(--mock-line, var(--color-border-strong, currentColor));
+  box-shadow: 0 18px 60px
+    color-mix(in srgb, var(--mock-ink, #11182a) 35%, transparent);
+  animation: global-search-rise 0.18s ease both;
+}
+
+.global-search-inputrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.95rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid
+    var(--mock-line, var(--color-border-strong, currentColor));
+}
+
+.global-search-glyph {
+  flex: 0 0 auto;
+  opacity: 0.75;
+}
+
+.global-search-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.06rem;
+  outline: none;
+}
+
+.global-search-input::placeholder {
+  color: inherit;
+  opacity: 0.55;
+}
+
+/* Kill UA clear/decoration widgets so the row stays typographic. */
+.global-search-input::-webkit-search-decoration,
+.global-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.global-search-close {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.global-search-close:is(:hover, :focus-visible) {
+  opacity: 1;
+}
+
+.global-search-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.4rem 0 0.6rem;
+}
+
+.global-search-hint,
+.global-search-note-status {
+  margin: 0;
+  padding: 1.1rem 0.95rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  opacity: 0.72;
+}
+
+.global-search-note-status {
+  padding: 0.35rem 0.95rem 0.55rem;
+  font-size: 0.9rem;
+}
+
+.global-search-group {
+  padding: 0.45rem 0 0.15rem;
+}
+
+.global-search-group + .global-search-group {
+  border-top: 1px solid
+    color-mix(
+      in srgb,
+      var(--mock-line, var(--color-border-strong, currentColor)) 35%,
+      transparent
+    );
+}
+
+.global-search-group-label {
+  margin: 0;
+  padding: 0.5rem 0.95rem 0.3rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  opacity: 0.68;
+}
+
+.global-search-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.global-search-result {
+  display: block;
+  min-height: 44px;
+  padding: 0.5rem 0.95rem 0.55rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.global-search-result:is(:hover, :focus-visible) {
+  background: color-mix(
+    in srgb,
+    var(--mock-line, var(--color-border-strong, currentColor)) 12%,
+    transparent
+  );
+}
+
+.global-search-result:focus-visible {
+  outline: 2px solid var(--mock-blue, var(--color-gold, currentColor));
+  outline-offset: -2px;
+}
+
+.global-search-result-title {
+  display: block;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.02rem;
+  line-height: 1.32;
+  /* Long note snippets clamp instead of flooding the list. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.global-search-result-meta {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.12rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  opacity: 0.72;
+}
+
+.global-search-result-kind {
+  display: inline-block;
+  margin-right: 0.3rem;
+  padding: 0 0.28rem;
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--mock-line, var(--color-border-strong, currentColor)) 60%,
+      transparent
+    );
+  font-family: var(--font-family-ui, sans-serif);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+  vertical-align: 0.08em;
+}
+
+.global-search-more {
+  margin: 0;
+  padding: 0.2rem 0.95rem 0.55rem;
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.global-search-empty {
+  padding: 1.4rem 0.95rem 1.1rem;
+}
+
+.global-search-empty-line {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.global-search-empty-cta {
+  display: inline-block;
+  min-height: 44px;
+  padding-top: 0.35rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--mock-blue-text, var(--color-gold, inherit));
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.global-search-footer {
+  margin: 0;
+  padding: 0.45rem 0.95rem;
+  border-top: 1px solid
+    color-mix(
+      in srgb,
+      var(--mock-line, var(--color-border-strong, currentColor)) 35%,
+      transparent
+    );
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+/* Mobile: the overlay becomes a full-screen sheet above the tab bar
+   (tab bar sits at --z-fixed 200; this layer is --z-overlay 300). */
+@media (max-width: 767px) {
+  .global-search-layer {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .global-search-panel {
+    width: 100%;
+    max-height: none;
+    height: 100dvh;
+    border: none;
+    box-shadow: none;
+  }
+
+  /* The keyboard-shortcut footer is meaningless on touch. */
+  .global-search-footer {
+    display: none;
+  }
+}
+
+@keyframes global-search-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes global-search-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion: honor both the OS setting and the in-app toggle
+   (Providers stamps html.reduce-motion). */
+@media (prefers-reduced-motion: reduce) {
+  .global-search-layer,
+  .global-search-panel {
+    animation: none;
+  }
+}
+
+.reduce-motion .global-search-layer,
+.reduce-motion .global-search-panel {
+  animation: none;
+}
+
+/* ================================================================
+   F-074 · Series detail tabs (DAYS · ABOUT · VOICES · ARTWORK)
+   Appended 2026-07-10 — series-detail-tabs block (append-only; do
+   not fold into earlier layers). Scope: SeriesPageClient only.
+   Uses the mock-* theme variables so light/dark/sepia themes
+   inherit without extra overrides.
+   ================================================================ */
+
+.series-detail-tablist {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  background: var(--mock-paper);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.series-detail-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.series-detail-tab {
+  position: relative;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 0;
+  border-right: var(--mock-stroke) solid var(--mock-line);
+  background: transparent;
+  color: var(--mock-muted);
+  font: inherit;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.series-detail-tab:hover {
+  color: var(--mock-ink);
+  background: color-mix(in srgb, var(--mock-blue) 8%, var(--mock-paper) 92%);
+}
+
+.series-detail-tab:focus-visible {
+  outline: 2px solid var(--mock-blue-text, var(--mock-blue));
+  outline-offset: -2px;
+}
+
+.series-detail-tab[aria-selected='true'] {
+  color: var(--mock-ink);
+}
+
+.series-detail-tab[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--mock-ink);
+}
+
+.series-detail-tab-count {
+  opacity: 0.6;
+}
+
+/* Shared panel shell for ABOUT / VOICES / ARTWORK. DAYS reuses the
+   existing mock-section-center + mock-series-days-grid untouched. */
+.series-tab-section {
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  padding: 1.4rem clamp(1rem, 3.4vw, 2.4rem) 2.6rem;
+}
+
+.series-tab-about {
+  max-width: 46rem;
+}
+
+.series-tab-about .mock-body {
+  margin-top: 0.9rem;
+}
+
+.series-tab-about .mock-subcopy {
+  margin-top: 0.75rem;
+}
+
+.series-tab-anchor {
+  margin-top: 1.5rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  padding-top: 0.9rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.series-tab-anchor-text {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.3;
+}
+
+.series-tab-source {
+  margin: 1.4rem 0 0;
+}
+
+/* VOICES — editorial cards, one per figure the series draws on. */
+.series-voices-grid {
+  margin-top: 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mock-stroke);
+  background: var(--mock-line);
+  border: var(--mock-stroke) solid var(--mock-line);
+}
+
+.series-voice-card {
+  background: var(--mock-paper);
+  padding: 1rem 1.1rem 1.2rem;
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.series-voice-name {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-3);
+  line-height: 0.96;
+}
+
+.series-voice-role {
+  margin: 0;
+  color: var(--mock-muted);
+  letter-spacing: 0.06em;
+}
+
+.series-voice-quote {
+  margin: 0.2rem 0 0;
+  padding-left: 0.85rem;
+  border-left: var(--mock-stroke) solid var(--mock-line);
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: var(--mock-type-1);
+  line-height: 1.28;
+}
+
+.series-voice-description {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.4;
+  color: var(--mock-muted);
+}
+
+.series-voice-days {
+  margin: 0.2rem 0 0;
+  color: var(--mock-muted);
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 768px) {
+  .series-voices-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ARTWORK — hairline-ruled grid of the series' per-day art. */
+.series-artwork-grid {
+  margin-top: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.6vw, 1.2rem);
+}
+
+.series-artwork-item {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.series-artwork-frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: var(--mock-stroke) solid var(--mock-line);
+  background: color-mix(in srgb, var(--mock-blue) 6%, var(--mock-paper) 94%);
+}
+
+.series-artwork-frame img {
+  object-fit: cover;
+}
+
+.series-artwork-caption {
+  color: var(--mock-muted);
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 768px) {
+  .series-artwork-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Reduced motion — honor both the OS setting and the in-app toggle
+   (Providers stamps html.reduce-motion). */
+@media (prefers-reduced-motion: reduce) {
+  .series-detail-tab {
+    transition: none;
+  }
+}
+
+.reduce-motion .series-detail-tab {
+  transition: none;
+}
+
+/* ============================================================
+   F-066 — GUILT-FREE MOMENTUM HYBRID (SA-025) — APPEND-ONLY BLOCK
+   Added 2026-07-10. Two surfaces:
+     A. .completion-beat — quiet post-completion benediction moment
+        (inline, near the completion point; never a modal wall).
+     B. .presence-week-row — gentle S M T W T F S presence dots
+        (lit/unlit only; no counts, no streak framing, no red).
+   All colors are theme tokens → light/dark parity is inherited.
+   Reduced motion honored via BOTH the OS media query and the
+   in-app toggle (html.reduce-motion), matching site convention.
+   ============================================================ */
+
+/* --- A. Completion beat ------------------------------------- */
+.completion-beat {
+  margin-top: 1.5rem;
+  padding: 1.6rem 1rem 1.4rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.completion-beat-line {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+.completion-beat-reference {
+  margin-top: 0.65rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+
+@keyframes completion-beat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.completion-beat-enter {
+  animation: completion-beat-in 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .completion-beat-enter {
+    animation: none;
+  }
+}
+
+.reduce-motion .completion-beat-enter {
+  animation: none;
+}
+
+/* --- B. Presence week row ----------------------------------- */
+.presence-week-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.presence-week-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.presence-week-days {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.presence-week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.presence-week-letter {
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--color-text-muted);
+}
+
+.presence-week-day-today .presence-week-letter {
+  color: var(--color-gold);
+}
+
+.presence-week-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.presence-week-dot-lit {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+}
+
+/* The current day is marked with a quiet ring — whether lit or not. */
+.presence-week-day-today .presence-week-dot {
+  outline: 1px solid var(--color-border-strong);
+  outline-offset: 2px;
+}
+
+.presence-week-day-today .presence-week-dot-lit {
+  outline-color: var(--color-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .presence-week-dot {
+    transition: none;
+  }
+}
+
+.reduce-motion .presence-week-dot {
+  transition: none;
+}
+
+/* Placement nudge on the Today band: sit quietly under the greeting. */
+.today-presence-row {
+  margin: 0.85rem 0 1.1rem;
+}
+/* ===================== end F-066 block ====================== */

@@ -1,32 +1,16 @@
-import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
-import ClippingsList from '@/components/ClippingsList'
+import { redirect } from 'next/navigation'
 
+// force-dynamic so the server answers with a real 307 (a statically rendered
+// redirect() gets baked into a slower meta-refresh page instead).
 export const dynamic = 'force-dynamic'
 
-export const metadata = {
-  title: 'Clippings',
-  description:
-    'Passages you have clipped while reading. Kept entirely on your device.',
-}
-
-export default function ClippingsPage() {
-  return (
-    <div className="mock-home">
-      <main id="main-content" className="mock-paper">
-        <EuangelionShellHeader />
-        <section className="mock-panel">
-          <ClippingsList />
-        </section>
-        <SiteFooter />
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
-            </span>
-          </h2>
-        </section>
-      </main>
-    </div>
-  )
+// RETIRED PAGE (F-068, Mobbin polish audit 2026-07-10, P1 #12).
+//
+// /library is the single library home — the device-local commonplace book
+// lives in its CLIPPINGS tab alongside bookmarks, highlights, notes, and the
+// archive. Clippings data itself is untouched (it lives in IndexedDB on the
+// device); this route segment survives only as a redirect so old links keep
+// working.
+export default function RetiredClippingsPage() {
+  redirect('/library?tab=clippings')
 }

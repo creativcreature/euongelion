@@ -4,6 +4,11 @@
  * Server-rendered. Full devotional body in the initial HTML — no client
  * fetch, no interstitial, no gate. Works with JavaScript disabled.
  *
+ * F-069: one client island (TodayReturningBand) sits between the edition
+ * band and the reading header — greeting + continue-your-plan card for
+ * returning readers. Pure progressive enhancement: it renders nothing
+ * server-side and nothing without JS; the edition below is untouched.
+ *
  * Daily selection: UTC day-of-year modulo the curated rotation (175
  * non-bible-365 devotionals in series order). Same date = same slug
  * everywhere (server, Googlebot, cURL).
@@ -16,6 +21,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import TodayReturningBand from '@/components/TodayReturningBand'
 import {
   pickTodaySlug,
   findSeriesForSlug,
@@ -354,6 +360,10 @@ export default async function TodayPage() {
             Daily bread for the cluttered, hungry soul.
           </p>
         </div>
+
+        {/* Returning-user band (F-069) — client island, renders nothing
+            until the active-plan fetch resolves (and nothing without JS). */}
+        <TodayReturningBand />
 
         {/* Reading header */}
         <header className="today-reading-header">

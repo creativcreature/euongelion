@@ -1,27 +1,44 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import ClippingsList from '@/components/ClippingsList'
+import LibraryView from '@/components/LibraryView'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { isClippingsSupported, listClippings } from '@/lib/clippings'
+import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { useProgressStore } from '@/stores/progressStore'
 
 type LibraryMenuKey =
+  | 'series'
   | 'today'
   | 'bookmarks'
   | 'highlights'
   | 'notes'
   | 'chat-history'
+  | 'clippings'
   | 'archive'
   | 'trash'
 
 // Canonical tab order — the single source of truth used for rendering,
 // keyboard roving navigation, and URL deep-link resolution.
+//
+// F-068 (library consolidation): this rail is the ONE library. `series` holds
+// the series lifecycle (active / saved / paused / completed — the old
+// /library top section) and is the default tab; `clippings` holds the
+// device-local commonplace book that used to live at /clippings. `series` is
+// deliberately NOT folded into `archive` — archive carries plan history,
+// completed Wake-Up pages, and manually archived artifacts, a different data
+// model from the series lifecycle.
 const LIBRARY_TAB_ORDER: LibraryMenuKey[] = [
+  'series',
   'today',
   'bookmarks',
   'highlights',
   'notes',
   'chat-history',
+  'clippings',
   'archive',
   'trash',
 ]
@@ -156,7 +173,11 @@ function parsePlanSlug(
 function resolveDevotionalHref(devotionalSlug: string): string {
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) {
-    return `/soul-audit/results?planToken=${plan.token}&day=${plan.day}`
+    // Plan reading canonically lives at /daily-bread (SA-023: the dedicated
+    // plan reader is retired, and /soul-audit/results does not resolve a
+    // ?planToken deep link on its own). Same silo-correct routing the old
+    // /saved page shipped for plan-day bookmarks.
+    return '/daily-bread'
   }
   return `/devotional/${devotionalSlug}`
 }
@@ -241,11 +262,13 @@ export function normalizeLibraryTab(
   value: string | null | undefined,
 ): LibraryMenuKey {
   if (
+    value === 'series' ||
     value === 'today' ||
     value === 'bookmarks' ||
     value === 'highlights' ||
     value === 'notes' ||
     value === 'chat-history' ||
+    value === 'clippings' ||
     value === 'archive' ||
     value === 'trash'
   ) {
@@ -257,12 +280,12 @@ export function normalizeLibraryTab(
   if (value === 'favorites' || value === 'favorite-verses') return 'highlights'
   if (value === 'saved') return 'bookmarks'
   if (value === 'chat-notes') return 'chat-history'
-  return 'today'
+  return 'series'
 }
 
 export default function DevotionalLibraryRail({
   className = '',
-  initialTab = 'today',
+  initialTab = 'series',
   onTabChange,
 }: {
   className?: string
@@ -348,6 +371,45 @@ export default function DevotionalLibraryRail({
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const completions = useProgressStore((s) => s.completions)
+
+  // Series lifecycle (F-068): the SERIES tab renders <LibraryView />, which
+  // manages its own actions; the rail only subscribes for the tab count.
+  // hydrate() is lazy + idempotent, so calling it here and in LibraryView is
+  // safe and keeps the count correct even when another tab is open.
+  const hydrateSeriesLibrary = useDevotionalLibraryStore((s) => s.hydrate)
+  const seriesActive = useDevotionalLibraryStore((s) => s.active)
+  const seriesSaved = useDevotionalLibraryStore((s) => s.saved)
+  const seriesArchived = useDevotionalLibraryStore((s) => s.archived)
+
+  useEffect(() => {
+    void hydrateSeriesLibrary()
+  }, [hydrateSeriesLibrary])
+
+  // Clippings live in device-local IndexedDB (see src/lib/clippings.ts); the
+  // rail only tracks the count for the tab badge. Read failures are surfaced
+  // inside the CLIPPINGS panel itself by <ClippingsList /> — the badge does
+  // not duplicate that error state.
+  const [clippingsCount, setClippingsCount] = useState(0)
+
+  useEffect(() => {
+    if (!isClippingsSupported()) return
+    let cancelled = false
+    const loadClippingsCount = async () => {
+      try {
+        const list = await listClippings()
+        if (!cancelled) setClippingsCount(list.length)
+      } catch {
+        // ClippingsList owns the honest error state for this data.
+      }
+    }
+    void loadClippingsCount()
+    const onUpdate = () => void loadClippingsCount()
+    window.addEventListener('clippingsUpdated', onUpdate)
+    return () => {
+      cancelled = true
+      window.removeEventListener('clippingsUpdated', onUpdate)
+    }
+  }, [])
 
   const completionRows = useMemo<CompletionRow[]>(() => {
     return [...completions]
@@ -703,21 +765,25 @@ export default function DevotionalLibraryRail({
   }
 
   const counts = {
+    series: (seriesActive ? 1 : 0) + seriesSaved.length + seriesArchived.length,
     today: activeDays.length,
     bookmarks: bookmarks.length,
     highlights: highlights.length,
     notes: notes.length + stickyNotes.length,
     'chat-history': chatHistory.length,
+    clippings: clippingsCount,
     archive:
       archivePlans.length + completionRows.length + archivedArtifacts.length,
     trash: trashedArtifacts.length,
   } as const
   const TAB_LABELS: Record<LibraryMenuKey, string> = {
+    series: 'Series',
     today: 'Today + 7 Days',
     bookmarks: 'Bookmarks',
     highlights: 'Highlights',
     notes: 'Notes',
     'chat-history': 'Chat History',
+    clippings: 'Clippings',
     archive: 'Archive',
     trash: 'Trash',
   }
@@ -763,7 +829,7 @@ export default function DevotionalLibraryRail({
           className={`gap-2 ${drawerOpen ? 'mt-2 grid' : 'hidden'} md:mt-0 md:grid`}
           role="tablist"
           aria-orientation="vertical"
-          aria-label="Daily Bread library sections"
+          aria-label="Library sections"
         >
           {LIBRARY_TAB_ORDER.map((key) => (
             <button
@@ -803,9 +869,16 @@ export default function DevotionalLibraryRail({
         id={`library-panel-${active}`}
         aria-labelledby={`library-tab-${active}`}
       >
-        {loading ? (
+        {/* SERIES and CLIPPINGS own their data (devotionalLibraryStore /
+            device-local IndexedDB) and render their own loading + error
+            states, so they are not gated on the rail's API fetch below. */}
+        {active === 'series' && <LibraryView />}
+
+        {active === 'clippings' && <ClippingsList />}
+
+        {active !== 'series' && active !== 'clippings' && loading ? (
           <p className="vw-small text-muted">Loading library...</p>
-        ) : error ? (
+        ) : active !== 'series' && active !== 'clippings' && error ? (
           <p className="vw-small text-secondary">{error}</p>
         ) : (
           <>
@@ -945,7 +1018,26 @@ export default function DevotionalLibraryRail({
               <div>
                 <p className="text-label vw-small mb-3 text-gold">Bookmarks</p>
                 {bookmarks.length === 0 ? (
-                  <p className="vw-small text-muted">No bookmarks yet.</p>
+                  <div className="py-8 text-center">
+                    {/* Riso empty-state illustration (imagery run 2026-07-10):
+                        a ribbon holding a place in a closed book — what a
+                        bookmark is for. */}
+                    <Image
+                      src="/images/site/samples/empty-bookmarks.webp"
+                      alt=""
+                      width={320}
+                      height={240}
+                      className="mx-auto mb-5"
+                      loading="lazy"
+                    />
+                    <p className="vw-body mb-6 text-secondary">
+                      Nothing kept yet. Mark a passage as you read and it will
+                      hold your place here.
+                    </p>
+                    <Link href="/today" className="cta-major">
+                      READ TODAY&rsquo;S EDITION
+                    </Link>
+                  </div>
                 ) : (
                   <div className="space-y-2">
                     {bookmarks.map((bookmark) => (

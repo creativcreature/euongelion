@@ -9,11 +9,12 @@ import DevotionalLibraryRail, {
 /**
  * URL-driven wrapper around {@link DevotionalLibraryRail}.
  *
- * F-030: the rail is the one unified retrieval surface (archive / bookmarks /
- * notes / highlights / chat history / today / trash). Mounting it through this
- * wrapper makes every section deep-linkable via `?tab=<key>` and keeps the URL
- * in sync as the reader moves between tabs, so a link to a specific section can
- * be shared, bookmarked, and restored on reload or browser back/forward.
+ * F-030 + F-068: the rail is the ONE library surface (series / today /
+ * bookmarks / highlights / notes / chat history / clippings / archive /
+ * trash). Mounting it through this wrapper makes every section deep-linkable
+ * via `?tab=<key>` and keeps the URL in sync as the reader moves between
+ * tabs, so a link to a specific section can be shared, bookmarked, and
+ * restored on reload or browser back/forward.
  *
  * `useSearchParams` requires a Suspense boundary in the App Router; the export
  * provides one so this can be dropped into any server page.
@@ -27,8 +28,8 @@ function LibraryRailWithSearchParams() {
   const handleTabChange = useCallback(
     (next: string) => {
       const params = new URLSearchParams(searchParams.toString())
-      if (next === 'today') {
-        // `today` is the default — keep the canonical URL clean.
+      if (next === 'series') {
+        // `series` is the default — keep the canonical URL clean.
         params.delete('tab')
       } else {
         params.set('tab', next)

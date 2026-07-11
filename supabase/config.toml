@@ -369,9 +369,12 @@ deno_version = 2
 enabled = true
 verify_jwt = true
 
-# Web push daily sender (Phase 2.2, F-040). Same double-gate: Supabase JWT
-# verification ON (pg_cron sends a service-role bearer) AND the function checks
-# the shared X-Internal-Secret header. Fired once/day by pg_cron.
+# Web push sender (Phase 2.2, F-040 + F-070 windows). Same double-gate:
+# Supabase JWT verification ON (pg_cron sends a service-role bearer) AND the
+# function checks the shared X-Internal-Secret header. Fired HOURLY by pg_cron;
+# the function itself is idempotent per reader-local day (last_sent_date), so
+# each subscriber still receives at most one nudge per day inside their chosen
+# reminder window (migration 017).
 [functions.send-daily-push]
 enabled = true
 verify_jwt = true

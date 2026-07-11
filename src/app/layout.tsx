@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import MobileTabBar from '@/components/MobileTabBar'
+import InstallPrompt from '@/components/InstallPrompt'
 import Providers from './providers'
 import './globals.css'
 
@@ -84,6 +85,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <MobileTabBar />
+          <InstallPrompt />
         </Providers>
         <ServiceWorkerRegistration />
         <ConsentAwareAnalytics />

@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ActivePlanBadge from './ActivePlanBadge'
+import GlobalSearchOverlay from './GlobalSearchOverlay'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 // SA-024 — platform-adaptive IA. Desktop masthead carries the full
 // destination set (horizontal space allows it): Daily Bread + Library
@@ -115,6 +117,10 @@ export default function EuangelionShellHeader({
   const [accountMenuOpen, setAccountMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [navDocked, setNavDocked] = useState(false)
+  // F-071 — global search. The header owns the open state so both entry
+  // points (desktop utilities row + mobile top bar) drive one overlay.
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchSeed, setSearchSeed] = useState('')
 
   const mobileTickerItems = useMemo(
     () => [
@@ -129,9 +135,55 @@ export default function EuangelionShellHeader({
     mobileToggleRef.current?.focus()
   }, [])
 
+  const openSearch = useCallback(() => setSearchOpen(true), [])
+  const closeSearch = useCallback(() => {
+    setSearchOpen(false)
+    setSearchSeed('')
+  }, [])
+
+  // F-071: Cmd/Ctrl+K toggles the global search from anywhere.
+  useEffect(() => {
+    function handleSearchHotkey(event: KeyboardEvent) {
+      if (!(event.metaKey || event.ctrlKey) || event.altKey) return
+      if (event.key.toLowerCase() !== 'k') return
+      event.preventDefault()
+      setSearchOpen((current) => !current)
+    }
+    window.addEventListener('keydown', handleSearchHotkey)
+    return () => window.removeEventListener('keydown', handleSearchHotkey)
+  }, [])
+
+  // F-071: honor the advertised SearchAction deep link. The homepage
+  // schema targets /?search={query}; the header renders on every route,
+  // so any landing URL carrying ?search= opens the overlay pre-filled.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const seed = params.get('search')?.trim()
+    if (!seed) return
+    setSearchSeed(seed)
+    setSearchOpen(true)
+  }, [])
+
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
+
+  // F-067: the reader's "Aa" sheet changes the site base theme when a named
+  // reading theme is picked (Ink/Night sit on dark, Parchment/Vellum on
+  // light). It announces the change so this toggle's sun/moon state never
+  // goes stale while both are on screen.
+  useEffect(() => {
+    function syncFromReaderSheet(event: Event) {
+      const detail = (event as CustomEvent<{ theme?: string }>).detail
+      if (detail?.theme === 'dark' || detail?.theme === 'light') {
+        setTheme(detail.theme)
+      }
+    }
+    window.addEventListener('euangelion:site-theme', syncFromReaderSheet)
+    return () =>
+      window.removeEventListener('euangelion:site-theme', syncFromReaderSheet)
+  }, [])
 
   useEffect(() => {
     setNow(new Date())
@@ -333,6 +385,11 @@ export default function EuangelionShellHeader({
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     localStorage.setItem('theme', next)
+    // F-067: an explicit site-theme change dissolves any reader-scoped
+    // reading-theme override (Vellum/Night), so this toggle is never a
+    // visual no-op inside the reader — the reader falls back to following
+    // the site theme (Ink on dark, Parchment on light).
+    useSettingsStore.getState().setReadingTheme(null)
   }
 
   const redirectPath = encodeURIComponent(pathname || '/')
@@ -421,6 +478,31 @@ export default function EuangelionShellHeader({
                 data-divider="true"
               />
               <div className="mock-topbar-utilities">
+                {/* F-071: global search entry — SA-024 puts search in the
+                    masthead utilities tier, never the mobile tab bar. */}
+                <button
+                  type="button"
+                  className="mock-icon-control mock-search-toggle"
+                  onClick={openSearch}
+                  aria-label="Search"
+                  aria-haspopup="dialog"
+                  aria-expanded={searchOpen}
+                  title="Search (⌘K / Ctrl+K)"
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                </button>
                 <button
                   type="button"
                   className="mock-icon-control mock-mode-toggle"
@@ -589,14 +671,58 @@ export default function EuangelionShellHeader({
                 takes the left track (it also serves as the optical
                 counterweight to the menu button on the right — the ticker
                 stays centered between two equal-weight controls). Before
-                this, mobile had NO theme toggle outside Settings. */}
-            <button
-              type="button"
-              className="mock-icon-control mock-mode-toggle mock-topbar-mobile-toggle"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? (
+                this, mobile had NO theme toggle outside Settings.
+                F-071: the global-search glyph joins it in the same left
+                utility group — search is a TOP-bar utility per SA-024 and
+                never enters the tab bar. Pairing the two compact controls
+                on the left keeps the ticker's center track closest to
+                optical center against the 44px menu button on the right. */}
+            <div className="mock-topbar-mobile-utils">
+              <button
+                type="button"
+                className="mock-icon-control mock-mode-toggle mock-topbar-mobile-toggle"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? (
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="4.2" />
+                    <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" />
+                  </svg>
+                ) : (
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.6 6.6 0 0 0 10.8 10.8Z" />
+                  </svg>
+                )}
+              </button>
+              <button
+                type="button"
+                className="mock-icon-control mock-mode-toggle mock-topbar-mobile-toggle mock-search-toggle"
+                onClick={openSearch}
+                aria-label="Search"
+                aria-haspopup="dialog"
+                aria-expanded={searchOpen}
+              >
                 <svg
                   width="15"
                   height="15"
@@ -605,28 +731,13 @@ export default function EuangelionShellHeader({
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
                   aria-hidden="true"
                 >
-                  <circle cx="12" cy="12" r="4.2" />
-                  <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" />
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
                 </svg>
-              ) : (
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.6 6.6 0 0 0 10.8 10.8Z" />
-                </svg>
-              )}
-            </button>
+              </button>
+            </div>
             {/* Ambient masthead furniture: the rolling date + tagline. The
                 cross-fade stage is its own positioning context (min-width:0,
                 bounded grid cell) so the absolutely-stacked ticker items can
@@ -739,6 +850,15 @@ export default function EuangelionShellHeader({
           </div>
         </nav>
       </header>
+
+      {/* F-071: one overlay instance serves both entry points + Cmd/Ctrl+K.
+          Rendered inside the shell frame so it inherits the .mock-home
+          theme tokens (light/dark paper) on every surface. */}
+      <GlobalSearchOverlay
+        open={searchOpen}
+        initialQuery={searchSeed}
+        onClose={closeSearch}
+      />
     </div>
   )
 }

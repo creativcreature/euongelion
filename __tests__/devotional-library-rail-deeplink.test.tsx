@@ -11,6 +11,32 @@ vi.mock('@/stores/progressStore', () => ({
   ) => selector({ completions: [] }),
 }))
 
+// The SERIES tab embeds LibraryView (own store actions, router, modals) and
+// the CLIPPINGS tab embeds ClippingsList (device IndexedDB). Both own their
+// data and have dedicated coverage; the rail tests focus on tab IA.
+vi.mock('@/components/LibraryView', () => ({
+  default: () => <div data-testid="series-panel" />,
+}))
+vi.mock('@/components/ClippingsList', () => ({
+  default: () => <div data-testid="clippings-panel" />,
+}))
+vi.mock('@/stores/devotionalLibraryStore', () => ({
+  useDevotionalLibraryStore: (
+    selector: (state: {
+      active: null
+      saved: unknown[]
+      archived: unknown[]
+      hydrate: () => Promise<void>
+    }) => unknown,
+  ) =>
+    selector({
+      active: null,
+      saved: [],
+      archived: [],
+      hydrate: async () => {},
+    }),
+}))
+
 function mockJsonResponse(payload: unknown) {
   return {
     ok: true,
@@ -18,7 +44,7 @@ function mockJsonResponse(payload: unknown) {
   } as Response
 }
 
-describe('DevotionalLibraryRail deep-link + keyboard IA (F-030)', () => {
+describe('DevotionalLibraryRail deep-link + keyboard IA (F-030 / F-068)', () => {
   afterEach(() => {
     cleanup()
   })
@@ -57,20 +83,33 @@ describe('DevotionalLibraryRail deep-link + keyboard IA (F-030)', () => {
   })
 
   it('normalizes deep-link tab params, including favorites/saved aliases', () => {
+    expect(normalizeLibraryTab('series')).toBe('series')
+    expect(normalizeLibraryTab('today')).toBe('today')
     expect(normalizeLibraryTab('bookmarks')).toBe('bookmarks')
     expect(normalizeLibraryTab('notes')).toBe('notes')
+    expect(normalizeLibraryTab('clippings')).toBe('clippings')
     expect(normalizeLibraryTab('favorites')).toBe('highlights')
     expect(normalizeLibraryTab('favorite-verses')).toBe('highlights')
     expect(normalizeLibraryTab('saved')).toBe('bookmarks')
     expect(normalizeLibraryTab('chat-notes')).toBe('chat-history')
-    expect(normalizeLibraryTab(null)).toBe('today')
-    expect(normalizeLibraryTab('garbage')).toBe('today')
+    // F-068: series lifecycle is the library home tab.
+    expect(normalizeLibraryTab(null)).toBe('series')
+    expect(normalizeLibraryTab('garbage')).toBe('series')
   })
 
   it('opens to the deep-linked initialTab', async () => {
     render(<DevotionalLibraryRail initialTab="notes" />)
     const notesTab = await screen.findByRole('tab', { name: /^Notes/i })
     expect(notesTab).toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('opens the consolidated clippings tab from a deep link', async () => {
+    render(<DevotionalLibraryRail initialTab="clippings" />)
+    const clippingsTab = await screen.findByRole('tab', {
+      name: /^Clippings/i,
+    })
+    expect(clippingsTab).toHaveAttribute('aria-selected', 'true')
+    expect(screen.getByTestId('clippings-panel')).toBeInTheDocument()
   })
 
   it('notifies the parent (URL sync) when a tab is activated', async () => {
@@ -86,21 +125,19 @@ describe('DevotionalLibraryRail deep-link + keyboard IA (F-030)', () => {
     const onTabChange = vi.fn()
     render(<DevotionalLibraryRail onTabChange={onTabChange} />)
 
-    const todayTab = await screen.findByRole('tab', {
-      name: /Today \+ 7 Days/i,
-    })
+    const seriesTab = await screen.findByRole('tab', { name: /^Series/i })
     // Default tab is in the tab order; the rest are removed from it.
-    expect(todayTab).toHaveAttribute('tabindex', '0')
+    expect(seriesTab).toHaveAttribute('tabindex', '0')
 
-    todayTab.focus()
+    seriesTab.focus()
     await user.keyboard('{ArrowDown}')
-    expect(onTabChange).toHaveBeenLastCalledWith('bookmarks')
+    expect(onTabChange).toHaveBeenLastCalledWith('today')
 
     await user.keyboard('{End}')
     expect(onTabChange).toHaveBeenLastCalledWith('trash')
 
     await user.keyboard('{Home}')
-    expect(onTabChange).toHaveBeenLastCalledWith('today')
+    expect(onTabChange).toHaveBeenLastCalledWith('series')
   })
 
   it('exposes a mobile drawer trigger that toggles the section list', async () => {

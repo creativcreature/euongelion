@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 import { buildSeriesDayScriptureMap } from '@/lib/soul-audit/series-day-scripture'
+import { buildSeriesArtwork, buildSeriesVoices } from '@/lib/series-detail-tabs'
 import SeriesPageClient from '@/app/wake-up/series/[slug]/SeriesPageClient'
 
 export const revalidate = 3600
@@ -39,6 +40,12 @@ export default async function SeriesPage({ params }: Props) {
     framework: series.framework,
     dayNumbers: series.days.map((day) => day.day),
   })
+
+  // F-074 series detail tabs — VOICES (profile modules from the day
+  // JSONs) and ARTWORK (per-day art assignments). Empty arrays mean
+  // the tab is omitted client-side.
+  const voices = await buildSeriesVoices(series)
+  const artwork = buildSeriesArtwork(series)
 
   const seriesUrl = `https://euangelion.app/series/${slug}`
 
@@ -147,6 +154,8 @@ export default async function SeriesPage({ params }: Props) {
         series={series}
         silo="euangelion"
         dayScriptureByDayNumber={dayScriptureByDayNumber}
+        voices={voices}
+        artwork={artwork}
       />
     </>
   )

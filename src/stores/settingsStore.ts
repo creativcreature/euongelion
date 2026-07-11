@@ -10,6 +10,10 @@ import {
   isBibleTranslationCode,
   type BibleTranslationCode,
 } from '@/lib/bible'
+import {
+  isReminderWindow,
+  type ReminderWindow,
+} from '@/lib/push/reminder-window'
 
 type SabbathDay = 'saturday' | 'sunday'
 type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
@@ -22,6 +26,35 @@ type KeyStorageMode = 'session_only' | 'remember_encrypted'
 
 type BibleTranslation = BibleTranslationCode
 type TextScale = 'default' | 'large' | 'xlarge'
+
+// F-067 — in-reader "Aa" sheet: curated named reading themes.
+// 'ink' / 'parchment' are aliases of the site dark / light themes;
+// 'vellum' / 'night' additionally apply a reader-scoped variable
+// override (data-reading-theme on the reader root). `null` means the
+// reader simply follows the site theme (no explicit choice yet).
+export type ReadingTheme = 'ink' | 'parchment' | 'vellum' | 'night'
+
+export const READING_THEMES: readonly ReadingTheme[] = [
+  'ink',
+  'parchment',
+  'vellum',
+  'night',
+] as const
+
+// Which site base theme (html.dark) each named reading theme sits on,
+// so the rest of the site stays consistent with the reader.
+export const READING_THEME_BASE: Record<ReadingTheme, 'dark' | 'light'> = {
+  ink: 'dark',
+  parchment: 'light',
+  vellum: 'light',
+  night: 'dark',
+}
+
+export function isReadingTheme(value: unknown): value is ReadingTheme {
+  return (
+    typeof value === 'string' && READING_THEMES.includes(value as ReadingTheme)
+  )
+}
 
 interface SettingsState {
   bibleTranslation: BibleTranslation
@@ -41,6 +74,12 @@ interface SettingsState {
   reduceMotion: boolean
   highContrast: boolean
   readingComfort: boolean
+  readingTheme: ReadingTheme | null
+  // F-070 — the reader's chosen "one quiet word" delivery window. `null`
+  // means no explicit choice yet. This is the device-local copy; when a push
+  // subscription exists it is mirrored server-side on push_subscriptions via
+  // /api/push/preferences (the server copy is what the sender reads).
+  reminderWindow: ReminderWindow | null
 
   setBibleTranslation: (t: BibleTranslation) => void
   setSabbathDay: (d: SabbathDay) => void
@@ -61,6 +100,8 @@ interface SettingsState {
   setReduceMotion: (enabled: boolean) => void
   setHighContrast: (enabled: boolean) => void
   setReadingComfort: (enabled: boolean) => void
+  setReadingTheme: (theme: ReadingTheme | null) => void
+  setReminderWindow: (window: ReminderWindow | null) => void
 }
 
 function providerKeys(state: SettingsState) {
@@ -101,6 +142,8 @@ export const useSettingsStore = create<SettingsState>()(
       reduceMotion: false,
       highContrast: false,
       readingComfort: false,
+      readingTheme: null,
+      reminderWindow: null,
 
       setBibleTranslation: (bibleTranslation) => set({ bibleTranslation }),
       setSabbathDay: (sabbathDay) => set({ sabbathDay }),
@@ -168,6 +211,8 @@ export const useSettingsStore = create<SettingsState>()(
       setReduceMotion: (reduceMotion) => set({ reduceMotion }),
       setHighContrast: (highContrast) => set({ highContrast }),
       setReadingComfort: (readingComfort) => set({ readingComfort }),
+      setReadingTheme: (readingTheme) => set({ readingTheme }),
+      setReminderWindow: (reminderWindow) => set({ reminderWindow }),
     }),
     {
       name: 'euangelion-settings',
@@ -184,11 +229,25 @@ export const useSettingsStore = create<SettingsState>()(
         reduceMotion: state.reduceMotion,
         highContrast: state.highContrast,
         readingComfort: state.readingComfort,
+        readingTheme: state.readingTheme,
+        reminderWindow: state.reminderWindow,
       }),
       onRehydrateStorage: () => (state) => {
         if (!state) return
         if (!isBibleTranslationCode(state.bibleTranslation)) {
           state.bibleTranslation = DEFAULT_BIBLE_TRANSLATION
+        }
+        if (
+          state.readingTheme !== null &&
+          !isReadingTheme(state.readingTheme)
+        ) {
+          state.readingTheme = null
+        }
+        if (
+          state.reminderWindow !== null &&
+          !isReminderWindow(state.reminderWindow)
+        ) {
+          state.reminderWindow = null
         }
         if (state.keyStorageMode === 'remember_encrypted') {
           void state.hydrateRememberedProviderKeys()

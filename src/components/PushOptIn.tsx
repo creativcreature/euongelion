@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useSettingsStore } from '@/stores/settingsStore'
+import { DEFAULT_REMINDER_WINDOW } from '@/lib/push/reminder-window'
 
 /**
  * PushOptIn — a gentle, post-read opt-in for ONE calm daily nudge (Phase 2.2).
@@ -72,6 +74,10 @@ export default function PushOptIn({ show }: PushOptInProps) {
   const [status, setStatus] = useState<Status>('idle')
   const [eligible, setEligible] = useState(false)
   const checkedRef = useRef(false)
+  // F-070 — the reader may have already chosen a delivery window in Settings
+  // before opting in here. Honor it; otherwise the morning default keeps the
+  // "one quiet word each morning" promise this invite makes.
+  const reminderWindow = useSettingsStore((s) => s.reminderWindow)
 
   // Determine eligibility: env configured, browser-capable, not already
   // subscribed, not permanently denied, not previously dismissed.
@@ -145,7 +151,11 @@ export default function PushOptIn({ show }: PushOptInProps) {
       const res = await fetch('/api/push/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subscription: subscription.toJSON() }),
+        body: JSON.stringify({
+          subscription: subscription.toJSON(),
+          window: reminderWindow ?? DEFAULT_REMINDER_WINDOW,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        }),
       })
 
       if (!res.ok) {
@@ -254,8 +264,8 @@ export default function PushOptIn({ show }: PushOptInProps) {
               className="text-serif-italic text-secondary"
               style={{ maxWidth: '42ch', marginInline: 'auto' }}
             >
-              One quiet word will find you each morning. Manage it any time in
-              Settings.
+              One quiet word will find you each day. Choose the hour — or turn
+              it off — any time in Settings.
             </p>
           </>
         ) : null}

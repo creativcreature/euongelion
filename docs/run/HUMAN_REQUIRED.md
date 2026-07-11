@@ -12,3 +12,15 @@ _Every item here is a failure to find an autonomous path; alternatives were exha
 - Install gh and auth: `brew install gh && gh auth login` (choose creativcreature), then tell the session to push.
 
 **Impact while open:** all run commits exist only on this machine. Production deploys are unaffected (Cloudflare deploys from the working tree via the verified wrangler token).
+
+## 2. Reminders go-live (5 steps, ~10 minutes, in this order)
+
+**Why blocked:** applying the production DB migration autonomously was denied by the session's permission gate (production-change review); Supabase secret-setting + edge deploy follow it. NOTE: do the VAPID step only TOGETHER WITH migration 017 — setting the key alone makes the reader's push opt-in send window fields the DB can't store yet. Everything else (picker UI, window persistence, timezone-aware idempotent sender, dry-run guards) is implemented and tested (50 new tests; see F-070).
+
+1. **Apply migration 017**: Supabase dashboard → SQL editor → paste `database/migrations/017_add_reminder_window_to_push_subscriptions.sql`.
+2. **VAPID keys**: a keypair is already generated at `/private/tmp/claude-501/-Users-jamesparker-Documents-app-projects-external-euangelion/a6a97842-6eec-43a4-9a1b-aa518379246a/scratchpad/vapid.json` (or regenerate: `npx web-push generate-vapid-keys`). Put `NEXT_PUBLIC_VAPID_PUBLIC_KEY` in `.env.local` (build-time — a Worker secret alone won't reach the client bundle) AND as a Worker secret; then `supabase secrets set VAPID_PUBLIC_KEY=... VAPID_PRIVATE_KEY=... VAPID_SUBJECT=mailto:hello@euangelion.app`.
+3. **Deploy the sender**: `supabase functions deploy send-daily-push`.
+4. **Schedule hourly pg_cron** (dashboard SQL; needs pg_cron + pg_net): `select cron.schedule('send-daily-push-hourly', '5 * * * *', $$select net.http_post(url := 'https://<project-ref>.supabase.co/functions/v1/send-daily-push', headers := jsonb_build_object('Content-Type','application/json','Authorization','Bearer <SERVICE_ROLE_KEY>','X-Internal-Secret','<INTERNAL_ROUTE_SECRET>'), body := '{}'::jsonb);$$);`
+5. **Safe first send**: subscribe one test browser → invoke with `{"dryRun":true,"onlyEndpoint":"<test endpoint>"}` → inspect counts → repeat without dryRun. Never invoke by hand without `onlyEndpoint`.
+
+**Impact while open:** the Settings picker shows its honest "unconfigured" state; nothing pretends to work.

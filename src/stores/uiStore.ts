@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { useSettingsStore } from '@/stores/settingsStore'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -37,6 +38,11 @@ export const useUIStore = create<UIState>()(
       setTheme: (theme) => {
         applyTheme(theme)
         set({ theme })
+        // F-067: an explicit site-theme change (Settings/onboarding)
+        // dissolves any reader-scoped reading-theme override (Vellum/Night),
+        // mirroring the shell header toggle — the reader falls back to
+        // following the site theme (Ink on dark, Parchment on light).
+        useSettingsStore.getState().setReadingTheme(null)
       },
 
       toggleMobileMenu: () =>
