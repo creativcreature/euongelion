@@ -17,7 +17,7 @@ import {
 import { logApiFailure } from '@/lib/observability/api-failure'
 import { createClient } from '@/lib/supabase/server'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
-import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
 import {
   generateWithBrain,
   openWebConfigured,
@@ -569,14 +569,11 @@ export async function POST(request: NextRequest) {
       userId: user?.id || null,
       sessionToken,
     })
-    const entitlements = resolveEntitlementSnapshot({
-      subscriptionTier:
-        user?.user_metadata?.subscription_tier ||
-        user?.app_metadata?.subscription_tier,
-    })
+    // SA-028: subscription state from public.users, never auth metadata.
+    const billingState = await readUserBillingState(user?.id)
     const usageSummary = await getUsageSummary({
       principalId,
-      isPremium: entitlements.premiumActive,
+      isPremium: billingState?.premiumActive ?? false,
     })
 
     const platformHalted = quotaRequiresByo(usageSummary)
@@ -837,7 +834,7 @@ export async function POST(request: NextRequest) {
       inputTokens: generation.inputTokens,
       outputTokens: generation.outputTokens,
       costUsd: generation.estimatedCostUsd,
-      isPremium: entitlements.premiumActive,
+      isPremium: billingState?.premiumActive ?? false,
       chargeToPlatform,
     })
 

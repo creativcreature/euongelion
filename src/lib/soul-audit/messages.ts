@@ -43,6 +43,12 @@ export const PASTORAL_MESSAGES = {
   SOUL_AUDIT_DISABLED:
     'Soul Audit is temporarily offline for maintenance. Please check back soon.',
   BODY_TOO_LARGE: 'Your message is too long. Please shorten it and try again.',
+  SIGN_IN_REQUIRED_FOR_GENERATION:
+    'A custom plan is composed just for you and saved so it can find you again. Sign in to continue — your reflection stays right here.',
+  GENERATION_ENTITLEMENT_REQUIRED:
+    'Your free custom edition has been used. Subscribe to compose another — the library and the Soul Audit stay free, always.',
+  GENERATION_ALLOWANCE_REACHED:
+    'You’ve reached this month’s editions. Your allowance refreshes at the start of next month.',
 } as const
 
 export type PastoralMessageKey = keyof typeof PASTORAL_MESSAGES

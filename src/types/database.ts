@@ -61,6 +61,35 @@ export type User = Timestamps & {
    * See `database/migrations/010_add_founding_member.sql`.
    */
   founding_member_at: string | null
+  /**
+   * SA-028 subscription state (single source of truth; written by
+   * Stripe webhooks, read via `src/lib/billing/subscription-state.ts`).
+   * See `supabase/migrations/20260710000001_custom_generation_entitlements.sql`.
+   */
+  stripe_customer_id: string | null
+  stripe_subscription_id: string | null
+  subscription_status: string | null
+  subscription_renews_at: string | null
+  /** Term expiry for one-time 2yr/3yr plans. */
+  premium_expires_at: string | null
+  /** SA-026: one-time free generation grant. NULL = unused. */
+  free_generation_used_at: string | null
+}
+
+/**
+ * SA-028 / brief §12.1: processed Stripe webhook event ids (replay
+ * safety). Service-role only.
+ */
+export type StripeWebhookEvent = {
+  event_id: string
+  event_type: string
+  processed_at: string
+}
+
+export type StripeWebhookEventInsert = {
+  event_id: string
+  event_type: string
+  processed_at?: string
 }
 
 export type UserPreferences = {
@@ -89,6 +118,12 @@ export type UserUpdate = {
   onboarding_completed?: boolean
   preferences?: UserPreferences
   founding_member_at?: string | null
+  stripe_customer_id?: string | null
+  stripe_subscription_id?: string | null
+  subscription_status?: string | null
+  subscription_renews_at?: string | null
+  premium_expires_at?: string | null
+  free_generation_used_at?: string | null
 }
 
 // =============================================================================
@@ -814,6 +849,12 @@ export type Database = {
         Row: MockAccountSession
         Insert: MockAccountSessionInsert
         Update: MockAccountSessionUpdate
+        Relationships: []
+      }
+      stripe_webhook_events: {
+        Row: StripeWebhookEvent
+        Insert: StripeWebhookEventInsert
+        Update: StripeWebhookEventInsert
         Relationships: []
       }
     }

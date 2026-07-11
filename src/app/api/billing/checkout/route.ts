@@ -12,6 +12,9 @@ import {
   takeRateLimit,
   withRateLimitHeaders,
 } from '@/lib/api-security'
+import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
 import type { BillingPlanId, BillingPlatform } from '@/types/billing'
 
 interface CheckoutBody {
@@ -161,23 +164,78 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  // SA-026/SA-028: checkout is an authenticated action. Subscriptions
+  // entitle custom generation, which requires a verified account — and
+  // requiring auth here lets us pass a durable user identity to Stripe
+  // (metadata.user_id + a stored Customer) so webhooks map by id, never
+  // by brittle email match.
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) {
+    return jsonWithRequestId(
+      {
+        error: 'Sign in to subscribe.',
+        code: 'AUTH_REQUIRED',
+      },
+      { status: 401, requestId },
+    )
+  }
+
   try {
     const stripe = new Stripe(stripeKey)
     const base = appBaseUrl(request)
+    const plan = getPlanById(planId)!
+
+    // Reuse the stored Stripe customer or create one now, so the
+    // customer↔user link exists BEFORE the first webhook arrives.
+    const billingState = await readUserBillingState(user.id)
+    let stripeCustomerId = billingState?.stripeCustomerId ?? null
+    if (!stripeCustomerId) {
+      const customer = await stripe.customers.create({
+        email: user.email ?? undefined,
+        metadata: { user_id: user.id },
+      })
+      stripeCustomerId = customer.id
+      try {
+        const admin = createAdminClient()
+        await admin
+          .from('users')
+          .update({ stripe_customer_id: stripeCustomerId })
+          .eq('id', user.id)
+      } catch {
+        // Non-fatal: the webhook's metadata.user_id path still maps the
+        // event, and handleCheckoutSessionCompleted persists the link.
+      }
+    }
+
+    const isOneTime = plan.billingType === 'one_time'
     const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
+      mode: isOneTime ? 'payment' : 'subscription',
+      customer: stripeCustomerId,
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${base}/settings?billing=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${base}/settings?billing=cancelled`,
       allow_promotion_codes: true,
       billing_address_collection: 'auto',
-      client_reference_id: key.slice(0, 120),
-      subscription_data: {
-        metadata: {
-          source: 'euangelion_web_checkout',
-          plan_id: planId,
-        },
+      client_reference_id: user.id,
+      metadata: {
+        source: 'euangelion_web_checkout',
+        plan_id: planId,
+        user_id: user.id,
       },
+      ...(isOneTime
+        ? {}
+        : {
+            subscription_data: {
+              metadata: {
+                source: 'euangelion_web_checkout',
+                plan_id: planId,
+                user_id: user.id,
+              },
+            },
+          }),
     })
 
     return jsonWithRequestId(

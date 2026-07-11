@@ -761,3 +761,21 @@ features:
     prd: docs/feature-prds/F-074.md
     methodology_refs:
       - M00
+  - id: F-075
+    category: Billing
+    feature: Subscription state single source of truth
+    slug: billing-subscription-state-single-source
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-075.md
+    methodology_refs:
+      - M00
+  - id: F-076
+    category: Billing
+    feature: Custom generation entitlement gate (SA-026)
+    slug: custom-generation-entitlement-gate
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-076.md
+    methodology_refs:
+      - M00

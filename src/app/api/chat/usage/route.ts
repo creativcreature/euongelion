@@ -12,6 +12,7 @@ import {
 } from '@/lib/brain/usage-ledger'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
 
 export async function GET() {
   const requestId = createRequestId()
@@ -28,17 +29,17 @@ export async function GET() {
       userId: user?.id || null,
       sessionToken,
     })
-    const metadata = {
-      subscriptionTier:
-        user?.user_metadata?.subscription_tier ||
-        user?.app_metadata?.subscription_tier,
+    // SA-028: subscription tier comes from public.users (webhook-
+    // written); only cosmetic ownerships still live in auth metadata.
+    const billingState = await readUserBillingState(user?.id)
+    const entitlements = resolveEntitlementSnapshot({
+      subscriptionTier: billingState?.effectiveTier ?? 'free',
       ownedThemes:
         user?.user_metadata?.owned_themes || user?.app_metadata?.owned_themes,
       ownedStickerPacks:
         user?.user_metadata?.owned_sticker_packs ||
         user?.app_metadata?.owned_sticker_packs,
-    }
-    const entitlements = resolveEntitlementSnapshot(metadata)
+    })
 
     const [summary, events] = await Promise.all([
       getUsageSummary({

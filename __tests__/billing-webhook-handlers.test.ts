@@ -2,11 +2,12 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type Stripe from 'stripe'
 
 /**
- * Tests for src/lib/billing/webhook-handlers.ts.
+ * Tests for src/lib/billing/webhook-handlers.ts (SA-028).
  *
- * The handlers do two things: (1) resolve user from email,
- * (2) update subscription_tier. We mock both via the in-memory
- * Supabase admin client.
+ * The handlers resolve the user (stored stripe_customer_id →
+ * metadata.user_id → email fallback) and write the full subscription
+ * state to public.users. We mock via the in-memory Supabase admin
+ * client.
  */
 
 type UserRow = {
@@ -14,6 +15,11 @@ type UserRow = {
   email: string
   subscription_tier?: 'free' | 'premium' | 'lifetime'
   founding_member_at?: string | null
+  stripe_customer_id?: string | null
+  stripe_subscription_id?: string | null
+  subscription_status?: string | null
+  subscription_renews_at?: string | null
+  premium_expires_at?: string | null
 }
 
 let users: UserRow[] = []
@@ -105,13 +111,25 @@ function makeSubscription(opts: {
   status: string
   email?: string
   planId?: string
+  customerId?: string
+  metadataUserId?: string
+  subscriptionId?: string
 }): Stripe.Subscription {
   return {
+    id: opts.subscriptionId ?? 'sub_test',
     status: opts.status,
     customer: opts.email
-      ? ({ email: opts.email, deleted: false } as unknown as Stripe.Customer)
-      : 'cus_no_email',
-    metadata: opts.planId ? { plan_id: opts.planId } : {},
+      ? ({
+          id: opts.customerId ?? 'cus_test',
+          email: opts.email,
+          deleted: false,
+        } as unknown as Stripe.Customer)
+      : (opts.customerId ?? 'cus_no_email'),
+    metadata: {
+      ...(opts.planId ? { plan_id: opts.planId } : {}),
+      ...(opts.metadataUserId ? { user_id: opts.metadataUserId } : {}),
+    },
+    items: { data: [] },
   } as unknown as Stripe.Subscription
 }
 
@@ -157,8 +175,12 @@ describe('handleSubscriptionCreated', () => {
     expect(users[0].subscription_tier).toBe('premium')
   })
 
-  it('skips when status is not active or trialing', async () => {
-    users.push({ id: 'u1', email: 'a@example.com' })
+  it('records a non-active status honestly without granting premium', async () => {
+    users.push({
+      id: 'u1',
+      email: 'a@example.com',
+      subscription_tier: 'free',
+    })
     const sub = makeSubscription({
       status: 'incomplete',
       email: 'a@example.com',
@@ -166,8 +188,9 @@ describe('handleSubscriptionCreated', () => {
     const { handleSubscriptionCreated } =
       await import('@/lib/billing/webhook-handlers')
     const result = await handleSubscriptionCreated(sub, fakeStripe)
-    expect(result.handled).toBe(false)
-    expect(result.skipReason).toContain('non-active')
+    expect(result.handled).toBe(true)
+    expect(users[0].subscription_tier).toBe('free')
+    expect(users[0].subscription_status).toBe('incomplete')
   })
 
   it('skips when no matching user found', async () => {
@@ -289,9 +312,10 @@ describe('handleInvoicePaymentFailed', () => {
     const { handleInvoicePaymentFailed } =
       await import('@/lib/billing/webhook-handlers')
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
-    const result = await handleInvoicePaymentFailed(inv)
+    const result = await handleInvoicePaymentFailed(inv, fakeStripe)
     expect(result.handled).toBe(true)
     expect(users[0].subscription_tier).toBe('premium')
+    expect(users[0].subscription_status).toBe('past_due')
     expect(warnSpy).toHaveBeenCalled()
     warnSpy.mockRestore()
   })
@@ -306,7 +330,7 @@ describe('handleInvoicePaid', () => {
     })
     const inv = makeInvoice({ email: 'a@example.com', hasSubLines: true })
     const { handleInvoicePaid } = await import('@/lib/billing/webhook-handlers')
-    const result = await handleInvoicePaid(inv)
+    const result = await handleInvoicePaid(inv, fakeStripe)
     expect(result.handled).toBe(true)
     expect(users[0].subscription_tier).toBe('premium')
   })
@@ -319,9 +343,133 @@ describe('handleInvoicePaid', () => {
     })
     const inv = makeInvoice({ email: 'a@example.com', hasSubLines: false })
     const { handleInvoicePaid } = await import('@/lib/billing/webhook-handlers')
-    const result = await handleInvoicePaid(inv)
+    const result = await handleInvoicePaid(inv, fakeStripe)
     expect(result.handled).toBe(false)
     expect(result.skipReason).toContain('no subscription lines')
     expect(users[0].subscription_tier).toBe('free')
+  })
+})
+
+describe('customer→user mapping precedence (SA-028)', () => {
+  it('maps by stored stripe_customer_id before anything else', async () => {
+    users.push(
+      {
+        id: 'u-linked',
+        email: 'linked@example.com',
+        subscription_tier: 'free',
+        stripe_customer_id: 'cus_stored',
+      },
+      // Same email as the event customer — must NOT win over the id.
+      { id: 'u-email', email: 'buyer@example.com', subscription_tier: 'free' },
+    )
+    const sub = makeSubscription({
+      status: 'active',
+      email: 'buyer@example.com',
+      customerId: 'cus_stored',
+    })
+    const { handleSubscriptionCreated } =
+      await import('@/lib/billing/webhook-handlers')
+    const result = await handleSubscriptionCreated(sub, fakeStripe)
+    expect(result.userId).toBe('u-linked')
+    expect(users.find((u) => u.id === 'u-linked')?.subscription_tier).toBe(
+      'premium',
+    )
+    expect(users.find((u) => u.id === 'u-email')?.subscription_tier).toBe(
+      'free',
+    )
+  })
+
+  it('maps by metadata.user_id when no stored customer link exists', async () => {
+    users.push({
+      id: 'u-meta',
+      email: 'different@example.com',
+      subscription_tier: 'free',
+    })
+    const sub = makeSubscription({
+      status: 'active',
+      customerId: 'cus_unknown',
+      metadataUserId: 'u-meta',
+    })
+    const { handleSubscriptionCreated } =
+      await import('@/lib/billing/webhook-handlers')
+    const result = await handleSubscriptionCreated(sub, fakeStripe)
+    expect(result.userId).toBe('u-meta')
+    expect(users[0].subscription_tier).toBe('premium')
+  })
+
+  it('falls back to email match and persists the customer link', async () => {
+    users.push({
+      id: 'u-legacy',
+      email: 'legacy@example.com',
+      subscription_tier: 'free',
+    })
+    const sub = makeSubscription({
+      status: 'active',
+      email: 'legacy@example.com',
+      customerId: 'cus_legacy',
+    })
+    const { handleSubscriptionCreated } =
+      await import('@/lib/billing/webhook-handlers')
+    const result = await handleSubscriptionCreated(sub, fakeStripe)
+    expect(result.userId).toBe('u-legacy')
+    expect(users[0].stripe_customer_id).toBe('cus_legacy')
+    expect(users[0].stripe_subscription_id).toBe('sub_test')
+  })
+})
+
+describe('handleCheckoutSessionCompleted', () => {
+  function makeSession(opts: {
+    mode: 'payment' | 'subscription'
+    planId?: string
+    userId?: string
+    customerId?: string
+    paymentStatus?: string
+  }): Stripe.Checkout.Session {
+    return {
+      mode: opts.mode,
+      status: 'complete',
+      payment_status: opts.paymentStatus ?? 'paid',
+      customer: opts.customerId ?? 'cus_test',
+      client_reference_id: opts.userId ?? null,
+      created: Math.floor(Date.parse('2026-07-10T00:00:00.000Z') / 1000),
+      metadata: {
+        ...(opts.planId ? { plan_id: opts.planId } : {}),
+        ...(opts.userId ? { user_id: opts.userId } : {}),
+      },
+    } as unknown as Stripe.Checkout.Session
+  }
+
+  it('grants term premium for a one-time 2-year plan', async () => {
+    users.push({ id: 'u1', email: 'a@example.com', subscription_tier: 'free' })
+    const session = makeSession({
+      mode: 'payment',
+      planId: 'premium_2year',
+      userId: 'u1',
+    })
+    const { handleCheckoutSessionCompleted } =
+      await import('@/lib/billing/webhook-handlers')
+    const result = await handleCheckoutSessionCompleted(session, fakeStripe)
+    expect(result.handled).toBe(true)
+    expect(result.userId).toBe('u1')
+    expect(users[0].premium_expires_at).toBe('2028-07-10T00:00:00.000Z')
+    expect(users[0].subscription_status).toBe('term_active')
+  })
+
+  it('only persists the customer link for subscription-mode sessions', async () => {
+    users.push({ id: 'u1', email: 'a@example.com', subscription_tier: 'free' })
+    const session = makeSession({
+      mode: 'subscription',
+      planId: 'premium_annual',
+      userId: 'u1',
+      customerId: 'cus_new',
+    })
+    const { handleCheckoutSessionCompleted } =
+      await import('@/lib/billing/webhook-handlers')
+    const result = await handleCheckoutSessionCompleted(session, fakeStripe)
+    expect(result.handled).toBe(true)
+    expect(users[0].stripe_customer_id).toBe('cus_new')
+    // Premium itself arrives via customer.subscription.created.
+    expect(users[0].subscription_tier).toBe('free')
+    expect(users[0].premium_expires_at ?? null).toBeNull()
   })
 })

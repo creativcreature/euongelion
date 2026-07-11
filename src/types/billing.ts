@@ -96,5 +96,13 @@ export interface BillingEntitlementsResponse {
       'theme-customization': boolean
       'sticker-overlays': boolean
     }
+    /** Raw Stripe subscription status as of the last verified webhook. */
+    subscriptionStatus?: string | null
+    /** ISO renewal date of the active subscription (management UI). */
+    subscriptionRenewsAt?: string | null
+    /** Term expiry for one-time 2yr/3yr plans. */
+    premiumExpiresAt?: string | null
+    /** SA-026: whether the one-time free custom generation is spent. */
+    freeGenerationUsed?: boolean
   }
 }

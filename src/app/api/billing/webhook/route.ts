@@ -13,7 +13,9 @@ import {
   handleSubscriptionDeleted,
   handleInvoicePaymentFailed,
   handleInvoicePaid,
+  handleCheckoutSessionCompleted,
 } from '@/lib/billing/webhook-handlers'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 /**
  * POST /api/billing/webhook
@@ -57,6 +59,49 @@ import {
 // Tell Next.js this route consumes the raw body — required for
 // Stripe HMAC verification.
 export const runtime = 'nodejs'
+
+/**
+ * Idempotency (brief §12.1 / SA-028): processed event ids live in
+ * public.stripe_webhook_events. We CHECK before dispatch and RECORD
+ * after successful dispatch — at-least-once semantics (a handler that
+ * throws returns 500 so Stripe retries, and the retry is not treated
+ * as a duplicate because nothing was recorded). Handlers themselves
+ * are idempotent, so the rare concurrent duplicate delivery is safe.
+ *
+ * Fails open on storage errors: a broken idempotency store must not
+ * drop paid events; handlers tolerate re-runs.
+ */
+async function wasEventProcessed(eventId: string): Promise<boolean> {
+  try {
+    const supabase = createAdminClient()
+    const { data } = await supabase
+      .from('stripe_webhook_events')
+      .select('event_id')
+      .eq('event_id', eventId)
+      .maybeSingle()
+    return Boolean(data)
+  } catch {
+    return false
+  }
+}
+
+async function recordEventProcessed(
+  eventId: string,
+  eventType: string,
+): Promise<void> {
+  try {
+    const supabase = createAdminClient()
+    await supabase
+      .from('stripe_webhook_events')
+      .upsert(
+        { event_id: eventId, event_type: eventType },
+        { onConflict: 'event_id', ignoreDuplicates: true },
+      )
+  } catch {
+    // Non-fatal: handlers are idempotent; a missed record only means a
+    // future retry does redundant-but-safe work.
+  }
+}
 
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
@@ -144,6 +189,17 @@ export async function POST(request: NextRequest) {
     })
   }
 
+  // Replay safety: skip events we've already processed successfully.
+  if (await wasEventProcessed(event.id)) {
+    return withRequestIdHeaders(
+      NextResponse.json(
+        { ok: true, eventType: event.type, eventId: event.id, duplicate: true },
+        { status: 200, headers: { 'Cache-Control': 'no-store' } },
+      ),
+      requestId,
+    )
+  }
+
   // Event verified. Dispatch.
   let dispatchResult: Record<string, unknown> = {
     eventType: event.type,
@@ -181,7 +237,10 @@ export async function POST(request: NextRequest) {
       case 'invoice.paid':
         dispatchResult = {
           ...dispatchResult,
-          ...(await handleInvoicePaid(event.data.object as Stripe.Invoice)),
+          ...(await handleInvoicePaid(
+            event.data.object as Stripe.Invoice,
+            stripe,
+          )),
         }
         break
       case 'invoice.payment_failed':
@@ -189,16 +248,21 @@ export async function POST(request: NextRequest) {
           ...dispatchResult,
           ...(await handleInvoicePaymentFailed(
             event.data.object as Stripe.Invoice,
+            stripe,
           )),
         }
         break
       case 'checkout.session.completed':
-        // Primary handling is via the GET /api/billing/lifecycle poll.
-        // Acknowledge here so Stripe stops retrying.
+        // Canonical grant moment for one-time term plans + persists the
+        // customer↔user link for every session (SA-028). The GET
+        // /api/billing/lifecycle poll remains the fast success-page
+        // read; entitlement writes happen ONLY here (webhook-driven).
         dispatchResult = {
           ...dispatchResult,
-          handled: true,
-          delegatedTo: '/api/billing/lifecycle',
+          ...(await handleCheckoutSessionCompleted(
+            event.data.object as Stripe.Checkout.Session,
+            stripe,
+          )),
         }
         break
       case 'charge.refunded':
@@ -239,6 +303,10 @@ export async function POST(request: NextRequest) {
       details: { eventType: event.type, eventId: event.id },
     })
   }
+
+  // Record AFTER successful dispatch so a thrown handler (500 above)
+  // gets a real retry instead of a duplicate-skip.
+  await recordEventProcessed(event.id, event.type)
 
   return withRequestIdHeaders(
     NextResponse.json(

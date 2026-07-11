@@ -44,6 +44,13 @@ import { takeSoulAuditDailyLimit } from '@/lib/soul-audit/rate-limit'
 import { checkDailyBudget } from '@/lib/soul-audit/budget-cap'
 import { PASTORAL_MESSAGES } from '@/lib/soul-audit/messages'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { createClient as createServerSupabase } from '@/lib/supabase/server'
+import {
+  checkGenerationEntitlement,
+  generationGateLive,
+  releaseFreeGeneration,
+  reserveFreeGeneration,
+} from '@/lib/billing/generation-entitlement'
 import type { JobRecord } from '@/types/soul-audit-plan'
 import type { SoulAuditSelectRequest } from '@/types/soul-audit'
 
@@ -351,6 +358,12 @@ export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   const clientKey = getClientKey(request)
 
+  // SA-026 free-grant reservation state — hoisted so the catch block
+  // can release a reserved grant if plan creation throws mid-flight.
+  let freeGrantReserved = false
+  let usesFreeGrant = false
+  let gateUserId: string | null = null
+
   try {
     // ─── Parse body ───
     const parsed = await readJsonWithLimit<SoulAuditSelectRequest>({
@@ -645,6 +658,52 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // ─── SA-026 entitlement gate (new plans only) ───
+    // Idempotent re-selects of an in-flight/complete job returned above and
+    // are never gated or charged. Composing a NEW bespoke plan requires a
+    // verified account: 1 free generation per account, then subscription
+    // (SA-027). Checked BEFORE any plan/job creation or model spend.
+    // GENERATION_GATE_LIVE ships the gate together with the paywall UI —
+    // gating without a way to pay would be a partial launch (rule 10).
+    if (generationGateLive()) {
+      const supabaseServer = await createServerSupabase()
+      const {
+        data: { user: authUser },
+      } = await supabaseServer.auth.getUser()
+
+      if (!authUser) {
+        return jsonError({
+          error: PASTORAL_MESSAGES.SIGN_IN_REQUIRED_FOR_GENERATION,
+          code: 'SIGN_IN_REQUIRED',
+          status: 401,
+          requestId,
+        })
+      }
+      gateUserId = authUser.id
+
+      const entitlement = await checkGenerationEntitlement(authUser.id)
+      if (!entitlement.allowed) {
+        return jsonError({
+          error:
+            entitlement.reason === 'allowance_exhausted'
+              ? PASTORAL_MESSAGES.GENERATION_ALLOWANCE_REACHED
+              : PASTORAL_MESSAGES.GENERATION_ENTITLEMENT_REQUIRED,
+          code: 'GENERATION_ENTITLEMENT_REQUIRED',
+          status: 402,
+          requestId,
+          details: {
+            reason: entitlement.reason,
+            freeGenerationUsed: entitlement.freeGenerationUsed,
+          },
+        })
+      }
+
+      // The actual free-grant reservation happens AFTER the daily-cap
+      // and budget pre-checks below, so a 429 there never burns the
+      // grant. Remember the source for that step.
+      usesFreeGrant = entitlement.source === 'free_grant'
+    }
+
     // ─── Per-day plan cap (cost control) ───
     // We only reach here when a BRAND-NEW plan + generation job is about to be
     // created (idempotent re-selects of an in-flight/complete job returned
@@ -707,6 +766,24 @@ export async function POST(request: NextRequest) {
       nowUtc: nowUTC,
     })
 
+    // ─── SA-026: reserve the free grant (atomic, post-prechecks) ───
+    // All pre-checks passed; this is the moment of commitment. The
+    // conditional UPDATE (WHERE free_generation_used_at IS NULL) means
+    // two concurrent selects can't both ride the one grant. Released on
+    // any creation failure below so our error never costs the grant.
+    if (usesFreeGrant && gateUserId) {
+      freeGrantReserved = await reserveFreeGeneration(gateUserId)
+      if (!freeGrantReserved) {
+        return jsonError({
+          error: PASTORAL_MESSAGES.GENERATION_ENTITLEMENT_REQUIRED,
+          code: 'GENERATION_ENTITLEMENT_REQUIRED',
+          status: 402,
+          requestId,
+          details: { reason: 'no_entitlement', freeGenerationUsed: true },
+        })
+      }
+    }
+
     // ─── Create plan instance ───
     const planToken = randomUUID()
     const planInstanceId = randomUUID()
@@ -736,6 +813,10 @@ export async function POST(request: NextRequest) {
     })
 
     if (!planInserted) {
+      if (freeGrantReserved && gateUserId) {
+        await releaseFreeGeneration(gateUserId)
+        freeGrantReserved = false
+      }
       return jsonError({
         error: 'Unable to create devotional plan. Please retry.',
         code: 'PLAN_CREATE_FAILED',
@@ -809,6 +890,10 @@ export async function POST(request: NextRequest) {
 
     const jobInserted = await insertJob(job)
     if (!jobInserted) {
+      if (freeGrantReserved && gateUserId) {
+        await releaseFreeGeneration(gateUserId)
+        freeGrantReserved = false
+      }
       return jsonError({
         error: 'Unable to create generation job. Please retry.',
         code: 'JOB_CREATE_FAILED',
@@ -851,6 +936,10 @@ export async function POST(request: NextRequest) {
       requestId,
     )
   } catch (error) {
+    // A reserved free grant must never be lost to our exception.
+    if (freeGrantReserved && gateUserId) {
+      await releaseFreeGeneration(gateUserId)
+    }
     logApiError({
       scope: 'soul-audit-select',
       requestId,

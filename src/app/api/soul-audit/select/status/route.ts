@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { createClient as createServerSupabase } from '@/lib/supabase/server'
+import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { internalFetchHeaders } from '@/lib/internal-auth'
 import { reconstructGenerationState } from '@/lib/soul-audit/plan-queries'
 import {
@@ -70,6 +72,47 @@ export async function GET(request: NextRequest) {
   }
 
   const record = job as JobRecord
+
+  // ─── Ownership scoping (§12.3 IDOR) ───────────────────────────────
+  // A job may only be polled by the session that created it, or by the
+  // signed-in user that session belongs to (post-merge). Anyone else
+  // gets 404 — indistinguishable from a nonexistent job. Legacy rows
+  // without a session_id (pre-formalization) are exempt; they age out
+  // in minutes.
+  if (record.session_id) {
+    let authorized = false
+    try {
+      const callerToken = await getOrCreateAuditSessionToken()
+      authorized = callerToken === record.session_id
+    } catch {
+      // no request-scoped cookie store (shouldn't happen on this route)
+    }
+    if (!authorized) {
+      try {
+        const server = await createServerSupabase()
+        const {
+          data: { user },
+        } = await server.auth.getUser()
+        if (user) {
+          const { data: link } = await (supabase as any)
+            .from('user_sessions')
+            .select('session_token')
+            .eq('session_token', record.session_id)
+            .eq('user_id', user.id)
+            .maybeSingle()
+          authorized = Boolean(link)
+        }
+      } catch {
+        // fall through to 404
+      }
+    }
+    if (!authorized) {
+      return NextResponse.json(
+        { error: 'Job not found.' },
+        { status: 404, headers: cors },
+      )
+    }
+  }
   const now = Date.now()
   const updatedAt = new Date(record.updated_at).getTime()
 

@@ -5,6 +5,82 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Phase 1a/1b: billing source of truth + entitlement gate (2026-07-10)
+
+SA-028 + SA-026 backend foundation (F-075, F-076):
+
+1. **Billing read/write split fixed (SA-028, F-075).** Migration
+   `supabase/migrations/20260710000001`: `public.users` gains
+   `stripe_customer_id` / `stripe_subscription_id` / `subscription_status` /
+   `subscription_renews_at` / `premium_expires_at` /
+   `free_generation_used_at`; new `stripe_webhook_events` idempotency table;
+   `soul_audit_jobs` formalized (was live-only). New
+   `src/lib/billing/subscription-state.ts` is the ONLY subscription reader
+   (term-expiry-aware, fail-closed). Webhook handlers rewritten: mapping by
+   stored customer id → `metadata.user_id` → email (first-link fallback that
+   persists the id); one state writer; `checkout.session.completed` now
+   grants one-time 2yr/3yr terms (`payment` mode + `premium_expires_at` —
+   these previously could not check out at all). Webhook route gained a
+   replay-safety store. Checkout now requires auth (401), creates/reuses a
+   Stripe Customer, and passes durable user identity. All four metadata tier
+   reads (entitlements, chat, chat/usage, brain providers) moved to the DB;
+   regression test asserts metadata-planted tiers are IGNORED.
+2. **SA-026 generation gate (F-076).** New
+   `src/lib/billing/generation-entitlement.ts`: verified account required for
+   NEW bespoke plans (401 `SIGN_IN_REQUIRED` / 402
+   `GENERATION_ENTITLEMENT_REQUIRED`), 1 free generation per account consumed
+   atomically AFTER cap/budget pre-checks (a 429 never burns the grant;
+   released on creation failure), subscriber monthly allowance (env-tunable,
+   default 6) counted from real plan instances. Idempotent re-selects never
+   gated. Gate ships dark behind `GENERATION_GATE_LIVE` so it flips together
+   with the paywall (rule 10 — no gate without a way to pay).
+3. **IDOR fix:** `/api/soul-audit/select/status` now scoped to the owning
+   session (or its signed-in user); any other caller gets 404. Previously any
+   holder of a leaked jobId could poll progress and trigger generation kicks.
+4. Tests: +36 (billing handlers/mapping 16, entitlements API 4, gate unit 12,
+   status IDOR 4). Full suite 124 files / 1660 green. Type-check clean.
+
+---
+
+## CUSTOM GENERATION — Phase 0: recon, founder rulings, reset script (2026-07-10)
+
+Founder delivered the custom-generation implementation brief (six access
+paths around the existing generation pipeline). Phase 0 completed:
+
+1. **Recon (4 parallel audits).** Generation seam mapped: `runGenerationDay`
+   (`src/lib/soul-audit/generation-runner.ts:82`) / `generateGroundedDay`
+   (`grounded-weave.ts:751`); jobs already exist (`soul_audit_jobs` — live-only
+   table, no migration in repo, must be formalized before entitlement work).
+   Stripe checkout/webhook/portal/entitlements already built, gated behind
+   `BILLING_CHECKOUT_LIVE`. Found load-bearing billing bug: webhooks write
+   `public.users.subscription_tier`, all entitlement reads check auth
+   `user_metadata` — a real subscription would never activate; no
+   `stripe_customer_id` stored (email-match mapping only).
+2. **Founder rulings ratified (SA-026/SA-027/SA-028** in
+   `docs/production-decisions.yaml`; mirrored in MASTER-DECISIONS §4 amendment
+   - PRODUCTION-SOURCE-OF-TRUTH 2026-07-10 amendment): locked pricing stands
+     ($7/$77/$140/$200 — brief's $4.99/$39 figures dead); custom generation now
+     requires a verified account with 1 free generation each (audit + matches +
+     curated reading stay anonymous/free forever; SA-033 no-gate-before-reading
+     intact); all six access paths approved with subscription primary; billing
+     state single-sourced in `public.users` with stored Stripe IDs.
+3. **Fresh-start reset script** (`scripts/ops/fresh-start-reset.mjs` +
+   `docs/runbooks/FRESH-START-RESET-RUNBOOK.md`): backup→verify→wipe with six
+   hard gates (verified manifest, live-count match, schema-drift refusal,
+   Stripe review-only, TTY + typed host confirmation, post-wipe zero check).
+   Hard-deletes auth users (no tombstones/blocklists). Founder-triggered only;
+   not yet executed. `backups/` gitignored (PII).
+4. **Phase-1 Mobbin pulls + pattern approval.** Fresh pulls (26 searches) for
+   paywall/checkout/settings + onboarding/passwordless/interstitials,
+   synthesized into `docs/design/CUSTOM-GENERATION-PATTERN-DECISIONS.md` —
+   **founder-approved 2026-07-10** with picks resolved: desktop wait = "press
+   room meets Upper Room" full route; wait = held moment (undismissable, with
+   strictly honest staged progress); arrival echo = quote-with-consent-cue,
+   relevance always legible; named reminder windows; 2yr/3yr behind More
+   durations; Founding Member on success + /pricing only.
+
+---
+
 ## LAUNCH-READINESS — LCP loop final keeps (rounds 3-4, loop terminated by founder) (2026-07-10)
 
 1. **Reader loading boundaries removed** — the segment `loading.tsx` baked a

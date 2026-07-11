@@ -78,3 +78,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-072 | PWA               | Install prompt post-value moment                 | 0/10     | open   | [F-072.md](./F-072.md) |
 | F-073 | Settings          | Settings restructure (grouped + profile)         | 0/10     | open   | [F-073.md](./F-073.md) |
 | F-074 | Polish            | State completeness + signature polish            | 0/10     | open   | [F-074.md](./F-074.md) |
+| F-075 | Billing           | Subscription state single source of truth        | 0/10     | wip    | [F-075.md](./F-075.md) |
+| F-076 | Billing           | Custom generation entitlement gate (SA-026)      | 0/10     | wip    | [F-076.md](./F-076.md) |

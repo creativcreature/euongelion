@@ -9,7 +9,7 @@ import {
   withRequestIdHeaders,
 } from '@/lib/api-security'
 import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
-import { readFoundingMemberAt } from '@/lib/billing/founding-member'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
 import type { BillingEntitlementsResponse } from '@/types/billing'
 
 const MAX_REQUESTS_PER_MINUTE = 60
@@ -42,20 +42,17 @@ export async function GET(request: NextRequest) {
     } = await supabase.auth.getUser()
 
     const userMetadata = (user?.user_metadata || {}) as Record<string, unknown>
-    const appMetadata = (user?.app_metadata || {}) as Record<string, unknown>
+
+    // SA-028: subscription state comes from public.users — the row the
+    // Stripe webhooks write — via the single reader. Auth metadata is
+    // consulted only for cosmetic ownerships (themes/stickers), never
+    // for tier. Founding Member rides on the same row.
+    const billingState = await readUserBillingState(user?.id)
     const snapshot = resolveEntitlementSnapshot({
-      subscriptionTier:
-        userMetadata.subscription_tier || appMetadata.subscription_tier,
+      subscriptionTier: billingState?.effectiveTier ?? 'free',
       ownedThemes: userMetadata.owned_themes,
       ownedStickerPacks: userMetadata.owned_sticker_packs,
     })
-
-    // Founding Member status: read from public.users.founding_member_at
-    // (set ONCE by the Stripe lifecycle webhook on first annual
-    // subscription, never unset). When the user isn't authenticated or
-    // the column lookup fails, default to non-founding so we never
-    // falsely claim status.
-    const foundingMemberAt = await readFoundingMemberAt(user?.id ?? null)
 
     const payload: BillingEntitlementsResponse = {
       ok: true,
@@ -64,11 +61,15 @@ export async function GET(request: NextRequest) {
       entitlements: {
         subscriptionTier: snapshot.subscriptionTier,
         premiumActive: snapshot.premiumActive,
-        foundingMember: foundingMemberAt !== null,
-        foundingMemberAt,
+        foundingMember: billingState?.foundingMemberAt != null,
+        foundingMemberAt: billingState?.foundingMemberAt ?? null,
         ownedThemes: snapshot.ownedThemes,
         ownedStickerPacks: snapshot.ownedStickerPacks,
         features: snapshot.features,
+        subscriptionStatus: billingState?.subscriptionStatus ?? null,
+        subscriptionRenewsAt: billingState?.subscriptionRenewsAt ?? null,
+        premiumExpiresAt: billingState?.premiumExpiresAt ?? null,
+        freeGenerationUsed: billingState?.freeGenerationUsedAt != null,
       },
     }
 

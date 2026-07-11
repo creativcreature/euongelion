@@ -17,7 +17,7 @@ import {
   resolvePrincipalId,
 } from '@/lib/brain/usage-ledger'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
-import { resolveEntitlementSnapshot } from '@/lib/billing/entitlements'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
 
 export async function GET() {
   const requestId = createRequestId()
@@ -32,18 +32,16 @@ export async function GET() {
     } = await supabase.auth.getUser()
 
     const settings = user ? readBrainSettingsFromMetadata(user) : null
-    const entitlements = resolveEntitlementSnapshot({
-      subscriptionTier:
-        user?.user_metadata?.subscription_tier ||
-        user?.app_metadata?.subscription_tier,
-    })
+    // SA-028: subscription state is read from public.users (webhook-
+    // written), never from auth metadata.
+    const billingState = await readUserBillingState(user?.id)
     const principalId = resolvePrincipalId({
       userId: user?.id || null,
       sessionToken,
     })
     const usageSummary = await getUsageSummary({
       principalId,
-      isPremium: entitlements.premiumActive,
+      isPremium: billingState?.premiumActive ?? false,
     })
     const platformKeysEnabled = !quotaRequiresByo(usageSummary)
 
