@@ -797,3 +797,12 @@ features:
     prd: docs/feature-prds/F-078.md
     methodology_refs:
       - M00
+  - id: F-079
+    category: Soul Audit UX
+    feature: Held-moment interstitial + passwordless hardening
+    slug: held-moment-interstitial-passwordless-hardening
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-079.md
+    methodology_refs:
+      - M00

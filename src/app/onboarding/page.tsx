@@ -50,11 +50,16 @@ export default async function OnboardingPage({
       <main id="main-content" className="mock-paper">
         <EuangelionShellHeader />
 
-        <section className="shell-content-pad mx-auto flex min-h-[calc(100vh-120px)] max-w-2xl flex-col justify-center py-12">
-          <OnboardingClient
-            finalRedirect={redirectTarget}
-            initialPreferences={initialPreferences}
-          />
+        {/* SA-024 — two bespoke presentations: mobile is a full-bleed
+            sequential screen; desktop floats a compact letterpress card
+            over a full-viewport editorial canvas (Superlist model). */}
+        <section className="onboarding-canvas">
+          <div className="onboarding-card">
+            <OnboardingClient
+              finalRedirect={redirectTarget}
+              initialPreferences={initialPreferences}
+            />
+          </div>
         </section>
 
         <SiteFooter />

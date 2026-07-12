@@ -1213,6 +1213,36 @@ export default function SettingsPage() {
             {/* REMINDERS ------------------------------------------------ */}
             <SettingsCard id="reminders" title="REMINDERS">
               <ReminderScheduler />
+              {/* Phase 1d (pattern doc §7.7) — the account onboarding is
+                  re-enterable from here, and only here. Anonymous readers
+                  have the landing-page first-run intro instead. */}
+              {accountAuthed && (
+                <CardSection id="revisit-welcome">
+                  <h3 className="text-label vw-small mb-4 text-gold">
+                    YOUR WELCOME
+                  </h3>
+                  <Link
+                    href="/onboarding?force=1"
+                    className="flex min-h-[44px] items-center justify-between gap-4 px-4 py-3 transition-theme"
+                    style={{
+                      border: '1px solid var(--color-border)',
+                      backgroundColor: 'var(--color-surface)',
+                    }}
+                  >
+                    <span className="min-w-0">
+                      <span className="vw-body block text-[var(--color-text-primary)]">
+                        Revisit your welcome
+                      </span>
+                      <span className="vw-small text-muted">
+                        Reminder window and notifications, one step at a time
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="text-secondary">
+                      →
+                    </span>
+                  </Link>
+                </CardSection>
+              )}
             </SettingsCard>
 
             {/* ACCOUNT -------------------------------------------------- */}

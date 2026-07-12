@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendMagicLink } from '@/lib/auth'
 import {
+  turnstileFailureMessage,
+  turnstileSecretKey,
+  verifyTurnstileToken,
+} from '@/lib/auth/turnstile'
+import {
   getClientKey,
   readJsonWithLimit,
   sanitizeSafeRedirectPath,
@@ -11,9 +16,14 @@ import {
 interface MagicLinkBody {
   email?: string
   redirectTo?: string
+  /** Cloudflare Turnstile token — required only when the server has
+   *  TURNSTILE_SECRET_KEY configured (brief §12.4). */
+  turnstileToken?: string
 }
 
-const MAX_BODY_BYTES = 2_048
+// Turnstile tokens can be up to 2048 characters, so the body cap leaves
+// room for token + email + redirect.
+const MAX_BODY_BYTES = 8_192
 const MAX_MAGIC_LINK_REQUESTS_PER_MINUTE = 8
 
 function isValidEmail(email: string): boolean {
@@ -58,6 +68,26 @@ export async function POST(request: NextRequest) {
         { error: 'Please enter a valid email address.' },
         { status: 400 },
       )
+    }
+
+    // Turnstile (brief §12.4) — verification runs ONLY when the secret is
+    // configured; with it unset this route behaves exactly as before.
+    const secretKey = turnstileSecretKey()
+    if (secretKey) {
+      const verification = await verifyTurnstileToken({
+        token: parsed.data.turnstileToken,
+        secretKey,
+        remoteIp:
+          request.headers.get('cf-connecting-ip') ||
+          request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+          null,
+      })
+      if (!verification.ok) {
+        return NextResponse.json(
+          { error: turnstileFailureMessage(verification.reason) },
+          { status: verification.reason === 'unavailable' ? 503 : 403 },
+        )
+      }
     }
 
     const redirectPath =

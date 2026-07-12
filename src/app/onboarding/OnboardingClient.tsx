@@ -1,147 +1,105 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSettingsStore } from '@/stores/settingsStore'
-import { useUIStore } from '@/stores/uiStore'
-import type {
-  BibleTranslationPreference,
-  OnboardingPreferences,
-  SabbathDayPreference,
-  TextScalePreference,
-  ThemePreference,
-} from '@/lib/auth/onboarding'
-import { BIBLE_TRANSLATION_CODES, BIBLE_TRANSLATIONS } from '@/lib/bible'
+import type { OnboardingPreferences } from '@/lib/auth/onboarding'
+import {
+  ONBOARDING_BEATS,
+  ONBOARDING_WINDOW_CHOICES,
+  beatIndex,
+  isOnboardingWindowChoice,
+  nextBeat,
+  previousBeat,
+  resolveOnboardingDestination,
+  type OnboardingBeat,
+  type OnboardingWindowChoice,
+} from '@/lib/auth/onboarding-flow'
+import { REMINDER_WINDOWS } from '@/lib/push/reminder-window'
+import {
+  detectReminderCapability,
+  enableReminders,
+  type ReminderCapability,
+} from '@/lib/push/subscribe-client'
 
 interface OnboardingClientProps {
   finalRedirect: string
   initialPreferences: OnboardingPreferences
 }
 
-type StepKey = 'welcome' | 'rhythm' | 'display' | 'scripture' | 'tour'
-
 type SaveResponse = {
   ok?: boolean
   error?: string
 }
 
-const STEPS: Array<{
-  key: StepKey
-  label: string
-  title: string
-  description: string
-}> = [
-  {
-    key: 'welcome',
-    label: 'STEP 1',
-    title: 'Set Up Your Daily Rhythm',
-    description:
-      'We will configure your Sabbath rest day and reading defaults in under a minute. You can skip now and adjust later in Settings.',
-  },
-  {
-    key: 'rhythm',
-    label: 'STEP 2',
-    title: 'Choose Your Sabbath',
-    description:
-      'No new day unlocks on your Sabbath. This keeps your devotional pace grounded in rest.',
-  },
-  {
-    key: 'display',
-    label: 'STEP 3',
-    title: 'Tune Reading Comfort',
-    description:
-      'Pick theme, text size, and readability options before you enter the main app.',
-  },
-  {
-    key: 'scripture',
-    label: 'STEP 4',
-    title: 'Set Scripture Defaults',
-    description:
-      'Select your preferred translation for cards and devotional reading.',
-  },
-  {
-    key: 'tour',
-    label: 'STEP 5',
-    title: 'Know Where Everything Lives',
-    description:
-      'Quick orientation to Soul Audit, Daily Bread, and Settings so users do not miss core features.',
-  },
-]
-
-function OptionButton({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean
-  onClick: () => void
-  children: string
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      className="px-6 py-3 text-label vw-small transition-theme"
-      style={{
-        backgroundColor: active ? 'var(--color-fg)' : 'var(--color-surface)',
-        color: active ? 'var(--color-bg)' : 'var(--color-text-secondary)',
-        border: `1px solid ${active ? 'var(--color-fg)' : 'var(--color-border)'}`,
-      }}
-    >
-      {children}
-    </button>
-  )
-}
-
+/**
+ * Account onboarding — the bookend welcome (pattern doc §4, F-065
+ * extension). The reader arrives here mid-journey: they created an
+ * account at the generation gate, having already told us what they're
+ * wrestling with. So this is a brief welcome, never a cold-start quiz:
+ *
+ *   warm framing (the WHY precedes the what)
+ *   → beat A: named reminder window — Morning / Midday / Evening (§7.3)
+ *   → beat B: reminders opt-in with an equal-dignity "Not now"
+ *     (web-push permission is requested ONLY on the explicit yes)
+ *   → bridge: what the answers were for + the honesty line
+ *   → lands IN content (the held plan / interstitial via redirect, the
+ *     active plan, or Daily Bread) — never a menu.
+ *
+ * Skip sits directly above Continue; skipping everything still lands in
+ * content with defaults. State persists in the existing auth-metadata
+ * keys via /api/auth/onboarding (admin reset stays compatible), and the
+ * flow is re-enterable from Settings → "Revisit your welcome".
+ */
 export default function OnboardingClient({
   finalRedirect,
   initialPreferences,
 }: OnboardingClientProps) {
   const router = useRouter()
-  const setTheme = useUIStore((state) => state.setTheme)
-  const setSabbathDay = useSettingsStore((state) => state.setSabbathDay)
-  const setBibleTranslation = useSettingsStore(
-    (state) => state.setBibleTranslation,
-  )
-  const setDefaultBrainMode = useSettingsStore(
-    (state) => state.setDefaultBrainMode,
-  )
-  const setOpenWebDefaultEnabled = useSettingsStore(
-    (state) => state.setOpenWebDefaultEnabled,
-  )
-  const setDevotionalDepthPreference = useSettingsStore(
-    (state) => state.setDevotionalDepthPreference,
-  )
-  const setTextScale = useSettingsStore((state) => state.setTextScale)
-  const setReduceMotion = useSettingsStore((state) => state.setReduceMotion)
-  const setHighContrast = useSettingsStore((state) => state.setHighContrast)
-  const setReadingComfort = useSettingsStore((state) => state.setReadingComfort)
+  const storedWindow = useSettingsStore((s) => s.reminderWindow)
+  const setReminderWindow = useSettingsStore((s) => s.setReminderWindow)
 
-  const [stepIndex, setStepIndex] = useState(0)
+  const [beat, setBeat] = useState<OnboardingBeat>('welcome')
+  const [windowChoice, setWindowChoice] = useState<OnboardingWindowChoice>(
+    isOnboardingWindowChoice(storedWindow) ? storedWindow : 'morning',
+  )
+  const [capability, setCapability] = useState<ReminderCapability | null>(null)
+  const [reminderNotice, setReminderNotice] = useState<string | null>(null)
+  const [remindersEnabled, setRemindersEnabled] = useState(false)
+  const [busy, setBusy] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [prefs, setPrefs] = useState<OnboardingPreferences>(initialPreferences)
+  const [activePlanRoute, setActivePlanRoute] = useState<string | null>(null)
 
-  const currentStep = STEPS[stepIndex]
-  const isLastStep = stepIndex === STEPS.length - 1
+  // Capability detection is a browser question — answer it client-side once.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-shot browser capability probe
+    setCapability(detectReminderCapability())
+  }, [])
 
-  const progressWidth = useMemo(() => {
-    return `${Math.round(((stepIndex + 1) / STEPS.length) * 100)}%`
-  }, [stepIndex])
+  // The bridge lands in content: an active plan's own route wins over the
+  // Daily Bread default. Fetched quietly; failure just means the default.
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/soul-audit/current')
+      .then((res) => res.json())
+      .then((data: { hasCurrent?: boolean; route?: string }) => {
+        if (cancelled) return
+        if (data.hasCurrent && data.route) setActivePlanRoute(data.route)
+      })
+      .catch(() => {
+        // no-op — Daily Bread remains the landing
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
-  function applyPreferencesLocally(preferences: OnboardingPreferences) {
-    setTheme(preferences.theme)
-    setSabbathDay(preferences.sabbathDay)
-    setBibleTranslation(preferences.bibleTranslation)
-    setDefaultBrainMode(preferences.defaultBrainMode)
-    setOpenWebDefaultEnabled(preferences.openWebDefaultEnabled)
-    setDevotionalDepthPreference(preferences.devotionalDepthPreference)
-    setTextScale(preferences.textScale)
-    setReduceMotion(preferences.reduceMotion)
-    setHighContrast(preferences.highContrast)
-    setReadingComfort(preferences.readingComfort)
-  }
+  const stepNumber = beatIndex(beat)
+  const destination = resolveOnboardingDestination({
+    redirect: finalRedirect,
+    activePlanRoute,
+  })
 
   async function persistOnboarding(skipped: boolean) {
     const response = await fetch('/api/auth/onboarding', {
@@ -149,349 +107,358 @@ export default function OnboardingClient({
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         skipped,
-        preferences: prefs,
+        // Reading preferences are captured in Settings, not here — pass the
+        // server's own snapshot back unchanged so nothing is overwritten.
+        preferences: initialPreferences,
       }),
     })
 
     const payload = (await response.json().catch(() => ({}))) as SaveResponse
     if (!response.ok || !payload.ok) {
-      throw new Error(payload.error || 'Unable to save onboarding preferences.')
+      throw new Error(payload.error || 'Unable to save your welcome.')
     }
   }
 
-  async function finishOnboarding(skipped: boolean) {
+  async function finish(skipped: boolean) {
     setSaving(true)
     setError(null)
     try {
-      applyPreferencesLocally(prefs)
       await persistOnboarding(skipped)
-      router.replace(finalRedirect)
+      router.replace(destination)
       router.refresh()
     } catch (err) {
       setError(
         err instanceof Error
           ? err.message
-          : 'Unable to complete onboarding. Please try again.',
+          : 'Unable to finish just now. Please try again.',
       )
       setSaving(false)
     }
   }
 
-  function renderStepBody() {
-    if (currentStep.key === 'welcome') {
-      return (
-        <div className="grid gap-4">
-          <p className="vw-body text-secondary">
-            First launch should make key controls clear immediately. We will set
-            your reading defaults now, then take you straight into the app.
-          </p>
-          <div
-            className="grid gap-3 rounded-sm bg-surface-raised p-5"
-            style={{ border: '1px solid var(--color-border)' }}
-          >
-            <p className="text-label vw-small text-gold">YOU WILL SET</p>
-            <p className="vw-small text-secondary">
-              Sabbath day (Saturday or Sunday)
-            </p>
-            <p className="vw-small text-secondary">
-              Theme + text size + accessibility comfort
-            </p>
-            <p className="vw-small text-secondary">Default Bible translation</p>
-          </div>
-          <p className="vw-small text-muted">
-            Everything remains editable in Settings later.
-          </p>
-        </div>
-      )
-    }
-
-    if (currentStep.key === 'rhythm') {
-      return (
-        <div className="grid gap-4">
-          <p className="text-label vw-small text-gold">SABBATH DAY</p>
-          <div className="flex flex-wrap gap-3">
-            {(['saturday', 'sunday'] as SabbathDayPreference[]).map((day) => (
-              <OptionButton
-                key={day}
-                active={prefs.sabbathDay === day}
-                onClick={() =>
-                  setPrefs((prev) => ({ ...prev, sabbathDay: day }))
-                }
-              >
-                {day.charAt(0).toUpperCase() + day.slice(1)}
-              </OptionButton>
-            ))}
-          </div>
-          <p className="vw-small text-secondary">
-            Your Sabbath day pauses new unlocks so rest is protected in the
-            devotional cadence.
-          </p>
-        </div>
-      )
-    }
-
-    if (currentStep.key === 'display') {
-      return (
-        <div className="grid gap-6">
-          <div>
-            <p className="text-label vw-small mb-3 text-gold">APPEARANCE</p>
-            <div className="flex flex-wrap gap-3">
-              {(['dark', 'light', 'system'] as ThemePreference[]).map(
-                (theme) => (
-                  <OptionButton
-                    key={theme}
-                    active={prefs.theme === theme}
-                    onClick={() => setPrefs((prev) => ({ ...prev, theme }))}
-                  >
-                    {theme.charAt(0).toUpperCase() + theme.slice(1)}
-                  </OptionButton>
-                ),
-              )}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-label vw-small mb-3 text-gold">TEXT SIZE</p>
-            <div className="flex flex-wrap gap-3">
-              {(['default', 'large', 'xlarge'] as TextScalePreference[]).map(
-                (textScale) => (
-                  <OptionButton
-                    key={textScale}
-                    active={prefs.textScale === textScale}
-                    onClick={() => setPrefs((prev) => ({ ...prev, textScale }))}
-                  >
-                    {textScale === 'default'
-                      ? 'Default'
-                      : textScale === 'large'
-                        ? 'Large'
-                        : 'Extra Large'}
-                  </OptionButton>
-                ),
-              )}
-            </div>
-          </div>
-
-          <div className="grid gap-2">
-            <label className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                checked={prefs.reduceMotion}
-                onChange={(event) =>
-                  setPrefs((prev) => ({
-                    ...prev,
-                    reduceMotion: event.target.checked,
-                  }))
-                }
-              />
-              <span className="vw-small text-secondary">Reduce motion</span>
-            </label>
-            <label className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                checked={prefs.highContrast}
-                onChange={(event) =>
-                  setPrefs((prev) => ({
-                    ...prev,
-                    highContrast: event.target.checked,
-                  }))
-                }
-              />
-              <span className="vw-small text-secondary">
-                High contrast mode
-              </span>
-            </label>
-            <label className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                checked={prefs.readingComfort}
-                onChange={(event) =>
-                  setPrefs((prev) => ({
-                    ...prev,
-                    readingComfort: event.target.checked,
-                  }))
-                }
-              />
-              <span className="vw-small text-secondary">
-                Reading comfort mode
-              </span>
-            </label>
-          </div>
-        </div>
-      )
-    }
-
-    if (currentStep.key === 'scripture') {
-      return (
-        <div className="grid gap-6">
-          <div className="grid gap-4">
-            <p className="text-label vw-small text-gold">BIBLE TRANSLATION</p>
-            <select
-              value={prefs.bibleTranslation}
-              onChange={(event) =>
-                setPrefs((prev) => ({
-                  ...prev,
-                  bibleTranslation: event.target
-                    .value as BibleTranslationPreference,
-                }))
-              }
-              className="w-full max-w-sm bg-surface-raised px-5 py-3 vw-body text-[var(--color-text-primary)]"
-              style={{
-                border: '1px solid var(--color-border)',
-                appearance: 'none',
-              }}
-              aria-label="Default Bible translation"
-            >
-              {BIBLE_TRANSLATION_CODES.map((code) => {
-                const meta = BIBLE_TRANSLATIONS[code]
-                return (
-                  <option key={code} value={code}>
-                    {meta.short} ({meta.name}) · {meta.licenseShort}
-                  </option>
-                )
-              })}
-            </select>
-          </div>
-
-          <div>
-            <p className="text-label vw-small mb-3 text-gold">
-              DEVOTIONAL DEPTH
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { label: '5-7 min', value: 'short_5_7' },
-                { label: '20-30 min', value: 'medium_20_30' },
-                { label: '45-60 min', value: 'long_45_60' },
-                { label: 'Variable', value: 'variable' },
-              ].map((option) => (
-                <OptionButton
-                  key={option.value}
-                  active={prefs.devotionalDepthPreference === option.value}
-                  onClick={() =>
-                    setPrefs((prev) => ({
-                      ...prev,
-                      devotionalDepthPreference: option.value as
-                        | 'short_5_7'
-                        | 'medium_20_30'
-                        | 'long_45_60'
-                        | 'variable',
-                    }))
-                  }
-                >
-                  {option.label}
-                </OptionButton>
-              ))}
-            </div>
-          </div>
-
-          {/* The LLM-provider ("Default Brain") + Open-Web pickers were removed
-              from first-run onboarding — raw vendor names (OpenAI/Google/MiniMax/
-              NVIDIA Kimi) are implementation jargon that contradicts the
-              sacred-minimalism brand and the "AI as composer, not author" stance.
-              They remain available in Settings for advanced users; the defaults
-              still apply. */}
-
-          <p className="vw-small text-secondary">
-            These defaults can be changed anytime in Settings.
-          </p>
-        </div>
-      )
-    }
-
-    return (
-      <div className="grid gap-4">
-        <p className="vw-body text-secondary">
-          Core features are now available from the primary navigation and always
-          configurable in Settings.
-        </p>
-        <div
-          className="grid gap-3 rounded-sm bg-surface-raised p-5"
-          style={{ border: '1px solid var(--color-border)' }}
-        >
-          <p className="text-label vw-small text-gold">SOUL AUDIT</p>
-          <p className="vw-small text-secondary">
-            Generate curated AI pathways from short input and start day-by-day
-            reading immediately.
-          </p>
-          <p className="text-label vw-small text-gold">DAILY BREAD</p>
-          <p className="vw-small text-secondary">
-            Resume your active plan, track unlocked days, and keep rhythm
-            through the week.
-          </p>
-          <p className="text-label vw-small text-gold">SETTINGS</p>
-          <p className="vw-small text-secondary">
-            Replay onboarding, adjust text size, dark mode, and Sabbath anytime.
-          </p>
-        </div>
-      </div>
-    )
+  function continueFromWindow() {
+    // The choice is real the moment it's made: saved on this device; it
+    // rides into /api/push/subscribe if the reader opts in on the next
+    // beat, and is editable any time in Settings → Reminders.
+    setReminderWindow(windowChoice)
+    setBeat('reminders')
   }
+
+  async function optInToReminders() {
+    setBusy(true)
+    setError(null)
+    setReminderNotice(null)
+    const result = await enableReminders(windowChoice)
+    setBusy(false)
+    if (result.ok) {
+      setRemindersEnabled(true)
+      const meta = REMINDER_WINDOWS[windowChoice]
+      setReminderNotice(
+        `It’s set. ${meta.label}, ${meta.hoursLabel} in your local time.`,
+      )
+      setBeat('bridge')
+      return
+    }
+    if (result.reason === 'permission_denied') {
+      // An honest no is a completed decision, not an error.
+      setReminderNotice(result.message)
+      setBeat('bridge')
+      return
+    }
+    setError(result.message)
+  }
+
+  const windowMeta = REMINDER_WINDOWS[windowChoice]
 
   return (
     <div className="w-full">
-      <div className="mb-5 flex items-center justify-between">
-        <p className="text-label vw-small text-gold">{currentStep.label}</p>
-        <button
-          type="button"
-          onClick={() => void finishOnboarding(true)}
-          disabled={saving}
-          className="vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)] disabled:opacity-50"
-        >
-          Skip for now
-        </button>
-      </div>
-
+      {/* Quiet segmented hairline progress — no step numerals shouting. */}
       <div
-        className="mb-8 h-1 w-full bg-surface-raised"
-        style={{ border: '1px solid var(--color-border)' }}
+        className="onboarding-progress mb-10"
+        role="progressbar"
+        aria-valuemin={1}
+        aria-valuemax={ONBOARDING_BEATS.length}
+        aria-valuenow={stepNumber + 1}
+        aria-label="Welcome progress"
       >
-        <div
-          className="h-full bg-[var(--color-fg)] transition-all duration-300"
-          style={{ width: progressWidth }}
-        />
+        {ONBOARDING_BEATS.map((key, index) => (
+          <span
+            key={key}
+            className={`onboarding-progress-segment${
+              index <= stepNumber ? ' is-lit' : ''
+            }`}
+          />
+        ))}
       </div>
 
-      <h1 className="text-serif-italic vw-heading-md mb-3">
-        {currentStep.title}
-      </h1>
-      <p className="vw-body mb-8 text-secondary">{currentStep.description}</p>
+      {beat === 'welcome' && (
+        <section aria-labelledby="onboarding-welcome-heading">
+          <p className="text-label vw-small mb-4 text-gold">WELCOME</p>
+          <h1
+            id="onboarding-welcome-heading"
+            className="text-serif-italic vw-heading-md mb-4"
+          >
+            Before you begin.
+          </h1>
+          <p className="vw-body mb-3 text-secondary">
+            You&rsquo;ve already told us what you&rsquo;re wrestling with. Two
+            small questions help the words arrive well — when the day should
+            reach you, and whether we may knock at all.
+          </p>
+          <p className="vw-small mb-10 text-muted">
+            Nothing here is required, and everything stays editable in Settings.
+          </p>
+        </section>
+      )}
 
-      <div className="mb-8">{renderStepBody()}</div>
+      {beat === 'window' && (
+        <section aria-labelledby="onboarding-window-heading">
+          <p className="text-label vw-small mb-4 text-gold">ONE QUIET WORD</p>
+          <h1
+            id="onboarding-window-heading"
+            className="text-serif-italic vw-heading-md mb-4"
+          >
+            When should the day&rsquo;s word find you?
+          </h1>
+          <p className="vw-small mb-8 text-secondary">
+            One line a day at most, in the window you choose. Your local time.
+          </p>
+          <div className="mb-10 grid gap-3">
+            {ONBOARDING_WINDOW_CHOICES.map((code) => {
+              const meta = REMINDER_WINDOWS[code]
+              const active = windowChoice === code
+              return (
+                <button
+                  type="button"
+                  key={code}
+                  onClick={() => setWindowChoice(code)}
+                  aria-pressed={active}
+                  className="flex min-h-[44px] items-baseline justify-between gap-4 px-5 py-4 text-left transition-theme"
+                  style={{
+                    backgroundColor: active
+                      ? 'var(--color-fg)'
+                      : 'var(--color-surface)',
+                    color: active
+                      ? 'var(--color-bg)'
+                      : 'var(--color-text-secondary)',
+                    border: `1px solid ${
+                      active ? 'var(--color-fg)' : 'var(--color-border)'
+                    }`,
+                  }}
+                >
+                  <span className="text-label vw-small">{meta.label}</span>
+                  <span className="vw-small" style={{ opacity: 0.7 }}>
+                    {meta.hoursLabel}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
-      {error && <p className="mb-4 vw-small text-secondary">{error}</p>}
+      {beat === 'reminders' && (
+        <section aria-labelledby="onboarding-reminders-heading">
+          <p className="text-label vw-small mb-4 text-gold">REMINDERS</p>
+          <h1
+            id="onboarding-reminders-heading"
+            className="text-serif-italic vw-heading-md mb-4"
+          >
+            May we knock, softly?
+          </h1>
+          <p className="vw-body mb-3 text-secondary">
+            A single quiet notification in your {windowMeta.label.toLowerCase()}{' '}
+            window — no streaks, no badges, off any time.
+          </p>
 
-      <div className="flex items-center justify-between gap-4">
-        <button
-          type="button"
-          onClick={() => setStepIndex((index) => Math.max(0, index - 1))}
-          disabled={saving || stepIndex === 0}
-          className="px-6 py-3 text-label vw-small disabled:opacity-40"
-          style={{ border: '1px solid var(--color-border)' }}
+          {capability === 'available' && (
+            <>
+              <p className="vw-small mb-8 text-muted">
+                Saying yes asks your browser for permission once. Saying no
+                changes nothing — the reading is yours either way.
+              </p>
+              <div className="mb-10 grid gap-3 sm:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => void optInToReminders()}
+                  disabled={busy || saving}
+                  aria-busy={busy}
+                  className="min-h-[44px] bg-[var(--color-fg)] px-6 py-4 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
+                >
+                  {busy ? 'One moment…' : 'Turn on reminders'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBeat('bridge')}
+                  disabled={busy || saving}
+                  className="min-h-[44px] px-6 py-4 text-label vw-small disabled:opacity-50"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    color: 'var(--color-text-secondary)',
+                  }}
+                >
+                  Not now
+                </button>
+              </div>
+            </>
+          )}
+
+          {capability === 'unsupported' && (
+            <>
+              <p className="vw-small mb-8 text-secondary">
+                This browser can&rsquo;t receive web notifications. On iPhone or
+                iPad, add Euangelion to your Home Screen — reminders work from
+                the installed app. Your chosen window is saved for when they do.
+              </p>
+              <div className="mb-10" />
+            </>
+          )}
+
+          {capability === 'unconfigured' && (
+            <>
+              <p className="vw-small mb-8 text-secondary">
+                Reminder delivery isn&rsquo;t switched on for this site yet.
+                Your chosen window is saved on this device and takes effect the
+                moment notifications are enabled — nothing arrives until then.
+              </p>
+              <div className="mb-10" />
+            </>
+          )}
+
+          {capability === 'denied' && (
+            <>
+              <p className="vw-small mb-8 text-secondary">
+                Notifications are blocked for this site in your browser. To
+                receive the quiet word later, allow notifications for
+                euangelion.app in your browser&rsquo;s site settings — your
+                chosen window is already saved.
+              </p>
+              <div className="mb-10" />
+            </>
+          )}
+        </section>
+      )}
+
+      {beat === 'bridge' && (
+        <section aria-labelledby="onboarding-bridge-heading">
+          <p className="text-label vw-small mb-4 text-gold">READY</p>
+          <h1
+            id="onboarding-bridge-heading"
+            className="text-serif-italic vw-heading-md mb-4"
+          >
+            That&rsquo;s everything.
+          </h1>
+          {reminderNotice && (
+            <p className="vw-small mb-3 text-gold" role="status">
+              {reminderNotice}
+            </p>
+          )}
+          <p className="vw-body mb-3 text-secondary">
+            Your window shapes when the day&rsquo;s word arrives
+            {remindersEnabled
+              ? ', and reminders will do exactly what you just chose — nothing more.'
+              : '; reminders stay off unless you turn them on in Settings.'}
+          </p>
+          <p className="vw-small mb-10 text-muted">
+            We only use your answers to personalize your experience.
+          </p>
+        </section>
+      )}
+
+      {error && (
+        <p
+          className="vw-small mb-4"
+          style={{ color: 'var(--color-error)' }}
+          role="alert"
         >
-          Back
-        </button>
+          {error}
+        </p>
+      )}
 
-        {!isLastStep ? (
+      {/* Skip directly above Continue (Ten Percent Happier placement). */}
+      {beat !== 'bridge' && (
+        <div className="mb-3 text-center sm:text-right">
           <button
             type="button"
-            onClick={() =>
-              setStepIndex((index) => Math.min(STEPS.length - 1, index + 1))
-            }
+            onClick={() => void finish(true)}
+            disabled={saving || busy}
+            className="min-h-[44px] px-3 py-2 vw-small text-muted transition-colors duration-200 hover:text-[var(--color-text-primary)] disabled:opacity-50"
+          >
+            Skip for now
+          </button>
+        </div>
+      )}
+
+      <div className="flex items-center justify-between gap-4">
+        {beat !== 'welcome' ? (
+          <button
+            type="button"
+            onClick={() => setBeat(previousBeat(beat))}
+            disabled={saving || busy}
+            className="min-h-[44px] px-6 py-3 text-label vw-small disabled:opacity-40"
+            style={{ border: '1px solid var(--color-border)' }}
+          >
+            Back
+          </button>
+        ) : (
+          <span aria-hidden="true" />
+        )}
+
+        {beat === 'welcome' && (
+          <button
+            type="button"
+            onClick={() => setBeat(nextBeat(beat))}
             disabled={saving}
-            className="bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
+            className="min-h-[44px] bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
           >
             Continue
           </button>
-        ) : (
+        )}
+        {beat === 'window' && (
           <button
             type="button"
-            onClick={() => void finishOnboarding(false)}
+            onClick={continueFromWindow}
             disabled={saving}
-            className="bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
+            className="min-h-[44px] bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
           >
-            {saving ? 'Saving...' : 'Start Euangelion'}
+            Continue
+          </button>
+        )}
+        {beat === 'reminders' && capability !== 'available' && (
+          <button
+            type="button"
+            onClick={() => setBeat('bridge')}
+            disabled={saving || busy}
+            className="min-h-[44px] bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
+          >
+            Continue
+          </button>
+        )}
+        {beat === 'bridge' && (
+          <button
+            type="button"
+            onClick={() => void finish(false)}
+            disabled={saving}
+            className="min-h-[44px] bg-[var(--color-fg)] px-8 py-3 text-label vw-small text-[var(--color-bg)] disabled:opacity-50"
+          >
+            {saving ? 'One moment…' : 'Begin reading'}
           </button>
         )}
       </div>
+
+      <style>{`
+        .onboarding-progress {
+          display: flex; gap: 6px;
+        }
+        .onboarding-progress-segment {
+          flex: 1 1 0; height: 2px;
+          background: var(--color-border);
+          transition: background-color 400ms ease;
+        }
+        .onboarding-progress-segment.is-lit {
+          background: var(--color-gold);
+        }
+      `}</style>
     </div>
   )
 }

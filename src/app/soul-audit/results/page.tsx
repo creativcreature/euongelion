@@ -63,10 +63,14 @@ export default function SoulAuditResultsPage() {
   )
   // When a NEW plan is being generated, the select endpoint returns a job to
   // poll (not a route). We hand off to GenerationProgress until it completes.
+  // theme/anchor ride along for the arrival echo (§7.6 — abstract-but-
+  // specific when the reader's typed words aren't in this session).
   const [generationJob, setGenerationJob] = useState<{
     jobId: string
     pollUrl: string
     optionId: string
+    theme: string | null
+    scriptureAnchor: string | null
   } | null>(null)
   // --- SA-026 generation gate (Phase 1c) ---
   // When select answers 401/402, the request is HELD in the pending-
@@ -79,6 +83,9 @@ export default function SoulAuditResultsPage() {
   const [resuming, setResuming] = useState(false)
   const [resumeError, setResumeError] = useState<string | null>(null)
   const resumeHeldRef = useRef<HeldGenerationSelection | null>(null)
+  // Silent auto-retry budget for the interstitial — parent-owned because
+  // every restart remounts GenerationProgress (see its prop doc).
+  const generationAutoRetryRef = useRef(0)
   const heldSelection = usePendingGenerationStore((store) => store.held)
   const [error, setError] = useState<string | null>(null)
   const [selectionInlineError, setSelectionInlineError] = useState<
@@ -354,12 +361,15 @@ export default function SoulAuditResultsPage() {
         // Plan already exists (idempotent/complete) — go straight there.
         router.push(payload.route)
       } else if (payload.jobId && payload.pollUrl) {
-        // New plan is generating — hand off to the live progress UI, which
-        // polls the job and navigates to the plan when it's ready.
+        // New plan is generating — hand off to the held-moment interstitial,
+        // which polls the job and presents arrival when Day 1 is ready.
+        const chosen = displayOptions.find((entry) => entry.id === optionId)
         setGenerationJob({
           jobId: payload.jobId,
           pollUrl: payload.pollUrl,
           optionId,
+          theme: chosen?.title ?? null,
+          scriptureAnchor: chosen?.preview?.verse ?? null,
         })
       } else {
         throw new Error(
@@ -472,6 +482,8 @@ export default function SoulAuditResultsPage() {
           jobId: payload.jobId,
           pollUrl: payload.pollUrl,
           optionId: held.optionId,
+          theme: held.optionTitle,
+          scriptureAnchor: held.optionVerse,
         })
       } else {
         throw new Error(
@@ -775,6 +787,47 @@ export default function SoulAuditResultsPage() {
     )
   }
 
+  // --- The HELD MOMENT (§7.1/§7.2) ---
+  // A new plan is being composed. The interstitial owns the screen: no nav
+  // chrome, no dismiss affordance while the job is live — and it renders
+  // BEFORE the no-submit-result skeleton because a resumed generation can
+  // arrive in a fresh tab that has no session submit payload. The hold
+  // never traps: failure presents TRY AGAIN / Start over inside the
+  // interstitial itself.
+  if (generationJob) {
+    return (
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <GenerationProgress
+            jobId={generationJob.jobId}
+            pollUrl={generationJob.pollUrl}
+            echo={{
+              // Consent cue (§7.6): quote the reader's words ONLY when they
+              // typed them in this tab session — the sessionStorage marker
+              // written at submit. Fresh-tab resumes read null here.
+              typedThisSession: loadLastAuditInput(),
+              theme: generationJob.theme,
+              scriptureAnchor: generationJob.scriptureAnchor,
+            }}
+            onRestart={() => {
+              const optionId = generationJob.optionId
+              setGenerationJob(null)
+              if (submitResult) {
+                void handleSelect(optionId)
+              } else if (resumeHeldRef.current) {
+                // Resume-in-a-fresh-tab path: no session submit payload,
+                // but the held snapshot can re-kick the same selection.
+                void resumeHeldSelection(resumeHeldRef.current)
+              }
+            }}
+            onStartOver={() => void handleResetAudit()}
+            autoRetryBudgetRef={generationAutoRetryRef}
+          />
+        </main>
+      </div>
+    )
+  }
+
   // --- Loading / empty state ---
   // D-24 (F-074): while the submit result hydrates from the store, show the
   // same layout-accurate skeleton the route's loading.tsx paints — no
@@ -788,36 +841,6 @@ export default function SoulAuditResultsPage() {
         <SoulAuditResultsLoading />
         {paywallOverlay}
       </>
-    )
-  }
-
-  // A new plan is being generated — show the live progress UI (it polls the
-  // job and navigates to the plan on completion).
-  if (generationJob) {
-    return (
-      <div className="mock-home">
-        <main id="main-content" className="mock-paper">
-          <EuangelionShellHeader />
-          <section className="mock-panel">
-            <GenerationProgress
-              jobId={generationJob.jobId}
-              pollUrl={generationJob.pollUrl}
-              onRestart={() => {
-                const optionId = generationJob.optionId
-                setGenerationJob(null)
-                if (submitResult) {
-                  void handleSelect(optionId)
-                } else if (resumeHeldRef.current) {
-                  // Resume-in-a-fresh-tab path: no session submit payload,
-                  // but the held snapshot can re-kick the same selection.
-                  void resumeHeldSelection(resumeHeldRef.current)
-                }
-              }}
-            />
-          </section>
-          <SiteFooter />
-        </main>
-      </div>
     )
   }
 

@@ -65,7 +65,9 @@ async function sendMagicLink(user: ReturnType<typeof userEvent.setup>) {
     screen.getByPlaceholderText('you@example.com'),
     'reader@example.com',
   )
-  await user.click(screen.getByRole('button', { name: 'Send Magic Link' }))
+  // Phase 1d (pattern doc §5): the primary verb is Continue — email first,
+  // single field, single verb (ChatGPT ordering).
+  await user.click(screen.getByRole('button', { name: 'Continue' }))
   await screen.findByText('We sent you a sign-in link.')
 }
 

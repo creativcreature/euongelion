@@ -10606,3 +10606,60 @@ html.reduce-motion .first-run-card {
   text-indent: 0.45em;
 }
 /* ===================== end F-065 onboarding block ====================== */
+
+/* ================= Phase 1d — account-onboarding bookends ================ */
+/* SA-024: two bespoke presentations. Mobile is a full-bleed sequential
+   screen (CTA in the thumb zone); desktop floats a compact letterpress
+   card over a full-viewport editorial canvas (Superlist model), with a
+   ghost masthead as the canvas texture. */
+
+.onboarding-canvas {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 3rem 1.25rem 4rem;
+  overflow: hidden;
+}
+
+.onboarding-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 34rem;
+}
+
+@media (min-width: 1024px) {
+  .onboarding-canvas::before {
+    /* Editorial canvas: the masthead as a ghost, not decoration-noise. */
+    content: 'EUANGELION';
+    position: absolute;
+    inset: auto 0 6%;
+    text-align: center;
+    font-family: var(--font-family-serif, Georgia, serif);
+    font-size: clamp(6rem, 16vw, 15rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--color-fg);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .onboarding-card {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 3rem 3.25rem 2.75rem;
+  }
+}
+/* =============== end Phase 1d account-onboarding bookends ================ */
+
+/* ============ Phase 1d — held-moment generation interstitial ============= */
+/* §7.2 HELD MOMENT: while a custom edition is composing, the interstitial
+   owns the screen — the global mobile tab bar must not offer browse-away.
+   GenerationProgress stamps this attribute for exactly its own lifetime. */
+html[data-held-moment] .mobile-tab-bar {
+  display: none;
+}
+/* ========== end Phase 1d held-moment generation interstitial ============ */

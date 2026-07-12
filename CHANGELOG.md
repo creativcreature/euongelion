@@ -5,6 +5,58 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Phase 1d: held-moment interstitial, onboarding bookends, sign-in polish (2026-07-11)
+
+Pattern-doc §4/§5/§6 + founder picks §7 (SA-024/SA-025/SA-026, F-064/F-065
+adjacent):
+
+1. **Held-moment generation interstitial** ("Press room meets Upper
+   Room", §7.1/§7.2): the composing state now owns the screen — no nav
+   chrome, no dismiss — with a staged checklist ("Reading what you
+   wrote → Composing your arc → Selecting passages → Setting the type")
+   bound STRICTLY to real job transitions (`generation-stages.ts`; rows
+   ratchet, never check ahead, never uncheck). Duration expectation set
+   once up front; the loved edition-press day-tile emblem kept (broadsheet
+   scale on desktop beside the production-schedule column + Psalm 130:5);
+   arrival = final check → beat of stillness → consent-cue echo (typed
+   words quoted ONLY same-session via the existing sessionStorage submit
+   marker; resumed tabs get theme + Scripture anchor) → single
+   `BEGIN DAY 1` CTA (no auto-redirect, no confetti). Failure freezes the
+   checklist at the failed stage with `TRY AGAIN` (re-fires held/select
+   machinery) + quiet `Start over`. Fresh-tab resume now renders the
+   interstitial (branch reordered above the no-submit-result skeleton).
+2. **Account onboarding bookends** (§4, §7.3): the 5-step setup quiz is
+   replaced by warm framing → reminder window (Morning/Midday/Evening,
+   wired to `reminderWindow` + rides into push subscribe) → reminders
+   opt-in with equal-dignity "Not now" (permission requested only on
+   explicit yes; honest unsupported/unconfigured/denied states) → bridge
+   with the honesty line — landing IN content (`resolveOnboardingDestination`:
+   redirect → active plan → /daily-bread, never '/'). Skip sits directly
+   above Continue; skip-all lands in content with defaults. Same
+   auth-metadata keys + `/api/auth/onboarding` (admin reset compatible).
+   Mobile full-bleed / desktop letterpress card over editorial canvas.
+3. **Settings**: "Revisit your welcome" row (signed-in only) added to the
+   REMINDERS card → `/onboarding?force=1`; window stays individually
+   editable via the existing ReminderScheduler.
+4. **Sign-in (§5)**: email + `Continue` primary; Google demoted to a
+   stroke-outline quiet peer BELOW a hairline "or" divider and gated
+   behind `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED === 'true'` (HUMAN_REQUIRED:
+   founder must configure the Supabase Google provider before setting
+   the flag). Exactly two paths ever render.
+5. **Turnstile on signup** (brief §12.4): invisible widget on the
+   magic-link request when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set;
+   server-side siteverify in `/api/auth/magic-link` when
+   `TURNSTILE_SECRET_KEY` is set (missing/forged token → honest 403;
+   siteverify outage → fail-closed 503). Both env vars absent = exactly
+   prior behavior (clean conditional, no stub).
+
+Tests: generation-stages honesty + echo consent, onboarding flow machine
+
+- destination, magic-link Turnstile conditional, Google flag gating;
+  sign-in code-entry suite updated for the `Continue` verb.
+
+---
+
 ## CUSTOM GENERATION — Phase 1c: paywall, checkout return, success room, management (2026-07-11)
 
 The founder-approved pattern package (SA-026/SA-027, F-078) built:
