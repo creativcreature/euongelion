@@ -35,6 +35,7 @@ export type GenerationEntitlement =
       allowance: { used: number; limit: number | null }
     }
   | { allowed: true; source: 'free_grant' }
+  | { allowed: true; source: 'credits'; balance: number }
   | {
       allowed: false
       reason: 'no_account' | 'no_entitlement' | 'allowance_exhausted'
@@ -158,6 +159,16 @@ export async function checkGenerationEntitlement(
 
   if (state.freeGenerationUsedAt === null) {
     return { allowed: true, source: 'free_grant' }
+  }
+
+  // SA-027 path 3/6: purchased or gifted credits (consumed atomically at
+  // plan creation via consumeGenerationCredit, after all pre-checks).
+  if (state.generationCredits > 0) {
+    return {
+      allowed: true,
+      source: 'credits',
+      balance: state.generationCredits,
+    }
   }
 
   return {

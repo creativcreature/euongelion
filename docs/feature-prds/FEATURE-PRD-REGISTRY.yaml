@@ -806,3 +806,12 @@ features:
     prd: docs/feature-prds/F-079.md
     methodology_refs:
       - M00
+  - id: F-080
+    category: Billing
+    feature: Credit packs + gift codes (Phase 2)
+    slug: credit-packs-gift-codes
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-080.md
+    methodology_refs:
+      - M00

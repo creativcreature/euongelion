@@ -7,6 +7,10 @@ import {
   isStripeConfigured,
 } from '@/lib/billing/catalog'
 import {
+  getCreditPackById,
+  getStripePriceIdForPack,
+} from '@/lib/billing/credits'
+import {
   getClientKey,
   readJsonWithLimit,
   takeRateLimit,
@@ -19,6 +23,8 @@ import type { BillingPlanId, BillingPlatform } from '@/types/billing'
 
 interface CheckoutBody {
   planId?: string
+  /** SA-027 path 3: one-time credit pack (mutually exclusive with planId). */
+  packId?: string
   platform?: BillingPlatform
 }
 
@@ -115,9 +121,17 @@ export async function POST(request: NextRequest) {
   }
 
   const planId = (parsed.data.planId || '').trim() as BillingPlanId
+  const packId = (parsed.data.packId || '').trim()
   const platform = (parsed.data.platform || 'web').trim() as BillingPlatform
 
-  if (!planId || !getPlanById(planId)) {
+  const pack = packId ? getCreditPackById(packId) : null
+  if (packId && !pack) {
+    return jsonWithRequestId(
+      { error: 'A valid packId is required.', code: 'INVALID_PACK' },
+      { status: 400, requestId },
+    )
+  }
+  if (!pack && (!planId || !getPlanById(planId))) {
     return jsonWithRequestId(
       { error: 'A valid planId is required.', code: 'INVALID_PLAN' },
       { status: 400, requestId },
@@ -153,7 +167,9 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const priceId = getStripePriceIdForPlan(planId)
+  const priceId = pack
+    ? getStripePriceIdForPack(pack.id)
+    : getStripePriceIdForPlan(planId)
   if (!priceId) {
     return jsonWithRequestId(
       {
@@ -186,7 +202,7 @@ export async function POST(request: NextRequest) {
   try {
     const stripe = new Stripe(stripeKey)
     const base = appBaseUrl(request)
-    const plan = getPlanById(planId)!
+    const plan = pack ? null : getPlanById(planId)!
 
     // Reuse the stored Stripe customer or create one now, so the
     // customer↔user link exists BEFORE the first webhook arrives.
@@ -210,7 +226,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const isOneTime = plan.billingType === 'one_time'
+    const isOneTime = pack ? true : plan!.billingType === 'one_time'
     const session = await stripe.checkout.sessions.create({
       mode: isOneTime ? 'payment' : 'subscription',
       customer: stripeCustomerId,
@@ -222,7 +238,9 @@ export async function POST(request: NextRequest) {
       client_reference_id: user.id,
       metadata: {
         source: 'euangelion_web_checkout',
-        plan_id: planId,
+        ...(pack
+          ? { credit_pack_id: pack.id, credits: String(pack.credits) }
+          : { plan_id: planId }),
         user_id: user.id,
       },
       ...(isOneTime

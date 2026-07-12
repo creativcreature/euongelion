@@ -15,7 +15,11 @@
  * stay thin.
  */
 
-import type { BillingPlan } from '@/types/billing'
+import type {
+  BillingConfigResponse,
+  BillingCreditPack,
+  BillingPlan,
+} from '@/types/billing'
 
 export type GenerationPaywallState =
   | 'sign_in_required'
@@ -169,3 +173,151 @@ export function buildLifecycleTimeline(
  */
 export const GENERATION_COVENANT =
   'The Bible is free. The library is free. The Soul Audit is free. You only pay when you want an edition composed for your specific words.'
+
+// ---------------------------------------------------------------------------
+// Credit packs (SA-027 path 3, Phase 2) — pack-card visibility.
+// ---------------------------------------------------------------------------
+
+/**
+ * The credit packs the paywall may render — non-empty ONLY when web
+ * payments are enabled AND the config advertises at least one sellable
+ * pack. Zero packs = no card, no gap (never a broken/empty card).
+ */
+export function sellableCreditPacks(
+  config: Pick<BillingConfigResponse, 'paymentsEnabled' | 'creditPacks'> | null,
+): BillingCreditPack[] {
+  if (!config) return []
+  if (!config.paymentsEnabled?.webStripe) return []
+  if (!Array.isArray(config.creditPacks)) return []
+  return config.creditPacks.filter(
+    (pack) =>
+      Boolean(pack) &&
+      typeof pack.id === 'string' &&
+      pack.id.length > 0 &&
+      Number.isFinite(pack.credits) &&
+      pack.credits > 0 &&
+      typeof pack.priceLabel === 'string' &&
+      pack.priceLabel.length > 0,
+  )
+}
+
+/** "1 edition" / "3 editions" — one place for the plural. */
+export function formatEditionCount(count: number): string {
+  return count === 1 ? '1 edition' : `${count} editions`
+}
+
+// ---------------------------------------------------------------------------
+// Gift-code redemption (SA-027 path 6) — input shaping + outcome mapping.
+// The redeem sheet stays thin; everything here is pure and unit-tested.
+// ---------------------------------------------------------------------------
+
+/**
+ * Shape typed/pasted input for display: uppercase, keep only the
+ * characters a code can contain (A–Z, 2–9 alphabet plus hyphens),
+ * capped at the server's 32-char wire limit.
+ */
+export function normalizeGiftCodeInput(raw: string): string {
+  return raw
+    .toUpperCase()
+    .replace(/[^A-Z0-9-]/g, '')
+    .slice(0, 32)
+}
+
+/**
+ * The wire form: hyphens/spacing stripped, uppercase alphanumerics
+ * only. The server hashes exactly this normalization, so codes are
+ * accepted with or without hyphens.
+ */
+export function giftCodeForWire(input: string): string {
+  return input.toUpperCase().replace(/[^A-Z0-9]/g, '')
+}
+
+/**
+ * Client-side pre-check mirroring the server's CODE_SHAPE — used to
+ * catch obvious typos BEFORE spending one of the 5/hour redemption
+ * attempts. Never a substitute for the server's answer.
+ */
+export function isGiftCodeShapePlausible(input: string): boolean {
+  return /^[A-Z0-9]{12,32}$/.test(giftCodeForWire(input))
+}
+
+export type RedeemOutcome =
+  | {
+      kind: 'success'
+      creditsAdded: number
+      balance: number
+      message: string
+    }
+  | { kind: 'auth_required'; error: string }
+  | { kind: 'invalid_code'; error: string }
+  | { kind: 'already_redeemed'; error: string }
+  | { kind: 'rate_limited'; error: string }
+  | { kind: 'error'; error: string }
+
+const REDEEM_FALLBACK_ERROR =
+  'Unable to redeem right now. Please try again in a moment.'
+
+/**
+ * Map a /api/billing/redeem response onto sheet UI states. The server's
+ * own copy is honest and specific — prefer it verbatim; the fallback
+ * strings only cover a malformed payload.
+ */
+export function resolveRedeemOutcome(
+  status: number,
+  payload: unknown,
+): RedeemOutcome {
+  const root =
+    payload && typeof payload === 'object'
+      ? (payload as Record<string, unknown>)
+      : {}
+  const code = typeof root.code === 'string' ? root.code : null
+  const serverError = typeof root.error === 'string' ? root.error : null
+
+  if (status === 200 && root.ok === true) {
+    return {
+      kind: 'success',
+      creditsAdded:
+        typeof root.creditsAdded === 'number' ? root.creditsAdded : 0,
+      balance: typeof root.balance === 'number' ? root.balance : 0,
+      message:
+        typeof root.message === 'string'
+          ? root.message
+          : 'Someone covered your edition.',
+    }
+  }
+
+  if (status === 401 || code === 'AUTH_REQUIRED') {
+    return {
+      kind: 'auth_required',
+      error:
+        serverError ||
+        'Sign in to redeem a code — the editions attach to your account.',
+    }
+  }
+
+  if (code === 'ALREADY_REDEEMED' || status === 409) {
+    return {
+      kind: 'already_redeemed',
+      error: serverError || 'You’ve already redeemed this code.',
+    }
+  }
+
+  if (code === 'RATE_LIMITED' || status === 429) {
+    return {
+      kind: 'rate_limited',
+      error:
+        serverError || 'Too many redemption attempts. Please try again later.',
+    }
+  }
+
+  if (code === 'INVALID_CODE' || status === 400 || status === 404) {
+    return {
+      kind: 'invalid_code',
+      error:
+        serverError ||
+        'That code isn’t valid or has been fully used. Check for typos and try again.',
+    }
+  }
+
+  return { kind: 'error', error: serverError || REDEEM_FALLBACK_ERROR }
+}

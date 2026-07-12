@@ -4,6 +4,7 @@ import {
   isIosIapConfigured,
   isStripeConfigured,
 } from '@/lib/billing/catalog'
+import { getCreditPacks, getStripePriceIdForPack } from '@/lib/billing/credits'
 import type { BillingConfigResponse } from '@/types/billing'
 
 export async function GET() {
@@ -21,6 +22,16 @@ export async function GET() {
       webStripe: checkoutLive && isStripeConfigured(),
     },
     plans: BILLING_PLANS,
+    // Only sellable packs (Stripe price configured) are advertised —
+    // the paywall must never render a card it cannot honor (Rule #6).
+    creditPacks: getCreditPacks()
+      .filter((pack) => Boolean(getStripePriceIdForPack(pack.id)))
+      .map(({ id, credits, priceLabel, perEditionLabel }) => ({
+        id,
+        credits,
+        priceLabel,
+        perEditionLabel,
+      })),
   }
 
   return NextResponse.json(payload, {

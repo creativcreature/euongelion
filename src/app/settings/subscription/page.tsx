@@ -15,7 +15,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
-import { formatLongDate } from '@/lib/billing/paywall-state'
+import { formatEditionCount, formatLongDate } from '@/lib/billing/paywall-state'
 import { usePendingGenerationStore } from '@/stores/pendingGenerationStore'
 import type { BillingEntitlementsResponse } from '@/types/billing'
 
@@ -148,6 +148,7 @@ export default function SubscriptionSettingsPage() {
   }
 
   const premiumActive = Boolean(entitlements?.premiumActive)
+  const generationCredits = entitlements?.generationCredits ?? 0
   const renewsAt = entitlements?.subscriptionRenewsAt ?? null
   const expiresAt = entitlements?.premiumExpiresAt ?? null
   const isRecurring = Boolean(renewsAt)
@@ -414,6 +415,23 @@ export default function SubscriptionSettingsPage() {
           />
           <h1 className="text-display vw-heading-lg mb-10">Subscription</h1>
           {content}
+          {/* Editions balance (SA-027 credits) — rendered on both the
+              free and subscribed states; hidden entirely at zero. */}
+          {phase === 'ready' && authenticated && generationCredits > 0 && (
+            <div
+              className="mt-6 grid gap-2 p-6 sm:p-7"
+              style={{ border: '1px solid var(--color-border)' }}
+            >
+              <p className="text-label vw-small text-gold">EDITIONS</p>
+              <p className="vw-body text-[var(--color-text-primary)]">
+                {formatEditionCount(generationCredits)} available
+              </p>
+              <p className="vw-small text-muted">
+                From packs or gift codes. Credits never expire — each custom
+                edition uses one.
+              </p>
+            </div>
+          )}
         </div>
         <SiteFooter />
       </main>

@@ -70,6 +70,7 @@ export async function GET(request: NextRequest) {
         subscriptionRenewsAt: billingState?.subscriptionRenewsAt ?? null,
         premiumExpiresAt: billingState?.premiumExpiresAt ?? null,
         freeGenerationUsed: billingState?.freeGenerationUsedAt != null,
+        generationCredits: billingState?.generationCredits ?? 0,
       },
     }
 

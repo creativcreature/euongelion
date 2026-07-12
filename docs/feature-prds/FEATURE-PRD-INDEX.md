@@ -83,3 +83,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-077 | Security          | Security baseline + admin first-run reset         | 0/10     | wip    | [F-077.md](./F-077.md) |
 | F-078 | Billing UX        | Paywall + checkout return + success + manage      | 0/10     | wip    | [F-078.md](./F-078.md) |
 | F-079 | Soul Audit UX     | Held-moment interstitial + passwordless hardening | 0/10     | wip    | [F-079.md](./F-079.md) |
+| F-080 | Billing           | Credit packs + gift codes (Phase 2)               | 0/10     | wip    | [F-080.md](./F-080.md) |

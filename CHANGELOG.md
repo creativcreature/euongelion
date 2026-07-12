@@ -5,6 +5,73 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Phase 2 UI: pack card + redeem sheet + credits visibility (2026-07-12)
+
+Presentation delta on the Phase 2 backend below (SA-027 paths 3/6,
+F-080, pattern doc §1 items 2–3):
+
+1. **Credit-pack card** in the paywall State B offer stack (between the
+   subscribe card and the text-links row): "A single edition, no
+   subscription", pack sizes as big serif numerals with true prices +
+   per-edition math, "Credits never expire.", quiet cross-link up to
+   the subscription. Renders ONLY when config lists sellable packs AND
+   web payments are on — zero packs = no card, no gap. Buying routes
+   through the same checkout hand-off beat as plans (`packId`).
+2. **Redeem sheet:** REDEEM A CODE now opens an in-place single-field
+   sheet (mobile bottom sheet / desktop centered panel per SA-024) —
+   auto-uppercase, hyphens optional, a client-side shape check that
+   never spends a rate-limited attempt, honest inline states for every
+   backend code (401 → sign-in with the paywall's resume redirect;
+   success → "Someone covered your edition." + credits added + a CTA
+   that resumes the held generation like the success room). Escape/×
+   closes back to the paywall; the link is also offered while payments
+   are closed (gift codes redeem without checkout).
+3. **Credits visibility:** paywall shows a quiet "You have N editions"
+   covered mode when `generationCredits` > 0 — primary CTA COMPOSE MY
+   EDITION resumes the held request directly (backend consumes a
+   credit; no purchase CTA competing); /settings/subscription gains an
+   Editions row when the balance is > 0.
+4. Pure logic in `paywall-state.ts` (`sellableCreditPacks`,
+   `resolveRedeemOutcome`, gift-code shaping, `formatEditionCount`) +
+   12 new unit tests; full suite 139 files / 1785 green; 27-check
+   Playwright spot-check against the real paywall in the dev server
+   (packId hand-off, all redeem states, covered mode, zero-packs,
+   375px no-overflow, dark parity).
+
+---
+
+## CUSTOM GENERATION — Phase 2: credit packs + gift codes + Workers-runtime verification (2026-07-12)
+
+SA-027 paths 3/6 (F-080), built dark behind the same launch flags:
+
+1. **Credits (path 3):** durable journaled balance — migration
+   `20260712000001` adds `users.generation_credits` (CHECK ≥0) + an
+   append-only `generation_credit_ledger`; grants happen ONLY on
+   verified Stripe webhooks (event-idempotent via a unique ledger index
+   — a replayed event grants nothing) or gift redemption; consumption is
+   an optimistic-concurrency decrement AFTER all pre-checks, refunded on
+   plan-creation failure. Entitlement order: subscription → free grant →
+   credits. Checkout accepts `packId` (payment mode); config advertises
+   ONLY packs whose Stripe price env exists (never a card we can't
+   honor); packs are config-driven pending founder price tuning.
+2. **Gift codes (path 6):** ≥16-char unambiguous-alphabet codes, sha256
+   hashes only at rest, plaintext returned once at mint (internal-secret
+   `/api/admin/gift-codes`); redemption via an atomic DB function (row
+   lock → per-user uniqueness → decrement uses → credit → journal),
+   rate-limited 5/hour/IP, invalid and exhausted codes indistinguishable
+   (no guessing oracle). Copy: "Someone covered your edition."
+3. **Workers-runtime verification (Rule 9) + REQUIRED adapter bump:**
+   the Next 16.2.10 security bump broke `opennextjs-cloudflare build`
+   (the @vercel/og wasm imports behind our five opengraph-image routes
+   failed wrangler's module collector). Fixed by updating
+   `@opennextjs/cloudflare` 1.17.1 → 1.20.1 — **this pair must deploy
+   together**. Verified in the real workerd preview: all key pages 200
+   (incl. /opengraph-image), status-route IDOR 404 intact, config
+   honestly reports payments off, anonymous entitlements fail closed.
+4. 23 new credits/entitlement tests green; type-check + lint clean.
+
+---
+
 ## CUSTOM GENERATION — Failure-protection tranche (founder ruling: users never pay for our failures) (2026-07-12)
 
 Founder ruled "whatever you recommend — I don't want users having

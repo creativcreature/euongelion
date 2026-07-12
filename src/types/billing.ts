@@ -47,6 +47,19 @@ export interface BillingPlan {
   awardsFoundingMember: boolean
 }
 
+/**
+ * SA-027 path 3: a sellable one-time credit pack as advertised by
+ * /api/billing/config (Phase 2). Only packs whose Stripe price env is
+ * configured are listed — the paywall never renders a pack it cannot
+ * sell.
+ */
+export interface BillingCreditPack {
+  id: string
+  credits: number
+  priceLabel: string
+  perEditionLabel: string
+}
+
 export interface BillingConfigResponse {
   ok: boolean
   supportsBillingPortal: boolean
@@ -55,6 +68,8 @@ export interface BillingConfigResponse {
     webStripe: boolean
   }
   plans: BillingPlan[]
+  /** See BillingCreditPack — empty/absent means no pack card renders. */
+  creditPacks?: BillingCreditPack[]
 }
 
 /**
@@ -104,5 +119,7 @@ export interface BillingEntitlementsResponse {
     premiumExpiresAt?: string | null
     /** SA-026: whether the one-time free custom generation is spent. */
     freeGenerationUsed?: boolean
+    /** SA-027: spendable custom-generation credits (packs + gift codes). */
+    generationCredits?: number
   }
 }

@@ -37,6 +37,7 @@ import type Stripe from 'stripe'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { claimFoundingMemberSlot } from './founding-member'
 import { getPlanById } from './catalog'
+import { getCreditPackById, grantPurchasedCredits } from './credits'
 import { findUserIdByStripeCustomerId } from './subscription-state'
 
 export interface HandlerResult {
@@ -395,6 +396,8 @@ export async function handleInvoicePaid(
 export async function handleCheckoutSessionCompleted(
   session: Stripe.Checkout.Session,
   stripe: Stripe,
+  /** Stripe event id — the idempotency key for credit-pack grants. */
+  eventId?: string,
 ): Promise<HandlerResult> {
   if (session.payment_status !== 'paid' && session.status !== 'complete') {
     return {
@@ -428,6 +431,34 @@ export async function handleCheckoutSessionCompleted(
     expires.setMonth(expires.getMonth() + plan.termMonths)
     changes.premium_expires_at = expires.toISOString()
     changes.subscription_status = 'term_active'
+  }
+
+  // Credit packs (SA-027 path 3): grant journaled credits, idempotent
+  // per Stripe event via the ledger's unique stripe_event_id index.
+  const packId = session.metadata?.credit_pack_id as string | undefined
+  const creditPack = packId ? getCreditPackById(packId) : null
+  if (session.mode === 'payment' && creditPack) {
+    const grant = await grantPurchasedCredits({
+      userId: user.userId,
+      credits: creditPack.credits,
+      stripeEventId: eventId ?? `session:${session.id}`,
+    })
+    const result: HandlerResult = {
+      handled: true,
+      userId: user.userId,
+      changes: {
+        ...changes,
+        credits_granted: grant.granted ? creditPack.credits : 0,
+      },
+    }
+    if (!grant.granted && grant.reason !== 'duplicate event') {
+      result.error = `credit grant failed: ${grant.reason}`
+    }
+    await applySubscriptionState(
+      user.userId,
+      changes as Parameters<typeof applySubscriptionState>[1],
+    )
+    return result
   }
 
   const updated = await applySubscriptionState(

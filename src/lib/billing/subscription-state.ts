@@ -36,6 +36,8 @@ export interface UserBillingState {
   foundingMemberAt: string | null
   /** SA-026 one-time free generation: null = unused. */
   freeGenerationUsedAt: string | null
+  /** SA-027 spendable credits (packs + gift codes). */
+  generationCredits: number
 }
 
 interface UsersBillingRow {
@@ -48,10 +50,11 @@ interface UsersBillingRow {
   stripe_subscription_id: string | null
   founding_member_at: string | null
   free_generation_used_at: string | null
+  generation_credits: number | null
 }
 
 const BILLING_COLUMNS =
-  'id, subscription_tier, subscription_status, subscription_renews_at, premium_expires_at, stripe_customer_id, stripe_subscription_id, founding_member_at, free_generation_used_at'
+  'id, subscription_tier, subscription_status, subscription_renews_at, premium_expires_at, stripe_customer_id, stripe_subscription_id, founding_member_at, free_generation_used_at, generation_credits'
 
 function toState(row: UsersBillingRow): UserBillingState {
   const subscriptionTier = normalizeSubscriptionTier(row.subscription_tier)
@@ -73,6 +76,7 @@ function toState(row: UsersBillingRow): UserBillingState {
     stripeSubscriptionId: row.stripe_subscription_id ?? null,
     foundingMemberAt: row.founding_member_at ?? null,
     freeGenerationUsedAt: row.free_generation_used_at ?? null,
+    generationCredits: Number(row.generation_credits ?? 0),
   }
 }
 

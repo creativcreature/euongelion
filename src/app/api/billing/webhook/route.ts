@@ -262,6 +262,7 @@ export async function POST(request: NextRequest) {
           ...(await handleCheckoutSessionCompleted(
             event.data.object as Stripe.Checkout.Session,
             stripe,
+            event.id,
           )),
         }
         break

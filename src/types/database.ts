@@ -75,6 +75,11 @@ export type User = Timestamps & {
   /** SA-026: one-time free generation grant. NULL = unused. */
   free_generation_used_at: string | null
   /**
+   * SA-027 paths 3/6: spendable custom-generation credits (packs +
+   * gift codes). Journaled in generation_credit_ledger; never expires.
+   */
+  generation_credits: number
+  /**
    * Server-side authorization role (brief §9, migration 20260711000001).
    * Granted manually in the DB only — no UI/API path may write it.
    */
@@ -129,6 +134,7 @@ export type UserUpdate = {
   subscription_renews_at?: string | null
   premium_expires_at?: string | null
   free_generation_used_at?: string | null
+  generation_credits?: number
 }
 
 // =============================================================================

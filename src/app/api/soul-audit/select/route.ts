@@ -54,6 +54,10 @@ import {
   releaseFreeGeneration,
   reserveFreeGeneration,
 } from '@/lib/billing/generation-entitlement'
+import {
+  consumeGenerationCredit,
+  refundGenerationCredit,
+} from '@/lib/billing/credits'
 import type { JobRecord } from '@/types/soul-audit-plan'
 import type { SoulAuditSelectRequest } from '@/types/soul-audit'
 
@@ -365,6 +369,8 @@ export async function POST(request: NextRequest) {
   // can release a reserved grant if plan creation throws mid-flight.
   let freeGrantReserved = false
   let usesFreeGrant = false
+  let creditReserved = false
+  let usesCredit = false
   let gateUserId: string | null = null
   // True when this select retries a run whose previous job failed/stalled —
   // the run was gated at first creation, so the retry is never re-charged.
@@ -712,10 +718,11 @@ export async function POST(request: NextRequest) {
         })
       }
 
-      // The actual free-grant reservation happens AFTER the daily-cap
-      // and budget pre-checks below, so a 429 there never burns the
-      // grant. Remember the source for that step.
+      // The actual free-grant/credit reservation happens AFTER the
+      // daily-cap and budget pre-checks below, so a 429 there never
+      // burns anything. Remember the source for that step.
       usesFreeGrant = entitlement.source === 'free_grant'
+      usesCredit = entitlement.source === 'credits'
     }
 
     // ─── Per-day plan cap (cost control) ───
@@ -802,6 +809,18 @@ export async function POST(request: NextRequest) {
         })
       }
     }
+    if (usesCredit && gateUserId) {
+      creditReserved = await consumeGenerationCredit(gateUserId)
+      if (!creditReserved) {
+        return jsonError({
+          error: PASTORAL_MESSAGES.GENERATION_ENTITLEMENT_REQUIRED,
+          code: 'GENERATION_ENTITLEMENT_REQUIRED',
+          status: 402,
+          requestId,
+          details: { reason: 'no_entitlement', freeGenerationUsed: true },
+        })
+      }
+    }
 
     // ─── Create plan instance ───
     const planToken = randomUUID()
@@ -835,6 +854,10 @@ export async function POST(request: NextRequest) {
       if (freeGrantReserved && gateUserId) {
         await releaseFreeGeneration(gateUserId)
         freeGrantReserved = false
+      }
+      if (creditReserved && gateUserId) {
+        await refundGenerationCredit(gateUserId)
+        creditReserved = false
       }
       return jsonError({
         error: 'Unable to create devotional plan. Please retry.',
@@ -913,6 +936,10 @@ export async function POST(request: NextRequest) {
         await releaseFreeGeneration(gateUserId)
         freeGrantReserved = false
       }
+      if (creditReserved && gateUserId) {
+        await refundGenerationCredit(gateUserId)
+        creditReserved = false
+      }
       return jsonError({
         error: 'Unable to create generation job. Please retry.',
         code: 'JOB_CREATE_FAILED',
@@ -955,9 +982,13 @@ export async function POST(request: NextRequest) {
       requestId,
     )
   } catch (error) {
-    // A reserved free grant must never be lost to our exception.
+    // A reserved free grant / consumed credit must never be lost to our
+    // exception.
     if (freeGrantReserved && gateUserId) {
       await releaseFreeGeneration(gateUserId)
+    }
+    if (creditReserved && gateUserId) {
+      await refundGenerationCredit(gateUserId)
     }
     logApiError({
       scope: 'soul-audit-select',

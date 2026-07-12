@@ -33,12 +33,16 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
   formatBilledAmountLabel,
+  formatEditionCount,
   GENERATION_COVENANT,
+  sellableCreditPacks,
   type GenerationPaywallState,
 } from '@/lib/billing/paywall-state'
 import { usePendingGenerationStore } from '@/stores/pendingGenerationStore'
 import { typographer } from '@/lib/typographer'
+import CreditPackCard from './CreditPackCard'
 import PlanOfferStack from './PlanOfferStack'
+import RedeemCodeSheet from './RedeemCodeSheet'
 import SubscriptionLifecycleTimeline from './SubscriptionLifecycleTimeline'
 import type {
   BillingConfigResponse,
@@ -105,6 +109,12 @@ export default function GenerationPaywall({
   const [checkoutPhase, setCheckoutPhase] = useState<CheckoutPhase>('idle')
   const [checkoutError, setCheckoutError] = useState<string | null>(null)
   const [recheckPhase, setRecheckPhase] = useState<RecheckPhase>('idle')
+  // Spendable edition credits (SA-027). null = unknown (fetch pending or
+  // failed) — the quiet credits line simply doesn't render; the paywall's
+  // own honest states never depend on this read.
+  const [credits, setCredits] = useState<number | null>(null)
+  const [redeemOpen, setRedeemOpen] = useState(false)
+  const planStackRef = useRef<HTMLDivElement>(null)
 
   const signInHref = `/auth/sign-in?redirect=${encodeURIComponent(resumePath)}`
 
@@ -130,6 +140,30 @@ export default function GenerationPaywall({
   useEffect(() => {
     void loadConfig()
   }, [loadConfig])
+
+  // Credits visibility (SA-027): a signed-in reader who already holds
+  // editions (gift code, pack bought in another tab) sees them here and
+  // composes without any purchase. Anonymous readers read as 0.
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      try {
+        const response = await fetch('/api/billing/entitlements', {
+          cache: 'no-store',
+          credentials: 'include',
+        })
+        if (!response.ok) return
+        const payload = (await response.json()) as BillingEntitlementsResponse
+        if (cancelled || !payload.ok || !payload.authenticated) return
+        setCredits(payload.entitlements?.generationCredits ?? 0)
+      } catch {
+        // Unknown stays unknown — no fabricated balance.
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   // Lock the page behind the sheet; restore on close.
   useEffect(() => {
@@ -178,16 +212,21 @@ export default function GenerationPaywall({
   const plans = config?.plans ?? []
   const selectedPlan: BillingPlan | null =
     plans.find((plan) => plan.id === selectedPlanId) ?? null
+  // Pack card renders ONLY when config advertises sellable packs AND web
+  // payments are on — zero packs = no card, no gap (pattern doc §1.2).
+  const creditPacks = sellableCreditPacks(config)
+  const hasCredits = (credits ?? 0) > 0
 
-  async function startCheckout() {
-    if (!selectedPlan) return
+  async function startCheckout(
+    target: { planId: BillingPlanId } | { packId: string },
+  ) {
     setCheckoutPhase('starting')
     setCheckoutError(null)
     try {
       const response = await fetch('/api/billing/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ planId: selectedPlan.id, platform: 'web' }),
+        body: JSON.stringify({ ...target, platform: 'web' }),
       })
       const payload = (await response.json()) as {
         checkoutUrl?: string
@@ -340,6 +379,15 @@ export default function GenerationPaywall({
         Subscriptions aren’t open yet. Your edition request is saved — it will
         be waiting when they are.
       </p>
+      {/* Gift codes redeem server-side without checkout — the one live
+          path while payments are closed stays reachable. */}
+      <button
+        type="button"
+        className="min-h-[44px] w-fit text-label vw-small link-highlight"
+        onClick={() => setRedeemOpen(true)}
+      >
+        REDEEM A CODE
+      </button>
       {covenant}
     </div>
   )
@@ -353,8 +401,7 @@ export default function GenerationPaywall({
         <button
           type="button"
           className="min-h-[44px] text-label vw-small link-highlight"
-          onClick={() => void startCheckout()}
-          disabled={checkoutPhase !== 'idle' || !selectedPlan}
+          onClick={() => setRedeemOpen(true)}
         >
           REDEEM A CODE
         </button>
@@ -370,9 +417,6 @@ export default function GenerationPaywall({
           {recheckPhase === 'checking' ? 'CHECKING…' : 'ALREADY SUBSCRIBED?'}
         </button>
       </div>
-      <p className="vw-small mt-1 text-muted">
-        Codes are applied on the secure checkout page.
-      </p>
       {recheckPhase === 'not_subscribed' && (
         <p className="vw-small mt-2 text-secondary" role="status">
           This account doesn’t show an active subscription. If you subscribed
@@ -395,7 +439,7 @@ export default function GenerationPaywall({
     <button
       type="button"
       className="cta-major text-label vw-small w-full px-6 py-4 disabled:opacity-50"
-      onClick={() => void startCheckout()}
+      onClick={() => void startCheckout({ planId: selectedPlan.id })}
       disabled={checkoutPhase !== 'idle'}
       aria-busy={checkoutPhase !== 'idle'}
     >
@@ -403,6 +447,28 @@ export default function GenerationPaywall({
         ? 'OPENING CHECKOUT…'
         : `CONTINUE — ${formatBilledAmountLabel(selectedPlan)}`}
     </button>
+  )
+
+  // Credits in hand: the edition is already covered — composing resumes
+  // the held request directly (the backend consumes one credit; no
+  // purchase, no charge). Same resume machinery as "Already subscribed?".
+  const composeWithCreditsCta = (
+    <div className="grid gap-2">
+      <button
+        type="button"
+        className="cta-major text-label vw-small w-full px-6 py-4"
+        onClick={onEntitled}
+      >
+        COMPOSE MY EDITION
+      </button>
+      <p className="vw-small m-0 text-center text-muted">
+        {typographer(
+          credits === 1
+            ? 'No charge — uses your one edition.'
+            : `No charge — uses 1 of your ${credits ?? 0} editions.`,
+        )}
+      </p>
+    </div>
   )
 
   const offerStackBlock =
@@ -414,11 +480,13 @@ export default function GenerationPaywall({
       paymentsClosedNotice
     ) : (
       <div className="grid gap-4">
-        <PlanOfferStack
-          plans={plans}
-          selectedPlanId={selectedPlanId}
-          onSelect={setSelectedPlanId}
-        />
+        <div ref={planStackRef}>
+          <PlanOfferStack
+            plans={plans}
+            selectedPlanId={selectedPlanId}
+            onSelect={setSelectedPlanId}
+          />
+        </div>
         {checkoutError && (
           <p
             className="vw-small"
@@ -436,6 +504,25 @@ export default function GenerationPaywall({
           <div className="lg:hidden">
             <SubscriptionLifecycleTimeline plan={selectedPlan} />
           </div>
+        )}
+        {/* Credit-pack card (Phase 2, §1.2) — medium card between the
+            subscribe card and the text-links row. Renders only when the
+            config advertises sellable packs. */}
+        {creditPacks.length > 0 && (
+          <CreditPackCard
+            packs={creditPacks}
+            busy={checkoutPhase !== 'idle'}
+            onPurchase={(packId) => void startCheckout({ packId })}
+            onCrossLinkToSubscription={() => {
+              planStackRef.current?.scrollIntoView({
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)')
+                  .matches
+                  ? 'auto'
+                  : 'smooth',
+                block: 'center',
+              })
+            }}
+          />
         )}
         {textLinksRow}
       </div>
@@ -515,6 +602,11 @@ export default function GenerationPaywall({
               'Sign in and we compose it — your request is held, and composition starts automatically. No re-typing.',
             )}
           </p>
+          {hasCredits && (
+            <p className="vw-small mt-3 text-muted" role="status">
+              {typographer(`You have ${formatEditionCount(credits ?? 0)}.`)}
+            </p>
+          )}
         </div>
         <Link
           href={signInHref}
@@ -577,6 +669,35 @@ export default function GenerationPaywall({
         {covenant}
       </div>
     )
+  } else if (hasCredits) {
+    // Covered mode (SA-027): the reader already holds editions — the
+    // primary CTA resumes the held generation directly (one credit is
+    // consumed server-side; no purchase, no charge). No upsell while
+    // covered (SA-025) — the text-links row keeps redeem/restore near.
+    body = (
+      <div className="grid gap-6">
+        <div>
+          <h2
+            id="generation-paywall-heading"
+            className="text-serif-italic vw-heading-md mb-3"
+          >
+            This edition is covered.
+          </h2>
+          <p className="vw-body text-secondary" role="status">
+            {typographer(
+              `You have ${formatEditionCount(credits ?? 0)} — composing this one uses a credit, not a payment.`,
+            )}
+          </p>
+        </div>
+        {/* Desktop CTA — mobile uses the sticky footer below. */}
+        <div className="hidden lg:block">{composeWithCreditsCta}</div>
+        {textLinksRow}
+        <div className="grid gap-4">
+          {covenant}
+          {declineButton}
+        </div>
+      </div>
+    )
   } else {
     body = (
       <div className="grid gap-6">
@@ -608,8 +729,15 @@ export default function GenerationPaywall({
   }
 
   const showRightColumn = state !== 'allowance_exhausted'
-  const showStickyFooter =
-    state === 'no_entitlement' && configPhase === 'ready' && paymentsEnabled
+  // Mobile sticky footer: with credits in hand it carries the compose
+  // CTA; otherwise the selected-plan summary + subscribe CTA. Never both
+  // — one primary CTA per page state.
+  const showComposeFooter = state === 'no_entitlement' && hasCredits
+  const showPlanFooter =
+    state === 'no_entitlement' &&
+    !hasCredits &&
+    configPhase === 'ready' &&
+    paymentsEnabled
 
   return (
     <div
@@ -648,6 +776,7 @@ export default function GenerationPaywall({
                   {specimen}
                   {configPhase === 'ready' &&
                     paymentsEnabled &&
+                    !hasCredits &&
                     selectedPlan && (
                       <SubscriptionLifecycleTimeline plan={selectedPlan} />
                     )}
@@ -657,8 +786,9 @@ export default function GenerationPaywall({
           </div>
         </div>
 
-        {/* Mobile sticky footer — selected-plan summary + single CTA */}
-        {showStickyFooter && selectedPlan && (
+        {/* Mobile sticky footer — selected-plan summary + single CTA,
+            or the compose CTA when editions are already in hand. */}
+        {showPlanFooter && selectedPlan && (
           <div
             className="grid gap-2 p-4 lg:hidden"
             style={{
@@ -672,6 +802,31 @@ export default function GenerationPaywall({
             </p>
             {subscribeCta}
           </div>
+        )}
+        {showComposeFooter && (
+          <div
+            className="p-4 lg:hidden"
+            style={{
+              borderTop: '1px solid var(--color-border)',
+              backgroundColor: 'var(--color-surface)',
+            }}
+          >
+            {composeWithCreditsCta}
+          </div>
+        )}
+
+        {/* Redeem sheet (§1.3) — inside the dialog so the paywall's
+            focus trap contains it; it runs its own trap on top. */}
+        {redeemOpen && (
+          <RedeemCodeSheet
+            signInHref={signInHref}
+            onClose={() => setRedeemOpen(false)}
+            onRedeemed={(balance) => setCredits(balance)}
+            onCompose={() => {
+              setRedeemOpen(false)
+              onEntitled()
+            }}
+          />
         )}
       </div>
     </div>
