@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { marked } from 'marked'
+import { renderMarkdownSafe } from '@/lib/markdown-safe'
 import AudioPlayer from '@/components/AudioPlayer'
 import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
@@ -54,8 +54,11 @@ function formatUnlockTime(iso: string): string {
   })
 }
 
+// Model-authored markdown renders with raw HTML DISABLED (brief §12.3 /
+// OWASP M-1) — a prompt injection in the user's reflection can never
+// smuggle executable HTML into the reader.
 function renderMarkdown(md: string): string {
-  return marked.parse(md, { async: false }) as string
+  return renderMarkdownSafe(md)
 }
 
 function getDayRecord(

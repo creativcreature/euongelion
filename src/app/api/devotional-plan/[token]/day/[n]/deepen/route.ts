@@ -14,10 +14,17 @@
  * configured executor this returns 503 (explicit, not silent).
  */
 import { NextRequest, NextResponse } from 'next/server'
-import { createRequestId, jsonError } from '@/lib/api-security'
+import {
+  createRequestId,
+  getClientKey,
+  jsonError,
+  takeRateLimit,
+} from '@/lib/api-security'
 import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import { internalFetchHeaders } from '@/lib/internal-auth'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { createClient as createServerSupabase } from '@/lib/supabase/server'
+import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { getPlanInstanceWithFallback } from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
 import type { DayContent } from '@/types/soul-audit-plan'
@@ -102,9 +109,64 @@ export async function POST(
     })
   }
 
+  // Rate limit the spend trigger (OWASP self-audit M-4, 2026-07-11): a
+  // Deep Dive is ~2 minutes of Sonnet generation — the single most
+  // expensive on-demand call — so its POST must not be free to spam.
+  const limiter = await takeRateLimit({
+    namespace: 'plan-deepen',
+    key: getClientKey(request),
+    limit: 5,
+    windowMs: 60_000,
+  })
+  if (!limiter.ok) {
+    return jsonError({
+      error: 'Too many Deep Dive requests. Please wait a moment.',
+      code: 'RATE_LIMITED',
+      status: 429,
+      requestId,
+      rateLimit: limiter,
+    })
+  }
+
   const instance = await getPlanInstanceWithFallback(token)
   if (!instance) {
     return jsonError({ error: 'Plan not found.', status: 404, requestId })
+  }
+
+  // Ownership scoping (M-4, same policy as select/status): only the
+  // session that owns the plan — or the signed-in user that session
+  // belongs to — may trigger paid generation against it. Others see
+  // 404, indistinguishable from a missing plan.
+  if (instance.session_token) {
+    let authorized = false
+    try {
+      const callerToken = await getOrCreateAuditSessionToken()
+      authorized = callerToken === instance.session_token
+    } catch {
+      // no request-scoped cookie store — fall through to user check
+    }
+    if (!authorized) {
+      try {
+        const server = await createServerSupabase()
+        const {
+          data: { user },
+        } = await server.auth.getUser()
+        if (user) {
+          const { data: link } = await (createAdminClient() as any)
+            .from('user_sessions')
+            .select('session_token')
+            .eq('session_token', instance.session_token)
+            .eq('user_id', user.id)
+            .maybeSingle()
+          authorized = Boolean(link)
+        }
+      } catch {
+        // fall through to 404
+      }
+    }
+    if (!authorized) {
+      return jsonError({ error: 'Plan not found.', status: 404, requestId })
+    }
   }
 
   // Mirror the day route's gating: only enforce the schedule lock when

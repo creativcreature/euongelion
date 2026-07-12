@@ -61,23 +61,24 @@ export function resolveTokenSecret(namespace: string): string {
 
   const fallbackSource = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (fallbackSource && fallbackSource.length >= 32) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(
-        `[${namespace}] SOUL_AUDIT_RUN_TOKEN_SECRET not set — deriving fallback from SUPABASE_SERVICE_ROLE_KEY`,
-      )
-    }
+    // Loud in EVERY environment (OWASP self-audit L-2, 2026-07-11):
+    // production running on a derived secret is an ops smell the
+    // founder must see, not a silent degradation.
+    console.error(
+      `[${namespace}] SOUL_AUDIT_RUN_TOKEN_SECRET not set — deriving fallback from SUPABASE_SERVICE_ROLE_KEY. Set a dedicated ≥32-char secret in production.`,
+    )
     return createHmac('sha256', `euangelion-${namespace}-fallback`)
       .update(fallbackSource)
       .digest('hex')
   }
 
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn(
-      `[${namespace}] No suitable secret available — using ephemeral fallback`,
-    )
-  }
+  console.error(
+    `[${namespace}] No suitable secret available — using EPHEMERAL fallback (tokens break across restarts/isolates). Set SOUL_AUDIT_RUN_TOKEN_SECRET.`,
+  )
   return createHmac('sha256', `euangelion-${namespace}-ephemeral`)
-    .update(Date.now().toString() + (process.env.NEXT_PUBLIC_APP_URL || 'local'))
+    .update(
+      Date.now().toString() + (process.env.NEXT_PUBLIC_APP_URL || 'local'),
+    )
     .digest('hex')
 }
 

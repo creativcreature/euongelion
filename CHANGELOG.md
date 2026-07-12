@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Phase 1e complete: OWASP self-audit + same-day remediation (2026-07-11)
+
+Brief §12.6 deliverable (SA-028, F-077): evidence-based OWASP Top-10
+audit artifact at `docs/security/OWASP-TOP10-SELF-AUDIT-2026-07-11.md`
+(1 HIGH / 4 MEDIUM / 3 LOW; A04/A08/A10 + core access controls PASS),
+with same-day fixes:
+
+1. **H-1 FIXED:** `next` 16.1.6 → 16.2.10 (high advisories incl. HTTP
+   request smuggling in rewrites); CI dependency gate raised to
+   `--audit-level=high` (now exits 0). Full suite + production build +
+   bundle scan re-verified on the new version.
+2. **M-1 FIXED (§12.3):** all model-authored markdown now renders
+   through new `src/lib/markdown-safe.ts` — raw HTML tokens (block +
+   inline) escaped, never executed. A prompt injection in the user's
+   reflection can no longer smuggle executable HTML into the reader.
+   5 regression tests (script/img/event-handler smuggling).
+3. **M-3 FIXED:** rate-limit client keys now prefer Cloudflare's
+   unspoofable `cf-connecting-ip`; spoofable `x-forwarded-for` demoted
+   to dev fallback.
+4. **M-4 PARTIAL:** Deep Dive POST (the most expensive on-demand model
+   call) now rate-limited (5/min) + ownership-scoped (owning session or
+   linked user; others 404). Plan-READ scoping deferred to a founder
+   decision (plan-sharing semantics).
+5. **L-1/L-2 FIXED:** constant-time internal-secret comparison
+   (Workers-portable); token-secret fallback warnings now loud in
+   production.
+6. **Open founder decisions:** CSP `unsafe-inline` removal needs a new
+   `proxy.ts` for nonces (M-2, mitigated by M-1 meanwhile); plan-read
+   sharing semantics (M-4 reads).
+
+---
+
 ## CUSTOM GENERATION — Phase 1d: held-moment interstitial, onboarding bookends, sign-in polish (2026-07-11)
 
 Pattern-doc §4/§5/§6 + founder picks §7 (SA-024/SA-025/SA-026, F-064/F-065

@@ -187,11 +187,19 @@ export function createRequestId(): string {
 }
 
 export function getClientKey(request: Request): string {
-  const forwarded = request.headers.get('x-forwarded-for')
-  let ip = ''
-  if (forwarded) {
-    const first = forwarded.split(',')[0]?.trim()
-    if (first) ip = first
+  // cf-connecting-ip is set by Cloudflare itself and cannot be spoofed
+  // by the client when traffic comes through CF (production). The
+  // x-forwarded-for fallback exists for local dev / non-CF runtimes —
+  // it IS client-controllable, which is why it never takes precedence
+  // (OWASP self-audit M-3, 2026-07-11).
+  let ip = request.headers.get('cf-connecting-ip')?.trim() ?? ''
+
+  if (!ip) {
+    const forwarded = request.headers.get('x-forwarded-for')
+    if (forwarded) {
+      const first = forwarded.split(',')[0]?.trim()
+      if (first) ip = first
+    }
   }
 
   if (!ip) {
