@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## HOTFIX — Reader dropped flat `content` prose + CSP blocked video frames (2026-07-12)
+
+Two ship regressions found by the founder minutes after the Jabez
+deploy (SA-029, F-081):
+
+1. **normalizeModule ate canonical prose.** `ModuleRenderer` destructured
+   `content` off every module and only restored nested-OBJECT shapes
+   (legacy Substack format); the canonical flat string — what the Module
+   type declares and all Jabez days use — was silently discarded, so
+   teaching/story/insight/pullquote modules rendered as empty bordered
+   panels ("blank boxes and empty rows"). Fix: preserve string `content`.
+   New DOM-level regression suite `__tests__/module-renderer-flat-content.test.tsx`
+   (6 tests: flat string renders for all four prose types; legacy nested
+   - `body` shapes still work). Root-cause note: curl-level route
+     verification cannot catch client-render drops — reader content changes
+     now require a rendered-DOM assertion.
+2. **CSP `frame-src` blocked YouTube.** The F-077 security baseline
+   whitelisted only Cloudflare/Stripe frames; the Jabez days are the
+   first shipped content with `video` modules, so click-to-play loaded a
+   browser-blocked blank iframe. Fix: `https://www.youtube-nocookie.com`
+   added to `frame-src` (matches VideoModule's embed host).
+
+Pinned (founder, same session): retire the legacy `/wake-up/*` reader
+mount + relocate the shared reader out of `src/app/wake-up/` — future
+F-### task, needs redirects + sitemap/link sweep.
+
 ## CONTENT — The Prayer of Jabez: 7-day sabbath-first deep-dive series (2026-07-12)
 
 New prefab series `prayer-of-jabez` (SA-029, F-081) — founder-directed

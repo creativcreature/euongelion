@@ -48,6 +48,14 @@ function normalizeModule(raw: Record<string, unknown>): Module {
   void order
   const result: Record<string, unknown> = { type, ...rest }
 
+  // Flat canonical format: `content` is the prose string itself (per the
+  // Module type). Only the nested-object Substack shape gets spread; a
+  // string must be preserved as-is or teaching/story/insight/pullquote
+  // modules silently render empty (Jabez ship regression, 2026-07-12).
+  if (typeof content === 'string' && !result.content) {
+    result.content = content
+  }
+
   if (nested) {
     for (const [key, val] of Object.entries(nested)) {
       if (val !== undefined && val !== null) {
