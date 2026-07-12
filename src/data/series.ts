@@ -963,6 +963,76 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       },
     ],
   },
+  'prayer-of-jabez': {
+    title: 'The Prayer of Jabez',
+    heroImage: '/images/site/series/prayer-of-jabez.webp',
+    question:
+      'When God starts keeping His promises, do you know how to receive them?',
+    introduction:
+      'Two verses interrupt nine chapters of names. A man called Sorrow asks the God of Israel for everything his name denied him — and the ledger stops to record the answer. A 7-day deep dive into 1 Chronicles 4:9-10, written for a season when long-promised things are finally arriving.',
+    context:
+      "You prayed through the lean years. Now the ground is steadying — the stable work, the settled home, the quiet after years of noise — and a new set of questions moves in. Am I allowed to want this much? Why did this prayer get answered when others didn't? What if I lose it? An obscure man in Judah's genealogy, named after his mother's pain, prayed the boldest small prayer in Scripture and was granted it. His four petitions carry everything the season of arriving promises requires.",
+    framework: '1 Chronicles 4:10 - And God granted the request of Jabez',
+    pathway: 'Awake',
+    keywords: [
+      'transition',
+      'new season',
+      'change',
+      'waiting',
+      'promise',
+      'promises kept',
+      'stability',
+      'provision',
+      'blessing',
+      'breakthrough',
+      'finally happening',
+      'moving',
+      'new job',
+      'new home',
+      'insecurity',
+      'scared to lose it',
+      'prayer',
+      'asking God',
+      'Jabez',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'The Prayer at Rest',
+        slug: 'prayer-of-jabez-day-1',
+      },
+      {
+        day: 2,
+        title: 'Born From Pain',
+        slug: 'prayer-of-jabez-day-2',
+      },
+      {
+        day: 3,
+        title: 'Bless Me Indeed',
+        slug: 'prayer-of-jabez-day-3',
+      },
+      {
+        day: 4,
+        title: 'The God Who Grants',
+        slug: 'prayer-of-jabez-day-4',
+      },
+      {
+        day: 5,
+        title: 'Enlarge My Borders',
+        slug: 'prayer-of-jabez-day-5',
+      },
+      {
+        day: 6,
+        title: 'Kept',
+        slug: 'prayer-of-jabez-day-6',
+      },
+      {
+        day: 7,
+        title: 'The Week the Ledger Stopped',
+        slug: 'prayer-of-jabez-day-7',
+      },
+    ],
+  },
 }
 
 // ============================================
@@ -1011,6 +1081,7 @@ export const NEW_SERIES_ORDER = [
   'present-in-the-chaos',
   'standing-strong',
   'what-is-christianity',
+  'prayer-of-jabez',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1053,6 +1124,7 @@ export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
 // daily devotional surface flows from this plan.
 export const FEATURED_SERIES = [
   'bible-365',
+  'prayer-of-jabez',
   'identity',
   'too-busy-for-god',
   'why-jesus',

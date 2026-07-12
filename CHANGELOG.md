@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — The Prayer of Jabez: 7-day sabbath-first deep-dive series (2026-07-12)
+
+New prefab series `prayer-of-jabez` (SA-029, F-081) — founder-directed
+same-day build, text founder-approved before imagery per the new
+pre-imagery reading gate:
+
+1. **Seven day JSONs** at `public/devotionals/prayer-of-jabez-day-{1..7}.json`
+   in the founder-ruled week shape: Day 1 Sabbath (Sunday start), Days
+   2–6 deep dives on the A-B-C-B′-A′ chiasm (Born From Pain → Bless Me
+   Indeed → The God Who Grants (pivot) → Enlarge My Borders → Kept),
+   Day 7 Recap with Further-Your-Learning (7 verified videos, free
+   primary texts, passage trail, guided 1 Chr 1–9 read). ~15,900
+   counted words. Validator: 0 BLOCKING / 0 NEEDS-FIX.
+2. **Verification-first authoring:** all Scripture verbatim from
+   `public/bibles/` corpus (BSB/KJV/ASV/YLT); Hebrew audited against
+   interlinear (incl. the asah "no keep in the Hebrew" honesty note and
+   the Jabez/etsev metathesis drafting rule); every quote verbatim with
+   full citations (Spurgeon MTP 994, Matthew Henry complete ed., Lewis
+   Letters to Malcolm IV, Augustine Confessions V.8(15)); Wilkinson
+   prosperity episode confronted by name with verified critiques AND
+   his own caveats; two famous story legends (Müller breakfast table,
+   Paton shining-garment angels) REJECTED as folklore and replaced with
+   incidents verbatim from the men's own journals. Brief + source pack
+   at `content/series-briefs|source-packs/prayer-of-jabez.md`.
+3. **Editorial gate:** devotional-editor agent two-pass review (1
+   BLOCKING citation fix + 17 NEEDS-FIX applied) → READY FOR FOUNDER;
+   founder read the full draft (private artifact review copy) and
+   approved 2026-07-12.
+4. **Wiring:** SERIES_DATA + NEW_SERIES_ORDER entry (7 days, transition/
+   stability Soul Audit keywords). All 8 video embeds verified on
+   official channels and embed-playable (VideoModule plays inline via
+   youtube-nocookie; no embed-blocked videos per founder directive).
+5. **Imagery:** Higgsfield GPT Image 2 (founder directive), riso
+   halftone duotone per founder mockup — series hero + contextual
+   inline images per day (in progress this entry; placement follows).
+
 ## CUSTOM GENERATION — Phase 2 UI: pack card + redeem sheet + credits visibility (2026-07-12)
 
 Presentation delta on the Phase 2 backend below (SA-027 paths 3/6,

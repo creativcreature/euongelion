@@ -8,10 +8,11 @@ import {
 } from '@/data/series'
 
 describe('Series Data', () => {
-  it('has 33 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
-    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 7 new = 33
-    expect(SERIES_ORDER).toHaveLength(33)
-    expect(ALL_SERIES_ORDER).toHaveLength(33)
+  it('has 34 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
+    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 8 new = 34
+    // (prayer-of-jabez added 2026-07-12, SA-029/F-081)
+    expect(SERIES_ORDER).toHaveLength(34)
+    expect(ALL_SERIES_ORDER).toHaveLength(34)
   })
 
   it('has 7 Wake-Up series', () => {

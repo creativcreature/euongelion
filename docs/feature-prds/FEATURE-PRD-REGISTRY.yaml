@@ -815,3 +815,12 @@ features:
     prd: docs/feature-prds/F-080.md
     methodology_refs:
       - M00
+  - id: F-081
+    category: Content
+    feature: Prayer of Jabez 7-day prefab series (sabbath-first deep dive)
+    slug: prayer-of-jabez-series
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-081.md
+    methodology_refs:
+      - M00

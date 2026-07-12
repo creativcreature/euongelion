@@ -84,3 +84,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-078 | Billing UX        | Paywall + checkout return + success + manage      | 0/10     | wip    | [F-078.md](./F-078.md) |
 | F-079 | Soul Audit UX     | Held-moment interstitial + passwordless hardening | 0/10     | wip    | [F-079.md](./F-079.md) |
 | F-080 | Billing           | Credit packs + gift codes (Phase 2)               | 0/10     | wip    | [F-080.md](./F-080.md) |
+| F-081 | Content           | Prayer of Jabez 7-day series (sabbath-first)      | 0/10     | wip    | [F-081.md](./F-081.md) |

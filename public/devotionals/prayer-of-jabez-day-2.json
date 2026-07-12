@@ -1,0 +1,276 @@
+{
+  "day": 2,
+  "chiasm_position": "A",
+  "title": "Born From Pain",
+  "subtitle": "A man named Sorrow, more honorable than his brothers",
+  "teaser": "His mother looked at her newborn son and named him after the worst day of her life. The ledger of Israel remembers him anyway — for honor.",
+  "anchorVerse": "1 Chronicles 4:9",
+  "theme": "The names your past gave you are not your destiny — the week's hook",
+  "framework": "1 Chronicles 4:9 - Jabez was more honorable than his brothers",
+  "scriptureReference": "1 Chronicles 4:9",
+  "totalWords": 2743,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Chronicles 4:9",
+      "translation": "BSB",
+      "passage": "Now Jabez was more honorable than his brothers. His mother had named him Jabez, saying, \"Because I bore him in pain.\"",
+      "hebrewOriginal": "וַיְהִי יַעְבֵּץ נִכְבָּד מֵאֶחָיו וְאִמּוֹ קָרְאָה שְׁמוֹ יַעְבֵּץ לֵאמֹר כִּי יָלַדְתִּי בְּעֹצֶב",
+      "transliteration": "vayehi Yabetz nikhbad me'echav; ve'immo qare'ah shemo Yabetz lemor: ki yaladti be'otsev",
+      "emphasis": [
+        "more honorable than his brothers",
+        "Because I bore him in pain"
+      ],
+      "scriptureContext": "One sentence of biography inside the genealogy of Judah — the first of only two verses this man is given in all of Scripture."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יַעְבֵּץ",
+      "transliteration": "Yabetz",
+      "pronunciation": "yah-BETS",
+      "strongsNumber": "H3258",
+      "definition": "Jabez — a name built from the consonants of the Hebrew word for pain",
+      "usage": "His mother's explanation points at עֹצֶב (otsev, \"pain, sorrow\") — but look closely at the letters. The pain-word runs ayin-tsade-bet (ע-צ-ב). The name runs ayin-BET-TSADE (ע-ב-ץ): the same three consonants with the last two swapped. She named him Pain — with the letters scrambled.",
+      "usageNote": "Scholars call this metathesis: a deliberate transposition of sounds. A straight formation from the pain-root would have produced Ya'tsev, \"he causes pain.\" The actual name bends the word out of order — and the rearrangement turns out to be the story of his life. The scrambled name foreshadows the scrambled destiny. One caution as you hold this: the name carries pain's consonants without literally spelling the word — the pun lives in the sound, the way family nicknames so often do.",
+      "wordByWord": [
+        {
+          "word": "נִכְבָּד",
+          "transliteration": "nikhbad",
+          "meaning": "honored, weighty, distinguished"
+        },
+        {
+          "word": "מֵאֶחָיו",
+          "transliteration": "me'echav",
+          "meaning": "more than his brothers"
+        },
+        {
+          "word": "יָלַדְתִּי",
+          "transliteration": "yaladti",
+          "meaning": "I bore, I gave birth"
+        },
+        {
+          "word": "בְּעֹצֶב",
+          "transliteration": "be'otsev",
+          "meaning": "in pain, in sorrow"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "עֹצֶב",
+          "transliteration": "otsev",
+          "reference": "Psalm 139:24; Isaiah 14:3",
+          "meaning": "pain, sorrow, toil — a rare noun, appearing only three times in the Old Testament, and one of them is this verse"
+        }
+      ]
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/prayer-of-jabez/day-2-born-carried.webp",
+      "inlineImageAlt": "Two weathered hands cradling a small swaddled bundle from which a warm golden glow rises",
+      "inlineImageCaption": "Born in pain — carried anyway.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The Names That Stick",
+      "content": "Somewhere in your past, somebody named you. Probably without a birth certificate. A parent under their breath. A teacher handing back a test. A diagnosis. A divorce decree. A word said once, in anger or in grief, that fused to you the way only words spoken over children and exhausted adults can fuse. The difficult one. The dropout. The anxious one. The one who never finishes.\n\nToday we meet a man whose naming was crueler than most, because his was official. His mother looked at her newborn — the child she had just survived bearing — and made her worst day his permanent introduction. Jabez: the sound of the Hebrew word for pain, worn like a nametag for life. Every market greeting, every roll call, every introduction to a stranger repeated her sorrow back to the world. Some scholars hear even more in it; in the culture of the ancient Near East, a name was not a label but a trajectory. To be named Pain was to be told, daily, which way your life pointed.\n\nWhere we are standing in God's story this week: the return from exile. These verses were compiled centuries after Jabez lived, for families walking back from Babylon into a promised land that looked like a construction site — people whose own name, for seventy years, had been captives. The Chronicler opened his book with nine chapters of genealogy to tell them who they still were. And inside Judah's list, he preserved two verses about a man whose name said one thing and whose God said another.\n\nThat is the week's opening question, and it is aimed at you as squarely as at any returned exile: who gets the last word on what you are called?",
+      "markdown": false
+    },
+    {
+      "type": "pullquote",
+      "content": "She made her worst day his permanent introduction. Every roll call repeated her sorrow back to the world — until he addressed a God who keeps a different ledger."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "heading": "Two Verses Interrupting Nine Chapters",
+      "content": "To feel the force of Jabez's appearance, you have to feel the document he appears in.\n\nFirst Chronicles opens with the longest genealogy in the Bible — nine unbroken chapters, Adam to the returned exiles. Modern readers skim; the original readers could not afford to. Chronicles was written after the Babylonian exile, most likely in the 400s or 300s BC, for the fragile community rebuilding Judah. In that world a genealogy was a legal document. It said which family could claim which land, who could serve in the rebuilt temple, whether the old promises still had living addresses. When your nation has been dissolved and dragged across an empire, a list of names is not boring. A list of names is the deed to your existence.\n\nAnd then, in the middle of Judah's section, the deed stops being a deed for two verses. A man steps forward with no father listed — in a document whose whole purpose is fathers. One commentator noted long ago that he arrives \"without description, or patronymic, as if a well-known personage.\" We get no tribe-internal address, no landholdings, no offspring. Three facts only: he was more honorable than his brothers; his name echoed the word for sorrow; he prayed.\n\nNotice what the text refuses to explain. It never says why his mother's pain was severe enough to brand the child — whether the birth nearly killed her, whether the father was absent or dead, whether the family's poverty made another mouth a grief. Scripture leaves her sorrow undescribed, which means every reader who carries an undescribed sorrow can stand in that gap. And it never lists a single deed behind \"more honorable than his brothers.\" No battles, no offices, no wealth. In a chapter surrounded by craftsmen and clan-founders, the only recorded achievement of the most honorable man is that he called out to God.\n\nCharles Spurgeon, preaching on this verse in 1871, put his finger exactly there: \"We know very little about Jabez, except that he was more honorable than his brethren, and that he was called Jabez because his mother bare him with sorrow. It will sometimes happen that where there is the most sorrow in the antecedents, there will be the most pleasure in the sequel. As the furious storm gives place to the clear sunshine, so the night of weeping precedes the morning of joy.\" And he compressed the man's whole biography into seven words: \"His devotion was the key to his promotion.\"\n\nThe Chronicler, it seems, agreed. For readers whose identity papers said exile, he stopped the ledger to show them a man whose identity papers said pain — and what became of him.",
+      "markdown": false
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/prayer-of-jabez/day-2-ledger-interrupted.webp",
+      "inlineImageAlt": "Rows of identical halftone figures arranged like ledger entries, one figure stepping out of line into a shaft of golden light",
+      "inlineImageCaption": "The ledger pauses: one name steps out of the rows.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "HR7xaHv3Ias",
+      "videoTitle": "Books of 1-2 Chronicles Summary: A Complete Animated Overview",
+      "videoCaption": "Why Chronicles retells Israel's whole story for the generation coming home from exile — and what nine chapters of genealogy are actually doing. Essential context for where Jabez's two verses live.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "In Jabez's world, a name was a trajectory — spoken over you at birth, repeated by every mouth that greeted you, pointing your life toward its meaning.",
+      "modernApplication": "Your trajectory-words probably came later than birth — a report card, a rejection, a divorce, a diagnosis, a parent's exhausted sentence. But they function the same way: silently steering what you believe you are allowed to become.",
+      "connectionPoint": "Jabez never got his name changed. The record calls him Jabez in his verse of honor just as in his verse of sorrow. What changed was the authority he answered to — he took the name to the God of Israel and asked Him to write the ending.",
+      "newTestamentEcho": "\"To the one who overcomes... I will also give him a white stone inscribed with a new name, known only to the one who receives it.\" — Revelation 2:17 (BSB)"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "remez",
+      "heading": "The Scrambled Letters",
+      "content": "Stay with the letters a moment longer, because the Hebrew is doing something English cannot show you.\n\nThe pain-word otsev runs ayin, tsade, bet. The name Yabetz runs ayin, bet, tsade — the final two consonants transposed. Had his mother named him with the straight grammar of grief, he would have been Ya'tsev (יַעְצֵב): \"he will cause pain.\" She did not. Deliberately or not, she handed him the raw materials of sorrow in a scrambled order — close enough that everyone heard the pun, bent enough that the word never quite closed on him.\n\nThe rabbis and the modern grammarians rarely agree on much, but both have lingered over this transposition. A scholarly monograph has been written on metathesis — letter-swapping — as a deliberate literary device in the Hebrew Bible, and older commentators noticed that no Hebrew root actually exists in the name's letter order; the name is grief bent out of shape. Which means the wordplay is likely the Chronicler's whole point: the reversal of the letters foreshadows the reversal of the life. The man was handed pain rearranged, and God rearranged pain.\n\nFeel how differently that sits from the two stories we usually tell about painful beginnings. The first story says the name wins: you are what your worst chapter says you are, and honesty means lowering your expectations to match. The second story says the name never existed: positivity, clean slate, speak only blessing, look away from the scar. Scripture tells neither. The ledger does not delete his name and issue a new one; the verse of his honor still calls him Jabez. The sorrow stays in the record — his mother's pain is preserved in God's own book, dignified, not denied. But the sorrow does not get to run the sentence. \"More honorable than his brothers\" arrives first, before the naming is even explained, as if the Chronicler could not wait to lead with the ending.\n\nThere is a hint here — the kind the old interpreters trained themselves to catch — of a pattern that runs the whole length of Scripture and lands, eventually, on a hill outside Jerusalem. God's habit is not to erase the marks of pain but to transpose them. Jacob keeps the limp and gains the name Israel. The exiles keep the memory of Babylon and carry it home as testimony. The risen Jesus keeps the scars — of all things to keep — and they become the very proof by which a doubter finds faith. Your history is apparently not something God is embarrassed by, eager to shred and forget. He works in it the way the name works: same letters, new order, different ending.\n\nFor now, hold the day's own weight: a man carried the sound of sorrow in his own name every day of his life, and out-lived it — not by silencing it but by out-praying it. If you are walking into a new season still answering to old names, that is the precedent. The letters of your history are not required to spell your future.",
+      "markdown": false
+    },
+    {
+      "type": "story",
+      "heading": "The Boy Born Dead",
+      "content": "On October 28, 1953, in Jonesboro, Arkansas, a baby was delivered without a heartbeat and did not draw breath for eighteen minutes. The oxygen starvation left David Ring with cerebral palsy — slurred speech, an unsteady walk, a body that would never fully obey him. His father died when David was eleven. His mother, his fiercest defender, died of cancer when he was fourteen. An orphan with a disability, passed between relatives' houses, mocked for the way he talked, he sank by his own account into depression and despair that turned suicidal.\n\nAs a teenager he encountered Jesus Christ — the turn he describes, in his own telling, as being pulled out of the pit. And in 1973, the boy nobody could understand began to preach. He has now spent five decades as a full-time evangelist, speaking to more than a hundred thousand people a year, his consonants still slurred, his testimony unmissable. From the platform he issues a challenge that lands like a verse out of Judah's genealogy: \"I have Cerebral Palsy — what's your problem?\"\n\nRing's beginning read like a sentence: born dead, disabled, orphaned. It was, on paper, a name made of pain. Half a century of congregations can testify which way the letters ended up pointing.",
+      "connectionToTheme": "Like Jabez, Ring's sorrow was never deleted — the cerebral palsy is in every sentence he preaches. The pain was transposed: the same history, rearranged by God into the exact shape of his usefulness."
+    },
+    {
+      "type": "insight",
+      "heading": "The Address Called Jabez",
+      "content": "Two chapters before the prayer, the ledger drops a stray detail: \"the clans of the scribes who lived at Jabez\" (1 Chronicles 2:55). A town — in Judah, site now unknown — bore this same name. The text never connects the man and the place, though some suggest his descendants settled it. Jewish tradition went further, making Jabez a teacher whose students were those very scribes. History cannot confirm the tradition. But savor what the bare text gives us: somewhere in Judah, the word for sorrow became an address where people copied out the Scriptures.",
+      "historicalContext": "Rabbinic tradition (the Targum on 1 Chronicles and the Talmud, Temurah 16a) identifies Jabez with the judge Othniel — a tradition, not a historical claim, but evidence of how large this two-verse man loomed in later Jewish memory."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "Auditing Your Names",
+      "content": "A name you did not choose still has to be handled — and handling it is a craft with steps.\n\nStart by writing it down. The names that run us mostly run unexamined — they operate as mood, as flinch, as the reflex that says don't apply, don't ask, don't hope, people like you don't get seasons like this. Today's work is dragging them into the light where they have to hold still. The failed one. The abandoned one. The one who always ends up alone. The one who can't handle money. Write the actual words. You will likely find there are only two or three; they repeat like a small, tired playlist.\n\nThen do what Jabez did with his — say them to God rather than merely about yourself. There is a world of difference between rehearsing a name in your own head, where it always wins, and pronouncing it in the hearing of the God of Israel, where it has to compete with His record. The prayer we will study tomorrow does this almost violently: Jabez takes the raw material of his own name — pain — and hands it back to God as a request: keep me from it. He prays against his name, to the only One with the authority to overrule it.\n\nBe careful, at this step, of the two false endings. Do not dress the name up as humility — \"I'm just being realistic about myself\" is how a name convinces you to hold its coat. And do not try to shout it down with affirmations; a name spoken over you in pain is not out-volumed, it is out-authored. The exiles did not argue their way out of being called captives. Someone with more authority than Babylon walked them home.\n\nAnd if you are in the season this series was written inside — the season where the promises have started arriving, the stable ground, the new roof, the long-awaited yes — pay special attention. Old names get loud precisely when new mercies land. Impostor is a name. Waiting for the other shoe is a name. This can't be for someone like me is a name with excellent grammar and a long memory. The man in today's verse would recognize every one of them. He answered to Sorrow at every well and gate in Judah, and he still asked God for blessing with both hands open. The name in your past does not disqualify the request in your mouth. The ledger is explicit: the man named Pain is the man marked honorable.",
+      "markdown": false
+    },
+    {
+      "type": "scripture",
+      "reference": "Isaiah 43:1",
+      "translation": "BSB",
+      "passage": "Now this is what the LORD says— He who created you, O Jacob, and He who formed you, O Israel: \"Do not fear, for I have redeemed you; I have called you by your name; you are Mine!\"",
+      "emphasis": [
+        "I have called you by your name",
+        "you are Mine"
+      ],
+      "scriptureContext": "Spoken to the exiles — the very people the Chronicler wrote for. God does not deny their name; He claims it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the name your past speaks over you — the actual word or sentence? Write it down where only you and God will see it.",
+      "additionalQuestions": [
+        "Who first said it, and how old were you?",
+        "Where does that name get the loudest — and has it gotten louder or quieter as this new season of your life has opened up?",
+        "Jabez is called honorable before his prayer is even quoted. What would it mean to believe God leads with your ending, not your beginning?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: A Breath Prayer",
+      "instruction": "A breath prayer is a sentence small enough to ride on your breathing — prayed slowly, a handful of times, until the body believes it too.",
+      "steps": [
+        {
+          "title": "Settle",
+          "description": "Sit still. Breathe slowly twice, just to arrive."
+        },
+        {
+          "title": "Inhale",
+          "description": "Breathe in on the words: You call me by name."
+        },
+        {
+          "title": "Exhale",
+          "description": "Breathe out on the words: I am Yours. (Isaiah 43:1)"
+        },
+        {
+          "title": "Repeat",
+          "description": "Five slow rounds. When an old name interrupts — and one will — do not argue with it. Just start the next breath."
+        }
+      ],
+      "interaction_type": "breath"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "The Ledger Stops for People Like You",
+      "content": "We opened with the names that stick — the ones fused to you by other people's worst moments or your own.\n\nHere is where the day lands. The Bible contains exactly one sentence of biography for Jabez before his prayer, and that sentence holds both truths at once without flinching: his name echoed the word for pain, and he was more honorable than his brothers. Scripture never asks you to pick one — to pretend the sorrow away or to bow to it. It writes them in the same verse and lets God order the clauses. Honor first.\n\nSomewhere between his mother's naming and the Chronicler's ink, this man decided the last word on his life had not been spoken yet, and he addressed the only One authorized to speak it. That decision — not pedigree, not circumstances, not even the outcome — is the hinge the whole account turns on, and it is a decision available to anyone, in any season, holding any name. Tomorrow we listen to exactly what he said — the boldest small prayer in the Bible. Tonight, it is enough to know the ledger of God stops, mid-genealogy, for people whose introductions were written in pain. It stopped for him. There is no reason to believe it will not stop for you.",
+      "markdown": false
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "God of Israel, You have heard every name I answer to — the ones on my documents and the ones burned in by hard days. I bring them to You instead of rehearsing them to myself. Thank You that You write honor into the same verse as sorrow, and You put it first. As this new season opens, teach me to walk into it as someone You call by name, and not as what my worst chapter called me. Through Jesus, who kept His scars and outlived them. Amen.",
+      "breathPrayer": "Inhale: You call me by name — Exhale: I am Yours.",
+      "prayerType": "declarative"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will write down the name my past speaks over me, and I will say it out loud to God once — today — instead of silently to myself.",
+      "leavingAtCross": [
+        "The name spoken over me in someone else's pain",
+        "The realism that is actually resignation",
+        "The belief that people with my history don't get seasons like this"
+      ],
+      "receivingFromCross": [
+        "A record where honor is written before sorrow is explained",
+        "The right to be called by my name, not my wound",
+        "Scars that testify instead of disqualify"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Community Reflection",
+      "question": "What is the precise relationship between the name Jabez (יַעְבֵּץ) and the Hebrew word for pain (עֹצֶב, otsev)?",
+      "options": [
+        "They are the same word spelled identically",
+        "They share the same three consonants, with the last two transposed",
+        "Jabez is the Aramaic translation of otsev",
+        "There is no connection; the similarity is coincidence"
+      ],
+      "answer": 1,
+      "explanation": "The pain-word runs ayin-tsade-bet; the name runs ayin-bet-tsade — a deliberate scrambling scholars call metathesis. The name carries pain's raw materials in a bent order, and the bent letters foreshadow the bent destiny: God rearranges what the sorrow tried to spell."
+    },
+    {
+      "type": "profile",
+      "heading": "The Man Himself",
+      "name": "Jabez",
+      "era": "Tribe of Judah; his dates are unknown — preserved in a record compiled after the exile",
+      "bio": "One of Scripture's most complete mysteries: no father named, no deeds listed, no descendants recorded, appearing in exactly two verses of a genealogy. His entire surviving biography is a painful name, an uncommon honor, and a prayer God granted. A town of scribes in Judah bore his name (1 Chronicles 2:55); later Jewish tradition remembered him as a great teacher — memory outrunning the text, which is itself a kind of testimony.",
+      "keyQuote": "Oh that thou wouldest bless me indeed! (1 Chronicles 4:10, KJV)",
+      "lessonForUs": "You do not need a résumé for the ledger of God to stop for you. He entered the record with a wound for a name and left it marked honorable — on the strength of who he asked."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 32:27-28 (BSB)",
+          "text": "\"What is your name?\" the man asked. \"Jacob,\" he replied. Then the man said, \"Your name will no longer be Jacob, but Israel, because you have struggled with God and with men, and you have prevailed.\""
+        },
+        {
+          "reference": "Psalm 147:3 (BSB)",
+          "text": "He heals the brokenhearted and binds up their wounds."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Charles Spurgeon, \"The Prayer of Jabez\" — Metropolitan Tabernacle Pulpit, Vol. 17, Sermon No. 994 (1871)",
+          "description": "Source of both quotations in today's reading: \"the most sorrow in the antecedents... the most pleasure in the sequel,\" and \"His devotion was the key to his promotion.\" Full text freely available at spurgeongems.org."
+        },
+        {
+          "title": "David Ring, The Boy Born Dead (with David Wideman and John Driver; Baker Books, 2015)",
+          "description": "Ring's own account, with his earlier autobiography Just As I Am (1994) and his documented broadcast testimony \"Victorious! The David Ring Story\" (Dr. James Dobson Family Institute). Details of his story are drawn from his first-person telling."
+        },
+        {
+          "title": "Albert Barnes, Notes on the Old Testament, on 1 Chronicles 4:9",
+          "description": "Source of the observation quoted in today's reading that Jabez arrives \"without description, or patronymic, as if a well-known personage.\""
+        },
+        {
+          "title": "Hebrew wordplay and context",
+          "description": "Interlinear and Strong's data (H3258, H6090) from BibleHub, 1 Chronicles 4:9; on metathesis as a biblical device, Isaac Kalimi, Metathesis in the Hebrew Bible: Wordplay as a Literary and Exegetical Device; post-exilic setting per the standard introductions to Chronicles."
+        }
+      ],
+      "forDeeperStudy": "Read 1 Chronicles 4:1-23 in one sitting — the whole neighborhood of names around Jabez — and notice how the ledger pauses twice more (vv. 14, 21-23) to honor ordinary craftsmen: valley of artisans, potters, workers in fine linen. The Chronicler keeps interrupting his deed-registry for people history would otherwise forget."
+    }
+  ]
+}

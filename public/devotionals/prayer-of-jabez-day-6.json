@@ -1,0 +1,272 @@
+{
+  "day": 6,
+  "chiasm_position": "A-prime",
+  "title": "Kept",
+  "subtitle": "The prayer ends where the name began — and undoes it",
+  "teaser": "The last word of Jabez's prayer is the root of his own name. He asks God to unmake his introduction. Then he learns to live unafraid of losing the answer.",
+  "anchorVerse": "1 Chronicles 4:10",
+  "theme": "Stability rests in the Keeper, not the gift — receiving what was promised without the fear of losing it",
+  "framework": "1 Chronicles 4:10 - that thou wouldest keep me from evil, that it be not to my sorrow",
+  "scriptureReference": "1 Chronicles 4:10",
+  "totalWords": 2697,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Chronicles 4:10",
+      "translation": "ASV",
+      "passage": "And Jabez called on the God of Israel, saying, Oh that thou wouldest bless me indeed, and enlarge my border, and that thy hand might be with me, and that thou wouldest keep me from evil, that it be not to my sorrow! And God granted him that which he requested.",
+      "hebrewOriginal": "וְהָיְתָה יָדְךָ עִמִּי וְעָשִׂיתָ מֵרָעָה לְבִלְתִּי עָצְבִּי",
+      "transliteration": "vehayta yadekha immi, ve'asita mera'ah levilti otsbi — \"may Your hand be with me, and may You act from harm, that it not pain me\"",
+      "emphasis": [
+        "that thy hand might be with me",
+        "that it be not to my sorrow"
+      ],
+      "scriptureContext": "The American Standard's literal rendering keeps the old word — sorrow — where this week began. Today the prayer's last two petitions close the circle."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "יָד",
+      "transliteration": "yad",
+      "pronunciation": "yahd",
+      "strongsNumber": "H3027",
+      "definition": "hand — and, everywhere in Scripture, the reach of a person's presence, power, and care",
+      "usage": "Jabez does not ask for a wall, a weapon, or a guarantee. He asks for a hand — Yours, with me. Of all four petitions this is the most intimate: not an outcome but an accompaniment. Whatever ground the enlarged border covers, he wants it walked in company.",
+      "usageNote": "Now the honesty the deep dive owes you. English versions say \"keep me from harm,\" but there is no Hebrew verb 'keep' in this clause. The verb is עָשָׂה (asah) — the ordinary word for do, make, work: literally, \"that You would ACT from harm.\" Jabez asks for a working God, not a fence. (The great keeping-word, שָׁמַר shamar, does appear in the blessing Israel memorized — \"The Lord bless thee and KEEP thee,\" Numbers 6:24 — and we will pray it before the day ends.) And the final word, לְבִלְתִּי עָצְבִּי (levilti otsbi), is built on עצב — the very root scrambled into the name Jabez. The prayer's last word is his own name, being unmade.",
+      "wordByWord": [
+        {
+          "word": "יָדְךָ",
+          "transliteration": "yadekha",
+          "meaning": "Your hand"
+        },
+        {
+          "word": "עִמִּי",
+          "transliteration": "immi",
+          "meaning": "with me"
+        },
+        {
+          "word": "וְעָשִׂיתָ",
+          "transliteration": "ve'asita",
+          "meaning": "and may You act, work (asah — no 'keep' in the Hebrew)"
+        },
+        {
+          "word": "מֵרָעָה",
+          "transliteration": "mera'ah",
+          "meaning": "from evil, from harm (ra'ah)"
+        },
+        {
+          "word": "עָצְבִּי",
+          "transliteration": "otsbi",
+          "meaning": "my being pained — the root of his own name"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שָׁמַר",
+          "transliteration": "shamar",
+          "reference": "Numbers 6:24",
+          "meaning": "to keep, guard, watch over — the word of the priestly blessing: the Lord bless thee, and keep thee"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The New Fear That Moves In With You",
+      "content": "Nobody warns you about the second fear.\n\nThe first fear you know well — the lean-season fear that the promise will never come. You prayed through that one for years. But then the answer arrives: the ground steadies, the door opens, the season turns. And within weeks a second fear moves in, quieter and stranger than the first: now that it's here, what if I lose it? The stable job can be lost. The new home can burn. The peace can break. Some people discover they were actually calmer while waiting — waiting risks nothing — than they are holding the fragile, precious, answered thing.\n\nJabez knew. Listen to how his prayer ends. After the audacious asking — bless me, enlarge me — the last two petitions turn from acquisition to accompaniment: may Your hand be with me... that I be free from pain. The man asking for more territory is, in the same breath, asking not to be left alone on it. He wants the ground and the Keeper of the ground, and he seems to understand something we learn slowly: without the second, the first becomes a burden. An enlarged border, unaccompanied, is just a longer perimeter to patrol at 3 a.m.\n\nToday the week's circle closes. The prayer that began in his name's pain ends by asking God to unmake it — and the ledger says God did. What that means for you, standing on new ground with the second fear whispering, is the business of this reading.",
+      "markdown": false
+    },
+    {
+      "type": "pullquote",
+      "content": "An enlarged border, unaccompanied, is just a longer perimeter to patrol at 3 a.m. Jabez asked for the ground — and the Hand."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "A Hand, a Working, and a Word Unmade",
+      "content": "Walk the last two petitions slowly; each carries a surprise the translations smooth over.\n\nFirst: \"may Your hand be with me\" — vehayta yadekha immi. Not over me (sheer protection), not for me (sheer advocacy), but with me: the preposition of company. In Scripture God's yad is His presence operating — creating, delivering, steadying. Jabez asks to be accompanied across whatever the enlarged border contains. It is the least transactional line in the prayer, and it quietly reorders the other three: the blessing, the territory, and the safety are all being requested from inside a companionship.\n\nSecond: \"keep me from evil.\" Here is where the Hebrew surprises. There is no keep. The verb is asah — do, make, work: woodenly, \"that You would work from harm.\" Jabez does not ask for a fence around his life; he asks for a God actively working in it, upstream of whatever harm approaches. The difference matters pastorally. Fences are static and can be breached, and everyone who has lived long enough has watched one fail. A working God is neither.\n\nAnd then the last word. Levilti otsbi — \"that it not pain me\" — is built on עצב (a-ts-b), the root his mother scrambled into his name on the worst day of her life. Earlier this week we watched her name him Sorrow. Now his prayer walks to its final syllable and lays that exact root on the altar: God of Israel, end the sentence my name began. The old commentators saw it plainly — \"there is a play upon the name Jabez,\" wrote Keil and Delitzsch; \"he uses this expression in allusion to his name,\" added Benson. One translation (the World English Bible) even hears the clause the other way: \"that I may not cause pain\" — as if he asks not only to be spared sorrow but to be spared becoming a source of it. The Hebrew allows both readings, and a man named He-will-cause-pain might well have meant both. Either way, the shape is the same: the prayer is a life asking its Author for a rewritten ending.\n\nAnd the ledger answers in five words: God granted what he asked.",
+      "markdown": false
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "What Keeping Actually Means",
+      "content": "Now the hard, honest center — because if you build your theology only on Jabez's outcome, the second fear will eventually eat it.\n\nJabez asked to be spared pain and was spared. The record is real, and this week has honored it. But set beside it the other records. Israel memorized a blessing with the keeping-word in it — \"The Lord bless thee, and keep thee\" (Numbers 6:24) — and the people who sang it still buried children, lost harvests, went to exile. The psalmist insisted \"except the Lord keep the city, the watchman waketh but in vain\" (Psalm 127:1), and Jerusalem, kept city, fell. And at the center of our faith stands the Man of Sorrows himself, who asked in the garden to be spared and was not — \"He is despised and rejected of men; a man of sorrows, and acquainted with grief\" (Isaiah 53:3). If keeping meant a guarantee against all harm, Scripture's own pages would break it.\n\nWatch, instead, where the New Testament relocates the keeping. \"I give them eternal life, and they will never perish. No one can snatch them out of My hand. My Father who has given them to Me is greater than all. No one can snatch them out of My Father's hand\" (John 10:28-29). There is Jabez's fourth petition — the yad, the hand — but promised now at a depth no burglary, diagnosis, or market can reach. The keeping of God operates at the level of the keeper, and what He ultimately keeps is you. Gifts sit in open hands precisely because the hands themselves are held.\n\nThis is not a consolation prize; it is the only version of security that can actually quiet the 3 a.m. patrol. Run the logic. If your stability rests on the gift — the job, the house, the season — then your peace is exactly as durable as the least durable thing you own, and some part of you knows it, which is why the second fear moved in. But if your stability rests on the Keeper, then the gift can be enjoyed at full strength without being load-bearing. You can love the new ground without needing it to be eternal, because you are attached to Someone who is. The house is planted; you are kept. Those are different verbs, and the second one underwrites the first: \"I will provide a place for My people Israel and will plant them so that they may dwell in a place of their own and be disturbed no more\" (2 Samuel 7:10) — a promise spoken by the same mouth that would later say no one snatches them from My hand.\n\nAnd for the sorrows that do come — because on this side of the resurrection some will — the Man of Sorrows changes what they can do to you. He was not kept from the harm; He was kept through it, out the far side, alive. Since then, pain against a child of God has a ceiling and an expiration date, and neither is set by the pain. That is what it means that Jabez's last word was granted at Easter: the root of sorrow itself — everything his name carried — has been sentenced to unmaking. Some of that unmaking you get now, as he did. All of it is guaranteed later. The Keeper signed in person.",
+      "markdown": false
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/prayer-of-jabez/day-6-kept-in-hand.webp",
+      "inlineImageAlt": "A tiny figure asleep, curled safely in the center of one enormous open halftone palm, warmed by a golden glow",
+      "inlineImageCaption": "No one can snatch them out of My Father’s hand.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "_TzdEPuqgQg",
+      "videoTitle": "Book of Isaiah Summary: A Complete Animated Overview (Part 2)",
+      "videoCaption": "Isaiah 40-66 — the Servant who is not spared, and whose suffering carries blessing to the nations. The deep background of today's center: kept through, not always kept from.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "Jabez asked for an accompanying hand and a working God — presence upstream of harm, not a static fence around his ground.",
+      "modernApplication": "We buy the fences: insurance, contingency funds, monitoring, backups. Good tools — and terrible gods. A fence-based peace is only ever as strong as its weakest breach point, and the heart knows it.",
+      "connectionPoint": "Keep the tools; relocate the trust. Planning guards the gift. Only the Keeper guards you — and only that second keeping can put the 3 a.m. patrol off duty.",
+      "newTestamentEcho": "\"No one can snatch them out of My Father's hand.\" — John 10:29 (BSB)"
+    },
+    {
+      "type": "story",
+      "heading": "Jehovah's Rain",
+      "content": "Tanna, the New Hebrides, late January 1862. The Scottish missionary John G. Paton — his wife and infant son already buried on the island — had been driven from his own station and was sheltering with the Mathiesons at Kwamera when, around ten o'clock one night, armed warriors ringed the mission house. The missionaries committed themselves to God in hushed prayer. Then the attackers torched the church and set fire to the reed fence that ran straight to the house.\n\nPaton went out into the dark alone and tore the burning fence away. Instantly they were on him: \"Seven or eight savages had surrounded me, and raised their great clubs in air. I heard a shout — 'Kill him! kill him!'\" He records what happened next with an accountant's calm: they urged each other to strike the first blow, \"but the Invisible One restrained them.\" And then, out of the south, a roaring wind that bent the flames back from the dwelling house, followed by a torrent of rain that drowned the fires. The war party's nerve broke. Paton heard them cry: \"That is Jehovah's rain! Truly their Jehovah God is fighting for them and helping them. Let us away!\" They vanished into the bush, and he stood alone in the downpour, \"praising God for His marvellous works.\" Of that season's escapes he wrote that deliverance came \"neither by man nor of man's planning.\"\n\nTell the story honestly, as he did: Paton was not kept from all harm — Tanna had already cost him nearly everything, and weeks later he would flee the island with little but his life. What he testified to was something sturdier than a charm: a working God, a hand with him in the dark, and a keeping that ran deeper than his losses. (A famous later version of Paton's protection — a chief asking about shining figures with drawn swords guarding the house — appears nowhere in his autobiography; it surfaces only in twentieth-century retellings. The rain needs no embroidery. It is in his own hand, dated.)",
+      "connectionToTheme": "Paton prayed Jabez's last petitions from inside the harm — and found the hand present, the working real, and the keeping aimed at him rather than his circumstances. The gift-level losses were terrible and true; the keeper-level keeping held."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/prayer-of-jabez/day-6-jehovahs-rain.webp",
+      "inlineImageAlt": "A small thatched house at night in driving rain, flames from a burning fence bending away from it, one window glowing gold",
+      "inlineImageCaption": "Tanna, January 1862 — the wind bent the flames, and then the rain came.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "insight",
+      "heading": "The Other Reading of the Last Word",
+      "content": "The World English Bible renders the prayer's final clause: \"that I may not cause pain.\" The Hebrew form genuinely allows it — and for a man whose name was scrambled out of the verb for causing pain, the second reading cuts deep. Perhaps Jabez feared his inheritance in both directions: the sorrow that might come to him, and the sorrow he might become. Anyone who has carried a family wound knows both fears are real. The prayer covers them together, and so does the granting.",
+      "historicalContext": "Translational honesty note: the mainstream rendering ('that it may not grieve me') follows the older versions and most modern committees; the WEB's causative reading is a legitimate minority understanding of the same consonants."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "Practicing the Keeping",
+      "content": "How does keeper-level security become more than a sentence you agree with? Three practices, sized for this week.\n\nName the second fear to the First Keeper. Write the actual loss-scenario that patrols your nights — the specific one. Losing the job. The diagnosis returning. The peace breaking. Then pray it, out loud, inside the fourth petition: Your hand is with me — including there. Unnamed fears govern; named fears shrink to their real size, which is always smaller than their nighttime size. This is Jabez's own move: he did not pray around his name's darkness, he prayed its exact root back to God.\n\nBless your household with the old words. Israel's answer to the fragility of every gift was a memorized keeping — the priestly blessing sung over the people for three thousand years: The Lord bless thee, and keep thee. Say it over your actual ground this week: at the table, over sleeping kids, at the doorframe of the new place, over your own reflection if you live alone. There is no magic in this — only what Deuteronomy taught the newly landed to do: putting the Keeper's name audibly over what the heart keeps trying to re-title, so that both the gratitude and the security point at the right address.\n\nRetire the fences from god-duty. Keep the insurance. Keep the emergency fund. Wisdom builds fences, and Scripture honors the watchman even while capping his power — except the Lord keep the city, the watchman waketh but in vain. The practice is a quiet demotion ceremony: each tool, thanked and reassigned from savior to steward. You will know the demotion is real by a simple test: when a fence fails — and one will — does the floor hold? People whose floor is the Keeper grieve gift-level losses without keeper-level collapse. That resilience, more than any prosperity, is what the watching world finds inexplicable — it is what they saw in Paton, standing in the rain.",
+      "markdown": false
+    },
+    {
+      "type": "scripture",
+      "reference": "Numbers 6:24-26",
+      "translation": "KJV",
+      "passage": "The Lord bless thee, and keep thee: The Lord make his face shine upon thee, and be gracious unto thee: The Lord lift up his countenance upon thee, and give thee peace.",
+      "emphasis": [
+        "and keep thee"
+      ],
+      "scriptureContext": "The blessing God commanded Aaron to put on the people — the shamar-keeping Jabez's prayer reaches toward, given to Israel as a gift to be spoken over one another."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is your second fear — the specific loss that moved in with the answered prayer? Name it in writing, then pray it inside the fourth petition: 'Your hand is with me, including there.'",
+      "additionalQuestions": [
+        "Which of your fences — savings, plans, safeguards — has quietly been promoted to god-duty? What would its demotion ceremony look like?",
+        "Jabez's last word laid the root of his own name before God. What word from your history belongs on that altar?",
+        "Who in your household or circle needs the old blessing spoken over them this week — and what keeps you from saying it out loud?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: An Image of Keeping",
+      "instruction": "An art response — the week's practice of seeing. No skill required; attention is the offering.",
+      "steps": [
+        {
+          "title": "Find",
+          "description": "Sometime today, find or make one image of keeping: a photograph of hands that have held you, a sketch of your doorframe, the horizon line from your window — anything that says 'held' to you."
+        },
+        {
+          "title": "Sit",
+          "description": "Look at it for two full minutes. Slower than comfortable. Let the second fear surface if it wants to; it is allowed here."
+        },
+        {
+          "title": "Inscribe",
+          "description": "Write across or beneath it, in your own hand: 'No one can snatch them out of My Father's hand.' Keep it where the 3 a.m. patrol will find it."
+        }
+      ],
+      "interaction_type": "art"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "The Sentence, Rewritten",
+      "content": "Earlier this week we met a newborn being handed a name like a verdict: Sorrow, because of what his arrival cost. We asked then: who gets the last word on what you are called?\n\nNow you know the answer the ledger gives. The last word of Jabez's prayer is the root of his own name — placed, deliberately, in the hands of the God of Israel with a request to unmake it. And God granted what he asked. The introduction written in pain did not survive contact with the Keeper. Neither, the whole record insists, must yours.\n\nSo stand on the new ground unafraid. Not because nothing can touch it — fences fail, seasons turn, and the Man of Sorrows never promised otherwise — but because the hand beneath you does not fail, and it is holding something it values more than the ground: you. The week has one more turn — a look back over everything, and where to go from here. But the prayer itself is finished, and it finishes the way every honest prayer finally does: with everything, including the oldest wound, left in better hands.",
+      "markdown": false
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Keeper of Israel, Your hand is with me — on the new ground, in the old wound, through the fear that moved in with the blessing. I name my second fear to You and demote my fences from god-duty. Bless this household and keep it; make Your face shine on the people inside these walls. And take the last word of my own story — the one written on a hard day — and unmake it the way You unmade his. I am not holding my life. I am held. Amen.",
+      "breathPrayer": "Inhale: The Lord bless thee — Exhale: and keep thee.",
+      "prayerType": "benediction"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will speak the priestly blessing (Numbers 6:24-26) out loud over my actual household this week — and name my second fear to God once, by its real name.",
+      "leavingAtCross": [
+        "The 3 a.m. patrol of everything I could lose",
+        "The fences promoted to god-duty",
+        "The old name's claim to the last word"
+      ],
+      "receivingFromCross": [
+        "A keeping aimed at me, deeper than any gift",
+        "Permission to love the new ground without needing it to be eternal",
+        "A hand no loss can snatch me out of"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Community Reflection",
+      "question": "The prayer's final clause — levilti otsbi, \"that it may not pain me\" — is built on which root?",
+      "options": [
+        "שׁמר (shamar) — the keeping word from the priestly blessing",
+        "ברך (barak) — the blessing word that opened the prayer",
+        "עצב (a-ts-b) — the pain root scrambled into Jabez's own name",
+        "גבול (gevul) — the border word from the second petition"
+      ],
+      "answer": 2,
+      "explanation": "The last word of the prayer returns to the root of his name: the prayer ends where the naming began, asking God to unmake it. The circle the mother closed in grief, the prayer reopens in faith — and the ledger says God granted it."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Story",
+      "name": "John Gibson Paton",
+      "era": "1824-1907, Scotland and the New Hebrides (Vanuatu)",
+      "bio": "A Glasgow city missionary who sailed for the New Hebrides in 1858 against all advice. He buried his wife Mary and infant son on Tanna within his first year, survived repeated attempts on his life, escaped in 1862, and returned to the neighboring island of Aniwa — which, over decades, turned to Christ almost entirely. His autobiography, edited by his brother James (1889), carried the story of those islands around the world.",
+      "keyQuote": "But the Invisible One restrained them.",
+      "lessonForUs": "Paton lost gift after gift and never lost the Keeper. His security was not that harm stayed away — it did not — but that the hand stayed with him inside it."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "Psalm 127:1 (KJV)",
+          "text": "\"Except the Lord build the house, they labour in vain that build it: except the Lord keep the city, the watchman waketh but in vain.\""
+        },
+        {
+          "reference": "2 Samuel 7:10 (BSB)",
+          "text": "\"And I will provide a place for My people Israel and will plant them so that they may dwell in a place of their own and be disturbed no more.\""
+        },
+        {
+          "reference": "John 10:28-29 (BSB)",
+          "text": "\"I give them eternal life, and they will never perish. No one can snatch them out of My hand... No one can snatch them out of My Father's hand.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "John G. Paton, Missionary to the New Hebrides: An Autobiography, ed. James Paton (Hodder & Stoughton, 1889), ch. X, pp. 346-348",
+          "description": "The 'Jehovah's rain' night, quoted verbatim from Paton's own account. The widely retold 'shining garments' angel story does not appear in the autobiography; it traces to twentieth-century retellings (Billy Graham, Angels, 1975) and is not used here."
+        },
+        {
+          "title": "Hebrew data",
+          "description": "yad (H3027), asah (H6213 — the actual verb where translations read 'keep'), ra'ah (H7451), and the עצב root of levilti otsbi (verb H6087; the name's noun-form H6090) — BibleHub interlinear and Strong's, 1 Chronicles 4:10; Keil-Delitzsch and Benson on the name-play."
+        }
+      ],
+      "forDeeperStudy": "Read Numbers 6:22-27 — the whole priestly blessing, including the closing line most people never hear: 'So they shall put My name on the Israelites, and I will bless them' (v. 27, BSB). The blessing is a naming. That is why it answers a man named Sorrow."
+    }
+  ]
+}

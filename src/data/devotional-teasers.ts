@@ -801,6 +801,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     "What does it look like to release your grip? To seek God's peace instead of manufactured stability?",
   'peace-day-5':
     "The world is still chaotic. But you're not holding it together anymore. God is. And that changes everything.",
+  'prayer-of-jabez-day-1':
+    "Two verses interrupt nine chapters of names. Today, don't analyze them. Just hear them.",
+  'prayer-of-jabez-day-2':
+    'His mother looked at her newborn son and named him after the worst day of her life. The ledger of Israel remembers him anyway — for honor.',
+  'prayer-of-jabez-day-3':
+    'A prayer so bold it doubles its own verb. A bestseller that turned it into a formula. Today we take the prayer back.',
+  'prayer-of-jabez-day-4':
+    "Ten million people have prayed Jabez's words hoping the words would work. The words never worked. Someone did.",
+  'prayer-of-jabez-day-5':
+    'God is handing you ground you prayed years for. The question that decides everything: is it a trophy, or an assignment?',
+  'prayer-of-jabez-day-6':
+    "The last word of Jabez's prayer is the root of his own name. He asks God to unmake his introduction. Then he learns to live unafraid of losing the answer.",
+  'prayer-of-jabez-day-7':
+    'Six days inside forty-four Hebrew words. Today: the whole arc in one view, and a study trail for going further on your own.',
   'present-in-the-chaos-day-1':
     "When busyness blinds you to God's presence, stillness becomes the cure",
   'present-in-the-chaos-day-2':
@@ -1455,6 +1469,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'peace-day-3': 'Peace I give you—not as the world gives',
   'peace-day-4': 'Practicing surrender over control',
   'peace-day-5': 'Peace as a kingdom gift, not an achievement',
+  'prayer-of-jabez-day-1': 'The Prayer at Rest',
+  'prayer-of-jabez-day-2': 'Born From Pain',
+  'prayer-of-jabez-day-3': 'Bless Me Indeed',
+  'prayer-of-jabez-day-4': 'The God Who Grants',
+  'prayer-of-jabez-day-5': 'Enlarge My Borders',
+  'prayer-of-jabez-day-6': 'Kept',
+  'prayer-of-jabez-day-7': 'The Week the Ledger Stopped',
   'present-in-the-chaos-day-1': 'Slowed to See',
   'present-in-the-chaos-day-2': 'Centered by Calling, Not Constant Motion',
   'present-in-the-chaos-day-3': 'Standing Firm Amid Pressure',

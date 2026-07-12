@@ -1,0 +1,58 @@
+{
+  "day": 1,
+  "chiasm_position": "sabbath",
+  "title": "The Prayer at Rest",
+  "subtitle": "Before we study a single word, we sit with all of them",
+  "teaser": "Two verses interrupt nine chapters of names. Today, don't analyze them. Just hear them.",
+  "anchorVerse": "1 Chronicles 4:10",
+  "theme": "Receiving the whole prayer in stillness before the week takes it apart",
+  "framework": "1 Chronicles 4:10 - And God granted the request of Jabez",
+  "scriptureReference": "1 Chronicles 4:9-10",
+  "totalWords": 460,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Chronicles 4:9-10",
+      "translation": "BSB",
+      "passage": "Now Jabez was more honorable than his brothers. His mother had named him Jabez, saying, \"Because I bore him in pain.\" And Jabez called out to the God of Israel, \"If only You would bless me and enlarge my territory! May Your hand be with me and keep me from harm, so that I will be free from pain.\" And God granted the request of Jabez.",
+      "hebrewOriginal": "וַיִּקְרָא יַעְבֵּץ לֵאלֹהֵי יִשְׂרָאֵל לֵאמֹר אִם־בָּרֵךְ תְּבָרֲכֵנִי וְהִרְבִּיתָ אֶת־גְּבוּלִי וְהָיְתָה יָדְךָ עִמִּי וְעָשִׂיתָ מֵרָעָה לְבִלְתִּי עָצְבִּי וַיָּבֵא אֱלֹהִים אֵת אֲשֶׁר־שָׁאָל",
+      "transliteration": "vayyiqra Yabetz le'lohei Yisrael lemor: im-barekh tevarakheni, vehirbita et-gevuli, vehayta yadekha immi, ve'asita mera'ah levilti otsbi — vayyave Elohim et asher-sha'al",
+      "emphasis": [
+        "And God granted the request of Jabez"
+      ],
+      "scriptureContext": "Two verses set inside the genealogies of Judah — the only place in Scripture this man appears."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "sabbath",
+      "pardes_layer": "peshat",
+      "heading": "Where You Are Standing",
+      "content": "The first nine chapters of 1 Chronicles are a ledger of names. Hundreds of them, moving past like faces on a train. Then, in the middle of chapter four, the list stops. A man steps out of the line. We are told three things: his name was built from the sound of pain, his life outgrew his name, and he prayed.\n\nThese words were collected for people coming home from exile — families returning to Judah after seventy years in Babylon, standing on rubble that was supposed to be a promised land, wondering if God still kept old promises. The Chronicler answered them with a record. Among the names of your people, he says, there was once a man marked by sorrow from birth, and he asked God for blessing anyway. And God granted what he asked.\n\nThis week we will take the prayer apart — the name, the asking, the granting, the borders, the keeping. Today we do not take anything apart. It is Sunday. The week's first word is not study; it is rest. Read the prayer once more, slowly. Let it be what it was for those returning exiles: evidence, laid quietly in the record, that calling out to the God of Israel is never wasted breath.",
+      "markdown": false
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/prayer-of-jabez/day-1-sabbath-still.webp",
+      "inlineImageAlt": "A lone figure seated in stillness on a blue halftone hill beneath a vast cream sky, a small golden sun low on the horizon",
+      "inlineImageCaption": "Sunday. The week begins at rest.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of the four requests — blessing, larger borders, God's hand with you, freedom from pain — is the one you have been afraid to say out loud?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "sabbath",
+      "heading": "Sabbath",
+      "scripture_anchor": {
+        "reference": "1 Chronicles 4:10",
+        "translation": "BSB",
+        "text": "And Jabez called out to the God of Israel... And God granted the request of Jabez."
+      },
+      "invitation": "Sit somewhere quiet for five unhurried minutes. No study, no phone, no fixing. If words come, let them be his: bless me. If no words come, stay anyway. The silence is the practice.",
+      "prayerText": "God of Israel, before I ask You for anything, let me sit where Jabez stood — known by name, pain and all. Amen."
+    }
+  ]
+}

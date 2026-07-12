@@ -24,6 +24,7 @@ export interface SeriesRail {
 // devotional surface (per founder direction 2026-05-08).
 export const FEATURED_SERIES_SLUGS = [
   'bible-365',
+  'prayer-of-jabez',
   'identity',
   'too-busy-for-god',
   'why-jesus',
