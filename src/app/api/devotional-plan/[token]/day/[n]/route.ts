@@ -12,6 +12,7 @@ import {
   getPlanInstanceWithFallback,
 } from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
+import { isCallerAuthorizedForSession } from '@/lib/soul-audit/plan-ownership'
 import type { CustomPlanDay } from '@/types/soul-audit'
 
 function onboardingDay(instance: DevotionalPlanInstanceRecord) {
@@ -133,6 +134,20 @@ export async function GET(
       })
     }
 
+    // Ownership scoping (§12.3 / OWASP M-4, founder-authorized
+    // 2026-07-12): a bespoke plan is composed from someone's private
+    // reflection — a leaked/guessed token must not read it. Only the
+    // owning session or its signed-in user; others get the same 404 as
+    // a missing plan. Explicit share tokens arrive with the sharing
+    // feature (brief §5 share_slug); bearer-UUID access is not sharing.
+    if (!(await isCallerAuthorizedForSession(instance.session_token))) {
+      return jsonError({
+        error: 'Plan not found.',
+        status: 404,
+        requestId,
+      })
+    }
+
     const dayLockingEnabled = isDayLockingEnabledForRequest(request)
     if (!dayLockingEnabled) {
       const unlockedDay = await resolvePlanDayContent(token, dayNumber)
@@ -144,16 +159,14 @@ export async function GET(
         })
       }
 
-      return respond(
-        {
-          locked: false,
-          archived: false,
-          onboarding: dayNumber === 0,
-          day: unlockedDay,
-          policy: instance.start_policy,
-          schedule: scheduleMeta(instance, false),
-        },
-      )
+      return respond({
+        locked: false,
+        archived: false,
+        onboarding: dayNumber === 0,
+        day: unlockedDay,
+        policy: instance.start_policy,
+        schedule: scheduleMeta(instance, false),
+      })
     }
 
     const unlock = isPlanDayUnlocked({
@@ -167,24 +180,22 @@ export async function GET(
     if (!unlock.unlocked) {
       if (previewRequested && dayNumber > 0) {
         const previewDay = await resolvePlanDayContent(token, dayNumber)
-        return respond(
-          {
-            locked: true,
-            archived: false,
-            onboarding: false,
-            day: previewDay
-              ? {
-                  day: previewDay.day,
-                  title: previewDay.title,
-                  scriptureReference: previewDay.scriptureReference,
-                  scriptureText: previewDay.scriptureText,
-                }
-              : null,
-            message: unlock.message,
-            policy: instance.start_policy,
-            schedule: scheduleMeta(instance, true),
-          },
-        )
+        return respond({
+          locked: true,
+          archived: false,
+          onboarding: false,
+          day: previewDay
+            ? {
+                day: previewDay.day,
+                title: previewDay.title,
+                scriptureReference: previewDay.scriptureReference,
+                scriptureText: previewDay.scriptureText,
+              }
+            : null,
+          message: unlock.message,
+          policy: instance.start_policy,
+          schedule: scheduleMeta(instance, true),
+        })
       }
 
       return respond(
@@ -201,16 +212,14 @@ export async function GET(
 
     if (unlock.onboarding && dayNumber === 0) {
       const onboardingPlanDay = await getPlanDayWithFallback(token, 0)
-      return respond(
-        {
-          locked: false,
-          archived: false,
-          onboarding: true,
-          day: onboardingPlanDay?.content ?? onboardingDay(instance),
-          policy: instance.start_policy,
-          schedule: scheduleMeta(instance, true),
-        },
-      )
+      return respond({
+        locked: false,
+        archived: false,
+        onboarding: true,
+        day: onboardingPlanDay?.content ?? onboardingDay(instance),
+        policy: instance.start_policy,
+        schedule: scheduleMeta(instance, true),
+      })
     }
 
     const planDay = await resolvePlanDayContent(token, dayNumber)
@@ -222,16 +231,14 @@ export async function GET(
       })
     }
 
-    return respond(
-      {
-        locked: false,
-        archived: unlock.archived,
-        onboarding: false,
-        day: planDay,
-        policy: instance.start_policy,
-        schedule: scheduleMeta(instance, true),
-      },
-    )
+    return respond({
+      locked: false,
+      archived: unlock.archived,
+      onboarding: false,
+      day: planDay,
+      policy: instance.start_policy,
+      schedule: scheduleMeta(instance, true),
+    })
   } catch (error) {
     console.error('Plan day fetch error:', error)
     return jsonError({

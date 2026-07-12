@@ -473,7 +473,7 @@ export function checkDepth(params: {
 
 // ── verification ─────────────────────────────────────────────────────
 
-function verify(params: {
+export function verify(params: {
   body: string
   scriptureText: string
   allowedAuthors: Set<string>
@@ -509,6 +509,90 @@ function verify(params: {
       .replace(/[̀-ͯ]/g, '')
       .toLowerCase()
       .replace(/[^a-z]/g, '')
+
+  // Ordinary English loanwords that legitimately carry diacritics are
+  // NEVER transliteration candidates (founder ruling 2026-07-12: a
+  // devotional must not fail because the model wrote "naïveté"). These
+  // are dictionary English, not scholarly claims about Hebrew/Greek —
+  // flagging them produced real user-visible generation failures.
+  // Compared in diacritic-stripped form (hyphenated compounds too).
+  const ENGLISH_LOANWORDS = new Set([
+    'naive',
+    'naivete',
+    'cafe',
+    'cliche',
+    'facade',
+    'fiance',
+    'fiancee',
+    'resume',
+    'deja',
+    'dejavu',
+    'entree',
+    'creche',
+    'protege',
+    'protegee',
+    'soiree',
+    'touche',
+    'tete',
+    'teteatete',
+    'visavis',
+    'decor',
+    'seance',
+    'attache',
+    'celebre',
+    'detat',
+    'matinee',
+    'precis',
+    'risque',
+    'crepe',
+    'creme',
+    'elite',
+    'blase',
+    'canape',
+    'chateau',
+    'emigre',
+    'ingenue',
+    'melee',
+    'menage',
+    'communique',
+    'expose',
+    'saute',
+    'puree',
+    'noel',
+    'papiermache',
+    'mache',
+    'fete',
+    'flambe',
+    'doppelganger',
+    'senor',
+    'senora',
+    'senorita',
+    'pinata',
+    'jalapeno',
+    'manana',
+    'uber',
+    'role',
+    'coup',
+    'gruyere',
+    'consomme',
+    'apercu',
+    'denouement',
+    'raison',
+    'detre',
+    'raisondetre',
+    'voila',
+    'outre',
+    'passe',
+    'lame',
+    'divorcee',
+    'nee',
+    'coordinate',
+    'cooperate',
+    'cooperation',
+    'reenter',
+    'preeminent',
+    'preexisting',
+  ])
   const allowedXlit = new Set(
     params.studies.flatMap((w) => [
       w.xlit.toLowerCase(),
@@ -525,6 +609,7 @@ function verify(params: {
     if (![...tok].some((c) => c.charCodeAt(0) > 127)) continue
     const cand = stripDiacritics(tok)
     if (cand.length < 3) continue // original-script / 1-char accents (à Kempis)
+    if (ENGLISH_LOANWORDS.has(cand)) continue // dictionary English, never a claim
     const inLexicon = [...allowedXlit].some(
       (x) => x.includes(cand) || cand.includes(x),
     )

@@ -366,6 +366,9 @@ export async function POST(request: NextRequest) {
   let freeGrantReserved = false
   let usesFreeGrant = false
   let gateUserId: string | null = null
+  // True when this select retries a run whose previous job failed/stalled —
+  // the run was gated at first creation, so the retry is never re-charged.
+  let retryOfGatedRun = false
 
   try {
     // ─── Parse body ───
@@ -659,16 +662,24 @@ export async function POST(request: NextRequest) {
       console.info(
         `[soul-audit:select] Existing job ${existingJob.id} has status='${existingJob.status}'. Creating new job.`,
       )
+      // This run was already gated (and, if applicable, charged) when
+      // its first job was created — a retry of a FAILED generation must
+      // never charge again (founder ruling 2026-07-12: our failure must
+      // not cost the user their free grant or a paywall on retry).
+      retryOfGatedRun = true
     }
 
     // ─── SA-026 entitlement gate (new plans only) ───
     // Idempotent re-selects of an in-flight/complete job returned above and
-    // are never gated or charged. Composing a NEW bespoke plan requires a
-    // verified account: 1 free generation per account, then subscription
-    // (SA-027). Checked BEFORE any plan/job creation or model spend.
-    // GENERATION_GATE_LIVE ships the gate together with the paywall UI —
-    // gating without a way to pay would be a partial launch (rule 10).
-    if (generationGateLive()) {
+    // are never gated or charged. Retries of a FAILED/STALLED run
+    // (retryOfGatedRun) were gated when the run's first job was created and
+    // bypass the gate entirely — our failure never costs the user twice.
+    // Composing a NEW bespoke plan requires a verified account: 1 free
+    // generation per account, then subscription (SA-027). Checked BEFORE any
+    // plan/job creation or model spend. GENERATION_GATE_LIVE ships the gate
+    // together with the paywall UI — gating without a way to pay would be a
+    // partial launch (rule 10).
+    if (generationGateLive() && !retryOfGatedRun) {
       const supabaseServer = await createServerSupabase()
       const {
         data: { user: authUser },
@@ -712,11 +723,16 @@ export async function POST(request: NextRequest) {
     // created (idempotent re-selects of an in-flight/complete job returned
     // above and do NOT consume quota). Cap new plans per day, session-keyed
     // with a hashed-IP fallback. 429 + honest copy on exceed.
-    const planLimit = await takeSoulAuditDailyLimit({
-      scope: 'plan',
-      sessionToken,
-      clientKey,
-    })
+    // Retries of a failed run also skip the daily plan cap — the user
+    // already spent a slot on the original attempt; our failure must not
+    // eat their day (the global budget wall still bounds worst-case spend).
+    const planLimit = retryOfGatedRun
+      ? { ok: true as const }
+      : await takeSoulAuditDailyLimit({
+          scope: 'plan',
+          sessionToken,
+          clientKey,
+        })
     if (!planLimit.ok) {
       return jsonError({
         error: PASTORAL_MESSAGES.DAILY_PLAN_LIMIT,

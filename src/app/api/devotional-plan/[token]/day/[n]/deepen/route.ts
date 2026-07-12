@@ -23,8 +23,7 @@ import {
 import { isDayLockingEnabledForRequest } from '@/lib/day-locking'
 import { internalFetchHeaders } from '@/lib/internal-auth'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { createClient as createServerSupabase } from '@/lib/supabase/server'
-import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
+import { isCallerAuthorizedForSession } from '@/lib/soul-audit/plan-ownership'
 import { getPlanInstanceWithFallback } from '@/lib/soul-audit/repository'
 import { isPlanDayUnlocked } from '@/lib/soul-audit/schedule'
 import type { DayContent } from '@/types/soul-audit-plan'
@@ -67,6 +66,16 @@ export async function GET(
       requestId,
     })
   }
+  // Ownership scoping (§12.3 / M-4): the readiness poll returns the full
+  // day content once ready — same policy as the day-read route.
+  const pollInstance = await getPlanInstanceWithFallback(token)
+  if (
+    !pollInstance ||
+    !(await isCallerAuthorizedForSession(pollInstance.session_token))
+  ) {
+    return jsonError({ error: 'Plan not found.', status: 404, requestId })
+  }
+
   const content = await readDayContentFresh(token, dayNumber)
   if (!content) {
     return jsonError({
@@ -133,40 +142,12 @@ export async function POST(
     return jsonError({ error: 'Plan not found.', status: 404, requestId })
   }
 
-  // Ownership scoping (M-4, same policy as select/status): only the
-  // session that owns the plan — or the signed-in user that session
+  // Ownership scoping (M-4, same policy as day-read/select/status): only
+  // the session that owns the plan — or the signed-in user that session
   // belongs to — may trigger paid generation against it. Others see
   // 404, indistinguishable from a missing plan.
-  if (instance.session_token) {
-    let authorized = false
-    try {
-      const callerToken = await getOrCreateAuditSessionToken()
-      authorized = callerToken === instance.session_token
-    } catch {
-      // no request-scoped cookie store — fall through to user check
-    }
-    if (!authorized) {
-      try {
-        const server = await createServerSupabase()
-        const {
-          data: { user },
-        } = await server.auth.getUser()
-        if (user) {
-          const { data: link } = await (createAdminClient() as any)
-            .from('user_sessions')
-            .select('session_token')
-            .eq('session_token', instance.session_token)
-            .eq('user_id', user.id)
-            .maybeSingle()
-          authorized = Boolean(link)
-        }
-      } catch {
-        // fall through to 404
-      }
-    }
-    if (!authorized) {
-      return jsonError({ error: 'Plan not found.', status: 404, requestId })
-    }
+  if (!(await isCallerAuthorizedForSession(instance.session_token))) {
+    return jsonError({ error: 'Plan not found.', status: 404, requestId })
   }
 
   // Mirror the day route's gating: only enforce the schedule lock when

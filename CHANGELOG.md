@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CUSTOM GENERATION — Failure-protection tranche (founder ruling: users never pay for our failures) (2026-07-12)
+
+Founder ruled "whatever you recommend — I don't want users having
+failures." Three-layer fix (F-027, F-076) + M-4 completion (F-077):
+
+1. **Verifier precision (F-027):** the grounding check's transliteration
+   detector flagged ordinary English loanwords with diacritics
+   ("naïveté" caused a real user-visible generation failure). A
+   stripped-form allowlist of dictionary loanwords now clears them;
+   fabricated scholarly transliterations are still caught (regression
+   tests prove both directions).
+2. **Retry honesty (F-076):** tracing the failure path exposed a real
+   charge bug — a failed generation errored the job, and the user's
+   retry re-hit the entitlement gate with their free grant already
+   consumed (grant burned + paywall shown for OUR failure). Re-selects
+   of an errored/stalled run now bypass the gate and the daily plan cap;
+   the run was charged once at creation. Subscriber allowance now counts
+   DISTINCT runs so retries never double-bill.
+3. **Plan-read scoping (F-077, OWASP M-4 complete):** day-read +
+   deepen-readiness routes now enforce the same owner-or-linked-user
+   policy as status/deepen-POST, via one shared helper
+   (`plan-ownership.ts`). A leaked plan token can no longer read someone
+   else's bespoke plan. Sharing, when built, gets explicit share tokens.
+4. Teaser-generator "content loss" investigated and CLEARED: the scary
+   diff was prettier multi-line formatting; regeneration is a content
+   superset with zero lost/changed entries.
+
+---
+
 ## CUSTOM GENERATION — Phase 1e complete: OWASP self-audit + same-day remediation (2026-07-11)
 
 Brief §12.6 deliverable (SA-028, F-077): evidence-based OWASP Top-10

@@ -54,11 +54,14 @@ export function subscriptionMonthlyAllowance(): number | null {
 }
 
 /**
- * Count plans created this UTC calendar month across all of the
- * user's sessions. Fails CLOSED to the allowance limit? No — a count
- * failure returning huge would lock paying users out on our outage.
- * Counting failures return 0 (allow), because the hard cost walls
- * (daily plan cap + global budget) still stand behind this gate.
+ * Count generations this UTC calendar month across all of the user's
+ * sessions — as DISTINCT audit runs, not raw plan instances. A failed
+ * generation that the user retries creates a second plan instance for
+ * the SAME run; counting instances would bill the allowance twice for
+ * one composition (founder ruling 2026-07-12: our failures never cost
+ * the user). Fails OPEN to 0 on lookup errors — a count failure must
+ * not lock paying users out; the hard cost walls (daily plan cap +
+ * global budget) still stand behind this gate.
  */
 async function countMonthlyGenerations(userId: string): Promise<number> {
   let supabase: ReturnType<typeof createAdminClient>
@@ -85,13 +88,24 @@ async function countMonthlyGenerations(userId: string): Promise<number> {
       Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1),
     ).toISOString()
 
-    const { count, error } = await supabase
+    const { data, error } = await supabase
       .from('devotional_plan_instances')
-      .select('id', { count: 'exact', head: true })
+      .select('audit_run_id')
       .in('session_token', tokens)
       .gte('created_at', monthStart)
-    if (error) return 0
-    return count ?? 0
+      .limit(1000)
+    if (error || !data) return 0
+
+    const distinctRuns = new Set(
+      (data as { audit_run_id: string | null }[])
+        .map((row) => row.audit_run_id)
+        .filter(Boolean),
+    )
+    // Legacy rows without an audit_run_id each count as one generation.
+    const legacyRows = (data as { audit_run_id: string | null }[]).filter(
+      (row) => !row.audit_run_id,
+    ).length
+    return distinctRuns.size + legacyRows
   } catch {
     return 0
   }

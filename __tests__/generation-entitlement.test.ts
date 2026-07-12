@@ -32,7 +32,11 @@ vi.mock('@/lib/billing/subscription-state', () => ({
 // the monthly allowance count.
 let userRows: { id: string; free_generation_used_at: string | null }[] = []
 let sessionRows: { session_token: string; user_id: string }[] = []
-let planRows: { session_token: string; created_at: string }[] = []
+let planRows: {
+  session_token: string
+  created_at: string
+  audit_run_id?: string | null
+}[] = []
 
 vi.mock('@/lib/supabase/admin', () => ({
   createAdminClient: () => ({
@@ -86,6 +90,7 @@ vi.mock('@/lib/supabase/admin', () => ({
         plansFiltered = plansFiltered.filter((row) => row.created_at >= val)
         return chain
       })
+      chain.limit = vi.fn(() => chain)
       chain.maybeSingle = vi.fn(() => {
         if (mode === 'update' && table === 'users') {
           const target = usersFiltered[0] ?? null
@@ -118,6 +123,15 @@ vi.mock('@/lib/supabase/admin', () => ({
         }
         if (countMode) {
           resolve({ count: plansFiltered.length, error: null })
+          return
+        }
+        if (table === 'devotional_plan_instances') {
+          resolve({
+            data: plansFiltered.map((row) => ({
+              audit_run_id: row.audit_run_id ?? null,
+            })),
+            error: null,
+          })
           return
         }
         resolve({ data: [], error: null })
@@ -254,6 +268,40 @@ describe('checkGenerationEntitlement', () => {
     expect(result.allowed).toBe(true)
     if (result.allowed && result.source === 'subscription') {
       expect(result.allowance.limit).toBeNull()
+    }
+  })
+
+  it('counts DISTINCT runs — a failed-then-retried run never bills twice', async () => {
+    vi.stubEnv('SUBSCRIPTION_MONTHLY_GENERATION_ALLOWANCE', '3')
+    billingState = premiumState()
+    sessionRows = [{ session_token: 's1', user_id: 'u1' }]
+    // Two instances from ONE run (a retry after a failed generation)
+    // plus one instance from a second run = 2 generations, not 3.
+    // Raw-instance counting would report used=3 and exhaust the limit;
+    // distinct-run counting reports used=2 and stays allowed.
+    planRows = [
+      {
+        session_token: 's1',
+        created_at: new Date().toISOString(),
+        audit_run_id: 'run-1',
+      },
+      {
+        session_token: 's1',
+        created_at: new Date().toISOString(),
+        audit_run_id: 'run-1',
+      },
+      {
+        session_token: 's1',
+        created_at: new Date().toISOString(),
+        audit_run_id: 'run-2',
+      },
+    ]
+    const { checkGenerationEntitlement } =
+      await import('@/lib/billing/generation-entitlement')
+    const result = await checkGenerationEntitlement('u1')
+    expect(result.allowed).toBe(true)
+    if (result.allowed && result.source === 'subscription') {
+      expect(result.allowance).toEqual({ used: 2, limit: 3 })
     }
   })
 
