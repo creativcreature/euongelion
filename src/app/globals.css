@@ -10663,3 +10663,37 @@ html[data-held-moment] .mobile-tab-bar {
   display: none;
 }
 /* ========== end Phase 1d held-moment generation interstitial ============ */
+
+/* ============================================================
+   SA-013 2026-07-12 (founder): continuous devotional reading.
+   Desktop no longer uses boxed modules or the two-column rail.
+   The devotional reads as ONE piece: no per-module borders/boxes,
+   a single centred reading measure, and section titles LEFT-aligned
+   to the same width the body text occupies.
+   ============================================================ */
+.devotional-flow-article {
+  border: 0;
+  padding: 0;
+  margin: 0 auto var(--devotional-rhythm-xl, 2.4rem);
+  max-width: 44rem; /* the reading measure titles + text share */
+  text-align: left;
+}
+.devotional-flow-article > * {
+  max-width: 100%;
+}
+/* keep the folio, headline hero and completion panel at full stage width */
+.devotional-reader-stage
+  > .devotional-shell-panel:not(.devotional-flow-article) {
+  max-width: none;
+}
+/* with the rail disabled, let inline artwork and images sit in the measure */
+.devotional-reader-stage .devotional-artwork-inline {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+/* section headings / eyebrows left-aligned to the text measure */
+.devotional-flow-article .text-label,
+.devotional-flow-article h2,
+.devotional-flow-article h3 {
+  text-align: left;
+}

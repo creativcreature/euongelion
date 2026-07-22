@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Reader — continuous devotional flow, no module boxes (2026-07-22)
+
+Founder-directed reading-experience change (SA-013, F-007): the desktop
+devotional now reads as ONE continuous piece instead of stacked bordered
+"modules."
+
+- **Removed the boxed modules.** The per-module `devotional-shell-panel
+border px-6 py-6` wrapper is replaced by a borderless
+  `devotional-flow-article` — no per-section boxes.
+- **Removed the desktop two-column sticky-image rail.** `DevotionalRhythm`
+  is disabled (`enabled={false}`); the read is a single centred ~44rem
+  measure at all breakpoints.
+- **Section titles left-aligned** to the same width the body text occupies.
+- New continuous-flow CSS block in `globals.css`.
+- Normalised the generated `devotional-teasers.ts` to the current
+  generator's output (what `npm run build` produces).
+- Verified: type-check, `verify:production-contracts`, `verify:tracking`,
+  lint (0 errors), 1791 tests, `next build` all green; dev-verified at
+  `/devotional/too-busy-for-god-day-1` (boxes gone, titles left-aligned).
+
+Follow-up (not in this change): swap the `DevotionalHeadline` hero to the
+new cobalt tomb-proportion imagery.
+
 ## HOTFIX — Reader dropped flat `content` prose + CSP blocked video frames (2026-07-12)
 
 Two ship regressions found by the founder minutes after the Jabez

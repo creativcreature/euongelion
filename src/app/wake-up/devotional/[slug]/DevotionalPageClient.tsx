@@ -831,17 +831,16 @@ export default function DevotionalPageClient({
                       the active image as the reader scrolls. Mobile falls
                       back to the legacy single-column flow with inline
                       artwork breaks. Scale back: pass `enabled={false}`. */}
-                  <DevotionalRhythm
-                    images={rhythmImages}
-                    enabled={rhythmImages.length > 0}
-                  >
+                  {/* SA-013 2026-07-12 (founder): desktop no longer uses the
+                      two-column sticky-image rail / boxed modules. The reading
+                      is one continuous piece (see continuous-flow CSS). */}
+                  <DevotionalRhythm images={rhythmImages} enabled={false}>
                     {modules
                       ? modules.map((module, index) => (
                           <Fragment key={index}>
                             <article
                               id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel border px-6 py-6"
-                              style={{ borderColor: 'var(--color-border)' }}
+                              className="devotional-shell-panel devotional-flow-article"
                             >
                               <ModuleRenderer module={module} />
                             </article>
@@ -863,8 +862,7 @@ export default function DevotionalPageClient({
                           <Fragment key={panel.number}>
                             <article
                               id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel border px-6 py-6"
-                              style={{ borderColor: 'var(--color-border)' }}
+                              className="devotional-shell-panel devotional-flow-article"
                             >
                               {index > 0 && (
                                 <div
