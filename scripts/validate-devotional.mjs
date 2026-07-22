@@ -426,6 +426,25 @@ function validateDevotional(file) {
     }
   }
 
+  // Two-Minute Open (SA-030, founder ruling 2026-07-22 — FORWARD-ONLY, opt-in):
+  // when the day declares `format: "two-minute-open"`, the page must begin
+  // with a self-contained short devotional — scripture, vocab, reflection,
+  // prayer — then a `cta` module that jumps into the full deep dive below.
+  if (json.format === 'two-minute-open') {
+    const expected = ['scripture', 'vocab', 'reflection', 'prayer', 'cta']
+    const opening = modules.slice(0, expected.length).map((m) => m && m.type)
+    expected.forEach((want, i) => {
+      if (opening[i] !== want) {
+        record(
+          file,
+          'BLOCKING',
+          'two_minute_open_order',
+          `format "two-minute-open" requires modules[${i}] to be "${want}", found "${opening[i] ?? 'nothing'}"`,
+        )
+      }
+    })
+  }
+
   // Validate modules
   modules.forEach((mod, i) => validateModule(file, mod, i))
 

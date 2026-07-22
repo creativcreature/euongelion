@@ -31,6 +31,20 @@ Day 7:           SABBATH    ~400 words     (silence, presence — most of the da
 
 **Why long-form (not 600-900 words per [docs/AI-CONTENT-CONSTRAINTS.md](docs/AI-CONTENT-CONSTRAINTS.md) §6.1):** the strategy doc commits to deep-dive narrative essays; the constraints doc reflects an earlier shorter format. Long-form wins for the prefab catalog. The Soul Audit's runtime-generated devotionals may use shorter targets if Cloudflare Workers' CPU budget forces it (resolved in Phase 3).
 
+### The Two-Minute Open (SA-030 — founder ruling 2026-07-22, FORWARD-ONLY)
+
+Every NEW prefab day (not retroactive to existing series) opens with a **self-contained ~2-minute devotional** before the deep dive:
+
+```
+[scripture]   — the day's anchor, as is
+[vocab]       — the day's one word
+[reflection]  — one prompt (compact)
+[prayer]      — short closing prayer
+[cta]         — DEEP DIVE → jumps to the full devotional below on the same page
+```
+
+Rules: the block must be complete on its own — a reader who stops at the CTA has had a whole devotional. The `cta` links to the first deep-dive section on the page (`ctaHref: "#devotional-section-6"` under the current reader's section ids, which holds when the opening block is exactly five modules). After the CTA the deep dive proceeds per the structure below. The deep dive's own reflection/prayer stay full-length — the opening pair is compact, not a replacement. Declare `"format": "two-minute-open"` at the day's top level; the validator then enforces the opening sequence.
+
 **Each day uses the modules JSON shape**, not a single essay blob. The essay structure is realized by interleaving these modules:
 
 ```

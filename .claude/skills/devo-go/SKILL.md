@@ -36,7 +36,7 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 1. Read governing docs → AskUserQuestion (format/stance/spine/done) → lock the week shape.
 2. Fan out parallel research agents (stories, quotes, videos, Hebrew/context); pull ALL scripture verbatim from `public/bibles/` corpus only.
 3. Write brief (`content/series-briefs/<slug>.md`) + source pack (`content/source-packs/<slug>.md`). The source pack is the ONLY citation pool for drafting.
-4. Draft the pivot (C) day first, then the rest; run `node scripts/validate-devotional.mjs` until 0/0.
+4. Draft the pivot (C) day first, then the rest. EVERY day opens with the Two-Minute Open (SA-030): scripture → vocab → reflection → short prayer → DEEP DIVE `cta`, self-contained, before the full structure; declare `"format": "two-minute-open"` so the validator enforces it. Run `node scripts/validate-devotional.mjs` until 0/0.
 5. Devotional-editor agent review → apply fixes → re-review to READY FOR FOUNDER.
 6. **Founder reading gate:** publish a private artifact of the full text in the site's mockup design language. NO imagery before approval.
 7. After approval: imagery (GPT Image 2, riso duotone) + inline-image placement; verify videos embeddable.
@@ -53,6 +53,7 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - Hebrew/Greek never unpaired with transliteration; the Jabez metathesis rule generalizes: never overstate a lexical claim the interlinear doesn't support.
 - Banned phrases/labels per AUTHORING-SPEC §2 — zero tolerance; validator enforces.
 - Videos: official channels only, oEmbed-verified AND embed-block-checked; never a video that blocks off-YouTube playback.
+- The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
 - No imagery before the founder reads the text. No arbitrary images — every slot needs a one-sentence contextual justification (the caption).
 - Stage commits by explicit file list (parallel sessions share this working tree); never `git add -A`.
 - No deploy without founder confirmation of preview evidence.

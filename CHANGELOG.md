@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PROCESS — SA-030: the Two-Minute Open (2026-07-22)
+
+Founder ruling, FORWARD-ONLY (not retroactive; prayer-of-jabez ships
+as-is): every new prefab devotional day opens with a self-contained
+~2-minute devotional — anchor Scripture as is, one vocab word, one
+reflection, one short prayer — then a DEEP DIVE CTA that jumps into
+the full devotional on the same page; the deep dive then proceeds per
+usual (SA-029 structure). The block must be complete on its own: a
+reader who stops at the CTA has had a whole devotional.
+
+- Registered as SA-030 in production-decisions.yaml.
+- AUTHORING-SPEC §1 amended (module sequence + `"format":
+"two-minute-open"` declaration + `#devotional-section-6` CTA anchor
+  convention).
+- `/devo-go` skill updated (SKILL.md workflow + guardrail;
+  references/workflow.md Phase 4).
+- Validator: opt-in BLOCKING check when a day declares the format —
+  first five modules must be scripture → vocab → reflection → prayer
+  → cta (verified both directions on synthetic files; existing series
+  unaffected).
+
 ## PROCESS — /devo-go skill: the standard devotional series build (2026-07-22)
 
 Founder ruling (amends SA-029; F-081): the Prayer of Jabez build process
