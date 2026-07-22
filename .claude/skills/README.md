@@ -29,6 +29,8 @@ This repository organizes skills to follow Anthropic's recommended pattern for C
   - Release gates, regression matrix, App Store and launch checks.
 - `.claude/skills/docs-tracking-governance/SKILL.md`
   - Changelog/PRD/decision traceability and anti-drift documentation updates.
+- `.claude/skills/devo-go/SKILL.md`
+  - `/devo-go "<thematic>"` — end-to-end prefab devotional series builds (research-verified content → founder reading gate → imagery/videos → wiring → deploy). THE standard for all devotional builds (founder ruling 2026-07-22; SA-029/F-081 reference build).
 
 ## Skill Folder Contract
 

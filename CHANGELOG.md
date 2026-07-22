@@ -5,6 +5,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PROCESS — /devo-go skill: the standard devotional series build (2026-07-22)
+
+Founder ruling (amends SA-029; F-081): the Prayer of Jabez build process
+is ratified as THE standard for all prefab devotional builds, codified
+as `.claude/skills/devo-go/` — invoked `/devo-go "<devotional
+thematic>"`. SKILL.md (trigger, 12-phase summary, guardrails,
+validation) + four progressive-disclosure references: `workflow.md`
+(exact pipeline: docs → AskUserQuestion clarifiers → parallel research
+agents → brief/source pack → pivot-first drafting → validator → editor
+two-pass → founder pre-imagery reading gate via styled artifact →
+GPT Image 2 riso imagery → wiring/featured → tracking → gates →
+Workers-preview + rendered-DOM verification → founder-confirmed deploy
+
+- cache warming), `verification-standards.md` (what VERIFIED means per
+  source type; folklore-rejection precedents), `imagery-and-video.md`
+  (style block, processing, placement, embed rules), `traps.md` (18
+  failure modes from the reference build). Registered in
+  `.claude/skills/README.md` + `docs/process/CLAUDE-SKILL-SYSTEM.md`.
+
 ## Reader — continuous devotional flow, no module boxes (2026-07-22)
 
 Founder-directed reading-experience change (SA-013, F-007): the desktop

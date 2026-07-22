@@ -26,6 +26,8 @@ Purpose: define how Euangelion skills are authored and maintained using Anthropi
    - release gates, verification matrix, App Store submission readiness.
 5. `docs-tracking-governance`
    - changelog/PRD/scorecard traceability and contract alignment.
+6. `devo-go`
+   - `/devo-go "<thematic>"` — the standard end-to-end prefab devotional series build (founder ruling 2026-07-22; distilled from the Prayer of Jabez reference build, SA-029/F-081).
 
 ## Agent Roster
 
