@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { sendMagicLink } from '@/lib/auth'
+import { MagicLinkError, sendMagicLink } from '@/lib/auth'
 import {
   turnstileFailureMessage,
   turnstileSecretKey,
@@ -97,6 +97,29 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (err) {
+    // Honest status mapping (accounts diagnosis 2026-07-22, defect #4):
+    // Supabase's mail rate limit must read as "try again shortly", and a
+    // rejected address as a 400 — never a raw 500 that looks like a crash.
+    if (err instanceof MagicLinkError) {
+      if (err.status === 429) {
+        return NextResponse.json(
+          {
+            error:
+              'We can only send so many sign-in emails at once. Please wait a few minutes and try again.',
+          },
+          { status: 429 },
+        )
+      }
+      if (err.status >= 400 && err.status < 500) {
+        return NextResponse.json(
+          {
+            error:
+              'That email address couldn’t be used. Check it for typos and try again.',
+          },
+          { status: 400 },
+        )
+      }
+    }
     const message = err instanceof Error ? err.message : 'Something went wrong.'
     return NextResponse.json({ error: message }, { status: 500 })
   }

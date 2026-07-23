@@ -21,6 +21,21 @@ export async function getUser() {
 }
 
 /**
+ * Thrown when Supabase rejects a magic-link request, carrying the
+ * upstream HTTP status so the route can answer honestly (a mail
+ * rate-limit is a 429, not a server crash — accounts diagnosis
+ * 2026-07-22, defect #4).
+ */
+export class MagicLinkError extends Error {
+  status: number
+  constructor(message: string, status: number) {
+    super(message)
+    this.name = 'MagicLinkError'
+    this.status = status
+  }
+}
+
+/**
  * Send a magic link to the user's email
  */
 export async function sendMagicLink(email: string, redirectTo?: string) {
@@ -34,7 +49,11 @@ export async function sendMagicLink(email: string, redirectTo?: string) {
   })
 
   if (error) {
-    throw new Error(error.message)
+    const status =
+      typeof (error as { status?: number }).status === 'number'
+        ? ((error as { status?: number }).status as number)
+        : 500
+    throw new MagicLinkError(error.message, status)
   }
 }
 

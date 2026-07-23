@@ -200,7 +200,14 @@ export function isFirstAuthSession(
   if (!Number.isFinite(createdAtMs)) return false
   if (!Number.isFinite(lastSignInMs)) return true
 
-  return Math.abs(lastSignInMs - createdAtMs) <= 120_000
+  // 24h window (was 120s — accounts diagnosis 2026-07-22, defect #5):
+  // a brand-new user who opens the sign-in email more than 2 minutes
+  // after requesting it is still on their first session and must see
+  // onboarding. The window's only job is to shield PRE-EXISTING
+  // accounts (created long before this feature) from being re-onboarded
+  // when their metadata carries no onboarding keys; a day covers every
+  // realistic email delay while still excluding all legacy accounts.
+  return Math.abs(lastSignInMs - createdAtMs) <= 24 * 60 * 60_000
 }
 
 export function shouldRequirePostSignupOnboarding(user: User): boolean {

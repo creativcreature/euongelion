@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ACCOUNTS — diagnosis + code-side fixes (2026-07-22)
+
+Founder report "accounts don't seem to work" diagnosed (read-only, full
+evidence in session): the auth CODE paths are sound; the email leg is
+strangled. Founder-side root causes (Supabase dashboard): (1) built-in
+mailer with a 2-emails/HOUR project-wide cap as the ONLY sign-in path,
+(2) magic-link/signup templates lack the token variable so the in-app
+6-digit code form can never be used (HUMAN_REQUIRED #3 still open),
+(3) the three billing migrations (20260710/11/12) were never applied —
+dark today, but flipping GENERATION_GATE_LIVE before applying them
+would deny generation to every account. Also confirmed: PKCE links only
+complete in the requesting browser (cross-device/mail-scanner failures
+plausible); Google provider is configured server-side but the button is
+hidden (flag unset at build).
+
+Code fixes shipped (F-065): magic-link route maps upstream failures
+honestly (429 mail-cap → 429 with "wait a few minutes"; bad address →
+400; was raw 500), and the first-session onboarding window widened
+120s → 24h so slow email opens still get onboarding.
+
+---
+
 ## PROCESS — SA-030: the Two-Minute Open (2026-07-22)
 
 Founder ruling, FORWARD-ONLY (not retroactive; prayer-of-jabez ships
