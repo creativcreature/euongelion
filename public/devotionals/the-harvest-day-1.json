@@ -1,0 +1,303 @@
+{
+  "day": 1,
+  "chiasm_position": "A",
+  "format": "two-minute-open",
+  "title": "While Everyone Slept",
+  "subtitle": "A good field, a night enemy, and the morning the weeds showed",
+  "teaser": "The Sower did everything right. The field still came up mixed. Jesus' hardest story about evil begins with everyone asleep.",
+  "anchorVerse": "Matthew 13:24-26",
+  "theme": "The hook of the week: evil among the good is sabotage, not the Sower's failure",
+  "framework": "Matthew 13:28 - An enemy did this",
+  "scriptureReference": "Matthew 13:24-26",
+  "totalWords": 2713,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 13:24-26",
+      "translation": "BSB",
+      "passage": "Jesus put before them another parable: \"The kingdom of heaven is like a man who sowed good seed in his field. But while everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away. When the wheat sprouted and bore grain, then the weeds also appeared.\"",
+      "emphasis": [
+        "good seed",
+        "his enemy came and sowed weeds among the wheat"
+      ],
+      "scriptureContext": "Two minutes with the opening scene — good seed, night sabotage, and a mixed morning."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ζιζάνια",
+      "transliteration": "zizania",
+      "pronunciation": "dzid-ZAH-nee-ah",
+      "strongsNumber": "G2215",
+      "definition": "darnel — a weed that mimics wheat until the grain forms",
+      "usage": "This word exists in the New Testament only inside this parable — eight occurrences, all in Matthew 13. Not generic weeds: a specific impostor crop, indistinguishable from wheat until the heads appear. Which means: for a long, ordinary stretch of the season, nobody in the field can tell."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where has evil shown up in a field you know God planted well — your church, your family, your own story — and what did it do to your view of the Sower?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Sower of good seed, the field I woke up in is mixed, and I have blamed You for the weeds. Give me this week to hear Your own reading of the field — and to trust the hands that planted it. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-6",
+      "ctaSubtext": "That was a whole reading. When you have more time: the night enemy, the impostor crop, and why the mixed field is not the Sower's failure."
+    },
+    {
+      "type": "scripture",
+      "reference": "Matthew 13:24-26",
+      "translation": "BSB",
+      "passage": "Jesus put before them another parable: \"The kingdom of heaven is like a man who sowed good seed in his field. But while everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away. When the wheat sprouted and bore grain, then the weeds also appeared.\"",
+      "greekOriginal": "ἐπέσπειρεν ζιζάνια ἀνὰ μέσον τοῦ σίτου",
+      "transliteration": "epespeiren zizania ana meson tou sitou — \"he over-sowed darnel through the midst of the wheat\"",
+      "emphasis": [
+        "while everyone was asleep",
+        "slipped away"
+      ],
+      "scriptureContext": "The third of Matthew's parable discourse — told from a boat to the crowds, moments after the parable of the sower."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐπέσπειρεν",
+      "transliteration": "epespeiren",
+      "pronunciation": "ep-ES-pay-ren",
+      "definition": "he sowed OVER — seeded on top of an existing crop",
+      "usage": "The enemy does not clear ground or plant his own field. He over-sows — epispeirō, a compound found nowhere else in the New Testament: sowing on top of someone else's good work. Evil in this parable runs no farm of its own — it is a parasite on a field it did not plant and could not have grown.",
+      "usageNote": "A textual note for the honest reader: the over-sowing compound is the reading of the earliest manuscripts (later copies simplify it to plain 'sowed'), and classic Strong's numbering never assigned it a number of its own — concordances list it as epispeirō (NAS 1986b). The nuance is worth the footnote: sabotage, by definition, needs something good to ride on.",
+      "wordByWord": [
+        {
+          "word": "ἦλθεν αὐτοῦ ὁ ἐχθρὸς",
+          "transliteration": "ēlthen autou ho echthros",
+          "meaning": "his enemy came"
+        },
+        {
+          "word": "καὶ ἐπέσπειρεν",
+          "transliteration": "kai epespeiren",
+          "meaning": "and over-sowed"
+        },
+        {
+          "word": "ζιζάνια",
+          "transliteration": "zizania",
+          "meaning": "darnel"
+        },
+        {
+          "word": "ἀνὰ μέσον τοῦ σίτου",
+          "transliteration": "ana meson tou sitou",
+          "meaning": "through the midst of the wheat"
+        },
+        {
+          "word": "καὶ ἀπῆλθεν",
+          "transliteration": "kai apēlthen",
+          "meaning": "and slipped away"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "ἐν τῷ καθεύδειν τοὺς ἀνθρώπους",
+          "transliteration": "en tō katheudein tous anthrōpous",
+          "meaning": "\"while the men were sleeping\" (katheudō) — ordinary, blameless sleep; the text never scolds the sleepers"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The Morning the Weeds Showed",
+      "content": "Every believer eventually has the morning. You look out over a field you know was planted well — a church you loved, a family you prayed over, a country, a friendship, the acreage of your own heart — and there they are. Weeds. Growing exactly where the good seed went in, tall and green and horribly at home.\n\nAnd the question arrives before you can stop it, the same question the servants will ask in tomorrow's verses: didn't You sow good seed here? Where did THIS come from? Under the question sits a suspicion that has unmade more faith than any argument: maybe the Sower is careless. Maybe the seed was never good. Maybe nobody is minding the field at all.\n\nJesus tells this parable straight into that suspicion. And where we are standing in God's story matters: this is the kingdom announced but not yet consummated — the long season between the sowing and the harvest, which is to say, the season you live in. The parable is His own explanation of why the age looks the way it looks: good and evil growing in the same rows, for now, on purpose, with an ending already scheduled.\n\nBut notice where He begins — because it is not with the weeds. The kingdom of heaven is like a man who sowed GOOD seed in his field. Before evil enters the story, the goodness of the seed and the ownership of the field are both on the record. Whatever the weeds mean, they will not mean the Sower failed. This week starts there, because every honest thing that follows depends on it.",
+      "markdown": false
+    },
+    {
+      "type": "pullquote",
+      "content": "Sabotage, by definition, needs something good to ride on. Evil in this parable is not an alternative farm. It is a parasite."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "heading": "Night Work",
+      "content": "Look closely at how evil actually enters the story, because Jesus has chosen every detail.\n\nIt comes at night — while everyone was asleep. The Greek is unbothered, almost domestic: en tō katheudein tous anthrōpous, while the men were sleeping. Notice that the text never blames the sleepers. Farmhands sleep; that is nightfall, not negligence. The parable refuses the story we most want to tell about evil's arrival — that somebody must have left a door open, that vigilance would have prevented it, that the presence of weeds proves someone's guilt inside the field. Sometimes evil simply comes, in the dark, uninvited and unenabled, because there is an enemy and that is what enemies do.\n\nIt comes as an impostor. The weed here is not a thistle anyone could spot. Zizania is darnel — a grain-mimic that tracks wheat so closely that the two are effectively indistinguishable until the heads form. The ancient world knew it as wheat's shadow: the rabbis discussed it in the same breath as wheat, and one old tradition punned that it was wheat gone bad — grain that had, as it were, broken faith. The mimicry matters enormously for where the week is headed: for most of the growing season, no one in the field — however sincere, however sharp-eyed — can reliably tell the crops apart.\n\nAnd it comes as an over-sowing. The enemy plants nothing of his own. He seeds his crop into the midst of an existing one — through the middle of the wheat, the text says — and slips away. He does not stay to farm; malice rarely does. Evil in Jesus' telling is derivative, parasitic, and cowardly: it can spoil a field it could never have planted, then vanish before morning.\n\nCharles Spurgeon, walking this verse with his congregation in 1866, drew the same line with a pastor's bluntness: \"Wherever Christ is active, the enemy is sure to be active too. If you have a sleeping church, you may have a sleeping devil, but as soon as ever Christ is in the congregation, sowing the good seed, the devil wakes up, and by night, when men are off their guard, the bad seed—the mock wheat—here translated 'tares'—is sown among the true wheat.\"\n\nHold those three details together and the parable's first gift comes into focus. Weeds in the field are real, deliberate, and hostile — and they are evidence of an enemy's malice, not the Sower's failure, the seed's weakness, or the sleepers' guilt. Verse 28 will say it in four words, and they may be four of the most pastorally important words in the Gospels: an enemy did this.",
+      "markdown": false
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "XX-aAg4_U2Q",
+      "videoTitle": "Why Jesus Told Parables (and How You Can Understand Them)",
+      "videoCaption": "Before going further into the field: how parables actually work — Kingdom announcements that force a decision, not decorative illustrations.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "The field came up mixed because an enemy over-sowed it by night — the goodness of the seed and the ownership of the field were never in question.",
+      "modernApplication": "When evil surfaces in something you know God planted — a congregation, a marriage, a calling — the first casualty is usually your confidence in the Planter. We audit the seed, indict the sleepers, and quietly downgrade the Sower.",
+      "connectionPoint": "Jesus offers a different first move: name the sabotage. 'An enemy did this' is a diagnosis, not a dodge — and it relocates the scandal of evil from God's competence to God's timing, which is exactly where the rest of the week will deal with it.",
+      "newTestamentEcho": "\"He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.\" — Matthew 5:45 (BSB)"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "remez",
+      "heading": "Another Garden, Another Intruder",
+      "content": "If the shape of this story feels older than Matthew 13, it is because it is. A good field, planted by a good hand. An intruder who arrives with words and works in stealth. Damage done at the exact point of the planting's pride — and a long aftermath in which the good and the ruined grow tangled together. Jesus is retelling Eden as agriculture.\n\nScripture's first field was also sabotaged. The serpent of Genesis 3 over-sowed too — not darnel into wheat but doubt into trust: did God really say? And the aftermath has the same maddening texture as the parable's mixed field: thorns and thistles among the grain from then on, evil and good sharing every acre of human history, every institution, every bloodline, every heart. When Jesus reaches for a villain in His parable, He does not invent one; He points back through the whole canon to the enemy who has been over-sowing since the third chapter of the Bible — and forward, though the disciples cannot see it yet, to the promise lodged in that same ancient scene: the seed of the woman who would crush the intruder's head at the cost of His own wounds.\n\nHere is the hint — the old interpreters would train themselves to catch it — folded into the parable's opening line: the Sower is called the Son of Man, and He sows GOOD seed. Against the whole weight of Eden's aftermath, a second planting has begun. The kingdom of heaven is not God abandoning the sabotaged field of the world; it is God re-entering it, seed in hand, in person. The weeds are real. The night was real. And the Sower came back to the field anyway — which is either the most reckless thing in the story, or the most hopeful, and the rest of the week will show it is the second.\n\nSo the day's discovery is double. Evil's presence in the field tells you there is an enemy — that much the servants will work out by themselves. But the field's very existence tells you something better: the Sower did not write off the sabotaged ground. He planted INTO it. Whatever else this week teaches about weeds, sickles, and patience, it grows from that opening act of defiant, deliberate good faith — good seed, sown by the Son of Man, into enemy-visited soil, with His eyes open.",
+      "markdown": false
+    },
+    {
+      "type": "story",
+      "heading": "The Man Who Farmed Sabotaged Ground",
+      "content": "George Washington Carver's life began inside the most evil-sown field in American history. \"I was born in Diamond Grove, Missouri, about the close of the great Civil War, in a little one-roomed log shanty,\" he wrote — on the farm of the man who owned his mother. He never learned his own birthday: \"I should like to know the exact date of my birth myself, but I do not,\" he told his biographer. \"As a rule no records of children from slave parents were kept.\" The ledger of that field did not even count him.\n\nWhat he did with the sabotaged inheritance is why his name endures. Carver became a scientist of the soil, and in 1896 he joined Booker T. Washington at Tuskegee — \"it has always been the one ideal of my life,\" he wrote in accepting, \"to be of the greatest good to the greatest number of my people\" — and stayed forty-seven years, teaching the sons and daughters of formerly enslaved farmers to bring cotton-exhausted land back to life. Peanuts and sweet potatoes to restore what the old crop had stripped: his laboratory work was, at bottom, resurrection work for dead fields. He named that laboratory God's Little Workshop, and he was unembarrassed about the method. \"God is going to reveal to us things He never revealed before if we put our hands in His,\" he told a New York church audience in 1924 — and when the New York Times answered with an editorial titled \"Men of Science Never Talk That Way,\" Carver replied without heat: \"Inspiration is never at variance with information; in fact, the more information one has, the greater will be the inspiration.\"\n\nCarver knew exactly what had been over-sown into the field of his life and his people — he never pretended otherwise. He simply refused to concede the field. Evil had planted by night; he would plant by day, with God, for as long as the season lasted.",
+      "connectionToTheme": "Carver is the parable's opening act in a single life: a field visibly sabotaged by a real enemy — and a planter who answered the sabotage not with the sickle but with better seed, patiently, for decades. The mixed field is not a reason to stop farming it."
+    },
+    {
+      "type": "insight",
+      "heading": "The Weed That Only Lives Here",
+      "content": "Zizania appears eight times in the New Testament — every single one inside this parable. Scripture coined its vocabulary of counterfeit good for exactly one story, as if the word itself were quarantined here. The old rabbis kept darnel close to wheat in their categories too, ruling the two so alike they were not even 'mixed kinds' when grown together — darnel being, in their reckoning, wheat gone wrong rather than an alien species. The parable's impostor is not evil looking evil. It is evil looking almost exactly like the good it corrupts.",
+      "historicalContext": "Botanically, darnel is Lolium temulentum — 'bearded darnel' — its grains difficult to separate from wheat, and host to a toxic fungus that made bread baked from tainted flour dizzying (the species name means 'drunken'). And the parable's sabotage was real enough to legislate against: Roman law (Digest 9.2.27.14, Ulpian citing Celsus) gave a field's owner a lawsuit for damages against anyone who maliciously threw darnel into his crop."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "What To Do on the First Morning",
+      "content": "This is the week's opening day, so its application is deliberately narrow: not yet what to do about the weeds — that is tomorrow's argument and Wednesday's surrender — but what to do with the first sight of them. Three moves.\n\nSay the four words. An enemy did this. Say them over the church that broke your trust, the marriage season that turned, the ministry that curdled, the corner of your own heart that keeps coming up darnel. The words re-aim the story. They take the indictment off the seed, off the sleepers, off the Sower — and put the malice where Jesus puts it. You cannot pray rightly in a field whose sabotage you are blaming on its Owner.\n\nRefuse the vigilance guilt. Somewhere in you a voice says the weeds are your fault — that if you had watched harder, discerned faster, slept less, the field would be clean. The text will not cosign that. The sleepers sleep without a syllable of blame; night comes to every farm; the enemy's stealth is the enemy's craft, not your failure. Grieve the weeds — grief is the right first response to sabotage — but do not carry an arson charge for a fire you did not set.\n\nAnd keep planting. This is Carver's move, and it is the Sower's own: the answer to over-sown evil, on day one, is not analysis of the weeds but continued investment in the wheat. Whatever good seed you were putting into that field — the prayers, the presence, the faithfulness, the work — the discovery of darnel is not a reason to stop. The parable's grammar is quietly ruthless on this point: the weeds appeared WHEN the wheat sprouted and bore grain. Visible evil is, strangely, evidence of a growing crop. Fields with nothing good in them get no sabotage.",
+      "markdown": false
+    },
+    {
+      "type": "scripture",
+      "reference": "Matthew 5:45",
+      "translation": "BSB",
+      "passage": "...that you may be sons of your Father in heaven. He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.",
+      "emphasis": [
+        "His sun to rise on the evil and the good"
+      ],
+      "scriptureContext": "The Father's present posture toward the mixed field — one sun, one rain, over every row. The sorting has a date, and this is not it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which field's weeds have you been blaming on the Sower — and what would change if you said the four words over it instead: an enemy did this?",
+      "additionalQuestions": [
+        "Where are you carrying vigilance-guilt for sabotage you did not enable?",
+        "The weeds appeared when the wheat bore grain. Where might the visible evil in your world actually be evidence of a growing crop?",
+        "What good seed did you stop planting when you first saw the darnel — and what would resuming look like this week?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: A Breath Prayer for the Mixed Field",
+      "instruction": "A sentence small enough to ride on your breathing — prayed slowly, several times, until the body believes it too.",
+      "interaction_type": "breath",
+      "steps": [
+        {
+          "title": "Settle",
+          "description": "Sit still. Two slow breaths, just to arrive in the field as it actually is."
+        },
+        {
+          "title": "Inhale",
+          "description": "Breathe in on the words: You sowed good seed."
+        },
+        {
+          "title": "Exhale",
+          "description": "Breathe out on the words: An enemy did this."
+        },
+        {
+          "title": "Repeat",
+          "description": "Five slow rounds. When a specific weed comes to mind — a person, a wound, a headline — do not argue with it. Just begin the next breath."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Sleeping in a Watched Field",
+      "content": "We began with the morning the weeds showed — yours, whichever field it was — and the suspicion that came up with them: nobody is minding the farm.\n\nEnd the day with the detail that quietly answers it. The enemy worked while everyone was asleep — everyone in the field, that is. The parable never says the Owner slept. And by tomorrow's verses he will show that he missed nothing: he knows his seed was good, knows the weeds' source without an investigation, and has already decided what happens at harvest. The sabotage that blindsided the servants never once blindsided him.\n\nThat is where the week leaves you tonight: in a mixed field, yes — but a known one. Watched by an Owner who planted into enemy territory with His eyes open, and who has never yet been surprised by a weed. Tomorrow the servants will ask the question you are already asking — shouldn't somebody DO something? — and the answer will be stranger and kinder than anyone expects. Sleep tonight the way the farmhands did: not because the field is safe, but because it is His.",
+      "markdown": false
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Father, You sowed good seed — in the world, in Your church, in me — and I confess I have read the weeds as Your negligence. Forgive my audit of Your farming. Thank You for entering the sabotaged field in person, seed in hand. Teach me the first morning's work: to name the enemy's malice without carrying his arson charge, and to keep planting in ground he tried to spoil. Through Jesus, the Sower who came back. Amen.",
+      "breathPrayer": "Inhale: You sowed good seed — Exhale: an enemy did this.",
+      "prayerType": "trust"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will name one field where I have blamed the Sower for the sabotage, say the four words over it — an enemy did this — and resume planting one specific good seed there this week.",
+      "leavingAtCross": [
+        "The audit I have been running on God's farming",
+        "The vigilance-guilt for a night I did not cause",
+        "The conclusion that a mixed field means an absent Owner"
+      ],
+      "receivingFromCross": [
+        "A Sower who plants into enemy-visited soil in person",
+        "A diagnosis that puts malice where it belongs",
+        "Permission to grieve the weeds without abandoning the wheat"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Community Reflection",
+      "question": "How does the enemy's sowing in verse 25 differ from the Sower's — and why does the difference matter?",
+      "options": [
+        "He sows at midday, openly defying the owner",
+        "He over-sows (epispeirō) — seeding on top of an existing crop, then slipping away — evil as parasite, not planter",
+        "He sows thorns, which are easily distinguished from wheat",
+        "He convinces the servants to sow for him"
+      ],
+      "answer": 1,
+      "explanation": "The rare compound epespeiren — found nowhere else in the New Testament — means he sowed OVER the good crop and vanished. Evil in this parable plants nothing of its own and stays to farm nothing; it can only ride on, and ruin, what goodness has already built. Fields with nothing good in them get no sabotage."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Story",
+      "name": "George Washington Carver",
+      "era": "c. 1864-1943, Missouri and Tuskegee, Alabama",
+      "bio": "Born enslaved in Diamond Grove, Missouri — about 1864, the exact date unrecorded, as it was for so many born as property — Carver became one of the great agricultural scientists of his age. From 1896 he spent forty-seven years at Tuskegee Institute teaching the children of formerly enslaved farmers to resurrect soil that cotton and injustice had exhausted. He named his laboratory God's Little Workshop and treated the work as a collaboration with its Owner — a claim he defended, mildly and immovably, even against the New York Times.",
+      "keyQuote": "Inspiration is never at variance with information; in fact, the more information one has, the greater will be the inspiration.",
+      "lessonForUs": "Carver answered an over-sown life the way the Son of Man answers an over-sown world: not by conceding the field, but by planting better seed in it, with God, for as long as the season lasted."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "Genesis 3:15 (the first promise)",
+          "text": "The seed of the woman who crushes the intruder's head — the ancient scene behind the parable's enemy, and its hope."
+        },
+        {
+          "reference": "Matthew 5:45 (BSB)",
+          "text": "\"He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "Charles Spurgeon, Exposition on Matthew 13:24-58 (following Sermon #3312, 'The Carpenter's Son and His Relations'), Metropolitan Tabernacle Pulpit Vol. 58 — delivered 1866, published 1912",
+          "description": "Source of today's quotation on the sleeping church and the waking devil. Full text at spurgeongems.org."
+        },
+        {
+          "title": "Greek data",
+          "description": "zizania (G2215 — all 8 NT occurrences inside this parable), epispeirō (NAS 1986b; NT hapax; the over-sowing compound is the earliest manuscripts' reading), katheudō (G2518) — BibleHub interlinear and Strong's, Matthew 13:24-26."
+        },
+        {
+          "title": "Rabbinic, botanical, and legal background",
+          "description": "Mishnah Kilayim 1:1 rules wheat and zunin (darnel) are not forbidden mixed kinds — darnel being reckoned wheat gone wrong; the Jerusalem Talmud's wordplay derives its name from the root for adultery. Botanically Lolium temulentum, wheat-mimicking until the ear, host to a toxic fungus (Easton's; ISBE). Malicious darnel-sowing was actionable at Roman law: Digest 9.2.27.14 (Ulpian citing Celsus)."
+        },
+        {
+          "title": "George Washington Carver — primary sources",
+          "description": "His 1897 autobiographical sketch, his 1896 acceptance letter to Booker T. Washington, and his 1924 letter to the New York Times (all printed in Gary R. Kremer, ed., George Washington Carver: In His Own Words, 1987); Raleigh Merritt, From Captivity to Fame (1929, written with Carver's cooperation); the 1924 Marble Collegiate talk and the Times editorial \"Men of Science Never Talk That Way\" (Nov 20, 1924). 'God's Little Workshop' is the attested name he gave his laboratory."
+        }
+      ],
+      "forDeeperStudy": "Read Genesis 3 tonight, then reread Matthew 13:24-26 tomorrow morning — and watch the parable turn into the Bible's second act of the same story: a good planting, an intruder, and a Sower who does not abandon sabotaged ground."
+    }
+  ]
+}

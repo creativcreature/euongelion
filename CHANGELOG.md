@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — The Harvest: 7-day Wheat & Weeds series drafted to the founder gate (2026-07-26)
+
+First series built via /devo-go (SA-029/SA-030 standard; F-082).
+Monday start, Sunday sabbath close; Days 1-6 open with the SA-030
+Two-Minute Open. All sources verified by four research agents against
+fetched primary texts (Chrysostom both-edges reading, Augustine,
+Spurgeon #3312/#3393 — the oft-cited "The Tares" sermon does not
+exist, Solzhenitsyn's exact Whitney wording with his own caveat
+parenthesis, Lewis II.5, ten Boom's own tellings, Carey's dated
+letters, Carver's 1897/1924 words with unverifiable popular quotes
+rejected, Newton with the post-conversion years intact); Theodotion
+Daniel 12:3 verbal link to Matt 13:43 verified; darnel/Roman-law/
+Mishnah claims precision-framed. Videos oEmbed + embed-block
+verified; founder approved the Christ Church Plano sermon (vetted-
+creator extension). Editor two-pass: 2 BLOCKING + 7 NEEDS-FIX + NITs
+applied → READY FOR FOUNDER. Validator strengthened: forbidden-label
+rule now catches "devotional" in reader-facing prose (ctaHref URL
+fragments exempted); both series re-validated 0/0. Reading artifact
+published; imagery/wiring/deploy await the founder gate per SA-029.
+Advisories routed to founder: week runs lean within the brief's ±25%;
+Day 4 anchors Matthew 5:45 (deliberate divergence from the brief's
+13:41).
+
 ## ACCOUNTS — diagnosis + code-side fixes (2026-07-22)
 
 Founder report "accounts don't seem to work" diagnosed (read-only, full

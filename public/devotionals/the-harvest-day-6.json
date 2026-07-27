@@ -1,0 +1,215 @@
+{
+  "day": 6,
+  "chiasm_position": "recap",
+  "format": "two-minute-open",
+  "title": "The Field in One View",
+  "subtitle": "The whole week gathered — and a trail for going further",
+  "teaser": "Five days inside one parable. Today: the whole field at a glance, and everything you need to keep studying it on your own.",
+  "anchorVerse": "Matthew 13:24-30",
+  "theme": "Integration — the parable's whole arc gathered, and the reader equipped beyond the series",
+  "framework": "Matthew 13:30 - Let both grow together until the harvest",
+  "scriptureReference": "Matthew 13:24-30",
+  "totalWords": 1148,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 13:24-30",
+      "translation": "BSB",
+      "passage": "Jesus put before them another parable: \"The kingdom of heaven is like a man who sowed good seed in his field. But while everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away. When the wheat sprouted and bore grain, then the weeds also appeared. The owner's servants came to him and said, 'Sir, didn't you sow good seed in your field? Where then did the weeds come from?' 'An enemy did this,' he replied. So the servants asked him, 'Do you want us to go and pull them up?' 'No,' he said, 'if you pull the weeds now, you might uproot the wheat with them. Let both grow together until the harvest. At that time I will tell the harvesters: First collect the weeds and tie them in bundles to be burned; then gather the wheat into my barn.'\"",
+      "emphasis": [
+        "Let both grow together until the harvest"
+      ],
+      "scriptureContext": "Read it once more, whole — and notice how much the same seven verses now hold."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "κόσμος",
+      "transliteration": "kosmos",
+      "pronunciation": "KOS-mos",
+      "strongsNumber": "G2889",
+      "definition": "the world — the field, by Jesus' own decoding",
+      "usage": "One word keeps the whole week honest: the field is the world. Not your church, not your feed, not your enemies' half of anything. The mixed field is the whole age you live in — and the whole age has an Owner, a schedule, and a barn."
+    },
+    {
+      "type": "reflection",
+      "prompt": "One week ago you could read this parable in thirty seconds. What is the single sentence of it that now reads differently — and why?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord of the harvest, gather the week the way You will one day gather the field: nothing faithful lost, nothing hard wasted, everything carried where it belongs. Amen.",
+      "prayerType": "gathering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-6",
+      "ctaSubtext": "That was a whole reading. Below: the five days in one view, and the full study trail — videos, free primary texts, and a guided walk through Matthew 13 — for going further than this series could."
+    },
+    {
+      "type": "recap",
+      "heading": "The Week in One View",
+      "intro": "Five days inside seven verses and their interpretation. Here is what they turned out to be carrying — read your own week back through them; one row of this table is probably the reason the series found you. The week's shape, for your notes: Day 1's night is answered by Day 5's sunrise, Day 2's surrendered sickle by Day 4's watering can, and Day 3 stands at the center holding the decoded field.",
+      "days": [
+        {
+          "day": 1,
+          "title": "While Everyone Slept",
+          "key_insight": "Evil among the good is sabotage, not the Sower's failure. The enemy over-sows (epispeirō — a parasite's verb) and slips away; the sleepers are never blamed; and the Sower planted into enemy-visited soil with His eyes open. Fields with nothing good in them get no sabotage.",
+          "anchor_verse": "Matthew 13:24-26 (BSB)"
+        },
+        {
+          "day": 2,
+          "title": "Do You Want Us to Pull Them Up?",
+          "key_insight": "The servants' reasonable offer meets the Master's No — roots too tangled, eyes too early, and under it all the forgiveness verb: aphete, let both grow. Tares can become wheat; every premature uprooting forecloses an Amazing Grace.",
+          "anchor_verse": "Matthew 13:27-30 (BSB); Psalm 1 (KJV)"
+        },
+        {
+          "day": 3,
+          "title": "The Field Is the World",
+          "key_insight": "Jesus decodes His own parable: field = world, harvest = end of the age, harvesters = angels. The sickle was never ours; the delay is mercy — because the line between good and evil runs right through every human heart; and He ends His hardest parable on Daniel's resurrection dawn. The only named reapers in the whole New Testament — theristēs, twice — are the angels of this parable; the servants appear in neither verse.",
+          "anchor_verse": "Matthew 13:36-43; Daniel 12:2-3 (BSB)"
+        },
+        {
+          "day": 4,
+          "title": "Fieldhands, Not Harvesters",
+          "key_insight": "The day-shift uniform: bless like weather (sun on every row), forward the vengeance mail (leave room), keep verdicts sealed (judge nothing before the time), and hold the canyon between correcting and uprooting. The command comes with its own current.",
+          "anchor_verse": "Matthew 5:45; Romans 12:19; 1 Corinthians 4:5 (BSB)"
+        },
+        {
+          "day": 5,
+          "title": "Then the Righteous Will Shine",
+          "key_insight": "One day, two faces: stubble for entrenched evil, sunrise with healing for the God-fearers. The wheat is gathered — wanted, carried, stored — and hidden faithfulness bursts into light (eklampsousin). Sowing in tears has a scheduled harvest; doubtless.",
+          "anchor_verse": "Matthew 13:43; Malachi 4:1-2 (KJV); Psalm 126 (KJV)"
+        }
+      ],
+      "integration_question": "One parable, one No, one dated harvest. Which day of this week did you most need — and what does that tell you about which tool has been in your hand? And which single practice — the four-word diagnosis, the reopened file, the forwarded mail, the watered row — will still be alive in your week a month from now?"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "recap",
+      "pardes_layer": "peshat",
+      "heading": "Carrying the Field Out of the Week",
+      "content": "Step far enough back and the week has been telling one story the whole time.\n\nThe kingdom has been sown into a sabotaged world, and the age you live in — the only age you will ever live in — is the long season between that sowing and its harvest. Everything that scandalizes you about this era, Jesus put in the parable on purpose: the persistence of evil beside good, the unreadability of hearts, the silence where you expected a sickle, and a patience that looks, from ground level, indistinguishable from absence. And everything the parable gives back is also on purpose: an enemy named without panic, a No that is ambition for the darnel rather than resignation to it, a sorting dated and staffed by angels, and an ending made of barn and sunrise.\n\nTwo cautions as you go, gathered from the week's hardest honesty. Do not leave as a harvester — the reflex will return within the hour, the verdicts, the purges, the write-offs; the sickle grows back in the hand overnight, which is why the memory verse matters. And do not leave as a cynic — 'nothing ever changes' is just eschatology with the harvest deleted, and the harvest is the one thing in this story with a date. The field's Owner has never once been surprised by a weed, and He has never once lost a stalk of wheat.\n\nAnd take with you the week's transferable skill, because it works on more than one parable. You have now watched the method that opens any text like this one: sit with the story until its details start asking questions (why night? why over-sowing? why sleep unblamed?); let Jesus' own interpretation govern every symbol He decodes; run the vocabulary down to its roots (an aphete or an eklampsousin will reorganize a whole reading); find the Old Testament floor under the New Testament room (Daniel under Matthew, Malachi under the sunrise); and only then ask what the text asks of you. That sequence — story, self-interpretation, vocabulary, roots, response — is how this series was built, and it is yours now. Matthew 13 alone holds six more parables waiting for it.\n\nYou leave in a long company: a golden-mouthed preacher who heard mercy in the No, a slave-captain who turned out to be wheat, a Gulag prisoner who found the line through his own heart, a Dutch watchmaker's daughter with a lifted hand, a plodding cobbler counting sheaves. Their field was yours. Their Owner is yours. None of them finished the week with a clean field, and none of them needed one; what they carried out — what you carry out — is a settled account of who owns the harvest, a working uniform for the meantime, and an ending bright enough to plod toward. Take the trail below and keep going. And tomorrow, on the seventh day, we rest the way the field's own farmer rests: not because the work is done, but because the growing was never ours.",
+      "markdown": false
+    },
+    {
+      "type": "resource",
+      "heading": "Further Your Learning — Watch",
+      "resources": [
+        {
+          "title": "Why Jesus Told Parables (BibleProject)",
+          "url": "https://www.youtube.com/watch?v=XX-aAg4_U2Q",
+          "description": "How parables work — Kingdom announcements that force a decision."
+        },
+        {
+          "title": "Gospel of Matthew Overview, Part 1 (BibleProject)",
+          "url": "https://www.youtube.com/watch?v=3Dv4-n6OYGI",
+          "description": "Matthew's five-discourse design; chapter 13 as the divided-response hinge."
+        },
+        {
+          "title": "Day of the Lord (BibleProject)",
+          "url": "https://www.youtube.com/watch?v=tEBc2gSSW04",
+          "description": "The prophets' judgment-day arc — Joel's sickle — climaxing in Jesus."
+        },
+        {
+          "title": "Book of Daniel Overview (BibleProject)",
+          "url": "https://www.youtube.com/watch?v=9cSC9uobtPM",
+          "description": "The visions behind the week's ending: resurrection and the shining wise."
+        },
+        {
+          "title": "Wheat, Weeds, and the Patience of God (Christ Church Plano)",
+          "url": "https://www.youtube.com/watch?v=fz16mUICL4s",
+          "description": "A full sermon on the withheld sickle — patience as mercy, not indifference."
+        },
+        {
+          "title": "Heaven and Earth (BibleProject)",
+          "url": "https://www.youtube.com/watch?v=Zy2AQlK6C5k",
+          "description": "The Bible's ending in full frame — the world the gathered wheat wakes up in."
+        }
+      ]
+    },
+    {
+      "type": "resource",
+      "heading": "Further Your Learning — Read (all free)",
+      "resources": [
+        {
+          "title": "John Chrysostom, Homily 46 on Matthew (4th century)",
+          "url": "https://www.newadvent.org/fathers/200146.htm",
+          "description": "The classic early exposition — 'it is possible for them even to become wheat.'"
+        },
+        {
+          "title": "Augustine, Sermon 23 on the New Testament; and Letter 185",
+          "url": "https://www.newadvent.org/fathers/160323.htm",
+          "description": "'They who to-day are tares, may to-morrow be wheat' — and the threshing-floor answer to the purity movements of his day."
+        },
+        {
+          "title": "Charles Spurgeon, 'Wheat in the Barn' (#3393) and the Exposition following #3312",
+          "url": "https://www.spurgeongems.org/sermon/chs3393.pdf",
+          "description": "The Victorian pulpit on the tares — the sleeping church and the waking devil; the present's word and the coming separation."
+        },
+        {
+          "title": "Aleksandr Solzhenitsyn, The Gulag Archipelago, Part IV ch. 1, 'The Ascent'",
+          "url": "https://archive.org/details/gulagarchipelagovolume2alekandrsolzhenitsyn_20190714",
+          "description": "The line through every heart, Dr. Kornfeld's night, and 'Bless you, prison' — with its unflinching parenthesis."
+        },
+        {
+          "title": "C.S. Lewis, Mere Christianity, Book II ch. 5, 'The Practical Conclusion'",
+          "description": "Why God delays the invasion — 'when the author walks on to the stage the play is over.'"
+        },
+        {
+          "title": "Corrie ten Boom, The Hiding Place (1971) and Tramp for the Lord (1974)",
+          "description": "Her own tellings of Ravensbrück and the Munich handshake."
+        },
+        {
+          "title": "John Newton, An Authentic Narrative (1764) and Thoughts Upon the African Slave Trade (1788)",
+          "url": "https://www.gutenberg.org/ebooks/68056",
+          "description": "The storm, the uncomfortable slow years after it, and the confession that came late — in his own words."
+        },
+        {
+          "title": "George Smith, Life of William Carey (1885)",
+          "url": "https://www.gutenberg.org/ebooks/2056",
+          "description": "Krishna Pal's baptism, the Serampore fire, and the plodder's whole story."
+        },
+        {
+          "title": "George Washington Carver: In His Own Words (ed. Gary R. Kremer, 1987)",
+          "description": "The 1897 autobiographical sketch and the 1924 letter to the New York Times."
+        }
+      ],
+      "forDeeperStudy": "The passage trail, in reading order: Genesis 3 (the first intruder) → Psalm 1 (the two ways) → Joel 3:9-16 (the sickle) → Daniel 12 (the shining) → Malachi 3:16-4:6 (one day, two faces) → Matthew 13 IN FULL (the whole parable discourse — watch how the seven parables interlock, and how vv. 24-30 and 36-43 frame the middle) → Romans 12:14-21 (the fieldhand's uniform) → 2 Peter 3:1-13 (the delay explained) → Revelation 14:14-20 (the sickle finally swings). Then the capstone exercise: reread the parable one last time and mark, honestly, which character you have been this week — sleeper, servant, or fieldhand — and which one you intend to be."
+    },
+    {
+      "type": "prayer",
+      "heading": "A Sending Prayer",
+      "prayerText": "Owner of the field, thank You for a week inside Your patience. Send me out with the fieldhand's uniform and the plodder's arithmetic: blessing like weather, forwarding what was never mine to repay, keeping verdicts sealed, planting through the long middle — with the barn certain, the sunrise dated, and the sickle exactly where it belongs: in better hands than mine. Amen.",
+      "breathPrayer": "Inhale: Let both grow — Exhale: the harvest is Yours.",
+      "prayerType": "sending"
+    },
+    {
+      "type": "takeaway",
+      "heading": "The Week's Commitment",
+      "commitment": "I will keep three practices from this week alive: the four-word diagnosis (an enemy did this), the retired sickle (one reopened verdict file), and the fieldhand's watering (one distrusted row blessed) — and I will walk the passage trail over the coming month.",
+      "leavingAtCross": [
+        "The harvester's reflex, which grows back overnight",
+        "The cynicism that deletes the harvest from the story"
+      ],
+      "receivingFromCross": [
+        "A field fully known, a patience fully deliberate, an ending made of light",
+        "A place in the long company of the fieldhands"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Community Reflection",
+      "forReflection": [
+        "Trace the week's shape: Day 1's night sabotage is answered by Day 5's sunrise; Day 2's surrendered sickle is answered by Day 4's fieldhand uniform; and Day 3 stands at the center — the field is the world, the harvesters are angels, the line runs through every heart. Where did the mirror structure catch you by surprise?",
+        "Jesus told this parable to crowds who wanted a Messiah with a sickle — an immediate national sorting. He gave them a Sower with a schedule instead. Where does His pacing still disappoint you, and what does this week say to that disappointment?"
+      ],
+      "forAccountabilityPartners": [
+        "Trade your Day 2 'unfinished file' names and your Day 4 'distrusted row' — then pray for each other's, out loud, as possible wheat, before you part."
+      ]
+    }
+  ]
+}

@@ -824,3 +824,12 @@ features:
     prd: docs/feature-prds/F-081.md
     methodology_refs:
       - M00
+  - id: F-082
+    category: Content
+    feature: The Harvest 7-day prefab series (wheat & weeds, two-minute open)
+    slug: the-harvest-series
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-082.md
+    methodology_refs:
+      - M00

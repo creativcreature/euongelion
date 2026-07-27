@@ -1,0 +1,303 @@
+{
+  "day": 3,
+  "chiasm_position": "C",
+  "format": "two-minute-open",
+  "title": "The Field Is the World",
+  "subtitle": "Jesus explains His own parable — and takes the sickle out of every hand but one",
+  "teaser": "Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — and the field turns out to be bigger, and closer, than anyone wanted.",
+  "anchorVerse": "Matthew 13:36-43",
+  "theme": "The pivot of the week: the harvest is real, dated, and not ours — and the delay is mercy",
+  "framework": "Matthew 13:39 - The harvest is the end of the age, and the harvesters are angels",
+  "scriptureReference": "Matthew 13:36-43",
+  "totalWords": 3164,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 13:38-39",
+      "translation": "BSB",
+      "passage": "The field is the world, and the good seed represents the sons of the kingdom. The weeds are the sons of the evil one, and the enemy who sows them is the devil. The harvest is the end of the age, and the harvesters are angels.",
+      "emphasis": [
+        "The field is the world",
+        "the harvesters are angels"
+      ],
+      "scriptureContext": "Two minutes with the parable's own answer key — Jesus' words, decoded by Jesus."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "θερισμός",
+      "transliteration": "therismos",
+      "pronunciation": "theh-ris-MOSS",
+      "strongsNumber": "G2326",
+      "definition": "harvest — the reaping at the appointed end",
+      "usage": "Jesus dates it in one clause: the harvest is the end of the age. There IS a sorting coming. It has a season. And in the whole parable, the only hands on the sickle belong to angels — never to servants."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you quietly appointed yourself the harvester — deciding who is wheat, who is weed, and when their time is up?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord of the harvest, the field is Yours, the timing is Yours, and the sickle was never mine. Take it back from my grip today — and be patient with the field inside me. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-6",
+      "ctaSubtext": "That was a whole reading. If you have more time, the full field is below — Jesus' private explanation, Daniel's dawn, and the man who found the line running through his own heart."
+    },
+    {
+      "type": "scripture",
+      "reference": "Matthew 13:36-43",
+      "translation": "BSB",
+      "passage": "Then Jesus dismissed the crowds and went into the house. His disciples came to Him and said, \"Explain to us the parable of the weeds in the field.\" He replied, \"The One who sows the good seed is the Son of Man. The field is the world, and the good seed represents the sons of the kingdom. The weeds are the sons of the evil one, and the enemy who sows them is the devil. The harvest is the end of the age, and the harvesters are angels. As the weeds are collected and burned in the fire, so will it be at the end of the age. The Son of Man will send out His angels, and they will weed out of His kingdom every cause of sin and all who practice lawlessness. And they will throw them into the fiery furnace, where there will be weeping and gnashing of teeth. Then the righteous will shine like the sun in the kingdom of their Father. He who has ears, let him hear.\"",
+      "greekOriginal": "ὁ δὲ ἀγρός ἐστιν ὁ κόσμος",
+      "transliteration": "ho de agros estin ho kosmos — \"and the field is the world\"",
+      "emphasis": [
+        "The field is the world",
+        "The harvest is the end of the age",
+        "Then the righteous will shine like the sun"
+      ],
+      "scriptureContext": "One of only two parables Jesus decodes line by line — privately, indoors, at the disciples' request."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "θεριστής",
+      "transliteration": "theristēs",
+      "pronunciation": "theh-ris-TACE",
+      "strongsNumber": "G2327",
+      "definition": "reaper, harvester — the one authorized to swing the sickle",
+      "usage": "Here is a word-statistic worth sitting with: theristēs — reaper — appears exactly twice in the entire New Testament, and both occurrences are inside this parable. Verse 30: 'I will tell the harvesters.' Verse 39: 'the harvesters are angels.' Scripture's only named reapers are angelic. You are in neither verse.",
+      "usageNote": "The interpretation turns on two identifications the church has always found harder than the fire. First: ὁ δὲ ἀγρός ἐστιν ὁ κόσμος — the field is the WORLD (kosmos, G2889), not the church; Jesus decoded His own symbol, and every application must start there. Second: the harvest is ἡ συντέλεια αἰῶνος — the completion of the age. A real sorting, at a real end, by authorized hands that are not ours.",
+      "wordByWord": [
+        {
+          "word": "ὁ θερισμὸς",
+          "transliteration": "ho therismos",
+          "meaning": "the harvest"
+        },
+        {
+          "word": "συντέλεια αἰῶνός",
+          "transliteration": "synteleia aiōnos",
+          "meaning": "the completion of the age"
+        },
+        {
+          "word": "οἱ θερισταὶ",
+          "transliteration": "hoi theristai",
+          "meaning": "the harvesters"
+        },
+        {
+          "word": "ἄγγελοί εἰσιν",
+          "transliteration": "angeloi eisin",
+          "meaning": "are angels"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "וְהַמַּשְׂכִּלִים",
+          "transliteration": "vehammaskilim",
+          "reference": "Daniel 12:3",
+          "meaning": "\"and the wise\" — those with insight, who will shine (yazhiru, יַזְהִרוּ) like the brightness (zohar, זֹהַר) of the heavens; the verse behind Jesus' ending"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The Answer Key",
+      "content": "There is a small domestic detail at the center of this week, and it is easy to read past. Then Jesus dismissed the crowds and went into the house.\n\nThe parable was told outside, from a boat, to everyone. The interpretation happens inside, at a table, to the few who wanted it badly enough to ask. And their question is the question of everyone who has ever been handed this story: explain it. Not because the images are hard — a child can follow seed and weeds — but because the situation it describes is unbearable without an explanation. Evil, growing in God's own field, on purpose, tolerated until further notice. Who can live inside that story without asking the Teller what He means?\n\nSo He tells them, term by term, one of only two parables He ever decodes like this. The Sower is the Son of Man — Jesus is not narrating someone else's farm. The good seed is not the message this time but people: sons of the kingdom, planted lives. The weeds are people too. The enemy is the devil, still working nights. And then the two identifications that reorder everything: the field is the world, and the harvest is the end of the age.\n\nHold those two like stones in the hand. This is not a parable about your church, your workplace, or your feed — not first. It is Jesus' map of the whole world and the whole age: good and evil planted together, growing together, until a real, dated, angelic sorting. Today we stand in the house and let Him read His own story to us. What He decodes will take the sickle out of our hands — and then, strangely, put rest in its place.",
+      "markdown": false
+    },
+    {
+      "type": "pullquote",
+      "content": "Scripture's only named reapers are angelic. You are in neither verse."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "Walking the Decoded Field",
+      "content": "Take the interpretation slowly, because each term closes a door we keep trying to reopen.\n\nThe field is the world. Not the church — Jesus says kosmos, and He says it in the sentence where He is deliberately dissolving His own metaphors into plain speech. This matters because the church has repeatedly tried to shrink the field to fit its own fences, and the results fill the sadder chapters of the history books. Read as a parable about the church, 'let both grow' becomes a ban on all discernment — no discipline, no membership, no difference between shepherd and wolf. Read around, it becomes worse: if we can just identify the weeds, surely we should pull them — and the pulling has looked like inquisitions, purges, wars of religion, and a thousand smaller crusades of the heart. Both misreadings die at verse 38. The mixed field is the world God so loved; the church still practices discernment inside it (Jesus will give Matthew 18 for that, five chapters from now); and NOBODY — church or state, zealot or cynic — was handed the eschatological sickle. Yesterday's No to the servants stands.\n\nThe harvest is the end of the age. Jesus is invoking a hope his hearers knew. The prophets had promised a day when the sorting would finally come — Joel heard the command ring out: \"Swing the sickle, for the harvest is ripe\" (Joel 3:13). The delay is not the story drifting; it is the story keeping its appointed shape: sowing, growing, THEN harvest. Evil has a season, and the season has an end printed on it.\n\nThe harvesters are angels. Two Greek words, and every self-appointed sorting operation in history loses its license. The reapers are not the zealous, the discerning, the doctrinally precise, or the deeply wronged. They are angels, sent by the Son of Man, at His signal. And when the sickle finally does appear in a human-shaped hand in Scripture's last book, look who holds it: \"One like the Son of Man, with a golden crown on His head and a sharp sickle in His hand\" (Revelation 14:14). The only person authorized to judge the field is the One who bled into it. Judgment belongs to the Judge with scars.\n\nWhich leaves the question the whole week has been circling: if the sorting is certain, and the Sorter is willing — why the wait?",
+      "markdown": false
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "tEBc2gSSW04",
+      "videoTitle": "We Studied the \"Day of the Lord\" in the Bible (Here's What We Found)",
+      "videoCaption": "The prophets' harvest-day hope — Joel's sickle, Babylon's fall — and its surprising climax in Jesus. The backdrop of 'the harvest is the end of the age.'",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "The servants were denied the sorting; the reapers are angels; the sickle waits for the end of the age in the hand of the Son of Man.",
+      "modernApplication": "We run daily harvests anyway — verdicts on strangers from a single post, write-offs of family members, purity purges in our communities, and the quiet inner tribunal that has already sentenced half the people we know.",
+      "connectionPoint": "Every self-run harvest repeats the servants' offer from yesterday — and ignores the answer. The question is never whether the weeds are real. It is whether you have been handed the sickle. You haven't — and that is a matter of jurisdiction, nothing softer.",
+      "newTestamentEcho": "\"The Lord is not slow in keeping His promise as some understand slowness, but is patient with you, not wanting anyone to perish but everyone to come to repentance.\" — 2 Peter 3:9 (BSB)"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "Why the Sickle Waits",
+      "content": "Here is the center of the week. It has two turns, and the second one is personal.\n\nFirst turn: the delay is not indifference. Peter faced this exact complaint in the early church — where is the promised sorting? — and his answer relocates the whole question: \"The Lord is not slow in keeping His promise as some understand slowness, but is patient with you, not wanting anyone to perish but everyone to come to repentance\" (2 Peter 3:9). Read that against the parable and the farming logic snaps into focus. In a real field, a darnel stalk is a darnel stalk forever; no weed has ever repented into wheat. But Jesus is not teaching botany. In His field, the shocking possibility that no farmer has ever seen is the whole point of the wait: weeds can change kind. Every year the harvest is delayed is a year the field's worst stalks are being given to become grain. What looks from the ground like a scheduling problem is, Peter says, a rescue operation running at full capacity.\n\nSecond turn — and this is where the parable stops being about them: the line between good and evil does not run neatly between people. It runs through them. Aleksandr Solzhenitsyn learned this in the one place on earth built most confidently on the opposite theory. The Soviet camp system existed to separate the weeds from the wheat by force — and it was there, on rotting prison straw, that the actual geography of evil was disclosed to him. \"Gradually it was disclosed to me,\" he wrote, \"that the line separating good and evil passes not through states, nor between classes, nor between political parties either—but right through every human heart—and through all human hearts.\" And the line moves: \"This line shifts. Inside us, it oscillates with the years. And even within hearts overwhelmed by evil, one small bridgehead of good is retained. And even in the best of all hearts, there remains ... an unuprooted small corner of evil.\" You know this geography too, if you are honest at 2 a.m.: the field with the most stubborn weed-patch in it is the one inside your own chest. And that discovery rewrites your relationship to the delay. The patience you resent when you look at the world is the same patience that is, right now, keeping YOUR field from premature harvest — giving the weed-patch in you time to become wheat. The person most served by the withheld sickle is the one complaining about it.\n\nAnd then, having said the hardest things — fire, furnace, weeping — Jesus ends His explanation somewhere no one expects: at a sunrise. \"Then the righteous will shine like the sun in the kingdom of their Father.\" He is reaching back to Daniel, to the Bible's clearest early resurrection hope: \"the wise will shine like the brightness of the heavens\" (Daniel 12:3). The Greek of Matthew even carries the fingerprint — the rare verb eklampsousin, shine OUT, the very form the Greek Daniel the early church read uses in that verse. An echo, not a quotation — Jesus intensifies Daniel's starlight into full sun — but the direction of the allusion is the point: His last word on the mixed field is not the furnace. It is resurrection dawn. The week's pivot, then, in one sentence: the harvest is certain, the sickle is not yours, the delay is mercy aimed at the weed-patch in you — and the story ends in light.",
+      "markdown": false
+    },
+    {
+      "type": "story",
+      "heading": "The Ascent",
+      "content": "Aleksandr Solzhenitsyn was arrested in February 1945 — a decorated reconnaissance-artillery commander who, by his own account, had never left the front, seized by counterintelligence officers in East Prussia over censored letters that mocked Stalin. Eight years, sentenced in absentia. The system that swallowed him was the Gulag: a continent of camps built on the confident premise that society's weeds could be identified, uprooted, and shipped east, leaving a purified field behind.\n\nIn the Ekibastuz special camp he worked as laborer, bricklayer, smelter — and developed the cancer that put him in the camp hospital. There, recovering from surgery, he lay in the dark while Dr. Boris Kornfeld — a Jewish physician converted to Christ in prison — sat by his cot through the night and, as Solzhenitsyn tells it, fervently recounted the long story of his conversion. Kornfeld's last recorded words that night: \"there is no punishment that comes to us in this life on earth which is undeserved.\" By morning he was dead — eight blows to the skull with a plasterer's mallet as he slept. \"These were the last words of Boris Kornfeld... directed to me, they lay upon me as an inheritance,\" Solzhenitsyn wrote. He is careful, and we should be too: he does not claim the doctor converted him on the spot — \"by that time I myself had matured to similar thoughts.\" The seed had been growing in the dark, the way seed does.\n\nOut of that ward came the sentences that reorder this whole parable. \"And it was only when I lay there on rotting prison straw that I sensed within myself the first stirrings of good. Gradually it was disclosed to me that the line separating good and evil passes not through states, nor between classes, nor between political parties either — but right through every human heart — and through all human hearts.\" And then the benediction that scandalized his hearers — offered with his own unflinching caveat attached: \"Bless you, prison, for having been in my life! (And from beyond the grave come replies: It is very well for you to say that — when you came out of it alive!)\"\n\nThe state had run history's most ruthless weed-pulling operation, and it had gotten the field exactly wrong. God, meanwhile, had used the delay — the terrible, patient meantime — to turn one of the field's angriest stalks into wheat.",
+      "connectionToTheme": "Solzhenitsyn is the parable's pivot lived out: the purge-logic of self-appointed harvesters produced the Gulag, while the withheld sickle produced a converted man. The line runs through every heart — which is precisely why the sorting is not ours, and why the delay is mercy."
+    },
+    {
+      "type": "insight",
+      "heading": "The Ending He Chose",
+      "content": "Jesus had every prophetic image available for closing this parable — winepress, chaff, smoke. He chose Daniel's: the wise shining like the brightness of the heavens, intensified to full sun. The rabbis read Daniel 12 as the Bible's clearest promise of resurrection. Which means the parable of the weeds — Scripture's hardest text on evil's persistence — ends, by Jesus' own selection, on the Bible's brightest text about getting up from the dust.",
+      "historicalContext": "The verbal echo is precise: Matthew's rare eklampsousin ('shine out,' its only New Testament appearance) matches the same verb form in the Greek Daniel used by the early church — an allusion the standard commentaries have noted for centuries."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "Living Between Sowing and Sickle",
+      "content": "What does the pivot change before the sun goes down today? Three re-aims.\n\nRe-aim your prayers for the weeds. Once you believe weeds can change kind, the people you have written off become the field's most interesting acreage. The colleague whose cruelty is reflexive, the relative whose politics have eaten them alive, the person who wounded you and never noticed — the parable does not ask you to call their damage good. It asks you to stop pre-running their harvest. Pray for them the way the delay itself prays for them: as possible wheat, not confirmed weeds. This is not naivety about evil; verse 42 is still in the chapter. It is accuracy about timing — and about who does the sorting.\n\nOne caution before the second re-aim, because this pivot has a counterfeit. Releasing the sickle is not the same as calling the weeds wheat. The parable never asks you to rename evil, minimize damage, or hand abusers fresh access in the name of patience; the Master himself names the weeds as weeds, the enemy as an enemy, and the furnace as a furnace. What He removes is not your discernment but your jurisdiction. You may still call darnel darnel; you may still build the fences wisdom requires; what you may not do is run the harvest. Patience and naivety are different virtues, and only one of them is in this parable.\n\nRe-aim your verdicts inward — carefully. The line runs through your heart too, and honesty about your own mixed field is the cure for the harvester reflex; it is very hard to sharpen a sickle for others while weeding your own chest. But hear the difference between conviction and condemnation: the same discovery that humbled Solzhenitsyn also freed him, because a line through every heart means no heart is finished. The weed-patch in you is evidence, not verdict — proof the Farmer is still letting the field grow.\n\nAnd re-aim your reading of the silence of God. Much of what we call the problem of evil is the experience of living between verse 30's decision and verse 39's harvest — inside the Master's patience, which from ground level looks indistinguishable from absence. The parable will not let you keep that reading. The field has an Owner who knew about the weeds the morning they sprouted, named their source without panic, set a harvest date, and staffed it with angels. Nothing about the meantime is out of hand. The delay you are living in is load-bearing: it is holding open the door for every stalk still capable of turning — including, on your honest days, you.",
+      "markdown": false
+    },
+    {
+      "type": "scripture",
+      "reference": "Daniel 12:2-3",
+      "translation": "BSB",
+      "passage": "And many who sleep in the dust of the earth will awake, some to everlasting life, but others to shame and everlasting contempt. Then the wise will shine like the brightness of the heavens, and those who lead many to righteousness will shine like the stars forever and ever.",
+      "hebrewOriginal": "וְהַמַּשְׂכִּלִים יַזְהִרוּ כְּזֹהַר הָרָקִיעַ",
+      "transliteration": "vehammaskilim yazhiru kezohar haraqia — \"and the wise will shine like the brightness of the firmament\"",
+      "emphasis": [
+        "Then the wise will shine like the brightness of the heavens"
+      ],
+      "scriptureContext": "The verse Jesus reaches for to end His parable — Daniel's resurrection dawn, six centuries before the Sower stood in the field."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Name the person whose harvest you have most confidently pre-run. What would change today if you treated them as possible wheat — not because their damage isn't real, but because the sickle isn't yours and the season isn't over?",
+      "additionalQuestions": [
+        "Where does the line run through your own heart right now — what is the weed-patch the delay is protecting?",
+        "When God's patience with evil has felt like absence to you, what does verse 39's dated, staffed, angelic harvest do to that feeling?",
+        "Jesus ended the fire-and-furnace parable at a sunrise. What does His choice of ending tell you about His aim in telling it?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: Putting Down the Sickle",
+      "instruction": "A physical practice — the body renouncing a job it was never given.",
+      "interaction_type": "physical",
+      "steps": [
+        {
+          "title": "Grip",
+          "description": "Close your dominant hand into a fist, as around a handle. Hold it while you name, silently and specifically, the harvests you have been running — the person, the group, the verdict."
+        },
+        {
+          "title": "Release",
+          "description": "Open the hand slowly, palm down, and say: The harvesters are angels. I am in neither verse."
+        },
+        {
+          "title": "Turn",
+          "description": "Turn the open palm upward and say: Be patient with the field in me. Hold the open posture for one slow minute."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Leaving the House",
+      "content": "We began at the door of the house, where the disciples asked for the answer key because the story was unbearable without it.\n\nNotice what they walked out with. Not a timetable — the end of the age got no date. Not an assignment — the sorting went to angels. What they carried out of that room was a Person's reading of the world: a field fully known, an enemy fully named, a patience fully deliberate, a harvest fully certain, and an ending made of light. It turns out you can live in a mixed field indefinitely on exactly that.\n\nTomorrow we get practical: what fieldhands actually do all day, since the sickle is off the table. Tonight, walk out of the house with the disciples. The weeds you can see from your window are real, and they are not yours to pull, and the One who said so has a crown, a sickle of His own, and scars. The field has never once been out of His sight.",
+      "markdown": false
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Son of Man, Sower of the good seed, I came to Your parable wanting a verdict on the weeds and You handed me a mirror instead. Thank You for the patience that is holding my own field open. Take back the sickle I keep picking up; teach me the fieldhand's work and the farmer's sleep. And when the real harvest comes, in Your time, by Your angels — gather me in, and let me shine in my Father's kingdom. Amen.",
+      "breathPrayer": "Inhale: The field is Yours — Exhale: and so is the sickle.",
+      "prayerType": "surrender"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will name my most confident pre-run harvest — one person — and replace today's verdict with today's prayer for them as possible wheat.",
+      "leavingAtCross": [
+        "The sickle I was never handed",
+        "The tribunal I run on people mid-growth",
+        "Reading God's patience as God's absence"
+      ],
+      "receivingFromCross": [
+        "A Judge with scars who bled into the field He will one day harvest",
+        "A delay that is holding my own field open",
+        "An ending made of Daniel's dawn, chosen by Jesus Himself"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Community Reflection",
+      "question": "In Jesus' own interpretation, who are the harvesters — and how many times does that Greek word (theristēs) appear in the entire New Testament?",
+      "options": [
+        "The apostles — the word appears throughout Acts",
+        "The angels — and the word appears only twice, both inside this parable",
+        "The church — the word appears in Matthew and Revelation",
+        "The Son of Man alone — the word appears once"
+      ],
+      "answer": 1,
+      "explanation": "Verse 39: 'the harvesters are angels' (hoi theristai angeloi eisin). Theristēs occurs exactly twice in the New Testament — verses 30 and 39 of this chapter. Scripture's only named reapers are angelic; the servants, then and now, are in neither verse."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Story",
+      "name": "Daniel",
+      "era": "6th century BC, Babylon — exile, courts of Nebuchadnezzar to Cyrus",
+      "bio": "A young Judean deported to Babylon who spent his whole adult life serving pagan empires without surrendering his God. Daniel knew the mixed field from inside: faithful presence among idolatrous power, decade after decade, sustained by visions of a kingdom that would outlast every empire. His book's final chapter carries the Old Testament's clearest resurrection promise — the sleeping waking from the dust, the wise shining like the heavens — the very verse Jesus reached for to end the parable of the weeds.",
+      "keyQuote": "Then the wise will shine like the brightness of the heavens, and those who lead many to righteousness will shine like the stars forever and ever. (Daniel 12:3, BSB)",
+      "lessonForUs": "Daniel never pulled a weed in Babylon and never became one. Faithful presence in a mixed field, with resurrection on the horizon — that is the whole posture of this week, lived seventy years before breakfast."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "9cSC9uobtPM",
+      "videoTitle": "Book of Daniel Summary: A Complete Animated Overview",
+      "videoCaption": "Going deeper: Daniel's night visions and the chapter-12 hope of resurrection and shining — the source text behind Jesus' ending.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "Joel 3:13 (BSB)",
+          "text": "\"Swing the sickle, for the harvest is ripe. Come, trample the grapes, for the winepress is full; the wine vats overflow because their wickedness is great.\""
+        },
+        {
+          "reference": "Revelation 14:14-15 (BSB)",
+          "text": "\"And I looked and saw a white cloud, and seated on the cloud was One like the Son of Man, with a golden crown on His head and a sharp sickle in His hand...\""
+        },
+        {
+          "reference": "2 Peter 3:9 (BSB)",
+          "text": "\"The Lord is not slow in keeping His promise as some understand slowness, but is patient with you, not wanting anyone to perish but everyone to come to repentance.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "Aleksandr Solzhenitsyn, The Gulag Archipelago (1973), Part IV, ch. 1, \"The Ascent\" — trans. Thomas P. Whitney",
+          "description": "Source of today's quotations — \"the line separating good and evil passes... right through every human heart\" and \"Bless you, prison, for having been in my life!\" — quoted verbatim from the Whitney translation, Part IV, ch. 1 (\"The Ascent\"). His account of Dr. Boris Kornfeld's night testimony and murder is from the same chapter."
+        },
+        {
+          "title": "Greek and Hebrew data",
+          "description": "theristēs (G2327, 2 NT occurrences), therismos (G2326), kosmos (G2889), eklampō (G1584, NT hapax) and its match with the Greek Daniel 12:3 read by the early church (Theodotion); Daniel 12:3 Hebrew (maskilim, H7919; yazhiru, H2094; zohar, H2096) — BibleHub interlinear and Strong's. The Daniel allusion is affirmed across the standard commentaries (Pulpit, Cambridge, Ellicott, Meyer, Bengel)."
+        }
+      ],
+      "forDeeperStudy": "Read Daniel 12 in full, then Revelation 14:14-20 — the sickle finally swinging, in the hand of One like the Son of Man. Then reread Matthew 13:36-43 and notice you can now hear all three texts talking to each other."
+    }
+  ]
+}

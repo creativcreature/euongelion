@@ -69,6 +69,11 @@ const FORBIDDEN_PHRASES = [
 // (These are fine in metadata fields, comments, or the brief — only flagged in
 // modules' user-facing text.)
 const FORBIDDEN_LABELS = [
+  // Reader-facing prose must not call the experience a "devotional"
+  // (PUBLIC-FACING-LANGUAGE "What We Call the Experience"; AUTHORING-SPEC §2).
+  // Added 2026-07-26 (the-harvest editor pass) — metadata fields are exempt
+  // via the prose-walk's skip list, only rendered prose is scanned.
+  /\bdevotionals?\b/i,
   /\bspiritual journey\b/i,
   /\bfaith course\b/i,
   /\bunlock your purpose\b/i,
@@ -199,7 +204,8 @@ function collectProseStrings(value, out = []) {
         k === 'chiasm_position' ||
         k === 'audio_url' ||
         k === 'image_url' ||
-        k === 'map_url'
+        k === 'map_url' ||
+        k === 'ctaHref' // URL fragment (e.g. #devotional-section-6), not prose
       ) {
         continue
       }
