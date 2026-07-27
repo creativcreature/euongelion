@@ -35,16 +35,6 @@ function recoveryFor(pathname: string | null): Recovery {
     }
   }
 
-  if (path.startsWith('/wake-up')) {
-    return {
-      kicker: 'WAKE UP UNAVAILABLE',
-      heading: "We couldn't load this Wake Up reading.",
-      body: 'Try again, or return to the Wake Up collection.',
-      secondaryHref: '/wake-up',
-      secondaryLabel: 'Browse Wake Up',
-    }
-  }
-
   if (
     path.startsWith('/daily-bread') ||
     path.startsWith('/today') ||

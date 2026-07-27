@@ -68,18 +68,6 @@ type MockAccountSessionResponse = {
   error?: string
 }
 
-type MockExportResponse = {
-  ok?: boolean
-  error?: string
-  code?: string
-  schemaVersion?: string
-  completeness?: {
-    complete?: boolean
-    artifactTypes?: string[]
-    counts?: Record<string, number>
-  }
-}
-
 const emptySubscribe = () => () => {}
 
 function useHydrated() {
@@ -151,9 +139,6 @@ export default function SettingsPage() {
     keyStorageMode,
     anthropicApiKey,
     openaiApiKey,
-    googleApiKey,
-    minimaxApiKey,
-    nvidiaKimiApiKey,
     dayLockingEnabled,
     textScale,
     reduceMotion,
@@ -168,10 +153,6 @@ export default function SettingsPage() {
     clearProviderKeys,
     setAnthropicApiKey,
     setOpenaiApiKey,
-    setGoogleApiKey,
-    setMinimaxApiKey,
-    setNvidiaKimiApiKey,
-    setDayLockingEnabled,
     setTextScale,
     setReduceMotion,
     setHighContrast,
@@ -1362,12 +1343,14 @@ export default function SettingsPage() {
                       DEFAULT BRAIN
                     </p>
                     <div className="flex flex-wrap gap-3">
+                      {/* F-083 settings repair (SA-033, 2026-07-27): Google's
+                          configured model was shut down upstream and the
+                          MiniMax / NVIDIA options were exotic BYO-only paths —
+                          all three retired from the picker (router code
+                          untouched). */}
                       {[
                         { label: 'Auto (Claude-first)', value: 'auto' },
                         { label: 'Claude/OpenAI', value: 'openai' },
-                        { label: 'Google', value: 'google' },
-                        { label: 'MiniMax', value: 'minimax' },
-                        { label: 'NVIDIA Kimi', value: 'nvidia_kimi' },
                       ].map((option) => (
                         <button
                           key={option.value}
@@ -1435,51 +1418,33 @@ export default function SettingsPage() {
                         Remember encrypted
                       </button>
                     </div>
+                    {/* F-083 settings repair: this used to be one field
+                        labeled "OpenAI key" that silently wrote BOTH the
+                        OpenAI and Anthropic keys; the Google/MiniMax/NVIDIA
+                        fields served retired picker options. Two honest
+                        fields now. */}
                     <input
                       type="password"
-                      value={openaiApiKey || anthropicApiKey}
+                      value={anthropicApiKey}
                       onChange={(event) => {
-                        setOpenaiApiKey(event.target.value)
                         setAnthropicApiKey(event.target.value)
                         showSaved()
                       }}
+                      placeholder="Anthropic key"
+                      aria-label="Anthropic API key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="password"
+                      value={openaiApiKey}
+                      onChange={(event) => {
+                        setOpenaiApiKey(event.target.value)
+                        showSaved()
+                      }}
                       placeholder="OpenAI key"
-                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      autoComplete="off"
-                    />
-                    <input
-                      type="password"
-                      value={googleApiKey}
-                      onChange={(event) => {
-                        setGoogleApiKey(event.target.value)
-                        showSaved()
-                      }}
-                      placeholder="Google key"
-                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      autoComplete="off"
-                    />
-                    <input
-                      type="password"
-                      value={minimaxApiKey}
-                      onChange={(event) => {
-                        setMinimaxApiKey(event.target.value)
-                        showSaved()
-                      }}
-                      placeholder="MiniMax key"
-                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      autoComplete="off"
-                    />
-                    <input
-                      type="password"
-                      value={nvidiaKimiApiKey}
-                      onChange={(event) => {
-                        setNvidiaKimiApiKey(event.target.value)
-                        showSaved()
-                      }}
-                      placeholder="NVIDIA Kimi key"
+                      aria-label="OpenAI API key"
                       className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
                       style={{ border: '1px solid var(--color-border)' }}
                       autoComplete="off"

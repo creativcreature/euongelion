@@ -22,7 +22,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     introduction:
       'Your country, your job, your security—all unstable. So who are you, really? This 5-day journey explores what remains when the labels fall away.',
     context:
-      "In 2026, political violence is at 1970s levels. Your job title doesn't guarantee security anymore. The definitions that once told you who you were are fracturing. This series asks the uncomfortable question: if you're not what you do, what you earn, or what country you belong to—then who are you?",
+      "The definitions that once told you who you were are fracturing — the job title, the paycheck, the place you belong. This series asks the uncomfortable question: if you're not what you do, what you earn, or where you're from, then who are you?",
     framework:
       'Matthew 6:33 - Seek first the kingdom, and all these things will be added',
     pathway: 'Awake',
@@ -69,7 +69,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     introduction:
       "You've tried to control everything. And you're exhausted. This 5-day journey explores a different kind of peace—one that doesn't depend on your circumstances.",
     context:
-      '43% more anxious than last year. You refresh the news obsessively, doomscrolling to see if your world is still intact. You try to manage every variable, control every outcome. But the tighter you grip, the less peace you have.',
+      'You refresh the news to see if your world is still intact. You try to manage every variable, control every outcome. But the tighter you grip, the less peace you have.',
     framework: 'John 14:27 - Peace I give you, not as the world gives',
     pathway: 'Sleep',
     keywords: [
@@ -231,7 +231,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     introduction:
       '57% are pessimistic about 2026. Optimism is dead. Toxic positivity fails. This 5-day journey explores resurrection hope—the kind that enters darkness instead of denying it.',
     context:
-      'Climate crisis. Political violence. Economic collapse. Everything feels apocalyptic. Toxic positivity says "stay positive!" But that\'s not working. This series offers something different: hope that\'s honest about the dark.',
+      'The news reads like an ending. Toxic positivity says "stay positive!" But that\'s not working. This series offers something different: hope that\'s honest about the dark.',
     framework: 'Lamentations 3:22-23 - His mercies are new every morning',
     pathway: 'Sleep',
     keywords: [
@@ -257,7 +257,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
   },
 
   // ============================================
-  // 19 Substack Series
+  // 18 Substack Series
   // ============================================
 
   'too-busy-for-god': {

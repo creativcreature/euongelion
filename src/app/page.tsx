@@ -67,11 +67,9 @@ const HOW_STEPS = [
 ]
 
 /**
- * Homepage hero — static for now (no rotation). Per founder direction
- * 2026-05-08: pin TODAY content to "what-is-the-gospel-day-1" until
- * the Bible-365 plan is fully written. Daily rotation queued for after
- * content fills in. Hero art uses the obj-* sandals-style aesthetic
- * (single-ink object photography) — see HOMEPAGE_TODAY.heroSrc.
+ * Homepage hero — static (no rotation). Since SA-031 the featured
+ * block always carries the MOST RECENT series via HOMEPAGE_TODAY;
+ * the top-of-page banner stays the blue empty-tomb riso (R38).
  */
 function pickHomepageHero(): string {
   return HOMEPAGE_TODAY.heroSrc

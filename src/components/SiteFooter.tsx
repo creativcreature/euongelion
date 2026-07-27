@@ -18,7 +18,6 @@ const PRODUCT_LINKS = [
   { href: '/sunday', label: 'Sunday Edition' },
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/series', label: 'Series' },
-  { href: '/wake-up', label: 'Wake-Up' },
   { href: '/daily-bread', label: 'Daily Bread' },
   { href: '/library', label: 'Library' },
 ]

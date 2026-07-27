@@ -12,7 +12,7 @@
  */
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import SeriesPageClient from '@/app/wake-up/series/[slug]/SeriesPageClient'
+import SeriesPageClient from '@/app/series/[slug]/SeriesPageClient'
 import type { SeriesInfo } from '@/data/series'
 import type { SeriesArtworkItem, SeriesVoice } from '@/lib/series-detail-tabs'
 
@@ -161,7 +161,7 @@ describe('series detail tabs (F-074)', () => {
     // Day 1 unlocked → link; Day 2 locked → no link, LOCKED status + message.
     expect(screen.getByRole('link', { name: /Day One Title/ })).toHaveAttribute(
       'href',
-      '/wake-up/devotional/identity-day-1',
+      '/devotional/identity-day-1',
     )
     expect(
       screen.queryByRole('link', { name: /Day Two Title/ }),

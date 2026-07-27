@@ -95,11 +95,9 @@ function dayOfYearToMonthIndex(dayOfYear: number): number {
 
 export default function DevotionalPageClient({
   slug,
-  silo = 'wake',
   initialDevotional = null,
 }: {
   slug: string
-  silo?: 'wake' | 'euangelion'
   // Audit C1 (HOMEPAGE-AUDIT-2026-05-11) → resolved. Both server
   // wrappers (/wake-up/devotional/[slug] and /devotional/[slug]) now
   // pass initialDevotional, so the reading body is server-rendered and
@@ -141,13 +139,13 @@ export default function DevotionalPageClient({
   )
 
   const seriesDays = seriesSlug ? SERIES_DATA[seriesSlug]?.days : null
-  const isWake = silo === 'wake'
-  const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
-  const headerTone = isWake ? 'wake' : 'default'
-  const parentRoute = isWake ? '/wake-up' : '/series'
-  const seriesRoutePrefix = isWake ? '/wake-up/series' : '/series'
-  const devotionalRoutePrefix = isWake ? '/wake-up/devotional' : '/devotional'
-  const parentLabel = isWake ? 'WAKE-UP' : 'SERIES'
+  // F-084 (SA-033): the legacy Wake-Up silo is retired — canonical only.
+  const brandWord = 'EUANGELION'
+  const headerTone = 'default'
+  const parentRoute = '/series'
+  const seriesRoutePrefix = '/series'
+  const devotionalRoutePrefix = '/devotional'
+  const parentLabel = 'SERIES'
   const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
     ?.modules
   const panels = devotional?.panels
@@ -437,7 +435,7 @@ export default function DevotionalPageClient({
                 href={parentRoute}
                 className="cta-major text-label vw-small mt-6 inline-block px-5 py-2"
               >
-                {isWake ? 'BROWSE WAKE UP' : 'BROWSE SERIES'}
+                BROWSE SERIES
               </Link>
             </section>
           </section>

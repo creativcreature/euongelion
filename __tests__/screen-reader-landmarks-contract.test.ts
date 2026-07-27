@@ -7,9 +7,8 @@ describe('Screen-reader landmark contract', () => {
     'src/app/page.tsx',
     'src/app/daily-bread/page.tsx',
     'src/app/soul-audit/results/page.tsx',
-    'src/app/wake-up/page.tsx',
-    'src/app/wake-up/series/[slug]/SeriesPageClient.tsx',
-    'src/app/wake-up/devotional/[slug]/DevotionalPageClient.tsx',
+    'src/app/series/[slug]/SeriesPageClient.tsx',
+    'src/app/devotional/[slug]/DevotionalPageClient.tsx',
   ]
 
   it('ensures primary routes expose a main landmark target for skip links', () => {

@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import WakeUpSeriesPage from '@/app/wake-up/series/[slug]/page'
+import SeriesRoutePage from '@/app/series/[slug]/page'
 import EuangelionSeriesPage from '@/app/series/[slug]/page'
 
 const buildSeriesDayScriptureMap = vi.fn((_params: unknown) => ({
@@ -12,7 +12,7 @@ vi.mock('@/lib/soul-audit/series-day-scripture', () => ({
     buildSeriesDayScriptureMap(params),
 }))
 
-vi.mock('@/app/wake-up/series/[slug]/SeriesPageClient', () => ({
+vi.mock('@/app/series/[slug]/SeriesPageClient', () => ({
   default: (props: {
     dayScriptureByDayNumber?: Record<
       number,
@@ -33,8 +33,8 @@ describe('series route day scripture wiring', () => {
     cleanup()
   })
 
-  it('passes day scripture map into wake-up series route', async () => {
-    const element = await WakeUpSeriesPage({
+  it('passes day scripture map into the series route', async () => {
+    const element = await SeriesRoutePage({
       params: Promise.resolve({ slug: 'identity' }),
     })
     render(element)

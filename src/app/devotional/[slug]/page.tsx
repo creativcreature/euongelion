@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
-import DevotionalPageClient from '@/app/wake-up/devotional/[slug]/DevotionalPageClient'
+import DevotionalPageClient from './DevotionalPageClient'
 import {
   getDevotionalTeaser,
   getDevotionalTitle,
@@ -203,11 +203,7 @@ export default async function DevotionalPage({ params }: Props) {
         ))}
       {/* Mobbin P0 #8: pass the server-fetched devotional so the body is
           in the initial HTML (loading=false from first paint). */}
-      <DevotionalPageClient
-        slug={slug}
-        silo="euangelion"
-        initialDevotional={initialDevotional}
-      />
+      <DevotionalPageClient slug={slug} initialDevotional={initialDevotional} />
     </>
   )
 }

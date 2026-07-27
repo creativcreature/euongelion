@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CLEANUP PASS 2 — Wake-Up mount retired; settings + copy repairs (2026-07-27, SA-033)
+
+Executed the founder's standing orders (wake-up pin 2026-07-12; "keep
+going - finish and deploy everything"). LEGACY /wake-up/\* DOUBLE-MOUNT
+RETIRED: shared readers relocated to canonical homes
+(DevotionalPageClient -> src/app/devotional/[slug]/, SeriesPageClient
+-> src/app/series/[slug]/), silo/isWake branching stripped, permanent
+redirects preserve every old URL (/wake-up, feed.xml, series/:slug,
+devotional/:slug), link sweep (footer item removed, tab bar now lights
+SERIES on reader routes, sitemap, root error boundary, sunday archive
+CTA); wake-up RSS test removed, 5 tests re-pointed at canonical
+mounts. SETTINGS AI & KEYS repaired within SA-026: the field labeled
+"OpenAI key" silently wrote BOTH the OpenAI and Anthropic keys — now
+two honest fields; Google (upstream model shut down)/MiniMax/NVIDIA
+picker options + key fields retired from the UI (router untouched).
+TONE RULES: uncited fear stats removed from identity/peace/hope series
+contexts (open item #11). Orphan pass 2: three unwired soul-audit
+components removed; stale comments corrected. Deliberately KEPT:
+clarifier, phase-5 queue, voice-bank (documented deferred infra),
+/design/imagery-samples (founder-locked imagery workflow).
+(SA-033, F-084)
+
 ## CONTENT v4 — The Harvest becomes the Matthew 13 cluster (2026-07-27, SA-032)
 
 Founder rulings (SA-032 registered): the series now covers the kingdom

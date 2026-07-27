@@ -4,7 +4,7 @@
  * The tab bar carries the five primary destinations on mobile. It must
  * always render all five, mark exactly the matching destination active
  * (aria-current="page"), and map companion routes onto their tab
- * (/daily-bread → TODAY, /saved + /clippings → LIBRARY, /wake-up → SERIES).
+ * (/daily-bread → TODAY, /saved + /clippings → LIBRARY, /series → SERIES).
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
@@ -50,7 +50,7 @@ describe('MobileTabBar', () => {
     ['/today', 'TODAY'],
     ['/daily-bread', 'TODAY'],
     ['/series/bible-365', 'SERIES'],
-    ['/wake-up/devotional/identity-day-1', 'SERIES'],
+    ['/devotional/identity-day-1', 'SERIES'],
     ['/soul-audit/results', 'SOUL AUDIT'],
     ['/library', 'LIBRARY'],
     ['/saved', 'LIBRARY'],

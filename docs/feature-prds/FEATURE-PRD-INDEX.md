@@ -87,3 +87,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-081 | Content           | Prayer of Jabez 7-day series (sabbath-first)      | 0/10     | wip    | [F-081.md](./F-081.md) |
 | F-082 | Content           | The Harvest 7-day series (wheat & weeds)          | 0/10     | wip    | [F-082.md](./F-082.md) |
 | F-083 | Platform          | Daily Bread active-series persistence             | 0/10     | wip    | [F-083.md](./F-083.md) |
+| F-084 | Platform          | Wake-Up mount retirement + cleanup pass 2         | 0/10     | wip    | [F-084.md](./F-084.md) |

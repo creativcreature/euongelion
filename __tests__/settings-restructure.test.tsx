@@ -207,28 +207,24 @@ describe('settings restructure (F-073)', () => {
     )
 
     // AI & KEYS — brains, open web, BYO keys, storage mode, clear, usage.
-    for (const label of [
-      'Auto (Claude-first)',
-      'Claude/OpenAI',
-      'Google',
-      'MiniMax',
-      'NVIDIA Kimi',
-    ]) {
+    // (F-084/SA-033 repair: Google/MiniMax/NVIDIA options retired — the
+    // Google model was shut down upstream and the others were exotic
+    // BYO-only paths; the mislabeled combined key field is now two
+    // honest Anthropic + OpenAI fields.)
+    for (const label of ['Auto (Claude-first)', 'Claude/OpenAI']) {
       expect(screen.getByRole('button', { name: label })).toBeTruthy()
     }
+    expect(screen.queryByRole('button', { name: 'Google' })).toBeNull()
+    expect(screen.queryByRole('button', { name: 'MiniMax' })).toBeNull()
     expect(screen.getByText(/open web mode default/i)).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Session only' })).toBeTruthy()
     expect(
       screen.getByRole('button', { name: 'Remember encrypted' }),
     ).toBeTruthy()
-    for (const placeholder of [
-      'OpenAI key',
-      'Google key',
-      'MiniMax key',
-      'NVIDIA Kimi key',
-    ]) {
+    for (const placeholder of ['Anthropic key', 'OpenAI key']) {
       expect(screen.getByPlaceholderText(placeholder)).toBeTruthy()
     }
+    expect(screen.queryByPlaceholderText('Google key')).toBeNull()
     expect(
       screen.getByRole('button', { name: /clear all provider keys/i }),
     ).toBeTruthy()

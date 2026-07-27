@@ -15,6 +15,24 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // F-084 (SA-033, 2026-07-27): legacy Wake-Up magazine mount retired
+      // (founder pin 2026-07-12). Permanent redirects keep every old URL.
+      { source: '/wake-up', destination: '/series', permanent: true },
+      {
+        source: '/wake-up/feed.xml',
+        destination: '/series',
+        permanent: true,
+      },
+      {
+        source: '/wake-up/series/:slug',
+        destination: '/series/:slug',
+        permanent: true,
+      },
+      {
+        source: '/wake-up/devotional/:slug',
+        destination: '/devotional/:slug',
+        permanent: true,
+      },
       // RETIRED READER (Mobbin audit P0 #5): /daily-bread is the canonical
       // plan reader; old bookmarked /soul-audit/plan/<token>[?day=N] deep
       // links 307 there at the routing layer (a page-level redirect() can't

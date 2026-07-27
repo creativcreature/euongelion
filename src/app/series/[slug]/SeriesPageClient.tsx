@@ -61,14 +61,12 @@ function SeriesTabParamSync({
 export default function SeriesPageClient({
   slug,
   series,
-  silo = 'wake',
   dayScriptureByDayNumber = {},
   voices = [],
   artwork = [],
 }: {
   slug: string
   series: SeriesInfo
-  silo?: 'wake' | 'euangelion'
   dayScriptureByDayNumber?: DayScriptureByDayNumber
   voices?: SeriesVoice[]
   artwork?: SeriesArtworkItem[]
@@ -89,13 +87,13 @@ export default function SeriesPageClient({
     : null
   const manifestHero = SERIES_HERO[slug]
   const hero = generatedHero ?? manifestHero
-  const isWake = silo === 'wake'
-  const brandWord = isWake ? 'WAKE UP' : 'EUANGELION'
-  const headerTone = isWake ? 'wake' : 'default'
-  const parentHref = isWake ? '/wake-up' : '/series'
-  const dayHrefPrefix = isWake ? '/wake-up/devotional' : '/devotional'
-  const parentLabel = isWake ? 'WAKE-UP' : 'SERIES'
-  const browseLabel = isWake ? 'ALL WAKE UP SERIES' : 'ALL SERIES'
+  // F-084 (SA-033): the legacy Wake-Up silo is retired — canonical only.
+  const brandWord = 'EUANGELION'
+  const headerTone = 'default'
+  const parentHref = '/series'
+  const dayHrefPrefix = '/devotional'
+  const parentLabel = 'SERIES'
+  const browseLabel = 'ALL SERIES'
 
   // R32: substack series get a CTA back to the original (in ABOUT).
   const firstDay = series.days[0]
@@ -212,9 +210,7 @@ export default function SeriesPageClient({
           <SeriesActions
             seriesSlug={slug}
             seriesTitle={series.title}
-            redirectPath={
-              isWake ? `/wake-up/series/${slug}` : `/series/${slug}`
-            }
+            redirectPath={`/series/${slug}`}
           />
         </div>
 

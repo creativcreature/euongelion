@@ -842,3 +842,12 @@ features:
     prd: docs/feature-prds/F-083.md
     methodology_refs:
       - M00
+  - id: F-084
+    category: Platform
+    feature: Legacy Wake-Up mount retirement + settings/copy cleanup pass 2
+    slug: wake-up-retirement-cleanup-2
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-084.md
+    methodology_refs:
+      - M00

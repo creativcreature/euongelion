@@ -72,9 +72,7 @@ export default function SundayArchivePage() {
                 >
                   <Link
                     href={
-                      isCurrent
-                        ? '/sunday'
-                        : `/wake-up/devotional/${entry.daySlug}`
+                      isCurrent ? '/sunday' : `/devotional/${entry.daySlug}`
                     }
                     className="sunday-archive-card"
                     aria-label={`${isCurrent ? 'Current edition: ' : ''}${entry.seriesTitle}, week of ${weekLabel}`}

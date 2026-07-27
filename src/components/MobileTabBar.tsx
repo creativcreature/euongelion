@@ -45,7 +45,7 @@ const TABS: Array<{
   {
     href: '/series',
     label: 'SERIES',
-    isActive: (p) => p.startsWith('/series') || p.startsWith('/wake-up'),
+    isActive: (p) => p.startsWith('/series') || p.startsWith('/devotional'),
     icon: (
       // Browse grid.
       <svg

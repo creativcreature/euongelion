@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 import { buildSeriesDayScriptureMap } from '@/lib/soul-audit/series-day-scripture'
 import { buildSeriesArtwork, buildSeriesVoices } from '@/lib/series-detail-tabs'
-import SeriesPageClient from '@/app/wake-up/series/[slug]/SeriesPageClient'
+import SeriesPageClient from './SeriesPageClient'
 
 export const revalidate = 3600
 
@@ -152,7 +152,6 @@ export default async function SeriesPage({ params }: Props) {
       <SeriesPageClient
         slug={slug}
         series={series}
-        silo="euangelion"
         dayScriptureByDayNumber={dayScriptureByDayNumber}
         voices={voices}
         artwork={artwork}
