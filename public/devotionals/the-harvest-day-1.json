@@ -2,26 +2,26 @@
   "day": 1,
   "chiasm_position": "A",
   "format": "two-minute-open",
-  "title": "While Everyone Slept",
-  "subtitle": "A good field, a night enemy, and the morning the weeds showed",
-  "teaser": "The Sower did everything right. The field still came up mixed — and until the heads form, nobody can tell wheat from weeds. Not the stalks, and not the people you love. Jesus' hardest story about the world begins with everyone asleep.",
-  "anchorVerse": "Matthew 13:24-26",
-  "theme": "The hook of the week: the world is a mixed field — enemy sabotage, not the Sower's failure — and someone you love stands in rows that look, today, like weed; until the heads form nobody can tell, and the season is not over",
-  "framework": "Matthew 13:28 - An enemy did this",
-  "scriptureReference": "Matthew 13:24-26",
-  "totalWords": 3450,
+  "title": "A Farmer Went Out to Sow",
+  "subtitle": "One seed, four grounds, and a farmer who throws where nothing should grow",
+  "teaser": "Jesus opens His parable day with a farmer who flings seed onto footpaths, gravel, and standing thorns — on purpose. If you have spent years sowing words and prayers into someone who will not hear them, this story was told about your field. No ground in it is finished.",
+  "anchorVerse": "Matthew 13:3-9",
+  "theme": "The week opens where the discourse opens: one seed, four grounds, and a Farmer who sows into all of them — because hearing can fail four ways and the word still does not return empty; the ground a loved one shows today is one season of a field, not its fate",
+  "framework": "Matthew 13:3 - A farmer went out to sow his seed",
+  "scriptureReference": "Matthew 13:3-9",
+  "totalWords": 3394,
   "panels": [],
   "modules": [
     {
       "type": "scripture",
-      "reference": "Matthew 13:24-26",
+      "reference": "Matthew 13:3-9",
       "translation": "BSB",
-      "passage": "Jesus put before them another parable: \"The kingdom of heaven is like a man who sowed good seed in his field. But while everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away. When the wheat sprouted and bore grain, then the weeds also appeared.\"",
+      "passage": "And He told them many things in parables, saying, \"A farmer went out to sow his seed. And as he was sowing, some seed fell along the path, and the birds came and devoured it. Some fell on rocky ground, where it did not have much soil. It sprang up quickly because the soil was shallow. But when the sun rose, the seedlings were scorched, and they withered because they had no root. Other seed fell among thorns, which grew up and choked the seedlings. Still other seed fell on good soil and produced a crop—a hundredfold, sixtyfold, or thirtyfold. He who has ears, let him hear.\"",
       "emphasis": [
-        "good seed",
-        "his enemy came and sowed weeds among the wheat"
+        "A farmer went out to sow his seed",
+        "He who has ears, let him hear"
       ],
-      "scriptureContext": "Two minutes with the opening scene — good seed, night sabotage, and a mixed morning."
+      "scriptureContext": "Two minutes with the parable Jesus tells first — one seed, four landings, one farmer throwing into all of them."
     },
     {
       "type": "vocab",
@@ -31,37 +31,35 @@
       "pronunciation": "dzid-ZAH-nee-ah",
       "strongsNumber": "G2215",
       "definition": "darnel — a weed that mimics wheat until the grain forms",
-      "usage": "This word exists in the New Testament only inside this parable — eight occurrences, all in Matthew 13. Not generic weeds: a specific impostor crop, indistinguishable from wheat until the heads appear. Which means: for a long, ordinary stretch of the season, nobody in the field can tell — not which stalks, and, as the week will show, not which people."
+      "usage": "Hold this word for tomorrow. It exists in the New Testament only inside the parable Jesus tells next — eight occurrences, all in Matthew 13. Not generic weeds: a specific impostor crop, indistinguishable from wheat until the heads appear. Today the discourse hands you the seed and the grounds it meets; tomorrow it introduces the counter-crop, and the week's question changes shape. This is the one Greek word worth carrying overnight."
     },
     {
       "type": "reflection",
-      "prompt": "The field you woke up in is mixed — church, culture, family, the crowd you move through — and somewhere in it stands someone you love who wants nothing to do with God. What has their row done to your view of the Sower — and of the season?",
+      "prompt": "One seed, four grounds. Somewhere in this parable is the person you love who will not hear a word about God — and somewhere in it is you. Which landing is theirs right now? Which is yours?",
       "invitationType": "quiet"
     },
     {
       "type": "prayer",
       "heading": "A Two-Minute Prayer",
-      "prayerText": "Sower of good seed, the world I woke up in is mixed, and I have blamed You for the weeds — and been too sure I could tell which was which. You know the one I carry into this field, the one who shuts You out today. Give me this week to hear Your own reading of the field, and to trust the hands that planted it — hands that have not closed the season. Amen.",
+      "prayerText": "Farmer of the word, You sow with both hands in places I would not waste a handful. Before I think of anyone else, here is my own ground: the noise, the hurry, the thorn-crowded weeks. Open a strip of quiet in me today where something can land. And here is the one I love who will not hear You — I have thrown years of seed at that ground and cannot point to one green thing. Teach me this week what You see in dirt like that. Amen.",
       "prayerType": "centering"
     },
     {
       "type": "cta",
       "ctaLabel": "DEEP DIVE",
       "ctaHref": "#devotional-section-6",
-      "ctaSubtext": "That was a whole reading. When you have more time: the night enemy, the impostor crop no one can tell from wheat, and why the mixed field is not the Sower's failure — and why nobody you love can be called lost mid-season."
+      "ctaSubtext": "That was a whole reading. When you have more time: Jesus decodes all four grounds Himself, quotes Isaiah over every silent stretch of dirt you have ever sown, and hands you the one promise that changes the economics of sowing — no thrown word comes back empty."
     },
     {
       "type": "scripture",
-      "reference": "Matthew 13:24-26",
+      "reference": "Matthew 13:19-23",
       "translation": "BSB",
-      "passage": "Jesus put before them another parable: \"The kingdom of heaven is like a man who sowed good seed in his field. But while everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away. When the wheat sprouted and bore grain, then the weeds also appeared.\"",
-      "greekOriginal": "ἐπέσπειρεν ζιζάνια ἀνὰ μέσον τοῦ σίτου",
-      "transliteration": "epespeiren zizania ana meson tou sitou — \"he over-sowed darnel through the midst of the wheat\"",
+      "passage": "When anyone hears the message of the kingdom but does not understand it, the evil one comes and snatches away what was sown in his heart. This is the seed sown along the path. The seed sown on rocky ground is the one who hears the word and at once receives it with joy. But since he has no root, he remains for only a season. When trouble or persecution comes because of the word, he quickly falls away. The seed sown among the thorns is the one who hears the word, but the worries of this life and the deceitfulness of wealth choke the word, and it becomes unfruitful. But the seed sown on good soil is the one who hears the word and understands it. He indeed bears fruit and produces a crop—a hundredfold, sixtyfold, or thirtyfold.",
       "emphasis": [
-        "while everyone was asleep",
-        "slipped away"
+        "he remains for only a season",
+        "the one who hears the word and understands it"
       ],
-      "scriptureContext": "The third of Matthew's parable discourse — told from a boat to the crowds, moments after the parable of the sower."
+      "scriptureContext": "The decoding, in Jesus' own voice — given to the disciples after they ask why He teaches in parables at all."
     },
     {
       "type": "vocab",
@@ -70,7 +68,7 @@
       "transliteration": "epespeiren",
       "pronunciation": "ep-ES-pay-ren",
       "definition": "he sowed OVER — seeded on top of an existing crop",
-      "usage": "The enemy does not clear ground or plant his own field. He over-sows — epispeirō, a compound found nowhere else in the New Testament: sowing on top of someone else's good work. Evil in this parable runs no farm of its own — it is a parasite on a field it did not plant and could not have grown.",
+      "usage": "Jesus' decoding of the Sower already has the evil one in it — a thief on the path, snatching seed before it settles. Tomorrow he stops stealing and starts farming. He will not clear ground or plant a field of his own: he over-sows — epispeirō, a compound found nowhere else in the New Testament, seeding on top of someone else's good work. The discourse's second parable runs on this verb; you will meet it tomorrow, with the darnel it plants.",
       "usageNote": "A textual note for the honest reader: the over-sowing compound is the reading of the earliest manuscripts (later copies simplify it to plain 'sowed'), and classic Strong's numbering never assigned it a number of its own — concordances list it as epispeirō (NAS 1986b). The nuance is worth the footnote: sabotage, by definition, needs something good to ride on.",
       "wordByWord": [
         {
@@ -109,29 +107,29 @@
     },
     {
       "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/day1-banner.webp",
-      "inlineImageAlt": "A cloaked figure slipping away through a moonlit field at night, a trail of scattered seed behind him",
-      "inlineImageCaption": "While everyone slept, the enemy came, sowed weeds among the wheat, and went away.",
+      "inlineImageSrc": "/images/series/the-harvest/sower-four-soils.webp",
+      "inlineImageAlt": "A sower broadcasting seed across four grounds: a bird-picked path, shallow rock, choking thorns, and rich tilled soil",
+      "inlineImageCaption": "A farmer went out to sow — and the seed fell on path, rock, thorns, and good soil alike.",
       "inlineImageWidth": "bleed"
     },
     {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
-      "heading": "The Morning the Weeds Showed",
-      "content": "Every believer eventually has the morning. You look out over a field you know was planted well — a church you loved, a family you prayed over, a country, a friendship, the congregation you worship beside — and there they are. Weeds. Growing exactly where the good seed went in, tall and green and horribly at home. And the part nobody warns you about: they wear the crop's own face. Some of what looks like wheat in the field around you is counterfeit, some of what you have already written off is not, and from where you stand mid-season you cannot reliably tell which is which.\n\nAnd for most of us the ache of that morning has a face attached. A brother who calls faith a crutch. A parent who has not prayed in forty years. A friend who walked out of church one Sunday and never looked back — someone you love, standing in rows that look, today, entirely like weed. No faith, no fruit, no interest. If the mixture were only institutional, you could grieve it from a distance. But the rows are full of faces, and at least one of them is yours.\n\nAnd the question arrives before you can stop it, the same question the servants will ask in tomorrow's verses: didn't You sow good seed here? Where did THIS come from? Under the question sits a suspicion that has unmade more faith than any argument: maybe the Sower is careless. Maybe the seed was never good. Maybe nobody is minding the field at all. And beneath even that, in the dark where you keep it, the question you only ask about the face: is it too late for them?\n\nJesus tells this parable straight into that suspicion. And where we are standing in God's story matters: this is the kingdom announced but not yet consummated — the long season between the sowing and the harvest, which is to say, the season you live in. The parable is His own explanation of why the age looks the way it looks: good and evil growing in the same rows, for now, on purpose, with an ending already scheduled — scheduled, and not yet arrived.\n\nBut notice where He begins — because it is not with the weeds. The kingdom of heaven is like a man who sowed GOOD seed in his field. Before evil enters the story, the goodness of the seed and the ownership of the field are both on the record. Whatever the weeds mean, they will not mean the Sower failed. This week starts there, because every honest thing that follows depends on it — including the hope it intends to hand you, by week's end, for the face you just pictured.",
+      "heading": "Throwing Seed at a Road",
+      "content": "Matthew sets the scene with a crowd that strains the shoreline: so many people that Jesus climbs into a boat and preaches to a beach. \"And He told them many things in parables,\" Matthew says — and this is the one He tells first. First on purpose. Everything else in the discourse grows out of it.\n\nA farmer goes out to sow, and he throws with a full arm. Seed lands on the packed footpath, where birds take it before noon. Seed lands on the shallow skin of dirt over rock, where it sprints up and dies of sunstroke. Seed lands in standing thorns, which strangle it at the knees. And seed lands on good ground and comes back a hundred, sixty, thirty times over. Three landings out of four go nowhere — and the farmer, this is the detail that would have made every working farmer on that beach wince, appears to know the ground and throw anyway. Nobody sows a road by accident. You can see a road.\n\nYou have done this. That is why the parable has teeth for you. You have spent years throwing seed at one particular piece of ground: the dinner-table conversations, the prayers said outside a bedroom door, the book you gave that is still holding its receipt, the invitation extended every Christmas and declined every Christmas. The daughter who asked you to stop sending verses. The father who changes the subject like he is closing a window. The friend who tried church twice and says it is not for her. From where you stand, the birds got all of it.\n\nSo the question under your ribs is the practical one: why would anyone keep throwing seed at a road? The parable's first answer arrives before any decoding, and it is simply the Farmer Himself. This is what He is like. He sows where the ground offers Him nothing back — is doing it in the story, and doing it from the boat as He tells it, over a beach holding every soil in the tale. The extravagance is the method.\n\nHold the ache and watch Him work. By the end of the page He will have decoded every landing, quoted Isaiah twice over the silence you know so well, and left the ground you grieve looking newly workable.",
       "markdown": false
     },
     {
       "type": "pullquote",
-      "content": "Nobody mid-season can call a stalk — or a soul. Looking lost is not being lost, and the season is not over."
+      "content": "He could see the path from the boat. He threw seed at it anyway."
     },
     {
       "type": "teaching",
       "chiasm_position": "B",
       "pardes_layer": "peshat",
-      "heading": "Night Work",
-      "content": "Look closely at how evil actually enters the story, because Jesus has chosen every detail.\n\nIt comes at night — while everyone was asleep. The Greek is unbothered, almost domestic: en tō katheudein tous anthrōpous, while the men were sleeping. Notice that the text never blames the sleepers. Farmhands sleep; that is nightfall, not negligence. The parable refuses the story we most want to tell about evil's arrival — that somebody must have left a door open, that vigilance would have prevented it, that the presence of weeds proves someone's guilt inside the field. Sometimes evil simply comes, in the dark, uninvited and unenabled, because there is an enemy and that is what enemies do.\n\nIt comes as an impostor. The weed here is not a thistle anyone could spot. Zizania is darnel — a grain-mimic that tracks wheat so closely that the two are effectively indistinguishable until the heads form. The ancient world knew it as wheat's shadow: the rabbis discussed it in the same breath as wheat, and one old tradition punned that it was wheat gone bad — grain that had, as it were, broken faith. The mimicry matters enormously for where the week is headed: for most of the growing season, no one in the field — however sincere, however sharp-eyed — can reliably tell the crops apart. And hold that fact with both hands, because Jesus is going to spend it on people. The field you live in is full of faces: the rough-edged stranger who may be wheat, the polished neighbor who may not be — and no way, mid-season, to say for certain who is actually faithful to the Sower and who only looks the part. And it cuts a second way — this is where mercy hides in the botany: the life you have privately filed under weed, the one that wants nothing to do with the Sower today, stands in the same unreadable mid-season light. The evidence you have been reading is real, and it is wildly incomplete.\n\nAnd it comes as an over-sowing. The enemy plants nothing of his own. He seeds his crop into the midst of an existing one — through the middle of the wheat, the text says — and slips away. He does not stay to farm; malice rarely does. Evil in Jesus' telling is derivative, parasitic, and cowardly: it can spoil a field it could never have planted, then vanish before morning.\n\nCharles Spurgeon, walking this verse with his congregation in 1866, drew the same line with a pastor's bluntness: \"Wherever Christ is active, the enemy is sure to be active too. If you have a sleeping church, you may have a sleeping devil, but as soon as ever Christ is in the congregation, sowing the good seed, the devil wakes up, and by night, when men are off their guard, the bad seed—the mock wheat—here translated 'tares'—is sown among the true wheat.\"\n\nHold those three details together and the parable's first gift comes into focus. Weeds in the field are real, deliberate, and hostile — and they are evidence of an enemy's malice, not the Sower's failure, the seed's weakness, or the sleepers' guilt. Verse 28 will say it in four words, and they may be four of the most pastorally important words in the Gospels: an enemy did this.",
+      "heading": "What Ground Does to a Word",
+      "content": "Jesus decodes this one Himself, so the meanings are not up for grabs. The seed is \"the message of the kingdom.\" The grounds are hearers. Four of them.\n\nThe path hears without understanding. The word lands and sits on the surface — nothing opens to take it in — and \"the evil one comes and snatches away what was sown in his heart.\" You have watched this happen: the conversation that mattered so much to you, and that they do not remember having. Nothing hostile occurred. It simply never got in.\n\nThe rocky ground is the opposite problem: instant reception, no depth. The word comes up fast and joyful — the camp-summer decision, the tears at the funeral, the burst of church attendance after the diagnosis — and then trouble arrives, and there is no root to hold it. Jesus' decoding carries a time-stamp here worth underlining: this hearer \"remains for only a season.\" Even failure, in this parable, gets measured in units of time.\n\nThe thorns are the quietest tragedy of the four, because nothing dramatic happens at all. The word goes in, and the life around it crowds it out — \"the worries of this life and the deceitfulness of wealth.\" No crisis, no rebellion. A calendar. This is the friend who believes \"in something\" and has not thought about it since the second kid was born.\n\nAnd the good soil hears and understands — the word gets beneath the surface and does what it was always going to do. Even here the parable refuses uniformity: a hundredfold, sixtyfold, thirtyfold. Harvests differ threefold among the faithful, and every one of them counts as crop.\n\nNow notice what Jesus is actually grading. Not souls — hearings. Each ground is a report on what happened to one throw of seed at one moment: this landing snatched, that one scorched, that one choked. The parable is a snapshot, and nobody you know is a snapshot. Between this morning's hearing and the end of a life run a thousand more sowings — and ground, ask any farmer, is the one thing on a farm that refuses to stay as it was. Feet make a path; a plow unmakes it. Thorns hold a corner of the field until the day they burn. The parable tells you what the grounds do to the word. It never once says the grounds are permanent. And the Farmer's own behavior — seed flung across all four, in full knowledge — is your best evidence that He does not think so either.",
       "markdown": false
     },
     {
@@ -139,92 +137,85 @@
       "videoProvider": "youtube",
       "videoId": "XX-aAg4_U2Q",
       "videoTitle": "Why Jesus Told Parables (and How You Can Understand Them)",
-      "videoCaption": "Before going further into the field: how parables actually work — Kingdom announcements that force a decision, not decorative illustrations.",
+      "videoCaption": "Before Jesus decodes the four grounds: how parables actually work — Kingdom announcements that force a decision, not decorative illustrations.",
       "videoAttribution": "BibleProject"
     },
     {
       "type": "bridge",
       "heading": "Ancient Truth, Modern Life",
-      "ancientTruth": "The field came up mixed because an enemy over-sowed it by night — the goodness of the seed and the ownership of the field were never in question.",
-      "modernApplication": "When evil surfaces in something you know God planted — a congregation, a marriage, a calling — the first casualty is usually your confidence in the Planter. We audit the seed, indict the sleepers, pass early verdicts on the people in the rows around us — the ones we love drawing the harshest rulings — and quietly downgrade the Sower.",
-      "connectionPoint": "Jesus offers a different first move: name the sabotage. 'An enemy did this' is a diagnosis, not a dodge — and it relocates the scandal of evil from God's competence to God's timing, which is exactly where the rest of the week will deal with it, and exactly where the hope for the people you love is going to come from.",
-      "newTestamentEcho": "\"He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.\" — Matthew 5:45 (BSB)"
+      "ancientTruth": "The farmer in Jesus' story broadcasts — full arcs of seed across path, rock, thorns, and loam, with the odds in plain sight. In his economy the scandal is a ground left unsown.",
+      "modernApplication": "We are trained the other way: target the receptive, measure the response, move effort away from whatever does not convert. Run that math on people long enough and the unresponsive get quietly defunded — fewer words, fewer invitations, fewer prayers — until the ground we least believe in stops getting seed at all.",
+      "connectionPoint": "The kingdom moves by scatter, not by targeting. One beach, one message, every soil in earshot — and three of the four grounds listening that morning were exactly the kind our math writes out of the budget. The next teaching shows why the Farmer can afford this: His seed carries a guarantee older than the boat.",
+      "newTestamentEcho": "\"But the seed sown on good soil is the one who hears the word and understands it. He indeed bears fruit and produces a crop—a hundredfold, sixtyfold, or thirtyfold.\" — Matthew 13:23 (BSB)"
     },
     {
       "type": "teaching",
       "chiasm_position": "C",
       "pardes_layer": "remez",
-      "heading": "Another Garden, Another Intruder",
-      "content": "If the shape of this story feels older than Matthew 13, it is because it is. A good field, planted by a good hand. An intruder who arrives with words and works in stealth. Damage done at the exact point of the planting's pride — and a long aftermath in which the good and the ruined grow tangled together. Jesus is retelling Eden as agriculture.\n\nScripture's first field was also sabotaged. The serpent of Genesis 3 over-sowed too — not darnel into wheat but doubt into trust: did God really say? And the aftermath has the same maddening texture as the parable's mixed field: thorns and thistles among the grain from then on, evil and good sharing every acre of human history, every institution, every bloodline, every generation. When Jesus reaches for a villain in His parable, He does not invent one; He points back through the whole canon to the enemy who has been over-sowing since the third chapter of the Bible — and forward, though the disciples cannot see it yet, to the promise lodged in that same ancient scene: the seed of the woman who would crush the intruder's head at the cost of His own wounds.\n\nHere is the hint — the old interpreters would train themselves to catch it — folded into the parable's opening line: the Sower is called the Son of Man, and He sows GOOD seed. Against the whole weight of Eden's aftermath, a second planting has begun. The kingdom of heaven is God re-entering the sabotaged field of the world — seed in hand, in person — instead of writing it off. The weeds are real. The night was real. And the Sower came back to the field anyway — which is either the most reckless thing in the story, or the most hopeful, and the rest of the week will show it is the second.\n\nSo the day's discovery is double. Evil's presence in the field tells you there is an enemy — that much the servants will work out by themselves. But the field's very existence tells you something better: the Sower did not write off the sabotaged ground. He planted INTO it. And when He explains the parable later this week — indoors, at the disciples' request — the good seed will turn out to be people: \"the sons of the kingdom,\" sown on purpose into a mixed world. Which makes the field an assignment. You were not sown beside the people you are nearest to by accident — least of all the ones who, today, want nothing to do with the Sower. Whatever else this week teaches about weeds, sickles, and patience, it grows from that opening act of defiant, deliberate good faith — good seed, sown by the Son of Man, into enemy-visited soil, with His eyes open.",
+      "heading": "Isaiah in the Boat",
+      "content": "Between the telling and the decoding, the disciples ask the question this whole page has been circling: why parables? Why preach in a form half the beach will miss? Jesus does not answer with a communications theory. He answers with Isaiah: \"In them the prophecy of Isaiah is fulfilled: 'You will be ever hearing but never understanding; you will be ever seeing but never perceiving.'\"\n\nHe is quoting the strangest commission in the prophets — the assignment Isaiah carried out of the temple. Go preach, Isaiah, to a people who will not hear you: \"Make the hearts of this people calloused; deafen their ears and close their eyes.\" It reads, at first, like a sentence passed on the audience. Then the last clause turns, and grief leaks through the judgment: \"Otherwise they might see with their eyes, hear with their ears, understand with their hearts, and turn and be healed.\" Turning. Healing. That is what the shut ears are costing, and God names the cost the way a farmer names a drought — as the thing He wants ended. From Isaiah's temple to the boat, deafness is God's grief, never His satisfaction.\n\nSo the first Isaiah text explains the silence you have met: hearts do callous. There are stretches when a person cannot hear the word — not from you, not from anyone. Jesus quotes that text and keeps preaching to the same beach, which tells you He is working from a second Isaiah text too, the one His whole method presumes. Isaiah 55: rain and snow fall from heaven, water the earth, make it bud and sprout — \"so My word that proceeds from My mouth will not return to Me empty, but it will accomplish what I please, and it will prosper where I send it.\" Rain does not negotiate with the ground before falling. And a word, once sown, stops reporting to the one who threw it. It reports to the mouth that sent it, on a schedule that mouth has never once published.\n\nPut the two texts together and you have the day's sturdiest comfort. Isaiah 6 is the diagnosis: the person you love may genuinely be unable, this year, to hear. Diagnosis is what you do for something you intend to treat. Isaiah 55 is the guarantee: every seed you have already thrown at them — the sentence they deflected, the prayer they never knew about, the kindness they took without comment — went into the ground carrying the Sender's promise, not your projections. Nothing came back empty, because nothing has come back at all. It is down there, under a surface you cannot see through, doing what seed does in the dark.",
       "markdown": false
     },
     {
       "type": "story",
-      "heading": "The Man Who Farmed Sabotaged Ground",
-      "content": "George Washington Carver's life began inside the most evil-sown field in American history. \"I was born in Diamond Grove, Missouri, about the close of the great Civil War, in a little one-roomed log shanty,\" he wrote — on the farm of the man who owned his mother. He never learned his own birthday: \"I should like to know the exact date of my birth myself, but I do not,\" he told his biographer. \"As a rule no records of children from slave parents were kept.\" The ledger of that field did not even count him.\n\nWhat he did with the sabotaged inheritance is why his name endures. Carver became a scientist of the soil, and in 1896 he joined Booker T. Washington at Tuskegee — \"it has always been the one ideal of my life,\" he wrote in accepting, \"to be of the greatest good to the greatest number of my people\" — and stayed forty-seven years, teaching the sons and daughters of formerly enslaved farmers to bring cotton-exhausted land back to life. Peanuts and sweet potatoes to restore what the old crop had stripped: his laboratory work was, at bottom, resurrection work for dead fields. He named that laboratory God's Little Workshop, and he was unembarrassed about the method. \"God is going to reveal to us things He never revealed before if we put our hands in His,\" he told a New York church audience in 1924 — and when the New York Times answered with an editorial titled \"Men of Science Never Talk That Way,\" Carver replied without heat: \"Inspiration is never at variance with information; in fact, the more information one has, the greater will be the inspiration.\"\n\nCarver knew exactly what had been over-sown into the field of his life and his people — he never pretended otherwise. He simply refused to concede the field. Evil had planted by night; he would plant by day, with God, for as long as the season lasted.",
-      "connectionToTheme": "Carver is the parable's opening act in a single life: a field visibly sabotaged by a real enemy — and a planter who answered the sabotage not with the sickle but with better seed, patiently, for decades. The mixed field is not a reason to stop farming it — the mixed field is exactly where the Sower puts His farmers."
+      "heading": "The Man Who Farmed Ruined Ground",
+      "content": "George Washington Carver's first ground was the most ruined in America. \"I was born in Diamond Grove, Missouri, about the close of the great Civil War, in a little one-roomed log shanty,\" he wrote — on the farm of the man who owned his mother. He never learned his own birthday: \"I should like to know the exact date of my birth myself, but I do not,\" he told his biographer. \"As a rule no records of children from slave parents were kept.\"\n\nWhat he became was a sower — literally, vocationally, for life. In 1896 he joined Booker T. Washington at Tuskegee — \"it has always been the one ideal of my life,\" he wrote in accepting, \"to be of the greatest good to the greatest number of my people\" — and stayed forty-seven years, teaching the sons and daughters of formerly enslaved farmers how to bring cotton-exhausted land back from the dead. That is worth saying precisely: his science was the science of ruined ground. Peanuts and sweet potatoes to return what the old crop had stripped — fields the ledgers had marked as spent, coaxed back into yield, year after year.\n\nHe named his laboratory God's Little Workshop and was unembarrassed about the partnership. \"God is going to reveal to us things He never revealed before if we put our hands in His,\" he told a New York church audience in 1924 — and when the New York Times answered with an editorial titled \"Men of Science Never Talk That Way,\" Carver replied without heat: \"Inspiration is never at variance with information; in fact, the more information one has, the greater will be the inspiration.\"\n\nCarver never romanticized what had been done to the ground he came from or the ground he worked. He spent a lifetime demonstrating the Sower's premise instead: exhausted, depleted, written-off dirt is a condition — and conditions can be farmed.",
+      "connectionToTheme": "Carver is this parable with soil under its fingernails: a sower who gave forty-seven years to ground everyone else had abandoned, and watched it answer. If land stripped by cotton and cruelty can carry a crop again, then path, rock, and thorns are conditions of a field — and the Farmer who throws seed at roads has a long record of changing what a ground can hold."
     },
     {
       "type": "insight",
-      "heading": "The Weed That Only Lives Here",
-      "content": "Zizania appears eight times in the New Testament — every single one inside this parable. Scripture coined its vocabulary of counterfeit good for exactly one story, as if the word itself were quarantined here. The old rabbis kept darnel close to wheat in their categories too, ruling the two so alike they were not even 'mixed kinds' when grown together — darnel being, in their reckoning, wheat gone wrong rather than an alien species. The parable's impostor never looks like evil — it looks almost exactly like the good it corrupts. Which is why every confident mid-season verdict on who is wheat and who is weed gets placed with the odds against it — including the verdict you have half-passed on the person you love. Mid-season eyes have no authority to call that harvest, and never did.",
-      "historicalContext": "Botanically, darnel is Lolium temulentum — 'bearded darnel' — its grains difficult to separate from wheat, and host to a toxic fungus that made bread baked from tainted flour dizzying (the species name means 'drunken'). And the parable's sabotage was real enough to legislate against: Roman law (Digest 9.2.27.14, Ulpian citing Celsus) gave a field's owner a lawsuit for damages against anyone who maliciously threw darnel into his crop."
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/day1-inline.webp",
-      "inlineImageAlt": "Two near-identical grain stalks side by side in blue halftone, one head tipped gold",
-      "inlineImageCaption": "Wheat and darnel, side by side: until the heads form, even a farmer cannot tell them apart.",
-      "inlineImageWidth": "wide"
+      "heading": "For Only a Season",
+      "content": "The decoding carries a clock, and it is easy to read past. The rocky-ground hearer, Jesus says, \"remains for only a season\" — the interpretation's single time-word, tucked into its bleakest verse. Look at what that implies about all four grounds: each is described at a moment. The path is the path during one snatch; the rock across one scorching; the thorns over one choked spring. Not one of them comes with a forever attached. Scripture's sowing songs have always known this rhythm — \"Those who sow in tears will reap with shouts of joy. He who goes out weeping, bearing a trail of seed, will surely return with shouts of joy, carrying sheaves of grain\" (Psalm 126:5-6). The psalm assumes the weeping; sowing into hard ground has cost tears from the beginning. It just refuses to let the tears write the ending.",
+      "historicalContext": "Matthew gathers seven kingdom parables into one seaside discourse, and only two of them receive Jesus' own line-by-line decoding: the Sower, and the story He tells immediately after it — where this week goes tomorrow. The discourse is built as a single argument: the seed, the grounds it meets, and then the question of what else turns up in a planted field."
     },
     {
       "type": "teaching",
       "chiasm_position": "B-prime",
       "pardes_layer": "derash",
-      "heading": "What To Do on the First Morning",
-      "content": "This is the week's opening day, so its application is deliberately narrow: not yet what to do about the weeds — that is tomorrow's argument and Wednesday's surrender — but what to do with the first sight of them. Three moves.\n\nSay the four words. An enemy did this. Say them over the church that broke your trust, the marriage season that turned, the ministry that curdled, the corner of the culture that keeps coming up darnel. The words re-aim the story. They take the indictment off the seed, off the sleepers, off the Sower — and put the malice where Jesus puts it. You cannot pray rightly in a field whose sabotage you are blaming on its Owner.\n\nRefuse the vigilance guilt. Somewhere in you a voice says the weeds are your fault — that if you had watched harder, discerned faster, slept less, the field would be clean. The text will not cosign that. The sleepers sleep without a syllable of blame; night comes to every farm; the enemy's stealth is the enemy's craft, not your failure. Grieve the weeds — grief is the right first response to sabotage — but do not carry an arson charge for a fire you did not set. And if the weed you grieve hardest is a person — if you have spent years auditing the words you said or swallowed, the prayers you missed, the example you fumbled — the same acquittal covers you: you did not cause their unbelief, and your watchfulness was never the hinge their soul swung on. Grief, yes. Guilt, no.\n\nAnd keep planting. This is Carver's move, and it is the Sower's own: the answer to over-sown evil, on day one, is not analysis of the weeds but continued investment in the wheat. Whatever good seed you were putting into that field — the prayers, the presence, the witness, the work — the discovery of darnel is not a reason to stop. And if the row you have gone quiet on is a person, planting looks the way it has always looked: the message you still send, the door you keep open, the table you keep setting, the prayer you keep praying with no visible evidence it lands. In rows where you cannot yet tell which stalks are which, sowing good into every one of them is the only strategy that cannot miss. The parable's grammar is quietly ruthless on this point: the weeds appeared WHEN the wheat sprouted and bore grain. Visible evil is, strangely, evidence of a growing crop. Fields with nothing good in them get no sabotage.",
+      "heading": "The First Day's Fieldwork",
+      "content": "The decoding begins \"When anyone hears\" — which means the parable is pointed at your ears before it is pointed at anyone you love. So start the fieldwork at home. Somewhere in these four grounds is a description of you, this week, and honesty will find it fast. Maybe the word has been bouncing lately — read, heard, gone by lunch. More likely it is thorns; it is usually thorns. \"The worries of this life\" is Jesus' phrase for the crowding that chokes a word without ever opposing it, and most of us are running a life that fits the description. Before you sow anything at anyone, clear a strip of your own ground: one worry named and handed over, one feed muted, one hour of quiet where seed can actually reach dirt.\n\nThen pick up the seed you put down. There is ground you stopped sowing years ago because you ran a soil test on it — weighed the odds, priced the seed, concluded the sensible thing. The Farmer of this parable does not run that test. So resume — but resume small. Seed is tiny; that is the design. A message that asks for nothing back. A seat at your table with no agenda under the napkin. Their name, said out loud in prayer, where only God can hear you say it. Sentence-sized sowing, not sermon-sized: the heavy equipment is what got the gate locked in the first place.\n\nAnd then — the discipline nobody warns you about — leave the yield alone. In this parable the farmer's job description ends when the seed leaves his hand. Growth belongs to the seed, the rain, and the God who owns both, and Isaiah has already told you whose ledger the outcome sits on: the word \"will accomplish what I please,\" says the LORD — what pleases Him, on His calendar, in His order of operations. Checking for germination every holiday dinner stops being agriculture and becomes surveillance, and the person you love can smell the difference. Throw, release, repeat. The tears are allowed; the scorekeeping is not.\n\nYou will do all three badly at first. That is fine. Sowing is a skill the hand relearns.",
       "markdown": false
     },
     {
       "type": "scripture",
-      "reference": "Matthew 5:45",
+      "reference": "Isaiah 55:10-11",
       "translation": "BSB",
-      "passage": "...that you may be sons of your Father in heaven. He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.",
+      "passage": "For just as rain and snow fall from heaven and do not return without watering the earth, making it bud and sprout, and providing seed to sow and food to eat, so My word that proceeds from My mouth will not return to Me empty, but it will accomplish what I please, and it will prosper where I send it.",
       "emphasis": [
-        "His sun to rise on the evil and the good"
+        "will not return to Me empty"
       ],
-      "scriptureContext": "The Father's present posture toward the mixed field — one sun, one rain, over every row. The sorting has a date, and this is not it."
+      "scriptureContext": "The guarantee under the whole method, in Isaiah's own words — heard in full after a day of watching it work."
     },
     {
       "type": "reflection",
-      "prompt": "Which field's weeds have you been blaming on the Sower — and what would change if you said the four words over it instead: an enemy did this?",
+      "prompt": "Isaiah 55 says the word 'will accomplish what I please' — God's pleasure, God's schedule. What outcome have you been demanding from the seed you sowed, and what would it take to release it to the Sender's ledger?",
       "additionalQuestions": [
-        "Name — only to yourself — someone you love who denies God. What verdict have you quietly filed on their row, and what does the impostor crop's disguise do to that certainty?",
-        "The weeds appeared when the wheat bore grain. Where might the visible evil in your world actually be evidence of a growing crop?",
-        "What good seed did you stop planting when you first saw the darnel — and what would resuming look like this week?"
+        "Which ground did you stop sowing after weighing the odds — and what sentence-sized seed could reach it this week?",
+        "Which of your own thorns is choking the word this month — and what one clearing move is actually available to you?",
+        "Jesus' decoding says the rocky hearer lasts 'for only a season.' How long have you been reading one season as the whole story?"
       ]
     },
     {
       "type": "interactive",
-      "heading": "Today's Practice: A Breath Prayer for the Mixed Field",
+      "heading": "Today's Practice: A Breath Prayer for the Sower",
       "instruction": "A sentence small enough to ride on your breathing — prayed slowly, several times, until the body believes it too.",
       "interaction_type": "breath",
       "steps": [
         {
           "title": "Settle",
-          "description": "Sit still. Two slow breaths, just to arrive in the field as it actually is."
+          "description": "Sit still. Two slow breaths. Picture the ground you have been grieving — then the Farmer's arm, still moving."
         },
         {
           "title": "Inhale",
-          "description": "Breathe in on the words: You sowed good seed."
+          "description": "Breathe in on the words: Your word will not return empty."
         },
         {
           "title": "Exhale",
-          "description": "Breathe out on the words: An enemy did this."
+          "description": "Breathe out on the words: I will keep throwing."
         },
         {
           "title": "Repeat",
-          "description": "Five slow rounds. When a specific face comes to mind — especially the one you love who is far from God — do not argue with it, and do not despair over it. Hold the face for one round, then begin the next breath."
+          "description": "Five slow rounds. When the face you love comes to mind, do not grade their ground. Hold the face through one full breath — seed thrown — then begin the next."
         }
       ]
     },
@@ -232,46 +223,46 @@
       "type": "teaching",
       "chiasm_position": "A-prime",
       "pardes_layer": "peshat",
-      "heading": "Sleeping in a Watched Field",
-      "content": "We began with the morning the weeds showed — yours, whichever field it was — and the suspicion that came up with them: nobody is minding the farm.\n\nEnd the day with the detail that quietly answers it. The enemy worked while everyone was asleep — everyone in the field, that is. The parable never says the Owner slept. And by tomorrow's verses he will show that he missed nothing: he knows his seed was good, knows the weeds' source without an investigation, can tell his crop from the counterfeit when no one else in the field can, and has already decided what happens at harvest. The sabotage that blindsided the servants never once blindsided him.\n\nAnd neither has the face you have been carrying through this reading. So hear the day's last word, the one this whole week is built to keep: in a field where nobody can tell wheat from weeds until the heads form, looking lost is not being lost. The row you grieve is mid-season, not harvested. The only One entitled to call it has not called it. Peter, writing years later about why heaven seems slow, gave the delay its real name — the Lord is \"not wanting anyone to perish\" (2 Peter 3:9) — and this week will walk you into that patience step by step. Tonight it is enough to know the season is still open. For the field, and for them.\n\nThat is where the week leaves you tonight: in a mixed field, yes — but a known one. Watched by an Owner who planted into enemy territory with His eyes open, and who has never yet been surprised by a weed. Tomorrow the servants will ask the question you are already asking about the people you are surest of — shouldn't somebody DO something about them? — and the answer will be stranger and kinder than anyone expects. Sleep tonight the way the farmhands did: not because the field is safe, but because it is His.",
+      "heading": "You Were the Path Once",
+      "content": "End where the day began — on the beach, with the boat. Every ground in the story was standing in the crowd that heard it: path-hearts, rock-hearts, thorn-crowded lives, and a scattering of good dark loam. Jesus threw one seed across all of them, which is the whole gospel in a single gesture.\n\nNow the part you already know but have not applied. Some of the good soil on that beach had been path the year before. And so were you. Run your own record honestly: there was a stretch of your life when sown words bounced — when somebody's verses went unread, somebody's invitations got the polite no, somebody's prayers hit what looked from the outside like packed clay. They threw anyway. One landed. The faith you are reading this page with grew from seed that was, on the day it left the hand, headed for ground with a terrible record.\n\nThat is the precise hope this day hands you for the person you carry. Their soil today is not their soil forever. The path in them was made by traffic — griefs, arguments, a church that hurt them, ten thousand ordinary distractions — and what traffic makes, the Farmer knows how to unmake. He has plowed harder ground than theirs. He plowed yours.\n\nThe parable closes with its only command, and it is smaller than you want and larger than it looks: \"He who has ears, let him hear.\" Not: he who has results to show. Ears. Tonight the whole assignment is to hear the story the way it was told — extravagant Farmer, unfinished grounds, guaranteed seed — and maybe to make one more throw before you sleep.\n\nOne more thing, because the discourse does not stop here. Tomorrow Jesus tells a second field story, and it is darker: a crop planted clean, a stranger crossing the field at night, and by morning a sabotage growing in among the grain. You already hold its word — zizania, the impostor crop — and you already know its Farmer. Bring tonight's ears with you. The second story assumes you heard the first.",
       "markdown": false
     },
     {
       "type": "prayer",
       "heading": "Prayer",
-      "prayerText": "Father, You sowed good seed — in the world, in Your church, in me — and I confess I have read the weeds as Your negligence — and read the people around me with a certainty no fieldhand has earned. You know the name I am carrying tonight — the one who has not yet turned to You. I hand You the verdict I had already written on their row, and I ask instead for Your patience: keep them inside Your season, and keep me inside their life. Forgive my audit of Your farming. Thank You for entering the sabotaged field in person, seed in hand. Teach me the first morning's work: to name the enemy's malice without carrying his arson charge, to hold my guesses about the crop loosely, and to keep planting in ground he tried to spoil. Through Jesus, the Sower who came back. Amen.",
-      "breathPrayer": "Inhale: You sowed good seed — Exhale: an enemy did this.",
+      "prayerText": "Lord of the seed, You threw a word at me in a year when my ground had nothing to recommend it — and it grew. I bring You the one whose ground looks closed tonight. You know the name; You have watched every seed I ever threw there disappear. I confess the math I have been running on other people's dirt — deciding who is worth a word, going quiet where the silence got long. Forgive the arithmetic. Your word does not return empty; You said so through Isaiah and proved it from a boat. So keep me throwing — small seed, steady hand, no scorekeeping. Break up what I cannot break. Clear what I cannot clear. And while You work their ground, work mine: I have thorns I have been calling a schedule. Through Jesus, who sows on roads. Amen.",
+      "breathPrayer": "Inhale: Your word will not return empty — Exhale: I will keep throwing.",
       "prayerType": "trust"
     },
     {
       "type": "takeaway",
       "heading": "Today's Commitment",
-      "commitment": "I will say the four words — an enemy did this — over the field I have blamed on the Sower, and this week I will plant one specific good seed in the row I had gone quiet on: a prayer, a message, a door left open for the person I love who has not yet turned.",
+      "commitment": "This week I will throw one seed at ground I had stopped sowing — a message that asks for nothing, a seat at my table, a prayer they will never hear — and I will not dig it up to check on it.",
       "leavingAtCross": [
-        "The audit I have been running on God's farming",
-        "The vigilance-guilt for a night I did not cause",
-        "My confidence that I can tell wheat from weeds on sight",
-        "The verdict I had already written on someone I love who looks, today, like weed"
+        "The habit of deciding whose ground deserves the word",
+        "The ledger I have kept of words that seemed to come back empty",
+        "The permanent label I fixed on ground God is still plowing",
+        "My own thorns — the crowding I have stopped even noticing"
       ],
       "receivingFromCross": [
-        "A Sower who plants into enemy-visited soil in person",
-        "A diagnosis that puts malice where it belongs",
-        "Permission to grieve the weeds without abandoning the wheat",
-        "An Owner who can tell the crops apart when I cannot — and a season He is holding open for the people I love"
+        "A Farmer who spends seed on roads, in public, on purpose",
+        "Isaiah's guarantee that no sown word returns empty",
+        "A decoding addressed to my ears before anyone else's",
+        "Ears for the story as it was told — and one more throw worth making"
       ]
     },
     {
       "type": "comprehension",
       "heading": "Community Reflection",
-      "question": "How does the enemy's sowing in verse 25 differ from the Sower's — and why does the difference matter?",
+      "question": "In Jesus' own decoding of the Sower, what actually separates the good soil from the path?",
       "options": [
-        "He sows at midday, openly defying the owner",
-        "He over-sows (epispeirō) — seeding on top of an existing crop, then slipping away — evil as parasite, not planter",
-        "He sows thorns, which are easily distinguished from wheat",
-        "He convinces the servants to sow for him"
+        "The path never receives any seed — the farmer avoids it",
+        "Understanding — both hearers hear the word, but on the path it never gets beneath the surface, and what was sown is snatched away",
+        "The good soil always produces a hundredfold, proving its superior quality",
+        "Soil type is fixed — a path can never become anything else"
       ],
       "answer": 1,
-      "explanation": "The rare compound epespeiren — found nowhere else in the New Testament — means he sowed OVER the good crop and vanished. Evil in this parable plants nothing of its own and stays to farm nothing; it can only ride on, and ruin, what goodness has already built. Fields with nothing good in them get no sabotage."
+      "explanation": "Verses 19 and 23 are a matched pair: both hearers hear the word. The hinge is understanding — whether the word gets in under the surface. The decoding also quietly blocks two other misreadings: good soil yields at a hundred, sixty, or thirty — different harvests, all real — and the four grounds are portraits of hearings, not fates fixed in advance."
     },
     {
       "type": "profile",
@@ -280,44 +271,44 @@
       "era": "c. 1864-1943, Missouri and Tuskegee, Alabama",
       "bio": "Born enslaved in Diamond Grove, Missouri — about 1864, the exact date unrecorded, as it was for so many born as property — Carver became one of the great agricultural scientists of his age. From 1896 he spent forty-seven years at Tuskegee Institute teaching the children of formerly enslaved farmers to resurrect soil that cotton and injustice had exhausted. He named his laboratory God's Little Workshop and treated the work as a collaboration with its Owner — a claim he defended, mildly and immovably, even against the New York Times.",
       "keyQuote": "Inspiration is never at variance with information; in fact, the more information one has, the greater will be the inspiration.",
-      "lessonForUs": "Carver answered an over-sown life the way the Son of Man answers an over-sown world: not by conceding the field, but by planting better seed in it, with God, for as long as the season lasted."
+      "lessonForUs": "Carver read ruined ground the way the Sower reads it — as a present condition with a future tense. Forty-seven years of seed into the fields least likely to reward it is what patient hope looks like when it puts on work clothes."
     },
     {
       "type": "resource",
       "heading": "Sources & Related Study",
       "relatedScriptures": [
         {
-          "reference": "Genesis 3:15 (the first promise)",
-          "text": "The seed of the woman who crushes the intruder's head — the ancient scene behind the parable's enemy, and its hope."
+          "reference": "Isaiah 55:10-11 (BSB)",
+          "text": "\"...so My word that proceeds from My mouth will not return to Me empty, but it will accomplish what I please, and it will prosper where I send it.\" — the guarantee under every seed the day describes."
         },
         {
-          "reference": "Matthew 5:45 (BSB)",
-          "text": "\"He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous.\""
+          "reference": "Isaiah 6:9-10 (quoted at Matthew 13:14-15)",
+          "text": "The prophecy Jesus cites inside the discourse — ears that will not hear, eyes that will not see, and a closing clause that keeps the door open: \"...and turn and be healed.\""
         },
         {
-          "reference": "2 Peter 3:9 (BSB)",
-          "text": "\"...not wanting anyone to perish but everyone to come to repentance.\" — the week's horizon: the reason the season is still open."
+          "reference": "Psalm 126:5-6 (BSB)",
+          "text": "\"Those who sow in tears will reap with shouts of joy...\" — the sower's oldest song: weeping assumed, sheaves promised."
+        },
+        {
+          "reference": "Mark 4:26-29 (BSB)",
+          "text": "The sibling seed parable from Mark's telling of the discourse — the ground produces \"all by itself\" while the farmer sleeps and wakes; where this week's Sabbath reading will land."
         }
       ],
       "resources": [
         {
-          "title": "Charles Spurgeon, Exposition on Matthew 13:24-58 (following Sermon #3312, 'The Carpenter's Son and His Relations'), Metropolitan Tabernacle Pulpit Vol. 58 — delivered 1866, published 1912",
-          "description": "Source of today's quotation on the sleeping church and the waking devil. Full text at spurgeongems.org."
-        },
-        {
           "title": "Greek data",
-          "description": "zizania (G2215 — all 8 NT occurrences inside this parable), epispeirō (NAS 1986b; NT hapax; the over-sowing compound is the earliest manuscripts' reading), katheudō (G2518) — BibleHub interlinear and Strong's, Matthew 13:24-26."
+          "description": "zizania (G2215 — all 8 NT occurrences inside Matthew 13's second parable), epispeirō (NAS 1986b; NT hapax; the over-sowing compound is the earliest manuscripts' reading), katheudō (G2518) — BibleHub interlinear and Strong's, Matthew 13."
         },
         {
-          "title": "Rabbinic, botanical, and legal background",
-          "description": "Mishnah Kilayim 1:1 rules wheat and zunin (darnel) are not forbidden mixed kinds — darnel being reckoned wheat gone wrong; the Jerusalem Talmud's wordplay derives its name from the root for adultery. Botanically Lolium temulentum, wheat-mimicking until the ear, host to a toxic fungus (Easton's; ISBE). Malicious darnel-sowing was actionable at Roman law: Digest 9.2.27.14 (Ulpian citing Celsus)."
+          "title": "Darnel background",
+          "description": "Botanically Lolium temulentum, 'bearded darnel' — wheat-mimicking until the ear appears (Easton's; ISBE). The botany behind the zizania entry above, developed fully on Day 2."
         },
         {
           "title": "George Washington Carver — primary sources",
           "description": "His 1897 autobiographical sketch, his 1896 acceptance letter to Booker T. Washington, and his 1924 letter to the New York Times (all printed in Gary R. Kremer, ed., George Washington Carver: In His Own Words, 1987); Raleigh Merritt, From Captivity to Fame (1929, written with Carver's cooperation); the 1924 Marble Collegiate talk and the Times editorial \"Men of Science Never Talk That Way\" (Nov 20, 1924). 'God's Little Workshop' is the attested name he gave his laboratory."
         }
       ],
-      "forDeeperStudy": "Read Genesis 3 tonight, then reread Matthew 13:24-26 tomorrow morning — and watch the parable turn into the Bible's second act of the same story: a good planting, an intruder, and a Sower who does not abandon sabotaged ground."
+      "forDeeperStudy": "Read Isaiah 55 tonight — the whole chapter is shorter than this page — then reread Matthew 13:1-23 tomorrow morning and watch the parable become Isaiah's rain cycle acted out from a boat: the word goes out, and it does not come back empty."
     }
   ]
 }

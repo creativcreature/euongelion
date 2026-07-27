@@ -891,17 +891,17 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'the-blueprint-of-community-day-5':
     'The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness',
   'the-harvest-day-1':
-    "The Sower did everything right. The field still came up mixed — and until the heads form, nobody can tell wheat from weeds. Not the stalks, and not the people you love. Jesus' hardest story about the world begins with everyone asleep.",
+    'Jesus opens His parable day with a farmer who flings seed onto footpaths, gravel, and standing thorns — on purpose. If you have spent years sowing words and prayers into someone who will not hear them, this story was told about your field. No ground in it is finished.',
   'the-harvest-day-2':
-    "The servants got the diagnosis exactly right and the verdict exactly early. Nobody can tell wheat from weeds mid-season — least of all in the life you love and grieve — and the Master's No uses the same verb as 'forgive.'",
+    'The weeds went in at night; the offer to fix them came at dawn and sounded like loyalty. Jesus hangs the whole parable on the refusal — and a psalm had answered the servants a thousand years before they asked: do not fret, be still — the grass is already withering.',
   'the-harvest-day-3':
-    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — the field is the world, the seed is people — and the waiting sickle turns out to be patience for everyone who has not yet turned. Perhaps for someone you love.',
+    "Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — the field is the world, the good seed is people, the reapers are angels. Then the oldest complaint against heaven — why so slow? — meets God's own answer from Ezekiel, and two tiny parables about a seed and a spoonful of leaven show what hope does while it waits.",
   'the-harvest-day-4':
-    "The sickle is off the table — and someone you love is still standing in the rows. So what fills a fieldhand's day while God waits? Water, witness, prayer, and a chair that stays at the table — the sun has been modeling it since dawn.",
+    "The sickle is off the table — and someone you love is still standing in the field. So what fills the days while God waits? A fieldhand's job description the Father has been modeling since sunrise — and a prophet who did the work, hated the mercy, and walked out of a spared city to wait for fire.",
   'the-harvest-day-5':
-    "The week ends on the parable's last surprise: no harvest is called early — a criminal gathered at his final breath, stars promised to those who lead many home, and a door still open for the one you love.",
+    'The week ends where Jesus ended His parable day: a dragnet hauling in every kind of fish, a thief who was not too late, and stars kept for those who spend their lives bringing others in.',
   'the-harvest-day-6':
-    "Five days inside one parable. Today: the whole field at a glance — God's patience at its center, the person you love still inside it — and everything you need to keep studying it on your own.",
+    "Five days inside Jesus' kingdom-parable discourse. Today: the whole teaching at a glance — seed to soils to sabotage to slow growth to the net at the shore — God's patience at its center, the person you love still inside it, and everything you need to keep studying on your own.",
   'the-harvest-day-7':
     'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. The one you have been praying for all week grows the same way — by a power that is not yours. Today, be the sleeping farmer.',
   'the-nature-of-belief-day-1':
@@ -1531,7 +1531,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'the-blueprint-of-community-day-3': "Peter's Sermon and the First Response",
   'the-blueprint-of-community-day-4': 'The Four Pillars of the New Community',
   'the-blueprint-of-community-day-5': 'Awe, Generosity, and Daily Rhythms',
-  'the-harvest-day-1': 'While Everyone Slept',
+  'the-harvest-day-1': 'A Farmer Went Out to Sow',
   'the-harvest-day-2': 'Do You Want Us to Pull Them Up?',
   'the-harvest-day-3': 'The Field Is the World',
   'the-harvest-day-4': 'Fieldhands, Not Harvesters',

@@ -30,3 +30,21 @@ Higgsfield MCP, model `gpt_image_2` ("GPT Image 2", OpenAI) — the founder-dire
 - Module shape: `{ "type": "video", "videoProvider": "youtube", "videoId": "<11-char>", "videoTitle": "<exact current title>", "videoCaption": "<what it teaches here>", "videoAttribution": "<channel>" }`.
 - `VideoModule` renders click-to-play: thumbnail (i.ytimg.com — allowed by `img-src https:`) → on click, `youtube-nocookie.com` iframe playing INLINE. The CSP's `frame-src` includes `https://www.youtube-nocookie.com` (added 2026-07-12 hotfix) — if a future provider is added (e.g., Vimeo), extend `frame-src` in `next.config.ts` FIRST or players render as blank blocked boxes.
 - Placement: after the teaching module the video deepens (typically post-B or post-C); a long-form sermon go-deeper sits late in the day, before resources.
+
+## Accuracy Gate (SA-032, 2026-07-27 — MANDATORY before placement)
+
+Every render is checked TWICE, in this order:
+
+1. **Fact check** — does the image accurately depict the thing the caption
+   claims? Botany (wheat BOWS heavy and golden at maturity; darnel stands
+   stiff with thin dark spikelets; the two are identical ONLY pre-heading),
+   history, geography, textual detail (four soils are four DISTINCT grounds;
+   a mustard seed is tiny and its tree large). If the day's teaching hinges
+   on a difference, the difference must be visible and correct.
+2. **Style check** — riso duotone spec as before.
+
+A beautiful wrong image fails. Regenerate with the fact named explicitly in
+the prompt (state the difference in words: "bows deeply under a heavy golden
+head" vs "stands stiffly erect with thin dark spikelets"). Founder precedent:
+the v1 wheat/darnel plate showed two identical formed heads — style-perfect,
+botanically wrong, caught by the founder IN PRODUCTION. Never again.

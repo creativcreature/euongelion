@@ -206,3 +206,33 @@ life that looked like weed until nearly its final breath being harvested
 as wheat — no time to bear visible fruit, saved entirely at the end. It
 carries the v3 spine's "full life lived to judgment / the harvest is
 never called early" point in verifiable form. Quote BSB verbatim only.
+
+---
+
+## §3 ADDENDUM (v4 cluster expansion, 2026-07-27) — corpus-verbatim additions
+
+All verified against public/bibles/BSB/ on 2026-07-27. Quote BSB verbatim only.
+
+**Matthew 13:3-9 (the Sower):** v3 "And He told them many things in parables, saying, “A farmer went out to sow his seed." v4 "And as he was sowing, some seed fell along the path, and the birds came and devoured it." v5 "Some fell on rocky ground, where it did not have much soil. It sprang up quickly because the soil was shallow." v6 "But when the sun rose, the seedlings were scorched, and they withered because they had no root." v7 "Other seed fell among thorns, which grew up and choked the seedlings." v8 "Still other seed fell on good soil and produced a crop—a hundredfold, sixtyfold, or thirtyfold." v9 "He who has ears, let him hear.”"
+
+**Matthew 13:14-15 (Isaiah quoted INSIDE the discourse — the built-in OT link):** v14 "In them the prophecy of Isaiah is fulfilled: ‘You will be ever hearing but never understanding; you will be ever seeing but never perceiving." (v15 continues the callous-heart citation.) Cross-reference Isaiah 6:9-10 below.
+
+**Matthew 13:18-23 (Sower interpreted):** v19 "When anyone hears the message of the kingdom but does not understand it, the evil one comes and snatches away what was sown in his heart. This is the seed sown along the path." v20 "The seed sown on rocky ground is the one who hears the word and at once receives it with joy." v21 "But since he has no root, he remains for only a season. When trouble or persecution comes because of the word, he quickly falls away." v22 "The seed sown among the thorns is the one who hears the word, but the worries of this life and the deceitfulness of wealth choke the word, and it becomes unfruitful." v23 "But the seed sown on good soil is the one who hears the word and understands it. He indeed bears fruit and produces a crop—a hundredfold, sixtyfold, or thirtyfold.”"
+
+**Matthew 13:31-33 (Mustard Seed + Leaven):** v31 "He put before them another parable: “The kingdom of heaven is like a mustard seed that a man planted in his field." v32 "Although it is the smallest of all seeds, yet it grows into the largest of garden plants and becomes a tree, so that the birds of the air come and nest in its branches.”" v33 "He told them still another parable: “The kingdom of heaven is like leaven that a woman took and mixed into three measures of flour, until all of it was leavened.”"
+
+**Matthew 13:47-50 (the Net):** v47 "Once again, the kingdom of heaven is like a net that was cast into the sea and caught all kinds of fish." v48 "When it was full, the men pulled it ashore. Then they sat down and sorted the good fish into containers, but threw the bad away." v49 "So will it be at the end of the age: The angels will come and separate the wicked from the righteous," v50 "and throw them into the fiery furnace, where there will be weeping and gnashing of teeth."
+
+**Isaiah 6:9-10:** v9 "And He replied: “Go and tell this people, ‘Be ever hearing, but never understanding; be ever seeing, but never perceiving.’" v10 "Make the hearts of this people calloused; deafen their ears and close their eyes. Otherwise they might see with their eyes, hear with their ears, understand with their hearts, and turn and be healed.”"
+
+**Isaiah 55:10-11:** v10 "For just as rain and snow fall from heaven and do not return without watering the earth, making it bud and sprout, and providing seed to sow and food to eat," v11 "so My word that proceeds from My mouth will not return to Me empty, but it will accomplish what I please, and it will prosper where I send it."
+
+**Psalm 37:1-2, 7:** v1 "Do not fret over those who do evil; do not envy those who do wrong." v2 "For they wither quickly like grass and wilt like tender plants." v7 "Be still before the LORD and wait patiently for Him; do not fret when men prosper in their ways, when they carry out wicked schemes."
+
+**Ezekiel 33:11 (excerpt):** "As surely as I live, declares the Lord GOD, I take no pleasure in the death of the wicked, but rather that the wicked should turn from their ways and live. Turn! Turn from your evil ways…"
+
+**Jonah 4:10-11:** v10 "But the LORD said, “You cared about the plant, which you neither tended nor made grow. It sprang up in a night and perished in a night." v11 "So should I not care about the great city of Nineveh, which has more than 120,000 people who cannot tell their right hand from their left, and many cattle as well?”"
+
+**Ecclesiastes 11:5-6:** v5 "As you do not know the path of the wind, or how the bones are formed in a mother’s womb, so you cannot understand the work of God, the Maker of all things." v6 "Sow your seed in the morning, and do not rest your hands in the evening, for you do not know which will succeed, whether this or that, or if both will equally prosper."
+
+Usage notes: Matthew 13 groups these parables as ONE discourse — the series covers them as interrelated (SA-032 cluster rule). Jesus Himself cites Isaiah inside the discourse (13:14-15), modeling the cross-testament rule. Mark 4:26-29 (automatē, already §1) is the parallel discourse's seed-growing-secretly and remains Day 7's anchor.

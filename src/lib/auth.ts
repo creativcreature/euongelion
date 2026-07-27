@@ -1,5 +1,8 @@
 import { createClient } from './supabase/server'
+import { cookies } from 'next/headers'
 import { getSession, linkSessionToUser } from './session'
+import { AUDIT_SESSION_COOKIE } from './soul-audit/session'
+import { claimPlansForUser } from './soul-audit/plan-queries'
 
 function resolveAuthRedirectBaseUrl(): string {
   const configured = process.env.NEXT_PUBLIC_APP_URL?.trim()
@@ -65,6 +68,12 @@ export async function onAuthSuccess(userId: string) {
   if (session && !session.user_id) {
     await linkSessionToUser(session.id, userId)
   }
+  // SA-032: stamp the account onto any plans this device's audit session
+  // created while anonymous, so they resume from the account on any
+  // device after any sign-out.
+  const cookieStore = await cookies()
+  const auditToken = cookieStore.get(AUDIT_SESSION_COOKIE)?.value ?? null
+  await claimPlansForUser(userId, auditToken)
 }
 
 /**

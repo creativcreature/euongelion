@@ -37,7 +37,9 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 2. Fan out parallel research agents (stories, quotes, videos, Hebrew/context); pull ALL scripture verbatim from `public/bibles/` corpus only.
 3. Write brief (`content/series-briefs/<slug>.md`) + source pack (`content/source-packs/<slug>.md`). The source pack is the ONLY citation pool for drafting.
 4. Draft the pivot (C) day first, then the rest. EVERY day opens with the Two-Minute Open (SA-030): scripture → vocab → reflection → short prayer → DEEP DIVE `cta`, self-contained, before the full structure; declare `"format": "two-minute-open"` so the validator enforces it. Run `node scripts/validate-devotional.mjs` until 0/0.
-5. Devotional-editor agent review → apply fixes → re-review to READY FOR FOUNDER.
+   - **Cross-testament rule (SA-032, 2026-07-27, ALL days):** a day anchored in New Testament scripture must carry a real Old Testament connection that day; an OT-anchored day must carry a NT connection. Corpus-verbatim only.
+   - **Parable-cluster rule (SA-032):** when the seed passage belongs to a discourse cluster Scripture itself groups (e.g. the Matthew 13 kingdom parables), cover the cluster as interrelated — never isolate one parable from its God-given neighbors.
+5. Devotional-editor agent review → apply fixes → re-review to READY FOR FOUNDER. The editor pass MUST include a cross-day repetition sweep (parallel writers converge on the same phrases — count recurring sentences/refrains across all days and thin them; SA-032).
 6. **Founder reading artifact:** publish a private artifact of the full text in the site's mockup design language. **SA-031 (2026-07-26) amends SA-029(4): the pipeline runs end-to-end WITHOUT pausing here or at the deploy step** — the artifact is still published and every gate still runs and is reported, but they are non-blocking; the founder reviews live output and requests revisions after. Pause only if the founder explicitly asks to read first for a given run.
 7. Imagery (GPT Image 2, riso duotone) + inline-image placement; verify videos embeddable.
 8. Wire: `series.ts` (SERIES_DATA + order array + FEATURED_SERIES if directed), `series-rails.ts`, bump `__tests__/series-data.test.ts` count and `scripts/check-feature-prd-integrity.mjs` count.
@@ -55,6 +57,7 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - Videos: official channels only, oEmbed-verified AND embed-block-checked; never a video that blocks off-YouTube playback.
 - The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
 - No arbitrary images — every slot needs a one-sentence contextual justification (the caption). (The pre-imagery reading PAUSE was retired by SA-031; the reading artifact itself is still mandatory.)
+- **Imagery ACCURACY gate (SA-032, 2026-07-27):** before placement, verify every illustration against the fact it illustrates — botanical, historical, textual. Style-checking is not enough. (Precedent: a wheat-vs-darnel plate shipped with formed, identical heads — botanically wrong and message-defeating, founder-caught in production. If the image's point is a difference, the difference must be visibly, accurately rendered.)
 - Stage commits by explicit file list (parallel sessions share this working tree); never `git add -A`.
 - Deploy proceeds without a pause (SA-031), but ONLY after preview evidence is green; all evidence is reported to the founder in the final summary.
 

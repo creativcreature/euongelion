@@ -1,5 +1,10 @@
 import { cookies } from 'next/headers'
-import { fetchActivePlan, getCurrentDay } from '@/lib/soul-audit/plan-queries'
+import {
+  claimPlansForUser,
+  fetchActivePlan,
+  fetchActivePlanByOwner,
+  getCurrentDay,
+} from '@/lib/soul-audit/plan-queries'
 import { AUDIT_SESSION_COOKIE } from '@/lib/soul-audit/session'
 import { getUser } from '@/lib/auth'
 import {
@@ -58,16 +63,15 @@ export default async function DailyBreadPage() {
     )
   }
 
-  if (!sessionToken) {
-    return (
-      <Shell>
-        <ScheduledSwapBanner />
-        <EmptyState />
-      </Shell>
-    )
-  }
-
-  const plan = await fetchActivePlan(sessionToken)
+  // SA-032 (2026-07-27): account-first plan resolution — a signed-in
+  // user's plan follows the ACCOUNT, not the cookie, so sign-out /
+  // sign-in / new devices resume exactly where they left off. The
+  // session-cookie path remains for anonymous readers. Whichever path
+  // resolves, the plan flows through the same holding / completion /
+  // reader logic below.
+  const ownerPlan = await resolveOwnerPlan(sessionToken)
+  const plan =
+    ownerPlan ?? (sessionToken ? await fetchActivePlan(sessionToken) : null)
 
   if (!plan) {
     return (
@@ -148,6 +152,20 @@ export default async function DailyBreadPage() {
       />
     </Shell>
   )
+}
+
+async function resolveOwnerPlan(sessionToken: string | null) {
+  try {
+    const user = await getUser()
+    if (!user) return null
+    // Lazy claim: if this session created plans while anonymous, stamp
+    // them onto the account before looking up by owner.
+    await claimPlansForUser(user.id, sessionToken)
+    return await fetchActivePlanByOwner(user.id)
+  } catch (error) {
+    console.error('[daily-bread] owner plan read failed:', error)
+    return null
+  }
 }
 
 async function resolveUserActiveSeries() {

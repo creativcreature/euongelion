@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT v4 — The Harvest becomes the Matthew 13 cluster (2026-07-27, SA-032)
+
+Founder rulings (SA-032 registered): the series now covers the kingdom
+parables AS SCRIPTURE GROUPS THEM — Day 1 is the Sower ("A Farmer Went
+Out to Sow", Matt 13:3-9/19-23; soils are seasons, not sentences),
+Day 2 carries the full Wheat & Weeds with the corrected botany, Day 3
+adds Mustard Seed + Leaven, Day 4 develops JONAH as the parable's
+servant-with-a-book-of-his-own, Day 5 adds the Net (the discourse's
+own closing), Day 6 recaps the cluster, Day 7 keeps Mark 4 (the
+sibling seed parable) with Ecclesiastes 11. CROSS-TESTAMENT RULE now
+standing for all prefab days: NT-anchored days carry a developed OT
+connection (D1 Isaiah 6 via Matt 13:14 + Isaiah 55; D2 Psalm 37; D3
+Ezekiel 33:11 "Turn! Turn!"; D4 Jonah 4; D7 Eccl 11) — Jesus models
+it by quoting Isaiah inside the discourse. REPETITION KILL per
+founder complaint: per-day scoreboards + editor cross-day sweep (the
+brother/father/friend rule-of-three ran 7x across the week — now
+once; 2 Peter full-quote capped; stock phrases zeroed). IMAGERY
+ACCURACY GATE (new skill rule + SA-032): the botanically wrong
+wheat/darnel plate (identical formed heads) replaced with a two-phase
+plate — young indistinguishable, mature wheat BOWS golden while
+darnel stands stiff; new sower-over-four-soils banner, mustard tree,
+net ashore — all fact-checked before placement. ACCOUNT-STATE RESUME
+(SA-032): plans now follow the ACCOUNT (owner_user_id stamped at
+sign-in + lazily on read; account-first resolution on /daily-bread),
+so sign-out/sign-in resumes exactly where the reader left off on any
+device. Validator PASS x7; editor gate READY. (SA-032, F-082, F-083)
+
 ## CONTENT v3 + SITE CLEANUP — Harvest recentered; fine-tooth-comb pass 1 (2026-07-27)
 
 THE HARVEST v3 (SA-031/F-082): founder recentered the series again —

@@ -197,3 +197,26 @@ address the reader's "someone you love" generically.
 Same pass (page): single hero+title at the top of day pages (legacy header
 slimmed to actions; rhythm layer no longer re-renders the series hero on
 days with inline artwork); series day-index drawer removed for short series.
+
+---
+
+## FOUNDER RULING v4 (2026-07-27, SA-032)
+
+Founder verdict on v3: writing repetitive; OT connection missing as a DAILY
+discipline; and the series must cover "all the parables around the wheat and
+the weed grouped together the same way they are in the bible as they are
+inter related" — the Matthew 13 kingdom-parable discourse (Sower, Wheat &
+Weeds, Mustard Seed, Leaven, Net; Mark 4:26-29 as the sibling seed parable).
+v3's patience-for-the-not-yet-turned center STANDS.
+
+v4 execution: Day 1 becomes the Sower ("A Farmer Went Out to Sow", soils are
+seasons not verdicts; Isaiah 55 + the discourse's own Isaiah 6 citation);
+Day 2 carries the full Wheat & Weeds with Psalm 37; Day 3 adds Mustard +
+Leaven with Ezekiel 33:11; Day 4 adds Jonah as the servant-with-a-book
+mirror; Day 5 adds the Net beside Daniel/Malachi/the thief; Day 6 recaps the
+cluster; Day 7 keeps Mark 4 with Ecclesiastes 11:5-6. Cross-testament
+connection EVERY day (SA-032 rule, all future prefabs). Imagery: corrected
+botanically-accurate wheat/darnel plate (young identical; mature wheat BOWS
+golden, darnel stands stiff — v1 plate showed identical formed heads and was
+founder-rejected), new sower-four-soils banner, mustard tree, net ashore.
+Imagery accuracy gate + repetition sweep now mandatory in the skill.

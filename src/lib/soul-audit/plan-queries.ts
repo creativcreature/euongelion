@@ -31,7 +31,7 @@ export async function fetchActivePlan(
   // Get all days for this plan.
   // Cast through `any` because used_chunk_ids/completed_at/run_id were added
   // via ALTER TABLE and are not yet in the Supabase generated Database type.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   const { data: days } = await (supabase as any)
     .from('devotional_plan_days')
     .select('*')
@@ -44,6 +44,68 @@ export async function fetchActivePlan(
   } as unknown as PlanWithDays
 
   return planWithDays
+}
+
+/**
+ * SA-032 (2026-07-27): account-first plan resolution. Plans were only
+ * reachable through the audit session cookie, so signing out (or a new
+ * device) orphaned them — the founder's "when you sign back in you
+ * should already be where you left off, regardless of device."
+ * `owner_user_id` existed in the schema but nothing ever wrote it.
+ */
+export async function fetchActivePlanByOwner(
+  userId: string,
+): Promise<PlanWithDays | null> {
+  const supabase = createAdminClient()
+  const { data: plan, error } = await (supabase as any)
+    .from('devotional_plan_instances')
+    .select('*')
+    .eq('owner_user_id', userId)
+    .eq('status', 'active')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .maybeSingle()
+  if (error || !plan) return null
+
+  const { data: days } = await (supabase as any)
+    .from('devotional_plan_days')
+    .select('*')
+    .eq('plan_token', plan.plan_token)
+    .order('day_number')
+
+  return {
+    ...plan,
+    devotional_plan_days: (days || []) as PlanDayRecord[],
+  } as unknown as PlanWithDays
+}
+
+/**
+ * Stamp the signed-in user as owner of any un-owned plans created under
+ * the given audit session, so future sign-ins resume them from the
+ * account no matter the device or cookie state. Best-effort (errors are
+ * logged, never thrown — runs inside auth callbacks).
+ */
+export async function claimPlansForUser(
+  userId: string,
+  auditSessionToken: string | null,
+): Promise<void> {
+  if (!auditSessionToken) return
+  try {
+    const supabase = createAdminClient()
+    const { error } = await (supabase as any)
+      .from('devotional_plan_instances')
+      .update({ owner_user_id: userId })
+      .eq('session_token', auditSessionToken)
+      .is('owner_user_id', null)
+    if (error) {
+      console.error('[claimPlansForUser] failed:', error)
+    }
+  } catch (err) {
+    console.error(
+      '[claimPlansForUser] threw:',
+      err instanceof Error ? err.message : err,
+    )
+  }
 }
 
 export function getCurrentDay(plan: PlanWithDays): number {
@@ -76,7 +138,7 @@ export async function reconstructGenerationState(planToken: string): Promise<{
   const supabase = createAdminClient()
   // Cast through `any` because used_chunk_ids was added via ALTER TABLE
   // and is not yet in the Supabase generated Database type.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   const { data: savedDays } = await (supabase as any)
     .from('devotional_plan_days')
     .select('day_number, content, used_chunk_ids')
@@ -87,14 +149,14 @@ export async function reconstructGenerationState(planToken: string): Promise<{
     return { usedChunkIds: [], previousDaysSummary: '', lastSavedDay: 0 }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   const usedChunkIds = (savedDays as any[]).flatMap(
     (d: { used_chunk_ids?: string[] }) => d.used_chunk_ids || [],
   )
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   const lastDay = (savedDays as any[])[savedDays.length - 1]
   const previousDaysSummary = lastDay
-    ? ((lastDay.content as DayContent).previousDaysSummaryForNext || '')
+    ? (lastDay.content as DayContent).previousDaysSummaryForNext || ''
     : ''
   const lastSavedDay = lastDay?.day_number || 0
 
