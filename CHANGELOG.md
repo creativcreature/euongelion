@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## FIX + CONTENT — Daily Bread root cause + The Harvest re-angle (2026-07-27)
+
+DAILY BREAD (F-083): root-caused the 6-month "activation reverts to A
+Voice in the Wilderness on reload" failure. Production Supabase never
+received migration 013 — active_series, scheduled_series_swap, and
+archived_series DO NOT EXIST (REST-probed, PGRST205) — while
+src/lib/library/repository.ts wrote the Workers-isolate memory cache
+first and swallowed the failing upsert, so PUT /api/devotionals/active
+returned ok:true for a row that evaporated on the next isolate.
+Code fix (dev rule #1, no silent fallbacks): all user-intent library
+writes now throw LibraryPersistenceError on a non-landed Supabase
+write and roll the cache back so same-isolate reads cannot lie;
+PUT/PATCH/DELETE /api/devotionals/active and archive/restart return
+an honest 503 PERSISTENCE_FAILED; render-path lazy writes (swap
+promotion, last-opened touch) log + serve the un-promoted truth
+instead of 500ing. 6-test regression suite added. Migration 013 apply
+to prod awaits founder approval (blocked for review in-session);
+until applied, activation shows an honest error instead of lying.
+
+THE HARVEST RE-ANGLE (SA-031/F-082): founder rejected the v1
+introspective angle ("hidden weeds in our own lives"). All 7 days +
+series copy re-aimed to the founder's spine: (1) you cannot tell
+wheat from weeds mid-season — you do not know who is actually
+faithful; (2) never judge someone too quickly — the servants' offer
+is a mid-season verdict on people, Newton the proof case; (3) the
+field is the world — the good seed ARE the sons of the kingdom, the
+withheld sickle is mercy buying time for witness, Daniel 12:3 makes
+the shining an evangelist's promise. Sources/scripture/lexicon/
+videos/imagery unchanged (all verified v1 assets serve the new
+spine). 7 parallel writer revisions + editor re-review (6 surgical
+fixes: Newton "forty years" arithmetic, an unverifiable embellishment
+removed, cross-day collisions thinned) -> READY; validator PASS both
+series. Series question/introduction/context/keywords, homepage
+feature teaser re-aimed in the same pass. Re-angle ruling recorded in
+content/series-briefs/the-harvest.md.
+
 ## SHIP — The Harvest live end-to-end: imagery, featured lead, deploy (2026-07-26)
 
 Founder ruling SA-031 (registered): (1) featured area holds exactly 7

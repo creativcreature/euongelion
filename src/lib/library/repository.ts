@@ -2,16 +2,35 @@
  * library/repository.ts — persistence for the user-controlled devotional
  * library: active_series, scheduled_series_swap, archived_series.
  *
- * Mirrors the soul-audit/repository.ts pattern: Supabase canonical with
- * an in-memory module fallback so reads still succeed when Supabase is
- * unreachable (env unset, transient failure). All `*WithFallback`
- * helpers do the cache-then-Supabase dance.
+ * Supabase is CANONICAL. The in-memory maps are a read-through cache
+ * only — on Cloudflare Workers an isolate's memory does not survive a
+ * reload, so a write that lands only in memory is a lie the user
+ * discovers on their next visit. Every user-intent write (activate,
+ * archive, queue swap, clear) therefore throws LibraryPersistenceError
+ * when the Supabase write does not land, and rolls the cache back so
+ * the same-isolate read cannot report fake success. (Root-caused
+ * 2026-07-27: migration 013 was never applied to prod, every
+ * active_series upsert failed silently, and Daily Bread reverted to
+ * the empty state on every reload for months.)
  *
  * Save (bookmark) state is intentionally NOT here — it reuses the
  * existing session_bookmarks table via soul-audit/repository.ts.
  */
 
 import { createAdminClient } from '@/lib/supabase/admin'
+
+/**
+ * Thrown when a user-intent write could not be persisted to Supabase
+ * (env unset, table missing, RLS or network failure). API routes translate
+ * this into an honest 5xx so the client can never render a success
+ * state that will evaporate on reload.
+ */
+export class LibraryPersistenceError extends Error {
+  constructor(table: string, detail: string) {
+    super(`${table} write did not persist: ${detail}`)
+    this.name = 'LibraryPersistenceError'
+  }
+}
 
 export type ActiveSeriesSource =
   | 'manual_start'
@@ -123,43 +142,59 @@ async function supabaseSelectMany<T>(
   }
 }
 
+type WriteResult = { ok: true } | { ok: false; detail: string }
+
 async function supabaseUpsert(
   table: string,
   values: object,
   onConflict?: string,
-) {
+): Promise<WriteResult> {
   const supabase = maybeSupabase()
-  if (!supabase) return
+  if (!supabase) {
+    return { ok: false, detail: 'Supabase env not configured' }
+  }
   try {
     const builder = (supabase as any).from(table).upsert(values, {
       onConflict: onConflict ?? 'user_id',
     })
     const result = await builder
     if (result.error) {
-      console.error(
-        `[library.supabaseUpsert] ${table} failed:`,
-        result.error.message ?? result.error,
-      )
+      const detail = String(result.error.message ?? result.error)
+      console.error(`[library.supabaseUpsert] ${table} failed:`, detail)
+      return { ok: false, detail }
     }
+    return { ok: true }
   } catch (err) {
-    console.error(
-      `[library.supabaseUpsert] ${table} threw:`,
-      err instanceof Error ? err.message : err,
-    )
+    const detail = err instanceof Error ? err.message : String(err)
+    console.error(`[library.supabaseUpsert] ${table} threw:`, detail)
+    return { ok: false, detail }
   }
 }
 
-async function supabaseDelete(table: string, filters: Record<string, string>) {
+async function supabaseDelete(
+  table: string,
+  filters: Record<string, string>,
+): Promise<WriteResult> {
   const supabase = maybeSupabase()
-  if (!supabase) return
+  if (!supabase) {
+    return { ok: false, detail: 'Supabase env not configured' }
+  }
   try {
     let query = (supabase as any).from(table).delete()
     for (const [k, v] of Object.entries(filters)) {
       query = query.eq(k, v)
     }
-    await query
-  } catch {
-    // no-op — best effort
+    const result = await query
+    if (result?.error) {
+      const detail = String(result.error.message ?? result.error)
+      console.error(`[library.supabaseDelete] ${table} failed:`, detail)
+      return { ok: false, detail }
+    }
+    return { ok: true }
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err)
+    console.error(`[library.supabaseDelete] ${table} threw:`, detail)
+    return { ok: false, detail }
   }
 }
 
@@ -197,8 +232,14 @@ export async function setActiveSeries(params: {
     started_at: now,
     last_opened_at: now,
   }
+  const prior = getStore().activeByUser.get(params.userId)
   getStore().activeByUser.set(params.userId, row)
-  await supabaseUpsert('active_series', row, 'user_id')
+  const write = await supabaseUpsert('active_series', row, 'user_id')
+  if (!write.ok) {
+    if (prior) getStore().activeByUser.set(params.userId, prior)
+    else getStore().activeByUser.delete(params.userId)
+    throw new LibraryPersistenceError('active_series', write.detail)
+  }
   return row
 }
 
@@ -220,7 +261,11 @@ export async function updateActiveSeriesDay(
     last_opened_at: new Date().toISOString(),
   }
   getStore().activeByUser.set(userId, next)
-  await supabaseUpsert('active_series', next, 'user_id')
+  const write = await supabaseUpsert('active_series', next, 'user_id')
+  if (!write.ok) {
+    getStore().activeByUser.set(userId, existing)
+    throw new LibraryPersistenceError('active_series', write.detail)
+  }
   return next
 }
 
@@ -232,12 +277,22 @@ export async function touchActiveSeries(userId: string): Promise<void> {
     last_opened_at: new Date().toISOString(),
   }
   getStore().activeByUser.set(userId, next)
-  await supabaseUpsert('active_series', next, 'user_id')
+  // Render-path nicety (last_opened_at bump) — best effort by design,
+  // but never let the cache drift ahead of the database.
+  const write = await supabaseUpsert('active_series', next, 'user_id')
+  if (!write.ok) {
+    getStore().activeByUser.set(userId, existing)
+  }
 }
 
 export async function clearActiveSeries(userId: string): Promise<void> {
+  const prior = getStore().activeByUser.get(userId)
   getStore().activeByUser.delete(userId)
-  await supabaseDelete('active_series', { user_id: userId })
+  const write = await supabaseDelete('active_series', { user_id: userId })
+  if (!write.ok) {
+    if (prior) getStore().activeByUser.set(userId, prior)
+    throw new LibraryPersistenceError('active_series', write.detail)
+  }
 }
 
 // ============================================
@@ -271,14 +326,27 @@ export async function setScheduledSwap(params: {
     starts_at: params.startsAt,
     queued_at: new Date().toISOString(),
   }
+  const prior = getStore().swapByUser.get(params.userId)
   getStore().swapByUser.set(params.userId, row)
-  await supabaseUpsert('scheduled_series_swap', row, 'user_id')
+  const write = await supabaseUpsert('scheduled_series_swap', row, 'user_id')
+  if (!write.ok) {
+    if (prior) getStore().swapByUser.set(params.userId, prior)
+    else getStore().swapByUser.delete(params.userId)
+    throw new LibraryPersistenceError('scheduled_series_swap', write.detail)
+  }
   return row
 }
 
 export async function clearScheduledSwap(userId: string): Promise<void> {
+  const prior = getStore().swapByUser.get(userId)
   getStore().swapByUser.delete(userId)
-  await supabaseDelete('scheduled_series_swap', { user_id: userId })
+  const write = await supabaseDelete('scheduled_series_swap', {
+    user_id: userId,
+  })
+  if (!write.ok) {
+    if (prior) getStore().swapByUser.set(userId, prior)
+    throw new LibraryPersistenceError('scheduled_series_swap', write.detail)
+  }
 }
 
 // ============================================
@@ -338,7 +406,15 @@ export async function archiveSeries(params: {
   const next = [row, ...list.filter((r) => r.series_slug !== row.series_slug)]
   getStore().archivedByUser.set(params.userId, next)
 
-  await supabaseUpsert('archived_series', row, 'user_id,series_slug')
+  const write = await supabaseUpsert(
+    'archived_series',
+    row,
+    'user_id,series_slug',
+  )
+  if (!write.ok) {
+    getStore().archivedByUser.set(params.userId, list)
+    throw new LibraryPersistenceError('archived_series', write.detail)
+  }
   return row
 }
 
@@ -351,10 +427,14 @@ export async function removeArchivedSeries(
     userId,
     list.filter((r) => r.series_slug !== seriesSlug),
   )
-  await supabaseDelete('archived_series', {
+  const write = await supabaseDelete('archived_series', {
     user_id: userId,
     series_slug: seriesSlug,
   })
+  if (!write.ok) {
+    getStore().archivedByUser.set(userId, list)
+    throw new LibraryPersistenceError('archived_series', write.detail)
+  }
 }
 
 // ============================================
@@ -416,24 +496,39 @@ export async function promoteScheduledSwapIfDue(
     return getActiveSeries(userId)
   }
 
-  const current = await getActiveSeries(userId)
-  if (current && current.series_slug !== swap.series_slug) {
-    await archiveSeries({
-      userId,
-      seriesSlug: current.series_slug,
-      furthestDayReached: current.current_day,
-      state: 'paused',
-    })
-  }
+  // Runs on page render: a failed promotion must NOT 500 the page.
+  // The write helpers above roll their caches back on failure, so
+  // logging and serving the un-promoted state is honest — the swap
+  // stays queued and promotion retries on the next request.
+  try {
+    const current = await getActiveSeries(userId)
+    if (current && current.series_slug !== swap.series_slug) {
+      await archiveSeries({
+        userId,
+        seriesSlug: current.series_slug,
+        furthestDayReached: current.current_day,
+        state: 'paused',
+      })
+    }
 
-  const promoted = await setActiveSeries({
-    userId,
-    seriesSlug: swap.series_slug,
-    currentDay: 1,
-    source: 'manual_start',
-  })
-  await clearScheduledSwap(userId)
-  return promoted
+    const promoted = await setActiveSeries({
+      userId,
+      seriesSlug: swap.series_slug,
+      currentDay: 1,
+      source: 'manual_start',
+    })
+    await clearScheduledSwap(userId)
+    return promoted
+  } catch (err) {
+    if (err instanceof LibraryPersistenceError) {
+      console.error(
+        '[library.promoteScheduledSwapIfDue] deferred:',
+        err.message,
+      )
+      return getActiveSeries(userId)
+    }
+    throw err
+  }
 }
 
 /**

@@ -36,7 +36,7 @@ const HOMEPAGE_TODAY = {
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    "If God is good, why is the field still full of weeds? An enemy sowed through the wheat by night — seven days inside Jesus' hardest parable: the Master's No, the field that is the world, and the sunrise the enemy cannot stop.",
+    "An enemy sowed weeds through the wheat by night, and the servants asked the obvious question: should we pull them up? Seven days inside Jesus' parable of the mixed field — why you cannot tell who is wheat yet, why the verdict can wait, and why the field is the world you are sent into.",
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured

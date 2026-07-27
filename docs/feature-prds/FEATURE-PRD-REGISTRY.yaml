@@ -833,3 +833,12 @@ features:
     prd: docs/feature-prds/F-082.md
     methodology_refs:
       - M00
+  - id: F-083
+    category: Platform
+    feature: Daily Bread active-series persistence (root cause + loud failures)
+    slug: daily-bread-active-series-persistence
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-083.md
+    methodology_refs:
+      - M00

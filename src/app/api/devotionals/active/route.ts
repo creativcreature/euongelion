@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getUser } from '@/lib/auth'
 import {
+  LibraryPersistenceError,
   archiveSeries,
   clearActiveSeries,
   clearScheduledSwap,
@@ -43,6 +44,24 @@ interface PutBody {
    * matches what the user was reading.
    */
   currentDay?: number
+}
+
+/**
+ * 2026-07-27 (Daily Bread root-cause fix): a LibraryPersistenceError
+ * means the Supabase write did not land — the request must fail
+ * honestly instead of returning ok:true from memory that evaporates
+ * on the next isolate. Root cause was migration 013 never applied in
+ * prod; this guard keeps any future persistence failure loud.
+ */
+function persistenceFailureResponse(requestId: string, error: unknown) {
+  if (!(error instanceof LibraryPersistenceError)) return null
+  return jsonError({
+    error:
+      'Your devotional could not be saved to your account, so nothing was changed. Please try again in a moment.',
+    code: 'PERSISTENCE_FAILED',
+    status: 503,
+    requestId,
+  })
 }
 
 export async function GET() {
@@ -248,6 +267,17 @@ export async function PUT(request: NextRequest) {
       requestId,
     )
   } catch (error) {
+    const persistence = persistenceFailureResponse(requestId, error)
+    if (persistence) {
+      logApiError({
+        scope: 'devotionals-active-put',
+        requestId,
+        error,
+        method: 'PUT',
+        path: '/api/devotionals/active',
+      })
+      return persistence
+    }
     logApiError({
       scope: 'devotionals-active-put',
       requestId,
@@ -363,6 +393,17 @@ export async function PATCH(request: NextRequest) {
       requestId,
     )
   } catch (error) {
+    const persistence = persistenceFailureResponse(requestId, error)
+    if (persistence) {
+      logApiError({
+        scope: 'devotionals-active-patch',
+        requestId,
+        error,
+        method: 'PATCH',
+        path: '/api/devotionals/active',
+      })
+      return persistence
+    }
     logApiError({
       scope: 'devotionals-active-patch',
       requestId,
@@ -416,6 +457,17 @@ export async function DELETE(request: NextRequest) {
       requestId,
     )
   } catch (error) {
+    const persistence = persistenceFailureResponse(requestId, error)
+    if (persistence) {
+      logApiError({
+        scope: 'devotionals-active-delete',
+        requestId,
+        error,
+        method: 'DELETE',
+        path: '/api/devotionals/active',
+      })
+      return persistence
+    }
     logApiError({
       scope: 'devotionals-active-delete',
       requestId,

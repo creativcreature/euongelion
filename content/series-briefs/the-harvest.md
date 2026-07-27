@@ -149,3 +149,27 @@ GPT Image 2, riso duotone per standard. Candidate briefs: night sower slipping a
 - [ ] Wiring: series.ts + rails; FEATURED policy applied (7 slots, the-harvest leads, too-busy-for-god out) and registered in the new SA id
 - [ ] Tracking: SA-031, F-082, CHANGELOG; counts bumped (PRD script, series test)
 - [ ] Gates green; preview curl + rendered-DOM evidence; founder confirms; deploy; cache warm; live-verify
+
+---
+
+## FOUNDER RE-ANGLE RULING (2026-07-27)
+
+Founder verdict on the shipped v1: **the angle is wrong.** His words: the parable
+"should be more about evangelism as well as not knowing who are actually faithful
+people in Gods kingdom, and judging someone too quickly" — the introspective
+"hidden weeds in our own lives" angle is not what he wants.
+
+Revised spine (v2, applied across all 7 days + series-level copy):
+
+1. **You cannot tell wheat from weeds mid-season** → you do not know who is
+   actually faithful in God's kingdom. (Darnel epistemology applied to people.)
+2. **Therefore never judge someone too quickly** → the servants' offer is the
+   itch to pass verdicts mid-season; Newton is the proof case.
+3. **The field is the world — go sow** → the good seed ARE the sons of the
+   kingdom (people planted as witness); the withheld sickle is mercy buying
+   time for evangelism; Daniel 12:3 makes the shining an evangelist's promise.
+
+Sources, scripture, lexicon, videos, imagery all UNCHANGED (they were verified
+and they serve the new spine). Prose re-aimed day-by-day per
+scratchpad/harvest-reangle-brief.md; series question/introduction/context/
+keywords and the homepage feature teaser re-aimed in the same pass.

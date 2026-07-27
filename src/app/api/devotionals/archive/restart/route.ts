@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getUser } from '@/lib/auth'
 import {
+  LibraryPersistenceError,
   archiveSeries,
   getActiveSeries,
   getArchivedSeries,
@@ -130,6 +131,15 @@ export async function POST(request: NextRequest) {
       requestId,
     )
   } catch (error) {
+    if (error instanceof LibraryPersistenceError) {
+      return jsonError({
+        error:
+          'Your devotional could not be saved to your account, so nothing was changed. Please try again in a moment.',
+        code: 'PERSISTENCE_FAILED',
+        status: 503,
+        requestId,
+      })
+    }
     logApiError({
       scope: 'devotionals-archive-restart',
       requestId,

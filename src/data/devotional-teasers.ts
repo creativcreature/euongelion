@@ -891,19 +891,19 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'the-blueprint-of-community-day-5':
     'The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness',
   'the-harvest-day-1':
-    "The Sower did everything right. The field still came up mixed. Jesus' hardest story about evil begins with everyone asleep.",
+    "The Sower did everything right. The field still came up mixed — and until the heads form, nobody can tell wheat from weeds. Jesus' hardest story about the world begins with everyone asleep.",
   'the-harvest-day-2':
-    "The servants got the diagnosis exactly right and the prescription exactly wrong. The Master's answer uses the same verb as 'forgive.'",
+    "The servants got the diagnosis exactly right and the verdict exactly early. Nobody can tell wheat from weeds mid-season — and the Master's No uses the same verb as 'forgive.'",
   'the-harvest-day-3':
-    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — and the field turns out to be bigger, and closer, than anyone wanted.',
+    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — and the good seed turns out to be people, sown across a field the size of the world.',
   'the-harvest-day-4':
-    "The sickle is off the table. So what do the Master's servants do all day? The sun over the field already knows.",
+    "The sickle is off the table. So what fills a fieldhand's day? Water for every row, a word for every row, a verdict for none — the sun has been modeling it since dawn.",
   'the-harvest-day-5':
-    'The week that began with a night ends with a dawn: evil as stubble, wheat in the barn, and the righteous shining like the sun.',
+    "The week ends on the parable's last surprise: identities are harvest-day information — and Daniel promises the stars to those who lead many to righteousness.",
   'the-harvest-day-6':
     'Five days inside one parable. Today: the whole field at a glance, and everything you need to keep studying it on your own.',
   'the-harvest-day-7':
-    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. Today, be the sleeping farmer.',
+    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. The seed you scattered this week grows the same way. Today, be the sleeping farmer.',
   'the-nature-of-belief-day-1':
     'Understanding that trials produce perseverance and lead to spiritual maturity',
   'the-nature-of-belief-day-2':
