@@ -109,11 +109,26 @@ export default async function DailyBreadPage() {
     }
   }
 
-  const contentDays = plan.devotional_plan_days.filter(
-    (d) => d.day_number >= 1 && d.day_number <= 5,
+  // F-083 audit fix 2026-07-27: plans are 7-day arcs (5 content +
+  // Sabbath + Review). The old `<= 5 / === 5` window declared the
+  // plan complete after day 5 and hid the Sabbath and Review days
+  // behind CompletionState. Completion now requires every completable
+  // (non-sabbath — sabbath days have no mark-complete control) day on
+  // the schedule to be done, INCLUDING the Review day.
+  const sabbathDays = new Set(
+    schedule.filter((e) => e.status === 'sabbath').map((e) => e.day),
+  )
+  const completableDays = schedule.filter(
+    (e) => e.day >= 1 && !sabbathDays.has(e.day),
+  )
+  const completedNumbers = new Set(
+    plan.devotional_plan_days
+      .filter((d) => d.completed_at)
+      .map((d) => d.day_number),
   )
   const allDone =
-    contentDays.length === 5 && contentDays.every((d) => d.completed_at)
+    completableDays.length > 0 &&
+    completableDays.every((e) => completedNumbers.has(e.day))
 
   if (allDone) {
     return (

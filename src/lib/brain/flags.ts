@@ -18,9 +18,6 @@ export const brainFlags = {
   /** Emergency kill switch — disables Soul Audit entirely */
   soulAuditEnabled: toBool(process.env.SOUL_AUDIT_ENABLED, true),
 
-  /** Enable clarifier-once for vague inputs */
-  clarifierEnabled: toBool(process.env.CLARIFIER_ENABLED, true),
-
   // ─── Brain Router ─────────────────────────────────────────────────
 
   brainRouterEnabled: toBool(process.env.BRAIN_ROUTER_ENABLED, true),
@@ -29,10 +26,6 @@ export const brainFlags = {
   // only" decision (SA-008). Open-web remains an explicit env opt-in
   // (OPEN_WEB_MODE_ENABLED=true) rather than a default-on capability.
   openWebModeEnabled: toBool(process.env.OPEN_WEB_MODE_ENABLED, false),
-  chatStudySidebarEnabled: toBool(
-    process.env.CHAT_STUDY_SIDEBAR_V2_ENABLED,
-    true,
-  ),
   qualityFloor: toNumber(process.env.BRAIN_QUALITY_FLOOR, 0.65),
   freeChatMonthlyCap: Math.max(
     1,
@@ -47,28 +40,4 @@ export const brainFlags = {
     toNumber(process.env.PLATFORM_AI_BUDGET_MONTHLY_USD, 100),
   ),
   nearLimitThreshold: toNumber(process.env.CHAT_NEAR_LIMIT_THRESHOLD, 0.8),
-
-  // ─── Token Optimization Flags ────────────────────────────────────
-  // Defaults are cost-optimized. Set to true for premium/higher quality.
-
-  /** Use LLM for Sabbath/Review days (default: false = deterministic templates) */
-  generativeSabbathReview: toBool(process.env.GENERATIVE_SABBATH_REVIEW, false),
-
-  /** Use LLM for intent parsing (default: false = deterministic keyword parser) */
-  llmIntentParsing: toBool(process.env.LLM_INTENT_PARSING, false),
-
-  /** Use LLM doc reranking in polishing (default: false = keyword ordering) */
-  llmDocReranking: toBool(process.env.LLM_DOC_RERANKING, false),
-
-  /** Max reference chunks per devotional day (default: 4, was 6-12) */
-  maxReferenceChunksPerDay: Math.max(
-    2,
-    Math.round(toNumber(process.env.MAX_REFERENCE_CHUNKS_PER_DAY, 4)),
-  ),
-
-  /** Max characters per reference chunk in LLM context (default: 1200) */
-  maxChunkCharsInContext: Math.max(
-    400,
-    Math.round(toNumber(process.env.MAX_CHUNK_CHARS_IN_CONTEXT, 1200)),
-  ),
 }

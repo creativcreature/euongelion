@@ -183,12 +183,18 @@ export default function DevotionalPageClient({
     const explicit =
       SITE_DEVOTIONAL_ART[slug] ?? DEVOTIONAL_ARTWORKS[slug] ?? []
     if (explicit.length > 0) return explicit
+    // F-083 page-cleanup 2026-07-27: a day whose modules carry their own
+    // inline-image artwork must NOT fall back to the series hero — that
+    // rendered the hero a second time right under the headline (founder:
+    // "same image twice"). The fallback stays for days with no art at
+    // all (e.g. Bible-365).
+    if (modules?.some((m) => m.type === 'inline-image')) return []
     if (seriesSlug) {
       const seriesHero = getSeriesHero(seriesSlug)
       if (seriesHero) return [seriesHero]
     }
     return []
-  }, [slug, seriesSlug])
+  }, [slug, seriesSlug, modules])
   const lightbox = useLightbox(artworks)
 
   // Calculate where to insert artwork between content sections
@@ -270,17 +276,6 @@ export default function DevotionalPageClient({
     }
     return []
   }, [devotional, modules, panels])
-
-  // Headline hero source: prefer the series hero (already the
-  // canonical "what this series looks like" image). Falls back to
-  // the first available artwork if a series has none.
-  const headlineImage = useMemo(() => {
-    if (seriesSlug) {
-      const seriesHero = getSeriesHero(seriesSlug)
-      if (seriesHero) return seriesHero
-    }
-    return artworks[0] ?? null
-  }, [seriesSlug, artworks])
 
   useEffect(() => {
     setIsCompleted(isRead(slug))
@@ -510,37 +505,20 @@ export default function DevotionalPageClient({
             </figure>
           )}
 
+          {/* F-083 page-cleanup 2026-07-27 (founder): this header used to
+              render scripture chip + DAY N OF M + h1 + teaser — all of it
+              duplicated by the folio, the headline hero, and the first
+              scripture module. Slimmed to the action row only. */}
           <header
-            className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-6"
+            className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-4"
             style={{ borderColor: 'var(--color-border)' }}
           >
-            <div className="mb-3 flex flex-wrap items-center gap-3">
-              {devotional.scriptureReference && (
-                <p className="text-label vw-small text-gold">
-                  {devotional.scriptureReference}
-                </p>
-              )}
-              {totalDays > 0 && (
-                <p className="text-label vw-small text-muted oldstyle-nums">
-                  DAY {currentDayNum} OF {totalDays}
-                </p>
-              )}
-            </div>
-            <h1 className="vw-heading-md mb-3">
-              {typographer(devotional.title)}
-            </h1>
-            {devotional.teaser && (
-              <p className="vw-body text-secondary">
-                {typographer(devotional.teaser)}
-              </p>
-            )}
-
             {/* R37: action row aligned on baseline. ShareButton
                 renders with an SVG icon that breaks items-center
                 alignment with plain text links. items-baseline +
                 a uniform leading-none on each action keeps all
                 three buttons sharing the same text baseline. */}
-            <div className="devotional-action-row mt-5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+            <div className="devotional-action-row flex flex-wrap items-baseline gap-x-5 gap-y-2">
               <Link
                 href={
                   seriesSlug
@@ -581,7 +559,12 @@ export default function DevotionalPageClient({
               (founder feedback). Now the sidebar is hidden by default
               on every viewport and reveals as a drawer when the
               reader taps the pill. */}
-          {seriesDays && seriesDays.length > 0 && (
+          {/* F-083 page-cleanup 2026-07-27 (founder): the series
+              day-index reads as a table of contents on short series —
+              removed there (the series page lists the days; prev/next
+              handles flow). Long plans (Bible-365) keep it: 365 days
+              genuinely need an index. */}
+          {seriesDays && seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
             <button
               type="button"
               className="devotional-day-nav-pill"
@@ -613,76 +596,77 @@ export default function DevotionalPageClient({
                 className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
                 style={{ borderColor: 'var(--color-border)' }}
               >
-                {seriesDays && seriesDays.length > 0 && (
-                  <>
-                    <p className="text-label vw-small mb-3 text-gold">
-                      IN THIS SERIES
-                    </p>
-                    {seriesDays.length > LONG_SERIES_DAY_THRESHOLD ? (
-                      // Long plan (e.g. Bible-365): a flat list would be a
-                      // 365-item wall. Render a grouped, jump-able month
-                      // accordion instead. Locking behavior is preserved
-                      // per-day inside the component.
-                      <LongSeriesDayIndex
-                        days={seriesDays}
-                        currentSlug={slug}
-                        routePrefix={devotionalRoutePrefix}
-                        canRead={canRead}
-                      />
-                    ) : (
-                      <div className="mb-5 grid gap-2">
-                        {seriesDays.map((day) => {
-                          const check = canRead(day.slug)
-                          const isLocked = !check.canRead && day.slug !== slug
-                          const isCurrent = day.slug === slug
+                {seriesDays &&
+                  seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
+                    <>
+                      <p className="text-label vw-small mb-3 text-gold">
+                        IN THIS SERIES
+                      </p>
+                      {seriesDays.length > LONG_SERIES_DAY_THRESHOLD ? (
+                        // Long plan (e.g. Bible-365): a flat list would be a
+                        // 365-item wall. Render a grouped, jump-able month
+                        // accordion instead. Locking behavior is preserved
+                        // per-day inside the component.
+                        <LongSeriesDayIndex
+                          days={seriesDays}
+                          currentSlug={slug}
+                          routePrefix={devotionalRoutePrefix}
+                          canRead={canRead}
+                        />
+                      ) : (
+                        <div className="mb-5 grid gap-2">
+                          {seriesDays.map((day) => {
+                            const check = canRead(day.slug)
+                            const isLocked = !check.canRead && day.slug !== slug
+                            const isCurrent = day.slug === slug
 
-                          if (isLocked) {
+                            if (isLocked) {
+                              return (
+                                <div
+                                  key={day.slug}
+                                  className="border px-3 py-2"
+                                  style={{
+                                    borderColor: 'var(--color-border)',
+                                    opacity: 0.58,
+                                  }}
+                                >
+                                  <p className="text-label vw-small text-gold">
+                                    DAY {day.day} • LOCKED
+                                  </p>
+                                  <p className="vw-small text-secondary">
+                                    {day.title}
+                                  </p>
+                                </div>
+                              )
+                            }
+
                             return (
-                              <div
+                              <Link
                                 key={day.slug}
-                                className="border px-3 py-2"
+                                href={`${devotionalRoutePrefix}/${day.slug}`}
+                                className="block border px-3 py-2"
                                 style={{
-                                  borderColor: 'var(--color-border)',
-                                  opacity: 0.58,
+                                  borderColor: isCurrent
+                                    ? 'var(--color-border-strong)'
+                                    : 'var(--color-border)',
+                                  background: isCurrent
+                                    ? 'var(--color-active)'
+                                    : 'transparent',
                                 }}
                               >
                                 <p className="text-label vw-small text-gold">
-                                  DAY {day.day} • LOCKED
+                                  DAY {day.day}
                                 </p>
                                 <p className="vw-small text-secondary">
                                   {day.title}
                                 </p>
-                              </div>
+                              </Link>
                             )
-                          }
-
-                          return (
-                            <Link
-                              key={day.slug}
-                              href={`${devotionalRoutePrefix}/${day.slug}`}
-                              className="block border px-3 py-2"
-                              style={{
-                                borderColor: isCurrent
-                                  ? 'var(--color-border-strong)'
-                                  : 'var(--color-border)',
-                                background: isCurrent
-                                  ? 'var(--color-active)'
-                                  : 'transparent',
-                              }}
-                            >
-                              <p className="text-label vw-small text-gold">
-                                DAY {day.day}
-                              </p>
-                              <p className="vw-small text-secondary">
-                                {day.title}
-                              </p>
-                            </Link>
-                          )
-                        })}
-                      </div>
-                    )}
-                  </>
-                )}
+                          })}
+                        </div>
+                      )}
+                    </>
+                  )}
 
                 {timelineAnchors.length > 0 && (
                   <div
@@ -805,22 +789,18 @@ export default function DevotionalPageClient({
                       the featured-devotional 2/3-image + 1/3-text layout
                       at the top of every devotional page. Scale back:
                       delete this block. */}
-                  {headlineImage && devotional && (
+                  {/* F-083 page-cleanup 2026-07-27 (founder): THE single
+                      hero + title render. The duplicate title in the legacy
+                      header above and the rhythm layer's second copy of the
+                      series hero are both removed; eyebrow/scripture are
+                      omitted (folio above + first scripture module below
+                      already carry them). */}
+                  {devotional && (
                     <DevotionalHeadline
-                      imageSrc={headlineImage.src}
-                      imageAlt={headlineImage.title || devotional.title}
-                      eyebrow={
-                        seriesSlug && SERIES_DATA[seriesSlug]
-                          ? `${SERIES_DATA[seriesSlug].title} · ${
-                              seriesDays?.length ?? '?'
-                            } Days`
-                          : undefined
+                      imageSrc={
+                        seriesSlug ? getSeriesHero(seriesSlug)?.src : undefined
                       }
-                      scripture={
-                        // First Scripture module's reference, if any
-                        modules?.find((m) => m.type === 'scripture')
-                          ?.reference ?? undefined
-                      }
+                      imageAlt={`Illustration accompanying ${devotional.title}`}
                       title={devotional.title}
                     />
                   )}

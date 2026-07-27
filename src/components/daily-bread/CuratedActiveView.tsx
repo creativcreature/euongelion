@@ -125,18 +125,9 @@ export default function CuratedActiveView({
       })),
     [computedDayArtworks],
   )
-  const computedHeadlineImage = useMemo(() => {
-    const seriesHero = getSeriesHero(seriesSlug)
-    return seriesHero ?? computedDayArtworks[0] ?? null
-  }, [seriesSlug, computedDayArtworks])
   const computedModules = (
     devotional as (Devotional & { modules?: Module[] }) | null
   )?.modules
-  const modulesScripture = useMemo(() => {
-    if (!computedModules) return undefined
-    const scriptureMod = computedModules.find((m) => m.type === 'scripture')
-    return scriptureMod?.reference ?? undefined
-  }, [computedModules])
 
   useEffect(() => {
     if (!day) return
@@ -225,9 +216,7 @@ export default function CuratedActiveView({
   const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
     ?.modules
   const panels = devotional?.panels
-  const headlineScripture = modulesScripture
   const rhythmImages = computedRhythmImages
-  const headlineImage = computedHeadlineImage
 
   return (
     <section className="curated-active-view" aria-label="Today's devotional">
@@ -362,20 +351,10 @@ export default function CuratedActiveView({
             />
           )}
 
-          {/* Headline hero — homepage-style 2/3 image + 1/3 text. */}
-          {headlineImage && (
-            <DevotionalHeadline
-              imageSrc={headlineImage.src}
-              imageAlt={headlineImage.title || devotional.title}
-              eyebrow={
-                series
-                  ? `${series.title} · ${series.days.length} Days`
-                  : undefined
-              }
-              scripture={headlineScripture}
-              title={devotional.title}
-            />
-          )}
+          {/* F-083 page-cleanup 2026-07-27 (founder): title-only —
+              the active-series panel above already names the series and
+              the day's own inline artwork carries the visual. */}
+          <DevotionalHeadline title={devotional.title} />
 
           {/* Rhythm reader — text-left / image-right alternating chapter
               blocks, same as the dedicated reader. */}

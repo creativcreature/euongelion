@@ -84,7 +84,8 @@ contracts:
     - src/app/api/annotations/route.ts
     - src/app/api/bookmarks/route.ts
     - src/lib/soul-audit/curated-builder.ts
-    - src/lib/soul-audit/composer.ts
+    - src/lib/soul-audit/generation-runner.ts
+    - src/lib/soul-audit/curated-builder.ts
     - src/lib/soul-audit/ingredient-selector.ts
     - src/lib/soul-audit/reference-retriever.ts
     - src/lib/soul-audit/schedule.ts

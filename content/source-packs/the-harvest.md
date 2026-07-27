@@ -189,3 +189,20 @@ Sources: gutenberg.org/ebooks/2056 (Smith); archive.org/details/memoirofwilliamc
 - Jesus says "the field is the WORLD" (v.38) — not the church. Historical misuses run both directions: (a) reading it as forbidding all discipline/discernment (everything tolerated), (b) reading around it to justify purging people (inquisitions, purity crusades — the exact thing v.29 forbids). The week names both, keeps church discipline (Matt 18) distinct from eschatological uprooting, and lets Augustine's Donatist-era usage (pending §5) carry the historical weight.
 - Darnel realism: indistinguishable from wheat until the ear forms — the parable assumes WE CANNOT RELIABLY TELL. Every application must keep this epistemic humility.
 - The fire is in the text (v.42) — do not soften it; do not relish it. Judgment is real, dated, and God's; the tone is Jesus' own: warning plus the immediate pivot to the shining.
+
+---
+
+## §2 ADDENDUM (v3 re-angle, 2026-07-27) — corpus-verbatim additions
+
+**Luke 23:39-43 (BSB, verified against public/bibles/BSB/LUK.json 2026-07-27):**
+39 "One of the criminals who hung there heaped abuse on Him. “Are You not the Christ?” he said. “Save Yourself and us!”"
+40 "But the other one rebuked him, saying, “Do you not even fear God, since you are under the same judgment?"
+41 "We are punished justly, for we are receiving what our actions deserve. But this man has done nothing wrong.”"
+42 "Then he said, “Jesus, remember me when You come into Your kingdom!”"
+43 "And Jesus said to him, “Truly I tell you, today you will be with Me in Paradise.”"
+
+Usage note: the thief on the cross is the canonical Scriptural case of a
+life that looked like weed until nearly its final breath being harvested
+as wheat — no time to bear visible fruit, saved entirely at the end. It
+carries the v3 spine's "full life lived to judgment / the harvest is
+never called early" point in verifiable form. Quote BSB verbatim only.

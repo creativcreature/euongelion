@@ -173,3 +173,27 @@ Sources, scripture, lexicon, videos, imagery all UNCHANGED (they were verified
 and they serve the new spine). Prose re-aimed day-by-day per
 scratchpad/harvest-reangle-brief.md; series question/introduction/context/
 keywords and the homepage feature teaser re-aimed in the same pass.
+
+---
+
+## FOUNDER RE-ANGLE RULING v3 (2026-07-27, same day)
+
+Founder verdict on v2: still off. His center (his words, distilled):
+evangelism; harvesting; PATIENCE; "a full life lived to judgment"; a man who
+looked lost most of his life and accepted Jesus right before passing; his own
+brother — and many in the world — in denial of God, "and God has enduring
+patience that they may one day turn. This is the angle for the devotional I
+seek."
+
+v3 spine (recenters v2, keeps its gains): (1) God's enduring patience with
+the not-yet-turned — the sickle waits FOR people, 2 Peter 3:9 load-bearing;
+(2) a full life runs to judgment and the harvest is never called early — the
+thief on the cross (Luke 23:39-43 BSB, pack §2 addendum) is the canonical
+last-breath harvest, Newton the historical case; (3) patient witness with
+unkillable hope toward the loved one who denies Christ. No private/founder
+stories in content — Scripture and verified history carry them; reflections
+address the reader's "someone you love" generically.
+
+Same pass (page): single hero+title at the top of day pages (legacy header
+slimmed to actions; rhythm layer no longer re-renders the series hero on
+days with inline artwork); series day-index drawer removed for short series.

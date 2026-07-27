@@ -19,8 +19,29 @@ import type { ArtworkEntry } from '@/data/artwork-manifest'
  * `src/data/series.ts`) is the canonical fallback poster image.
  */
 export function getSeriesHero(slug: string): ArtworkEntry | undefined {
-  // R37: substack-sourced series take their hero from the original
-  // substack post (cached locally). Look up Day 1 of the series.
+  // F-083 audit fix 2026-07-27: the riso `series.heroImage` (set on
+  // every series) now BEATS the legacy Substack cover photo. R37's
+  // substack-first order shipped real photographs onto series cards
+  // and the Daily Bread hero — forbidden by the image rules (CLAUDE.md
+  // hard rule #4) once riso art existed for all series.
+  const risoHero = SERIES_DATA[slug]?.heroImage
+  if (risoHero) {
+    return {
+      slug: `${slug}-hero`,
+      title: SERIES_DATA[slug]?.title ?? slug,
+      artist: 'Euangelion riso series art',
+      year: '',
+      medium: 'risograph poster',
+      museum: '',
+      license: 'Original',
+      printStyle: 'riso-duotone',
+      src: risoHero,
+      rawSrc: risoHero,
+      relevance: '',
+    }
+  }
+
+  // Legacy fallback for any series without riso art.
   const firstDay = SUBSTACK_SOURCES[`${slug}-day-1`]
   if (firstDay && (firstDay.substackImageLocal || firstDay.substackImage)) {
     const src = firstDay.substackImageLocal || firstDay.substackImage!

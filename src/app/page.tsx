@@ -36,7 +36,7 @@ const HOMEPAGE_TODAY = {
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    "An enemy sowed weeds through the wheat by night, and the servants asked the obvious question: should we pull them up? Seven days inside Jesus' parable of the mixed field — why you cannot tell who is wheat yet, why the verdict can wait, and why the field is the world you are sent into.",
+    "An enemy sowed weeds through the wheat by night, and the servants asked to pull them up. The Master said no — a life's harvest is never called early. Seven days on God's enduring patience with those who have not yet turned, the witness He plants beside them, and the thief whose story turned with its final breath.",
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured

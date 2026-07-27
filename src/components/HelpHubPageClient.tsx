@@ -99,12 +99,6 @@ export default function HelpHubPageClient() {
             <p className="text-label vw-small mb-3 text-gold">WALKTHROUGH</p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
-                href="/daily-bread?tutorial=1"
-                className="mock-btn text-label"
-              >
-                REPLAY DAILY BREAD TUTORIAL
-              </Link>
-              <Link
                 href="/settings#tutorial"
                 className="text-label vw-small link-highlight"
               >

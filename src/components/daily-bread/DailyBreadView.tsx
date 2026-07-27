@@ -1058,6 +1058,29 @@ export default function DailyBreadView({
     }
   }, [completing, isCompleted, dayRecord, plan.plan_token, selectedDay])
 
+  // Two-step arm/confirm instead of a native confirm() dialog.
+  const [clearPlanArmed, setClearPlanArmed] = useState(false)
+  const [clearingPlan, setClearingPlan] = useState(false)
+  const handleClearPlan = useCallback(async () => {
+    if (clearingPlan) return
+    if (!clearPlanArmed) {
+      setClearPlanArmed(true)
+      return
+    }
+    setClearingPlan(true)
+    try {
+      const res = await fetch('/api/soul-audit/manage', { method: 'POST' })
+      if (res.ok) {
+        window.location.assign('/daily-bread')
+        return
+      }
+    } catch {
+      // fall through to re-enable the button
+    }
+    setClearingPlan(false)
+    setClearPlanArmed(false)
+  }, [clearingPlan, clearPlanArmed])
+
   return (
     <div className="mx-auto max-w-2xl px-5 py-8">
       {/* Plan header */}
@@ -1083,6 +1106,30 @@ export default function DailyBreadView({
             {whyThis}
           </p>
         )}
+        {/* F-083 (2026-07-27): stale-plan escape hatch. A Soul Audit
+            plan rides a long-lived session cookie, so a months-old plan
+            can keep resurfacing here with no way to dismiss it. This
+            clears the session's audit state (POST /api/soul-audit/manage
+            with action:reset) and reloads. */}
+        <p className="vw-small mt-3">
+          <button
+            type="button"
+            className="link-highlight text-label vw-small"
+            disabled={clearingPlan}
+            onClick={handleClearPlan}
+            data-testid="daily-bread-clear-plan"
+          >
+            {clearingPlan
+              ? 'CLEARING…'
+              : clearPlanArmed
+                ? 'SURE? TAP AGAIN TO CLEAR'
+                : 'NOT READING THIS? CLEAR IT'}
+          </button>
+          <span aria-hidden="true"> · </span>
+          <Link href="/library" className="link-highlight text-label vw-small">
+            PICK A DEVOTIONAL IN THE LIBRARY
+          </Link>
+        </p>
       </header>
 
       {/* Day selector — explicit past/now/next/locked/rest progression chips */}

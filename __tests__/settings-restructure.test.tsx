@@ -176,15 +176,15 @@ describe('settings restructure (F-073)', () => {
     expect(screen.getByText(/reduce motion/i)).toBeTruthy()
     expect(screen.getByText(/high contrast mode/i)).toBeTruthy()
     expect(screen.getByText(/reading comfort mode/i)).toBeTruthy()
-    // READING — translation, sabbath, pace, depth.
+    // READING — translation + depth. (F-083 settings cleanup
+    // 2026-07-27: SABBATH DAY and READING PACE were removed — both
+    // promised unlock behavior that founder-disabled day-gating no
+    // longer delivers anywhere a reader can see.)
     expect(
       screen.getByRole('combobox', { name: /default bible translation/i }),
     ).toBeTruthy()
-    expect(screen.getByRole('button', { name: 'Saturday' })).toBeTruthy()
-    expect(screen.getByRole('button', { name: 'Sunday' })).toBeTruthy()
-    expect(
-      screen.getByRole('button', { name: /daily rhythm: on/i }),
-    ).toBeTruthy()
+    expect(screen.queryByRole('button', { name: 'Saturday' })).toBeNull()
+    expect(screen.queryByRole('button', { name: /daily rhythm/i })).toBeNull()
     for (const label of ['5-7 min', '20-30 min', '45-60 min', 'Variable']) {
       expect(screen.getByRole('button', { name: label })).toBeTruthy()
     }
@@ -236,30 +236,30 @@ describe('settings restructure (F-073)', () => {
       screen.getByRole('link', { name: /view usage \+ quota details/i }),
     ).toBeTruthy()
 
-    // DATA & PRIVACY — mode, analytics, capabilities, retention, exports,
-    // account-data gate, chat history.
-    expect(
-      screen.getByRole('button', { name: 'Anonymous (Default)' }),
-    ).toBeTruthy()
-    expect(screen.getByRole('button', { name: 'Mock Account' })).toBeTruthy()
+    // DATA & PRIVACY — analytics, retention, account-data gate, chat
+    // history. (F-083 settings cleanup 2026-07-27: the pre-real-auth
+    // "Mock Account" mode toggle, CAPABILITIES list, and mock export
+    // were retired from the UI by founder order.)
     expect(screen.getByText(/optional analytics opt-in/i)).toBeTruthy()
-    expect(screen.getByText('CAPABILITIES')).toBeTruthy()
     expect(
       screen.getByText(/retention — what we store, and for how long/i),
     ).toBeTruthy()
     expect(
       screen.getByRole('link', { name: /full retention & privacy policy/i }),
     ).toBeTruthy()
+    expect(screen.queryByRole('button', { name: 'Mock Account' })).toBeNull()
     expect(
-      screen.getByRole('button', { name: /export mock account data/i }),
-    ).toBeTruthy()
+      screen.queryByRole('button', { name: /export mock account data/i }),
+    ).toBeNull()
     expect(screen.getByText(/sign in to use these controls\./i)).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Export' })).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Clear History' })).toBeTruthy()
 
     // ABOUT — walkthrough replays + help + document links.
     expect(screen.getByRole('link', { name: 'REPLAY ONBOARDING' })).toBeTruthy()
-    expect(screen.getByRole('link', { name: 'REPLAY TUTORIAL' })).toBeTruthy()
+    // F-083: REPLAY TUTORIAL removed — its ?tutorial=1 param had no
+    // consumer anywhere; the button was a no-op.
+    expect(screen.queryByRole('link', { name: 'REPLAY TUTORIAL' })).toBeNull()
     expect(screen.getByRole('link', { name: /open help faq/i })).toBeTruthy()
     expect(screen.getByRole('link', { name: /how we write/i })).toHaveAttribute(
       'href',

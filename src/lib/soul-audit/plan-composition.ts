@@ -24,7 +24,7 @@ export function composeRecap(
     title: 'Week in Review',
     hookA: `This week you explored "${planTheme}." Here's what God revealed.`,
     textB,
-    textBPreview: `A reflection on your five-day journey through ${planTheme}.`,
+    textBPreview: `A reflection on your week's journey through ${planTheme}.`,
     centerC: '',
     christConnectionBPrime: '',
     returnAPrime:
@@ -57,7 +57,7 @@ export function composeRecap(
 export const SABBATH_DAY: DayContent = {
   title: 'Sabbath Rest',
   hookA:
-    'Today is Sabbath. No new content. Just rest.\n\nYou spent five days in the Word and one in review. Now be still.',
+    'Today is Sabbath. No new content. Just rest.\n\nYou have spent this week in the Word and in review. Now be still.',
   textB:
     '"Be still, and know that I am God; I will be exalted among the nations." — Psalm 46:10',
   textBPreview: 'Be still, and know that I am God. — Psalm 46:10',
@@ -74,7 +74,7 @@ export const SABBATH_DAY: DayContent = {
   },
   metaStoryPlacement: '',
   backwardLink:
-    'This week you walked through five days of devotion and one of review.',
+    'This week you walked through days of devotion and a day of review.',
   forwardLink: '',
   reflectionQuestions: [
     'What moment from this week do you most want to carry into the next?',

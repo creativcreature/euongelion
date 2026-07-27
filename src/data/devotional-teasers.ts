@@ -891,19 +891,19 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'the-blueprint-of-community-day-5':
     'The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness',
   'the-harvest-day-1':
-    "The Sower did everything right. The field still came up mixed — and until the heads form, nobody can tell wheat from weeds. Jesus' hardest story about the world begins with everyone asleep.",
+    "The Sower did everything right. The field still came up mixed — and until the heads form, nobody can tell wheat from weeds. Not the stalks, and not the people you love. Jesus' hardest story about the world begins with everyone asleep.",
   'the-harvest-day-2':
-    "The servants got the diagnosis exactly right and the verdict exactly early. Nobody can tell wheat from weeds mid-season — and the Master's No uses the same verb as 'forgive.'",
+    "The servants got the diagnosis exactly right and the verdict exactly early. Nobody can tell wheat from weeds mid-season — least of all in the life you love and grieve — and the Master's No uses the same verb as 'forgive.'",
   'the-harvest-day-3':
-    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — and the good seed turns out to be people, sown across a field the size of the world.',
+    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — the field is the world, the seed is people — and the waiting sickle turns out to be patience for everyone who has not yet turned. Perhaps for someone you love.',
   'the-harvest-day-4':
-    "The sickle is off the table. So what fills a fieldhand's day? Water for every row, a word for every row, a verdict for none — the sun has been modeling it since dawn.",
+    "The sickle is off the table — and someone you love is still standing in the rows. So what fills a fieldhand's day while God waits? Water, witness, prayer, and a chair that stays at the table — the sun has been modeling it since dawn.",
   'the-harvest-day-5':
-    "The week ends on the parable's last surprise: identities are harvest-day information — and Daniel promises the stars to those who lead many to righteousness.",
+    "The week ends on the parable's last surprise: no harvest is called early — a criminal gathered at his final breath, stars promised to those who lead many home, and a door still open for the one you love.",
   'the-harvest-day-6':
-    'Five days inside one parable. Today: the whole field at a glance, and everything you need to keep studying it on your own.',
+    "Five days inside one parable. Today: the whole field at a glance — God's patience at its center, the person you love still inside it — and everything you need to keep studying it on your own.",
   'the-harvest-day-7':
-    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. The seed you scattered this week grows the same way. Today, be the sleeping farmer.',
+    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. The one you have been praying for all week grows the same way — by a power that is not yours. Today, be the sleeping farmer.',
   'the-nature-of-belief-day-1':
     'Understanding that trials produce perseverance and lead to spiritual maturity',
   'the-nature-of-belief-day-2':

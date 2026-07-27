@@ -7439,6 +7439,11 @@ html.reduce-motion *::after {
   border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
   background: var(--color-bg, var(--mock-paper, white));
 }
+/* F-083 page-cleanup 2026-07-27: text-only headline (no repeated
+   series hero at the top of day pages) collapses to one column. */
+.devotional-headline--textonly {
+  grid-template-columns: 1fr;
+}
 .devotional-headline-art {
   position: relative;
   width: 100%;

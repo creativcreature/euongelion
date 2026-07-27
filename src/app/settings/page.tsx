@@ -43,7 +43,6 @@ import {
 import { retentionClarityRows } from '@/lib/privacy/retention'
 
 type Theme = 'dark' | 'light' | 'system'
-type SabbathDay = 'saturday' | 'sunday'
 type BibleTranslation = BibleTranslationCode
 type TextScale = 'default' | 'large' | 'xlarge'
 type BrainMode = 'auto' | 'openai' | 'google' | 'minimax' | 'nvidia_kimi'
@@ -146,7 +145,6 @@ export default function SettingsPage() {
   const { theme, setTheme } = useUIStore()
   const {
     bibleTranslation,
-    sabbathDay,
     defaultBrainMode,
     openWebDefaultEnabled,
     devotionalDepthPreference,
@@ -162,7 +160,6 @@ export default function SettingsPage() {
     highContrast,
     readingComfort,
     setBibleTranslation,
-    setSabbathDay,
     setDefaultBrainMode,
     setOpenWebDefaultEnabled,
     setDevotionalDepthPreference,
@@ -208,14 +205,12 @@ export default function SettingsPage() {
   >(null)
   const [privacyMode, setPrivacyMode] = useState<MockMode>('anonymous')
   const [privacyAnalyticsOptIn, setPrivacyAnalyticsOptIn] = useState(false)
-  const [privacyCapabilities, setPrivacyCapabilities] = useState<string[]>([])
   const [privacyRetention, setPrivacyRetention] =
     useState<MockRetention | null>(null)
   const [privacyRetentionSummary, setPrivacyRetentionSummary] = useState<
     Record<string, string>
   >({})
   const [privacyBusy, setPrivacyBusy] = useState(false)
-  const [privacyExportBusy, setPrivacyExportBusy] = useState(false)
   const [privacyMessage, setPrivacyMessage] = useState<string | null>(null)
   const [privacyError, setPrivacyError] = useState<string | null>(null)
   // Account-data section: real signed-in user export + delete (Phase 7
@@ -319,9 +314,6 @@ export default function SettingsPage() {
         payload.mode === 'mock_account' ? 'mock_account' : 'anonymous',
       )
       setPrivacyAnalyticsOptIn(Boolean(payload.analyticsOptIn))
-      setPrivacyCapabilities(
-        Array.isArray(payload.capabilities) ? payload.capabilities : [],
-      )
       setPrivacyRetention(payload.retention ?? null)
       setPrivacyRetentionSummary(payload.retentionSummary ?? {})
     } catch (error) {
@@ -378,9 +370,6 @@ export default function SettingsPage() {
         payload.mode === 'mock_account' ? 'mock_account' : 'anonymous',
       )
       setPrivacyAnalyticsOptIn(Boolean(payload.analyticsOptIn))
-      setPrivacyCapabilities(
-        Array.isArray(payload.capabilities) ? payload.capabilities : [],
-      )
       setPrivacyRetention(payload.retention ?? null)
       setPrivacyRetentionSummary(payload.retentionSummary ?? {})
       setPrivacyMessage('Privacy preferences saved.')
@@ -393,53 +382,6 @@ export default function SettingsPage() {
       )
     } finally {
       setPrivacyBusy(false)
-    }
-  }
-
-  async function exportMockAccountData() {
-    setPrivacyExportBusy(true)
-    setPrivacyError(null)
-    setPrivacyMessage(null)
-
-    try {
-      const response = await fetch('/api/mock-account/export', {
-        cache: 'no-store',
-      })
-      const payload = (await response.json()) as MockExportResponse
-      if (!response.ok) {
-        throw new Error(payload.error || 'Unable to export data.')
-      }
-
-      // Trust the server's explicit completeness flag — never hand the
-      // user a file the API itself flagged as partial. NO SILENT FALLBACK.
-      if (payload.completeness && payload.completeness.complete === false) {
-        throw new Error(
-          'Your export was incomplete and was not downloaded. Please retry.',
-        )
-      }
-
-      const blob = new Blob([JSON.stringify(payload, null, 2)], {
-        type: 'application/json',
-      })
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `euangelion-mock-account-export-${new Date()
-        .toISOString()
-        .slice(0, 10)}.json`
-      a.click()
-      URL.revokeObjectURL(url)
-      setPrivacyMessage(
-        payload.schemaVersion
-          ? `Mock account export downloaded (schema ${payload.schemaVersion}).`
-          : 'Mock account export downloaded.',
-      )
-    } catch (error) {
-      setPrivacyError(
-        error instanceof Error ? error.message : 'Unable to export data.',
-      )
-    } finally {
-      setPrivacyExportBusy(false)
     }
   }
 
@@ -1123,55 +1065,6 @@ export default function SettingsPage() {
 
               <CardSection>
                 <h3 className="text-label vw-small mb-4 text-gold">
-                  SABBATH DAY
-                </h3>
-                <p className="vw-small mb-6 text-secondary">
-                  No new content unlocks on your Sabbath. Rest is sacred.
-                </p>
-                <div className="flex gap-4">
-                  {(['saturday', 'sunday'] as SabbathDay[]).map((day) => (
-                    <button
-                      type="button"
-                      key={day}
-                      onClick={() => {
-                        setSabbathDay(day)
-                        showSaved()
-                      }}
-                      aria-pressed={sabbathDay === day}
-                      className="px-6 py-3 text-label vw-small transition-theme"
-                      style={selectedButtonStyle(sabbathDay === day)}
-                    >
-                      {day.charAt(0).toUpperCase() + day.slice(1)}
-                    </button>
-                  ))}
-                </div>
-              </CardSection>
-
-              <CardSection>
-                <h3 className="text-label vw-small mb-4 text-gold">
-                  READING PACE
-                </h3>
-                <p className="vw-small mb-6 text-secondary">
-                  By default, a new day of your reading plan unlocks each
-                  morning — a steady daily rhythm. Prefer to move at your own
-                  pace? Turn this off to open every available day at once.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setDayLockingEnabled(!dayLockingEnabled)
-                    showSaved()
-                  }}
-                  aria-pressed={dayLockingEnabled}
-                  className="text-label vw-small px-6 py-3 transition-theme"
-                  style={selectedButtonStyle(dayLockingEnabled)}
-                >
-                  Daily rhythm: {dayLockingEnabled ? 'On' : 'Off'}
-                </button>
-              </CardSection>
-
-              <CardSection>
-                <h3 className="text-label vw-small mb-4 text-gold">
                   DEVOTIONAL DEPTH
                 </h3>
                 <p className="vw-small mb-5 text-secondary">
@@ -1626,34 +1519,11 @@ export default function SettingsPage() {
             {/* DATA & PRIVACY ------------------------------------------- */}
             <SettingsCard id="data-privacy" title="DATA & PRIVACY">
               <CardSection first>
-                <p className="vw-small mb-6 text-secondary">
-                  Anonymous mode is default. Switch to mock account mode to
-                  enable full save features and export.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  {(['anonymous', 'mock_account'] as MockMode[]).map((mode) => (
-                    <button
-                      type="button"
-                      key={mode}
-                      onClick={() =>
-                        void savePrivacySession({
-                          mode,
-                          analyticsOptIn: privacyAnalyticsOptIn,
-                        })
-                      }
-                      disabled={privacyBusy || privacyExportBusy}
-                      aria-pressed={privacyMode === mode}
-                      className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-40"
-                      style={selectedButtonStyle(privacyMode === mode)}
-                    >
-                      {mode === 'anonymous'
-                        ? 'Anonymous (Default)'
-                        : 'Mock Account'}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-4">
+                {/* F-083 settings cleanup 2026-07-27 (founder): the
+                    "Mock Account" mode toggle, capabilities list, and
+                    mock export predate real auth — retired from the UI.
+                    Real export/delete live in YOUR ACCOUNT DATA below. */}
+                <div className="mt-1">
                   <label className="flex items-start gap-3">
                     <input
                       type="checkbox"
@@ -1666,24 +1536,12 @@ export default function SettingsPage() {
                           analyticsOptIn: next,
                         })
                       }}
-                      disabled={privacyBusy || privacyExportBusy}
+                      disabled={privacyBusy}
                     />
                     <span className="vw-small text-secondary">
-                      Optional analytics opt-in (default OFF). Required for
-                      mock-account export.
+                      Optional analytics opt-in (default OFF).
                     </span>
                   </label>
-                </div>
-
-                <div className="mt-5">
-                  <p className="text-label vw-small mb-2 text-gold">
-                    CAPABILITIES
-                  </p>
-                  <p className="vw-small text-secondary">
-                    {privacyCapabilities.length > 0
-                      ? privacyCapabilities.join(', ')
-                      : 'bookmarks, resume'}
-                  </p>
                 </div>
 
                 <div className="mt-5 grid gap-3">
@@ -1729,33 +1587,6 @@ export default function SettingsPage() {
                   >
                     Full retention &amp; privacy policy
                   </Link>
-                </div>
-
-                <div className="mt-5 flex flex-wrap items-center gap-4">
-                  <button
-                    type="button"
-                    onClick={() => void exportMockAccountData()}
-                    disabled={
-                      privacyExportBusy ||
-                      privacyBusy ||
-                      privacyMode !== 'mock_account'
-                    }
-                    className="px-6 py-3 text-label vw-small transition-theme disabled:opacity-30"
-                    style={{
-                      backgroundColor: 'var(--color-surface)',
-                      border: '1px solid var(--color-border)',
-                      color: 'var(--color-text-secondary)',
-                    }}
-                  >
-                    {privacyExportBusy
-                      ? 'Exporting...'
-                      : 'Export Mock Account Data'}
-                  </button>
-                  {privacyMode !== 'mock_account' && (
-                    <p className="vw-small text-muted">
-                      Switch to mock account mode to enable export.
-                    </p>
-                  )}
                 </div>
 
                 {privacyError && (
@@ -2038,12 +1869,6 @@ export default function SettingsPage() {
                     className="mock-btn text-label"
                   >
                     REPLAY ONBOARDING
-                  </Link>
-                  <Link
-                    href="/daily-bread?tutorial=1"
-                    className="mock-btn text-label"
-                  >
-                    REPLAY TUTORIAL
                   </Link>
                   <Link
                     href="/help#faq"

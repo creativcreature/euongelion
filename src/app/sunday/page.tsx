@@ -423,7 +423,7 @@ export default async function SundayPage() {
               <p className="sunday-body-para type-prose">
                 Read the full devotional at{' '}
                 <Link
-                  href={`/wake-up/devotional/${entry.daySlug}`}
+                  href={`/devotional/${entry.daySlug}`}
                   className="sunday-inline-link"
                 >
                   {entry.seriesTitle}

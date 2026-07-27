@@ -5,6 +5,58 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT v3 + SITE CLEANUP — Harvest recentered; fine-tooth-comb pass 1 (2026-07-27)
+
+THE HARVEST v3 (SA-031/F-082): founder recentered the series again —
+the heart is now GOD'S ENDURING PATIENCE WITH THE NOT-YET-TURNED: a
+full life runs to judgment and the harvest is never called early; the
+thief on the cross (Luke 23:39-43 BSB, added to the source pack from
+the corpus) is the canonical last-breath turn beside Newton's long
+decades; every day now holds space for the reader's loved one who
+denies Christ, resting hope in 2 Peter 3:9 patience. Seven writer
+passes + editor re-review (refrain thinned to once per day, 2 Peter
+full-quote capped at twice weekly, 4 formula kills) -> READY;
+validator PASS x7. Series question/intro/context/keywords + homepage
+teaser recentered. No private stories — Scripture and verified
+history carry them.
+
+READER PAGE CLEANUP (founder: "same image twice, same title twice"):
+the day page now renders ONE hero + ONE title — legacy header slimmed
+to its action row (title/scripture/day chips were triplicated), the
+rhythm layer no longer re-renders the series hero on days that carry
+their own inline artwork, and the series day-index drawer is gone for
+short series (kept for Bible-365 where 365 days genuinely need an
+index). Same treatment on Daily Bread's active view.
+
+DAILY BREAD (F-083 continued): completion no longer fires at day 5 of
+a 7-day plan (Sabbath/Review were hidden behind CompletionState);
+sabbath-aware completion keyed to the schedule. Sign-out is now an
+unconditional local reset (auth + audit cookies cleared even when
+revocation fails) and the plan view gained a two-step "NOT READING
+THIS? CLEAR IT" escape hatch. Plan review/sabbath copy no longer says
+"five-day" on a seven-day arc.
+
+SITE AUDIT PASS 1 (4 parallel audits: settings, links, dead code,
+stale surfaces): series cards + Daily Bread hero now serve the RISO
+series art instead of legacy Substack photographs (hard image rule
+#4); settings retired the vestigial SABBATH DAY + READING PACE
+controls (day-gating founder-disabled since 2026-05-08), the
+pre-real-auth Mock Account mode/capabilities/export block, and the
+dead REPLAY TUTORIAL buttons (?tutorial=1 had no consumer); /sunday's
+reader CTA flipped to the canonical /devotional route; 23 verified
+dead files removed (composer/reranker/plan-orchestrator/
+metadata-plan-builder/ai-plan-to-reader legacy soul-audit pipeline,
+lib/illustrations, localStorage bookmarks helpers, unwired auth
+rate-limiter, brain/dedupe, duplicate soul-audit archive route, 9
+orphan components incl. the typography/DropCap duplicate) + 7 dead
+brain flags; settings-restructure test updated to the founder-approved
+control set. Deferred-feature holds (clarifier, phase-5 async queue,
+voice-bank, 3 unwired soul-audit components) and copy/product
+decisions (AI & KEYS key mislabel + provider prune, wake-up
+retirement scope, fear-stat series contexts) routed to the founder
+list. Audit correction: DevotionalLibraryRail is LIVE via
+/library -> LibraryRailDeepLink (stale memory note fixed).
+
 ## FIX — Daily Bread root cause #2: auth session refresh restored (2026-07-27)
 
 Founder retest after the migration showed a stale "kingdom of heaven"
