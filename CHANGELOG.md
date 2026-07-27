@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## FIX — Daily Bread root cause #2: auth session refresh restored (2026-07-27)
+
+Founder retest after the migration showed a stale "kingdom of heaven"
+reading: the DB had his 13:39Z the-harvest activation, but the page
+wasn't rendering it. Root cause #2: deleting src/proxy.ts on
+2026-05-07 also deleted the ONLY Supabase session refresh with
+persistable cookies. RSC renders cannot write cookies, so after ~1h
+token expiry every /daily-bread render went auth-blind and fell back
+to the stale July-11 Soul Audit plan (work-worry theme => "seek first
+the kingdom" reading) or the empty state — while API routes (which CAN
+persist refreshed cookies) kept accepting writes. Restored as
+src/middleware.ts (EDGE — Next 16 proxy.ts is Node-only and
+@opennextjs/cloudflare hard-fails Node middleware; the deprecated
+middleware convention is the only edge flavor Workers supports),
+matcher scoped to /daily-bread, /library/_, /onboarding, /admin/_.
+CLAUDE.md middleware rule rewritten accordingly. UI hardening:
+LibraryView + SeriesActions start-flows no longer swallow needsAuth /
+error results (silent no-op activations) — honest toasts, matching
+DevotionalActions. (SA-031, F-083)
+
 ## FIX + CONTENT — Daily Bread root cause + The Harvest re-angle (2026-07-27)
 
 DAILY BREAD (F-083): root-caused the 6-month "activation reverts to A

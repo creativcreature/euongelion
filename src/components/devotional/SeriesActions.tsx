@@ -99,6 +99,12 @@ export default function SeriesActions({
         }
         if ('needsConfirm' in result && result.needsConfirm) {
           setSwitchModalOpen(true)
+        } else if ('needsAuth' in result && result.needsAuth) {
+          setToast('Sign in to start a series and keep your progress.')
+        } else {
+          // F-083: a failed start must never be a silent no-op — the
+          // reader walks away believing they activated something.
+          setToast('Couldn’t start this series — please try again.')
         }
       } finally {
         setBusy(false)

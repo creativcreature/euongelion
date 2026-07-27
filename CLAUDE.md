@@ -60,7 +60,7 @@ design-system/            # Design tokens, typography, dark mode
 - **State:** React hooks + localStorage (no external state lib yet)
 - **Dark mode:** Dark-first (`html.dark`). HSL color system.
 - **Fonts:** Instrument Serif (body + display reading copy), Industry (UI/meta/nav labels), SBL Hebrew for original language.
-- **Middleware:** Next.js 16 uses `proxy.ts` (NOT `middleware.ts`). Do not create `middleware.ts`.
+- **Middleware:** this repo DELIBERATELY uses legacy `src/middleware.ts` (edge runtime) — NOT `proxy.ts`. Next 16's `proxy.ts` is Node-runtime-only and `@opennextjs/cloudflare` hard-fails Node middleware; the deprecated `middleware` convention is the only edge flavor Workers supports. It exists solely to refresh the Supabase auth session for server components (F-083). Ignore the build's deprecation warning; do NOT rename it to `proxy.ts`.
 
 ## Design Philosophy
 
