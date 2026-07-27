@@ -106,6 +106,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day3-banner.webp",
+      "inlineImageAlt": "A vast grain field curving like the horizon of a globe, tiny workers scattered across it under one sun",
+      "inlineImageCaption": "The field is the world: one sun over every row, workers scattered across the whole curve of it.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
@@ -148,6 +155,13 @@
       "heading": "Why the Sickle Waits",
       "content": "Here is the center of the week. It has two turns, and the second one is personal.\n\nFirst turn: the delay is not indifference. Peter faced this exact complaint in the early church — where is the promised sorting? — and his answer relocates the whole question: \"The Lord is not slow in keeping His promise as some understand slowness, but is patient with you, not wanting anyone to perish but everyone to come to repentance\" (2 Peter 3:9). Read that against the parable and the farming logic snaps into focus. In a real field, a darnel stalk is a darnel stalk forever; no weed has ever repented into wheat. But Jesus is not teaching botany. In His field, the shocking possibility that no farmer has ever seen is the whole point of the wait: weeds can change kind. Every year the harvest is delayed is a year the field's worst stalks are being given to become grain. What looks from the ground like a scheduling problem is, Peter says, a rescue operation running at full capacity.\n\nSecond turn — and this is where the parable stops being about them: the line between good and evil does not run neatly between people. It runs through them. Aleksandr Solzhenitsyn learned this in the one place on earth built most confidently on the opposite theory. The Soviet camp system existed to separate the weeds from the wheat by force — and it was there, on rotting prison straw, that the actual geography of evil was disclosed to him. \"Gradually it was disclosed to me,\" he wrote, \"that the line separating good and evil passes not through states, nor between classes, nor between political parties either—but right through every human heart—and through all human hearts.\" And the line moves: \"This line shifts. Inside us, it oscillates with the years. And even within hearts overwhelmed by evil, one small bridgehead of good is retained. And even in the best of all hearts, there remains ... an unuprooted small corner of evil.\" You know this geography too, if you are honest at 2 a.m.: the field with the most stubborn weed-patch in it is the one inside your own chest. And that discovery rewrites your relationship to the delay. The patience you resent when you look at the world is the same patience that is, right now, keeping YOUR field from premature harvest — giving the weed-patch in you time to become wheat. The person most served by the withheld sickle is the one complaining about it.\n\nAnd then, having said the hardest things — fire, furnace, weeping — Jesus ends His explanation somewhere no one expects: at a sunrise. \"Then the righteous will shine like the sun in the kingdom of their Father.\" He is reaching back to Daniel, to the Bible's clearest early resurrection hope: \"the wise will shine like the brightness of the heavens\" (Daniel 12:3). The Greek of Matthew even carries the fingerprint — the rare verb eklampsousin, shine OUT, the very form the Greek Daniel the early church read uses in that verse. An echo, not a quotation — Jesus intensifies Daniel's starlight into full sun — but the direction of the allusion is the point: His last word on the mixed field is not the furnace. It is resurrection dawn. The week's pivot, then, in one sentence: the harvest is certain, the sickle is not yours, the delay is mercy aimed at the weed-patch in you — and the story ends in light.",
       "markdown": false
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day3-inline.webp",
+      "inlineImageAlt": "A sickle hanging untouched on a barn wall, a shaft of light falling across the blade",
+      "inlineImageCaption": "The sickle hangs, and waits. The delay is not neglect; it is mercy with a date.",
+      "inlineImageWidth": "wide"
     },
     {
       "type": "story",

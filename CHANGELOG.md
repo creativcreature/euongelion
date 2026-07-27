@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SHIP — The Harvest live end-to-end: imagery, featured lead, deploy (2026-07-26)
+
+Founder ruling SA-031 (registered): (1) featured area holds exactly 7
+cards and the MAIN feature slot always belongs to the most recent
+series — the-harvest leads, too-busy-for-god rotated out (supersedes
+the 2026-05-08 Bible-365-first direction); (2) Monday-start week shape
+(5 deep dives, Sat recap, Sun sabbath) confirmed as the spec default,
+SA-029(1) sabbath-first applies only to Sunday starts; (3) the
+/devo-go pipeline now runs END-TO-END WITHOUT PAUSING at the reading
+or deploy gates (artifact still published, all gates still run and
+reported; founder reviews live) — skill + SA-029(4) amended.
+Imagery: 13 GPT Image 2 riso-duotone renders (1:1 series card + 12
+day images per the brief's subjects — night sower, twin stalks,
+hovering servants, tangled roots, world-curve field, waiting sickle,
+one-sun fieldhand, Munich handshake, harvest sunrise, single sheaf,
+field-in-one-view, sleeping farmer), every render style-checked
+against the brand spec, processed via sharp to webp (series card
+1024², days 1400-1600w, all ≤~435KB), placed as inline-image modules
+with contextual captions; validator re-run 0/0. Wiring: series.ts
+SERIES_DATA entry + NEW_SERIES_ORDER + FEATURED_SERIES, series-rails
+FEATURED_SERIES_SLUGS, series-data test 34→35. Tracking: F-082 →
+shipped. (SA-031, F-082)
+
 ## CONTENT — The Harvest: 7-day Wheat & Weeds series drafted to the founder gate (2026-07-26)
 
 First series built via /devo-go (SA-029/SA-030 standard; F-082).

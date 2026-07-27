@@ -50,6 +50,13 @@
       "ctaSubtext": "That was a whole reading. Below: the five days in one view, and the full study trail — videos, free primary texts, and a guided walk through Matthew 13 — for going further than this series could."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day6-banner.webp",
+      "inlineImageAlt": "A farm seen from a low hill: a road leading into a broad mixed field, a distant barn, one great sun low on the horizon",
+      "inlineImageCaption": "The whole field in one view: the road in, the mixed rows, the barn, and the sun already rising.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "recap",
       "heading": "The Week in One View",
       "intro": "Five days inside seven verses and their interpretation. Here is what they turned out to be carrying — read your own week back through them; one row of this table is probably the reason the series found you. The week's shape, for your notes: Day 1's night is answered by Day 5's sunrise, Day 2's surrendered sickle by Day 4's watering can, and Day 3 stands at the center holding the decoded field.",

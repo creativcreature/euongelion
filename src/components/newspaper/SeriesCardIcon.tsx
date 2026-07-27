@@ -57,6 +57,8 @@ const SLUG_TO_ICON: Record<string, IconToken> = {
   rooted: 'provision',
   'present-in-the-chaos': 'peace',
   'standing-strong': 'belief',
+  // The Harvest (2026-07-26): a kingdom-of-heaven parable (Matt 13:24).
+  'the-harvest': 'kingdom',
 }
 
 function resolveIconToken(slug: string): IconToken {

@@ -95,3 +95,47 @@ describe('ModuleRenderer — flat string `content` (canonical format)', () => {
     expect(screen.getByText(/Legacy body prose survives/)).toBeInTheDocument()
   })
 })
+
+/**
+ * Regression guard for the Harvest ship (2026-07-26, SA-030/SA-031/
+ * F-082): the Two-Minute Open `cta` module and the riso `inline-image`
+ * module are silent-drop hazards — CtaModule returns null when
+ * ctaLabel/ctaHref are missing, and a renderer regression would strip
+ * them exactly like the Jabez flat-content bug above. Render the REAL
+ * components and assert the DOM.
+ */
+describe('ModuleRenderer — cta + inline-image (Harvest shapes)', () => {
+  it('renders the DEEP DIVE cta with label, href, and subtext', () => {
+    render(
+      <ModuleRenderer
+        module={{
+          type: 'cta',
+          ctaLabel: 'DEEP DIVE',
+          ctaHref: '#devotional-section-6',
+          ctaSubtext: 'That was a whole reading.',
+        }}
+      />,
+    )
+    const link = screen.getByRole('link', { name: /DEEP DIVE/ })
+    expect(link).toHaveAttribute('href', '#devotional-section-6')
+    expect(screen.getByText(/That was a whole reading/)).toBeInTheDocument()
+  })
+
+  it('renders an inline-image with src, alt, and caption', () => {
+    render(
+      <ModuleRenderer
+        module={{
+          type: 'inline-image',
+          inlineImageSrc: '/images/series/the-harvest/day1-banner.webp',
+          inlineImageAlt:
+            'A cloaked figure slipping away through a moonlit field',
+          inlineImageCaption: 'While everyone slept, the enemy came.',
+          inlineImageWidth: 'bleed',
+        }}
+      />,
+    )
+    const img = screen.getByAltText(/cloaked figure slipping away/)
+    expect(img).toBeInTheDocument()
+    expect(screen.getByText(/While everyone slept/)).toBeInTheDocument()
+  })
+})

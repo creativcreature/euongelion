@@ -890,6 +890,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'The four load-bearing commitments of a healthy church: teaching, fellowship, breaking of bread, and prayer',
   'the-blueprint-of-community-day-5':
     'The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness',
+  'the-harvest-day-1':
+    "The Sower did everything right. The field still came up mixed. Jesus' hardest story about evil begins with everyone asleep.",
+  'the-harvest-day-2':
+    "The servants got the diagnosis exactly right and the prescription exactly wrong. The Master's answer uses the same verb as 'forgive.'",
+  'the-harvest-day-3':
+    'Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — and the field turns out to be bigger, and closer, than anyone wanted.',
+  'the-harvest-day-4':
+    "The sickle is off the table. So what do the Master's servants do all day? The sun over the field already knows.",
+  'the-harvest-day-5':
+    'The week that began with a night ends with a dawn: evil as stubble, wheat in the barn, and the righteous shining like the sun.',
+  'the-harvest-day-6':
+    'Five days inside one parable. Today: the whole field at a glance, and everything you need to keep studying it on your own.',
+  'the-harvest-day-7':
+    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. Today, be the sleeping farmer.',
   'the-nature-of-belief-day-1':
     'Understanding that trials produce perseverance and lead to spiritual maturity',
   'the-nature-of-belief-day-2':
@@ -1517,6 +1531,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'the-blueprint-of-community-day-3': "Peter's Sermon and the First Response",
   'the-blueprint-of-community-day-4': 'The Four Pillars of the New Community',
   'the-blueprint-of-community-day-5': 'Awe, Generosity, and Daily Rhythms',
+  'the-harvest-day-1': 'While Everyone Slept',
+  'the-harvest-day-2': 'Do You Want Us to Pull Them Up?',
+  'the-harvest-day-3': 'The Field Is the World',
+  'the-harvest-day-4': 'Fieldhands, Not Harvesters',
+  'the-harvest-day-5': 'Then the Righteous Will Shine',
+  'the-harvest-day-6': 'The Field in One View',
+  'the-harvest-day-7': 'While You Sleep, It Grows',
   'the-nature-of-belief-day-1': 'The Purpose of Trials',
   'the-nature-of-belief-day-2': 'Asking for Wisdom',
   'the-nature-of-belief-day-3': 'The Condition of Faith',

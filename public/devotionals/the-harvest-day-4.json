@@ -98,6 +98,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day4-banner.webp",
+      "inlineImageAlt": "A small fieldhand watering young rows while one enormous sun pours its rays equally across every row",
+      "inlineImageCaption": "He makes His sun rise on the evil and the good — and the fieldhand waters every row under that same sun.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
@@ -146,6 +153,13 @@
       "heading": "The Current in Munich",
       "content": "\"It was in a church in Munich that I saw him, a balding heavyset man in a gray overcoat, a brown felt hat clutched between his hands.\" Corrie ten Boom had come to defeated Germany in 1947 with the message she believed that broken country needed most: God forgives. She had earned the right to say it the hard way — Ravensbrück, where her sister Betsie had died in December 1944.\n\nThen the man in the gray overcoat came forward, and she recognized him. \"You mentioned Ravensbrück in your talk,\" he said. \"I was a guard in there.\" He had since become a Christian, he told her — and then he asked the impossible: \"will you forgive me?\"\n\nAs she told it afterward, everything in her froze. \"Betsie had died in that place — could he erase her slow terrible death simply for the asking?\" Her hand would not move. So she prayed the only prayer available: \"Jesus, help me! I can lift my hand. I can do that much. You supply the feeling.\" Woodenly, mechanically, she thrust her hand into the hand of her sister's jailer. \"The current started in my shoulder, raced down my arm, sprang into our joined hands.\"\n\nShe spent the rest of her life telling that story, and she was exact about its lesson: the healing had not come from her. \"It is not on our forgiveness any more than on our goodness that the world's healing hinges, but on His. When He tells us to love our enemies, He gives, along with the command, the love itself.\"",
       "connectionToTheme": "As she told it, Munich was the fieldhand's whole calling compressed into one second: real evil, unminimized; a sickle fully deserved and fully surrendered; room left for God — and God supplying, along with the command, the current to obey it."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day4-inline.webp",
+      "inlineImageAlt": "Two hands reaching toward each other to clasp, a small warm glow passing between the palms",
+      "inlineImageCaption": "Munich, 1947: a hand extended, and the current of a forgiveness that was not her own.",
+      "inlineImageWidth": "narrow"
     },
     {
       "type": "insight",

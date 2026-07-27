@@ -103,6 +103,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day5-banner.webp",
+      "inlineImageAlt": "Harvest sunrise over a mown field: bound sheaves, reapers, and a barn with its doors thrown open to golden light",
+      "inlineImageCaption": "Harvest morning: the sheaves come in, the barn stands open, and the sunrise arrives on schedule.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
@@ -151,6 +158,13 @@
       "heading": "The Plodder's Sheaves",
       "content": "William Carey landed in India in November 1793 with a conviction and almost nothing else. Seven years followed — fever, poverty, and sowing with not one sheaf to show. Then, on the last Sunday of 1800, the cobbler-turned-translator wrote the sentence those seven years had been waiting for: \"Dec. 29. — Yesterday was a day of great joy. I had the happiness to desecrate the Gunga, by baptising the first Hindoo, viz. Krishna, and my son Felix.\" Krishna Pal, a Serampore carpenter, went down into the river before the Danish governor and a watching crowd — one convert, after seven years, and Carey called it a day of great joy without irony.\n\nTwelve years later the field burned — literally. On the evening of March 11, 1812, fire took the Serampore print shop: fourteen founts of Asian type, ten Bible translations in press, and the massive polyglot dictionary manuscript Carey had labored over for years. Eyewitnesses recorded his response in the ruins — that in one short evening the labors of years were consumed, and that the Lord had laid him low that he might look more simply to Him. Two weeks later his own pen confirmed the posture: \"The Lord has smitten us, he had a right to do so, and we deserve his corrections... I now, however, turn to the bright side... Our loss, so far as I can see, is reparable in a much shorter time than I should at first have supposed.\"\n\nNear the end of his life, Carey told his nephew how he wished to be remembered — words the nephew printed after his death: \"If he give me credit for being a plodder, he will describe me justly... I can plod. I can persevere in any definite pursuit. To this I owe every thing.\" The plodder's arithmetic proved out: the mission he seeded put the Scriptures into dozens of Asian languages, and the sheaves are still coming in.",
       "connectionToTheme": "Carey lived Psalm 126 at field scale: sowing in tears for seven unrewarded years, reaping one sheaf with shouts of joy, replanting after fire — all on the strength of a harvest he trusted but mostly never saw. The certainty of the ending is what makes plodding a form of hope."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day5-inline.webp",
+      "inlineImageAlt": "A single bound sheaf of grain standing upright, its heads tipped gold",
+      "inlineImageCaption": "Carrying sheaves: the weeping sower comes home with shouts of joy.",
+      "inlineImageWidth": "narrow"
     },
     {
       "type": "insight",

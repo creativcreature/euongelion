@@ -38,13 +38,13 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 3. Write brief (`content/series-briefs/<slug>.md`) + source pack (`content/source-packs/<slug>.md`). The source pack is the ONLY citation pool for drafting.
 4. Draft the pivot (C) day first, then the rest. EVERY day opens with the Two-Minute Open (SA-030): scripture → vocab → reflection → short prayer → DEEP DIVE `cta`, self-contained, before the full structure; declare `"format": "two-minute-open"` so the validator enforces it. Run `node scripts/validate-devotional.mjs` until 0/0.
 5. Devotional-editor agent review → apply fixes → re-review to READY FOR FOUNDER.
-6. **Founder reading gate:** publish a private artifact of the full text in the site's mockup design language. NO imagery before approval.
-7. After approval: imagery (GPT Image 2, riso duotone) + inline-image placement; verify videos embeddable.
+6. **Founder reading artifact:** publish a private artifact of the full text in the site's mockup design language. **SA-031 (2026-07-26) amends SA-029(4): the pipeline runs end-to-end WITHOUT pausing here or at the deploy step** — the artifact is still published and every gate still runs and is reported, but they are non-blocking; the founder reviews live output and requests revisions after. Pause only if the founder explicitly asks to read first for a given run.
+7. Imagery (GPT Image 2, riso duotone) + inline-image placement; verify videos embeddable.
 8. Wire: `series.ts` (SERIES_DATA + order array + FEATURED_SERIES if directed), `series-rails.ts`, bump `__tests__/series-data.test.ts` count and `scripts/check-feature-prd-integrity.mjs` count.
 9. Tracking: next SA id from `production-decisions.yaml` (canonical — not CHANGELOG grep), next F-### PRD, CHANGELOG entry.
 10. Gates: type-check, verify:\*, lint, full test suite, build.
 11. Verify in `npm run preview` (Workers runtime): curl every route AND a rendered-DOM assertion for new module shapes (curl alone cannot catch client-render drops).
-12. Founder confirms evidence → merge/deploy per founder's chosen path → warm the edge cache on all affected URLs → live-verify.
+12. Merge/deploy per the founder's standing path (merge to main, then `npm run deploy`) → warm the edge cache on all affected URLs → live-verify → report full evidence (SA-031: deploy is non-blocking; evidence is reported, not awaited).
 
 ## Guardrails
 
@@ -54,9 +54,9 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - Banned phrases/labels per AUTHORING-SPEC §2 — zero tolerance; validator enforces.
 - Videos: official channels only, oEmbed-verified AND embed-block-checked; never a video that blocks off-YouTube playback.
 - The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
-- No imagery before the founder reads the text. No arbitrary images — every slot needs a one-sentence contextual justification (the caption).
+- No arbitrary images — every slot needs a one-sentence contextual justification (the caption). (The pre-imagery reading PAUSE was retired by SA-031; the reading artifact itself is still mandatory.)
 - Stage commits by explicit file list (parallel sessions share this working tree); never `git add -A`.
-- No deploy without founder confirmation of preview evidence.
+- Deploy proceeds without a pause (SA-031), but ONLY after preview evidence is green; all evidence is reported to the founder in the final summary.
 
 ## Validation
 

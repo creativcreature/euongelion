@@ -33,6 +33,13 @@
       "markdown": false
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day7-inline.webp",
+      "inlineImageAlt": "A farmer asleep under a tree at night while young shoots sprout from the dark rows on their own",
+      "inlineImageCaption": "The farmer sleeps, and the seed sprouts and grows — he himself does not know how.",
+      "inlineImageWidth": "wide"
+    },
+    {
       "type": "reflection",
       "prompt": "What growth in your life this season has clearly happened all by itself — automatē — while you were not watching?",
       "invitationType": "quiet"

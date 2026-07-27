@@ -70,6 +70,10 @@ decisions:
     title: two-minute-open-self-contained-devotional-head
     note: 'Founder-ratified 2026-07-22. FORWARD-ONLY (not retroactive to existing series, incl. prayer-of-jabez): every new prefab devotional day opens with a self-contained ~2-minute devotional — anchor Scripture as is, one vocab word, one reflection, one short prayer — followed by a DEEP DIVE CTA that jumps into the full devotional on the same page; after the CTA, the deep dive proceeds per the usual A-B-C-B-prime-A-prime structure (SA-029 / AUTHORING-SPEC). The 2-minute block is complete on its own: a reader who stops at the CTA has had a whole devotional. Enforced opt-in by the validator when a day declares format: two-minute-open. Codified in the /devo-go skill. Note: unrelated to the ad-hoc "SA-030" fix label in CHANGELOG 2026-05 — never a registered decision; this yaml is canonical.'
 
+  - id: SA-031
+    title: harvest-series-featured-area-policy-and-uninterrupted-pipeline
+    note: 'Founder-ratified 2026-07-26 (The Harvest series build, F-082). (1) FEATURED-AREA POLICY: the homepage featured area shows exactly 7 series; the MAIN feature slot always belongs to the MOST RECENT series; too-busy-for-god rotated out for the-harvest. Supersedes the 2026-05-08 Bible-365-first featured direction. Applied in src/data/series.ts FEATURED_SERIES and src/data/series-rails.ts FEATURED_SERIES_SLUGS. (2) MONDAY-START SHAPE: a series starting Monday runs five deep-dive days (A-B-C-B-prime-A-prime, Days 1-5), Saturday Recap (Day 6), Sunday Sabbath close (Day 7) — the AUTHORING-SPEC default shape; SA-029(1) sabbath-first applies only to Sunday starts. (3) UNINTERRUPTED PIPELINE ("run the full pipeline please... no interruption. end to end", 2026-07-26): the /devo-go pipeline runs end-to-end without pausing at the SA-029(4) reading gate or the deploy-confirmation gate; the reading artifact is still published and all gates/evidence still run and are reported — they become non-blocking. Founder reviews live output and requests revisions after. This amends SA-029(4) and the devo-go skill gate order.'
+
 contracts:
   required_files:
     - src/app/api/soul-audit/submit/route.ts

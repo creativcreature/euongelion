@@ -105,6 +105,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day2-banner.webp",
+      "inlineImageAlt": "Two servants in a young field, hands hovering over the shoots, looking toward a distant master who lifts one hand",
+      "inlineImageCaption": "The servants' question, asked mid-field: do you want us to go and pull them up?",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
@@ -147,6 +154,13 @@
       "heading": "The Reason Under the Reasons",
       "content": "The early church, reading this parable in centuries when it had every reason to want a sickle, heard something deeper under the Master's No — a hint the text leaves half-buried until you remember who is telling it.\n\nJohn Chrysostom, preaching through Matthew in the fourth century, put it plainly: \"Either He means this, If you are to take up arms, and to kill the heretics, many of the saints also must needs be overthrown with them; or that of the very tares it is likely that many may change and become wheat. If therefore ye root them up beforehand, you injure that which is to become wheat, slaying some, in whom there is yet room for change and improvement.\" Read that second clause again. In a real field, darnel is darnel until it dies. In THIS field, the tares can change kind. Chrysostom pressed the point to its edge — and kept both edges: \"So long as they stand by the wheat, we must spare them, for it is possible for them even to become wheat; but when they have departed, having profited nothing, then of necessity the inexorable punishment will overtake them.\" The door stands open, and the door closes: mercy with a deadline is still mercy — and still a deadline.\n\nAugustine, a generation later, said it with a preacher's economy: \"I say this to the evil, who yet are Christians; I say this to the tares. For they are in the field; and it may so be, that they who to-day are tares, may to-morrow be wheat.\" And when a rigorist movement in North Africa demanded a purified church NOW — a field with the mixture already removed — Augustine answered from this same image: the Lord's threshing-floor \"must needs contain, up to the time of the final winnowing, both grain which is to be stored in the garner, and chaff that is to be burned up with fire.\"\n\nHere, then, is the reason under the reasons. The Master's No is not resignation about evil; it is ambition for it. Every season the field stays mixed is a season the darnel is being given to defect. The patience that scandalizes the servants is aimed precisely at the stalks they wanted to burn — which means the uprooting they offered would not merely have cost some wheat. It would have foreclosed every future conversion in the field. Say it in church-history terms: a sickle taken to the field in the late 1740s harvests a young slave-trading sailor named John Newton as darnel, and no one ever sings Amazing Grace.\n\nBe honest about the record, too: the church has not always listened to its own fathers here. The same centuries that copied out Chrysostom's homily also built inquisitions; the parable's No has been read aloud by people sharpening sickles. That is not a reason to soften the text. It is the reason to keep it sharp: every generation's servants make the same reasonable offer, and the Master's answer has not changed.",
       "markdown": false
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day2-inline.webp",
+      "inlineImageAlt": "An underground cross-section showing two plants whose roots are completely intertwined, a warm glow at the center",
+      "inlineImageCaption": "Below the surface the roots are already tangled — uprooting the one would tear out the other.",
+      "inlineImageWidth": "wide"
     },
     {
       "type": "story",

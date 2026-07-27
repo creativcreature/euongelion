@@ -1033,6 +1033,60 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       },
     ],
   },
+
+  'the-harvest': {
+    title: 'The Harvest',
+    heroImage: '/images/site/series/the-harvest.webp',
+    question: 'If God is good, why is the field still full of weeds?',
+    introduction:
+      "An enemy sowed weeds through the wheat by night, and the servants asked the reasonable question: should we pull them up? Seven days inside Jesus' hardest parable — the Master's No, the field that is the world, and the sunrise the enemy cannot stop.",
+    context:
+      'Hypocrites in the pew. Evil unpunished in the news. The stubborn weed-patch in your own chest. Everything in you wants either the sickle or the exit — and Jesus answers both with the strangest word in the story: let both grow. A week for everyone sick of the weeds, on the parable Jesus explained Himself.',
+    framework: 'Matthew 13:30 - Let both grow together until the harvest',
+    pathway: 'Awake',
+    keywords: [
+      'evil',
+      'injustice',
+      'hypocrites',
+      'church hurt',
+      'why does God allow',
+      'judgment',
+      'patience',
+      'angry at evil',
+      'unfairness',
+      'doubt about church',
+      'waiting for justice',
+      'harvest',
+      'kingdom',
+      'end times',
+      'wheat and tares',
+    ],
+    days: [
+      { day: 1, title: 'While Everyone Slept', slug: 'the-harvest-day-1' },
+      {
+        day: 2,
+        title: 'Do You Want Us to Pull Them Up?',
+        slug: 'the-harvest-day-2',
+      },
+      { day: 3, title: 'The Field Is the World', slug: 'the-harvest-day-3' },
+      {
+        day: 4,
+        title: 'Fieldhands, Not Harvesters',
+        slug: 'the-harvest-day-4',
+      },
+      {
+        day: 5,
+        title: 'Then the Righteous Will Shine',
+        slug: 'the-harvest-day-5',
+      },
+      { day: 6, title: 'The Field in One View', slug: 'the-harvest-day-6' },
+      {
+        day: 7,
+        title: 'While You Sleep, It Grows',
+        slug: 'the-harvest-day-7',
+      },
+    ],
+  },
 }
 
 // ============================================
@@ -1082,6 +1136,7 @@ export const NEW_SERIES_ORDER = [
   'standing-strong',
   'what-is-christianity',
   'prayer-of-jabez',
+  'the-harvest',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1122,11 +1177,14 @@ export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
 // Featured series for landing page (curated selection).
 // Bible-365 is featured FIRST per founder direction (2026-05-08) — the
 // daily devotional surface flows from this plan.
+// Featured-area policy (founder, 2026-07-26, SA-031): exactly 7 cards,
+// the MOST RECENT series takes the main feature slot; too-busy-for-god
+// rotated out. Supersedes the 2026-05-08 Bible-365-first direction.
 export const FEATURED_SERIES = [
+  'the-harvest',
   'bible-365',
   'prayer-of-jabez',
   'identity',
-  'too-busy-for-god',
   'why-jesus',
   'hope',
 ] as const

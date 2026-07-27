@@ -23,26 +23,29 @@ import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_COUNT } from '@/data/series'
  * reader sees all days and starts). Day-level data lives in
  * `daySlug` / `dayTitle` only as fallback context.
  */
+// SA-031 (founder, 2026-07-26): the main feature slot always belongs
+// to the MOST RECENT series — the-harvest replaces too-busy-for-god.
 const HOMEPAGE_TODAY = {
-  series: 'too-busy-for-god',
-  daySlug: 'too-busy-for-god-day-1',
-  dayTitle: 'The Vanity of Busyness',
-  kicker: 'FEATURED SERIES · 5 DAYS · LUKE 10:38–42',
-  title: 'Too Busy for God',
+  series: 'the-harvest',
+  daySlug: 'the-harvest-day-1',
+  dayTitle: 'While Everyone Slept',
+  kicker: 'FEATURED SERIES · 7 DAYS · MATTHEW 13:24–43',
+  title: 'The Harvest',
   // Series-level scripture anchor (the framework verse).
-  scripture: 'Luke 10:38–42 · Martha & Mary',
+  scripture: 'Matthew 13:24–30, 36–43 · The Wheat & the Weeds',
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    "What are you so busy doing that you're missing the One who gave you life? Your calendar is full but your soul is empty — five honest days on what happens when busyness becomes a barrier to His presence.",
+    "If God is good, why is the field still full of weeds? An enemy sowed through the wheat by night — seven days inside Jesus' hardest parable: the Master's No, the field that is the world, and the sunrise the enemy cannot stop.",
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured
   // devotional block + substack series cards only, not this banner.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art (Too Busy for God featured devotional block).
-  // Founder direction: use the Substack header image here.
-  featuredArt: '/images/substack-cache/33cd9f952103.webp',
+  // Featured-card art: the-harvest field-in-one-view riso (16:9 to
+  // match the container's landscape aspect; the 1:1 series card
+  // would crop badly under object-fit: cover).
+  featuredArt: '/images/series/the-harvest/day6-banner.webp',
 }
 
 const HOW_STEPS = [

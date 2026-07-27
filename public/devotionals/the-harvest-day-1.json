@@ -108,6 +108,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day1-banner.webp",
+      "inlineImageAlt": "A cloaked figure slipping away through a moonlit field at night, a trail of scattered seed behind him",
+      "inlineImageCaption": "While everyone slept, the enemy came, sowed weeds among the wheat, and went away.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
@@ -162,6 +169,13 @@
       "heading": "The Weed That Only Lives Here",
       "content": "Zizania appears eight times in the New Testament — every single one inside this parable. Scripture coined its vocabulary of counterfeit good for exactly one story, as if the word itself were quarantined here. The old rabbis kept darnel close to wheat in their categories too, ruling the two so alike they were not even 'mixed kinds' when grown together — darnel being, in their reckoning, wheat gone wrong rather than an alien species. The parable's impostor is not evil looking evil. It is evil looking almost exactly like the good it corrupts.",
       "historicalContext": "Botanically, darnel is Lolium temulentum — 'bearded darnel' — its grains difficult to separate from wheat, and host to a toxic fungus that made bread baked from tainted flour dizzying (the species name means 'drunken'). And the parable's sabotage was real enough to legislate against: Roman law (Digest 9.2.27.14, Ulpian citing Celsus) gave a field's owner a lawsuit for damages against anyone who maliciously threw darnel into his crop."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day1-inline.webp",
+      "inlineImageAlt": "Two near-identical grain stalks side by side in blue halftone, one head tipped gold",
+      "inlineImageCaption": "Wheat and darnel, side by side: until the heads form, even a farmer cannot tell them apart.",
+      "inlineImageWidth": "wide"
     },
     {
       "type": "teaching",

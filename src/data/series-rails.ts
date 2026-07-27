@@ -23,10 +23,10 @@ export interface SeriesRail {
 // Bible-365 leads — the year-long reading plan is the primary daily
 // devotional surface (per founder direction 2026-05-08).
 export const FEATURED_SERIES_SLUGS = [
+  'the-harvest',
   'bible-365',
   'prayer-of-jabez',
   'identity',
-  'too-busy-for-god',
   'why-jesus',
   'hope',
 ] as const
