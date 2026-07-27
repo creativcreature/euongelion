@@ -20,9 +20,10 @@ write and roll the cache back so same-isolate reads cannot lie;
 PUT/PATCH/DELETE /api/devotionals/active and archive/restart return
 an honest 503 PERSISTENCE_FAILED; render-path lazy writes (swap
 promotion, last-opened touch) log + serve the un-promoted truth
-instead of 500ing. 6-test regression suite added. Migration 013 apply
-to prod awaits founder approval (blocked for review in-session);
-until applied, activation shows an honest error instead of lying.
+instead of 500ing. 6-test regression suite added. Migration 013 APPLIED
+to prod same day (founder-approved in-session): three tables + 12 RLS
+policies verified by probe, write path proven by transactional
+insert/delete. Remaining: founder signed-in activate + reload check.
 
 THE HARVEST RE-ANGLE (SA-031/F-082): founder rejected the v1
 introspective angle ("hidden weeds in our own lives"). All 7 days +
