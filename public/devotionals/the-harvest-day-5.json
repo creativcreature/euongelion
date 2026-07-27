@@ -3,13 +3,13 @@
   "chiasm_position": "A-prime",
   "format": "two-minute-open",
   "title": "Then the Righteous Will Shine",
-  "subtitle": "Jesus' last word on the field — a net that gathers every kind, a shore where the catch is finally known, and the righteous shining like the sun",
-  "teaser": "The week ends where Jesus ended His parable day: a dragnet hauling in every kind of fish, a thief who was not too late, and stars kept for those who spend their lives bringing others in.",
+  "subtitle": "The discourse ends at dawn — a net full of every kind, a thief with one breath left, and stars for whoever leads people home",
+  "teaser": "Jesus finishes His parable day the way He finishes the parable: with light. Wheat comes in, hidden faithfulness stops hiding, and Daniel's oldest promise names who shines brightest. Between now and then, one thief on a cross shows how late a life can still be gathered.",
   "anchorVerse": "Matthew 13:43",
-  "theme": "Resolution: Jesus closes His parable day with a net — every kind gathered, nothing decided in the water. A life can be settled even at its close, the brightest shining belongs to lives that lead others to righteousness, and God's patience holds a door open for the person still far away",
+  "theme": "Resolution: the double ending — stubble and sunrise, furnace and barn — held exactly as Jesus holds it; the Net retelling the same finish at the shore; the thief gathered at his last hour; and Daniel's stars for the ones who lead many home",
   "framework": "Malachi 4:2 - the Sun of righteousness arise with healing in his wings",
   "scriptureReference": "Matthew 13:43",
-  "totalWords": 3121,
+  "totalWords": 3224,
   "panels": [],
   "modules": [
     {
@@ -20,7 +20,7 @@
       "emphasis": [
         "shine like the sun"
       ],
-      "scriptureContext": "Two minutes with the parable's last word — Jesus' chosen ending for His hardest story."
+      "scriptureContext": "Two minutes with the sentence Jesus saved for last — His hardest story's brightest line."
     },
     {
       "type": "vocab",
@@ -30,24 +30,24 @@
       "pronunciation": "ek-LAMP-soo-sin",
       "strongsNumber": "G1584",
       "definition": "they will shine OUT — burst into light",
-      "usage": "A verb used exactly once in the New Testament, saved for this sentence: not a glow but a bursting forth, like the sun clearing a cloud. All season the field kept its secret — wheat and darnel identical to every watching eye. At the harvest, identity bursts out of hiding."
+      "usage": "One verb, used once in the whole New Testament, kept for this sentence: eklampsousin — they will shine OUT, light bursting from cover like sun clearing cloud. The choice is exact. All season the field's true crop stayed unreadable; the harvest does more than reward the wheat — it reveals it. Hiddenness, for the faithful, is a temporary condition."
     },
     {
       "type": "reflection",
-      "prompt": "Daniel says the ones who shine like the stars are 'those who lead many to righteousness.' In the field where God has planted you, who are you leading — and whose story have you quietly decided is finished, though God has not?",
+      "prompt": "The verb Jesus chose promises that hidden faithfulness will burst into visibility. What good in your life has gone entirely unseen — and what changes if its audience was never supposed to be now?",
       "invitationType": "quiet"
     },
     {
       "type": "prayer",
       "heading": "A Two-Minute Prayer",
-      "prayerText": "Father, the week has taught me that I cannot read this field. Today, show me its ending: hidden faithfulness bursting into light, a thief remembered in Paradise, and the last word resting in scarred hands. While that word waits, give me a sower's urgency — and a sower's hope. Amen.",
+      "prayerText": "Sun of righteousness, the week has taught me how little of the field I can read. Today, show me its ending: light with healing in it, a barn worth the growing, and a gathering that surprises everyone. Keep me sowing toward that morning. Amen.",
       "prayerType": "hope"
     },
     {
       "type": "cta",
       "ctaLabel": "DEEP DIVE",
       "ctaHref": "#devotional-section-6",
-      "ctaSubtext": "That was a whole reading. Below: Malachi's two-sided morning, the net Jesus saved for last, and a plodding missionary who sowed seven years for one sheaf."
+      "ctaSubtext": "A full reading in miniature. Below: Malachi's one day with two faces, the net Jesus saved for the discourse's last word, a criminal gathered with a single breath — and the missionary who waited seven years for his first sheaf."
     },
     {
       "type": "scripture",
@@ -60,7 +60,7 @@
         "shall be stubble",
         "the Sun of righteousness arise with healing in his wings"
       ],
-      "scriptureContext": "The Old Testament's final prophet describes one day with two faces: furnace for the arrogant, sunrise with healing for those who fear His name."
+      "scriptureContext": "The Old Testament's closing prophet describes a single coming day that arrives two ways: furnace for the arrogant, sunrise with healing for those who fear His name."
     },
     {
       "type": "vocab",
@@ -69,8 +69,8 @@
       "transliteration": "shemesh tsedaqah",
       "pronunciation": "SHEH-mesh tseh-dah-KAH",
       "definition": "the sun of righteousness — dawn as a person, rising with healing",
-      "usage": "Malachi's last-page promise: for those who fear God's name, the day of judgment does not arrive as fire but as sunrise — and the light itself carries medicine, healing in its wings. Jesus ends His parable inside this image: the righteous shining like the sun in the kingdom of their Father.",
-      "usageNote": "The week's Old Testament thread completes here. Daniel promised the wise would shine like the brightness of the heavens (12:3) — and the Greek Daniel read by the early church uses the very verb form Jesus speaks in Matthew 13:43, eklampsousin. Malachi paints the same dawn with healing in its wings. When Jesus chose His ending, He was standing on two prophets.",
+      "usage": "Malachi's final-page image: for those who fear God's name, the day of reckoning rises rather than falls — dawn as a person, light with medicine carried in its wings. Jesus ends His parable standing inside this picture: the righteous shining like the sun in their Father's kingdom.",
+      "usageNote": "The week's Old Testament thread ties off here. Daniel promised the wise would shine like the brightness of the heavens (12:3), and the Greek Daniel read by the early church carries the very verb form Jesus speaks in Matthew 13:43 — eklampsousin. Malachi paints the same morning and adds the healing. Jesus' ending stands on two prophets at once.",
       "wordByWord": [
         {
           "word": "שֶׁמֶשׁ",
@@ -106,27 +106,27 @@
       "type": "inline-image",
       "inlineImageSrc": "/images/series/the-harvest/day5-banner.webp",
       "inlineImageAlt": "Harvest sunrise over a mown field: bound sheaves, reapers, and a barn with its doors thrown open to golden light",
-      "inlineImageCaption": "Harvest morning: the sheaves come in, the barn stands open, and the sunrise arrives on schedule.",
+      "inlineImageCaption": "The morning after the long growing: sheaves bound, doors open, light on schedule.",
       "inlineImageWidth": "bleed"
     },
     {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
-      "heading": "Endings Change Middles",
-      "content": "How a story ends decides what its middle meant. A hard road in a story that ends at home is an adventure; the same road in a story that ends nowhere is just suffering. That is simply how human beings metabolize their days. So before the week closes, ask the question underneath all of it: how does this story end, and what does the ending do to the field?\n\nJesus answers with the parable's final movement, and He answers twice. For the weeds: bundles, fire, an end. For the wheat: gather the wheat into my BARN — and then, in the interpretation, the sentence He saved for last: then the righteous will shine like the sun in the kingdom of their Father.\n\nBut hold the ending next to the week's beginning and notice what it quietly admits. All season long, nobody in the story could tell the two plants apart. The servants could not — that was the whole reason for the Master's No. Identity, in this field, is harvest-day information. The end does more than reward the wheat and burn the weeds: it reveals, for the first time, which was which. The one who calls faith a crutch and considers the case closed — every reading you have taken of them is a guess about a crop still growing, and the Master has not asked for your guess.\n\nAnd notice the destination. A barn is where a farmer keeps what he worked the whole season to have. The wheat is gathered because it is wanted — carried, stored, brought home. Everything the week practiced — the retired verdicts, the watered rows, the witness offered to every neighbor without a sorting — was the middle of a story that ends with the Owner of the field carrying His crop home, and surprising everyone, servants included, with who is in it.",
+      "heading": "What Endings Do",
+      "content": "Every story hands its meaning backward from the end. A hard road in a tale that finishes at home reads as adventure; the same road in a tale that finishes nowhere reads as waste. People are built this way — we cannot say what a middle meant until we know where it goes. So the week's last full question is the oldest one: how does the field end?\n\nJesus answers twice, in the same breath. For the weeds: bundles, fire, done. For the wheat: gather the wheat into my barn — and then, in the interpretation, the line He kept for last: then the righteous will shine like the sun in the kingdom of their Father.\n\nHold that ending against everything the week has watched, and its strangest gift appears. All season, no one could read the field. The servants could not — the whole drama ran on their blindness. So the harvest, when it comes, does more than sort; it discloses. For the first time, which stalk was which becomes public knowledge — and the reveal runs in both directions. Rows everyone had circled as ruined stand up golden. Stalks everyone had certified turn out hollow. The end of this story does more than relocate the wheat — it corrects every early reading anyone ever ran.\n\nAnd mark the destination. A barn is where a farmer keeps what the whole year was for. The wheat comes in because it is wanted — carried, kept, brought home. Everything this week rehearsed — readings retired, wrath forwarded, tables kept — was the middle of a story that ends with the Owner walking His crop through His own doors and the light going on.\n\nThe rest of today walks that ending slowly: one day with two faces, a shore where a long catch finally gets sorted, and a promise about stars.",
       "markdown": false
     },
     {
       "type": "pullquote",
-      "content": "Jesus told the ending twice — once as a field, once as a net — and both times the separating waits for the end, in hands that are not ours."
+      "content": "The harvest does not just sort the field. It publishes it."
     },
     {
       "type": "teaching",
       "chiasm_position": "B",
       "pardes_layer": "derash",
       "heading": "One Day, Two Faces",
-      "content": "The Old Testament closes — in the Christian ordering — with Malachi describing a single coming day that arrives differently depending on where you stand. For the arrogant and the evildoer: a furnace, and they shall be stubble — the harvest image again, the leftover stalks after the grain is gone, neither root nor branch remaining. Evil's future, in the Bible's last prophetic word, is agricultural residue: no roots to regrow from, no branches to spread. It ends.\n\nBut the same sunrise lands on the God-fearers as something else entirely: unto you that fear my name shall the Sun of righteousness arise with healing in his wings. The identical day; the opposite experience. Not fire — light. And not bare light either: light with medicine in it, healing carried the way a bird carries warmth under its wings, and afterward the giddy image of calves let out of the stall — creatures built for a pasture finally released into it.\n\nThis is the double ending Jesus compresses into His parable's last verses, and the church has always needed both halves. Without the stubble, the barn is sentimental — a hope that never answers Ravensbrück or the Gulag or the weeds that broke your own life. Without the sunrise, the fire is merely terror. Spurgeon, preaching on the wheat and the barn, held the two in a single calm sentence: \"The word for this present is, 'Let both grow together,' but there will come a time when a final separation will be made.\" The present has its word; the future has its own.\n\nAnd the space between the two words is not slack in God's schedule. Peter names what the interval is made of: the Lord is \"patient with you, not wanting anyone to perish.\" While the present's word runs, the day's assignments are not yet published — no one you know has been finally filed under stubble or sunrise. That is why the delay of the sickle reads less like neglect and more like a door held open — and \"anyone\" is a word with no exceptions carved into it. The name you have not been able to put down all week is inside that word.",
+      "content": "In the Christian ordering of the Old Testament, the last prophetic voice belongs to Malachi, and his final page describes one day arriving two ways. For the arrogant and the evildoer: \"the day cometh, that shall burn as an oven,\" leaving \"neither root nor branch\" — stubble, the field's leftover straw once the grain is gone. Evil's long run ends as agricultural residue: nothing to regrow from, nothing to spread by. And the same sunrise lands on another group as something else entirely: \"But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.\" The identical morning — fire from one angle, medicine from the other, and afterward that giddy closing image: penned animals released into open pasture.\n\nThis is the double ending Jesus compresses into His parable's final verses, and the church needs both halves as much as it ever did. Drop the stubble, and the barn goes sentimental — a hope with no answer for Ravensbrück, or the camps, or the weeds that broke into any particular life; mercy weighs little where nothing was ever at stake. Drop the sunrise, and the fire becomes the whole forecast — a religion of dread. Scripture refuses the choice. Spurgeon, in his sermon on the wheat and the barn, laid the two eras side by side in one calm sentence: \"The word for this present is, 'Let both grow together,' but there will come a time when a final separation will be made.\" The present has its word; the future has its own; confusing the two is where the week's every error began.\n\nAnd the interval between those two words is not slack in the schedule. Peter named its substance on the pivot day: patience, aimed at repentance. While the present's word runs, the day's assignments remain unpublished — no one alive stands finally filed under stubble or sunrise. Deferred judgment therefore reads less like neglect and more like a held door. The day is fixed; the lists are not; and the God who fixed the day has said plainly which face of it He wants each person to meet.\n\nWhich raises the question the rest of today answers: how late in a life can the door still be used? Scripture's reply is a single scene on a hill outside Jerusalem, and it is more extreme than anyone would dare invent.",
       "markdown": false
     },
     {
@@ -134,57 +134,57 @@
       "videoProvider": "youtube",
       "videoId": "Zy2AQlK6C5k",
       "videoTitle": "Learn Where Heaven and Earth Overlap",
-      "videoCaption": "The Bible's ending in full frame: heaven and earth, overlapping in Eden, torn, and finally reunited — the world the gathered wheat wakes up in.",
+      "videoCaption": "Heaven and earth, overlapping and finally reunited — the world on the barn side of the harvest.",
       "videoAttribution": "BibleProject"
     },
     {
       "type": "bridge",
       "heading": "Ancient Truth, Modern Life",
-      "ancientTruth": "Malachi gives history one ending with two experiences: the same rising day arrives as a furnace for entrenched evil and as healing light for those who fear God's name.",
-      "modernApplication": "Our culture reads a person's whole story in a glance — one post, one season, one failure — then wonders why nobody changes.",
-      "connectionPoint": "Scripture agrees a reckoning is coming — and insists it has not come. Until it does, every reading of a person is provisional, and the honest response to a provisional reading is a seed, not a sentence: the word you plant today may still be growing in them when that day dawns.",
-      "newTestamentEcho": "\"Therefore judge nothing before the appointed time; wait until the Lord comes. He will bring to light what is hidden in darkness and will expose the motives of men's hearts. At that time each will receive his praise from God.\" — 1 Corinthians 4:5 (BSB)"
+      "ancientTruth": "Malachi hands history one ending with two experiences: the same rising day, furnace to entrenched evil, healing light to those who fear God's name. Nothing on the field survives unsorted — and nothing gets sorted before that morning.",
+      "modernApplication": "The modern eye reads whole persons from single frames — one post, one failure, one bad year — and files them permanently. The Bible's ending forbids exactly that speed. The day that sorts has not arrived, so every current reading of a person is a draft.",
+      "connectionPoint": "A reckoning certain but future changes the present's assignment. Since nothing is filed yet, every act toward another person is still input: the sown word, the kept table, the patient year may all be inside whatever turning their story has left. The sickle swings once, at ripeness, at a command that is not ours to give.",
+      "newTestamentEcho": "\"Then another angel came out of the temple, crying out in a loud voice to the One seated on the cloud, 'Swing Your sickle and reap, because the time has come to harvest; for the crop of the earth is ripe.'\" — Revelation 14:15 (BSB)"
     },
     {
       "type": "teaching",
       "chiasm_position": "C",
       "pardes_layer": "sod",
-      "heading": "The Unveiling",
-      "content": "Now the strangest, best word in the ending: shine. Not survive, not escape, not even rejoice — shine like the sun, in a verb the New Testament uses exactly once, a bursting-out of light like sun clearing cloud. Jesus is reaching for the hope of Daniel: many who sleep in the dust of the earth will awake... and the wise will shine like the brightness of the heavens. This is resurrection language — the Bible's earliest clear promise that the story runs through the grave and out the other side. And it lands on the field as a surprise. All season long, remember, the scandal was that wheat and weeds were indistinguishable — righteousness hidden, faithfulness anonymous, the true crop unreadable even to servants' eyes. The harvest does more than relocate the wheat: it unveils it. Names nobody had circled burst into visibility like dawn — and some of the names everybody had circled turn out to have been guesses. The servants who once offered their sickles will stand at the edge of the gathering and discover how little of the field they had read right.\n\nScripture has already staged that unveiling once, in miniature, on a hill outside Jerusalem. Two criminals hung beside Jesus, under the same judgment, with the same few hours left. One heaped abuse. The other looked at his own record and told the truth about it — \"We are punished justly, for we are receiving what our actions deserve\" — and then, with no years left to reform and no fruit to show, he turned his head: \"Jesus, remember me when You come into Your kingdom!\" And Jesus said to him, \"Truly I tell you, today you will be with Me in Paradise\" (Luke 23:41-43). A life that had read as weed all the way to the end was gathered as wheat in its final hour. There was no time to bear a single visible sheaf; there was time to be gathered. The thief is the parable's rule written as history: who a person finally is gets decided at the end, not an hour before — and never by us. The hope carries urgency inside it, though: the same afternoon held two thieves, and only one turned.\n\nJesus knew His hearers would need the point twice, so He closed the whole parable day by telling it again — this time from the sea. \"Once again, the kingdom of heaven is like a net that was cast into the sea and caught all kinds of fish. When it was full, the men pulled it ashore. Then they sat down and sorted the good fish into containers, but threw the bad away. So will it be at the end of the age: The angels will come and separate the wicked from the righteous, and throw them into the fiery furnace, where there will be weeping and gnashing of teeth\" (Matthew 13:47-50). Everything the field taught, the water confirms. A dragnet is the least selective tool a fisherman owns: it moves through the sea and takes what comes — all kinds — and no one sorts a catch in open water. The sorting waits for the shore, where the crew sit down to it, unhurried, and the crew turn out to be the same angels the field's harvest employed. Even the furnace sentence of verse 42 returns in verse 50 almost to the letter — Jesus reusing His own ending, the way you underline something twice. And notice the shape of His whole day of teaching: it opened with a sower flinging seed onto every kind of ground and closes with a net hauling in every kind of fish. Indiscriminate at the front door, indiscriminate at the back, and every act of separating reserved for the end. In between, nothing is thrown anywhere. The person this week keeps handing back to you is not on the shore yet; neither are you; the net is still moving through the water.\n\nThen Daniel adds the clause Jesus' hearers knew, the one this whole week has been walking toward: those who lead many to righteousness will shine like the stars forever and ever. Read it slowly. Daniel attaches the stars to a particular kind of life — one spent turning other people toward home. This is an evangelist's promise: in the Bible's earliest resurrection text, the brightest thing a human being can become is a guide. So the ending reaches back into the middle of the story — into today — and turns every conversation, every patient year, every unimpressive act of witness into the raw material of stars.\n\nC.S. Lewis pressed exactly this point at the close of his chapter on why God delays: \"God will invade... When that happens, it is the end of the world. When the author walks on to the stage the play is over... It will be too late then to choose your side... Now, today, this moment, is our chance to choose the right side.\" That is the ending's ethical pull, and it is the parable's too. The certainty of the harvest works on its hearers as a summons, never a sedative — urgent because the shore is coming, hopeful because it has not come. The sun is coming up on the field regardless. The live questions are which side of the sunrise you are standing on, and how many people you walk toward it with.",
+      "heading": "How Late the Light Can Reach",
+      "content": "Begin with the verb. Not endure, not survive — shine, and in Greek a verb the New Testament spends exactly once: eklampsousin, light bursting out of concealment, sun from behind cloud. Jesus is drawing on a hope His hearers knew by heart, Daniel's: \"And many who sleep in the dust of the earth will awake... Then the wise will shine like the brightness of the heavens.\" Resurrection language — the plainest the Old Testament gives — with Matthew's intensifier on it: not the firmament's glow but the sun's. The harvest, in other words, ends in an unveiling. Lives illegible all season become suddenly, gloriously readable; the field's whole hidden history comes to light at once. Which presses an urgent question on every life still in the rows: how late can a stalk still turn out to be wheat?\n\nScripture's answer is a scene. Three crosses; the middle one bearing the Sower Himself, absorbing His field's whole harvest of evil. On either side, two men under identical sentences. One mocks. The other, out of nowhere, tells the truth — \"We are punished justly, for we are receiving what our actions deserve. But this man has done nothing wrong\" — and then turns his head: \"Jesus, remember me when You come into Your kingdom!\" The answer comes back before sundown: \"Truly I tell you, today you will be with Me in Paradise\" (Luke 23:41-43). Weigh what that exchange establishes. Here is a life that read as weed from every angle, to every observer, for its entire length — a life with no years left to reform, no restitution possible, no fruit to show and no season left to grow any. And it is gathered. Not grudgingly, not provisionally: today, with Me. The final hour of a ruined life was still early enough, because who a person finally is gets settled at the end — and settled by the Judge, never by the crowd. One caution rides with the comfort, and honesty keeps it attached: the same afternoon held two thieves, and only one turned.\n\nJesus knew the point needed telling twice, so He closed His parable day by retelling the whole ending from the water. \"Once again, the kingdom of heaven is like a net that was cast into the sea and caught all kinds of fish. When it was full, the men pulled it ashore. Then they sat down and sorted the good fish into containers, but threw the bad away. So will it be at the end of the age: The angels will come and separate the wicked from the righteous, and throw them into the fiery furnace, where there will be weeping and gnashing of teeth\" (Matthew 13:47-50). Everything the field taught, the sea confirms. A dragnet is the least selective tool a fisherman owns — it sweeps, and takes all kinds. No sorting happens in open water; the crew sits down to it on the shore, unhurried, and the crew is the same one the field employed: angels. Even the furnace sentence returns nearly word for word — the Teacher underlining His own ending. And with that, the day's full architecture stands visible: it opened with a sower throwing seed at every ground and closes with a net gathering every kind. Indiscriminate at both doors, and every act of separation reserved for the end.\n\nThen Daniel finishes the promise with an aim. \"And those who lead many to righteousness will shine like the stars forever and ever.\" The brightest thing a human being can become, in the Bible's oldest resurrection text, is a guide — a life other lives followed home. The ending reaches back into the middle and revalues it: every patient conversation, every unglamorous year of witness, every seed thrown at unpromising ground is raw material for that shining.\n\nC.S. Lewis, closing his chapter on why God delays, drew the only sane conclusion: \"God will invade... When that happens, it is the end of the world. When the author walks on to the stage the play is over... It will be too late then to choose your side... Now, today, this moment, is our chance to choose the right side.\" The ending's certainty was built to summon, with a deadline no one has seen — urgent because the shore exists, hopeful because the net is still moving.",
       "markdown": false
     },
     {
       "type": "inline-image",
       "inlineImageSrc": "/images/series/the-harvest/net-ashore.webp",
       "inlineImageAlt": "Fishermen hauling a full drag-net ashore at dawn, sorting the catch into baskets on the sand",
-      "inlineImageCaption": "Like a net cast into the sea: everything gathered, nothing sorted until the shore.",
+      "inlineImageCaption": "Cast wide, drawn slow, sorted only on the sand — the discourse's last picture of the end.",
       "inlineImageWidth": "wide"
     },
     {
       "type": "story",
-      "heading": "The Plodder's Sheaves",
-      "content": "William Carey landed in India in November 1793 with a conviction and almost nothing else. Seven years followed — fever, poverty, and sowing with not one sheaf to show. Then, on the last Sunday of 1800, the cobbler-turned-translator wrote the sentence those seven years had been waiting for: \"Dec. 29. — Yesterday was a day of great joy. I had the happiness to desecrate the Gunga, by baptising the first Hindoo, viz. Krishna, and my son Felix.\" Krishna Pal, a Serampore carpenter, went down into the river before the Danish governor and a watching crowd — one convert, after seven years, and Carey called it a day of great joy without irony.\n\nTwelve years later the field burned — literally. On the evening of March 11, 1812, fire took the Serampore print shop: fourteen founts of Asian type, ten Bible translations in press, and the massive polyglot dictionary manuscript Carey had labored over for years. Eyewitnesses recorded his response in the ruins — that in one short evening the labors of years were consumed, and that the Lord had laid him low that he might look more simply to Him. Two weeks later his own pen confirmed the posture: \"The Lord has smitten us, he had a right to do so, and we deserve his corrections... I now, however, turn to the bright side... Our loss, so far as I can see, is reparable in a much shorter time than I should at first have supposed.\"\n\nNear the end of his life, Carey told his nephew how he wished to be remembered — words the nephew printed after his death: \"If he give me credit for being a plodder, he will describe me justly... I can plod. I can persevere in any definite pursuit. To this I owe every thing.\" The plodder's arithmetic proved out: the mission he seeded put the Scriptures into dozens of Asian languages, and the sheaves are still coming in.",
-      "connectionToTheme": "Carey is Daniel 12:3 in work clothes: a life spent walking people toward righteousness in a field that showed nothing for seven years. He could plod because the promise belonged to sowers — tears counted as seed, sheaves promised as certain — and because the tally of results was never his assignment. His job was the sowing; the shore was God's."
+      "heading": "Seven Years to the First Sheaf",
+      "content": "William Carey reached India in November 1793 with a conviction, a reluctant family, and almost nothing else. What followed tested every sentence he had ever preached about perseverance: fever, poverty, isolation — and seven full years of ministry without a single convert. The cobbler-turned-linguist kept translating, kept preaching, kept planting a mission with nothing visible to show for it.\n\nThen, on the last Sunday of 1800, his journal-letter finally recorded the day he had crossed an ocean for: \"Dec. 29. — Yesterday was a day of great joy. I had the happiness to desecrate the Gunga, by baptising the first Hindoo, viz. Krishna, and my son Felix.\" Krishna Pal, a Serampore carpenter of about thirty-five, went into the Hooghly River with the Danish governor watching from the bank — one convert after seven years, and Carey wrote \"great joy\" without a trace of irony.\n\nEleven years later the work burned. On the evening of March 11, 1812, fire took the Serampore print shop: fourteen founts of Asian type, ten Scripture translations in press, and the manuscript of his massive polyglot dictionary. Standing in the ruins, by an eyewitness's report, he said that in one short evening the labors of years had been consumed, and that the Lord had laid him low that he might look more simply to Him. His own letter two weeks later held the same line: \"The Lord has smitten us, he had a right to do so, and we deserve his corrections... I now, however, turn to the bright side... Our loss, so far as I can see, is reparable in a much shorter time than I should at first have supposed.\"\n\nAsked, near the end, how he wished to be remembered, he told his nephew — who printed the words after his death: \"If he give me credit for being a plodder, he will describe me justly... I can plod. I can persevere in any definite pursuit. To this I owe every thing.\" The plodding compounded: by the time he died, the mission he seeded had put the Scriptures into dozens of Asian languages — and the sheaves have not stopped coming in.",
+      "connectionToTheme": "Carey is Daniel's promise in work clothes — a life spent leading many toward righteousness, funded through seven empty years by a harvest he could not yet see. The certainty of the barn is what makes that kind of patience reasonable; the tears-to-sheaves arithmetic below is the math he banked on."
     },
     {
       "type": "inline-image",
       "inlineImageSrc": "/images/series/the-harvest/day5-inline.webp",
       "inlineImageAlt": "A single bound sheaf of grain standing upright, its heads tipped gold",
-      "inlineImageCaption": "Carrying sheaves: the weeping sower comes home with shouts of joy.",
+      "inlineImageCaption": "One sheaf, bound and standing — seven years in the growing.",
       "inlineImageWidth": "narrow"
     },
     {
       "type": "insight",
-      "heading": "The Arithmetic of Tears",
-      "content": "Psalm 126 makes a promise so precise it reads like accounting: they that sow in tears SHALL reap in joy — and the KJV's doubled certainty, shall DOUBTLESS come again with rejoicing, bringing his sheaves with him. Psalm 126 counts the tears as seed, not as the price of admission. For a witness, that arithmetic changes everything: the conversation that seemed to go nowhere, the prayer kept up for a person who keeps drifting, the years of sowing with no green in sight — none of it is lost to the barn. Carey banked seven blank years on exactly this math, and the sheaves came.",
-      "historicalContext": "Psalm 126 is a song of the return from exile — sung by people who had done their sowing in Babylon and were carrying their first sheaves home."
+      "heading": "The Sower's Arithmetic",
+      "content": "Psalm 126 states a promise with the precision of a ledger: \"They that sow in tears shall reap in joy\" — and then doubles down with Scripture's most confident adverb: whoever goes out weeping with seed \"shall doubtless come again with rejoicing, bringing his sheaves with him.\" The psalm does not treat the tears as overhead; it counts them as seed — planted, not spent. For anyone whose long witness has produced mostly silence, that arithmetic reverses the books: nothing sown toward another person's turning is lost inventory, whatever the current field shows. Carey drew on exactly this account for seven years, and it paid in sheaves.",
+      "historicalContext": "Psalm 126 is a song of the return from exile — composed by a people who had done their sowing in Babylon's fields and lived to carry sheaves home from ground that had once been their prison."
     },
     {
       "type": "teaching",
       "chiasm_position": "B-prime",
       "pardes_layer": "derash",
-      "heading": "Living Toward the Sunrise",
-      "content": "What does a harvest that unveils change about an ordinary Friday? Three things.\n\nIt funds the plod. Most witness is Carey's kind: unglamorous, cumulative, harvest nowhere in sight. The certainty of the barn is what makes such work rational. You are not gambling your words and your prayers on a maybe; you are investing them in a scheduled harvest. So take the person you have almost stopped praying for, the conversation you have almost stopped hoping toward, and reframe them in plodder's terms: I can persevere in this, because the sheaves are certain even when they are not soon.\n\nIt takes the sorting off your job description. The shore crew, Jesus says, are angels — the position was never posted. The coworker you decided was hopeless, the relative you stopped inviting, the name you moved from 'pray for' to 'past praying for': every one of them is still in the net's slow sweep, still being drawn. Reopen one file tonight. Say the name out loud to God.\n\nAnd it recruits your voice. Daniel's stars are pinned to a particular verb: turning many to righteousness. If the ending is certain and the field is still open, silence is the one strategy with no future in it. This asks for no slogans — just Carey's logic, one carpenter, seven years, worth it, applied to the people within your reach. Who in your field has never once heard you say, plainly, what you are hoping for them, and why?",
+      "heading": "Funded by the Ending",
+      "content": "What does a certain, unveiling, twice-told ending change about an ordinary week? Three funded practices.\n\nIt funds the plod. Most witness is Carey's kind — cumulative, unglamorous, results indefinitely pending. On any shorter accounting it looks like failure, which is why so much of it gets abandoned in year two. The barn re-runs the numbers. Work invested toward a scheduled harvest is agriculture, plain and long. The sower who keeps a long row going — the prayers kept up, the conversations reopened, the translation redone after the fire — is not being stubborn against the evidence. The decisive evidence simply is not in yet, and the psalm has already published the ending: sheaves, doubtless.\n\nIt closes the sorting office. The shore crew is staffed, the position was never posted, and every mid-water reading of a person now stands doubly discredited: wrong on the field's terms, since green plants defy grading, and wrong on the net's, since nothing is decided until the sand. Whatever roster survives in us after four days of this parable, today's retelling repossesses it. All kinds are still in the sweep. Every file is still open. The catch has not landed.\n\nAnd it recruits the voice. Daniel's stars go to those who lead many to righteousness — a plural, active, speaking word. If the ending is fixed and the door is open, silence toward the people in our reach is the one posture with no future in it: kindness alone cannot tell anyone why the door exists or that it closes. Lewis's now, today, this moment was written for readers, not professionals — for the friendship where the subject has never been raised, the table where hope has stayed politely implicit for years. The plod supplies the credibility; the voice supplies the news; the ending supplies the deadline. A fieldhand's week has room for all three.\n\nNone of this asks anyone to manufacture certainty about who will stand where. The week's whole discipline has been surrendering exactly that. It asks something smaller and harder: to live now as if the unveiling is real — sowing like the sheaves are certain, speaking like the door is open, refusing every reading the shore will overturn.",
       "markdown": false
     },
     {
@@ -195,34 +195,34 @@
       "emphasis": [
         "shall doubtless come again with rejoicing"
       ],
-      "scriptureContext": "The exiles' harvest song — the sower's arithmetic for every witness still waiting on green, sealed with the Bible's most confident adverb."
+      "scriptureContext": "The exiles' harvest song — tears counted as seed, sheaves promised with Scripture's most confident adverb."
     },
     {
       "type": "reflection",
-      "prompt": "Carey sowed for seven years with nothing above ground. Where in your field are you tempted to read bare soil as the end of the story — a person, a prayer, a long witness — and what would you keep doing this month if you trusted the reaping to God's calendar instead of yours?",
+      "prompt": "Carey worked seven years before the first sheaf. Which long row of yours is currently showing nothing — and what would this month look like if you trusted the reaping to God's calendar instead of yours?",
       "additionalQuestions": [
-        "The net gathers every kind, and nothing is decided until it reaches the shore. Who have you been sorting mid-water — and what would it free you to do for them if you handed the shore work back?",
-        "Daniel ties the stars to a life that leads others toward righteousness. Whom could your voice — not your example alone, your voice — start walking home?",
-        "A criminal with hours to live heard 'today' from the lips of the Judge. What does that do to the private timetable you keep for the person you pray for?"
+        "The net gathers all kinds, and nothing is decided in the water. Whose mid-water reading — including one of your own — does today ask you to hand back?",
+        "A man with one breath left heard 'today.' What does that scene do to every deadline you have privately set on somebody's turning?",
+        "Daniel's stars belong to those who lead many to righteousness. Who in your reach has heard your kindness but never your reason for it?"
       ]
     },
     {
       "type": "interactive",
-      "heading": "Today's Practice: An Image of the Ending",
-      "instruction": "An art response — the week's practice of seeing. No skill required; attention is the offering.",
+      "heading": "Today's Practice: A Picture of the Barn",
+      "instruction": "An art response — attention as the offering; no skill required.",
       "interaction_type": "art",
       "steps": [
         {
-          "title": "Find",
-          "description": "Today, find or make one image of the ending as this week has taught it: a sunrise, a full barn or pantry shelf, a bound sheaf, a net drying on a rail — anything that says gathered, not just spared."
+          "title": "Choose",
+          "description": "Find or make one image that says gathered, not merely spared: a sunrise, a bound sheaf, a full pantry shelf, a net drying on a rail."
         },
         {
-          "title": "Sit",
-          "description": "Look at it for two unhurried minutes. Let the person you had nearly written off — the one who once made you want the sickle — stand in the same frame as the light."
+          "title": "Look",
+          "description": "Give it two unhurried minutes. Let the week's hardest rows — the ones you nearly finished reading — stand inside the same frame as the light."
         },
         {
-          "title": "Inscribe",
-          "description": "Write across or beneath it: Then the righteous will shine like the sun. Keep it where the cynical hour will find it."
+          "title": "Mark",
+          "description": "Write across or beneath it: Then the righteous will shine like the sun. Put it where your most cynical hour will find it."
         }
       ]
     },
@@ -230,53 +230,53 @@
       "type": "teaching",
       "chiasm_position": "A-prime",
       "pardes_layer": "peshat",
-      "heading": "The Night, Outlived",
-      "content": "This week opened with a farmer walking out to sow — and turned dark almost at once: an enemy over-sowing the field while everyone slept, the servants reaching for their sickles, the Master's No, the field revealed as the whole wide world, a mustard seed's absurd promise, the fieldhand's long patient watering. And now, at the week's far edge, a net comes up out of the sea with everything in it.\n\nSo end the week's teaching where Jesus ended His: at daybreak. The enemy got one night. The Father's answer is a morning that does not set — stubble where entrenched evil stood, a barn for every stalk of wheat, healing in the very wings of the light, every quiet faithfulness finally seen, and stars for the plodders. The night was real. It was also outnumbered.\n\nTomorrow gathers the whole field into one view, with a trail for going further. Sunday, we rest. Before sleep, set one face before God — the one still saying no. Their story is not finished, and it was never yours to finish. The Lord who remembered a dying thief is patient still, and while that patience holds, your voice and your prayers are part of how it reaches them. Carry one sentence into the dark, and let it be His: Then the righteous will shine like the sun in the kingdom of their Father. He who has ears, let him hear.",
+      "heading": "The Last Hour of the Dark",
+      "content": "The week began in the dark: an enemy in the rows, everyone asleep, ruin sown so well it stayed hidden for a season. Stand at the far end now and look back. The enemy appears in one verse of one evening and never returns; every scene after belongs to the Owner — the No that saved the wheat, the oath that explained the waiting, the mustard and the leaven working the meantime, the fieldhands blessing both crops. And out ahead, fixed and dated, a morning: stubble where entrenched evil stood, healing carried in the light itself, the barn full, the hidden faithful blazing like the sun, stars for the guides. The dark was real all week. It was never winning.\n\nNow bring the face you have carried through these days into that morning — the one you love who wants nothing to do with the God of this field. Their chapter tonight is not their ending; the thief's eleventh hour is on the record precisely so that no watcher of any life concludes too early. While the net moves, they are in the sweep. While the door stands, the Voice is still calling down their road. And while you wait, your part has never changed: sow toward them, speak when the opening comes, keep their chair — and let God keep the timeline.\n\nTomorrow gathers the whole discourse into one view. The day after, the week closes in rest. Tonight, one sentence is enough to carry into sleep, and it should be His rather than ours: Then the righteous will shine like the sun in the kingdom of their Father. He who has ears, let him hear.",
       "markdown": false
     },
     {
       "type": "prayer",
       "heading": "Prayer",
-      "prayerText": "Sun of righteousness, rise on me. I hand back the sorting I was never assigned — the catch is Yours, the shore is Yours, the angels answer to You. Thank You for the thief, and for proof that 'today' can arrive that late. Fund my plodding with Your certain barn; keep me sowing where nothing shows; loosen my tongue while the net is still in the water. And when the light comes up, surprise me with joy — let the faces I had stopped hoping for be standing in it beside me. Amen.",
+      "prayerText": "Sun of righteousness, rise with healing — on the rows I tend, the rows I grieve, and the rows I have never noticed. Thank You for a thief remembered at the last hour, for a net still moving through the water, for sheaves promised to tears. I hand back, one more time, the sorting You never assigned me, and I ask instead for a sower's stamina and a guide's voice. When the unveiling comes, let people stand in the light because somebody kept sowing toward them — and let some of them stand there because of me. Amen.",
       "breathPrayer": "Inhale: Sowing in tears — Exhale: reaping in joy.",
       "prayerType": "hope"
     },
     {
       "type": "takeaway",
       "heading": "Today's Commitment",
-      "commitment": "I will reopen one file I closed too early, pray by name for the person whose story I nearly finished myself, keep sowing my longest bare-soil row, and tell one person this week, plainly, what I am hoping for them — and why.",
+      "commitment": "I will keep my longest bare row in cultivation this month — the prayer resumed, the conversation reopened — and before the week ends I will tell one person, plainly and kindly, the hope I am holding for them.",
       "leavingAtCross": [
-        "My mid-water guesses about who is what",
-        "The demand to see sheaves before I keep sowing",
-        "The fear that the tears were wasted seed"
+        "Every mid-water reading I was still holding",
+        "The account books that count tears as losses",
+        "The private deadline I set on somebody's turning"
       ],
       "receivingFromCross": [
-        "A catch carried all the way to shore before anything is decided",
-        "Daniel's stars, promised to the ones who turn many to righteousness",
-        "The Bible's most confident adverb: doubtless"
+        "A gathering that waits for the shore — and for the Judge with scars",
+        "Daniel's stars, promised to guides rather than critics",
+        "The adverb 'doubtless,' standing over every sown tear"
       ]
     },
     {
       "type": "comprehension",
       "heading": "Community Reflection",
-      "question": "In Malachi's final prophecy, the same coming day arrives as two different experiences. What are they?",
+      "question": "Malachi's final prophecy describes the same coming day arriving as two different experiences. Which two?",
       "options": [
         "Rain for the righteous, drought for the wicked",
-        "A furnace leaving the wicked as rootless stubble — and the Sun of righteousness rising with healing in its wings for those who fear His name",
+        "A furnace leaving the arrogant as rootless stubble — and the Sun of righteousness rising with healing in its wings for those who fear God's name",
         "Harvest for Israel, famine for the nations",
-        "Darkness for all, then light for all"
+        "Darkness for everyone, then light for everyone"
       ],
       "answer": 1,
-      "explanation": "Malachi 4:1-2 — one day, two faces: the arrogant become stubble, 'neither root nor branch,' while the God-fearers receive sunrise with healing in its wings and go out 'as calves of the stall.' Jesus compresses the same double ending into His parable: furnace and fire for the weeds, the righteous shining like the sun."
+      "explanation": "Malachi 4:1-2 — one day, two faces: the arrogant become stubble with 'neither root nor branch,' while those who fear His name meet sunrise with healing in its wings and go out 'as calves of the stall.' Jesus compresses the same double ending into the parable: furnace for the weeds, sun-bright shining for the righteous."
     },
     {
       "type": "profile",
       "heading": "A Voice From the Story",
       "name": "William Carey",
       "era": "1761-1834, Northamptonshire and Serampore, India",
-      "bio": "A village cobbler who taught himself languages over the workbench and became the father of the modern missionary movement. He landed in India in 1793, waited seven years for the first convert — Krishna Pal, baptized in the Hooghly on December 28, 1800, alongside Carey's own son — survived the 1812 fire that consumed years of translation work, and kept plodding until the Scriptures existed in dozens of Asian languages. He asked to be remembered not as a genius but as a plodder.",
+      "bio": "A village cobbler who taught himself Greek, Hebrew, and half a dozen living languages over the workbench, then carried his family to India in 1793 to attempt what almost no Protestant had tried. Seven years passed before the first baptism — Krishna Pal, in the Hooghly, December 28, 1800, alongside Carey's own son Felix. The 1812 fire took years of translation work in one evening; he rebuilt. By his death the Scriptures existed in dozens of Asian languages that had never before held them.",
       "keyQuote": "I can plod. I can persevere in any definite pursuit. To this I owe every thing.",
-      "lessonForUs": "Carey never saw most of his harvest — he plodded on a promise. Daniel gives the stars to 'those who lead many to righteousness,' and Carey's seven blank years say the leading counts long before anything shows above the soil. The field's silence was not the last word; the last word arrived with the harvest, and it came in sheaves."
+      "lessonForUs": "Carey never saw most of what he planted come in — he worked against the visible evidence, on the strength of a promised ending. That is witness funded by the barn: plodding toward sheaves that are certain, on a schedule that was never disclosed."
     },
     {
       "type": "resource",
@@ -293,20 +293,16 @@
         {
           "reference": "Matthew 13:47-48 (BSB)",
           "text": "\"Once again, the kingdom of heaven is like a net that was cast into the sea and caught all kinds of fish. When it was full, the men pulled it ashore. Then they sat down and sorted the good fish into containers, but threw the bad away.\""
-        },
-        {
-          "reference": "Revelation 14:14-15 (BSB)",
-          "text": "\"...seated on the cloud was One like the Son of Man, with a golden crown on His head and a sharp sickle in His hand... 'Swing Your sickle and reap, because the time has come to harvest.'\""
         }
       ],
       "resources": [
         {
           "title": "C.S. Lewis, Mere Christianity, Book II, ch. 5, \"The Practical Conclusion\" (1952)",
-          "description": "Source of the quotation on God's delay and the Author walking on stage — quoted verbatim from the full text: 'When the author walks on to the stage the play is over... Now, today, this moment, is our chance to choose the right side.'"
+          "description": "Source of today's quotation on God's delay and the Author walking on stage — verbatim from the full text: 'When the author walks on to the stage the play is over... Now, today, this moment, is our chance to choose the right side.'"
         },
         {
           "title": "William Carey — primary sources",
-          "description": "His journal-letter of December 29, 1800 ('a day of great joy... baptising the first Hindoo, viz. Krishna, and my son Felix') and his letter to Ryland of March 25, 1812 after the Serampore fire, both printed in Eustace Carey's Memoir of William Carey (1836) and George Smith's Life of William Carey (1885). 'I can plod' is his nephew Eustace's printed recollection of Carey's spoken words (Memoir, 1836); the fire-ruins sentence is eyewitness-reported speech (Thomason). Provenance carried in the series source pack."
+          "description": "His journal-letter of December 29, 1800 ('a day of great joy... baptising the first Hindoo, viz. Krishna, and my son Felix') and his letter to Ryland of March 25, 1812 after the Serampore fire, both printed in Eustace Carey's Memoir of William Carey (1836) and George Smith's Life of William Carey (1885). 'I can plod' is the nephew's printed recollection of Carey's spoken words (Memoir, 1836); the fire-ruins sentence is eyewitness-reported speech (Thomason). Provenance carried in the series source pack."
         },
         {
           "title": "Charles Spurgeon, Sermon #3393, \"Wheat in the Barn\" (Matthew 13:30), MTP Vol. 60",
@@ -314,10 +310,10 @@
         },
         {
           "title": "Hebrew and Greek data",
-          "description": "eklampō (G1584, NT hapax — matching the Greek Daniel 12:3 read by the early church); shemesh tsedaqah / umarpe bikhnafeha (Malachi 4:2, H8121/H6666/H4832/H3671) — BibleHub interlinear and Strong's."
+          "description": "eklampō (G1584, NT hapax; its form matches the Greek Daniel 12:3 the early church read); shemesh tsedaqah / umarpe bikhnafeha (Malachi 4:2 — H8121, H6666, H4832, H3671) — BibleHub interlinear and Strong's."
         }
       ],
-      "forDeeperStudy": "Read Malachi 3:16-4:6 — the book of remembrance, the jewels, the two-faced day — then Revelation 21:1-7, and notice the Bible's last barn: 'They will be My people, and I will be their God.'"
+      "forDeeperStudy": "Read Malachi 3:16-4:6 — the book of remembrance and the two-faced day — then sit once more with Luke 23:39-43, and let the thief's afternoon set the outer limit of your hope for every unfinished life."
     }
   ]
 }

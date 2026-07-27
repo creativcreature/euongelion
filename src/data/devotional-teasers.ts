@@ -891,19 +891,19 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'the-blueprint-of-community-day-5':
     'The fruits of a Spirit-formed community: awe, generosity, unity, joy, hospitality, worship, and daily faithfulness',
   'the-harvest-day-1':
-    'Jesus opens His parable day with a farmer who flings seed onto footpaths, gravel, and standing thorns — on purpose. If you have spent years sowing words and prayers into someone who will not hear them, this story was told about your field. No ground in it is finished.',
+    'Jesus opens His day of parables with a sower and four kinds of ground — then tells a second story that turns the same field dark. The sabotage takes one night. Discovering it takes a whole growing season. This week lives inside that second story.',
   'the-harvest-day-2':
-    'The weeds went in at night; the offer to fix them came at dawn and sounded like loyalty. Jesus hangs the whole parable on the refusal — and a psalm had answered the servants a thousand years before they asked: do not fret, be still — the grass is already withering.',
+    'The weeds are found at dawn and the rescue plan is ready by breakfast: pull them up. Jesus builds the whole parable around the refusal — and around a reason the servants could not see from where they stood.',
   'the-harvest-day-3':
-    "Indoors, away from the crowds, the disciples ask for the answer key. Jesus gives it — the field is the world, the good seed is people, the reapers are angels. Then the oldest complaint against heaven — why so slow? — meets God's own answer from Ezekiel, and two tiny parables about a seed and a spoonful of leaven show what hope does while it waits.",
+    "The disciples ask for the meaning and get it straight: the field is the world, the reapers are angels, the harvest is the end of the age. Which leaves the week's hardest question — why the wait? — and God answered that one under oath, centuries in advance.",
   'the-harvest-day-4':
-    "The sickle is off the table — and someone you love is still standing in the field. So what fills the days while God waits? A fieldhand's job description the Father has been modeling since sunrise — and a prophet who did the work, hated the mercy, and walked out of a spared city to wait for fire.",
+    "If the sorting belongs to angels, the fieldhand's calendar still has to fill. Jesus points at the sky: the Father has been blessing both crops since sunrise. Then the Old Testament hands over its case study — a prophet who preached mercy, watched it work, and went outside to wait for fire anyway.",
   'the-harvest-day-5':
-    'The week ends where Jesus ended His parable day: a dragnet hauling in every kind of fish, a thief who was not too late, and stars kept for those who spend their lives bringing others in.',
+    "Jesus finishes His parable day the way He finishes the parable: with light. Wheat comes in, hidden faithfulness stops hiding, and Daniel's oldest promise names who shines brightest. Between now and then, one thief on a cross shows how late a life can still be gathered.",
   'the-harvest-day-6':
-    "Five days inside Jesus' kingdom-parable discourse. Today: the whole teaching at a glance — seed to soils to sabotage to slow growth to the net at the shore — God's patience at its center, the person you love still inside it, and everything you need to keep studying on your own.",
+    "Five days, one afternoon of teaching, one parable at the center. Today: the whole field at a glance, the patience that holds it, and everything needed to keep studying past the week's edge.",
   'the-harvest-day-7':
-    'Jesus told a second seed parable: the farmer sleeps, and the earth produces all by itself. The one you have been praying for all week grows the same way — by a power that is not yours. Today, be the sleeping farmer.',
+    'Mark keeps a second seed parable: the farmer scatters, then sleeps and wakes, and the earth bears all by itself. After a week of holding the field, one day for letting it hold you.',
   'the-nature-of-belief-day-1':
     'Understanding that trials produce perseverance and lead to spiritual maturity',
   'the-nature-of-belief-day-2':
@@ -1531,7 +1531,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'the-blueprint-of-community-day-3': "Peter's Sermon and the First Response",
   'the-blueprint-of-community-day-4': 'The Four Pillars of the New Community',
   'the-blueprint-of-community-day-5': 'Awe, Generosity, and Daily Rhythms',
-  'the-harvest-day-1': 'A Farmer Went Out to Sow',
+  'the-harvest-day-1': 'While Everyone Slept',
   'the-harvest-day-2': 'Do You Want Us to Pull Them Up?',
   'the-harvest-day-3': 'The Field Is the World',
   'the-harvest-day-4': 'Fieldhands, Not Harvesters',

@@ -29,7 +29,7 @@ const USER = '00000000-0000-0000-0000-00000000abcd'
 
 beforeEach(() => {
   // Each test starts from an empty runtime store.
-   
+
   ;(globalThis as any).__euangelionLibraryStore__ = undefined
   delete process.env.NEXT_PUBLIC_SUPABASE_URL
   delete process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -87,5 +87,28 @@ describe('library repository — writes fail loudly when persistence is unavaila
     // here). The point: a page render must not 500 because a lazy
     // promotion write failed.
     await expect(promoteScheduledSwapIfDue(USER)).resolves.toBeNull()
+  })
+})
+
+describe('plan expiry — zombies never resurface (SA-033)', () => {
+  it('flags a plan whose last unlock is weeks past', async () => {
+    const { isPlanExpired } = await import('@/lib/soul-audit/plan-queries')
+    const old = new Date(Date.now() - 16 * 24 * 60 * 60 * 1000).toISOString()
+    const plan = {
+      schedule: [
+        { day: 1, date: '', unlock_at: old, status: 'unlocked' },
+        { day: 7, date: '', unlock_at: old, status: 'unlocked' },
+      ],
+    } as never
+    expect(isPlanExpired(plan)).toBe(true)
+  })
+
+  it('keeps a plan whose week is still live', async () => {
+    const { isPlanExpired } = await import('@/lib/soul-audit/plan-queries')
+    const recent = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString()
+    const plan = {
+      schedule: [{ day: 1, date: '', unlock_at: recent, status: 'unlocked' }],
+    } as never
+    expect(isPlanExpired(plan)).toBe(false)
   })
 })

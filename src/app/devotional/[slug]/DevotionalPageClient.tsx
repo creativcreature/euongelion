@@ -16,7 +16,6 @@ import DevotionalRhythm, {
 import AuthorColophon from '@/components/devotional/AuthorColophon'
 import ScrollProgress from '@/components/ScrollProgress'
 import ReaderThemeControl from '@/components/ReaderThemeControl'
-import ReaderTimeline from '@/components/ReaderTimeline'
 import ModuleRenderer from '@/components/ModuleRenderer'
 import ShareButton from '@/components/ShareButton'
 import AudioPlayer from '@/components/AudioPlayer'
@@ -158,17 +157,6 @@ export default function DevotionalPageClient({
       : null
   const totalDays = seriesDays?.length || 0
   const currentDayNum = currentDayIdx >= 0 ? currentDayIdx + 1 : 0
-  const timelineAnchors = useMemo(() => {
-    const source =
-      modules && modules.length > 0
-        ? modules.map((module) => module.heading || module.type || 'Section')
-        : (panels ?? []).slice(1).map((panel) => panel.heading || 'Section')
-
-    return source.map((label, index) => ({
-      id: `devotional-section-${index + 1}`,
-      label: `S${index + 1}: ${label}`,
-    }))
-  }, [modules, panels])
 
   // Artwork images for this devotional. Resolution order:
   // 1. SITE_DEVOTIONAL_ART[slug] — Stage-3 generated library (175 slugs)
@@ -665,21 +653,6 @@ export default function DevotionalPageClient({
                       )}
                     </>
                   )}
-
-                {timelineAnchors.length > 0 && (
-                  <div
-                    className="border-t pt-4"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <p className="text-label vw-small mb-3 text-gold">
-                      TIMELINE
-                    </p>
-                    <ReaderTimeline
-                      anchors={timelineAnchors}
-                      className="reader-sidebar-timeline"
-                    />
-                  </div>
-                )}
 
                 {/* Audit C2: LIBRARY is app-wide nav, not reading chrome.
                     Hide on mobile entirely (it pushed content well below

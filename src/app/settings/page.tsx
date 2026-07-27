@@ -900,226 +900,6 @@ export default function SettingsPage() {
           {/* ------------------------------------------------------------ */}
           <div className="lg:columns-2 lg:gap-6">
             {/* READING ------------------------------------------------- */}
-            <SettingsCard id="reading" title="READING">
-              <CardSection first>
-                <h3 className="text-label vw-small mb-4 text-gold">
-                  APPEARANCE
-                </h3>
-                <div className="flex flex-wrap gap-4">
-                  {(['dark', 'light', 'system'] as Theme[]).map((t) => (
-                    <button
-                      type="button"
-                      key={t}
-                      onClick={() => {
-                        setTheme(t)
-                        showSaved()
-                      }}
-                      aria-pressed={theme === t}
-                      className="px-6 py-3 text-label vw-small transition-theme"
-                      style={selectedButtonStyle(theme === t)}
-                    >
-                      {t.charAt(0).toUpperCase() + t.slice(1)}
-                    </button>
-                  ))}
-                </div>
-                <p className="vw-small mt-4 text-muted">
-                  Named reading themes — Ink, Parchment, Vellum, Night — live in
-                  the reader itself: open any reading and tap Aa.
-                </p>
-              </CardSection>
-
-              <CardSection>
-                <h3 className="text-label vw-small mb-4 text-gold">
-                  TEXT SIZE &amp; COMFORT
-                </h3>
-                <p className="vw-small mb-5 text-secondary">
-                  These preferences apply globally across the site.
-                </p>
-                <div className="mb-6 flex flex-wrap gap-3">
-                  {(['default', 'large', 'xlarge'] as TextScale[]).map(
-                    (scale) => (
-                      <button
-                        type="button"
-                        key={scale}
-                        onClick={() => {
-                          setTextScale(scale)
-                          showSaved()
-                        }}
-                        aria-pressed={textScale === scale}
-                        className="px-6 py-3 text-label vw-small transition-theme"
-                        style={selectedButtonStyle(textScale === scale)}
-                      >
-                        {scale === 'default'
-                          ? 'Default'
-                          : scale === 'large'
-                            ? 'Large'
-                            : 'Extra Large'}
-                      </button>
-                    ),
-                  )}
-                </div>
-                <div className="grid gap-3">
-                  <label className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      checked={reduceMotion}
-                      onChange={(event) => {
-                        setReduceMotion(event.target.checked)
-                        showSaved()
-                      }}
-                    />
-                    <span className="vw-small text-secondary">
-                      Reduce motion
-                    </span>
-                  </label>
-                  <label className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      checked={highContrast}
-                      onChange={(event) => {
-                        setHighContrast(event.target.checked)
-                        showSaved()
-                      }}
-                    />
-                    <span className="vw-small text-secondary">
-                      High contrast mode
-                    </span>
-                  </label>
-                  <label className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      checked={readingComfort}
-                      onChange={(event) => {
-                        setReadingComfort(event.target.checked)
-                        showSaved()
-                      }}
-                    />
-                    <span className="vw-small text-secondary">
-                      Reading comfort mode (more line-height and spacing)
-                    </span>
-                  </label>
-                </div>
-              </CardSection>
-
-              <CardSection>
-                <h3 className="text-label vw-small mb-4 text-gold">
-                  BIBLE TRANSLATION
-                </h3>
-                <p className="vw-small mb-2 text-secondary">
-                  Your preferred translation for Scripture in generated
-                  readings. All seven options are public domain or
-                  CC0-dedicated.
-                </p>
-                <p className="vw-small mb-6 text-muted">
-                  See{' '}
-                  <Link
-                    href="/credits"
-                    className="underline decoration-dotted underline-offset-2"
-                  >
-                    Credits &amp; Translations
-                  </Link>{' '}
-                  for full attribution.
-                </p>
-                <select
-                  value={bibleTranslation}
-                  onChange={(e) => {
-                    setBibleTranslation(e.target.value as BibleTranslation)
-                    showSaved()
-                  }}
-                  className="w-full max-w-xs bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)]"
-                  style={{
-                    border: '1px solid var(--color-border)',
-                    appearance: 'none',
-                  }}
-                  aria-label="Default Bible translation"
-                >
-                  {BIBLE_TRANSLATION_CODES.map((code) => {
-                    const meta = BIBLE_TRANSLATIONS[code]
-                    return (
-                      <option key={code} value={code}>
-                        {meta.short} ({meta.name}) · {meta.licenseShort}
-                      </option>
-                    )
-                  })}
-                </select>
-              </CardSection>
-
-              <CardSection>
-                <h3 className="text-label vw-small mb-4 text-gold">
-                  DEVOTIONAL DEPTH
-                </h3>
-                <p className="vw-small mb-5 text-secondary">
-                  How long a generated day of reading should run.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    { label: '5-7 min', value: 'short_5_7' },
-                    { label: '20-30 min', value: 'medium_20_30' },
-                    { label: '45-60 min', value: 'long_45_60' },
-                    { label: 'Variable', value: 'variable' },
-                  ].map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      onClick={() => {
-                        setDevotionalDepthPreference(
-                          option.value as
-                            | 'short_5_7'
-                            | 'medium_20_30'
-                            | 'long_45_60'
-                            | 'variable',
-                        )
-                        showSaved()
-                      }}
-                      aria-pressed={devotionalDepthPreference === option.value}
-                      className="px-4 py-2 text-label vw-small"
-                      style={quietPillStyle(
-                        devotionalDepthPreference === option.value,
-                      )}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </CardSection>
-            </SettingsCard>
-
-            {/* REMINDERS ------------------------------------------------ */}
-            <SettingsCard id="reminders" title="REMINDERS">
-              <ReminderScheduler />
-              {/* Phase 1d (pattern doc §7.7) — the account onboarding is
-                  re-enterable from here, and only here. Anonymous readers
-                  have the landing-page first-run intro instead. */}
-              {accountAuthed && (
-                <CardSection id="revisit-welcome">
-                  <h3 className="text-label vw-small mb-4 text-gold">
-                    YOUR WELCOME
-                  </h3>
-                  <Link
-                    href="/onboarding?force=1"
-                    className="flex min-h-[44px] items-center justify-between gap-4 px-4 py-3 transition-theme"
-                    style={{
-                      border: '1px solid var(--color-border)',
-                      backgroundColor: 'var(--color-surface)',
-                    }}
-                  >
-                    <span className="min-w-0">
-                      <span className="vw-body block text-[var(--color-text-primary)]">
-                        Revisit your welcome
-                      </span>
-                      <span className="vw-small text-muted">
-                        Reminder window and notifications, one step at a time
-                      </span>
-                    </span>
-                    <span aria-hidden="true" className="text-secondary">
-                      →
-                    </span>
-                  </Link>
-                </CardSection>
-              )}
-            </SettingsCard>
-
-            {/* ACCOUNT -------------------------------------------------- */}
             <SettingsCard id="account" title="ACCOUNT">
               <CardSection first>
                 {!accountChecked ? (
@@ -1331,157 +1111,224 @@ export default function SettingsPage() {
               )}
             </SettingsCard>
 
-            {/* AI & KEYS ------------------------------------------------ */}
-            <SettingsCard id="ai-keys" title="AI & KEYS">
+            <SettingsCard id="reading" title="READING">
               <CardSection first>
-                <p className="vw-small mb-6 text-secondary">
-                  Choose your default brain and optional BYO provider keys.
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  APPEARANCE
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  {(['dark', 'light', 'system'] as Theme[]).map((t) => (
+                    <button
+                      type="button"
+                      key={t}
+                      onClick={() => {
+                        setTheme(t)
+                        showSaved()
+                      }}
+                      aria-pressed={theme === t}
+                      className="px-6 py-3 text-label vw-small transition-theme"
+                      style={selectedButtonStyle(theme === t)}
+                    >
+                      {t.charAt(0).toUpperCase() + t.slice(1)}
+                    </button>
+                  ))}
+                </div>
+                <p className="vw-small mt-4 text-muted">
+                  Named reading themes — Ink, Parchment, Vellum, Night — live in
+                  the reader itself: open any reading and tap Aa.
                 </p>
-                <div className="grid gap-6">
-                  <div className="grid gap-3">
-                    <p className="text-label vw-small text-gold">
-                      DEFAULT BRAIN
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      {/* F-083 settings repair (SA-033, 2026-07-27): Google's
-                          configured model was shut down upstream and the
-                          MiniMax / NVIDIA options were exotic BYO-only paths —
-                          all three retired from the picker (router code
-                          untouched). */}
-                      {[
-                        { label: 'Auto (Claude-first)', value: 'auto' },
-                        { label: 'Claude/OpenAI', value: 'openai' },
-                      ].map((option) => (
-                        <button
-                          key={option.value}
-                          type="button"
-                          onClick={() => {
-                            setDefaultBrainMode(option.value as BrainMode)
-                            showSaved()
-                          }}
-                          aria-pressed={defaultBrainMode === option.value}
-                          className="px-4 py-2 text-label vw-small"
-                          style={quietPillStyle(
-                            defaultBrainMode === option.value,
-                          )}
-                        >
-                          {option.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+              </CardSection>
 
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  TEXT SIZE &amp; COMFORT
+                </h3>
+                <p className="vw-small mb-5 text-secondary">
+                  These preferences apply globally across the site.
+                </p>
+                <div className="mb-6 flex flex-wrap gap-3">
+                  {(['default', 'large', 'xlarge'] as TextScale[]).map(
+                    (scale) => (
+                      <button
+                        type="button"
+                        key={scale}
+                        onClick={() => {
+                          setTextScale(scale)
+                          showSaved()
+                        }}
+                        aria-pressed={textScale === scale}
+                        className="px-6 py-3 text-label vw-small transition-theme"
+                        style={selectedButtonStyle(textScale === scale)}
+                      >
+                        {scale === 'default'
+                          ? 'Default'
+                          : scale === 'large'
+                            ? 'Large'
+                            : 'Extra Large'}
+                      </button>
+                    ),
+                  )}
+                </div>
+                <div className="grid gap-3">
                   <label className="flex items-start gap-3">
                     <input
                       type="checkbox"
-                      checked={openWebDefaultEnabled}
+                      checked={reduceMotion}
                       onChange={(event) => {
-                        setOpenWebDefaultEnabled(event.target.checked)
+                        setReduceMotion(event.target.checked)
                         showSaved()
                       }}
                     />
                     <span className="vw-small text-secondary">
-                      Open Web mode default (still requires explicit per-query
-                      acknowledgement in chat).
+                      Reduce motion
                     </span>
                   </label>
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={highContrast}
+                      onChange={(event) => {
+                        setHighContrast(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      High contrast mode
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={readingComfort}
+                      onChange={(event) => {
+                        setReadingComfort(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      Reading comfort mode (more line-height and spacing)
+                    </span>
+                  </label>
+                </div>
+              </CardSection>
 
-                  <div className="grid gap-4">
-                    <p className="text-label vw-small text-gold">BYO KEYS</p>
-                    <div className="flex flex-wrap gap-3">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setKeyStorageMode('session_only')
-                          showSaved()
-                        }}
-                        aria-pressed={keyStorageMode === 'session_only'}
-                        className="px-4 py-2 text-label vw-small"
-                        style={quietPillStyle(
-                          keyStorageMode === 'session_only',
-                        )}
-                      >
-                        Session only
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setKeyStorageMode('remember_encrypted')
-                          showSaved()
-                        }}
-                        aria-pressed={keyStorageMode === 'remember_encrypted'}
-                        className="px-4 py-2 text-label vw-small"
-                        style={quietPillStyle(
-                          keyStorageMode === 'remember_encrypted',
-                        )}
-                      >
-                        Remember encrypted
-                      </button>
-                    </div>
-                    {/* F-083 settings repair: this used to be one field
-                        labeled "OpenAI key" that silently wrote BOTH the
-                        OpenAI and Anthropic keys; the Google/MiniMax/NVIDIA
-                        fields served retired picker options. Two honest
-                        fields now. */}
-                    <input
-                      type="password"
-                      value={anthropicApiKey}
-                      onChange={(event) => {
-                        setAnthropicApiKey(event.target.value)
-                        showSaved()
-                      }}
-                      placeholder="Anthropic key"
-                      aria-label="Anthropic API key"
-                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      autoComplete="off"
-                    />
-                    <input
-                      type="password"
-                      value={openaiApiKey}
-                      onChange={(event) => {
-                        setOpenaiApiKey(event.target.value)
-                        showSaved()
-                      }}
-                      placeholder="OpenAI key"
-                      aria-label="OpenAI API key"
-                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
-                      style={{ border: '1px solid var(--color-border)' }}
-                      autoComplete="off"
-                    />
-                    <p className="vw-small text-muted">
-                      {keyStorageMode === 'session_only'
-                        ? 'Keys stay in-memory for this browser session and are not persisted.'
-                        : 'Keys are encrypted before local persistence on this device.'}
-                    </p>
-                    <p className="vw-small text-muted">
-                      Client-side encryption protects storage at rest, but does
-                      not mitigate active XSS inside the browser runtime.
-                    </p>
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  BIBLE TRANSLATION
+                </h3>
+                <p className="vw-small mb-2 text-secondary">
+                  Your preferred translation for Scripture in generated
+                  readings. All seven options are public domain or
+                  CC0-dedicated.
+                </p>
+                <p className="vw-small mb-6 text-muted">
+                  See{' '}
+                  <Link
+                    href="/credits"
+                    className="underline decoration-dotted underline-offset-2"
+                  >
+                    Credits &amp; Translations
+                  </Link>{' '}
+                  for full attribution.
+                </p>
+                <select
+                  value={bibleTranslation}
+                  onChange={(e) => {
+                    setBibleTranslation(e.target.value as BibleTranslation)
+                    showSaved()
+                  }}
+                  className="w-full max-w-xs bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)]"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    appearance: 'none',
+                  }}
+                  aria-label="Default Bible translation"
+                >
+                  {BIBLE_TRANSLATION_CODES.map((code) => {
+                    const meta = BIBLE_TRANSLATIONS[code]
+                    return (
+                      <option key={code} value={code}>
+                        {meta.short} ({meta.name}) · {meta.licenseShort}
+                      </option>
+                    )
+                  })}
+                </select>
+              </CardSection>
+
+              <CardSection>
+                <h3 className="text-label vw-small mb-4 text-gold">
+                  DEVOTIONAL DEPTH
+                </h3>
+                <p className="vw-small mb-5 text-secondary">
+                  How long a generated day of reading should run.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: '5-7 min', value: 'short_5_7' },
+                    { label: '20-30 min', value: 'medium_20_30' },
+                    { label: '45-60 min', value: 'long_45_60' },
+                    { label: 'Variable', value: 'variable' },
+                  ].map((option) => (
                     <button
+                      key={option.value}
                       type="button"
                       onClick={() => {
-                        clearProviderKeys()
+                        setDevotionalDepthPreference(
+                          option.value as
+                            | 'short_5_7'
+                            | 'medium_20_30'
+                            | 'long_45_60'
+                            | 'variable',
+                        )
                         showSaved()
                       }}
-                      className="w-fit border px-4 py-2 text-label vw-small"
-                      style={{ borderColor: 'var(--color-border)' }}
+                      aria-pressed={devotionalDepthPreference === option.value}
+                      className="px-4 py-2 text-label vw-small"
+                      style={quietPillStyle(
+                        devotionalDepthPreference === option.value,
+                      )}
                     >
-                      Clear all provider keys
+                      {option.label}
                     </button>
-                  </div>
-
-                  <Link
-                    href="/usage"
-                    className="text-label vw-small link-highlight"
-                  >
-                    View usage + quota details
-                  </Link>
+                  ))}
                 </div>
               </CardSection>
             </SettingsCard>
 
-            {/* DATA & PRIVACY ------------------------------------------- */}
+            <SettingsCard id="reminders" title="REMINDERS">
+              <ReminderScheduler />
+              {/* Phase 1d (pattern doc §7.7) — the account onboarding is
+                  re-enterable from here, and only here. Anonymous readers
+                  have the landing-page first-run intro instead. */}
+              {accountAuthed && (
+                <CardSection id="revisit-welcome">
+                  <h3 className="text-label vw-small mb-4 text-gold">
+                    YOUR WELCOME
+                  </h3>
+                  <Link
+                    href="/onboarding?force=1"
+                    className="flex min-h-[44px] items-center justify-between gap-4 px-4 py-3 transition-theme"
+                    style={{
+                      border: '1px solid var(--color-border)',
+                      backgroundColor: 'var(--color-surface)',
+                    }}
+                  >
+                    <span className="min-w-0">
+                      <span className="vw-body block text-[var(--color-text-primary)]">
+                        Revisit your welcome
+                      </span>
+                      <span className="vw-small text-muted">
+                        Reminder window and notifications, one step at a time
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="text-secondary">
+                      →
+                    </span>
+                  </Link>
+                </CardSection>
+              )}
+            </SettingsCard>
+
             <SettingsCard id="data-privacy" title="DATA & PRIVACY">
               <CardSection first>
                 {/* F-083 settings cleanup 2026-07-27 (founder): the
@@ -1817,7 +1664,155 @@ export default function SettingsPage() {
               </CardSection>
             </SettingsCard>
 
-            {/* ABOUT ---------------------------------------------------- */}
+            <SettingsCard id="ai-keys" title="ADVANCED — AI & KEYS">
+              <CardSection first>
+                <p className="vw-small mb-6 text-secondary">
+                  Choose your default brain and optional BYO provider keys.
+                </p>
+                <div className="grid gap-6">
+                  <div className="grid gap-3">
+                    <p className="text-label vw-small text-gold">
+                      DEFAULT BRAIN
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {/* F-083 settings repair (SA-033, 2026-07-27): Google's
+                          configured model was shut down upstream and the
+                          MiniMax / NVIDIA options were exotic BYO-only paths —
+                          all three retired from the picker (router code
+                          untouched). */}
+                      {[
+                        { label: 'Auto (Claude-first)', value: 'auto' },
+                        { label: 'Claude/OpenAI', value: 'openai' },
+                      ].map((option) => (
+                        <button
+                          key={option.value}
+                          type="button"
+                          onClick={() => {
+                            setDefaultBrainMode(option.value as BrainMode)
+                            showSaved()
+                          }}
+                          aria-pressed={defaultBrainMode === option.value}
+                          className="px-4 py-2 text-label vw-small"
+                          style={quietPillStyle(
+                            defaultBrainMode === option.value,
+                          )}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <label className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={openWebDefaultEnabled}
+                      onChange={(event) => {
+                        setOpenWebDefaultEnabled(event.target.checked)
+                        showSaved()
+                      }}
+                    />
+                    <span className="vw-small text-secondary">
+                      Open Web mode default (still requires explicit per-query
+                      acknowledgement in chat).
+                    </span>
+                  </label>
+
+                  <div className="grid gap-4">
+                    <p className="text-label vw-small text-gold">BYO KEYS</p>
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setKeyStorageMode('session_only')
+                          showSaved()
+                        }}
+                        aria-pressed={keyStorageMode === 'session_only'}
+                        className="px-4 py-2 text-label vw-small"
+                        style={quietPillStyle(
+                          keyStorageMode === 'session_only',
+                        )}
+                      >
+                        Session only
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setKeyStorageMode('remember_encrypted')
+                          showSaved()
+                        }}
+                        aria-pressed={keyStorageMode === 'remember_encrypted'}
+                        className="px-4 py-2 text-label vw-small"
+                        style={quietPillStyle(
+                          keyStorageMode === 'remember_encrypted',
+                        )}
+                      >
+                        Remember encrypted
+                      </button>
+                    </div>
+                    {/* F-083 settings repair: this used to be one field
+                        labeled "OpenAI key" that silently wrote BOTH the
+                        OpenAI and Anthropic keys; the Google/MiniMax/NVIDIA
+                        fields served retired picker options. Two honest
+                        fields now. */}
+                    <input
+                      type="password"
+                      value={anthropicApiKey}
+                      onChange={(event) => {
+                        setAnthropicApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="Anthropic key"
+                      aria-label="Anthropic API key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="password"
+                      value={openaiApiKey}
+                      onChange={(event) => {
+                        setOpenaiApiKey(event.target.value)
+                        showSaved()
+                      }}
+                      placeholder="OpenAI key"
+                      aria-label="OpenAI API key"
+                      className="w-full max-w-md bg-surface-raised px-6 py-3 vw-body text-[var(--color-text-primary)] placeholder:text-muted focus:outline-none"
+                      style={{ border: '1px solid var(--color-border)' }}
+                      autoComplete="off"
+                    />
+                    <p className="vw-small text-muted">
+                      {keyStorageMode === 'session_only'
+                        ? 'Keys stay in-memory for this browser session and are not persisted.'
+                        : 'Keys are encrypted before local persistence on this device.'}
+                    </p>
+                    <p className="vw-small text-muted">
+                      Client-side encryption protects storage at rest, but does
+                      not mitigate active XSS inside the browser runtime.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        clearProviderKeys()
+                        showSaved()
+                      }}
+                      className="w-fit border px-4 py-2 text-label vw-small"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      Clear all provider keys
+                    </button>
+                  </div>
+
+                  <Link
+                    href="/usage"
+                    className="text-label vw-small link-highlight"
+                  >
+                    View usage + quota details
+                  </Link>
+                </div>
+              </CardSection>
+            </SettingsCard>
+
             <SettingsCard id="about" title="ABOUT">
               {/* Deep link target: /settings#tutorial (Help hub links here). */}
               <CardSection first id="tutorial">

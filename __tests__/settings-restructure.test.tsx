@@ -132,7 +132,7 @@ describe('settings restructure (F-073)', () => {
       ['reading', 'READING'],
       ['reminders', 'REMINDERS'],
       ['account', 'ACCOUNT'],
-      ['ai-keys', 'AI & KEYS'],
+      ['ai-keys', 'ADVANCED — AI & KEYS'],
       ['data-privacy', 'DATA & PRIVACY'],
       ['about', 'ABOUT'],
     ] as const) {

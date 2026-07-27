@@ -31,7 +31,7 @@ export async function fetchActivePlan(
   // Get all days for this plan.
   // Cast through `any` because used_chunk_ids/completed_at/run_id were added
   // via ALTER TABLE and are not yet in the Supabase generated Database type.
-   
+
   const { data: days } = await (supabase as any)
     .from('devotional_plan_days')
     .select('*')
@@ -108,6 +108,40 @@ export async function claimPlansForUser(
   }
 }
 
+/**
+ * SA-033 follow-up (2026-07-27): a plan whose 7-day schedule finished
+ * long ago must NOT keep resurfacing on Daily Bread (founder: a
+ * July-11 plan was still greeting him on July 27). A plan is expired
+ * once every unlock is more than EXPIRY_GRACE_DAYS behind us; expired
+ * plans are archived in place and treated as absent.
+ */
+const EXPIRY_GRACE_DAYS = 7
+
+export function isPlanExpired(plan: PlanWithDays): boolean {
+  const schedule = (plan.schedule || []) as DayScheduleEntry[]
+  const unlocks = schedule
+    .map((e) => (e.unlock_at ? new Date(e.unlock_at).getTime() : 0))
+    .filter((t) => t > 0)
+  if (unlocks.length === 0) return false
+  const lastUnlock = Math.max(...unlocks)
+  return Date.now() - lastUnlock > EXPIRY_GRACE_DAYS * 24 * 60 * 60 * 1000
+}
+
+export async function archiveExpiredPlan(plan: PlanWithDays): Promise<void> {
+  try {
+    const supabase = createAdminClient()
+    await (supabase as any)
+      .from('devotional_plan_instances')
+      .update({ status: 'archived' })
+      .eq('id', plan.id)
+  } catch (err) {
+    console.error(
+      '[archiveExpiredPlan] failed:',
+      err instanceof Error ? err.message : err,
+    )
+  }
+}
+
 export function getCurrentDay(plan: PlanWithDays): number {
   const schedule = (plan.schedule || []) as DayScheduleEntry[]
   const now = new Date()
@@ -138,7 +172,7 @@ export async function reconstructGenerationState(planToken: string): Promise<{
   const supabase = createAdminClient()
   // Cast through `any` because used_chunk_ids was added via ALTER TABLE
   // and is not yet in the Supabase generated Database type.
-   
+
   const { data: savedDays } = await (supabase as any)
     .from('devotional_plan_days')
     .select('day_number, content, used_chunk_ids')
@@ -149,11 +183,10 @@ export async function reconstructGenerationState(planToken: string): Promise<{
     return { usedChunkIds: [], previousDaysSummary: '', lastSavedDay: 0 }
   }
 
-   
   const usedChunkIds = (savedDays as any[]).flatMap(
     (d: { used_chunk_ids?: string[] }) => d.used_chunk_ids || [],
   )
-   
+
   const lastDay = (savedDays as any[])[savedDays.length - 1]
   const previousDaysSummary = lastDay
     ? (lastDay.content as DayContent).previousDaysSummaryForNext || ''

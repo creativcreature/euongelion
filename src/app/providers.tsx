@@ -6,6 +6,7 @@ import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
 import { useSettingsStore } from '@/stores/settingsStore'
+import { useUIStore } from '@/stores/uiStore'
 
 /**
  * Client-side providers wrapper.
@@ -16,6 +17,27 @@ export default function Providers({ children }: { children: ReactNode }) {
   const reduceMotion = useSettingsStore((state) => state.reduceMotion)
   const highContrast = useSettingsStore((state) => state.highContrast)
   const readingComfort = useSettingsStore((state) => state.readingComfort)
+
+  // F-084 theme fix (SA-033, 2026-07-27): in System mode the theme was
+  // sampled from the OS once and never again — switching the OS between
+  // light and dark did nothing until a reload. Subscribe to the media
+  // query while (and only while) System is selected.
+  const theme = useUIStore((s) => s.theme)
+  useEffect(() => {
+    if (theme !== 'system' || typeof window === 'undefined') return
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    const apply = () => {
+      document.documentElement.classList.toggle('dark', mq.matches)
+      window.dispatchEvent(
+        new CustomEvent('euangelion:site-theme', {
+          detail: { theme: mq.matches ? 'dark' : 'light' },
+        }),
+      )
+    }
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [theme])
 
   useEffect(() => {
     const unlockGlobalScroll = () => {

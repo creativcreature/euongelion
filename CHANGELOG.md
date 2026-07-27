@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT v5 — clean-sheet single-author rewrite + founder corrections (2026-07-27)
+
+Founder rejected v4 as patchwork ("hobbled together with various edits
+just thrown on top"). v5 is a CLEAN-SHEET REWRITE: one author, one
+sitting, days 1-7 in order from a consolidated spec — every prose
+module written fresh. His four corrections, verified by the editor
+gate: (1) ANCHOR PRIMACY — the Wheat and the Weeds IS the series
+(Day 1 restored to "While Everyone Slept" with Matt 13:24-26 leading
+its two-minute open); the sibling Matthew 13 parables serve it in
+canonical order (Sower on-ramp D1, Mustard/Leaven D3, Net D5, Mark 4
+D7), never displacing it. (2) VOICE TABLE — zero second person in
+B/C/B-prime teachings ("we"/third person per AUTHORING-SPEC §2);
+"you" only at bookends/reflections/prayers/takeaways. (3) REPETITION
+— all six founder-flagged stock phrases at zero across the week;
+2 Peter 3:9 full-quote once; loved-one motif exactly once per day in
+sanctioned slots; ~35 cross-day echoes cut in the author's own 4-gram
+re-read. (4) The reader-timeline rail — a literal per-section table
+of contents ("S12: Why the No Holds") the founder twice asked gone —
+REMOVED from day pages.
+
+DAILY BREAD ZOMBIE KILLED: plans whose 7-day schedule ended more than
+a week ago now auto-archive on read (isPlanExpired + archiveExpiredPlan,
+regression-tested); 15 stale "active" plans dating to March archived
+in prod — the July-11 "kingdom of heaven" plan can never resurface.
+SYSTEM THEME FIXED: System mode now subscribes to the OS
+prefers-color-scheme change event (it sampled once and never updated).
+SETTINGS: cards reordered ACCOUNT → READING → REMINDERS → DATA &
+PRIVACY → ADVANCED-AI & KEYS → ABOUT. (SA-033, F-082, F-083, F-084)
+
 ## CLEANUP PASS 2 — Wake-Up mount retired; settings + copy repairs (2026-07-27, SA-033)
 
 Executed the founder's standing orders (wake-up pin 2026-07-12; "keep

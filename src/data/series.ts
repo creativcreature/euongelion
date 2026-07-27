@@ -1039,10 +1039,10 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     heroImage: '/images/site/series/the-harvest.webp',
     question: 'What if the story isn’t over for the one you love?',
     introduction:
-      "A sower went out, an enemy sowed weeds behind him, and the servants asked the obvious question: should we pull them up? The Master said no — because a life’s harvest is never called early. Seven days inside the kingdom parables of Matthew 13 — the Sower, the Wheat and the Weeds, the Mustard Seed, the Leaven, and the Net — held together as Jesus told them: God's enduring patience with those who have not yet turned, and the witness He plants beside them.",
+      "An enemy sowed weeds through the wheat by night, and the servants asked the obvious question: should we pull them up? The Master said no — because a life’s harvest is never called early. Seven days inside the parable of the wheat and the weeds, read the way Matthew groups it — the Sower before it, the Mustard Seed and Leaven beside it, the Net at its close — on God's enduring patience with those who have not yet turned.",
     context:
       'Someone you love wants nothing to do with God. The field is full of lives that look, today, like weed — and the sickle waits, because the Owner is patient, not wanting anyone to perish. A week for everyone praying a long prayer over a brother, a father, a friend: a full life runs to judgment, the harvest is never called before the end, and one thief proved a story can turn with its final breath.',
-    framework: 'Matthew 13 - The kingdom parables, told together',
+    framework: 'Matthew 13:30 - Let both grow together until the harvest',
     pathway: 'Awake',
     keywords: [
       'praying for family',
@@ -1063,11 +1063,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       'wheat and tares',
     ],
     days: [
-      {
-        day: 1,
-        title: 'A Farmer Went Out to Sow',
-        slug: 'the-harvest-day-1',
-      },
+      { day: 1, title: 'While Everyone Slept', slug: 'the-harvest-day-1' },
       {
         day: 2,
         title: 'Do You Want Us to Pull Them Up?',

@@ -1,9 +1,11 @@
 import { cookies } from 'next/headers'
 import {
+  archiveExpiredPlan,
   claimPlansForUser,
   fetchActivePlan,
   fetchActivePlanByOwner,
   getCurrentDay,
+  isPlanExpired,
 } from '@/lib/soul-audit/plan-queries'
 import { AUDIT_SESSION_COOKIE } from '@/lib/soul-audit/session'
 import { getUser } from '@/lib/auth'
@@ -70,8 +72,16 @@ export default async function DailyBreadPage() {
   // resolves, the plan flows through the same holding / completion /
   // reader logic below.
   const ownerPlan = await resolveOwnerPlan(sessionToken)
-  const plan =
+  let plan =
     ownerPlan ?? (sessionToken ? await fetchActivePlan(sessionToken) : null)
+
+  // SA-033: a plan whose week ended more than a grace period ago is a
+  // zombie — archive it and show the empty state instead of greeting
+  // the reader with weeks-old content forever.
+  if (plan && isPlanExpired(plan)) {
+    await archiveExpiredPlan(plan)
+    plan = null
+  }
 
   if (!plan) {
     return (

@@ -28,7 +28,7 @@ import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_COUNT } from '@/data/series'
 const HOMEPAGE_TODAY = {
   series: 'the-harvest',
   daySlug: 'the-harvest-day-1',
-  dayTitle: 'A Farmer Went Out to Sow',
+  dayTitle: 'While Everyone Slept',
   kicker: 'FEATURED SERIES · 7 DAYS · MATTHEW 13:24–43',
   title: 'The Harvest',
   // Series-level scripture anchor (the framework verse).
@@ -36,7 +36,7 @@ const HOMEPAGE_TODAY = {
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    "A sower went out; an enemy followed by night; the servants asked to pull the weeds up. The Master said no — a life's harvest is never called early. Seven days in the kingdom parables of Matthew 13: God's enduring patience with those who have not yet turned, and the witness He plants beside them.",
+    "An enemy sowed weeds through the wheat by night, and the servants asked to pull them up. The Master said no — a life's harvest is never called early. Seven days inside the parable of the wheat and the weeds, read the way Matthew groups it, on God's enduring patience with those who have not yet turned.",
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured
