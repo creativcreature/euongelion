@@ -1,14 +1,9 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { createRequestId, withRequestIdHeaders } from '@/lib/api-security'
-import {
-  getAllPlanDaysWithFallback,
-  getLatestPlanInstanceForSessionWithFallback,
-  getLatestSelectionForSessionWithFallback,
-  getPlanInstanceWithFallback,
-} from '@/lib/soul-audit/repository'
 import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { SERIES_DATA } from '@/data/series'
+import { resolveCurrentReading } from '@/lib/reading/current-reading'
 
 const CURRENT_ROUTE_COOKIE = 'euangelion_current_route'
 const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
@@ -16,8 +11,8 @@ const CURRENT_ROUTE_MAX_AGE = 30 * 24 * 60 * 60
 function normalizeCurrentRoute(value: string | undefined): string | null {
   if (!value) return null
 
-  // The canonical reader for an active AI plan (serves the current unlocked day,
-  // incl. the onboarding day-0). Active-plan resume routes here.
+  // The canonical reader for an active plan/series (serves the current unlocked
+  // day, incl. the onboarding day-0). Active-reading resume routes here.
   if (value === '/daily-bread') return value
   if (/^\/soul-audit\/plan\/[a-f0-9-]+(\?day=\d+)?$/i.test(value)) {
     return value
@@ -31,48 +26,30 @@ function normalizeCurrentRoute(value: string | undefined): string | null {
   return null
 }
 
-type CurrentCandidate = {
+type CurrentSummary = {
   route: string
-  createdAt: string
-  selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
+  selectionType: 'active_series' | 'ai_primary'
   planToken?: string
   seriesSlug?: string
   /**
-   * Human-readable plan title — always resolved, never silently empty.
-   * Curated selections resolve from SERIES_DATA; AI plans resolve from the
-   * plan instance's stored theme (the selected option's display title).
+   * Human-readable title — always resolved, never silently empty. Active-series
+   * selections resolve from SERIES_DATA; AI plans resolve from the plan's stored
+   * theme (the selected option's display title).
    */
   seriesTitle: string
-  /** Active day number (parsed from plan day rows for AI plans). */
+  /** Active day number for the resume badge label. */
   dayNumber?: number
 }
 
-/**
- * Plan-instance rows carry a `theme` column (written by
- * /api/soul-audit/select's insertPlanInstance with the selected option's
- * display title). The repository's DevotionalPlanInstanceRecord type predates
- * that column, so it is read here structurally.
- */
-type PlanThemeCarrier = { theme?: string | null }
-
-function planTheme(row: unknown): string | null {
-  if (!row || typeof row !== 'object') return null
-  const theme = (row as PlanThemeCarrier).theme
-  if (typeof theme !== 'string') return null
-  const trimmed = theme.trim()
-  return trimmed.length > 0 ? trimmed : null
-}
-
-// Explicit last-resort label so the resume badge never renders a silent
-// empty title. AI plans virtually always resolve their stored theme; this
-// only surfaces if a legacy plan row predates theme persistence.
+// Explicit last-resort label so the resume badge never renders a silent empty
+// title. AI plans virtually always resolve their stored theme; this only
+// surfaces if a legacy plan row predates theme persistence.
 const FALLBACK_PLAN_TITLE = 'Your devotional plan'
 
 /**
- * Resolve a real human title for the resume badge. `seriesSlug` on AI plans
- * is a slugified AI direction title (NOT a curated series slug), so
- * SERIES_DATA resolves only for curated selections — AI plans resolve from
- * the stored theme instead.
+ * Resolve a real human title for the resume badge. An AI plan's `series_slug` is
+ * a slugified AI direction title (NOT a curated series slug), so SERIES_DATA
+ * resolves only for curated series — AI plans resolve from the stored theme.
  */
 function resolveSeriesTitle(params: {
   seriesSlug: string | null | undefined
@@ -87,14 +64,6 @@ function resolveSeriesTitle(params: {
   return FALLBACK_PLAN_TITLE
 }
 
-function curatedSelectionRoute(seriesSlug: string): string {
-  const firstDay = SERIES_DATA[seriesSlug]?.days?.[0]
-  if (firstDay?.slug) {
-    return `/devotional/${firstDay.slug}`
-  }
-  return `/series/${seriesSlug}`
-}
-
 function getInitialPlanDayNumber(
   planDays: Array<{ day_number: number }>,
 ): number {
@@ -106,87 +75,63 @@ function getInitialPlanDayNumber(
   return dayNumbers.includes(0) ? 0 : dayNumbers[0]
 }
 
-// AI plans resume into /daily-bread — the canonical reader that correctly serves
-// the current unlocked day (including the onboarding day-0). The dedicated
-// /soul-audit/plan/[token] reader does not render the onboarding / locked-cycle
-// state (empty timeline + perpetual lock message), so ALL active-plan entry points
-// (header badge, homepage "Continue" CTA, resume link) route here instead.
-// dayNumber is still surfaced separately for the badge label.
-function aiRoute(): string {
-  return '/daily-bread'
-}
-
 export async function GET() {
   const requestId = createRequestId()
   const cookieStore = await cookies()
   const routeFromCookie = normalizeCurrentRoute(
     cookieStore.get(CURRENT_ROUTE_COOKIE)?.value,
   )
+
+  // One canonical resolver — the SAME one /daily-bread renders from — so every
+  // header/tab/home-card/resume surface agrees with the reader. It gives the
+  // user-controlled active series unconditional precedence over Soul Audit
+  // history, and resolves the plan account-first for signed-in readers.
   const sessionToken = await getOrCreateAuditSessionToken()
-  const latestPlan =
-    await getLatestPlanInstanceForSessionWithFallback(sessionToken)
-  const latestSelection =
-    await getLatestSelectionForSessionWithFallback(sessionToken)
+  const reading = await resolveCurrentReading(sessionToken)
 
-  const candidates: CurrentCandidate[] = []
-
-  if (latestPlan) {
-    const planDays = await getAllPlanDaysWithFallback(latestPlan.plan_token)
-    if (planDays.length > 0) {
-      candidates.push({
-        route: aiRoute(),
-        createdAt: latestPlan.created_at,
-        selectionType: 'ai_primary',
-        planToken: latestPlan.plan_token,
-        seriesSlug: latestPlan.series_slug,
-        seriesTitle: resolveSeriesTitle({
-          seriesSlug: latestPlan.series_slug,
-          theme: planTheme(latestPlan),
-        }),
-        dayNumber: getInitialPlanDayNumber(planDays),
-      })
-    }
+  // NO SILENT FALLBACKS: a read/auth failure is never rewritten as
+  // hasCurrent:false. Fail the request so the outage is honest and diagnosable.
+  if (reading.status === 'unavailable') {
+    throw reading.error instanceof Error
+      ? reading.error
+      : new Error('Current reading resolution failed.')
   }
 
-  if (latestSelection?.option_kind === 'curated_prefab') {
-    const series = SERIES_DATA[latestSelection.series_slug]
-    if (series?.days?.length) {
-      candidates.push({
-        route: curatedSelectionRoute(latestSelection.series_slug),
-        createdAt: latestSelection.created_at,
-        selectionType: 'curated_prefab',
-        seriesSlug: latestSelection.series_slug,
-        seriesTitle: series.title,
-        dayNumber: 1,
-      })
+  let current: CurrentSummary | null = null
+  if (reading.status === 'active' && reading.source === 'active_series') {
+    const active = reading.activeSeries
+    const series = SERIES_DATA[active.series_slug]
+    if (!series) {
+      // Corrupt state (a persisted slug that no longer exists) must surface, not
+      // hide behind a silent empty badge.
+      throw new Error(
+        `Active series "${active.series_slug}" is missing from SERIES_DATA.`,
+      )
+    }
+    current = {
+      route: '/daily-bread',
+      selectionType: 'active_series',
+      seriesSlug: active.series_slug,
+      seriesTitle: series.title,
+      dayNumber: active.current_day,
     }
   } else if (
-    (latestSelection?.option_kind === 'ai_primary' ||
-      latestSelection?.option_kind === 'ai_generative') &&
-    latestSelection.plan_token
+    reading.status === 'active' &&
+    reading.source === 'soul_audit_plan'
   ) {
-    const plan = await getPlanInstanceWithFallback(latestSelection.plan_token)
-    const planDays = plan
-      ? await getAllPlanDaysWithFallback(latestSelection.plan_token)
-      : []
-    if (plan && planDays.length > 0) {
-      candidates.push({
-        route: aiRoute(),
-        createdAt: latestSelection.created_at,
-        selectionType: latestSelection.option_kind,
-        planToken: latestSelection.plan_token,
-        seriesSlug: latestSelection.series_slug,
-        seriesTitle: resolveSeriesTitle({
-          seriesSlug: latestSelection.series_slug,
-          theme: planTheme(plan),
-        }),
-        dayNumber: getInitialPlanDayNumber(planDays),
-      })
+    const plan = reading.plan
+    current = {
+      route: '/daily-bread',
+      selectionType: 'ai_primary',
+      planToken: plan.plan_token,
+      seriesSlug: plan.series_slug,
+      seriesTitle: resolveSeriesTitle({
+        seriesSlug: plan.series_slug,
+        theme: plan.theme,
+      }),
+      dayNumber: getInitialPlanDayNumber(plan.devotional_plan_days),
     }
   }
-
-  candidates.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-  const current = candidates[0]
 
   if (current) {
     const response = NextResponse.json(

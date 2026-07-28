@@ -18,7 +18,11 @@ import { useEffect, useState } from 'react'
 
 export interface ActivePlan {
   route: string
-  selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
+  selectionType:
+    | 'active_series'
+    | 'ai_primary'
+    | 'ai_generative'
+    | 'curated_prefab'
   planToken?: string
   seriesSlug?: string
   seriesTitle?: string
@@ -47,10 +51,12 @@ async function fetchActivePlan(): Promise<CachedResponse> {
       const res = await fetch('/api/soul-audit/current', {
         method: 'GET',
         credentials: 'include',
+        cache: 'no-store',
       })
       if (!res.ok) {
-        cachedResponse = { hasCurrent: false, active: null }
-        return cachedResponse
+        // Do not cache an outage as "no active plan." A later mount or
+        // invalidation must be able to retry the canonical read.
+        throw new Error(`Active plan read failed (${res.status}).`)
       }
       const data = (await res.json()) as {
         hasCurrent?: boolean
@@ -76,9 +82,6 @@ async function fetchActivePlan(): Promise<CachedResponse> {
           },
         }
       }
-      return cachedResponse
-    } catch {
-      cachedResponse = { hasCurrent: false, active: null }
       return cachedResponse
     } finally {
       inflight = null
@@ -106,10 +109,17 @@ export function useActivePlan(): ActivePlanState {
     let mounted = true
 
     const load = () => {
-      void fetchActivePlan().then((result) => {
-        if (!mounted) return
-        setState({ active: result.active, loading: false })
-      })
+      void fetchActivePlan()
+        .then((result) => {
+          if (!mounted) return
+          setState({ active: result.active, loading: false })
+        })
+        .catch(() => {
+          if (!mounted) return
+          // Keep the last known value during a transient failure instead
+          // of rewriting it as confirmed absence.
+          setState((current) => ({ ...current, loading: false }))
+        })
     }
 
     const handleInvalidate = () => {

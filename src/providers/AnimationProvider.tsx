@@ -21,7 +21,11 @@ interface AnimationContextValue {
 const AnimationContext = createContext<AnimationContextValue>({
   prefersReducedMotion: false,
   isMobile: false,
-  shouldAnimate: true,
+  // Progressive-enhancement default: a component rendered without the
+  // provider must remain static and visible. Opting into animation before
+  // provider state exists also starts uncancellable dynamic imports during
+  // isolated renders/tests.
+  shouldAnimate: false,
 })
 
 export function useAnimation() {

@@ -142,21 +142,39 @@ async function jsonFetch(
   input: RequestInfo | URL,
   init?: RequestInit,
 ): Promise<{ ok: boolean; status: number; body: any }> {
-  const response = await fetch(input, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(init?.headers || {}),
-    },
-    cache: 'no-store',
-  })
-  let body: any = null
   try {
-    body = await response.json()
-  } catch {
-    body = null
+    const response = await fetch(input, {
+      ...init,
+      headers: {
+        'Content-Type': 'application/json',
+        ...(init?.headers || {}),
+      },
+      cache: 'no-store',
+    })
+    let body: any = null
+    try {
+      body = await response.json()
+    } catch {
+      body = null
+    }
+    return { ok: response.ok, status: response.status, body }
+  } catch (error) {
+    return {
+      ok: false,
+      status: 0,
+      body: {
+        error:
+          error instanceof Error
+            ? error.message
+            : 'The devotional library is unavailable.',
+      },
+    }
   }
-  return { ok: response.ok, status: response.status, body }
+}
+
+function emitActivePlanChanged() {
+  if (typeof window === 'undefined') return
+  window.dispatchEvent(new CustomEvent('soulAuditPlanChanged'))
 }
 
 export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
@@ -187,25 +205,45 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
       jsonFetch('/api/devotionals/archive'),
     ])
 
-    // 401 just means "anonymous user" — leave state empty, don't error.
+    // A 401 confirms there is no account-scoped state in this session.
+    // Any other failed read is UNKNOWN, not empty: retain the last known
+    // state so a transient request cannot make an active devotional vanish.
+    const current = get()
     const active =
       activeRes.ok && activeRes.body?.active
         ? (activeRes.body.active as ActiveSeriesView)
-        : null
+        : activeRes.ok || activeRes.status === 401
+          ? null
+          : current.active
     const scheduledSwap =
       activeRes.ok && activeRes.body?.scheduledSwap
         ? (activeRes.body.scheduledSwap as ScheduledSwapView)
-        : null
+        : activeRes.ok || activeRes.status === 401
+          ? null
+          : current.scheduledSwap
     const saved =
       savedRes.ok && Array.isArray(savedRes.body?.saved)
         ? (savedRes.body.saved as SavedDevotionalView[])
-        : []
+        : savedRes.status === 401
+          ? []
+          : current.saved
     const archived =
       archiveRes.ok && Array.isArray(archiveRes.body?.archived)
         ? (archiveRes.body.archived as ArchivedSeriesView[])
-        : []
+        : archiveRes.status === 401
+          ? []
+          : current.archived
 
-    set({ active, scheduledSwap, saved, archived })
+    const failed = [activeRes, savedRes, archiveRes].find(
+      (result) => !result.ok && result.status !== 401,
+    )
+    set({
+      active,
+      scheduledSwap,
+      saved,
+      archived,
+      lastError: failed?.body?.error ?? null,
+    })
   },
 
   save: async (devotionalSlug: string) => {
@@ -289,6 +327,7 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
       return { ok: false }
     }
     await get().refresh()
+    emitActivePlanChanged()
     return { ok: true, mode }
   },
 
@@ -306,6 +345,7 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
       return { ok: false }
     }
     await get().refresh()
+    emitActivePlanChanged()
     return { ok: true }
   },
 
@@ -316,6 +356,7 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
     if (result.status === 401) return { ok: false, needsAuth: true }
     if (!result.ok) return { ok: false }
     await get().refresh()
+    emitActivePlanChanged()
     return { ok: true }
   },
 
@@ -346,6 +387,7 @@ export const useDevotionalLibraryStore = create<LibraryState>()((set, get) => ({
       set({ active: prev })
       return { ok: false }
     }
+    emitActivePlanChanged()
     return { ok: true }
   },
 }))

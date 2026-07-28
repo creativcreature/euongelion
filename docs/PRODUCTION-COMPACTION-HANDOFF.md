@@ -95,6 +95,16 @@ npm run build
 
 ## Current Snapshot
 
+### Continuity Snapshot (2026-07-27 — Daily Bread canonical-read stabilization)
+
+- Scope completed: Hardened F-083 after the original production repair: canonical reads no longer collapse errors into absence; `/api/soul-audit/current` now honors `active_series`; client state preserves last confirmed truth; fake Daily Bread API coverage replaced with executable route/store tests.
+- Decision ids touched: SA-023, SA-032.
+- Feature ids touched: F-083.
+- Verification run: focused 85-test regression set; type-check PASS; lint PASS with six pre-existing warnings. Full suite/build/Workers preview pending in this snapshot.
+- Score changes: none claimed; Daily devotional remains 8/10 pending signed-in runtime/device evidence.
+- Blockers: Mobbin MCP unavailable in this workspace; signed-in Workers-preview verification requires a usable test account/session.
+- Next steps: full gates/build; Workers-preview route probes; signed-in activation/refresh/navigation/account-resume walkthrough; staged plan for Soul Audit repository fallback removal.
+
 ### Continuity Snapshot (2026-06-13 — Elevation deploy live)
 
 - Scope completed: Shipped the full "Elevation v3.0 — Core + web push" branch to production and verified it live. New routes (`/today`, `/sunday`, `/how-we-write`, `/clippings`, `/offline`) serve 200; grounded Soul Audit verified end-to-end on prod (bespoke options → grounded Day 1, 6 corpus chunks, → 7-day self-chain); cost rails live (migrations 014+015 applied — ledger ~$0.03/day, budget + rate-limit counters with real data); devotional SSR live + made durable (code guard vs inlined localhost base); web push subscribe live and send (`send-daily-push` edge fn) verified end-to-end (real FCM subscription → `sent:1`). Fixed two pre-existing schema-drift prerender crashes (`weeklyChallenge` object, `forDeeperStudy` string) that had blocked every production build.

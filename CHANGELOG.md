@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## STABILIZATION — Canonical current-reading resolver (2026-07-28)
+
+Consolidated the two divergent "what am I reading?" resolution stacks behind a
+single typed resolver (`src/lib/reading/current-reading.ts` →
+`resolveCurrentReading()`). Before this, `/daily-bread` (the reader) resolved the
+Soul Audit plan account-first (`owner_user_id`) while `/api/soul-audit/current`
+(every header/tab/home-card/resume badge) resolved it session-token-only and also
+advertised un-activated curated selections — so a signed-in reader on a new
+device saw their plan on the page but "nothing current" in the header. The
+resolver returns a discriminated union — `active` (active_series or account-first
+plan) / `empty` (confirmed absence) / `unavailable` (read/auth failure, never
+rewritten as empty) — and both surfaces now render from it, so the reader and
+every badge agree. `/daily-bread` throws `unavailable` to its error boundary; the
+API fails honestly instead of faking `hasCurrent:false`. Replaced the route's
+session-only candidate test with resolver-derived summary tests and added a
+dedicated resolver contract suite (`__tests__/current-reading-resolver.test.ts`).
+Behavior change (founder-approved, full-unify): the resume badge no longer
+advertises a curated Soul-Audit selection that was picked but never activated —
+it shows exactly what the reader renders. (SA-023, SA-032, F-083)
+
+## STABILIZATION — Daily Bread canonical-read hardening (2026-07-27)
+
+Follow-up audit of F-083 found that the write-path repair still left
+read failures indistinguishable from confirmed absence. Supabase errors
+were returned as `null`; `/daily-bread` then caught them and rendered an
+older Soul Audit plan/default. Active-series, scheduled-swap, and archive
+reads now fail loudly, never use Workers-isolate cache as authority, and
+evict stale cross-device state. `/api/soul-audit/current` now gives the
+user-controlled active series unconditional precedence so header/resume
+surfaces agree with Daily Bread. Client library refreshes retain last
+confirmed state on 5xx/network failure, clear it only on a confirmed 401
+or successful empty response, and invalidate current-plan badges after
+activation/progress changes. Replaced a 329-line fake Daily Bread suite
+that tested invented response objects for four nonexistent endpoints with
+real route/store regression coverage. (SA-023, SA-032, F-083)
+
 ## FIX — TODAY nav finally points at YOUR devotional (2026-07-27)
 
 Root cause of "every time I click Today it shows seek-first-the-

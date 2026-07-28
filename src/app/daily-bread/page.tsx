@@ -1,18 +1,7 @@
 import { cookies } from 'next/headers'
-import {
-  archiveExpiredPlan,
-  claimPlansForUser,
-  fetchActivePlan,
-  fetchActivePlanByOwner,
-  getCurrentDay,
-  isPlanExpired,
-} from '@/lib/soul-audit/plan-queries'
+import { getCurrentDay } from '@/lib/soul-audit/plan-queries'
 import { AUDIT_SESSION_COOKIE } from '@/lib/soul-audit/session'
-import { getUser } from '@/lib/auth'
-import {
-  getActiveSeries,
-  promoteScheduledSwapIfDue,
-} from '@/lib/library/repository'
+import { resolveCurrentReading } from '@/lib/reading/current-reading'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import DailyBreadView from '@/components/daily-bread/DailyBreadView'
@@ -44,46 +33,38 @@ export default async function DailyBreadPage() {
   const cookieStore = await cookies()
   const sessionToken = cookieStore.get(AUDIT_SESSION_COOKIE)?.value ?? null
 
-  // User-controlled active series takes precedence over Soul Audit plan
-  // resolution. If the user has manually started (or restarted from
-  // archive) a curated series, render that — Soul Audit only fills in
-  // when no manual choice exists. Errors (e.g. missing Supabase config
-  // in a dev/preview env) downgrade to null so the page falls through
-  // to the existing Soul Audit resolution path.
-  const userActive = await resolveUserActiveSeries()
-  if (userActive) {
+  // One canonical resolver answers "what is my current devotional?" — the same
+  // one every header/tab/home-card/resume badge consults via
+  // /api/soul-audit/current, so the reader and those surfaces can never disagree.
+  const reading = await resolveCurrentReading(sessionToken)
+
+  // NO SILENT FALLBACKS: a read/auth failure is not an empty state. Surface it to
+  // the route error boundary instead of letting a stale default devotional
+  // impersonate the user's source of truth.
+  if (reading.status === 'unavailable') {
+    throw reading.error instanceof Error
+      ? reading.error
+      : new Error('Daily Bread could not confirm your current devotional.')
+  }
+
+  // User-controlled active series (manual start, soul_audit, archive-restart)
+  // takes precedence over any Soul Audit plan.
+  if (reading.status === 'active' && reading.source === 'active_series') {
+    const active = reading.activeSeries
     return (
       <Shell>
         <ScheduledSwapBanner />
         <CuratedActiveView
-          seriesSlug={userActive.series_slug}
-          currentDay={userActive.current_day}
-          source={userActive.source}
-          startedAt={userActive.started_at}
+          seriesSlug={active.series_slug}
+          currentDay={active.current_day}
+          source={active.source}
+          startedAt={active.started_at}
         />
       </Shell>
     )
   }
 
-  // SA-032 (2026-07-27): account-first plan resolution — a signed-in
-  // user's plan follows the ACCOUNT, not the cookie, so sign-out /
-  // sign-in / new devices resume exactly where they left off. The
-  // session-cookie path remains for anonymous readers. Whichever path
-  // resolves, the plan flows through the same holding / completion /
-  // reader logic below.
-  const ownerPlan = await resolveOwnerPlan(sessionToken)
-  let plan =
-    ownerPlan ?? (sessionToken ? await fetchActivePlan(sessionToken) : null)
-
-  // SA-033: a plan whose week ended more than a grace period ago is a
-  // zombie — archive it and show the empty state instead of greeting
-  // the reader with weeks-old content forever.
-  if (plan && isPlanExpired(plan)) {
-    await archiveExpiredPlan(plan)
-    plan = null
-  }
-
-  if (!plan) {
+  if (reading.status === 'empty') {
     return (
       <Shell>
         <ScheduledSwapBanner />
@@ -92,6 +73,9 @@ export default async function DailyBreadPage() {
     )
   }
 
+  // Remaining case: an account-first / session Soul Audit plan. It flows through
+  // the same holding / completion / reader logic it always has.
+  const plan = reading.plan
   const schedule = (plan.schedule || []) as DayScheduleEntry[]
 
   // SOURCE-OF-TRUTH #22: a Wed-Sun start serves an onboarding devotional FIRST
@@ -162,40 +146,6 @@ export default async function DailyBreadPage() {
       />
     </Shell>
   )
-}
-
-async function resolveOwnerPlan(sessionToken: string | null) {
-  try {
-    const user = await getUser()
-    if (!user) return null
-    // Lazy claim: if this session created plans while anonymous, stamp
-    // them onto the account before looking up by owner.
-    await claimPlansForUser(user.id, sessionToken)
-    return await fetchActivePlanByOwner(user.id)
-  } catch (error) {
-    console.error('[daily-bread] owner plan read failed:', error)
-    return null
-  }
-}
-
-async function resolveUserActiveSeries() {
-  try {
-    const user = await getUser()
-    if (!user) return null
-    await promoteScheduledSwapIfDue(user.id)
-    const active = await getActiveSeries(user.id)
-    if (!active) return null
-    // R37: founder fix — Daily Bread should always render the
-    // user's `active_series` row, regardless of how it got there
-    // (manual start, soul_audit, archive-restart). Previously
-    // soul_audit-sourced rows were ignored and the page fell
-    // through to the generic plan view (which defaulted to "A
-    // Voice in the Wilderness"). Now every active selection wins.
-    return active
-  } catch (error) {
-    console.error('[daily-bread] active_series read failed:', error)
-    return null
-  }
 }
 
 /**

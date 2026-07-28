@@ -32,6 +32,19 @@ export class LibraryPersistenceError extends Error {
   }
 }
 
+/**
+ * Thrown when canonical library state could not be read from Supabase.
+ * A failed read is not evidence that a row does not exist. Callers must
+ * surface an unavailable state instead of falling through to a default
+ * devotional that can overwrite the user's perceived source of truth.
+ */
+export class LibraryReadError extends Error {
+  constructor(table: string, detail: string) {
+    super(`${table} read failed: ${detail}`)
+    this.name = 'LibraryReadError'
+  }
+}
+
 export type ActiveSeriesSource =
   | 'manual_start'
   | 'soul_audit'
@@ -113,10 +126,18 @@ async function supabaseSelectOne<T>(
       data: T | null
       error: unknown
     }
-    if (error) return null
+    if (error) {
+      const detail =
+        error instanceof Error
+          ? error.message
+          : String((error as { message?: unknown })?.message ?? error)
+      throw new LibraryReadError(table, detail)
+    }
     return data ?? null
-  } catch {
-    return null
+  } catch (error) {
+    if (error instanceof LibraryReadError) throw error
+    const detail = error instanceof Error ? error.message : String(error)
+    throw new LibraryReadError(table, detail)
   }
 }
 
@@ -135,10 +156,18 @@ async function supabaseSelectMany<T>(
       data: T[] | null
       error: unknown
     }
-    if (error) return []
+    if (error) {
+      const detail =
+        error instanceof Error
+          ? error.message
+          : String((error as { message?: unknown })?.message ?? error)
+      throw new LibraryReadError(table, detail)
+    }
     return data ?? []
-  } catch {
-    return []
+  } catch (error) {
+    if (error instanceof LibraryReadError) throw error
+    const detail = error instanceof Error ? error.message : String(error)
+    throw new LibraryReadError(table, detail)
   }
 }
 
@@ -205,14 +234,17 @@ async function supabaseDelete(
 export async function getActiveSeries(
   userId: string,
 ): Promise<ActiveSeriesRecord | null> {
-  const cached = getStore().activeByUser.get(userId)
-  if (cached) return cached
-
+  // Always consult the canonical row. A Workers isolate can outlive a
+  // change made on another device, so returning a cached row here can
+  // resurrect a cleared/replaced devotional. The map remains useful for
+  // write rollback, but it is never authoritative for reads.
   const fetched = await supabaseSelectOne<ActiveSeriesRecord>('active_series', {
     user_id: userId,
   })
   if (fetched) {
     getStore().activeByUser.set(userId, fetched)
+  } else {
+    getStore().activeByUser.delete(userId)
   }
   return fetched
 }
@@ -302,15 +334,14 @@ export async function clearActiveSeries(userId: string): Promise<void> {
 export async function getScheduledSwap(
   userId: string,
 ): Promise<ScheduledSeriesSwapRecord | null> {
-  const cached = getStore().swapByUser.get(userId)
-  if (cached) return cached
-
   const fetched = await supabaseSelectOne<ScheduledSeriesSwapRecord>(
     'scheduled_series_swap',
     { user_id: userId },
   )
   if (fetched) {
     getStore().swapByUser.set(userId, fetched)
+  } else {
+    getStore().swapByUser.delete(userId)
   }
   return fetched
 }
@@ -356,18 +387,15 @@ export async function clearScheduledSwap(userId: string): Promise<void> {
 export async function listArchivedSeries(
   userId: string,
 ): Promise<ArchivedSeriesRecord[]> {
-  const cached = getStore().archivedByUser.get(userId) ?? []
   const fetched = await supabaseSelectMany<ArchivedSeriesRecord>(
     'archived_series',
     { user_id: userId },
   )
 
-  const merged = [...cached, ...fetched]
-  const bySlug = new Map<string, ArchivedSeriesRecord>()
-  for (const row of merged) {
-    bySlug.set(row.series_slug, row)
-  }
-  const sorted = Array.from(bySlug.values()).sort((a, b) =>
+  // Supabase is canonical. Merging cached rows here resurrected archives
+  // removed on another device because an absent database row could never
+  // evict its isolate-cached counterpart.
+  const sorted = [...fetched].sort((a, b) =>
     b.archived_at.localeCompare(a.archived_at),
   )
   getStore().archivedByUser.set(userId, sorted)
