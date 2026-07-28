@@ -5,6 +5,17 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## FIX — TODAY nav finally points at YOUR devotional (2026-07-27)
+
+Root cause of "every time I click Today it shows seek-first-the-
+kingdom": EVERY nav surface labeled TODAY (desktop header + mobile
+tab bar) linked to /today — the EDITORIAL DATE-ROTATION page that
+serves the same rotating devotional to everyone — not to /daily-bread
+where all the active-devotional resolution work lives. The founder
+never landed on the fixed surface. TODAY now links to /daily-bread
+everywhere; the rotation remains reachable as "Today's Edition" in
+the footer. (SA-033, F-083)
+
 ## CONTENT v5 — clean-sheet single-author rewrite + founder corrections (2026-07-27)
 
 Founder rejected v4 as patchwork ("hobbled together with various edits

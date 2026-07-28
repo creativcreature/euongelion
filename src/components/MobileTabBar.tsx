@@ -22,7 +22,7 @@ const TABS: Array<{
   icon: React.ReactNode
 }> = [
   {
-    href: '/today',
+    href: '/daily-bread',
     label: 'TODAY',
     isActive: (p) => p === '/today' || p.startsWith('/daily-bread'),
     icon: (

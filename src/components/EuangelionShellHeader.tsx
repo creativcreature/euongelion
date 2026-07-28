@@ -17,7 +17,12 @@ import { useSettingsStore } from '@/stores/settingsStore'
 // surfaces never duplicate a destination.
 const DESKTOP_NAV_ITEMS = [
   { href: '/', label: 'HOME' },
-  { href: '/today', label: 'TODAY' },
+  // SA-033 (2026-07-27, founder): TODAY means YOUR devotional — the
+  // Daily Bread resolver (active devotional → plan → invitation) —
+  // not the /today editorial rotation, which kept greeting the founder
+  // with whatever day the date-rotation landed on. The rotation stays
+  // reachable as "Today's Edition" in the footer.
+  { href: '/daily-bread', label: 'TODAY' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
   { href: '/daily-bread', label: 'DAILY BREAD' },

@@ -36,7 +36,7 @@ describe('MobileTabBar', () => {
     expect(links).toHaveLength(5)
     expect(links.map((l) => l.textContent)).toEqual(TAB_LABELS)
     expect(links.map((l) => l.getAttribute('href'))).toEqual([
-      '/today',
+      '/daily-bread',
       '/series',
       '/soul-audit',
       '/library',
