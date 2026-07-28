@@ -495,10 +495,10 @@ export default function DevotionalPageClient({
               render scripture chip + DAY N OF M + h1 + teaser — all of it
               duplicated by the folio, the headline hero, and the first
               scripture module. Slimmed to the action row only. */}
-          <header
-            className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-4"
-            style={{ borderColor: 'var(--color-border)' }}
-          >
+          {/* Founder direction 2026-07-28: unboxed. A bordered rectangle here
+              added a third stacked slab above the headline; these are two quiet
+              text links, not a panel. */}
+          <header className="devotional-shell-block mb-8 px-0 py-2">
             {/* R37: action row aligned on baseline. ShareButton
                 renders with an SVG icon that breaks items-center
                 alignment with plain text links. items-baseline +
@@ -735,17 +735,6 @@ export default function DevotionalPageClient({
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
 
-                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
-                      this devotional's real text, one section at a time. */}
-                  {audioSegments.length > 0 && (
-                    <AudioPlayer
-                      title={devotional.title}
-                      segments={audioSegments}
-                      artworkSrc="/icons/icon-512.png"
-                      className="devotional-shell-panel mb-6"
-                    />
-                  )}
-
                   {/* Audit 2026-05-13: editorial broadsheet folio strip.
                       Sits above the title. Scale back: delete this block. */}
                   {seriesSlug && SERIES_DATA[seriesSlug] && (
@@ -773,6 +762,22 @@ export default function DevotionalPageClient({
                       }
                       imageAlt={`Illustration accompanying ${devotional.title}`}
                       title={devotional.title}
+                    />
+                  )}
+
+                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
+                      this devotional's real text, one section at a time.
+                      Founder direction 2026-07-28: it sits BELOW the folio and
+                      headline. Opening the page on a player (and formerly its
+                      section index) buried the headline and read like an app
+                      chrome panel; a magazine gives you the title first and
+                      offers the audio edition underneath it. */}
+                  {audioSegments.length > 0 && (
+                    <AudioPlayer
+                      title={devotional.title}
+                      segments={audioSegments}
+                      artworkSrc="/icons/icon-512.png"
+                      className="devotional-shell-panel mb-6"
                     />
                   )}
 

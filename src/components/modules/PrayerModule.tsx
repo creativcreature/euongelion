@@ -13,13 +13,13 @@ export default function PrayerModule({ module }: { module: Module }) {
   return (
     <FadeIn>
       <div className="my-16 text-center md:my-24">
+        {/* `prayerType` ("centering", "intercessory", …) is authoring metadata,
+            not reader-facing copy — printing it beside the heading rendered a
+            literal "(centering)" on the page. The heading carries the voice. */}
         <div className="mb-6 flex items-baseline justify-center gap-3">
           <p className="text-label vw-small text-gold">
             {module.heading || 'PRAYER'}
           </p>
-          {module.prayerType && (
-            <span className="vw-small text-muted">({module.prayerType})</span>
-          )}
         </div>
         {module.posture && (
           <p className="mb-6 vw-small italic text-muted">

@@ -7224,8 +7224,11 @@ html.reduce-motion *::after {
 
 /* ─── Devotional library: actions bar + modals + library page ───── */
 
+/* Founder direction 2026-07-28: the actions bar reads as part of the page, not
+   as a raised panel stacked above the headline. Its buttons carry their own
+   affordance; the container stays transparent. */
 .devotional-actions-bar {
-  background: var(--color-surface-raised, transparent);
+  background: transparent;
 }
 
 .devotional-actions-bar [data-state='active'],

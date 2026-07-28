@@ -6,11 +6,10 @@ export default function ReflectionModule({ module }: { module: Module }) {
 
   return (
     <div className="my-16 md:my-24">
-      <p className="text-label vw-small mb-6 text-gold">
-        {module.invitationType
-          ? module.invitationType.toUpperCase()
-          : 'REFLECT'}
-      </p>
+      {/* `invitationType` ("quiet", "examen", …) is authoring metadata. Shouting
+          it as the section label printed a bare "QUIET" above the prompt and
+          read like a system tag rather than an invitation. */}
+      <p className="text-label vw-small mb-6 text-gold">REFLECT</p>
       {module.heading && (
         <h3 className="text-display vw-heading-md mb-8">{module.heading}</h3>
       )}

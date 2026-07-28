@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## EDITORIAL — Reader reads as a magazine, not a module stack (2026-07-28)
+
+Founder direction: the devotional must "flow in a full beautiful presentation"
+and not "feel modular" — and the table-of-contents boxes listing the
+devotional's own section titles at the top had to go.
+
+Reader chrome:
+
+- Removed the AudioPlayer section scrubber, which printed a chip per section
+  ("Title · Scripture · Word study · A Two-Minute Prayer · Two Stories, One
+  Field…") above the article and spoiled every heading before the first line.
+  Section navigation stays on the ‹‹ / ›› controls and progress bar.
+- Moved the Audio Edition panel BELOW the folio and headline. The page had
+  opened on a player instead of a title.
+- Unboxed the two stacked utility slabs above the headline (breadcrumb/share
+  header and the start/save actions bar, incl. its raised background). Three
+  bordered rectangles preceded the headline; the page now opens on the writing.
+- Stopped leaking authoring metadata into reader copy: `prayerType` rendered a
+  literal "(centering)" beside the prayer heading and `invitationType` shouted
+  a bare "QUIET" above the reflection prompt.
+
+Content (Harvest + Prayer of Jabez, 14 files — full editorial audit run):
+
+- Fixed the DEEP DIVE anchor on harvest-6, which jumped readers to a decorative
+  banner instead of the recap, and dropped its `format: "two-minute-open"` flag
+  (that day has no second half for the short read to open into).
+- Normalized typography across all 14 files: literal "..." → "…", the single
+  stray curly apostrophe → straight (matching every other file).
+- Trimmed three `emphasis` values that were 14-17 words — long enough to
+  highlight most of the visible passage; each replacement verified verbatim.
+- Stripped leaked editorial apparatus from reader-facing prose ("A note for
+  careful readers:", "Translational honesty note:", "Provenance carried in the
+  series source pack.", "Now the honesty the deep dive owes you.", the
+  page-verification aside). Every factual claim was preserved — only the
+  apparatus framing was removed.
+- Fixed a video attribution carrying a sourcing note ("Gospel in Life (official
+  channel)").
+
+The deeper findings — the five-slot teaching skeleton every day shares, ten
+repeated CMS-style headings, a refrain restated on seven straight days, and
+duplicate opening scripture on harvest-2/3 — are documented for founder
+decision; they require rewriting authored prose, not a mechanical pass.
+(SA-023, F-082, F-083)
+
 ## STABILIZATION — Canonical current-reading resolver (2026-07-28)
 
 Consolidated the two divergent "what am I reading?" resolution stacks behind a
