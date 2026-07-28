@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — Harvest days 1-3: no double-read, and the founder's actual angle (2026-07-28)
+
+Two content repairs inside the retained Two-Minute Open structure.
+
+**The open no longer reprints the deep dive's scripture.** Days 2 and 3 opened with
+a passage that was a verbatim subset of their own main passage, so the reader met
+the same verses twice within ~800 words. Day 2's open is now James 5:7-8 (the
+farmer who awaits the precious fruit of the soil) and day 3's is Matthew 13:34-35
+(things hidden since the foundation of the world) — both corpus-verbatim from
+public/bibles/BSB/, both previously unused in the series, and neither overlapping
+its day's main passage. Each open's word study was rebuilt from its new passage
+(makrothymeo G3114; krypto/kekrymmena G2928), verified against the STEPBible
+tagged Greek NT and Abbott-Smith rather than asserted, and the long re-teach of
+the old opening word was deleted from day 2's main word study — a word is now
+taught once per day.
+
+**Days 1-2 now carry the founder's canonical blend.** Measured against days 4-5
+(which were already correct), days 1 and 2 were written to the older single-angle
+spec: the retired-verdict thread — you cannot tell wheat from darnel before the
+grain forms, so stop rendering verdicts — appeared roughly twice in day 1's 4,183
+words, while evil-persisting-beside-good ran 2.5x the intended primary. Day 1
+stated the indistinguishability fact inside its zizania word note and never used
+it; it now pays that off in the teaching, the insight, the audit and the close.
+Day 1's verdict thread rose 1.0 to 4.3 per 1k, day 2's 4.6 to 6.6, with patience
+still primary. The parable's own vocabulary (enemy, darnel, sabotage) was left
+fully intact — nothing was stripped to move a number.
+
+Both passes: modules never reordered, added or removed; scripture, reflection and
+prayer of the open left untouched by the rebalance; second-person count in the
+essay modules unchanged (day 1 12/12, day 2 22/22) so the third-person voice
+holds. Validator PASS x7; suite 137 files / 1765 tests green. F-082's User
+Expectation, which still stated only the third angle, was corrected to the
+canonical weighting. (SA-033, F-082)
+
 ## EDITORIAL — The Two-Minute Open reads as a précis, not a false start (2026-07-28)
 
 Founder read days 1-2 live: too 2nd-person for the site's voice, and disjointed.

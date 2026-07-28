@@ -14,34 +14,34 @@
   "modules": [
     {
       "type": "scripture",
-      "reference": "Matthew 13:38-39",
+      "reference": "Matthew 13:34-35",
       "translation": "BSB",
-      "passage": "The field is the world, and the good seed represents the sons of the kingdom. The weeds are the sons of the evil one, and the enemy who sows them is the devil. The harvest is the end of the age, and the harvesters are angels.",
+      "passage": "Jesus spoke all these things to the crowds in parables. He did not tell them anything without using a parable. So was fulfilled what was spoken through the prophet: \"I will open My mouth in parables; I will utter things hidden since the foundation of the world.\"",
       "emphasis": [
-        "The field is the world",
-        "the good seed represents the sons of the kingdom"
+        "I will open My mouth in parables",
+        "things hidden since the foundation of the world"
       ],
-      "scriptureContext": "Two minutes with the decoding, term by term — the Teller explaining His own story."
+      "scriptureContext": "Two minutes with the hidden thing named as hidden — the doorway into a day where Jesus goes indoors and decodes His own story, line by line, for whoever asked."
     },
     {
       "type": "vocab",
       "language": "greek",
-      "word": "θερισμός",
-      "transliteration": "therismos",
-      "pronunciation": "theh-ris-MOSS",
-      "strongsNumber": "G2326",
-      "definition": "harvest — the reaping at the appointed end",
-      "usage": "Jesus dates His own story in one clause: the harvest is the end of the age. A real reaping, then, with an appointed season — which sharpens the question every generation asks next: why has it taken so long? Six centuries before the parable, God answered on oath: 'I take no pleasure in the death of the wicked, but rather that the wicked should turn from their ways and live' (Ezekiel 33:11). The date stands. The distance between now and then has a voice in it, and the voice is calling people home."
+      "word": "κεκρυμμένα",
+      "transliteration": "kekrymmena",
+      "pronunciation": "keh-kroo-MEH-nah",
+      "strongsNumber": "G2928",
+      "definition": "hidden things — perfect passive participle of kryptō, to hide or keep covered",
+      "usage": "The prophet's line does not say Jesus conceals. It says He will utter kekrymmena — things that have been hidden, and the tense keeps them that way: hidden already, hidden a long while, hidden still unless somebody says them out loud. Nine verses on, the same participle surfaces again, and this time it is buried in a field — a treasure kekrymmenō that a man stumbles over and sells everything he owns to buy (13:44). Neither time is the hiding the end of the matter. The hiding is what makes the finding possible."
     },
     {
       "type": "reflection",
-      "prompt": "The reaping has a date; the delay has a reason God swore to. When heaven's pace has frustrated you most, whose turning — maybe your own — might the waiting have been buying?",
+      "prompt": "A parable hides and hands over at the same time; the meaning waits for whoever keeps listening. Where have you stopped listening for a hidden thing — in Scripture, or in someone whose story you have already finished reading?",
       "invitationType": "quiet"
     },
     {
       "type": "prayer",
       "heading": "A Two-Minute Prayer",
-      "prayerText": "Lord of the harvest, I have read Your patience as absence more times than I can count. You have said under oath what it actually is: room to turn. Spend some of today's room on me — and let my ordinary hours carry the invitation to somebody else. Amen.",
+      "prayerText": "Lord of the harvest, You hide things only so they can be found, and I have kept mistaking the hiding for silence. Say the slow thing to me today — and keep saying it to the person I have stopped expecting anything from. Amen.",
       "prayerType": "centering"
     },
     {
@@ -319,7 +319,7 @@
         },
         {
           "title": "Greek and Hebrew data",
-          "description": "theristēs (G2327, 2 NT occurrences, both in this parable), therismos (G2326), kosmos (G2889), eklampō (G1584, NT hapax) matching the Greek Daniel 12:3 the early church read (Theodotion); Daniel 12:3 Hebrew — maskilim (H7919), yazhiru (zahar, H2094), zohar (H2096) — BibleHub interlinear and Strong's. The Daniel allusion is affirmed across the standard commentaries (Pulpit, Cambridge, Ellicott, Meyer, Bengel)."
+          "description": "theristēs (G2327, 2 NT occurrences, both in this parable), therismos (G2326), kosmos (G2889), kryptō (G2928, 18 NT occurrences; Matthew 13:35 kekrymmena and 13:44 kekrymmenō are the same perfect passive participle, nine verses apart), eklampō (G1584, NT hapax) matching the Greek Daniel 12:3 the early church read (Theodotion); Daniel 12:3 Hebrew — maskilim (H7919), yazhiru (zahar, H2094), zohar (H2096). Greek forms and counts checked against the STEPBible tagged Greek New Testament (TAGNT) and Abbott-Smith's Manual Greek Lexicon; BibleHub interlinear and Strong's. The Daniel allusion is affirmed across the standard commentaries (Pulpit, Cambridge, Ellicott, Meyer, Bengel)."
         }
       ],
       "forDeeperStudy": "Read Ezekiel 33:1-20, then Daniel 12, then 2 Peter 3:1-13 — the oath, the dawn, and the patience — and reread Matthew 13:24-43 with all three sounding underneath it."
