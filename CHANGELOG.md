@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## EDITORIAL — The Two-Minute Open reads as a précis, not a false start (2026-07-28)
+
+Founder read days 1-2 live: too 2nd-person for the site's voice, and disjointed.
+Measured before changing anything — and the prose was not the problem. Harvest's
+teaching prose is the MOST 3rd-person on the site (4.2 second-person per 1k words
+vs a 7.6 site median and 20.6 in Jabez). But its opening 250 words are the most
+2nd-person on the site (20.0 vs 12.0; days 1/2/4 at 24/32/32), because the
+Two-Minute Open front-loads a reflection prompt and a prayer before any essay.
+Harvest is also the only series carrying that structure — 6 files out of 554,
+which is precisely why it does not read like the rest of the site.
+
+Founder ruling: the quick-start-then-deep-dive idea stays; the execution changes.
+The open had been assembled from the devotional's own parts (scripture, word
+study, reflection, prayer), so nothing told the reader it was a précis — it read
+as the piece, which then restarted. Mobbin research (now available; unavailable
+in the earlier Codex workspace) confirmed every real-world version of this
+pattern makes the short read a visibly distinct object: Digg's tinted TL;DR card,
+ChatGPT's Executive Summary, HYPE's bulleted Summary, Finimize's labelled brief.
+
+The open is now banded and tinted, headed by a gold rule and a "TWO-MINUTE READ"
+label, with its internal rhythm tightened and its end marked — so the transition
+into the deep dive is deliberate. No devotional prose was rewritten.
+
+Also recorded: the canonical Harvest angle is patience-for-the-not-yet-turned +
+don't-judge-the-field-early + a measure of evil-persisting-beside-good. F-082's
+stated User Expectation carries only the third and is stale. (SA-033, F-082)
+
 ## EDITORIAL — Vocabulary reads as a word note, not a lexicon entry (2026-07-28)
 
 Founder: the Harvest read "disjointed," and the on-page flow broke "because of

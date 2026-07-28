@@ -10780,3 +10780,57 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--color-gold);
   opacity: 0.85;
 }
+
+/* ── Two-Minute Open ─────────────────────────────────────────────────────────
+   Founder direction 2026-07-28: the quick-start-then-deep-dive idea stays; its
+   execution changes. The open was assembled from the devotional's own parts
+   (scripture, word study, reflection, prayer), so nothing signalled it was a
+   précis — it read as the piece, which then restarted. Real-world versions of
+   this pattern always make the short read a visibly different object (Digg's
+   tinted TL;DR card, ChatGPT's Executive Summary, HYPE's bulleted Summary,
+   Finimize's labelled brief). So: band it, label it, and mark where it ends. */
+.is-two-minute {
+  background: var(--color-surface-raised, transparent);
+  padding-inline: 1.5rem;
+  margin-bottom: 0;
+  max-width: 44rem;
+}
+
+/* the open's internal rhythm is tightened — it is a two-minute read, not a
+   full-bleed essay, so its modules sit closer together */
+.is-two-minute > * {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.is-two-minute[data-two-minute='start'] {
+  position: relative;
+  padding-top: 3.25rem;
+  border-top: 2px solid var(--color-gold);
+}
+
+.is-two-minute[data-two-minute='start']::before {
+  content: 'TWO-MINUTE READ';
+  position: absolute;
+  top: 1.1rem;
+  left: 1.5rem;
+  font-family: var(--font-family-ui, inherit);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+}
+
+.is-two-minute[data-two-minute='end'] {
+  padding-bottom: 2.25rem;
+  margin-bottom: var(--devotional-rhythm-xl, 3rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 640px) {
+  .is-two-minute {
+    padding-inline: 1.1rem;
+  }
+  .is-two-minute[data-two-minute='start']::before {
+    left: 1.1rem;
+  }
+}
