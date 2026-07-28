@@ -62,6 +62,21 @@
       "scriptureContext": "The end-of-age job description — dated, staffed, and assigned to angels. Today concerns the other job description: ours."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day4-banner.webp",
+      "inlineImageAlt": "A small fieldhand watering young rows while one enormous sun pours its rays equally across every row",
+      "inlineImageCaption": "The Father's setting: one sun, poured out evenly, over rows that could not be more different.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The Re-Employed",
+      "content": "By the third day of this parable an honest objection has usually formed, and it deserves saying out loud: the sorting is gone, fine — but the field is still my address. The weeds are not theoretical; some of them cost me something. And for many of us the ache sits closer than that: a chair at our own table belongs to someone we love who wants nothing to do with God, and every reading this week has walked past that chair. If the harvest waits, and the waiting is mercy — what fills the days in between?\n\nThe parable's answer starts with a detail easy to miss: the servants were never fired. They lost one task — the pulling — and kept the whole farm. Watering, tending, mending, watching: everything that makes a field flourish stays in human hands. The kingdom's meantime is a shift to be worked, not a room to wait in.\n\nAnd the shift has a model. Eight chapters before this discourse, Jesus described the Father's ordinary morning: He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous. Read as farm policy, that sentence reorganizes a week. God's daily blessings are not aimed at the deserving; they fall field-wide, on rows that curse Him back, every single day, as settled practice. The sun that woke you this morning woke every person you struggle to forgive — and He raised it over them on purpose.\n\nThen the sentence turns and looks at its hearer: that you may be sons of your Father in heaven. The family resemblance is the weather. Children of this Father are recognizable by indiscriminate good — kindness running on His setting, not the world's meter.\n\nSo today is an apprenticeship. Three working texts, one prophet who failed the course memorably, and one woman in a bombed-out country who passed it with a single lifted hand.",
+      "markdown": false
+    },
+    {
       "type": "vocab",
       "language": "greek",
       "word": "σκάνδαλον",
@@ -96,21 +111,6 @@
           "meaning": "the harvest — the appointed end that owns the gathering verb until then"
         }
       ]
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/day4-banner.webp",
-      "inlineImageAlt": "A small fieldhand watering young rows while one enormous sun pours its rays equally across every row",
-      "inlineImageCaption": "The Father's setting: one sun, poured out evenly, over rows that could not be more different.",
-      "inlineImageWidth": "bleed"
-    },
-    {
-      "type": "teaching",
-      "chiasm_position": "A",
-      "pardes_layer": "peshat",
-      "heading": "The Re-Employed",
-      "content": "By the third day of this parable an honest objection has usually formed, and it deserves saying out loud: the sorting is gone, fine — but the field is still my address. The weeds are not theoretical; some of them cost me something. And for many of us the ache sits closer than that: a chair at our own table belongs to someone we love who wants nothing to do with God, and every reading this week has walked past that chair. If the harvest waits, and the waiting is mercy — what fills the days in between?\n\nThe parable's answer starts with a detail easy to miss: the servants were never fired. They lost one task — the pulling — and kept the whole farm. Watering, tending, mending, watching: everything that makes a field flourish stays in human hands. The kingdom's meantime is a shift to be worked, not a room to wait in.\n\nAnd the shift has a model. Eight chapters before this discourse, Jesus described the Father's ordinary morning: He causes His sun to rise on the evil and the good, and sends rain on the righteous and the unrighteous. Read as farm policy, that sentence reorganizes a week. God's daily blessings are not aimed at the deserving; they fall field-wide, on rows that curse Him back, every single day, as settled practice. The sun that woke you this morning woke every person you struggle to forgive — and He raised it over them on purpose.\n\nThen the sentence turns and looks at its hearer: that you may be sons of your Father in heaven. The family resemblance is the weather. Children of this Father are recognizable by indiscriminate good — kindness running on His setting, not the world's meter.\n\nSo today is an apprenticeship. Three working texts, one prophet who failed the course memorably, and one woman in a bombed-out country who passed it with a single lifted hand.",
-      "markdown": false
     },
     {
       "type": "pullquote",

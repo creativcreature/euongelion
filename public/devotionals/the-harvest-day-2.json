@@ -64,6 +64,21 @@
       "scriptureContext": "The parable entire — from clean planting to the harvest instructions — heard in one breath before the day walks it slowly."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day2-banner.webp",
+      "inlineImageAlt": "Two servants in a young field, hands hovering over the shoots, looking toward a distant master who lifts one hand",
+      "inlineImageCaption": "First light on a mixed field: the servants find what the night left behind.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "What the Servants Did Right",
+      "content": "Yesterday ended in the dark, with the enemy's work finished and nobody aware of it. Today opens months later, in daylight. The wheat has come into head, the grain is showing — and so, suddenly, is everything else. When the wheat sprouted and bore grain, then the weeds also appeared.\n\nWatch the servants, because they do almost everything right. They do not gossip the discovery around the household; they take it straight to the owner. They ask before they accuse: \"Sir, didn't you sow good seed in your field?\" — a question that leaves room for an answer, which is rarer than it sounds. They accept the owner's diagnosis without argument: an enemy did this. And then they volunteer. \"Do you want us to go and pull them up?\" No self-protection in it, no delay, real blisters ahead. As offers go, this one is loyal, brave, and aimed at the right target.\n\nAnd the answer is No.\n\nNot \"not yet,\" with a schedule attached. Not \"you have misread the field.\" The owner agrees about the weeds, agrees about the enemy, agrees the situation is exactly as bad as it looks — and forbids the rescue. \"No,\" he said, \"if you pull the weeds now, you might uproot the wheat with them. Let both grow together until the harvest.\"\n\nPerhaps an offer of yours has come back this way — real help, honestly volunteered, turned down flat. Then you know the sting. At first the No reads as indifference. The rest of the day is spent inside the owner's reasons, and none of them turn out to be indifference. He says no to the servants because he is saying yes to something they cannot see from the middle of the rows.",
+      "markdown": false
+    },
+    {
       "type": "vocab",
       "language": "greek",
       "word": "συναυξάνεσθαι",
@@ -103,21 +118,6 @@
           "meaning": "\"forgive us\" — the same verb, four chapters earlier, on every disciple's lips"
         }
       ]
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/day2-banner.webp",
-      "inlineImageAlt": "Two servants in a young field, hands hovering over the shoots, looking toward a distant master who lifts one hand",
-      "inlineImageCaption": "First light on a mixed field: the servants find what the night left behind.",
-      "inlineImageWidth": "bleed"
-    },
-    {
-      "type": "teaching",
-      "chiasm_position": "A",
-      "pardes_layer": "peshat",
-      "heading": "What the Servants Did Right",
-      "content": "Yesterday ended in the dark, with the enemy's work finished and nobody aware of it. Today opens months later, in daylight. The wheat has come into head, the grain is showing — and so, suddenly, is everything else. When the wheat sprouted and bore grain, then the weeds also appeared.\n\nWatch the servants, because they do almost everything right. They do not gossip the discovery around the household; they take it straight to the owner. They ask before they accuse: \"Sir, didn't you sow good seed in your field?\" — a question that leaves room for an answer, which is rarer than it sounds. They accept the owner's diagnosis without argument: an enemy did this. And then they volunteer. \"Do you want us to go and pull them up?\" No self-protection in it, no delay, real blisters ahead. As offers go, this one is loyal, brave, and aimed at the right target.\n\nAnd the answer is No.\n\nNot \"not yet,\" with a schedule attached. Not \"you have misread the field.\" The owner agrees about the weeds, agrees about the enemy, agrees the situation is exactly as bad as it looks — and forbids the rescue. \"No,\" he said, \"if you pull the weeds now, you might uproot the wheat with them. Let both grow together until the harvest.\"\n\nPerhaps an offer of yours has come back this way — real help, honestly volunteered, turned down flat. Then you know the sting. At first the No reads as indifference. The rest of the day is spent inside the owner's reasons, and none of them turn out to be indifference. He says no to the servants because he is saying yes to something they cannot see from the middle of the rows.",
-      "markdown": false
     },
     {
       "type": "inline-image",

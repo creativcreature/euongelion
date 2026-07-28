@@ -62,6 +62,21 @@
       "scriptureContext": "The first parable of the day — told from the boat moments before the weeds story, about the same kind of sower and the same kind of field."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/sower-four-soils.webp",
+      "inlineImageAlt": "A sower broadcasting seed across four grounds: a bird-picked path, shallow rock, choking thorns, and rich tilled soil",
+      "inlineImageCaption": "The doorway into the week: one sower, one seed, four landings — before the second story turns the same field dark.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "Two Stories, One Field",
+      "content": "Matthew puts the day by the sea. The crowd outgrows the shore, so Jesus teaches from a boat, and the beach becomes a congregation. He will tell seven parables before evening. The first is a farmer sowing with a full arm — seed on the path, seed on the rocks, seed in the thorns, seed in good dark soil. Four landings, four kinds of hearing. Birds take the first. Sun kills the second. Thorns choke the third. The fourth comes back a hundredfold. It is a story about what happens when the word of God meets a human heart, and Jesus tells it first because every other story that day walks through the door it opens.\n\nThen He starts again. \"He put before them another parable.\" Same world. Same kind of farmer, same kind of field. But this time nothing is wrong with the ground, and nothing is wrong with the seed. The kingdom of heaven is like a man who sowed good seed in his field — a clean planting, start to finish. What goes wrong comes from outside, after dark. While everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away.\n\nThe first story explained why a true word can land and die. This second one takes up a harder question — where evil comes from in a field God planted well — and it is the story this whole week lives inside. The sower from the first parable walks into the second and meets his opposite: another sower, working the same rows at night, planting a crop meant to be mistaken for wheat.\n\nIf you have ever looked at something good — a family, a church, a life — and wondered how so much ruin got into it, this is your parable. It begins where honest wondering begins: with good seed, an ordinary night, and a field that looks fine until the grain starts to show.",
+      "markdown": false
+    },
+    {
       "type": "vocab",
       "language": "greek",
       "word": "ἐπέσπειρεν",
@@ -104,21 +119,6 @@
           "meaning": "\"while the men were sleeping\" (katheudō) — ordinary, blameless sleep; the text never scolds the sleepers"
         }
       ]
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/sower-four-soils.webp",
-      "inlineImageAlt": "A sower broadcasting seed across four grounds: a bird-picked path, shallow rock, choking thorns, and rich tilled soil",
-      "inlineImageCaption": "The doorway into the week: one sower, one seed, four landings — before the second story turns the same field dark.",
-      "inlineImageWidth": "bleed"
-    },
-    {
-      "type": "teaching",
-      "chiasm_position": "A",
-      "pardes_layer": "peshat",
-      "heading": "Two Stories, One Field",
-      "content": "Matthew puts the day by the sea. The crowd outgrows the shore, so Jesus teaches from a boat, and the beach becomes a congregation. He will tell seven parables before evening. The first is a farmer sowing with a full arm — seed on the path, seed on the rocks, seed in the thorns, seed in good dark soil. Four landings, four kinds of hearing. Birds take the first. Sun kills the second. Thorns choke the third. The fourth comes back a hundredfold. It is a story about what happens when the word of God meets a human heart, and Jesus tells it first because every other story that day walks through the door it opens.\n\nThen He starts again. \"He put before them another parable.\" Same world. Same kind of farmer, same kind of field. But this time nothing is wrong with the ground, and nothing is wrong with the seed. The kingdom of heaven is like a man who sowed good seed in his field — a clean planting, start to finish. What goes wrong comes from outside, after dark. While everyone was asleep, his enemy came and sowed weeds among the wheat, and slipped away.\n\nThe first story explained why a true word can land and die. This second one takes up a harder question — where evil comes from in a field God planted well — and it is the story this whole week lives inside. The sower from the first parable walks into the second and meets his opposite: another sower, working the same rows at night, planting a crop meant to be mistaken for wheat.\n\nIf you have ever looked at something good — a family, a church, a life — and wondered how so much ruin got into it, this is your parable. It begins where honest wondering begins: with good seed, an ordinary night, and a field that looks fine until the grain starts to show.",
-      "markdown": false
     },
     {
       "type": "pullquote",

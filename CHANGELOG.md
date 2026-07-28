@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## EDITORIAL — Vocabulary reads as a word note, not a lexicon entry (2026-07-28)
+
+Founder: the Harvest read "disjointed," and the on-page flow broke "because of
+how the vocabulary is placed" — too school-booky, not enough magazine.
+
+Presentation (`VocabModule`, all series): the word study rendered as a dictionary
+entry dropped into an essay — a GREEK label beside a Strong's catalog number, a
+headword up to 6rem, a bracketed pronunciation respelling, then a ruled
+WORD BY WORD interlinear table and a RELATED list, each under its own shouted
+sublabel. It is now a magazine sidenote: a gold hairline in the margin, the word
+at reading scale (51px, was up to 96px) with its transliteration riding
+alongside, the gloss as the lead line, and the interlinear and cognates set as
+quiet flowing text separated by middots — no table rules, no ALL-CAPS sublabels.
+Strong's numbers stay in the data (the JSON contract requires them) but are
+concordance ids, not reader-facing copy. Project rule preserved: Greek/Hebrew
+never appears without its transliteration beside it.
+
+Placement (Harvest days 1-5): the main-body word study sat between the scripture
+and the first line of writing, so the reader hit a lexicon block before any
+prose. It now follows the opening teaching block — scripture → art → the writing
+begins → the word note deepens it. The two-minute open keeps its compact gloss
+in place. The DEEP DIVE anchor was asserted intact on every day (index 5 remains
+the scripture); no words were rewritten, only reordered.
+
+No devotional prose was edited. (SA-033, F-082)
+
 ## EDITORIAL — Reader reads as a magazine, not a module stack (2026-07-28)
 
 Founder direction: the devotional must "flow in a full beautiful presentation"

@@ -10705,3 +10705,78 @@ html[data-held-moment] .mobile-tab-bar {
 .devotional-flow-article h3 {
   text-align: left;
 }
+
+/* ── Editorial word note ─────────────────────────────────────────────────────
+   Founder direction 2026-07-28: the vocabulary was breaking the read. It had
+   been set as a dictionary entry (catalog number, 6rem headword, pronunciation
+   respelling, a ruled interlinear table and a cognate list, each under its own
+   shouted sublabel) sitting between the scripture and the first line of prose.
+   It now reads as a magazine sidenote: a hairline in the margin, the word at
+   reading scale, the gloss as the lead line, apparatus set quietly inline. */
+.word-note {
+  margin: var(--devotional-rhythm-xl, 3rem) 0;
+  padding-left: 1.15rem;
+  border-left: 1px solid var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .word-note {
+    padding-left: 1.75rem;
+  }
+}
+
+.word-note-headword {
+  font-family: var(--font-family-serif);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 0.15rem;
+}
+
+/* The transliteration rides with the headword — Greek/Hebrew never appears
+   without it. Set smaller and muted so the original keeps the emphasis. */
+.word-note-translit {
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: 0.44em;
+  color: var(--color-text-muted);
+  margin-left: 0.6em;
+  white-space: nowrap;
+}
+
+.word-note-pronunciation {
+  margin-bottom: 1.25rem;
+  opacity: 0.75;
+}
+
+.word-note-gloss {
+  margin-bottom: 1.5rem;
+  max-width: 34rem;
+}
+
+/* Interlinear + cognates: flowing text with a middot between entries, no
+   table rules and no ALL-CAPS sublabels. */
+.word-note-literal,
+.word-note-related {
+  margin-top: 1.5rem;
+  line-height: 1.9;
+  max-width: 40rem;
+}
+
+.word-note-literal-entry:not(:last-child)::after {
+  content: ' · ';
+  color: var(--color-gold);
+  opacity: 0.5;
+  padding: 0 0.15em;
+}
+
+.word-note-translit-inline {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.word-note-related-lead {
+  font-style: italic;
+  color: var(--color-gold);
+  opacity: 0.85;
+}

@@ -63,6 +63,21 @@
       "scriptureContext": "The Old Testament's closing prophet describes a single coming day that arrives two ways: furnace for the arrogant, sunrise with healing for those who fear His name."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/the-harvest/day5-banner.webp",
+      "inlineImageAlt": "Harvest sunrise over a mown field: bound sheaves, reapers, and a barn with its doors thrown open to golden light",
+      "inlineImageCaption": "The morning after the long growing: sheaves bound, doors open, light on schedule.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "What Endings Do",
+      "content": "Every story hands its meaning backward from the end. A hard road in a tale that finishes at home reads as adventure; the same road in a tale that finishes nowhere reads as waste. People are built this way — we cannot say what a middle meant until we know where it goes. So the week's last full question is the oldest one: how does the field end?\n\nJesus answers twice, in the same breath. For the weeds: bundles, fire, done. For the wheat: gather the wheat into my barn — and then, in the interpretation, the line He kept for last: then the righteous will shine like the sun in the kingdom of their Father.\n\nHold that ending against everything the week has watched, and its strangest gift appears. All season, no one could read the field. The servants could not — the whole drama ran on their blindness. So the harvest, when it comes, does more than sort; it discloses. For the first time, which stalk was which becomes public knowledge — and the reveal runs in both directions. Rows everyone had circled as ruined stand up golden. Stalks everyone had certified turn out hollow. The end of this story does more than relocate the wheat — it corrects every early reading anyone ever ran.\n\nAnd mark the destination. A barn is where a farmer keeps what the whole year was for. The wheat comes in because it is wanted — carried, kept, brought home. Everything this week rehearsed — readings retired, wrath forwarded, tables kept — was the middle of a story that ends with the Owner walking His crop through His own doors and the light going on.\n\nThe rest of today walks that ending slowly: one day with two faces, a shore where a long catch finally gets sorted, and a promise about stars.",
+      "markdown": false
+    },
+    {
       "type": "vocab",
       "language": "hebrew",
       "word": "שֶׁמֶשׁ צְדָקָה",
@@ -101,21 +116,6 @@
           "meaning": "\"they will shine\" — Daniel's resurrection dawn, the verse behind Jesus' ending"
         }
       ]
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/the-harvest/day5-banner.webp",
-      "inlineImageAlt": "Harvest sunrise over a mown field: bound sheaves, reapers, and a barn with its doors thrown open to golden light",
-      "inlineImageCaption": "The morning after the long growing: sheaves bound, doors open, light on schedule.",
-      "inlineImageWidth": "bleed"
-    },
-    {
-      "type": "teaching",
-      "chiasm_position": "A",
-      "pardes_layer": "peshat",
-      "heading": "What Endings Do",
-      "content": "Every story hands its meaning backward from the end. A hard road in a tale that finishes at home reads as adventure; the same road in a tale that finishes nowhere reads as waste. People are built this way — we cannot say what a middle meant until we know where it goes. So the week's last full question is the oldest one: how does the field end?\n\nJesus answers twice, in the same breath. For the weeds: bundles, fire, done. For the wheat: gather the wheat into my barn — and then, in the interpretation, the line He kept for last: then the righteous will shine like the sun in the kingdom of their Father.\n\nHold that ending against everything the week has watched, and its strangest gift appears. All season, no one could read the field. The servants could not — the whole drama ran on their blindness. So the harvest, when it comes, does more than sort; it discloses. For the first time, which stalk was which becomes public knowledge — and the reveal runs in both directions. Rows everyone had circled as ruined stand up golden. Stalks everyone had certified turn out hollow. The end of this story does more than relocate the wheat — it corrects every early reading anyone ever ran.\n\nAnd mark the destination. A barn is where a farmer keeps what the whole year was for. The wheat comes in because it is wanted — carried, kept, brought home. Everything this week rehearsed — readings retired, wrath forwarded, tables kept — was the middle of a story that ends with the Owner walking His crop through His own doors and the light going on.\n\nThe rest of today walks that ending slowly: one day with two faces, a shore where a long catch finally gets sorted, and a promise about stars.",
-      "markdown": false
     },
     {
       "type": "pullquote",
