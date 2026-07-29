@@ -169,6 +169,23 @@ export async function DELETE(request: NextRequest) {
       })
     }
 
+    // POST was limited and DELETE was not, so the destructive half of the pair
+    // shipped unbounded. Same namespace budget as POST.
+    const limiter = await takeRateLimit({
+      namespace: 'devotionals-saved-delete',
+      key: clientKey,
+      limit: MAX_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return jsonError({
+        error: 'Too many requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
+    }
+
     const devotionalSlug = String(
       request.nextUrl.searchParams.get('devotionalSlug') || '',
     ).trim()

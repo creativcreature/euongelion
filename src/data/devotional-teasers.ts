@@ -808,7 +808,7 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'prayer-of-jabez-day-3':
     'A prayer so bold it doubles its own verb. A bestseller that turned it into a formula. Today we take the prayer back.',
   'prayer-of-jabez-day-4':
-    "Ten million people have prayed Jabez's words hoping the words would work. The words never worked. Someone did.",
+    'Ten million copies sold on the promise that the words would work. The words never worked. Someone did.',
   'prayer-of-jabez-day-5':
     'God is handing you ground you prayed years for. The question that decides everything: is it a trophy, or an assignment?',
   'prayer-of-jabez-day-6':

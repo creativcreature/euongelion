@@ -433,6 +433,25 @@ export async function DELETE(request: NextRequest) {
         requestId,
       })
     }
+
+    // This handler archives the active series and clears the slot — the most
+    // destructive write on the route — yet it was the only one of PUT/PATCH/
+    // DELETE with no limiter, despite already computing clientKey for one.
+    const limiter = await takeRateLimit({
+      namespace: 'devotionals-active-delete',
+      key: clientKey,
+      limit: MAX_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return jsonError({
+        error: 'Too many requests. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
+    }
+
     const target = request.nextUrl.searchParams.get('target')
     if (target === 'swap') {
       await clearScheduledSwap(user.id)

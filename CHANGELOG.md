@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## VERIFIED — Signed-in continuity proven in the Workers runtime (2026-07-28)
+
+The last open gate on F-083 is closed. Every prior test mocked the repository, so
+nothing proved that a REAL signed-in session keeps its active devotional — the
+exact promise that was broken for six months. `scripts/e2e-signed-in.mjs`
+(`npm run test:e2e:signed-in`) now drives the local Workers preview end to end:
+sign in → activate → the badge endpoint agrees → the reader renders it → three
+reloads → change day → sign out (401, and no account state leaked to anonymous)
+→ sign back in on a NEW session with a fresh cookie jar → resumes the same series
+at day 3 → clear → honest empty. **22/22 checks pass.** Two assertions are the
+bug itself: the reader must show the activated series, and it must NOT be the "A
+Voice in the Wilderness" empty-state card.
+
+Safety: one ephemeral user created via service-role and deleted in a `finally`
+block, with absence re-verified against the auth database afterwards; the harness
+refuses to run against any non-localhost target, so it can never mutate
+production. It builds the Supabase session cookie by letting `@supabase/ssr`
+serialize it into a fake jar rather than hand-rolling the chunked format.
+
+The structured resolution events shipped alongside made the run readable as a
+journey — `authed:false → empty`, `authed:true day:1 manual_start`, `day:3`, then
+the re-authenticated session resolving correctly with `hasSessionToken:false`
+(the cross-device case). Zero 500s across the run.
+
+**Two unlimited destructive writes fixed.** `DELETE /api/devotionals/active`
+(which archives the active series and clears the slot) and `DELETE
+/api/devotionals/saved` shipped with no rate limit while PUT/PATCH/POST on the
+same routes had one — the destructive half of each pair was the unbounded one.
+Both now take the same limiter as their siblings. Found by the test-coverage
+rewrite; both handlers already computed `clientKey`, so the limiter had clearly
+been intended and lost. (SA-023, SA-032, F-083)
+
 ## TESTS + AUDIT — Real API coverage, and the Jabez editorial audit (2026-07-28)
 
 **Roadmap #3: false test coverage replaced.** `security.test.ts` and
