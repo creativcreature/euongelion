@@ -43,6 +43,22 @@ function loadAllArtworks() {
   }
   const dirs = readdirSync(PRINTS_DIR).sort()
 
+  // The 2026-05-08 archive (6f9c3400) moved the nested <slug>/artwork.json
+  // print sets out of the served tree; live artwork now comes from
+  // src/data/site-devotional-art.ts (SITE_DEVOTIONAL_ART). An empty manifest
+  // here is therefore EXPECTED, not a broken pipeline — say so, because a bare
+  // "Loaded 0 artworks" reads like data loss and has cost review time twice.
+  const hasArtworkSets = dirs.some((d) =>
+    existsSync(join(PRINTS_DIR, d, 'artwork.json')),
+  )
+  if (!hasArtworkSets) {
+    console.log(
+      `[artwork-manifest] No <slug>/artwork.json sets under ${PRINTS_DIR} — ` +
+        'expected since the 2026-05-08 archive. Live artwork is served from ' +
+        'src/data/site-devotional-art.ts; emitting an empty manifest.',
+    )
+  }
+
   for (const dir of dirs) {
     const artworkPath = join(PRINTS_DIR, dir, 'artwork.json')
     if (!existsSync(artworkPath)) continue

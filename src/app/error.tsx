@@ -40,10 +40,13 @@ function recoveryFor(pathname: string | null): Recovery {
     path.startsWith('/today') ||
     path.startsWith('/my-devotional')
   ) {
+    // The canonical resolver reports `unavailable` when it could not READ the
+    // reader's current devotional. That is not the same as having none, and the
+    // copy must not imply anything was lost or changed (founder, 2026-07-28).
     return {
-      kicker: "TODAY'S READING UNAVAILABLE",
-      heading: "We couldn't load today's reading.",
-      body: 'Your plan is safe. Try again, or open your saved readings.',
+      kicker: 'NOT CONFIRMED',
+      heading: "We couldn't confirm your current devotional.",
+      body: 'Your selection has not been changed. Try again, or open your saved readings.',
       secondaryHref: '/library?tab=bookmarks',
       secondaryLabel: 'Open Saved',
     }

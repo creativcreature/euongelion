@@ -5,6 +5,99 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## TESTS + AUDIT — Real API coverage, and the Jabez editorial audit (2026-07-28)
+
+**Roadmap #3: false test coverage replaced.** `security.test.ts` and
+`performance-contracts.test.ts` asserted against four endpoints that were never
+shipped (`/api/daily-bread/state|activate|replace-slot|switch-current`, remnants
+of the abandoned three-slot design). Nothing on disk could contradict them, so
+they protected nothing. Every property they were reaching for is now asserted by
+invoking the handlers that actually ship — auth gating across all 9
+method/route combinations, real rate-limit enforcement loops, honest 401-vs-503
+codes, no secret/PII in error bodies, tenant isolation against hostile
+`userId`/`sessionToken` in the body, and boundary input validation. Payload
+budgets are now MEASURED rather than compared to themselves (archive 5.63KB of a
+20KB budget at catalog saturation; saved 48.83KB of 64KB with every devotional
+saved). Both files gained a drift guard asserting the retired routes do not exist
+and appear in no contract table — the check that would have caught this the day
+the design was abandoned. Suite 137→138 files, 1765→1796 tests, all green.
+
+Four real findings came out of it, none yet fixed (production source untouched):
+DELETE `/api/devotionals/active` and DELETE `/api/devotionals/saved` ship with NO
+rate limit while PUT/PATCH/POST on the same routes have one — the destructive
+writes are the unlimited ones; the rate-limit table was false well beyond the four
+routes (magic-link is 8/min/IP not 5; soul-audit/submit is 12/min not 3/hour, with
+the daily cap doing the real spend protection); every limiter keys on hashed
+client IP rather than user id, so a NAT shares one budget and one account can
+multiply its budget across IPs; and `GET /api/devotionals/saved` is unpaginated
+and already 48.8KB before any notes.
+
+**Jabez editorial audit.** `docs/audits/JABEZ-HARVEST-EDITORIAL-AUDIT-2026-07-28.md`.
+Mechanically Jabez is sound — no quote drift, no stray markdown, all 47 emphasis
+strings verbatim, 7/7 validator PASS. Two formatting defects were fixed and
+nothing was rewritten, per the founder's "no rewriting old devotionals": a stray
+leading space (day 6) and a citation that ended mid-clause on a dangling ", and "
+— visible broken text in day 5's Sources block, truncated to its last complete
+clause with nothing invented. Everything else is report-only and awaits rulings,
+including three HIGH items: the same word taught five times in one day (day 4) and
+four times in another (day 2) — the exact Harvest defect — and Day 6 asserting as
+fact the name-form Day 2 spent a paragraph establishing he was NOT given. Also
+logged: days 4 and 5 open with byte-identical scripture (Harvest's day 2-3
+defect), five straight days ending on the same "We began with…" callback move,
+and a sales figure ("eight million copies") restated as a behavioral claim ("ten
+million people have prayed"). Cross-series, the sharpest divergence is the sabbath
+day — Jabez day 1, Harvest day 7 — where SA-029's "sabbath-first" ruling makes
+Harvest the outlier. (SA-033, F-082, F-083)
+
+## RELIABILITY — Unavailable states, resolution observability, persistence-migration design (2026-07-28)
+
+Founder roadmap items #1, #5, #6, #7.
+
+**#5 Explicit unavailable states.** The canonical resolver already reported
+`unavailable` as a first-class state, but nothing spoke it to the reader: the
+library store set `lastError` in six places and rendered it in zero, so a failed
+read looked like an empty library — an outage impersonating lost data, which is
+the exact confusion behind the original Daily Bread report. New reusable
+`StateUnavailable` component keeps two promises the copy may never drop: it says
+we could not CONFIRM something (never that it is gone), and it states explicitly
+that the reader's selection has not been changed. Wired into `LibraryView` on a
+failed refresh, with retry. The `/daily-bread` error-boundary copy was re-aimed
+to the same framing ("We couldn't confirm your current devotional. Your selection
+has not been changed."). Six tests pin the copy and the retry semantics.
+
+**#7 Observability for state resolution.** `resolveCurrentReading` now emits one
+structured `evt` line per resolution — `current_reading.resolved` (with source,
+series/plan and, for plans, whether the account-first or session lookup won),
+`plan_expired_archived`, `empty`, and `unavailable` (with error name and
+message). Every line carries `authed` and `hasSessionToken`, which is what
+distinguishes an auth-blind render from a genuinely anonymous reader — the
+distinction that made the expired-token failure invisible for six months.
+
+**#1 Soul Audit persistence migration — DESIGN ONLY, not implemented** (per
+founder instruction). `docs/technical/SOUL-AUDIT-PERSISTENCE-MIGRATION.md`
+inventories all 46 exported functions, 25 cache-first `WithFallback` variants and
+13 caller files; classifies every operation as durable-required, genuinely
+ephemeral, or currently-memory-only-but-must-be-durable; defines the failure
+contracts and HTTP mapping; and stages the work in seven independently revertable
+phases with a test plan. Two correctness bugs surfaced during the inventory and
+are pulled forward into Phase 0 because both gate generation spend: the audit
+rate-limit counter is per-isolate (so the real ceiling is limit x isolates, not a
+limit), and a concurrency lock fails OPEN when Supabase is unreachable.
+Recommendation is to ship Phase 0 + Phase 1 (observability, zero behavior change)
+and let a week of production data drive the rest.
+
+**#6 Build and asset pipeline.** The artwork generator's bare "Loaded 0 artworks"
+read like data loss and had cost review time twice; it now states that an empty
+manifest is EXPECTED since the 2026-05-08 archive and that live artwork is served
+from `SITE_DEVOTIONAL_ART` (180 entries). Verified independently: Harvest imagery
+is 15/15 present and does not depend on the manifest. Also documented three
+deploy hazards found the hard way this session in COMMIT-AND-DEPLOY-GUIDE.md — a
+backgrounded `npm run deploy` can exit 0 having uploaded NOTHING (confirm the
+version id, never the exit code); content-only deploys serve stale HTML behind
+`s-maxage=3600, stale-while-revalidate` and need a cache warm plus a rendered-text
+check; and running a production build while `next dev` is live 500s every route
+on :3333 until the dev server restarts. (SA-023, SA-032, F-083)
+
 ## CONTENT — Harvest days 1-3: no double-read, and the founder's actual angle (2026-07-28)
 
 Two content repairs inside the retained Two-Minute Open structure.

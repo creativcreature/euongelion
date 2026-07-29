@@ -10834,3 +10834,30 @@ html[data-held-moment] .mobile-tab-bar {
     left: 1.1rem;
   }
 }
+
+/* ── Not-confirmed state ─────────────────────────────────────────────────────
+   Founder direction 2026-07-28: an outage must never read as lost data. Paired
+   with StateUnavailable and the canonical resolver's `unavailable` state. */
+.state-unavailable {
+  border-left: 2px solid var(--color-gold);
+  padding: 1rem 0 1rem 1.15rem;
+}
+
+.state-unavailable-kicker {
+  margin-bottom: 0.4rem;
+}
+
+.state-unavailable-body {
+  max-width: 38rem;
+  line-height: 1.65;
+}
+
+.state-unavailable-reassure {
+  color: var(--color-text-secondary);
+}
+
+.state-unavailable-action {
+  margin-top: 0.9rem;
+  padding: 0.55rem 1.25rem;
+  min-height: 44px;
+}

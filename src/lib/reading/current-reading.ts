@@ -64,12 +64,33 @@ export async function resolveCurrentReading(
 ): Promise<CurrentReading> {
   try {
     const user = await getUser()
+    // Observability (founder roadmap #7): every resolution emits one structured
+    // line. The six-month Daily Bread bug was invisible partly because the
+    // fallback decision left no trace — you could not tell an outage from a
+    // reader who genuinely had nothing. `authed` distinguishes "auth-blind
+    // render" from "anonymous reader", which is the exact confusion that made
+    // the expired-token failure so hard to see.
+    const trace = (event: string, detail?: Record<string, unknown>) =>
+      console.log(
+        JSON.stringify({
+          evt: `current_reading.${event}`,
+          authed: Boolean(user),
+          hasSessionToken: Boolean(sessionToken),
+          ...detail,
+        }),
+      )
 
     // 1. The user-controlled active series is the canonical answer for every
     //    "what am I reading?" surface. It wins over any older Soul Audit plan.
     if (user) {
       const activeSeries = await promoteScheduledSwapIfDue(user.id)
       if (activeSeries) {
+        trace('resolved', {
+          source: 'active_series',
+          seriesSlug: activeSeries.series_slug,
+          day: activeSeries.current_day,
+          activeSource: activeSeries.source,
+        })
         return { status: 'active', source: 'active_series', activeSeries }
       }
     }
@@ -92,20 +113,37 @@ export async function resolveCurrentReading(
     // treat the reader as having no current plan, rather than greeting them with
     // weeks-old content forever.
     if (plan && isPlanExpired(plan)) {
+      trace('plan_expired_archived', { planToken: plan.plan_token })
       await archiveExpiredPlan(plan)
       plan = null
     }
 
     if (plan) {
+      trace('resolved', {
+        source: 'soul_audit_plan',
+        planToken: plan.plan_token,
+        // Which lookup won matters: an account-first hit on a fresh device is
+        // the SA-032 resume path working; a session hit for a signed-in reader
+        // means the plan was never claimed onto the account.
+        via: user ? 'owner' : 'session',
+      })
       return { status: 'active', source: 'soul_audit_plan', plan }
     }
 
+    trace('empty')
     return { status: 'empty' }
   } catch (error) {
     // A failed auth/database read is NOT proof that the reader has no devotional.
     // Surfacing it as unavailable keeps a transient outage from impersonating a
     // cleared selection or falling through to an unrelated default devotional.
-    console.error('[current-reading] resolution failed:', error)
+    console.error(
+      JSON.stringify({
+        evt: 'current_reading.unavailable',
+        hasSessionToken: Boolean(sessionToken),
+        errorName: error instanceof Error ? error.name : typeof error,
+        message: error instanceof Error ? error.message : String(error),
+      }),
+    )
     return { status: 'unavailable', error }
   }
 }
