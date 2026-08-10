@@ -6499,11 +6499,22 @@ html.reduce-motion *::after {
     border-radius: 0;
   }
 
+  /* The topbar carries the menu button on mobile, so it must stay on screen.
+     It was previously `position: static` here, which meant the button scrolled
+     away with the document and only came back at the very top of the page —
+     the nav strip below stuck on its own, so the header looked half-sticky.
+     Both now stick, stacked: topbar at 0, nav directly beneath it. Keep the
+     safe-area inset — a sticky bar sits under the notch permanently, where a
+     static one only did so at scroll 0. */
   .mock-topbar {
-    position: static;
-    top: auto;
-    z-index: auto;
-    padding: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: var(--shell-safe-top, 0px);
   }
 
   .mock-topbar-desktop-row {
@@ -6552,12 +6563,33 @@ html.reduce-motion *::after {
      tagline still lives in the masthead context below; this only trims the
      topbar ticker. */
 
+  /* The nav's only child is `.mock-nav-desktop`, which is display:none at this
+     same breakpoint — mobile destinations live in the bottom tab bar (SA-024).
+     So on mobile this was a 34px sticky band of nothing, pinned to the top of
+     every screen while the topbar that actually holds the menu scrolled away.
+     Hiding it reclaims the space and removes an empty <nav> landmark from the
+     accessibility tree. The sticky rules below stay correct for any future
+     breakpoint where the nav has content. */
   .mock-nav {
+    display: none;
+  }
+
+  /* Kept intact so the bar is correct the moment it has content again; inert
+     while the rule above hides it. */
+  .mock-nav:not([hidden]) {
     position: -webkit-sticky;
     position: sticky;
     justify-content: flex-start;
     align-items: stretch;
-    top: 0;
+    /* Would sit beneath the sticky topbar rather than at 0, so the two never
+       occupy the same band. This is an approximation of the topbar's rendered
+       height (row min-height + its 0.28rem vertical padding + the border); the
+       real height is content-driven, so if this bar is ever un-hidden on
+       mobile the offset should be measured rather than computed. */
+    top: calc(
+      var(--mock-h-topbar, 42px) + 0.56rem + var(--mock-stroke, 1px) +
+        var(--shell-safe-top, 0px)
+    );
     z-index: 110;
     overflow: visible;
     flex-direction: column;
