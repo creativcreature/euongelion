@@ -1,0 +1,81 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "title": "New Every Morning",
+  "subtitle": "A day for silence",
+  "teaser": "Written by someone sitting in the ruins of a destroyed city, with every reason to say the opposite. Two verses, and then nothing else.",
+  "anchorVerse": "Lamentations 3:23",
+  "theme": "Rest. The week's claim, spoken from the rubble, and then silence.",
+  "framework": "Lamentations 3:22-23 — great is thy faithfulness",
+  "scriptureReference": "Lamentations 3:22-23",
+  "totalWords": 348,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Lamentations 3:22-23",
+      "translation": "KJV",
+      "passage": "It is of the Lord’s mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
+      "hebrewOriginal": "אֱמוּנָתֶֽךָ",
+      "transliteration": "emunatekha — \"thy faithfulness\"",
+      "emphasis": ["new every morning", "great is thy faithfulness"],
+      "scriptureContext": "Two verses from the middle of a book of funeral poems for a city that had just been destroyed."
+    },
+    {
+      "type": "sabbath",
+      "heading": "Where This Was Written",
+      "content": "These are the best-known words in Lamentations, and they are almost never read where they sit.\n\nThe book is five poems written over the ruins of Jerusalem after its destruction. It has no happy ending. It does not resolve. The chapter these two verses come from opens with wormwood and gall, and three verses before them the poet says his soul is humbled within him. There is no point in the surrounding text where the situation improves.\n\nAnd in the middle of it, a sentence about mornings.\n\nThe word closing it is אֱמוּנָתֶֽךָ (emunatekha), your faithfulness — from the root behind amen, and a near relative of the word that closed God's own name on the mountain in Exodus. It is not a word about how God feels. It is a word about whether a thing holds.\n\nThe man writing it had watched everything he trusted come down. He was not describing a rescue. He was describing what was still true at the bottom, before anything had been fixed, on a morning that arrived over rubble the way mornings do.\n\nThat is the whole reading. Six days have said it at length; today says it once and stops.\n\nToday there is no teaching. No word study, no story, no argument to follow. Six days of reading were the work; this is the part the work was for.\n\nSit somewhere without a screen for as long as can honestly be spared — ten minutes is enough, and more is better. Do not try to conclude anything. Do not review the week or grade it. If words are needed, use four: *great is thy faithfulness.* If they are not needed, do not use them.\n\nThe mornings will keep arriving either way. That is the point being made."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/he-cannot-deny-himself/day7-wall.webp",
+      "inlineImageAlt": "First light along the top edge of a broken stone wall, rubble heaped at its base, a small figure sitting still among the stones",
+      "inlineImageCaption": "Where the words were written: light on the top course of a wall that has already come down.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "reflection",
+      "prompt": "The poet is not describing a rescue. He is naming what was still true at the bottom. What is still true this morning, before anything has been fixed?",
+      "invitationType": "silence"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Prayer for the Silence",
+      "prayerText": "Great is thy faithfulness. That is all. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "resource",
+      "heading": "Notes & Sources",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 3:19-26 (KJV)",
+          "text": "The fuller passage: the wormwood and the gall three verses before, and the waiting quietly three verses after."
+        },
+        {
+          "reference": "1 John 1:9 (BSB)",
+          "text": "The same claim in the New Testament's vocabulary: \"He is faithful and just to forgive us our sins.\" The word is the Greek counterpart to the one closing today's verse."
+        },
+        {
+          "reference": "2 Timothy 2:13 (BSB)",
+          "text": "Where the week began its argument, and where it ends: \"if we are faithless, He remains faithful, for He cannot deny Himself.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "A textual note, for anyone comparing translations",
+          "description": "Lamentations 3:22 is one of the places where English Bibles visibly diverge. The King James follows the Hebrew Masoretic Text, which reads \"we are not consumed\" — the verb is first person plural. Several ancient versions, including the Greek, the Syriac and the Aramaic Targum, along with many medieval Hebrew manuscripts, read a form differing by a single letter, which makes the LORD's mercies the subject: \"they never cease.\" Both readings are old, and commentators are divided over which the poet wrote. The difference is worth knowing rather than being surprised by."
+        },
+        {
+          "title": "Augustine, Confessions, Book XIII, chs. 35-36",
+          "description": "The closing words of the book this week has quoted from twice — and the right thing to read on a sabbath if anything is read at all: \"O Lord God, give peace unto us: (for Thou hast given us all things;) the peace of rest, the peace of the Sabbath, which hath no evening.\" And: \"But the seventh day hath no evening, nor hath it setting; because Thou hast sanctified it to an everlasting continuance.\" Quoted from E. B. Pusey's translation; free at gutenberg.org. The Confessions opens with a restless heart and closes here, which is roughly the shape of the week now ending."
+        },
+        {
+          "title": "Hebrew data",
+          "description": "emunah (H530) occurs 49 times in the Old Testament; here it carries a second-person suffix, emunatekha. Its root is aman (H539), which also stands behind amen. It is a near relative of emet (H571), the word closing God's self-description at Exodus 34:6 and the subject of this week's third day — related, but not the same word."
+        }
+      ],
+      "forDeeperStudy": "Nothing today. Come back Monday."
+    }
+  ]
+}

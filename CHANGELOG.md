@@ -5,6 +5,96 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — "He Cannot Deny Himself" 7-day series + Two-Minute Open v2 (2026-08-10)
+
+New prefab series on the steadfastness of God set against human self-rule, built
+end-to-end via /devo-go. Founder angle, quoted into the brief: God has made an
+unwavering commitment, the gap between Him and us is one **we** opened, and the
+reader in view is anyone still "stealing that fruit from the Garden of Eden."
+Harvest-adjacent through Hosea's sowing/reaping rather than another Matthew 13
+week — `the-harvest` keeps the parables. Monday start, Sunday sabbath close.
+
+Days: **1 (A)** The Fruit of Lies, Hosea 10:12-13 — the charge is management, not
+wickedness. **2 (B)** The Oldest Theft, Genesis 3:4-6 — the serpent sells a
+likeness already given in Genesis 1:26-27. **3 (C, PIVOT)** He Cannot Deny
+Himself, 2 Timothy 2:11-13 — accountability and mercy are one attribute facing
+two directions; Athanasius §§6-7 frames it as a dilemma God cannot escape.
+**4 (B′)** Like a Morning Cloud, Hosea 6:1-6 — hesed in v.4 and v.6 is the same
+word, so the request is an offer of terms, not a demand for more effort.
+**5 (A′)** Between the Pieces, Jeremiah 31:31-34 + Genesis 15 — the covenant
+ratified from one side while the other slept. **6** recap + Further-Your-Learning.
+**7** sabbath, Lamentations 3:22-23.
+
+**SA-034 registered (three rulings).** (1) **TWO-MINUTE-OPEN v2**, forward-only
+amendment to SA-030: the open gains a short write-up ABOUT the anchor scripture
+between the vocab word and the reflection — scripture → vocab → teaching →
+reflection → prayer → cta. Days declare `format: "two-minute-open-v2"`; the
+validator enforces the six-module sequence AND that the DEEP DIVE cta targets
+`#devotional-section-7` (section ids are 1-indexed over the module array, so the
+old `-6` target would have scrolled readers into the middle of their own open).
+The five-module `two-minute-open` in `the-harvest` is untouched and still
+validates. (2) **THIRD-PERSON SERIES VOICE** — a founder may pin a series to
+third-person narration, overriding the AUTHORING-SPEC §2 permission to use "you"
+in teaching/bridge/story/insight/vocab; reflection, prayer, takeaway and
+interactive stay in direct address because the form IS address. (3)
+**SEED-VS-ANCHOR** — 1 Thessalonians 5:1-10 was named by the founder as the
+week's _sentiment_, not its text; it opens Day 1 and closes Day 6 and is never
+promoted to anchor.
+
+**Research fanned out; drafting did not** (new /devo-go traps §19, from the
+Harvest v5 precedent). Four verification agents, then all seven days written
+single-author in day order. Findings that changed the build: BibleProject's
+faithfulness video teaches **emet**, not emunah — a vocab module would have
+contradicted its own video, so Day 3 carries emet and Day 7 keeps emunah, and
+nothing blurs them. Five planned lexical claims were **factual errors** and were
+cut or restated (Hosea 6:3/6:4 do NOT share a word for morning; Ezekiel 36:27 is
+Qal, not causative; Malachi 3:6 has no Hebrew "therefore"; Hosea 6:6 is
+comparative, not absolute; Isaiah 48:11's verb is present, not supplied). Three
+beloved stories died under verification and are documented as rejected: Cowper's
+hymn was written BEFORE the 1773 collapse, not after a suicide attempt; Matheson
+had no fiancée; and Genesis 15 has no attested extrabiblical parallel — the two
+elements the standard sermon fuses are never found together outside Scripture,
+and that silence is now the day's actual argument. Cranmer's hand in the fire is
+attested by a HOSTILE Catholic eyewitness, not only by Foxe.
+
+Imagery: 9 riso-duotone plates, library checked first per CLAUDE.md. Two failed
+the SA-032(4) accuracy gate and were regenerated — the Genesis 15 plate came back
+with living, standing animals, and the recap path forked when the brief required
+one unbroken line. **Flagged:** `public/images/library/poster/atmos-wheat-field-golden.png`
+is a real photograph sitting in the curated library, which CLAUDE.md forbids on
+user-facing surfaces; not used here, but it should be purged.
+
+**TWO SILENT-RENDER BUGS FIXED, both found by driving a real browser at the
+Workers preview — not by curl, not by the validator, not by the type-checker.**
+`SabbathModule` read only `scripture_anchor`/`invitation`/`prayerText` and
+`RecapModule` required a `days` array; both returned **null** for the canonical
+flat `content` shape that every other prose module uses. Day 7's entire body and
+both of Day 6's recap sections rendered as silent empty gaps while the JSON
+served correctly over HTTP and the validator passed 0/0 — the same class of
+defect as the Jabez flat-`content` regression, and harder to spot since the
+bordered panels were removed in July. Both components now render flat `content`
+(RecapModule via ReactMarkdown, matching TeachingModule), both have rendered-DOM
+regression tests, and the suite's missing `afterEach(cleanup)` — which was
+leaking renders and throwing post-teardown "window is not defined" errors — is
+in place. Day 7 body went 4,150 → 5,770 chars; Day 6 9,715 → 14,212.
+
+Editorial gate: devotional-editor returned **NOT READY** on the first pass with 5
+blocking findings, all applied — a fabricated Genesis 15:18 quotation ("cut a
+covenant" appears in no translation in the corpus), four false counted/dated
+claims (two disproved by text on the same screen), Athanasius called a bishop ten
+years before he was one, an invented Matheson date landing after his death, and
+four quotations printed in quotation marks that had never entered the source
+pack. Twelve needs-fix items applied besides, including an unverified "eleven
+years left" countdown asserted six times, a missing meta-story return on Day 6,
+and a production byline that broke the fourth wall.
+
+Wiring: `series.ts` entry + NEW_SERIES_ORDER, `series-rails.ts` spotlight, and the
+homepage MAIN feature per SA-031(1) (most recent series leads; `the-harvest`
+rotates into the six cards below it). Counts bumped: series 35→36, feature PRDs
+84→85. New tests: `two-minute-open` format contracts in `devotional-json.test.ts`
+(both shapes, sequence + cta target + target-exists) and v2 rendered-DOM
+assertions in `module-renderer-flat-content.test.tsx`. (SA-034, F-085)
+
 ## VERIFIED — Signed-in continuity proven in the Workers runtime (2026-07-28)
 
 The last open gate on F-083 is closed. Every prior test mocked the repository, so

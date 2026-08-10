@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { readFileSync, existsSync } from 'fs'
+import { readFileSync, existsSync, readdirSync } from 'fs'
 import { join } from 'path'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 
@@ -120,5 +120,77 @@ describe('Devotional JSON Files', () => {
       bridge.modernApplication,
       'bridge has modernApplication',
     ).toBeTruthy()
+  })
+})
+
+/**
+ * SA-034 (2026-08-10) — Two-Minute Open format contracts.
+ *
+ * Two shapes are valid and they are NOT interchangeable:
+ *   two-minute-open     (legacy, the-harvest)  5 modules, cta -> section 6
+ *   two-minute-open-v2  (current)              6 modules, cta -> section 7
+ *
+ * The cta target is 1-indexed over the module array (DevotionalPageClient
+ * renders `devotional-section-${index + 1}`), so an off-by-one here scrolls a
+ * reader into the middle of their own opening block instead of past it —
+ * a defect invisible to curl and to the type-checker.
+ */
+describe('Two-Minute Open format contracts (SA-030 / SA-034)', () => {
+  const SHAPES: Record<string, { sequence: string[]; ctaHref: string }> = {
+    'two-minute-open': {
+      sequence: ['scripture', 'vocab', 'reflection', 'prayer', 'cta'],
+      ctaHref: '#devotional-section-6',
+    },
+    'two-minute-open-v2': {
+      sequence: [
+        'scripture',
+        'vocab',
+        'teaching',
+        'reflection',
+        'prayer',
+        'cta',
+      ],
+      ctaHref: '#devotional-section-7',
+    },
+  }
+
+  const declaringFiles = readdirSync(DEVOTIONALS_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => ({
+      file: f,
+      data: JSON.parse(readFileSync(join(DEVOTIONALS_DIR, f), 'utf-8')),
+    }))
+    .filter((x) => typeof x.data.format === 'string' && x.data.format in SHAPES)
+
+  it('every declaring day matches its shape and cta target', () => {
+    expect(declaringFiles.length).toBeGreaterThan(0)
+    for (const { file, data } of declaringFiles) {
+      const shape = SHAPES[data.format as string]
+      const opening = (data.modules as Array<{ type: string }>)
+        .slice(0, shape.sequence.length)
+        .map((m) => m.type)
+      expect(opening, `${file}: opening sequence`).toEqual(shape.sequence)
+
+      const cta = data.modules[shape.sequence.length - 1]
+      expect(cta.type, `${file}: last open module`).toBe('cta')
+      expect(
+        String(cta.ctaLabel).toUpperCase(),
+        `${file}: cta label`,
+      ).toContain('DEEP DIVE')
+      expect(cta.ctaHref, `${file}: cta target`).toBe(shape.ctaHref)
+    }
+  })
+
+  it('the cta target resolves to a module that exists past the open', () => {
+    for (const { file, data } of declaringFiles) {
+      const shape = SHAPES[data.format as string]
+      const targetIndex =
+        Number(String(shape.ctaHref).replace('#devotional-section-', '')) - 1
+      expect(targetIndex, `${file}: target index`).toBe(shape.sequence.length)
+      expect(
+        data.modules.length,
+        `${file}: has a deep dive past the open`,
+      ).toBeGreaterThan(targetIndex)
+    }
   })
 })

@@ -31,19 +31,28 @@ Day 7:           SABBATH    ~400 words     (silence, presence — most of the da
 
 **Why long-form (not 600-900 words per [docs/AI-CONTENT-CONSTRAINTS.md](docs/AI-CONTENT-CONSTRAINTS.md) §6.1):** the strategy doc commits to deep-dive narrative essays; the constraints doc reflects an earlier shorter format. Long-form wins for the prefab catalog. The Soul Audit's runtime-generated devotionals may use shorter targets if Cloudflare Workers' CPU budget forces it (resolved in Phase 3).
 
-### The Two-Minute Open (SA-030 — founder ruling 2026-07-22, FORWARD-ONLY)
+### The Two-Minute Open (SA-030 — founder ruling 2026-07-22, FORWARD-ONLY; amended by SA-034)
 
-Every NEW prefab day (not retroactive to existing series) opens with a **self-contained ~2-minute devotional** before the deep dive:
+Every NEW prefab day (not retroactive to existing series) opens with a **self-contained ~2-minute devotional** before the deep dive.
+
+**Current shape — `two-minute-open-v2` (SA-034, founder ruling 2026-08-10). Use this for all new work:**
 
 ```
 [scripture]   — the day's anchor, as is
 [vocab]       — the day's one word
+[teaching]    — a short write-up ABOUT that scripture (~150-250 words)
 [reflection]  — one prompt (compact)
 [prayer]      — short closing prayer
 [cta]         — DEEP DIVE → jumps to the full devotional below on the same page
 ```
 
-Rules: the block must be complete on its own — a reader who stops at the CTA has had a whole devotional. The `cta` links to the first deep-dive section on the page (`ctaHref: "#devotional-section-6"` under the current reader's section ids, which holds when the opening block is exactly five modules). After the CTA the deep dive proceeds per the structure below. The deep dive's own reflection/prayer stay full-length — the opening pair is compact, not a replacement. Declare `"format": "two-minute-open"` at the day's top level; the validator then enforces the opening sequence.
+`ctaHref: "#devotional-section-7"` — the section id is 1-indexed over the module array, so a six-module open targets the seventh.
+
+The added write-up is the whole point of the amendment: the open previously jumped from a word study straight to a question, which asked a reader to reflect on a passage nobody had yet explained. The write-up does the explaining — plainly, in the day's own voice, teaching the anchor text itself rather than previewing the deep dive.
+
+**Legacy shape — `two-minute-open` (five modules, no write-up, `ctaHref: "#devotional-section-6"`).** Shipped in `the-harvest`; still valid, not to be used for new days.
+
+Rules (both shapes): the block must be complete on its own — a reader who stops at the CTA has had a whole devotional. After the CTA the deep dive proceeds per the structure below. The deep dive's own reflection/prayer stay full-length — the opening set is compact, not a replacement, and must not duplicate the deep dive's wording. Declare the `format` string at the day's top level; the validator then enforces the opening sequence **and** the cta target.
 
 **Each day uses the modules JSON shape**, not a single essay blob. The essay structure is realized by interleaving these modules:
 

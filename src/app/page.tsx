@@ -24,28 +24,30 @@ import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_COUNT } from '@/data/series'
  * `daySlug` / `dayTitle` only as fallback context.
  */
 // SA-031 (founder, 2026-07-26): the main feature slot always belongs
-// to the MOST RECENT series — the-harvest replaces too-busy-for-god.
+// to the MOST RECENT series. SA-034 (2026-08-10): he-cannot-deny-himself
+// replaces the-harvest, which rotates back into the six FEATURED_SERIES
+// cards below it.
 const HOMEPAGE_TODAY = {
-  series: 'the-harvest',
-  daySlug: 'the-harvest-day-1',
-  dayTitle: 'While Everyone Slept',
-  kicker: 'FEATURED SERIES · 7 DAYS · MATTHEW 13:24–43',
-  title: 'The Harvest',
+  series: 'he-cannot-deny-himself',
+  daySlug: 'he-cannot-deny-himself-day-1',
+  dayTitle: 'The Fruit of Lies',
+  kicker: 'FEATURED SERIES · 7 DAYS · 2 TIMOTHY 2:13',
+  title: 'He Cannot Deny Himself',
   // Series-level scripture anchor (the framework verse).
-  scripture: 'Matthew 13:24–30, 36–43 · The Wheat & the Weeds',
+  scripture: '2 Timothy 2:13 · Hosea 10:12–13 · Genesis 3:4–6',
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   teaser:
-    "An enemy sowed weeds through the wheat by night, and the servants asked to pull them up. The Master said no — a life's harvest is never called early. Seven days inside the parable of the wheat and the weeds, read the way Matthew groups it, on God's enduring patience with those who have not yet turned.",
+    'Hosea told a nation it had eaten the fruit of lies because it trusted its own way — and the charge was not wickedness so much as management. Seven days on the God who will not go back on Himself: the road a person wears by walking it, the reach in the garden that keeps repeating, and a covenant cut open from one side while the other side slept.',
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured
   // devotional block + substack series cards only, not this banner.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art: the-harvest field-in-one-view riso (16:9 to
+  // Featured-card art: the he-cannot-deny-himself recap banner (16:9 to
   // match the container's landscape aspect; the 1:1 series card
   // would crop badly under object-fit: cover).
-  featuredArt: '/images/series/the-harvest/day6-banner.webp',
+  featuredArt: '/images/series/he-cannot-deny-himself/day6-banner.webp',
 }
 
 const HOW_STEPS = [
