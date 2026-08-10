@@ -13,8 +13,58 @@
  * - Code splitting verification
  * - Service worker caching strategy
  * - Library index query performance under volume
+ *
+ * 2026-07-29 (false-coverage replacement): the Daily Bread latency and payload
+ * budgets in this file used to name four endpoints that were never shipped —
+ * /api/daily-bread/state, /activate, /replace-slot, /switch-current, remnants of
+ * the abandoned three-slot architecture. A budget for a route that does not
+ * exist cannot be exceeded, so those assertions could not fail. They are now
+ * declared for the shipped Daily Bread routes, the payload budgets are MEASURED
+ * against the real handlers' serialized responses rather than merely declared,
+ * and a route-existence guard keeps the tables honest.
  */
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { existsSync } from 'fs'
+import { join } from 'path'
+import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
+
+// ---------------------------------------------------------------------------
+// Real-route harness (payload measurement)
+// ---------------------------------------------------------------------------
+
+const mockedGetUser = vi.hoisted(() => vi.fn())
+vi.mock('@/lib/auth', () => ({ getUser: mockedGetUser }))
+
+const libraryRepository = vi.hoisted(() => ({
+  getScheduledSwap: vi.fn(),
+  listArchivedSeries: vi.fn(),
+  promoteScheduledSwapIfDue: vi.fn(),
+}))
+vi.mock('@/lib/library/repository', async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import('@/lib/library/repository')>()
+  return { ...actual, ...libraryRepository }
+})
+
+const savedRepository = vi.hoisted(() => ({
+  listBookmarksWithFallback: vi.fn(),
+}))
+vi.mock('@/lib/soul-audit/repository', async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import('@/lib/soul-audit/repository')>()
+  return { ...actual, ...savedRepository }
+})
+
+import { GET as activeGet } from '@/app/api/devotionals/active/route'
+import { GET as archiveGet } from '@/app/api/devotionals/archive/route'
+import { GET as savedGet } from '@/app/api/devotionals/saved/route'
+
+const USER_ID = '00000000-0000-0000-0000-0000000009fe'
+
+async function payloadSizeKB(response: Response): Promise<number> {
+  const body = await response.text()
+  return new TextEncoder().encode(body).byteLength / 1024
+}
 
 // ---------------------------------------------------------------------------
 // Types
@@ -109,32 +159,73 @@ const CORE_WEB_VITALS: PerformanceBudget[] = [
 ]
 
 const API_LATENCY_BUDGETS: APILatencyBudget[] = [
+  // Daily Bread, as shipped. The four /api/daily-bread/* budgets this list used
+  // to carry described the abandoned three-slot design; the reads and writes
+  // below are what the reader actually calls.
   {
-    route: '/api/daily-bread/state',
+    route: '/api/devotionals/active',
     method: 'GET',
     maxMs: 100,
     p95MaxMs: 200,
     includesAI: false,
   },
   {
-    route: '/api/daily-bread/activate',
-    method: 'POST',
+    // Starts, switches and Monday-queues a devotional (was: activate +
+    // replace-slot + switch-current).
+    route: '/api/devotionals/active',
+    method: 'PUT',
     maxMs: 200,
     p95MaxMs: 500,
     includesAI: false,
   },
   {
-    route: '/api/daily-bread/replace-slot',
-    method: 'POST',
-    maxMs: 200,
-    p95MaxMs: 500,
-    includesAI: false,
-  },
-  {
-    route: '/api/daily-bread/switch-current',
-    method: 'POST',
+    // Persists day-to-day reading progress inside /daily-bread.
+    route: '/api/devotionals/active',
+    method: 'PATCH',
     maxMs: 100,
     p95MaxMs: 200,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/active',
+    method: 'DELETE',
+    maxMs: 200,
+    p95MaxMs: 500,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/archive',
+    method: 'GET',
+    maxMs: 100,
+    p95MaxMs: 200,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/archive/restart',
+    method: 'POST',
+    maxMs: 200,
+    p95MaxMs: 500,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/saved',
+    method: 'GET',
+    maxMs: 100,
+    p95MaxMs: 200,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/saved',
+    method: 'POST',
+    maxMs: 50,
+    p95MaxMs: 100,
+    includesAI: false,
+  },
+  {
+    route: '/api/devotionals/saved',
+    method: 'DELETE',
+    maxMs: 50,
+    p95MaxMs: 100,
     includesAI: false,
   },
   {
@@ -187,17 +278,21 @@ const API_LATENCY_BUDGETS: APILatencyBudget[] = [
     includesAI: false,
   },
   {
-    route: '/api/library/index',
+    // The shipped library index: the archived-plan feed /library loads. There
+    // is no /api/library/index — that budget named an endpoint that was never
+    // built.
+    route: '/api/soul-audit/manage',
     method: 'GET',
     maxMs: 200,
     p95MaxMs: 500,
     includesAI: false,
   },
   {
-    route: '/api/library/trash',
+    // The day index the library rail loads alongside it.
+    route: '/api/daily-bread/active-days',
     method: 'GET',
-    maxMs: 100,
-    p95MaxMs: 200,
+    maxMs: 200,
+    p95MaxMs: 500,
     includesAI: false,
   },
   {
@@ -206,13 +301,6 @@ const API_LATENCY_BUDGETS: APILatencyBudget[] = [
     maxMs: 3000,
     p95MaxMs: 8000,
     includesAI: true,
-  },
-  {
-    route: '/api/saved-series',
-    method: 'GET',
-    maxMs: 100,
-    p95MaxMs: 200,
-    includesAI: false,
   },
 ]
 
@@ -230,9 +318,28 @@ const BUNDLE_BUDGETS: BundleBudget[] = [
 
 const PAYLOAD_BUDGETS: PayloadBudget[] = [
   {
-    route: '/api/daily-bread/state',
+    // Replaces the /api/daily-bread/state budget. Same property — the Daily
+    // Bread state read must stay tiny — against the endpoint that ships.
+    // Measured in "API payload size limits" below.
+    route: '/api/devotionals/active',
     maxSizeKB: 10,
-    description: 'Active slots + day states + counters',
+    description: 'Active series + scheduled swap (single record each)',
+  },
+  {
+    route: '/api/devotionals/archive',
+    maxSizeKB: 20,
+    description: 'Archived series list, worst case = every series archived',
+  },
+  {
+    route: '/api/devotionals/saved',
+    maxSizeKB: 64,
+    // Measured at 48.8KB with the whole catalog saved and no notes (2026-07-29),
+    // so this is worst-observed + ~30% headroom. The route is UNPAGINATED and
+    // notes are capped only per-item (1000 chars), never in aggregate — a
+    // heavy annotator can exceed this. Tracked as a residual risk, not softened
+    // here: shrinking it requires pagination on the route itself.
+    description:
+      'Saved devotional list, worst case = every devotional saved (unpaginated)',
   },
   {
     route: '/api/soul-audit/submit',
@@ -245,9 +352,9 @@ const PAYLOAD_BUDGETS: PayloadBudget[] = [
     description: 'Current audit state + slot counts',
   },
   {
-    route: '/api/library/index',
+    route: '/api/soul-audit/manage',
     maxSizeKB: 50,
-    description: 'Full library index (paginated)',
+    description: 'Archived devotional plan index (all plans for the session)',
   },
   {
     route: '/api/bookmarks',
@@ -441,16 +548,36 @@ describe('API latency budgets', () => {
     }
   })
 
-  it('daily-bread state responds within 100ms', () => {
+  it('the Daily Bread state read responds within 100ms', () => {
     const stateEndpoint = API_LATENCY_BUDGETS.find(
-      (b) => b.route === '/api/daily-bread/state',
+      (b) => b.route === '/api/devotionals/active' && b.method === 'GET',
     )
-    expect(stateEndpoint?.maxMs).toBeLessThanOrEqual(100)
+    expect(stateEndpoint).toBeDefined()
+    expect(stateEndpoint!.maxMs).toBeLessThanOrEqual(100)
+  })
+
+  it('every Daily Bread write has a bounded, non-AI budget', () => {
+    // These four replace the never-shipped activate / replace-slot /
+    // switch-current budgets. Cloudflare Workers gives 10ms CPU per request, so
+    // none of them may become an LLM-touching route by accident.
+    const writes = API_LATENCY_BUDGETS.filter(
+      (b) =>
+        b.method !== 'GET' &&
+        (b.route.startsWith('/api/devotionals/') ||
+          b.route === '/api/devotionals/archive/restart'),
+    )
+    expect(writes.length).toBeGreaterThanOrEqual(4)
+    for (const budget of writes) {
+      expect(budget.includesAI, `${budget.route} must not call an LLM`).toBe(
+        false,
+      )
+      expect(budget.maxMs).toBeLessThanOrEqual(200)
+    }
   })
 
   it('library index responds within 200ms', () => {
     const libraryEndpoint = API_LATENCY_BUDGETS.find(
-      (b) => b.route === '/api/library/index',
+      (b) => b.route === '/api/soul-audit/manage',
     )
     expect(libraryEndpoint?.maxMs).toBeLessThanOrEqual(200)
   })
@@ -495,11 +622,159 @@ describe('Bundle size budgets', () => {
 })
 
 describe('API payload size limits', () => {
-  it('daily-bread state under 10KB', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    mockedGetUser.mockResolvedValue({ id: USER_ID })
+    libraryRepository.promoteScheduledSwapIfDue.mockResolvedValue(null)
+    libraryRepository.getScheduledSwap.mockResolvedValue(null)
+    libraryRepository.listArchivedSeries.mockResolvedValue([])
+    savedRepository.listBookmarksWithFallback.mockResolvedValue([])
+  })
+
+  it('the Daily Bread state read stays under its 10KB budget — measured', async () => {
+    // The measured replacement for the old `/api/daily-bread/state` budget.
+    // Both records populated, i.e. the largest shape this route can return.
+    libraryRepository.promoteScheduledSwapIfDue.mockResolvedValue({
+      user_id: USER_ID,
+      series_slug: SERIES_ORDER[0],
+      current_day: 4,
+      source: 'manual_start',
+      started_at: '2026-07-28T10:00:00.000Z',
+      last_opened_at: '2026-07-28T11:00:00.000Z',
+    })
+    libraryRepository.getScheduledSwap.mockResolvedValue({
+      user_id: USER_ID,
+      series_slug: SERIES_ORDER[1],
+      starts_at: '2026-08-03T07:00:00.000Z',
+      queued_at: '2026-07-28T11:00:00.000Z',
+    })
+
     const budget = PAYLOAD_BUDGETS.find(
-      (b) => b.route === '/api/daily-bread/state',
+      (b) => b.route === '/api/devotionals/active',
+    )!
+    expect(budget.maxSizeKB).toBeLessThanOrEqual(10)
+
+    const response = await activeGet()
+    expect(response.status).toBe(200)
+    expect(await payloadSizeKB(response)).toBeLessThanOrEqual(budget.maxSizeKB)
+  })
+
+  it('the Daily Bread state read carries no devotional body content', async () => {
+    // The budget only holds because this route returns pointers, not prose. If
+    // someone inlines day content here the payload grows by two orders of
+    // magnitude, so assert the shape, not just the size.
+    libraryRepository.promoteScheduledSwapIfDue.mockResolvedValue({
+      user_id: USER_ID,
+      series_slug: SERIES_ORDER[0],
+      current_day: 4,
+      source: 'manual_start',
+      started_at: '2026-07-28T10:00:00.000Z',
+      last_opened_at: '2026-07-28T11:00:00.000Z',
+    })
+
+    const payload = (await (await activeGet()).json()) as {
+      active: Record<string, unknown>
+    }
+
+    expect(Object.keys(payload.active).sort()).toEqual([
+      'currentDay',
+      'lastOpenedAt',
+      'seriesSlug',
+      'seriesTitle',
+      'source',
+      'startedAt',
+    ])
+  })
+
+  it('the archive list stays within budget at worst case — measured', async () => {
+    // Worst case is bounded by the catalog: a user cannot archive a series that
+    // does not exist.
+    libraryRepository.listArchivedSeries.mockResolvedValue(
+      SERIES_ORDER.map((slug, index) => ({
+        user_id: USER_ID,
+        series_slug: slug,
+        furthest_day_reached: (index % 7) + 1,
+        state: 'paused' as const,
+        archived_at: '2026-07-28T11:00:00.000Z',
+      })),
     )
-    expect(budget?.maxSizeKB).toBeLessThanOrEqual(10)
+
+    const budget = PAYLOAD_BUDGETS.find(
+      (b) => b.route === '/api/devotionals/archive',
+    )!
+    const response = await archiveGet()
+
+    expect(response.status).toBe(200)
+    expect(await payloadSizeKB(response)).toBeLessThanOrEqual(budget.maxSizeKB)
+  })
+
+  it('the saved list stays within budget for a full catalog — measured', async () => {
+    // Every devotional in the catalog saved, notes empty. This is the endpoint's
+    // realistic ceiling; see the residual-risk note below on notes.
+    const allDevotionalSlugs = SERIES_ORDER.flatMap((seriesSlug) =>
+      SERIES_DATA[seriesSlug].days.map((day) => day.slug),
+    )
+    savedRepository.listBookmarksWithFallback.mockResolvedValue(
+      allDevotionalSlugs.map((slug) => ({
+        session_token: USER_ID,
+        devotional_slug: slug,
+        note: null,
+        created_at: '2026-07-28T11:00:00.000Z',
+      })),
+    )
+
+    const budget = PAYLOAD_BUDGETS.find(
+      (b) => b.route === '/api/devotionals/saved',
+    )!
+    const response = await savedGet()
+
+    expect(response.status).toBe(200)
+    expect(allDevotionalSlugs.length).toBeGreaterThan(100)
+    expect(await payloadSizeKB(response)).toBeLessThanOrEqual(budget.maxSizeKB)
+  })
+
+  it('list endpoints return only index fields, never full records', async () => {
+    libraryRepository.listArchivedSeries.mockResolvedValue([
+      {
+        user_id: USER_ID,
+        series_slug: SERIES_ORDER[0],
+        furthest_day_reached: 3,
+        state: 'paused' as const,
+        archived_at: '2026-07-28T11:00:00.000Z',
+      },
+    ])
+    savedRepository.listBookmarksWithFallback.mockResolvedValue([
+      {
+        session_token: USER_ID,
+        devotional_slug: 'the-harvest-day-1',
+        note: 'a note',
+        created_at: '2026-07-28T11:00:00.000Z',
+      },
+    ])
+
+    const archive = (await (await archiveGet()).json()) as {
+      archived: Record<string, unknown>[]
+    }
+    expect(Object.keys(archive.archived[0]).sort()).toEqual([
+      'archivedAt',
+      'furthestDayReached',
+      'seriesSlug',
+      'seriesTitle',
+      'state',
+      'totalDays',
+    ])
+    // The internal owner id never crosses the wire.
+    expect(archive.archived[0].user_id).toBeUndefined()
+
+    const saved = (await (await savedGet()).json()) as {
+      saved: Record<string, unknown>[]
+    }
+    expect(Object.keys(saved.saved[0]).sort()).toEqual([
+      'devotionalSlug',
+      'note',
+      'savedAt',
+    ])
+    expect(saved.saved[0].session_token).toBeUndefined()
   })
 
   it('soul audit submit response under 5KB', () => {
@@ -509,8 +784,10 @@ describe('API payload size limits', () => {
     expect(budget?.maxSizeKB).toBeLessThanOrEqual(5)
   })
 
-  it('library index supports pagination', () => {
-    const budget = PAYLOAD_BUDGETS.find((b) => b.route === '/api/library/index')
+  it('the library index has a bounded budget', () => {
+    const budget = PAYLOAD_BUDGETS.find(
+      (b) => b.route === '/api/soul-audit/manage',
+    )
     expect(budget).toBeDefined()
     expect(budget!.maxSizeKB).toBeLessThanOrEqual(50)
   })
@@ -518,6 +795,52 @@ describe('API payload size limits', () => {
   it('all payloads have descriptions', () => {
     for (const budget of PAYLOAD_BUDGETS) {
       expect(budget.description.length).toBeGreaterThan(0)
+    }
+  })
+})
+
+describe('Budget tables reference shipped routes', () => {
+  // The guard that would have caught the /api/daily-bread/* budgets on the day
+  // the three-slot architecture was abandoned: a budget for a route with no
+  // handler on disk is coverage theatre.
+  function handlerExists(route: string): boolean {
+    return existsSync(
+      join(process.cwd(), 'src', 'app', ...route.split('/'), 'route.ts'),
+    )
+  }
+
+  it('every latency budget names a route that exists', () => {
+    for (const budget of API_LATENCY_BUDGETS) {
+      expect(
+        handlerExists(budget.route),
+        `${budget.method} ${budget.route} has a latency budget but no handler`,
+      ).toBe(true)
+    }
+  })
+
+  it('every payload budget names a route that exists', () => {
+    for (const budget of PAYLOAD_BUDGETS) {
+      expect(
+        handlerExists(budget.route),
+        `${budget.route} has a payload budget but no handler`,
+      ).toBe(true)
+    }
+  })
+
+  it('the retired three-slot Daily Bread endpoints carry no budgets', () => {
+    const retired = [
+      '/api/daily-bread/state',
+      '/api/daily-bread/activate',
+      '/api/daily-bread/replace-slot',
+      '/api/daily-bread/switch-current',
+    ]
+    const budgeted = [
+      ...API_LATENCY_BUDGETS.map((b) => b.route),
+      ...PAYLOAD_BUDGETS.map((b) => b.route),
+    ]
+    for (const route of retired) {
+      expect(handlerExists(route), `${route} unexpectedly exists`).toBe(false)
+      expect(budgeted, `${route} is still budgeted`).not.toContain(route)
     }
   })
 })

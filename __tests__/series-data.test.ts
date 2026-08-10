@@ -9,10 +9,11 @@ import {
 
 describe('Series Data', () => {
   it('has 35 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
-    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 9 new = 35
-    // (prayer-of-jabez 2026-07-12 SA-029/F-081; the-harvest 2026-07-26 SA-031/F-082)
-    expect(SERIES_ORDER).toHaveLength(35)
-    expect(ALL_SERIES_ORDER).toHaveLength(35)
+    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 10 new = 36
+    // (prayer-of-jabez 2026-07-12 SA-029/F-081; the-harvest 2026-07-26 SA-031/F-082;
+    //  he-cannot-deny-himself 2026-08-10 SA-034/F-085)
+    expect(SERIES_ORDER).toHaveLength(36)
+    expect(ALL_SERIES_ORDER).toHaveLength(36)
   })
 
   it('has 7 Wake-Up series', () => {

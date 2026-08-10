@@ -17,6 +17,10 @@ Each entry: the trap, how it bit, the guard. All are from the actual prayer-of-j
 8. **Editor findings that contradict verified research** usually mean the source pack is missing the verification, not that the text is wrong. Fix by adding the verified detail TO the pack (Müller's coin amounts were verified all along; the pack hadn't carried them).
 9. **Famous devotional stories are often folklore.** Verify against the primary text before drafting around them; the primary sources usually contain a better, dated, first-person incident.
 
+## Authoring process
+
+19. **Parallel per-day writer agents produce patchwork the founder rejects.** The Harvest went to v4 on fanned-out drafting plus layered edits; the founder's verdict was "hobbled together with various edits just thrown on top," and the fix was v5: a **clean-sheet, single-author rewrite, days 1–7 in order, in one sitting**, from a consolidated spec. Guard: **research fans out; drafting does not.** Use parallel agents for verification (stories, quotes, videos, lexicon) and for editorial review, then write every prose module yourself, in day order, in one pass. Cohesion is the product — a devotional that reads like seven authors is a failed devotional no matter how good each day is alone. Corollary: patching a rejected draft with more edits deepens the patchwork; rewrite clean-sheet instead.
+
 ## Generation
 
 10. **Image safety filter false-positives**: "newborn baby" → `status: "nsfw"`. Reframe the subject ("swaddled bundle"). Budget for 1-2 retries per batch (filter kills + style drift).

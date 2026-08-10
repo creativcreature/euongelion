@@ -181,9 +181,13 @@ export default function DevotionalActions({
         : 'START THIS DEVOTIONAL'
 
   return (
+    // Founder direction 2026-07-28: no boxed slab. This bar stacked with the
+    // breadcrumb row and the audio panel put three bordered rectangles above
+    // the headline, which read as app chrome rather than an editorial page.
+    // The START control keeps its own button affordance; the container is now
+    // transparent so the page opens on the writing.
     <section
-      className="devotional-actions-bar mb-6 border px-5 py-4"
-      style={{ borderColor: 'var(--color-border)' }}
+      className="devotional-actions-bar mb-6 px-0 py-2"
       aria-label="Devotional library actions"
     >
       <div className="flex flex-wrap items-center gap-3">

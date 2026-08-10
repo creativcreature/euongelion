@@ -147,6 +147,17 @@ export default function DevotionalPageClient({
   const parentLabel = 'SERIES'
   const modules = (devotional as (Devotional & { modules?: Module[] }) | null)
     ?.modules
+  // Last module of the Two-Minute Open (the DEEP DIVE cta that closes it), or
+  // -1 on days that have no short read. Used to band and label the open so the
+  // reader can see it is a précis rather than the devotional starting twice.
+  const twoMinuteOpenEnd =
+    modules?.findIndex(
+      (m) =>
+        m.type === 'cta' &&
+        String((m as { ctaLabel?: string }).ctaLabel ?? '')
+          .toUpperCase()
+          .includes('DEEP DIVE'),
+    ) ?? -1
   const panels = devotional?.panels
   const currentDayIdx = seriesDays?.findIndex((d) => d.slug === slug) ?? -1
   const prevDay =
@@ -495,10 +506,10 @@ export default function DevotionalPageClient({
               render scripture chip + DAY N OF M + h1 + teaser — all of it
               duplicated by the folio, the headline hero, and the first
               scripture module. Slimmed to the action row only. */}
-          <header
-            className="devotional-shell-panel devotional-shell-block mb-8 border px-6 py-4"
-            style={{ borderColor: 'var(--color-border)' }}
-          >
+          {/* Founder direction 2026-07-28: unboxed. A bordered rectangle here
+              added a third stacked slab above the headline; these are two quiet
+              text links, not a panel. */}
+          <header className="devotional-shell-block mb-8 px-0 py-2">
             {/* R37: action row aligned on baseline. ShareButton
                 renders with an SVG icon that breaks items-center
                 alignment with plain text links. items-baseline +
@@ -735,17 +746,6 @@ export default function DevotionalPageClient({
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
 
-                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
-                      this devotional's real text, one section at a time. */}
-                  {audioSegments.length > 0 && (
-                    <AudioPlayer
-                      title={devotional.title}
-                      segments={audioSegments}
-                      artworkSrc="/icons/icon-512.png"
-                      className="devotional-shell-panel mb-6"
-                    />
-                  )}
-
                   {/* Audit 2026-05-13: editorial broadsheet folio strip.
                       Sits above the title. Scale back: delete this block. */}
                   {seriesSlug && SERIES_DATA[seriesSlug] && (
@@ -776,6 +776,22 @@ export default function DevotionalPageClient({
                     />
                   )}
 
+                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
+                      this devotional's real text, one section at a time.
+                      Founder direction 2026-07-28: it sits BELOW the folio and
+                      headline. Opening the page on a player (and formerly its
+                      section index) buried the headline and read like an app
+                      chrome panel; a magazine gives you the title first and
+                      offers the audio edition underneath it. */}
+                  {audioSegments.length > 0 && (
+                    <AudioPlayer
+                      title={devotional.title}
+                      segments={audioSegments}
+                      artworkSrc="/icons/icon-512.png"
+                      className="devotional-shell-panel mb-6"
+                    />
+                  )}
+
                   {/* Audit 2026-05-13: NYT-magazine-style sticky-image
                       reading rhythm. Wraps the existing module flow with
                       a sticky-image rail (desktop) + observer that swaps
@@ -787,28 +803,56 @@ export default function DevotionalPageClient({
                       is one continuous piece (see continuous-flow CSS). */}
                   <DevotionalRhythm images={rhythmImages} enabled={false}>
                     {modules
-                      ? modules.map((module, index) => (
-                          <Fragment key={index}>
-                            <article
-                              id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel devotional-flow-article"
-                            >
-                              <ModuleRenderer module={module} />
-                            </article>
-                            {artworkByPosition.has(index) && (
-                              <div className="devotional-artwork-inline">
-                                <DevotionalArtwork
-                                  artwork={artworkByPosition.get(index)!}
-                                  onOpenLightbox={() =>
-                                    lightbox.open(
-                                      artworkByPosition.get(index)!.slug,
-                                    )
-                                  }
-                                />
-                              </div>
-                            )}
-                          </Fragment>
-                        ))
+                      ? modules.map((module, index) => {
+                          // Founder direction 2026-07-28: the Two-Minute Open is
+                          // the right idea (quick start, then deep dive) but it
+                          // was built out of the same parts as the devotional
+                          // itself — scripture, word study, reflection, prayer —
+                          // so nothing told the reader it was a précis. It read
+                          // as the devotional, which then inexplicably restarted.
+                          //
+                          // Every real-world version of this pattern makes the
+                          // short read a visibly different object: Digg's tinted
+                          // "TL;DR" card, ChatGPT's "Executive Summary", HYPE's
+                          // bulleted "Summary", Finimize's labelled brief. We do
+                          // the same — the open is banded and labelled, and its
+                          // end is marked, so the restart is intentional.
+                          const inOpen =
+                            twoMinuteOpenEnd >= 0 && index <= twoMinuteOpenEnd
+                          return (
+                            <Fragment key={index}>
+                              <article
+                                id={`devotional-section-${index + 1}`}
+                                className={`devotional-shell-panel devotional-flow-article${
+                                  inOpen ? ' is-two-minute' : ''
+                                }`}
+                                data-two-minute={
+                                  inOpen
+                                    ? index === 0
+                                      ? 'start'
+                                      : index === twoMinuteOpenEnd
+                                        ? 'end'
+                                        : 'mid'
+                                    : undefined
+                                }
+                              >
+                                <ModuleRenderer module={module} />
+                              </article>
+                              {artworkByPosition.has(index) && (
+                                <div className="devotional-artwork-inline">
+                                  <DevotionalArtwork
+                                    artwork={artworkByPosition.get(index)!}
+                                    onOpenLightbox={() =>
+                                      lightbox.open(
+                                        artworkByPosition.get(index)!.slug,
+                                      )
+                                    }
+                                  />
+                                </div>
+                              )}
+                            </Fragment>
+                          )
+                        })
                       : panels?.slice(1).map((panel, index) => (
                           <Fragment key={panel.number}>
                             <article

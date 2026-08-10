@@ -23,12 +23,12 @@ export interface SeriesRail {
 // SA-031 (2026-07-26): the most recent series leads the featured rail.
 // devotional surface (per founder direction 2026-05-08).
 export const FEATURED_SERIES_SLUGS = [
+  'he-cannot-deny-himself',
   'the-harvest',
   'bible-365',
   'prayer-of-jabez',
   'identity',
   'why-jesus',
-  'hope',
 ] as const
 
 // Theme/mood rails — editorially curated

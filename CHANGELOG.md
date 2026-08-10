@@ -5,6 +5,388 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — "He Cannot Deny Himself" 7-day series + Two-Minute Open v2 (2026-08-10)
+
+New prefab series on the steadfastness of God set against human self-rule, built
+end-to-end via /devo-go. Founder angle, quoted into the brief: God has made an
+unwavering commitment, the gap between Him and us is one **we** opened, and the
+reader in view is anyone still "stealing that fruit from the Garden of Eden."
+Harvest-adjacent through Hosea's sowing/reaping rather than another Matthew 13
+week — `the-harvest` keeps the parables. Monday start, Sunday sabbath close.
+
+Days: **1 (A)** The Fruit of Lies, Hosea 10:12-13 — the charge is management, not
+wickedness. **2 (B)** The Oldest Theft, Genesis 3:4-6 — the serpent sells a
+likeness already given in Genesis 1:26-27. **3 (C, PIVOT)** He Cannot Deny
+Himself, 2 Timothy 2:11-13 — accountability and mercy are one attribute facing
+two directions; Athanasius §§6-7 frames it as a dilemma God cannot escape.
+**4 (B′)** Like a Morning Cloud, Hosea 6:1-6 — hesed in v.4 and v.6 is the same
+word, so the request is an offer of terms, not a demand for more effort.
+**5 (A′)** Between the Pieces, Jeremiah 31:31-34 + Genesis 15 — the covenant
+ratified from one side while the other slept. **6** recap + Further-Your-Learning.
+**7** sabbath, Lamentations 3:22-23.
+
+**SA-034 registered (three rulings).** (1) **TWO-MINUTE-OPEN v2**, forward-only
+amendment to SA-030: the open gains a short write-up ABOUT the anchor scripture
+between the vocab word and the reflection — scripture → vocab → teaching →
+reflection → prayer → cta. Days declare `format: "two-minute-open-v2"`; the
+validator enforces the six-module sequence AND that the DEEP DIVE cta targets
+`#devotional-section-7` (section ids are 1-indexed over the module array, so the
+old `-6` target would have scrolled readers into the middle of their own open).
+The five-module `two-minute-open` in `the-harvest` is untouched and still
+validates. (2) **THIRD-PERSON SERIES VOICE** — a founder may pin a series to
+third-person narration, overriding the AUTHORING-SPEC §2 permission to use "you"
+in teaching/bridge/story/insight/vocab; reflection, prayer, takeaway and
+interactive stay in direct address because the form IS address. (3)
+**SEED-VS-ANCHOR** — 1 Thessalonians 5:1-10 was named by the founder as the
+week's _sentiment_, not its text; it opens Day 1 and closes Day 6 and is never
+promoted to anchor.
+
+**Research fanned out; drafting did not** (new /devo-go traps §19, from the
+Harvest v5 precedent). Four verification agents, then all seven days written
+single-author in day order. Findings that changed the build: BibleProject's
+faithfulness video teaches **emet**, not emunah — a vocab module would have
+contradicted its own video, so Day 3 carries emet and Day 7 keeps emunah, and
+nothing blurs them. Five planned lexical claims were **factual errors** and were
+cut or restated (Hosea 6:3/6:4 do NOT share a word for morning; Ezekiel 36:27 is
+Qal, not causative; Malachi 3:6 has no Hebrew "therefore"; Hosea 6:6 is
+comparative, not absolute; Isaiah 48:11's verb is present, not supplied). Three
+beloved stories died under verification and are documented as rejected: Cowper's
+hymn was written BEFORE the 1773 collapse, not after a suicide attempt; Matheson
+had no fiancée; and Genesis 15 has no attested extrabiblical parallel — the two
+elements the standard sermon fuses are never found together outside Scripture,
+and that silence is now the day's actual argument. Cranmer's hand in the fire is
+attested by a HOSTILE Catholic eyewitness, not only by Foxe.
+
+Imagery: 9 riso-duotone plates, library checked first per CLAUDE.md. Two failed
+the SA-032(4) accuracy gate and were regenerated — the Genesis 15 plate came back
+with living, standing animals, and the recap path forked when the brief required
+one unbroken line. **Flagged:** `public/images/library/poster/atmos-wheat-field-golden.png`
+is a real photograph sitting in the curated library, which CLAUDE.md forbids on
+user-facing surfaces; not used here, but it should be purged.
+
+**TWO SILENT-RENDER BUGS FIXED, both found by driving a real browser at the
+Workers preview — not by curl, not by the validator, not by the type-checker.**
+`SabbathModule` read only `scripture_anchor`/`invitation`/`prayerText` and
+`RecapModule` required a `days` array; both returned **null** for the canonical
+flat `content` shape that every other prose module uses. Day 7's entire body and
+both of Day 6's recap sections rendered as silent empty gaps while the JSON
+served correctly over HTTP and the validator passed 0/0 — the same class of
+defect as the Jabez flat-`content` regression, and harder to spot since the
+bordered panels were removed in July. Both components now render flat `content`
+(RecapModule via ReactMarkdown, matching TeachingModule), both have rendered-DOM
+regression tests, and the suite's missing `afterEach(cleanup)` — which was
+leaking renders and throwing post-teardown "window is not defined" errors — is
+in place. Day 7 body went 4,150 → 5,770 chars; Day 6 9,715 → 14,212.
+
+Editorial gate: devotional-editor returned **NOT READY** on the first pass with 5
+blocking findings, all applied — a fabricated Genesis 15:18 quotation ("cut a
+covenant" appears in no translation in the corpus), four false counted/dated
+claims (two disproved by text on the same screen), Athanasius called a bishop ten
+years before he was one, an invented Matheson date landing after his death, and
+four quotations printed in quotation marks that had never entered the source
+pack. Twelve needs-fix items applied besides, including an unverified "eleven
+years left" countdown asserted six times, a missing meta-story return on Day 6,
+and a production byline that broke the fourth wall.
+
+Wiring: `series.ts` entry + NEW_SERIES_ORDER, `series-rails.ts` spotlight, and the
+homepage MAIN feature per SA-031(1) (most recent series leads; `the-harvest`
+rotates into the six cards below it). Counts bumped: series 35→36, feature PRDs
+84→85. New tests: `two-minute-open` format contracts in `devotional-json.test.ts`
+(both shapes, sequence + cta target + target-exists) and v2 rendered-DOM
+assertions in `module-renderer-flat-content.test.tsx`. (SA-034, F-085)
+
+## VERIFIED — Signed-in continuity proven in the Workers runtime (2026-07-28)
+
+The last open gate on F-083 is closed. Every prior test mocked the repository, so
+nothing proved that a REAL signed-in session keeps its active devotional — the
+exact promise that was broken for six months. `scripts/e2e-signed-in.mjs`
+(`npm run test:e2e:signed-in`) now drives the local Workers preview end to end:
+sign in → activate → the badge endpoint agrees → the reader renders it → three
+reloads → change day → sign out (401, and no account state leaked to anonymous)
+→ sign back in on a NEW session with a fresh cookie jar → resumes the same series
+at day 3 → clear → honest empty. **22/22 checks pass.** Two assertions are the
+bug itself: the reader must show the activated series, and it must NOT be the "A
+Voice in the Wilderness" empty-state card.
+
+Safety: one ephemeral user created via service-role and deleted in a `finally`
+block, with absence re-verified against the auth database afterwards; the harness
+refuses to run against any non-localhost target, so it can never mutate
+production. It builds the Supabase session cookie by letting `@supabase/ssr`
+serialize it into a fake jar rather than hand-rolling the chunked format.
+
+The structured resolution events shipped alongside made the run readable as a
+journey — `authed:false → empty`, `authed:true day:1 manual_start`, `day:3`, then
+the re-authenticated session resolving correctly with `hasSessionToken:false`
+(the cross-device case). Zero 500s across the run.
+
+**Two unlimited destructive writes fixed.** `DELETE /api/devotionals/active`
+(which archives the active series and clears the slot) and `DELETE
+/api/devotionals/saved` shipped with no rate limit while PUT/PATCH/POST on the
+same routes had one — the destructive half of each pair was the unbounded one.
+Both now take the same limiter as their siblings. Found by the test-coverage
+rewrite; both handlers already computed `clientKey`, so the limiter had clearly
+been intended and lost. (SA-023, SA-032, F-083)
+
+## TESTS + AUDIT — Real API coverage, and the Jabez editorial audit (2026-07-28)
+
+**Roadmap #3: false test coverage replaced.** `security.test.ts` and
+`performance-contracts.test.ts` asserted against four endpoints that were never
+shipped (`/api/daily-bread/state|activate|replace-slot|switch-current`, remnants
+of the abandoned three-slot design). Nothing on disk could contradict them, so
+they protected nothing. Every property they were reaching for is now asserted by
+invoking the handlers that actually ship — auth gating across all 9
+method/route combinations, real rate-limit enforcement loops, honest 401-vs-503
+codes, no secret/PII in error bodies, tenant isolation against hostile
+`userId`/`sessionToken` in the body, and boundary input validation. Payload
+budgets are now MEASURED rather than compared to themselves (archive 5.63KB of a
+20KB budget at catalog saturation; saved 48.83KB of 64KB with every devotional
+saved). Both files gained a drift guard asserting the retired routes do not exist
+and appear in no contract table — the check that would have caught this the day
+the design was abandoned. Suite 137→138 files, 1765→1796 tests, all green.
+
+Four real findings came out of it, none yet fixed (production source untouched):
+DELETE `/api/devotionals/active` and DELETE `/api/devotionals/saved` ship with NO
+rate limit while PUT/PATCH/POST on the same routes have one — the destructive
+writes are the unlimited ones; the rate-limit table was false well beyond the four
+routes (magic-link is 8/min/IP not 5; soul-audit/submit is 12/min not 3/hour, with
+the daily cap doing the real spend protection); every limiter keys on hashed
+client IP rather than user id, so a NAT shares one budget and one account can
+multiply its budget across IPs; and `GET /api/devotionals/saved` is unpaginated
+and already 48.8KB before any notes.
+
+**Jabez editorial audit.** `docs/audits/JABEZ-HARVEST-EDITORIAL-AUDIT-2026-07-28.md`.
+Mechanically Jabez is sound — no quote drift, no stray markdown, all 47 emphasis
+strings verbatim, 7/7 validator PASS. Two formatting defects were fixed and
+nothing was rewritten, per the founder's "no rewriting old devotionals": a stray
+leading space (day 6) and a citation that ended mid-clause on a dangling ", and "
+— visible broken text in day 5's Sources block, truncated to its last complete
+clause with nothing invented. Everything else is report-only and awaits rulings,
+including three HIGH items: the same word taught five times in one day (day 4) and
+four times in another (day 2) — the exact Harvest defect — and Day 6 asserting as
+fact the name-form Day 2 spent a paragraph establishing he was NOT given. Also
+logged: days 4 and 5 open with byte-identical scripture (Harvest's day 2-3
+defect), five straight days ending on the same "We began with…" callback move,
+and a sales figure ("eight million copies") restated as a behavioral claim ("ten
+million people have prayed"). Cross-series, the sharpest divergence is the sabbath
+day — Jabez day 1, Harvest day 7 — where SA-029's "sabbath-first" ruling makes
+Harvest the outlier. (SA-033, F-082, F-083)
+
+## RELIABILITY — Unavailable states, resolution observability, persistence-migration design (2026-07-28)
+
+Founder roadmap items #1, #5, #6, #7.
+
+**#5 Explicit unavailable states.** The canonical resolver already reported
+`unavailable` as a first-class state, but nothing spoke it to the reader: the
+library store set `lastError` in six places and rendered it in zero, so a failed
+read looked like an empty library — an outage impersonating lost data, which is
+the exact confusion behind the original Daily Bread report. New reusable
+`StateUnavailable` component keeps two promises the copy may never drop: it says
+we could not CONFIRM something (never that it is gone), and it states explicitly
+that the reader's selection has not been changed. Wired into `LibraryView` on a
+failed refresh, with retry. The `/daily-bread` error-boundary copy was re-aimed
+to the same framing ("We couldn't confirm your current devotional. Your selection
+has not been changed."). Six tests pin the copy and the retry semantics.
+
+**#7 Observability for state resolution.** `resolveCurrentReading` now emits one
+structured `evt` line per resolution — `current_reading.resolved` (with source,
+series/plan and, for plans, whether the account-first or session lookup won),
+`plan_expired_archived`, `empty`, and `unavailable` (with error name and
+message). Every line carries `authed` and `hasSessionToken`, which is what
+distinguishes an auth-blind render from a genuinely anonymous reader — the
+distinction that made the expired-token failure invisible for six months.
+
+**#1 Soul Audit persistence migration — DESIGN ONLY, not implemented** (per
+founder instruction). `docs/technical/SOUL-AUDIT-PERSISTENCE-MIGRATION.md`
+inventories all 46 exported functions, 25 cache-first `WithFallback` variants and
+13 caller files; classifies every operation as durable-required, genuinely
+ephemeral, or currently-memory-only-but-must-be-durable; defines the failure
+contracts and HTTP mapping; and stages the work in seven independently revertable
+phases with a test plan. Two correctness bugs surfaced during the inventory and
+are pulled forward into Phase 0 because both gate generation spend: the audit
+rate-limit counter is per-isolate (so the real ceiling is limit x isolates, not a
+limit), and a concurrency lock fails OPEN when Supabase is unreachable.
+Recommendation is to ship Phase 0 + Phase 1 (observability, zero behavior change)
+and let a week of production data drive the rest.
+
+**#6 Build and asset pipeline.** The artwork generator's bare "Loaded 0 artworks"
+read like data loss and had cost review time twice; it now states that an empty
+manifest is EXPECTED since the 2026-05-08 archive and that live artwork is served
+from `SITE_DEVOTIONAL_ART` (180 entries). Verified independently: Harvest imagery
+is 15/15 present and does not depend on the manifest. Also documented three
+deploy hazards found the hard way this session in COMMIT-AND-DEPLOY-GUIDE.md — a
+backgrounded `npm run deploy` can exit 0 having uploaded NOTHING (confirm the
+version id, never the exit code); content-only deploys serve stale HTML behind
+`s-maxage=3600, stale-while-revalidate` and need a cache warm plus a rendered-text
+check; and running a production build while `next dev` is live 500s every route
+on :3333 until the dev server restarts. (SA-023, SA-032, F-083)
+
+## CONTENT — Harvest days 1-3: no double-read, and the founder's actual angle (2026-07-28)
+
+Two content repairs inside the retained Two-Minute Open structure.
+
+**The open no longer reprints the deep dive's scripture.** Days 2 and 3 opened with
+a passage that was a verbatim subset of their own main passage, so the reader met
+the same verses twice within ~800 words. Day 2's open is now James 5:7-8 (the
+farmer who awaits the precious fruit of the soil) and day 3's is Matthew 13:34-35
+(things hidden since the foundation of the world) — both corpus-verbatim from
+public/bibles/BSB/, both previously unused in the series, and neither overlapping
+its day's main passage. Each open's word study was rebuilt from its new passage
+(makrothymeo G3114; krypto/kekrymmena G2928), verified against the STEPBible
+tagged Greek NT and Abbott-Smith rather than asserted, and the long re-teach of
+the old opening word was deleted from day 2's main word study — a word is now
+taught once per day.
+
+**Days 1-2 now carry the founder's canonical blend.** Measured against days 4-5
+(which were already correct), days 1 and 2 were written to the older single-angle
+spec: the retired-verdict thread — you cannot tell wheat from darnel before the
+grain forms, so stop rendering verdicts — appeared roughly twice in day 1's 4,183
+words, while evil-persisting-beside-good ran 2.5x the intended primary. Day 1
+stated the indistinguishability fact inside its zizania word note and never used
+it; it now pays that off in the teaching, the insight, the audit and the close.
+Day 1's verdict thread rose 1.0 to 4.3 per 1k, day 2's 4.6 to 6.6, with patience
+still primary. The parable's own vocabulary (enemy, darnel, sabotage) was left
+fully intact — nothing was stripped to move a number.
+
+Both passes: modules never reordered, added or removed; scripture, reflection and
+prayer of the open left untouched by the rebalance; second-person count in the
+essay modules unchanged (day 1 12/12, day 2 22/22) so the third-person voice
+holds. Validator PASS x7; suite 137 files / 1765 tests green. F-082's User
+Expectation, which still stated only the third angle, was corrected to the
+canonical weighting. (SA-033, F-082)
+
+## EDITORIAL — The Two-Minute Open reads as a précis, not a false start (2026-07-28)
+
+Founder read days 1-2 live: too 2nd-person for the site's voice, and disjointed.
+Measured before changing anything — and the prose was not the problem. Harvest's
+teaching prose is the MOST 3rd-person on the site (4.2 second-person per 1k words
+vs a 7.6 site median and 20.6 in Jabez). But its opening 250 words are the most
+2nd-person on the site (20.0 vs 12.0; days 1/2/4 at 24/32/32), because the
+Two-Minute Open front-loads a reflection prompt and a prayer before any essay.
+Harvest is also the only series carrying that structure — 6 files out of 554,
+which is precisely why it does not read like the rest of the site.
+
+Founder ruling: the quick-start-then-deep-dive idea stays; the execution changes.
+The open had been assembled from the devotional's own parts (scripture, word
+study, reflection, prayer), so nothing told the reader it was a précis — it read
+as the piece, which then restarted. Mobbin research (now available; unavailable
+in the earlier Codex workspace) confirmed every real-world version of this
+pattern makes the short read a visibly distinct object: Digg's tinted TL;DR card,
+ChatGPT's Executive Summary, HYPE's bulleted Summary, Finimize's labelled brief.
+
+The open is now banded and tinted, headed by a gold rule and a "TWO-MINUTE READ"
+label, with its internal rhythm tightened and its end marked — so the transition
+into the deep dive is deliberate. No devotional prose was rewritten.
+
+Also recorded: the canonical Harvest angle is patience-for-the-not-yet-turned +
+don't-judge-the-field-early + a measure of evil-persisting-beside-good. F-082's
+stated User Expectation carries only the third and is stale. (SA-033, F-082)
+
+## EDITORIAL — Vocabulary reads as a word note, not a lexicon entry (2026-07-28)
+
+Founder: the Harvest read "disjointed," and the on-page flow broke "because of
+how the vocabulary is placed" — too school-booky, not enough magazine.
+
+Presentation (`VocabModule`, all series): the word study rendered as a dictionary
+entry dropped into an essay — a GREEK label beside a Strong's catalog number, a
+headword up to 6rem, a bracketed pronunciation respelling, then a ruled
+WORD BY WORD interlinear table and a RELATED list, each under its own shouted
+sublabel. It is now a magazine sidenote: a gold hairline in the margin, the word
+at reading scale (51px, was up to 96px) with its transliteration riding
+alongside, the gloss as the lead line, and the interlinear and cognates set as
+quiet flowing text separated by middots — no table rules, no ALL-CAPS sublabels.
+Strong's numbers stay in the data (the JSON contract requires them) but are
+concordance ids, not reader-facing copy. Project rule preserved: Greek/Hebrew
+never appears without its transliteration beside it.
+
+Placement (Harvest days 1-5): the main-body word study sat between the scripture
+and the first line of writing, so the reader hit a lexicon block before any
+prose. It now follows the opening teaching block — scripture → art → the writing
+begins → the word note deepens it. The two-minute open keeps its compact gloss
+in place. The DEEP DIVE anchor was asserted intact on every day (index 5 remains
+the scripture); no words were rewritten, only reordered.
+
+No devotional prose was edited. (SA-033, F-082)
+
+## EDITORIAL — Reader reads as a magazine, not a module stack (2026-07-28)
+
+Founder direction: the devotional must "flow in a full beautiful presentation"
+and not "feel modular" — and the table-of-contents boxes listing the
+devotional's own section titles at the top had to go.
+
+Reader chrome:
+
+- Removed the AudioPlayer section scrubber, which printed a chip per section
+  ("Title · Scripture · Word study · A Two-Minute Prayer · Two Stories, One
+  Field…") above the article and spoiled every heading before the first line.
+  Section navigation stays on the ‹‹ / ›› controls and progress bar.
+- Moved the Audio Edition panel BELOW the folio and headline. The page had
+  opened on a player instead of a title.
+- Unboxed the two stacked utility slabs above the headline (breadcrumb/share
+  header and the start/save actions bar, incl. its raised background). Three
+  bordered rectangles preceded the headline; the page now opens on the writing.
+- Stopped leaking authoring metadata into reader copy: `prayerType` rendered a
+  literal "(centering)" beside the prayer heading and `invitationType` shouted
+  a bare "QUIET" above the reflection prompt.
+
+Content (Harvest + Prayer of Jabez, 14 files — full editorial audit run):
+
+- Fixed the DEEP DIVE anchor on harvest-6, which jumped readers to a decorative
+  banner instead of the recap, and dropped its `format: "two-minute-open"` flag
+  (that day has no second half for the short read to open into).
+- Normalized typography across all 14 files: literal "..." → "…", the single
+  stray curly apostrophe → straight (matching every other file).
+- Trimmed three `emphasis` values that were 14-17 words — long enough to
+  highlight most of the visible passage; each replacement verified verbatim.
+- Stripped leaked editorial apparatus from reader-facing prose ("A note for
+  careful readers:", "Translational honesty note:", "Provenance carried in the
+  series source pack.", "Now the honesty the deep dive owes you.", the
+  page-verification aside). Every factual claim was preserved — only the
+  apparatus framing was removed.
+- Fixed a video attribution carrying a sourcing note ("Gospel in Life (official
+  channel)").
+
+The deeper findings — the five-slot teaching skeleton every day shares, ten
+repeated CMS-style headings, a refrain restated on seven straight days, and
+duplicate opening scripture on harvest-2/3 — are documented for founder
+decision; they require rewriting authored prose, not a mechanical pass.
+(SA-023, F-082, F-083)
+
+## STABILIZATION — Canonical current-reading resolver (2026-07-28)
+
+Consolidated the two divergent "what am I reading?" resolution stacks behind a
+single typed resolver (`src/lib/reading/current-reading.ts` →
+`resolveCurrentReading()`). Before this, `/daily-bread` (the reader) resolved the
+Soul Audit plan account-first (`owner_user_id`) while `/api/soul-audit/current`
+(every header/tab/home-card/resume badge) resolved it session-token-only and also
+advertised un-activated curated selections — so a signed-in reader on a new
+device saw their plan on the page but "nothing current" in the header. The
+resolver returns a discriminated union — `active` (active_series or account-first
+plan) / `empty` (confirmed absence) / `unavailable` (read/auth failure, never
+rewritten as empty) — and both surfaces now render from it, so the reader and
+every badge agree. `/daily-bread` throws `unavailable` to its error boundary; the
+API fails honestly instead of faking `hasCurrent:false`. Replaced the route's
+session-only candidate test with resolver-derived summary tests and added a
+dedicated resolver contract suite (`__tests__/current-reading-resolver.test.ts`).
+Behavior change (founder-approved, full-unify): the resume badge no longer
+advertises a curated Soul-Audit selection that was picked but never activated —
+it shows exactly what the reader renders. (SA-023, SA-032, F-083)
+
+## STABILIZATION — Daily Bread canonical-read hardening (2026-07-27)
+
+Follow-up audit of F-083 found that the write-path repair still left
+read failures indistinguishable from confirmed absence. Supabase errors
+were returned as `null`; `/daily-bread` then caught them and rendered an
+older Soul Audit plan/default. Active-series, scheduled-swap, and archive
+reads now fail loudly, never use Workers-isolate cache as authority, and
+evict stale cross-device state. `/api/soul-audit/current` now gives the
+user-controlled active series unconditional precedence so header/resume
+surfaces agree with Daily Bread. Client library refreshes retain last
+confirmed state on 5xx/network failure, clear it only on a confirmed 401
+or successful empty response, and invalidate current-plan badges after
+activation/progress changes. Replaced a 329-line fake Daily Bread suite
+that tested invented response objects for four nonexistent endpoints with
+real route/store regression coverage. (SA-023, SA-032, F-083)
+
 ## FIX — TODAY nav finally points at YOUR devotional (2026-07-27)
 
 Root cause of "every time I click Today it shows seek-first-the-

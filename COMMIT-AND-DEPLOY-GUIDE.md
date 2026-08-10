@@ -30,23 +30,24 @@ git push origin main
 
 ### Pre-Commit Hook (11 checks, runs in order)
 
-| # | Check | What It Does | Common Fix |
-|---|-------|-------------|------------|
-| 1 | **lint-staged** | Prettier + ESLint on staged `.ts/.tsx/.css/.json/.md` | Run `npm run format`, re-stage |
-| 2 | **type-check** | `tsc --noEmit` (strict mode) | Fix type errors in code |
-| 3 | **verify:production-contracts** | Checks required doc files exist, route tokens match | Ensure contract docs exist |
-| 4 | **verify:tracking** | CHANGELOG version matches package.json, CLAUDE.md refs | Update CHANGELOG.md |
-| 5 | **verify:feature-prds** | All 50+ PRD files exist with required sections | Don't delete PRD files |
-| 6 | **verify:feature-prd-link** | Feature code staged? PRD file must also be staged | `git add docs/feature-prds/F-xxx.md` |
-| 7 | **verify:governance-alignment** | PRD index and registry stay in sync | Update both index + registry |
-| 8 | **verify:methodology-traceability** | Methodology docs exist and PRDs reference them | Don't delete methodology docs |
-| 9 | **verify:folder-structure** | Required dirs exist, frozen dirs untouched | `mkdir -p` missing dirs |
-| 10 | **verify:appstore-gate** | App Store metadata files exist and validate | Don't delete appstore docs |
-| 11 | **CHANGELOG enforcement** | If `.ts/.tsx` staged, CHANGELOG.md must also be staged | `git add CHANGELOG.md` |
+| #   | Check                               | What It Does                                           | Common Fix                           |
+| --- | ----------------------------------- | ------------------------------------------------------ | ------------------------------------ |
+| 1   | **lint-staged**                     | Prettier + ESLint on staged `.ts/.tsx/.css/.json/.md`  | Run `npm run format`, re-stage       |
+| 2   | **type-check**                      | `tsc --noEmit` (strict mode)                           | Fix type errors in code              |
+| 3   | **verify:production-contracts**     | Checks required doc files exist, route tokens match    | Ensure contract docs exist           |
+| 4   | **verify:tracking**                 | CHANGELOG version matches package.json, CLAUDE.md refs | Update CHANGELOG.md                  |
+| 5   | **verify:feature-prds**             | All 50+ PRD files exist with required sections         | Don't delete PRD files               |
+| 6   | **verify:feature-prd-link**         | Feature code staged? PRD file must also be staged      | `git add docs/feature-prds/F-xxx.md` |
+| 7   | **verify:governance-alignment**     | PRD index and registry stay in sync                    | Update both index + registry         |
+| 8   | **verify:methodology-traceability** | Methodology docs exist and PRDs reference them         | Don't delete methodology docs        |
+| 9   | **verify:folder-structure**         | Required dirs exist, frozen dirs untouched             | `mkdir -p` missing dirs              |
+| 10  | **verify:appstore-gate**            | App Store metadata files exist and validate            | Don't delete appstore docs           |
+| 11  | **CHANGELOG enforcement**           | If `.ts/.tsx` staged, CHANGELOG.md must also be staged | `git add CHANGELOG.md`               |
 
 ### Commit-Msg Hook (runs after pre-commit passes)
 
 The commit message **must** include:
+
 - **`SA-xxx`** — a production decision ID (e.g., `SA-001`)
 - **`F-xxx`** — a feature PRD ID (e.g., `F-051`)
 - Every `F-xxx` referenced must have its matching `docs/feature-prds/F-xxx.md` staged
@@ -54,6 +55,7 @@ The commit message **must** include:
 **Skipped for:** merge commits, reverts, fixups
 
 **Example commit messages:**
+
 ```
 SA-001 F-051: Add Apple TV browse page with editorial rails
 SA-030 SA-031 F-028 F-050: Add post-signup onboarding and curation
@@ -79,9 +81,11 @@ If this is new work, create `docs/feature-prds/F-0XX.md`:
 **Date:** 2026-02-21
 
 ## Summary
+
 What this feature does.
 
 ## Acceptance Criteria
+
 - [x] Criterion 1
 - [x] Criterion 2
 ```
@@ -149,6 +153,7 @@ git commit --no-verify -m "SA-001 F-0XX: hotfix description"
 ```
 
 Then immediately run checks manually:
+
 ```bash
 npm run type-check
 npm run verify:production-contracts
@@ -163,6 +168,7 @@ npm test
 ## Troubleshooting
 
 ### "CHANGELOG.md not staged but code files changed"
+
 ```bash
 # Edit CHANGELOG.md with your changes, then:
 git add CHANGELOG.md
@@ -170,6 +176,7 @@ git add CHANGELOG.md
 ```
 
 ### "Feature code is staged but no docs/feature-prds/F-xxx.md file is staged"
+
 ```bash
 # Create or update a feature PRD, then:
 git add docs/feature-prds/F-0XX.md
@@ -177,16 +184,20 @@ git add docs/feature-prds/F-0XX.md
 ```
 
 ### "Feature commit messages must reference a production decision id"
+
 Your commit message needs `SA-xxx` in it. Use `SA-001` if unsure which decision applies.
 
 ### "refusing to allow an OAuth App to create or update workflow"
+
 The GitHub token needs `workflow` scope:
+
 ```bash
 gh auth refresh -h github.com -s workflow
 # Complete browser authorization
 ```
 
 ### Push rejected / wrong account
+
 ```bash
 gh auth switch --user creativcreature
 gh auth status  # Verify
@@ -194,6 +205,7 @@ git push origin main
 ```
 
 ### Vercel build fails
+
 1. Check Vercel dashboard → Deployments → Latest
 2. Verify env vars are set: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL`
 3. Fix and push again
@@ -210,3 +222,47 @@ Commit (hooks pass)
 ```
 
 No manual deploy step needed. Push to `main` = production deploy.
+
+## Deploy gotchas discovered 2026-07-28 (read before trusting a deploy)
+
+### 1. A backgrounded `npm run deploy` can silently NOT deploy
+
+Run with `nohup`/`&` (no TTY), `wrangler deploy` printed its banner, exited **0**,
+and uploaded nothing. `npm run deploy` looked successful while production stayed
+on the previous version for 16 hours' worth of code.
+
+**Always confirm with the version id, never the exit code:**
+
+```bash
+npx wrangler versions list | tail -6   # newest last; compare Created to `date -u`
+```
+
+A real publish prints `Uploaded euangelion (Ns)`, `Deployed euangelion triggers`,
+and `Current Version ID: <uuid>`. If you do not see all three, it did not deploy.
+Run the publish step in the FOREGROUND.
+
+### 2. Content-only changes need a cache warm
+
+Pages are served with `s-maxage=3600, stale-while-revalidate=31532400`. After a
+content deploy the JSON asset updates immediately but the rendered HTML keeps
+serving stale for up to an hour — and the SWR window is ~1 year, so "it'll fix
+itself" is not a safe assumption on a page nobody requests.
+
+Symptom: `curl https://euangelion.app/devotionals/<slug>.json` shows the NEW text
+while `curl https://euangelion.app/devotional/<slug>` shows the OLD text.
+
+Warm it, then verify the rendered text (not the status code):
+
+```bash
+for i in 1 2 3; do curl -s -o /dev/null https://euangelion.app/devotional/<slug>; sleep 4; done
+curl -s https://euangelion.app/devotional/<slug> | grep -c "<a phrase you just added>"
+```
+
+### 3. Never run a production build while `next dev` is live
+
+`npm run build` replaces the dev server's `.next`, and every route on :3333 then
+500s until the dev server is restarted. The 500s are not a code regression.
+
+### 4. `ENOTEMPTY: rmdir .next/server/app`
+
+Stale build artifacts. `rm -rf .next .open-next` and rebuild.

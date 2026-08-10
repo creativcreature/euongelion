@@ -1,8 +1,30 @@
+import ReactMarkdown from 'react-markdown'
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
 
 export default function RecapModule({ module }: { module: Module }) {
-  if (!module.days || module.days.length === 0) return null
+  // SA-034 (2026-08-10): this component required a `days` array and returned
+  // null for everything else, so a recap written in the CANONICAL flat shape —
+  // `content` as the prose string, like every other prose module — rendered as
+  // a silent empty gap. On a recap day that is the whole reading, and the
+  // DEEP DIVE cta pointed straight at the empty section. Same class of defect
+  // as the Jabez flat-`content` regression and the SabbathModule one beside it.
+  const content = typeof module.content === 'string' ? module.content : ''
+
+  if ((!module.days || module.days.length === 0) && !content) return null
+
+  if (!module.days || module.days.length === 0) {
+    return (
+      <div className="my-16 md:my-24">
+        {module.heading && (
+          <p className="text-label vw-small mb-6 text-gold">{module.heading}</p>
+        )}
+        <div className="vw-body leading-relaxed text-secondary teaching-markdown">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="my-16 md:my-24">

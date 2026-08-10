@@ -325,13 +325,13 @@ __tests__/
 
 ### 5.2 Bundle & Payload
 
-| Metric                                 | Target                       |
-| -------------------------------------- | ---------------------------- |
-| Initial JS bundle                      | < 200KB gzipped              |
-| API response: `/api/daily-bread/state` | < 10KB                       |
-| API response: `/api/soul-audit/submit` | < 5KB                        |
-| Image optimization                     | WebP/AVIF, lazy loading      |
-| Font loading                           | `font-display: swap`, subset |
+| Metric                                  | Target                       |
+| --------------------------------------- | ---------------------------- |
+| Initial JS bundle                       | < 200KB gzipped              |
+| API response: `/api/devotionals/active` | < 10KB                       |
+| API response: `/api/soul-audit/submit`  | < 5KB                        |
+| Image optimization                      | WebP/AVIF, lazy loading      |
+| Font loading                            | `font-display: swap`, subset |
 
 ### 5.3 Query Latency
 

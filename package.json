@@ -41,7 +41,8 @@
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "prepare": "husky",
-    "build:edge-function": "node scripts/build-edge-function.mjs"
+    "build:edge-function": "node scripts/build-edge-function.mjs",
+    "test:e2e:signed-in": "node scripts/e2e-signed-in.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.1.0",

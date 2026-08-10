@@ -737,6 +737,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Our calling to be co-gardeners with God',
   'genesis-two-stories-of-creation-day-5':
     'The mystery of human community and partnership',
+  'he-cannot-deny-himself-day-1':
+    "Hosea's charge against a working, solvent, well-defended nation is not wickedness. It is management. They had altars, a foreign policy, and not much time left — and the prophet tells them the crop they are standing in is the one they planted.",
+  'he-cannot-deny-himself-day-2':
+    'The serpent offers something the man and the woman already had. Genesis says so eighty verses earlier and says it twice. Which changes what the story is about — not a grab at something out of reach, but a decision to hold the likeness without the One who gave it.',
+  'he-cannot-deny-himself-day-3':
+    'Four lines of an old hymn, and the fourth one breaks the pattern the first three set. Three say: this is what follows from what people do. The fourth says something follows from what God is. Underneath the comfort is the reason nobody escapes Him either — and the two turn out to be the same sentence read from opposite ends.',
+  'he-cannot-deny-himself-day-4':
+    'Hosea 6 opens with the most beautiful repentance speech in the prophets. Then God answers it, and the answer is not what anyone expects — because the problem was never that the words were wrong.',
+  'he-cannot-deny-himself-day-5':
+    'Abram cut the animals, arranged them in two facing rows, and drove the vultures off all afternoon. Then the sun went down, a deep sleep fell on him, and something passed down the corridor he had prepared — without him.',
+  'he-cannot-deny-himself-day-6':
+    'Five days, one sentence, read from both ends. No new ground today — only the road walked back, and the study set for anyone who wants to keep going.',
+  'he-cannot-deny-himself-day-7':
+    'Written by someone sitting in the ruins of a destroyed city, with every reason to say the opposite. Two verses, and then nothing else.',
   'hearing-god-in-the-noise-day-1':
     "Learning to recognize Jesus' voice amid competing voices",
   'hearing-god-in-the-noise-day-2':
@@ -808,7 +822,7 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'prayer-of-jabez-day-3':
     'A prayer so bold it doubles its own verb. A bestseller that turned it into a formula. Today we take the prayer back.',
   'prayer-of-jabez-day-4':
-    "Ten million people have prayed Jabez's words hoping the words would work. The words never worked. Someone did.",
+    'Ten million copies sold on the promise that the words would work. The words never worked. Someone did.',
   'prayer-of-jabez-day-5':
     'God is handing you ground you prayed years for. The question that decides everything: is it a trophy, or an assignment?',
   'prayer-of-jabez-day-6':
@@ -1438,6 +1452,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'genesis-two-stories-of-creation-day-3': 'The Breath of Life',
   'genesis-two-stories-of-creation-day-4': 'The Garden and the Gardener',
   'genesis-two-stories-of-creation-day-5': 'Created for Community',
+  'he-cannot-deny-himself-day-1': 'The Fruit of Lies',
+  'he-cannot-deny-himself-day-2': 'The Oldest Theft',
+  'he-cannot-deny-himself-day-3': 'He Cannot Deny Himself',
+  'he-cannot-deny-himself-day-4': 'Like a Morning Cloud',
+  'he-cannot-deny-himself-day-5': 'Between the Pieces',
+  'he-cannot-deny-himself-day-6': 'What Held',
+  'he-cannot-deny-himself-day-7': 'New Every Morning',
   'hearing-god-in-the-noise-day-1': "Recognizing God's Voice",
   'hearing-god-in-the-noise-day-2': 'Filtering Spiritual Noise',
   'hearing-god-in-the-noise-day-3': "God's Whisper vs. Human Chaos",

@@ -139,10 +139,6 @@ export default function AudioPlayer({
   const pause = useCallback(() => adapterRef.current?.pause(), [])
   const stop = useCallback(() => adapterRef.current?.stop(), [])
 
-  const seek = useCallback((index: number) => {
-    adapterRef.current?.seekToSegment(index)
-  }, [])
-
   const nextSegment = useCallback(() => {
     const adapter = adapterRef.current
     if (!adapter) return
@@ -340,33 +336,11 @@ export default function AudioPlayer({
         />
       </div>
 
-      {/* Section scrubber — tap any section to jump there. */}
-      <ol className="audio-player-segments mt-3 flex flex-wrap gap-1.5">
-        {readable.map((seg, i) => {
-          const current = isActive && i === activeIndex
-          return (
-            <li key={seg.id}>
-              <button
-                type="button"
-                className="audio-player-chip vw-small"
-                onClick={() => seek(i)}
-                aria-current={current ? 'true' : undefined}
-                style={{
-                  borderColor: current
-                    ? 'var(--color-gold)'
-                    : 'var(--color-border)',
-                  color: current
-                    ? 'var(--color-gold)'
-                    : 'var(--color-text-muted)',
-                  background: current ? 'var(--color-active)' : 'transparent',
-                }}
-              >
-                {seg.label}
-              </button>
-            </li>
-          )
-        })}
-      </ol>
+      {/* Founder direction 2026-07-28: no section scrubber. Listing every
+          section title above the article read as a table of contents and
+          spoiled the devotional's headings before the first line — the page
+          must open as an editorial, not an index. Section navigation stays
+          available through the ‹‹ / ›› controls and the progress bar. */}
 
       {error && (
         <p
@@ -406,18 +380,6 @@ export default function AudioPlayer({
         }
         .audio-player-toggle {
           min-height: 44px;
-        }
-        .audio-player-chip {
-          min-height: 32px;
-          padding: 0.35rem 0.7rem;
-          border: 1px solid var(--color-border);
-          line-height: 1;
-          cursor: pointer;
-        }
-        .audio-player-segments {
-          list-style: none;
-          padding: 0;
-          margin-top: 0.75rem;
         }
       `}</style>
     </section>

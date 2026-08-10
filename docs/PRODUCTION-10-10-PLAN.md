@@ -12,6 +12,21 @@ Objective: Move every scorecard category to verified **10/10** with evidence, no
 4. Remaining features in PRD registry order with dependency constraints
 5. App Store release gate and submission preparation
 
+## Execution Update (2026-07-27 Daily Bread Stabilization)
+
+Completed in this pass:
+
+1. Enforced one canonical `active_series` read across Daily Bread, resume badges, and returning-user surfaces.
+2. Separated confirmed absence from auth/database failure so a transient outage cannot render an unrelated default devotional.
+3. Removed isolate-cache authority for active, scheduled, and archived series state to preserve cross-device correctness.
+4. Replaced non-executable abandoned Daily Bread API assertions with tests of the shipped endpoint and client store.
+
+Still required for 10/10:
+
+1. Signed-in Workers-preview and physical-device continuity evidence across activation, refresh, navigation, sign-out/sign-in, and a second device.
+2. Replace the older Soul Audit repository's system-wide memory fallback contract with explicit durable read/write results; this is broader than F-083 and needs a staged migration.
+3. Remove or rewrite stale performance/security fixtures that still name the retired three-slot Daily Bread endpoints.
+
 ## PRD Operating System Requirement
 
 1. Every tracked feature is represented in `docs/feature-prds/F-xxx.md`.

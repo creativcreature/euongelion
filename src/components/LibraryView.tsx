@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import Toast from '@/components/Toast'
 import PastoralSwitchModal from '@/components/devotional/PastoralSwitchModal'
 import SignInIntentModal from '@/components/devotional/SignInIntentModal'
+import StateUnavailable from '@/components/StateUnavailable'
 import {
   onAuthRequired,
   useDevotionalLibraryStore,
@@ -27,6 +28,7 @@ export default function LibraryView() {
   const active = useDevotionalLibraryStore((s) => s.active)
   const saved = useDevotionalLibraryStore((s) => s.saved)
   const archived = useDevotionalLibraryStore((s) => s.archived)
+  const lastError = useDevotionalLibraryStore((s) => s.lastError)
   const start = useDevotionalLibraryStore((s) => s.start)
   const unsave = useDevotionalLibraryStore((s) => s.unsave)
   const restartFromArchive = useDevotionalLibraryStore(
@@ -155,6 +157,20 @@ export default function LibraryView() {
 
   return (
     <>
+      {/* A failed read is not an empty library. The store keeps the last
+          confirmed state on a 5xx/network failure and records lastError; without
+          this the reader sees blank shelves and concludes their work was lost. */}
+      {lastError && (
+        <StateUnavailable
+          subject="your library"
+          onRetry={() => {
+            void refresh()
+          }}
+          retrying={busy}
+          className="mb-8"
+        />
+      )}
+
       <section className="library-section" aria-labelledby="library-active">
         <h2 id="library-active" className="text-label vw-small text-gold mb-2">
           ACTIVE

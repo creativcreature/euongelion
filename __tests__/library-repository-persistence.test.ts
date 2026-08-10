@@ -1,6 +1,7 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import {
   LibraryPersistenceError,
+  LibraryReadError,
   getActiveSeries,
   setActiveSeries,
   updateActiveSeriesDay,
@@ -9,6 +10,14 @@ import {
   archiveSeries,
   promoteScheduledSwapIfDue,
 } from '@/lib/library/repository'
+
+const { mockFrom } = vi.hoisted(() => ({
+  mockFrom: vi.fn(),
+}))
+
+vi.mock('@/lib/supabase/admin', () => ({
+  createAdminClient: () => ({ from: mockFrom }),
+}))
 
 /**
  * Regression guard for the Daily Bread root cause (2026-07-27):
@@ -33,6 +42,7 @@ beforeEach(() => {
   ;(globalThis as any).__euangelionLibraryStore__ = undefined
   delete process.env.NEXT_PUBLIC_SUPABASE_URL
   delete process.env.SUPABASE_SERVICE_ROLE_KEY
+  mockFrom.mockReset()
 })
 
 describe('library repository — writes fail loudly when persistence is unavailable', () => {
@@ -87,6 +97,71 @@ describe('library repository — writes fail loudly when persistence is unavaila
     // here). The point: a page render must not 500 because a lazy
     // promotion write failed.
     await expect(promoteScheduledSwapIfDue(USER)).resolves.toBeNull()
+  })
+})
+
+describe('library repository — canonical reads never masquerade as absence', () => {
+  it('throws when Supabase rejects the active-series read', async () => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://example.supabase.co'
+    process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key'
+    mockFrom.mockReturnValue({
+      select: () => ({
+        eq: () => ({
+          maybeSingle: async () => ({
+            data: null,
+            error: { message: 'database unavailable' },
+          }),
+        }),
+      }),
+    })
+
+    await expect(getActiveSeries(USER)).rejects.toEqual(
+      expect.objectContaining({
+        name: 'LibraryReadError',
+        message: expect.stringContaining('database unavailable'),
+      }),
+    )
+    await expect(getActiveSeries(USER)).rejects.toBeInstanceOf(LibraryReadError)
+  })
+
+  it('returns null only when Supabase confirms there is no active row', async () => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://example.supabase.co'
+    process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key'
+    mockFrom.mockReturnValue({
+      select: () => ({
+        eq: () => ({
+          maybeSingle: async () => ({ data: null, error: null }),
+        }),
+      }),
+    })
+
+    await expect(getActiveSeries(USER)).resolves.toBeNull()
+  })
+
+  it('re-reads canonical state instead of serving a stale isolate cache', async () => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://example.supabase.co'
+    process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key'
+    const first = {
+      user_id: USER,
+      series_slug: 'the-harvest',
+      current_day: 2,
+      source: 'manual_start',
+      started_at: '2026-07-27T10:00:00.000Z',
+      last_opened_at: '2026-07-27T10:00:00.000Z',
+    }
+    let canonical: typeof first | null = first
+    mockFrom.mockReturnValue({
+      select: () => ({
+        eq: () => ({
+          maybeSingle: async () => ({ data: canonical, error: null }),
+        }),
+      }),
+    })
+
+    await expect(getActiveSeries(USER)).resolves.toEqual(first)
+    canonical = null
+    await expect(getActiveSeries(USER)).resolves.toBeNull()
+    expect(mockFrom).toHaveBeenCalledTimes(2)
   })
 })
 

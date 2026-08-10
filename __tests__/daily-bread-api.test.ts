@@ -1,329 +1,232 @@
-/**
- * Daily Bread API Tests
- *
- * Tests the API endpoints for the /daily-bread devotional dashboard.
- * Covers: euan-PLAN-v2 APIs 1-6, PLAN-V3 Phase 6
- *
- * Endpoints tested:
- *   GET  /api/daily-bread/state
- *   POST /api/daily-bread/activate
- *   POST /api/daily-bread/replace-slot
- *   POST /api/daily-bread/switch-current
- */
-import { describe, expect, it, beforeEach, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { NextRequest } from 'next/server'
+import { GET, PATCH, PUT } from '@/app/api/devotionals/active/route'
+import { LibraryPersistenceError } from '@/lib/library/repository'
+import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 
-// ---------------------------------------------------------------------------
-// Mock helpers
-// ---------------------------------------------------------------------------
-
-let mockSessionToken: string | null = 'test-session'
-let mockSlots: Array<{
-  id: string
-  seriesSlug: string
-  status: string
-  currentDay: number
-}> = []
-let mockSwitchCount = 0
-
-vi.mock('@/lib/soul-audit/session', () => ({
-  getOrCreateAuditSessionToken: vi.fn(async () => mockSessionToken),
+const repository = vi.hoisted(() => ({
+  archiveSeries: vi.fn(),
+  clearActiveSeries: vi.fn(),
+  clearScheduledSwap: vi.fn(),
+  getActiveSeries: vi.fn(),
+  getScheduledSwap: vi.fn(),
+  promoteScheduledSwapIfDue: vi.fn(),
+  replaceActiveSeries: vi.fn(),
+  setActiveSeries: vi.fn(),
+  setScheduledSwap: vi.fn(),
+  updateActiveSeriesDay: vi.fn(),
 }))
+const mockedGetUser = vi.hoisted(() => vi.fn())
 
-function postJson(url: string, body: Record<string, unknown>) {
-  return new Request(url, {
-    method: 'POST',
+vi.mock('@/lib/auth', () => ({ getUser: mockedGetUser }))
+vi.mock('@/lib/library/repository', async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import('@/lib/library/repository')>()
+  return {
+    ...actual,
+    ...repository,
+  }
+})
+
+const USER_ID = '00000000-0000-0000-0000-00000000abcd'
+const ACTIVE_ROW = {
+  user_id: USER_ID,
+  series_slug: 'the-harvest',
+  current_day: 3,
+  source: 'manual_start' as const,
+  started_at: '2026-07-27T10:00:00.000Z',
+  last_opened_at: '2026-07-27T11:00:00.000Z',
+}
+
+function request(
+  method: 'PUT' | 'PATCH',
+  body: Record<string, unknown>,
+): NextRequest {
+  return new NextRequest('http://localhost/api/devotionals/active', {
+    method,
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(body),
   })
 }
 
-function getRequest(url: string) {
-  return new Request(url, { method: 'GET' })
-}
+beforeEach(() => {
+  vi.clearAllMocks()
+  mockedGetUser.mockResolvedValue({ id: USER_ID })
+  repository.getActiveSeries.mockResolvedValue(null)
+  repository.getScheduledSwap.mockResolvedValue(null)
+  repository.promoteScheduledSwapIfDue.mockResolvedValue(null)
+})
 
-// ---------------------------------------------------------------------------
-// Tests — /api/daily-bread/state
-// ---------------------------------------------------------------------------
+describe('GET /api/devotionals/active', () => {
+  it('returns the canonical active series and persisted day', async () => {
+    repository.promoteScheduledSwapIfDue.mockResolvedValue(ACTIVE_ROW)
 
-describe('GET /api/daily-bread/state', () => {
-  beforeEach(() => {
-    mockSessionToken = 'test-session'
-    mockSlots = []
-    mockSwitchCount = 0
+    const response = await GET()
+    const payload = await response.json()
+
+    expect(response.status).toBe(200)
+    expect(payload.active).toMatchObject({
+      seriesSlug: 'the-harvest',
+      currentDay: 3,
+      source: 'manual_start',
+    })
   })
 
-  it('returns empty state for new user', () => {
-    // When implemented, the handler should return:
-    const expected = {
-      activeSlots: [],
-      currentSlotId: null,
-      switchCount: 0,
-      sabbathDay: 'sunday',
-      tutorialComplete: false,
-      consentBanner: true,
-      authState: 'anonymous',
-    }
-    // Validate shape contract
-    expect(expected.activeSlots).toEqual([])
-    expect(expected.currentSlotId).toBeNull()
-    expect(expected.switchCount).toBe(0)
-  })
+  it('distinguishes a confirmed empty account from a read failure', async () => {
+    const emptyResponse = await GET()
+    expect(emptyResponse.status).toBe(200)
+    await expect(emptyResponse.json()).resolves.toMatchObject({ active: null })
 
-  it('returns active slots with day states', () => {
-    const expected = {
-      activeSlots: [
-        {
-          id: 'slot-1',
-          seriesSlug: 'identity',
-          status: 'current',
-          currentDay: 3,
-          totalDays: 7,
-          days: [
-            { day: 1, status: 'completed', title: 'When everything shakes' },
-            { day: 2, status: 'completed', title: 'The narrative breaks' },
-            { day: 3, status: 'unlocked', title: 'You are whose you are' },
-            {
-              day: 4,
-              status: 'locked',
-              title: 'Living from identity',
-              unlockAt: '2026-02-16T12:00:00Z',
-            },
-            {
-              day: 5,
-              status: 'locked',
-              title: 'What remains',
-              unlockAt: '2026-02-17T12:00:00Z',
-            },
-            {
-              day: 6,
-              status: 'locked',
-              title: 'Recap',
-              unlockAt: '2026-02-18T12:00:00Z',
-            },
-            { day: 7, status: 'sabbath', title: 'Sabbath' },
-          ],
-        },
-      ],
-      currentSlotId: 'slot-1',
-      switchCount: 0,
-    }
-    expect(expected.activeSlots).toHaveLength(1)
-    expect(expected.activeSlots[0].days).toHaveLength(7)
-    expect(expected.activeSlots[0].days[3].status).toBe('locked')
-    expect(expected.activeSlots[0].days[3].unlockAt).toBeDefined()
-  })
-
-  it('returns 401 when no session', () => {
-    mockSessionToken = null
-    // Handler should return 401
-    const expectedStatus = 401
-    expect(expectedStatus).toBe(401)
-  })
-
-  it('includes archive badges for midweek existing users', () => {
-    const expected = {
-      activeSlots: [
-        {
-          id: 'slot-1',
-          seriesSlug: 'identity',
-          status: 'current',
-          days: [
-            { day: 1, status: 'archived', badge: 'ARCHIVED' },
-            { day: 2, status: 'archived', badge: 'ARCHIVED' },
-            { day: 3, status: 'unlocked', badge: null },
-          ],
-        },
-      ],
-    }
-    const archivedDays = expected.activeSlots[0].days.filter(
-      (d) => d.status === 'archived',
+    repository.promoteScheduledSwapIfDue.mockRejectedValue(
+      new Error('database unavailable'),
     )
-    expect(archivedDays).toHaveLength(2)
-    expect(archivedDays.every((d) => d.badge === 'ARCHIVED')).toBe(true)
+    const failedResponse = await GET()
+    expect(failedResponse.status).toBe(500)
+    await expect(failedResponse.json()).resolves.toMatchObject({
+      error: 'Unable to read active devotional.',
+    })
+  })
+
+  it('requires an authenticated account', async () => {
+    mockedGetUser.mockResolvedValue(null)
+    const response = await GET()
+    expect(response.status).toBe(401)
+    await expect(response.json()).resolves.toMatchObject({
+      code: 'AUTH_REQUIRED',
+    })
   })
 })
 
-// ---------------------------------------------------------------------------
-// Tests — /api/daily-bread/activate
-// ---------------------------------------------------------------------------
+describe('PUT /api/devotionals/active', () => {
+  it('persists the selected devotional before reporting success', async () => {
+    repository.replaceActiveSeries.mockResolvedValue(ACTIVE_ROW)
 
-describe('POST /api/daily-bread/activate', () => {
-  beforeEach(() => {
-    mockSessionToken = 'test-session'
-    mockSlots = []
-  })
-
-  it('activates series into empty slot', () => {
-    const request = postJson('http://localhost/api/daily-bread/activate', {
-      seriesSlug: 'identity',
-      source: 'audit',
-    })
-    // Expected response shape
-    const expected = {
-      activated: true,
-      slotId: 'slot-new',
-      status: 'current',
-      route: '/wake-up/series/identity',
-    }
-    expect(expected.activated).toBe(true)
-    expect(expected.status).toBe('current')
-  })
-
-  it('rejects activation when all 3 slots full', () => {
-    mockSlots = [
-      { id: 's1', seriesSlug: 'identity', status: 'current', currentDay: 1 },
-      { id: 's2', seriesSlug: 'peace', status: 'queued', currentDay: 1 },
-      { id: 's3', seriesSlug: 'community', status: 'queued', currentDay: 1 },
-    ]
-    const expectedStatus = 409
-    const expectedBody = { error: 'All slots full', requiresReplace: true }
-    expect(expectedStatus).toBe(409)
-    expect(expectedBody.requiresReplace).toBe(true)
-  })
-
-  it('rejects duplicate series activation', () => {
-    mockSlots = [
-      { id: 's1', seriesSlug: 'identity', status: 'current', currentDay: 1 },
-    ]
-    const expectedStatus = 409
-    const expectedBody = { error: 'Series already active' }
-    expect(expectedStatus).toBe(409)
-    expect(expectedBody.error).toBe('Series already active')
-  })
-
-  it('accepts activation from different sources', () => {
-    const sources = ['audit', 'saved_series', 'browse'] as const
-    for (const source of sources) {
-      const request = postJson('http://localhost/api/daily-bread/activate', {
-        seriesSlug: 'identity',
-        source,
-      })
-      expect(request.method).toBe('POST')
-    }
-  })
-
-  it('validates required fields', () => {
-    const request = postJson('http://localhost/api/daily-bread/activate', {})
-    // Handler should return 400 for missing seriesSlug
-    const expectedStatus = 400
-    expect(expectedStatus).toBe(400)
-  })
-})
-
-// ---------------------------------------------------------------------------
-// Tests — /api/daily-bread/replace-slot
-// ---------------------------------------------------------------------------
-
-describe('POST /api/daily-bread/replace-slot', () => {
-  beforeEach(() => {
-    mockSessionToken = 'test-session'
-    mockSlots = [
-      { id: 's1', seriesSlug: 'identity', status: 'current', currentDay: 3 },
-      { id: 's2', seriesSlug: 'peace', status: 'queued', currentDay: 1 },
-      { id: 's3', seriesSlug: 'community', status: 'queued', currentDay: 2 },
-    ]
-  })
-
-  it('replaces specified slot with new series', () => {
-    const request = postJson('http://localhost/api/daily-bread/replace-slot', {
-      replaceSlotId: 's2',
-      newSeriesSlug: 'kingdom',
-      reason: 'user_choice',
-    })
-    const expected = {
-      replaced: true,
-      archivedSlot: { id: 's2', archiveReason: 'replaced' },
-      newSlot: { seriesSlug: 'kingdom', status: 'queued' },
-    }
-    expect(expected.replaced).toBe(true)
-    expect(expected.archivedSlot.archiveReason).toBe('replaced')
-  })
-
-  it('replacing current slot makes new one current', () => {
-    const expected = {
-      newSlot: { seriesSlug: 'kingdom', status: 'current' },
-    }
-    expect(expected.newSlot.status).toBe('current')
-  })
-
-  it('captures friction metadata (switch count, reason)', () => {
-    const request = postJson('http://localhost/api/daily-bread/replace-slot', {
-      replaceSlotId: 's1',
-      newSeriesSlug: 'kingdom',
-      reason: 'not_resonating',
-      confirmText: 'replace',
-    })
-    // Handler should record reason and increment switch counter
-    const body = JSON.parse(
-      '{"replaceSlotId":"s1","newSeriesSlug":"kingdom","reason":"not_resonating","confirmText":"replace"}',
+    const response = await PUT(
+      request('PUT', {
+        seriesSlug: 'the-harvest',
+        currentDay: 3,
+        mode: 'replace_now',
+      }),
     )
-    expect(body.reason).toBe('not_resonating')
-    expect(body.confirmText).toBe('replace')
-  })
 
-  it('requires 2-step confirmation (confirmText field)', () => {
-    const request = postJson('http://localhost/api/daily-bread/replace-slot', {
-      replaceSlotId: 's1',
-      newSeriesSlug: 'kingdom',
-      // Missing confirmText
+    expect(response.status).toBe(200)
+    expect(repository.replaceActiveSeries).toHaveBeenCalledWith({
+      userId: USER_ID,
+      seriesSlug: 'the-harvest',
+      source: 'manual_start',
+      currentDay: 3,
     })
-    const expectedStatus = 400
-    expect(expectedStatus).toBe(400)
+    await expect(response.json()).resolves.toMatchObject({
+      ok: true,
+      active: { seriesSlug: 'the-harvest', currentDay: 3 },
+    })
+  })
+
+  it('returns an honest 503 when the canonical write does not land', async () => {
+    repository.replaceActiveSeries.mockRejectedValue(
+      new LibraryPersistenceError('active_series', 'database unavailable'),
+    )
+
+    const response = await PUT(request('PUT', { seriesSlug: 'the-harvest' }))
+
+    expect(response.status).toBe(503)
+    await expect(response.json()).resolves.toMatchObject({
+      code: 'PERSISTENCE_FAILED',
+    })
   })
 })
 
-// ---------------------------------------------------------------------------
-// Tests — /api/daily-bread/switch-current
-// ---------------------------------------------------------------------------
+describe('PATCH /api/devotionals/active', () => {
+  it('persists reading progress on the active series', async () => {
+    repository.getActiveSeries.mockResolvedValue(ACTIVE_ROW)
+    repository.updateActiveSeriesDay.mockResolvedValue({
+      ...ACTIVE_ROW,
+      current_day: 4,
+    })
 
-describe('POST /api/daily-bread/switch-current', () => {
-  beforeEach(() => {
-    mockSessionToken = 'test-session'
-    mockSlots = [
-      { id: 's1', seriesSlug: 'identity', status: 'current', currentDay: 3 },
-      { id: 's2', seriesSlug: 'peace', status: 'queued', currentDay: 1 },
-    ]
-  })
+    const response = await PATCH(request('PATCH', { currentDay: 4 }))
 
-  it('switches current to specified queued slot', () => {
-    const expected = {
-      switched: true,
-      newCurrentId: 's2',
-      previousCurrentId: 's1',
-    }
-    expect(expected.switched).toBe(true)
-    expect(expected.newCurrentId).toBe('s2')
-  })
-
-  it('rejects switch to non-existent slot', () => {
-    const expectedStatus = 404
-    expect(expectedStatus).toBe(404)
-  })
-
-  it('rejects switch to archived slot', () => {
-    const expectedStatus = 400
-    expect(expectedStatus).toBe(400)
-  })
-
-  it('switching does not change slot count', () => {
-    const activeCountBefore = mockSlots.filter(
-      (s) => s.status !== 'archived',
-    ).length
-    // After switch, same count
-    expect(activeCountBefore).toBe(2)
+    expect(response.status).toBe(200)
+    expect(repository.updateActiveSeriesDay).toHaveBeenCalledWith(USER_ID, 4)
+    await expect(response.json()).resolves.toMatchObject({
+      active: { seriesSlug: 'the-harvest', currentDay: 4 },
+    })
   })
 })
 
-// ---------------------------------------------------------------------------
-// Tests — Empty state actions
-// ---------------------------------------------------------------------------
+describe('devotional library client state', () => {
+  it('retains the last confirmed active devotional when a refresh fails', async () => {
+    useDevotionalLibraryStore.setState({
+      active: {
+        seriesSlug: 'the-harvest',
+        currentDay: 3,
+        source: 'manual_start',
+        startedAt: '2026-07-27T10:00:00.000Z',
+        lastOpenedAt: '2026-07-27T11:00:00.000Z',
+        seriesTitle: 'The Harvest',
+      },
+      scheduledSwap: null,
+      saved: [],
+      archived: [],
+      lastError: null,
+    })
+    vi.stubGlobal(
+      'fetch',
+      vi
+        .fn()
+        .mockResolvedValueOnce(
+          new Response(
+            JSON.stringify({ error: 'Unable to read active devotional.' }),
+            { status: 500 },
+          ),
+        )
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ ok: true, saved: [] }), {
+            status: 200,
+          }),
+        )
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ ok: true, archived: [] }), {
+            status: 200,
+          }),
+        ),
+    )
 
-describe('Daily Bread empty state', () => {
-  it('provides three actions when no active slots', () => {
-    const emptyActions = ['start_audit', 'start_from_saved', 'browse_available']
-    expect(emptyActions).toHaveLength(3)
-    expect(emptyActions).toContain('start_audit')
-    expect(emptyActions).toContain('start_from_saved')
-    expect(emptyActions).toContain('browse_available')
+    await useDevotionalLibraryStore.getState().refresh()
+
+    expect(useDevotionalLibraryStore.getState().active).toMatchObject({
+      seriesSlug: 'the-harvest',
+      currentDay: 3,
+    })
+    expect(useDevotionalLibraryStore.getState().lastError).toBe(
+      'Unable to read active devotional.',
+    )
+    vi.unstubAllGlobals()
+  })
+
+  it('clears account-scoped state only when the server confirms 401', async () => {
+    useDevotionalLibraryStore.setState({
+      active: {
+        seriesSlug: 'the-harvest',
+        currentDay: 3,
+        source: 'manual_start',
+        startedAt: '2026-07-27T10:00:00.000Z',
+        lastOpenedAt: '2026-07-27T11:00:00.000Z',
+        seriesTitle: 'The Harvest',
+      },
+    })
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(
+        new Response(JSON.stringify({ code: 'AUTH_REQUIRED' }), {
+          status: 401,
+        }),
+      ),
+    )
+
+    await useDevotionalLibraryStore.getState().refresh()
+
+    expect(useDevotionalLibraryStore.getState().active).toBeNull()
+    vi.unstubAllGlobals()
   })
 })

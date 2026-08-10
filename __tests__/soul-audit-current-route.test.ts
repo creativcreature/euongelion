@@ -1,19 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import type { CurrentReading } from '@/lib/reading/current-reading'
 
 let cookieRouteValue: string | undefined
-let latestPlan: {
-  plan_token: string
-  series_slug: string
-  created_at: string
-  theme?: string | null
-} | null = null
-let latestSelection: {
-  option_kind: 'ai_primary' | 'curated_prefab'
-  plan_token: string | null
-  series_slug: string
-  created_at: string
-} | null = null
-let planDaysByToken: Record<string, Array<{ day_number: number }>> = {}
+let reading: CurrentReading = { status: 'empty' }
 
 vi.mock('next/headers', () => ({
   cookies: vi.fn(async () => ({
@@ -28,37 +17,115 @@ vi.mock('@/lib/soul-audit/session', () => ({
   getOrCreateAuditSessionToken: vi.fn(async () => 'session-current-route'),
 }))
 
-vi.mock('@/lib/soul-audit/repository', () => ({
-  getLatestPlanInstanceForSessionWithFallback: vi.fn(async () => latestPlan),
-  getLatestSelectionForSessionWithFallback: vi.fn(async () => latestSelection),
-  getPlanInstanceWithFallback: vi.fn(async (token: string) =>
-    token === latestPlan?.plan_token
-      ? latestPlan
-      : latestSelection?.plan_token === token
-        ? {
-            plan_token: token,
-            series_slug: latestSelection.series_slug,
-            created_at: latestSelection.created_at,
-          }
-        : null,
-  ),
-  getAllPlanDaysWithFallback: vi.fn(
-    async (token: string) => planDaysByToken[token] ?? [],
-  ),
+// The route derives its badge summary from the ONE canonical resolver. Every
+// resolution branch (active_series precedence, account-first plan, empty,
+// unavailable) is exercised in current-reading-resolver.test.ts; here we prove
+// the route maps each resolver state to the correct badge payload / cookie / HTTP
+// behavior.
+vi.mock('@/lib/reading/current-reading', () => ({
+  resolveCurrentReading: vi.fn(async () => reading),
 }))
 
 import { GET as currentRouteHandler } from '@/app/api/soul-audit/current/route'
 
+function planReading(plan: Record<string, unknown>): CurrentReading {
+  return {
+    status: 'active',
+    source: 'soul_audit_plan',
+    // The route only reads plan_token / series_slug / theme / devotional_plan_days.
+    plan: plan as never,
+  }
+}
+
 describe('GET /api/soul-audit/current', () => {
   beforeEach(() => {
     cookieRouteValue = undefined
-    latestPlan = null
-    latestSelection = null
-    planDaysByToken = {}
+    reading = { status: 'empty' }
   })
 
-  it('returns hasCurrent false and clears stale cookie when nothing is active', async () => {
+  it('maps an active_series to a /daily-bread badge with its real title and day', async () => {
+    reading = {
+      status: 'active',
+      source: 'active_series',
+      activeSeries: {
+        user_id: 'user-1',
+        series_slug: 'the-harvest',
+        current_day: 4,
+        source: 'manual_start',
+        started_at: '2026-02-01T00:00:00.000Z',
+        last_opened_at: '2026-02-01T00:00:00.000Z',
+      },
+    }
+
+    const response = await currentRouteHandler()
+    const payload = (await response.json()) as Record<string, unknown>
+
+    expect(payload).toMatchObject({
+      hasCurrent: true,
+      route: '/daily-bread',
+      selectionType: 'active_series',
+      seriesSlug: 'the-harvest',
+      seriesTitle: 'The Harvest',
+      dayNumber: 4,
+    })
+  })
+
+  it('throws when an active_series slug no longer exists in SERIES_DATA', async () => {
+    reading = {
+      status: 'active',
+      source: 'active_series',
+      activeSeries: {
+        user_id: 'user-1',
+        series_slug: 'a-series-that-was-deleted',
+        current_day: 1,
+        source: 'manual_start',
+        started_at: '2026-02-01T00:00:00.000Z',
+        last_opened_at: '2026-02-01T00:00:00.000Z',
+      },
+    }
+
+    await expect(currentRouteHandler()).rejects.toThrow(/SERIES_DATA/)
+  })
+
+  it('maps a soul_audit_plan to an ai_primary /daily-bread badge, title from theme', async () => {
+    reading = planReading({
+      plan_token: 'ai-plan-token',
+      series_slug: 'when-anxiety-steals-your-rest',
+      theme: 'When anxiety steals your rest.',
+      devotional_plan_days: [{ day_number: 0 }, { day_number: 1 }],
+    })
+
+    const response = await currentRouteHandler()
+    const payload = (await response.json()) as Record<string, unknown>
+
+    expect(payload).toMatchObject({
+      hasCurrent: true,
+      route: '/daily-bread',
+      selectionType: 'ai_primary',
+      planToken: 'ai-plan-token',
+      seriesTitle: 'When anxiety steals your rest.',
+      dayNumber: 0,
+    })
+  })
+
+  it('gives an AI plan without a stored theme an explicit fallback title', async () => {
+    reading = planReading({
+      plan_token: 'legacy-plan-token',
+      series_slug: 'some-legacy-ai-slug',
+      theme: null,
+      devotional_plan_days: [{ day_number: 1 }],
+    })
+
+    const response = await currentRouteHandler()
+    const payload = (await response.json()) as { seriesTitle: string }
+
+    // Never a silent empty title.
+    expect(payload.seriesTitle).toBe('Your devotional plan')
+  })
+
+  it('returns hasCurrent:false and clears a stale cookie when reading is empty', async () => {
     cookieRouteValue = '/series/peace'
+    reading = { status: 'empty' }
 
     const response = await currentRouteHandler()
     const payload = (await response.json()) as {
@@ -74,119 +141,9 @@ describe('GET /api/soul-audit/current', () => {
     )
   })
 
-  it('prefers newer curated selection over older AI plan', async () => {
-    latestPlan = {
-      plan_token: 'old-plan-token',
-      series_slug: 'identity',
-      created_at: '2026-02-01T10:00:00.000Z',
-    }
-    planDaysByToken['old-plan-token'] = [{ day_number: 1 }]
-    latestSelection = {
-      option_kind: 'curated_prefab',
-      plan_token: null,
-      series_slug: 'community',
-      created_at: '2026-02-10T10:00:00.000Z',
-    }
+  it('fails the request instead of faking absence when the read is unavailable', async () => {
+    reading = { status: 'unavailable', error: new Error('supabase down') }
 
-    const response = await currentRouteHandler()
-    const payload = (await response.json()) as {
-      hasCurrent: boolean
-      route: string
-      selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
-    }
-
-    expect(payload.hasCurrent).toBe(true)
-    expect(payload.selectionType).toBe('curated_prefab')
-    expect(payload.route).toBe('/devotional/community-day-1')
-  })
-
-  it('returns newest AI plan route when plan is newer than prefab selection', async () => {
-    latestPlan = {
-      plan_token: 'new-plan-token',
-      series_slug: 'truth',
-      created_at: '2026-02-15T10:00:00.000Z',
-    }
-    planDaysByToken['new-plan-token'] = [{ day_number: 0 }, { day_number: 1 }]
-    latestSelection = {
-      option_kind: 'curated_prefab',
-      plan_token: null,
-      series_slug: 'community',
-      created_at: '2026-02-14T10:00:00.000Z',
-    }
-
-    const response = await currentRouteHandler()
-    const payload = (await response.json()) as {
-      hasCurrent: boolean
-      route: string
-      selectionType: 'ai_primary' | 'ai_generative' | 'curated_prefab'
-    }
-
-    expect(payload.hasCurrent).toBe(true)
-    expect(payload.selectionType).toBe('ai_primary')
-    expect(payload.route).toBe('/daily-bread')
-  })
-
-  it('resolves the resume title from the stored theme for AI plans', async () => {
-    // AI plans store a slugified AI direction title in series_slug — it is
-    // NOT a curated series slug, so SERIES_DATA can never resolve it. The
-    // human title lives in the plan instance's theme column.
-    latestPlan = {
-      plan_token: 'ai-plan-token',
-      series_slug: 'when-anxiety-steals-your-rest',
-      created_at: '2026-02-20T10:00:00.000Z',
-      theme: 'When anxiety steals your rest.',
-    }
-    planDaysByToken['ai-plan-token'] = [{ day_number: 0 }, { day_number: 1 }]
-
-    const response = await currentRouteHandler()
-    const payload = (await response.json()) as {
-      hasCurrent: boolean
-      seriesTitle: string
-    }
-
-    expect(payload.hasCurrent).toBe(true)
-    expect(payload.seriesTitle).toBe('When anxiety steals your rest.')
-  })
-
-  it('returns an explicit fallback title when an AI plan has no stored theme', async () => {
-    latestPlan = {
-      plan_token: 'legacy-plan-token',
-      series_slug: 'some-legacy-ai-slug',
-      created_at: '2026-02-20T10:00:00.000Z',
-      theme: null,
-    }
-    planDaysByToken['legacy-plan-token'] = [{ day_number: 1 }]
-
-    const response = await currentRouteHandler()
-    const payload = (await response.json()) as {
-      hasCurrent: boolean
-      seriesTitle: string
-    }
-
-    expect(payload.hasCurrent).toBe(true)
-    // Never a silent empty title — the API resolves an explicit label.
-    expect(payload.seriesTitle).toBe('Your devotional plan')
-  })
-
-  it('returns hasCurrent false when candidates have no resolvable content', async () => {
-    latestPlan = {
-      plan_token: 'empty-plan',
-      series_slug: 'truth',
-      created_at: '2026-02-16T10:00:00.000Z',
-    }
-    latestSelection = {
-      option_kind: 'curated_prefab',
-      plan_token: null,
-      series_slug: 'missing-series',
-      created_at: '2026-02-16T11:00:00.000Z',
-    }
-
-    const response = await currentRouteHandler()
-    const payload = (await response.json()) as {
-      hasCurrent: boolean
-    }
-
-    expect(response.status).toBe(200)
-    expect(payload.hasCurrent).toBe(false)
+    await expect(currentRouteHandler()).rejects.toThrow(/supabase down/)
   })
 })

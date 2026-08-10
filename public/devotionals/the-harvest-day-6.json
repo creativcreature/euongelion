@@ -1,7 +1,6 @@
 {
   "day": 6,
   "chiasm_position": "recap",
-  "format": "two-minute-open",
   "title": "The Field in One View",
   "subtitle": "The discourse gathered around its center — and a trail for going on",
   "teaser": "Five days, one afternoon of teaching, one parable at the center. Today: the whole field at a glance, the patience that holds it, and everything needed to keep studying past the week's edge.",
@@ -46,7 +45,7 @@
     {
       "type": "cta",
       "ctaLabel": "DEEP DIVE",
-      "ctaHref": "#devotional-section-6",
+      "ctaHref": "#devotional-section-7",
       "ctaSubtext": "If you stop here, you have kept the week. Below: the five days in one view, and a study trail — the videos, the free primary texts, the passages — for going further than seven days could."
     },
     {

@@ -436,8 +436,26 @@ function validateDevotional(file) {
   // when the day declares `format: "two-minute-open"`, the page must begin
   // with a self-contained short devotional — scripture, vocab, reflection,
   // prayer — then a `cta` module that jumps into the full deep dive below.
-  if (json.format === 'two-minute-open') {
-    const expected = ['scripture', 'vocab', 'reflection', 'prayer', 'cta']
+  //
+  // SA-034 (founder ruling 2026-08-10) amends the shape FORWARD-ONLY as
+  // `two-minute-open-v2`: a short write-up ABOUT the anchor scripture sits
+  // between the vocab word and the reflection, so the open teaches the passage
+  // instead of jumping straight from a word to a question. Existing
+  // `two-minute-open` days (the-harvest) are untouched and still validate
+  // against the five-module sequence.
+  const TWO_MINUTE_OPEN_SHAPES = {
+    'two-minute-open': ['scripture', 'vocab', 'reflection', 'prayer', 'cta'],
+    'two-minute-open-v2': [
+      'scripture',
+      'vocab',
+      'teaching',
+      'reflection',
+      'prayer',
+      'cta',
+    ],
+  }
+  const expected = TWO_MINUTE_OPEN_SHAPES[json.format]
+  if (expected) {
     const opening = modules.slice(0, expected.length).map((m) => m && m.type)
     expected.forEach((want, i) => {
       if (opening[i] !== want) {
@@ -445,10 +463,26 @@ function validateDevotional(file) {
           file,
           'BLOCKING',
           'two_minute_open_order',
-          `format "two-minute-open" requires modules[${i}] to be "${want}", found "${opening[i] ?? 'nothing'}"`,
+          `format "${json.format}" requires modules[${i}] to be "${want}", found "${opening[i] ?? 'nothing'}"`,
         )
       }
     })
+    // The CTA must land on the first module AFTER the open. Section ids are
+    // 1-indexed over the module array (DevotionalPageClient renders
+    // `devotional-section-${index + 1}`), so the target is expected.length + 1.
+    const cta = modules[expected.length - 1]
+    const wantHref = `#devotional-section-${expected.length + 1}`
+    if (cta && cta.type === 'cta') {
+      const href = (cta.ctaHref ?? cta.data?.ctaHref ?? '').toString()
+      if (href !== wantHref) {
+        record(
+          file,
+          'BLOCKING',
+          'two_minute_open_cta_href',
+          `format "${json.format}" requires the DEEP DIVE cta to link to "${wantHref}" (the first module after the open), found "${href || 'nothing'}"`,
+        )
+      }
+    }
   }
 
   // Validate modules

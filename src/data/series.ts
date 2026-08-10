@@ -1088,6 +1088,76 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       },
     ],
   },
+
+  'he-cannot-deny-himself': {
+    title: 'He Cannot Deny Himself',
+    heroImage: '/images/site/series/he-cannot-deny-himself.webp',
+    question: 'What if God’s steadfastness never depended on yours?',
+    introduction:
+      'Hosea told a nation it had eaten the fruit of lies because it trusted its own way — and the charge was not wickedness so much as management. Seven days on the God who will not go back on Himself: the road a person wears by walking it, the reach in the garden that keeps repeating, and a covenant cut open from one side while the other side slept.',
+    context:
+      'For anyone running their life well enough not to need God, and for anyone who has broken the same promise to Him so many times they have quietly concluded He must be finished with them. Both get the same answer. God’s faithfulness rests on His own nature, not on ours — which is why He will neither call the damage nothing nor walk away from the people who did it.',
+    framework:
+      '2 Timothy 2:13 - If we are faithless, He remains faithful, for He cannot deny Himself',
+    pathway: 'Awake',
+    keywords: [
+      'self-reliance',
+      'control',
+      'my own way',
+      'doing it alone',
+      'distant from God',
+      'dry',
+      'guilt',
+      'shame',
+      'broken promises',
+      'failed again',
+      'keep relapsing',
+      'unfaithful',
+      'covenant',
+      'God’s faithfulness',
+      'accountability',
+      'repentance',
+      'hard heart',
+      'pride',
+      'why keep trying',
+      'God gave up on me',
+      'backsliding',
+      'steadfast',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'The Fruit of Lies',
+        slug: 'he-cannot-deny-himself-day-1',
+      },
+      {
+        day: 2,
+        title: 'The Oldest Theft',
+        slug: 'he-cannot-deny-himself-day-2',
+      },
+      {
+        day: 3,
+        title: 'He Cannot Deny Himself',
+        slug: 'he-cannot-deny-himself-day-3',
+      },
+      {
+        day: 4,
+        title: 'Like a Morning Cloud',
+        slug: 'he-cannot-deny-himself-day-4',
+      },
+      {
+        day: 5,
+        title: 'Between the Pieces',
+        slug: 'he-cannot-deny-himself-day-5',
+      },
+      { day: 6, title: 'What Held', slug: 'he-cannot-deny-himself-day-6' },
+      {
+        day: 7,
+        title: 'New Every Morning',
+        slug: 'he-cannot-deny-himself-day-7',
+      },
+    ],
+  },
 }
 
 // ============================================
@@ -1138,6 +1208,7 @@ export const NEW_SERIES_ORDER = [
   'what-is-christianity',
   'prayer-of-jabez',
   'the-harvest',
+  'he-cannot-deny-himself',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1189,3 +1260,8 @@ export const FEATURED_SERIES = [
   'why-jesus',
   'hope',
 ] as const
+// SA-034 (2026-08-10): `he-cannot-deny-himself` is the most recent series and
+// therefore holds the homepage MAIN feature slot via HOMEPAGE_TODAY in
+// src/app/page.tsx — the six cards above complete the seven the featured-area
+// policy calls for (SA-031(1)). Do not add it here as well or the homepage
+// shows it twice.
