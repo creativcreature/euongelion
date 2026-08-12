@@ -11,3 +11,11 @@
 /audio/*
   Cache-Control: public,max-age=31536000,immutable
   Accept-Ranges: bytes
+
+# The manifest is NOT immutable — it is rewritten by every render. It is
+# imported at build time today, so a stale copy is currently harmless, but
+# serving a year-cached index of tracks is a trap for any future runtime fetch
+# (site-wide narration Phase 1 would do exactly that). Listed after /audio/*
+# so this Cache-Control wins for this one path.
+/audio/manifest.json
+  Cache-Control: public,max-age=300,must-revalidate
