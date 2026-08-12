@@ -13,6 +13,8 @@ import {
   type TtsSegment,
   type TtsStatus,
 } from '@/lib/audio/tts-adapter'
+import { getNarrationTrack } from '@/lib/audio/tracks'
+import NarrationPlayer from '@/components/NarrationPlayer'
 
 const NOOP_SUBSCRIBE = () => () => {}
 
@@ -50,6 +52,12 @@ export interface AudioPlayerProps {
   segments: TtsSegment[]
   /** Square artwork for the OS media notification (library/PWA icon). */
   artworkSrc?: string
+  /**
+   * Devotional slug. When a pre-rendered narration track exists for it, that
+   * is played instead of synthesising speech — a real media element, so it
+   * survives a backgrounded tab and drives the lock screen.
+   */
+  slug?: string
   className?: string
 }
 
@@ -64,7 +72,31 @@ export interface AudioPlayerProps {
  *   state — never a fake/silent player.
  * - Respects prefers-reduced-motion: the progress fill stops animating.
  */
-export default function AudioPlayer({
+/**
+ * Chooses the reader for this devotional.
+ *
+ * A pre-rendered narration track wins whenever one exists: it is a real media
+ * element, so playback continues in a backgrounded tab and the OS shows
+ * transport controls. Everything else falls back to synthesised speech, which
+ * keeps every devotional listenable while the catalog is still being rendered.
+ */
+export default function AudioPlayer(props: AudioPlayerProps) {
+  const track = getNarrationTrack(props.slug)
+  if (track && props.slug) {
+    return (
+      <NarrationPlayer
+        slug={props.slug}
+        title={props.title}
+        track={track}
+        artworkSrc={props.artworkSrc}
+        className={props.className}
+      />
+    )
+  }
+  return <SpeechSynthesisPlayer {...props} />
+}
+
+function SpeechSynthesisPlayer({
   title,
   segments,
   artworkSrc,

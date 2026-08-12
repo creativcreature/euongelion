@@ -1,0 +1,28 @@
+{
+  "_README": [
+    "Spoken overrides for terms the narrator gets wrong.",
+    "",
+    "Key = the term as it appears in the devotional (case-insensitive, matched",
+    "on whole words). Value = what to SEND to the engine instead. The devotional",
+    "text is never altered; this only changes what the voice is handed.",
+    "",
+    "WHY THIS IS HAND-MAINTAINED: pronunciation of Greek/Hebrew transliterations",
+    "cannot be verified automatically. The QA loop checks accuracy by",
+    "transcribing the render with Whisper and diffing it against the source, but",
+    "Whisper was not trained on these transliterations and mangles them whatever",
+    "the voice does ('eleos' comes back as 'ilios', 'diathekei' as 'diathek').",
+    "The gauge is broken for this one case, so these words are the only part of",
+    "the narration that needs a human ear.",
+    "",
+    "MEASURED, so you do not have to rediscover it: the `pronunciation` field",
+    "already in the devotionals ('KHEH-sed', 'as-FAH-lay-ah') is NOT a drop-in",
+    "here. The engine reads the hyphens as breaks and it comes out worse:",
+    "'KHEH-sed' -> 'k-sad', 'as-FAH-lay-ah' -> 'as a phleia'. Space-separated",
+    "syllables ('ar nay sas thai') work better than hyphens when an override is",
+    "needed at all.",
+    "",
+    "To add one: render the day, listen to the word study, and if it is wrong put",
+    "a spaced-syllable spelling here. Re-render that day only."
+  ],
+  "overrides": {}
+}

@@ -788,6 +788,7 @@ export default function DevotionalPageClient({
                       title={devotional.title}
                       segments={audioSegments}
                       artworkSrc="/icons/icon-512.png"
+                      slug={slug}
                       className="devotional-shell-panel mb-6"
                     />
                   )}

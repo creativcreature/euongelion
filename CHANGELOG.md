@@ -5,6 +5,81 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PLATFORM — Pre-rendered narration: the Audio Edition now reads everything, in one voice (2026-08-11)
+
+Founder brief: _"I need a better way to listen to my devotional. The method you
+have chosen is robotic and doesn't work… I want to listen to my devotionals as I
+work and currently it just doesn't work."_ Two independent defects, and only one
+was about the voice.
+
+**It was skipping about a third of every devotional.** Measured across 521
+devotionals, `moduleText()` in `src/lib/audio/segments.ts` spoke a median
+**70.7%** of each entry's distinct prose. It read a fixed field list; the corpus
+stores prose in fields that list never named. Roughly **252,000 words**
+catalog-wide were never read aloud — every `profile` module ("The Voice Behind
+Today", 69k words), `insight.historicalContext` (66k), `vocab.usageNote` and
+`rootMeaning` (50k), `bridge.newTestamentEcho` (36k),
+`story.connectionToTheme` (18k), and the `comprehension` question, whose answer
+was read without it. Word studies came out as orphaned definitions — "safety,
+security, certainty…" with no indication the word was _asphaleia_.
+
+The reading contract is now complete-by-default: an ordered field list per module
+type **plus a catch-all sweep**, so a field present in only a handful of modules
+can never go silent again (that sweep is what recovered `sabbath.content`, 295
+words). Mirrored fields are deduped rather than read twice — `teaching.content`
+and `teaching.body` are byte-identical in 1,410 of the 1,422 modules carrying
+both. Also: vocab headwords restored, Hebrew/Greek glyphs stripped with the
+transliteration kept, scripture references spoken as English ("1 Thessalonians
+5:2-3" → "First Thessalonians, chapter five, verses two to three", including
+compound forms), Roman numerals expanded after a cue word only so the pronoun
+"I" is untouched, and navigation modules no longer read aloud.
+**648,094 → 888,899 words spoken, +37.2%, median 1.37×, zero devotionals
+regressed.**
+
+**It could never have played in the background.** `speechSynthesis` is not a
+media element, so Media Session had nothing to attach to — no lock screen, no
+headphone controls, and iOS stops it when the screen sleeps. Narration is now
+pre-rendered to AAC and played through a real `<audio>` element
+(`NarrationPlayer`): scrub, ±15s, 0.8–1.5× speed, resume-where-you-stopped, and
+working OS transport. Devotionals without a track still fall back to the Web
+Speech reader, so nothing regresses mid-catalog.
+
+**The voice is a preset narrator, not a founder clone.** The clone path was
+abandoned on measurement: it could not reach narration pace by any lever — seeds
+moved rate ±0.4 w/s, `instruct` is a confirmed no-op on the MLX path, and
+register-specific reference profiles changed pacing not at all — so every take
+needed an audible ~1.35× time-stretch. Two constants in the prototype spec were
+also wrong: the founder's "natural rate" of 2.82 w/s measures **3.57**, and take
+A3's reported 2.87 w/s measures **3.48**, because v1 computed rate from API
+metadata instead of the audio it wrote. Canonical voice is Kokoro-82M
+`am_michael` at ~162 wpm, inside the 150–170 audiobook band with no stretching,
+rendering whole segments so prosody arcs across a paragraph.
+
+**One voice, enforced.** A catalog narrated by two voices is obvious to a
+listener and invisible to text-accuracy checks — during the bake-off three
+candidate voices existed side by side. `verify_voice_lock.py` now fails on any
+track that is not the canonical voice.
+
+Shipped: `he-cannot-deny-himself` days 1-7 (127 min, 44.7 MB, one voice
+verified, mean clarity 0.982-1.000). Catalog render in progress.
+
+**Known limit, stated rather than papered over:** Greek/Hebrew word-study
+pronunciation cannot be verified automatically — Whisper was not trained on
+these transliterations and mangles them whatever the voice does, so that gate is
+invalid for exactly those terms and they need a founder ear-check. The
+`pronunciation` field already in the content is NOT a drop-in fix; the engine
+reads its hyphens as breaks (`KHEH-sed` → "k-sad") while raw `chesed` is already
+correct. Overrides live in `spec/pronunciation-overrides.json` and change only
+what is sent to the engine, never the devotional text.
+
+**SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
+`euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
+
+Verified: `npm run type-check` clean; full suite **140 files / 1824 tests**
+passing (19 new).
+
+---
+
 ## CONTENT — "He Cannot Deny Himself" 7-day series + Two-Minute Open v2 (2026-08-10)
 
 New prefab series on the steadfastness of God set against human self-rule, built

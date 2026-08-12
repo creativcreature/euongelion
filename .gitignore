@@ -123,3 +123,17 @@ social-plan/
 
 # Fresh-start user-data archives (PII — never commit)
 backups/
+
+# Narration audio (F-086 / SA-035)
+# Curated-series tracks ARE committed: 521 files at <=8.6 MB each sit inside the
+# Workers static-asset limits (20,000 files, 25 MiB per file). The bible-365
+# bulk is 365 files / ~1.4 GB and does NOT belong in git — it waits for R2,
+# which is not yet enabled on the account.
+public/audio/bible-365-*.m4a
+
+# Render intermediates. The WAV masters are large and fully regenerable from
+# spec/render_kokoro.py; the shipped artifact is the encoded .m4a.
+euangelion-voice-prototype/*.wav
+euangelion-voice-prototype/renders/
+euangelion-voice-prototype/clips*/
+euangelion-voice-prototype/archive-abandoned-clone-path/

@@ -1,0 +1,78 @@
+{
+  "version": "0.1.1-prototype",
+  "calibration": {
+    "source": "4CH012I.wav interview close-mic, 2026-07-22",
+    "natural_rate_ws": 2.82,
+    "pause_median_s": 0.4,
+    "pause_p75_s": 0.55,
+    "pause_max_s": 0.7
+  },
+  "engine": {
+    "name": "qwen",
+    "model_size": "1.7B",
+    "primary_seed": 7,
+    "hunt_seeds": [11, 23, 42],
+    "max_chunk_words": 40,
+    "retry_on_failure": 2,
+    "pack_paragraphs": true
+  },
+  "module_targets_ws": {
+    "title": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "scripture": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "teaching": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "insight": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "story": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "reflection": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "prayer": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "takeaway": {
+      "target": 2.82,
+      "tolerance": 0.33
+    },
+    "default": {
+      "target": 2.82,
+      "tolerance": 0.33
+    }
+  },
+  "pause_grammar_s": {
+    "sentence_same_module": 0.4,
+    "module_boundary": 0.55,
+    "scripture_boundary": 0.7,
+    "before_prayer": 0.7,
+    "after_question": 0.7,
+    "trailing_pad": 1.0
+  },
+  "text_shaping": {
+    "min_chunk_words": 8,
+    "scripture_split_extra": [";"],
+    "flag_if_above_target_by_ws": 0.3
+  },
+  "pronunciation_map": {
+    "Jabez": "Jabez"
+  },
+  "qa": {
+    "overall_rate_tolerance_pct": 5,
+    "require_listen_through": true,
+    "clarity_threshold": 0.88
+  }
+}

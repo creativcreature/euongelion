@@ -1,0 +1,98 @@
+{
+ "abiding-in-his-presence-day-1": {
+  "src": "/audio/abiding-in-his-presence-day-1.m4a",
+  "duration": 393.2,
+  "words": 882,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2412038
+ },
+ "abiding-in-his-presence-day-2": {
+  "src": "/audio/abiding-in-his-presence-day-2.m4a",
+  "duration": 380.9,
+  "words": 880,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2334714
+ },
+ "abiding-in-his-presence-day-3": {
+  "src": "/audio/abiding-in-his-presence-day-3.m4a",
+  "duration": 410.4,
+  "words": 923,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2516397
+ },
+ "abiding-in-his-presence-day-4": {
+  "src": "/audio/abiding-in-his-presence-day-4.m4a",
+  "duration": 429.2,
+  "words": 946,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2637288
+ },
+ "abiding-in-his-presence-day-5": {
+  "src": "/audio/abiding-in-his-presence-day-5.m4a",
+  "duration": 431.9,
+  "words": 1016,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2652327
+ },
+ "he-cannot-deny-himself-day-1": {
+  "src": "/audio/he-cannot-deny-himself-day-1.m4a",
+  "duration": 1299.9,
+  "words": 3501,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 8001959
+ },
+ "he-cannot-deny-himself-day-2": {
+  "src": "/audio/he-cannot-deny-himself-day-2.m4a",
+  "duration": 1342.8,
+  "words": 3638,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 8274108
+ },
+ "he-cannot-deny-himself-day-3": {
+  "src": "/audio/he-cannot-deny-himself-day-3.m4a",
+  "duration": 1423.1,
+  "words": 3819,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 8763235
+ },
+ "he-cannot-deny-himself-day-4": {
+  "src": "/audio/he-cannot-deny-himself-day-4.m4a",
+  "duration": 1463.2,
+  "words": 3893,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 9013907
+ },
+ "he-cannot-deny-himself-day-5": {
+  "src": "/audio/he-cannot-deny-himself-day-5.m4a",
+  "duration": 1426.6,
+  "words": 3839,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 8785887
+ },
+ "he-cannot-deny-himself-day-6": {
+  "src": "/audio/he-cannot-deny-himself-day-6.m4a",
+  "duration": 506.7,
+  "words": 1359,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 3121820
+ },
+ "he-cannot-deny-himself-day-7": {
+  "src": "/audio/he-cannot-deny-himself-day-7.m4a",
+  "duration": 143.3,
+  "words": 388,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 878751
+ }
+}
