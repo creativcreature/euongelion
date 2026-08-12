@@ -463,6 +463,30 @@
     "engine": "kokoro",
     "bytes": 4675008
   },
+  "bible-365-day-142": {
+    "src": "/audio/bible-365-day-142.m4a",
+    "duration": 610.5,
+    "words": 1692,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3754995
+  },
+  "bible-365-day-143": {
+    "src": "/audio/bible-365-day-143.m4a",
+    "duration": 660.0,
+    "words": 1846,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4062677
+  },
+  "bible-365-day-144": {
+    "src": "/audio/bible-365-day-144.m4a",
+    "duration": 695.7,
+    "words": 1934,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4283264
+  },
   "bible-365-day-15": {
     "src": "/audio/bible-365-day-15.m4a",
     "duration": 608.7,

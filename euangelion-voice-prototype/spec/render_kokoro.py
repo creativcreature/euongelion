@@ -30,7 +30,7 @@ Usage:
                            [--limit N] [--publish]
 
 `--publish` encodes the result to AAC with macOS `afconvert` (no ffmpeg needed)
-and registers it in `public/audio/manifest.json`, which is what the in-app
+and registers it in `src/data/audio-manifest.json`, which is what the in-app
 player reads. 21.7 min of speech comes out at ~8 MB, well under the 25 MiB
 Cloudflare Workers per-asset limit.
 """

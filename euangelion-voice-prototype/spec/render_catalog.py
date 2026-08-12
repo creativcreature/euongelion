@@ -5,7 +5,7 @@ Order: curated series first (149 devotionals, ~4.5 h), then bible-365 (365
 devotionals, ~11 h). The curated series are what a reader actually lands on,
 so they should have audio before the daily-reading bulk.
 
-Resumable by design — anything already in public/audio/manifest.json is
+Resumable by design — anything already in src/data/audio-manifest.json is
 skipped, so this can be stopped and restarted freely. One devotional per
 subprocess so a single failure cannot take down the run.
 
@@ -22,7 +22,11 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 DEVOTIONALS = os.path.join(REPO, "public", "devotionals")
-MANIFEST = os.path.join(REPO, "public", "audio", "manifest.json")
+# The manifest is a build input under src/, NOT a served asset — it must not
+# sit in public/ where the /audio/* immutable cache rule would pin a stale
+# copy for a year. Resume logic reads it, so pointing at the wrong path would
+# silently re-render the entire catalog.
+MANIFEST = os.path.join(REPO, "src", "data", "audio-manifest.json")
 RENDERS = os.path.join(REPO, "euangelion-voice-prototype", "renders")
 BULK_PREFIX = "bible-365"
 
