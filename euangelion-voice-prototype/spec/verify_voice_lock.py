@@ -19,7 +19,7 @@ from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MANIFEST = os.path.abspath(
-    os.path.join(HERE, "..", "..", "public", "audio", "manifest.json"))
+    os.path.join(HERE, "..", "..", "src", "data", "audio-manifest.json"))
 CANONICAL_VOICE = "am_michael"
 
 
@@ -53,7 +53,7 @@ def main():
             + ", ".join(wrong[:6]))
     missing = [k for k, v in manifest.items()
                if not os.path.exists(os.path.join(
-                   os.path.dirname(MANIFEST), os.path.basename(v.get("src", ""))))]
+                   os.path.dirname(MANIFEST), "..", "..", "public", "audio", os.path.basename(v.get("src", "").split("?")[0])))]
     if missing:
         problems.append(f"{len(missing)} manifest entries have no audio file: "
                         + ", ".join(missing[:6]))

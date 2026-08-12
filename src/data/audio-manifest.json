@@ -1,0 +1,2370 @@
+{
+  "abiding-in-his-presence-day-1": {
+    "src": "/audio/abiding-in-his-presence-day-1.m4a",
+    "duration": 393.2,
+    "words": 882,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2412038
+  },
+  "abiding-in-his-presence-day-2": {
+    "src": "/audio/abiding-in-his-presence-day-2.m4a",
+    "duration": 380.9,
+    "words": 880,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2334714
+  },
+  "abiding-in-his-presence-day-3": {
+    "src": "/audio/abiding-in-his-presence-day-3.m4a",
+    "duration": 410.4,
+    "words": 923,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2516397
+  },
+  "abiding-in-his-presence-day-4": {
+    "src": "/audio/abiding-in-his-presence-day-4.m4a",
+    "duration": 429.2,
+    "words": 946,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2637288
+  },
+  "abiding-in-his-presence-day-5": {
+    "src": "/audio/abiding-in-his-presence-day-5.m4a",
+    "duration": 431.9,
+    "words": 1016,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2652327
+  },
+  "abiding-in-his-presence-day-6": {
+    "src": "/audio/abiding-in-his-presence-day-6.m4a",
+    "duration": 444.6,
+    "words": 943,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2730151
+  },
+  "anointed-day-1": {
+    "src": "/audio/anointed-day-1.m4a",
+    "duration": 396.2,
+    "words": 984,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2431200
+  },
+  "anointed-day-2": {
+    "src": "/audio/anointed-day-2.m4a",
+    "duration": 402.4,
+    "words": 964,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2466980
+  },
+  "anointed-day-3": {
+    "src": "/audio/anointed-day-3.m4a",
+    "duration": 436.7,
+    "words": 1085,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2680989
+  },
+  "anointed-day-4": {
+    "src": "/audio/anointed-day-4.m4a",
+    "duration": 444.6,
+    "words": 1103,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2728406
+  },
+  "anointed-day-5": {
+    "src": "/audio/anointed-day-5.m4a",
+    "duration": 429.6,
+    "words": 1136,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2637416
+  },
+  "bible-365-day-1": {
+    "src": "/audio/bible-365-day-1.m4a",
+    "duration": 649.2,
+    "words": 1834,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4000587
+  },
+  "bible-365-day-10": {
+    "src": "/audio/bible-365-day-10.m4a",
+    "duration": 691.1,
+    "words": 1930,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4252715
+  },
+  "bible-365-day-100": {
+    "src": "/audio/bible-365-day-100.m4a",
+    "duration": 669.3,
+    "words": 1822,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4114794
+  },
+  "bible-365-day-101": {
+    "src": "/audio/bible-365-day-101.m4a",
+    "duration": 697.9,
+    "words": 1931,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4296126
+  },
+  "bible-365-day-102": {
+    "src": "/audio/bible-365-day-102.m4a",
+    "duration": 667.9,
+    "words": 1818,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4109033
+  },
+  "bible-365-day-103": {
+    "src": "/audio/bible-365-day-103.m4a",
+    "duration": 746.7,
+    "words": 2009,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4596198
+  },
+  "bible-365-day-104": {
+    "src": "/audio/bible-365-day-104.m4a",
+    "duration": 747.8,
+    "words": 2075,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4603358
+  },
+  "bible-365-day-105": {
+    "src": "/audio/bible-365-day-105.m4a",
+    "duration": 710.6,
+    "words": 2002,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4379717
+  },
+  "bible-365-day-106": {
+    "src": "/audio/bible-365-day-106.m4a",
+    "duration": 681.8,
+    "words": 1882,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4200833
+  },
+  "bible-365-day-107": {
+    "src": "/audio/bible-365-day-107.m4a",
+    "duration": 700.4,
+    "words": 1923,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4313220
+  },
+  "bible-365-day-108": {
+    "src": "/audio/bible-365-day-108.m4a",
+    "duration": 703.4,
+    "words": 1911,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4330186
+  },
+  "bible-365-day-109": {
+    "src": "/audio/bible-365-day-109.m4a",
+    "duration": 679.2,
+    "words": 1850,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4180741
+  },
+  "bible-365-day-11": {
+    "src": "/audio/bible-365-day-11.m4a",
+    "duration": 701.5,
+    "words": 1963,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4313225
+  },
+  "bible-365-day-110": {
+    "src": "/audio/bible-365-day-110.m4a",
+    "duration": 705.1,
+    "words": 1960,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4339751
+  },
+  "bible-365-day-111": {
+    "src": "/audio/bible-365-day-111.m4a",
+    "duration": 729.0,
+    "words": 1978,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4491163
+  },
+  "bible-365-day-112": {
+    "src": "/audio/bible-365-day-112.m4a",
+    "duration": 645.2,
+    "words": 1815,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3968527
+  },
+  "bible-365-day-113": {
+    "src": "/audio/bible-365-day-113.m4a",
+    "duration": 690.8,
+    "words": 1906,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4251564
+  },
+  "bible-365-day-114": {
+    "src": "/audio/bible-365-day-114.m4a",
+    "duration": 748.9,
+    "words": 1964,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4611341
+  },
+  "bible-365-day-115": {
+    "src": "/audio/bible-365-day-115.m4a",
+    "duration": 723.6,
+    "words": 2005,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4459471
+  },
+  "bible-365-day-116": {
+    "src": "/audio/bible-365-day-116.m4a",
+    "duration": 721.5,
+    "words": 2068,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4444061
+  },
+  "bible-365-day-117": {
+    "src": "/audio/bible-365-day-117.m4a",
+    "duration": 673.5,
+    "words": 1876,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4145202
+  },
+  "bible-365-day-118": {
+    "src": "/audio/bible-365-day-118.m4a",
+    "duration": 681.6,
+    "words": 1916,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4200985
+  },
+  "bible-365-day-119": {
+    "src": "/audio/bible-365-day-119.m4a",
+    "duration": 679.8,
+    "words": 1895,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4186250
+  },
+  "bible-365-day-12": {
+    "src": "/audio/bible-365-day-12.m4a",
+    "duration": 802.6,
+    "words": 2234,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4946613
+  },
+  "bible-365-day-120": {
+    "src": "/audio/bible-365-day-120.m4a",
+    "duration": 675.9,
+    "words": 1874,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4163252
+  },
+  "bible-365-day-121": {
+    "src": "/audio/bible-365-day-121.m4a",
+    "duration": 661.5,
+    "words": 1834,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4070730
+  },
+  "bible-365-day-122": {
+    "src": "/audio/bible-365-day-122.m4a",
+    "duration": 702.0,
+    "words": 1981,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4321860
+  },
+  "bible-365-day-123": {
+    "src": "/audio/bible-365-day-123.m4a",
+    "duration": 658.6,
+    "words": 1825,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4055656
+  },
+  "bible-365-day-124": {
+    "src": "/audio/bible-365-day-124.m4a",
+    "duration": 665.0,
+    "words": 1788,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4095318
+  },
+  "bible-365-day-125": {
+    "src": "/audio/bible-365-day-125.m4a",
+    "duration": 657.3,
+    "words": 1792,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4047082
+  },
+  "bible-365-day-126": {
+    "src": "/audio/bible-365-day-126.m4a",
+    "duration": 630.4,
+    "words": 1737,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3883087
+  },
+  "bible-365-day-127": {
+    "src": "/audio/bible-365-day-127.m4a",
+    "duration": 611.4,
+    "words": 1603,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3762283
+  },
+  "bible-365-day-128": {
+    "src": "/audio/bible-365-day-128.m4a",
+    "duration": 687.7,
+    "words": 1830,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4234216
+  },
+  "bible-365-day-129": {
+    "src": "/audio/bible-365-day-129.m4a",
+    "duration": 665.6,
+    "words": 1778,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4096517
+  },
+  "bible-365-day-13": {
+    "src": "/audio/bible-365-day-13.m4a",
+    "duration": 618.4,
+    "words": 1739,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3804106
+  },
+  "bible-365-day-130": {
+    "src": "/audio/bible-365-day-130.m4a",
+    "duration": 619.0,
+    "words": 1619,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3807018
+  },
+  "bible-365-day-131": {
+    "src": "/audio/bible-365-day-131.m4a",
+    "duration": 636.5,
+    "words": 1719,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3918581
+  },
+  "bible-365-day-132": {
+    "src": "/audio/bible-365-day-132.m4a",
+    "duration": 768.5,
+    "words": 2081,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4736199
+  },
+  "bible-365-day-133": {
+    "src": "/audio/bible-365-day-133.m4a",
+    "duration": 653.1,
+    "words": 1752,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4016863
+  },
+  "bible-365-day-134": {
+    "src": "/audio/bible-365-day-134.m4a",
+    "duration": 700.8,
+    "words": 1936,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4312689
+  },
+  "bible-365-day-135": {
+    "src": "/audio/bible-365-day-135.m4a",
+    "duration": 703.9,
+    "words": 1925,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4330524
+  },
+  "bible-365-day-136": {
+    "src": "/audio/bible-365-day-136.m4a",
+    "duration": 866.1,
+    "words": 2376,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5338780
+  },
+  "bible-365-day-137": {
+    "src": "/audio/bible-365-day-137.m4a",
+    "duration": 758.6,
+    "words": 2041,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4675675
+  },
+  "bible-365-day-138": {
+    "src": "/audio/bible-365-day-138.m4a",
+    "duration": 751.2,
+    "words": 2064,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4630333
+  },
+  "bible-365-day-139": {
+    "src": "/audio/bible-365-day-139.m4a",
+    "duration": 707.6,
+    "words": 1909,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4356469
+  },
+  "bible-365-day-14": {
+    "src": "/audio/bible-365-day-14.m4a",
+    "duration": 677.6,
+    "words": 1964,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4173710
+  },
+  "bible-365-day-140": {
+    "src": "/audio/bible-365-day-140.m4a",
+    "duration": 758.7,
+    "words": 2117,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4675008
+  },
+  "bible-365-day-15": {
+    "src": "/audio/bible-365-day-15.m4a",
+    "duration": 608.7,
+    "words": 1651,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3745226
+  },
+  "bible-365-day-16": {
+    "src": "/audio/bible-365-day-16.m4a",
+    "duration": 686.2,
+    "words": 1863,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4224078
+  },
+  "bible-365-day-17": {
+    "src": "/audio/bible-365-day-17.m4a",
+    "duration": 778.6,
+    "words": 2229,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4792902
+  },
+  "bible-365-day-18": {
+    "src": "/audio/bible-365-day-18.m4a",
+    "duration": 786.4,
+    "words": 2200,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4840382
+  },
+  "bible-365-day-19": {
+    "src": "/audio/bible-365-day-19.m4a",
+    "duration": 720.9,
+    "words": 2064,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4441326
+  },
+  "bible-365-day-2": {
+    "src": "/audio/bible-365-day-2.m4a",
+    "duration": 670.7,
+    "words": 1830,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4127236
+  },
+  "bible-365-day-20": {
+    "src": "/audio/bible-365-day-20.m4a",
+    "duration": 647.5,
+    "words": 1831,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3983110
+  },
+  "bible-365-day-21": {
+    "src": "/audio/bible-365-day-21.m4a",
+    "duration": 666.0,
+    "words": 1896,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4094881
+  },
+  "bible-365-day-22": {
+    "src": "/audio/bible-365-day-22.m4a",
+    "duration": 798.2,
+    "words": 2209,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4918654
+  },
+  "bible-365-day-23": {
+    "src": "/audio/bible-365-day-23.m4a",
+    "duration": 702.0,
+    "words": 2095,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4320704
+  },
+  "bible-365-day-24": {
+    "src": "/audio/bible-365-day-24.m4a",
+    "duration": 706.6,
+    "words": 1995,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4347248
+  },
+  "bible-365-day-25": {
+    "src": "/audio/bible-365-day-25.m4a",
+    "duration": 698.2,
+    "words": 1935,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4299089
+  },
+  "bible-365-day-26": {
+    "src": "/audio/bible-365-day-26.m4a",
+    "duration": 713.9,
+    "words": 2001,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4393938
+  },
+  "bible-365-day-27": {
+    "src": "/audio/bible-365-day-27.m4a",
+    "duration": 672.4,
+    "words": 1939,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4136407
+  },
+  "bible-365-day-28": {
+    "src": "/audio/bible-365-day-28.m4a",
+    "duration": 595.6,
+    "words": 1714,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3661237
+  },
+  "bible-365-day-29": {
+    "src": "/audio/bible-365-day-29.m4a",
+    "duration": 781.9,
+    "words": 2162,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4817103
+  },
+  "bible-365-day-3": {
+    "src": "/audio/bible-365-day-3.m4a",
+    "duration": 575.2,
+    "words": 1594,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3535533
+  },
+  "bible-365-day-30": {
+    "src": "/audio/bible-365-day-30.m4a",
+    "duration": 669.3,
+    "words": 1790,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4118521
+  },
+  "bible-365-day-31": {
+    "src": "/audio/bible-365-day-31.m4a",
+    "duration": 658.7,
+    "words": 1849,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4051556
+  },
+  "bible-365-day-32": {
+    "src": "/audio/bible-365-day-32.m4a",
+    "duration": 739.5,
+    "words": 2076,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4551121
+  },
+  "bible-365-day-33": {
+    "src": "/audio/bible-365-day-33.m4a",
+    "duration": 715.7,
+    "words": 1968,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4410917
+  },
+  "bible-365-day-34": {
+    "src": "/audio/bible-365-day-34.m4a",
+    "duration": 717.6,
+    "words": 2006,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4420650
+  },
+  "bible-365-day-35": {
+    "src": "/audio/bible-365-day-35.m4a",
+    "duration": 696.2,
+    "words": 2012,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4288360
+  },
+  "bible-365-day-36": {
+    "src": "/audio/bible-365-day-36.m4a",
+    "duration": 681.7,
+    "words": 1807,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4198016
+  },
+  "bible-365-day-37": {
+    "src": "/audio/bible-365-day-37.m4a",
+    "duration": 690.9,
+    "words": 1968,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4254786
+  },
+  "bible-365-day-38": {
+    "src": "/audio/bible-365-day-38.m4a",
+    "duration": 698.6,
+    "words": 1994,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4298026
+  },
+  "bible-365-day-39": {
+    "src": "/audio/bible-365-day-39.m4a",
+    "duration": 679.6,
+    "words": 1890,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4186820
+  },
+  "bible-365-day-4": {
+    "src": "/audio/bible-365-day-4.m4a",
+    "duration": 723.6,
+    "words": 2068,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4458195
+  },
+  "bible-365-day-40": {
+    "src": "/audio/bible-365-day-40.m4a",
+    "duration": 702.3,
+    "words": 1967,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4322053
+  },
+  "bible-365-day-41": {
+    "src": "/audio/bible-365-day-41.m4a",
+    "duration": 697.8,
+    "words": 1958,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4295905
+  },
+  "bible-365-day-42": {
+    "src": "/audio/bible-365-day-42.m4a",
+    "duration": 590.7,
+    "words": 1648,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3633506
+  },
+  "bible-365-day-43": {
+    "src": "/audio/bible-365-day-43.m4a",
+    "duration": 630.4,
+    "words": 1785,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3882637
+  },
+  "bible-365-day-44": {
+    "src": "/audio/bible-365-day-44.m4a",
+    "duration": 650.8,
+    "words": 1860,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4004485
+  },
+  "bible-365-day-45": {
+    "src": "/audio/bible-365-day-45.m4a",
+    "duration": 632.6,
+    "words": 1778,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3890679
+  },
+  "bible-365-day-46": {
+    "src": "/audio/bible-365-day-46.m4a",
+    "duration": 651.7,
+    "words": 1874,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4009890
+  },
+  "bible-365-day-47": {
+    "src": "/audio/bible-365-day-47.m4a",
+    "duration": 699.6,
+    "words": 1921,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4302332
+  },
+  "bible-365-day-48": {
+    "src": "/audio/bible-365-day-48.m4a",
+    "duration": 644.6,
+    "words": 1817,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3962909
+  },
+  "bible-365-day-49": {
+    "src": "/audio/bible-365-day-49.m4a",
+    "duration": 667.3,
+    "words": 1956,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4109482
+  },
+  "bible-365-day-5": {
+    "src": "/audio/bible-365-day-5.m4a",
+    "duration": 756.0,
+    "words": 2115,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4659488
+  },
+  "bible-365-day-50": {
+    "src": "/audio/bible-365-day-50.m4a",
+    "duration": 670.3,
+    "words": 1898,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4127244
+  },
+  "bible-365-day-51": {
+    "src": "/audio/bible-365-day-51.m4a",
+    "duration": 696.8,
+    "words": 1960,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4291331
+  },
+  "bible-365-day-52": {
+    "src": "/audio/bible-365-day-52.m4a",
+    "duration": 674.4,
+    "words": 1936,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4154198
+  },
+  "bible-365-day-53": {
+    "src": "/audio/bible-365-day-53.m4a",
+    "duration": 694.8,
+    "words": 1959,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4278163
+  },
+  "bible-365-day-54": {
+    "src": "/audio/bible-365-day-54.m4a",
+    "duration": 701.4,
+    "words": 1931,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4318006
+  },
+  "bible-365-day-55": {
+    "src": "/audio/bible-365-day-55.m4a",
+    "duration": 641.0,
+    "words": 1820,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3945462
+  },
+  "bible-365-day-56": {
+    "src": "/audio/bible-365-day-56.m4a",
+    "duration": 662.8,
+    "words": 1857,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4071699
+  },
+  "bible-365-day-57": {
+    "src": "/audio/bible-365-day-57.m4a",
+    "duration": 692.7,
+    "words": 1932,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4268089
+  },
+  "bible-365-day-58": {
+    "src": "/audio/bible-365-day-58.m4a",
+    "duration": 626.8,
+    "words": 1715,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3854415
+  },
+  "bible-365-day-59": {
+    "src": "/audio/bible-365-day-59.m4a",
+    "duration": 668.8,
+    "words": 1907,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4111795
+  },
+  "bible-365-day-6": {
+    "src": "/audio/bible-365-day-6.m4a",
+    "duration": 591.4,
+    "words": 1636,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3639323
+  },
+  "bible-365-day-60": {
+    "src": "/audio/bible-365-day-60.m4a",
+    "duration": 696.8,
+    "words": 1875,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4286242
+  },
+  "bible-365-day-61": {
+    "src": "/audio/bible-365-day-61.m4a",
+    "duration": 639.2,
+    "words": 1822,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3934426
+  },
+  "bible-365-day-62": {
+    "src": "/audio/bible-365-day-62.m4a",
+    "duration": 718.7,
+    "words": 2064,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4420691
+  },
+  "bible-365-day-63": {
+    "src": "/audio/bible-365-day-63.m4a",
+    "duration": 665.5,
+    "words": 1846,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4089406
+  },
+  "bible-365-day-64": {
+    "src": "/audio/bible-365-day-64.m4a",
+    "duration": 804.3,
+    "words": 2245,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4954513
+  },
+  "bible-365-day-65": {
+    "src": "/audio/bible-365-day-65.m4a",
+    "duration": 699.6,
+    "words": 1958,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4301199
+  },
+  "bible-365-day-66": {
+    "src": "/audio/bible-365-day-66.m4a",
+    "duration": 671.2,
+    "words": 1908,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4133391
+  },
+  "bible-365-day-67": {
+    "src": "/audio/bible-365-day-67.m4a",
+    "duration": 662.4,
+    "words": 1810,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4071065
+  },
+  "bible-365-day-68": {
+    "src": "/audio/bible-365-day-68.m4a",
+    "duration": 643.2,
+    "words": 1789,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3957981
+  },
+  "bible-365-day-69": {
+    "src": "/audio/bible-365-day-69.m4a",
+    "duration": 610.4,
+    "words": 1667,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3757805
+  },
+  "bible-365-day-7": {
+    "src": "/audio/bible-365-day-7.m4a",
+    "duration": 491.9,
+    "words": 1355,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3024901
+  },
+  "bible-365-day-70": {
+    "src": "/audio/bible-365-day-70.m4a",
+    "duration": 688.6,
+    "words": 1870,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4237070
+  },
+  "bible-365-day-71": {
+    "src": "/audio/bible-365-day-71.m4a",
+    "duration": 808.8,
+    "words": 2251,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4978326
+  },
+  "bible-365-day-72": {
+    "src": "/audio/bible-365-day-72.m4a",
+    "duration": 697.8,
+    "words": 1999,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4294933
+  },
+  "bible-365-day-73": {
+    "src": "/audio/bible-365-day-73.m4a",
+    "duration": 671.1,
+    "words": 1818,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4132194
+  },
+  "bible-365-day-74": {
+    "src": "/audio/bible-365-day-74.m4a",
+    "duration": 673.8,
+    "words": 1852,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4149867
+  },
+  "bible-365-day-75": {
+    "src": "/audio/bible-365-day-75.m4a",
+    "duration": 682.4,
+    "words": 1883,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4199459
+  },
+  "bible-365-day-76": {
+    "src": "/audio/bible-365-day-76.m4a",
+    "duration": 749.9,
+    "words": 2046,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4614016
+  },
+  "bible-365-day-77": {
+    "src": "/audio/bible-365-day-77.m4a",
+    "duration": 743.7,
+    "words": 2058,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4578524
+  },
+  "bible-365-day-78": {
+    "src": "/audio/bible-365-day-78.m4a",
+    "duration": 675.6,
+    "words": 1899,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4161158
+  },
+  "bible-365-day-79": {
+    "src": "/audio/bible-365-day-79.m4a",
+    "duration": 571.6,
+    "words": 1588,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3515523
+  },
+  "bible-365-day-8": {
+    "src": "/audio/bible-365-day-8.m4a",
+    "duration": 622.7,
+    "words": 1734,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3829378
+  },
+  "bible-365-day-80": {
+    "src": "/audio/bible-365-day-80.m4a",
+    "duration": 687.0,
+    "words": 1887,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4229059
+  },
+  "bible-365-day-81": {
+    "src": "/audio/bible-365-day-81.m4a",
+    "duration": 652.8,
+    "words": 1718,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4019762
+  },
+  "bible-365-day-82": {
+    "src": "/audio/bible-365-day-82.m4a",
+    "duration": 692.4,
+    "words": 1910,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4261799
+  },
+  "bible-365-day-83": {
+    "src": "/audio/bible-365-day-83.m4a",
+    "duration": 712.7,
+    "words": 1968,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4390256
+  },
+  "bible-365-day-84": {
+    "src": "/audio/bible-365-day-84.m4a",
+    "duration": 631.9,
+    "words": 1761,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3890599
+  },
+  "bible-365-day-85": {
+    "src": "/audio/bible-365-day-85.m4a",
+    "duration": 636.6,
+    "words": 1795,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3917263
+  },
+  "bible-365-day-86": {
+    "src": "/audio/bible-365-day-86.m4a",
+    "duration": 665.7,
+    "words": 1833,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4095606
+  },
+  "bible-365-day-87": {
+    "src": "/audio/bible-365-day-87.m4a",
+    "duration": 711.0,
+    "words": 1971,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4384010
+  },
+  "bible-365-day-88": {
+    "src": "/audio/bible-365-day-88.m4a",
+    "duration": 788.2,
+    "words": 2183,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4848678
+  },
+  "bible-365-day-89": {
+    "src": "/audio/bible-365-day-89.m4a",
+    "duration": 656.9,
+    "words": 1891,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4045704
+  },
+  "bible-365-day-9": {
+    "src": "/audio/bible-365-day-9.m4a",
+    "duration": 574.5,
+    "words": 1560,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3534377
+  },
+  "bible-365-day-90": {
+    "src": "/audio/bible-365-day-90.m4a",
+    "duration": 645.5,
+    "words": 1780,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3973376
+  },
+  "bible-365-day-91": {
+    "src": "/audio/bible-365-day-91.m4a",
+    "duration": 642.1,
+    "words": 1755,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3955213
+  },
+  "bible-365-day-92": {
+    "src": "/audio/bible-365-day-92.m4a",
+    "duration": 652.2,
+    "words": 1848,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4018969
+  },
+  "bible-365-day-93": {
+    "src": "/audio/bible-365-day-93.m4a",
+    "duration": 706.0,
+    "words": 1953,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4347114
+  },
+  "bible-365-day-94": {
+    "src": "/audio/bible-365-day-94.m4a",
+    "duration": 672.7,
+    "words": 1879,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4144168
+  },
+  "bible-365-day-95": {
+    "src": "/audio/bible-365-day-95.m4a",
+    "duration": 649.3,
+    "words": 1795,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3999818
+  },
+  "bible-365-day-96": {
+    "src": "/audio/bible-365-day-96.m4a",
+    "duration": 698.9,
+    "words": 1915,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4300739
+  },
+  "bible-365-day-97": {
+    "src": "/audio/bible-365-day-97.m4a",
+    "duration": 649.0,
+    "words": 1759,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3993518
+  },
+  "bible-365-day-98": {
+    "src": "/audio/bible-365-day-98.m4a",
+    "duration": 656.8,
+    "words": 1842,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4042229
+  },
+  "bible-365-day-99": {
+    "src": "/audio/bible-365-day-99.m4a",
+    "duration": 717.7,
+    "words": 1997,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4422528
+  },
+  "coming-to-the-end-of-ourselves-day-1": {
+    "src": "/audio/coming-to-the-end-of-ourselves-day-1.m4a",
+    "duration": 449.2,
+    "words": 1034,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2757383
+  },
+  "coming-to-the-end-of-ourselves-day-2": {
+    "src": "/audio/coming-to-the-end-of-ourselves-day-2.m4a",
+    "duration": 407.4,
+    "words": 933,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2506228
+  },
+  "coming-to-the-end-of-ourselves-day-3": {
+    "src": "/audio/coming-to-the-end-of-ourselves-day-3.m4a",
+    "duration": 427.9,
+    "words": 950,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2630929
+  },
+  "coming-to-the-end-of-ourselves-day-4": {
+    "src": "/audio/coming-to-the-end-of-ourselves-day-4.m4a",
+    "duration": 454.4,
+    "words": 1019,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2789387
+  },
+  "coming-to-the-end-of-ourselves-day-5": {
+    "src": "/audio/coming-to-the-end-of-ourselves-day-5.m4a",
+    "duration": 490.0,
+    "words": 1115,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3014261
+  },
+  "genesis-two-stories-of-creation-day-1": {
+    "src": "/audio/genesis-two-stories-of-creation-day-1.m4a",
+    "duration": 378.3,
+    "words": 958,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2325457
+  },
+  "genesis-two-stories-of-creation-day-2": {
+    "src": "/audio/genesis-two-stories-of-creation-day-2.m4a",
+    "duration": 434.2,
+    "words": 1058,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2666715
+  },
+  "genesis-two-stories-of-creation-day-3": {
+    "src": "/audio/genesis-two-stories-of-creation-day-3.m4a",
+    "duration": 376.2,
+    "words": 959,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2310176
+  },
+  "genesis-two-stories-of-creation-day-4": {
+    "src": "/audio/genesis-two-stories-of-creation-day-4.m4a",
+    "duration": 443.1,
+    "words": 1141,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2722613
+  },
+  "genesis-two-stories-of-creation-day-5": {
+    "src": "/audio/genesis-two-stories-of-creation-day-5.m4a",
+    "duration": 529.9,
+    "words": 1304,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3256982
+  },
+  "he-cannot-deny-himself-day-1": {
+    "src": "/audio/he-cannot-deny-himself-day-1.m4a",
+    "duration": 1299.9,
+    "words": 3501,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 8001959
+  },
+  "he-cannot-deny-himself-day-2": {
+    "src": "/audio/he-cannot-deny-himself-day-2.m4a",
+    "duration": 1342.8,
+    "words": 3638,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 8274108
+  },
+  "he-cannot-deny-himself-day-3": {
+    "src": "/audio/he-cannot-deny-himself-day-3.m4a",
+    "duration": 1423.1,
+    "words": 3819,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 8763235
+  },
+  "he-cannot-deny-himself-day-4": {
+    "src": "/audio/he-cannot-deny-himself-day-4.m4a",
+    "duration": 1463.2,
+    "words": 3893,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 9013907
+  },
+  "he-cannot-deny-himself-day-5": {
+    "src": "/audio/he-cannot-deny-himself-day-5.m4a",
+    "duration": 1426.6,
+    "words": 3839,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 8785887
+  },
+  "he-cannot-deny-himself-day-6": {
+    "src": "/audio/he-cannot-deny-himself-day-6.m4a",
+    "duration": 506.7,
+    "words": 1359,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3121820
+  },
+  "he-cannot-deny-himself-day-7": {
+    "src": "/audio/he-cannot-deny-himself-day-7.m4a",
+    "duration": 143.3,
+    "words": 388,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 878751
+  },
+  "hearing-god-in-the-noise-day-1": {
+    "src": "/audio/hearing-god-in-the-noise-day-1.m4a",
+    "duration": 380.4,
+    "words": 879,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2334883
+  },
+  "hearing-god-in-the-noise-day-2": {
+    "src": "/audio/hearing-god-in-the-noise-day-2.m4a",
+    "duration": 424.0,
+    "words": 957,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2597576
+  },
+  "hearing-god-in-the-noise-day-3": {
+    "src": "/audio/hearing-god-in-the-noise-day-3.m4a",
+    "duration": 446.9,
+    "words": 1051,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2742511
+  },
+  "hearing-god-in-the-noise-day-4": {
+    "src": "/audio/hearing-god-in-the-noise-day-4.m4a",
+    "duration": 426.3,
+    "words": 1027,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2612328
+  },
+  "hearing-god-in-the-noise-day-5": {
+    "src": "/audio/hearing-god-in-the-noise-day-5.m4a",
+    "duration": 460.9,
+    "words": 1074,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2829603
+  },
+  "hearing-god-in-the-noise-day-6": {
+    "src": "/audio/hearing-god-in-the-noise-day-6.m4a",
+    "duration": 450.0,
+    "words": 1044,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2761250
+  },
+  "in-the-beginning-week-1-day-1": {
+    "src": "/audio/in-the-beginning-week-1-day-1.m4a",
+    "duration": 432.9,
+    "words": 967,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2664415
+  },
+  "in-the-beginning-week-1-day-2": {
+    "src": "/audio/in-the-beginning-week-1-day-2.m4a",
+    "duration": 457.3,
+    "words": 1019,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2806654
+  },
+  "in-the-beginning-week-1-day-3": {
+    "src": "/audio/in-the-beginning-week-1-day-3.m4a",
+    "duration": 436.1,
+    "words": 1004,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2679692
+  },
+  "in-the-beginning-week-1-day-4": {
+    "src": "/audio/in-the-beginning-week-1-day-4.m4a",
+    "duration": 454.4,
+    "words": 1000,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2790765
+  },
+  "in-the-beginning-week-1-day-5": {
+    "src": "/audio/in-the-beginning-week-1-day-5.m4a",
+    "duration": 503.9,
+    "words": 1172,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3095520
+  },
+  "in-the-beginning-week-1-day-6": {
+    "src": "/audio/in-the-beginning-week-1-day-6.m4a",
+    "duration": 534.2,
+    "words": 1210,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3287034
+  },
+  "once-saved-always-saved-day-1": {
+    "src": "/audio/once-saved-always-saved-day-1.m4a",
+    "duration": 407.2,
+    "words": 948,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2497602
+  },
+  "once-saved-always-saved-day-2": {
+    "src": "/audio/once-saved-always-saved-day-2.m4a",
+    "duration": 397.4,
+    "words": 917,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2442372
+  },
+  "once-saved-always-saved-day-3": {
+    "src": "/audio/once-saved-always-saved-day-3.m4a",
+    "duration": 417.7,
+    "words": 1001,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2560604
+  },
+  "once-saved-always-saved-day-4": {
+    "src": "/audio/once-saved-always-saved-day-4.m4a",
+    "duration": 446.4,
+    "words": 1041,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2741134
+  },
+  "once-saved-always-saved-day-5": {
+    "src": "/audio/once-saved-always-saved-day-5.m4a",
+    "duration": 396.1,
+    "words": 982,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2431027
+  },
+  "once-saved-always-saved-day-6": {
+    "src": "/audio/once-saved-always-saved-day-6.m4a",
+    "duration": 429.4,
+    "words": 1039,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2635356
+  },
+  "prayer-of-jabez-day-1": {
+    "src": "/audio/prayer-of-jabez-day-1.m4a",
+    "duration": 163.2,
+    "words": 422,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1001650
+  },
+  "prayer-of-jabez-day-2": {
+    "src": "/audio/prayer-of-jabez-day-2.m4a",
+    "duration": 1175.7,
+    "words": 3105,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 7237930
+  },
+  "prayer-of-jabez-day-3": {
+    "src": "/audio/prayer-of-jabez-day-3.m4a",
+    "duration": 1297.1,
+    "words": 3342,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 7989152
+  },
+  "prayer-of-jabez-day-4": {
+    "src": "/audio/prayer-of-jabez-day-4.m4a",
+    "duration": 1283.6,
+    "words": 3389,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 7906862
+  },
+  "prayer-of-jabez-day-5": {
+    "src": "/audio/prayer-of-jabez-day-5.m4a",
+    "duration": 1252.9,
+    "words": 3207,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 7715184
+  },
+  "prayer-of-jabez-day-6": {
+    "src": "/audio/prayer-of-jabez-day-6.m4a",
+    "duration": 1137.3,
+    "words": 3037,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 6999081
+  },
+  "prayer-of-jabez-day-7": {
+    "src": "/audio/prayer-of-jabez-day-7.m4a",
+    "duration": 378.2,
+    "words": 1033,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2321492
+  },
+  "present-in-the-chaos-day-1": {
+    "src": "/audio/present-in-the-chaos-day-1.m4a",
+    "duration": 428.4,
+    "words": 1012,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2630087
+  },
+  "present-in-the-chaos-day-2": {
+    "src": "/audio/present-in-the-chaos-day-2.m4a",
+    "duration": 415.4,
+    "words": 960,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2547471
+  },
+  "present-in-the-chaos-day-3": {
+    "src": "/audio/present-in-the-chaos-day-3.m4a",
+    "duration": 478.1,
+    "words": 1027,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2933480
+  },
+  "present-in-the-chaos-day-4": {
+    "src": "/audio/present-in-the-chaos-day-4.m4a",
+    "duration": 516.8,
+    "words": 1155,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3174394
+  },
+  "present-in-the-chaos-day-5": {
+    "src": "/audio/present-in-the-chaos-day-5.m4a",
+    "duration": 522.0,
+    "words": 1251,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3207626
+  },
+  "rooted-day-1": {
+    "src": "/audio/rooted-day-1.m4a",
+    "duration": 453.1,
+    "words": 1082,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2777228
+  },
+  "rooted-day-2": {
+    "src": "/audio/rooted-day-2.m4a",
+    "duration": 450.9,
+    "words": 1113,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2766956
+  },
+  "rooted-day-3": {
+    "src": "/audio/rooted-day-3.m4a",
+    "duration": 448.0,
+    "words": 1097,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2750027
+  },
+  "rooted-day-4": {
+    "src": "/audio/rooted-day-4.m4a",
+    "duration": 485.6,
+    "words": 1185,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2979921
+  },
+  "rooted-day-5": {
+    "src": "/audio/rooted-day-5.m4a",
+    "duration": 495.4,
+    "words": 1193,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3042711
+  },
+  "signs-boldness-opposition-integrity-day-1": {
+    "src": "/audio/signs-boldness-opposition-integrity-day-1.m4a",
+    "duration": 360.7,
+    "words": 975,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2216132
+  },
+  "signs-boldness-opposition-integrity-day-2": {
+    "src": "/audio/signs-boldness-opposition-integrity-day-2.m4a",
+    "duration": 208.5,
+    "words": 518,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1276591
+  },
+  "signs-boldness-opposition-integrity-day-3": {
+    "src": "/audio/signs-boldness-opposition-integrity-day-3.m4a",
+    "duration": 299.8,
+    "words": 674,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1832429
+  },
+  "signs-boldness-opposition-integrity-day-4": {
+    "src": "/audio/signs-boldness-opposition-integrity-day-4.m4a",
+    "duration": 276.4,
+    "words": 633,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1693987
+  },
+  "signs-boldness-opposition-integrity-day-5": {
+    "src": "/audio/signs-boldness-opposition-integrity-day-5.m4a",
+    "duration": 314.4,
+    "words": 689,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1929672
+  },
+  "standing-strong-day-1": {
+    "src": "/audio/standing-strong-day-1.m4a",
+    "duration": 419.1,
+    "words": 972,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2569056
+  },
+  "standing-strong-day-2": {
+    "src": "/audio/standing-strong-day-2.m4a",
+    "duration": 411.2,
+    "words": 958,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2525604
+  },
+  "standing-strong-day-3": {
+    "src": "/audio/standing-strong-day-3.m4a",
+    "duration": 444.6,
+    "words": 1027,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2728393
+  },
+  "standing-strong-day-4": {
+    "src": "/audio/standing-strong-day-4.m4a",
+    "duration": 474.0,
+    "words": 1069,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2912706
+  },
+  "standing-strong-day-5": {
+    "src": "/audio/standing-strong-day-5.m4a",
+    "duration": 511.1,
+    "words": 1164,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3143366
+  },
+  "standing-strong-day-6": {
+    "src": "/audio/standing-strong-day-6.m4a",
+    "duration": 504.2,
+    "words": 1155,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3095966
+  },
+  "standing-strong-day-7": {
+    "src": "/audio/standing-strong-day-7.m4a",
+    "duration": 509.6,
+    "words": 1188,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3134283
+  },
+  "surrender-to-gods-will-day-1": {
+    "src": "/audio/surrender-to-gods-will-day-1.m4a",
+    "duration": 422.0,
+    "words": 998,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2588296
+  },
+  "surrender-to-gods-will-day-2": {
+    "src": "/audio/surrender-to-gods-will-day-2.m4a",
+    "duration": 399.0,
+    "words": 977,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2445013
+  },
+  "surrender-to-gods-will-day-3": {
+    "src": "/audio/surrender-to-gods-will-day-3.m4a",
+    "duration": 388.3,
+    "words": 925,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2382454
+  },
+  "surrender-to-gods-will-day-4": {
+    "src": "/audio/surrender-to-gods-will-day-4.m4a",
+    "duration": 402.2,
+    "words": 948,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2469995
+  },
+  "surrender-to-gods-will-day-5": {
+    "src": "/audio/surrender-to-gods-will-day-5.m4a",
+    "duration": 381.5,
+    "words": 909,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2336202
+  },
+  "surrender-to-gods-will-day-6": {
+    "src": "/audio/surrender-to-gods-will-day-6.m4a",
+    "duration": 410.3,
+    "words": 1002,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2516820
+  },
+  "the-blueprint-of-community-day-1": {
+    "src": "/audio/the-blueprint-of-community-day-1.m4a",
+    "duration": 315.6,
+    "words": 750,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1944634
+  },
+  "the-blueprint-of-community-day-2": {
+    "src": "/audio/the-blueprint-of-community-day-2.m4a",
+    "duration": 293.9,
+    "words": 694,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1805587
+  },
+  "the-blueprint-of-community-day-3": {
+    "src": "/audio/the-blueprint-of-community-day-3.m4a",
+    "duration": 301.3,
+    "words": 750,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1852425
+  },
+  "the-blueprint-of-community-day-4": {
+    "src": "/audio/the-blueprint-of-community-day-4.m4a",
+    "duration": 353.1,
+    "words": 826,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2175974
+  },
+  "the-blueprint-of-community-day-5": {
+    "src": "/audio/the-blueprint-of-community-day-5.m4a",
+    "duration": 353.5,
+    "words": 835,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2175419
+  },
+  "the-harvest-day-1": {
+    "src": "/audio/the-harvest-day-1.m4a",
+    "duration": 1590.6,
+    "words": 4274,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 9797748
+  },
+  "the-harvest-day-2": {
+    "src": "/audio/the-harvest-day-2.m4a",
+    "duration": 1530.4,
+    "words": 4088,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 9427044
+  },
+  "the-harvest-day-3": {
+    "src": "/audio/the-harvest-day-3.m4a",
+    "duration": 1666.4,
+    "words": 4347,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 10267338
+  },
+  "the-harvest-day-4": {
+    "src": "/audio/the-harvest-day-4.m4a",
+    "duration": 1463.5,
+    "words": 3788,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 9016949
+  },
+  "the-harvest-day-5": {
+    "src": "/audio/the-harvest-day-5.m4a",
+    "duration": 1455.2,
+    "words": 3781,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 8965349
+  },
+  "the-harvest-day-6": {
+    "src": "/audio/the-harvest-day-6.m4a",
+    "duration": 426.4,
+    "words": 1149,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2623600
+  },
+  "the-harvest-day-7": {
+    "src": "/audio/the-harvest-day-7.m4a",
+    "duration": 162.1,
+    "words": 441,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 991900
+  },
+  "the-nature-of-belief-day-1": {
+    "src": "/audio/the-nature-of-belief-day-1.m4a",
+    "duration": 642.0,
+    "words": 1504,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3950262
+  },
+  "the-word-before-words-day-1": {
+    "src": "/audio/the-word-before-words-day-1.m4a",
+    "duration": 318.3,
+    "words": 801,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1956992
+  },
+  "the-word-before-words-day-2": {
+    "src": "/audio/the-word-before-words-day-2.m4a",
+    "duration": 399.0,
+    "words": 1081,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2455543
+  },
+  "the-word-before-words-day-3": {
+    "src": "/audio/the-word-before-words-day-3.m4a",
+    "duration": 456.1,
+    "words": 1220,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2807884
+  },
+  "the-word-before-words-day-4": {
+    "src": "/audio/the-word-before-words-day-4.m4a",
+    "duration": 438.8,
+    "words": 1211,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2702517
+  },
+  "the-word-before-words-day-5": {
+    "src": "/audio/the-word-before-words-day-5.m4a",
+    "duration": 465.8,
+    "words": 1232,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2865269
+  },
+  "the-work-of-god-day-1": {
+    "src": "/audio/the-work-of-god-day-1.m4a",
+    "duration": 573.4,
+    "words": 1491,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3525864
+  },
+  "the-work-of-god-day-2": {
+    "src": "/audio/the-work-of-god-day-2.m4a",
+    "duration": 712.4,
+    "words": 1823,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4385084
+  },
+  "the-work-of-god-day-3": {
+    "src": "/audio/the-work-of-god-day-3.m4a",
+    "duration": 678.6,
+    "words": 1740,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4171309
+  },
+  "the-work-of-god-day-4": {
+    "src": "/audio/the-work-of-god-day-4.m4a",
+    "duration": 740.1,
+    "words": 1900,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4554565
+  },
+  "the-work-of-god-day-5": {
+    "src": "/audio/the-work-of-god-day-5.m4a",
+    "duration": 718.0,
+    "words": 1904,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4419821
+  },
+  "the-work-of-god-day-6": {
+    "src": "/audio/the-work-of-god-day-6.m4a",
+    "duration": 713.8,
+    "words": 1838,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4395094
+  },
+  "too-busy-for-god-day-1": {
+    "src": "/audio/too-busy-for-god-day-1.m4a",
+    "duration": 330.3,
+    "words": 701,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2022047
+  },
+  "too-busy-for-god-day-2": {
+    "src": "/audio/too-busy-for-god-day-2.m4a",
+    "duration": 301.6,
+    "words": 615,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1842575
+  },
+  "too-busy-for-god-day-3": {
+    "src": "/audio/too-busy-for-god-day-3.m4a",
+    "duration": 330.3,
+    "words": 683,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2022797
+  },
+  "too-busy-for-god-day-4": {
+    "src": "/audio/too-busy-for-god-day-4.m4a",
+    "duration": 324.8,
+    "words": 693,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1987988
+  },
+  "too-busy-for-god-day-5": {
+    "src": "/audio/too-busy-for-god-day-5.m4a",
+    "duration": 312.4,
+    "words": 692,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1912583
+  },
+  "too-busy-for-god-day-6": {
+    "src": "/audio/too-busy-for-god-day-6.m4a",
+    "duration": 341.2,
+    "words": 732,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2084610
+  },
+  "valued-day-1": {
+    "src": "/audio/valued-day-1.m4a",
+    "duration": 408.3,
+    "words": 988,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2507877
+  },
+  "valued-day-2": {
+    "src": "/audio/valued-day-2.m4a",
+    "duration": 424.7,
+    "words": 978,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2601745
+  },
+  "valued-day-3": {
+    "src": "/audio/valued-day-3.m4a",
+    "duration": 444.2,
+    "words": 1086,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2727145
+  },
+  "valued-day-4": {
+    "src": "/audio/valued-day-4.m4a",
+    "duration": 477.3,
+    "words": 1138,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2928777
+  },
+  "valued-day-5": {
+    "src": "/audio/valued-day-5.m4a",
+    "duration": 509.8,
+    "words": 1232,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3132829
+  },
+  "what-does-it-mean-to-believe-day-1": {
+    "src": "/audio/what-does-it-mean-to-believe-day-1.m4a",
+    "duration": 585.1,
+    "words": 1286,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3594577
+  },
+  "what-does-it-mean-to-believe-day-2": {
+    "src": "/audio/what-does-it-mean-to-believe-day-2.m4a",
+    "duration": 478.6,
+    "words": 1058,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2944802
+  },
+  "what-does-it-mean-to-believe-day-3": {
+    "src": "/audio/what-does-it-mean-to-believe-day-3.m4a",
+    "duration": 523.6,
+    "words": 1167,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3223813
+  },
+  "what-does-it-mean-to-believe-day-4": {
+    "src": "/audio/what-does-it-mean-to-believe-day-4.m4a",
+    "duration": 551.5,
+    "words": 1194,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3394475
+  },
+  "what-does-it-mean-to-believe-day-5": {
+    "src": "/audio/what-does-it-mean-to-believe-day-5.m4a",
+    "duration": 566.7,
+    "words": 1260,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3488662
+  },
+  "what-does-it-mean-to-believe-day-6": {
+    "src": "/audio/what-does-it-mean-to-believe-day-6.m4a",
+    "duration": 566.5,
+    "words": 1269,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3488136
+  },
+  "what-happens-when-you-repeatedly-sin-day-1": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-1.m4a",
+    "duration": 591.9,
+    "words": 1418,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3643693
+  },
+  "what-happens-when-you-repeatedly-sin-day-2": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-2.m4a",
+    "duration": 877.6,
+    "words": 2017,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5407589
+  },
+  "what-happens-when-you-repeatedly-sin-day-3": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-3.m4a",
+    "duration": 836.4,
+    "words": 1939,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5156634
+  },
+  "what-happens-when-you-repeatedly-sin-day-4": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-4.m4a",
+    "duration": 792.6,
+    "words": 1813,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4883007
+  },
+  "what-happens-when-you-repeatedly-sin-day-5": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-5.m4a",
+    "duration": 801.6,
+    "words": 1884,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4937994
+  },
+  "what-happens-when-you-repeatedly-sin-day-6": {
+    "src": "/audio/what-happens-when-you-repeatedly-sin-day-6.m4a",
+    "duration": 918.8,
+    "words": 2195,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5660319
+  },
+  "what-is-carrying-a-cross-day-1": {
+    "src": "/audio/what-is-carrying-a-cross-day-1.m4a",
+    "duration": 584.7,
+    "words": 1319,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3590234
+  },
+  "what-is-carrying-a-cross-day-2": {
+    "src": "/audio/what-is-carrying-a-cross-day-2.m4a",
+    "duration": 447.3,
+    "words": 1003,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2752399
+  },
+  "what-is-carrying-a-cross-day-3": {
+    "src": "/audio/what-is-carrying-a-cross-day-3.m4a",
+    "duration": 478.4,
+    "words": 1071,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2946923
+  },
+  "what-is-carrying-a-cross-day-4": {
+    "src": "/audio/what-is-carrying-a-cross-day-4.m4a",
+    "duration": 436.9,
+    "words": 991,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2688328
+  },
+  "what-is-carrying-a-cross-day-5": {
+    "src": "/audio/what-is-carrying-a-cross-day-5.m4a",
+    "duration": 432.4,
+    "words": 962,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2659096
+  },
+  "what-is-carrying-a-cross-day-6": {
+    "src": "/audio/what-is-carrying-a-cross-day-6.m4a",
+    "duration": 444.7,
+    "words": 974,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2733452
+  },
+  "what-is-christianity-day-1": {
+    "src": "/audio/what-is-christianity-day-1.m4a",
+    "duration": 765.8,
+    "words": 1890,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4712135
+  },
+  "what-is-christianity-day-2": {
+    "src": "/audio/what-is-christianity-day-2.m4a",
+    "duration": 674.4,
+    "words": 1590,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4145536
+  },
+  "what-is-christianity-day-3": {
+    "src": "/audio/what-is-christianity-day-3.m4a",
+    "duration": 697.8,
+    "words": 1744,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4294477
+  },
+  "what-is-christianity-day-4": {
+    "src": "/audio/what-is-christianity-day-4.m4a",
+    "duration": 658.5,
+    "words": 1540,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4050536
+  },
+  "what-is-christianity-day-5": {
+    "src": "/audio/what-is-christianity-day-5.m4a",
+    "duration": 712.2,
+    "words": 1787,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4383656
+  },
+  "what-is-the-gospel-day-1": {
+    "src": "/audio/what-is-the-gospel-day-1.m4a",
+    "duration": 406.4,
+    "words": 893,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2493322
+  },
+  "what-is-the-gospel-day-2": {
+    "src": "/audio/what-is-the-gospel-day-2.m4a",
+    "duration": 336.0,
+    "words": 752,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2055269
+  },
+  "what-is-the-gospel-day-3": {
+    "src": "/audio/what-is-the-gospel-day-3.m4a",
+    "duration": 389.4,
+    "words": 814,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2388555
+  },
+  "what-is-the-gospel-day-4": {
+    "src": "/audio/what-is-the-gospel-day-4.m4a",
+    "duration": 384.9,
+    "words": 829,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2360926
+  },
+  "what-is-the-gospel-day-5": {
+    "src": "/audio/what-is-the-gospel-day-5.m4a",
+    "duration": 363.3,
+    "words": 786,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2228756
+  },
+  "what-is-the-gospel-day-6": {
+    "src": "/audio/what-is-the-gospel-day-6.m4a",
+    "duration": 352.5,
+    "words": 759,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2161511
+  },
+  "why-jesus-day-1": {
+    "src": "/audio/why-jesus-day-1.m4a",
+    "duration": 348.6,
+    "words": 792,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2141294
+  },
+  "why-jesus-day-2": {
+    "src": "/audio/why-jesus-day-2.m4a",
+    "duration": 310.7,
+    "words": 671,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1903563
+  },
+  "why-jesus-day-3": {
+    "src": "/audio/why-jesus-day-3.m4a",
+    "duration": 368.8,
+    "words": 793,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2260567
+  },
+  "why-jesus-day-4": {
+    "src": "/audio/why-jesus-day-4.m4a",
+    "duration": 373.9,
+    "words": 775,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2293768
+  },
+  "why-jesus-day-5": {
+    "src": "/audio/why-jesus-day-5.m4a",
+    "duration": 416.3,
+    "words": 926,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2557489
+  },
+  "why-jesus-day-6": {
+    "src": "/audio/why-jesus-day-6.m4a",
+    "duration": 422.9,
+    "words": 927,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2600671
+  },
+  "witness-under-pressure-expansion-day-1": {
+    "src": "/audio/witness-under-pressure-expansion-day-1.m4a",
+    "duration": 825.7,
+    "words": 1901,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5070452
+  },
+  "witness-under-pressure-expansion-day-2": {
+    "src": "/audio/witness-under-pressure-expansion-day-2.m4a",
+    "duration": 475.7,
+    "words": 1067,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2919750
+  },
+  "witness-under-pressure-expansion-day-3": {
+    "src": "/audio/witness-under-pressure-expansion-day-3.m4a",
+    "duration": 485.3,
+    "words": 1125,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 2975711
+  },
+  "witness-under-pressure-expansion-day-4": {
+    "src": "/audio/witness-under-pressure-expansion-day-4.m4a",
+    "duration": 618.8,
+    "words": 1455,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3805296
+  },
+  "witness-under-pressure-expansion-day-5": {
+    "src": "/audio/witness-under-pressure-expansion-day-5.m4a",
+    "duration": 597.4,
+    "words": 1497,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3675115
+  }
+}

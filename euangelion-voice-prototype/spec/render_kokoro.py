@@ -165,6 +165,11 @@ def render_segment(pid, text, tmp):
 
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 AUDIO_DIR = os.path.join(REPO, "public", "audio")
+# The manifest is a BUILD INPUT, not a served asset. Keeping it out of
+# public/ is what stops it inheriting the /audio/* immutable cache rule —
+# _headers has no negation syntax, so a path exception there merely appends
+# a second, contradictory Cache-Control instead of overriding.
+MANIFEST_PATH = os.path.join(REPO, "src", "data", "audio-manifest.json")
 BITRATE = 48000          # mono speech: transparent, ~8 MB for 22 minutes
 
 
@@ -183,7 +188,7 @@ def publish(wav_path, dev_path, voice, duration_s, words):
         print(f"  publish FAILED: {r.stderr.strip()[:200]}")
         return None
 
-    manifest_path = os.path.join(AUDIO_DIR, "manifest.json")
+    manifest_path = MANIFEST_PATH
     manifest = {}
     if os.path.exists(manifest_path):
         try:

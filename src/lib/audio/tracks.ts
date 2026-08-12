@@ -17,7 +17,7 @@
  * Devotionals with no track fall back to the Web Speech reader, so nothing
  * regresses while the catalog is still being rendered.
  */
-import manifest from '../../../public/audio/manifest.json'
+import manifest from '@/data/audio-manifest.json'
 
 export interface NarrationTrack {
   /** Public URL of the encoded audio. */

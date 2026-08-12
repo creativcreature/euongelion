@@ -18,7 +18,7 @@ import { formatTime } from '@/lib/audio/tracks'
  *    nothing regresses while the catalog is being rendered
  */
 
-vi.mock('../public/audio/manifest.json', () => ({
+vi.mock('@/data/audio-manifest.json', () => ({
   default: {
     'has-track-day-1': {
       src: '/audio/has-track-day-1.m4a',

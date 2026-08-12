@@ -100,6 +100,14 @@ control (both bottom-fixed, z-200); the progress rule rendered flat because
 sliver of scrolling text showed between the bar and the mobile tab bar because
 the offset was borrowed from the body's bottom padding, which carries slack.
 
+**Manifest moved out of `public/`.** The `/audio/*` immutable cache rule swept
+up `manifest.json`, which every render rewrites, so production served a
+year-cached index. A path exception in `_headers` does not fix that — Cloudflare
+appends rather than overrides, yielding two contradictory `Cache-Control`
+directives on one header. The manifest is now a build input at
+`src/data/audio-manifest.json`, never served, leaving `/audio/*` holding only
+`.m4a` files where immutable is unambiguously right.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 
