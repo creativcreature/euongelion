@@ -4,6 +4,10 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R41 (F-086): bumped to v54 — day-1 re-rendered (it predated the Roman
+// numeral fix and its audio said "chapter VIII"), and every devotional now
+// carries chapters. The manifest is bundled at build time, so this is client
+// code and needs the bump.
 // R40 (F-086, chapters): bumped to v53 — audio chapters, the chapter sheet,
 // and the on-page section marker are all client code.
 // R39 (F-086, narration): bumped to v52. Reading routes are cache-first, so a
@@ -16,7 +20,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v53'
+const CACHE_NAME = 'euangelion-v54'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

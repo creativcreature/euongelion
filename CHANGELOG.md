@@ -136,6 +136,19 @@ cannot avoid seeing, not against an index existing. The on-page marker writes a
 single attribute when the reading crosses into a new section, roughly once a
 minute, with no scroll listeners or observers.
 
+**"He Cannot Deny Himself" audio audited end to end (2026-08-12).** Days 2-7
+verified verbatim against the current reading contract; day 1 was not. Its audio
+predated the Roman-numeral fix and said "chapter VIII" where the page says
+"chapter eight" — the exact ambiguity that fix exists to remove. Re-rendered and
+confirmed by decoding the shipped file and transcribing at 14:50: the numeral is
+now spoken as a word. All seven days now carry chapters (23/23/23/23/24/10/5),
+one voice, 127 minutes, 44.7 MB.
+
+This surfaced because the chapter builder REFUSES to emit timestamps when
+re-extraction does not match the render. That guard exists to prevent wrong
+chapter marks; it caught a stale audio file as a side effect. Had it guessed
+instead of failing, the defect would have shipped silently.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 

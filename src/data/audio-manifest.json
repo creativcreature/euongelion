@@ -9425,7 +9425,539 @@
     "words": 1914,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4481587
+    "bytes": 4481587,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 97.5,
+        "label": "The Book That Begins With Comfort and Ends in a Wound",
+        "module": 3
+      },
+      {
+        "t": 213.8,
+        "label": "The Debt Someone Else Paid",
+        "module": 4
+      },
+      {
+        "t": 298.4,
+        "label": "The Great Exchange, Spelled Out in Pronouns",
+        "module": 5
+      },
+      {
+        "t": 587.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 593.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 621.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 645.4,
+        "label": "The Suffering Servant of Isaiah 40-55",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-232": {
+    "src": "/audio/bible-365-day-232.m4a",
+    "duration": 681.5,
+    "words": 1902,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4195761,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 58.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 134.6,
+        "label": "Spoken Over a Country That Was Ending",
+        "module": 3
+      },
+      {
+        "t": 246.1,
+        "label": "The House She Could Not Save",
+        "module": 4
+      },
+      {
+        "t": 328.9,
+        "label": "The Last Promise Is the Floor the Others Stand On",
+        "module": 5
+      },
+      {
+        "t": 550.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 563.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 595.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 614.4,
+        "label": "The Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-233": {
+    "src": "/audio/bible-365-day-233.m4a",
+    "duration": 669.2,
+    "words": 1860,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4117977,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 58.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 133.1,
+        "label": "A Promise Spoken Over Ruins",
+        "module": 3
+      },
+      {
+        "t": 234.4,
+        "label": "The List on the Refrigerator",
+        "module": 4
+      },
+      {
+        "t": 316.9,
+        "label": "Four Verbs That Carry the Whole Promise",
+        "module": 5
+      },
+      {
+        "t": 535.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 546.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 578.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 598.7,
+        "label": "The Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-234": {
+    "src": "/audio/bible-365-day-234.m4a",
+    "duration": 744.6,
+    "words": 2067,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4582642,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 132.3,
+        "label": "A Promise Spoken Over Rubble",
+        "module": 3
+      },
+      {
+        "t": 240.8,
+        "label": "The Note on the Refrigerator",
+        "module": 4
+      },
+      {
+        "t": 333.3,
+        "label": "Written Where Breaking Cannot Reach",
+        "module": 5
+      },
+      {
+        "t": 594.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 607.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 648.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 667.7,
+        "label": "The Prophet of the Broken and Renewed Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-235": {
+    "src": "/audio/bible-365-day-235.m4a",
+    "duration": 710.8,
+    "words": 1975,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4376315,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 59.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 135.5,
+        "label": "Same Law, New Address",
+        "module": 3
+      },
+      {
+        "t": 240.2,
+        "label": "The Sticky Notes on the Mirror",
+        "module": 4
+      },
+      {
+        "t": 331.0,
+        "label": "The Covenant That Begins With Forgiveness",
+        "module": 5
+      },
+      {
+        "t": 576.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 587.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 622.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 649.3,
+        "label": "The Weeping Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-236": {
+    "src": "/audio/bible-365-day-236.m4a",
+    "duration": 627.5,
+    "words": 1769,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3859710,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 127.8,
+        "label": "What Stone Could Not Hold",
+        "module": 3
+      },
+      {
+        "t": 215.9,
+        "label": "The Note on the Mirror",
+        "module": 4
+      },
+      {
+        "t": 296.8,
+        "label": "The Last Promise Is the Floor Under All the Others",
+        "module": 5
+      },
+      {
+        "t": 511.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 520.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 552.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 571.1,
+        "label": "The Weeping Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-237": {
+    "src": "/audio/bible-365-day-237.m4a",
+    "duration": 708.6,
+    "words": 1921,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4361897,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 122.2,
+        "label": "A New Word from the Prophet of Tears",
+        "module": 3
+      },
+      {
+        "t": 226.9,
+        "label": "The Resolutions in the Drawer",
+        "module": 4
+      },
+      {
+        "t": 315.7,
+        "label": "Inscribed Inside, Remembered No More",
+        "module": 5
+      },
+      {
+        "t": 585.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 597.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 636.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 651.3,
+        "label": "The Weeping Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-238": {
+    "src": "/audio/bible-365-day-238.m4a",
+    "duration": 731.6,
+    "words": 2028,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4502115,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 58.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 141.8,
+        "label": "The Brightest Promise Spoken on the Worst Day",
+        "module": 3
+      },
+      {
+        "t": 255.7,
+        "label": "The List on the Refrigerator",
+        "module": 4
+      },
+      {
+        "t": 345.5,
+        "label": "Forgiveness Is the Foundation, Not the Reward",
+        "module": 5
+      },
+      {
+        "t": 595.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 608.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 636.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 659.4,
+        "label": "The Weeping Prophet of the New Covenant",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-239": {
+    "src": "/audio/bible-365-day-239.m4a",
+    "duration": 651.9,
+    "words": 1797,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4014158,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 54.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 119.0,
+        "label": "A Prophet Set Down Among the Dead",
+        "module": 3
+      },
+      {
+        "t": 208.5,
+        "label": "The Phrase Under the Vision",
+        "module": 4
+      },
+      {
+        "t": 283.6,
+        "label": "Two Sermons and a Silence Between",
+        "module": 5
+      },
+      {
+        "t": 516.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 524.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 560.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 582.9,
+        "label": "The Priest Who Prophesied in Exile",
+        "module": 12
+      }
+    ]
   },
   "bible-365-day-24": {
     "src": "/audio/bible-365-day-24.m4a",
@@ -9483,6 +10015,186 @@
       {
         "t": 635.7,
         "label": "The Heel-Grabber Who Became Israel",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-240": {
+    "src": "/audio/bible-365-day-240.m4a",
+    "duration": 686.5,
+    "words": 1910,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4224672,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 68.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 133.2,
+        "label": "A Tour of the Worst Place",
+        "module": 3
+      },
+      {
+        "t": 233.1,
+        "label": "What the Exiles Were Actually Saying",
+        "module": 4
+      },
+      {
+        "t": 313.2,
+        "label": "Two Commands, Not One",
+        "module": 5
+      },
+      {
+        "t": 549.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 561.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 595.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 615.9,
+        "label": "The Priest Who Preached to Bones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-241": {
+    "src": "/audio/bible-365-day-241.m4a",
+    "duration": 739.2,
+    "words": 2036,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4552412,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 77.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 138.1,
+        "label": "Preach to the Bones",
+        "module": 3
+      },
+      {
+        "t": 249.2,
+        "label": "The Word Said Over a Closed Casket",
+        "module": 4
+      },
+      {
+        "t": 333.8,
+        "label": "Resurrection Comes in Two Movements",
+        "module": 5
+      },
+      {
+        "t": 608.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 618.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 652.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 676.3,
+        "label": "The Priest Who Preached to Bones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-242": {
+    "src": "/audio/bible-365-day-242.m4a",
+    "duration": 702.2,
+    "words": 1992,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4319321,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 81.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 145.3,
+        "label": "The Word You Are Given to Say",
+        "module": 3
+      },
+      {
+        "t": 253.1,
+        "label": "The Hospice Nurse Who Kept Reading",
+        "module": 4
+      },
+      {
+        "t": 337.6,
+        "label": "Bones First, Then Breath",
+        "module": 5
+      },
+      {
+        "t": 578.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 590.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 619.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 641.1,
+        "label": "The Son of Man in the Valley",
         "module": 12
       }
     ]
@@ -14984,11 +15696,128 @@
   },
   "he-cannot-deny-himself-day-1": {
     "src": "/audio/he-cannot-deny-himself-day-1.m4a",
-    "duration": 1299.9,
+    "duration": 1299.5,
     "words": 3501,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8001959
+    "bytes": 7995147,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 73.0,
+        "label": "The Sentence People Say Just Before",
+        "module": 3
+      },
+      {
+        "t": 155.2,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 167.2,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 179.1,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 213.8,
+        "label": "A Nation That Still Had a Country",
+        "module": 9
+      },
+      {
+        "t": 316.8,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 386.6,
+        "label": "The Charge Is Not Wickedness. It Is Management.",
+        "module": 12
+      },
+      {
+        "t": 515.5,
+        "label": "Where This Week Sits in the Story",
+        "module": 14
+      },
+      {
+        "t": 582.7,
+        "label": "Unplowed Ground",
+        "module": 15
+      },
+      {
+        "t": 722.8,
+        "label": "The Man at the Summit",
+        "module": 16
+      },
+      {
+        "t": 874.1,
+        "label": "Locked From the Inside",
+        "module": 17
+      },
+      {
+        "t": 907.8,
+        "label": "What the Prophet Does Not Say",
+        "module": 18
+      },
+      {
+        "t": 1016.0,
+        "label": "Scripture",
+        "module": 19
+      },
+      {
+        "t": 1042.0,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 1052.7,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 1061.6,
+        "label": "Two Verses, in Order",
+        "module": 22
+      },
+      {
+        "t": 1165.7,
+        "label": "Closing Prayer",
+        "module": 23
+      },
+      {
+        "t": 1203.1,
+        "label": "Today's Commitment",
+        "module": 24
+      },
+      {
+        "t": 1214.0,
+        "label": "One Question",
+        "module": 25
+      },
+      {
+        "t": 1241.5,
+        "label": "The Voice Behind Today",
+        "module": 26
+      }
+    ]
   },
   "he-cannot-deny-himself-day-2": {
     "src": "/audio/he-cannot-deny-himself-day-2.m4a",
