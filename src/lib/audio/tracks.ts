@@ -19,6 +19,24 @@
  */
 import manifest from '@/data/audio-manifest.json'
 
+/**
+ * A navigable point in a reading.
+ *
+ * Derived from real render timings, never estimated from word counts — an
+ * estimate drifts tens of seconds over a 20-minute track and lands mid
+ * sentence. See `spec/build_chapters.py`, which refuses to emit a devotional
+ * whose re-extraction does not match what was actually spoken.
+ */
+export interface NarrationChapter {
+  /** Start time in seconds. */
+  t: number
+  /** The devotional's own heading where it has one, else the section's name. */
+  label: string
+  /** 1-based module index, matching the reader's `#devotional-section-N`
+   *  anchors. 0 is the title, which precedes every module. */
+  module: number
+}
+
 export interface NarrationTrack {
   /** Public URL of the encoded audio. */
   src: string
@@ -32,6 +50,9 @@ export interface NarrationTrack {
   engine: string
   /** Encoded size in bytes. */
   bytes: number
+  /** Navigable sections, earliest first. Absent on tracks rendered before
+   *  chapters existed, or whose timings could not be verified. */
+  chapters?: NarrationChapter[]
 }
 
 const TRACKS = manifest as Record<string, NarrationTrack>
@@ -66,4 +87,24 @@ export function formatTime(seconds: number): string {
   const m = Math.floor(total / 60)
   const s = total % 60
   return `${m}:${String(s).padStart(2, '0')}`
+}
+
+/**
+ * The chapter containing `seconds`, or null before the first one.
+ *
+ * A linear scan is deliberate: chapter lists top out around two dozen entries,
+ * so this costs less than the bookkeeping a binary search would need, and it
+ * runs at most once per `timeupdate` tick.
+ */
+export function chapterAt(
+  chapters: NarrationChapter[] | undefined,
+  seconds: number,
+): NarrationChapter | null {
+  if (!chapters?.length) return null
+  let found: NarrationChapter | null = null
+  for (const chapter of chapters) {
+    if (chapter.t <= seconds + 0.001) found = chapter
+    else break
+  }
+  return found
 }

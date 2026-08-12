@@ -10927,3 +10927,50 @@ html[data-held-moment] .mobile-tab-bar {
     transition: none;
   }
 }
+
+/* ── The section being read ───────────────────────────────────────────
+   While narration plays, the article containing the current chapter carries
+   data-narrating. The marker is the same cobalt rule the transport and the
+   chapter sheet use, set in the gutter — "where you are" then reads the same
+   way in all three places.
+
+   Deliberately quiet: this sits under prose the reader may also be reading with
+   their eyes, so it marks position without competing for attention. It is a
+   gutter rule and a faint wash, not a highlight.
+
+   Cost: the attribute is written only when the reading crosses into a new
+   section (roughly once a minute), never per animation frame. F-086 / SA-035. */
+.devotional-flow-article[data-narrating='true'] {
+  position: relative;
+  background: color-mix(in srgb, var(--color-gold) 3.5%, transparent);
+  transition:
+    background var(--motion-slow, 400ms) var(--motion-ease, ease-out),
+    box-shadow var(--motion-slow, 400ms) var(--motion-ease, ease-out);
+}
+
+.devotional-flow-article[data-narrating='true']::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: calc(-1 * var(--narrating-gutter, 0.85rem));
+  width: 3px;
+  background: var(--color-gold);
+}
+
+@media (max-width: 767px) {
+  .devotional-flow-article[data-narrating='true']::before {
+    --narrating-gutter: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .devotional-flow-article[data-narrating='true'] {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .devotional-flow-article[data-narrating='true'] {
+    background: color-mix(in srgb, var(--color-gold) 9%, transparent);
+  }
+}

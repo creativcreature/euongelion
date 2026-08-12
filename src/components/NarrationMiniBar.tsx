@@ -15,6 +15,10 @@ export interface NarrationMiniBarProps {
   /** Scrolls the reader back to the full Audio Edition panel. */
   onReturnToPanel: () => void
   skipSeconds: number
+  /** The section being read, shown in place of a generic "Listening" label. */
+  chapterLabel?: string | null
+  /** Opens the chapter sheet. Absent on tracks with no chapters. */
+  onOpenChapters?: () => void
 }
 
 /**
@@ -53,6 +57,8 @@ export default function NarrationMiniBar({
   onSeek,
   onReturnToPanel,
   skipSeconds,
+  chapterLabel,
+  onOpenChapters,
 }: NarrationMiniBarProps) {
   // Flag the document while the bar is up so the floating reader-theme button
   // and chat button can lift clear of it (see globals.css). Without this they
@@ -112,14 +118,25 @@ export default function NarrationMiniBar({
           )}
         </button>
 
+        {/* The title block is the chapter affordance where chapters exist:
+            mid-listen, "take me to a section" beats "take me back to the
+            panel", and it gives the sheet a target far larger than an icon.
+            Without chapters it keeps its original job. */}
         <button
           type="button"
           className="narration-mini-title"
-          onClick={onReturnToPanel}
-          aria-label={`Back to the audio edition for ${title}`}
+          onClick={onOpenChapters ?? onReturnToPanel}
+          aria-haspopup={onOpenChapters ? 'dialog' : undefined}
+          aria-label={
+            onOpenChapters
+              ? `Chapters${chapterLabel ? ` — currently ${chapterLabel}` : ''}`
+              : `Back to the audio edition for ${title}`
+          }
         >
-          <span className="narration-mini-eyebrow">Listening</span>
-          <span className="narration-mini-name">{title}</span>
+          <span className="narration-mini-eyebrow">
+            {chapterLabel ? 'Chapters' : 'Listening'}
+          </span>
+          <span className="narration-mini-name">{chapterLabel ?? title}</span>
         </button>
 
         {/* One primary action on the left edge of the measure; everything

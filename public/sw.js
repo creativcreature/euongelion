@@ -4,6 +4,8 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R40 (F-086, chapters): bumped to v53 — audio chapters, the chapter sheet,
+// and the on-page section marker are all client code.
 // R39 (F-086, narration): bumped to v52. Reading routes are cache-first, so a
 // returning reader was being served the previous build's HTML *and* the old
 // chunk hashes it references — the pre-rendered narration player and the
@@ -14,7 +16,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v52'
+const CACHE_NAME = 'euangelion-v53'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

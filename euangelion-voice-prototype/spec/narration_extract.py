@@ -296,7 +296,7 @@ def extract(dev):
     segs = []
     seen = set()
 
-    def push(label, register, text):
+    def push(label, register, text, module_index=0, heading=None):
         t = to_speech(text)
         if not t or len(t.split()) < 2:
             return
@@ -304,14 +304,21 @@ def extract(dev):
         if k in seen:          # never read the same prose twice
             return
         seen.add(k)
-        segs.append({"label": label, "register": register, "text": t})
+        segs.append({
+            "label": label, "register": register, "text": t,
+            # 1-based to match the reader's `#devotional-section-N` anchors,
+            # which are 1-indexed over the module array (SA-034). 0 = the
+            # title, which precedes every module.
+            "module_index": module_index,
+            "heading": heading,
+        })
 
     # Title and subtitle are separate sentences; joined bare they run together.
     parts = [x.strip().rstrip(".") for x in
              (dev.get("title"), dev.get("subtitle")) if x and x.strip()]
-    push("Title", "title", ". ".join(parts) + "." if parts else "")
+    push("Title", "title", ". ".join(parts) + "." if parts else "", 0, None)
 
-    for m in dev.get("modules") or []:
+    for module_number, m in enumerate(dev.get("modules") or [], start=1):
         t = m.get("type", "teaching")
         if t in NAV_TYPES:
             continue
@@ -319,13 +326,14 @@ def extract(dev):
         reg = REGISTER.get(t, "teaching")
 
         if t == "vocab":
-            push("Word study", "teaching", vocab_headword(m))
+            push("Word study", "teaching", vocab_headword(m),
+                 module_number, m.get("heading"))
 
         if not order:                      # unknown type: read its prose fields
             for k, v in m.items():
                 if isinstance(v, str) and len(v.split()) >= 8 and k not in (
                         "type", "id", "slug", "heading"):
-                    push(t.title(), reg, v)
+                    push(t.title(), reg, v, module_number, m.get("heading"))
             continue
 
         consumed = set()
@@ -337,7 +345,7 @@ def extract(dev):
                     prefix = PREFIX.get((t, field), "")
                     if t == "scripture" and field == "reference":
                         v = expand_reference(v)
-                    push(label, reg, prefix + v)
+                    push(label, reg, prefix + v, module_number, m.get("heading"))
                     consumed.update(group)   # mirrors are covered too
                     break                    # mirrored variants: first wins
 
@@ -348,7 +356,8 @@ def extract(dev):
                 continue
             if len(v.split()) < 12:
                 continue
-            push(m.get("heading") or t.title(), reg, v)
+            push(m.get("heading") or t.title(), reg, v,
+                 module_number, m.get("heading"))
     return segs
 
 

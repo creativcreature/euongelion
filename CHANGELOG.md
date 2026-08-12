@@ -118,6 +118,24 @@ the site before. `sw.js` documents the contract — keep `CACHE_NAME` in sync wi
 code went out without bumping either. Both now at v52, which makes the client
 unregister, clear every `euangelion-*` cache, and re-register.
 
+**Chapters (2026-08-12).** Every devotional heading is now a navigable point in
+the recording, reached from a pull-up sheet, with the section being read marked
+in the page. Timestamps are measured from the renders rather than estimated —
+an estimate drifts tens of seconds over a 20-minute track and lands mid
+sentence — and `build_chapters.py` replicates the stitcher's pause grammar
+exactly, since ignoring those gaps costs about half a second per segment.
+Verified by decoding shipped audio and transcribing at three marks. Extraction
+is deterministic, so the join between fresh module indices and stored durations
+is safe; any devotional that fails the text check is skipped rather than given
+wrong marks. 384 devotionals have chapters, median 10.
+
+Selecting a chapter moves the audio AND the page, because a chapter is a
+position in both. The sheet is opened deliberately rather than printed, which
+is what keeps SA-034's objection satisfied — that ruling was against a list you
+cannot avoid seeing, not against an index existing. The on-page marker writes a
+single attribute when the reading crosses into a new section, roughly once a
+minute, with no scroll listeners or observers.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 

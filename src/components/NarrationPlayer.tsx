@@ -1,7 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { formatTime, type NarrationTrack } from '@/lib/audio/tracks'
+import { chapterAt, formatTime, type NarrationTrack } from '@/lib/audio/tracks'
+import NarrationChapters from '@/components/NarrationChapters'
 import NarrationMiniBar from '@/components/NarrationMiniBar'
 
 const SPEEDS = [0.8, 1, 1.25, 1.5] as const
@@ -70,6 +71,7 @@ export default function NarrationPlayer({
    * never presses play never meets a media widget.
    */
   const [hasStarted, setHasStarted] = useState(false)
+  const [chaptersOpen, setChaptersOpen] = useState(false)
   const [panelVisible, setPanelVisible] = useState(true)
   const [current, setCurrent] = useState(0)
   const [duration, setDuration] = useState(track.duration)
@@ -238,6 +240,49 @@ export default function NarrationPlayer({
     navigator.mediaSession.playbackState = playing ? 'playing' : 'paused'
   }, [playing])
 
+  /**
+   * Jump to a chapter: move the audio AND bring the page to the same section.
+   *
+   * The founder's ask was to "quickly scroll to the section I want as it
+   * relates to the audio player" — so a chapter is a position in both the
+   * reading and the recording, and selecting one must not leave the eye and
+   * the ear in different places.
+   */
+  const seekToChapter = useCallback(
+    (seconds: number, module: number) => {
+      seekTo(seconds)
+      const el = document.getElementById(`devotional-section-${module}`)
+      if (!el) return
+      const reduced =
+        typeof window !== 'undefined' &&
+        window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+      el.scrollIntoView({
+        behavior: reduced ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    },
+    [seekTo],
+  )
+
+  const activeChapter = chapterAt(track.chapters, current)
+  const activeModule = activeChapter?.module ?? null
+
+  /**
+   * Mark the section being read.
+   *
+   * Keyed on the MODULE, not the clock: this runs when the reading crosses
+   * into a new section — roughly once a minute — rather than on every
+   * `timeupdate` tick. One query and one class toggle, no scroll listeners and
+   * no observers, so it costs effectively nothing while playing.
+   */
+  useEffect(() => {
+    if (activeModule === null || !playing) return
+    const el = document.getElementById(`devotional-section-${activeModule}`)
+    if (!el) return
+    el.setAttribute('data-narrating', 'true')
+    return () => el.removeAttribute('data-narrating')
+  }, [activeModule, playing])
+
   const progressPct = duration > 0 ? (current / duration) * 100 : 0
 
   return (
@@ -307,9 +352,23 @@ export default function NarrationPlayer({
             +{SKIP_SECONDS}
           </button>
 
+          {!!track.chapters?.length && (
+            <button
+              type="button"
+              className="narration-step text-label vw-small text-secondary ml-auto"
+              onClick={() => setChaptersOpen(true)}
+              aria-haspopup="dialog"
+              aria-label={`Chapters — ${track.chapters.length} sections`}
+            >
+              CHAPTERS
+            </button>
+          )}
+
           <button
             type="button"
-            className="narration-step text-label vw-small text-muted ml-auto"
+            className={`narration-step text-label vw-small text-muted${
+              track.chapters?.length ? '' : ' ml-auto'
+            }`}
             onClick={cycleSpeed}
             aria-label={`Playback speed ${speed}x`}
           >
@@ -421,6 +480,20 @@ export default function NarrationPlayer({
           onSeek={seekTo}
           onReturnToPanel={returnToPanel}
           skipSeconds={SKIP_SECONDS}
+          chapterLabel={activeChapter?.label ?? null}
+          onOpenChapters={
+            track.chapters?.length ? () => setChaptersOpen(true) : undefined
+          }
+        />
+      )}
+
+      {chaptersOpen && !!track.chapters?.length && (
+        <NarrationChapters
+          title={title}
+          chapters={track.chapters}
+          currentTime={current}
+          onSeek={seekToChapter}
+          onClose={() => setChaptersOpen(false)}
         />
       )}
     </>
