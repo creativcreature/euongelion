@@ -69,7 +69,11 @@ describe('AudioPlayer reader selection', () => {
     )
     const audio = container.querySelector('audio')
     expect(audio).not.toBeNull()
-    expect(audio?.getAttribute('src')).toBe('/audio/has-track-day-1.m4a')
+    // Version-stamped from the encoded size: audio is served immutable for a
+    // year, so a re-render must change the URL or browsers pin a stale reading.
+    expect(audio?.getAttribute('src')).toBe(
+      '/audio/has-track-day-1.m4a?v=8001959',
+    )
     // Transport belongs to the media element, not a section scrubber.
     expect(screen.getByRole('slider', { name: /seek/i })).toBeTruthy()
     expect(

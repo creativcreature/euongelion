@@ -41,7 +41,17 @@ export function getNarrationTrack(
   slug: string | undefined,
 ): NarrationTrack | null {
   if (!slug) return null
-  return TRACKS[slug] ?? null
+  const track = TRACKS[slug]
+  if (!track) return null
+  // Version stamp from the encoded byte size. Audio is served with a one-year
+  // immutable cache (see public/_headers) — necessary because a 22-minute
+  // track is ~8 MB, and because Cloudflare satisfies the Range requests that
+  // make seeking cheap by slicing its OWN cached copy, which requires the
+  // response to be cacheable. Immutable would otherwise pin a stale reading in
+  // browsers after a re-render, so changing audio changes the URL.
+  return track.src.includes('?')
+    ? track
+    : { ...track, src: `${track.src}?v=${track.bytes}` }
 }
 
 /** How many devotionals currently have narration. Used by tooling and tests. */

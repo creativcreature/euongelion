@@ -72,6 +72,15 @@ reads its hyphens as breaks (`KHEH-sed` → "k-sad") while raw `chesed` is alrea
 correct. Overrides live in `spec/pronunciation-overrides.json` and change only
 what is sent to the engine, never the devotional text.
 
+**Delivery contract.** Workers-runtime verification caught that `/audio/*` was
+served `max-age=0, must-revalidate` with no `Accept-Ranges`, so an 8 MB track
+was re-fetched every visit — and, more importantly, could not be scrubbed
+cheaply: Cloudflare strips `Range` before invoking the Worker and slices byte
+ranges from its own cached copy, which requires the response to be cacheable.
+`/audio/*` now serves immutable for a year, with `?v=<encoded byte size>`
+stamped onto each `src` so a re-render invalidates instead of pinning a stale
+reading in browsers.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 

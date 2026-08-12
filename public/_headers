@@ -1,2 +1,13 @@
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# Narration audio (F-086). Two reasons this matters beyond bandwidth:
+# a 22-minute track is ~8 MB, and the default max-age=0,must-revalidate made
+# the browser re-fetch it on every visit. More importantly, Cloudflare strips
+# the Range header before invoking the Worker and slices byte ranges out of its
+# OWN cached copy — so seeking within a track only works cheaply when that copy
+# is cacheable. Immutable is safe here because tracks.ts appends a ?v= built
+# from the encoded byte size, so a re-render changes the URL.
+/audio/*
+  Cache-Control: public,max-age=31536000,immutable
+  Accept-Ranges: bytes
