@@ -108,6 +108,16 @@ directives on one header. The manifest is now a build input at
 `src/data/audio-manifest.json`, never served, leaving `/audio/*` holding only
 `.m4a` files where immutable is unambiguously right.
 
+**Service worker bumped to v52 — and this is why nothing appeared to change.**
+Reading routes are cache-first (`cacheFirstWithUpdate`), and `/_next/static/`
+is served from cache when present, so a returning reader received the previous
+build's HTML _and_ the old chunk hashes it references. The narration player and
+the reading rule deployed correctly and were invisible to anyone who had opened
+the site before. `sw.js` documents the contract — keep `CACHE_NAME` in sync with
+`SW_VERSION` in `ServiceWorkerRegistration.tsx` — and four deploys of new client
+code went out without bumping either. Both now at v52, which makes the client
+unregister, clear every `euangelion-*` cache, and re-register.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 
