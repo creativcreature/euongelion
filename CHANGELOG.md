@@ -81,11 +81,30 @@ ranges from its own cached copy, which requires the response to be cacheable.
 stamped onto each `src` so a re-render invalidates instead of pinning a stale
 reading in browsers.
 
+**The reading rule.** Narration control now follows the reader down the page,
+built as a bookmark ribbon rather than a media widget — SA-034 had the section
+scrubber removed from the Audio Edition panel precisely because it made the page
+open like app chrome, and a persistent player is the thing most likely to undo
+that. The bar has no top border: its top edge IS the progress line, a cobalt
+rule filling across the viewport that doubles as the seek control. It is earned
+rather than default — it appears only once the reader has pressed play AND
+scrolled the panel away, and retires when the panel returns, so a reader who
+never listens never meets it. Content sits on the reader's own grid, with the
+play control landing on the exact vertical of the "AUDIO EDITION" label it
+replaces.
+
+Three collisions were caught by measuring the DOM rather than eyeballing
+screenshots: the floating reader-theme button sat directly on top of the play
+control (both bottom-fixed, z-200); the progress rule rendered flat because
+`--pct` was set on the `<input>` while the fill span is its sibling; and a 6px
+sliver of scrolling text showed between the bar and the mobile tab bar because
+the offset was borrowed from the body's bottom padding, which carries slack.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 
 Verified: `npm run type-check` clean; full suite **140 files / 1824 tests**
-passing (19 new).
+passing (26 new).
 
 ---
 

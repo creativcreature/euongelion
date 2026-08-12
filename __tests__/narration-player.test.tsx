@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, cleanup } from '@testing-library/react'
+import { render, screen, cleanup, act } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
 import { formatTime } from '@/lib/audio/tracks'
 
@@ -112,6 +112,120 @@ describe('AudioPlayer reader selection', () => {
       <AudioPlayer title="No Slug" segments={SEGMENTS} />,
     )
     expect(container.querySelector('audio')).toBeNull()
+  })
+})
+
+/**
+ * The mini bar is earned, not default.
+ *
+ * The founder had the section scrubber removed from the Audio Edition panel
+ * (2026-07-28) because it made the page open like app chrome instead of an
+ * editorial. A transport that follows the reader down the page is exactly the
+ * thing that could undo that, so it may only exist once the reader has both
+ * pressed play AND scrolled the panel away — and it must retire when the panel
+ * returns.
+ */
+describe('NarrationMiniBar — appearance rules', () => {
+  let observerCallback:
+    | ((entries: { isIntersecting: boolean }[]) => void)
+    | null = null
+
+  beforeEach(() => {
+    observerCallback = null
+    // jsdom has no IntersectionObserver; capture the callback so a test can
+    // drive the panel on and off screen.
+    window.IntersectionObserver = class {
+      constructor(cb: (entries: { isIntersecting: boolean }[]) => void) {
+        observerCallback = cb
+      }
+      observe() {}
+      disconnect() {}
+      unobserve() {}
+      takeRecords() {
+        return []
+      }
+      root = null
+      rootMargin = ''
+      thresholds = []
+    } as unknown as typeof IntersectionObserver
+  })
+
+  const renderPlayer = () =>
+    render(
+      <AudioPlayer
+        title="The Fruit of Lies"
+        segments={SEGMENTS}
+        slug="has-track-day-1"
+      />,
+    )
+
+  const scrollPanelAway = () => {
+    act(() => observerCallback?.([{ isIntersecting: false }]))
+  }
+  const scrollPanelBack = () => {
+    act(() => observerCallback?.([{ isIntersecting: true }]))
+  }
+  const startPlaying = (container: HTMLElement) => {
+    const audio = container.querySelector('audio') as HTMLAudioElement
+    act(() => {
+      audio.dispatchEvent(new Event('play'))
+    })
+  }
+
+  it('stays hidden while the reader has never pressed play', () => {
+    renderPlayer()
+    scrollPanelAway()
+    expect(screen.queryByLabelText('Audio edition, minimized')).toBeNull()
+  })
+
+  it('stays hidden while the panel is still on screen', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    expect(screen.queryByLabelText('Audio edition, minimized')).toBeNull()
+  })
+
+  it('appears once playing and the panel has scrolled away', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    expect(screen.getByLabelText('Audio edition, minimized')).toBeTruthy()
+    expect(screen.getByLabelText('Pause the reading')).toBeTruthy()
+  })
+
+  it('retires when the panel comes back into view', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    expect(screen.getByLabelText('Audio edition, minimized')).toBeTruthy()
+    scrollPanelBack()
+    expect(screen.queryByLabelText('Audio edition, minimized')).toBeNull()
+  })
+
+  it('drives the same audio element as the panel — never a second one', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    // The bar is portalled to document.body, so count across the whole document.
+    expect(document.querySelectorAll('audio')).toHaveLength(1)
+  })
+
+  it('shows remaining time, counting down', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    // 1299.9s track, nothing played yet → 21:39 still to go.
+    // Remaining rather than elapsed: the useful question while working is
+    // "how much longer", not "how far in".
+    expect(screen.getByText('21:39 left')).toBeTruthy()
+  })
+
+  it('offers a way back to the full panel', () => {
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    expect(
+      screen.getByLabelText('Back to the audio edition for The Fruit of Lies'),
+    ).toBeTruthy()
   })
 })
 

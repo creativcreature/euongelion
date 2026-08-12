@@ -10893,3 +10893,37 @@ html[data-held-moment] .mobile-tab-bar {
   padding: 0.55rem 1.25rem;
   min-height: 44px;
 }
+
+/* ── Narration mini bar: yield the bottom corners ─────────────────────
+   The reader-theme trigger (bottom-left) and the chat button (bottom-right)
+   are both fixed at z-200 with ~1.25rem of bottom offset, which puts them on
+   top of the narration bar — the theme button landed directly over the play
+   control. While the bar is up, lift both clear of it. F-086 / SA-035. */
+:root[data-narration-bar='true'] .reader-theme-trigger {
+  bottom: calc(
+    env(safe-area-inset-bottom, 0px) + 1.25rem + var(--narration-bar-h, 3.6rem)
+  );
+  transition: bottom var(--motion-base, 200ms) var(--motion-ease, ease-out);
+}
+
+:root[data-narration-bar='true'] .devotional-chat-launcher {
+  transform: translateY(calc(-1 * var(--narration-bar-h, 3.6rem)));
+  transition: transform var(--motion-base, 200ms) var(--motion-ease, ease-out);
+}
+
+@media (max-width: 767px) {
+  /* On mobile the bar is itself lifted 3.7rem to clear the tab bar, so the
+     controls must clear BOTH — bar height plus that offset. Using only the bar
+     height leaves the theme button sitting inside the bar. */
+  :root[data-narration-bar='true'] .reader-theme-trigger,
+  :root[data-narration-bar='true'] .devotional-chat-launcher {
+    --narration-bar-h: 7.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-narration-bar='true'] .reader-theme-trigger,
+  :root[data-narration-bar='true'] .devotional-chat-launcher {
+    transition: none;
+  }
+}

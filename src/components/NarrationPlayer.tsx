@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { formatTime, type NarrationTrack } from '@/lib/audio/tracks'
+import NarrationMiniBar from '@/components/NarrationMiniBar'
 
 const SPEEDS = [0.8, 1, 1.25, 1.5] as const
 const SKIP_SECONDS = 15
@@ -61,7 +62,15 @@ export default function NarrationPlayer({
   className,
 }: NarrationPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const panelRef = useRef<HTMLElement | null>(null)
   const [playing, setPlaying] = useState(false)
+  /**
+   * The mini bar is earned, not default. It appears only after the reader has
+   * actually started listening AND scrolled the panel away, so a reader who
+   * never presses play never meets a media widget.
+   */
+  const [hasStarted, setHasStarted] = useState(false)
+  const [panelVisible, setPanelVisible] = useState(true)
   const [current, setCurrent] = useState(0)
   const [duration, setDuration] = useState(track.duration)
   const [speed, setSpeed] = useState<number>(1)
@@ -105,6 +114,33 @@ export default function NarrationPlayer({
     }, 5000)
     return () => window.clearInterval(id)
   }, [playing, slug])
+
+  // Track whether the Audio Edition panel is on screen. The two surfaces hand
+  // off to each other: when the panel is readable, the bar retires.
+  useEffect(() => {
+    const panel = panelRef.current
+    if (!panel || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      ([entry]) => setPanelVisible(entry.isIntersecting),
+      // A sliver counts as present, so the bar does not flicker in and out
+      // while the panel is halfway off the top of the viewport.
+      { threshold: 0, rootMargin: '-64px 0px -64px 0px' },
+    )
+    observer.observe(panel)
+    return () => observer.disconnect()
+  }, [])
+
+  const returnToPanel = useCallback(() => {
+    const panel = panelRef.current
+    if (!panel) return
+    const reduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    panel.scrollIntoView({
+      behavior: reduced ? 'auto' : 'smooth',
+      block: 'center',
+    })
+  }, [])
 
   const toggle = useCallback(() => {
     const audio = audioRef.current
@@ -205,166 +241,188 @@ export default function NarrationPlayer({
   const progressPct = duration > 0 ? (current / duration) * 100 : 0
 
   return (
-    <section
-      className={`narration-player border px-4 py-4 ${className ?? ''}`}
-      style={{ borderColor: 'var(--color-border)' }}
-      aria-label="Audio edition"
-    >
-      <audio
-        ref={audioRef}
-        src={track.src}
-        preload="metadata"
-        onPlay={() => {
-          setPlaying(true)
-          setError(null)
-        }}
-        onPause={() => setPlaying(false)}
-        onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
-        onLoadedMetadata={(e) => {
-          if (Number.isFinite(e.currentTarget.duration)) {
-            setDuration(e.currentTarget.duration)
-          }
-          restorePosition(e.currentTarget)
-        }}
-        onEnded={() => {
-          setPlaying(false)
-          writePosition(slug, 0)
-        }}
-        onError={() => setError('This reading could not be loaded.')}
-      />
-
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <p className="text-label vw-small text-gold">AUDIO EDITION</p>
-        <p className="vw-small text-muted oldstyle-nums" aria-live="polite">
-          {formatTime(current)} / {formatTime(duration)}
-        </p>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <button
-          type="button"
-          className="narration-step text-label vw-small text-secondary"
-          onClick={() => skip(-SKIP_SECONDS)}
-          aria-label={`Back ${SKIP_SECONDS} seconds`}
-        >
-          −{SKIP_SECONDS}
-        </button>
-
-        <button
-          type="button"
-          className="narration-toggle cta-major text-label vw-small px-5 py-2"
-          onClick={toggle}
-          aria-pressed={playing}
-        >
-          {playing ? 'PAUSE' : current > 0 ? 'RESUME' : 'LISTEN'}
-        </button>
-
-        <button
-          type="button"
-          className="narration-step text-label vw-small text-secondary"
-          onClick={() => skip(SKIP_SECONDS)}
-          aria-label={`Forward ${SKIP_SECONDS} seconds`}
-        >
-          +{SKIP_SECONDS}
-        </button>
-
-        <button
-          type="button"
-          className="narration-step text-label vw-small text-muted ml-auto"
-          onClick={cycleSpeed}
-          aria-label={`Playback speed ${speed}x`}
-        >
-          {speed}×
-        </button>
-      </div>
-
-      <label className="narration-seek mt-4 block">
-        <span className="sr-only">Seek within the reading</span>
-        <input
-          type="range"
-          min={0}
-          max={Math.max(duration, 1)}
-          step={1}
-          value={current}
-          onChange={(e) => seekTo(Number(e.target.value))}
-          style={{ ['--pct' as string]: `${progressPct}%` }}
+    <>
+      <section
+        ref={panelRef}
+        className={`narration-player border px-4 py-4 ${className ?? ''}`}
+        style={{ borderColor: 'var(--color-border)' }}
+        aria-label="Audio edition"
+      >
+        <audio
+          ref={audioRef}
+          src={track.src}
+          preload="metadata"
+          onPlay={() => {
+            setPlaying(true)
+            setHasStarted(true)
+            setError(null)
+          }}
+          onPause={() => setPlaying(false)}
+          onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
+          onLoadedMetadata={(e) => {
+            if (Number.isFinite(e.currentTarget.duration)) {
+              setDuration(e.currentTarget.duration)
+            }
+            restorePosition(e.currentTarget)
+          }}
+          onEnded={() => {
+            setPlaying(false)
+            writePosition(slug, 0)
+          }}
+          onError={() => setError('This reading could not be loaded.')}
         />
-      </label>
 
-      {resumedFrom !== null && !playing && (
-        <p className="vw-small text-muted mt-2">
-          Picking up where you left off, at {formatTime(resumedFrom)}.{' '}
-          <button type="button" className="underline" onClick={() => seekTo(0)}>
-            Start from the beginning
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <p className="text-label vw-small text-gold">AUDIO EDITION</p>
+          <p className="vw-small text-muted oldstyle-nums" aria-live="polite">
+            {formatTime(current)} / {formatTime(duration)}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            className="narration-step text-label vw-small text-secondary"
+            onClick={() => skip(-SKIP_SECONDS)}
+            aria-label={`Back ${SKIP_SECONDS} seconds`}
+          >
+            −{SKIP_SECONDS}
           </button>
-        </p>
-      )}
 
-      {error && (
-        <p
-          className="vw-small mt-3"
-          role="status"
-          style={{ color: 'var(--color-crimson, #c4192e)' }}
-        >
-          {error}
-        </p>
-      )}
+          <button
+            type="button"
+            className="narration-toggle cta-major text-label vw-small px-5 py-2"
+            onClick={toggle}
+            aria-pressed={playing}
+          >
+            {playing ? 'PAUSE' : current > 0 ? 'RESUME' : 'LISTEN'}
+          </button>
 
-      <style jsx>{`
-        .narration-step {
-          min-width: 44px;
-          min-height: 44px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: transparent;
-          border: 1px solid var(--color-border);
-          line-height: 1;
-        }
-        .narration-toggle {
-          min-height: 44px;
-        }
-        .narration-seek input {
-          width: 100%;
-          height: 44px;
-          -webkit-appearance: none;
-          appearance: none;
-          background: transparent;
-          cursor: pointer;
-        }
-        .narration-seek input::-webkit-slider-runnable-track {
-          height: 3px;
-          background: linear-gradient(
-            to right,
-            var(--color-gold) var(--pct),
-            var(--color-border) var(--pct)
-          );
-        }
-        .narration-seek input::-moz-range-track {
-          height: 3px;
-          background: linear-gradient(
-            to right,
-            var(--color-gold) var(--pct),
-            var(--color-border) var(--pct)
-          );
-        }
-        .narration-seek input::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 13px;
-          height: 13px;
-          margin-top: -5px;
-          border-radius: 50%;
-          background: var(--color-gold);
-        }
-        .narration-seek input::-moz-range-thumb {
-          width: 13px;
-          height: 13px;
-          border: 0;
-          border-radius: 50%;
-          background: var(--color-gold);
-        }
-      `}</style>
-    </section>
+          <button
+            type="button"
+            className="narration-step text-label vw-small text-secondary"
+            onClick={() => skip(SKIP_SECONDS)}
+            aria-label={`Forward ${SKIP_SECONDS} seconds`}
+          >
+            +{SKIP_SECONDS}
+          </button>
+
+          <button
+            type="button"
+            className="narration-step text-label vw-small text-muted ml-auto"
+            onClick={cycleSpeed}
+            aria-label={`Playback speed ${speed}x`}
+          >
+            {speed}×
+          </button>
+        </div>
+
+        <label className="narration-seek mt-4 block">
+          <span className="sr-only">Seek within the reading</span>
+          <input
+            type="range"
+            min={0}
+            max={Math.max(duration, 1)}
+            step={1}
+            value={current}
+            onChange={(e) => seekTo(Number(e.target.value))}
+            style={{ ['--pct' as string]: `${progressPct}%` }}
+          />
+        </label>
+
+        {resumedFrom !== null && !playing && (
+          <p className="vw-small text-muted mt-2">
+            Picking up where you left off, at {formatTime(resumedFrom)}.{' '}
+            <button
+              type="button"
+              className="underline"
+              onClick={() => seekTo(0)}
+            >
+              Start from the beginning
+            </button>
+          </p>
+        )}
+
+        {error && (
+          <p
+            className="vw-small mt-3"
+            role="status"
+            style={{ color: 'var(--color-crimson, #c4192e)' }}
+          >
+            {error}
+          </p>
+        )}
+
+        <style jsx>{`
+          .narration-step {
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            line-height: 1;
+          }
+          .narration-toggle {
+            min-height: 44px;
+          }
+          .narration-seek input {
+            width: 100%;
+            height: 44px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+          }
+          .narration-seek input::-webkit-slider-runnable-track {
+            height: 3px;
+            background: linear-gradient(
+              to right,
+              var(--color-gold) var(--pct),
+              var(--color-border) var(--pct)
+            );
+          }
+          .narration-seek input::-moz-range-track {
+            height: 3px;
+            background: linear-gradient(
+              to right,
+              var(--color-gold) var(--pct),
+              var(--color-border) var(--pct)
+            );
+          }
+          .narration-seek input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 13px;
+            height: 13px;
+            margin-top: -5px;
+            border-radius: 50%;
+            background: var(--color-gold);
+          }
+          .narration-seek input::-moz-range-thumb {
+            width: 13px;
+            height: 13px;
+            border: 0;
+            border-radius: 50%;
+            background: var(--color-gold);
+          }
+        `}</style>
+      </section>
+
+      {hasStarted && !panelVisible && (
+        <NarrationMiniBar
+          title={title}
+          playing={playing}
+          current={current}
+          duration={duration}
+          onToggle={toggle}
+          onSkip={skip}
+          onSeek={seekTo}
+          onReturnToPanel={returnToPanel}
+          skipSeconds={SKIP_SECONDS}
+        />
+      )}
+    </>
   )
 }

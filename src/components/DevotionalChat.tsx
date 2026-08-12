@@ -528,7 +528,9 @@ export default function DevotionalChat({
             setChatSidebarOpen(true)
             open()
           }}
-          className="fixed right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-[var(--color-border-strong)] bg-gold text-tehom transition-all duration-300 hover:-translate-y-0.5 bottom-[calc(env(safe-area-inset-bottom,0px)+4.3rem)] md:bottom-[calc(env(safe-area-inset-bottom,0px)+1.5rem)]"
+          // `devotional-chat-launcher` is the hook the narration mini bar uses
+          // to lift this clear of itself while audio is playing (globals.css).
+          className="devotional-chat-launcher fixed right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-[var(--color-border-strong)] bg-gold text-tehom transition-all duration-300 hover:-translate-y-0.5 bottom-[calc(env(safe-area-inset-bottom,0px)+4.3rem)] md:bottom-[calc(env(safe-area-inset-bottom,0px)+1.5rem)]"
           style={{ zIndex: 'var(--z-fixed)' }}
           aria-label="Open biblical research chat"
         >
