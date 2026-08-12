@@ -39,6 +39,38 @@
   "engine": "kokoro",
   "bytes": 2652327
  },
+ "abiding-in-his-presence-day-6": {
+  "src": "/audio/abiding-in-his-presence-day-6.m4a",
+  "duration": 444.6,
+  "words": 943,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2730151
+ },
+ "anointed-day-1": {
+  "src": "/audio/anointed-day-1.m4a",
+  "duration": 396.2,
+  "words": 984,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2431200
+ },
+ "anointed-day-2": {
+  "src": "/audio/anointed-day-2.m4a",
+  "duration": 402.4,
+  "words": 964,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2466980
+ },
+ "anointed-day-3": {
+  "src": "/audio/anointed-day-3.m4a",
+  "duration": 436.7,
+  "words": 1085,
+  "voice": "am_michael",
+  "engine": "kokoro",
+  "bytes": 2680989
+ },
  "he-cannot-deny-himself-day-1": {
   "src": "/audio/he-cannot-deny-himself-day-1.m4a",
   "duration": 1299.9,
