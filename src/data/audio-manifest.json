@@ -10199,6 +10199,426 @@
       }
     ]
   },
+  "bible-365-day-243": {
+    "src": "/audio/bible-365-day-243.m4a",
+    "duration": 618.4,
+    "words": 1726,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3805399,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 56.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 115.1,
+        "label": "The Question Grief Cannot Answer",
+        "module": 3
+      },
+      {
+        "t": 202.8,
+        "label": "What They Were Actually Saying",
+        "module": 4
+      },
+      {
+        "t": 277.8,
+        "label": "Two Sermons, and the Gap Between Them",
+        "module": 5
+      },
+      {
+        "t": 495.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 507.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 540.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 557.7,
+        "label": "The Priest Who Preached to Bones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-244": {
+    "src": "/audio/bible-365-day-244.m4a",
+    "duration": 732.4,
+    "words": 2018,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4509945,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 38.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.4,
+        "label": "A Valley Full of the Worst Thing",
+        "module": 3
+      },
+      {
+        "t": 225.6,
+        "label": "The Word She Stopped Saying",
+        "module": 4
+      },
+      {
+        "t": 316.7,
+        "label": "Why God Acts - and It Is Not Because You Earned It",
+        "module": 5
+      },
+      {
+        "t": 592.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 603.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 637.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 657.5,
+        "label": "The Priest Who Preached to the Dead",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-245": {
+    "src": "/audio/bible-365-day-245.m4a",
+    "duration": 677.6,
+    "words": 1898,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4176120,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 68.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 132.8,
+        "label": "A Question Asked Over a Floor of Bones",
+        "module": 3
+      },
+      {
+        "t": 219.8,
+        "label": "The Word She Could Not Say Yet",
+        "module": 4
+      },
+      {
+        "t": 287.8,
+        "label": "It Happens in Two Stages, and the First One Looks Like Failure",
+        "module": 5
+      },
+      {
+        "t": 554.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 563.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 597.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 619.4,
+        "label": "The Priest Who Prophesied to Bones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-246": {
+    "src": "/audio/bible-365-day-246.m4a",
+    "duration": 672.6,
+    "words": 1856,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4142940,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 54.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 115.8,
+        "label": "Two Visions, One King",
+        "module": 3
+      },
+      {
+        "t": 223.9,
+        "label": "The Two Photographs",
+        "module": 4
+      },
+      {
+        "t": 310.8,
+        "label": "Cut Off, and Still the King",
+        "module": 5
+      },
+      {
+        "t": 547.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 557.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 590.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 609.7,
+        "label": "The voice behind today",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-247": {
+    "src": "/audio/bible-365-day-247.m4a",
+    "duration": 727.7,
+    "words": 1986,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4483326,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 36.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 112.5,
+        "label": "Beasts From the Sea, a Man From the Clouds",
+        "module": 3
+      },
+      {
+        "t": 227.5,
+        "label": "The Man Who Prayed Toward a Ruin",
+        "module": 4
+      },
+      {
+        "t": 311.5,
+        "label": "The King of the Everlasting Kingdom Is the One Cut Off",
+        "module": 5
+      },
+      {
+        "t": 589.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 606.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 644.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 666.9,
+        "label": "The Exile Who Saw the Throne",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-248": {
+    "src": "/audio/bible-365-day-248.m4a",
+    "duration": 751.6,
+    "words": 2000,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4628401,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 123.2,
+        "label": "An Old Man Reading an Old Book, and an Answer From Heaven",
+        "module": 3
+      },
+      {
+        "t": 236.8,
+        "label": "The Hospice Volunteer Who Stopped Defending Herself",
+        "module": 4
+      },
+      {
+        "t": 315.0,
+        "label": "The Cut-Off One and the Crowned One Have the Same Face",
+        "module": 5
+      },
+      {
+        "t": 626.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 639.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 668.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 684.9,
+        "label": "The Exile Who Prayed From Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-249": {
+    "src": "/audio/bible-365-day-249.m4a",
+    "duration": 660.4,
+    "words": 1768,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4063991,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 60.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 125.5,
+        "label": "Two Visions, One Person",
+        "module": 3
+      },
+      {
+        "t": 219.6,
+        "label": "The Prayer Before the Promise",
+        "module": 4
+      },
+      {
+        "t": 300.2,
+        "label": "He Has Nothing, So You Have Everything",
+        "module": 5
+      },
+      {
+        "t": 521.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 531.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 574.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 596.5,
+        "label": "The Praying Exile Who Saw the Son of Man",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-25": {
     "src": "/audio/bible-365-day-25.m4a",
     "duration": 698.2,
@@ -10255,6 +10675,606 @@
       {
         "t": 635.4,
         "label": "The Brother Who Ran Instead of the Sword That Fell",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-250": {
+    "src": "/audio/bible-365-day-250.m4a",
+    "duration": 606.9,
+    "words": 1665,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3734285,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 41.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 104.0,
+        "label": "Two Visions That Only Make Sense Together",
+        "module": 3
+      },
+      {
+        "t": 198.4,
+        "label": "The Trial Where He Said the Word",
+        "module": 4
+      },
+      {
+        "t": 272.0,
+        "label": "Cut Off, And Therefore Crowned",
+        "module": 5
+      },
+      {
+        "t": 482.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 494.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 523.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 544.9,
+        "label": "The Exile Who Saw the Messiah from Afar",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-251": {
+    "src": "/audio/bible-365-day-251.m4a",
+    "duration": 715.7,
+    "words": 1949,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4411131,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 59.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 125.5,
+        "label": "Two Visions, One Christ",
+        "module": 3
+      },
+      {
+        "t": 262.0,
+        "label": "The Title He Chose for Himself",
+        "module": 4
+      },
+      {
+        "t": 347.2,
+        "label": "Cut Off For, Not Cut Off From",
+        "module": 5
+      },
+      {
+        "t": 580.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 590.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 627.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 647.7,
+        "label": "The Exile Who Saw the Son of Man",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-252": {
+    "src": "/audio/bible-365-day-252.m4a",
+    "duration": 652.7,
+    "words": 1723,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4020177,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 40.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 112.3,
+        "label": "Six Verbs the Week Has Been Carrying",
+        "module": 3
+      },
+      {
+        "t": 207.2,
+        "label": "The Ledger She Stopped Keeping",
+        "module": 4
+      },
+      {
+        "t": 289.5,
+        "label": "Brought In, Not Built Up",
+        "module": 5
+      },
+      {
+        "t": 521.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 531.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 559.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 581.3,
+        "label": "The Exile Who Prayed for Return and Was Promised Atonement",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-253": {
+    "src": "/audio/bible-365-day-253.m4a",
+    "duration": 653.3,
+    "words": 1847,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4021473,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 47.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 120.0,
+        "label": "God Asks a Prophet to Live the Sermon",
+        "module": 3
+      },
+      {
+        "t": 223.4,
+        "label": "The Name on the Form",
+        "module": 4
+      },
+      {
+        "t": 298.8,
+        "label": "The Same Place, A Different Word",
+        "module": 5
+      },
+      {
+        "t": 530.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 539.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 568.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 587.5,
+        "label": "The Prophet Who Married the Sermon",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-254": {
+    "src": "/audio/bible-365-day-254.m4a",
+    "duration": 604.4,
+    "words": 1630,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3719044,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 118.9,
+        "label": "A Lawsuit That Sounds Like a Love Song",
+        "module": 3
+      },
+      {
+        "t": 205.3,
+        "label": "The Apology That Came Every Spring",
+        "module": 4
+      },
+      {
+        "t": 277.3,
+        "label": "Mercy, Not Sacrifice",
+        "module": 5
+      },
+      {
+        "t": 493.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 501.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 527.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 545.1,
+        "label": "The Prophet Who Married His Message",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-255": {
+    "src": "/audio/bible-365-day-255.m4a",
+    "duration": 649.0,
+    "words": 1766,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3997351,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 29.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 89.2,
+        "label": "Three Prophets, One Word",
+        "module": 3
+      },
+      {
+        "t": 171.8,
+        "label": "The Torn Shirt",
+        "module": 4
+      },
+      {
+        "t": 239.1,
+        "label": "The God Who Turns First",
+        "module": 5
+      },
+      {
+        "t": 513.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 524.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 558.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 578.7,
+        "label": "Son of Pethuel, Prophet of the Day of the LORD",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-256": {
+    "src": "/audio/bible-365-day-256.m4a",
+    "duration": 657.1,
+    "words": 1731,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4040540,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 53.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 119.7,
+        "label": "God Walks Out of His Own Worship Service",
+        "module": 3
+      },
+      {
+        "t": 210.1,
+        "label": "The Pledge and the Receipt",
+        "module": 4
+      },
+      {
+        "t": 282.1,
+        "label": "A River, Not a Faucet",
+        "module": 5
+      },
+      {
+        "t": 523.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 534.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 566.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 584.5,
+        "label": "The Shepherd Sent North",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-257": {
+    "src": "/audio/bible-365-day-257.m4a",
+    "duration": 661.9,
+    "words": 1802,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4074186,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 121.7,
+        "label": "Three Prophets End the Same Way",
+        "module": 3
+      },
+      {
+        "t": 224.4,
+        "label": "He Wrote the Apology for Them",
+        "module": 4
+      },
+      {
+        "t": 307.4,
+        "label": "Healed of the Very Thing That Caused It",
+        "module": 5
+      },
+      {
+        "t": 533.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 543.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 578.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 594.6,
+        "label": "The Prophet Who Lived His Message",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-258": {
+    "src": "/audio/bible-365-day-258.m4a",
+    "duration": 656.8,
+    "words": 1798,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4040469,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 50.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 104.9,
+        "label": "Three Prophets, One Diagnosis",
+        "module": 3
+      },
+      {
+        "t": 221.7,
+        "label": "The Well That Ran Dry",
+        "module": 4
+      },
+      {
+        "t": 301.6,
+        "label": "On All Flesh, Not the Few",
+        "module": 5
+      },
+      {
+        "t": 531.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 540.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 570.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 586.3,
+        "label": "Son of Pethuel, Prophet of the Outpoured Spirit",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-259": {
+    "src": "/audio/bible-365-day-259.m4a",
+    "duration": 659.5,
+    "words": 1781,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4059541,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 38.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 109.5,
+        "label": "Three Voices, One Promise",
+        "module": 3
+      },
+      {
+        "t": 207.1,
+        "label": "The Watering Can and the Storm",
+        "module": 4
+      },
+      {
+        "t": 293.1,
+        "label": "And Afterward",
+        "module": 5
+      },
+      {
+        "t": 531.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 545.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 573.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 596.4,
+        "label": "Prophet of the Outpoured Spirit",
         "module": 12
       }
     ]
@@ -10319,6 +11339,606 @@
       }
     ]
   },
+  "bible-365-day-260": {
+    "src": "/audio/bible-365-day-260.m4a",
+    "duration": 660.1,
+    "words": 1807,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4062721,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 59.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 129.8,
+        "label": "He Ran Because He Knew Exactly Who God Is",
+        "module": 3
+      },
+      {
+        "t": 216.3,
+        "label": "The Name He Couldn't Pray For",
+        "module": 4
+      },
+      {
+        "t": 282.0,
+        "label": "The Sign That Outran the Prophet",
+        "module": 5
+      },
+      {
+        "t": 520.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 530.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 565.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 580.4,
+        "label": "The Reluctant Prophet of Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-261": {
+    "src": "/audio/bible-365-day-261.m4a",
+    "duration": 660.5,
+    "words": 1828,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4065143,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 33.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 108.7,
+        "label": "Sent East, He Ran West",
+        "module": 3
+      },
+      {
+        "t": 205.3,
+        "label": "The Long Way Around",
+        "module": 4
+      },
+      {
+        "t": 291.3,
+        "label": "The Pagans Pray; The Prophet Sleeps",
+        "module": 5
+      },
+      {
+        "t": 539.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 547.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 576.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 592.8,
+        "label": "The Reluctant Prophet of Gath-hepher",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-262": {
+    "src": "/audio/bible-365-day-262.m4a",
+    "duration": 623.7,
+    "words": 1715,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3835965,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 51.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.4,
+        "label": "He Ran Because He Knew",
+        "module": 3
+      },
+      {
+        "t": 206.8,
+        "label": "The Name He Couldn't Pray For",
+        "module": 4
+      },
+      {
+        "t": 279.2,
+        "label": "The Plant and the City",
+        "module": 5
+      },
+      {
+        "t": 507.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 515.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 544.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 561.2,
+        "label": "The Prophet Who Resented Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-263": {
+    "src": "/audio/bible-365-day-263.m4a",
+    "duration": 634.8,
+    "words": 1742,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3906409,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 52.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 117.0,
+        "label": "The Prophet Who Succeeded and Hated It",
+        "module": 3
+      },
+      {
+        "t": 219.5,
+        "label": "The List in the Back of the Bible",
+        "module": 4
+      },
+      {
+        "t": 293.1,
+        "label": "The Plant and the City",
+        "module": 5
+      },
+      {
+        "t": 505.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 511.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 550.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 567.3,
+        "label": "The Reluctant Prophet of Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-264": {
+    "src": "/audio/bible-365-day-264.m4a",
+    "duration": 648.0,
+    "words": 1838,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3987393,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 96.0,
+        "label": "A Book That Refuses to End Tidily",
+        "module": 3
+      },
+      {
+        "t": 187.2,
+        "label": "The Name He Could Not Pray For",
+        "module": 4
+      },
+      {
+        "t": 281.1,
+        "label": "Everything in the Book Is Sent",
+        "module": 5
+      },
+      {
+        "t": 513.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 520.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 562.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 577.9,
+        "label": "The Prophet Who Resented Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-265": {
+    "src": "/audio/bible-365-day-265.m4a",
+    "duration": 867.3,
+    "words": 2412,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 5346282,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 97.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 171.9,
+        "label": "A Prophet Who Runs Toward the Sea Because God Is Kind",
+        "module": 3
+      },
+      {
+        "t": 309.0,
+        "label": "The Name on the List",
+        "module": 4
+      },
+      {
+        "t": 394.8,
+        "label": "The Book That Ends With a Question and No Answer",
+        "module": 5
+      },
+      {
+        "t": 710.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 720.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 757.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 776.2,
+        "label": "The Prophet Who Resented Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-266": {
+    "src": "/audio/bible-365-day-266.m4a",
+    "duration": 616.0,
+    "words": 1685,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3786536,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 28.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 89.0,
+        "label": "Eight Words and a Reluctant Prophet",
+        "module": 3
+      },
+      {
+        "t": 195.1,
+        "label": "The Brother at the Edge of the Party",
+        "module": 4
+      },
+      {
+        "t": 267.5,
+        "label": "He Ran Because He Believed",
+        "module": 5
+      },
+      {
+        "t": 482.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 489.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 526.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 548.5,
+        "label": "The Prophet Who Resented Mercy",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-267": {
+    "src": "/audio/bible-365-day-267.m4a",
+    "duration": 572.3,
+    "words": 1535,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3517791,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 32.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 89.2,
+        "label": "The Last Voices Before the Long Silence",
+        "module": 3
+      },
+      {
+        "t": 166.8,
+        "label": "The Light Under the Door",
+        "module": 4
+      },
+      {
+        "t": 229.3,
+        "label": "How the Old Testament Ends",
+        "module": 5
+      },
+      {
+        "t": 453.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 464.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 493.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 511.3,
+        "label": "The Prophet Who Asked God \"How Long?\"",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-268": {
+    "src": "/audio/bible-365-day-268.m4a",
+    "duration": 698.0,
+    "words": 1929,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4297944,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 116.3,
+        "label": "The Prophet Who Argued Back",
+        "module": 3
+      },
+      {
+        "t": 218.9,
+        "label": "The Light That Was Already on Its Way",
+        "module": 4
+      },
+      {
+        "t": 294.2,
+        "label": "The Vision Lingers, So Live by Faith",
+        "module": 5
+      },
+      {
+        "t": 579.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 587.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 615.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 635.6,
+        "label": "The Prophet on the Watchtower",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-269": {
+    "src": "/audio/bible-365-day-269.m4a",
+    "duration": 700.4,
+    "words": 1866,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4308583,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 102.4,
+        "label": "Standing on the Wall in the Long Silence",
+        "module": 3
+      },
+      {
+        "t": 220.6,
+        "label": "The Letter He Could Not Yet Read",
+        "module": 4
+      },
+      {
+        "t": 304.5,
+        "label": "The Dawn They Were Waiting For Has a Name",
+        "module": 5
+      },
+      {
+        "t": 557.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 569.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 604.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 624.7,
+        "label": "The Prophet Who Argued with God and Was Answered",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-27": {
     "src": "/audio/bible-365-day-27.m4a",
     "duration": 672.4,
@@ -10375,6 +11995,606 @@
       {
         "t": 602.5,
         "label": "The Heel-Grabber Who Became God-Wrestler",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-270": {
+    "src": "/audio/bible-365-day-270.m4a",
+    "duration": 567.7,
+    "words": 1557,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3488044,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 79.7,
+        "label": "Twelve Voices, One Long Note of Hope",
+        "module": 3
+      },
+      {
+        "t": 166.4,
+        "label": "The Farmer Who Sang at the Wrong Time",
+        "module": 4
+      },
+      {
+        "t": 240.3,
+        "label": "Hope Has a God Who Sings First",
+        "module": 5
+      },
+      {
+        "t": 432.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 443.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 471.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 493.3,
+        "label": "The Prophet Who Argued, Then Sang",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-271": {
+    "src": "/audio/bible-365-day-271.m4a",
+    "duration": 685.1,
+    "words": 1877,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4217218,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.7,
+        "label": "How the Old Testament Decides to End",
+        "module": 3
+      },
+      {
+        "t": 205.1,
+        "label": "The Window Facing East",
+        "module": 4
+      },
+      {
+        "t": 297.7,
+        "label": "Healing in Its Wings",
+        "module": 5
+      },
+      {
+        "t": 536.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 544.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 572.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 612.9,
+        "label": "The Last of the Prophets Before the Silence",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-272": {
+    "src": "/audio/bible-365-day-272.m4a",
+    "duration": 655.3,
+    "words": 1729,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4033393,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 32.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 94.1,
+        "label": "Five Books That End Looking East",
+        "module": 3
+      },
+      {
+        "t": 197.0,
+        "label": "The Man Who Planted the Slow Trees",
+        "module": 4
+      },
+      {
+        "t": 274.1,
+        "label": "Hope That Sings Before Morning",
+        "module": 5
+      },
+      {
+        "t": 511.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 521.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 558.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 578.3,
+        "label": "The Last Prophet Before the Silence",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-273": {
+    "src": "/audio/bible-365-day-273.m4a",
+    "duration": 638.7,
+    "words": 1745,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3930474,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 108.4,
+        "label": "Five Prophets, One Posture",
+        "module": 3
+      },
+      {
+        "t": 209.9,
+        "label": "The Watch Before Dawn",
+        "module": 4
+      },
+      {
+        "t": 290.6,
+        "label": "Then the Page Goes Quiet for Four Hundred Years",
+        "module": 5
+      },
+      {
+        "t": 514.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 521.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 554.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 576.3,
+        "label": "The Last Prophet Before the Dawn",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-274": {
+    "src": "/audio/bible-365-day-274.m4a",
+    "duration": 595.9,
+    "words": 1683,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3668177,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 96.2,
+        "label": "A Family Tree Is Not How You Start a Manifesto",
+        "module": 3
+      },
+      {
+        "t": 188.0,
+        "label": "The Letter and the Knock",
+        "module": 4
+      },
+      {
+        "t": 265.5,
+        "label": "The Kingdom Has a Pulse",
+        "module": 5
+      },
+      {
+        "t": 478.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 487.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 515.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 534.2,
+        "label": "Immanuel, the King Who Comes Near",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-275": {
+    "src": "/audio/bible-365-day-275.m4a",
+    "duration": 704.1,
+    "words": 1893,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4333392,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 28.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 99.8,
+        "label": "A Genealogy, a Name, and a Mountain",
+        "module": 3
+      },
+      {
+        "t": 237.8,
+        "label": "The Architect Who Toured His Own Houses",
+        "module": 4
+      },
+      {
+        "t": 318.8,
+        "label": "The Kingdom Goes First to the Empty-Handed",
+        "module": 5
+      },
+      {
+        "t": 576.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 586.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 617.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 640.2,
+        "label": "Son of David, Son of Abraham, Immanuel",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-276": {
+    "src": "/audio/bible-365-day-276.m4a",
+    "duration": 648.8,
+    "words": 1762,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3992575,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 25.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 93.5,
+        "label": "A King Is Named, and a Kingdom Is Announced",
+        "module": 3
+      },
+      {
+        "t": 204.5,
+        "label": "The Entrance Exam With No Questions",
+        "module": 4
+      },
+      {
+        "t": 286.1,
+        "label": "Be Perfect \u2014 and Here Is Your Daily Bread",
+        "module": 5
+      },
+      {
+        "t": 523.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 536.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 565.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 585.5,
+        "label": "The King Who Fulfills the Law",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-277": {
+    "src": "/audio/bible-365-day-277.m4a",
+    "duration": 665.5,
+    "words": 1863,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4093628,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 38.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.3,
+        "label": "The Whole Mountain Comes Down to a House",
+        "module": 3
+      },
+      {
+        "t": 201.7,
+        "label": "The Inspection You Don't See Coming",
+        "module": 4
+      },
+      {
+        "t": 306.3,
+        "label": "The Rock Is a Person",
+        "module": 5
+      },
+      {
+        "t": 524.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 537.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 569.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 595.2,
+        "label": "The King Who Is the Foundation",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-278": {
+    "src": "/audio/bible-365-day-278.m4a",
+    "duration": 732.6,
+    "words": 2012,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4510363,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 49.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 125.6,
+        "label": "The Sermon Ends With a Building Site",
+        "module": 3
+      },
+      {
+        "t": 232.2,
+        "label": "The House on the Wash",
+        "module": 4
+      },
+      {
+        "t": 324.1,
+        "label": "What Made the Crowd Step Back",
+        "module": 5
+      },
+      {
+        "t": 583.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 595.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 637.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 662.4,
+        "label": "The King Who Speaks With His Own Authority",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-279": {
+    "src": "/audio/bible-365-day-279.m4a",
+    "duration": 685.0,
+    "words": 1920,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4216916,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 101.0,
+        "label": "Six Days of Genealogy, Then a Voice on a Hill",
+        "module": 3
+      },
+      {
+        "t": 208.1,
+        "label": "The Inheritance Read Aloud",
+        "module": 4
+      },
+      {
+        "t": 301.3,
+        "label": "The Door Is Lower Than You Think",
+        "module": 5
+      },
+      {
+        "t": 551.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 561.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 591.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 612.1,
+        "label": "The King Who Came to Fulfill",
         "module": 12
       }
     ]
@@ -10439,6 +12659,606 @@
       }
     ]
   },
+  "bible-365-day-280": {
+    "src": "/audio/bible-365-day-280.m4a",
+    "duration": 654.7,
+    "words": 1832,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4024752,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 38.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 98.8,
+        "label": "The Sermon Ends With a Storm",
+        "module": 3
+      },
+      {
+        "t": 197.1,
+        "label": "What the Inspector Could Not See",
+        "module": 4
+      },
+      {
+        "t": 283.7,
+        "label": "These Words of Mine Are the Rock",
+        "module": 5
+      },
+      {
+        "t": 523.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 532.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 559.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 584.2,
+        "label": "The One Who Taught With Authority",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-281": {
+    "src": "/audio/bible-365-day-281.m4a",
+    "duration": 657.8,
+    "words": 1766,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4048455,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 45.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 118.2,
+        "label": "Two Halves of One Sweep",
+        "module": 3
+      },
+      {
+        "t": 223.6,
+        "label": "The Field Behind the Church",
+        "module": 4
+      },
+      {
+        "t": 308.2,
+        "label": "The Same King, the Same Kingdom",
+        "module": 5
+      },
+      {
+        "t": 539.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 549.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 586.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 605.5,
+        "label": "The King Who Plants His Kingdom",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-282": {
+    "src": "/audio/bible-365-day-282.m4a",
+    "duration": 654.9,
+    "words": 1757,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4031539,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 103.0,
+        "label": "Six Chapters, One Engine",
+        "module": 3
+      },
+      {
+        "t": 204.7,
+        "label": "The Triage Tent",
+        "module": 4
+      },
+      {
+        "t": 286.8,
+        "label": "Mercy, Not Sacrifice - Said Twice",
+        "module": 5
+      },
+      {
+        "t": 509.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 519.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 561.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 586.9,
+        "label": "The Tax Collector Who Was Seen",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-283": {
+    "src": "/audio/bible-365-day-283.m4a",
+    "duration": 660.5,
+    "words": 1823,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4060665,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 24.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 91.7,
+        "label": "The King Who Stops for the One in Front of Him",
+        "module": 3
+      },
+      {
+        "t": 200.3,
+        "label": "The Man Who Could Not Put It Down",
+        "module": 4
+      },
+      {
+        "t": 274.7,
+        "label": "The Yoke Is Not a Rule. It Is a Person.",
+        "module": 5
+      },
+      {
+        "t": 541.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 548.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 574.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 593.3,
+        "label": "The King Who Is Gentle and Humble in Heart",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-284": {
+    "src": "/audio/bible-365-day-284.m4a",
+    "duration": 677.2,
+    "words": 1912,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4169111,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 96.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 156.2,
+        "label": "The Same Seed, Four Different Grounds",
+        "module": 3
+      },
+      {
+        "t": 252.8,
+        "label": "The Reading That Didn't Take",
+        "module": 4
+      },
+      {
+        "t": 328.7,
+        "label": "Three Soils Fail in Three Different Ways",
+        "module": 5
+      },
+      {
+        "t": 544.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 557.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 590.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 614.4,
+        "label": "The Son of Man Who Scatters the Word",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-285": {
+    "src": "/audio/bible-365-day-285.m4a",
+    "duration": 670.5,
+    "words": 1833,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4128894,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 117.5,
+        "label": "Where the Crowds Thin and the Kingdom Goes Quiet",
+        "module": 3
+      },
+      {
+        "t": 212.1,
+        "label": "The Man Who Reburied the Treasure",
+        "module": 4
+      },
+      {
+        "t": 297.7,
+        "label": "Hidden Since the Foundation of the World",
+        "module": 5
+      },
+      {
+        "t": 542.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 554.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 587.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 606.1,
+        "label": "The Householder of Matthew 13:52",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-286": {
+    "src": "/audio/bible-365-day-286.m4a",
+    "duration": 717.3,
+    "words": 2001,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4415050,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 56.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 124.0,
+        "label": "Why He Buried the Clearest Words Inside Stories",
+        "module": 3
+      },
+      {
+        "t": 250.5,
+        "label": "The Field Nobody Wanted",
+        "module": 4
+      },
+      {
+        "t": 331.5,
+        "label": "Who Is Selling Everything to Buy the Field?",
+        "module": 5
+      },
+      {
+        "t": 588.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 600.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 629.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 646.9,
+        "label": "The One Who Hid the Kingdom in Stories",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-287": {
+    "src": "/audio/bible-365-day-287.m4a",
+    "duration": 649.5,
+    "words": 1809,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3998629,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 24.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 92.7,
+        "label": "Six Chapters of a Tired World",
+        "module": 3
+      },
+      {
+        "t": 201.0,
+        "label": "The Man Who Could Not Put It Down",
+        "module": 4
+      },
+      {
+        "t": 281.3,
+        "label": "He Did Not Say 'Rest.' He Said 'Come to Me.'",
+        "module": 5
+      },
+      {
+        "t": 523.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 532.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 558.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 577.2,
+        "label": "The Lord of the Sabbath",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-288": {
+    "src": "/audio/bible-365-day-288.m4a",
+    "duration": 610.8,
+    "words": 1703,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3757205,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 97.8,
+        "label": "A Gospel Built to Fall",
+        "module": 3
+      },
+      {
+        "t": 192.7,
+        "label": "The Man Who Took the Cell",
+        "module": 4
+      },
+      {
+        "t": 278.8,
+        "label": "The Title That Tears in Two",
+        "module": 5
+      },
+      {
+        "t": 495.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 506.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 540.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 553.9,
+        "label": "The Suffering Servant and Coming King",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-289": {
+    "src": "/audio/bible-365-day-289.m4a",
+    "duration": 655.0,
+    "words": 1818,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4031184,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 96.3,
+        "label": "A Gospel Written at a Run",
+        "module": 3
+      },
+      {
+        "t": 213.6,
+        "label": "Arguing About Seats on the Way to the Gallows",
+        "module": 4
+      },
+      {
+        "t": 298.0,
+        "label": "The Verse That Holds the Whole Book",
+        "module": 5
+      },
+      {
+        "t": 538.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 547.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 578.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 595.0,
+        "label": "The Servant Who Gives His Life",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-29": {
     "src": "/audio/bible-365-day-29.m4a",
     "duration": 781.9,
@@ -10495,6 +13315,606 @@
       {
         "t": 712.2,
         "label": "The Beloved Son, Sold by His Brothers",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-290": {
+    "src": "/audio/bible-365-day-290.m4a",
+    "duration": 645.8,
+    "words": 1798,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3976462,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 106.3,
+        "label": "A Passion Story With a Long Introduction",
+        "module": 3
+      },
+      {
+        "t": 216.4,
+        "label": "The Argument About Seats",
+        "module": 4
+      },
+      {
+        "t": 301.9,
+        "label": "The Servant Hidden in the Ransom",
+        "module": 5
+      },
+      {
+        "t": 517.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 527.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 554.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 567.3,
+        "label": "The Servant-King of Mark's Gospel",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-291": {
+    "src": "/audio/bible-365-day-291.m4a",
+    "duration": 649.8,
+    "words": 1798,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3995781,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 36.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 92.4,
+        "label": "They Asked for Thrones; He Offered a Cross",
+        "module": 3
+      },
+      {
+        "t": 199.5,
+        "label": "The Manager Who Stopped Counting",
+        "module": 4
+      },
+      {
+        "t": 283.4,
+        "label": "One Sentence Holds the Whole Gospel",
+        "module": 5
+      },
+      {
+        "t": 525.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 535.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 563.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 581.2,
+        "label": "The Sons of Zebedee, Who Asked for Thrones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-292": {
+    "src": "/audio/bible-365-day-292.m4a",
+    "duration": 637.2,
+    "words": 1769,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3919774,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.6,
+        "label": "One Question, Sixteen Chapters",
+        "module": 3
+      },
+      {
+        "t": 198.0,
+        "label": "The Man Whose Job Was Killing",
+        "module": 4
+      },
+      {
+        "t": 283.3,
+        "label": "The Voice That Opened the Sky, and the Voice from the Ground",
+        "module": 5
+      },
+      {
+        "t": 511.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 526.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 562.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 579.2,
+        "label": "The Executioner Who Confessed",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-293": {
+    "src": "/audio/bible-365-day-293.m4a",
+    "duration": 670.9,
+    "words": 1859,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4131080,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 36.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 100.4,
+        "label": "He Tells Them He Will Die. They Ask for Thrones.",
+        "module": 3
+      },
+      {
+        "t": 210.2,
+        "label": "The Man Who Stayed Behind Bars",
+        "module": 4
+      },
+      {
+        "t": 293.4,
+        "label": "The Sentence the Whole Gospel Was Walking Toward",
+        "module": 5
+      },
+      {
+        "t": 541.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 550.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 578.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 596.5,
+        "label": "The Brothers Who Asked for Thrones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-294": {
+    "src": "/audio/bible-365-day-294.m4a",
+    "duration": 640.0,
+    "words": 1801,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3942798,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 16.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 85.8,
+        "label": "A Title at the Start, a Confession at the End",
+        "module": 3
+      },
+      {
+        "t": 187.5,
+        "label": "The Man Who Stood Guard",
+        "module": 4
+      },
+      {
+        "t": 279.2,
+        "label": "The Hinge of the Whole Book",
+        "module": 5
+      },
+      {
+        "t": 520.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 530.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 563.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 583.4,
+        "label": "The First Man to Confess the Son of God",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-295": {
+    "src": "/audio/bible-365-day-295.m4a",
+    "duration": 634.8,
+    "words": 1720,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3907527,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 41.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 100.1,
+        "label": "A Manifesto Sung Before a Single Miracle",
+        "module": 3
+      },
+      {
+        "t": 194.0,
+        "label": "The Reading That Started a Riot",
+        "module": 4
+      },
+      {
+        "t": 275.8,
+        "label": "He Did Not Just Sing the Song. He Became It.",
+        "module": 5
+      },
+      {
+        "t": 507.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 521.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 549.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 565.8,
+        "label": "The Lowly One Who Sang the Gospel First",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-296": {
+    "src": "/audio/bible-365-day-296.m4a",
+    "duration": 662.4,
+    "words": 1827,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4076358,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 43.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.6,
+        "label": "The Whole Gospel Is Hidden in a Song",
+        "module": 3
+      },
+      {
+        "t": 214.9,
+        "label": "The Name They Skipped",
+        "module": 4
+      },
+      {
+        "t": 290.4,
+        "label": "An Old Song in a New Mouth",
+        "module": 5
+      },
+      {
+        "t": 520.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 528.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 566.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 588.4,
+        "label": "The Servant Who Sang the Kingdom First",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-297": {
+    "src": "/audio/bible-365-day-297.m4a",
+    "duration": 710.5,
+    "words": 1977,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4379543,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 56.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 124.7,
+        "label": "A Revolution Sung Before a Sword Is Drawn",
+        "module": 3
+      },
+      {
+        "t": 226.6,
+        "label": "Who Gets Seated First",
+        "module": 4
+      },
+      {
+        "t": 316.3,
+        "label": "The Reversal Is Not a Side Effect. It Is the Gospel.",
+        "module": 5
+      },
+      {
+        "t": 577.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 590.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 625.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 648.1,
+        "label": "The Servant Who Sang the Gospel First",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-298": {
+    "src": "/audio/bible-365-day-298.m4a",
+    "duration": 642.1,
+    "words": 1754,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3949868,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 109.7,
+        "label": "The Circle Keeps Getting Wider",
+        "module": 3
+      },
+      {
+        "t": 219.8,
+        "label": "The Man Who Did Not Lower His Window",
+        "module": 4
+      },
+      {
+        "t": 302.6,
+        "label": "The Lawyer Asked the Wrong Question",
+        "module": 5
+      },
+      {
+        "t": 529.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 539.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 567.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 583.6,
+        "label": "The Despised Outsider Who Became the Neighbor",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-299": {
+    "src": "/audio/bible-365-day-299.m4a",
+    "duration": 656.5,
+    "words": 1782,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4041886,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 49.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 110.8,
+        "label": "The Song That Tells You How to Read the Rest",
+        "module": 3
+      },
+      {
+        "t": 220.9,
+        "label": "The Seat Nobody Wanted",
+        "module": 4
+      },
+      {
+        "t": 300.3,
+        "label": "Past Tense in a Present Mess",
+        "module": 5
+      },
+      {
+        "t": 527.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 540.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 574.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 596.6,
+        "label": "The Servant Who Sang the Reversal",
         "module": 12
       }
     ]
@@ -10619,6 +14039,606 @@
       }
     ]
   },
+  "bible-365-day-300": {
+    "src": "/audio/bible-365-day-300.m4a",
+    "duration": 647.6,
+    "words": 1788,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3982932,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 98.4,
+        "label": "Mary Sings Before Jesus Speaks",
+        "module": 3
+      },
+      {
+        "t": 209.8,
+        "label": "The Choir That Sang the Wrong Way Up",
+        "module": 4
+      },
+      {
+        "t": 294.9,
+        "label": "He Did Not Just Lift the Lowly. He Joined Them.",
+        "module": 5
+      },
+      {
+        "t": 518.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 532.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 566.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 589.2,
+        "label": "The Lowly Servant Who Sang the Gospel First",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-301": {
+    "src": "/audio/bible-365-day-301.m4a",
+    "duration": 663.7,
+    "words": 1783,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4083705,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 56.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 132.7,
+        "label": "A Teenager Sings the Thesis of the Whole Book",
+        "module": 3
+      },
+      {
+        "t": 225.4,
+        "label": "The Name at the Bottom of the List",
+        "module": 4
+      },
+      {
+        "t": 301.2,
+        "label": "He Did Not Lift the Lowly From a Distance",
+        "module": 5
+      },
+      {
+        "t": 536.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 546.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 580.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 595.1,
+        "label": "The Lowly Servant Who Sang the Gospel First",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-302": {
+    "src": "/audio/bible-365-day-302.m4a",
+    "duration": 688.1,
+    "words": 1929,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4237788,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 95.7,
+        "label": "Luke Tells the Same Story Twice",
+        "module": 3
+      },
+      {
+        "t": 218.8,
+        "label": "The Porch Light",
+        "module": 4
+      },
+      {
+        "t": 300.9,
+        "label": "Found Before You Recognize",
+        "module": 5
+      },
+      {
+        "t": 566.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 574.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 602.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 625.6,
+        "label": "One of the Travelers on the Emmaus Road",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-303": {
+    "src": "/audio/bible-365-day-303.m4a",
+    "duration": 698.2,
+    "words": 2010,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4293922,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 77.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 149.3,
+        "label": "Two Parables, One Complaint",
+        "module": 3
+      },
+      {
+        "t": 249.3,
+        "label": "The Coin in the Floorboards",
+        "module": 4
+      },
+      {
+        "t": 331.7,
+        "label": "The Search Begins Before the Sheep Knows It Is Lost",
+        "module": 5
+      },
+      {
+        "t": 575.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 586.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 613.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 631.9,
+        "label": "The Searcher of Luke 15",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-304": {
+    "src": "/audio/bible-365-day-304.m4a",
+    "duration": 629.2,
+    "words": 1791,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3876654,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 100.1,
+        "label": "Two Stories, One Word",
+        "module": 3
+      },
+      {
+        "t": 206.7,
+        "label": "The Phone That Kept Its Charge",
+        "module": 4
+      },
+      {
+        "t": 282.4,
+        "label": "The Same Joy at the Same Table",
+        "module": 5
+      },
+      {
+        "t": 511.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 521.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 550.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 567.8,
+        "label": "The Emmaus Travelers",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-305": {
+    "src": "/audio/bible-365-day-305.m4a",
+    "duration": 629.1,
+    "words": 1706,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3870694,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 33.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 98.7,
+        "label": "What the Found Do Next",
+        "module": 3
+      },
+      {
+        "t": 196.8,
+        "label": "The Walk Home From the Hospital",
+        "module": 4
+      },
+      {
+        "t": 275.7,
+        "label": "Recognition Comes at the Table",
+        "module": 5
+      },
+      {
+        "t": 512.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 522.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 550.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 568.9,
+        "label": "Found, Recognized, and Sent",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-306": {
+    "src": "/audio/bible-365-day-306.m4a",
+    "duration": 685.7,
+    "words": 1927,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4220722,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 52.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 118.1,
+        "label": "The Parables of Search, Read on the Other Side of Easter",
+        "module": 3
+      },
+      {
+        "t": 219.0,
+        "label": "The Long Way to a Familiar Door",
+        "module": 4
+      },
+      {
+        "t": 299.3,
+        "label": "Dead and Alive Again, Lost and Found \u2014 Said Twice",
+        "module": 5
+      },
+      {
+        "t": 526.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 538.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 573.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 623.4,
+        "label": "The Two on the Emmaus Road",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-307": {
+    "src": "/audio/bible-365-day-307.m4a",
+    "duration": 634.9,
+    "words": 1742,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3907295,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.8,
+        "label": "Two Stories That Turn on the Same Hinge",
+        "module": 3
+      },
+      {
+        "t": 202.6,
+        "label": "The Long Hallway",
+        "module": 4
+      },
+      {
+        "t": 285.3,
+        "label": "Dead and Alive, Lost and Found",
+        "module": 5
+      },
+      {
+        "t": 520.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 531.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 559.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 574.2,
+        "label": "One of the Two on the Emmaus Road",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-308": {
+    "src": "/audio/bible-365-day-308.m4a",
+    "duration": 635.8,
+    "words": 1778,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3914955,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 109.5,
+        "label": "One Storyteller, Three Lost Things, One Long Welcome",
+        "module": 3
+      },
+      {
+        "t": 215.7,
+        "label": "The Porch Light Left On",
+        "module": 4
+      },
+      {
+        "t": 303.4,
+        "label": "The Storyteller Becomes the Story",
+        "module": 5
+      },
+      {
+        "t": 519.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 528.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 556.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 577.2,
+        "label": "The Disciple on the Emmaus Road",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-309": {
+    "src": "/audio/bible-365-day-309.m4a",
+    "duration": 635.5,
+    "words": 1817,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3911001,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.7,
+        "label": "A Gospel That Starts Before the Story",
+        "module": 3
+      },
+      {
+        "t": 200.5,
+        "label": "The Letter and the Visit",
+        "module": 4
+      },
+      {
+        "t": 278.6,
+        "label": "When the Word Begins to Say I AM",
+        "module": 5
+      },
+      {
+        "t": 514.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 525.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 548.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 567.3,
+        "label": "The Disciple Whom Jesus Loved",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-31": {
     "src": "/audio/bible-365-day-31.m4a",
     "duration": 658.7,
@@ -10675,6 +14695,606 @@
       {
         "t": 599.9,
         "label": "The Prisoner Lifted to the Right Hand of Egypt",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-310": {
+    "src": "/audio/bible-365-day-310.m4a",
+    "duration": 626.9,
+    "words": 1788,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3853736,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 105.8,
+        "label": "John Tells You Who Is Speaking Before He Lets Him Speak",
+        "module": 3
+      },
+      {
+        "t": 191.8,
+        "label": "The Letter Read in the Author's Voice",
+        "module": 4
+      },
+      {
+        "t": 270.7,
+        "label": "\"Was\" and \"Became\" Are Different Words on Purpose",
+        "module": 5
+      },
+      {
+        "t": 506.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 516.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 544.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 560.8,
+        "label": "The Beloved Disciple, Witness to the Word",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-311": {
+    "src": "/audio/bible-365-day-311.m4a",
+    "duration": 685.7,
+    "words": 1912,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4217189,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 108.4,
+        "label": "The Word Was Always a Voice",
+        "module": 3
+      },
+      {
+        "t": 211.4,
+        "label": "The Author in the Crowd Scene",
+        "module": 4
+      },
+      {
+        "t": 313.5,
+        "label": "The Bush, the Bread, and the Burning Light",
+        "module": 5
+      },
+      {
+        "t": 542.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 555.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 583.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 606.9,
+        "label": "The I AM Who Walked Among Us",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-312": {
+    "src": "/audio/bible-365-day-312.m4a",
+    "duration": 566.5,
+    "words": 1632,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3485439,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 99.1,
+        "label": "They Came Back for Lunch",
+        "module": 3
+      },
+      {
+        "t": 167.0,
+        "label": "The Promotion That Tasted Like Air",
+        "module": 4
+      },
+      {
+        "t": 229.5,
+        "label": "He Did Not Give the Bread. He Was It.",
+        "module": 5
+      },
+      {
+        "t": 440.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 448.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 475.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 496.0,
+        "label": "The Ones Who Came Back for More",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-313": {
+    "src": "/audio/bible-365-day-313.m4a",
+    "duration": 605.6,
+    "words": 1737,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3725435,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 33.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 103.3,
+        "label": "The Word Stops Being an Idea",
+        "module": 3
+      },
+      {
+        "t": 190.7,
+        "label": "The Name on the Bag of Flour",
+        "module": 4
+      },
+      {
+        "t": 271.6,
+        "label": "He Did Not Say I Will Give Bread",
+        "module": 5
+      },
+      {
+        "t": 487.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 497.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 523.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 541.8,
+        "label": "The Logos Who Says I AM",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-314": {
+    "src": "/audio/bible-365-day-314.m4a",
+    "duration": 646.9,
+    "words": 1802,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3976772,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 36.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 112.1,
+        "label": "The Author Walks Onstage",
+        "module": 3
+      },
+      {
+        "t": 219.8,
+        "label": "The Word You Already Know by Heart",
+        "module": 4
+      },
+      {
+        "t": 303.7,
+        "label": "The Name at the Bush, Spoken in a Body",
+        "module": 5
+      },
+      {
+        "t": 523.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 532.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 559.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 578.2,
+        "label": "The I AM Who Became Bread",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-315": {
+    "src": "/audio/bible-365-day-315.m4a",
+    "duration": 627.6,
+    "words": 1814,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3859326,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 102.9,
+        "label": "Why John Wrote It This Way",
+        "module": 3
+      },
+      {
+        "t": 188.4,
+        "label": "Noon at the Well",
+        "module": 4
+      },
+      {
+        "t": 270.9,
+        "label": "The Maker Names Himself by What You Lack",
+        "module": 5
+      },
+      {
+        "t": 502.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 515.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 543.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 563.0,
+        "label": "The Disciple Who Began in Eternity",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-316": {
+    "src": "/audio/bible-365-day-316.m4a",
+    "duration": 650.3,
+    "words": 1930,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4002125,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 44.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 114.6,
+        "label": "The Name That Learned to Walk",
+        "module": 3
+      },
+      {
+        "t": 225.1,
+        "label": "The Address Nobody Could Give Me",
+        "module": 4
+      },
+      {
+        "t": 311.4,
+        "label": "Three Words, One Door",
+        "module": 5
+      },
+      {
+        "t": 534.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 547.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 575.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 594.5,
+        "label": "The Disciple Who Asked the Honest Question",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-317": {
+    "src": "/audio/bible-365-day-317.m4a",
+    "duration": 692.4,
+    "words": 1989,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4264437,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 32.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.6,
+        "label": "Seven Times He Says It, and Each Time the Room Tightens",
+        "module": 3
+      },
+      {
+        "t": 219.0,
+        "label": "The Sentence That Could Not Be Filed Away",
+        "module": 4
+      },
+      {
+        "t": 314.0,
+        "label": "The Truth That Sets Free Is a Person, Not a Position",
+        "module": 5
+      },
+      {
+        "t": 558.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 568.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 597.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 621.1,
+        "label": "Those Who Heard the Name and Reached for Stones",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-318": {
+    "src": "/audio/bible-365-day-318.m4a",
+    "duration": 646.7,
+    "words": 1871,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3976546,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 26.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 91.6,
+        "label": "Thomas Asks for a Map and Gets a Face",
+        "module": 3
+      },
+      {
+        "t": 201.2,
+        "label": "The Guide Who Would Not Send Them Ahead",
+        "module": 4
+      },
+      {
+        "t": 283.2,
+        "label": "One Article, Three Names, One Person",
+        "module": 5
+      },
+      {
+        "t": 520.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 529.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 565.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 582.5,
+        "label": "The Disciple Who Asked Out Loud",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-319": {
+    "src": "/audio/bible-365-day-319.m4a",
+    "duration": 595.4,
+    "words": 1706,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3666864,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 20.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 80.8,
+        "label": "Thomas Asks for Directions; Jesus Hands Him a Person",
+        "module": 3
+      },
+      {
+        "t": 180.5,
+        "label": "The Hand on the Sleeve",
+        "module": 4
+      },
+      {
+        "t": 259.0,
+        "label": "Three Words, One Person",
+        "module": 5
+      },
+      {
+        "t": 476.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 487.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 513.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 538.7,
+        "label": "The Disciple Who Asked Out Loud",
         "module": 12
       }
     ]
@@ -10739,6 +15359,606 @@
       }
     ]
   },
+  "bible-365-day-320": {
+    "src": "/audio/bible-365-day-320.m4a",
+    "duration": 590.3,
+    "words": 1710,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3632668,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 42.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 104.0,
+        "label": "Thomas Asked for a Map and Got a Face",
+        "module": 3
+      },
+      {
+        "t": 207.7,
+        "label": "The Driver Who Would Not Hand Over the Address",
+        "module": 4
+      },
+      {
+        "t": 280.2,
+        "label": "The Whole Gospel Folds Into One Sentence",
+        "module": 5
+      },
+      {
+        "t": 472.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 483.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 510.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 526.4,
+        "label": "The Disciple Who Asked Out Loud",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-321": {
+    "src": "/audio/bible-365-day-321.m4a",
+    "duration": 615.6,
+    "words": 1790,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3786730,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 101.8,
+        "label": "Thomas Asked for a Map and Got a Person",
+        "module": 3
+      },
+      {
+        "t": 182.8,
+        "label": "The Friend Who Walked Me Out",
+        "module": 4
+      },
+      {
+        "t": 261.7,
+        "label": "Three Words That Are One Thing",
+        "module": 5
+      },
+      {
+        "t": 498.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 509.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 544.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 561.3,
+        "label": "The Disciple Who Asked Out Loud",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-322": {
+    "src": "/audio/bible-365-day-322.m4a",
+    "duration": 578.8,
+    "words": 1684,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3558258,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 21.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 84.2,
+        "label": "Seven Sentences and the One Behind Them",
+        "module": 3
+      },
+      {
+        "t": 175.7,
+        "label": "The Word on the Door",
+        "module": 4
+      },
+      {
+        "t": 251.4,
+        "label": "The Question Behind the Question",
+        "module": 5
+      },
+      {
+        "t": 465.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 475.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 505.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 525.3,
+        "label": "The Disciple Who Asked to See God",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-323": {
+    "src": "/audio/bible-365-day-323.m4a",
+    "duration": 615.2,
+    "words": 1734,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3786580,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 85.5,
+        "label": "One Long Night That Opens Into Morning",
+        "module": 3
+      },
+      {
+        "t": 189.3,
+        "label": "The Word Stamped Across the Bill",
+        "module": 4
+      },
+      {
+        "t": 262.2,
+        "label": "Finished Is Not the Same as Over",
+        "module": 5
+      },
+      {
+        "t": 486.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 492.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 520.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 538.7,
+        "label": "First Witness of the Risen Christ",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-324": {
+    "src": "/audio/bible-365-day-324.m4a",
+    "duration": 605.5,
+    "words": 1751,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3726588,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 40.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.5,
+        "label": "He Went Out to a Garden",
+        "module": 3
+      },
+      {
+        "t": 207.6,
+        "label": "The One Who Walked Toward the Door",
+        "module": 4
+      },
+      {
+        "t": 286.4,
+        "label": "The Cup He Would Not Put Down",
+        "module": 5
+      },
+      {
+        "t": 494.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 502.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 529.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 543.5,
+        "label": "The Second Adam, Who Stepped Forward",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-325": {
+    "src": "/audio/bible-365-day-325.m4a",
+    "duration": 641.6,
+    "words": 1807,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3948313,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 42.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.3,
+        "label": "Why John Keeps Saying Garden",
+        "module": 3
+      },
+      {
+        "t": 219.2,
+        "label": "The Wrong Name That Was Right",
+        "module": 4
+      },
+      {
+        "t": 302.2,
+        "label": "She Was Not Wrong",
+        "module": 5
+      },
+      {
+        "t": 534.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 543.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 571.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 588.1,
+        "label": "First Witness of the Resurrection",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-326": {
+    "src": "/audio/bible-365-day-326.m4a",
+    "duration": 705.8,
+    "words": 1971,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4346337,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 52.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 134.1,
+        "label": "From the Upper Room to the Lakeshore",
+        "module": 3
+      },
+      {
+        "t": 245.9,
+        "label": "The Third Time He Asked",
+        "module": 4
+      },
+      {
+        "t": 324.4,
+        "label": "He Asks Over the Same Fire That Broke You",
+        "module": 5
+      },
+      {
+        "t": 580.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 590.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 619.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 639.7,
+        "label": "The Denier, Restored and Sent",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-327": {
+    "src": "/audio/bible-365-day-327.m4a",
+    "duration": 575.8,
+    "words": 1612,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3541261,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 26.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 91.7,
+        "label": "Five Chapters That End in a Garden",
+        "module": 3
+      },
+      {
+        "t": 184.5,
+        "label": "The Woman Who Came to Tend a Grave",
+        "module": 4
+      },
+      {
+        "t": 263.3,
+        "label": "Right About the Office, Wrong About the Grave",
+        "module": 5
+      },
+      {
+        "t": 459.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 467.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 493.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 507.8,
+        "label": "First Witness of the Resurrection",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-328": {
+    "src": "/audio/bible-365-day-328.m4a",
+    "duration": 604.5,
+    "words": 1697,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3717498,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 37.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 93.3,
+        "label": "John Tells the Passion Between Gardens",
+        "module": 3
+      },
+      {
+        "t": 187.1,
+        "label": "The Locked Garden Behind the House",
+        "module": 4
+      },
+      {
+        "t": 272.0,
+        "label": "Mary Was Not Entirely Wrong",
+        "module": 5
+      },
+      {
+        "t": 489.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 501.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 527.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 547.3,
+        "label": "First Witness in the Garden",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-329": {
+    "src": "/audio/bible-365-day-329.m4a",
+    "duration": 566.8,
+    "words": 1597,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3482647,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 45.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 103.0,
+        "label": "Six Chapters That Begin in a Room and End at a Tomb",
+        "module": 3
+      },
+      {
+        "t": 186.3,
+        "label": "The Woman Who Came to Tend a Body",
+        "module": 4
+      },
+      {
+        "t": 261.3,
+        "label": "She Was Almost Right",
+        "module": 5
+      },
+      {
+        "t": 457.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 466.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 493.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 513.6,
+        "label": "First Witness of the Resurrection",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-33": {
     "src": "/audio/bible-365-day-33.m4a",
     "duration": 715.7,
@@ -10795,6 +16015,606 @@
       {
         "t": 642.8,
         "label": "The Betrayed Brother on the Throne",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-330": {
+    "src": "/audio/bible-365-day-330.m4a",
+    "duration": 650.1,
+    "words": 1816,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4002029,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 44.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 107.9,
+        "label": "He Leaves, and the Room Fills",
+        "module": 3
+      },
+      {
+        "t": 230.2,
+        "label": "The Language He Was Born Hearing",
+        "module": 4
+      },
+      {
+        "t": 316.0,
+        "label": "The Sermon Names the Crime and Offers the Cure",
+        "module": 5
+      },
+      {
+        "t": 529.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 538.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 568.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 587.9,
+        "label": "The Fisherman Who Became the First Witness",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-331": {
+    "src": "/audio/bible-365-day-331.m4a",
+    "duration": 640.9,
+    "words": 1733,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3944562,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 31.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 90.6,
+        "label": "Ten Days of Waiting, Then Wind",
+        "module": 3
+      },
+      {
+        "t": 198.4,
+        "label": "The Languages in the Street",
+        "module": 4
+      },
+      {
+        "t": 287.1,
+        "label": "Who Is Doing the Pouring",
+        "module": 5
+      },
+      {
+        "t": 518.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 527.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 555.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 574.9,
+        "label": "The Fisherman Who Found His Voice",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-332": {
+    "src": "/audio/bible-365-day-332.m4a",
+    "duration": 703.4,
+    "words": 1937,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4324888,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 47.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 113.1,
+        "label": "The Center of the Whole Year Is a Doorway Flung Open",
+        "module": 3
+      },
+      {
+        "t": 243.1,
+        "label": "The Soldier and the Fisherman",
+        "module": 4
+      },
+      {
+        "t": 342.7,
+        "label": "He Did Not Leave; He Multiplied His Presence",
+        "module": 5
+      },
+      {
+        "t": 571.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 584.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 616.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 637.6,
+        "label": "The Fisherman Who Opened the Door",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-333": {
+    "src": "/audio/bible-365-day-333.m4a",
+    "duration": 637.7,
+    "words": 1700,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3923337,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 50.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 116.4,
+        "label": "What the Spirit Built First",
+        "module": 3
+      },
+      {
+        "t": 194.7,
+        "label": "The Church That Met in a Living Room",
+        "module": 4
+      },
+      {
+        "t": 270.5,
+        "label": "The Proof Was Bread, Not Fire",
+        "module": 5
+      },
+      {
+        "t": 499.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 512.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 541.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 580.1,
+        "label": "The First Community of the Spirit",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-334": {
+    "src": "/audio/bible-365-day-334.m4a",
+    "duration": 650.7,
+    "words": 1723,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4002857,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 45.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 113.3,
+        "label": "Where the Story Was Always Going to End Up",
+        "module": 3
+      },
+      {
+        "t": 209.9,
+        "label": "The Threshold Peter Couldn't Cross Alone",
+        "module": 4
+      },
+      {
+        "t": 299.0,
+        "label": "The Sermon God Interrupted",
+        "module": 5
+      },
+      {
+        "t": 536.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 544.9,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 573.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 585.6,
+        "label": "The Centurion at the Ends of the Earth",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-335": {
+    "src": "/audio/bible-365-day-335.m4a",
+    "duration": 591.0,
+    "words": 1589,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3637954,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 22.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 73.3,
+        "label": "The Wind Has a Name",
+        "module": 3
+      },
+      {
+        "t": 170.3,
+        "label": "The Inheritance Nobody Could Touch",
+        "module": 4
+      },
+      {
+        "t": 246.2,
+        "label": "Poured Out, Then Pouring",
+        "module": 5
+      },
+      {
+        "t": 475.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 484.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 511.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 527.7,
+        "label": "The Centurion God Reached",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-336": {
+    "src": "/audio/bible-365-day-336.m4a",
+    "duration": 619.1,
+    "words": 1685,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3807947,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 29.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 94.6,
+        "label": "The Book That Has No Ending",
+        "module": 3
+      },
+      {
+        "t": 191.4,
+        "label": "The Letter Left on the Counter",
+        "module": 4
+      },
+      {
+        "t": 268.4,
+        "label": "Watch the Map Fill In",
+        "module": 5
+      },
+      {
+        "t": 494.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 503.7,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 530.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 551.0,
+        "label": "The Fisherman Who Found His Voice",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-337": {
+    "src": "/audio/bible-365-day-337.m4a",
+    "duration": 595.8,
+    "words": 1601,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3665428,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 23.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 80.7,
+        "label": "He Starts in a Courtroom, Not a Classroom",
+        "module": 3
+      },
+      {
+        "t": 173.4,
+        "label": "The Man Who Kept Re-Reading the Letter",
+        "module": 4
+      },
+      {
+        "t": 251.5,
+        "label": "Just, and the Justifier",
+        "module": 5
+      },
+      {
+        "t": 473.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 484.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 517.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 537.4,
+        "label": "Apostle to the Gentiles, Prisoner of Grace",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-338": {
+    "src": "/audio/bible-365-day-338.m4a",
+    "duration": 650.2,
+    "words": 1714,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3999242,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 72.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 138.6,
+        "label": "Paul Builds the Case Before He Offers the Cure",
+        "module": 3
+      },
+      {
+        "t": 234.1,
+        "label": "The Defendant Who Kept a Ledger",
+        "module": 4
+      },
+      {
+        "t": 307.0,
+        "label": "Two Words That Turn the Whole Letter",
+        "module": 5
+      },
+      {
+        "t": 520.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 527.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 561.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 579.6,
+        "label": "Apostle, and the Pharisee Who Lost His Case",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-339": {
+    "src": "/audio/bible-365-day-339.m4a",
+    "duration": 619.3,
+    "words": 1669,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3808265,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 29.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 95.2,
+        "label": "Where the Whole Letter Turns",
+        "module": 3
+      },
+      {
+        "t": 197.1,
+        "label": "The Letter Read in a Garden",
+        "module": 4
+      },
+      {
+        "t": 284.7,
+        "label": "While, Not After",
+        "module": 5
+      },
+      {
+        "t": 500.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 510.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 538.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 558.2,
+        "label": "Prisoner of the Verdict He Once Resisted",
         "module": 12
       }
     ]
@@ -10859,6 +16679,606 @@
       }
     ]
   },
+  "bible-365-day-340": {
+    "src": "/audio/bible-365-day-340.m4a",
+    "duration": 661.4,
+    "words": 1858,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4068797,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 110.1,
+        "label": "The Verdict Came First",
+        "module": 3
+      },
+      {
+        "t": 203.7,
+        "label": "The Pardon He Couldn't Believe",
+        "module": 4
+      },
+      {
+        "t": 281.2,
+        "label": "Count It Before You Feel It",
+        "module": 5
+      },
+      {
+        "t": 519.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 530.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 562.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 585.7,
+        "label": "Apostle to the Gentiles, Author of Romans",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-341": {
+    "src": "/audio/bible-365-day-341.m4a",
+    "duration": 688.8,
+    "words": 1849,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4236982,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 57.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 137.9,
+        "label": "Eight Chapters of Argument End in a Question",
+        "module": 3
+      },
+      {
+        "t": 246.3,
+        "label": "The Charge That Was Already Dropped",
+        "module": 4
+      },
+      {
+        "t": 331.9,
+        "label": "The Logic of the Greater Gift",
+        "module": 5
+      },
+      {
+        "t": 561.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 570.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 599.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 618.8,
+        "label": "Apostle, Former Accuser",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-342": {
+    "src": "/audio/bible-365-day-342.m4a",
+    "duration": 604.0,
+    "words": 1609,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3712568,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 30.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 95.2,
+        "label": "Therefore, Peace",
+        "module": 3
+      },
+      {
+        "t": 182.5,
+        "label": "The Letter That Already Cleared Her",
+        "module": 4
+      },
+      {
+        "t": 263.6,
+        "label": "While We Were Still",
+        "module": 5
+      },
+      {
+        "t": 492.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 500.3,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 532.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 549.5,
+        "label": "Apostle to the Gentiles, Author of Romans",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-343": {
+    "src": "/audio/bible-365-day-343.m4a",
+    "duration": 643.3,
+    "words": 1753,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3957569,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 25.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 91.4,
+        "label": "One Long Argument, Pressed Toward One Verdict",
+        "module": 3
+      },
+      {
+        "t": 199.2,
+        "label": "The Stone Wall in Wittenberg",
+        "module": 4
+      },
+      {
+        "t": 285.7,
+        "label": "The Verdict of the Last Day, Spoken Now",
+        "module": 5
+      },
+      {
+        "t": 520.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 531.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 559.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 580.4,
+        "label": "The Once-Blameless Pharisee, Justified by Faith",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-344": {
+    "src": "/audio/bible-365-day-344.m4a",
+    "duration": 675.2,
+    "words": 1823,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4158743,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 142.1,
+        "label": "Three Gifts That End, One That Doesn't",
+        "module": 3
+      },
+      {
+        "t": 233.2,
+        "label": "What She Kept Asking For",
+        "module": 4
+      },
+      {
+        "t": 316.9,
+        "label": "Why the Two Chapters Belong Together",
+        "module": 5
+      },
+      {
+        "t": 548.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 556.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 590.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 611.9,
+        "label": "Apostle to the Corinthians",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-345": {
+    "src": "/audio/bible-365-day-345.m4a",
+    "duration": 629.2,
+    "words": 1690,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3872894,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 31.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 96.5,
+        "label": "Why the Love Chapter and the Resurrection Chapter Are Two Chapters Apart",
+        "module": 3
+      },
+      {
+        "t": 182.8,
+        "label": "What the Widower Read at the Graveside",
+        "module": 4
+      },
+      {
+        "t": 262.7,
+        "label": "Read the List Again - It Is a Portrait",
+        "module": 5
+      },
+      {
+        "t": 499.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 508.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 545.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 564.2,
+        "label": "Letter-Writer to a Divided Church",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-346": {
+    "src": "/audio/bible-365-day-346.m4a",
+    "duration": 612.0,
+    "words": 1635,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3767062,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 42.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 116.2,
+        "label": "Two Chapters, One Argument",
+        "module": 3
+      },
+      {
+        "t": 196.3,
+        "label": "The Card She Kept Reading",
+        "module": 4
+      },
+      {
+        "t": 271.6,
+        "label": "Firstfruits Is a Farming Word, Not a Funeral Word",
+        "module": 5
+      },
+      {
+        "t": 483.2,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 495.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 531.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 548.0,
+        "label": "Apostle, Letter-Writer to Corinth",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-347": {
+    "src": "/audio/bible-365-day-347.m4a",
+    "duration": 701.8,
+    "words": 1926,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4316741,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 104.9,
+        "label": "Two Chapters, One Argument",
+        "module": 3
+      },
+      {
+        "t": 205.2,
+        "label": "The Aide Who Kept Showing Up",
+        "module": 4
+      },
+      {
+        "t": 293.6,
+        "label": "Empty, or Not Empty - The Same Word Twice",
+        "module": 5
+      },
+      {
+        "t": 563.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 574.0,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 602.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 624.9,
+        "label": "Apostle to the Corinthians",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-348": {
+    "src": "/audio/bible-365-day-348.m4a",
+    "duration": 695.9,
+    "words": 1848,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4280408,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 122.1,
+        "label": "Two Summits, One Letter",
+        "module": 3
+      },
+      {
+        "t": 234.7,
+        "label": "The Vow and the Hospice Room",
+        "module": 4
+      },
+      {
+        "t": 321.4,
+        "label": "If Christ Is Not Raised, Love Is a Sentiment",
+        "module": 5
+      },
+      {
+        "t": 551.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 562.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 602.4,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 620.5,
+        "label": "Apostle to the Corinthians",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-349": {
+    "src": "/audio/bible-365-day-349.m4a",
+    "duration": 634.5,
+    "words": 1728,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3905897,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 116.9,
+        "label": "Why Love and Resurrection Belong in the Same Letter",
+        "module": 3
+      },
+      {
+        "t": 211.7,
+        "label": "The Cards in the Bottom Drawer",
+        "module": 4
+      },
+      {
+        "t": 292.5,
+        "label": "If Christ Is Not Raised, Even Love Is Vapor",
+        "module": 5
+      },
+      {
+        "t": 516.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 529.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 558.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 572.0,
+        "label": "Witness to the Risen Christ, Author to a Divided Church",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-35": {
     "src": "/audio/bible-365-day-35.m4a",
     "duration": 696.2,
@@ -10919,6 +17339,606 @@
       }
     ]
   },
+  "bible-365-day-350": {
+    "src": "/audio/bible-365-day-350.m4a",
+    "duration": 692.4,
+    "words": 1942,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4262667,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 74.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 144.0,
+        "label": "Two Chapters, One Promise",
+        "module": 3
+      },
+      {
+        "t": 250.2,
+        "label": "The Reading at Both Ends of the Day",
+        "module": 4
+      },
+      {
+        "t": 334.7,
+        "label": "The Mirror and the Face",
+        "module": 5
+      },
+      {
+        "t": 570.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 581.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 609.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 630.0,
+        "label": "Last of All, He Appeared to Me Also",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-351": {
+    "src": "/audio/bible-365-day-351.m4a",
+    "duration": 642.0,
+    "words": 1746,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3951690,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 39.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 96.8,
+        "label": "A Roll Call of People Who Died Before the Payoff",
+        "module": 3
+      },
+      {
+        "t": 193.6,
+        "label": "The Stadium Full of People Who Already Finished",
+        "module": 4
+      },
+      {
+        "t": 272.6,
+        "label": "They Were Waiting for Us - and for Him",
+        "module": 5
+      },
+      {
+        "t": 504.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 512.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 542.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 562.7,
+        "label": "Those Who Ran Before Us",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-352": {
+    "src": "/audio/bible-365-day-352.m4a",
+    "duration": 681.4,
+    "words": 1875,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4195672,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 55.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 125.0,
+        "label": "A Hall of Heroes Who Lost",
+        "module": 3
+      },
+      {
+        "t": 238.2,
+        "label": "The Cathedral Mason",
+        "module": 4
+      },
+      {
+        "t": 323.2,
+        "label": "Made Perfect Together, Not Apart",
+        "module": 5
+      },
+      {
+        "t": 540.7,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 550.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 583.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 602.8,
+        "label": "The Stranger Who Built on Foundations He Never Touched",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-353": {
+    "src": "/audio/bible-365-day-353.m4a",
+    "duration": 705.5,
+    "words": 1958,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4340879,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 49.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 131.2,
+        "label": "A Hall of Heroes Who Died Still Waiting",
+        "module": 3
+      },
+      {
+        "t": 234.1,
+        "label": "The Stadium Turns to Watch",
+        "module": 4
+      },
+      {
+        "t": 321.3,
+        "label": "He Did Not Watch the Race. He Ran It First.",
+        "module": 5
+      },
+      {
+        "t": 556.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 565.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 602.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 626.6,
+        "label": "The One the Whole Crowd Was Watching For",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-354": {
+    "src": "/audio/bible-365-day-354.m4a",
+    "duration": 620.3,
+    "words": 1722,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3812290,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 34.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 94.9,
+        "label": "The Chapter That Ends Without the Prize",
+        "module": 3
+      },
+      {
+        "t": 186.7,
+        "label": "The Relay Nobody Finished Alone",
+        "module": 4
+      },
+      {
+        "t": 267.0,
+        "label": "Why the List Stops",
+        "module": 5
+      },
+      {
+        "t": 489.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 498.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 531.6,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 551.5,
+        "label": "The Finisher of Faith",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-355": {
+    "src": "/audio/bible-365-day-355.m4a",
+    "duration": 533.7,
+    "words": 1459,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3279044,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 33.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 97.5,
+        "label": "A Hall Full of People Still Waiting",
+        "module": 3
+      },
+      {
+        "t": 186.9,
+        "label": "The Anchor Leg",
+        "module": 4
+      },
+      {
+        "t": 247.2,
+        "label": "He Ran It First, and Then Sat Down",
+        "module": 5
+      },
+      {
+        "t": 401.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 412.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 451.3,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 469.9,
+        "label": "The Forerunner Who Finished the Race",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-356": {
+    "src": "/audio/bible-365-day-356.m4a",
+    "duration": 696.0,
+    "words": 1950,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4280739,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 68.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 140.9,
+        "label": "A Hall of Faith That Ends Unfinished",
+        "module": 3
+      },
+      {
+        "t": 245.6,
+        "label": "The Relay With No Anchor",
+        "module": 4
+      },
+      {
+        "t": 319.2,
+        "label": "Faith's First Runner and Its Finisher",
+        "module": 5
+      },
+      {
+        "t": 566.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 579.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 608.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 630.0,
+        "label": "The Only Runner Who Finished",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-357": {
+    "src": "/audio/bible-365-day-357.m4a",
+    "duration": 715.4,
+    "words": 1997,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4407092,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 54.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 122.2,
+        "label": "A Hall of Faith Full of Unfinished Stories",
+        "module": 3
+      },
+      {
+        "t": 224.6,
+        "label": "The Cathedral Builders",
+        "module": 4
+      },
+      {
+        "t": 311.6,
+        "label": "From Cloud to Cross to Chair",
+        "module": 5
+      },
+      {
+        "t": 581.5,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 593.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 629.0,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 650.6,
+        "label": "The Stranger Who Lived in the Promise as a Tent-Dweller",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-358": {
+    "src": "/audio/bible-365-day-358.m4a",
+    "duration": 659.8,
+    "words": 1823,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4063587,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 46.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 110.5,
+        "label": "The Last Vision Is the First Garden, Finished",
+        "module": 3
+      },
+      {
+        "t": 203.8,
+        "label": "The Room She Kept Ready",
+        "module": 4
+      },
+      {
+        "t": 286.6,
+        "label": "The Sword Came Down on the Lamb",
+        "module": 5
+      },
+      {
+        "t": 516.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 528.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 565.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 586.6,
+        "label": "The Seer Who Was Shown the End",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-359": {
+    "src": "/audio/bible-365-day-359.m4a",
+    "duration": 697.7,
+    "words": 2006,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4294091,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 80.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 152.6,
+        "label": "John Keeps Looking for the Temple, and It Is Not There",
+        "module": 3
+      },
+      {
+        "t": 244.0,
+        "label": "The House She Finally Stopped Bracing Against",
+        "module": 4
+      },
+      {
+        "t": 327.6,
+        "label": "The Garden Comes Back, and More Than the Garden",
+        "module": 5
+      },
+      {
+        "t": 571.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 583.4,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 615.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 636.3,
+        "label": "The Temple of the City",
+        "module": 12
+      }
+    ]
+  },
   "bible-365-day-36": {
     "src": "/audio/bible-365-day-36.m4a",
     "duration": 681.7,
@@ -10975,6 +17995,366 @@
       {
         "t": 613.9,
         "label": "The Midwives Who Feared God",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-360": {
+    "src": "/audio/bible-365-day-360.m4a",
+    "duration": 745.2,
+    "words": 2088,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4580303,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 82.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 154.1,
+        "label": "The Last Two Pages Read Like the First Two",
+        "module": 3
+      },
+      {
+        "t": 264.4,
+        "label": "The House She Kept the Lights On In",
+        "module": 4
+      },
+      {
+        "t": 350.2,
+        "label": "No Temple, Because the Lamb Is the Temple",
+        "module": 5
+      },
+      {
+        "t": 597.0,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 609.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 642.5,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 664.7,
+        "label": "The Seer Who Wrote the Last Page",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-361": {
+    "src": "/audio/bible-365-day-361.m4a",
+    "duration": 721.2,
+    "words": 2070,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4440687,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 47.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 111.6,
+        "label": "Heaven Does Not Go Up. It Comes Down.",
+        "module": 3
+      },
+      {
+        "t": 241.9,
+        "label": "The House She Stopped Building",
+        "module": 4
+      },
+      {
+        "t": 335.2,
+        "label": "Made New, Not Made Over",
+        "module": 5
+      },
+      {
+        "t": 583.6,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 597.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 630.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 654.4,
+        "label": "The Exile Who Saw the City Come Down",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-362": {
+    "src": "/audio/bible-365-day-362.m4a",
+    "duration": 670.1,
+    "words": 1928,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4121158,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 85.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 149.2,
+        "label": "The Bible Ends Where It Began \u2014 In a Garden, With God Near",
+        "module": 3
+      },
+      {
+        "t": 233.8,
+        "label": "What the Hospice Nurse Kept Reading",
+        "module": 4
+      },
+      {
+        "t": 303.8,
+        "label": "Read the Last Page Against the First",
+        "module": 5
+      },
+      {
+        "t": 519.4,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 528.8,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 570.7,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 609.5,
+        "label": "The voice behind today",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-363": {
+    "src": "/audio/bible-365-day-363.m4a",
+    "duration": 696.8,
+    "words": 1982,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4289018,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 81.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 154.2,
+        "label": "The Story Does Not End the Way We Expect",
+        "module": 3
+      },
+      {
+        "t": 255.3,
+        "label": "The House That Was Finally Done",
+        "module": 4
+      },
+      {
+        "t": 333.2,
+        "label": "The Bible Ends in a Garden \u2014 Reopened",
+        "module": 5
+      },
+      {
+        "t": 566.3,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 578.6,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 612.9,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 631.6,
+        "label": "The Seer of Revelation",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-364": {
+    "src": "/audio/bible-365-day-364.m4a",
+    "duration": 735.2,
+    "words": 2067,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 4524894,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 74.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 156.1,
+        "label": "The Last Chapter Remembers the First",
+        "module": 3
+      },
+      {
+        "t": 267.3,
+        "label": "What the Hospice Nurse Kept Saying",
+        "module": 4
+      },
+      {
+        "t": 352.3,
+        "label": "No Temple, Because the Lamb Is the Temple",
+        "module": 5
+      },
+      {
+        "t": 598.9,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 609.5,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 645.8,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 668.5,
+        "label": "The Seer Who Saw the End",
+        "module": 12
+      }
+    ]
+  },
+  "bible-365-day-365": {
+    "src": "/audio/bible-365-day-365.m4a",
+    "duration": 557.9,
+    "words": 1536,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 3433175,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 19.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 85.0,
+        "label": "The Last Word Is an Answered Longing",
+        "module": 3
+      },
+      {
+        "t": 158.8,
+        "label": "The Porch Light Left Burning",
+        "module": 4
+      },
+      {
+        "t": 228.7,
+        "label": "The Sword Down, the Gate Open",
+        "module": 5
+      },
+      {
+        "t": 441.1,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 451.2,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 477.2,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 497.6,
+        "label": "The Last Writer of Scripture",
         "module": 12
       }
     ]

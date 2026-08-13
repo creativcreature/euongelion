@@ -149,6 +149,18 @@ re-extraction does not match the render. That guard exists to prevent wrong
 chapter marks; it caught a stale audio file as a side effect. Had it guessed
 instead of failing, the defect would have shipped silently.
 
+**Catalog complete (2026-08-12).** All 520 devotionals now have narration and
+chapters: 91.8 hours of audio, 1.89 GB, one voice, zero failed renders, zero
+devotionals skipped by the chapter builder's verification.
+
+A correction to an earlier claim in this entry: R2 was described as blocking
+the `bible-365` batch from shipping. It is not. `.gitignore` governs git, not
+the build — `npm run deploy` copies `public/` from disk, so that audio has been
+deploying all along (verified live). What R2 actually solves is durability: the
+1.4 GB is currently tied to one machine's working directory and is re-uploaded
+on every deploy. A fresh checkout would build without it and ship silent
+players. That is a real risk, but it is not a gate on going live.
+
 **SA-035 registered.** Full detail: `docs/feature-prds/F-086.md`,
 `euangelion-voice-prototype/FINDINGS-2026-08-11.md`.
 
