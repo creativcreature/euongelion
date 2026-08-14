@@ -691,6 +691,44 @@ export default function DevotionalPageClient({
                     />
                   )}
 
+                  {/* Founder direction 2026-08-14: quick links to every day of
+                      the series, so moving between days does not mean going
+                      back out to the series page. Placed directly under the
+                      headline rather than above it — the title stays the first
+                      thing on the page (SA-037). Long plans keep the existing
+                      day-nav pill instead; 365 links is not a quick link. */}
+                  {seriesDays &&
+                    seriesDays.length > 1 &&
+                    seriesDays.length <= LONG_SERIES_DAY_THRESHOLD && (
+                      <nav
+                        className="devotional-day-quicklinks mb-6 flex flex-wrap items-center gap-2"
+                        aria-label="Days in this series"
+                      >
+                        {seriesDays.map((day, i) => {
+                          const isCurrent = day.slug === slug
+                          return (
+                            <Link
+                              key={day.slug}
+                              href={`${devotionalRoutePrefix}/${day.slug}`}
+                              className="text-label vw-small link-highlight border px-3 py-1"
+                              style={{
+                                borderColor: isCurrent
+                                  ? 'var(--color-accent, var(--color-border))'
+                                  : 'var(--color-border)',
+                                color: isCurrent
+                                  ? 'var(--color-accent, inherit)'
+                                  : undefined,
+                              }}
+                              aria-current={isCurrent ? 'page' : undefined}
+                              title={day.title}
+                            >
+                              DAY {i + 1}
+                            </Link>
+                          )
+                        })}
+                      </nav>
+                    )}
+
                   {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
                       this devotional's real text, one section at a time.
                       Founder direction 2026-07-28: it sits BELOW the folio and

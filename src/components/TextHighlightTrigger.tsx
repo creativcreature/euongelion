@@ -151,6 +151,10 @@ export default function TextHighlightTrigger({
     useState<HighlightColor>(DEFAULT_COLOR)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  // A highlight that fails to save used to return silently, so the reader
+  // picked a colour, pressed Highlight, and nothing happened anywhere — no
+  // mark, no message. Failures are surfaced now (no silent fallbacks).
+  const [failed, setFailed] = useState<string | null>(null)
   const { open } = useChatStore()
 
   const handleSelection = useCallback(() => {
@@ -324,9 +328,16 @@ export default function TextHighlightTrigger({
           window.location.assign(
             `/auth/sign-in?redirect=${encodeURIComponent(redirect)}`,
           )
+          return
         }
+        setFailed(
+          response.status >= 500
+            ? "Couldn't save — try again"
+            : "Couldn't save that highlight",
+        )
         return
       }
+      setFailed(null)
 
       applyHighlightMark({
         range,
@@ -388,7 +399,7 @@ export default function TextHighlightTrigger({
         disabled={saving}
         onClick={() => void saveFavoriteVerse()}
       >
-        {saved ? 'Saved' : saving ? 'Saving' : 'Highlight'}
+        {failed ? failed : saved ? 'Saved' : saving ? 'Saving' : 'Highlight'}
       </button>
     </div>
   )

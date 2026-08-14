@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READER — day quick-links, and highlights stop failing silently (2026-08-14)
+
+**Day quick-links.** Founder: _"there should be links to all the days of the
+devotional at the top to act like small quick links. Otherwise its difficult to
+switch bewteen devotionals within a series."_ Every day in the series now
+renders as a small link under the headline, current day marked in gold. Placed
+_under_ the title rather than above it, so SA-037 still holds — the title
+remains the first thing on the page. Long plans (Bible-365) keep the existing
+day-nav pill; 365 links is not a quick link.
+
+**Highlights.** Founder reported the colour never renders. Diagnosed rather
+than guessed, and the CSS turned out to be fine — injecting the exact mark the
+code creates into the live page computes to `rgba(246, 223, 128, 0.54)`, real
+yellow. The mark was never reaching the DOM.
+
+The cause is that `applyHighlightMark` runs only after `response.ok`, and every
+non-auth failure hit a bare `return` — no mark, no message, nothing. A reader
+picks a colour, presses Highlight, and the page does not react at all. That is
+a silent fallback, and it is now fixed: failures surface on the button.
+
+Worth stating plainly: for a signed-out reader the endpoint returns 401
+`AUTH_REQUIRED_SAVE_STATE`, which is **SA-018 behaving as locked** — highlights
+and notes are sign-in-gated by decision, and that gate has not been touched.
+Whether the founder hit the gate or a genuine save failure is still open; the
+error message will now say which. — SA-037 (F-088)
+
 ## READER — nothing above the devotional title (2026-08-14)
 
 Founder, reading "Between the Pieces" (`he-cannot-deny-himself-day-5`):

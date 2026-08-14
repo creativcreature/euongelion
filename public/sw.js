@@ -4,6 +4,9 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R45 (F-088): bumped to v58 — day quick-links added to the reader shell and
+// the highlight toolbar now reports failures. Shell change, so v57 holders
+// would see neither.
 // R44 (F-088): bumped to v57 — the reader declutter changes the page shell
 // itself (breadcrumbs, folio and the church-year line removed; the headline
 // reordered). A reader holding v56 keeps the old shell and sees no change at
@@ -29,7 +32,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v57'
+const CACHE_NAME = 'euangelion-v58'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
