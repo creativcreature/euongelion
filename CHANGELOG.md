@@ -54,6 +54,12 @@ and the plate at y=403, and every element above the title is masthead. Worth
 recording — the CSS appeared not to work on first run; the dev server was
 serving a stale `globals.css` chunk. Restarting it was the fix.
 
+**Service worker bumped to v57.** The first deploy shipped correct markup —
+production returned zero breadcrumbs, zero folio, zero church-year — but the
+founder saw no change, because a reader holding v56 keeps the cached shell.
+This change alters the shell itself, so the bump is not optional. Same trap as
+R41-R43.
+
 **Still open**: the church-year line is removed from readings but not yet
 placed on the home page; `/daily-bread`'s `CuratedActiveView` keeps its own
 `ChurchYearCard` and its OPEN FULL READER step; the fixed reader-theme trigger

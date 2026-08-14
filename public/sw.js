@@ -4,6 +4,10 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R44 (F-088): bumped to v57 — the reader declutter changes the page shell
+// itself (breadcrumbs, folio and the church-year line removed; the headline
+// reordered). A reader holding v56 keeps the old shell and sees no change at
+// all, which is exactly what the founder reported after the v56-era deploy.
 // R43 (F-087): bumped to v56 — a new reading (looking-at-the-sun) plus its
 // narration entry. The audio manifest is bundled at build time, so a returning
 // reader holding v55 would keep the old bundle and never see the track.
@@ -25,7 +29,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v56'
+const CACHE_NAME = 'euangelion-v57'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
