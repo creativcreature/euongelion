@@ -5,6 +5,95 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CONTENT — "Looking at the Sun": a commissioned single reading on healing, patience and rest (2026-08-14)
+
+Commissioned in conversation on 13 August: _"I did want to actually make you a
+devotional… I'll have something for you. I want to say it'll be ready for you on
+Monday."_ She asked for **healing** and **being patient**; the founder added
+**rest**, and then spoke a five-minute reading on the spot. This ships what he
+said, written down at full production quality.
+
+**The transcript is the spine, not a source.** Every substantive move in the
+reading traces to something actually said in that conversation — the wilderness
+as instruction rather than punishment, rest and grace, the Martha problem,
+_"pay attention to what you pay attention to,"_ running the race with endurance,
+and the sun image the reading is named for. None of it was taken on trust:
+scripture is corpus-verbatim, every lexical claim is checked against Strong's,
+Thayer's and BDB, and both quoted authors are checked against their primary
+texts. The person it was written for appears nowhere in it — it stands alone for
+any reader.
+
+**One reading, not seven** (SA-036(1)). What was promised was a single reading by
+a named date. `/devo-go` ran end to end — verified research, brief, source pack,
+`two-minute-open-v2`, editorial pass, imagery accuracy gate, narration, gates,
+Workers preview — against one day registered as a one-entry series. The chiastic
+seven-day shape is the shape of a _series_, not a precondition for publishing.
+
+**The teaching payload is three Greek words that describe one problem.** The
+weight in Hebrews 12:1 is ὄγκος (_ogkos_) — bulk, mass, named separately from
+the sin beside it. The thing that "so easily besets" is εὐπερίστατος
+(_euperistatos_), a hapax legomenon Thayer's reconstructs as "skilfully
+surrounding… to prevent or retard running" and notes is not found anywhere else.
+Martha's condition in Luke 10:40 is περισπάω (_perispaō_), "to drag all around,"
+one New Testament occurrence, in the **imperfect passive** — done to her, not
+chosen by her. All three are statements about geometry: surrounded, encircled,
+pulled from every direction. The answer given is ἀφοράω (_aphoraō_), "to look
+away from all else at one object," a present participle in Hebrews 12:2 and so a
+continuing look. That is the founder's sun image, arrived at lexically.
+
+**Where it resolves.** The risk in a brief like this is writing a try-harder
+reading to someone who asked for rest. Isaiah 40:31 puts the running _after_ the
+waiting. Elijah gets two meals and two sleeps under the broom tree before God
+says one word to him, and the reason attached is the length of what is still
+ahead. Milton, blind at forty-three, answers his own day-labour complaint with
+"God doth not need either man's work or his own gifts." Rest is what the race is
+run on, not the prize for finishing it.
+
+**Verification, in full.**
+
+- Scripture pulled from `public/bibles/` only; KJV casing preserved ("the Lord",
+  not "the LORD"). KJV chosen for both anchors on purpose: it renders ὑπομονή
+  (_hypomonē_) as **patience** — the word she asked for — where modern versions
+  print _endurance_, and they are the same Greek word.
+- Milton verified against the 1673 _Poems_ text and the _Second Defence_ (1654,
+  Fellowes's translation). Composition date given as the contested 1652–1655
+  range; the familiar title "On His Blindness" flagged as an eighteenth-century
+  editor's, not Milton's.
+- Pascal verified against the French of _Pensées_ Lafuma 136. The viral English
+  — "sit quietly in a room alone" — is **rejected as a quotation** and named as a
+  paraphrase: it adds a word Pascal did not write.
+- The `qavah` twisted-cord etymology is carried with the same "perhaps" BDB
+  prints, not asserted.
+- Video oEmbed-verified on the official BibleProject channel and embed-checked.
+
+**Imagery: nothing generated.** All three plates came from the existing library
+per the manifest-first rule — hero card, one bleed inline, one narrow inline. The
+accuracy gate (SA-032) extends to captions here (SA-036(4)): the broom tree of
+1 Kings 19 is a low desert shrub and the chosen plate renders a full canopy, so
+the caption says so rather than asserting a detail the picture contradicts.
+
+**Not featured** (SA-036(3)). It enters `SERIES_DATA`, `NEW_SERIES_ORDER` and one
+editorially-appropriate `/series` rail ("When You're Overwhelmed").
+`FEATURED_SERIES` and the homepage `HOMEPAGE_TODAY` slot are untouched — the
+most-recent-series rule in SA-031(1) is scoped to catalog series, and a
+commissioned reading is reached by direct link.
+
+**Narrated, and checked rather than assumed.** 27.6 minutes in the canonical
+`am_michael` voice, 23 chapters built from real render timings. Five segments
+scored under the automated clarity gate; all five were run down rather than
+waved through. Two are bare Greek/Hebrew transliterations and one is Pascal's
+French — cases SA-035(5) already establishes the gate cannot judge, because
+Whisper was never trained on them. One missed by a thousandth. The real outlier
+scored 0.577, so the passage was decoded back out of the **shipped** m4a and
+re-transcribed: 0.993, 434 words in and 434 words out, verbatim. Nothing was
+lost; Whisper had collapsed a paragraph that repeats the phrase "pay attention."
+`build_chapters.py` also emitted all 521 devotionals with none skipped, and it
+refuses any reading whose re-extraction disagrees with what was spoken.
+
+Decision: **SA-036**. Feature: **F-087**.
+
+---
+
 ## PLATFORM — Pre-rendered narration: the Audio Edition now reads everything, in one voice (2026-08-11)
 
 Founder brief: _"I need a better way to listen to my devotional. The method you

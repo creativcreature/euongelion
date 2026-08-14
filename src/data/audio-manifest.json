@@ -24549,6 +24549,131 @@
       }
     ]
   },
+  "looking-at-the-sun-day-1": {
+    "src": "/audio/looking-at-the-sun-day-1.m4a",
+    "duration": 1656.4,
+    "words": 4676,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 10207244,
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 48.2,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 92.3,
+        "label": "Who This Was Said To",
+        "module": 3
+      },
+      {
+        "t": 180.3,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 189.7,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 202.4,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 241.9,
+        "label": "The Weight, and the Thing That Stands All Around",
+        "module": 8
+      },
+      {
+        "t": 374.9,
+        "label": "Word study",
+        "module": 9
+      },
+      {
+        "t": 454.6,
+        "label": "Martha, Martha",
+        "module": 11
+      },
+      {
+        "t": 607.7,
+        "label": "Where This Sits in the Story",
+        "module": 13
+      },
+      {
+        "t": 704.4,
+        "label": "Bread, and Then Sleep, and Then a Word",
+        "module": 15
+      },
+      {
+        "t": 908.1,
+        "label": "The Man Who Could Not Do His Work",
+        "module": 16
+      },
+      {
+        "t": 1096.4,
+        "label": "The Room",
+        "module": 17
+      },
+      {
+        "t": 1157.9,
+        "label": "Pay Attention to What You Pay Attention To",
+        "module": 18
+      },
+      {
+        "t": 1307.1,
+        "label": "Scripture",
+        "module": 19
+      },
+      {
+        "t": 1338.9,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 1352.5,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 1370.2,
+        "label": "Looking at the Sun",
+        "module": 23
+      },
+      {
+        "t": 1496.5,
+        "label": "Closing Prayer",
+        "module": 24
+      },
+      {
+        "t": 1539.1,
+        "label": "Today's Commitment",
+        "module": 25
+      },
+      {
+        "t": 1549.0,
+        "label": "One Question",
+        "module": 26
+      },
+      {
+        "t": 1589.4,
+        "label": "The Voice Behind Today",
+        "module": 27
+      }
+    ]
+  },
   "once-saved-always-saved-day-1": {
     "src": "/audio/once-saved-always-saved-day-1.m4a",
     "duration": 407.2,

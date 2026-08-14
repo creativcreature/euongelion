@@ -1158,6 +1158,51 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       },
     ],
   },
+
+  'looking-at-the-sun': {
+    title: 'Looking at the Sun',
+    heroImage: '/images/site/series/looking-at-the-sun.webp',
+    question:
+      'When a season takes your strength, what is it actually teaching you?',
+    introduction:
+      'A single reading on healing, patience and rest. Isaiah promises renewed strength to people who were already spent, and puts the running after the waiting. Hebrews says to run with patience by looking away from everything else at one thing. And Elijah, at the end of himself under a desert tree, is given bread and sleep before he is given a word.',
+    context:
+      'For anyone worn down — by illness, by a long stretch of work, by carrying more than one person should — who has started to wonder whether the season is a punishment. It is written for the Marthas: people whose love takes the form of getting things done, and who are being asked, for a while, to do less and look longer.',
+    framework:
+      'Hebrews 12:1-2 - let us run with patience the race that is set before us, Looking unto Jesus',
+    pathway: 'Awake',
+    keywords: [
+      'healing',
+      'patience',
+      'rest',
+      'waiting',
+      'weary',
+      'tired',
+      'exhausted',
+      'burned out',
+      'wilderness',
+      'dry season',
+      'distracted',
+      'too busy',
+      'doing too much',
+      'martha',
+      'serving',
+      'grace',
+      'slow down',
+      'endurance',
+      'sick',
+      'recovery',
+      'still',
+      'attention',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'The One Thing You Can Still See',
+        slug: 'looking-at-the-sun-day-1',
+      },
+    ],
+  },
 }
 
 // ============================================
@@ -1209,6 +1254,7 @@ export const NEW_SERIES_ORDER = [
   'prayer-of-jabez',
   'the-harvest',
   'he-cannot-deny-himself',
+  'looking-at-the-sun',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.

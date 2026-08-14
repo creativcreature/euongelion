@@ -793,6 +793,8 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Application: The kingdom is here. Now what? How do you actually live in it?',
   'kingdom-day-5':
     'Resolution: When the kingdom comes first, everything else falls into place. Not because you earned it. Because the kingdom provides.',
+  'looking-at-the-sun-day-1':
+    'A promise about renewed strength that was spoken to people who were already spent, a Greek word used once and never found again, and a prophet who asked to die and was handed breakfast. Endurance turns out to be a question of attention, and rest turns out to come first.',
   'once-saved-always-saved-day-1':
     "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand",
   'once-saved-always-saved-day-2':
@@ -1491,6 +1493,7 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'kingdom-day-3': 'The kingdom of God is in the midst of you',
   'kingdom-day-4': 'What does it look like to seek first the kingdom?',
   'kingdom-day-5': 'All these things will be added to you',
+  'looking-at-the-sun-day-1': 'The One Thing You Can Still See',
   'once-saved-always-saved-day-1': "What's Happening (and Who's Involved)?",
   'once-saved-always-saved-day-2': "What's the Connection?",
   'once-saved-always-saved-day-3':

@@ -39,6 +39,7 @@ export const SERIES_RAILS: SeriesRail[] = [
     subtitle: 'Too much, too fast, too loud — and the invitation to stop.',
     layout: 'rail',
     slugs: [
+      'looking-at-the-sun',
       'too-busy-for-god',
       'hearing-god-in-the-noise',
       'peace',
