@@ -1165,7 +1165,7 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     question:
       'When a season takes your strength, what is it actually teaching you?',
     introduction:
-      'A single reading on healing, patience and rest. Isaiah promises renewed strength to people who were already spent, and puts the running after the waiting. Hebrews says to run with patience by looking away from everything else at one thing. And Elijah, at the end of himself under a desert tree, is given bread and sleep before he is given a word.',
+      'Seven days on healing, patience and rest. Isaiah promises renewed strength to people already spent and puts the running after the waiting. Hebrews separates weight from sin and calls the running patience. Elijah, at the end of himself under a desert bush, is given bread and sleep before he is given a word. Martha is corrected about a number rather than about her hands. And the week ends where it was always going: a gaze that does not wait for the field to be cleared.',
     context:
       'For anyone worn down — by illness, by a long stretch of work, by carrying more than one person should — who has started to wonder whether the season is a punishment. It is written for the Marthas: people whose love takes the form of getting things done, and who are being asked, for a while, to do less and look longer.',
     framework:
@@ -1198,8 +1198,30 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     days: [
       {
         day: 1,
-        title: 'The One Thing You Can Still See',
+        title: 'The Promise Was Not Made to the Strong',
         slug: 'looking-at-the-sun-day-1',
+      },
+      {
+        day: 2,
+        title: 'The Weight and the Thing That Stands Around',
+        slug: 'looking-at-the-sun-day-2',
+      },
+      {
+        day: 3,
+        title: 'Bread, and Then Sleep, and Then a Word',
+        slug: 'looking-at-the-sun-day-3',
+      },
+      { day: 4, title: 'Martha, Martha', slug: 'looking-at-the-sun-day-4' },
+      {
+        day: 5,
+        title: 'Looking at the Sun',
+        slug: 'looking-at-the-sun-day-5',
+      },
+      { day: 6, title: 'What Held', slug: 'looking-at-the-sun-day-6' },
+      {
+        day: 7,
+        title: 'He Maketh Me to Lie Down',
+        slug: 'looking-at-the-sun-day-7',
       },
     ],
   },

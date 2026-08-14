@@ -207,6 +207,25 @@ per the manifest-first rule. The accuracy gate now extends to captions
 plate renders a full canopy, so the caption says so rather than asserting a
 detail the picture contradicts.
 
+**Narration: 126 minutes, one voice, chaptered from real timings.** Day 1 23.5
+min / 23 chapters, day 2 22.3 / 23, day 3 25.0 / 23, day 4 23.2 / 23, day 5 20.8
+/ 22, day 6 8.9 / 11, day 7 2.7 / 6. Mean clarity 0.987-0.999. Day 2 was
+re-rendered after its stored render text was found to contain a stray Greek
+character the engine had actually spoken — the re-render came back with 0 of 61
+segments under the clarity gate.
+
+**Two hazards from rendering on a shared machine, recorded because they will
+recur.** First, `build_chapters.py` refuses to emit chapters when a devotional's
+re-extraction disagrees with what was recorded — correct — but a skip drops that
+entry from its output entirely, so running it while another session is editing
+the narration pipeline silently strips chapters from every devotional it skips.
+It removed 500 here; all were restored from HEAD, and only where the audio was
+byte-identical, so no restored timing describes a file that has since changed.
+Second, `src/data/audio-manifest.json` is a read-modify-write file with no
+locking, and four render processes were writing it at once. The manifest
+committed here was reconstructed as HEAD plus this series' seven entries only,
+so it cannot misdescribe another session's in-flight audio.
+
 **Not featured** (SA-036(4)). It enters `SERIES_DATA`, `NEW_SERIES_ORDER` and the
 "When You're Overwhelmed" rail. `FEATURED_SERIES` and the homepage
 `HOMEPAGE_TODAY` slot are untouched.

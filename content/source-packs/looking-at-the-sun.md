@@ -335,3 +335,195 @@ and who is now "set down" — the only figure in the passage who is sitting.
 Martha's arc completes the point: the woman corrected in Luke 10 is the woman who, in John
 11:27, makes one of the plainest confessions of Christ in the Gospels — "I believe that You
 are the Christ, the Son of God." Jesus' correction of Martha was never a dismissal of her.
+
+---
+
+# ADDENDUM — material added for the 7-day rebuild (2026-08-14)
+
+Everything above still stands. This section carries what days 2-7 additionally
+draw on. Same rule: the pack is the only citation pool.
+
+## A. Additional lexicon (verified against BibleHub Strong's / BDB / Thayer's)
+
+### דְּמָמָה — _demamah_ — **H1827** — 1 Kings 19:12
+
+- Feminine noun: "silence, stillness, calm," and in some entries "whisper."
+  Derived from H1826 _damam_, "to be silent."
+- BDB classes it under "(silence) whisper."
+- The phrase in 1 Kings 19:12 is _qol demamah daqqah_ — literally something like
+  "a voice of thin silence." KJV: "a still small voice."
+- **Drafting rule:** the honest way to put it is that the Hebrew is stranger than
+  the English — it pairs _voice_ with _silence_, which is why translators reach
+  for "whisper," "gentle blowing," or "sheer silence." Do not claim a single
+  settled rendering; the disagreement is the point worth showing.
+
+### μερίς — _meris_ — **G3310** — Luke 10:42
+
+- "A portion, share; that which is allotted." Feminine form related to G3313
+  _meros_, "part."
+- Five NT occurrences: Luke 10:42; Acts 8:21; Acts 16:12; 2 Corinthians 6:15;
+  Colossians 1:12.
+- The sense is an allotted share — land, inheritance, an assigned portion —
+  rather than a preference or a mood.
+- **Drafting rule:** "that good part" in the KJV is a portion in the inheritance
+  sense. Colossians 1:12 uses the same word of the saints' share in the
+  inheritance, which is why "shall not be taken away from her" is not sentiment.
+
+## B. Verified stories
+
+### Day 1 — Amy Carmichael (VERIFIED, primary text in hand)
+
+**Facts.** Born 16 December 1867; died in India 18 January 1951. Founded the
+Dohnavur Fellowship in 1901; some 56 years in south India. On **24 October 1931**,
+aged 63, she fell into an uncovered pit at a building site, breaking a leg,
+dislocating an ankle and injuring her spine. She never fully recovered and spent
+most of her last two decades confined to her room.
+
+**Caveat:** sources disagree on how many books she wrote after the accident —
+commonly 13 or 14 of about 35. Write "more than a dozen," not a figure.
+
+**Verbatim, from _Rose from Brier_ (SPCK, 1933), the book she wrote from that
+bed** — quoted from the scanned text at missiology.org.uk:
+
+> "But then the book would have been from the well to the ill, and not from the
+> ill to the ill, which I think is what it is meant to be — a rose plucked
+> straight from a brier."
+
+> "…a word came which I believe can console not only the single prod of the
+> harrow-tooth (the passing illness), but the multiple pains of the whole
+> harrow ; this is the word : He knoweth the way that I take."
+
+> "Has the day to be spent in bed? or in chair? or partly in both?"
+
+> "And now, in the twenty-second month of this new way of living — the way that
+> began with 'Your joy' — the proofs of these letters have come… They go to some
+> who are disappointed. They hoped to be well long ago and are not well yet."
+
+**Attribution caveat:** the widely circulated line "not by the well to the ill to
+do them good, but by a fellow-toad under the harrow" belongs to the preface of
+_Gold by Moonlight_ (1935), where she is describing _Rose from Brier_. It is
+routinely quoted as though it were from _Rose from Brier_ itself. Use the
+primary wording above instead.
+
+### Day 2 — Adoniram Judson (VERIFIED dates)
+
+- Reached Rangoon **14 July 1813**.
+- First Burmese convert, Maung Nau, baptised **27 June 1819** — six years in.
+- Imprisoned at Ava **8 June 1824**; released **4 November 1825**; seventeen
+  months, much of it in irons, during the First Anglo-Burmese War.
+- Ann Hasseltine Judson died **24 October 1826**, aged 36.
+- Judson lived 1788-1850.
+
+**Drafting rule:** this story is heavily mythologised. Stay on the dated skeleton
+above and do not embellish the prison conditions beyond "in irons," which the
+record supports. The point being illustrated is Hebrews 11:39 — running the
+distance without seeing the end — not heroism.
+
+### Day 3 — C. H. Spurgeon (VERIFIED, primary text in hand)
+
+_Lectures to My Students_, First Series (1875), **Lecture XI, "The Minister's
+Fainting Fits."** Verbatim:
+
+> "Fits of depression come over the most of us. Usually cheerful as we may be, we
+> must at intervals be cast down."
+
+> "The strong are not always vigorous, the wise not always ready, the brave not
+> always courageous, and the joyous not always happy."
+
+> "Knowing by most painful experience what deep depression of spirit means, being
+> visited therewith at seasons by no means few or far between, I thought it might
+> be consolatory to some of my brethren if I gave my thoughts thereon…"
+
+> "Moreover, most of us are in some way or other unsound physically."
+
+> "Certain bodily maladies, especially those connected with the digestive organs,
+> the liver, and the spleen, are the fruitful fountains of despondency."
+
+> "Some plants owe their medicinal qualities to the marsh in which they grow;
+> others to the shades in which alone they flourish."
+
+> "A day's breathing of fresh air upon the hills, or a few hours' ramble in the
+> beech woods' umbrageous calm, would sweep the cobwebs out of the brain of
+> scores of our toiling ministers who are now but half alive. A mouthful of sea
+> air, or a stiff walk in the wind's face, would not give grace to the soul, but
+> it would yield oxygen to the body…"
+
+**Why it belongs on the pivot day:** Spurgeon's prescription for a collapsing
+soul is air and a walk. He says plainly that this "would not give grace to the
+soul" — which is exactly the distinction 1 Kings 19 draws when the angel brings
+bread before God brings a word.
+
+### Day 4 — Brother Lawrence (VERIFIED, primary text in hand)
+
+Nicolas Herman, called Brother Lawrence of the Resurrection, lay brother of the
+Discalced Carmelites in Paris; cook to a community of over a hundred for some
+fifteen years, later in the sandal-repair shop. **Joseph de Beaufort** recorded
+four conversations — the first dated **3 August 1666** — and published the letters
+after Lawrence's death, adding the conversations in a second volume titled _The
+Practice of the Presence of God_.
+
+Verbatim (Project Gutenberg #5657):
+
+> "The time of business," said he, "does not with me differ from the time of
+> prayer. In the noise and clutter of my kitchen, while several persons are at the
+> same time calling for different things, I possess God in as great tranquillity
+> as if I were upon my knees at the Blessed Supper."
+
+> "With him the set times of prayer were not different from other times."
+
+**Attribution caveat:** these are de Beaufort's record of Lawrence's speech, not
+Lawrence's own pen — the conversations are reported, the letters are his. Also,
+this English renders the last phrase "the Blessed Supper"; other translations
+have "the Blessed Sacrament." Say "as one translation has it" rather than
+implying a single fixed text.
+
+## C. Verified videos (oEmbed + embed-block checked 2026-08-14)
+
+| Day | ID            | Title                                                         | Channel                        | Length |
+| --- | ------------- | ------------------------------------------------------------- | ------------------------------ | ------ |
+| 1   | `_TzdEPuqgQg` | Book of Isaiah Summary: A Complete Animated Overview (Part 2) | BibleProject (`@bibleproject`) | 8:06   |
+| 2   | `1fNWTZZwgbs` | Book of Hebrews Summary: A Complete Animated Overview         | BibleProject                   | 8:16   |
+| 3   | `bVFW3wbi9pk` | Books of 1-2 Kings Summary: A Complete Animated Overview      | BibleProject                   | 8:51   |
+| 6/7 | `PFTLvkB3JLM` | SABBATH: Learn Why the Number 7 Is Used So Much in the Bible  | BibleProject                   | 5:27   |
+
+**REJECTED:** `iVwauTiyFjM` — "Overview Isaiah Chapters 40-66 | The BibleProject."
+Identical content, but oEmbed reports the channel as **"Starry Night Elf."** It is
+a re-upload, not the official channel. This is exactly the failure mode
+traps.md §12 describes; the official Isaiah Part 2 id is `_TzdEPuqgQg`.
+
+## D. Additional corpus pulls for days 2-7
+
+- **Isaiah 40:1-2, 6-8, 11 (KJV)** — comfort; "all flesh is grass"; "He shall
+  feed his flock like a shepherd… and shall gently lead those that are with young."
+- **Hebrews 11:8-10, 13, 32-38 (BSB)** — Abraham "without knowing where he was
+  going"; those who "died in faith, without having received"; "they wandered in
+  deserts and mountains, and hid in caves and holes in the ground."
+- **Hebrews 12:3, 11-13 (BSB)** — "so that you will not grow weary and lose
+  heart"; discipline as a father's training; "strengthen your limp hands and weak
+  knees… so that the lame may not be disabled, but rather healed."
+- **1 Kings 18:38-46 (BSB)** — Carmel, and Elijah running ahead of Ahab to
+  Jezreel — the physical exertion immediately before the collapse.
+- **1 Kings 19:10, 13-18 (BSB)** — "I am the only one left"; the same complaint
+  repeated verbatim after the voice; and "I have reserved seven thousand."
+- **Luke 10:1, 17, 25-37 (BSB)** — the seventy-two, and the Good Samaritan
+  immediately preceding the Martha scene.
+- **John 12:1-3 (BSB)** — six days before the Passover: "Martha served," and she
+  is not rebuked.
+- **Psalm 127:1-2 (BSB)** — "In vain you rise early and stay up late… for He
+  gives sleep to His beloved."
+- **Matthew 6:25-27, 33-34 (BSB)** — do not worry; "Who of you by worrying can
+  add a single hour to his life?"
+- **Philippians 3:13-14 (BSB)** — "But one thing I do."
+- **2 Corinthians 12:8-10 (BSB)** — "My grace is sufficient for you, for My power
+  is perfected in weakness."
+- **Jeremiah 31:25 (BSB)** — "I will refresh the weary soul."
+- **Ecclesiastes 4:6 (BSB)** — "Better one handful with tranquility than two
+  handfuls with toil."
+- **Colossians 3:1-2 (BSB)** — "Set your minds on things above."
+- **Hebrews 4:9-11 (BSB)** — "There remains, then, a Sabbath rest for the people
+  of God."
+- **1 Peter 5:6-7 (BSB)** — "Cast all your anxiety on Him, because He cares for
+  you."
+- **Isaiah 41:10 (BSB)**, **Isaiah 30:15 (KJV)**, **Psalm 27:4 (KJV)**,
+  **Psalm 46:10 (KJV)**, **Lamentations 3:25-26 (BSB)**, **Psalm 130:5-6 (BSB)**
+  — all pulled verbatim and available above.

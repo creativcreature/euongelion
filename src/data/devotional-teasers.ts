@@ -794,7 +794,19 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'kingdom-day-5':
     'Resolution: When the kingdom comes first, everything else falls into place. Not because you earned it. Because the kingdom provides.',
   'looking-at-the-sun-day-1':
-    'A promise about renewed strength that was spoken to people who were already spent, a Greek word used once and never found again, and a prophet who asked to die and was handed breakfast. Endurance turns out to be a question of attention, and rest turns out to come first.',
+    "Isaiah's most-quoted promise about renewed strength has a sentence in front of it that most readers skip: even the youths shall faint. The passage rules out the reading a tired person reaches for first, then makes an offer that only works if you have already run out.",
+  'looking-at-the-sun-day-2':
+    'Hebrews names two problems in one sentence and most readings collapse them into one. Weight is not sin — it has no moral charge at all — and the thing that "so easily besets" is a word that appears once in surviving Greek. Sorting them is the difference between rest and guilt.',
+  'looking-at-the-sun-day-3':
+    'One chapter after calling down fire, Elijah is a day into the desert asking God to end his life. God does not answer the prayer, correct the theology or mention the victory. He sends food, twice, and lets him sleep — and the word comes forty days later, quietly enough to miss.',
+  'looking-at-the-sun-day-4':
+    "Luke puts the Good Samaritan one paragraph before Martha's kitchen, which makes the usual reading impossible. The verb for what happened to her is passive — it was being done to her — and what Jesus names is not the serving but a number.",
+  'looking-at-the-sun-day-5':
+    'The Greek behind "looking unto Jesus" is a turning-away that is also a turning-toward, in one motion, held continuously. Nothing in anyone\'s circumstances gets edited by it. What changes is what everything else is seen through.',
+  'looking-at-the-sun-day-6':
+    'Five days, and none of them was about finding more energy. Renewal that is not a refill, weight that is not sin, bread before explanation, a number rather than a pair of hands, and a gaze that does not wait for a clear field.',
+  'looking-at-the-sun-day-7':
+    "No teaching today. One verse, one line, and the observation that the shepherd's first recorded action in the psalm is making the sheep stop.",
   'once-saved-always-saved-day-1':
     "Understanding Jesus's absolute promise that no one can snatch his sheep from his hand",
   'once-saved-always-saved-day-2':
@@ -1493,7 +1505,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'kingdom-day-3': 'The kingdom of God is in the midst of you',
   'kingdom-day-4': 'What does it look like to seek first the kingdom?',
   'kingdom-day-5': 'All these things will be added to you',
-  'looking-at-the-sun-day-1': 'The One Thing You Can Still See',
+  'looking-at-the-sun-day-1': 'The Promise Was Not Made to the Strong',
+  'looking-at-the-sun-day-2': 'The Weight and the Thing That Stands Around',
+  'looking-at-the-sun-day-3': 'Bread, and Then Sleep, and Then a Word',
+  'looking-at-the-sun-day-4': 'Martha, Martha',
+  'looking-at-the-sun-day-5': 'Looking at the Sun',
+  'looking-at-the-sun-day-6': 'What Held',
+  'looking-at-the-sun-day-7': 'He Maketh Me to Lie Down',
   'once-saved-always-saved-day-1': "What's Happening (and Who's Involved)?",
   'once-saved-always-saved-day-2': "What's the Connection?",
   'once-saved-always-saved-day-3':

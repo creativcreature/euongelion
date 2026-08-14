@@ -2,14 +2,14 @@
   "day": 1,
   "chiasm_position": "A",
   "format": "two-minute-open-v2",
-  "title": "The One Thing You Can Still See",
-  "subtitle": "On the wilderness, the weight, and where the eyes go",
-  "teaser": "A promise about renewed strength that was spoken to people who were already spent, a Greek word used once and never found again, and a prophet who asked to die and was handed breakfast. Endurance turns out to be a question of attention, and rest turns out to come first.",
-  "anchorVerse": "Hebrews 12:1-2",
-  "theme": "The strength for the race is renewed in the waiting, and the waiting is governed by what the eyes are fixed on.",
-  "framework": "Hebrews 12:1-2 — let us run with patience the race that is set before us, Looking unto Jesus",
-  "scriptureReference": "Hebrews 12:1-2",
-  "totalWords": 4177,
+  "title": "The Promise Was Not Made to the Strong",
+  "subtitle": "On comfort, grass, and a renewal that is not a refill",
+  "teaser": "Isaiah's most-quoted promise about renewed strength has a sentence in front of it that most readers skip: even the youths shall faint. The passage rules out the reading a tired person reaches for first, then makes an offer that only works if you have already run out.",
+  "anchorVerse": "Isaiah 40:31",
+  "theme": "Renewal is promised to people already spent, and the running comes after the waiting.",
+  "framework": "Isaiah 40:31 — they that wait upon the Lord shall renew their strength",
+  "scriptureReference": "Isaiah 40:28-31",
+  "totalWords": 3417,
   "panels": [],
   "modules": [
     {
@@ -18,10 +18,10 @@
       "translation": "KJV",
       "passage": "Hast thou not known? hast thou not heard, that the everlasting God, the Lord, the Creator of the ends of the earth, fainteth not, neither is weary? there is no searching of his understanding. He giveth power to the faint; and to them that have no might he increaseth strength. Even the youths shall faint and be weary, and the young men shall utterly fall: But they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
       "emphasis": [
-        "they that wait upon the Lord shall renew their strength",
-        "they shall run, and not be weary"
+        "He giveth power to the faint",
+        "they that wait upon the Lord shall renew their strength"
       ],
-      "scriptureContext": "Two minutes with a promise that was not made to people who still had energy left."
+      "scriptureContext": "A promise that gets quoted at people with something left, and was written for people with nothing."
     },
     {
       "type": "vocab",
@@ -30,17 +30,17 @@
       "transliteration": "qavah",
       "pronunciation": "kah-VAH",
       "strongsNumber": "H6960",
-      "definition": "to wait, to look for, to hope, to expect — a waiting that leans forward",
-      "usage": "This is the word under \"they that wait upon the Lord,\" and it is not the word for killing time. Brown-Driver-Briggs connects it to a root meaning to bind together, perhaps by twisting — the way loose strands become a cord — though the lexicon prints that derivation with a \"perhaps\" attached, and it is worth holding as loosely as the lexicon does. What is not in doubt is the posture. It shows up about forty-nine times in the Old Testament, and in almost every one of them somebody is leaning toward something they cannot yet see."
+      "definition": "to wait, to look for, to hope — a waiting that leans toward something",
+      "usage": "This is the verb under \"they that wait upon the Lord,\" and it is not the word for filling time until something better happens. Brown-Driver-Briggs connects it to a root meaning to bind together, perhaps by twisting, the way loose strands become a cord — though the lexicon prints that derivation with a \"perhaps\" attached, and it is worth holding as loosely as the lexicon does. What is not in question is the posture. The word turns up about forty-nine times in the Old Testament, and in nearly all of them somebody is leaning toward something they cannot yet see."
     },
     {
       "type": "teaching",
-      "heading": "Who This Was Said To",
-      "content": "Isaiah 40 opens the long second movement of the book, and it opens with the word comfort, said twice. Speak tenderly to Jerusalem. Her forced labour has been completed. That is the room this promise is spoken into — not a training camp, but the far end of an exile, addressed to people who have already been spent.\n\nWhich is why the verse just before it says what it says. Even youths shall faint and be weary, and the young men shall utterly fall. The passage rules out the reading a tired person is most likely to reach for, that renewal is what happens to people who had reserves to begin with. Youth is precisely what the verse disqualifies.\n\nThen notice the order of what is promised. Mount up with wings as eagles. Run, and not be weary. Walk, and not faint. It descends. The spectacular thing comes first and the ordinary thing comes last, which is backwards from how anyone would build the sentence for effect — unless walking is the harder of the three, and the one most of a life is actually made of.\n\nAnd all three of them sit downstream of one verb. They that wait. Not they that try again, or they that press through, or they that find it in themselves. The strength in this passage is renewed, which is a word for something being given back, and the condition attached to it is the one thing an exhausted person is usually least willing to do."
+      "heading": "Who Was in the Room",
+      "content": "Isaiah 40 opens the long second movement of the book, and it opens with the word comfort, said twice. Speak ye comfortably to Jerusalem. Her warfare is accomplished. That is the room this promise is spoken into — not a starting line, but the far end of an exile, addressed to people who have already been spent by it.\n\nWhich is why the verse immediately before it says what it says. Even the youths shall faint and be weary, and the young men shall utterly fall. That sentence removes the reading a tired person reaches for first — that renewal is what happens to people who had something in reserve. Youth is exactly what the passage disqualifies.\n\nThen notice the order of what is promised. Mount up with wings as eagles. Run, and not be weary. Walk, and not faint. It descends. The spectacular thing comes first and the ordinary thing comes last, which is backwards from how anybody would build a sentence for effect — unless walking is the hardest of the three, and the one most of a life is actually made of.\n\nAnd all three sit downstream of a single verb. They that wait. Not they that try again. Not they that press through. The strength here is renewed, which is a word for something being given back, and the condition attached to it is the one thing an exhausted person is least willing to do."
     },
     {
       "type": "reflection",
-      "prompt": "Where are you being asked to keep going on strength you no longer have? Name the place plainly, without deciding yet what to do about it.",
+      "prompt": "Where are you being asked to keep going on strength you no longer have? Name the place plainly. Do not decide yet what to do about it.",
       "invitationType": "quiet"
     },
     {
@@ -53,284 +53,253 @@
       "type": "cta",
       "ctaLabel": "DEEP DIVE",
       "ctaHref": "#devotional-section-7",
-      "ctaSubtext": "That can be the whole of today. Below, when there is time: three Greek words that turn out to describe the same problem from three sides, a prophet who was handed bread and sleep before he was handed a word, and a blind poet arguing himself out of a complaint in fourteen lines."
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a prophet telling a comforted people they are grass, a Hebrew verb for renewal that means something closer to exchange, and a woman who wrote her best-known book from the bed she never got out of again."
     },
     {
       "type": "scripture",
-      "reference": "Hebrews 12:1-2",
+      "reference": "Isaiah 40:1-2, 6-8",
       "translation": "KJV",
-      "passage": "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us, Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.",
-      "greekOriginal": "ἀφορῶντες",
-      "transliteration": "aphorōntes — \"looking away from everything else, at\"",
+      "passage": "Comfort ye, comfort ye my people, saith your God. Speak ye comfortably to Jerusalem, and cry unto her, that her warfare is accomplished, that her iniquity is pardoned: for she hath received of the Lord's hand double for all her sins. … The voice said, Cry. And he said, What shall I cry? All flesh is grass, and all the goodliness thereof is as the flower of the field: The grass withereth, the flower fadeth: because the spirit of the Lord bloweth upon it: surely the people is grass. The grass withereth, the flower fadeth: but the word of our God shall stand for ever.",
       "emphasis": [
-        "let us run with patience",
-        "Looking unto Jesus",
-        "the joy that was set before him"
+        "her warfare is accomplished",
+        "surely the people is grass"
       ],
-      "scriptureContext": "The instruction and its mechanism in a single sentence: run with patience, by looking at one thing."
+      "scriptureContext": "The ground the promise is standing on, and the prophet's own assessment of the people he has just been told to comfort."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day1-tree.webp",
+      "inlineImageAlt": "A single weathered desert tree standing alone on open scrubland under a pale sky, rendered in deep blue and cream halftone.",
+      "inlineImageCaption": "One tree, still standing in country that gives it nothing. Isaiah 40 is addressed to people at that end of things — and the week the reading opens is going to spend most of its time in exactly this landscape.",
+      "inlineImageWidth": "bleed"
     },
     {
       "type": "teaching",
       "chiasm_position": "A",
       "pardes_layer": "peshat",
-      "heading": "The Weight, and the Thing That Stands All Around",
-      "content": "There are two problems in the first half of that sentence and they are not the same problem. Lay aside every weight, and the sin which doth so easily beset us.\n\nThe first is ὄγκος (ogkos). It means bulk, mass, a thing with heft. It carries no moral charge whatsoever. A runner sheds it not because it is wicked but because it is heavy, and the passage is careful enough to name it separately from the sin sitting next to it in the same clause. Some of what has to come off a life is not sin. It is just weight.\n\nThe second is εὐπερίστατος (euperistatos), and it is a strange word to run into. It appears once in the New Testament and, as far as anyone has found, nowhere else in surviving Greek. Thayer builds a meaning out of its parts — skilfully surrounding, besetting, namely, to prevent or retard running — and then notes, in the same entry, that the word is not found anywhere else. Strong's renders the same picture as a competitor thwarting a racer in every direction. Whatever else it means, the shape of it is spatial. Something standing all the way around.\n\nThen comes the word for how to run: ὑπομονή (hypomonē). The King James prints it patience. Almost every modern translation prints it endurance. They are the same Greek word, and English needing two words for it is the difficulty in miniature — patience sounds like something done sitting still, endurance sounds like something done at effort, and the Greek has no interest in the distinction. In the writer's mind they are not two things.\n\nOne more detail, easy to skim past. The cloud of witnesses is not a stadium of finishers. Hebrews 11 has just introduced every one of them, and the chapter's own summary is blunt: they all died in faith, without having received the things they were promised. So the crowd surrounding the reader is not made of people waving from the far side of the finish line. It is made of people who ran the entire distance without ever seeing the end of it. For anyone in a long season with no visible edge to it, that is a different kind of company, and a more useful one."
+      "heading": "Comfort, and Grass",
+      "content": "The two halves of that passage do not sound like they belong to the same speaker.\n\nFirst: comfort. Twice, which in Hebrew is how emphasis gets made. Speak tenderly. Tell her the hard service is finished, the debt is settled, it is over. That is the voice of somebody sitting on the edge of a bed.\n\nThen, thirty seconds later, the prophet is told to cry out, asks what he is supposed to cry, and gets handed this: all flesh is grass. The grass withers. The flower fades. Surely the people is grass.\n\nA modern editor would cut one of them. They read as contradictory — you comfort somebody, or you tell them they are vegetation, and it is difficult to see how you do both in the same breath. But the passage is not being cruel and it is not changing its mind. It is doing something more useful than either.\n\nIt is refusing to build the comfort on the people.\n\nA comfort that depends on how much a person has left will hold exactly as long as their reserves do, which is to say it will fail on the day it is finally needed. So the prophet clears that ground first. You are grass. Everything you can generate is seasonal. The flower does fade, and the withering is not a moral failure — it is what grass does, and God, who made it, is the one saying so.\n\nAnd then the sentence turns: but the word of our God shall stand for ever.\n\nThat is what the rest of the chapter is built on, and it is why the promise at the end of it can be trusted by somebody with nothing in the tank. The comfort was never resting on the strength of the comforted. It is resting on the one thing in the passage that does not wither."
     },
     {
       "type": "vocab",
-      "language": "greek",
-      "word": "ἀφοράω",
-      "transliteration": "aphoraō",
-      "pronunciation": "ah-fo-RAH-oh",
-      "strongsNumber": "G872",
-      "definition": "to look away from all else at one object; to fix the eyes upon",
-      "usage": "It occurs twice in the whole New Testament. Once in Philippians 2:23, where Paul says he will send Timothy as soon as he sees how things turn out for himself, and once here. The form in Hebrews 12:2 is ἀφορῶντες (aphorōntes), a present participle — which in Greek carries continuing action rather than a single completed act. Not a glance taken at the starting line. A keeping-on-looking, for the length of the race.",
-      "usageNote": "The prefix is doing half the work, and most English renderings lose it. ἀπό (apo) means away from; ὁράω (horaō) means to see. Abbott-Smith keeps both halves in his gloss — looking away from all else, to fix one's gaze upon — and Thayer's is the same shape: to turn the eyes away from other things and fix them on something. So the instruction is not simply to concentrate harder. It is a turning away that is also a turning toward, and the two are one motion. You do not clear the field first and then look. You look, and the field loses its grip.",
+      "language": "hebrew",
+      "word": "חָלַף",
+      "transliteration": "chalaph",
+      "pronunciation": "khah-LAF",
+      "strongsNumber": "H2498",
+      "definition": "to pass on, pass away, change — and in this stem, to renew",
+      "usage": "The phrase in verse 31 is yachaliphu koach — they shall renew strength. Strong's gives the root as a primitive verb meaning \"to slide by,\" and from there \"to hasten away, pass on… or change.\" Brown-Driver-Briggs glosses it \"pass on or away, pass through.\" It appears twenty-eight times in the Old Testament. In Isaiah 40:31 it is causative, and the lexicons render it there \"change for better, renew,\" with strength as its object.",
+      "usageNote": "So the picture underneath the English is closer to changing than to filling. Not a tank topped up, which is what most readers hear in \"renew,\" and which quietly implies the tank is the thing that matters. Something is passing on and something else is taking its place. Whatever a person had at the start of a hard season is not what carries them through it, and the passage is not promising that the old supply comes back.",
       "wordByWord": [
         {
-          "word": "ὄγκον",
-          "transliteration": "ogkon",
-          "meaning": "weight, bulk — mass, not morality; named separately from the sin beside it"
+          "word": "קוֹיֵ֤",
+          "transliteration": "qovey",
+          "meaning": "those waiting on — a participle, an ongoing posture rather than a single act"
         },
         {
-          "word": "εὐπερίστατον",
-          "transliteration": "euperistaton",
-          "meaning": "standing well around — used once in the New Testament and not found anywhere else"
+          "word": "יַחֲלִ֣יפוּ",
+          "transliteration": "yachaliphu",
+          "meaning": "they shall renew — causative; the strength is changed, not refilled"
         },
         {
-          "word": "ὑπομονῆς",
-          "transliteration": "hypomonēs",
-          "meaning": "patience, endurance — one word, whichever of the two your translation prints"
-        },
-        {
-          "word": "ἀφορῶντες",
-          "transliteration": "aphorōntes",
-          "meaning": "looking away to — present participle, an action that keeps going"
+          "word": "כֹּ֑חַ",
+          "transliteration": "koach",
+          "meaning": "strength, power, capacity — the ordinary word for what a body has to give"
         }
       ],
       "relatedWords": [
         {
-          "word": "περισπάω",
-          "transliteration": "perispaō",
-          "reference": "Luke 10:40",
-          "meaning": "to drag all around — the word for what was happening to Martha, and the exact reverse of looking away at one thing"
+          "word": "יָעֵף",
+          "transliteration": "ya'eph",
+          "reference": "Isaiah 40:28, 30, 31",
+          "meaning": "weary, faint — the word the chapter keeps using, and it is applied to the young men and denied of God in the same passage"
         }
       ]
     },
     {
       "type": "pullquote",
-      "content": "You do not clear the field and then look. You look, and the field loses its grip."
+      "content": "The comfort was never resting on the strength of the comforted."
     },
     {
       "type": "teaching",
       "chiasm_position": "B",
       "pardes_layer": "remez",
-      "heading": "Martha, Martha",
-      "content": "Luke's word for what happened to Martha is περισπάω (perispaō), and he uses it exactly once. It means to drag all around. Thayer's has it as being driven about mentally, distracted, over-occupied, too busy about a thing. The form in verse 40 is imperfect passive, which is to say it was being done to her, continuously — not a decision she made once and could unmake once.\n\nThat matters, because Martha is usually read as the cautionary figure in a story about priorities, and Jesus does not handle her that way. He says her name twice. Martha, Martha. The doubled name is a convention out of the Hebrew Scriptures — Abraham, Abraham, at the moment the knife is stopped; Moses, Moses, out of the bush — and the Gospels keep it. Simon, Simon, Jesus says, the night before Peter denies Him. It is how someone is addressed tenderly and urgently in the same breath. It is not the voice of a man scoring a point in an argument he has already won.\n\nAnd the diagnosis is precise. Thou art careful and troubled about many things. Careful in the older sense the King James is using — full of care. Not you are doing the wrong work. Not serving is beneath your sister's calling. What gets named is the number. Many. One thing is needful.\n\nLuke's placement is deliberate and almost nobody reads the two scenes together. This comes immediately after the Good Samaritan — a parable whose entire weight rests on the fact that the man who stopped to serve was the neighbour and the two who kept walking were not. Luke has just spent a paragraph commending the precise instinct Martha is acting on. He is not reversing himself a few verses later. The two stories hold each other up: serve, and know what the serving is for.\n\nSo the line being drawn is not between working and resting. It is between a life organised around many things and a life organised around one. Her hands were never the problem. Her hands were fine.\n\nWhat Mary chose gets a peculiar description: that good part, which shall not be taken away from her. Set that against the anxiety running underneath the whole scene. Martha is worried about a meal that will be eaten and forgotten by tomorrow, served to a guest who is on His way to Jerusalem to die. Everything in the room is the kind of thing that gets taken away. Jesus names one that does not, and He names it to a woman who was too busy to sit down in front of it."
+      "heading": "Eagles, Then Running, Then Walking",
+      "content": "Read the three promises in the order they are given and something odd surfaces.\n\nMount up with wings as eagles. Then: run, and not be weary. Then: walk, and not faint.\n\nEvery instinct in a writer would reverse that. You build. You start with the walking and end on the wings, because that is where the applause is. Isaiah puts the wings first and finishes on a person putting one foot in front of the other.\n\nThe usual explanation is that the verse is describing a descent from spiritual highs to ordinary faithfulness, which is true enough as far as it goes but treats the ending as a consolation prize. There is a plainer reading available, and anyone in a long season already knows it: walking is the hardest of the three.\n\nFlying is short. Running is measurable — it has a distance and a finish and somebody counting. Walking is the one that goes on. It is what a person does on the ordinary Tuesday of the fourth month of something that has no announced end, when there is no adrenaline in it, no audience for it, and no sense that any progress is being made. That is the condition the sentence closes on, and the promise attached to it is not that the walking will get easier. It is that the walker will not faint.\n\nThe other thing worth noticing is what all three share. None of them is a promise that the road shortens. Nothing here says the exile ends sooner, the body mends faster, or the load comes off. The whole promise operates on the person, not the circumstance.\n\nWhich is disappointing if you came for a different outcome, and enormous if you have been quietly wondering whether you can survive this one."
     },
     {
       "type": "video",
       "videoProvider": "youtube",
-      "videoId": "PFTLvkB3JLM",
-      "videoTitle": "SABBATH: Learn Why the Number 7 Is Used So Much in the Bible",
-      "videoCaption": "Five and a half minutes on why rest is where the creation account is heading rather than what it stops for — the seventh day is the one God blesses, and the pattern runs on through Scripture from there.",
+      "videoId": "_TzdEPuqgQg",
+      "videoTitle": "Book of Isaiah Summary: A Complete Animated Overview (Part 2)",
+      "videoCaption": "Eight minutes on Isaiah 40-66 — the movement this chapter opens, and why a book that spent its first half on judgment turns at exactly this point to comfort.",
       "videoAttribution": "BibleProject"
     },
     {
       "type": "bridge",
-      "heading": "Where This Sits in the Story",
-      "ancientTruth": "This is the WILDERNESS stretch of God's story. Deuteronomy 8 looks back on forty years and gives the reason for them in one sentence: the LORD your God led you all the way in the wilderness, so that He might humble you and test you in order to know what was in your heart. The wilderness was not a detour from the promise. It was the schoolroom on the road to it.",
-      "modernApplication": "A season that takes away capacity — health, energy, the ability to do the work you are known for — reads as punishment from inside it. Hebrews takes up hardship directly a few verses after the anchor and is careful with the word it uses: what is described there is a father training sons, for their good, and not a judge sentencing enemies. Painful at the time, the passage says, and afterward a harvest.",
-      "connectionPoint": "Hosea puts it in the least likely register available: Therefore, behold, I will allure her and lead her to the wilderness, and speak to her tenderly. Allure is a courtship word. In that sentence the wilderness is not a sentence handed down; it is where a conversation can finally happen because nothing else is talking.",
-      "newTestamentEcho": "Jesus kept going there on purpose — He frequently withdrew to the wilderness to pray, Luke reports, in the middle of the busiest stretch of the ministry. And when the disciples came back from their own work He told them: Come with Me privately to a solitary place, and let us rest for a while. Mark gives the reason in the next breath: they did not even have time to eat."
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/looking-at-the-sun/broom-tree-night.webp",
-      "inlineImageAlt": "A figure lying asleep and wrapped in a cloak beneath a desert tree at night, while a winged figure stands nearby holding a lamp and a small loaf. A crescent moon hangs above.",
-      "inlineImageCaption": "1 Kings 19, after Elijah asked God to take his life: no answer to the prayer and no argument with it — an angel, bread baked on coals, and permission to lie down again. (The desert broom he sheltered under is a low shrub; the artist has given it a fuller canopy than it has.)",
-      "inlineImageWidth": "bleed"
+      "heading": "Where This Week Sits in the Story",
+      "ancientTruth": "This is the WILDERNESS stretch of God's story — the long middle, where a people are neither in bondage nor yet home, and where God does most of His teaching. Isaiah 40 speaks into the end of an exile: the hard service is finished, and the road home runs through desert. The chapter's own picture of the way back is a highway made straight in the wilderness.",
+      "modernApplication": "The modern version of that stretch is a season that has taken capacity away — health, energy, the ability to do the work you are known for — and has not yet given anything back. From inside it, that reads as punishment.",
+      "connectionPoint": "The week begins here on purpose, because the promise at the end of Isaiah 40 is the only kind that survives contact with real exhaustion: it is addressed to people who have already run out, and it does not ask them to find more.",
+      "newTestamentEcho": "Paul was given the same answer in fewer words, and he had asked three times to be spared: \"My grace is sufficient for you, for My power is perfected in weakness\" (2 Corinthians 12:9). And Jesus makes the invitation directly — \"Come to Me, all you who are weary and burdened, and I will give you rest\" — which is Isaiah's promise with a face attached."
     },
     {
       "type": "teaching",
       "chiasm_position": "C",
       "pardes_layer": "derash",
-      "heading": "Bread, and Then Sleep, and Then a Word",
-      "content": "The most instructive scene in Scripture about a person who has run out is not about a weak man. It is about Elijah, and it happens immediately after the greatest public success of his life.\n\nIn 1 Kings 18 fire falls at Carmel in front of the entire nation. In 1 Kings 19 he is running for his life. He leaves his servant behind at Beersheba, goes a day's journey into the wilderness alone, sits down under a broom tree, and asks to die. I have had enough, LORD. Take my life, for I am no better than my fathers.\n\nWhat happens next is the part that gets skipped in every retelling.\n\nGod does not answer the prayer. God also does not correct the theology in it, and there is bad theology in it. There is no reminder of what had just happened on the mountain, no argument that the fear is disproportionate, no instruction to get up and be encouraged. What the text records is this: Then he lay down under the broom tree and fell asleep.\n\nThen an angel touches him and says one thing. Get up and eat. There is a cake of bread baked over hot coals and a jar of water by his head. He eats. He drinks. He lies down again.\n\nThe angel comes back a second time with the same instruction, and this time a reason is attached. Get up and eat, or the journey will be too much for you.\n\nTwo meals, two sleeps, and no conversation at all. Only after that does he walk to Horeb, and only at Horeb does God finally speak — and even then not in the wind that shattered the rocks, not in the earthquake, not in the fire. After all of it, a still, small voice.\n\nThe order is the teaching. Food and sleep first. The word afterward. And when the word came it was quiet enough that a man still running would have walked straight past it.\n\nThere is a kind of person who reads that and feels accused rather than relieved, because it sounds like permission they have not earned. So it is worth being exact about what the passage does and does not claim. It does not say Elijah's collapse was admirable. It does not say the wilderness was a reward for good service. What it says is that God's first response to a man at the end of himself was bread, His second was more bread, and the reason given was the length of what was still ahead. The rest was not the end of the assignment. It was provisioning for it.\n\nDeuteronomy 8 names what a wilderness is for, and people usually quote only the first half of the sentence. Forty years of being led, so that He might humble you and test you in order to know what was in your heart. The humbling is real and the passage does not soften it. But the sentence does not stop there and neither does the chapter: the hunger came so that the manna could come, and the manna came so they would learn that a person does not live on bread alone but on every word that comes from the mouth of the LORD.\n\nWhich is a strange way to teach that lesson — by feeding someone. And that is the shape of the thing. God does not usually remove a wilderness in order to teach in it. He teaches by what He supplies inside it, and what He supplies is nearly always smaller and more ordinary than what was asked for. Elijah asked to die and was given breakfast."
+      "heading": "Renew Is Not a Word for Topping Up",
+      "content": "Everything in this passage turns on what happens in the waiting, so it is worth being exact about what waiting is being asked for.\n\nStart with what it is not. It is not passivity, and the Hebrew makes that hard to argue: qavah is a leaning word, a straining-toward. It is also not a technique for extracting something from God, which is how a great deal of religious waiting actually functions — a period of endurance performed in the hope that it will be scored and rewarded. Nothing in the sentence suggests that. The waiting is not what earns the strength. It is the posture in which the strength arrives, which is a different claim entirely.\n\nAnd then there is the verb. English gives us renew, and renew sounds like restoration — the same thing, back again, at the level it used to be. That is what most people are actually praying for in a hard season. Give me back what I had. Let me be who I was in March.\n\nThe Hebrew is doing something else. Chalaph is a passing-on word, a changing word; the lexicons put its root sense at sliding by, passing through, and in the causative form here it means to change for the better. What is promised is not the retrieval of an old supply. It is a different supply.\n\nThat distinction sounds academic until you have prayed the first prayer for a long time. A person asking for their previous strength back is asking, without realising it, for the season to be undone. They are asking to be returned to the version of themselves who could carry that load — and the whole trouble is that the load has changed, and so has the body carrying it, and going backwards is not on offer.\n\nWhat is on offer is stranger and better. Not the old strength restored, but strength that was never theirs to begin with, arriving on terms they did not set, in amounts they cannot audit in advance.\n\nThis is where the passage stops being encouraging and starts being difficult, because a person cannot verify that promise ahead of time. There is no way to check the tank. The only way to find out whether the strength is there is to still be walking tomorrow, and the only way to be walking tomorrow is to have waited today without proof.\n\nWhich is why the chapter spends its opening verses establishing that all flesh is grass. That is not pessimism. It is the removal of the alternative. If a person still believes there is something in reserve, they will spend the season looking for it, and they will find only the withering. The grass is not the enemy of the promise. It is the door into it."
     },
     {
       "type": "story",
-      "heading": "The Man Who Could Not Do His Work",
-      "content": "John Milton's eyes had been failing for years before they failed completely. He said himself that they were naturally weak and that he was subject to frequent headaches, and that neither fact had ever slowed his reading down. By 1652 the sight was gone.\n\nHe had been warned. Asked to write a defence of the English people, he was told plainly by his physicians what it would cost him: he was already ill, already losing the remaining eye, and if he took the work on it would be irreparably lost. He wrote it anyway. Of the warning he later said only that \"their premonitions caused no hesitation, and inspired no dismay.\"\n\nSo he got exactly the outcome he was told he would get. And what he wrote about it afterward, in his Second Defence of 1654, has an odd steadiness: \"It is not so wretched to be blind, as it is not to be capable of enduring blindness.\" His own dark, he said, \"keeps from my view only the coloured surfaces of things, while it leaves me at liberty to contemplate the beauty and stability of virtue and of truth.\"\n\nThat is the public version, written for an audience, in Latin, inside an argument he intended to win.\n\nThe private version runs to fourteen lines and it is not steady at all. Somewhere between 1652 and 1655 — the date has never been settled — he wrote a sonnet that opens with a man doing arithmetic on his own life and not liking the total. His light is spent before half his days. The one talent which is death to hide is lodged with him useless. His soul is more bent than ever to serve with it. And then the question, which he is honest enough to put into the poem rather than write around:\n\n\"Doth God exact day labour, light deny'd, I fondly ask.\"\n\nDoes God require the work and then take away the thing the work is done with. That is Martha's complaint in a different accent, and Milton knows it is a complaint — he calls his own asking foolish in the act of asking it.\n\nThe answer arrives before he has finished framing the question, and it does not address his eyes at all. \"God doth not need either man's work or his own gifts.\"\n\nThen the last line, the one everyone knows and almost nobody knows the setting of. Milton is not writing about contemplatives. He has just spent two lines on the thousands who speed at God's bidding and post over land and ocean without rest — the servants who can still work, and are working, and are not being criticised for it. And then, against them, not instead of them:\n\n\"They also serve who only stand and waite.\"\n\nAlso. The whole argument is in that one word. He is not claiming waiting is the better thing. He is claiming it counts.",
-      "connectionToTheme": "Milton's complaint and Martha's are the same complaint: I have been given something to do and I am being prevented from doing it. The answer he arrives at is the answer Jesus gives — that God is not short of labour, and what is being asked for was never output."
+      "heading": "The Book Written from the Bed",
+      "content": "On 24 October 1931, Amy Carmichael was sixty-three years old and had been in south India for most of her adult life. She had arrived in 1895, founded the Dohnavur Fellowship in 1901, and built the thing she is remembered for out of unrelenting motion — travelling, rescuing children out of temple service, running a compound, writing at night.\n\nThat evening she stepped into an uncovered pit at a building site. She broke a leg, dislocated an ankle and injured her spine. She never fully recovered, and she spent most of the twenty years that remained to her confined to one room.\n\nThe part worth sitting with is what came out of that room. More than a dozen of her books were written after the fall, from the bed, by a woman in continual pain who had lost the only mode of working she had ever known.\n\nOne of them was Rose from Brier, published in 1933 — a book of letters written to the ill. And in it she says, plainly, why she did not wait until she was better to write it:\n\n\"But then the book would have been from the well to the ill, and not from the ill to the ill, which I think is what it is meant to be — a rose plucked straight from a brier.\"\n\nElsewhere in the same book she is more specific than most writers on suffering ever manage to be, because she is not describing a category. She is describing a Tuesday: \"Has the day to be spent in bed? or in chair? or partly in both?\"\n\nAnd she is honest about who the letters are going to. \"They go to some who are disappointed. They hoped to be well long ago and are not well yet.\"\n\nShe did not get her old strength back. The record is unambiguous about that; she did not walk out of that room. What she got instead was a different strength, on terms she had not chosen, and the work it produced has outlasted the work she was doing before the fall — which is the sort of thing that is only ever visible afterward, and is no comfort at all while the harrow is still moving.",
+      "connectionToTheme": "Carmichael is the passage in a person. The prayer that was not answered was the one asking for the previous capacity back. What arrived instead was the strength for a form of work she would never have chosen and could not have done standing up."
     },
     {
       "type": "insight",
-      "heading": "The Room",
-      "content": "Pascal put it in one sentence, in the fragments found after his death: \"j'ai dit souvent que tout le malheur des hommes vient d'une seule chose, qui est de ne savoir pas demeurer en repos dans une chambre\" — I have often said that all the unhappiness of men comes from one single thing, which is not knowing how to remain at rest in a room.",
-      "historicalContext": "Pensées, Lafuma 136 (Brunschvicg 139), from the sequence on divertissement — diversion. The version in general circulation, \"all of humanity's problems stem from man's inability to sit quietly in a room alone,\" is a paraphrase rather than a translation: it adds the word alone, which the French does not contain, and hardens unhappiness into problems. Pascal's actual claim is narrower and worse. He is not saying people are bad at solitude. He is saying they cannot be at rest, and that they arrange their lives so as never to have to find out."
+      "heading": "Plants That Only Grow There",
+      "content": "Spurgeon, writing about his own collapses in a lecture to men training for ministry, put the useful version of this in one sentence: \"Some plants owe their medicinal qualities to the marsh in which they grow; others to the shades in which alone they flourish.\"",
+      "historicalContext": "Lectures to My Students, First Series (1875), Lecture XI, \"The Minister's Fainting Fits\" — a lecture he opens by admitting he speaks \"by most painful experience.\" The claim is narrower than the inspirational use it usually gets: he is not saying suffering is good, and he does not say the marsh is pleasant. He says some things do not grow anywhere else."
     },
     {
       "type": "teaching",
       "chiasm_position": "B-prime",
       "pardes_layer": "derash",
-      "heading": "Pay Attention to What You Pay Attention To",
-      "content": "There is a practice buried in all of this, and it is smaller than it sounds.\n\nPay attention to what you pay attention to.\n\nNot pay attention to more things. Not feel guilty about the places your mind keeps returning to. Simply notice where it goes when nobody is steering it, and then ask why it goes there. Whatever your mind is on, it is on it for a reason, and the reason is usually available to anyone willing to look at it for thirty seconds instead of two.\n\nThat noticing is the first half. The second half is the part that gets skipped: take the reason to God instead of settling it privately. Not Lord, help me stop thinking about this, which is generally a request to be relieved of information. Something nearer to: this is where my mind goes; show me what it is doing there.\n\nBecause a mind is rarely wandering at random. It goes to what it is afraid of, what it is responsible for, what it has not finished, what it loves and cannot protect. A person lying awake at three in the morning is not being irrational. They are being informed, badly, by a system with no way to file the information and nobody to hand it to.\n\nAnd this is where the words in this reading turn out to be one picture seen from three sides. εὐπερίστατος (euperistatos) is the thing standing all the way around a runner. περισπάω (perispaō) is a woman being dragged all around by many demands, in the passive, without having chosen it. ἀφοράω (aphoraō) is looking away from all of it at one thing. Each of the three is a statement about geometry — surrounded, encircled, pulled from every direction — and none of them is solved by fighting on every side at once. The answer given is to look at one thing until the circle stops being the place you live.\n\nWhich is not a technique for emptying the mind. Nothing in Scripture asks anyone for an empty mind. It is a question of what the mind is anchored to while it is full.\n\nOne caution, for anyone reading this in a season where the body will not cooperate. None of it is a promise that attention will fix the thing. Elijah's attention did not put fire back in his bones; he still had forty days of walking to do. Milton's did not restore his sight; he was still blind on the last line of the sonnet. What it changed, in both cases, was what the season turned out to be for."
+      "heading": "What This Week Is Going to Ask",
+      "content": "This is the first of seven readings, and it is worth saying at the start where they go, because the shape matters.\n\nThe week does not move from tiredness to energy. It moves from strength to attention.\n\nTomorrow the question becomes what is actually slowing a person down, and the answer in Hebrews turns out to be two different things that get treated as one — weight, which is not sin, and something that stands all the way around a runner. Wednesday is the pivot, and it is the bluntest day of the week: a prophet at the end of himself is given food and sleep before he is given a single word of explanation. Thursday is Martha, whose problem was never her hands. Friday is the sentence the whole week has been walking toward, which is about where the eyes go. Saturday gathers it. Sunday says almost nothing.\n\nWhat holds it together is the thing Isaiah has already put in place today. The strength is not manufactured, and it is not retrieved. It is renewed, in the waiting, by somebody else — which means the practical question for the rest of the week is not how to get more of it. It is what a person is looking at while they wait.\n\nThat is not a small adjustment. Most advice for an exhausted person is about supply: sleep more, cut back, take something off the list. Some of that is right, and Wednesday will make the case for it more strongly than most readings would. But none of it answers the question of what to do on the day when the list has already been cut and the tiredness is still there.\n\nIsaiah's answer, and the week's, is to look at something. Not to look away from the trouble — the prophet does not pretend the exile did not happen, and he calls the people grass to their faces. To look at the one thing in the passage that does not wither, and to keep looking, and to find that the walking continues."
     },
     {
       "type": "scripture",
-      "reference": "Luke 10:41-42",
-      "translation": "KJV",
-      "passage": "And Jesus answered and said unto her, Martha, Martha, thou art careful and troubled about many things: But one thing is needful: and Mary hath chosen that good part, which shall not be taken away from her.",
+      "reference": "Matthew 11:28-30",
+      "translation": "BSB",
+      "passage": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.",
       "emphasis": [
-        "one thing is needful",
-        "which shall not be taken away from her"
+        "I will give you rest",
+        "you will find rest for your souls"
       ],
-      "scriptureContext": "The correction and the promise arrive in the same breath, and the promise is about permanence — spoken to the one woman in the room who was busy with things that would not last the week."
+      "scriptureContext": "Isaiah's promise with a face attached — and note that what is offered is not the removal of a yoke but the exchange of one."
     },
     {
       "type": "reflection",
-      "prompt": "Where did your mind go this week when you were not directing it? Name the actual subject, not the feeling attached to it — and then ask the question that has probably never been asked out loud: why there?",
+      "prompt": "What have you been asking God to give back to you? Say it out loud, exactly as you have been praying it — and then ask whether you would recognise strength if it arrived in a form you had not asked for.",
       "additionalQuestions": [
-        "What in your life right now is weight rather than sin — heavy, but not wrong? What would it cost to set it down for a season?",
-        "If someone said your name twice, gently, and told you that you were troubled about many things, would you agree with them?",
-        "Elijah was given food and sleep before he was given a word. What has God been providing that you have been treating as an interruption?"
+        "Isaiah tells a comforted people they are grass. Where in your life have you been trying to build the comfort on your own reserves?",
+        "Which of the three — flying, running, walking — is the one being asked of you right now?",
+        "What would waiting look like this week, if it were a posture rather than a delay?"
       ]
     },
     {
       "type": "interactive",
       "heading": "A Practice for Today",
-      "instruction": "A breath prayer, built from the two halves of Hebrews 12:1-2. Six slow breaths, no more. It is not a technique and it is not meant to produce a feeling — the words do the work, and the exercise is only holding still long enough to hear them.",
+      "instruction": "A breath prayer, taken straight out of verse 29. Six slow breaths, no more. It is not a technique and it is not meant to produce a feeling — the words do the work; the exercise is only holding still long enough to hear them.",
       "interaction_type": "breath",
       "steps": [
         {
           "title": "In",
-          "description": "Breathing in, silently: many things are standing all around me."
+          "description": "Breathing in, silently: I have no might."
         },
         {
           "title": "Out",
-          "description": "Breathing out, silently: one thing is needful."
+          "description": "Breathing out, silently: He giveth power to the faint."
         },
         {
           "title": "Repeat",
-          "description": "Six times, slowly. If your mind goes somewhere on the third breath, do not drag it back. Note where it went. That is today's material, and it just told you something."
+          "description": "Six times, slowly. If the first half is hard to say, that is worth noticing rather than pushing past. Most people can admit tiredness. Fewer can admit having nothing left."
         }
       ]
-    },
-    {
-      "type": "inline-image",
-      "inlineImageSrc": "/images/series/looking-at-the-sun/light-in-the-gap.webp",
-      "inlineImageAlt": "A narrow cleft between two dark rock walls, with pale light pouring through the opening from behind them.",
-      "inlineImageCaption": "A cleft in the rock with the light behind it. What Elijah heard at Horeb came after the wind, the earthquake and the fire had all finished, and it was quiet enough to walk straight past.",
-      "inlineImageWidth": "narrow"
     },
     {
       "type": "teaching",
       "chiasm_position": "A-prime",
       "pardes_layer": "sod",
-      "heading": "Looking at the Sun",
-      "content": "Look at the sun — briefly, and not directly, and this is an illustration rather than an instruction — and then try to look at something else. You cannot, quite. The afterimage travels with your eyes. Whatever you turn toward, it is laid over the top of it. You have not stopped seeing other things. You are seeing them through the one thing.\n\nThat is nearer to what Hebrews 12:2 asks for than the word focus is. ἀφορῶντες (aphorōntes) is a present participle, a continuing look rather than a decision made once at the starting line. And it does not require that the rest of the world be cleared away first. Martha's house was still full of guests who needed feeding. Elijah still had a mountain to reach on foot. Milton never saw again. Nothing about anyone's circumstances was edited.\n\nWhat changed was what everything else was seen through.\n\nAnd the last thing worth noticing is who is being looked at. The sentence does not stop at Looking unto Jesus. It gives a reason: who for the joy that was set before him endured the cross. The same phrase turns up twice in two verses — the race is set before us, and the joy was set before Him. He ran it the way He is asking to be looked at. He endured by looking.\n\nSo this is not a discipline to be mastered by people with more grit than the rest of us. It is a Person to be looked at, and the same verse describes Him as having sat down. In a passage entirely about running, the one figure who is seated is the one everybody is watching.\n\nMartha, for what it is worth, is not left where Luke leaves her. In John's Gospel she is on a road outside Bethany with her brother four days in the tomb, and she says the sentence that the whole scene in her kitchen had been making room for: I believe that You are the Christ, the Son of God, who was to come into the world. The correction in Luke was never a dismissal. It was the start of a conversation that took years, and she is the one who finishes it."
+      "heading": "The Everlasting God Fainteth Not",
+      "content": "The passage does not begin with the people. It begins with a question that sounds almost impatient: Hast thou not known? hast thou not heard?\n\nAnd then, before any promise is made to anybody, a description of God — the everlasting God, the Creator of the ends of the earth — with two verbs attached that are the same two verbs used of the young men a few lines later. He fainteth not, neither is weary.\n\nThat is the architecture of the whole thing. Weariness is the subject of the paragraph, and it is applied to everyone in it except one. The young men faint. The youths are weary. The people are grass. And standing outside that entire category, not because He is stronger but because He is of another kind altogether, is the one being waited on.\n\nWhich means the waiting in verse 31 is not a spiritual discipline in the abstract. It is a transfer of attention from a category that runs out to one that does not. A person waiting on the Lord is not primarily being patient. They are looking somewhere specific.\n\nThat is where the week is going, and it is why it is named for a strange little image: what happens when you look at the sun and then try to look at anything else. But that is Friday.\n\nToday is only this. You are tired, and the tiredness is real, and Scripture agrees with you about the grass. And the one you are waiting on has never once been tired, has no searching of his understanding, and gives power to the faint — which is a category you may have spent a long time trying not to be in, and which turns out to be the only category the promise was ever addressed to."
     },
     {
       "type": "prayer",
       "heading": "Closing Prayer",
-      "prayerText": "Lord, we have been careful and troubled about many things, and most of them were real. We are not asking You to make them stop mattering. We are asking to see them through You rather than in place of You. Where we are worn down, give us what You gave in the wilderness — bread, sleep, and a word afterward, in that order, which is not the order we would have chosen. Teach us to wait without calling it wasted. Give us patience, which is the same word as endurance in Your language even when it is not in ours. And hold our eyes, since we cannot hold them ourselves for very long. Amen.",
-      "breathPrayer": "Breathing in: many things stand all around me. Breathing out: one thing is needful.",
+      "prayerText": "Everlasting God, You do not faint and You are never weary, and we have spent a long time trying to be like You in the wrong way. We have hidden the emptiness and called it strength. We are grass, and You said so first, and somehow that is a kindness. Do not give us back what we had. Give us what You give — power to the faint, in the amount You choose, on the day You choose it. Teach us to wait on You without calling the waiting wasted. And where we cannot fly or run, hold us up while we walk. Amen.",
+      "breathPrayer": "Breathing in: I have no might. Breathing out: He giveth power to the faint.",
       "prayerType": "closing"
     },
     {
       "type": "takeaway",
       "heading": "Today's Commitment",
-      "commitment": "I will notice one place my mind keeps going this week, ask why it goes there, and bring the answer to God instead of managing it alone.",
+      "commitment": "I will stop asking for the strength I used to have, and start asking for the strength God is actually giving.",
       "leavingAtCross": [
-        "The belief that rest has to be earned before it is allowed",
-        "The weight that is heavy without being wrong, which I have been carrying because nobody told me to put it down",
-        "The suspicion that a season which took my strength was a punishment"
+        "The belief that renewal means going back to who I was",
+        "The habit of hiding how little is left",
+        "The suspicion that being spent disqualifies me"
       ],
       "receivingFromCross": [
-        "Bread and sleep first, and a word after — in God's order, not mine",
-        "One thing that will not be taken away, in a week made of things that will",
-        "A seated Christ to look at while I am still running"
+        "A promise addressed to the faint, not to the fresh",
+        "Strength that arrives as a change rather than a refill",
+        "Permission to walk, on a day when flying is out of the question"
       ]
     },
     {
       "type": "comprehension",
       "heading": "One Question",
-      "question": "In Hebrews 12:1-2, what does the Greek word behind \"Looking unto Jesus\" actually describe?",
+      "question": "Why does Isaiah say \"even the youths shall faint and be weary\" right before promising renewed strength?",
       "options": [
-        "A single decisive glance taken once, at the beginning",
-        "Looking away from everything else in order to fix the eyes on one thing, continuously",
-        "Studying Jesus' example carefully in order to copy His method",
-        "Closing the eyes to the world so that nothing else can be seen"
+        "To warn young people that they need God more than they think",
+        "To rule out the idea that renewal goes to those with something in reserve — the promise is for people already spent",
+        "To contrast Israel's weakness with the strength of surrounding nations",
+        "To explain why the exile happened"
       ],
       "answer": 1,
-      "explanation": "ἀφοράω (aphoraō) combines ἀπό (apo), away from, with ὁράω (horaō), to see — Thayer's glosses it as turning the eyes away from other things and fixing them on something. And the participle in Hebrews 12:2 is present tense, which in Greek carries continuing action. So it is neither a one-time decision nor a shutting out of the world; it is an ongoing look at one thing, which is what loosens everything else."
+      "explanation": "The verse works by elimination. Youth is the best natural case anyone could make for having reserves, and Isaiah disqualifies it — the youths faint, the young men utterly fall. What remains is a promise that has nothing to do with how much a person started with, which is why the chapter first spends four verses establishing that all flesh is grass."
     },
     {
       "type": "profile",
       "heading": "The Voice Behind Today",
-      "name": "Martha of Bethany",
-      "era": "first century, a village about two miles from Jerusalem",
-      "bio": "Sister of Mary and Lazarus, and by every indication the one who ran the household. She appears three times in the Gospels: welcoming Jesus into her home and being corrected there, meeting Him on the road after her brother's death, and serving at a supper in Bethany six days before the Passover — still serving, and not rebuked for it.",
-      "keyQuote": "Yes, Lord, I believe that You are the Christ, the Son of God, who was to come into the world.",
-      "lessonForUs": "Martha is the patron of everyone whose love takes the form of getting things done. What Jesus corrects in her kitchen is not the serving but the number of things she is being pulled between — and the woman He corrects is the woman He later draws one of the plainest confessions in the Gospels out of. Being told you are troubled about many things is not the same as being told you are the wrong kind of person."
+      "name": "The prophet of Isaiah 40",
+      "era": "eighth century BC, and possibly the sixth",
+      "bio": "Isaiah son of Amoz prophesied in Jerusalem in the eighth century BC, through the reigns of Uzziah, Jotham, Ahaz and Hezekiah. Chapter 40 begins a section that speaks as though the exile to Babylon has already happened, well over a century later — and scholars have long divided over what that means. The older reading takes it as Isaiah writing prophetically of a future he was shown. A widely held modern reading attributes chapters 40-66 to a later prophet or prophetic circle working in Isaiah's tradition. Both readings agree on what the chapter is doing and to whom.",
+      "keyQuote": "He giveth power to the faint; and to them that have no might he increaseth strength.",
+      "lessonForUs": "Whoever held the pen, the pastoral instinct is the same one running through the whole book: comfort that does not first tell the truth about grass is not comfort, it is flattery, and it will fail on the day it is needed most."
     },
     {
       "type": "resource",
       "heading": "Sources & Further Study",
       "relatedScriptures": [
         {
-          "reference": "1 Kings 19:3-9 (BSB)",
-          "text": "The full scene under the broom tree, including the second visit from the angel and the reason attached to it: \"Get up and eat, or the journey will be too much for you.\""
+          "reference": "Isaiah 40:1-11 (KJV)",
+          "text": "The full opening of the chapter — comfort, the highway in the wilderness, the grass, and the shepherd who \"shall gently lead those that are with young.\""
         },
         {
-          "reference": "Deuteronomy 8:2-3 (BSB)",
-          "text": "The wilderness explained by the God who ran it — humbling and testing, and then manna, so that they would learn what a person actually lives on."
+          "reference": "2 Corinthians 12:8-10 (BSB)",
+          "text": "Paul asks three times and is refused three times, and is given a different answer than the one he requested."
         },
         {
-          "reference": "Hosea 2:14 (BSB)",
-          "text": "\"I will allure her and lead her to the wilderness, and speak to her tenderly.\" The courtship verb, attached to the last place anyone would look for one."
+          "reference": "Jeremiah 31:25 (BSB)",
+          "text": "\"I will refresh the weary soul and replenish all who are weak.\" The same promise, in one line."
         },
         {
-          "reference": "Psalm 23:1-3 (KJV)",
-          "text": "\"He maketh me to lie down in green pastures.\" The shepherd's first recorded action is making the sheep stop."
+          "reference": "Psalm 127:1-2 (BSB)",
+          "text": "\"In vain you rise early and stay up late, toiling for bread to eat — for He gives sleep to His beloved.\""
         },
         {
-          "reference": "Isaiah 30:15 (KJV)",
-          "text": "\"In returning and rest shall ye be saved; in quietness and in confidence shall be your strength: and ye would not.\" The offer, and the refusal, in one verse."
-        },
-        {
-          "reference": "Matthew 11:28-30 (BSB)",
-          "text": "\"Come to Me, all you who are weary and burdened, and I will give you rest.\" Rest offered as a Person rather than a schedule."
-        },
-        {
-          "reference": "John 11:20-27 (BSB)",
-          "text": "Where Martha ends up: on a road, four days too late by her own reckoning, saying the truest sentence in the chapter."
+          "reference": "Lamentations 3:25-26 (BSB)",
+          "text": "\"The LORD is good to those who wait for Him.\" Written by someone with no reason left to say it."
         }
       ],
       "resources": [
         {
-          "title": "John Milton, Sonnet 19 (\"When I consider how my light is spent\"), Poems, 1673",
-          "description": "Source of every line quoted in today's story, verbatim in Milton's original spelling as printed in the John Milton Reading Room text of the 1673 Poems. Composition is usually placed between 1652 and 1655 and has never been settled. The familiar title \"On His Blindness\" is not Milton's — it was supplied by an eighteenth-century editor."
+          "title": "Amy Carmichael, Rose from Brier (SPCK, 1933)",
+          "description": "Source of every quoted line in today's story, verbatim from the scanned text. Written from bed in the twenty-second month after her fall of 24 October 1931. Note: the widely quoted line about being \"a fellow-toad under the harrow\" is from the preface to her later Gold by Moonlight (1935), where she is describing this book — it is routinely misattributed to Rose from Brier itself."
         },
         {
-          "title": "John Milton, Second Defence of the English People, 1654",
-          "description": "Source of the physicians' warning and the two lines on blindness. Written in Latin as Defensio Secunda pro Populo Anglicano; quoted here in Robert Fellowes's English translation, which is the standard one and is freely available online."
-        },
-        {
-          "title": "Blaise Pascal, Pensées, Lafuma 136 / Brunschvicg 139",
-          "description": "The French is quoted verbatim from the divertissement sequence, with a plain English rendering beside it. The widely shared \"sit quietly in a room alone\" version is a paraphrase, not a translation — it adds a word Pascal did not write."
-        },
-        {
-          "title": "Greek data",
-          "description": "aphoraō (G872) — \"to look away from all else at one object\"; two New Testament occurrences, Philippians 2:23 and Hebrews 12:2, where the form is a present participle. euperistatos (G2139) — a hapax legomenon; Thayer's glosses it \"skilfully surrounding i.e. besetting, namely, to prevent or retard running\" and notes it is not found elsewhere. ogkos (G3591) — \"bulk, mass, hence a weight, burden.\" hypomonē (G5281) — \"endurance, steadfastness, patient waiting for,\" rendered patience in the KJV and endurance in most modern versions. perispaō (G4049) — \"to drag all around\"; one New Testament occurrence, Luke 10:40, imperfect passive."
+          "title": "C. H. Spurgeon, Lectures to My Students, First Series (1875), Lecture XI",
+          "description": "Source of the line about plants and the marsh, verbatim. The lecture is \"The Minister's Fainting Fits,\" and Spurgeon writes it out of his own recurring depression rather than about somebody else's. Free at archive.org."
         },
         {
           "title": "Hebrew data",
-          "description": "qavah (H6960) — \"to wait, look for, hope, expect,\" about forty-nine Old Testament occurrences. Brown-Driver-Briggs connects it to a root meaning to bind together, perhaps by twisting, and prints that derivation with \"perhaps\" attached; it is offered here with the same hedge the lexicon uses."
+          "description": "qavah (H6960) — \"to wait, look for, hope\"; about forty-nine Old Testament occurrences; BDB connects it to a root meaning to bind together, perhaps by twisting, and prints that derivation with \"perhaps\" attached. chalaph (H2498) — Strong's gives the root as \"to slide by,\" hence \"to hasten away, pass on… or change\"; BDB \"pass on or away, pass through\"; twenty-eight Old Testament occurrences; in Isaiah 40:31 it is causative and the lexicons render it \"change for better, renew.\""
         }
       ],
-      "forDeeperStudy": "Read Hebrews 11 straight through before returning to 12:1-2, and watch what the cloud of witnesses actually consists of — chapter 11 says twice that they died without receiving what they were promised. Then read 1 Kings 18 and 19 in one sitting, without a break at the chapter division, and time how few verses separate the fire at Carmel from the request to die."
+      "forDeeperStudy": "Read Isaiah 40 straight through in one sitting and mark every time weariness is mentioned. Then note which of those are said about people and which about God. The chapter's argument is almost entirely carried by that one distinction, and it is invisible if you start at verse 31 — which is where the verse is nearly always quoted from."
     }
   ]
 }

@@ -12,7 +12,7 @@ describe('Series Data', () => {
     // 1 Bible-365 + 7 Wake-Up + 18 Substack + 11 new = 37
     // (prayer-of-jabez 2026-07-12 SA-029/F-081; the-harvest 2026-07-26 SA-031/F-082;
     //  he-cannot-deny-himself 2026-08-10 SA-034/F-085;
-    //  looking-at-the-sun 2026-08-14 SA-036/F-087 — one-day reading)
+    //  looking-at-the-sun 2026-08-14 SA-036/F-087)
     expect(SERIES_ORDER).toHaveLength(37)
     expect(ALL_SERIES_ORDER).toHaveLength(37)
   })

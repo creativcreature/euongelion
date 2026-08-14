@@ -1,0 +1,309 @@
+{
+  "day": 3,
+  "chiasm_position": "C",
+  "format": "two-minute-open-v2",
+  "title": "Bread, and Then Sleep, and Then a Word",
+  "subtitle": "On the order God used with a prophet who asked to die",
+  "teaser": "One chapter after calling down fire, Elijah is a day into the desert asking God to end his life. God does not answer the prayer, correct the theology or mention the victory. He sends food, twice, and lets him sleep — and the word comes forty days later, quietly enough to miss.",
+  "anchorVerse": "1 Kings 19:7",
+  "theme": "Rest is not the reward at the end of the work; it is the provisioning for it, and God supplies it first.",
+  "framework": "1 Kings 19:7 — Get up and eat, or the journey will be too much for you",
+  "scriptureReference": "1 Kings 19:4-8",
+  "totalWords": 3619,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:4-8",
+      "translation": "BSB",
+      "passage": "…while he himself traveled on a day's journey into the wilderness. He sat down under a broom tree and prayed that he might die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\" Then he lay down under the broom tree and fell asleep. Suddenly an angel touched him and said, \"Get up and eat.\" And he looked around, and there by his head was a cake of bread baked over hot coals, and a jar of water. So he ate and drank and lay down again. A second time the angel of the LORD returned and touched him, saying, \"Get up and eat, or the journey will be too much for you.\" So he got up and ate and drank. And strengthened by that food, he walked forty days and forty nights until he reached Horeb, the mountain of God.",
+      "emphasis": [
+        "I have had enough, LORD",
+        "Get up and eat, or the journey will be too much for you"
+      ],
+      "scriptureContext": "A prophet asks God to kill him. What arrives instead is food, twice, and permission to go back to sleep."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רֹתֶם",
+      "transliteration": "rothem",
+      "pronunciation": "ROH-tem",
+      "strongsNumber": "H7574",
+      "definition": "the desert broom — a shrub of the Negev and Sinai, not a shade tree",
+      "usage": "The King James calls it a juniper; Strong's gives \"the Spanish broom (from its pole-like stems)\"; Brown-Driver-Briggs has \"a kind of broom-shrub, broom-plant, retem.\" It is generally identified with Retama raetam, which grows across the arid country from Sinai through the Negev. The word occurs four times in the Old Testament, and the other two places it turns up are worth knowing: Job 30:4, where the destitute dig its roots for food, and Psalm 120:4, where its coals are an image of judgment. So this is not a spreading oak. It is a scrubby desert bush associated in Scripture with hunger and with burning, and its shade is thin — enough to lie under, and not much more."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Bluntest Scene in Scripture About Running Out",
+      "content": "Elijah has just won. That is the detail everything else depends on. One chapter earlier, fire fell from heaven at Carmel in front of the entire nation and the people went face-down on the ground. Then he outran a chariot to Jezreel.\n\nOne chapter later he is a day's walk into the desert asking God to end his life.\n\nAnd what happens next is the part that gets left out of most retellings. God does not answer the prayer. God also does not correct the theology in it, and there is bad theology in it. There is no reminder of Carmel, no argument that the fear is out of proportion, no instruction to be encouraged. The text says: then he lay down under the broom tree and fell asleep.\n\nThen an angel touches him and says one thing. Get up and eat. There is bread baked on coals and a jar of water by his head. He eats, drinks, and lies down again.\n\nThe angel comes back a second time with the same instruction, and this time a reason is attached: or the journey will be too much for you.\n\nTwo meals. Two sleeps. No conversation at all. Only after that does he walk to Horeb, and only there does God finally speak — and even then, not in the wind or the earthquake or the fire.\n\nThe order is the teaching."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What has God been supplying lately that you have been treating as an interruption rather than as provision?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, we have brought You our exhaustion and asked You to explain it. Before the explanation, give us what You gave him — bread, and sleep, and the permission to lie down again. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: what the collapse came immediately after, a Hebrew phrase that pairs the word voice with the word silence, and a Victorian preacher telling exhausted men that what they need is a walk in the wind rather than more grace."
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:9-13",
+      "translation": "BSB",
+      "passage": "There Elijah entered a cave and spent the night. And the word of the LORD came to him, saying, \"What are you doing here, Elijah?\" … \"Go out and stand on the mountain before the LORD. Behold, the LORD is about to pass by.\" And a great and mighty wind tore into the mountains and shattered the rocks before the LORD, but the LORD was not in the wind. After the wind there was an earthquake, but the LORD was not in the earthquake. After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice. When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave.",
+      "hebrewOriginal": "ק֖וֹל דְּמָמָ֥ה דַקָּֽה",
+      "transliteration": "qol demamah daqqah — something like \"a voice of thin silence\"",
+      "emphasis": [
+        "the LORD was not in the wind",
+        "after the fire came a still, small voice"
+      ],
+      "scriptureContext": "Forty days later, at the mountain, God finally speaks — and does it in the one register a man still running would have missed."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day3-brooktree.webp",
+      "inlineImageAlt": "A figure lying asleep and wrapped in a cloak beneath a desert tree at night, while a winged figure stands nearby holding a lamp and a small loaf. A crescent moon hangs above.",
+      "inlineImageCaption": "The whole of God's first response to a man who asked to die: an angel, bread baked on coals, and permission to lie back down. (The rothem Elijah sheltered under is a low desert shrub; the artist has given it a fuller canopy than it has.)",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "peshat",
+      "heading": "What Happened the Day Before",
+      "content": "The collapse in 1 Kings 19 is almost always read as a story about a discouraged man. Read the chapter before it and a different and more useful diagnosis appears.\n\nAt Carmel, Elijah stood alone against four hundred and fifty prophets, called down fire in front of the nation, and watched the people fall on their faces. Then he had the prophets of Baal seized and taken to the Kishon Valley and killed — a scene the text records without softening. Then he climbed the mountain and prayed until the rain came. Then, with the storm breaking, he tucked his cloak into his belt and ran ahead of Ahab's chariot the whole way to Jezreel.\n\nThat is roughly seventeen miles on foot, at the end of a day that had already contained a public confrontation, a mass execution and a drought breaking.\n\nAnd then Jezebel sends a message promising to kill him by that hour tomorrow, and the man who had faced down a nation runs.\n\nThe sequence matters because it rules out the flattering explanations. This is not a failure of courage — the courage is documented, one chapter back, at a scale most people never approach. It is not a failure of faith; he had just staked his life on a public test of it. What the text describes is a man who spent everything he had and then received a threat on the far side of having spent it.\n\nWhich is a condition most people recognise. The breaking point does not usually arrive during the hardest part. It arrives afterward, on an ordinary morning, over something smaller — and because the something is smaller, the person breaking assumes the problem must be them."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "דְּמָמָה",
+      "transliteration": "demamah",
+      "pronunciation": "deh-mah-MAH",
+      "strongsNumber": "H1827",
+      "definition": "silence, stillness, calm — and in some entries, a whisper",
+      "usage": "The phrase in verse 12 is qol demamah daqqah. Word for word it is closer to \"a voice of a thin silence\" than to anything English has a comfortable slot for. Demamah is a feminine noun from damam, to be silent; Brown-Driver-Briggs classes it under \"(silence) whisper.\" The King James gives \"a still small voice,\" which has become the way the passage lives in the language.",
+      "usageNote": "Translators have never agreed here, and the disagreement is more instructive than any single rendering. Some print \"a gentle whisper,\" some \"a sound of sheer silence,\" some keep the King James. The reason is that the Hebrew puts voice and silence in the same breath and lets them sit there. Whatever Elijah heard, the text is at pains to say it had none of the properties of the three things that came before it — the wind that shattered rock, the earthquake, the fire. It was, by construction, the kind of thing you can only hear if you have stopped.",
+      "wordByWord": [
+        {
+          "word": "ק֖וֹל",
+          "transliteration": "qol",
+          "meaning": "voice, sound"
+        },
+        {
+          "word": "דְּמָמָ֥ה",
+          "transliteration": "demamah",
+          "meaning": "silence, stillness — from damam, to be silent"
+        },
+        {
+          "word": "דַקָּֽה",
+          "transliteration": "daqqah",
+          "meaning": "thin, fine, small — the word used of finely ground things"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "דָּמַם",
+          "transliteration": "damam",
+          "reference": "Psalm 46:10",
+          "meaning": "the root verb, to be silent or still — related to the command in \"Be still, and know that I am God\""
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "God's first response to a man at the end of himself was breakfast."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "remez",
+      "heading": "God Did Not Answer the Prayer",
+      "content": "Elijah prays one sentence in the desert and it is a request to die. I have had enough, LORD. Take my life, for I am no better than my fathers.\n\nGod does not grant it. That much is obvious. What is less obvious, and more useful, is everything else God does not do.\n\nHe does not correct the theology. There is bad theology in that prayer — Elijah says he is no better than his fathers, which is true, and then treats it as grounds for dying, which does not follow. It goes uncorrected.\n\nHe does not reason with the fear. Nothing in the text says the threat was overblown, though it was; Jezebel sent a messenger rather than an assassin, which is not what someone does when they intend to kill you that night.\n\nHe does not remind Elijah of Carmel. This is the strangest omission. The single most obvious pastoral move available — you just called down fire, have you forgotten what God did through you three days ago — is not made. Not then, and not later on the mountain.\n\nHe does not rebuke the self-pity, and there is some. When God finally does speak, forty days later, Elijah delivers a self-assessment that is measurably wrong — I am the only one left — and God's eventual correction of it comes at the very end of the conversation, after everything else, almost in passing: there are seven thousand.\n\nWhat God does instead is send someone to touch him and tell him to eat.\n\nIt would be easy to read that as God being gentle with a fragile man, and there is gentleness in it. But something more precise is happening. The prayer Elijah prayed was a request for the wrong thing, made from inside a state that made accurate requests impossible. He did not need his prayer answered. He needed the state addressed — and the state was, at that moment, substantially physical.\n\nSo the first thing given was calories."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "bVFW3wbi9pk",
+      "videoTitle": "Books of 1-2 Kings Summary: A Complete Animated Overview",
+      "videoCaption": "Nine minutes on the books this scene sits in — the long decline of the northern kingdom, and where Elijah and Elisha fit inside it.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Where This Sits in the Story",
+      "ancientTruth": "This is the WILDERNESS in its most literal form. Elijah walks a day into it, and then forty days more to Horeb — which is Sinai, the mountain where the covenant was given. He is retracing Israel's route in reverse, alone, and being fed on the way, which is what happened to them too.",
+      "modernApplication": "The pattern holds outside the desert. A person who has run out is not usually in need of new information. They are in need of the conditions under which information can land.",
+      "connectionPoint": "The chapter's structure makes the argument on its own: food, sleep, a journey, and only then a word — and the word, when it comes, is quiet enough that the man had to have stopped moving to catch it.",
+      "newTestamentEcho": "Jesus does the same thing to His own disciples, and Mark records the reason without embarrassment: \"Come with Me privately to a solitary place, and let us rest for a while.\" For many people were coming and going, and they did not even have time to eat. And after the resurrection, on a beach, the first thing He says to men who had fished all night and caught nothing is not a rebuke or an explanation. It is an invitation to breakfast."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "heading": "Bread First. The Word After.",
+      "content": "This is the middle of the week and the hinge of the whole thing, so it is worth stating as plainly as the text does.\n\nGod's first response to a man at the end of himself was food. His second was more food. The word came third, forty days later, and quietly.\n\nThat order is not incidental, and it is not a concession to human weakness that God makes reluctantly before getting to the real business. The angel gives a reason for the second meal, and it is entirely practical: or the journey will be too much for you. Not, you will feel better. Not, God wants you to be encouraged. The distance ahead exceeds what the body currently holds, so eat.\n\nWhich means the rest in this passage is not the reward at the end of the work. It is the provisioning for it. Elijah is not being allowed to recover before returning to duty; the recovery is the first leg of the assignment, supplied by God, with a stated reason.\n\nThere is a particular kind of Christian who will find this hard to accept, and it is worth naming why. Somewhere along the way, many of us absorbed a hierarchy in which spiritual solutions rank above physical ones. If a person is struggling, the serious answer is prayer, Scripture, repentance, worship — and sleep, food and a walk are what you suggest when you have run out of real help. On that hierarchy, a story where God sends a sandwich looks like a lesser act of God.\n\n1 Kings 19 does not share the hierarchy. The angel is a genuine angel, the bread is genuine bread, and it is the first thing the Almighty does about a suicidal prophet.\n\nAnd notice what happens once he has eaten. The text says he walked forty days and forty nights, strengthened by that food. The strength for the long stretch came from the meal in the desert. Not from a vision. Not from a renewed sense of calling. From a cake of bread baked on coals and a jar of water, taken twice, with a nap in between.\n\nThis is where Isaiah's promise from Monday stops being abstract. They that wait shall renew their strength — and here is the renewal, arriving in the least spiritual packaging available, on a day when the man receiving it was too far gone to ask for it and had in fact asked for the opposite.\n\nOne more thing, because it is easy to miss and it matters for anyone whose season has no end in sight. The collapse did not disqualify him. God's word to Elijah at the end of the chapter is not a demotion. He is sent back — go back by the way you came — and given three commissions: anoint Hazael, anoint Jehu, anoint Elisha to succeed you. He returns to work. But between the broom tree and the work there are two meals, two sleeps, a forty-day walk and a conversation on a mountain, and God does not compress that sequence to save time.\n\nThe wilderness was not the interruption of the assignment. It was where the assignment was supplied."
+    },
+    {
+      "type": "story",
+      "heading": "What Spurgeon Prescribed",
+      "content": "In 1875, Charles Spurgeon stood in front of a room of young men training for ministry and gave a lecture titled \"The Minister's Fainting Fits.\" He was the most famous preacher in England. He opened by admitting he was speaking from the inside.\n\n\"Fits of depression come over the most of us,\" he told them. \"Usually cheerful as we may be, we must at intervals be cast down.\" And then, in a line that removes the usual escape route: \"The strong are not always vigorous, the wise not always ready, the brave not always courageous, and the joyous not always happy.\"\n\nHe was not theorising. \"Knowing by most painful experience what deep depression of spirit means,\" he said, \"being visited therewith at seasons by no means few or far between, I thought it might be consolatory to some of my brethren if I gave my thoughts thereon.\" Spurgeon had left London more than once for the south of France because he could not carry on.\n\nWhat is striking is where he goes next. He does not begin with sin, or with faith, or with any failure of devotion. He begins with bodies. \"Moreover, most of us are in some way or other unsound physically.\" He names organs. He observes that certain bodily complaints \"are the fruitful fountains of despondency,\" and that a man may strive against their influence as hard as he likes and still be overcome by them for a while.\n\nAnd then he prescribes. Not more prayer. Not more discipline.\n\n\"A day's breathing of fresh air upon the hills, or a few hours' ramble in the beech woods' umbrageous calm, would sweep the cobwebs out of the brain of scores of our toiling ministers who are now but half alive. A mouthful of sea air, or a stiff walk in the wind's face, would not give grace to the soul, but it would yield oxygen to the body.\"\n\nRead that last sentence again, because it is doing something careful. He is not claiming the walk is a spiritual act. He says outright that it would not give grace to the soul. He is saying that oxygen is a different thing from grace, that a person needs both, and that a great many exhausted Christians have been trying to solve an oxygen problem with grace and wondering why it will not resolve.\n\nWhich is the angel's argument under the broom tree, made in Victorian English, to men who would have been embarrassed to hear it.",
+      "connectionToTheme": "Spurgeon and the angel agree on the sequence and on the reason. Neither of them says the body is the whole problem. Both of them start there, and both of them are unembarrassed about it."
+    },
+    {
+      "type": "insight",
+      "heading": "He Gives Sleep to His Beloved",
+      "content": "The Psalms had already put it in one line, and it is sharper than most translations let it sound: \"In vain you rise early and stay up late, toiling for bread to eat — for He gives sleep to His beloved.\"",
+      "historicalContext": "Psalm 127:2 (BSB), one of the Songs of Ascents, attributed to Solomon. The verse before it establishes the logic: unless the LORD builds the house, its builders labour in vain. The point is not that work is pointless — the psalm assumes builders and watchmen. It is that anxious overwork adds nothing God was not already going to supply, and that sleep is listed among the things He gives rather than among the things He permits."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "heading": "What This Actually Asks For",
+      "content": "The practical shape of this day is unglamorous, and that is the point of it.\n\nStart where the angel started. If you are exhausted and something in you is convinced the problem is spiritual, the first responsible question is whether you have slept, eaten and moved in the last week — and the second is whether anything has been medically looked at. That is not a lesser answer. It is the order 1 Kings 19 puts things in, and it is the order Spurgeon put them in, and both of them were describing people whose spiritual credentials were not in doubt.\n\nSecond: notice that Elijah was fed twice. The first meal was not enough, and there is no suggestion in the text that he should have been fine after it. He ate and lay down again, and the angel came back. A person coming out of a long depletion will need to be fed more than once, and will probably feel they should be further along than they are, and the text quietly refuses that timeline.\n\nThird, and this is the harder one: God did not explain anything for forty days. The word came, and when it did it began with a question rather than an answer — what are you doing here, Elijah — and even after the wind and the earthquake and the fire and the silence, Elijah repeats his complaint word for word, unchanged. He is not fixed. He gets sent back to work anyway.\n\nSo this is not a story about a man being restored to full function by an encounter with God. It is a story about a man being kept alive, fed, walked to a mountain, listened to, and then re-employed while still, by every visible measure, discouraged.\n\nWhich may be the most usable thing in the chapter. The provision came long before the resolution, and the assignment came before the feeling did."
+    },
+    {
+      "type": "scripture",
+      "reference": "Psalm 127:1-2",
+      "translation": "BSB",
+      "passage": "Unless the LORD builds the house, its builders labor in vain; unless the LORD protects the city, its watchmen stand guard in vain. In vain you rise early and stay up late, toiling for bread to eat— for He gives sleep to His beloved.",
+      "emphasis": [
+        "for He gives sleep to His beloved"
+      ],
+      "scriptureContext": "Sleep listed among God's gifts rather than among His concessions."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God's first response to your current state were physical rather than spiritual — food, sleep, a walk, a doctor — what would it be? And what has stopped you from treating that as an answer from Him?",
+      "additionalQuestions": [
+        "Elijah was fed twice, and needed both. Where have you assumed one round of rest should have been sufficient?",
+        "God did not remind Elijah of Carmel. Why do you think that is — and what do you keep reminding yourself of that is not actually helping?",
+        "The word came only after forty days of walking. What might God be supplying in the silence you have been reading as absence?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "instruction": "A physical practice, chosen because today's reading is about physical provision and it would be strange to answer it with a thought exercise. It takes twenty minutes and needs a door.",
+      "interaction_type": "physical",
+      "steps": [
+        {
+          "title": "Go outside",
+          "description": "Twenty minutes, on foot, no destination and no phone. If twenty is not possible, ten. Spurgeon's claim is that this yields oxygen rather than grace — do not expect it to feel spiritual, and do not treat it as failure when it does not."
+        },
+        {
+          "title": "Eat something",
+          "description": "A real meal, sitting down, not standing at a counter between tasks. The angel's instruction was four words long and this is it."
+        },
+        {
+          "title": "Then pray, if you want to",
+          "description": "Afterward. Not before, and not instead. The point of the order is that God used it, and the point of doing it in this order is finding out whether the thing you have been calling a spiritual problem is quieter after bread."
+        }
+      ]
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day3-cleft.webp",
+      "inlineImageAlt": "A narrow cleft between two dark rock walls, with pale light pouring through the opening from behind them.",
+      "inlineImageCaption": "The mouth of the cave at Horeb, where what Elijah finally heard came after the wind, the earthquake and the fire had all finished — and was quiet enough to walk straight past.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "sod",
+      "heading": "Not in the Wind",
+      "content": "Three enormous things pass by that mountain and God is in none of them.\n\nA wind that tore into the mountains and shattered the rocks. An earthquake. A fire. Each one is exactly the register Elijah had been operating in — he had called fire down from heaven himself, eight weeks earlier, and it had worked. If God intended to reach him in the language he already spoke, the fire was right there.\n\nThe text says three times, with a flatness that reads almost like insistence: the LORD was not in the wind. The LORD was not in the earthquake. The LORD was not in the fire.\n\nAnd after the fire, qol demamah daqqah. A voice of thin silence.\n\nThere is a reading of this scene that turns it into a lesson about preferring quiet spirituality to dramatic spirituality, and it is not quite right, because God had used the fire at Carmel and used it well. The point is narrower and more personal. The man on that mountain had built his entire ministry on the register of the spectacular, and had just discovered that the spectacular does not sustain a person — the fire fell, the nation bowed, and six weeks later he wanted to die under a bush.\n\nSo God speaks in the one register that requires him to have stopped.\n\nYou cannot hear thin silence at a run. That is not a metaphor; it is a property of the thing. Everything about that voice is calibrated to be inaudible to a man in motion, and the forty days of walking, and the two meals, and the sleep under the broom tree, were all the process of getting a man quiet enough to catch it.\n\nWhich is what the whole week has been building toward, in its way. The strength is renewed in the waiting. The patience is a staying-under. And the word, when it comes, comes at a volume that only reaches people who have been made still — usually not by choice, and usually by something they would never have picked."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Lord, we have asked You for explanations and You have handed us bread. Forgive us for thinking that the lesser answer. Give us what You gave him and in the order You gave it — food, and sleep, and the road, and then, when we are quiet enough to hear it, a word. Where we are too far gone to ask for the right thing, answer the prayer we would have prayed if we could see straight. And when the wind and the earthquake and the fire go past and You are not in any of them, hold us still long enough for the thin silence. Amen.",
+      "breathPrayer": "Breathing in: I have had enough, Lord. Breathing out: get up and eat.",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will treat sleep, food and air as things God gives rather than things I take, and I will accept one of them today without apologising for it.",
+      "leavingAtCross": [
+        "The hierarchy that ranks spiritual answers above physical ones",
+        "The expectation that one round of rest should have been enough",
+        "The belief that collapsing after a victory means the victory was not real"
+      ],
+      "receivingFromCross": [
+        "Bread baked on coals, and a second helping",
+        "Permission to lie down again",
+        "A word that will come later, and quietly, and will not require me to be running to receive it"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "What is God's first response to Elijah's prayer that he might die?",
+      "options": [
+        "A rebuke for his lack of faith after the victory at Carmel",
+        "A reminder of what God had just done through him at Mount Carmel",
+        "Sleep, and then food, twice, with no conversation at all",
+        "An immediate word from God at the mountain of Horeb"
+      ],
+      "answer": 2,
+      "explanation": "The prayer is not answered, corrected or discussed. Elijah falls asleep, an angel wakes him with bread and water, he eats and lies down again, and the angel returns a second time with the same instruction and a stated reason — or the journey will be too much for you. Only after forty days of walking does God speak, and then in a voice the text is careful to distinguish from the wind, the earthquake and the fire."
+    },
+    {
+      "type": "profile",
+      "heading": "The Voice Behind Today",
+      "name": "Elijah the Tishbite",
+      "era": "ninth century BC, the northern kingdom of Israel, under Ahab and Jezebel",
+      "bio": "A prophet who arrives in the narrative without introduction and leaves it without dying. He confronts a king, is fed by ravens at a brook and by a widow in Zarephath, calls down fire at Carmel, and then breaks. He is one of two figures in the Old Testament said not to have died, and he appears again on another mountain, centuries later, talking with Jesus at the Transfiguration.",
+      "keyQuote": "I have had enough, LORD. Take my life, for I am no better than my fathers.",
+      "lessonForUs": "Scripture's most public display of prophetic power is followed immediately by its most honest account of burnout, and the Bible puts them one chapter apart without apology. Whatever else that means, it means a collapse after a faithful season is not evidence that the season was fraudulent — and God's treatment of the man who collapsed is the least condemning thing in the chapter."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 18:38-46 (BSB)",
+          "text": "What immediately precedes the collapse — the fire, the executions, the rain, and the run to Jezreel."
+        },
+        {
+          "reference": "1 Kings 19:15-18 (BSB)",
+          "text": "How the chapter ends: three commissions, and the correction of \"I am the only one left\" — seven thousand, mentioned almost in passing."
+        },
+        {
+          "reference": "Mark 6:31 (BSB)",
+          "text": "\"Come with Me privately to a solitary place, and let us rest for a while.\" Mark gives the reason: they did not even have time to eat."
+        },
+        {
+          "reference": "Psalm 127:1-2 (BSB)",
+          "text": "\"For He gives sleep to His beloved\" — sleep as a gift rather than a concession."
+        },
+        {
+          "reference": "Jeremiah 31:25 (BSB)",
+          "text": "\"I will refresh the weary soul and replenish all who are weak.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "C. H. Spurgeon, Lectures to My Students, First Series (1875), Lecture XI",
+          "description": "Source of every quoted line in today's story, verbatim. The lecture is \"The Minister's Fainting Fits.\" Spurgeon writes it out of his own recurring depression, which he states in the opening paragraphs rather than hinting at. Free at archive.org."
+        },
+        {
+          "title": "Hebrew data",
+          "description": "rothem (H7574) — \"a kind of broom-shrub, broom-plant, retem\" (BDB); generally identified with Retama raetam; four Old Testament occurrences, at 1 Kings 19:4-5, Job 30:4 (its roots eaten by the destitute) and Psalm 120:4 (its coals as judgment). demamah (H1827) — \"silence, stillness, calm,\" and under BDB \"(silence) whisper\"; from damam, to be silent. The phrase at 1 Kings 19:12 is qol demamah daqqah, and translators have never converged on a single English rendering."
+        }
+      ],
+      "forDeeperStudy": "Read 1 Kings 18 and 19 in one sitting with no break at the chapter division, and time how few verses separate the fire at Carmel from the request to die. Then read 19:9-14 twice and notice that Elijah's complaint is identical before and after he hears the voice — word for word, unchanged. Whatever happened on that mountain, it did not work by making him feel better."
+    }
+  ]
+}

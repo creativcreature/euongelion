@@ -1,0 +1,311 @@
+{
+  "day": 2,
+  "chiasm_position": "B",
+  "format": "two-minute-open-v2",
+  "title": "The Weight and the Thing That Stands Around",
+  "subtitle": "On cargo, encirclement, and a word that means both patience and endurance",
+  "teaser": "Hebrews names two problems in one sentence and most readings collapse them into one. Weight is not sin — it has no moral charge at all — and the thing that \"so easily besets\" is a word that appears once in surviving Greek. Sorting them is the difference between rest and guilt.",
+  "anchorVerse": "Hebrews 12:1",
+  "theme": "Weight and sin are different problems requiring different responses, and the patience asked for is simply remaining under.",
+  "framework": "Hebrews 12:1 — let us run with patience the race that is set before us",
+  "scriptureReference": "Hebrews 12:1",
+  "totalWords": 3043,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Hebrews 12:1",
+      "translation": "KJV",
+      "passage": "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us,",
+      "emphasis": [
+        "lay aside every weight, and the sin which doth so easily beset us",
+        "run with patience"
+      ],
+      "scriptureContext": "One sentence naming two different problems, which most readings quietly collapse into one."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "εὐπερίστατος",
+      "transliteration": "euperistatos",
+      "pronunciation": "yoo-per-EE-stah-tos",
+      "strongsNumber": "G2139",
+      "definition": "standing well around; besetting on every side",
+      "usage": "This is the word behind \"which doth so easily beset us,\" and it is a strange one to run into. It occurs once in the New Testament and, as Thayer's notes in the entry itself, is not found anywhere else in surviving Greek. So there is no second passage to check it against. Strong's builds a meaning from its parts — eu, well, plus a form of peri, around, and histemi, to stand — and renders the picture as a competitor thwarting a racer in every direction. Thayer's arrives at \"skilfully surrounding i. e. besetting, namely, to prevent or retard running.\""
+    },
+    {
+      "type": "teaching",
+      "heading": "Weight Is Not the Same as Sin",
+      "content": "Read the instruction slowly and it comes apart into two halves that are usually read as one. Lay aside every weight, and the sin which doth so easily beset us.\n\nThe first is ὄγκος (ogkos), and it is worth knowing that the word carries no moral charge at all. It means bulk. Mass. A thing with heft. A runner sheds it not because it is wicked but because it is heavy, and the sentence is careful enough to name it separately from the sin sitting beside it in the same clause.\n\nThat separation is the practical gift of the verse, and it is why the day is spent here. A great deal of what exhausts a person is not sin. It is weight. Obligations that were right to take on and are now too many. Kindnesses that hardened into expectations. Work that was once the right size. None of it is wrong, and being told to repent of it would be both useless and cruel — because there is nothing to repent of.\n\nThere is only something to put down.\n\nAnd the second half is a different problem entirely: something that stands all the way around, positioned to stop a runner from every direction at once. Two problems, two responses. Confusing them is why so many tired people are trying to confess their way out of a schedule."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Make two short lists, in your head or on paper. What in your life right now is heavy? And what in your life right now is wrong? Notice how much sits on the first list only.",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, we have been repenting of our tiredness and carrying our sin, and we have them backwards. Show us the difference. Give us the honesty to name what is only heavy, and the nerve to set it down. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a Greek word that appears once in all of surviving literature, a crowd of witnesses who turn out not to be spectators, and a missionary who worked six years for one convert and then lost almost everything else."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 11:13, 39-40",
+      "translation": "BSB",
+      "passage": "All these people died in faith, without having received the things they were promised. However, they saw them and welcomed them from afar. And they acknowledged that they were strangers and exiles on the earth. … These were all commended for their faith, yet they did not receive what was promised. God had planned something better for us, so that together with us they would be made perfect.",
+      "greekOriginal": "νέφος μαρτύρων",
+      "transliteration": "nephos martyrōn — \"a cloud of witnesses\"",
+      "emphasis": [
+        "died in faith, without having received the things they were promised",
+        "yet they did not receive what was promised"
+      ],
+      "scriptureContext": "The chapter's own summary of the people who make up the cloud — stated twice, in almost the same words, in case it were missed."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day2-road.webp",
+      "inlineImageAlt": "Three figures in silhouette walking away down a wide road toward a low sun, long shadows stretching behind them, in deep blue and gold halftone.",
+      "inlineImageCaption": "Three walking the Emmaus road, which is the New Testament's own picture of a course being travelled with company and without a view of the end. The race in Hebrews 12 is \"set before us\" — laid out, not chosen — and the people in chapter 11 walked the whole length of it without ever seeing where it went.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "heading": "Two Problems, Not One",
+      "content": "The opening instruction of Hebrews 12 is one of the most quoted sentences in the letter and one of the most flattened. It is generally read as a single command about getting rid of sin. It is two commands about two different things.\n\nὄγκος (ogkos) is mass. Bulk. Weight in the plain physical sense — the lexicons give \"bulk, mass, hence a weight, burden.\" There is nothing moral in it. It is the word you would use for cargo.\n\nεὐπερίστατος (euperistatos) is the other one, and it is the rarer problem. The word appears once in the New Testament and is unattested elsewhere, which means every English rendering of it is a reconstruction from its parts. Thayer's says as much and then offers his reconstruction anyway: skilfully surrounding, besetting, in order to prevent or retard running. The shape it describes is spatial. Something standing all the way around, on every side at once.\n\nSo the sentence names a load and an encirclement, and it asks for two different actions. The load gets laid aside — an act of decision, done once, and repeatable. The encirclement cannot be laid aside, because it is not being carried. It is standing there.\n\nWhat is done about that is the subject of the next verse, and the whole rest of the week. But the first move is simply to stop treating the two as one thing, because the treatments do not transfer. You cannot put down something that is standing around you, and you cannot fight your way out of a load you are choosing to carry."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ὑπομονή",
+      "transliteration": "hypomonē",
+      "pronunciation": "hoo-po-mo-NAY",
+      "strongsNumber": "G5281",
+      "definition": "endurance, steadfastness, patient waiting for; cheerful endurance, constancy",
+      "usage": "Here is the detail that makes this week possible. The King James translates this word \"patience.\" Almost every modern version translates it \"endurance.\" They are the same Greek word. The English language keeps them apart — patience sounds like something done sitting still, endurance sounds like something done at effort — and the Greek has no interest whatever in that distinction.",
+      "usageNote": "Which means a person who has been told to be patient and a person who has been told to endure have been given identical instructions, and the felt difference between those two commands is an accident of translation. The word itself is built from hypo, under, and menō, to remain: to stay under something. Not to escape it, and not to be crushed by it. To still be there.",
+      "wordByWord": [
+        {
+          "word": "ὄγκον",
+          "transliteration": "ogkon",
+          "meaning": "weight, bulk — cargo, with no moral charge attached"
+        },
+        {
+          "word": "εὐπερίστατον",
+          "transliteration": "euperistaton",
+          "meaning": "standing well around — used once in the New Testament and unattested elsewhere"
+        },
+        {
+          "word": "ὑπομονῆς",
+          "transliteration": "hypomonēs",
+          "meaning": "patience, endurance — one word, whichever your translation prints"
+        },
+        {
+          "word": "τρέχωμεν",
+          "transliteration": "trechōmen",
+          "meaning": "let us run — first person plural; the writer includes himself in the instruction"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μακροθυμία",
+          "transliteration": "makrothymia",
+          "reference": "James 5:7-8",
+          "meaning": "the other New Testament word English also renders \"patience\" — long-temperedness, the farmer's waiting for the rains; hypomonē is staying under a weight, makrothymia is waiting out a delay"
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "You cannot put down what is standing around you, and you cannot fight your way out of a load you are choosing to carry."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "heading": "The Cloud Is Not a Grandstand",
+      "content": "\"Compassed about with so great a cloud of witnesses\" gets pictured as a stadium. Rows of the faithful in the stands, watching, cheering the runner on. It is a warm image and it is almost certainly not what the writer has just set up.\n\nHebrews 11 has spent an entire chapter introducing these witnesses, and it makes a point of telling the reader how their stories ended. Twice. Verse 13: all these people died in faith, without having received the things they were promised. Verse 39, in case the first pass did not land: these were all commended for their faith, yet they did not receive what was promised.\n\nSo the cloud is not made of finishers waving from the far side of a line. It is made of people who ran the whole distance without ever seeing the end of it.\n\nAnd the chapter is unsentimental about what that cost. Abraham went out \"without knowing where he was going.\" Others, it says, were tortured and refused their release. They were stoned, sawed in two, put to death by the sword. They went around in sheepskins and goatskins, destitute, oppressed and mistreated. The world was not worthy of them. They wandered in deserts and mountains, and hid in caves and holes in the ground.\n\nThat is the company. Not a cheering section — a company. The word for witness is martys, and its later career in the language is not an accident.\n\nFor a person in a long season with no visible edge to it, this is a different kind of comfort than the stadium version, and a sturdier one. The stadium says: keep going, it will be over soon, everyone is watching. Hebrews says: the people you admire most also did not get to see the end, and it was still faith, and they are still commended, and the not-seeing was never evidence that something had gone wrong."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "1fNWTZZwgbs",
+      "videoTitle": "Book of Hebrews Summary: A Complete Animated Overview",
+      "videoCaption": "Eight minutes on the whole letter — who it was written to, why endurance is its central concern, and what chapter 11 is doing right before the sentence this week is built on.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Where This Sits in the Story",
+      "ancientTruth": "Every name in the cloud is an Old Testament name. Abraham living in tents in the land he had been promised. Gideon, Barak, Samson, Jephthah, David, Samuel and the prophets. The writer of Hebrews is not introducing new heroes; he is reading his own Scriptures and pointing at the pattern in them, and the pattern is people walking toward something they were told about and did not live to see.",
+      "modernApplication": "Which reframes the ordinary experience of praying for years about the same thing. The not-yet is not a sign of being outside the story. In Hebrews it is the most common experience inside it.",
+      "connectionPoint": "This is why the sentence can ask for patience without being glib. The writer has just spent a chapter proving he knows exactly what he is asking, and of whom.",
+      "newTestamentEcho": "The letter's own answer comes two verses later, and it is a person rather than a principle: \"Consider Him who endured such hostility from sinners, so that you will not grow weary and lose heart\" (Hebrews 12:3). The cure for weariness offered here is not rest from the race. It is looking at somebody who ran it."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "Patience and Endurance Are the Same Word",
+      "content": "There is a small translation fact in this verse that changes what a person is allowed to ask for.\n\nὑπομονή (hypomonē) is rendered \"patience\" by the King James and \"endurance\" by nearly every modern English version. One word, two English options, and the choice between them has quietly shaped how the verse is heard for four hundred years.\n\nIf you were raised on \"endurance,\" the verse sounds like a demand for grit. Run harder. Hold on. Do not stop. It is a verse for the strong, and a tired person reading it hears an accusation.\n\nIf you were raised on \"patience,\" it sounds like something else — bearing with, waiting out, remaining. It is a verse for someone stuck, and it does not ask for output.\n\nThe Greek word means both because in the writer's mind they are not two things. It is built from hypo, under, and menō, to remain. To stay under. Not to escape the weight and not to be crushed by it — to still be there when the weight has not moved.\n\nThat definition does something specific to the instruction. Running with hypomonē is not running fast. It is not running well. It is not, in any sense the word can carry, running impressively. It is continuing to be under the thing while moving.\n\nAnd this is where the two problems from earlier come back together. The load gets laid aside — that part is action, and it is worth doing this week rather than next. But the thing standing all the way around does not respond to effort at all. There is no direction to push. A person surrounded on every side who decides to fight harder is simply choosing which side to be overwhelmed from first.\n\nWhat the verse asks in that situation is not more force. It is remaining. Staying under. Continuing to be there, on the ordinary Tuesday, without having resolved anything.\n\nWhich sounds like a diminished ambition until you notice that it is the only thing the cloud of witnesses actually accomplished. They did not receive what was promised. They did not see the end. What they did was remain, in faith, the whole way — and the letter calls that faith and commends it without a single qualification.\n\nThe week's pivot comes tomorrow, and it will make an unexpected case: that remaining is not primarily a matter of willpower, and that God's own first move toward a person at the end of themselves is more physical than anybody expects."
+    },
+    {
+      "type": "story",
+      "heading": "Six Years, One Convert",
+      "content": "Adoniram Judson reached Rangoon on 14 July 1813. He was twenty-five, newly arrived in a country with no Protestant church, no Burmese Bible and no one who spoke his language. The work he had come to do had no precedent to copy.\n\nHe learned Burmese. He built a small open shelter by the road where anyone could stop and talk. He translated. He waited.\n\nThe first Burmese convert, a man named Maung Nau, was baptised on 27 June 1819. Six years, to one.\n\nWhat followed was worse. In 1824 war broke out between Britain and Burma, and on 8 June Judson was arrested as a suspected British spy. He spent seventeen months in prison, much of it in irons, and was not released until 4 November 1825. His wife Ann kept him alive during those months, carrying food to the prison and petitioning the authorities while caring for an infant. She died on 24 October 1826, aged thirty-six, less than a year after his release.\n\nThe story is usually told with the ending attached — the Burmese Bible finished, the church that eventually grew, the numbers that came later. All of that is true, and none of it was visible from inside the seventeen months.\n\nWhat is worth taking from it is narrower and harder than the triumphant version. For six years there was nothing to show. For seventeen months there was less than nothing. And at no point during either stretch could Judson have produced evidence that he was in the right place doing the right thing — which is precisely the condition Hebrews 11 describes, and precisely the condition it calls faith.\n\nHe was not remarkable for enduring. He was remarkable for remaining while there was no reason available to him to believe it was working.",
+      "connectionToTheme": "Judson is what hypomonē looks like with the clock running: still under it, still moving, with no way of checking whether any of it is going anywhere. The cloud of witnesses is full of people in exactly that position, and the letter does not treat it as a lesser kind of faith."
+    },
+    {
+      "type": "insight",
+      "heading": "Commended, and Still Waiting",
+      "content": "The strangest sentence in Hebrews 11 is its last one. After the catalogue of people who did not receive what they were promised, the writer adds a reason: \"God had planned something better for us, so that together with us they would be made perfect.\"",
+      "historicalContext": "Hebrews 11:40 (BSB). The claim is that the delay was not an oversight in their case — it was structural. They were kept waiting so that the completion, when it came, would include people who had not been born yet. Whatever else that does, it means the not-yet in someone's life is not necessarily a problem with their faith. In this chapter it is the shape of the plan."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "Sorting Your Own Load",
+      "content": "The practical work of today is a sorting job, and it is more uncomfortable than it sounds, because most people find that their categories are wrong.\n\nTake the things currently costing you the most and put each one in a column. Heavy, or wrong.\n\nMost of what surfaces goes in the first column. A job that has grown past what one person can do. A family member who needs more than there is. A commitment made in a different season by a version of you with different capacity. A house, a diagnosis, a schedule. None of these are sins, and treating them as sins produces a specific and recognisable misery — the person who is exhausted and also guilty about being exhausted, apologising to God for a load God never asked them to carry alone.\n\nThe verse does not ask for repentance there. It asks for laying aside, which is a different verb and a different act. Some weight comes off by decision. Not all of it, and not immediately, and some of it cannot come off at all in this season — but the first step is naming it accurately, because a person cannot set down something they have misfiled as a moral failure.\n\nThe second column is real too, and this reading is not going to pretend otherwise. Hebrews names sin in the same breath, and it names it as the thing that stands all the way around. That is not a small problem and it is not solved by scheduling.\n\nBut notice the order the sentence puts them in. Weight first. The obvious, unglamorous, physical, logistical thing first — and only then the deeper one. There is a whole tradition of spiritual counsel that reverses this, sending a depleted person straight to self-examination while the actual load sits untouched. Hebrews starts with the cargo.\n\nSo does God, tomorrow, in the bluntest scene of the week."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 12:3",
+      "translation": "KJV",
+      "passage": "For consider him that endured such contradiction of sinners against himself, lest ye be wearied and faint in your minds.",
+      "emphasis": [
+        "lest ye be wearied and faint in your minds"
+      ],
+      "scriptureContext": "The letter's own remedy for weariness, given two verses after the instruction — and it is an act of attention rather than an act of effort."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Name one thing you have been treating as a moral failure that is actually just heavy. What would change if you stopped confessing it and started asking who could help you carry it?",
+      "additionalQuestions": [
+        "Which of your weights was picked up in a season that has already ended?",
+        "The cloud of witnesses did not see the end. Does that make your own not-yet feel more lonely, or less?",
+        "If patience and endurance are the same word, which of the two have you been demanding of yourself — and which have you been refusing to allow yourself?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "instruction": "A short written exercise. It needs paper or a notes app and about ten minutes, and it works best when nobody is going to read it.",
+      "interaction_type": "journal",
+      "steps": [
+        {
+          "title": "List",
+          "description": "Write down everything currently taking energy from you. Do not filter, do not rank, and do not stop until the list feels complete. Ten to twenty items is normal."
+        },
+        {
+          "title": "Sort",
+          "description": "Mark each one H for heavy or W for wrong. Some will be both. Most will not."
+        },
+        {
+          "title": "Circle",
+          "description": "Circle one H that could actually come off this month, and one that could come off if somebody else knew about it. Those are two different kinds of relief, and the second one usually requires a conversation."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "sod",
+      "heading": "The Race Was Set Before Us",
+      "content": "One phrase in the verse is easy to walk past, and it carries most of the comfort available today.\n\nThe race is \"set before us.\" Laid out. Placed there. It is not selected by the runner, and it is not assembled out of choices — a person arrives to find it already in front of them.\n\nThat cuts in two directions at once, and the honest reading keeps both. It means nobody gets to swap. The course somebody else is running, with its different terrain and its different weather, is not on offer, and comparison is therefore not just unhelpful but incoherent.\n\nAnd it means this course was set. Not stumbled into. Not the consequence of a wrong turn three years ago, though wrong turns are real and this reading is not pretending otherwise. Set — by someone, in advance, with the runner in mind.\n\nThe same phrase appears again in the next verse, and this is the detail worth carrying into the rest of the week. Jesus endured the cross \"for the joy that was set before him.\" Same construction. The runner has a race set before them; He had a joy set before Him. Whatever else that means, it means He was doing the thing being asked of us, in the same grammar, in the same posture — looking at something placed in front of Him and staying under the weight until He reached it.\n\nWhich is why tomorrow's scene, and Friday's sentence, are not two separate ideas. The one who set the course has run one."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Father, we have carried what was never wrong and confessed what was never sin, and we are tired in a way that repentance cannot reach. Teach us to tell weight from sin, and give us the courage to set down what will come off. For what will not come off in this season, give us hypomonē — the staying-under that Your Scripture calls both patience and endurance, because You have never needed those to be two different things. We are surrounded by people who ran without seeing the end, and we are asking to be counted among them rather than spared what they were not spared. Amen.",
+      "breathPrayer": "Breathing in: lay aside every weight. Breathing out: let us run with patience.",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will name one weight that is heavy rather than wrong, and this week I will either set it down or tell someone it is there.",
+      "leavingAtCross": [
+        "Guilt for being tired by a load nobody asked me to carry alone",
+        "The habit of confessing my schedule instead of changing it",
+        "The idea that not seeing the end means I have gone wrong"
+      ],
+      "receivingFromCross": [
+        "Permission to call a heavy thing heavy",
+        "A company of witnesses who also never saw it finished",
+        "A course set before me on purpose, by someone who has run one"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "What does Hebrews 11 say about the \"cloud of witnesses\" surrounding the runner in 12:1?",
+      "options": [
+        "That they finished their races and are now watching from the stands",
+        "That they died in faith without receiving what they were promised — they ran the distance without seeing the end",
+        "That they are angels sent to encourage believers",
+        "That they were unusually gifted people whose example is beyond most of us"
+      ],
+      "answer": 1,
+      "explanation": "Hebrews 11 makes the point twice, at verse 13 and again at verse 39, in nearly identical words: they died in faith without having received the things they were promised. The cloud is not a grandstand of finishers. It is a company of people who remained the whole way without ever being shown the outcome — which is why the sentence that follows can ask for patience without being glib."
+    },
+    {
+      "type": "profile",
+      "heading": "The Voice Behind Today",
+      "name": "The writer of Hebrews",
+      "era": "the first century, before the fall of Jerusalem in AD 70",
+      "bio": "Nobody knows who wrote Hebrews. The letter names no author, and it does not open the way Paul's letters open. Attributions to Paul, Barnabas, Apollos and Priscilla have all been proposed, in antiquity and since, and none has settled the question. Origen, writing in the third century, made the honest observation that has stuck: who actually wrote it, God knows. What the text itself shows is a writer steeped in the Hebrew Scriptures, writing to Jewish Christians under pressure and tempted to go back, and writing to keep them in the race.",
+      "keyQuote": "Let us run with patience the race that is set before us.",
+      "lessonForUs": "The most sustained argument for endurance in the New Testament was written by somebody whose name did not survive. The letter has held up for two thousand years without an author attached, which is a quiet illustration of its own point: the running is what was asked for, not the credit."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 11 (BSB)",
+          "text": "The whole chapter, and the two verses that define the cloud — 13 and 39-40. Read it before returning to 12:1 and the sentence changes."
+        },
+        {
+          "reference": "Hebrews 12:3-4 (BSB)",
+          "text": "\"Consider Him who endured… so that you will not grow weary and lose heart.\" The remedy is attention, not effort."
+        },
+        {
+          "reference": "Hebrews 12:11-13 (BSB)",
+          "text": "\"Strengthen your limp hands and weak knees… so that the lame may not be disabled, but rather healed.\" The chapter is addressed to people already injured."
+        },
+        {
+          "reference": "James 5:7-8 (BSB)",
+          "text": "The other New Testament word for patience — the farmer waiting out the rains, which is a different picture from staying under a weight."
+        },
+        {
+          "reference": "Romans 5:3-5 (BSB)",
+          "text": "Suffering produces perseverance, perseverance character, character hope — the same Greek word for perseverance as here."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Greek data",
+          "description": "euperistatos (G2139) — a hapax legomenon; Thayer's glosses it \"skilfully surrounding i. e. besetting, namely, to prevent or retard running\" and notes in the same entry that it is \"not found elsewhere.\" ogkos (G3591) — \"bulk, mass, hence a weight, burden.\" hypomonē (G5281) — \"endurance, steadfastness, patient waiting for; cheerful endurance, constancy\"; KJV \"patience,\" most modern versions \"endurance.\""
+        },
+        {
+          "title": "Adoniram Judson — the dated record",
+          "description": "Reached Rangoon 14 July 1813; first Burmese convert, Maung Nau, baptised 27 June 1819; imprisoned at Ava from 8 June 1824 and released 4 November 1825; Ann Hasseltine Judson died 24 October 1826, aged 36. The story attracts embellishment, particularly about prison conditions — the dated skeleton above is what the record supports."
+        },
+        {
+          "title": "Origen on the authorship of Hebrews",
+          "description": "Preserved in Eusebius, Ecclesiastical History VI.25 — the source of the remark that only God knows who wrote it. Free at ccel.org."
+        }
+      ],
+      "forDeeperStudy": "Read Hebrews 11 and 12:1-3 as one continuous passage, with no chapter break, which is how it was written. The \"wherefore\" at the start of 12:1 is doing work that disappears when the chapters are read separately, and the cloud of witnesses means something quite different when you have just met them."
+    }
+  ]
+}

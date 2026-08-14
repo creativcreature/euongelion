@@ -1,0 +1,312 @@
+{
+  "day": 4,
+  "chiasm_position": "B-prime",
+  "format": "two-minute-open-v2",
+  "title": "Martha, Martha",
+  "subtitle": "On a correction that was never about the work",
+  "teaser": "Luke puts the Good Samaritan one paragraph before Martha's kitchen, which makes the usual reading impossible. The verb for what happened to her is passive — it was being done to her — and what Jesus names is not the serving but a number.",
+  "anchorVerse": "Luke 10:42",
+  "theme": "The correction in Martha's kitchen is aimed at what is underneath the work, not at the work itself.",
+  "framework": "Luke 10:42 — But one thing is needful",
+  "scriptureReference": "Luke 10:38-42",
+  "totalWords": 3336,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Luke 10:38-42",
+      "translation": "KJV",
+      "passage": "Now it came to pass, as they went, that he entered into a certain village: and a certain woman named Martha received him into her house. And she had a sister called Mary, which also sat at Jesus' feet, and heard his word. But Martha was cumbered about much serving, and came to him, and said, Lord, dost thou not care that my sister hath left me to serve alone? bid her therefore that she help me. And Jesus answered and said unto her, Martha, Martha, thou art careful and troubled about many things: But one thing is needful: and Mary hath chosen that good part, which shall not be taken away from her.",
+      "emphasis": [
+        "thou art careful and troubled about many things",
+        "one thing is needful"
+      ],
+      "scriptureContext": "The most misread rebuke in the Gospels, and the one word in it that changes what is being rebuked."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "περισπάω",
+      "transliteration": "perispaō",
+      "pronunciation": "peh-ree-SPAH-oh",
+      "strongsNumber": "G4049",
+      "definition": "to drag all around; to be pulled away in every direction",
+      "usage": "Luke uses this word once in the whole New Testament, here, of Martha. Strong's builds it from peri, around, and spaō, to draw or drag: \"to drag all around, i.e. (figuratively) to distract.\" Thayer's has \"to draw around, to draw away, distract\" and, in the passive, \"to be driven about mentally, to be distracted… over-occupied, too busy, about a thing.\" The King James renders it \"cumbered about much serving,\" which keeps the physical sense the Greek has and most modern versions lose.",
+      "usageNote": "The form in verse 40 is imperfect passive. Both halves of that matter. Passive: it was being done to her. Imperfect: it was ongoing, not a moment. Martha did not decide one afternoon to be distracted, and telling her to choose otherwise would have been useless — which may be why Jesus does not."
+    },
+    {
+      "type": "teaching",
+      "heading": "What He Actually Names",
+      "content": "Read the sentence slowly and notice what is not in it.\n\nHe does not say the serving is wrong. He does not say Mary's posture is superior and Martha should adopt it. He does not tell her to stop working, and he does not say a word against hospitality — which, in that culture and in that house, was not a hobby but an obligation and an honour.\n\nWhat he names is a number. Thou art careful and troubled about many things. Many.\n\nAnd the diagnosis before it is precise in a way the modern ear misses. \"Careful\" in the King James carries its older sense: full of care. Not conscientious. Weighed down with care. So the sentence reads: you are full of care and agitated about a large number of things — and then, against that number, one.\n\nHe also says her name twice. In Hebrew narrative that is not scolding. Abraham, Abraham, at the moment the knife is stopped. Moses, Moses, from the bush. Simon, Simon, the night before the denial. It is how someone is addressed tenderly and urgently in the same breath, and it is the opposite of a man scoring a point in an argument he has already won.\n\nThe problem in that kitchen was never her hands."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Count the things you were carrying in your head when you sat down to read this. Not judged — counted. What is the actual number?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, we are full of care and agitated about many things, and most of them are real. You did not tell her to stop working. Say our names, and give us the one thing. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: the parable Luke places immediately before this one and almost nobody reads alongside it, a Greek word for portion that belongs to inheritance law, and a monk who found God in a kitchen loud enough that several people were shouting at him at once."
+    },
+    {
+      "type": "scripture",
+      "reference": "Luke 10:33-37",
+      "translation": "BSB",
+      "passage": "But when a Samaritan on a journey came upon him, he looked at him and had compassion. He went to him and bandaged his wounds, pouring on oil and wine. Then he put him on his own animal, brought him to an inn, and took care of him. … \"Which of these three do you think was a neighbor to the man who fell into the hands of robbers?\" \"The one who showed him mercy,\" replied the expert in the law. Then Jesus told him, \"Go and do likewise.\"",
+      "emphasis": [
+        "Go and do likewise"
+      ],
+      "scriptureContext": "The paragraph immediately before Martha's house — and it ends with an instruction to go and do exactly the sort of thing Martha is doing."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day4-samaritan.webp",
+      "inlineImageAlt": "One traveller kneeling to bandage the arm of another at the roadside, a pack animal standing behind them, in blue and gold halftone.",
+      "inlineImageCaption": "The Samaritan bandaging the man on the Jericho road — the scene Luke places one paragraph before Martha's kitchen, and the reason the story cannot be read as a case against serving.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "peshat",
+      "heading": "Luke Put Them Side by Side",
+      "content": "The Martha story is almost always read on its own, and reading it on its own is what produces the version most people carry: that Jesus prefers contemplation to work, Mary to Martha, sitting to serving.\n\nLuke makes that reading very difficult, and he does it by placement.\n\nImmediately before this scene — no gap, no change of subject — is the parable of the Good Samaritan. A lawyer asks what he must do. Jesus tells him about a man beaten and left half dead, a priest and a Levite who pass by, and a Samaritan who stops. The Samaritan bandages the wounds, pours on oil and wine, puts the man on his own animal, takes him to an inn, and pays for his care.\n\nAnd the parable ends with an instruction: go and do likewise.\n\nSo Luke has just spent a paragraph commending, in the strongest terms available, the exact instinct Martha is acting on. Interrupt your journey. Handle the practical need. Spend your own resources on it. Do the work with your hands.\n\nThen, without pause, he tells a story in which a woman doing precisely that is told she is troubled about many things.\n\nA writer does not put those two beside each other by accident, and the only reading that holds both is the one that takes Jesus at his word about what he is correcting. He is not correcting the serving. He corrects a number and offers a different one. The Samaritan did one thing. Martha was doing many, and being pulled apart by them, and the pulling apart is what has her standing in a doorway asking Jesus to referee an argument with her sister."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "μερίς",
+      "transliteration": "meris",
+      "pronunciation": "meh-REECE",
+      "strongsNumber": "G3310",
+      "definition": "a portion, a share — that which is allotted to someone",
+      "usage": "This is \"that good part\" in verse 42. It is not a word about preference or mood. It means an allotted share, the kind of thing that gets assigned and recorded: a portion of land, of an inheritance, of a division. It appears five times in the New Testament — here, twice in Acts, once in 2 Corinthians, and once in Colossians 1:12, where Paul thanks the Father for qualifying the saints \"to share in the inheritance.\" Same word.",
+      "usageNote": "Which changes the weight of the promise attached to it. \"Which shall not be taken away from her\" is not reassurance about a nice afternoon. It is inheritance language, and it is spoken in a room where everything else is temporary — a meal that will be eaten and forgotten by tomorrow, served to a guest who is on his way to Jerusalem to die.",
+      "wordByWord": [
+        {
+          "word": "περιεσπᾶτο",
+          "transliteration": "periespato",
+          "meaning": "she was being dragged around — imperfect passive; done to her, and ongoing"
+        },
+        {
+          "word": "μεριμνᾷς",
+          "transliteration": "merimnas",
+          "meaning": "you are anxious — the same verb Jesus uses in \"do not worry about your life\""
+        },
+        {
+          "word": "θορυβάζῃ",
+          "transliteration": "thorybazē",
+          "meaning": "you are agitated, in an uproar — related to thorybos, the noise of a crowd"
+        },
+        {
+          "word": "μερίδα",
+          "transliteration": "merida",
+          "meaning": "portion, allotted share — the accusative of meris"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "μερίς",
+          "transliteration": "meris",
+          "reference": "Colossians 1:12",
+          "meaning": "the same word, used of the believer's share in the inheritance of the saints in light — which is why \"shall not be taken away\" is a legal promise rather than a warm sentiment"
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "He is not correcting the serving. He corrects a number, and offers a different one."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "remez",
+      "heading": "It Was Being Done to Her",
+      "content": "There is a grammatical detail in verse 40 that changes the pastoral shape of this entire scene, and it disappears in most English translations.\n\nThe verb is περιεσπᾶτο (periespato). Imperfect passive. Passive means the action is happening to the subject rather than by her. Imperfect means it is continuous — an ongoing state rather than a decision.\n\nSo Luke does not write that Martha distracted herself. He writes that she was being dragged around, and that it kept happening.\n\nAnyone who has been in a stretch like that will recognise the accuracy. The experience of being pulled apart by too many things is not experienced as a choice. It is experienced as weather. There is a meal, and someone at the door, and a thing that must be done before dark, and each individual item is legitimate, and the sum of them is a person who cannot hold still and has stopped being able to tell which of them actually matters.\n\nAnd Jesus does not tell her to stop. This is worth dwelling on, because it is what most of us would have said. He does not say: put the tray down. He does not say: your priorities are disordered, fix them. Those instructions would have been addressed to a will that was not in charge of the situation.\n\nWhat he does is name it accurately — many things — and then put one thing in front of her.\n\nThat is a different kind of help, and it is the same help the rest of this week has been describing from other angles. Monday: the strength is renewed rather than manufactured. Tuesday: a person surrounded on every side cannot fight their way out. Wednesday: the first provision was bread, before any explanation. Today: a woman being dragged around is not given a command to stop being dragged. She is given something to look at.\n\nWhich is exactly where tomorrow goes."
+    },
+    {
+      "type": "bridge",
+      "heading": "Where This Sits in the Story",
+      "ancientTruth": "\"One thing\" is not a phrase Jesus invents here. David had already said it in the Psalms, and he said it as a man with a kingdom to run: \"One thing have I desired of the Lord, that will I seek after; that I may dwell in the house of the Lord all the days of my life, to behold the beauty of the Lord.\" A working king, naming a single thing against everything else on his list.",
+      "modernApplication": "The modern equivalent of Martha's kitchen is a life in which every item is defensible and the total is unlivable. Nobody in that situation is short of good reasons. They are short of a centre.",
+      "connectionPoint": "Both David and Martha are told the same thing from opposite directions. He names his one thing voluntarily, from the middle of a demanding life. She has hers named for her, from the middle of a demanding afternoon.",
+      "newTestamentEcho": "Paul says it in the same construction, and he is describing a life of relentless travel and work rather than a quiet one: \"But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal\" (Philippians 3:13-14). One thing, in a life that was manifestly full of many."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "The Number, Not the Work",
+      "content": "If the correction is about number rather than activity, then the practical question changes, and it changes in a way that is more demanding rather than less.\n\nThe easy reading — Jesus prefers stillness to service — hands a busy person an impossible instruction and a guilty conscience. Do less. Sit more. Be like your sister. Most people cannot act on that, because the things filling the day are not optional, and being told they should be is simply one more accusation in a life already full of them.\n\nThe harder reading is that the work stays and the centre changes.\n\nMartha's house still needed feeding. Nothing in the passage suggests the meal was cancelled, and John's Gospel shows us the same woman a couple of years later, at a supper in Bethany six days before the Passover, and the sentence is two words long: Martha served. She is doing the identical thing. She is not rebuked for it. Nobody suggests she has failed to learn.\n\nSo what was different in the kitchen?\n\nThe scene gives the answer in her own words. She does not come to Jesus and say the work is too much — which would have been true, and which he would have had an answer for. She comes and says: Lord, dost thou not care that my sister hath left me to serve alone? Bid her therefore that she help me.\n\nShe is not asking for help. She is asking him to take a side.\n\nThat is what being dragged around by many things eventually produces. Not just tiredness — a low-grade grievance that begins looking for someone to blame and generally finds the nearest person doing less. The many things had turned the guest in her house into a referee, and her sister into an opponent, and it happened by degrees, and she almost certainly did not notice it happening.\n\nThe correction is aimed there. Not at the tray. At the state that has her, in the presence of Christ, thinking about fairness.\n\nAnd the offer that follows is not a smaller workload. It is a portion — an allotted share, in the inheritance sense — that will not be taken away from her. Against a room full of things that will be gone by Thursday, one thing that will not, and it is available to a person with their hands full."
+    },
+    {
+      "type": "story",
+      "heading": "The Noise and Clutter of My Kitchen",
+      "content": "Nicolas Herman was a soldier, and then a footman — by his own description a clumsy one, who broke everything. In middle age he entered a newly founded Carmelite house in Paris as a lay brother, which meant he was not there to study or to teach. He was there to cook.\n\nHe cooked for a community that grew past a hundred men, for about fifteen years, before his duties shifted to repairing sandals. He took the name Brother Lawrence of the Resurrection, and by his own account his first decade in the monastery was full of severe trouble.\n\nWhat he is remembered for came out of that kitchen.\n\nA priest named Joseph de Beaufort visited him four times — the first conversation is dated 3 August 1666 — and wrote down what he said. After Lawrence's death de Beaufort published his letters, and then a second volume that included the conversations, under a title that has outlived everyone involved: The Practice of the Presence of God.\n\nOne passage does the work of the whole book. De Beaufort observed that in the greatest hurry of business in the kitchen, Lawrence still kept his composure, and was never hasty and never idle. And then he quotes him directly:\n\n\"The time of business,\" said he, \"does not with me differ from the time of prayer. In the noise and clutter of my kitchen, while several persons are at the same time calling for different things, I possess God in as great tranquillity as if I were upon my knees at the Blessed Supper.\"\n\nRead the middle clause again, because it is the part that gets skipped in the inspirational version. While several persons are at the same time calling for different things. That is Martha's room exactly. The demands are not reduced. Nobody has been sent away. The noise is still noise.\n\nDe Beaufort adds one more line that settles what kind of claim is being made: with him the set times of prayer were not different from other times.\n\nLawrence did not solve his kitchen by leaving it. He was still in it, and it was still loud, and several people were still shouting for different things at once — which is precisely why the sentence is worth anything at all.",
+      "connectionToTheme": "Lawrence is Martha's kitchen with the number changed. Everything about the room stayed the same; what altered was what he was attending to inside it. That is the shape of the correction Jesus offers — not fewer demands, but one thing beneath them."
+    },
+    {
+      "type": "insight",
+      "heading": "Why We Cannot Stay in the Room",
+      "content": "Pascal put the underlying problem in a single sentence, in the fragments found after his death: \"j'ai dit souvent que tout le malheur des hommes vient d'une seule chose, qui est de ne savoir pas demeurer en repos dans une chambre\" — I have often said that all the unhappiness of men comes from one single thing, which is not knowing how to remain at rest in a room.",
+      "historicalContext": "Pensées, Lafuma 136 (Brunschvicg 139), from the sequence on divertissement — diversion. The version in general circulation, \"all of humanity's problems stem from man's inability to sit quietly in a room alone,\" is a paraphrase rather than a translation: it adds the word alone, which the French does not contain. Pascal's actual claim is narrower and harder. He is not saying people are bad at solitude. He is saying they cannot be at rest, and that they arrange their lives so as never to have to find out."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day4-hands.webp",
+      "inlineImageAlt": "A pair of hands laid still and folded over an open book, rendered in cream and deep blue halftone.",
+      "inlineImageCaption": "Hands that have stopped. Mary's posture is described in four words — she sat at Jesus' feet and heard his word — and it is the only thing in the room that Jesus says cannot be taken away.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "What to Do With a Full House",
+      "content": "The application here is not a schedule. It is a question to run over the day.\n\nWhen you are pulled in several directions at once, the instinct is to ask which task matters most. That is the wrong question and it has no stable answer, because the tasks are all genuinely necessary and ranking them takes energy that the ranking was supposed to save.\n\nThe question the passage suggests is different: what is beneath all of this?\n\nMartha's answer, in that moment, was fairness. She had one thing under the many, and it was a grievance, and it had arranged everything else around itself — which is why she is in the doorway asking Jesus to arbitrate rather than asking him for anything he actually came to give.\n\nMost people, examined honestly at the end of a scattered day, will find something similar. Not fairness necessarily. Sometimes it is the need to be seen coping. Sometimes it is fear that if a specific thing is dropped, everything falls. Sometimes it is the conviction that being needed is the only reliable evidence of being loved.\n\nThat undermost thing is the one thing, and everybody has one whether they chose it or not. The offer in this passage is not to empty the room. It is to change what is at the bottom of it.\n\nWhich connects directly to the practice the whole week has been circling: pay attention to what you pay attention to. Not to feel guilty about it. To find out what is actually running the day, and then to take that to God rather than settling it privately — because the thing at the bottom is rarely something a person can talk themselves out of, and is almost always something they can hand over.\n\nAnd then, having handed it over, to go back into the kitchen. The meal still needs cooking. Lawrence stayed at the stove for fifteen years."
+    },
+    {
+      "type": "scripture",
+      "reference": "Psalm 27:4",
+      "translation": "KJV",
+      "passage": "One thing have I desired of the Lord, that will I seek after; that I may dwell in the house of the Lord all the days of my life, to behold the beauty of the Lord, and to enquire in his temple.",
+      "emphasis": [
+        "One thing have I desired of the Lord"
+      ],
+      "scriptureContext": "David naming his one thing voluntarily, from the middle of a life with a great many others in it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is underneath your busiest days — the thing all the activity is actually serving? Name it without defending it. Most people find it is not what they would have said out loud.",
+      "additionalQuestions": [
+        "Martha asked Jesus to take a side rather than asking him for help. Where has tiredness turned into a case you are quietly building against someone?",
+        "If the work is not the problem, what would change tomorrow and what would stay exactly the same?",
+        "Mary's portion \"shall not be taken away.\" What in your week is worth choosing precisely because it cannot be lost?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "instruction": "Scripture memory, using a technique that suits a full day rather than a quiet one. Nine words. You will not need to sit down for this.",
+      "interaction_type": "memory",
+      "steps": [
+        {
+          "title": "Take the phrase",
+          "description": "\"But one thing is needful.\" Nine words with the lead-in, six without. Say it aloud once now."
+        },
+        {
+          "title": "Attach it to a trigger",
+          "description": "Pick something that happens repeatedly and involuntarily today — a door you go through, a kettle, a notification tone. Every time it happens, say the phrase in your head. Do not add anything to it."
+        },
+        {
+          "title": "Notice the gap",
+          "description": "By evening you will have said it perhaps twenty times, and on most of those occasions you will not have known what the one thing was. That gap is not failure. It is the question the passage is asking, arriving on schedule."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "sod",
+      "heading": "Where Martha Ends Up",
+      "content": "Luke leaves her in the doorway, corrected, and if her story stopped there she would be a warning.\n\nIt does not stop there.\n\nJohn's Gospel picks her up again, later, on a road outside Bethany. Her brother has been dead four days. Jesus arrives after the time when arriving would have helped, and it is Martha — not Mary, who stays in the house — who goes out to meet him.\n\nWhat she says first is a complaint, and it is the same shape as the one in the kitchen: Lord, if You had been here, my brother would not have died. Then, immediately: but even now I know that God will give You whatever You ask of Him.\n\nAnd in the conversation that follows, Jesus says the sentence that is read at nearly every Christian funeral — I am the resurrection and the life — and then asks her a direct question. Do you believe this?\n\nHer answer is one of the plainest confessions of Christ in the Gospels: \"Yes, Lord. I believe that You are the Christ, the Son of God, who was to come into the world.\"\n\nSo the woman corrected in Luke 10 is the woman drawn out in John 11. The correction was never a dismissal, and it did not stick to her as a verdict. It was the beginning of a conversation that took years and ended with her saying the truest thing in the chapter.\n\nAnd one more detail, in John 12, six days before the Passover. There is a dinner. Lazarus is at the table. Mary is anointing his feet.\n\nAnd the text says, without comment or qualification: Martha served."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Lord, we are full of care and agitated about many things, and we have not been able to stop by deciding to. You did not tell her to put the tray down, and You are not telling us to. Say our names. Show us what is actually underneath the day — the grievance, or the fear, or the need to be needed — and take it, because we have not been able to talk ourselves out of it. Give us the portion that will not be taken away, and then send us back into the kitchen with it. Amen.",
+      "breathPrayer": "Breathing in: many things. Breathing out: one thing is needful.",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will find the one thing that is actually underneath my busiest day, name it honestly, and hand it over rather than managing it.",
+      "leavingAtCross": [
+        "The grievance that has been quietly building against someone doing less",
+        "The belief that being needed is the evidence that I am loved",
+        "The reading of this story that says my work was the problem"
+      ],
+      "receivingFromCross": [
+        "A portion that will not be taken away, in a week made of things that will",
+        "My own name, said twice, gently and urgently at once",
+        "Permission to go back to work with something different underneath it"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "Why does Luke place the Good Samaritan immediately before the story of Martha?",
+      "options": [
+        "To contrast active service with contemplative devotion and commend the second",
+        "Because both stories happen on the same journey and the order is incidental",
+        "Because the parable commends the very instinct Martha is acting on, which rules out reading her story as a case against serving",
+        "To show that Martha had failed to learn the lesson of the parable"
+      ],
+      "answer": 2,
+      "explanation": "The Samaritan interrupts his journey, handles the practical need with his own hands and spends his own money, and the parable ends \"go and do likewise.\" Luke then immediately tells a story in which a woman doing exactly that is told she is troubled about many things. The only reading that holds both is the one Jesus states: the correction is aimed at a number, not at the work."
+    },
+    {
+      "type": "profile",
+      "heading": "The Voice Behind Today",
+      "name": "Martha of Bethany",
+      "era": "first century, a village about two miles from Jerusalem",
+      "bio": "Sister of Mary and Lazarus, and by every indication the one who ran the household — it is called her house. She appears three times: welcoming Jesus in and being corrected there, going out to meet him on the road after her brother's death, and serving at a supper in Bethany six days before the Passover, where she is not rebuked.",
+      "keyQuote": "Yes, Lord. I believe that You are the Christ, the Son of God, who was to come into the world.",
+      "lessonForUs": "Martha is the patron of everyone whose love takes the form of getting things done. The single scene she is famous for is a correction, and the correction is narrower than her reputation: not the serving, the number. She is also the one Jesus draws one of the plainest confessions in the Gospels out of — which is worth knowing for anyone who has decided that being told they are troubled about many things was a verdict on the kind of person they are."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 10:25-37 (BSB)",
+          "text": "The parable that comes immediately before, and ends \"go and do likewise.\" Read the two scenes as one paragraph."
+        },
+        {
+          "reference": "John 11:20-27 (BSB)",
+          "text": "Where Martha ends up: on a road, with a complaint, and then the confession."
+        },
+        {
+          "reference": "John 12:1-3 (BSB)",
+          "text": "Six days before the Passover. \"Martha served.\" Two words, no comment."
+        },
+        {
+          "reference": "Psalm 27:4 (KJV)",
+          "text": "\"One thing have I desired of the Lord\" — a working king naming a single thing."
+        },
+        {
+          "reference": "Philippians 3:13-14 (BSB)",
+          "text": "\"But one thing I do\" — the same construction in a life of relentless travel."
+        },
+        {
+          "reference": "Colossians 1:12 (BSB)",
+          "text": "The same Greek word for portion, used of the believer's share in the inheritance."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Brother Lawrence, The Practice of the Presence of God",
+          "description": "Source of the kitchen passage, verbatim from the Project Gutenberg text (#5657). Two caveats worth carrying: the conversations are Joseph de Beaufort's record of Lawrence's speech rather than Lawrence's own pen — only the letters are his — and this English renders the closing phrase \"the Blessed Supper\" where other translations have \"the Blessed Sacrament.\" The first conversation is dated 3 August 1666."
+        },
+        {
+          "title": "Blaise Pascal, Pensées, Lafuma 136 / Brunschvicg 139",
+          "description": "The French is quoted verbatim from the divertissement sequence with a plain English rendering beside it. The widely shared \"sit quietly in a room alone\" version is a paraphrase, not a translation — it adds a word Pascal did not write."
+        },
+        {
+          "title": "Greek data",
+          "description": "perispaō (G4049) — \"to drag all around,\" one New Testament occurrence, Luke 10:40, imperfect passive. meris (G3310) — \"a portion, share; that which is allotted\"; five New Testament occurrences including Colossians 1:12 of the saints' inheritance. merimnaō and thorybazō in verse 41 — anxious, and agitated, the second related to thorybos, the noise of a crowd."
+        }
+      ],
+      "forDeeperStudy": "Read Luke 10:25 through 10:42 in one sitting, ignoring the paragraph headings your Bible has inserted. Those headings are editorial and they are doing real damage here — they separate two scenes the author placed together, and the separation is what produces the misreading this day is about."
+    }
+  ]
+}

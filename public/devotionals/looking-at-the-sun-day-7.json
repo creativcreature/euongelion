@@ -1,0 +1,69 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "title": "He Maketh Me to Lie Down",
+  "subtitle": "The seventh day",
+  "teaser": "No teaching today. One verse, one line, and the observation that the shepherd's first recorded action in the psalm is making the sheep stop.",
+  "anchorVerse": "Psalm 23:2",
+  "theme": "Rest as something arranged for a person rather than achieved by them.",
+  "framework": "Psalm 23:2 — He maketh me to lie down in green pastures",
+  "scriptureReference": "Psalm 23:1-3",
+  "totalWords": 343,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Psalm 23:1-3",
+      "translation": "KJV",
+      "passage": "The Lord is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.",
+      "emphasis": [
+        "He maketh me to lie down"
+      ],
+      "scriptureContext": "The shepherd's first recorded action in the psalm is making the sheep stop."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/looking-at-the-sun/day7-fold.webp",
+      "inlineImageAlt": "Sheep lying down inside a stone-walled fold with the gate standing open, long shadows across the ground, in deep blue and cream halftone.",
+      "inlineImageCaption": "A fold with the gate open and the flock lying down. Nothing is being kept in; they have simply stopped.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "sabbath",
+      "heading": "The Seventh Day",
+      "content": "He maketh me to lie down.\n\nNot invites. Not permits. Makes.\n\nA sheep will not lie down while it is anxious, or hungry, or being harassed by something in the grass. Shepherds have known that for as long as there have been shepherds. So the line is describing a condition being arranged rather than a preference being indulged — somebody has dealt with the things that would keep the animal on its feet, and the lying down is the result.\n\nThat is the whole reading today.\n\nThis week said that renewal is not a refill, that weight is not sin, that God's first answer to a man at the end of himself was bread, that the correction to a busy woman was about a number, and that the gaze does not wait for a clear field. All of it argued toward something, and the something is this: at some point the arguing stops and a person lies down.\n\nSo today there is no teaching, and there is nothing to work through.\n\nIf you are able to rest, rest — and take it as given rather than earned.\n\nIf you are not able to rest, that is worth saying to God plainly, because it is information rather than failure, and this week has been fairly clear that He tends to start with the practical end of things.\n\nAnd if the day passes and nothing shifts and you are still tired tomorrow, that is allowed too. Elijah needed two meals. Nobody in this series got fixed inside a week.\n\nOne line to carry, and then silence:\n\nHe restoreth my soul.\n\nNot: you restore it. The verb has a subject, and it is not you."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Nothing to answer today. If a question is wanted: what would you have to hand over in order to lie down?",
+      "invitationType": "silence"
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "instruction": "Silence. Ten minutes, or two if ten is not available. This is the whole of it.",
+      "interaction_type": "silence",
+      "steps": [
+        {
+          "title": "Stop",
+          "description": "Sit down somewhere. Put the phone in another room rather than face-down on the table."
+        },
+        {
+          "title": "Say one line",
+          "description": "\"He maketh me to lie down.\" Once, out loud if you can."
+        },
+        {
+          "title": "Then nothing",
+          "description": "Do not pray through a list. Do not review the week. If your mind wanders, note where it went — that is Thursday's practice and it still counts — and then let the quiet come back."
+        }
+      ]
+    },
+    {
+      "type": "prayer",
+      "heading": "A Prayer for the Seventh Day",
+      "prayerText": "Shepherd, make us lie down. We have not managed it on our own. Deal with whatever is keeping us on our feet, and restore our souls, since we have never once been able to restore them ourselves. Amen.",
+      "breathPrayer": "Breathing in: He maketh me to lie down. Breathing out: He restoreth my soul.",
+      "prayerType": "closing"
+    }
+  ]
+}
