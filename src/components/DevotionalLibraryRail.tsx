@@ -6,6 +6,7 @@ import Link from 'next/link'
 import ClippingsList from '@/components/ClippingsList'
 import LibraryView from '@/components/LibraryView'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
+import { isSeriesSlug } from '@/lib/library/series-save'
 import { isClippingsSupported, listClippings } from '@/lib/clippings'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { useProgressStore } from '@/stores/progressStore'
@@ -171,6 +172,9 @@ function parsePlanSlug(
 }
 
 function resolveDevotionalHref(devotionalSlug: string): string {
+  // SA-039: a saved row may now name a SERIES rather than a day. Send those to
+  // the series page — /devotional/<series-slug> is a 404.
+  if (isSeriesSlug(devotionalSlug)) return `/series/${devotionalSlug}`
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) {
     // Plan reading canonically lives at /daily-bread (SA-023: the dedicated
@@ -183,12 +187,19 @@ function resolveDevotionalHref(devotionalSlug: string): string {
 }
 
 function resolveDevotionalLabel(devotionalSlug: string): string {
+  if (isSeriesSlug(devotionalSlug)) {
+    return SERIES_DATA[devotionalSlug]?.title ?? devotionalSlug
+  }
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) return `Plan Day ${plan.day}`
   return SLUG_META.get(devotionalSlug)?.title || devotionalSlug
 }
 
 function resolveSeriesLabel(devotionalSlug: string): string {
+  if (isSeriesSlug(devotionalSlug)) {
+    const days = SERIES_DATA[devotionalSlug]?.days.length ?? 0
+    return days ? `Whole series · ${days} days` : 'Whole series'
+  }
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) return 'Soul Audit Plan'
   return SLUG_META.get(devotionalSlug)?.series || 'Wake-Up'

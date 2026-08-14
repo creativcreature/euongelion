@@ -12,6 +12,7 @@ import {
   type LibraryIntent,
 } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
+import { isSeriesSaved, savedSlugsForSeries } from '@/lib/library/series-save'
 
 interface DevotionalActionsProps {
   devotionalSlug: string
@@ -62,9 +63,12 @@ export default function DevotionalActions({
     return off
   }, [])
 
+  // SA-039: the unit of saving is the SERIES, not the day. A legacy per-day
+  // row still counts as its series being saved, so nobody's library empties.
+  const savedSlugs = useMemo(() => saved.map((s) => s.devotionalSlug), [saved])
   const isSaved = useMemo(
-    () => saved.some((s) => s.devotionalSlug === devotionalSlug),
-    [saved, devotionalSlug],
+    () => isSeriesSaved(savedSlugs, seriesSlug),
+    [savedSlugs, seriesSlug],
   )
 
   const newSeriesTitle = seriesSlug
@@ -81,17 +85,24 @@ export default function DevotionalActions({
 
   const handleSave = useCallback(async () => {
     if (busy) return
+    if (!seriesSlug) {
+      setToast('This reading isn’t part of a series yet.')
+      return
+    }
     setBusy(true)
     try {
       if (isSaved) {
-        const result = await unsave(devotionalSlug)
-        if (result.ok) setToast('Removed from your library.')
-        else if (result.needsAuth)
-          setToast('Sign in to manage your saved devotionals.')
+        // Clear the series row AND any legacy per-day rows, or the shelf
+        // would keep showing the series after it was removed.
+        const targets = savedSlugsForSeries(savedSlugs, seriesSlug)
+        const results = await Promise.all(targets.map((slug) => unsave(slug)))
+        if (results.every((r) => r.ok)) setToast('Removed from your library.')
+        else if (results.some((r) => r.needsAuth))
+          setToast('Sign in to manage your library.')
         else setToast('Couldn’t update your library — please try again.')
       } else {
-        const result = await save(devotionalSlug)
-        if (result.ok) setToast('Saved to your library.')
+        const result = await save(seriesSlug)
+        if (result.ok) setToast(`Saved ${newSeriesTitle} to your library.`)
         else if (result.needsAuth)
           setToast('Sign in to keep this saved across devices.')
         else setToast('Couldn’t save — please try again.')
@@ -99,7 +110,7 @@ export default function DevotionalActions({
     } finally {
       setBusy(false)
     }
-  }, [busy, isSaved, save, unsave, devotionalSlug])
+  }, [busy, isSaved, save, unsave, seriesSlug, savedSlugs, newSeriesTitle])
 
   // 2026-05-14: derive the day-number from the devotional slug so
   // "Start this devotional" pins the active series to THIS day, not
@@ -171,7 +182,7 @@ export default function DevotionalActions({
       : 'SAVING…'
     : isSaved
       ? 'SAVED'
-      : 'SAVE THIS DEVOTIONAL'
+      : 'SAVE SERIES'
   const startLabel = busy
     ? 'STARTING…'
     : isActiveSameSeries

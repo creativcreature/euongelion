@@ -7,6 +7,7 @@ import ModuleRenderer from '@/components/ModuleRenderer'
 import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
+import { isSeriesSaved, savedSlugsForSeries } from '@/lib/library/series-save'
 import { getSeriesHero } from '@/lib/series-hero'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
@@ -170,23 +171,28 @@ export default function CuratedActiveView({
     }
   }, [day])
 
-  const isSaved = day ? saved.some((s) => s.devotionalSlug === day.slug) : false
+  // SA-039: saving is series-level here too; legacy per-day rows still count.
+  const savedSlugs = useMemo(() => saved.map((s) => s.devotionalSlug), [saved])
+  const isSaved = isSeriesSaved(savedSlugs, seriesSlug)
 
   const handleSave = useCallback(async () => {
-    if (!day || busy) return
+    if (busy) return
     setBusy(true)
     try {
       if (isSaved) {
-        const result = await unsave(day.slug)
-        if (result.ok) setToast('Removed from your library.')
+        const targets = savedSlugsForSeries(savedSlugs, seriesSlug)
+        const results = await Promise.all(targets.map((slug) => unsave(slug)))
+        if (results.every((r) => r.ok)) setToast('Removed from your library.')
+        else setToast('Couldn’t update your library — please try again.')
       } else {
-        const result = await save(day.slug)
-        if (result.ok) setToast('Saved to your library.')
+        const result = await save(seriesSlug)
+        if (result.ok) setToast('Saved this series to your library.')
+        else setToast('Couldn’t save — please try again.')
       }
     } finally {
       setBusy(false)
     }
-  }, [day, isSaved, save, unsave, busy])
+  }, [isSaved, save, unsave, busy, seriesSlug, savedSlugs])
 
   const handlePause = useCallback(async () => {
     setBusy(true)
@@ -268,7 +274,7 @@ export default function CuratedActiveView({
             disabled={busy}
             aria-pressed={isSaved}
           >
-            {isSaved ? 'SAVED' : 'SAVE THIS DEVOTIONAL'}
+            {isSaved ? 'SAVED' : 'SAVE SERIES'}
           </button>
           {/* Founder direction 2026-08-14: "OPEN FULL READER" is gone. You are
               already reading the devotional — offering to open the real one

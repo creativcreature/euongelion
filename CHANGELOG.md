@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## LIBRARY — you save a series now, not a devotional at a time (2026-08-14)
+
+Founder: _"User should save a devotional series, not individual devotional.
+Right now a user has to save each individual devotional in a series for it to
+appear in the library which is incorrect."_ Registered as **SA-039**.
+
+`SAVE SERIES` stores the series. Both save surfaces changed — the reader and
+Daily Bread.
+
+**No migration was needed, and none was taken.** `/api/bookmarks` validates
+slug _safety_, not that a slug names a devotional, so a series slug stores in
+the existing `session_bookmarks` shape. That avoids adding a fourth unapplied
+migration behind the three billing ones still pending before
+`GENERATION_GATE_LIVE`, and avoids prod DDL, which needs founder-named
+approval. If a dedicated `saved_series` table is wanted later, the API surface
+doesn't change.
+
+**Existing rows roll up rather than being rewritten.** A saved day counts as
+its series being saved — the auto-migration, done by reading instead of
+mutating anyone's library. Nothing is deleted, no backfill runs. Unsaving
+clears the series row _and_ every legacy day row, or the shelf would keep
+showing a series you removed. Pinned by 11 tests, including the
+`identity-crisis` → `identity` rename that still lives in old rows.
+
+The library shelves by series: a saved series links to `/series/<slug>` —
+`/devotional/<series-slug>` is a 404 — and reads "Whole series · N days".
+
+**Anonymous highlights now survive a reload.** Amends SA-038: a highlight made
+without an account is kept on the device and restored on load, deduped against
+server rows so a since-signed-in reader never sees a passage marked twice. It
+is still not written to the database; SA-018's line on persistence-to-an-account
+holds. Verified: highlight, reload, one mark survives.
+
+Service worker to v61. — SA-039 (F-088)
+
 ## READER — church year moves home, Daily Bread loses its extra step (2026-08-14)
 
 Closing out the founder's original four complaints.

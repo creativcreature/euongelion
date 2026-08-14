@@ -114,6 +114,46 @@ function findRangeForSnippet(root: HTMLElement, snippet: string): Range | null {
   return null
 }
 
+/**
+ * SA-039: a highlight made without an account is kept on the device rather
+ * than lost on reload. It is NOT written to the database — SA-038 draws the
+ * line at persistence-to-an-account, and this respects it. Same shape the
+ * server returns, so hydration treats both identically.
+ */
+const LOCAL_HIGHLIGHTS_KEY = 'euangelion-local-highlights-v1'
+
+type LocalHighlight = { text: string; color: HighlightColor; at: string }
+
+function readLocalHighlights(slug: string): LocalHighlight[] {
+  if (typeof window === 'undefined') return []
+  try {
+    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as Record<string, LocalHighlight[]>
+    const rows = parsed?.[slug]
+    return Array.isArray(rows) ? rows : []
+  } catch {
+    return []
+  }
+}
+
+function writeLocalHighlight(slug: string, entry: LocalHighlight) {
+  if (typeof window === 'undefined') return
+  try {
+    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
+    const parsed = raw
+      ? (JSON.parse(raw) as Record<string, LocalHighlight[]>)
+      : {}
+    const rows = Array.isArray(parsed[slug]) ? parsed[slug] : []
+    if (rows.some((r) => r.text === entry.text)) return
+    parsed[slug] = [...rows, entry]
+    window.localStorage.setItem(LOCAL_HIGHLIGHTS_KEY, JSON.stringify(parsed))
+  } catch {
+    // Storage full or blocked (private mode). The highlight is still on the
+    // page for this session; nothing is silently reported as kept.
+  }
+}
+
 function applyHighlightMark(params: {
   range: Range
   color: HighlightColor
@@ -273,6 +313,30 @@ export default function TextHighlightTrigger({
         }
       } catch {
         // Non-fatal: devotional remains readable without hydration.
+      } finally {
+        // Device-kept highlights (made without an account) restore the same
+        // way. Applied after the server rows so a since-signed-in reader does
+        // not get the same passage marked twice.
+        if (cancelled) return
+        const root = document.getElementById('main-content')
+        if (!root) return
+        for (const local of readLocalHighlights(devotionalSlug)) {
+          const snippet = String(local.text || '').trim()
+          if (!snippet) continue
+          if (root.querySelector('mark.reader-highlight')) {
+            const already = [
+              ...root.querySelectorAll('mark.reader-highlight'),
+            ].some((m) => (m.textContent || '').trim() === snippet)
+            if (already) continue
+          }
+          const range = findRangeForSnippet(root, snippet)
+          if (!range) continue
+          applyHighlightMark({
+            range,
+            color: normalizeHighlightColor(local.color),
+            id: null,
+          })
+        }
       }
     }
 
@@ -346,9 +410,16 @@ export default function TextHighlightTrigger({
         // The highlight is already on the page and stays there. Signed-out
         // readers are told it won't be kept rather than being thrown out to
         // a sign-in screen mid-reading; SA-018 still governs what persists.
+        if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
+          writeLocalHighlight(devotionalSlug, {
+            text: selectedText,
+            color: selectedColor,
+            at: new Date().toISOString(),
+          })
+        }
         setFailed(
           payload.code === 'AUTH_REQUIRED_SAVE_STATE'
-            ? 'Sign in to keep this'
+            ? 'Kept on this device'
             : "Highlighted — couldn't save",
         )
         setTimeout(() => {
