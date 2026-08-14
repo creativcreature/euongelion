@@ -10,13 +10,13 @@ import { SERIES_DATA } from '@/data/series'
 import { getSeriesHero } from '@/lib/series-hero'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { DEVOTIONAL_ARTWORKS } from '@/data/artwork-manifest'
-import DevotionalFolio from '@/components/devotional/DevotionalFolio'
 import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
 import DevotionalRhythm, {
   type RhythmImage,
 } from '@/components/devotional/DevotionalRhythm'
 import AuthorColophon from '@/components/devotional/AuthorColophon'
-import ChurchYearCard from '@/components/devotional/ChurchYearCard'
+import AudioPlayer from '@/components/AudioPlayer'
+import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import { loadSelectedAuditReason } from '@/components/soul-audit/helpers'
 import type { Devotional, Module, Panel } from '@/types'
 
@@ -128,6 +128,21 @@ export default function CuratedActiveView({
   const computedModules = (
     devotional as (Devotional & { modules?: Module[] }) | null
   )?.modules
+
+  // Founder direction 2026-08-14: the Audio Edition belongs on every
+  // devotional in every state. Daily Bread was the one reading surface that
+  // never had it, which is why audio looked like a feature of the "other"
+  // reader. Same segment builders the dedicated route uses.
+  const audioSegments = useMemo(() => {
+    if (!devotional) return []
+    if (computedModules?.length) {
+      return buildModuleSegments(devotional.title, computedModules)
+    }
+    if (devotional.panels?.length) {
+      return buildPanelSegments(devotional.title, devotional.panels)
+    }
+    return []
+  }, [devotional, computedModules])
 
   useEffect(() => {
     if (!day) return
@@ -255,12 +270,10 @@ export default function CuratedActiveView({
           >
             {isSaved ? 'SAVED' : 'SAVE THIS DEVOTIONAL'}
           </button>
-          <Link
-            href={`/devotional/${day.slug}`}
-            className="text-label vw-small link-highlight"
-          >
-            OPEN FULL READER
-          </Link>
+          {/* Founder direction 2026-08-14: "OPEN FULL READER" is gone. You are
+              already reading the devotional — offering to open the real one
+              was the redundant extra step, and it implied this was a lesser
+              copy. There is no second reader to go to. SA-037 / F-088. */}
           <Link
             href={`/series/${seriesSlug}`}
             className="text-label vw-small link-highlight"
@@ -333,28 +346,39 @@ export default function CuratedActiveView({
             href={`/devotional/${day.slug}`}
             className="cta-major text-label vw-small inline-block px-5 py-2"
           >
-            TRY THE FULL READER
+            OPEN THIS READING
           </Link>
         </article>
       ) : (
         <>
-          {/* "Today in the church year" — small sidebar above the folio.
-              Pure-content liturgical surface; no infra. */}
-          <ChurchYearCard />
+          {/* Founder direction 2026-08-14: the church-year card is gone from
+              the reading. It lives on the home page now, as one quiet line.
+              SA-037 / F-088. */}
 
           {/* Folio strip — same page furniture the dedicated reader uses. */}
-          {series && (
-            <DevotionalFolio
-              seriesTitle={series.title}
-              dayNumber={day.day}
-              totalDays={series.days.length}
-            />
-          )}
+          {/* Founder direction 2026-08-14: the folio strip is gone here too.
+              It carried <ChurchYearOverline> and sat above the title; day
+              position rides the panel above the reading instead.
+              SA-037 / F-088. */}
 
           {/* F-083 page-cleanup 2026-07-27 (founder): title-only —
               the active-series panel above already names the series and
               the day's own inline artwork carries the visual. */}
-          <DevotionalHeadline title={devotional.title} />
+          <DevotionalHeadline
+            title={devotional.title}
+            dek={devotional.teaser ?? undefined}
+            scripture={devotional.scriptureReference ?? undefined}
+          />
+
+          {audioSegments.length > 0 && day && (
+            <AudioPlayer
+              title={devotional.title}
+              segments={audioSegments}
+              artworkSrc="/icons/icon-512.png"
+              slug={day.slug}
+              className="devotional-shell-panel mb-6"
+            />
+          )}
 
           {/* Rhythm reader — text-left / image-right alternating chapter
               blocks, same as the dedicated reader. */}

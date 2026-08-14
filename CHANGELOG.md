@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READER — church year moves home, Daily Bread loses its extra step (2026-08-14)
+
+Closing out the founder's original four complaints.
+
+**Church year now lives on the home page.** It was stripped from every
+devotional earlier today, which left it nowhere. One quiet centred line under
+the masthead, above the banner — present for readers who keep the calendar,
+easy to ignore for those who don't.
+
+**Daily Bread lost the redundant step.** `CuratedActiveView` no longer offers
+"OPEN FULL READER" — you are already reading the devotional, and offering to
+open the real one implied this was a lesser copy. Founder: _"devotionals in
+today/dailybread should always appear in the full reader — you have created
+redundant extra steps."_ Its folio strip (which carried the church-year line
+here too) is gone, and its headline now carries the same title → dek →
+scripture treatment as `/devotional/[slug]`.
+
+**The Audio Edition now runs on Daily Bread.** This was the one reading surface
+that never had it, which is exactly why audio looked like a feature of the
+"other" reader. Same segment builders, same player, so a pre-rendered narration
+track is preferred wherever one exists.
+
+All three reading surfaces now behave identically: `/devotional/[slug]`,
+Daily Bread's curated path, and Daily Bread's soul-audit plan path — the last
+of which already had audio and none of the furniture. — SA-037 (F-088)
+
 ## READER — highlighting works without an account (2026-08-14)
 
 Founder, after being told the 401 was SA-018 behaving as designed: _"I was

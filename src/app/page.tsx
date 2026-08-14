@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FirstRunIntro from '@/components/FirstRunIntro'
 import SiteFooter from '@/components/SiteFooter'
+import ChurchYearOverline from '@/components/devotional/ChurchYearOverline'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
 import ComposingPaths from '@/components/soul-audit/ComposingPaths'
@@ -315,6 +316,18 @@ export default function Home() {
           Euangelion — A daily newspaper of the Gospel
         </h1>
         <EuangelionShellHeader />
+
+        {/* Founder direction 2026-08-14: the church-year line was removed from
+            every devotional (it bogged down the reading) and belongs here
+            instead — on the home page, unobtrusively. One quiet line under the
+            masthead, above the banner: present for anyone who keeps the
+            calendar, invisible to anyone who doesn't. SA-037 / F-088. */}
+        <section
+          className="homepage-church-year text-label"
+          aria-label="Today in the church year"
+        >
+          <ChurchYearOverline />
+        </section>
 
         {/* Founder direction 2026-05-13: split the prior single hero
             into three blocks — full-bleed banner image, a "What is

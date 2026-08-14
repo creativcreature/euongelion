@@ -10978,3 +10978,18 @@ html[data-held-moment] .mobile-tab-bar {
     background: color-mix(in srgb, var(--color-gold) 9%, transparent);
   }
 }
+
+/* Church-year line on the home page (SA-037 / F-088). Removed from every
+   devotional, where it delayed the reading; kept here as one quiet centred
+   line under the masthead. Deliberately muted — it is for readers who keep
+   the calendar, not a banner. */
+.homepage-church-year {
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  color: var(--color-text-tertiary, currentColor);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}

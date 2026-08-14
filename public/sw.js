@@ -4,6 +4,9 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R47 (F-088): bumped to v60 — church-year line moved to the home page, the
+// Daily Bread reading lost its folio/church-year/"open full reader" step and
+// gained the Audio Edition. Shell change on two routes.
 // R46 (F-088/SA-038): bumped to v59 — highlighting now paints without an
 // account. Reader-side behaviour change, so v58 holders would keep the old
 // build in which a signed-out highlight did nothing at all.
@@ -35,7 +38,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v59'
+const CACHE_NAME = 'euangelion-v60'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
