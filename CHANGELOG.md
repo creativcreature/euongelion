@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READER — closing tweaks (2026-08-14)
+
+**The reader-theme button no longer sits on the audio controls.** Fixed
+bottom-left at `z-200`, at phone widths it landed squarely on the −15 control
+whenever the Audio Edition panel was on screen. `NarrationMiniBar` already
+solved this exact collision with `data-narration-bar`; the in-page panel now
+does the same handshake through `data-narration-panel`, reusing the
+`panelVisible` observer that was already there. Mobile only. Verified at 375px:
+panel on screen → the button fades and stops taking taps; scrolled away → it
+returns.
+
+**Substack cover replacement: closed as unnecessary rather than skipped.** The
+brief was to regenerate the 93 imported Substack headers as riso plates via
+Higgsfield. Removing the cover banner turned out to be the last place they
+rendered — all 26 series carry a `heroImage`, so the `series-hero.ts` Substack
+fallback never fires, and live pages sampled across Substack-sourced
+devotionals return zero Substack image references. Regenerating them would have
+spent roughly 660 Higgsfield credits replacing pictures nobody can see. The
+fallback branch stays as a safety net for any future series shipped without
+art. — SA-037 (F-088)
+
 ## LIBRARY — you save a series now, not a devotional at a time (2026-08-14)
 
 Founder: _"User should save a devotional series, not individual devotional.

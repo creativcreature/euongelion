@@ -132,6 +132,21 @@ export default function NarrationPlayer({
     return () => observer.disconnect()
   }, [])
 
+  // The reader-theme button is fixed to the bottom-left at z-200, so while the
+  // in-page Audio Edition panel is on screen it lands directly on top of the
+  // −15 control. The mini bar already solves this with `data-narration-bar`;
+  // this is the same handshake for the panel. Flag only — the lift lives in
+  // globals.css, next to the mini-bar rule.
+  useEffect(() => {
+    const root = document.documentElement
+    if (panelVisible) {
+      root.setAttribute('data-narration-panel', 'true')
+    } else {
+      root.removeAttribute('data-narration-panel')
+    }
+    return () => root.removeAttribute('data-narration-panel')
+  }, [panelVisible])
+
   const returnToPanel = useCallback(() => {
     const panel = panelRef.current
     if (!panel) return

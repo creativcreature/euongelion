@@ -4,6 +4,8 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R49 (F-088): bumped to v62 — the reader-theme button no longer sits on the
+// in-page audio controls at phone widths.
 // R48 (F-088/SA-039): bumped to v61 — saving is series-level and anonymous
 // highlights are kept on the device. Reader behaviour change on both save
 // surfaces.
@@ -41,7 +43,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v61'
+const CACHE_NAME = 'euangelion-v62'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

@@ -10910,6 +10910,24 @@ html[data-held-moment] .mobile-tab-bar {
   transition: bottom var(--motion-base, 200ms) var(--motion-ease, ease-out);
 }
 
+/* Companion to the mini-bar rule above (F-088). While the in-page Audio
+   Edition panel is on screen the theme button sits directly on the −15
+   control at phone widths, which is where the founder found it. Fade it out
+   for the moment the panel is readable; it returns as soon as the panel
+   scrolls away. Desktop has room for both, so this is mobile-only. */
+@media (max-width: 767px) {
+  :root[data-narration-panel='true'] .reader-theme-trigger {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--motion-base, 200ms) var(--motion-ease, ease-out);
+  }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  :root[data-narration-panel='true'] .reader-theme-trigger {
+    transition: none;
+  }
+}
+
 :root[data-narration-bar='true'] .devotional-chat-launcher {
   transform: translateY(calc(-1 * var(--narration-bar-h, 3.6rem)));
   transition: transform var(--motion-base, 200ms) var(--motion-ease, ease-out);
