@@ -8,7 +8,6 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Skeleton from '@/components/ui/Skeleton'
 import DevotionalActions from '@/components/devotional/DevotionalActions'
-import DevotionalFolio from '@/components/devotional/DevotionalFolio'
 import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
 import DevotionalRhythm, {
   type RhythmImage,
@@ -266,10 +265,10 @@ export default function DevotionalPageClient({
   const audioSegments = useMemo(() => {
     if (!devotional) return []
     if (modules && modules.length > 0) {
-      return buildModuleSegments(devotional.title, modules)
+      return buildModuleSegments(devotional.title, modules, devotional.subtitle)
     }
     if (panels && panels.length > 0) {
-      return buildPanelSegments(devotional.title, panels)
+      return buildPanelSegments(devotional.title, panels, devotional.subtitle)
     }
     return []
   }, [devotional, modules, panels])
@@ -462,93 +461,12 @@ export default function DevotionalPageClient({
         <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
 
         <section className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
-          <Breadcrumbs
-            className="devotional-shell-breadcrumb mb-7"
-            items={[
-              { label: 'HOME', href: '/' },
-              { label: parentLabel, href: parentRoute },
-              ...(seriesSlug
-                ? [
-                    {
-                      label: (
-                        SERIES_DATA[seriesSlug]?.title || 'SERIES'
-                      ).toUpperCase(),
-                      href: `${seriesRoutePrefix}/${seriesSlug}`,
-                    },
-                  ]
-                : []),
-              { label: (devotional.title || 'DEVOTIONAL').toUpperCase() },
-            ]}
-          />
-
-          {/* R32: substack devotionals show the original article's
-              header image directly under the breadcrumbs. R35:
-              prefer the locally-cached copy in
-              public/images/substack-cache/<hash>.<ext> over the
-              substack S3 hot-link so LCP isn't tied to substack's
-              edge. */}
-          {(SUBSTACK_SOURCES[slug]?.substackImageLocal ||
-            SUBSTACK_SOURCES[slug]?.substackImage) && (
-            <figure className="devotional-substack-banner mb-7">
-              <img
-                src={
-                  SUBSTACK_SOURCES[slug]!.substackImageLocal ||
-                  SUBSTACK_SOURCES[slug]!.substackImage!
-                }
-                alt={`Original cover image: ${devotional.title}`}
-                loading="eager"
-                className="w-full h-auto"
-              />
-            </figure>
-          )}
-
-          {/* F-083 page-cleanup 2026-07-27 (founder): this header used to
-              render scripture chip + DAY N OF M + h1 + teaser — all of it
-              duplicated by the folio, the headline hero, and the first
-              scripture module. Slimmed to the action row only. */}
-          {/* Founder direction 2026-07-28: unboxed. A bordered rectangle here
-              added a third stacked slab above the headline; these are two quiet
-              text links, not a panel. */}
-          <header className="devotional-shell-block mb-8 px-0 py-2">
-            {/* R37: action row aligned on baseline. ShareButton
-                renders with an SVG icon that breaks items-center
-                alignment with plain text links. items-baseline +
-                a uniform leading-none on each action keeps all
-                three buttons sharing the same text baseline. */}
-            <div className="devotional-action-row flex flex-wrap items-baseline gap-x-5 gap-y-2">
-              <Link
-                href={
-                  seriesSlug
-                    ? `${seriesRoutePrefix}/${seriesSlug}`
-                    : parentRoute
-                }
-                className="text-label vw-small link-highlight leading-none"
-              >
-                BACK TO SERIES
-              </Link>
-              <ShareButton
-                title={devotional.title}
-                text={`${devotional.title} — Euangelion`}
-                className="leading-none"
-              />
-              {SUBSTACK_SOURCES[slug]?.substackUrl && (
-                <a
-                  href={SUBSTACK_SOURCES[slug]!.substackUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-label vw-small link-highlight leading-none"
-                >
-                  READ ON SUBSTACK ↗
-                </a>
-              )}
-            </div>
-          </header>
-
-          <DevotionalActions
-            devotionalSlug={slug}
-            seriesSlug={seriesSlug}
-            redirectPath={`${devotionalRoutePrefix}/${slug}`}
-          />
+          {/* Founder direction 2026-08-14: nothing appears above the
+              devotional's title. Removed from here — breadcrumbs (the title
+              repeated its own last crumb), and the Substack cover banner
+              (imported article headers are being replaced by library
+              artwork). The action rows below moved to the end of the reading;
+              the folio, which carried the church-year line, is gone. */}
 
           {/* Audit 2026-05-14: the day-nav pill now runs at every
               breakpoint. The 260px sidebar that used to occupy the
@@ -746,26 +664,21 @@ export default function DevotionalPageClient({
                 <>
                   <DevotionalStickiesLayer devotionalSlug={slug} />
 
-                  {/* Audit 2026-05-13: editorial broadsheet folio strip.
-                      Sits above the title. Scale back: delete this block. */}
-                  {seriesSlug && SERIES_DATA[seriesSlug] && (
-                    <DevotionalFolio
-                      seriesTitle={SERIES_DATA[seriesSlug].title}
-                      dayNumber={dayIndex + 1}
-                      totalDays={seriesDays?.length}
-                    />
-                  )}
+                  {/* Founder direction 2026-08-14: the folio strip that sat
+                      here is gone. It was the last thing standing above the
+                      title, and it carried <ChurchYearOverline> onto every
+                      devotional — which belongs on the home page, not in a
+                      reading. Day position now rides the meta line below. */}
 
                   {/* Audit 2026-05-13: homepage-style headline hero. Mirrors
                       the featured-devotional 2/3-image + 1/3-text layout
                       at the top of every devotional page. Scale back:
                       delete this block. */}
                   {/* F-083 page-cleanup 2026-07-27 (founder): THE single
-                      hero + title render. The duplicate title in the legacy
-                      header above and the rhythm layer's second copy of the
-                      series hero are both removed; eyebrow/scripture are
-                      omitted (folio above + first scripture module below
-                      already carry them). */}
+                      hero + title render. */}
+                  {/* 2026-08-14: the day's teaser now runs under the title as
+                      the dek, and the scripture reference points at what the
+                      reading is anchored in. Both render after the title. */}
                   {devotional && (
                     <DevotionalHeadline
                       imageSrc={
@@ -773,6 +686,8 @@ export default function DevotionalPageClient({
                       }
                       imageAlt={`Illustration accompanying ${devotional.title}`}
                       title={devotional.title}
+                      dek={devotional.teaser ?? undefined}
+                      scripture={devotional.scriptureReference ?? undefined}
                     />
                   )}
 
@@ -891,6 +806,44 @@ export default function DevotionalPageClient({
                       modules?.find((m) => m.type === 'scripture')
                         ?.translation ?? undefined
                     }
+                  />
+
+                  {/* Founder direction 2026-08-14: these are the action rows
+                      that used to stack above the title. They are still
+                      needed — they just belong after the reading, where a
+                      reader who has finished looks for what to do next. */}
+                  <div className="devotional-action-row mt-8 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+                    <Link
+                      href={
+                        seriesSlug
+                          ? `${seriesRoutePrefix}/${seriesSlug}`
+                          : parentRoute
+                      }
+                      className="text-label vw-small link-highlight leading-none"
+                    >
+                      BACK TO SERIES
+                    </Link>
+                    <ShareButton
+                      title={devotional.title}
+                      text={`${devotional.title} — Euangelion`}
+                      className="leading-none"
+                    />
+                    {SUBSTACK_SOURCES[slug]?.substackUrl && (
+                      <a
+                        href={SUBSTACK_SOURCES[slug]!.substackUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-label vw-small link-highlight leading-none"
+                      >
+                        READ ON SUBSTACK ↗
+                      </a>
+                    )}
+                  </div>
+
+                  <DevotionalActions
+                    devotionalSlug={slug}
+                    seriesSlug={seriesSlug}
+                    redirectPath={`${devotionalRoutePrefix}/${slug}`}
                   />
 
                   <section

@@ -868,10 +868,18 @@ features:
     methodology_refs:
       - M00
   - id: F-087
-    title: Looking at the Sun — commissioned single reading (healing, patience, rest)
-    slug: looking-at-the-sun-reading
+    title: Looking at the Sun — 7-day commissioned series (healing, patience, rest)
+    slug: looking-at-the-sun-series
     baseline_score: 0
     status: wip
     prd: docs/feature-prds/F-087.md
+    methodology_refs:
+      - M00
+  - id: F-088
+    title: Reader declutter — nothing above the devotional title
+    slug: reader-declutter-title-first
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-088.md
     methodology_refs:
       - M00

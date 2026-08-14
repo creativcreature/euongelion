@@ -7539,8 +7539,12 @@ html.reduce-motion *::after {
   }
   .devotional-headline-art {
     border-right: 0;
-    border-bottom: var(--mock-stroke, 1.5px) solid
-      var(--mock-line, currentColor);
+    /* Founder direction 2026-08-14: nothing above the title. Stacked, the art
+       would otherwise sit on top of it, so it is ordered after the text — and
+       the rule that divides them moves to the art's top edge to match. */
+    order: 2;
+    border-bottom: 0;
+    border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
     aspect-ratio: 1408 / 768;
     min-height: 0;
   }

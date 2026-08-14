@@ -324,10 +324,14 @@ export default function NarrationPlayer({
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* 2026-08-14: five controls in a non-wrapping row collapsed at 375px
+            — LISTEN and CHAPTERS broke mid-word and the buttons overlapped.
+            The row wraps now (same idiom as the header row above), and each
+            control keeps its label on one line. */}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
           <button
             type="button"
-            className="narration-step text-label vw-small text-secondary"
+            className="narration-step text-label vw-small text-secondary whitespace-nowrap"
             onClick={() => skip(-SKIP_SECONDS)}
             aria-label={`Back ${SKIP_SECONDS} seconds`}
           >
@@ -336,7 +340,7 @@ export default function NarrationPlayer({
 
           <button
             type="button"
-            className="narration-toggle cta-major text-label vw-small px-5 py-2"
+            className="narration-toggle cta-major text-label vw-small px-5 py-2 whitespace-nowrap"
             onClick={toggle}
             aria-pressed={playing}
           >
@@ -345,7 +349,7 @@ export default function NarrationPlayer({
 
           <button
             type="button"
-            className="narration-step text-label vw-small text-secondary"
+            className="narration-step text-label vw-small text-secondary whitespace-nowrap"
             onClick={() => skip(SKIP_SECONDS)}
             aria-label={`Forward ${SKIP_SECONDS} seconds`}
           >
@@ -355,7 +359,7 @@ export default function NarrationPlayer({
           {!!track.chapters?.length && (
             <button
               type="button"
-              className="narration-step text-label vw-small text-secondary ml-auto"
+              className="narration-step text-label vw-small text-secondary whitespace-nowrap ml-auto"
               onClick={() => setChaptersOpen(true)}
               aria-haspopup="dialog"
               aria-label={`Chapters — ${track.chapters.length} sections`}
@@ -366,7 +370,7 @@ export default function NarrationPlayer({
 
           <button
             type="button"
-            className={`narration-step text-label vw-small text-muted${
+            className={`narration-step text-label vw-small text-muted whitespace-nowrap${
               track.chapters?.length ? '' : ' ml-auto'
             }`}
             onClick={cycleSpeed}

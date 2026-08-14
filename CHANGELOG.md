@@ -5,90 +5,155 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
-## CONTENT — "Looking at the Sun": a commissioned single reading on healing, patience and rest (2026-08-14)
+## READER — nothing above the devotional title (2026-08-14)
+
+Founder, reading "Between the Pieces" (`he-cannot-deny-himself-day-5`):
+_"Nothing above the individual devotional title should appear on page — all
+information above where this first appears on page is completely bogging down
+the reading experience."_
+
+He was right, and the measurement was worse than the complaint. Screenshotting
+the running site at 1280x900, **the title never appeared on the first screen at
+all**. Six blocks came first: masthead, breadcrumbs, a Substack cover banner,
+an action row, START/SAVE, the folio strip, and the church-year line. The page
+measured 25,118px on desktop and 33,100px on mobile.
+
+**Removed** from above the title: `Breadcrumbs` (whose last crumb repeated the
+title), the Substack cover banner, and `DevotionalFolio` — the folio being the
+vehicle that carried `ChurchYearOverline` onto every devotional.
+
+**Moved, not deleted**: the action row (back to series / share / substack) and
+`DevotionalActions` (start / save) now follow the reading. The founder was
+explicit that the links are needed and it was their position that was wrong.
+
+**Reordered**: `DevotionalHeadline` had been rendering the scripture line
+_above_ the title. Order is now title → dek → scripture. On mobile the art div
+precedes the text in DOM order, so the plate stacked above the title too; one
+`order: 2` in the existing `max-width: 900px` block places it after, with the
+dividing rule moved to the art's top edge.
+
+**Added**: the day's teaser as the standfirst, through
+`.devotional-headline-dek` — a class sitting in `globals.css` since the
+2026-05-13 audit that no prop had ever fed. The summary the founder asked for
+was already in the design system, just unused.
+
+**A rejected first attempt is part of this entry.** The assistant initially
+proposed a bespoke reader — its own header, type scale, spacing and colour —
+and the founder rejected it outright: _"Your proposal ruins the actual site. I
+dint ask you to fully restyle the site, I asked you to remove items and
+reorder."_ That was correct. What shipped uses the existing components,
+classes and type; the only CSS added is a single `order` and a border-side
+flip. SA-037 records the constraint so it does not recur.
+
+**Also fixed**: `NarrationPlayer`'s control row was a non-wrapping flex row of
+five controls. At 375px "LISTEN" and "CHAPTERS" broke mid-word and the buttons
+overlapped. It wraps now, labels stay on one line, targets remain 44px.
+
+Verified by DOM probe rather than inspection: at 375px the title sits at y=172
+and the plate at y=403, and every element above the title is masthead. Worth
+recording — the CSS appeared not to work on first run; the dev server was
+serving a stale `globals.css` chunk. Restarting it was the fix.
+
+**Still open**: the church-year line is removed from readings but not yet
+placed on the home page; `/daily-bread`'s `CuratedActiveView` keeps its own
+`ChurchYearCard` and its OPEN FULL READER step; the fixed reader-theme trigger
+can still overlay the in-page narration controls (it already lifts clear of the
+mini bar, but not of the panel); series-level save and the reader
+consolidation are unstarted. — SA-037 (F-088)
+
+---
+
+## CONTENT — "Looking at the Sun": a 7-day commissioned series on healing, patience and rest (2026-08-14)
 
 Commissioned in conversation on 13 August: _"I did want to actually make you a
 devotional… I'll have something for you. I want to say it'll be ready for you on
 Monday."_ She asked for **healing** and **being patient**; the founder added
 **rest**, and then spoke a five-minute reading on the spot. This ships what he
-said, written down at full production quality.
+said, at full length.
 
-**The transcript is the spine, not a source.** Every substantive move in the
-reading traces to something actually said in that conversation — the wilderness
-as instruction rather than punishment, rest and grace, the Martha problem,
-_"pay attention to what you pay attention to,"_ running the race with endurance,
-and the sun image the reading is named for. None of it was taken on trust:
-scripture is corpus-verbatim, every lexical claim is checked against Strong's,
-Thayer's and BDB, and both quoted authors are checked against their primary
-texts. The person it was written for appears nowhere in it — it stands alone for
-any reader.
+**A correction is part of this entry.** It went out first as a _single reading_.
+That was the assistant's inference from the phrasing of the request, and it was
+wrong — `/devo-go` lists day count among its required inputs and says to lock the
+week shape before writing anything. That gate was skipped, and the choice was
+then written into `production-decisions.yaml` as though it were policy. The
+founder rejected it the same day. The reasoning did not survive contact either:
+the commitment was for Monday, and the correction came on Friday. SA-036 now
+records the reversal rather than the original claim, and the standing ruling is
+that **the default is seven days and day count is never inferred**. Rebuilt
+clean-sheet, days 1-7 in order, in one pass (traps.md §19). The research and
+source pack carried over intact, so the rebuild cost writing rather than
+verification.
 
-**One reading, not seven** (SA-036(1)). What was promised was a single reading by
-a named date. `/devo-go` ran end to end — verified research, brief, source pack,
-`two-minute-open-v2`, editorial pass, imagery accuracy gate, narration, gates,
-Workers preview — against one day registered as a one-entry series. The chiastic
-seven-day shape is the shape of a _series_, not a precondition for publishing.
+**The week.** Monday, Isaiah 40 — the promise is addressed to people already
+spent, and the chapter first tells them they are grass, which is the removal of
+the alternative rather than cruelty. Tuesday, Hebrews 12:1 — two problems in one
+clause, and most readings collapse them. Wednesday, 1 Kings 19 — the pivot.
+Thursday, Luke 10 — Martha. Friday, Hebrews 12:2 — the gaze. Saturday gathers.
+Sunday says almost nothing. A Monday start lands the sabbath on Sunday.
 
-**The teaching payload is three Greek words that describe one problem.** The
-weight in Hebrews 12:1 is ὄγκος (_ogkos_) — bulk, mass, named separately from
-the sin beside it. The thing that "so easily besets" is εὐπερίστατος
-(_euperistatos_), a hapax legomenon Thayer's reconstructs as "skilfully
-surrounding… to prevent or retard running" and notes is not found anywhere else.
-Martha's condition in Luke 10:40 is περισπάω (_perispaō_), "to drag all around,"
-one New Testament occurrence, in the **imperfect passive** — done to her, not
-chosen by her. All three are statements about geometry: surrounded, encircled,
-pulled from every direction. The answer given is ἀφοράω (_aphoraō_), "to look
-away from all else at one object," a present participle in Hebrews 12:2 and so a
-continuing look. That is the founder's sun image, arrived at lexically.
+**The teaching payload is lexical, and it is where the founder's own image turns
+out to live.** Three Greek words describe one geometry: **ogkos**, bulk and mass,
+named separately from the sin beside it — weight is not sin, which is why so many
+exhausted people are trying to confess their way out of a schedule.
+**euperistatos**, which Thayer's notes is "not found elsewhere" in surviving
+Greek, describing something that stands all the way around a runner. And
+**perispaō** in Luke 10:40, one occurrence, **imperfect passive** — Martha was
+being dragged around; it was done to her, not chosen by her. All three are
+answered by **aphoraō**, "to look away from all else at one object," a present
+participle. Surrounded on every side, and the instruction is not to fight every
+side but to look at one thing. That is the sun image, arrived at through the
+lexicon.
 
-**Where it resolves.** The risk in a brief like this is writing a try-harder
-reading to someone who asked for rest. Isaiah 40:31 puts the running _after_ the
-waiting. Elijah gets two meals and two sleeps under the broom tree before God
-says one word to him, and the reason attached is the length of what is still
-ahead. Milton, blind at forty-three, answers his own day-labour complaint with
-"God doth not need either man's work or his own gifts." Rest is what the race is
-run on, not the prize for finishing it.
+**Where it resolves.** The risk in this brief was writing a try-harder week to
+someone who asked for rest. Isaiah 40:31 puts the running _after_ the waiting,
+and the verb behind "renew" — **chalaph** — has a root sense closer to passing on
+and changing than to topping up, so what is promised is not the old strength
+retrieved. Elijah gets two meals and two sleeps under the broom tree before God
+says one word to him, with the reason stated: _or the journey will be too much
+for you_. Rest is what the race is run on, not the prize for finishing it.
 
 **Verification, in full.**
 
-- Scripture pulled from `public/bibles/` only; KJV casing preserved ("the Lord",
-  not "the LORD"). KJV chosen for both anchors on purpose: it renders ὑπομονή
-  (_hypomonē_) as **patience** — the word she asked for — where modern versions
-  print _endurance_, and they are the same Greek word.
-- Milton verified against the 1673 _Poems_ text and the _Second Defence_ (1654,
-  Fellowes's translation). Composition date given as the contested 1652–1655
-  range; the familiar title "On His Blindness" flagged as an eighteenth-century
-  editor's, not Milton's.
-- Pascal verified against the French of _Pensées_ Lafuma 136. The viral English
-  — "sit quietly in a room alone" — is **rejected as a quotation** and named as a
-  paraphrase: it adds a word Pascal did not write.
-- The `qavah` twisted-cord etymology is carried with the same "perhaps" BDB
-  prints, not asserted.
-- Video oEmbed-verified on the official BibleProject channel and embed-checked.
+- Scripture pulled from `public/bibles/` only; KJV casing preserved ("the Lord").
+  KJV chosen for the Hebrews anchors on purpose: it renders **hypomonē** as
+  _patience_ — the word she asked for — where modern versions print _endurance_,
+  and they are the same Greek word.
+- **Amy Carmichael** (day 1) verified against the scanned text of _Rose from
+  Brier_ (1933), written from the bed she never left after her fall of 24 October
+  1931 — "from the ill to the ill… a rose plucked straight from a brier." The
+  widely quoted "fellow-toad under the harrow" line is from the preface to _Gold
+  by Moonlight_ (1935) and is routinely misattributed to this book; the primary
+  wording is used instead.
+- **Adoniram Judson** (day 2) kept to the dated skeleton — Rangoon 14 July 1813,
+  first convert 27 June 1819, imprisoned 8 June 1824 to 4 November 1825, Ann died
+  24 October 1826 — because the story attracts embellishment.
+- **Spurgeon** (day 3) verbatim from _Lectures to My Students_ XI, "The
+  Minister's Fainting Fits," including the prescription that a walk in the wind
+  "would not give grace to the soul, but it would yield oxygen to the body."
+- **Brother Lawrence** (day 4) verbatim, with the caveat that the conversations
+  are Joseph de Beaufort's record rather than Lawrence's own pen.
+- **Milton** (day 5) against the 1673 _Poems_ and the _Second Defence_, with the
+  contested 1652-1655 date range kept and "On His Blindness" flagged as a later
+  editor's title.
+- **Pascal** against the French; the viral English is rejected as a paraphrase.
+- The _qavah_ etymology carries BDB's own "perhaps."
+- Authorship debates stated rather than smoothed: Hebrews is anonymous, and
+  Isaiah 40-66 gets both the traditional and the modern reading.
 
-**Imagery: nothing generated.** All three plates came from the existing library
-per the manifest-first rule — hero card, one bleed inline, one narrow inline. The
-accuracy gate (SA-032) extends to captions here (SA-036(4)): the broom tree of
-1 Kings 19 is a low desert shrub and the chosen plate renders a full canopy, so
-the caption says so rather than asserting a detail the picture contradicts.
+**A video re-upload was caught and rejected.** `iVwauTiyFjM` carries
+BibleProject's exact title and content, and oEmbed reports the channel as "Starry
+Night Elf." The official Isaiah Part 2 id is `_TzdEPuqgQg`. All four videos used
+are oEmbed-verified on `@bibleproject` and embed-checked.
 
-**Not featured** (SA-036(3)). It enters `SERIES_DATA`, `NEW_SERIES_ORDER` and one
-editorially-appropriate `/series` rail ("When You're Overwhelmed").
-`FEATURED_SERIES` and the homepage `HOMEPAGE_TODAY` slot are untouched — the
-most-recent-series rule in SA-031(1) is scoped to catalog series, and a
-commissioned reading is reached by direct link.
+**Imagery: nothing generated.** All nine plates came from the existing library
+per the manifest-first rule. The accuracy gate now extends to captions
+(SA-036(5)): the _rothem_ of 1 Kings 19 is a low desert shrub and the chosen
+plate renders a full canopy, so the caption says so rather than asserting a
+detail the picture contradicts.
 
-**Narrated, and checked rather than assumed.** 27.6 minutes in the canonical
-`am_michael` voice, 23 chapters built from real render timings. Five segments
-scored under the automated clarity gate; all five were run down rather than
-waved through. Two are bare Greek/Hebrew transliterations and one is Pascal's
-French — cases SA-035(5) already establishes the gate cannot judge, because
-Whisper was never trained on them. One missed by a thousandth. The real outlier
-scored 0.577, so the passage was decoded back out of the **shipped** m4a and
-re-transcribed: 0.993, 434 words in and 434 words out, verbatim. Nothing was
-lost; Whisper had collapsed a paragraph that repeats the phrase "pay attention."
-`build_chapters.py` also emitted all 521 devotionals with none skipped, and it
-refuses any reading whose re-extraction disagrees with what was spoken.
+**Not featured** (SA-036(4)). It enters `SERIES_DATA`, `NEW_SERIES_ORDER` and the
+"When You're Overwhelmed" rail. `FEATURED_SERIES` and the homepage
+`HOMEPAGE_TODAY` slot are untouched.
 
 Decision: **SA-036**. Feature: **F-087**.
 

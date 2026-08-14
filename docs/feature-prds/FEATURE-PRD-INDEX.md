@@ -90,4 +90,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-084 | Platform          | Wake-Up mount retirement + cleanup pass 2           | 0/10     | wip    | [F-084.md](./F-084.md) |
 | F-085 | Content           | He Cannot Deny Himself 7-day series (steadfastness) | 0/10     | wip    | [F-085.md](./F-085.md) |
 | F-086 | Platform          | Pre-rendered narration (Audio Edition v2)           | 0/10     | wip    | [F-086.md](./F-086.md) |
-| F-087 | Content           | Looking at the Sun — commissioned single reading    | 0/10     | wip    | [F-087.md](./F-087.md) |
+| F-087 | Content           | Looking at the Sun 7-day series (healing/rest)      | 0/10     | wip    | [F-087.md](./F-087.md) |
+| F-088 | Platform          | Reader declutter — title first, no page furniture   | 0/10     | wip    | [F-088.md](./F-088.md) |

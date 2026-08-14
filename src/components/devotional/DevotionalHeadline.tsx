@@ -23,6 +23,13 @@ interface DevotionalHeadlineProps {
   scripture?: string
   /** Day-level title — the headline */
   title: string
+  /**
+   * Standfirst under the title — the day's teaser. `.devotional-headline-dek`
+   * has been in globals.css since the 2026-05-13 audit but no prop ever fed
+   * it; founder direction 2026-08-14 is that the title is followed by a short
+   * summary that points at the scripture.
+   */
+  dek?: string
 }
 
 export default function DevotionalHeadline({
@@ -31,6 +38,7 @@ export default function DevotionalHeadline({
   eyebrow,
   scripture,
   title,
+  dek,
 }: DevotionalHeadlineProps) {
   return (
     <section
@@ -48,12 +56,16 @@ export default function DevotionalHeadline({
           />
         </div>
       )}
+      {/* Founder direction 2026-08-14: nothing precedes the title. The eyebrow
+          and scripture line used to sit above it; both now follow it, so the
+          first thing read on the page is the devotional's own name. */}
       <div className="devotional-headline-main">
-        {eyebrow && <p className="devotional-headline-eyebrow">{eyebrow}</p>}
+        <h1 className="devotional-headline-title">{typographer(title)}</h1>
+        {dek && <p className="devotional-headline-dek">{typographer(dek)}</p>}
         {scripture && (
           <p className="devotional-headline-scripture">{scripture}</p>
         )}
-        <h1 className="devotional-headline-title">{typographer(title)}</h1>
+        {eyebrow && <p className="devotional-headline-eyebrow">{eyebrow}</p>}
       </div>
     </section>
   )
