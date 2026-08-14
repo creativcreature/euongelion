@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READER — highlighting works without an account (2026-08-14)
+
+Founder, after being told the 401 was SA-018 behaving as designed: _"I was
+signed in, but should work regardless, just not save to an account without an
+account."_ Registered as **SA-038**, amending SA-018 for highlights only.
+
+The mark is now painted from the selection the moment you press Highlight, and
+never waits on the network. An account decides whether a highlight is **kept**,
+not whether it appears. Signed-out readers get the highlight plus "Sign in to
+keep this" rather than being thrown out to a sign-in screen mid-reading.
+
+That also explains the original report. Being signed in was not the deciding
+factor — `applyHighlightMark` ran only after `response.ok`, so _any_ failure in
+that path produced no mark and no message. Three silent returns lived here: a
+missing range (which the scroll handler clears in ordinary use), a non-auth
+error, and a mark wrapping an empty range that rendered invisibly. All three
+now report on the button.
+
+Verified end-to-end in a real browser, signed out: the API returned 401 and the
+highlight still painted at `rgba(246, 223, 128, 0.54)`.
+
+Notes and stickies remain sign-in-gated; nothing anonymous is written to the
+database. — SA-038 (F-088)
+
 ## READER — day quick-links, and highlights stop failing silently (2026-08-14)
 
 **Day quick-links.** Founder: _"there should be links to all the days of the

@@ -118,7 +118,7 @@ function applyHighlightMark(params: {
   range: Range
   color: HighlightColor
   id?: string | null
-}) {
+}): HTMLElement | null {
   const mark = document.createElement('mark')
   mark.className = `reader-highlight reader-highlight--${params.color}`
   mark.dataset.highlightColor = params.color
@@ -129,10 +129,16 @@ function applyHighlightMark(params: {
   try {
     params.range.surroundContents(mark)
   } catch {
-    const fragment = params.range.extractContents()
-    mark.appendChild(fragment)
-    params.range.insertNode(mark)
+    try {
+      const fragment = params.range.extractContents()
+      mark.appendChild(fragment)
+      params.range.insertNode(mark)
+    } catch {
+      return null
+    }
   }
+  // A mark that wrapped nothing is invisible and worse than no mark at all.
+  return mark.textContent ? mark : null
 }
 
 export default function TextHighlightTrigger({
@@ -293,9 +299,23 @@ export default function TextHighlightTrigger({
     const range = selectionRangeRef.current?.cloneRange() || null
     const selectedText = selectionTextRef.current || tooltip.text
     if (!range || !selectedText) {
-      setTooltip(null)
+      // Used to close the toolbar and say nothing. The stored range is cleared
+      // by the scroll handler, so this fires in ordinary use.
+      setFailed('Select the text again')
       return
     }
+
+    // Founder ruling 2026-08-14: highlighting works with or without an account
+    // — an account only decides whether it is *kept*. So the mark is painted
+    // first, from the selection, and never waits on the network. Previously it
+    // was applied only after response.ok, which meant any failure produced no
+    // highlight and no message at all.
+    const mark = applyHighlightMark({ range, color: selectedColor, id: null })
+    if (!mark) {
+      setFailed("Couldn't highlight that selection")
+      return
+    }
+    window.getSelection()?.removeAllRanges()
 
     setSaving(true)
     setSaved(false)
@@ -323,27 +343,27 @@ export default function TextHighlightTrigger({
         annotation?: { id?: string }
       }
       if (!response.ok) {
-        if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
-          const redirect = `${window.location.pathname}${window.location.search}`
-          window.location.assign(
-            `/auth/sign-in?redirect=${encodeURIComponent(redirect)}`,
-          )
-          return
-        }
+        // The highlight is already on the page and stays there. Signed-out
+        // readers are told it won't be kept rather than being thrown out to
+        // a sign-in screen mid-reading; SA-018 still governs what persists.
         setFailed(
-          response.status >= 500
-            ? "Couldn't save — try again"
-            : "Couldn't save that highlight",
+          payload.code === 'AUTH_REQUIRED_SAVE_STATE'
+            ? 'Sign in to keep this'
+            : "Highlighted — couldn't save",
         )
+        setTimeout(() => {
+          setFailed(null)
+          setTooltip(null)
+          selectionRangeRef.current = null
+          selectionTextRef.current = ''
+        }, 1800)
         return
       }
       setFailed(null)
 
-      applyHighlightMark({
-        range,
-        color: selectedColor,
-        id: payload.annotation?.id || null,
-      })
+      if (payload.annotation?.id) {
+        mark.dataset.highlightId = payload.annotation.id
+      }
       setSaved(true)
       window.dispatchEvent(new CustomEvent('libraryUpdated'))
       setTimeout(() => {
