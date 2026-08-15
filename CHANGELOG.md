@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## CHAT — it scrolls now, and the composer stays on screen (2026-08-15)
+
+Founder: _"the chat needs to have its seperate scroll wheel, as I cannot access
+the content the chat wrote out as its below my visibility."_
+
+The message list already carried `flex-1 overflow-y-auto`, which reads as
+correct. It wasn't. A flex child inherits `min-height: auto` and refuses to
+shrink below its content, so the list **grew to fit the reply** and
+`overflow-y` never engaged — everything under it, the composer included, was
+pushed past the bottom of the window. No scrollbar appeared because there was
+nothing to scroll; the container had simply expanded.
+
+Measured with 3000px injected, before and after:
+
+```
+before   min-height auto   clientH 3145   scrollH 3145   scrolls false   composer hidden
+after    min-height 0px    clientH  541   scrollH 3145   scrolls true    composer visible
+```
+
+`min-h-0` now sits on the whole chain — panel grid, conversation column and the
+scroller. Fixing only the scroller does nothing: an unconstrained ancestor
+passes its full content height down, so the child never gets a bounded box to
+scroll inside. `__tests__/chat-scroll-contract.test.ts` asserts all three and
+fails if a future `flex-1 overflow-y-auto` is added without the guard.
+
+Verified by reading `clientHeight` / `scrollHeight` / composer position rather
+than by screenshot — a screenshot can't tell "scrolled to the top of a long
+list" from "container grew and clipped". Same result at 375×812.
+
+**Found while testing, not fixed:** study chat takes **18–19 seconds** per reply
+against the 30s Workers wall-clock ceiling (production, measured twice: 18.0s
+and 19.3s), and a browser request returned **504** during this work. That is
+exactly the "seems to work" symptom — it succeeds until it doesn't. The likely
+contributor is `getCanonicalRagIndex()` loading the full 15 MB
+`reference-index.json` on cold start; CLAUDE.md documents a 3.2 MB
+`reference-index-slim.json` for precisely this reason and that file does not
+exist in the repo. — SA-048 (F-093)
+
 ## READER — Remove you can reach, and a chat button you can see (2026-08-15)
 
 Founder, on the highlight work: _"it works but i need to be able to remove the
@@ -15,7 +53,7 @@ mode."_ Registered as **SA-047**.
 **Remove worked. It was unreachable.** Verified end-to-end on production
 including persistence — create, click, Remove, reload, and the mark stays gone
 with its localStorage row cleared. The defect was positional: the toolbar always
-rendered *above* the passage, clamped to `y >= 10` and translated up by its own
+rendered _above_ the passage, clamped to `y >= 10` and translated up by its own
 height, so a highlight near the top of the window put it off the top of the
 screen or underneath the sticky masthead. Its controls could not be clicked at
 all. It now flips below the passage when there is less than 140px above. A

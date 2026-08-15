@@ -33,9 +33,9 @@ const uniqueIds = Array.from(new Set(ids)).sort()
 // so whoever hits it next pays for someone else's omission.
 //
 // 92: F-092 (editable highlights).
-if (uniqueIds.length !== 92) {
+if (uniqueIds.length !== 93) {
   fail(
-    `Expected 92 feature IDs in registry, found ${uniqueIds.length}. ` +
+    `Expected 93 feature IDs in registry, found ${uniqueIds.length}. ` +
       `If you just added a PRD, bump this number in the same commit.`,
   )
 }

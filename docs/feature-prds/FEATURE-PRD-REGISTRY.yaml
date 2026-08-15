@@ -915,3 +915,11 @@ features:
     prd: docs/feature-prds/F-092.md
     methodology_refs:
       - M00
+  - id: F-093
+    title: The chat scrolls, and the composer stays on screen
+    slug: chat-scroll-and-pinned-composer
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-093.md
+    methodology_refs:
+      - M00
