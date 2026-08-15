@@ -2612,13 +2612,18 @@ html.reduce-motion *::after {
     line-height: 1.5;
   }
 
+  /* Founder direction 2026-08-15 (F-089): plain text selection — the state
+     BEFORE any highlighter colour is chosen — is white on the brand cobalt.
+     It previously resolved to a near-black navy derived from the text colour,
+     which on the cream page read as "the text went dark" rather than "the
+     text is selected". The highlighter's own colours are separate, below. */
   ::selection {
-    background: color-mix(in srgb, var(--color-text-primary) 70%, black 30%);
+    background: var(--color-cobalt, #1f2a8d);
     color: #fff;
   }
 
   ::-moz-selection {
-    background: color-mix(in srgb, var(--color-text-primary) 70%, black 30%);
+    background: var(--color-cobalt, #1f2a8d);
     color: #fff;
   }
 
@@ -3202,7 +3207,14 @@ html.reduce-motion *::after {
     background: #ceb6f4;
   }
 
+  /* Founder direction 2026-08-15 (F-089): the highlighter colours the page
+     like YouVersion — an opaque swatch you can actually see. They were
+     translucent (0.48-0.54) over a cream page, which composited to within a
+     few shades of the paper: the highlight WAS applied and simply could not
+     be seen, which read as the feature being broken. Ink stays dark here so
+     the text remains legible on the colour. */
   .reader-highlight {
+    color: #11182a;
     border-radius: 2px;
     padding: 0 0.02em;
     box-decoration-break: clone;
@@ -3210,23 +3222,23 @@ html.reduce-motion *::after {
   }
 
   .reader-highlight--yellow {
-    background: rgba(246, 223, 128, 0.54);
+    background: #f7dd6e;
   }
 
   .reader-highlight--blue {
-    background: rgba(158, 196, 255, 0.48);
+    background: #8fbcff;
   }
 
   .reader-highlight--green {
-    background: rgba(168, 220, 166, 0.52);
+    background: #94dc92;
   }
 
   .reader-highlight--pink {
-    background: rgba(239, 181, 204, 0.5);
+    background: #f3a8c6;
   }
 
   .reader-highlight--purple {
-    background: rgba(206, 182, 244, 0.5);
+    background: #c4a5f5;
   }
 
   .reader-highlight-snippet {
@@ -3262,23 +3274,23 @@ html.reduce-motion *::after {
   }
 
   .dark .reader-highlight--yellow {
-    background: rgba(246, 223, 128, 0.34);
+    background: rgba(246, 223, 128, 0.62);
   }
 
   .dark .reader-highlight--blue {
-    background: rgba(112, 160, 255, 0.34);
+    background: rgba(112, 160, 255, 0.62);
   }
 
   .dark .reader-highlight--green {
-    background: rgba(117, 199, 126, 0.34);
+    background: rgba(117, 199, 126, 0.62);
   }
 
   .dark .reader-highlight--pink {
-    background: rgba(236, 134, 188, 0.34);
+    background: rgba(236, 134, 188, 0.62);
   }
 
   .dark .reader-highlight--purple {
-    background: rgba(158, 128, 230, 0.34);
+    background: rgba(158, 128, 230, 0.62);
   }
 
   .dark .reader-highlight-snippet--yellow {

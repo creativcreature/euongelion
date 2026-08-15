@@ -883,3 +883,11 @@ features:
     prd: docs/feature-prds/F-088.md
     methodology_refs:
       - M00
+  - id: F-089
+    title: Study chat works in production; highlights you can actually see
+    slug: chat-workers-context-and-highlight-visibility
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-089.md
+    methodology_refs:
+      - M00

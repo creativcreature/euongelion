@@ -32,10 +32,12 @@ import {
   resolvePrincipalId,
 } from '@/lib/brain/usage-ledger'
 import {
+  devotionalToRagDocs,
   getCanonicalRagIndex,
   retrieveFromIndex,
   type RagDoc,
 } from '@/lib/brain/rag-index'
+import { fetchTodayDevotional } from '@/lib/today-devotional'
 import type {
   BrainProviderId,
   ChatRetrievalMode,
@@ -281,11 +283,23 @@ function docsToSourceCards(docs: RagDoc[]): SourceCard[] {
 
 async function findDevotionalDocs(slug: string): Promise<RagDoc[]> {
   const index = await getCanonicalRagIndex(false)
-  return index.docs.filter(
+  const fromIndex = index.docs.filter(
     (doc) =>
       doc.sourceType === 'devotional' &&
       typeof doc.metadata?.slug === 'string' &&
       doc.metadata.slug === slug,
+  )
+  if (fromIndex.length > 0) return fromIndex
+
+  // Workers has no filesystem, so the index carries no devotional docs there
+  // and study chat 400'd on every devotional page. Fall back to the same
+  // Workers-safe loader the reader itself uses — fs when it exists, the
+  // published /devotionals/<slug>.json when it doesn't. F-089.
+  const devotional = await fetchTodayDevotional(slug)
+  if (!devotional) return []
+  return devotionalToRagDocs(
+    slug,
+    devotional as unknown as Record<string, unknown>,
   )
 }
 

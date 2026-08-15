@@ -38,7 +38,27 @@ function parseDevotionalFile(filePath: string): RagDoc[] {
   try {
     const raw = fs.readFileSync(filePath, 'utf8')
     const data = JSON.parse(raw) as Record<string, unknown>
-    const slug = path.basename(filePath, '.json')
+    return devotionalToRagDocs(path.basename(filePath, '.json'), data)
+  } catch {
+    return []
+  }
+}
+
+/**
+ * Turn one devotional into its chat RAG docs.
+ *
+ * Split out of parseDevotionalFile so it can run on a devotional that arrived
+ * over the network rather than off disk. Cloudflare Workers has no filesystem,
+ * so `buildDevotionalDocs()` returns [] there and study chat had NO devotional
+ * context in production — every request 400'd with "Devotional context is
+ * unavailable for this page". Reference docs already had a Workers fallback;
+ * devotional docs never did. F-089.
+ */
+export function devotionalToRagDocs(
+  slug: string,
+  data: Record<string, unknown>,
+): RagDoc[] {
+  try {
     const docs: RagDoc[] = []
 
     const title = collapseWhitespace(String(data.title || slug))

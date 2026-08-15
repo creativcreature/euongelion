@@ -94,6 +94,48 @@ now shows a scroll rather than an anachronistic codex.
 Placement per spec: series card 1024², day plates 1600w, q80→q48 for dense
 halftone. — SA-040 (F-087)
 
+## CHAT + HIGHLIGHTS — study chat was dead in production only (2026-08-15)
+
+Founder: _"We need to address the on page chat. It doesnt work at all."_ It
+didn't — and it never had, in production.
+
+`buildDevotionalDocs()` enumerates devotionals with `fs.readdirSync` on
+`public/devotionals`. **Cloudflare Workers has no filesystem.** So the RAG index
+carried zero devotional docs there, `hasDevotionalContext` was `false`, and
+every chat request 400'd with "Devotional context is unavailable for this page"
+before reaching a model. Reference docs already had a Workers fallback;
+devotional docs never got one.
+
+That asymmetry is the whole story: chat worked perfectly in `npm run dev`, which
+has a filesystem, and failed 100% in production. It could not be caught by
+testing in dev.
+
+`devotionalToRagDocs()` is split out of `parseDevotionalFile()` so the same
+doc-builder runs on a devotional fetched over the network, and
+`findDevotionalDocs()` falls back to `fetchTodayDevotional()` — the Workers-safe
+loader the reader itself already uses. Verified in **the Workers runtime**
+(`npm run preview`, workerd): HTTP 200, `hasDevotionalContext: true`, citing the
+day's own treaty/will argument and its pullquote. The same request against
+production returns 400.
+
+**Highlights: they were working and invisible.** Founder: _"the highlighting
+still doesnt work."_ After SA-038/SA-039 the mark painted reliably — but
+light-mode colours were translucent (`0.54`) over the `#f0ece6` cream page,
+compositing to `rgb(243, 229, 175)` against `rgb(240, 236, 230)` paper. A
+feature that leaves no visible trace is indistinguishable from a broken one.
+Highlighter colours are now opaque swatches with dark ink, YouVersion-style;
+dark mode lifts `0.34` → `0.62`.
+
+**Plain selection is now white on brand cobalt.** `::selection` derived its
+background from the text colour, so in light mode selecting text read as "the
+text went dark" rather than "the text is selected". Now `#1f2a8d` with white
+ink — deliberately distinct from every highlighter colour, so _selected_ and
+_highlighted_ can never be confused.
+
+Standing rule recorded in SA-042: any server code reading `public/` off disk is
+broken on Workers, and must be verified in `npm run preview`, never in dev.
+— SA-042 (F-089)
+
 ## LIBRARY — fix: the SERIES tab could not read a saved series (2026-08-14)
 
 A regression from the series-save change earlier today, found by auditing my own

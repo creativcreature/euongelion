@@ -92,3 +92,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-086 | Platform          | Pre-rendered narration (Audio Edition v2)           | 0/10     | wip    | [F-086.md](./F-086.md) |
 | F-087 | Content           | Looking at the Sun 7-day series (healing/rest)      | 0/10     | wip    | [F-087.md](./F-087.md) |
 | F-088 | Platform          | Reader declutter — title first, no page furniture   | 0/10     | wip    | [F-088.md](./F-088.md) |
+| F-089 | Platform          | Study chat in Workers + visible highlights          | 0/10     | wip    | [F-089.md](./F-089.md) |
