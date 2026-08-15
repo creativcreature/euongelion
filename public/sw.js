@@ -1,4 +1,8 @@
 // Euangelion Service Worker
+// R55 (F-092/SA-046): bumped to v71 — highlights became editable (click a mark
+// to recolour it, write a note on it, remove it). Reader client code, and the
+// reading routes are cache-first, so a returning reader on v70 keeps the old
+// bundle and sees none of it.
 // R52 (F-090/SA-043): bumped to v67 — the series page is a new client bundle
 // (library/bento/list + phrase search) and completion now advances the active
 // day. Reading routes are cache-first, so a returning reader on an older
@@ -61,7 +65,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v70'
+const CACHE_NAME = 'euangelion-v71'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

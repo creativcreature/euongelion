@@ -5,6 +5,49 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## HIGHLIGHTS — a highlight you can come back to (2026-08-15)
+
+Founder: _"the highlight feature doesnt work on desktop. I can highlight text,
+but not change colors or make notes etc. i am also signed in."_ Registered as
+**SA-046**.
+
+**The colours were never broken. There was no second act.** Reproduced on
+production: selecting text opens the toolbar, a swatch changes the active
+colour, and pressing Highlight paints the mark in it — all fine. But once a
+mark existed it was **inert**. Clicking it produced no toolbar, re-selecting it
+produced no toolbar, and a scan of every button in the reader returned an empty
+list — no note, edit or delete control anywhere. A highlight was frozen the
+instant it was made. Being signed in was incidental; the same was true signed
+out.
+
+`handleSelection` returns early for any selection anchored inside
+`.reader-highlight`. That guard correctly prevents nested highlights, and it
+also left no way back in.
+
+**The API needed nothing.** `/api/annotations` already had `PATCH` (style and
+body, by `annotationId`) and `DELETE`. This was a missing surface, not a missing
+feature, and nothing server-side changed.
+
+Clicking a highlight now reopens the same toolbar against it: the swatches
+recolour it in place, a note can be written on it, and it can be removed. The
+mark repaints immediately and reconciles after — SA-038's rule that the
+reader's action lands visibly whether or not the network does.
+
+Three decisions worth keeping. A note lives in `style.note`, not `body`, because
+`body` already carries the anchor text and hydration falls back to it, so a note
+stored there would be indistinguishable from its anchor on restore. A noted
+passage is dotted-underlined, so notes are findable by eye rather than by
+clicking every mark. And removing a highlight reinserts its child nodes and
+calls `normalize()`, so the words are byte-identical and the passage still
+selects as one run afterwards.
+
+Highlights made signed-out edit too, against localStorage — the same control
+must not behave differently depending on something the reader cannot see.
+
+Verified end-to-end in the Workers runtime, not just jsdom: create → click →
+recolour yellow→purple → write a note → remove, all six steps. 6 tests. Service
+worker v71. — SA-046 (F-092)
+
 ## DAILY BREAD — reads as a devotional, and leads the nav (2026-08-15)
 
 Founder: _"the daily bread reader menu item should appear directly to the right

@@ -154,16 +154,63 @@ function writeLocalHighlight(slug: string, entry: LocalHighlight) {
   }
 }
 
+/**
+ * Rewrite (or drop) one device-kept highlight, matched on its text.
+ *
+ * A highlight made without an account has no server id, so editing it has to
+ * be handled here or the reader would be able to recolour an account highlight
+ * and not a device one — the same control behaving differently depending on
+ * something they cannot see.
+ */
+function mutateLocalHighlight(
+  slug: string,
+  text: string,
+  patch: Partial<LocalHighlight> | null,
+) {
+  if (typeof window === 'undefined') return
+  try {
+    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
+    if (!raw) return
+    const parsed = JSON.parse(raw) as Record<string, LocalHighlight[]>
+    const rows = Array.isArray(parsed[slug]) ? parsed[slug] : []
+    parsed[slug] = patch
+      ? rows.map((row) => (row.text === text ? { ...row, ...patch } : row))
+      : rows.filter((row) => row.text !== text)
+    window.localStorage.setItem(LOCAL_HIGHLIGHTS_KEY, JSON.stringify(parsed))
+  } catch {
+    // Same as above: the page already reflects the change.
+  }
+}
+
+/** Remove a highlight from the page, leaving its text exactly as it was. */
+function unwrapMark(mark: HTMLElement) {
+  const parent = mark.parentNode
+  if (!parent) return
+  while (mark.firstChild) parent.insertBefore(mark.firstChild, mark)
+  parent.removeChild(mark)
+  // Re-join the text nodes the mark split, so a later selection of this
+  // passage still matches as one run.
+  parent.normalize()
+}
+
 function applyHighlightMark(params: {
   range: Range
   color: HighlightColor
   id?: string | null
+  note?: string | null
 }): HTMLElement | null {
   const mark = document.createElement('mark')
   mark.className = `reader-highlight reader-highlight--${params.color}`
   mark.dataset.highlightColor = params.color
   if (params.id) {
     mark.dataset.highlightId = params.id
+  }
+  if (params.note) {
+    // A note is invisible unless the mark says so — otherwise the reader has
+    // to click every highlight to find which one they wrote on.
+    mark.dataset.highlightNote = params.note
+    mark.setAttribute('title', params.note)
+    mark.classList.add('reader-highlight--noted')
   }
 
   try {
@@ -202,6 +249,36 @@ export default function TextHighlightTrigger({
   // mark, no message. Failures are surfaced now (no silent fallbacks).
   const [failed, setFailed] = useState<string | null>(null)
   const { open } = useChatStore()
+
+  /**
+   * Founder, 2026-08-15: "I can highlight text, but not change colors or make
+   * notes etc. i am also signed in."
+   *
+   * Reproduced on production: once a highlight existed it was INERT. Clicking
+   * it did nothing and re-selecting it did nothing, because handleSelection
+   * returns early for anything inside `.reader-highlight` — a guard that
+   * correctly stops nested highlights but left no way in. A scan of every
+   * button in the reader found no note, edit or delete control at all.
+   *
+   * So the colour swatches were never broken; they only ever applied to a NEW
+   * selection, and there was no second act. `editing` is that second act: it
+   * opens the same toolbar against an existing mark, where the swatches
+   * recolour it in place, a note can be attached, and it can be removed.
+   *
+   * The API needed nothing — PATCH already accepted `style` and `body`, and
+   * DELETE already existed. This was a missing surface, not a missing feature.
+   */
+  const [editing, setEditing] = useState<{
+    el: HTMLElement
+    id: string | null
+    text: string
+    color: HighlightColor
+    note: string
+    x: number
+    y: number
+  } | null>(null)
+  const [noteOpen, setNoteOpen] = useState(false)
+  const [noteDraft, setNoteDraft] = useState('')
 
   const handleSelection = useCallback(() => {
     const selection = window.getSelection()
@@ -273,6 +350,44 @@ export default function TextHighlightTrigger({
     }
   }, [handleSelection])
 
+  // Clicking an existing highlight opens it for editing. Delegated from the
+  // document so it covers marks painted now and marks hydrated later.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target
+      if (!(target instanceof Element)) return
+      if (target.closest('.reader-highlight-toolbar')) return
+
+      const mark = target.closest('mark.reader-highlight')
+      if (!(mark instanceof HTMLElement)) {
+        setEditing(null)
+        setNoteOpen(false)
+        return
+      }
+
+      const rect = mark.getBoundingClientRect()
+      setTooltip(null)
+      setFailed(null)
+      const color = normalizeHighlightColor(mark.dataset.highlightColor)
+      const note = mark.dataset.highlightNote || ''
+      setSelectedColor(color)
+      setNoteDraft(note)
+      setNoteOpen(false)
+      setEditing({
+        el: mark,
+        id: mark.dataset.highlightId || null,
+        text: (mark.textContent || '').trim(),
+        color,
+        note,
+        x: rect.left + rect.width / 2,
+        y: Math.max(10, rect.top - 12),
+      })
+    }
+
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [])
+
   useEffect(() => {
     let cancelled = false
 
@@ -309,6 +424,10 @@ export default function TextHighlightTrigger({
             range,
             color: normalizeHighlightColor(annotation.style?.color),
             id: annotation.id,
+            note:
+              typeof annotation.style?.note === 'string'
+                ? annotation.style.note
+                : null,
           })
         }
       } catch {
@@ -356,6 +475,105 @@ export default function TextHighlightTrigger({
     window.addEventListener('scroll', dismiss, { passive: true })
     return () => window.removeEventListener('scroll', dismiss)
   }, [])
+
+  /**
+   * Persist a change to an existing highlight.
+   *
+   * Paints first and reconciles after, for the same reason the create path
+   * does (SA-038): the reader's action must land visibly whether or not the
+   * network does. A signed-out reader's change is kept on the device instead.
+   */
+  async function persistEdit(
+    next: { color?: HighlightColor; note?: string },
+    current: NonNullable<typeof editing>,
+  ) {
+    const color = next.color ?? current.color
+    const note = next.note ?? current.note
+
+    if (!current.id) {
+      // Device-kept highlight: localStorage is its only home.
+      mutateLocalHighlight(devotionalSlug, current.text, { color })
+      return
+    }
+
+    try {
+      const response = await fetch('/api/annotations', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          annotationId: current.id,
+          style: {
+            source: 'text-selection',
+            kind: 'favorite_verse',
+            color,
+            note: note || undefined,
+          },
+        }),
+      })
+      if (!response.ok) {
+        setFailed(
+          response.status === 401 ? 'Kept on this device' : "Couldn't save",
+        )
+        if (response.status === 401) {
+          mutateLocalHighlight(devotionalSlug, current.text, { color })
+        }
+        setTimeout(() => setFailed(null), 1800)
+        return
+      }
+      window.dispatchEvent(new CustomEvent('libraryUpdated'))
+    } catch {
+      setFailed("Couldn't save")
+      setTimeout(() => setFailed(null), 1800)
+    }
+  }
+
+  function recolorEditing(color: HighlightColor) {
+    if (!editing) return
+    setSelectedColor(color)
+    // Repaint immediately — the swatch is the control and must feel like one.
+    editing.el.className = `reader-highlight reader-highlight--${color}`
+    editing.el.dataset.highlightColor = color
+    setEditing({ ...editing, color })
+    void persistEdit({ color }, editing)
+  }
+
+  async function saveNote() {
+    if (!editing) return
+    const note = noteDraft.trim().slice(0, 4000)
+    if (note) {
+      editing.el.dataset.highlightNote = note
+      editing.el.setAttribute('title', note)
+    } else {
+      delete editing.el.dataset.highlightNote
+      editing.el.removeAttribute('title')
+    }
+    editing.el.classList.toggle('reader-highlight--noted', Boolean(note))
+    setEditing({ ...editing, note })
+    setNoteOpen(false)
+    await persistEdit({ note }, editing)
+  }
+
+  async function removeHighlight() {
+    if (!editing) return
+    const { el, id, text } = editing
+    unwrapMark(el)
+    setEditing(null)
+    setNoteOpen(false)
+    mutateLocalHighlight(devotionalSlug, text, null)
+    if (!id) return
+    try {
+      const response = await fetch(
+        `/api/annotations?annotationId=${encodeURIComponent(id)}`,
+        { method: 'DELETE' },
+      )
+      if (response.ok) {
+        window.dispatchEvent(new CustomEvent('libraryUpdated'))
+      }
+    } catch {
+      // The mark is already gone from the page; a failed delete would restore
+      // it on next load, which is the honest outcome rather than a silent one.
+    }
+  }
 
   async function saveFavoriteVerse() {
     if (!tooltip || saving) return
@@ -448,50 +666,132 @@ export default function TextHighlightTrigger({
     }
   }
 
-  if (!tooltip) return null
+  const anchor = editing ?? tooltip
+  if (!anchor) return null
 
   return (
     <div
-      className="reader-highlight-toolbar fixed flex items-center gap-2 border border-[var(--color-text-primary)] bg-page px-2 py-2"
+      className="reader-highlight-toolbar fixed flex flex-col gap-2 border border-[var(--color-text-primary)] bg-page px-2 py-2"
       style={{
-        left: `${tooltip.x}px`,
-        top: `${tooltip.y}px`,
+        left: `${anchor.x}px`,
+        top: `${anchor.y}px`,
         transform: 'translate(-50%, -100%)',
         zIndex: 'var(--z-tooltip)',
         borderRadius: '2px',
       }}
+      // Keep the text selection alive while the toolbar is used. Without this
+      // a browser collapses the selection on mousedown, and the create path
+      // loses the range it is about to highlight.
+      onMouseDown={(event) => event.preventDefault()}
     >
-      <div className="reader-highlight-color-row">
-        {HIGHLIGHT_COLORS.map((color) => (
-          <button
-            key={color}
-            type="button"
-            className={`reader-highlight-swatch reader-highlight-swatch--${color} ${
-              selectedColor === color ? 'is-active' : ''
-            }`}
-            onClick={() => setSelectedColor(color)}
-            aria-label={`Select ${color} highlight color`}
-            title={`Highlight color: ${color}`}
-          />
-        ))}
+      <div className="flex items-center gap-2">
+        <div className="reader-highlight-color-row">
+          {HIGHLIGHT_COLORS.map((color) => (
+            <button
+              key={color}
+              type="button"
+              className={`reader-highlight-swatch reader-highlight-swatch--${color} ${
+                selectedColor === color ? 'is-active' : ''
+              }`}
+              onClick={() =>
+                editing ? recolorEditing(color) : setSelectedColor(color)
+              }
+              aria-label={
+                editing
+                  ? `Change highlight to ${color}`
+                  : `Select ${color} highlight color`
+              }
+              title={`Highlight color: ${color}`}
+            />
+          ))}
+        </div>
+
+        {editing ? (
+          <>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)]"
+              onClick={() => setNoteOpen((wasOpen) => !wasOpen)}
+              aria-expanded={noteOpen}
+            >
+              {editing.note ? 'Edit note' : 'Note'}
+            </button>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-text-primary)] bg-gold px-3 py-2 text-tehom"
+              onClick={() => {
+                open(editing.text)
+                setEditing(null)
+              }}
+            >
+              Ask
+            </button>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)]"
+              onClick={() => void removeHighlight()}
+            >
+              {failed ? failed : 'Remove'}
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-text-primary)] bg-gold px-3 py-2 text-tehom transition-opacity duration-200"
+              onClick={() => {
+                open(tooltip!.text)
+                setTooltip(null)
+                window.getSelection()?.removeAllRanges()
+              }}
+            >
+              Ask
+            </button>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)] transition-opacity duration-200"
+              disabled={saving}
+              onClick={() => void saveFavoriteVerse()}
+            >
+              {failed ? failed : saved ? 'Saved' : saving ? 'Saving' : 'Highlight'}
+            </button>
+          </>
+        )}
       </div>
-      <button
-        className="text-label vw-small border border-[var(--color-text-primary)] bg-gold px-3 py-2 text-tehom transition-opacity duration-200"
-        onClick={() => {
-          open(tooltip.text)
-          setTooltip(null)
-          window.getSelection()?.removeAllRanges()
-        }}
-      >
-        Ask
-      </button>
-      <button
-        className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)] transition-opacity duration-200"
-        disabled={saving}
-        onClick={() => void saveFavoriteVerse()}
-      >
-        {failed ? failed : saved ? 'Saved' : saving ? 'Saving' : 'Highlight'}
-      </button>
+
+      {editing && noteOpen && (
+        <div className="reader-highlight-note">
+          <textarea
+            className="reader-highlight-note-input"
+            value={noteDraft}
+            onChange={(event) => setNoteDraft(event.target.value)}
+            placeholder="Write a note on this passage…"
+            rows={3}
+            maxLength={4000}
+            aria-label="Note on this highlight"
+            autoFocus
+          />
+          <div className="reader-highlight-note-actions">
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-text-primary)] bg-gold px-3 py-1 text-tehom"
+              onClick={() => void saveNote()}
+            >
+              Save note
+            </button>
+            <button
+              type="button"
+              className="text-label vw-small px-2 py-1 text-[var(--color-text-primary)] underline"
+              onClick={() => {
+                setNoteDraft(editing.note)
+                setNoteOpen(false)
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
