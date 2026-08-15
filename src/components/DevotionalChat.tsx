@@ -7,6 +7,7 @@ import ChatMessage from './ChatMessage'
 import { useChatStore } from '@/stores/chatStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { typographer } from '@/lib/typographer'
+import { markdownToPlainText } from '@/lib/markdown-safe'
 import type {
   ChatCitation,
   ChatColorLabel,
@@ -239,7 +240,7 @@ export default function DevotionalChat({
               ? devotionalTitle || message.devotionalSlug
               : message.devotionalSlug,
           lastAt: message.createdAt,
-          excerpt: message.content.slice(0, 92),
+          excerpt: markdownToPlainText(message.content).slice(0, 92),
         })
       }
     }

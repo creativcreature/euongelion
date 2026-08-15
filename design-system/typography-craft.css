@@ -333,9 +333,16 @@
    Gold on tehom — brand signature
    ============================================ */
 
+/* Founder direction 2026-08-15 (F-089): white ink on brand cobalt.
+   This rule is UNLAYERED, so it beat the `@layer utilities` selection rule in
+   globals.css no matter the source order — the Tailwind v4 layering trap. It
+   set the text to --color-tehom (deep navy) on a cobalt ground, i.e. dark on
+   dark, which also silently defeated the existing contrast contract
+   ("forces white text for browser copy/paste selection across engines",
+   __tests__/contrast-readability-contract.test.ts). Both files now agree. */
 ::selection {
-  background-color: var(--color-gold);
-  color: var(--color-tehom);
+  background-color: var(--color-cobalt, #1f2a8d);
+  color: #fff;
 }
 
 /* ============================================

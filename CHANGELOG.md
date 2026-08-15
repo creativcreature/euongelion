@@ -5,6 +5,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Narration — the founder's own voice, and the words that were never being read (2026-08-15)
+
+The founder could not listen to his own devotionals. Two problems sat on top of
+each other, and only one of them was the voice.
+
+**What was never being spoken.** Section headings were classed as labels, so
+2,242 of them across the catalog went unread — twenty-four minutes of continuous
+prose with nothing a listener could use to tell where they were, on the same
+headings already trusted to title the audio chapters. The day's subtitle was
+dropped too, so a reading opened with half its name. Going the other way, all 66
+pull quotes were read as their own segment, meaning the listener heard those
+sentences twice: once in place, once lifted out. Also silent or wrong: 49 Greek
+Extended glyphs (`U+1F00–U+1FFF`, just outside the old strip range) were handed
+to the voice in 11 devotionals, and `standing-strong-day-7` — titled
+"Contentment", one word — had its title dropped by the minimum-length floor.
+
+**The two extractors had drifted.** `narration_extract.py` renders the audio;
+`src/lib/audio/segments.ts` drives the on-page reader. They disagreed on **103
+of 533 devotionals** — `scripture.fullPassage` and `profile.keyTrait` read by one
+and skipped by the other, different punctuation folding, and a title-dedup that
+only fired on days without a subtitle. They now agree on all 533, 921,909 words
+each side, and the reader independently reproduces the renderer's SHA-1 of the
+spoken text. That fingerprint is stored per track, so "does the audio match the
+page" is a test rather than a sweep, and the catalog renderer re-renders exactly
+the tracks whose text has changed.
+
+**The voice.** The clone was built from 12 mp3 clips totalling **3 minutes 30
+seconds** — enough for an instant clone to learn timbre and nothing else, which
+is why it improvised stress and mispronounced him. Model and stability could not
+fix a data problem: the flatter model only traded an inaccurate performance for
+an inaccurate monotone. Rebuilt from the confirmed interview master
+(`4CH012I.wav`, 24.3 min uncompressed, one mic, verified as him alone by pitch
+distribution), it was approved on the first listen.
+
+**Shipped in his voice:** `he-cannot-deny-himself` days 1–3, 22.0/23.3/24.7 min
+at 157–162 wpm, 23 measured chapters each, atmospheric bed underneath at −26 dB
+under speech and −18 in the gaps. Days 4–7 are blocked on an ElevenLabs API key
+quota, not on anything in the code.
+
+**Two traps worth remembering.** An ElevenLabs API key carries its own quota
+independent of the account: days 4–7 failed with repeated `HTTP 401` while the
+account held 641,765 credits and `/v1/user` authenticated normally — only the
+response _body_ said `quota_exceeded`. And that failure threw away 13 already-paid
+chunks, so rendered chunks are now cached by `(voice, model, settings, text)`
+hash, retries back off across six minutes, and one bad devotional no longer
+aborts the run behind it.
+
+Decision: SA-043. Feature: F-086.
+
+---
+
 ## PWA — service worker v64, and the version constant that had drifted (2026-08-14)
 
 The replated artwork was deployed and live, byte-verified, and still showed the
@@ -93,6 +144,48 @@ now shows a scroll rather than an anachronistic codex.
 
 Placement per spec: series card 1024², day plates 1600w, q80→q48 for dense
 halftone. — SA-040 (F-087)
+
+## CHAT + SELECTION — markdown renders, and the selection fix found its real source (2026-08-15)
+
+**The selection fix was live and still did nothing.** The `::selection` rule
+added to `globals.css` shipped in v65 and had no effect, because
+`design-system/typography-craft.css` (imported at `globals.css:2`) defines
+`::selection` **unlayered** — and unlayered CSS beats anything inside
+`@layer utilities` regardless of source order. Measured on production before
+the fix: background `rgb(31, 42, 141)` cobalt, text `rgb(10, 19, 32)` deep
+navy. Dark on dark.
+
+That same rule had been silently defeating the repo's own contract test, which
+asserts _"forces white text for browser copy/paste selection across engines"_.
+Both design-system files now carry white-on-cobalt and agree with `globals.css`.
+
+**Chat printed its answers as raw markdown.** `ChatMessage.tsx` rendered
+`message.content` as plain text, so readers saw `## Genesis 15` and
+`**covenant of grant**` as literal characters — the most visible reason study
+chat did not read like a normal chat. Assistant messages now render through
+`renderMarkdownSafe` (raw HTML disabled, the same renderer Daily Bread uses).
+User messages stay plain text: they are input, not markup. The blanket serif
+italic came off with it, since it had begun wrapping headings and lists.
+
+Thread excerpts sliced the raw answer too, so the sidebar preview opened with
+`## Genesis 15 and the Covenant…`. `markdownToPlainText()` flattens markdown
+for previews, pinned by 9 tests.
+
+**Verified in the browser rather than inferred.** Launcher → input → send →
+streamed reply, citing the day's own treaty/will argument with real headings
+and bold. Chromium and WebKit both drag-select, open the toolbar and paint at
+`rgb(247, 221, 110)` on production.
+
+Two corrections worth recording, because both nearly became wrong fixes:
+a WebKit run against `http://localhost` is worthless — WebKit force-upgrades
+localhost to `https`, 37 requests fail on TLS and the page never hydrates, so
+"Safari is broken" was an artifact. And an earlier "highlighting verified
+working" rested on a _programmatic_ selection, which never exercised the real
+drag path. Both were re-tested properly.
+
+Still open: the chat panel overlaps the masthead at 1280px rather than sitting
+as a contained drawer. Function is correct; the framing needs a designer's eye,
+so it was left rather than guessed at. — SA-042 (F-089)
 
 ## CHAT + HIGHLIGHTS — study chat was dead in production only (2026-08-15)
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import { renderMarkdownSafe } from '@/lib/markdown-safe'
 import { typographer } from '@/lib/typographer'
 import type { ChatMessage as ChatMessageType, ChatColorLabel } from '@/types'
 
@@ -79,14 +80,30 @@ export default function ChatMessage({
           border: isUser ? '1px solid var(--color-border)' : undefined,
         }}
       >
-        <p
-          className={`vw-small leading-relaxed ${
-            isUser ? '' : 'text-serif-italic'
-          } text-secondary`}
-          style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}
-        >
-          {typographer(message.content)}
-        </p>
+        {/* Founder direction 2026-08-15 (F-089): the assistant answers in
+            markdown and it was printed literally — readers saw "## Genesis 15"
+            and "**covenant of grant**" as characters on the page, which is the
+            most visible reason study chat did not read like a normal chat.
+            Rendered through the same sanitised renderer Daily Bread uses (raw
+            HTML disabled). The blanket italic goes with it: it now wraps
+            headings and lists, not just prose. User messages stay plain text —
+            they are user input, not markup. */}
+        {isUser ? (
+          <p
+            className="vw-small leading-relaxed text-secondary"
+            style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}
+          >
+            {typographer(message.content)}
+          </p>
+        ) : (
+          <div
+            className="vw-small chat-markdown leading-relaxed text-secondary"
+            style={{ overflowWrap: 'anywhere' }}
+            dangerouslySetInnerHTML={{
+              __html: renderMarkdownSafe(message.content),
+            }}
+          />
+        )}
 
         {!isUser && message.guardrails && (
           <p className="vw-small mt-3 text-muted">

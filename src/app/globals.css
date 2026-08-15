@@ -11023,3 +11023,654 @@ html[data-held-moment] .mobile-tab-bar {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SERIES LIBRARY — F-090 / SA-043
+   Founder 2026-08-14: "function like a library of magazines, be more
+   interactive and better searchable… I want the series page to wow."
+
+   Everything is scoped under .series-browser so it cannot collide with
+   the older .series-* rules above (which the retired rails view used).
+   Colour comes only from the existing mock tokens — cream paper,
+   ultramarine line, gold accent — so this reads as the same publication
+   as the artwork and inverts correctly in dark mode.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.series-active-tile {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.series-browser {
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+  padding: 0 clamp(0.9rem, 3vw, 2.4rem) 4rem;
+}
+
+/* ─── Search ─────────────────────────────────────────────────────── */
+
+.series-search-shell {
+  max-width: 46rem;
+  margin: 0 auto 1.6rem;
+  padding: 0 0.2rem;
+}
+
+.series-search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  background: var(--mock-paper, #f5eee3);
+  padding: 0.7rem 1rem;
+}
+
+.series-search-field svg {
+  flex-shrink: 0;
+  color: var(--mock-muted);
+}
+
+.series-search-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  color: var(--mock-ink);
+}
+
+.series-search-input::placeholder {
+  color: var(--mock-muted);
+  opacity: 0.72;
+}
+
+.series-search-field:focus-within {
+  outline: 2px solid var(--color-gold, #c8a56a);
+  outline-offset: 2px;
+}
+
+.series-search-clear {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: var(--mock-muted);
+  cursor: pointer;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.series-search-clear:hover {
+  color: var(--mock-ink);
+}
+
+.series-search-hint {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  color: var(--mock-muted);
+}
+
+/* ─── Controls ───────────────────────────────────────────────────── */
+
+.series-browser .series-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.1rem;
+  padding: 0.7rem 0 0.9rem;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  margin-bottom: 1.4rem;
+}
+
+.series-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.series-sort-label {
+  color: var(--mock-muted);
+  margin-right: 0.15rem;
+}
+
+.series-sort-btn {
+  border: var(--mock-stroke, 1.5px) solid transparent;
+  background: transparent;
+  color: var(--mock-muted);
+  padding: 0.24rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color var(--motion-fast, 150ms) var(--motion-ease, ease);
+}
+
+.series-sort-btn:hover {
+  color: var(--mock-ink);
+}
+
+.series-sort-btn.active {
+  color: var(--mock-ink);
+  border-color: var(--mock-line, currentColor);
+}
+
+.series-count {
+  color: var(--mock-muted);
+  margin: 0;
+}
+
+/* ─── Bento (Feature view) ───────────────────────────────────────── */
+
+.series-bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 168px;
+  gap: 0.55rem;
+  /* Spans of 2 leave holes under normal placement; dense backfills them so the
+     shelf reads as a composed spread rather than a grid with gaps in it. */
+  grid-auto-flow: dense;
+}
+
+.series-bento-tile {
+  /* The scrim is dark navy in BOTH themes, so type on it cannot use
+     --color-gold: that token is a legacy alias resolving to cobalt #1f2a8d in
+     light mode, which rendered the kickers near-invisible on the scrim. This
+     warm tone is fixed to the tile, not the theme, and measures ~9:1 on it. */
+  --tile-accent: #d8b273;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  background: var(--mock-ink);
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.series-bento-lead {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.series-bento-wide {
+  grid-column: span 2;
+}
+
+.series-bento-tall {
+  grid-row: span 2;
+}
+
+.series-bento-img {
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 600ms var(--motion-ease, ease);
+}
+
+.series-bento-tile:hover .series-bento-img {
+  transform: scale(1.04);
+}
+
+/* The scrim is what keeps type legible over a halftone plate without
+   washing the artwork out — weighted to the bottom where the text sits. */
+.series-bento-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Weighted so the text block always sits on ink, not on the plate. The
+     first pass reached 0.42 at midpoint, which was not enough under a gold
+     kicker on the light-ground covers (Identity Crisis, Peace) — those failed
+     AA. Artwork still reads clearly through the top two thirds. */
+  background: linear-gradient(
+    180deg,
+    rgba(9, 12, 32, 0) 0%,
+    rgba(9, 12, 32, 0.18) 34%,
+    rgba(9, 12, 32, 0.68) 62%,
+    rgba(9, 12, 32, 0.93) 100%
+  );
+}
+
+.series-bento-body {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.85rem 0.95rem 0.95rem;
+  color: #f5eee3;
+}
+
+.series-bento-kicker {
+  color: var(--tile-accent, #d8b273);
+}
+
+.series-bento-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.series-bento-title--lead {
+  font-size: clamp(1.7rem, 2.6vw, 2.9rem);
+}
+
+.series-bento-question {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-0);
+  line-height: 1.28;
+  opacity: 0.88;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.series-bento-lead .series-bento-question {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  max-width: 34ch;
+}
+
+.series-bento-tile:focus-visible,
+.series-lib-card:focus-visible,
+.series-listing-row:focus-visible,
+.series-result-card:focus-visible,
+.series-result-row:focus-visible {
+  outline: 2px solid var(--color-gold, #c8a56a);
+  outline-offset: 2px;
+}
+
+/* Progress rail sits on the tile's bottom edge. */
+.series-card-progress {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(245, 238, 227, 0.24);
+}
+
+.series-card-progress-fill {
+  display: block;
+  height: 100%;
+  /* On a tile this inherits the fixed warm accent; on the library card the
+     rail sits on the page ground, where the theme token is correct. */
+  background: var(--tile-accent, var(--color-gold, #c8a56a));
+}
+
+/* ─── Library view ───────────────────────────────────────────────── */
+
+/* The alphabet is a way to jump, not a set of section breaks — bucketing
+   each letter into its own grid left 20 near-empty rows. */
+.series-alpha-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  justify-content: center;
+  padding: 0 0 0.9rem;
+}
+
+.series-alpha-link {
+  color: var(--mock-muted);
+  text-decoration: none;
+  padding: 0.15rem 0.42rem;
+  border: var(--mock-stroke, 1.5px) solid transparent;
+}
+
+.series-alpha-link:hover,
+.series-alpha-link:focus-visible {
+  color: var(--mock-ink);
+  border-color: var(--mock-line, currentColor);
+}
+
+.series-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 1.1rem 0.7rem;
+}
+
+/* Letter marker sits on the first cover of each initial, so the alphabet is
+   readable while scrolling without breaking the shelf into fragments. */
+.series-lib-letter {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  min-width: 1.35rem;
+  padding: 0.08rem 0.3rem;
+  font-family: var(--font-family-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  background: var(--mock-ink);
+  color: var(--mock-paper);
+}
+
+.dark .series-lib-letter {
+  background: var(--mock-paper);
+  color: var(--mock-ink);
+}
+
+.series-lib-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.series-lib-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--mock-ink);
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.series-lib-card:hover .series-bento-img {
+  transform: scale(1.04);
+}
+
+.series-lib-meta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-bottom: 0.4rem;
+}
+
+.series-lib-meta .series-card-progress {
+  bottom: 0;
+  background: rgba(46, 56, 128, 0.2);
+}
+
+.dark .series-lib-meta .series-card-progress {
+  background: rgba(239, 229, 216, 0.22);
+}
+
+.series-lib-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.series-lib-sub {
+  color: var(--mock-muted);
+}
+
+/* ─── List view ──────────────────────────────────────────────────── */
+
+.series-listing {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.series-listing-row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 1.1fr) minmax(0, 2fr) 7rem 6rem;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.72rem 0.35rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  text-decoration: none;
+  color: var(--mock-ink);
+  transition: background-color var(--motion-fast, 150ms)
+    var(--motion-ease, ease);
+}
+
+.series-listing-row:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+
+.dark .series-listing-row:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
+
+.series-listing-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.15;
+}
+
+.series-listing-question {
+  color: var(--mock-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.series-listing-meta,
+.series-listing-pathway {
+  color: var(--mock-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Search results ─────────────────────────────────────────────── */
+
+.series-results {
+  padding-top: 0.4rem;
+}
+
+.series-results-heading {
+  color: var(--mock-muted);
+  margin: 1.4rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.series-results-heading:first-child {
+  margin-top: 0;
+}
+
+.series-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.7rem;
+}
+
+.series-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.8rem 0.9rem;
+  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  text-decoration: none;
+  color: var(--mock-ink);
+  transition: background-color var(--motion-fast, 150ms)
+    var(--motion-ease, ease);
+}
+
+.series-result-card:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+
+.dark .series-result-card:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
+
+.series-result-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.12;
+  margin: 0;
+}
+
+.series-result-question {
+  color: var(--mock-muted);
+  margin: 0;
+}
+
+.series-result-meta {
+  color: var(--mock-muted);
+  margin: 0.15rem 0 0;
+}
+
+.series-result-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.series-result-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.68rem 0.35rem;
+  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.series-result-row:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+
+.dark .series-result-row:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
+
+.series-result-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.16rem;
+  min-width: 0;
+}
+
+.series-result-row-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.14;
+}
+
+.series-result-row-teaser {
+  color: var(--mock-muted);
+}
+
+.series-result-row-series {
+  flex-shrink: 0;
+  color: var(--mock-muted);
+  text-align: right;
+}
+
+.series-results-empty {
+  padding: 2.4rem 0.4rem;
+  text-align: center;
+}
+
+.series-results-empty p {
+  margin: 0 0 0.4rem;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .series-bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+  }
+  .series-bento-lead,
+  .series-bento-wide {
+    grid-column: span 2;
+  }
+  .series-listing-row {
+    grid-template-columns: minmax(0, 1fr) 5.5rem;
+    row-gap: 0.2rem;
+  }
+  .series-listing-question {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+  .series-listing-pathway {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .series-bento {
+    grid-auto-rows: 132px;
+    gap: 0.45rem;
+  }
+  .series-bento-tall {
+    grid-row: span 1;
+  }
+  .series-library-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem 0.5rem;
+  }
+  .series-result-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .series-result-row-series {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .series-bento-img,
+  .series-bento-tile:hover .series-bento-img,
+  .series-lib-card:hover .series-bento-img {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Study-chat answers render markdown (F-089). Sized to the chat column and
+   kept quiet — an assistant reply is a message, not an article, so headings
+   step down rather than compete with the devotional's own type. */
+.chat-markdown > :first-child {
+  margin-top: 0;
+}
+.chat-markdown > :last-child {
+  margin-bottom: 0;
+}
+.chat-markdown p {
+  margin: 0 0 0.75em;
+  white-space: normal;
+}
+.chat-markdown h1,
+.chat-markdown h2,
+.chat-markdown h3 {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-weight: 400;
+  font-size: 1.08em;
+  line-height: 1.3;
+  margin: 1.1em 0 0.4em;
+  color: var(--color-text-primary, currentColor);
+}
+.chat-markdown ul,
+.chat-markdown ol {
+  margin: 0 0 0.75em;
+  padding-left: 1.2em;
+}
+.chat-markdown li {
+  margin: 0 0 0.3em;
+}
+.chat-markdown strong {
+  color: var(--color-text-primary, currentColor);
+  font-weight: 600;
+}
+.chat-markdown em {
+  font-style: italic;
+}
+.chat-markdown blockquote {
+  margin: 0 0 0.75em;
+  padding-left: 0.9em;
+  border-left: 2px solid var(--color-accent-warm, currentColor);
+}
+.chat-markdown code {
+  font-size: 0.92em;
+}

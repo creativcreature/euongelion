@@ -43,3 +43,29 @@ safeMarked.use({
 export function renderMarkdownSafe(md: string): string {
   return safeMarked.parse(md, { async: false }) as string
 }
+
+/**
+ * Flatten markdown to plain prose for previews and excerpts (F-089).
+ *
+ * Chat excerpts sliced the raw answer, so a reply opening with a heading
+ * showed up in the sidebar as "## Genesis 15 and the Covenant…". Previews are
+ * read as sentences, not rendered as documents, so the syntax has to come off
+ * rather than be styled.
+ */
+export function markdownToPlainText(md: string): string {
+  return String(md ?? '')
+    .replace(/```[\s\S]*?```/g, ' ') // fenced code
+    .replace(/`([^`]*)`/g, '$1') // inline code
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ') // images
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // links -> label
+    .replace(/^\s{0,3}#{1,6}\s+/gm, '') // headings
+    .replace(/^\s{0,3}>\s?/gm, '') // blockquotes
+    .replace(/^\s{0,3}[-*+]\s+/gm, '') // bullets
+    .replace(/^\s{0,3}\d+\.\s+/gm, '') // ordered lists
+    .replace(/(\*\*|__)(.*?)\1/g, '$2') // bold
+    .replace(/(\*|_)(.*?)\1/g, '$2') // italic
+    .replace(/~~(.*?)~~/g, '$1') // strikethrough
+    .replace(/^\s{0,3}([-*_]\s*){3,}$/gm, ' ') // rules
+    .replace(/\s+/g, ' ')
+    .trim()
+}
