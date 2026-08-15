@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## READER — Remove you can reach, and a chat button you can see (2026-08-15)
+
+Founder, on the highlight work: _"it works but i need to be able to remove the
+highlight. also the chat button style doesnt work - its black on blue currently
+(hard to see) and needs to change style according to whether light or dark
+mode."_ Registered as **SA-047**.
+
+**Remove worked. It was unreachable.** Verified end-to-end on production
+including persistence — create, click, Remove, reload, and the mark stays gone
+with its localStorage row cleared. The defect was positional: the toolbar always
+rendered *above* the passage, clamped to `y >= 10` and translated up by its own
+height, so a highlight near the top of the window put it off the top of the
+screen or underneath the sticky masthead. Its controls could not be clicked at
+all. It now flips below the passage when there is less than 140px above. A
+control that exists but cannot be reached is not a control.
+
+**`--color-gold` is not gold in light mode, and it has now cost us twice.** The
+chat launcher used `bg-gold text-tehom`. `--color-gold` resolves to cobalt
+`#1f2a8d` in light (the name is historical — the alias is `--color-cobalt`) and
+to `#c8a56a` only in dark, so light mode painted a near-black `#0a1320` icon on
+a blue disc. This is the identical trap that made the `/series` bento kickers
+invisible twenty-four hours earlier (SA-044).
+
+The rule that comes out of it: any element whose ground is fixed across themes,
+or which pairs a background with a foreground, sets **both halves explicitly per
+theme**. Never reach for `bg-gold` and assume it is gold. The launcher now
+measures 9.7:1 in light (cream on cobalt) and 7.9:1 in dark (deep ink on gold).
+
+8 tests. Service worker v72. — SA-047 (F-092)
+
 ## HIGHLIGHTS — a highlight you can come back to (2026-08-15)
 
 Founder: _"the highlight feature doesnt work on desktop. I can highlight text,

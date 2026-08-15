@@ -3172,6 +3172,32 @@ html.reduce-motion *::after {
     flex: 0 0 auto;
   }
 
+  /* F-092 / SA-047 — the chat launcher paints BOTH halves per theme.
+     It previously used `bg-gold text-tehom`, and --color-gold is a legacy
+     alias resolving to cobalt #1f2a8d in light mode — a near-black icon on a
+     blue disc. Light gets cobalt + cream (9.7:1), dark gets gold + deep ink
+     (7.9:1); both comfortably AA at this size. */
+  .devotional-chat-launcher {
+    background: #1f2a8d;
+    color: #f5eee3;
+    border-color: rgba(245, 238, 227, 0.32);
+  }
+
+  .dark .devotional-chat-launcher {
+    background: #c8a56a;
+    color: #0a1320;
+    border-color: rgba(10, 19, 32, 0.35);
+  }
+
+  .devotional-chat-launcher:hover {
+    filter: brightness(1.06);
+  }
+
+  .devotional-chat-launcher:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
   .reader-highlight-color-row {
     display: inline-flex;
     align-items: center;

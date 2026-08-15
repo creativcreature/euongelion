@@ -155,6 +155,64 @@ describe('editing an existing highlight', () => {
     await waitFor(() => expect(patchCalls().length).toBe(0))
   })
 
+  it('flips below the passage when there is no room above', async () => {
+    // A highlight near the top of the window used to put the toolbar off the
+    // top of the screen (or under the sticky masthead), so Remove could not be
+    // reached at all.
+    const mark = seedMark()
+    vi.spyOn(mark, 'getBoundingClientRect').mockReturnValue({
+      top: 20,
+      bottom: 40,
+      left: 100,
+      right: 300,
+      width: 200,
+      height: 20,
+      x: 100,
+      y: 20,
+      toJSON: () => ({}),
+    } as DOMRect)
+
+    render(<TextHighlightTrigger devotionalSlug={SLUG} />)
+    fireEvent.click(mark)
+
+    const toolbar = (await waitFor(() => {
+      const el = document.querySelector('.reader-highlight-toolbar')
+      expect(el).not.toBeNull()
+      return el
+    })) as HTMLElement
+
+    // Below the mark's bottom edge, and not translated up out of view.
+    expect(toolbar.style.top).toBe('52px')
+    expect(toolbar.style.transform).toBe('translate(-50%, 0)')
+  })
+
+  it('sits above the passage when there is room', async () => {
+    const mark = seedMark()
+    vi.spyOn(mark, 'getBoundingClientRect').mockReturnValue({
+      top: 600,
+      bottom: 620,
+      left: 100,
+      right: 300,
+      width: 200,
+      height: 20,
+      x: 100,
+      y: 600,
+      toJSON: () => ({}),
+    } as DOMRect)
+
+    render(<TextHighlightTrigger devotionalSlug={SLUG} />)
+    fireEvent.click(mark)
+
+    const toolbar = (await waitFor(() => {
+      const el = document.querySelector('.reader-highlight-toolbar')
+      expect(el).not.toBeNull()
+      return el
+    })) as HTMLElement
+
+    expect(toolbar.style.top).toBe('588px')
+    expect(toolbar.style.transform).toBe('translate(-50%, -100%)')
+  })
+
   it('closes the toolbar when the reader clicks away', async () => {
     const mark = seedMark()
     render(<TextHighlightTrigger devotionalSlug={SLUG} />)

@@ -182,6 +182,25 @@ function mutateLocalHighlight(
   }
 }
 
+/**
+ * Where the toolbar goes relative to the selection.
+ *
+ * It used to always render ABOVE, clamped to y >= 10 and translated up by its
+ * own height — so for anything near the top of the window it rendered off the
+ * top of the screen or underneath the sticky masthead, and its controls
+ * (Remove especially) could not be reached at all. When there is not enough
+ * room above, it flips below the passage instead.
+ */
+const TOOLBAR_CLEARANCE = 140
+
+function placeToolbar(rect: DOMRect): { y: number; below: boolean } {
+  const below = rect.top < TOOLBAR_CLEARANCE
+  return {
+    y: below ? rect.bottom + 12 : rect.top - 12,
+    below,
+  }
+}
+
 /** Remove a highlight from the page, leaving its text exactly as it was. */
 function unwrapMark(mark: HTMLElement) {
   const parent = mark.parentNode
@@ -239,6 +258,7 @@ export default function TextHighlightTrigger({
     text: string
     x: number
     y: number
+    below?: boolean
   } | null>(null)
   const [selectedColor, setSelectedColor] =
     useState<HighlightColor>(DEFAULT_COLOR)
@@ -276,6 +296,7 @@ export default function TextHighlightTrigger({
     note: string
     x: number
     y: number
+    below?: boolean
   } | null>(null)
   const [noteOpen, setNoteOpen] = useState(false)
   const [noteDraft, setNoteDraft] = useState('')
@@ -333,11 +354,8 @@ export default function TextHighlightTrigger({
       return
     }
 
-    setTooltip({
-      text,
-      x: rect.left + rect.width / 2,
-      y: Math.max(10, rect.top - 12),
-    })
+    const placement = placeToolbar(rect)
+    setTooltip({ text, x: rect.left + rect.width / 2, ...placement })
   }, [])
 
   useEffect(() => {
@@ -380,7 +398,7 @@ export default function TextHighlightTrigger({
         color,
         note,
         x: rect.left + rect.width / 2,
-        y: Math.max(10, rect.top - 12),
+        ...placeToolbar(rect),
       })
     }
 
@@ -675,7 +693,9 @@ export default function TextHighlightTrigger({
       style={{
         left: `${anchor.x}px`,
         top: `${anchor.y}px`,
-        transform: 'translate(-50%, -100%)',
+        transform: anchor.below
+          ? 'translate(-50%, 0)'
+          : 'translate(-50%, -100%)',
         zIndex: 'var(--z-tooltip)',
         borderRadius: '2px',
       }}

@@ -1,4 +1,7 @@
 // Euangelion Service Worker
+// R56 (F-092/SA-047): bumped to v72 — the highlight toolbar flips below the
+// passage when there is no room above (Remove was unreachable near the top of
+// the window), and the chat launcher paints per theme. Reader client code.
 // R55 (F-092/SA-046): bumped to v71 — highlights became editable (click a mark
 // to recolour it, write a note on it, remove it). Reader client code, and the
 // reading routes are cache-first, so a returning reader on v70 keeps the old
@@ -65,7 +68,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v71'
+const CACHE_NAME = 'euangelion-v72'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
