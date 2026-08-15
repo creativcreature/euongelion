@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ARTWORK — no portraits; the reader stands in the scene (2026-08-14)
+
+Founder, on the replate below: _"supposed to be scientifically and historically
+accurate depictions if depicting literal people. And the aim is to obscure their
+identity more so so the reader can read themselves into the image. You nailed
+the style but not the subject."_ Registered as **SA-041**.
+
+**Accuracy and anonymity are two axes, and only one of them had been fixed.**
+D-010 governs the depiction — period dress, anatomy, setting, botany. SA-041
+governs the identity: no rendered likeness. Satisfying the first does not
+satisfy the second, which is how the replate shipped four plates that were
+historically accurate and still wrong. They were portraits: faces you look at
+rather than figures you step into.
+
+Four regenerated. The Transfiguration is now a pure silhouette swallowed by the
+light with the two disciples seen from behind, arms over their heads. Elijah is
+a wrapped form turned away on the ground, and the figure standing over him has
+no face at all. The Samaritan kneels bowed and hooded; the wounded man's head is
+turned into shadow. The series card looks _at_ the sun _with_ the figure instead
+of looking at him — which is what the series is called.
+
+Six plates needed no change, and the reason is instructive: they already had no
+visible face. Three figures walking away up the Emmaus road, feet on a track,
+hands on a scroll, and three plates with no people in them.
+
+Palette held through the change — Δ39–59 from `#1b3fae`, gold ≤0.11%. — SA-041
+(F-087)
+
 ## ARTWORK — "Looking at the Sun" replated to the locked riso pipeline (2026-08-14)
 
 Founder: _"THE ARTWORK IS INCORRECT!!! YOU DIDNT USE THE DEVO-GO PROMPT FOR
