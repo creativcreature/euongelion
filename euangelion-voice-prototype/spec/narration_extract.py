@@ -21,6 +21,7 @@ pace downstream. Verbatim by construction — shaping may change punctuation and
 chunk boundaries, never wording.
 """
 import json
+import hashlib
 import re
 import sys
 import unicodedata
@@ -71,8 +72,17 @@ NON_PROSE = {
     "no_modules_after", "hebrewOriginal", "greekOriginal", "greekText", "word",
 }
 
+# Module types whose heading is page furniture rather than a spoken signpost —
+# announcing "Sources & Further Study" mid-listen is chrome, not content.
+HEADING_NOT_SPOKEN = {"resource", "cta", "video", "inline-image", "art"}
+
 # Navigation chrome — never spoken.
-NAV_TYPES = {"inline-image", "art", "video", "cta", "resource"}
+NAV_TYPES = {"inline-image", "art", "video", "cta", "resource",
+             # Pull quotes lift a sentence out of the prose and set it
+             # large. Spoken, that is a stutter: the listener hears the
+             # sentence in place and again out of it. All 66 in the
+             # catalog duplicate body prose verbatim.
+             "pullquote"}
 
 # Module type → narration register (pace band).
 REGISTER = {
@@ -106,7 +116,11 @@ def strip_nonlatin(text):
     out = []
     for ch in text:
         cp = ord(ch)
-        if 0x0590 <= cp <= 0x05FF or 0x0370 <= cp <= 0x03FF or 0xFB1D <= cp <= 0xFB4F:
+        # 0x1F00-0x1FFF is Greek Extended (polytonic). Without it, accented
+        # vowels survive the strip as lone glyphs and the engine either
+        # spells them out or stumbles — 49 of them across 11 devotionals.
+        if (0x0590 <= cp <= 0x05FF or 0x0370 <= cp <= 0x03FF
+                or 0x1F00 <= cp <= 0x1FFF or 0xFB1D <= cp <= 0xFB4F):
             continue
         out.append(ch)
     s = "".join(out)
@@ -137,6 +151,19 @@ def to_speech(raw):
     s = expand_roman(s)
     s = re.sub(r"\s+([,.;:!?])", r"\1", s)
     return re.sub(r"\s+", " ", s).strip()
+
+
+def text_hash(dev):
+    """Stable fingerprint of everything this devotional would say aloud.
+
+    The renderer stores it alongside each track so a later run can tell whether
+    a rendered file is still current. Word counts alone cannot: an edit that
+    swaps one word for another leaves the count identical while the audio goes
+    stale. Any change to the reading contract or the devotional text moves the
+    hash, and the track re-renders on the next pass.
+    """
+    joined = "\n".join(s["text"] for s in extract(dev))
+    return hashlib.sha1(joined.encode("utf-8")).hexdigest()[:12]
 
 
 def norm_key(s):
@@ -296,9 +323,15 @@ def extract(dev):
     segs = []
     seen = set()
 
-    def push(label, register, text, module_index=0, heading=None):
+    def push(label, register, text, module_index=0, heading=None,
+             allow_single=False):
         t = to_speech(text)
-        if not t or len(t.split()) < 2:
+        # A lone word mid-devotional is a label or a stray fragment, not prose.
+        # Titles and headings are exempt: "Contentment" is the whole title of
+        # one day and "Sabbath" is a real section, and dropping either would
+        # cost the listener something deliberate.
+        if not t or (len(t.split()) < 2
+                     and register != "title" and not allow_single):
             return
         k = norm_key(t)
         if k in seen:          # never read the same prose twice
@@ -317,6 +350,14 @@ def extract(dev):
     parts = [x.strip().rstrip(".") for x in
              (dev.get("title"), dev.get("subtitle")) if x and x.strip()]
     push("Title", "title", ". ".join(parts) + "." if parts else "", 0, None)
+    # Some days repeat the devotional's own title as a module heading. The
+    # opening line has already been read, so register the bare title and
+    # subtitle too — otherwise the dedup only catches the repeat on days that
+    # happen to have no subtitle.
+    for part in (dev.get("title"), dev.get("subtitle")):
+        k = norm_key(to_speech(part or ""))
+        if k:
+            seen.add(k)
 
     for module_number, m in enumerate(dev.get("modules") or [], start=1):
         t = m.get("type", "teaching")
@@ -324,6 +365,18 @@ def extract(dev):
             continue
         order = READING_ORDER.get(t)
         reg = REGISTER.get(t, "teaching")
+
+        # Speak the section heading.
+        #
+        # A reader can SEE where a section begins; a listener cannot. Headings
+        # were originally classed as labels and left unspoken, which stripped
+        # every devotional of its internal signposting in audio — 24 minutes of
+        # continuous prose with no indication of structure. They are already
+        # trusted to title the chapters, so they are content.
+        heading = m.get("heading")
+        if heading and t not in HEADING_NOT_SPOKEN:
+            push(heading, reg, heading, module_number, heading,
+                 allow_single=True)
 
         if t == "vocab":
             push("Word study", "teaching", vocab_headword(m),

@@ -123,11 +123,23 @@ def main():
     built = skipped = 0
     problems = []
     for slug, entry in manifest.items():
+        # This script derives chapters from the Kokoro renderer's side manifest.
+        # Tracks rendered by another engine carry chapters MEASURED at render
+        # time from chunk durations, and have no side manifest here — so they
+        # look unverifiable and were having their chapters deleted. Anything not
+        # rendered by Kokoro is none of this script's business.
+        if entry.get("engine") not in (None, "kokoro"):
+            continue
         chs, err = chapters_for(slug)
         if err:
+            # Report, never delete. This script can only VERIFY chapters it can
+            # rebuild from a side manifest; being unable to rebuild them says
+            # nothing about whether the ones already there are correct. It used
+            # to pop on failure and wiped 497 devotionals' navigation in one
+            # unattended run. Stale marks are handled where the audio changes,
+            # not here.
             skipped += 1
             problems.append((slug, err))
-            entry.pop("chapters", None)
             continue
         entry["chapters"] = chs
         built += 1

@@ -20,6 +20,8 @@ import sys
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import narration_extract as ne          # noqa: E402
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 DEVOTIONALS = os.path.join(REPO, "public", "devotionals")
 # The manifest is a build input under src/, NOT a served asset — it must not
@@ -32,12 +34,13 @@ BULK_PREFIX = "bible-365"
 
 
 def published():
+    """slug -> the text fingerprint that was rendered, for entries that have one."""
     if not os.path.exists(MANIFEST):
-        return set()
+        return {}
     try:
-        return set(json.load(open(MANIFEST)))
+        return {k: v.get("textHash") for k, v in json.load(open(MANIFEST)).items()}
     except Exception:
-        return set()
+        return {}
 
 
 def series_of(slug):
@@ -50,15 +53,15 @@ def day_of(slug):
     return int(m.group(1)) if m else 0
 
 
-def work_list(only=None):
+def work_list(only=None, shard=None):
+    """shard is (index, count): take every count-th item starting at index, so
+    several workers can run at once over disjoint slices of the same queue."""
     done = published()
     items = []
     for path in sorted(os.listdir(DEVOTIONALS)):
         if not path.endswith(".json"):
             continue
         slug = path[:-5]
-        if slug in done:
-            continue
         if only and not slug.startswith(only):
             continue
         try:
@@ -67,9 +70,17 @@ def work_list(only=None):
             continue
         if not dev.get("modules"):
             continue
+        # Skip only when the rendered audio still says what the page says.
+        # A track published before textHash existed has None recorded, so it
+        # re-renders once and is content-addressed from then on.
+        if slug in done and done[slug] == ne.text_hash(dev):
+            continue
         items.append(slug)
     # curated series before the bulk daily-reading set; then series, then day
     items.sort(key=lambda s: (s.startswith(BULK_PREFIX), series_of(s), day_of(s)))
+    if shard:
+        i, n = shard
+        items = items[i::n]
     return items
 
 
@@ -80,12 +91,17 @@ def main():
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else 0
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
 
-    todo = work_list(only)
+    shard = None
+    if "--shard" in sys.argv:
+        i, n = sys.argv[sys.argv.index("--shard") + 1].split("/")
+        shard = (int(i), int(n))
+    todo = work_list(only, shard)
     if limit:
         todo = todo[:limit]
     os.makedirs(RENDERS, exist_ok=True)
 
-    print(f"{len(todo)} devotionals to render | voice {voice}", flush=True)
+    tag = f" | shard {shard[0]+1}/{shard[1]}" if shard else ""
+    print(f"{len(todo)} devotionals to render | voice {voice}{tag}", flush=True)
     started = time.time()
     ok, failed = 0, []
     for i, slug in enumerate(todo, 1):

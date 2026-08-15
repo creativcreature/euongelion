@@ -173,7 +173,7 @@ MANIFEST_PATH = os.path.join(REPO, "src", "data", "audio-manifest.json")
 BITRATE = 48000          # mono speech: transparent, ~8 MB for 22 minutes
 
 
-def publish(wav_path, dev_path, voice, duration_s, words):
+def publish(wav_path, dev_path, voice, duration_s, words, text_hash=None):
     """Encode to AAC and register in the manifest the app reads."""
     import subprocess
     slug = os.path.basename(dev_path).rsplit(".", 1)[0]
@@ -188,7 +188,15 @@ def publish(wav_path, dev_path, voice, duration_s, words):
         print(f"  publish FAILED: {r.stderr.strip()[:200]}")
         return None
 
+    # The manifest is read-modify-written by every render. Shards run several
+    # renders at once, so without a lock the last writer silently drops the
+    # entries the others just added. flock is advisory and process-wide, which
+    # is exactly the scope here: one lock file, held across read and write.
+    import fcntl
     manifest_path = MANIFEST_PATH
+    lock_path = manifest_path + ".lock"
+    lock = open(lock_path, "w")
+    fcntl.flock(lock, fcntl.LOCK_EX)
     manifest = {}
     if os.path.exists(manifest_path):
         try:
@@ -202,8 +210,18 @@ def publish(wav_path, dev_path, voice, duration_s, words):
         "voice": voice,
         "engine": "kokoro",
         "bytes": os.path.getsize(out),
+        # Fingerprint of the text this track actually says. render_catalog.py
+        # compares it against the devotional on disk, so an edited devotional
+        # re-renders instead of keeping audio that no longer matches the page.
+        "textHash": text_hash,
     }
-    json.dump(dict(sorted(manifest.items())), open(manifest_path, "w"), indent=1)
+    # Write via a temp file and rename: a reader that opens the manifest while
+    # this is running sees either the old file or the new one, never a partial.
+    tmp_manifest = manifest_path + ".tmp"
+    json.dump(dict(sorted(manifest.items())), open(tmp_manifest, "w"), indent=1)
+    os.replace(tmp_manifest, manifest_path)
+    fcntl.flock(lock, fcntl.LOCK_UN)
+    lock.close()
     mb = os.path.getsize(out) / 1024 / 1024
     print(f"  published: public/audio/{slug}.m4a ({mb:.1f} MB) "
           f"→ manifest now lists {len(manifest)} track(s)")
@@ -311,7 +329,7 @@ def main():
     print(f"  manifest: {mpath}")
     print(f"  wall clock {(time.time()-t0)/60:.1f} min")
     if "--publish" in sys.argv:
-        publish(out_path, dev_path, voice, dur, words)
+        publish(out_path, dev_path, voice, dur, words, ne.text_hash(dev))
     cleanup("--keep-takes" in sys.argv)
 
 

@@ -51,7 +51,7 @@ showed two underlined items pointing at one page, which reads as a rendering
 fault rather than a menu. The `TODAY` entry is gone and the mobile tab is
 relabelled `DAILY BREAD`.
 
-SA-033 is unchanged and still right: "today" means *your* devotional resolved
+SA-033 is unchanged and still right: "today" means _your_ devotional resolved
 through Daily Bread, not the `/today` editorial rotation — which stays
 reachable as "Today's Edition" in the footer. The `/today` route is untouched,
 so existing links keep working.
@@ -164,10 +164,22 @@ an inaccurate monotone. Rebuilt from the confirmed interview master
 (`4CH012I.wav`, 24.3 min uncompressed, one mic, verified as him alone by pitch
 distribution), it was approved on the first listen.
 
-**Shipped in his voice:** `he-cannot-deny-himself` days 1–3, 22.0/23.3/24.7 min
-at 157–162 wpm, 23 measured chapters each, atmospheric bed underneath at −26 dB
-under speech and −18 in the gaps. Days 4–7 are blocked on an ElevenLabs API key
-quota, not on anything in the code.
+**Shipped in his voice:** `he-cannot-deny-himself`, **all seven days, 129.9
+minutes**, one voice throughout, atmospheric bed underneath at −26 dB under
+speech and −18 in the gaps. Verified per day: audio present, text fingerprint
+matching the page, chapters starting at zero and landing inside runtime, pace
+154–163 wpm against an audiobook band of 150–170, every asset under the Workers
+25 MiB limit.
+
+**A destructive script, and 497 devotionals' navigation.** `build_chapters.py`
+rebuilds chapter marks from the Kokoro renderer's side manifest, and on any
+track it could not rebuild it **deleted the chapters that were already there**.
+Run unattended against a manifest that now held tracks it had never seen, it
+wiped navigation from 497 devotionals in one pass. Being unable to verify
+something says nothing about whether it is correct: the script now reports and
+never deletes, and the 497 are restored from the last good manifest. The lesson
+generalises past this script — an unattended job must not be able to destroy
+work it does not understand.
 
 **Two traps worth remembering.** An ElevenLabs API key carries its own quota
 independent of the account: days 4–7 failed with repeated `HTTP 401` while the

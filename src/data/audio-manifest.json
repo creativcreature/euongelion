@@ -372,59 +372,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2496313,
-    "textHash": "855b1c583b86",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 3.1,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 18.4,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 59.6,
-        "label": "Chosen Before the Throne",
-        "module": 3
-      },
-      {
-        "t": 143.8,
-        "label": "The Unseen Commission",
-        "module": 5
-      },
-      {
-        "t": 188.7,
-        "label": "The God Who Sees the Heart",
-        "module": 6
-      },
-      {
-        "t": 318.9,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 324.7,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 349.2,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 361.6,
-        "label": "The Shepherd King",
-        "module": 13
-      }
-    ]
+    "textHash": "855b1c583b86"
   },
   "anointed-day-2": {
     "src": "/audio/anointed-day-2.m4a",
@@ -433,59 +381,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2538368,
-    "textHash": "87079fa3aafa",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.9,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 18.0,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 61.6,
-        "label": "Wait for Power",
-        "module": 3
-      },
-      {
-        "t": 157.6,
-        "label": "Power in Trembling Hands",
-        "module": 5
-      },
-      {
-        "t": 207.0,
-        "label": "The Nazareth Declaration",
-        "module": 6
-      },
-      {
-        "t": 334.0,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 338.9,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 361.6,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 370.1,
-        "label": "Ordinary People, Extraordinary Power",
-        "module": 13
-      }
-    ]
+    "textHash": "87079fa3aafa"
   },
   "anointed-day-3": {
     "src": "/audio/anointed-day-3.m4a",
@@ -494,59 +390,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2747496,
-    "textHash": "dfdfa0a64418",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 3.2,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 30.7,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 74.5,
-        "label": "The Theology of Obscurity",
-        "module": 3
-      },
-      {
-        "t": 165.5,
-        "label": "The Garage Worship",
-        "module": 5
-      },
-      {
-        "t": 215.3,
-        "label": "Anointed but Not Yet Appointed",
-        "module": 6
-      },
-      {
-        "t": 360.2,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 365.8,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 390.5,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 399.7,
-        "label": "The Anointed Fugitive",
-        "module": 13
-      }
-    ]
+    "textHash": "dfdfa0a64418"
   },
   "anointed-day-4": {
     "src": "/audio/anointed-day-4.m4a",
@@ -555,59 +399,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2789039,
-    "textHash": "af4b2544c220",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 3.0,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 23.6,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 72.0,
-        "label": "Oil for Wounds",
-        "module": 3
-      },
-      {
-        "t": 175.1,
-        "label": "The Grove of Grief",
-        "module": 5
-      },
-      {
-        "t": 222.6,
-        "label": "The Physician's Anointing",
-        "module": 6
-      },
-      {
-        "t": 374.9,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 380.2,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 405.2,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 413.8,
-        "label": "The Anointer of Wounds",
-        "module": 13
-      }
-    ]
+    "textHash": "af4b2544c220"
   },
   "anointed-day-5": {
     "src": "/audio/anointed-day-5.m4a",
@@ -616,59 +408,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2703374,
-    "textHash": "cf7187bcfd30",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.9,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 25.0,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 71.0,
-        "label": "The Anointing Flows Outward",
-        "module": 3
-      },
-      {
-        "t": 166.6,
-        "label": "The Quiet Revival",
-        "module": 5
-      },
-      {
-        "t": 218.4,
-        "label": "The Breath of Commission",
-        "module": 6
-      },
-      {
-        "t": 364.9,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 369.9,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 394.1,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 402.8,
-        "label": "Apostles \u2014 The Anointed and Sent",
-        "module": 13
-      }
-    ]
+    "textHash": "cf7187bcfd30"
   },
   "bible-365-day-1": {
     "src": "/audio/bible-365-day-1.m4a",
@@ -22517,59 +22257,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2812529,
-    "textHash": "f401ed8cc002",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.8,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 12.5,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 55.7,
-        "label": "When Plans Shatter",
-        "module": 3
-      },
-      {
-        "t": 153.5,
-        "label": "The Hospital Bed",
-        "module": 5
-      },
-      {
-        "t": 217.4,
-        "label": "The Broken Staff",
-        "module": 6
-      },
-      {
-        "t": 370.1,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 376.8,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 402.0,
-        "label": "Takeaway",
-        "module": 10
-      },
-      {
-        "t": 413.6,
-        "label": "A Life Surrendered",
-        "module": 13
-      }
-    ]
+    "textHash": "f401ed8cc002"
   },
   "coming-to-the-end-of-ourselves-day-2": {
     "src": "/audio/coming-to-the-end-of-ourselves-day-2.m4a",
@@ -22578,54 +22266,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2550079,
-    "textHash": "123ffb5becab",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.7,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 11.4,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 54.7,
-        "label": "The Weight Transfer",
-        "module": 3
-      },
-      {
-        "t": 148.0,
-        "label": "Brushstrokes of Hope",
-        "module": 5
-      },
-      {
-        "t": 216.2,
-        "label": "The Divided Mind",
-        "module": 6
-      },
-      {
-        "t": 368.1,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 373.6,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 401.3,
-        "label": "Takeaway",
-        "module": 10
-      }
-    ]
+    "textHash": "123ffb5becab"
   },
   "coming-to-the-end-of-ourselves-day-3": {
     "src": "/audio/coming-to-the-end-of-ourselves-day-3.m4a",
@@ -22634,54 +22275,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2680226,
-    "textHash": "9e395f7952a6",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.6,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 13.9,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 63.4,
-        "label": "The Question That Changes Everything",
-        "module": 3
-      },
-      {
-        "t": 164.5,
-        "label": "The Wheelchair Pulpit",
-        "module": 5
-      },
-      {
-        "t": 235.5,
-        "label": "Kingdom Priorities",
-        "module": 6
-      },
-      {
-        "t": 389.1,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 394.7,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 422.5,
-        "label": "Takeaway",
-        "module": 10
-      }
-    ]
+    "textHash": "9e395f7952a6"
   },
   "coming-to-the-end-of-ourselves-day-4": {
     "src": "/audio/coming-to-the-end-of-ourselves-day-4.m4a",
@@ -22690,54 +22284,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2839297,
-    "textHash": "5670fc8d5202",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 3.0,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 15.4,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 60.4,
-        "label": "Four Dimensions of Love",
-        "module": 3
-      },
-      {
-        "t": 163.3,
-        "label": "Everything She Had Left",
-        "module": 5
-      },
-      {
-        "t": 241.9,
-        "label": "The Greatest Commandment",
-        "module": 6
-      },
-      {
-        "t": 415.6,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 421.8,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 449.9,
-        "label": "Takeaway",
-        "module": 10
-      }
-    ]
+    "textHash": "5670fc8d5202"
   },
   "coming-to-the-end-of-ourselves-day-5": {
     "src": "/audio/coming-to-the-end-of-ourselves-day-5.m4a",
@@ -22746,54 +22293,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 3061470,
-    "textHash": "cc63dd1158b0",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 2.5,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 17.1,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 67.9,
-        "label": "The Triumphal Procession",
-        "module": 3
-      },
-      {
-        "t": 181.7,
-        "label": "The Fragrance of Surrender",
-        "module": 5
-      },
-      {
-        "t": 275.3,
-        "label": "The Victory Parade",
-        "module": 6
-      },
-      {
-        "t": 440.6,
-        "label": "Reflect",
-        "module": 8
-      },
-      {
-        "t": 445.3,
-        "label": "Prayer",
-        "module": 9
-      },
-      {
-        "t": 485.3,
-        "label": "Takeaway",
-        "module": 10
-      }
-    ]
+    "textHash": "cc63dd1158b0"
   },
   "genesis-two-stories-of-creation-day-1": {
     "src": "/audio/genesis-two-stories-of-creation-day-1.m4a",
@@ -23097,12 +22597,12 @@
   },
   "he-cannot-deny-himself-day-1": {
     "src": "/audio/he-cannot-deny-himself-day-1.m4a",
-    "duration": 1342.5,
-    "words": 3567,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 8256991,
-    "textHash": "1c3bbc5c25cb",
+    "duration": 1312.5,
+    "words": 3549,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 10812187,
+    "textHash": "a0cc7fbd606f",
     "chapters": [
       {
         "t": 0.0,
@@ -23110,112 +22610,112 @@
         "module": 0
       },
       {
-        "t": 6.3,
+        "t": 6.6,
         "label": "Scripture",
         "module": 1
       },
       {
-        "t": 34.4,
+        "t": 31.2,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 73.0,
+        "t": 69.5,
         "label": "The Sentence People Say Just Before",
         "module": 3
       },
       {
-        "t": 158.7,
+        "t": 152.3,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 170.6,
+        "t": 162.0,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 185.1,
+        "t": 175.4,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 219.8,
+        "t": 208.7,
         "label": "A Nation That Still Had a Country",
         "module": 9
       },
       {
-        "t": 326.0,
+        "t": 322.5,
         "label": "Word study",
         "module": 10
       },
       {
-        "t": 395.8,
+        "t": 384.2,
         "label": "The Charge Is Not Wickedness. It Is Management.",
         "module": 12
       },
       {
-        "t": 529.1,
+        "t": 513.9,
         "label": "Where This Week Sits in the Story",
         "module": 14
       },
       {
-        "t": 599.3,
+        "t": 579.3,
         "label": "Unplowed Ground",
         "module": 15
       },
       {
-        "t": 741.9,
+        "t": 722.9,
         "label": "The Man at the Summit",
         "module": 16
       },
       {
-        "t": 895.8,
+        "t": 871.9,
         "label": "Locked From the Inside",
         "module": 17
       },
       {
-        "t": 932.2,
+        "t": 903.9,
         "label": "What the Prophet Does Not Say",
         "module": 18
       },
       {
-        "t": 1043.3,
+        "t": 1019.2,
         "label": "Scripture",
         "module": 19
       },
       {
-        "t": 1069.3,
+        "t": 1041.7,
         "label": "Reflect",
         "module": 20
       },
       {
-        "t": 1080.0,
+        "t": 1050.9,
         "label": "A Practice for Today",
         "module": 21
       },
       {
-        "t": 1091.7,
+        "t": 1063.5,
         "label": "Two Verses, in Order",
         "module": 22
       },
       {
-        "t": 1198.7,
+        "t": 1171.3,
         "label": "Closing Prayer",
         "module": 23
       },
       {
-        "t": 1238.6,
+        "t": 1217.2,
         "label": "Today's Commitment",
         "module": 24
       },
       {
-        "t": 1251.9,
+        "t": 1228.6,
         "label": "One Question",
         "module": 25
       },
       {
-        "t": 1281.8,
+        "t": 1254.9,
         "label": "The Voice Behind Today",
         "module": 26
       }
@@ -23223,12 +22723,264 @@
   },
   "he-cannot-deny-himself-day-2": {
     "src": "/audio/he-cannot-deny-himself-day-2.m4a",
-    "duration": 1386.7,
-    "words": 3707,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 8531642,
-    "textHash": "99056c11e70e",
+    "duration": 1386.4,
+    "words": 3691,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 11411390,
+    "textHash": "bde242213e6f",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 29.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 66.2,
+        "label": "The Verse That Runs the Garden Backwards",
+        "module": 3
+      },
+      {
+        "t": 151.0,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 163.1,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 176.1,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 222.1,
+        "label": "Selling Someone What They Already Own",
+        "module": 9
+      },
+      {
+        "t": 325.3,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 400.7,
+        "label": "The Word the Commandment Would Later Use",
+        "module": 12
+      },
+      {
+        "t": 540.2,
+        "label": "The Counterfeit and the Original",
+        "module": 14
+      },
+      {
+        "t": 600.0,
+        "label": "A Darkened Likeness of Omnipotence",
+        "module": 15
+      },
+      {
+        "t": 781.3,
+        "label": "Pears He Did Not Want",
+        "module": 16
+      },
+      {
+        "t": 912.3,
+        "label": "Not the Loss of Reason",
+        "module": 17
+      },
+      {
+        "t": 941.9,
+        "label": "Where the Reach Shows Up Now",
+        "module": 18
+      },
+      {
+        "t": 1084.8,
+        "label": "Scripture",
+        "module": 20
+      },
+      {
+        "t": 1121.9,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 1132.5,
+        "label": "A Practice for Today",
+        "module": 22
+      },
+      {
+        "t": 1141.1,
+        "label": "The Hand That Did Not Close",
+        "module": 23
+      },
+      {
+        "t": 1248.5,
+        "label": "Closing Prayer",
+        "module": 24
+      },
+      {
+        "t": 1298.0,
+        "label": "Today's Commitment",
+        "module": 25
+      },
+      {
+        "t": 1306.4,
+        "label": "One Question",
+        "module": 26
+      },
+      {
+        "t": 1335.7,
+        "label": "The Voice Behind Today",
+        "module": 27
+      }
+    ]
+  },
+  "he-cannot-deny-himself-day-3": {
+    "src": "/audio/he-cannot-deny-himself-day-3.m4a",
+    "duration": 1453.1,
+    "words": 3878,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 11947241,
+    "textHash": "4424513be69b",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 31.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 64.2,
+        "label": "What God Says When He Says His Own Name",
+        "module": 3
+      },
+      {
+        "t": 162.4,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 175.4,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 189.7,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 225.0,
+        "label": "The Saying He Did Not Write",
+        "module": 9
+      },
+      {
+        "t": 358.1,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 428.9,
+        "label": "Two Lines That Will Not Be Harmonized",
+        "module": 12
+      },
+      {
+        "t": 565.1,
+        "label": "The Oath and the Signature",
+        "module": 14
+      },
+      {
+        "t": 631.1,
+        "label": "One Attribute, Facing Two Directions",
+        "module": 15
+      },
+      {
+        "t": 876.2,
+        "label": "The Man Who Believed He Had Been Cast Off",
+        "module": 16
+      },
+      {
+        "t": 1001.5,
+        "label": "Never Differs From Himself",
+        "module": 17
+      },
+      {
+        "t": 1029.6,
+        "label": "What It Costs Each of Two Readers",
+        "module": 18
+      },
+      {
+        "t": 1138.6,
+        "label": "Scripture",
+        "module": 19
+      },
+      {
+        "t": 1178.3,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 1188.2,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 1198.9,
+        "label": "The Floor Under the Floor",
+        "module": 22
+      },
+      {
+        "t": 1307.8,
+        "label": "Closing Prayer",
+        "module": 23
+      },
+      {
+        "t": 1355.5,
+        "label": "Today's Commitment",
+        "module": 24
+      },
+      {
+        "t": 1366.6,
+        "label": "One Question",
+        "module": 25
+      },
+      {
+        "t": 1394.9,
+        "label": "The Voice Behind Today",
+        "module": 26
+      }
+    ]
+  },
+  "he-cannot-deny-himself-day-4": {
+    "src": "/audio/he-cannot-deny-himself-day-4.m4a",
+    "duration": 1541.2,
+    "words": 3954,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 12687193,
+    "textHash": "5d7fc64e5ad5",
     "chapters": [
       {
         "t": 0.0,
@@ -23241,359 +22993,107 @@
         "module": 1
       },
       {
-        "t": 31.2,
+        "t": 35.7,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 71.2,
-        "label": "The Verse That Runs the Garden Backwards",
-        "module": 3
-      },
-      {
-        "t": 161.9,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 173.6,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 187.1,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 231.1,
-        "label": "Selling Someone What They Already Own",
-        "module": 9
-      },
-      {
-        "t": 330.7,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 412.6,
-        "label": "The Word the Commandment Would Later Use",
-        "module": 12
-      },
-      {
-        "t": 549.4,
-        "label": "The Counterfeit and the Original",
-        "module": 14
-      },
-      {
-        "t": 611.9,
-        "label": "A Darkened Likeness of Omnipotence",
-        "module": 15
-      },
-      {
-        "t": 785.0,
-        "label": "Pears He Did Not Want",
-        "module": 16
-      },
-      {
-        "t": 915.6,
-        "label": "Not the Loss of Reason",
-        "module": 17
-      },
-      {
-        "t": 949.5,
-        "label": "Where the Reach Shows Up Now",
-        "module": 18
-      },
-      {
-        "t": 1078.2,
-        "label": "Scripture",
-        "module": 20
-      },
-      {
-        "t": 1117.4,
-        "label": "Reflect",
-        "module": 21
-      },
-      {
-        "t": 1129.9,
-        "label": "A Practice for Today",
-        "module": 22
-      },
-      {
-        "t": 1140.2,
-        "label": "The Hand That Did Not Close",
-        "module": 23
-      },
-      {
-        "t": 1243.6,
-        "label": "Closing Prayer",
-        "module": 24
-      },
-      {
-        "t": 1284.6,
-        "label": "Today's Commitment",
-        "module": 25
-      },
-      {
-        "t": 1295.3,
-        "label": "One Question",
-        "module": 26
-      },
-      {
-        "t": 1331.3,
-        "label": "The Voice Behind Today",
-        "module": 27
-      }
-    ]
-  },
-  "he-cannot-deny-himself-day-3": {
-    "src": "/audio/he-cannot-deny-himself-day-3.m4a",
-    "duration": 1454.5,
-    "words": 3889,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 8952455,
-    "textHash": "876a06aec0c0",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 7.4,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 31.8,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 66.3,
-        "label": "What God Says When He Says His Own Name",
-        "module": 3
-      },
-      {
-        "t": 149.6,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 162.6,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 177.0,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 213.3,
-        "label": "The Saying He Did Not Write",
-        "module": 9
-      },
-      {
-        "t": 342.4,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 417.1,
-        "label": "Two Lines That Will Not Be Harmonized",
-        "module": 12
-      },
-      {
-        "t": 556.1,
-        "label": "The Oath and the Signature",
-        "module": 14
-      },
-      {
-        "t": 622.6,
-        "label": "One Attribute, Facing Two Directions",
-        "module": 15
-      },
-      {
-        "t": 852.0,
-        "label": "The Man Who Believed He Had Been Cast Off",
-        "module": 16
-      },
-      {
-        "t": 982.0,
-        "label": "Never Differs From Himself",
-        "module": 17
-      },
-      {
-        "t": 1012.8,
-        "label": "What It Costs Each of Two Readers",
-        "module": 18
-      },
-      {
-        "t": 1130.9,
-        "label": "Scripture",
-        "module": 19
-      },
-      {
-        "t": 1172.2,
-        "label": "Reflect",
-        "module": 20
-      },
-      {
-        "t": 1183.4,
-        "label": "A Practice for Today",
-        "module": 21
-      },
-      {
-        "t": 1195.2,
-        "label": "The Floor Under the Floor",
-        "module": 22
-      },
-      {
-        "t": 1302.7,
-        "label": "Closing Prayer",
-        "module": 23
-      },
-      {
-        "t": 1345.1,
-        "label": "Today's Commitment",
-        "module": 24
-      },
-      {
-        "t": 1357.9,
-        "label": "One Question",
-        "module": 25
-      },
-      {
-        "t": 1391.0,
-        "label": "The Voice Behind Today",
-        "module": 26
-      }
-    ]
-  },
-  "he-cannot-deny-himself-day-4": {
-    "src": "/audio/he-cannot-deny-himself-day-4.m4a",
-    "duration": 1505.4,
-    "words": 3958,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 9263584,
-    "textHash": "1f5588ff4121",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 6.4,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 39.3,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 77.9,
+        "t": 72.4,
         "label": "Go and Learn What This Means",
         "module": 3
       },
       {
-        "t": 163.9,
+        "t": 158.6,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 174.2,
+        "t": 168.2,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 188.9,
+        "t": 180.6,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 251.7,
+        "t": 244.0,
         "label": "A Perfect Prayer, and the Reply",
         "module": 9
       },
       {
-        "t": 364.6,
+        "t": 376.1,
         "label": "Word study",
         "module": 10
       },
       {
-        "t": 455.2,
+        "t": 471.0,
         "label": "What Exactly Is Wrong With Verses 1-3",
         "module": 12
       },
       {
-        "t": 586.8,
+        "t": 604.7,
         "label": "Two Things That Are Not the Same",
         "module": 14
       },
       {
-        "t": 658.3,
+        "t": 666.4,
         "label": "Not a Better Apology",
         "module": 15
       },
       {
-        "t": 820.1,
+        "t": 828.2,
         "label": "The Hand That Signed",
         "module": 16
       },
       {
-        "t": 1004.5,
+        "t": 1013.3,
         "label": "Costly Grace",
         "module": 17
       },
       {
-        "t": 1037.5,
+        "t": 1041.5,
         "label": "What This Does Not Mean",
         "module": 18
       },
       {
-        "t": 1167.7,
+        "t": 1190.6,
         "label": "Scripture",
         "module": 19
       },
       {
-        "t": 1206.1,
+        "t": 1226.1,
         "label": "Reflect",
         "module": 20
       },
       {
-        "t": 1220.9,
+        "t": 1238.7,
         "label": "A Practice for Today",
         "module": 21
       },
       {
-        "t": 1233.4,
+        "t": 1251.5,
         "label": "The Question That Is Not a Verdict",
         "module": 22
       },
       {
-        "t": 1353.9,
+        "t": 1382.2,
         "label": "Closing Prayer",
         "module": 23
       },
       {
-        "t": 1396.9,
+        "t": 1436.3,
         "label": "Today's Commitment",
         "module": 24
       },
       {
-        "t": 1410.3,
+        "t": 1448.1,
         "label": "One Question",
         "module": 25
       },
       {
-        "t": 1445.2,
+        "t": 1478.5,
         "label": "The Voice Behind Today",
         "module": 26
       }
@@ -23601,12 +23101,12 @@
   },
   "he-cannot-deny-himself-day-5": {
     "src": "/audio/he-cannot-deny-himself-day-5.m4a",
-    "duration": 1470.6,
-    "words": 3908,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 9047427,
-    "textHash": "59f1a027d461",
+    "duration": 1432.8,
+    "words": 3887,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 11792168,
+    "textHash": "4236fd3b6fb0",
     "chapters": [
       {
         "t": 0.0,
@@ -23614,117 +23114,117 @@
         "module": 0
       },
       {
-        "t": 5.2,
+        "t": 4.5,
         "label": "Scripture",
         "module": 1
       },
       {
-        "t": 26.6,
+        "t": 22.9,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 65.5,
+        "t": 64.4,
         "label": "The Word They Did Not Choose",
         "module": 3
       },
       {
-        "t": 149.6,
+        "t": 151.7,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 161.1,
+        "t": 162.0,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 177.4,
+        "t": 175.1,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 243.4,
+        "t": 240.0,
         "label": "A Promise Made to People Who Had Already Failed",
         "module": 8
       },
       {
-        "t": 371.1,
+        "t": 365.3,
         "label": "Word study",
         "module": 9
       },
       {
-        "t": 442.8,
+        "t": 435.2,
         "label": "Scripture",
         "module": 11
       },
       {
-        "t": 479.7,
+        "t": 470.3,
         "label": "What the Text Says, and What It Declines to Say",
         "module": 13
       },
       {
-        "t": 674.5,
+        "t": 655.8,
         "label": "Two Kinds of Security",
         "module": 15
       },
       {
-        "t": 735.7,
+        "t": 706.8,
         "label": "Who Supplies the Walking",
         "module": 16
       },
       {
-        "t": 872.0,
+        "t": 849.2,
         "label": "Five Minutes in Innellan",
         "module": 17
       },
       {
-        "t": 1025.4,
+        "t": 993.9,
         "label": "Never Inconsistent With Himself",
         "module": 18
       },
       {
-        "t": 1054.7,
+        "t": 1015.1,
         "label": "What This Does Not Make Optional",
         "module": 19
       },
       {
-        "t": 1167.1,
+        "t": 1129.6,
         "label": "Scripture",
         "module": 20
       },
       {
-        "t": 1208.0,
+        "t": 1170.1,
         "label": "Reflect",
         "module": 21
       },
       {
-        "t": 1217.2,
+        "t": 1178.3,
         "label": "A Practice for Today",
         "module": 22
       },
       {
-        "t": 1227.8,
+        "t": 1189.3,
         "label": "The Cup on the Table",
         "module": 23
       },
       {
-        "t": 1314.9,
+        "t": 1282.2,
         "label": "Closing Prayer",
         "module": 24
       },
       {
-        "t": 1358.8,
+        "t": 1332.1,
         "label": "Today's Commitment",
         "module": 25
       },
       {
-        "t": 1372.3,
+        "t": 1342.9,
         "label": "One Question",
         "module": 26
       },
       {
-        "t": 1408.8,
+        "t": 1373.0,
         "label": "The Voice Behind Today",
         "module": 27
       }
@@ -23732,12 +23232,12 @@
   },
   "he-cannot-deny-himself-day-6": {
     "src": "/audio/he-cannot-deny-himself-day-6.m4a",
-    "duration": 514.7,
-    "words": 1377,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 3172257,
-    "textHash": "a1e890331d4c",
+    "duration": 517.9,
+    "words": 1366,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 4267045,
+    "textHash": "e1cc23629731",
     "chapters": [
       {
         "t": 0.0,
@@ -23745,47 +23245,47 @@
         "module": 0
       },
       {
-        "t": 3.8,
+        "t": 3.6,
         "label": "Scripture",
         "module": 1
       },
       {
-        "t": 40.8,
+        "t": 41.0,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 80.9,
+        "t": 81.6,
         "label": "Awake or Asleep",
         "module": 3
       },
       {
-        "t": 152.3,
+        "t": 150.5,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 163.0,
+        "t": 159.5,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 177.7,
+        "t": 172.8,
         "label": "The Week, Walked Back",
         "module": 7
       },
       {
-        "t": 403.5,
+        "t": 397.8,
         "label": "The Sentence, Read From Both Ends",
         "module": 10
       },
       {
-        "t": 495.0,
+        "t": 500.5,
         "label": "Reflect",
         "module": 11
       },
       {
-        "t": 504.5,
+        "t": 509.6,
         "label": "Carrying It Out",
         "module": 12
       }
@@ -23793,11 +23293,11 @@
   },
   "he-cannot-deny-himself-day-7": {
     "src": "/audio/he-cannot-deny-himself-day-7.m4a",
-    "duration": 148.9,
+    "duration": 149.3,
     "words": 397,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 913954,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 1235180,
     "textHash": "e72d837d7d28",
     "chapters": [
       {
@@ -23806,22 +23306,22 @@
         "module": 0
       },
       {
-        "t": 4.3,
+        "t": 4.5,
         "label": "Scripture",
         "module": 1
       },
       {
-        "t": 27.7,
+        "t": 24.8,
         "label": "Where This Was Written",
         "module": 2
       },
       {
-        "t": 130.4,
+        "t": 131.4,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 141.1,
+        "t": 141.6,
         "label": "A Prayer for the Silence",
         "module": 5
       }
@@ -24393,7 +23893,59 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 2837550,
-    "textHash": "b40364799c03"
+    "textHash": "b40364799c03",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 13.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 55.6,
+        "label": "Word study",
+        "module": 3
+      },
+      {
+        "t": 92.5,
+        "label": "The Divine Aesthetic",
+        "module": 4
+      },
+      {
+        "t": 198.9,
+        "label": "Seeing Goodness in Creation",
+        "module": 5
+      },
+      {
+        "t": 375.8,
+        "label": "Reflect",
+        "module": 7
+      },
+      {
+        "t": 382.1,
+        "label": "Prayer",
+        "module": 8
+      },
+      {
+        "t": 397.1,
+        "label": "Takeaway",
+        "module": 9
+      },
+      {
+        "t": 406.4,
+        "label": "New Hebrew Letters",
+        "module": 10
+      }
+    ]
   },
   "in-the-beginning-week-1-day-5": {
     "src": "/audio/in-the-beginning-week-1-day-5.m4a",
@@ -24402,7 +23954,64 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 3155802,
-    "textHash": "370761e7f96b"
+    "textHash": "370761e7f96b",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 2.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 14.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 55.3,
+        "label": "Word study",
+        "module": 3
+      },
+      {
+        "t": 84.2,
+        "label": "Word study",
+        "module": 4
+      },
+      {
+        "t": 109.7,
+        "label": "The Authority of Naming and the Rhythm of Time",
+        "module": 5
+      },
+      {
+        "t": 221.9,
+        "label": "The Architecture of Time",
+        "module": 6
+      },
+      {
+        "t": 418.3,
+        "label": "Reflect",
+        "module": 8
+      },
+      {
+        "t": 425.5,
+        "label": "Prayer",
+        "module": 9
+      },
+      {
+        "t": 440.7,
+        "label": "Takeaway",
+        "module": 10
+      },
+      {
+        "t": 451.3,
+        "label": "Hebrew Letters Review",
+        "module": 11
+      }
+    ]
   },
   "in-the-beginning-week-1-day-6": {
     "src": "/audio/in-the-beginning-week-1-day-6.m4a",
@@ -24486,125 +24095,8 @@
     "words": 3977,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8680861,
-    "textHash": "8b1aaddb7dd1",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 8.0,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 50.3,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 95.7,
-        "label": "Who Was in the Room",
-        "module": 3
-      },
-      {
-        "t": 180.6,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 189.9,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 205.3,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 255.6,
-        "label": "Comfort, and Grass",
-        "module": 9
-      },
-      {
-        "t": 358.0,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 426.3,
-        "label": "Eagles, Then Running, Then Walking",
-        "module": 12
-      },
-      {
-        "t": 534.5,
-        "label": "Where This Week Sits in the Story",
-        "module": 14
-      },
-      {
-        "t": 617.2,
-        "label": "Renew Is Not a Word for Topping Up",
-        "module": 15
-      },
-      {
-        "t": 781.7,
-        "label": "The Book Written from the Bed",
-        "module": 16
-      },
-      {
-        "t": 924.0,
-        "label": "Plants That Only Grow There",
-        "module": 17
-      },
-      {
-        "t": 969.4,
-        "label": "What This Week Is Going to Ask",
-        "module": 18
-      },
-      {
-        "t": 1085.3,
-        "label": "Scripture",
-        "module": 19
-      },
-      {
-        "t": 1115.7,
-        "label": "Reflect",
-        "module": 20
-      },
-      {
-        "t": 1129.2,
-        "label": "A Practice for Today",
-        "module": 21
-      },
-      {
-        "t": 1148.1,
-        "label": "The Everlasting God Fainteth Not",
-        "module": 22
-      },
-      {
-        "t": 1253.0,
-        "label": "Closing Prayer",
-        "module": 23
-      },
-      {
-        "t": 1289.6,
-        "label": "Today's Commitment",
-        "module": 24
-      },
-      {
-        "t": 1299.8,
-        "label": "One Question",
-        "module": 25
-      },
-      {
-        "t": 1335.6,
-        "label": "The Voice Behind Today",
-        "module": 26
-      }
-    ]
+    "bytes": 8682852,
+    "textHash": "8b1aaddb7dd1"
   },
   "looking-at-the-sun-day-2": {
     "src": "/audio/looking-at-the-sun-day-2.m4a",
@@ -24612,125 +24104,8 @@
     "words": 3581,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8219473,
-    "textHash": "f35a216db42d",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 9.3,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 35.8,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 81.2,
-        "label": "Weight Is Not the Same as Sin",
-        "module": 3
-      },
-      {
-        "t": 161.8,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 174.0,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 191.0,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 231.1,
-        "label": "Two Problems, Not One",
-        "module": 9
-      },
-      {
-        "t": 324.8,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 391.7,
-        "label": "The Cloud Is Not a Grandstand",
-        "module": 12
-      },
-      {
-        "t": 506.0,
-        "label": "Where This Sits in the Story",
-        "module": 14
-      },
-      {
-        "t": 582.0,
-        "label": "Patience and Endurance Are the Same Word",
-        "module": 15
-      },
-      {
-        "t": 732.5,
-        "label": "Six Years, One Convert",
-        "module": 16
-      },
-      {
-        "t": 869.2,
-        "label": "Commended, and Still Waiting",
-        "module": 17
-      },
-      {
-        "t": 914.2,
-        "label": "Sorting Your Own Load",
-        "module": 18
-      },
-      {
-        "t": 1030.0,
-        "label": "Scripture",
-        "module": 19
-      },
-      {
-        "t": 1053.1,
-        "label": "Reflect",
-        "module": 20
-      },
-      {
-        "t": 1065.2,
-        "label": "A Practice for Today",
-        "module": 21
-      },
-      {
-        "t": 1077.6,
-        "label": "The Race Was Set Before Us",
-        "module": 22
-      },
-      {
-        "t": 1168.4,
-        "label": "Closing Prayer",
-        "module": 23
-      },
-      {
-        "t": 1213.7,
-        "label": "Today's Commitment",
-        "module": 24
-      },
-      {
-        "t": 1224.7,
-        "label": "One Question",
-        "module": 25
-      },
-      {
-        "t": 1262.3,
-        "label": "The Voice Behind Today",
-        "module": 26
-      }
-    ]
+    "bytes": 8222924,
+    "textHash": "f35a216db42d"
   },
   "looking-at-the-sun-day-3": {
     "src": "/audio/looking-at-the-sun-day-3.m4a",
@@ -24738,125 +24113,8 @@
     "words": 4173,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9218148,
-    "textHash": "890c27fe67a3",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 7.8,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 67.1,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 122.5,
-        "label": "The Bluntest Scene in Scripture About Running Out",
-        "module": 3
-      },
-      {
-        "t": 204.6,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 212.3,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 228.1,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 280.9,
-        "label": "What Happened the Day Before",
-        "module": 9
-      },
-      {
-        "t": 385.9,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 459.8,
-        "label": "God Did Not Answer the Prayer",
-        "module": 12
-      },
-      {
-        "t": 577.9,
-        "label": "Where This Sits in the Story",
-        "module": 14
-      },
-      {
-        "t": 654.3,
-        "label": "Bread First. The Word After.",
-        "module": 15
-      },
-      {
-        "t": 839.4,
-        "label": "What Spurgeon Prescribed",
-        "module": 16
-      },
-      {
-        "t": 1001.6,
-        "label": "He Gives Sleep to His Beloved",
-        "module": 17
-      },
-      {
-        "t": 1048.5,
-        "label": "What This Actually Asks For",
-        "module": 18
-      },
-      {
-        "t": 1161.4,
-        "label": "Scripture",
-        "module": 19
-      },
-      {
-        "t": 1188.9,
-        "label": "Reflect",
-        "module": 20
-      },
-      {
-        "t": 1202.9,
-        "label": "A Practice for Today",
-        "module": 21
-      },
-      {
-        "t": 1218.8,
-        "label": "Not in the Wind",
-        "module": 23
-      },
-      {
-        "t": 1338.7,
-        "label": "Closing Prayer",
-        "module": 24
-      },
-      {
-        "t": 1377.0,
-        "label": "Today's Commitment",
-        "module": 25
-      },
-      {
-        "t": 1389.8,
-        "label": "One Question",
-        "module": 26
-      },
-      {
-        "t": 1426.1,
-        "label": "The Voice Behind Today",
-        "module": 27
-      }
-    ]
+    "bytes": 9216258,
+    "textHash": "890c27fe67a3"
   },
   "looking-at-the-sun-day-4": {
     "src": "/audio/looking-at-the-sun-day-4.m4a",
@@ -24865,124 +24123,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 8551132,
-    "textHash": "559c33332733",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 5.6,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 57.3,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 118.1,
-        "label": "What He Actually Names",
-        "module": 3
-      },
-      {
-        "t": 194.9,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 203.9,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 218.9,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 260.0,
-        "label": "Luke Put Them Side by Side",
-        "module": 9
-      },
-      {
-        "t": 361.9,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 426.0,
-        "label": "It Was Being Done to Her",
-        "module": 12
-      },
-      {
-        "t": 542.7,
-        "label": "Where This Sits in the Story",
-        "module": 13
-      },
-      {
-        "t": 622.3,
-        "label": "The Number, Not the Work",
-        "module": 14
-      },
-      {
-        "t": 758.3,
-        "label": "The Noise and Clutter of My Kitchen",
-        "module": 15
-      },
-      {
-        "t": 911.2,
-        "label": "Why We Cannot Stay in the Room",
-        "module": 16
-      },
-      {
-        "t": 975.0,
-        "label": "What to Do With a Full House",
-        "module": 18
-      },
-      {
-        "t": 1090.9,
-        "label": "Scripture",
-        "module": 19
-      },
-      {
-        "t": 1115.7,
-        "label": "Reflect",
-        "module": 20
-      },
-      {
-        "t": 1128.3,
-        "label": "A Practice for Today",
-        "module": 21
-      },
-      {
-        "t": 1141.3,
-        "label": "Where Martha Ends Up",
-        "module": 22
-      },
-      {
-        "t": 1235.3,
-        "label": "Closing Prayer",
-        "module": 23
-      },
-      {
-        "t": 1270.6,
-        "label": "Today's Commitment",
-        "module": 24
-      },
-      {
-        "t": 1282.6,
-        "label": "One Question",
-        "module": 25
-      },
-      {
-        "t": 1318.3,
-        "label": "The Voice Behind Today",
-        "module": 26
-      }
-    ]
+    "textHash": "559c33332733"
   },
   "looking-at-the-sun-day-5": {
     "src": "/audio/looking-at-the-sun-day-5.m4a",
@@ -24991,119 +24132,7 @@
     "voice": "am_michael",
     "engine": "kokoro",
     "bytes": 7675744,
-    "textHash": "222dbce5301c",
-    "chapters": [
-      {
-        "t": 0.0,
-        "label": "Opening",
-        "module": 0
-      },
-      {
-        "t": 6.8,
-        "label": "Scripture",
-        "module": 1
-      },
-      {
-        "t": 32.5,
-        "label": "Word study",
-        "module": 2
-      },
-      {
-        "t": 95.0,
-        "label": "You Do Not Clear the Field First",
-        "module": 3
-      },
-      {
-        "t": 170.8,
-        "label": "Reflect",
-        "module": 4
-      },
-      {
-        "t": 181.7,
-        "label": "A Two-Minute Prayer",
-        "module": 5
-      },
-      {
-        "t": 198.9,
-        "label": "Scripture",
-        "module": 7
-      },
-      {
-        "t": 233.4,
-        "label": "Away From, In Order To",
-        "module": 9
-      },
-      {
-        "t": 325.0,
-        "label": "Word study",
-        "module": 10
-      },
-      {
-        "t": 388.7,
-        "label": "Two Words That Occur Once",
-        "module": 12
-      },
-      {
-        "t": 477.4,
-        "label": "Where This Sits in the Story",
-        "module": 13
-      },
-      {
-        "t": 555.1,
-        "label": "Looking at the Sun",
-        "module": 14
-      },
-      {
-        "t": 672.4,
-        "label": "Doth God Exact Day Labour, Light Denied",
-        "module": 15
-      },
-      {
-        "t": 861.5,
-        "label": "The One Who Is Seated",
-        "module": 16
-      },
-      {
-        "t": 903.9,
-        "label": "What the Week Was Actually About",
-        "module": 17
-      },
-      {
-        "t": 1025.6,
-        "label": "Scripture",
-        "module": 18
-      },
-      {
-        "t": 1065.0,
-        "label": "Reflect",
-        "module": 19
-      },
-      {
-        "t": 1080.9,
-        "label": "A Practice for Today",
-        "module": 20
-      },
-      {
-        "t": 1090.5,
-        "label": "Closing Prayer",
-        "module": 21
-      },
-      {
-        "t": 1135.1,
-        "label": "Today's Commitment",
-        "module": 22
-      },
-      {
-        "t": 1144.9,
-        "label": "One Question",
-        "module": 23
-      },
-      {
-        "t": 1180.1,
-        "label": "The Voice Behind Today",
-        "module": 24
-      }
-    ]
+    "textHash": "222dbce5301c"
   },
   "looking-at-the-sun-day-6": {
     "src": "/audio/looking-at-the-sun-day-6.m4a",
@@ -25177,7 +24206,7 @@
     "words": 450,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1006159,
+    "bytes": 1005761,
     "textHash": "f6ca05a46d43",
     "chapters": [
       {

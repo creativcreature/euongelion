@@ -137,3 +137,8 @@ euangelion-voice-prototype/*.wav
 euangelion-voice-prototype/renders/
 euangelion-voice-prototype/clips*/
 euangelion-voice-prototype/archive-abandoned-clone-path/
+
+# Rendered TTS chunks, kept so a failed run resumes without re-spending credits
+euangelion-voice-prototype/.el-chunk-cache/
+euangelion-voice-prototype/thca-source/
+src/data/audio-manifest.json.lock
