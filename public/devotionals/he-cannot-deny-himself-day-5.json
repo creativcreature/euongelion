@@ -17,8 +17,13 @@
       "reference": "Luke 22:20",
       "translation": "BSB",
       "passage": "In the same way, after supper He took the cup, saying, “This cup is the new covenant in My blood, which is poured out for you.",
-      "emphasis": ["This cup is the new covenant in My blood"],
-      "scriptureContext": "Two minutes with the sentence that takes a six-hundred-year-old promise off the page and puts it in someone's hands."
+      "emphasis": [
+        "This cup is the new covenant in My blood"
+      ],
+      "scriptureContext": "Two minutes with the sentence that takes a six-hundred-year-old promise off the page and puts it in someone's hands.",
+      "redLetter": [
+        "This cup is the new covenant in My blood, which is poured out for you."
+      ]
     },
     {
       "type": "vocab",
@@ -112,7 +117,9 @@
       "reference": "Genesis 15:12, 17",
       "translation": "BSB",
       "passage": "As the sun was setting, Abram fell into a deep sleep, and suddenly great terror and darkness overwhelmed him. … When the sun had set and darkness had fallen, behold, a smoking firepot and a flaming torch appeared and passed between the halves of the carcasses.",
-      "emphasis": ["a smoking firepot and a flaming torch appeared and passed between the halves"],
+      "emphasis": [
+        "a smoking firepot and a flaming torch appeared and passed between the halves"
+      ],
       "scriptureContext": "The scene the idiom remembers. Abram had done the work — brought the animals, split them, arranged the halves opposite each other, and driven the birds of prey off the carcasses all afternoon."
     },
     {
@@ -176,7 +183,9 @@
       "reference": "Ezekiel 36:26-27",
       "translation": "KJV",
       "passage": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.",
-      "emphasis": ["cause you to walk in my statutes"],
+      "emphasis": [
+        "cause you to walk in my statutes"
+      ],
       "scriptureContext": "The same promise as Jeremiah's, in a different prophet's vocabulary — and four verses earlier Ezekiel gives God's reason, which is the reason from Wednesday: \"It is not for your sake that I will act… but for My holy name.\""
     },
     {

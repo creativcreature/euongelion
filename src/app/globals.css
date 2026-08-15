@@ -3172,6 +3172,43 @@ html.reduce-motion *::after {
     flex: 0 0 auto;
   }
 
+  /* ── Red letter — the words of Christ (F-095 / SA-051) ──────────────
+     Founder: "Jesus direct words in Red. ensure the highlight color is
+     correct for such text."
+
+     #7a1c12 is not a taste choice, it is the deepest red that clears AA
+     (>= 4.5:1) against EVERY highlight ground, measured:
+       yellow 7.8  blue 5.4  green 6.4  pink 5.6  purple 5.0
+     and 9.1:1 on cream. Dark mode lifts to #f5988a (7.0:1 on the deep
+     ground) for unhighlighted text.
+
+     Inside a highlight the colour returns to the dark red in BOTH themes,
+     because a highlight ground is a light pastel in both — this is the
+     "highlight color is correct for such text" requirement, and it is the
+     reason the light-mode value was chosen against the swatches rather
+     than against the page. */
+  .wj {
+    color: #7a1c12;
+  }
+
+  .dark .wj {
+    color: #f5988a;
+  }
+
+  .reader-highlight .wj,
+  .dark .reader-highlight .wj {
+    color: #7a1c12;
+  }
+
+  /* Selection over red letter: the browser default would paint the site's
+     selection ink over it and lose the attribution mid-drag. */
+  .wj::selection { color: #7a1c12; }
+  .dark .wj::selection { color: #2a0a06; }
+
+  @media print {
+    .wj { color: #7a1c12; }
+  }
+
   /* F-092 / SA-047 — the chat launcher paints BOTH halves per theme.
      It previously used `bg-gold text-tehom`, and --color-gold is a legacy
      alias resolving to cobalt #1f2a8d in light mode — a near-black icon on a
@@ -11153,21 +11190,36 @@ html[data-held-moment] .mobile-tab-bar {
   margin: 0 auto 0.9rem;
 }
 
+/* Founder 2026-08-15: "the continue is the right size but maybe needs a color
+   or something to stand out a bit." A warm accent, sized as before — bronze on
+   cream (5.1:1) and gold on the deep ground (7.4:1). Deliberately NOT red:
+   red is reserved site-wide for the words of Christ. */
 .rr-resume {
   display: inline-flex;
   align-items: baseline;
   gap: 0.5rem;
-  padding: 0.25rem 0.1rem;
+  padding: 0.28rem 0.62rem;
   text-decoration: none;
-  color: var(--mock-muted);
-  border-bottom: 1px solid transparent;
-  transition: color 140ms ease, border-color 140ms ease;
+  color: var(--mock-ink);
+  border: 1px solid #8a5e12;
+  border-left-width: 3px;
+  background: rgba(138, 94, 18, 0.07);
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.dark .rr-resume {
+  border-color: #d8b273;
+  background: rgba(216, 178, 115, 0.1);
 }
 
 .rr-resume:hover,
 .rr-resume:focus-visible {
-  color: var(--mock-ink);
-  border-bottom-color: var(--mock-line, currentColor);
+  background: rgba(138, 94, 18, 0.14);
+}
+
+.dark .rr-resume:hover,
+.dark .rr-resume:focus-visible {
+  background: rgba(216, 178, 115, 0.18);
 }
 
 .rr-resume-label {
@@ -11175,7 +11227,10 @@ html[data-held-moment] .mobile-tab-bar {
   font-size: 0.56rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: #8a5e12;
 }
+
+.dark .rr-resume-label { color: #d8b273; }
 
 .rr-resume-title {
   font-family: var(--font-family-serif);

@@ -1,3 +1,4 @@
+import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
 import type { DevotionalModule } from '@/types/soul-audit'
 import type { DayContent } from '@/types/soul-audit-plan'
 
@@ -95,6 +96,11 @@ export function onboardingDayContentToModules(
       type: 'scripture',
       heading: 'SCRIPTURE',
       content: { passage, reference },
+      // SA-051: Christ's words are attributed as the module is built, so
+      // generated readings carry red letter without an authoring step.
+      ...(resolveRedLetter(reference, passage).length > 0
+        ? { redLetter: resolveRedLetter(reference, passage) }
+        : {}),
     })
   }
 

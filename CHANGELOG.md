@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SERIES IMAGERY — region-accurate people, developed frames (2026-08-15)
+
+**SA-050 · F-096** — 33 of 37 series plates regenerated. The four founder-approved
+plates (he-cannot-deny-himself, looking-at-the-sun, prayer-of-jabez, the-harvest)
+are untouched.
+
+Three defects, three different causes:
+
+- **Whitewash.** The prompt named no period, so the model defaulted to
+  contemporary Western — a boy in a sweatshirt and jeans. But naming an ethnicity
+  alone would not have fixed it: in a cobalt-on-cream duotone the cream paper is
+  the only other ink, so *unprinted skin is white skin*. Skin is now specified as
+  a **value** — brown to deep brown, printed at dense dot coverage.
+- **Empty backgrounds.** The old style block asked for "generous negative space…
+  small figure scale", which read as permission to leave the frame blank. Deleted;
+  replaced by a FULLY DEVELOPED FRAME clause. Bare-paper coverage across the final
+  set is under 0.5%.
+- **Grain in the large crop.** Not compression — **upscaling**. `images.unoptimized`
+  means no srcset, and the 1408/768 headline slot is ~1267 CSS px on a 1920
+  desktop, so a 1024 square was being upscaled ~1.24×. Install is now 1600×872,
+  the same shape as the slot, which also serves the OG card.
+
+Faces are hidden by posture, angle and head covering — never blacked out, which
+the founder explicitly dislikes. A visible region-accurate face is fine.
+
+**New in `scripts/imagery/`:** `prompt-preamble.md` (the approved wording),
+`series-image-subjects.json` (all 33 subjects), `build-prompts.mjs` (assembles
+prompts, reports run state from disk), `verify-masters.mjs` (the gate),
+`install-series-masters.mjs`. The first attempt lost its whole prompt set to
+context compaction; the pipeline now lives on disk.
+
+The gate measures border and blank-paper coverage and **refuses to score the
+figures**, printing instead which plates need a human look — a plate can pass both
+measurements and still be wrong. `rooted` failed at 3.7% blank sky, was
+regenerated with an explicit sky clause, and passed. 33/33 measured pass.
+
+**Known gaps:** page weight rose from 5.5 MB to 17.8 MB for the set (~490 KB per
+hero vs ~150 KB) — dense halftone is worst-case for compression and reducing
+further visibly degrades the dots. Founder also asked for imagery reading
+"slightly more editorial"; not attempted here, since it would mean regenerating
+all 33 on my own reading of "slightly".
+
+---
+
 ## CHAT — it scrolls now, and the composer stays on screen (2026-08-15)
 
 Founder: _"the chat needs to have its seperate scroll wheel, as I cannot access
@@ -42,6 +86,57 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index.json` on cold start; CLAUDE.md documents a 3.2 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
+
+## RED LETTER — the words of Christ (2026-08-15)
+
+Founder: _"through out the site — Jesus direct words in Red. ensure the
+highlight color is correct for such text."_ Then, on whether a source exists:
+_"are there no guides to this for the edition we have online anywhere?"_
+Registered as **SA-051**.
+
+**No, there isn't — so we built one.** Verified rather than assumed: the KJV
+OSIS on disk carries 2,081 exact `<q who="Jesus">` milestones but covers 1 of
+our 125 Gospel passages; the official public-domain BSB USFM has **zero** `\wj`
+markers; NIV is copyrighted with no open dataset; STEPBible has no speaker
+attribution. Our Gospel passages are BSB 70, NIV 50, ESV 2, NKJV 2, KJV 1.
+
+So the attribution is cross-referenced: KJV and BSB share verse boundaries, so
+the verse is the join key and the KJV's milestones are mapped onto BSB wording
+verse by verse — no similarity matching, no guessing.
+
+**Inference was never an option.** Luke 10:33-37 in BSB has three quoted spans
+and the middle one — "The one who showed him mercy" — is the expert in the law.
+A quotation-mark pass paints Christ's colour on another man's words, and KJV
+doesn't punctuate speech at all. The standing principle: a missing red word is a
+typographic omission, a wrongly red word is a false attribution.
+
+**Three guarded paths, and one of them is the unlock.** Whole-verse attribution
+is *translation-independent* — Matthew 16:24 is "Whoever wants to be my
+disciple…" in NIV and "If anyone wants to come after Me…" in BSB, and no
+verbatim match can bridge that, but the fact that the whole verse is His holds
+in both. That single rule took NIV from 6/31 to 24/62. A second path handles
+sayings quoted without their reporting clause, guarded so anything still
+carrying narration is excluded. A third matches BSB spans literally. 27
+ambiguous verses are refused outright.
+
+**Colour is measured, not chosen.** `#7a1c12` is the deepest red clearing WCAG
+AA against every highlight ground — yellow 7.8:1, blue 5.4, green 6.4, pink 5.6,
+purple 5.0, cream 9.1. Dark mode lifts to `#f5988a`; inside a highlight it
+returns to the dark red in both themes, because highlight grounds are light
+pastels in both. That is the founder's "ensure the highlight color is correct
+for such text", and it is why the light value was measured against the swatches
+rather than against the page. Editorial emphasis now renders *inside* the red
+instead of being replaced by it.
+
+**Tagged as content is created, and retroactively.** `withRedLetter()` is wired
+into all three Soul Audit generation sites, and the rule is written into the
+devo-go and soul-audit skills, so new readings carry red letter with no
+authoring step. The retroactive pass covered 85 of 153 Gospel modules across 83
+files — with **zero content differences**, verified by semantic diff; every
+change is an added `redLetter` field.
+
+16 tests, including the Luke 10 negative control. The 239 KB dataset is
+server/build only and never reaches a reader. — SA-051 (F-095)
 
 ## SERIES — seven layouts, centred, and a resume line that knows its place (2026-08-15)
 

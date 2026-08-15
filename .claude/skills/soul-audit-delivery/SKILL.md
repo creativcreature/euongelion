@@ -60,3 +60,24 @@ Then verify the end-to-end path manually:
 2. receive exactly expected options
 3. select option
 4. devotional route resolves
+
+## Red letter in generated plans (SA-051, mandatory)
+
+A Soul Audit plan emits scripture modules at generation time, so it attributes
+Christ's words at generation time too — there is no later migration:
+
+```ts
+import { withRedLetter, resolveRedLetter } from '@/lib/red-letter-resolve'
+```
+
+Already wired in `curated-builder.ts`, `curated-catalog.ts` and
+`onboarding-day-to-reader.ts`. If you add a fourth place that emits a
+`type: 'scripture'` module, wire it there too — otherwise that surface silently
+loses red letter while every other one keeps it.
+
+`red-letter-resolve` is SERVER/BUILD ONLY. The dataset is 239 KB raw; never
+import it into a client component. Resolution happens where the module is
+built and only the resulting spans travel to the reader.
+
+Never infer attribution from quotation marks — see the devo-go verification
+standards for why (Luke 10:33-37 defeats it).

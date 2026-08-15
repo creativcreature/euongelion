@@ -1,3 +1,4 @@
+import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
 import fs from 'fs'
 import path from 'path'
 import { CURATED_SOURCE_PRIORITY } from './constants'
@@ -120,13 +121,13 @@ function normalizeDay(raw: unknown, fallbackDay: number): CuratedDay | null {
       .find((line) => line.trim().length > 10)
 
     const syntheticModules: Array<Record<string, unknown>> = [
-      {
+      withRedLetter({
         type: 'scripture',
         reference: String(
           dayObj.scriptureReference || dayObj.anchorVerse || '',
         ).trim(),
         passage: String(dayObj.framework || '').trim(),
-      },
+      }),
       {
         type: 'teaching',
         content: String(textPanel?.content || '').trim(),

@@ -4,6 +4,7 @@ import type { Module } from '@/types'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { typographer } from '@/lib/typographer'
 import { renderWithWordNotes } from '@/lib/wordnote-markup'
+import { renderRedLetter } from '@/lib/red-letter'
 
 /**
  * Determine layout variant based on passage length.
@@ -24,7 +25,15 @@ function getVariant(passage: string): 'asymmetric' | 'scale' | 'fullwidth' {
 function highlightEmphasis(
   passage: string,
   emphasis?: string[],
+  redLetter?: string[],
 ): React.ReactNode {
+  // Red letter runs first and wins: where a passage carries attributed words
+  // of Christ, that colour is the meaning of the type. Gold emphasis is an
+  // editorial flourish and defers to it.
+  if (redLetter && redLetter.length > 0) {
+    // Emphasis renders INSIDE the red rather than being replaced by it.
+    return renderRedLetter(passage, redLetter, emphasis)
+  }
   if (!emphasis || emphasis.length === 0) return typographer(passage)
 
   const escaped = emphasis.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
@@ -148,7 +157,7 @@ function AsymmetricVariant({
         )}
         <blockquote>
           <p className="text-serif-italic vw-body-lg leading-relaxed">
-            {highlightEmphasis(passage, module.emphasis)}
+            {highlightEmphasis(passage, module.emphasis, module.redLetter)}
           </p>
         </blockquote>
       </div>
@@ -209,7 +218,7 @@ function ScaleVariant({
       {/* Passage — the main event */}
       <blockquote style={{ maxWidth: '680px' }}>
         <p className="text-serif-italic vw-heading-sm leading-relaxed">
-          {highlightEmphasis(passage, module.emphasis)}
+          {highlightEmphasis(passage, module.emphasis, module.redLetter)}
         </p>
       </blockquote>
 
@@ -266,7 +275,7 @@ function FullwidthVariant({
 
       <blockquote style={{ maxWidth: '720px' }}>
         <p className="text-serif-italic vw-body-lg leading-loose">
-          {highlightEmphasis(passage, module.emphasis)}
+          {highlightEmphasis(passage, module.emphasis, module.redLetter)}
         </p>
       </blockquote>
 

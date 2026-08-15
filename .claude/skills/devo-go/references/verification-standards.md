@@ -43,3 +43,38 @@ Everything reader-facing traces to a verified source recorded in the source pack
 
 - Dating and audience claims per scholarly consensus with sources cited (encyclopedias, seminary resources, standard introductions); phrase ranges honestly ("most likely the 400s-300s BC"), distinguish tradition from history (rabbinic identifications are cited as tradition, never fact).
 - Uncertainty language per AI-CONTENT-CONSTRAINTS §4.5: verified fact stated directly; debate flagged; speculation labeled.
+
+## Red letter — the words of Christ (SA-051, mandatory)
+
+Every scripture module whose reference falls in Matthew, Mark, Luke, John, Acts
+or Revelation MUST carry attribution for Christ's direct speech. You do not
+author this by hand and you do not eyeball it:
+
+```ts
+import { withRedLetter } from '@/lib/red-letter-resolve'
+const module = withRedLetter({ type: 'scripture', reference, passage })
+```
+
+`resolveRedLetter` looks the reference up in `src/data/red-letter-bsb.json`
+(built from the KJV OSIS `<q who="Jesus">` milestones, mapped onto BSB wording)
+and returns only spans that appear VERBATIM in this passage. A passage in a
+translation we cannot map returns nothing and stays black. That is correct
+behaviour, not a gap to paper over.
+
+**Never infer attribution from quotation marks.** Luke 10:33-37 in BSB has three
+quoted spans and the middle one is the expert in the law, not Jesus. A
+quotation-mark pass puts Christ's colour on another man's words. KJV does not
+punctuate speech at all.
+
+**A parable is red in full.** Where Jesus tells a story, the narration inside it
+is His speech — Luke 10:30-35 is red throughout. The dataset already reflects
+this; do not "correct" it.
+
+**If the pipeline declines a verse, leave it black.** 27 verses are deliberately
+unmarked because the alignment is ambiguous. A missing red word is a
+typographic omission; a wrongly red word is a false attribution. If you are
+certain of the attribution for one of those, set `redLetter` by hand on that
+module — a hand-marked value always wins over the resolver.
+
+Colour is fixed and measured, not chosen: `#7a1c12`, the deepest red clearing
+WCAG AA against every highlight ground. Do not restyle `.wj`.

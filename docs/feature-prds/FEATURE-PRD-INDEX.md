@@ -98,3 +98,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-092 | Platform          | Editable highlights — recolour, note, remove        | 0/10     | wip    | [F-092.md](./F-092.md) |
 | F-093 | Reading           | Chat scrolls; composer pinned                       | 0/10     | wip    | [F-093.md](./F-093.md) |
 | F-094 | Platform          | Reading room — ten print layouts for /series        | 0/10     | wip    | [F-094.md](./F-094.md) |
+| F-095 | Platform          | Red letter — the words of Christ                    | 0/10     | wip    | [F-095.md](./F-095.md) |

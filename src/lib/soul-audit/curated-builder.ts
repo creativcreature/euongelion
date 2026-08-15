@@ -1,3 +1,4 @@
+import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
 import { SERIES_DATA } from '@/data/series'
 import type {
   CustomPlanDay,
@@ -161,6 +162,10 @@ function buildModules(params: {
   const { candidate, userResponse, referenceHits } = params
 
   // 1. Scripture module — always first
+  const scriptureRedLetter = resolveRedLetter(
+    candidate.scriptureReference,
+    candidate.scriptureText,
+  )
   modules.push({
     type: 'scripture',
     heading: candidate.scriptureReference,
@@ -168,6 +173,8 @@ function buildModules(params: {
       reference: candidate.scriptureReference,
       text: candidate.scriptureText,
     },
+    // SA-051: attributed at build time, not by a later migration.
+    ...(scriptureRedLetter.length > 0 ? { redLetter: scriptureRedLetter } : {}),
   })
 
   // 2. Teaching module — core exposition

@@ -1,0 +1,5 @@
+APPLIED
+modules 153
+tagged 85 (56%)
+files changed 46
+BSB 56/85  NIV 24/62  ESV 3/3  NKJV 2/2  KJV 0/1

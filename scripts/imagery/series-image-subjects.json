@@ -1,0 +1,80 @@
+{
+  "_readme": "Per-series SUBJECT lines for the riso duotone series masters. The shared prompt preamble lives in .claude/skills/devo-go/references/imagery-and-video.md and is assembled by scripts/imagery/generate-series-masters.mjs. Keep this file in git — these were lost once to context compaction and re-authoring them cost a full session.",
+  "_approved_do_not_regenerate": [
+    "he-cannot-deny-himself",
+    "looking-at-the-sun",
+    "prayer-of-jabez",
+    "the-harvest"
+  ],
+  "_founder_approved_output": {
+    "note": "identity, community and once-saved-always-saved were the three test plates the founder approved on 2026-08-15 ('this set works'). Their subjects are below and their masters are already rendered.",
+    "slugs": ["identity", "community", "once-saved-always-saved"]
+  },
+  "subjects": {
+    "identity": "A lone robed Judean figure in tunic and head cloth standing at the edge of vast cracked and broken ground, seen from behind, head bowed, one hand at the chest where a single small warm golden-yellow lamp-glow burns through the cloth. Discarded clay funerary masks and shattered pottery faces lie half sunk in the fissures around and below. Beyond, a fully rendered landscape of dry hills receding to a high horizon under a sky filled with halftone cloud structure.",
+
+    "community": "A small gathered circle of robed Judean men and women in tunics, mantles and head cloths, standing close together at night with heads bowed inward toward one small warm golden-yellow clay oil lamp held at the centre of the circle. They stand among the fallen stone blocks and toppled columns of an ancient Near Eastern settlement, with a fully rendered ruined townscape and dry hills receding behind them and a night sky of halftone cloud and star texture above.",
+
+    "once-saved-always-saved": "A pair of large weathered brown-skinned shepherd's hands, cupped together and seen from the front, sheltering one small sleeping lamb that glows with a soft warm golden-yellow light. Behind and around the hands is a fully rendered pastoral landscape — a hillside of grazing terrain in blue halftone, a low stone sheepfold wall, distant hills, and a sky carrying cloud structure and dot gradient. The background is quiet and recessive but completely printed.",
+
+    "abiding-in-his-presence": "An ancient gnarled grapevine rooted in terraced Judean hillside soil, one living branch heavy with a cluster of warm golden-yellow fruit while a cut branch lies dry on the ground below. Behind, fully rendered stepped vineyard terraces, a low field-stone wall and a watchtower recede to a high horizon under a sky of halftone cloud.",
+
+    "anointed": "A ram's-horn flask tipped in a pair of weathered brown hands, pouring a thin stream of warm golden-yellow oil down over the head of a figure kneeling below, seen from behind with head bowed. They are in the packed-earth courtyard of an ancient Judean house, with fully rendered stone walls, a doorway, roof beams and hill country visible beyond.",
+
+    "bible-365": "A long scroll unrolling away from the viewer across a vast landscape, its open length becoming the road itself, running to a high horizon where a warm golden-yellow sun stands low. Fully rendered dry hills, scattered olive trees and a distant walled town flank the road under a sky of halftone cloud structure.",
+
+    "coming-to-the-end-of-ourselves": "A lone robed Judean figure seated on the ground at the end of a long desert track, seen from behind, shoulders down, staff fallen beside them. Ahead on the high horizon a single small warm golden-yellow light burns. The whole frame is rendered — cracked hardpan, wind-scoured ridges, a distant escarpment, and a sky carrying heavy halftone cloud.",
+
+    "genesis-two-stories-of-creation": "One frame divided by a seam of warm golden-yellow light: on one side turbulent formless dark water under a starless sky, on the other a planted garden of ordered rows, fig and pomegranate, a river channel cut through soil. Both halves fully rendered in blue halftone, meeting at the glowing seam on a high horizon.",
+
+    "hearing-god-in-the-noise": "A small robed Judean figure standing still at the centre of a violent storm of wind-driven chaff, dust and torn husks that fills the air from edge to edge, one hand shielding a small warm golden-yellow clay lamp held low at the waist. Behind the storm, a threshing floor, terraced hills and a walled town are dimly but fully rendered.",
+
+    "hope": "The mouth of a rock-cut tomb in a hillside at first light, its round sealing stone rolled aside, warm golden-yellow light spilling out of the opening and down the worn path. Fully rendered — the rock face, olive trees, the garden terrace, dry hills beyond and a dawn sky of halftone cloud, with a small robed figure approaching from a distance, seen from behind.",
+
+    "in-the-beginning-week-1": "Vast formless dark water filling the lower frame, and above it the first warm golden-yellow light breaking along a high horizon, its glow spreading into a sky of heavy halftone cloud. The water surface carries full dot texture and movement to every edge — nothing in the frame is blank.",
+
+    "kingdom": "A single mustard sapling pushing up through the cracked paving stones of a fallen imperial road, its small leaves catching a warm golden-yellow light. Around it, toppled columns, a broken triumphal arch and the collapsed masonry of an empire, with dry hills and a walled town fully rendered beyond under a halftone sky.",
+
+    "peace": "A small wooden fishing boat on flat still water, a robed Judean figure asleep in the stern with head covered, a warm golden-yellow lamp burning at the prow. A vast storm front is receding along a high horizon, its cloud mass fully rendered in blue halftone, and the far shore with its hills and low buildings is visible across the lake.",
+
+    "present-in-the-chaos": "A robed Judean figure standing calm and upright at the centre of a dust storm sweeping across a plain, cloak and head cloth streaming sideways, one small warm golden-yellow light held steady at the chest. The storm, the scoured ground and the barely visible hills behind are all fully rendered in blue halftone to every edge.",
+
+    "provision": "A pair of empty upturned brown hands held out to receive a single round loaf offered toward them, the bread glowing warm golden-yellow. Behind, a fully rendered desert camp at dawn — goat-hair tents, a cooking fire, gathered figures in the middle distance, and dry hills receding under a halftone sky.",
+
+    "rooted": "A bare wind-shaped tree on open ground with the whole soil cross-section revealed beneath it, a vast root system spreading down and out through the earth to a small warm golden-yellow spring of water deep below. Above ground, fully rendered terrain and distant hills. THE SKY IS NOT BLANK: it carries dense banked halftone cloud structure, dot gradient and wind streaks across its whole area, right up into both top corners — no bare cream anywhere above the horizon.",
+
+    "signs-boldness-opposition-integrity": "A small group of robed Judean figures standing together before the columned portico of an ancient temple court, one with a hand raised in speech, faces in profile and turned away. A warm golden-yellow light falls across them from one side. The colonnade, the paved court, the watching crowd and the city beyond are fully rendered in blue halftone.",
+
+    "standing-strong": "A lone robed Judean figure planted firm on a rock outcrop against driving wind, cloak and head cloth streaming, seen from behind and slightly below. A warm golden-yellow break of light burns low on the high horizon. The rock, the wind-scoured valley below, distant ridges and a heavy halftone sky fill every part of the frame.",
+
+    "surrender-to-gods-will": "A pair of open upturned brown hands releasing one small warm golden-yellow light upward into a vast sky, fingers relaxed and open. Below and behind, a fully rendered landscape of terraced hillside, a low stone wall and a distant walled town, under a sky carrying heavy halftone cloud structure to every edge.",
+
+    "the-blueprint-of-community": "A small group of robed Judean figures walking out together from a single open doorway onto an open road, each carrying a portion of bread or a small clay vessel, seen from behind. The house wall, courtyard, the road ahead, olive terraces and a walled town on the high horizon are all fully rendered, with warm golden-yellow lamplight spilling from the doorway.",
+
+    "the-nature-of-belief": "A narrow rope-and-plank bridge spanning a deep rock chasm, a robed Judean figure stepping onto the first plank, seen from behind. Warm golden-yellow light falls on the far side of the crossing. The chasm walls, the ropes, the far ridge and a sky of halftone cloud are fully rendered to every edge.",
+
+    "the-word-before-words": "Vast still dark water and dark sky meeting at a high horizon before anything is made, and at the centre one single small warm golden-yellow point of light, the first utterance. The water and sky carry full halftone dot texture and movement across the whole frame — no region is blank.",
+
+    "the-work-of-god": "A pair of weathered brown hands at a potter's wheel, shaping a rising clay vessel that glows warm golden-yellow from within. The fully rendered workshop surrounds them — stacked drying pots, a kiln mouth, tools, and an open window looking out onto Judean hill country under a halftone sky.",
+
+    "too-busy-for-god": "A great terraced estate built by one man — stepped vineyards, still reservoir pools, orchards in ordered rows, all fully rendered — and at its edge a small robed Judean figure standing with an open palm held out, watching a curl of warm golden-yellow breath-vapour rise from their hand and disperse. High horizon, hills beyond, halftone sky.",
+
+    "truth": "A single small robed Judean figure standing at the centre of a vast dry plain criss-crossed by dozens of worn converging footpaths, one path alone catching a warm golden-yellow light and running to the high horizon. The plain, every path, the distant ridges and a heavy halftone sky are rendered to every edge.",
+
+    "valued": "A woman's weathered brown hand holding up a single small coin that glows warm golden-yellow, inside a lamplit ancient Judean house. The full interior is rendered — swept packed-earth floor, storage jars, roof beams, a hand-broom set down — with a doorway opening onto a dark night street and hills beyond.",
+
+    "what-does-it-mean-to-believe": "A single hand reaching out low through a press of robed figures to touch the trailing hem of a passing mantle, with a small warm golden-yellow flare at the point of contact. The crowded ancient street, the figures' backs, the stone walls and the town gate beyond are fully rendered in blue halftone.",
+
+    "what-happens-when-you-repeatedly-sin": "A footpath worn into a deep circular rut looping back on itself across dry cracked ground, and a robed Judean figure standing at the rut's edge, seen from behind, looking toward a fresh untrodden way out that catches a warm golden-yellow light. Fully rendered plain, ridges and halftone sky beyond.",
+
+    "what-is-carrying-a-cross": "A rough-hewn wooden crossbeam shouldered by a robed Judean figure walking away from the viewer on a stone road leading out through a city gate, seen from behind. Warm golden-yellow light breaks over the hill ahead. The gate, the walls, the roadside crowd and the hill country are all fully rendered.",
+
+    "what-is-christianity": "A heavy iron-barred gate set in an ancient stone wall, swung wide open, warm golden-yellow light flooding through the opening and falling across the road beyond. The wall, the worn threshold, the open country road and distant hills under a halftone sky are fully rendered to every edge.",
+
+    "what-is-the-gospel": "A robed messenger on a high ridge road above an ancient walled city at dawn, arms raised, seen from behind in silhouetted three-quarter view, with a warm golden-yellow sunrise breaking over the city walls. The ridge, the road, the city, the valley and a sky of halftone cloud are fully rendered.",
+
+    "why-jesus": "Many worn roads converging from every direction across a wide plain into a single narrow gate, the gate alone catching a warm golden-yellow light. The plain, each road, the travellers on them seen small and distant, the gate's stonework and the hills beyond are fully rendered in blue halftone.",
+
+    "witness-under-pressure-expansion": "Robed Judean figures dispersing outward along many roads from a walled city, each small figure carrying a small warm golden-yellow lamp, seen from behind and from a distance, while seed heads scatter on the wind above them. The city, the roads, the terraced country and a heavy halftone sky are fully rendered to every edge."
+  }
+}

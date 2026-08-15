@@ -17,8 +17,13 @@
       "reference": "Matthew 9:12-13",
       "translation": "BSB",
       "passage": "On hearing this, Jesus said, “It is not the healthy who need a doctor, but the sick. But go and learn what this means: ‘I desire mercy, not sacrifice.’ For I have not come to call the righteous, but sinners.”",
-      "emphasis": ["go and learn what this means"],
-      "scriptureContext": "Two minutes with the only Old Testament line Jesus ever tells anyone to go away and study — said at a dinner table, to religious professionals, about the people they were objecting to."
+      "emphasis": [
+        "go and learn what this means"
+      ],
+      "scriptureContext": "Two minutes with the only Old Testament line Jesus ever tells anyone to go away and study — said at a dinner table, to religious professionals, about the people they were objecting to.",
+      "redLetter": [
+        "It is not the healthy who need a doctor, but the sick."
+      ]
     },
     {
       "type": "vocab",
@@ -168,7 +173,9 @@
       "reference": "Hosea 14:1-2, 4",
       "translation": "BSB",
       "passage": "Return, O Israel, to the LORD your God, for you have stumbled by your iniquity. Bring your confessions and return to the LORD. Say to Him: “Take away all our iniquity and receive us graciously, that we may present the fruit of our lips.” … I will heal their apostasy; I will freely love them, for My anger has turned away from them.",
-      "emphasis": ["I will heal their apostasy; I will freely love them"],
+      "emphasis": [
+        "I will heal their apostasy; I will freely love them"
+      ],
       "scriptureContext": "The same book, eight chapters later. The return God does accept — and note that nothing in His answer is about their improved reliability."
     },
     {

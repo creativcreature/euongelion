@@ -1,0 +1,124 @@
+{
+ "whole": 1419,
+ "alignedPartial": 608,
+ "skipped": [
+  {
+   "ref": "Matt.9.6",
+   "why": "span/quote count mismatch (KJV 2, BSB 1)"
+  },
+  {
+   "ref": "Matt.17.26",
+   "why": "ambiguous position (delta 0.26)"
+  },
+  {
+   "ref": "Mark.5.41",
+   "why": "span/quote count mismatch (KJV 3, BSB 2)"
+  },
+  {
+   "ref": "Mark.11.24",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Luke.5.24",
+   "why": "span/quote count mismatch (KJV 2, BSB 1)"
+  },
+  {
+   "ref": "Luke.8.8",
+   "why": "span/quote count mismatch (KJV 2, BSB 1)"
+  },
+  {
+   "ref": "Luke.8.45",
+   "why": "span/quote count mismatch (KJV 2, BSB 3)"
+  },
+  {
+   "ref": "Luke.9.55",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Luke.9.56",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Luke.20.23",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Luke.22.31",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Luke.22.38",
+   "why": "ambiguous position (delta 0.54)"
+  },
+  {
+   "ref": "John.8.41",
+   "why": "ambiguous position (delta 0.33)"
+  },
+  {
+   "ref": "John.21.15",
+   "why": "span/quote count mismatch (KJV 2, BSB 4)"
+  },
+  {
+   "ref": "John.21.16",
+   "why": "span/quote count mismatch (KJV 2, BSB 4)"
+  },
+  {
+   "ref": "John.21.17",
+   "why": "span/quote count mismatch (KJV 2, BSB 5)"
+  },
+  {
+   "ref": "Acts.11.7",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.11.9",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.11.16",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.22.7",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.22.8",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.22.10",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.22.18",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.26.14",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Acts.26.15",
+   "why": "partial span, no quotes in BSB verse"
+  },
+  {
+   "ref": "Rev.1.8",
+   "why": "span/quote count mismatch (KJV 2, BSB 1)"
+  },
+  {
+   "ref": "Rev.1.11",
+   "why": "span/quote count mismatch (KJV 2, BSB 1)"
+  }
+ ],
+ "noVerse": [
+  "Matt.17.21",
+  "Matt.18.11",
+  "Matt.23.14",
+  "Mark.7.16",
+  "Mark.9.44",
+  "Mark.9.46",
+  "Mark.11.26",
+  "Luke.17.36"
+ ]
+}

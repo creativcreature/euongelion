@@ -931,3 +931,11 @@ features:
     prd: docs/feature-prds/F-094.md
     methodology_refs:
       - M00
+  - id: F-095
+    title: Red letter — the words of Christ
+    slug: red-letter-words-of-christ
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-095.md
+    methodology_refs:
+      - M00

@@ -1,4 +1,6 @@
 // Euangelion Service Worker
+// R60 (F-095/SA-051): bumped to v77 — red letter. Devotional JSON is
+// cache-first, so a returning reader would otherwise keep untagged passages.
 // R59 (F-094/SA-050): bumped to v75 — /series drops to seven layouts, centres
 // its controls, and the resume tile becomes one quiet line.
 // R58 (F-094/SA-049): bumped to v74 — /series is rebuilt as ten layouts with
@@ -72,7 +74,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v75'
+const CACHE_NAME = 'euangelion-v77'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

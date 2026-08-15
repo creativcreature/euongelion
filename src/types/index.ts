@@ -98,6 +98,13 @@ export interface Module {
   reference?: string
   translation?: string
   emphasis?: string[]
+  /**
+   * Spans of this passage that are Christ's DIRECT speech, copied verbatim
+   * from `passage`. Rendered in red (F-095). Attribution is editorial and is
+   * never inferred — see src/lib/red-letter.tsx for why a quotation-mark pass
+   * is wrong on this catalog.
+   */
+  redLetter?: string[]
   hebrewOriginal?: string
   greekOriginal?: string | null
   fullPassage?: { reference: string; text: string }
