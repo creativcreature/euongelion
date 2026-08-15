@@ -26,10 +26,11 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 
 ## Progressive Disclosure References
 
-1. `references/workflow.md` — the 12-phase pipeline with exact commands, file paths, and gate order.
+1. `references/workflow.md` — the 13-phase pipeline with exact commands, file paths, and gate order.
 2. `references/verification-standards.md` — research-agent briefs and what VERIFIED means for scripture, Hebrew/Greek, stories, quotes, and videos.
 3. `references/imagery-and-video.md` — GPT Image 2 riso style block, prompt template, processing sizes, placement rules, video embed requirements.
 4. `references/traps.md` — every failure mode hit on the reference build and how to avoid it.
+5. `references/narration.md` — rendering the finished series in the founder's voice and scoring it: which voice, cost gate, verification, and the traps that cost credits the first time.
 
 ## Implementation Workflow (summary — full detail in references/workflow.md)
 
@@ -45,9 +46,16 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 7. Imagery (GPT Image 2, riso duotone) + inline-image placement; verify videos embeddable.
 8. Wire: `series.ts` (SERIES_DATA + order array + FEATURED_SERIES if directed), `series-rails.ts`, bump `__tests__/series-data.test.ts` count and `scripts/check-feature-prd-integrity.mjs` count.
 9. Tracking: next SA id from `production-decisions.yaml` (canonical — not CHANGELOG grep), next F-### PRD, CHANGELOG entry.
-10. Gates: type-check, verify:\*, lint, full test suite, build.
-11. Verify in `npm run preview` (Workers runtime): curl every route AND a rendered-DOM assertion for new module shapes (curl alone cannot catch client-render drops).
-12. Merge/deploy per the founder's standing path (merge to main, then `npm run deploy`) → warm the edge cache on all affected URLs → live-verify → report full evidence (SA-031: deploy is non-blocking; evidence is reported, not awaited).
+10. **Narration + score (SA-043, 2026-08-15) — full detail in `references/narration.md`.** Render the finished series in the founder's cloned voice, then lay the atmospheric score under it. Runs HERE, after the prose is final and before the gates: the audio stores a fingerprint of the text it speaks, so any later edit invalidates the track and every chapter mark in it; and the manifest is a build input, so it must exist before `npm run build`.
+    - `render_el_catalog.py <slugs> --dry-run` FIRST — it prints the exact character cost and refuses to start if the budget will not cover the whole job. Report the cost before spending it. Never spend without showing the number.
+    - Then render, then `produce.py` for the score. The score pass rebuilds from the chunk cache: no credits, no API, repeatable.
+    - The founder's voice is for NEW series only; the back catalog stays on `am_michael`. A new devotional averages 9,487 characters against 691k credits a month, so new content is already paid for.
+    - **The narration is never processed.** Founder ruling: the voice is right as rendered; everything goes underneath it.
+    - Verify all four before shipping: duration drift < 0.5 s (chapter marks are absolute — drift moves every one after it), `textHash` matching the page, chapters starting at 0 and inside runtime, and every file under the **hard 25 MiB Workers asset limit** (no plan raises it; ~23 MB is a 25-minute day at 128 kbps stereo).
+    - Bump `CACHE_NAME` in `public/sw.js` AND `SW_VERSION` in `src/components/ServiceWorkerRegistration.tsx` together, or returning listeners keep the old audio cached.
+11. Gates: type-check, verify:\*, lint, full test suite, build.
+12. Verify in `npm run preview` (Workers runtime): curl every route AND a rendered-DOM assertion for new module shapes (curl alone cannot catch client-render drops).
+13. Merge/deploy per the founder's standing path (merge to main, then `npm run deploy`) → warm the edge cache on all affected URLs → live-verify → report full evidence (SA-031: deploy is non-blocking; evidence is reported, not awaited).
 
 ## Guardrails
 
@@ -59,6 +67,8 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
 - No arbitrary images — every slot needs a one-sentence contextual justification (the caption). (The pre-imagery reading PAUSE was retired by SA-031; the reading artifact itself is still mandatory.)
 - **Imagery ACCURACY gate (SA-032, 2026-07-27):** before placement, verify every illustration against the fact it illustrates — botanical, historical, textual. Style-checking is not enough. (Precedent: a wheat-vs-darnel plate shipped with formed, identical heads — botanically wrong and message-defeating, founder-caught in production. If the image's point is a difference, the difference must be visibly, accurately rendered.)
+- **A series is not finished until it can be listened to (SA-043).** Narration and score ship with the series, not after it. A day whose `textHash` does not match its page is a broken track, not a missing feature — the audio is silently saying something the reader is not seeing.
+- **Never spend credits without showing the cost first.** Dry-run, report the character count and the remaining balance, then render. An ElevenLabs key carries its OWN quota independent of the account, and exhausting it surfaces as `HTTP 401` — a bare status code reads as a bad key, so always log the response body.
 - Stage commits by explicit file list (parallel sessions share this working tree); never `git add -A`.
 - Deploy proceeds without a pause (SA-031), but ONLY after preview evidence is green; all evidence is reported to the founder in the final summary.
 
@@ -66,7 +76,15 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 
 ```bash
 node scripts/validate-devotional.mjs public/devotionals/<slug>-day-*.json
+
+# Narration: cost gate FIRST, then render, then score (the score costs nothing —
+# it rebuilds the narration from the chunk cache).
+python3 euangelion-voice-prototype/spec/render_el_catalog.py <slug>-day-1 ... --dry-run
+python3 euangelion-voice-prototype/spec/render_el_catalog.py <slug>-day-1 ...
+python3 euangelion-voice-prototype/spec/produce.py <slug>-day-1 euangelion-voice-prototype/PRODUCED-<slug>-day-1.m4a
+
 npm run type-check && npm run verify:production-contracts && npm run verify:tracking && npm run verify:feature-prds
 npm run lint && npm test && npm run build
+npx vitest run __tests__/narration-manifest-current.test.ts   # audio matches the page
 npm run preview   # then curl every new route + rendered-DOM check
 ```

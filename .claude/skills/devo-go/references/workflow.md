@@ -1,6 +1,8 @@
-# The 12-Phase Pipeline (reference build: prayer-of-jabez, 2026-07-12)
+# The 13-Phase Pipeline (reference build: prayer-of-jabez, 2026-07-12;
 
-Every phase lists what to do, the exact artifacts, and what gates it. Phases 1–5 are content; 6 is the founder gate; 7–12 are production.
+# narration added from he-cannot-deny-himself, 2026-08-15)
+
+Every phase lists what to do, the exact artifacts, and what gates it. Phases 1–5 are content; 6 is the founder gate; 7–13 are production. Phase 10 is the only one that spends money, and it never spends without printing the cost first.
 
 ## Phase 1 — Read + Clarify + Lock the Shape
 
@@ -67,19 +69,44 @@ Meanwhile, pull ALL scripture yourself from `public/bibles/<TRANSLATION>/<BOOK>.
 - Next F-### = check `FEATURE-PRD-REGISTRY.yaml` AND recent CHANGELOG heads (parallel sessions race for numbers). New PRD from the template; add registry + index rows; bump the hard-coded count in `scripts/check-feature-prd-integrity.mjs`.
 - CHANGELOG entry at top. Commit-msg hook requires citing an SA-### and an F-### whose .md is staged.
 
-## Phase 10 — Gates
+## Phase 10 — Narration + Score (SA-043)
+
+Full detail in `references/narration.md`. Runs HERE and nowhere else: the audio
+stores a fingerprint of the text it speaks, so rendering before the prose is
+final invalidates the track and every chapter mark in it, and the manifest is a
+build input, so it must exist before `npm run build`.
+
+- **Cost gate first, always.** `render_el_catalog.py <slugs> --dry-run` prints the
+  exact character count and refuses to start if the budget will not cover the
+  whole job. Report the number to the founder before spending it.
+- Render, then `produce.py` for the score. The score pass rebuilds the narration
+  from the chunk cache — no credits, no API, and repeatable as many times as the
+  mix takes to get right.
+- Founder's voice for NEW series only; the back catalog stays on `am_michael`.
+  A new devotional averages 9,487 characters against 691k credits a month.
+- **The narration is never processed** — founder ruling: the voice is right as
+  rendered, everything goes underneath it.
+- Verify per day: duration drift < 0.5 s (chapter marks are absolute times —
+  drift moves every one after it), `textHash` matching the page, chapters
+  starting at 0 and inside runtime, file under the **hard 25 MiB Workers asset
+  limit** (no plan raises it; ~23 MB is a 25-minute day at 128 kbps stereo).
+- Bump `CACHE_NAME` in `public/sw.js` AND `SW_VERSION` in
+  `src/components/ServiceWorkerRegistration.tsx` **together**, or returning
+  listeners keep the old audio cached forever. They have shipped out of sync.
+
+## Phase 11 — Gates
 
 `npm run type-check` → `verify:production-contracts` → `verify:tracking` → `verify:feature-prds` → `npm run lint` (0 errors; pre-existing warnings in untouched files are acceptable) → `npm test` (full suite) → `npm run build`.
 
-## Phase 11 — Preview Verification (Workers runtime)
+## Phase 12 — Preview Verification (Workers runtime)
 
 - `npm run preview` (background; wait for "Ready on http://localhost:8787").
 - Curl: `/series/<slug>`, several day routes, the day JSONs (assert videos/images/Hebrew present in payload), image URLs (content-type image/webp), homepage + `/series` featured presence.
 - **Rendered-DOM assertion required** for any new module shape: a vitest RTL test rendering ModuleRenderer with the real day data shape (curl proves delivery, not rendering — the 2026-07-12 blank-boxes regression is the precedent).
 
-## Phase 12 — Ship
+## Phase 13 — Ship
 
 - Identity gate: `gh auth switch --user creativcreature` → `gh auth status` → `git config user.email` (chrisparker21@gmail.com) → `npx wrangler whoami`.
 - Stage by explicit file list; commit (hooks re-run the gate); present evidence; founder chooses the merge/deploy path; `npm run deploy` is the reliable path (auto-deploy on push is not).
 - Post-deploy: pages cache at the edge (`s-maxage=3600, stale-while-revalidate`) — warm every affected URL (hit once to trigger background revalidation, wait ~10s, verify a fixed marker in headers/body). In zsh, iterate URL lists with an array (`for u in "${urls[@]}"`), not an unquoted string.
-- Live-verify the same matrix as Phase 11 against `https://euangelion.app`.
+- Live-verify the same matrix as Phase 12 against `https://euangelion.app`.
