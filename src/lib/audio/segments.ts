@@ -34,9 +34,17 @@ function toSpeech(raw: string | undefined | null): string {
       // either skips or mangles the word. Inline prose that cites an original
       // spelling always supplies a parenthetical transliteration alongside it,
       // which survives here and is what gets spoken.
-      .replace(/[֐-׿Ͱ-Ͽיִ-ﭏ]+/g, ' ')
+      .replace(/[\u0590-\u05FF\u0370-\u03FF\u1F00-\u1FFF\uFB1D-\uFB4F]+/g, '')
       .replace(/\(\s*\)/g, ' ') // parens left empty by the strip
-      .replace(/\.{2,}(?!\.)/g, '.') // ".." typos read as a stumble
+      .replace(/[\u2014\u2013-]\s*[\u2014\u2013-]/g, '\u2014') // "- -" left by a strip
+      .replace(/^[\s,;\u2014\u2013-]+|[\s,;\u2014\u2013-]+$/g, '')
+      // Compatibility-normalize, then fold typographic punctuation to ASCII.
+      // An ellipsis is a single U+2026 glyph: left alone it survives as its own
+      // wordless token, which the renderer counts and the engine trips over.
+      .normalize('NFKC')
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/\.{2,}(?!\.)/g, '.') // ".." typos and folded ellipses
       .replace(ROMAN_CUE, expandRomanMatch) // "chapter VIII" → "chapter eight"
       .replace(/\s+([,.;:!?])/g, '$1')
       .replace(/\s+/g, ' ')
@@ -86,9 +94,16 @@ function pushSegment(
   segments: TtsSegment[],
   label: string,
   text: string,
+  { allowSingleWord = false }: { allowSingleWord?: boolean } = {},
 ): void {
   const spoken = toSpeech(text)
-  if (spoken.length === 0) return
+  // A lone word mid-devotional is a label or a stray fragment, not prose. The
+  // renderer applies the same floor, so the two stay in step. The title is
+  // exempt: "Contentment" is the whole title of one day, and dropping it would
+  // open that reading with no name at all.
+  if (!allowSingleWord && spoken.split(/\s+/).filter(Boolean).length < 2) {
+    return
+  }
   segments.push({ id: `seg-${segments.length}`, label, text: spoken })
 }
 
@@ -118,7 +133,17 @@ function moduleLabel(module: Module, index: number): string {
  * Navigation chrome — embeds, links and bibliography. Never spoken: these are
  * ways to leave the page, not part of the reading.
  */
-const NAV_TYPES = new Set(['inline-image', 'art', 'video', 'cta', 'resource'])
+const NAV_TYPES = new Set([
+  'inline-image',
+  'art',
+  'video',
+  'cta',
+  'resource',
+  // A pull quote lifts a sentence out of the prose and sets it large. Spoken,
+  // that is a stutter — the listener hears the sentence in place and again out
+  // of it. All 66 in the catalog duplicate body prose verbatim.
+  'pullquote',
+])
 
 /**
  * Reading order per module type. Each inner array is a group of MIRRORED
@@ -135,7 +160,7 @@ const NAV_TYPES = new Set(['inline-image', 'art', 'video', 'cta', 'resource'])
 const READING_ORDER: Record<string, string[][]> = {
   scripture: [
     ['reference'],
-    ['passage', 'text'],
+    ['passage', 'text', 'fullPassage'],
     ['scriptureContext', 'context'],
   ],
   vocab: [
@@ -172,6 +197,7 @@ const READING_ORDER: Record<string, string[][]> = {
     ['name', 'title'],
     ['era'],
     ['description', 'bio', 'summary'],
+    ['keyTrait', 'key_trait'],
     ['keyQuote', 'key_quote'],
     ['lessonForUs'],
   ],
@@ -394,10 +420,29 @@ function vocabHeadword(module: Module): string {
   return `${label} ${spoken}`
 }
 
+/**
+ * Module types whose heading is chrome rather than content — a bibliography
+ * label, a button, a caption. Every other heading is spoken.
+ */
+const HEADING_NOT_SPOKEN = new Set([
+  'resource',
+  'cta',
+  'video',
+  'inline-image',
+  'art',
+])
+
 /** The ordered text blocks a module contributes, deduped. */
 function moduleBlocks(module: Module): string[] {
   const order = READING_ORDER[module.type]
   const blocks: string[] = []
+
+  // A reader can see where a section begins; a listener cannot. Headings are
+  // the only structural signposting narration has, and they already title the
+  // chapters, so they are read as content.
+  if (module.heading && !HEADING_NOT_SPOKEN.has(module.type)) {
+    blocks.push(module.heading)
+  }
 
   if (module.type === 'vocab') {
     const head = vocabHeadword(module)
@@ -448,13 +493,41 @@ function moduleBlocks(module: Module): string[] {
   return blocks
 }
 
+/**
+ * Title and subtitle are two separate sentences. Joined bare they run together
+ * ("The Fruit of Lies On the harvest..."), so they are stitched with a period.
+ */
+export function openingLine(title: string, subtitle?: string): string {
+  const parts = [title, subtitle]
+    .map((x) => (x ?? '').trim().replace(/\.+$/, ''))
+    .filter(Boolean)
+  return parts.length > 0 ? parts.join('. ') + '.' : ''
+}
+
+/** Dedup key: prose identity, ignoring punctuation and case. */
+function dedupKey(text: string): string {
+  return toSpeech(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '')
+    .slice(0, 220)
+}
+
 export function buildModuleSegments(
   title: string,
   modules: Module[],
+  subtitle?: string,
 ): TtsSegment[] {
   const segments: TtsSegment[] = []
   const seen = new Set<string>()
-  pushSegment(segments, 'Title', title)
+  const opening = openingLine(title, subtitle)
+  pushSegment(segments, 'Title', opening, { allowSingleWord: true })
+  // The opening line counts as read. Several days repeat the devotional's own
+  // title as the heading of a module inside it; without this the listener
+  // hears it announced twice in a row.
+  for (const part of [opening, title, subtitle]) {
+    const k = dedupKey(part ?? '')
+    if (k) seen.add(k)
+  }
 
   modules.forEach((module, index) => {
     if (NAV_TYPES.has(module.type)) return
@@ -462,13 +535,14 @@ export function buildModuleSegments(
     for (const block of moduleBlocks(module)) {
       // Never speak the same prose twice (pull quotes repeat body text, and
       // mirrored fields can survive the group check across module types).
-      const key = toSpeech(block)
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, '')
-        .slice(0, 220)
+      const key = dedupKey(block)
       if (key.length === 0 || seen.has(key)) continue
       seen.add(key)
-      pushSegment(segments, label, block)
+      // A heading is deliberate signposting, so it is read even when it is a
+      // single word ("Sabbath"). Only stray prose fragments are floored.
+      pushSegment(segments, label, block, {
+        allowSingleWord: block === module.heading,
+      })
     }
   })
   return segments
@@ -479,9 +553,12 @@ export function buildModuleSegments(
 export function buildPanelSegments(
   title: string,
   panels: Panel[],
+  subtitle?: string,
 ): TtsSegment[] {
   const segments: TtsSegment[] = []
-  pushSegment(segments, 'Title', title)
+  pushSegment(segments, 'Title', openingLine(title, subtitle), {
+    allowSingleWord: true,
+  })
   // Panel 0 is the cover; the rest carry the reading.
   panels.slice(1).forEach((panel, index) => {
     pushSegment(
@@ -497,7 +574,7 @@ export function buildPanelSegments(
 
 export function buildDayContentSegments(content: DayContent): TtsSegment[] {
   const segments: TtsSegment[] = []
-  pushSegment(segments, 'Title', content.title)
+  pushSegment(segments, 'Title', content.title, { allowSingleWord: true })
   if (content.scriptureReference) {
     pushSegment(segments, 'Scripture reference', content.scriptureReference)
   }

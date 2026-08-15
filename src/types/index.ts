@@ -27,6 +27,8 @@ export interface Panel {
 export interface Devotional {
   day: number
   title: string
+  /** Editorial second line, on 77 of the 568 catalog days. Read aloud with the title. */
+  subtitle?: string
   teaser: string
   framework: string
   panels: Panel[]
