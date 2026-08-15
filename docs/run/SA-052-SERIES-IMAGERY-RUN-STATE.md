@@ -1,7 +1,7 @@
-# SA-050 — Series imagery regeneration: live run state
+# SA-052 — Series imagery regeneration: live run state
 
 **Status:** in progress · opened 2026-08-15
-**Decision:** SA-050 · **PRD:** F-096
+**Decision:** SA-052 · **PRD:** F-096
 **Resume with:** `node scripts/imagery/build-prompts.mjs --todo`
 
 This file exists because the first attempt at this run lost its entire prompt set
@@ -19,24 +19,24 @@ to context compaction. Everything needed to finish is on disk, not in context.
 
 ## Founder corrections folded in (in order given)
 
-| # | Correction | Verbatim |
-|---|---|---|
-| 1 | Full bleed | (measured defect — 17 of 21 masters had a cream border) |
-| 2 | No whitewash | "these all look like generic ai white people and not region and hostory seocific people" |
-| 3 | No blacked-out faces | "I dont like blacked out faces, so just try to hide faces through posing, but if a face is shown its ok" |
-| 4 | Modern scenes must be diverse | "not NO white people for modern depictions, but not whitte people only" |
-| 5 | No empty backgrounds | "I would prefer the hero images not have soo much whitespace… no stark nothing backgrounds" |
+| #   | Correction                    | Verbatim                                                                                                 |
+| --- | ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 1   | Full bleed                    | (measured defect — 17 of 21 masters had a cream border)                                                  |
+| 2   | No whitewash                  | "these all look like generic ai white people and not region and hostory seocific people"                 |
+| 3   | No blacked-out faces          | "I dont like blacked out faces, so just try to hide faces through posing, but if a face is shown its ok" |
+| 4   | Modern scenes must be diverse | "not NO white people for modern depictions, but not whitte people only"                                  |
+| 5   | No empty backgrounds          | "I would prefer the hero images not have soo much whitespace… no stark nothing backgrounds"              |
 
 Approved 2026-08-15: **"this set works. ensure the skill is updated with this."**
 
 ## Canonical files
 
-| File | Role |
-|---|---|
-| `scripts/imagery/prompt-preamble.md` | The approved prompt wording. Single source of truth. |
-| `scripts/imagery/series-image-subjects.json` | Per-series SUBJECT lines, all 33. |
-| `scripts/imagery/build-prompts.mjs` | Assembles prompts; reports run state from disk. |
-| `.claude/skills/devo-go/references/imagery-and-video.md` | Skill copy of the standard. |
+| File                                                     | Role                                                 |
+| -------------------------------------------------------- | ---------------------------------------------------- |
+| `scripts/imagery/prompt-preamble.md`                     | The approved prompt wording. Single source of truth. |
+| `scripts/imagery/series-image-subjects.json`             | Per-series SUBJECT lines, all 33.                    |
+| `scripts/imagery/build-prompts.mjs`                      | Assembles prompts; reports run state from disk.      |
+| `.claude/skills/devo-go/references/imagery-and-video.md` | Skill copy of the standard.                          |
 
 ## Generation parameters
 

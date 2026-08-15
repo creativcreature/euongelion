@@ -7,7 +7,7 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ## SERIES IMAGERY — region-accurate people, developed frames (2026-08-15)
 
-**SA-050 · F-096** — 33 of 37 series plates regenerated. The four founder-approved
+**SA-052 · F-096** — 33 of 37 series plates regenerated. The four founder-approved
 plates (he-cannot-deny-himself, looking-at-the-sun, prayer-of-jabez, the-harvest)
 are untouched.
 
@@ -16,7 +16,7 @@ Three defects, three different causes:
 - **Whitewash.** The prompt named no period, so the model defaulted to
   contemporary Western — a boy in a sweatshirt and jeans. But naming an ethnicity
   alone would not have fixed it: in a cobalt-on-cream duotone the cream paper is
-  the only other ink, so *unprinted skin is white skin*. Skin is now specified as
+  the only other ink, so _unprinted skin is white skin_. Skin is now specified as
   a **value** — brown to deep brown, printed at dense dot coverage.
 - **Empty backgrounds.** The old style block asked for "generous negative space…
   small figure scale", which read as permission to leave the frame blank. Deleted;
@@ -111,7 +111,7 @@ doesn't punctuate speech at all. The standing principle: a missing red word is a
 typographic omission, a wrongly red word is a false attribution.
 
 **Three guarded paths, and one of them is the unlock.** Whole-verse attribution
-is *translation-independent* — Matthew 16:24 is "Whoever wants to be my
+is _translation-independent_ — Matthew 16:24 is "Whoever wants to be my
 disciple…" in NIV and "If anyone wants to come after Me…" in BSB, and no
 verbatim match can bridge that, but the fact that the whole verse is His holds
 in both. That single rule took NIV from 6/31 to 24/62. A second path handles
@@ -125,7 +125,7 @@ purple 5.0, cream 9.1. Dark mode lifts to `#f5988a`; inside a highlight it
 returns to the dark red in both themes, because highlight grounds are light
 pastels in both. That is the founder's "ensure the highlight color is correct
 for such text", and it is why the light value was measured against the swatches
-rather than against the page. Editorial emphasis now renders *inside* the red
+rather than against the page. Editorial emphasis now renders _inside_ the red
 instead of being replaced by it.
 
 **Tagged as content is created, and retroactively.** `withRedLetter()` is wired

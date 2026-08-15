@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SA-050 verification gate for series masters.
+ * SA-052 verification gate for series masters.
  *
  * Steps 1 and 2 are measured here. Step 3 — period dress, dense-dot skin, no
  * blacked-out faces — CANNOT be measured and is not attempted. This script

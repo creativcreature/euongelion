@@ -8,26 +8,26 @@ NO image generation until the founder has read and approved the full text (SA-02
 
 Higgsfield MCP, model `gpt_image_2` ("GPT Image 2", OpenAI) — the founder-directed generator (SA-029). Params: `resolution: "2k"`, `quality: "high"` (~7 credits/image), **`aspect_ratio: "1:1"` always**. Plan cap: 8 concurrent jobs — fire 8, poll `jobs_wait`, fire the rest as slots free. Download `results.rawUrl` PNGs.
 
-## Generate ONE master, derive every ratio (SA-050)
+## Generate ONE master, derive every ratio (SA-052)
 
 **Never generate per aspect ratio.** Generate one 2048×2048 master and crop every
 slot from it. A square master is the geometric mean of the extremes we need
 (9:16 → 1.91:1), so it loses the least to any single crop. Credits then scale
-with how many *pictures* you want, not how many *places* they appear — a 10-slot
+with how many _pictures_ you want, not how many _places_ they appear — a 10-slot
 set costs 7 credits instead of 70.
 
-| Key | Slot | Pixels |
-|---|---|---|
-| `site-hero` | Site headline hero | 1408×768 |
-| `site-card` | Series card | 1024×1024 |
-| `site-inline` | Inline / day banner | 1600×900 |
-| `site-portrait` | Portrait card 3:4 | 1050×1400 |
-| `og-card` | OG / FB / LinkedIn / X link | 1200×630 |
-| `ig-square` | Instagram / LinkedIn square | 1080×1080 |
-| `ig-portrait` | Instagram portrait 4:5 | 1080×1350 |
-| `story` | Stories / Reels / TikTok 9:16 | 1080×1920 |
-| `pinterest` | Pinterest 2:3 | 1000×1500 |
-| `yt-thumb` | YouTube thumbnail 16:9 | 1280×720 |
+| Key             | Slot                          | Pixels    |
+| --------------- | ----------------------------- | --------- |
+| `site-hero`     | Site headline hero            | 1408×768  |
+| `site-card`     | Series card                   | 1024×1024 |
+| `site-inline`   | Inline / day banner           | 1600×900  |
+| `site-portrait` | Portrait card 3:4             | 1050×1400 |
+| `og-card`       | OG / FB / LinkedIn / X link   | 1200×630  |
+| `ig-square`     | Instagram / LinkedIn square   | 1080×1080 |
+| `ig-portrait`   | Instagram portrait 4:5        | 1080×1350 |
+| `story`         | Stories / Reels / TikTok 9:16 | 1080×1920 |
+| `pinterest`     | Pinterest 2:3                 | 1000×1500 |
+| `yt-thumb`      | YouTube thumbnail 16:9        | 1280×720  |
 
 Crop with `fit: 'cover', position: 'centre'` — **not** `sharp.strategy.attention`.
 Saliency targets the largest mass, which on these plates deletes the meaning: it
@@ -58,18 +58,18 @@ The prompt is five blocks, in order:
 4. **PEOPLE** — region- and period-specific; skin as a printed value; faces by pose. See below.
 5. **SUBJECT** then **COMPOSITION FOR CROPPING**.
 
-> **Deleted 2026-08-15:** the old style block said *"Generous negative space, high
-> horizon line, small figure scale, single-subject composition."* That line is what
-> produced subjects floating in blank cream. Founder: *"no stark nothing
-> backgrounds."* Block 2 replaces it. Do not reinstate it.
+> **Deleted 2026-08-15:** the old style block said _"Generous negative space, high
+> horizon line, small figure scale, single-subject composition."_ That line is what
+> produced subjects floating in blank cream. Founder: _"no stark nothing
+> backgrounds."_ Block 2 replaces it. Do not reinstate it.
 
 ### PEOPLE — the clause that matters most
 
 - **Region and period specific.** Ancient Levantine / Judean for biblical scenes: Middle Eastern Semitic people, dark hair, dark brows, dark eyes. Period dress only — woven tunic, draped mantle, head cloth or veil, sandals or bare feet. **No modern clothing.** Unspecified period defaults to contemporary Western and produced a boy in a sweatshirt and jeans.
-- **Skin is a printed VALUE, not a label.** Brown to deep brown, rendered in **dense** blue halftone, obviously darker than the cream ground. *In a cobalt-on-cream duotone the cream paper is the only other ink, so unprinted skin **is** white skin.* Naming an ethnicity while leaving skin near paper still outputs a white person. This is the single highest-leverage line in the prompt.
+- **Skin is a printed VALUE, not a label.** Brown to deep brown, rendered in **dense** blue halftone, obviously darker than the cream ground. _In a cobalt-on-cream duotone the cream paper is the only other ink, so unprinted skin **is** white skin._ Naming an ethnicity while leaving skin near paper still outputs a white person. This is the single highest-leverage line in the prompt.
 - **Named exclusions.** European, Anglo, Nordic, generic AI white faces, pale skin, light or blonde hair, modern haircuts.
-- **Faces by pose, never by blackout.** From behind, in profile, head bowed, or shadowed by a head covering. Founder: *"I dont like blacked out faces, so just try to hide faces through posing, but if a face is shown its ok, just needs to be historically accuerate."* A visible region-accurate face is acceptable.
-- **Modern-dress scenes must be diverse.** Black, Brown, Middle Eastern, East Asian, South Asian and white people together. Founder: *"not NO white people for modern depictions, but not whitte people only."* Use the modern-dress PEOPLE variant in `prompt-preamble.md`.
+- **Faces by pose, never by blackout.** From behind, in profile, head bowed, or shadowed by a head covering. Founder: _"I dont like blacked out faces, so just try to hide faces through posing, but if a face is shown its ok, just needs to be historically accuerate."_ A visible region-accurate face is acceptable.
+- **Modern-dress scenes must be diverse.** Black, Brown, Middle Eastern, East Asian, South Asian and white people together. Founder: _"not NO white people for modern depictions, but not whitte people only."_ Use the modern-dress PEOPLE variant in `prompt-preamble.md`.
 
 ### Subject lines
 
@@ -94,7 +94,7 @@ homepage**. This is part of publishing, not a follow-up task:
 - `NEW_SERIES_ORDER` and `FEATURED_SERIES` — update so the new series surfaces in browse.
 - Bump `CACHE_NAME` in `public/sw.js`, or the founder loads the old shell and reports the change as missing.
 
-## Accuracy Gate (SA-032, extended by SA-050 — MANDATORY before placement)
+## Accuracy Gate (SA-032, extended by SA-052 — MANDATORY before placement)
 
 Every render is checked in this order. Steps 1–2 are measured; **3–5 require
 opening the image**.
