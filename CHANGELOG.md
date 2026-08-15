@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## ARTWORK — "Looking at the Sun" replated to the locked riso pipeline (2026-08-14)
+
+Founder: _"THE ARTWORK IS INCORRECT!!! YOU DIDNT USE THE DEVO-GO PROMPT FOR
+IMAGES!!"_ Correct. All ten plates replaced. Registered as **SA-040**.
+
+**What was wrong.** F-087 shipped its imagery "from the library only, nothing
+generated." But `/devo-go`'s imagery stage is a _generation_ stage — Higgsfield
+`gpt_image_2` with the founder's references attached (D-012/D-013). Selecting
+plates instead skipped the technique lock entirely, and the numbers show what
+that cost. Sampled against the locked palette, all ten carried **0.00% crimson**
+where the spec requires a crimson halation; gold had become a second ink, up to
+**34%** on `day4-samaritan` (gold `#da991d` at 24% outweighed the blue); the
+cobalt had collapsed to near-black navy `#0e1d3e`, a distance of **118–130**
+from ultramarine `#1b3fae`; grays were present against the no-grays rule
+(`day4-hands` had a gray `#919197` as its darkest mass and only 2% blue); and
+two plates had left the medium altogether — `day1` a duotone photo-gradient,
+`day4` flat mid-century vector. Worst of all, both figures on the Jericho road
+were European, against D-010's hard requirement and the D-011/D-013 lock.
+
+**The root cause is one line of D-012.** The empty-tomb hero
+`header-v2.webp` "MUST be passed as a reference on every generation." Text-only
+prompts drift no matter how precise the style block is. With the anchor plus a
+founder wokegodx plate attached as `medias`, the same prompts land: all ten now
+measure **Δ36–62** from ultramarine — tighter than the anchor's own 67 — with
+gold at or under **0.5%** and crimson present throughout.
+
+**Three needed a second pass, and the misses are instructive.** A duotone
+bleaches dark skin under strong light, so the first Transfiguration still gave a
+European Christ and Elijah's face washed to cream; the fix was to say the skin
+_stays_ cobalt dot density and the light only rims it. `day6-feet` promised
+footprints in its alt text and had none. And `day3-brooktree` copied the
+anchor's own tomb-and-sunburst onto its horizon — reference bleed, and a second
+light source where the spec allows one.
+
+**The rothem is now botanically right.** SA-036(5) had the caption apologize for
+a library plate that gave Elijah's broom a canopy it does not have. Generating
+means SA-032 governs instead: fix the image, not the caption. It now renders as
+the low, sparse, many-stemmed desert shrub it is, and the apology is gone. Six
+alt texts that described the old gold-heavy art were corrected, and `day4-hands`
+now shows a scroll rather than an anachronistic codex.
+
+Placement per spec: series card 1024², day plates 1600w, q80→q48 for dense
+halftone. — SA-040 (F-087)
+
 ## READER — closing tweaks (2026-08-14)
 
 **The reader-theme button no longer sits on the audio controls.** Fixed
