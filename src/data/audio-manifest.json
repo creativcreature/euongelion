@@ -22601,7 +22601,7 @@
     "words": 3549,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 10812187,
+    "bytes": 20806425,
     "textHash": "a0cc7fbd606f",
     "chapters": [
       {
@@ -22719,7 +22719,8 @@
         "label": "The Voice Behind Today",
         "module": 26
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-2": {
     "src": "/audio/he-cannot-deny-himself-day-2.m4a",
@@ -22727,7 +22728,7 @@
     "words": 3691,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 11411390,
+    "bytes": 21969052,
     "textHash": "bde242213e6f",
     "chapters": [
       {
@@ -22845,7 +22846,8 @@
         "label": "The Voice Behind Today",
         "module": 27
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-3": {
     "src": "/audio/he-cannot-deny-himself-day-3.m4a",
@@ -22853,7 +22855,7 @@
     "words": 3878,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 11947241,
+    "bytes": 23030516,
     "textHash": "4424513be69b",
     "chapters": [
       {
@@ -22971,7 +22973,8 @@
         "label": "The Voice Behind Today",
         "module": 26
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-4": {
     "src": "/audio/he-cannot-deny-himself-day-4.m4a",
@@ -22979,7 +22982,7 @@
     "words": 3954,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 12687193,
+    "bytes": 24417462,
     "textHash": "5d7fc64e5ad5",
     "chapters": [
       {
@@ -23097,7 +23100,8 @@
         "label": "The Voice Behind Today",
         "module": 26
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-5": {
     "src": "/audio/he-cannot-deny-himself-day-5.m4a",
@@ -23105,7 +23109,7 @@
     "words": 3887,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 11792168,
+    "bytes": 22691602,
     "textHash": "4236fd3b6fb0",
     "chapters": [
       {
@@ -23228,7 +23232,8 @@
         "label": "The Voice Behind Today",
         "module": 27
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-6": {
     "src": "/audio/he-cannot-deny-himself-day-6.m4a",
@@ -23236,7 +23241,7 @@
     "words": 1366,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 4267045,
+    "bytes": 8202334,
     "textHash": "e1cc23629731",
     "chapters": [
       {
@@ -23289,7 +23294,8 @@
         "label": "Carrying It Out",
         "module": 12
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "he-cannot-deny-himself-day-7": {
     "src": "/audio/he-cannot-deny-himself-day-7.m4a",
@@ -23297,7 +23303,7 @@
     "words": 397,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 1235180,
+    "bytes": 2368125,
     "textHash": "e72d837d7d28",
     "chapters": [
       {
@@ -23325,7 +23331,8 @@
         "label": "A Prayer for the Silence",
         "module": 5
       }
-    ]
+    ],
+    "mix": "scored-stereo-v1"
   },
   "hearing-god-in-the-noise-day-1": {
     "src": "/audio/hearing-god-in-the-noise-day-1.m4a",

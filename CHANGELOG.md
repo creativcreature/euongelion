@@ -53,28 +53,28 @@ REAL WORLD DESIGN… TOGGLABLE WITH ICONS."_ Registered as **SA-049**.
 founder's own words for this page are "a library of magazines" and "each
 devotional is a newspaper on the rack" — so every view is a real form of
 displaying print, and takes its proportions and furniture from that form:
-**Feature** (*Monocle* front-of-book), **Rack** (a kiosk rail), **Covers** (a
+**Feature** (_Monocle_ front-of-book), **Rack** (a kiosk rail), **Covers** (a
 Phaidon plate wall), **Spines** (a shelf), **List** (a stock list), **Index**
 (back-of-book dot leaders), **Contact** (a Magnum contact sheet), **Mosaic**
-(Richter's *Atlas*), **Broadsheet** (a newspaper page), **Issues** (an issue
+(Richter's _Atlas_), **Broadsheet** (a newspaper page), **Issues** (an issue
 chronology). Each toggles by an icon that is a miniature of its own layout — the
 Rack glyph really is a rail with papers over it — so you can tell what a control
 does before pressing it.
 
 **Numbers mean something or they are not there.** Decorative `01 / 02 / 03` is
-the generic default. Contact numbers its frames by position in the *current
-sort*, so re-sorting re-numbers the sheet as a re-laid one would. Issues numbers
+the generic default. Contact numbers its frames by position in the _current
+sort_, so re-sorting re-numbers the sheet as a re-laid one would. Issues numbers
 by release order. Spine **width** encodes length, because width is the one thing
 a real shelf tells you at a glance.
 
-**The asks.** The bento's gold uppercase kicker sat *above* the title — the
+**The asks.** The bento's gold uppercase kicker sat _above_ the title — the
 brightest thing on the tile was the least important thing on it. It's gone; the
 tile is plate + title with length quiet beneath, and rows went 150px → 210px so
 a landscape plate is no longer squeezed into a letterbox. The library dropped
 from eight columns to four. The list lost its pathway column.
 
 **`--mock-ink` inverts per theme, and it cost us a third time.** In dark mode
-`--mock-ink` *is* cream, so `background: var(--mock-ink)` under
+`--mock-ink` _is_ cream, so `background: var(--mock-ink)` under
 `color: var(--plate-ink)` rendered the spines cream-on-cream and invisible.
 Added `--plate-ground` (`#131b40`), fixed in both themes, for every surface that
 carries plate type. After SA-044 (bento kickers) and SA-047 (chat button), the
@@ -290,6 +290,47 @@ every kicker was near-invisible, because `--color-gold` is a legacy alias
 resolving to cobalt `#1f2a8d` there while the tile scrim is dark in both themes.
 
 36 new tests. Service worker v67. — SA-044 (F-090)
+
+## Narration — the score, written against the page (2026-08-15)
+
+The seven `he-cannot-deny-himself` days now carry a produced score. The founder's
+verdict on the voice was that it needed nothing — "the on site sound with my
+voice is great, but needs the music and ambiance upgrade" — so **the narration is
+bit-identical to what shipped this morning**. No reverb, no EQ, no compression
+touches it. Every change is underneath it.
+
+**The atmosphere lives in the gaps.** Pushing a bed up under a voice buys
+masking, not presence. So the score sits well back while he is speaking —
+Scripture at −24 dB, teaching at −22, prayer at −17 — and lifts **+10 dB in the
+pauses**, blooming between sentences and receding the instant he speaks again.
+Duck attack is 60 ms, faster than a consonant; release is 1.9 s, so it swells
+rather than pumps.
+
+**It is spotted, not looped.** Every module start is known exactly — that is what
+the chapter work bought — so the bed is written against the devotional's own
+structure, stepping back for Scripture and coming up for the prayer. Cues glide
+over 4 seconds. Two music layers run at different loop periods (the second
+offset 37 s, 5 dB under), because one bed repeating is heard as a loop within
+two minutes and two at different periods are heard as a score.
+
+**It arrives and leaves.** The first pass switched the music on at full level and
+cut it dead at the end — the old mixer had fades and they were not carried over
+when this script was written. Now a 6 s bloom in and a 9 s taper out, both
+raised-cosine, because a linear fade is audible as a ramp.
+
+Stereo, 128 kbps, 44.1 kHz — voice centred, score spread with an 11 ms offset on
+the bed **only**; delaying the voice would smear the words and collapse on a
+phone speaker. Room tone at −54 dB so the silences are a space rather than a
+hole.
+
+Rebuilt entirely from the chunk cache: **no credits, no re-render.** Verified per
+day — duration drift under 0.05 s so every chapter mark stays valid, and all
+seven inside the Cloudflare 25 MiB asset limit (day 4 is the tightest at
+23.3 MB). 118 MB for the series, up from 72 MB.
+
+Decision: SA-043. Feature: F-086.
+
+---
 
 ## Narration — the founder's own voice, and the words that were never being read (2026-08-15)
 
