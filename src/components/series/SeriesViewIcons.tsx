@@ -71,28 +71,6 @@ export function ViewIcon({ id }: { id: ViewId }) {
           <path d="M2.5 5h15M2.5 8.5h15M2.5 12h15M2.5 15.5h15" />
         </svg>
       )
-    // Index: title, dot leader, number.
-    case 'index':
-      return (
-        <svg {...S}>
-          <path d="M2.5 5.5h5M2.5 10h6M2.5 14.5h4" />
-          <path d="M9.5 5.5h5M10.5 10h4M8.5 14.5h6" strokeDasharray="0.5 2" />
-          <path d="M16.5 5.5h1M16.5 10h1M16.5 14.5h1" />
-        </svg>
-      )
-    // Contact sheet: frames, one struck through.
-    case 'contact':
-      return (
-        <svg {...S}>
-          <rect x="2.5" y="3.5" width="4.5" height="5" />
-          <rect x="8" y="3.5" width="4.5" height="5" />
-          <rect x="13.5" y="3.5" width="4" height="5" />
-          <rect x="2.5" y="11" width="4.5" height="5" />
-          <rect x="8" y="11" width="4.5" height="5" />
-          <rect x="13.5" y="11" width="4" height="5" />
-          <path d="M8.4 15.6l3.7-4.2" />
-        </svg>
-      )
     // Hung by eye: unequal blocks.
     case 'mosaic':
       return (
@@ -101,15 +79,6 @@ export function ViewIcon({ id }: { id: ViewId }) {
           <rect x="10" y="2.5" width="7.5" height="4.5" />
           <rect x="10" y="8.5" width="7.5" height="9" />
           <rect x="2.5" y="11" width="6" height="6.5" />
-        </svg>
-      )
-    // Newspaper: masthead rule, then columns.
-    case 'broadsheet':
-      return (
-        <svg {...S}>
-          <path d="M2.5 4h15M2.5 6h15" />
-          <path d="M2.5 8.5v9M7.5 8.5v9M12.5 8.5v9M17.5 8.5v9" />
-          <path d="M3.4 10h3.2M8.4 10h3.2M13.4 10h3.2" />
         </svg>
       )
     // Numbered issues, stacked.

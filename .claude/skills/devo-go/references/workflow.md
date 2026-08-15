@@ -1,5 +1,4 @@
 # The 13-Phase Pipeline (reference build: prayer-of-jabez, 2026-07-12;
-
 # narration added from he-cannot-deny-himself, 2026-08-15)
 
 Every phase lists what to do, the exact artifacts, and what gates it. Phases 1–5 are content; 6 is the founder gate; 7–13 are production. Phase 10 is the only one that spends money, and it never spends without printing the cost first.

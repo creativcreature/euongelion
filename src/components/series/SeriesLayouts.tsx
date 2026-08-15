@@ -25,15 +25,16 @@ import { dayCountLabel, seriesRecencyRank } from '@/lib/series/catalog'
  *   COVERS      a Phaidon monograph plate wall — uniform, roomy, quiet
  *   SPINES      a shelf — titles running up the spine, pulled out on hover
  *   LIST        a stock list / departure board — dense, scannable, no art
- *   INDEX       a back-of-book index — dot leaders, pure typography
- *   CONTACT     a Magnum contact sheet — small frames, frame numbers, marks
  *   MOSAIC      Richter's Atlas wall — varied heights, no grid rhythm
- *   BROADSHEET  a newspaper page — column rules, a lede, running entries
  *   ISSUES      an issue chronology — numbered by release, newest first
  *
- * Where a view carries a number, the number means something true: the contact
- * sheet numbers frames by their position in the CURRENT sort, and ISSUES
- * numbers by release order. Nothing is numbered decoratively.
+ * Founder-cut 2026-08-15: INDEX, CONTACT and BROADSHEET are removed. Ten was
+ * the brief; seven is what survived review, and a switcher is worth more when
+ * every option on it earns its place.
+ *
+ * Where a view carries a number, the number means something true: ISSUES
+ * numbers by release order and spine WIDTH encodes length. Nothing is numbered
+ * decoratively.
  */
 
 export type ViewId =
@@ -42,10 +43,7 @@ export type ViewId =
   | 'covers'
   | 'spines'
   | 'list'
-  | 'index'
-  | 'contact'
   | 'mosaic'
-  | 'broadsheet'
   | 'issues'
 
 export const VIEWS: ReadonlyArray<{
@@ -59,10 +57,7 @@ export const VIEWS: ReadonlyArray<{
   { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
   { id: 'spines', label: 'Spines', blurb: 'Shelved. Read the spine, pull one out.' },
   { id: 'list', label: 'List', blurb: 'The whole catalog in one screen.' },
-  { id: 'index', label: 'Index', blurb: 'Back-of-book. Titles and lengths, nothing else.' },
-  { id: 'contact', label: 'Contact', blurb: 'A contact sheet, numbered by where it falls in this sort.' },
   { id: 'mosaic', label: 'Mosaic', blurb: 'Hung by eye. Longer readings take more wall.' },
-  { id: 'broadsheet', label: 'Broadsheet', blurb: 'Set in columns, the way a paper sets its listings.' },
   { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
 ]
 
@@ -326,69 +321,7 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
-/* ── 6. INDEX ───────────────────────────────────────────────────────── */
-
-/** Back-of-book: title, dot leader, length. No art, no chrome, two columns. */
-export function IndexView({ slugs, progressBySeries, cardHref }: LayoutProps) {
-  return (
-    <ol className="bookindex">
-      {slugs.map((slug) => {
-        const series = SERIES_DATA[slug]
-        if (!series) return null
-        const progress = progressBySeries.get(slug)
-        return (
-          <li key={slug}>
-            <Link href={cardHref(slug)} className="bookindex-row">
-              <span className="bookindex-title">{series.title}</span>
-              <span className="bookindex-leader" aria-hidden="true" />
-              <span className="bookindex-num">
-                {progress && progress.completed > 0
-                  ? `${progress.completed}/${progress.total}`
-                  : series.days.length}
-              </span>
-            </Link>
-          </li>
-        )
-      })}
-    </ol>
-  )
-}
-
-/* ── 7. CONTACT SHEET ───────────────────────────────────────────────── */
-
-/**
- * Frames are numbered by their position in the CURRENT sort — change the sort
- * and the numbering changes, exactly as a re-ordered contact sheet would.
- */
-export function ContactView({ slugs, progressBySeries, cardHref }: LayoutProps) {
-  return (
-    <div className="contactsheet">
-      {slugs.map((slug, i) => {
-        const series = SERIES_DATA[slug]
-        if (!series) return null
-        const progress = progressBySeries.get(slug)
-        const done = progress && progress.completed >= progress.total
-        return (
-          <Link
-            key={slug}
-            href={cardHref(slug)}
-            className={`frame${done ? ' frame--marked' : ''}`}
-          >
-            <span className="frame-num" aria-hidden="true">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <span className="frame-window">
-              <Plate slug={slug} sizes="(max-width: 640px) 30vw, 15vw" />
-            </span>
-            <span className="frame-caption">{series.title}</span>
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
-
-/* ── 8. MOSAIC ──────────────────────────────────────────────────────── */
+/* ── 6. MOSAIC ──────────────────────────────────────────────────────── */
 
 /** Hung by eye: a longer reading takes more wall. Masonry via CSS columns. */
 export function MosaicView({ slugs, progressBySeries, cardHref }: LayoutProps) {
@@ -415,50 +348,7 @@ export function MosaicView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
-/* ── 9. BROADSHEET ──────────────────────────────────────────────────── */
-
-/**
- * A newspaper page: the catalog set as running listings in rules-separated
- * columns, with the newest reading as the lede across the top.
- */
-export function BroadsheetView({ slugs, progressBySeries, cardHref, lead }: LayoutProps) {
-  const leadSeries = SERIES_DATA[lead]
-  const rest = slugs.filter((s) => s !== lead)
-  return (
-    <div className="broadsheet">
-      {leadSeries && slugs.includes(lead) && (
-        <Link href={cardHref(lead)} className="broad-lede">
-          <span className="broad-lede-plate">
-            <Plate slug={lead} sizes="(max-width: 900px) 100vw, 42vw" />
-          </span>
-          <span className="broad-lede-copy">
-            <span className="broad-kicker">Latest</span>
-            <span className="broad-lede-title">{leadSeries.title}</span>
-            <span className="broad-lede-standfirst">{leadSeries.question}</span>
-            <span className="broad-lede-meta">{dayCountLabel(lead)}</span>
-          </span>
-        </Link>
-      )}
-      <div className="broad-columns">
-        {rest.map((slug) => {
-          const series = SERIES_DATA[slug]
-          if (!series) return null
-          return (
-            <Link key={slug} href={cardHref(slug)} className="broad-entry">
-              <span className="broad-entry-title">{series.title}</span>
-              <span className="broad-entry-body">{series.question}</span>
-              <span className="broad-entry-meta">
-                {statusLabel(slug, progressBySeries.get(slug))}
-              </span>
-            </Link>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-/* ── 10. ISSUES ─────────────────────────────────────────────────────── */
+/* ── 7. ISSUES ─────────────────────────────────────────────────────── */
 
 /**
  * Issue numbers come from release order (`seriesRecencyRank`), so No. 01 is the
@@ -508,9 +398,6 @@ export const LAYOUTS: Record<ViewId, (props: LayoutProps) => React.ReactElement>
   covers: CoversView,
   spines: SpinesView,
   list: ListView,
-  index: IndexView,
-  contact: ContactView,
   mosaic: MosaicView,
-  broadsheet: BroadsheetView,
   issues: IssuesView,
 }

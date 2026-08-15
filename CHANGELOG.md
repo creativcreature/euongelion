@@ -43,6 +43,33 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## SERIES — seven layouts, centred, and a resume line that knows its place (2026-08-15)
+
+Founder, on the ten live: _"on desktop center the toggles. remove contact sheet
+and broad sheet, and index. center the sort on desktop as well."_ Then: _"the
+inprogress needs to be made much less prominent. the series I see as more
+important and the continue as secondary to that (still above fold)."_ Registered
+as **SA-050**.
+
+**Seven, not ten.** Index, Contact and Broadsheet are gone. Ten was the brief;
+seven is what survived review, and a switcher is worth more when every option on
+it earns its place — the three cut were the three carrying no artwork or no
+hierarchy. An index and a broadsheet are lovely as objects and weak as ways to
+choose a reading you haven't seen. The components are deleted rather than left
+unmounted; git history holds them if they're ever wanted back.
+
+**The controls are centred and stacked.** The bar was a space-between row with
+views left and sort right, which read as an application toolbar. Centred, it
+reads as a masthead control — which is what this page is.
+
+**In-progress now defers to the shelves.** The resume affordance was a bordered
+tile with a gold label, a heading and a CTA line: louder than any single series,
+on a page whose entire job is choosing a series. It's now one quiet line —
+`Continue · He Cannot Deny Himself · Day 3 →` — meta-sized and muted, above the
+search and above the fold but plainly secondary. Added as a `resume` variant so
+the existing `tile` stays available, and it renders nothing at all when no plan
+is active, so a cold reader sees only shelves. — SA-050 (F-094)
+
 ## THE READING ROOM — ten ways to look at the catalog (2026-08-15)
 
 Founder: _"10 distinct and unique ways of displaying the info that is super

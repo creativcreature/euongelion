@@ -6,10 +6,10 @@ time they were hit.
 
 ## Which voice
 
-| Content                                            | Voice                         | Engine                 |
-| -------------------------------------------------- | ----------------------------- | ---------------------- |
+| Content | Voice | Engine |
+| --- | --- | --- |
 | Every NEW series, and anything the founder authors | **Chris James (THCA master)** | ElevenLabs `eleven_v3` |
-| The back catalog (~500 existing devotionals)       | **am_michael**                | Kokoro, local          |
+| The back catalog (~500 existing devotionals) | **am_michael** | Kokoro, local |
 
 The split is economic and it holds: the whole catalog is 5.01M characters
 against 691k credits a month, but a new devotional averages **9,487 characters**,
@@ -53,8 +53,8 @@ python3 euangelion-voice-prototype/spec/produce.py <slug> euangelion-voice-proto
 ```
 
 Rebuilds the narration from the chunk cache — **no credits, no API** — and lays
-the atmospheric score under it. The founder's standing direction: _"the on site
-sound with my voice is great, but needs the music and ambiance upgrade."_ So the
+the atmospheric score under it. The founder's standing direction: *"the on site
+sound with my voice is great, but needs the music and ambiance upgrade."* So the
 narration passes through untouched; nothing in this pass processes the voice.
 
 Copy the result over `public/audio/<slug>.m4a` and update `bytes` and `duration`
@@ -62,7 +62,7 @@ in the manifest.
 
 ## Why the score sounds the way it does
 
-Reference: _Inspired by The Bible Experience_, founder-set.
+Reference: *Inspired by The Bible Experience*, founder-set.
 
 - **The atmosphere lives in the gaps.** Pushing a bed up under a voice buys
   masking, not presence. The score sits back while he speaks and lifts +10 dB in

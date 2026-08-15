@@ -2,7 +2,7 @@
  * F-094 — the reading room.
  *
  * Contract under test:
- * 1. Ten layouts, each reachable, each rendering the WHOLE catalog. The
+ * 1. Seven layouts, each reachable, each rendering the WHOLE catalog. The
  *    founder's original complaint was "series are hiding", so coverage is
  *    asserted against ALL_SERIES_ORDER in every view rather than sampled.
  * 2. The bento leads with title + plate — no kicker above the title, and never
@@ -49,13 +49,15 @@ const missingFromStage = (container: HTMLElement) => {
 }
 
 describe('SeriesBrowser — ten layouts', () => {
-  it('offers exactly ten layouts, each with an icon and a name', () => {
+  it('offers exactly seven layouts, each with an icon and a name', () => {
     const { container } = render(<SeriesBrowser />)
-    const tabs = screen.getAllByRole('tab')
-    expect(tabs).toHaveLength(10)
-    expect(VIEWS).toHaveLength(10)
-    // Every switcher control carries a glyph, not just a word.
-    expect(container.querySelectorAll('.rr-view svg')).toHaveLength(10)
+    // Founder-cut 2026-08-15: Index, Contact and Broadsheet removed.
+    expect(screen.getAllByRole('tab')).toHaveLength(7)
+    expect(VIEWS).toHaveLength(7)
+    expect(container.querySelectorAll('.rr-view svg')).toHaveLength(7)
+    for (const gone of ['Index', 'Contact', 'Broadsheet']) {
+      expect(screen.queryByRole('tab', { name: gone })).toBeNull()
+    }
   })
 
   it('renders the whole catalog in EVERY layout — nothing hides anywhere', () => {
@@ -118,14 +120,15 @@ describe('SeriesBrowser — ten layouts', () => {
     expect(container.querySelectorAll('.rack-bar').length).toBeGreaterThan(0)
   })
 
-  it('numbers contact-sheet frames by position in the current sort', () => {
+  it('numbers issues by release order, newest first', () => {
     const { container } = render(<SeriesBrowser />)
-    openView('Contact')
-    const nums = Array.from(container.querySelectorAll('.frame-num')).map(
-      (n) => n.textContent,
+    openView('Issues')
+    const nums = Array.from(container.querySelectorAll('.issue-no')).map((n) =>
+      Number((n.textContent ?? '').replace(/\D/g, '')),
     )
-    expect(nums[0]).toBe('01')
     expect(nums).toHaveLength(ALL_SERIES_ORDER.length)
+    // Descending: the newest issue carries the highest number and leads.
+    expect(nums[0]).toBeGreaterThan(nums[nums.length - 1])
   })
 
   it('sorting reorders without dropping anything', () => {

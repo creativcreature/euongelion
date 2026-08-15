@@ -43,12 +43,10 @@ export default function SeriesBrowsePage() {
           </FadeIn>
         </header>
 
-        {/* Renders only when the reader has a current plan. */}
-        <section
-          aria-label="Continue reading"
-          className="series-active-tile"
-        >
-          <ActivePlanBadge variant="tile" />
+        {/* Renders only when the reader has a current plan. One quiet line —
+            the shelves are what this page is for (SA-050). */}
+        <section aria-label="Continue reading" className="series-resume-row">
+          <ActivePlanBadge variant="resume" />
         </section>
 
         <SeriesBrowser />

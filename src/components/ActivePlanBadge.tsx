@@ -9,7 +9,7 @@ interface ActivePlanBadgeProps {
    * - "header": compact, designed for the topbar actions row.
    * - "tile": larger, full-width, designed for surface page (e.g. /series).
    */
-  variant?: 'header' | 'tile'
+  variant?: 'header' | 'tile' | 'resume'
   /** Optional className applied to the root element. */
   className?: string
 }
@@ -32,6 +32,33 @@ export default function ActivePlanBadge({
   const dayLabel =
     typeof active.dayNumber === 'number' ? `DAY ${active.dayNumber}` : 'RESUME'
   const titleLabel = active.seriesTitle?.trim() || 'YOUR PLAN'
+
+  /**
+   * Founder 2026-08-15: "the inprogress needs to be made much less prominent.
+   * the series I see as more important and the continue as secondary to that
+   * (still above fold)."
+   *
+   * So on /series it is one quiet line, not a bordered tile with a gold label
+   * and a heading. It stays above the fold and above the search, but it is
+   * plainly subordinate to the shelves — which are what the page is for.
+   */
+  if (variant === 'resume') {
+    return (
+      <Link
+        href={active.route}
+        className={`rr-resume ${className ?? ''}`}
+        aria-label={`Resume ${titleLabel} at ${dayLabel}`}
+        data-testid="active-plan-resume"
+      >
+        <span className="rr-resume-label">Continue</span>
+        <span className="rr-resume-title">{titleLabel}</span>
+        {typeof active.dayNumber === 'number' && (
+          <span className="rr-resume-day">Day {active.dayNumber}</span>
+        )}
+        <span aria-hidden="true">&rarr;</span>
+      </Link>
+    )
+  }
 
   if (variant === 'tile') {
     return (

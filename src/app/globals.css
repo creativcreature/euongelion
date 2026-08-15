@@ -11144,10 +11144,50 @@ html[data-held-moment] .mobile-tab-bar {
   padding: 0 clamp(0.9rem, 3vw, 2.4rem) 5rem;
 }
 
-.series-active-tile {
-  max-width: 720px;
-  margin: 0 auto 1.4rem;
-  padding: 0 1.5rem;
+/* The resume line. Deliberately the quietest thing above the search: one
+   hairline-underlined row, meta-sized, that disappears entirely when there is
+   nothing in progress. */
+.series-resume-row {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0.9rem;
+}
+
+.rr-resume {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.25rem 0.1rem;
+  text-decoration: none;
+  color: var(--mock-muted);
+  border-bottom: 1px solid transparent;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.rr-resume:hover,
+.rr-resume:focus-visible {
+  color: var(--mock-ink);
+  border-bottom-color: var(--mock-line, currentColor);
+}
+
+.rr-resume-label {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rr-resume-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-0);
+}
+
+.rr-resume-day {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── Search ──────────────────────────────────────────────────────── */
@@ -11208,13 +11248,15 @@ html[data-held-moment] .mobile-tab-bar {
 
 /* ── Switcher + sort ─────────────────────────────────────────────── */
 
+/* Founder 2026-08-15: both rows centred on desktop. They were left/right on a
+   space-between row, which read as a toolbar; centred and stacked they read as
+   a masthead control, which is what this page is. */
 .rr-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
-  padding: 0.55rem 0;
+  gap: 0.55rem;
+  padding: 0.6rem 0;
   border-top: var(--rr-hair);
   border-bottom: var(--rr-hair);
 }
@@ -11222,6 +11264,7 @@ html[data-held-moment] .mobile-tab-bar {
 .rr-views {
   display: flex;
   align-items: stretch;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0;
 }
@@ -11262,6 +11305,7 @@ html[data-held-moment] .mobile-tab-bar {
 .rr-sorts {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.22rem;
   flex-wrap: wrap;
 }
@@ -12188,7 +12232,6 @@ html[data-held-moment] .mobile-tab-bar {
   .contactsheet { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); padding: 0.7rem; }
   .rr-view-label { display: none; }
   .rr-view { padding: 0.45rem 0.55rem; }
-  .rr-bar { justify-content: center; }
   .spine { height: 240px; }
 }
 
