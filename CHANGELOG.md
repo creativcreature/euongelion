@@ -77,6 +77,29 @@ now shows a scroll rather than an anachronistic codex.
 Placement per spec: series card 1024², day plates 1600w, q80→q48 for dense
 halftone. — SA-040 (F-087)
 
+## LIBRARY — fix: the SERIES tab could not read a saved series (2026-08-14)
+
+A regression from the series-save change earlier today, found by auditing my own
+work rather than by a report.
+
+`LibraryView` — the library rail's SERIES tab — resolved a saved row with
+`slug.match(/^(.+)-day-\d+$/)`. A series slug has no `-day-N`, so it resolved to
+`null` and the card broke three ways: it was labelled "Devotional" instead of the
+series title, it linked to `/devotional/<series-slug>` (a 404), and ACTIVATE
+SERIES was hidden entirely because the button is gated on that value. Starting a
+saved series from the library reported "Could not resolve this devotional to a
+series."
+
+The resolver now recognises a series slug and returns it unchanged, which fixes
+the label, the link, the button and the activate path together. Verified
+end-to-end against the running app: a saved series renders as
+"He Cannot Deny Himself", links to `/series/he-cannot-deny-himself`, and reads
+"Whole series · 7 days".
+
+Swept the rest of the codebase for the same assumption — the other consumers
+take route params rather than saved rows, and the rail's own resolver was made
+series-aware when series-save shipped. — SA-039 (F-088)
+
 ## READER — closing tweaks (2026-08-14)
 
 **The reader-theme button no longer sits on the audio controls.** Fixed

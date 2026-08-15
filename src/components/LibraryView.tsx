@@ -13,11 +13,17 @@ import {
   type LibraryIntent,
 } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
+import { isSeriesSlug, seriesSlugOf } from '@/lib/library/series-save'
 
+/**
+ * SA-039: a saved row may now name a SERIES rather than one of its days, so
+ * this has to resolve both. Without the first branch a saved series resolved
+ * to null here, which hid ACTIVATE SERIES, labelled the card "Devotional" and
+ * linked it at /devotional/<series-slug> — a 404.
+ */
 function seriesSlugFromDevotionalSlug(slug: string): string | null {
-  const match = slug.match(/^(.+)-day-\d+$/)
-  if (!match) return null
-  return match[1] === 'identity-crisis' ? 'identity' : match[1]
+  if (isSeriesSlug(slug)) return slug
+  return seriesSlugOf(slug)
 }
 
 export default function LibraryView() {
@@ -218,8 +224,8 @@ export default function LibraryView() {
         </h2>
         {saved.length === 0 ? (
           <p className="library-empty vw-small">
-            Nothing saved yet &mdash; keep any devotional here with{' '}
-            <em>Save this Devotional</em> as you read.
+            Nothing saved yet &mdash; keep a series here with{' '}
+            <em>Save series</em> as you read.
           </p>
         ) : (
           <div className="library-grid">
@@ -228,17 +234,23 @@ export default function LibraryView() {
                 item.devotionalSlug,
               )
               const series = seriesSlug ? SERIES_DATA[seriesSlug] : null
+              const savedWholeSeries = isSeriesSlug(item.devotionalSlug)
+              const href = savedWholeSeries
+                ? `/series/${item.devotionalSlug}`
+                : `/devotional/${item.devotionalSlug}`
+              const label = savedWholeSeries
+                ? (series?.title ?? item.devotionalSlug.replace(/-/g, ' '))
+                : (item.note ?? item.devotionalSlug.replace(/-/g, ' '))
               return (
                 <div className="library-card" key={item.devotionalSlug}>
                   <p className="vw-small text-secondary">
-                    {series?.title ?? 'Devotional'}
+                    {savedWholeSeries
+                      ? `Whole series · ${series?.days.length ?? 0} days`
+                      : (series?.title ?? 'Devotional')}
                   </p>
                   <p className="vw-body">
-                    <Link
-                      href={`/devotional/${item.devotionalSlug}`}
-                      className="link-highlight"
-                    >
-                      {item.note ?? item.devotionalSlug.replace(/-/g, ' ')}
+                    <Link href={href} className="link-highlight">
+                      {label}
                     </Link>
                   </p>
                   <div className="library-card-actions">
