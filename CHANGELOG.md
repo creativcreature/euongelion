@@ -5,6 +5,64 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE LIBRARY — series stop hiding, the active day actually moves (2026-08-14)
+
+Four founder asks in one night, all the same shape underneath: **the app knew
+the right answer and showed a different one.** Registered as **SA-044**.
+
+**The active day never advanced, and nothing linked to it.** `PATCH
+/api/devotionals/active` has accepted a `currentDay` since 2026-05-14 and clamps
+it to the series length — and no client had ever called it. Completion lived
+only in `localStorage`, which the server never sees, so `current_day` sat
+wherever the series was started. Meanwhile the surfaces that _did_ know the day
+linked past it: the library's ACTIVE card printed "Day 3" above a button to a
+bare `/daily-bread`. `markDevotionalComplete` is the one choke point every MARK
+READ path already goes through, so the advance lives there, and
+`src/lib/reading/active-day.ts` owns both halves so they cannot drift apart
+again. It never falls back to day 1 — an unresolvable day links to the series
+page, because silently restarting someone three days in is exactly what made
+this look like working software. "Next day" is now the first _incomplete_ day
+rather than last-completed + 1, which skipped gaps when a reader went out of
+order.
+
+**`/series` is a library now.** The rails view was the hiding mechanism: a
+handful of curated sideways shelves over 37 series meant anything in no rail was
+unreachable unless you switched views and knew to look. Three views replace it —
+**FEATURE** (bento, newest eligible series leading, your in-progress reading
+promoted), **LIBRARY** (every slug in `ALL_SERIES_ORDER`, six sorts, an A–Z jump
+rail), and **LIST**. Coverage is structural rather than editorial and is
+asserted in a test against `ALL_SERIES_ORDER`, so a new series shelves itself.
+
+**Search takes phrasing.** The existing scorer is AND-semantics — correct for
+typing a title you already know, useless for describing a need. _"I feel anxious
+about money"_ returned **zero** results, because no teaser contains the token
+"i". `searchLibraryByPhrase` drops stopwords, scores OR with a squared coverage
+multiplier so partial matches sink, and pays an exact-phrase bonus. It searches
+devotionals as well as series, because someone describing a feeling usually
+wants the one reading that meets it. The same query now returns _Provision_ and
+"Why does having more make you feel less secure?". Both scorers stay. It is not
+the Soul Audit and says so under the field: no consent gate, no plan, no
+curation.
+
+**The homepage rail rotates each refresh.** It had to be client-side — the
+homepage carries `s-maxage=31536000`, so a rotation computed during render is
+frozen into the edge cache and identical for every visitor, and `Math.random()`
+in render is a hydration mismatch. Server render is deterministic, an effect
+reshuffles the tail after hydration, the lead never moves. The lead is derived
+from the end of `NEW_SERIES_ORDER` rather than hardcoded — the old
+`HOMEPAGE_TODAY` literal still named a series two releases old. Per SA-036(4)
+and the founder's direct confirmation, the commissioned series is excluded from
+the lead, the tail, and the bento hero — but still appears in LIBRARY and LIST,
+because nothing may hide.
+
+Three bugs the screenshots caught that the tests could not: the bento lead was
+the commissioned series; the A–Z rail read `… R S N W T V` because only the
+bucket stripped leading articles while the sort kept them; and in light mode
+every kicker was near-invisible, because `--color-gold` is a legacy alias
+resolving to cobalt `#1f2a8d` there while the tile scrim is dark in both themes.
+
+36 new tests. Service worker v67. — SA-044 (F-090)
+
 ## Narration — the founder's own voice, and the words that were never being read (2026-08-15)
 
 The founder could not listen to his own devotionals. Two problems sat on top of

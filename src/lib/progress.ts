@@ -2,6 +2,7 @@
 
 import type { DevotionalProgress } from '@/types'
 import { SERIES_DATA } from '@/data/series'
+import { advanceActiveDayAfterCompletion } from '@/lib/reading/active-day'
 
 const PROGRESS_KEY = 'wakeup_progress'
 const SERIES_START_KEY = 'series_start_dates'
@@ -37,6 +38,16 @@ export function markDevotionalComplete(slug: string, timeSpent?: number): void {
   } catch {
     // silently fail
   }
+
+  // Local progress is device-only; `active_series.current_day` is what every
+  // "continue reading" surface reads. Advancing it here — the one choke point
+  // every MARK READ path already goes through — is what makes finishing a day
+  // move the reader forward instead of parking them on day 1 forever.
+  //
+  // Deliberately outside the try/catch above: a localStorage failure must not
+  // cancel the server write, and the advance reports its own failures rather
+  // than being swallowed by this function's `catch {}`.
+  void advanceActiveDayAfterCompletion(slug)
 }
 
 export function getSeriesProgress(seriesSlug: string) {

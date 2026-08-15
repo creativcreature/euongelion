@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import Link from 'next/link'
 import { useProgressStore } from '@/stores/progressStore'
 import { SERIES_DATA } from '@/data/series'
+import { nextUnreadDay } from '@/lib/reading/active-day'
 
 /**
  * Audit H7 (HOMEPAGE-AUDIT-2026-05-11): surfaces "Continue day N of this
@@ -26,14 +27,13 @@ export default function ResumeSeriesPill({
   const next = useMemo(() => {
     if (!series) return null
     const completedSlugs = new Set(completions.map((c) => c.slug))
-    const completedDays = series.days.filter((d) => completedSlugs.has(d.slug))
-    if (completedDays.length === 0) return null
-    if (completedDays.length >= series.days.length) return null
-    const lastDoneDayNum = Math.max(...completedDays.map((d) => d.day))
-    const nextDay = series.days.find((d) => d.day === lastDoneDayNum + 1)
-    if (!nextDay) return null
-    return nextDay
-  }, [series, completions])
+    // Nothing started yet — "continue" would be a lie.
+    if (!series.days.some((d) => completedSlugs.has(d.slug))) return null
+    // nextUnreadDay returns the first INCOMPLETE day, not last-completed + 1.
+    // Those differ the moment someone reads out of order, and the old form
+    // skipped straight past unread days. Returns null when the series is done.
+    return nextUnreadDay(seriesSlug, completedSlugs)
+  }, [series, seriesSlug, completions])
 
   if (!next || !series) return null
 

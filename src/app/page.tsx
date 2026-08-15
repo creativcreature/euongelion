@@ -14,7 +14,11 @@ import ComposingPaths from '@/components/soul-audit/ComposingPaths'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
-import { ALL_SERIES_ORDER, FEATURED_SERIES, SERIES_COUNT } from '@/data/series'
+import { SERIES_COUNT } from '@/data/series'
+import {
+  featuredForServer,
+  rotateFeatured,
+} from '@/lib/home/featured-rotation'
 
 /**
  * Homepage featured SERIES content. Founder direction 2026-05-13: the
@@ -131,13 +135,21 @@ export default function Home() {
   const [resumeRoute, setResumeRoute] = useState<string | null>(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
 
-  const featuredSlugs = useMemo(() => {
-    // Founder direction 2026-05-14: 7 cards on the homepage rail
-    // (was 6). Surfaces one more series from FEATURED_SERIES /
-    // ALL_SERIES_ORDER without changing the underlying data.
-    const seeded = [...FEATURED_SERIES, ...ALL_SERIES_ORDER]
-    const deduped = Array.from(new Set(seeded))
-    return deduped.slice(0, 7)
+  // Founder 2026-08-14: "New series in the features each refresh, except the
+  // latest uploaded should always be the first shown on homepage." / "Each
+  // page refresh."
+  //
+  // The first render MUST be the deterministic set: this page is edge-cached
+  // for a year, so a rotation computed during render would be frozen into the
+  // cached HTML, and any Math.random() in render is a hydration mismatch. The
+  // effect below reshuffles the tail once, on the client, after hydration.
+  // The lead — the newest eligible series — never moves.
+  const [featuredSlugs, setFeaturedSlugs] = useState<string[]>(() =>
+    featuredForServer(),
+  )
+
+  useEffect(() => {
+    setFeaturedSlugs(rotateFeatured())
   }, [])
   const faqWindow = useMemo(
     () =>

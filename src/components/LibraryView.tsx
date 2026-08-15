@@ -14,6 +14,24 @@ import {
 } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
 import { isSeriesSlug, seriesSlugOf } from '@/lib/library/series-save'
+import {
+  activeDayHref,
+  activeDayLabel,
+  daySlugFor,
+} from '@/lib/reading/active-day'
+
+/** The title of the day the reader is on, for the ACTIVE card's second line. */
+function activeDayTitle(
+  seriesSlug: string,
+  currentDay: number | null | undefined,
+): string | null {
+  if (typeof currentDay !== 'number') return null
+  const slug = daySlugFor(seriesSlug, Math.floor(currentDay))
+  if (!slug) return null
+  return (
+    SERIES_DATA[seriesSlug]?.days.find((d) => d.slug === slug)?.title ?? null
+  )
+}
 
 /**
  * SA-039: a saved row may now name a SERIES rather than one of its days, so
@@ -184,18 +202,30 @@ export default function LibraryView() {
         {active ? (
           <div className="library-card">
             <p className="vw-body">
-              <strong>{active.seriesTitle ?? active.seriesSlug}</strong> — Day{' '}
-              {active.currentDay}
+              <strong>{active.seriesTitle ?? active.seriesSlug}</strong>
+              {activeDayLabel(active.seriesSlug, active.currentDay)
+                ? ` — ${activeDayLabel(active.seriesSlug, active.currentDay)}`
+                : ''}
             </p>
             <p className="vw-small text-secondary">
-              Source: {active.source.replace(/_/g, ' ')}
+              {activeDayTitle(active.seriesSlug, active.currentDay) ??
+                `Source: ${active.source.replace(/_/g, ' ')}`}
             </p>
             <div className="library-card-actions">
+              {/* Founder 2026-08-14: the card said "Day 3" and then sent the
+                  reader to a bare /daily-bread. It now opens the day it names.
+                  activeDayHref falls back to the series page, never to day 1. */}
               <Link
-                href="/daily-bread"
+                href={activeDayHref(active.seriesSlug, active.currentDay)}
                 className="cta-major text-label vw-small px-5 py-2"
               >
-                OPEN DAILY BREAD
+                CONTINUE
+              </Link>
+              <Link
+                href="/daily-bread"
+                className="text-label vw-small link-highlight"
+              >
+                DAILY BREAD
               </Link>
             </div>
           </div>

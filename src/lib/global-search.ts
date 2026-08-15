@@ -308,6 +308,163 @@ export function searchDevotionals(query: string): DevotionalSearchResult[] {
 }
 
 // ---------------------------------------------------------------------------
+// Phrase search — "search by phrasing", not by keyword
+// ---------------------------------------------------------------------------
+
+/**
+ * Founder, 2026-08-14: "I want the user to be able to search by phrasing etc so
+ * they can find the most relevant devotionals — this is NOT the soul audit."
+ *
+ * `searchSeries` / `searchDevotionals` above use AND semantics: every token must
+ * hit or the entry is dropped. That is right for a command-palette lookup where
+ * the reader is typing a title they already know, and useless for the way people
+ * describe a need. "I feel anxious about money" returns exactly nothing, because
+ * no teaser contains the literal token "i".
+ *
+ * This scorer is built for the second case:
+ *
+ *  - STOPWORDS are dropped before matching, so the sentence reduces to the words
+ *    that carry meaning ("anxious", "money").
+ *  - OR semantics with a COVERAGE multiplier. A missing token no longer
+ *    disqualifies an entry, but matching 3 of 3 content words still ranks well
+ *    above matching 1 of 3 — coverage is squared so partial matches sink fast
+ *    rather than flooding the results.
+ *  - An EXACT PHRASE hit is worth more than the sum of its words, so someone
+ *    typing a remembered line lands on it.
+ *  - Series carry their `keywords`, which are already written as natural phrases
+ *    ("who am i", "lost", "shaken"), so intent language matches them directly.
+ *
+ * It is deliberately NOT the Soul Audit: no consent gate, no plan, no
+ * curation — it ranks the existing catalog and links straight into it.
+ */
+const SEARCH_STOPWORDS: ReadonlySet<string> = new Set([
+  'a', 'about', 'am', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been',
+  'but', 'by', 'can', 'do', 'does', 'for', 'from', 'get', 'go', 'had', 'has',
+  'have', 'he', 'her', 'him', 'his', 'how', 'i', 'if', 'in', 'is', 'it', 'its',
+  'me', 'my', 'of', 'on', 'or', 'our', 'out', 'she', 'so', 'some', 'that',
+  'the', 'their', 'them', 'then', 'there', 'they', 'this', 'to', 'up', 'us',
+  'was', 'we', 'were', 'what', 'when', 'where', 'which', 'who', 'why', 'will',
+  'with', 'you', 'your',
+])
+
+/**
+ * Content tokens for phrase matching.
+ *
+ * If a query is ENTIRELY stopwords ("who am i", "what is it") the stopword list
+ * would leave nothing to match, so the original tokens are kept instead — those
+ * short existential questions are real queries here, and series keywords
+ * contain them verbatim.
+ */
+export function contentTokens(query: string): string[] {
+  const tokens = tokenizeQuery(query)
+  const content = tokens.filter((token) => !SEARCH_STOPWORDS.has(token))
+  return content.length > 0 ? content : tokens
+}
+
+/** Squared so that half-matching an intent sentence ranks far below fully matching it. */
+function coverageMultiplier(matched: number, total: number): number {
+  if (total === 0) return 0
+  const ratio = matched / total
+  return ratio * ratio
+}
+
+const EXACT_PHRASE_WEIGHT = 12
+
+function scoreEntryLoose(
+  fields: WeightedField[],
+  tokens: string[],
+  normalizedPhrase: string,
+): number {
+  if (tokens.length === 0) return 0
+  let total = 0
+  let matched = 0
+  for (const token of tokens) {
+    let tokenScore = 0
+    for (const field of fields) {
+      tokenScore += fieldTokenScore(field.text, token, field.weight)
+    }
+    if (tokenScore > 0) matched += 1
+    total += tokenScore
+  }
+  if (matched === 0) return 0
+
+  // A multi-word query found verbatim is a much stronger signal than the same
+  // words scattered across a paragraph.
+  if (normalizedPhrase.includes(' ')) {
+    for (const field of fields) {
+      if (field.text.includes(normalizedPhrase)) {
+        total += EXACT_PHRASE_WEIGHT * field.weight
+        break
+      }
+    }
+  }
+
+  return total * coverageMultiplier(matched, tokens.length)
+}
+
+export interface PhraseSearchResults {
+  series: SeriesSearchResult[]
+  devotionals: DevotionalSearchResult[]
+  /** Content words actually used for matching, for "showing results for…" copy. */
+  tokens: string[]
+}
+
+/**
+ * Rank the whole catalog against a natural-language query.
+ *
+ * Returns series and devotionals separately because the browse UI shows them in
+ * different shelves; both are sorted best-first and already filtered to real
+ * matches.
+ */
+export function searchLibraryByPhrase(
+  query: string,
+  limits: { series?: number; devotionals?: number } = {},
+): PhraseSearchResults {
+  const tokens = contentTokens(query)
+  const phrase = normalizeSearchText(query)
+  if (tokens.length === 0) return { series: [], devotionals: [], tokens: [] }
+
+  const seriesResults: SeriesSearchResult[] = []
+  for (const entry of getSeriesIndex()) {
+    const score = scoreEntryLoose(entry.fields, tokens, phrase)
+    if (score <= 0) continue
+    seriesResults.push({
+      kind: 'series',
+      slug: entry.slug,
+      title: entry.title,
+      question: entry.question,
+      dayCount: entry.dayCount,
+      href: `/series/${entry.slug}`,
+      score,
+    })
+  }
+
+  const devotionalResults: DevotionalSearchResult[] = []
+  for (const entry of getDevotionalIndex()) {
+    const score = scoreEntryLoose(entry.fields, tokens, phrase)
+    if (score <= 0) continue
+    devotionalResults.push({
+      kind: 'devotional',
+      slug: entry.slug,
+      title: entry.title,
+      teaser: entry.teaser,
+      seriesTitle: entry.seriesTitle,
+      href: `/devotional/${entry.slug}`,
+      score,
+    })
+  }
+
+  const bySc = <T extends { score: number; title: string }>(a: T, b: T) =>
+    b.score - a.score || a.title.localeCompare(b.title)
+
+  return {
+    series: seriesResults.sort(bySc).slice(0, limits.series ?? 12),
+    devotionals: devotionalResults.sort(bySc).slice(0, limits.devotionals ?? 24),
+    tokens,
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Notes / bookmarks / clippings search
 // ---------------------------------------------------------------------------
 

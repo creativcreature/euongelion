@@ -1,4 +1,8 @@
 // Euangelion Service Worker
+// R52 (F-090/SA-043): bumped to v67 — the series page is a new client bundle
+// (library/bento/list + phrase search) and completion now advances the active
+// day. Reading routes are cache-first, so a returning reader on an older
+// version keeps the old shell and sees none of it.
 // R37: bumped to v50 for the 2026-05-15 deploy.
 // R38 (Phase 2.2 + 2.3): bumped to v51 — adds (a) cache-first-with-network-
 // update for opened devotional reading routes + their JSON so a reader can
@@ -53,7 +57,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v66'
+const CACHE_NAME = 'euangelion-v67'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
