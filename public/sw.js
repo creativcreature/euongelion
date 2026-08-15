@@ -12,6 +12,8 @@
 // were replaced. /images/ is cache-first, so anyone who had opened those days
 // held the old artwork permanently and the deploy alone would never reach them.
 // Any image REPLACED at a path that already shipped needs this bump.
+// R54 (F-091): bumped to v69 — nav order changed and both Daily Bread
+// readings now render the devotional headline with artwork.
 // R53 (F-091): bumped to v68 — nav lost its duplicate TODAY entry and the
 // Daily Bread empty state now leads with the headline plate. Shell change.
 // R52 (F-089): bumped to v66 — selection colour fixed at its real source and
@@ -59,7 +61,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v68'
+const CACHE_NAME = 'euangelion-v69'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

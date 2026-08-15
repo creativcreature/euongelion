@@ -4,6 +4,8 @@ import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { renderMarkdownSafe } from '@/lib/markdown-safe'
 import AudioPlayer from '@/components/AudioPlayer'
+import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
+import { getSeriesHero } from '@/lib/series-hero'
 import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
 import MarkdownWithWordNotes from '@/components/daily-bread/MarkdownWithWordNotes'
@@ -1153,14 +1155,22 @@ export default function DailyBreadView({
       {/* Content state */}
       {isCurrentDayUnlocked && !isSabbath && content && (
         <>
-          {/* Day title — day 0 is the onboarding primer, not "DAY 0". */}
-          <header className="mb-6">
-            <p className="text-label vw-small mb-1 text-gold">
-              {selectedDay === 0 ? 'ONBOARDING' : `DAY ${selectedDay}`}
-              {isCompleted ? ' -- COMPLETED' : ''}
-            </p>
-            <h1 className="vw-heading-md mb-2">{content.title}</h1>
-          </header>
+          {/* Founder direction 2026-08-15: a plan day is a devotional and must
+              read like one. This was a bare kicker + h1 with no artwork, so the
+              soul-audit reading looked like a different product from
+              /devotional/[slug]. Same headline component, same source for the
+              plate. The plan payload carries no teaser, so the standfirst slot
+              is left empty rather than filled with something invented. */}
+          <DevotionalHeadline
+            imageSrc={getSeriesHero(plan.series_slug)?.src}
+            imageAlt={`Illustration accompanying ${content.title}`}
+            title={content.title}
+            scripture={content.scriptureReference ?? undefined}
+          />
+          <p className="text-label vw-small mb-6 mt-3 text-gold">
+            {selectedDay === 0 ? 'ONBOARDING' : `DAY ${selectedDay}`}
+            {isCompleted ? ' -- COMPLETED' : ''}
+          </p>
 
           {/* Phase 2.1: Audio Edition — free, on-device read-aloud of this
               day's real woven content. */}

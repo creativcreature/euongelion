@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## DAILY BREAD — reads as a devotional, and leads the nav (2026-08-15)
+
+Founder: _"the daily bread reader menu item should appear directly to the right
+of the home menu button, and the actual pages devotional should have the same
+layout as a regular devotional"_, referencing
+`/devotional/he-cannot-deny-himself-day-1`.
+
+**Nav order.** `DAILY BREAD` now sits directly after `HOME`. The daily reading
+is the point of the site, so it leads the destinations rather than sitting
+fourth.
+
+**Both Daily Bread readings had drifted from the reader, in different ways.**
+The curated path passed `DevotionalHeadline` **no `imageSrc`**, so it silently
+fell back to the component's `--textonly` variant and dropped the plate — no
+error, just a missing image. The soul-audit plan path never used the headline
+component at all; it was a bare `<header>` with a kicker and an `<h1>`. Both now
+render the same headline the reader does, fed by `getSeriesHero()`.
+
+The plan payload carries no teaser, so the standfirst slot is left empty on
+that path rather than filled with invented copy.
+
+Neither reading can be rendered in a test without an authenticated active
+series, so the parity is pinned at the source instead —
+`__tests__/daily-bread-headline-parity.test.ts`, 10 cases: every reading
+surface must render `DevotionalHeadline`, resolve art through `getSeriesHero`,
+and pass the scripture reference. The silent `--textonly` fallback is exactly
+what regressed, so the test locks it out.
+
+Service worker to v69. — SA-045 (F-091)
+
 ## NAV + DAILY BREAD — one menu item, and a page that leads with art (2026-08-15)
 
 Founder: _"Daily Bread and Today are the same menu item. remove the redundancy,

@@ -19,13 +19,14 @@ const DESKTOP_NAV_ITEMS = [
   { href: '/', label: 'HOME' },
   // Founder direction 2026-08-15: TODAY and DAILY BREAD were two labels on
   // ONE destination (/daily-bread), so both lit as active at the same time and
-  // the nav read as duplicated. Collapsed to a single DAILY BREAD entry.
-  // SA-033's ruling still holds — "today" means YOUR devotional via the Daily
-  // Bread resolver, not the /today editorial rotation, which stays reachable
-  // as "Today's Edition" in the footer.
+  // the nav read as duplicated. Collapsed to a single DAILY BREAD entry, and
+  // placed directly after HOME — the daily reading is the point of the site,
+  // so it sits first among the destinations. SA-033's ruling still holds:
+  // "today" means YOUR devotional via the Daily Bread resolver, not the
+  // /today editorial rotation, which stays reachable in the footer.
+  { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
-  { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/library', label: 'LIBRARY' },
   { href: '/how-we-write', label: 'HOW WE WRITE' },
 ]

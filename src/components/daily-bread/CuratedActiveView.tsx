@@ -370,7 +370,13 @@ export default function CuratedActiveView({
           {/* F-083 page-cleanup 2026-07-27 (founder): title-only —
               the active-series panel above already names the series and
               the day's own inline artwork carries the visual. */}
+          {/* Founder direction 2026-08-15: the Daily Bread reading must look
+              like a devotional, not a stripped copy of one. It was passing no
+              imageSrc, so the headline fell back to its text-only variant and
+              the plate never appeared. Same source the reader uses. */}
           <DevotionalHeadline
+            imageSrc={getSeriesHero(seriesSlug)?.src}
+            imageAlt={`Illustration accompanying ${devotional.title}`}
             title={devotional.title}
             dek={devotional.teaser ?? undefined}
             scripture={devotional.scriptureReference ?? undefined}
