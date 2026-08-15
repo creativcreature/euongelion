@@ -17,12 +17,12 @@ import { useSettingsStore } from '@/stores/settingsStore'
 // surfaces never duplicate a destination.
 const DESKTOP_NAV_ITEMS = [
   { href: '/', label: 'HOME' },
-  // SA-033 (2026-07-27, founder): TODAY means YOUR devotional — the
-  // Daily Bread resolver (active devotional → plan → invitation) —
-  // not the /today editorial rotation, which kept greeting the founder
-  // with whatever day the date-rotation landed on. The rotation stays
-  // reachable as "Today's Edition" in the footer.
-  { href: '/daily-bread', label: 'TODAY' },
+  // Founder direction 2026-08-15: TODAY and DAILY BREAD were two labels on
+  // ONE destination (/daily-bread), so both lit as active at the same time and
+  // the nav read as duplicated. Collapsed to a single DAILY BREAD entry.
+  // SA-033's ruling still holds — "today" means YOUR devotional via the Daily
+  // Bread resolver, not the /today editorial rotation, which stays reachable
+  // as "Today's Edition" in the footer.
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
   { href: '/daily-bread', label: 'DAILY BREAD' },

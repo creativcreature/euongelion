@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## NAV + DAILY BREAD — one menu item, and a page that leads with art (2026-08-15)
+
+Founder: _"Daily Bread and Today are the same menu item. remove the redundancy,
+instead of calling it today, call the item Daily Bread."_ They were literally
+the same destination:
+
+```ts
+{ href: '/daily-bread', label: 'TODAY' }
+{ href: '/daily-bread', label: 'DAILY BREAD' }
+```
+
+Same `href` twice, so the active-state check lit **both** at once — the nav
+showed two underlined items pointing at one page, which reads as a rendering
+fault rather than a menu. The `TODAY` entry is gone and the mobile tab is
+relabelled `DAILY BREAD`.
+
+SA-033 is unchanged and still right: "today" means *your* devotional resolved
+through Daily Bread, not the `/today` editorial rotation — which stays
+reachable as "Today's Edition" in the footer. The `/today` route is untouched,
+so existing links keep working.
+
+**Daily Bread now leads with artwork.** Every devotional opens with
+`DevotionalHeadline` — plate left, title, standfirst and scripture right — while
+Daily Bread's empty state hand-rolled its own markup with no image at all. The
+two surfaces did not read as one product. It now renders the same component,
+fed by `getSeriesHero()`. Founder's reference for the correct layout was
+`/devotional/community-day-1`.
+
+**Found while investigating, not fixed:** 31 of 37 series hero images are the
+wrong aspect for the headline slot. The slot is `aspect-ratio: 1408/768` with
+`object-fit: cover`; 28 heroes are square `1024×1024` and 3 are portrait, so
+they lose roughly 45% of their height to the crop. `community-day-1` looks
+right precisely because its plate is natively `1408×768`. That is an asset
+problem rather than a layout one, and the remedy — regenerate ~31 landscape
+plates, derive 16:9 crops from the square masters, or accept the crop — costs
+real money and is the founder's call. — SA-045 (F-091)
+
 ## THE LIBRARY — series stop hiding, the active day actually moves (2026-08-14)
 
 Four founder asks in one night, all the same shape underneath: **the app knew

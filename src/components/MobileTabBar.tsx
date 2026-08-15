@@ -23,7 +23,9 @@ const TABS: Array<{
 }> = [
   {
     href: '/daily-bread',
-    label: 'TODAY',
+    // Founder direction 2026-08-15: the tab is the Daily Bread reader, so it
+    // carries that name. "Today" was a second name for the same destination.
+    label: 'DAILY BREAD',
     isActive: (p) => p === '/today' || p.startsWith('/daily-bread'),
     icon: (
       // Morning sun over a horizon line — the daily reading.

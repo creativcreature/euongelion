@@ -94,3 +94,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-088 | Platform          | Reader declutter — title first, no page furniture   | 0/10     | wip    | [F-088.md](./F-088.md) |
 | F-089 | Platform          | Study chat in Workers + visible highlights          | 0/10     | wip    | [F-089.md](./F-089.md) |
 | F-090 | Platform          | The library — browse, phrase search, active day     | 0/10     | wip    | [F-090.md](./F-090.md) |
+| F-091 | Navigation        | One Daily Bread nav item + headline artwork        | 0/10     | wip    | [F-091.md](./F-091.md) |

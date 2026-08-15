@@ -26,8 +26,11 @@ const index = read(INDEX)
 const ids = [...registry.matchAll(/\bF-\d{3}\b/g)].map((m) => m[0])
 const uniqueIds = Array.from(new Set(ids)).sort()
 
-if (uniqueIds.length !== 89) {
-  fail(`Expected 89 feature IDs in registry, found ${uniqueIds.length}`)
+// Bumped whenever a feature is added. Note the shape of this guard: the count
+// is hardcoded, so adding a PRD and forgetting this line blocks EVERY commit in
+// the repo, not just the one that added it. F-090 did exactly that.
+if (uniqueIds.length !== 91) {
+  fail(`Expected 91 feature IDs in registry, found ${uniqueIds.length}`)
 }
 
 for (const id of uniqueIds) {

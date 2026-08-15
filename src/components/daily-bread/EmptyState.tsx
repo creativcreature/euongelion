@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import DevotionalHeadline from '@/components/devotional/DevotionalHeadline'
+import { getSeriesHero } from '@/lib/series-hero'
 
 /**
  * Audit #14 (HOMEPAGE-AUDIT-2026-05-11): a new reader who clicks
@@ -13,6 +15,7 @@ import Link from 'next/link'
  */
 const TODAY_FALLBACK = {
   slug: 'what-is-the-gospel-day-1',
+  seriesSlug: 'what-is-the-gospel',
   series: 'What Is the Gospel?',
   day: 1,
   title: 'A Voice in the Wilderness',
@@ -23,15 +26,21 @@ const TODAY_FALLBACK = {
 
 export default function EmptyState() {
   return (
-    <div className="mx-auto max-w-3xl px-5 py-12">
-      <p className="text-label vw-small mb-3 text-gold">
+    <div className="mx-auto max-w-5xl px-5 py-12">
+      {/* Founder direction 2026-08-15: Daily Bread opened on a wall of text
+          while every devotional leads with artwork. It now uses the same
+          headline component the reader does — image, title, standfirst,
+          scripture — so the two surfaces read as one product. */}
+      <DevotionalHeadline
+        imageSrc={getSeriesHero(TODAY_FALLBACK.seriesSlug)?.src}
+        imageAlt={`Illustration accompanying ${TODAY_FALLBACK.title}`}
+        title={TODAY_FALLBACK.title}
+        dek={TODAY_FALLBACK.teaser}
+        scripture={TODAY_FALLBACK.scripture}
+      />
+      <p className="text-label vw-small mb-4 mt-4 text-gold">
         TODAY · {TODAY_FALLBACK.series.toUpperCase()} · DAY {TODAY_FALLBACK.day}
       </p>
-      <p className="text-label vw-small mb-2 text-secondary">
-        {TODAY_FALLBACK.scripture}
-      </p>
-      <h1 className="vw-heading-md mb-4">{TODAY_FALLBACK.title}</h1>
-      <p className="vw-body mb-6 text-secondary">{TODAY_FALLBACK.teaser}</p>
       <p className="vw-small mb-6 text-secondary">
         Each daily reading includes a scripture passage, vocabulary notes,
         historical context, a bridge to Christ, a reflection question, and a
