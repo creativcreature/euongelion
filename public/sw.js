@@ -4,6 +4,10 @@
 // update for opened devotional reading routes + their JSON so a reader can
 // re-open anything they've already opened while offline, (b) /today + /sunday
 // in precache, (c) web-push 'push' + 'notificationclick' handlers.
+// R51 (F-087/SA-040+SA-041): bumped to v64 — all ten looking-at-the-sun plates
+// were replaced. /images/ is cache-first, so anyone who had opened those days
+// held the old artwork permanently and the deploy alone would never reach them.
+// Any image REPLACED at a path that already shipped needs this bump.
 // R50 (F-088/SA-039): bumped to v63 — the library SERIES tab could not read a
 // saved series row (404 link, hidden ACTIVATE, "Devotional" label).
 // R49 (F-088): bumped to v62 — the reader-theme button no longer sits on the
@@ -45,7 +49,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v63'
+const CACHE_NAME = 'euangelion-v64'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

@@ -5,6 +5,23 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PWA — service worker v64, and the version constant that had drifted (2026-08-14)
+
+The replated artwork was deployed and live, byte-verified, and still showed the
+old plates in the browser. `/images/` is **cache-first** in `sw.js`, so anyone
+who had opened those days held the previous artwork permanently — deploying new
+bytes to the same paths never reaches them. `CACHE_NAME` → `euangelion-v64`.
+Any image _replaced_ at a path that already shipped needs this bump; new paths
+do not.
+
+**`SW_VERSION` had drifted nine releases behind.** The constant in
+`ServiceWorkerRegistration.tsx` carries the comment "Must match `CACHE_NAME`
+there" and sat at `v55` against a cache at `v63`. The primary purge was
+unaffected — the worker's own `activate` deletes every cache whose key is not
+`CACHE_NAME`, and that fired on each bump. But the client-side path that
+unregisters and clears before re-registering compares against `SW_VERSION`, so
+it had not run since v55. Synced to `v64`. — SA-040/SA-041 (F-087)
+
 ## ARTWORK — no portraits; the reader stands in the scene (2026-08-14)
 
 Founder, on the replate below: _"supposed to be scientifically and historically
