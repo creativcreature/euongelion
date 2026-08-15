@@ -97,3 +97,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-091 | Navigation        | One Daily Bread nav item + headline artwork         | 0/10     | wip    | [F-091.md](./F-091.md) |
 | F-092 | Platform          | Editable highlights — recolour, note, remove        | 0/10     | wip    | [F-092.md](./F-092.md) |
 | F-093 | Reading           | Chat scrolls; composer pinned                       | 0/10     | wip    | [F-093.md](./F-093.md) |
+| F-094 | Platform          | Reading room — ten print layouts for /series        | 0/10     | wip    | [F-094.md](./F-094.md) |

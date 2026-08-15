@@ -11107,55 +11107,74 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   SERIES LIBRARY — F-090 / SA-043
-   Founder 2026-08-14: "function like a library of magazines, be more
-   interactive and better searchable… I want the series page to wow."
+   THE READING ROOM — /series — F-094 / SA-049
+   Supersedes the F-090 block. Ten layouts, each borrowed from a real way
+   print gets displayed (see SeriesLayouts.tsx for the references).
 
-   Everything is scoped under .series-browser so it cannot collide with
-   the older .series-* rules above (which the retired rails view used).
-   Colour comes only from the existing mock tokens — cream paper,
-   ultramarine line, gold accent — so this reads as the same publication
-   as the artwork and inverts correctly in dark mode.
+   Unlayered on purpose, like the block it replaces: these rules are
+   namespaced under .series-browser and must win over @layer utilities.
+
+   Palette comes only from the existing mock tokens, so the page reads as
+   the same publication as the artwork and inverts correctly in dark mode.
+   The one fixed value is --plate-ink: type sits on halftone plates that
+   are dark in BOTH themes, so it cannot use --color-gold, which resolves
+   to cobalt in light mode (SA-044, SA-047 — this has bitten twice).
    ═══════════════════════════════════════════════════════════════════ */
+
+.series-browser {
+  --rr-gap: clamp(0.5rem, 0.9vw, 0.85rem);
+  --rr-hair: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  --rr-veil: linear-gradient(
+    180deg,
+    rgba(9, 12, 32, 0) 0%,
+    rgba(9, 12, 32, 0.1) 38%,
+    rgba(9, 12, 32, 0.72) 72%,
+    rgba(9, 12, 32, 0.94) 100%
+  );
+  --plate-ink: #f3ead8;
+  --plate-dim: rgba(243, 234, 216, 0.72);
+  /* --mock-ink INVERTS per theme (it is cream in dark), so any surface that
+     carries --plate-ink type must NOT use it as a ground or the two collide —
+     which is exactly what turned the spines into cream-on-cream. This ground
+     is fixed in both themes, the same way --plate-ink is. Third variant of the
+     token trap behind SA-044 and SA-047. */
+  --plate-ground: #131b40;
+  max-width: var(--mock-frame-max, 1860px);
+  margin: 0 auto;
+  padding: 0 clamp(0.9rem, 3vw, 2.4rem) 5rem;
+}
 
 .series-active-tile {
   max-width: 720px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.4rem;
   padding: 0 1.5rem;
 }
 
-.series-browser {
-  max-width: var(--mock-frame-max, 1860px);
-  margin: 0 auto;
-  padding: 0 clamp(0.9rem, 3vw, 2.4rem) 4rem;
-}
+/* ── Search ──────────────────────────────────────────────────────── */
 
-/* ─── Search ─────────────────────────────────────────────────────── */
-
-.series-search-shell {
+.rr-search-shell {
   max-width: 46rem;
-  margin: 0 auto 1.6rem;
-  padding: 0 0.2rem;
+  margin: 0 auto 1.2rem;
 }
 
-.series-search-field {
+.rr-search {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border: var(--rr-hair);
   background: var(--mock-paper, #f5eee3);
-  padding: 0.7rem 1rem;
+  padding: 0.72rem 1rem;
 }
 
-.series-search-field svg {
-  flex-shrink: 0;
+.rr-search svg {
+  flex: 0 0 auto;
   color: var(--mock-muted);
 }
 
-.series-search-input {
+.rr-search-input {
   flex: 1 1 auto;
   min-width: 0;
-  border: none;
+  border: 0;
   background: transparent;
   outline: none;
   font-family: var(--font-family-serif);
@@ -11163,596 +11182,1027 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.series-search-input::placeholder {
+.rr-search-input::placeholder {
   color: var(--mock-muted);
-  opacity: 0.72;
+  opacity: 0.7;
 }
 
-.series-search-field:focus-within {
+.rr-search:focus-within {
   outline: 2px solid var(--color-gold, #c8a56a);
   outline-offset: 2px;
 }
 
-.series-search-clear {
-  flex-shrink: 0;
-  border: none;
-  background: transparent;
-  color: var(--mock-muted);
+.rr-search-clear {
+  flex: 0 0 auto;
+  border: 0;
+  background: none;
   cursor: pointer;
-  font-size: 0.66rem;
+  color: var(--mock-muted);
+  font-family: var(--font-family-ui);
+  font-size: 0.64rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.series-search-clear:hover {
-  color: var(--mock-ink);
-}
+.rr-search-clear:hover { color: var(--mock-ink); }
 
-.series-search-hint {
-  margin: 0.5rem 0 0;
-  text-align: center;
-  color: var(--mock-muted);
-}
+/* ── Switcher + sort ─────────────────────────────────────────────── */
 
-/* ─── Controls ───────────────────────────────────────────────────── */
-
-.series-browser .series-controls {
+.rr-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.7rem 1.1rem;
-  padding: 0.7rem 0 0.9rem;
-  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  margin-bottom: 1.4rem;
+  gap: 0.8rem 1.2rem;
+  padding: 0.55rem 0;
+  border-top: var(--rr-hair);
+  border-bottom: var(--rr-hair);
 }
 
-.series-sort {
+.rr-views {
   display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  align-items: stretch;
   flex-wrap: wrap;
+  gap: 0;
 }
 
-.series-sort-label {
-  color: var(--mock-muted);
-  margin-right: 0.15rem;
-}
-
-.series-sort-btn {
-  border: var(--mock-stroke, 1.5px) solid transparent;
+/* Each control is a plate in a type case: hairline-divided, no rounding,
+   the active one inked solid. */
+.rr-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.62rem;
+  border: 0;
+  border-right: var(--rr-hair);
   background: transparent;
   color: var(--mock-muted);
-  padding: 0.24rem 0.5rem;
   cursor: pointer;
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  transition: color var(--motion-fast, 150ms) var(--motion-ease, ease);
+  transition:
+    color 140ms var(--motion-ease, ease),
+    background-color 140ms var(--motion-ease, ease);
 }
 
-.series-sort-btn:hover {
-  color: var(--mock-ink);
-}
+.rr-views .rr-view:first-child { border-left: var(--rr-hair); }
 
-.series-sort-btn.active {
-  color: var(--mock-ink);
-  border-color: var(--mock-line, currentColor);
-}
+.rr-view:hover { color: var(--mock-ink); }
 
-.series-count {
-  color: var(--mock-muted);
-  margin: 0;
-}
-
-/* ─── Bento (Feature view) ───────────────────────────────────────── */
-
-.series-bento {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 168px;
-  gap: 0.55rem;
-  /* Spans of 2 leave holes under normal placement; dense backfills them so the
-     shelf reads as a composed spread rather than a grid with gaps in it. */
-  grid-auto-flow: dense;
-}
-
-.series-bento-tile {
-  /* The scrim is dark navy in BOTH themes, so type on it cannot use
-     --color-gold: that token is a legacy alias resolving to cobalt #1f2a8d in
-     light mode, which rendered the kickers near-invisible on the scrim. This
-     warm tone is fixed to the tile, not the theme, and measures ~9:1 on it. */
-  --tile-accent: #d8b273;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  background: var(--mock-ink);
-  text-decoration: none;
-  isolation: isolate;
-}
-
-.series-bento-lead {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.series-bento-wide {
-  grid-column: span 2;
-}
-
-.series-bento-tall {
-  grid-row: span 2;
-}
-
-.series-bento-img {
-  object-fit: cover;
-  z-index: 0;
-  transition: transform 600ms var(--motion-ease, ease);
-}
-
-.series-bento-tile:hover .series-bento-img {
-  transform: scale(1.04);
-}
-
-/* The scrim is what keeps type legible over a halftone plate without
-   washing the artwork out — weighted to the bottom where the text sits. */
-.series-bento-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  /* Weighted so the text block always sits on ink, not on the plate. The
-     first pass reached 0.42 at midpoint, which was not enough under a gold
-     kicker on the light-ground covers (Identity Crisis, Peace) — those failed
-     AA. Artwork still reads clearly through the top two thirds. */
-  background: linear-gradient(
-    180deg,
-    rgba(9, 12, 32, 0) 0%,
-    rgba(9, 12, 32, 0.18) 34%,
-    rgba(9, 12, 32, 0.68) 62%,
-    rgba(9, 12, 32, 0.93) 100%
-  );
-}
-
-.series-bento-body {
-  position: absolute;
-  z-index: 2;
-  inset: auto 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.28rem;
-  padding: 0.85rem 0.95rem 0.95rem;
-  color: #f5eee3;
-}
-
-.series-bento-kicker {
-  color: var(--tile-accent, #d8b273);
-}
-
-.series-bento-title {
-  font-family: var(--font-family-serif);
-  font-size: var(--mock-type-1);
-  line-height: 1.08;
-  text-wrap: balance;
-}
-
-.series-bento-title--lead {
-  font-size: clamp(1.7rem, 2.6vw, 2.9rem);
-}
-
-.series-bento-question {
-  font-family: var(--font-family-serif);
-  font-size: var(--mock-type-0);
-  line-height: 1.28;
-  opacity: 0.88;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.series-bento-lead .series-bento-question {
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  max-width: 34ch;
-}
-
-.series-bento-tile:focus-visible,
-.series-lib-card:focus-visible,
-.series-listing-row:focus-visible,
-.series-result-card:focus-visible,
-.series-result-row:focus-visible {
-  outline: 2px solid var(--color-gold, #c8a56a);
-  outline-offset: 2px;
-}
-
-/* Progress rail sits on the tile's bottom edge. */
-.series-card-progress {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: rgba(245, 238, 227, 0.24);
-}
-
-.series-card-progress-fill {
-  display: block;
-  height: 100%;
-  /* On a tile this inherits the fixed warm accent; on the library card the
-     rail sits on the page ground, where the theme token is correct. */
-  background: var(--tile-accent, var(--color-gold, #c8a56a));
-}
-
-/* ─── Library view ───────────────────────────────────────────────── */
-
-/* The alphabet is a way to jump, not a set of section breaks — bucketing
-   each letter into its own grid left 20 near-empty rows. */
-.series-alpha-rail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.1rem;
-  justify-content: center;
-  padding: 0 0 0.9rem;
-}
-
-.series-alpha-link {
-  color: var(--mock-muted);
-  text-decoration: none;
-  padding: 0.15rem 0.42rem;
-  border: var(--mock-stroke, 1.5px) solid transparent;
-}
-
-.series-alpha-link:hover,
-.series-alpha-link:focus-visible {
-  color: var(--mock-ink);
-  border-color: var(--mock-line, currentColor);
-}
-
-.series-library-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-  gap: 1.1rem 0.7rem;
-}
-
-/* Letter marker sits on the first cover of each initial, so the alphabet is
-   readable while scrolling without breaking the shelf into fragments. */
-.series-lib-letter {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  min-width: 1.35rem;
-  padding: 0.08rem 0.3rem;
-  font-family: var(--font-family-ui);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
+.rr-view.is-active {
   background: var(--mock-ink);
   color: var(--mock-paper);
 }
 
-.dark .series-lib-letter {
-  background: var(--mock-paper);
-  color: var(--mock-ink);
+.rr-view-label {
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.series-lib-card {
+.rr-sorts {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  flex-wrap: wrap;
+}
+
+.rr-sort-label,
+.rr-count {
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.rr-sort {
+  border: var(--mock-stroke, 1.5px) solid transparent;
+  background: none;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  color: var(--mock-muted);
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rr-sort:hover { color: var(--mock-ink); }
+.rr-sort.is-active {
+  color: var(--mock-ink);
+  border-color: var(--mock-line, currentColor);
+}
+
+.rr-blurb {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.6rem 0 1.1rem;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-0);
+  color: var(--mock-muted);
+}
+
+.rr-stage { min-height: 40vh; }
+
+/* Focus + plate defaults shared by every layout */
+.series-browser a:focus-visible {
+  outline: 2px solid var(--color-gold, #c8a56a);
+  outline-offset: 2px;
+}
+
+.series-plate-img {
+  object-fit: cover;
+  transition: transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.series-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(243, 234, 216, 0.22);
+  z-index: 3;
+}
+
+.series-progress-fill {
+  display: block;
+  height: 100%;
+  background: #d8b273;
+}
+
+/* ── 1. FEATURE (bento) ──────────────────────────────────────────── */
+
+/* Title + plate are the whole message. The gold kicker that used to sit
+   above the title is gone — it was the brightest thing on the tile and
+   the least important. Rows are taller than the first pass (150 -> 210)
+   so a landscape plate is not squeezed into a letterbox. */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 210px;
+  grid-auto-flow: dense;
+  gap: var(--rr-gap);
+}
+
+.bento-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  border: var(--rr-hair);
+  background: var(--plate-ground);
+  text-decoration: none;
+}
+
+.bento-lead { grid-column: span 2; grid-row: span 2; }
+.bento-wide { grid-column: span 2; }
+.bento-tall { grid-row: span 2; }
+
+.bento-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--rr-veil);
+}
+
+.bento-copy {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.18rem;
+  padding: 0.9rem 1rem 1rem;
+  color: var(--plate-ink);
+}
+
+.bento-title {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.05rem, 1.35vw, 1.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.bento-title--lead {
+  font-size: clamp(1.9rem, 3vw, 3.1rem);
+  letter-spacing: -0.02em;
+}
+
+.bento-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--plate-dim);
+}
+
+.bento-tile:hover .series-plate-img { transform: scale(1.045); }
+
+/* ── 2. RACK ─────────────────────────────────────────────────────── */
+
+.rack { display: flex; flex-direction: column; gap: 2.6rem; }
+
+.rack-rail { position: relative; padding-top: 0.9rem; }
+
+/* The bar the papers hang over. */
+.rack-bar {
+  position: absolute;
+  top: 0;
+  left: -0.4rem;
+  right: -0.4rem;
+  height: 3px;
+  background: var(--mock-line, currentColor);
+  opacity: 0.9;
+}
+
+.rack-bar::after {
+  content: '';
+  position: absolute;
+  inset: 3px 0 auto 0;
+  height: 10px;
+  background: linear-gradient(180deg, rgba(9, 12, 32, 0.22), transparent);
+}
+
+.rack-papers {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Papers overlap the way they do on a kiosk bar, and each one is tilted
+   by a FIXED amount from its position — never random, so the shelf looks
+   identical on every render. */
+.rack-paper {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  margin-right: -7px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 0.75rem 0.9rem;
+  background: var(--mock-paper, #f5eee3);
+  border: var(--rr-hair);
+  text-decoration: none;
+  color: var(--mock-ink);
+  transform-origin: top center;
+  box-shadow: 0 10px 18px -14px rgba(9, 12, 32, 0.7);
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 240ms ease,
+    z-index 0s;
+}
+
+.rack-paper:hover,
+.rack-paper:focus-visible {
+  transform: translateY(-14px) rotate(0deg) !important;
+  z-index: 4;
+  box-shadow: 0 22px 34px -20px rgba(9, 12, 32, 0.8);
+}
+
+/* The crease where the paper folds over the bar. */
+.rack-fold {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 14px;
+  background: linear-gradient(180deg, rgba(9, 12, 32, 0.16), transparent);
+  pointer-events: none;
+}
+
+.rack-masthead {
+  font-family: var(--font-family-serif);
+  font-size: clamp(0.95rem, 1.05vw, 1.18rem);
+  line-height: 1.02;
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: 0.35rem;
+}
+
+.rack-rule {
+  display: block;
+  height: 0;
+  border-top: var(--rr-hair);
+  margin-bottom: 0.5rem;
+}
+
+.rack-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--plate-ground);
+  margin-bottom: 0.5rem;
+}
+
+.rack-standfirst {
+  font-family: var(--font-family-serif);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--mock-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rack-dateline {
+  margin-top: 0.5rem;
+  font-family: var(--font-family-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* ── 3. COVERS ───────────────────────────────────────────────────── */
+
+/* Founder: fewer columns. Four at desktop, not eight. */
+.covers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem 1.1rem;
+}
+
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
   text-decoration: none;
   color: var(--mock-ink);
 }
 
-.series-lib-thumb {
+.cover-plate {
   position: relative;
   display: block;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--mock-ink);
-  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  background: var(--plate-ground);
+  border: var(--rr-hair);
 }
 
-.series-lib-card:hover .series-bento-img {
-  transform: scale(1.04);
-}
+.cover:hover .series-plate-img { transform: scale(1.03); }
 
-.series-lib-meta {
+.cover-caption {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.12rem;
   padding-bottom: 0.4rem;
 }
 
-.series-lib-meta .series-card-progress {
-  bottom: 0;
-  background: rgba(46, 56, 128, 0.2);
-}
-
-.dark .series-lib-meta .series-card-progress {
-  background: rgba(239, 229, 216, 0.22);
-}
-
-.series-lib-title {
+.cover-title {
   font-family: var(--font-family-serif);
   font-size: var(--mock-type-1);
-  line-height: 1.12;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
-.series-lib-sub {
+.cover-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--mock-muted);
 }
 
-/* ─── List view ──────────────────────────────────────────────────── */
+.cover .series-progress { background: rgba(46, 56, 128, 0.18); }
+.dark .cover .series-progress { background: rgba(239, 229, 216, 0.2); }
 
-.series-listing {
+/* ── 4. SPINES ───────────────────────────────────────────────────── */
+
+.shelf { padding-top: 0.5rem; }
+
+.shelf-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+/* Width encodes length — the one thing a real shelf tells you at a glance. */
+.spine {
+  position: relative;
+  flex: 0 0 auto;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.3rem;
+  border: 1px solid rgba(243, 234, 216, 0.22);
+  text-decoration: none;
+  background: var(--plate-ground);
+  color: var(--plate-ink);
+  transition: transform 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Three cloth colours, the way a shelf of the same publisher varies: the
+   base navy, a deeper one, and a gold-foiled band. */
+.spine--1 { background: #0e1531; }
+.spine--2 {
+  background: #1a2450;
+  border-color: rgba(216, 178, 115, 0.45);
+}
+.spine--2 .spine-title { color: #e8c894; }
+
+.spine:hover,
+.spine:focus-visible { transform: translateY(-16px); }
+
+.spine-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-family-serif);
+  font-size: 0.95rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 250px;
+}
+
+.spine-foot {
+  font-family: var(--font-family-ui);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--plate-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.shelf-board {
+  display: block;
+  height: 6px;
+  background: var(--mock-line, currentColor);
+  box-shadow: 0 10px 16px -12px rgba(9, 12, 32, 0.8);
+}
+
+/* ── 5. LIST ─────────────────────────────────────────────────────── */
+
+/* Founder: no pathway column. Three tracks, the row is the link. */
+.stocklist {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-top: var(--rr-hair);
 }
 
-.series-listing-row {
+.stock-row {
   display: grid;
-  grid-template-columns: minmax(11rem, 1.1fr) minmax(0, 2fr) 7rem 6rem;
+  grid-template-columns: minmax(12rem, 1.15fr) minmax(0, 2fr) 8rem;
   align-items: baseline;
-  gap: 0.9rem;
-  padding: 0.72rem 0.35rem;
-  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  gap: 1rem;
+  padding: 0.7rem 0.4rem;
+  border-bottom: var(--rr-hair);
   text-decoration: none;
   color: var(--mock-ink);
-  transition: background-color var(--motion-fast, 150ms)
-    var(--motion-ease, ease);
+  transition: background-color 140ms ease;
 }
 
-.series-listing-row:hover {
-  background: rgba(46, 56, 128, 0.06);
-}
+.stock-row:hover { background: rgba(46, 56, 128, 0.06); }
+.dark .stock-row:hover { background: rgba(239, 229, 216, 0.07); }
 
-.dark .series-listing-row:hover {
-  background: rgba(239, 229, 216, 0.07);
-}
-
-.series-listing-title {
+.stock-title {
   font-family: var(--font-family-serif);
   font-size: var(--mock-type-1);
-  line-height: 1.15;
+  line-height: 1.14;
 }
 
-.series-listing-question {
+.stock-question {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-0);
   color: var(--mock-muted);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.series-listing-meta,
-.series-listing-pathway {
+.stock-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--mock-muted);
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-/* ─── Search results ─────────────────────────────────────────────── */
+/* ── 6. INDEX ────────────────────────────────────────────────────── */
 
-.series-results {
-  padding-top: 0.4rem;
-}
-
-.series-results-heading {
-  color: var(--mock-muted);
-  margin: 1.4rem 0 0.6rem;
-  padding-bottom: 0.3rem;
-  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-}
-
-.series-results-heading:first-child {
-  margin-top: 0;
-}
-
-.series-results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 0.7rem;
-}
-
-.series-result-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.28rem;
-  padding: 0.8rem 0.9rem;
-  border: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
-  text-decoration: none;
-  color: var(--mock-ink);
-  transition: background-color var(--motion-fast, 150ms)
-    var(--motion-ease, ease);
-}
-
-.series-result-card:hover {
-  background: rgba(46, 56, 128, 0.06);
-}
-
-.dark .series-result-card:hover {
-  background: rgba(239, 229, 216, 0.07);
-}
-
-.series-result-title {
-  font-family: var(--font-family-serif);
-  font-size: var(--mock-type-1);
-  line-height: 1.12;
-  margin: 0;
-}
-
-.series-result-question {
-  color: var(--mock-muted);
-  margin: 0;
-}
-
-.series-result-meta {
-  color: var(--mock-muted);
-  margin: 0.15rem 0 0;
-}
-
-.series-result-list {
+.bookindex {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  columns: 2;
+  column-gap: 3.5rem;
 }
 
-.series-result-row {
+@media (max-width: 760px) { .bookindex { columns: 1; } }
+
+.bookindex li { break-inside: avoid; }
+
+.bookindex-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.34rem 0;
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.bookindex-row:hover .bookindex-title { color: var(--mock-blue-text, var(--mock-ink)); }
+
+.bookindex-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.2;
+  flex: 0 1 auto;
+}
+
+/* The leader is the device that makes this an index and not a list. */
+.bookindex-leader {
+  flex: 1 1 auto;
+  height: 0.62em;
+  border-bottom: 1px dotted var(--mock-line, currentColor);
+  opacity: 0.55;
+  min-width: 1.5rem;
+}
+
+.bookindex-num {
+  font-family: var(--font-family-ui);
+  font-size: 0.7rem;
+  color: var(--mock-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 7. CONTACT SHEET ────────────────────────────────────────────── */
+
+.contactsheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 1.15rem 0.85rem;
+  padding: 1.1rem;
+  background: var(--plate-ground);
+  border: var(--rr-hair);
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  text-decoration: none;
+  color: var(--plate-ink);
+}
+
+.frame-num {
+  font-family: var(--font-family-ui);
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  color: var(--plate-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.frame-window {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  outline: 1px solid rgba(243, 234, 216, 0.28);
+  outline-offset: 2px;
+}
+
+.frame-caption {
+  font-family: var(--font-family-serif);
+  font-size: 0.82rem;
+  line-height: 1.15;
+  color: var(--plate-ink);
+}
+
+/* A finished reading gets the chinagraph mark a picture editor would make. */
+.frame--marked .frame-window::after {
+  content: '';
+  position: absolute;
+  inset: -4%;
+  background:
+    linear-gradient(to top right, transparent 48.4%, #d8b273 48.4% 51.6%, transparent 51.6%);
+  opacity: 0.9;
+}
+
+.frame:hover .series-plate-img { transform: scale(1.05); }
+
+/* ── 8. MOSAIC ───────────────────────────────────────────────────── */
+
+.mosaic {
+  columns: 4;
+  column-gap: var(--rr-gap);
+}
+
+.mosaic-tile {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: var(--rr-gap);
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.mosaic-plate {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--plate-ground);
+  border: var(--rr-hair);
+  aspect-ratio: 4 / 5;
+}
+
+.mosaic-tile--tall .mosaic-plate { aspect-ratio: 3 / 5; }
+.mosaic-tile--short .mosaic-plate { aspect-ratio: 4 / 3; }
+
+.mosaic-title {
+  display: block;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.12;
+  margin-top: 0.45rem;
+}
+
+.mosaic-meta {
+  display: block;
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+  margin-top: 0.1rem;
+}
+
+.mosaic-tile:hover .series-plate-img { transform: scale(1.04); }
+
+/* ── 9. BROADSHEET ───────────────────────────────────────────────── */
+
+.broadsheet { border-top: 3px solid var(--mock-line, currentColor); padding-top: 1rem; }
+
+.broad-lede {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: center;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.1rem;
+  border-bottom: var(--rr-hair);
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.broad-lede-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--plate-ground);
+  border: var(--rr-hair);
+}
+
+.broad-lede-copy { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.broad-kicker {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.broad-lede-title {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.broad-lede-standfirst {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.35;
+  color: var(--mock-muted);
+  max-width: 46ch;
+}
+
+.broad-lede-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.broad-columns {
+  columns: 4;
+  column-gap: 2rem;
+  column-rule: var(--rr-hair);
+}
+
+.broad-entry {
+  break-inside: avoid;
+  display: block;
+  padding: 0 0 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: var(--rr-hair);
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.broad-entry-title {
+  display: block;
+  font-family: var(--font-family-serif);
+  font-size: 1.06rem;
+  line-height: 1.1;
+  margin-bottom: 0.16rem;
+}
+
+.broad-entry-body {
+  display: block;
+  font-family: var(--font-family-serif);
+  font-size: 0.85rem;
+  line-height: 1.34;
+  color: var(--mock-muted);
+}
+
+.broad-entry-meta {
+  display: block;
+  margin-top: 0.28rem;
+  font-family: var(--font-family-ui);
+  font-size: 0.53rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* ── 10. ISSUES ──────────────────────────────────────────────────── */
+
+.issues { list-style: none; margin: 0; padding: 0; border-top: var(--rr-hair); }
+
+.issue-row {
+  display: grid;
+  grid-template-columns: 5.2rem 90px minmax(0, 1fr) 8rem;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.85rem 0.4rem;
+  border-bottom: var(--rr-hair);
+  text-decoration: none;
+  color: var(--mock-ink);
+  transition: background-color 140ms ease;
+}
+
+.issue-row:hover { background: rgba(46, 56, 128, 0.06); }
+.dark .issue-row:hover { background: rgba(239, 229, 216, 0.07); }
+
+.issue-no {
+  font-family: var(--font-family-serif);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--mock-ink);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.issue-no-label {
+  font-family: var(--font-family-ui);
+  font-size: 0.5rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.issue-plate {
+  position: relative;
+  display: block;
+  width: 90px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--plate-ground);
+  border: var(--rr-hair);
+}
+
+.issue-copy { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+
+.issue-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.12;
+}
+
+.issue-question {
+  font-family: var(--font-family-serif);
+  font-size: 0.85rem;
+  color: var(--mock-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.issue-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+  text-align: right;
+}
+
+/* ── Search results + empty state ────────────────────────────────── */
+
+.rr-results { padding-top: 0.4rem; }
+
+.rr-results-head {
+  font-family: var(--font-family-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+  margin: 1.5rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: var(--rr-hair);
+}
+
+.rr-results-head:first-child { margin-top: 0; }
+
+.rr-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.7rem;
+}
+
+.rr-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.85rem 0.95rem;
+  border: var(--rr-hair);
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.rr-result-card:hover { background: rgba(46, 56, 128, 0.06); }
+.dark .rr-result-card:hover { background: rgba(239, 229, 216, 0.07); }
+
+.rr-result-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.12;
+}
+
+.rr-result-question,
+.rr-result-row-teaser {
+  font-family: var(--font-family-serif);
+  font-size: 0.86rem;
+  line-height: 1.3;
+  color: var(--mock-muted);
+}
+
+.rr-result-meta,
+.rr-result-row-series {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.rr-result-list { list-style: none; margin: 0; padding: 0; border-top: var(--rr-hair); }
+
+.rr-result-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.68rem 0.35rem;
-  border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+  border-bottom: var(--rr-hair);
   text-decoration: none;
   color: var(--mock-ink);
 }
 
-.series-result-row:hover {
-  background: rgba(46, 56, 128, 0.06);
-}
+.rr-result-row:hover { background: rgba(46, 56, 128, 0.06); }
+.dark .rr-result-row:hover { background: rgba(239, 229, 216, 0.07); }
 
-.dark .series-result-row:hover {
-  background: rgba(239, 229, 216, 0.07);
-}
+.rr-result-row-main { display: flex; flex-direction: column; gap: 0.14rem; min-width: 0; }
 
-.series-result-row-main {
-  display: flex;
-  flex-direction: column;
-  gap: 0.16rem;
-  min-width: 0;
-}
-
-.series-result-row-title {
+.rr-result-row-title {
   font-family: var(--font-family-serif);
   font-size: var(--mock-type-1);
   line-height: 1.14;
 }
 
-.series-result-row-teaser {
-  color: var(--mock-muted);
-}
+.rr-result-row-series { flex: 0 0 auto; text-align: right; }
 
-.series-result-row-series {
-  flex-shrink: 0;
-  color: var(--mock-muted);
-  text-align: right;
-}
-
-.series-results-empty {
-  padding: 2.4rem 0.4rem;
+/* An empty result is an invitation to act, not an apology. */
+.rr-empty {
+  max-width: 40rem;
+  margin: 3rem auto;
   text-align: center;
 }
 
-.series-results-empty p {
-  margin: 0 0 0.4rem;
+.rr-empty-lead {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+  color: var(--mock-ink);
 }
 
-/* ─── Responsive ─────────────────────────────────────────────────── */
+.rr-empty-help {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-0);
+  color: var(--mock-muted);
+  margin: 0 0 0.9rem;
+}
+
+.rr-empty-seeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 0 1.4rem;
+}
+
+.rr-seed {
+  font-family: var(--font-family-serif);
+  font-size: 0.92rem;
+  padding: 0.22rem 0.6rem;
+  border: var(--rr-hair);
+  color: var(--mock-ink);
+}
+
+.rr-empty-back {
+  border: var(--rr-hair);
+  background: transparent;
+  cursor: pointer;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+}
+
+.rr-empty-back:hover { background: var(--mock-ink); color: var(--mock-paper); }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .covers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mosaic { columns: 3; }
+  .broad-columns { columns: 3; }
+  .rack-papers { flex-wrap: wrap; gap: 0.5rem; }
+  .rack-paper { flex: 0 0 calc(33.333% - 0.34rem); margin-right: 0; }
+}
 
 @media (max-width: 900px) {
-  .series-bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 150px;
-  }
-  .series-bento-lead,
-  .series-bento-wide {
-    grid-column: span 2;
-  }
-  .series-listing-row {
-    grid-template-columns: minmax(0, 1fr) 5.5rem;
-    row-gap: 0.2rem;
-  }
-  .series-listing-question {
-    grid-column: 1 / -1;
-    white-space: normal;
-  }
-  .series-listing-pathway {
-    display: none;
-  }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; }
+  .bento-lead, .bento-wide { grid-column: span 2; }
+  .broad-lede { grid-template-columns: minmax(0, 1fr); }
+  .broad-columns { columns: 2; }
+  .mosaic { columns: 2; }
+  .stock-row { grid-template-columns: minmax(0, 1fr) 6.5rem; row-gap: 0.15rem; }
+  .stock-question { grid-column: 1 / -1; white-space: normal; }
+  .issue-row { grid-template-columns: 4rem 70px minmax(0, 1fr); }
+  .issue-plate { width: 70px; }
+  .issue-meta { display: none; }
 }
 
-@media (max-width: 560px) {
-  .series-bento {
-    grid-auto-rows: 132px;
-    gap: 0.45rem;
-  }
-  .series-bento-tall {
-    grid-row: span 1;
-  }
-  .series-library-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem 0.5rem;
-  }
-  .series-result-row {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  .series-result-row-series {
-    text-align: left;
-  }
+@media (max-width: 640px) {
+  .covers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rack-paper { flex: 0 0 calc(50% - 0.25rem); }
+  .bento { grid-auto-rows: 150px; }
+  .bento-tall { grid-row: span 1; }
+  .broad-columns { columns: 1; }
+  .mosaic { columns: 2; }
+  .contactsheet { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); padding: 0.7rem; }
+  .rr-view-label { display: none; }
+  .rr-view { padding: 0.45rem 0.55rem; }
+  .rr-bar { justify-content: center; }
+  .spine { height: 240px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .series-bento-img,
-  .series-bento-tile:hover .series-bento-img,
-  .series-lib-card:hover .series-bento-img {
+  .series-plate-img,
+  .rack-paper,
+  .spine,
+  .bento-tile:hover .series-plate-img,
+  .cover:hover .series-plate-img,
+  .frame:hover .series-plate-img,
+  .mosaic-tile:hover .series-plate-img {
     transition: none;
     transform: none;
   }
-}
-
-/* Study-chat answers render markdown (F-089). Sized to the chat column and
-   kept quiet — an assistant reply is a message, not an article, so headings
-   step down rather than compete with the devotional's own type. */
-.chat-markdown > :first-child {
-  margin-top: 0;
-}
-.chat-markdown > :last-child {
-  margin-bottom: 0;
-}
-.chat-markdown p {
-  margin: 0 0 0.75em;
-  white-space: normal;
-}
-.chat-markdown h1,
-.chat-markdown h2,
-.chat-markdown h3 {
-  font-family: var(--font-family-serif, Georgia, serif);
-  font-weight: 400;
-  font-size: 1.08em;
-  line-height: 1.3;
-  margin: 1.1em 0 0.4em;
-  color: var(--color-text-primary, currentColor);
-}
-.chat-markdown ul,
-.chat-markdown ol {
-  margin: 0 0 0.75em;
-  padding-left: 1.2em;
-}
-.chat-markdown li {
-  margin: 0 0 0.3em;
-}
-.chat-markdown strong {
-  color: var(--color-text-primary, currentColor);
-  font-weight: 600;
-}
-.chat-markdown em {
-  font-style: italic;
-}
-.chat-markdown blockquote {
-  margin: 0 0 0.75em;
-  padding-left: 0.9em;
-  border-left: 2px solid var(--color-accent-warm, currentColor);
-}
-.chat-markdown code {
-  font-size: 0.92em;
+  .rack-paper:hover,
+  .rack-paper:focus-visible { transform: translateY(-6px) !important; }
 }

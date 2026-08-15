@@ -1,19 +1,20 @@
 /**
- * F-090 — the series library.
+ * F-094 — the reading room.
  *
  * Contract under test:
- * 1. LIBRARY shows the WHOLE catalog. This is the founder's actual complaint
- *    ("series are hiding"), so it is asserted against ALL_SERIES_ORDER rather
- *    than a sample — a series added to the data must appear without anyone
- *    remembering to add it to a rail.
- * 2. All three views render and switch.
- * 3. Sorting reorders and stays exhaustive.
- * 4. Search takes over, matches on phrasing, and finds DEVOTIONALS, not just
- *    series.
+ * 1. Ten layouts, each reachable, each rendering the WHOLE catalog. The
+ *    founder's original complaint was "series are hiding", so coverage is
+ *    asserted against ALL_SERIES_ORDER in every view rather than sampled.
+ * 2. The bento leads with title + plate — no kicker above the title, and never
+ *    a commissioned series in the lead slot.
+ * 3. The list carries no pathway/category column.
+ * 4. Sorting reorders without dropping anything.
+ * 5. Search takes the page over and finds readings, not just series.
  */
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import SeriesBrowser from '@/components/series/SeriesBrowser'
+import { VIEWS } from '@/components/series/SeriesLayouts'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
 vi.stubGlobal(
@@ -27,159 +28,162 @@ vi.stubGlobal(
   ),
 )
 
-afterEach(cleanup)
+afterEach(() => {
+  cleanup()
+  // The browser remembers the reader's chosen layout, so without this the
+  // previous test's choice leaks into the next one's default.
+  window.localStorage.clear()
+})
 
-const switchTo = (label: string) =>
+const openView = (label: string) =>
   fireEvent.click(screen.getByRole('tab', { name: label }))
 
-describe('SeriesBrowser', () => {
-  it('defaults to the Feature view with the newest series leading', () => {
-    render(<SeriesBrowser />)
+/** Every series title present somewhere in the stage. */
+const missingFromStage = (container: HTMLElement) => {
+  const stage = container.querySelector('.rr-stage') as HTMLElement
+  const text = stage.textContent ?? ''
+  return ALL_SERIES_ORDER.filter((slug) => {
+    const title = SERIES_DATA[slug]?.title
+    return title ? !text.includes(title) : false
+  })
+}
+
+describe('SeriesBrowser — ten layouts', () => {
+  it('offers exactly ten layouts, each with an icon and a name', () => {
+    const { container } = render(<SeriesBrowser />)
+    const tabs = screen.getAllByRole('tab')
+    expect(tabs).toHaveLength(10)
+    expect(VIEWS).toHaveLength(10)
+    // Every switcher control carries a glyph, not just a word.
+    expect(container.querySelectorAll('.rr-view svg')).toHaveLength(10)
+  })
+
+  it('renders the whole catalog in EVERY layout — nothing hides anywhere', () => {
+    for (const view of VIEWS) {
+      const { container, unmount } = render(<SeriesBrowser />)
+      openView(view.label)
+      expect(
+        missingFromStage(container),
+        `${view.label} is hiding series`,
+      ).toEqual([])
+      unmount()
+    }
+  })
+
+  it('defaults to Feature and leads with the newest eligible series', () => {
+    const { container } = render(<SeriesBrowser />)
     expect(screen.getByRole('tab', { name: 'Feature' })).toHaveAttribute(
       'aria-selected',
       'true',
     )
-    // The lead tile is labelled "Newest".
-    expect(screen.getByText(/^Newest ·/)).toBeInTheDocument()
+    const lead = container.querySelector('.bento-lead') as HTMLElement
+    expect(lead).not.toBeNull()
+    // SA-036(4): a commissioned series never takes a feature slot.
+    expect(lead.textContent).not.toContain(
+      SERIES_DATA['looking-at-the-sun'].title,
+    )
+    // …but it is still on the shelf.
+    expect(missingFromStage(container)).toEqual([])
   })
 
-  it('never leads with a commissioned series, but still lists it', () => {
-    render(<SeriesBrowser />)
-    const leadTitle = screen
-      .getByText(/^Newest ·/)
-      .parentElement?.querySelector('.series-bento-title')?.textContent
-    expect(leadTitle).not.toBe(SERIES_DATA['looking-at-the-sun'].title)
-
-    // It must still be reachable — the exception is about the hero slot only.
-    switchTo('Library')
-    expect(
-      screen.queryAllByText(SERIES_DATA['looking-at-the-sun'].title).length,
-    ).toBeGreaterThan(0)
+  it('bento tiles lead with the title — no kicker above it', () => {
+    const { container } = render(<SeriesBrowser />)
+    const tile = container.querySelector('.bento-tile:not(.bento-lead)') as HTMLElement
+    const copy = tile.querySelector('.bento-copy') as HTMLElement
+    // Title first in the DOM, meta second. The old build put a gold uppercase
+    // kicker above the title, which made the least important thing loudest.
+    const order = Array.from(copy.children).map((c) => c.className)
+    expect(order[0]).toContain('bento-title')
+    expect(order[1]).toContain('bento-meta')
   })
 
-  it('LIBRARY renders every series in the catalog — nothing hides', () => {
-    render(<SeriesBrowser />)
-    switchTo('Library')
-
-    const missing = ALL_SERIES_ORDER.filter((slug) => {
-      const title = SERIES_DATA[slug]?.title
-      return title ? screen.queryAllByText(title).length === 0 : false
-    })
-    expect(missing).toEqual([])
+  it('the list shows no pathway/category column', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('List')
+    const row = container.querySelector('.stock-row') as HTMLElement
+    expect(row).not.toBeNull()
+    for (const pathway of ['Sleep', 'Awake', 'Shepherd']) {
+      expect(row.textContent).not.toContain(pathway)
+    }
+    // Three tracks: title, question, length.
+    expect(row.children).toHaveLength(3)
   })
 
-  it('prints the catalog count so a gap is visible', () => {
-    render(<SeriesBrowser />)
-    expect(
-      screen.getByText(String(ALL_SERIES_ORDER.length)),
-    ).toBeInTheDocument()
+  it('the rack hangs every series over a rail', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Rack')
+    expect(container.querySelectorAll('.rack-paper')).toHaveLength(
+      ALL_SERIES_ORDER.length,
+    )
+    expect(container.querySelectorAll('.rack-bar').length).toBeGreaterThan(0)
   })
 
-  it('LIST renders every series too', () => {
-    render(<SeriesBrowser />)
-    switchTo('List')
-    const rows = screen.getAllByRole('listitem')
-    expect(rows.length).toBe(ALL_SERIES_ORDER.length)
+  it('numbers contact-sheet frames by position in the current sort', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Contact')
+    const nums = Array.from(container.querySelectorAll('.frame-num')).map(
+      (n) => n.textContent,
+    )
+    expect(nums[0]).toBe('01')
+    expect(nums).toHaveLength(ALL_SERIES_ORDER.length)
   })
 
   it('sorting reorders without dropping anything', () => {
-    render(<SeriesBrowser />)
-    switchTo('List')
+    const { container } = render(<SeriesBrowser />)
+    openView('List')
+    const titles = () =>
+      Array.from(container.querySelectorAll('.stock-title')).map(
+        (n) => n.textContent ?? '',
+      )
 
-    const titlesNow = () =>
-      screen.getAllByRole('listitem').map((li) => li.textContent ?? '')
-
-    const az = titlesNow()
+    const az = titles()
     fireEvent.click(screen.getByRole('button', { name: 'Z–A' }))
-    const za = titlesNow()
+    const za = titles()
 
-    expect(za.length).toBe(az.length)
+    expect(za).toHaveLength(az.length)
     expect(za[0]).not.toBe(az[0])
     expect([...za].reverse()[0]).toBe(az[0])
   })
 
-  it('search takes over the view and matches on phrasing', () => {
-    render(<SeriesBrowser />)
-    const input = screen.getByRole('searchbox', {
-      name: /search the library by phrase/i,
-    })
-
-    fireEvent.change(input, { target: { value: 'I feel anxious about money' } })
-
-    // The browse controls are replaced by results.
-    expect(screen.queryByRole('tab', { name: 'Library' })).toBeNull()
-    expect(screen.getByText(/^Devotionals ·/)).toBeInTheDocument()
-  })
-
-  it('search surfaces individual devotionals, not only series', () => {
+  it('search takes over the page and finds readings, not just series', () => {
     render(<SeriesBrowser />)
     fireEvent.change(
       screen.getByRole('searchbox', { name: /search the library by phrase/i }),
-      { target: { value: 'who am i' } },
+      { target: { value: 'I feel anxious about money' } },
     )
-
-    const heading = screen.getByText(/^Devotionals ·/)
-    const count = Number(heading.textContent?.split('·')[1]?.trim() ?? '0')
-    expect(count).toBeGreaterThan(0)
+    // The shelves step aside while searching.
+    expect(screen.queryByRole('tab', { name: 'Rack' })).toBeNull()
+    expect(screen.getByText(/^Readings$/)).toBeInTheDocument()
   })
 
-  it('reports an honest empty state rather than silently showing nothing', () => {
+  it('an empty result names the search and offers real next words', () => {
     render(<SeriesBrowser />)
     fireEvent.change(
       screen.getByRole('searchbox', { name: /search the library by phrase/i }),
       { target: { value: 'zzzqqq unmatchable xyzzy' } },
     )
-    expect(screen.getByText(/Nothing matched/)).toBeInTheDocument()
-  })
-
-  it('clearing the search returns to browsing', () => {
-    render(<SeriesBrowser />)
-    const input = screen.getByRole('searchbox', {
-      name: /search the library by phrase/i,
-    })
-    fireEvent.change(input, { target: { value: 'grace' } })
-    expect(screen.queryByRole('tab', { name: 'Feature' })).toBeNull()
-
-    fireEvent.click(screen.getByRole('button', { name: /clear/i }))
+    expect(screen.getByText(/Nothing in the library matches/)).toBeInTheDocument()
+    // Seeds are suggestions that actually return something.
+    expect(screen.getByText('waiting on God')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /back to the shelves/i }))
     expect(screen.getByRole('tab', { name: 'Feature' })).toBeInTheDocument()
   })
 
-  it('links every library card somewhere real', () => {
-    const { container } = render(<SeriesBrowser />)
-    switchTo('Library')
-
-    const cards = Array.from(
-      container.querySelectorAll('a.series-lib-card'),
-    ).map((a) => a.getAttribute('href') ?? '')
-    expect(cards.length).toBe(ALL_SERIES_ORDER.length)
-    for (const href of cards) {
-      expect(href).toMatch(/^\/(series|devotional)\/[a-z0-9-]+$/)
-    }
-  })
-
-  it('files under the same letter it sorts by, so the rail runs in order', () => {
-    const { container } = render(<SeriesBrowser />)
-    switchTo('Library')
-    const letters = Array.from(
-      container.querySelectorAll('.series-alpha-link'),
-    ).map((a) => a.textContent ?? '')
-    // "The Nature of Belief" files under N; if the sort compared the leading
-    // article the rail came out as "… R S N W T V".
-    expect([...letters]).toEqual([...letters].sort())
-  })
-
-  it('the A–Z rail jumps to a card that exists on the page', () => {
-    const { container } = render(<SeriesBrowser />)
-    switchTo('Library')
-
-    const rail = Array.from(
-      container.querySelectorAll('.series-alpha-link'),
-    ).map((a) => a.getAttribute('href') ?? '')
-    expect(rail.length).toBeGreaterThan(1)
-    for (const href of rail) {
-      expect(href).toMatch(/^#shelf-/)
-      // Every jump target must resolve — a dead anchor is a broken control.
-      expect(container.querySelector(`[id="${href.slice(1)}"]`)).not.toBeNull()
+  it('links every card in every layout to a real route', () => {
+    for (const view of VIEWS) {
+      const { container, unmount } = render(<SeriesBrowser />)
+      openView(view.label)
+      const stage = container.querySelector('.rr-stage') as HTMLElement
+      const hrefs = Array.from(stage.querySelectorAll('a')).map(
+        (a) => a.getAttribute('href') ?? '',
+      )
+      expect(hrefs.length, `${view.label} has no links`).toBeGreaterThan(0)
+      for (const href of hrefs) {
+        expect(href, `${view.label} bad href`).toMatch(
+          /^\/(series|devotional)\/[a-z0-9-]+$/,
+        )
+      }
+      unmount()
     }
   })
 })

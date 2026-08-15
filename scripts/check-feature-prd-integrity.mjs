@@ -32,10 +32,10 @@ const uniqueIds = Array.from(new Set(ids)).sort()
 // repeated it a day later — the failure is not attributable from the message,
 // so whoever hits it next pays for someone else's omission.
 //
-// 92: F-092 (editable highlights).
-if (uniqueIds.length !== 93) {
+// 94: F-094 (the reading room).
+if (uniqueIds.length !== 94) {
   fail(
-    `Expected 93 feature IDs in registry, found ${uniqueIds.length}. ` +
+    `Expected 94 feature IDs in registry, found ${uniqueIds.length}. ` +
       `If you just added a PRD, bump this number in the same commit.`,
   )
 }

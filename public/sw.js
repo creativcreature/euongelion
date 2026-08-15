@@ -1,4 +1,6 @@
 // Euangelion Service Worker
+// R58 (F-094/SA-049): bumped to v74 — /series is rebuilt as ten layouts with
+// an icon switcher. All new client code on a cache-first route.
 // R56 (F-092/SA-047): bumped to v72 — the highlight toolbar flips below the
 // passage when there is no room above (Remove was unreachable near the top of
 // the window), and the chat launcher paints per theme. Reader client code.
@@ -68,7 +70,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v73'
+const CACHE_NAME = 'euangelion-v74'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

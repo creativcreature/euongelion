@@ -43,6 +43,56 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## THE READING ROOM — ten ways to look at the catalog (2026-08-15)
+
+Founder: _"10 distinct and unique ways of displaying the info that is super
+sortable and searchable… BEAUTIFULLY DESIGNED… REFERENCE INNOVATIVE AND UNIQUE
+REAL WORLD DESIGN… TOGGLABLE WITH ICONS."_ Registered as **SA-049**.
+
+**Ten arbitrary CSS grids would have been ten arbitrary CSS grids.** The
+founder's own words for this page are "a library of magazines" and "each
+devotional is a newspaper on the rack" — so every view is a real form of
+displaying print, and takes its proportions and furniture from that form:
+**Feature** (*Monocle* front-of-book), **Rack** (a kiosk rail), **Covers** (a
+Phaidon plate wall), **Spines** (a shelf), **List** (a stock list), **Index**
+(back-of-book dot leaders), **Contact** (a Magnum contact sheet), **Mosaic**
+(Richter's *Atlas*), **Broadsheet** (a newspaper page), **Issues** (an issue
+chronology). Each toggles by an icon that is a miniature of its own layout — the
+Rack glyph really is a rail with papers over it — so you can tell what a control
+does before pressing it.
+
+**Numbers mean something or they are not there.** Decorative `01 / 02 / 03` is
+the generic default. Contact numbers its frames by position in the *current
+sort*, so re-sorting re-numbers the sheet as a re-laid one would. Issues numbers
+by release order. Spine **width** encodes length, because width is the one thing
+a real shelf tells you at a glance.
+
+**The asks.** The bento's gold uppercase kicker sat *above* the title — the
+brightest thing on the tile was the least important thing on it. It's gone; the
+tile is plate + title with length quiet beneath, and rows went 150px → 210px so
+a landscape plate is no longer squeezed into a letterbox. The library dropped
+from eight columns to four. The list lost its pathway column.
+
+**`--mock-ink` inverts per theme, and it cost us a third time.** In dark mode
+`--mock-ink` *is* cream, so `background: var(--mock-ink)` under
+`color: var(--plate-ink)` rendered the spines cream-on-cream and invisible.
+Added `--plate-ground` (`#131b40`), fixed in both themes, for every surface that
+carries plate type. After SA-044 (bento kickers) and SA-047 (chat button), the
+rule is now explicit: a surface whose ground must not follow the theme needs a
+fixed token, not a mock token.
+
+**Every state is designed rather than defaulted.** Search hands the page over.
+An empty result names what was searched and offers five seed phrases that
+actually return something, plus a way back to the shelves. A returning reader
+sees "Day n of m" and a progress rail; a cold reader sees neither. There is
+deliberately no pre-hydration spinner — the catalog is static and
+server-rendered, so the page arrives complete and only your own progress fills
+in. The chosen layout persists per device.
+
+11 tests, including one that asserts every one of the ten renders the whole of
+`ALL_SERIES_ORDER` — the original "series are hiding" complaint, now impossible
+to regress in any view. — SA-049 (F-094)
+
 ## READER — Remove you can reach, and a chat button you can see (2026-08-15)
 
 Founder, on the highlight work: _"it works but i need to be able to remove the
