@@ -1,128 +1,150 @@
-# Handoff — narration in the founder's voice (2026-08-15, overnight)
+# Handoff — narration (2026-08-15). Written to survive compaction.
 
-## What you can listen to right now
+Read this first if context was lost. Decision id **SA-043**, feature **F-086**.
 
-Three devotionals in your own voice, finished — voice, atmospheric bed, chapters:
+## 1. Shipped and live — do not redo
 
-| Track                                           | Length   | Pace    | Chapters |
-| ----------------------------------------------- | -------- | ------- | -------- |
-| `public/audio/he-cannot-deny-himself-day-1.m4a` | 22.0 min | 162 wpm | 23       |
-| `public/audio/he-cannot-deny-himself-day-2.m4a` | 23.3 min | 159 wpm | 23       |
-| `public/audio/he-cannot-deny-himself-day-3.m4a` | 24.7 min | 157 wpm | 23       |
+`he-cannot-deny-himself`, all seven days, in the founder's cloned voice with the
+atmospheric score. Live on `euangelion.app`, verified byte-identical.
 
-Audiobook narration band is 150–170 wpm; all three sit inside it. Bed is −26 dB
-under speech and −18 dB in the gaps, the level you set by ear. Peak −1.3 dBFS,
-loudness-matched to the rest of the catalog so moving between a founder-voice
-track and a Michael track needs no volume change.
+| Day | Length   | Pace    | Chapters | Size    |
+| --- | -------- | ------- | -------- | ------- |
+| 1   | 21.9 min | 162 wpm | 23       | 19.8 MB |
+| 2   | 23.1 min | 160 wpm | 23       | 21.0 MB |
+| 3   | 24.2 min | 160 wpm | 23       | 22.0 MB |
+| 4   | 25.7 min | 154 wpm | 23       | 23.3 MB |
+| 5   | 23.9 min | 163 wpm | 24       | 21.6 MB |
+| 6   | 8.6 min  | 158 wpm | 10       | 7.8 MB  |
+| 7   | 2.5 min  | 160 wpm | 5        | 2.3 MB  |
 
-Sample takes kept for comparison in `euangelion-voice-prototype/`:
-`VOICE-master-v3.mp3` (the approved clone), `ELEVENLABS-THCA-v3.mp3` (the old
-3.5-minute clone), `VOICE-v2-stability60/80.mp3` (the flatter-model test).
+Commits: `03802576` (voice), `2ce35ab1` (score), `7e051654` (devo-go skill).
 
-## Two things need you
+**ElevenLabs credits: ~570,000 of 691,072 remaining.** Nothing has been spent
+since the score pass, which rebuilt from cache for free.
 
-### 1. The ElevenLabs API key has its own 50,000 quota — days 4–7 are blocked
+## 2. Running right now
 
-Days 4–7 failed with repeated `HTTP 401` while the account held 641,765 credits
-and `/v1/user` authenticated normally. The key named **Euangelion** carries a
-separate 50,000-credit cap and is exhausted:
-
-```
-"This request exceeds your API key (Euangelion) quota of 50000.
- You have 37 credits remaining, while 802 are required."
-```
-
-**Fix:** ElevenLabs dashboard → API Keys → edit "Euangelion" → raise or remove
-its quota. Then:
+Three supervised shards re-rendering the back catalog in `am_michael`, carrying
+the reading-contract fixes. **431 of 527 remaining** at time of writing.
 
 ```bash
-python3 euangelion-voice-prototype/spec/render_el_catalog.py \
-  he-cannot-deny-himself-day-4 he-cannot-deny-himself-day-5 \
-  he-cannot-deny-himself-day-6 he-cannot-deny-himself-day-7
+# each shard owns one port and one dedicated server
+euangelion-voice-prototype/spec/supervise_shard.sh <shard> <total> <port>
+#   shard 0 -> 17494,  shard 1 -> 17495,  shard 2 -> 17496
+# logs: euangelion-voice-prototype/shard<N>-<port>.log
 ```
 
-Cost 52,902 characters. Already-rendered chunks are cached, so nothing is paid
-for twice.
-
-### 2. Voicebox's worker is dead — the back-catalog re-render is stopped
-
-Kokoro will not complete even a six-word job: it accepts work, reports
-`healthy`, then sits at `generating` with the server at 0.3% CPU. Tried a full
-app quit-and-relaunch and a queue flush; neither helped. 47 of 527 devotionals
-were re-rendered with the corrected contract before it wedged.
-
-When it works again:
+To check progress:
 
 ```bash
-for i in 0 1 2; do
-  python3 euangelion-voice-prototype/spec/render_catalog.py \
-    --voice am_michael --shard $i/3 > euangelion-voice-prototype/michael-shard$i.log 2>&1 &
-done
-# then, once finished:
-python3 euangelion-voice-prototype/spec/build_chapters.py
+python3 -c "import sys;sys.path.insert(0,'euangelion-voice-prototype/spec');import render_catalog as rc;print(len(rc.work_list()))"
 ```
 
-The queue is content-addressed, so it renders exactly the stale tracks and skips
-the three founder-voice ones. Three shards run about 8 hours.
+When it reaches 0: run `build_chapters.py`, then
+`npx vitest run __tests__/narration-manifest-current.test.ts`, then commit and
+deploy with a service-worker bump.
 
-## What changed in the audio itself
+## 3. Voicebox — root cause, fully diagnosed
 
-| Fixed                                           | Scale                                   |
-| ----------------------------------------------- | --------------------------------------- |
-| Section headings unspoken                       | 2,242 headings across 526 devotionals   |
-| Subtitle dropped from the opening line          | 77 days                                 |
-| Pull quotes read twice, in place and lifted out | 66 modules, all verbatim duplicates     |
-| Greek Extended glyphs handed to the voice       | 49 across 11 devotionals                |
-| One-word title dropped by the length floor      | `standing-strong-day-7` ("Contentment") |
+**It is not a quota.** There is no quota or licence table in its schema.
 
-The renderer (`narration_extract.py`) and the on-page reader
-(`src/lib/audio/segments.ts`) are two implementations of the same reading
-contract and had drifted on **103 of 533 devotionals**. They now agree on all
-533 — 921,909 words each — and the reader independently reproduces the
-renderer's SHA-1 of the spoken text. Two tests hold this:
+Its MLX/Metal backend throws when it cannot obtain a command encoder, nothing
+catches it, and the process calls `abort()` — SIGABRT, `abort() called`, faulting
+in `mlx::core::metal::get_command_encoder`. The whole server dies, taking the API
+socket with it, and any in-flight job is stranded in `generating` forever with
+the CPU idle. Crash reports land in `~/Library/Logs/DiagnosticReports/`.
 
-- `__tests__/narration-reading-contract.test.ts` — headings, subtitles, glyphs,
-  one-word titles, checked against the real catalog
-- `__tests__/narration-manifest-current.test.ts` — every track rendered from the
-  text the page now shows, files present, chapters inside runtime
+Trigger is **concurrency inside one process**. The qwen 1.7B clone test recorded
+`"Generation orphaned by worker"` at 02:06 and every job after it hung.
 
-The second is **currently red on purpose**: it names the 477 tracks still
-carrying pre-fix audio. It goes green when the back-catalog re-render finishes.
+Two things that wasted hours and should not be repeated:
 
-## Repo state
+- **Quitting the app does not stop the server.** `pgrep` showed 2 processes
+  alive afterwards, and `open -a Voicebox` re-focused the broken instance instead
+  of starting a new one. Kill with `pkill -9 -f voicebox-server` and confirm
+  `lsof -ti tcp:<port>` is empty before concluding anything about a "restart".
+- **Never point the qwen engine at this server.** It is what took it down, the
+  founder had already rejected that voice path, and it cannot reach the quality
+  bar anyway.
 
-**Nothing is deployed.** The live site is untouched.
-
-My work is complete and verified on disk but **not yet committed** — the shared
-pre-commit gate is failing on another session's F-090:
+**The parallelism finding, measured properly.** Compare wall-seconds per
+AUDIO-second, never per item — devotionals run 2.5 to 25 minutes, so per-item
+timings compare nothing. (I got this wrong once and reverted a correct decision.)
 
 ```
-[feature-prd-integrity] Missing desktop/mobile contracts in F-090.md
+single server:  4.40x realtime
+under 3 shards: 2.80x realtime each = 64% of solo speed
+3 x 0.64      = 1.91x total throughput   -> parallelism nearly doubles output
 ```
 
-I fixed two blockers there that were safe and repo-wide:
+Separate PROCESSES each hold their own Metal context and coexist; threads inside
+one process do not. `voicebox-server` accepts `--port` and `--data-dir`, and
+`VOICEBOX_API` selects which server a renderer talks to.
 
-- the check hardcodes the expected feature count; F-090 made it 90 and the
-  constant still said 89, which blocked **every** commit in the repo
-- added the standard `## Methodology References` / `- M00` stanza F-090 omitted
+## 4. What the audio pipeline now does
 
-The remaining gap is `### Desktop` / `### Mobile` contracts for their feature,
-which is theirs to write. A retry loop is running and will commit my work
-automatically once that clears.
+Full detail: `.claude/skills/devo-go/references/narration.md` (Phase 10 of
+`/devo-go`).
 
-Also worth knowing: **`public/audio` is tracked in git and is 2.0 GB**, with only
-163 of 527 files actually committed. Worth a decision about moving audio to R2
-before this grows further.
+- **Founder's voice** (ElevenLabs `eleven_v3`, id in
+  `euangelion-voice-prototype/el-voice-id.txt`) for NEW series only. Back catalog
+  stays on `am_michael`. A new devotional averages 9,487 characters against 691k
+  credits/month, so new content is already paid for; the whole catalog would be
+  5.01M characters.
+- **Never spend without a dry-run.** `render_el_catalog.py <slugs> --dry-run`
+  prints the cost and refuses to start if the budget will not cover the job.
+- **Chunks are cached** by (voice, model, settings, text) in
+  `.el-chunk-cache`, so a failed run resumes free and the score pass costs
+  nothing.
+- **The narration is never processed.** Founder ruling: the voice is right as
+  rendered; the score goes underneath it.
+- **The score** (`produce.py`): sits back under speech, lifts +10 dB in the gaps
+  where the atmosphere actually lives; spotted per module type so it steps back
+  for Scripture and comes up for prayer; two layers at different loop periods;
+  6 s bloom in, 9 s taper out; stereo 128 kbps with the Haas spread on the BED
+  only — delaying the voice smears words and collapses to mono badly.
 
-## The economics, settled
+## 5. Reading-contract fixes (why the back catalog is re-rendering)
 
-The whole catalog is 5.01M characters. Pro gives 691k/month. But a **new**
-devotional averages 9,487 characters, so the plan covers **72 new devotionals a
-month** against a publishing rate of about seven. Your voice on all new content
-is already paid for; the back catalog stays on Michael. Recorded as SA-043.
+| Fixed                                  | Scale                                   |
+| -------------------------------------- | --------------------------------------- |
+| Section headings unspoken              | 2,242 across 526 devotionals            |
+| Subtitle dropped from the opening      | 77 days                                 |
+| Pull quotes read twice                 | 66 modules, all verbatim duplicates     |
+| Greek Extended glyphs spoken as glyphs | 49 across 11 devotionals                |
+| One-word title dropped                 | `standing-strong-day-7` ("Contentment") |
 
-The free-local-clone route was tested and is not viable: that engine is
-zero-shot, so better source audio doesn't fix its prosody, and it's the same
-component that's currently wedged. Training a model on ElevenLabs output would
-take days of GPU time to land below the original and likely breaches their
-terms. There is also nothing to save.
+Renderer (`narration_extract.py`) and reader (`src/lib/audio/segments.ts`) had
+drifted on **103 of 533 devotionals**; they now agree on all 533 (921,909 words
+each), and the reader reproduces the renderer's SHA-1 of the spoken text. Guarded
+by `__tests__/narration-reading-contract.test.ts` and
+`__tests__/narration-manifest-current.test.ts`.
+
+## 6. Open items
+
+1. **Back catalog re-render** — running, ~8.6 h from start.
+2. **Score Michael's tracks** — needs NO re-render; his files are already dry
+   narration, which is what `produce.py` takes as input. Do it AFTER the
+   re-render, or it gets scored twice.
+3. **`public/audio` is 2.0 GB inside git.** Cloudflare caps assets at 25 MiB per
+   file and no plan raises it — it is a platform limit. R2 is the fix: no
+   meaningful size cap, no egress fees, roughly $0.015/GB-month (~3 cents for
+   the current 2 GB). Founder has been told; decision outstanding.
+4. **Narration options (voice choice per reader)** — manifest already carries a
+   `voice` field; would become a small set of tracks per devotional.
+
+## 7. Traps that cost time today
+
+- `build_chapters.py` used to DELETE chapters on any track it could not rebuild,
+  and wiped 497 devotionals' navigation in one unattended run. It now reports
+  and never deletes. An unattended job must not destroy work it does not
+  understand.
+- An ElevenLabs API key carries its own quota independent of the account.
+  Exhausting it returns `HTTP 401`, which reads as a bad key — only the response
+  BODY says `quota_exceeded`. Always log the body.
+- `CACHE_NAME` in `public/sw.js` and `SW_VERSION` in
+  `ServiceWorkerRegistration.tsx` must move together; they shipped out of sync
+  (v69/v67) and that breaks update detection.
+- Parallel sessions share this working tree and the git index. Stage by explicit
+  file list; `git commit -- <paths>` commits only those paths. New files need
+  `git add -N` first.

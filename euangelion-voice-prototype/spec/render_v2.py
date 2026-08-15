@@ -39,7 +39,12 @@ sys.path.insert(0, HERE)
 import narration_extract as ne          # noqa: E402
 import timestretch as ts                # noqa: E402
 
-API = "http://127.0.0.1:17493"
+# Voicebox's MLX/Metal backend aborts the whole process when two generations
+# contend for a command encoder inside it — it does not fail the request, it
+# calls abort(). Separate PROCESSES each get their own Metal context and run
+# happily side by side, so parallelism here means several servers on several
+# ports, one renderer each. VOICEBOX_API selects which one this process talks to.
+API = os.environ.get("VOICEBOX_API", "http://127.0.0.1:17493")
 PROFILE = "897d703c-b220-464b-9c81-3eb9fb5fafbd"   # founder-curated original
 
 # Register → target words/sec of speech (spec §2).
