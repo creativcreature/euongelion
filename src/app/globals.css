@@ -3174,39 +3174,48 @@ html.reduce-motion *::after {
 
   /* ── Red letter — the words of Christ (F-095 / SA-051) ──────────────
      Founder: "Jesus direct words in Red. ensure the highlight color is
-     correct for such text."
+     correct for such text." Then: "i have a red color that is a part of
+     the branding already…?"
 
-     #7a1c12 is not a taste choice, it is the deepest red that clears AA
-     (>= 4.5:1) against EVERY highlight ground, measured:
-       yellow 7.8  blue 5.4  green 6.4  pink 5.6  purple 5.0
-     and 9.1:1 on cream. Dark mode lifts to #f5988a (7.0:1 on the deep
-     ground) for unhighlighted text.
+     Correct — and the first pass invented one instead of using it. Red
+     letter is now the BRAND crimson, `--color-crimson` (#c4192e light /
+     #e25868 dark), the riso spot ink already used for pullquote marks.
+     Measured: 5.2:1 on cream, and 4.2:1 on the deep ground in dark, which
+     clears AA at the display sizes scripture is set in.
 
-     Inside a highlight the colour returns to the dark red in BOTH themes,
-     because a highlight ground is a light pastel in both — this is the
-     "highlight color is correct for such text" requirement, and it is the
-     reason the light-mode value was chosen against the swatches rather
-     than against the page. */
+     The brand crimson does NOT survive a highlight behind it — purple
+     2.8:1, blue 3.1, pink 3.2. So inside a highlight only, it deepens to
+     #7d0f19: the same hue, further down, which measures 5.1:1 on the worst
+     ground (purple) and 9.3 on cream. It reads as the brand red darkened,
+     not as a second colour. */
   .wj {
-    color: #7a1c12;
+    color: var(--color-crimson);
   }
 
-  .dark .wj {
-    color: #f5988a;
-  }
-
+  /* Highlight grounds are light pastels in BOTH themes, so this one value
+     serves both. This is the founder's "ensure the highlight color is
+     correct for such text". */
   .reader-highlight .wj,
   .dark .reader-highlight .wj {
-    color: #7a1c12;
+    color: #7d0f19;
   }
 
-  /* Selection over red letter: the browser default would paint the site's
-     selection ink over it and lose the attribution mid-drag. */
-  .wj::selection { color: #7a1c12; }
-  .dark .wj::selection { color: #2a0a06; }
+  /* Editorial emphasis inside Christ's words — the devotional's own pointer,
+     kept rather than replaced by the attribution. */
+  .wj-emphasis {
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  }
+
+  /* Selection over red letter keeps the attribution rather than inheriting
+     the site's selection ink. */
+  .wj::selection { color: var(--color-crimson); }
 
   @media print {
-    .wj { color: #7a1c12; }
+    .wj { color: #a51426; }
   }
 
   /* F-092 / SA-047 — the chat launcher paints BOTH halves per theme.
