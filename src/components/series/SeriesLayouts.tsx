@@ -400,107 +400,43 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
 
 
 /**
- * Shelf bookends (F-098).
+ * Shelf bookends (F-100).
  *
- * Founder 2026-08-16: "add unique book ends on each row that are site
- * thematic." So each shelf gets its own pair, drawn from the furniture this
- * site already uses rather than from generic ornament — a lamp, a wheat sheaf,
- * a fish, an anchor, a chi-rho, a door. Line art only, one weight, no fill:
- * they sit at the ends of a row of spines and must not out-shout them.
+ * Founder 2026-08-16: "the book ends needs to be generated iconic art or
+ * something. The icons are not good looking. I want modeled thought out book
+ * ends."
  *
- * The pair on a shelf MIRRORS — the left one flipped — the way a real matched
- * pair does. Index is the shelf number, so the same shelf always gets the same
- * bookend and the wall never reshuffles between renders.
+ * The line-art marks are gone. These are generated riso plates of actual
+ * carved-stone bookends — a real object with a plinth, a back-plate and
+ * weight, not a pictogram of one. Six of them, all from the same carving:
+ * lion, lamb, lampstand, wheat, olive, anchor, fish.
+ *
+ * Each is cut out to transparency so it sits on either theme's ground rather
+ * than carrying a cream rectangle into dark mode. The pair on a shelf mirrors,
+ * the way a matched pair does, and the index is the shelf number so a shelf
+ * always gets the same pair and the wall never reshuffles between renders.
  */
-const BOOKENDS: Array<{ label: string; path: React.ReactNode }> = [
-  {
-    // Lamp — "a lamp to my feet"
-    label: 'lamp',
-    path: (
-      <>
-        <path d="M13 30h14l-3 8H16z" />
-        <path d="M20 30V20" />
-        <path d="M20 20c-4 0-7-2.6-7-6s3-6 7-6 7 2.6 7 6-3 6-7 6z" />
-        <path d="M20 8V3" />
-      </>
-    ),
-  },
-  {
-    // Wheat — harvest
-    label: 'wheat',
-    path: (
-      <>
-        <path d="M20 38V12" />
-        <path d="M20 16c-4-1-6-4-6-7 3 0 6 2 6 5" />
-        <path d="M20 16c4-1 6-4 6-7-3 0-6 2-6 5" />
-        <path d="M20 24c-4-1-6-4-6-7 3 0 6 2 6 5" />
-        <path d="M20 24c4-1 6-4 6-7-3 0-6 2-6 5" />
-        <path d="M20 12c-2-3-2-6 0-9 2 3 2 6 0 9z" />
-      </>
-    ),
-  },
-  {
-    // Ichthys — the fish
-    label: 'fish',
-    path: (
-      <>
-        <path d="M6 22c6-9 18-9 24 0-6 9-18 9-24 0z" />
-        <path d="M30 22l5-5v10z" />
-      </>
-    ),
-  },
-  {
-    // Anchor — hope as an anchor for the soul
-    label: 'anchor',
-    path: (
-      <>
-        <path d="M20 12v26" />
-        <path d="M14 16h12" />
-        <circle cx="20" cy="8" r="4" />
-        <path d="M8 26c0 7 5 12 12 12s12-5 12-12" />
-      </>
-    ),
-  },
-  {
-    // Chi-Rho
-    label: 'chi-rho',
-    path: (
-      <>
-        <path d="M20 38V8" />
-        <path d="M20 8h5a6 6 0 010 12h-5" />
-        <path d="M9 34L31 14" />
-        <path d="M31 34L9 14" />
-      </>
-    ),
-  },
-  {
-    // Door — "I am the door"
-    label: 'door',
-    path: (
-      <>
-        <path d="M11 38V16a9 9 0 0118 0v22z" />
-        <path d="M20 7V3" />
-        <circle cx="24" cy="27" r="1.4" />
-      </>
-    ),
-  },
-]
+const BOOKENDS = [
+  { slug: 'lion', label: 'a carved stone lion bookend' },
+  { slug: 'lamb', label: 'a carved stone lamb bookend' },
+  { slug: 'lamp', label: 'a carved stone lampstand bookend' },
+  { slug: 'wheat', label: 'a carved stone wheatsheaf bookend' },
+  { slug: 'olive', label: 'a carved stone olive tree bookend' },
+  { slug: 'anchor', label: 'a carved stone anchor bookend' },
+  { slug: 'fish', label: 'a carved stone fish bookend' },
+] as const
 
 function Bookend({ index, side }: { index: number; side: 'left' | 'right' }) {
   const mark = BOOKENDS[index % BOOKENDS.length]
   return (
     <span className={`shelf-bookend shelf-bookend--${side}`} aria-hidden="true">
-      <svg viewBox="0 0 40 40" className="shelf-bookend-mark" focusable="false">
-        <g
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {mark.path}
-        </g>
-      </svg>
+      <Image
+        src={`/images/bookends/${mark.slug}.webp`}
+        alt=""
+        width={180}
+        height={240}
+        className="shelf-bookend-img"
+      />
     </span>
   )
 }
@@ -547,8 +483,9 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
           // Width still encodes length, and is now sized so a shelf of twelve
           // FILLS the row rather than trailing off into whitespace. Clamped so
           // bible-365 is a broad volume, not a wall.
-          // Capped at 200 so seven of the longest readings still fit one line.
-          const width = Math.min(200, Math.max(132, 124 + days * 6))
+          // Founder 2026-08-16: "the books are too thick." Narrower range —
+          // a spine is a spine, not a slab. Width still encodes length.
+          const width = Math.min(134, Math.max(78, 72 + days * 3.6))
           return (
             <Link
               key={slug}
@@ -621,34 +558,70 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
    nothing spins on load — a window is still, and this is a reading surface,
    not a toy.
 
-   Ring sizes are computed, never hardcoded to 37: rings fill 12, then 24, then
-   36, and the last ring takes whatever is left. Add a series tomorrow and the
-   window still closes. */
+   The geometry is derived from the count, never hardcoded — see buildRings
+   below. Add a hundred series tomorrow and the window still closes. */
 
-const ROSE_RINGS = [12, 24, 36]
-
-interface Ring {
+/**
+ * Ring geometry (F-100).
+ *
+ * Founder 2026-08-16: "I like Rose, but not sure it can grow with more series
+ * being added." It could not — ring capacities were the literal list
+ * [12, 24, 36] and radii stepped by a fixed 16%, so a fourth ring landed past
+ * the rim and a fifth had nowhere to go.
+ *
+ * This derives the whole window from the count instead. Panes shrink as the
+ * catalog grows, each ring is filled to what its own circumference can hold
+ * without the panes touching, and the rings are spaced so the outermost always
+ * lands inside the frame. Nothing is hardcoded to thirty-seven: it closes for
+ * twelve series and it closes for three hundred.
+ */
+export interface Ring {
+  /** Distance from centre, as a percentage of the window's half-width. */
   radius: number
+  /** Pane diameter, as a percentage of the window's width. */
   size: number
   slugs: string[]
 }
 
-function buildRings(slugs: string[]): Ring[] {
+/** Pane diameter for a given catalog size. Bigger catalog, smaller glass. */
+function paneSizeFor(count: number): number {
+  if (count <= 24) return 14
+  if (count <= 48) return 11
+  if (count <= 90) return 8.5
+  if (count <= 160) return 6.5
+  return 5
+}
+
+export function buildRings(slugs: string[]): Ring[] {
+  if (slugs.length === 0) return []
+  const size = paneSizeFor(slugs.length + 1)
+  // Radial pitch: one pane diameter plus breathing room. The hub occupies the
+  // middle, so the first ring starts clear of it.
+  const pitch = size * 1.32
+  const hubRadius = 17
   const rings: Ring[] = []
   let cursor = 0
   let index = 0
+
   while (cursor < slugs.length) {
-    const capacity = ROSE_RINGS[index] ?? ROSE_RINGS[ROSE_RINGS.length - 1]
+    const radius = hubRadius + pitch * (index + 1)
+    // How many panes fit on this ring without touching: the circumference in
+    // the same percentage units, divided by the arc one pane consumes.
+    const circumference = 2 * Math.PI * radius
+    const capacity = Math.max(6, Math.floor(circumference / (size * 1.12)))
     const take = slugs.slice(cursor, cursor + capacity)
-    rings.push({
-      // Percentages of the window's half-width, so the whole thing scales with
-      // its container and needs no measurement.
-      radius: 27 + index * 16,
-      size: index === 0 ? 15 : index === 1 ? 11.5 : 9.5,
-      slugs: take,
-    })
+    rings.push({ radius, size, slugs: take })
     cursor += take.length
     index += 1
+  }
+
+  // If the outermost ring overshoots the frame, scale the whole window inward
+  // rather than letting panes hang off the edge.
+  const outer = rings[rings.length - 1]
+  const reach = outer.radius + outer.size / 2
+  if (reach > 49) {
+    const k = 49 / reach
+    return rings.map((r) => ({ ...r, radius: r.radius * k, size: r.size * k }))
   }
   return rings
 }

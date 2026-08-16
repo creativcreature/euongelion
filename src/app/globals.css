@@ -11902,15 +11902,20 @@ html[data-held-moment] .mobile-tab-bar {
   position: relative;
   flex: 0 0 auto;
   /* Tall enough to carry the longest title in the catalog at the larger type
-     size. At 380px the long titles clipped mid-word, which on a spine reads as
-     a printing fault; 470px still lost the longest one in the catalog ("What
-     Happens When You Repeatedly Sin?"), so the shelf is cut to fit that. */
-  height: 515px;
+     size — at 380px the long titles clipped mid-word, which on a spine reads
+     as a printing fault. Sized to the longest title in the catalog ("What
+     Happens When You Repeatedly Sin?") set at 1.72rem. */
+  height: 620px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.7rem 0.3rem;
+  /* Founder 2026-08-16: "i think the titles have too much padding or
+     something." It was not padding — `space-between` pushed the title to the
+     top and the day count to the foot, so every short title floated with a
+     dead gap under it. The title centres now and the day count is taken out of
+     flow entirely. */
+  justify-content: center;
+  padding: 0.85rem 0.25rem 1.6rem;
   border: 1px solid rgba(243, 234, 216, 0.22);
   text-decoration: none;
   background: var(--plate-ground);
@@ -11939,23 +11944,33 @@ html[data-held-moment] .mobile-tab-bar {
 .spine-title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  /* Never clip a title. If one ever outgrows the spine it ellipsises, which
-     reads as a design decision; a hard cut reads as a bug. */
-  max-height: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* The title is the one thing on a spine that must not be squeezed, so it
+     neither shrinks as a flex item nor takes a max-height. In vertical writing
+     mode the INLINE axis is vertical, so `max-height: 100%` was capping the
+     line length and ellipsising long titles while the spine still had room —
+     the spine is sized to fit the longest title instead. */
+  flex: 0 0 auto;
   font-family: var(--font-family-serif);
-  /* Seven to a shelf instead of eight buys ~30px of spine width, which is
-     spent here — a spine you cannot read from across the room is a box. */
-  font-size: 1.45rem;
+  /* Bigger again. Centring the title (rather than pinning it to the top with
+     space-between) freed the vertical run this needs. */
+  font-size: 1.72rem;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 300px;
+  /* Was a hardcoded 300px, which is what actually ellipsised the long titles —
+     it predates the larger type and is smaller than the spine it sits in.
+     Sized to the longest title in the catalog at 1.72rem, with the spine's own
+     height as the real bound. */
+  max-height: 540px;
 }
 
 .spine-foot {
+  position: absolute;
+  bottom: 0.55rem;
+  left: 0;
+  right: 0;
+  text-align: center;
   font-family: var(--font-family-ui);
   font-size: 0.55rem;
   letter-spacing: 0.1em;
@@ -11999,7 +12014,10 @@ html[data-held-moment] .mobile-tab-bar {
   background: rgba(239, 229, 216, 0.07);
 }
 
+/* Founder 2026-08-16: "On List- makle the far left column bold." The title is
+   the column you scan down, so it carries the weight. */
 .stock-title {
+  font-weight: 700;
   font-family: var(--font-family-serif);
   font-size: var(--mock-type-1);
   line-height: 1.14;
@@ -13118,20 +13136,16 @@ html[data-held-moment] .mobile-tab-bar {
   min-width: 0;
 }
 
-/* Bookends stand ON the page, not on a plate — so they take the page's ink.
-   --plate-ink is the LIGHT ink meant for dark plate grounds; using it here
-   printed cream on cream and the pair effectively vanished. */
+/* Bookends are carved objects now (F-100), cut out to transparency so they
+   sit on either theme's ground. They stand on the same board as the books, so
+   they align to the foot of the row. */
 .shelf-bookend {
   flex: 0 0 auto;
   align-self: flex-end;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 46px;
-  height: 120px;
-  color: var(--mock-ink);
-  opacity: 0.55;
-  padding-bottom: 6px;
+  width: 150px;
 }
 
 .shelf-bookend--left {
@@ -13143,9 +13157,10 @@ html[data-held-moment] .mobile-tab-bar {
   margin-left: 0.35rem;
 }
 
-.shelf-bookend-mark {
-  width: 42px;
-  height: 42px;
+.shelf-bookend-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 900px) {

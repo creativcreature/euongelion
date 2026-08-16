@@ -343,6 +343,48 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Carved bookends, and a rose that grows (2026-08-16)
+
+Registered as **SA-057** (F-100).
+
+**The bookends are generated art now**, not line-art glyphs. Seven riso plates
+of real carved-stone bookends — lion, lamb, lampstand, wheat, olive, anchor,
+fish — each with a plinth, a back-plate and actual weight, made as one
+consistent carving series in the locked brand style. The library was checked
+first per the image rules; it holds no cut-out bookend forms, only full scenes
+with grounds.
+
+**Cutting out halftone art, for next time.** A per-pixel colour key punches
+holes straight through the halftone, because the cream *between* dots is the
+same cream as the background. The mask is built by flood-filling from the border
+on a **blurred** greyscale copy — which bridges the dots — then keeping only the
+**largest connected component**, which drops the faint haze islands the
+generator leaves above the object.
+
+**Spines: thinner books, bigger type.** 132–200px → 78–134px wide, 1.45 →
+1.72rem. Seven per row stands.
+
+**"Too much padding" was not padding.** `space-between` pinned the title to the
+top and the day count to the foot, so short titles floated above a dead gap.
+
+**And what actually clipped the long titles** was a hardcoded
+`max-height: 300px` on `.spine-title` that predated the larger type. In vertical
+writing mode the *inline* axis is vertical, so `max-height` caps **line
+length** — it ellipsised titles while the spine had hundreds of pixels spare.
+Two rounds of raising the spine height did nothing, because height was never the
+constraint.
+
+**List** takes a bold first column — it's the one you scan down.
+
+**The rose window grows now.** Ring capacities were the literal list
+`[12, 24, 36]` with a fixed radial step, so a fourth ring landed past the rim
+and a fifth had nowhere to go. Geometry is derived from the count instead: panes
+shrink in bands, each ring fills to what its own circumference holds without
+panes touching, and the window scales inward if the outer ring would overshoot.
+A geometry test asserts — for catalogs of 8 through 300 — nothing dropped, no
+panes overlapping, no ring crossing the one inside it, nothing off-frame, and
+nothing on the hub. — SA-057 (F-100)
+
 ## The rose window, and a front page that means it (2026-08-16)
 
 Registered as **SA-056** (F-099).
