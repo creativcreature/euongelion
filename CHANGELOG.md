@@ -26,6 +26,45 @@ set gate: landscape mean 37.6%, SD 23.7, range 5.0–89.6% with 23/33 outside th
 assigned bands; portrait mean 37.2%, SD 18.8, range 4.9–84.1% with 18/33 outside.
 No upscaling was performed.
 
+## READABILITY — gate the tail, not the average (2026-08-16)
+
+**SA-053 · F-096** — founder felt the devotionals read slightly too dense. Measured
+before changing anything, and the measurement overturned the premise.
+
+```
+last four series, authored prose only    FK    Ease  w/sent   30w+   45w+ sentences
+looking-at-the-sun                       6.7     75    15.5  11.6%        11
+he-cannot-deny-himself                   7.9     70    17.4  14.5%        25
+the-harvest                              8.4     68    18.7  17.1%        23
+prayer-of-jabez                          8.0     69    17.2  12.6%        17
+weighted                                 7.7     71    17.4  15.3%
+```
+
+**The average is already 8th grade** and Reading Ease 71 is plain English. Lowering
+it further would flatten prose that is correctly pitched. The density lives in the
+**tail** — sentences of 45–95 words scoring grade 33–36, which a mean cannot see and
+a reader cannot miss.
+
+**36% of the over-30-word sentences are one shape:** setup clause + embedded archaic
+quotation + continuation, all as a single sentence. The rule is now setup sentence,
+quote its own sentence, response sentence. `story` and `insight` run 20.9 and 24.3
+words per sentence against `teaching` at 16.6.
+
+**The fix is re-punctuation, never deletion.** Modelled: splitting at clause
+boundaries that already exist moves FK 7.7 → 7.2 and 30w+ from 15% → 11% without
+cutting a word — satisfying the founder's constraint that breadth stays the same.
+
+The chiastic reading-level arc survives with a lower ceiling: **8th → 10th → 11th →
+10th → 8th**, down from "8th → 12th → college → 12th → 8th". A flat cap would have
+destroyed the pivot-day design, so this was raised with the founder before changing
+it rather than after.
+
+**Forward-only.** Founder ruled against retroactive edits; no devotional text was
+modified. New gate `scripts/check-readability.mjs` runs at the Phase 5 editorial
+review and exits non-zero on the tail.
+
+---
+
 ## DEVO-GO SKILL — audited and brought current (2026-08-16)
 
 **SA-052 · F-097** — founder asked for confirmation the skill is fully updated for
@@ -221,7 +260,7 @@ rather than trailing off into whitespace. Width still encodes length.
 the thin-over-thick double rule, a dateline carrying Vol/No derived from the
 date — same day, same edition, for every reader — and the real liturgical day. A
 front page of lead story plus "Also in this edition", then the full reading
-below. SA-033 still holds: DAILY BREAD means *your* devotional; TODAY is the
+below. SA-033 still holds: DAILY BREAD means _your_ devotional; TODAY is the
 edition. They're no longer one destination, so the nav no longer duplicates.
 
 **The editorial sections are declared and empty, deliberately.** Dispatches,
