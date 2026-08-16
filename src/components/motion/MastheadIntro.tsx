@@ -1,41 +1,60 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 /**
- * The masthead intro (F-107).
+ * The press impression (F-108).
  *
  * Founder 2026-08-16: "Show euangelion first white on blue, then animate to
  * system setting background (or user set background mode) and to normal site
- * state." Reference: telhaclarke.com.au.
+ * state… I like how the logo animates small on scroll as well." Then, of the
+ * first attempt: "The open animation is needing much more attention. It was
+ * half assed."
  *
- * A press has one moment where the ink is the only thing on the sheet. That is
- * what this is: the wordmark reversed out of a full-bleed cobalt field, which
- * then lifts to reveal the page already sitting underneath in whatever theme
- * the reader is actually in.
+ * It was — a solid panel that faded a word in and slid away. That is a curtain,
+ * and any site could wear it. This is the sequence a PRESS makes, which is the
+ * one thing only this masthead can do:
  *
- * FIVE RULES IT KEEPS, in rough order of how badly each would hurt if broken:
+ *   1. INK      The sheet is solid cobalt and the wordmark is KNOCKED OUT of
+ *               it — the letters are the paper showing through, not white type
+ *               laid on top. That is how the real thing is printed.
+ *   2. SET      The word arrives over-tracked and tightens to its final
+ *               letter-spacing, the way type is set into a stick.
+ *   3. REGISTER A crimson ghost of the wordmark sits a few pixels off and
+ *               slides into alignment. Misregistration is this brand's actual
+ *               signature — it is on every plate on the site — so the intro is
+ *               made out of the identity rather than decorated with it.
+ *   4. HAND OFF The ink lifts on a hard horizontal edge, and the wordmark does
+ *               NOT fade: it flies to the exact position and size of the real
+ *               masthead, measured at runtime, and hands over. The intro
+ *               BECOMES the site instead of getting out of its way.
  *
- * 1. IT NEVER HIDES THE PAGE. The overlay is a sibling painted ON TOP of a
- *    fully-rendered document. If the JS fails, the overlay simply never
- *    mounts. There is no `opacity: 0` on the real page waiting to be undone —
- *    the failure mode of every intro animation that has ever eaten a site.
- * 2. ONCE PER SESSION, home only. It plays on `/` on a fresh arrival and is
- *    remembered in sessionStorage, so navigating back home mid-session does
- *    not replay it. A curtain you have to sit through twice is a toll booth.
- * 3. It is short — under a second of hold, then a lift.
- * 4. `prefers-reduced-motion` skips it entirely.
- * 5. It is inert to assistive tech and to the pointer: `aria-hidden` and
- *    `pointer-events: none` from the first frame, so a screen reader hears the
- *    page and a fast reader can click straight through it.
+ * SAFETY — unchanged from the first version and non-negotiable:
+ * the overlay paints ON TOP of a fully rendered page, is `pointer-events: none`
+ * and `aria-hidden` from the first frame, plays once per session on `/` only,
+ * is skipped entirely under `prefers-reduced-motion`, and is torn down by a
+ * hard timeout even if an animation never resolves. Nothing on the page is ever
+ * hidden waiting for it.
  */
 
 const SEEN_KEY = 'euangelion:masthead-intro'
+/** Longest the curtain may ever remain, whatever else happens. */
+const HARD_STOP_MS = 3200
+
+interface Handoff {
+  /** Translation from the intro wordmark's centre to the real one's. */
+  dx: number
+  dy: number
+  /** Scale that takes the intro wordmark to the real one's width. */
+  scale: number
+}
 
 export default function MastheadIntro() {
-  // Starts false so the server and the first client paint agree: no overlay.
-  // Anything else risks a hydration mismatch on the most-visited page.
-  const [phase, setPhase] = useState<'idle' | 'holding' | 'lifting'>('idle')
+  // Starts inert so the server and first client paint agree — no overlay, no
+  // hydration mismatch on the most-visited page.
+  const [phase, setPhase] = useState<'idle' | 'ink' | 'handoff'>('idle')
+  const [handoff, setHandoff] = useState<Handoff | null>(null)
+  const wordRef = useRef<HTMLSpanElement | null>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -50,39 +69,79 @@ export default function MastheadIntro() {
     try {
       seen = window.sessionStorage.getItem(SEEN_KEY) === '1'
     } catch {
-      // Private mode or storage disabled. Treat as "not seen" rather than
-      // failing — the intro is harmless, a thrown error is not.
       seen = false
     }
     if (seen) return
-
     try {
       window.sessionStorage.setItem(SEEN_KEY, '1')
     } catch {
-      // Nothing to do; it will simply play again next navigation.
+      // Storage disabled; it will simply play again. Harmless.
     }
 
-    // Scheduled on the next frame rather than set synchronously in the effect
-    // body: a synchronous set here cascades a render, and starting the curtain
-    // one frame late is invisible.
-    const start = window.requestAnimationFrame(() => setPhase('holding'))
-    const lift = window.setTimeout(() => setPhase('lifting'), 900)
-    const done = window.setTimeout(() => setPhase('idle'), 2000)
+    const start = window.requestAnimationFrame(() => setPhase('ink'))
+
+    // Measure the real masthead and fly to it. If it cannot be found — a
+    // layout change, a different shell — the wordmark simply lifts with the
+    // ink instead, which still reads as finished.
+    const toHandoff = window.setTimeout(() => {
+      const real = document.querySelector<HTMLElement>('.js-shell-masthead-fit')
+      const mine = wordRef.current
+      if (real && mine) {
+        const r = real.getBoundingClientRect()
+        const m = mine.getBoundingClientRect()
+        if (r.width > 0 && m.width > 0) {
+          setHandoff({
+            dx: r.left + r.width / 2 - (m.left + m.width / 2),
+            dy: r.top + r.height / 2 - (m.top + m.height / 2),
+            scale: r.width / m.width,
+          })
+        }
+      }
+      setPhase('handoff')
+    }, 1050)
+
+    const done = window.setTimeout(() => setPhase('idle'), HARD_STOP_MS)
+
     return () => {
       window.cancelAnimationFrame(start)
-      window.clearTimeout(lift)
+      window.clearTimeout(toHandoff)
       window.clearTimeout(done)
     }
   }, [])
 
   if (phase === 'idle') return null
 
+  const flying = phase === 'handoff' && handoff !== null
+
   return (
     <div
-      className={`masthead-intro ${phase === 'lifting' ? 'is-lifting' : ''}`}
+      className={`press ${phase === 'handoff' ? 'is-lifting' : ''}`}
       aria-hidden="true"
     >
-      <span className="masthead-intro-word">EUANGELION</span>
+      {/* The ink. A hard-edged field that retracts upward — a squeegee pulling
+          off the sheet, not a panel sliding away. */}
+      <span className="press-ink" />
+
+      <span className="press-stage">
+        {/* The crimson plate, offset and slightly late — the misregistration
+            this whole brand is printed with. */}
+        <span className="press-word press-word--slip" aria-hidden="true">
+          EUANGELION
+        </span>
+        <span
+          ref={wordRef}
+          className="press-word press-word--key"
+          style={
+            flying
+              ? {
+                  transform: `translate3d(${handoff.dx.toFixed(1)}px, ${handoff.dy.toFixed(1)}px, 0) scale(${handoff.scale.toFixed(4)})`,
+                }
+              : undefined
+          }
+        >
+          EUANGELION
+        </span>
+      </span>
     </div>
   )
 }

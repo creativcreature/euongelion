@@ -353,6 +353,23 @@ h3 {
   );
   border-bottom: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
+
+/* Founder 2026-08-16, third time of asking: "the homepage continue devotion
+   button hasnt been centered."
+   `justify-items: center` on the banner centred the copy but NOT the button —
+   the copy only LOOKED centred because `text-align` was doing that job inside
+   full-width grid items, which masked the fact that item alignment was never
+   reaching the link at all. So the button is centred explicitly, and by three
+   mechanisms at once so it holds whether this container is ever grid, flex or
+   block: `justify-self` for grid, `align-self` for flex, and auto inline
+   margins for block. */
+.homepage-resume-banner .mock-btn,
+.homepage-resume-banner .mock-btn-inline {
+  justify-self: center;
+  align-self: center;
+  margin-inline: auto;
+}
+
 /* Audit (post-restructure 2026-05-12): hero is now a full-width
    banner image above the text block, not a 228px side column. Image
    is 1536x672 (~2.3:1). Aspect ratio preserved on desktop with a
@@ -13956,53 +13973,128 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 
-/* ── Masthead intro + shrinking wordmark (F-107) ────────────────────────
-   Founder 2026-08-16: "Show euangelion first white on blue, then animate to
-   system setting background… I like how the logo animates small on scroll as
-   well." Reference: telhaclarke.com.au. */
+/* ── The press impression (F-108) ───────────────────────────────────────
+   Founder 2026-08-16: the first intro "was half assed" — a panel that faded a
+   word in and slid off, which any site could wear. This is the sequence a
+   PRESS makes: ink, type set into place, a registration slip, then the sheet
+   lifting and handing the wordmark to the real masthead.
 
-.masthead-intro {
+   The wordmark is KNOCKED OUT of the ink (background-clip: text) rather than
+   painted white on top, because that is how the real thing prints — the
+   letters are the paper showing through. */
+
+.press {
   position: fixed;
   inset: 0;
   z-index: 900;
   display: grid;
   place-items: center;
-  background: var(--mock-blue, #1f2a8d);
-  /* Inert from the first frame: a reader who wants to start must never have
-     to wait for a curtain. */
+  /* Inert from the first frame. A reader who wants to start never waits. */
   pointer-events: none;
-  transition:
-    transform 900ms cubic-bezier(0.76, 0, 0.24, 1),
-    opacity 700ms ease 180ms;
+  overflow: hidden;
 }
 
-.masthead-intro.is-lifting {
-  transform: translate3d(0, -101%, 0);
+/* The ink field. Retracts on a HARD edge — a squeegee coming off the sheet. */
+.press-ink {
+  position: absolute;
+  inset: 0;
+  background: var(--mock-blue, #1f2a8d);
+  transform-origin: top center;
+  transition: transform 900ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.press.is-lifting .press-ink {
+  transform: scaleY(0);
+}
+
+.press-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.press-word {
+  grid-area: 1 / 1;
+  font-family: var(--font-family-ui);
+  font-weight: 700;
+  /* Sized so the OVER-TRACKED first frame still fits the viewport. At 10.5vw
+     with 0.34em of tracking the word ran off both edges — the widest moment of
+     the animation is the one that has to fit, not the final one. */
+  font-size: clamp(1.5rem, 7vw, 5.75rem);
+  line-height: 1;
+  white-space: nowrap;
+  /* Set wide, then tightened — type going into the stick. */
+  letter-spacing: 0.2em;
+  /* Indent by the tracking so the word stays optically centred as it tightens
+     (letter-spacing adds a trailing space to the last glyph). */
+  text-indent: 0.2em;
+  animation: press-set 1000ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* The key plate: paper showing through the ink. */
+.press-word--key {
+  color: var(--mock-paper, #f2ebd8);
+  z-index: 2;
+  transition:
+    transform 1000ms cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 260ms ease 820ms;
+}
+
+.press.is-lifting .press-word--key {
+  /* If the hand-off could not be measured the word lifts with the ink instead,
+     which still reads as finished rather than as a dropped frame. */
   opacity: 0;
 }
 
-.masthead-intro-word {
-  font-family: var(--font-family-ui);
-  font-weight: 700;
-  /* Reversed out of the ink — the one moment the sheet carries only the
-     wordmark, before the page's own theme takes over underneath. */
-  color: #fff;
-  font-size: clamp(2.2rem, 11vw, 9rem);
-  letter-spacing: 0.02em;
-  line-height: 1;
-  animation: masthead-intro-word 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+/* The crimson plate, offset and a beat late. Kept FAINT: real misregistration
+   is a thin coloured edge escaping from behind the key plate, not a second
+   word competing with it. `multiply` was worse than nothing here — crimson
+   multiplied over cobalt goes muddy brown rather than reading as ink slip. */
+.press-word--slip {
+  color: var(--color-crimson, #8b1f2e);
+  z-index: 1;
+  animation:
+    press-set 1000ms cubic-bezier(0.22, 0.61, 0.36, 1) both,
+    press-register 900ms cubic-bezier(0.22, 0.61, 0.36, 1) 120ms both;
 }
 
-@keyframes masthead-intro-word {
+.press.is-lifting .press-word--slip {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+@keyframes press-set {
   from {
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
     opacity: 0;
-    transform: translate3d(0, 14px, 0);
-    letter-spacing: 0.18em;
+  }
+  12% {
+    opacity: 1;
   }
   to {
-    opacity: 1;
-    transform: none;
     letter-spacing: 0.02em;
+    text-indent: 0.02em;
+    opacity: 1;
+  }
+}
+
+/* The slip fades in FROM ZERO and never out-reads the key plate. Its own
+   opacity keyframes override press-set's fade for this element, so if it
+   starts at full strength the crimson arrives before the cream and the whole
+   thing reads as a red word — which is what the first pass did. */
+@keyframes press-register {
+  from {
+    transform: translate3d(7px, 5px, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.34;
+  }
+  to {
+    transform: translate3d(1.5px, 1px, 0);
+    opacity: 0.18;
   }
 }
 

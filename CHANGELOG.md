@@ -690,6 +690,33 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## The press impression (2026-08-16)
+
+Registered as **SA-064** (F-108).
+
+The first intro was a curtain — a panel that faded a word in and slid away, and
+any site could wear it. Rebuilt as the sequence only this masthead can make:
+**ink** (cobalt with the wordmark knocked out, so the letters are paper showing
+through rather than white type on top), **set** (the word arrives over-tracked
+and tightens, the way type is set), **register** (a crimson ghost slides into
+alignment — misregistration is this brand's actual signature), and **hand off**
+(the ink lifts on a hard edge and the wordmark flies to the *measured* position
+and size of the real masthead, so the intro becomes the site instead of getting
+out of its way).
+
+Two calibrations, both found by slowing it 6× and photographing it: the
+**widest** frame is the one that has to fit the viewport, and the slip's own
+opacity keyframes override the shared fade-in — start it at full strength and
+the crimson arrives before the cream, so the whole thing reads as a red word.
+
+**And the resume button is finally centred.** The banner had
+`justify-items: center` and I twice called it done on that basis. It wasn't: the
+copy only *looked* centred because `text-align` was doing that job inside
+full-width grid items, masking the fact that item alignment never reached the
+link. Forced the resume state locally, photographed it, saw it hard left. The
+lesson worth keeping — a rule being present in the stylesheet is not evidence
+the element obeys it. — SA-064 (F-108)
+
 ## Loose ends: imagery ruling, fail-open motion, the mobile menu (2026-08-16)
 
 Registered as **SA-063** (F-107).

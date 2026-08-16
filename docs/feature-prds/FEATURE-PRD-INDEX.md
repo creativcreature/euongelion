@@ -107,6 +107,7 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-104 | Platform          | Mobile pass, the lancet, and site-wide motion       | 0/10     | wip    | [F-104.md](./F-104.md) |
 | F-106 | Platform          | Flow — the artboard                                 | 0/10     | wip    | [F-106.md](./F-106.md) |
 | F-107 | Platform          | Imagery ruling, fail-open motion, mobile menu       | 0/10     | wip    | [F-107.md](./F-107.md) |
+| F-108 | Platform          | The press impression, and a centred button          | 0/10     | wip    | [F-108.md](./F-108.md) |
 | F-101 | Reading           | The Audio Edition transport, on the Audible model   | 0/10     | wip    | [F-101.md](./F-101.md) |
 | F-102 | Reading           | Notes, journal entries, and reflection answers      | 0/10     | wip    | [F-102.md](./F-102.md) |
 | F-105 | Data & privacy    | Two site states — signed out reads, signed in keeps | 0/10     | wip    | [F-105.md](./F-105.md) |
