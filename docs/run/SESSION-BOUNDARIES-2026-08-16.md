@@ -35,6 +35,22 @@ src/app/api/annotations/route.ts        src/app/api/listening-progress/route.ts
 src/lib/privacy/*                       src/lib/soul-audit/repository.ts
 ```
 
+### The index is shared too — check it before every commit
+
+`git commit` takes whatever is **staged**, including files the other session
+staged and has not yet committed. Twice today Session B nearly shipped Session
+A's work under its own message:
+
+- caught: `docs/decisions/VOICE-ROADMAP.md` and `docs/run/R2-AUDIO-MIGRATION.md`
+  were pre-staged; unstaged before committing.
+- missed: `__tests__/rose-window-geometry.test.ts` was staged as a DELETION by
+  Session A and went out in `cccee2f6` under a Session B message. The deletion
+  is correct — the Rose component no longer exists in `src/`, so the test was
+  orphaned — but it belonged in Session A's commit.
+
+**`git diff --cached --name-only` before every commit.** Staging by explicit
+path is not enough; the index can already contain someone else's work.
+
 **Shared, touched carefully:** `src/app/devotional/[slug]/DevotionalPageClient.tsx`
 (I added `ReaderProvider`, `moduleIndex` and a journal section; motion markup is
 welcome around them), `ModuleRenderer.tsx` (I added an optional `moduleIndex` —
