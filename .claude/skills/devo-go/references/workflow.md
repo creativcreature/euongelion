@@ -1,4 +1,5 @@
 # The 13-Phase Pipeline (reference build: prayer-of-jabez, 2026-07-12;
+
 # narration added from he-cannot-deny-himself, 2026-08-15)
 
 Every phase lists what to do, the exact artifacts, and what gates it. Phases 1–5 are content; 6 is the founder gate; 7–13 are production. Phase 10 is the only one that spends money, and it never spends without printing the cost first.
@@ -52,7 +53,9 @@ Meanwhile, pull ALL scripture yourself from `public/bibles/<TRANSLATION>/<BOOK>.
 
 ## Phase 7 — Imagery + Video Finalization
 
-- See `imagery-and-video.md`. Generate with Higgsfield `gpt_image_2`; process with the repo's `sharp` to webp; series card 1024×1024 at `public/images/site/series/<slug>.webp`; day images at `public/images/series/<slug>/`.
+- See `imagery-and-video.md`. Generate with Higgsfield `gpt_image_2` at **`aspect_ratio: "3:2"`** (→ 2048×1360); process with the repo's `sharp` to webp; series plate installed as a **1600×872 band at q60** to `public/images/site/series/<slug>.webp`; day images at `public/images/series/<slug>/`.
+- **Not 1024×1024.** That square was the previous standard and produced two separate defects: the browser upscaled it ~1.24× in the 1408:768 headline slot (`images.unoptimized` means no srcset), which read as grain; and deriving every site ratio from a square left only 16% of the frame crop-safe, forcing the centred compositions the founder rejected.
+- Assign each plate an archetype + coverage band + conceptual device, and vary them across the set — see `imagery-and-video.md` §"The three axes that make a SET work".
 - Insert `inline-image` modules contextually (src/alt/caption/width narrow|wide|bleed); the caption IS the contextual justification.
 - Re-run the validator; republish the review artifact with images embedded so the founder sees them in context.
 

@@ -6,10 +6,10 @@ time they were hit.
 
 ## Which voice
 
-| Content | Voice | Engine |
-| --- | --- | --- |
+| Content                                            | Voice                         | Engine                 |
+| -------------------------------------------------- | ----------------------------- | ---------------------- |
 | Every NEW series, and anything the founder authors | **Chris James (THCA master)** | ElevenLabs `eleven_v3` |
-| The back catalog (~500 existing devotionals) | **am_michael** | Kokoro, local |
+| The back catalog (~500 existing devotionals)       | **am_michael**                | Kokoro, local          |
 
 The split is economic and it holds: the whole catalog is 5.01M characters
 against 691k credits a month, but a new devotional averages **9,487 characters**,
@@ -53,8 +53,8 @@ python3 euangelion-voice-prototype/spec/produce.py <slug> euangelion-voice-proto
 ```
 
 Rebuilds the narration from the chunk cache — **no credits, no API** — and lays
-the atmospheric score under it. The founder's standing direction: *"the on site
-sound with my voice is great, but needs the music and ambiance upgrade."* So the
+the atmospheric score under it. The founder's standing direction: _"the on site
+sound with my voice is great, but needs the music and ambiance upgrade."_ So the
 narration passes through untouched; nothing in this pass processes the voice.
 
 Copy the result over `public/audio/<slug>.m4a` and update `bytes` and `duration`
@@ -62,7 +62,7 @@ in the manifest.
 
 ## Why the score sounds the way it does
 
-Reference: *Inspired by The Bible Experience*, founder-set.
+Reference: _Inspired by The Bible Experience_, founder-set.
 
 - **The atmosphere lives in the gaps.** Pushing a bed up under a voice buys
   masking, not presence. The score sits back while he speaks and lifts +10 dB in
@@ -122,3 +122,21 @@ measured rather than estimated.
 
 **Do not spend without showing the cost first.** Dry-run, report the character
 count and what remains, then render.
+
+**Roman numerals get SPOKEN as numerals.** `he-cannot-deny-himself-day-1` shipped
+saying _"chapter VIII"_ where the page says _"chapter eight"_. Anything the
+engine can read as a symbol rather than a word — Roman numerals, `&`, `%`, `1st`,
+verse ranges like `3–5` — must be normalised to spoken words before it reaches
+the API. The page copy is not the script; the extraction is.
+
+**A stale track survives a text edit unless something checks.** Day 1 above was
+rendered before the numeral fix and simply stayed wrong through several deploys.
+It was caught only because `build_chapters.py` refuses to emit timestamps when
+re-extraction does not match the render — a guard against wrong marks that found
+a stale audio file as a side effect. **When re-rendering after any prose change,
+re-audit every day of the series, not just the one you edited**, and verify by
+decoding the shipped `.m4a` and transcribing it — not by trusting the manifest.
+
+**The manifest is client code.** It is bundled at build time, so chapters ship in
+the JS. A chapter change therefore needs the service-worker bump like any shell
+change, not just an asset re-upload.

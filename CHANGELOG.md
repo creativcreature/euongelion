@@ -26,6 +26,38 @@ set gate: landscape mean 37.6%, SD 23.7, range 5.0–89.6% with 23/33 outside th
 assigned bands; portrait mean 37.2%, SD 18.8, range 4.9–84.1% with 18/33 outside.
 No upscaling was performed.
 
+## DEVO-GO SKILL — audited and brought current (2026-08-16)
+
+**SA-052 · F-096** — founder asked for confirmation the skill is fully updated for
+imagery and audio. Audited rather than asserted; found and fixed four gaps.
+
+**Imagery** — `SKILL.md` phase 7 and `workflow.md` phase 7 both still specified the
+1024×1024 square that caused two shipped defects: the browser upscaled it ~1.24× in
+the headline slot (`images.unoptimized`, no srcset) which read as grain, and
+deriving eight ratios from a square left 16% of the frame crop-safe, forcing the
+centred compositions that were rejected. Both now specify `aspect_ratio: "3:2"`
+→ 2048×1360, installed as a 1600×872 band, plus the requirement to assign each
+plate an archetype, coverage band and conceptual device and vary them across the
+set.
+
+**Accuracy gate** — extended from SA-032 to include the four checks measurement
+cannot make: count the fingers on every hand, no Escher geometry, does the image
+suit the passage, and derive the worst-case crops. Plus the standing lesson that
+automated blank/border checks must measure texture at native resolution, never
+brightness — every brightness-based check written for this pipeline produced false
+negatives on correct cream-dominant plates.
+
+**Narration** — three traps added from the `chapter VIII` incident: Roman numerals
+and symbols are SPOKEN as symbols and must be normalised before the API sees them;
+a stale track survives prose edits silently, so re-audit every day of a series
+after any change and verify by decoding and transcribing the shipped m4a rather
+than trusting the manifest; and the manifest is bundled at build time, so chapter
+changes need the service-worker bump like any shell change.
+
+`narration.md` was otherwise already current and needed no correction.
+
+---
+
 ## IMAGERY — three plate fixes + skill brought in line (2026-08-16)
 
 **SA-052 · F-096** — founder: _"this style is almost perfect for now"_, with three
