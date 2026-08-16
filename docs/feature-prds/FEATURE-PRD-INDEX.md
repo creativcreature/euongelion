@@ -100,3 +100,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-094 | Platform          | Reading room — ten print layouts for /series        | 0/10     | wip    | [F-094.md](./F-094.md) |
 | F-095 | Platform          | Red letter — the words of Christ                    | 0/10     | wip    | [F-095.md](./F-095.md) |
 | F-097 | Platform          | The Daily Edition, and a front page for Series      | 0/10     | wip    | [F-097.md](./F-097.md) |
+| F-098 | Platform          | Subject desks, bookends, and a real Daily Edition   | 0/10     | wip    | [F-098.md](./F-098.md) |

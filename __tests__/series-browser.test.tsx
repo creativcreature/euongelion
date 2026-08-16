@@ -113,7 +113,68 @@ describe('SeriesBrowser — ten layouts', () => {
     expect(container.querySelectorAll('.fp-lead')).toHaveLength(1)
     expect(container.querySelectorAll('.fp-story')).toHaveLength(2)
     expect(container.querySelectorAll('.fp-brief').length).toBeGreaterThan(0)
-    expect(container.querySelectorAll('.fp-entry').length).toBeGreaterThan(0)
+  })
+
+  it('below the fold the front page becomes sectioned desks', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Feature')
+    const desks = container.querySelectorAll('.fp-desk')
+    expect(desks.length).toBeGreaterThan(1)
+    // Every desk is named and leads with a wide story.
+    desks.forEach((desk) => {
+      expect(desk.querySelector('.fp-desk-name')?.textContent).toBeTruthy()
+      expect(desk.querySelector('.fp-desk-lede')).not.toBeNull()
+    })
+  })
+
+  it('every entry below the fold carries a plate', () => {
+    // Founder 2026-08-16: "please bring images into the feature toggle state
+    // for all devotionals." A desk entry without an image is the bug.
+    const { container } = render(<SeriesBrowser />)
+    openView('Feature')
+    const items = container.querySelectorAll('.fp-desk-item')
+    expect(items.length).toBeGreaterThan(0)
+    items.forEach((item) => {
+      expect(item.querySelector('.fp-desk-item-plate img')).not.toBeNull()
+    })
+    container.querySelectorAll('.fp-desk-lede').forEach((lede) => {
+      expect(lede.querySelector('.fp-desk-lede-plate img')).not.toBeNull()
+    })
+  })
+
+  it('no series is dropped when the catalog is sectioned', () => {
+    // sectionsFor sweeps anything unclassified into a final desk rather than
+    // silently omitting it — a browse surface that loses a reading is worse
+    // than one with an imperfect heading. Compare the set of destinations the
+    // front page offers against the set the plain list offers.
+    const hrefsIn = (root: HTMLElement) =>
+      new Set(
+        Array.from(root.querySelectorAll('a[href^="/series/"]')).map((a) =>
+          a.getAttribute('href'),
+        ),
+      )
+
+    const feature = render(<SeriesBrowser />)
+    openView('Feature')
+    const featureHrefs = hrefsIn(feature.container)
+    feature.unmount()
+
+    const list = render(<SeriesBrowser />)
+    openView('List')
+    const listHrefs = hrefsIn(list.container)
+
+    expect(featureHrefs.size).toBeGreaterThan(0)
+    expect([...listHrefs].filter((h) => !featureHrefs.has(h))).toEqual([])
+  })
+
+  it('the shelf centres its books between a matched pair of bookends', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Spines')
+    container.querySelectorAll('.shelf-row').forEach((row) => {
+      expect(row.querySelectorAll('.shelf-bookend')).toHaveLength(2)
+      expect(row.querySelector('.shelf-bookend--left')).not.toBeNull()
+      expect(row.querySelector('.shelf-bookend--right')).not.toBeNull()
+    })
   })
 
   it('spines wrap into shelves rather than scrolling sideways', () => {

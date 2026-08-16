@@ -947,3 +947,11 @@ features:
     prd: docs/feature-prds/F-097.md
     methodology_refs:
       - M00
+  - id: F-098
+    title: Subject desks, matched bookends, and a real Daily Edition
+    slug: subject-desks-and-daily-edition
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-098.md
+    methodology_refs:
+      - M00

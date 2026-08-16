@@ -277,6 +277,49 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Subject desks, bookends, and a paper worth reading (2026-08-16)
+
+Second pass on the same surfaces. Registered as **SA-055** (F-098).
+
+**Feature's bottom half is a news site now.** Seven subject desks — Beginnings,
+Scripture, The interior life, Under pressure, Identity and work, Together, Hard
+questions — each set as a section front: a lede column with a plate beside a
+filling grid of equal thumbnails. Every entry carries an image. Sections are by
+subject, never pathway; SA-050 took pathway off browse and it isn't coming back
+through the side door. Nothing is dropped: anything unclassified sweeps into a
+final desk, and a test asserts the front page offers every destination the list
+does.
+
+**Rack papers are one size.** `flex: 1 1 0` meant the last rail — one paper, not
+four — stretched that paper across the whole rack. Fixed basis.
+
+**Shelves centre between matched bookends** — lamp, wheat, fish, anchor,
+chi-rho, door, the left one mirrored the way a real pair is, indexed by shelf so
+the wall never reshuffles. Eight spines a shelf, not twelve: at the widened
+sizes twelve overflowed and wrapped *inside its own row*, putting the bookends
+around two lines of books.
+
+**`/today` carries a real paper.** The Practice (one finishable thing to do
+today), a Greek/Hebrew word study at plain lexical meaning, How to read — the
+first practical Bible-reading guides, each led by a plate picked for its subject
+— the daily panel, and a weekday prayer list. Rail briefs gained thumbnails.
+Everything rotates by day of year, never at random: an edition that differs
+between two readers on the same morning is a feed wearing a masthead.
+
+**Where invention stops.** The founder authorised inventing content, so this is
+recorded precisely. We invent our own voice — practices, guides, panel captions,
+categories of intercession, lexical glosses. We do not invent other people's
+reported facts. Dispatches, community efforts and reader prayers stay empty and
+absent, because naming a church in a named place, or a reader's prayer request,
+is a claim about real people with nothing behind it.
+
+**Home is a mark** — a Levantine house, parapet roof, arched door, three strokes
+(a stair and a window turned to mud at 18px). Accessible name still "Home".
+
+**Plates are derived, not shipped raw.** `images.unoptimized` means a library
+PNG reaches the browser untouched; the 16 edition plates are webp in
+`public/images/edition/`. 25.1 MB → 2.26 MB. — SA-055 (F-098)
+
 ## THE DAILY EDITION, and a front page for Series (2026-08-16)
 
 Founder: _"Feature style- Try something different here- make it feel like a

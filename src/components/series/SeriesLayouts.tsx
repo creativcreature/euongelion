@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
+import { sectionsFor } from '@/data/series-sections'
 import { dayCountLabel, seriesRecencyRank } from '@/lib/series/catalog'
 
 /**
@@ -197,26 +198,72 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
         </aside>
       </div>
 
-      {below.length > 0 && (
-        <>
-          <p className="fp-section-rule">The rest of the catalog</p>
-          <div className="fp-below">
-            {below.map((slug) => {
-              const series = SERIES_DATA[slug]
-              if (!series) return null
-              return (
-                <Link key={slug} href={cardHref(slug)} className="fp-entry">
-                  <span className="fp-entry-head">{series.title}</span>
-                  <span className="fp-entry-body">{series.question}</span>
-                  <span className="fp-byline">
-                    {statusLabel(slug, progressBySeries.get(slug))}
+      {/* Below the fold, the page becomes a news SITE rather than a front
+          page: named subject desks, each with its own rule, and every entry
+          carrying a plate. Founder 2026-08-16: "the top feels like a
+          newspaper, the bottom needs more finnese… like newspaper website with
+          'sections' and such", and "bring images into the feature toggle state
+          for all devotionals". The first entry of each desk runs wide with a
+          landscape plate — the section lede — and the rest set as a row of
+          equal thumbnails beneath it. */}
+      {below.length > 0 &&
+        sectionsFor(below).map((section) => {
+          const [sectionLede, ...others] = section.slugs
+          const ledeSeries = SERIES_DATA[sectionLede]
+          return (
+            <section className="fp-desk" key={section.name}>
+              <div className="fp-desk-head">
+                <h3 className="fp-desk-name">{section.name}</h3>
+                <span className="fp-desk-rule" aria-hidden="true" />
+                <span className="fp-desk-count">{section.slugs.length}</span>
+              </div>
+              <p className="fp-desk-blurb">{section.blurb}</p>
+
+              <div className="fp-desk-body">
+              {ledeSeries && (
+                <Link href={cardHref(sectionLede)} className="fp-desk-lede">
+                  <span className="fp-desk-lede-plate">
+                    <Plate
+                      slug={sectionLede}
+                      sizes="(max-width: 900px) 100vw, 34vw"
+                    />
+                  </span>
+                  <span className="fp-desk-lede-text">
+                    <span className="fp-desk-lede-head">{ledeSeries.title}</span>
+                    <span className="fp-desk-lede-stand">{ledeSeries.question}</span>
+                    <span className="fp-byline">
+                      {statusLabel(sectionLede, progressBySeries.get(sectionLede))}
+                    </span>
                   </span>
                 </Link>
-              )
-            })}
-          </div>
-        </>
-      )}
+              )}
+
+              {others.length > 0 && (
+                <div className="fp-desk-row">
+                  {others.map((slug) => {
+                    const series = SERIES_DATA[slug]
+                    if (!series) return null
+                    return (
+                      <Link key={slug} href={cardHref(slug)} className="fp-desk-item">
+                        <span className="fp-desk-item-plate">
+                          <Plate
+                            slug={slug}
+                            sizes="(max-width: 640px) 44vw, (max-width: 1100px) 24vw, 16vw"
+                          />
+                        </span>
+                        <span className="fp-desk-item-head">{series.title}</span>
+                        <span className="fp-byline">
+                          {statusLabel(slug, progressBySeries.get(slug))}
+                        </span>
+                      </Link>
+                    )
+                  })}
+                </div>
+              )}
+              </div>
+            </section>
+          )
+        })}
     </div>
   )
 }
@@ -312,6 +359,113 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
+
+/**
+ * Shelf bookends (F-098).
+ *
+ * Founder 2026-08-16: "add unique book ends on each row that are site
+ * thematic." So each shelf gets its own pair, drawn from the furniture this
+ * site already uses rather than from generic ornament — a lamp, a wheat sheaf,
+ * a fish, an anchor, a chi-rho, a door. Line art only, one weight, no fill:
+ * they sit at the ends of a row of spines and must not out-shout them.
+ *
+ * The pair on a shelf MIRRORS — the left one flipped — the way a real matched
+ * pair does. Index is the shelf number, so the same shelf always gets the same
+ * bookend and the wall never reshuffles between renders.
+ */
+const BOOKENDS: Array<{ label: string; path: React.ReactNode }> = [
+  {
+    // Lamp — "a lamp to my feet"
+    label: 'lamp',
+    path: (
+      <>
+        <path d="M13 30h14l-3 8H16z" />
+        <path d="M20 30V20" />
+        <path d="M20 20c-4 0-7-2.6-7-6s3-6 7-6 7 2.6 7 6-3 6-7 6z" />
+        <path d="M20 8V3" />
+      </>
+    ),
+  },
+  {
+    // Wheat — harvest
+    label: 'wheat',
+    path: (
+      <>
+        <path d="M20 38V12" />
+        <path d="M20 16c-4-1-6-4-6-7 3 0 6 2 6 5" />
+        <path d="M20 16c4-1 6-4 6-7-3 0-6 2-6 5" />
+        <path d="M20 24c-4-1-6-4-6-7 3 0 6 2 6 5" />
+        <path d="M20 24c4-1 6-4 6-7-3 0-6 2-6 5" />
+        <path d="M20 12c-2-3-2-6 0-9 2 3 2 6 0 9z" />
+      </>
+    ),
+  },
+  {
+    // Ichthys — the fish
+    label: 'fish',
+    path: (
+      <>
+        <path d="M6 22c6-9 18-9 24 0-6 9-18 9-24 0z" />
+        <path d="M30 22l5-5v10z" />
+      </>
+    ),
+  },
+  {
+    // Anchor — hope as an anchor for the soul
+    label: 'anchor',
+    path: (
+      <>
+        <path d="M20 12v26" />
+        <path d="M14 16h12" />
+        <circle cx="20" cy="8" r="4" />
+        <path d="M8 26c0 7 5 12 12 12s12-5 12-12" />
+      </>
+    ),
+  },
+  {
+    // Chi-Rho
+    label: 'chi-rho',
+    path: (
+      <>
+        <path d="M20 38V8" />
+        <path d="M20 8h5a6 6 0 010 12h-5" />
+        <path d="M9 34L31 14" />
+        <path d="M31 34L9 14" />
+      </>
+    ),
+  },
+  {
+    // Door — "I am the door"
+    label: 'door',
+    path: (
+      <>
+        <path d="M11 38V16a9 9 0 0118 0v22z" />
+        <path d="M20 7V3" />
+        <circle cx="24" cy="27" r="1.4" />
+      </>
+    ),
+  },
+]
+
+function Bookend({ index, side }: { index: number; side: 'left' | 'right' }) {
+  const mark = BOOKENDS[index % BOOKENDS.length]
+  return (
+    <span className={`shelf-bookend shelf-bookend--${side}`} aria-hidden="true">
+      <svg viewBox="0 0 40 40" className="shelf-bookend-mark" focusable="false">
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {mark.path}
+        </g>
+      </svg>
+    </span>
+  )
+}
+
 /* ── 4. SPINES ──────────────────────────────────────────────────────── */
 
 /**
@@ -320,12 +474,20 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
  * Width-as-length is the one piece of information a real shelf gives you at a
  * glance, so it is the one encoded here.
  */
-const SPINES_PER_SHELF = 12
+// Eight, not twelve. At the widened spine sizes twelve overflowed 1308px of
+// shelf and WRAPPED inside its own row — which put the bookends around two
+// lines of books and the board under only the lower one. Eight always fits on
+// one line, so a shelf is a shelf.
+const SPINES_PER_SHELF = 8
 
 export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   // Founder 2026-08-16: "Spine should have several rows of books and the spines
   // can be larger. No overflow scroll, all on page visible." So the shelf wraps
   // into rows of twelve, each with its own board, and nothing scrolls sideways.
+  // Then: "Center the books on spine- add unique book ends on each row that are
+  // site thematic." Rows centre between a matched pair of bookends, so a short
+  // final shelf reads as a deliberately part-filled shelf rather than a row
+  // that ran out.
   const shelves = useMemo(() => {
     const out: string[][] = []
     for (let i = 0; i < slugs.length; i += SPINES_PER_SHELF) {
@@ -339,6 +501,7 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
       {shelves.map((shelf, si) => (
         <div className="shelf-unit" key={si}>
           <div className="shelf-row">
+            <Bookend index={si} side="left" />
         {shelf.map((slug, i) => {
           const series = SERIES_DATA[slug]
           if (!series) return null
@@ -346,7 +509,8 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
           // Width still encodes length, and is now sized so a shelf of twelve
           // FILLS the row rather than trailing off into whitespace. Clamped so
           // bible-365 is a broad volume, not a wall.
-          const width = Math.min(190, Math.max(104, 96 + days * 6))
+          // Capped at 150 so eight of the longest readings still fit one line.
+          const width = Math.min(150, Math.max(96, 88 + days * 4.5))
           return (
             <Link
               key={slug}
@@ -363,6 +527,7 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
             </Link>
           )
         })}
+            <Bookend index={si} side="right" />
           </div>
           <span className="shelf-board" aria-hidden="true" />
         </div>

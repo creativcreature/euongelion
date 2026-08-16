@@ -19,13 +19,21 @@
 
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { liturgicalDay } from '@/lib/liturgical'
 import {
   COMMUNITY,
   DISPATCHES,
+  GUIDES,
+  PANELS,
+  PRACTICES,
   PRAYERS,
+  WORD_STUDIES,
+  pickForDay,
+  pickManyForDay,
+  prayerFocusFor,
 } from '@/data/daily-edition'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import TodayReturningBand from '@/components/TodayReturningBand'
@@ -38,6 +46,68 @@ import {
 } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
 import type { Devotional, Module, Panel } from '@/types'
+
+
+/* ── Section icons (F-098) ─────────────────────────────────────────────
+   Founder: "needs images to lead thumbnails, icons etc". Line marks at one
+   weight, sized to sit on the cap-height of the kicker beside them. They
+   label a section; they are not decoration, so there is exactly one per
+   section and none anywhere else. */
+
+function SectionMark({ children }: { children: React.ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="edition-icon"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {children}
+      </g>
+    </svg>
+  )
+}
+
+/** An open hand — the practice is something you do. */
+function PracticeIcon() {
+  return (
+    <SectionMark>
+      <path d="M8 12V5a1.5 1.5 0 013 0v6" />
+      <path d="M11 11V4a1.5 1.5 0 013 0v7" />
+      <path d="M14 11V6a1.5 1.5 0 013 0v7" />
+      <path d="M17 10.5a1.5 1.5 0 013 0V14a6 6 0 01-6 6h-1a6 6 0 01-6-6v-1l-2-2a1.5 1.5 0 012-2l2 2" />
+    </SectionMark>
+  )
+}
+
+/** An open book — the word study. */
+function WordIcon() {
+  return (
+    <SectionMark>
+      <path d="M12 6.5C10.5 5 8 4.5 4 5v13c4-.5 6.5 0 8 1.5" />
+      <path d="M12 6.5C13.5 5 16 4.5 20 5v13c-4-.5-6.5 0-8 1.5" />
+      <path d="M12 6.5v13" />
+    </SectionMark>
+  )
+}
+
+/** Hands raised — the prayer list. */
+function PrayerIcon() {
+  return (
+    <SectionMark>
+      <path d="M12 20V9" />
+      <path d="M12 9c0-2.5-1.4-4.6-3.5-6C7 4.5 6.5 6.7 7 9c.4 1.8 1.5 3.2 3 4" />
+      <path d="M12 9c0-2.5 1.4-4.6 3.5-6C17 4.5 17.5 6.7 17 9c-.4 1.8-1.5 3.2-3 4" />
+    </SectionMark>
+  )
+}
 
 // ISR: revalidate every hour so the edition date is always correct
 export const revalidate = 3600
@@ -273,6 +343,18 @@ export default async function TodayPage() {
   )
   const editionSlug = formatEditionSlug(now)
 
+  // The rest of the paper, all keyed to the same day so the edition is one
+  // thing rather than a set of independently-rotating widgets.
+  const practice = pickForDay(PRACTICES, dayOfYear)
+  const word = pickForDay(WORD_STUDIES, dayOfYear)
+  const panel = pickForDay(PANELS, dayOfYear)
+  const guides = pickManyForDay(GUIDES, dayOfYear, 3)
+  const focus = prayerFocusFor(now.getUTCDay())
+  const editionWeekday = now.toLocaleDateString('en-US', {
+    weekday: 'long',
+    timeZone: 'UTC',
+  })
+
   const seriesTitle = meta?.series.title ?? 'Daily Devotional'
   const seriesSlug = meta?.seriesSlug ?? ''
   const dayTitle = devotional?.title ?? meta?.day.title ?? 'Today'
@@ -409,8 +491,21 @@ export default async function TodayPage() {
               if (!series) return null
               return (
                 <Link key={rs} href={`/series/${rs}`} className="edition-brief">
-                  <span className="edition-brief-head">{series.title}</span>
-                  <span className="edition-brief-body">{series.question}</span>
+                  {series.heroImage && (
+                    <span className="edition-brief-thumb">
+                      <Image
+                        src={series.heroImage}
+                        alt=""
+                        fill
+                        sizes="72px"
+                        className="edition-brief-img"
+                      />
+                    </span>
+                  )}
+                  <span className="edition-brief-text">
+                    <span className="edition-brief-head">{series.title}</span>
+                    <span className="edition-brief-body">{series.question}</span>
+                  </span>
                 </Link>
               )
             })}
@@ -426,6 +521,122 @@ export default async function TodayPage() {
             the lead story, it broke the masthead-into-headline flow that makes
             the page read as an edition. */}
         <TodayReturningBand />
+
+        {/* ── The paper proper (F-098) ─────────────────────────────────
+            Founder 2026-08-16: "The today page needs more content… and needs
+            images to lead thumbnails, icons etc… the site will eventually have
+            practical guides on biblke reading and studying etc too. Today page
+            could lead this effort. Could use a daily cartoon."
+
+            Everything here is OUR editorial voice, rotating deterministically
+            by day of year so two readers on the same morning get the same
+            paper. Nothing here reports a fact about anyone. */}
+
+        <div className="edition-band">
+          {practice && (
+            <section className="edition-practice" aria-label="Today's practice">
+              <p className="edition-kicker">
+                <PracticeIcon />
+                The practice
+              </p>
+              <p className="edition-practice-do">{practice.instruction}</p>
+              <p className="edition-practice-why">{practice.reason}</p>
+              <p className="edition-practice-time">{practice.duration}</p>
+            </section>
+          )}
+
+          {word && (
+            <section className="edition-word" aria-label="Word of the day">
+              <p className="edition-kicker">
+                <WordIcon />
+                {word.language} today
+              </p>
+              <p className="edition-word-original" lang={word.language === 'Greek' ? 'el' : 'he'}>
+                {word.word}
+              </p>
+              <p className="edition-word-translit">{word.translit}</p>
+              <p className="edition-word-gloss">{word.gloss}</p>
+              <p className="edition-word-note">{word.note}</p>
+              <p className="edition-word-ref">{word.reference}</p>
+            </section>
+          )}
+        </div>
+
+        {guides.length > 0 && (
+          <section className="edition-section" aria-label="How to read">
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">How to read</h2>
+              <p className="edition-section-note">
+                Practical guides to reading and studying the Bible. A new set each day.
+              </p>
+            </div>
+            <div className="edition-guides">
+              {guides.map((g) => (
+                <article key={g.title} className="edition-guide">
+                  <span className="edition-guide-plate">
+                    <Image
+                      src={g.image}
+                      alt={g.alt}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 30vw"
+                      className="edition-guide-img"
+                    />
+                  </span>
+                  <p className="edition-guide-kicker">{g.kicker}</p>
+                  <h3 className="edition-guide-head">{g.title}</h3>
+                  <p className="edition-guide-stand">{g.standfirst}</p>
+                  <ol className="edition-guide-steps">
+                    {g.steps.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                  <p className="edition-guide-time">{g.minutes}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {panel && (
+          <section className="edition-section" aria-label="The daily panel">
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The daily panel</h2>
+              <p className="edition-section-note">{panel.reference}</p>
+            </div>
+            <figure className="edition-panel">
+              <span className="edition-panel-plate">
+                <Image
+                  src={panel.image}
+                  alt={panel.alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 46vw"
+                  className="edition-panel-img"
+                />
+              </span>
+              <figcaption className="edition-panel-caption">
+                <span className="edition-panel-title">{panel.title}</span>
+                <span className="edition-panel-line">{panel.caption}</span>
+              </figcaption>
+            </figure>
+          </section>
+        )}
+
+        <section className="edition-section" aria-label="The prayer list">
+          <div className="edition-section-bar">
+            <h2 className="edition-section-head">The prayer list</h2>
+            <p className="edition-section-note">
+              {focus.focus} &middot; {editionWeekday}
+            </p>
+          </div>
+          <ul className="edition-petitions">
+            {focus.petitions.map((pet) => (
+              <li key={pet} className="edition-petition">
+                <PrayerIcon />
+                <span>{pet}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Editorial sections. Each renders ONLY when it carries real entries —
             an empty section does not appear at all. There is no feed of global

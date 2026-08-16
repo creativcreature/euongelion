@@ -16,7 +16,12 @@ import { useSettingsStore } from '@/stores/settingsStore'
 // the overflow that has no tab (How We Write, help, auth) — the two
 // surfaces never duplicate a destination.
 const DESKTOP_NAV_ITEMS = [
-  { href: '/', label: 'HOME' },
+  // Founder 2026-08-16: "change the Home menu item to an icon of a biblical
+  // style home." Drawn as a Near-Eastern house — flat roof, outer stair, an
+  // arched door — not the pitched-roof pictogram every app ships. The label
+  // stays in the accessible name so the link is still "Home" to a screen
+  // reader and to anyone who hovers it.
+  { href: '/', label: 'HOME', icon: 'home' as const },
   // Founder direction 2026-08-15: TODAY and DAILY BREAD were two labels on
   // ONE destination (/daily-bread), so both lit as active at the same time and
   // the nav read as duplicated. Collapsed to a single DAILY BREAD entry, and
@@ -40,9 +45,46 @@ const MOBILE_OVERFLOW_ITEMS = [
   // HOME lives here too (founder report 2026-07-10): the wordmark links
   // home, but an explicit entry keeps it discoverable. Not a tab-bar
   // duplicate — "/" is deliberately not a tab destination under SA-024.
-  { href: '/', label: 'HOME' },
+  { href: '/', label: 'HOME', icon: 'home' as const },
   { href: '/how-we-write', label: 'HOW WE WRITE' },
 ]
+
+/**
+ * A biblical-style house (F-098).
+ *
+ * Founder 2026-08-16: "change the Home menu item to an icon of a biblical
+ * style home." A first-century Levantine house, not a gingerbread cottage:
+ * flat roof with a parapet, an external stair to the roof where people slept
+ * and prayed, an arched doorway, one small high window. Single stroke weight
+ * so it sits at the same visual density as the caps beside it.
+ */
+function HomeMark() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="mock-nav-home"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Flat roof, oversailing the walls — the parapet a Levantine house
+            is required to have (Deut. 22:8). */}
+        <path d="M2.5 7.5h19" />
+        {/* Walls */}
+        <path d="M5 7.5V21h14V7.5" />
+        {/* Arched door, centred */}
+        <path d="M9.5 21v-5.5a2.5 2.5 0 015 0V21" />
+      </g>
+    </svg>
+  )
+}
+
 const MOBILE_TICKER_INTERVAL_MS = 6200
 const SCROLL_LOCK_CLASSES = [
   'lenis',
@@ -443,10 +485,14 @@ export default function EuangelionShellHeader({
         <span key={item.href} className="mock-nav-item-wrap">
           <Link
             href={item.href}
-            className={`mock-nav-item ${active ? 'is-active' : ''}`}
+            className={`mock-nav-item ${active ? 'is-active' : ''} ${
+              'icon' in item && item.icon ? 'mock-nav-item--icon' : ''
+            }`}
             aria-current={active ? 'page' : undefined}
+            aria-label={'icon' in item && item.icon ? 'Home' : undefined}
+            title={'icon' in item && item.icon ? 'Home' : undefined}
           >
-            {item.label}
+            {'icon' in item && item.icon === 'home' ? <HomeMark /> : item.label}
           </Link>
           {index < items.length - 1 && <span aria-hidden="true">|</span>}
         </span>

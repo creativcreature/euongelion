@@ -126,7 +126,10 @@ describe('EuangelionShellHeader', () => {
         .querySelector('.mock-topbar')
         ?.classList.contains('is-nav-docked'),
     ).toBe(false)
-    expect(screen.getAllByRole('link', { name: 'HOME' })[0]).toHaveAttribute(
+    // F-098: HOME renders as a mark rather than the word, so its accessible
+    // name comes from aria-label. Queried by role+name on purpose — that is
+    // exactly the affordance an icon-only link has to keep.
+    expect(screen.getAllByRole('link', { name: 'Home' })[0]).toHaveAttribute(
       'aria-current',
       'page',
     )
