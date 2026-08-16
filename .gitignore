@@ -142,3 +142,9 @@ euangelion-voice-prototype/archive-abandoned-clone-path/
 euangelion-voice-prototype/.el-chunk-cache/
 euangelion-voice-prototype/thca-source/
 src/data/audio-manifest.json.lock
+
+# Codex imagery staging — masters live outside the deploy tree (SA-052/F-096)
+imagery-staging/
+
+# Scored stereo masters staged for R2 — never in git, never in the deploy
+euangelion-voice-prototype/scored/

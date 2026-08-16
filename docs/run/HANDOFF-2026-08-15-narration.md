@@ -120,16 +120,35 @@ each), and the reader reproduces the renderer's SHA-1 of the spoken text. Guarde
 by `__tests__/narration-reading-contract.test.ts` and
 `__tests__/narration-manifest-current.test.ts`.
 
+## 5b. State as of 2026-08-16
+
+**The whole catalog is live and current.** 528 tracks, 528 with chapters, 95.8 h
+of audio, zero stale against page text, verified byte-identical on
+`euangelion.app`. Service worker v86.
+
+Two follow-on efforts are now running, each with its own runbook:
+
+- **`docs/run/R2-AUDIO-MIGRATION.md`** — scoring the 521 back-catalog tracks and
+  moving all audio to R2. In progress; blocked only on the founder supplying the
+  `euangelion.app` zone ID. The live site is untouched until the final step.
+- **`docs/decisions/VOICE-ROADMAP.md`** — replacing Michael with the founder's
+  voice: what to record, why Voicebox cannot be trained on it, and what a local
+  fine-tune would actually buy.
+
+**A defect the audit caught, worth remembering:** sixteen devotionals had shipped
+with their TITLE never spoken. `textHash` could not see it because it
+fingerprints the EXTRACTION, not what was rendered, and `render_kokoro` printed
+`FAILED` for a dropped segment then published anyway. That path is closed — a
+render that cannot say everything now refuses to publish.
+
 ## 6. Open items
 
-1. **Back catalog re-render** — running, ~8.6 h from start.
-2. **Score Michael's tracks** — needs NO re-render; his files are already dry
-   narration, which is what `produce.py` takes as input. Do it AFTER the
-   re-render, or it gets scored twice.
-3. **`public/audio` is 2.0 GB inside git.** Cloudflare caps assets at 25 MiB per
-   file and no plan raises it — it is a platform limit. R2 is the fix: no
-   meaningful size cap, no egress fees, roughly $0.015/GB-month (~3 cents for
-   the current 2 GB). Founder has been told; decision outstanding.
+1. ~~Back catalog re-render~~ — **done 2026-08-16**, all 528 live and verified.
+2. **Score Michael's tracks** — running into gitignored staging; see the R2
+   runbook. Needs no re-render: his files are already dry narration, which is
+   exactly what `produce.py --from-audio` takes as input.
+3. ~~`public/audio` in git / 25 MiB cap~~ — **decided**: migrating to R2.
+   Founder enabled R2 and the bucket exists. See the R2 runbook.
 4. **Narration options (voice choice per reader)** — manifest already carries a
    `voice` field; would become a small set of tracks per devotional.
 

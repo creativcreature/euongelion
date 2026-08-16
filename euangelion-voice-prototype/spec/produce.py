@@ -338,6 +338,12 @@ def bed_curve(dev, chapters, voice, sr, total):
 
 def main():
     slug, out_path = sys.argv[1], sys.argv[2]
+    # --from-audio scores an EXISTING track instead of rebuilding narration from
+    # the ElevenLabs chunk cache. Michael's ~521 back-catalog tracks are already
+    # dry narration on disk, which is exactly the input this pass wants, so they
+    # can be scored without re-rendering a single word.
+    from_audio = sys.argv[sys.argv.index("--from-audio") + 1] \
+        if "--from-audio" in sys.argv else None
     dev = json.load(open(os.path.join(REPO, "public", "devotionals", f"{slug}.json")))
     segs = ne.extract(dev)
     groups = rc.chunks(segs)
@@ -346,6 +352,11 @@ def main():
     # 1. rebuild the dry narration from cache — no API, no credits
     tmp = out_path + ".tmp"
     frames = array.array("h")
+    if from_audio:
+        frames = decode(from_audio, tmp + ".src.wav")
+        print(f"scoring existing narration: {len(frames)/SR/60:.2f} min "
+              f"({os.path.basename(from_audio)})")
+        groups = []
     for i, g in enumerate(groups, 1):
         text = " ".join(s["text"] for s in g)
         hit = os.path.join(rc.CACHE, rc.cache_key(text, vid) + ".mp3")
@@ -354,9 +365,11 @@ def main():
         frames.extend(decode(hit, tmp + ".c.wav"))
         if i < len(groups):
             frames.extend([0] * int(PAUSE_AFTER.get(g[-1]["register"], 0.55) * SR))
-    frames.extend([0] * int(TRAILING_PAD * SR))
+    if not from_audio:
+        frames.extend([0] * int(TRAILING_PAD * SR))
     n = len(frames)
-    print(f"dry narration rebuilt from cache: {n/SR/60:.2f} min, {len(groups)} chunks")
+    if not from_audio:
+        print(f"dry narration rebuilt from cache: {n/SR/60:.2f} min, {len(groups)} chunks")
 
     # 2. voice chain
     v = to_float(frames)
@@ -436,7 +449,10 @@ def main():
     # write a mono file from a stereo source and it refuses outright.
     subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "128000", "-c", "2",
                     tmp + ".st.wav", out_path], check=True, capture_output=True)
-    for e in (".c.wav", ".b.wav", ".st.wav"):
+    # .src.wav is the decode of an existing track in --from-audio mode. It was
+    # missing from this list and 156 tracks left 4.3 GB of stranded decodes
+    # behind against 777 MB of actual output.
+    for e in (".c.wav", ".b.wav", ".st.wav", ".src.wav"):
         if os.path.exists(tmp + e):
             os.unlink(tmp + e)
 
