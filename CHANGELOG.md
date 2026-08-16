@@ -690,6 +690,31 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Flow scrolls natively, and the mobile audit passes (2026-08-16)
+
+Registered as **SA-065** (F-109).
+
+Founder: _"the Flow doesnt work atall."_ Measured, and it genuinely didn't —
+one wheel notch threw the board **835px**, because the hand-written momentum
+loop stacked its own inertia on top of the operating system's, and **drag moved
+it zero**. The transform-and-momentum machinery was the wrong foundation. The
+frame is an ordinary scroll container now and drag just moves `scrollTop`; the
+platform already has momentum, rubber-banding, scrollbars, keyboard paging and
+accessibility. Verified: scroll exact, drag 1:1, 37 tiles, 37/37 plates.
+
+**Spines are responsive.** The first genuine mobile measurement showed spine tap
+targets at **31px** — under the 44px minimum. Seven to a shelf is a desktop
+number; three on a phone, four on a small tablet. Now 71px.
+
+**The mobile audit is done and passing** — all seven toggles at 390px, zero
+horizontal overflow, 37 links in every view, every tap target above minimum.
+
+Why it took four attempts, recorded because it cost hours: **the Chrome resize
+tool reports success and does not resize**, so every earlier "mobile" check ran
+at desktop width; and the in-page JS tool can attach to a stale document (1313px
+viewport against a 414px window). Playwright sets a real viewport and is the
+tool for this. — SA-065 (F-109)
+
 ## The press impression (2026-08-16)
 
 Registered as **SA-064** (F-108).

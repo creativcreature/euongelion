@@ -13795,15 +13795,18 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 
-/* ── FLOW — the artboard (F-105) ────────────────────────────────────────
+/* ── FLOW — the artboard (F-106) ────────────────────────────────────────
    Founder 2026-08-16: "this will be the first toggle on the series page… Just
    the fluid motion, sizing and grid structure etc." Reference for BEHAVIOUR
-   (not palette): nicolaromei.com. Flow replaces the rose window, which was
-   beautiful on a desktop and did not survive a phone.
+   (not palette): nicolaromei.com.
 
-   The frame is a window onto a canvas larger than itself. Everything that
-   moves is the board, in one transform, so a pan is a single composited layer
-   rather than 37 elements being re-laid-out. */
+   IT SCROLLS NATIVELY. The first build drove the board with a transform and a
+   hand-written momentum loop, and the founder's verdict was "the Flow doesnt
+   work atall" — measured, one wheel notch threw the board 835px because the
+   loop stacked its own inertia on the operating system's, and drag moved it
+   not at all. The platform already has momentum, rubber-banding, scrollbars,
+   keyboard paging and accessibility, so the frame is an ordinary scroll
+   container and drag simply moves scrollTop. */
 
 .flow {
   display: flex;
@@ -13813,35 +13816,36 @@ html[data-held-moment] .mobile-tab-bar {
 
 .flow-frame {
   position: relative;
-  overflow: hidden;
   height: clamp(420px, 68vh, 760px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* The board's scroll never leaks to the page behind it, but the page is
+     always reachable because the frame ends. */
+  overscroll-behavior-y: contain;
   border: var(--rr-hair);
   background: color-mix(in srgb, var(--mock-ink) 4%, var(--mock-paper) 96%);
   cursor: grab;
-  /* The board pans vertically inside the frame, so the browser must not also
-     scroll the page from the same gesture. Horizontal swipes still belong to
-     the page (back/forward). */
-  touch-action: none;
-  /* The board is dragged, so text selection would fight every gesture. */
-  user-select: none;
+  /* Touch belongs to the platform; drag-to-pan is a pointer enhancement. */
+  touch-action: pan-y;
 }
 
-.flow-frame.is-dragging {
+.flow-frame:active {
   cursor: grabbing;
 }
 
+.flow-frame:focus-visible {
+  outline: 2px solid var(--color-crimson);
+  outline-offset: 2px;
+}
+
 .flow-board {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* Full width of the frame, always. The board is a grid, so it cannot be
-     narrower than its container and cannot leave dead space beside it. */
-  width: 100%;
   display: grid;
   gap: 14px;
-  will-change: transform, filter;
-  /* No transition: position is driven frame-by-frame by rAF, and a CSS
-     transition on top of that fights the momentum and reads as lag. */
+  padding: 14px;
+  /* Fills the frame by construction — nothing is measured, so nothing can be
+     mis-measured into dead space. */
+  width: 100%;
 }
 
 .flow-tile {
@@ -13852,9 +13856,11 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--plate-ink);
   background: var(--plate-ground);
   box-shadow: 0 0 0 1px var(--mock-line);
+  /* The smear, driven from real scroll travel and settling at rest. */
+  filter: blur(var(--flow-blur, 0px));
   transition:
     box-shadow 200ms ease,
-    transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    filter 120ms linear;
 }
 
 .flow-tile:hover,
@@ -13880,8 +13886,6 @@ html[data-held-moment] .mobile-tab-bar {
   transform: scale(1.05);
 }
 
-/* The caption sits on the plate, on a scrim heavy enough to hold small type
-   over any part of a halftone. */
 .flow-caption {
   position: absolute;
   left: 0;
@@ -13923,35 +13927,14 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-muted);
 }
 
-/* MOBILE FLOW IS A NATIVE SCROLLER, NOT A DRAGGED BOARD.
-   Founder 2026-08-16: "the mobile version is psecifically aimed at the way
-   users use mobile devices."
-
-   A drag-panned board is a desktop idea. On a phone it fights everything the
-   platform already does well: momentum, rubber-banding, and — the real
-   problem — it TRAPS the page. A finger inside the frame could pan the board
-   to its end and then have nowhere to go, leaving the reader stuck mid-page.
-   So under 900px the frame becomes an ordinary scroll container and the board
-   sits static inside it. Same tiles, same packing, same sizes; the motion is
-   the operating system's, which is the motion a phone user expects. */
 @media (max-width: 900px) {
   .flow-frame {
     height: auto;
     max-height: 78vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: contain;
-    touch-action: pan-y;
     cursor: default;
   }
-  .flow-board {
-    position: static;
-    transform: none !important;
-    filter: none !important;
-  }
   .flow-hint {
-    /* "Drag" is not the gesture here. */
+    /* "Drag" is not the gesture on a phone. */
     visibility: hidden;
   }
 }
@@ -13969,6 +13952,7 @@ html[data-held-moment] .mobile-tab-bar {
   .flow-tile,
   .flow-img {
     transition: none;
+    filter: none;
   }
 }
 

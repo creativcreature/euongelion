@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
@@ -458,6 +458,24 @@ function Bookend({ index, side }: { index: number; side: 'left' | 'right' }) {
 const SPINES_PER_SHELF = 7
 
 export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
+  // Seven to a shelf is a DESKTOP number. Measured at 390px it squeezed every
+  // spine to 31px wide — under the 44px touch minimum and far too narrow to
+  // read a title on. The shelf holds three on a phone and four on a small
+  // tablet, which keeps a spine both tappable and legible.
+  const [perShelf, setPerShelf] = useState(SPINES_PER_SHELF)
+  useEffect(() => {
+    const set = () => {
+      const w = window.innerWidth
+      setPerShelf(w < 560 ? 3 : w < 900 ? 4 : SPINES_PER_SHELF)
+    }
+    const id = window.requestAnimationFrame(set)
+    window.addEventListener('resize', set)
+    return () => {
+      window.cancelAnimationFrame(id)
+      window.removeEventListener('resize', set)
+    }
+  }, [])
+
   // Founder 2026-08-16: "Spine should have several rows of books and the spines
   // can be larger. No overflow scroll, all on page visible." So the shelf wraps
   // into rows of twelve, each with its own board, and nothing scrolls sideways.
@@ -467,11 +485,11 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   // that ran out.
   const shelves = useMemo(() => {
     const out: string[][] = []
-    for (let i = 0; i < slugs.length; i += SPINES_PER_SHELF) {
-      out.push(slugs.slice(i, i + SPINES_PER_SHELF))
+    for (let i = 0; i < slugs.length; i += perShelf) {
+      out.push(slugs.slice(i, i + perShelf))
     }
     return out
-  }, [slugs])
+  }, [slugs, perShelf])
 
   return (
     <div className="shelf">
