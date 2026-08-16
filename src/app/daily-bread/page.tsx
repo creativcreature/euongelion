@@ -532,7 +532,19 @@ export default async function DailyBreadPage() {
             by day of year so two readers on the same morning get the same
             paper. Nothing here reports a fact about anyone. */}
 
-        <div className="edition-band">
+        {/* THE BENTO SHEET (F-104).
+            Founder 2026-08-16: "The Entire Daily Bread page is needing
+            devlopment. the hiearchies are all wrong, the spacing, the way
+            information lines up. It should feel like a bento style newspaper
+            layout, with content pieces broken up with box contianers and lines
+            seperating and grouping information."
+
+            So every editorial piece below the front page becomes a ruled
+            COMPARTMENT, and the compartments butt edge to edge sharing their
+            rules — which is how a real page is made up, and the reason a
+            newspaper reads as one sheet rather than a stack of cards. */}
+        <div className="paper-sheet">
+        <div className="edition-band paper-box paper-box--wide" data-reveal>
           {practice && (
             <section className="edition-practice" aria-label="Today's practice">
               <p className="edition-kicker">
@@ -563,7 +575,11 @@ export default async function DailyBreadPage() {
         </div>
 
         {guides.length > 0 && (
-          <section className="edition-section" aria-label="How to read">
+          <section
+            className="edition-section paper-box paper-box--wide"
+            data-reveal
+            aria-label="How to read"
+          >
             <div className="edition-section-bar">
               <h2 className="edition-section-head">How to read</h2>
               <p className="edition-section-note">
@@ -573,7 +589,7 @@ export default async function DailyBreadPage() {
             <div className="edition-guides">
               {guides.map((g) => (
                 <article key={g.title} className="edition-guide">
-                  <span className="edition-guide-plate">
+                  <span className="edition-guide-plate" data-parallax="0.35">
                     <Image
                       src={g.image}
                       alt={g.alt}
@@ -598,13 +614,17 @@ export default async function DailyBreadPage() {
         )}
 
         {panel && (
-          <section className="edition-section" aria-label="The daily panel">
+          <section
+            className="edition-section paper-box paper-box--panel"
+            data-reveal
+            aria-label="The daily panel"
+          >
             <div className="edition-section-bar">
               <h2 className="edition-section-head">The daily panel</h2>
               <p className="edition-section-note">{panel.reference}</p>
             </div>
             <figure className="edition-panel">
-              <span className="edition-panel-plate">
+              <span className="edition-panel-plate" data-parallax="0.5">
                 <Image
                   src={panel.image}
                   alt={panel.alt}
@@ -621,7 +641,11 @@ export default async function DailyBreadPage() {
           </section>
         )}
 
-        <section className="edition-section" aria-label="The prayer list">
+        <section
+          className="edition-section paper-box paper-box--rail"
+          data-reveal
+          aria-label="The prayer list"
+        >
           <div className="edition-section-bar">
             <h2 className="edition-section-head">The prayer list</h2>
             <p className="edition-section-note">
@@ -696,6 +720,8 @@ export default async function DailyBreadPage() {
             </ul>
           </section>
         )}
+
+        </div>
 
         <h2 className="edition-section-head" id="the-reading">
           The reading

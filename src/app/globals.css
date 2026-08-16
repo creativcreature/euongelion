@@ -607,8 +607,13 @@ h3 {
      when stretched into the 2/3-width image column. On a 1440px
      desktop, image col ≈ 960px wide → ~525px tall (down from ~640px
      under the prior 3:2 aspect). */
-  aspect-ratio: 1408 / 768;
-  min-height: 240px;
+  /* Founder 2026-08-16: "the featured devotional is 2x too tall." It was
+     rendering ~525px on a 1440 desktop. A 21:9 letterbox halves that without
+     touching the art or the copy — the plate is a banner over the story, not
+     a hero in its own right. */
+  aspect-ratio: 21 / 9;
+  max-height: 300px;
+  min-height: 160px;
   overflow: hidden;
   background: var(--mock-ink, black);
   border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
@@ -2675,9 +2680,18 @@ html.reduce-motion *::after {
     top: env(safe-area-inset-top, 0px);
     left: 0;
     height: 3px;
-    background: var(--color-gold);
+    /* Founder 2026-08-16: "the scroll line at the top is covered by the menu
+       on both desktop and mobile… and needs to be reposition to be visible."
+       It was at --z-sticky (100) while the sticky topbar is 120 and the nav
+       110, so the header simply painted over it. It rides ABOVE the whole
+       header stack now — a hairline on the very top edge of the viewport,
+       which is where a progress line belongs and where nothing else sits.
+       --mock-blue rather than --color-gold: gold IS cobalt in light mode
+       (the token trap), so the old line was invisible against the header
+       even where it was not covered. */
+    background: var(--mock-blue, #1f2a8d);
     transform-origin: left;
-    z-index: var(--z-sticky);
+    z-index: 400;
     transition:
       /* transform stays 100ms: scroll-linked tracking (signature exemption) */
       transform 100ms var(--motion-ease),
@@ -12688,20 +12702,37 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 @media (max-width: 640px) {
+  /* Founder 2026-08-16 (mobile pass): "Covers shove be 1 to a row and sized
+     appropriately." One plate per row, at the proportion the art was made for
+     rather than two cropped squares. */
   .covers {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cover-plate {
+    aspect-ratio: 4 / 5;
   }
   /* One paper per row on phones. Two makes each front page ~160px wide, which
      is too narrow to carry a masthead and standfirst — the whole point of the
      rack. Better one readable paper than two slivers. */
   .rack-paper {
     flex: 0 0 100%;
+    transform: none !important;
+    margin-right: 0;
+  }
+  /* "The rack doesnt need the bold blue divider between rows there are no
+     rows." At one paper per row the kiosk bar becomes a heavy rule between
+     single papers — the opposite of what it is for. */
+  .rack-bar {
+    display: none;
+  }
+  .rack-rail {
+    padding-top: 0;
   }
   .fp-below {
     columns: 1;
   }
   .spine {
-    height: 250px;
+    height: 360px;
   }
   .broad-columns {
     columns: 1;
@@ -13635,6 +13666,20 @@ html[data-held-moment] .mobile-tab-bar {
   display: block;
 }
 
+/* Desktop keeps titles in the hub, so the per-pane name is for assistive tech
+   only. The mobile lancet promotes it to visible text. */
+.rose-pane-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* The oculus. The only place a title is ever set at readable size, which is
    why thirty-seven captions are not fighting each other around the rim. */
 .rose-hub {
@@ -13722,37 +13767,319 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 @media (max-width: 700px) {
-  /* A rose window does not survive being shrunk to a phone: the outer ring
-     panes fall under 40px, which is below the touch target minimum and well
-     past legibility. So on small screens the window unrolls into a plain
-     ringed list — same order, same hub-first reading, no glass. */
+  /* THE LANCET (F-104).
+     Founder 2026-08-16: "The Rose concept doesnt even work for mobile- so the
+     entire concept needs to be rethought out."
+
+     Right — a rose window is a wide wall's window, and a phone is a narrow
+     wall. Narrow walls get LANCETS: tall, single-light windows set in a row.
+     So the concept is not shrunk, it is rebuilt in the form the wall allows.
+     The glass, the tracery, the unlit-until-you-look behaviour and the hub all
+     survive; only the geometry changes, from a wheel to a column.
+
+     A single tracery line runs the height of the window and the lights hang
+     off it, alternating, each with its title set beside the glass — which is
+     the one thing the desktop rose cannot do and the reason the mobile form
+     is arguably the more readable of the two. */
+  .rose {
+    gap: 0.9rem;
+    padding-top: 0.75rem;
+  }
+
   .rose-window {
     aspect-ratio: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.9rem;
+    padding-left: 1.6rem;
   }
+
+  /* The mullion — one continuous line the lights are set into. */
   .rose-tracery {
+    display: block;
+    inset: auto;
+    position: absolute;
+    left: 1.6rem;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: var(--rr-hair);
+    opacity: 0.5;
+  }
+  .rose-ring-line {
     display: none;
   }
-  .rose-pane,
+
+  .rose-pane {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    transform: none;
+    width: 92px !important;
+    margin-left: -1.6rem;
+    align-self: flex-start;
+    filter: saturate(0.6) brightness(0.85);
+  }
+
+  /* Alternate which side of the mullion each light sits on, so the column
+     reads as a window rather than a list of avatars. */
+  .rose-pane--b {
+    margin-left: 0.6rem;
+  }
+
+  /* On the lancet there is room to name each light beside its glass — the one
+     thing the desktop wheel cannot do. */
+  .rose-pane {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    width: auto !important;
+    overflow: visible;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .rose-glass {
+    position: relative;
+    inset: auto;
+    flex: 0 0 auto;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--plate-ground);
+    box-shadow: 0 0 0 1.5px var(--mock-line);
+  }
+  .rose-pane-name {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    clip-path: none;
+    overflow: visible;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+  .rose-pane-title {
+    font-family: var(--font-family-serif);
+    font-size: 1.12rem;
+    line-height: 1.1;
+    color: var(--mock-ink);
+  }
+  .rose-pane-days {
+    font-family: var(--font-family-ui);
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mock-muted);
+  }
+
+  .rose-pane:hover,
+  .rose-pane:focus-visible,
+  .rose-pane.is-named {
+    transform: scale(1.06);
+    filter: none;
+  }
+
+  /* The hub becomes the head of the lancet — the pointed light at the top
+     that names whatever you last touched. */
   .rose-hub {
     position: relative;
     left: auto;
     top: auto;
     transform: none;
+    order: -1;
     width: 100%;
-    aspect-ratio: 3 / 1;
-    border-radius: 0;
-    filter: none;
+    aspect-ratio: 16 / 9;
+    border-radius: 96px 96px 6px 6px;
+    margin-left: -1.6rem;
   }
-  .rose-pane:hover,
-  .rose-pane:focus-visible,
-  .rose-pane.is-named {
+
+  .rose-hub-title {
+    font-size: 1.35rem;
+  }
+}
+
+
+
+/* ── The bento sheet (F-104) ────────────────────────────────────────────
+   Founder 2026-08-16, on the paper: "It should feel like a bento style
+   newspaper layout, with content pieces broken up with box contianers and
+   lines seperating and grouping information." Reference for structure (not
+   motion): seaharvest.net.au — ruled compartments butting edge to edge.
+
+   The trick that makes it read as ONE SHEET rather than a stack of cards:
+   every compartment carries a full border, and the grid pulls them together
+   by one hairline so adjacent boxes SHARE a rule instead of drawing two. */
+
+.paper-sheet {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2.2rem;
+  /* The sheet's own outer rule. Inner rules come from the boxes. */
+  border-top: var(--ed-hair);
+  border-left: var(--ed-hair);
+}
+
+.paper-box {
+  grid-column: span 3;
+  margin: 0;
+  padding: 1.35rem 1.4rem 1.5rem;
+  border-right: var(--ed-hair);
+  border-bottom: var(--ed-hair);
+  min-width: 0;
+}
+
+/* A compartment that takes the full measure. */
+.paper-box--wide {
+  grid-column: span 3;
+}
+
+/* The panel takes two columns, the prayer rail takes the third beside it —
+   the one place the sheet breaks into a real bento row. */
+.paper-box--panel {
+  grid-column: span 2;
+}
+
+.paper-box--rail {
+  grid-column: span 1;
+}
+
+/* Inside the sheet the old free-standing spacing is wrong: the box provides
+   the padding and the rules, so the sections stop drawing their own. */
+.paper-sheet .edition-section {
+  margin: 0;
+}
+
+.paper-sheet .edition-band {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.paper-sheet .edition-practice,
+.paper-sheet .edition-word {
+  padding: 0;
+}
+
+.paper-sheet .edition-practice {
+  border-right: var(--ed-hair);
+  padding-right: 1.4rem;
+}
+
+.paper-sheet .edition-word {
+  padding-left: 1.4rem;
+}
+
+/* Guides inside a compartment: the column rules do the separating, so the
+   cards lose their gaps and gain hairlines between them. */
+.paper-sheet .edition-guides {
+  gap: 0;
+}
+
+.paper-sheet .edition-guide {
+  padding: 0 1.1rem;
+  border-right: var(--ed-hair);
+}
+
+.paper-sheet .edition-guide:first-child {
+  padding-left: 0;
+}
+
+.paper-sheet .edition-guide:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+/* The prayer rail is one column now, so its petitions stack. */
+.paper-sheet .edition-petitions {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+}
+
+/* A newspaper's continuation line — right-aligned, small, the device that
+   tells you the story carries on somewhere else. */
+.paper-jump {
+  display: block;
+  margin-top: 1rem;
+  text-align: right;
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+@media (max-width: 900px) {
+  .paper-sheet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .paper-box,
+  .paper-box--wide,
+  .paper-box--panel,
+  .paper-box--rail {
+    grid-column: span 1;
+  }
+  .paper-sheet .edition-guide {
+    padding: 1.1rem 0;
+    border-right: 0;
+    border-bottom: var(--ed-hair);
+  }
+  .paper-sheet .edition-guide:last-child {
+    border-bottom: 0;
+  }
+  .paper-sheet .edition-practice {
+    border-right: 0;
+    border-bottom: var(--ed-hair);
+    padding: 0 0 1.1rem;
+  }
+  .paper-sheet .edition-word {
+    padding: 1.1rem 0 0;
+  }
+}
+
+
+/* ── Scroll motion (F-104) ──────────────────────────────────────────────
+   Founder 2026-08-16: "I want the entire site to have more livilieness and
+   scrolling animation… moments of paralax, and just very much surprising and
+   engaging polish." Reference for feel: oci.madebybuzzworthy.com.
+
+   THE PRE-REVEAL STATE ONLY EXISTS UNDER `.motion-ready`, which the Reveal
+   island adds on mount. No JS, no class, no hidden content — the page renders
+   exactly as it does today. This is the whole safety property: motion can only
+   ever ADD to a working page here, never gate it. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 620ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .motion-ready [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  /* A quieter variant for long runs of type, where a rise would read as
+     jitter: fade only. */
+  .motion-ready [data-reveal='fade'] {
     transform: none;
   }
-  .rose-hub {
-    aspect-ratio: 2 / 1;
-    order: -1;
+
+  /* Plates drift against the scroll. --parallax-y is written by the island and
+     is capped at ±28px, so an image never separates from its caption. */
+  .motion-ready [data-parallax] > img,
+  .motion-ready [data-parallax] > picture > img {
+    transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
+    will-change: transform;
   }
 }

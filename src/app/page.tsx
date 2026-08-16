@@ -382,6 +382,7 @@ export default function Home() {
         )}
 
         <section
+          data-reveal
           className="homepage-what-is-this"
           aria-label="What is this place?"
         >
@@ -460,7 +461,7 @@ export default function Home() {
           id="today-devotional"
           aria-label="Today's featured devotional"
         >
-          <div className="homepage-featured-devotional-art">
+          <div className="homepage-featured-devotional-art" data-parallax="0.55">
             <Image
               src={HOMEPAGE_TODAY.featuredArt}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
@@ -490,16 +491,10 @@ export default function Home() {
             >
               BEGIN THIS SERIES
             </Link>
-            {/* Founder direction 2026-05-13: the secondary link should
-                actually EXPLAIN why Bible-365 is relevant, not just
-                point at it. */}
-            <Link
-              href="/series/bible-365"
-              className="text-label homepage-bible365-browse-link"
-            >
-              Want the longer arc? Bible 365 walks the whole Scripture story —
-              52 weeks, five to seven minutes a day, every day standing alone →
-            </Link>
+            {/* The Bible-365 secondary link was cut 2026-08-16 (founder:
+                "The CTA to the Bible 365 should be removed."). The featured
+                slot now makes one offer instead of two — Bible 365 is still
+                one tap away in Series. */}
           </div>
         </section>
 
@@ -672,7 +667,7 @@ export default function Home() {
               .replace(/^\d+\.\s*/, '')
               .replace(/\.$/, '')
             return (
-              <article key={step.title} className="mock-step-card">
+              <article key={step.title} className="mock-step-card" data-reveal>
                 <div className="mock-step-image-wrap">
                   <div className="mock-step-image">
                     <Image
@@ -695,7 +690,7 @@ export default function Home() {
         {/* R40: Bottom CTA moved ABOVE the FAQ per founder direction.
             "Ready to begin" is the call-to-action; FAQ is supporting
             content that lives below it. */}
-        <section className="mock-cta">
+        <section className="mock-cta" data-reveal>
           <p className="text-label mock-kicker">READY TO BEGIN?</p>
           {resumeRoute ? (
             <>

@@ -657,6 +657,11 @@ export function RoseView({ slugs, progressBySeries, cardHref }: LayoutProps) {
           ring.slugs.map((slug, i) => {
             const series = SERIES_DATA[slug]
             if (!series) return null
+            // Running index across every ring, so the mobile lancet can
+            // alternate lights either side of the mullion without relying on
+            // nth-child (the tracery and hub are siblings too).
+            const seq =
+              rings.slice(0, ri).reduce((n, r) => n + r.slugs.length, 0) + i
             const angle = (360 / ring.slugs.length) * i - 90
             const rad = (angle * Math.PI) / 180
             const x = 50 + Math.cos(rad) * ring.radius
@@ -666,7 +671,9 @@ export function RoseView({ slugs, progressBySeries, cardHref }: LayoutProps) {
               <Link
                 key={slug}
                 href={cardHref(slug)}
-                className={`rose-pane ${isNamed ? 'is-named' : ''}`}
+                className={`rose-pane rose-pane--${seq % 2 === 0 ? 'a' : 'b'} ${
+                  isNamed ? 'is-named' : ''
+                }`}
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
@@ -685,8 +692,12 @@ export function RoseView({ slugs, progressBySeries, cardHref }: LayoutProps) {
                     eager
                   />
                 </span>
-                <span className="sr-only">
-                  {series.title} — {dayCountLabel(slug)}
+                {/* Visible beside the glass on the mobile lancet, where there
+                    is room for it; the desktop rose keeps titles in the hub
+                    and this collapses to screen-reader only. */}
+                <span className="rose-pane-name">
+                  <span className="rose-pane-title">{series.title}</span>
+                  <span className="rose-pane-days">{dayCountLabel(slug)}</span>
                 </span>
               </Link>
             )

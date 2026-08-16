@@ -995,3 +995,11 @@ features:
     prd: docs/feature-prds/F-103.md
     methodology_refs:
       - M00
+  - id: F-104
+    title: The mobile pass, the lancet, and site-wide scroll motion
+    slug: mobile-pass-lancet-and-scroll-motion
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-104.md
+    methodology_refs:
+      - M00

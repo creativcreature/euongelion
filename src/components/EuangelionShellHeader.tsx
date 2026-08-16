@@ -43,14 +43,17 @@ const DESKTOP_NAV_ITEMS = [
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
   { href: '/library', label: 'LIBRARY' },
-  { href: '/how-we-write', label: 'HOW WE WRITE' },
+  // Founder 2026-08-16: "menu item should only be in footer" — HOW WE WRITE
+  // is a colophon, not a destination. It lives in SiteBottom's RESOURCES
+  // column and is gone from the primary nav.
 ]
 const MOBILE_OVERFLOW_ITEMS = [
   // HOME lives here too (founder report 2026-07-10): the wordmark links
   // home, but an explicit entry keeps it discoverable. Not a tab-bar
   // duplicate — "/" is deliberately not a tab destination under SA-024.
   { href: '/', label: 'HOME', icon: 'home' as const },
-  { href: '/how-we-write', label: 'HOW WE WRITE' },
+  // HOW WE WRITE is footer-only (founder 2026-08-16) — out of the hamburger
+  // as well as the desktop bar. It is a colophon, not a destination.
 ]
 
 /**

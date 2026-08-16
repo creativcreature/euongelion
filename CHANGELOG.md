@@ -548,6 +548,38 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## The mobile pass, the lancet, and motion (2026-08-16)
+
+Registered as **SA-060** (F-104).
+
+**Mobile series toggles.** The kiosk bar is hidden under 640px — at one paper a
+row it becomes a heavy rule between single papers, the opposite of its purpose.
+Covers drop to one per row.
+
+**The rose becomes a lancet on mobile.** Founder: _"The Rose concept doesnt even
+work for mobile."_ Right — a rose window is a *wide* wall's opening, and a phone
+is a narrow wall. Narrow walls get lancets. So it's rebuilt, not shrunk: one
+mullion down the height of the window, lights alternating either side, each
+carrying its title beside the glass — which the desktop wheel can't do, and
+arguably makes the mobile form the more readable of the two.
+
+**Home:** Bible-365 CTA removed; featured plate from ~525px to a 21:9 banner
+capped at 300px. **How we write** is footer-only, out of both menus.
+
+**The scroll line was invisible for two reasons** — it sat at z-index 100 under
+a 120 topbar, *and* it was `--color-gold`, which is cobalt in light mode. Now
+z-index 400 on the top edge, in `--mock-blue`.
+
+**Site-wide scroll motion**, with one safety property worth stating: the
+pre-reveal hidden state exists only under `.motion-ready`, a class the island
+adds on mount. No JS → no class → no hidden content. Motion can only ever *add*
+to a working page, never gate one. Reveals fire once, reduced-motion stops the
+loop from starting, parallax is capped at ±28px.
+
+**The paper is a bento sheet** — ruled compartments butting edge to edge,
+sharing rules, the way a page is actually made up. Structural reference Sea
+Harvest, scoped to Today and Daily Bread only. — SA-060 (F-104)
+
 ## Daily Bread and Today swap places (2026-08-16)
 
 Founder: _"Daily Bread should be the Today page, and Today page should be the

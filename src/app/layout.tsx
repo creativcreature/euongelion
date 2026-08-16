@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
+import Reveal from '@/components/motion/Reveal'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import MobileTabBar from '@/components/MobileTabBar'
 import InstallPrompt from '@/components/InstallPrompt'
@@ -87,6 +88,11 @@ export default function RootLayout({
           <MobileTabBar />
           <InstallPrompt />
         </Providers>
+        {/* F-104: one scroll-motion island for the whole site. Renders
+            nothing; adds reveal/parallax behaviour to anything carrying
+            data-reveal or data-parallax, and does nothing at all under
+            prefers-reduced-motion. */}
+        <Reveal />
         <ServiceWorkerRegistration />
         <ConsentAwareAnalytics />
       </body>
