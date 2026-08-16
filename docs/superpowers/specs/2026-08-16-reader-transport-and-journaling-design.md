@@ -3,7 +3,7 @@
 **Date:** 2026-08-16
 **Status:** Awaiting founder approval
 **Decisions proposed:** SA-060 (two-state site model), SA-058 (Audible-modeled transport), SA-061 (unified journaling)
-**Feature PRDs:** F-104, F-101, F-102
+**Feature PRDs:** F-105, F-101, F-102
 **Supersedes:** SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5
 **Prod DDL:** migration 018 (`listening_progress`) — founder-approved 2026-08-16, satisfying SA-039 §2's named-approval requirement
 

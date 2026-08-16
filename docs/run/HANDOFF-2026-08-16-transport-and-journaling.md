@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-060/F-104) is next and is the one with a release blocker — see §6.
+**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-060/F-105) is next and is the one with a release blocker — see §6.
 
 ---
 
@@ -131,7 +131,7 @@ The prayer number is why `PrayerModule` gets an _Add your own prayer_ affordance
 - **SA-058** — Audible-modeled transport + cross-device resume.
 - **SA-061** — unified journaling on the `annotations` table.
 
-Feature PRDs claimed: **F-104** (two-state), **F-101** (transport), **F-102** (journaling).
+Feature PRDs claimed: **F-105** (two-state), **F-101** (transport), **F-102** (journaling).
 
 ### TWO collisions happened — read this before claiming an id
 
@@ -146,7 +146,7 @@ canonical, so it is theirs. Renumbered again:
 | -------------------------- | ------------------ | ---------------------------- |
 | Audible transport + resume | **SA-058 / F-101** | never collided               |
 | Journaling                 | **SA-061 / F-102** | was SA-059                   |
-| Two-state model            | **SA-060 / F-104** | was SA-057/F-100, then F-103 |
+| Two-state model            | **SA-060 / F-105** | was SA-057/F-100, then F-103 |
 
 **Two commits cite the superseded number.** `7f6d64bc` and `de54e26f` say
 "SA-059 (F-102)" in their messages; the work is SA-061. Git history is not
