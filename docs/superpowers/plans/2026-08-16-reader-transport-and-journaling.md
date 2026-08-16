@@ -1706,8 +1706,8 @@ Expected: PASS. Several highlight/bookmark tests will need updating — they pin
 ```bash
 git add src/components/TextHighlightTrigger.tsx src/app/api/bookmarks/route.ts \
   src/app/daily-bread/page.tsx __tests__/two-state-model.test.tsx \
-  __tests__/save-state-auth-gate.test.ts CHANGELOG.md docs/feature-prds/F-100.md
-git commit -m "feat(auth): two states — signed out reads, signed in keeps — SA-057 (F-100)"
+  __tests__/save-state-auth-gate.test.ts CHANGELOG.md docs/feature-prds/F-103.md
+git commit -m "feat(auth): two states — signed out reads, signed in keeps — SA-060 (F-103)"
 ```
 
 ---
@@ -1757,11 +1757,11 @@ Show the curl output, the received email, and the rate-limit result. Do not flip
 
 - [ ] **Step 1: Record the three decisions**
 
-Add `SA-057`, `SA-058`, `SA-059` to `docs/production-decisions.yaml`. SA-057's note must state explicitly that it **reverses** SA-018 (as amended 2026-06-09), SA-038 §2 and SA-039 §5, and that SA-026 (Soul Audit anonymous and free forever) is **not** reversed.
+Add `SA-060`, `SA-058`, `SA-059` to `docs/production-decisions.yaml`. SA-060's note must state explicitly that it **reverses** SA-018 (as amended 2026-06-09), SA-038 §2 and SA-039 §5, and that SA-026 (Soul Audit anonymous and free forever) is **not** reversed.
 
 - [ ] **Step 2: Write the feature PRDs**
 
-`docs/feature-prds/F-100.md` (two-state model), `F-101.md` (transport), `F-102.md` (journaling). Re-check the registry first — F-numbers race under parallel sessions.
+`docs/feature-prds/F-103.md` (two-state model), `F-101.md` (transport), `F-102.md` (journaling). Re-check the registry first — F-numbers race under parallel sessions.
 
 - [ ] **Step 3: Update the tracking spine**
 
@@ -1783,7 +1783,7 @@ Expected: all pass.
 
 ```bash
 git add docs/production-decisions.yaml docs/feature-prds/ docs/PRODUCTION-*.md CHANGELOG.md
-git commit -m "docs(tracking): SA-057/058/059 and the reversals they carry — SA-057 (F-100)"
+git commit -m "docs(tracking): SA-060/058/059 and the reversals they carry — SA-060 (F-103)"
 ```
 
 ---

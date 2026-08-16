@@ -2,8 +2,8 @@
 
 **Date:** 2026-08-16
 **Status:** Awaiting founder approval
-**Decisions proposed:** SA-057 (two-state site model), SA-058 (Audible-modeled transport), SA-059 (unified journaling)
-**Feature PRDs:** F-100, F-101, F-102
+**Decisions proposed:** SA-060 (two-state site model), SA-058 (Audible-modeled transport), SA-059 (unified journaling)
+**Feature PRDs:** F-103, F-101, F-102
 **Supersedes:** SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5
 **Prod DDL:** migration 018 (`listening_progress`) — founder-approved 2026-08-16, satisfying SA-039 §2's named-approval requirement
 
@@ -21,7 +21,7 @@ Library development follows this work as its own session, explicitly.
 
 ---
 
-## 2. SA-057 — The two-state site model
+## 2. SA-060 — The two-state site model
 
 ### 2.1 The rule
 
@@ -88,13 +88,13 @@ Making the account the gate for everything means the account has to be flawless.
 
 The code path (`/api/auth/magic-link`, `/api/auth/verify-code`, `/auth/callback`) is sound and already handles the mail rate limit as "try again shortly."
 
-**Gate flip is blocked on a verified live sign-in.** SA-057 may be built behind the existing flags, but the signed-out wall does not go live until an end-to-end sign-in has been performed against production and the received email shown to the founder.
+**Gate flip is blocked on a verified live sign-in.** SA-060 may be built behind the existing flags, but the signed-out wall does not go live until an end-to-end sign-in has been performed against production and the received email shown to the founder.
 
 ### 2.8 Data protection
 
 - Religious belief is special-category data under GDPR Art. 9. This is already true of the product; journaling does not newly create the obligation, but it raises the stakes.
 - **All new surfaces store to the existing `annotations` table**, which is already enumerated in `src/lib/privacy/data-export.ts`, `account-deletion.ts`, and `retention-cleanup.ts`. Export, delete, and retention therefore work on day one. A new table would silently escape all three.
-- `retention-cleanup` purges **anonymous** sessions after 30 days and never touches authenticated rows. Under SA-057 no anonymous annotation rows will exist at all, which simplifies it.
+- `retention-cleanup` purges **anonymous** sessions after 30 days and never touches authenticated rows. Under SA-060 no anonymous annotation rows will exist at all, which simplifies it.
 - **Journal content never leaves the account.** Reflection answers, journal entries, and note bodies are never sent to an LLM, never sent to analytics, and are excluded from the chat context builder. Highlighted _scripture and devotional text_ may continue to go to chat (it is published content); the reader's own writing may not.
 - Stated retention: kept while the account exists, destroyed on account deletion.
 
@@ -257,7 +257,7 @@ Everything above writes rows the existing Highlights and Notes tabs in `Devotion
 | 4   | Migration 018 + privacy-table wiring + export gap fix (§3.4)                   | —          |
 | 5   | Cross-device resume wired to the transport (§3.4)                              | 2, 4       |
 | 6   | Audio clips (§4.4)                                                             | 2, 3       |
-| 7   | SA-057 auth-state sweep, locked-not-hidden, anonymous-persistence removal (§2) | 3, 6       |
+| 7   | SA-060 auth-state sweep, locked-not-hidden, anonymous-persistence removal (§2) | 3, 6       |
 | 8   | Live sign-in verification against production (§2.7)                            | 7          |
 | 9   | Docs + decision reversals in `production-decisions.yaml`                       | all        |
 
@@ -286,7 +286,7 @@ Every ask in this thread, traced to where it is handled. Founder request, 2026-0
 | 11  | "so users can write journal entries and such"                             | §4.3 free entry, own prayer                                                                 | Scoped                                  |
 | 12  | "develop the Library more… once all this is sorted"                       | §5                                                                                          | **Deferred by founder**                 |
 | 13  | Audio clips at a timestamp                                                | §4.4                                                                                        | Approved, scoped                        |
-| 14  | "two site states… no account, data should not be retained"                | §2 (SA-057)                                                                                 | Approved, scoped                        |
+| 14  | "two site states… no account, data should not be retained"                | §2 (SA-060)                                                                                 | Approved, scoped                        |
 | 15  | "ensure accounts are 100% set up"                                         | §2.7 — gate flip blocked on live verification                                               | Scoped, **externally blocked**          |
 | 16  | "Spotify style wrap ups… their journey with God"                          | §2.8, §3.4 — substrate built, feature not                                                   | Substrate only                          |
 | 17  | Cross-device audio resume                                                 | §3.4, migration 018                                                                         | Approved, scoped                        |

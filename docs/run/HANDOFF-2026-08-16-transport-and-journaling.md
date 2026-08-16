@@ -25,7 +25,7 @@ A full 18-row trace of every ask to where it is handled is in **spec §7 (Ask in
 
 | #   | Ruling                                                                                                                                                                                                      | Consequence                                                                             |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| R1  | **Two site states.** "Having an account enables notes, saving features, highlights etc. No account, data should not be retained… The unsigned in state simply is a reader, non-interactive and non saving." | Becomes SA-057. **Reverses SA-018 (as amended), SA-038 §2, SA-039 §5.**                 |
+| R1  | **Two site states.** "Having an account enables notes, saving features, highlights etc. No account, data should not be retained… The unsigned in state simply is a reader, non-interactive and non saving." | Becomes SA-060. **Reverses SA-018 (as amended), SA-038 §2, SA-039 §5.**                 |
 | R2  | Gate line: **reading + Soul Audit stay open; Daily Bread + all saving gated.**                                                                                                                              | SA-026 ("Soul Audit anonymous and free forever") is NOT reversed.                       |
 | R3  | **Audio clips approved** — a bookmark at a timestamp, landing in the same Notes list.                                                                                                                       | Spec §4.4, plan Task 11.                                                                |
 | R4  | **Cross-device audio resume approved**, including the prod DDL it needs.                                                                                                                                    | This IS the founder-named approval that SA-039 §2 requires for prod DDL. Migration 018. |
@@ -127,11 +127,28 @@ The prayer number is why `PrayerModule` gets an _Add your own prayer_ affordance
 
 `docs/production-decisions.yaml` is canonical for SA ids. **Highest existing is SA-056.** Claimed here:
 
-- **SA-057** — two-state site model. Its note MUST state explicitly that it reverses SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5, and that SA-026 is NOT reversed.
+- **SA-060** — two-state site model. Its note MUST state explicitly that it reverses SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5, and that SA-026 is NOT reversed.
 - **SA-058** — Audible-modeled transport + cross-device resume.
 - **SA-059** — unified journaling on the `annotations` table.
 
-Feature PRDs claimed: **F-100** (two-state), **F-101** (transport), **F-102** (journaling). Highest existing was F-099.
+Feature PRDs claimed: **F-103** (two-state), **F-101** (transport), **F-102** (journaling).
+
+### A collision already happened — read this before claiming an id
+
+The two-state model was originally claimed as **SA-057 / F-100**. While this
+session was building the transport, a parallel session committed
+`6f5f040c feat(series): carved bookend plates… — SA-057 (F-100)` and took both.
+Renumbered here to **SA-060 / F-103**.
+
+SA-058, SA-059, F-101 and F-102 were NOT affected — verified against
+`production-decisions.yaml` (which recorded nothing above 057) and the PRD
+directory. Nothing needs undoing; commits `bb0ee3c4`, `db1ee9a6` and `7f6d64bc`
+cite ids that are still correct.
+
+The lesson is the one already in the traps list: **an id is not yours until it
+is committed.** Re-check `production-decisions.yaml` and `ls docs/feature-prds/`
+immediately before writing, not at planning time — planning here happened hours
+before the write.
 
 > **F-numbers and SA-numbers race under parallel sessions.** Re-check `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml` and `production-decisions.yaml` before writing, and renumber if another session took them.
 
