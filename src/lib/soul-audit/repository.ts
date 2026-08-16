@@ -1206,12 +1206,29 @@ export async function removeAnnotation(params: {
   return next.length < existing.length
 }
 
+/**
+ * Update an annotation, touching ONLY the fields the caller actually sent.
+ *
+ * This used to assign `anchor_text`, `body` and `style` unconditionally, which
+ * made a partial update destructive: the highlight editor PATCHes with just
+ * `annotationId` + `style` (recolour, or attach a note), and the route filled
+ * the rest through `sanitizeOptionalText(undefined, n)` — which returns null.
+ * So recolouring a highlight blanked the text it was anchored to.
+ *
+ * Nothing surfaced at the time. The loss appeared on the NEXT load, where
+ * `hydrateSavedHighlights` matches a row back onto the page by
+ * `anchor_text || body`: with both null there was nothing to match, the mark
+ * never repainted, and the Library row rendered empty.
+ *
+ * The distinction that fixes it is presence, not value — a key absent from
+ * `params` leaves its column alone, and an explicit `null` still clears it.
+ */
 export async function updateAnnotation(params: {
   sessionToken: string
   annotationId: string
-  anchorText: string | null
-  body: string | null
-  style: Record<string, unknown> | null
+  anchorText?: string | null
+  body?: string | null
+  style?: Record<string, unknown> | null
 }): Promise<AnnotationRecord | null> {
   const store = getStore()
   const cached = store.annotationsBySession.get(params.sessionToken) ?? []
@@ -1224,12 +1241,16 @@ export async function updateAnnotation(params: {
 
   if (!existing) return null
 
-  const nextRow: AnnotationRecord = {
-    ...existing,
-    anchor_text: params.anchorText,
-    body: params.body,
-    style: params.style,
-  }
+  const patch: Partial<AnnotationRecord> = {}
+  if ('anchorText' in params) patch.anchor_text = params.anchorText ?? null
+  if ('body' in params) patch.body = params.body ?? null
+  if ('style' in params) patch.style = params.style ?? null
+
+  // Nothing to change. Returning early keeps this from issuing an empty UPDATE,
+  // which PostgREST rejects rather than treating as a no-op.
+  if (Object.keys(patch).length === 0) return existing
+
+  const nextRow: AnnotationRecord = { ...existing, ...patch }
 
   const next = cached.map((row) =>
     row.id === params.annotationId ? nextRow : row,
@@ -1242,11 +1263,7 @@ export async function updateAnnotation(params: {
       id: params.annotationId,
       session_token: params.sessionToken,
     },
-    {
-      anchor_text: params.anchorText,
-      body: params.body,
-      style: params.style,
-    },
+    patch,
   )
 
   return persisted ?? nextRow

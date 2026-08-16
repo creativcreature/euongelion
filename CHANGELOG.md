@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## A STYLE-ONLY PATCH STOPPED EATING THE ANCHOR TEXT — SA-059 / F-102 (2026-08-16)
+
+Silent data loss in the most-used control in the reader, found while designing
+the journaling work and fixed before anything was built on the same table.
+
+`updateAnnotation` overwrote `anchor_text` and `body` with whatever the PATCH
+carried. The highlight editor PATCHes with only `annotationId` + `style` — a
+recolour, or a note — and `sanitizeOptionalText(undefined, n)` returns `null`.
+So **recolouring a highlight blanked the text it was anchored to.**
+
+Nothing surfaced at the time. The loss appeared on the next load, where
+`hydrateSavedHighlights` matches a stored row back onto the page by
+`anchor_text || body`: with both null there was nothing to match, the mark never
+repainted, and the Library row rendered empty. The reader's highlight was gone
+and no error was reported anywhere.
+
+The fix turns on **presence, not value** — a key absent from the request leaves
+its column alone; an explicit `null` still clears it. Both `updateAnnotation`
+and the PATCH route now build their patch from keys actually present.
+
+Verified against the live table rather than only in memory: insert a
+highlight-shaped row, PATCH style only, read back — `anchor_text` and `body`
+intact, colour applied, scratch row removed. That check matters because Vitest
+does not load `.env.local`, so `maybeSupabase()` returns null and the repository
+suite exercises the in-memory path ONLY. A green run there is not evidence that
+a column survived Postgres.
+
+Two pieces of schema drift recorded on the way through, neither breaking:
+`annotations.style` is live in production but absent from migration 009, and
+`annotations.id` is UUID in production where 009 declares it TEXT.
+
+Also fixed: `check-feature-prd-integrity.mjs` reported "Expected 95" while
+testing for 98, so the one person who could act on it was told the wrong number.
+The message now reads from the constant.
+
 ## SERIES IMAGERY REV B — two-orientation proof run (2026-08-16)
 
 Generated a complete staging-only review run for the 33 non-approved series:

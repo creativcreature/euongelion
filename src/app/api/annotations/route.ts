@@ -325,13 +325,25 @@ export async function PATCH(request: NextRequest) {
       })
     }
 
-    const row = await updateAnnotation({
+    // Presence in the request body decides whether a column is touched at all.
+    // Passing these unconditionally is what blanked them: the highlight editor
+    // PATCHes style only, and `sanitizeOptionalText(undefined, n)` returns null,
+    // so every recolour silently destroyed the row's anchor text.
+    const patch: Parameters<typeof updateAnnotation>[0] = {
       sessionToken: user.id,
       annotationId,
-      anchorText: sanitizeOptionalText(payload.anchorText, 500),
-      body: sanitizeOptionalText(payload.body, 4_000),
-      style: payload.style ?? null,
-    })
+    }
+    if ('anchorText' in payload) {
+      patch.anchorText = sanitizeOptionalText(payload.anchorText, 500)
+    }
+    if ('body' in payload) {
+      patch.body = sanitizeOptionalText(payload.body, 4_000)
+    }
+    if ('style' in payload) {
+      patch.style = payload.style ?? null
+    }
+
+    const row = await updateAnnotation(patch)
 
     if (!row) {
       return jsonError({

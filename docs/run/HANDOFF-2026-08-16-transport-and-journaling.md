@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status at time of writing:** design approved, plan approved, **Phase 1 in progress — Task 1 not yet committed.** No production code has changed yet.
+**Status:** design approved, plan approved, **Phase 1 in progress — Task 1 complete and committed.** See §7 for the live progress table.
 
 ---
 
@@ -74,6 +74,8 @@ Probed production directly, 2026-08-16:
 | `updated_at`                                   | **absent** — `42703`                                                           |
 
 `database/migrations/009_create_soul_audit_tables.sql:166` declares no `style` column. It was added out-of-band. Nothing is broken; it is drift worth reconciling later. **Consequence for design:** there is no `updated_at`, which is why edit time lives in `style.editedAt` and the journaling work needs no migration at all.
+
+Second drift found the same way: **`annotations.id` is UUID in production** where 009 declares it `TEXT`. Harmless in practice — `addAnnotation` uses `randomUUID()` — but any script that inserts a row with a non-UUID id gets `22P02 invalid input syntax for type uuid`. Worth knowing before you burn ten minutes on it.
 
 ### 4.3 GDPR export gap — pre-existing, unrelated to this work
 
@@ -146,12 +148,12 @@ Making the account the gate for **everything** on top of a rate-limited mailer w
 
 ## 7. Progress
 
-| Phase           | Tasks | State                                  |
-| --------------- | ----- | -------------------------------------- |
-| 1 — Foundations | 1–2   | **IN PROGRESS.** Task 1 not committed. |
-| 2 — Transport   | 3–8   | Not started                            |
-| 3 — Journaling  | 9–12  | Not started                            |
-| 4 — Two-state   | 13–15 | Not started                            |
+| Phase           | Tasks | State                                                                      |
+| --------------- | ----- | -------------------------------------------------------------------------- |
+| 1 — Foundations | 1–2   | **Task 1 DONE** — committed, verified against the live table. Task 2 next. |
+| 2 — Transport   | 3–8   | Not started                                                                |
+| 3 — Journaling  | 9–12  | Not started                                                                |
+| 4 — Two-state   | 13–15 | Not started                                                                |
 
 Phases 1–3 leave the product working under today's auth rules. **Phase 4 changes the rules and is separately revertable** — the founder can have the player and journaling live before the gate flips.
 

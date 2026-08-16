@@ -32,11 +32,16 @@ const uniqueIds = Array.from(new Set(ids)).sort()
 // repeated it a day later — the failure is not attributable from the message,
 // so whoever hits it next pays for someone else's omission.
 //
-// 95: F-095 (red letter).
-if (uniqueIds.length !== 98) {
+// 95: F-095 (red letter). 99: F-102 (notes and journal entries).
+//
+// The message reads from the constant now. It previously said "Expected 95"
+// while the check tested for 98, so the one person who could act on it was
+// told the wrong number — which is most of why this trap kept recurring.
+const EXPECTED_FEATURE_IDS = 99
+if (uniqueIds.length !== EXPECTED_FEATURE_IDS) {
   fail(
-    `Expected 95 feature IDs in registry, found ${uniqueIds.length}. ` +
-      `If you just added a PRD, bump this number in the same commit.`,
+    `Expected ${EXPECTED_FEATURE_IDS} feature IDs in registry, found ${uniqueIds.length}. ` +
+      `If you just added a PRD, bump EXPECTED_FEATURE_IDS in the same commit.`,
   )
 }
 
