@@ -11901,7 +11901,11 @@ html[data-held-moment] .mobile-tab-bar {
 .spine {
   position: relative;
   flex: 0 0 auto;
-  height: 380px;
+  /* Tall enough to carry the longest title in the catalog at the larger type
+     size. At 380px the long titles clipped mid-word, which on a spine reads as
+     a printing fault; 470px still lost the longest one in the catalog ("What
+     Happens When You Repeatedly Sin?"), so the shelf is cut to fit that. */
+  height: 515px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11935,8 +11939,15 @@ html[data-held-moment] .mobile-tab-bar {
 .spine-title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  /* Never clip a title. If one ever outgrows the spine it ellipsises, which
+     reads as a design decision; a hard cut reads as a bug. */
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: var(--font-family-serif);
-  font-size: 1.12rem;
+  /* Seven to a shelf instead of eight buys ~30px of spine width, which is
+     spent here — a spine you cannot read from across the room is a box. */
+  font-size: 1.45rem;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -12358,8 +12369,11 @@ html[data-held-moment] .mobile-tab-bar {
 
 .issue-title {
   font-family: var(--font-family-serif);
-  font-size: var(--mock-type-1);
-  line-height: 1.12;
+  /* Founder 2026-08-16: "Issues I want the title larger." An issue row is a
+     masthead line, so it takes masthead scale rather than body scale. */
+  font-size: clamp(1.5rem, 2.3vw, 2.25rem);
+  line-height: 1.06;
+  text-wrap: balance;
 }
 
 .issue-question {
@@ -13499,4 +13513,196 @@ html[data-held-moment] .mobile-tab-bar {
   width: 1.45em;
   height: 1.45em;
   display: block;
+}
+
+
+/* ── The Rose Window (F-099) ───────────────────────────────────────────
+   The one view in the set that is not a rectangle. A hub, then rings working
+   outward, set into drawn tracery. Panes are positioned by percentage around
+   the centre, so the whole window scales with its container and never needs
+   measuring. */
+
+.rose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.rose-window {
+  position: relative;
+  width: min(100%, 860px);
+  aspect-ratio: 1;
+}
+
+/* Tracery: the stone. Concentric hairlines that turn a scatter of circles
+   into one window. */
+.rose-tracery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rose-ring-line {
+  position: absolute;
+  border: var(--rr-hair);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.rose-pane {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  background: var(--plate-ground);
+  box-shadow: 0 0 0 1.5px var(--mock-line);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    filter 220ms ease;
+  /* Unlit glass. The window only comes up where the light is. */
+  filter: saturate(0.55) brightness(0.82);
+}
+
+.rose-pane:hover,
+.rose-pane:focus-visible,
+.rose-pane.is-named {
+  filter: none;
+  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow:
+    0 0 0 2px var(--color-crimson),
+    0 14px 30px -14px rgba(9, 12, 32, 0.75);
+  z-index: 3;
+}
+
+.rose-glass {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* The oculus. The only place a title is ever set at readable size, which is
+   why thirty-seven captions are not fighting each other around the rim. */
+.rose-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  background: var(--plate-ground);
+  box-shadow: 0 0 0 2.5px var(--mock-ink);
+  z-index: 4;
+}
+
+.rose-hub-plate {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.rose-hub-veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(9, 12, 32, 0.92) 38%,
+    rgba(9, 12, 32, 0.72) 100%
+  );
+}
+
+.rose-hub-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem;
+  max-width: 86%;
+}
+
+.rose-hub-title {
+  font-family: var(--font-family-serif);
+  font-size: clamp(1.05rem, 2.1vw, 1.75rem);
+  line-height: 1.08;
+  color: var(--plate-ink);
+  text-wrap: balance;
+}
+
+.rose-hub-meta {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--plate-ink);
+  opacity: 0.75;
+}
+
+.rose-caption {
+  margin: 0;
+  max-width: 46ch;
+  text-align: center;
+  font-family: var(--font-family-serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.4;
+  color: var(--mock-muted);
+  min-height: 2.9em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rose-pane {
+    transition: none;
+  }
+  .rose-pane:hover,
+  .rose-pane:focus-visible,
+  .rose-pane.is-named {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 700px) {
+  /* A rose window does not survive being shrunk to a phone: the outer ring
+     panes fall under 40px, which is below the touch target minimum and well
+     past legibility. So on small screens the window unrolls into a plain
+     ringed list — same order, same hub-first reading, no glass. */
+  .rose-window {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .rose-tracery {
+    display: none;
+  }
+  .rose-pane,
+  .rose-hub {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    border-radius: 0;
+    filter: none;
+  }
+  .rose-pane:hover,
+  .rose-pane:focus-visible,
+  .rose-pane.is-named {
+    transform: none;
+  }
+  .rose-hub {
+    aspect-ratio: 2 / 1;
+    order: -1;
+  }
 }

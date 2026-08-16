@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
@@ -57,11 +57,11 @@ export const VIEWS: ReadonlyArray<{
   // fastest way to recognise a reading you have seen; recency is the second.
   { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
   { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
-  { id: 'feature', label: 'Feature', blurb: 'The newest reading, and what sits around it.' },
+  { id: 'feature', label: 'Feature', blurb: 'Column inches by weight. The longest reading leads.' },
   { id: 'rack', label: 'Rack', blurb: 'Every series folded over the rail, mastheads out.' },
   { id: 'spines', label: 'Spines', blurb: 'Shelved. Read the spine, pull one out.' },
   { id: 'list', label: 'List', blurb: 'The whole catalog in one screen.' },
-  { id: 'mosaic', label: 'Mosaic', blurb: 'Hung by eye. Longer readings take more wall.' },
+  { id: 'mosaic', label: 'Rose', blurb: 'One window. A hub, then rings working outward.' },
 ]
 
 export interface SeriesProgress {
@@ -83,10 +83,21 @@ function Plate({
   slug,
   sizes,
   priority,
+  eager,
 }: {
   slug: string
   sizes: string
   priority?: boolean
+  /**
+   * Load immediately rather than lazily, WITHOUT the preload hint `priority`
+   * adds. The rose window needs this: its panes are transformed off their grid
+   * position (`translate(-50%, -50%)`), and Chrome's lazy loader never fires
+   * for them — every pane sat with an empty `currentSrc` and an unlit plate,
+   * even sitting in the middle of the viewport. Thirty-six `priority` images
+   * would be thirty-six preload hints competing with the page; `eager` just
+   * turns the laziness off.
+   */
+  eager?: boolean
 }) {
   const src = SERIES_DATA[slug]?.heroImage
   if (!src) return null
@@ -97,6 +108,7 @@ function Plate({
       fill
       sizes={sizes}
       priority={priority}
+      loading={eager && !priority ? 'eager' : undefined}
       className="series-plate-img"
     />
   )
@@ -131,7 +143,7 @@ function statusLabel(slug: string, progress?: SeriesProgress) {
  * actually allocates space, and every size here means something about the
  * series rather than being decoration:
  *
- *   LEAD      the newest reading — plate, banner headline, standfirst
+ *   LEAD      the longest reading — plate, banner headline, standfirst
  *   SECOND    the next two, boxed and ruled, above the fold
  *   COLUMN    a right-hand rail of briefs, headline + length only
  *   BELOW     the rest, set in four ruled columns like classified listings
@@ -140,8 +152,33 @@ function statusLabel(slug: string, progress?: SeriesProgress) {
  * generic grid — this is the furniture of print, which is the whole brief.
  */
 export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutProps) {
-  const leadSeries = SERIES_DATA[lead]
-  const rest = useMemo(() => slugs.filter((s) => s !== lead), [slugs, lead])
+  // Founder 2026-08-16: "Feature needs restyling, feels very unbalanced. I like
+  // asymettry, but the hiearchy doesnt make sense in terms of size of
+  // devotionals."
+  //
+  // That is the right complaint, and the fix is not to even the sizes out — it
+  // is to make them MEAN something. A front page gives a story column inches in
+  // proportion to its weight. Here weight is the length of the reading: a
+  // 365-day companion set as a one-line brief while a five-day sits across the
+  // top is exactly the nonsense being described.
+  //
+  // So the page is allocated by days, longest first, with recency breaking
+  // ties. The asymmetry stays; it just now tells the truth about scale.
+  const byWeight = useMemo(() => {
+    return [...slugs].sort((a, b) => {
+      const da = SERIES_DATA[a]?.days.length ?? 0
+      const db = SERIES_DATA[b]?.days.length ?? 0
+      if (db !== da) return db - da
+      return seriesRecencyRank(a) - seriesRecencyRank(b)
+    })
+  }, [slugs])
+
+  const headline = byWeight[0] ?? lead
+  const leadSeries = SERIES_DATA[headline]
+  const rest = useMemo(
+    () => byWeight.filter((s) => s !== headline),
+    [byWeight, headline],
+  )
   const second = rest.slice(0, 2)
   const rail = rest.slice(2, 7)
   const below = rest.slice(7)
@@ -150,14 +187,16 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
     <div className="frontpage">
       <div className="fp-above">
         <div className="fp-main">
-          {leadSeries && slugs.includes(lead) && (
-            <Link href={cardHref(lead)} className="fp-lead">
+          {leadSeries && (
+            <Link href={cardHref(headline)} className="fp-lead">
               <span className="fp-lead-plate">
-                <Plate slug={lead} sizes="(max-width: 900px) 100vw, 58vw" priority />
+                <Plate slug={headline} sizes="(max-width: 900px) 100vw, 58vw" priority />
               </span>
               <span className="fp-lead-head">{leadSeries.title}</span>
               <span className="fp-lead-stand">{leadSeries.question}</span>
-              <span className="fp-byline">Newest · {dayCountLabel(lead)}</span>
+              <span className="fp-byline">
+                The long read · {dayCountLabel(headline)}
+              </span>
             </Link>
           )}
 
@@ -474,11 +513,10 @@ function Bookend({ index, side }: { index: number; side: 'left' | 'right' }) {
  * Width-as-length is the one piece of information a real shelf gives you at a
  * glance, so it is the one encoded here.
  */
-// Eight, not twelve. At the widened spine sizes twelve overflowed 1308px of
-// shelf and WRAPPED inside its own row — which put the bookends around two
-// lines of books and the board under only the lower one. Eight always fits on
-// one line, so a shelf is a shelf.
-const SPINES_PER_SHELF = 8
+// Founder 2026-08-16: "7 books per row on the spines, larger font for the
+// titles." Seven leaves each spine wide enough to set the title at a size you
+// can read across a room, which is what a spine is for.
+const SPINES_PER_SHELF = 7
 
 export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   // Founder 2026-08-16: "Spine should have several rows of books and the spines
@@ -509,8 +547,8 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
           // Width still encodes length, and is now sized so a shelf of twelve
           // FILLS the row rather than trailing off into whitespace. Clamped so
           // bible-365 is a broad volume, not a wall.
-          // Capped at 150 so eight of the longest readings still fit one line.
-          const width = Math.min(150, Math.max(96, 88 + days * 4.5))
+          // Capped at 200 so seven of the longest readings still fit one line.
+          const width = Math.min(200, Math.max(132, 124 + days * 6))
           return (
             <Link
               key={slug}
@@ -560,41 +598,159 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
-/* ── 6. MOSAIC ──────────────────────────────────────────────────────── */
+/* ── 6. THE ROSE WINDOW ─────────────────────────────────────────────
 
-/** Hung by eye: a longer reading takes more wall. Masonry via CSS columns. */
-export function MosaicView({ slugs, progressBySeries, cardHref }: LayoutProps) {
+   Founder 2026-08-16: "Mosaic needs a completely different treatment, not a
+   fan of it. Make whatever this one is extemely unique and creative. think
+   outside the box. Completely new idea/layout for that one."
+
+   Every other view in this set is a rectangle: a grid, a rail, a shelf, a
+   list. So this one leaves the rectangle entirely.
+
+   A rose window is the one piece of furniture a church puts its whole story
+   into, and it is built exactly the way a catalog is: a centre, then rings
+   working outward, each pane its own scene, all of it only legible when the
+   light is behind it. The counts even fall out right — a hub, a ring of
+   twelve, a ring of twenty-four, which is the arithmetic of Revelation 4
+   before it is the arithmetic of thirty-seven series.
+
+   Reading a real rose window means standing back and then stepping close.
+   That is the interaction: the hub carries the name of whichever pane you are
+   on, so titles are always readable at full size in one fixed place instead of
+   being shrunk into thirty-seven tiny captions. Nothing rotates on hover and
+   nothing spins on load — a window is still, and this is a reading surface,
+   not a toy.
+
+   Ring sizes are computed, never hardcoded to 37: rings fill 12, then 24, then
+   36, and the last ring takes whatever is left. Add a series tomorrow and the
+   window still closes. */
+
+const ROSE_RINGS = [12, 24, 36]
+
+interface Ring {
+  radius: number
+  size: number
+  slugs: string[]
+}
+
+function buildRings(slugs: string[]): Ring[] {
+  const rings: Ring[] = []
+  let cursor = 0
+  let index = 0
+  while (cursor < slugs.length) {
+    const capacity = ROSE_RINGS[index] ?? ROSE_RINGS[ROSE_RINGS.length - 1]
+    const take = slugs.slice(cursor, cursor + capacity)
+    rings.push({
+      // Percentages of the window's half-width, so the whole thing scales with
+      // its container and needs no measurement.
+      radius: 27 + index * 16,
+      size: index === 0 ? 15 : index === 1 ? 11.5 : 9.5,
+      slugs: take,
+    })
+    cursor += take.length
+    index += 1
+  }
+  return rings
+}
+
+export function RoseView({ slugs, progressBySeries, cardHref }: LayoutProps) {
+  const hub = slugs[0]
+  const petals = useMemo(() => slugs.slice(1), [slugs])
+  const rings = useMemo(() => buildRings(petals), [petals])
+  const [focused, setFocused] = useState<string | null>(null)
+
+  const named = focused ?? hub
+  const namedSeries = SERIES_DATA[named]
+
   return (
-    <div className="mosaic">
-      {slugs.map((slug) => {
-        const series = SERIES_DATA[slug]
-        if (!series) return null
-        const days = series.days.length
-        const tall = days >= 7 ? 'mosaic-tile--tall' : days <= 5 ? 'mosaic-tile--short' : ''
-        return (
-          <Link key={slug} href={cardHref(slug)} className={`mosaic-tile ${tall}`}>
-            <span className="mosaic-plate">
-              <Plate slug={slug} sizes="(max-width: 640px) 46vw, 24vw" />
+    <div className="rose">
+      <div className="rose-window">
+        {/* Tracery — the stone the glass is set into. Drawn, not decorative:
+            it is what makes the rings read as one window rather than as
+            circles floating on a page. */}
+        <span className="rose-tracery" aria-hidden="true">
+          {rings.map((ring, i) => (
+            <span
+              key={i}
+              className="rose-ring-line"
+              style={{
+                inset: `${50 - ring.radius}%`,
+              }}
+            />
+          ))}
+        </span>
+
+        {rings.map((ring, ri) =>
+          ring.slugs.map((slug, i) => {
+            const series = SERIES_DATA[slug]
+            if (!series) return null
+            const angle = (360 / ring.slugs.length) * i - 90
+            const rad = (angle * Math.PI) / 180
+            const x = 50 + Math.cos(rad) * ring.radius
+            const y = 50 + Math.sin(rad) * ring.radius
+            const isNamed = named === slug
+            return (
+              <Link
+                key={slug}
+                href={cardHref(slug)}
+                className={`rose-pane ${isNamed ? 'is-named' : ''}`}
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  width: `${ring.size}%`,
+                }}
+                title={`${series.title} · ${dayCountLabel(slug)}`}
+                onMouseEnter={() => setFocused(slug)}
+                onMouseLeave={() => setFocused(null)}
+                onFocus={() => setFocused(slug)}
+                onBlur={() => setFocused(null)}
+              >
+                <span className="rose-glass">
+                  <Plate
+                    slug={slug}
+                    sizes="(max-width: 700px) 22vw, 13vw"
+                    eager
+                  />
+                </span>
+                <span className="sr-only">
+                  {series.title} — {dayCountLabel(slug)}
+                </span>
+              </Link>
+            )
+          }),
+        )}
+
+        {/* The hub: the oculus, and the one place a title is ever set at a
+            size you can actually read. */}
+        {namedSeries && (
+          <Link
+            href={cardHref(named)}
+            className="rose-hub"
+            onMouseEnter={() => setFocused(hub === named ? null : named)}
+          >
+            <span className="rose-hub-plate">
+              <Plate slug={named} sizes="20vw" eager />
             </span>
-            <span className="mosaic-title">{series.title}</span>
-            <span className="mosaic-meta">
-              {statusLabel(slug, progressBySeries.get(slug))}
+            <span className="rose-hub-veil" aria-hidden="true" />
+            <span className="rose-hub-copy">
+              <span className="rose-hub-title">{namedSeries.title}</span>
+              <span className="rose-hub-meta">
+                {statusLabel(named, progressBySeries.get(named))}
+              </span>
             </span>
           </Link>
-        )
-      })}
+        )}
+      </div>
+
+      <p className="rose-caption">
+        {focused
+          ? namedSeries?.question
+          : 'Every reading we have, set as one window. Move across the glass.'}
+      </p>
     </div>
   )
 }
 
-/* ── 7. ISSUES ─────────────────────────────────────────────────────── */
-
-/**
- * Issue numbers come from release order (`seriesRecencyRank`), so No. 01 is the
- * first reading published and the highest number is the newest. The number is
- * a fact about the catalog, not an ornament — which is why this view always
- * reads newest-first regardless of the active sort.
- */
 export function IssuesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   const ordered = useMemo(
     () => [...slugs].sort((a, b) => seriesRecencyRank(b) - seriesRecencyRank(a)),
@@ -637,6 +793,6 @@ export const LAYOUTS: Record<ViewId, (props: LayoutProps) => React.ReactElement>
   covers: CoversView,
   spines: SpinesView,
   list: ListView,
-  mosaic: MosaicView,
+  mosaic: RoseView,
   issues: IssuesView,
 }

@@ -1,6 +1,6 @@
 // Euangelion Service Worker
-// R65 (F-098/SA-055): v85 — subject desks with plates, matched shelf
-// bookends, one-size rack papers, and a Daily Edition that carries a paper.
+// R66 (F-099/SA-056): v87 — front page allocates by weight, seven spines a
+// shelf, and Mosaic becomes the rose window.
 // R64 (F-094/F-097/SA-054): bumped to v83 — Feature is a front page, Spines
 // are shelves, and /today is the Daily Edition with its own nav entry.
 // R63 (F-095/SA-053): bumped to v80 — red letter is comprehensive; every
@@ -84,7 +84,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v86'
+const CACHE_NAME = 'euangelion-v87'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

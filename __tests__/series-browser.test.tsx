@@ -74,7 +74,7 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('defaults to Covers, and Feature leads with the newest eligible series', () => {
+  it('defaults to Covers, and Feature leads with the longest reading', () => {
     const { container } = render(<SeriesBrowser />)
     // Founder-ordered 2026-08-15: Covers first, Issues second.
     expect(screen.getByRole('tab', { name: 'Covers' })).toHaveAttribute(
@@ -82,7 +82,7 @@ describe('SeriesBrowser — ten layouts', () => {
       'true',
     )
     expect(screen.getAllByRole('tab').map((t) => t.getAttribute('aria-label'))).toEqual([
-      'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List', 'Mosaic',
+      'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List', 'Rose',
     ])
     openView('Feature')
     const lead = container.querySelector('.fp-lead') as HTMLElement
@@ -93,6 +93,44 @@ describe('SeriesBrowser — ten layouts', () => {
     )
     // …but it is still on the shelf.
     expect(missingFromStage(container)).toEqual([])
+  })
+
+  it('the front page allocates column inches by the length of the reading', () => {
+    // Founder 2026-08-16: "the hiearchy doesnt make sense in terms of size of
+    // devotionals." Size now encodes days, so the page cannot set a five-day
+    // above a fifty-day. Read the day counts down the page and assert they
+    // never increase.
+    const { container } = render(<SeriesBrowser />)
+    openView('Feature')
+    const days = [
+      container.querySelector('.fp-lead'),
+      ...container.querySelectorAll('.fp-story'),
+      ...container.querySelectorAll('.fp-brief'),
+    ]
+      .map((el) => el?.textContent?.match(/(\d+)\s+DAYS?/i)?.[1])
+      .filter(Boolean)
+      .map(Number)
+
+    expect(days.length).toBeGreaterThan(3)
+    for (let i = 1; i < days.length; i += 1) {
+      expect(days[i]).toBeLessThanOrEqual(days[i - 1])
+    }
+  })
+
+  it('the rose window sets every reading into rings around one hub', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Rose')
+    const hub = container.querySelector('.rose-hub')
+    const panes = container.querySelectorAll('.rose-pane')
+    expect(hub).not.toBeNull()
+    expect(panes.length).toBeGreaterThan(10)
+    // Nothing dropped: hub + panes accounts for the whole catalog.
+    expect(missingFromStage(container)).toEqual([])
+    // Every pane carries an accessible name, since the glass itself is
+    // decorative and the title lives in the hub.
+    panes.forEach((pane) => {
+      expect(pane.textContent?.trim()).toBeTruthy()
+    })
   })
 
   it('the front page leads with the headline, byline last', () => {

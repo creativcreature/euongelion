@@ -277,6 +277,42 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## The rose window, and a front page that means it (2026-08-16)
+
+Registered as **SA-056** (F-099).
+
+**Feature allocates column inches by weight.** Founder: _"I like asymettry, but
+the hiearchy doesnt make sense in terms of size of devotionals."_ The fix isn't
+to even the sizes out — it's to make them mean something. Sorted by length of
+reading, recency breaking ties, lead bylined "The long read". A 365-day
+companion set as a one-line brief while a five-day ran across the top was
+exactly the nonsense. A test now reads the day counts down the page and asserts
+they never increase.
+
+**Seven spines to a shelf, larger titles.** Seven buys ~30px of width, spent on
+type (1.12 → 1.45rem). Height 380 → 515px, because at that size the long titles
+clipped mid-word — on a spine that reads as a printing fault.
+
+**Issues takes masthead scale.** An issue row is a masthead line, so it comes
+off body scale.
+
+**Mosaic is now the rose window.** Every other view is a rectangle — grid, rail,
+shelf, list — so this one leaves the rectangle. A hub, then rings working
+outward, each pane its own scene, glass unlit until the light is behind it. The
+pane under your cursor lights; the hub carries its title at readable size, which
+is how thirty-seven titles stay available without thirty-seven captions fighting
+around the rim. Nothing spins on load, nothing rotates on hover — a window is
+still. Rings are computed (12, 24, 36, remainder), never hardcoded to 37, and
+under 700px it unrolls into a list rather than shrinking panes below the touch
+minimum.
+
+**Two traps worth keeping.** Chrome never fires its lazy loader for the rose
+panes — they're transformed off their grid position, so every one sat with an
+empty `currentSrc` and an unlit plate in the middle of the viewport; `Plate`
+gained an `eager` prop that skips lazy without adding thirty-six preload hints.
+And `statusLabel` already falls back to `dayCountLabel`, so pairing them printed
+"6 DAYS · 6 DAYS". — SA-056 (F-099)
+
 ## Subject desks, bookends, and a paper worth reading (2026-08-16)
 
 Second pass on the same surfaces. Registered as **SA-055** (F-098).
