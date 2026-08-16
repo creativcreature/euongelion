@@ -220,10 +220,15 @@ export interface Guide {
   /** Three or four steps. A guide with nine steps is an essay. */
   steps: string[]
   /**
-   * Riso plate, chosen for the guide's subject. These are webp derivatives of
-   * `public/images/library/poster/*.png` — the originals are 1-2 MB each and
-   * `next.config` sets `images.unoptimized`, so the raw PNG would ship to the
-   * browser as-is. 25.1 MB of plates became 2.26 MB.
+   * Riso plate, generated for THIS guide's subject.
+   *
+   * Founder 2026-08-16: "The Daily Bread suffers the same terrible images.
+   * They need to be redone with the image prompt i prescribed." These six were
+   * regenerated against the locked devo-go preamble
+   * (`scripts/imagery/prompt-preamble.md`) — cobalt on cream, Ben-Day dots
+   * carrying every tone, no greys, no gold, no glow, no text — replacing the
+   * older library posters, which were glowing gold-and-blue scenes from a
+   * different era of the brand.
    */
   image: string
   alt: string
@@ -254,7 +259,7 @@ export const GUIDES: Guide[] = [
       'Write one sentence on what the whole thing seemed to be about.',
       'Only then go back for the verse that caught you.',
     ],
-    image: '/images/edition/frag-holding-scroll.webp',
+    image: '/images/edition/guide-whole-book.webp',
     alt: 'A hand holding an open scroll',
     minutes: '20–40 min',
   },
@@ -269,7 +274,7 @@ export const GUIDES: Guide[] = [
       'Ask what has to be true of God for the line to make sense.',
       'Then ask what it asks of you.',
     ],
-    image: '/images/edition/nt-emmaus-road-stranger.webp',
+    image: '/images/edition/guide-who-speaks.webp',
     alt: 'Two travellers on a road, joined by a stranger',
     minutes: '10 min',
   },
@@ -284,7 +289,7 @@ export const GUIDES: Guide[] = [
       'Notice what changed in the quoting. That is usually the argument.',
       'Prefer the clear passage over the obscure one when they seem to disagree.',
     ],
-    image: '/images/edition/ot-stone-tablets-tablets.webp',
+    image: '/images/edition/guide-scripture-interprets.webp',
     alt: 'Two stone tablets',
     minutes: '15 min',
   },
@@ -299,7 +304,7 @@ export const GUIDES: Guide[] = [
       'Respond: say back to God whatever that word raised.',
       'Rest: stop reading. Stay a minute longer than is comfortable.',
     ],
-    image: '/images/edition/frag-holding-lamp-aloft.webp',
+    image: '/images/edition/guide-lectio.webp',
     alt: 'A hand holding a lamp aloft',
     minutes: '8 min',
   },
@@ -314,7 +319,7 @@ export const GUIDES: Guide[] = [
       'Read three of those passages in full.',
       'Come back to your verse. It will have thickened.',
     ],
-    image: '/images/edition/par-mustard-seed-palm.webp',
+    image: '/images/edition/guide-word-root.webp',
     alt: 'A mustard seed held in an open palm',
     minutes: '20 min',
   },
@@ -329,7 +334,7 @@ export const GUIDES: Guide[] = [
       'Each say the one thing you noticed and the one thing you did not follow.',
       'Leave the unresolved thing unresolved. Come back to it.',
     ],
-    image: '/images/edition/frag-breaking-bread-hands.webp',
+    image: '/images/edition/guide-together.webp',
     alt: 'Two hands breaking bread',
     minutes: '30 min',
   },

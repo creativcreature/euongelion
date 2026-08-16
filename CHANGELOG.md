@@ -690,6 +690,40 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Loose ends: imagery ruling, fail-open motion, the mobile menu (2026-08-16)
+
+Registered as **SA-063** (F-107).
+
+**Image generation is Codex built-in only**, now recorded in CLAUDE.md. Never
+the `image_gen.py` CLI — it bills the API account per image. Nano Banana is
+banned for this project. Disclosure: 8 images went through the billed CLI before
+that ruling arrived; the founder accepted the spend. Claude Code has no built-in
+`image_gen` and there is no `codex` binary on PATH, so imagery belongs to the
+Codex session. **The style anchor is the real variable** — text-only prompts
+drift off-brand whatever the generator, which is what made the first pass look
+wrong and nearly got the generator blamed.
+
+**Reveal now fails open.** The home page shipped its three step cards
+*invisible*: they carried `data-reveal`, the observer never fired, and they sat
+at opacity 0. Anything already in the viewport reveals on mount, and a sweep
+2.5s later reveals whatever is still hidden. Worst case is a missing animation.
+
+**The mobile menu had no CSS at all** — an unstyled block inside a sticky
+topbar, which is exactly why it misbehaved on scroll. Now a fixed panel anchored
+to the viewport, scrolling inside itself, with full-width 2.9rem rows.
+
+**Four pages drew the masthead twice** — a duplication introduced when
+SiteFooter became SiteBottom.
+
+**The masthead intro**: a cobalt curtain with the wordmark reversed out, lifting
+to reveal the page in the reader's own theme. Home only, once per session, inert
+to pointer and screen reader from the first frame. Plus the wordmark shrinks on
+scroll, off the nav's existing docked state.
+
+**`/today`** takes the paper's compartments, and **how-we-write** finally
+documents red letter and the Audio Edition — it was untruthful by omission.
+— SA-063 (F-107)
+
 ## Flow — the artboard (2026-08-16)
 
 Registered as **SA-062** (F-106). Flow replaces the rose window and leads the

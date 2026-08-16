@@ -453,6 +453,61 @@ export default function HowWeWritePage() {
 
         <SectionRule />
 
+        {/* Founder 2026-08-16: "How we write page is outdated and therefore
+            untruthful." It was untruthful mainly by OMISSION — two things had
+            shipped that a transparency page has no business leaving out.
+            Added here rather than rewritten around, because everything already
+            on the page still holds. */}
+        <section className="how-we-section" aria-labelledby="sec-red-letter">
+          <SectionHeader
+            kicker="THE WORDS OF CHRIST"
+            headline="Red letter, marked by hand — never guessed."
+          />
+          <div className="how-we-body-col">
+            <p className="how-we-body">
+              Where a reading quotes Christ directly, his words are set in red.
+              No published red-letter data exists for the translations we use,
+              so we built the attribution ourselves: the King James OSIS carries
+              speaker markers, and those were cross-referenced onto the Berean
+              Standard wording our readings actually quote.
+            </p>
+            <p className="how-we-body">
+              Nothing is inferred from quotation marks. A passage can hold three
+              quoted spans where only two are Christ speaking — Luke 10 does
+              exactly that, and a naive pass would put his colour on another
+              man&rsquo;s words. So spans are attributed explicitly and anything
+              unmatched is simply left black. A missing red word is a
+              typographic omission; a wrongly red word is a false attribution,
+              and only one of those is recoverable.
+            </p>
+          </div>
+        </section>
+
+        <SectionRule />
+
+        <section className="how-we-section" aria-labelledby="sec-audio">
+          <SectionHeader
+            kicker="THE AUDIO EDITION"
+            headline="Read aloud by a machine, and said so."
+          />
+          <div className="how-we-body-col">
+            <p className="how-we-body">
+              Every reading can be listened to as well as read. The narration is
+              synthetic — a text-to-speech voice, not a person in a booth — and
+              we would rather say that plainly than let a warm voice imply a
+              reader who does not exist.
+            </p>
+            <p className="how-we-body">
+              The audio is generated from the same text you see on the page, in
+              full. It is not an abridgement, a summary, or a different edition
+              of the reading. Where a reading has chapters, the transport marks
+              them so you can move within it rather than scrubbing blindly.
+            </p>
+          </div>
+        </section>
+
+        <SectionRule />
+
         {/* Closing colophon */}
         <section className="how-we-closing" aria-label="Editorial commitment">
           <blockquote className="how-we-closing-quote">

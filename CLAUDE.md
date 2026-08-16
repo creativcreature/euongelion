@@ -165,6 +165,50 @@ npm run verify:ios-readiness
 npm run build
 ```
 
+## Image Generation — Which Generator (NON-NEGOTIABLE, founder ruling 2026-08-16)
+
+**Use Codex's built-in `image_gen` tool. Nothing else.** It is covered by the
+founder's ChatGPT subscription.
+
+- **NEVER use `~/.codex/skills/.system/imagegen/scripts/image_gen.py`.** That CLI
+  calls the OpenAI Images API directly and **bills the founder's API account per
+  image**. Do not use it even when the built-in tool's output is smaller than the
+  spec asks for, and do not use it to "just do the finals". If you think you need
+  it, **stop and ask first**.
+- **NEVER use Nano Banana** for this project's imagery. Founder, 2026-08-16:
+  _"Stop using nano banana."_ This overrides the global default in
+  `~/.claude/CLAUDE.md`, which prefers it on cost grounds.
+- **Higgsfield is retired** for this pipeline (see the devo-go skill).
+
+**If you are Claude Code, you do not have the built-in `image_gen` tool** — it is
+a Codex tool. That means **you cannot generate imagery for this project**. Hand
+image work to the Codex session rather than reaching for another generator.
+
+**Known size ceiling — do not fight it.** The built-in tool exposes no size
+parameter: roughly 1536×1024 for 3:2 landscape and 1086×1448 for 3:4 portrait.
+That is below the master sizes in `scripts/imagery/prompt-preamble.md`
+(2400×1600, 1800×2400) and is **expected**. Generate at the correct ratio, report
+the actual pixel dimensions, and continue. Do not retry hunting for a bigger
+output.
+
+**Founder ruling overriding the brief:** `prompt-preamble.md` and
+`CODEX-BRIEF.md` both say "never upscale — report actual dimensions and stop for
+instruction". That is **lifted** for built-in-tool runs; upscaling to master size
+happens downstream in Photoshop/Topaz, by the founder. Generate at native size
+and hand off. (Also: 1800×2400 is not a legal size for this model — edges must be
+multiples of 16.)
+
+Everything else in the brief stands: the founder-approved PREAMBLE **verbatim**,
+per-slug SUBJECT lines from `series-image-subjects.json`, the matching
+landscape/portrait crop clause, the ink budget as a **hard** budget, full bleed,
+no text, region- and period-accurate figures with dense-dot skin. Assemble
+prompts with `node scripts/imagery/build-prompts.mjs <slug>` (`--portrait` for
+the tall master) — **do not hand-write prompts**.
+
+**The style anchor is mandatory.** Text-only prompts drift off-brand. Attach the
+founder-approved anchors as references on every generation:
+`public/images/site/series/{prayer-of-jabez,he-cannot-deny-himself,looking-at-the-sun,the-harvest}.webp`.
+
 ## Image Library — Always Check First (NON-NEGOTIABLE)
 
 This project has ~8,500 generated images already on disk. **Always check the library before generating a new image.** Generation is the last resort.

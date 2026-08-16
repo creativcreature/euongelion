@@ -75,6 +75,32 @@ export default function Reveal() {
       { rootMargin: '0px 0px -12% 0px', threshold: 0.05 },
     )
 
+    /**
+     * FAIL OPEN. A reveal that never fires leaves content invisible, which is
+     * strictly worse than no animation at all — and it happened: the home
+     * page's three step cards sat at opacity 0 because the observer did not
+     * fire for them. Two guards, both of which only ever REVEAL:
+     *
+     *   1. anything already within the viewport is revealed on the spot
+     *   2. a sweep 2.5s after mount reveals anything still hidden
+     *
+     * Neither can hide anything. The worst case is that an element appears
+     * without its animation, which is the correct way for this to degrade.
+     */
+    const revealNow = (el: Element) => {
+      if (revealed.has(el)) return
+      revealed.add(el)
+      el.classList.add('is-revealed')
+      io.unobserve(el)
+    }
+
+    const revealInView = () => {
+      document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
+        const r = el.getBoundingClientRect()
+        if (r.top < window.innerHeight && r.bottom > 0) revealNow(el)
+      })
+    }
+
     const observeAll = () => {
       document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
         if (revealed.has(el)) return
@@ -91,6 +117,13 @@ export default function Reveal() {
       })
     }
     observeAll()
+    revealInView()
+
+    // The failsafe. If anything is still hidden by now, the observer is not
+    // going to save it.
+    const failsafe = window.setTimeout(() => {
+      document.querySelectorAll(REVEAL_SELECTOR).forEach(revealNow)
+    }, 2500)
 
     // Re-scan when client islands mount later (view toggles, tab switches).
     const mo = new MutationObserver(() => observeAll())
@@ -126,6 +159,7 @@ export default function Reveal() {
     window.addEventListener('resize', onScroll, { passive: true })
 
     return () => {
+      window.clearTimeout(failsafe)
       io.disconnect()
       mo.disconnect()
       window.removeEventListener('scroll', onScroll)

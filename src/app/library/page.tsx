@@ -64,13 +64,6 @@ export default async function LibraryPage() {
           </div>
         </section>
         <SiteBottom />
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
-            </span>
-          </h2>
-        </section>
       </main>
     </div>
   )

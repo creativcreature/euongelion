@@ -199,13 +199,6 @@ function Shell({ children }: { children: React.ReactNode }) {
         <EuangelionShellHeader />
         <section className="daily-bread-shell-frame">{children}</section>
         <SiteBottom />
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
-            </span>
-          </h2>
-        </section>
       </main>
     </div>
   )

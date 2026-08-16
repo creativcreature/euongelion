@@ -13954,3 +13954,203 @@ html[data-held-moment] .mobile-tab-bar {
     transition: none;
   }
 }
+
+
+/* ── Masthead intro + shrinking wordmark (F-107) ────────────────────────
+   Founder 2026-08-16: "Show euangelion first white on blue, then animate to
+   system setting background… I like how the logo animates small on scroll as
+   well." Reference: telhaclarke.com.au. */
+
+.masthead-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  background: var(--mock-blue, #1f2a8d);
+  /* Inert from the first frame: a reader who wants to start must never have
+     to wait for a curtain. */
+  pointer-events: none;
+  transition:
+    transform 900ms cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 700ms ease 180ms;
+}
+
+.masthead-intro.is-lifting {
+  transform: translate3d(0, -101%, 0);
+  opacity: 0;
+}
+
+.masthead-intro-word {
+  font-family: var(--font-family-ui);
+  font-weight: 700;
+  /* Reversed out of the ink — the one moment the sheet carries only the
+     wordmark, before the page's own theme takes over underneath. */
+  color: #fff;
+  font-size: clamp(2.2rem, 11vw, 9rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  animation: masthead-intro-word 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes masthead-intro-word {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    letter-spacing: 0.18em;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* The wordmark shrinks as the page scrolls under it. Driven by the same
+   is-docked state the nav already uses, so there is no second scroll
+   listener — the header was already measuring this. */
+.mock-masthead-block {
+  transition:
+    transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 320ms ease;
+  transform-origin: top center;
+}
+
+.mock-shell-header:has(.mock-nav.is-docked) .mock-masthead-block {
+  transform: scale(0.86) translate3d(0, -6px, 0);
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead-intro,
+  .masthead-intro-word,
+  .mock-masthead-block {
+    transition: none;
+    animation: none;
+  }
+  .mock-shell-header:has(.mock-nav.is-docked) .mock-masthead-block {
+    transform: none;
+  }
+}
+
+
+/* ── /today takes the paper's furniture too (F-107) ─────────────────────
+   Founder 2026-08-16: the Sea Harvest structural vocabulary is "pretty
+   strictly for Today and Daily Bread pages". /daily-bread got its compartments
+   in F-104; this is /today's share — the reader's own blocks ruled and grouped
+   the same way, so the two pages read as the same publication rather than two
+   products that happen to share a masthead. */
+
+.daily-bread-shell-frame .today-section,
+.daily-bread-shell-frame .today-scripture,
+.daily-bread-shell-frame .today-vocab {
+  border: var(--ed-hair);
+  padding: 1.1rem 1.2rem 1.2rem;
+  margin-bottom: -1px; /* adjacent blocks share a rule, as on a made-up page */
+}
+
+.daily-bread-shell-frame .today-section-heading {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid currentColor;
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Scripture and the word study are the two blocks that carry weight, so they
+   get the heavier ground rather than a heavier rule. */
+.daily-bread-shell-frame .today-scripture,
+.daily-bread-shell-frame .today-vocab {
+  background: color-mix(in srgb, var(--mock-ink) 3.5%, var(--mock-paper) 96.5%);
+}
+
+.daily-bread-shell-frame .today-scripture-ref {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+
+/* ── The mobile menu panel (F-107) ──────────────────────────────────────
+   Founder 2026-08-16: "The menu doesnt work properly on mobile when
+   scrolling."
+
+   It had NO styles at all. The panel was an unstyled block rendered inside a
+   sticky topbar, so it inherited the header's stacking and flow: it could sit
+   behind page content, it moved with the header instead of staying put, and a
+   tall list had nowhere to go. Everything below is the missing rule set.
+
+   It is anchored to the viewport rather than the header, because a menu that
+   travels with a sticky element is a menu that can leave the screen. */
+
+.mock-mobile-secondary-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--mock-h-topbar, 42px) + var(--shell-safe-top, 0px));
+  /* Above the topbar (120) and the nav (110), below the scroll line (400). */
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0.35rem 0 max(0.6rem, env(safe-area-inset-bottom, 0px));
+  background: var(--mock-paper, var(--color-bg));
+  border-bottom: var(--mock-stroke, 1.5px) solid
+    var(--mock-line, var(--color-border-strong));
+  box-shadow: 0 18px 30px -22px rgba(9, 12, 32, 0.55);
+  /* A long list scrolls inside the panel, and that scroll never leaks to the
+     page behind it. */
+  max-height: calc(100dvh - var(--mock-h-topbar, 42px) - 4.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: mobile-menu-in 180ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Rows, not a wrapped row of chips — this is a menu on a phone, so every entry
+   is a full-width target at a real tap height. */
+.mock-mobile-secondary-nav .mock-nav-item,
+.mock-mobile-secondary-nav .mock-nav-item-wrap {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 2.9rem;
+  padding: 0 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  border-bottom: var(--mock-stroke, 1px) solid
+    color-mix(in srgb, var(--mock-line) 45%, transparent);
+}
+
+/* The separators the desktop bar draws between items make no sense stacked. */
+.mock-mobile-secondary-nav .mock-nav-item-wrap > span[aria-hidden='true'] {
+  display: none;
+}
+
+.mock-mobile-secondary-nav > :last-child,
+.mock-mobile-secondary-nav .mock-nav-item-wrap:last-child .mock-nav-item {
+  border-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mock-mobile-secondary-nav {
+    animation: none;
+  }
+}

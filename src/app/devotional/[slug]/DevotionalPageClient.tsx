@@ -395,13 +395,6 @@ export default function DevotionalPageClient({
             </div>
           </section>
           <SiteBottom />
-          <section className="mock-bottom-brand">
-            <h2 className="text-masthead mock-masthead-word">
-              <span className="js-shell-masthead-fit mock-masthead-text">
-                {brandWord}
-              </span>
-            </h2>
-          </section>
         </main>
       </div>
     )

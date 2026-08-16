@@ -1019,3 +1019,11 @@ features:
     prd: docs/feature-prds/F-106.md
     methodology_refs:
       - M00
+  - id: F-107
+    title: The imagery ruling, fail-open motion, and the mobile menu
+    slug: imagery-ruling-and-fail-open-motion
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-107.md
+    methodology_refs:
+      - M00
