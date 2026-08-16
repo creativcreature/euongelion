@@ -593,7 +593,13 @@ export default function TextHighlightTrigger({
     }
   }
 
-  async function saveFavoriteVerse() {
+  /**
+   * `thenNote` is the founder's "works with the highlight somehow" (SA-061):
+   * marking a passage and writing on it is ONE gesture, not two. Without it the
+   * reader has to highlight, dismiss the toolbar, find the mark again, click it,
+   * and only then reach a note field.
+   */
+  async function saveFavoriteVerse(options: { thenNote?: boolean } = {}) {
     if (!tooltip || saving) return
 
     const range = selectionRangeRef.current?.cloneRange() || null
@@ -673,6 +679,29 @@ export default function TextHighlightTrigger({
       }
       setSaved(true)
       window.dispatchEvent(new CustomEvent('libraryUpdated'))
+
+      if (options.thenNote) {
+        // Reopen the same toolbar against the mark just made, with the note
+        // panel already open — the second act, without the hunt for it.
+        const rect = mark.getBoundingClientRect()
+        setTooltip(null)
+        setSaved(false)
+        setNoteDraft('')
+        setEditing({
+          el: mark,
+          id: payload.annotation?.id ?? null,
+          text: selectedText,
+          color: selectedColor,
+          note: '',
+          x: rect.left + rect.width / 2,
+          ...placeToolbar(rect),
+        })
+        setNoteOpen(true)
+        selectionRangeRef.current = null
+        selectionTextRef.current = ''
+        return
+      }
+
       setTimeout(() => {
         setTooltip(null)
         setSaved(false)
@@ -771,9 +800,23 @@ export default function TextHighlightTrigger({
               type="button"
               className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)] transition-opacity duration-200"
               disabled={saving}
+              onClick={() => void saveFavoriteVerse({ thenNote: true })}
+            >
+              Note
+            </button>
+            <button
+              type="button"
+              className="text-label vw-small border border-[var(--color-border)] px-3 py-2 text-[var(--color-text-primary)] transition-opacity duration-200"
+              disabled={saving}
               onClick={() => void saveFavoriteVerse()}
             >
-              {failed ? failed : saved ? 'Saved' : saving ? 'Saving' : 'Highlight'}
+              {failed
+                ? failed
+                : saved
+                  ? 'Saved'
+                  : saving
+                    ? 'Saving'
+                    : 'Highlight'}
             </button>
           </>
         )}

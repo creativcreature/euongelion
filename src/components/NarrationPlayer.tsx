@@ -27,6 +27,7 @@ import {
   ChapterNextIcon,
   ChapterPrevIcon,
   ChaptersIcon,
+  ClipIcon,
   PauseIcon,
   PlayIcon,
   SkipBackIcon,
@@ -148,6 +149,19 @@ export default function NarrationPlayer({
   const [sleepRemaining, setSleepRemaining] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [resumedFrom, setResumedFrom] = useState<number | null>(null)
+  /**
+   * A clip in progress. Holds the moment CAPTURED AT PRESS, not read at save —
+   * the reading keeps playing while the reader types, and a clip that drifted
+   * to wherever they finished writing would point at the wrong line.
+   */
+  const [clip, setClip] = useState<{
+    t: number
+    chapter: string
+    chapterIndex: number
+  } | null>(null)
+  const [clipNote, setClipNote] = useState('')
+  const [clipSaving, setClipSaving] = useState(false)
+  const [clipError, setClipError] = useState<string | null>(null)
 
   /**
    * Restore a previous position, unless the reader was at the very start or
@@ -584,6 +598,57 @@ export default function NarrationPlayer({
     return () => el.removeAttribute('data-narrating')
   }, [activeModule, playing])
 
+  const openClip = useCallback(() => {
+    const at = chapterBounds(track.chapters, current, duration)
+    setClip({
+      t: Math.round(current),
+      chapter: track.chapters?.[at?.index ?? 0]?.label ?? 'Opening',
+      chapterIndex: at?.index ?? 0,
+    })
+    setClipNote('')
+    setClipError(null)
+  }, [track.chapters, current, duration])
+
+  const saveClip = useCallback(async () => {
+    if (!clip || clipSaving) return
+    setClipSaving(true)
+    setClipError(null)
+    try {
+      const response = await fetch('/api/annotations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          devotionalSlug: slug,
+          annotationType: 'note',
+          body: clipNote.trim() || null,
+          style: {
+            kind: 'clip',
+            t: clip.t,
+            chapter: clip.chapter,
+            chapterIndex: clip.chapterIndex,
+            editedAt: new Date().toISOString(),
+          },
+        }),
+      })
+      if (!response.ok) {
+        // Signed out is the common case and gets its own sentence; anything
+        // else is reported rather than swallowed.
+        setClipError(
+          response.status === 401
+            ? 'Sign in to keep clips'
+            : "Couldn't save that clip",
+        )
+        return
+      }
+      window.dispatchEvent(new CustomEvent('libraryUpdated'))
+      setClip(null)
+    } catch {
+      setClipError("Couldn't save that clip")
+    } finally {
+      setClipSaving(false)
+    }
+  }, [clip, clipNote, clipSaving, slug])
+
   const progressPct = duration > 0 ? (current / duration) * 100 : 0
   const hasChapters = Boolean(track.chapters?.length)
   const sleepLabel =
@@ -774,6 +839,15 @@ export default function NarrationPlayer({
             <div className="narration-cell narration-cell-right">
               <button
                 type="button"
+                className="narration-util"
+                onClick={openClip}
+                aria-label="Clip this moment"
+              >
+                <ClipIcon size={17} />
+              </button>
+
+              <button
+                type="button"
                 className={`narration-util${sleepLabel ? ' is-armed' : ''}`}
                 onClick={() => setSleepOpen(true)}
                 aria-haspopup="dialog"
@@ -803,6 +877,46 @@ export default function NarrationPlayer({
               )}
             </div>
           </div>
+
+          {clip && (
+            <div className="narration-clip">
+              <p className="narration-clip-head oldstyle-nums">
+                {clip.chapter} &middot; {formatTime(clip.t)}
+              </p>
+              <textarea
+                className="narration-clip-input"
+                aria-label="Note on this moment"
+                placeholder="What did you hear? (optional)"
+                rows={2}
+                maxLength={4000}
+                value={clipNote}
+                onChange={(event) => setClipNote(event.target.value)}
+                autoFocus
+              />
+              <div className="narration-clip-actions">
+                <button
+                  type="button"
+                  className="narration-clip-save"
+                  onClick={() => void saveClip()}
+                  disabled={clipSaving}
+                >
+                  {clipSaving ? 'Saving…' : 'Save clip'}
+                </button>
+                <button
+                  type="button"
+                  className="narration-clip-cancel"
+                  onClick={() => setClip(null)}
+                >
+                  Cancel
+                </button>
+                {clipError && (
+                  <span className="narration-clip-error" role="status">
+                    {clipError}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
 
           {resumedFrom !== null && !playing && (
             <p className="vw-small text-muted mt-2">
@@ -1016,6 +1130,65 @@ export default function NarrationPlayer({
             height: 100%;
             background: var(--color-border-strong, var(--color-border));
             opacity: 0.9;
+          }
+
+          /* The clip panel opens IN the transport rather than as a sheet: the
+             reading keeps playing, and a modal would make marking a moment
+             feel like leaving it. */
+          .narration-clip {
+            margin-top: 0.9rem;
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--color-border);
+          }
+          .narration-clip-head {
+            margin: 0 0 0.5rem;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+          }
+          .narration-clip-input {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 0.6rem;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-primary, var(--color-fg));
+            font-family: var(--font-family-serif, Georgia, serif);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            resize: vertical;
+          }
+          .narration-clip-input:focus-visible {
+            outline: 2px solid var(--color-gold);
+            outline-offset: 1px;
+          }
+          .narration-clip-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+          }
+          .narration-clip-save,
+          .narration-clip-cancel {
+            min-height: 44px;
+            padding-inline: 0.9rem;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            border: 1px solid var(--color-border);
+            background: transparent;
+            color: var(--color-text-primary, var(--color-fg));
+          }
+          .narration-clip-save {
+            border-color: var(--color-text-primary, var(--color-fg));
+            background: var(--color-text-primary, var(--color-fg));
+            color: var(--color-bg);
+          }
+          .narration-clip-error {
+            font-size: 0.7rem;
+            color: var(--color-crimson, #c4192e);
           }
 
           .narration-player {

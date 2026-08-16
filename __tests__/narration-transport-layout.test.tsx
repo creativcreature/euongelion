@@ -108,7 +108,10 @@ describe('the chosen transport layout', () => {
     ])
   })
 
-  it('keeps speed alone on the left and sleep + chapters on the right', () => {
+  it('keeps speed alone on the left and the utilities on the right', () => {
+    // Clip LEADS the right cell rather than splitting the pair: sleep and
+    // chapters were adjacent in the mock the founder approved, and a new
+    // control should not reorder what was signed off.
     const { container } = renderPlayer()
     const left = container.querySelector('.narration-cell-left')
     const right = container.querySelector('.narration-cell-right')
@@ -121,7 +124,7 @@ describe('the chosen transport layout', () => {
       [...right!.querySelectorAll('button')].map((b) =>
         b.getAttribute('aria-label'),
       ),
-    ).toEqual(['Sleep timer', 'Chapters — 3 sections'])
+    ).toEqual(['Clip this moment', 'Sleep timer', 'Chapters — 3 sections'])
   })
 
   it('opens the speed sheet, which reaches 2×', () => {

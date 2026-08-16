@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## A NOTE IS A HIGHLIGHT WITH WORDS ON IT — SA-061 / F-102 (2026-08-16)
+
+Founder's ask was a note feature that "works similar to the highlight feature —
+maybe even works with it somehow". Marking a passage and writing on it is now
+ONE gesture: the selection toolbar offers `Ask · Note · Highlight`, and **Note**
+paints the mark and hands straight to the note editor against it. Before this
+the reader had to highlight, dismiss the toolbar, find the mark again, click it,
+and only then reach a field.
+
+**A free entry closes each reading.** One unanchored field under "Before you
+go", for what does not belong to any single line — placed before the site
+furniture rather than after it, so it reads as the end of the reading rather
+than an appendix.
+
+**Clips are the audio half of the same idea.** A listener had no way to mark
+anything without stopping and hunting for the passage in the text. The transport
+now drops a mark at the current timestamp, captured AT PRESS rather than read at
+save — the reading keeps playing while the reader types, and a clip that drifted
+to wherever they finished writing would point at the wrong line. The chapter
+label travels with it, so the Library row reads "Word study · 2:20" instead of a
+number to decode. It opens in the transport, not as a sheet: a modal would make
+marking a moment feel like leaving it.
+
+The clip control LEADS the right-hand cell rather than splitting sleep and
+chapters, which were adjacent in the mock the founder approved — a new control
+should not silently reorder what was signed off. The layout contract test caught
+that, having been written to pin exactly this.
+
 ## 2,062 PROMPTS FINALLY HAVE SOMEWHERE TO ANSWER — SA-059 / F-102 (2026-08-16)
 
 The catalog already shipped 545 reflection modules carrying 1,517 additional

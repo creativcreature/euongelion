@@ -24,6 +24,7 @@ import CompletionBeat from '@/components/CompletionBeat'
 import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { ReaderProvider } from '@/components/reader/ReaderContext'
+import JournalField from '@/components/reader/JournalField'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
@@ -1013,6 +1014,33 @@ export default function DevotionalPageClient({
               </nav>
             )}
           </section>
+          {/* SA-061: one unanchored entry per reading, for what does not
+              belong to any single line. The close of the reading, before the
+              site furniture — not an appendix after it. */}
+          <section
+            className="mock-section"
+            aria-labelledby="devotional-journal"
+          >
+            <p
+              id="devotional-journal"
+              className="text-label vw-small mb-3 text-gold"
+            >
+              BEFORE YOU GO
+            </p>
+            <p className="text-serif-italic vw-body-lg leading-relaxed mb-1">
+              Anything you want to keep from today?
+            </p>
+            <JournalField
+              kind="entry"
+              anchorKey="entry"
+              label="Your entry for this reading"
+              placeholder="Whatever you want to remember…"
+              signedOutLabel="Sign in to keep an entry"
+              rows={4}
+              showNote
+            />
+          </section>
+
           <SiteBottom />
           <section className="mock-bottom-brand">
             <h2 className="text-masthead mock-masthead-word">
