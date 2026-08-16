@@ -3212,10 +3212,14 @@ html.reduce-motion *::after {
 
   /* Selection over red letter keeps the attribution rather than inheriting
      the site's selection ink. */
-  .wj::selection { color: var(--color-crimson); }
+  .wj::selection {
+    color: var(--color-crimson);
+  }
 
   @media print {
-    .wj { color: #a51426; }
+    .wj {
+      color: #a51426;
+    }
   }
 
   /* F-092 / SA-047 — the chat launcher paints BOTH halves per theme.
@@ -6368,6 +6372,33 @@ html.reduce-motion *::after {
 .devotional-shell-panel .vw-body:last-child,
 .devotional-shell-panel .vw-small:last-child {
   margin-bottom: 0;
+}
+
+/* SA-054: paragraph spacing on mobile.
+   `--devotional-rhythm-sm` is clamp(0.75rem, 1vw, 1rem) — its middle term is
+   VIEWPORT-relative, so on a 390px phone 1vw = 3.9px and the clamp collapses to
+   its 0.75rem floor. Measured on production: a 12.75px gap against a 33.3px
+   line-height, a ratio of 0.39. Below about 0.5 consecutive paragraphs stop
+   reading as separate blocks, which is exactly the founder's report ("its a
+   mobile paragraph spacing issue").
+
+   Paragraph space belongs to the LEADING, not the screen width, so this is set
+   in `em` and therefore tracks the type size — including the reader's own font
+   scaling. 1.45em measures 0.80 of line-height on production.
+
+   Deliberately scoped to mobile: the founder confirmed desktop reads correctly
+   at its current 0.36 ratio, where the larger type and wider measure carry it.
+   No indent is used — founder: "no indent needed i think". */
+@media (max-width: 767px) {
+  .devotional-shell-panel .vw-body,
+  .devotional-shell-panel .vw-small {
+    margin-bottom: 1.45em;
+  }
+
+  .devotional-shell-panel .vw-body:last-child,
+  .devotional-shell-panel .vw-small:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .devotional-shell-nav {
@@ -11213,7 +11244,9 @@ html[data-held-moment] .mobile-tab-bar {
   border: 1px solid #8a5e12;
   border-left-width: 3px;
   background: rgba(138, 94, 18, 0.07);
-  transition: background-color 140ms ease, border-color 140ms ease;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease;
 }
 
 .dark .rr-resume {
@@ -11239,7 +11272,9 @@ html[data-held-moment] .mobile-tab-bar {
   color: #8a5e12;
 }
 
-.dark .rr-resume-label { color: #d8b273; }
+.dark .rr-resume-label {
+  color: #d8b273;
+}
 
 .rr-resume-title {
   font-family: var(--font-family-serif);
@@ -11308,7 +11343,9 @@ html[data-held-moment] .mobile-tab-bar {
   text-transform: uppercase;
 }
 
-.rr-search-clear:hover { color: var(--mock-ink); }
+.rr-search-clear:hover {
+  color: var(--mock-ink);
+}
 
 /* ── Switcher + sort ─────────────────────────────────────────────── */
 
@@ -11350,9 +11387,13 @@ html[data-held-moment] .mobile-tab-bar {
     background-color 140ms var(--motion-ease, ease);
 }
 
-.rr-views .rr-view:first-child { border-left: var(--rr-hair); }
+.rr-views .rr-view:first-child {
+  border-left: var(--rr-hair);
+}
 
-.rr-view:hover { color: var(--mock-ink); }
+.rr-view:hover {
+  color: var(--mock-ink);
+}
 
 .rr-view.is-active {
   background: var(--mock-ink);
@@ -11395,7 +11436,9 @@ html[data-held-moment] .mobile-tab-bar {
   text-transform: uppercase;
 }
 
-.rr-sort:hover { color: var(--mock-ink); }
+.rr-sort:hover {
+  color: var(--mock-ink);
+}
 .rr-sort.is-active {
   color: var(--mock-ink);
   border-color: var(--mock-line, currentColor);
@@ -11412,7 +11455,9 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-muted);
 }
 
-.rr-stage { min-height: 40vh; }
+.rr-stage {
+  min-height: 40vh;
+}
 
 /* Focus + plate defaults shared by every layout */
 .series-browser a:focus-visible {
@@ -11447,7 +11492,9 @@ html[data-held-moment] .mobile-tab-bar {
    banner headline, two boxed stories beside it, a ruled rail of briefs, then
    the rest set as ruled listings. Column rules and hairlines do the work a
    card shadow would do in a generic grid. */
-.frontpage { padding-top: 0.2rem; }
+.frontpage {
+  padding-top: 0.2rem;
+}
 
 .fp-above {
   display: grid;
@@ -11457,7 +11504,9 @@ html[data-held-moment] .mobile-tab-bar {
   border-bottom: 3px solid var(--mock-line, currentColor);
 }
 
-.fp-main { min-width: 0; }
+.fp-main {
+  min-width: 0;
+}
 
 .fp-lead {
   display: block;
@@ -11513,9 +11562,16 @@ html[data-held-moment] .mobile-tab-bar {
   gap: 1.3rem;
 }
 
-.fp-second .fp-story + .fp-story { border-left: var(--rr-hair); padding-left: 1.3rem; }
+.fp-second .fp-story + .fp-story {
+  border-left: var(--rr-hair);
+  padding-left: 1.3rem;
+}
 
-.fp-story { display: block; text-decoration: none; color: var(--mock-ink); }
+.fp-story {
+  display: block;
+  text-decoration: none;
+  color: var(--mock-ink);
+}
 
 .fp-story-plate {
   position: relative;
@@ -11620,13 +11676,22 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 .fp-lead:hover .series-plate-img,
-.fp-story:hover .series-plate-img { transform: scale(1.03); }
+.fp-story:hover .series-plate-img {
+  transform: scale(1.03);
+}
 
 /* ── 2. RACK ─────────────────────────────────────────────────────── */
 
-.rack { display: flex; flex-direction: column; gap: 2.6rem; }
+.rack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
 
-.rack-rail { position: relative; padding-top: 0.9rem; }
+.rack-rail {
+  position: relative;
+  padding-top: 0.9rem;
+}
 
 /* The bar the papers hang over. */
 .rack-bar {
@@ -11658,7 +11723,13 @@ html[data-held-moment] .mobile-tab-bar {
    identical on every render. */
 .rack-paper {
   position: relative;
-  flex: 1 1 0;
+  /* Fixed basis, never `flex: 1`. Founder 2026-08-16: "i do not like the giant
+     image at the bottom of rack. all of them should be same sized." With a
+     grow factor the final rail — which holds one paper, not four — stretched
+     that paper to the full width of the rack. A kiosk does not resize its
+     papers to fill the bar; neither does this. The +5px offsets the -7px
+     overlap so four still meet the edges. */
+  flex: 0 0 calc(25% + 5px);
   min-width: 0;
   margin-right: -7px;
   display: flex;
@@ -11765,7 +11836,9 @@ html[data-held-moment] .mobile-tab-bar {
   border: var(--rr-hair);
 }
 
-.cover:hover .series-plate-img { transform: scale(1.03); }
+.cover:hover .series-plate-img {
+  transform: scale(1.03);
+}
 
 .cover-caption {
   position: relative;
@@ -11790,18 +11863,30 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-muted);
 }
 
-.cover .series-progress { background: rgba(46, 56, 128, 0.18); }
-.dark .cover .series-progress { background: rgba(239, 229, 216, 0.2); }
+.cover .series-progress {
+  background: rgba(46, 56, 128, 0.18);
+}
+.dark .cover .series-progress {
+  background: rgba(239, 229, 216, 0.2);
+}
 
 /* ── 4. SPINES ───────────────────────────────────────────────────── */
 
-.shelf { padding-top: 0.5rem; }
+.shelf {
+  padding-top: 0.5rem;
+}
 
 /* Founder 2026-08-16: several rows, larger spines, nothing scrolling
    sideways — a shelf you can take in at once. */
-.shelf { display: flex; flex-direction: column; gap: 2.2rem; }
+.shelf {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
 
-.shelf-unit { display: block; }
+.shelf-unit {
+  display: block;
+}
 
 .shelf-row {
   display: flex;
@@ -11831,15 +11916,21 @@ html[data-held-moment] .mobile-tab-bar {
 
 /* Three cloth colours, the way a shelf of the same publisher varies: the
    base navy, a deeper one, and a gold-foiled band. */
-.spine--1 { background: #0e1531; }
+.spine--1 {
+  background: #0e1531;
+}
 .spine--2 {
   background: #1a2450;
   border-color: rgba(216, 178, 115, 0.45);
 }
-.spine--2 .spine-title { color: #e8c894; }
+.spine--2 .spine-title {
+  color: #e8c894;
+}
 
 .spine:hover,
-.spine:focus-visible { transform: translateY(-16px); }
+.spine:focus-visible {
+  transform: translateY(-16px);
+}
 
 .spine-title {
   writing-mode: vertical-rl;
@@ -11890,8 +11981,12 @@ html[data-held-moment] .mobile-tab-bar {
   transition: background-color 140ms ease;
 }
 
-.stock-row:hover { background: rgba(46, 56, 128, 0.06); }
-.dark .stock-row:hover { background: rgba(239, 229, 216, 0.07); }
+.stock-row:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+.dark .stock-row:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
 
 .stock-title {
   font-family: var(--font-family-serif);
@@ -11928,9 +12023,15 @@ html[data-held-moment] .mobile-tab-bar {
   column-gap: 3.5rem;
 }
 
-@media (max-width: 760px) { .bookindex { columns: 1; } }
+@media (max-width: 760px) {
+  .bookindex {
+    columns: 1;
+  }
+}
 
-.bookindex li { break-inside: avoid; }
+.bookindex li {
+  break-inside: avoid;
+}
 
 .bookindex-row {
   display: flex;
@@ -11941,7 +12042,9 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.bookindex-row:hover .bookindex-title { color: var(--mock-blue-text, var(--mock-ink)); }
+.bookindex-row:hover .bookindex-title {
+  color: var(--mock-blue-text, var(--mock-ink));
+}
 
 .bookindex-title {
   font-family: var(--font-family-serif);
@@ -12015,12 +12118,18 @@ html[data-held-moment] .mobile-tab-bar {
   content: '';
   position: absolute;
   inset: -4%;
-  background:
-    linear-gradient(to top right, transparent 48.4%, #d8b273 48.4% 51.6%, transparent 51.6%);
+  background: linear-gradient(
+    to top right,
+    transparent 48.4%,
+    #d8b273 48.4% 51.6%,
+    transparent 51.6%
+  );
   opacity: 0.9;
 }
 
-.frame:hover .series-plate-img { transform: scale(1.05); }
+.frame:hover .series-plate-img {
+  transform: scale(1.05);
+}
 
 /* ── 8. MOSAIC ───────────────────────────────────────────────────── */
 
@@ -12046,8 +12155,12 @@ html[data-held-moment] .mobile-tab-bar {
   aspect-ratio: 4 / 5;
 }
 
-.mosaic-tile--tall .mosaic-plate { aspect-ratio: 3 / 5; }
-.mosaic-tile--short .mosaic-plate { aspect-ratio: 4 / 3; }
+.mosaic-tile--tall .mosaic-plate {
+  aspect-ratio: 3 / 5;
+}
+.mosaic-tile--short .mosaic-plate {
+  aspect-ratio: 4 / 3;
+}
 
 .mosaic-title {
   display: block;
@@ -12067,11 +12180,16 @@ html[data-held-moment] .mobile-tab-bar {
   margin-top: 0.1rem;
 }
 
-.mosaic-tile:hover .series-plate-img { transform: scale(1.04); }
+.mosaic-tile:hover .series-plate-img {
+  transform: scale(1.04);
+}
 
 /* ── 9. BROADSHEET ───────────────────────────────────────────────── */
 
-.broadsheet { border-top: 3px solid var(--mock-line, currentColor); padding-top: 1rem; }
+.broadsheet {
+  border-top: 3px solid var(--mock-line, currentColor);
+  padding-top: 1rem;
+}
 
 .broad-lede {
   display: grid;
@@ -12094,7 +12212,11 @@ html[data-held-moment] .mobile-tab-bar {
   border: var(--rr-hair);
 }
 
-.broad-lede-copy { display: flex; flex-direction: column; gap: 0.4rem; }
+.broad-lede-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 
 .broad-kicker {
   font-family: var(--font-family-ui);
@@ -12172,7 +12294,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 /* ── 10. ISSUES ──────────────────────────────────────────────────── */
 
-.issues { list-style: none; margin: 0; padding: 0; border-top: var(--rr-hair); }
+.issues {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--rr-hair);
+}
 
 .issue-row {
   display: grid;
@@ -12186,8 +12313,12 @@ html[data-held-moment] .mobile-tab-bar {
   transition: background-color 140ms ease;
 }
 
-.issue-row:hover { background: rgba(46, 56, 128, 0.06); }
-.dark .issue-row:hover { background: rgba(239, 229, 216, 0.07); }
+.issue-row:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+.dark .issue-row:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
 
 .issue-no {
   font-family: var(--font-family-serif);
@@ -12218,7 +12349,12 @@ html[data-held-moment] .mobile-tab-bar {
   border: var(--rr-hair);
 }
 
-.issue-copy { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.issue-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
 
 .issue-title {
   font-family: var(--font-family-serif);
@@ -12246,7 +12382,9 @@ html[data-held-moment] .mobile-tab-bar {
 
 /* ── Search results + empty state ────────────────────────────────── */
 
-.rr-results { padding-top: 0.4rem; }
+.rr-results {
+  padding-top: 0.4rem;
+}
 
 .rr-results-head {
   font-family: var(--font-family-ui);
@@ -12259,7 +12397,9 @@ html[data-held-moment] .mobile-tab-bar {
   border-bottom: var(--rr-hair);
 }
 
-.rr-results-head:first-child { margin-top: 0; }
+.rr-results-head:first-child {
+  margin-top: 0;
+}
 
 .rr-result-grid {
   display: grid;
@@ -12277,8 +12417,12 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.rr-result-card:hover { background: rgba(46, 56, 128, 0.06); }
-.dark .rr-result-card:hover { background: rgba(239, 229, 216, 0.07); }
+.rr-result-card:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+.dark .rr-result-card:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
 
 .rr-result-title {
   font-family: var(--font-family-serif);
@@ -12303,7 +12447,12 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-muted);
 }
 
-.rr-result-list { list-style: none; margin: 0; padding: 0; border-top: var(--rr-hair); }
+.rr-result-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--rr-hair);
+}
 
 .rr-result-row {
   display: flex;
@@ -12316,10 +12465,19 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.rr-result-row:hover { background: rgba(46, 56, 128, 0.06); }
-.dark .rr-result-row:hover { background: rgba(239, 229, 216, 0.07); }
+.rr-result-row:hover {
+  background: rgba(46, 56, 128, 0.06);
+}
+.dark .rr-result-row:hover {
+  background: rgba(239, 229, 216, 0.07);
+}
 
-.rr-result-row-main { display: flex; flex-direction: column; gap: 0.14rem; min-width: 0; }
+.rr-result-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.14rem;
+  min-width: 0;
+}
 
 .rr-result-row-title {
   font-family: var(--font-family-serif);
@@ -12327,7 +12485,10 @@ html[data-held-moment] .mobile-tab-bar {
   line-height: 1.14;
 }
 
-.rr-result-row-series { flex: 0 0 auto; text-align: right; }
+.rr-result-row-series {
+  flex: 0 0 auto;
+  text-align: right;
+}
 
 /* An empty result is an invitation to act, not an apology. */
 .rr-empty {
@@ -12379,49 +12540,121 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.rr-empty-back:hover { background: var(--mock-ink); color: var(--mock-paper); }
+.rr-empty-back:hover {
+  background: var(--mock-ink);
+  color: var(--mock-paper);
+}
 
 /* ── Responsive ──────────────────────────────────────────────────── */
 
 @media (max-width: 1100px) {
-  .fp-above { grid-template-columns: minmax(0, 1fr); }
-  .fp-rail { border-left: 0; border-top: var(--rr-hair); padding-left: 0; padding-top: 0.9rem; }
-  .fp-below { columns: 3; }
-  .covers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .mosaic { columns: 3; }
-  .broad-columns { columns: 3; }
-  .rack-papers { flex-wrap: wrap; gap: 0.5rem; }
-  .rack-paper { flex: 0 0 calc(33.333% - 0.34rem); margin-right: 0; }
+  .fp-above {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fp-rail {
+    border-left: 0;
+    border-top: var(--rr-hair);
+    padding-left: 0;
+    padding-top: 0.9rem;
+  }
+  .fp-below {
+    columns: 3;
+  }
+  .covers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .mosaic {
+    columns: 3;
+  }
+  .broad-columns {
+    columns: 3;
+  }
+  .rack-papers {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .rack-paper {
+    flex: 0 0 calc(33.333% - 0.34rem);
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 900px) {
-  .fp-below { columns: 2; }
-  .fp-second { grid-template-columns: minmax(0, 1fr); }
-  .fp-second .fp-story + .fp-story { border-left: 0; padding-left: 0; border-top: var(--rr-hair); padding-top: 1rem; }
-  .broad-lede { grid-template-columns: minmax(0, 1fr); }
-  .broad-columns { columns: 2; }
-  .mosaic { columns: 2; }
-  .stock-row { grid-template-columns: minmax(0, 1fr) 6.5rem; row-gap: 0.15rem; }
-  .stock-question { grid-column: 1 / -1; white-space: normal; }
-  .issue-row { grid-template-columns: 4rem 70px minmax(0, 1fr); }
-  .issue-plate { width: 70px; }
-  .issue-meta { display: none; }
+  .fp-below {
+    columns: 2;
+  }
+  .fp-second {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fp-second .fp-story + .fp-story {
+    border-left: 0;
+    padding-left: 0;
+    border-top: var(--rr-hair);
+    padding-top: 1rem;
+  }
+  .broad-lede {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .broad-columns {
+    columns: 2;
+  }
+  .mosaic {
+    columns: 2;
+  }
+  .stock-row {
+    grid-template-columns: minmax(0, 1fr) 6.5rem;
+    row-gap: 0.15rem;
+  }
+  .stock-question {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+  .issue-row {
+    grid-template-columns: 4rem 70px minmax(0, 1fr);
+  }
+  .issue-plate {
+    width: 70px;
+  }
+  .issue-meta {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
-  .covers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .covers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   /* One paper per row on phones. Two makes each front page ~160px wide, which
      is too narrow to carry a masthead and standfirst — the whole point of the
      rack. Better one readable paper than two slivers. */
-  .rack-paper { flex: 0 0 100%; }
-  .fp-below { columns: 1; }
-  .spine { height: 250px; }
-  .broad-columns { columns: 1; }
-  .mosaic { columns: 2; }
-  .contactsheet { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); padding: 0.7rem; }
-  .rr-view-label { display: none; }
-  .rr-view { padding: 0.45rem 0.55rem; }
-  .spine { height: 240px; }
+  .rack-paper {
+    flex: 0 0 100%;
+  }
+  .fp-below {
+    columns: 1;
+  }
+  .spine {
+    height: 250px;
+  }
+  .broad-columns {
+    columns: 1;
+  }
+  .mosaic {
+    columns: 2;
+  }
+  .contactsheet {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    padding: 0.7rem;
+  }
+  .rr-view-label {
+    display: none;
+  }
+  .rr-view {
+    padding: 0.45rem 0.55rem;
+  }
+  .spine {
+    height: 240px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -12436,7 +12669,9 @@ html[data-held-moment] .mobile-tab-bar {
     transform: none;
   }
   .rack-paper:hover,
-  .rack-paper:focus-visible { transform: translateY(-6px) !important; }
+  .rack-paper:focus-visible {
+    transform: translateY(-6px) !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -12601,7 +12836,9 @@ html[data-held-moment] .mobile-tab-bar {
   text-decoration: none;
 }
 
-.edition-rail-more:hover { color: var(--mock-ink); }
+.edition-rail-more:hover {
+  color: var(--mock-ink);
+}
 
 /* ── Editorial sections ──────────────────────────────────────────── */
 
@@ -12657,7 +12894,11 @@ html[data-held-moment] .mobile-tab-bar {
   color: var(--mock-ink);
 }
 
-.edition-prayers { list-style: none; margin: 0; padding: 0; }
+.edition-prayers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 .edition-prayer {
   display: flex;
@@ -12684,18 +12925,578 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 @media (max-width: 1000px) {
-  .edition-front { grid-template-columns: minmax(0, 1fr); }
+  .edition-front {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .edition-rail {
     border-left: 0;
     border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
     padding-left: 0;
     padding-top: 0.9rem;
   }
-  .edition-columns { columns: 2; }
+  .edition-columns {
+    columns: 2;
+  }
 }
 
 @media (max-width: 640px) {
-  .edition-columns { columns: 1; }
-  .edition-dateline { justify-content: center; text-align: center; }
-  .edition-prayer { flex-direction: column; gap: 0.15rem; }
+  .edition-columns {
+    columns: 1;
+  }
+  .edition-dateline {
+    justify-content: center;
+    text-align: center;
+  }
+  .edition-prayer {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}
+
+/* ── Subject desks (F-098) ─────────────────────────────────────────────
+   Below the front page the Feature view becomes a news SITE: named desks,
+   each with a rule, a section lede running wide, and a row of equal
+   thumbnails beneath. Every entry carries a plate — the founder's "bring
+   images into the feature toggle state for all devotionals". */
+
+.fp-desk {
+  margin-top: 2.6rem;
+}
+
+.fp-desk-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.fp-desk-name {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.fp-desk-rule {
+  flex: 1 1 auto;
+  height: 0;
+  border-top: var(--rr-hair);
+}
+
+.fp-desk-count {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--mock-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.fp-desk-blurb {
+  margin: 0.4rem 0 1.05rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--mock-muted);
+}
+
+/* A desk is a section front: the lede holds its own column, the rest of the
+   desk fills the space beside it. This is why a two-entry desk still reads as
+   a finished block rather than a row that stopped early. */
+.fp-desk-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.fp-desk-lede {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--mock-ink);
+  padding-right: 1.6rem;
+  border-right: var(--rr-hair);
+}
+
+.fp-desk-lede-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--plate-ground);
+}
+
+.fp-desk-lede-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.fp-desk-lede-head {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.35rem, 2.1vw, 1.95rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.fp-desk-lede-stand {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--mock-muted);
+}
+
+/* The rest of the desk — equal thumbnails, all the same size. */
+.fp-desk-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.15rem 1.05rem;
+  margin-top: 0;
+}
+
+.fp-desk-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--mock-ink);
+}
+
+.fp-desk-item-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--plate-ground);
+}
+
+.fp-desk-item-head {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.fp-desk-lede:hover .series-plate-img,
+.fp-desk-item:hover .series-plate-img {
+  transform: scale(1.03);
+}
+
+/* ── Shelf bookends (F-098) ────────────────────────────────────────────
+   A matched pair at each end of a shelf, mirrored the way a real pair is.
+   They sit ON the board, not above it, and never out-shout the spines. */
+
+.shelf-row {
+  justify-content: center;
+  /* One line per shelf, always. Spines may shrink a hair in the worst case
+     rather than wrapping — a wrapped shelf puts the bookends around two rows
+     of books and the board under only one of them. */
+  flex-wrap: nowrap;
+}
+
+.shelf-row .spine {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Bookends stand ON the page, not on a plate — so they take the page's ink.
+   --plate-ink is the LIGHT ink meant for dark plate grounds; using it here
+   printed cream on cream and the pair effectively vanished. */
+.shelf-bookend {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 46px;
+  height: 120px;
+  color: var(--mock-ink);
+  opacity: 0.55;
+  padding-bottom: 6px;
+}
+
+.shelf-bookend--left {
+  transform: scaleX(-1);
+  margin-right: 0.35rem;
+}
+
+.shelf-bookend--right {
+  margin-left: 0.35rem;
+}
+
+.shelf-bookend-mark {
+  width: 42px;
+  height: 42px;
+}
+
+@media (max-width: 900px) {
+  .fp-desk-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fp-desk-lede {
+    border-right: 0;
+    padding-right: 0;
+    padding-bottom: 1.1rem;
+    border-bottom: var(--rr-hair);
+  }
+}
+
+@media (max-width: 640px) {
+  .fp-desk-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .shelf-bookend {
+    width: 30px;
+  }
+  .shelf-bookend-mark {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ── The Daily Edition, continued (F-098) ──────────────────────────────
+   The paper below the front page: practice, word study, guides, panel and
+   the prayer list. Same furniture as the front — hairline rules, industry
+   caps for section names, serif for anything meant to be read. */
+
+/* --rr-hair is scoped to .series-browser, so the edition needs its own
+   hairline token. Same expression, page-wide. */
+:root {
+  --ed-hair: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
+}
+
+.edition-icon {
+  width: 1.55em;
+  height: 1.55em;
+  margin-right: 0.5em;
+  flex: 0 0 auto;
+}
+
+/* The kicker is a block by default, which stacked the mark above its own
+   label. Inline-flex puts the two on one baseline, which is the whole point
+   of an icon that labels a section. */
+.edition-practice .edition-kicker,
+.edition-word .edition-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Practice + word study sit side by side, boxed, like a paper's standing
+   columns. They are the two shortest things in the edition, so they share
+   a band rather than each taking a full-width rule. */
+.edition-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  margin: 2.4rem 0 0;
+  border-top: var(--ed-hair);
+  border-bottom: var(--ed-hair);
+}
+
+.edition-practice,
+.edition-word {
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+
+.edition-practice {
+  border-right: var(--ed-hair);
+}
+
+.edition-practice-do {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  line-height: 1.2;
+  color: var(--mock-ink);
+  text-wrap: balance;
+}
+
+.edition-practice-why {
+  margin: 0.55rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--mock-muted);
+}
+
+.edition-practice-time,
+.edition-word-ref {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.edition-word-original {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1;
+  color: var(--mock-ink);
+}
+
+.edition-word-translit {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--mock-muted);
+}
+
+.edition-word-gloss {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--mock-ink);
+}
+
+.edition-word-note {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--mock-muted);
+}
+
+/* A section bar: name left, standfirst right, rule under. */
+.edition-section-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--mock-ink);
+}
+
+.edition-section-bar .edition-section-head {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.edition-section-note {
+  margin: 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--mock-muted);
+}
+
+/* Guides — three abreast, each led by its plate. */
+.edition-guides {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.edition-guide {
+  display: flex;
+  flex-direction: column;
+}
+
+.edition-guide-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--plate-ground);
+  margin-bottom: 0.65rem;
+}
+
+.edition-guide-img,
+.edition-panel-img,
+.edition-brief-img {
+  object-fit: cover;
+}
+
+.edition-guide-kicker {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-crimson);
+}
+
+.edition-guide-head {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1.22rem;
+  line-height: 1.14;
+  color: var(--mock-ink);
+  text-wrap: balance;
+}
+
+.edition-guide-stand {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.94rem;
+  line-height: 1.4;
+  color: var(--mock-muted);
+}
+
+.edition-guide-steps {
+  margin: 0.7rem 0 0;
+  padding-left: 1.35rem;
+  /* Numbered because these genuinely are ordered steps — step three assumes
+     you did step two. Structure encoding content, not decoration. */
+  list-style: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: var(--mock-ink);
+}
+
+.edition-guide-steps li::marker {
+  color: var(--color-crimson);
+  font-family: var(--font-family-ui);
+  font-size: 0.72em;
+}
+
+.edition-guide-time {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* The daily panel — plate and caption, the caption set like a cartoon's. */
+.edition-panel {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.edition-panel-plate {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--plate-ground);
+}
+
+.edition-panel-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edition-panel-title {
+  font-family: var(--font-family-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.edition-panel-line {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+  line-height: 1.2;
+  color: var(--mock-ink);
+  text-wrap: balance;
+}
+
+/* The prayer list. */
+.edition-petitions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.edition-petition {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.1rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--mock-ink);
+  padding-top: 0.9rem;
+  border-top: var(--ed-hair);
+}
+
+.edition-petition .edition-icon {
+  color: var(--color-crimson);
+  margin-top: 0.18em;
+}
+
+/* Rail briefs gain a thumbnail. */
+.edition-brief {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.edition-brief-thumb {
+  position: relative;
+  display: block;
+  width: 72px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--plate-ground);
+}
+
+.edition-brief-text {
+  display: block;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .edition-band {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .edition-practice {
+    border-right: 0;
+    border-bottom: var(--ed-hair);
+  }
+  .edition-guides {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .edition-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .edition-petitions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Home in the nav is a mark, not a word (F-098). Sized to the cap height of
+   the labels beside it so the row's rhythm is unbroken. */
+.mock-nav-item--icon {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.05em;
+}
+
+.mock-nav-home {
+  /* Larger than the cap height of the labels beside it: a mark needs more
+     area than a letter to carry the same weight in a row of type. */
+  width: 1.45em;
+  height: 1.45em;
+  display: block;
 }

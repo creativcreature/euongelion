@@ -26,6 +26,47 @@ set gate: landscape mean 37.6%, SD 23.7, range 5.0–89.6% with 23/33 outside th
 assigned bands; portrait mean 37.2%, SD 18.8, range 4.9–84.1% with 18/33 outside.
 No upscaling was performed.
 
+## MOBILE PARAGRAPH SPACING — space belongs to the leading (2026-08-16)
+
+**SA-054 · F-096** — founder: _"indents dont seem to be working on site and it makes
+text hard to read, this could be just a mobile thing."_ After measurement:
+_"reads fine on desktop, its a mobile paragraoh spacing issue- no indent needed."_
+
+**There were no indents to break.** `text-indent` appears nowhere on prose
+paragraphs — the only two occurrences in the codebase are an auth-code input and a
+hanging-punctuation fallback. Nothing regressed; the founder was reading a real
+symptom (paragraphs running together) and reasonably attributed it to a missing
+indent. No indent is wanted.
+
+**The cause is a viewport-relative clamp.** `.devotional-shell-panel .vw-body` sets
+`margin-bottom: var(--devotional-rhythm-sm)`, which is `clamp(0.75rem, 1vw, 1rem)`.
+On a 390px phone `1vw` = 3.9px, so the clamp collapses to its floor:
+
+```
+mobile 390px    gap 12.75px / line-height 33.3px = 0.39   ← blurs together
+desktop 1655px  gap 16.55px / line-height 45.7px = 0.36   ← founder confirms reads fine
+after fix       gap             / line-height    = 0.80
+```
+
+That selector also beats Tailwind's `space-y-6`, which was on the container and
+would have given 25.5px — confirmed by injecting a control `.space-y-6` into the
+live page, which measured 25.5px correctly. A two-class unlayered descendant
+selector wins over `@layer utilities`; the same layering trap as before.
+
+**Fix:** `margin-bottom: 1.45em` scoped to `max-width: 767px`. `em` tracks the type
+size including the reader's font-scale control. Desktop deliberately untouched.
+
+**New site-wide check:** `scripts/check-paragraph-spacing.mjs` measures
+gap ÷ line-height across six routes at two viewports, because 13px is generous
+under 16px type and invisible under 33px type. Two calibration bugs were found and
+fixed while building it — multi-column containers place the next paragraph at the
+top of the next column, so raw geometry returned ratios like **-4.06** and read as
+catastrophic failure; and single-pair containers (cookie banner, headline dek) are
+banners, not reading flows. Thresholds are viewport-aware: mobile ≥ 0.5,
+desktop ≥ 0.33.
+
+---
+
 ## READABILITY — gate the tail, not the average (2026-08-16)
 
 **SA-053 · F-096** — founder felt the devotionals read slightly too dense. Measured
