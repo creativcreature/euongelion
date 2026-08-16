@@ -28,6 +28,57 @@ const DIR =
 // a faint printed tint still counts as printed rather than blank.
 const isPaper = (r, g, b) => r > 228 && g > 212 && b > 158 && r - b < 112
 
+// Lightness alone cannot tell "quiet but printed" from "blank". The founder's
+// rule is that even the quietest region carries tone — and a printed region has
+// DOT TEXTURE, so its local pixel variance is non-zero, while truly unprinted
+// paper is flat. This threshold was calibrated on the AIRY plates, which read as
+// 8-53% "paper" by lightness yet visibly carry halftone grain throughout.
+const FLAT_VARIANCE = 6
+
+// Sample local variance across the light regions of the image.
+async function flatness(src) {
+  // MUST sample at native resolution. Downscaling averages the halftone dots
+  // away before they can be measured, so a correctly printed quiet area reads
+  // as flat and every AIRY plate fails. This cost one full false-negative pass.
+  const meta = await sharp(src).metadata()
+  const N = Math.min(600, meta.width, meta.height)
+  const left = Math.round((meta.width - N) / 2)
+  const top = Math.round((meta.height - N) / 2)
+  const { data, info } = await sharp(src)
+    .extract({ left, top, width: N, height: N })
+    .greyscale()
+    .raw()
+    .toBuffer({ resolveWithObject: true })
+  const at = (x, y) => data[y * info.width + x]
+
+  let lightCells = 0
+  let flatCells = 0
+  // 5x5 neighbourhoods, stepped, so we measure texture not gradient
+  for (let y = 2; y < N - 2; y += 4) {
+    for (let x = 2; x < N - 2; x += 4) {
+      const c = at(x, y)
+      if (c < 200) continue // not a light region; ink texture is not in question
+      lightCells++
+      let sum = 0
+      let sq = 0
+      let n = 0
+      for (let dy = -2; dy <= 2; dy++) {
+        for (let dx = -2; dx <= 2; dx++) {
+          const v = at(x + dx, y + dy)
+          sum += v
+          sq += v * v
+          n++
+        }
+      }
+      const mean = sum / n
+      const varr = sq / n - mean * mean
+      if (varr < FLAT_VARIANCE) flatCells++
+    }
+  }
+  // share of the light area that is genuinely featureless
+  return lightCells ? (100 * flatCells) / lightCells : 0
+}
+
 const HERO_W = 1408
 const HERO_H = 768
 
@@ -51,21 +102,12 @@ async function check(file) {
   const paperEdges = edges.filter(([r, g, b]) => isPaper(r, g, b)).length
   const borderOk = paperEdges < 3
 
-  // Step 2 — blank-paper coverage across the whole frame.
-  const small = await sharp(src)
-    .resize(200, 200, { fit: 'fill' })
-    .raw()
-    .toBuffer({ resolveWithObject: true })
-  let blank = 0
-  let total = 0
-  for (let i = 0; i < small.data.length; i += small.info.channels) {
-    total++
-    if (isPaper(small.data[i], small.data[i + 1], small.data[i + 2])) blank++
-  }
-  const blankPct = (100 * blank) / total
-  const blankOk = blankPct < 2
+  // Step 2 — is any of the quiet area genuinely UNPRINTED (flat), rather than
+  // merely light? Lightness alone rejects correct AIRY plates.
+  const flatPct = await flatness(src)
+  const blankOk = flatPct < 25
 
-  return { file, borderOk, paperEdges, blankPct, blankOk, pass: borderOk && blankOk }
+  return { file, borderOk, paperEdges, blankPct: flatPct, blankOk, pass: borderOk && blankOk }
 }
 
 const files = fs.existsSync(DIR)
@@ -83,10 +125,10 @@ for (const f of files) results.push(await check(f))
 const w = Math.max(...results.map((r) => r.file.length))
 for (const r of results) {
   const border = r.borderOk ? 'ok  ' : `BAD(${r.paperEdges}/6)`
-  const blankTxt = `${r.blankPct.toFixed(1)}%`.padStart(6)
+  const blankTxt = `${r.blankPct.toFixed(0)}%`.padStart(5)
   const verdict = r.pass ? 'pass' : 'FAIL'
   console.log(
-    `  ${r.file.padEnd(w)}  border ${border}  blank ${blankTxt}  ${verdict}`,
+    `  ${r.file.padEnd(w)}  border ${border}  flat ${blankTxt}  ${verdict}`,
   )
 }
 

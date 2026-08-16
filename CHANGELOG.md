@@ -5,6 +5,59 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## SERIES IMAGERY REV B — two-orientation proof run (2026-08-16)
+
+Generated a complete staging-only review run for the 33 non-approved series:
+33 landscape proofs and 33 portrait proofs, plus orientation-specific contact
+sheets showing the master view and worst-case crops. The four founder-approved
+plates remain untouched and nothing was installed into `public/`.
+
+The prompt source now forbids floating specimens and malformed invented object
+construction. Surreal devices must remain grounded in coherent environments
+with believable anatomy, attachment, contact, and gravity. The failed graft-like
+`abiding-in-his-presence` proof was rejected and replaced with a real grapevine
+scene based on vine anatomy; John 15 is represented by a naturally attached
+fruiting branch rather than a Romans 11-style graft.
+
+This run is **not approved or installable**. The available generator returned
+1536×1024 (one plate 1535×1024) landscape proofs and 1086×1448 portrait proofs,
+short of the required 2400×1600 and 1800×2400 masters. Coverage also failed the
+set gate: landscape mean 37.6%, SD 23.7, range 5.0–89.6% with 23/33 outside their
+assigned bands; portrait mean 37.2%, SD 18.8, range 4.9–84.1% with 18/33 outside.
+No upscaling was performed.
+
+## SERIES IMAGERY — the editorial pass (2026-08-16)
+
+**SA-052 · F-096** — all 33 non-approved plates regenerated. The four approved
+plates stay untouched.
+
+The uniformity the founder rejected was arithmetic, not taste: deriving all eight
+site ratios from one square master left a crop-safe zone of the central 60%x27%
+— 16% of the frame — so every composition was forced to the centre with padding
+around it. Two masters now, each composed to its own shape: landscape 3:2 (safe
+zone ~50%) and portrait 3:4 (~60%).
+
+```
+                 mean ink   sd     range
+round 2 (rejected)  78%     9.7    55-99%
+round 3             53%    26.8     7-100%
+approved four        —       —     22-85%
+```
+
+Four new prompt clauses: COVERAGE DISCIPLINE (the ink percentage is a hard budget
+— render the subject and stop; band accuracy went 0/4 to 4/8 immediately), SCALE
+MUST BE LEGIBLE (an object alone on a plain reads as ordinary, not giant),
+HANDS AND ANATOMY, and NOT AI ARTWORK naming the specific tells.
+
+**The gate was wrong twice in the same direction** — it measured blankness by
+lightness, so every correct cream-dominant plate failed, and it sampled after a
+downscale that averaged the halftone away. It now measures local variance at
+native resolution: printed quiet has dot texture, blank paper is flat.
+
+Set weight 15.8 MB, down from 17.9.
+
+---
+
 ## SERIES IMAGERY — region-accurate people, developed frames (2026-08-15)
 
 **SA-052 · F-096** — 33 of 37 series plates regenerated. The four founder-approved
@@ -94,23 +147,23 @@ more diligent and cross reference as much as possible. Needs to be
 comprehensive."_ Registered as **SA-053**.
 
 **Explicit attribution is now decisive on its own.** The previous guard required
-the count of Jesus-attributed quotations to match the KJV's expected count *and*
+the count of Jesus-attributed quotations to match the KJV's expected count _and_
 allowed no unattributable quotation anywhere — so one unclear quote discarded
 the ones we were certain of. Passages reading literally "Jesus said to them,"
 and "Then Jesus declared," were sitting black.
 
 **Three bugs found while making it comprehensive, each caught by a test:**
 
-- **Direction.** "They said to Jesus" names him as the *object*. A loose
+- **Direction.** "They said to Jesus" names him as the _object_. A loose
   `/Jesus.*said/` would have painted the crowd's words in Christ's colour — the
   exact failure this module exists to prevent. Object forms are matched first
   and rule him out.
 - **Scope.** A fixed 80-character look-back reached past the previous quotation
-  and picked up an unrelated clause: in *"The crowd said to Jesus, '…' Jesus
-  answered, '…'"* it saw "said to Jesus" while attributing the **second** quote,
+  and picked up an unrelated clause: in _"The crowd said to Jesus, '…' Jesus
+  answered, '…'"_ it saw "said to Jesus" while attributing the **second** quote,
   and ruled Christ out of his own words. Look-back is clamped to the previous
   quotation, look-ahead to the next.
-- **Ambiguity.** The clause *between* two quotations could trail the first or
+- **Ambiguity.** The clause _between_ two quotations could trail the first or
   lead the second. Punctuation settles it — a clause ending in a comma leads
   into the next quote.
 
