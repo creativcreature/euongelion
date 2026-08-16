@@ -25,6 +25,7 @@ import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { ReaderProvider } from '@/components/reader/ReaderContext'
 import JournalField from '@/components/reader/JournalField'
+import PendingIntentReplay from '@/components/reader/PendingIntentReplay'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
@@ -1054,6 +1055,7 @@ export default function DevotionalPageClient({
         {dayGate.unlocked && (
           <>
             <TextHighlightTrigger devotionalSlug={slug} />
+            <PendingIntentReplay />
             <DevotionalChat
               devotionalSlug={slug}
               devotionalTitle={devotional.title}

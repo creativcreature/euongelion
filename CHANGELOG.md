@@ -5,6 +5,54 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE LOCK NOW OPENS — SA-062 / F-105 (2026-08-16)
+
+Shoring up the loose ends the two-state model left. Three were real defects,
+found by reading the live Supabase configuration through the Management API
+rather than assuming.
+
+**In-app code entry could never have worked.** F-065 shipped a code input and
+`/api/auth/verify-code` months ago. The magic-link email template is Supabase's
+STOCK DEFAULT — `<h2>Magic Link</h2>` and a bare link — and contains no
+`{{ .Token }}`, so the email never carried a code to type.
+
+**And the lengths disagreed.** `mailer_otp_length` was **8** while both the UI
+and the route hard-required `/^\d{6}$/`. Even with a token in the template,
+every code a reader typed would have been rejected before reaching `verifyOtp`.
+
+Both fixed. The config moves to 6 (the convention Google, Apple, Stripe and
+GitHub all use) rather than the app moving to 8, and **both ends now accept
+6–8** so the next config change is not an outage. The template is rewritten in
+the product's voice, carrying the code AND the link, with the code in the
+subject line where iOS and Android autofill read it.
+
+**The lock now actually opens.** "Locked, not hidden" was half a promise: the
+intent was captured and the modal opened, but nothing completed afterwards — a
+reader could highlight a line, sign in, and land on an unmarked page. Replay is
+now wired, built to the standard pending-intent hazards:
+
+- **One shot.** Reading consumes; a second replay is a bug. (Android names this
+  `FLAG_ONE_SHOT`; the same reasoning applies to a redirect round trip.)
+- **Ephemeral.** `sessionStorage`, so it dies with the tab. Replaying something
+  reached for last Tuesday reads as a fault.
+- **Expiring.** Ten minutes, and scoped to the page it was captured on. It
+  clears even when it declines, so a stale entry cannot fire elsewhere later.
+- **Additive only.** A redirect is an untrusted boundary. Replaying `save` or
+  `highlight` creates something the reader can undo; replaying `unsave` or
+  `restart_archive` destroys something they cannot. Destructive intents are
+  refused and never even stored.
+- **No Art. 9 data through the front channel.** A `journal` intent carries the
+  slug, never what was written; it replays by reopening the field.
+
+**Still needs the founder:** `smtp_host` is null, so the built-in mailer is in
+use and `rate_limit_email_sent` is **2 per hour** — a Supabase platform limit on
+the built-in sender. The only real fix is custom SMTP (Resend, Postmark, SES),
+which needs an account this session cannot create. Google sign-in already routes
+around it for most readers.
+
+`scripts/fix-auth-config.mjs --check` reports the auth configuration without
+changing it.
+
 ## TWO SITE STATES — THE DATA HALF — SA-062 / F-105 (2026-08-16)
 
 Founder: "Need two site states… Having an account enables notes, saving
@@ -634,7 +682,7 @@ everything else one cell, packed leftmost-lowest so the board has no holes.
 Deterministic from the sort — change the sort and the board rearranges.
 
 **The board is a CSS grid, and that is the point.** The first build positioned
-tiles on a *measured* canvas, and the measurement was the bug: an un-laid-out
+tiles on a _measured_ canvas, and the measurement was the bug: an un-laid-out
 frame reports `clientWidth === 0`, `??` kept the `0` because `0` is a number,
 and the board froze at its default column count — leaving exactly the dead space
 on the right the founder called out in the same message. As a grid at

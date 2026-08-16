@@ -405,8 +405,16 @@ export default function TextHighlightTrigger({
     }
 
     void hydrateSavedHighlights()
+
+    // A highlight created by the post-sign-in replay lands in the database
+    // while this page is already open, so the layer has to be able to repaint
+    // on demand — otherwise the reader is told it was saved and sees nothing.
+    const onRehydrate = () => void hydrateSavedHighlights()
+    window.addEventListener('highlightsRehydrate', onRehydrate)
+
     return () => {
       cancelled = true
+      window.removeEventListener('highlightsRehydrate', onRehydrate)
     }
   }, [devotionalSlug])
 

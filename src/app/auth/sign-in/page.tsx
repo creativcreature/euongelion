@@ -205,8 +205,10 @@ function SignInForm() {
     e.preventDefault()
 
     const compact = code.replace(/\s+/g, '')
-    if (!/^\d{6}$/.test(compact)) {
-      setCodeError('Enter the 6-digit code from the email.')
+    // 6-8 digits — see /api/auth/verify-code. The length is Supabase project
+    // config, and hardcoding 6 here while it was set to 8 made every code fail.
+    if (!/^\d{6,8}$/.test(compact)) {
+      setCodeError('Enter the code from the email.')
       return
     }
 
@@ -265,14 +267,13 @@ function SignInForm() {
             OR TYPE THE CODE FROM THE EMAIL
           </p>
           <p className="vw-small text-muted">
-            If your email includes a 6-digit code, enter it here to sign in
-            without leaving this page.
+            Or enter the code from the email without leaving this page.
           </p>
           <input
             type="text"
             inputMode="numeric"
             autoComplete="one-time-code"
-            maxLength={7}
+            maxLength={9}
             value={code}
             onChange={(e) => {
               setCode(e.target.value)
@@ -280,7 +281,7 @@ function SignInForm() {
             }}
             placeholder="123456"
             disabled={codeStatus === 'verifying'}
-            aria-label="6-digit sign-in code"
+            aria-label="Sign-in code from your email"
             className="auth-code-input w-full bg-surface-raised px-5 py-4 text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-colors duration-200 focus:outline-none"
             style={{ border: '1px solid var(--color-border)' }}
             onFocus={(e) => {

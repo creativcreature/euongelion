@@ -54,7 +54,13 @@ function isValidEmail(email: string): boolean {
 /** The emailed OTP is 6 digits; strip whitespace people paste along. */
 function normalizeCode(raw: string): string | null {
   const compact = raw.replace(/\s+/g, '')
-  return /^\d{6}$/.test(compact) ? compact : null
+  // 6 to 8 digits. Supabase's `mailer_otp_length` is project configuration and
+  // was found set to 8 while this validator demanded exactly 6 — so every code
+  // a reader typed was rejected before it ever reached verifyOtp. The config is
+  // now 6 (the convention Google, Apple, Stripe and GitHub all use), but being
+  // liberal in what we accept means a future config change cannot silently
+  // break sign-in again.
+  return /^\d{6,8}$/.test(compact) ? compact : null
 }
 
 export async function POST(request: NextRequest) {

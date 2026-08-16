@@ -13,6 +13,7 @@
  */
 
 import { create } from 'zustand'
+import { capturePendingIntent } from '@/lib/auth/pending-intent'
 
 export type ActiveSeriesSource =
   | 'manual_start'
@@ -131,6 +132,10 @@ const INTENT_EVENT = 'euangelion:auth-required-intent'
 
 function emitAuthRequired(intent: LibraryIntent) {
   if (typeof window === 'undefined') return
+  // Hold it across the sign-in round trip so the action completes when the
+  // reader comes back. Capture is one-shot, expiring and additive-only — see
+  // lib/auth/pending-intent.
+  capturePendingIntent(intent, window.location.pathname)
   window.dispatchEvent(new CustomEvent(INTENT_EVENT, { detail: { intent } }))
 }
 
