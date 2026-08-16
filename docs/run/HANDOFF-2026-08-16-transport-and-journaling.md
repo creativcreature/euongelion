@@ -187,6 +187,23 @@ anything, and every statement is idempotent, so re-running is safe.
 single source of truth for subscription state. Blocks paid tiers, not sign-in.
 Not applied here — different scope, and not founder-approved.
 
+### 6.1a DEPLOYED — but the Google flag did NOT make the build
+
+Verified against euangelion.app at 17:15 EDT:
+
+- **This session's code IS live.** `/api/listening-progress?devotionalSlug=…`
+  answers `{"ok":true,"progress":null}` — the exact signed-out contract. It
+  went out with the design session's deploy (the newest is 20:29Z; note
+  `wrangler deployments list` prints OLDEST FIRST, which is easy to misread).
+- **A nonexistent path 404s correctly**, so 200s from that probe are meaningful
+  rather than a catch-all.
+- **Google sign-in is NOT live.** `Welcome back` appears in the production HTML
+  but `Continue with Google` does not, while locally it renders. The flag lives
+  in `.env.local` and `NEXT_PUBLIC_*` is inlined at BUILD time, so whichever
+  build produced the live bundle did not have it. **It ships on the next build
+  from this machine** — no code change needed, but do not tell anyone Google is
+  available until a build confirms it.
+
 ### 6.1b The workerd verification for `/api/listening-progress` has NOT run
 
 Dev rule #9 requires `npm run preview` (workerd) and a real curl before deploy.
