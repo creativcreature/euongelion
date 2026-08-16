@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-062/F-105) is next and is the one with a release blocker — see §6.
+**Status:** **Phases 1–3 COMPLETE. Phase 4's DATA HALF complete; its release gate is NOT met.** Do not treat the two-state model as shipped until §6.2 passes.
 
 ---
 
