@@ -33,7 +33,7 @@ const uniqueIds = Array.from(new Set(ids)).sort()
 // so whoever hits it next pays for someone else's omission.
 //
 // 95: F-095 (red letter).
-if (uniqueIds.length !== 95) {
+if (uniqueIds.length !== 96) {
   fail(
     `Expected 95 feature IDs in registry, found ${uniqueIds.length}. ` +
       `If you just added a PRD, bump this number in the same commit.`,

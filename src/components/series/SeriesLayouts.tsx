@@ -120,54 +120,103 @@ function statusLabel(slug: string, progress?: SeriesProgress) {
   return dayCountLabel(slug)
 }
 
-/* ── 1. FEATURE ─────────────────────────────────────────────────────── */
+/* ── 1. FEATURE — the front page ────────────────────────────────────── */
 
 /**
- * Founder: "the Title and image are the main pieces of info."
+ * Founder 2026-08-16: "Feature style- Try something different here- make it
+ * feel like a literal newspaper grid, with different sized stories etc."
  *
- * So the tile carries exactly two things at full strength — the plate and the
- * title — and the length sits under the title as a quiet line. The gold
- * uppercase kicker that used to sit ABOVE the title has gone: it was the
- * brightest thing on the tile and it was the least important.
+ * So this is a front page, not a bento. It follows the way a broadsheet
+ * actually allocates space, and every size here means something about the
+ * series rather than being decoration:
+ *
+ *   LEAD      the newest reading — plate, banner headline, standfirst
+ *   SECOND    the next two, boxed and ruled, above the fold
+ *   COLUMN    a right-hand rail of briefs, headline + length only
+ *   BELOW     the rest, set in four ruled columns like classified listings
+ *
+ * Column rules and hairline boxes do the work a card shadow would do in a
+ * generic grid — this is the furniture of print, which is the whole brief.
  */
-const BENTO_RHYTHM = ['tall', 'small', 'small', 'wide', 'small', 'tall', 'small', 'small'] as const
-
 export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutProps) {
-  const rest = useMemo(() => slugs.filter((s) => s !== lead), [slugs, lead])
   const leadSeries = SERIES_DATA[lead]
+  const rest = useMemo(() => slugs.filter((s) => s !== lead), [slugs, lead])
+  const second = rest.slice(0, 2)
+  const rail = rest.slice(2, 7)
+  const below = rest.slice(7)
 
   return (
-    <div className="bento">
-      {leadSeries && slugs.includes(lead) && (
-        <Link href={cardHref(lead)} className="bento-tile bento-lead">
-          <Plate slug={lead} sizes="(max-width: 900px) 100vw, 50vw" priority />
-          <span className="bento-veil" />
-          <span className="bento-copy">
-            <span className="bento-title bento-title--lead">{leadSeries.title}</span>
-            <span className="bento-meta">
-              Newest · {dayCountLabel(lead)}
-            </span>
-          </span>
-        </Link>
-      )}
+    <div className="frontpage">
+      <div className="fp-above">
+        <div className="fp-main">
+          {leadSeries && slugs.includes(lead) && (
+            <Link href={cardHref(lead)} className="fp-lead">
+              <span className="fp-lead-plate">
+                <Plate slug={lead} sizes="(max-width: 900px) 100vw, 58vw" priority />
+              </span>
+              <span className="fp-lead-head">{leadSeries.title}</span>
+              <span className="fp-lead-stand">{leadSeries.question}</span>
+              <span className="fp-byline">Newest · {dayCountLabel(lead)}</span>
+            </Link>
+          )}
 
-      {rest.map((slug, i) => {
-        const series = SERIES_DATA[slug]
-        if (!series) return null
-        const size = BENTO_RHYTHM[i % BENTO_RHYTHM.length]
-        const progress = progressBySeries.get(slug)
-        return (
-          <Link key={slug} href={cardHref(slug)} className={`bento-tile bento-${size}`}>
-            <Plate slug={slug} sizes="(max-width: 900px) 50vw, 25vw" />
-            <span className="bento-veil" />
-            <span className="bento-copy">
-              <span className="bento-title">{series.title}</span>
-              <span className="bento-meta">{statusLabel(slug, progress)}</span>
-            </span>
-            <ProgressRail progress={progress} />
-          </Link>
-        )
-      })}
+          <div className="fp-second">
+            {second.map((slug) => {
+              const series = SERIES_DATA[slug]
+              if (!series) return null
+              return (
+                <Link key={slug} href={cardHref(slug)} className="fp-story">
+                  <span className="fp-story-plate">
+                    <Plate slug={slug} sizes="(max-width: 900px) 50vw, 29vw" />
+                  </span>
+                  <span className="fp-story-head">{series.title}</span>
+                  <span className="fp-story-stand">{series.question}</span>
+                  <span className="fp-byline">
+                    {statusLabel(slug, progressBySeries.get(slug))}
+                  </span>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+
+        <aside className="fp-rail" aria-label="Also inside">
+          <p className="fp-rail-head">Also inside</p>
+          {rail.map((slug) => {
+            const series = SERIES_DATA[slug]
+            if (!series) return null
+            return (
+              <Link key={slug} href={cardHref(slug)} className="fp-brief">
+                <span className="fp-brief-head">{series.title}</span>
+                <span className="fp-byline">
+                  {statusLabel(slug, progressBySeries.get(slug))}
+                </span>
+              </Link>
+            )
+          })}
+        </aside>
+      </div>
+
+      {below.length > 0 && (
+        <>
+          <p className="fp-section-rule">The rest of the catalog</p>
+          <div className="fp-below">
+            {below.map((slug) => {
+              const series = SERIES_DATA[slug]
+              if (!series) return null
+              return (
+                <Link key={slug} href={cardHref(slug)} className="fp-entry">
+                  <span className="fp-entry-head">{series.title}</span>
+                  <span className="fp-entry-body">{series.question}</span>
+                  <span className="fp-byline">
+                    {statusLabel(slug, progressBySeries.get(slug))}
+                  </span>
+                </Link>
+              )
+            })}
+          </div>
+        </>
+      )}
     </div>
   )
 }
@@ -177,12 +226,16 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
 /**
  * The founder's own image: "each devotional is a newspaper on the rack."
  *
- * Papers hang over a rail in rows of six, overlapping left-to-right the way
- * they do on a kiosk bar, each tilted by a fixed amount derived from its
- * position (never random — the shelf must look identical on every render).
- * Hovering lifts one clear of its neighbours, as if being pulled out.
+ * Founder 2026-08-16: "Rack doesnt feel like a news paper rack enough and I
+ * think there are too many columns."
+ *
+ * Four to a rail rather than six, so each paper is wide enough to read as a
+ * folded front page rather than a card: masthead across the top, a rule, the
+ * plate, then the standfirst — the order a real front page uses. Each is
+ * tilted by a fixed amount from its position (never random, so the rack looks
+ * identical on every render) and hovering lifts one clear, as if pulled out.
  */
-const RACK_PER_RAIL = 6
+const RACK_PER_RAIL = 4
 
 export function RackView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   const rails = useMemo(() => {
@@ -267,16 +320,33 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
  * Width-as-length is the one piece of information a real shelf gives you at a
  * glance, so it is the one encoded here.
  */
+const SPINES_PER_SHELF = 12
+
 export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
+  // Founder 2026-08-16: "Spine should have several rows of books and the spines
+  // can be larger. No overflow scroll, all on page visible." So the shelf wraps
+  // into rows of twelve, each with its own board, and nothing scrolls sideways.
+  const shelves = useMemo(() => {
+    const out: string[][] = []
+    for (let i = 0; i < slugs.length; i += SPINES_PER_SHELF) {
+      out.push(slugs.slice(i, i + SPINES_PER_SHELF))
+    }
+    return out
+  }, [slugs])
+
   return (
     <div className="shelf">
-      <div className="shelf-row">
-        {slugs.map((slug, i) => {
+      {shelves.map((shelf, si) => (
+        <div className="shelf-unit" key={si}>
+          <div className="shelf-row">
+        {shelf.map((slug, i) => {
           const series = SERIES_DATA[slug]
           if (!series) return null
           const days = series.days.length
-          // Clamped so bible-365 does not become a wall.
-          const width = Math.min(74, Math.max(34, 30 + days * 3))
+          // Width still encodes length, and is now sized so a shelf of twelve
+          // FILLS the row rather than trailing off into whitespace. Clamped so
+          // bible-365 is a broad volume, not a wall.
+          const width = Math.min(190, Math.max(104, 96 + days * 6))
           return (
             <Link
               key={slug}
@@ -293,8 +363,10 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
             </Link>
           )
         })}
-      </div>
-      <span className="shelf-board" aria-hidden="true" />
+          </div>
+          <span className="shelf-board" aria-hidden="true" />
+        </div>
+      ))}
     </div>
   )
 }

@@ -28,7 +28,7 @@ No upscaling was performed.
 
 ## DEVO-GO SKILL — audited and brought current (2026-08-16)
 
-**SA-052 · F-096** — founder asked for confirmation the skill is fully updated for
+**SA-052 · F-097** — founder asked for confirmation the skill is fully updated for
 imagery and audio. Audited rather than asserted; found and fixed four gaps.
 
 **Imagery** — `SKILL.md` phase 7 and `workflow.md` phase 7 both still specified the
@@ -60,7 +60,7 @@ changes need the service-worker bump like any shell change.
 
 ## IMAGERY — three plate fixes + skill brought in line (2026-08-16)
 
-**SA-052 · F-096** — founder: _"this style is almost perfect for now"_, with three
+**SA-052 · F-097** — founder: _"this style is almost perfect for now"_, with three
 rejections:
 
 - **surrender-to-gods-will** — _"the right hand looks like ai drew it - its malformed."_ Regenerated with an explicit anatomy spec: both hands at the same viewing angle, five fingers counted, correct length order (middle longest, little shortest), thumb low on the inner palm, no crossing or fusing, and an instruction to simplify the pose rather than attempt an expressive one.
@@ -85,7 +85,7 @@ geometry and "does it suit the passage" — the three things measurement cannot 
 
 ## SERIES IMAGERY — the editorial pass (2026-08-16)
 
-**SA-052 · F-096** — all 33 non-approved plates regenerated. The four approved
+**SA-052 · F-097** — all 33 non-approved plates regenerated. The four approved
 plates stay untouched.
 
 The uniformity the founder rejected was arithmetic, not taste: deriving all eight
@@ -117,7 +117,7 @@ Set weight 15.8 MB, down from 17.9.
 
 ## SERIES IMAGERY — region-accurate people, developed frames (2026-08-15)
 
-**SA-052 · F-096** — 33 of 37 series plates regenerated. The four founder-approved
+**SA-052 · F-097** — 33 of 37 series plates regenerated. The four founder-approved
 plates (he-cannot-deny-himself, looking-at-the-sun, prayer-of-jabez, the-harvest)
 are untouched.
 
@@ -196,6 +196,43 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index.json` on cold start; CLAUDE.md documents a 3.2 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
+
+## THE DAILY EDITION, and a front page for Series (2026-08-16)
+
+Founder: _"Feature style- Try something different here- make it feel like a
+literal newspaper grid… Rack doesnt feel like a news paper rack enough… Spine
+should have several rows of books… this needs a menu link: /today and I want it
+to be like a literally daily edition of a newspaper."_ Registered as **SA-054**.
+
+**Feature is a front page now, not a bento.** A broadsheet allocates space by
+importance, so the view does too: a lead with a 21:9 plate and a banner
+headline, two boxed stories separated by a column rule, a ruled rail of briefs,
+then the rest set as four columns of listings.
+
+**Rack drops to four papers a rail.** At four, each is wide enough to read as a
+folded front page — masthead, rule, plate, standfirst, in the order a real front
+page uses.
+
+**Spines wrap into shelves.** Twelve to a shelf, each with its own board,
+nothing scrolling sideways, and the spines widened to 104–190px so a row fills
+rather than trailing off into whitespace. Width still encodes length.
+
+**`/today` is the Daily Edition, and has its own nav entry.** A masthead with
+the thin-over-thick double rule, a dateline carrying Vol/No derived from the
+date — same day, same edition, for every reader — and the real liturgical day. A
+front page of lead story plus "Also in this edition", then the full reading
+below. SA-033 still holds: DAILY BREAD means *your* devotional; TODAY is the
+edition. They're no longer one destination, so the nav no longer duplicates.
+
+**The editorial sections are declared and empty, deliberately.** Dispatches,
+Community and the prayer list have no data source in this repo — no feed of
+global reports, no submissions table. `src/data/daily-edition.ts` types them,
+and each renders **only** when it carries real entries, absent entirely
+otherwise. No placeholder card, no "coming soon". Inventing a dispatch from
+Nigeria or a prayer request would publish fiction as fact under a masthead, in a
+devotional context — the one failure this product cannot afford. Every dispatch
+requires a `source`, because an unattributed report is a rumour. — SA-054
+(F-094 / F-097)
 
 ## RED LETTER — comprehensive (2026-08-15)
 

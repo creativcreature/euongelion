@@ -85,7 +85,7 @@ describe('SeriesBrowser — ten layouts', () => {
       'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List', 'Mosaic',
     ])
     openView('Feature')
-    const lead = container.querySelector('.bento-lead') as HTMLElement
+    const lead = container.querySelector('.fp-lead') as HTMLElement
     expect(lead).not.toBeNull()
     // SA-036(4): a commissioned series never takes a feature slot.
     expect(lead.textContent).not.toContain(
@@ -95,16 +95,45 @@ describe('SeriesBrowser — ten layouts', () => {
     expect(missingFromStage(container)).toEqual([])
   })
 
-  it('bento tiles lead with the title — no kicker above it', () => {
+  it('the front page leads with the headline, byline last', () => {
     const { container } = render(<SeriesBrowser />)
     openView('Feature')
-    const tile = container.querySelector('.bento-tile:not(.bento-lead)') as HTMLElement
-    const copy = tile.querySelector('.bento-copy') as HTMLElement
-    // Title first in the DOM, meta second. The old build put a gold uppercase
-    // kicker above the title, which made the least important thing loudest.
-    const order = Array.from(copy.children).map((c) => c.className)
-    expect(order[0]).toContain('bento-title')
-    expect(order[1]).toContain('bento-meta')
+    const lead = container.querySelector('.fp-lead') as HTMLElement
+    const order = Array.from(lead.children).map((c) => c.className)
+    // Plate, headline, standfirst, byline — a front page's own order, and the
+    // byline is never the loudest thing on the story.
+    expect(order[0]).toContain('fp-lead-plate')
+    expect(order[1]).toContain('fp-lead-head')
+    expect(order[order.length - 1]).toContain('fp-byline')
+  })
+
+  it('the front page allocates space by importance', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Feature')
+    expect(container.querySelectorAll('.fp-lead')).toHaveLength(1)
+    expect(container.querySelectorAll('.fp-story')).toHaveLength(2)
+    expect(container.querySelectorAll('.fp-brief').length).toBeGreaterThan(0)
+    expect(container.querySelectorAll('.fp-entry').length).toBeGreaterThan(0)
+  })
+
+  it('spines wrap into shelves rather than scrolling sideways', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Spines')
+    const units = container.querySelectorAll('.shelf-unit')
+    expect(units.length).toBeGreaterThan(1)
+    expect(container.querySelectorAll('.shelf-board').length).toBe(units.length)
+    expect(container.querySelectorAll('.spine')).toHaveLength(
+      ALL_SERIES_ORDER.length,
+    )
+  })
+
+  it('the rack puts four papers on a rail', () => {
+    const { container } = render(<SeriesBrowser />)
+    openView('Rack')
+    const rails = container.querySelectorAll('.rack-rail')
+    const papers = container.querySelectorAll('.rack-paper')
+    expect(papers).toHaveLength(ALL_SERIES_ORDER.length)
+    expect(rails.length).toBe(Math.ceil(ALL_SERIES_ORDER.length / 4))
   })
 
   it('the list shows no pathway/category column', () => {

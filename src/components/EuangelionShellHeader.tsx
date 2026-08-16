@@ -25,6 +25,12 @@ const DESKTOP_NAV_ITEMS = [
   // "today" means YOUR devotional via the Daily Bread resolver, not the
   // /today editorial rotation, which stays reachable in the footer.
   { href: '/daily-bread', label: 'DAILY BREAD' },
+  // Founder 2026-08-16: /today is no longer a second label for the daily
+  // reading — it is the Daily Edition, a distinct page carrying the reading
+  // plus dispatches, community and the prayer list. SA-033's ruling that
+  // "today" means YOUR devotional still holds for DAILY BREAD; this is the
+  // edition, and it earns its own entry.
+  { href: '/today', label: 'TODAY' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
   { href: '/library', label: 'LIBRARY' },

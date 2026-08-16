@@ -939,3 +939,11 @@ features:
     prd: docs/feature-prds/F-095.md
     methodology_refs:
       - M00
+  - id: F-097
+    title: The Daily Edition, and a front page for Series
+    slug: daily-edition-and-series-front-page
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-097.md
+    methodology_refs:
+      - M00

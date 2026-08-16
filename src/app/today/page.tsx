@@ -21,6 +21,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteFooter from '@/components/SiteFooter'
+import { liturgicalDay } from '@/lib/liturgical'
+import {
+  COMMUNITY,
+  DISPATCHES,
+  PRAYERS,
+} from '@/data/daily-edition'
+import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import TodayReturningBand from '@/components/TodayReturningBand'
 import {
   pickTodaySlug,
@@ -251,6 +258,19 @@ export default async function TodayPage() {
   const devotional = await fetchTodayDevotional(slug)
 
   const editionDate = formatEditionDate(now)
+  // Edition furniture. The volume/number are DERIVED, not decorative: volume
+  // counts years since the first edition, number counts days within the year,
+  // so two readers on the same day always see the same edition.
+  const liturgical = liturgicalDay(now)
+  const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 1)
+  const dayOfYear =
+    Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - startOfYear) / 86400000) + 1
+  const volume = now.getUTCFullYear() - 2025
+  // Three other readings from the catalog, for the rail. Deterministic by day.
+  const railSlugs = ALL_SERIES_ORDER.filter((x) => SERIES_DATA[x] && x !== 'bible-365')
+  const alsoToday = [0, 1, 2].map(
+    (i) => railSlugs[(dayOfYear * 3 + i) % railSlugs.length],
+  )
   const editionSlug = formatEditionSlug(now)
 
   const seriesTitle = meta?.series.title ?? 'Daily Devotional'
@@ -347,23 +367,128 @@ export default async function TodayPage() {
 
         <EuangelionShellHeader />
 
-        {/* Edition masthead band */}
-        <div className="today-edition-band">
-          <p className="text-label today-edition-label">
-            <span className="text-gold">TODAY&rsquo;S EDITION</span>
-            <span aria-hidden="true"> · </span>
-            <time dateTime={now.toISOString().split('T')[0]}>
-              {editionSlug}
-            </time>
-          </p>
-          <p className="today-edition-tagline vw-small">
-            Daily bread for the cluttered, hungry soul.
-          </p>
+        {/* Masthead — the furniture a daily edition carries. Volume and
+            number are derived from the date, so the same day is the same
+            edition for every reader. */}
+        <div className="edition-masthead">
+          <div className="edition-rule-top" aria-hidden="true" />
+          <p className="edition-name">The Daily Edition</p>
+          <div className="edition-dateline">
+            <span>
+              Vol. {volume} · No. {dayOfYear}
+            </span>
+            <time dateTime={now.toISOString().split('T')[0]}>{editionDate}</time>
+            <span>{liturgical.feast ?? liturgical.dayLabel ?? liturgical.seasonLabel}</span>
+          </div>
+          <div className="edition-rule-bottom" aria-hidden="true" />
         </div>
 
-        {/* Returning-user band (F-069) — client island, renders nothing
-            until the active-plan fetch resolves (and nothing without JS). */}
+        {/* Front page: the lead story, and a rail of what else is in the
+            edition. The rail is real catalog data chosen deterministically by
+            day — not a recommendation engine pretending to be one. */}
+        <div className="edition-front">
+          <section className="edition-lead" aria-label="Today's reading">
+            {scriptureRef && (
+              <p className="edition-kicker">{scriptureRef}</p>
+            )}
+            <h2 className="edition-lead-head">{dayTitle}</h2>
+            {teaser && <p className="edition-lead-stand">{teaser}</p>}
+            <p className="edition-byline">
+              {seriesTitle}
+              {dayNumber > 1 ? ` · Day ${dayNumber}` : ''}
+            </p>
+            <a href="#the-reading" className="edition-jump">
+              Read today&rsquo;s reading &darr;
+            </a>
+          </section>
+
+          <aside className="edition-rail" aria-label="Also in this edition">
+            <p className="edition-rail-head">Also in this edition</p>
+            {alsoToday.map((rs) => {
+              const series = SERIES_DATA[rs]
+              if (!series) return null
+              return (
+                <Link key={rs} href={`/series/${rs}`} className="edition-brief">
+                  <span className="edition-brief-head">{series.title}</span>
+                  <span className="edition-brief-body">{series.question}</span>
+                </Link>
+              )
+            })}
+            <Link href="/series" className="edition-rail-more">
+              The whole library &rarr;
+            </Link>
+          </aside>
+        </div>
+
+        {/* Returning-user band (F-069) — client island, renders nothing until
+            the active-plan fetch resolves (and nothing without JS). Moved
+            BELOW the front page 2026-08-16: sitting between the dateline and
+            the lead story, it broke the masthead-into-headline flow that makes
+            the page read as an edition. */}
         <TodayReturningBand />
+
+        {/* Editorial sections. Each renders ONLY when it carries real entries —
+            an empty section does not appear at all. There is no feed of global
+            reports or prayer submissions yet, and inventing one would publish
+            fiction as fact under a masthead. See src/data/daily-edition.ts. */}
+        {DISPATCHES.length > 0 && (
+          <section className="edition-section" aria-label="Dispatches">
+            <h2 className="edition-section-head">Dispatches</h2>
+            <div className="edition-columns">
+              {DISPATCHES.map((d) => (
+                <article key={d.title} className="edition-item">
+                  <h3 className="edition-item-head">{d.title}</h3>
+                  <p className="edition-item-place">{d.place}</p>
+                  <p className="edition-item-body">{d.body}</p>
+                  <p className="edition-item-source">
+                    {d.href ? (
+                      <a href={d.href} rel="noopener noreferrer" target="_blank">
+                        {d.source}
+                      </a>
+                    ) : (
+                      d.source
+                    )}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {COMMUNITY.length > 0 && (
+          <section className="edition-section" aria-label="Community">
+            <h2 className="edition-section-head">Community</h2>
+            <div className="edition-columns">
+              {COMMUNITY.map((c) => (
+                <article key={c.title} className="edition-item">
+                  <h3 className="edition-item-head">{c.title}</h3>
+                  <p className="edition-item-place">
+                    {c.by} · {c.place}
+                  </p>
+                  <p className="edition-item-body">{c.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {PRAYERS.length > 0 && (
+          <section className="edition-section" aria-label="Prayer list">
+            <h2 className="edition-section-head">The prayer list</h2>
+            <ul className="edition-prayers">
+              {PRAYERS.map((pr) => (
+                <li key={pr.request} className="edition-prayer">
+                  <span className="edition-prayer-text">{pr.request}</span>
+                  <span className="edition-prayer-from">{pr.from}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <h2 className="edition-section-head" id="the-reading">
+          The reading
+        </h2>
 
         {/* Reading header */}
         <header className="today-reading-header">
