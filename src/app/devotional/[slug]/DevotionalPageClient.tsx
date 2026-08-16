@@ -23,6 +23,7 @@ import PushOptIn from '@/components/PushOptIn'
 import CompletionBeat from '@/components/CompletionBeat'
 import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
+import { ReaderProvider } from '@/components/reader/ReaderContext'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
@@ -451,346 +452,389 @@ export default function DevotionalPageClient({
   }
 
   return (
-    <div className="mock-home">
-      <main id="main-content" className="mock-paper">
-        <ScrollProgress />
-        {/* F-067: in-reader "Aa" sheet — named reading themes + text size.
+    <ReaderProvider devotionalSlug={slug}>
+      <div className="mock-home">
+        <main id="main-content" className="mock-paper">
+          <ScrollProgress />
+          {/* F-067: in-reader "Aa" sheet — named reading themes + text size.
             Reader chrome only (this is the reading surface); the fixed
             trigger sits bottom-left, mirroring the chat FAB bottom-right. */}
-        <ReaderThemeControl />
-        <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
+          <ReaderThemeControl />
+          <EuangelionShellHeader brandWord={brandWord} tone={headerTone} />
 
-        <section className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
-          {/* Founder direction 2026-08-14: nothing appears above the
+          <section className="devotional-shell-main shell-content-pad mx-auto max-w-6xl">
+            {/* Founder direction 2026-08-14: nothing appears above the
               devotional's title. Removed from here — breadcrumbs (the title
               repeated its own last crumb), and the Substack cover banner
               (imported article headers are being replaced by library
               artwork). The action rows below moved to the end of the reading;
               the folio, which carried the church-year line, is gone. */}
 
-          {/* Audit 2026-05-14: the day-nav pill now runs at every
+            {/* Audit 2026-05-14: the day-nav pill now runs at every
               breakpoint. The 260px sidebar that used to occupy the
               left column on desktop competes with reading content
               (founder feedback). Now the sidebar is hidden by default
               on every viewport and reveals as a drawer when the
               reader taps the pill. */}
-          {/* F-083 page-cleanup 2026-07-27 (founder): the series
+            {/* F-083 page-cleanup 2026-07-27 (founder): the series
               day-index reads as a table of contents on short series —
               removed there (the series page lists the days; prev/next
               handles flow). Long plans (Bible-365) keep it: 365 days
               genuinely need an index. */}
-          {seriesDays && seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
-            <button
-              type="button"
-              className="devotional-day-nav-pill"
-              aria-expanded={isDayNavOpenMobile}
-              aria-controls="devotional-day-nav-mobile"
-              onClick={() => setIsDayNavOpenMobile((v) => !v)}
-            >
-              <span className="text-label vw-small text-gold">
-                DAY {currentDayNum} OF {totalDays}
-              </span>
-              <span className="vw-small text-secondary">
-                {isDayNavOpenMobile ? 'Hide series index ▴' : 'See all days ▾'}
-              </span>
-            </button>
-          )}
-
-          <section
-            className={`devotional-shell-grid ${
-              isDayNavOpenMobile
-                ? 'is-sidebar-open md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8'
-                : 'is-sidebar-closed'
-            }`}
-          >
-            <aside
-              id="devotional-day-nav-mobile"
-              className={`devotional-shell-sidebar-wrap mb-6 md:mb-0 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}
-            >
-              <div
-                className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
-                style={{ borderColor: 'var(--color-border)' }}
+            {seriesDays && seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
+              <button
+                type="button"
+                className="devotional-day-nav-pill"
+                aria-expanded={isDayNavOpenMobile}
+                aria-controls="devotional-day-nav-mobile"
+                onClick={() => setIsDayNavOpenMobile((v) => !v)}
               >
-                {seriesDays &&
-                  seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
-                    <>
-                      <p className="text-label vw-small mb-3 text-gold">
-                        IN THIS SERIES
-                      </p>
-                      {seriesDays.length > LONG_SERIES_DAY_THRESHOLD ? (
-                        // Long plan (e.g. Bible-365): a flat list would be a
-                        // 365-item wall. Render a grouped, jump-able month
-                        // accordion instead. Locking behavior is preserved
-                        // per-day inside the component.
-                        <LongSeriesDayIndex
-                          days={seriesDays}
-                          currentSlug={slug}
-                          routePrefix={devotionalRoutePrefix}
-                          canRead={canRead}
-                        />
-                      ) : (
-                        <div className="mb-5 grid gap-2">
-                          {seriesDays.map((day) => {
-                            const check = canRead(day.slug)
-                            const isLocked = !check.canRead && day.slug !== slug
-                            const isCurrent = day.slug === slug
+                <span className="text-label vw-small text-gold">
+                  DAY {currentDayNum} OF {totalDays}
+                </span>
+                <span className="vw-small text-secondary">
+                  {isDayNavOpenMobile
+                    ? 'Hide series index ▴'
+                    : 'See all days ▾'}
+                </span>
+              </button>
+            )}
 
-                            if (isLocked) {
+            <section
+              className={`devotional-shell-grid ${
+                isDayNavOpenMobile
+                  ? 'is-sidebar-open md:grid md:grid-cols-[260px_minmax(0,1fr)] md:gap-8'
+                  : 'is-sidebar-closed'
+              }`}
+            >
+              <aside
+                id="devotional-day-nav-mobile"
+                className={`devotional-shell-sidebar-wrap mb-6 md:mb-0 ${isDayNavOpenMobile ? '' : 'devotional-shell-sidebar-mobile-closed'}`}
+              >
+                <div
+                  className="devotional-shell-sidebar shell-sticky-panel border-subtle bg-surface-raised p-4 md:h-fit"
+                  style={{ borderColor: 'var(--color-border)' }}
+                >
+                  {seriesDays &&
+                    seriesDays.length > LONG_SERIES_DAY_THRESHOLD && (
+                      <>
+                        <p className="text-label vw-small mb-3 text-gold">
+                          IN THIS SERIES
+                        </p>
+                        {seriesDays.length > LONG_SERIES_DAY_THRESHOLD ? (
+                          // Long plan (e.g. Bible-365): a flat list would be a
+                          // 365-item wall. Render a grouped, jump-able month
+                          // accordion instead. Locking behavior is preserved
+                          // per-day inside the component.
+                          <LongSeriesDayIndex
+                            days={seriesDays}
+                            currentSlug={slug}
+                            routePrefix={devotionalRoutePrefix}
+                            canRead={canRead}
+                          />
+                        ) : (
+                          <div className="mb-5 grid gap-2">
+                            {seriesDays.map((day) => {
+                              const check = canRead(day.slug)
+                              const isLocked =
+                                !check.canRead && day.slug !== slug
+                              const isCurrent = day.slug === slug
+
+                              if (isLocked) {
+                                return (
+                                  <div
+                                    key={day.slug}
+                                    className="border px-3 py-2"
+                                    style={{
+                                      borderColor: 'var(--color-border)',
+                                      opacity: 0.58,
+                                    }}
+                                  >
+                                    <p className="text-label vw-small text-gold">
+                                      DAY {day.day} • LOCKED
+                                    </p>
+                                    <p className="vw-small text-secondary">
+                                      {day.title}
+                                    </p>
+                                  </div>
+                                )
+                              }
+
                               return (
-                                <div
+                                <Link
                                   key={day.slug}
-                                  className="border px-3 py-2"
+                                  href={`${devotionalRoutePrefix}/${day.slug}`}
+                                  className="block border px-3 py-2"
                                   style={{
-                                    borderColor: 'var(--color-border)',
-                                    opacity: 0.58,
+                                    borderColor: isCurrent
+                                      ? 'var(--color-border-strong)'
+                                      : 'var(--color-border)',
+                                    background: isCurrent
+                                      ? 'var(--color-active)'
+                                      : 'transparent',
                                   }}
                                 >
                                   <p className="text-label vw-small text-gold">
-                                    DAY {day.day} • LOCKED
+                                    DAY {day.day}
                                   </p>
                                   <p className="vw-small text-secondary">
                                     {day.title}
                                   </p>
-                                </div>
+                                </Link>
                               )
-                            }
+                            })}
+                          </div>
+                        )}
+                      </>
+                    )}
 
-                            return (
-                              <Link
-                                key={day.slug}
-                                href={`${devotionalRoutePrefix}/${day.slug}`}
-                                className="block border px-3 py-2"
-                                style={{
-                                  borderColor: isCurrent
-                                    ? 'var(--color-border-strong)'
-                                    : 'var(--color-border)',
-                                  background: isCurrent
-                                    ? 'var(--color-active)'
-                                    : 'transparent',
-                                }}
-                              >
-                                <p className="text-label vw-small text-gold">
-                                  DAY {day.day}
-                                </p>
-                                <p className="vw-small text-secondary">
-                                  {day.title}
-                                </p>
-                              </Link>
-                            )
-                          })}
-                        </div>
-                      )}
-                    </>
-                  )}
-
-                {/* Audit C2: LIBRARY is app-wide nav, not reading chrome.
+                  {/* Audit C2: LIBRARY is app-wide nav, not reading chrome.
                     Hide on mobile entirely (it pushed content well below
                     the fold). Keep visible on desktop. */}
-                <div
-                  className="hidden border-t pt-4 md:block"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="text-label vw-small mb-3 text-gold">LIBRARY</p>
-                  {/* F-030: every item now resolves to a real, deep-linked
+                  <div
+                    className="hidden border-t pt-4 md:block"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small mb-3 text-gold">
+                      LIBRARY
+                    </p>
+                    {/* F-030: every item now resolves to a real, deep-linked
                       section of the unified retrieval rail (`/library?tab=`).
                       No more dead `?tab=` links that silently landed on the
                       default view — these target the live tablist. */}
-                  <div className="grid gap-2">
-                    <Link
-                      href="/today"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Today’s Reading
-                    </Link>
-                    <Link
-                      href="/library?tab=bookmarks"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Bookmarks
-                    </Link>
-                    <Link
-                      href="/library?tab=highlights"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Highlights
-                    </Link>
-                    <Link
-                      href="/library?tab=notes"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Notes
-                    </Link>
-                    <Link
-                      href="/library?tab=archive"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Archive
-                    </Link>
-                    <Link
-                      href="/library"
-                      className="block border px-3 py-2 text-secondary affordance"
-                      style={{ borderColor: 'var(--color-border)' }}
-                    >
-                      Full Library
-                    </Link>
+                    <div className="grid gap-2">
+                      <Link
+                        href="/today"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Today’s Reading
+                      </Link>
+                      <Link
+                        href="/library?tab=bookmarks"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Bookmarks
+                      </Link>
+                      <Link
+                        href="/library?tab=highlights"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Highlights
+                      </Link>
+                      <Link
+                        href="/library?tab=notes"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Notes
+                      </Link>
+                      <Link
+                        href="/library?tab=archive"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Archive
+                      </Link>
+                      <Link
+                        href="/library"
+                        className="block border px-3 py-2 text-secondary affordance"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        Full Library
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </aside>
+              </aside>
 
-            <div className="devotional-reader-stage">
-              {!dayGate.unlocked ? (
-                <section
-                  className="devotional-shell-panel border px-6 py-8"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="vw-body text-secondary">
-                    {typographer(dayGate.message)}
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => router.back()}
-                    className="cta-major text-label vw-small mt-6 px-5 py-2"
+              <div className="devotional-reader-stage">
+                {!dayGate.unlocked ? (
+                  <section
+                    className="devotional-shell-panel border px-6 py-8"
+                    style={{ borderColor: 'var(--color-border)' }}
                   >
-                    BACK TO SERIES
-                  </button>
-                </section>
-              ) : (
-                <>
-                  <DevotionalStickiesLayer devotionalSlug={slug} />
+                    <p className="vw-body text-secondary">
+                      {typographer(dayGate.message)}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => router.back()}
+                      className="cta-major text-label vw-small mt-6 px-5 py-2"
+                    >
+                      BACK TO SERIES
+                    </button>
+                  </section>
+                ) : (
+                  <>
+                    <DevotionalStickiesLayer devotionalSlug={slug} />
 
-                  {/* Founder direction 2026-08-14: the folio strip that sat
+                    {/* Founder direction 2026-08-14: the folio strip that sat
                       here is gone. It was the last thing standing above the
                       title, and it carried <ChurchYearOverline> onto every
                       devotional — which belongs on the home page, not in a
                       reading. Day position now rides the meta line below. */}
 
-                  {/* Audit 2026-05-13: homepage-style headline hero. Mirrors
+                    {/* Audit 2026-05-13: homepage-style headline hero. Mirrors
                       the featured-devotional 2/3-image + 1/3-text layout
                       at the top of every devotional page. Scale back:
                       delete this block. */}
-                  {/* F-083 page-cleanup 2026-07-27 (founder): THE single
+                    {/* F-083 page-cleanup 2026-07-27 (founder): THE single
                       hero + title render. */}
-                  {/* 2026-08-14: the day's teaser now runs under the title as
+                    {/* 2026-08-14: the day's teaser now runs under the title as
                       the dek, and the scripture reference points at what the
                       reading is anchored in. Both render after the title. */}
-                  {devotional && (
-                    <DevotionalHeadline
-                      imageSrc={
-                        seriesSlug ? getSeriesHero(seriesSlug)?.src : undefined
-                      }
-                      imageAlt={`Illustration accompanying ${devotional.title}`}
-                      title={devotional.title}
-                      dek={devotional.teaser ?? undefined}
-                      scripture={devotional.scriptureReference ?? undefined}
-                    />
-                  )}
+                    {devotional && (
+                      <DevotionalHeadline
+                        imageSrc={
+                          seriesSlug
+                            ? getSeriesHero(seriesSlug)?.src
+                            : undefined
+                        }
+                        imageAlt={`Illustration accompanying ${devotional.title}`}
+                        title={devotional.title}
+                        dek={devotional.teaser ?? undefined}
+                        scripture={devotional.scriptureReference ?? undefined}
+                      />
+                    )}
 
-                  {/* Founder direction 2026-08-14: quick links to every day of
+                    {/* Founder direction 2026-08-14: quick links to every day of
                       the series, so moving between days does not mean going
                       back out to the series page. Placed directly under the
                       headline rather than above it — the title stays the first
                       thing on the page (SA-037). Long plans keep the existing
                       day-nav pill instead; 365 links is not a quick link. */}
-                  {seriesDays &&
-                    seriesDays.length > 1 &&
-                    seriesDays.length <= LONG_SERIES_DAY_THRESHOLD && (
-                      <nav
-                        className="devotional-day-quicklinks mb-6 flex flex-wrap items-center gap-2"
-                        aria-label="Days in this series"
-                      >
-                        {seriesDays.map((day, i) => {
-                          const isCurrent = day.slug === slug
-                          return (
-                            <Link
-                              key={day.slug}
-                              href={`${devotionalRoutePrefix}/${day.slug}`}
-                              className="text-label vw-small link-highlight border px-3 py-1"
-                              style={{
-                                borderColor: isCurrent
-                                  ? 'var(--color-accent, var(--color-border))'
-                                  : 'var(--color-border)',
-                                color: isCurrent
-                                  ? 'var(--color-accent, inherit)'
-                                  : undefined,
-                              }}
-                              aria-current={isCurrent ? 'page' : undefined}
-                              title={day.title}
-                            >
-                              DAY {i + 1}
-                            </Link>
-                          )
-                        })}
-                      </nav>
-                    )}
+                    {seriesDays &&
+                      seriesDays.length > 1 &&
+                      seriesDays.length <= LONG_SERIES_DAY_THRESHOLD && (
+                        <nav
+                          className="devotional-day-quicklinks mb-6 flex flex-wrap items-center gap-2"
+                          aria-label="Days in this series"
+                        >
+                          {seriesDays.map((day, i) => {
+                            const isCurrent = day.slug === slug
+                            return (
+                              <Link
+                                key={day.slug}
+                                href={`${devotionalRoutePrefix}/${day.slug}`}
+                                className="text-label vw-small link-highlight border px-3 py-1"
+                                style={{
+                                  borderColor: isCurrent
+                                    ? 'var(--color-accent, var(--color-border))'
+                                    : 'var(--color-border)',
+                                  color: isCurrent
+                                    ? 'var(--color-accent, inherit)'
+                                    : undefined,
+                                }}
+                                aria-current={isCurrent ? 'page' : undefined}
+                                title={day.title}
+                              >
+                                DAY {i + 1}
+                              </Link>
+                            )
+                          })}
+                        </nav>
+                      )}
 
-                  {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
+                    {/* Phase 2.1: Audio Edition — free, on-device read-aloud of
                       this devotional's real text, one section at a time.
                       Founder direction 2026-07-28: it sits BELOW the folio and
                       headline. Opening the page on a player (and formerly its
                       section index) buried the headline and read like an app
                       chrome panel; a magazine gives you the title first and
                       offers the audio edition underneath it. */}
-                  {audioSegments.length > 0 && (
-                    <AudioPlayer
-                      title={devotional.title}
-                      segments={audioSegments}
-                      artworkSrc="/icons/icon-512.png"
-                      slug={slug}
-                      className="devotional-shell-panel mb-6"
-                    />
-                  )}
+                    {audioSegments.length > 0 && (
+                      <AudioPlayer
+                        title={devotional.title}
+                        segments={audioSegments}
+                        artworkSrc="/icons/icon-512.png"
+                        slug={slug}
+                        className="devotional-shell-panel mb-6"
+                      />
+                    )}
 
-                  {/* Audit 2026-05-13: NYT-magazine-style sticky-image
+                    {/* Audit 2026-05-13: NYT-magazine-style sticky-image
                       reading rhythm. Wraps the existing module flow with
                       a sticky-image rail (desktop) + observer that swaps
                       the active image as the reader scrolls. Mobile falls
                       back to the legacy single-column flow with inline
                       artwork breaks. Scale back: pass `enabled={false}`. */}
-                  {/* SA-013 2026-07-12 (founder): desktop no longer uses the
+                    {/* SA-013 2026-07-12 (founder): desktop no longer uses the
                       two-column sticky-image rail / boxed modules. The reading
                       is one continuous piece (see continuous-flow CSS). */}
-                  <DevotionalRhythm images={rhythmImages} enabled={false}>
-                    {modules
-                      ? modules.map((module, index) => {
-                          // Founder direction 2026-07-28: the Two-Minute Open is
-                          // the right idea (quick start, then deep dive) but it
-                          // was built out of the same parts as the devotional
-                          // itself — scripture, word study, reflection, prayer —
-                          // so nothing told the reader it was a précis. It read
-                          // as the devotional, which then inexplicably restarted.
-                          //
-                          // Every real-world version of this pattern makes the
-                          // short read a visibly different object: Digg's tinted
-                          // "TL;DR" card, ChatGPT's "Executive Summary", HYPE's
-                          // bulleted "Summary", Finimize's labelled brief. We do
-                          // the same — the open is banded and labelled, and its
-                          // end is marked, so the restart is intentional.
-                          const inOpen =
-                            twoMinuteOpenEnd >= 0 && index <= twoMinuteOpenEnd
-                          return (
-                            <Fragment key={index}>
+                    <DevotionalRhythm images={rhythmImages} enabled={false}>
+                      {modules
+                        ? modules.map((module, index) => {
+                            // Founder direction 2026-07-28: the Two-Minute Open is
+                            // the right idea (quick start, then deep dive) but it
+                            // was built out of the same parts as the devotional
+                            // itself — scripture, word study, reflection, prayer —
+                            // so nothing told the reader it was a précis. It read
+                            // as the devotional, which then inexplicably restarted.
+                            //
+                            // Every real-world version of this pattern makes the
+                            // short read a visibly different object: Digg's tinted
+                            // "TL;DR" card, ChatGPT's "Executive Summary", HYPE's
+                            // bulleted "Summary", Finimize's labelled brief. We do
+                            // the same — the open is banded and labelled, and its
+                            // end is marked, so the restart is intentional.
+                            const inOpen =
+                              twoMinuteOpenEnd >= 0 && index <= twoMinuteOpenEnd
+                            return (
+                              <Fragment key={index}>
+                                <article
+                                  id={`devotional-section-${index + 1}`}
+                                  className={`devotional-shell-panel devotional-flow-article${
+                                    inOpen ? ' is-two-minute' : ''
+                                  }`}
+                                  data-two-minute={
+                                    inOpen
+                                      ? index === 0
+                                        ? 'start'
+                                        : index === twoMinuteOpenEnd
+                                          ? 'end'
+                                          : 'mid'
+                                      : undefined
+                                  }
+                                >
+                                  <ModuleRenderer
+                                    module={module}
+                                    moduleIndex={index}
+                                  />
+                                </article>
+                                {artworkByPosition.has(index) && (
+                                  <div className="devotional-artwork-inline">
+                                    <DevotionalArtwork
+                                      artwork={artworkByPosition.get(index)!}
+                                      onOpenLightbox={() =>
+                                        lightbox.open(
+                                          artworkByPosition.get(index)!.slug,
+                                        )
+                                      }
+                                    />
+                                  </div>
+                                )}
+                              </Fragment>
+                            )
+                          })
+                        : panels?.slice(1).map((panel, index) => (
+                            <Fragment key={panel.number}>
                               <article
                                 id={`devotional-section-${index + 1}`}
-                                className={`devotional-shell-panel devotional-flow-article${
-                                  inOpen ? ' is-two-minute' : ''
-                                }`}
-                                data-two-minute={
-                                  inOpen
-                                    ? index === 0
-                                      ? 'start'
-                                      : index === twoMinuteOpenEnd
-                                        ? 'end'
-                                        : 'mid'
-                                    : undefined
-                                }
+                                className="devotional-shell-panel devotional-flow-article"
                               >
-                                <ModuleRenderer module={module} />
+                                {index > 0 && (
+                                  <div
+                                    className="mb-6 border-t"
+                                    style={{
+                                      borderColor: 'var(--color-border)',
+                                    }}
+                                    aria-hidden="true"
+                                  />
+                                )}
+                                <PanelComponent panel={panel} />
                               </article>
                               {artworkByPosition.has(index) && (
                                 <div className="devotional-artwork-inline">
@@ -805,231 +849,202 @@ export default function DevotionalPageClient({
                                 </div>
                               )}
                             </Fragment>
-                          )
-                        })
-                      : panels?.slice(1).map((panel, index) => (
-                          <Fragment key={panel.number}>
-                            <article
-                              id={`devotional-section-${index + 1}`}
-                              className="devotional-shell-panel devotional-flow-article"
-                            >
-                              {index > 0 && (
-                                <div
-                                  className="mb-6 border-t"
-                                  style={{ borderColor: 'var(--color-border)' }}
-                                  aria-hidden="true"
-                                />
-                              )}
-                              <PanelComponent panel={panel} />
-                            </article>
-                            {artworkByPosition.has(index) && (
-                              <div className="devotional-artwork-inline">
-                                <DevotionalArtwork
-                                  artwork={artworkByPosition.get(index)!}
-                                  onOpenLightbox={() =>
-                                    lightbox.open(
-                                      artworkByPosition.get(index)!.slug,
-                                    )
-                                  }
-                                />
-                              </div>
-                            )}
-                          </Fragment>
-                        ))}
-                  </DevotionalRhythm>
+                          ))}
+                    </DevotionalRhythm>
 
-                  {/* Audit 2026-05-14: 4-line author colophon caps the reading. */}
-                  <AuthorColophon
-                    translation={
-                      modules?.find((m) => m.type === 'scripture')
-                        ?.translation ?? undefined
-                    }
-                  />
+                    {/* Audit 2026-05-14: 4-line author colophon caps the reading. */}
+                    <AuthorColophon
+                      translation={
+                        modules?.find((m) => m.type === 'scripture')
+                          ?.translation ?? undefined
+                      }
+                    />
 
-                  {/* Founder direction 2026-08-14: these are the action rows
+                    {/* Founder direction 2026-08-14: these are the action rows
                       that used to stack above the title. They are still
                       needed — they just belong after the reading, where a
                       reader who has finished looks for what to do next. */}
-                  <div className="devotional-action-row mt-8 flex flex-wrap items-baseline gap-x-5 gap-y-2">
-                    <Link
-                      href={
-                        seriesSlug
-                          ? `${seriesRoutePrefix}/${seriesSlug}`
-                          : parentRoute
-                      }
-                      className="text-label vw-small link-highlight leading-none"
-                    >
-                      BACK TO SERIES
-                    </Link>
-                    <ShareButton
-                      title={devotional.title}
-                      text={`${devotional.title} — Euangelion`}
-                      className="leading-none"
-                    />
-                    {SUBSTACK_SOURCES[slug]?.substackUrl && (
-                      <a
-                        href={SUBSTACK_SOURCES[slug]!.substackUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <div className="devotional-action-row mt-8 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+                      <Link
+                        href={
+                          seriesSlug
+                            ? `${seriesRoutePrefix}/${seriesSlug}`
+                            : parentRoute
+                        }
                         className="text-label vw-small link-highlight leading-none"
                       >
-                        READ ON SUBSTACK ↗
-                      </a>
-                    )}
-                  </div>
+                        BACK TO SERIES
+                      </Link>
+                      <ShareButton
+                        title={devotional.title}
+                        text={`${devotional.title} — Euangelion`}
+                        className="leading-none"
+                      />
+                      {SUBSTACK_SOURCES[slug]?.substackUrl && (
+                        <a
+                          href={SUBSTACK_SOURCES[slug]!.substackUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-label vw-small link-highlight leading-none"
+                        >
+                          READ ON SUBSTACK ↗
+                        </a>
+                      )}
+                    </div>
 
-                  <DevotionalActions
-                    devotionalSlug={slug}
-                    seriesSlug={seriesSlug}
-                    redirectPath={`${devotionalRoutePrefix}/${slug}`}
-                  />
+                    <DevotionalActions
+                      devotionalSlug={slug}
+                      seriesSlug={seriesSlug}
+                      redirectPath={`${devotionalRoutePrefix}/${slug}`}
+                    />
 
-                  <section
-                    className="devotional-shell-panel mt-6 border px-6 py-5"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <p className="vw-small text-secondary">
-                      {isCompleted
-                        ? 'Finished. Return anytime to re-read.'
-                        : 'Finished reading? Mark this day read.'}
-                    </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
-                      {!isCompleted && (
+                    <section
+                      className="devotional-shell-panel mt-6 border px-6 py-5"
+                      style={{ borderColor: 'var(--color-border)' }}
+                    >
+                      <p className="vw-small text-secondary">
+                        {isCompleted
+                          ? 'Finished. Return anytime to re-read.'
+                          : 'Finished reading? Mark this day read.'}
+                      </p>
+                      <div className="mt-4 flex flex-wrap items-center gap-3">
+                        {!isCompleted && (
+                          <button
+                            type="button"
+                            className="cta-major text-label vw-small px-5 py-2"
+                            onClick={() => {
+                              markComplete(slug)
+                              setIsCompleted(true)
+                              window.dispatchEvent(
+                                new CustomEvent('libraryUpdated'),
+                              )
+                              // Signal the post-read push opt-in (it stays inert
+                              // until VAPID is configured — see PushOptIn).
+                              try {
+                                window.localStorage.setItem(
+                                  'euangelion:just-finished-reading',
+                                  '1',
+                                )
+                              } catch {
+                                // Storage unavailable (private mode) — no opt-in.
+                              }
+                            }}
+                          >
+                            MARK READ
+                          </button>
+                        )}
                         <button
                           type="button"
-                          className="cta-major text-label vw-small px-5 py-2"
-                          onClick={() => {
-                            markComplete(slug)
-                            setIsCompleted(true)
-                            window.dispatchEvent(
-                              new CustomEvent('libraryUpdated'),
-                            )
-                            // Signal the post-read push opt-in (it stays inert
-                            // until VAPID is configured — see PushOptIn).
-                            try {
-                              window.localStorage.setItem(
-                                'euangelion:just-finished-reading',
-                                '1',
-                              )
-                            } catch {
-                              // Storage unavailable (private mode) — no opt-in.
-                            }
-                          }}
+                          className="text-label vw-small link-highlight"
+                          onClick={() => void saveBookmark(devotional.title)}
                         >
-                          MARK READ
+                          BOOKMARK
                         </button>
-                      )}
-                      <button
-                        type="button"
-                        className="text-label vw-small link-highlight"
-                        onClick={() => void saveBookmark(devotional.title)}
-                      >
-                        BOOKMARK
-                      </button>
-                      {/* Phase 2.4: clip the reader's current text selection
+                        {/* Phase 2.4: clip the reader's current text selection
                           to their local commonplace book (device-only). */}
-                      <ClipButton
-                        sourceTitle={devotional.title}
-                        sourceSlug={slug}
-                        sourceHref={`${devotionalRoutePrefix}/${slug}`}
-                      />
-                      <Link
-                        href="/library?tab=clippings"
-                        className="text-label vw-small link-highlight leading-none"
-                      >
-                        CLIPPINGS
-                      </Link>
-                    </div>
-                    {/* F-066 (SA-025): the quiet completion beat. Renders
+                        <ClipButton
+                          sourceTitle={devotional.title}
+                          sourceSlug={slug}
+                          sourceHref={`${devotionalRoutePrefix}/${slug}`}
+                        />
+                        <Link
+                          href="/library?tab=clippings"
+                          className="text-label vw-small link-highlight leading-none"
+                        >
+                          CLIPPINGS
+                        </Link>
+                      </div>
+                      {/* F-066 (SA-025): the quiet completion beat. Renders
                         nothing until the progressUpdated event fired by
                         markComplete() above arrives — one benediction line
                         paired with this day's scripture reference, right at
                         the completion point. Not a modal; auto-dismisses. */}
-                    <CompletionBeat
-                      scriptureReference={devotional.scriptureReference}
-                    />
-                    {/* Phase 2.2: one calm daily-reading opt-in, post-read only.
+                      <CompletionBeat
+                        scriptureReference={devotional.scriptureReference}
+                      />
+                      {/* Phase 2.2: one calm daily-reading opt-in, post-read only.
                         Renders nothing until VAPID is configured + the reader
                         has finished a day. */}
-                    <PushOptIn />
-                  </section>
-                </>
-              )}
-            </div>
+                      <PushOptIn />
+                    </section>
+                  </>
+                )}
+              </div>
+            </section>
+
+            {(prevDay || nextDay) && (
+              <nav
+                className="devotional-shell-nav mt-8 grid gap-4 md:grid-cols-2"
+                aria-label="Devotional navigation"
+              >
+                {prevDay ? (
+                  <Link
+                    href={`${devotionalRoutePrefix}/${prevDay.slug}`}
+                    className="devotional-shell-panel block border px-5 py-4"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small text-gold">
+                      &larr; PREVIOUS
+                    </p>
+                    <p className="vw-body text-secondary">{prevDay.title}</p>
+                  </Link>
+                ) : (
+                  <div
+                    className="devotional-shell-panel border px-5 py-4"
+                    style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+                  />
+                )}
+
+                {nextDay ? (
+                  <Link
+                    href={`${devotionalRoutePrefix}/${nextDay.slug}`}
+                    className="devotional-shell-panel block border px-5 py-4 text-right"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <p className="text-label vw-small text-gold">NEXT &rarr;</p>
+                    <p className="vw-body text-secondary">{nextDay.title}</p>
+                  </Link>
+                ) : (
+                  <div
+                    className="devotional-shell-panel border px-5 py-4"
+                    style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
+                  />
+                )}
+              </nav>
+            )}
           </section>
+          <SiteBottom />
+          <section className="mock-bottom-brand">
+            <h2 className="text-masthead mock-masthead-word">
+              <span className="js-shell-masthead-fit mock-masthead-text">
+                {brandWord}
+              </span>
+            </h2>
+          </section>
+        </main>
 
-          {(prevDay || nextDay) && (
-            <nav
-              className="devotional-shell-nav mt-8 grid gap-4 md:grid-cols-2"
-              aria-label="Devotional navigation"
-            >
-              {prevDay ? (
-                <Link
-                  href={`${devotionalRoutePrefix}/${prevDay.slug}`}
-                  className="devotional-shell-panel block border px-5 py-4"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="text-label vw-small text-gold">
-                    &larr; PREVIOUS
-                  </p>
-                  <p className="vw-body text-secondary">{prevDay.title}</p>
-                </Link>
-              ) : (
-                <div
-                  className="devotional-shell-panel border px-5 py-4"
-                  style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
-                />
-              )}
+        {dayGate.unlocked && (
+          <>
+            <TextHighlightTrigger devotionalSlug={slug} />
+            <DevotionalChat
+              devotionalSlug={slug}
+              devotionalTitle={devotional.title}
+            />
+          </>
+        )}
 
-              {nextDay ? (
-                <Link
-                  href={`${devotionalRoutePrefix}/${nextDay.slug}`}
-                  className="devotional-shell-panel block border px-5 py-4 text-right"
-                  style={{ borderColor: 'var(--color-border)' }}
-                >
-                  <p className="text-label vw-small text-gold">NEXT &rarr;</p>
-                  <p className="vw-body text-secondary">{nextDay.title}</p>
-                </Link>
-              ) : (
-                <div
-                  className="devotional-shell-panel border px-5 py-4"
-                  style={{ borderColor: 'var(--color-border)', opacity: 0.5 }}
-                />
-              )}
-            </nav>
-          )}
-        </section>
-        <SiteBottom />
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              {brandWord}
-            </span>
-          </h2>
-        </section>
-      </main>
-
-      {dayGate.unlocked && (
-        <>
-          <TextHighlightTrigger devotionalSlug={slug} />
-          <DevotionalChat
-            devotionalSlug={slug}
-            devotionalTitle={devotional.title}
-          />
-        </>
-      )}
-
-      {/* Artwork lightbox gallery */}
-      <ArtworkLightbox
-        artwork={lightbox.current}
-        isOpen={lightbox.isOpen}
-        currentIndex={lightbox.currentIndex}
-        total={lightbox.total}
-        onClose={lightbox.close}
-        onNext={lightbox.next}
-        onPrev={lightbox.prev}
-      />
-    </div>
+        {/* Artwork lightbox gallery */}
+        <ArtworkLightbox
+          artwork={lightbox.current}
+          isOpen={lightbox.isOpen}
+          currentIndex={lightbox.currentIndex}
+          total={lightbox.total}
+          onClose={lightbox.close}
+          onNext={lightbox.next}
+          onPrev={lightbox.prev}
+        />
+      </div>
+    </ReaderProvider>
   )
 }
 

@@ -1,8 +1,16 @@
 import ReactMarkdown from 'react-markdown'
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
+import JournalField from '@/components/reader/JournalField'
 
-export default function RecapModule({ module }: { module: Module }) {
+export default function RecapModule({
+  module,
+  moduleIndex,
+}: {
+  module: Module
+  /** Position in the day's modules; enables the answer field (SA-059). */
+  moduleIndex?: number
+}) {
   // SA-034 (2026-08-10): this component required a `days` array and returned
   // null for everything else, so a recap written in the CANONICAL flat shape —
   // `content` as the prose string, like every other prose module — rendered as
@@ -72,6 +80,14 @@ export default function RecapModule({ module }: { module: Module }) {
           <p className="text-serif-italic vw-body-lg leading-relaxed type-prose">
             {typographer(module.integration_question)}
           </p>
+          {typeof moduleIndex === 'number' && (
+            <JournalField
+              kind="reflection"
+              anchorKey={`m${moduleIndex}:integration`}
+              label="Your answer"
+              placeholder="Sit with it, then write…"
+            />
+          )}
         </div>
       )}
 

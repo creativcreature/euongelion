@@ -31,6 +31,8 @@ export type LibraryIntent =
       seriesSlug: string
       from: 'day_1' | 'resume'
     }
+  // SA-059/SA-060: the reader reached for a writing control while signed out.
+  | { kind: 'journal'; devotionalSlug: string }
 
 export interface ActiveSeriesView {
   seriesSlug: string
@@ -124,6 +126,18 @@ const INTENT_EVENT = 'euangelion:auth-required-intent'
 function emitAuthRequired(intent: LibraryIntent) {
   if (typeof window === 'undefined') return
   window.dispatchEvent(new CustomEvent(INTENT_EVENT, { detail: { intent } }))
+}
+
+/**
+ * Ask for sign-in from outside the library store.
+ *
+ * The reader's writing controls (SA-059) need the same "locked, not hidden"
+ * path the library already uses: the control is visible, activating it opens
+ * sign-in with the intent recorded, and the action completes afterwards. This
+ * exports the existing emitter rather than adding a second mechanism.
+ */
+export function requestAuth(intent: LibraryIntent): void {
+  emitAuthRequired(intent)
 }
 
 export function onAuthRequired(

@@ -157,6 +157,12 @@ interface ChatRequestBody {
   openWebMode?: boolean
   openWebAcknowledged?: boolean
   stream?: boolean
+  /**
+   * Where `highlightedText` came from. Published devotional prose is the only
+   * acceptable source; `'journal'` is refused outright (SA-059). Declared by
+   * the client because the server cannot tell the two apart by inspection.
+   */
+  contextSource?: 'devotional' | 'journal'
 }
 
 type ChatCitation = {
@@ -509,6 +515,30 @@ export async function POST(request: NextRequest) {
       body.highlightedText,
       MAX_HIGHLIGHT_CHARS,
     )
+
+    /**
+     * SA-059 — the reader's own writing never reaches the model.
+     *
+     * Religious belief is special-category data under GDPR Art. 9, and a
+     * journal entry is the most personal thing this product holds. Selecting
+     * PUBLISHED devotional text and asking about it stays available; sending
+     * what the reader WROTE does not.
+     *
+     * The server cannot tell the two apart by inspecting a string, so the
+     * client must declare the source and this refuses the one kind that may
+     * never be sent. A boundary discipline, not a cryptographic guarantee —
+     * its value is that a future "ask about my note" button fails loudly here
+     * instead of shipping quietly. See JournalField, which holds no route into
+     * the chat at all, and __tests__/journal-never-leaves-account.test.ts.
+     */
+    if (String(body.contextSource || '') === 'journal') {
+      return jsonError({
+        error: 'Your own writing is never sent to the model.',
+        code: 'JOURNAL_CONTEXT_REFUSED',
+        status: 400,
+        requestId,
+      })
+    }
 
     if (messages.length === 0) {
       return jsonError({

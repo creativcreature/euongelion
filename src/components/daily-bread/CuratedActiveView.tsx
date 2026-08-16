@@ -4,6 +4,7 @@ import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import ModuleRenderer from '@/components/ModuleRenderer'
+import { ReaderProvider } from '@/components/reader/ReaderContext'
 import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
@@ -400,26 +401,30 @@ export default function CuratedActiveView({
               text-left / sticky-image-right rhythm here and nowhere else.
               Now both readers are one centred column. */}
           <DevotionalRhythm images={rhythmImages} enabled={false}>
-            {modules
-              ? modules.map((module, index) => (
-                  <article
-                    key={index}
-                    className="devotional-shell-panel border px-5 py-5"
-                    style={{ borderColor: 'var(--color-border)' }}
-                  >
-                    <ModuleRenderer module={module} />
-                  </article>
-                ))
-              : panels?.slice(1).map((panel) => (
-                  <Fragment key={panel.number}>
+            {/* SA-059: the writing surfaces need the day's slug, and this view
+                resolves it at render time rather than from a route param. */}
+            <ReaderProvider devotionalSlug={daySlugForImages}>
+              {modules
+                ? modules.map((module, index) => (
                     <article
+                      key={index}
                       className="devotional-shell-panel border px-5 py-5"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
-                      <PanelInline panel={panel} />
+                      <ModuleRenderer module={module} moduleIndex={index} />
                     </article>
-                  </Fragment>
-                ))}
+                  ))
+                : panels?.slice(1).map((panel) => (
+                    <Fragment key={panel.number}>
+                      <article
+                        className="devotional-shell-panel border px-5 py-5"
+                        style={{ borderColor: 'var(--color-border)' }}
+                      >
+                        <PanelInline panel={panel} />
+                      </article>
+                    </Fragment>
+                  ))}
+            </ReaderProvider>
           </DevotionalRhythm>
 
           {/* Author colophon — 4-line credit at the close of the reading. */}

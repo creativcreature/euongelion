@@ -3,8 +3,16 @@
 import type { Module } from '@/types'
 import { typographer } from '@/lib/typographer'
 import FadeIn from '@/components/motion/FadeIn'
+import JournalField from '@/components/reader/JournalField'
 
-export default function PrayerModule({ module }: { module: Module }) {
+export default function PrayerModule({
+  module,
+  moduleIndex,
+}: {
+  module: Module
+  /** Position in the day's modules; enables "add your own prayer" (SA-059). */
+  moduleIndex?: number
+}) {
   const text = module.prayerText || module.content || ''
   if (!text && !module.breathPrayer) return null
 
@@ -43,6 +51,27 @@ export default function PrayerModule({ module }: { module: Module }) {
             <p className="text-serif-italic vw-body-lg text-gold breathe-prayer">
               {typographer(module.breathPrayer)}
             </p>
+          </div>
+        )}
+
+        {/* NOT an answer field. All 543 prayer modules in the catalog pose no
+            question — they are prayers to be prayed, and a box labelled "your
+            answer" under one misreads the form. Same storage, different
+            framing: writing alongside rather than answering. */}
+        {typeof moduleIndex === 'number' && (
+          <div
+            className="mt-10 mx-auto text-left"
+            style={{ maxWidth: '540px' }}
+          >
+            <p className="module-sublabel mb-3">IN YOUR OWN WORDS</p>
+            <JournalField
+              kind="prayer"
+              anchorKey={`m${moduleIndex}:prayer`}
+              label="Your own prayer"
+              placeholder="Pray it back, in your words…"
+              signedOutLabel="Sign in to keep your prayer"
+              showNote
+            />
           </div>
         )}
       </div>

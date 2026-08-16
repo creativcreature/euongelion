@@ -896,6 +896,7 @@ function OnboardingEditorial({ content }: { content: DayContent }) {
               (PlanDayContent.tsx) uses to feed the dispatch. */}
           <ModuleRenderer
             module={module as unknown as Record<string, unknown>}
+            moduleIndex={index}
           />
         </article>
       ))}

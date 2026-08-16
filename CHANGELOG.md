@@ -5,6 +5,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2,062 PROMPTS FINALLY HAVE SOMEWHERE TO ANSWER — SA-059 / F-102 (2026-08-16)
+
+The catalog already shipped 545 reflection modules carrying 1,517 additional
+questions. Every one written, every one read, and not one of them had an input.
+The reader had been asked 2,062 questions and handed no paper.
+
+**One field, three kinds.** A reflection answer, a prayer written alongside and
+a free entry are the same act with different framing, so they are one component
+discriminated by `style.kind`. All of it rides the existing `annotations` table,
+which is already enumerated in `data-export.ts`, `account-deletion.ts` and
+`retention-cleanup.ts` — export, deletion and retention work on day one, where a
+new table would have silently escaped all three. No schema change.
+
+**Prayer gets a different control.** All 543 prayer modules pose no question —
+they are prayers to be prayed. A box labelled "your answer" under one misreads
+the form, so it offers _in your own words_ instead.
+
+**Auth resolves on the client, deliberately.** `/devotional/[slug]` is
+statically generated (`generateStaticParams` + `revalidate = 3600`). Reading
+`getUser()` in the server component would force all ~568 devotional pages
+dynamic — exactly the surface SA-060 keeps open to signed-out readers for SEO
+and sharing. So the provider probes once per page load (shared, so a module with
+five questions does not fire five requests) and the field **fails closed** until
+it answers: an input that might not save is worse than a moment of a locked one.
+
+Three distinctions the code now makes that it would be easy to collapse:
+
+1. **No provider ≠ signed out.** Archive views and the AI-plan day renderer have
+   no devotional slug to anchor to, so the field renders NOTHING there. Showing
+   "Sign in to write" to someone already signed in would be a lie about why they
+   cannot write.
+2. **The reassurance appears once per module, not once per question.** Repeated
+   under all five prompts it read as noise rather than reassurance.
+3. **What the reader writes never reaches the model.** Religious belief is
+   special-category data under GDPR Art. 9. Selecting published devotional text
+   and asking about it stays available; `JournalField` holds no route into the
+   chat at all, and the chat route refuses an explicitly journal-sourced payload
+   with `JOURNAL_CONTEXT_REFUSED`.
+
+`useAuthStore` had been defined with no writer anywhere in the app; it is the
+session cache now, so a second devotional in the same session does not re-probe.
+
 ## GOOGLE SIGN-IN WAS ALREADY BUILT, JUST SWITCHED OFF — SA-058 / F-101 (2026-08-16)
 
 Founder asked what the best sign-in setup would be. The instance answered:

@@ -120,8 +120,16 @@ function normalizeModule(raw: Record<string, unknown>): Module {
 
 export default function ModuleRenderer({
   module: raw,
+  moduleIndex,
 }: {
   module: Module | Record<string, unknown>
+  /**
+   * Position in the day's module list. Optional so the ~30 existing call
+   * sites and tests keep working; the writing surfaces (SA-059) use it to
+   * build a stable `anchorKey`, which is how an answer finds its question
+   * again on reload.
+   */
+  moduleIndex?: number
 }) {
   const normalized = normalizeModule(raw as Record<string, unknown>)
 
@@ -137,9 +145,9 @@ export default function ModuleRenderer({
     case 'story':
       return <StoryModule module={normalized} />
     case 'reflection':
-      return <ReflectionModule module={normalized} />
+      return <ReflectionModule module={normalized} moduleIndex={moduleIndex} />
     case 'prayer':
-      return <PrayerModule module={normalized} />
+      return <PrayerModule module={normalized} moduleIndex={moduleIndex} />
     case 'takeaway':
       return <TakeawayModule module={normalized} />
     case 'bridge':
@@ -169,7 +177,7 @@ export default function ModuleRenderer({
     case 'reveal':
       return <RevealModule module={normalized} />
     case 'recap':
-      return <RecapModule module={normalized} />
+      return <RecapModule module={normalized} moduleIndex={moduleIndex} />
     case 'sabbath':
       return <SabbathModule module={normalized} />
     case 'hero-card':
