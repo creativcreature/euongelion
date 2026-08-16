@@ -266,12 +266,19 @@ def main():
 
     tmp = out_path + ".tmp.wav"
     rendered, sr_ref = [], None
+    failed_segments = []
     t0 = time.time()
     for i, p in enumerate(plan):
         res, clar = render_segment(pid, p["text"], tmp)
         if res is None:
+            # A dropped segment used to be printed and skipped, and the track
+            # published anyway — 16 devotionals shipped with their TITLE never
+            # spoken, and nothing downstream noticed because textHash
+            # fingerprints the EXTRACTION, not what was actually said. A render
+            # that could not say everything is a failed render.
             print(f"[{i+1}/{len(plan)}] {p['register']:10} FAILED | {p['text'][:44]}",
                   flush=True)
+            failed_segments.append(p["text"][:60])
             continue
         samples, sr = res
         sr_ref = sr_ref or sr
@@ -328,6 +335,12 @@ def main():
         print(f"    ⚠ {r['clarity']:.2f} {r['text'][:66]}")
     print(f"  manifest: {mpath}")
     print(f"  wall clock {(time.time()-t0)/60:.1f} min")
+    if failed_segments:
+        print(f"  REFUSING TO PUBLISH: {len(failed_segments)} segment(s) never "
+              f"rendered — the track would be missing text the page shows:")
+        for t in failed_segments[:5]:
+            print(f"    - {t}")
+        raise SystemExit(1)
     if "--publish" in sys.argv:
         publish(out_path, dev_path, voice, dur, words, ne.text_hash(dev))
     cleanup("--keep-takes" in sys.argv)

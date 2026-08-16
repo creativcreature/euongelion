@@ -35,7 +35,27 @@ for attempt in $(seq 1 80); do
   left=$(python3 -c "import sys;sys.path.insert(0,'euangelion-voice-prototype/spec');import render_catalog as rc;print(len(rc.work_list(shard=($SHARD,$TOTAL))))" 2>/dev/null)
   echo "[s${SHARD}] pass ${attempt} — ${left} left in this shard" >> "$LOG"
   [ "$left" = "0" ] && { echo "[s${SHARD}] shard complete" >> "$LOG"; break; }
+  # Render in SMALL batches and recycle the server between them.
+#
+# Batch size and threshold are set from measurement, not taste: at a batch
+# of 8 the servers added ~3.5 GB of swap every 9 minutes, which is faster
+# than the leak check could catch. Three at a time with a 1.1 GB ceiling
+# keeps the footprint flat. A recycle costs ~45s of model load against ~9
+# minutes of work, which is cheap next to the throughput collapse that
+# swapping causes (2.7x realtime down to 0.96x).
+  #
+  # voicebox-server LEAKS: each grew to 3-4 GB after six hours serving an 82M
+  # parameter model, and three of them pushed the machine into swap (96% used),
+  # which collapsed throughput from 2.7x realtime to 0.96x while the CPU sat
+  # idle. Health checks never caught it because a bloated server is still
+  # "healthy". Recycling between batches caps the growth; the work queue is
+  # content-addressed so nothing is re-rendered.
   python3 euangelion-voice-prototype/spec/render_catalog.py --voice am_michael \
-    --shard ${SHARD}/${TOTAL} >> "$LOG" 2>&1
+    --shard ${SHARD}/${TOTAL} --limit 5 >> "$LOG" 2>&1
+  rss=$(ps -o rss= -p "$(lsof -ti tcp:${PORT} 2>/dev/null | head -1)" 2>/dev/null | tr -d ' ')
+  if [ -n "$rss" ] && [ "$rss" -gt 1100000 ]; then
+    echo "[s${SHARD}] server at $((rss/1024)) MB — recycling" >> "$LOG"
+    start_server || { echo "[s${SHARD}] recycle failed" >> "$LOG"; exit 1; }
+  fi
 done
 echo "[s${SHARD}] done" >> "$LOG"

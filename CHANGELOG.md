@@ -296,7 +296,7 @@ four — stretched that paper across the whole rack. Fixed basis.
 **Shelves centre between matched bookends** — lamp, wheat, fish, anchor,
 chi-rho, door, the left one mirrored the way a real pair is, indexed by shelf so
 the wall never reshuffles. Eight spines a shelf, not twelve: at the widened
-sizes twelve overflowed and wrapped *inside its own row*, putting the bookends
+sizes twelve overflowed and wrapped _inside its own row_, putting the bookends
 around two lines of books.
 
 **`/today` carries a real paper.** The Practice (one finishable thing to do
@@ -771,6 +771,41 @@ every kicker was near-invisible, because `--color-gold` is a legacy alias
 resolving to cobalt `#1f2a8d` there while the tile scrim is dark in both themes.
 
 36 new tests. Service worker v67. — SA-044 (F-090)
+
+## Narration — the whole catalog now says what the page says (2026-08-16)
+
+All 528 devotionals re-rendered against the corrected reading contract. **528 of
+528 carry chapters**, 95.8 hours of audio, nothing over the Cloudflare 25 MiB
+asset limit.
+
+**A silent omission, found by the audit and fixed at the source.** Sixteen
+devotionals had shipped with their TITLE never spoken — the audio opened on
+Scripture and the reading's name was never said. `textHash` could not catch it
+because it fingerprints the EXTRACTION, not what was actually rendered, and the
+renderer printed `FAILED` for a dropped segment and then published the track
+anyway. That path is closed: a render that could not say everything now REFUSES
+to publish. This is the same class of bug the whole effort started from, caught
+this time by a machine rather than by a reader.
+
+**Why the overnight run nearly stalled.** `voicebox-server` leaks — each grew to
+3-4 GB after six hours serving an 82M parameter model, and three of them drove
+the machine to 96% swap, collapsing throughput from 2.7x realtime to 0.96x while
+the CPU sat idle. Health checks never noticed because a bloated server still
+reports healthy. The supervisor now renders in batches of five and recycles any
+server past 1.1 GB; a ~45 s model reload against ~15 minutes of work is cheap
+next to what swapping costs. Measured after the fix: swap trended DOWN and the
+run finished clean, 0 failures across both shards.
+
+**Parallelism, measured properly.** Compare wall-seconds per AUDIO-second, never
+per item — devotionals run 2.5 to 25 minutes. Single server 4.40x realtime;
+under three shards 2.80x each, so 1.91x total. Voicebox's MLX/Metal backend
+aborts the process when generations contend INSIDE it, but separate processes
+each hold their own Metal context, so `voicebox-server --port` gives real
+parallelism.
+
+Decision: SA-043. Feature: F-086.
+
+---
 
 ## Narration — the score, written against the page (2026-08-15)
 
