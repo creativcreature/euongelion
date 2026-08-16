@@ -2,6 +2,7 @@ import RED_LETTER_BSB from '@/data/red-letter-bsb.json'
 import WHOLE_VERSES from '@/data/red-letter-whole-verses.json'
 import TRAILING_VERSES from '@/data/red-letter-trailing-verses.json'
 import SPEECH_STARTS from '@/data/red-letter-speech-starts.json'
+import RED_LETTER_KJV from '@/data/red-letter-kjv.json'
 
 /**
  * Resolve the words of Christ for a scripture module — SERVER / BUILD ONLY.
@@ -79,6 +80,16 @@ const TRAILING = new Set(TRAILING_VERSES as string[])
  */
 const STARTS = SPEECH_STARTS as Record<string, number>
 
+/**
+ * The same attribution in KJV wording.
+ *
+ * KJV does not punctuate speech at all, so a KJV passage has no quotations to
+ * attribute and BSB wording never matches it — Luke 10:38-42 ("Martha, Martha,
+ * thou art careful and troubled about many things") was the single passage in
+ * the catalog left black for this reason. Matching KJV spans directly closes it.
+ */
+const MAP_KJV = RED_LETTER_KJV as RedLetterMap
+
 /** Quotation pairs used across our translations, including nested single quotes. */
 const QUOTE_PAIRS: ReadonlyArray<[string, string]> = [
   ['\u201c', '\u201d'],
@@ -87,13 +98,39 @@ const QUOTE_PAIRS: ReadonlyArray<[string, string]> = [
   ["'", "'"],
 ]
 
-/** A reporting clause naming Jesus as the speaker. */
-const SAYS_JESUS =
-  /\bJesus\b[^.?!]{0,40}?\b(answered|answers|said|says|replied|told|declared|asked|responded)\b|\b(answered|said|replied|told|declared)\b[^.?!]{0,20}?\bJesus\b/i
+/**
+ * Reporting clauses, as SUBJECT patterns.
+ *
+ * Direction matters and nearly bit: "they said to Jesus," names Jesus as the
+ * OBJECT — someone speaking TO him — and an earlier draft that matched
+ * /Jesus…said/ loosely would have attributed the crowd's words to Christ. The
+ * object forms are therefore matched FIRST and rule Jesus out.
+ */
+const JESUS_AS_OBJECT =
+  /\b(said|asked|told|replied|answered|cried|shouted|called)\b[^.?!"'\u2018\u201c]{0,18}?\bto\s+Jesus\b|\b(asked|told)\s+Jesus\b/i
 
-/** A reporting clause naming somebody else. */
-const SAYS_OTHER =
-  /\b(they|crowd|disciples|people|expert|lawyer|scribes|Pharisees|priests|man|woman|Peter|Philip|Thomas|Martha|Mary|Judas|Pilate|angel)\b[^.?!]{0,30}?\b(asked|said|says|replied|answered|told|cried|exclaimed)\b|\b(asked|said|replied|answered|told)\b[^.?!]{0,25}?\b(they|the crowd|the disciples|the expert|the people|Peter|Philip|Thomas|Martha|Pilate)\b/i
+/** Jesus as the SUBJECT of the reporting clause — the strongest signal we have. */
+const JESUS_AS_SUBJECT =
+  /\bJesus\b[^.?!]{0,24}?\b(said|says|answered|answers|replied|told|declared|asked|responded|continued|went on to say|added)\b/i
+
+/** A named speaker who is not Jesus. */
+const OTHER_SPEAKER =
+  /\b(they|crowd|disciples|people|expert|lawyer|scribes|Pharisees|priests|teachers|Peter|Philip|Thomas|Andrew|Martha|Mary|Judas|Pilate|John|angel|voice|father|woman|man|servant|officers)\b[^.?!]{0,26}?\b(asked|said|says|replied|answered|told|cried|exclaimed|shouted|declared)\b/i
+
+/**
+ * A bare pronoun clause — "Then he said to Thomas,". Only trusted when the
+ * verse range has a speech of His starting in it AND no other speaker is named
+ * anywhere in the passage, so "he" has exactly one possible referent.
+ */
+const PRONOUN_SPEAKER =
+  /\b(he|He)\b[^.?!]{0,20}?\b(said|answered|replied|told|declared|asked)\b/
+
+/**
+ * Formulae that only Christ uses in the Gospels. Used ONLY as corroboration
+ * inside a verse range the KJV already says He speaks in — never on its own.
+ */
+const DOMINICAL_FORMULA =
+  /^(very truly|truly,? I (say|tell)|verily|amen, amen|I am the|I tell you the truth)/i
 
 interface Quotation {
   text: string
@@ -121,31 +158,73 @@ function quotationsIn(passage: string): Quotation[] {
 }
 
 /**
- * Attribute each quotation by the reporting clause immediately before it,
- * falling back to the clause immediately after (BSB and NIV both use
- * "…," replied the expert in the law).
+ * Attribute one quotation.
+ *
+ * Founder, 2026-08-15: "If it literally says 'jesus said' it is safe to make a
+ * red letter. Be more diligent and cross reference as much as possible."
+ *
+ * So an explicit subject attribution is decisive on its own — it no longer has
+ * to agree with a count, and one unattributable quotation elsewhere in the
+ * passage no longer voids the ones that ARE attributed. Everything else stays
+ * conservative: object forms ("said to Jesus") rule Him out, a named other
+ * speaker rules Him out, and a bare pronoun is trusted only when nobody else
+ * is named in the passage at all.
  */
-function attributeQuotation(passage: string, q: Quotation): 'jesus' | 'other' | 'unknown' {
-  const before = passage.slice(Math.max(0, q.start - 70), q.start)
-  const after = passage.slice(q.end, q.end + 70)
-  if (SAYS_JESUS.test(before)) return 'jesus'
-  if (SAYS_OTHER.test(before)) return 'other'
-  if (SAYS_OTHER.test(after)) return 'other'
-  if (SAYS_JESUS.test(after)) return 'jesus'
+function attributeQuotation(
+  passage: string,
+  q: Quotation,
+  ctx: {
+    hasOtherSpeaker: boolean
+    rangeHasChrist: boolean
+    previousWasChrist: boolean
+    /** End index of the previous quotation, so the look-back cannot run into it. */
+    previousEnd: number
+    /** Start index of the next quotation, so the look-ahead cannot run into it. */
+    nextStart: number
+  },
+): 'jesus' | 'other' | 'unknown' {
+  // The reporting clause is the text between the PREVIOUS quotation and this
+  // one — not a fixed window. A fixed 80-character look-back reached back past
+  // the previous quote and picked up an unrelated clause: in "The crowd said to
+  // Jesus, '…' Jesus answered, '…'" it saw "said to Jesus" while attributing
+  // the SECOND quote and ruled Christ out of his own words.
+  const gapStart = Math.max(ctx.previousEnd, q.start - 90)
+  const before = passage.slice(gapStart, q.start)
+  // Same clamp on the other side: the text after a quotation is very often the
+  // reporting clause for the NEXT one. Unclamped, "'Who can say?' Jesus
+  // answered, '…'" attributed the first quote to Christ on the strength of the
+  // second quote's clause.
+  const gapAfter = passage.slice(q.end, Math.min(ctx.nextStart, q.end + 90))
+  // The clause between two quotations is genuinely ambiguous — "…?' Jesus
+  // answered, '…" could trail the first or lead the second. Punctuation
+  // settles it: a clause ending in a comma or colon LEADS INTO the next quote
+  // and says nothing about this one. Without this, "'Who can say?' Jesus
+  // answered, '…'" attributed the first speaker's words to Christ.
+  const leadsIntoNext = /[,:]\s*$/.test(gapAfter)
+  const after = leadsIntoNext ? '' : gapAfter
+
+  // Direction first: "they said to Jesus" is somebody speaking TO him.
+  if (JESUS_AS_OBJECT.test(before)) return 'other'
+  if (JESUS_AS_SUBJECT.test(before)) return 'jesus'
+  if (OTHER_SPEAKER.test(before)) return 'other'
+
+  // Trailing attribution: "…," replied the expert in the law.
+  if (JESUS_AS_OBJECT.test(after)) return 'other'
+  if (OTHER_SPEAKER.test(after)) return 'other'
+  if (JESUS_AS_SUBJECT.test(after)) return 'jesus'
+
+  if (!ctx.rangeHasChrist) return 'unknown'
+
+  // "Then he said to Thomas," — safe only when He is the sole named speaker.
+  if (!ctx.hasOtherSpeaker && PRONOUN_SPEAKER.test(before)) return 'jesus'
+
+  // A continuation of His own speech, with nobody else having spoken between.
+  if (ctx.previousWasChrist && !OTHER_SPEAKER.test(before)) return 'jesus'
+
+  // A formula only He uses, inside a range He is known to speak in.
+  if (!ctx.hasOtherSpeaker && DOMINICAL_FORMULA.test(q.text.trim())) return 'jesus'
+
   return 'unknown'
-}
-
-/** Reporting clauses that mean narration is present in the excerpt. */
-const REPORTING =
-  /\b(said|says|answered|replied|asked|told|declared|responded|cried out|exclaimed)\b/i
-
-/**
- * True when the passage is a bare quotation with no narration of its own —
- * no quote marks, no reporting verb. Such an excerpt is the saying itself.
- */
-function isBareSaying(passage: string): boolean {
-  if (/[“”"]/.test(passage)) return false
-  return !REPORTING.test(passage)
 }
 
 /** Books the attribution covers. Anything else resolves to nothing. */
@@ -158,7 +237,15 @@ const BOOK_CODES: Record<string, string> = {
   Revelation: 'Rev',
 }
 
-/** `"Luke 10:33-37"` -> `['Luke.10.33', … 'Luke.10.37']`. */
+/**
+ * True when the passage is a bare quotation with no narration of its own —
+ * no quote marks, no reporting verb. Such an excerpt is the saying itself.
+ */
+function isBareSaying(passage: string): boolean {
+  if (/[\u201c\u201d\u2018\u2019"]/.test(passage)) return false
+  return !/\b(said|says|answered|replied|asked|told|declared|responded|cried out|exclaimed)\b/i.test(passage)
+}
+
 export function versesInReference(reference: string | undefined): string[] {
   const match = /^([1-3]?\s?[A-Za-z]+)\s+(\d+):(\d+)(?:[-–](\d+))?/.exec(
     (reference ?? '').trim(),
@@ -217,7 +304,10 @@ export function resolveRedLetter(
 
   const found: string[] = []
   for (const verse of verses) {
-    for (const span of MAP[verse] ?? []) {
+    // Try BSB wording, then KJV wording. Both are literal matches against this
+    // passage, so whichever edition it was quoted from, only text actually
+    // present is ever marked.
+    for (const span of [...(MAP[verse] ?? []), ...(MAP_KJV[verse] ?? [])]) {
       // Short fragments risk matching incidental text; a real utterance is longer.
       if (span.length < 8) continue
       if (passage.includes(span)) found.push(span)
@@ -229,18 +319,41 @@ export function resolveRedLetter(
   // would return only the quoted lines and silently drop the rest of the
   // parable. Verbatim wins wherever it applies.
   const expectedStarts = verses.reduce((n, v) => n + (STARTS[v] ?? 0), 0)
-  if (found.length === 0 && expectedStarts > 0) {
+  const rangeHasChrist = verses.some((v) => STARTS[v] || WHOLE.has(v) || MAP[v])
+
+  if (found.length === 0 && rangeHasChrist) {
     const quotes = quotationsIn(passage)
-    if (quotes.length > 1) {
-      const attributed = quotes.map((q) => ({
-        q,
-        who: attributeQuotation(passage, q),
-      }))
-      const his = attributed.filter((a) => a.who === 'jesus')
-      const unknown = attributed.filter((a) => a.who === 'unknown')
-      if (his.length === expectedStarts && unknown.length === 0) {
-        return his.map((a) => a.q.text)
+
+    if (quotes.length > 0) {
+      // Whether anyone other than Christ is named as a speaker anywhere in the
+      // passage. This is what makes a bare "he said" safe or unsafe.
+      const hasOtherSpeaker = OTHER_SPEAKER.test(passage)
+
+      const marked: string[] = []
+      let previousWasChrist = false
+      let previousEnd = 0
+      for (const q of quotes) {
+        const who = attributeQuotation(passage, q, {
+          hasOtherSpeaker,
+          rangeHasChrist,
+          previousWasChrist,
+          previousEnd,
+          nextStart: quotes[quotes.indexOf(q) + 1]?.start ?? passage.length,
+        })
+        if (who === 'jesus') marked.push(q.text)
+        previousWasChrist = who === 'jesus'
+        previousEnd = q.end
       }
+      // Explicit attribution stands on its own — an unattributable quotation
+      // elsewhere no longer discards the ones we are sure of.
+      if (marked.length > 0) return marked
+    }
+
+    // No quotation marks at all, but the range is His and the excerpt carries
+    // no narration — the whole passage is the saying. Covers John 11:25-26,
+    // quoted as bare text across two verses.
+    if (quotes.length === 0 && isBareSaying(passage) && expectedStarts > 0) {
+      return [passage.trim()]
     }
   }
 

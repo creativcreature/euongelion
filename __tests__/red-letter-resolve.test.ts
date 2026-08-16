@@ -118,3 +118,41 @@ describe('multi-verse mixed passages (the common Gospel shape)', () => {
     expect(spans.some((s) => s.includes('Rabbi, when did you get here'))).toBe(false)
   })
 })
+
+describe('comprehensive attribution (founder: "if it literally says jesus said")', () => {
+  it('an explicit "Jesus said" is decisive on its own', () => {
+    const p = `Jesus said to them, 'Very truly I tell you, it is not Moses who has given you the bread from heaven, but it is my Father who gives you the true bread from heaven.'`
+    expect(resolveRedLetter('John 6:32-33', p)[0]).toContain('Very truly I tell you')
+  })
+
+  it('"Then Jesus declared," is decisive', () => {
+    const p = `Then Jesus declared, 'I am the bread of life. Whoever comes to me will never go hungry.'`
+    expect(resolveRedLetter('John 6:35', p)[0]).toContain('I am the bread of life')
+  })
+
+  it('resolves a bare "he said" when nobody else is named', () => {
+    const p = `Then he said to Thomas, "Put your finger here; see my hands. Stop doubting and believe."`
+    expect(resolveRedLetter('John 20:27', p)[0]).toContain('Put your finger here')
+  })
+
+  it('reddens an unquoted saying spanning a range', () => {
+    const p = `I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die.`
+    expect(resolveRedLetter('John 11:25-26', p)).toEqual([p])
+  })
+
+  it('NEVER attributes to Jesus when he is the OBJECT of the clause', () => {
+    // "said to Jesus" is somebody speaking TO him. An earlier draft matched
+    // /Jesus…said/ loosely and would have reddened the crowd here.
+    const p = `The crowd said to Jesus, 'What sign then will you give?' Jesus answered, 'I am the bread of life.'`
+    const spans = resolveRedLetter('John 6:30-35', p)
+    expect(spans.some((s) => s.includes('What sign then will you give'))).toBe(false)
+    expect(spans.some((s) => s.includes('I am the bread of life'))).toBe(true)
+  })
+
+  it('keeps explicit attributions even when another quote is unattributable', () => {
+    const p = `A voice came from somewhere. 'Who can say?' Jesus answered, 'I am the way and the truth and the life.'`
+    const spans = resolveRedLetter('John 14:5-6', p)
+    expect(spans.some((s) => s.includes('I am the way'))).toBe(true)
+    expect(spans.some((s) => s.includes('Who can say'))).toBe(false)
+  })
+})

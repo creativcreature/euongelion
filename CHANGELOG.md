@@ -87,6 +87,49 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## RED LETTER — comprehensive (2026-08-15)
+
+Founder: _"If it literally says 'jesus said' it is safe to make a red letter. Be
+more diligent and cross reference as much as possible. Needs to be
+comprehensive."_ Registered as **SA-053**.
+
+**Explicit attribution is now decisive on its own.** The previous guard required
+the count of Jesus-attributed quotations to match the KJV's expected count *and*
+allowed no unattributable quotation anywhere — so one unclear quote discarded
+the ones we were certain of. Passages reading literally "Jesus said to them,"
+and "Then Jesus declared," were sitting black.
+
+**Three bugs found while making it comprehensive, each caught by a test:**
+
+- **Direction.** "They said to Jesus" names him as the *object*. A loose
+  `/Jesus.*said/` would have painted the crowd's words in Christ's colour — the
+  exact failure this module exists to prevent. Object forms are matched first
+  and rule him out.
+- **Scope.** A fixed 80-character look-back reached past the previous quotation
+  and picked up an unrelated clause: in *"The crowd said to Jesus, '…' Jesus
+  answered, '…'"* it saw "said to Jesus" while attributing the **second** quote,
+  and ruled Christ out of his own words. Look-back is clamped to the previous
+  quotation, look-ahead to the next.
+- **Ambiguity.** The clause *between* two quotations could trail the first or
+  lead the second. Punctuation settles it — a clause ending in a comma leads
+  into the next quote.
+
+**Three further cross-references, each gated.** A bare "he said" is trusted only
+when no other speaker is named in the passage. A continuation quote is trusted
+only when nobody else spoke in between. A dominical formula ("Very truly I tell
+you", "I am the") corroborates only inside a range the KJV already says he
+speaks in. And KJV wording joined the verbatim path — KJV doesn't punctuate
+speech at all, which is why "Martha, Martha" was the last passage left black.
+
+```
+93 of 153 Gospel modules attributed
+60 correctly black — no speech of his in range
+ 0 passages containing his words without attribution
+```
+
+Comprehensive by measurement, not assertion. 24 tests. Content verified
+byte-identical again — every change is an added field. — SA-053 (F-095)
+
 ## READER + SERIES — one reader shape, Covers leads, red letter reaches the common case (2026-08-15)
 
 Founder, on the live build: _"The daily bread reader should look exactly the

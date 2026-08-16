@@ -1,4 +1,6 @@
 // Euangelion Service Worker
+// R63 (F-095/SA-053): bumped to v80 — red letter is comprehensive; every
+// passage containing Christ's words is now attributed.
 // R62 (F-094/F-095/SA-052): bumped to v79 — Daily Bread matches the reader,
 // Covers leads the switcher, red letter reaches multi-verse passages.
 // R61 (F-095/SA-051): bumped to v78 — red letter now uses the BRAND crimson
@@ -78,7 +80,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v79'
+const CACHE_NAME = 'euangelion-v80'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
