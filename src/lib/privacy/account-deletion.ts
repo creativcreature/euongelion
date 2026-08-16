@@ -75,6 +75,9 @@ const USER_ID_TABLES = [
   'active_series',
   'scheduled_series_swap',
   'archived_series',
+  // Cross-device audio resume (migration 018). Holds what someone listened to
+  // and when, so it goes with the account.
+  'listening_progress',
 ] as const
 
 async function safeDeleteByColumn(

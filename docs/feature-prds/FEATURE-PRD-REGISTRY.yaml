@@ -963,6 +963,14 @@ features:
     prd: docs/feature-prds/F-099.md
     methodology_refs:
       - M00
+  - id: F-101
+    title: The Audio Edition transport, on the Audible model
+    slug: audio-edition-transport-audible-model
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-101.md
+    methodology_refs:
+      - M00
   - id: F-102
     title: Notes, journal entries, and reflection answers
     slug: notes-journal-and-reflection-answers

@@ -33,11 +33,12 @@ const uniqueIds = Array.from(new Set(ids)).sort()
 // so whoever hits it next pays for someone else's omission.
 //
 // 95: F-095 (red letter). 99: F-102 (notes and journal entries).
+// 100: F-101 (Audio Edition transport).
 //
 // The message reads from the constant now. It previously said "Expected 95"
 // while the check tested for 98, so the one person who could act on it was
 // told the wrong number — which is most of why this trap kept recurring.
-const EXPECTED_FEATURE_IDS = 99
+const EXPECTED_FEATURE_IDS = 100
 if (uniqueIds.length !== EXPECTED_FEATURE_IDS) {
   fail(
     `Expected ${EXPECTED_FEATURE_IDS} feature IDs in registry, found ${uniqueIds.length}. ` +

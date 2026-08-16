@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## EVERYTHING DELETABLE IS NOW EXPORTABLE — SA-058 / F-101 (2026-08-16)
+
+Migration 018 (`listening_progress`) is written and **awaiting application in
+the Supabase dashboard.** Additive and idempotent, so applying it cannot affect
+anything running; until it is applied, cross-device resume degrades to on-device
+(the behaviour that already shipped) and logs `MIGRATION_018_PENDING` rather
+than failing silently. Three billing migrations are still pending — 018 must not
+quietly join that queue.
+
+Wiring it into the privacy helpers surfaced that the two lists had drifted.
+`account-deletion.ts` deleted rows from tables `data-export.ts` never exported:
+`soul_audit_sessions`, `active_series`, `scheduled_series_swap`,
+`archived_series`, and `push_subscriptions` — a complete right to erasure beside
+an incomplete right of access (GDPR Art. 15). All five are exported now, along
+with `listening_progress`.
+
+The two lists are hand-maintained in separate files, so this drifts silently by
+construction. `__tests__/privacy-table-coverage.test.ts` now pins them together
+by reading the source text, which is the only way to catch a table added to one
+list and forgotten in the other. Worth noting the test found two of the six
+gaps that a careful read had missed.
+
+**Open defect, surfaced not fixed:** `audit_option_telemetry` is declared by
+migration 009 but does not exist in production (PGRST205, verified) — 009 was
+only partially applied. Because the deletion cascade still lists it, **every
+account deletion today records a partial failure**, and `partialFailures` means
+"data MAY persist there". It is deliberately excluded from the export list, since
+adding it would make every export claim to be incomplete as well. Resolving it
+means either applying the missing part of 009 or dropping the table from the
+code — both founder calls.
+
 ## A STYLE-ONLY PATCH STOPPED EATING THE ANCHOR TEXT — SA-059 / F-102 (2026-08-16)
 
 Silent data loss in the most-used control in the reader, found while designing

@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** design approved, plan approved, **Phase 1 in progress — Task 1 complete and committed.** See §7 for the live progress table.
+**Status:** design approved, plan approved, **Phase 1 COMPLETE** (commits `7f6d64bc`, `f82ea6e5`). Phase 2 (transport) is next. See §7.
 
 ---
 
@@ -76,6 +76,23 @@ Probed production directly, 2026-08-16:
 `database/migrations/009_create_soul_audit_tables.sql:166` declares no `style` column. It was added out-of-band. Nothing is broken; it is drift worth reconciling later. **Consequence for design:** there is no `updated_at`, which is why edit time lives in `style.editedAt` and the journaling work needs no migration at all.
 
 Second drift found the same way: **`annotations.id` is UUID in production** where 009 declares it `TEXT`. Harmless in practice — `addAnnotation` uses `randomUUID()` — but any script that inserts a row with a non-UUID id gets `22P02 invalid input syntax for type uuid`. Worth knowing before you burn ten minutes on it.
+
+### 4.2b Migration 009 was only PARTIALLY applied — open defect
+
+`audit_option_telemetry` is declared at `009_create_soul_audit_tables.sql:47`
+and **does not exist in production** (`PGRST205`, verified 2026-08-16).
+
+This is not cosmetic. `account-deletion.ts` still lists it, and
+`safeDeleteByColumn` pushes to `partialFailures` on any error — so **every
+account deletion running today reports a partial failure**, and that field's own
+documentation defines it as "Tables that errored — data MAY persist there." A
+reader exercising their right to erasure gets an incomplete-looking result.
+
+Deliberately NOT fixed this session; it is surfaced for a founder call, and the
+reasoning is recorded in `__tests__/privacy-table-coverage.test.ts`
+(`NOT_IN_PRODUCTION`). Two ways out: apply the missing part of 009, or drop the
+table from the code. It is excluded from the export list because adding it
+would make every export claim to be incomplete too.
 
 ### 4.3 GDPR export gap — pre-existing, unrelated to this work
 
@@ -148,12 +165,12 @@ Making the account the gate for **everything** on top of a rate-limited mailer w
 
 ## 7. Progress
 
-| Phase           | Tasks | State                                                                      |
-| --------------- | ----- | -------------------------------------------------------------------------- |
-| 1 — Foundations | 1–2   | **Task 1 DONE** — committed, verified against the live table. Task 2 next. |
-| 2 — Transport   | 3–8   | Not started                                                                |
-| 3 — Journaling  | 9–12  | Not started                                                                |
-| 4 — Two-state   | 13–15 | Not started                                                                |
+| Phase           | Tasks | State                                               |
+| --------------- | ----- | --------------------------------------------------- |
+| 1 — Foundations | 1–2   | **COMPLETE.** Task 1 `7f6d64bc`, Task 2 `f82ea6e5`. |
+| 2 — Transport   | 3–8   | Not started                                         |
+| 3 — Journaling  | 9–12  | Not started                                         |
+| 4 — Two-state   | 13–15 | Not started                                         |
 
 Phases 1–3 leave the product working under today's auth rules. **Phase 4 changes the rules and is separately revertable** — the founder can have the player and journaling live before the gate flips.
 

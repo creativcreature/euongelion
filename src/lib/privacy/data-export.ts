@@ -51,18 +51,38 @@ export interface DataExportResult {
 const SESSION_TOKEN_TABLES = [
   'audit_runs',
   'audit_options',
+  // NOT listed: audit_option_telemetry. Migration 009 declares it but it does
+  // not exist in production (PGRST205, verified 2026-08-16 — 009 was only
+  // partially applied). Adding it here would make EVERY export report a
+  // partial failure, telling readers their data may be incomplete when it is
+  // not. See __tests__/privacy-table-coverage.test.ts, which holds this as a
+  // documented exception rather than letting the two lists drift silently.
   'consent_records',
   'audit_selections',
   'devotional_plan_instances',
   'annotations',
   'session_bookmarks',
   'mock_account_sessions',
+  // Device endpoint + keys (migration 015). Added to the deletion cascade
+  // after an account deletion was found leaving push subscriptions orphaned;
+  // the export half was missed at the same time.
+  'push_subscriptions',
 ] as const
 
 const USER_ID_TABLES = [
   'bookmarks',
   'user_progress',
   'soul_audit_responses',
+  // These four were deletable but not exportable — a complete right to erasure
+  // beside an incomplete right of access (GDPR Art. 15). The two lists are
+  // hand-maintained in separate files, so they drifted silently; the pairing is
+  // pinned now by __tests__/privacy-table-coverage.test.ts.
+  'soul_audit_sessions',
+  'active_series',
+  'scheduled_series_swap',
+  'archived_series',
+  // Cross-device audio resume (migration 018).
+  'listening_progress',
 ] as const
 
 async function safeSelectByColumn(
