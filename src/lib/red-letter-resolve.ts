@@ -1,6 +1,7 @@
 import RED_LETTER_BSB from '@/data/red-letter-bsb.json'
 import WHOLE_VERSES from '@/data/red-letter-whole-verses.json'
 import TRAILING_VERSES from '@/data/red-letter-trailing-verses.json'
+import SPEECH_STARTS from '@/data/red-letter-speech-starts.json'
 
 /**
  * Resolve the words of Christ for a scripture module — SERVER / BUILD ONLY.
@@ -61,6 +62,78 @@ const WHOLE = new Set(WHOLE_VERSES as string[])
  * mistake this whole module exists to avoid.
  */
 const TRAILING = new Set(TRAILING_VERSES as string[])
+
+/**
+ * How many of Christ's speeches BEGIN in each verse.
+ *
+ * This is what makes multi-verse mixed passages work — the common shape, and
+ * the reason no red letter appeared at first. John 6:25-29 (NIV) is narration,
+ * Jesus, narration, Jesus: not all whole-verse, not a single verse, and NIV
+ * wording never matches BSB, so it fell through every other path.
+ *
+ * But the passage names its own speakers ("Jesus answered,"), and this map says
+ * how many of His speeches to expect in the range — 2 for John 6:25-29. When
+ * the number of Jesus-attributed quotations in the passage equals the number
+ * expected, the attribution is confirmed by two independent sources and can be
+ * trusted. When it does not, we skip.
+ */
+const STARTS = SPEECH_STARTS as Record<string, number>
+
+/** Quotation pairs used across our translations, including nested single quotes. */
+const QUOTE_PAIRS: ReadonlyArray<[string, string]> = [
+  ['\u201c', '\u201d'],
+  ['\u2018', '\u2019'],
+  ['"', '"'],
+  ["'", "'"],
+]
+
+/** A reporting clause naming Jesus as the speaker. */
+const SAYS_JESUS =
+  /\bJesus\b[^.?!]{0,40}?\b(answered|answers|said|says|replied|told|declared|asked|responded)\b|\b(answered|said|replied|told|declared)\b[^.?!]{0,20}?\bJesus\b/i
+
+/** A reporting clause naming somebody else. */
+const SAYS_OTHER =
+  /\b(they|crowd|disciples|people|expert|lawyer|scribes|Pharisees|priests|man|woman|Peter|Philip|Thomas|Martha|Mary|Judas|Pilate|angel)\b[^.?!]{0,30}?\b(asked|said|says|replied|answered|told|cried|exclaimed)\b|\b(asked|said|replied|answered|told)\b[^.?!]{0,25}?\b(they|the crowd|the disciples|the expert|the people|Peter|Philip|Thomas|Martha|Pilate)\b/i
+
+interface Quotation {
+  text: string
+  start: number
+  end: number
+}
+
+/** Every quotation in the passage, in order, whatever marks the edition uses. */
+function quotationsIn(passage: string): Quotation[] {
+  const out: Quotation[] = []
+  for (const [open, close] of QUOTE_PAIRS) {
+    let i = 0
+    while (i < passage.length) {
+      const a = passage.indexOf(open, i)
+      if (a === -1) break
+      const b = passage.indexOf(close, a + 1)
+      if (b === -1) break
+      const text = passage.slice(a + 1, b).trim()
+      if (text.length >= 8) out.push({ text, start: a, end: b + 1 })
+      i = b + 1
+    }
+    if (out.length > 0) break // first pair style that yields anything wins
+  }
+  return out.sort((x, y) => x.start - y.start)
+}
+
+/**
+ * Attribute each quotation by the reporting clause immediately before it,
+ * falling back to the clause immediately after (BSB and NIV both use
+ * "…," replied the expert in the law).
+ */
+function attributeQuotation(passage: string, q: Quotation): 'jesus' | 'other' | 'unknown' {
+  const before = passage.slice(Math.max(0, q.start - 70), q.start)
+  const after = passage.slice(q.end, q.end + 70)
+  if (SAYS_JESUS.test(before)) return 'jesus'
+  if (SAYS_OTHER.test(before)) return 'other'
+  if (SAYS_OTHER.test(after)) return 'other'
+  if (SAYS_JESUS.test(after)) return 'jesus'
+  return 'unknown'
+}
 
 /** Reporting clauses that mean narration is present in the excerpt. */
 const REPORTING =
@@ -150,6 +223,27 @@ export function resolveRedLetter(
       if (passage.includes(span)) found.push(span)
     }
   }
+  // Verbatim found nothing — fall back to attributing the passage's own
+  // quotations. Ordering matters: the verbatim path carries parable narration
+  // that has no quotation marks at all (Luke 10:30-35), so running this first
+  // would return only the quoted lines and silently drop the rest of the
+  // parable. Verbatim wins wherever it applies.
+  const expectedStarts = verses.reduce((n, v) => n + (STARTS[v] ?? 0), 0)
+  if (found.length === 0 && expectedStarts > 0) {
+    const quotes = quotationsIn(passage)
+    if (quotes.length > 1) {
+      const attributed = quotes.map((q) => ({
+        q,
+        who: attributeQuotation(passage, q),
+      }))
+      const his = attributed.filter((a) => a.who === 'jesus')
+      const unknown = attributed.filter((a) => a.who === 'unknown')
+      if (his.length === expectedStarts && unknown.length === 0) {
+        return his.map((a) => a.q.text)
+      }
+    }
+  }
+
   if (found.length === 0) return []
 
   // Longest first, then drop any span wholly contained in a longer one, so a

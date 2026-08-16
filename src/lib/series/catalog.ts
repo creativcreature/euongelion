@@ -11,12 +11,7 @@
  * hardcoding a slug (the failure that left `HOMEPAGE_TODAY` naming a series
  * two releases old).
  */
-import {
-  ALL_SERIES_ORDER,
-  NEW_SERIES_ORDER,
-  SERIES_DATA,
-  type SeriesInfo,
-} from '@/data/series'
+import { ALL_SERIES_ORDER, NEW_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 
 export type SortKey =
   | 'az'
@@ -24,7 +19,6 @@ export type SortKey =
   | 'newest'
   | 'shortest'
   | 'longest'
-  | 'pathway'
 
 export const SORT_OPTIONS: ReadonlyArray<{ key: SortKey; label: string }> = [
   { key: 'az', label: 'A–Z' },
@@ -32,15 +26,7 @@ export const SORT_OPTIONS: ReadonlyArray<{ key: SortKey; label: string }> = [
   { key: 'newest', label: 'Newest' },
   { key: 'shortest', label: 'Shortest' },
   { key: 'longest', label: 'Longest' },
-  { key: 'pathway', label: 'Pathway' },
 ]
-
-/** Reading order of the three pathways, Sleep -> Awake -> Shepherd. */
-const PATHWAY_RANK: Record<SeriesInfo['pathway'], number> = {
-  Sleep: 0,
-  Awake: 1,
-  Shepherd: 2,
-}
 
 /**
  * Higher = more recently released.
@@ -106,14 +92,6 @@ export function sortSeries(slugs: readonly string[], key: SortKey): string[] {
       return sorted.sort((a, b) => days(a) - days(b) || byTitle(a, b))
     case 'longest':
       return sorted.sort((a, b) => days(b) - days(a) || byTitle(a, b))
-    case 'pathway':
-      return sorted.sort((a, b) => {
-        const pa = SERIES_DATA[a]?.pathway
-        const pb = SERIES_DATA[b]?.pathway
-        const ra = pa ? PATHWAY_RANK[pa] : 99
-        const rb = pb ? PATHWAY_RANK[pb] : 99
-        return ra - rb || byTitle(a, b)
-      })
     default:
       return sorted.sort(byTitle)
   }

@@ -87,6 +87,42 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## READER + SERIES — one reader shape, Covers leads, red letter reaches the common case (2026-08-15)
+
+Founder, on the live build: _"The daily bread reader should look exactly the
+same as the normal reader… Make the Covers the first toggle icon, followed by
+issues, and remove the pathways sort toggle… Infact- I havent seen one red
+letter yet."_ Registered as **SA-052**.
+
+**Daily Bread was a different reader because of one prop.** The dedicated reader
+passes `DevotionalRhythm enabled={false}`; `CuratedActiveView` passed
+`enabled={rhythmImages.length > 0}` — which turned on the alternating
+text-left / sticky-image-right rhythm on Daily Bread and nowhere else. Both are
+now one centred column. If that rhythm is ever wanted back it goes in both or
+neither: a reader that changes shape by route reads as two products.
+
+**Covers leads the switcher, Issues second, Pathway sort gone.** The art is the
+fastest way to recognise a reading you've seen and recency is the second, so
+those are the first two controls and Covers is now the default view. Pathway is
+an authoring taxonomy rather than something a reader browses by — the list had
+already dropped it as a column.
+
+**Red letter now reaches the shape most Gospel passages actually take.** The
+passages being opened were multi-verse and mixed, in NIV — John 6:25-29 is
+narration, Jesus, narration, Jesus — and fell through every path: not all
+whole-verse, not a single verse, and NIV wording never matches BSB. A fourth
+path attributes the passage's **own** quotations by their reporting clause
+("Jesus answered,"), and accepts them only when the number of Jesus-attributed
+quotations equals the number of His speeches the KJV says begin in that verse
+range. Two independent sources agreeing, rather than one heuristic guessing; any
+unattributable quotation voids the whole passage.
+
+Ordering is load-bearing. It runs **only after** the verbatim path returns
+nothing, because the verbatim path carries parable narration that has no
+quotation marks at all. Running it first regressed Luke 10 to the single quoted
+line and silently dropped the parable — caught by the negative-control test that
+already existed for exactly that passage. — SA-052 (F-094 / F-095)
+
 ## RED LETTER — the words of Christ (2026-08-15)
 
 Founder: _"through out the site — Jesus direct words in Red. ensure the

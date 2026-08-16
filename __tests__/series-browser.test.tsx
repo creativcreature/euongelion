@@ -54,6 +54,8 @@ describe('SeriesBrowser — ten layouts', () => {
     // Founder-cut 2026-08-15: Index, Contact and Broadsheet removed.
     expect(screen.getAllByRole('tab')).toHaveLength(7)
     expect(VIEWS).toHaveLength(7)
+    expect(VIEWS[0].label).toBe('Covers')
+    expect(VIEWS[1].label).toBe('Issues')
     expect(container.querySelectorAll('.rr-view svg')).toHaveLength(7)
     for (const gone of ['Index', 'Contact', 'Broadsheet']) {
       expect(screen.queryByRole('tab', { name: gone })).toBeNull()
@@ -72,12 +74,17 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('defaults to Feature and leads with the newest eligible series', () => {
+  it('defaults to Covers, and Feature leads with the newest eligible series', () => {
     const { container } = render(<SeriesBrowser />)
-    expect(screen.getByRole('tab', { name: 'Feature' })).toHaveAttribute(
+    // Founder-ordered 2026-08-15: Covers first, Issues second.
+    expect(screen.getByRole('tab', { name: 'Covers' })).toHaveAttribute(
       'aria-selected',
       'true',
     )
+    expect(screen.getAllByRole('tab').map((t) => t.getAttribute('aria-label'))).toEqual([
+      'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List', 'Mosaic',
+    ])
+    openView('Feature')
     const lead = container.querySelector('.bento-lead') as HTMLElement
     expect(lead).not.toBeNull()
     // SA-036(4): a commissioned series never takes a feature slot.
@@ -90,6 +97,7 @@ describe('SeriesBrowser — ten layouts', () => {
 
   it('bento tiles lead with the title — no kicker above it', () => {
     const { container } = render(<SeriesBrowser />)
+    openView('Feature')
     const tile = container.querySelector('.bento-tile:not(.bento-lead)') as HTMLElement
     const copy = tile.querySelector('.bento-copy') as HTMLElement
     // Title first in the DOM, meta second. The old build put a gold uppercase
@@ -140,6 +148,7 @@ describe('SeriesBrowser — ten layouts', () => {
       )
 
     const az = titles()
+    expect(screen.queryByRole('button', { name: 'Pathway' })).toBeNull()
     fireEvent.click(screen.getByRole('button', { name: 'Z–A' }))
     const za = titles()
 
@@ -169,7 +178,7 @@ describe('SeriesBrowser — ten layouts', () => {
     // Seeds are suggestions that actually return something.
     expect(screen.getByText('waiting on God')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: /back to the shelves/i }))
-    expect(screen.getByRole('tab', { name: 'Feature' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Covers' })).toBeInTheDocument()
   })
 
   it('links every card in every layout to a real route', () => {

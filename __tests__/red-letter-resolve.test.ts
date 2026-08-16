@@ -96,3 +96,25 @@ describe('withRedLetter', () => {
     expect(resolveRedLetter('Matthew 16:24', bsb)).toEqual([bsb])
   })
 })
+
+describe('multi-verse mixed passages (the common Gospel shape)', () => {
+  const JOHN_6 = `When they found him on the other side of the lake, they asked him, 'Rabbi, when did you get here?' Jesus answered, 'Very truly I tell you, you are looking for me, not because you saw the signs I performed but because you ate the loaves and had your fill. Do not work for food that spoils, but for food that endures to eternal life, which the Son of Man will give you. For on him God the Father has placed his seal of approval.' Then they asked him, 'What must we do to do the works God requires?' Jesus answered, 'The work of God is this: to believe in the one he has sent.'`
+
+  it('marks only the quotations attributed to Jesus', () => {
+    const spans = resolveRedLetter('John 6:25-29', JOHN_6)
+    expect(spans).toHaveLength(2)
+    expect(spans[0]).toContain('Very truly I tell you')
+    expect(spans[1]).toContain('The work of God is this')
+    // The crowd keeps its own questions.
+    expect(spans.join(' ')).not.toContain('Rabbi, when did you get here')
+    expect(spans.join(' ')).not.toContain('What must we do')
+  })
+
+  it('skips when the passage disagrees with the expected count', () => {
+    // One of His two speeches removed: counts no longer agree, so nothing is
+    // marked rather than half-marked.
+    const truncated = JOHN_6.slice(0, JOHN_6.indexOf('Then they asked him'))
+    const spans = resolveRedLetter('John 6:25-29', truncated)
+    expect(spans.some((s) => s.includes('Rabbi, when did you get here'))).toBe(false)
+  })
+})

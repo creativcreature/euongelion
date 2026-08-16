@@ -392,12 +392,14 @@ export default function CuratedActiveView({
             />
           )}
 
-          {/* Rhythm reader — text-left / image-right alternating chapter
-              blocks, same as the dedicated reader. */}
-          <DevotionalRhythm
-            images={rhythmImages}
-            enabled={rhythmImages.length > 0}
-          >
+          {/* Founder 2026-08-15: "The daily bread reader should look exactly
+              the same as the normal reader (ie centered column, no image on
+              the right on scroll etc." The dedicated reader passes
+              enabled={false}; this passed enabled={rhythmImages.length > 0},
+              which is the whole difference — it turned on the alternating
+              text-left / sticky-image-right rhythm here and nowhere else.
+              Now both readers are one centred column. */}
+          <DevotionalRhythm images={rhythmImages} enabled={false}>
             {modules
               ? modules.map((module, index) => (
                   <article

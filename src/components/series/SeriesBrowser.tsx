@@ -58,7 +58,7 @@ export default function SeriesBrowser() {
     () => false,
   )
 
-  const [view, setView] = useState<ViewId>('feature')
+  const [view, setView] = useState<ViewId>('covers')
   const [sort, setSort] = useState<SortKey>('az')
   const [query, setQuery] = useState('')
   const completions = useProgressStore((s) => s.completions)
@@ -68,7 +68,7 @@ export default function SeriesBrowser() {
   // hydration so the server pass stays deterministic.
   const [restored, setRestored] = useState(false)
   if (hydrated && !restored) {
-    setView(readStored(STORAGE_VIEW, VIEWS.map((v) => v.id), 'feature'))
+    setView(readStored(STORAGE_VIEW, VIEWS.map((v) => v.id), 'covers'))
     setSort(readStored(STORAGE_SORT, SORT_OPTIONS.map((s) => s.key), 'az'))
     setRestored(true)
   }

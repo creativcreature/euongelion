@@ -52,13 +52,15 @@ export const VIEWS: ReadonlyArray<{
   /** Shown under the switcher — tells the reader what they are looking at. */
   blurb: string
 }> = [
+  // Founder-ordered 2026-08-15: Covers leads, Issues second. The art is the
+  // fastest way to recognise a reading you have seen; recency is the second.
+  { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
+  { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
   { id: 'feature', label: 'Feature', blurb: 'The newest reading, and what sits around it.' },
   { id: 'rack', label: 'Rack', blurb: 'Every series folded over the rail, mastheads out.' },
-  { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
   { id: 'spines', label: 'Spines', blurb: 'Shelved. Read the spine, pull one out.' },
   { id: 'list', label: 'List', blurb: 'The whole catalog in one screen.' },
   { id: 'mosaic', label: 'Mosaic', blurb: 'Hung by eye. Longer readings take more wall.' },
-  { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
 ]
 
 export interface SeriesProgress {
