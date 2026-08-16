@@ -20,9 +20,10 @@ const REPO = path.resolve(HERE, '../..')
 
 // Where finished masters land before install. Kept outside the repo so an
 // interrupted run never commits half a set.
+const ORIENT = process.argv.includes('--portrait') ? 'portrait' : 'landscape'
 const OUT_DIR =
   process.env.SERIES_MASTERS_DIR ||
-  '/private/tmp/claude-501/-Users-jamesparker-Documents-app-projects-external-euangelion/763444a7-3863-4387-888d-c4f34b4de80d/scratchpad/series-final'
+  path.join(REPO, 'imagery-staging/series-v2', ORIENT)
 
 const spec = JSON.parse(
   fs.readFileSync(path.join(HERE, 'series-image-subjects.json'), 'utf8'),
@@ -39,10 +40,27 @@ const section = (name) => {
   return m[1].trim()
 }
 const PREAMBLE = section('PREAMBLE')
-const CROP = section('CROP_CLAUSE')
 
-export const buildPrompt = (subject) =>
-  `${PREAMBLE}\n\nSUBJECT: ${subject}\n\n${CROP}`
+// rev B: two masters per plate, each with its own crop clause. The leading
+// "Use with the …" line is documentation for a human and is stripped before the
+// clause goes into a prompt.
+const clause = (name) =>
+  section(name)
+    .split('\n')
+    .filter((l) => !/^Use with the /.test(l))
+    .join('\n')
+    .trim()
+
+const CROP = {
+  landscape: clause('CROP_CLAUSE_LANDSCAPE'),
+  portrait: clause('CROP_CLAUSE_PORTRAIT'),
+}
+
+export const buildPrompt = (subject, orientation = 'landscape') => {
+  const crop = CROP[orientation]
+  if (!crop) throw new Error(`orientation must be landscape|portrait, got "${orientation}"`)
+  return `${PREAMBLE}\n\nSUBJECT: ${subject}\n\n${crop}`
+}
 
 const subjects = spec.subjects
 const approved = new Set(spec._approved_do_not_regenerate)
@@ -58,17 +76,18 @@ if (arg && !arg.startsWith('--')) {
     console.error(`no subject for "${arg}". known: ${slugs.join(', ')}`)
     process.exit(1)
   }
-  console.log(buildPrompt(subjects[arg]))
+  console.log(buildPrompt(subjects[arg], ORIENT))
   process.exit(0)
 }
 
 if (arg === '--json') {
   const out = {}
-  for (const s of pending) out[s] = buildPrompt(subjects[s])
+  for (const s of pending) out[s] = buildPrompt(subjects[s], ORIENT)
   console.log(JSON.stringify(out, null, 2))
   process.exit(0)
 }
 
+console.log(`orientation : ${ORIENT}`)
 console.log(`masters dir : ${OUT_DIR}`)
 console.log(`to generate : ${slugs.length}`)
 console.log(`done        : ${done.length}`)
@@ -76,7 +95,6 @@ console.log(`pending     : ${pending.length}`)
 console.log(
   `untouched   : ${approved.size} founder-approved (${[...approved].join(', ')})`,
 )
-console.log(`credits left: ~${pending.length * 7} needed at 7/image`)
 
 if (arg === '--todo') {
   console.log(`\nnext up (plan cap is 8 concurrent):`)
