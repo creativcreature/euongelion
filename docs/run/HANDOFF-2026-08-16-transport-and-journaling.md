@@ -129,28 +129,41 @@ The prayer number is why `PrayerModule` gets an _Add your own prayer_ affordance
 
 - **SA-060** — two-state site model. Its note MUST state explicitly that it reverses SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5, and that SA-026 is NOT reversed.
 - **SA-058** — Audible-modeled transport + cross-device resume.
-- **SA-059** — unified journaling on the `annotations` table.
+- **SA-061** — unified journaling on the `annotations` table.
 
-Feature PRDs claimed: **F-103** (two-state), **F-101** (transport), **F-102** (journaling).
+Feature PRDs claimed: **F-104** (two-state), **F-101** (transport), **F-102** (journaling).
 
-### A collision already happened — read this before claiming an id
+### TWO collisions happened — read this before claiming an id
 
-The two-state model was originally claimed as **SA-057 / F-100**. While this
-session was building the transport, a parallel session committed
-`6f5f040c feat(series): carved bookend plates… — SA-057 (F-100)` and took both.
-Renumbered here to **SA-060 / F-103**.
+**First:** the two-state model was claimed as SA-057 / F-100. A parallel session
+committed `6f5f040c` and took both. Renumbered to SA-060 / F-103.
 
-SA-058, SA-059, F-101 and F-102 were NOT affected — verified against
-`production-decisions.yaml` (which recorded nothing above 057) and the PRD
-directory. Nothing needs undoing; commits `bb0ee3c4`, `db1ee9a6` and `7f6d64bc`
-cite ids that are still correct.
+**Second, hours later:** that same session committed `27da1135` and took
+**SA-059 AND F-103** — SA-059 written into `production-decisions.yaml`, which is
+canonical, so it is theirs. Renumbered again:
 
-The lesson is the one already in the traps list: **an id is not yours until it
-is committed.** Re-check `production-decisions.yaml` and `ls docs/feature-prds/`
-immediately before writing, not at planning time — planning here happened hours
-before the write.
+| Work                       | Final id           | Note                         |
+| -------------------------- | ------------------ | ---------------------------- |
+| Audible transport + resume | **SA-058 / F-101** | never collided               |
+| Journaling                 | **SA-061 / F-102** | was SA-059                   |
+| Two-state model            | **SA-060 / F-104** | was SA-057/F-100, then F-103 |
 
-> **F-numbers and SA-numbers race under parallel sessions.** Re-check `docs/feature-prds/FEATURE-PRD-REGISTRY.yaml` and `production-decisions.yaml` before writing, and renumber if another session took them.
+**Two commits cite the superseded number.** `7f6d64bc` and `de54e26f` say
+"SA-059 (F-102)" in their messages; the work is SA-061. Git history is not
+rewritten for this — `production-decisions.yaml` is canonical, and SA-061 is
+where the decision is recorded.
+
+**A SUBSTANTIVE conflict came with it, not just numbering.** SA-059 swapped what
+the two reading routes MEAN: `/daily-bread` is now THE PAPER (shared edition)
+and `/today` is now YOUR READING (active plan). The Phase 4 gate follows
+meaning, so the open/gated lists in spec §2.3 are the inverse of what they
+originally said. They have been corrected. **Anything built against the earlier
+wording is wrong.**
+
+The lesson, now twice: **an id is not yours until it is committed.** Re-check
+`production-decisions.yaml` and `ls docs/feature-prds/` immediately before
+writing — and re-read any route contract the plan depends on, because a
+parallel session can change what a path means, not just what number you get.
 
 ---
 

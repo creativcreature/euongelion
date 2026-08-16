@@ -2,8 +2,8 @@
 
 **Date:** 2026-08-16
 **Status:** Awaiting founder approval
-**Decisions proposed:** SA-060 (two-state site model), SA-058 (Audible-modeled transport), SA-059 (unified journaling)
-**Feature PRDs:** F-103, F-101, F-102
+**Decisions proposed:** SA-060 (two-state site model), SA-058 (Audible-modeled transport), SA-061 (unified journaling)
+**Feature PRDs:** F-104, F-101, F-102
 **Supersedes:** SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5
 **Prod DDL:** migration 018 (`listening_progress`) — founder-approved 2026-08-16, satisfying SA-039 §2's named-approval requirement
 
@@ -48,14 +48,27 @@ SA-026 is **not** reversed: Soul Audit submit, the 3-option review, and all cura
 Founder-selected, 2026-08-16:
 
 **Open, signed out**
-`/`, `/today`, `/series`, `/series/[slug]`, `/devotional/[slug]`, `/soul-audit`, `/soul-audit/results`, `/about`, `/pricing`, `/privacy`, `/terms`, and every static editorial route.
+`/`, `/daily-bread`, `/series`, `/series/[slug]`, `/devotional/[slug]`, `/soul-audit`, `/soul-audit/results`, `/about`, `/pricing`, `/privacy`, `/terms`, and every static editorial route.
 
 Fully live on those routes: audio playback (transport, chapters, speed, sleep timer), translation switching, reader theme and font size, video modules, and the interactive comprehension modules (Match / Order / Reveal / Comprehension). These save nothing personal and are what make the catalog function as the shop window that earns the account.
 
 **Gated**
-`/daily-bread` (activating and reading a personal plan), `/library`, `/saved`, `/settings`, and every save action anywhere in the product.
+`/today` (activating and reading a personal plan), `/library`, `/saved`,
+`/settings`, and every save action anywhere in the product.
 
-**Navigation consequence.** SA-045 made `DAILY BREAD` the single primary nav entry pointing at `/daily-bread`. Gating that route would send every signed-out visitor from the main nav item straight into a wall. So the primary slot is **auth-aware**: signed out it reads `TODAY` and points at `/today` (the open editorial rotation); signed in it reads `DAILY BREAD` and points at `/daily-bread`. One slot, two states — consistent with SA-045's "one name, one destination" intent rather than in conflict with it, since each state still has exactly one.
+> **AMENDED 2026-08-16 — the two routes traded meanings.** A parallel session
+> shipped SA-059 (F-103) while this spec was being executed: `/daily-bread` now
+> serves THE PAPER (the shared edition, masthead "The Daily Bread") and `/today`
+> now serves YOUR READING (your active plan). The gate follows MEANING, not the
+> string — the shared edition stays open, the personal plan is gated — so both
+> lists above are the inverse of what this spec originally said. Anything built
+> against the earlier wording is wrong.
+
+**Navigation consequence.** The primary nav slot is **auth-aware**: signed out
+it points at the shared edition, signed in it points at the reader's own plan.
+After SA-059 that means `/daily-bread` signed out and `/today` signed in — the
+opposite of what this section said before the routes traded names. One slot,
+two states, each with exactly one destination.
 
 ### 2.4 "Non-interactive" is scoped to "non-saving"
 
@@ -182,7 +195,7 @@ It needs cache-quota management, eviction UI, and a per-series download model �
 
 ---
 
-## 4. SA-059 — Notes, journal, reflections
+## 4. SA-061 — Notes, journal, reflections
 
 ### 4.1 The prerequisite bug — silent data loss
 

@@ -235,7 +235,7 @@ npm run preview
 ```bash
 git add src/lib/soul-audit/repository.ts src/app/api/annotations/route.ts \
   __tests__/annotation-patch-partial-update.test.ts CHANGELOG.md docs/feature-prds/F-102.md
-git commit -m "fix(annotations): a style-only PATCH stopped eating the anchor text — SA-059 (F-102)"
+git commit -m "fix(annotations): a style-only PATCH stopped eating the anchor text — SA-061 (F-102)"
 ```
 
 ---
@@ -1312,7 +1312,7 @@ git add src/components/reader/ReaderContext.tsx src/components/reader/JournalFie
   src/components/daily-bread/DailyBreadView.tsx \
   src/components/daily-bread/CuratedActiveView.tsx \
   __tests__/journal-field.test.tsx CHANGELOG.md docs/feature-prds/F-102.md
-git commit -m "feat(reader): one field for every kind of writing, locked not hidden — SA-059 (F-102)"
+git commit -m "feat(reader): one field for every kind of writing, locked not hidden — SA-061 (F-102)"
 ```
 
 ---
@@ -1404,7 +1404,7 @@ npm run dev
 git add src/components/modules/ReflectionModule.tsx src/components/modules/RecapModule.tsx \
   src/components/modules/PrayerModule.tsx src/components/ModuleRenderer.tsx \
   __tests__/reflection-journaling.test.tsx CHANGELOG.md docs/feature-prds/F-102.md
-git commit -m "feat(reader): 2,062 prompts that finally have somewhere to answer — SA-059 (F-102)"
+git commit -m "feat(reader): 2,062 prompts that finally have somewhere to answer — SA-061 (F-102)"
 ```
 
 ---
@@ -1521,7 +1521,7 @@ git add src/components/TextHighlightTrigger.tsx src/components/NarrationPlayer.t
   src/app/devotional/\[slug\]/DevotionalPageClient.tsx \
   __tests__/audio-clip-capture.test.tsx __tests__/highlight-editing.test.tsx \
   CHANGELOG.md docs/feature-prds/F-102.md
-git commit -m "feat(reader): a note is a highlight with words on it, and listening can mark too — SA-059 (F-102)"
+git commit -m "feat(reader): a note is a highlight with words on it, and listening can mark too — SA-061 (F-102)"
 ```
 
 ---
@@ -1599,7 +1599,7 @@ Expected: PASS.
 ```bash
 git add src/app/api/chat/route.ts src/components/reader/JournalField.tsx \
   __tests__/journal-never-leaves-account.test.ts CHANGELOG.md docs/feature-prds/F-102.md
-git commit -m "feat(privacy): what the reader writes never reaches the model — SA-059 (F-102)"
+git commit -m "feat(privacy): what the reader writes never reaches the model — SA-061 (F-102)"
 ```
 
 ---
@@ -1706,8 +1706,8 @@ Expected: PASS. Several highlight/bookmark tests will need updating — they pin
 ```bash
 git add src/components/TextHighlightTrigger.tsx src/app/api/bookmarks/route.ts \
   src/app/daily-bread/page.tsx __tests__/two-state-model.test.tsx \
-  __tests__/save-state-auth-gate.test.ts CHANGELOG.md docs/feature-prds/F-103.md
-git commit -m "feat(auth): two states — signed out reads, signed in keeps — SA-060 (F-103)"
+  __tests__/save-state-auth-gate.test.ts CHANGELOG.md docs/feature-prds/F-104.md
+git commit -m "feat(auth): two states — signed out reads, signed in keeps — SA-060 (F-104)"
 ```
 
 ---
@@ -1757,11 +1757,11 @@ Show the curl output, the received email, and the rate-limit result. Do not flip
 
 - [ ] **Step 1: Record the three decisions**
 
-Add `SA-060`, `SA-058`, `SA-059` to `docs/production-decisions.yaml`. SA-060's note must state explicitly that it **reverses** SA-018 (as amended 2026-06-09), SA-038 §2 and SA-039 §5, and that SA-026 (Soul Audit anonymous and free forever) is **not** reversed.
+Add `SA-060`, `SA-058`, `SA-061` to `docs/production-decisions.yaml`. SA-060's note must state explicitly that it **reverses** SA-018 (as amended 2026-06-09), SA-038 §2 and SA-039 §5, and that SA-026 (Soul Audit anonymous and free forever) is **not** reversed.
 
 - [ ] **Step 2: Write the feature PRDs**
 
-`docs/feature-prds/F-103.md` (two-state model), `F-101.md` (transport), `F-102.md` (journaling). Re-check the registry first — F-numbers race under parallel sessions.
+`docs/feature-prds/F-104.md` (two-state model), `F-101.md` (transport), `F-102.md` (journaling). Re-check the registry first — F-numbers race under parallel sessions.
 
 - [ ] **Step 3: Update the tracking spine**
 
@@ -1783,7 +1783,7 @@ Expected: all pass.
 
 ```bash
 git add docs/production-decisions.yaml docs/feature-prds/ docs/PRODUCTION-*.md CHANGELOG.md
-git commit -m "docs(tracking): SA-060/058/059 and the reversals they carry — SA-060 (F-103)"
+git commit -m "docs(tracking): SA-060/058/059 and the reversals they carry — SA-060 (F-104)"
 ```
 
 ---
