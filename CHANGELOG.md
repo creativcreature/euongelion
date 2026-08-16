@@ -5,6 +5,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## GOOGLE SIGN-IN WAS ALREADY BUILT, JUST SWITCHED OFF — SA-058 / F-101 (2026-08-16)
+
+Founder asked what the best sign-in setup would be. The instance answered:
+**Google OAuth was already enabled in Supabase, the `signInWithOAuth` code was
+already written in both `/auth/sign-in` and `/auth/sign-up`, and two of the five
+existing accounts had already signed in through it** — while the button was
+hidden behind `NEXT_PUBLIC_GOOGLE_AUTH_ENABLED`, which was set nowhere.
+
+Setting it renders the button and largely defuses what was logged as a release
+blocker: the ~2-emails-per-hour built-in mailer cap only bites readers who need
+an email, and Google users never touch it.
+
+**It is a BUILD-TIME variable, not a runtime one.** `NEXT_PUBLIC_*` values are
+inlined into the client bundle when `opennextjs-cloudflare build` runs, so
+setting it as a Worker secret would do nothing. It lives in `.env.local`, which
+is the environment that performs the build, and is documented in `.env.example`.
+
+Inventory taken at the same time, since "will this clean accounts up" deserved
+a real answer rather than a guess: **5 auth users, all email-confirmed, 3 of
+them the founder; `auth.users` and `public.users` in sync at 5 and 5; every tier
+`free`.** There is no account mess to clean up and no install base to migrate —
+which makes this the cheapest moment the account model will ever be to change.
+
+Also found, unrelated to sign-in: `public.users` has no `stripe_customer_id` or
+`stripe_subscription_id`, confirming the three billing migrations are still
+unapplied. That blocks paid tiers, not sign-in.
+
+## MIGRATION 018 IS APPLIED — SA-058 / F-101 (2026-08-16)
+
+`listening_progress` is live in production. Applied through the Supabase
+Management API with the Personal Access Token already in `.env.local`, since
+PostgREST exposes no DDL and the service-role key cannot run it.
+
+Verified after: all nine columns present, RLS enabled, three indexes (primary
+key, the `(user_id, devotional_slug)` unique constraint, and
+`idx_listening_progress_user`), and a REST read returning `200 []` — which is
+the path the app itself uses, and which returned 404 before.
+
+`scripts/apply-migration-018.mjs` is committed with a `--check` mode that
+reports without changing anything. Every statement is idempotent, so re-running
+is safe. Cross-device resume is now live rather than degrading to on-device.
+
 ## WHERE YOU STOPPED FOLLOWS YOU BETWEEN DEVICES — SA-058 / F-101 (2026-08-16)
 
 Start a reading on your phone, finish it on your laptop. Founder-approved
@@ -442,9 +484,9 @@ Founder: _"Daily Bread should be the Today page, and Today page should be the
 Daily Bread page. The Daily Edition, is now The Daily Bread."_ Registered as
 **SA-059** (F-103).
 
-**`/daily-bread` is now the paper**, masthead reading *The Daily Bread*.
+**`/daily-bread` is now the paper**, masthead reading _The Daily Bread_.
 **`/today` is now your reading** — your active plan and where you are in it.
-SA-033 is superseded in naming only: its substance holds (one page means *your*
+SA-033 is superseded in naming only: its substance holds (one page means _your_
 devotional, the other the shared edition), but the names traded places.
 
 **The swap is by meaning, not by string.** Every reference that means "take me
@@ -458,7 +500,7 @@ meta-refresh page). Nine test files moved with the contract.
 
 **Every page ends the same way now.** `SiteBottom` — footer columns, EUANGELION
 masthead, legal line — lifted out of the home page, where it had been inlined
-and was simply *absent* from About, Help, Support and the legal pages. They
+and was simply _absent_ from About, Help, Support and the legal pages. They
 ended mid-air. 34 files use it.
 
 **Smaller nav, solid home mark, one-line copyright, centred resume banner and

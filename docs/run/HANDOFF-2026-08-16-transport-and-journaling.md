@@ -156,21 +156,23 @@ before the write.
 
 ## 6. BLOCKED ON THE FOUNDER — two items
 
-### 6.1 Migration 018 must be applied in the Supabase dashboard
+### 6.1 Migration 018 — APPLIED 2026-08-16 ✅
 
-`database/migrations/018_create_listening_progress.sql` (written in plan Task 2). Additive and idempotent — safe to apply at any time, cannot break the running site.
+`listening_progress` is live in production. Applied via the Supabase Management
+API using the `SUPABASE_ACCESS_TOKEN` (a Personal Access Token) already present
+in `.env.local` — PostgREST exposes no DDL and the service-role key cannot run
+it, so the Management API is the only programmatic route.
 
-**Three billing migrations are still unapplied.** 018 must not silently join that queue. Verify with:
+Verified: nine columns, RLS on, three indexes, and a REST read returning
+`200 []` (the path the app uses; it 404'd before). Cross-device resume is live.
 
-```bash
-node -e "
-require('dotenv').config({path:'.env.local'});
-const u=process.env.NEXT_PUBLIC_SUPABASE_URL,k=process.env.SUPABASE_SERVICE_ROLE_KEY;
-fetch(u+'/rest/v1/listening_progress?select=id&limit=1',{headers:{apikey:k,Authorization:'Bearer '+k}})
- .then(r=>r.text()).then(t=>console.log(t));"
-```
+`scripts/apply-migration-018.mjs --check` reports state without changing
+anything, and every statement is idempotent, so re-running is safe.
 
-`[]` = applied. `42P01` = still pending; cross-device resume degrades to on-device (by design, and it logs `MIGRATION_018_PENDING` rather than failing silently).
+**Still pending: the three BILLING migrations.** `public.users` has no
+`stripe_customer_id` / `stripe_subscription_id`, which SA-028 names as the
+single source of truth for subscription state. Blocks paid tiers, not sign-in.
+Not applied here — different scope, and not founder-approved.
 
 ### 6.1b The workerd verification for `/api/listening-progress` has NOT run
 
@@ -185,6 +187,27 @@ handlers directly — unsafe slug 400s before any work, signed-out GET is 200 wi
 `progress: null`, signed-out PUT is 401, an implausible delta is clamped, and a
 pending migration 018 degrades to on-device while still logging. That is a
 contract test, not a runtime test. **Run the preview curl before any deploy.**
+
+### 6.1c Google sign-in is ON — this largely defuses 6.2
+
+Asked on 2026-08-16 what the best sign-in setup would be, the instance answered
+itself: **Google OAuth was already enabled in Supabase, `signInWithOAuth` was
+already written into both auth pages, and 2 of the 5 existing accounts had
+already signed in through it.** The button was hidden behind
+`NEXT_PUBLIC_GOOGLE_AUTH_ENABLED`, set nowhere. It is now set.
+
+**Build-time, not runtime.** `NEXT_PUBLIC_*` is inlined into the client bundle
+by `opennextjs-cloudflare build`, so a Worker secret has no effect — it must be
+in `.env.local`, which is what builds. `.env.local` is gitignored, so a fresh
+clone needs it re-added; `.env.example` documents this.
+
+Account inventory taken at the same time: **5 auth users, all confirmed, 3 of
+them the founder; `auth.users` and `public.users` in sync at 5/5; all tiers
+`free`.** No mess to clean up, no install base to migrate — the account model is
+as cheap to change now as it will ever be.
+
+Future requirement, not now: **Apple Sign In becomes mandatory** on the App
+Store once a third-party provider is offered and an iOS build ships.
 
 ### 6.2 The auth gate CANNOT ship until a live sign-in is verified — RELEASE BLOCKER
 
