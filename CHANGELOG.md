@@ -436,6 +436,40 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Daily Bread and Today swap places (2026-08-16)
+
+Founder: _"Daily Bread should be the Today page, and Today page should be the
+Daily Bread page. The Daily Edition, is now The Daily Bread."_ Registered as
+**SA-059** (F-103).
+
+**`/daily-bread` is now the paper**, masthead reading *The Daily Bread*.
+**`/today` is now your reading** — your active plan and where you are in it.
+SA-033 is superseded in naming only: its substance holds (one page means *your*
+devotional, the other the shared edition), but the names traded places.
+
+**The swap is by meaning, not by string.** Every reference that means "take me
+to my plan reader" moved to `/today`: the middleware auth matcher, the
+`/my-devotional` redirect, the soul-audit current/manage/select/status payloads,
+onboarding destinations, global-search plan hrefs, the library rail, the mobile
+tab, and the router pushes in LibraryView, SeriesActions and DevotionalActions.
+Anything meaning "the paper" stayed put, and `/todays-edition` follows the paper
+(now with `force-dynamic`, so it answers a real 308 instead of a 36KB
+meta-refresh page). Nine test files moved with the contract.
+
+**Every page ends the same way now.** `SiteBottom` — footer columns, EUANGELION
+masthead, legal line — lifted out of the home page, where it had been inlined
+and was simply *absent* from About, Help, Support and the legal pages. They
+ended mid-air. 34 files use it.
+
+**Smaller nav, solid home mark, one-line copyright, centred resume banner and
+Soul Audit input.**
+
+Two traps: at ~14px an outlined home mark goes muddy where a filled silhouette
+reads. And the copyright kept wrapping at exactly 489px because
+`.homepage-bottom-legal p` (0-1-1) out-specifies a bare class (0-1-0) — the 92ch
+paragraph measure survived every attempt to remove it until the override became
+`.homepage-bottom-legal p.homepage-bottom-legal-line`. — SA-059 (F-103)
+
 ## Carved bookends, and a rose that grows (2026-08-16)
 
 Registered as **SA-057** (F-100).

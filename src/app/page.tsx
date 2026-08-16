@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import FirstRunIntro from '@/components/FirstRunIntro'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import ChurchYearOverline from '@/components/devotional/ChurchYearOverline'
 import SeriesRailSection from '@/components/SeriesRailSection'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
@@ -844,48 +844,7 @@ export default function Home() {
           </Link>
         </section>
 
-        <SiteFooter />
-        <section className="mock-bottom-brand">
-          <h2 className="text-masthead mock-masthead-word">
-            <span className="js-shell-masthead-fit mock-masthead-text">
-              EUANGELION
-            </span>
-          </h2>
-        </section>
-
-        {/* Founder direction 2026-05-13: legal block lives BELOW the
-            masthead, not inside the SiteFooter. Copyright + legal
-            link row. */}
-        <section
-          className="homepage-bottom-legal"
-          aria-label="Copyright and legal"
-        >
-          <p className="vw-small text-muted">
-            EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod
-            LLC. All rights reserved.
-          </p>
-          <p className="vw-small text-muted homepage-bottom-legal-links">
-            <Link href="/terms" className="link-highlight">
-              Terms
-            </Link>
-            <span aria-hidden="true"> · </span>
-            <Link href="/privacy" className="link-highlight">
-              Privacy
-            </Link>
-            <span aria-hidden="true"> · </span>
-            <Link href="/cookie-policy" className="link-highlight">
-              Cookie Policy
-            </Link>
-            <span aria-hidden="true"> · </span>
-            <Link href="/community-guidelines" className="link-highlight">
-              Community Guidelines
-            </Link>
-            <span aria-hidden="true"> · </span>
-            <Link href="/content-disclaimer" className="link-highlight">
-              Content Disclaimer
-            </Link>
-          </p>
-        </section>
+        <SiteBottom />
       </main>
     </div>
   )

@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { retentionClarityRows } from '@/lib/privacy/retention'
 
 export const metadata = {
@@ -111,7 +111,7 @@ export default async function PrivacyPage() {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

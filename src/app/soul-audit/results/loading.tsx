@@ -1,6 +1,6 @@
 import Skeleton from '@/components/ui/Skeleton'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 /**
  * Layout-accurate skeleton for the Soul Audit results page.
@@ -74,7 +74,7 @@ export default function SoulAuditResultsLoading() {
             </div>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

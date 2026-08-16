@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export const revalidate = 3600
 
@@ -89,7 +89,7 @@ export default async function DeepDivePage({ params }: Props) {
               </Link>
             </header>
           </div>
-          <SiteFooter />
+          <SiteBottom />
         </main>
       </div>
     )
@@ -209,7 +209,7 @@ export default async function DeepDivePage({ params }: Props) {
             </Link>
           </aside>
         </article>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

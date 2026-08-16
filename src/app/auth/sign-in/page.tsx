@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { createClient as createSupabaseClient } from '@/lib/supabase/client'
 import {
   mountTurnstile,
@@ -438,7 +438,7 @@ export default function SignInPage() {
             <SignInForm />
           </Suspense>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

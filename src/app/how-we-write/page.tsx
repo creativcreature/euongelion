@@ -11,7 +11,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { SERIES_COUNT } from '@/data/series'
 
 export const metadata: Metadata = {
@@ -481,7 +481,7 @@ export default function HowWeWritePage() {
           </div>
         </section>
 
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

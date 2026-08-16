@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 type InfoSection = {
   title: string
@@ -50,7 +50,7 @@ export default function StaticInfoPage({
             ))}
           </div>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

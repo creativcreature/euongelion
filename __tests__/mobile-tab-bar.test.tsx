@@ -36,7 +36,7 @@ describe('MobileTabBar', () => {
     expect(links).toHaveLength(5)
     expect(links.map((l) => l.textContent)).toEqual(TAB_LABELS)
     expect(links.map((l) => l.getAttribute('href'))).toEqual([
-      '/daily-bread',
+      '/today',
       '/series',
       '/soul-audit',
       '/library',
@@ -48,7 +48,7 @@ describe('MobileTabBar', () => {
 
   it.each([
     ['/today', 'TODAY'],
-    ['/daily-bread', 'TODAY'],
+    ['/today', 'TODAY'],
     ['/series/bible-365', 'SERIES'],
     ['/devotional/identity-day-1', 'SERIES'],
     ['/soul-audit/results', 'SOUL AUDIT'],

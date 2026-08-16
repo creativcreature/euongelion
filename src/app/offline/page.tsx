@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export const metadata = {
   title: 'Offline',
@@ -39,7 +39,7 @@ export default function OfflinePage() {
             </Link>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

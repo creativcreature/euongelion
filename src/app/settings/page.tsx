@@ -10,7 +10,7 @@ import {
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import PresenceWeekRow from '@/components/PresenceWeekRow'
 import ReminderScheduler from '@/components/settings/ReminderScheduler'
 import { useUIStore } from '@/stores/uiStore'
@@ -769,7 +769,7 @@ export default function SettingsPage() {
           <div className="shell-content-pad mx-auto w-full max-w-6xl">
             <h1 className="text-display vw-heading-lg mb-12">Settings</h1>
           </div>
-          <SiteFooter />
+          <SiteBottom />
         </main>
       </div>
     )
@@ -793,7 +793,7 @@ export default function SettingsPage() {
               }}
             />
           </div>
-          <SiteFooter />
+          <SiteBottom />
         </main>
       </div>
     )
@@ -1880,7 +1880,7 @@ export default function SettingsPage() {
             </p>
           </div>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

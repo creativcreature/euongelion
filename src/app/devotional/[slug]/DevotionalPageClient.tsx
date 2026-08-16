@@ -26,7 +26,7 @@ import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { typographer } from '@/lib/typographer'
 import { startSeries } from '@/lib/progress'
 import { isDayUnlocked } from '@/lib/day-gating'
@@ -391,7 +391,7 @@ export default function DevotionalPageClient({
               <Skeleton className="h-4 w-2/3" />
             </div>
           </section>
-          <SiteFooter />
+          <SiteBottom />
           <section className="mock-bottom-brand">
             <h2 className="text-masthead mock-masthead-word">
               <span className="js-shell-masthead-fit mock-masthead-text">
@@ -437,7 +437,7 @@ export default function DevotionalPageClient({
               </Link>
             </section>
           </section>
-          <SiteFooter />
+          <SiteBottom />
           <section className="mock-bottom-brand">
             <h2 className="text-masthead mock-masthead-word">
               <span className="js-shell-masthead-fit mock-masthead-text">
@@ -597,7 +597,7 @@ export default function DevotionalPageClient({
                       default view — these target the live tablist. */}
                   <div className="grid gap-2">
                     <Link
-                      href="/daily-bread"
+                      href="/today"
                       className="block border px-3 py-2 text-secondary affordance"
                       style={{ borderColor: 'var(--color-border)' }}
                     >
@@ -999,7 +999,7 @@ export default function DevotionalPageClient({
             </nav>
           )}
         </section>
-        <SiteFooter />
+        <SiteBottom />
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">

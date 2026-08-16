@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { useProgress } from '@/hooks/useProgress'
 import type { SeriesInfo } from '@/data/series'
 import { typographer } from '@/lib/typographer'
@@ -408,7 +408,7 @@ export default function BiblePlanPageClient({
           </section>
         )}
       </main>
-      <SiteFooter />
+      <SiteBottom />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 const ADMIN_NAV = [
   { href: '/admin', label: 'Dashboard' },
@@ -68,7 +68,7 @@ export default function AdminShell({
 
           <section className="mb-16">{children}</section>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

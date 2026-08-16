@@ -138,7 +138,7 @@ export default function DevotionalActions({
             setToast(`Queued — ${newSeriesTitle} begins Monday.`)
           } else {
             setToast(`Switched to ${newSeriesTitle}.`)
-            router.push('/daily-bread')
+            router.push('/today')
           }
           return
         }
@@ -159,7 +159,7 @@ export default function DevotionalActions({
   const handleStartClick = useCallback(async () => {
     if (!seriesSlug) return
     if (isActiveSameSeries) {
-      router.push('/daily-bread')
+      router.push('/today')
       return
     }
     // First attempt without confirm — server tells us if we need to ask.

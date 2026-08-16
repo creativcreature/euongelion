@@ -60,5 +60,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/daily-bread', '/library/:path*', '/onboarding', '/admin/:path*'],
+  matcher: ['/today', '/library/:path*', '/onboarding', '/admin/:path*'],
 }

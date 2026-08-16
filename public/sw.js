@@ -1,6 +1,6 @@
 // Euangelion Service Worker
-// R67 (F-100/SA-057): v88 — carved bookend plates, thinner spines with
-// bigger type, bold list column, and a rose window that scales.
+// R68 (F-103/SA-059): v89 — Daily Bread and Today swap, the paper is
+// renamed The Daily Bread, and every page gets the same bottom.
 // R64 (F-094/F-097/SA-054): bumped to v83 — Feature is a front page, Spines
 // are shelves, and /today is the Daily Edition with its own nav entry.
 // R63 (F-095/SA-053): bumped to v80 — red letter is comprehensive; every
@@ -84,7 +84,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v88'
+const CACHE_NAME = 'euangelion-v89'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

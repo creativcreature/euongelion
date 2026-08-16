@@ -29,13 +29,17 @@ const DESKTOP_NAV_ITEMS = [
   // so it sits first among the destinations. SA-033's ruling still holds:
   // "today" means YOUR devotional via the Daily Bread resolver, not the
   // /today editorial rotation, which stays reachable in the footer.
-  { href: '/daily-bread', label: 'DAILY BREAD' },
+  // SA-059: the two swapped. DAILY BREAD is the shared daily edition (the
+  // paper); TODAY is YOUR plan reading. Founder 2026-08-16: "Daily Bread
+  // should be the Today page, and Today page should be the Daily Bread page.
+  // The Daily Edition, is now The Daily Bread."
+  { href: '/today', label: 'TODAY' },
   // Founder 2026-08-16: /today is no longer a second label for the daily
   // reading — it is the Daily Edition, a distinct page carrying the reading
   // plus dispatches, community and the prayer list. SA-033's ruling that
   // "today" means YOUR devotional still holds for DAILY BREAD; this is the
   // edition, and it earns its own entry.
-  { href: '/today', label: 'TODAY' },
+  { href: '/daily-bread', label: 'DAILY BREAD' },
   { href: '/soul-audit', label: 'SOUL AUDIT' },
   { href: '/series', label: 'SERIES' },
   { href: '/library', label: 'LIBRARY' },
@@ -66,21 +70,17 @@ function HomeMark() {
       aria-hidden="true"
       focusable="false"
     >
-      <g
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Flat roof, oversailing the walls — the parapet a Levantine house
-            is required to have (Deut. 22:8). */}
-        <path d="M2.5 7.5h19" />
-        {/* Walls */}
-        <path d="M5 7.5V21h14V7.5" />
-        {/* Arched door, centred */}
-        <path d="M9.5 21v-5.5a2.5 2.5 0 015 0V21" />
-      </g>
+      {/* Solid, not line (founder 2026-08-16). Filled silhouette of a
+          first-century Levantine house — flat roof oversailing the walls as
+          the parapet Deut. 22:8 requires, and a tall arched door cut out of
+          the mass. The door is a hole in the fill rather than a stroke, so the
+          whole mark reads at 14px the way a glyph does. */}
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M2 6.6h20v2.1h-1.4V21H3.4V8.7H2V6.6Zm7.6 12.3h4.8v-4.6a2.4 2.4 0 0 0-4.8 0v4.6Z"
+      />
     </svg>
   )
 }
@@ -470,10 +470,10 @@ export default function EuangelionShellHeader({
   const userInitial = (userEmail || 'U').trim().charAt(0).toUpperCase() || 'U'
 
   const isNavItemActive = (href: string) => {
-    if (href === '/daily-bread') {
-      return (
-        pathname === '/daily-bread' || pathname?.startsWith('/my-devotional')
-      )
+    // /my-devotional is a legacy alias for YOUR reading, which is /today
+    // since SA-059 — so it lights TODAY, not DAILY BREAD.
+    if (href === '/today') {
+      return pathname === '/today' || pathname?.startsWith('/my-devotional')
     }
     return pathname === href || (href !== '/' && pathname?.startsWith(href))
   }

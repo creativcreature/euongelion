@@ -14,7 +14,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import ShareButton from '@/components/ShareButton'
 import {
   pickSundayEntry,
@@ -465,7 +465,7 @@ export default async function SundayPage() {
         </footer>
       </main>
 
-      <SiteFooter />
+      <SiteBottom />
     </div>
   )
 }

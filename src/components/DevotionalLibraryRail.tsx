@@ -181,7 +181,7 @@ function resolveDevotionalHref(devotionalSlug: string): string {
     // plan reader is retired, and /soul-audit/results does not resolve a
     // ?planToken deep link on its own). Same silo-correct routing the old
     // /saved page shipped for plan-day bookmarks.
-    return '/daily-bread'
+    return '/today'
   }
   return `/devotional/${devotionalSlug}`
 }

@@ -33,7 +33,7 @@ describe('GET /api/soul-audit/archive', () => {
     planDaysByToken = new Map()
   })
 
-  it('returns /daily-bread routes (dedicated plan reader is retired)', async () => {
+  it('returns /today routes (dedicated plan reader is retired)', async () => {
     planInstances = [
       {
         plan_token: 'plan-abc',
@@ -62,8 +62,8 @@ describe('GET /api/soul-audit/archive', () => {
     // The dedicated /soul-audit/plan/[token] reader is retired — all plan
     // entry points (including archive listings) route to the canonical
     // /daily-bread reader, matching /api/soul-audit/current and /select.
-    expect(payload.archive[0]?.route).toBe('/daily-bread')
-    expect(payload.archive[0]?.days[0]?.route).toBe('/daily-bread')
-    expect(payload.archive[0]?.days[1]?.route).toBe('/daily-bread')
+    expect(payload.archive[0]?.route).toBe('/today')
+    expect(payload.archive[0]?.days[0]?.route).toBe('/today')
+    expect(payload.archive[0]?.days[1]?.route).toBe('/today')
   })
 })

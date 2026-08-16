@@ -587,7 +587,7 @@ export async function POST(request: NextRequest) {
               jobId: existingJob.id,
               status: 'complete' as const,
               planId: existingJob.plan_id,
-              route: '/daily-bread',
+              route: '/today',
             },
             { status: 200 },
           ),

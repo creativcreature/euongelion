@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export const metadata = {
   title: 'Translations | Euangelion',
@@ -197,7 +197,7 @@ export default function TranslationsPage() {
             </p>
           </section>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

@@ -224,7 +224,7 @@ export async function GET(request: NextRequest) {
         currentDay: record.current_day ?? 0,
         totalDays: 7,
         planId: record.plan_id,
-        route: dayOneReady ? '/daily-bread' : null,
+        route: dayOneReady ? '/today' : null,
         error: null,
       },
       { status: 200, headers: cors },
@@ -238,7 +238,7 @@ export async function GET(request: NextRequest) {
     (record.current_day ?? 0) >= 1 &&
     !!record.plan_id
   const route =
-    record.status === 'complete' || dayOneReady ? '/daily-bread' : null
+    record.status === 'complete' || dayOneReady ? '/today' : null
 
   return NextResponse.json(
     {

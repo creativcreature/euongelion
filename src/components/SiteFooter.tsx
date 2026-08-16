@@ -14,11 +14,12 @@ import Link from 'next/link'
 // is tightened to 5 items. Daily Bread + Library remain here as the
 // returning-user surfaces dropped from the top nav.
 const PRODUCT_LINKS = [
-  { href: '/today', label: "Today's Edition" },
+  // SA-059: the paper is The Daily Bread now; TODAY is your own reading.
+  { href: '/daily-bread', label: 'The Daily Bread' },
+  { href: '/today', label: 'Today' },
   { href: '/sunday', label: 'Sunday Edition' },
   { href: '/soul-audit', label: 'Soul Audit' },
   { href: '/series', label: 'Series' },
-  { href: '/daily-bread', label: 'Daily Bread' },
   { href: '/library', label: 'Library' },
 ]
 

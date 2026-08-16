@@ -1,5 +1,5 @@
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import LibraryRailDeepLink from '@/components/LibraryRailDeepLink'
 import type { Metadata } from 'next'
 
@@ -31,8 +31,8 @@ export default function LibraryPage() {
               <h1 className="vw-heading-md">Everything you keep, one place.</h1>
               <p className="vw-body text-secondary mt-2">
                 The active devotional lives on{' '}
-                <a href="/daily-bread" className="link-highlight">
-                  Daily Bread
+                <a href="/today" className="link-highlight">
+                  Today
                 </a>
                 . Series, bookmarks, highlights, notes, clippings, and your
                 archive all live here.
@@ -47,7 +47,7 @@ export default function LibraryPage() {
             <LibraryRailDeepLink />
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">
             <span className="js-shell-masthead-fit mock-masthead-text">

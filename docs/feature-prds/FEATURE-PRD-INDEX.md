@@ -103,5 +103,6 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-098 | Platform          | Subject desks, bookends, and a real Daily Edition   | 0/10     | wip    | [F-098.md](./F-098.md) |
 | F-099 | Platform          | A weight-based front page, and the rose window      | 0/10     | wip    | [F-099.md](./F-099.md) |
 | F-100 | Platform          | Carved bookends, thinner spines, a rose that grows  | 0/10     | wip    | [F-100.md](./F-100.md) |
+| F-103 | Platform          | Daily Bread / Today swap, and a shared site bottom  | 0/10     | wip    | [F-103.md](./F-103.md) |
 | F-101 | Reading           | The Audio Edition transport, on the Audible model   | 0/10     | wip    | [F-101.md](./F-101.md) |
 | F-102 | Reading           | Notes, journal entries, and reflection answers      | 0/10     | wip    | [F-102.md](./F-102.md) |

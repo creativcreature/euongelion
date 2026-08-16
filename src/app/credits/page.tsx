@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { BIBLE_TRANSLATION_CODES, BIBLE_TRANSLATIONS } from '@/lib/bible'
 
 export const metadata = {
@@ -138,7 +138,7 @@ export default function CreditsPage() {
             </p>
           </div>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

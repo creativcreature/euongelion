@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 type UsagePayload = {
@@ -240,7 +240,7 @@ export default function UsagePage() {
             </div>
           )}
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

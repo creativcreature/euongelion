@@ -23,5 +23,5 @@ export default async function LegacyMyDevotionalPage({
   }
 
   const queryString = query.toString()
-  permanentRedirect(`/daily-bread${queryString ? `?${queryString}` : ''}`)
+  permanentRedirect(`/today${queryString ? `?${queryString}` : ''}`)
 }

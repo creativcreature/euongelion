@@ -516,10 +516,10 @@ function parsePlanSlug(
 
 /**
  * Same routing contract as the library rail (SA-023): generated-plan day
- * slugs read at /daily-bread; catalog slugs read at /devotional/[slug].
+ * slugs read at /today (SA-059); catalog slugs read at /devotional/[slug].
  */
 export function resolveDevotionalHref(devotionalSlug: string): string {
-  if (parsePlanSlug(devotionalSlug)) return '/daily-bread'
+  if (parsePlanSlug(devotionalSlug)) return '/today'
   return `/devotional/${devotionalSlug}`
 }
 
@@ -564,7 +564,7 @@ export function buildNoteItems(input: {
         (clipping.sourceSlug
           ? `/devotional/${clipping.sourceSlug}`
           : clipping.planToken
-            ? '/daily-bread'
+            ? '/today'
             : '/clippings'),
     })
   }

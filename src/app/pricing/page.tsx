@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { BILLING_PLANS } from '@/lib/billing/catalog'
 import {
   FOUNDING_MEMBER_CAP,
@@ -347,7 +347,7 @@ export default async function PricingPage() {
             </p>
           </section>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

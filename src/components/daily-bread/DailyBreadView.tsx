@@ -1073,7 +1073,7 @@ export default function DailyBreadView({
     try {
       const res = await fetch('/api/soul-audit/manage', { method: 'POST' })
       if (res.ok) {
-        window.location.assign('/daily-bread')
+        window.location.assign('/today')
         return
       }
     } catch {

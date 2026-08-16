@@ -8,7 +8,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { getSundayArchive } from '@/lib/sunday-edition'
 
 export const metadata: Metadata = {
@@ -106,7 +106,7 @@ export default function SundayArchivePage() {
         </section>
       </main>
 
-      <SiteFooter />
+      <SiteBottom />
     </div>
   )
 }

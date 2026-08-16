@@ -93,7 +93,7 @@ export default function SeriesActions({
             setToast(`Queued — ${seriesTitle} begins Monday.`)
           } else {
             setToast(`Started ${seriesTitle}.`)
-            router.push('/daily-bread')
+            router.push('/today')
           }
           return
         }
@@ -115,7 +115,7 @@ export default function SeriesActions({
 
   const handleStartClick = useCallback(async () => {
     if (isActiveSameSeries) {
-      router.push('/daily-bread')
+      router.push('/today')
       return
     }
     await performStart('replace_now', false)

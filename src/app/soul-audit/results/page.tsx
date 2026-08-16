@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SoulAuditResultsLoading from './loading'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import FadeIn from '@/components/motion/FadeIn'
 import CrisisGate from '@/components/soul-audit/CrisisGate'
 import GenerationProgress from '@/components/soul-audit/GenerationProgress'
@@ -739,7 +739,7 @@ export default function SoulAuditResultsPage() {
               </p>
             </div>
           </section>
-          <SiteFooter />
+          <SiteBottom />
         </main>
       </div>
     )
@@ -780,7 +780,7 @@ export default function SoulAuditResultsPage() {
               </div>
             </div>
           </section>
-          <SiteFooter />
+          <SiteBottom />
         </main>
         {paywallOverlay}
       </div>
@@ -1233,7 +1233,7 @@ export default function SoulAuditResultsPage() {
             </div>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
       {paywallOverlay}
     </div>

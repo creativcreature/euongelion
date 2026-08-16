@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export default function SoulAuditError({
   error,
@@ -49,7 +49,7 @@ export default function SoulAuditError({
             </div>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

@@ -14,7 +14,7 @@ import { useSearchParams } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ShareButton from '@/components/ShareButton'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import ResumeSeriesPill from '@/components/ResumeSeriesPill'
 import SeriesActions from '@/components/devotional/SeriesActions'
 import { typographer } from '@/lib/typographer'
@@ -497,7 +497,7 @@ export default function SeriesPageClient({
           </div>
         )}
 
-        <SiteFooter />
+        <SiteBottom />
 
         <section className="mock-bottom-brand">
           <h2 className="text-masthead mock-masthead-word">

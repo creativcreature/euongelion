@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { createClient as createSupabaseClient } from '@/lib/supabase/client'
 
 type OAuthProvider = 'google'
@@ -228,7 +228,7 @@ export default function SignUpPage() {
             <SignUpForm />
           </Suspense>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

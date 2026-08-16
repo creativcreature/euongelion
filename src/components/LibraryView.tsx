@@ -108,7 +108,7 @@ export default function LibraryView() {
             setToast(
               `Switched to ${SERIES_DATA[seriesSlug]?.title ?? seriesSlug}.`,
             )
-            router.push('/daily-bread')
+            router.push('/today')
           }
           await refresh()
           return
@@ -149,7 +149,7 @@ export default function LibraryView() {
         const result = await restartFromArchive(seriesSlug, from)
         if (result.ok) {
           setToast(`Restarted ${SERIES_DATA[seriesSlug]?.title ?? seriesSlug}.`)
-          router.push('/daily-bread')
+          router.push('/today')
         }
       } finally {
         setBusy(false)

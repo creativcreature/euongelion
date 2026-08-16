@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import FadeIn from '@/components/motion/FadeIn'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
@@ -220,7 +220,7 @@ export default function SoulAuditPage() {
             </FadeIn>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

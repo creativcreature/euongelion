@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 type HelpFaq = {
   category: 'Getting Started' | 'Soul Audit' | 'Daily Bread' | 'Account'
@@ -162,7 +162,7 @@ export default function HelpHubPageClient() {
             </div>
           </section>
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

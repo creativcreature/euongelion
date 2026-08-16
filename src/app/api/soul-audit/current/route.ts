@@ -13,7 +13,7 @@ function normalizeCurrentRoute(value: string | undefined): string | null {
 
   // The canonical reader for an active plan/series (serves the current unlocked
   // day, incl. the onboarding day-0). Active-reading resume routes here.
-  if (value === '/daily-bread') return value
+  if (value === '/today') return value
   if (/^\/soul-audit\/plan\/[a-f0-9-]+(\?day=\d+)?$/i.test(value)) {
     return value
   }
@@ -109,7 +109,7 @@ export async function GET() {
       )
     }
     current = {
-      route: '/daily-bread',
+      route: '/today',
       selectionType: 'active_series',
       seriesSlug: active.series_slug,
       seriesTitle: series.title,
@@ -121,7 +121,7 @@ export async function GET() {
   ) {
     const plan = reading.plan
     current = {
-      route: '/daily-bread',
+      route: '/today',
       selectionType: 'ai_primary',
       planToken: plan.plan_token,
       seriesSlug: plan.series_slug,

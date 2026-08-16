@@ -337,8 +337,13 @@ h3 {
 /* ============================================
    Homepage redesign 2026-05-08 — Bible-365 daily hero + trust + Soul Audit
    ============================================ */
+/* Founder 2026-08-16: "the your plan continue devotional on home page should
+   be centered." Centred as a block AND as text, so the kicker, the line and
+   the button all sit on one axis. */
 .homepage-resume-banner {
   display: grid;
+  justify-items: center;
+  text-align: center;
   gap: 0.4rem;
   padding: 0.8rem 1rem;
   background: color-mix(
@@ -4992,6 +4997,10 @@ html.reduce-motion *::after {
   justify-content: center;
   min-height: 1.65rem;
   padding: 0.1rem 0.2rem;
+  /* Founder 2026-08-16: "make the menu items smaller on desktop." Desktop
+     only — the mobile bar keeps its touch-sized labels. */
+  font-size: 0.78em;
+  letter-spacing: 0.1em;
   text-decoration: none;
   color: inherit;
   pointer-events: auto;
@@ -5255,8 +5264,14 @@ html.reduce-motion *::after {
   line-height: 1.2;
 }
 
+/* Founder 2026-08-16: "The soul audit input box needs to be centered as
+   well." A measure-limited field centred in its column reads as an invitation;
+   full-bleed it reads as a form. */
 .mock-textarea {
   width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+  display: block;
   resize: none;
   border: max(1.5px, calc(var(--mock-stroke) * 1.35)) solid
     color-mix(in srgb, var(--mock-ink) 30%, var(--mock-line) 70%);
@@ -6059,10 +6074,30 @@ html.reduce-motion *::after {
   padding: 0.9rem 1rem 1.2rem;
   border-top: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
+/* Founder 2026-08-16: "The copyright needs to be smaller and all in one
+   line." One flowing line of small type — the copyright and every legal link
+   together — rather than two stacked paragraphs. It still wraps on a phone
+   rather than overflowing; "one line" means one run of text, not one that
+   scrolls off the screen. */
 .homepage-bottom-legal p {
   margin: 0;
-  max-width: 70ch;
+  max-width: 92ch;
   line-height: 1.5;
+}
+
+/* Selector must out-specify `.homepage-bottom-legal p` (0-1-1) — a bare class
+   is 0-1-0 and loses, which left the 92ch paragraph measure in force and wrapped
+   the line at exactly 489px. */
+.homepage-bottom-legal p.homepage-bottom-legal-line {
+  max-width: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0 0.1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted, var(--mock-muted));
 }
 .homepage-bottom-legal-links {
   display: flex;

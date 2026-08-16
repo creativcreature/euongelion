@@ -9,7 +9,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export const metadata: Metadata = {
   title: 'Imagery Samples (internal review)',
@@ -108,7 +108,7 @@ export default function ImagerySamplesPage() {
             ))}
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

@@ -1,7 +1,7 @@
 'use client'
 
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import FadeIn from '@/components/motion/FadeIn'
 import ActivePlanBadge from '@/components/ActivePlanBadge'
 import SeriesBrowser from '@/components/series/SeriesBrowser'
@@ -51,7 +51,7 @@ export default function SeriesBrowsePage() {
 
         <SeriesBrowser />
 
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

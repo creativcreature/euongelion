@@ -43,7 +43,7 @@ describe('GET /api/soul-audit/current', () => {
     reading = { status: 'empty' }
   })
 
-  it('maps an active_series to a /daily-bread badge with its real title and day', async () => {
+  it('maps an active_series to a /today badge with its real title and day', async () => {
     reading = {
       status: 'active',
       source: 'active_series',
@@ -62,7 +62,7 @@ describe('GET /api/soul-audit/current', () => {
 
     expect(payload).toMatchObject({
       hasCurrent: true,
-      route: '/daily-bread',
+      route: '/today',
       selectionType: 'active_series',
       seriesSlug: 'the-harvest',
       seriesTitle: 'The Harvest',
@@ -100,7 +100,7 @@ describe('GET /api/soul-audit/current', () => {
 
     expect(payload).toMatchObject({
       hasCurrent: true,
-      route: '/daily-bread',
+      route: '/today',
       selectionType: 'ai_primary',
       planToken: 'ai-plan-token',
       seriesTitle: 'When anxiety steals your rest.',

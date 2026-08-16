@@ -12,7 +12,7 @@ import { hapticTick } from '@/lib/haptics'
  * editorial masthead and never renders this (display: none ≥ 768px).
  * Anchors: Open (dark minimal tab bar), Calm, Headspace.
  *
- * TODAY doubles as the reading tab: /daily-bread is the canonical reader
+ * TODAY is the reading tab: /today is the canonical reader (SA-059)
  * for the active plan, so it lights the same tab a returning reader expects.
  */
 const TABS: Array<{
@@ -22,11 +22,12 @@ const TABS: Array<{
   icon: React.ReactNode
 }> = [
   {
-    href: '/daily-bread',
-    // Founder direction 2026-08-15: the tab is the Daily Bread reader, so it
-    // carries that name. "Today" was a second name for the same destination.
-    label: 'DAILY BREAD',
-    isActive: (p) => p === '/today' || p.startsWith('/daily-bread'),
+    href: '/today',
+    // SA-059 (founder 2026-08-16): the two pages swapped. This tab is YOUR
+    // reading, which now lives at /today — so it carries that name, and
+    // DAILY BREAD belongs to the paper.
+    label: 'TODAY',
+    isActive: (p) => p === '/today' || p.startsWith('/my-devotional'),
     icon: (
       // Morning sun over a horizon line — the daily reading.
       <svg

@@ -72,7 +72,7 @@ describe('onboarding destination — lands in content, never a menu', () => {
     expect(
       resolveOnboardingDestination({
         redirect: '/soul-audit/results?resume=1',
-        activePlanRoute: '/daily-bread',
+        activePlanRoute: '/today',
       }),
     ).toBe('/soul-audit/results?resume=1')
   })
@@ -86,13 +86,13 @@ describe('onboarding destination — lands in content, never a menu', () => {
     ).toBe('/daily-bread?planToken=abc&day=1')
   })
 
-  it('defaults to Daily Bread — the reading home — with nothing else', () => {
+  it('defaults to Today — the reading home — with nothing else', () => {
     expect(
       resolveOnboardingDestination({ redirect: null, activePlanRoute: null }),
-    ).toBe('/daily-bread')
+    ).toBe('/today')
     expect(
       resolveOnboardingDestination({ redirect: '/', activePlanRoute: '' }),
-    ).toBe('/daily-bread')
+    ).toBe('/today')
   })
 
   it("never returns '/' — skipping everything still lands in content", () => {
@@ -113,6 +113,6 @@ describe('onboarding destination — lands in content, never a menu', () => {
         redirect: 'https://evil.example.com',
         activePlanRoute: 'javascript:alert(1)',
       }),
-    ).toBe('/daily-bread')
+    ).toBe('/today')
   })
 })

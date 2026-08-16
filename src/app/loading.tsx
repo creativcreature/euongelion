@@ -1,6 +1,6 @@
 import Skeleton from '@/components/ui/Skeleton'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 /**
  * D-24 (F-074) — Root loading: a NEUTRAL app-frame shell.
@@ -26,7 +26,7 @@ export default function RootLoading() {
             <Skeleton className="mx-auto h-4 w-2/3 max-w-md" />
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

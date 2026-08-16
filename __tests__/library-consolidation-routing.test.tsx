@@ -148,7 +148,7 @@ describe('library BOOKMARKS tab routing (consolidated /saved)', () => {
     expect(link?.getAttribute('href')).toBe('/devotional/identity-day-1')
   })
 
-  it('routes Soul-Audit plan-day bookmarks to /daily-bread', async () => {
+  it('routes Soul-Audit plan-day bookmarks to /today', async () => {
     stubLibraryFetch([
       {
         id: 'b2',
@@ -165,7 +165,7 @@ describe('library BOOKMARKS tab routing (consolidated /saved)', () => {
     })
 
     const link = screen.getByText('Plan Day 3').closest('a')
-    expect(link?.getAttribute('href')).toBe('/daily-bread')
+    expect(link?.getAttribute('href')).toBe('/today')
   })
 
   it('falls back to a readable plan label when the bookmark has no note', async () => {

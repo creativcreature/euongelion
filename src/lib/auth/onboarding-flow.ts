@@ -82,5 +82,5 @@ export function resolveOnboardingDestination(params: {
   if (planRoute && planRoute.startsWith('/')) {
     return planRoute
   }
-  return '/daily-bread'
+  return '/today'
 }

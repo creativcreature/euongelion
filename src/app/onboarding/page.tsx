@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { sanitizeSafeRedirectPath } from '@/lib/api-security'
 import {
   readOnboardingStateFromMetadata,
@@ -62,7 +62,7 @@ export default async function OnboardingPage({
           </div>
         </section>
 
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

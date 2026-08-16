@@ -193,8 +193,8 @@ describe('global-search library', () => {
     ])
   })
 
-  it('routes plan-day slugs to /daily-bread and catalog slugs to the reader', () => {
-    expect(resolveDevotionalHref('plan-0a1b-2c3d-day-3')).toBe('/daily-bread')
+  it('routes plan-day slugs to /today and catalog slugs to the reader', () => {
+    expect(resolveDevotionalHref('plan-0a1b-2c3d-day-3')).toBe('/today')
     expect(resolveDevotionalHref('peace-day-1')).toBe('/devotional/peace-day-1')
   })
 

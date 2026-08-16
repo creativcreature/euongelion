@@ -14,7 +14,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 import { formatEditionCount, formatLongDate } from '@/lib/billing/paywall-state'
 import { usePendingGenerationStore } from '@/stores/pendingGenerationStore'
 import type { BillingEntitlementsResponse } from '@/types/billing'
@@ -433,7 +433,7 @@ export default function SubscriptionSettingsPage() {
             </div>
           )}
         </div>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

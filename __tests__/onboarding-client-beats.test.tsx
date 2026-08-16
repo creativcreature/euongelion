@@ -134,7 +134,7 @@ describe('OnboardingClient beats', () => {
     await user.click(screen.getByRole('button', { name: 'Skip for now' }))
 
     await waitFor(() => {
-      expect(replaceMock).toHaveBeenCalledWith('/daily-bread')
+      expect(replaceMock).toHaveBeenCalledWith('/today')
     })
     const save = calls.find((c) => c.url.includes('/api/auth/onboarding'))
     expect(save?.body).toMatchObject({ skipped: true })
@@ -145,7 +145,7 @@ describe('OnboardingClient beats', () => {
   })
 
   it('finishing lands on the explicit redirect (the held-generation resume)', async () => {
-    const { calls } = installFetchMock({ activePlanRoute: '/daily-bread' })
+    const { calls } = installFetchMock({ activePlanRoute: '/today' })
     const user = userEvent.setup()
     renderClient('/soul-audit/results?resume=1')
 

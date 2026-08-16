@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
-import SiteFooter from '@/components/SiteFooter'
+import SiteBottom from '@/components/SiteBottom'
 
 export default function NotFound() {
   return (
@@ -36,7 +36,7 @@ export default function NotFound() {
             </div>
           </div>
         </section>
-        <SiteFooter />
+        <SiteBottom />
       </main>
     </div>
   )

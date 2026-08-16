@@ -35,11 +35,11 @@ export async function GET() {
           planToken: plan.plan_token,
           seriesSlug: plan.series_slug,
           createdAt: plan.created_at,
-          route: '/daily-bread',
+          route: '/today',
           days: days.map((row) => ({
             day: row.day_number,
             title: row.content.title,
-            route: '/daily-bread',
+            route: '/today',
           })),
         }
       }),
