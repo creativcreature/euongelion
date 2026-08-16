@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## TWO SITE STATES — THE DATA HALF — SA-062 / F-105 (2026-08-16)
+
+Founder: "Need two site states… Having an account enables notes, saving
+features, highlights etc. No account, data should not be retained."
+
+The product had a third state nobody designed on purpose. Signed-out readers
+accumulated highlights in `localStorage` and bookmarks under an anonymous
+session token: their work looked kept, was invisible to their account if they
+ever made one, and vanished when the browser was cleared.
+
+**Reversed deliberately** — SA-018 (as amended), SA-038 §2 and SA-039 §5. Each
+was a founder ruling; this is a founder ruling replacing them, not drift.
+**SA-026 is untouched** — Soul Audit stays anonymous and free.
+
+**Non-interactive is scoped to non-SAVING**, per the amendment the founder
+accepted. The catalog stays fully readable and listenable signed out — audio,
+chapters, speed, translation, theme, the comprehension modules — because that is
+what earns the account.
+
+The device-kept path is **deleted, not unreferenced**: a dormant writer is a bug
+waiting to be re-wired, so the key and its read/write/mutate helpers are gone and
+a source-text test pins their absence. A signed-out highlight no longer paints an
+unsaveable mark either — the mark is removed and sign-in offered with the intent
+recorded, so it lands for real rather than evaporating on the next reload.
+
+**The nav is deliberately NOT filtered.** Hiding TODAY and LIBRARY when signed
+out would flash on every load (the header resolves auth client-side) and would
+contradict locked-not-hidden. The route gates carry the redirect instead, so
+clicking either lands on sign-in with the destination preserved. That also meant
+not editing `EuangelionShellHeader.tsx` at all, which the parallel design session
+had just rewritten — the better design and the safer one agreed.
+
+Gating follows MEANING, not the string: SA-059 swapped the routes, so
+`/daily-bread` (the paper) is open and `/today` (your plan) is gated.
+
+**Still owed before this ships:** a real end-to-end sign-in verified against
+production, and automatic replay of a captured intent after the reader returns.
+
 ## THE LIBRARY STOPPED GUESSING WHERE A ROW CAME FROM — SA-061 / F-102 (2026-08-16)
 
 Founder: "the linking in Library doesnt work. I cant find the pages that the

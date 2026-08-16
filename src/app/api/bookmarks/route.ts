@@ -4,7 +4,6 @@ import {
   listBookmarksWithFallback,
   removeBookmark,
 } from '@/lib/soul-audit/repository'
-import { getOrCreateAuditSessionToken } from '@/lib/soul-audit/session'
 import { getUser } from '@/lib/auth'
 import {
   createRequestId,
@@ -35,6 +34,18 @@ export async function POST(request: NextRequest) {
     // is keyed by session_token, matching the rest of the reading flow. A
     // signed-in user's id takes precedence when present.
     const user = await getUser()
+    if (!user) {
+      // SA-062 reverses SA-018's amendment: a bookmark is save-state, and
+      // save-state requires an account. There is no anonymous session-token
+      // fallback any more — the reader is told, not silently half-served.
+      return jsonError({
+        error: 'Sign in to keep your library.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+    const sessionToken = user.id
 
     const limiter = await takeRateLimit({
       namespace: 'bookmarks-post',
@@ -72,8 +83,6 @@ export async function POST(request: NextRequest) {
         requestId,
       })
     }
-
-    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
     const bookmark = await addBookmark({
       sessionToken,
       devotionalSlug,
@@ -115,7 +124,18 @@ export async function GET() {
   const requestId = createRequestId()
   try {
     const user = await getUser()
-    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
+    if (!user) {
+      // SA-062 reverses SA-018's amendment: a bookmark is save-state, and
+      // save-state requires an account. There is no anonymous session-token
+      // fallback any more — the reader is told, not silently half-served.
+      return jsonError({
+        error: 'Sign in to keep your library.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+    const sessionToken = user.id
     const bookmarks = await listBookmarksWithFallback(sessionToken)
     return withRequestIdHeaders(
       NextResponse.json({ ok: true, bookmarks }, { status: 200 }),
@@ -151,6 +171,18 @@ export async function DELETE(request: NextRequest) {
   const clientKey = getClientKey(request)
   try {
     const user = await getUser()
+    if (!user) {
+      // SA-062 reverses SA-018's amendment: a bookmark is save-state, and
+      // save-state requires an account. There is no anonymous session-token
+      // fallback any more — the reader is told, not silently half-served.
+      return jsonError({
+        error: 'Sign in to keep your library.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+    const sessionToken = user.id
 
     const devotionalSlug = String(
       request.nextUrl.searchParams.get('devotionalSlug') || '',
@@ -162,8 +194,6 @@ export async function DELETE(request: NextRequest) {
         requestId,
       })
     }
-
-    const sessionToken = user?.id ?? (await getOrCreateAuditSessionToken())
     await removeBookmark({
       sessionToken,
       devotionalSlug,

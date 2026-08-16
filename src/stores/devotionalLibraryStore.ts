@@ -31,8 +31,14 @@ export type LibraryIntent =
       seriesSlug: string
       from: 'day_1' | 'resume'
     }
-  // SA-059/SA-060: the reader reached for a writing control while signed out.
+  // SA-061/SA-062: the reader reached for a writing control while signed out.
   | { kind: 'journal'; devotionalSlug: string }
+  | {
+      kind: 'highlight'
+      devotionalSlug: string
+      anchorText: string
+      color: string
+    }
 
 export interface ActiveSeriesView {
   seriesSlug: string

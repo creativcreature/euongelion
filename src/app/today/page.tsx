@@ -13,6 +13,8 @@
  * places. Every internal link that means "take me to my plan" now points here.
  */
 import { cookies } from 'next/headers'
+import { getUser } from '@/lib/auth'
+import { redirect } from 'next/navigation'
 import { getCurrentDay } from '@/lib/soul-audit/plan-queries'
 import { AUDIT_SESSION_COOKIE } from '@/lib/soul-audit/session'
 import { resolveCurrentReading } from '@/lib/reading/current-reading'
@@ -44,6 +46,24 @@ export const metadata: Metadata = {
 }
 
 export default async function TodayPage() {
+  /**
+   * SA-062 — /today is YOUR reading, so it requires an account.
+   *
+   * The route was already `force-dynamic`, so this costs no caching. The gate
+   * lands here rather than in middleware because the redirect has to carry
+   * where the reader was going: they come back to their own reading, not to a
+   * generic landing.
+   *
+   * SA-059 swapped the two routes, so the OPEN sibling is /daily-bread (the
+   * shared paper). Gating by meaning, not by string — an earlier draft of this
+   * work had it exactly backwards and would have gated the paper while leaving
+   * every reader's plan open.
+   */
+  const user = await getUser()
+  if (!user) {
+    redirect('/auth/sign-in?redirect=%2Ftoday')
+  }
+
   const cookieStore = await cookies()
   const sessionToken = cookieStore.get(AUDIT_SESSION_COOKIE)?.value ?? null
 

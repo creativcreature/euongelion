@@ -971,6 +971,14 @@ features:
     prd: docs/feature-prds/F-101.md
     methodology_refs:
       - M00
+  - id: F-105
+    title: Two site states — signed out reads, signed in keeps
+    slug: two-site-states-signed-out-reads-signed-in-keeps
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-105.md
+    methodology_refs:
+      - M00
   - id: F-102
     title: Notes, journal entries, and reflection answers
     slug: notes-journal-and-reflection-answers

@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+import { getUser } from '@/lib/auth'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 import LibraryRailDeepLink from '@/components/LibraryRailDeepLink'
@@ -19,7 +21,21 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LibraryPage() {
+export default async function LibraryPage() {
+  /**
+   * SA-062 — the Library is entirely account state (saved series, notes,
+   * highlights, clips, journal entries), so it requires an account.
+   *
+   * Already `force-dynamic`, so the gate costs no caching. The redirect carries
+   * the destination: the reader lands back in their library, not on a generic
+   * page, which is what makes "locked, not hidden" honest rather than merely
+   * polite.
+   */
+  const user = await getUser()
+  if (!user) {
+    redirect('/auth/sign-in?redirect=%2Flibrary')
+  }
+
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">

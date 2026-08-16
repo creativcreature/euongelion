@@ -42,14 +42,21 @@ describe('save-state auth gate', () => {
     mockedGetUser.mockReset()
   })
 
-  it('allows bookmark writes for unauthenticated users (session-keyed)', async () => {
+  it('REFUSES bookmark writes for unauthenticated users', async () => {
+    // REVERSED 2026-08-16 by SA-062. This test previously asserted a 200 —
+    // SA-018's amendment allowed anonymous bookmarks keyed by the audit session
+    // token. The founder replaced that with two states: "No account, data
+    // should not be retained." A bookmark is save-state, so it needs an
+    // account. The reversal is deliberate; this is not drift.
     mockedGetUser.mockResolvedValue(null)
     const response = await bookmarkPost(
       postJson('http://localhost/api/bookmarks', {
-        devotionalSlug: 'identity-day-1',
+        devotionalSlug: 'he-cannot-deny-himself-day-1',
       }) as never,
     )
-    expect(response.status).toBe(200)
+    expect(response.status).toBe(401)
+    const body = (await response.json()) as { code?: string }
+    expect(body.code).toBe('AUTH_REQUIRED_SAVE_STATE')
   })
 
   it('allows bookmark writes for authenticated users', async () => {

@@ -25,6 +25,8 @@ function describeIntent(intent: LibraryIntent | null): string {
       return 'restart a devotional from your library'
     case 'journal':
       return 'keep what you write'
+    case 'highlight':
+      return 'keep this highlight'
   }
 }
 

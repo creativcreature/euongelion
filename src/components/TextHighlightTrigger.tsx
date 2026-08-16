@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useChatStore } from '@/stores/chatStore'
+import { requestAuth } from '@/stores/devotionalLibraryStore'
 
 type HighlightColor = 'yellow' | 'blue' | 'green' | 'pink' | 'purple'
 
@@ -115,72 +116,22 @@ function findRangeForSnippet(root: HTMLElement, snippet: string): Range | null {
 }
 
 /**
- * SA-039: a highlight made without an account is kept on the device rather
- * than lost on reload. It is NOT written to the database — SA-038 draws the
- * line at persistence-to-an-account, and this respects it. Same shape the
- * server returns, so hydration treats both identically.
- */
-const LOCAL_HIGHLIGHTS_KEY = 'euangelion-local-highlights-v1'
-
-type LocalHighlight = { text: string; color: HighlightColor; at: string }
-
-function readLocalHighlights(slug: string): LocalHighlight[] {
-  if (typeof window === 'undefined') return []
-  try {
-    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
-    if (!raw) return []
-    const parsed = JSON.parse(raw) as Record<string, LocalHighlight[]>
-    const rows = parsed?.[slug]
-    return Array.isArray(rows) ? rows : []
-  } catch {
-    return []
-  }
-}
-
-function writeLocalHighlight(slug: string, entry: LocalHighlight) {
-  if (typeof window === 'undefined') return
-  try {
-    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
-    const parsed = raw
-      ? (JSON.parse(raw) as Record<string, LocalHighlight[]>)
-      : {}
-    const rows = Array.isArray(parsed[slug]) ? parsed[slug] : []
-    if (rows.some((r) => r.text === entry.text)) return
-    parsed[slug] = [...rows, entry]
-    window.localStorage.setItem(LOCAL_HIGHLIGHTS_KEY, JSON.stringify(parsed))
-  } catch {
-    // Storage full or blocked (private mode). The highlight is still on the
-    // page for this session; nothing is silently reported as kept.
-  }
-}
-
-/**
- * Rewrite (or drop) one device-kept highlight, matched on its text.
+ * SA-062 (2026-08-16) REVERSES SA-039 §5 and SA-038 §2.
  *
- * A highlight made without an account has no server id, so editing it has to
- * be handled here or the reader would be able to recolour an account highlight
- * and not a device one — the same control behaving differently depending on
- * something they cannot see.
+ * Founder: "No account, data should not be retained… The unsigned in state
+ * simply is a reader, non-interactive and non saving."
+ *
+ * The device-kept path lived here — a localStorage key plus its read, write and
+ * mutate helpers, which persisted a signed-out reader's highlights. It is
+ * deleted rather than left dormant: an unused writer is a bug waiting to be
+ * re-wired, and there is now exactly one place a highlight can be kept, which
+ * is an account. (The identifiers are named in prose rather than written out,
+ * because two-state-model.test.tsx greps this file for them.)
+ *
+ * Highlighting signed out no longer paints an unsaveable mark either. It opens
+ * sign-in with the intent recorded, so the mark lands once the reader is back —
+ * locked, not hidden, and not a mark that quietly evaporates on reload.
  */
-function mutateLocalHighlight(
-  slug: string,
-  text: string,
-  patch: Partial<LocalHighlight> | null,
-) {
-  if (typeof window === 'undefined') return
-  try {
-    const raw = window.localStorage.getItem(LOCAL_HIGHLIGHTS_KEY)
-    if (!raw) return
-    const parsed = JSON.parse(raw) as Record<string, LocalHighlight[]>
-    const rows = Array.isArray(parsed[slug]) ? parsed[slug] : []
-    parsed[slug] = patch
-      ? rows.map((row) => (row.text === text ? { ...row, ...patch } : row))
-      : rows.filter((row) => row.text !== text)
-    window.localStorage.setItem(LOCAL_HIGHLIGHTS_KEY, JSON.stringify(parsed))
-  } catch {
-    // Same as above: the page already reflects the change.
-  }
-}
 
 /**
  * Where the toolbar goes relative to the selection.
@@ -449,31 +400,7 @@ export default function TextHighlightTrigger({
           })
         }
       } catch {
-        // Non-fatal: devotional remains readable without hydration.
-      } finally {
-        // Device-kept highlights (made without an account) restore the same
-        // way. Applied after the server rows so a since-signed-in reader does
-        // not get the same passage marked twice.
-        if (cancelled) return
-        const root = document.getElementById('main-content')
-        if (!root) return
-        for (const local of readLocalHighlights(devotionalSlug)) {
-          const snippet = String(local.text || '').trim()
-          if (!snippet) continue
-          if (root.querySelector('mark.reader-highlight')) {
-            const already = [
-              ...root.querySelectorAll('mark.reader-highlight'),
-            ].some((m) => (m.textContent || '').trim() === snippet)
-            if (already) continue
-          }
-          const range = findRangeForSnippet(root, snippet)
-          if (!range) continue
-          applyHighlightMark({
-            range,
-            color: normalizeHighlightColor(local.color),
-            id: null,
-          })
-        }
+        // Non-fatal: the devotional remains readable without hydration.
       }
     }
 
@@ -509,8 +436,8 @@ export default function TextHighlightTrigger({
     const note = next.note ?? current.note
 
     if (!current.id) {
-      // Device-kept highlight: localStorage is its only home.
-      mutateLocalHighlight(devotionalSlug, current.text, { color })
+      // No id means the mark was never persisted, which under SA-062 means the
+      // reader is signed out. Nothing to update anywhere.
       return
     }
 
@@ -530,11 +457,8 @@ export default function TextHighlightTrigger({
       })
       if (!response.ok) {
         setFailed(
-          response.status === 401 ? 'Kept on this device' : "Couldn't save",
+          response.status === 401 ? 'Sign in to keep this' : "Couldn't save",
         )
-        if (response.status === 401) {
-          mutateLocalHighlight(devotionalSlug, current.text, { color })
-        }
         setTimeout(() => setFailed(null), 1800)
         return
       }
@@ -573,11 +497,12 @@ export default function TextHighlightTrigger({
 
   async function removeHighlight() {
     if (!editing) return
-    const { el, id, text } = editing
+    // `text` was only needed to find the row in the device-kept store, which
+    // SA-062 removed.
+    const { el, id } = editing
     unwrapMark(el)
     setEditing(null)
     setNoteOpen(false)
-    mutateLocalHighlight(devotionalSlug, text, null)
     if (!id) return
     try {
       const response = await fetch(
@@ -649,19 +574,23 @@ export default function TextHighlightTrigger({
         annotation?: { id?: string }
       }
       if (!response.ok) {
-        // The highlight is already on the page and stays there. Signed-out
-        // readers are told it won't be kept rather than being thrown out to
-        // a sign-in screen mid-reading; SA-018 still governs what persists.
+        // SA-062: a signed-out highlight is NOT kept anywhere, so it must not
+        // linger on the page pretending otherwise. The mark is removed and
+        // sign-in is offered with the intent recorded, so the highlight lands
+        // for real once the reader is back. Locked, not hidden — and not a
+        // mark that quietly evaporates on the next reload.
         if (payload.code === 'AUTH_REQUIRED_SAVE_STATE') {
-          writeLocalHighlight(devotionalSlug, {
-            text: selectedText,
+          unwrapMark(mark)
+          requestAuth({
+            kind: 'highlight',
+            devotionalSlug,
+            anchorText: selectedText,
             color: selectedColor,
-            at: new Date().toISOString(),
           })
         }
         setFailed(
           payload.code === 'AUTH_REQUIRED_SAVE_STATE'
-            ? 'Kept on this device'
+            ? 'Sign in to keep this'
             : "Highlighted — couldn't save",
         )
         setTimeout(() => {
