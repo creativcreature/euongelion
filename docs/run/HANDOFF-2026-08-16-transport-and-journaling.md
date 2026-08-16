@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** design approved, plan approved, **Phase 1 COMPLETE** (commits `7f6d64bc`, `f82ea6e5`). Phase 2 (transport) is next. See §7.
+**Status:** design approved, plan approved, **Phase 1 COMPLETE** (commits `7f6d64bc`, `db1ee9a6`). Phase 2 (transport) is next. See §7.
 
 ---
 
@@ -167,7 +167,7 @@ Making the account the gate for **everything** on top of a rate-limited mailer w
 
 | Phase           | Tasks | State                                               |
 | --------------- | ----- | --------------------------------------------------- |
-| 1 — Foundations | 1–2   | **COMPLETE.** Task 1 `7f6d64bc`, Task 2 `f82ea6e5`. |
+| 1 — Foundations | 1–2   | **COMPLETE.** Task 1 `7f6d64bc`, Task 2 `db1ee9a6`. |
 | 2 — Transport   | 3–8   | Not started                                         |
 | 3 — Journaling  | 9–12  | Not started                                         |
 | 4 — Two-state   | 13–15 | Not started                                         |
