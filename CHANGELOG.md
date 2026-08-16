@@ -624,6 +624,33 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Flow — the artboard (2026-08-16)
+
+Registered as **SA-062** (F-106). Flow replaces the rose window and leads the
+toggles; Rose is removed entirely — view, geometry, tests and CSS.
+
+Tile size encodes length: a 60+ day reading takes a 2×2, a 7+ day a 2×1,
+everything else one cell, packed leftmost-lowest so the board has no holes.
+Deterministic from the sort — change the sort and the board rearranges.
+
+**The board is a CSS grid, and that is the point.** The first build positioned
+tiles on a *measured* canvas, and the measurement was the bug: an un-laid-out
+frame reports `clientWidth === 0`, `??` kept the `0` because `0` is a number,
+and the board froze at its default column count — leaving exactly the dead space
+on the right the founder called out in the same message. As a grid at
+`width: 100%` it fills its frame by construction and no measurement can be
+wrong.
+
+**Mobile Flow is a native scroller, not a dragged board.** A drag-panned board
+is a desktop idea; on a phone it fights the platform's own momentum and, worse,
+traps the page — a finger inside the frame pans to the end and has nowhere to
+go. Under 900px the frame is an ordinary scroll container with the board static
+inside it.
+
+And the plates load **eager**: Chrome does not fire its lazy loader for children
+of a transformed container — the same trap the rose hit — so every tile would
+have sat empty forever. — SA-062 (F-106)
+
 ## The mobile pass, the lancet, and motion (2026-08-16)
 
 Registered as **SA-060** (F-104).

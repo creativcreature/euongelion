@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
 import { sectionsFor } from '@/data/series-sections'
+import FlowView from './FlowView'
 import { dayCountLabel, seriesRecencyRank } from '@/lib/series/catalog'
 
 /**
@@ -44,7 +45,7 @@ export type ViewId =
   | 'covers'
   | 'spines'
   | 'list'
-  | 'mosaic'
+  | 'flow'
   | 'issues'
 
 export const VIEWS: ReadonlyArray<{
@@ -55,13 +56,15 @@ export const VIEWS: ReadonlyArray<{
 }> = [
   // Founder-ordered 2026-08-15: Covers leads, Issues second. The art is the
   // fastest way to recognise a reading you have seen; recency is the second.
+  // Founder 2026-08-16: "this will be the first toggle on the series page."
+  // Flow REPLACES Rose — the wheel was beautiful and did not survive a phone.
+  { id: 'flow', label: 'Flow', blurb: 'The artboard. Drag across the whole catalog.' },
   { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
   { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
   { id: 'feature', label: 'Feature', blurb: 'Column inches by weight. The longest reading leads.' },
   { id: 'rack', label: 'Rack', blurb: 'Every series folded over the rail, mastheads out.' },
   { id: 'spines', label: 'Spines', blurb: 'Shelved. Read the spine, pull one out.' },
   { id: 'list', label: 'List', blurb: 'The whole catalog in one screen.' },
-  { id: 'mosaic', label: 'Rose', blurb: 'One window. A hub, then rings working outward.' },
 ]
 
 export interface SeriesProgress {
@@ -535,205 +538,7 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
-/* ── 6. THE ROSE WINDOW ─────────────────────────────────────────────
-
-   Founder 2026-08-16: "Mosaic needs a completely different treatment, not a
-   fan of it. Make whatever this one is extemely unique and creative. think
-   outside the box. Completely new idea/layout for that one."
-
-   Every other view in this set is a rectangle: a grid, a rail, a shelf, a
-   list. So this one leaves the rectangle entirely.
-
-   A rose window is the one piece of furniture a church puts its whole story
-   into, and it is built exactly the way a catalog is: a centre, then rings
-   working outward, each pane its own scene, all of it only legible when the
-   light is behind it. The counts even fall out right — a hub, a ring of
-   twelve, a ring of twenty-four, which is the arithmetic of Revelation 4
-   before it is the arithmetic of thirty-seven series.
-
-   Reading a real rose window means standing back and then stepping close.
-   That is the interaction: the hub carries the name of whichever pane you are
-   on, so titles are always readable at full size in one fixed place instead of
-   being shrunk into thirty-seven tiny captions. Nothing rotates on hover and
-   nothing spins on load — a window is still, and this is a reading surface,
-   not a toy.
-
-   The geometry is derived from the count, never hardcoded — see buildRings
-   below. Add a hundred series tomorrow and the window still closes. */
-
-/**
- * Ring geometry (F-100).
- *
- * Founder 2026-08-16: "I like Rose, but not sure it can grow with more series
- * being added." It could not — ring capacities were the literal list
- * [12, 24, 36] and radii stepped by a fixed 16%, so a fourth ring landed past
- * the rim and a fifth had nowhere to go.
- *
- * This derives the whole window from the count instead. Panes shrink as the
- * catalog grows, each ring is filled to what its own circumference can hold
- * without the panes touching, and the rings are spaced so the outermost always
- * lands inside the frame. Nothing is hardcoded to thirty-seven: it closes for
- * twelve series and it closes for three hundred.
- */
-export interface Ring {
-  /** Distance from centre, as a percentage of the window's half-width. */
-  radius: number
-  /** Pane diameter, as a percentage of the window's width. */
-  size: number
-  slugs: string[]
-}
-
-/** Pane diameter for a given catalog size. Bigger catalog, smaller glass. */
-function paneSizeFor(count: number): number {
-  if (count <= 24) return 14
-  if (count <= 48) return 11
-  if (count <= 90) return 8.5
-  if (count <= 160) return 6.5
-  return 5
-}
-
-export function buildRings(slugs: string[]): Ring[] {
-  if (slugs.length === 0) return []
-  const size = paneSizeFor(slugs.length + 1)
-  // Radial pitch: one pane diameter plus breathing room. The hub occupies the
-  // middle, so the first ring starts clear of it.
-  const pitch = size * 1.32
-  const hubRadius = 17
-  const rings: Ring[] = []
-  let cursor = 0
-  let index = 0
-
-  while (cursor < slugs.length) {
-    const radius = hubRadius + pitch * (index + 1)
-    // How many panes fit on this ring without touching: the circumference in
-    // the same percentage units, divided by the arc one pane consumes.
-    const circumference = 2 * Math.PI * radius
-    const capacity = Math.max(6, Math.floor(circumference / (size * 1.12)))
-    const take = slugs.slice(cursor, cursor + capacity)
-    rings.push({ radius, size, slugs: take })
-    cursor += take.length
-    index += 1
-  }
-
-  // If the outermost ring overshoots the frame, scale the whole window inward
-  // rather than letting panes hang off the edge.
-  const outer = rings[rings.length - 1]
-  const reach = outer.radius + outer.size / 2
-  if (reach > 49) {
-    const k = 49 / reach
-    return rings.map((r) => ({ ...r, radius: r.radius * k, size: r.size * k }))
-  }
-  return rings
-}
-
-export function RoseView({ slugs, progressBySeries, cardHref }: LayoutProps) {
-  const hub = slugs[0]
-  const petals = useMemo(() => slugs.slice(1), [slugs])
-  const rings = useMemo(() => buildRings(petals), [petals])
-  const [focused, setFocused] = useState<string | null>(null)
-
-  const named = focused ?? hub
-  const namedSeries = SERIES_DATA[named]
-
-  return (
-    <div className="rose">
-      <div className="rose-window">
-        {/* Tracery — the stone the glass is set into. Drawn, not decorative:
-            it is what makes the rings read as one window rather than as
-            circles floating on a page. */}
-        <span className="rose-tracery" aria-hidden="true">
-          {rings.map((ring, i) => (
-            <span
-              key={i}
-              className="rose-ring-line"
-              style={{
-                inset: `${50 - ring.radius}%`,
-              }}
-            />
-          ))}
-        </span>
-
-        {rings.map((ring, ri) =>
-          ring.slugs.map((slug, i) => {
-            const series = SERIES_DATA[slug]
-            if (!series) return null
-            // Running index across every ring, so the mobile lancet can
-            // alternate lights either side of the mullion without relying on
-            // nth-child (the tracery and hub are siblings too).
-            const seq =
-              rings.slice(0, ri).reduce((n, r) => n + r.slugs.length, 0) + i
-            const angle = (360 / ring.slugs.length) * i - 90
-            const rad = (angle * Math.PI) / 180
-            const x = 50 + Math.cos(rad) * ring.radius
-            const y = 50 + Math.sin(rad) * ring.radius
-            const isNamed = named === slug
-            return (
-              <Link
-                key={slug}
-                href={cardHref(slug)}
-                className={`rose-pane rose-pane--${seq % 2 === 0 ? 'a' : 'b'} ${
-                  isNamed ? 'is-named' : ''
-                }`}
-                style={{
-                  left: `${x}%`,
-                  top: `${y}%`,
-                  width: `${ring.size}%`,
-                }}
-                title={`${series.title} · ${dayCountLabel(slug)}`}
-                onMouseEnter={() => setFocused(slug)}
-                onMouseLeave={() => setFocused(null)}
-                onFocus={() => setFocused(slug)}
-                onBlur={() => setFocused(null)}
-              >
-                <span className="rose-glass">
-                  <Plate
-                    slug={slug}
-                    sizes="(max-width: 700px) 22vw, 13vw"
-                    eager
-                  />
-                </span>
-                {/* Visible beside the glass on the mobile lancet, where there
-                    is room for it; the desktop rose keeps titles in the hub
-                    and this collapses to screen-reader only. */}
-                <span className="rose-pane-name">
-                  <span className="rose-pane-title">{series.title}</span>
-                  <span className="rose-pane-days">{dayCountLabel(slug)}</span>
-                </span>
-              </Link>
-            )
-          }),
-        )}
-
-        {/* The hub: the oculus, and the one place a title is ever set at a
-            size you can actually read. */}
-        {namedSeries && (
-          <Link
-            href={cardHref(named)}
-            className="rose-hub"
-            onMouseEnter={() => setFocused(hub === named ? null : named)}
-          >
-            <span className="rose-hub-plate">
-              <Plate slug={named} sizes="20vw" eager />
-            </span>
-            <span className="rose-hub-veil" aria-hidden="true" />
-            <span className="rose-hub-copy">
-              <span className="rose-hub-title">{namedSeries.title}</span>
-              <span className="rose-hub-meta">
-                {statusLabel(named, progressBySeries.get(named))}
-              </span>
-            </span>
-          </Link>
-        )}
-      </div>
-
-      <p className="rose-caption">
-        {focused
-          ? namedSeries?.question
-          : 'Every reading we have, set as one window. Move across the glass.'}
-      </p>
-    </div>
-  )
-}
+/* ── 6. ISSUES ─────────────────────────────────────────────────────── */
 
 export function IssuesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   const ordered = useMemo(
@@ -777,6 +582,6 @@ export const LAYOUTS: Record<ViewId, (props: LayoutProps) => React.ReactElement>
   covers: CoversView,
   spines: SpinesView,
   list: ListView,
-  mosaic: RoseView,
+  flow: FlowView,
   issues: IssuesView,
 }

@@ -1011,3 +1011,11 @@ features:
     prd: docs/feature-prds/F-104.md
     methodology_refs:
       - M00
+  - id: F-106
+    title: Flow — the artboard
+    slug: flow-the-artboard
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-106.md
+    methodology_refs:
+      - M00

@@ -72,16 +72,18 @@ export function ViewIcon({ id }: { id: ViewId }) {
         </svg>
       )
     // Hung by eye: unequal blocks.
-    case 'mosaic':
+    case 'flow':
+      // The artboard: tiles of different sizes on a canvas larger than the
+      // frame, which is exactly what the view is.
       return (
         <svg {...S}>
-          <rect x="2.5" y="2.5" width="6" height="7" />
-          <rect x="10" y="2.5" width="7.5" height="4.5" />
-          <rect x="10" y="8.5" width="7.5" height="9" />
-          <rect x="2.5" y="11" width="6" height="6.5" />
+          <rect x="2" y="2.5" width="8" height="8" rx="0.5" />
+          <rect x="11.5" y="2.5" width="5.5" height="5.5" rx="0.5" />
+          <rect x="11.5" y="10" width="5.5" height="7.5" rx="0.5" />
+          <rect x="2" y="12" width="8" height="5.5" rx="0.5" />
         </svg>
       )
-    // Numbered issues, stacked.
+
     case 'issues':
       return (
         <svg {...S}>

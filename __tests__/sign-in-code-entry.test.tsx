@@ -3,7 +3,10 @@
  *
  * Contract under test:
  *  - After the magic link is sent, the "check your email" state ALSO offers
- *    a 6-digit code input (copy works whether or not the email template
+ *    a code input. Length is NOT hardcoded: Supabase's `mailer_otp_length` is
+ *    project config, and it was found set to 8 while the UI and route demanded
+ *    exactly 6 — so every code a reader typed was rejected before it reached
+ *    verifyOtp. Both ends now accept 6-8. (copy works whether or not the email template
  *    includes {{ .Token }}).
  *  - Submitting the code calls /api/auth/verify-code with the SAME email
  *    the link was sent to, the compacted code, and the redirect target.
@@ -98,12 +101,12 @@ describe('sign-in in-app code entry', () => {
     // Copy is honest either way — the code only exists if the email
     // template includes it.
     expect(
-      screen.getByText('If your email includes a 6-digit code', {
+      screen.getByText('Or enter the code from the email', {
         exact: false,
       }),
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('textbox', { name: '6-digit sign-in code' }),
+      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
     ).toBeInTheDocument()
   })
 
@@ -125,7 +128,7 @@ describe('sign-in in-app code entry', () => {
       await sendMagicLink(user)
 
       await user.type(
-        screen.getByRole('textbox', { name: '6-digit sign-in code' }),
+        screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
         '123 456',
       )
       await user.click(screen.getByRole('button', { name: 'Verify Code' }))
@@ -162,7 +165,7 @@ describe('sign-in in-app code entry', () => {
     await sendMagicLink(user)
 
     await user.type(
-      screen.getByRole('textbox', { name: '6-digit sign-in code' }),
+      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
       '000000',
     )
     await user.click(screen.getByRole('button', { name: 'Verify Code' }))
@@ -180,13 +183,13 @@ describe('sign-in in-app code entry', () => {
     await sendMagicLink(user)
 
     await user.type(
-      screen.getByRole('textbox', { name: '6-digit sign-in code' }),
+      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
       '12ab',
     )
     await user.click(screen.getByRole('button', { name: 'Verify Code' }))
 
     expect(
-      await screen.findByText('Enter the 6-digit code from the email.'),
+      await screen.findByText('Enter the code from the email.'),
     ).toBeInTheDocument()
     expect(calls.some((c) => c.url.includes('verify-code'))).toBe(false)
   })
@@ -201,7 +204,7 @@ describe('sign-in in-app code entry', () => {
     await sendMagicLink(user)
 
     await user.type(
-      screen.getByRole('textbox', { name: '6-digit sign-in code' }),
+      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
       '111111',
     )
     await user.click(screen.getByRole('button', { name: 'Verify Code' }))
@@ -211,5 +214,26 @@ describe('sign-in in-app code entry', () => {
         'Too many attempts. Wait a minute and try again.',
       ),
     ).toBeInTheDocument()
+  })
+
+  it('accepts an 8-digit code, so a config change cannot break sign-in', async () => {
+    // The exact fault found on 2026-08-16: Supabase's mailer_otp_length was 8
+    // while both the UI and the route demanded exactly 6, so every code a
+    // reader typed was rejected before it ever reached verifyOtp. The config is
+    // 6 now, but being liberal in what we accept means the next change to it is
+    // not an outage.
+    const { calls } = installFetchMock()
+    const user = userEvent.setup()
+    render(<SignInPage />)
+    await sendMagicLink(user)
+
+    await user.type(
+      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
+      '12345678',
+    )
+    await user.click(screen.getByRole('button', { name: 'Verify Code' }))
+
+    // It reached the network instead of being refused locally.
+    expect(calls.some((c) => c.url.includes('verify-code'))).toBe(true)
   })
 })

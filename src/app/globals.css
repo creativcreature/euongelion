@@ -601,32 +601,28 @@ h3 {
 .homepage-featured-devotional-art {
   position: relative;
   width: 100%;
-  /* Founder direction 2026-05-13 (revised): featured card switched to
-     the too-busy-for-god marketplace-dawn Riso (1408×768 landscape,
-     ~16:9). The wider aspect keeps the card from getting too tall
-     when stretched into the 2/3-width image column. On a 1440px
-     desktop, image col ≈ 960px wide → ~525px tall (down from ~640px
-     under the prior 3:2 aspect). */
-  /* Founder 2026-08-16: "the featured devotional is 2x too tall." It was
-     rendering ~525px on a 1440 desktop. A 21:9 letterbox halves that without
-     touching the art or the copy — the plate is a banner over the story, not
-     a hero in its own right. */
-  aspect-ratio: 21 / 9;
-  max-height: 300px;
-  min-height: 160px;
+  /* Founder 2026-08-16, twice. First pass set a 21:9 aspect-ratio, which was
+     the wrong lever: it reshaped the BOX, so the plate stopped filling its
+     column and sat in dead space — "the image now looks stupid and doesnt fill
+     the space." The section height is the thing to control, not the picture's
+     shape. So the art takes an explicit height and the image covers it: the
+     plate always fills its column edge to edge, and the row is simply shorter.
+     Was ~525px on a 1440 desktop. */
+  height: clamp(200px, 22vw, 300px);
   overflow: hidden;
-  background: var(--mock-ink, black);
-  border-right: var(--mock-stroke, 1.5px) solid var(--mock-line, currentColor);
 }
 .homepage-featured-devotional-art img {
   object-fit: cover;
   object-position: center;
 }
+/* The copy column sets the row's height whenever it is taller than the plate,
+   so its padding is part of "the section is too tall" — trimmed with it, and
+   centred so a short story does not leave the column top-heavy. */
 .homepage-featured-devotional-main {
   display: grid;
-  align-content: start;
-  gap: 0.55rem;
-  padding: 1.4rem 1.4rem 1.6rem;
+  align-content: center;
+  gap: 0.45rem;
+  padding: 1rem 1.3rem 1.1rem;
 }
 @media (max-width: 900px) {
   .homepage-featured-devotional {
@@ -636,7 +632,9 @@ h3 {
     border-right: 0;
     border-bottom: var(--mock-stroke, 1.5px) solid
       var(--mock-line, currentColor);
-    aspect-ratio: 1408 / 768;
+    /* Same rule as desktop: fixed height, image covers it. An aspect-ratio
+       here would reintroduce exactly the dead space it caused above. */
+    height: clamp(170px, 42vw, 240px);
     min-height: 0;
   }
 }
@@ -13597,312 +13595,7 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 
-/* ── The Rose Window (F-099) ───────────────────────────────────────────
-   The one view in the set that is not a rectangle. A hub, then rings working
-   outward, set into drawn tracery. Panes are positioned by percentage around
-   the centre, so the whole window scales with its container and never needs
-   measuring. */
 
-.rose {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.4rem;
-  padding: 1.5rem 0 0.5rem;
-}
-
-.rose-window {
-  position: relative;
-  width: min(100%, 860px);
-  aspect-ratio: 1;
-}
-
-/* Tracery: the stone. Concentric hairlines that turn a scatter of circles
-   into one window. */
-.rose-tracery {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.rose-ring-line {
-  position: absolute;
-  border: var(--rr-hair);
-  border-radius: 50%;
-  opacity: 0.4;
-}
-
-.rose-pane {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  display: block;
-  background: var(--plate-ground);
-  box-shadow: 0 0 0 1.5px var(--mock-line);
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    filter 220ms ease;
-  /* Unlit glass. The window only comes up where the light is. */
-  filter: saturate(0.55) brightness(0.82);
-}
-
-.rose-pane:hover,
-.rose-pane:focus-visible,
-.rose-pane.is-named {
-  filter: none;
-  transform: translate(-50%, -50%) scale(1.14);
-  box-shadow:
-    0 0 0 2px var(--color-crimson),
-    0 14px 30px -14px rgba(9, 12, 32, 0.75);
-  z-index: 3;
-}
-
-.rose-glass {
-  position: absolute;
-  inset: 0;
-  display: block;
-}
-
-/* Desktop keeps titles in the hub, so the per-pane name is for assistive tech
-   only. The mobile lancet promotes it to visible text. */
-.rose-pane-name {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* The oculus. The only place a title is ever set at readable size, which is
-   why thirty-seven captions are not fighting each other around the rim. */
-.rose-hub {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  background: var(--plate-ground);
-  box-shadow: 0 0 0 2.5px var(--mock-ink);
-  z-index: 4;
-}
-
-.rose-hub-plate {
-  position: absolute;
-  inset: 0;
-  display: block;
-}
-
-.rose-hub-veil {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(9, 12, 32, 0.92) 38%,
-    rgba(9, 12, 32, 0.72) 100%
-  );
-}
-
-.rose-hub-copy {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 1rem;
-  max-width: 86%;
-}
-
-.rose-hub-title {
-  font-family: var(--font-family-serif);
-  font-size: clamp(1.05rem, 2.1vw, 1.75rem);
-  line-height: 1.08;
-  color: var(--plate-ink);
-  text-wrap: balance;
-}
-
-.rose-hub-meta {
-  font-family: var(--font-family-ui);
-  font-size: 0.56rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--plate-ink);
-  opacity: 0.75;
-}
-
-.rose-caption {
-  margin: 0;
-  max-width: 46ch;
-  text-align: center;
-  font-family: var(--font-family-serif);
-  font-style: italic;
-  font-size: 1.02rem;
-  line-height: 1.4;
-  color: var(--mock-muted);
-  min-height: 2.9em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .rose-pane {
-    transition: none;
-  }
-  .rose-pane:hover,
-  .rose-pane:focus-visible,
-  .rose-pane.is-named {
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media (max-width: 700px) {
-  /* THE LANCET (F-104).
-     Founder 2026-08-16: "The Rose concept doesnt even work for mobile- so the
-     entire concept needs to be rethought out."
-
-     Right — a rose window is a wide wall's window, and a phone is a narrow
-     wall. Narrow walls get LANCETS: tall, single-light windows set in a row.
-     So the concept is not shrunk, it is rebuilt in the form the wall allows.
-     The glass, the tracery, the unlit-until-you-look behaviour and the hub all
-     survive; only the geometry changes, from a wheel to a column.
-
-     A single tracery line runs the height of the window and the lights hang
-     off it, alternating, each with its title set beside the glass — which is
-     the one thing the desktop rose cannot do and the reason the mobile form
-     is arguably the more readable of the two. */
-  .rose {
-    gap: 0.9rem;
-    padding-top: 0.75rem;
-  }
-
-  .rose-window {
-    aspect-ratio: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    padding-left: 1.6rem;
-  }
-
-  /* The mullion — one continuous line the lights are set into. */
-  .rose-tracery {
-    display: block;
-    inset: auto;
-    position: absolute;
-    left: 1.6rem;
-    top: 0;
-    bottom: 0;
-    width: 0;
-    border-left: var(--rr-hair);
-    opacity: 0.5;
-  }
-  .rose-ring-line {
-    display: none;
-  }
-
-  .rose-pane {
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    transform: none;
-    width: 92px !important;
-    margin-left: -1.6rem;
-    align-self: flex-start;
-    filter: saturate(0.6) brightness(0.85);
-  }
-
-  /* Alternate which side of the mullion each light sits on, so the column
-     reads as a window rather than a list of avatars. */
-  .rose-pane--b {
-    margin-left: 0.6rem;
-  }
-
-  /* On the lancet there is room to name each light beside its glass — the one
-     thing the desktop wheel cannot do. */
-  .rose-pane {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    width: auto !important;
-    overflow: visible;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-  }
-  .rose-glass {
-    position: relative;
-    inset: auto;
-    flex: 0 0 auto;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: var(--plate-ground);
-    box-shadow: 0 0 0 1.5px var(--mock-line);
-  }
-  .rose-pane-name {
-    position: static;
-    width: auto;
-    height: auto;
-    clip: auto;
-    clip-path: none;
-    overflow: visible;
-    white-space: normal;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    min-width: 0;
-  }
-  .rose-pane-title {
-    font-family: var(--font-family-serif);
-    font-size: 1.12rem;
-    line-height: 1.1;
-    color: var(--mock-ink);
-  }
-  .rose-pane-days {
-    font-family: var(--font-family-ui);
-    font-size: 0.56rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mock-muted);
-  }
-
-  .rose-pane:hover,
-  .rose-pane:focus-visible,
-  .rose-pane.is-named {
-    transform: scale(1.06);
-    filter: none;
-  }
-
-  /* The hub becomes the head of the lancet — the pointed light at the top
-     that names whatever you last touched. */
-  .rose-hub {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    order: -1;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 96px 96px 6px 6px;
-    margin-left: -1.6rem;
-  }
-
-  .rose-hub-title {
-    font-size: 1.35rem;
-  }
-}
 
 
 
@@ -14081,5 +13774,183 @@ html[data-held-moment] .mobile-tab-bar {
   .motion-ready [data-parallax] > picture > img {
     transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
     will-change: transform;
+  }
+}
+
+
+/* ── FLOW — the artboard (F-105) ────────────────────────────────────────
+   Founder 2026-08-16: "this will be the first toggle on the series page… Just
+   the fluid motion, sizing and grid structure etc." Reference for BEHAVIOUR
+   (not palette): nicolaromei.com. Flow replaces the rose window, which was
+   beautiful on a desktop and did not survive a phone.
+
+   The frame is a window onto a canvas larger than itself. Everything that
+   moves is the board, in one transform, so a pan is a single composited layer
+   rather than 37 elements being re-laid-out. */
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.flow-frame {
+  position: relative;
+  overflow: hidden;
+  height: clamp(420px, 68vh, 760px);
+  border: var(--rr-hair);
+  background: color-mix(in srgb, var(--mock-ink) 4%, var(--mock-paper) 96%);
+  cursor: grab;
+  /* The board pans vertically inside the frame, so the browser must not also
+     scroll the page from the same gesture. Horizontal swipes still belong to
+     the page (back/forward). */
+  touch-action: none;
+  /* The board is dragged, so text selection would fight every gesture. */
+  user-select: none;
+}
+
+.flow-frame.is-dragging {
+  cursor: grabbing;
+}
+
+.flow-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Full width of the frame, always. The board is a grid, so it cannot be
+     narrower than its container and cannot leave dead space beside it. */
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  will-change: transform, filter;
+  /* No transition: position is driven frame-by-frame by rAF, and a CSS
+     transition on top of that fights the momentum and reads as lag. */
+}
+
+.flow-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--plate-ink);
+  background: var(--plate-ground);
+  box-shadow: 0 0 0 1px var(--mock-line);
+  transition:
+    box-shadow 200ms ease,
+    transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.flow-tile:hover,
+.flow-tile:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--color-crimson),
+    0 16px 34px -18px rgba(9, 12, 32, 0.7);
+  z-index: 2;
+}
+
+.flow-plate {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.flow-img {
+  object-fit: cover;
+  transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.flow-tile:hover .flow-img {
+  transform: scale(1.05);
+}
+
+/* The caption sits on the plate, on a scrim heavy enough to hold small type
+   over any part of a halftone. */
+.flow-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.85rem 0.75rem 0.7rem;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 12, 32, 0) 0%,
+    rgba(9, 12, 32, 0.82) 62%
+  );
+}
+
+.flow-title {
+  font-family: var(--font-family-serif);
+  font-size: 1.02rem;
+  line-height: 1.1;
+  color: var(--plate-ink);
+  text-wrap: balance;
+}
+
+.flow-days {
+  font-family: var(--font-family-ui);
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--plate-ink);
+  opacity: 0.72;
+}
+
+.flow-hint {
+  align-self: center;
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* MOBILE FLOW IS A NATIVE SCROLLER, NOT A DRAGGED BOARD.
+   Founder 2026-08-16: "the mobile version is psecifically aimed at the way
+   users use mobile devices."
+
+   A drag-panned board is a desktop idea. On a phone it fights everything the
+   platform already does well: momentum, rubber-banding, and — the real
+   problem — it TRAPS the page. A finger inside the frame could pan the board
+   to its end and then have nowhere to go, leaving the reader stuck mid-page.
+   So under 900px the frame becomes an ordinary scroll container and the board
+   sits static inside it. Same tiles, same packing, same sizes; the motion is
+   the operating system's, which is the motion a phone user expects. */
+@media (max-width: 900px) {
+  .flow-frame {
+    height: auto;
+    max-height: 78vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    touch-action: pan-y;
+    cursor: default;
+  }
+  .flow-board {
+    position: static;
+    transform: none !important;
+    filter: none !important;
+  }
+  .flow-hint {
+    /* "Drag" is not the gesture here. */
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .flow-title {
+    font-size: 0.88rem;
+  }
+  .flow-caption {
+    padding: 0.6rem 0.55rem 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-tile,
+  .flow-img {
+    transition: none;
   }
 }

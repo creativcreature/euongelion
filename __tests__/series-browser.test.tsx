@@ -54,8 +54,10 @@ describe('SeriesBrowser — ten layouts', () => {
     // Founder-cut 2026-08-15: Index, Contact and Broadsheet removed.
     expect(screen.getAllByRole('tab')).toHaveLength(7)
     expect(VIEWS).toHaveLength(7)
-    expect(VIEWS[0].label).toBe('Covers')
-    expect(VIEWS[1].label).toBe('Issues')
+    // Founder 2026-08-16: Flow leads and replaces Rose; Covers follows.
+    expect(VIEWS[0].label).toBe('Flow')
+    expect(VIEWS[1].label).toBe('Covers')
+    expect(VIEWS.map((v) => v.label)).not.toContain('Rose')
     expect(container.querySelectorAll('.rr-view svg')).toHaveLength(7)
     for (const gone of ['Index', 'Contact', 'Broadsheet']) {
       expect(screen.queryByRole('tab', { name: gone })).toBeNull()
@@ -74,15 +76,15 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('defaults to Covers, and Feature leads with the longest reading', () => {
+  it('defaults to Flow, and Feature leads with the longest reading', () => {
     const { container } = render(<SeriesBrowser />)
     // Founder-ordered 2026-08-15: Covers first, Issues second.
-    expect(screen.getByRole('tab', { name: 'Covers' })).toHaveAttribute(
+    expect(screen.getByRole('tab', { name: 'Flow' })).toHaveAttribute(
       'aria-selected',
       'true',
     )
     expect(screen.getAllByRole('tab').map((t) => t.getAttribute('aria-label'))).toEqual([
-      'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List', 'Rose',
+      'Flow', 'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List',
     ])
     openView('Feature')
     const lead = container.querySelector('.fp-lead') as HTMLElement
@@ -117,20 +119,41 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('the rose window sets every reading into rings around one hub', () => {
+  it('flow lays the whole catalog on one board with no tile overlapping', () => {
+    // Founder 2026-08-16: Flow replaces Rose and leads the toggles.
     const { container } = render(<SeriesBrowser />)
-    openView('Rose')
-    const hub = container.querySelector('.rose-hub')
-    const panes = container.querySelectorAll('.rose-pane')
-    expect(hub).not.toBeNull()
-    expect(panes.length).toBeGreaterThan(10)
-    // Nothing dropped: hub + panes accounts for the whole catalog.
-    expect(missingFromStage(container)).toEqual([])
-    // Every pane carries an accessible name, since the glass itself is
-    // decorative and the title lives in the hub.
-    panes.forEach((pane) => {
-      expect(pane.textContent?.trim()).toBeTruthy()
+    openView('Flow')
+    const tiles = container.querySelectorAll('.flow-tile')
+    expect(tiles.length).toBeGreaterThan(30)
+    expect(container.querySelector('.flow-frame')).not.toBeNull()
+
+    // Tiles are placed on a CSS grid. Read their cell rectangles back out and
+    // assert none of them collide — a packing bug would otherwise only show
+    // up as tiles stacked on top of each other in a screenshot.
+    const cells = Array.from(tiles).map((t) => {
+      const el = t as HTMLElement
+      const col = /^(\d+) \/ span (\d+)$/.exec(el.style.gridColumn)
+      const row = /^(\d+) \/ span (\d+)$/.exec(el.style.gridRow)
+      expect(col).not.toBeNull()
+      expect(row).not.toBeNull()
+      return {
+        x: Number(col![1]),
+        w: Number(col![2]),
+        y: Number(row![1]),
+        h: Number(row![2]),
+      }
     })
+
+    cells.forEach((a, i) => {
+      cells.slice(i + 1).forEach((b) => {
+        const overlap =
+          a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
+        expect(overlap).toBe(false)
+      })
+    })
+
+    // Nothing is dropped from the board.
+    expect(missingFromStage(container)).toEqual([])
   })
 
   it('the front page leads with the headline, byline last', () => {
