@@ -5,6 +5,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## WHERE YOU STOPPED FOLLOWS YOU BETWEEN DEVICES — SA-058 / F-101 (2026-08-16)
+
+Start a reading on your phone, finish it on your laptop. Founder-approved
+along with the production DDL it needs, which is the named approval SA-039 §2
+requires.
+
+**Newest write wins, never furthest position.** Taking `max(seconds)` is the
+obvious implementation and it is wrong in a way that only shows up in real use:
+a reader who deliberately restarts a devotional on their phone would be dragged
+back to wherever the laptop stopped, with no way to tell why. Both sides are
+read before seeking, too — resuming locally and correcting after would yank the
+reader mid-sentence on every load.
+
+**One row per reader per devotional, not an event log.** A log would write on
+every `timeupdate` tick for no benefit, and Workers gives each request 10ms of
+CPU. `seconds_listened` accumulates real playback time instead — clamped so a
+suspended tab cannot report hours that never happened — so a later year-in-
+review can total honest hours without an events table.
+
+Server writes are throttled to one per 30s while playing and flushed on pause,
+seek, end, `pagehide` and `visibilitychange`. The last two matter most on a
+phone, where a reading usually ends by the screen locking rather than by anyone
+pressing anything; both go out through `sendBeacon`, because a `fetch` is
+cancelled with the page at exactly the moment the position matters.
+
+**Until migration 018 is applied, resume degrades to on-device** — the
+behaviour that already shipped — and logs `CONFIG_FEATURE_DISABLED` with the
+migration named in `context`. That is a visible degraded path, not a silent
+fallback. `CONFIG_FEATURE_DISABLED` rather than a new code because the taxonomy
+in `api-failure.ts` is a closed alerting contract and this is exactly its
+"environment not provisioned" case.
+
+The repository deliberately does NOT use the `safeXxx` helpers, which swallow
+every error to `console.error`: this code has to tell "table not created yet"
+apart from "database is broken", because the first is expected and the second
+is an incident.
+
+**Outstanding:** the workerd verification dev rule #9 requires has not run — a
+parallel session was holding `.next` and the Workers preview. Route behaviour
+is covered by contract tests against the handlers; that is not the same thing
+and is recorded as outstanding in the handoff.
+
 ## THE TRANSPORT, ON THE AUDIBLE MODEL — SA-058 / F-101 (2026-08-16)
 
 Five directions were built as working mocks against real players found on

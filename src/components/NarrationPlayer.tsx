@@ -33,8 +33,13 @@ import {
   SkipForwardIcon,
   SleepIcon,
 } from '@/components/audio/TransportIcons'
+import {
+  fetchServerPosition,
+  pushPosition,
+  readLocalPosition,
+  resolvePosition,
+} from '@/lib/audio/listening-progress'
 
-const RESUME_KEY = 'euangelion:narration-position'
 const SPEED_KEY = 'euangelion:narration-speed'
 const SKIP_KEY = 'euangelion:narration-skip'
 /** Below this, treat a stored position as "start from the top". */
@@ -51,30 +56,6 @@ const CHAPTER_RESTART_WINDOW_S = 3
 const FADE_MS = 5000
 /** Device preferences never change underneath us; only this component writes them. */
 const NOOP_SUBSCRIBE = () => () => {}
-
-interface StoredPositions {
-  [slug: string]: number
-}
-
-function readPositions(): StoredPositions {
-  try {
-    return JSON.parse(
-      localStorage.getItem(RESUME_KEY) ?? '{}',
-    ) as StoredPositions
-  } catch {
-    return {}
-  }
-}
-
-function writePosition(slug: string, seconds: number): void {
-  try {
-    const all = readPositions()
-    all[slug] = seconds
-    localStorage.setItem(RESUME_KEY, JSON.stringify(all))
-  } catch {
-    // storage disabled — resuming is a convenience, never a hard requirement
-  }
-}
 
 /** A device preference, not the reading. Losing it costs nothing. */
 function readNumber(key: string, fallback: number): number {
@@ -178,13 +159,20 @@ export default function NarrationPlayer({
    * render.
    */
   const restorePosition = useCallback(
-    (audio: HTMLAudioElement) => {
-      const saved = readPositions()[slug]
+    async (audio: HTMLAudioElement) => {
       const end = Number.isFinite(audio.duration)
         ? audio.duration
         : track.duration
+
+      // BOTH sides are read before seeking. Seeking to the local value first
+      // and correcting after would yank the reader mid-sentence on every load
+      // that had a newer position on another device.
+      const local = readLocalPosition(slug)
+      const server = await fetchServerPosition(slug)
+      const saved = resolvePosition(local, server)
+
       if (
-        typeof saved === 'number' &&
+        saved !== null &&
         saved > RESUME_FLOOR_S &&
         saved < end - RESUME_TAIL_S
       ) {
@@ -217,15 +205,63 @@ export default function NarrationPlayer({
     }
   }, [])
 
-  // Persist position periodically while playing.
+  /**
+   * Seconds of real playback since the last server write, so the account can
+   * accumulate a true listening total rather than inferring one from position.
+   */
+  const listenedSince = useRef(0)
+  const lastTick = useRef<number | null>(null)
+
+  const flushProgress = useCallback(
+    (options: { flush?: boolean; ended?: boolean } = {}) => {
+      const audio = audioRef.current
+      if (!audio) return
+      pushPosition({
+        slug,
+        seconds: options.ended ? 0 : audio.currentTime,
+        duration: audio.duration || track.duration,
+        listenedDelta: listenedSince.current,
+        ended: options.ended,
+        flush: options.flush,
+      })
+      listenedSince.current = 0
+    },
+    [slug, track.duration],
+  )
+
+  // Persist while playing. The local cache is written on every call; the
+  // account at most once per 30s (see pushPosition). A DB write every 5s, as
+  // the old interval did, would be punishing under the Workers 10ms CPU budget.
   useEffect(() => {
     if (!playing) return
     const id = window.setInterval(() => {
       const audio = audioRef.current
-      if (audio && !audio.paused) writePosition(slug, audio.currentTime)
+      if (audio && !audio.paused) flushProgress()
     }, 5000)
     return () => window.clearInterval(id)
-  }, [playing, slug])
+  }, [playing, flushProgress])
+
+  /**
+   * Save on the way out.
+   *
+   * `pagehide` covers tab close, navigation and the iOS back-forward cache;
+   * `visibilitychange` covers a phone being locked or the app being
+   * backgrounded, which on mobile is the far more common way a reading ends.
+   * Both flush through `sendBeacon`, because a fetch is cancelled with the page
+   * at exactly the moment the position matters most.
+   */
+  useEffect(() => {
+    const save = () => flushProgress({ flush: true })
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') save()
+    }
+    window.addEventListener('pagehide', save)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      window.removeEventListener('pagehide', save)
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
+  }, [flushProgress])
 
   // Track whether the Audio Edition panel is on screen. The two surfaces hand
   // off to each other: when the panel is readable, the bar retires.
@@ -278,9 +314,11 @@ export default function NarrationPlayer({
       })
     } else {
       audio.pause()
-      writePosition(slug, audio.currentTime)
+      // Pausing is a deliberate stop, so it syncs now rather than waiting
+      // up to 30s for the throttle to open.
+      flushProgress({ flush: true })
     }
-  }, [slug])
+  }, [flushProgress])
 
   const skip = useCallback(
     (delta: number) => {
@@ -419,6 +457,17 @@ export default function NarrationPlayer({
    */
   const handleTimeUpdate = useCallback(
     (seconds: number) => {
+      // Accumulate REAL elapsed listening between ticks, clamped so a seek or
+      // a suspended tab cannot be counted as time spent. `timeupdate` fires
+      // roughly 4x/second, so a gap larger than a couple of seconds means the
+      // reader jumped or the tab slept — neither is listening.
+      const previous = lastTick.current
+      if (previous !== null) {
+        const delta = seconds - previous
+        if (delta > 0 && delta < 2) listenedSince.current += delta
+      }
+      lastTick.current = seconds
+
       setCurrent(seconds)
       const target = sleepChapterEnd.current
       if (sleepMode !== 'end-of-chapter' || target === null) return
@@ -597,7 +646,7 @@ export default function NarrationPlayer({
           }}
           onEnded={() => {
             setPlaying(false)
-            writePosition(slug, 0)
+            flushProgress({ flush: true, ended: true })
           }}
           onError={() => setError('This reading could not be loaded.')}
         />

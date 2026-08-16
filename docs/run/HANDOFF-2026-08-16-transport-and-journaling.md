@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** design approved, plan approved, **Phase 1 COMPLETE** (commits `7f6d64bc`, `db1ee9a6`). Phase 2 (transport) is next. See §7.
+**Status:** **Phases 1 and 2 COMPLETE.** Phase 3 (journaling) is next. See §7 for commits and §6 for what is blocked.
 
 ---
 
@@ -172,6 +172,20 @@ fetch(u+'/rest/v1/listening_progress?select=id&limit=1',{headers:{apikey:k,Autho
 
 `[]` = applied. `42P01` = still pending; cross-device resume degrades to on-device (by design, and it logs `MIGRATION_018_PENDING` rather than failing silently).
 
+### 6.1b The workerd verification for `/api/listening-progress` has NOT run
+
+Dev rule #9 requires `npm run preview` (workerd) and a real curl before deploy.
+It could not run on 2026-08-16: a parallel session was holding `.next` and an
+active `wrangler dev`, and starting a second preview would have broken their
+work. My own dev server was killed for the same reason after its manifests were
+destroyed mid-build.
+
+What DOES exist: `__tests__/listening-progress-route.test.ts` exercises the
+handlers directly — unsafe slug 400s before any work, signed-out GET is 200 with
+`progress: null`, signed-out PUT is 401, an implausible delta is clamped, and a
+pending migration 018 degrades to on-device while still logging. That is a
+contract test, not a runtime test. **Run the preview curl before any deploy.**
+
 ### 6.2 The auth gate CANNOT ship until a live sign-in is verified — RELEASE BLOCKER
 
 Plan Task 14. The known problems are **Supabase-dashboard-side, not in this repo**: the built-in mailer capped at ~2 emails/hour, and `{{ .Token }}` reported missing from the email templates. The code path (`/api/auth/magic-link`, `/api/auth/verify-code`, `/auth/callback`) is sound and already handles the mail rate limit.
@@ -182,12 +196,12 @@ Making the account the gate for **everything** on top of a rate-limited mailer w
 
 ## 7. Progress
 
-| Phase           | Tasks | State                                               |
-| --------------- | ----- | --------------------------------------------------- |
-| 1 — Foundations | 1–2   | **COMPLETE.** Task 1 `7f6d64bc`, Task 2 `db1ee9a6`. |
-| 2 — Transport   | 3–8   | Not started                                         |
-| 3 — Journaling  | 9–12  | Not started                                         |
-| 4 — Two-state   | 13–15 | Not started                                         |
+| Phase           | Tasks | State                                                                                          |
+| --------------- | ----- | ---------------------------------------------------------------------------------------------- |
+| 1 — Foundations | 1–2   | **COMPLETE.** Task 1 `7f6d64bc`, Task 2 `db1ee9a6`.                                            |
+| 2 — Transport   | 3–8   | **COMPLETE.** `bb0ee3c4` (transport, layout chosen from five mocks), plus cross-device resume. |
+| 3 — Journaling  | 9–12  | Not started                                                                                    |
+| 4 — Two-state   | 13–15 | Not started                                                                                    |
 
 Phases 1–3 leave the product working under today's auth rules. **Phase 4 changes the rules and is separately revertable** — the founder can have the player and journaling live before the gate flips.
 
