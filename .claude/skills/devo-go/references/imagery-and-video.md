@@ -4,43 +4,76 @@
 
 NO image generation until the founder has read and approved the full text (SA-029 gate). Video IDs are verified during research and shown as cards in the review artifact; imagery briefs are written per day but not executed.
 
-## Generator
+## Generator — as actually shipped 2026-08-16
 
-Higgsfield MCP, model `gpt_image_2` ("GPT Image 2", OpenAI) — the founder-directed generator (SA-029). Params: `resolution: "2k"`, `quality: "high"` (~7 credits/image), **`aspect_ratio: "1:1"` always**. Plan cap: 8 concurrent jobs — fire 8, poll `jobs_wait`, fire the rest as slots free. Download `results.rawUrl` PNGs.
+Higgsfield MCP, model `gpt_image_2`. Params: **`aspect_ratio: "3:2"`**,
+`resolution: "2k"`, `quality: "high"` → **2048×1360**, ~7 credits/image. Plan cap
+8 concurrent — fire 8, poll `jobs_wait`, fire the next as slots free. Download
+`results.rawUrl` PNGs.
 
-## Generate ONE master, derive every ratio (SA-052)
+Founder approved this batch: _"this style is almost perfect for now."_
 
-**Never generate per aspect ratio.** Generate one 2048×2048 master and crop every
-slot from it. A square master is the geometric mean of the extremes we need
-(9:16 → 1.91:1), so it loses the least to any single crop. Credits then scale
-with how many _pictures_ you want, not how many _places_ they appear — a 10-slot
-set costs 7 credits instead of 70.
+## Two masters, NOT one square (SA-052)
 
-| Key             | Slot                          | Pixels    |
-| --------------- | ----------------------------- | --------- |
-| `site-hero`     | Site headline hero            | 1408×768  |
-| `site-card`     | Series card                   | 1024×1024 |
-| `site-inline`   | Inline / day banner           | 1600×900  |
-| `site-portrait` | Portrait card 3:4             | 1050×1400 |
-| `og-card`       | OG / FB / LinkedIn / X link   | 1200×630  |
-| `ig-square`     | Instagram / LinkedIn square   | 1080×1080 |
-| `ig-portrait`   | Instagram portrait 4:5        | 1080×1350 |
-| `story`         | Stories / Reels / TikTok 9:16 | 1080×1920 |
-| `pinterest`     | Pinterest 2:3                 | 1000×1500 |
-| `yt-thumb`      | YouTube thumbnail 16:9        | 1280×720  |
+> **Retired:** the earlier "one 2048² square derives every ratio" rule. It read as
+> economical and was the direct cause of the set the founder rejected. The site
+> consumes eight ratios; their crop-safe intersection from a square is the central
+> **60%×27% — 16% of the frame** — so every composition was forced to the centre
+> with padding around it. The pipeline was manufacturing the "everything looks the
+> same, everything floats centred" fault. Do not reinstate it.
 
-Crop with `fit: 'cover', position: 'centre'` — **not** `sharp.strategy.attention`.
-Saliency targets the largest mass, which on these plates deletes the meaning: it
-kept a hand and cropped out the kneeling figure it was reaching for. Composition
-carries the crop instead, via the CROP clause below.
+| Master        | Size            | Safe zone             | Serves                                                                                                                                     |
+| ------------- | --------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Landscape** | 2400×1600 (3:2) | central 66%×75% ≈ 50% | series hero, card (4:3), Rack (4:3), headline (1408:768), artwork frames (3:2), Substack (16:9), landscape Mosaic, bento lead/default/wide |
+| **Portrait**  | 1800×2400 (3:4) | central 66%×90% ≈ 60% | Covers (3:4), Mosaic (4:5), tall Mosaic (3:5), rhythm block (1408:1700), bento tall                                                        |
 
-**Originals are never overwritten** (founder constraint). Derivatives go to new
-paths; the master stays untouched and archived.
+The portrait is **not a re-crop of the landscape** — same concept, restaged tall.
+
+**Out of scope:** the `3358/920` homepage banner is not series art (it is
+`header-v2.webp`, native ratio, never cropped from these). Series OG cards are
+separately rendered text-led cards. Social 1:1 / 4:5 / 9:16 get their own
+art-directed pass — do not derive them from series plates.
+
+Install: crop the landscape master to **1600×872 webp at q60** →
+`public/images/site/series/<slug>.webp`. `heroImage` in `src/data/series.ts`
+already points there, so install is a file replace with no code change. Crop with
+`fit: 'cover', position: 'centre'` — **never** `sharp.strategy.attention`, which
+targets the largest mass and once kept a hand while deleting the kneeling figure
+it reached for.
+
+**Never upscale.** `next.config.ts` sets `images.unoptimized`, so the raw file is
+served with no srcset; the headline slot is ~1267 CSS px on a 1920 desktop. A
+1024 source was being enlarged 1.24× and the halftone read as grain.
+
+**Originals are never overwritten** (founder constraint). The installer archives
+to `design-sources/` (gitignored; git history is the real revert path) and is
+write-once so a second run cannot clobber the archive with its own output.
 
 ## Per-devotional volume
 
 Minimum 3 generated images per devotional, up to 5 where the content needs them.
-Each is a master that derives the full table above.
+
+## The three axes that make a SET work
+
+A plate can be beautiful and the set still fail. The founder's rejection was
+_"all the images feel like they are depicting the same devotional."_ Assign every
+plate all three of these, and vary them across the set:
+
+**1. Composition archetype** — A scale break · B vast field/tiny figure · C single
+object close on toned ground · D cross-section · E repetition + one break ·
+F framed view (the frame _is_ an opening) · G overhead plan (straight down, not
+oblique) · H silhouette · I detail crop · J impossible juxtaposition.
+No two plates adjacent on the series page share one.
+
+**2. Coverage band** — AIRY 20–35% ink · MID 40–55% · DENSE 70–90%. Target roughly
+12/14/7 across 33. **State the band and the percentage in the subject line.**
+
+**3. One conceptual device** — the surreal move, named outright. This is what makes
+a plate legible as a thumbnail; a detailed landscape is not.
+
+Measured outcome: rejected set mean 78% ink / sd 9.7; shipped set mean 53% / sd
+26.8 / range 7–100%. The founder's four approved plates span 22–85%. **Spread is
+the metric, not any single plate.**
 
 ## The prompt — canonical copy lives in the repo
 
@@ -50,18 +83,28 @@ per-series subject lines. Assemble with `node scripts/imagery/build-prompts.mjs 
 Do not retype the preamble from memory — it was founder-approved verbatim on
 2026-08-15 after three rejected rounds.
 
-The prompt is five blocks, in order:
+The prompt is nine blocks, in this order. Each exists because of a specific
+observed failure — none is decorative:
 
-1. **FULL BLEED** — artwork to every edge, no paper margin, border, frame or vignette.
-2. **FULLY DEVELOPED FRAME** — a complete illustrated scene, never an isolated subject on blank paper. Sky carries cloud structure, ground carries texture, distance carries landscape. Quiet areas may be faint but are always printed.
-3. **Riso duotone style** — cobalt ultramarine on warm cream, Ben-Day dots carrying every tone, paper grain, faint crimson misregistration, no greys, no text.
-4. **PEOPLE** — region- and period-specific; skin as a printed value; faces by pose. See below.
-5. **SUBJECT** then **COMPOSITION FOR CROPPING**.
+1. **FULL BLEED** — artwork to every edge; no paper margin, border, frame, vignette. _(17 of 21 masters once came back with a cream border; `sharp.trim()` cannot remove it.)_
+2. **NO BARE PAPER** — every region printed; even the quietest carries a dot gradient or tone. _(Founder: "no stark nothing backgrounds.")_
+3. **PRINTED IS NOT POPULATED** — printing a region does NOT mean filling it with scenery; add nothing the subject does not require. _(The fix for block 2 over-corrected into demanding sky, ground texture and distant landscape everywhere, which produced 33 plates at 78% mean ink that all looked alike.)_
+4. **GROUNDED, NEVER FLOATING** — real contact, gravity, attachment; no floating emblems.
+5. **SCALE MUST BE LEGIBLE** — where something is meant to be enormous, include a readable scale reference. **A single small figure is the subject, not forbidden filler** — the ban on background figures forbids crowds only. _(Without this, a giant plumb bob rendered alone read as an ordinary object photographed close.)_
+6. **COVERAGE DISCIPLINE** — the stated ink percentage is a hard budget, not a mood: render the subject and STOP. _(Band accuracy went 0/4 → 4/8 the moment this was added.)_
+7. **Riso duotone style** — cobalt ultramarine on warm cream, Ben-Day dots carrying every tone, paper grain, faint crimson misregistration, no greys, no text and no invented glyphs. _(A coin came back with pseudo-lettering struck into it.)_
+8. **HANDS AND ANATOMY** — five fingers, correct length order, real joints, thumb low on the inner palm; prefer hands doing physical work; obscure them when they are not the subject.
+9. **NOT AI ARTWORK** — names the tells to avoid (airbrushed haze, glow bloom, uniform obsessive detail, bilateral symmetry, filigree, plastic sheen, even lighting) and the alternative (uneven ink, deliberately flat passages, asymmetric hand-cut shapes, registration slip, one decisive light direction).
+
+Then **PEOPLE**, **SUBJECT**, and the orientation-matched **CROP_CLAUSE**.
 
 > **Deleted 2026-08-15:** the old style block said _"Generous negative space, high
-> horizon line, small figure scale, single-subject composition."_ That line is what
-> produced subjects floating in blank cream. Founder: _"no stark nothing
-> backgrounds."_ Block 2 replaces it. Do not reinstate it.
+> horizon line, small figure scale, single-subject composition."_ That produced
+> subjects floating in blank cream.
+> **Also deleted 2026-08-16:** its replacement, "FULLY DEVELOPED FRAME", which
+> demanded sky, ground and landscape in every frame and caused the opposite
+> failure. Blocks 2 and 3 above are the corrected pair. Quiet, blank and filled
+> are three different things; only blank was ever forbidden.
 
 ### PEOPLE — the clause that matters most
 
@@ -96,18 +139,31 @@ homepage**. This is part of publishing, not a follow-up task:
 
 ## Accuracy Gate (SA-032, extended by SA-052 — MANDATORY before placement)
 
-Every render is checked in this order. Steps 1–2 are measured; **3–5 require
-opening the image**.
+Run `node scripts/imagery/verify-masters.mjs <dir>` for steps 1–2. Steps 3–6
+require opening the image; the script deliberately refuses to score them.
 
-1. **Border** — sample 3 pixels down each edge of the 1408×768 centre crop; all must be ink. `sharp.trim()` cannot fix a border — the gradient is too soft. Regenerate.
-2. **Blank paper** — bare-paper coverage across the whole frame ≈ 0%. Anything higher means block 2 was ignored.
-3. **Figures** — period dress, dense-dot brown skin, no blacked-out faces, no modern clothing. A plate can pass 1 and 2 and still fail here.
-4. **Fact check** — does the image depict what the caption claims? Botany (wheat BOWS heavy and golden at maturity; darnel stands stiff with thin dark spikelets; identical ONLY pre-heading), history, geography, textual detail (four soils are four DISTINCT grounds; a mustard seed is tiny and its tree large). If the teaching hinges on a difference, the difference must be visible and correct.
-5. **Crop check** — derive the 9:16 and 1.91:1 crops and confirm both still carry the subject and the golden light. A master that only works square is a failed master.
+1. **Border** — 3 samples down each edge of the 1408×768 crop must be ink. `sharp.trim()` cannot fix a border; the gradient is too soft. Regenerate.
+2. **Blank paper** — measured as **local variance at native resolution**, not lightness. Printed quiet carries dot texture; blank paper is flat. **Both naive versions of this check produced false negatives** — a lightness threshold failed every correct cream-dominant AIRY plate, and sampling after a downscale averaged the halftone away so printed areas read as flat. Nine good plates were nearly regenerated for nothing.
+3. **Hands** — count the fingers on every visible hand. Five each: four plus a thumb. Middle longest, little shortest, thumb low on the inner palm. No fused, splayed, crossed or boneless digits. A malformed hand is the single most common founder rejection and is invisible to every automated check.
+4. **Impossible geometry** — no structure that reads as Escher: no recursive lattices, no ambiguous up/down, no spans that loop or return on themselves, no tessellated modules. Founder: _"looks like an escher drawing and thus looks like ai made it and got confused."_ When a structure is uncertain, make it plainer — an obviously buildable object is correct, anything clever is wrong.
+5. **Does it suit the passage** — a technically fine plate can simply be the wrong idea for the day. Read the devotional and ask whether a reader would connect them. Founder rejected one plate on exactly this and nothing else.
+6. **Fact check** — botany (wheat BOWS heavy and golden at maturity; darnel stands stiff with thin dark spikelets; identical ONLY pre-heading), history, geography, textual detail (four soils are four DISTINCT grounds). If the teaching hinges on a difference, the difference must be visible.
+7. **Crop check** — derive the worst-case crops and confirm the device survives: 1:1 and 1408:768 for landscape, 1:2 and 3:5 for portrait. A master that only works at its native ratio is a failed master.
 
-A beautiful wrong image fails. Regenerate with the fact named explicitly in the
-prompt. Founder precedent: the v1 wheat/darnel plate showed two identical formed
-heads — style-perfect, botanically wrong, caught by the founder IN PRODUCTION.
+A beautiful wrong image fails. Founder precedent: the v1 wheat/darnel plate was
+style-perfect, botanically wrong, and caught by the founder IN PRODUCTION.
+
+## Set-level check — the one that actually catches sameness
+
+Per-image verification passed 33 near-identical plates 33 times. The defect only
+exists **across** the set. Before any full-set sign-off, report:
+
+- ink coverage per plate against its assigned band, and the count out of band
+- distribution against the 12/14/7 target
+- **standard deviation** — under ~15 means the set has collapsed toward one register
+- any two series-page neighbours sharing archetype or band
+- a contact-sheet panel at **true series-card size**: if the plates cannot be told
+  apart in that grid, the round has failed regardless of how they look large
 
 ## Video embedding
 

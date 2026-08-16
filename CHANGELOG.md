@@ -26,6 +26,31 @@ set gate: landscape mean 37.6%, SD 23.7, range 5.0–89.6% with 23/33 outside th
 assigned bands; portrait mean 37.2%, SD 18.8, range 4.9–84.1% with 18/33 outside.
 No upscaling was performed.
 
+## IMAGERY — three plate fixes + skill brought in line (2026-08-16)
+
+**SA-052 · F-096** — founder: _"this style is almost perfect for now"_, with three
+rejections:
+
+- **surrender-to-gods-will** — _"the right hand looks like ai drew it - its malformed."_ Regenerated with an explicit anatomy spec: both hands at the same viewing angle, five fingers counted, correct length order (middle longest, little shortest), thumb low on the inner palm, no crossing or fusing, and an instruction to simplify the pose rather than attempt an expressive one.
+- **too-busy-for-god** — _"the image doesnt quite suit the passage."_ New concept: a figure bent under an impossibly tall lashed load of jars and bundles, hurrying straight past a lit oil lamp they never notice.
+- **the-nature-of-belief** — _"looks like an escher drawing and thus looks like ai made it and got confused."_ New concept with geometry constrained hard: ONE straight plank walkway, one-point perspective, two side ropes and nothing else, far end simply not drawn. "If in doubt, make it plainer."
+
+**The gate cried wolf twice more.** Its border check was lightness-based, so it
+failed both airy replacements for having pale edges — the same class of false
+negative that nearly caused nine good plates to be regenerated earlier. An edge
+now counts as a border defect only if it is pale **and flat**; a real print border
+is unprinted, an airy composition is not. Verified against a synthetic flat-border
+plate, which is still correctly rejected `BAD(6/6)`.
+
+**Skill updated to match what shipped** — `imagery-and-video.md` carried the
+retired one-square-master rule and the retired FULLY DEVELOPED FRAME block. It now
+documents the 3:2 generation params, the two-master architecture with measured
+safe zones, the nine prompt blocks each annotated with the failure that produced
+it, the three set-level axes, and a seven-step gate that adds hands, impossible
+geometry and "does it suit the passage" — the three things measurement cannot catch.
+
+---
+
 ## SERIES IMAGERY — the editorial pass (2026-08-16)
 
 **SA-052 · F-096** — all 33 non-approved plates regenerated. The four approved

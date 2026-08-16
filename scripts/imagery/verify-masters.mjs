@@ -99,8 +99,30 @@ async function check(file) {
     ...ys.map((y) => px(3, y)),
     ...ys.map((y) => px(hero.info.width - 4, y)),
   ]
-  const paperEdges = edges.filter(([r, g, b]) => isPaper(r, g, b)).length
-  const borderOk = paperEdges < 3
+  // A pale edge is NOT a border defect — AIRY plates legitimately run cream to
+  // the edge. A real print border is pale AND FLAT (unprinted). Requiring both
+  // stops the check failing every correct airy composition, which it did on
+  // three separate plates before this was fixed.
+  const paleEdges = edges.filter(([r, g, b]) => isPaper(r, g, b)).length
+  const edgeStrip = await sharp(src)
+    .extract({
+      left: 0,
+      top: Math.round((await sharp(src).metadata()).height * 0.3),
+      width: 48,
+      height: 240,
+    })
+    .greyscale()
+    .raw()
+    .toBuffer()
+  let sum = 0
+  let sq = 0
+  for (const v of edgeStrip) {
+    sum += v
+    sq += v * v
+  }
+  const edgeVar = sq / edgeStrip.length - (sum / edgeStrip.length) ** 2
+  const paperEdges = paleEdges
+  const borderOk = paleEdges < 3 || edgeVar >= FLAT_VARIANCE
 
   // Step 2 — is any of the quiet area genuinely UNPRINTED (flat), rather than
   // merely light? Lightness alone rejects correct AIRY plates.
