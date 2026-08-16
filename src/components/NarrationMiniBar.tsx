@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { formatTime } from '@/lib/audio/tracks'
+import { PauseIcon, PlayIcon } from '@/components/audio/TransportIcons'
 
 export interface NarrationMiniBarProps {
   title: string
@@ -106,16 +107,12 @@ export default function NarrationMiniBar({
           onClick={onToggle}
           aria-label={playing ? 'Pause the reading' : 'Resume the reading'}
         >
-          {playing ? (
-            <svg viewBox="0 0 12 14" aria-hidden="true">
-              <rect x="1" y="1" width="3.2" height="12" />
-              <rect x="7.8" y="1" width="3.2" height="12" />
-            </svg>
-          ) : (
-            <svg viewBox="0 0 12 14" aria-hidden="true">
-              <path d="M1 1 L11 7 L1 13 Z" />
-            </svg>
-          )}
+          {/* The shared glyphs, so the bar and the panel cannot drift into
+              drawing the same control two different ways. Only play/pause is
+              unified: the ±15 controls stay set as TYPE here, deliberately —
+              a circular arrow at this size reads as a smudge, and Industry is
+              the brand's own voice for meta. */}
+          {playing ? <PauseIcon size={14} /> : <PlayIcon size={14} />}
         </button>
 
         {/* The title block is the chapter affordance where chapters exist:
@@ -320,10 +317,12 @@ export default function NarrationMiniBar({
           flex-shrink: 0;
         }
 
+        /* Square, because the shared glyphs use a square viewBox — the old
+           13×15 was sized for a hand-rolled 12×14 drawing and would stretch
+           these non-uniformly. */
         .narration-mini-play svg {
-          width: 13px;
+          width: 15px;
           height: 15px;
-          fill: currentColor;
         }
 
         .narration-mini-cluster {

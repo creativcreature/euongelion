@@ -5,6 +5,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE TRANSPORT, ON THE AUDIBLE MODEL — SA-058 / F-101 (2026-08-16)
+
+Five directions were built as working mocks against real players found on
+Mobbin and put to the founder, who chose **"C, with B's restraint in the type"**
+— the shape Spotify Audiobooks and The Atlantic arrived at independently: a
+captioned rail above, play dead centre, speed and sleep in opposite corners,
+with Waking Up's typography so the chapter reads as an italic serif caption
+rather than an uppercase system label.
+
+Word-buttons (`−15 / LISTEN / +15 / CHAPTERS / 1×`) became glyphs, which bought
+the row space for what was missing. **2× did not exist** — speed cycled
+0.8→1→1.25→1.5 and wrapped, so any value cost up to four taps; it is now a
+sheet of eight, 0.75 to 3, with `preservesPitch` so a fast reading is not
+chipmunked. **All 528 tracks carried measured chapter timings that nothing in
+the transport could use**; there is now chapter stepping (back restarts the
+current chapter unless already at its head), tick marks on the rail, and a
+"left in this chapter" readout. A sleep timer offers 5/10/15/30 minutes and
+end-of-chapter, and fades over five seconds rather than cutting mid-sentence.
+
+Skip stays 15s rather than Audible's 30s: this prose is dense and a good number
+of readings run under five minutes, where 30s overshoots the thing you were
+trying to hear again. 30 is one tap away in the same sheet.
+
+Three defects found by looking at it in a browser rather than trusting green
+tests:
+
+1. **The play button was invisible in light mode.** `--color-text` does not
+   exist in this codebase — the token is `--color-text-primary`. An invalid
+   `var()` in `color` silently falls back to inherit, so text survived, but in
+   `background` it computes to transparent. Same trap class as SA-044/SA-047,
+   and it was already latent in `NarrationChapters`. Fixed everywhere with an
+   explicit fallback chain.
+2. **The controls were stretched across 1161px.** The rules should run the full
+   stage width; the controls should not. They sit on the 42rem reading measure
+   now, so the two corners read as one object.
+3. **"Next chapter" overlapped "Sleep timer" by 7px at 375px** — the exact
+   failure this layout was chosen to avoid. Eight controls need ~460px at a
+   44px target, so below that chapter stepping gives way; it is the only pair
+   reachable three other ways (sheet, lock screen, mini bar), and Spotify's
+   phone layout drops it too.
+
+Also: device preferences moved to `useSyncExternalStore`, the pattern
+`AudioPlayer` already used. A mount effect is a cascading render; a lazy
+`useState` reads localStorage during SSR; and restoring inside `loadedmetadata`
+looked right but that event never fires in jsdom and would not fire at all in a
+browser if the audio stalls or 404s — silently dropping the reader's remembered
+speed.
+
+The sheet shell (portal, focus trap, Escape, scroll lock, focus restore) is
+extracted to `TransportSheet` rather than hand-copied into a third file.
+
 ## EVERYTHING DELETABLE IS NOW EXPORTABLE — SA-058 / F-101 (2026-08-16)
 
 Migration 018 (`listening_progress`) is written and **awaiting application in
@@ -355,7 +406,7 @@ first per the image rules; it holds no cut-out bookend forms, only full scenes
 with grounds.
 
 **Cutting out halftone art, for next time.** A per-pixel colour key punches
-holes straight through the halftone, because the cream *between* dots is the
+holes straight through the halftone, because the cream _between_ dots is the
 same cream as the background. The mask is built by flood-filling from the border
 on a **blurred** greyscale copy — which bridges the dots — then keeping only the
 **largest connected component**, which drops the faint haze islands the
@@ -369,7 +420,7 @@ top and the day count to the foot, so short titles floated above a dead gap.
 
 **And what actually clipped the long titles** was a hardcoded
 `max-height: 300px` on `.spine-title` that predated the larger type. In vertical
-writing mode the *inline* axis is vertical, so `max-height` caps **line
+writing mode the _inline_ axis is vertical, so `max-height` caps **line
 length** — it ellipsised titles while the spine had hundreds of pixels spare.
 Two rounds of raising the spine height did nothing, because height was never the
 constraint.

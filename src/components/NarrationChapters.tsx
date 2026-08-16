@@ -241,7 +241,7 @@ export default function NarrationChapters({
           font-style: italic;
           font-size: 1.15rem;
           line-height: 1.2;
-          color: var(--color-text);
+          color: var(--color-text-primary, var(--color-fg));
         }
 
         .narration-sheet-close {
@@ -253,7 +253,10 @@ export default function NarrationChapters({
           font-size: 0.6rem;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--color-text-secondary, var(--color-text));
+          color: var(
+            --color-text-secondary,
+            var(--color-text-primary, var(--color-fg))
+          );
         }
 
         .narration-sheet-list {
@@ -308,7 +311,7 @@ export default function NarrationChapters({
           font-family: var(--font-family-serif, Georgia, serif);
           font-size: 0.98rem;
           line-height: 1.3;
-          color: var(--color-text);
+          color: var(--color-text-primary, var(--color-fg));
         }
 
         @media (prefers-reduced-motion: reduce) {

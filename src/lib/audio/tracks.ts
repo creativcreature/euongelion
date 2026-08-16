@@ -108,3 +108,35 @@ export function chapterAt(
   }
   return found
 }
+
+/**
+ * The current chapter WITH its boundaries.
+ *
+ * `chapterAt` answers "which chapter", which is enough to mark the section
+ * being read. Two things need more than that: stepping between chapters, and
+ * telling the reader how much of this one is left. Both need to know where the
+ * chapter ends, and the last chapter has no successor to borrow that from —
+ * hence `duration` as the closing boundary.
+ *
+ * Kept beside `chapterAt` and deliberately using the same `+ 0.001` comparison:
+ * two functions answering "which chapter is this" from different arithmetic
+ * would eventually disagree, and the reader would see the highlighted section
+ * and the transport label point at different places.
+ */
+export function chapterBounds(
+  chapters: NarrationChapter[] | undefined,
+  seconds: number,
+  duration: number,
+): { index: number; start: number; end: number } | null {
+  if (!chapters?.length) return null
+  let index = 0
+  for (let i = 0; i < chapters.length; i += 1) {
+    if (chapters[i].t <= seconds + 0.001) index = i
+    else break
+  }
+  return {
+    index,
+    start: chapters[index].t,
+    end: chapters[index + 1]?.t ?? duration,
+  }
+}

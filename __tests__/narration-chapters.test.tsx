@@ -1,5 +1,12 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, cleanup, act, fireEvent } from '@testing-library/react'
+import {
+  render,
+  screen,
+  cleanup,
+  act,
+  fireEvent,
+  within,
+} from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
 import { chapterAt, type NarrationChapter } from '@/lib/audio/tracks'
 
@@ -229,7 +236,14 @@ describe('the mini bar shows position, not just identity', () => {
     setTime(container, 210)
     act(() => observerCallback?.([{ isIntersecting: false }]))
 
-    expect(screen.getByLabelText('Audio edition, minimized')).toBeTruthy()
-    expect(screen.getByText('The Saying He Did Not Write')).toBeTruthy()
+    const miniBar = screen.getByLabelText('Audio edition, minimized')
+    expect(miniBar).toBeTruthy()
+    // Scoped to the bar. Since SA-058 gave the panel a caption naming the
+    // chapter too, an unscoped query matches in two places — the panel is
+    // still mounted, merely scrolled out of view. The claim under test has
+    // always been about the BAR, so it now says so.
+    expect(
+      within(miniBar).getByText('The Saying He Did Not Write'),
+    ).toBeTruthy()
   })
 })
