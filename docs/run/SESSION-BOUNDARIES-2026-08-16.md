@@ -42,19 +42,24 @@ additive), `CHANGELOG.md`, and the feature-PRD registry.
 
 ---
 
-## 2. Id collisions — three so far today
+## 2. Id collisions — FOUR so far today
 
 Every one cost a renumber. `docs/production-decisions.yaml` is canonical for SA
 ids; a PRD file on disk is canonical for F ids.
 
 | #   | What happened                        | Resolution                              |
 | --- | ------------------------------------ | --------------------------------------- |
-| 1   | `6f5f040c` took **SA-057 / F-100**   | Session B renumbered to SA-060 / F-103  |
+| 1   | `6f5f040c` took **SA-057 / F-100**   | Session B renumbered to SA-062 / F-103  |
 | 2   | `27da1135` took **SA-059 AND F-103** | Session B renumbered to SA-061 / F-105  |
 | 3   | `Reveal.tsx` cites **F-104**         | Session B yielded; F-104 is Session A's |
+| 4   | `debea132` took **SA-060**           | Session B renumbered to SA-062          |
 
 **Currently claimed by Session B:** SA-058 (transport, F-101), SA-061
-(journaling, F-102), SA-060 (two-state model, **F-105** — not yet written).
+(journaling, F-102), SA-062 (two-state model, **F-105** — not yet written).
+
+Collision #4 landed in the ninety seconds between checking the yaml and writing
+this file, which is the clearest possible argument for the convention below:
+**checking is not claiming.**
 
 **Suggested convention:** claim an id by committing the `docs/feature-prds/F-xxx.md`
 stub FIRST, before writing code that cites it. Re-check both sources immediately
@@ -100,7 +105,7 @@ ISR across ~568 pages. This is why Session B resolves auth client-side.
 
 ## 4. What Session B has NOT done, and why
 
-**Phase 4 — the two-state auth gate (SA-060 / F-105) is deliberately paused.**
+**Phase 4 — the two-state auth gate (SA-062 / F-105) is deliberately paused.**
 It needs two things Session A is actively rewriting:
 
 1. an **auth-aware primary nav slot** in `EuangelionShellHeader.tsx`;

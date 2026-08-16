@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-060/F-105) is next and is the one with a release blocker — see §6.
+**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-062/F-105) is next and is the one with a release blocker — see §6.
 
 ---
 
@@ -25,7 +25,7 @@ A full 18-row trace of every ask to where it is handled is in **spec §7 (Ask in
 
 | #   | Ruling                                                                                                                                                                                                      | Consequence                                                                             |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| R1  | **Two site states.** "Having an account enables notes, saving features, highlights etc. No account, data should not be retained… The unsigned in state simply is a reader, non-interactive and non saving." | Becomes SA-060. **Reverses SA-018 (as amended), SA-038 §2, SA-039 §5.**                 |
+| R1  | **Two site states.** "Having an account enables notes, saving features, highlights etc. No account, data should not be retained… The unsigned in state simply is a reader, non-interactive and non saving." | Becomes SA-062. **Reverses SA-018 (as amended), SA-038 §2, SA-039 §5.**                 |
 | R2  | Gate line: **reading + Soul Audit stay open; Daily Bread + all saving gated.**                                                                                                                              | SA-026 ("Soul Audit anonymous and free forever") is NOT reversed.                       |
 | R3  | **Audio clips approved** — a bookmark at a timestamp, landing in the same Notes list.                                                                                                                       | Spec §4.4, plan Task 11.                                                                |
 | R4  | **Cross-device audio resume approved**, including the prod DDL it needs.                                                                                                                                    | This IS the founder-named approval that SA-039 §2 requires for prod DDL. Migration 018. |
@@ -127,7 +127,7 @@ The prayer number is why `PrayerModule` gets an _Add your own prayer_ affordance
 
 `docs/production-decisions.yaml` is canonical for SA ids. **Highest existing is SA-056.** Claimed here:
 
-- **SA-060** — two-state site model. Its note MUST state explicitly that it reverses SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5, and that SA-026 is NOT reversed.
+- **SA-062** — two-state site model. Its note MUST state explicitly that it reverses SA-018 (as amended 2026-06-09), SA-038 §2, SA-039 §5, and that SA-026 is NOT reversed.
 - **SA-058** — Audible-modeled transport + cross-device resume.
 - **SA-061** — unified journaling on the `annotations` table.
 
@@ -136,7 +136,7 @@ Feature PRDs claimed: **F-105** (two-state), **F-101** (transport), **F-102** (j
 ### TWO collisions happened — read this before claiming an id
 
 **First:** the two-state model was claimed as SA-057 / F-100. A parallel session
-committed `6f5f040c` and took both. Renumbered to SA-060 / F-103.
+committed `6f5f040c` and took both. Renumbered to SA-062 / F-103.
 
 **Second, hours later:** that same session committed `27da1135` and took
 **SA-059 AND F-103** — SA-059 written into `production-decisions.yaml`, which is
@@ -146,7 +146,7 @@ canonical, so it is theirs. Renumbered again:
 | -------------------------- | ------------------ | ---------------------------- |
 | Audible transport + resume | **SA-058 / F-101** | never collided               |
 | Journaling                 | **SA-061 / F-102** | was SA-059                   |
-| Two-state model            | **SA-060 / F-105** | was SA-057/F-100, then F-103 |
+| Two-state model            | **SA-062 / F-105** | was SA-057/F-100, then F-103 |
 
 **Two commits cite the superseded number.** `7f6d64bc` and `de54e26f` say
 "SA-059 (F-102)" in their messages; the work is SA-061. Git history is not
