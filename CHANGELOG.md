@@ -5,6 +5,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## OPENING A READING IS NOT LISTENING TO IT — SA-058 / F-101 (2026-08-16)
+
+Found in real production data rather than in review. Four `listening_progress`
+rows existed within hours of the deploy; two read `0s position, 0s listened` —
+devotionals someone opened and never played.
+
+The `<audio>` element renders on every reading whether or not anyone presses
+play, and the progress flush fires on `pagehide` regardless, so merely OPENING a
+devotional wrote a row. Harmless for resume (position 0 resumes nowhere) and
+corrosive for anything counting: a year-in-review built on this would report
+opens as listens, which is worse than reporting nothing.
+
+Guarded now — nothing is written unless playback actually started or real
+listening time accumulated. The two open-only rows were deleted so a later total
+starts honest; the two genuine rows are untouched, including a 22-minute
+position with 220 seconds accumulated, which is the whole cross-device feature
+working end to end in the Workers runtime.
+
 ## THE LOCK NOW OPENS — SA-062 / F-105 (2026-08-16)
 
 Shoring up the loose ends the two-state model left. Three were real defects,

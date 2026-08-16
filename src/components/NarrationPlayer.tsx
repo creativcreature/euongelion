@@ -230,6 +230,14 @@ export default function NarrationPlayer({
     (options: { flush?: boolean; ended?: boolean } = {}) => {
       const audio = audioRef.current
       if (!audio) return
+
+      // Nothing to record. The audio element exists on every reading whether or
+      // not anyone presses play, and this fires on pagehide — so without this
+      // guard, merely OPENING a devotional wrote a row at position 0. Four such
+      // rows appeared in production within hours. A listening total built on
+      // that would count opens as listens, which is exactly the kind of number
+      // that is worse than no number.
+      if (!hasStarted && listenedSince.current <= 0) return
       pushPosition({
         slug,
         seconds: options.ended ? 0 : audio.currentTime,
@@ -240,7 +248,7 @@ export default function NarrationPlayer({
       })
       listenedSince.current = 0
     },
-    [slug, track.duration],
+    [slug, track.duration, hasStarted],
   )
 
   // Persist while playing. The local cache is written on every call; the
