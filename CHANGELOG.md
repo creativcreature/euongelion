@@ -119,14 +119,24 @@ sayings quoted without their reporting clause, guarded so anything still
 carrying narration is excluded. A third matches BSB spans literally. 27
 ambiguous verses are refused outright.
 
-**Colour is measured, not chosen.** `#7a1c12` is the deepest red clearing WCAG
-AA against every highlight ground — yellow 7.8:1, blue 5.4, green 6.4, pink 5.6,
-purple 5.0, cream 9.1. Dark mode lifts to `#f5988a`; inside a highlight it
-returns to the dark red in both themes, because highlight grounds are light
-pastels in both. That is the founder's "ensure the highlight color is correct
-for such text", and it is why the light value was measured against the swatches
-rather than against the page. Editorial emphasis now renders _inside_ the red
-instead of being replaced by it.
+**Colour is the brand red — after a correction.** The first pass invented
+`#7a1c12` by contrast measurement without ever checking the palette. Founder:
+_"i have a red color that is a part of the branding already…?"_ He was right.
+`--color-crimson` already exists — `#c4192e` light, `#e25868` dark, the riso
+spot ink already carrying the pullquote marks — and red letter uses that token.
+It measures 5.2:1 on cream and 4.2:1 on the deep ground, clearing AA at the
+display sizes scripture is set in.
+
+It does **not** survive a highlight behind it (purple 2.8, blue 3.1, pink 3.2),
+so inside a highlight only it deepens to `#7d0f19` — the same hue further down,
+5.1:1 on the worst ground and 9.3 on cream — reading as the brand red darkened
+rather than a second colour. One value serves both themes there, because
+highlight grounds are light pastels in both. That is the founder's "ensure the
+highlight color is correct for such text". Editorial emphasis now renders
+_inside_ the red instead of being replaced by it.
+
+Lesson recorded in SA-051: check the design tokens before measuring a new value.
+A contrast-correct invented colour still fragments the palette.
 
 **Tagged as content is created, and retroactively.** `withRedLetter()` is wired
 into all three Soul Audit generation sites, and the rule is written into the
