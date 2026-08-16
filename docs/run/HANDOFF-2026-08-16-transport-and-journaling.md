@@ -7,7 +7,7 @@
 2. `docs/superpowers/specs/2026-08-16-reader-transport-and-journaling-design.md` — the approved design.
 3. `docs/superpowers/plans/2026-08-16-reader-transport-and-journaling.md` — 15 executable tasks with real test code.
 
-**Status:** **Phases 1 and 2 COMPLETE.** Phase 3 (journaling) is next. See §7 for commits and §6 for what is blocked.
+**Status:** **Phases 1, 2 and 3 COMPLETE.** Phase 4 (the two-state gate, SA-060/F-104) is next and is the one with a release blocker — see §6.
 
 ---
 
