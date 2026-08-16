@@ -171,19 +171,40 @@ function parsePlanSlug(
   }
 }
 
-function resolveDevotionalHref(devotionalSlug: string): string {
+/**
+ * Where a stored slug actually opens — or `null` when nothing opens.
+ *
+ * Founder, 2026-08-16: "the linking in Library doesnt work… Says page not
+ * found." The saved shelf was fine (every one of the founder's real saved slugs
+ * resolves to a live URL). The dead links came from **Completed Wake-Up Pages**,
+ * which built `/devotional/${slug}` directly and so bypassed this function.
+ *
+ * The deeper fault was that the old fallback GUESSED: anything unrecognised got
+ * `/devotional/<slug>` and 404'd on click. Library rows are restored from
+ * localStorage and from rows written months ago — Wake-Up was retired
+ * (SA-033/F-084) and the catalog has been rewritten since — so a recorded slug
+ * is not a promise that a page still exists.
+ *
+ * `SERIES_DATA` knows every real day slug, so we can simply check. Returning
+ * `null` makes "there is nothing to open" a state each caller must render,
+ * rather than a link that fails only once the reader has clicked it.
+ */
+export function resolveDevotionalHref(devotionalSlug: string): string | null {
+  if (!devotionalSlug) return null
+
   // SA-039: a saved row may now name a SERIES rather than a day. Send those to
   // the series page — /devotional/<series-slug> is a 404.
   if (isSeriesSlug(devotionalSlug)) return `/series/${devotionalSlug}`
+
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) {
-    // Plan reading canonically lives at /daily-bread (SA-023: the dedicated
-    // plan reader is retired, and /soul-audit/results does not resolve a
-    // ?planToken deep link on its own). Same silo-correct routing the old
-    // /saved page shipped for plan-day bookmarks.
+    // A plan day lives in the reader's own surface. SA-059 swapped the routes,
+    // so that is /today — /daily-bread is now the shared paper.
     return '/today'
   }
-  return `/devotional/${devotionalSlug}`
+
+  // Known catalog day, or nothing at all. No guessing.
+  return SLUG_META.has(devotionalSlug) ? `/devotional/${devotionalSlug}` : null
 }
 
 function resolveDevotionalLabel(devotionalSlug: string): string {
@@ -193,6 +214,39 @@ function resolveDevotionalLabel(devotionalSlug: string): string {
   const plan = parsePlanSlug(devotionalSlug)
   if (plan) return `Plan Day ${plan.day}`
   return SLUG_META.get(devotionalSlug)?.title || devotionalSlug
+}
+
+/**
+ * A Library row's link to its source — or its title as plain text when that
+ * source no longer exists.
+ *
+ * Rows are restored from localStorage and from rows written months ago, so a
+ * recorded slug is not a promise. Rendering a dead link teaches the reader that
+ * their library is broken; rendering the title with a quiet note tells them the
+ * truth, which is that the page is gone but their own writing is not.
+ */
+function LibrarySourceLink({
+  slug,
+  className,
+}: {
+  slug: string
+  className?: string
+}) {
+  const href = resolveDevotionalHref(slug)
+  const label = resolveDevotionalLabel(slug)
+  if (!href) {
+    return (
+      <span className={className} title="This reading is no longer published">
+        {label} <span aria-hidden="true">&middot;</span>{' '}
+        <em>no longer published</em>
+      </span>
+    )
+  }
+  return (
+    <Link href={href} className={className}>
+      {label}
+    </Link>
+  )
 }
 
 function resolveSeriesLabel(devotionalSlug: string): string {
@@ -1068,14 +1122,10 @@ export default function DevotionalLibraryRail({
                         style={{ borderColor: 'var(--color-border)' }}
                       >
                         <div>
-                          <Link
-                            href={resolveDevotionalHref(
-                              bookmark.devotional_slug,
-                            )}
+                          <LibrarySourceLink
+                            slug={bookmark.devotional_slug}
                             className="vw-small link-highlight text-secondary"
-                          >
-                            {resolveDevotionalLabel(bookmark.devotional_slug)}
-                          </Link>
+                          />
                           <p className="vw-small text-muted">
                             {bookmark.note ||
                               resolveSeriesLabel(bookmark.devotional_slug)}
@@ -1134,12 +1184,10 @@ export default function DevotionalLibraryRail({
                           style={{ borderColor: 'var(--color-border)' }}
                         >
                           <div className="mb-2 flex items-center justify-between gap-3">
-                            <Link
-                              href={resolveDevotionalHref(row.devotional_slug)}
+                            <LibrarySourceLink
+                              slug={row.devotional_slug}
                               className="vw-small link-highlight text-muted"
-                            >
-                              {resolveDevotionalLabel(row.devotional_slug)}
-                            </Link>
+                            />
                             <button
                               type="button"
                               onClick={() => void archiveAnnotationRow(row)}
@@ -1221,12 +1269,10 @@ export default function DevotionalLibraryRail({
                         style={{ borderColor: 'var(--color-border)' }}
                       >
                         <div className="mb-2 flex items-center justify-between gap-3">
-                          <Link
-                            href={resolveDevotionalHref(note.devotional_slug)}
+                          <LibrarySourceLink
+                            slug={note.devotional_slug}
                             className="vw-small link-highlight text-muted"
-                          >
-                            {resolveDevotionalLabel(note.devotional_slug)}
-                          </Link>
+                          />
                           <button
                             type="button"
                             onClick={() => void archiveAnnotationRow(note)}
@@ -1255,16 +1301,10 @@ export default function DevotionalLibraryRail({
                               style={{ borderColor: 'var(--color-border)' }}
                             >
                               <div className="mb-2 flex items-center justify-between gap-3">
-                                <Link
-                                  href={resolveDevotionalHref(
-                                    sticky.devotional_slug,
-                                  )}
+                                <LibrarySourceLink
+                                  slug={sticky.devotional_slug}
                                   className="vw-small link-highlight text-muted"
-                                >
-                                  {resolveDevotionalLabel(
-                                    sticky.devotional_slug,
-                                  )}
-                                </Link>
+                                />
                                 <button
                                   type="button"
                                   onClick={() =>
@@ -1327,12 +1367,10 @@ export default function DevotionalLibraryRail({
                         style={{ borderColor: 'var(--color-border)' }}
                       >
                         <div className="mb-2 flex items-center justify-between gap-3">
-                          <Link
-                            href={resolveDevotionalHref(note.devotional_slug)}
+                          <LibrarySourceLink
+                            slug={note.devotional_slug}
                             className="vw-small link-highlight text-muted"
-                          >
-                            {resolveDevotionalLabel(note.devotional_slug)}
-                          </Link>
+                          />
                           <button
                             type="button"
                             onClick={() => void archiveAnnotationRow(note)}
@@ -1419,12 +1457,10 @@ export default function DevotionalLibraryRail({
                           className="flex items-center justify-between gap-3 border px-3 py-2"
                           style={{ borderColor: 'var(--color-border)' }}
                         >
-                          <Link
-                            href={`/devotional/${item.slug}`}
+                          <LibrarySourceLink
+                            slug={item.slug}
                             className="vw-small link-highlight text-secondary"
-                          >
-                            {item.title}
-                          </Link>
+                          />
                           <span className="vw-small text-muted">
                             {formatDate(item.completedAt)}
                           </span>

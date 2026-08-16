@@ -14,6 +14,7 @@ import {
 } from '@/stores/devotionalLibraryStore'
 import { SERIES_DATA } from '@/data/series'
 import { isSeriesSlug, seriesSlugOf } from '@/lib/library/series-save'
+import { resolveDevotionalHref } from '@/components/DevotionalLibraryRail'
 import {
   activeDayHref,
   activeDayLabel,
@@ -265,9 +266,14 @@ export default function LibraryView() {
               )
               const series = seriesSlug ? SERIES_DATA[seriesSlug] : null
               const savedWholeSeries = isSeriesSlug(item.devotionalSlug)
-              const href = savedWholeSeries
-                ? `/series/${item.devotionalSlug}`
-                : `/devotional/${item.devotionalSlug}`
+              // Founder, 2026-08-16: saved items led to "page not found". The
+              // raw `/devotional/<slug>` was a GUESS — saved rows can name a
+              // reading that has since been unpublished (Wake-Up was retired in
+              // SA-033/F-084, and the catalog has been rewritten since), and a
+              // recorded slug is not a promise that a page still exists.
+              // resolveDevotionalHref checks SERIES_DATA and returns null when
+              // there is genuinely nothing to open.
+              const href = resolveDevotionalHref(item.devotionalSlug)
               const label = savedWholeSeries
                 ? (series?.title ?? item.devotionalSlug.replace(/-/g, ' '))
                 : (item.note ?? item.devotionalSlug.replace(/-/g, ' '))
@@ -279,9 +285,17 @@ export default function LibraryView() {
                       : (series?.title ?? 'Devotional')}
                   </p>
                   <p className="vw-body">
-                    <Link href={href} className="link-highlight">
-                      {label}
-                    </Link>
+                    {href ? (
+                      <Link href={href} className="link-highlight">
+                        {label}
+                      </Link>
+                    ) : (
+                      // Their save is still theirs; the reading is what went
+                      // away. Say that, rather than offering a link that 404s.
+                      <span title="This reading is no longer published">
+                        {label} &middot; <em>no longer published</em>
+                      </span>
+                    )}
                   </p>
                   <div className="library-card-actions">
                     {seriesSlug && (

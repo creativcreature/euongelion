@@ -124,10 +124,15 @@ describe('library BOOKMARKS tab routing (consolidated /saved)', () => {
   })
 
   it('routes devotional bookmarks to the canonical /devotional silo', async () => {
+    // A REAL catalog slug. This fixture used to be `identity-day-1`, which does
+    // not exist in SERIES_DATA or on disk — so the test was asserting that a
+    // fictional reading produced a working link, which is precisely the bug the
+    // founder reported ("Says page not found"). The routing contract is still
+    // what is under test; only the fixture was fiction.
     stubLibraryFetch([
       {
         id: 'b1',
-        devotional_slug: 'identity-day-1',
+        devotional_slug: 'he-cannot-deny-himself-day-1',
         note: 'Who Told You?',
         created_at: '2026-07-01T00:00:00.000Z',
       },
@@ -145,7 +150,34 @@ describe('library BOOKMARKS tab routing (consolidated /saved)', () => {
       .getByText('Who Told You?')
       .closest('div')
       ?.querySelector('a')
-    expect(link?.getAttribute('href')).toBe('/devotional/identity-day-1')
+    expect(link?.getAttribute('href')).toBe(
+      '/devotional/he-cannot-deny-himself-day-1',
+    )
+  })
+
+  it('does NOT link a bookmark whose reading is no longer published', async () => {
+    // The reported defect. A slug recorded before a catalog rewrite must be
+    // shown as text, not as a link that 404s on click.
+    stubLibraryFetch([
+      {
+        id: 'b2',
+        devotional_slug: 'identity-day-1',
+        note: 'A reading that no longer exists',
+        created_at: '2026-07-01T00:00:00.000Z',
+      },
+    ])
+
+    render(<DevotionalLibraryRail initialTab="bookmarks" />)
+
+    await waitFor(() => {
+      expect(screen.getByText('A reading that no longer exists')).toBeTruthy()
+    })
+
+    const row = screen
+      .getByText('A reading that no longer exists')
+      .closest('div')
+    expect(row?.querySelector('a')).toBeNull()
+    expect(row?.textContent).toMatch(/no longer published/i)
   })
 
   it('routes Soul-Audit plan-day bookmarks to /today', async () => {

@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE LIBRARY STOPPED GUESSING WHERE A ROW CAME FROM — SA-061 / F-102 (2026-08-16)
+
+Founder: "the linking in Library doesnt work. I cant find the pages that the
+saved items come from when I click them. Says page not found."
+
+Diagnosed from the founder's real production rows rather than by reading code
+and guessing. The SAVED shelf was innocent — all eight distinct saved slugs
+resolve to live URLs, verified by probing euangelion.app. The dead links were
+elsewhere, and the cause was one habit repeated in six places: building
+`/devotional/${slug}` directly.
+
+**A recorded slug is not a promise that a page exists.** Library rows are
+restored from localStorage and from rows written months ago; Wake-Up was retired
+(SA-033/F-084) and the catalog has been rewritten repeatedly since. "Completed
+Wake-Up Pages" linked straight to `/devotional/<slug>`, bypassing
+`resolveDevotionalHref` — the guarded helper that exists precisely because
+`/devotional/<series-slug>` is a 404. `LibraryView` did the same on the
+`/library` page itself.
+
+`resolveDevotionalHref` now returns `string | null` and checks `SERIES_DATA`
+instead of guessing. Making the type nullable was the point: TypeScript then
+refused to compile every call site until each one decided what "there is nothing
+to open" looks like. All six now route through one `LibrarySourceLink`, which
+renders the title plus _no longer published_ when the reading is gone. Their
+save is still theirs; the reading is what went away, and saying so is more
+useful than a link that fails after the click.
+
+**A test was encoding the bug.** `library-consolidation-routing` asserted that
+`identity-day-1` — a slug that exists in neither `SERIES_DATA` nor
+`public/devotionals/` — produced a working `/devotional/` link. The fixture was
+fiction, so the test passed while the product 404'd. It now uses a real slug and
+is joined by a case pinning that an unpublished reading is NOT linked.
+
+Noted while querying: `annotations` has **0 rows in production**. Highlights made
+signed-out were never written to the database by design (SA-038/SA-039), so this
+is consistent — but it means the Highlights and Notes tabs have never had real
+data to render.
+
 ## A NOTE IS A HIGHLIGHT WITH WORDS ON IT — SA-061 / F-102 (2026-08-16)
 
 Founder's ask was a note feature that "works similar to the highlight feature —
@@ -557,7 +595,7 @@ row it becomes a heavy rule between single papers, the opposite of its purpose.
 Covers drop to one per row.
 
 **The rose becomes a lancet on mobile.** Founder: _"The Rose concept doesnt even
-work for mobile."_ Right — a rose window is a *wide* wall's opening, and a phone
+work for mobile."_ Right — a rose window is a _wide_ wall's opening, and a phone
 is a narrow wall. Narrow walls get lancets. So it's rebuilt, not shrunk: one
 mullion down the height of the window, lights alternating either side, each
 carrying its title beside the glass — which the desktop wheel can't do, and
@@ -567,12 +605,12 @@ arguably makes the mobile form the more readable of the two.
 capped at 300px. **How we write** is footer-only, out of both menus.
 
 **The scroll line was invisible for two reasons** — it sat at z-index 100 under
-a 120 topbar, *and* it was `--color-gold`, which is cobalt in light mode. Now
+a 120 topbar, _and_ it was `--color-gold`, which is cobalt in light mode. Now
 z-index 400 on the top edge, in `--mock-blue`.
 
 **Site-wide scroll motion**, with one safety property worth stating: the
 pre-reveal hidden state exists only under `.motion-ready`, a class the island
-adds on mount. No JS → no class → no hidden content. Motion can only ever *add*
+adds on mount. No JS → no class → no hidden content. Motion can only ever _add_
 to a working page, never gate one. Reveals fire once, reduced-motion stops the
 loop from starting, parallax is capped at ±28px.
 
