@@ -625,7 +625,14 @@ h3 {
      shape. So the art takes an explicit height and the image covers it: the
      plate always fills its column edge to edge, and the row is simply shorter.
      Was ~525px on a 1440 desktop. */
-  height: clamp(200px, 22vw, 300px);
+  /* Founder 2026-08-16: "homepage feature image should fill container… the
+     container height can be slightly shorter." A fixed height left the plate
+     short of the row whenever the copy column was taller, which is the gap
+     being described. The art now STRETCHES to the row (the grid already sets
+     align-items: stretch) with a floor so it never collapses, and the row's
+     height is set by the copy — which is now four times shorter. */
+  height: 100%;
+  min-height: clamp(180px, 19vw, 260px);
   overflow: hidden;
 }
 .homepage-featured-devotional-art img {
@@ -649,9 +656,9 @@ h3 {
     border-right: 0;
     border-bottom: var(--mock-stroke, 1.5px) solid
       var(--mock-line, currentColor);
-    /* Same rule as desktop: fixed height, image covers it. An aspect-ratio
-       here would reintroduce exactly the dead space it caused above. */
-    height: clamp(170px, 42vw, 240px);
+    /* Stacked on a phone, so the art needs its own height again — there is no
+       sibling column to match. */
+    height: clamp(160px, 40vw, 230px);
     min-height: 0;
   }
 }
@@ -13816,21 +13823,18 @@ html[data-held-moment] .mobile-tab-bar {
 
 .flow-frame {
   position: relative;
-  /* FULL BLEED. The reference is an artboard, not a widget: the tiles ARE the
-     surface, edge to edge, with no frame around them. Breaking out of the page
-     measure is the difference between "a gallery component" and "a board you
-     are looking across". */
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
-  height: clamp(520px, 82vh, 900px);
+  /* Founder 2026-08-16: the board "needs to be contained within the newspaper
+     boarder" — so it stays inside the page measure. Full-bleed was my
+     over-correction; the newspaper frame is the point of this site. */
+  width: 100%;
+  height: clamp(520px, 78vh, 860px);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   /* The board's scroll never leaks to the page behind it, but the page is
      always reachable because the frame ends. */
   overscroll-behavior-y: contain;
-  border-top: var(--rr-hair);
-  border-bottom: var(--rr-hair);
+  border: var(--rr-hair);
   background: var(--plate-ground);
   cursor: grab;
   /* Touch belongs to the platform; drag-to-pan is a pointer enhancement. */
@@ -13848,9 +13852,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 /* A hair lighter than the frame so the cut lines between plates read even
    before the imagery paints — an all-dark field looks like a broken view. */
+/* Every plate is the same size and the same aspect. The image is CROPPED to
+   fill it (object-fit: cover) and is never stretched or skewed. */
 .flow-board {
   background: color-mix(in srgb, var(--mock-paper) 22%, var(--plate-ground) 78%);
   display: grid;
+  grid-auto-rows: auto;
   /* Tiles butt together on a hairline. A 14px gutter reads as cards on a
      page; 3px reads as one printed sheet cut into plates. */
   gap: 3px;
@@ -13863,6 +13870,7 @@ html[data-held-moment] .mobile-tab-bar {
 .flow-tile {
   position: relative;
   display: block;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   text-decoration: none;
   color: var(--plate-ink);
@@ -13926,18 +13934,20 @@ html[data-held-moment] .mobile-tab-bar {
     rgba(9, 12, 32, 0) 0%,
     rgba(9, 12, 32, 0.88) 70%
   );
-  opacity: 0;
-  transform: translate3d(0, 8px, 0);
-  transition:
-    opacity 200ms ease,
-    transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* Founder 2026-08-16: "titles need to show." Always on — a hover-only name
+     is invisible on a phone and invisible to anyone scanning. */
+  opacity: 1;
   z-index: 2;
+  transition: background 200ms ease;
 }
 
 .flow-tile:hover .flow-caption,
 .flow-tile:focus-visible .flow-caption {
-  opacity: 1;
-  transform: none;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 12, 32, 0) 0%,
+    rgba(9, 12, 32, 0.95) 62%
+  );
 }
 
 .flow-title {
@@ -13970,11 +13980,6 @@ html[data-held-moment] .mobile-tab-bar {
     height: auto;
     max-height: 82vh;
     cursor: default;
-  }
-  /* No hover on a phone, so the name is always on. */
-  .flow-caption {
-    opacity: 1;
-    transform: none;
   }
   .flow-hint {
     /* "Drag" is not the gesture on a phone. */

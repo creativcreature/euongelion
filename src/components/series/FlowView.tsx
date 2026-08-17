@@ -50,174 +50,22 @@ import type { LayoutProps } from './SeriesLayouts'
  *    Dragging still works; it just stops where you let go.
  */
 
-/** Row height, in px. Columns come from CSS grid, so only rows need a unit. */
-const ROW = 148
-/** Gap between tiles, in px. Must match the CSS `gap`. */
-const GAP = 14
 /** Maximum blur applied at full tilt, in px. */
 const MAX_BLUR = 4
-
-export interface Tile {
-  slug: string
-  /** Column and row, in cells. */
-  cx: number
-  cy: number
-  /** Span, in cells. */
-  w: number
-  h: number
-}
-
+/** Tile aspect ratio. Every plate is the same shape — cropped, never skewed. */
+const TILE_RATIO = '4 / 3'
+/** Gap between tiles, in px. Must match the CSS `gap`. */
+const GAP = 3
 /**
- * Lay the catalog out on the board.
+ * How many times the catalog repeats down the board.
  *
- * A shelf-packing pass: walk the slugs in order, give each a size drawn from
- * its LENGTH, and drop it into the first column run that has room. The result
- * is a dense mosaic with no gaps, and it is completely determined by the input
- * order — pass a different sort and the board rearranges to match.
+ * Founder 2026-08-16: the artboard "needs to overflow and repeat". The
+ * reference is an endless surface, and 37 plates in a uniform grid run out
+ * after a couple of screens. Repeating the catalog keeps the board deep enough
+ * to travel across without inventing content that does not exist — every tile
+ * is still a real series, it simply comes round again the way a pattern does.
  */
-export function layout(slugs: readonly string[], columns: number): Tile[] {
-  // Column heights, in cells.
-  const heights = new Array(columns).fill(0)
-  const tiles: Tile[] = []
-
-  /** Lowest position a tile of width `w` can sit at, leftmost on a tie. */
-  const bestFor = (w: number) => {
-    let bx = 0
-    let by = Infinity
-    for (let x = 0; x + w <= columns; x += 1) {
-      const y = Math.max(...heights.slice(x, x + w))
-      if (y < by) {
-        by = y
-        bx = x
-      }
-    }
-    return { x: bx, y: by }
-  }
-
-  slugs.forEach((slug, i) => {
-    const days = SERIES_DATA[slug]?.days.length ?? 5
-    // Size encodes length, across four shapes rather than two — a grid of two
-    // sizes reads as a card wall, not an artboard. Deterministic: shape comes
-    // from the day count and the slug's position, never from random.
-    const big = days >= 60
-    const long = !big && days >= 7
-    const tall = !big && !long && i % 3 === 1
-    const wide = !big && !long && !tall && i % 4 === 2
-    let w = big || long || wide ? 2 : 1
-    const h = big ? 2 : tall ? 2 : 1
-
-    // ADAPTIVE WIDTH. A 2-wide tile placed at the lowest PAIR of columns will
-    // happily skip over a single-column trough, and that trough becomes a hole
-    // nothing later fills — 13 of them on an eight-column board. So if going
-    // narrow would sit meaningfully higher, go narrow. Holes are the one thing
-    // an artboard cannot have.
-    if (w === 2) {
-      const two = bestFor(2)
-      const one = bestFor(1)
-      if (one.y < two.y) w = 1
-    }
-
-    const { x: bestX, y: bestY } = bestFor(w)
-    for (let x = bestX; x < bestX + w; x += 1) heights[x] = bestY + h
-    tiles.push({ slug, cx: bestX, cy: bestY, w, h })
-  })
-
-  // FILL THE HOLES. A tall tile leaves a one-cell trough that later tiles are
-  // too wide or too late to fill, so after packing we relocate single-cell
-  // tiles UP into any remaining gap, deepest gap first. An artboard with holes
-  // in it is just a broken grid.
-  const occupancy = () => {
-    const filled = new Set<string>()
-    for (const t of tiles) {
-      for (let x = t.cx; x < t.cx + t.w; x += 1) {
-        for (let y = t.cy; y < t.cy + t.h; y += 1) filled.add(`${x}:${y}`)
-      }
-    }
-    return filled
-  }
-
-  for (let pass = 0; pass < 4; pass += 1) {
-    const filled = occupancy()
-    const bottom = Math.max(...tiles.map((t) => t.cy + t.h))
-    const holes: Array<{ x: number; y: number }> = []
-    for (let y = 0; y < bottom; y += 1) {
-      for (let x = 0; x < columns; x += 1) {
-        if (!filled.has(`${x}:${y}`)) holes.push({ x, y })
-      }
-    }
-    if (holes.length === 0) break
-    let moved = false
-    for (const hole of holes) {
-      // The lowest 1x1 tile on the board is the one we can afford to move.
-      const candidate = tiles
-        .filter((t) => t.w === 1 && t.h === 1 && t.cy > hole.y)
-        .sort((a, b) => b.cy - a.cy)[0]
-      if (!candidate) continue
-      candidate.cx = hole.x
-      candidate.cy = hole.y
-      moved = true
-    }
-    if (!moved) break
-  }
-
-  // Any gap that survives relocation had no single-cell tile below it to move
-  // up. Grow the tile directly ABOVE it down by one instead — a slightly
-  // taller plate is invisible; a hole is not.
-  {
-    const filled = occupancy()
-    const bottom = Math.max(...tiles.map((t) => t.cy + t.h))
-    for (let y = 0; y < bottom; y += 1) {
-      for (let x = 0; x < columns; x += 1) {
-        if (filled.has(`${x}:${y}`)) continue
-        const above = tiles.find(
-          (t) => t.cx <= x && x < t.cx + t.w && t.cy + t.h === y && t.w === 1,
-        )
-        if (!above) continue
-        above.h += 1
-        for (let yy = above.cy; yy < above.cy + above.h; yy += 1) {
-          filled.add(`${above.cx}:${yy}`)
-        }
-      }
-    }
-  }
-
-  // Recompute column heights after relocation so the levelling pass below
-  // works from the truth rather than from the packing order.
-  heights.fill(0)
-  for (const t of tiles) {
-    for (let x = t.cx; x < t.cx + t.w; x += 1) {
-      heights[x] = Math.max(heights[x], t.cy + t.h)
-    }
-  }
-
-  // LEVEL THE BOTTOM EDGE. Whatever is left short after packing gets stretched
-  // down to the tallest column, so the board ends on a straight cut like a
-  // printed sheet rather than a ragged staircase.
-  const floor = Math.max(...heights)
-  if (floor > 0) {
-    for (let x = 0; x < columns; x += 1) {
-      if (heights[x] >= floor) continue
-      // Find the tile occupying the bottom of this column and grow it.
-      let lowest: Tile | undefined
-      for (const t of tiles) {
-        if (t.cx <= x && x < t.cx + t.w && t.cy + t.h === heights[x]) {
-          if (!lowest || t.cy + t.h > lowest.cy + lowest.h) lowest = t
-        }
-      }
-      if (!lowest) continue
-      // Only grow it if every column it spans is equally short, so the tile
-      // stays rectangular.
-      const spans = []
-      for (let c = lowest.cx; c < lowest.cx + lowest.w; c += 1) spans.push(heights[c])
-      if (new Set(spans).size !== 1) continue
-      const grow = floor - spans[0]
-      lowest.h += grow
-      for (let c = lowest.cx; c < lowest.cx + lowest.w; c += 1) heights[c] = floor
-    }
-  }
-
-  return tiles
-}
+const REPEATS = 4
 
 export default function FlowView({ slugs, cardHref }: LayoutProps) {
   const frameRef = useRef<HTMLDivElement | null>(null)
@@ -256,12 +104,19 @@ export default function FlowView({ slugs, cardHref }: LayoutProps) {
     }
   }, [])
 
-  const tiles = useMemo(() => layout(slugs, columns), [slugs, columns])
-
-  const rows = useMemo(
-    () => Math.max(...tiles.map((t) => t.cy + t.h), 1),
-    [tiles],
-  )
+  /**
+   * A uniform grid, repeated. No packing, no shapes, no holes — every plate is
+   * the same size and the same aspect, which is what the reference does and
+   * what the founder asked for ("same sixe and aspect ration"). The earlier
+   * mosaic was my invention, not the brief's.
+   */
+  const tiles = useMemo(() => {
+    const out: Array<{ slug: string; key: string }> = []
+    for (let pass = 0; pass < REPEATS; pass += 1) {
+      slugs.forEach((slug) => out.push({ slug, key: `${slug}-${pass}` }))
+    }
+    return out
+  }, [slugs])
 
   /**
    * Smear while the board is moving fast, settling the moment it stops.
@@ -335,27 +190,19 @@ export default function FlowView({ slugs, cardHref }: LayoutProps) {
       >
         <div
           className="flow-board"
-          style={{
-            gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-            gridAutoRows: `${ROW}px`,
-            minHeight: rows * ROW + (rows - 1) * GAP,
-          }}
+          style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
         >
-          {tiles.map((tile) => {
-            const series = SERIES_DATA[tile.slug]
+          {tiles.map(({ slug, key }) => {
+            const series = SERIES_DATA[slug]
             if (!series) return null
             return (
               <Link
-                key={tile.slug}
-                href={cardHref(tile.slug)}
+                key={key}
+                href={cardHref(slug)}
                 className="flow-tile"
                 // A drag that ends on a tile must not also open it.
                 onClick={(e) => {
                   if (drag.current.moved > 6) e.preventDefault()
-                }}
-                style={{
-                  gridColumn: `${tile.cx + 1} / span ${tile.w}`,
-                  gridRow: `${tile.cy + 1} / span ${tile.h}`,
                 }}
               >
                 <span className="flow-plate">
@@ -364,7 +211,7 @@ export default function FlowView({ slugs, cardHref }: LayoutProps) {
                       src={series.heroImage}
                       alt=""
                       fill
-                      sizes="(max-width: 900px) 44vw, 24vw"
+                      sizes="(max-width: 900px) 50vw, 25vw"
                       /* Eager, deliberately. These sit inside a scroll
                          container, and Chrome's lazy heuristics leave them
                          unloaded there — the board renders as a flat dark
@@ -375,18 +222,16 @@ export default function FlowView({ slugs, cardHref }: LayoutProps) {
                     />
                   )}
                 </span>
-                {/* The reference's tiles are pure image; the name arrives only
-                    when you are on one. Kept in the DOM (not injected on
-                    hover) so it is always available to assistive tech. */}
                 <span className="flow-caption">
                   <span className="flow-title">{series.title}</span>
-                  <span className="flow-days">{dayCountLabel(tile.slug)}</span>
+                  <span className="flow-days">{dayCountLabel(slug)}</span>
                 </span>
               </Link>
             )
           })}
         </div>
       </div>
+
       <p className="flow-hint text-label">Scroll the board, or drag it</p>
     </div>
   )

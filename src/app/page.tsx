@@ -42,8 +42,10 @@ const HOMEPAGE_TODAY = {
   scripture: '2 Timothy 2:13 · Hosea 10:12–13 · Genesis 3:4–6',
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
-  teaser:
-    'Hosea told a nation it had eaten the fruit of lies because it trusted its own way — and the charge was not wickedness so much as management. Seven days on the God who will not go back on Himself: the road a person wears by walking it, the reach in the garden that keeps repeating, and a covenant cut open from one side while the other side slept.',
+  // Founder 2026-08-16: "the text on the right should not have soo much —
+  // 10-14 words max." A featured slot is a headline and a line, not a
+  // paragraph; the full introduction is one tap away on the series page.
+  teaser: 'Seven days on the God who will not go back on Himself.',
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured

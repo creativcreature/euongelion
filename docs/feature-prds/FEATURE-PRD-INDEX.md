@@ -110,6 +110,7 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-108 | Platform          | The press impression, and a centred button          | 0/10     | wip    | [F-108.md](./F-108.md) |
 | F-109 | Platform          | Flow scrolls natively; mobile audit passes          | 0/10     | wip    | [F-109.md](./F-109.md) |
 | F-110 | Platform          | Flow is an artboard, not a card wall                | 0/10     | wip    | [F-110.md](./F-110.md) |
+| F-111 | Platform          | Flow is a uniform repeating grid, in the border     | 0/10     | wip    | [F-111.md](./F-111.md) |
 | F-101 | Reading           | The Audio Edition transport, on the Audible model   | 0/10     | wip    | [F-101.md](./F-101.md) |
 | F-102 | Reading           | Notes, journal entries, and reflection answers      | 0/10     | wip    | [F-102.md](./F-102.md) |
 | F-105 | Data & privacy    | Two site states — signed out reads, signed in keeps | 0/10     | wip    | [F-105.md](./F-105.md) |

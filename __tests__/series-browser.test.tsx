@@ -119,40 +119,35 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('flow lays the whole catalog on one board with no tile overlapping', () => {
-    // Founder 2026-08-16: Flow replaces Rose and leads the toggles.
+  it('flow lays the catalog out as a uniform, repeating board', () => {
+    // Founder 2026-08-16: "same sixe and aspect ration (croping no skewing or
+    // stretching)… needs to overflow and repeat, and titles need to show."
+    // Uniform tiles, so there is no packing to test — what matters is that
+    // every series appears, the board repeats, and every tile is named.
     const { container } = render(<SeriesBrowser />)
     openView('Flow')
     const tiles = container.querySelectorAll('.flow-tile')
-    expect(tiles.length).toBeGreaterThan(30)
     expect(container.querySelector('.flow-frame')).not.toBeNull()
 
-    // Tiles are placed on a CSS grid. Read their cell rectangles back out and
-    // assert none of them collide — a packing bug would otherwise only show
-    // up as tiles stacked on top of each other in a screenshot.
-    const cells = Array.from(tiles).map((t) => {
-      const el = t as HTMLElement
-      const col = /^(\d+) \/ span (\d+)$/.exec(el.style.gridColumn)
-      const row = /^(\d+) \/ span (\d+)$/.exec(el.style.gridRow)
-      expect(col).not.toBeNull()
-      expect(row).not.toBeNull()
-      return {
-        x: Number(col![1]),
-        w: Number(col![2]),
-        y: Number(row![1]),
-        h: Number(row![2]),
-      }
+    // Repeats: more tiles than series, and an exact multiple of them.
+    const hrefs = Array.from(tiles).map((t) => t.getAttribute('href'))
+    const unique = new Set(hrefs)
+    expect(tiles.length).toBeGreaterThan(unique.size)
+    expect(tiles.length % unique.size).toBe(0)
+
+    // Every tile carries its title — not a hover-only label.
+    tiles.forEach((tile) => {
+      expect(tile.querySelector('.flow-title')?.textContent).toBeTruthy()
     })
 
-    cells.forEach((a, i) => {
-      cells.slice(i + 1).forEach((b) => {
-        const overlap =
-          a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
-        expect(overlap).toBe(false)
-      })
+    // No tile carries inline sizing: they are uniform by CSS, so a stray
+    // width/height here would mean something reintroduced per-tile shapes.
+    tiles.forEach((tile) => {
+      const el = tile as HTMLElement
+      expect(el.style.gridColumn).toBe('')
+      expect(el.style.gridRow).toBe('')
     })
 
-    // Nothing is dropped from the board.
     expect(missingFromStage(container)).toEqual([])
   })
 

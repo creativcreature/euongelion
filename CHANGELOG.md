@@ -690,6 +690,35 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Flow is a uniform repeating grid, inside the border (2026-08-16)
+
+Registered as **SA-067** (F-111), correcting F-110.
+
+Founder: _"same sixe and aspect ration (croping no skewing or stretching)…
+needs to overflow and repeat, and titles need to show. also needs to be
+contained within the newspaper boardeer."_ Four corrections to my own
+over-correction:
+
+- **Every plate is the same size** at a fixed 4:3, cropped with `object-fit:
+  cover`, never stretched. Measured: one unique tile size, ratio 1.333.
+- **The catalog repeats** four times, so the board overflows and can be
+  travelled instead of running out after two screens. Every tile is still a
+  real series — it simply comes round again, the way a pattern does.
+- **Titles are always on.** A hover-only name is invisible on a phone and to
+  anyone scanning.
+- **Contained in the newspaper border** — 1308px inside a 1389px page on a
+  1440 viewport. Full bleed was my invention; the border is the point of this
+  site.
+
+The packing algorithm is deleted along with the mosaic. A uniform grid cannot
+have holes, so the three-stage hole-filling machinery and its test are gone
+rather than left as dead weight.
+
+**The homepage feature**: the art had a fixed height, so whenever the copy
+column was taller the plate stopped short — that was the gap. It stretches to
+the row now, and the row is set by the copy, which went from 69 words to 12.
+Row height 530px → 291px. — SA-067 (F-111)
+
 ## Flow is an artboard, not a card wall (2026-08-16)
 
 Founder: _"Flow is designed nothing like the example fyi."_ Correct — it was a
