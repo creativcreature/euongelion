@@ -49,6 +49,43 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## TOGGLE ICONS FLASHED BLUE ON TOUCH, AND STAYED LIT — SA-076 / F-120 (2026-08-17)
+
+Founder: _"why does the toggle icons on mobile highlight blue on page load?"_
+Two independent causes, both verified live.
+
+**The browser's own tap highlight.** `-webkit-tap-highlight-color` was **never
+set anywhere** in 14,000+ lines of `globals.css`, so mobile WebKit and Chrome
+paint their default translucent blue rectangle over any tapped control. On a
+palette that is entirely cobalt, that reads as the toggle lighting up blue. Now
+`transparent` — safe rather than an accessibility regression, because every one
+of these controls carries a real `:focus-visible` style, and the tap highlight
+only ever appears for touch, where it duplicates the control's own pressed
+state.
+
+**`:hover` fires on touch, and sticks.** `@media (hover: hover)` appears **zero
+times** in the stylesheet, so every `:hover` rule also matches on a touch device
+— and there is no pointer to move away, so the state persists after the tap.
+The hover state for `.mock-btn`, `.mock-icon-control`, `.mock-account-trigger`
+and `.mock-mobile-menu-toggle` is a solid `--mock-blue` fill, so a tapped toggle
+stayed filled indefinitely. One tap gave a blue flash followed by a blue box
+that never left.
+
+A `@media (hover: none)` block restores the resting appearance. Three details
+carry it: `:not(:focus-visible)` keeps the fill for anyone genuinely focusing
+with a keyboard, so only the phantom hover is neutralised; the selectors are
+scoped under `.mock-home` to outweigh the `.dark .mock-home …` rescues; and the
+block sits at the end of the file to win ties on source order — the standing
+constraint here, where ~10,000 lines sit outside any `@layer`. The active
+view/sort toggle keeps its `.is-active` fill.
+
+Verified: `webkitTapHighlightColor` → `rgba(0, 0, 0, 0)`; three `hover: none`
+rules present with the intended selectors; desktop hover fill still resolves on
+a hover-capable pointer (`--mock-blue` light, `--color-gold` dark); resting
+background transparent with no interaction. Service worker **v105**.
+
+---
+
 ## OVERNIGHT POLISH SWEEP — SA-074 / F-118 (2026-08-16)
 
 Founder, before sleeping: _"look through out the site… Look for awkward

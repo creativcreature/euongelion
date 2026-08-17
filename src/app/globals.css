@@ -14355,3 +14355,63 @@ html[data-held-moment] .mobile-tab-bar {
     pointer-events: auto;
   }
 }
+
+/* SA-075 (F-119): motion stills. A <video autoplay> cannot honour
+   prefers-reduced-motion on its own, so hide the clip and let the still
+   underneath show through for anyone who has asked for less movement. */
+@media (prefers-reduced-motion: reduce) {
+  .motion-still {
+    display: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   TOUCH: no blue tap flash, and no hover state that sticks (2026-08-17)
+
+   Founder: "why does the toggle icons on mobile highlight blue on page load."
+   Two separate causes, both verified:
+
+   1. `-webkit-tap-highlight-color` was never set anywhere in this stylesheet,
+      so mobile browsers paint their own translucent BLUE box over any tapped
+      button or link. On a cobalt design that reads as the control lighting up
+      blue. Set to transparent — safe, because every one of these controls has
+      a real `:focus-visible` style, which is what keyboard users rely on.
+
+   2. `@media (hover: hover)` appears ZERO times in this file, so every `:hover`
+      rule also fires on touch — and on touch it STICKS after the tap until you
+      tap elsewhere. The hover state for these controls is a solid fill, so a
+      tapped toggle stayed filled, which is exactly "highlights and stays
+      highlighted". The block below restores the resting appearance on
+      hover-less pointers only.
+
+   `:not(:focus-visible)` is deliberate: it keeps the fill for anyone who
+   actually focuses the control with a keyboard, on a touch device or not.
+   Scoped under `.mock-home` so it outweighs the `.dark .mock-home …` dark-mode
+   rescues, and placed at the end of the file so it wins ties on source order.
+--------------------------------------------------------------------------- */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) {
+  .mock-home .mock-icon-control:hover:not(:focus-visible),
+  .mock-home .mock-account-trigger:hover:not(:focus-visible) {
+    background: transparent;
+    color: inherit;
+    border-color: var(--mock-line, var(--color-border));
+  }
+
+  .mock-home .mock-mobile-menu-toggle:hover:not(:focus-visible) {
+    background: transparent;
+    color: inherit;
+    border-color: var(--mock-line, var(--color-border-strong));
+  }
+
+  /* The series view/sort toggles: `.is-active` keeps its fill, everything
+     else returns to the muted resting ink. */
+  .rr-view:hover:not(.is-active):not(:focus-visible),
+  .rr-sort:hover:not(.is-active):not(:focus-visible) {
+    color: var(--mock-muted);
+    background: transparent;
+  }
+}

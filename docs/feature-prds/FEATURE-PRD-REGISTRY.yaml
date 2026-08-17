@@ -1123,3 +1123,11 @@ features:
     prd: docs/feature-prds/F-119.md
     methodology_refs:
       - M00
+  - id: F-120
+    title: Toggle icons flashed blue on touch, and stayed lit after the tap
+    slug: toggle-icons-blue-tap-highlight
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-120.md
+    methodology_refs:
+      - M00
