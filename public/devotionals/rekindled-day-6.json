@@ -1,0 +1,182 @@
+{
+  "day": 6,
+  "chiasm_position": "recap",
+  "format": "two-minute-open-v2",
+  "title": "Light First",
+  "subtitle": "Gathering the week, and then turning it outward",
+  "teaser": "Five days about a fire you did not light. Today we put them together, and then ask the only question left: what does a person carrying that do about anybody else?",
+  "anchorVerse": "Matthew 5:15",
+  "theme": "Because He loved first, we can light first — and a lamp was never lit to be covered",
+  "framework": "Matthew 5:14-16 — neither do people light a lamp and put it under a basket",
+  "scriptureReference": "Matthew 5:14-16",
+  "totalWords": 1720,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 5:14-16",
+      "translation": "BSB",
+      "passage": "You are the light of the world. A city on a hill cannot be hidden. Neither do people light a lamp and put it under a basket. Instead, they set it on a stand, and it gives light to everyone in the house.",
+      "emphasis": [
+        "Neither do people light a lamp and put it under a basket"
+      ],
+      "scriptureContext": "Note the passive construction underneath it. Nobody in this saying lights their own lamp. They are lit, and then placed."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "λύχνος",
+      "transliteration": "lychnos",
+      "pronunciation": "LOOKH-nos",
+      "strongsNumber": "G3088",
+      "definition": "a lamp — the small household oil lamp, not a torch",
+      "usage": "This is the ordinary word for the clay lamp that sat on a stand in a one-room house. It is also the word the Greek Old Testament uses to render נֵר (ner), the lamp of Exodus 27 and 1 Samuel 3.",
+      "usageNote": "Worth distinguishing from λαμπάς (lampas) in Matthew 25, which can mean a torch carried outdoors. Today's word is the domestic one — the light you live by indoors, not the one you carry into the dark.",
+      "relatedWords": [
+        "נֵר (ner) — clay oil lamp",
+        "λαμπάς (lampas) — lamp or torch"
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "Nobody Lights Their Own",
+      "content": "There is a grammatical detail in this saying that carries the whole week.\n\nJesus does not say: light your lamp and put it on a stand. He describes what people do. They light a lamp. They set it on a stand. The lamp is the object throughout — acted on, moved, positioned.\n\nAnd then he says: you are that lamp.\n\nSo the instruction is not to generate light. It is not to burn brighter. It is about placement. A lamp that has been lit gets put somewhere, and the one thing nobody does with it is cover it up.\n\nThat is a strangely low bar, and it is deliberate. After five days of covenant and altar fire and oil made by hand, the closing instruction is not heroic. It is: do not hide.\n\nWhich most of us do, and usually for a reason that sounds like humility. I am not in a place to say anything. My own faith is thin right now. Who am I to talk about this when it has gone quiet in me.\n\nThat instinct is understandable and it is also the basket.",
+      "chiasm_position": "recap",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the basket, in your case? Name the specific reason you give for staying covered.",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, I have called my hiding modesty. You lit this and You placed me here. Give me the nerve to be seen at whatever brightness I actually am. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below: the five days gathered into one shape, what to do with them, and where to read next."
+    },
+    {
+      "type": "recap",
+      "heading": "The Week in One Shape",
+      "content": "**Monday — the fire was already burning.** The first word of the Bible has covenant on the outside and fire in the middle. Not the word's etymology, and not our discovery either — a medieval midrash noticed it long before us. And John opens his Gospel with the same three words as Genesis, to say the Word is a Person. Rekindling your relationship with God and getting back into Scripture were never two jobs.\n\n**Tuesday — it was sworn while you slept.** Two parties cut a covenant by walking between divided animals. In Genesis 15 a deep sleep falls on Abram and only God walks, carrying a firepot and a torch. Hebrews says plainly that He swore by Himself. The seed grows while the farmer sleeps and he knows not how. John Newton kept captaining slave ships for six years after the storm he counted as his turning, and the promise held anyway.\n\n**Wednesday — rekindling is not ignition.** The word this week is named for appears once in the New Testament. It is built on the noun for embers. And Paul removes all doubt by describing the gift as one which *is* in you — present tense. Israel's altar fire was never lit twice; the Hebrew verb even encodes the human role, saying it is *caused to be kept burning*. Isabella's faith survived being sold at nine and went out when she was finally safe.\n\n**Thursday — you are a lamb before you are a keeper.** Two lambs a day, morning and evening, so that God could stay rather than visit. And a charcoal fire on a beach, where the man who had failed at a charcoal fire was given breakfast and then a job, in that order.\n\n**Friday — the lamp goes low, and He speaks anyway.** All ten of them fell asleep; oil was the difference, and oil is made slowly by hand, in advance, by people whose names nobody wrote down. The lamp of God had not yet gone out on the night a voice said Samuel's name. And Monica prayed seventeen years, was refused what she asked, and was answered at the hinge of what she wanted.",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/rekindled/day6-lead.webp",
+      "inlineImageAlt": "A simple wooden lampstand with a lit clay oil lamp on top, and a woven reed basket lying on its side on the floor nearby, clearly set down and out of use",
+      "inlineImageCaption": "The basket is close enough that it obviously used to be over the lamp.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "One Verb, Three Times",
+      "content": "If you take one thing from the week, take this.\n\nThere is a Hebrew verb, *kabah*. It means to go out, of a fire or a lamp.\n\nIt is the verb in the command over the altar: it shall never go out.\n\nIt is the verb in the temple at night: it had not yet gone out.\n\nAnd it is the verb in Isaiah's promise about the servant: a smoking wick he will not quench.\n\nThe Greek Old Testament translates it with the same word that appears in the mouths of the five women at midnight — our lamps are going out.\n\nSo the thing we are commanded not to let go out is the same thing He promises not to snuff. The command and the promise are made of the same three letters.\n\nThat is not a flourish someone invented. It is what the lexicons say, and you can check it.",
+      "chiasm_position": "recap",
+      "pardes_layer": "sod",
+      "markdown": true
+    },
+    {
+      "type": "scripture",
+      "reference": "Isaiah 60:1",
+      "translation": "KJV",
+      "passage": "Arise, shine; for thy light is come, and the glory of the LORD is risen upon thee.",
+      "emphasis": [
+        "for thy light is come"
+      ],
+      "scriptureContext": "Two commands and a reason. The reason comes last, and it is not about the state of the person being addressed."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/rekindled/day6-end.webp",
+      "inlineImageAlt": "Two hands from different people, one tilting a burning clay lamp toward a second unlit lamp held by the other, the flame caught at the instant of crossing and burning on both wicks",
+      "inlineImageCaption": "Caught at the instant of crossing — burning on both wicks at once, and diminished on neither.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "heading": "Light First",
+      "content": "Which brings us to the last thing, and it is where the week has been going since Monday.\n\nWe began with five words: we love because He first loved us. That is an order of operations, not a sentiment. His move, then ours.\n\nAnd it extends outward. Because He loved first, you can love first. Because He lit yours, you can light somebody else's — and a flame that crosses from one wick to another is not diminished on the wick it came from.\n\nThis matters for the specific question some of you are carrying. What am I supposed to do about the people around me who are not walking with God? There is a way of asking that turns into a project, where the person becomes an outcome and you become an operator.\n\nThe week says something different. You are not the source. You did not light yours. Your job is not to convert anybody, and the parable of the wheat and the weeds is blunt about the reason: you cannot reliably tell which is which until harvest, and pulling things up is above your pay grade.\n\nWhat is left is smaller and much harder. Be lit, be placed, do not hide. Love first, the way it was done to you, without requiring the outcome.\n\nAnd if you are somewhere you genuinely cannot say the name — a classroom, a workplace, a family table where it would cost more than it bought — that is not a disqualification. A lamp on a stand is not making an argument. It gives light to everyone in the house.",
+      "chiasm_position": "recap",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Father,\n\nYou went first. In creation, in the covenant, in the fire I did not light and the faith that reached me through somebody else.\n\nTake the basket off. Where I have called my hiding humility, name it. Where I have made a person into a project, forgive me and give them back to me as a person.\n\nAnd let me love first this week, in one specific direction, without needing to see what it produces.\n\nAmen.",
+      "breathPrayer": "You lit it / I will not hide it",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will love one specific person first this week, and I will not require an outcome from it.",
+      "leavingAtCross": [
+        "The instinct to hide a thin faith and call it humility",
+        "The habit of turning a person into a project",
+        "The need to see what my loving first produces"
+      ],
+      "receivingFromCross": [
+        "A flame that crosses to another wick and is diminished on neither",
+        "Permission to be seen at whatever brightness I actually am",
+        "One verb that carries both the command and the promise"
+      ]
+    },
+    {
+      "type": "resource",
+      "heading": "Further Your Learning",
+      "relatedScriptures": [
+        "The passage trail for this week, in order — Genesis 1:1 · John 1:1-14 · 1 John 4:7-21 · Genesis 15 · Jeremiah 34:18 · Hebrews 6:13-20 · Mark 4:26-29 · 2 Timothy 1:1-14 · Leviticus 6:8-13 · Exodus 27:20-21 · Exodus 29:38-46 · Isaiah 40:1-11 · John 21:1-19 · 1 Samuel 3:1-10 · Matthew 25:1-13 · Isaiah 42:1-4 · Matthew 5:14-16 · Isaiah 60:1",
+        "A guided read for next week — take Confessions Books III, V and IX slowly. They are short, free, and they are the primary source behind Friday.",
+        "If you want one book of the Bible to sit in next — 2 Timothy. It is four chapters and it was written by a man who did not expect to get out."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "The Story of the Bible • What It's About From Beginning to End",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=7_CGP-12AE0"
+        },
+        {
+          "type": "video",
+          "title": "A Way God Wants to Connect With You (You Might Not Think Much About)",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=6v4jKkFj3TI"
+        },
+        {
+          "type": "video",
+          "title": "Why the Holy Spirit Isn't Just a \"Force\"",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=oNNZO9i1Gjc"
+        },
+        {
+          "type": "video",
+          "title": "This Ancient Ritual Helps Explain Jesus' Death",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=G_OlRWGLdnw"
+        },
+        {
+          "type": "video",
+          "title": "Abraham and the Torch – Timothy Keller [Sermon]",
+          "source": "Gospel in Life",
+          "url": "https://www.youtube.com/watch?v=4MLqalGN_ZQ"
+        },
+        {
+          "type": "book",
+          "title": "Narrative of Sojourner Truth (1850), dictated to Olive Gilbert",
+          "author": "Free at Project Gutenberg — the source behind Monday and Wednesday"
+        }
+      ],
+      "forDeeperStudy": "Everything quoted this week is traceable. Scripture is drawn from the BSB and the King James, chosen per passage. Hebrew and Greek were checked against Strong's and the interlinear rather than from memory, and where a popular claim did not survive checking it was either downgraded or dropped — the Genesis 15 self-curse is an inference rather than a stated formula, tamid does not always mean unceasing, and the lamps of Matthew 25 may be torches rather than household lamps. Three widely repeated quotations were verified as misattributed and are absent from this series."
+    }
+  ]
+}

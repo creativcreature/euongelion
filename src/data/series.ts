@@ -1159,6 +1159,51 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  rekindled: {
+    title: 'Rekindled',
+    heroImage: '/images/site/series/rekindled.webp',
+    question:
+      'What if the fire you are trying to get back was never yours to light?',
+    introduction:
+      'Paul used a word exactly once in the New Testament, writing to a frightened young man whose faith had reached him through his grandmother. It means to rekindle — to make a fire live again. It is built on the noun for embers. Seven days on a flame that was lit before you arrived: a covenant sworn over a sleeping man, an altar fire that was never lit twice, and a lamp that had not yet gone out on the night God spoke a boy’s name.',
+    context:
+      'For anyone whose faith has gone quiet without going away. Not a crisis, not a walking-out — just a thinning, usually somewhere in a season that changed underneath them. This week does not ask you to work up a feeling. It argues that the fire is still lit, that keeping it is ordinary and unglamorous work, and that the thing you were told not to let go out is the same thing God promised not to quench.',
+    framework:
+      '2 Timothy 1:6 - Fan into flame the gift of God, which is in you',
+    pathway: 'Awake',
+    keywords: [
+      'burned out',
+      'gone cold',
+      'lost my spark',
+      'drifting',
+      'dry',
+      'going through the motions',
+      'faith feels dead',
+      'lost my fire',
+      'distant from God',
+      'inherited faith',
+      'doubting',
+      'transition',
+      'starting over',
+      'empty',
+      'tired of trying',
+      'rekindle',
+    ],
+    days: [
+      { day: 1, title: 'Look What Sits in This Word', slug: 'rekindled-day-1' },
+      {
+        day: 2,
+        title: 'Sworn in Fire While You Slept',
+        slug: 'rekindled-day-2',
+      },
+      { day: 3, title: 'Fan Into Flame', slug: 'rekindled-day-3' },
+      { day: 4, title: 'Lambs at the Fire', slug: 'rekindled-day-4' },
+      { day: 5, title: 'Our Lamps Are Going Out', slug: 'rekindled-day-5' },
+      { day: 6, title: 'Light First', slug: 'rekindled-day-6' },
+      { day: 7, title: 'It Shall Never Go Out', slug: 'rekindled-day-7' },
+    ],
+  },
+
   'looking-at-the-sun': {
     title: 'Looking at the Sun',
     heroImage: '/images/site/series/looking-at-the-sun.webp',
@@ -1277,6 +1322,7 @@ export const NEW_SERIES_ORDER = [
   'the-harvest',
   'he-cannot-deny-himself',
   'looking-at-the-sun',
+  'rekindled',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1328,7 +1374,7 @@ export const FEATURED_SERIES = [
   'why-jesus',
   'hope',
 ] as const
-// SA-034 (2026-08-10): `he-cannot-deny-himself` is the most recent series and
+// SA-072 (2026-08-17): `rekindled` is the most recent series and
 // therefore holds the homepage MAIN feature slot via HOMEPAGE_TODAY in
 // src/app/page.tsx — the six cards above complete the seven the featured-area
 // policy calls for (SA-031(1)). Do not add it here as well or the homepage

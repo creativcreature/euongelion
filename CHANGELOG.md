@@ -5,6 +5,105 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Rekindled — a seven-day series on a fire you did not light (SA-075, F-119)
+
+**2026-08-17**
+
+New prefab series `rekindled`, live as the homepage main feature. Named for
+ἀναζωπυρεῖν (_anazopyrein_, 2 Timothy 1:6), a New Testament hapax legomenon
+meaning to rekindle, built on the noun for embers — the small group the founder
+is writing for is called Rekindled.
+
+**Content.** Seven days, Monday to Sunday, so the sabbath day lands on the actual
+sabbath. Chiasm A/B/C/B′/A′ + recap + sabbath. Validator 0 BLOCKING / 0
+NEEDS-FIX; readability FK 4.9, 3.6% of sentences at 30+ words, none over 45.
+Differentiation verified against four adjacent series — `abiding-in-his-presence`,
+`too-busy-for-god`, `present-in-the-chaos`, `hearing-god-in-the-noise` — all of
+which are discipline series where this is a covenant series. No existing series
+used fire, lamp, flame, altar or lamb language.
+
+**Verification that changed the content.** Genesis 15:17 is a torch (_lappid_),
+not a lamp (_ner_) — KJV's "burning lamp" is straining, so torch and lamp run as
+two threads. The spine is one verb, כָּבָה (_kabah_), in Leviticus 6:13, 1 Samuel
+3:3 and Isaiah 42:3, rendered σβέννυμι in Matthew 25:8: the command and the
+promise are the same word. The _bereshit_ letter pattern is genuinely attested
+(Midrash Aggadah, ed. Buber 1894) but is medieval, means something different from
+our application, and the Baal HaTurim attribution circulating online is false.
+Three misattributed quotations were verified dead and excluded. The popular form
+of _Confessions_ V.viii.15 is a paraphrase in no published translation.
+
+**Imagery.** 22 plates — a series master plus three per day forming a lead /
+middle / conclusion arc, each composed so exactly one element can animate as a
+cinemagraph. Three prompt generations were rejected first; the shipped set
+anchors 20 of 22 compositions to real cinema stills verified by downloading and
+measuring ~4,500 frames across ~90 films. Two briefs came back genuinely
+unmatched and are marked as adaptations in the prompts rather than faked.
+Coverage bands recalibrated for cinematic work (AIRY 25–45, MID 50–70, DENSE
+75–92, hard 92% ceiling) with standard deviation retained as the real gate; this
+set measures sd 26.2 against 26.8 for the approved reference set.
+
+**Held deliberately.** Motion clips are not generated — founder instruction is to
+approve the first before the remaining twenty run, and zero Higgsfield calls have
+been made. The split header (static thumbnail, animated on page) needs a
+`heroMotion` field and component and is not in this change.
+
+---
+
+## OVERNIGHT POLISH SWEEP — SA-074 / F-118 (2026-08-16)
+
+Founder, before sleeping: _"look through out the site… Look for awkward
+spacing, visual issues, mobile site specific issues (the menu for instance) and
+any other thing to polish the site that you can find tonight and then polish
+it."_ Audited live at 390px and 1680px across `/`, `/series`, `/series/[slug]`,
+`/soul-audit`, `/daily-bread`, `/sunday`, `/pricing` and `/how-we-write`, plus a
+dark-mode contrast pass.
+
+**A fourth collapsed plate.** `.edition-guide-plate` had no `aspect-ratio` and
+no height while wrapping an `<Image fill>`, so all three "How to read"
+Bible-reading guides on `/daily-bread` rendered **335 × 0** — loaded, decoded,
+and invisible. Same fault as F-115. Found by sweeping **every** `*-plate` /
+`*-thumb` / `*-art` rule in `globals.css` for a declared height rather than
+checking pages one at a time; every remaining container class passes. Now 3/2,
+matching its sibling `.edition-panel-plate`.
+
+**The mobile menu — the repeated complaint.** Measured at 390px scrolled to
+y=1500, the **panel itself was fine**: fixed, z-index 300, correct offset,
+visible. Two faults sat around it — the **page kept scrolling behind it**, and
+**tapping outside did nothing**, so the only way out was to find the toggle
+again. Body scroll is frozen now (`overflow: hidden` + `touch-action: none`,
+restored on close), deliberately _not_ `position: fixed` on the body, which
+would jump the reader back to the top. The outside-tap handler ignores the
+toggle itself, or its own close would be followed instantly by a reopen. Escape
+already worked.
+
+**Touch targets under 44px** — `.mock-icon-control` 37×34, `.rr-view` 40×35,
+`.rr-sort` 39×25. These are dense, closely art-directed toolbars, so this does
+**not** resize them: a transparent `::after` extends the _hit area_ to a 44px
+minimum and leaves every visible pixel where it is, scoped to `pointer: coarse`
+so hover regions are unchanged. Verified none sits inside an `overflow: hidden`
+container, which would clip the expansion and make the fix a no-op.
+
+**Escape now closes search from anywhere.** It closed via a React `onKeyDown`
+bound to the _panel_, so it only fired while focus was inside — and the focus
+call sits in a `requestAnimationFrame` that can lose the race. Caught live with
+`activeElement` on BODY and Escape doing nothing. A second run showed focus
+landing correctly, so it is **intermittent**, not always broken; rather than
+rewrite working focus logic on an unreliable signal, a document-level listener
+was added while open. Purely additive.
+
+**Audited and deliberately not changed** — three 401s per page load
+(`/api/devotionals/{active,saved,archive}`) for signed-out readers: that path is
+deliberate and documented, and gating it on `authStore.userId` would suppress
+real fetches for signed-in readers if the store hadn't initialised, which is
+worse than console noise. Homepage `GET MATCHED` is 141×38, under 44px, but
+pre-existing and the founder had just asked for smaller CTAs — flagged for a
+ruling. Dark mode passed (40 pairs, none below 4.5:1). The apparent 384px gap on
+`/daily-bread` is filled by the `edition-rail` briefs, not empty.
+
+Service worker **v103**.
+
+---
+
 ## GET MATCHED IS A BUTTON, AND THE HOMEPAGE PILLS ARE GONE — SA-073 / F-117 (2026-08-16)
 
 Founder: _"get matched should be a smaller cta. remove the pills on the

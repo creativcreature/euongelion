@@ -79,8 +79,12 @@ describe('homepage featured rotation', () => {
   })
 
   it('never leads with a commissioned series (SA-036(4))', () => {
-    // looking-at-the-sun is the newest entry overall but is commissioned.
-    expect(NEW_SERIES_ORDER[NEW_SERIES_ORDER.length - 1]).toBe(SERIES)
+    // looking-at-the-sun is commissioned and must never lead, wherever it
+    // sits in NEW_SERIES_ORDER. Pinning it to the last slot made this test
+    // fail the moment a later series was appended (rekindled, SA-075/F-119);
+    // the contract is eligibility, not array position.
+    expect(NEW_SERIES_ORDER).toContain(SERIES)
+    expect(COMMISSIONED_SERIES.has(SERIES)).toBe(true)
     expect(latestEligibleSeries()).not.toBe(SERIES)
   })
 

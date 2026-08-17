@@ -1107,3 +1107,19 @@ features:
     prd: docs/feature-prds/F-117.md
     methodology_refs:
       - M00
+  - id: F-118
+    title: Overnight polish sweep — collapsed plate, mobile menu, touch targets, Escape
+    slug: overnight-polish-sweep
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-118.md
+    methodology_refs:
+      - M00
+  - id: F-119
+    title: Rekindled — seven-day series with a motion-aware, cinema-anchored plate set
+    slug: rekindled-series
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-119.md
+    methodology_refs:
+      - M00

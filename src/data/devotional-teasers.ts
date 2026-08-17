@@ -863,6 +863,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     "The early church didn't wait for institutions to solve poverty. They pooled resources. Shared meals. Made sure no one went without.",
   'provision-day-5':
     "You started hoarding out of fear. But you're ending with open hands. When you share what you have, everyone has enough.",
+  'rekindled-day-1':
+    'The first word of the Bible has six letters. The outer four spell covenant. The two in the middle spell fire. Nobody is claiming Moses put it there. But it is sitting there.',
+  'rekindled-day-2':
+    'Two parties cut a covenant. Both walk between the pieces. In Genesis 15 the sun goes down, a deep sleep falls on Abram, and only one of them walks.',
+  'rekindled-day-3':
+    'The Greek verb is anazopyrein. It comes from the word for embers — live coals under ash. Paul is not telling Timothy to start a fire. He is telling him to stop letting one go out.',
+  'rekindled-day-4':
+    'Twice a day, every day, a lamb was brought to the fire that never went out. Yesterday we talked about keeping it. Today we come as something else entirely.',
+  'rekindled-day-5':
+    'Ten women waited for a delayed bridegroom and every single one of them fell asleep. Sleep is not what separated them. Something else did.',
+  'rekindled-day-6':
+    'Five days about a fire you did not light. Today we put them together, and then ask the only question left: what does a person carrying that do about anybody else?',
+  'rekindled-day-7':
+    'Six days of fire. Today there is nothing to add and nothing to keep. Sit near it.',
   'rooted-day-1':
     'When everything is stripped away, what remains is Christ living in you',
   'rooted-day-2': "How God's love grows when everything around you collapses",
@@ -1543,6 +1557,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'provision-day-3': "What if God's economy works backwards?",
   'provision-day-4': 'What does mutual aid look like when the system fails?',
   'provision-day-5': 'What if sharing is how needs get met?',
+  'rekindled-day-1': 'Look What Sits in This Word',
+  'rekindled-day-2': 'Sworn in Fire While You Slept',
+  'rekindled-day-3': 'Fan Into Flame',
+  'rekindled-day-4': 'Lambs at the Fire',
+  'rekindled-day-5': 'Our Lamps Are Going Out',
+  'rekindled-day-6': 'Light First',
+  'rekindled-day-7': 'It Shall Never Go Out',
   'rooted-day-1': 'Rooted in Truth',
   'rooted-day-2': 'Rooted in Love',
   'rooted-day-3': 'Rooted in Quiet',

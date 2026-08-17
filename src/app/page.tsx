@@ -30,28 +30,28 @@ import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
 // replaces the-harvest, which rotates back into the six FEATURED_SERIES
 // cards below it.
 const HOMEPAGE_TODAY = {
-  series: 'he-cannot-deny-himself',
-  daySlug: 'he-cannot-deny-himself-day-1',
-  dayTitle: 'The Fruit of Lies',
-  kicker: 'FEATURED SERIES · 7 DAYS · 2 TIMOTHY 2:13',
-  title: 'He Cannot Deny Himself',
+  series: 'rekindled',
+  daySlug: 'rekindled-day-1',
+  dayTitle: 'Look What Sits in This Word',
+  kicker: 'FEATURED SERIES · 7 DAYS · 2 TIMOTHY 1:6',
+  title: 'Rekindled',
   // Series-level scripture anchor (the framework verse).
-  scripture: '2 Timothy 2:13 · Hosea 10:12–13 · Genesis 3:4–6',
+  scripture: '2 Timothy 1:6 · Genesis 15:17 · Leviticus 6:13',
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   // Founder 2026-08-16: "the text on the right should not have soo much —
   // 10-14 words max." A featured slot is a headline and a line, not a
   // paragraph; the full introduction is one tap away on the series page.
-  teaser: 'Seven days on the God who will not go back on Himself.',
+  teaser: 'The fire was lit before you got here. Seven days on keeping it.',
   // Homepage hero banner (full-bleed at top of page). R38: founder
   // reverted R37 — the top-of-page hero stays the blue empty-tomb
   // riso. The substack-header change was meant for the featured
   // devotional block + substack series cards only, not this banner.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art: the he-cannot-deny-himself recap banner (16:9 to
+  // Featured-card art: the rekindled day-3 lamp handoff (3:2 landscape to
   // match the container's landscape aspect; the 1:1 series card
   // would crop badly under object-fit: cover).
-  featuredArt: '/images/series/he-cannot-deny-himself/day6-banner.webp',
+  featuredArt: '/images/series/rekindled/day3-end.webp',
 }
 
 const HOW_STEPS = [
@@ -411,8 +411,16 @@ export default function Home() {
             (Soul Audit), then a tertiary (Browse the library). No two
             CTAs of equal visual weight compete here. */}
         <section className="homepage-action-ladder" aria-label="Where to begin">
-          {/* PRIMARY — the one-tap entry. Today's page is the dominant
-              CTA: server-rendered, no account, opens immediately. */}
+          {/* PRIMARY — the one-tap entry.
+
+              POINTS AT /daily-bread, NOT /today. `/today` is the signed-in
+              plan reader and hard-redirects to /auth/sign-in, while the copy
+              directly below promises "No setup, no account — just open it and
+              read" and the trust row says NO ACCOUNT. The dominant conversion
+              path on the site was bouncing first-time anonymous readers into a
+              sign-in wall. /daily-bread is the public edition and is exactly
+              what this copy describes. (The /today swap was applied to the
+              programmatic router.push calls and missed on these Links.) */}
           <div className="homepage-primary-action">
             <p className="text-label mock-kicker">START HERE</p>
             <h2 className="mock-title-center">Read today&rsquo;s page.</h2>
@@ -421,7 +429,7 @@ export default function Home() {
               and read.
             </p>
             <Link
-              href="/today"
+              href="/daily-bread"
               className="mock-btn homepage-primary-cta text-label"
             >
               READ TODAY&rsquo;S PAGE
@@ -598,7 +606,8 @@ export default function Home() {
                 GET MATCHED
               </button>
               <p className="mock-footnote">
-                Read once to compose your edition — never stored, never shared,
+                Read to compose your edition, then kept with your anonymous
+                session for 30 days and deleted — never sold, never shared,
                 never used to train AI. No account required.
               </p>
               {/* No proactive "X of N" counter — it reads as a metered trial.
@@ -704,7 +713,9 @@ export default function Home() {
                 You do not need certainty before you begin. You need a next
                 step. You need grace.
               </p>
-              <Link href="/today" className="mock-btn text-label">
+              {/* Same reason as the primary CTA above: public edition, not
+                  the gated plan reader. */}
+              <Link href="/daily-bread" className="mock-btn text-label">
                 READ TODAY&rsquo;S PAGE
               </Link>
               <a

@@ -1,0 +1,267 @@
+{
+  "day": 3,
+  "chiasm_position": "C",
+  "format": "two-minute-open-v2",
+  "title": "Fan Into Flame",
+  "subtitle": "On a word Paul used exactly once, to somebody who was afraid",
+  "teaser": "The Greek verb is anazopyrein. It comes from the word for embers — live coals under ash. Paul is not telling Timothy to start a fire. He is telling him to stop letting one go out.",
+  "anchorVerse": "2 Timothy 1:6",
+  "theme": "Rekindling is not ignition — the gift is already in you, and it reached you through somebody else",
+  "framework": "2 Timothy 1:6-7 — fan into flame the gift of God, which is in you",
+  "scriptureReference": "2 Timothy 1:5-7",
+  "totalWords": 4180,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "2 Timothy 1:6-7",
+      "translation": "BSB",
+      "passage": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands. For God has not given us a spirit of fear, but of power, love, and self-control.",
+      "emphasis": [
+        "fan into flame",
+        "which is in you"
+      ],
+      "scriptureContext": "Written to a young man who was frightened. Notice the tense of the second phrase — not which was given, but which is."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀναζωπυρεῖν",
+      "transliteration": "anazopyrein",
+      "pronunciation": "an-ah-zo-pu-RAIN",
+      "strongsNumber": "G329",
+      "definition": "to kindle afresh, to rekindle, to stir back into flame",
+      "usage": "Three parts. ἀνά (ana) — again, or up. ζω- (zo-) — living. πῦρ (pyr) — fire. To make a fire live again. It occurs exactly once in the New Testament, here.",
+      "usageNote": "Thayer traces it to the noun ζώπυρον (zopyron), which means embers — live coals banked under ash. The word at the root of the verb already assumes a fire that has not gone out.",
+      "relatedWords": [
+        "ζώπυρον (zopyron) — embers",
+        "πῦρ (pyr) — fire",
+        "σβέννυμι (sbennymi) — to quench, to put out"
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "Which Is In You",
+      "content": "Most of us read this verse as a command to try harder, and then feel worse.\n\nBut look at what Paul actually says about the gift. In Greek it is four words: ho estin en soi. Which is in you. Present tense, plain indicative. Not which was given to you once. Not which I hope is still there. Is.\n\nBefore Paul asks Timothy to do anything, he tells him what is already true. The thing is present. It is in the room. Whatever has gone wrong, it is not that the fire left.\n\nAnd then the verb. Anazopyrein. It is built on the word for embers — coals still alive under a layer of ash, which is exactly what a banked fire looks like when you think it has died.\n\nSo the instruction is not strike a match. It is closer to: get down there and breathe on what is still burning.\n\nThat distinction changes what today asks of you. If you have to produce a fire, then a cold season means you have failed and the task is enormous. If a fire is already lit and low, then a cold season means the ash got thick, and the task is small and physical and near at hand.\n\nOne of those you can do this morning. The other one nobody can do at all.\n\nIt is worth noticing who Paul is not writing to. This is not a letter to someone who has walked away, or who is in open rebellion, or who has renounced anything.\n\nTimothy is still at his post. He is still doing the work. From the outside nothing looks wrong at all.\n\nThat is the condition this verse addresses — not collapse, but quiet. The person still turning up, still believed by everyone around them to be fine, who knows privately that something has thinned out. Paul writes to that man, and his first word about it is not a rebuke. It is a reminder.\n\nIf you are that person this morning, you have been correctly identified, and you are not in trouble.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "If the fire in you is genuinely still lit and simply banked under ash, what is the ash actually made of?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, I have been trying to start something that You say is already in me. Show me what is still burning under the ash, and give me the nerve to get close enough to breathe on it. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: the one word this whole week is named for, an altar fire that was never lit twice, and a woman whose faith survived being sold at nine and then went out when she was finally safe."
+    },
+    {
+      "type": "scripture",
+      "reference": "2 Timothy 1:5",
+      "translation": "BSB",
+      "passage": "recalling your sincere faith, which first dwelt in your grandmother Lois and your mother Eunice, and I am convinced is in you as well.",
+      "emphasis": [
+        "first dwelt in your grandmother Lois and your mother Eunice"
+      ],
+      "scriptureContext": "The verse immediately before the one about fanning into flame. Paul traces the fire back two generations before he asks Timothy to tend it."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/rekindled/day3-lead.webp",
+      "inlineImageAlt": "Two cupped hands sheltering a single ember, hands enormous in the frame, the ember tiny, its light stronger than its size, no face visible",
+      "inlineImageCaption": "What is left after a fire looks dead is not nothing — it is the part you can still work with.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "heading": "The Man Receiving This Letter",
+      "content": "Before the word, the person.\n\nTimothy is young. He is leading in Ephesus, which was not an easy assignment. His father was Greek and his mother was Jewish, which in that world meant he did not fully belong in either room. And Paul, who is writing from confinement and does not expect to get out, keeps circling back to one thing: do not be afraid.\n\nGod has not given us a spirit of fear. Do not be ashamed of the testimony. Join with me in suffering. Guard what was entrusted to you.\n\nYou do not say that four times to a man who is doing fine.\n\nSomething in Timothy had gone quiet. Not, apparently, his belief — Paul says the faith is sincere and he is convinced it is there. What had gone quiet was his nerve.\n\nAnd notice how Paul locates that faith. He traces it backwards, through two women. It first dwelt in Lois. Then in Eunice. Then in you.\n\nThat is an unusual thing to open a letter with. Paul is about to ask Timothy to do something difficult, and the first move he makes is to remind him that what he is being asked to tend was not his idea. It came from a grandmother and a mother. It arrived secondhand.\n\nSo when Paul says fan into flame the gift that is in you, he has already established whose fire it originally was. Timothy did not light it. Two women did, or God did through them. Timothy's whole assignment is not to originate anything. It is to not let it go out on his watch.\n\nThere is one more phrase in verse six that is easy to skim: which is in you through the laying on of my hands.\n\nAt some point, in a room, an older man put his hands on a younger one and prayed. That was the moment Paul points back to. Not a private experience Timothy had alone. A physical act, done by somebody else, in front of witnesses.\n\nWhich is consistent with everything else in these two verses. The faith came through a grandmother. The gift came through a pair of hands. Nothing in Timothy's spiritual life originated with Timothy.\n\nWe tend to treat that as a lesser kind of faith — inherited, secondhand, received through other people rather than discovered for ourselves. Paul treats it as the normal kind. He does not apologise for it or tell Timothy he needs a firsthand version. He just tells him what to do with what he was handed.",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "urlvnxCaL00",
+      "videoTitle": "Book of 2 Timothy Summary: A Complete Animated Overview",
+      "videoCaption": "Sets the scene for today's text: a condemned Paul writing his last letter to Timothy, urging him not to let what he has been given go cold.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "pullquote",
+      "content": "Nobody is being asked to start a fire. The whole instruction is: stop letting one go out."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Word This Week Is Named For",
+      "content": "Now the verb itself, because everything turns on it.\n\nAnazopyrein appears one time in the entire New Testament. There is no second passage to check it against, which means we have to work carefully. Three independent things point the same direction.\n\nFirst, the root. Thayer derives the verb from zopyron, the noun for embers — the live coals you find when you rake back the ash on a fire you assumed was dead. The word is built on the idea of remaining heat.\n\nSecond, how the Greek Old Testament uses it. In Genesis 45:27, Jacob is told his son Joseph is alive, and the text says his spirit revived. That is this verb. Jacob was not dead. He was old and grief-flattened, and something in him came back up. What revived had been there the whole time, underneath.\n\nThird, and strongest, the sentence Paul actually wrote. He does not say fan into flame a gift. He says the gift of God which is in you. Present indicative. The existence of the fire is not something we are inferring from a verb — Paul states it outright in the same breath.\n\nAnd here is where I will give away the one argument someone could use against all this, because it costs nothing.\n\nThe prefix ana- in Greek can mean again, which gives you rekindle. But it can also be intensive, which would give you something like keep at full blaze. Some commentators take it that way. Fine. Notice that both readings require a fire that already exists. Neither one is ignite.\n\nSo we do not need to win the argument about the prefix. Whichever way it goes, the fire was lit before Paul wrote the sentence.\n\nIt helps to know what fanning a fire actually involves, because the metaphor is not decorative.\n\nYou do not fan a fire from a distance or from a comfortable position. You get low. Your face goes near the ash, close enough that it stings. You blow steadily rather than hard, because a violent gust scatters the coals and puts out the thing you are trying to save.\n\nAnd critically, you are not adding heat. Your breath is cooler than the ember. What you are adding is oxygen — you are giving the fire access to something it needs and cannot reach on its own.\n\nThat is a strangely accurate picture of what the ordinary means of grace do. Reading, prayer, communion, showing up with other people on a day you do not feel like it. None of those manufacture warmth. They put you near the coal and give it air.\n\nWhich also explains why they so often feel like they are not working. You are not supposed to feel yourself generating anything. You are not generating anything.\n\nOne more thing about a word that appears only once.\n\nWhen a term shows up a single time, translators have to make a judgement with no second example to check against. That is why the English versions differ so widely here. The King James has stir up. The New American Standard has kindle afresh. Several modern versions have fan into flame.\n\nThose are not competing translations so much as three angles on the same picture. Stir up is what you do to coals with a stick. Kindle afresh is what happens as a result. Fan into flame is the breath. All three assume you are standing over something that is already hot.\n\nNone of them is start a fire. No translator in four centuries has rendered it that way, because the Greek will not carry it.\n\nThat is a small thing to lean a week on. But small true things hold weight better than large approximate ones, and this particular small thing has been sitting in the same verse, saying the same thing, since Paul dictated it from a cell.",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "oNNZO9i1Gjc",
+      "videoTitle": "Why the Holy Spirit Isn't Just a \"Force\"",
+      "videoCaption": "Establishes that the Spirit is a personal presence God has already placed in his people, not a force to be summoned.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "scripture",
+      "reference": "Leviticus 6:12-13",
+      "translation": "KJV",
+      "passage": "And the fire upon the altar shall be burning in it; it shall not be put out… The fire shall ever be burning upon the altar; it shall never go out.",
+      "hebrewOriginal": "אֵשׁ תָּמִיד תּוּקַד",
+      "transliteration": "esh tamid tuqad — \"fire, continually, caused to be kept burning\"",
+      "emphasis": [
+        "it shall never go out"
+      ],
+      "scriptureContext": "The Old Testament half of today. Israel had one altar fire, and it was never lit a second time."
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "The altar fire in Israel was lit once. From then on the instruction was not to relight it but to keep it. Wood went on every morning. It burned through every night. It was never permitted to go out.",
+      "modernApplication": "We think of spiritual life in terms of ignition events — a conference, a crisis, a decision, a moment we can date. So when the feeling fades, we go looking for another ignition.",
+      "connectionPoint": "Israel had no such category. There was no ceremony for relighting the altar, because the altar was never supposed to reach that state.",
+      "newTestamentEcho": "Which is exactly the assumption behind Paul's verb. He does not tell Timothy to get it lit again. He tells him to fan what is there."
+    },
+    {
+      "type": "teaching",
+      "heading": "A Gift Hidden in a Verb Stem",
+      "content": "There is something in the Hebrew of Leviticus 6:13 that most translations cannot carry.\n\nThe phrase is esh tamid tuqad. Fire, continually, burning. But tuqad is not a simple active verb. It is in a form Hebrew grammarians call the Hophal, which is causative and passive at once. It does not say the fire burns. It says the fire is caused to be kept burning.\n\nWhich means someone has to be doing the causing.\n\nThat single verb stem holds this whole week together. The fire is not a self-sustaining miracle that requires nothing. It is also not something anyone lights. It is something kept — by people, in a rhythm, indefinitely, and the grammar encodes the human role without ever suggesting the human started it.\n\nOne honest caution before we build too much on the word tamid. In many places it means regular or at appointed times rather than literally unceasing. The daily offering called the tamid was made twice a day, not continuously. So do not let anyone tell you tamid always means unbroken.\n\nHere, though, the context settles it. The text adds lo tikbeh — it shall not go out. That is not a schedule. That is a state.\n\nAnd hold on to that verb, tikbeh, from the root kabah. We will meet it again on Friday, in a temple at night, and again at the very end of the week in a promise that uses the same word. The command and the promise turn out to be built from the same three letters.\n\nThink about what this looked like as a job.\n\nEvery morning a priest carried wood to the altar and laid it on. Not once a week. Not when he felt moved. Every morning, before anything else happened, in the dark, whether or not it was his idea of a meaningful day.\n\nNothing about that is dramatic. There is no story in it. Nobody wrote down the name of the man who did it on an ordinary Tuesday in a year nothing happened.\n\nBut the fire that had been burning since it was first given depended entirely on somebody doing that unremarkable thing, over and over, for generations. The moment it became optional it would have been a matter of days.\n\nIf you have been waiting for your spiritual life to become interesting again before you resume it, this is the correction. It was never interesting. It was wood, in the dark, every morning.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "sod",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/rekindled/day3-mid.webp",
+      "inlineImageAlt": "A low stone altar with a wood fire burning, four figures standing along the court and a fifth kneeling to lay one more piece of wood on the fire, lit only from below",
+      "inlineImageCaption": "Four are standing. One is kneeling to feed it. The institution exists so that somebody keeps doing the second thing.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "story",
+      "heading": "The Fire That Went Out When She Was Finally Safe",
+      "content": "Yesterday we left Isabella at nine years old, sold for a hundred dollars in a lot with sheep, still saying the Lord's Prayer in Low Dutch as her mother had taught her.\n\nShe kept praying for years. Through the beatings. Through being sold again. Her prayers turned into bargaining — promises made at night and broken by morning — but she kept praying, because she had been told to ask God for help when she was in trouble, and she was always in trouble.\n\nThen she was freed. She came to the Van Wageners', a decent household, and the trouble stopped.\n\nAnd that is when her faith went out.\n\nThe narrative says it plainly: she was so happy and satisfied, that God was entirely forgotten. And then it asks the question that should stop anyone reading this. Why should her thoughts turn to him, who was only known to her as a help in trouble?\n\nRead that again. Not persecution. Not suffering. Not doubt. Comfort.\n\nEvery version of this story you will hear in a sermon gets it backwards, because we expect faith to be extinguished by hardship. Hers survived hardship for years. What put it out was safety.\n\nIt came back, and the way it came back is worth telling.\n\nSome months later, at a festival she knew by its Dutch name, she was walking toward her old master's wagon, intending to go back with him. She did not reach it. She said that God revealed himself to her with all the suddenness of a flash of lightning, showing her in the twinkling of an eye that he was all over — that there was no place where God was not.\n\nHer recorded reaction is not a theological statement. It is four words, and they sound like a person genuinely startled.\n\nOh, God, I did not know you were so big.\n\nThe narrative gives no year for this. Scholars date it to 1827; the text itself does not say. What it does say is that the God she had been taught to reach for in trouble turned out to be considerably larger than a help in trouble — and that this was the discovery that brought the fire back.",
+      "connectionToTheme": "A fire inherited, carried through the worst conditions imaginable, and then quietly lost once there was nothing left to ask for."
+    },
+    {
+      "type": "insight",
+      "heading": "Whose Words Those Are",
+      "content": "One thing has to be said about that account, because this week is about a fire handed from one person to another, and it applies to the record itself.\n\nSojourner Truth could not read or write. The book those lines come from was dictated to Olive Gilbert and published in 1850, written in the third person, in Gilbert's English. Truth sold it herself at her lectures for the next thirty-three years, so it is her authorized account. That is a real claim. It is a slightly weaker one than saying these are her words.\n\nThe most quotable line in the whole book — that her inward spark perished like a flame just igniting — is Gilbert's image, not Truth's. It is worth knowing which is which.\n\nHer name was Isabella through everything described here. She took the name Sojourner Truth in 1843, long after.",
+      "historicalContext": "Olive Gilbert, Narrative of Sojourner Truth: A Northern Slave, Boston, 1850. The text gives no year for her mother's death and states outright that it cannot."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/rekindled/day3-end.webp",
+      "inlineImageAlt": "A small clay oil lamp lit and held in a young man's hands, an older woman's deeply lined hands withdrawing from it at the frame's edge, the flame caught mid-transfer",
+      "inlineImageCaption": "The moment the lamp belongs to neither pair of hands — which is what inheritance actually looks like.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Isabella's faith survived being sold and went out when she was comfortable. Which of those two conditions are you in right now?",
+      "additionalQuestions": [
+        "Who is the Lois or Eunice in your life — the person the fire actually came through? Are they still alive?",
+        "Paul told Timothy four separate times not to be afraid. What is the thing you would do this week if you were not?",
+        "If God is mostly known to you as a help in trouble, what happens to that relationship when the trouble stops?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Do This With Your Hands",
+      "instruction": "Today's is physical, and it takes about a minute. The point is to let your body make the argument instead of your head.",
+      "steps": [
+        "Cup both hands together in front of you, close, as though you were sheltering something small from wind.",
+        "Hold them there. Notice that this shape protects but does not produce — you cannot make anything in cupped hands.",
+        "Breathe out slowly across them, once.",
+        "Say quietly: \"It is already lit.\" Then open your hands and let them fall."
+      ],
+      "interaction_type": "physical"
+    },
+    {
+      "type": "teaching",
+      "heading": "Before You Close This",
+      "content": "The group this week is named for a Greek word that appears once in the Bible.\n\nPaul wrote it to somebody young and frightened, whose faith had come to him through his grandmother and his mother, and who was in a hard season with a job too big for him. And the word Paul chose was not a word for starting. It was a word for reviving. Built on embers.\n\nSo if you came into this week thinking you needed to get your fire back, hear the correction. You are not being asked to get anything back. You are being asked to believe it is in you — present tense, Paul's own grammar — and to get close enough to do something about the ash.\n\nThat is all today is. Not a bigger effort. A smaller and much nearer one.\n\nTomorrow we stop talking about tending altogether, and go to the fire as something else entirely.\n\nBefore that, one practical question, because this is the middle of the week and the middle is where things get decided.\n\nWhat is your ash actually made of?\n\nFor some people it is genuine grief, and the fire went quiet because grief takes everything. For some it is overwork, and there has been no oxygen for years. For some it is a specific injury from a specific person in a church, still unaddressed. For some it is comfort, which is the one nobody suspects, and which put out a fire that slavery could not.\n\nThose are different problems and they need different responses. Grief needs time and company. Overwork needs something removed. An injury needs to be named to somebody. Comfort needs an honest look at whether you have quietly stopped needing God for anything.\n\nWhat none of them needs is a bigger effort applied generally. That is the mistake that has exhausted more people than it has helped. Ash is specific. Find out what yours is made of before you start blowing.\n\nAnd if you cannot tell, that is worth saying out loud to one other person this week. Most of us cannot see our own ash. Other people usually can.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "God who does not light the same fire twice,\n\nYou put something in me and You have not taken it out. I have spent seasons behaving as though You had.\n\nThank You for the people it came through — the ones who taught me before I could evaluate it, who prayed for me when I did not ask, some of whom I never properly thanked.\n\nWhere comfort has done what suffering could not, and quietly put me to sleep, wake me. Where there is ash, give me the nerve to get down close to it.\n\nAnd let me stop asking for a new fire when You have never stopped keeping the one You gave.\n\nAmen.",
+      "breathPrayer": "It is already lit / I will not let it go out",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will name one person my faith came through, and I will contact them this week if I still can.",
+      "leavingAtCross": [
+        "The belief that a cold season means the fire went out and must be lit from nothing",
+        "The shame of a faith that came to me secondhand",
+        "The search for a new ignition instead of attention to the ash"
+      ],
+      "receivingFromCross": [
+        "A gift that is — present tense — in me",
+        "A job that is tending rather than starting",
+        "Two women in one verse, and whatever they handed me"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What does the Greek verb anazopyrein assume about the fire?",
+      "options": [
+        "That it has gone out completely and must be lit again",
+        "That it belongs to the person being addressed originally",
+        "That it will be given at some future point",
+        "That it already exists, whether the sense is rekindle or keep at full blaze"
+      ],
+      "answer": 3,
+      "explanation": "The verb is built on zopyron, embers. And Paul removes any doubt by describing the gift as one which is in you — present tense. Even readers who take the prefix as intensive rather than repetitive end up in the same place: there is a fire to work with."
+    },
+    {
+      "type": "profile",
+      "heading": "The Two Women in Verse Five",
+      "name": "Lois and Eunice",
+      "era": "First century, Lystra in Asia Minor",
+      "bio": "Timothy's grandmother and mother. Acts tells us Eunice was Jewish and Timothy's father was Greek. Beyond that, almost nothing — no recorded words, no story of their own, no other mention in Scripture.",
+      "keyQuote": "your sincere faith, which first dwelt in your grandmother Lois and your mother Eunice",
+      "lessonForUs": "Two women with a single verse between them, and the entire ministry of Timothy sits downstream of what they handed him. Most people who keep a fire alive do not get a chapter."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "2 Timothy 1:1-14 — the whole opening, including all four times Paul addresses fear",
+        "Leviticus 6:8-13 — the instructions for the fire that was never to go out",
+        "Genesis 45:25-28 — where the Greek Old Testament uses today's verb of Jacob's spirit reviving",
+        "Acts 16:1-3 — the little we know about Timothy's background"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Is Holiness Just Moral Perfection? (The Bible's Bigger Idea)",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=l9vn5UvsHvM"
+        }
+      ],
+      "forDeeperStudy": "Sources for today — Greek checked against Strong's G329 (anazopyreo), parsed present infinitive active, a hapax legomenon in the New Testament; Thayer for the derivation from zopyron, embers. Hebrew checked against Strong's H8548 (tamid), H3518 (kabah), with tuqad parsed as Hophal. On the authorship of 2 Timothy: scholars genuinely differ, though the common claim that most reject Pauline authorship overstates it — a 2011 survey of 111 New Testament scholars ran 63 for authenticity against 13 opposed. On Sojourner Truth: Olive Gilbert, Narrative of Sojourner Truth, Boston, 1850, dictated by Truth and written in the third person by Gilbert."
+    }
+  ]
+}
