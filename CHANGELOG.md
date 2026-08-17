@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE FEATURE AND RACK ARTWORK WAS COLLAPSED TO ZERO HEIGHT — SA-071 / F-115 (2026-08-16)
+
+Founder: _"Rack images still not showing"_ · _"same with Feature on series"_.
+
+**The images were never missing.** Every file was on disk, every `<img>` was in
+the DOM, every one of them loaded, and nothing 404'd. They were rendering at
+**zero height**:
+
+| Class                 | Rendered     |
+| --------------------- | ------------ |
+| `.fp-story-plate`     | 619 × **0**  |
+| `.fp-desk-lede-plate` | 529 × **0**  |
+| `.fp-desk-item-plate` | — × **0**    |
+| `.rack-plate`         | 363 × **10** |
+
+31 collapsed images in Feature, 37 in Rack.
+
+`Plate` renders `<Image fill>`, which is **absolutely positioned** — and an
+absolutely-positioned child contributes nothing to its parent's height. A plate
+container with no `aspect-ratio` and no explicit height therefore has no height
+at all, and `overflow: hidden` clips the artwork to a sliver.
+
+Four of the seven plate containers were written without one. `.cover-plate`
+(3/4), `.issue-plate` (4/3), `.fp-lead-plate` (21/9) and `.fp-brief-plate` (1/1)
+had ratios; `.fp-story-plate`, `.fp-desk-lede-plate`, `.fp-desk-item-plate` and
+`.rack-plate` did not. All four declare **3/2** now — the series artwork's own
+shape, so nothing is cropped to achieve it.
+
+**Not a regression.** Checked at `HEAD~1`, `HEAD~5` and `HEAD~15`: zero
+`aspect-ratio` lines in `.fp-story-plate` at every one. These rules never
+carried a height.
+
+**Why the earlier pass missed it, and the lesson:** it counted _elements_, not
+pixels — 37 links against 37 `<img>` tags read as healthy, and I reported that
+as verified. An image can be present, loaded and decoded and still be invisible.
+**Measure rendered height, not element count.** Any plate wider than 60px
+rendering under 40px tall is a bug whatever the DOM says.
+
+Verified in the Workers runtime: 0 collapsed images in either view; Feature 37
+images, median height 152px; Rack 37 images, median height 251px; all 37 painted
+in both. Service worker **v100**.
+
+---
+
 ## PREVIEW IS CENTRED, AND EVERY ENTRY CARRIES ITS PLATE — SA-070 / F-114 (2026-08-16)
 
 Founder, on the live site: _"the two columns should be centered on page. There

@@ -1083,3 +1083,11 @@ features:
     prd: docs/feature-prds/F-114.md
     methodology_refs:
       - M00
+  - id: F-115
+    title: The Feature and Rack artwork was collapsed to zero height
+    slug: feature-rack-artwork-collapsed
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-115.md
+    methodology_refs:
+      - M00

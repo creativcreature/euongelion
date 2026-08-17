@@ -11650,6 +11650,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-story-plate {
   position: relative;
+  /* A fill image is absolutely positioned, so this box has NO intrinsic
+     height — without a ratio it collapses and the artwork renders as a
+     sliver or nothing at all. 3/2 is the series artwork's own shape, so
+     nothing is cropped. Founder 2026-08-16: "There are missing images in
+     Rack and Feature toggles." */
+  aspect-ratio: 3 / 2;
   display: block;
   overflow: hidden;
   background: var(--plate-ground);
@@ -11855,6 +11861,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 .rack-plate {
   position: relative;
+  /* A fill image is absolutely positioned, so this box has NO intrinsic
+     height — without a ratio it collapses and the artwork renders as a
+     sliver or nothing at all. 3/2 is the series artwork's own shape, so
+     nothing is cropped. Founder 2026-08-16: "There are missing images in
+     Rack and Feature toggles." */
+  aspect-ratio: 3 / 2;
   display: block;
   overflow: hidden;
   background: var(--plate-ground);
@@ -13146,6 +13158,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-desk-lede-plate {
   position: relative;
+  /* A fill image is absolutely positioned, so this box has NO intrinsic
+     height — without a ratio it collapses and the artwork renders as a
+     sliver or nothing at all. 3/2 is the series artwork's own shape, so
+     nothing is cropped. Founder 2026-08-16: "There are missing images in
+     Rack and Feature toggles." */
+  aspect-ratio: 3 / 2;
   display: block;
   overflow: hidden;
   background: var(--plate-ground);
@@ -13190,6 +13208,12 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-desk-item-plate {
   position: relative;
+  /* A fill image is absolutely positioned, so this box has NO intrinsic
+     height — without a ratio it collapses and the artwork renders as a
+     sliver or nothing at all. 3/2 is the series artwork's own shape, so
+     nothing is cropped. Founder 2026-08-16: "There are missing images in
+     Rack and Feature toggles." */
+  aspect-ratio: 3 / 2;
   display: block;
   overflow: hidden;
   background: var(--plate-ground);
