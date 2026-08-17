@@ -38,6 +38,15 @@ still, with the still as poster so a blocked clip degrades to the image, and
 hidden under `prefers-reduced-motion`. Four clips exist (day 1 x3, day 2 torch);
 the remaining seventeen are unfunded.
 
+Two plates regenerated individually rather than by another global prompt sweep:
+`day3-lead` (hand in strict profile so the digits are countable, ember on a clay
+shard rather than bare skin, glow bloom removed) and `day5-mid` (camera below the
+ledge, hard raking key, varied lamp forms at uneven intervals). Also noted: the
+ad-hoc ink-coverage metric used during art direction is brightness-based and
+therefore counts the halftone dots in _lit_ areas as ink — it reports 90%+ for
+plates that are visibly balanced. The repo's own texture-based verifier is the
+one to trust.
+
 Audio re-rendered against the corrected text — all seven days, 106 minutes in
 the founder's voice with the atmospheric bed. textHash parity 4/4, so every
 track speaks what its page shows. Largest file 10.0 MB against the hard 25 MiB
