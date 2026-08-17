@@ -54,10 +54,12 @@ describe('SeriesBrowser — ten layouts', () => {
     // Founder-cut 2026-08-15: Index, Contact and Broadsheet removed.
     expect(screen.getAllByRole('tab')).toHaveLength(7)
     expect(VIEWS).toHaveLength(7)
-    // Founder 2026-08-16: Flow leads and replaces Rose; Covers follows.
-    expect(VIEWS[0].label).toBe('Flow')
-    expect(VIEWS[1].label).toBe('Covers')
+    // Founder 2026-08-16: "Cover is now the default then preview is the next
+    // toggle." Preview replaced Flow, which replaced Rose.
+    expect(VIEWS[0].label).toBe('Covers')
+    expect(VIEWS[1].label).toBe('Preview')
     expect(VIEWS.map((v) => v.label)).not.toContain('Rose')
+    expect(VIEWS.map((v) => v.label)).not.toContain('Flow')
     expect(container.querySelectorAll('.rr-view svg')).toHaveLength(7)
     for (const gone of ['Index', 'Contact', 'Broadsheet']) {
       expect(screen.queryByRole('tab', { name: gone })).toBeNull()
@@ -76,15 +78,15 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('defaults to Flow, and Feature leads with the longest reading', () => {
+  it('defaults to Covers, and Feature leads with the longest reading', () => {
     const { container } = render(<SeriesBrowser />)
     // Founder-ordered 2026-08-15: Covers first, Issues second.
-    expect(screen.getByRole('tab', { name: 'Flow' })).toHaveAttribute(
+    expect(screen.getByRole('tab', { name: 'Covers' })).toHaveAttribute(
       'aria-selected',
       'true',
     )
     expect(screen.getAllByRole('tab').map((t) => t.getAttribute('aria-label'))).toEqual([
-      'Flow', 'Covers', 'Issues', 'Feature', 'Rack', 'Spines', 'List',
+      'Covers', 'Preview', 'Issues', 'Feature', 'Rack', 'Spines', 'List',
     ])
     openView('Feature')
     const lead = container.querySelector('.fp-lead') as HTMLElement
@@ -119,33 +121,26 @@ describe('SeriesBrowser — ten layouts', () => {
     }
   })
 
-  it('flow lays the catalog out as a uniform, repeating board', () => {
-    // Founder 2026-08-16: "same sixe and aspect ration (croping no skewing or
-    // stretching)… needs to overflow and repeat, and titles need to show."
-    // Uniform tiles, so there is no packing to test — what matters is that
-    // every series appears, the board repeats, and every tile is named.
+  it('preview pairs every plate with a real summary', () => {
+    // Founder 2026-08-16: "left column th image and the right column a small
+    // 2-3 sentence summary of the devotional." The summary is the series'
+    // own hand-written introduction — nothing generated, nothing truncated.
     const { container } = render(<SeriesBrowser />)
-    openView('Flow')
-    const tiles = container.querySelectorAll('.flow-tile')
-    expect(container.querySelector('.flow-frame')).not.toBeNull()
+    openView('Preview')
+    const rows = container.querySelectorAll('.preview-row')
+    expect(rows.length).toBe(
+      ALL_SERIES_ORDER.filter((s) => SERIES_DATA[s]).length,
+    )
 
-    // Repeats: more tiles than series, and an exact multiple of them.
-    const hrefs = Array.from(tiles).map((t) => t.getAttribute('href'))
-    const unique = new Set(hrefs)
-    expect(tiles.length).toBeGreaterThan(unique.size)
-    expect(tiles.length % unique.size).toBe(0)
-
-    // Every tile carries its title — not a hover-only label.
-    tiles.forEach((tile) => {
-      expect(tile.querySelector('.flow-title')?.textContent).toBeTruthy()
-    })
-
-    // No tile carries inline sizing: they are uniform by CSS, so a stray
-    // width/height here would mean something reintroduced per-tile shapes.
-    tiles.forEach((tile) => {
-      const el = tile as HTMLElement
-      expect(el.style.gridColumn).toBe('')
-      expect(el.style.gridRow).toBe('')
+    rows.forEach((row) => {
+      expect(row.querySelector('.preview-plate img')).not.toBeNull()
+      const summary = row.querySelector('.preview-summary')?.textContent ?? ''
+      expect(summary.length).toBeGreaterThan(40)
+      // Two or three sentences, as briefed — not a paragraph.
+      const sentences = summary.split(/(?<=[.?!])\s+/).filter(Boolean).length
+      expect(sentences).toBeGreaterThanOrEqual(1)
+      expect(sentences).toBeLessThanOrEqual(4)
+      expect(row.querySelector('.preview-title')?.textContent).toBeTruthy()
     })
 
     expect(missingFromStage(container)).toEqual([])

@@ -690,6 +690,32 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Preview replaces Flow, and Covers leads again (2026-08-16)
+
+Registered as **SA-069** (F-113). Founder: _"not a fan at all. Change it to a
+two column version with the left column th image and the right column a small
+2-3 sentence summary of the devotional. Instead of Flow this is Preview. Cover
+is now the default."_
+
+**Flow is deleted** — component, styles, drag/wheel/drift machinery, tests. It
+went through four rebuilds in one day and never landed, and the reason is worth
+keeping: every one was designed from a *description* of a reference rather than
+from measuring the reference itself. The brief that replaced it is plainer and
+better — a reader wants to see the art and find out what the reading is about,
+and everything the artboard was doing stood between them and both.
+
+**Preview is ruled rows**: plate left in a *fixed* column, copy right. Fixed
+rather than fractional, because at a share of the width the plate grew with the
+page and every row ran ~390px tall — a lot of scrolling across 37 series. Fixed
+holds each row near 210px at any viewport, and it stacks under 700px where two
+columns would leave the summary in a gutter too narrow to read.
+
+**The summary is real copy.** Every series already carries a hand-written
+`introduction`. Most are two or three sentences; three run to six, so the
+summary prints the *first three* — the author's own words in their own order,
+stopped early. Nothing paraphrased, nothing generated, and no CSS clamp, so
+nothing is ever cut off mid-word. — SA-069 (F-113)
+
 ## Flow, rebuilt against the founder's own gallery (2026-08-16)
 
 Registered as **SA-068** (F-112). Reference is now

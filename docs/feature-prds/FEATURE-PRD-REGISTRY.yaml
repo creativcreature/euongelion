@@ -1067,3 +1067,11 @@ features:
     prd: docs/feature-prds/F-112.md
     methodology_refs:
       - M00
+  - id: F-113
+    title: Preview replaces Flow, and Covers leads again
+    slug: preview-replaces-flow
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-113.md
+    methodology_refs:
+      - M00

@@ -58,9 +58,9 @@ export default function SeriesBrowser() {
     () => false,
   )
 
-  // Founder 2026-08-16: Flow "will be the first toggle on the series page" and
-  // replaces Rose. First has always meant default here — Covers was both.
-  const [view, setView] = useState<ViewId>('flow')
+  // Founder 2026-08-16: "Cover is now the default then preview is the next
+  // toggle." Covers leads again.
+  const [view, setView] = useState<ViewId>('covers')
   const [sort, setSort] = useState<SortKey>('az')
   const [query, setQuery] = useState('')
   const completions = useProgressStore((s) => s.completions)
@@ -70,7 +70,7 @@ export default function SeriesBrowser() {
   // hydration so the server pass stays deterministic.
   const [restored, setRestored] = useState(false)
   if (hydrated && !restored) {
-    setView(readStored(STORAGE_VIEW, VIEWS.map((v) => v.id), 'flow'))
+    setView(readStored(STORAGE_VIEW, VIEWS.map((v) => v.id), 'covers'))
     setSort(readStored(STORAGE_SORT, SORT_OPTIONS.map((s) => s.key), 'az'))
     setRestored(true)
   }

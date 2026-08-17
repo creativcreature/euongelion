@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SERIES_DATA } from '@/data/series'
 import { sectionsFor } from '@/data/series-sections'
-import FlowView from './FlowView'
+import PreviewView from './PreviewView'
 import { dayCountLabel, seriesRecencyRank } from '@/lib/series/catalog'
 
 /**
@@ -45,7 +45,7 @@ export type ViewId =
   | 'covers'
   | 'spines'
   | 'list'
-  | 'flow'
+  | 'preview'
   | 'issues'
 
 export const VIEWS: ReadonlyArray<{
@@ -56,10 +56,12 @@ export const VIEWS: ReadonlyArray<{
 }> = [
   // Founder-ordered 2026-08-15: Covers leads, Issues second. The art is the
   // fastest way to recognise a reading you have seen; recency is the second.
-  // Founder 2026-08-16: "this will be the first toggle on the series page."
-  // Flow REPLACES Rose — the wheel was beautiful and did not survive a phone.
-  { id: 'flow', label: 'Flow', blurb: 'The artboard. Drag across the whole catalog.' },
+  // Founder 2026-08-16: "Cover is now the default then preview is the next
+  // toggle." Preview replaces Flow, which went through four rebuilds and never
+  // landed — a reader wants the art and what the reading is about, and the
+  // artboard's panning stood between them and both.
   { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
+  { id: 'preview', label: 'Preview', blurb: 'The plate, and what the reading is about.' },
   { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
   { id: 'feature', label: 'Feature', blurb: 'Column inches by weight. The longest reading leads.' },
   { id: 'rack', label: 'Rack', blurb: 'Every series folded over the rail, mastheads out.' },
@@ -600,6 +602,6 @@ export const LAYOUTS: Record<ViewId, (props: LayoutProps) => React.ReactElement>
   covers: CoversView,
   spines: SpinesView,
   list: ListView,
-  flow: FlowView,
+  preview: PreviewView,
   issues: IssuesView,
 }

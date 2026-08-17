@@ -13801,180 +13801,135 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 
-/* ── FLOW — the gallery board (F-112) ───────────────────────────────────
-   Reference is now the founder's OWN gallery (creativcreature.wokegod.world/
-   gallery): uniform square cards, cover-cropped, a soft radius, dealt into a
-   dense board. Measured there: 80x80 at an 88px pitch, object-fit cover, 4px
-   radius. Flow uses the two LARGEST size steps above that — founder: "I only
-   need the two largest size levels… not the small sizwe".
+/* ── PREVIEW — the plate and what it is about (F-113) ───────────────────
+   Founder 2026-08-16: "Change it to a two column version with the left column
+   th image and the right column a small 2-3 sentence summary of the
+   devotional. Instead of Flow this is Preview."
 
-   Two things they asked for that the earlier builds got wrong: the type sits
-   BELOW the image, never over it, and the COLUMNS carry their own movement as
-   the board travels sideways. */
+   Replaces Flow. Rows of plate-and-summary, ruled like a listing page — the
+   reader sees the art and finds out what the reading is about, with nothing
+   between them and either. */
 
-.flow {
+.preview {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  border-top: var(--rr-hair);
 }
 
-.flow-frame {
-  position: relative;
-  width: 100%;
-  /* Contained within the newspaper border — never full bleed. */
-  height: clamp(460px, 66vh, 720px);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  border: var(--rr-hair);
-  background: var(--plate-ground);
-  cursor: grab;
-  touch-action: pan-x pan-y;
-}
-
-.flow-frame:active {
-  cursor: grabbing;
-}
-
-.flow-frame:focus-visible {
-  outline: 2px solid var(--color-crimson);
-  outline-offset: 2px;
-}
-
-/* The board runs sideways: a row of columns, each four cards deep. */
-.flow-board {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 12px;
-  width: max-content;
-}
-
-/* Each column drifts a little as the board travels — capped hard, so a card
-   can never be pushed out of reach. */
-.flow-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transform: translate3d(0, var(--col-shift, 0px), 0);
-  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: transform;
-}
-
-.flow-tile {
-  display: block;
-  flex: 0 0 auto;
+.preview-row {
+  display: grid;
+  /* The plate takes a FIXED column rather than a share of the width. At a
+     fractional share it grew with the page and each row ran ~390px tall, which
+     is a lot of scrolling across 37 series; fixed keeps every row the same
+     compact height whatever the viewport. */
+  grid-template-columns: clamp(200px, 24vw, 320px) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: center;
+  padding: 0.9rem 0.2rem;
+  border-bottom: var(--rr-hair);
   text-decoration: none;
-  color: var(--plate-ink);
+  color: var(--mock-ink);
+  transition: background 200ms ease;
 }
 
-/* The plate: a square, cover-cropped, bordered — never stretched. */
-.flow-plate {
+.preview-row:hover,
+.preview-row:focus-visible {
+  background: color-mix(in srgb, var(--mock-ink) 3.5%, transparent);
+}
+
+.preview-plate {
   position: relative;
   display: block;
-  width: 100%;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--plate-ink) 26%, transparent);
-  background: color-mix(in srgb, var(--mock-paper) 14%, var(--plate-ground) 86%);
-  filter: blur(var(--flow-blur, 0px));
-  transition:
-    filter 120ms linear,
-    border-color 200ms ease;
+  background: var(--plate-ground);
+  border: 1px solid color-mix(in srgb, var(--mock-ink) 18%, transparent);
 }
 
-.flow-tile:hover .flow-plate,
-.flow-tile:focus-visible .flow-plate {
-  border-color: var(--color-crimson);
-}
-
-.flow-img {
+.preview-img {
   object-fit: cover;
-  transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.flow-tile:hover .flow-img {
-  transform: scale(1.04);
+.preview-row:hover .preview-img {
+  transform: scale(1.03);
 }
 
-/* Founder 2026-08-16: "the type should uppear bellow image, not on top." */
-.flow-caption {
+.preview-copy {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  padding: 0.45rem 0.1rem 0;
+  gap: 0.4rem;
+  min-width: 0;
 }
 
-.flow-title {
+.preview-kicker {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.preview-title {
   font-family: var(--font-family-serif);
-  font-size: 0.98rem;
-  line-height: 1.15;
-  color: var(--plate-ink);
+  font-size: clamp(1.4rem, 2.2vw, 2.05rem);
+  line-height: 1.08;
   text-wrap: balance;
 }
 
-.flow-days {
+.preview-summary {
+  font-family: var(--font-family-serif);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--mock-muted);
+  /* The summary is capped at three whole sentences in the component, so there
+     is no CSS clamp here — nothing is ever cut off mid-word. */
+  max-width: 62ch;
+}
+
+.preview-more {
+  margin-top: 0.15rem;
   font-family: var(--font-family-ui);
-  font-size: 0.52rem;
+  font-size: 0.56rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--plate-ink);
-  opacity: 0.66;
+  color: var(--color-crimson);
+  opacity: 0;
+  transform: translate3d(-4px, 0, 0);
+  transition:
+    opacity 200ms ease,
+    transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* The two size levels. */
-.flow-levels {
-  display: flex;
-  gap: 0;
-  align-self: center;
+.preview-row:hover .preview-more,
+.preview-row:focus-visible .preview-more {
+  opacity: 1;
+  transform: none;
 }
 
-.flow-level {
-  font-family: var(--font-family-ui);
-  font-size: 0.56rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
-  border: var(--rr-hair);
-  background: transparent;
-  color: var(--mock-muted);
-  cursor: pointer;
-}
-
-.flow-level + .flow-level {
-  border-left: 0;
-}
-
-.flow-level.is-on {
-  background: var(--mock-ink);
-  color: var(--mock-paper);
-}
-
-.flow-hint {
-  align-self: center;
-  font-size: 0.56rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mock-muted);
-}
-
-@media (max-width: 900px) {
-  .flow-frame {
-    height: clamp(420px, 60vh, 620px);
-    cursor: default;
+@media (max-width: 700px) {
+  /* Stacked on a phone: plate over copy. Two columns at this width would leave
+     the summary in a gutter too narrow to read. */
+  .preview-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 1rem 0;
   }
-  .flow-hint {
-    visibility: hidden;
+  .preview-title {
+    font-size: 1.35rem;
+  }
+  .preview-more {
+    /* No hover on a phone. */
+    opacity: 1;
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .flow-col,
-  .flow-plate,
-  .flow-img {
+  .preview-row,
+  .preview-img,
+  .preview-more {
     transition: none;
-    transform: none;
-    filter: none;
   }
 }
 

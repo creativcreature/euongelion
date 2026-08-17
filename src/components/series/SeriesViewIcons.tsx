@@ -72,18 +72,14 @@ export function ViewIcon({ id }: { id: ViewId }) {
         </svg>
       )
     // Hung by eye: unequal blocks.
-    case 'flow':
-      // The artboard: tiles of different sizes on a canvas larger than the
-      // frame, which is exactly what the view is.
+    case 'preview':
+      // A plate on the left, lines of copy on the right — the view itself.
       return (
         <svg {...S}>
-          <rect x="2" y="2.5" width="8" height="8" rx="0.5" />
-          <rect x="11.5" y="2.5" width="5.5" height="5.5" rx="0.5" />
-          <rect x="11.5" y="10" width="5.5" height="7.5" rx="0.5" />
-          <rect x="2" y="12" width="8" height="5.5" rx="0.5" />
+          <rect x="2" y="4" width="7.5" height="12" rx="0.5" />
+          <path d="M12 5.5h6M12 9h6M12 12.5h4.5" />
         </svg>
       )
-
     case 'issues':
       return (
         <svg {...S}>
