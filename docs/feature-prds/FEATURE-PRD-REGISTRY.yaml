@@ -1099,3 +1099,11 @@ features:
     prd: docs/feature-prds/F-116.md
     methodology_refs:
       - M00
+  - id: F-117
+    title: Get Matched is a button, and the homepage pills are gone
+    slug: get-matched-smaller-pills-removed
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-117.md
+    methodology_refs:
+      - M00

@@ -116,6 +116,7 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-114 | Platform          | Preview centred; every entry carries its plate      | 0/10     | wip    | [F-114.md](./F-114.md) |
 | F-115 | Platform          | Feature + Rack artwork collapsed to zero height     | 0/10     | wip    | [F-115.md](./F-115.md) |
 | F-116 | Soul Audit        | Soul Audit input sat 34px off centre                | 0/10     | wip    | [F-116.md](./F-116.md) |
+| F-117 | Soul Audit        | Get Matched sized down; homepage pills removed      | 0/10     | wip    | [F-117.md](./F-117.md) |
 | F-101 | Reading           | The Audio Edition transport, on the Audible model   | 0/10     | wip    | [F-101.md](./F-101.md) |
 | F-102 | Reading           | Notes, journal entries, and reflection answers      | 0/10     | wip    | [F-102.md](./F-102.md) |
 | F-105 | Data & privacy    | Two site states — signed out reads, signed in keeps | 0/10     | wip    | [F-105.md](./F-105.md) |

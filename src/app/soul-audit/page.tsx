@@ -205,16 +205,28 @@ export default function SoulAuditPage() {
                     </div>
                   )}
 
-                  <button
-                    onClick={() => void submitResponse(response)}
-                    disabled={isSubmitting}
-                    className="cta-major text-label vw-small w-full px-10 py-5 disabled:opacity-50"
-                    style={{
-                      transitionTimingFunction: 'var(--motion-ease)',
-                    }}
-                  >
-                    GET MATCHED
-                  </button>
+                  {/* Founder 2026-08-16: "get matched should be a smaller
+                      cta." Was full-width at px-10 py-5, which read as a banner
+                      rather than a button.
+
+                      CENTRED FROM THE PARENT ON PURPOSE. `.cta-major` sets
+                      `display: inline-flex` from a layered rule that BEATS
+                      Tailwind's `flex` utility, so `mx-auto` on the button
+                      itself did nothing — measured live at 483px left against a
+                      984px right gap. A flex parent centres it whatever the
+                      button's own display resolves to. */}
+                  <div className="flex justify-center">
+                    <button
+                      onClick={() => void submitResponse(response)}
+                      disabled={isSubmitting}
+                      className="cta-major text-label vw-small w-fit px-8 py-3.5 disabled:opacity-50"
+                      style={{
+                        transitionTimingFunction: 'var(--motion-ease)',
+                      }}
+                    >
+                      GET MATCHED
+                    </button>
+                  </div>
 
                   <p className="vw-small mt-8 text-center text-muted">
                     {typographer(

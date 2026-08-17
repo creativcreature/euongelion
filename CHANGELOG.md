@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## GET MATCHED IS A BUTTON, AND THE HOMEPAGE PILLS ARE GONE — SA-073 / F-117 (2026-08-16)
+
+Founder: _"get matched should be a smaller cta. remove the pills on the
+homeopage version as well."_
+
+**The CTA was a banner, not a button.** On `/soul-audit` it ran `w-full px-10
+py-5` — the full width of the 680px column with 20px of vertical padding. At
+that size it stopped reading as something you press and started reading as a
+section divider. It is `w-fit px-8 py-3.5` now: sized to its own label, padding
+brought down, still comfortably above the 44px touch minimum. The homepage CTA
+was already inline (`mock-btn-inline`) and is untouched.
+
+**The centring detail worth keeping — and I got it wrong once.** `cta-major`
+sets `display: inline-flex` from a **layered** rule that beats Tailwind's `flex`
+utility, and `margin-inline: auto` does nothing to an inline-level box. The
+first attempt (`mx-auto flex w-fit` on the button) measured 483px from the left
+against a 984px right gap — still not centred. It is centred **from its parent**
+now (`<div className="flex justify-center">`), which holds whatever the button's
+own `display` resolves to. Same class of bug as F-116, one element away.
+
+**The homepage prompt pills are removed.** Four sample-prompt buttons sat under
+the homepage field, shown only while it was empty. The placeholder (_"Lately,
+I've been…"_) already models what to write, and a Soul Audit works on what the
+reader actually names — offering four pre-written answers puts words in their
+mouth before they have found their own.
+
+The pill CSS is **left in place**, unused: removing it would touch shared
+stylesheet regions while other sessions are working in the same file, and dead
+rules cost nothing. Worth deleting in a quiet pass. No test asserted the pills —
+the three test files containing those phrases use them as retrieval fixtures.
+
+Service worker **v102**.
+
+---
+
 ## THE SOUL AUDIT INPUT SAT 34PX OFF CENTRE — SA-072 / F-116 (2026-08-16)
 
 Founder: _"soul audit input box needs to be centered."_

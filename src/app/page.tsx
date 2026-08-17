@@ -15,10 +15,7 @@ import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
 import { SERIES_COUNT } from '@/data/series'
-import {
-  featuredForServer,
-  rotateFeatured,
-} from '@/lib/home/featured-rotation'
+import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
 
 /**
  * Homepage featured SERIES content. Founder direction 2026-05-13: the
@@ -463,7 +460,10 @@ export default function Home() {
           id="today-devotional"
           aria-label="Today's featured devotional"
         >
-          <div className="homepage-featured-devotional-art" data-parallax="0.55">
+          <div
+            className="homepage-featured-devotional-art"
+            data-parallax="0.55"
+          >
             <Image
               src={HOMEPAGE_TODAY.featuredArt}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
@@ -576,31 +576,11 @@ export default function Home() {
                 aria-label="What are you wrestling with today?"
               />
 
-              {/* Sample prompt pills — only shown while the field is empty, so a
-                  tap can never overwrite what someone has already written. */}
-              {!auditText.trim() && (
-                <div className="homepage-prompt-pills">
-                  {[
-                    'I feel anxious about my future',
-                    'I\u2019m doubting everything I thought I believed',
-                    'I keep falling into the same sin',
-                    'I don\u2019t know what I believe',
-                  ].map((pill) => (
-                    <button
-                      key={pill}
-                      type="button"
-                      className="homepage-prompt-pill text-label"
-                      onClick={() => {
-                        setAuditText(pill)
-                        setError(null)
-                      }}
-                      disabled={isSubmitting}
-                    >
-                      {pill}
-                    </button>
-                  ))}
-                </div>
-              )}
+              {/* Founder 2026-08-16: "remove the pills on the homepage version
+                  as well." The four sample-prompt buttons that sat under the
+                  field are gone — the placeholder already models what to
+                  write, and the pills were answering the question for the
+                  reader. */}
 
               {showLowContextHint && (
                 <p className="mock-footnote">
