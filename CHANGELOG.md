@@ -690,6 +690,31 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Flow is an artboard, not a card wall (2026-08-16)
+
+Founder: _"Flow is designed nothing like the example fyi."_ Correct — it was a
+bordered gallery widget with a caption scrim on every tile. The reference is a
+full-bleed artboard of pure imagery. Registered as **SA-066** (F-110).
+
+Rebuilt on four points: **full bleed** (the frame breaks the page measure, so
+the tiles *are* the surface), **tiles butting on a 3px hairline** rather than a
+14px gutter — the difference between cards on a page and one sheet cut into
+plates — **no permanent captions** (pure image; the name arrives on hover, and
+is always on below 900px where there is no hover), and **four tile shapes**
+instead of two, because two sizes reads as a card wall.
+
+**And the holes.** Thirteen empty cells in the middle of the board — the exact
+awkward spaces called out. Three fixes, in order: shape choice is now
+**adaptive** (a 2-wide tile that would skip over a single-column trough goes
+narrow), a **relocation** pass moves single-cell tiles up into surviving gaps,
+and anything still open is closed by growing the tile above it. Proven across
+every column count: **zero holes, zero overlaps** at 2, 4, 6 and 8 columns —
+the only counts Flow ships. `flow-packing.test.ts` pins it.
+
+The plates are **eager** again: inside a scroll container Chrome leaves lazy
+images unloaded, and the board renders as a flat dark field with no tiles at
+all. — SA-066 (F-110)
+
 ## Flow scrolls natively, and the mobile audit passes (2026-08-16)
 
 Registered as **SA-065** (F-109).

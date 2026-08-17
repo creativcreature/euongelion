@@ -13816,15 +13816,22 @@ html[data-held-moment] .mobile-tab-bar {
 
 .flow-frame {
   position: relative;
-  height: clamp(420px, 68vh, 760px);
+  /* FULL BLEED. The reference is an artboard, not a widget: the tiles ARE the
+     surface, edge to edge, with no frame around them. Breaking out of the page
+     measure is the difference between "a gallery component" and "a board you
+     are looking across". */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  height: clamp(520px, 82vh, 900px);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   /* The board's scroll never leaks to the page behind it, but the page is
      always reachable because the frame ends. */
   overscroll-behavior-y: contain;
-  border: var(--rr-hair);
-  background: color-mix(in srgb, var(--mock-ink) 4%, var(--mock-paper) 96%);
+  border-top: var(--rr-hair);
+  border-bottom: var(--rr-hair);
+  background: var(--plate-ground);
   cursor: grab;
   /* Touch belongs to the platform; drag-to-pan is a pointer enhancement. */
   touch-action: pan-y;
@@ -13839,10 +13846,15 @@ html[data-held-moment] .mobile-tab-bar {
   outline-offset: 2px;
 }
 
+/* A hair lighter than the frame so the cut lines between plates read even
+   before the imagery paints — an all-dark field looks like a broken view. */
 .flow-board {
+  background: color-mix(in srgb, var(--mock-paper) 22%, var(--plate-ground) 78%);
   display: grid;
-  gap: 14px;
-  padding: 14px;
+  /* Tiles butt together on a hairline. A 14px gutter reads as cards on a
+     page; 3px reads as one printed sheet cut into plates. */
+  gap: 3px;
+  padding: 3px;
   /* Fills the frame by construction — nothing is measured, so nothing can be
      mis-measured into dead space. */
   width: 100%;
@@ -13855,19 +13867,31 @@ html[data-held-moment] .mobile-tab-bar {
   text-decoration: none;
   color: var(--plate-ink);
   background: var(--plate-ground);
-  box-shadow: 0 0 0 1px var(--mock-line);
   /* The smear, driven from real scroll travel and settling at rest. */
   filter: blur(var(--flow-blur, 0px));
-  transition:
-    box-shadow 200ms ease,
-    filter 120ms linear;
+  transition: filter 120ms linear;
+}
+
+.flow-tile::after {
+  /* A hairline that only appears on the tile you are on — the reference marks
+     the active plate rather than boxing every one of them. */
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 2px var(--color-crimson);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.flow-tile:hover::after,
+.flow-tile:focus-visible::after {
+  opacity: 1;
 }
 
 .flow-tile:hover,
 .flow-tile:focus-visible {
-  box-shadow:
-    0 0 0 2px var(--color-crimson),
-    0 16px 34px -18px rgba(9, 12, 32, 0.7);
   z-index: 2;
 }
 
@@ -13886,6 +13910,8 @@ html[data-held-moment] .mobile-tab-bar {
   transform: scale(1.05);
 }
 
+/* The tiles are pure imagery until you are on one. A permanent scrim on every
+   plate is what made this read as a card wall rather than an artboard. */
 .flow-caption {
   position: absolute;
   left: 0;
@@ -13894,12 +13920,24 @@ html[data-held-moment] .mobile-tab-bar {
   display: flex;
   flex-direction: column;
   gap: 0.12rem;
-  padding: 0.85rem 0.75rem 0.7rem;
+  padding: 1.4rem 0.7rem 0.6rem;
   background: linear-gradient(
     180deg,
     rgba(9, 12, 32, 0) 0%,
-    rgba(9, 12, 32, 0.82) 62%
+    rgba(9, 12, 32, 0.88) 70%
   );
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  transition:
+    opacity 200ms ease,
+    transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: 2;
+}
+
+.flow-tile:hover .flow-caption,
+.flow-tile:focus-visible .flow-caption {
+  opacity: 1;
+  transform: none;
 }
 
 .flow-title {
@@ -13930,8 +13968,13 @@ html[data-held-moment] .mobile-tab-bar {
 @media (max-width: 900px) {
   .flow-frame {
     height: auto;
-    max-height: 78vh;
+    max-height: 82vh;
     cursor: default;
+  }
+  /* No hover on a phone, so the name is always on. */
+  .flow-caption {
+    opacity: 1;
+    transform: none;
   }
   .flow-hint {
     /* "Drag" is not the gesture on a phone. */

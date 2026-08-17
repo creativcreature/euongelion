@@ -1043,3 +1043,11 @@ features:
     prd: docs/feature-prds/F-109.md
     methodology_refs:
       - M00
+  - id: F-110
+    title: Flow is an artboard, not a card wall
+    slug: flow-artboard-not-card-wall
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-110.md
+    methodology_refs:
+      - M00
