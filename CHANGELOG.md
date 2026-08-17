@@ -102,6 +102,14 @@ Desktop is untouched; the block is `pointer: coarse` only.
 
 Locked by `__tests__/touch-target-pseudo-element-contract.test.ts`.
 
+Shipped with a service-worker bump, `euangelion-v106` → `v107`. `/series` alone
+would not have needed it — that route is network-first and Next content-hashes
+the stylesheet, so the corrected CSS arrives under a URL that was never cached.
+The bump is for the reading routes, which are cache-first: a returning reader's
+cached HTML keeps pointing at the previous stylesheet hash, and that stylesheet
+is cached too, so without the bump they would sit on the pre-fix CSS
+indefinitely.
+
 ---
 
 ## Rekindled — editorial pass, red letter, motion stills (SA-075, F-119)
