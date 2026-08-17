@@ -5,6 +5,56 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Touch hit pads painted blue slabs over the /series switcher (SA-077, F-121)
+
+**2026-08-17**
+
+The founder sent a screenshot of `/series` on iPhone: the view/sort switcher was
+buried under translucent cobalt rectangles, bigger than the controls, staggered,
+spilling over the SORT row and the wrapped LONGEST button.
+
+Not a recurrence of F-120. That was the browser's tap highlight plus a sticky
+`:hover`, and both remain fixed. This was a third independent cause wearing the
+same colour — which is exactly why it survived the last fix.
+
+**Two systems were writing to one `::after`.** `EditorialMotionSystem` scans the
+DOM after hydration and adds `ink-line-interactive` to every `.mock-paper
+button`, which the `/series` toggles are. Those classes appear nowhere in
+`SeriesBrowser.tsx`, so the collision is invisible in the source — it only exists
+at runtime. That class's `::after` is a gold hover underline kept invisible by
+`height: 1px` and `transform: scaleX(0)`.
+
+The 2026-08-16 touch-target sweep then minted its 44px hit pad on that same
+`::after`, overriding both guards at once:
+
+- `height: 1px` → `44px`, so the hairline became a slab.
+- `transform: scaleX(0)` → `translate(-50%, -50%)`, so the property keeping it
+  invisible was replaced by the one centring it. The slab un-collapsed and
+  painted.
+
+The `background` survived untouched, and `currentColor` on these controls is the
+cobalt ink — hence blue. A 44px pad on controls that render 35px and 25px
+overhangs 4.4px and 9.6px per side; the sort overhang exceeds the `0.55rem` row
+gap, so the slabs reached into the rows above and below.
+
+**Fix:** the pad moves to `::before`, which nothing claims on these selectors,
+and `::after` goes back to being the underline. One pseudo-element per owner.
+Painting the pad transparent instead would have hidden the slab while leaving the
+same landmine for whoever next adds an `::after` rule here; opting the controls
+out of the ink layer would have fixed touch by deleting the desktop hover
+underline, which was never asked for.
+
+Reproduced in WebKit/iPhone against production, then verified against the local
+build: `::after` back to a 1px `scaleX(0)` hairline, `::before` ≥ 44×44 and
+transparent, all twelve toggles still activate from a tap, and a tap 3px _above_
+a 35px icon still activates it — so the expanded target is real, not merely
+declared. A sweep of eight routes found no other instance of the collision.
+Desktop is untouched; the block is `pointer: coarse` only.
+
+Locked by `__tests__/touch-target-pseudo-element-contract.test.ts`.
+
+---
+
 ## Rekindled — editorial pass, red letter, motion stills (SA-075, F-119)
 
 **2026-08-17**

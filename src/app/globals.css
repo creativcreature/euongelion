@@ -14333,6 +14333,17 @@ html[data-held-moment] .mobile-tab-bar {
    Scoped to `pointer: coarse` so mouse hover regions are unchanged, and none
    of these controls sits inside an `overflow: hidden` container, so the
    expanded area is really hittable rather than clipped.
+
+   SA-077 (F-121) — the pad MUST live on `::before`, not `::after`.
+   `EditorialMotionSystem` decorates every `.mock-paper button` at runtime with
+   `ink-line-interactive`, and that class already owns `::after`: a 1px gold
+   hover underline held invisible by `transform: scaleX(0)`. Minting the pad on
+   the same `::after` overrode both of those — `height: 1px` became 44px and the
+   collapsing `scaleX(0)` became `translate(-50%, -50%)` — so the hairline
+   un-collapsed into a painted 44px slab that bled 4.4px (views) / 9.6px
+   (sorts) past each control and overlapped the neighbouring row. `::before` is
+   unclaimed on all three of these selectors, so the pad and the underline stop
+   fighting over one box. Verified in WebKit/iPhone against production.
 --------------------------------------------------------------------------- */
 @media (pointer: coarse) {
   .mock-icon-control,
@@ -14341,9 +14352,9 @@ html[data-held-moment] .mobile-tab-bar {
     position: relative;
   }
 
-  .mock-icon-control::after,
-  .rr-view::after,
-  .rr-sort::after {
+  .mock-icon-control::before,
+  .rr-view::before,
+  .rr-sort::before {
     content: '';
     position: absolute;
     /* Centres a 44x44 minimum around the control whatever its rendered size. */
