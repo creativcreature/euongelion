@@ -13617,11 +13617,6 @@ html[data-held-moment] .mobile-tab-bar {
   display: block;
 }
 
-
-
-
-
-
 /* ── The bento sheet (F-104) ────────────────────────────────────────────
    Founder 2026-08-16, on the paper: "It should feel like a bento style
    newspaper layout, with content pieces broken up with box contianers and
@@ -13758,7 +13753,6 @@ html[data-held-moment] .mobile-tab-bar {
   }
 }
 
-
 /* ── Scroll motion (F-104) ──────────────────────────────────────────────
    Founder 2026-08-16: "I want the entire site to have more livilieness and
    scrolling animation… moments of paralax, and just very much surprising and
@@ -13800,7 +13794,6 @@ html[data-held-moment] .mobile-tab-bar {
   }
 }
 
-
 /* ── PREVIEW — the plate and what it is about (F-113) ───────────────────
    Founder 2026-08-16: "Change it to a two column version with the left column
    th image and the right column a small 2-3 sentence summary of the
@@ -13810,9 +13803,14 @@ html[data-held-moment] .mobile-tab-bar {
    reader sees the art and finds out what the reading is about, with nothing
    between them and either. */
 
+/* Founder 2026-08-16: "the two columns should be centered on page." The pair
+   sits on a centred measure rather than stretching to the full page width,
+   which had left the summary hugging the left with a wide empty gutter. */
 .preview {
   display: flex;
   flex-direction: column;
+  width: min(100%, 74rem);
+  margin-inline: auto;
   border-top: var(--rr-hair);
 }
 
@@ -13823,6 +13821,7 @@ html[data-held-moment] .mobile-tab-bar {
      is a lot of scrolling across 37 series; fixed keeps every row the same
      compact height whatever the viewport. */
   grid-template-columns: clamp(200px, 24vw, 320px) minmax(0, 1fr);
+  justify-content: center;
   gap: 1.4rem;
   align-items: center;
   padding: 0.9rem 0.2rem;
@@ -13932,7 +13931,6 @@ html[data-held-moment] .mobile-tab-bar {
     transition: none;
   }
 }
-
 
 /* ── The press impression (F-108) ───────────────────────────────────────
    Founder 2026-08-16: the first intro "was half assed" — a panel that faded a
@@ -14086,7 +14084,6 @@ html[data-held-moment] .mobile-tab-bar {
   }
 }
 
-
 /* ── /today takes the paper's furniture too (F-107) ─────────────────────
    Founder 2026-08-16: the Sea Harvest structural vocabulary is "pretty
    strictly for Today and Daily Bread pages". /daily-bread got its compartments
@@ -14127,7 +14124,6 @@ html[data-held-moment] .mobile-tab-bar {
   margin-top: 0.5rem;
   text-align: right;
 }
-
 
 /* ── The mobile menu panel (F-107) ──────────────────────────────────────
    Founder 2026-08-16: "The menu doesnt work properly on mobile when
@@ -14205,5 +14201,37 @@ html[data-held-moment] .mobile-tab-bar {
 @media (prefers-reduced-motion: reduce) {
   .mock-mobile-secondary-nav {
     animation: none;
+  }
+}
+
+/* The brief rail's plate (F-114). Small, square, and the reason this view no
+   longer has five entries without art. */
+.fp-brief {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.fp-brief-plate {
+  position: relative;
+  display: block;
+  width: 72px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--plate-ground);
+}
+
+.fp-brief-text {
+  display: block;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .fp-brief {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+  .fp-brief-plate {
+    width: 56px;
   }
 }

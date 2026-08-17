@@ -60,12 +60,32 @@ export const VIEWS: ReadonlyArray<{
   // toggle." Preview replaces Flow, which went through four rebuilds and never
   // landed — a reader wants the art and what the reading is about, and the
   // artboard's panning stood between them and both.
-  { id: 'covers', label: 'Covers', blurb: 'Plates only. The art, at size, in order.' },
-  { id: 'preview', label: 'Preview', blurb: 'The plate, and what the reading is about.' },
+  {
+    id: 'covers',
+    label: 'Covers',
+    blurb: 'Plates only. The art, at size, in order.',
+  },
+  {
+    id: 'preview',
+    label: 'Preview',
+    blurb: 'The plate, and what the reading is about.',
+  },
   { id: 'issues', label: 'Issues', blurb: 'By release. Newest issue first.' },
-  { id: 'feature', label: 'Feature', blurb: 'Column inches by weight. The longest reading leads.' },
-  { id: 'rack', label: 'Rack', blurb: 'Every series folded over the rail, mastheads out.' },
-  { id: 'spines', label: 'Spines', blurb: 'Shelved. Read the spine, pull one out.' },
+  {
+    id: 'feature',
+    label: 'Feature',
+    blurb: 'Column inches by weight. The longest reading leads.',
+  },
+  {
+    id: 'rack',
+    label: 'Rack',
+    blurb: 'Every series folded over the rail, mastheads out.',
+  },
+  {
+    id: 'spines',
+    label: 'Spines',
+    blurb: 'Shelved. Read the spine, pull one out.',
+  },
   { id: 'list', label: 'List', blurb: 'The whole catalog in one screen.' },
 ]
 
@@ -121,7 +141,9 @@ function Plate({
 
 function ProgressRail({ progress }: { progress?: SeriesProgress }) {
   if (!progress || progress.completed === 0) return null
-  const pct = Math.round((progress.completed / Math.max(progress.total, 1)) * 100)
+  const pct = Math.round(
+    (progress.completed / Math.max(progress.total, 1)) * 100,
+  )
   return (
     <span className="series-progress" aria-label={`${pct}% read`}>
       <span className="series-progress-fill" style={{ width: `${pct}%` }} />
@@ -131,7 +153,11 @@ function ProgressRail({ progress }: { progress?: SeriesProgress }) {
 
 /** "Day 3 of 7" when started, otherwise the length. One place, one wording. */
 function statusLabel(slug: string, progress?: SeriesProgress) {
-  if (progress && progress.completed > 0 && progress.completed < progress.total) {
+  if (
+    progress &&
+    progress.completed > 0 &&
+    progress.completed < progress.total
+  ) {
     return `Day ${progress.completed + 1} of ${progress.total}`
   }
   if (progress && progress.completed >= progress.total) return 'Finished'
@@ -156,7 +182,12 @@ function statusLabel(slug: string, progress?: SeriesProgress) {
  * Column rules and hairline boxes do the work a card shadow would do in a
  * generic grid — this is the furniture of print, which is the whole brief.
  */
-export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutProps) {
+export function FeatureView({
+  slugs,
+  progressBySeries,
+  cardHref,
+  lead,
+}: LayoutProps) {
   // Founder 2026-08-16: "Feature needs restyling, feels very unbalanced. I like
   // asymettry, but the hiearchy doesnt make sense in terms of size of
   // devotionals."
@@ -195,7 +226,11 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
           {leadSeries && (
             <Link href={cardHref(headline)} className="fp-lead">
               <span className="fp-lead-plate">
-                <Plate slug={headline} sizes="(max-width: 900px) 100vw, 58vw" priority />
+                <Plate
+                  slug={headline}
+                  sizes="(max-width: 900px) 100vw, 58vw"
+                  priority
+                />
               </span>
               <span className="fp-lead-head">{leadSeries.title}</span>
               <span className="fp-lead-stand">{leadSeries.question}</span>
@@ -232,9 +267,18 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
             if (!series) return null
             return (
               <Link key={slug} href={cardHref(slug)} className="fp-brief">
-                <span className="fp-brief-head">{series.title}</span>
-                <span className="fp-byline">
-                  {statusLabel(slug, progressBySeries.get(slug))}
+                {/* Founder 2026-08-16: "There are missing images in Rack and
+                    Feature toggles." The rail was headline-only by design, so
+                    five series in this view carried no plate at all — 37 links
+                    against 32 images. Every entry gets its art now. */}
+                <span className="fp-brief-plate">
+                  <Plate slug={slug} sizes="72px" eager />
+                </span>
+                <span className="fp-brief-text">
+                  <span className="fp-brief-head">{series.title}</span>
+                  <span className="fp-byline">
+                    {statusLabel(slug, progressBySeries.get(slug))}
+                  </span>
                 </span>
               </Link>
             )
@@ -264,46 +308,59 @@ export function FeatureView({ slugs, progressBySeries, cardHref, lead }: LayoutP
               <p className="fp-desk-blurb">{section.blurb}</p>
 
               <div className="fp-desk-body">
-              {ledeSeries && (
-                <Link href={cardHref(sectionLede)} className="fp-desk-lede">
-                  <span className="fp-desk-lede-plate">
-                    <Plate
-                      slug={sectionLede}
-                      sizes="(max-width: 900px) 100vw, 34vw"
-                    />
-                  </span>
-                  <span className="fp-desk-lede-text">
-                    <span className="fp-desk-lede-head">{ledeSeries.title}</span>
-                    <span className="fp-desk-lede-stand">{ledeSeries.question}</span>
-                    <span className="fp-byline">
-                      {statusLabel(sectionLede, progressBySeries.get(sectionLede))}
+                {ledeSeries && (
+                  <Link href={cardHref(sectionLede)} className="fp-desk-lede">
+                    <span className="fp-desk-lede-plate">
+                      <Plate
+                        slug={sectionLede}
+                        sizes="(max-width: 900px) 100vw, 34vw"
+                      />
                     </span>
-                  </span>
-                </Link>
-              )}
+                    <span className="fp-desk-lede-text">
+                      <span className="fp-desk-lede-head">
+                        {ledeSeries.title}
+                      </span>
+                      <span className="fp-desk-lede-stand">
+                        {ledeSeries.question}
+                      </span>
+                      <span className="fp-byline">
+                        {statusLabel(
+                          sectionLede,
+                          progressBySeries.get(sectionLede),
+                        )}
+                      </span>
+                    </span>
+                  </Link>
+                )}
 
-              {others.length > 0 && (
-                <div className="fp-desk-row">
-                  {others.map((slug) => {
-                    const series = SERIES_DATA[slug]
-                    if (!series) return null
-                    return (
-                      <Link key={slug} href={cardHref(slug)} className="fp-desk-item">
-                        <span className="fp-desk-item-plate">
-                          <Plate
-                            slug={slug}
-                            sizes="(max-width: 640px) 44vw, (max-width: 1100px) 24vw, 16vw"
-                          />
-                        </span>
-                        <span className="fp-desk-item-head">{series.title}</span>
-                        <span className="fp-byline">
-                          {statusLabel(slug, progressBySeries.get(slug))}
-                        </span>
-                      </Link>
-                    )
-                  })}
-                </div>
-              )}
+                {others.length > 0 && (
+                  <div className="fp-desk-row">
+                    {others.map((slug) => {
+                      const series = SERIES_DATA[slug]
+                      if (!series) return null
+                      return (
+                        <Link
+                          key={slug}
+                          href={cardHref(slug)}
+                          className="fp-desk-item"
+                        >
+                          <span className="fp-desk-item-plate">
+                            <Plate
+                              slug={slug}
+                              sizes="(max-width: 640px) 44vw, (max-width: 1100px) 24vw, 16vw"
+                            />
+                          </span>
+                          <span className="fp-desk-item-head">
+                            {series.title}
+                          </span>
+                          <span className="fp-byline">
+                            {statusLabel(slug, progressBySeries.get(slug))}
+                          </span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                )}
               </div>
             </section>
           )
@@ -360,7 +417,13 @@ export function RackView({ slugs, progressBySeries, cardHref }: LayoutProps) {
                   <span className="rack-masthead">{series.title}</span>
                   <span className="rack-rule" aria-hidden="true" />
                   <span className="rack-plate">
-                    <Plate slug={slug} sizes="(max-width: 900px) 40vw, 16vw" />
+                    {/* Eager: a rail of lazy plates reads as missing artwork
+                        until the reader happens to scroll past each one. */}
+                    <Plate
+                      slug={slug}
+                      sizes="(max-width: 900px) 40vw, 16vw"
+                      eager
+                    />
                   </span>
                   <span className="rack-standfirst">{series.question}</span>
                   <span className="rack-dateline">
@@ -389,7 +452,10 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
         return (
           <Link key={slug} href={cardHref(slug)} className="cover">
             <span className="cover-plate">
-              <Plate slug={slug} sizes="(max-width: 640px) 46vw, (max-width: 1100px) 30vw, 23vw" />
+              <Plate
+                slug={slug}
+                sizes="(max-width: 640px) 46vw, (max-width: 1100px) 30vw, 23vw"
+              />
             </span>
             <span className="cover-caption">
               <span className="cover-title">{series.title}</span>
@@ -402,7 +468,6 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
     </div>
   )
 }
-
 
 /**
  * Shelf bookends (F-100).
@@ -499,32 +564,32 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
         <div className="shelf-unit" key={si}>
           <div className="shelf-row">
             <Bookend index={si} side="left" />
-        {shelf.map((slug, i) => {
-          const series = SERIES_DATA[slug]
-          if (!series) return null
-          const days = series.days.length
-          // Width still encodes length, and is now sized so a shelf of twelve
-          // FILLS the row rather than trailing off into whitespace. Clamped so
-          // bible-365 is a broad volume, not a wall.
-          // Founder 2026-08-16: "the books are too thick." Narrower range —
-          // a spine is a spine, not a slab. Width still encodes length.
-          const width = Math.min(134, Math.max(78, 72 + days * 3.6))
-          return (
-            <Link
-              key={slug}
-              href={cardHref(slug)}
-              className={`spine spine--${i % 3}`}
-              style={{ width: `${width}px` }}
-              title={`${series.title} · ${dayCountLabel(slug)}`}
-            >
-              <span className="spine-title">{series.title}</span>
-              <span className="spine-foot" aria-hidden="true">
-                {days}
-              </span>
-              <ProgressRail progress={progressBySeries.get(slug)} />
-            </Link>
-          )
-        })}
+            {shelf.map((slug, i) => {
+              const series = SERIES_DATA[slug]
+              if (!series) return null
+              const days = series.days.length
+              // Width still encodes length, and is now sized so a shelf of twelve
+              // FILLS the row rather than trailing off into whitespace. Clamped so
+              // bible-365 is a broad volume, not a wall.
+              // Founder 2026-08-16: "the books are too thick." Narrower range —
+              // a spine is a spine, not a slab. Width still encodes length.
+              const width = Math.min(134, Math.max(78, 72 + days * 3.6))
+              return (
+                <Link
+                  key={slug}
+                  href={cardHref(slug)}
+                  className={`spine spine--${i % 3}`}
+                  style={{ width: `${width}px` }}
+                  title={`${series.title} · ${dayCountLabel(slug)}`}
+                >
+                  <span className="spine-title">{series.title}</span>
+                  <span className="spine-foot" aria-hidden="true">
+                    {days}
+                  </span>
+                  <ProgressRail progress={progressBySeries.get(slug)} />
+                </Link>
+              )
+            })}
             <Bookend index={si} side="right" />
           </div>
           <span className="shelf-board" aria-hidden="true" />
@@ -562,7 +627,8 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
 
 export function IssuesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   const ordered = useMemo(
-    () => [...slugs].sort((a, b) => seriesRecencyRank(b) - seriesRecencyRank(a)),
+    () =>
+      [...slugs].sort((a, b) => seriesRecencyRank(b) - seriesRecencyRank(a)),
     [slugs],
   )
   return (
@@ -596,7 +662,10 @@ export function IssuesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
   )
 }
 
-export const LAYOUTS: Record<ViewId, (props: LayoutProps) => React.ReactElement> = {
+export const LAYOUTS: Record<
+  ViewId,
+  (props: LayoutProps) => React.ReactElement
+> = {
   feature: FeatureView,
   rack: RackView,
   covers: CoversView,

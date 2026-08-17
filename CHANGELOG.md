@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## PREVIEW IS CENTRED, AND EVERY ENTRY CARRIES ITS PLATE — SA-070 / F-114 (2026-08-16)
+
+Founder, on the live site: _"the two columns should be centered on page. There
+are missing images in Rack and Feature toggles."_ Two separate faults, reported
+together.
+
+**Preview was left-anchored.** The rows stretched the full page width, and
+because the plate column is deliberately fixed (F-113 — that is what holds a row
+near 210px instead of 390px), every bit of the slack landed in the copy column.
+On a wide display the summary sat against the left edge with a long empty gutter
+beside it. Fixed with a measure rather than a stretch: `min(100%, 74rem)` and
+`margin-inline: auto`. Row height is unchanged.
+
+**Feature was genuinely missing five images — a markup fault, not a loading
+one.** The brief rail rendered headline and byline only, with no plate at all.
+Measured live: 37 series links against **32** `<img>` elements, so five series
+appeared in that view with no artwork whatsoever. Each brief now carries a small
+square plate (72px, 56px under 640px).
+
+**Rack was a loading fault.** Its markup was complete, but its plates were
+`loading="lazy"` in a rail — and a plate that has not been scrolled into view
+has no pixels, which is indistinguishable from a missing image to anyone looking
+at the page. They load `eager` now.
+
+That is the **fourth** time lazy loading in a rail or a transformed container
+has read as missing artwork (the rose window, Flow twice, now Rack). In a dense
+rail of small plates, eager is the correct default.
+
+Also confirmed while here: **the Covers default was never broken.** A clean load
+selects Covers. The earlier reading that showed Preview was a **service worker
+serving a stale bundle** — worth remembering before diagnosing a state bug that
+is really a cache.
+
+Verified in the Workers runtime (`npm run preview`): default tab Covers; Feature
+37 links / 37 images / 5 brief plates; Rack 37 of 37 loaded, 0 lazy; Preview
+centred (198px left, 199px right), row height 245px, 0 horizontal overflow.
+Service worker **v99**.
+
+---
+
 ## OPENING A READING IS NOT LISTENING TO IT — SA-058 / F-101 (2026-08-16)
 
 Found in real production data rather than in review. Four `listening_progress`
@@ -699,12 +739,12 @@ is now the default."_
 
 **Flow is deleted** — component, styles, drag/wheel/drift machinery, tests. It
 went through four rebuilds in one day and never landed, and the reason is worth
-keeping: every one was designed from a *description* of a reference rather than
+keeping: every one was designed from a _description_ of a reference rather than
 from measuring the reference itself. The brief that replaced it is plainer and
 better — a reader wants to see the art and find out what the reading is about,
 and everything the artboard was doing stood between them and both.
 
-**Preview is ruled rows**: plate left in a *fixed* column, copy right. Fixed
+**Preview is ruled rows**: plate left in a _fixed_ column, copy right. Fixed
 rather than fractional, because at a share of the width the plate grew with the
 page and every row ran ~390px tall — a lot of scrolling across 37 series. Fixed
 holds each row near 210px at any viewport, and it stacks under 700px where two
@@ -712,7 +752,7 @@ columns would leave the summary in a gutter too narrow to read.
 
 **The summary is real copy.** Every series already carries a hand-written
 `introduction`. Most are two or three sentences; three run to six, so the
-summary prints the *first three* — the author's own words in their own order,
+summary prints the _first three_ — the author's own words in their own order,
 stopped early. Nothing paraphrased, nothing generated, and no CSS clamp, so
 nothing is ever cut off mid-word. — SA-069 (F-113)
 
@@ -734,7 +774,7 @@ rates that don't divide evenly so no two neighbours move together. Capped at
 
 The wheel listener is attached **natively with `passive: false`**. React
 registers wheel listeners as passive, so `preventDefault` in a React `onWheel`
-fails and logs an error on *every notch* — 199 in one session.
+fails and logs an error on _every notch_ — 199 in one session.
 
 Four rebuilds of this view in a day, and the lesson was the same each time: I
 designed from a description instead of measuring the reference. Measure first.
@@ -750,7 +790,7 @@ contained within the newspaper boardeer."_ Four corrections to my own
 over-correction:
 
 - **Every plate is the same size** at a fixed 4:3, cropped with `object-fit:
-  cover`, never stretched. Measured: one unique tile size, ratio 1.333.
+cover`, never stretched. Measured: one unique tile size, ratio 1.333.
 - **The catalog repeats** four times, so the board overflows and can be
   travelled instead of running out after two screens. Every tile is still a
   real series — it simply comes round again, the way a pattern does.
@@ -776,7 +816,7 @@ bordered gallery widget with a caption scrim on every tile. The reference is a
 full-bleed artboard of pure imagery. Registered as **SA-066** (F-110).
 
 Rebuilt on four points: **full bleed** (the frame breaks the page measure, so
-the tiles *are* the surface), **tiles butting on a 3px hairline** rather than a
+the tiles _are_ the surface), **tiles butting on a 3px hairline** rather than a
 14px gutter — the difference between cards on a page and one sheet cut into
 plates — **no permanent captions** (pure image; the name arrives on hover, and
 is always on below 900px where there is no hover), and **four tile shapes**
@@ -829,7 +869,7 @@ any site could wear it. Rebuilt as the sequence only this masthead can make:
 through rather than white type on top), **set** (the word arrives over-tracked
 and tightens, the way type is set), **register** (a crimson ghost slides into
 alignment — misregistration is this brand's actual signature), and **hand off**
-(the ink lifts on a hard edge and the wordmark flies to the *measured* position
+(the ink lifts on a hard edge and the wordmark flies to the _measured_ position
 and size of the real masthead, so the intro becomes the site instead of getting
 out of its way).
 
@@ -840,7 +880,7 @@ the crimson arrives before the cream, so the whole thing reads as a red word.
 
 **And the resume button is finally centred.** The banner had
 `justify-items: center` and I twice called it done on that basis. It wasn't: the
-copy only *looked* centred because `text-align` was doing that job inside
+copy only _looked_ centred because `text-align` was doing that job inside
 full-width grid items, masking the fact that item alignment never reached the
 link. Forced the resume state locally, photographed it, saw it hard left. The
 lesson worth keeping — a rule being present in the stylesheet is not evidence
@@ -860,7 +900,7 @@ drift off-brand whatever the generator, which is what made the first pass look
 wrong and nearly got the generator blamed.
 
 **Reveal now fails open.** The home page shipped its three step cards
-*invisible*: they carried `data-reveal`, the observer never fired, and they sat
+_invisible_: they carried `data-reveal`, the observer never fired, and they sat
 at opacity 0. Anything already in the viewport reveals on mount, and a sweep
 2.5s later reveals whatever is still hidden. Worst case is a missing animation.
 
