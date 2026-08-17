@@ -1,6 +1,6 @@
 # Source Pack: Rekindled
 
-**Status:** Monica/Augustine section PENDING (agent re-queried). Everything else VERIFIED.
+**Status:** COMPLETE — all sections verified, including Monica/Augustine.
 **Rule:** the writer draws ONLY from this pack. Nothing enters a day file that is not here.
 
 ---

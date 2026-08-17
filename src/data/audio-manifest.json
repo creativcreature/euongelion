@@ -27001,6 +27001,713 @@
       }
     ]
   },
+  "rekindled-day-1": {
+    "src": "/audio/rekindled-day-1.m4a",
+    "duration": 1192.2,
+    "words": 3203,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9801362,
+    "textHash": "31b6d66d9d67",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 19.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 55.4,
+        "label": "The Order Nobody Chooses",
+        "module": 3
+      },
+      {
+        "t": 182.1,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 191.7,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 207.2,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 221.5,
+        "label": "Six Letters",
+        "module": 9
+      },
+      {
+        "t": 357.9,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 394.3,
+        "label": "The Same Three Words",
+        "module": 12
+      },
+      {
+        "t": 526.9,
+        "label": "Then and Now",
+        "module": 14
+      },
+      {
+        "t": 574.4,
+        "label": "Fire You Did Not Light",
+        "module": 15
+      },
+      {
+        "t": 739.4,
+        "label": "A Woman Teaching Her Children Under the Sky",
+        "module": 16
+      },
+      {
+        "t": 826.3,
+        "label": "One Honest Note About That Story",
+        "module": 17
+      },
+      {
+        "t": 882.6,
+        "label": "What This Week Is Actually Asking",
+        "module": 18
+      },
+      {
+        "t": 972.2,
+        "label": "Scripture",
+        "module": 20
+      },
+      {
+        "t": 996.2,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 1006.0,
+        "label": "A Breath to Carry Today",
+        "module": 22
+      },
+      {
+        "t": 1020.2,
+        "label": "Before You Close This",
+        "module": 23
+      },
+      {
+        "t": 1071.1,
+        "label": "Closing Prayer",
+        "module": 25
+      },
+      {
+        "t": 1111.3,
+        "label": "Carry This",
+        "module": 26
+      },
+      {
+        "t": 1117.4,
+        "label": "Check Yourself",
+        "module": 27
+      },
+      {
+        "t": 1140.0,
+        "label": "Who Wrote This Down",
+        "module": 28
+      }
+    ]
+  },
+  "rekindled-day-2": {
+    "src": "/audio/rekindled-day-2.m4a",
+    "duration": 1143.5,
+    "words": 3021,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9408118,
+    "textHash": "48cfb1463c99",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 26.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 64.8,
+        "label": "The Bread of Sorrows",
+        "module": 3
+      },
+      {
+        "t": 143.2,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 151.3,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 163.9,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 190.9,
+        "label": "How You Cut a Covenant",
+        "module": 9
+      },
+      {
+        "t": 317.2,
+        "label": "Word study",
+        "module": 11
+      },
+      {
+        "t": 353.8,
+        "label": "Only One Walks",
+        "module": 13
+      },
+      {
+        "t": 522.7,
+        "label": "Then and Now",
+        "module": 15
+      },
+      {
+        "t": 563.4,
+        "label": "And the Seed Grows, He Knows Not How",
+        "module": 16
+      },
+      {
+        "t": 731.0,
+        "label": "The Six Years Nobody Mentions",
+        "module": 17
+      },
+      {
+        "t": 857.2,
+        "label": "Why This Is Not Permission",
+        "module": 18
+      },
+      {
+        "t": 920.5,
+        "label": "Scripture",
+        "module": 20
+      },
+      {
+        "t": 936.4,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 942.2,
+        "label": "Write One Sentence",
+        "module": 22
+      },
+      {
+        "t": 948.7,
+        "label": "Before You Close This",
+        "module": 23
+      },
+      {
+        "t": 1033.6,
+        "label": "Closing Prayer",
+        "module": 24
+      },
+      {
+        "t": 1078.3,
+        "label": "Carry This",
+        "module": 25
+      },
+      {
+        "t": 1083.4,
+        "label": "Check Yourself",
+        "module": 26
+      },
+      {
+        "t": 1101.5,
+        "label": "The One Asleep",
+        "module": 27
+      }
+    ]
+  },
+  "rekindled-day-3": {
+    "src": "/audio/rekindled-day-3.m4a",
+    "duration": 1370.1,
+    "words": 3611,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 11283701,
+    "textHash": "9e291e834a97",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 8.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 31.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 62.3,
+        "label": "Which Is In You",
+        "module": 3
+      },
+      {
+        "t": 199.8,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 207.5,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 221.4,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 241.9,
+        "label": "The Man Receiving This Letter",
+        "module": 9
+      },
+      {
+        "t": 390.5,
+        "label": "The Word This Week Is Named For",
+        "module": 12
+      },
+      {
+        "t": 665.0,
+        "label": "Scripture",
+        "module": 14
+      },
+      {
+        "t": 687.9,
+        "label": "Then and Now",
+        "module": 15
+      },
+      {
+        "t": 732.8,
+        "label": "A Gift Hidden in a Verb Stem",
+        "module": 16
+      },
+      {
+        "t": 904.3,
+        "label": "The Fire That Went Out When She Was Finally Safe",
+        "module": 18
+      },
+      {
+        "t": 1030.8,
+        "label": "Whose Words Those Are",
+        "module": 19
+      },
+      {
+        "t": 1098.9,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 1107.6,
+        "label": "Do This With Your Hands",
+        "module": 22
+      },
+      {
+        "t": 1117.3,
+        "label": "Before You Close This",
+        "module": 23
+      },
+      {
+        "t": 1252.1,
+        "label": "Closing Prayer",
+        "module": 24
+      },
+      {
+        "t": 1298.3,
+        "label": "Carry This",
+        "module": 25
+      },
+      {
+        "t": 1305.7,
+        "label": "Check Yourself",
+        "module": 26
+      },
+      {
+        "t": 1329.5,
+        "label": "The Two Women in Verse Five",
+        "module": 27
+      }
+    ]
+  },
+  "rekindled-day-4": {
+    "src": "/audio/rekindled-day-4.m4a",
+    "duration": 1209.5,
+    "words": 3167,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9956608,
+    "textHash": "ac8ca2d19bba",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 8.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 28.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 65.5,
+        "label": "The Lambs Do Not Walk",
+        "module": 3
+      },
+      {
+        "t": 252.2,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 258.7,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 269.6,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 296.8,
+        "label": "Morning and Evening, For Centuries",
+        "module": 9
+      },
+      {
+        "t": 444.2,
+        "label": "The Word Spoken to the One Who Failed",
+        "module": 12
+      },
+      {
+        "t": 590.7,
+        "label": "Scripture",
+        "module": 13
+      },
+      {
+        "t": 616.7,
+        "label": "Then and Now",
+        "module": 15
+      },
+      {
+        "t": 660.4,
+        "label": "The Man Who Could Not Date His Own Return",
+        "module": 16
+      },
+      {
+        "t": 828.1,
+        "label": "The Charcoal Fire, Twice",
+        "module": 17
+      },
+      {
+        "t": 915.9,
+        "label": "What Lewis Is Not Evidence For",
+        "module": 18
+      },
+      {
+        "t": 977.6,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 986.1,
+        "label": "Learn Three Words",
+        "module": 21
+      },
+      {
+        "t": 994.2,
+        "label": "Before You Close This",
+        "module": 22
+      },
+      {
+        "t": 1105.2,
+        "label": "Closing Prayer",
+        "module": 23
+      },
+      {
+        "t": 1148.7,
+        "label": "Carry This",
+        "module": 24
+      },
+      {
+        "t": 1154.4,
+        "label": "Check Yourself",
+        "module": 25
+      },
+      {
+        "t": 1170.3,
+        "label": "The One Given Breakfast",
+        "module": 26
+      }
+    ]
+  },
+  "rekindled-day-5": {
+    "src": "/audio/rekindled-day-5.m4a",
+    "duration": 1010.4,
+    "words": 2819,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 8316926,
+    "textHash": "3cefe5e34b6c",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 28.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 69.3,
+        "label": "All Ten of Them",
+        "module": 3
+      },
+      {
+        "t": 148.1,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 154.2,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 167.4,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 191.7,
+        "label": "The Chapter Opens by Telling You It Is Dark",
+        "module": 9
+      },
+      {
+        "t": 278.1,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 300.9,
+        "label": "Where the Oil Came From",
+        "module": 12
+      },
+      {
+        "t": 454.9,
+        "label": "Then and Now",
+        "module": 14
+      },
+      {
+        "t": 485.6,
+        "label": "Seventeen Years, and the Answer Was No",
+        "module": 15
+      },
+      {
+        "t": 600.5,
+        "label": "The Word Underneath That Sentence",
+        "module": 16
+      },
+      {
+        "t": 677.0,
+        "label": "She Would Not Take the Half-Answer",
+        "module": 18
+      },
+      {
+        "t": 817.0,
+        "label": "Reflect",
+        "module": 19
+      },
+      {
+        "t": 822.1,
+        "label": "Find One Image",
+        "module": 20
+      },
+      {
+        "t": 830.9,
+        "label": "Before You Close This",
+        "module": 21
+      },
+      {
+        "t": 880.1,
+        "label": "Closing Prayer",
+        "module": 22
+      },
+      {
+        "t": 927.0,
+        "label": "Carry This",
+        "module": 23
+      },
+      {
+        "t": 933.0,
+        "label": "Check Yourself",
+        "module": 24
+      },
+      {
+        "t": 953.7,
+        "label": "The Woman Who Kept Asking",
+        "module": 25
+      }
+    ]
+  },
+  "rekindled-day-6": {
+    "src": "/audio/rekindled-day-6.m4a",
+    "duration": 501.7,
+    "words": 1352,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 4125791,
+    "textHash": "e329a1a2d9f3",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 29.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 62.8,
+        "label": "Nobody Lights Their Own",
+        "module": 3
+      },
+      {
+        "t": 133.5,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 138.7,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 150.6,
+        "label": "The Week in One Shape",
+        "module": 7
+      },
+      {
+        "t": 288.8,
+        "label": "One Verb, Three Times",
+        "module": 9
+      },
+      {
+        "t": 336.7,
+        "label": "Scripture",
+        "module": 10
+      },
+      {
+        "t": 352.7,
+        "label": "Light First",
+        "module": 12
+      },
+      {
+        "t": 456.1,
+        "label": "Closing Prayer",
+        "module": 13
+      },
+      {
+        "t": 493.3,
+        "label": "Carry This",
+        "module": 14
+      }
+    ]
+  },
+  "rekindled-day-7": {
+    "src": "/audio/rekindled-day-7.m4a",
+    "duration": 155.4,
+    "words": 409,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 1279882,
+    "textHash": "86ec82b89414",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 18.6,
+        "label": "Today There Is Nothing to Add",
+        "module": 3
+      },
+      {
+        "t": 129.3,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 135.1,
+        "label": "Silence",
+        "module": 5
+      },
+      {
+        "t": 142.2,
+        "label": "A Prayer for Sunday",
+        "module": 6
+      }
+    ]
+  },
   "rooted-day-1": {
     "src": "/audio/rooted-day-1.m4a",
     "duration": 452.6,

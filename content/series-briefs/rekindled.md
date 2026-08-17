@@ -44,18 +44,33 @@ dwell. Rekindled is a **covenant and inheritance** series. No existing series on
 site uses fire, lamp, flame, altar, or lamb language. Verified 2026-08-16: zero slug
 collisions, zero fire/lamp/flame matches in `src/data/series.ts`.
 
-## The spine the corpus handed us
+## The spine — corrected after lexical verification
 
-Genesis 15:17 (KJV) reads "a smoking furnace, and **a burning lamp** that passed
-between those pieces." One lamp carries the whole week:
+An earlier draft of this brief claimed "one lamp carries the whole week," reading
+Genesis 15:17 with the KJV's "a burning lamp." **That was wrong.** The Hebrew is
+לַפִּיד אֵשׁ (_lappid esh_) — a **torch**, the same word as Gideon's torches and
+the brands tied to the foxes' tails. It is a different object from נֵר (_ner_),
+the small clay household lamp of Exodus 27 and 1 Samuel 3.
 
-| Day | The lamp                                                        |
-| --- | --------------------------------------------------------------- |
-| 2   | passes between the pieces alone, while Abram sleeps — Gen 15:17 |
-| 3   | must never go out on the altar — Lev 6:13                       |
-| 4   | the lamb brought morning and evening to that fire — Ex 29:38-42 |
-| 5   | "had not yet gone out" 1 Sam 3:3 / "going out" Matt 25:8        |
-| 6   | not put under a basket — Matt 5:15                              |
+Two threads, not one — and the distinction is stronger than the flattening was:
+
+| Thread               | What it is                                     | Where               |
+| -------------------- | ---------------------------------------------- | ------------------- |
+| **TORCH** (_lappid_) | what God does alone — blazing, hand-carried    | Gen 15:17           |
+| **LAMP** (_ner_)     | what we are given to keep — small, fed, tended | Ex 27:20, 1 Sam 3:3 |
+
+The actual spine is **one verb**: כָּבָה (_kabah_), to go out.
+
+| Text      | Form                            | Sense                     |
+| --------- | ------------------------------- | ------------------------- |
+| Lev 6:13  | לֹא תִכְבֶה — _lo tikbeh_       | it shall **not** go out   |
+| 1 Sam 3:3 | טֶרֶם יִכְבֶּה — _terem yikbeh_ | had **not yet** gone out  |
+| Matt 25:8 | σβέννυνται — _sbennyntai_       | **are** going out         |
+| Isa 42:3  | לֹא יְכַבֶּנָּה                 | he will **not quench** it |
+
+σβέννυμι is the Septuagint's standard rendering of _kabah_, so the Greek of
+Matthew 25 and the Hebrew of Leviticus 6 are lexically the same idea. **The
+command and the promise are the same word.**
 
 ## Soul Audit keywords
 
@@ -82,7 +97,7 @@ transition, starting over, empty, tired of trying
 
 - Anchor: Genesis 15:12,17 (KJV)
 - Theme: A deep sleep falls on Abram and God passes between the pieces **alone**,
-  as a burning lamp. In a covenant of that kind both parties walk the aisle; only
+  as a blazing torch (_lappid_, not a lamp — see the spine note above). In a covenant of that kind both parties walk the aisle; only
   One walks here. Paired with Mark 4:26-29 — the farmer sleeps and rises and the
   seed grows, "though he knows not how." You were asleep for the part that saved you.
 - NT connection: Hebrews 6:13, He swore by Himself.
@@ -133,19 +148,19 @@ transition, starting over, empty, tired of trying
 
 ## Translation rationale (per anchor)
 
-| Day | Reference         | Translation | Why this rendering for this passage                                                  |
-| --- | ----------------- | ----------- | ------------------------------------------------------------------------------------ |
-| 1   | Genesis 1:1       | KJV         | "In the beginning" must match John 1:1 word for word for the echo to land            |
-| 1   | John 1:1          | KJV         | Same three opening words as Genesis — the whole day rests on that identity           |
-| 2   | Genesis 15:12,17  | KJV         | Only the KJV gives "a burning lamp"; modern renderings say torch and break the spine |
-| 2   | Mark 4:26-29      | BSB         | "though he knows not how" lands plainest here                                        |
-| 3   | 2 Timothy 1:6-7   | BSB         | Pauline argument; BSB surfaces "fan into flame" without archaism                     |
-| 3   | Leviticus 6:12-13 | KJV         | "it shall never go out" — cadence carries the day's whole claim                      |
-| 4   | Exodus 29:38-42   | KJV         | Liturgical repetition reads as liturgy in the KJV                                    |
-| 4   | John 21:15        | BSB         | Dialogue must be plain and modern to land the restoration                            |
-| 5   | 1 Samuel 3:3      | KJV         | "had not yet gone out" — the suspense is in the cadence                              |
-| 5   | Matthew 25:5,8    | BSB         | "our lamps are going out" is clearest and most present-tense in BSB                  |
-| 6   | Matthew 5:14-16   | BSB         | Plain imperative for a recap day at 8th-grade level                                  |
+| Day | Reference         | Translation | Why this rendering for this passage                                                      |
+| --- | ----------------- | ----------- | ---------------------------------------------------------------------------------------- |
+| 1   | Genesis 1:1       | KJV         | "In the beginning" must match John 1:1 word for word for the echo to land                |
+| 1   | John 1:1          | KJV         | Same three opening words as Genesis — the whole day rests on that identity               |
+| 2   | Genesis 15:12,17  | KJV         | Kept for its cadence, but the day glosses lappid as a torch rather than repeating "lamp" |
+| 2   | Mark 4:26-29      | BSB         | "though he knows not how" lands plainest here                                            |
+| 3   | 2 Timothy 1:6-7   | BSB         | Pauline argument; BSB surfaces "fan into flame" without archaism                         |
+| 3   | Leviticus 6:12-13 | KJV         | "it shall never go out" — cadence carries the day's whole claim                          |
+| 4   | Exodus 29:38-42   | KJV         | Liturgical repetition reads as liturgy in the KJV                                        |
+| 4   | John 21:15        | BSB         | Dialogue must be plain and modern to land the restoration                                |
+| 5   | 1 Samuel 3:3      | KJV         | "had not yet gone out" — the suspense is in the cadence                                  |
+| 5   | Matthew 25:5,8    | BSB         | "our lamps are going out" is clearest and most present-tense in BSB                      |
+| 6   | Matthew 5:14-16   | BSB         | Plain imperative for a recap day at 8th-grade level                                      |
 
 ## External voices to draw from
 
