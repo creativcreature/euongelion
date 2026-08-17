@@ -69,7 +69,10 @@ export default function BiblePlanPageClient({
 
   // Group all 365 days by month (1-12)
   const daysByMonth = useMemo(() => {
-    const grouped: Array<typeof series.days> = Array.from(
+    // Typed off SeriesInfo rather than `typeof series.days`: the latter reads as
+    // a use of `series` itself, so exhaustive-deps demanded the whole object
+    // when `series.days` is the precise dependency.
+    const grouped: Array<SeriesInfo['days']> = Array.from(
       { length: 12 },
       () => [],
     )

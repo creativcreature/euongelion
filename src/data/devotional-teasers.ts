@@ -864,7 +864,7 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
   'provision-day-5':
     "You started hoarding out of fear. But you're ending with open hands. When you share what you have, everyone has enough.",
   'rekindled-day-1':
-    'The first word of the Bible has six letters. The outer four spell covenant. The two in the middle spell fire. Nobody is claiming Moses put it there. But it is sitting there.',
+    'The first word of the Bible has six letters. The outer four spell covenant. The two in the middle spell fire. A medieval rabbi counted them and wrote it down. Look what sits in this word.',
   'rekindled-day-2':
     'Two parties cut a covenant. Both walk between the pieces. In Genesis 15 the sun goes down, a deep sleep falls on Abram, and only one of them walks.',
   'rekindled-day-3':

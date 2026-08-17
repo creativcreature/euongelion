@@ -1,7 +1,6 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import type {
   PlanWithDays,
-  PlanRecord,
   PlanDayRecord,
   DayScheduleEntry,
   DayContent,

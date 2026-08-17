@@ -1,4 +1,4 @@
-import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
+import { withRedLetter } from '@/lib/red-letter-resolve'
 import fs from 'fs'
 import path from 'path'
 import { CURATED_SOURCE_PRIORITY } from './constants'

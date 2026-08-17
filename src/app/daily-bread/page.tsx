@@ -42,11 +42,9 @@ import {
   findSeriesForSlug,
   fetchTodayDevotional,
   formatEditionDate,
-  formatEditionSlug,
 } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
 import type { Devotional, Module, Panel } from '@/types'
-
 
 /* ── Section icons (F-098) ─────────────────────────────────────────────
    Founder: "needs images to lead thumbnails, icons etc". Line marks at one
@@ -124,7 +122,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const title = meta?.day.title
     ? `${meta.day.title} | The Daily Bread`
-    : "The Daily Bread | Euangelion"
+    : 'The Daily Bread | Euangelion'
 
   return {
     title,
@@ -334,15 +332,19 @@ export default async function DailyBreadPage() {
   const liturgical = liturgicalDay(now)
   const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 1)
   const dayOfYear =
-    Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - startOfYear) / 86400000) + 1
+    Math.floor(
+      (Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) -
+        startOfYear) /
+        86400000,
+    ) + 1
   const volume = now.getUTCFullYear() - 2025
   // Three other readings from the catalog, for the rail. Deterministic by day.
-  const railSlugs = ALL_SERIES_ORDER.filter((x) => SERIES_DATA[x] && x !== 'bible-365')
+  const railSlugs = ALL_SERIES_ORDER.filter(
+    (x) => SERIES_DATA[x] && x !== 'bible-365',
+  )
   const alsoToday = [0, 1, 2].map(
     (i) => railSlugs[(dayOfYear * 3 + i) % railSlugs.length],
   )
-  const editionSlug = formatEditionSlug(now)
-
   // The rest of the paper, all keyed to the same day so the edition is one
   // thing rather than a set of independently-rotating widgets.
   const practice = pickForDay(PRACTICES, dayOfYear)
@@ -425,7 +427,7 @@ export default async function DailyBreadPage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: "The Daily Bread",
+        name: 'The Daily Bread',
         item: 'https://euangelion.app/daily-bread',
       },
     ],
@@ -459,8 +461,14 @@ export default async function DailyBreadPage() {
             <span>
               Vol. {volume} · No. {dayOfYear}
             </span>
-            <time dateTime={now.toISOString().split('T')[0]}>{editionDate}</time>
-            <span>{liturgical.feast ?? liturgical.dayLabel ?? liturgical.seasonLabel}</span>
+            <time dateTime={now.toISOString().split('T')[0]}>
+              {editionDate}
+            </time>
+            <span>
+              {liturgical.feast ??
+                liturgical.dayLabel ??
+                liturgical.seasonLabel}
+            </span>
           </div>
           <div className="edition-rule-bottom" aria-hidden="true" />
         </div>
@@ -470,9 +478,7 @@ export default async function DailyBreadPage() {
             day — not a recommendation engine pretending to be one. */}
         <div className="edition-front">
           <section className="edition-lead" aria-label="Today's reading">
-            {scriptureRef && (
-              <p className="edition-kicker">{scriptureRef}</p>
-            )}
+            {scriptureRef && <p className="edition-kicker">{scriptureRef}</p>}
             <h2 className="edition-lead-head">{dayTitle}</h2>
             {teaser && <p className="edition-lead-stand">{teaser}</p>}
             <p className="edition-byline">
@@ -504,7 +510,9 @@ export default async function DailyBreadPage() {
                   )}
                   <span className="edition-brief-text">
                     <span className="edition-brief-head">{series.title}</span>
-                    <span className="edition-brief-body">{series.question}</span>
+                    <span className="edition-brief-body">
+                      {series.question}
+                    </span>
                   </span>
                 </Link>
               )
@@ -544,183 +552,193 @@ export default async function DailyBreadPage() {
             rules — which is how a real page is made up, and the reason a
             newspaper reads as one sheet rather than a stack of cards. */}
         <div className="paper-sheet">
-        <div className="edition-band paper-box paper-box--wide" data-reveal>
-          {practice && (
-            <section className="edition-practice" aria-label="Today's practice">
-              <p className="edition-kicker">
-                <PracticeIcon />
-                The practice
-              </p>
-              <p className="edition-practice-do">{practice.instruction}</p>
-              <p className="edition-practice-why">{practice.reason}</p>
-              <p className="edition-practice-time">{practice.duration}</p>
-            </section>
-          )}
+          <div className="edition-band paper-box paper-box--wide" data-reveal>
+            {practice && (
+              <section
+                className="edition-practice"
+                aria-label="Today's practice"
+              >
+                <p className="edition-kicker">
+                  <PracticeIcon />
+                  The practice
+                </p>
+                <p className="edition-practice-do">{practice.instruction}</p>
+                <p className="edition-practice-why">{practice.reason}</p>
+                <p className="edition-practice-time">{practice.duration}</p>
+              </section>
+            )}
 
-          {word && (
-            <section className="edition-word" aria-label="Word of the day">
-              <p className="edition-kicker">
-                <WordIcon />
-                {word.language} today
-              </p>
-              <p className="edition-word-original" lang={word.language === 'Greek' ? 'el' : 'he'}>
-                {word.word}
-              </p>
-              <p className="edition-word-translit">{word.translit}</p>
-              <p className="edition-word-gloss">{word.gloss}</p>
-              <p className="edition-word-note">{word.note}</p>
-              <p className="edition-word-ref">{word.reference}</p>
-            </section>
-          )}
-        </div>
-
-        {guides.length > 0 && (
-          <section
-            className="edition-section paper-box paper-box--wide"
-            data-reveal
-            aria-label="How to read"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">How to read</h2>
-              <p className="edition-section-note">
-                Practical guides to reading and studying the Bible. A new set each day.
-              </p>
-            </div>
-            <div className="edition-guides">
-              {guides.map((g) => (
-                <article key={g.title} className="edition-guide">
-                  <span className="edition-guide-plate" data-parallax="0.35">
-                    <Image
-                      src={g.image}
-                      alt={g.alt}
-                      fill
-                      sizes="(max-width: 900px) 100vw, 30vw"
-                      className="edition-guide-img"
-                    />
-                  </span>
-                  <p className="edition-guide-kicker">{g.kicker}</p>
-                  <h3 className="edition-guide-head">{g.title}</h3>
-                  <p className="edition-guide-stand">{g.standfirst}</p>
-                  <ol className="edition-guide-steps">
-                    {g.steps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ol>
-                  <p className="edition-guide-time">{g.minutes}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {panel && (
-          <section
-            className="edition-section paper-box paper-box--panel"
-            data-reveal
-            aria-label="The daily panel"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">The daily panel</h2>
-              <p className="edition-section-note">{panel.reference}</p>
-            </div>
-            <figure className="edition-panel">
-              <span className="edition-panel-plate" data-parallax="0.5">
-                <Image
-                  src={panel.image}
-                  alt={panel.alt}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 46vw"
-                  className="edition-panel-img"
-                />
-              </span>
-              <figcaption className="edition-panel-caption">
-                <span className="edition-panel-title">{panel.title}</span>
-                <span className="edition-panel-line">{panel.caption}</span>
-              </figcaption>
-            </figure>
-          </section>
-        )}
-
-        <section
-          className="edition-section paper-box paper-box--rail"
-          data-reveal
-          aria-label="The prayer list"
-        >
-          <div className="edition-section-bar">
-            <h2 className="edition-section-head">The prayer list</h2>
-            <p className="edition-section-note">
-              {focus.focus} &middot; {editionWeekday}
-            </p>
+            {word && (
+              <section className="edition-word" aria-label="Word of the day">
+                <p className="edition-kicker">
+                  <WordIcon />
+                  {word.language} today
+                </p>
+                <p
+                  className="edition-word-original"
+                  lang={word.language === 'Greek' ? 'el' : 'he'}
+                >
+                  {word.word}
+                </p>
+                <p className="edition-word-translit">{word.translit}</p>
+                <p className="edition-word-gloss">{word.gloss}</p>
+                <p className="edition-word-note">{word.note}</p>
+                <p className="edition-word-ref">{word.reference}</p>
+              </section>
+            )}
           </div>
-          <ul className="edition-petitions">
-            {focus.petitions.map((pet) => (
-              <li key={pet} className="edition-petition">
-                <PrayerIcon />
-                <span>{pet}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
 
-        {/* Editorial sections. Each renders ONLY when it carries real entries —
-            an empty section does not appear at all. There is no feed of global
-            reports or prayer submissions yet, and inventing one would publish
-            fiction as fact under a masthead. See src/data/daily-edition.ts. */}
-        {DISPATCHES.length > 0 && (
-          <section className="edition-section" aria-label="Dispatches">
-            <h2 className="edition-section-head">Dispatches</h2>
-            <div className="edition-columns">
-              {DISPATCHES.map((d) => (
-                <article key={d.title} className="edition-item">
-                  <h3 className="edition-item-head">{d.title}</h3>
-                  <p className="edition-item-place">{d.place}</p>
-                  <p className="edition-item-body">{d.body}</p>
-                  <p className="edition-item-source">
-                    {d.href ? (
-                      <a href={d.href} rel="noopener noreferrer" target="_blank">
-                        {d.source}
-                      </a>
-                    ) : (
-                      d.source
-                    )}
-                  </p>
-                </article>
-              ))}
+          {guides.length > 0 && (
+            <section
+              className="edition-section paper-box paper-box--wide"
+              data-reveal
+              aria-label="How to read"
+            >
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">How to read</h2>
+                <p className="edition-section-note">
+                  Practical guides to reading and studying the Bible. A new set
+                  each day.
+                </p>
+              </div>
+              <div className="edition-guides">
+                {guides.map((g) => (
+                  <article key={g.title} className="edition-guide">
+                    <span className="edition-guide-plate" data-parallax="0.35">
+                      <Image
+                        src={g.image}
+                        alt={g.alt}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 30vw"
+                        className="edition-guide-img"
+                      />
+                    </span>
+                    <p className="edition-guide-kicker">{g.kicker}</p>
+                    <h3 className="edition-guide-head">{g.title}</h3>
+                    <p className="edition-guide-stand">{g.standfirst}</p>
+                    <ol className="edition-guide-steps">
+                      {g.steps.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ol>
+                    <p className="edition-guide-time">{g.minutes}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {panel && (
+            <section
+              className="edition-section paper-box paper-box--panel"
+              data-reveal
+              aria-label="The daily panel"
+            >
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">The daily panel</h2>
+                <p className="edition-section-note">{panel.reference}</p>
+              </div>
+              <figure className="edition-panel">
+                <span className="edition-panel-plate" data-parallax="0.5">
+                  <Image
+                    src={panel.image}
+                    alt={panel.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 46vw"
+                    className="edition-panel-img"
+                  />
+                </span>
+                <figcaption className="edition-panel-caption">
+                  <span className="edition-panel-title">{panel.title}</span>
+                  <span className="edition-panel-line">{panel.caption}</span>
+                </figcaption>
+              </figure>
+            </section>
+          )}
+
+          <section
+            className="edition-section paper-box paper-box--rail"
+            data-reveal
+            aria-label="The prayer list"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The prayer list</h2>
+              <p className="edition-section-note">
+                {focus.focus} &middot; {editionWeekday}
+              </p>
             </div>
-          </section>
-        )}
-
-        {COMMUNITY.length > 0 && (
-          <section className="edition-section" aria-label="Community">
-            <h2 className="edition-section-head">Community</h2>
-            <div className="edition-columns">
-              {COMMUNITY.map((c) => (
-                <article key={c.title} className="edition-item">
-                  <h3 className="edition-item-head">{c.title}</h3>
-                  <p className="edition-item-place">
-                    {c.by} · {c.place}
-                  </p>
-                  <p className="edition-item-body">{c.body}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {PRAYERS.length > 0 && (
-          <section className="edition-section" aria-label="Prayer list">
-            <h2 className="edition-section-head">The prayer list</h2>
-            <ul className="edition-prayers">
-              {PRAYERS.map((pr) => (
-                <li key={pr.request} className="edition-prayer">
-                  <span className="edition-prayer-text">{pr.request}</span>
-                  <span className="edition-prayer-from">{pr.from}</span>
+            <ul className="edition-petitions">
+              {focus.petitions.map((pet) => (
+                <li key={pet} className="edition-petition">
+                  <PrayerIcon />
+                  <span>{pet}</span>
                 </li>
               ))}
             </ul>
           </section>
-        )}
 
+          {/* Editorial sections. Each renders ONLY when it carries real entries —
+            an empty section does not appear at all. There is no feed of global
+            reports or prayer submissions yet, and inventing one would publish
+            fiction as fact under a masthead. See src/data/daily-edition.ts. */}
+          {DISPATCHES.length > 0 && (
+            <section className="edition-section" aria-label="Dispatches">
+              <h2 className="edition-section-head">Dispatches</h2>
+              <div className="edition-columns">
+                {DISPATCHES.map((d) => (
+                  <article key={d.title} className="edition-item">
+                    <h3 className="edition-item-head">{d.title}</h3>
+                    <p className="edition-item-place">{d.place}</p>
+                    <p className="edition-item-body">{d.body}</p>
+                    <p className="edition-item-source">
+                      {d.href ? (
+                        <a
+                          href={d.href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {d.source}
+                        </a>
+                      ) : (
+                        d.source
+                      )}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {COMMUNITY.length > 0 && (
+            <section className="edition-section" aria-label="Community">
+              <h2 className="edition-section-head">Community</h2>
+              <div className="edition-columns">
+                {COMMUNITY.map((c) => (
+                  <article key={c.title} className="edition-item">
+                    <h3 className="edition-item-head">{c.title}</h3>
+                    <p className="edition-item-place">
+                      {c.by} · {c.place}
+                    </p>
+                    <p className="edition-item-body">{c.body}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {PRAYERS.length > 0 && (
+            <section className="edition-section" aria-label="Prayer list">
+              <h2 className="edition-section-head">The prayer list</h2>
+              <ul className="edition-prayers">
+                {PRAYERS.map((pr) => (
+                  <li key={pr.request} className="edition-prayer">
+                    <span className="edition-prayer-text">{pr.request}</span>
+                    <span className="edition-prayer-from">{pr.from}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
         <h2 className="edition-section-head" id="the-reading">

@@ -34,7 +34,6 @@ import {
   getAuditOptionsWithFallback,
   getAuditRunWithFallback,
   getConsentWithFallback,
-  getSelectionWithFallback,
   saveConsent,
   saveSelection,
 } from '@/lib/soul-audit/repository'

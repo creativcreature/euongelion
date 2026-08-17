@@ -1,4 +1,4 @@
-import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
+import { resolveRedLetter } from '@/lib/red-letter-resolve'
 import type { DevotionalModule } from '@/types/soul-audit'
 import type { DayContent } from '@/types/soul-audit-plan'
 

@@ -219,10 +219,12 @@ describe('WHY THIS row on reader surfaces (D-22 / F-074)', () => {
     const { plan, schedule } = buildPlan()
     render(<DailyBreadView plan={plan} currentDay={1} schedule={schedule} />)
 
-    // The reader itself renders…
-    expect(
-      await screen.findByText('The Name You Answer To'),
-    ).toBeInTheDocument()
+    // The reader itself renders… anchored on the day's scripture rather than
+    // its title. SA-045 (F-091) moved the title out of DailyBreadView's own
+    // <h1> and into <DevotionalHeadline>, which this file mocks to null, so the
+    // title is no longer reachable here. The scripture comes from the same day
+    // payload and proves the same thing: real day content reached the page.
+    expect(await screen.findByText('What is your name?')).toBeInTheDocument()
     // …but no reason is invented.
     expect(screen.queryByTestId('daily-bread-why-this')).toBeNull()
   })

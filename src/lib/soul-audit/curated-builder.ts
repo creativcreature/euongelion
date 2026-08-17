@@ -1,4 +1,4 @@
-import { resolveRedLetter, withRedLetter } from '@/lib/red-letter-resolve'
+import { resolveRedLetter } from '@/lib/red-letter-resolve'
 import { SERIES_DATA } from '@/data/series'
 import type {
   CustomPlanDay,

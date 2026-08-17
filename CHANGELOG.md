@@ -5,6 +5,55 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Green build — stale test, dead imports, generated-artifact drift (SA-078, F-122)
+
+**2026-08-17**
+
+Backlog clear. Four kinds of outstanding item; none blocked a reader, all of them
+hid the next real problem.
+
+**The failing test was stale, not a regression.** `daily-bread-why-this` asserted
+on the day title while the same file mocks `DevotionalHeadline` to `null`. That
+mock was harmless when it landed — `DailyBreadView` rendered the title in its own
+`<h1>`. SA-045 (F-091) then moved the title into `DevotionalHeadline` so a plan
+day would read like a devotional, and the assertion started reaching for text the
+mock had removed. Red since Aug 15. The product is fine; the title still renders.
+Re-anchored on the day's scripture, which proves the same thing.
+
+**Eight lint warnings, each checked for a dropped call before deletion.** An
+unused import can mean dead code or a removed call site. All three Soul Audit
+files import both red-letter helpers and use exactly one — red letter **is**
+applied in each, no silent degradation. `getSelectionWithFallback` is genuinely
+dead (the select route writes, never reads). `editionSlug` was computed and never
+rendered. The Bible-365 `useMemo` warning was a false positive: `Array<typeof
+series.days>` reads as a use of `series` when `series.days` is the precise
+dependency, so it was retyped rather than the dependency widened.
+
+`_isDayUnlockedOriginal` was **kept**. Its own comment says "Reference
+implementation kept for restoration. To re-enable day pacing, rename this back."
+Deleting it to satisfy the linter would have thrown away the documented path back
+to day pacing, so `varsIgnorePattern: '^_'` was added — following the
+`argsIgnorePattern: '^_'` convention already in the config.
+
+**Generated artifacts had drifted.** `devotional-teasers.ts` showed a 1,682-line
+diff that was almost entirely quote style over an identical 1,144 entries;
+prettier collapsed it to one real change — the `rekindled-day-1` teaser,
+regenerated from the day-1 text corrected in SA-075. The live JSON already
+carries that wording. `red-letter/coverage.txt` moved 153→157 modules as
+Rekindled entered the corpus.
+
+**The four unpushed commits were needed — verified, not assumed.** All 20
+Rekindled content assets in them (7 devotional JSONs, 7 audio, 4 video, 2 images)
+are byte-identical to production by sha256 fetched live. Production had been
+deployed from a local tree and never pushed: the work is live but was unrecorded
+in `origin/main`, so discarding those commits would have deleted the only source
+record of content the site is already serving.
+
+Result: **0 failed / 2097 passed**, **0 lint problems**, type-check clean, no
+uncommitted tracked files, `origin/main` in sync.
+
+---
+
 ## Touch hit pads painted blue slabs over the /series switcher (SA-077, F-121)
 
 **2026-08-17**
