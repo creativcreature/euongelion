@@ -250,6 +250,67 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## THE BLUE ITALIC LINE UNDER THE LEAD SCRIPTURE IS GONE — SA-077 / F-121 (2026-08-17)
+
+Founder: _"devotionals have a wierd blue text below the lead scrioture. appears
+to be a mistake… unnecessary pull quotes in an italic small font."_ Then, on
+being told what it was: _"That isnt transliteration if the hebrew sentence
+doesnt appear."_ Both correct.
+
+`ScriptureModule` rendered `module.transliteration` as `vw-small italic` at
+`color: var(--color-gold)` — and **`--color-gold` resolves to cobalt in light
+mode** — so a small blue italic line sat directly under the passage, visually
+indistinguishable from a stray pull quote:
+
+> _vedarkekha — "in your way"_
+
+**The second point is the substantive one.** A transliteration is only a
+transliteration of what is actually shown. Measured across all 26 occurrences:
+
+| Shape                                              | Count  |
+| -------------------------------------------------- | ------ |
+| Original is a single word or short phrase + gloss  | **25** |
+| Original is a full verse, genuinely transliterated | **1**  |
+
+So in 25 of 26 cases it was never a transliteration of the passage — it was a
+**word study**, a lemma plus its meaning, which is exactly what the WordNote /
+vocab modules already do properly, in the right place, with lexicon grounding.
+Duplicated content wearing pull-quote styling. (Nothing was orphaned: all 26 did
+have an original-language line. The mismatch was scope, not presence.)
+
+Both render blocks are removed and nothing else. The `transliteration` **field
+stays in the JSON**, so restoring the block alone brings it back and no content
+was destroyed — which also keeps this change off content files another session
+is editing. The ~506 vocab/WordNote transliterations are untouched, and the
+Greek and Hebrew original lines still render.
+
+**This retires a rule** the code used to assert above that block — _"Hebrew/Greek
+must never appear without transliteration alongside it."_ The original language
+now stands alone, and the comment records that rather than claiming a constraint
+it no longer follows. If pronunciation support is wanted, WordNote is its proper
+home. One case worth a later look: `bible-365-day-286` was the single genuine
+full-verse transliteration, removed with the rest per "all devotionals
+relevant".
+
+**The larger half — the emphasis-tag row.** The transliteration was 25
+devotionals; the founder's screenshot pointed at the real offender. `module.emphasis`
+rendered **twice**: once as the highlighted words inside the passage
+(`gold-shimmer`, kept), and again as a wrap-row of the same phrases beneath the
+reference, `vw-small italic` at `var(--color-gold)` — cobalt in light. So every
+emphasised phrase appeared a second time in small blue italic. **529 of 575
+devotionals, 1,785 chips.** Both render sites removed; the in-passage
+highlighting and the JSON field are untouched. Verified: 0 chip rows, 0
+transliteration lines, 5 in-passage highlights intact.
+
+A verification note: the first post-rebuild check still showed 2 rows and I
+nearly went hunting for a second component — the served HTML had zero, and the
+browser was holding a service-worker cached page. Curl the origin before
+believing the DOM.
+
+Service worker **v107**.
+
+---
+
 ## TOGGLE ICONS FLASHED BLUE ON TOUCH, AND STAYED LIT — SA-076 / F-120 (2026-08-17)
 
 Founder: _"why does the toggle icons on mobile highlight blue on page load?"_

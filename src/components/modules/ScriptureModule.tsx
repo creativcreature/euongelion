@@ -89,20 +89,27 @@ export default function ScriptureModule({ module }: { module: Module }) {
       )}
 
       {/* Greek/Hebrew original — shared across variants */}
-      {/* Transliteration is paired with the original-language line whenever
-          the original appears, per the project rule: Hebrew/Greek must
-          never appear without transliteration alongside it. */}
+      {/* THE TRANSLITERATION LINE IS DELIBERATELY NOT RENDERED (F-121).
+          Founder 2026-08-17, of the line that used to sit here: "devotionals
+          have a wierd blue text below the lead scrioture. appears to be a
+          mistake… unnecessary pull quotes in an italic small font. I need it
+          removed on all devotionals relevant."
+
+          It read as a mistake because of how it was styled, not what it said:
+          `vw-small italic` at `color: var(--color-gold)`, and --color-gold
+          resolves to COBALT in light mode — so a line like
+          `vedarkekha — "in your way"` rendered as small blue italic directly
+          under the passage, indistinguishable from a stray pull quote.
+
+          This retires the previous rule recorded here, that "Hebrew/Greek must
+          never appear without transliteration alongside it" — the original
+          language now stands alone. 26 lines across 25 devotionals stop
+          rendering; the `transliteration` field is LEFT IN THE JSON so this is
+          reversible by restoring this block alone, and so the vocab/word-note
+          modules that use their own transliteration are untouched. */}
       {module.greekOriginal && (
         <p className="scripture-original mt-6 text-serif-italic vw-small text-muted">
           {module.greekOriginal}
-        </p>
-      )}
-      {module.greekOriginal && module.transliteration && (
-        <p
-          className="mt-2 vw-small italic"
-          style={{ color: 'var(--color-gold)', opacity: 0.85 }}
-        >
-          {module.transliteration}
         </p>
       )}
       {module.hebrewOriginal && (
@@ -113,16 +120,6 @@ export default function ScriptureModule({ module }: { module: Module }) {
           {module.hebrewOriginal}
         </p>
       )}
-      {module.hebrewOriginal &&
-        !module.greekOriginal &&
-        module.transliteration && (
-          <p
-            className="mt-2 vw-small italic"
-            style={{ color: 'var(--color-gold)', opacity: 0.85 }}
-          >
-            {module.transliteration}
-          </p>
-        )}
 
       {/* Scripture context — supports inline {{wn:id|surface}} WordNote markers,
           each resolving to a lexicon-grounded word study. Plain prose is
@@ -230,23 +227,21 @@ function ScaleVariant({
         </p>
       )}
 
-      {/* Emphasis tags */}
-      {module.emphasis && module.emphasis.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-3">
-          {module.emphasis.map((word, i) => (
-            <span
-              key={i}
-              className="vw-small italic"
-              style={{
-                color: 'var(--color-gold)',
-                opacity: 0.7,
-              }}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
-      )}
+      {/* THE EMPHASIS-TAG ROW IS DELIBERATELY NOT RENDERED (F-121).
+          Founder 2026-08-17: "unnecessary pull quotes in an italic small font.
+          I need it removed on all devotionals relevant."
+
+          `module.emphasis` used to render TWICE: once as the highlighted words
+          inside the passage (the `gold-shimmer` spans, which stay), and again
+          as a wrap-row of the same phrases beneath the reference, styled
+          `vw-small italic` at `color: var(--color-gold)` — cobalt in light
+          mode. So every emphasised phrase appeared a second time in small blue
+          italic, reading exactly like a pull quote nobody wrote. 529 of 575
+          devotionals, 1,785 chips.
+
+          Only the duplicate ROW is gone. `module.emphasis` still drives the
+          in-passage highlighting via renderPassage() above, and the field is
+          untouched in the JSON, so this is reversible on its own. */}
     </div>
   )
 }
@@ -286,19 +281,7 @@ function FullwidthVariant({
         </p>
       )}
 
-      {module.emphasis && module.emphasis.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-3">
-          {module.emphasis.map((word, i) => (
-            <span
-              key={i}
-              className="vw-small italic"
-              style={{ color: 'var(--color-gold)', opacity: 0.7 }}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
-      )}
+      {/* Emphasis-tag row removed — see the note above (F-121). */}
     </div>
   )
 }
