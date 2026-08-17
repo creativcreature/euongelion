@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Chat billed at OpenAI rates while Claude served the request (SA-079, F-123)
+
+**2026-08-17**
+
+Found while answering "what does this site cost to run". The chat path priced a
+call from the **routing slot** it went through, not the engine that served it.
+
+The `openai` slot dispatches on key shape: an `sk-ant-` key runs `callAnthropic`
+(Claude Sonnet 4.6 against `api.anthropic.com`), anything else runs
+`callOpenAI`. `sortClaudeFirstThenCheapest` confirms the slot's real identity in
+code — it tests `unique.includes('openai')` to decide whether Claude is
+available. But both branches were priced from the same `openai` profile:
+**$0.05 / $0.40** per MTok against Sonnet 4.6's real **$3 / $15**.
+
+Token counts were never wrong — `executeProvider` already prefers real `usage`
+from the provider response. Only the rate. For a typical message the recorded
+cost was **$0.00043** against a real **$0.0195**, a ~45× understatement, so the
+`platformBudget: {limitUsd: 100}` guard would not have tripped until roughly
+**$4,500** of real spend.
+
+**Chat only.** The codebase had already diagnosed this: `soul-audit/cost-ledger.ts`
+prices generation from real tokens at Anthropic rates, writes to Supabase, backs
+a real budget cap, and its header names the router as the outstanding bug. So the
+expensive path — devotional generation, ~$0.07/day, ~$0.48 per 7-day plan — was
+always honest and gated. Only chat under-billed.
+
+Fixed by billing the **engine**, not the slot. The Anthropic rates read the same
+env overrides as the Soul Audit ledger, so repointing the model moves both
+together and they cannot drift. `providerBaseCostRank` is deliberately untouched:
+it ranks routing slots for the fallback chain, and re-ranking Claude at its true
+cost would reorder that chain. Ranking is not billing.
+
+Renaming the slot to `anthropic` was rejected — 9 files, a public API shape
+change, and the wrong primitive: under BYOK the same slot will serve a user's
+`sk-ant-` key _or_ their OpenAI key and must price each correctly.
+
+---
+
 ## Green build — stale test, dead imports, generated-artifact drift (SA-078, F-122)
 
 **2026-08-17**

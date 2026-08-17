@@ -125,3 +125,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-120 | Platform          | Toggle icons flashed blue on touch, stayed lit      | 0/10     | wip    | [F-120.md](./F-120.md) |
 | F-121 | Platform          | Touch hit pads painted blue slabs over the switcher | 0/10     | wip    | [F-121.md](./F-121.md) |
 | F-122 | Platform          | Green build — stale test, dead imports, drift       | 0/10     | wip    | [F-122.md](./F-122.md) |
+| F-123 | Platform          | Chat billed at OpenAI rates while Claude served it  | 0/10     | wip    | [F-123.md](./F-123.md) |

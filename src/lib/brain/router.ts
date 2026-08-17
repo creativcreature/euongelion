@@ -70,6 +70,7 @@
 
 import {
   estimateCostUsd,
+  type BillingEngine,
   estimateInputTokens,
   estimateOutputTokens,
   providerBaseCostRank,
@@ -859,8 +860,14 @@ async function executeProvider(params: {
   )
 
   const signal = params.request.context.signal
+  // Billing follows the ENGINE, not the routing slot. The `openai` slot serves
+  // Claude whenever the resolved key is an Anthropic one (platform key today,
+  // and a BYO `sk-ant-` key once BYOK ships), so the slot id is not a price.
+  let billedAs: BillingEngine = params.provider
   if (params.provider === 'openai') {
-    result = isAnthropicKey(params.apiKey)
+    const anthropicKey = isAnthropicKey(params.apiKey)
+    if (anthropicKey) billedAs = 'anthropic'
+    result = anthropicKey
       ? await callAnthropic({
           apiKey: params.apiKey,
           system: params.request.system,
@@ -925,7 +932,7 @@ async function executeProvider(params: {
     outputTokens = estimateOutputTokens(output)
   }
   const estimatedCostUsd = estimateCostUsd({
-    provider: params.provider,
+    engine: billedAs,
     inputTokens,
     outputTokens,
   })
