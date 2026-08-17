@@ -632,7 +632,11 @@ h3 {
      align-items: stretch) with a floor so it never collapses, and the row's
      height is set by the copy — which is now four times shorter. */
   height: 100%;
-  min-height: clamp(180px, 19vw, 260px);
+  /* Founder 2026-08-16: "Featured container on home can be slightly taller."
+     The art's min-height is what sets the row's floor now that it stretches —
+     raising it lifts the whole row without touching the copy. 291px -> ~340px
+     on a 1440 desktop. */
+  min-height: clamp(230px, 24vw, 340px);
   overflow: hidden;
 }
 .homepage-featured-devotional-art img {
@@ -11647,7 +11651,6 @@ html[data-held-moment] .mobile-tab-bar {
 .fp-story-plate {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--plate-ground);
   border: var(--rr-hair);
@@ -11853,7 +11856,6 @@ html[data-held-moment] .mobile-tab-bar {
 .rack-plate {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--plate-ground);
   margin-bottom: 0.5rem;
@@ -13145,7 +13147,6 @@ html[data-held-moment] .mobile-tab-bar {
 .fp-desk-lede-plate {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--plate-ground);
 }
@@ -13190,7 +13191,6 @@ html[data-held-moment] .mobile-tab-bar {
 .fp-desk-item-plate {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--plate-ground);
 }
@@ -13426,7 +13426,6 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-plate {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--plate-ground);
   margin-bottom: 0.65rem;
@@ -13802,18 +13801,16 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 
-/* ── FLOW — the artboard (F-106) ────────────────────────────────────────
-   Founder 2026-08-16: "this will be the first toggle on the series page… Just
-   the fluid motion, sizing and grid structure etc." Reference for BEHAVIOUR
-   (not palette): nicolaromei.com.
+/* ── FLOW — the gallery board (F-112) ───────────────────────────────────
+   Reference is now the founder's OWN gallery (creativcreature.wokegod.world/
+   gallery): uniform square cards, cover-cropped, a soft radius, dealt into a
+   dense board. Measured there: 80x80 at an 88px pitch, object-fit cover, 4px
+   radius. Flow uses the two LARGEST size steps above that — founder: "I only
+   need the two largest size levels… not the small sizwe".
 
-   IT SCROLLS NATIVELY. The first build drove the board with a transform and a
-   hand-written momentum loop, and the founder's verdict was "the Flow doesnt
-   work atall" — measured, one wheel notch threw the board 835px because the
-   loop stacked its own inertia on the operating system's, and drag moved it
-   not at all. The platform already has momentum, rubber-banding, scrollbars,
-   keyboard paging and accessibility, so the frame is an ordinary scroll
-   container and drag simply moves scrollTop. */
+   Two things they asked for that the earlier builds got wrong: the type sits
+   BELOW the image, never over it, and the COLUMNS carry their own movement as
+   the board travels sideways. */
 
 .flow {
   display: flex;
@@ -13823,22 +13820,16 @@ html[data-held-moment] .mobile-tab-bar {
 
 .flow-frame {
   position: relative;
-  /* Founder 2026-08-16: the board "needs to be contained within the newspaper
-     boarder" — so it stays inside the page measure. Full-bleed was my
-     over-correction; the newspaper frame is the point of this site. */
   width: 100%;
-  height: clamp(520px, 78vh, 860px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* Contained within the newspaper border — never full bleed. */
+  height: clamp(460px, 66vh, 720px);
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
-  /* The board's scroll never leaks to the page behind it, but the page is
-     always reachable because the frame ends. */
-  overscroll-behavior-y: contain;
+  overscroll-behavior: contain;
   border: var(--rr-hair);
   background: var(--plate-ground);
   cursor: grab;
-  /* Touch belongs to the platform; drag-to-pan is a pointer enhancement. */
-  touch-action: pan-y;
+  touch-action: pan-x pan-y;
 }
 
 .flow-frame:active {
@@ -13850,63 +13841,51 @@ html[data-held-moment] .mobile-tab-bar {
   outline-offset: 2px;
 }
 
-/* A hair lighter than the frame so the cut lines between plates read even
-   before the imagery paints — an all-dark field looks like a broken view. */
-/* Every plate is the same size and the same aspect. The image is CROPPED to
-   fill it (object-fit: cover) and is never stretched or skewed. */
+/* The board runs sideways: a row of columns, each four cards deep. */
 .flow-board {
-  background: color-mix(in srgb, var(--mock-paper) 22%, var(--plate-ground) 78%);
-  display: grid;
-  grid-auto-rows: auto;
-  /* Tiles butt together on a hairline. A 14px gutter reads as cards on a
-     page; 3px reads as one printed sheet cut into plates. */
-  gap: 3px;
-  padding: 3px;
-  /* Fills the frame by construction — nothing is measured, so nothing can be
-     mis-measured into dead space. */
-  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  width: max-content;
+}
+
+/* Each column drifts a little as the board travels — capped hard, so a card
+   can never be pushed out of reach. */
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translate3d(0, var(--col-shift, 0px), 0);
+  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
 }
 
 .flow-tile {
-  position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
+  flex: 0 0 auto;
   text-decoration: none;
   color: var(--plate-ink);
-  background: var(--plate-ground);
-  /* The smear, driven from real scroll travel and settling at rest. */
-  filter: blur(var(--flow-blur, 0px));
-  transition: filter 120ms linear;
 }
 
-.flow-tile::after {
-  /* A hairline that only appears on the tile you are on — the reference marks
-     the active plate rather than boxing every one of them. */
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 0 2px var(--color-crimson);
-  opacity: 0;
-  transition: opacity 180ms ease;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.flow-tile:hover::after,
-.flow-tile:focus-visible::after {
-  opacity: 1;
-}
-
-.flow-tile:hover,
-.flow-tile:focus-visible {
-  z-index: 2;
-}
-
+/* The plate: a square, cover-cropped, bordered — never stretched. */
 .flow-plate {
-  position: absolute;
-  inset: 0;
+  position: relative;
   display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--plate-ink) 26%, transparent);
+  background: color-mix(in srgb, var(--mock-paper) 14%, var(--plate-ground) 86%);
+  filter: blur(var(--flow-blur, 0px));
+  transition:
+    filter 120ms linear,
+    border-color 200ms ease;
+}
+
+.flow-tile:hover .flow-plate,
+.flow-tile:focus-visible .flow-plate {
+  border-color: var(--color-crimson);
 }
 
 .flow-img {
@@ -13915,45 +13894,21 @@ html[data-held-moment] .mobile-tab-bar {
 }
 
 .flow-tile:hover .flow-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* The tiles are pure imagery until you are on one. A permanent scrim on every
-   plate is what made this read as a card wall rather than an artboard. */
+/* Founder 2026-08-16: "the type should uppear bellow image, not on top." */
 .flow-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.12rem;
-  padding: 1.4rem 0.7rem 0.6rem;
-  background: linear-gradient(
-    180deg,
-    rgba(9, 12, 32, 0) 0%,
-    rgba(9, 12, 32, 0.88) 70%
-  );
-  /* Founder 2026-08-16: "titles need to show." Always on — a hover-only name
-     is invisible on a phone and invisible to anyone scanning. */
-  opacity: 1;
-  z-index: 2;
-  transition: background 200ms ease;
-}
-
-.flow-tile:hover .flow-caption,
-.flow-tile:focus-visible .flow-caption {
-  background: linear-gradient(
-    180deg,
-    rgba(9, 12, 32, 0) 0%,
-    rgba(9, 12, 32, 0.95) 62%
-  );
+  gap: 0.1rem;
+  padding: 0.45rem 0.1rem 0;
 }
 
 .flow-title {
   font-family: var(--font-family-serif);
-  font-size: 1.02rem;
-  line-height: 1.1;
+  font-size: 0.98rem;
+  line-height: 1.15;
   color: var(--plate-ink);
   text-wrap: balance;
 }
@@ -13964,7 +13919,35 @@ html[data-held-moment] .mobile-tab-bar {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--plate-ink);
-  opacity: 0.72;
+  opacity: 0.66;
+}
+
+/* The two size levels. */
+.flow-levels {
+  display: flex;
+  gap: 0;
+  align-self: center;
+}
+
+.flow-level {
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: var(--rr-hair);
+  background: transparent;
+  color: var(--mock-muted);
+  cursor: pointer;
+}
+
+.flow-level + .flow-level {
+  border-left: 0;
+}
+
+.flow-level.is-on {
+  background: var(--mock-ink);
+  color: var(--mock-paper);
 }
 
 .flow-hint {
@@ -13977,29 +13960,20 @@ html[data-held-moment] .mobile-tab-bar {
 
 @media (max-width: 900px) {
   .flow-frame {
-    height: auto;
-    max-height: 82vh;
+    height: clamp(420px, 60vh, 620px);
     cursor: default;
   }
   .flow-hint {
-    /* "Drag" is not the gesture on a phone. */
     visibility: hidden;
   }
 }
 
-@media (max-width: 640px) {
-  .flow-title {
-    font-size: 0.88rem;
-  }
-  .flow-caption {
-    padding: 0.6rem 0.55rem 0.5rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .flow-tile,
+  .flow-col,
+  .flow-plate,
   .flow-img {
     transition: none;
+    transform: none;
     filter: none;
   }
 }

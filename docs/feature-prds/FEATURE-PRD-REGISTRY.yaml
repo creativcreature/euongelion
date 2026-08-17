@@ -1059,3 +1059,11 @@ features:
     prd: docs/feature-prds/F-111.md
     methodology_refs:
       - M00
+  - id: F-112
+    title: Flow, rebuilt against the founder's own gallery
+    slug: flow-rebuilt-against-own-gallery
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-112.md
+    methodology_refs:
+      - M00

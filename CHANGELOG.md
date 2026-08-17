@@ -690,6 +690,30 @@ contributor is `getCanonicalRagIndex()` loading the full 15 MB
 `reference-index-slim.json` for precisely this reason and that file does not
 exist in the repo. — SA-048 (F-093)
 
+## Flow, rebuilt against the founder's own gallery (2026-08-16)
+
+Registered as **SA-068** (F-112). Reference is now
+`creativcreature.wokegod.world/gallery`, **measured** rather than guessed at:
+80×80 cards on an 88px pitch, `object-fit: cover`, 4px radius, dense uniform
+grid, no captions over the image.
+
+Flow takes the uniform **square** cards, cover-cropped and never stretched, the
+soft radius and hairline border, dealt into columns. It changes three things on
+instruction: **two size levels only** (340px and 250px — both far above the
+reference's 80px, switchable above the board), **type below the image** rather
+than over it, and **columns that carry their own movement** — the board is a row
+of columns four deep running sideways, each nudged vertically as it travels, at
+rates that don't divide evenly so no two neighbours move together. Capped at
+26px, so a column can never drift a card out of reach.
+
+The wheel listener is attached **natively with `passive: false`**. React
+registers wheel listeners as passive, so `preventDefault` in a React `onWheel`
+fails and logs an error on *every notch* — 199 in one session.
+
+Four rebuilds of this view in a day, and the lesson was the same each time: I
+designed from a description instead of measuring the reference. Measure first.
+— SA-068 (F-112)
+
 ## Flow is a uniform repeating grid, inside the border (2026-08-16)
 
 Registered as **SA-067** (F-111), correcting F-110.
