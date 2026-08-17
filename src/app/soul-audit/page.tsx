@@ -60,7 +60,7 @@ export default function SoulAuditPage() {
             </FadeIn>
 
             <FadeIn delay={0.3} y={8}>
-              <p className="vw-body mb-6 text-center text-secondary type-prose">
+              <p className="vw-body mx-auto mb-6 text-center text-secondary type-prose">
                 {typographer(
                   'You don\u2019t have to have it figured out. Just start writing.',
                 )}
@@ -111,7 +111,7 @@ export default function SoulAuditPage() {
                 </div>
               ) : limitReached ? (
                 <div className="py-8 text-center">
-                  <p className="text-serif-italic vw-body-lg mb-8 text-secondary">
+                  <p className="text-serif-italic vw-body-lg mx-auto mb-8 text-secondary">
                     {typographer(
                       'You\u2019ve explored enough. Time to dive in.',
                     )}
@@ -157,7 +157,13 @@ export default function SoulAuditPage() {
                     rows={6}
                     disabled={isSubmitting}
                     aria-label="What are you wrestling with today?"
-                    className="mb-6 w-full resize-none bg-surface-raised p-6 text-serif-italic vw-body-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
+                    /* `vw-body-lg` caps this at a 680px reading measure, which
+                       is right for the field — but a textarea is inline-block,
+                       so inside a 714px column that aligns to start the leftover
+                       34px all landed on the right and the box sat visibly off
+                       centre. `block` + `mx-auto` centres it without touching
+                       the measure. Founder 2026-08-16. */
+                    className="mx-auto mb-6 block w-full resize-none bg-surface-raised p-6 text-serif-italic vw-body-lg text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] focus:outline-none"
                     style={{
                       border:
                         '2px solid color-mix(in srgb, var(--color-text-primary) 24%, var(--color-border) 76%)',
@@ -181,7 +187,7 @@ export default function SoulAuditPage() {
                   )}
 
                   {error && (
-                    <p className="vw-body mb-6 text-center text-secondary">
+                    <p className="vw-body mx-auto mb-6 text-center text-secondary">
                       {error}
                     </p>
                   )}

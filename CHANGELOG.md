@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## THE SOUL AUDIT INPUT SAT 34PX OFF CENTRE — SA-072 / F-116 (2026-08-16)
+
+Founder: _"soul audit input box needs to be centered."_
+
+Measured live at 1680px: the textarea sat **483px from the left and 517px from
+the right**.
+
+**Every ancestor was already centred.** Walking the chain, each one reported an
+identical left and right gap:
+
+| Element                     | Width   | Off by  |
+| --------------------------- | ------- | ------- |
+| `section.shell-content-pad` | 1629    | 0       |
+| `div.w-full.max-w-2xl`      | 714     | 0       |
+| `div.fade-in-section`       | 714     | 0       |
+| **`textarea`**              | **680** | **−34** |
+
+The field carries `vw-body-lg`, a reading-measure utility that sets
+`max-width: 680px`. Inside a 714px column that leaves 34px of slack — and
+because a `textarea` is `display: inline-block` and the column aligns to
+`start`, all of it collected on the right. The box was narrower than its
+container and pinned to the left edge of it.
+
+`block` + `mx-auto` centres the field **without touching the measure**; 680px is
+a good line length for a text field and is left exactly as it was.
+
+The same cap also left two `vw-body` prose blocks flush left, so their centred
+text sat 17px left of the field — both take `mx-auto` now. `vw-small` is _not_
+capped, so those blocks were already correct and are untouched.
+
+**The lesson: when something looks off centre, measure the element itself, not
+its container.** A perfectly centred parent tells you nothing about a child that
+is narrower than it, and this page had a centred container, a centred section
+and no overflow anywhere.
+
+Verified in the Workers runtime: textarea 500px left / 500px right at 1680px,
+`max-width: 680px` preserved, no other off-centre control on `/soul-audit` or
+`/`, 0 horizontal overflow at 390px. Service worker **v101**.
+
+---
+
 ## THE FEATURE AND RACK ARTWORK WAS COLLAPSED TO ZERO HEIGHT — SA-071 / F-115 (2026-08-16)
 
 Founder: _"Rack images still not showing"_ · _"same with Feature on series"_.
