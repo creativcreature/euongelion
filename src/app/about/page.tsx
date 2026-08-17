@@ -65,7 +65,7 @@ export default function AboutPage() {
         {
           title: 'Privacy',
           body: [
-            'Your reflection is read once to compose your edition — processed in the moment, never stored, never used to train AI, never shared with third-party analytics or trackers. Anonymous-session data is hard-deleted after 30 days. Authenticated users can export or permanently delete their data from /settings at any time.',
+            'Your reflection is used to compose your edition and is stored with your anonymous session, keyed to a session token — never sold, never shared with third-party analytics or trackers, never used to train AI. Anonymous-session data is hard-deleted after 30 days. Authenticated users can export or permanently delete their data from /settings at any time.',
             'See /privacy for the full policy.',
           ],
         },

@@ -368,8 +368,9 @@ export default function HowWeWritePage() {
                     Your reflection is sent to the model as a single input. It
                     composes three reading paths matched to what you described —
                     grounded in real Scripture and the reference library, not
-                    platitudes. The reflection itself is not stored, indexed, or
-                    retained after this single composition request completes.
+                    platitudes. The reflection is then stored with your session
+                    so the paths it produced can be reopened, and deleted with
+                    that session after 30 days.
                   </p>
                 </div>
               </div>
@@ -409,13 +410,18 @@ export default function HowWeWritePage() {
             {/* Privacy statement */}
             <div className="how-we-privacy-block">
               <p className="text-label how-we-privacy-kicker">
-                WHAT IS NEVER STORED
+                WHAT HAPPENS TO YOUR REFLECTION
               </p>
               <ul className="how-we-list">
                 <li>
-                  Your reflection text is read once, then discarded. It is not
-                  saved to a database, attached to a user profile, or held
-                  between sessions.
+                  Your reflection text is stored in our database, keyed to a
+                  session token, so the reading paths it produced can be
+                  reopened. It is deleted with your anonymous session after 30
+                  days, or whenever you delete it from Settings. See{' '}
+                  <Link href="/privacy" className="link-highlight">
+                    Privacy
+                  </Link>{' '}
+                  for the full retention table.
                 </li>
                 <li>
                   Your reflection is never used to train any AI model — ours or
@@ -454,10 +460,21 @@ export default function HowWeWritePage() {
         <SectionRule />
 
         {/* Founder 2026-08-16: "How we write page is outdated and therefore
-            untruthful." It was untruthful mainly by OMISSION — two things had
-            shipped that a transparency page has no business leaving out.
-            Added here rather than rewritten around, because everything already
-            on the page still holds. */}
+            untruthful." Two things had shipped that a transparency page has no
+            business leaving out, and they were added here.
+
+            CORRECTION (2026-08-16, overnight audit): the note that used to sit
+            here claimed "everything already on the page still holds." It did
+            not. The privacy section asserted the Soul Audit reflection was
+            "not stored, indexed, or retained" and was headed WHAT IS NEVER
+            STORED — while `createAuditRun` inserts `response_text` into
+            `audit_runs`, a table indexed by `session_token`, and
+            `src/lib/privacy/retention.ts` states plainly on /privacy that it
+            lives in "our database, keyed by session token." Two pages on the
+            same site made opposite privacy representations about the same
+            field, and the false one sat at the point of collection. The copy
+            now matches the retention policy. Keep it that way: if the storage
+            behaviour changes, this page and retention.ts change together. */}
         <section className="how-we-section" aria-labelledby="sec-red-letter">
           <SectionHeader
             kicker="THE WORDS OF CHRIST"

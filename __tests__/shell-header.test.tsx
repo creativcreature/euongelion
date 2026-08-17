@@ -207,8 +207,12 @@ describe('EuangelionShellHeader', () => {
     const user = userEvent.setup()
     const { rerender } = render(<EuangelionShellHeader />)
 
+    // Was `/^[A-Z]$/` — matching the single initial, which WAS the trigger's
+    // entire accessible name and therefore the accessibility bug (announced as
+    // "C, menu button"). It now carries aria-label="Account menu", so the test
+    // asserts the accessible name rather than the buggy one.
     const trigger = await screen.findByRole('button', {
-      name: /^[A-Z]$/,
+      name: /account menu/i,
     })
     await user.click(trigger)
 

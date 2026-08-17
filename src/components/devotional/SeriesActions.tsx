@@ -157,7 +157,12 @@ export default function SeriesActions({
         {hydrated && active && active.seriesSlug !== seriesSlug && (
           <p className="vw-small text-secondary">
             Currently active:{' '}
-            <Link href="/daily-bread" className="link-highlight">
+            {/* /today, not /daily-bread: this link names YOUR series and day,
+                so it must open your plan reader, not the shared public
+                edition. Both files already `router.push('/today')` elsewhere —
+                the Daily Bread <-> Today swap was applied to the programmatic
+                navigation and missed on this Link. */}
+            <Link href="/today" className="link-highlight">
               {active.seriesTitle ?? active.seriesSlug}
             </Link>{' '}
             (Day {active.currentDay})

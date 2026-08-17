@@ -166,6 +166,7 @@ function SignUpForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="email"
+          aria-label="Email address"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value)

@@ -167,6 +167,7 @@ export default function EuangelionShellHeader({
   const accountMenuRef = useRef<HTMLDivElement | null>(null)
   const accountTriggerRef = useRef<HTMLButtonElement | null>(null)
   const mobileToggleRef = useRef<HTMLButtonElement | null>(null)
+  const mobilePanelRef = useRef<HTMLDivElement | null>(null)
   const mastheadRef = useRef<HTMLElement | null>(null)
 
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
@@ -319,7 +320,14 @@ export default function EuangelionShellHeader({
     }
   }, [accountMenuOpen])
 
-  // Close mobile menu on Escape
+  // Close the mobile menu on Escape, on a tap outside it, and hold the page
+  // still while it is open.
+  //
+  // Founder, repeatedly: "The menu doesnt work properly on mobile when
+  // scrolling." Measured on the live site at 390px: the panel itself was fine
+  // (fixed, z-index 300, correct even at scrollY 1500) — but the PAGE kept
+  // scrolling underneath it, and tapping the page did nothing, so the only way
+  // out was to find the toggle again. Both are fixed here.
   useEffect(() => {
     if (!mobileMenuOpen) return
 
@@ -328,8 +336,61 @@ export default function EuangelionShellHeader({
       closeMobileMenu()
     }
 
+    function closeIfOutside(event: MouseEvent | TouchEvent) {
+      const target = event.target as Node | null
+      if (!target) return
+      // The toggle handles its own close; letting this fire too would reopen it.
+      if (mobileToggleRef.current?.contains(target)) return
+      if (mobilePanelRef.current?.contains(target)) return
+      closeMobileMenu()
+    }
+
+    // NO SCROLL LOCK HERE — deliberately, after measuring three variants.
+    //
+    // The page does scroll behind this panel, and that is the least-bad
+    // option for a 216px dropdown anchored to a sticky bar:
+    //
+    //   `body { overflow: hidden }`  — does nothing. `document.scrollingElement`
+    //     is the documentElement, so the page still scrolled (measured y=1400
+    //     to y=1900 with the "lock" applied).
+    //   `+ touch-action: none`       — `touch-action` intersects down the
+    //     ancestor chain, so it also landed on the panel and made the panel's
+    //     own `overflow-y: auto` impossible to touch-scroll.
+    //   `html { overflow: hidden }`  — DOES lock, and breaks `position: sticky`
+    //     on the topbar. Measured: topbar bottom 53px with the menu closed,
+    //     -1346px the instant the lock applied, 53px again on close. The bar
+    //     this panel is anchored to flew off screen, taking the ✕ with it.
+    //
+    // The panel is `position: fixed` with `overscroll-behavior: contain`, so it
+    // stays put and does not chain its scroll to the page. Combined with
+    // outside-tap and Escape below, background scroll is a minor annoyance —
+    // and a far smaller one than any of the three regressions above. If a real
+    // lock is ever wanted, the `position: fixed` body + scroll-restore pattern
+    // is the one to use, but it needs testing against the sticky topbar.
+
     document.addEventListener('keydown', handleEscape)
-    return () => document.removeEventListener('keydown', handleEscape)
+    document.addEventListener('pointerdown', closeIfOutside)
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.removeEventListener('pointerdown', closeIfOutside)
+    }
+  }, [mobileMenuOpen, closeMobileMenu])
+
+  // Close the menu when the viewport grows past the mobile shell.
+  //
+  // Without this, opening the menu at 834px (iPad portrait — where per the
+  // audit it is the ONLY navigation) and rotating to 1194px leaves the panel
+  // rendered while `.mock-topbar-mobile-row` goes `display: none`, so the ✕
+  // disappears and there is no touch exit left.
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    if (typeof window.matchMedia !== 'function') return
+    const mql = window.matchMedia('(max-width: 900px)')
+    function handleChange(event: MediaQueryListEvent) {
+      if (!event.matches) closeMobileMenu()
+    }
+    mql.addEventListener('change', handleChange)
+    return () => mql.removeEventListener('change', handleChange)
   }, [mobileMenuOpen, closeMobileMenu])
 
   useEffect(() => {
@@ -494,6 +555,11 @@ export default function EuangelionShellHeader({
             aria-current={active ? 'page' : undefined}
             aria-label={'icon' in item && item.icon ? 'Home' : undefined}
             title={'icon' in item && item.icon ? 'Home' : undefined}
+            /* Close the mobile panel on tap. The route-change effect already
+               closes it, but it no-ops when the destination equals the current
+               route — so tapping HOME while on / left the menu sitting open.
+               Harmless on the desktop rows, where the panel is already shut. */
+            onClick={closeMobileMenu}
           >
             {'icon' in item && item.icon === 'home' ? <HomeMark /> : item.label}
           </Link>
@@ -617,6 +683,10 @@ export default function EuangelionShellHeader({
                       className="mock-account-trigger text-label"
                       ref={accountTriggerRef}
                       aria-haspopup="menu"
+                      /* Without this the entire accessible name is the single
+                         initial inside — announced as "C, menu button". The two
+                         sibling triggers in this file are both labelled. */
+                      aria-label="Account menu"
                       aria-expanded={accountMenuOpen}
                       onClick={() => setAccountMenuOpen((current) => !current)}
                     >
@@ -845,6 +915,7 @@ export default function EuangelionShellHeader({
         {mobileMenuOpen && (
           <div
             id="shell-mobile-secondary-nav"
+            ref={mobilePanelRef}
             className="mock-mobile-secondary-nav"
             role="group"
             aria-label="Navigation menu"

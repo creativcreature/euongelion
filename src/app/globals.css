@@ -5842,6 +5842,29 @@ html.reduce-motion *::after {
   border-color: var(--color-gold);
 }
 
+/* Dark/night rescue for the REMAINING four in that group.
+   The rule above paints `--mock-blue` on `--mock-paper`, and in dark mode
+   `--mock-blue`, `--mock-paper` and `--mock-bg` are the SAME value (#171b69;
+   #000000 in night) — contrast 1.00:1. The icon control and account trigger
+   were rescued directly above and the mobile toggle further down, but
+   `.mock-btn`, `.mock-account-item`, `.mock-carousel-btn` and `.mock-reset-btn`
+   were not — so the primary button style went to an unreadable slab on hover.
+   Worse, `:focus-visible` shares that selector, so KEYBOARD USERS LOST THE
+   FOCUS INDICATOR ENTIRELY on the app's main button (WCAG 2.4.7 on top of
+   1.4.3). Dark is the default theme, so this was the common case. */
+.mock-home.is-dark .mock-btn:is(:hover, :focus-visible),
+.dark .mock-home .mock-btn:is(:hover, :focus-visible),
+.mock-home.is-dark .mock-account-item:is(:hover, :focus-visible),
+.dark .mock-home .mock-account-item:is(:hover, :focus-visible),
+.mock-home.is-dark .mock-carousel-btn:is(:hover, :focus-visible),
+.dark .mock-home .mock-carousel-btn:is(:hover, :focus-visible),
+.mock-home.is-dark .mock-reset-btn:is(:hover, :focus-visible),
+.dark .mock-home .mock-reset-btn:is(:hover, :focus-visible) {
+  background: var(--color-gold);
+  color: var(--mock-bg);
+  border-color: var(--color-gold);
+}
+
 /* Base resume-badge link (layout only). Display lives here, not as an
    inline style, so the docked-state `display: none` rule can win. Used
    in two places: the desktop topbar action cluster (gets pill chrome
@@ -6798,10 +6821,30 @@ html.reduce-motion *::after {
 
   .mock-mobile-menu-toggle {
     justify-self: end;
-    /* >=44px tappable target (WCAG 2.5.5 / Apple HIG) in a tidy box. */
-    min-width: 44px;
-    min-height: 44px;
+    /* >=44px TAPPABLE, but only 2rem TALL.
+       A real 44px min-height made this the tallest child of the topbar row and
+       pushed the bar to 56px — while ~10 rules, including the menu panel's own
+       `top`, are written against `--mock-h-topbar, 42px`. Measured live: the
+       open panel overlapped the bar by 14px and painted over the bottom of
+       this very button, so `elementFromPoint` at the ✕'s lower edge returned
+       the panel and the tap never reached the toggle. That is the founder's
+       "menu doesnt work properly on mobile" report.
+       The hit area now comes from the transparent ::after below — the same
+       strategy the sibling icon controls already use — so the target stays
+       >=44px and the topbar keeps the height every other rule assumes. */
+    min-width: 2rem;
+    min-height: 2rem;
     padding: 0.12rem 0.55rem;
+  }
+
+  .mock-mobile-menu-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 44px);
+    height: 44px;
+    transform: translate(-50%, -50%);
   }
 
   /* Narrowest phones: the date stamp alone carries the ambient role and the
@@ -9525,7 +9568,7 @@ html.reduce-motion
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .mobile-tab-bar {
     position: fixed;
     inset-inline: 0;
@@ -9580,7 +9623,7 @@ html.reduce-motion
   }
 }
 
-@media (max-width: 767px) and (display-mode: standalone) {
+@media (max-width: 900px) and (display-mode: standalone) {
   /* Installed-PWA: slightly more breathing room over the home indicator. */
   .mobile-tab-bar {
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.42rem);
@@ -9590,7 +9633,7 @@ html.reduce-motion
 /* SA-024: mobile top-bar theme toggle — sits in the left track of the
    3-column mobile topbar grid, mirroring the menu button's visual weight
    so the ambient ticker stays optically centered. */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .mock-topbar-mobile-toggle {
     justify-self: start;
     min-height: 1.9rem;
@@ -9604,7 +9647,7 @@ html.reduce-motion
 }
 
 /* SA-024: on mobile the cookie banner rises above the fixed tab bar. */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .cookie-consent-banner {
     bottom: calc(env(safe-area-inset-bottom, 0px) + 4.3rem);
   }
@@ -9729,7 +9772,7 @@ html.reduce-motion
 }
 
 /* Clear the fixed mobile tab bar (same offset as the cookie banner). */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .reader-theme-trigger {
     bottom: calc(env(safe-area-inset-bottom, 0px) + 4.3rem);
   }
@@ -10026,6 +10069,18 @@ html.reduce-motion
 .global-search-glyph {
   flex: 0 0 auto;
   opacity: 0.75;
+}
+
+/* The row carries the focus ring for the input inside it.
+   `.global-search-input` sets `outline: none` with no replacement, and that
+   declaration is UNLAYERED while the global `input:focus-visible` fallback
+   lives in `@layer base` — unlayered CSS beats layered regardless of
+   specificity, so the fallback never applied and the field had no visible
+   focus state at all (WCAG 2.4.7). This mirrors `.rr-search:focus-within`,
+   which already solves exactly this a few hundred lines below. */
+.global-search-inputrow:focus-within {
+  outline: 2px solid var(--color-gold, #c8a56a);
+  outline-offset: 2px;
 }
 
 .global-search-input {
@@ -11161,14 +11216,14 @@ html[data-held-moment] .mobile-tab-bar {
    control at phone widths, which is where the founder found it. Fade it out
    for the moment the panel is readable; it returns as soon as the panel
    scrolls away. Desktop has room for both, so this is mobile-only. */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   :root[data-narration-panel='true'] .reader-theme-trigger {
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--motion-base, 200ms) var(--motion-ease, ease-out);
   }
 }
-@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
   :root[data-narration-panel='true'] .reader-theme-trigger {
     transition: none;
   }
@@ -11179,7 +11234,7 @@ html[data-held-moment] .mobile-tab-bar {
   transition: transform var(--motion-base, 200ms) var(--motion-ease, ease-out);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   /* On mobile the bar is itself lifted 3.7rem to clear the tab bar, so the
      controls must clear BOTH — bar height plus that offset. Using only the bar
      height leaves the theme button sitting inside the bar. */
@@ -11225,7 +11280,7 @@ html[data-held-moment] .mobile-tab-bar {
   background: var(--color-gold);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .devotional-flow-article[data-narrating='true']::before {
     --narrating-gutter: 0.5rem;
   }
@@ -13450,6 +13505,11 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-plate {
   position: relative;
   display: block;
+  /* A fill image is absolutely positioned and adds no height, so without a
+     ratio this box collapsed and all three "How to read" guides rendered
+     335x0 — the artwork was loaded and decoded but invisible. Matches the
+     sibling .edition-panel-plate. Found in the 2026-08-16 polish sweep. */
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background: var(--plate-ground);
   margin-bottom: 0.65rem;
@@ -14257,5 +14317,41 @@ html[data-held-moment] .mobile-tab-bar {
   }
   .fp-brief-plate {
     width: 56px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Touch targets (2026-08-16 polish sweep)
+
+   CLAUDE.md requires >=44px touch targets. Measured on the live site at 390px,
+   three controls were under it: the topbar icon buttons (37x34), the series
+   view toggles (40x35) and the sort buttons (39x25).
+
+   These are deliberately dense toolbars the founder has art-directed closely,
+   so this does NOT resize them. It extends the HIT AREA with a transparent
+   pseudo-element and leaves every pixel of the visual design where it is.
+   Scoped to `pointer: coarse` so mouse hover regions are unchanged, and none
+   of these controls sits inside an `overflow: hidden` container, so the
+   expanded area is really hittable rather than clipped.
+--------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .mock-icon-control,
+  .rr-view,
+  .rr-sort {
+    position: relative;
+  }
+
+  .mock-icon-control::after,
+  .rr-view::after,
+  .rr-sort::after {
+    content: '';
+    position: absolute;
+    /* Centres a 44x44 minimum around the control whatever its rendered size. */
+    top: 50%;
+    left: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
   }
 }

@@ -132,6 +132,26 @@ export default function GlobalSearchOverlay({
     }
   }, [open])
 
+  // Escape closes from anywhere, not just from inside the panel.
+  //
+  // `handlePanelKeyDown` below already closes on Escape, but it is a React
+  // onKeyDown bound to the panel, so it only fires while focus is INSIDE the
+  // panel. Normally it is — the effect above focuses the input on open — but
+  // that focus lands in a requestAnimationFrame and can lose the race; caught
+  // live during the 2026-08-16 sweep with `document.activeElement` still on
+  // BODY and Escape doing nothing, leaving the overlay closable only by mouse.
+  // This is additive: it cannot break the panel-scoped path, it only covers the
+  // case where focus never arrived.
+  useEffect(() => {
+    if (!open) return
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return
+      onClose()
+    }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [open, onClose])
+
   // Scroll lock while open. Providers' defensive unlock re-runs when the
   // tab becomes visible again, so we re-assert on the same signals.
   useEffect(() => {

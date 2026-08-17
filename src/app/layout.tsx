@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import Reveal from '@/components/motion/Reveal'
 import MastheadIntro from '@/components/motion/MastheadIntro'
@@ -7,6 +7,30 @@ import MobileTabBar from '@/components/MobileTabBar'
 import InstallPrompt from '@/components/InstallPrompt'
 import Providers from './providers'
 import './globals.css'
+
+/**
+ * `viewport-fit=cover` is the whole point of this export.
+ *
+ * There was no viewport export at all, so Next emitted its default
+ * `width=device-width, initial-scale=1` WITHOUT `viewport-fit=cover` — and
+ * `env(safe-area-inset-*)` resolves to 0 unless that is set. Roughly fifteen
+ * safe-area rules were already written against it and every one was inert:
+ * `--shell-safe-top`, the tab bar's home-indicator padding, the menu panel's
+ * bottom inset, the cookie banner and the search overlay's notch padding.
+ *
+ * It matters most in the installed PWA: this app ships
+ * `statusBarStyle: 'black-translucent'` with `display: standalone`, which
+ * extends the web view under the status bar and REQUIRES the insets to
+ * compensate. Without them the topbar renders beneath the notch.
+ *
+ * `maximumScale` / `userScalable` are deliberately left alone — Next's default
+ * permits pinch-zoom, and taking that away is an accessibility failure.
+ */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
 
 export const metadata: Metadata = {
   title: { default: 'Euangelion', template: '%s | Euangelion' },

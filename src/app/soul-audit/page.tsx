@@ -73,7 +73,7 @@ export default function SoulAuditPage() {
             <FadeIn delay={0.35} y={6}>
               <p className="vw-small mb-12 text-center text-muted type-prose">
                 {typographer(
-                  'Write a few sentences. We\u2019ll compose three reading paths matched to what you name \u2014 grounded in real Scripture \u2014 and tell you why each one fits. No account required. Your reflection is read once to compose your edition \u2014 processed in the moment, never stored, never used to train AI, never shared.',
+                  'Write a few sentences. We\u2019ll compose three reading paths matched to what you name \u2014 grounded in real Scripture \u2014 and tell you why each one fits. No account required. Your reflection is used to compose your edition and is kept with your anonymous session for 30 days, then deleted \u2014 never sold, never shared, never used to train AI. You can delete it at any time from Settings.',
                 )}
               </p>
             </FadeIn>

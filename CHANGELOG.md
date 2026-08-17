@@ -66,15 +66,37 @@ and invisible. Same fault as F-115. Found by sweeping **every** `*-plate` /
 checking pages one at a time; every remaining container class passes. Now 3/2,
 matching its sibling `.edition-panel-plate`.
 
-**The mobile menu — the repeated complaint.** Measured at 390px scrolled to
-y=1500, the **panel itself was fine**: fixed, z-index 300, correct offset,
-visible. Two faults sat around it — the **page kept scrolling behind it**, and
-**tapping outside did nothing**, so the only way out was to find the toggle
-again. Body scroll is frozen now (`overflow: hidden` + `touch-action: none`,
-restored on close), deliberately _not_ `position: fixed` on the body, which
-would jump the reader back to the top. The outside-tap handler ignores the
-toggle itself, or its own close would be followed instantly by a reopen. Escape
-already worked.
+**The mobile menu — the repeated complaint, and its real cause.** Measured at
+390px with the panel open:
+
+```
+topbar bottom edge : 56.0px
+panel top          : 42.0px   ← hardcoded --mock-h-topbar fallback
+elementFromPoint(✕ lower edge) → DIV.mock-mobile-secondary-nav
+```
+
+**The open panel painted over the bottom third of its own close button** (panel
+`z-index: 300` beats the topbar's `120`), so taps there hit the panel. The
+cause: `.mock-mobile-menu-toggle` carried a real `min-height: 44px`, making it
+the tallest child of the row and pushing the bar to 56px — while ~10 rules,
+including the panel's own `top`, are written against `var(--mock-h-topbar,
+42px)`. It is a 2rem box with a transparent 44px `::after` now, the same
+strategy its sibling icon controls already use. Verified: close button fully
+reachable, topbar still sticky.
+
+Also: **tapping outside now closes it**, it closes when the viewport grows past
+900px (previously the ✕ vanished on rotate, stranding the panel with no exit),
+and nav links close it on tap — the route-change effect no-ops when the
+destination equals the current route, so tapping HOME while on `/` left it open.
+
+**No scroll lock — deliberately, after measuring three variants.**
+`body { overflow: hidden }` does nothing (the scroller is `<html>`; measured
+y=1400 → y=1900 while "locked"). Adding `touch-action: none` intersects down
+onto the panel and makes the panel itself un-scrollable. `html { overflow:
+hidden }` does lock — and **breaks `position: sticky` on the topbar**: measured
+bottom 53px closed, **−1346px** the instant the lock applied, 53px again on
+close, i.e. the bar the panel hangs from flew off screen. Background scroll
+behind a 216px dropdown is a far smaller problem than any of those, so it stays.
 
 **Touch targets under 44px** — `.mock-icon-control` 37×34, `.rr-view` 40×35,
 `.rr-sort` 39×25. These are dense, closely art-directed toolbars, so this does
@@ -100,7 +122,52 @@ pre-existing and the founder had just asked for smaller CTAs — flagged for a
 ruling. Dark mode passed (40 pairs, none below 4.5:1). The apparent 384px gap on
 `/daily-bread` is filled by the `edition-rail` briefs, not empty.
 
-Service worker **v103**.
+**`viewport-fit=cover` was missing entirely.** There was no `viewport` export
+anywhere in `src/app/`, so `env(safe-area-inset-*)` resolved to `0` and ~15
+already-written safe-area rules were inert — the tab bar's home-indicator
+padding, the menu panel's bottom inset, the cookie banner, the search overlay's
+notch padding. It matters most in the installed PWA, which ships
+`black-translucent` + `standalone` and therefore _requires_ those insets to
+avoid rendering under the notch. Pinch-zoom deliberately left enabled.
+
+**Nothing navigated between 768 and 900px.** Measured at 834px (iPad portrait):
+desktop nav `display: none`, tab bar `display: none`. The desktop nav hides at
+≤900px; the tab bar only appeared at ≤767px. The tab bar now turns on at ≤900px,
+moved together with its whole cohort (installed-PWA padding, mobile toggle
+sizing, and everything positioned to _clear_ the bar) — moving the bar alone
+would have left the cookie banner and reader-theme trigger underneath it.
+
+**A false privacy claim at the point of collection — the night's most serious
+find.** Four surfaces promised the Soul Audit reflection is "never stored",
+including directly under the GET MATCHED button and under a heading reading
+WHAT IS NEVER STORED. It is stored: `createAuditRun` inserts `response_text`
+into `audit_runs`, a table indexed by `session_token`.
+`src/lib/privacy/retention.ts` already says exactly that on `/privacy` — two
+pages on the same site made opposite representations about the same field, and
+the false one sat at the moment of collection. All four now match the retention
+policy: kept with the anonymous session for 30 days, then deleted; never sold,
+never shared, never used to train AI. The storage itself is fine — RLS is locked
+down and the purge exists. Only the representation was wrong, and only it was
+changed.
+
+**Smaller fixes.** `.mock-btn` hover/focus was **1.00:1** in dark — the default
+theme — because `--mock-blue`, `--mock-paper` and `--mock-bg` are the same value
+there; and since `:focus-visible` shares that selector, keyboard users lost the
+focus indicator entirely on the app's primary button. The global search input
+had no focus ring at all (`outline: none`, unlayered, beating the layered
+`input:focus-visible` fallback). The homepage's dominant CTA promised "no setup,
+no account" then pointed at `/today`, which hard-redirects to sign-in —
+repointed to `/daily-bread`, the public edition that copy actually describes.
+"Currently active: <your series>" linked to the shared paper rather than your
+plan. The account trigger's entire accessible name was a single initial, and
+both auth email inputs had no label anywhere in either file.
+
+**Two pre-existing test failures are not from this work** and were left alone:
+`narration-manifest-current` is missing tracks for seven new `rekindled`
+devotionals, and `daily-bread-why-this` broke via edits to `src/data/series.ts`.
+Both belong to another session in flight; neither file was touched or staged.
+
+Service worker **v104**.
 
 ---
 
