@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Rekindled — editorial pass, red letter, motion stills (SA-075, F-119)
+
+**2026-08-17**
+
+Editorial review returned NOT READY with ten blocking items. All applied.
+
+The founder's verdict on the first draft was that it kept discrediting itself. A
+sentence-level pass missed the cause: the defensive writing was **module-shaped**,
+not sentence-shaped. Two whole `insight` modules existed only to rebut
+misreadings, one endnote closed the week auditing the series' own sourcing, and
+day 2 halted its strongest scene to check its own corroboration. The _bereshit_
+caveat fired five times, starting in the teaser, so the reader was talked out of
+the observation before being allowed to see it. It now fires once — and states
+what the midrash actually meant, which the source pack had required and the
+draft had left undone.
+
+Three hard errors a reader would have found:
+
+- Day 3 said "Yesterday" about a story that ran on Monday.
+- Day 5 printed "make him" under Pilkington's name. He wrote "make me", and the
+  opening clause had been dropped. Now quoted in full and correctly attributed.
+- Day 6 claimed a passive construction in a sentence that is active.
+
+Red letter applied via the resolver (SA-051). It marked Peter's reply as Christ's
+speech in John 21:15 — the exact quotation-mark failure the verification
+standards warn about. Hand-corrected; a scan of 93 red-lettered modules across
+the shipped catalog found no other instance.
+
+Motion stills: `inlineImageMotionSrc` renders a looping muted clip over the
+still, with the still as poster so a blocked clip degrades to the image, and
+hidden under `prefers-reduced-motion`. Four clips exist (day 1 x3, day 2 torch);
+the remaining seventeen are unfunded.
+
+Audio re-rendered against the corrected text. Validator 0/0, readability FK 4.8.
+
+---
+
 ## Rekindled — a seven-day series on a fire you did not light (SA-075, F-119)
 
 **2026-08-17**

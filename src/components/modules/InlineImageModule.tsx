@@ -38,6 +38,34 @@ export default function InlineImageModule({ module }: { module: Module }) {
           }
           style={{ objectFit: 'cover' }}
         />
+
+        {/* SA-075 (F-119): motion stills. The plate is composed so exactly one
+            element animates; the clip loops silently over the still. The still
+            renders underneath and stays visible as the poster, so a failed or
+            blocked video degrades to the image rather than to an empty box.
+            `.motion-still` is hidden under prefers-reduced-motion in
+            globals.css, which the video element cannot honour on its own. */}
+        {module.inlineImageMotionSrc && (
+          <video
+            className="motion-still"
+            src={module.inlineImageMotionSrc}
+            poster={module.inlineImageSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            tabIndex={-1}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        )}
       </div>
 
       {module.inlineImageCaption && (

@@ -27003,12 +27003,12 @@
   },
   "rekindled-day-1": {
     "src": "/audio/rekindled-day-1.m4a",
-    "duration": 1192.2,
-    "words": 3203,
+    "duration": 1142.0,
+    "words": 3151,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9801362,
-    "textHash": "31b6d66d9d67",
+    "bytes": 9392630,
+    "textHash": "054f1c851f82",
     "chapters": [
       {
         "t": 0.0,
@@ -27026,115 +27026,115 @@
         "module": 2
       },
       {
-        "t": 55.4,
+        "t": 49.6,
         "label": "The Order Nobody Chooses",
         "module": 3
       },
       {
-        "t": 182.1,
+        "t": 132.4,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 191.7,
+        "t": 142.0,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 207.2,
+        "t": 157.4,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 221.5,
+        "t": 171.8,
         "label": "Six Letters",
         "module": 9
       },
       {
-        "t": 357.9,
+        "t": 322.8,
         "label": "Word study",
         "module": 10
       },
       {
-        "t": 394.3,
+        "t": 355.4,
         "label": "The Same Three Words",
         "module": 12
       },
       {
-        "t": 526.9,
+        "t": 489.0,
         "label": "Then and Now",
         "module": 14
       },
       {
-        "t": 574.4,
+        "t": 532.9,
         "label": "Fire You Did Not Light",
         "module": 15
       },
       {
-        "t": 739.4,
+        "t": 723.7,
         "label": "A Woman Teaching Her Children Under the Sky",
         "module": 16
       },
       {
-        "t": 826.3,
-        "label": "One Honest Note About That Story",
+        "t": 810.6,
+        "label": "What Gets Handed Down",
         "module": 17
       },
       {
-        "t": 882.6,
+        "t": 849.5,
         "label": "What This Week Is Actually Asking",
         "module": 18
       },
       {
-        "t": 972.2,
+        "t": 932.3,
         "label": "Scripture",
         "module": 20
       },
       {
-        "t": 996.2,
+        "t": 956.3,
         "label": "Reflect",
         "module": 21
       },
       {
-        "t": 1006.0,
+        "t": 966.1,
         "label": "A Breath to Carry Today",
         "module": 22
       },
       {
-        "t": 1020.2,
+        "t": 980.3,
         "label": "Before You Close This",
         "module": 23
       },
       {
-        "t": 1071.1,
+        "t": 1023.3,
         "label": "Closing Prayer",
         "module": 25
       },
       {
-        "t": 1111.3,
+        "t": 1063.4,
         "label": "Carry This",
         "module": 26
       },
       {
-        "t": 1117.4,
+        "t": 1069.5,
         "label": "Check Yourself",
         "module": 27
       },
       {
-        "t": 1140.0,
-        "label": "Who Wrote This Down",
+        "t": 1087.9,
+        "label": "The Readers Who Saw It First",
         "module": 28
       }
     ]
   },
   "rekindled-day-2": {
     "src": "/audio/rekindled-day-2.m4a",
-    "duration": 1143.5,
-    "words": 3021,
+    "duration": 1177.6,
+    "words": 3052,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9408118,
-    "textHash": "48cfb1463c99",
+    "bytes": 9697989,
+    "textHash": "35676b2f416a",
     "chapters": [
       {
         "t": 0.0,
@@ -27157,92 +27157,92 @@
         "module": 3
       },
       {
-        "t": 143.2,
+        "t": 163.2,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 151.3,
+        "t": 171.3,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 163.9,
+        "t": 184.0,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 190.9,
+        "t": 210.9,
         "label": "How You Cut a Covenant",
         "module": 9
       },
       {
-        "t": 317.2,
+        "t": 295.7,
         "label": "Word study",
         "module": 11
       },
       {
-        "t": 353.8,
+        "t": 331.2,
         "label": "Only One Walks",
         "module": 13
       },
       {
-        "t": 522.7,
+        "t": 551.8,
         "label": "Then and Now",
         "module": 15
       },
       {
-        "t": 563.4,
+        "t": 592.4,
         "label": "And the Seed Grows, He Knows Not How",
         "module": 16
       },
       {
-        "t": 731.0,
+        "t": 782.0,
         "label": "The Six Years Nobody Mentions",
         "module": 17
       },
       {
-        "t": 857.2,
-        "label": "Why This Is Not Permission",
+        "t": 900.4,
+        "label": "The Cost of the Six Years",
         "module": 18
       },
       {
-        "t": 920.5,
+        "t": 959.4,
         "label": "Scripture",
         "module": 20
       },
       {
-        "t": 936.4,
+        "t": 975.3,
         "label": "Reflect",
         "module": 21
       },
       {
-        "t": 942.2,
+        "t": 981.0,
         "label": "Write One Sentence",
         "module": 22
       },
       {
-        "t": 948.7,
+        "t": 987.5,
         "label": "Before You Close This",
         "module": 23
       },
       {
-        "t": 1033.6,
+        "t": 1067.6,
         "label": "Closing Prayer",
         "module": 24
       },
       {
-        "t": 1078.3,
+        "t": 1112.4,
         "label": "Carry This",
         "module": 25
       },
       {
-        "t": 1083.4,
+        "t": 1117.5,
         "label": "Check Yourself",
         "module": 26
       },
       {
-        "t": 1101.5,
+        "t": 1135.6,
         "label": "The One Asleep",
         "module": 27
       }
@@ -27250,12 +27250,12 @@
   },
   "rekindled-day-3": {
     "src": "/audio/rekindled-day-3.m4a",
-    "duration": 1370.1,
-    "words": 3611,
+    "duration": 1280.7,
+    "words": 3510,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 11283701,
-    "textHash": "9e291e834a97",
+    "bytes": 10549480,
+    "textHash": "8c7cd7528fd5",
     "chapters": [
       {
         "t": 0.0,
@@ -27278,87 +27278,87 @@
         "module": 3
       },
       {
-        "t": 199.8,
+        "t": 202.2,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 207.5,
+        "t": 209.9,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 221.4,
+        "t": 223.8,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 241.9,
+        "t": 244.3,
         "label": "The Man Receiving This Letter",
         "module": 9
       },
       {
-        "t": 390.5,
+        "t": 392.9,
         "label": "The Word This Week Is Named For",
         "module": 12
       },
       {
-        "t": 665.0,
+        "t": 603.0,
         "label": "Scripture",
         "module": 14
       },
       {
-        "t": 687.9,
+        "t": 625.8,
         "label": "Then and Now",
         "module": 15
       },
       {
-        "t": 732.8,
+        "t": 670.7,
         "label": "A Gift Hidden in a Verb Stem",
         "module": 16
       },
       {
-        "t": 904.3,
+        "t": 814.2,
         "label": "The Fire That Went Out When She Was Finally Safe",
         "module": 18
       },
       {
-        "t": 1030.8,
+        "t": 949.1,
         "label": "Whose Words Those Are",
         "module": 19
       },
       {
-        "t": 1098.9,
+        "t": 1017.2,
         "label": "Reflect",
         "module": 21
       },
       {
-        "t": 1107.6,
+        "t": 1025.9,
         "label": "Do This With Your Hands",
         "module": 22
       },
       {
-        "t": 1117.3,
+        "t": 1035.6,
         "label": "Before You Close This",
         "module": 23
       },
       {
-        "t": 1252.1,
+        "t": 1162.8,
         "label": "Closing Prayer",
         "module": 24
       },
       {
-        "t": 1298.3,
+        "t": 1208.9,
         "label": "Carry This",
         "module": 25
       },
       {
-        "t": 1305.7,
+        "t": 1216.3,
         "label": "Check Yourself",
         "module": 26
       },
       {
-        "t": 1329.5,
+        "t": 1240.1,
         "label": "The Two Women in Verse Five",
         "module": 27
       }
@@ -27482,12 +27482,12 @@
   },
   "rekindled-day-5": {
     "src": "/audio/rekindled-day-5.m4a",
-    "duration": 1010.4,
-    "words": 2819,
+    "duration": 999.5,
+    "words": 2738,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 8316926,
-    "textHash": "3cefe5e34b6c",
+    "bytes": 8224651,
+    "textHash": "7b7d3751658f",
     "chapters": [
       {
         "t": 0.0,
@@ -27530,67 +27530,67 @@
         "module": 9
       },
       {
-        "t": 278.1,
+        "t": 281.4,
         "label": "Scripture",
         "module": 11
       },
       {
-        "t": 300.9,
+        "t": 304.2,
         "label": "Where the Oil Came From",
         "module": 12
       },
       {
-        "t": 454.9,
+        "t": 458.0,
         "label": "Then and Now",
         "module": 14
       },
       {
-        "t": 485.6,
+        "t": 488.6,
         "label": "Seventeen Years, and the Answer Was No",
         "module": 15
       },
       {
-        "t": 600.5,
+        "t": 603.5,
         "label": "The Word Underneath That Sentence",
         "module": 16
       },
       {
-        "t": 677.0,
+        "t": 666.1,
         "label": "She Would Not Take the Half-Answer",
         "module": 18
       },
       {
-        "t": 817.0,
+        "t": 806.1,
         "label": "Reflect",
         "module": 19
       },
       {
-        "t": 822.1,
+        "t": 811.2,
         "label": "Find One Image",
         "module": 20
       },
       {
-        "t": 830.9,
+        "t": 820.0,
         "label": "Before You Close This",
         "module": 21
       },
       {
-        "t": 880.1,
+        "t": 869.2,
         "label": "Closing Prayer",
         "module": 22
       },
       {
-        "t": 927.0,
+        "t": 916.2,
         "label": "Carry This",
         "module": 23
       },
       {
-        "t": 933.0,
+        "t": 922.1,
         "label": "Check Yourself",
         "module": 24
       },
       {
-        "t": 953.7,
+        "t": 942.8,
         "label": "The Woman Who Kept Asking",
         "module": 25
       }

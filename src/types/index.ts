@@ -307,6 +307,8 @@ export interface Module {
   inlineImageSrc?: string
   inlineImageAlt?: string
   inlineImageCaption?: string
+  /** SA-075 (F-119): looping silent cinemagraph rendered over the still. */
+  inlineImageMotionSrc?: string
   inlineImageWidth?: 'narrow' | 'wide' | 'bleed'
 
   // Journey ("This Week's Journey" — yesterday/today/tomorrow with auto-link)
