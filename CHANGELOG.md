@@ -38,7 +38,10 @@ still, with the still as poster so a blocked clip degrades to the image, and
 hidden under `prefers-reduced-motion`. Four clips exist (day 1 x3, day 2 torch);
 the remaining seventeen are unfunded.
 
-Audio re-rendered against the corrected text. Validator 0/0, readability FK 4.8.
+Audio re-rendered against the corrected text — all seven days, 106 minutes in
+the founder's voice with the atmospheric bed. textHash parity 4/4, so every
+track speaks what its page shows. Largest file 10.0 MB against the hard 25 MiB
+Workers ceiling. Validator 0/0, readability FK 4.8.
 
 ---
 

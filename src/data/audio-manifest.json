@@ -27366,12 +27366,12 @@
   },
   "rekindled-day-4": {
     "src": "/audio/rekindled-day-4.m4a",
-    "duration": 1209.5,
-    "words": 3167,
+    "duration": 1128.4,
+    "words": 2997,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9956608,
-    "textHash": "ac8ca2d19bba",
+    "bytes": 9286355,
+    "textHash": "d0b78057888e",
     "chapters": [
       {
         "t": 0.0,
@@ -27389,92 +27389,92 @@
         "module": 2
       },
       {
-        "t": 65.5,
+        "t": 59.1,
         "label": "The Lambs Do Not Walk",
         "module": 3
       },
       {
-        "t": 252.2,
+        "t": 245.8,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 258.7,
+        "t": 252.3,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 269.6,
+        "t": 263.2,
         "label": "Scripture",
         "module": 7
       },
       {
-        "t": 296.8,
+        "t": 290.4,
         "label": "Morning and Evening, For Centuries",
         "module": 9
       },
       {
-        "t": 444.2,
+        "t": 437.8,
         "label": "The Word Spoken to the One Who Failed",
         "module": 12
       },
       {
-        "t": 590.7,
+        "t": 615.4,
         "label": "Scripture",
         "module": 13
       },
       {
-        "t": 616.7,
+        "t": 641.5,
         "label": "Then and Now",
         "module": 15
       },
       {
-        "t": 660.4,
+        "t": 685.1,
         "label": "The Man Who Could Not Date His Own Return",
         "module": 16
       },
       {
-        "t": 828.1,
+        "t": 806.6,
         "label": "The Charcoal Fire, Twice",
         "module": 17
       },
       {
-        "t": 915.9,
-        "label": "What Lewis Is Not Evidence For",
+        "t": 894.4,
+        "label": "Certain of the Thing, Vague About the Day",
         "module": 18
       },
       {
-        "t": 977.6,
+        "t": 951.5,
         "label": "Reflect",
         "module": 20
       },
       {
-        "t": 986.1,
+        "t": 960.0,
         "label": "Learn Three Words",
         "module": 21
       },
       {
-        "t": 994.2,
+        "t": 968.1,
         "label": "Before You Close This",
         "module": 22
       },
       {
-        "t": 1105.2,
+        "t": 1024.1,
         "label": "Closing Prayer",
         "module": 23
       },
       {
-        "t": 1148.7,
+        "t": 1067.6,
         "label": "Carry This",
         "module": 24
       },
       {
-        "t": 1154.4,
+        "t": 1073.3,
         "label": "Check Yourself",
         "module": 25
       },
       {
-        "t": 1170.3,
+        "t": 1089.2,
         "label": "The One Given Breakfast",
         "module": 26
       }
@@ -27598,12 +27598,12 @@
   },
   "rekindled-day-6": {
     "src": "/audio/rekindled-day-6.m4a",
-    "duration": 501.7,
-    "words": 1352,
+    "duration": 500.6,
+    "words": 1324,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 4125791,
-    "textHash": "e329a1a2d9f3",
+    "bytes": 4120477,
+    "textHash": "66953a95f9e6",
     "chapters": [
       {
         "t": 0.0,
@@ -27616,52 +27616,52 @@
         "module": 1
       },
       {
-        "t": 29.4,
+        "t": 31.2,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 62.8,
+        "t": 52.7,
         "label": "Nobody Lights Their Own",
         "module": 3
       },
       {
-        "t": 133.5,
+        "t": 118.5,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 138.7,
+        "t": 123.7,
         "label": "A Two-Minute Prayer",
         "module": 5
       },
       {
-        "t": 150.6,
+        "t": 135.7,
         "label": "The Week in One Shape",
         "module": 7
       },
       {
-        "t": 288.8,
+        "t": 293.4,
         "label": "One Verb, Three Times",
         "module": 9
       },
       {
-        "t": 336.7,
+        "t": 343.9,
         "label": "Scripture",
         "module": 10
       },
       {
-        "t": 352.7,
+        "t": 359.9,
         "label": "Light First",
         "module": 12
       },
       {
-        "t": 456.1,
+        "t": 455.0,
         "label": "Closing Prayer",
         "module": 13
       },
       {
-        "t": 493.3,
+        "t": 492.2,
         "label": "Carry This",
         "module": 14
       }
@@ -27669,12 +27669,12 @@
   },
   "rekindled-day-7": {
     "src": "/audio/rekindled-day-7.m4a",
-    "duration": 155.4,
-    "words": 409,
+    "duration": 139.6,
+    "words": 388,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 1279882,
-    "textHash": "86ec82b89414",
+    "bytes": 1148020,
+    "textHash": "370836c29d05",
     "chapters": [
       {
         "t": 0.0,
@@ -27692,17 +27692,17 @@
         "module": 3
       },
       {
-        "t": 129.3,
+        "t": 113.5,
         "label": "Reflect",
         "module": 4
       },
       {
-        "t": 135.1,
+        "t": 119.4,
         "label": "Silence",
         "module": 5
       },
       {
-        "t": 142.2,
+        "t": 126.4,
         "label": "A Prayer for Sunday",
         "module": 6
       }
