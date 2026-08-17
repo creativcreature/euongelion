@@ -16,6 +16,7 @@
  */
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
+import prettier from 'prettier'
 
 const root = process.cwd()
 const devDir = path.join(root, 'public', 'devotionals')
@@ -72,7 +73,19 @@ async function main() {
     '}',
     '',
   ]
-  await fs.writeFile(outFile, lines.join('\n'), 'utf-8')
+  // SA-078 (F-122): format with prettier before writing. This script emits
+  // every string single-quoted with escapes; prettier prefers double quotes for
+  // strings containing an apostrophe, and teasers are full of them. Writing the
+  // raw form meant `npm run build` left ~500 lines of quote-style churn in the
+  // working tree on every run, which buried real content changes in the diff.
+  // Formatting here makes the generated file byte-identical to what the
+  // pre-commit hook would produce, so a build no longer dirties the tree.
+  const options = (await prettier.resolveConfig(outFile)) ?? {}
+  const formatted = await prettier.format(lines.join('\n'), {
+    ...options,
+    filepath: outFile,
+  })
+  await fs.writeFile(outFile, formatted, 'utf-8')
   console.log(
     `[devotional-teasers] Wrote ${teaserEntries.length} teasers + ${titleEntries.length} titles to ${path.relative(root, outFile)}`,
   )

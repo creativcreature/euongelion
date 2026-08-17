@@ -42,6 +42,13 @@ regenerated from the day-1 text corrected in SA-075. The live JSON already
 carries that wording. `red-letter/coverage.txt` moved 153→157 modules as
 Rekindled entered the corpus.
 
+Normalising the committed file wasn't enough — the next `npm run build` re-emitted
+the raw form and dirtied the tree again, which is how this drift kept returning.
+The generator now formats through prettier before writing, so its output is
+byte-identical to what the pre-commit hook produces. Verified idempotent over two
+consecutive runs. A dirty `devotional-teasers.ts` after a build now means the
+content genuinely changed.
+
 **The four unpushed commits were needed — verified, not assumed.** All 20
 Rekindled content assets in them (7 devotional JSONs, 7 audio, 4 video, 2 images)
 are byte-identical to production by sha256 fetched live. Production had been
