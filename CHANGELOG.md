@@ -321,6 +321,53 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## THE INTRO STOPS FLASHING, AND THE PARALLAX GAINS WEIGHT — SA-082 / F-128 (2026-08-18)
+
+Founder: _"the color transition looks like a glitch on the words. It is white
+overlayed over the blue masthead breifly for a frame or so… Site wide animation
+paralaxing and such needs more finesse."_
+
+**The flash was a timing overlap, not a colour bug.** Both timelines start
+together when `.is-lifting` lands:
+
+| Layer                   | Timing                     | Ends       |
+| ----------------------- | -------------------------- | ---------- |
+| `.press-ink` retract    | `transform 900ms`          | **900ms**  |
+| `.press-word--key` fade | `opacity 260ms ease 820ms` | **1080ms** |
+
+For **180ms** the cream wordmark was still painted over a page whose real cobalt
+masthead had already been uncovered. It landed on the wordmark specifically
+because the ink collapses toward `top center`, so the masthead band is the _last_
+thing it uncovers — the overlap could not have happened anywhere harmless. The
+fade now ends at **840ms**, 60ms before the ink clears; verified in the shipped
+CSS as `opacity .24s .6s` against `transform .9s`.
+
+The intro also lingered: it finishes at ~2050ms but the hard stop sat at 3200ms,
+leaving ~1.15s of a transparent, inert overlay over a finished page. Now 2250ms.
+
+**Parallax has inertia instead of tracking the scrollbar.** The old loop mapped
+scroll position straight to a transform, once per scroll event — rigidly pinned,
+starting and stopping in the same frame the finger did. Layers now ease toward
+their target, so they lead into a scroll and settle after one. Measured: after an
+abrupt 420px jump the value glides from −0.02 to 15.02 over **29 frames** instead
+of snapping.
+
+Three properties kept on purpose: the ±28px cap (depth, not drift); the first
+frame **snaps**, so nothing slides in from zero on load; and the loop **parks
+itself** after 24 still frames, so a stationary page costs nothing despite this
+now being a continuous animation rather than an event handler.
+
+**Considered and rejected:** a velocity-driven registration slip — a crimson
+ghost offsetting a pixel or two on fast scroll, echoing the misregistration the
+intro is built from. The most on-brand motion idea available, and not shipped:
+it needs a pseudo-element on every plate, and `::after` collisions have cost this
+codebase two bugs in two days. It deserves its own decision, not a side effect of
+a timing fix.
+
+2,097 tests green. Service worker **v111**.
+
+---
+
 ## POLISH BACKLOG BATCH 2 — SA-081 / F-127 (2026-08-18)
 
 **The public edition has a tab (36).** `/daily-bread` is the only fully public

@@ -29,7 +29,9 @@ import { useEffect, useRef } from 'react'
  * 3. `prefers-reduced-motion` disables all of it, including parallax — checked
  *    at runtime rather than only in CSS, so the rAF loop never even starts.
  * 4. Parallax is capped. Nothing translates more than ±28px, which reads as
- *    depth without ever detaching an image from its caption.
+ *    depth without ever detaching an image from its caption. Layers EASE
+ *    toward that target rather than tracking the scrollbar rigidly, so the
+ *    motion has weight, and the loop parks itself once everything settles.
  */
 
 const REVEAL_SELECTOR = '[data-reveal]'
@@ -130,40 +132,88 @@ export default function Reveal() {
     mo.observe(document.body, { childList: true, subtree: true })
 
     // ── Parallax ──────────────────────────────────────────────────────
+    //
+    // Founder 2026-08-18: "Site wide animation paralaxing and such needs more
+    // finesse and innovation."
+    //
+    // The old loop mapped scroll position straight to a transform, once per
+    // scroll event. That is why it read mechanical: the layer was rigidly
+    // pinned to the scrollbar, so it started and stopped in the same frame the
+    // finger did, with no weight to it.
+    //
+    // This version gives the motion INERTIA. Each layer eases toward its target
+    // rather than snapping to it, so it leads slightly into a scroll and
+    // settles after one — the difference between a thing being dragged and a
+    // thing having mass. The travel cap is unchanged at +/-28px, and the first
+    // frame snaps to target so nothing slides in from zero on load.
+    //
+    // It also STOPS. The loop runs while anything is still moving and shuts
+    // itself down once every layer has settled, so a still page costs nothing.
     const layers = () =>
       Array.from(document.querySelectorAll<HTMLElement>(PARALLAX_SELECTOR))
 
-    const onScroll = () => {
-      if (frame.current !== null) return
-      frame.current = window.requestAnimationFrame(() => {
-        frame.current = null
-        const vh = window.innerHeight
-        layers().forEach((el) => {
-          const rect = el.getBoundingClientRect()
-          if (rect.bottom < -200 || rect.top > vh + 200) return
-          // -1 at the bottom of the viewport, +1 at the top: a signed measure
-          // of how far past centre the element has travelled.
-          const progress = (vh / 2 - (rect.top + rect.height / 2)) / (vh / 2)
-          const depth = Number(el.dataset.parallax || '1')
-          const shift = Math.max(
-            -MAX_PARALLAX,
-            Math.min(MAX_PARALLAX, progress * depth * MAX_PARALLAX),
-          )
-          el.style.setProperty('--parallax-y', `${shift.toFixed(2)}px`)
-        })
+    /** Per-frame approach rate. Lower is heavier. */
+    const EASE = 0.12
+    /** Frames of stillness before the loop parks itself. */
+    const IDLE_FRAMES_BEFORE_PARK = 24
+
+    const current = new WeakMap<HTMLElement, number>()
+    let running = false
+    let idleFrames = 0
+
+    const tick = () => {
+      const vh = window.innerHeight
+      let moving = false
+
+      layers().forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.bottom < -200 || rect.top > vh + 200) return
+
+        // -1 at the bottom of the viewport, +1 at the top: a signed measure of
+        // how far past centre the element has travelled.
+        const progress = (vh / 2 - (rect.top + rect.height / 2)) / (vh / 2)
+        const depth = Number(el.dataset.parallax || '1')
+        const target = Math.max(
+          -MAX_PARALLAX,
+          Math.min(MAX_PARALLAX, progress * depth * MAX_PARALLAX),
+        )
+
+        // No entry animation: an element seen for the first time is already
+        // where it belongs.
+        const from = current.get(el) ?? target
+        const next = from + (target - from) * EASE
+        current.set(el, next)
+
+        if (Math.abs(target - next) > 0.05) moving = true
+        el.style.setProperty('--parallax-y', `${next.toFixed(2)}px`)
       })
+
+      idleFrames = moving ? 0 : idleFrames + 1
+      if (idleFrames > IDLE_FRAMES_BEFORE_PARK) {
+        running = false
+        frame.current = null
+        return
+      }
+      frame.current = window.requestAnimationFrame(tick)
     }
 
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll, { passive: true })
+    const wake = () => {
+      idleFrames = 0
+      if (running) return
+      running = true
+      frame.current = window.requestAnimationFrame(tick)
+    }
+
+    wake()
+    window.addEventListener('scroll', wake, { passive: true })
+    window.addEventListener('resize', wake, { passive: true })
 
     return () => {
       window.clearTimeout(failsafe)
       io.disconnect()
       mo.disconnect()
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
+      window.removeEventListener('scroll', wake)
+      window.removeEventListener('resize', wake)
       if (frame.current !== null) window.cancelAnimationFrame(frame.current)
       document.documentElement.classList.remove('motion-ready')
     }

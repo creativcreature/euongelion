@@ -38,8 +38,14 @@ import { useEffect, useRef, useState } from 'react'
  */
 
 const SEEN_KEY = 'euangelion:masthead-intro'
-/** Longest the curtain may ever remain, whatever else happens. */
-const HARD_STOP_MS = 3200
+/** Longest the curtain may ever remain, whatever else happens.
+ *
+ * The sequence finishes at ~2050ms: hand-off begins at 1050ms and the flight
+ * runs 1000ms. 3200ms left roughly 1.15s of an inert, fully transparent overlay
+ * sitting over a finished page — invisible, but it is the difference between an
+ * intro that ends and one that lingers. Trimmed to just past the flight.
+ * (Founder 2026-08-18: "The intro animation is a bit misstimed.") */
+const HARD_STOP_MS = 2250
 
 interface Handoff {
   /** Translation from the intro wordmark's centre to the real one's. */

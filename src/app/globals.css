@@ -14010,9 +14010,24 @@ html[data-held-moment] .mobile-tab-bar {
 .press-word--key {
   color: var(--mock-paper, #f2ebd8);
   z-index: 2;
+  /* THE FADE MUST FINISH BEFORE THE INK DOES.
+     Founder 2026-08-18: "It is white overlayed over the blue masthead breifly
+     for a frame or so and it looks like a mistake."
+
+     Both timelines start together when `.is-lifting` lands. The ink retracts in
+     900ms; this used to fade over 260ms after an 820ms delay, so it was still
+     painted until 1080ms — 180ms AFTER the ink had cleared and exposed the real
+     cobalt masthead underneath. A cream wordmark over a cobalt one is exactly
+     the flash that reads as a bug.
+
+     `.press-ink` collapses toward `top center`, so the masthead band is the
+     LAST thing it uncovers — which is why the overlap landed precisely on the
+     wordmark rather than anywhere harmless. The fade now completes at 840ms,
+     60ms before the ink finishes, so the cream word is already gone when the
+     real one appears and the two never share a frame. */
   transition:
     transform 1000ms cubic-bezier(0.76, 0, 0.24, 1),
-    opacity 260ms ease 820ms;
+    opacity 240ms ease 600ms;
 }
 
 .press.is-lifting .press-word--key {
