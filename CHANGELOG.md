@@ -321,6 +321,40 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## POLISH BACKLOG BATCH 4 — SA-086 / F-132 (2026-08-18)
+
+**Six buttons had an invisible hover state (06).** `hover:bg-gold
+hover:text-tehom` — and `--color-gold` resolves to cobalt in light mode, so hover
+painted near-black text on a blue field. **1.57:1.** The six are both auth
+submits, both error-recovery buttons and the soul-audit error CTA: the exact
+moments a reader cannot afford a dead control. Fixed with the remedy this
+codebase already uses twice — a class painting _both halves_ per theme rather
+than trusting a token whose name lies about its value.
+
+**Reading estimates on the day cards (26).** Derived from the `words` count
+already in `audio-manifest.json` (535 of 575) at 200wpm, which avoids inventing a
+second index and avoids reading `public/devotionals` at runtime, where Workers
+returns nothing. Stated caveat: that count is of the _narration script_, which
+omits pull quotes and captions — so it slightly **underestimates** the page. The
+right direction to be wrong in for "do I have time", and why the label says "min
+read". No entry, no estimate: a missing number beats a fabricated one.
+
+**The composing screen names its stages (42).** The three stages are the ones the
+submit route actually performs. The timing is estimated and the code says so —
+the compose is one request with no progress events — so the last stage never
+self-completes and the component unmounts on return, meaning a false "finished"
+is never shown. Closed a duplication too: `/soul-audit` carried an inline copy of
+this markup, so the change would otherwise have landed on the homepage only.
+
+**Nine more approved items were already built** — `ActivePlanBadge`,
+`ReaderTimeline`, `ReminderScheduler`, `TodayReturningBand`, `OptionCard`, the
+audit-count surfacing, rail empty states, the active-tab count, and restore
+purchases. Recorded so none is built twice.
+
+2,097 tests green. Service worker **v115**.
+
+---
+
 ## THE TRANSPORT LEADS WITH WHAT IS LEFT — SA-085 / F-131 (2026-08-18)
 
 **Backlog #18.** The full panel read `0:00 / 6:37 · 1 of 10 · 0:03 left`, where

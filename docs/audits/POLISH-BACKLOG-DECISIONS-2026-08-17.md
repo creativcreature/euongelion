@@ -91,3 +91,15 @@ Each shipped item is recorded here with its commit as it lands.
 | 20  | Chapter list from transport     | —              | —       | already shipped (NarrationChapters)              |
 | 30  | Week dots, not a streak         | —              | —       | already shipped (PresenceWeekRow, SA-025 locked) |
 | 32  | Day N of M header               | —              | —       | already shipped (CuratedActiveView)              |
+| 06  | Invisible hover states          | SA-086 (F-132) | batch 4 | shipped                                          |
+| 26  | Reading estimates on cards      | SA-086 (F-132) | batch 4 | shipped                                          |
+| 42  | Composing screen names stages   | SA-086 (F-132) | batch 4 | shipped                                          |
+| 25  | Continue-reading affordance     | —              | —       | already shipped (ActivePlanBadge)                |
+| 31  | Vertical plan timeline          | —              | —       | already shipped (ReaderTimeline)                 |
+| 34  | Reminder time picker            | —              | —       | already shipped (ReminderScheduler)              |
+| 35  | Re-entry state                  | —              | —       | already shipped (TodayReturningBand)             |
+| 41  | Three options presented         | —              | —       | already shipped (OptionCard)                     |
+| 43  | Audit cap legible               | —              | —       | already shipped                                  |
+| 48  | Empty states                    | —              | —       | already shipped (rail empty states)              |
+| 49  | Library tab counts              | —              | —       | already shipped (active-tab count)               |
+| 67  | Restore purchases               | —              | —       | already shipped (billing/purchases.ts)           |

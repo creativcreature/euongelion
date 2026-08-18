@@ -192,7 +192,7 @@ function SignUpForm() {
         <button
           type="submit"
           disabled={isBusy}
-          className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+          className="w-full bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 cta-solid disabled:opacity-50"
         >
           {status === 'sending' ? 'Sending...' : 'Send Sign Up Link'}
         </button>

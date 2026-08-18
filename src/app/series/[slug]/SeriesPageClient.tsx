@@ -18,6 +18,7 @@ import SiteBottom from '@/components/SiteBottom'
 import ResumeSeriesPill from '@/components/ResumeSeriesPill'
 import SeriesActions from '@/components/devotional/SeriesActions'
 import { typographer } from '@/lib/typographer'
+import { readingTimeLabel } from '@/lib/reading-time'
 import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import { useProgress } from '@/hooks/useProgress'
 import { SERIES_HERO } from '@/data/artwork-manifest'
@@ -344,6 +345,17 @@ export default function SeriesPageClient({
                 >
                   <p className="text-label mock-series-day-number">
                     DAY {day.day}
+                    {/* Backlog #26 — "do I have time for this right now" is the
+                        question at 6am, and the card answered only in days.
+                        Rendered only when the corpus actually has a word count
+                        for this reading; a missing estimate beats a made-up
+                        one. */}
+                    {readingTimeLabel(day.slug) && (
+                      <span className="mock-series-day-time">
+                        {' · '}
+                        {readingTimeLabel(day.slug)}
+                      </span>
+                    )}
                   </p>
                   <p className="mock-series-day-scripture-reference">
                     {typographer(dayScripture.reference || 'Scripture')}

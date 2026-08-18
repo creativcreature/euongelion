@@ -6,6 +6,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 import FadeIn from '@/components/motion/FadeIn'
 import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
+import ComposingPaths from '@/components/soul-audit/ComposingPaths'
 import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
@@ -79,36 +80,13 @@ export default function SoulAuditPage() {
             </FadeIn>
 
             <FadeIn delay={0.4} y={16}>
+              {/* The homepage widget and this page shared this markup by
+                  duplication, so the named stages (#42) would have landed on one
+                  surface and not the other. Both render the component now — the
+                  component's own doc already described itself as the single
+                  place this lives, which was true of the homepage only. */}
               {isSubmitting ? (
-                <div
-                  className="flex flex-col items-center py-16"
-                  role="status"
-                  aria-live="polite"
-                >
-                  <div className="mb-10 flex items-center gap-2">
-                    {[0, 1, 2].map((i) => (
-                      <span
-                        key={i}
-                        className="inline-block h-2 w-2 rounded-full"
-                        style={{
-                          backgroundColor: 'var(--color-gold)',
-                          animation: `gatherDot 1.4s ease-in-out ${i * 0.2}s infinite`,
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  <p className="text-serif-italic vw-body-lg text-center text-secondary">
-                    Building your paths...
-                  </p>
-
-                  <style>{`
-                    @keyframes gatherDot {
-                      0%, 100% { opacity: 0.3; transform: scale(0.85); }
-                      50%      { opacity: 1;   transform: scale(1.15); }
-                    }
-                  `}</style>
-                </div>
+                <ComposingPaths />
               ) : limitReached ? (
                 <div className="py-8 text-center">
                   <p className="text-serif-italic vw-body-lg mx-auto mb-8 text-secondary">

@@ -299,7 +299,7 @@ function SignInForm() {
           <button
             type="submit"
             disabled={codeStatus === 'verifying'}
-            className="w-full min-h-[44px] bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+            className="w-full min-h-[44px] bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 cta-solid disabled:opacity-50"
           >
             {codeStatus === 'verifying' ? 'Verifying...' : 'Verify Code'}
           </button>
@@ -373,7 +373,7 @@ function SignInForm() {
         <button
           type="submit"
           disabled={isBusy}
-          className="w-full min-h-[44px] bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom disabled:opacity-50"
+          className="w-full min-h-[44px] bg-[var(--color-fg)] px-10 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 cta-solid disabled:opacity-50"
         >
           {status === 'sending' ? 'Sending...' : 'Continue'}
         </button>

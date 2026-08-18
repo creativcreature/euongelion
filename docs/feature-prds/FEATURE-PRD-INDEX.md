@@ -134,3 +134,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-129 | Platform          | Polish batch 3: search zero-state, type craft        | 0/10     | wip    | [F-129.md](./F-129.md) |
 | F-130 | Reading surfaces  | Line spacing + measure controls in the reader sheet  | 0/10     | wip    | [F-130.md](./F-130.md) |
 | F-131 | Reading surfaces  | Transport shows time left; 5 items already built     | 0/10     | wip    | [F-131.md](./F-131.md) |
+| F-132 | Platform          | Polish batch 4: hover states, read time, stages      | 0/10     | wip    | [F-132.md](./F-132.md) |

@@ -14612,3 +14612,37 @@ html[data-reading-measure='wide'] .vw-body,
 html[data-reading-measure='wide'] .vw-body-lg {
   max-width: var(--max-w-reading);
 }
+
+/* ---------------------------------------------------------------------------
+   Solid buttons invert legibly on hover (backlog #06)
+
+   Six buttons used `hover:bg-gold hover:text-tehom`. `--color-gold` is a legacy
+   alias resolving to cobalt (#1f2a8d) in LIGHT mode, so hover painted near-black
+   text on a blue field — measured 1.57:1, effectively invisible. These are the
+   sign-in and sign-up submits and both error-recovery buttons: the exact moments
+   a reader cannot afford a dead control.
+
+   Same fault and same remedy as the chat launcher (SA-047) and `.mock-btn`
+   (SA-080): paint BOTH halves explicitly per theme rather than trusting a token
+   whose name lies about its value. Light gets cobalt on cream (~9.7:1); dark
+   gets amber on deep ink (~7.9:1).
+
+   `:focus-visible` shares the rule deliberately — it was in the same selector
+   before, and keyboard users must not lose the affordance the fix restores.
+--------------------------------------------------------------------------- */
+.cta-solid:is(:hover, :focus-visible) {
+  background: #1f2a8d;
+  color: #f5eee3;
+}
+
+.dark .cta-solid:is(:hover, :focus-visible) {
+  background: var(--color-amber, #c8a56a);
+  color: #0b1420;
+}
+
+/* Reading estimate beside the day number (backlog #26). Quieter than the day
+   label it follows — it is a helpful aside, not a second heading. */
+.mock-series-day-time {
+  opacity: 0.62;
+  font-variant-numeric: tabular-nums;
+}

@@ -36,7 +36,7 @@ export default function SoulAuditError({
             <div className="flex items-center gap-6">
               <button
                 onClick={reset}
-                className="bg-[var(--color-fg)] px-8 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 hover:bg-gold hover:text-tehom"
+                className="bg-[var(--color-fg)] px-8 py-4 text-label vw-small text-[var(--color-bg)] transition-all duration-300 cta-solid"
               >
                 Try Again
               </button>
