@@ -249,7 +249,7 @@ export default function CuratedActiveView({
         <p className="text-label vw-small text-gold mb-1">
           YOUR ACTIVE DEVOTIONAL
         </p>
-        <h1 className="vw-heading-md mb-1">{series.title}</h1>
+        <h2 className="vw-heading-md mb-1">{series.title}</h2>
         <p className="vw-small text-secondary">
           Day {safeDay} of {totalDays} ·{' '}
           {source === 'manual_start' ? 'started' : 'restarted'} {startedDate}

@@ -13,7 +13,7 @@ export default function ProfileModule({ module }: { module: Module }) {
       <p className="text-label vw-small mb-4 text-gold">
         {module.heading || 'HISTORICAL FIGURE'}
       </p>
-      <h3 className="text-display vw-heading-md mb-2">{module.name}</h3>
+      <h2 className="text-display vw-heading-md mb-2">{module.name}</h2>
       {module.era && (
         <p className="vw-small mb-8 text-muted oldstyle-nums">{module.era}</p>
       )}

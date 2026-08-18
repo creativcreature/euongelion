@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef } from 'react'
+import { artworkAlt } from '@/lib/artwork-alt'
 import Image from 'next/image'
 import ArtworkAttribution from '@/components/ArtworkAttribution'
 import type { ArtworkEntry } from '@/data/artwork-manifest'
@@ -163,7 +164,7 @@ export default function ArtworkLightbox({
         <div className="lightbox-image-container">
           <Image
             src={artwork.rawSrc}
-            alt={`${artwork.title} by ${artwork.artist}`}
+            alt={artworkAlt(artwork.title, artwork.artist)}
             fill
             sizes="(max-width: 900px) 90vw, 900px"
             className="lightbox-img"

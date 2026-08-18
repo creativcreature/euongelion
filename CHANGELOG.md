@@ -5,6 +5,77 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The narration library was mastered to peak, not loudness (SA-080, F-124)
+
+**2026-08-17**
+
+The narration played quiet with the volume maxed. The player was not at fault.
+
+Every track was levelled to **peak** instead of **loudness**: true peak pinned
+at 0 dBTP while integrated loudness sat at **−19.7 to −22.7 LUFS**, well under
+the −16/−17 podcast range. That is precisely the waveform-looks-full-and-plays-
+quiet symptom. **73 of 535 files were not merely maxed but genuinely clipping**
+(above 0 dBTP; `bible-365-day-1` at +0.55).
+
+All 535 tracks re-mastered to **−17 LUFS** — the level chosen by ear from a
+three-way A/B, not a spec default.
+
+| Metric         | Result                            |
+| -------------- | --------------------------------- |
+| Loudness       | −16.50 .. −17.30 LUFS             |
+| True peak      | −1.00 .. −3.90 dBTP (gate ≤ −1.0) |
+| Lift           | +2.4 .. +6.1 dB                   |
+| LRA delta      | −0.52 LU mean                     |
+| Duration drift | −0.09 .. −0.04 s                  |
+| Clipping       | 73 → 0                            |
+
+**The proposed fix was unsafe and was not shipped.** Single-pass `loudnorm`
+reports `normalization_type: dynamic` — it rides the level, compressing loudness
+range by 1.2 LU — and its true-peak control does not hold: on
+`he-cannot-deny-himself-day-1` it produced **+1.54 dBTP**, worse than untreated,
+confirmed by two independent measurement tools. The approved loudness was kept;
+the mechanism was replaced with constant gain plus a limiter.
+
+**Why the peak stage was hard.** AAC adds true-peak overshoot above the limiter
+ceiling, and it is not a stable per-file constant that can be probed once — it
+swung 3.2 → 7.9 dB on a single file as gain moved. Rendering the identical
+filter chain to float WAV and to AAC isolated it: the limiter held −1.6 dBFS in
+PCM and the encoder still emitted +1.5 dBFS. A 5 ms attack rides gain sharply
+enough that 80 kbps AAC cannot reconstruct it without ringing past the ceiling;
+at `attack=20` the same file encodes to −2.3 dBFS. The ceiling is now solved for
+from each render's measured overshoot rather than predicted.
+
+Traps, all of which fail silently:
+
+- **A ratcheting ceiling makes files quieter than doing nothing** —
+  `bible-365-day-227` walked to a −9.1 dB ceiling and −18.6 LUFS, quieter than
+  untreated. Solving for overshoot is self-correcting.
+- **528 tracks are 24 kHz mono but 7 are 44.1 kHz stereo** music-scored
+  productions; a hardcoded `-ar 24000 -ac 1` downmixes them invisibly.
+- **A flat stereo bitrate breaks the deploy, not the sound** — those 7 exceeded
+  Cloudflare's 25 MiB asset limit at 160k. Bitrate is now budgeted per file with
+  a hard guard that deletes rather than ships.
+- **`?v=${bytes}` is the only cache-bust** under `/audio/*`'s one-year immutable
+  header. The manifest was re-stamped (535 entries) and `sw.js` /
+  `SW_VERSION` bumped v107 → v108; without it every cached listener keeps the
+  quiet masters for a year.
+- **A truncated file still measures a perfect −17 LUFS**, so verification also
+  compares duration, sample rate and channel count against each original.
+
+Verified independently across all 535 with `ebur128` — a different filter from
+the `loudnorm` that targeted them. **535/535 pass.** 2097 tests, type-check and
+all contract gates clean.
+
+Standing rule: **an unverified render is not a result.** The script accepts a
+file only on its own post-encode measurement and deletes anything it cannot
+verify, so every failure surfaced as a missing file, never a bad master.
+
+Originals backed up outside the repo and verified byte-for-byte by md5 before
+any processing — 365 are gitignored `bible-365` narrations that exist in exactly
+one place. Not deployed; local swap and verification only.
+
+---
+
 ## Chat billed at OpenAI rates while Claude served the request (SA-079, F-123)
 
 **2026-08-17**
@@ -247,6 +318,58 @@ set measures sd 26.2 against 26.8 for the approved reference set.
 approve the first before the remaining twenty run, and zero Higgsfield calls have
 been made. The split header (static thumbnail, animated on page) needs a
 `heroMotion` field and component and is not in this change.
+
+---
+
+## POLISH BACKLOG BATCH 1 — SA-080 / F-125 (2026-08-17)
+
+Founder reviewed the 67-item backlog and returned **52 approved, 1 declined, 14
+undecided**; decisions are archived at
+`docs/audits/POLISH-BACKLOG-DECISIONS-2026-08-17.md`. Item 01 (moving header and
+footer outside `<main>`) is **declined** and should not be re-proposed. The 14
+undecided items are not built — silence is not approval.
+
+**Contrast on the two highest-stakes controls (07).** The 988 hotline CTA
+measured **3.60:1** because `--color-crimson` lightens to `#e25868` in dark; the
+delete-account confirm measured **2.83:1** because `color: var(--color-bg)`
+resolves to `#0b1420` there. Both now use pinned literals rather than tokens — a
+suicide hotline and an irreversible deletion do not get a theme-dependent
+contrast ratio.
+
+**The reader's heading ladder (02).** `CuratedActiveView` rendered its own `h1`
+_and_ `DevotionalHeadline`'s in the same path — the earlier `return` is an error
+branch, not an alternative. Eight section labels on `/today` were styled `<p>`s,
+invisible to heading navigation. Module headings sat at `h3` directly under the
+reading's `h1`, skipping a level on 519 of 530 devotionals, and `TeachingModule`
+mapped markdown `##` to an `h2` _inside_ that heading's own section. All
+corrected; Tailwind v4 preflight makes every tag swap visually inert.
+
+**The 37 series titles are headings (03).** They were inert `<span>`s, so a
+screen-reader user had nothing to jump between on the flagship browse page.
+Verified live: `H3`, weight 400, margin 0, 38 titles, one `h1`, zero overflow —
+the design is pixel-identical.
+
+**The artwork is credited (60).** Founder: _"add Christopher James Parker + AI,
+to God be the Glory"_. 350 entries carried `artist: 'Generated'`. Those same
+entries carry a filename-derived title, so `src/lib/artwork-alt.ts` gives them
+`alt=""` — the visible caption beside the image already carries title and
+credit, so a screen reader hears it once instead of twice. Hand-written titles
+keep their descriptive alt.
+
+Also: the founding-member track was invisible at ~1.01:1 (64); `.mock-btn` takes
+a 44px minimum (65); the dead mobile-nav system — six classes, zero usages,
+thirteen rule blocks — is deleted (57); `is-open` is applied rather than deleted
+(58); and the homepage card is relabelled BROWSE ALL SERIES (50).
+
+**An id collision was resolved rather than papered over.** Another session
+shipped `97b99a90` under `F-121`/`SA-077` — a fix for blue slabs my own F-120 hit
+pads had painted over the `/series` switcher, by colliding with
+`EditorialMotionSystem` over the same `::after`. My commit used the same ids and
+my publish overwrote their PRD body. Theirs is restored at F-121 (first writer
+keeps the id), my scripture record moved to F-126 with a bridging note, and I
+verified their fix still holds.
+
+2,097 tests green. Service worker **v109**.
 
 ---
 

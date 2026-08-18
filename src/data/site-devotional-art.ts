@@ -13,7 +13,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-papyrus-scroll-unrolled',
       title: 'Obj Papyrus Scroll Unrolled',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -26,7 +26,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-doorway-arched-linocut',
       title: 'Sym Doorway Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -41,7 +41,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-lyre-strings',
       title: 'Obj Bronze Lyre Strings',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -54,7 +54,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -69,7 +69,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-clay-bowl-bread-water',
       title: 'Obj Clay Bowl Bread Water',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -82,7 +82,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -97,7 +97,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fig-branch-linocut',
       title: 'Sym Fig Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -110,7 +110,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-rays-banner-charcoal',
       title: 'Brand Rays Banner Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -125,7 +125,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-olive-linocut',
       title: 'Sym Oil Lamp Olive Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -138,7 +138,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-temple-columns-pair-linocut',
       title: 'Sym Temple Columns Pair Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -153,7 +153,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sword-spirit-linocut',
       title: 'Sym Sword Spirit Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -166,7 +166,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-rainbow-arc-linocut',
       title: 'Sym Rainbow Arc Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -194,7 +194,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shepherd-crook-linocut',
       title: 'Sym Shepherd Crook Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -207,7 +207,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-cream-on-cobalt',
       title: 'Element Halo Cream On Cobalt',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -248,7 +248,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -261,7 +261,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sword-spirit-linocut',
       title: 'Sym Sword Spirit Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -276,7 +276,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-vine-grapes-burgundy-linocut',
       title: 'Sym Vine Grapes Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -289,7 +289,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-thorn-underline-cream',
       title: 'Element Thorn Underline Cream',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -330,7 +330,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-broken-pottery-shard',
       title: 'Obj Broken Pottery Shard',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -343,7 +343,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-wooden-yoke-broken',
       title: 'Obj Wooden Yoke Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -384,7 +384,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-burgundy-linocut',
       title: 'Sym Bread Loaf Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -397,7 +397,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-thorn-branch-linocut',
       title: 'Sym Thorn Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -438,7 +438,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shield-faith-linocut',
       title: 'Sym Shield Faith Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -451,7 +451,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-star-eight-point-etched',
       title: 'Sym Star Eight Point Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -492,7 +492,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-star-eight-point-etched',
       title: 'Sym Star Eight Point Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -505,7 +505,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-prayer-shawl-folded',
       title: 'Obj Prayer Shawl Folded',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -533,7 +533,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -546,7 +546,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-single-stalk-linocut',
       title: 'Sym Wheat Single Stalk Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -574,7 +574,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-stained-glass-abstract',
       title: 'Brand Stained Glass Abstract',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -587,7 +587,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -628,7 +628,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-jacob-ladder-linocut',
       title: 'Sym Jacob Ladder Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -641,7 +641,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-mustard-seed-palm-macro',
       title: 'Obj Mustard Seed Palm Macro',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -682,7 +682,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-tzitzit-blue-thread',
       title: 'Obj Tzitzit Blue Thread',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -695,7 +695,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lion-judah-etched',
       title: 'Sym Lion Judah Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -736,7 +736,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-brass-key-ornate',
       title: 'Obj Brass Key Ornate',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -749,7 +749,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-olive',
       title: 'Brand Pull Quote Olive',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -790,7 +790,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-burgundy-linocut',
       title: 'Sym Bread Loaf Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -803,7 +803,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-waves-three-stacked-linocut',
       title: 'Sym Waves Three Stacked Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -844,7 +844,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-stone-tablets-covenant',
       title: 'Obj Stone Tablets Covenant',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -857,7 +857,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ark-covenant-cherubim-etched',
       title: 'Sym Ark Covenant Cherubim Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -885,7 +885,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-stone-tablets-covenant',
       title: 'Obj Stone Tablets Covenant',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -898,7 +898,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ark-covenant-cherubim-etched',
       title: 'Sym Ark Covenant Cherubim Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -913,7 +913,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -926,7 +926,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-clay-linocut',
       title: 'Sym Oil Lamp Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -941,7 +941,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -954,7 +954,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-thorn-branch-burgundy-linocut',
       title: 'Sym Thorn Branch Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -969,7 +969,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-flight-linocut',
       title: 'Sym Dove Flight Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -982,7 +982,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-clay-water-jar-broken',
       title: 'Obj Clay Water Jar Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -997,7 +997,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-flame-terracotta-linocut',
       title: 'Sym Flame Terracotta Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1010,7 +1010,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-burgundy',
       title: 'Brand Pull Quote Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1025,7 +1025,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-thorns-burgundy-linocut',
       title: 'Sym Crown Thorns Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1038,7 +1038,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-city-gate-linocut',
       title: 'Sym City Gate Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1053,7 +1053,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-menorah-mustard-linocut',
       title: 'Sym Menorah Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1066,7 +1066,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-ancient-coin-tribute',
       title: 'Obj Ancient Coin Tribute',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1081,7 +1081,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-window-arched-linocut',
       title: 'Sym Window Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1094,7 +1094,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lily-etched',
       title: 'Sym Lily Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1109,7 +1109,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-waves',
       title: 'Brand Halftone Waves',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1122,7 +1122,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-flame-single-linocut',
       title: 'Sym Flame Single Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1137,7 +1137,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-censer-hanging-etched',
       title: 'Sym Censer Hanging Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1150,7 +1150,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sun-rays-linocut',
       title: 'Sym Sun Rays Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1165,7 +1165,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1178,7 +1178,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1193,7 +1193,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-paper-torn-edge',
       title: 'Brand Paper Torn Edge',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1206,7 +1206,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shofar-mustard-linocut',
       title: 'Sym Shofar Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1234,7 +1234,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1247,7 +1247,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-menorah-seven-flames',
       title: 'Obj Menorah Seven Flames',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1275,7 +1275,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1288,7 +1288,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1329,7 +1329,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1342,7 +1342,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1370,7 +1370,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1383,7 +1383,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-sunburst-banner',
       title: 'Brand Sunburst Banner',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1424,7 +1424,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-hope-linocut',
       title: 'Sym Anchor Hope Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1437,7 +1437,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-humble-linocut',
       title: 'Sym Crown Humble Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1478,7 +1478,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-censer-hanging-etched',
       title: 'Sym Censer Hanging Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1491,7 +1491,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fig-branch-linocut',
       title: 'Sym Fig Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1532,7 +1532,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-shalom-blue-linocut',
       title: 'Sym Anchor Shalom Blue Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1545,7 +1545,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-eagle-flight-linocut',
       title: 'Sym Eagle Flight Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1586,7 +1586,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-burning-bush-brushed',
       title: 'Sym Burning Bush Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1599,7 +1599,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-banner',
       title: 'Sym Stone Tablets Banner',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1627,7 +1627,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-pillar-light-vertical',
       title: 'Element Pillar Light Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1640,7 +1640,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-clay-linocut',
       title: 'Sym Oil Lamp Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1681,7 +1681,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-cream-on-burgundy',
       title: 'Element Halo Cream On Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1694,7 +1694,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-flight-burgundy-linocut',
       title: 'Sym Dove Flight Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1709,7 +1709,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-palm-frond-etched',
       title: 'Sym Palm Frond Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1722,7 +1722,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-water-pouring-brushed',
       title: 'Sym Water Pouring Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1737,7 +1737,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-palm-frond-woven',
       title: 'Obj Palm Frond Woven',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1750,7 +1750,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-scroll-wax-seal-broken',
       title: 'Obj Scroll Wax Seal Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1765,7 +1765,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-pillar-light-terracotta',
       title: 'Element Pillar Light Terracotta',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1778,7 +1778,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-pillar-light-vertical',
       title: 'Element Pillar Light Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1793,7 +1793,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lily-reverse-burgundy-linocut',
       title: 'Sym Lily Reverse Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1806,7 +1806,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wineskin-linocut',
       title: 'Sym Wineskin Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1821,7 +1821,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fish-terracotta-linocut',
       title: 'Sym Fish Terracotta Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1834,7 +1834,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-shepherd-crook-leaning',
       title: 'Obj Shepherd Crook Leaning',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1849,7 +1849,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-censer-smoke',
       title: 'Obj Bronze Censer Smoke',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1862,7 +1862,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-flat',
       title: 'Sym Stone Tablets Flat',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1890,7 +1890,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1903,7 +1903,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1918,7 +1918,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1931,7 +1931,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-burgundy-linocut',
       title: 'Sym Chalice Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1959,7 +1959,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -1972,7 +1972,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hands-holding-cradled-etched',
       title: 'Sym Hands Holding Cradled Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2013,7 +2013,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2026,7 +2026,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2067,7 +2067,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pomegranate-cut-linocut',
       title: 'Sym Pomegranate Cut Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2080,7 +2080,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-brushed',
       title: 'Sym Olive Branch Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2095,7 +2095,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-extended-etched',
       title: 'Sym Hand Extended Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2108,7 +2108,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-pointing-up-etched',
       title: 'Sym Hand Pointing Up Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2123,7 +2123,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-vine-grapes-linocut',
       title: 'Sym Vine Grapes Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2136,7 +2136,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-vine-grapes-burgundy-linocut',
       title: 'Sym Vine Grapes Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2151,7 +2151,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shield-faith-linocut',
       title: 'Sym Shield Faith Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2164,7 +2164,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-blank-linocut',
       title: 'Sym Stone Tablets Blank Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2179,7 +2179,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-of-thorns-stone',
       title: 'Sym Crown Of Thorns Stone',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2192,7 +2192,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-extended-etched',
       title: 'Sym Hand Extended Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2207,7 +2207,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-trumpet-curved',
       title: 'Obj Bronze Trumpet Curved',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2220,7 +2220,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cup-trembling-stone',
       title: 'Obj Cup Trembling Stone',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2235,7 +2235,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2248,7 +2248,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-gradient-vertical',
       title: 'Brand Halftone Gradient Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2276,7 +2276,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-sandals-leather-dust',
       title: 'Obj Sandals Leather Dust',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2289,7 +2289,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-lamp-wick-burning',
       title: 'Obj Oil Lamp Wick Burning',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2330,7 +2330,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-trumpet-curved',
       title: 'Obj Bronze Trumpet Curved',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2343,7 +2343,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-divider-ornament-cream',
       title: 'Element Divider Ornament Cream',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2384,7 +2384,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2397,7 +2397,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shofar-rams-horn-linocut',
       title: 'Sym Shofar Rams Horn Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2425,7 +2425,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2438,7 +2438,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fish-linocut',
       title: 'Sym Fish Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2479,7 +2479,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hands-holding-cradled-etched',
       title: 'Sym Hands Holding Cradled Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2492,7 +2492,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-noahs-ark-linocut',
       title: 'Sym Noahs Ark Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2533,7 +2533,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-vertical',
       title: 'Sym Olive Branch Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2546,7 +2546,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-mustard-seed-detail',
       title: 'Sym Mustard Seed Detail',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2587,7 +2587,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-millstone-neck',
       title: 'Sym Millstone Neck',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2600,7 +2600,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-halo-disk',
       title: 'Brand Halftone Halo Disk',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2641,7 +2641,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-stalk-mustard-linocut',
       title: 'Sym Wheat Stalk Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2654,7 +2654,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stones-cairn-linocut',
       title: 'Sym Stones Cairn Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2696,7 +2696,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-raven-perched-etched',
       title: 'Sym Raven Perched Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2709,7 +2709,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-olive-wax-seal',
       title: 'Sym Dove Olive Wax Seal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2750,7 +2750,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-divider-ornament-burgundy',
       title: 'Element Divider Ornament Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2763,7 +2763,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cylinder-seal-clay',
       title: 'Obj Cylinder Seal Clay',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2804,7 +2804,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sheep-profile-linocut',
       title: 'Sym Sheep Profile Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2817,7 +2817,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-olive-brushed',
       title: 'Sym Olive Branch Olive Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2845,7 +2845,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ox-head-linocut',
       title: 'Sym Ox Head Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2858,7 +2858,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-empty-tomb-linocut',
       title: 'Sym Empty Tomb Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2900,7 +2900,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2913,7 +2913,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2954,7 +2954,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-charcoal',
       title: 'Brand Pull Quote Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2967,7 +2967,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-serpent-pole',
       title: 'Obj Bronze Serpent Pole',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2982,7 +2982,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -2995,7 +2995,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-extended-etched',
       title: 'Sym Hand Extended Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3037,7 +3037,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-throne-empty-etched',
       title: 'Sym Throne Empty Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3050,7 +3050,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-flask-amber-glass',
       title: 'Obj Oil Flask Amber Glass',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3091,7 +3091,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-menorah-seven-branch-etched',
       title: 'Sym Menorah Seven Branch Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3104,7 +3104,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-olive-branch',
       title: 'Sym Dove Olive Branch',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3145,7 +3145,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-rays-mustard',
       title: 'Element Rays Mustard',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3158,7 +3158,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3186,7 +3186,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-gold-on-charcoal',
       title: 'Element Halo Gold On Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3199,7 +3199,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-rays-burgundy',
       title: 'Element Rays Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3240,7 +3240,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-tzitzit-blue-thread',
       title: 'Obj Tzitzit Blue Thread',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3253,7 +3253,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fish-terracotta-linocut',
       title: 'Sym Fish Terracotta Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3294,7 +3294,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-city-gate-linocut',
       title: 'Sym City Gate Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3307,7 +3307,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-temple-columns-pair-linocut',
       title: 'Sym Temple Columns Pair Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3348,7 +3348,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-gold-on-charcoal',
       title: 'Element Halo Gold On Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3361,7 +3361,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-waves',
       title: 'Brand Halftone Waves',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3402,7 +3402,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-cream-on-burgundy',
       title: 'Element Halo Cream On Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3415,7 +3415,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ox-head-linocut',
       title: 'Sym Ox Head Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3430,7 +3430,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-prayer-shawl-folded',
       title: 'Obj Prayer Shawl Folded',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3443,7 +3443,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3484,7 +3484,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3497,7 +3497,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-millstone-neck',
       title: 'Sym Millstone Neck',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3525,7 +3525,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-trumpet-curved',
       title: 'Obj Bronze Trumpet Curved',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3538,7 +3538,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-halo-disk',
       title: 'Brand Halftone Halo Disk',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3579,7 +3579,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fish-linocut',
       title: 'Sym Fish Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3592,7 +3592,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fig-branch-linocut',
       title: 'Sym Fig Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3633,7 +3633,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-thorn-branch-linocut',
       title: 'Sym Thorn Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3646,7 +3646,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-cream-on-cobalt',
       title: 'Element Halo Cream On Cobalt',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3687,7 +3687,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-flight-burgundy-linocut',
       title: 'Sym Dove Flight Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3700,7 +3700,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stones-cairn-linocut',
       title: 'Sym Stones Cairn Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3741,7 +3741,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-rainbow-arc-linocut',
       title: 'Sym Rainbow Arc Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3754,7 +3754,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-olive-linocut',
       title: 'Sym Oil Lamp Olive Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3782,7 +3782,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-shalom-blue-linocut',
       title: 'Sym Anchor Shalom Blue Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3795,7 +3795,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-olive-brushed',
       title: 'Sym Olive Branch Olive Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3837,7 +3837,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lily-reverse-burgundy-linocut',
       title: 'Sym Lily Reverse Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3850,7 +3850,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-paper-torn-edge',
       title: 'Brand Paper Torn Edge',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3865,7 +3865,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-ancient-coin-tribute',
       title: 'Obj Ancient Coin Tribute',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3878,7 +3878,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-eagle-flight-linocut',
       title: 'Sym Eagle Flight Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3893,7 +3893,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pomegranate-cut-linocut',
       title: 'Sym Pomegranate Cut Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3906,7 +3906,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-menorah-mustard-linocut',
       title: 'Sym Menorah Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3921,7 +3921,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-window-arched-linocut',
       title: 'Sym Window Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3934,7 +3934,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-doorway-arched-linocut',
       title: 'Sym Doorway Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3949,7 +3949,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3962,7 +3962,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-flat',
       title: 'Sym Stone Tablets Flat',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3977,7 +3977,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-papyrus-scroll-unrolled',
       title: 'Obj Papyrus Scroll Unrolled',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -3990,7 +3990,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-pointing-up-etched',
       title: 'Sym Hand Pointing Up Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4005,7 +4005,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-single-stalk-linocut',
       title: 'Sym Wheat Single Stalk Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4018,7 +4018,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-divider-ornament-cream',
       title: 'Element Divider Ornament Cream',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4033,7 +4033,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-flame-terracotta-linocut',
       title: 'Sym Flame Terracotta Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4046,7 +4046,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wineskin-linocut',
       title: 'Sym Wineskin Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4061,7 +4061,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-olive',
       title: 'Brand Pull Quote Olive',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4074,7 +4074,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-banner',
       title: 'Sym Stone Tablets Banner',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4089,7 +4089,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-shepherd-crook-leaning',
       title: 'Obj Shepherd Crook Leaning',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4102,7 +4102,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4117,7 +4117,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-clay-bowl-bread-water',
       title: 'Obj Clay Bowl Bread Water',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4130,7 +4130,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-burgundy-linocut',
       title: 'Sym Bread Loaf Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4145,7 +4145,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-thorn-underline-cream',
       title: 'Element Thorn Underline Cream',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4158,7 +4158,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-wooden-yoke-broken',
       title: 'Obj Wooden Yoke Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4173,7 +4173,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-noahs-ark-linocut',
       title: 'Sym Noahs Ark Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4186,7 +4186,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sheep-profile-linocut',
       title: 'Sym Sheep Profile Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4201,7 +4201,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-scroll-wax-seal-broken',
       title: 'Obj Scroll Wax Seal Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4214,7 +4214,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-brass-key-ornate',
       title: 'Obj Brass Key Ornate',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4229,7 +4229,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-humble-linocut',
       title: 'Sym Crown Humble Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4242,7 +4242,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-trumpet-curved',
       title: 'Obj Bronze Trumpet Curved',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4257,7 +4257,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-censer-smoke',
       title: 'Obj Bronze Censer Smoke',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4270,7 +4270,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-divider-ornament-burgundy',
       title: 'Element Divider Ornament Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4285,7 +4285,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-vine-grapes-linocut',
       title: 'Sym Vine Grapes Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4298,7 +4298,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-of-thorns-stone',
       title: 'Sym Crown Of Thorns Stone',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4313,7 +4313,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-flame-single-linocut',
       title: 'Sym Flame Single Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4326,7 +4326,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-burgundy-linocut',
       title: 'Sym Chalice Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4341,7 +4341,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4354,7 +4354,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-thorns-burgundy-linocut',
       title: 'Sym Crown Thorns Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4369,7 +4369,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-pillar-light-terracotta',
       title: 'Element Pillar Light Terracotta',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4382,7 +4382,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sun-rays-linocut',
       title: 'Sym Sun Rays Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4397,7 +4397,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-mustard-seed-detail',
       title: 'Sym Mustard Seed Detail',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4410,7 +4410,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-gradient-vertical',
       title: 'Brand Halftone Gradient Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4425,7 +4425,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-olive-wax-seal',
       title: 'Sym Dove Olive Wax Seal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4438,7 +4438,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-lyre-strings',
       title: 'Obj Bronze Lyre Strings',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4453,7 +4453,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-water-pouring-brushed',
       title: 'Sym Water Pouring Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4466,7 +4466,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-stained-glass-abstract',
       title: 'Brand Stained Glass Abstract',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4481,7 +4481,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4494,7 +4494,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cup-trembling-stone',
       title: 'Obj Cup Trembling Stone',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4509,7 +4509,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cylinder-seal-clay',
       title: 'Obj Cylinder Seal Clay',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4522,7 +4522,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-stalk-mustard-linocut',
       title: 'Sym Wheat Stalk Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4537,7 +4537,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-menorah-seven-flames',
       title: 'Obj Menorah Seven Flames',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4550,7 +4550,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-burgundy-linocut',
       title: 'Sym Bread Loaf Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4565,7 +4565,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-thorn-branch-burgundy-linocut',
       title: 'Sym Thorn Branch Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4578,7 +4578,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-broken-pottery-shard',
       title: 'Obj Broken Pottery Shard',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4593,7 +4593,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-waves-three-stacked-linocut',
       title: 'Sym Waves Three Stacked Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4606,7 +4606,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-serpent-pole',
       title: 'Obj Bronze Serpent Pole',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4621,7 +4621,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4634,7 +4634,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4649,7 +4649,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-flask-amber-glass',
       title: 'Obj Oil Flask Amber Glass',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4662,7 +4662,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shofar-mustard-linocut',
       title: 'Sym Shofar Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4677,7 +4677,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4690,7 +4690,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shofar-rams-horn-linocut',
       title: 'Sym Shofar Rams Horn Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4705,7 +4705,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-olive-branch',
       title: 'Sym Dove Olive Branch',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4718,7 +4718,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-extended-etched',
       title: 'Sym Hand Extended Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4733,7 +4733,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-vertical',
       title: 'Sym Olive Branch Vertical',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4746,7 +4746,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-jacob-ladder-linocut',
       title: 'Sym Jacob Ladder Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4761,7 +4761,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-raven-perched-etched',
       title: 'Sym Raven Perched Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4774,7 +4774,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-charcoal',
       title: 'Brand Pull Quote Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4789,7 +4789,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lily-etched',
       title: 'Sym Lily Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4802,7 +4802,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-burning-bush-brushed',
       title: 'Sym Burning Bush Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4830,7 +4830,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-rays-mustard',
       title: 'Element Rays Mustard',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4843,7 +4843,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-palm-frond-woven',
       title: 'Obj Palm Frond Woven',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4871,7 +4871,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-olive-branch-brushed',
       title: 'Sym Olive Branch Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4884,7 +4884,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-mustard-seed-palm-macro',
       title: 'Obj Mustard Seed Palm Macro',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4925,7 +4925,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-rays-banner-charcoal',
       title: 'Brand Rays Banner Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4938,7 +4938,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-palm-frond-etched',
       title: 'Sym Palm Frond Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4979,7 +4979,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-clay-water-jar-broken',
       title: 'Obj Clay Water Jar Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -4992,7 +4992,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-burgundy',
       title: 'Brand Pull Quote Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5033,7 +5033,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-sunburst-banner',
       title: 'Brand Sunburst Banner',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5046,7 +5046,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-clay-linocut',
       title: 'Sym Oil Lamp Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5087,7 +5087,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-throne-empty-etched',
       title: 'Sym Throne Empty Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5100,7 +5100,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5141,7 +5141,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-censer-hanging-etched',
       title: 'Sym Censer Hanging Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5154,7 +5154,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-lion-judah-etched',
       title: 'Sym Lion Judah Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5195,7 +5195,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-censer-hanging-etched',
       title: 'Sym Censer Hanging Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5208,7 +5208,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-lamp-wick-burning',
       title: 'Obj Oil Lamp Wick Burning',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5249,7 +5249,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-empty-tomb-linocut',
       title: 'Sym Empty Tomb Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5262,7 +5262,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-clay-linocut',
       title: 'Sym Oil Lamp Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5303,7 +5303,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5316,7 +5316,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-flight-linocut',
       title: 'Sym Dove Flight Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5331,7 +5331,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-menorah-seven-branch-etched',
       title: 'Sym Menorah Seven Branch Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5344,7 +5344,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-sandals-leather-dust',
       title: 'Obj Sandals Leather Dust',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5359,7 +5359,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-rays-burgundy',
       title: 'Element Rays Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5372,7 +5372,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fig-branch-linocut',
       title: 'Sym Fig Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5387,7 +5387,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-shepherd-crook-linocut',
       title: 'Sym Shepherd Crook Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5400,7 +5400,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-blank-linocut',
       title: 'Sym Stone Tablets Blank Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5415,7 +5415,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-burning-bush-brushed',
       title: 'Sym Burning Bush Brushed',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5428,7 +5428,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-clay-water-jar-broken',
       title: 'Obj Clay Water Jar Broken',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5443,7 +5443,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sheep-profile-linocut',
       title: 'Sym Sheep Profile Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5456,7 +5456,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-noahs-ark-linocut',
       title: 'Sym Noahs Ark Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5471,7 +5471,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-vine-grapes-linocut',
       title: 'Sym Vine Grapes Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5484,7 +5484,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sun-rays-linocut',
       title: 'Sym Sun Rays Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5499,7 +5499,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-prayer-shawl-folded',
       title: 'Obj Prayer Shawl Folded',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5512,7 +5512,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-rainbow-arc-linocut',
       title: 'Sym Rainbow Arc Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5527,7 +5527,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5540,7 +5540,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stones-cairn-linocut',
       title: 'Sym Stones Cairn Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5555,7 +5555,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pitcher-clay-linocut',
       title: 'Sym Pitcher Clay Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5568,7 +5568,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-censer-smoke',
       title: 'Obj Bronze Censer Smoke',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5583,7 +5583,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-doorway-arched-linocut',
       title: 'Sym Doorway Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5596,7 +5596,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-burgundy-linocut',
       title: 'Sym Chalice Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5611,7 +5611,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-window-arched-linocut',
       title: 'Sym Window Arched Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5624,7 +5624,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5639,7 +5639,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-stone-tablets-covenant',
       title: 'Obj Stone Tablets Covenant',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5652,7 +5652,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-flame-single-linocut',
       title: 'Sym Flame Single Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5667,7 +5667,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5680,7 +5680,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5695,7 +5695,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5708,7 +5708,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5723,7 +5723,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5736,7 +5736,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5751,7 +5751,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5764,7 +5764,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5779,7 +5779,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5792,7 +5792,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-burgundy-linocut',
       title: 'Sym Cross Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5807,7 +5807,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5820,7 +5820,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-cross-simple-linocut',
       title: 'Sym Cross Simple Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5848,7 +5848,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-gold-on-charcoal',
       title: 'Element Halo Gold On Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5861,7 +5861,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-stone-tablets-flat',
       title: 'Sym Stone Tablets Flat',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5889,7 +5889,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-bronze-trumpet-curved',
       title: 'Obj Bronze Trumpet Curved',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5902,7 +5902,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ark-covenant-cherubim-etched',
       title: 'Sym Ark Covenant Cherubim Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5943,7 +5943,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-stained-glass-abstract',
       title: 'Brand Stained Glass Abstract',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5956,7 +5956,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-single-stalk-linocut',
       title: 'Sym Wheat Single Stalk Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -5997,7 +5997,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-paper-torn-edge',
       title: 'Brand Paper Torn Edge',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6010,7 +6010,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6052,7 +6052,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fish-terracotta-linocut',
       title: 'Sym Fish Terracotta Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6065,7 +6065,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-key-skeleton-etched',
       title: 'Sym Key Skeleton Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6080,7 +6080,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-flask-amber-glass',
       title: 'Obj Oil Flask Amber Glass',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6093,7 +6093,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-rays-banner-charcoal',
       title: 'Brand Rays Banner Charcoal',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6108,7 +6108,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-pomegranate-cut-linocut',
       title: 'Sym Pomegranate Cut Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6121,7 +6121,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-star-eight-point-etched',
       title: 'Sym Star Eight Point Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6136,7 +6136,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-papyrus-scroll-unrolled',
       title: 'Obj Papyrus Scroll Unrolled',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6149,7 +6149,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-oil-lamp-wick-burning',
       title: 'Obj Oil Lamp Wick Burning',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6164,7 +6164,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-halo-cream-on-burgundy',
       title: 'Element Halo Cream On Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6177,7 +6177,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6192,7 +6192,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-tzitzit-blue-thread',
       title: 'Obj Tzitzit Blue Thread',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6205,7 +6205,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-empty-tomb-linocut',
       title: 'Sym Empty Tomb Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6220,7 +6220,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-dove-flight-burgundy-linocut',
       title: 'Sym Dove Flight Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6233,7 +6233,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-wheat-stalk-mustard-linocut',
       title: 'Sym Wheat Stalk Mustard Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6248,7 +6248,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-censer-hanging-etched',
       title: 'Sym Censer Hanging Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6261,7 +6261,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-anchor-shalom-blue-linocut',
       title: 'Sym Anchor Shalom Blue Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6276,7 +6276,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-sandals-leather-dust',
       title: 'Obj Sandals Leather Dust',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6289,7 +6289,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-thorns-burgundy-linocut',
       title: 'Sym Crown Thorns Burgundy Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6304,7 +6304,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-chalice-cup-linocut',
       title: 'Sym Chalice Cup Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6317,7 +6317,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-scroll-open-etched',
       title: 'Sym Scroll Open Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6332,7 +6332,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cup-trembling-stone',
       title: 'Obj Cup Trembling Stone',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6345,7 +6345,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-sword-spirit-linocut',
       title: 'Sym Sword Spirit Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6360,7 +6360,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-crown-humble-linocut',
       title: 'Sym Crown Humble Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6373,7 +6373,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-ox-head-linocut',
       title: 'Sym Ox Head Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6388,7 +6388,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-oil-lamp-olive-linocut',
       title: 'Sym Oil Lamp Olive Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6401,7 +6401,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-burgundy',
       title: 'Brand Pull Quote Burgundy',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6429,7 +6429,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-fig-branch-linocut',
       title: 'Sym Fig Branch Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6442,7 +6442,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-pull-quote-olive',
       title: 'Brand Pull Quote Olive',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6483,7 +6483,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-bread-loaf-solo-linocut',
       title: 'Sym Bread Loaf Solo Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6496,7 +6496,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hand-pointing-up-etched',
       title: 'Sym Hand Pointing Up Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6537,7 +6537,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-cylinder-seal-clay',
       title: 'Obj Cylinder Seal Clay',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6550,7 +6550,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'obj-mustard-seed-palm-macro',
       title: 'Obj Mustard Seed Palm Macro',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6591,7 +6591,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'element-divider-ornament-cream',
       title: 'Element Divider Ornament Cream',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6604,7 +6604,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'brand-halftone-halo-disk',
       title: 'Brand Halftone Halo Disk',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6632,7 +6632,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-temple-columns-pair-linocut',
       title: 'Sym Temple Columns Pair Linocut',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',
@@ -6645,7 +6645,7 @@ export const SITE_DEVOTIONAL_ART: Record<string, ArtworkEntry[]> = {
     {
       slug: 'sym-hands-holding-cradled-etched',
       title: 'Sym Hands Holding Cradled Etched',
-      artist: 'Generated',
+      artist: 'Christopher James Parker + AI, to God be the Glory',
       year: '2026',
       medium: 'single-ink illustration',
       museum: '',

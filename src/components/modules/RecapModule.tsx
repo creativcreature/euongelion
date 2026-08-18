@@ -50,7 +50,7 @@ export default function RecapModule({
         {module.days.map((d) => (
           <li key={d.day}>
             <p className="module-sublabel mb-2">DAY {d.day}</p>
-            <h3 className="text-serif vw-body-lg mb-3">{d.title}</h3>
+            <h2 className="text-serif vw-body-lg mb-3">{d.title}</h2>
             <p className="vw-body leading-relaxed text-secondary type-prose">
               {typographer(d.key_insight)}
             </p>

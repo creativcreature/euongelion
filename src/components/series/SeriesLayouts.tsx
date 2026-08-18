@@ -249,7 +249,7 @@ export function FeatureView({
                   <span className="fp-story-plate">
                     <Plate slug={slug} sizes="(max-width: 900px) 50vw, 29vw" />
                   </span>
-                  <span className="fp-story-head">{series.title}</span>
+                  <h3 className="fp-story-head">{series.title}</h3>
                   <span className="fp-story-stand">{series.question}</span>
                   <span className="fp-byline">
                     {statusLabel(slug, progressBySeries.get(slug))}
@@ -275,7 +275,7 @@ export function FeatureView({
                   <Plate slug={slug} sizes="72px" eager />
                 </span>
                 <span className="fp-brief-text">
-                  <span className="fp-brief-head">{series.title}</span>
+                  <h3 className="fp-brief-head">{series.title}</h3>
                   <span className="fp-byline">
                     {statusLabel(slug, progressBySeries.get(slug))}
                   </span>
@@ -301,7 +301,7 @@ export function FeatureView({
           return (
             <section className="fp-desk" key={section.name}>
               <div className="fp-desk-head">
-                <h3 className="fp-desk-name">{section.name}</h3>
+                <h2 className="fp-desk-name">{section.name}</h2>
                 <span className="fp-desk-rule" aria-hidden="true" />
                 <span className="fp-desk-count">{section.slugs.length}</span>
               </div>
@@ -414,7 +414,7 @@ export function RackView({ slugs, progressBySeries, cardHref }: LayoutProps) {
                   style={{ transform: `rotate(${lean}deg)` }}
                 >
                   <span className="rack-fold" aria-hidden="true" />
-                  <span className="rack-masthead">{series.title}</span>
+                  <h3 className="rack-masthead">{series.title}</h3>
                   <span className="rack-rule" aria-hidden="true" />
                   <span className="rack-plate">
                     {/* Eager: a rail of lazy plates reads as missing artwork
@@ -458,7 +458,7 @@ export function CoversView({ slugs, progressBySeries, cardHref }: LayoutProps) {
               />
             </span>
             <span className="cover-caption">
-              <span className="cover-title">{series.title}</span>
+              <h3 className="cover-title">{series.title}</h3>
               <span className="cover-meta">{statusLabel(slug, progress)}</span>
             </span>
             <ProgressRail progress={progress} />
@@ -582,7 +582,7 @@ export function SpinesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
                   style={{ width: `${width}px` }}
                   title={`${series.title} · ${dayCountLabel(slug)}`}
                 >
-                  <span className="spine-title">{series.title}</span>
+                  <h3 className="spine-title">{series.title}</h3>
                   <span className="spine-foot" aria-hidden="true">
                     {days}
                   </span>
@@ -612,7 +612,7 @@ export function ListView({ slugs, progressBySeries, cardHref }: LayoutProps) {
         return (
           <li key={slug}>
             <Link href={cardHref(slug)} className="stock-row">
-              <span className="stock-title">{series.title}</span>
+              <h3 className="stock-title">{series.title}</h3>
               <span className="stock-question">{series.question}</span>
               <span className="stock-meta">{statusLabel(slug, progress)}</span>
             </Link>
@@ -648,7 +648,7 @@ export function IssuesView({ slugs, progressBySeries, cardHref }: LayoutProps) {
                 <Plate slug={slug} sizes="90px" />
               </span>
               <span className="issue-copy">
-                <span className="issue-title">{series.title}</span>
+                <h3 className="issue-title">{series.title}</h3>
                 <span className="issue-question">{series.question}</span>
               </span>
               <span className="issue-meta">

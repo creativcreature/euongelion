@@ -1554,7 +1554,11 @@ export default function SettingsPage() {
                               style={{
                                 backgroundColor: 'var(--color-error, #b94f4f)',
                                 border: '1px solid var(--color-error, #b94f4f)',
-                                color: 'var(--color-bg, #fff)',
+                                // NOT --color-bg: that resolves to #0b1420 in
+                                // dark, putting this label at 2.83:1 on the red.
+                                // White holds 5.38:1 in every theme, and this is
+                                // the highest-stakes button in the app.
+                                color: '#fff',
                               }}
                             >
                               {accountDeleteBusy

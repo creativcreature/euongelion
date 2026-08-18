@@ -305,7 +305,7 @@ function SabbathView() {
   return (
     <div className="mx-auto max-w-lg py-16 text-center">
       <p className="text-label vw-small mb-3 text-gold">DAY 7 -- SABBATH</p>
-      <p className="vw-heading-md mb-4">Rest</p>
+      <h1 className="vw-heading-md mb-4">Rest</h1>
       <p className="vw-body text-secondary">
         Today is a day of rest. No reading, no striving. Sit with what you have
         received this week. Let silence do its work.
@@ -326,7 +326,7 @@ function DailyBreadTier({ content }: { content: DayContent }) {
     <div className="space-y-6">
       {/* Scripture */}
       <section>
-        <p className="text-label vw-small mb-2 text-gold">SCRIPTURE</p>
+        <h2 className="text-label vw-small mb-2 text-gold">SCRIPTURE</h2>
         <p className="vw-small mb-1 text-muted">{content.scriptureReference}</p>
         <div
           className="vw-body text-secondary type-prose"
@@ -374,7 +374,7 @@ function DailyBreadTier({ content }: { content: DayContent }) {
       {/* Reflection */}
       {content.reflectionQuestions.length > 0 && (
         <section>
-          <p className="text-label vw-small mb-2 text-gold">REFLECT</p>
+          <h2 className="text-label vw-small mb-2 text-gold">REFLECT</h2>
           <ul className="list-none space-y-2">
             {content.reflectionQuestions.map((q, i) => (
               <li key={`reflect-${i}`} className="vw-body text-secondary">
@@ -387,7 +387,7 @@ function DailyBreadTier({ content }: { content: DayContent }) {
 
       {/* Prayer */}
       <section>
-        <p className="text-label vw-small mb-2 text-gold">PRAYER</p>
+        <h2 className="text-label vw-small mb-2 text-gold">PRAYER</h2>
         <div
           className="vw-body text-secondary type-prose"
           style={{ fontStyle: 'italic' }}
@@ -421,7 +421,7 @@ function GoDeeper({ content }: { content: DayContent }) {
     <div className="space-y-6">
       {/* Scripture */}
       <section>
-        <p className="text-label vw-small mb-2 text-gold">SCRIPTURE</p>
+        <h2 className="text-label vw-small mb-2 text-gold">SCRIPTURE</h2>
         <p className="vw-small mb-1 text-muted">{content.scriptureReference}</p>
         <div
           className="vw-body text-secondary type-prose"
@@ -436,7 +436,7 @@ function GoDeeper({ content }: { content: DayContent }) {
           never show an empty labelled section. */}
       {content.hookA && (
         <section>
-          <p className="text-label vw-small mb-2 text-gold">OPENING</p>
+          <h2 className="text-label vw-small mb-2 text-gold">OPENING</h2>
           <div
             className="vw-body text-secondary type-prose"
             dangerouslySetInnerHTML={{ __html: renderMarkdown(content.hookA) }}
@@ -521,7 +521,7 @@ function GoDeeper({ content }: { content: DayContent }) {
       {/* Reflection */}
       {content.reflectionQuestions.length > 0 && (
         <section>
-          <p className="text-label vw-small mb-2 text-gold">REFLECT</p>
+          <h2 className="text-label vw-small mb-2 text-gold">REFLECT</h2>
           <ul className="list-none space-y-2">
             {content.reflectionQuestions.map((q, i) => (
               <li key={`reflect-${i}`} className="vw-body text-secondary">
@@ -534,7 +534,7 @@ function GoDeeper({ content }: { content: DayContent }) {
 
       {/* Prayer */}
       <section>
-        <p className="text-label vw-small mb-2 text-gold">PRAYER</p>
+        <h2 className="text-label vw-small mb-2 text-gold">PRAYER</h2>
         <div
           className="vw-body text-secondary type-prose"
           style={{ fontStyle: 'italic' }}

@@ -1155,11 +1155,27 @@ features:
     prd: docs/feature-prds/F-123.md
     methodology_refs:
       - M00
-  - id: F-121
+  - id: F-124
+    title: The narration library was mastered to peak, not loudness
+    slug: narration-remastered-to-minus-17-lufs
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-124.md
+    methodology_refs:
+      - M00
+  - id: F-126
     title: The blue italic line under the lead scripture is gone
     slug: scripture-transliteration-line-removed
     baseline_score: 0
     status: wip
-    prd: docs/feature-prds/F-121.md
+    prd: docs/feature-prds/F-126.md
+    methodology_refs:
+      - M00
+  - id: F-125
+    title: Polish backlog batch 1 — contrast, headings, credit, dead code
+    slug: polish-backlog-batch-1
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-125.md
     methodology_refs:
       - M00

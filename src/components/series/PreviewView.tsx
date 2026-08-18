@@ -41,7 +41,11 @@ function firstSentences(text: string, max = 3) {
 }
 
 function statusLabel(slug: string, progress?: SeriesProgress) {
-  if (progress && progress.completed > 0 && progress.completed < progress.total) {
+  if (
+    progress &&
+    progress.completed > 0 &&
+    progress.completed < progress.total
+  ) {
     return `Day ${progress.completed + 1} of ${progress.total}`
   }
   if (progress && progress.completed >= progress.total) return 'Finished'
@@ -76,7 +80,7 @@ export default function PreviewView({
               <span className="preview-kicker">
                 {statusLabel(slug, progressBySeries.get(slug))}
               </span>
-              <span className="preview-title">{series.title}</span>
+              <h3 className="preview-title">{series.title}</h3>
               <span className="preview-summary">
                 {firstSentences(series.introduction)}
               </span>

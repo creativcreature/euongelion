@@ -151,7 +151,9 @@ function FoundingMemberCounter({ count }: { count: FoundingMemberCount }) {
       </p>
       <div
         className="my-4 h-2 overflow-hidden rounded"
-        style={{ background: 'rgba(247, 243, 237, 0.08)' }}
+        /* Tokenised: the old rgba cream at 8% assumed a dark ground and
+           measured ~1.01:1 on the light page — an invisible track. */
+        style={{ background: 'var(--color-border)' }}
         role="progressbar"
         aria-valuenow={count.claimed}
         aria-valuemin={0}

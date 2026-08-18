@@ -35,7 +35,7 @@ export default function ReflectionModule({
           read like a system tag rather than an invitation. */}
       <p className="text-label vw-small mb-6 text-gold">REFLECT</p>
       {module.heading && (
-        <h3 className="text-display vw-heading-md mb-8">{module.heading}</h3>
+        <h2 className="text-display vw-heading-md mb-8">{module.heading}</h2>
       )}
       <p
         className="text-serif-italic vw-body-lg leading-relaxed type-prose"

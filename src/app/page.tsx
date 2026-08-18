@@ -451,7 +451,7 @@ export default function Home() {
               </p>
             </Link>
             <Link href="/series" className="homepage-action-card">
-              <p className="text-label vw-small">BROWSE THE LIBRARY</p>
+              <p className="text-label vw-small">BROWSE ALL SERIES</p>
               <p className="vw-body">
                 {SERIES_COUNT} plans through what people carry.
               </p>

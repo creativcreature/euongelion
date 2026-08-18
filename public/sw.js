@@ -1,4 +1,9 @@
 // Euangelion Service Worker
+// R69 (F-124/SA-080): v108 — the whole narration library was re-mastered to
+// -17 LUFS. The audio manifest is bundled at build time and its `bytes` field
+// is the ?v= cache key for every track, so a reader holding v107 keeps the old
+// manifest, requests the old URLs, and hears the quiet masters forever under
+// the one-year immutable header on /audio/*.
 // R68 (F-103/SA-059): v89 — Daily Bread and Today swap, the paper is
 // renamed The Daily Bread, and every page gets the same bottom.
 // R64 (F-094/F-097/SA-054): bumped to v83 — Feature is a front page, Spines
@@ -84,7 +89,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v107'
+const CACHE_NAME = 'euangelion-v109'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 

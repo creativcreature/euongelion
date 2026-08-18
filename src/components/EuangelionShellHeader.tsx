@@ -898,7 +898,7 @@ export default function EuangelionShellHeader({
             <button
               type="button"
               ref={mobileToggleRef}
-              className="mock-mobile-menu-toggle text-label"
+              className={`mock-mobile-menu-toggle text-label ${mobileMenuOpen ? 'is-open' : ''}`}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-controls={
                 mobileMenuOpen ? 'shell-mobile-secondary-nav' : undefined

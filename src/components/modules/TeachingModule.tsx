@@ -16,7 +16,7 @@ export default function TeachingModule({ module }: { module: Module }) {
   return (
     <div className="my-16 md:my-24">
       {module.heading && (
-        <h3 className="text-display vw-heading-md mb-10">{module.heading}</h3>
+        <h2 className="text-display vw-heading-md mb-10">{module.heading}</h2>
       )}
       {module.keyInsight && <PullQuote>{module.keyInsight}</PullQuote>}
       <div
@@ -76,14 +76,14 @@ export default function TeachingModule({ module }: { module: Module }) {
                   </li>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="text-display vw-heading-sm mt-12 mb-6">
-                    {children}
-                  </h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-display vw-body-lg mt-10 mb-5">
+                  <h3 className="text-display vw-heading-sm mt-12 mb-6">
                     {children}
                   </h3>
+                ),
+                h3: ({ children }) => (
+                  <h4 className="text-display vw-body-lg mt-10 mb-5">
+                    {children}
+                  </h4>
                 ),
               }}
             >

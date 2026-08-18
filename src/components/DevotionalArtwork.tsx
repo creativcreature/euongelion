@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import ArtworkAttribution from '@/components/ArtworkAttribution'
 import type { ArtworkEntry } from '@/data/artwork-manifest'
+import { artworkAlt, artworkOpenLabel } from '@/lib/artwork-alt'
 
 interface DevotionalArtworkProps {
   artwork: ArtworkEntry
@@ -32,11 +33,11 @@ export default function DevotionalArtwork({
             onOpenLightbox?.()
           }
         }}
-        aria-label={`View "${artwork.title}" in gallery`}
+        aria-label={artworkOpenLabel(artwork.title)}
       >
         <Image
           src={artwork.rawSrc}
-          alt={`${artwork.title} by ${artwork.artist}`}
+          alt={artworkAlt(artwork.title, artwork.artist)}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1024px) 66vw, 700px"
           className="devotional-artwork-img"

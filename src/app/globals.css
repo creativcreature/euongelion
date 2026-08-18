@@ -5062,39 +5062,6 @@ html.reduce-motion *::after {
   text-underline-offset: 0.22em;
 }
 
-.mock-mobile-nav-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem;
-  width: 100%;
-  min-width: 0;
-}
-
-.mock-mobile-nav-current {
-  flex: 1 1 auto;
-  justify-content: flex-start;
-  border: var(--mock-stroke, 1px) solid var(--mock-line, var(--color-border));
-  min-height: 1.9rem;
-  padding: 0.12rem 0.5rem;
-}
-
-.mock-mobile-nav-main-links {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  flex: 1 1 auto;
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mock-mobile-nav-main-links::-webkit-scrollbar {
-  display: none;
-}
-
 .mock-mobile-menu-toggle {
   display: inline-flex;
   align-items: center;
@@ -5117,16 +5084,6 @@ html.reduce-motion *::after {
 
 .mock-mobile-menu-toggle.is-open {
   color: var(--mock-blue-text, var(--mock-blue, var(--color-gold)));
-}
-
-.mock-mobile-nav-panel {
-  display: none;
-  width: 100%;
-  align-items: stretch;
-}
-
-.mock-mobile-nav-panel.is-open {
-  display: grid;
 }
 
 .mock-reset-btn {
@@ -5335,6 +5292,11 @@ html.reduce-motion *::after {
   align-items: center;
   justify-content: center;
   align-self: center;
+  /* Founder-approved (backlog #65). The homepage GET MATCHED measured 141x38 at
+     390px, under the 44px minimum in CLAUDE.md. `min-height` only ever grows a
+     control that is already short, so nothing that already clears 44px moves —
+     the smaller CTA sizing stays exactly as art-directed. */
+  min-height: 44px;
   border: calc(var(--mock-stroke) * 1.35) solid var(--mock-line);
   background: color-mix(in srgb, var(--mock-paper) 92%, white 8%);
   color: var(--mock-ink);
@@ -6221,12 +6183,6 @@ html.reduce-motion *::after {
   min-height: calc(var(--mock-h-topbar, 42px) - 0.2rem);
 }
 
-.mock-mobile-nav-main-shell {
-  display: grid;
-  gap: 0.24rem;
-  width: 100%;
-}
-
 .mock-wakeup-series-grid {
   min-height: auto;
 }
@@ -6917,33 +6873,6 @@ html.reduce-motion *::after {
     white-space: nowrap;
     border: 0;
     font-size: var(--mock-type-0, 0.92rem);
-  }
-
-  .mock-mobile-nav-main {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    overflow: visible;
-    touch-action: auto;
-    padding-bottom: 0;
-  }
-
-  .mock-mobile-nav-main-links .mock-nav-item {
-    flex: 0 0 auto;
-  }
-
-  .mock-mobile-nav-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.32rem;
-    padding-top: 0.12rem;
-  }
-
-  .mock-mobile-nav-panel .mock-nav-item {
-    width: 100%;
-  }
-
-  .mock-mobile-theme-item {
-    grid-column: 1 / -1;
-    min-height: 2rem;
   }
 
   .mock-masthead-sub {
@@ -9370,7 +9299,6 @@ samp {
    scroll internally instead of leaking. These are all self-contained scroll
    rails (overflow-x: auto on themselves), so the guard only prevents them
    pushing an ancestor wide. */
-.mock-mobile-nav-main-links,
 .print-rail-viewport,
 .browse-rail-viewport,
 .home-meta-nav {
@@ -14425,4 +14353,36 @@ html {
     color: var(--mock-muted);
     background: transparent;
   }
+}
+
+/* ---------------------------------------------------------------------------
+   Series titles are headings now (backlog #03)
+
+   They were inert <span>s, so a screen-reader user had nothing to jump between
+   across 37 series on the flagship browse page. They are <h3> under the page
+   <h1> and the Feature view's <h2> desk names.
+
+   These two rules neutralise the UA heading defaults that would otherwise
+   change the design — every one of these classes already owns its font-size.
+   `.rack-masthead` is excluded from the margin reset and `.stock-title` from
+   the weight reset, because each already declares that property itself.
+--------------------------------------------------------------------------- */
+.preview-title,
+.fp-story-head,
+.fp-brief-head,
+.cover-title,
+.spine-title,
+.issue-title,
+.stock-title {
+  margin: 0;
+}
+
+.preview-title,
+.fp-story-head,
+.fp-brief-head,
+.cover-title,
+.spine-title,
+.issue-title,
+.rack-masthead {
+  font-weight: inherit;
 }

@@ -219,8 +219,11 @@ export default function CrisisInterstitial({
               padding: '1rem 1.5rem',
               justifyContent: 'center',
               marginBottom: '0.875rem',
-              background: 'var(--color-crimson, #c4192e)',
-              borderColor: 'var(--color-crimson, #c4192e)',
+              // Pinned, not tokenised: --color-crimson lightens to #e25868 in
+              // dark, which puts this white label at 3.60:1 — under the 4.5:1
+              // small-text minimum. #c4192e holds ~5.6:1 in every theme.
+              background: '#c4192e',
+              borderColor: '#c4192e',
               color: '#fff',
             }}
           >
