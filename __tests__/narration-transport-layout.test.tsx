@@ -78,18 +78,20 @@ describe('the chosen transport layout', () => {
     expect(within(panel()).queryByText('AUDIO EDITION')).toBeNull()
   })
 
-  it('carries position, set size and time left on ONE meta element', () => {
+  it('carries time left, set size and progress on ONE meta element', () => {
     renderPlayer()
-    // 0:00 / 10:00 · chapter 1 of 3 · 1:00 left in it.
-    const meta = within(panel()).getByText(/0:00 \/ 10:00 · 1 of 3 · 1:00 left/)
+    // Since F-131: "10:00 left · 1 of 3 · 0% complete". The whole line is one
+    // element — the property under test — and it now leads with the remainder
+    // rather than pairing elapsed against total.
+    const meta = within(panel()).getByText(/10:00 left · 1 of 3 · 0% complete/)
     expect(meta).toBeTruthy()
   })
 
-  it('keeps the elapsed/total pair queryable without ambiguity', () => {
+  it('keeps the remaining-time value queryable without ambiguity', () => {
     renderPlayer()
-    // Would throw "found multiple elements" if the pair were wrapped in its
+    // Would throw "found multiple elements" if the value were wrapped in its
     // own span inside the meta line.
-    expect(screen.getByText(/0:00 \/ 10:00/)).toBeTruthy()
+    expect(screen.getByText(/10:00 left/)).toBeTruthy()
   })
 
   it('puts the five transport controls together in the centre cell', () => {

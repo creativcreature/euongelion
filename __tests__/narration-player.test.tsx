@@ -92,8 +92,10 @@ describe('AudioPlayer reader selection', () => {
         slug="has-track-day-1"
       />,
     )
-    // 1299.9s → 21:39
-    expect(screen.getByText(/0:00 \/ 21:39/)).toBeTruthy()
+    // 1299.9s → 21:39. Since F-131 the meta leads with what is LEFT rather
+    // than elapsed/total, so before playback the whole track is still to go and
+    // the duration is still what the reader sees.
+    expect(screen.getByText(/21:39 left/)).toBeTruthy()
   })
 
   it('falls back to synthesised speech when no track exists yet', () => {

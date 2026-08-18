@@ -321,6 +321,43 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## THE TRANSPORT LEADS WITH WHAT IS LEFT — SA-085 / F-131 (2026-08-18)
+
+**Backlog #18.** The full panel read `0:00 / 6:37 · 1 of 10 · 0:03 left`, where
+that trailing "left" was the _chapter's_ remainder — two time values meaning
+different things, and the smaller one made a ten-minute reading look nearly over.
+It now reads `10:00 left · 1 of 3 · 0% complete`. The docked mini-player already
+counted down; the full panel agrees with it now instead of contradicting it.
+
+**Five approved items were already built.** Verified against the codebase before
+writing anything, and recorded so none is built twice:
+
+| #   | Already shipped as                                                |
+| --- | ----------------------------------------------------------------- |
+| 16  | Four named reading grounds since F-067                            |
+| 19  | `SleepTimer.tsx` — durations, end-of-chapter, countdown, fade-out |
+| 20  | `NarrationChapters`, opened from the transport                    |
+| 30  | `PresenceWeekRow` (F-066 / SA-025)                                |
+| 32  | `CuratedActiveView` — "Day N of M"                                |
+
+**#30 is the one worth reading twice.** I built a `WeekDots` component before
+checking, and reverted it entirely. `PresenceWeekRow` already existed under a
+**founder-locked** contract stricter than what I wrote — _lit/unlit only, no
+visible numbers, no streak, no "missed", no red_, with the only count in the
+`aria-label` for accessibility rather than gamification. Mine rendered a visible
+"2 days of reading this week", which violates that lock, and would have put a
+second presence widget on a page that already had one. Component, test, CSS and
+placement deleted; both touched files restored byte-for-byte to HEAD.
+
+**The lesson, and it is the second time this week:** audit the codebase before
+building from a pattern list. The backlog's Mobbin-derived half was never checked
+against what already existed, so it overstated the gap. Treat its remaining-item
+count as an upper bound, not a plan.
+
+2,097 tests green. Service worker **v114**.
+
+---
+
 ## LINE SPACING AND MEASURE JOIN THE READER SHEET — SA-084 / F-130 (2026-08-18)
 
 Backlog #15. Matter exposes Spacing and Width beside Font and Size, and for

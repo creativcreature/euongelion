@@ -64,25 +64,30 @@ silence as approval.
 
 Each shipped item is recorded here with its commit as it lands.
 
-| #   | Item                            | Decision id    | Commit  | Status                              |
-| --- | ------------------------------- | -------------- | ------- | ----------------------------------- |
-| 02  | Reader heading ladder           | SA-080 (F-125) | batch 1 | shipped                             |
-| 03  | Series titles are headings      | SA-080 (F-125) | batch 1 | shipped                             |
-| 07  | 988 + delete-account contrast   | SA-080 (F-125) | batch 1 | shipped                             |
-| 50  | Relabel BROWSE ALL SERIES       | SA-080 (F-125) | batch 1 | shipped                             |
-| 57  | Delete dead mobile-nav CSS      | SA-080 (F-125) | batch 1 | shipped                             |
-| 58  | Apply the is-open class         | SA-080 (F-125) | batch 1 | shipped                             |
-| 60  | Artwork credit + alt text       | SA-080 (F-125) | batch 1 | shipped                             |
-| 64  | Pricing track visible           | SA-080 (F-125) | batch 1 | shipped                             |
-| 65  | 44px homepage CTA               | SA-080 (F-125) | batch 1 | shipped                             |
-| 36  | Public edition in the tab bar   | SA-081 (F-127) | batch 2 | shipped                             |
-| 39  | Menu dialog role + focus trap   | SA-081 (F-127) | batch 2 | shipped                             |
-| 51  | Tabular figures                 | SA-081 (F-127) | batch 2 | shipped                             |
-| 52  | Balanced headlines              | SA-081 (F-127) | batch 2 | shipped                             |
-| 45  | Recent searches                 | SA-083 (F-129) | batch 3 | shipped                             |
-| 47  | Suggested queries               | SA-083 (F-129) | batch 3 | shipped                             |
-| 53  | Uppercase label tracking        | SA-083 (F-129) | batch 3 | shipped                             |
-| 55  | Drop-cap optical alignment      | SA-083 (F-129) | batch 3 | shipped                             |
-| 56  | Hanging punctuation             | SA-083 (F-129) | batch 3 | shipped                             |
-| 15  | Line spacing + measure controls | SA-084 (F-130) | batch 4 | shipped                             |
-| 16  | More reading grounds            | —              | —       | already shipped in F-067 (4 themes) |
+| #   | Item                            | Decision id    | Commit  | Status                                           |
+| --- | ------------------------------- | -------------- | ------- | ------------------------------------------------ |
+| 02  | Reader heading ladder           | SA-080 (F-125) | batch 1 | shipped                                          |
+| 03  | Series titles are headings      | SA-080 (F-125) | batch 1 | shipped                                          |
+| 07  | 988 + delete-account contrast   | SA-080 (F-125) | batch 1 | shipped                                          |
+| 50  | Relabel BROWSE ALL SERIES       | SA-080 (F-125) | batch 1 | shipped                                          |
+| 57  | Delete dead mobile-nav CSS      | SA-080 (F-125) | batch 1 | shipped                                          |
+| 58  | Apply the is-open class         | SA-080 (F-125) | batch 1 | shipped                                          |
+| 60  | Artwork credit + alt text       | SA-080 (F-125) | batch 1 | shipped                                          |
+| 64  | Pricing track visible           | SA-080 (F-125) | batch 1 | shipped                                          |
+| 65  | 44px homepage CTA               | SA-080 (F-125) | batch 1 | shipped                                          |
+| 36  | Public edition in the tab bar   | SA-081 (F-127) | batch 2 | shipped                                          |
+| 39  | Menu dialog role + focus trap   | SA-081 (F-127) | batch 2 | shipped                                          |
+| 51  | Tabular figures                 | SA-081 (F-127) | batch 2 | shipped                                          |
+| 52  | Balanced headlines              | SA-081 (F-127) | batch 2 | shipped                                          |
+| 45  | Recent searches                 | SA-083 (F-129) | batch 3 | shipped                                          |
+| 47  | Suggested queries               | SA-083 (F-129) | batch 3 | shipped                                          |
+| 53  | Uppercase label tracking        | SA-083 (F-129) | batch 3 | shipped                                          |
+| 55  | Drop-cap optical alignment      | SA-083 (F-129) | batch 3 | shipped                                          |
+| 56  | Hanging punctuation             | SA-083 (F-129) | batch 3 | shipped                                          |
+| 15  | Line spacing + measure controls | SA-084 (F-130) | batch 4 | shipped                                          |
+| 16  | More reading grounds            | —              | —       | already shipped in F-067 (4 themes)              |
+| 18  | Transport shows time remaining  | SA-085 (F-131) | batch 5 | shipped                                          |
+| 19  | Sleep timer                     | —              | —       | already shipped (SleepTimer.tsx)                 |
+| 20  | Chapter list from transport     | —              | —       | already shipped (NarrationChapters)              |
+| 30  | Week dots, not a streak         | —              | —       | already shipped (PresenceWeekRow, SA-025 locked) |
+| 32  | Day N of M header               | —              | —       | already shipped (CuratedActiveView)              |

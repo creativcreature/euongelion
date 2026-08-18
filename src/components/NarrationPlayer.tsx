@@ -674,12 +674,26 @@ export default function NarrationPlayer({
    * the span and once on its parent — which is ambiguous for a test and for a
    * screen reader reading the live region.
    */
+  /* Backlog #18 — lead with what is left, not what is spent.
+   *
+   * This read `0:00 / 6:37 · 1 of 10 · 0:03 left`, where the trailing "left"
+   * was the CHAPTER's remainder — so the two time values meant different
+   * things and the smaller one looked like the reading was nearly over.
+   * Spotify reduces the same idea to "3hrs 43min left · 1% complete", which is
+   * the number a reader actually decides on at 6am. The docked mini-player in
+   * this same component already counted down; the full panel now agrees with
+   * it instead of contradicting it.
+   */
+  const remaining = Math.max(0, duration - current)
+  const percentComplete =
+    duration > 0 ? Math.min(100, Math.round((current / duration) * 100)) : 0
+
   const metaLine = [
-    `${formatTime(current)} / ${formatTime(duration)}`,
+    `${formatTime(remaining)} left`,
     bounds && track.chapters
       ? `${bounds.index + 1} of ${track.chapters.length}`
       : null,
-    bounds ? `${formatTime(Math.max(0, bounds.end - current))} left` : null,
+    `${percentComplete}% complete`,
   ]
     .filter(Boolean)
     .join(' · ')
