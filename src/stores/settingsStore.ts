@@ -26,6 +26,9 @@ type KeyStorageMode = 'session_only' | 'remember_encrypted'
 
 type BibleTranslation = BibleTranslationCode
 type TextScale = 'default' | 'large' | 'xlarge'
+/** Backlog #15 — leading and measure, as named steps rather than raw sliders. */
+type ReadingLeading = 'tight' | 'default' | 'loose'
+type ReadingMeasure = 'narrow' | 'default' | 'wide'
 
 // F-067 — in-reader "Aa" sheet: curated named reading themes.
 // 'ink' / 'parchment' are aliases of the site dark / light themes;
@@ -71,6 +74,8 @@ interface SettingsState {
   nvidiaKimiApiKey: string
   dayLockingEnabled: boolean
   textScale: TextScale
+  readingLeading: ReadingLeading
+  readingMeasure: ReadingMeasure
   reduceMotion: boolean
   highContrast: boolean
   readingComfort: boolean
@@ -97,6 +102,8 @@ interface SettingsState {
   setNvidiaKimiApiKey: (key: string) => void
   setDayLockingEnabled: (enabled: boolean) => void
   setTextScale: (scale: TextScale) => void
+  setReadingLeading: (leading: ReadingLeading) => void
+  setReadingMeasure: (measure: ReadingMeasure) => void
   setReduceMotion: (enabled: boolean) => void
   setHighContrast: (enabled: boolean) => void
   setReadingComfort: (enabled: boolean) => void
@@ -139,6 +146,8 @@ export const useSettingsStore = create<SettingsState>()(
       nvidiaKimiApiKey: '',
       dayLockingEnabled: true,
       textScale: 'default',
+      readingLeading: 'default',
+      readingMeasure: 'default',
       reduceMotion: false,
       highContrast: false,
       readingComfort: false,
@@ -208,6 +217,8 @@ export const useSettingsStore = create<SettingsState>()(
       },
       setDayLockingEnabled: (dayLockingEnabled) => set({ dayLockingEnabled }),
       setTextScale: (textScale) => set({ textScale }),
+      setReadingLeading: (readingLeading) => set({ readingLeading }),
+      setReadingMeasure: (readingMeasure) => set({ readingMeasure }),
       setReduceMotion: (reduceMotion) => set({ reduceMotion }),
       setHighContrast: (highContrast) => set({ highContrast }),
       setReadingComfort: (readingComfort) => set({ readingComfort }),
@@ -226,6 +237,8 @@ export const useSettingsStore = create<SettingsState>()(
         keyStorageMode: state.keyStorageMode,
         dayLockingEnabled: state.dayLockingEnabled,
         textScale: state.textScale,
+        readingLeading: state.readingLeading,
+        readingMeasure: state.readingMeasure,
         reduceMotion: state.reduceMotion,
         highContrast: state.highContrast,
         readingComfort: state.readingComfort,

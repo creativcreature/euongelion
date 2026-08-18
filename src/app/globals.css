@@ -14562,3 +14562,53 @@ blockquote.font-reading {
 .global-search-chip:focus-visible {
   border-color: var(--color-gold);
 }
+
+/* ---------------------------------------------------------------------------
+   Leading and measure (backlog #15)
+
+   Matter's reader exposes Spacing and Width beside Font and Size, and for
+   long-form scripture those two do more for legibility than typeface choice.
+   Named steps rather than raw sliders, matching how this reader already handles
+   theme and text size: a reader picks a feel, not a number.
+
+   Both ride `<html>` data attributes, the same channel `data-text-scale`
+   already uses, so every reading preference lives in one place.
+
+   Scoped to the reading flow ONLY. Leading is not a global line-height — that
+   would drag captions, labels and the masthead with it — and the measure
+   applies to the prose column, not the full-bleed plates.
+--------------------------------------------------------------------------- */
+html[data-reading-leading='tight'] .devotional-flow-article,
+html[data-reading-leading='tight'] .reading-flow {
+  line-height: 1.5;
+}
+
+html[data-reading-leading='loose'] .devotional-flow-article,
+html[data-reading-leading='loose'] .reading-flow {
+  line-height: 1.95;
+}
+
+/* `--measure-reading` (68ch) is the token the reader column and PullQuote
+   already share, so overriding it moves the whole column coherently rather
+   than one element at a time. */
+html[data-reading-measure='narrow'] {
+  --measure-reading: 58ch;
+  --max-w-reading: 580px;
+}
+
+html[data-reading-measure='wide'] {
+  --measure-reading: 78ch;
+  --max-w-reading: 780px;
+}
+
+html[data-reading-measure='narrow'] .devotional-flow-article > *,
+html[data-reading-measure='narrow'] .vw-body,
+html[data-reading-measure='narrow'] .vw-body-lg {
+  max-width: var(--max-w-reading);
+}
+
+html[data-reading-measure='wide'] .devotional-flow-article > *,
+html[data-reading-measure='wide'] .vw-body,
+html[data-reading-measure='wide'] .vw-body-lg {
+  max-width: var(--max-w-reading);
+}

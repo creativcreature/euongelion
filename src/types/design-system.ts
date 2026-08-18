@@ -1,5 +1,16 @@
 export type TextScalePreference = 'default' | 'large' | 'xlarge'
 
+/**
+ * Leading and measure (backlog #15).
+ *
+ * Matter's reader exposes Spacing and Width beside Font and Size; for long-form
+ * scripture those two do more for legibility than typeface choice. Named steps
+ * rather than raw sliders, matching how this reader already handles theme and
+ * text size — a reader picks a feel, not a number.
+ */
+export type ReadingLeadingPreference = 'tight' | 'default' | 'loose'
+export type ReadingMeasurePreference = 'narrow' | 'default' | 'wide'
+
 export interface DesignTokenSet {
   color: Record<string, unknown>
   type: Record<string, unknown>

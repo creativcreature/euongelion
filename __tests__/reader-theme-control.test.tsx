@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import ReaderThemeControl from '@/components/ReaderThemeControl'
@@ -177,8 +177,13 @@ describe('ReaderThemeControl (F-067 — named reading themes)', () => {
     const increase = screen.getByRole('button', { name: /increase text size/i })
     const decrease = screen.getByRole('button', { name: /decrease text size/i })
 
+    // Scoped to the TEXT SIZE group: since F-130 the sheet also carries LINE
+    // SPACING and LINE WIDTH steppers, and all three read "Standard" at their
+    // defaults, so a bare getByText is ambiguous by design rather than by bug.
+    const sizeGroup = screen.getByRole('group', { name: /text size/i })
+
     expect(decrease).toBeDisabled()
-    expect(screen.getByText('Standard')).toBeInTheDocument()
+    expect(within(sizeGroup).getByText('Standard')).toBeInTheDocument()
 
     await user.click(increase)
     expect(useSettingsStore.getState().textScale).toBe('large')

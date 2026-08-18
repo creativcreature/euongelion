@@ -91,6 +91,25 @@ const TEXT_SCALE_LABELS: Record<TextScale, string> = {
   xlarge: 'Extra Large',
 }
 
+/* Backlog #15 — leading and measure, the two levers that do more for long-form
+   scripture than typeface choice. Named steps, like everything else here. */
+type ReadingLeading = 'tight' | 'default' | 'loose'
+type ReadingMeasure = 'narrow' | 'default' | 'wide'
+
+const LEADING_ORDER: readonly ReadingLeading[] = ['tight', 'default', 'loose']
+const LEADING_LABELS: Record<ReadingLeading, string> = {
+  tight: 'Tight',
+  default: 'Standard',
+  loose: 'Open',
+}
+
+const MEASURE_ORDER: readonly ReadingMeasure[] = ['narrow', 'default', 'wide']
+const MEASURE_LABELS: Record<ReadingMeasure, string> = {
+  narrow: 'Narrow',
+  default: 'Standard',
+  wide: 'Wide',
+}
+
 // Pre-hydration bootstrap: on a full (SSR) page load, re-apply the persisted
 // reader-scoped theme attribute synchronously while the document is still
 // parsing, so Vellum/Night readers never see an Ink/Parchment flash. Runs
@@ -116,12 +135,18 @@ export default function ReaderThemeControl() {
   const readingTheme = useSettingsStore((s) => s.readingTheme)
   const setReadingTheme = useSettingsStore((s) => s.setReadingTheme)
   const textScale = useSettingsStore((s) => s.textScale)
+  const readingLeading = useSettingsStore((s) => s.readingLeading)
+  const readingMeasure = useSettingsStore((s) => s.readingMeasure)
+  const setReadingLeading = useSettingsStore((s) => s.setReadingLeading)
+  const setReadingMeasure = useSettingsStore((s) => s.setReadingMeasure)
   const setTextScale = useSettingsStore((s) => s.setTextScale)
 
   const scopeRef = useRef<HTMLDivElement | null>(null)
   const triggerRef = useRef<HTMLButtonElement | null>(null)
   const dialogRef = useRef<HTMLDivElement | null>(null)
   const sizeLabelId = useId()
+  const leadingLabelId = useId()
+  const measureLabelId = useId()
 
   // Apply / clear the reader-scoped attribute on the reader root. Ink and
   // Parchment are pure site-theme aliases — no attribute, so the reader
@@ -218,6 +243,18 @@ export default function ReaderThemeControl() {
   function stepScale(delta: number) {
     const next = TEXT_SCALE_ORDER[scaleIndex + delta]
     if (next) setTextScale(next)
+  }
+
+  const leadingIndex = LEADING_ORDER.indexOf(readingLeading)
+  function stepLeading(delta: number) {
+    const next = LEADING_ORDER[leadingIndex + delta]
+    if (next) setReadingLeading(next)
+  }
+
+  const measureIndex = MEASURE_ORDER.indexOf(readingMeasure)
+  function stepMeasure(delta: number) {
+    const next = MEASURE_ORDER[measureIndex + delta]
+    if (next) setReadingMeasure(next)
   }
 
   return (
@@ -329,6 +366,78 @@ export default function ReaderThemeControl() {
                   onClick={() => stepScale(1)}
                 >
                   A+
+                </button>
+              </div>
+            </div>
+
+            <div className="reader-theme-size-row">
+              <p
+                id={leadingLabelId}
+                className="text-label vw-small reader-theme-size-label text-gold"
+              >
+                LINE SPACING
+              </p>
+              <div
+                className="reader-theme-size-stepper"
+                role="group"
+                aria-labelledby={leadingLabelId}
+              >
+                <button
+                  type="button"
+                  className="reader-theme-size-step"
+                  aria-label="Tighten line spacing"
+                  disabled={leadingIndex <= 0}
+                  onClick={() => stepLeading(-1)}
+                >
+                  &minus;
+                </button>
+                <span className="reader-theme-size-value" aria-live="polite">
+                  {LEADING_LABELS[readingLeading]}
+                </span>
+                <button
+                  type="button"
+                  className="reader-theme-size-step"
+                  aria-label="Open line spacing"
+                  disabled={leadingIndex >= LEADING_ORDER.length - 1}
+                  onClick={() => stepLeading(1)}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div className="reader-theme-size-row">
+              <p
+                id={measureLabelId}
+                className="text-label vw-small reader-theme-size-label text-gold"
+              >
+                LINE WIDTH
+              </p>
+              <div
+                className="reader-theme-size-stepper"
+                role="group"
+                aria-labelledby={measureLabelId}
+              >
+                <button
+                  type="button"
+                  className="reader-theme-size-step"
+                  aria-label="Narrow the column"
+                  disabled={measureIndex <= 0}
+                  onClick={() => stepMeasure(-1)}
+                >
+                  &minus;
+                </button>
+                <span className="reader-theme-size-value" aria-live="polite">
+                  {MEASURE_LABELS[readingMeasure]}
+                </span>
+                <button
+                  type="button"
+                  className="reader-theme-size-step"
+                  aria-label="Widen the column"
+                  disabled={measureIndex >= MEASURE_ORDER.length - 1}
+                  onClick={() => stepMeasure(1)}
+                >
+                  +
                 </button>
               </div>
             </div>

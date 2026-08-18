@@ -14,6 +14,8 @@ import { useUIStore } from '@/stores/uiStore'
 export default function Providers({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const textScale = useSettingsStore((state) => state.textScale)
+  const readingLeading = useSettingsStore((state) => state.readingLeading)
+  const readingMeasure = useSettingsStore((state) => state.readingMeasure)
   const reduceMotion = useSettingsStore((state) => state.reduceMotion)
   const highContrast = useSettingsStore((state) => state.highContrast)
   const readingComfort = useSettingsStore((state) => state.readingComfort)
@@ -84,10 +86,21 @@ export default function Providers({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement
     root.dataset.textScale = textScale
+    // Backlog #15 — leading and measure ride the same attribute channel as
+    // text size, so the reader's choices all live in one place on <html>.
+    root.dataset.readingLeading = readingLeading
+    root.dataset.readingMeasure = readingMeasure
     root.dataset.highContrast = highContrast ? 'on' : 'off'
     root.dataset.readingComfort = readingComfort ? 'on' : 'off'
     root.classList.toggle('reduce-motion', reduceMotion)
-  }, [highContrast, readingComfort, reduceMotion, textScale])
+  }, [
+    highContrast,
+    readingComfort,
+    reduceMotion,
+    textScale,
+    readingLeading,
+    readingMeasure,
+  ])
 
   return (
     <AnimationProvider>

@@ -321,6 +321,33 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## LINE SPACING AND MEASURE JOIN THE READER SHEET — SA-084 / F-130 (2026-08-18)
+
+Backlog #15. Matter exposes Spacing and Width beside Font and Size, and for
+long-form scripture those two do more for legibility than typeface choice.
+Neither was reachable here.
+
+The sheet now carries **TEXT SIZE · LINE SPACING · LINE WIDTH** in one stepper
+rhythm: Tight/Standard/Open maps to `line-height` 1.5 / inherited / 1.95, and
+Narrow/Standard/Wide maps `--measure-reading` to 58ch / 68ch / 78ch. Verified
+from the sheet: measure 68ch → 78ch, line-height 25.5px → 33.15px.
+
+Both ride `<html>` data attributes — the channel `data-text-scale` already uses —
+so every reading preference lives in one place. **Leading is scoped to the
+reading flow**, because a global `line-height` would drag captions, labels and
+the masthead with it; **measure overrides `--measure-reading`**, the token the
+column and `PullQuote` already share, so the whole column moves coherently.
+
+**Backlog #16 was already done** — four named reading grounds (Ink, Parchment,
+Vellum, Night) have shipped since F-067. Recorded so it is not built twice.
+
+One test changed: all three steppers read "Standard" at their defaults, so
+`getByText('Standard')` is now ambiguous by design. Scoped with `within`.
+
+2,097 tests green. Service worker **v113**.
+
+---
+
 ## POLISH BACKLOG BATCH 3 — SA-083 / F-129 (2026-08-18)
 
 **The search empty state does something now (45, 47).** It opened onto a single
