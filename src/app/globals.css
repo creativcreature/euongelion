@@ -111,7 +111,13 @@ html {
   margin: 0.06em 0.14em -0.06em 0;
   color: var(--color-amber, #c8a56a);
   letter-spacing: -0.02em;
-  /* Optical alignment: lifts cap-bottom to match body x-height. */
+  /* Optical alignment, both axes (backlog #55).
+     translateY lifts cap-bottom to match body x-height — that was already here.
+     The missing half was HORIZONTAL: a serif cap carries a left side bearing,
+     so the glyph sat a couple of pixels inside the text column it is meant to
+     align with, and the paragraph edge read as ragged. The negative margin
+     pulls the ink flush with the measure rather than the glyph box. */
+  margin-left: -0.05em;
   transform: translateY(0.08em);
 }
 
@@ -1028,6 +1034,9 @@ h3 {
 
   /* Max widths */
   --max-w-reading: 680px;
+  /* Uppercase label tracking. One value, so `.text-label` cannot render two
+     ways depending on which shell wraps it (backlog #53). */
+  --track-label: 0.04em;
   --max-w-content: 800px;
   --max-w-display: 1200px;
   --max-w-full: 1440px;
@@ -2596,10 +2605,18 @@ html.reduce-motion *::after {
   }
 
   /* Label: small caps UI text */
+  /* Backlog #53. `.text-label` declared 0.12em while `.mock-home .text-label`
+     overrode it to 0.04em — and the newspaper shell wraps 25 of the ~32
+     surfaces that use the class, so the same label rendered two different ways
+     depending on which shell it happened to sit in, and the base value was
+     effectively dead outside admin and onboarding.
+
+     Tokenised to the shell's value, which is the design as it actually reads.
+     Onboarding and the admin pages tighten to match everything else. */
   .text-label {
     font-family: var(--font-family-ui);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: var(--track-label, 0.04em);
     font-weight: 600;
   }
 
@@ -4215,7 +4232,8 @@ html.reduce-motion *::after {
 
 .mock-home .text-label {
   font-family: var(--font-family-ui) !important;
-  letter-spacing: 0.04em;
+  /* Same token as the base rule now — kept only for the font-family override. */
+  letter-spacing: var(--track-label, 0.04em);
 }
 
 .mock-home .text-masthead {
@@ -14451,4 +14469,96 @@ html {
   .mobile-tab-label {
     letter-spacing: 0.04em;
   }
+}
+
+/* Hanging punctuation reaches the reader's pull quotes (backlog #56).
+
+   `.type-prose` already declares `hanging-punctuation: first last`, but the
+   reader's blockquotes are `.font-reading` and never inherited it, so their
+   opening quote pushed the first line in while every line below stayed flush —
+   the ragged edge the item is about. The oversized decorative quote mark that
+   PullQuote renders is a separate thing and already hangs correctly.
+
+   Support is still narrow (WebKit), which is why the `text-indent` fallback
+   below carries the same intent everywhere else. Both are harmless where
+   unsupported. */
+.devotional-flow-article blockquote,
+.font-reading blockquote,
+blockquote.font-reading {
+  hanging-punctuation: first;
+}
+
+/* ---------------------------------------------------------------------------
+   Search zero-state: recents and suggestions (backlog #45, #47)
+
+   The overlay opened onto a single hint line. Every search in the Mobbin scan
+   (Best Buy, IKEA, Matter, GitHub) gives the empty state something to act on,
+   because the second search for a thing is more common than the first and
+   retyping is the whole cost.
+
+   The chips reuse the existing group-label rhythm rather than introducing a
+   second visual language inside the same panel.
+--------------------------------------------------------------------------- */
+.global-search-zero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.global-search-zero-group {
+  padding-bottom: 0.5rem;
+}
+
+.global-search-zero-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-right: 0.95rem;
+}
+
+.global-search-zero-clear {
+  background: none;
+  border: 0;
+  padding: 0.5rem 0 0.3rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: inherit;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.global-search-zero-clear:hover,
+.global-search-zero-clear:focus-visible {
+  opacity: 1;
+}
+
+.global-search-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.15rem 0.95rem 0.35rem;
+}
+
+.global-search-chip {
+  /* >=44px on touch comes from the padding plus the shared hit-pad rule; the
+     visual box stays small so the panel does not turn into a wall of buttons. */
+  min-height: 32px;
+  padding: 0.34rem 0.7rem;
+  border: 1px solid var(--mock-line, var(--color-border));
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-family-serif);
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 140ms var(--motion-ease, ease),
+    background 140ms var(--motion-ease, ease);
+}
+
+.global-search-chip:hover,
+.global-search-chip:focus-visible {
+  border-color: var(--color-gold);
 }

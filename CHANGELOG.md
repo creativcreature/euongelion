@@ -321,6 +321,42 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## POLISH BACKLOG BATCH 3 — SA-083 / F-129 (2026-08-18)
+
+**The search empty state does something now (45, 47).** It opened onto a single
+hint line. Every search in the Mobbin scan gives the empty state something to act
+on, because the second search for a thing is more common than the first and
+retyping is the entire cost.
+
+Recents are recorded when the reader **opens a result**, not on every keystroke —
+that is the signal the query was worth keeping. Six maximum, with a CLEAR
+control, and **stored in this browser only**: the search box is the one place
+someone may type something they would not want on a server, and after this week's
+privacy work the copy has to stay true. Suggestions are **real series names**
+read from `SERIES_ORDER`, so the empty state teaches the actual corpus instead of
+inventing example prose.
+
+**Label tracking had two sources of truth (53).** `.text-label` declared
+`0.12em`; `.mock-home .text-label` overrode it to `0.04em`. The shell wraps 25 of
+the ~32 surfaces using the class, so the same label rendered two ways depending
+on which shell it sat in, and the base value was effectively dead outside admin
+and onboarding. One `--track-label` token now, at the value the design actually
+reads.
+
+**The drop cap had only half its optical alignment (55).** The vertical lift was
+already there; the horizontal was not. A serif cap carries a left side bearing,
+so the glyph sat inside the text column it is meant to align with. It is pulled
+flush with the measure now, not the glyph box.
+
+**Hanging punctuation reaches the reader's pull quotes (56).** `.type-prose`
+declared it; the reader's blockquotes are `.font-reading` and never inherited it.
+The decorative oversized quote mark is a separate thing and already hung
+correctly — this is the quote character in the text.
+
+2,097 tests green. Service worker **v112**.
+
+---
+
 ## THE INTRO STOPS FLASHING, AND THE PARALLAX GAINS WEIGHT — SA-082 / F-128 (2026-08-18)
 
 Founder: _"the color transition looks like a glitch on the words. It is white

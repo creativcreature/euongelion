@@ -35,6 +35,7 @@ import {
   type NoteSearchItem,
 } from '@/lib/global-search'
 import { isClippingsSupported, listClippings } from '@/lib/clippings'
+import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 
 const SERIES_LIMIT = 5
 const DEVOTIONAL_LIMIT = 8
@@ -83,6 +84,49 @@ function getFocusable(root: HTMLElement | null): HTMLElement[] {
   )
 }
 
+/**
+ * Recent searches (backlog #45).
+ *
+ * Every search in the Mobbin scan keeps them — Best Buy, IKEA, GitHub — because
+ * the second search for a thing is far more common than the first, and retyping
+ * is the cost. Stored in this browser only: the search box is the one place a
+ * reader may type something they would not want on a server, and the privacy
+ * copy elsewhere on the site now says exactly what is kept where.
+ */
+/** Real series names, so the empty state teaches the actual corpus rather than
+ *  inventing example prose. Three is enough to show the shape of a query. */
+const SUGGESTED = SERIES_ORDER.slice(0, 3)
+  .map((slug) => SERIES_DATA[slug]?.title)
+  .filter((t): t is string => Boolean(t))
+
+const RECENTS_KEY = 'euangelion:search-recents'
+const RECENTS_MAX = 6
+
+function readRecents(): string[] {
+  if (typeof window === 'undefined') return []
+  try {
+    const raw = window.localStorage.getItem(RECENTS_KEY)
+    const parsed: unknown = raw ? JSON.parse(raw) : []
+    if (!Array.isArray(parsed)) return []
+    return parsed
+      .filter((v): v is string => typeof v === 'string')
+      .slice(0, RECENTS_MAX)
+  } catch {
+    return []
+  }
+}
+
+function writeRecents(list: string[]) {
+  try {
+    window.localStorage.setItem(
+      RECENTS_KEY,
+      JSON.stringify(list.slice(0, RECENTS_MAX)),
+    )
+  } catch {
+    // Storage disabled or full. Recents are a convenience, never a requirement.
+  }
+}
+
 export default function GlobalSearchOverlay({
   open,
   initialQuery = '',
@@ -96,6 +140,7 @@ export default function GlobalSearchOverlay({
   const [notesStatus, setNotesStatus] = useState<NotesStatus>('loading')
   const [notesPartial, setNotesPartial] = useState(false)
   const [noteItems, setNoteItems] = useState<NoteSearchItem[]>([])
+  const [recents, setRecents] = useState<string[]>([])
 
   const panelRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -111,6 +156,7 @@ export default function GlobalSearchOverlay({
       setQuery(initialQuery)
       setNotesStatus('loading')
       setNotesPartial(false)
+      setRecents(readRecents())
     }
   }
 
@@ -131,6 +177,29 @@ export default function GlobalSearchOverlay({
       restoreFocusRef.current = null
     }
   }, [open])
+
+  /** Remember a query the reader actually used. */
+  const rememberQuery = useCallback((raw: string) => {
+    const value = raw.trim()
+    if (value.length < 2) return
+    const next = [value, ...readRecents().filter((r) => r !== value)].slice(
+      0,
+      RECENTS_MAX,
+    )
+    writeRecents(next)
+    setRecents(next)
+  }, [])
+
+  /** Opening a result is the signal that the query was worth keeping. */
+  const commitAndClose = useCallback(() => {
+    rememberQuery(query)
+    onClose()
+  }, [rememberQuery, query, onClose])
+
+  const clearRecents = useCallback(() => {
+    writeRecents([])
+    setRecents([])
+  }, [])
 
   // Escape closes from anywhere, not just from inside the panel.
   //
@@ -382,9 +451,70 @@ export default function GlobalSearchOverlay({
 
         <div className="global-search-body">
           {!hasQuery && (
-            <p className="global-search-hint">
-              Search series, devotionals, your notes.
-            </p>
+            <div className="global-search-zero">
+              <p className="global-search-hint">
+                Search series, devotionals, your notes.
+              </p>
+
+              {recents.length > 0 && (
+                <section
+                  className="global-search-zero-group"
+                  aria-label="Recent searches"
+                >
+                  <div className="global-search-zero-head">
+                    <h3 className="global-search-group-label text-label">
+                      RECENT
+                    </h3>
+                    <button
+                      type="button"
+                      className="global-search-zero-clear text-label"
+                      onClick={clearRecents}
+                    >
+                      CLEAR
+                    </button>
+                  </div>
+                  <div className="global-search-chips">
+                    {recents.map((term) => (
+                      <button
+                        key={term}
+                        type="button"
+                        className="global-search-chip"
+                        onClick={() => {
+                          setQuery(term)
+                          inputRef.current?.focus()
+                        }}
+                      >
+                        {term}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {SUGGESTED.length > 0 && (
+                <section
+                  className="global-search-zero-group"
+                  aria-label="Suggested searches"
+                >
+                  <h3 className="global-search-group-label text-label">TRY</h3>
+                  <div className="global-search-chips">
+                    {SUGGESTED.map((term) => (
+                      <button
+                        key={term}
+                        type="button"
+                        className="global-search-chip"
+                        onClick={() => {
+                          setQuery(term)
+                          inputRef.current?.focus()
+                        }}
+                      >
+                        {term}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
           )}
 
           {hasQuery && seriesShown.length > 0 && (
@@ -402,7 +532,7 @@ export default function GlobalSearchOverlay({
                       href={result.href}
                       className="global-search-result"
                       data-search-result
-                      onClick={onClose}
+                      onClick={commitAndClose}
                     >
                       <span className="global-search-result-title">
                         {result.title}
@@ -439,7 +569,7 @@ export default function GlobalSearchOverlay({
                       href={result.href}
                       className="global-search-result"
                       data-search-result
-                      onClick={onClose}
+                      onClick={commitAndClose}
                     >
                       <span className="global-search-result-title">
                         {result.title}
@@ -495,7 +625,7 @@ export default function GlobalSearchOverlay({
                         href={result.href}
                         className="global-search-result"
                         data-search-result
-                        onClick={onClose}
+                        onClick={commitAndClose}
                       >
                         <span className="global-search-result-title">
                           {result.text || result.label}

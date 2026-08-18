@@ -79,3 +79,8 @@ Each shipped item is recorded here with its commit as it lands.
 | 39  | Menu dialog role + focus trap | SA-081 (F-127) | batch 2 | shipped |
 | 51  | Tabular figures               | SA-081 (F-127) | batch 2 | shipped |
 | 52  | Balanced headlines            | SA-081 (F-127) | batch 2 | shipped |
+| 45  | Recent searches               | SA-083 (F-129) | batch 3 | shipped |
+| 47  | Suggested queries             | SA-083 (F-129) | batch 3 | shipped |
+| 53  | Uppercase label tracking      | SA-083 (F-129) | batch 3 | shipped |
+| 55  | Drop-cap optical alignment    | SA-083 (F-129) | batch 3 | shipped |
+| 56  | Hanging punctuation           | SA-083 (F-129) | batch 3 | shipped |
