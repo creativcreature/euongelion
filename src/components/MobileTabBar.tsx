@@ -46,6 +46,29 @@ const TABS: Array<{
     ),
   },
   {
+    href: '/daily-bread',
+    label: 'DAILY BREAD',
+    isActive: (p) =>
+      p.startsWith('/daily-bread') || p.startsWith('/todays-edition'),
+    icon: (
+      // The paper: a folded sheet with its masthead rule and two columns.
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3.5" y="5" width="17" height="14" rx="0.5" />
+        <path d="M6.5 8.5h11" />
+        <path d="M6.5 12h4.5M6.5 15.2h4.5" />
+        <path d="M13.5 12h4M13.5 15.2h4" />
+      </svg>
+    ),
+  },
+  {
     href: '/series',
     label: 'SERIES',
     isActive: (p) => p.startsWith('/series') || p.startsWith('/devotional'),

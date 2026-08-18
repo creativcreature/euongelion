@@ -9503,7 +9503,10 @@ html.reduce-motion
     bottom: 0;
     z-index: var(--z-fixed, 200);
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    /* Count-agnostic: the bar now carries six destinations and should not
+       need a magic number the next time one is added or removed. */
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
     background: var(--color-bg);
     border-top: 1px solid
       var(--mock-line, var(--color-border-strong, var(--color-border)));
@@ -14385,4 +14388,52 @@ html {
 .issue-title,
 .rack-masthead {
   font-weight: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+   Tabular figures where digits stack (backlog #51)
+
+   `.fp-desk-count` and `.stock-meta` already do this; these four are the
+   remaining places where a number repeats down a column — the series counter
+   and the per-card day counts — and proportional digits make those shimmer as
+   the value changes. Deliberately NOT applied globally: `.oldstyle-nums` is a
+   real editorial choice for numerals inside prose, and this must not override
+   it.
+--------------------------------------------------------------------------- */
+.rr-count,
+.cover-meta,
+.issue-meta,
+.preview-kicker {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+   Balanced headlines (backlog #52)
+
+   `text-wrap: balance` evens the last line of a short heading instead of
+   leaving one orphaned word. Scoped to headings and deks only — on running body
+   copy it is both wrong and expensive.
+--------------------------------------------------------------------------- */
+.cover-title,
+.issue-title,
+.preview-title,
+.fp-story-head,
+.fp-brief-head,
+.fp-desk-name,
+.rack-masthead,
+.stock-title,
+.preview-summary,
+.rack-standfirst {
+  text-wrap: balance;
+}
+
+/* Six tabs make the longest label the constraint (backlog #36). At 390px
+   "DAILY BREAD" measured 63px inside a 64px tab — it fits, but with 1px to
+   spare, which is not a margin. Tightening the tracking a little at narrow
+   widths buys ~5px on the longest label and is imperceptible on the short
+   ones. `white-space: nowrap` stays, so this is what keeps it off two lines. */
+@media (max-width: 420px) {
+  .mobile-tab-label {
+    letter-spacing: 0.04em;
+  }
 }

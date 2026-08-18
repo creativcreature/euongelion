@@ -321,6 +321,45 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## POLISH BACKLOG BATCH 2 — SA-081 / F-127 (2026-08-18)
+
+**The public edition has a tab (36).** `/daily-bread` is the only fully public
+reading surface and had **no tab at all**, while `TODAY` and `LIBRARY` are both
+auth-gated — a signed-out reader's primary navigation was 40% sign-in wall. It
+sits second, beside `TODAY`: one is your plan, the other the shared paper.
+
+The grid was `repeat(5, minmax(0, 1fr))`; it is now `grid-auto-flow: column`, so
+the bar adapts and the next change here does not need a magic number edited in
+two places. Measured at 390px: six tabs at 64px, every label on one line, 44px
+tall, zero overflow. The longest label first came in at **63px inside a 64px
+tab** — it fitted, with 1px to spare, which is not a margin — so the tracking
+tightens below 420px, buying ~5px where it is needed and nothing anywhere else.
+
+**The mobile menu is a dialog with real focus management (39).** It announced as
+an unnamed group; focus never entered it, so a VoiceOver user tapped the
+hamburger and heard nothing; and Tab escaped into the page behind. Now
+`role="dialog"`, focus moves to the first item on open, and Tab cycles within
+the panel. Deliberately **not** `aria-modal="true"` — the page behind stays
+scrollable and reachable since the scroll lock was reverted in F-118, and
+claiming inertness that does not exist would be a lie to assistive tech.
+
+**Type craft.** Tabular figures where digits stack — the series counter and the
+per-card day counts (51); `text-wrap: balance` on the ten title and standfirst
+classes (52). Neither is applied globally: `.oldstyle-nums` is a real editorial
+choice inside prose, and balance on running copy is both wrong and expensive.
+
+The tab-bar test asserted exactly five destinations, encoding the old contract;
+it now asserts the approved six.
+
+**Trap, third time tonight:** the tracking fix measured as _not applied_ until
+the service worker was cleared — it was serving stale CSS while the built
+stylesheet on disk was correct. Verify computed styles only after clearing
+caches, or read the served stylesheet directly.
+
+2,097 tests green. Service worker **v110**.
+
+---
+
 ## POLISH BACKLOG BATCH 1 — SA-080 / F-125 (2026-08-17)
 
 Founder reviewed the 67-item backlog and returned **52 approved, 1 declined, 14

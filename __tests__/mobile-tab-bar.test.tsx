@@ -18,7 +18,17 @@ vi.mock('next/navigation', () => ({
   usePathname: usePathnameMock,
 }))
 
-const TAB_LABELS = ['TODAY', 'SERIES', 'SOUL AUDIT', 'LIBRARY', 'YOU']
+// Six since SA-081 (backlog #36): DAILY BREAD is the only fully public reading
+// surface and previously had no tab, while TODAY and LIBRARY are both gated —
+// a signed-out reader's primary navigation was 40% sign-in wall.
+const TAB_LABELS = [
+  'TODAY',
+  'DAILY BREAD',
+  'SERIES',
+  'SOUL AUDIT',
+  'LIBRARY',
+  'YOU',
+]
 
 function activeLabels(): string[] {
   return screen
@@ -28,15 +38,16 @@ function activeLabels(): string[] {
 }
 
 describe('MobileTabBar', () => {
-  it('renders all five destinations with their routes', () => {
+  it('renders all six destinations with their routes', () => {
     usePathnameMock.mockReturnValue('/')
     render(<MobileTabBar />)
 
     const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(5)
+    expect(links).toHaveLength(6)
     expect(links.map((l) => l.textContent)).toEqual(TAB_LABELS)
     expect(links.map((l) => l.getAttribute('href'))).toEqual([
       '/today',
+      '/daily-bread',
       '/series',
       '/soul-audit',
       '/library',

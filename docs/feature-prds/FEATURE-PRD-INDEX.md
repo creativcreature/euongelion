@@ -129,3 +129,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-123 | Platform          | Chat billed at OpenAI rates while Claude served it   | 0/10     | wip    | [F-123.md](./F-123.md) |
 | F-124 | Platform          | Narration mastered to peak, not loudness             | 0/10     | wip    | [F-124.md](./F-124.md) |
 | F-125 | Platform          | Polish batch 1: contrast, headings, credit, dead CSS | 0/10     | wip    | [F-125.md](./F-125.md) |
+| F-127 | Platform          | Polish batch 2: tab bar, menu focus, type craft      | 0/10     | wip    | [F-127.md](./F-127.md) |

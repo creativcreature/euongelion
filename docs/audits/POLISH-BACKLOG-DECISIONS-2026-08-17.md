@@ -75,3 +75,7 @@ Each shipped item is recorded here with its commit as it lands.
 | 60  | Artwork credit + alt text     | SA-080 (F-125) | batch 1 | shipped |
 | 64  | Pricing track visible         | SA-080 (F-125) | batch 1 | shipped |
 | 65  | 44px homepage CTA             | SA-080 (F-125) | batch 1 | shipped |
+| 36  | Public edition in the tab bar | SA-081 (F-127) | batch 2 | shipped |
+| 39  | Menu dialog role + focus trap | SA-081 (F-127) | batch 2 | shipped |
+| 51  | Tabular figures               | SA-081 (F-127) | batch 2 | shipped |
+| 52  | Balanced headlines            | SA-081 (F-127) | batch 2 | shipped |

@@ -376,6 +376,53 @@ export default function EuangelionShellHeader({
     }
   }, [mobileMenuOpen, closeMobileMenu])
 
+  // Move focus into the panel on open, and keep Tab within it.
+  //
+  // Without this a VoiceOver user taps the hamburger and hears nothing: focus
+  // stays on the toggle and the panel is never entered. The account menu in
+  // this same file already does all three; this brings the mobile menu level.
+  // Focus RETURN on close is handled by the existing effect that focuses
+  // `mobileToggleRef`.
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const panel = mobilePanelRef.current
+    if (!panel) return
+
+    const selector =
+      'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    const focusables = () =>
+      Array.from(panel.querySelectorAll<HTMLElement>(selector)).filter(
+        (el) => el.offsetParent !== null,
+      )
+
+    const frame = window.requestAnimationFrame(() => {
+      focusables()[0]?.focus()
+    })
+
+    function trapTab(event: KeyboardEvent) {
+      if (event.key !== 'Tab') return
+      const items = focusables()
+      if (items.length === 0) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      const active = document.activeElement
+
+      if (event.shiftKey && (active === first || !panel!.contains(active))) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', trapTab)
+    return () => {
+      window.cancelAnimationFrame(frame)
+      document.removeEventListener('keydown', trapTab)
+    }
+  }, [mobileMenuOpen])
+
   // Close the menu when the viewport grows past the mobile shell.
   //
   // Without this, opening the menu at 834px (iPad portrait — where per the
@@ -917,7 +964,13 @@ export default function EuangelionShellHeader({
             id="shell-mobile-secondary-nav"
             ref={mobilePanelRef}
             className="mock-mobile-secondary-nav"
-            role="group"
+            /* `dialog`, not `group`: with Escape, an outside-tap close and the
+               focus trap below, this behaves as a dialog for keyboard and
+               screen-reader users. Deliberately NOT `aria-modal` — the page
+               behind stays scrollable and reachable (see the scroll-lock note
+               above), and claiming inertness that does not exist would be a
+               lie to assistive tech. */
+            role="dialog"
             aria-label="Navigation menu"
           >
             <ActivePlanBadge variant="header" className="mock-nav-item" />
