@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useUIStore } from '@/stores/uiStore'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 
 /**
  * FirstRunIntro — the anonymous first-run introduction (F-065;
@@ -195,15 +196,10 @@ export default function FirstRunIntro() {
     setOpen(false)
   }, [markDone])
 
-  // Scroll lock while the sheet is open; restore on close/unmount.
-  useEffect(() => {
-    if (!open) return
-    const previous = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = previous
-    }
-  }, [open])
+  // Scroll lock while the sheet is open. Ref-counted centrally (backlog #59)
+  // so a sheet closing out of order cannot unlock the page for whatever else
+  // is still open behind it.
+  useScrollLock(open)
 
   // Focus management: move focus into the dialog on open; trap Tab;
   // Escape dismisses (same pattern as ReaderThemeControl).

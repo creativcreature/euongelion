@@ -35,6 +35,7 @@ import {
   type NoteSearchItem,
 } from '@/lib/global-search'
 import { isClippingsSupported, listClippings } from '@/lib/clippings'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 import { SERIES_DATA, SERIES_ORDER } from '@/data/series'
 
 const SERIES_LIMIT = 5
@@ -229,26 +230,15 @@ export default function GlobalSearchOverlay({
     return () => document.removeEventListener('keydown', closeOnEscape)
   }, [open, onClose])
 
-  // Scroll lock while open. Providers' defensive unlock re-runs when the
-  // tab becomes visible again, so we re-assert on the same signals.
-  useEffect(() => {
-    if (!open) return
-    const previousOverflow = document.body.style.overflow
-    const lock = () => {
-      document.body.style.overflow = 'hidden'
-    }
-    lock()
-    const relock = () => {
-      if (document.visibilityState === 'visible') lock()
-    }
-    document.addEventListener('visibilitychange', relock)
-    window.addEventListener('pageshow', relock)
-    return () => {
-      document.removeEventListener('visibilitychange', relock)
-      window.removeEventListener('pageshow', relock)
-      document.body.style.overflow = previousOverflow
-    }
-  }, [open])
+  // Scroll lock while open, ref-counted centrally (backlog #59).
+  //
+  // This was the RECEIVING end of the leak: the mobile search button sits
+  // outside the menu panel, so tapping it closed the menu and opened this in
+  // the same tick — and the menu's restore then unlocked the page behind an
+  // open search. Depth-counting makes that impossible, and it also retires the
+  // visibilitychange/pageshow re-assert this used to need, which existed to
+  // paper over exactly that class of stomp.
+  useScrollLock(open)
 
   // Fetch the reader's marginalia fresh on each open (the loading reset
   // happens in the render-time adjustment above). Failures are surfaced

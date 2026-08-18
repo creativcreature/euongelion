@@ -321,6 +321,41 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## ONE OWNER FOR THE PAGE SCROLL LOCK — SA-088 / F-134 (2026-08-18)
+
+**Backlog #59.** Seven components each did their own save/restore of
+`body.style.overflow`, and because every one captured "the previous value" at its
+_own_ open, nested opens leaked:
+
+```
+menu opens        → saves ''        → sets hidden
+search opens      → saves 'hidden'  → sets hidden
+menu closes FIRST → restores ''     → the page scrolls behind open search
+```
+
+Two taps on mobile, because the search button sits outside the menu panel. An
+eighth site made it worse: `page.tsx` cleared `overflow` **unconditionally on
+mount**, so navigating home while an overlay legitimately held the lock unlocked
+the page underneath it.
+
+Depth, not cleverness: the first lock captures the real previous value, nested
+locks increment, the last release restores. `ArtworkLightbox` was the worst of
+the seven — it reset to `''` _unconditionally_, including on close. The search
+overlay also loses its `visibilitychange`/`pageshow` re-assert, which existed to
+paper over exactly this stomp.
+
+**Deliberately still `body { overflow: hidden }`** — this is about ownership, not
+mechanism. The limitation is recorded in the source: the scroller is `<html>`, so
+the page can still move on some platforms; locking `<html>` _does_ hold and
+breaks `position: sticky` on the topbar (53px → −1346px, F-118).
+
+Verified at 390px on the real two-tap sequence, plus four unit tests including
+"restores what was there before the first lock, not an assumed default".
+
+2,101 tests green. Service worker **v117**.
+
+---
+
 ## SEARCH FILTERS BY KIND, HIGHLIGHTS GROUP BY SERIES — SA-087 / F-133 (2026-08-18)
 
 **Filter by kind (46).** Series, devotionals and the reader's own marginalia all

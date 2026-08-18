@@ -105,3 +105,4 @@ Each shipped item is recorded here with its commit as it lands.
 | 67  | Restore purchases               | —              | —       | already shipped (billing/purchases.ts)           |
 | 23  | Highlights grouped by series    | SA-087 (F-133) | batch 5 | shipped                                          |
 | 46  | Filter search by kind           | SA-087 (F-133) | batch 5 | shipped                                          |
+| 59  | Consolidate scroll-lock owners  | SA-088 (F-134) | batch 6 | shipped                                          |

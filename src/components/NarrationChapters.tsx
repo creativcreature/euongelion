@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { formatTime, type NarrationChapter } from '@/lib/audio/tracks'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 
 export interface NarrationChaptersProps {
   title: string
@@ -38,10 +39,13 @@ export default function NarrationChapters({
   const restoreFocusTo = useRef<Element | null>(null)
 
   // Trap focus, close on Escape, and lock the page behind the sheet.
+  // Ref-counted centrally (backlog #59): this sheet is mounted only while open,
+  // so it holds the lock for its lifetime and cannot unlock the page for an
+  // overlay still open behind it.
+  useScrollLock(true)
+
   useEffect(() => {
     restoreFocusTo.current = document.activeElement
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -75,7 +79,6 @@ export default function NarrationChapters({
 
     return () => {
       document.removeEventListener('keydown', onKeyDown, true)
-      document.body.style.overflow = previousOverflow
       ;(restoreFocusTo.current as HTMLElement | null)?.focus?.()
     }
   }, [onClose])

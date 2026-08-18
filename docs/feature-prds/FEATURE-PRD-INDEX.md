@@ -136,3 +136,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-131 | Reading surfaces  | Transport shows time left; 5 items already built     | 0/10     | wip    | [F-131.md](./F-131.md) |
 | F-132 | Platform          | Polish batch 4: hover states, read time, stages      | 0/10     | wip    | [F-132.md](./F-132.md) |
 | F-133 | Platform          | Search filters by kind; highlights grouped           | 0/10     | wip    | [F-133.md](./F-133.md) |
+| F-134 | Platform          | Ref-counted scroll lock; nested opens no longer leak | 0/10     | wip    | [F-134.md](./F-134.md) |

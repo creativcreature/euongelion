@@ -16,6 +16,7 @@ import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
 import { SERIES_COUNT } from '@/data/series'
 import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
+import { isScrollLocked } from '@/lib/use-scroll-lock'
 
 /**
  * Homepage featured SERIES content. Founder direction 2026-05-13: the
@@ -226,8 +227,14 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    // Defensive reset in case mobile menu state from another route left scroll locked.
-    document.body.style.overflow = ''
+    // Defensive reset in case an earlier route left the page locked.
+    //
+    // Guarded on the shared lock depth (backlog #59): this used to clear
+    // overflow unconditionally on mount, so navigating home while any overlay
+    // legitimately held the lock silently unlocked the page underneath it. It
+    // now only clears a lock that nothing owns — which is the stale state it
+    // was written to catch, and nothing else.
+    if (!isScrollLocked()) document.body.style.overflow = ''
   }, [])
 
   useEffect(() => {

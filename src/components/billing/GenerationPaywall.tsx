@@ -40,6 +40,7 @@ import {
 } from '@/lib/billing/paywall-state'
 import { usePendingGenerationStore } from '@/stores/pendingGenerationStore'
 import { typographer } from '@/lib/typographer'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 import CreditPackCard from './CreditPackCard'
 import PlanOfferStack from './PlanOfferStack'
 import RedeemCodeSheet from './RedeemCodeSheet'
@@ -165,14 +166,8 @@ export default function GenerationPaywall({
     }
   }, [])
 
-  // Lock the page behind the sheet; restore on close.
-  useEffect(() => {
-    const previous = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = previous
-    }
-  }, [])
+  // Lock the page behind the sheet. Ref-counted centrally (backlog #59).
+  useScrollLock(true)
 
   // Focus the dialog on mount so screen readers announce it and
   // keyboard users start inside the trap.

@@ -5,6 +5,7 @@ import { artworkAlt } from '@/lib/artwork-alt'
 import Image from 'next/image'
 import ArtworkAttribution from '@/components/ArtworkAttribution'
 import type { ArtworkEntry } from '@/data/artwork-manifest'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 
 interface ArtworkLightboxProps {
   artwork: ArtworkEntry | null
@@ -57,16 +58,15 @@ export default function ArtworkLightbox({
     [isOpen, onClose, onNext, onPrev],
   )
 
-  // Body scroll lock + keyboard listener
+  // Scroll lock is ref-counted centrally (backlog #59). This used to reset
+  // overflow to '' unconditionally, so closing a lightbox that had been opened
+  // over another overlay unlocked the whole page for that overlay too.
+  useScrollLock(isOpen)
+
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-      document.addEventListener('keydown', handleKeyDown)
-    } else {
-      document.body.style.overflow = ''
-    }
+    if (!isOpen) return
+    document.addEventListener('keydown', handleKeyDown)
     return () => {
-      document.body.style.overflow = ''
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [isOpen, handleKeyDown])

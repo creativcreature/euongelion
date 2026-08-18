@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { useScrollLock } from '@/lib/use-scroll-lock'
 
 export interface TransportSheetProps {
   /** Small caps label above the title. */
@@ -33,10 +34,13 @@ export default function TransportSheet({
   const panelRef = useRef<HTMLDivElement | null>(null)
   const restoreFocusTo = useRef<Element | null>(null)
 
+  // Ref-counted centrally (backlog #59): this sheet is mounted only while open,
+  // so it holds the lock for its lifetime and cannot unlock the page for an
+  // overlay still open behind it.
+  useScrollLock(true)
+
   useEffect(() => {
     restoreFocusTo.current = document.activeElement
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -69,7 +73,6 @@ export default function TransportSheet({
 
     return () => {
       document.removeEventListener('keydown', onKeyDown, true)
-      document.body.style.overflow = previousOverflow
       ;(restoreFocusTo.current as HTMLElement | null)?.focus?.()
     }
   }, [onClose])
