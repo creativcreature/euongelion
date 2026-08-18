@@ -14646,3 +14646,64 @@ html[data-reading-measure='wide'] .vw-body-lg {
   opacity: 0.62;
   font-variant-numeric: tabular-nums;
 }
+
+/* Search filters by kind (backlog #46). Sits between the input and the first
+   group, so the reader sees what the corpus holds before scrolling it. Counts
+   are tabular so the row does not shimmer as the query changes. */
+.global-search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem 0.45rem;
+  border-bottom: var(--mock-stroke, 1px) solid
+    var(--mock-line, var(--color-border));
+}
+
+.global-search-filter {
+  font-family: var(--font-family-ui);
+  font-size: 0.6rem;
+  letter-spacing: var(--track-label, 0.04em);
+  text-transform: uppercase;
+  min-height: 30px;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.global-search-filter:hover,
+.global-search-filter:focus-visible {
+  opacity: 1;
+}
+
+.global-search-filter.is-current {
+  opacity: 1;
+  border-color: var(--mock-line, var(--color-border));
+}
+
+.global-search-filter-count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+/* Library groups (backlog #23). A quiet series heading over each cluster of
+   marginalia, so months of highlights stay findable. Sticky so the group a
+   reader is scrolling through stays named. */
+.library-group + .library-group {
+  margin-top: 1.1rem;
+}
+
+.library-group-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 0 0.4rem;
+  padding: 0.35rem 0;
+  background: var(--color-bg);
+}
+
+.library-group-count {
+  font-variant-numeric: tabular-nums;
+}

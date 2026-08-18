@@ -321,6 +321,31 @@ been made. The split header (static thumbnail, animated on page) needs a
 
 ---
 
+## SEARCH FILTERS BY KIND, HIGHLIGHTS GROUP BY SERIES — SA-087 / F-133 (2026-08-18)
+
+**Filter by kind (46).** Series, devotionals and the reader's own marginalia all
+arrived in one stream. `ALL · SERIES · DEVOTIONALS · YOUR NOTES`, each with its
+live count, between the input and the first group — so the reader sees what the
+corpus holds before scrolling it. Verified: `ALL 10 · SERIES 2 · DEVOTIONALS 8 ·
+YOUR NOTES 0`, and choosing SERIES collapsed the results to that group. `all` is
+the default and resets on open: an affordance, never a gate.
+
+**Highlights grouped by series (23).** A flat list stops being usable at roughly
+the point it starts being valuable. Order is never rewritten — groups and rows
+keep the incoming newest-first order — and nothing is dropped: unresolvable
+slugs land in "Other readings" rather than vanishing.
+
+**A build break caught in verification.** The first version imported
+`findSeriesForSlug` from `@/lib/today-devotional`, which also owns the Workers
+content fetch and drags `node:fs`/`node:path` with it — into a _client_
+component. `Module build failed: UnhandledSchemeError`. **`type-check` and `lint`
+both passed; only the real build caught it.** Replaced with a local resolver over
+`SERIES_DATA`. Second time this week a green gate has sat over a red build.
+
+2,097 tests green. Service worker **v116**.
+
+---
+
 ## POLISH BACKLOG BATCH 4 — SA-086 / F-132 (2026-08-18)
 
 **Six buttons had an invisible hover state (06).** `hover:bg-gold

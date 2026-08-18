@@ -141,6 +141,13 @@ export default function GlobalSearchOverlay({
   const [notesPartial, setNotesPartial] = useState(false)
   const [noteItems, setNoteItems] = useState<NoteSearchItem[]>([])
   const [recents, setRecents] = useState<string[]>([])
+  /* Backlog #46 — the corpus here is more varied than the surface admitted:
+     series, devotionals and the reader's own marginalia all arrive in one
+     stream. Matter groups by content type; this filters to one at a time.
+     'all' is the default so the filter is an affordance, never a gate. */
+  const [kind, setKind] = useState<'all' | 'series' | 'devotionals' | 'notes'>(
+    'all',
+  )
 
   const panelRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -157,6 +164,7 @@ export default function GlobalSearchOverlay({
       setNotesStatus('loading')
       setNotesPartial(false)
       setRecents(readRecents())
+      setKind('all')
     }
   }
 
@@ -517,81 +525,122 @@ export default function GlobalSearchOverlay({
             </div>
           )}
 
-          {hasQuery && seriesShown.length > 0 && (
-            <section
-              className="global-search-group"
-              aria-label={`Series — ${seriesResults.length} result${seriesResults.length === 1 ? '' : 's'}`}
+          {hasQuery && (
+            <div
+              className="global-search-filters"
+              role="group"
+              aria-label="Filter results by kind"
             >
-              <h3 className="global-search-group-label text-label">
-                SERIES <span aria-hidden="true">·</span> {seriesResults.length}
-              </h3>
-              <ul className="global-search-list">
-                {seriesShown.map((result) => (
-                  <li key={result.slug}>
-                    <Link
-                      href={result.href}
-                      className="global-search-result"
-                      data-search-result
-                      onClick={commitAndClose}
-                    >
-                      <span className="global-search-result-title">
-                        {result.title}
-                      </span>
-                      <span className="global-search-result-meta">
-                        {result.dayCount} days · {result.question}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              {seriesResults.length > seriesShown.length && (
-                <p className="global-search-more">
-                  + {seriesResults.length - seriesShown.length} more — keep
-                  typing to narrow.
-                </p>
-              )}
-            </section>
+              {(
+                [
+                  [
+                    'all',
+                    'ALL',
+                    seriesResults.length +
+                      devotionalResults.length +
+                      noteResults.length,
+                  ],
+                  ['series', 'SERIES', seriesResults.length],
+                  ['devotionals', 'DEVOTIONALS', devotionalResults.length],
+                  ['notes', 'YOUR NOTES', noteResults.length],
+                ] as const
+              ).map(([value, label, count]) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`global-search-filter${kind === value ? ' is-current' : ''}`}
+                  aria-pressed={kind === value}
+                  onClick={() => setKind(value)}
+                >
+                  {label}
+                  <span className="global-search-filter-count"> {count}</span>
+                </button>
+              ))}
+            </div>
           )}
 
-          {hasQuery && devotionalsShown.length > 0 && (
-            <section
-              className="global-search-group"
-              aria-label={`Devotionals — ${devotionalResults.length} result${devotionalResults.length === 1 ? '' : 's'}`}
-            >
-              <h3 className="global-search-group-label text-label">
-                DEVOTIONALS <span aria-hidden="true">·</span>{' '}
-                {devotionalResults.length}
-              </h3>
-              <ul className="global-search-list">
-                {devotionalsShown.map((result) => (
-                  <li key={result.slug}>
-                    <Link
-                      href={result.href}
-                      className="global-search-result"
-                      data-search-result
-                      onClick={commitAndClose}
-                    >
-                      <span className="global-search-result-title">
-                        {result.title}
-                      </span>
-                      <span className="global-search-result-meta">
-                        {result.seriesTitle ? `${result.seriesTitle} — ` : ''}
-                        {result.teaser ?? ''}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              {devotionalResults.length > devotionalsShown.length && (
-                <p className="global-search-more">
-                  + {devotionalResults.length - devotionalsShown.length} more —
-                  keep typing to narrow.
-                </p>
-              )}
-            </section>
-          )}
+          {hasQuery &&
+            kind !== 'devotionals' &&
+            kind !== 'notes' &&
+            seriesShown.length > 0 && (
+              <section
+                className="global-search-group"
+                aria-label={`Series — ${seriesResults.length} result${seriesResults.length === 1 ? '' : 's'}`}
+              >
+                <h3 className="global-search-group-label text-label">
+                  SERIES <span aria-hidden="true">·</span>{' '}
+                  {seriesResults.length}
+                </h3>
+                <ul className="global-search-list">
+                  {seriesShown.map((result) => (
+                    <li key={result.slug}>
+                      <Link
+                        href={result.href}
+                        className="global-search-result"
+                        data-search-result
+                        onClick={commitAndClose}
+                      >
+                        <span className="global-search-result-title">
+                          {result.title}
+                        </span>
+                        <span className="global-search-result-meta">
+                          {result.dayCount} days · {result.question}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {seriesResults.length > seriesShown.length && (
+                  <p className="global-search-more">
+                    + {seriesResults.length - seriesShown.length} more — keep
+                    typing to narrow.
+                  </p>
+                )}
+              </section>
+            )}
 
-          {notesGroupVisible && (
+          {hasQuery &&
+            kind !== 'series' &&
+            kind !== 'notes' &&
+            devotionalsShown.length > 0 && (
+              <section
+                className="global-search-group"
+                aria-label={`Devotionals — ${devotionalResults.length} result${devotionalResults.length === 1 ? '' : 's'}`}
+              >
+                <h3 className="global-search-group-label text-label">
+                  DEVOTIONALS <span aria-hidden="true">·</span>{' '}
+                  {devotionalResults.length}
+                </h3>
+                <ul className="global-search-list">
+                  {devotionalsShown.map((result) => (
+                    <li key={result.slug}>
+                      <Link
+                        href={result.href}
+                        className="global-search-result"
+                        data-search-result
+                        onClick={commitAndClose}
+                      >
+                        <span className="global-search-result-title">
+                          {result.title}
+                        </span>
+                        <span className="global-search-result-meta">
+                          {result.seriesTitle ? `${result.seriesTitle} — ` : ''}
+                          {result.teaser ?? ''}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {devotionalResults.length > devotionalsShown.length && (
+                  <p className="global-search-more">
+                    + {devotionalResults.length - devotionalsShown.length} more
+                    — keep typing to narrow.
+                  </p>
+                )}
+              </section>
+            )}
+
+          {kind !== 'series' && kind !== 'devotionals' && notesGroupVisible && (
             <section
               className="global-search-group"
               aria-label={`Your notes — ${noteResults.length} result${noteResults.length === 1 ? '' : 's'}`}

@@ -207,6 +207,66 @@ export function resolveDevotionalHref(devotionalSlug: string): string | null {
   return SLUG_META.has(devotionalSlug) ? `/devotional/${devotionalSlug}` : null
 }
 
+/**
+ * Which series does a devotional slug belong to?
+ *
+ * Deliberately NOT `findSeriesForSlug` from `@/lib/today-devotional`: that
+ * module also owns the Workers content fetch and pulls `node:fs` / `node:path`
+ * with it, which fails the client build outright ("Reading from node:fs is not
+ * handled by plugins"). This rail is a client component, so it reads the same
+ * `SERIES_DATA` it already imports and does the lookup itself.
+ */
+function seriesForDevotionalSlug(
+  devotionalSlug: string,
+): { slug: string; title: string } | null {
+  for (const seriesSlug of ALL_SERIES_ORDER) {
+    const series = SERIES_DATA[seriesSlug]
+    if (!series) continue
+    if (series.days.some((d) => d.slug === devotionalSlug)) {
+      return { slug: seriesSlug, title: series.title }
+    }
+  }
+  return null
+}
+
+/**
+ * Group annotation rows by the series they came from (backlog #23).
+ *
+ * [Blinkist](https://mobbin.com/screens/1eb6873a-771b-455d-9e37-7cd1f773cdf8)
+ * lists "Atomic Habits — 1 highlight" rather than a flat stream, and the reason
+ * shows up over time: a flat list stops being usable at roughly the point it
+ * starts being valuable. Months of marginalia is exactly when a reader wants to
+ * find the thing they marked in one particular series.
+ *
+ * Order is preserved from the incoming rows — newest first, as the API returns
+ * them — so grouping never reorders a reader's own history. Anything whose
+ * series cannot be resolved falls into a final "Other readings" group rather
+ * than being dropped.
+ */
+function groupRowsBySeries<T extends { devotional_slug: string }>(
+  rows: T[],
+): { key: string; title: string; rows: T[] }[] {
+  const order: string[] = []
+  const buckets = new Map<string, { title: string; rows: T[] }>()
+
+  for (const row of rows) {
+    const found = seriesForDevotionalSlug(row.devotional_slug)
+    const key = found?.slug ?? '__other'
+    const title = found?.title ?? 'Other readings'
+    if (!buckets.has(key)) {
+      buckets.set(key, { title, rows: [] })
+      order.push(key)
+    }
+    buckets.get(key)!.rows.push(row)
+  }
+
+  return order.map((key) => ({
+    key,
+    title: buckets.get(key)!.title,
+    rows: buckets.get(key)!.rows,
+  }))
+}
+
 function resolveDevotionalLabel(devotionalSlug: string): string {
   if (isSeriesSlug(devotionalSlug)) {
     return SERIES_DATA[devotionalSlug]?.title ?? devotionalSlug
@@ -1175,61 +1235,80 @@ export default function DevotionalLibraryRail({
                   </div>
                 ) : (
                   <div className="space-y-2">
-                    {highlights.map((row) => {
-                      const color = resolveHighlightColor(row.style)
-                      return (
-                        <div
-                          key={row.id}
-                          className="border px-3 py-2"
-                          style={{ borderColor: 'var(--color-border)' }}
-                        >
-                          <div className="mb-2 flex items-center justify-between gap-3">
-                            <LibrarySourceLink
-                              slug={row.devotional_slug}
-                              className="vw-small link-highlight text-muted"
-                            />
-                            <button
-                              type="button"
-                              onClick={() => void archiveAnnotationRow(row)}
-                              className="text-label vw-small link-highlight"
-                              aria-label={`Archive highlight from ${resolveDevotionalLabel(
-                                row.devotional_slug,
-                              )}`}
-                            >
-                              Archive
-                            </button>
-                          </div>
-                          <p
-                            className={`text-serif-italic vw-small text-secondary reader-highlight-snippet reader-highlight-snippet--${color}`}
-                          >
-                            {row.anchor_text || row.body}
-                          </p>
-                          <div className="mt-2 flex items-center gap-2">
-                            <span className="text-label vw-small text-muted">
-                              Color:
-                            </span>
-                            <div className="reader-highlight-color-row">
-                              {HIGHLIGHT_COLORS.map((option) => (
-                                <button
-                                  key={`${row.id}-${option}`}
-                                  type="button"
-                                  className={`reader-highlight-swatch reader-highlight-swatch--${option} ${
-                                    color === option ? 'is-active' : ''
-                                  }`}
-                                  onClick={() =>
-                                    void updateHighlightColor(row, option)
-                                  }
-                                  aria-label={`Set highlight color to ${option}`}
-                                  disabled={updatingHighlightIds.includes(
-                                    row.id,
-                                  )}
-                                />
-                              ))}
-                            </div>
-                          </div>
+                    {/* Backlog #23 — grouped by series with a count, rather
+                        than one flat stream. Each group keeps the incoming
+                        newest-first order, so grouping never reorders a
+                        reader's own history. */}
+                    {groupRowsBySeries(highlights).map((group) => (
+                      <section key={group.key} className="library-group">
+                        <h3 className="library-group-head text-label vw-small text-muted">
+                          {group.title}
+                          <span aria-hidden="true"> · </span>
+                          <span className="library-group-count">
+                            {group.rows.length}
+                          </span>
+                        </h3>
+                        <div className="space-y-2">
+                          {group.rows.map((row) => {
+                            const color = resolveHighlightColor(row.style)
+                            return (
+                              <div
+                                key={row.id}
+                                className="border px-3 py-2"
+                                style={{ borderColor: 'var(--color-border)' }}
+                              >
+                                <div className="mb-2 flex items-center justify-between gap-3">
+                                  <LibrarySourceLink
+                                    slug={row.devotional_slug}
+                                    className="vw-small link-highlight text-muted"
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      void archiveAnnotationRow(row)
+                                    }
+                                    className="text-label vw-small link-highlight"
+                                    aria-label={`Archive highlight from ${resolveDevotionalLabel(
+                                      row.devotional_slug,
+                                    )}`}
+                                  >
+                                    Archive
+                                  </button>
+                                </div>
+                                <p
+                                  className={`text-serif-italic vw-small text-secondary reader-highlight-snippet reader-highlight-snippet--${color}`}
+                                >
+                                  {row.anchor_text || row.body}
+                                </p>
+                                <div className="mt-2 flex items-center gap-2">
+                                  <span className="text-label vw-small text-muted">
+                                    Color:
+                                  </span>
+                                  <div className="reader-highlight-color-row">
+                                    {HIGHLIGHT_COLORS.map((option) => (
+                                      <button
+                                        key={`${row.id}-${option}`}
+                                        type="button"
+                                        className={`reader-highlight-swatch reader-highlight-swatch--${option} ${
+                                          color === option ? 'is-active' : ''
+                                        }`}
+                                        onClick={() =>
+                                          void updateHighlightColor(row, option)
+                                        }
+                                        aria-label={`Set highlight color to ${option}`}
+                                        disabled={updatingHighlightIds.includes(
+                                          row.id,
+                                        )}
+                                      />
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          })}
                         </div>
-                      )
-                    })}
+                      </section>
+                    ))}
                   </div>
                 )}
               </div>

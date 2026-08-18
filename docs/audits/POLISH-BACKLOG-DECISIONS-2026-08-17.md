@@ -103,3 +103,5 @@ Each shipped item is recorded here with its commit as it lands.
 | 48  | Empty states                    | —              | —       | already shipped (rail empty states)              |
 | 49  | Library tab counts              | —              | —       | already shipped (active-tab count)               |
 | 67  | Restore purchases               | —              | —       | already shipped (billing/purchases.ts)           |
+| 23  | Highlights grouped by series    | SA-087 (F-133) | batch 5 | shipped                                          |
+| 46  | Filter search by kind           | SA-087 (F-133) | batch 5 | shipped                                          |
