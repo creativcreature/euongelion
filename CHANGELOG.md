@@ -51,6 +51,11 @@ mid-phrase" report came from one 71-second slice on which Whisper hallucinated a
 repeated tail — the second false defect report of this kind here. The real defect
 found is systemic: **headings are spoken twice across ~464 devotionals.**
 
+**Service worker v122 -> v123.** Production was already serving v122, so
+shipping the continuity fix under the same cache name would have left every
+returning reader on the cached shell with the old player — still losing their
+position on each in-app navigation. Checked before assuming.
+
 Still open: R2 (Stage 1b — the only fix for seeking, and for 2.9 GiB of audio
 living on one machine), and the disclosure ruling on synthesised narration.
 
