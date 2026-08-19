@@ -10,6 +10,8 @@ import {
 } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import ListenButton from '@/components/audio/ListenButton'
+import { buildSeriesQueue } from '@/lib/audio/queue-builder'
 import { useSearchParams } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -73,6 +75,9 @@ export default function SeriesPageClient({
   artwork?: SeriesArtworkItem[]
 }) {
   const { isRead, getSeriesProgress, canRead } = useProgress()
+  // Only days with a delivered track; a queue that hits a silent item reads as
+  // a broken player rather than a partial catalogue.
+  const seriesQueue = useMemo(() => buildSeriesQueue(slug), [slug])
   const seriesProgress = getSeriesProgress(slug)
   const dayCount = series.days.length
   // Prefer the new generated hero from series.heroImage (populated by Stage 2
@@ -258,6 +263,18 @@ export default function SeriesPageClient({
             </div>
 
             <div className="mock-series-meta-actions">
+              {/* SA-096: listening is a peer of reading on a series page, not
+                  something you discover inside one day. The runtime is stated
+                  because what a listener needs before committing is how long
+                  this is. Renders nothing when the series has no delivered
+                  audio, rather than offering a button that plays silence. */}
+              <ListenButton
+                items={seriesQueue}
+                source="series"
+                label={series.title}
+              >
+                Listen
+              </ListenButton>
               <Link href={parentHref} className="mock-btn text-label">
                 {browseLabel}
               </Link>

@@ -6,6 +6,8 @@ import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import MobileTabBar from '@/components/MobileTabBar'
 import InstallPrompt from '@/components/InstallPrompt'
 import Providers from './providers'
+import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
+import GlobalAudioBar from '@/components/audio/GlobalAudioBar'
 import './globals.css'
 
 /**
@@ -110,6 +112,14 @@ export default function RootLayout({
         </a>
         <Providers>
           {children}
+          {/* SA-096: the one audio element on the site, and the transport that
+              follows a listener across routes. Both live ABOVE the route so
+              playback survives navigation — a media element rendered inside a
+              page is destroyed when Next swaps routes, and playback dies with
+              it. The host renders nothing; the bar retires on the reading it
+              is playing, where the reader's own panel is the better surface. */}
+          <GlobalAudioHost />
+          <GlobalAudioBar />
           <MobileTabBar />
           <InstallPrompt />
         </Providers>

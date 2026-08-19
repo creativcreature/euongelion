@@ -5,6 +5,52 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio survives the route, and a queue plays on (SA-097, F-143)
+
+**2026-08-19**
+
+Stages 2–5 of the approved plan, in one pass.
+
+**The element moved above the routes.** A single `<audio>` now lives in the root
+layout. A media element rendered inside a page is destroyed when Next swaps
+routes, and playback dies with it — which is the whole reason listening felt
+like a feature of one page rather than a mode of the site. It is published
+through a module singleton rather than store state, because the element is an
+imperative handle, not data.
+
+**Auto-advance is on for every kind**, per the founder's ruling that bingeing a
+series is evidence the material is working. The test asserts it across series,
+plan, daily and saved, so the withdrawn stop-at-end-of-day rule cannot come back
+by accident.
+
+**A queue that survives a reload** — but `playing` is deliberately not
+persisted, since restoring it would claim audio is sounding when nothing is.
+
+**The bar carries a dismiss.** Ours never did; Substack and Apple News both do.
+A transport that follows you everywhere with no way out stops being a transport
+and becomes chrome. It retires on the reading it is playing, where the reader's
+own panel is the better surface.
+
+**Listen states the runtime** and calls `play()` synchronously inside the tap —
+iOS grants permission to sound only from within the gesture that asked, and
+awaiting anything first loses it silently on the device most people listen on.
+
+**Queues only contain delivered tracks.** A queue that hits a silent item reads
+as a broken player rather than a partial catalogue.
+
+**Listening is in the library**, per your placement: what is queued and playing,
+reorderable, removable, with an empty state that offers a way out.
+
+Also corrected: the comment in `tracks.ts` claiming Cloudflare slices Range
+requests from its own cached copy. Measured false — Workers static assets do not
+implement partial content, so every seek refetches the whole track while
+`_headers` advertises range support anyway.
+
+Still open: the reader panel still owns its own element rather than adopting the
+global one; R2; and the new audio-native formats.
+
+---
+
 ## Audio-forward, approved — and the position now survives leaving (SA-096, F-142)
 
 **2026-08-19**

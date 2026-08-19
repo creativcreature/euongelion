@@ -65,11 +65,19 @@ export function getNarrationTrack(
   const track = TRACKS[slug]
   if (!track) return null
   // Version stamp from the encoded byte size. Audio is served with a one-year
-  // immutable cache (see public/_headers) — necessary because a 22-minute
-  // track is ~8 MB, and because Cloudflare satisfies the Range requests that
-  // make seeking cheap by slicing its OWN cached copy, which requires the
-  // response to be cacheable. Immutable would otherwise pin a stale reading in
-  // browsers after a re-render, so changing audio changes the URL.
+  // immutable cache (see public/_headers), which matters because a 22-minute
+  // track is ~8 MB and the default revalidation refetched it on every visit.
+  // Immutable would otherwise pin a stale reading in browsers after a
+  // re-render, so changing audio changes the URL.
+  //
+  // NOTE (2026-08-19, measured): a previous version of this comment claimed
+  // Cloudflare satisfies Range requests by slicing its own cached copy. It
+  // does not. A real GET carrying `Range: bytes=1000000-1000999` returns 200
+  // and the ENTIRE body, cache hit or not, because Workers' static-asset layer
+  // does not implement 206 Partial Content. `_headers` advertises
+  // `Accept-Ranges: bytes` anyway, so every browser is told seeking is cheap
+  // when each seek refetches the whole track. Serving audio from R2, which
+  // reads byte ranges natively, is the fix — see docs/plans/AUDIO-FORWARD-STRATEGY.md.
   return track.src.includes('?')
     ? track
     : { ...track, src: `${track.src}?v=${track.bytes}` }

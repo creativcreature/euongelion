@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation'
+import ListeningSection from '@/components/audio/ListeningSection'
 import { getUser } from '@/lib/auth'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
@@ -60,6 +61,11 @@ export default async function LibraryPage() {
                 notes, chat history, device-local clippings, archive, trash —
                 deep-linkable via `?tab=<section>`. The retired /saved and
                 /clippings pages redirect into their tabs here. */}
+            {/* SA-096: your listening lives in the library, per the founder's
+                placement. What is queued and what is playing — not discovery
+                of new listening, which is a different job. */}
+            <ListeningSection />
+
             <LibraryRailDeepLink />
           </div>
         </section>

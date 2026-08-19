@@ -1307,3 +1307,11 @@ features:
     prd: docs/feature-prds/F-142.md
     methodology_refs:
       - M00
+  - id: F-143
+    title: Audio survives the route, and a queue plays on
+    slug: audio-survives-route-queue-plays-on
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-143.md
+    methodology_refs:
+      - M00
