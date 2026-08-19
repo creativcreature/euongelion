@@ -64,3 +64,9 @@ Work list, verbatim intent, in progress:
    image archive should be showcased.
 8. **Comic strip (already pinned above):** real multi-panel strip; waiting on
    the founder's ChatGPT cartoon → `content/strip-reference/`.
+9. **~30 modules a day on Daily Bread; interactives broken up** across the
+   page, not clustered. New kinds: redletter, proverb, verse, archive, b365,
+   voices, question. (Needs the 2026-08-19b SQL paste.)
+10. **Audio on the Daily Bread devotional** — Voicebox only, never ElevenLabs.
+    15 rotation slugs missing audio (provision/truth/hope) render tonight.
+11. **Container rule:** no content breaks its container on any page touched.
