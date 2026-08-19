@@ -12,6 +12,13 @@
 #      ship a catalogue that genuinely 404s, and the audio could not be
 #      reconstructed without re-rendering it.
 #
+# `--remote` IS NOT OPTIONAL. `wrangler r2 object put` defaults to the LOCAL
+# miniflare store, so without it every upload lands in .wrangler/state and the
+# deployed Worker sees nothing. That mistake shipped once: 550 files "uploaded"
+# successfully, round-tripped byte-identical through `r2 object get`, and
+# production still 404'd — because both sides of the check were talking to the
+# local store. Verify against the deployed Worker, never against the CLI alone.
+#
 # Idempotent via a local ledger: wrangler 4.110 has no `r2 object list`, so the
 # script records name+size after each successful put and skips anything
 # unchanged. Delete the ledger (or pass --force) to re-upload everything. Run it
@@ -44,9 +51,9 @@ upload_one() {
     return 0
   fi
   if npx wrangler r2 object put "$BUCKET/$name" --file "$path" \
-       --content-type "audio/mp4" >/dev/null 2>&1 \
+       --content-type "audio/mp4" --remote >/dev/null 2>&1 \
      || npx wrangler r2 object put "$BUCKET/$name" --file "$path" \
-       --content-type "audio/mp4" >/dev/null 2>&1; then
+       --content-type "audio/mp4" --remote >/dev/null 2>&1; then
     # Append is atomic enough for short lines under xargs -P on macOS/Linux.
     echo "$name $size" >> "$LEDGER"
     echo "[ok]   $name"

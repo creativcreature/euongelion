@@ -65,6 +65,17 @@ which had been recorded as a blocker on any catalogue-wide scored re-render.
 The fallback is labelled, never silent: a key missing from R2 still serves from
 the bundle carrying `x-audio-origin: assets-fallback`.
 
+**The trap that shipped a broken deploy, and how it hid.** `wrangler r2 object
+put` defaults to the LOCAL miniflare store — without `--remote` all 550 uploads
+landed in `.wrangler/state` and the deployed Worker saw none of them. The
+verification passed anyway, because `r2 object get` and the local preview were
+reading _the same local store_. It surfaced only against production, where some
+tracks 404'd and others served different bytes: the real bucket already held
+scored stereo masters from an earlier session, so one key had two objects and
+the CLI and the Worker each read a different one. Re-uploaded with `--remote`;
+**all 550 now verified against production byte-for-byte.** The rule: verify
+object storage against the deployed Worker, never against the CLI alone.
+
 Standing obligation: re-run `scripts/upload-audio-to-r2.sh` after any re-render.
 
 ---
