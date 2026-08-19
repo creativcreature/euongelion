@@ -81,11 +81,18 @@ describe('narration manifest is current', () => {
     expect(stale).toEqual([])
   })
 
-  it('every track has an audio file on disk', () => {
-    const gone = Object.entries(tracks)
-      .filter(([, e]) => !fs.existsSync(path.join(AUDIO, path.basename(e.src))))
+  it('every track points at a content-versioned key on the audio route', () => {
+    // Audio is served from R2 through src/app/audio/[file]/route.ts (SA-098),
+    // which does real byte ranges and falls back observably. Keys carry a
+    // content hash so its immutable cache can never serve stale bytes.
+    const bad = Object.entries(tracks)
+      .filter(
+        ([slug, e]) =>
+          !e.src.startsWith('/audio/') ||
+          !new RegExp(`/${slug}-[0-9a-f]{10}\\.m4a$`).test(e.src),
+      )
       .map(([slug]) => slug)
-    expect(gone).toEqual([])
+    expect(bad).toEqual([])
   })
 
   it('every track carries chapters that stay inside its runtime', () => {

@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio moves to R2, and the whole catalog is scored (2026-08-19)
+
+All **550 tracks** now stream from `audio.euangelion.app` (Cloudflare R2) instead
+of the Workers asset bundle, and every one carries the atmospheric score. 98.8
+hours, 5.22 GB, 550 of 550 with chapters.
+
+**Why the move was forced, and it was not cost.** Workers caps static assets at
+**25 MiB per file** — a platform limit no plan raises — and the longest day was
+already 23.3 MB before scoring, which roughly doubles file size. The catalog was
+also 2 GB inside git, which git is not built to hold. R2 removes both, charges
+nothing for egress, and lands inside the free tier at this size.
+
+**Keys carry a content hash** (`<slug>-<sha10>.m4a`). R2 objects are served
+`immutable, max-age=1yr`, so re-scoring under a stable key could leave edge
+caches serving old bytes for a year. Versioned keys make new content a new URL —
+the cache can never be wrong and never needs purging.
+
+**The CSP would have broken every track.** `next.config.ts` sets
+`default-src 'self'` with no `media-src`, so media fell back to same-origin and
+the browser would have blocked all 550 files. Caught before deploy because the
+manifest flip is deliberately the last step. `media-src` now names the R2 host.
+
+**Verification caught three silently truncated files.** `bible-365-day-1` was
+short by **628 seconds**, day-3 by 153, day-6 by 46 — partial WAV decodes under
+memory pressure during the parallel scoring run, which would have misplaced every
+chapter mark after the cut. Nothing ships without decoding cleanly and matching
+its manifest duration within half a second. All re-scored and verified.
+
+Rollback is a one-line manifest revert: `public/audio` stays in place, so the
+previous behaviour is restored with no data to move.
+
+Decision: SA-043. Feature: F-086.
+
+---
+
 ## Bible 365 is rewritten to the contract the rest of the site meets (SA-104, F-150)
 
 **2026-08-19**
