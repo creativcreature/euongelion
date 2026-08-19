@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## /today can finish a day of a curated series (SA-095, F-141)
+
+**2026-08-19**
+
+Founder: _"When I finish day one and move on, it keeps making day one the
+active."_ He was right, and the reason is narrower than it looked.
+
+`/today` has **two** readers. The Soul Audit plan path (`DailyBreadView`) has had
+MARK DAY COMPLETE since F-066. The **curated series** path (`CuratedActiveView`)
+had nothing at all — and `setActiveDay` there is local React state, so moving to
+day 2 changed the view and nothing else. It evaporated on reload, and the
+server's `active_series.current_day` sat at 1 forever. The only mark-read control
+in the product lived on `/devotional/[slug]`, so a reader working through a
+curated series, on the page built to hold their place, could never advance it.
+
+The machinery was already there and already correct — `markDevotionalComplete`
+calls `advanceActiveDayAfterCompletion`, which PATCHes `current_day` (F-097). It
+simply had no caller on this surface. Half that fix landed in August; this is the
+other half.
+
+The control now closes the reading with the same copy as `/devotional/[slug]`, so
+the two readers don't describe the same act in two voices. Pressing it records
+the completion, moves to the next day, and tells the library to stop showing the
+day just finished. Day chips gain a ✓ for days already read.
+
+Future days are deliberately **not** locked. Day-gating is founder-disabled, and
+the reading-plan material is emphatic that guilt mechanics drive people off —
+finishing is offered, never demanded.
+
+Also recorded, not yet fixed: SA-059 swapped `/today` and `/daily-bread`, but
+`src/components/daily-bread/` still serves `/today` while `/daily-bread` renders
+`src/components/edition/*`. The folder names describe the pre-swap IA and read
+backwards to anyone opening the tree — including this session, which got it wrong
+with the code open. The rename touches many imports and several agents are in the
+code, so it waits for a quiet moment.
+
 ## The transport is measured against what actually ships (SA-093, F-139)
 
 **2026-08-19**

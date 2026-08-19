@@ -7,6 +7,7 @@ import ModuleRenderer from '@/components/ModuleRenderer'
 import { ReaderProvider } from '@/components/reader/ReaderContext'
 import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
+import { useProgress } from '@/hooks/useProgress'
 import { SERIES_DATA } from '@/data/series'
 import { isSeriesSaved, savedSlugsForSeries } from '@/lib/library/series-save'
 import { getSeriesHero } from '@/lib/series-hero'
@@ -51,6 +52,7 @@ export default function CuratedActiveView({
   const unsave = useDevotionalLibraryStore((s) => s.unsave)
   const saved = useDevotionalLibraryStore((s) => s.saved)
   const refresh = useDevotionalLibraryStore((s) => s.refresh)
+  const { isRead, markComplete } = useProgress()
   const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
 
   const [devotional, setDevotional] = useState<Devotional | null>(null)
@@ -214,6 +216,30 @@ export default function CuratedActiveView({
     await refresh()
   }, [nextDay, safeDay, refresh])
 
+  /**
+   * Finish the day the reader is actually on.
+   *
+   * Until now this page could only CHANGE THE VIEW: `setActiveDay` is local
+   * React state, so moving to day 2 evaporated on reload and the server's
+   * `current_day` sat at 1 forever. `/today` is the one page whose whole job is
+   * "your place in your plan", and it was the only reader with no way to finish
+   * anything — the mark-read control existed solely on /devotional/[slug].
+   *
+   * `markComplete` writes the local completion AND calls
+   * `advanceActiveDayAfterCompletion`, which PATCHes `active_series.current_day`.
+   * So finishing here is what actually moves the plan; the view following along
+   * to the next day is the consequence, not the mechanism.
+   */
+  const handleMarkComplete = useCallback(async () => {
+    if (!day) return
+    markComplete(day.slug)
+    // The library's ACTIVE card reads the same row; without this it keeps
+    // showing the day the reader just finished.
+    window.dispatchEvent(new CustomEvent('libraryUpdated'))
+    if (nextDay) setActiveDay(safeDay + 1)
+    await refresh()
+  }, [day, markComplete, nextDay, safeDay, refresh])
+
   if (!series || !day) {
     return (
       <section
@@ -321,8 +347,9 @@ export default function CuratedActiveView({
                 }}
                 onClick={() => setActiveDay(d.day)}
                 aria-current={d.day === safeDay ? 'true' : undefined}
+                aria-label={`Day ${d.day}${isRead(d.slug) ? ', read' : ''}`}
               >
-                DAY {d.day}
+                {isRead(d.slug) ? '\u2713 ' : ''}DAY {d.day}
               </button>
             ))}
           </div>
@@ -435,6 +462,36 @@ export default function CuratedActiveView({
               undefined
             }
           />
+
+          {/* Finish the day. This is what advances the plan — see
+              handleMarkComplete. Copy matches /devotional/[slug] so the two
+              readers do not describe the same act in two different voices. */}
+          <div
+            className="curated-active-complete mt-8 border px-5 py-5"
+            style={{ borderColor: 'var(--color-border)' }}
+          >
+            <p className="vw-small text-secondary">
+              {isRead(day.slug)
+                ? 'Finished. Return anytime to re-read.'
+                : 'Finished reading? Mark this day read.'}
+            </p>
+            {!isRead(day.slug) && (
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  className="cta-major text-label vw-small px-5 py-2"
+                  onClick={() => void handleMarkComplete()}
+                >
+                  {nextDay ? 'MARK READ & CONTINUE' : 'MARK READ'}
+                </button>
+                {nextDay && (
+                  <span className="vw-small text-secondary">
+                    Next: {nextDay.title}
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
         </>
       )}
 
