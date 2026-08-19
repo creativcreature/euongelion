@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import AUDIO_MANIFEST from '@/data/audio-manifest.json'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -78,6 +79,15 @@ const HOW_STEPS = [
  * block always carries the MOST RECENT series via HOMEPAGE_TODAY;
  * the top-of-page banner stays the blue empty-tomb riso (R38).
  */
+/** Narrated hours, from the manifest — stated rather than rounded by hand, so
+ *  the claim on the homepage cannot drift from what actually renders. */
+const AUDIO_HOURS = Math.round(
+  Object.values(AUDIO_MANIFEST as Record<string, { duration?: number }>).reduce(
+    (total, track) => total + (track.duration ?? 0),
+    0,
+  ) / 3600,
+)
+
 function pickHomepageHero(): string {
   return HOMEPAGE_TODAY.heroSrc
 }
@@ -466,6 +476,33 @@ export default function Home() {
                 Anxiety · doubt · grief · the daily grind · the question of
                 Jesus.
               </p>
+            </Link>
+          </div>
+        </section>
+
+        {/* SA-107 — the audio callout.
+            Audio was tucked deliberately (the drawer is a handle, not a bar),
+            and tucked with no announcement is just hidden. This is the one
+            place the site says out loud that it can be listened to, and it
+            leads with the occasion rather than the feature: what a listener
+            wants to know is that this works while their hands are busy. */}
+        <section className="homepage-audio-callout" aria-label="Listen">
+          <p className="text-label mock-kicker">ALSO A LISTENING APP</p>
+          <h2 className="homepage-audio-title">
+            Hands full? It reads itself to you.
+          </h2>
+          <p className="homepage-audio-copy">
+            Every reading is narrated — {AUDIO_HOURS} hours of it, from a
+            two-minute prayer to the whole year in Scripture. Queue a series for
+            the commute, save it for the flight, and pick up where you stopped
+            on any device.
+          </p>
+          <div className="homepage-audio-actions">
+            <Link href="/series" className="mock-btn text-label">
+              FIND SOMETHING TO LISTEN TO
+            </Link>
+            <Link href="/library" className="text-label homepage-audio-link">
+              Your queue &rarr;
             </Link>
           </div>
         </section>

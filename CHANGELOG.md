@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The queue is a drawer, not a bar (SA-107, F-153)
+
+**2026-08-19**
+
+Audio was clunky everywhere that isn't the devotional. A full-width bar pinned
+across the bottom of every page announced itself constantly and pushed against
+the written content the site is actually for.
+
+**The bar is gone.** `GlobalAudioBar` is deleted; its contracts are carried into
+the new tests. What replaces it is a **handle** — a compact pill with the title,
+one play control, and `+N` for what is behind it. Tap it and the queue comes up
+as a drawer.
+
+_Not invisible_ is a set of decisions, not a slogan: the handle exists whenever
+a queue does, its bars animate **only while audio is actually sounding** and
+stop entirely under `prefers-reduced-motion`, and the count makes the depth of
+the queue legible without opening anything.
+
+**Adding is quiet.** The `+` on a browse row never starts playback, never
+navigates, and never takes over from what is sounding — and it confirms briefly,
+because an add with no feedback reads as a dead button. On a series day it sits
+**beside** the link rather than inside it; a button nested in an anchor is
+invalid markup and unreachable by keyboard, which is why the previous pass left
+this undone rather than forcing it.
+
+**Playlists are kept in the library**, per your ruling — which overrules the
+earlier strategy argument against named playlists. What follows is that saving
+has to be cheap: one tap in the drawer on whatever is already queued, never a
+create-then-fill flow nobody finishes.
+
+**The homepage says audio exists.** Tucked with no announcement is just hidden.
+The callout leads with the occasion rather than the feature, and states the
+catalogue's hours computed from the manifest so the claim can't drift.
+
+Caught in review: the first draft nested the play control inside the expand
+button. A control inside a control is invalid and unreachable by keyboard.
+
+Homepage information flow is proposed separately, and deliberately not built.
+
+---
+
 ## Pipeline Phase 0 — the manifest spine and the firewall (SA-106, F-152)
 
 **2026-08-19**

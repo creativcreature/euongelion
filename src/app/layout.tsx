@@ -7,7 +7,7 @@ import MobileTabBar from '@/components/MobileTabBar'
 import InstallPrompt from '@/components/InstallPrompt'
 import Providers from './providers'
 import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
-import GlobalAudioBar from '@/components/audio/GlobalAudioBar'
+import AudioDrawer from '@/components/audio/AudioDrawer'
 import './globals.css'
 
 /**
@@ -119,7 +119,11 @@ export default function RootLayout({
               it. The host renders nothing; the bar retires on the reading it
               is playing, where the reader's own panel is the better surface. */}
           <GlobalAudioHost />
-          <GlobalAudioBar />
+          {/* SA-107: the queue, tucked. A full-width bar across every page
+              pushed against the written content the site is actually for; this
+              is a compact handle that opens into a drawer. Not invisible: it
+              carries what is playing and how many are behind it. */}
+          <AudioDrawer />
           <MobileTabBar />
           <InstallPrompt />
         </Providers>

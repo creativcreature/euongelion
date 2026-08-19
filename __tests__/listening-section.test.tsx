@@ -2,12 +2,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, cleanup, within } from '@testing-library/react'
 import { afterEach } from 'vitest'
 import ListeningSection from '@/components/audio/ListeningSection'
-import GlobalAudioBar from '@/components/audio/GlobalAudioBar'
-import { registerAudioElement } from '@/lib/audio/audio-element'
 import { useAudioStore, type QueueItem } from '@/stores/audioStore'
 
-let pathname = '/series'
-vi.mock('next/navigation', () => ({ usePathname: () => pathname }))
 vi.mock('next/link', () => ({
   default: ({
     children,
@@ -97,74 +93,5 @@ describe('Your listening, in the library', () => {
     const current = container.querySelector('.ls-row.is-current')
     expect(current).not.toBeNull()
     expect(within(current as HTMLElement).getByText('Second')).toBeTruthy()
-  })
-})
-
-/**
- * The bar that follows you around the site.
- *
- * Two contracts, both from what actually ships (Mobbin, 2026-08-19): it must be
- * dismissible — Substack and Apple News both carry a close, and ours did not —
- * and it must retire on the reading it is playing, because the reader's own
- * panel is the better surface and two transports on one screen is a bug.
- */
-describe('the global audio bar', () => {
-  beforeEach(() => {
-    pathname = '/series'
-    const audio = document.createElement('audio')
-    registerAudioElement(audio)
-  })
-
-  const startOne = () =>
-    useAudioStore.getState().start({
-      items: [item('a', 'The Fruit of Lies')],
-      source: 'single',
-      label: null,
-    })
-
-  it('stays away until a reader has actually started', () => {
-    render(<GlobalAudioBar />)
-    expect(screen.queryByLabelText('Now playing')).toBeNull()
-  })
-
-  it('appears once a queue is playing, anywhere on the site', () => {
-    startOne()
-    render(<GlobalAudioBar />)
-    expect(screen.getByLabelText('Now playing')).toBeTruthy()
-    expect(screen.getByText('The Fruit of Lies')).toBeTruthy()
-  })
-
-  it('retires on the reading it is playing', () => {
-    startOne()
-    pathname = '/devotional/a'
-    render(<GlobalAudioBar />)
-    expect(screen.queryByLabelText('Now playing')).toBeNull()
-  })
-
-  it('can be dismissed, and dismissing clears what is up next', () => {
-    startOne()
-    render(<GlobalAudioBar />)
-    screen.getByLabelText('Close the player and clear what is up next').click()
-    expect(useAudioStore.getState().queue).toHaveLength(0)
-    expect(useAudioStore.getState().started).toBe(false)
-  })
-
-  it('offers both skip directions', () => {
-    startOne()
-    render(<GlobalAudioBar />)
-    const bar = screen.getByLabelText('Now playing')
-    expect(within(bar).getByLabelText('Back 15 seconds')).toBeTruthy()
-    expect(within(bar).getByLabelText('Forward 15 seconds')).toBeTruthy()
-  })
-
-  it('shows queue position when there is more than one reading', () => {
-    useAudioStore.getState().start({
-      items: [item('a', 'First'), item('b', 'Second'), item('c', 'Third')],
-      index: 1,
-      source: 'series',
-      label: 'He Cannot Deny Himself',
-    })
-    render(<GlobalAudioBar />)
-    expect(screen.getByText(/2 of 3/)).toBeTruthy()
   })
 })

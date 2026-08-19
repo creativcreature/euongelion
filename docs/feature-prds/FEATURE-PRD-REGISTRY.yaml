@@ -1387,3 +1387,11 @@ features:
     prd: docs/feature-prds/F-152.md
     methodology_refs:
       - M00
+  - id: F-153
+    title: The queue is a drawer, not a bar
+    slug: queue-is-a-drawer
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-153.md
+    methodology_refs:
+      - M00

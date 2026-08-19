@@ -11,6 +11,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import ListenButton from '@/components/audio/ListenButton'
+import AddToQueue from '@/components/audio/AddToQueue'
 import { buildSeriesQueue } from '@/lib/audio/queue-builder'
 import { useSearchParams } from 'next/navigation'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -422,14 +423,23 @@ export default function SeriesPageClient({
                 return <div key={day.slug}>{card}</div>
               }
 
+              // SA-107: the add control is a SIBLING of the link, never inside
+              // it — a button nested in an anchor is invalid markup and cannot
+              // be reached by keyboard. Adding is quiet: it does not navigate
+              // and does not interrupt whatever is already playing.
               return (
-                <Link
-                  key={day.slug}
-                  href={`${dayHrefPrefix}/${day.slug}`}
-                  className="mock-series-day-link"
-                >
-                  {card}
-                </Link>
+                <div key={day.slug} className="mock-series-day-cell">
+                  <Link
+                    href={`${dayHrefPrefix}/${day.slug}`}
+                    className="mock-series-day-link"
+                  >
+                    {card}
+                  </Link>
+                  <AddToQueue
+                    item={seriesQueue.find((q) => q.slug === day.slug) ?? null}
+                    className="mock-series-day-add"
+                  />
+                </div>
               )
             })}
           </section>

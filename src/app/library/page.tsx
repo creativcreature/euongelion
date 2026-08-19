@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import ListeningSection from '@/components/audio/ListeningSection'
+import SavedPlaylists from '@/components/audio/SavedPlaylists'
 import { getUser } from '@/lib/auth'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
@@ -65,6 +66,10 @@ export default async function LibraryPage() {
                 placement. What is queued and what is playing — not discovery
                 of new listening, which is a different job. */}
             <ListeningSection />
+            {/* SA-107: playlists are kept here, per the founder's placement.
+                They are made in the drawer from whatever is queued, so this
+                surface only plays, renames and deletes them. */}
+            <SavedPlaylists />
 
             <LibraryRailDeepLink />
           </div>

@@ -155,3 +155,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-150 | Content           | Bible 365 rewritten to the current authoring contract     | 0/10     | wip     | [F-150.md](./F-150.md) |
 | F-151 | Platform          | Rename components/daily-bread -> components/today         | 0/10     | wip     | [F-151.md](./F-151.md) |
 | F-152 | Platform          | Pipeline manifest schema + Part E firewall                | 0/10     | wip     | [F-152.md](./F-152.md) |
+| F-153 | Reading surfaces  | Tucked audio drawer; add-to-queue; saved playlists        | 0/10     | wip     | [F-153.md](./F-153.md) |
