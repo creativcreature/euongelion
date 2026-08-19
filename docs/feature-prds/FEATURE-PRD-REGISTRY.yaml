@@ -1339,3 +1339,11 @@ features:
     prd: docs/feature-prds/F-146.md
     methodology_refs:
       - M00
+  - id: F-147
+    title: The day's paper is listenable, discovery has a front door, and readings go offline
+    slug: listenable-paper-occasion-picker-downloads
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-147.md
+    methodology_refs:
+      - M00

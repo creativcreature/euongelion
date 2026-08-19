@@ -5,6 +5,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The paper is listenable, discovery has a front door, readings go offline (SA-101, F-147)
+
+**2026-08-19**
+
+Stages 6, 7 and 9. Stage 8 is not built, and is not pretended.
+
+**The day's paper is listenable.** `/daily-bread` offers Listen beside the
+reader link. It renders nothing on a day whose reading has no track, rather than
+a control that would play silence.
+
+**The occasion picker** is the listening equivalent of the Soul Audit, and
+deliberately faster — two taps, no questionnaire, because someone reaching for
+audio usually has their hands full. _How long have you got?_ and _what are you
+doing?_ resolve to a queue you press play on. The answer is seeded on the day,
+so going back and choosing again does not reshuffle what you were part-way
+through; activity shapes how much of the budget to fill rather than judging
+which content is "suitable"; and it spreads across series before repeating one.
+
+**Downloads.** Two traps, both documented before they were hit and both real.
+The bucket is **not versioned** and is exempted from **both** cache sweeps — the
+worker's `activate` purge and the client's version-mismatch clear, which deletes
+every `euangelion-` key on every release. Without that second exemption someone
+who saved a series for a flight would lose it to a deploy they never saw. A test
+pins the two files' agreement, because they have drifted before.
+
+And the worker **synthesises 206 from cached bytes**: a cached Response is a 200
+carrying the whole body, and handing that to a media element that asked for a
+range makes iOS refuse to seek. Offline gets the same contract as online.
+
+**Stage 8 — the Office and Night — is not built.** It is new writing and new
+recording, not engineering. The pipeline can be built; the content cannot be
+invented to close a plan item. What did land against the same gap: the picker's
+_an hour or more_ assembles a long session from existing readings rather than
+returning nothing, so the top of the range is usable while the gap stays visible.
+
+Still open: `/today` has no Listen affordance, and series day rows have no
+per-day play control — the card is a single `Link`, so that needs restructuring
+rather than an insertion.
+
+---
+
 ## The Library says where you are, not just what you own (SA-099, F-145)
 
 **2026-08-19**

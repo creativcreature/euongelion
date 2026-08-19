@@ -89,7 +89,19 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v126'
+const CACHE_NAME = 'euangelion-v127'
+
+/**
+ * Downloaded readings. SA-101.
+ *
+ * DELIBERATELY NOT VERSIONED. `activate` deletes every cache whose key is not
+ * `CACHE_NAME`, and `CACHE_NAME` changes on every deploy — so a download kept
+ * in the shell cache would be silently thrown away the next time anything
+ * shipped. Someone who saved a series for a flight would find it gone for a
+ * reason they could never connect to a deploy. This bucket is exempted from the
+ * purge below and only ever emptied by the reader asking.
+ */
+const DOWNLOADS_CACHE = 'euangelion-downloads'
 const OFFLINE_URL = '/offline'
 const STATIC_ASSET_RE = /\.(js|css|woff2?|ttf|otf)$/i
 
@@ -159,7 +171,10 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
-        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+        keys
+          // Downloads survive every deploy — see DOWNLOADS_CACHE.
+          .filter((key) => key !== CACHE_NAME && key !== DOWNLOADS_CACHE)
+          .map((key) => caches.delete(key))
       )
     )
   )
@@ -170,8 +185,72 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('message', (event) => {
   if (event.data?.type === 'SKIP_WAITING') {
     self.skipWaiting()
+    return
+  }
+
+  // Downloads. The page asks; the worker fetches and keeps.
+  if (event.data?.type === 'DOWNLOAD_AUDIO') {
+    const { src, slug } = event.data
+    event.waitUntil(
+      caches
+        .open(DOWNLOADS_CACHE)
+        .then((cache) =>
+          // `reload` so a saved reading is never a stale copy the browser
+          // happened to be holding.
+          fetch(src, { cache: 'reload' }).then((response) => {
+            if (!response.ok) throw new Error(`status ${response.status}`)
+            return cache.put(src, response)
+          })
+        )
+        .then(() => reply(event, { type: 'DOWNLOAD_DONE', slug, src }))
+        .catch((error) =>
+          reply(event, {
+            type: 'DOWNLOAD_FAILED',
+            slug,
+            src,
+            message: String(error?.message ?? error),
+          })
+        )
+    )
+    return
+  }
+
+  if (event.data?.type === 'REMOVE_AUDIO') {
+    const { src, slug } = event.data
+    event.waitUntil(
+      caches
+        .open(DOWNLOADS_CACHE)
+        .then((cache) => cache.delete(src))
+        .then(() => reply(event, { type: 'DOWNLOAD_REMOVED', slug, src }))
+    )
+    return
+  }
+
+  if (event.data?.type === 'LIST_AUDIO') {
+    event.waitUntil(
+      caches
+        .open(DOWNLOADS_CACHE)
+        .then((cache) => cache.keys())
+        .then((keys) =>
+          reply(event, {
+            type: 'DOWNLOAD_LIST',
+            srcs: keys.map((request) => request.url),
+          })
+        )
+    )
   }
 })
+
+/** Answer the asking page, or broadcast when it did not open a port. */
+function reply(event, message) {
+  if (event.source) {
+    event.source.postMessage(message)
+    return
+  }
+  self.clients
+    .matchAll()
+    .then((clients) => clients.forEach((client) => client.postMessage(message)))
+}
 
 // Fetch strategy
 self.addEventListener('fetch', (event) => {
@@ -183,6 +262,66 @@ self.addEventListener('fetch', (event) => {
 
   // Skip API routes — always network
   if (url.pathname.startsWith('/api/')) return
+
+  /**
+   * Downloaded readings, served offline — and served as PARTIAL CONTENT.
+   *
+   * A cached Response is a 200 carrying the whole body. Handing that back to a
+   * media element that asked for a byte range makes iOS refuse to seek at all,
+   * and on some builds refuse to play, so the range has to be synthesised here
+   * from the cached bytes. This is the same 206 contract the R2 route serves
+   * online (SA-098); offline must not be a lesser one.
+   *
+   * Only tracks the reader explicitly downloaded are in this cache, so a miss
+   * falls through to the network exactly as before.
+   */
+  if (url.pathname.startsWith('/audio/')) {
+    event.respondWith(
+      caches.open(DOWNLOADS_CACHE).then((cache) =>
+        cache.match(request, { ignoreSearch: false }).then((cached) => {
+          if (!cached) return fetch(request)
+          const range = request.headers.get('range')
+          if (!range) return cached
+          return cached.arrayBuffer().then((buffer) => {
+            const size = buffer.byteLength
+            const match = /^bytes=(\d*)-(\d*)$/.exec(range.trim())
+            if (!match) return cached
+            const [, rawStart, rawEnd] = match
+            let start
+            let end
+            if (rawStart === '') {
+              // `bytes=-500` is the LAST 500 bytes. Reading it forwards would
+              // replay the opening when a listener drags to the end.
+              const suffix = Number(rawEnd)
+              if (!suffix) return cached
+              start = Math.max(0, size - suffix)
+              end = size - 1
+            } else {
+              start = Number(rawStart)
+              end = rawEnd === '' ? size - 1 : Math.min(Number(rawEnd), size - 1)
+            }
+            if (!(start >= 0 && start < size && end >= start)) {
+              return new Response(null, {
+                status: 416,
+                headers: { 'Content-Range': `bytes */${size}` },
+              })
+            }
+            return new Response(buffer.slice(start, end + 1), {
+              status: 206,
+              headers: {
+                'Content-Type': cached.headers.get('Content-Type') || 'audio/mp4',
+                'Content-Range': `bytes ${start}-${end}/${size}`,
+                'Content-Length': String(end - start + 1),
+                'Accept-Ranges': 'bytes',
+                'x-audio-origin': 'downloaded',
+              },
+            })
+          })
+        })
+      )
+    )
+    return
+  }
 
   // Next.js build assets and fonts: stale-while-revalidate for resilient offline shell
   if (

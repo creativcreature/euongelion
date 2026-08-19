@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { registerAudioElement } from '@/lib/audio/audio-element'
+import { listenForDownloadEvents, requestList } from '@/lib/audio/downloads'
 import { pushPosition, readLocalPosition } from '@/lib/audio/listening-progress'
 import { currentItem, useAudioStore } from '@/stores/audioStore'
 
@@ -37,6 +38,15 @@ export default function GlobalAudioHost() {
   useEffect(() => {
     registerAudioElement(audioRef.current)
     return () => registerAudioElement(null)
+  }, [])
+
+  // Downloads (SA-101). Asked once, here, because the host is the one thing
+  // mounted for the whole session — the cache is the truth and the store is
+  // only its index, so it is re-asked rather than remembered.
+  useEffect(() => {
+    const stop = listenForDownloadEvents()
+    requestList()
+    return stop
   }, [])
 
   /**

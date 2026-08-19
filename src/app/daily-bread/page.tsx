@@ -18,6 +18,8 @@
  */
 
 import type { Metadata } from 'next'
+import ListenButton from '@/components/audio/ListenButton'
+import { itemForSlug } from '@/lib/audio/queue-builder'
 import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -340,6 +342,11 @@ function seriesSlugForHero(slug: string | undefined): string {
 export default async function DailyBreadPage() {
   const now = new Date()
   const slug = pickTodaySlug(now)
+  // Built on the server from the manifest, handed to the client button as a
+  // plain object — no second manifest read in the browser.
+  const listenItems = [
+    itemForSlug(slug, DEVOTIONAL_TEASERS[slug] ?? slug, "Today's reading"),
+  ].filter((item): item is NonNullable<typeof item> => item !== null)
   const meta = findSeriesForSlug(slug)
   const devotional = await fetchTodayDevotional(slug)
 
@@ -1104,6 +1111,19 @@ export default async function DailyBreadPage() {
 
         {/* Navigation footer */}
         <nav className="today-nav-footer" aria-label="Reading navigation">
+          {/* SA-101: the day's paper, listenable. Listening is a peer of
+              reading here rather than something you find inside the reader —
+              this is the surface a person opens with their hands full. Renders
+              nothing on a day whose reading has no track. */}
+          {listenItems.length > 0 && (
+            <ListenButton
+              items={listenItems}
+              source="daily"
+              label="Today's reading"
+            >
+              Listen
+            </ListenButton>
+          )}
           <Link
             href={`/devotional/${slug}`}
             className="mock-btn mock-btn-inline text-label"

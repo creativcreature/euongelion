@@ -7,7 +7,9 @@ import { useEffect } from 'react'
 // reloading. v50 corresponds to the R37 deploy.
 // R38 (Phase 2.2 + 2.3): v51 — offline reading-route caching + web-push
 // handlers in /sw.js. Must match CACHE_NAME there.
-const SW_VERSION = 'v126'
+const SW_VERSION = 'v127'
+/** Must match DOWNLOADS_CACHE in public/sw.js. Never versioned. */
+const DOWNLOADS_CACHE = 'euangelion-downloads'
 const SW_VERSION_KEY = 'euangelion-sw-version'
 
 export default function ServiceWorkerRegistration() {
@@ -45,7 +47,17 @@ export default function ServiceWorkerRegistration() {
             const keys = await caches.keys()
             await Promise.all(
               keys
-                .filter((key) => key.startsWith('euangelion-'))
+                .filter(
+                  (key) =>
+                    key.startsWith('euangelion-') &&
+                    // SA-101: downloaded readings survive a version bump. This
+                    // sweep runs on EVERY release, so without the exemption a
+                    // reader who saved a series for a flight would lose it to a
+                    // deploy they never saw — and would have no way to connect
+                    // the two. The service worker's own `activate` purge
+                    // exempts the same bucket.
+                    key !== DOWNLOADS_CACHE,
+                )
                 .map((key) => caches.delete(key)),
             )
           }

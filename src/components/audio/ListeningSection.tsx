@@ -5,6 +5,8 @@ import { getAudioElement } from '@/lib/audio/audio-element'
 import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
 import { formatTime } from '@/lib/audio/tracks'
 import { useAudioStore } from '@/stores/audioStore'
+import { useDownloadsStore } from '@/stores/downloadsStore'
+import { requestDownload, requestRemove } from '@/lib/audio/downloads'
 
 /**
  * Your listening, in the library.
@@ -26,6 +28,7 @@ export default function ListeningSection() {
   const remove = useAudioStore((s) => s.remove)
   const reorder = useAudioStore((s) => s.reorder)
   const clear = useAudioStore((s) => s.clear)
+  const downloadStates = useDownloadsStore((s) => s.states)
 
   const upcoming = queue.slice(index)
 
@@ -108,6 +111,33 @@ export default function ListeningSection() {
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 16l-6-6h12z" />
                       </svg>
+                    </button>
+                    {/* SA-101: keep for offline. The bytes live in a cache the
+                        service worker owns and that survives every deploy. */}
+                    <button
+                      type="button"
+                      className={`ls-icon${downloadStates[track.src] === 'done' ? ' is-saved' : ''}`}
+                      aria-label={
+                        downloadStates[track.src] === 'done'
+                          ? `Remove the download of ${track.title}`
+                          : `Download ${track.title} to listen offline`
+                      }
+                      disabled={downloadStates[track.src] === 'downloading'}
+                      onClick={() =>
+                        downloadStates[track.src] === 'done'
+                          ? requestRemove(track.slug, track.src)
+                          : requestDownload(track.slug, track.src)
+                      }
+                    >
+                      {downloadStates[track.src] === 'done' ? (
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M12 16l-6-6h4V4h4v6h4zM4 18h16v2H4z" />
+                        </svg>
+                      )}
                     </button>
                     <button
                       type="button"
@@ -263,6 +293,9 @@ export default function ListeningSection() {
         }
         .ls-icon:disabled {
           opacity: 0.28;
+        }
+        .ls-icon.is-saved {
+          color: var(--color-gold);
         }
         .ls-icon:focus-visible,
         .ls-play:focus-visible {

@@ -1,6 +1,9 @@
 'use client'
 
+import { useMemo } from 'react'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import OccasionPicker from '@/components/audio/OccasionPicker'
+import { allListenable } from '@/lib/audio/occasion'
 import SiteBottom from '@/components/SiteBottom'
 import FadeIn from '@/components/motion/FadeIn'
 import ActivePlanBadge from '@/components/ActivePlanBadge'
@@ -28,6 +31,8 @@ import SeriesBrowser from '@/components/series/SeriesBrowser'
  * rather than editorial.
  */
 export default function SeriesBrowsePage() {
+  // Every delivered track, computed once. The picker filters it per occasion.
+  const listenPool = useMemo(() => allListenable(), [])
   return (
     <div className="mock-home">
       <main id="main-content" className="mock-paper">
@@ -48,6 +53,12 @@ export default function SeriesBrowsePage() {
         <section aria-label="Continue reading" className="series-resume-row">
           <ActivePlanBadge variant="resume" />
         </section>
+
+        {/* SA-101: the listening front door. Reading is organised by need —
+            that is what the Soul Audit asks. Listening is organised by
+            occasion, so this asks the only two questions that decide what is
+            playable right now, and resolves them to a queue rather than a list. */}
+        <OccasionPicker pool={listenPool} />
 
         <SeriesBrowser />
 
