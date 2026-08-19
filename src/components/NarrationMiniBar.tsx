@@ -141,9 +141,11 @@ export default function NarrationMiniBar({
             arrow at this size reads as a smudge, and the Industry face is the
             brand's own voice for meta.
 
-            Back is on every breakpoint, forward is desktop-only: listening
-            while working, the recurring need is "I lost the thread, say that
-            again", not skipping ahead. */}
+            BOTH directions on every breakpoint. Forward used to be
+            desktop-only on the theory that "say that again" is the recurring
+            need while working — true, but it left the phone with a single
+            lone skip control, which reads as an omission rather than a
+            choice. They fit at 375px once the time readout steps aside. */}
         <span className="narration-mini-cluster">
           <button
             type="button"
@@ -155,7 +157,7 @@ export default function NarrationMiniBar({
           </button>
           <button
             type="button"
-            className="narration-mini-skip is-wide-only"
+            className="narration-mini-skip"
             onClick={() => onSkip(skipSeconds)}
             aria-label={`Forward ${skipSeconds} seconds`}
           >
@@ -342,15 +344,6 @@ export default function NarrationMiniBar({
         .narration-mini-skip:hover {
           color: var(--color-gold);
         }
-        .is-wide-only {
-          display: none;
-        }
-        @media (min-width: 768px) {
-          .is-wide-only {
-            display: inline-flex;
-          }
-        }
-
         .narration-mini-play:focus-visible,
         .narration-mini-skip:focus-visible,
         .narration-mini-title:focus-visible {
@@ -403,7 +396,9 @@ export default function NarrationMiniBar({
           font-variant-numeric: oldstyle-nums;
           white-space: nowrap;
         }
-        @media (max-width: 460px) {
+        /* Controls outrank the readout: below this the time steps aside so
+           both skips keep their 44px targets rather than being squeezed. */
+        @media (max-width: 560px) {
           .narration-mini-time {
             display: none;
           }

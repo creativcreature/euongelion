@@ -141,3 +141,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-136 | Reading surfaces  | The Daily Bread becomes a daily paper                | 0/10     | wip     | [F-136.md](./F-136.md) |
 | F-137 | Platform          | Accounts: GDPR, parity, progress sync, billing       | 0/10     | wip     | [F-137.md](./F-137.md) |
 | F-138 | Reading surfaces  | Daily Bread award pass; footer accuracy; audio       | 0/10     | shipped | [F-138.md](./F-138.md) |
+| F-139 | Reading surfaces  | Transport vs shipped patterns; both skips on mobile  | 0/10     | wip     | [F-139.md](./F-139.md) |

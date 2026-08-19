@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, cleanup, act } from '@testing-library/react'
+import { render, screen, cleanup, act, within } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
 import { formatTime } from '@/lib/audio/tracks'
 
@@ -209,6 +209,22 @@ describe('NarrationMiniBar — appearance rules', () => {
     scrollPanelAway()
     // The bar is portalled to document.body, so count across the whole document.
     expect(document.querySelectorAll('audio')).toHaveLength(1)
+  })
+
+  it('offers BOTH skip directions, at every breakpoint', () => {
+    // Forward was desktop-only, which left the phone with a lone back control
+    // and read as an omission rather than a choice. Both are unconditional now;
+    // the time readout is what yields when space is tight.
+    const { container } = renderPlayer()
+    startPlaying(container)
+    scrollPanelAway()
+    const bar = screen.getByLabelText('Audio edition, minimized')
+    expect(
+      within(bar).getByRole('button', { name: /back 15 seconds/i }),
+    ).toBeTruthy()
+    expect(
+      within(bar).getByRole('button', { name: /forward 15 seconds/i }),
+    ).toBeTruthy()
   })
 
   it('shows remaining time, counting down', () => {

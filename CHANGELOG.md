@@ -5,6 +5,55 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The transport is measured against what actually ships (SA-093, F-139)
+
+**2026-08-19**
+
+Founder: _"use last 30 days skill and mobbin for research and adhere to it."_
+Two independent passes, written up in
+`docs/audio/AUDIO-UX-PATTERN-RESEARCH-2026-08-19.md`. Mobbin gave 16 iOS screens
+and 4 recorded flows; `/last30days` gave 61 items across 6 sources. Coverage
+limits are recorded rather than glossed — Reddit went partial at 25 items on a
+429, X returned nothing, and only 29 of 61 items were from the last week — so
+Mobbin carries the weight and a missing complaint is not evidence of absence.
+
+**The ruling is about silence, not layout.** r/pocketcasts split hard over
+trim-silence: _"I trust the podcaster to deliver the content at a speed and with
+the pauses ideal for listening to. It is disrespectful to mess with that."_
+Our `PAUSE_AFTER` grammar is the beat after a Scripture line, so silence here is
+content. **Speed ships and defaults to 1x; trim-silence never ships** — not as a
+default, not as a toggle.
+
+**Both skip directions, at every breakpoint.** Forward-15 was desktop-only,
+leaving the phone a lone back-15 that read as an omission. `is-wide-only` comes
+off the forward button; the remaining-time readout is what yields below 560px
+instead. Dead CSS removed, both directions covered by test.
+
+**The strategy is corrected on the record.** `AUDIO-FORWARD-STRATEGY.md` opened
+by claiming 380 of 550 tracks 404 in production and made R2 the gate in front of
+all audio work. That inference from `git ls-tree` is wrong in its consequence:
+`npm run deploy` builds from the **working tree**, not `HEAD`, so gitignored
+assets upload like anything else. Verified live — `bible-365-day-1`, `-200`,
+`-365` and `he-cannot-deny-himself-day-4` all return `200`, `audio/mp4`. The
+catalogue is fully delivered. The real exposure is **durability**: 2.9 GiB of
+audio exists only on this machine and in the deployed bundle. The 25 MiB
+per-asset arithmetic stands and still gates any scored re-render.
+
+**A defect neither pass went looking for.** A real `GET` with
+`Range: bytes=1000000-1000999` returns `200` and the whole 7.4 MB body while
+advertising `accept-ranges: bytes` — every scrub refetches the entire track. Not
+diagnosed here; recorded as ranking above all nine UX deltas, because chapters
+and queues both multiply seeking.
+
+Also pinned by the same run: `docs/audio/AUDIO-ENGINE-RESEARCH-2026-08-19.md`
+(Chatterbox Turbo, $0 vs ~$842 catalogue-wide) and
+`euangelion-voice-prototype/spec/render_chatterbox.py` (four independent
+verifiers, fail-fast, no partial writes).
+
+**Open for the founder:** whether to disclose that the narration is synthesised.
+
+---
+
 ## The Daily Bread, award-worthy — and true on every footer page (SA-092, F-138)
 
 **2026-08-19 (overnight)**
