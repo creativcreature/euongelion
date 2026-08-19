@@ -152,4 +152,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-147 | Reading surfaces  | Listenable paper; occasion picker; offline downloads      | 0/10     | wip     | [F-147.md](./F-147.md) |
 | F-148 | Platform          | Build guard: client config must be present                | 0/10     | wip     | [F-148.md](./F-148.md) |
 | F-149 | Platform          | Series page: START HERE marker and read ticks             | 0/10     | wip     | [F-149.md](./F-149.md) |
+| F-150 | Content           | Bible 365 rewritten to the current authoring contract     | 0/10     | wip     | [F-150.md](./F-150.md) |
 | F-151 | Platform          | Rename components/daily-bread -> components/today         | 0/10     | wip     | [F-151.md](./F-151.md) |

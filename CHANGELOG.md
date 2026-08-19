@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Bible 365 is rewritten to the contract the rest of the site meets (SA-104, F-150)
+
+**2026-08-19**
+
+Bible 365 was finished as a manuscript and unfinished as a product. Measured
+against the site's own gates it failed on every structural axis: 12 modules a day
+on all 365 against 26-28 for a devo-go series, no `format` field on 365 of 365 so
+no Two-Minute Open, zero inline-image/pullquote/video/interactive modules, one
+plate of artwork reused across all 365 days, 509 sentences over 45 words against a
+gate of zero — and **all 365 failed `validate-devotional.mjs` outright** on a
+missing `chiasm_position`. The series had never passed the repo's own gate. On a
+390x844 phone one day measured 18,747 px, and screen one carried no Scripture.
+
+Founder rulings (SA-104): the date dies, not opt-in; all 365 narrated in the
+founder's voice with an atmospheric score via **Voicebox / Chatterbox Turbo
+locally — ElevenLabs is a hard gate, forbidden for this corpus**; imagery is one
+plate per book plus milestones, not 365.
+
+The ElevenLabs ban is economic, not aesthetic. This corpus is 3,662,125 characters
+— roughly $600-800 _per render_ metered, $0 local. The readability pass
+invalidates every `textHash`, so the corpus WILL be re-rendered; a metered engine
+is the one thing that would make the rewrite unaffordable and get it skipped.
+
+Days 1-7 rewritten to `two-minute-open-v2`, authored by Codex under a controlled
+brief with every gate verified independently rather than taken from its
+self-report. Day 1 carries an ad-hoc `bereshit bara Elohim` deep dive holding
+three tiers visibly apart — Hebrew grammar, New Testament canon, interpretive
+tradition — with pictographic-Hebrew, gematria and hidden-code claims excluded by
+brief and verified absent.
+
+`publish_chatterbox.py` is new: `render_chatterbox.py` refuses `public/audio/` and
+the manifest by design, and `render_kokoro.py --publish` is Kokoro-specific, so a
+verified Chatterbox render had no way into the catalogue. It re-checks the
+renderer's gates against the sidecar, derives chapters as a running sum over
+measured part durations, and holds `flock` across read-and-write because several
+sessions share this tree. Since SA-098, audio is served from R2, so publishing is
+not finished until `./scripts/upload-audio-to-r2.sh` has run.
+
+Two measurements written into `pronunciation-overrides.json` rather than
+rediscovered: hyphenated pseudo-phonetic respellings make Chatterbox worse, not
+better — overriding a segment that scored 1.00 dropped it to 0.18 — and the
+engine's nondeterminism against a 0.97 gate over 112 segments means a day
+converges by re-running, not by editing prose at each marginal failure.
+
 ## The component folder now names the route it serves (SA-105, F-151)
 
 **2026-08-19**

@@ -1363,6 +1363,14 @@ features:
     prd: docs/feature-prds/F-149.md
     methodology_refs:
       - M00
+  - id: F-150
+    title: Bible 365 is rewritten to the contract the rest of the site already meets
+    slug: bible-365-rewrite-to-contract
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-150.md
+    methodology_refs:
+      - M00
   - id: F-151
     title: The component folder now names the route it serves
     slug: components-today-rename

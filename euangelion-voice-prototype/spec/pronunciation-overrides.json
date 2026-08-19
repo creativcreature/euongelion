@@ -24,5 +24,17 @@
     "To add one: render the day, listen to the word study, and if it is wrong put",
     "a spaced-syllable spelling here. Re-render that day only."
   ],
-  "overrides": {}
+  "overrides": {},
+  "_LESSON": [
+    "Hyphenated pseudo-phonetic respellings MAKE CHATTERBOX WORSE, measured 2026-08-19.",
+    "'bereshit bara Elohim' rendered at clarity 1.00 untouched. Overriding it to",
+    "'beh-ray-sheet bah-rah eh-loh-heem' produced 'ha ha ha bah ha ha himp lo himp'",
+    "at clarity 0.18-0.36 and burned all four attempts.",
+    "",
+    "Two reasons it fails on BOTH sides of the loop: the engine reads hyphenated",
+    "syllables as literal fragments, and the QA gate then expects the RESPELLING in",
+    "the transcript, which Whisper will not produce either. An override here has to",
+    "be a real word the engine already says correctly - not a pronunciation guide.",
+    "Leave this empty rather than guessing."
+  ]
 }
