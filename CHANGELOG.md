@@ -296,6 +296,23 @@ earlier "I don't see the audio reader update".
 
 ---
 
+## The subscription pipelines — weekly paper + weekly series (SA-100, F-146)
+
+**2026-08-19**
+
+Both heavy automations now run on the founder's Claude subscription, timed
+to the **Wednesday 5am ET quota reset** so composition always starts on a
+full tank. The paper: GitHub cron → Wed 10:15 UTC, 8-day builds, Sunday
+feature via `CLAUDE_CODE_OAUTH_TOKEN` with the API key force-unset and
+deleted from GitHub — **content pipeline Anthropic bill: $0.00/month**
+(grounding-checked, drafts only, proven twice live). The series: a local
+launchd job runs full devo-go headless each Wednesday 5:20am — thematic
+from the founder's override file or derived from last-30-days research
+continuing the prior week's thread; ElevenLabs founder voice; /imagen via
+Codex; **SA-029's reading gate stands** — the run stops at a pushed
+`series/auto-*` branch and notifies (an explicit `AUTO_PUBLISH` switch
+exists for the founder alone).
+
 ## The full paper, no excuses (SA-094, F-140)
 
 **2026-08-19 (same-day answer to the morning critique)**

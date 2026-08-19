@@ -156,3 +156,4 @@ public/audio-normalized/
 
 # R2 upload ledger (scripts/upload-audio-to-r2.sh). Local cache, never shared.
 .r2-upload-ledger.txt
+logs/devo-weekly/

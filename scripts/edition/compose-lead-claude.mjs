@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Sunday lead composition via Claude Code SUBSCRIPTION auth (SA-095).
+ * Sunday lead composition via Claude Code SUBSCRIPTION auth (SA-100).
  *
  * WHY: the Sunday feature was the pipeline's only API spend (~$1/mo). With a
  * CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`, Pro/Max), the same

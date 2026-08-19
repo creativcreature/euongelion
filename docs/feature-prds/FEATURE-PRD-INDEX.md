@@ -148,3 +148,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-143 | Reading surfaces  | Global audio host, queue, bar, library listening          | 0/10     | wip     | [F-143.md](./F-143.md) |
 | F-144 | Platform          | Audio served from R2; 206 range requests; durability      | 0/10     | shipped | [F-144.md](./F-144.md) |
 | F-145 | Platform          | Library series standing: CURRENT, N of M, Continue        | 0/10     | wip     | [F-145.md](./F-145.md) |
+| F-146 | Content pipeline  | Weekly devo-go on subscription; override; gate kept       | 0/10     | shipped | [F-146.md](./F-146.md) |
