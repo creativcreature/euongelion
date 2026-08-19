@@ -5,6 +5,48 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The publishing record — byline, publication dates, and one version (SA-089, F-135)
+
+**2026-08-18**
+
+Founder direction: _"treat this like a true publishing house."_ Three records a
+publisher keeps, and this one kept none of them.
+
+**The byline had been rendering nothing.** `AuthorColophon` has been styled and
+mounted in both readers since 2026-05-13 — and both call sites passed only
+`translation`, so three of its four lines had never once appeared. Readings now
+close with **Written by Milo, Edited by James Parker**, as overridable defaults.
+Milo is the pseudonym for the synthesis of AI tools used to produce them; the
+founder declines the writing credit deliberately, so he can come to a reading and
+discover it the way a reader does. The house copyright is not repeated here —
+`SiteBottom` carries WokeGod LLC once, sitewide.
+
+**Dates are graded by the evidence they rest on.** Only **121 of 575** readings
+have a true publication day: 86 from the Substack export and live JSON-LD, 35
+from prefab series that shipped as a unit. The other 454 arrived in bulk imports
+where **365 share `2026-05-08` alone**. So every record stores its `source`, and
+`formatPublished()` renders an exact day only where one is real and **the month**
+otherwise. A day on those 454 would assert a publishing event that never
+happened, on a product whose whole claim is being verified when the category is
+not. Filesystem birth times were checked and are _worse_ than git — 8 distinct
+dates, and files stamped later than their own commit.
+
+**The service-worker version pair had drifted nine releases.** `sw.js`
+CACHE_NAME read `v117` against the client's `SW_VERSION` of `v108`, despite a
+comment in `sw.js` demanding they match. The client compares `SW_VERSION` to
+localStorage and, on mismatch, unregisters every worker and clears every cache —
+the recovery path for a reader whose worker is wedged. A returning reader's
+stored `v108` matched the shipped `v108`, **so it never fired for nine
+releases**. The primary update path still worked, so this was a dead safety net
+rather than a broken site.
+
+`package.json` had sat at **0.7.0 since February**, through 88 decisions and 134
+features, with **zero git tags**. `npm run release` now moves edition, cache name
+and client version together, healing a drift upward so no reader is handed a
+version they have already stored. `verify:publish-dates` joins the pre-commit
+gate — tested in both directions, and all nine gates green so concurrent sessions
+are unaffected.
+
 ## The narration library was mastered to peak, not loudness (SA-080, F-124)
 
 **2026-08-17**

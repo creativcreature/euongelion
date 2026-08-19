@@ -849,6 +849,7 @@ export default function DevotionalPageClient({
 
                     {/* Audit 2026-05-14: 4-line author colophon caps the reading. */}
                     <AuthorColophon
+                      slug={slug}
                       translation={
                         modules?.find((m) => m.type === 'scripture')
                           ?.translation ?? undefined

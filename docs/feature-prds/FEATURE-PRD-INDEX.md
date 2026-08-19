@@ -137,3 +137,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-132 | Platform          | Polish batch 4: hover states, read time, stages      | 0/10     | wip    | [F-132.md](./F-132.md) |
 | F-133 | Platform          | Search filters by kind; highlights grouped           | 0/10     | wip    | [F-133.md](./F-133.md) |
 | F-134 | Platform          | Ref-counted scroll lock; nested opens no longer leak | 0/10     | wip    | [F-134.md](./F-134.md) |
+| F-135 | Platform          | Publishing record: byline, dates, one version        | 0/10     | wip    | [F-135.md](./F-135.md) |

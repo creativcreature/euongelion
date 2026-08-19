@@ -429,6 +429,7 @@ export default function CuratedActiveView({
 
           {/* Author colophon — 4-line credit at the close of the reading. */}
           <AuthorColophon
+            slug={day.slug}
             translation={
               modules?.find((m) => m.type === 'scripture')?.translation ??
               undefined
