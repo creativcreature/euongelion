@@ -1,0 +1,1126 @@
+{
+  "_readme": "Hymn texts COPIED VERBATIM by scripts/edition/build-hymn-bank.mjs from The Otterbein Hymnal (1890), Project Gutenberg #16455, public domain. First verse plus up to two more, leading verse numbers stripped. No model generated any lyric line. SA-094/F-140.",
+  "source": "The Otterbein Hymnal (1890), Project Gutenberg #16455",
+  "hymns": [
+    {
+      "title": "When I survey the wondrous cross",
+      "author": "Isaac Watts",
+      "year": 1707,
+      "verses": [
+        [
+          "When I survey the wondrous cross,",
+          "On which the Prince of Glory died,",
+          "My richest gain I count but loss,",
+          "And pour contempt on all my pride."
+        ],
+        [
+          "Forbid it, Lord, that I should boast,",
+          "Save in the death of Christ, my God;",
+          "All the vain things that charm me most,",
+          "I sacrifice them to his blood."
+        ],
+        [
+          "See, from his head, his hands, his feet",
+          "Sorrow and love flow mingled down;",
+          "Did e'er such love and sorrow meet,",
+          "Or thorns compose so rich a crown?"
+        ]
+      ]
+    },
+    {
+      "title": "O sacred head, now wounded",
+      "author": "Paul Gerhardt",
+      "year": 1659,
+      "verses": [
+        [
+          "O sacred head, now wounded!",
+          "With grief and shame weighed down,",
+          "Now scornfully surrounded",
+          "With thorns, thine only crown;",
+          "O sacred head, what glory,",
+          "What bliss, till now, was thine!",
+          "Yet tho' despised and gory,",
+          "I joy to call thee mine."
+        ],
+        [
+          "What thou, my Lord! hast suffered",
+          "Was all for sinners' gain;",
+          "Mine, mine was the transgression,",
+          "But thine the deadly pain;",
+          "Lo! here I fall, my Savior!",
+          "'Tis I deserve thy place;",
+          "Look on me with thy favor;",
+          "Vouchsafe to me thy grace."
+        ],
+        [
+          "The joy can ne'er be spoken,",
+          "Above all joys beside,",
+          "When in thy body broken,",
+          "I thus with safety hide;",
+          "My Lord of life! desiring",
+          "Thy glory now to see,",
+          "Beside thy cross expiring,",
+          "I'd breathe my soul to thee."
+        ]
+      ]
+    },
+    {
+      "title": "Amazing grace! how sweet the sound",
+      "author": "John Newton",
+      "year": 1779,
+      "verses": [
+        [
+          "Amazing grace! how sweet the sound,",
+          "That saved a wretch like me!",
+          "I once was lost, but now am found,",
+          "Was blind, but now I see."
+        ],
+        [
+          "'Twas grace that taught my heart to fear,",
+          "And grace my fears relieved:",
+          "How precious did that grace appear,",
+          "The hour I first believed!"
+        ],
+        [
+          "Through many dangers, toils, and snares",
+          "I have already come;",
+          "'Tis grace has brought me safe thus far,",
+          "And grace will lead me home."
+        ]
+      ]
+    },
+    {
+      "title": "Rock of ages, cleft for me",
+      "author": "Augustus M. Toplady",
+      "year": 1776,
+      "verses": [
+        [
+          "Rock of ages, cleft for me!",
+          "Let me hide myself in thee:",
+          "Let the water and the blood,",
+          "From thy side a healing flood,",
+          "Be of sin the double cure;",
+          "Save from wrath and make me pure."
+        ],
+        [
+          "Should my tears forever flow,",
+          "Should my zeal no languor know,",
+          "All for sin could not atone;",
+          "Thou must save, and thou alone;",
+          "In my hand no price I bring;",
+          "Simply to thy cross I cling."
+        ],
+        [
+          "While I draw this fleeting breath,",
+          "When mine eyelids close in death,",
+          "When I rise to worlds unknown,",
+          "See thee on thy judgment throne--",
+          "Rock of Ages cleft for me,",
+          "Let me hide myself in thee."
+        ]
+      ]
+    },
+    {
+      "title": "Jesus, lover of my soul",
+      "author": "Charles Wesley",
+      "year": 1740,
+      "verses": [
+        [
+          "Jesus, Lover of my soul,",
+          "Let me to thy bosom fly,",
+          "While the nearer waters roll,",
+          "While the tempest still is high!",
+          "Hide me, O my Savior, hide,",
+          "Till the storm of life is past;",
+          "Safe into the haven guide,",
+          "O receive my soul at last!"
+        ],
+        [
+          "Other refuge have I none;",
+          "Hangs my helpless soul on thee:",
+          "Leave, O, leave me not alone,",
+          "Still support and comfort me:",
+          "All my trust on thee is stayed,",
+          "All my help from thee I bring;",
+          "Cover my defenseless head",
+          "With the shadow of thy wing!"
+        ],
+        [
+          "Thou, O Christ, art all I want;",
+          "More than all in thee I find;",
+          "Raise the fallen, cheer the faint,",
+          "Heal the sick, and lead the blind.",
+          "Just and holy is thy name,",
+          "I am all unrighteousness:",
+          "False and full of sin I am,",
+          "Thou art full of truth and grace."
+        ]
+      ]
+    },
+    {
+      "title": "Come, thou Fount of every blessing",
+      "author": "Robert Robinson",
+      "year": 1758,
+      "verses": [
+        [
+          "Come, thou Fount of every blessing,             338",
+          "Come, thou long-expected Jesus,                 159",
+          "Come to Jesus, come to Jesus,                   218",
+          "Come to the cross where the Savior,             135",
+          "Come to the blood-stained tree,                 198",
+          "Come, we that love the Lord,                    415",
+          "Come, ye disconsolate, where'er ye,             374",
+          "Come, ye sinners, poor and needy,               223",
+          "Come ye that know and fear the Lord,             91",
+          "Command thy blessing from above,                 39",
+          "Complete in thee! no work of mine,              344",
+          "Crown him with many crowns,                     300",
+          "Crown his head with endless blessing,           162"
+        ],
+        [
+          "Daughter of Zion, from the dust,                433",
+          "Days and moments quickly flying,                487",
+          "Deep in our hearts let us record,               138",
+          "Delay not, delay not; oh sinner,                216",
+          "Depth of mercy! can there be,                   194",
+          "Did Christ o'er sinners weep,                   128",
+          "Do not I love thee, oh, my Lord,                293",
+          "Do you hear the Savior calling,                 237",
+          "Do you slumber in your tent,                    537",
+          "Down at the cross where my Savior died,         329",
+          "Down in the valley with my Savior,              375",
+          "Drooping souls! no longer mourn,                225"
+        ],
+        [
+          "Earth has nothing sweet or fair,                299",
+          "Ere mountains reared their forms,                84",
+          "Eternal Spirit! by whose power,                 170",
+          "Eternal Wisdom, thee we praise,                  89",
+          "Ever would I fain be reading,                   114"
+        ]
+      ]
+    },
+    {
+      "title": "A charge to keep I have",
+      "author": "Charles Wesley",
+      "year": 1762,
+      "verses": [
+        [
+          "A charge to keep I have,",
+          "A God to glorify;",
+          "A never-dying-soul to save,",
+          "And fit it for the sky:---"
+        ],
+        [
+          "To serve the present age,",
+          "My calling to fulfill,--",
+          "Oh! may it all my powers engage--",
+          "To do my Master's will."
+        ],
+        [
+          "Arm me with jealous care,",
+          "As in thy sight to live;",
+          "And, oh, thy servant, Lord! prepare",
+          "A strict account to give."
+        ]
+      ]
+    },
+    {
+      "title": "Am I a soldier of the cross",
+      "author": "Isaac Watts",
+      "year": 1723,
+      "verses": [
+        [
+          "Am I a soldier of the cross,",
+          "A follower of the Lamb?",
+          "And shall I fear to own his cause,",
+          "Or blush to speak his name?"
+        ],
+        [
+          "Must I be carried to the skies",
+          "On flow'ry beds of ease,",
+          "While others fought to win the prize,",
+          "And sailed thro' bloody seas?"
+        ],
+        [
+          "Are there no foes for me to face?",
+          "Must I not stem the flood?",
+          "Is this vile world a friend to grace,",
+          "To help me on to God?"
+        ]
+      ]
+    },
+    {
+      "title": "Blest be the tie that binds",
+      "author": "John Fawcett",
+      "year": 1772,
+      "verses": [
+        [
+          "Blest be the tie that binds",
+          "Our hearts in Christian love!",
+          "The fellowship of kindred minds",
+          "Is like to that above."
+        ],
+        [
+          "Before our Father's throne,",
+          "We pour our ardent prayers;",
+          "Our fears, our hopes, our aims are one,",
+          "Our comforts and our cares."
+        ],
+        [
+          "We share our mutual woes;",
+          "Our mutual burdens bear;",
+          "And often for each other flows",
+          "The sympathizing tear."
+        ]
+      ]
+    },
+    {
+      "title": "Guide me, O thou great Jehovah",
+      "author": "William Williams",
+      "year": 1745,
+      "verses": [
+        [
+          "Hail! great Creator, wise and good,              15",
+          "Hail! holy, holy, holy Lord,                     90",
+          "Hail! morning known among the blest,            148",
+          "Hail, my ever blessed Jesus,                    163",
+          "Hallelujah! song of gladness,                    26",
+          "Hark! ten thousand harps and voices,            151",
+          "Hark the glad sound! the Savior comes,           99",
+          "Hark, the herald angels sing,                   101",
+          "Hasten, sinner! to be wise,                     205",
+          "Have you been to Jesus for the,                 282",
+          "He knows the bitter, weary way,                 379",
+          "He leadeth me! oh, blessed tho't,               371",
+          "Here I can firmly rest,                         361",
+          "He wills that I should holy be,                 263",
+          "Holy Bible, book divine,                         65",
+          "Holy Ghost, dispel our sadness,                 177",
+          "Holy, holy, holy! Lord God Almighty,             18",
+          "Holy Spirit, faithful Guide,                    171",
+          "Holy Spirit, Fount of blessing,                 176",
+          "Hosanna to the Prince of light,                 142",
+          "Hover o'er me, Holy Spirit,                     175",
+          "How beauteous on the mountains,                 460",
+          "How blest the hour when first we gave,          474",
+          "How blest the righteous when he dies,           490",
+          "How charming is the place,                       30",
+          "How did my heart rejoice to hear,                42",
+          "How firm a foundation, ye saints,               369",
+          "How gentle God's commands,                      335",
+          "How beauteous were the marks divine,            108",
+          "How heavy is the night,                         180",
+          "How helpless guilty nature lies,                181",
+          "How pleasant, how divinely fair,                 37",
+          "How precious is the book divine,                 69",
+          "How sad it would be, if when thou,              229",
+          "How sad our state by nature is,                 182",
+          "How shall the young secure their hearts,         70",
+          "How solemn are the words,                       250",
+          "How sweet, how heavenly is the sight,           468",
+          "How sweetly breaks the Sabbath dawn,             46",
+          "How sweetly flowed the gospel's sound,          109",
+          "How sweet the name of Jesus,                    295",
+          "How sweet to leave the world awhile,             36",
+          "How tedious and tasteless the hours,            324",
+          "How tender is thy hand,                         383",
+          "How vast, how full, how free,                   189"
+        ],
+        [
+          "I am coming to the cross,                       274",
+          "I am dwelling on the mountain,                  285",
+          "I am thine, O Lord, I have heard,               280",
+          "I cannot always trace the way,                  355",
+          "I cannot do without thee,                       272",
+          "I gave my life for thee,                        134",
+          "I have found a friend in Jesus,                 328",
+          "I have found redemption,                        245",
+          "I have found repose for my weary soul,          373",
+          "I heard the voice of Jesus say,                 334",
+          "I hear the Savior say,                          197",
+          "I hear thy welcome voice,                       317",
+          "I know that my Redeemer lives,                  149",
+          "I love to steal awhile away,                    388",
+          "I love to tell the story,                       419",
+          "I love thy kingdom, Lord,                       435",
+          "I need thee every hour,                         326",
+          "I saw a way-worn, trav'ler,                     525",
+          "I sing th' almighty pow'r of God,                79",
+          "I stand, but not as once I did,                 243",
+          "I think when I read that sweet story,           532",
+          "I want to be a worker for the Lord,             413",
+          "I will sing you a song of that beautiful,       526",
+          "I would not live alway; I ask not to stay,      496",
+          "In God I have found a retreat,                  378",
+          "In heavenly love abiding,                       345",
+          "In some way or other,                           367",
+          "In stature grows the heavenly child,            106",
+          "In the cross of Christ I glory,                 131",
+          "In the Christian's home in glory,               519",
+          "In thy cleft, O Rock of Ages,                   350",
+          "In thy name, O Lord! assembling,                 32",
+          "In thy service will I ever,                     268",
+          "In vain in high and holy lays,                  116",
+          "It came upon the midnight clear,                 94",
+          "It is not death to die,                         484",
+          "I've found the pearl of greatest price,         287",
+          "I've reached the land of corn and wine,         284"
+        ],
+        [
+          "Jehovah God! thy gracious pow'r,                 92",
+          "Jerusalem, my glorious home,                    516",
+          "Jerusalem, the glorious,                        513",
+          "Jerusalem, the golden,                          510",
+          "Jesus, and shall it ever be,                    304",
+          "Jesus comes, his conflict over,                 152",
+          "Jesus, I my cross have taken,                   266",
+          "Jesus is God! the glorious bands,               100",
+          "Jesus is tenderly calling thee home,            214",
+          "Jesus, keep me near the cross,                  136",
+          "Jesus, Lover of my soul,                        340",
+          "Jesus, my all, to heaven is gone,               264",
+          "Jesus, my heart within me burns,                305",
+          "Jesus, my Lord, to thee I cry,                  241",
+          "Jesus, my Savior, to Bethlehem came,            201",
+          "Jesus, my truth, my way,                        318",
+          "Jesus, Savior, pilot me,                        341",
+          "Jesus shall reign where'er the sun,             437",
+          "Jesus, the very thought of thee,                291",
+          "Jesus, thou art the sinner's Friend,            239",
+          "Jesus, thou joy of loving hearts,               476",
+          "Jesus, thy church with longing eyes,            161",
+          "Jesus, thy name I love,                         308",
+          "Jesus, while our hearts are bleeding,           488",
+          "Joy to the world! the Lord is come,              98",
+          "Just as I am, without one plea,                 235",
+          "Just as thou art, without one trace,            213"
+        ]
+      ]
+    },
+    {
+      "title": "How firm a foundation, ye saints of the Lord",
+      "author": "Geo. Keith",
+      "year": 1787,
+      "verses": [
+        [
+          "How firm a foundation, ye saints of the Lord,",
+          "Is laid for your faith in his excellent word:",
+          "What more can he say than to you he has said,",
+          "You who unto Jesus for refuge have fled?"
+        ],
+        [
+          "In every condition--in sickness, in health,",
+          "In poverty's vale, or abounding in wealth,",
+          "At home and abroad, on the land, on the sea--",
+          "As your days may demand, so your succor shall be."
+        ],
+        [
+          "Fear not: I am with you, O be not dismayed;",
+          "I, I am your God, and will still give you aid;",
+          "I'll strengthen you, help you, and cause you to stand,",
+          "Upheld by my righteous, omnipotent hand."
+        ]
+      ]
+    },
+    {
+      "title": "I love thy kingdom, Lord",
+      "author": "Timothy Dwight",
+      "year": 1800,
+      "verses": [
+        [
+          "I love thy kingdom, Lord!",
+          "The house of thine abode,",
+          "The church our blest Redeemer saved,",
+          "With his own precious blood."
+        ],
+        [
+          "I love thy church, O God!",
+          "Her walls before thee stand,",
+          "Dear as the apple of thine eye,",
+          "And graven on thy hand."
+        ],
+        [
+          "For her my tears shall fall,",
+          "For her my prayers ascend;",
+          "To her my cares and toils be given,",
+          "Till toils and cares shall end."
+        ]
+      ]
+    },
+    {
+      "title": "Jesus shall reign where’er the sun",
+      "author": "Isaac Watts",
+      "year": 1719,
+      "verses": [
+        [
+          "Jesus shall reign where'er the sun",
+          "Does his successive journeys run;",
+          "His kingdom spread from shore to shore,",
+          "Till moons shall wax and wane no more."
+        ],
+        [
+          "From north to south the princes meet,",
+          "To pay their homage at his feet;",
+          "While western empires own their Lord,",
+          "And savage tribes attend his word."
+        ],
+        [
+          "To him shall endless prayer be made,",
+          "And endless praises crown his head;",
+          "His name, like sweet perfume, shall rise,",
+          "With every morning sacrifice."
+        ]
+      ]
+    },
+    {
+      "title": "Just as I am, without one plea",
+      "author": "Charlotte Elliott",
+      "year": 1836,
+      "verses": [
+        [
+          "Just as I am, without one plea,",
+          "But that thy blood was shed for me,",
+          "And that thou bidd'st me come to thee,",
+          "O Lamb of God, I come! I come!"
+        ],
+        [
+          "Just as I am, and waiting not",
+          "To rid my soul of one dark blot,",
+          "To thee whose blood can cleanse each spot,",
+          "O Lamb of God, I come! I come!"
+        ],
+        [
+          "Just as I am, tho' tossed about",
+          "With many a conflict, many a doubt,",
+          "Fightings within, and fears without,",
+          "O Lamb of God, I come! I come!"
+        ]
+      ]
+    },
+    {
+      "title": "My faith looks up to thee",
+      "author": "Ray Palmer",
+      "year": 1830,
+      "verses": [
+        [
+          "My faith looks up to thee,",
+          "Thou Lamb of Calvary;",
+          "Savior divine;",
+          "Now hear me while I pray;",
+          "Take all my guilt away;",
+          "O, let me, from this day,",
+          "Be wholly thine."
+        ],
+        [
+          "May thy rich grace impart",
+          "Strength to my fainting heart;",
+          "My zeal inspire;",
+          "As thou hast died for me,",
+          "Oh! may my love to thee",
+          "Pure, warm, and changeless be,",
+          "A living fire!"
+        ],
+        [
+          "While life's dark maze I tread,",
+          "And griefs around me spread,",
+          "Be thou my Guide;",
+          "Bid darkness turn to day,",
+          "Wipe sorrow's tears away,",
+          "Nor let me ever stray",
+          "From thee aside."
+        ]
+      ]
+    },
+    {
+      "title": "Nearer, my God, to thee",
+      "author": "Mrs. Sarah Flower Adams",
+      "year": 1841,
+      "verses": [
+        [
+          "Nearer, my God, to thee,",
+          "Nearer to thee;",
+          "E'en though it be a cross",
+          "That raiseth me.",
+          "Still all my song shall be",
+          "Nearer, my God, to thee,--",
+          "Nearer to thee."
+        ],
+        [
+          "Though like the wanderer",
+          "The sun gone down,",
+          "Darkness be over me,",
+          "My rest a stone,",
+          "Yet, in my dreams, I'd be",
+          "Nearer, my God! to thee,--",
+          "Nearer to thee."
+        ],
+        [
+          "There let the way appear,",
+          "Steps unto heaven;",
+          "All that thou send'st to me,",
+          "In mercy given;",
+          "Angels to beckon me",
+          "Nearer, my God! to thee,--",
+          "Nearer to thee."
+        ]
+      ]
+    },
+    {
+      "title": "O God, our help in ages past",
+      "author": "Isaac Watts",
+      "year": 1719,
+      "verses": [
+        [
+          "O God, our help in ages past,                    78",
+          "Oh, happy day, that fixed my choice,            466",
+          "O Holy Savior, Friend unseen,                   279",
+          "Oh, how happy are they,                         248",
+          "O, I often sit and ponder,                      530",
+          "O Jesus full of grace,                          271",
+          "O, Jesus, Jesus, dearest Lord,                  292",
+          "O Jesus! sweet the tears I shed,                123",
+          "O Lord, how full of sweet content,              343",
+          "O Love I who gav'st thy life for me,            140",
+          "Oh, now I see the cleansing wave,               283",
+          "Oh, render thanks to God above,                  10",
+          "O, sacred head, now wounded,                    120",
+          "Oh, scatter seeds of loving deeds,              414",
+          "Oh, still in accents sweet,                     463",
+          "Oh, that I could forever dwell,                 314",
+          "Oh, that my load of sin were gone,              232",
+          "Oh, the peace that fills my soul,               255",
+          "O, think of the home over there,                517",
+          "O thou, in whose presence my soul,              323",
+          "Oh, Thou, the contrite sinner's Friend,         354",
+          "Oh thou, whose own vast temple stands,           41",
+          "Oh, turn ye, oh turn ye, for why,               215",
+          "Oh, weary pilgrim, lift your head,              382",
+          "Oh, what if we are Christ's,                    359",
+          "O when shall I see Jesus,                       296",
+          "On! where are kings and empires,                432",
+          "Oh, where shall rest be found,                  228",
+          "Oh, wondrous, deep, unbounded love,             244",
+          "Oh, wondrous type, oh, vision fair,             113",
+          "O worship the King, all-glorious above,          28",
+          "Of him who did salvation bring,                 320",
+          "One sweetly solemn thought,                     500",
+          "On Jordan's stormy bank I stand,                528",
+          "Only a word for Jesus,                          420",
+          "On the mountain's top appearing,                441",
+          "Onward, onward, men of heaven,                  445",
+          "Oppressed with noonday's scorching,             124",
+          "Our children, Lord, in faith and prayer,        483",
+          "Our country's voice is pleading,                456",
+          "Our Father who art in heaven,                   396",
+          "Our Lord is now rejected,                       160",
+          "Our sins on Christ were laid,                   126"
+        ],
+        [
+          "Peace be still! In this night of sorrow,        502",
+          "Pour out thy Spirit from on high,               464",
+          "Praise God from whom all blessings flow,          6",
+          "Praise the Lord; ye heavens adore him,           24",
+          "Praise to God, immortal praise,                 546",
+          "Praise to thee, thou great Creator,              27",
+          "Prayer is appointed to convey,                  385",
+          "Prayer is the soul's sincere desire,            391"
+        ],
+        [
+          "Rejoice and be glad, the Redeemer has,          316",
+          "Rescue the perishing,                           411",
+          "Rest, weary pilgrim, thy journey is o'er,       503",
+          "Revive thy work, O Lord,                        436",
+          "Ride on! ride on in majesty,                    112",
+          "Rise, glorious Conqueror, rise,                 150",
+          "Rocked in the cradle of the deep,               547",
+          "Rock of Ages, cleft for me,                     129"
+        ]
+      ]
+    },
+    {
+      "title": "On Jordan’s stormy banks I stand",
+      "author": "Samuel Stennett",
+      "year": 1787,
+      "verses": [
+        [
+          "On Jordan's stormy banks I stand,",
+          "And cast a wishful eye",
+          "To Canaan's fair and happy land,",
+          "Where my possessions lie."
+        ],
+        [
+          "We will rest in the fair and happy land,",
+          "Just across on the evergreen shore,",
+          "Sing the song of Moses and the Lamb, by and by,",
+          "And dwell with Jesus evermore."
+        ],
+        [
+          "O'er all those wide-extended plains",
+          "Shines one eternal day;",
+          "There God the Son forever reigns",
+          "And scatters night away."
+        ]
+      ]
+    },
+    {
+      "title": "Stand up, stand up for Jesus",
+      "author": "George Duffield",
+      "year": 1858,
+      "verses": [
+        [
+          "Stand up, stand up for Jesus,",
+          "Ye soldiers of the cross!",
+          "Lift high his royal banner,",
+          "It must not suffer loss;",
+          "From victory unto victory",
+          "His army shall he lead,",
+          "Till every foe is vanquished.",
+          "And Christ is Lord indeed."
+        ],
+        [
+          "Stand up, stand up for Jesus.",
+          "The trumpet call obey;",
+          "Forth to the mighty conflict,",
+          "In this his glorious day;",
+          "Ye that are men! now serve him,",
+          "Against unnumbered foes;",
+          "Your courage rise with danger,",
+          "And strength to strength oppose."
+        ],
+        [
+          "Stand up, stand up for Jesus,",
+          "Stand in his strength alone;",
+          "The arm of flesh will fail you;",
+          "Ye dare not trust your own;",
+          "Put on the gospel armor,",
+          "And, watching unto prayer,",
+          "Where duty calls, or danger,",
+          "Be never wanting there."
+        ]
+      ]
+    },
+    {
+      "title": "There is a fountain filled with blood",
+      "author": "William Cowper",
+      "year": 1779,
+      "verses": [
+        [
+          "There is a fountain filled with blood,",
+          "Drawn from Immanuel's veins,",
+          "And sinners plunged beneath that flood,",
+          "Lose all their guilty stains."
+        ],
+        [
+          "Oh, glorious fountain!",
+          "Here will I stay,",
+          "And in thee ever",
+          "Wash my sins away."
+        ],
+        [
+          "The dying thief rejoiced to see,",
+          "That fountain in his day,",
+          "And there may I, though vile as he,",
+          "Wash all my sins away."
+        ]
+      ]
+    },
+    {
+      "title": "What a friend we have in Jesus",
+      "author": "Unknown",
+      "year": 1890,
+      "verses": [
+        [
+          "What a friend we have in Jesus,",
+          "All our sins and griefs to bear;",
+          "What a privilege to carry",
+          "Ev'rything to God in prayer!",
+          "O what peace we often forfeit,",
+          "O what needless pain we bear,",
+          "All because we do not carry",
+          "Ev'rything to God in prayer!"
+        ],
+        [
+          "Have we trials and temptations?",
+          "Is there trouble anywhere?",
+          "We should never be discouraged,",
+          "Take it to the Lord in prayer.",
+          "Can we find a friend so faithful,",
+          "Who will all our sorrows share?",
+          "Jesus knows our ev'ry weakness,",
+          "Take it to the Lord in prayer!"
+        ],
+        [
+          "Are we weak and heavy laden,",
+          "Cumbered with a load of care?--",
+          "Precious Savior, still our refuge,--",
+          "Take it to the Lord in prayer.",
+          "Do thy friends despise, forsake thee?",
+          "Take it to the Lord in prayer;",
+          "In his firms he'll take and shield thee,",
+          "Thou wilt find a solace there."
+        ]
+      ]
+    },
+    {
+      "title": "My hope is built on nothing less",
+      "author": "Rev. Edward Mote",
+      "year": 1825,
+      "verses": [
+        [
+          "My hope is built on nothing less",
+          "Than Jesus' blood and righteousness;",
+          "I dare not trust the sweetest frame,",
+          "But wholly lean on Jesus' name."
+        ],
+        [
+          "On Christ, the Solid Rock, I stand,",
+          "All other ground is sinking sand."
+        ],
+        [
+          "When darkness veils his lovely face,",
+          "I rest on his unchanging grace;",
+          "In every high and stormy gale,",
+          "My anchor holds within the vail."
+        ]
+      ]
+    },
+    {
+      "title": "Holy, holy, holy! Lord God Almighty",
+      "author": "Reginald Heber",
+      "year": 1890,
+      "verses": [
+        [
+          "Holy, holy, holy! Lord God Almighty!",
+          "Early in the morning our song shall rise to thee;",
+          "Holy, holy, holy! merciful and mighty!",
+          "God over all and blest eternally."
+        ],
+        [
+          "Holy, holy, holy! all saints adore thee,",
+          "Casting down their golden crowns around the glassy sea;",
+          "Cherubim and seraphim falling down before thee,",
+          "Who wast, and art, and evermore shall be."
+        ],
+        [
+          "Holy, holy, holy! tho' the darkness hide thee,",
+          "Though the eye of sinful man thy glory may not see;",
+          "Only thou art holy, there is none beside thee;",
+          "Perfect in power, in love, and purity."
+        ]
+      ]
+    },
+    {
+      "title": "Christ the Lord is risen to-day",
+      "author": "Charles Wesley",
+      "year": 1739,
+      "verses": [
+        [
+          "Christ the Lord is risen to-day,                143",
+          "Church of the ever-living God,                  434",
+          "Come at the morning hour,                       397",
+          "Come, dearest Lord, and feed thy sheep,          45",
+          "Come, every soul, by sin oppressed,             246",
+          "Come, Holy Ghost, in love,                      164",
+          "Come, Holy Spirit, come,                        174",
+          "Come, Holy Spirit, heavenly Dove,               166",
+          "Come, humble sinner, in whose breast,           211",
+          "Come in, beloved of the Lord,                   469",
+          "Come in, thou blessed of the Lord,              467",
+          "Come, let us all unite to praise,               289",
+          "Come, let us all unite to sing,                  93",
+          "Come, let us anew,                              548",
+          "Come, let us join the songs of praise,          155",
+          "Come, let us sing the song of songs,            306",
+          "Come, my soul, thy suit prepare,                394",
+          "Come, oh, my soul, in sacred lays,                8",
+          "Come, says Jesus' sacred voice,                 206",
+          "Come, sound his praise abroad,                   21",
+          "Come, thou Almighty King,                        75",
+          "Come, thou Fount of every blessing,             338",
+          "Come, thou long-expected Jesus,                 159",
+          "Come to Jesus, come to Jesus,                   218",
+          "Come to the cross where the Savior,             135",
+          "Come to the blood-stained tree,                 198",
+          "Come, we that love the Lord,                    415",
+          "Come, ye disconsolate, where'er ye,             374",
+          "Come, ye sinners, poor and needy,               223",
+          "Come ye that know and fear the Lord,             91",
+          "Command thy blessing from above,                 39",
+          "Complete in thee! no work of mine,              344",
+          "Crown him with many crowns,                     300",
+          "Crown his head with endless blessing,           162"
+        ],
+        [
+          "Daughter of Zion, from the dust,                433",
+          "Days and moments quickly flying,                487",
+          "Deep in our hearts let us record,               138",
+          "Delay not, delay not; oh sinner,                216",
+          "Depth of mercy! can there be,                   194",
+          "Did Christ o'er sinners weep,                   128",
+          "Do not I love thee, oh, my Lord,                293",
+          "Do you hear the Savior calling,                 237",
+          "Do you slumber in your tent,                    537",
+          "Down at the cross where my Savior died,         329",
+          "Down in the valley with my Savior,              375",
+          "Drooping souls! no longer mourn,                225"
+        ],
+        [
+          "Earth has nothing sweet or fair,                299",
+          "Ere mountains reared their forms,                84",
+          "Eternal Spirit! by whose power,                 170",
+          "Eternal Wisdom, thee we praise,                  89",
+          "Ever would I fain be reading,                   114"
+        ]
+      ]
+    },
+    {
+      "title": "Joy to the world! the Lord is come",
+      "author": "Isaac Watts",
+      "year": 1709,
+      "verses": [
+        [
+          "Joy to the world! the Lord is come:",
+          "Let earth receive her King;",
+          "Let every heart prepare him room,",
+          "And heaven and nature sing."
+        ],
+        [
+          "Joy to the earth! the Savior reigns:",
+          "Let men their songs employ;",
+          "While fields and floods, rocks, hills, and plains,",
+          "Repeat the sounding joy."
+        ],
+        [
+          "No more let sins and sorrows grow,",
+          "Nor thorns infest the ground;",
+          "He comes to make his blessings flow,",
+          "Far as the curse is found."
+        ]
+      ]
+    },
+    {
+      "title": "Take my life, and let it be",
+      "author": "Frances Ridley Havergal",
+      "year": 1890,
+      "verses": [
+        [
+          "Take my life, and let it be",
+          "Consecrated, Lord, to thee;",
+          "Take my hands and let them move",
+          "At the impulse of thy love."
+        ],
+        [
+          "Wash me in the Savior's precious blood, the precious blood,",
+          "Cleanse me in its purifying flood, the healing flood,",
+          "Lord, I give to thee my life and all, to be",
+          "Thine, henceforth, eternally."
+        ],
+        [
+          "Take my feet, and let them be",
+          "Swift and beautiful for thee;",
+          "Take my voice, and let me sing",
+          "Always, only for my King"
+        ]
+      ]
+    },
+    {
+      "title": "How sweet the name of Jesus sounds",
+      "author": "John Newton",
+      "year": 1779,
+      "verses": [
+        [
+          "How sweet the name of Jesus sounds",
+          "In a believer's ear;",
+          "It soothes his sorrow, heals his wounds,",
+          "And drives away his fear."
+        ],
+        [
+          "It makes the wounded spirit whole,",
+          "And calms the troubled breast;",
+          "'Tis manna to the hungry soul,",
+          "And to the weary, rest."
+        ],
+        [
+          "Dear Name, the rock on which I build,",
+          "My shield and hiding-place;",
+          "My never-failing treasure, filled",
+          "With boundless stores of grace."
+        ]
+      ]
+    },
+    {
+      "title": "In the cross of Christ I glory",
+      "author": "Sir John Bowring",
+      "year": 1825,
+      "verses": [
+        [
+          "In the cross of Christ I glory,",
+          "Towering o'er the wrecks of time;",
+          "All the light of sacred story",
+          "Gathers round its head sublime."
+        ],
+        [
+          "When the woes of life o'ertake me,",
+          "Hopes deceive, and fears annoy,",
+          "Never shall the cross forsake me;",
+          "Lo! it glows with peace and joy."
+        ],
+        [
+          "When the sun of bliss is beaming",
+          "Light and love upon my way,",
+          "From the cross the radiance streaming",
+          "Adds more luster to the day."
+        ]
+      ]
+    },
+    {
+      "title": "I love to tell the story",
+      "author": "Miss Kate Hankey",
+      "year": 1867,
+      "verses": [
+        [
+          "I love to tell the story",
+          "Of unseen things above,",
+          "Of Jesus and his glory,",
+          "Of Jesus and his love!",
+          "I love to tell the story,",
+          "Because I know it's true;",
+          "It satisfies my longings,",
+          "As nothing else would do."
+        ],
+        [
+          "I love to tell the story!",
+          "'Twill be my theme in glory,",
+          "To tell the old, old story",
+          "Of Jesus and his love."
+        ],
+        [
+          "I love to tell the story!",
+          "More wonderful it seems,",
+          "Than all the golden fancies",
+          "Of all our golden dreams.",
+          "I love to tell the story!",
+          "It did so much for me!",
+          "And that is just the reason,",
+          "I tell it now to thee."
+        ]
+      ]
+    },
+    {
+      "title": "He leadeth me! oh! blessed tho’t",
+      "author": "Rev. Jos. H. Gilmore",
+      "year": 1861,
+      "verses": [
+        [
+          "He leadeth me! oh! blessed tho't,",
+          "Oh! words with heav'nly comfort fraught;",
+          "Whate'er I do, where'er I be,",
+          "Still 'tis God's hand that leadeth me."
+        ],
+        [
+          "Ref.--He leadeth me! he leadeth me!",
+          "By his own hand he leadeth me;",
+          "His faithful follower I would be,",
+          "For by his hand he leadeth me."
+        ],
+        [
+          "Sometimes 'mid scenes of deepest gloom,",
+          "Sometimes where Eden's bowers bloom,",
+          "By waters still, o'er troubled sea--",
+          "Still 'tis his hand that leadeth me."
+        ]
+      ]
+    },
+    {
+      "title": "Come, ye sinners, poor and needy",
+      "author": "Joseph Hart",
+      "year": 1759,
+      "verses": [
+        [
+          "Come, ye sinners, poor and needy,",
+          "Weak and wounded, sick and sore;",
+          "Jesus ready stands to save you,",
+          "Full of pity, love, and pow'r;",
+          "He is able,",
+          "He is willing, doubt no more."
+        ],
+        [
+          "Now, ye needy, come and welcome;",
+          "God's free bounty glorify;",
+          "True belief and true repentance,",
+          "Every grace that brings you nigh,",
+          "Without money,",
+          "Come to Jesus Christ and buy."
+        ],
+        [
+          "Let not conscience make you linger,",
+          "Nor of fitness fondly dream;",
+          "All the fitness he requireth",
+          "Is to feel your need of him;",
+          "This he gives you;",
+          "'Tis the Spirit's glimmering beam."
+        ]
+      ]
+    },
+    {
+      "title": "I am thine, O Lord, I have heard thy voice",
+      "author": "Fanny J. Crosby",
+      "year": 1890,
+      "verses": [
+        [
+          "I am thine, O Lord, I have heard thy voice,",
+          "And it told thy love to me;",
+          "But I long to rise in the arms of faith,",
+          "And be closer drawn to thee."
+        ],
+        [
+          "Ref.--Draw me nearer, nearer, blessed Lord,",
+          "To the cross where thou hast died;",
+          "Draw me nearer, nearer, nearer, blessed Lord,",
+          "To thy precious, bleeding side."
+        ],
+        [
+          "Consecrate me now to thy service, Lord,",
+          "By the pow'r of grace divine;",
+          "Let my soul look up with a steadfast hope,",
+          "And my will be lost in thine."
+        ]
+      ]
+    },
+    {
+      "title": "More love to thee, O Christ",
+      "author": "Mrs. E.P. Prentiss",
+      "year": 1869,
+      "verses": [
+        [
+          "More love to thee, O Christ,",
+          "More love to thee!",
+          "Hear thou the prayer I make",
+          "On bended knee:",
+          "This is my earnest plea--",
+          "More love, O Christ, to thee!",
+          "More love to thee!"
+        ],
+        [
+          "Once earthly joy I craved--",
+          "Sought peace and rest;",
+          "Now thee alone I seek:",
+          "Give what is best.",
+          "This all my prayer shall be--",
+          "More love, O Christ, to thee;",
+          "More love to thee!"
+        ],
+        [
+          "Then shall my latest breath",
+          "Whisper thy praise;",
+          "This be the parting cry",
+          "My heart shall raise--",
+          "This still its prayer shall be,",
+          "More love, O Christ, to thee!",
+          "More love to thee!"
+        ]
+      ]
+    }
+  ]
+}

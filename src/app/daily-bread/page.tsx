@@ -50,6 +50,8 @@ import { pickVoiceForDay } from '@/data/voices-bank'
 import { getSeasonEssay } from '@/data/season-essays'
 import { buildWordSearch } from '@/lib/edition/wordsearch'
 import WordSearchClient from '@/components/edition/puzzles/WordSearchClient'
+import { pickCatechismForDay } from '@/data/catechism-bank'
+import { pickHymnForDay } from '@/data/hymn-bank'
 import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
 import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
 import QuizClient from '@/components/edition/puzzles/QuizClient'
@@ -407,6 +409,8 @@ export default async function DailyBreadPage() {
   const edVoices = pickVoiceForDay(now)
   const seasonEssay = getSeasonEssay(liturgical)
   const wordSearch = buildWordSearch(now)
+  const catechism = pickCatechismForDay(now)
+  const hymn = pickHymnForDay(now)
 
   // The lead plate — a feature article leads with art (founder: "very image
   // and text as art forward"). Riso series hero; absent for an authored lead
@@ -757,16 +761,26 @@ export default async function DailyBreadPage() {
               <CrosswordClient puzzle={edCrossword} />
             </section>
           )}
-          {/* SLOT:CATECHISM — the Catechism Corner lands here beside the
-              crossword; the proverb holds the column until it does. */}
-          {edProverb && (
-            <div
-              className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <ProverbBox proverb={edProverb} />
-            </div>
-          )}
+          {/* The Catechism Corner — beside the crossword, so the puzzle
+              always sits next to prose (founder: the blank was wasted). */}
+          <div
+            className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
+            data-reveal
+          >
+            <section aria-label="The catechism corner">
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">The catechism corner</h2>
+                <p className="edition-section-note">
+                  Heidelberg, Q{catechism.number}
+                </p>
+              </div>
+              <p className="edition-catechism-q">{catechism.question}</p>
+              <p className="edition-catechism-a">{catechism.answer}</p>
+              <p className="edition-quote-cite">
+                {catechism.source} &middot; {catechism.scriptures.join(' · ')}
+              </p>
+            </section>
+          </div>
 
           {/* Row 4 — the funnies' reserved frame beside the season. */}
           <section
@@ -921,7 +935,31 @@ export default async function DailyBreadPage() {
               </section>
             </div>
           )}
-          {/* SLOT:HYMN — the hymnal takes the wide slot below. */}
+          {/* The Hymnal — one hymn a day, received text from the 1890
+              Otterbein Hymnal. */}
+          <section
+            className="edition-section paper-box paper-box--gallery"
+            data-reveal
+            aria-label="The hymnal"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The hymnal</h2>
+              <p className="edition-section-note">
+                {hymn.author}, {hymn.year}
+              </p>
+            </div>
+            <p className="edition-mini-title">{hymn.title}</p>
+            {hymn.verses.map((v, i) => (
+              <p key={i} className="edition-hymn-verse">
+                {v.join('\n')}
+              </p>
+            ))}
+          </section>
+          {edProverb && (
+            <div className="paper-box paper-box--prayercol" data-reveal>
+              <ProverbBox proverb={edProverb} />
+            </div>
+          )}
 
           {/* Row 9 — thirds: memory verse, the question, quiz 3. */}
           {edVerse && (
