@@ -18,7 +18,16 @@ printf 'c.parker3@me.com' | npx wrangler secret put ADMIN_EMAIL_ALLOWLIST
 Without it, admin fails closed — including your new review queue at
 **/admin/edition** (4 Sunday features are already waiting in it).
 
-## 3. Add 3 GitHub secrets → the paper refreshes itself nightly
+## 3. ~~GitHub secrets~~ — DONE, and UPGRADED (2026-08-19)
+
+Nightly pipeline proven live (two successful cloud runs). The Sunday feature
+now composes on your **Claude subscription** (`CLAUDE_CODE_OAUTH_TOKEN`);
+`ANTHROPIC_API_KEY` was **removed from GitHub** — the content pipeline's
+Anthropic bill is **$0.00/month**. (The Worker keeps its own key for on-site
+chat only.) If the token ever expires, Sunday builds fail *visibly* in the
+Actions tab — rerun `claude setup-token` and update the secret.
+
+### (original instructions, kept for reference)
 
 GitHub → creativcreature/euongelion → Settings → Secrets and variables →
 Actions → New repository secret. Add these three (values are in `.env.local`):
