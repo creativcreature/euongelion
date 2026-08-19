@@ -2,7 +2,7 @@ name: daily-edition
 
 # The Daily Bread's content pipeline (SA-090 / F-136).
 #
-# Nightly at 03:00 UTC this builds tomorrow's edition and writes the rows
+# Weekly (Wed, post-quota-reset) this builds the coming week's editions and writes the rows
 # straight to Supabase. No commit and no deploy is involved in publishing
 # content, which keeps the project's most failure-prone operation out of the
 # daily path (Cloudflare Cron is inert here — wrangler.jsonc has triggers.crons
@@ -10,8 +10,9 @@ name: daily-edition
 #
 # Deterministic sections (crossword, prayer, word, quiz, …) are written as
 # `published` by the runner and are live the moment this job succeeds. Reviewed
-# kinds land as drafts and wait in /admin/edition. If this job fails, yesterday's
-# edition simply stays up and the gap is visible in the Actions tab.
+# kinds land as drafts and wait in /admin/edition. If this job fails, the
+# already-written week stays up and the red X is visible in the Actions tab
+# for days before any reader could notice a gap.
 #
 # REQUIRED SECRETS — add under repo Settings → Secrets and variables → Actions:
 #   - NEXT_PUBLIC_SUPABASE_URL   — where the rows are written
@@ -35,7 +36,12 @@ name: daily-edition
 
 on:
   schedule:
-    - cron: '0 3 * * *' # nightly 03:00 UTC — builds tomorrow's edition
+    # SA-095 (founder, 2026-08-19): the Claude subscription quota resets
+    # Wednesdays at 5am Eastern. The WHOLE following week builds in one run
+    # just after the reset, so the Sunday composition lands on a full tank.
+    # 10:15 UTC = 6:15am EDT / 5:15am EST — always after 5am Eastern in
+    # both halves of the year without tracking DST.
+    - cron: '15 10 * * 3' # Wednesdays, just after the founder's quota reset
   workflow_dispatch:
     inputs:
       days:
@@ -101,7 +107,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           EDITION_FROM: ${{ inputs.from }}
-          EDITION_DAYS: ${{ inputs.days || 1 }}
+          # Scheduled runs build the next 8 days (Thu → next Thu), which
+          # always contains exactly one Sunday. Manual dispatches choose.
+          EDITION_DAYS: ${{ inputs.days || 8 }}
         run: |
           set -euo pipefail
           FROM_FLAG=""
