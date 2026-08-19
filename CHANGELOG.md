@@ -5,6 +5,17 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## v0.8.0 — release cut for the daily paper + accounts (SA-090, F-136)
+
+**2026-08-19**
+
+`npm run release minor`: edition 0.7.0 → 0.8.0, sw.js CACHE_NAME v117 → v118,
+client SW_VERSION v117 → v118 — the three numbers move in lockstep so the
+shell change ships with a cache generation bump (the F-134-era drift cannot
+recur). Deployed on the founder's explicit "please deploy".
+
+---
+
 ## Accounts, fully implemented (SA-091, F-137)
 
 **2026-08-19 (overnight)**
@@ -10189,7 +10200,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.7.0
+**Version:** 0.8.0
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
