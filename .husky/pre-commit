@@ -21,6 +21,7 @@ npm run verify:methodology-traceability
 npm run verify:folder-structure
 npm run verify:appstore-gate
 npm run verify:publish-dates
+npm run verify:pipeline
 
 # Enforce CHANGELOG update when code files change
 CODE_CHANGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' | head -1)

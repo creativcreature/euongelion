@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Pipeline Phase 0 — the manifest spine and the firewall (SA-106, F-152)
+
+**2026-08-19**
+
+The handoff spec puts the manifest schema and its validator first, before any
+stage is built. Neither existed.
+
+The manifest is what every stage reads and writes — resume, partial rerun,
+`--auto` and the evidence report are all the same state machine — so a malformed
+one is a pipeline that cannot be trusted to know what it has already done.
+
+But the **firewall** is why this ships first. `last30days` returns Reddit posts,
+X threads and YouTube comments: excellent evidence about what readers ask, and
+none at all about God, Scripture or history. The verification regime is the
+product's advantage in a category drowning in unverified AI output, and one
+laundered anecdote would cost more than the entire discovery stage gains.
+
+No phrase recorded as audience language may now appear verbatim in a devotional
+body or a source pack. Matching normalises punctuation and casing, so
+reformatting is not an escape hatch; phrases under four words are ignored,
+because those collide by coincidence rather than by lifting. A violation exits
+**2**, distinct from a schema error's **1** — "malformed" and "contaminated" need
+different humans.
+
+Nine tests against the real script. The gate no-ops until manifests exist, so it
+lands before the stages do.
+
 ## Audio moves to R2, and the whole catalog is scored (2026-08-19)
 
 All **550 tracks** now stream from `audio.euangelion.app` (Cloudflare R2) instead
