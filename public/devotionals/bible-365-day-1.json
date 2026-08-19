@@ -1,188 +1,433 @@
 {
   "day": 1,
   "title": "In the beginning, God",
-  "teaser": "A year-long walk through Scripture begins with four words that change everything: in the beginning, God.",
+  "teaser": "A year through Scripture begins where everything begins: with God already present, speaking light into the dark.",
   "framework": "Genesis 1:1-5 - Out of formless void, the voice of God speaks light into being.",
   "scriptureReference": "Genesis 1:1-5",
+  "scriptureReference_full": "Genesis 1:1-5",
   "chiastic_position": "hook",
   "pardesLevel": "peshat",
+  "format": "two-minute-open-v2",
   "modules": [
     {
       "type": "scripture",
       "reference": "Genesis 1:1-5",
       "translation": "BSB",
+      "passage": "In the beginning God created the heavens and the earth. Now the earth was formless and void, and darkness was over the surface of the deep. And the Spirit of God was hovering over the surface of the waters. And God said, “Let there be light,” and there was light. And God saw that the light was good, and He separated the light from the darkness. God called the light “day,” and the darkness He called “night.” And there was evening, and there was morning—the first day.",
       "emphasis": [
         "In the beginning God",
-        "formless and void",
-        "Let there be light",
-        "the first day"
-      ],
-      "hebrewOriginal": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
-      "passage": "In the beginning God created the heavens and the earth. Now the earth was formless and void, and darkness was over the surface of the deep. And the Spirit of God was hovering over the surface of the waters. And God said, “Let there be light,” and there was light. And God saw that the light was good, and He separated the light from the darkness. God called the light “day,” and the darkness He called “night.” And there was evening, and there was morning—the first day."
+        "the Spirit of God was hovering",
+        "Let there be light"
+      ]
     },
     {
       "type": "vocab",
       "language": "hebrew",
-      "word": "בָּרָא",
-      "transliteration": "bara",
-      "pronunciation": "bah-RAH",
-      "meaning": "to create, to bring into being",
-      "rootMeaning": "To shape or fashion something genuinely new. In the Hebrew Bible the verb bara is never followed by raw material - no clay, no stone, no leftover stuff. The thing made simply was not there, and then it is.",
-      "usageNote": "Across the whole Hebrew Bible, God is the only one who is ever the subject of bara. People build (banah), form (yatsar), and make (asah). Only God baras. The grammar itself guards the doctrine: creation is not God rearranging eternal matter, but God calling being out of nothing.",
+      "word": "בְּרֵאשִׁית בָּרָא אֱלֹהִים",
+      "transliteration": "bereshit bara Elohim",
+      "pronunciation": "beh-ray-SHEET bah-RAH eh-lo-HEEM",
+      "strongsNumber": "H7225 · H1254 · H430",
+      "definition": "in the beginning God created",
+      "usage": "What the Hebrew says: the opening moves from beginning, to a singular act of creating, to God as its subject. The plural-form noun Elohim takes the singular verb bara here.",
       "wordByWord": [
         {
           "word": "בְּרֵאשִׁית",
           "transliteration": "bereshit",
-          "meaning": "in the beginning, at the head of things"
+          "meaning": "in or at the beginning; the prefix bet means in or at, joined to reshit, beginning"
         },
         {
           "word": "בָּרָא",
           "transliteration": "bara",
-          "meaning": "He created, He brought into being"
+          "meaning": "he created; a Qal perfect verb, third-person masculine singular"
         },
         {
           "word": "אֱלֹהִים",
           "transliteration": "Elohim",
-          "meaning": "God - the Creator named in His majesty and power"
-        },
-        {
-          "word": "אֵת הַשָּׁמַיִם",
-          "transliteration": "et hashamayim",
-          "meaning": "the heavens, the realm above"
-        },
-        {
-          "word": "וְאֵת הָאָרֶץ",
-          "transliteration": "ve'et ha'arets",
-          "meaning": "and the earth, the realm below"
+          "meaning": "God; plural in form and paired here with a singular verb"
         }
       ],
       "relatedWords": [
         {
-          "word": "תֹהוּ וָבֹהוּ",
-          "reference": "Tohu va-vohu - 'formless and void' (v. 2). A rhyming pair that names the earth as trackless and empty, the wild waste before order. The two later become a picture of any deep a person cannot see across (Jeremiah 4:23 reuses the very phrase)."
+          "word": "רֵאשִׁית",
+          "transliteration": "reshit",
+          "meaning": "beginning, first, chief; also firstfruits in other settings"
         }
-      ],
-      "strongsNumber": "H1254",
-      "definition": "to create; to bring into existence something new, used in Scripture only of divine creative activity",
-      "usage": "The first verb of the Bible sets its first claim: behind everything that exists stands not a process but a Person, who speaks and it is."
+      ]
     },
     {
       "type": "teaching",
-      "heading": "Four Words the Whole Year Rests On",
-      "body": "Today is day one of three hundred sixty-five. A full year, the whole Bible, opened slowly, one page at a time. And Scripture does not begin where we might expect. It does not begin with us, or with a problem, or with a promise to make our lives better. It begins with God, already there.\n\n\"In the beginning God created the heavens and the earth.\" Read the sentence again and notice what is missing. There is no argument that God exists. No definition of who He is. No account of where He came from, because He came from nowhere - He simply is, before there is a before. The text assumes Him the way you assume the floor when you stand up in the morning. Genesis is not trying to prove God to a skeptic. It is showing you the world from inside the conviction that He was there first.\n\nThen comes a quieter picture, before any command is spoken. \"The Spirit of God was hovering over the surface of the waters.\" The Hebrew verb carries the sense of a mother bird brooding over her nest, wings spread, warm and watchful. The earth at this point is formless and void, dark, trackless, deep. Order has not yet come. But love already has. Before the first sunrise, God is near, attentive, present over the waters. That is the shape of the whole year you are starting: not chaos that God shows up to fix later, but a God who is already hovering, already close, before He says a single word.",
-      "keyInsight": "Scripture does not open with us, or with a problem, or with a promise. It opens with God already there - present and brooding over the dark before order, before light, before anything is asked of us.",
-      "content": "Today is day one of three hundred sixty-five. A full year, the whole Bible, opened slowly, one page at a time. And Scripture does not begin where we might expect. It does not begin with us, or with a problem, or with a promise to make our lives better. It begins with God, already there.\n\n\"In the beginning God created the heavens and the earth.\" Read the sentence again and notice what is missing. There is no argument that God exists. No definition of who He is. No account of where He came from, because He came from nowhere - He simply is, before there is a before. The text assumes Him the way you assume the floor when you stand up in the morning. Genesis is not trying to prove God to a skeptic. It is showing you the world from inside the conviction that He was there first.\n\nThen comes a quieter picture, before any command is spoken. \"The Spirit of God was hovering over the surface of the waters.\" The Hebrew verb carries the sense of a mother bird brooding over her nest, wings spread, warm and watchful. The earth at this point is formless and void, dark, trackless, deep. Order has not yet come. But love already has. Before the first sunrise, God is near, attentive, present over the waters. That is the shape of the whole year you are starting: not chaos that God shows up to fix later, but a God who is already hovering, already close, before He says a single word."
-    },
-    {
-      "type": "story",
-      "heading": "The First Morning I Couldn't See Across",
-      "body": "A friend told me once about the week her marriage ended. She said the strangest part was the mornings. She would wake before the alarm, in that grey hour when the room has shapes but no colors yet, and for a few seconds she would forget. Then it would come back - the empty side of the bed, the boxes in the hall - and the whole day in front of her would feel like water with no edges. Formless. She did not know where to put her feet.\n\nShe was not looking for advice that week. She told me she could not have organized her grief into a tidy list of next steps if her life depended on it. What she could do, barely, was sit at the kitchen table in the dark and say a few honest words toward God. Not eloquent ones. Mostly just, \"I'm here. I don't know what's next.\"\n\nYears later she said that those grey mornings were where she first believed Genesis 1 was about her too. Not the science of it. The shape of it. That she did not have to bring order to her own deep before God would come near. That He was already there in the dark, over the waters, before she had any light to show Him.",
-      "connectionToTheme": "Genesis 1 is the promise that God does not wait for us to organize our chaos before He draws near. The Spirit hovers over the formless dark first - exactly where most of us actually begin.",
-      "content": "A friend told me once about the week her marriage ended. She said the strangest part was the mornings. She would wake before the alarm, in that grey hour when the room has shapes but no colors yet, and for a few seconds she would forget. Then it would come back - the empty side of the bed, the boxes in the hall - and the whole day in front of her would feel like water with no edges. Formless. She did not know where to put her feet.\n\nShe was not looking for advice that week. She told me she could not have organized her grief into a tidy list of next steps if her life depended on it. What she could do, barely, was sit at the kitchen table in the dark and say a few honest words toward God. Not eloquent ones. Mostly just, \"I'm here. I don't know what's next.\"\n\nYears later she said that those grey mornings were where she first believed Genesis 1 was about her too. Not the science of it. The shape of it. That she did not have to bring order to her own deep before God would come near. That He was already there in the dark, over the waters, before she had any light to show Him."
-    },
-    {
-      "type": "insight",
-      "heading": "Creation Happens by Speech",
-      "body": "Here is the hinge of the whole passage, the center the rest turns on. God creates by speaking. \"And God said, 'Let there be light,' and there was light.\" There is no struggle, no raw material wrestled into shape, no rival power pushed back. The gap between the command and the thing is nothing at all. He says light, and light is. The psalmist would later put it exactly: \"For He spoke, and it came to be; He commanded, and it stood firm\" (Psalm 33:9).\n\nThis tells us what kind of God stands at the head of the year. His word is not a wish or a request that the world might or might not honor. His word is creative - it does the thing it says. When He speaks, being answers. So the deepest claim of Genesis 1 is not first about how old the universe is, or in what order things came. It is about authority. The One who speaks light into the dark is the One whose word can be trusted to do what it says, because the entire universe is the standing proof that His speech is never empty.\n\nAnd notice what He makes first. Of everything He could have called into being, the first word is light - and immediately, \"God saw that the light was good.\" Before He shapes a single creature, before there is anything to do or accomplish, God declares that light is good. The very first verdict in the Bible is not a command but a blessing.",
-      "historicalContext": "Genesis stands at the head of the Torah, the foundation the people of Israel read everything else against. The nations around them told creation stories of gods at war, hacking the world out of a slain sea-monster's body. Genesis 1 is strikingly quiet by contrast: no battle, no rival, no struggle. One God speaks, and the sea and the dark are not enemies to defeat but simply the unformed canvas He orders by His word.",
-      "fascinatingFact": "The phrase 'formless and void,' tohu va-vohu, reappears only a handful of times in the whole Hebrew Bible. When the prophet Jeremiah wants to describe a land undone by judgment, returned to ruin, he reaches back for these exact two words (Jeremiah 4:23). Genesis 1 is the picture every later writer borrowed when they needed to name a deep no one could see across.",
-      "content": "Here is the hinge of the whole passage, the center the rest turns on. God creates by speaking. \"And God said, 'Let there be light,' and there was light.\" There is no struggle, no raw material wrestled into shape, no rival power pushed back. The gap between the command and the thing is nothing at all. He says light, and light is. The psalmist would later put it exactly: \"For He spoke, and it came to be; He commanded, and it stood firm\" (Psalm 33:9).\n\nThis tells us what kind of God stands at the head of the year. His word is not a wish or a request that the world might or might not honor. His word is creative - it does the thing it says. When He speaks, being answers. So the deepest claim of Genesis 1 is not first about how old the universe is, or in what order things came. It is about authority. The One who speaks light into the dark is the One whose word can be trusted to do what it says, because the entire universe is the standing proof that His speech is never empty.\n\nAnd notice what He makes first. Of everything He could have called into being, the first word is light - and immediately, \"God saw that the light was good.\" Before He shapes a single creature, before there is anything to do or accomplish, God declares that light is good. The very first verdict in the Bible is not a command but a blessing."
-    },
-    {
-      "type": "bridge",
-      "ancientTruth": "On the first day, God spoke into formless dark, and there was light - and He called it good. The whole world begins with a word and a verdict of goodness over the deep.",
-      "modernApplication": "Somewhere in your life right now there is a formless and void place - a relationship without shape, a grief without an end, a faith that feels like water with no edges. You did not open a year in Scripture because everything is tidy. You opened it because you are hungry for a word strong enough to hold you. Genesis 1 says God still speaks into chaos. He does not require you to organize your darkness before He shows up.",
-      "connectionPoint": "The God who spoke at the beginning has never stopped speaking. Hebrews opens the same way Genesis does, then carries it forward: 'On many past occasions and in many different ways, God spoke to our fathers through the prophets. But in these last days He has spoken to us by His Son' (Hebrews 1:1-2). The same voice that said 'Let there be light' is the voice that, centuries later, would say 'Lazarus, come out' and 'Your sins are forgiven.' The word still does what it says.",
-      "newTestamentEcho": "The apostle John opens his Gospel with the very first words of Genesis: 'In the beginning was the Word, and the Word was with God, and the Word was God... Through Him all things were made, and without Him nothing was made that has been made' (John 1:1-3). John is not changing the subject; he is opening Genesis from the inside. The light that God spoke into the deep on day one is a Person. And that Word, John says, 'became flesh and made His dwelling among us' (John 1:14)."
+      "heading": "God Is Already There",
+      "content": "Scripture begins before there is a person to impress, a failure to repair, or a promise to claim. It begins with God already there. Genesis offers no account of His origin and makes no argument for His existence. God simply speaks, and creation answers.\n\nBefore that first command, the earth is formless and void. Darkness lies over the deep. Yet the scene is not empty of God. His Spirit hovers over the waters before light appears or order takes shape. His presence comes before any change we can see.\n\nThen God says, “Let there be light,” and light is there. His word is more than advice or desire. It does what He sends it to do. God also calls the light good. The Bible's first verdict over creation is goodness.\n\nThis small beginning is enough for today. God does not wait at the edge of chaos until it becomes presentable. He is near in the dark, and His word can make a beginning where none can yet be seen.",
+      "keyInsight": "God is present over the deep before He speaks light into it."
     },
     {
       "type": "reflection",
-      "prompt": "Where in your life right now is it still formless and void - a place you cannot see across? Name it as honestly as you can, the way the kitchen-table prayer named it: \"I'm here. I don't know what's next.\"",
-      "additionalQuestions": [
-        "Genesis says the Spirit was hovering over the waters before any light came. Can you believe God is already near to your dark place - before you have fixed it, before you can see across it?",
-        "The first thing God ever said about anything was that light is good. What would it change in you today to hear that the first word over you is blessing, not demand?",
-        "If God's word does what it says, which of His promises do you most need to take as already true over your situation today?"
-      ],
+      "prompt": "What part of your life still feels formless? Name it today before the God who is already near.",
       "invitationType": "honest-examination"
     },
     {
       "type": "prayer",
-      "posture": "honest-confession",
-      "prayerText": "God who was there before there was a there - thank You for beginning. For the Spirit hovering over the dark waters. For a Word that becomes light the instant it is spoken. I come to this year with a Bible in my hands and unfinished places in my life. Speak into the parts of me that are still formless. Bring shape where I have only confusion, and light where I have learned to live in the dark. Meet me here, Lord Jesus, the Word who was with God in the beginning, the Light no darkness has ever overcome. Walk with me through the days ahead. Amen.",
-      "scriptureEcho": "John 1:5",
-      "prayerType": "personal"
+      "heading": "A Prayer for the Beginning",
+      "prayerText": "Creator God, You were present before the first light. Be near in the places I cannot yet understand. Speak order into my confusion and light into my darkness. Teach me to trust Your word. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "Below, when there is time: the first sentence of Scripture, the Hebrew words for creation and chaos, a kitchen table in the gray hour, and the Word who became flesh."
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 1:1-5",
+      "translation": "BSB",
+      "hebrewOriginal": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+      "transliteration": "Bereshit bara Elohim et hashamayim ve'et ha'arets",
+      "passage": "In the beginning God created the heavens and the earth. Now the earth was formless and void, and darkness was over the surface of the deep. And the Spirit of God was hovering over the surface of the waters. And God said, “Let there be light,” and there was light. And God saw that the light was good, and He separated the light from the darkness. God called the light “day,” and the darkness He called “night.” And there was evening, and there was morning—the first day.",
+      "emphasis": [
+        "formless and void",
+        "the Spirit of God was hovering",
+        "God saw that the light was good"
+      ],
+      "scriptureContext": "The Bible opens with God creating, drawing order from the deep, and naming the light good."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּרֵאשִׁית",
+      "transliteration": "bereshit",
+      "pronunciation": "beh-ray-SHEET",
+      "strongsNumber": "H7225",
+      "definition": "in or at the beginning",
+      "usage": "What the Hebrew says: the form joins the prefix bet, meaning in or at, to the noun reshit. Reshit is feminine and singular. Strong's H7225 gives the range beginning, first, and chief. The same noun can name firstfruits, as in Leviticus 23:10 and Deuteronomy 18:4.",
+      "wordByWord": [
+        {
+          "word": "בְּ",
+          "transliteration": "bet",
+          "meaning": "a prefixed preposition: in or at"
+        },
+        {
+          "word": "רֵאשִׁית",
+          "transliteration": "reshit",
+          "meaning": "beginning, first, chief; in some settings, firstfruits"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "רֵאשִׁית קְצִירְכֶם",
+          "transliteration": "reshit qetsirkhem",
+          "meaning": "the firstfruits of your harvest; the wording behind Leviticus 23:10"
+        }
+      ],
+      "usageNote": "How it has been read: Rashi records a Jewish reading of the opening as creation occurring for the sake of what Scripture calls reshit. Christians read further from that tradition toward Christ, whom 1 Corinthians 15:20 calls the firstfruits and Colossians 1:18 calls the beginning. This is a theological reading, not the grammatical meaning of the prefix."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "heading": "The Beginning Has Someone in It",
+      "content": "The New Testament returns to the Bible's opening and places the Son there. John opens with the same English words, “In the beginning.” He says the Word was with God, was God, and made all things.\n\nPaul says all things were created in Christ, through Him, and for Him. He is before creation, and all things hold together in Him. Hebrews also says that God made the universe through the Son.\n\nRevelation gathers the arc into Christ's own title: the Beginning and the End. These are canonical claims, not guesses hidden inside Hebrew letters. The New Testament names the One who is present at creation. The beginning has the Word in it, and the Word is Jesus Christ.",
+      "keyInsight": "The New Testament identifies the Son as the One through whom creation came to be."
+    },
+    {
+      "type": "scripture",
+      "reference": "Colossians 1:16-17",
+      "translation": "BSB",
+      "passage": "For in Him all things were created, things in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities. All things were created through Him and for Him. He is before all things, and in Him all things hold together.",
+      "emphasis": [
+        "All things were created through Him and for Him",
+        "in Him all things hold together"
+      ],
+      "scriptureContext": "Paul names Christ as the sphere, agent, and goal of creation."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 1:2",
+      "translation": "BSB",
+      "passage": "But in these last days He has spoken to us by His Son, whom He appointed heir of all things, and through whom He made the universe.",
+      "emphasis": [
+        "through whom He made the universe"
+      ],
+      "scriptureContext": "Hebrews places the Son within God's work of making the universe."
+    },
+    {
+      "type": "scripture",
+      "reference": "Revelation 22:13",
+      "translation": "BSB",
+      "passage": "I am the Alpha and the Omega, the First and the Last, the Beginning and the End.”",
+      "emphasis": [
+        "the Beginning and the End"
+      ],
+      "scriptureContext": "The risen Christ names Himself as the Beginning and the End."
+    },
+    {
+      "type": "insight",
+      "heading": "A Door into the Dwelling",
+      "content": "An old interpretive reading pauses over the first letter. The prefix bet means “in” in Genesis 1:1. The letter's name, beth, is also associated with “house.” Readers have therefore heard Scripture's first word as an invitation into a dwelling, not only a marker of time.\n\nThat is a homiletic reading. Hebrew grammar does not turn the prefix into the word “house.” Yet the reading can trace a faithful canonical arc. John 1:14 says, “The Word became flesh and made His dwelling among us.” Revelation 21:3 says, “Behold, the dwelling place of God is with man, and He will dwell with them.”\n\nGenesis opens within God's created world. The incarnation brings the Word into human flesh. New creation ends with God dwelling among His people. The house reading belongs to interpretive tradition, while the dwelling promises belong to the text of the New Testament.",
+      "historicalContext": "The same tradition notes that Scripture begins with bet, the second Hebrew letter, rather than aleph, the first. It reads the opening as one step into a reality in which God is already present. This is reflection, not grammar."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "אֱלֹהִים",
+      "transliteration": "Elohim",
+      "pronunciation": "eh-lo-HEEM",
+      "strongsNumber": "H430",
+      "definition": "God; a noun plural in form",
+      "usage": "What the Hebrew says: Elohim is masculine plural in form. In Genesis 1:1 it stands with bara, a third-person masculine singular verb. The grammar presents one acting subject. A common Jewish and scholarly explanation treats the form here as an intensive or majestic plural while the singular verb marks the one God.",
+      "wordByWord": [
+        {
+          "word": "אֱלֹהִים",
+          "transliteration": "Elohim",
+          "meaning": "plural-form noun; God in this clause"
+        },
+        {
+          "word": "בָּרָא",
+          "transliteration": "bara",
+          "meaning": "singular verb: he created"
+        }
+      ],
+      "usageNote": "How Christians have read it: Christians have long heard a resonance with the Trinity in the plural form beside the singular verb. The grammar does not prove the Trinity. Christian confession rests on the whole canon, including the New Testament's witness to Father, Son, and Spirit."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "The Floor Beneath the Story",
+      "content": "A year through the Bible could begin with a plan. It could begin with what we hope to learn or how we hope to change. Genesis begins somewhere firmer: “In the beginning God.” Those words place God beneath every page that follows.\n\nThe sentence does not introduce Him as one character among others. He is there before the heavens, the earth, the water, and the light. Nothing in the passage explains where He came from. There was no place for Him to come from. He simply is before there is a world to measure time.\n\nThat makes the opening both vast and personal. We enter the story after God has begun it. We do not carry the weight of being first. We do not need to invent the ground under our feet. The text asks us to receive a world that came from another voice.\n\nToday we stand in the CREATION stretch of God's story. This is the first movement of the long account Scripture tells. Before fall, promise, kingdom, exile, or rescue, there is gift. God makes what did not exist, gives it shape, and calls the light good.\n\nThe first page also gives us a posture for every later page. We begin by listening. The God who is already there speaks before anyone answers Him. Faith starts by hearing that reality does not begin with us.",
+      "keyInsight": "The Bible begins with gift and with God, not with our effort to reach Him."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "תֹהוּ וָבֹהוּ",
+      "transliteration": "tohu vavohu",
+      "pronunciation": "TOH-hoo vah-VOH-hoo",
+      "definition": "formless and void; trackless and empty",
+      "usage": "The rhyming pair names the earth before its spaces are ordered and filled. Jeremiah 4:23 later reuses the same words for a land undone by judgment.",
+      "usageNote": "Genesis does not treat the deep as a rival god. It is the unformed scene over which God's Spirit is already present.",
+      "wordByWord": [
+        {
+          "word": "תֹהוּ",
+          "transliteration": "tohu",
+          "meaning": "formless, trackless, waste"
+        },
+        {
+          "word": "בֹהוּ",
+          "transliteration": "vohu",
+          "meaning": "void, empty"
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "Before the first sunrise, God is near to the place that has no shape yet."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "heading": "Over the Surface of the Waters",
+      "content": "Genesis lets us look at the earth before it becomes familiar. There is no garden, coastline, field, or human face. The earth is formless and void. Darkness rests over the deep, and the waters have no named boundary.\n\nAncient creation stories from Israel's neighbors often described gods at war. The world could emerge through conflict, with the sea treated as an enemy. Genesis is quiet beside those accounts. There is no rival beside God and no battle He must win. The dark and the sea are not equal powers. They are the unformed scene of His work.\n\nThen the text gives us its quietest image. “The Spirit of God was hovering over the surface of the waters.” The Hebrew verb can carry the sense of a bird hovering over its young. The picture is watchful and close. God has not spoken the first recorded command, yet He is already present over the deep.\n\nThat order matters. Presence comes before visible change. The Spirit does not arrive after the darkness has lifted. He hovers while darkness remains darkness and the deep still has no edge.\n\nMany lives have places like that. Grief may have no clear end. A relationship may no longer have a shape anyone recognizes. Faith may feel like water without a shore. Genesis does not call those places good in themselves. It tells us they are not beyond the presence of God.\n\nThis is different from a promise that confusion will clear on our schedule. The first day has an evening as well as a morning. The passage gives us something steadier than speed. The One who brings order is not absent while the world still looks unformed.",
+      "keyInsight": "The Spirit's nearness does not depend on the darkness having lifted."
+    },
+    {
+      "type": "scripture",
+      "reference": "Psalm 33:6, 9",
+      "translation": "BSB",
+      "passage": "By the word of the LORD the heavens were made, and all the stars by the breath of His mouth. For He spoke, and it came to be; He commanded, and it stood firm.",
+      "emphasis": [
+        "By the word of the LORD",
+        "He spoke, and it came to be"
+      ],
+      "scriptureContext": "The psalmist looks back at Genesis and praises the effortless authority of God's speech."
+    },
+    {
+      "type": "insight",
+      "heading": "The Distance Between Speech and Light",
+      "content": "God says, “Let there be light,” and the next clause gives the result: “and there was light.” Nothing interrupts the sentence. There is no contest, delay, or supply of material that God must find first.",
+      "historicalContext": "Psalm 33 later reads creation in the same way. God spoke, creation came to be, and what He commanded stood firm."
+    },
+    {
+      "type": "bridge",
+      "heading": "The Word at the Beginning",
+      "ancientTruth": "Genesis begins with God speaking light into the dark. Creation responds to His word, and God calls the light good.",
+      "modernApplication": "We often treat words as wishes, explanations, or promises that may fail. Genesis presents God's word as active. It brings into being what He names.",
+      "connectionPoint": "The New Testament does not leave this creative word behind. John returns to Genesis and identifies the Word as the One through whom all things were made.",
+      "newTestamentEcho": "John writes, “In the beginning was the Word, and the Word was with God, and the Word was God.” He then says that the Word became flesh and lived among us. The Creator has come near in Jesus Christ."
+    },
+    {
+      "type": "scripture",
+      "reference": "John 1:1-5, 14",
+      "translation": "BSB",
+      "passage": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made. In Him was life, and that life was the light of men. The Light shines in the darkness, and the darkness has not overcome it. The Word became flesh and made His dwelling among us. We have seen His glory, the glory of the one and only Son from the Father, full of grace and truth.",
+      "emphasis": [
+        "Through Him all things were made",
+        "The Light shines in the darkness",
+        "The Word became flesh"
+      ],
+      "scriptureContext": "John opens with the first words of Genesis and names Jesus as the eternal Word who creates and gives light."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "peshat",
+      "heading": "The Word Does What It Says",
+      "content": "The center of the passage is a voice. God speaks light, and light exists. His command does not describe a change that happened by some other power. The command brings the change.\n\nThis is the authority Genesis places at the head of Scripture. God's word is never empty noise. He does not negotiate with darkness or ask the deep for permission. Creation is not His equal. When He speaks, being answers.\n\nThat claim reaches beyond a debate about how the universe began. Genesis is telling us who stands behind everything that exists. The world is not self-made, and it does not rest on a process without purpose. It comes from the will and speech of a personal God.\n\nNotice also what God says after the light appears. He sees that the light is good. The first divine verdict in the Bible is spoken over something He has made. It is approval before any human being has performed, prayed, obeyed, or failed.\n\nJohn takes us deeper into the identity of the speaking Word. He starts his Gospel with “In the beginning” because he wants us to hear Genesis. The Word was with God and was God. All things were made through Him. Then the astonishing movement comes: this Word became flesh.\n\nThe voice at creation is not a distant force. Christians confess the eternal Son, Jesus Christ, as the Word through whom creation came to be. The Light enters the darkness of human life, and the darkness does not overcome Him.\n\nThis gives the first page of the Bible a direction. Creation is already part of the story that leads to Christ. The One through whom light was made comes among us as light. He does not merely send instruction from beyond the dark. He makes His dwelling among us.\n\nSo God's creative speech is also grounds for trust. The universe stands as evidence that His word is not powerless. We may not yet see the shape He will bring from a present darkness. Genesis still teaches us whose voice has the first and final authority there.",
+      "keyInsight": "The Word who speaks light into creation is the Word who comes near in Jesus Christ."
+    },
+    {
+      "type": "story",
+      "heading": "The Gray Hour",
+      "content": "A friend once described the week her marriage ended. The strangest part, she said, was the morning.\n\nShe would wake before the alarm, in the gray hour when the room had shapes but no colors. For a few seconds she would forget. Then the empty side of the bed and the boxes in the hall would return to her mind. The whole day ahead felt like water with no edges. She did not know where to put her feet.\n\nShe was not looking for advice that week. She could not have arranged her grief into a clean list of next steps. What she could do, barely, was sit at the kitchen table in the dark. There she spoke a few honest words toward God: “I'm here. I don't know what's next.”\n\nYears later, she said those mornings helped her hear Genesis 1 as a word for her life. She was not thinking about the science of creation. She was learning the shape of the passage.\n\nShe did not have to bring order to her own deep before God would come near. The Spirit was already present over the waters. God did not need her to produce light before she could ask Him to speak.",
+      "connectionToTheme": "Her circumstances did not become simple at the kitchen table. The passage gave her a truthful place to begin: darkness named, helplessness admitted, and God already near."
+    },
+    {
+      "type": "insight",
+      "heading": "A Prayer Without a Plan",
+      "content": "“I'm here. I don't know what's next.” The prayer does not solve the deep or pretend to see across it. It places a person before the God whose Spirit is already hovering there.",
+      "historicalContext": "Genesis 1 gives no human being a role in making the first light. The first response available to us is attention to what God has done."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "peshat",
+      "heading": "What the Darkness Cannot Decide",
+      "content": "Darkness is real in Genesis 1. The passage does not soften it into a mood or explain it away. It lies over the surface of the deep before the first light appears.\n\nYet darkness is not given a voice. It does not name itself, set its boundary, or decide what the day will become. God speaks. God separates. God names. The dark is present, but it is not sovereign.\n\nThat distinction matters when a person's life feels unformed. Pain can fill the field of vision and still lack final authority. Confusion can be honest without becoming a creator. A loss can shape the morning without receiving the right to name the whole life.\n\nWe often try to become our own light in such places. We build a plan, force an answer, or hide the parts that have no shape. Some action may be wise and necessary. Genesis still guards us from believing that our effort is the source of life.\n\nThe woman at the kitchen table could not repair her marriage by choosing better words. She could speak truthfully before God. That small prayer did not manufacture a sunrise. It stopped asking her to be the sun.\n\nPaul later makes the creation connection plain. The God who commanded light to shine from darkness also shines in human hearts. The light gives knowledge of God's glory in the face of Jesus Christ. The Creator's work is not trapped in the distant past.\n\nThis does not mean every dark circumstance ends as we hope. Genesis does not give a schedule for our grief. It reveals the character and authority of the One present within it. Darkness cannot keep Him out, and it cannot cancel His word.",
+      "keyInsight": "Darkness may describe the scene, but it does not hold the authority to name the ending."
+    },
+    {
+      "type": "scripture",
+      "reference": "2 Corinthians 4:6",
+      "translation": "BSB",
+      "passage": "For God, who said, “Let light shine out of darkness,” made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ.",
+      "emphasis": [
+        "Let light shine out of darkness",
+        "in the face of Jesus Christ"
+      ],
+      "scriptureContext": "Paul connects the first light of creation with God's work of revealing Christ."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you let darkness name the whole story?",
+      "additionalQuestions": [
+        "What place in your life feels like water with no edges?",
+        "What changes when you picture God's Spirit present there before anything is resolved?",
+        "Which burden comes from trying to produce your own light?"
+      ],
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "interactive",
+      "heading": "A Breath Prayer for the Deep",
+      "instruction": "Take six slow breaths. Use one line on the inhale and one on the exhale. Do not force an answer or a feeling.",
+      "interaction_type": "breath",
+      "steps": [
+        {
+          "title": "In",
+          "description": "Breathing in, silently: Your Spirit is here."
+        },
+        {
+          "title": "Out",
+          "description": "Breathing out, silently: Speak light in me."
+        },
+        {
+          "title": "Remain",
+          "description": "After the sixth breath, name the formless place in one plain sentence. Leave it with God without adding a plan."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Begin by Listening",
+      "content": "The first day of Scripture ends with evening and morning. Light has come, but darkness has not been erased from the language of the day. God has separated them and named them both.\n\nThat is a gentle correction to the way we often imagine faith. Trust does not require us to deny the night. It lets God name the night without letting it swallow the morning.\n\nThe year ahead will move through creation, human failure, promise, rescue, kingdom, exile, and the coming of Christ. It will include pages that are difficult to understand and harder to receive. The first page gives us somewhere to stand before all of them.\n\nGod is already there. His Spirit is present over the deep. His word has power to bring what was not there before. The Word through whom all things were made has come among us in Jesus Christ.\n\nWe therefore begin without pretending that our lives are ordered. We can bring the trackless parts, the empty parts, and the darkness we cannot explain. They do not need to become neat before they can be brought into God's presence.\n\nThe woman at the kitchen table found words small enough for that truth. “I'm here. I don't know what's next.” Perhaps that is enough honesty for a first day.\n\nThen we listen. We listen for the voice that does not need our confusion to disappear before He speaks. We receive the first sentence again: in the beginning, God.",
+      "keyInsight": "The first faithful act of the year is not mastery. It is listening to the God who was there first."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "God who was there before every beginning, thank You for the Spirit hovering over the dark waters. Thank You for the Word through whom all things were made. I bring You the places in me that still have no shape. Keep me from pretending they are clear or trying to become my own light. Speak what only You can speak. Let the light of Your glory meet me in the face of Jesus Christ. Teach me to listen through every page ahead. Amen.",
+      "scriptureEcho": "2 Corinthians 4:6",
+      "prayerType": "closing"
     },
     {
       "type": "takeaway",
-      "commitment": "Today, before anything else competes for your attention, sit for two quiet minutes and let one line hold you: \"And God said, 'Let there be light,' and there was light.\" Then name aloud the one formless place in your life and ask the God who is already hovering there to speak.",
+      "heading": "Today's Commitment",
+      "commitment": "I will name one formless place without trying to repair it first, and I will ask the God who is already there to speak.",
       "leavingAtCross": [
-        "The belief that I have to bring order to my own chaos before God will come near",
-        "The fear that the deep places in my life are too far gone for any word to reach",
-        "The exhausting work of being my own light"
+        "The belief that I must order my chaos before God will come near",
+        "The pressure to become my own light",
+        "The fear that darkness has the final word"
       ],
       "receivingFromCross": [
-        "A God who was present and brooding over the dark before there was any light to show Him",
-        "A word strong enough to call being out of nothing and shape out of void",
-        "The first verdict of Scripture spoken over me: light, and it is good"
-      ],
-      "content": "Today, before anything else competes for your attention, sit for two quiet minutes and let one line hold you: \"And God said, 'Let there be light,' and there was light.\" Then name aloud the one formless place in your life and ask the God who is already hovering there to speak."
+        "The presence of the Spirit over the deep",
+        "The Word who became flesh and dwelt among us",
+        "The first verdict of goodness over God's light"
+      ]
     },
     {
       "type": "comprehension",
-      "forReflection": [
-        "Why does it matter that the Bible opens with God already there - with no argument for His existence and no account of His origin?",
-        "What does the Hebrew verb bara, used in Scripture only of God, protect us from believing about how the world came to be?",
-        "How does John taking the first words of Genesis - 'In the beginning' - and applying them to Jesus change the way you read Genesis 1?"
+      "heading": "One Question",
+      "question": "What happens before God says, “Let there be light”?",
+      "options": [
+        "Human beings prepare the earth for Him",
+        "The Spirit of God hovers over the waters",
+        "The darkness explains where it came from",
+        "A rival power fights against God"
       ],
-      "forAccountabilityPartners": [
-        "Share one 'formless and void' place in your life right now - somewhere you cannot yet see across.",
-        "Talk about the difference between trying to be your own light and waiting for God to speak into your dark. Which one have you been doing lately?",
-        "Ask each other: where do you most need to trust that God's word will do what it says, even though you cannot see it done yet?"
-      ]
-    },
-    {
-      "type": "resource",
-      "relatedScriptures": [
-        {
-          "reference": "John 1:1-3",
-          "text": "In the beginning was the Word, and the Word was with God, and the Word was God. He was with God in the beginning. Through Him all things were made, and without Him nothing was made that has been made."
-        },
-        {
-          "reference": "2 Corinthians 4:6",
-          "text": "For God, who said, “Let light shine out of darkness,” made His light shine in our hearts to give us the light of the knowledge of the glory of God in the face of Jesus Christ."
-        },
-        {
-          "reference": "Psalm 33:6",
-          "text": "By the word of the LORD the heavens were made, and all the stars by the breath of His mouth."
-        },
-        {
-          "reference": "Colossians 1:16-17",
-          "text": "For in Him all things were created, things in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities. All things were created through Him and for Him. He is before all things, and in Him all things hold together."
-        }
-      ],
-      "forDeeperStudy": [
-        {
-          "type": "book",
-          "title": "Genesis 1:1-2:3",
-          "note": "Read the whole first creation account in one sitting, watching the rhythm repeat: 'And God said... and it was so... and God saw that it was good... and there was evening, and there was morning.' Notice how the formless dark of verse 2 is answered, day by spoken day."
-        }
-      ]
+      "answer": 1,
+      "explanation": "Genesis places God's presence before visible order. His Spirit hovers over the waters while the earth is still formless, void, and dark."
     },
     {
       "type": "profile",
+      "heading": "The One at the Beginning",
       "name": "The Creator",
-      "title": "God, Who Speaks in the Beginning",
-      "description": "Genesis introduces God not by description but by action: the first thing we learn about Him is that He creates. He stands before all things, dependent on nothing, bringing the heavens and the earth into being by His word alone. The Spirit broods over the dark waters; the voice speaks light into the deep. Christians read the New Testament back into this opening and confess that this creating work belongs to Father, Son, and Spirit together - the Word through whom all things were made (John 1:3) is the same Word who became flesh and dwelt among us.",
+      "title": "God, Who Speaks Light",
+      "description": "Genesis introduces God through action. He creates the heavens and the earth, hovers over the waters by His Spirit, and speaks light into being. He depends on nothing within creation. The New Testament names Jesus Christ as the eternal Word through whom all things were made.",
       "keyQuote": "In the beginning God created the heavens and the earth.",
-      "lessonForUs": "The God you are walking with this year is not a force you must coax into your life. He is the One who was already there, already speaking, already calling light out of dark - and He has not stopped. Begin the year not by trying to organize your deep, but by listening for the voice that orders it.",
-      "heading": "God, Who Speaks in the Beginning"
+      "lessonForUs": "We enter a story God has already begun. Our first task is to listen to the Creator rather than carry the weight of creating ourselves."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "John 1:1-5, 14 (BSB)",
+          "text": "John returns to Genesis and identifies Jesus as the eternal Word through whom all things were made."
+        },
+        {
+          "reference": "2 Corinthians 4:6 (BSB)",
+          "text": "Paul joins the light of creation to God's revelation of glory in the face of Jesus Christ."
+        },
+        {
+          "reference": "Psalm 33:6, 9 (BSB)",
+          "text": "The psalm praises the LORD whose spoken word made the heavens and caused creation to stand firm."
+        },
+        {
+          "reference": "Colossians 1:16-17 (BSB)",
+          "text": "Paul says all things were created through Christ and for Him, and that all things hold together in Him."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Hebrew word study",
+          "description": "Bara (H1254) is the verb translated “created” in Genesis 1:1. The Hebrew Bible uses God as its subject. Tohu vavohu is the paired phrase translated “formless and void” in Genesis 1:2 and reused in Jeremiah 4:23."
+        },
+        {
+          "title": "Genesis 1:1-2:3",
+          "description": "Read the whole creation account and follow its repeated movement: God speaks, creation responds, God sees goodness, and evening gives way to morning."
+        }
+      ],
+      "forDeeperStudy": "Read Genesis 1:1-5 beside John 1:1-5 and 2 Corinthians 4:6. Notice how each later writer carries the themes of word, light, darkness, and creation toward Jesus Christ."
     }
   ],
   "panels": [],
-  "totalWords": 2360,
-  "scriptureReference_full": "Genesis 1:1-5",
+  "totalWords": 3080,
   "sources": [
-    "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
-    "Hebrew word study (bara H1254; tohu va-vohu) reflects standard lexical sources; the observation that bara takes only God as its subject is a widely noted feature of Biblical Hebrew usage."
-  ]
+    "Scripture quotations are from the Berean Standard Bible (BSB).",
+    "Hebrew word study preserves the source day's notes on bara (H1254) and tohu vavohu."
+  ],
+  "chiasm_position": "A"
 }

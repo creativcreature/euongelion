@@ -672,62 +672,177 @@
   },
   "bible-365-day-1": {
     "src": "/audio/bible-365-day-1.m4a",
-    "duration": 662.0,
-    "words": 1858,
-    "voice": "am_michael",
-    "engine": "kokoro",
-    "bytes": 7385668,
-    "textHash": "384beec8d490",
+    "duration": 1290.6,
+    "words": 3644,
+    "voice": "James \u2014 Channel (single-take)",
+    "engine": "chatterbox_turbo",
+    "bytes": 7680006,
+    "textHash": "dacdc3594321",
     "chapters": [
       {
         "t": 0.0,
-        "label": "Opening",
+        "label": "Title",
         "module": 0
       },
       {
-        "t": 3.0,
+        "t": 2.2,
         "label": "Scripture",
         "module": 1
       },
       {
-        "t": 35.2,
+        "t": 31.3,
         "label": "Word study",
         "module": 2
       },
       {
-        "t": 88.9,
-        "label": "Four Words the Whole Year Rests On",
+        "t": 49.1,
+        "label": "God Is Already There",
         "module": 3
       },
       {
-        "t": 196.0,
-        "label": "The First Morning I Couldn't See Across",
+        "t": 110.4,
+        "label": "Reflection",
         "module": 4
       },
       {
-        "t": 280.8,
-        "label": "Creation Happens by Speech",
+        "t": 116.7,
+        "label": "A Prayer for the Beginning",
         "module": 5
       },
       {
-        "t": 522.8,
-        "label": "Reflect",
+        "t": 132.3,
+        "label": "Scripture",
         "module": 7
       },
       {
-        "t": 537.0,
-        "label": "Prayer",
+        "t": 138.0,
+        "label": "Word study",
         "module": 8
       },
       {
-        "t": 573.1,
-        "label": "Takeaway",
+        "t": 188.9,
+        "label": "The Beginning Has Someone in It",
         "module": 9
       },
       {
-        "t": 591.5,
-        "label": "God, Who Speaks in the Beginning",
+        "t": 233.4,
+        "label": "Scripture",
+        "module": 10
+      },
+      {
+        "t": 257.5,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 271.7,
+        "label": "Scripture",
         "module": 12
+      },
+      {
+        "t": 283.9,
+        "label": "A Door into the Dwelling",
+        "module": 13
+      },
+      {
+        "t": 353.0,
+        "label": "Word study",
+        "module": 14
+      },
+      {
+        "t": 397.5,
+        "label": "The Floor Beneath the Story",
+        "module": 15
+      },
+      {
+        "t": 483.6,
+        "label": "Word study",
+        "module": 16
+      },
+      {
+        "t": 507.6,
+        "label": "Over the Surface of the Waters",
+        "module": 18
+      },
+      {
+        "t": 612.3,
+        "label": "Scripture",
+        "module": 19
+      },
+      {
+        "t": 631.7,
+        "label": "The Distance Between Speech and Light",
+        "module": 20
+      },
+      {
+        "t": 655.2,
+        "label": "The Word at the Beginning",
+        "module": 21
+      },
+      {
+        "t": 698.2,
+        "label": "Scripture",
+        "module": 22
+      },
+      {
+        "t": 739.3,
+        "label": "The Word Does What It Says",
+        "module": 23
+      },
+      {
+        "t": 862.9,
+        "label": "The Gray Hour",
+        "module": 24
+      },
+      {
+        "t": 941.3,
+        "label": "A Prayer Without a Plan",
+        "module": 25
+      },
+      {
+        "t": 961.4,
+        "label": "What the Darkness Cannot Decide",
+        "module": 26
+      },
+      {
+        "t": 1066.1,
+        "label": "Scripture",
+        "module": 27
+      },
+      {
+        "t": 1083.8,
+        "label": "Reflection",
+        "module": 28
+      },
+      {
+        "t": 1086.9,
+        "label": "A Breath Prayer for the Deep",
+        "module": 29
+      },
+      {
+        "t": 1097.0,
+        "label": "Begin by Listening",
+        "module": 30
+      },
+      {
+        "t": 1186.9,
+        "label": "Closing Prayer",
+        "module": 31
+      },
+      {
+        "t": 1214.7,
+        "label": "Today's Commitment",
+        "module": 32
+      },
+      {
+        "t": 1224.0,
+        "label": "One Question",
+        "module": 33
+      },
+      {
+        "t": 1237.7,
+        "label": "The One at the Beginning",
+        "module": 34
       }
     ]
   },

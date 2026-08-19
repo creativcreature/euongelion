@@ -67,7 +67,10 @@ export BUCKET LEDGER
 find "$SRC" -name '*.m4a' -print0 \
   | xargs -0 -P "$CONCURRENCY" -I{} bash -c 'upload_one "$@"' _ {}
 
-UPLOADED=$(wc -l < "$LEDGER" | tr -d ' ')
+# Count UNIQUE tracks, not lines. The ledger appends, so a re-rendered
+# track leaves its old size behind and a line count exceeds the file
+# count from then on — reporting INCOMPLETE forever on a complete upload.
+UPLOADED=$(awk '{print $1}' "$LEDGER" | sort -u | wc -l | tr -d ' ')
 echo "[r2] ledger now $UPLOADED / $TOTAL"
 [ "$UPLOADED" -eq "$TOTAL" ] || { echo "[r2] INCOMPLETE — re-run to finish"; exit 1; }
 echo "[r2] done"
