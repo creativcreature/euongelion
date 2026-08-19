@@ -5,6 +5,39 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The Daily Bread edition engine — four migrations applied (SA-090, F-136)
+
+**2026-08-18**
+
+Founder direction: _"I want to drastically improve The Daily Bread. It needs new
+content every day… I dont want to have to prompt the content."_ And on scope:
+_"Fully locked to the one page tho!"_
+
+**The paper repeats every ten days.** Every daily section is a fixed array in
+`src/data/daily-edition.ts` rotated by `dayOfYear % length` — 14 practices, 6
+guides, 10 panels, 12 word studies, 7 prayer foci — so a reader who returns for a
+fortnight has seen the whole paper twice. New content meant editing TypeScript
+and deploying.
+
+**`edition_items` is the store, and it publishes without a deploy.** One table
+keyed by `(kind, publish_date, slot)`. Cloudflare Cron is inert in this project
+(`triggers.crons` commented out; the OpenNext worker exports only `fetch`) and
+auto-deploy on push to main is not reliably firing, so any design where
+tomorrow's paper needs a deploy inherits this project's most failure-prone
+operation every single day. A GitHub Action writes rows instead.
+
+**Three billing migrations had been unapplied in production since July, and the
+failure was silent.** `readUserBillingState` selects `stripe_customer_id`,
+`subscription_status` and `generation_credits`; none of those columns existed, so
+it failed closed and **every signed-in user read as free tier**. Nothing looked
+broken, which is why it survived a month. All four migrations were applied
+together and verified by direct read-only probe against production — 8/8 columns
+and tables answering. `c.parker3@me.com` granted `role = 'admin'`.
+
+**Attribution is a constraint, not a convention.** `edition_items` carries a
+CHECK that third-party kinds cannot be inserted without `source_name` and
+`source_url`. The F-098 invention line, expressed in DDL.
+
 ## The publishing record — byline, publication dates, and one version (SA-089, F-135)
 
 **2026-08-18**
