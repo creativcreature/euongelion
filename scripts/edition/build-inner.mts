@@ -255,13 +255,6 @@ async function loadGenerators(): Promise<
     puzzles,
     gallery,
     prayer,
-    redletter,
-    proverb,
-    verse,
-    archive,
-    b365,
-    voices,
-    question,
   ] = await Promise.all([
     import('../../src/lib/edition/generators/lead'),
     import('../../src/lib/edition/generators/rail'),
@@ -272,13 +265,6 @@ async function loadGenerators(): Promise<
     import('../../src/lib/edition/generators/puzzles'),
     import('../../src/lib/edition/generators/gallery'),
     import('../../src/lib/edition/generators/prayer'),
-    import('../../src/lib/edition/generators/redletter'),
-    import('../../src/lib/edition/generators/proverb'),
-    import('../../src/lib/edition/generators/verse'),
-    import('../../src/lib/edition/generators/archive'),
-    import('../../src/lib/edition/generators/b365'),
-    import('../../src/lib/edition/generators/voices'),
-    import('../../src/lib/edition/generators/question'),
   ])
 
   return [
@@ -293,14 +279,11 @@ async function loadGenerators(): Promise<
     { kind: 'quiz', generate: puzzles.generateQuiz },
     { kind: 'gallery', generate: gallery.generateGallery },
     { kind: 'prayer', generate: prayer.generatePrayer },
-    // SA-092: the paper grows to ~30 modules a day.
-    { kind: 'redletter', generate: redletter.generateRedLetter },
-    { kind: 'proverb', generate: proverb.generateProverb },
-    { kind: 'verse', generate: verse.generateVerse },
-    { kind: 'archive', generate: archive.generateArchive },
-    { kind: 'b365', generate: b365.generateB365 },
-    { kind: 'voices', generate: voices.generateVoices },
-    { kind: 'question', generate: question.generateQuestion },
+    // SA-094: redletter/proverb/verse/archive/b365/voices/question left the
+    // runner deliberately — they compute PAGE-SIDE from bundled data now.
+    // Writing their rows here would (a) crash against the un-widened kind
+    // CHECK in prod and (b) produce rows the page never reads. Their
+    // generator modules and tests remain for the payload contract.
   ]
 }
 
