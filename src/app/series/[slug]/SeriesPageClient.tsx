@@ -23,6 +23,7 @@ import { typographer } from '@/lib/typographer'
 import { readingTimeLabel } from '@/lib/reading-time'
 import { SUBSTACK_SOURCES } from '@/data/substack-sources'
 import { useProgress } from '@/hooks/useProgress'
+import { nextUnreadDay } from '@/lib/reading/active-day'
 import { SERIES_HERO } from '@/data/artwork-manifest'
 import type { SeriesInfo } from '@/data/series'
 import type { DayScriptureByDayNumber } from '@/lib/soul-audit/series-day-scripture'
@@ -75,6 +76,23 @@ export default function SeriesPageClient({
   artwork?: SeriesArtworkItem[]
 }) {
   const { isRead, getSeriesProgress, canRead } = useProgress()
+
+  /**
+   * The one day the reader is actually on.
+   *
+   * Every unread day said READ NOW, so day 1 and day 7 of an untouched series
+   * were typographically identical and the card wall answered "what is in this
+   * series" but never "where am I". Alan rings the current step and leaves the
+   * rest quiet; that is the whole difference between a contents page and a
+   * plan. Resolved through the same primitive the Library and /today use, so
+   * the three surfaces cannot disagree about where the reader stands.
+   */
+  const currentDaySlug = useMemo(() => {
+    const done = new Set(
+      series.days.filter((d) => isRead(d.slug)).map((d) => d.slug),
+    )
+    return nextUnreadDay(slug, done)?.slug ?? null
+  }, [slug, series, isRead])
   // Only days with a delivered track; a queue that hits a silent item reads as
   // a broken player rather than a partial catalogue.
   const seriesQueue = useMemo(() => buildSeriesQueue(slug), [slug])
@@ -387,8 +405,10 @@ export default function SeriesPageClient({
                     {isLocked
                       ? 'LOCKED'
                       : dayIsRead
-                        ? 'READ AGAIN'
-                        : 'READ NOW'}
+                        ? '\u2713 READ'
+                        : day.slug === currentDaySlug
+                          ? 'START HERE'
+                          : 'READ'}
                   </p>
                   {isLocked && (
                     <p className="mock-series-day-lock">

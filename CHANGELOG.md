@@ -5,6 +5,23 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The series page says where you are (SA-103, F-149)
+
+**2026-08-19**
+
+The series page already knew read state. But every unread day rendered READ NOW,
+so day 1 and day 7 of an untouched series were typographically identical — the
+card wall answered "what is in this series" and never "where am I".
+
+One day now reads **START HERE**: the first unread day, resolved through the same
+primitive the Library and /today use, so the three surfaces cannot disagree.
+Finished days read ✓ READ.
+
+A gap is honoured — read day 1 and day 3, and you are sent back to day 2 rather
+than forward. A finished series marks nothing rather than looping to day 1.
+Future days stay unlocked; the ring is the useful half of Alan's pattern and the
+lock fights a standing ruling.
+
 ## A build without its client config must fail, not ship (SA-102, F-148)
 
 **2026-08-19**
