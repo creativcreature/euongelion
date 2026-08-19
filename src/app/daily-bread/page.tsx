@@ -43,6 +43,10 @@ import {
   WitnessColumn,
 } from '@/components/edition/EditionSections'
 import GallerySpread from '@/components/edition/GallerySpread'
+import { pageArchive, pageB365, pageProverb } from '@/lib/edition/page-modules'
+import { generateRedLetter } from '@/lib/edition/generators/redletter'
+import { generateVerse } from '@/lib/edition/generators/verse'
+import { generateQuestion } from '@/lib/edition/generators/question'
 import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
 import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
 import QuizClient from '@/components/edition/puzzles/QuizClient'
@@ -389,12 +393,18 @@ export default async function DailyBreadPage() {
   const edNotices = (edition?.notice ?? []).map((q) => q.payload)
   // SA-092: the paper grows to ~30 modules a day.
   const edRedLetter = edition?.redletter?.[0]?.payload
-  const edProverb = edition?.proverb?.[0]?.payload
-  const edVerse = edition?.verse?.[0]?.payload
-  const edArchive = edition?.archive?.[0]?.payload
-  const edB365 = edition?.b365?.[0]?.payload
+  // SA-093: the deterministic daily modules compute PAGE-SIDE from bundled
+  // data — no rows, no paste, full paper by construction. The DB keeps what
+  // it is for: the review queue and the audited gallery.
+  const edProverb = pageProverb(now)
+  const edArchive = pageArchive(now, slug)
+  const edB365 = pageB365(now)
+  const edRedletter = (await generateRedLetter(now))[0]?.payload
+  const edVerse = (await generateVerse(now))[0]?.payload
+  const edQuestion = (await generateQuestion(now))[0]?.payload
+  // Voices wires to the committed bank once built (round-3 lane); until the
+  // integration lands this render, the section is absent — not faked.
   const edVoices = edition?.voices?.[0]?.payload
-  const edQuestion = edition?.question?.[0]?.payload
 
   // The lead plate — a feature article leads with art (founder: "very image
   // and text as art forward"). Riso series hero; absent for an authored lead
@@ -585,9 +595,24 @@ export default async function DailyBreadPage() {
             <a href="#the-reading" className="edition-jump">
               Read today&rsquo;s reading &darr;
             </a>
+            {seriesSlug && !authoredLead && (
+              <Link
+                href={`/series/${seriesSlug}`}
+                className="edition-lead-series"
+              >
+                The full series: {seriesTitle} &rarr;
+              </Link>
+            )}
           </section>
 
           <aside className="edition-rail" aria-label="Also in this edition">
+            {/* Returning-reader card (F-069 → SA-093): a SIDE PANEL now, at
+                the top of the rail — founder: the full-width band "destroys
+                the flow of the page." Same client island, renders nothing
+                for new readers or without JS. */}
+            <div className="edition-return-card">
+              <TodayReturningBand />
+            </div>
             <p className="edition-rail-head">Also in this edition</p>
             {alsoToday.map((rs) => {
               const series = SERIES_DATA[rs]
@@ -620,13 +645,6 @@ export default async function DailyBreadPage() {
           </aside>
         </div>
 
-        {/* Returning-user band (F-069) — client island, renders nothing until
-            the active-plan fetch resolves (and nothing without JS). Moved
-            BELOW the front page 2026-08-16: sitting between the dateline and
-            the lead story, it broke the masthead-into-headline flow that makes
-            the page read as an edition. */}
-        <TodayReturningBand />
-
         {/* ── The paper proper (F-098) ─────────────────────────────────
             Founder 2026-08-16: "The today page needs more content… and needs
             images to lead thumbnails, icons etc… the site will eventually have
@@ -651,6 +669,7 @@ export default async function DailyBreadPage() {
         {editionFailed && <EditionUnavailable />}
 
         <div className="paper-sheet">
+          {/* Row 1 — the standing desk: practice beside the word. */}
           {(edPractice || edWord) && (
             <div className="edition-band paper-box paper-box--wide" data-reveal>
               {edPractice && (
@@ -669,7 +688,6 @@ export default async function DailyBreadPage() {
                   <p className="edition-practice-time">{edPractice.duration}</p>
                 </section>
               )}
-
               {edWord && (
                 <section
                   id="word-of-the-day"
@@ -695,100 +713,32 @@ export default async function DailyBreadPage() {
             </div>
           )}
 
-          {/* SA-092: a saying of Jesus, full measure, straight after the
-              practice — content between the furniture and the funnies. */}
-          {edRedLetter && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <RedLetterColumn saying={edRedLetter} />
+          {/* Row 2 — thirds: the first quiz question, the red letters, and
+              today in the year-long plan. Games start BREAKING UP here. */}
+          {edQuiz[0] && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <section aria-label="Where is this from?">
+                <div className="edition-section-bar">
+                  <h2 className="edition-section-head">Where is this from?</h2>
+                  <p className="edition-section-note">1 of 3</p>
+                </div>
+                <QuizClient questions={[edQuiz[0]]} />
+              </section>
+            </div>
+          )}
+          {edRedletter && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <RedLetterColumn saying={edRedletter} />
+            </div>
+          )}
+          {edB365 && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <B365Box b365={edB365} />
             </div>
           )}
 
-          {/* The funnies + the season. The strip renders only when a drawn
-              panel exists for the day — no placeholder while the bank of The
-              Ninety-Nine is being drawn. */}
-          {edStrip && (
-            <section
-              className="edition-section paper-box paper-box--strip"
-              data-reveal
-              aria-label="The funnies"
-            >
-              <div className="edition-section-bar">
-                <h2 className="edition-section-head">The funnies</h2>
-                <p className="edition-section-note">The Ninety-Nine</p>
-              </div>
-              <StripPanel strip={edStrip} />
-            </section>
-          )}
-
-          {edSeason && (
-            <div
-              className={`paper-box ${edStrip ? 'paper-box--season' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <SeasonBox season={edSeason} />
-            </div>
-          )}
-
-          {guides.length > 0 && (
-            <section
-              className="edition-section paper-box paper-box--wide"
-              data-reveal
-              aria-label="How to read"
-              id="how-to-read"
-            >
-              <div className="edition-section-bar">
-                <h2 className="edition-section-head">How to read</h2>
-                <p className="edition-section-note">
-                  Practical guides to reading and studying the Bible. A new set
-                  each day.
-                </p>
-              </div>
-              <div className="edition-guides">
-                {guides.map((g) => (
-                  <article key={g.slug} className="edition-guide">
-                    <Link
-                      href={`/guides/${g.slug}`}
-                      className="edition-guide-plate"
-                      aria-label={g.title}
-                      data-parallax="0.35"
-                    >
-                      <Image
-                        src={g.image}
-                        alt={g.alt}
-                        fill
-                        sizes="(max-width: 900px) 100vw, 30vw"
-                        className="edition-guide-img"
-                      />
-                    </Link>
-                    <p className="edition-guide-kicker">{g.kicker}</p>
-                    <h3 className="edition-guide-head">{g.title}</h3>
-                    <p className="edition-guide-stand">{g.standfirst}</p>
-                    <ol className="edition-guide-steps">
-                      {g.steps.map((step) => (
-                        <li key={step}>{step}</li>
-                      ))}
-                    </ol>
-                    <p className="edition-guide-time">{g.minutes}</p>
-                    {/* The card is the teaser; the full page is the guide —
-                        essay, expanded steps, mistakes, and passages to try
-                        the method on (founder 2026-08-18: the teasers "need
-                        to lead to more robust pages"). */}
-                    <Link
-                      href={`/guides/${g.slug}`}
-                      className="edition-rail-more"
-                    >
-                      Read the full guide &rarr;
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* The puzzles pages, broken up by content (SA-092, founder: the
-              games should be interleaved, not clustered). The crossword now
-              shares its row with the proverb; the word games share theirs
-              with a historic voice. */}
+          {/* Row 3 — the crossword, with real content beside it (founder:
+              "a huge blank area next to it that could easily be content"). */}
           {edCrossword && (
             <section
               className="edition-section paper-box paper-box--crossword"
@@ -805,53 +755,48 @@ export default async function DailyBreadPage() {
               <CrosswordClient puzzle={edCrossword} />
             </section>
           )}
-
+          {/* SLOT:CATECHISM — the Catechism Corner lands here beside the
+              crossword; the proverb holds the column until it does. */}
           {edProverb && (
             <div
-              className={`paper-box ${edCrossword ? 'paper-box--proverb' : 'paper-box--wide'}`}
+              className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
               data-reveal
             >
               <ProverbBox proverb={edProverb} />
             </div>
           )}
 
-          {edVoices && (
-            <div
-              className={`paper-box ${edUnscramble || edQuiz.length > 0 ? 'paper-box--voices' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <VoicesColumn voice={edVoices} />
+          {/* Row 4 — the funnies' reserved frame beside the season. */}
+          <section
+            className="edition-section paper-box paper-box--strip"
+            data-reveal
+            aria-label="The funnies"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The funnies</h2>
+              <p className="edition-section-note">The comic strip</p>
+            </div>
+            {edStrip ? (
+              <StripPanel strip={edStrip} />
+            ) : (
+              <div className="edition-funnies-frame">
+                <p className="edition-funnies-title">
+                  The strip is being drawn.
+                </p>
+                <p className="edition-funnies-note">
+                  A daily comic premieres in this space
+                </p>
+              </div>
+            )}
+          </section>
+          {/* SLOT:SEASON — the elaborate season section replaces this box. */}
+          {edSeason && (
+            <div className="paper-box paper-box--season" data-reveal>
+              <SeasonBox season={edSeason} />
             </div>
           )}
 
-          {(edUnscramble || edQuiz.length > 0) && (
-            <div
-              id="word-games"
-              className={`paper-box ${edVoices ? 'paper-box--wordgames' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              {edUnscramble && (
-                <section aria-label="The verse, rebuilt">
-                  <div className="edition-section-bar">
-                    <h2 className="edition-section-head">The verse, rebuilt</h2>
-                  </div>
-                  <UnscrambleClient puzzle={edUnscramble} />
-                </section>
-              )}
-              {edQuiz.length > 0 && (
-                <section aria-label="Where is this from?">
-                  <div className="edition-section-bar">
-                    <h2 className="edition-section-head">
-                      Where is this from?
-                    </h2>
-                  </div>
-                  <QuizClient questions={edQuiz} />
-                </section>
-              )}
-            </div>
-          )}
-
-          {/* The arts row: a reproduction beside the daily prayer. */}
+          {/* Row 5 — the gallery spread. */}
           {edGalleryPlates.length > 0 && (
             <div
               id="the-gallery"
@@ -862,8 +807,127 @@ export default async function DailyBreadPage() {
             </div>
           )}
 
+          {/* Row 6 — the verse rebuilt, beside the archive pull. */}
+          {edUnscramble && (
+            <div
+              id="word-games"
+              className="paper-box paper-box--wordgames"
+              data-reveal
+            >
+              <section aria-label="The verse, rebuilt">
+                <div className="edition-section-bar">
+                  <h2 className="edition-section-head">The verse, rebuilt</h2>
+                </div>
+                <UnscrambleClient puzzle={edUnscramble} />
+              </section>
+            </div>
+          )}
+          {edArchive && (
+            <div className="paper-box paper-box--panel" data-reveal>
+              <ArchiveBox archive={edArchive} />
+            </div>
+          )}
+
+          {/* Row 7 — how to read. */}
+          {guides.length > 0 && (
+            <section
+              className="edition-section paper-box paper-box--wide"
+              data-reveal
+              aria-label="How to read"
+              id="how-to-read"
+            >
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">How to read</h2>
+                <p className="edition-section-note">
+                  Practical guides to reading and studying the Bible. A new set
+                  each day.
+                </p>
+              </div>
+              <div className="edition-guides">
+                {guides.map((g) => (
+                  <article key={g.title} className="edition-guide">
+                    <Link
+                      href={`/guides/${g.slug}`}
+                      className="edition-guide-platelink"
+                    >
+                      <span
+                        className="edition-guide-plate"
+                        data-parallax="0.35"
+                      >
+                        <Image
+                          src={g.image}
+                          alt={g.alt}
+                          fill
+                          sizes="(max-width: 900px) 100vw, 30vw"
+                          className="edition-guide-img"
+                        />
+                      </span>
+                    </Link>
+                    <p className="edition-guide-kicker">{g.kicker}</p>
+                    <h3 className="edition-guide-head">{g.title}</h3>
+                    <p className="edition-guide-stand">{g.standfirst}</p>
+                    <ol className="edition-guide-steps">
+                      {g.steps.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ol>
+                    <p className="edition-guide-time">{g.minutes}</p>
+                    <Link
+                      href={`/guides/${g.slug}`}
+                      className="edition-rail-more"
+                    >
+                      Read the full guide &rarr;
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* SLOT:WORDSEARCH — lands here (2col) beside quiz 2. */}
+          {edQuiz[1] && (
+            <div className="paper-box paper-box--panel" data-reveal>
+              <section aria-label="Where is this from? Question two">
+                <div className="edition-section-bar">
+                  <h2 className="edition-section-head">Where is this from?</h2>
+                  <p className="edition-section-note">2 of 3</p>
+                </div>
+                <QuizClient questions={[edQuiz[1]]} />
+              </section>
+            </div>
+          )}
+          {/* SLOT:HYMN — the hymnal takes the wide slot below. */}
+
+          {/* Row 9 — thirds: memory verse, the question, quiz 3. */}
+          {edVerse && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <VerseBox verse={edVerse} />
+            </div>
+          )}
+          {edQuestion && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <QuestionBox question={edQuestion} />
+            </div>
+          )}
+          {edQuiz[2] && (
+            <div className="paper-box paper-box--third" data-reveal>
+              <section aria-label="Where is this from? Question three">
+                <div className="edition-section-bar">
+                  <h2 className="edition-section-head">Where is this from?</h2>
+                  <p className="edition-section-note">3 of 3</p>
+                </div>
+                <QuizClient questions={[edQuiz[2]]} />
+              </section>
+            </div>
+          )}
+
+          {/* Row 10 — the daily prayer, full measure, beside voices when
+              present. SLOT:VOICES */}
           {edPrayer && (
-            <div className="paper-box paper-box--wide" data-reveal>
+            <div
+              className={`paper-box ${edVoices ? 'paper-box--gallery' : 'paper-box--wide'}`}
+              data-reveal
+            >
               <span
                 id="the-daily-prayer"
                 className="sr-only"
@@ -872,67 +936,28 @@ export default async function DailyBreadPage() {
               <PrayerColumn prayer={edPrayer} />
             </div>
           )}
-
-          {/* SA-092: the archive row — an older reading resurfaced beside
-              today's stop in the year-long plan. */}
-          {edArchive && (
-            <div
-              className={`paper-box ${edB365 ? 'paper-box--archive' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <ArchiveBox archive={edArchive} />
+          {edVoices && (
+            <div className="paper-box paper-box--prayercol" data-reveal>
+              <VoicesColumn voice={edVoices} />
             </div>
           )}
 
-          {edB365 && (
-            <div
-              className={`paper-box ${edArchive ? 'paper-box--b365' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <B365Box b365={edB365} />
-            </div>
-          )}
-
-          {/* SA-092: the week's memory verse beside the day's question — the
-              take-away row before the reported sections. */}
-          {edVerse && (
-            <div
-              className={`paper-box ${edQuestion ? 'paper-box--verse' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <VerseBox verse={edVerse} />
-            </div>
-          )}
-
-          {edQuestion && (
-            <div
-              className={`paper-box ${edVerse ? 'paper-box--question' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <QuestionBox question={edQuestion} />
-            </div>
-          )}
-
-          {/* Third-party content — allowlisted, founder-approved, attributed,
-              linked out. Renders nothing until real approved items exist. */}
-          {edScreening.length > 0 && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <ScreeningRoom items={edScreening} />
-            </div>
-          )}
-
+          {/* Reported sections — render only when real entries exist. */}
           {edWitness && (
             <div className="paper-box paper-box--wide" data-reveal>
               <WitnessColumn witness={edWitness} />
             </div>
           )}
-
+          {edScreening.length > 0 && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <ScreeningRoom items={edScreening} />
+            </div>
+          )}
           {edLetters.length > 0 && (
             <div className="paper-box paper-box--wide" data-reveal>
               <LettersColumn letters={edLetters} />
             </div>
           )}
-
           {edNotices.length > 0 && (
             <div className="paper-box paper-box--wide" data-reveal>
               <NoticesColumn notices={edNotices} />

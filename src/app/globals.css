@@ -15953,3 +15953,356 @@ html[data-reading-measure='wide'] .vw-body-lg {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ═══ SA-093 — the fuller paper (founder morning critique, 2026-08-19) ═══ */
+
+/* Breathing room: "The practice and Greek today have more internal margins
+   and spacing" — compartments open up. */
+.paper-box {
+  padding: 1.9rem 2rem 2.1rem;
+}
+
+.paper-sheet .edition-practice {
+  padding-right: 2rem;
+}
+
+.paper-sheet .edition-word {
+  padding-left: 2rem;
+}
+
+/* Thirds — three compartments abreast on desktop. */
+.paper-box--third {
+  grid-column: span 1;
+}
+
+/* The lead's series link — a feature always names its series. */
+.edition-lead-series {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 0.15rem;
+}
+
+/* The returning-reader card lives in the rail now — a side panel, not a
+   band across the flow. */
+.edition-rail .edition-return-card {
+  margin: 0 0 1.1rem;
+  padding: 0.9rem 1rem 1rem;
+  border: var(--ed-hair);
+}
+
+/* The funnies frame — the strip's reserved place until the cast arrives. */
+.edition-funnies-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  aspect-ratio: 3 / 1;
+  border: var(--ed-hair);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    color-mix(in srgb, var(--mock-ink, black) 5%, transparent) 14px 15px
+  );
+}
+
+.edition-funnies-title {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--mock-type-2);
+}
+
+.edition-funnies-note {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* The season, elaborate — a color band, plain name, span, essay, and the
+   week explained. Never a bare "Week N after Pentecost" again. */
+.edition-season-band {
+  height: 6px;
+  margin-bottom: 0.9rem;
+  background: var(--season-color, var(--mock-blue));
+}
+
+.edition-season-plain {
+  margin: 0.2rem 0 0.15rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-2);
+  line-height: 1.15;
+}
+
+.edition-season-span {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.edition-season-essay {
+  margin: 0 0 0.7rem;
+  font-size: var(--type-body-s);
+  line-height: 1.6;
+  max-width: 58ch;
+}
+
+.edition-season-week {
+  margin: 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--mock-line, currentColor);
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-ink);
+}
+
+.edition-season-colorline {
+  margin: 0.5rem 0 0;
+  font-size: var(--type-meta);
+  color: var(--mock-muted);
+}
+
+/* Small standing modules: red letter, proverb, memory verse, question,
+   bible-365, archive, catechism, hymn, voices — one vocabulary. */
+.edition-quote-text {
+  margin: 0.7rem 0 0.5rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-1);
+  line-height: 1.5;
+}
+
+.edition-quote-text--red {
+  color: #8c1d18;
+}
+
+html.dark .edition-quote-text--red {
+  color: #e07a72;
+}
+
+.edition-quote-cite {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+.edition-hymn-verse {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-0);
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.edition-catechism-q {
+  margin: 0.7rem 0 0.4rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-1);
+  line-height: 1.4;
+}
+
+.edition-catechism-a {
+  margin: 0 0 0.5rem;
+  font-size: var(--type-body-s);
+  line-height: 1.6;
+  max-width: 58ch;
+}
+
+.edition-mini-title {
+  margin: 0.6rem 0 0.2rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-1);
+  line-height: 1.25;
+}
+
+.edition-mini-body {
+  margin: 0 0 0.5rem;
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-muted);
+}
+
+.edition-mini-link {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 0.12rem;
+}
+
+@media (max-width: 900px) {
+  .paper-box {
+    padding: 1.4rem 1.1rem 1.5rem;
+  }
+  .paper-box--third {
+    grid-column: span 1;
+  }
+  .paper-sheet .edition-practice {
+    padding-right: 0;
+  }
+  .paper-sheet .edition-word {
+    padding-left: 0;
+  }
+}
+
+.edition-guide-platelink {
+  display: block;
+  min-width: 0;
+}
+
+/* ── The word search ──────────────────────────────────────────────────── */
+
+.puzzle-ws {
+  display: grid;
+  /* Desktop-first (founder 2026-08-19): the board beside its word list.
+     CONTAINER RULE: min-width: 0 on both tracks so neither breaks out. */
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, 13rem);
+  gap: 1.6rem;
+  align-items: start;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.puzzle-ws-board {
+  min-width: 0;
+}
+
+.puzzle-ws-theme {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.puzzle-ws-hint {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-body-s);
+  color: var(--mock-muted, currentColor);
+}
+
+.puzzle-ws-scroll {
+  /* CONTAINER RULE: cells hold their 34px floor, so under ~420px the board
+     overflows into this frame's own horizontal scroll — never the page's. */
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.puzzle-ws-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(34px, 1fr));
+  grid-template-rows: repeat(12, minmax(34px, 1fr));
+  width: 100%;
+  min-width: calc(12 * 34px);
+  max-width: 520px;
+  aspect-ratio: 1;
+  border: var(--ed-hair);
+  /* Taps select; pans stay with the browser, so the scroll frame and the
+     page both keep working on touch. Drag-select is the fine-pointer path. */
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.puzzle-ws-cell {
+  position: relative;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0;
+  border: 0.5px solid var(--mock-line, currentColor);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: clamp(0.75rem, 2.2vw, 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* 44px effective hit area on touch: the pseudo pads the target past the
+   34px cell without moving a pixel of layout. ::before, never ::after —
+   EditorialMotionSystem owns ::after on every .mock-paper button. */
+@media (pointer: coarse) {
+  .puzzle-ws-cell::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+  }
+}
+
+.puzzle-ws-cell-anchor {
+  outline: 2px solid var(--mock-ink, currentColor);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.puzzle-ws-cell-path {
+  background: color-mix(in srgb, var(--mock-ink, black) 12%, transparent);
+}
+
+.puzzle-ws-cell-found {
+  background: color-mix(in srgb, var(--mock-ink, black) 18%, transparent);
+  font-weight: 700;
+}
+
+.puzzle-ws-cell-miss {
+  animation: puzzle-shake 0.3s;
+}
+
+.puzzle-ws-words {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.puzzle-ws-word {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-body-s);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.puzzle-ws-word + .puzzle-ws-word {
+  margin-top: 0.35rem;
+}
+
+.puzzle-ws-word-done {
+  text-decoration: line-through;
+  color: var(--mock-muted, currentColor);
+}
+
+@media (max-width: 700px) {
+  .puzzle-ws {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  /* The list tucks under the board as a wrapping row at phone widths. */
+  .puzzle-ws-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+  }
+
+  .puzzle-ws-word + .puzzle-ws-word {
+    margin-top: 0;
+  }
+}
