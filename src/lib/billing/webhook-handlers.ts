@@ -145,6 +145,11 @@ async function resolveUser(params: {
 /**
  * The single writer for subscription state on public.users. Undefined
  * fields are left untouched; null clears. Returns true on success.
+ *
+ * The UPDATE is `.select('id')`-ed so the writer PROVES it wrote: a
+ * filter that matches no row returns no error in PostgREST, which would
+ * otherwise let a paid subscription vanish behind a green log. Zero
+ * matched rows is a failure — logged loudly and reported to the caller.
  */
 async function applySubscriptionState(
   userId: string,
@@ -170,12 +175,33 @@ async function applySubscriptionState(
     return false
   }
   try {
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('users')
       .update(update)
       .eq('id', userId)
-    return !error
-  } catch {
+      .select('id')
+    if (error) {
+      console.error(
+        `[stripe-webhook] subscription state update failed for user ${userId}:`,
+        error,
+      )
+      return false
+    }
+    const rows = Array.isArray(data) ? data : []
+    if (rows.length === 0) {
+      console.error(
+        `[stripe-webhook] subscription state update matched 0 rows for user ${userId} — nothing was written (fields: ${Object.keys(
+          update,
+        ).join(', ')})`,
+      )
+      return false
+    }
+    return true
+  } catch (error) {
+    console.error(
+      `[stripe-webhook] subscription state update threw for user ${userId}:`,
+      error,
+    )
     return false
   }
 }
@@ -454,10 +480,15 @@ export async function handleCheckoutSessionCompleted(
     if (!grant.granted && grant.reason !== 'duplicate event') {
       result.error = `credit grant failed: ${grant.reason}`
     }
-    await applySubscriptionState(
+    const linked = await applySubscriptionState(
       user.userId,
       changes as Parameters<typeof applySubscriptionState>[1],
     )
+    if (!linked) {
+      result.error = result.error
+        ? `${result.error}; failed to update users subscription state`
+        : 'failed to update users subscription state'
+    }
     return result
   }
 

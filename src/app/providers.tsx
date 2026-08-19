@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import AnimationProvider from '@/providers/AnimationProvider'
 import EditorialMotionSystem from '@/components/EditorialMotionSystem'
 import CookieConsentBanner from '@/components/CookieConsentBanner'
+import ReadingProgressSync from '@/components/ReadingProgressSync'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useUIStore } from '@/stores/uiStore'
 
@@ -105,6 +106,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <AnimationProvider>
       <EditorialMotionSystem />
+      <ReadingProgressSync />
       {children}
       <CookieConsentBanner />
     </AnimationProvider>

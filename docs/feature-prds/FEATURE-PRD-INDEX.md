@@ -139,3 +139,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-134 | Platform          | Ref-counted scroll lock; nested opens no longer leak | 0/10     | wip    | [F-134.md](./F-134.md) |
 | F-135 | Platform          | Publishing record: byline, dates, one version        | 0/10     | wip    | [F-135.md](./F-135.md) |
 | F-136 | Reading surfaces  | The Daily Bread becomes a daily paper                | 0/10     | wip    | [F-136.md](./F-136.md) |
+| F-137 | Platform          | Accounts: GDPR, parity, progress sync, billing       | 0/10     | wip    | [F-137.md](./F-137.md) |

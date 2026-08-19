@@ -13,7 +13,13 @@
  *     the billing block simply does not render when checkout is closed.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react'
 import React from 'react'
 import SettingsPage from '@/app/settings/page'
 
@@ -40,63 +46,103 @@ function jsonResponse(body: unknown, status = 200) {
   })
 }
 
-const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
-  const url = String(input)
-  if (url.includes('/api/billing/config')) {
-    // Checkout is closed (the real production state) — the page must NOT
-    // render subscribe UI or any "coming soon" placeholder for it.
-    return jsonResponse({
-      paymentsEnabled: { iosIap: false, webStripe: false },
-      plans: [
-        {
-          id: 'premium-monthly',
-          name: 'Premium Monthly',
-          priceLabel: '$5/mo',
-          description: 'Everything, monthly.',
+// Mutable billing fixture: premiumActive drives the entitlement
+// snapshot, portalCalls records every /api/billing/portal request body.
+const billingState = {
+  premiumActive: false,
+  portalCalls: [] as Array<Record<string, unknown>>,
+}
+
+const fetchMock = vi.fn(
+  async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = String(input)
+    if (url.includes('/api/billing/config')) {
+      // Checkout is closed (the real production state) — the page must NOT
+      // render subscribe UI or any "coming soon" placeholder for it.
+      return jsonResponse({
+        paymentsEnabled: { iosIap: false, webStripe: false },
+        plans: [
+          {
+            id: 'premium-monthly',
+            name: 'Premium Monthly',
+            priceLabel: '$5/mo',
+            description: 'Everything, monthly.',
+          },
+        ],
+        supportsBillingPortal: true,
+      })
+    }
+    if (url.includes('/api/mock-account/session')) {
+      return jsonResponse({
+        ok: true,
+        mode: 'anonymous',
+        analyticsOptIn: false,
+        capabilities: ['bookmarks', 'resume'],
+        retention: {
+          anonymousSessionDays: 30,
+          bookmarksDays: 365,
+          notesDays: 365,
+          highlightsDays: 365,
+          chatHistoryDays: 90,
+          archivedArtifactsDays: 365,
+          trashRestoreWindowDays: 30,
         },
-      ],
-      supportsBillingPortal: true,
-    })
-  }
-  if (url.includes('/api/mock-account/session')) {
-    return jsonResponse({
-      ok: true,
-      mode: 'anonymous',
-      analyticsOptIn: false,
-      capabilities: ['bookmarks', 'resume'],
-      retention: {
-        anonymousSessionDays: 30,
-        bookmarksDays: 365,
-        notesDays: 365,
-        highlightsDays: 365,
-        chatHistoryDays: 90,
-        archivedArtifactsDays: 365,
-        trashRestoreWindowDays: 30,
-      },
-      retentionSummary: { anonymousSession: '30 days' },
-    })
-  }
-  if (url.includes('/api/auth/session')) {
-    return jsonResponse({ authenticated: false, user: null })
-  }
-  if (url.includes('/api/brain/preferences')) {
-    return jsonResponse({ ok: true })
-  }
-  if (url.includes('/api/push/preferences')) {
-    return jsonResponse({
-      ok: true,
-      configured: false,
-      subscribed: false,
-      window: null,
-      timezone: null,
-    })
-  }
-  throw new Error(`Unexpected fetch in settings smoke test: ${url}`)
-})
+        retentionSummary: { anonymousSession: '30 days' },
+      })
+    }
+    if (url.includes('/api/auth/session')) {
+      return jsonResponse({ authenticated: false, user: null })
+    }
+    if (url.includes('/api/billing/entitlements')) {
+      return jsonResponse({
+        ok: true,
+        authenticated: billingState.premiumActive,
+        entitlements: {
+          subscriptionTier: billingState.premiumActive ? 'premium' : 'free',
+          premiumActive: billingState.premiumActive,
+          subscriptionStatus: billingState.premiumActive ? 'active' : null,
+          subscriptionRenewsAt: billingState.premiumActive
+            ? '2027-01-01T00:00:00.000Z'
+            : null,
+          premiumExpiresAt: null,
+        },
+      })
+    }
+    if (url.includes('/api/billing/portal')) {
+      billingState.portalCalls.push(
+        JSON.parse(String(init?.body ?? '{}')) as Record<string, unknown>,
+      )
+      // The route's honest 400 when it can resolve no customer — the page
+      // must surface it, and must never navigate in jsdom.
+      return jsonResponse(
+        {
+          error: 'A valid checkout session id is required.',
+          code: 'INVALID_CHECKOUT_SESSION',
+        },
+        400,
+      )
+    }
+    if (url.includes('/api/brain/preferences')) {
+      return jsonResponse({ ok: true })
+    }
+    if (url.includes('/api/push/preferences')) {
+      return jsonResponse({
+        ok: true,
+        configured: false,
+        subscribed: false,
+        window: null,
+        timezone: null,
+      })
+    }
+    throw new Error(`Unexpected fetch in settings smoke test: ${url}`)
+  },
+)
 
 describe('settings restructure (F-073)', () => {
   beforeEach(() => {
     window.localStorage.clear()
+    billingState.premiumActive = false
+    billingState.portalCalls = []
     vi.stubGlobal('fetch', fetchMock)
   })
 
@@ -287,5 +333,36 @@ describe('settings restructure (F-073)', () => {
     // buttons, enabled or disabled, may render.
     expect(screen.queryByText(/subscribe on web/i)).toBeNull()
     expect(screen.queryByText(/subscribe in app store/i)).toBeNull()
+  })
+
+  it('hides Manage Subscription when neither entitlements nor a device checkout session exist', async () => {
+    await renderSettings()
+
+    expect(
+      screen.queryByRole('button', { name: 'Manage Subscription' }),
+    ).toBeNull()
+  })
+
+  it('offers Manage Subscription from the entitlement snapshot alone — no device checkout session', async () => {
+    // SA-028: the portal route resolves the account's stored
+    // stripe_customer_id first, so an active subscription is enough to
+    // show the button on a device that never saw the checkout.
+    billingState.premiumActive = true
+    await renderSettings()
+
+    const manage = await screen.findByRole('button', {
+      name: 'Manage Subscription',
+    })
+    fireEvent.click(manage)
+
+    await waitFor(() => expect(billingState.portalCalls).toHaveLength(1))
+    // No device session → the body carries none; the route resolves (or
+    // answers honestly) on its own.
+    expect(billingState.portalCalls[0]).toEqual({ returnPath: '/settings' })
+
+    // The route's honest error surfaces instead of a silent no-op.
+    expect(
+      await screen.findByText('A valid checkout session id is required.'),
+    ).toBeTruthy()
   })
 })

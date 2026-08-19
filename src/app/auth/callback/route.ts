@@ -2,7 +2,11 @@ import { NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { onAuthSuccess } from '@/lib/auth'
-import { sanitizeSafeRedirectPath } from '@/lib/api-security'
+import {
+  createRequestId,
+  logApiError,
+  sanitizeSafeRedirectPath,
+} from '@/lib/api-security'
 import { shouldRequirePostSignupOnboarding } from '@/lib/auth/onboarding'
 
 type SupportedOtpType =
@@ -68,6 +72,59 @@ export async function GET(request: Request) {
     if (!authResult.error && authResult.data.user) {
       // Link anonymous session to authenticated user
       await onAuthSuccess(authResult.data.user.id)
+
+      // M4 — keep public.users.email in step with auth.users.email.
+      // Billing resolves accounts by public.users.email, and the signup
+      // trigger only copies the address once. The email_change OTP
+      // landing is the one moment the auth email actually changes, so
+      // THIS is the sync point — never at updateUser() time, when the
+      // change is still unconfirmed. With secure email change there are
+      // two landings (one per inbox); each re-syncs to whatever
+      // auth.users.email is right now, so the mirror flips exactly when
+      // the auth email does. Auth itself has already succeeded here — a
+      // failed mirror write is logged loudly (billing-facing desync)
+      // but does not fail the callback: the sign-in email DID change.
+      if (!code && otpType === 'email_change') {
+        const requestId = createRequestId()
+        const { data: freshData, error: freshError } =
+          await supabase.auth.getUser()
+        const freshUser = freshData.user
+        if (freshError || !freshUser?.email) {
+          logApiError({
+            scope: 'auth-callback',
+            requestId,
+            error:
+              freshError ??
+              new Error(
+                'No user email after email_change verification — public.users.email not synced.',
+              ),
+            path: '/auth/callback',
+            context: { stage: 'email-change-refetch' },
+          })
+        } else {
+          // Same RLS-scoped server client as the verification itself:
+          // "Users can update own profile" limits this to the caller's row.
+          const { data: profileRow, error: profileError } = await supabase
+            .from('users')
+            .update({ email: freshUser.email })
+            .eq('id', freshUser.id)
+            .select('id')
+            .maybeSingle()
+          if (profileError || !profileRow) {
+            logApiError({
+              scope: 'auth-callback',
+              requestId,
+              error:
+                profileError ??
+                new Error(
+                  `public.users row missing for ${freshUser.id} — email mirror not updated.`,
+                ),
+              path: '/auth/callback',
+              context: { stage: 'email-change-profile-sync' },
+            })
+          }
+        }
+      }
       const shouldOnboard = shouldRequirePostSignupOnboarding(
         authResult.data.user,
       )

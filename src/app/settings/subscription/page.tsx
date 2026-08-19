@@ -21,6 +21,23 @@ import type { BillingEntitlementsResponse } from '@/types/billing'
 
 type LoadPhase = 'loading' | 'ready' | 'error'
 
+/**
+ * Shown ONLY when the portal has no way in at all: no Stripe customer
+ * stored on the account (the webhook-written link the API tries first)
+ * AND no checkout completed on this device. Honest limitation + a real
+ * next step — never a broken button (Dev Rule #1).
+ */
+const PORTAL_NO_CUSTOMER_MESSAGE =
+  'We couldn’t find a Stripe record to open — nothing saved on your account, and no checkout completed on this device. Open the link in your Stripe receipt email instead — it manages the same subscription.'
+
+/**
+ * CHECKOUT_CUSTOMER_MISSING (409): a checkout session WAS found, but it
+ * carries no Stripe customer to open the portal for — different from
+ * "no checkout on this device", so say what actually happened.
+ */
+const PORTAL_SESSION_NO_CUSTOMER_MESSAGE =
+  'We found your checkout, but it isn’t linked to a Stripe customer record we can open. Open the link in your Stripe receipt email instead — it manages the same subscription.'
+
 const WHATS_INCLUDED = [
   'Unlimited custom editions — composed for your specific reflection',
   'Unlimited Soul Audit re-rolls',
@@ -107,30 +124,34 @@ export default function SubscriptionSettingsPage() {
 
   async function openPortal() {
     setPortalError(null)
-    if (!lastCheckoutSessionId) {
-      // The portal endpoint requires the checkout session from this
-      // device. Honest limitation + a real next step — never a broken
-      // button (Dev Rule #1).
-      setPortalError(
-        'Billing management opens through Stripe using the checkout completed on this device, and we don’t have that here. Open the link in your Stripe receipt email instead — it manages the same subscription.',
-      )
-      return
-    }
+    // Always ask the API: it resolves the Stripe customer from the
+    // account first (works on any device) and only falls back to the
+    // checkout session this device happens to remember.
     setPortalBusy(true)
     try {
       const response = await fetch('/api/billing/portal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
-          checkoutSessionId: lastCheckoutSessionId,
+          ...(lastCheckoutSessionId
+            ? { checkoutSessionId: lastCheckoutSessionId }
+            : {}),
           returnPath: '/settings/subscription',
         }),
       })
       const payload = (await response.json()) as {
         portalUrl?: string
         error?: string
+        code?: string
       }
       if (!response.ok || !payload.portalUrl) {
+        if (payload.code === 'INVALID_CHECKOUT_SESSION') {
+          throw new Error(PORTAL_NO_CUSTOMER_MESSAGE)
+        }
+        if (payload.code === 'CHECKOUT_CUSTOMER_MISSING') {
+          throw new Error(PORTAL_SESSION_NO_CUSTOMER_MESSAGE)
+        }
         throw new Error(
           payload.error || 'Unable to open billing management right now.',
         )

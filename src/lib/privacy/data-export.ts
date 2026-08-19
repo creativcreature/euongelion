@@ -13,6 +13,9 @@
  *   - For each session_token: audit_runs, audit_options, consent_records,
  *     audit_selections, devotional_plan_instances + days + citations,
  *     annotations, session_bookmarks, mock_account_sessions
+ *   - annotations + session_bookmarks + push_subscriptions keyed to the
+ *     auth user id, which is what the two-site-states routes (F-105) write
+ *     into their session_token column when signed in
  *   - User-id-keyed tables: bookmarks, user_progress, soul_audit_responses
  *
  * Excluded (intentionally):
@@ -69,6 +72,33 @@ const SESSION_TOKEN_TABLES = [
   'push_subscriptions',
 ] as const
 
+// Tables above whose `session_token` column ALSO holds auth user ids.
+//
+// The two-site-states data ruling (F-105, CHANGELOG 2026-08-16); its
+// CHANGELOG SA label collides with the canonical decisions file and is
+// deliberately not cited here. That ruling made save-state account-only:
+// /api/annotations and /api/bookmarks write `session_token = user.id` for a
+// signed-in reader, and /api/push/subscribe + /api/push/preferences key
+// push_subscriptions the same way (`user?.id ?? auditToken`). Those rows
+// are reachable from no user_sessions token and never appear in the
+// per-session sweep below. Left out, a reader's own notes, highlights, and
+// push endpoints are missing from the file that claims to be all of their
+// data (GDPR Art. 15). Kept in step with the deletion cascade's list by
+// __tests__/account-deletion-user-keyed.test.ts.
+//
+// DOCUMENTED RESIDUAL GAP — covered by neither helper: before commit
+// cccee2f6 these routes wrote `session_token` = the euangelion_audit_session
+// cookie's randomUUID for EVERY caller, signed-in included, and that token
+// was never inserted into user_sessions. Rows written in that era under an
+// audit-session UUID are reachable by neither this export nor the deletion
+// cascade — there is no stored link from the user to that UUID. Closing it
+// is pending a decision on linking that cookie's token to accounts.
+const USER_ID_KEYED_SESSION_TOKEN_TABLES = [
+  'annotations',
+  'session_bookmarks',
+  'push_subscriptions',
+] as const
+
 const USER_ID_TABLES = [
   'bookmarks',
   'user_progress',
@@ -91,6 +121,7 @@ async function safeSelectByColumn(
   column: string,
   value: string | string[],
   partialFailures: string[],
+  failureLabel: string = `${table}:${column}`,
 ): Promise<unknown[]> {
   try {
     // The export helper iterates over a typed list of table names that
@@ -125,12 +156,12 @@ async function safeSelectByColumn(
       ? await builder.in(column, value)
       : await builder.eq(column, value)
     if (error) {
-      partialFailures.push(`${table}:${column}`)
+      partialFailures.push(failureLabel)
       return []
     }
     return data ?? []
   } catch {
-    partialFailures.push(`${table}:${column}`)
+    partialFailures.push(failureLabel)
     return []
   }
 }
@@ -239,6 +270,39 @@ export async function exportUserData(
     }
 
     result.sessions.push({ sessionToken, rowsBySource })
+  }
+
+  // 3b) Rows the user-id-keyed routes (F-105) keyed to the auth user id
+  // rather than to a user_sessions token. The user id IS the session_token
+  // value on these rows, so they are reported as one more session entry
+  // under that value rather than invented into a new shape. Appended only
+  // when it holds something: an always-present entry of empty arrays would
+  // tell a reader with no notes that they have a session they never had.
+  //
+  // Failures here are labelled `table:user_id` so they stay distinguishable
+  // from the per-token sweep in step 3, which reports `table:session_token`
+  // for the same tables — one flaky table must not read as two.
+  const userKeyedSessionRows: Record<string, unknown[]> = {}
+  for (const table of USER_ID_KEYED_SESSION_TOKEN_TABLES) {
+    userKeyedSessionRows[table] = await safeSelectByColumn(
+      supabase,
+      table,
+      'session_token',
+      userId,
+      partialFailures,
+      `${table}:user_id`,
+    )
+  }
+  // Shape symmetry with the per-token entries in step 3, which always carry
+  // these two keys. Plans hang off session tokens, never off a user id
+  // written as a session_token, so both are structurally empty here.
+  userKeyedSessionRows.devotional_plan_days = []
+  userKeyedSessionRows.devotional_day_citations = []
+  if (Object.values(userKeyedSessionRows).some((rows) => rows.length > 0)) {
+    result.sessions.push({
+      sessionToken: userId,
+      rowsBySource: userKeyedSessionRows,
+    })
   }
 
   // 4) User-id-keyed tables.

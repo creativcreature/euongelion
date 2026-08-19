@@ -17,6 +17,7 @@ import { useUIStore } from '@/stores/uiStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useChatStore } from '@/stores/chatStore'
 import { serializeDayLockingCookie } from '@/lib/day-locking'
+import { createClient as createSupabaseBrowserClient } from '@/lib/supabase/client'
 import {
   detectBillingPlatform,
   purchasePlanOnIos,
@@ -41,6 +42,7 @@ import {
   type BibleTranslationCode,
 } from '@/lib/bible'
 import { retentionClarityRows } from '@/lib/privacy/retention'
+import { DISPLAY_NAME_MAX_LENGTH } from '@/lib/auth/display-name'
 
 type Theme = 'dark' | 'light' | 'system'
 type BibleTranslation = BibleTranslationCode
@@ -69,6 +71,10 @@ type MockAccountSessionResponse = {
 }
 
 const emptySubscribe = () => () => {}
+
+// Shape check only — Supabase is the authority on deliverability. This
+// exists so an obvious typo fails locally instead of burning a send.
+const EMAIL_SHAPE_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function useHydrated() {
   return useSyncExternalStore(
@@ -212,6 +218,24 @@ export default function SettingsPage() {
   >(null)
   const [signOutBusy, setSignOutBusy] = useState(false)
   const [signOutError, setSignOutError] = useState<string | null>(null)
+  // Display name (public.users.full_name) — read + inline edit.
+  const [displayName, setDisplayName] = useState<string | null>(null)
+  const [displayNameOpen, setDisplayNameOpen] = useState(false)
+  const [displayNameDraft, setDisplayNameDraft] = useState('')
+  const [displayNameBusy, setDisplayNameBusy] = useState(false)
+  const [displayNameError, setDisplayNameError] = useState<string | null>(null)
+  const [displayNameMessage, setDisplayNameMessage] = useState<string | null>(
+    null,
+  )
+  // Email change — initiated here, confirmed by Supabase over email and
+  // landed by src/app/auth/callback/route.ts (type=email_change).
+  const [emailChangeOpen, setEmailChangeOpen] = useState(false)
+  const [emailChangeDraft, setEmailChangeDraft] = useState('')
+  const [emailChangeBusy, setEmailChangeBusy] = useState(false)
+  const [emailChangeError, setEmailChangeError] = useState<string | null>(null)
+  const [emailChangeMessage, setEmailChangeMessage] = useState<string | null>(
+    null,
+  )
   const brainSyncTimerRef = useRef<number | null>(null)
 
   const hydrated = useHydrated()
@@ -263,12 +287,24 @@ export default function SettingsPage() {
     return 'error'
   }, [billingLifecycleState])
 
+  // Manage Subscription is offered whenever the portal route has a way
+  // in: the portal resolves the account's webhook-written
+  // stripe_customer_id FIRST (SA-028 — works on a device that never saw
+  // the checkout), so an active subscription in the entitlement snapshot
+  // is enough; the device-local checkout session is the secondary path.
+  const billingPortalAvailable =
+    billingPlatform === 'web' &&
+    Boolean(billingConfig?.supportsBillingPortal) &&
+    (Boolean(subscriptionEntitlements?.premiumActive) ||
+      Boolean(checkoutSessionId))
+
   // The billing block only appears when there is something real to act on:
-  // live checkout (billingEnabled), a returning checkout session to manage,
-  // or lifecycle feedback from a checkout the reader just completed. No
-  // "coming soon" placeholder is rendered — F-073.
+  // live checkout (billingEnabled), a working portal path to manage an
+  // existing subscription, or lifecycle feedback from a checkout the
+  // reader just completed. No "coming soon" placeholder is rendered — F-073.
   const billingBlockVisible =
     billingEnabled ||
+    billingPortalAvailable ||
     Boolean(checkoutSessionId) ||
     Boolean(billingMessage) ||
     Boolean(billingError) ||
@@ -469,6 +505,112 @@ export default function SettingsPage() {
     }
   }
 
+  async function loadDisplayName() {
+    setDisplayNameError(null)
+    try {
+      const response = await fetch('/api/user/profile', {
+        credentials: 'include',
+        cache: 'no-store',
+      })
+      const payload = (await response.json().catch(() => ({}))) as {
+        fullName?: string | null
+        error?: string
+      }
+      if (!response.ok) {
+        throw new Error(payload.error || 'Unable to load your display name.')
+      }
+      setDisplayName(payload.fullName ?? null)
+    } catch (error) {
+      // Surfaced, not swallowed: a name that silently fails to load looks
+      // identical to a name that was never set.
+      setDisplayNameError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to load your display name.',
+      )
+    }
+  }
+
+  async function saveDisplayName() {
+    setDisplayNameBusy(true)
+    setDisplayNameError(null)
+    setDisplayNameMessage(null)
+    try {
+      const response = await fetch('/api/user/profile', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName: displayNameDraft }),
+      })
+      const payload = (await response.json().catch(() => ({}))) as {
+        fullName?: string | null
+        error?: string
+      }
+      if (!response.ok) {
+        throw new Error(payload.error || 'Unable to save your display name.')
+      }
+      setDisplayName(payload.fullName ?? null)
+      setDisplayNameOpen(false)
+      setDisplayNameMessage('Display name saved.')
+    } catch (error) {
+      setDisplayNameError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to save your display name.',
+      )
+    } finally {
+      setDisplayNameBusy(false)
+    }
+  }
+
+  async function requestEmailChange() {
+    const nextEmail = emailChangeDraft.trim().toLowerCase()
+    setEmailChangeBusy(true)
+    setEmailChangeError(null)
+    setEmailChangeMessage(null)
+    try {
+      if (!EMAIL_SHAPE_RE.test(nextEmail)) {
+        throw new Error('Enter a valid email address.')
+      }
+      if (nextEmail === (accountEmail || '').trim().toLowerCase()) {
+        throw new Error('That is already your email address.')
+      }
+
+      const supabase = createSupabaseBrowserClient()
+      // The confirmation links must land on /auth/callback — which
+      // verifies the email_change OTP and syncs public.users.email —
+      // and then return the reader here. Same `/auth/callback?redirect=`
+      // shape the sign-in and sign-up flows build.
+      const { error } = await supabase.auth.updateUser(
+        { email: nextEmail },
+        {
+          emailRedirectTo: `${window.location.origin}/auth/callback?redirect=${encodeURIComponent('/settings')}`,
+        },
+      )
+      if (error) {
+        throw new Error(error.message)
+      }
+
+      // Honest state: nothing has changed yet. Supabase sends a
+      // confirmation link, and with secure email change enabled it sends
+      // one to BOTH addresses — the change only lands once the link is
+      // opened (handled by /auth/callback, type=email_change).
+      setEmailChangeMessage(
+        `Confirmation sent to ${nextEmail}. Check both inboxes — Supabase confirms on both addresses when secure email change is on. Your sign-in email stays ${accountEmail || 'unchanged'} until every link is opened.`,
+      )
+      setEmailChangeOpen(false)
+      setEmailChangeDraft('')
+    } catch (error) {
+      setEmailChangeError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to start the email change.',
+      )
+    } finally {
+      setEmailChangeBusy(false)
+    }
+  }
+
   useEffect(() => {
     let mounted = true
     async function loadBilling() {
@@ -609,6 +751,13 @@ export default function SettingsPage() {
     }
   }, [hydrated])
 
+  // Display name is only meaningful for a signed-in reader, and the
+  // anonymous path must not fire the request at all.
+  useEffect(() => {
+    if (!accountAuthed) return
+    void loadDisplayName()
+  }, [accountAuthed])
+
   useEffect(() => {
     if (!hydrated) return
     void hydrateRememberedProviderKeys()
@@ -718,14 +867,9 @@ export default function SettingsPage() {
   }
 
   async function openBillingPortal() {
-    if (!checkoutSessionId) {
-      setBillingLifecycleState('failed')
-      setBillingError(
-        'No recent checkout session found. Complete checkout once to enable billing management.',
-      )
-      return
-    }
-
+    // Always ask the API: it resolves the Stripe customer from the
+    // account first (works on any device) and only falls back to the
+    // checkout session this device happens to remember.
     setBillingPortalBusy(true)
     setBillingLifecycleState('processing')
     setBillingError(null)
@@ -735,7 +879,7 @@ export default function SettingsPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          checkoutSessionId,
+          ...(checkoutSessionId ? { checkoutSessionId } : {}),
           returnPath: '/settings',
         }),
       })
@@ -799,8 +943,14 @@ export default function SettingsPage() {
     )
   }
 
+  // M3: once a display name is saved it is the identity the reader chose,
+  // so the avatar takes its initial from the name and only falls back to
+  // the email when no name is set.
+  const savedDisplayName = displayName?.trim() || null
   const avatarInitial = accountAuthed
-    ? (accountEmail?.trim().charAt(0).toUpperCase() ?? '—')
+    ? (savedDisplayName?.charAt(0).toUpperCase() ??
+      accountEmail?.trim().charAt(0).toUpperCase() ??
+      '—')
     : '—'
 
   // Phase 1c — subscription row label, from the real entitlement snapshot.
@@ -863,6 +1013,7 @@ export default function SettingsPage() {
             >
               <span
                 className="text-display"
+                data-testid="profile-avatar-initial"
                 style={{ fontSize: '1.4rem', lineHeight: 1 }}
               >
                 {avatarInitial}
@@ -907,9 +1058,226 @@ export default function SettingsPage() {
                 ) : accountAuthed ? (
                   <>
                     <p className="vw-small mb-1 text-secondary">Signed in as</p>
-                    <p className="vw-body mb-5 break-all text-[var(--color-text-primary)]">
+                    <p className="vw-body mb-3 break-all text-[var(--color-text-primary)]">
                       {accountEmail}
                     </p>
+
+                    {/* M4 — email change. Initiated here, confirmed by
+                        Supabase over email; /auth/callback already lands
+                        the email_change OTP. */}
+                    <div className="mb-5">
+                      {!emailChangeOpen ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setEmailChangeDraft('')
+                            setEmailChangeError(null)
+                            setEmailChangeMessage(null)
+                            setEmailChangeOpen(true)
+                          }}
+                          className="min-h-[44px] px-4 py-2 text-label vw-small"
+                          style={{
+                            backgroundColor: 'var(--color-surface)',
+                            border: '1px solid var(--color-border)',
+                            color: 'var(--color-text-secondary)',
+                          }}
+                        >
+                          Change email
+                        </button>
+                      ) : (
+                        <div>
+                          <label className="mb-3 block">
+                            <span className="text-label vw-small mb-1 block text-gold">
+                              NEW EMAIL
+                            </span>
+                            <input
+                              type="email"
+                              value={emailChangeDraft}
+                              onChange={(e) =>
+                                setEmailChangeDraft(e.target.value)
+                              }
+                              placeholder="you@example.com"
+                              autoComplete="email"
+                              className="w-full px-3 py-2 vw-small"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            />
+                          </label>
+                          <p className="vw-small mb-4 text-muted">
+                            Nothing changes until the confirmation link is
+                            opened. Check both inboxes — Supabase confirms on
+                            both addresses when secure email change is on.
+                          </p>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => void requestEmailChange()}
+                              disabled={
+                                emailChangeBusy ||
+                                emailChangeDraft.trim().length === 0
+                              }
+                              aria-busy={emailChangeBusy}
+                              className="min-h-[44px] px-4 py-2 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border-strong)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            >
+                              {emailChangeBusy
+                                ? 'Sending…'
+                                : 'Send confirmation'}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setEmailChangeOpen(false)
+                                setEmailChangeDraft('')
+                                setEmailChangeError(null)
+                              }}
+                              disabled={emailChangeBusy}
+                              className="min-h-[44px] px-4 py-2 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'transparent',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-secondary)',
+                              }}
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      {emailChangeMessage && (
+                        <p
+                          className="vw-small mt-3 text-gold"
+                          aria-live="polite"
+                        >
+                          {emailChangeMessage}
+                        </p>
+                      )}
+                      {emailChangeError && (
+                        <p
+                          className="vw-small mt-3"
+                          style={{ color: 'var(--color-error)' }}
+                          aria-live="assertive"
+                        >
+                          {emailChangeError}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* M3 — display name (public.users.full_name). */}
+                    <div className="mb-5">
+                      <p className="vw-small mb-1 text-secondary">
+                        Display name
+                      </p>
+                      {!displayNameOpen ? (
+                        <div className="flex flex-wrap items-center gap-3">
+                          <p className="vw-body text-[var(--color-text-primary)]">
+                            {savedDisplayName ?? 'Not set'}
+                          </p>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setDisplayNameDraft(savedDisplayName ?? '')
+                              setDisplayNameError(null)
+                              setDisplayNameMessage(null)
+                              setDisplayNameOpen(true)
+                            }}
+                            className="min-h-[44px] px-4 py-2 text-label vw-small"
+                            style={{
+                              backgroundColor: 'var(--color-surface)',
+                              border: '1px solid var(--color-border)',
+                              color: 'var(--color-text-secondary)',
+                            }}
+                          >
+                            {savedDisplayName ? 'Edit name' : 'Add a name'}
+                          </button>
+                        </div>
+                      ) : (
+                        <div>
+                          <label className="mb-3 block">
+                            <span className="text-label vw-small mb-1 block text-gold">
+                              DISPLAY NAME
+                            </span>
+                            <input
+                              type="text"
+                              value={displayNameDraft}
+                              onChange={(e) =>
+                                setDisplayNameDraft(e.target.value)
+                              }
+                              maxLength={DISPLAY_NAME_MAX_LENGTH}
+                              placeholder="How you would like to be greeted"
+                              autoComplete="name"
+                              className="w-full px-3 py-2 vw-small"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            />
+                          </label>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => void saveDisplayName()}
+                              disabled={
+                                displayNameBusy ||
+                                displayNameDraft.trim().length === 0
+                              }
+                              aria-busy={displayNameBusy}
+                              className="min-h-[44px] px-4 py-2 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'var(--color-surface)',
+                                border: '1px solid var(--color-border-strong)',
+                                color: 'var(--color-text-primary)',
+                              }}
+                            >
+                              {displayNameBusy ? 'Saving…' : 'Save name'}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setDisplayNameOpen(false)
+                                setDisplayNameDraft('')
+                                setDisplayNameError(null)
+                              }}
+                              disabled={displayNameBusy}
+                              className="min-h-[44px] px-4 py-2 text-label vw-small disabled:opacity-30"
+                              style={{
+                                backgroundColor: 'transparent',
+                                border: '1px solid var(--color-border)',
+                                color: 'var(--color-text-secondary)',
+                              }}
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      {displayNameMessage && (
+                        <p
+                          className="vw-small mt-3 text-gold"
+                          aria-live="polite"
+                        >
+                          {displayNameMessage}
+                        </p>
+                      )}
+                      {displayNameError && (
+                        <p
+                          className="vw-small mt-3"
+                          style={{ color: 'var(--color-error)' }}
+                          aria-live="assertive"
+                        >
+                          {displayNameError}
+                        </p>
+                      )}
+                    </div>
+
                     <button
                       type="button"
                       onClick={() => void signOut()}
@@ -1049,21 +1417,19 @@ export default function SettingsPage() {
                     </>
                   )}
 
-                  {billingPlatform === 'web' &&
-                    billingConfig?.supportsBillingPortal &&
-                    checkoutSessionId && (
-                      <button
-                        type="button"
-                        className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
-                        disabled={billingBusy || billingPortalBusy}
-                        onClick={() => void openBillingPortal()}
-                        aria-busy={billingPortalBusy}
-                      >
-                        {billingPortalBusy
-                          ? 'Opening Billing Management...'
-                          : 'Manage Subscription'}
-                      </button>
-                    )}
+                  {billingPortalAvailable && (
+                    <button
+                      type="button"
+                      className="text-label vw-small mt-4 border border-[var(--color-border)] px-4 py-2 disabled:opacity-40"
+                      disabled={billingBusy || billingPortalBusy}
+                      onClick={() => void openBillingPortal()}
+                      aria-busy={billingPortalBusy}
+                    >
+                      {billingPortalBusy
+                        ? 'Opening Billing Management...'
+                        : 'Manage Subscription'}
+                    </button>
+                  )}
 
                   {billingPlatform === 'ios' && billingEnabled && (
                     <button

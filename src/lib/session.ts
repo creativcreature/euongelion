@@ -150,13 +150,24 @@ export async function updateSession(
  * Tables keyed by `session_token` that should follow a user across devices.
  * Each entry is `[table, columnName]`; most use `session_token`, but
  * `soul_audit_jobs` uses `session_id`.
+ *
+ * `annotations` and `session_bookmarks` were removed here per the
+ * two-site-states data ruling (F-105, CHANGELOG 2026-08-16); its CHANGELOG
+ * SA label collides with the canonical decisions file and is deliberately
+ * not cited here. That ruling made save-state account-only, and
+ * /api/annotations + /api/bookmarks now write `session_token = user.id` —
+ * so a signed-in reader's rows are keyed to the auth user id, never to the
+ * random hex token this function moves between. The UPDATE matched zero
+ * rows for every user and always would: it looked for a token those routes
+ * stopped writing under that ruling, and the token it migrated TO is not
+ * one the routes read back. Their data is carried by the user id itself, so
+ * there is nothing to migrate. Deletion and export still cover both keyings
+ * — see src/lib/privacy/account-deletion.ts.
  */
 const SESSION_KEYED_TABLES: ReadonlyArray<readonly [string, string]> = [
   ['devotional_plan_instances', 'session_token'],
   ['audit_runs', 'session_token'],
   ['consent_records', 'session_token'],
-  ['annotations', 'session_token'],
-  ['session_bookmarks', 'session_token'],
   ['soul_audit_jobs', 'session_id'],
 ]
 
@@ -227,13 +238,16 @@ export async function migrateSessionData(
  * in once on phone and now on laptop. For each prior anonymous session
  * tied to this user_id, all session-keyed data rows are migrated to
  * the current `session_token` so the returning user sees their plans,
- * bookmarks, audit history, etc. instead of an empty surface.
+ * audit history, etc. instead of an empty surface. Notes, highlights,
+ * and saved devotionals need no migration — the two-site-states routes
+ * (F-105) key them to the auth user id, so they already follow the
+ * account.
  *
  * Schema note: data tables (devotional_plan_instances, audit_runs,
- * consent_records, annotations, session_bookmarks, soul_audit_jobs)
- * do NOT have a `user_id` column — they are keyed by `session_token`
- * (or `session_id` for soul_audit_jobs). Migration therefore moves the
- * session reference, not a user_id.
+ * consent_records, soul_audit_jobs) do NOT have a `user_id` column —
+ * they are keyed by `session_token` (or `session_id` for
+ * soul_audit_jobs). Migration therefore moves the session reference,
+ * not a user_id.
  */
 export async function linkSessionToUser(
   sessionId: string,

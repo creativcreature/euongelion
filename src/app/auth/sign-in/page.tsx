@@ -78,8 +78,17 @@ function SignInForm() {
   const turnstileHandleRef = useRef<TurnstileHandle | null>(null)
   const turnstileFailedRef = useRef(false)
 
+  // The 'sent' phase unmounts the container div; leaving it ("Try again")
+  // renders a NEW div. With [siteKey] deps alone this effect never re-ran,
+  // so the fresh div stayed empty while turnstileHandleRef kept a handle
+  // whose DOM was gone. Re-running on the phase boundary cleans up on the
+  // way into 'sent' and mounts a fresh widget into the fresh container on
+  // the way back to idle.
+  const inSentPhase = status === 'sent'
+
   useEffect(() => {
     if (!siteKey) return
+    if (inSentPhase) return
     const container = turnstileContainerRef.current
     if (!container) return
     let cancelled = false
@@ -104,7 +113,7 @@ function SignInForm() {
       turnstileHandleRef.current = null
       handle?.destroy()
     }
-  }, [siteKey])
+  }, [siteKey, inSentPhase])
 
   async function handleOAuth(provider: OAuthProvider) {
     setError('')

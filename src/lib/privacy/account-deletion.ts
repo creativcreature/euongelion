@@ -13,7 +13,11 @@
  *   A. Resolve all session_tokens this user has ever owned.
  *   B. For each session-token-keyed table, delete WHERE
  *      session_token IN (...). Order within this group doesn't
- *      matter — there are no FK chains between these tables.
+ *      matter — there are no FK chains between these tables. The
+ *      tables in USER_ID_KEYED_SESSION_TOKEN_TABLES additionally
+ *      match on the auth user id, which the two-site-states routes
+ *      (F-105) write into their session_token column for signed-in
+ *      readers.
  *   C. Delete devotional_plan_days + devotional_day_citations by
  *      plan_token (sourced from devotional_plan_instances we just
  *      deleted — pulled BEFORE the parent delete).
@@ -63,6 +67,31 @@ const SESSION_TOKEN_TABLES = [
   // an account deletion left the user's push subscriptions orphaned.
   'push_subscriptions',
 ] as const
+
+// Tables above whose `session_token` column ALSO holds auth user ids.
+//
+// The two-site-states data ruling (F-105, CHANGELOG 2026-08-16); its
+// CHANGELOG SA label collides with the canonical decisions file and is
+// deliberately not cited here. That ruling made save-state account-only:
+// /api/annotations and /api/bookmarks write `session_token = user.id` for a
+// signed-in reader, and /api/push/subscribe + /api/push/preferences key
+// push_subscriptions the same way (`user?.id ?? auditToken`). A cascade
+// that sweeps only the user_sessions tokens leaves every note, highlight,
+// saved devotional, and push endpoint a signed-in reader ever made sitting
+// in the database — after Settings told them it was permanently removed.
+//
+// DOCUMENTED RESIDUAL GAP — covered by neither helper: before commit
+// cccee2f6 these routes wrote `session_token` = the euangelion_audit_session
+// cookie's randomUUID for EVERY caller, signed-in included, and that token
+// was never inserted into user_sessions. Rows written in that era under an
+// audit-session UUID are reachable by neither this deletion cascade nor the
+// export — there is no stored link from the user to that UUID. Closing it
+// is pending a decision on linking that cookie's token to accounts.
+const USER_ID_KEYED_SESSION_TOKEN_TABLES: ReadonlySet<string> = new Set([
+  'annotations',
+  'session_bookmarks',
+  'push_subscriptions',
+])
 
 // user_id-keyed tables that are normally dropped by the auth.users FK
 // cascade in step E. When the auth user is PRESERVED (first-run reset,
@@ -200,17 +229,18 @@ export async function deleteUserAccount(
     }
   }
 
-  // Step B: delete from each session-token-keyed table.
-  if (sessionTokens.length > 0) {
-    for (const table of SESSION_TOKEN_TABLES) {
-      await safeDeleteByColumn(
-        supabase,
-        table,
-        'session_token',
-        sessionTokens,
-        result,
-      )
-    }
+  // Step B: delete from each session-token-keyed table. For the
+  // user-id-keyed tables (F-105) the user id is itself a session_token
+  // value, so it joins the token set — and those tables are swept even when
+  // the user owns no user_sessions rows at all, which is the exact case
+  // where a signed-in reader's notes would otherwise survive deletion
+  // untouched.
+  for (const table of SESSION_TOKEN_TABLES) {
+    const tokens = USER_ID_KEYED_SESSION_TOKEN_TABLES.has(table)
+      ? [...sessionTokens, userId]
+      : sessionTokens
+    if (tokens.length === 0) continue
+    await safeDeleteByColumn(supabase, table, 'session_token', tokens, result)
   }
 
   // Step C: delete devotional_plan_days + devotional_day_citations by

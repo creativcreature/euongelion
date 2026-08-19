@@ -10,6 +10,7 @@ import {
   getOverallProgress,
   canReadDevotional,
 } from '@/lib/progress'
+import { READING_PROGRESS_MERGED } from '@/lib/reading/reading-progress-sync'
 
 export function useProgress() {
   const [progress, setProgress] = useState<DevotionalProgress[]>(getProgress)
@@ -20,7 +21,15 @@ export function useProgress() {
     }
 
     window.addEventListener('progressUpdated', handleUpdate)
-    return () => window.removeEventListener('progressUpdated', handleUpdate)
+    // Progress arriving from the account is just as real as progress made on
+    // this device. Without this listener a reader who finished a series on
+    // their phone would open their laptop and still see it unread until a
+    // reload.
+    window.addEventListener(READING_PROGRESS_MERGED, handleUpdate)
+    return () => {
+      window.removeEventListener('progressUpdated', handleUpdate)
+      window.removeEventListener(READING_PROGRESS_MERGED, handleUpdate)
+    }
   }, [])
 
   return {

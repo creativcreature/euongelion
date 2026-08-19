@@ -1,4 +1,21 @@
+/**
+ * POST /api/billing/portal — open Stripe's billing portal.
+ *
+ * Customer resolution, in precedence order:
+ *   1. `public.users.stripe_customer_id` for the signed-in reader (the
+ *      webhook-written link, read through the single reader in
+ *      `subscription-state.ts`). This is the path that works on ANY
+ *      device — a subscriber who signs in on a new phone still manages
+ *      their own subscription.
+ *   2. The checkout session id the browser kept from a checkout
+ *      completed on THIS device — the only path available to a reader
+ *      who is not signed in.
+ * When neither exists we say so honestly (400) and the UI points at the
+ * Stripe receipt email.
+ */
+
 import Stripe from 'stripe'
+import { isAuthSessionMissingError } from '@supabase/supabase-js'
 import { randomUUID } from 'node:crypto'
 import { NextRequest, NextResponse } from 'next/server'
 import { isStripeConfigured } from '@/lib/billing/catalog'
@@ -6,6 +23,8 @@ import {
   sanitizeBillingReturnPath,
   sanitizeCheckoutSessionId,
 } from '@/lib/billing/flash'
+import { readUserBillingState } from '@/lib/billing/subscription-state'
+import { createClient } from '@/lib/supabase/server'
 import {
   getClientKey,
   readJsonWithLimit,
@@ -62,6 +81,30 @@ function jsonWithRequestId(
   return response
 }
 
+/**
+ * The signed-in reader's webhook-written Stripe customer id, or null
+ * when they are anonymous or no link has been stored yet. A broken auth
+ * read throws so the caller surfaces it instead of silently downgrading
+ * the reader to "anonymous". (`readUserBillingState` itself fails closed
+ * per SA-028 — a failed billing read reads as "no stored link", which
+ * lands on the honest 400 rather than a wrong portal session.)
+ */
+async function resolveStoredCustomerId(): Promise<string | null> {
+  const supabase = await createClient()
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser()
+  // A missing session is the legitimate anonymous reader; anything else
+  // is a real auth failure and must not read as "anonymous".
+  if (error && !isAuthSessionMissingError(error)) {
+    throw new Error(`auth read failed: ${error.message}`)
+  }
+  if (!user) return null
+  const state = await readUserBillingState(user.id)
+  return state?.stripeCustomerId ?? null
+}
+
 export async function POST(request: NextRequest) {
   const requestId = randomUUID()
   const key = getClientKey(request)
@@ -103,7 +146,23 @@ export async function POST(request: NextRequest) {
   const checkoutSessionId = sanitizeCheckoutSessionId(
     parsed.data.checkoutSessionId,
   )
-  if (!checkoutSessionId) {
+
+  // Stored link first — it is the only path that survives a new device.
+  let storedCustomerId: string | null
+  try {
+    storedCustomerId = await resolveStoredCustomerId()
+  } catch (error) {
+    console.error('Billing portal customer lookup error:', error)
+    return jsonWithRequestId(
+      {
+        error: 'Unable to open billing management right now.',
+        code: 'PORTAL_UNAVAILABLE',
+      },
+      { status: 500, requestId },
+    )
+  }
+
+  if (!storedCustomerId && !checkoutSessionId) {
     return jsonWithRequestId(
       {
         error: 'A valid checkout session id is required.',
@@ -134,13 +193,16 @@ export async function POST(request: NextRequest) {
   try {
     const stripe = new Stripe(stripeKey)
 
-    const checkoutSession =
-      await stripe.checkout.sessions.retrieve(checkoutSessionId)
+    let customerId = storedCustomerId
+    if (!customerId && checkoutSessionId) {
+      const checkoutSession =
+        await stripe.checkout.sessions.retrieve(checkoutSessionId)
 
-    const customerId =
-      typeof checkoutSession.customer === 'string'
-        ? checkoutSession.customer
-        : checkoutSession.customer?.id
+      customerId =
+        typeof checkoutSession.customer === 'string'
+          ? checkoutSession.customer
+          : (checkoutSession.customer?.id ?? null)
+    }
 
     if (!customerId) {
       return jsonWithRequestId(

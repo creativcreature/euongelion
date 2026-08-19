@@ -5,6 +5,55 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Accounts, fully implemented (SA-091, F-137)
+
+**2026-08-19 (overnight)**
+
+Founder: _"also fully impliment accounts."_ Method: a read-only audit of the
+entire auth surface first (12 broken findings, 13 missing pieces, every claim
+with file:line), then five parallel build lanes, then adversarial verification
+— which refuted every lane at least once — then a second fix round against the
+exact findings.
+
+**The P0 was a GDPR erosion nobody could see.** After the two-site-states data
+ruling (F-105), signed-in annotations and bookmarks key `session_token` to the
+auth user id — but deletion and export swept only anonymous session tokens.
+Every note, highlight and bookmark a signed-in reader ever made **survived
+"Delete My Account"** and was missing from their own export.
+`push_subscriptions` had the identical defect, caught by a verifier cloning
+the lane's own test harness. Both fixed, plus a structural test so the next
+user-id-keyed table cannot drift silently. One residual gap is documented
+rather than hidden: pre-F-105 rows keyed to the audit-session UUID are
+reachable by neither helper and need a linking decision.
+
+**Sign-up reaches parity with sign-in** — flag-gated Google below email,
+Turnstile token (defusing a 403 armed for the day the secret is set), in-page
+OTP entry on the page whose users are most exposed to the 2-emails/hour
+mailer cap, guest escape hatch, and a Turnstile remount defect fixed in both
+twins.
+
+**Reading progress becomes the reason to sign in.** `user_progress` had
+existed since migration 004 with zero readers or writers. `/api/reading-progress`
+now mirrors the listening-progress semantics; merge is a monotone union (done
+anywhere = done); and the store carries an **owner stamp** so a shared device
+never pushes one account's history into another — the second user's first
+sync replaces local state and re-stamps.
+
+**Billing works from any device.** The portal resolves via
+`stripe_customer_id` first (real as of tonight's migrations), falling back to
+the device-local checkout id; webhook and reconciliation writers now prove
+their writes and treat zero-row UPDATEs as failures instead of green logs.
+
+**Surface:** `/account` → `/settings` (the mobile tab already linked it),
+display name over the existing `full_name` column, email change with
+confirmation-time sync of `public.users.email`, `onboarding_completed`
+written non-fatally, and a middleware-matcher invariant test covering the
+F-083 regression class.
+
+**Still founder-blocked (external services):** custom SMTP — two emails an
+hour is not a product — and the Stripe environment. The read path is live;
+purchases stay off until `BILLING_CHECKOUT_LIVE` and keys exist.
+
 ## The Daily Bread becomes a daily paper (SA-090, F-136)
 
 **2026-08-18/19**

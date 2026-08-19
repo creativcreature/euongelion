@@ -177,9 +177,12 @@ export async function reconcileBillingState(deps?: {
     const expectedRenewsAt = subscription ? renewsAtOf(subscription) : null
 
     const update: Record<string, unknown> = {}
+    // Queued until the UPDATE proves it matched the row — a correction
+    // is only a correction once the write is known to have landed.
+    const pendingCorrections: ReconciliationCorrection[] = []
     if (user.subscription_tier !== expectedTier && !termActive) {
       update.subscription_tier = expectedTier
-      report.corrected.push({
+      pendingCorrections.push({
         userId: user.id,
         field: 'subscription_tier',
         from: user.subscription_tier,
@@ -195,15 +198,27 @@ export async function reconcileBillingState(deps?: {
     }
 
     if (Object.keys(update).length > 0) {
-      const { error } = await supabase
+      // `.select('id')` makes the writer prove it wrote: PostgREST
+      // returns no error for an UPDATE that matches zero rows.
+      const { data, error } = await supabase
         .from('users')
         .update(update)
         .eq('id', user.id)
+        .select('id')
       if (error) {
         report.errors.push({
           userId: user.id,
           error: `correction write failed: ${error.message}`,
         })
+      } else if (!Array.isArray(data) || data.length === 0) {
+        report.errors.push({
+          userId: user.id,
+          error: `correction write matched 0 rows — nothing was written (fields: ${Object.keys(
+            update,
+          ).join(', ')})`,
+        })
+      } else {
+        report.corrected.push(...pendingCorrections)
       }
     }
   }

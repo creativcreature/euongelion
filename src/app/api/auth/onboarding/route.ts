@@ -9,6 +9,7 @@ import { buildBrainSettingsPatch } from '@/lib/brain/preferences'
 import {
   createRequestId,
   jsonError,
+  logApiError,
   readJsonWithLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
@@ -126,6 +127,45 @@ export async function POST(request: NextRequest) {
       })
     }
 
+    // B7: onboarding completion lives in TWO places. Auth user_metadata
+    // is the SOURCE OF TRUTH — it is what the app reads, via
+    // readOnboardingStateFromMetadata, and it was saved above.
+    // public.users.onboarding_completed is a SECONDARY SYNC only:
+    // nothing reads it — the admin reset (/api/admin/reset-my-account)
+    // merely writes it back to false. The mirror is attempted on the
+    // same request so the two rarely drift, but a mirror failure must
+    // never fail onboarding itself.
+    //
+    // The server client is deliberate: RLS ("Users can update own
+    // profile") scopes this to the caller's own row. Asking for the row
+    // back turns a zero-row write — a missing profile record — into a
+    // logged warning instead of a silent half-save.
+    const { data: profileRow, error: profileError } = await supabase
+      .from('users')
+      .update({ onboarding_completed: true })
+      .eq('id', user.id)
+      .select('id')
+      .maybeSingle()
+
+    let profileSyncWarning: string | null = null
+    if (profileError) {
+      profileSyncWarning = `Your welcome was saved, but the profile record could not be synced: ${profileError.message}`
+    } else if (!profileRow) {
+      profileSyncWarning =
+        'Your welcome was saved, but your profile record is missing, so the sync column was not written.'
+    }
+
+    if (profileSyncWarning) {
+      logApiError({
+        scope: 'auth-onboarding',
+        requestId,
+        error: profileError ?? new Error(profileSyncWarning),
+        method: request.method,
+        path: '/api/auth/onboarding',
+        context: { stage: 'profile-mirror-sync', userId: user.id },
+      })
+    }
+
     const onboarding = readOnboardingStateFromMetadata(data.user.user_metadata)
 
     return withRequestIdHeaders(
@@ -133,6 +173,7 @@ export async function POST(request: NextRequest) {
         {
           ok: true,
           onboarding,
+          ...(profileSyncWarning ? { warning: profileSyncWarning } : {}),
         },
         { status: 200 },
       ),
