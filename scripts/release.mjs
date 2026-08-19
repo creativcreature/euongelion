@@ -85,6 +85,20 @@ fs.writeFileSync(SW, swSrc.replace(/const CACHE_NAME = 'euangelion-v\d+'/, `cons
 fs.writeFileSync(REG, regSrc.replace(/const SW_VERSION = 'v\d+'/, `const SW_VERSION = 'v${targetSw}'`))
 
 if (!SYNC_ONLY) {
+  // `verify:tracking` requires CHANGELOG's Current Status marker to match the
+  // package version, so a release that skips it fails the commit gate. Moving
+  // it here keeps the release one command rather than one command plus a
+  // remembered edit — the same reason the two SW numbers live here.
+  const CL = path.join(REPO, 'CHANGELOG.md')
+  const cl = fs.readFileSync(CL, 'utf8')
+  const marker = /^\*\*Version:\*\* .+$/m
+  if (marker.test(cl)) {
+    fs.writeFileSync(CL, cl.replace(marker, `**Version:** ${nextVersion}`))
+    console.log(`CHANGELOG     Current Status marker -> ${nextVersion}`)
+  } else {
+    console.log('CHANGELOG     no "**Version:**" marker found — update it by hand')
+  }
+
   try {
     execFileSync('git', ['tag', '-a', `v${nextVersion}`, '-m', `Euangelion v${nextVersion}`], { cwd: REPO })
     console.log(`\ntagged v${nextVersion} (local only — push with: git push origin v${nextVersion})`)
@@ -92,4 +106,4 @@ if (!SYNC_ONLY) {
     console.log(`\ncould not tag v${nextVersion} — it may already exist.`)
   }
 }
-console.log('\nStage: package.json public/sw.js src/components/ServiceWorkerRegistration.tsx')
+console.log('\nStage: package.json public/sw.js src/components/ServiceWorkerRegistration.tsx' + (SYNC_ONLY ? '' : ' CHANGELOG.md'))

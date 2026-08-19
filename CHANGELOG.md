@@ -9,6 +9,9 @@ Format: Reverse chronological, grouped by sprint/date.
 
 **2026-08-19**
 
+_Shipped at v0.8.2 / service worker v121 — a cached shell would otherwise
+keep serving the old bundle and hide the control below._
+
 Founder: _"When I finish day one and move on, it keeps making day one the
 active."_ He was right, and the reason is narrower than it looked.
 
@@ -10325,7 +10328,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.1
+**Version:** 0.8.2
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
