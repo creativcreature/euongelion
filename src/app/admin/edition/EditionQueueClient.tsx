@@ -44,6 +44,15 @@ const KIND_LABEL: Record<EditionKind, string> = {
   witness: 'WITNESS',
   letter: 'LETTER',
   notice: 'NOTICE',
+  // SA-092: deterministic kinds — publish as published and never queue, but
+  // the label map is total over EditionKind so a stray row still names itself.
+  redletter: 'RED LETTERS',
+  proverb: 'PROVERB',
+  verse: 'MEMORY VERSE',
+  archive: 'ARCHIVE',
+  b365: 'BIBLE-365',
+  voices: 'VOICES',
+  question: 'QUESTION',
 }
 
 const DATE_FORMAT = new Intl.DateTimeFormat('en-US', {

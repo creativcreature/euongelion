@@ -5,6 +5,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## main did not build: an incomplete label map (SA-092, F-138)
+
+**2026-08-19**
+
+`EditionQueueClient`'s `KIND_LABEL` is typed `Record<EditionKind, string>`, and
+the seven deterministic kinds the edition work added — `redletter`, `proverb`,
+`verse`, `archive`, `b365`, `voices`, `question` — never reached it. The map was
+committed incomplete, so `next build` failed type-checking on `main` and no
+deploy could be cut by anyone.
+
+Worth recording is how it hid: `npm run type-check` passed. It runs against the
+**working tree**, which already held the fix uncommitted, while the committed
+state did not. A clean checkout is the only thing that tests what you actually
+pushed, and it took building from one to find this.
+
+Labels taken from the authoring session's own working copy. Behaviour unchanged
+— it is a label lookup on an admin screen.
+
 ## /today can finish a day of a curated series (SA-095, F-141)
 
 **2026-08-19**
