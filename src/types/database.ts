@@ -1,3 +1,45 @@
+
+// ─── The Daily Bread edition engine (SA-090 / F-136) ────────────────────────
+
+export type EditionItemRow = {
+  id: string
+  kind: string
+  publish_date: string
+  slot: number
+  status: string
+  payload: Record<string, unknown>
+  source_name: string | null
+  source_url: string | null
+  approved_by: string | null
+  approved_at: string | null
+  created_at: string
+}
+
+export type EditionItemInsert = {
+  id?: string
+  kind: string
+  publish_date: string
+  slot?: number
+  status?: string
+  payload: Record<string, unknown>
+  source_name?: string | null
+  source_url?: string | null
+  approved_by?: string | null
+  approved_at?: string | null
+  created_at?: string
+}
+
+export type EditionItemUpdate = {
+  kind?: string
+  publish_date?: string
+  slot?: number
+  status?: string
+  payload?: Record<string, unknown>
+  source_name?: string | null
+  source_url?: string | null
+  approved_by?: string | null
+  approved_at?: string | null
+}
 /**
  * EUANGELION Database Types
  * TypeScript interfaces matching the Supabase database schema
@@ -866,6 +908,12 @@ export type Database = {
         Row: StripeWebhookEvent
         Insert: StripeWebhookEventInsert
         Update: StripeWebhookEventInsert
+        Relationships: []
+      }
+      edition_items: {
+        Row: EditionItemRow
+        Insert: EditionItemInsert
+        Update: EditionItemUpdate
         Relationships: []
       }
     }
